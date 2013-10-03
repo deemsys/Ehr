@@ -35,11 +35,14 @@ public class MainController {
  
 	}
 	
-	
-	
 	@RequestMapping(value="/login", method = RequestMethod.GET)
 	public String login(ModelMap model) {
 		return "login";
+ 
+	}
+	@RequestMapping(value="/autoaccident", method = RequestMethod.GET)
+	public String autoaccident(ModelMap model) {
+		return "autoaccident";
  
 	}
 	
@@ -55,25 +58,6 @@ public class MainController {
 		return "login";
  
 	}
-	
-	@RequestMapping(value="/patientDetails",method=RequestMethod.GET)
-	public String patientDetails(ModelMap model)
-	{
-		return "patientDetails";
-	}
-	
-	@RequestMapping(value = "/redirect", method = RequestMethod.GET)
-	   public String redirect() {
-	     
-	      return "redirect:presentComplaint";
-	   }
-	
-	@RequestMapping(value="/presentComplaint",method=RequestMethod.GET)
-	public String presentComplaint(ModelMap model)
-	{
-		return "presentComplaint";
-	}
-	
 	
 	@RequestMapping(value="/createuser", method=RequestMethod.GET)
 	public String createSpitterProfile(Model model) {
