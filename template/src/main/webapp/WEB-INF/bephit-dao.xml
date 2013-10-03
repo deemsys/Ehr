@@ -6,5 +6,8 @@
 	<bean id="mainDAO" class="bephit.dao.MainDAO">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
+	<bean id="PatientDAO" class="bephit.dao.PatientDAO">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
  
 </beans>

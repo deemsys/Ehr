@@ -6,7 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>:: Medical SMS ::</title>
+<title>:: EHR ::</title>
 		<script type="text/javascript" src="<c:url value="/resources/js/ddlevelsmenu.js" />"></script> 
 		<script type="text/javascript" src="<c:url value="/resources/js/clock.js" />"></script>
 <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet"
@@ -41,7 +41,7 @@
 	color: #fff;
 	text-decoration: none;
 	padding: 0 10px;
-	background: #0a86af;
+	background: #490149;
 	border-bottom: 1px solid #fff;
 	font-size: 13px;
 }
@@ -89,7 +89,8 @@
 	<div id="main">
 		<div id="header">
 			<div class="logo">
-				<a href="#"><img src="<c:url value="/resources/images/logo.png" />" alt="Company Logo" /></a>
+			    <a href="#"><img src="<c:url value="/resources/images/title.png" />" alt="Company Logo" /></a> 
+				<!-- <a href ="#">Electronic Healthcare Record</a> -->
 			</div>
 			<div class="top_link">
 				<table border="0" cellspacing="0" cellpadding="0"
@@ -102,7 +103,7 @@
 					</tr>
 					<tr>
 						<td align="right" valign="middle"><span class="cart_txt">Welcome
-								<sec:authentication property="principal.username" />&nbsp;&nbsp;|&nbsp;&nbsp;<a href="<c:url value="/j_spring_security_logout" />">Logout</a>
+								<sec:authentication property="principal.username" />&nbsp;&nbsp;|&nbsp;&nbsp;<a href="<c:url value="/j_spring_security_logout" />" style="color:#490149">Logout</a>
 						</span></td>
 					</tr>
 				</table>
@@ -126,16 +127,16 @@
 								</a>
 							</li>
 				            <li>
-				            	<a href="#" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" rel="ddsubmenu1">
-				            		<span><img src="<c:url value="/resources/images/email.png" />" alt="" style="padding:5px 5px 0 0;" />Message Stream</span>
+				            	<a href="patientDetails" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" rel="ddsubmenu1">
+				            		<span><img src="<c:url value="/resources/images/email.png" />" alt="" style="padding:5px 5px 0 0;" />Patient Information</span>
 				            	</a>
 				            </li>
 				            <li>
 				            	<a href="#" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" rel="ddsubmenu2">
-				            		<span><img src="<c:url value="/resources/images/icon_03.png" />" alt="" style="padding:5px 5px 0 0;" />Participants</span>
+				            		<span><img src="<c:url value="/resources/images/icon_03.png" />" alt="" style="padding:5px 5px 0 0;" />Accident</span>
 				            	</a>
 				            </li>
-				            <li>
+				            <%-- <li>
 				            	<a href="#" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" rel="ddsubmenu3">
 				            		<span><img src="<c:url value="/resources/images/icon_06.png" />" alt="" style="padding:5px 5px 0 0;" />Admin User</span>
 				            	</a>
@@ -144,25 +145,26 @@
 				            	<a href="#" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" rel="ddsubmenu4">
 				            		<span><img src="<c:url value="/resources/images/icon_07.png" />" alt="" style="padding:5px 5px 0 0;" />Settings</span>
 				            	</a>
-				            </li>
+				            </li> --%>
 						</ul>
 						<div class="clear"></div>
 						<script type="text/javascript">
 							ddlevelsmenu.setup("ddtopmenubar", "topbar")
 						</script>
 						<ul id="ddsubmenu1" class="ddsubmenustyle">
-							<li><a href="createstream">Create Message Stream</a></li>
-							<li><a href="viewstream">View Stream</a></li>
+						<li>
+							<!-- <li><a href="patientDetails">Patient Information</a></li> -->
+							<!-- <li><a href="viewstream">View Stream</a></li>
 							<li><a href="broadcast">Send Stream</a></li>
-            				<li><a href="viewreports">Report</a></li>
+            				<li><a href="viewreports">Report</a></li> -->
           				</ul>
 						<ul id="ddsubmenu2" class="ddsubmenustyle">
-							<li><a href="showaddparticipants">Add Participants</a></li>
-				            <li><a href="viewparticipants">View participants</a></li>
-				            <li><a href="showaddparticipantgroups">Add Participant Groups</a></li>
-							<li><a href="viewparticipantgroups">View Participant Groups</a></li>
+							<li><a href="showaddparticipants">Auto Accident</a></li>
+				            <li><a href="viewparticipants">Work Accident</a></li>
+				            <!-- <li><a href="showaddparticipantgroups">Add Participant Groups</a></li>
+							<li><a href="viewparticipantgroups">View Participant Groups</a></li> -->
 						</ul>
-						<ul id="ddsubmenu3" class="ddsubmenustyle">
+						<!-- <ul id="ddsubmenu3" class="ddsubmenustyle">
 							<li><a href="showaddadminuser">Add Admin User</a></li>        
 				            <li><a href="viewadminuser">View Admin User</a></li>
 				            <li><a href="activityofadmin">User Activity Logs</a></li>
@@ -171,7 +173,7 @@
 							<li><a href="textmsgsettings">Text Message API settings</a></li>
 							<li><a href="addmailtemplate">Mail Templates</a></li>
 							<li><a href="changepassword">Change My Password</a></li>
-						</ul>
+						</ul> -->
 					</div>
 					<div class="menu_r"></div>
 					<div class="clear"></div>

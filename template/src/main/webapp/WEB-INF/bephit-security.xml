@@ -14,7 +14,7 @@
 		<logout logout-success-url="/logout" />
 	</http>
 	
-	<authentication-manager>
+	<!-- <authentication-manager>
 	   <authentication-provider>
 		<jdbc-user-service data-source-ref="dataSource"
  
@@ -24,8 +24,8 @@
  
 		/>
 	   </authentication-provider>
-	</authentication-manager>
- <!-- 
+	</authentication-manager> -->
+ 
 	<authentication-manager>
 	  <authentication-provider>
 		<user-service>
@@ -33,6 +33,6 @@
 		</user-service>
 	  </authentication-provider>
 	</authentication-manager>
- -->
+
  
 </beans:beans>

@@ -28,18 +28,18 @@ ul, li {
 	list-style:none;
 }
 #login_div {
-	width:385px;
+	width:400px;
 	margin:100px auto auto auto;
 }
 .login-top {
-	background:url(../images/max-properties.gif) no-repeat;
-	width:385px;
-	height:63px;
+	background:url(../images/loginhead.png) no-repeat;
+	width:400px;
+	height:59px;
 	display:block;
 }
 .login-center {
-	background:#000 url(../images/login-c.gif) repeat-x;
-	width:345px;
+	background:url(../images/logincen.png) repeat-x;
+	width:360px;
 	padding:20px;
 	color:#fff;
 }
@@ -71,7 +71,7 @@ ul.login-list li p {
 	margin-left:40px;
 }
 .submit-btn {
-	background:url(../images/submit-btn.gif) no-repeat;
+	background:url(../images/submit.png) no-repeat;
 	width:260px;
 	height:56px;
 	display:block;
@@ -82,7 +82,7 @@ ul.login-list li p {
 	margin:0 0 0 40px;
 }
 .submit-btn:hover {
-	background:url(../images/submit-btn-hov.gif) no-repeat;
+	background:url(../images/subhov.png) no-repeat;
 }
 .forgot-password {
 	background:url(../images/forgot-password.gif) no-repeat;
@@ -98,8 +98,8 @@ ul.login-list li p {
 	background:url(../images/forgot-password-hov.gif) no-repeat;
 }
 .login-bottom {
-	background:url(../images/login-btm.gif) no-repeat;
-	width:385px;
+	background:url(../images/loginbottom.png) no-repeat;
+	width:400px;
 	height:61px;
 	display:block;
 }
@@ -126,9 +126,11 @@ ul.login-list li p {
 #main {
 /*	width:1000px;*/
 	margin:auto;
+
 }
 #header {
 	height:120px;
+	background:#eaeaea;
 }
 /* New CSS */
 #right_content {
@@ -143,7 +145,7 @@ ul.login-list li p {
 	padding: 0 20px;
 	border: 1px solid #CACACA;
 	text-shadow: 1px 1px 1px #fff;
-	background: #EAEAEA url(../images/bg_heading.png) repeat-x top;
+	background: #eaeaea url(../images/bg_heading.png) repeat-x top;
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
 	-moz-border-radius-topright: 10px;
@@ -309,6 +311,7 @@ ul.pagination li.page a:hover {
 .logo {
 	float:left;
 	padding:0 10px;
+	padding-top:10px;
 }
 .top_link {
 	float:right;
@@ -319,7 +322,7 @@ ul.pagination li.page a:hover {
 	margin:5px 5px 0 0;
 	text-align:right;
 	line-height:18px;
-	color:#fff;
+	color:#490149;
 }
 .cart {
 	float:left;
@@ -340,7 +343,7 @@ ul.pagination li.page a:hover {
 	display:inline-block;
 	float:right;
 	line-height:22px;
-	color:#FFF;
+	color:#490149;
 	font-size:14px;
 	font-weight:bold;
 }
@@ -350,12 +353,13 @@ ul.pagination li.page a:hover {
 .cart_txt a:hover {
 	text-decoration:underline;
 	color:#FFF;
-}
+} 
 /* ----------------------------- Menu Portion ----------------------- */
 .menu {
 	margin:16px 0 0 10px;
 	height:33px;
 	overflow:hidden;
+	background:#490149;
 }
 .menu li {
 	float:left;
@@ -363,11 +367,11 @@ ul.pagination li.page a:hover {
 	text-transform:uppercase;
 }
 .select, .unselect:hover, .login:hover {
-	background:url(../images/menu-sel-left.gif) 0 0 no-repeat;
+	background:url(../images/menu1.png) 0 0 no-repeat;
 	display:block;
 }
 .select span, .unselect:hover span, .login:hover span {
-	background:url(../images/menu-sel-right.gif) 100% 0 no-repeat;
+	background:url(../images/menu2.png) 100% 0 no-repeat;
 	color:#fff;
 	display:block;
 	line-height:30px;
