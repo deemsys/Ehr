@@ -3,6 +3,8 @@ package bephit.controllers;
  
 
 import java.security.Principal;
+
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
@@ -11,7 +13,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 
+import bephit.dao.AutoaccidentDAO;
 import bephit.dao.MainDAO;
+import bephit.forms.AutoaccidentForm;
 import bephit.forms.ParticipantsDetailsForm;
 import bephit.model.*;
 
@@ -23,9 +27,12 @@ public class MainController {
 	
 	@Autowired  
 	MainDAO mainDAO; 
+	
+	@Autowired  
+	AutoaccidentDAO autoDAO;
  
 	@RequestMapping(value={"/", "/welcome"}, method = RequestMethod.GET)
-	public String printWelcome(ModelMap model, Principal principal ) {
+	public String printWelcome(ModelMap model) {
 		
 		ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
 		participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
@@ -42,6 +49,20 @@ public class MainController {
 	}
 	@RequestMapping(value="/autoaccident", method = RequestMethod.GET)
 	public String autoaccident(ModelMap model) {
+		return "autoaccident";
+ 
+	}
+	@RequestMapping(value="/autoaccident", method = RequestMethod.POST)
+	public String insert_autoaccident(@ModelAttribute("Autoaccident")  Autoaccident autoaccident,ModelMap model) {
+		model.put("Autoaccident", autoaccident);
+		model.addAttribute("AutoaccidentForm",autoaccident);
+		int a=autoDAO.setAutoaccident(autoaccident);
+		AutoaccidentForm autoaccidentForm= new AutoaccidentForm();
+		autoaccidentForm.setAutoaccident(autoDAO.getAutoaccident());
+		model.addAttribute("AutoaccidentForm",autoaccidentForm);
+
+		//System.out.println("insert auto accident");
+	    
 		return "autoaccident";
  
 	}

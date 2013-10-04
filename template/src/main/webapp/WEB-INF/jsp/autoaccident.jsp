@@ -1,7 +1,7 @@
 %@ taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
 <jsp:include page="header.jsp"></jsp:include>
 <div id="right_content">
-<form action="autoaccident" method="POST" name="update" id="update">
+<form action="autoaccident" method="POST">
 
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
       <tr>
@@ -47,7 +47,7 @@
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Were you the</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <select name="place" class="input_cmbbx1">
+				  <select name="seating" class="input_cmbbx1">
 					<option selected="selected" value="driver" >Driver</option>
 					<option value="front seat">Front seat Passenger</option>
 					<option value="back seat">Back seat Passenger</option>
@@ -72,7 +72,7 @@
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Portion of the vehicle hit</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <select name="place" class="input_cmbbx1">
+				  <select name="vehicle_hit" class="input_cmbbx1">
 					<option selected="selected" value="right front" >Right Front</option>
 					<option value="left front">Left Front</option>
 					<option value="right rear">Right Rear</option>
@@ -92,63 +92,63 @@
 				  </tr>
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Was you car stopped at the time of accident</td>
-				  <td valign="top" align="left" class="input_txt"><input type="radio" name="carstop" value="0" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="carstop" value="1" class="input_txt">No</td>
+				  <td valign="top" align="left" class="input_txt"><input type="radio" name="carstopped" value="0" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="carstopped" value="1" class="input_txt">No</td>
 				  </tr>
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>If you were the driver,was your foot on the brake</td>
-				  <td valign="top" align="left" class="input_txt"><input type="radio" name="isdriver" value="0" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="carstop" value="1" class="input_txt">No</td>
+				  <td valign="top" align="left" class="input_txt"><input type="radio" name="driverposition" value="0" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="driverposition" value="1" class="input_txt">No</td>
 				  </tr>
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Was your vehicle moving at time of impact</td>
-				  <td valign="top" align="left" class="input_txt"><input type="radio" name="vehicleimpact" value="0" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="carstop" value="1" class="input_txt">No</td>
+				  <td valign="top" align="left" class="input_txt"><input type="radio" name="vehicle_moving_time" value="0" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="vehicle_moving_time" value="1" class="input_txt">No</td>
 				  </tr>
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Was car</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <select name="place" class="input_cmbbx1">
-					<option selected="selected" value="right front" >Slowing Down</option>
-					<option value="left front">Gaining Speed</option>
-					<option value="right rear">Steady Rate of Speed</option>	
+				  <select name="wascar" class="input_cmbbx1">
+					<option selected="selected" value="slowing down" >Slowing Down</option>
+					<option value="gaining speed">Gaining Speed</option>
+					<option value="steady rate of speed">Steady Rate of Speed</option>	
 				  </select>
 				  </td>
 				  </tr>
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Estimated rate of speed</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="estimatedrate" />
+				  <input type="text" class="input_txtbx1" id="inp_id" name="estimated_rate" />
 				  </td>
 				  </tr>
 				 <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Time of day</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <select name="place" class="input_cmbbx1">
-					<option selected="selected" value="right front" >DayLight</option>
-					<option value="left front">Dawn</option>
-					<option value="right rear">Dusk</option>
-					<option value="right rear">Dark</option>
-					<option value="right rear">Unknown</option>	
+				  <select name="time_of_day" class="input_cmbbx1">
+					<option selected="selected" value="day light" >DayLight</option>
+					<option value="dawn">Dawn</option>
+					<option value="dusk">Dusk</option>
+					<option value="dark">Dark</option>
+					<option value="unknown">Unknown</option>	
 				  </select>
 				  </td>
 				  </tr> 
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Road conditions</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <select name="conditions" class="input_cmbbx1" onchange='CheckConditions(this.value);'>
-					<option selected="selected" value="right front" >Select conditions</option>
-					<option value="left front">Dry</option>
-					<option value="left front">Damp</option>
-					<option value="right rear">Wet</option>
-					<option value="right rear">Snow</option>
-					<option value="right rear">Ice</option>	
-					<option value="right rear">Other</option>
+				  <select name="road_conditions" class="input_cmbbx1" onchange='CheckConditions(this.value);'>
+					<option selected="selected" value="select conditions" >Select conditions</option>
+					<option value="dry">Dry</option>
+					<option value="damp">Damp</option>
+					<option value="wet">Wet</option>
+					<option value="snow">Snow</option>
+					<option value="ice">Ice</option>	
+					<option value="other">Other</option>
 				  </select>
 				  <input type="text" name="conditions" id="conditions" style='display:none'/>
 				  </td>
 				  </tr> 
-				  <tr class="row1">
+				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Head Restraints</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <select name="place" class="input_cmbbx1">
+				  <select name="head_restraints" class="input_cmbbx1">
 					<option selected="selected" value="right front" >Up</option>
 					<option value="left front">Down</option>
 					<option value="right rear">Don't know</option>	
@@ -170,22 +170,16 @@
 				  </table>
 				  </form>
 				  </div>
-				  <script type="text/javascript">
+<script type="text/javascript">
 function CheckConditions(val){
  var element=document.getElementById('conditions');
- if(val=='Other')
+ if(val=='other')
    element.style.display='block';
  else  
    element.style.display='none';
 } 
-/* function CheckConditions(val)
-{
-    if(val=="Other")
-       document.getElementById('conditions').style.display='block';
-    else
-       document.getElementById('conditions').style.display='none'; 
-} */
-				  <jsp:include page="footer.jsp"></jsp:include>
+</script>
+			  <jsp:include page="footer.jsp"></jsp:include>
 				  
 				  
 				  
