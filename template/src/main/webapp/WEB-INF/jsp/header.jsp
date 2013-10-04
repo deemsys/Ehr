@@ -127,7 +127,7 @@
 								</a>
 							</li>
 				            <li>
-				            	<a href="patientDetails" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" rel="ddsubmenu1">
+				            	<a href="#" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" rel="ddsubmenu1">
 				            		<span><img src="<c:url value="/resources/images/email.png" />" alt="" style="padding:5px 5px 0 0;" />Patient Information</span>
 				            	</a>
 				            </li>
@@ -152,19 +152,18 @@
 							ddlevelsmenu.setup("ddtopmenubar", "topbar")
 						</script>
 						<ul id="ddsubmenu1" class="ddsubmenustyle">
-						<li>
-							<!-- <li><a href="patientDetails">Patient Information</a></li> -->
-							<!-- <li><a href="viewstream">View Stream</a></li>
+							<!-- <li><a href="createstream">Create Message Stream</a></li>
+							<li><a href="viewstream">View Stream</a></li>
 							<li><a href="broadcast">Send Stream</a></li>
             				<li><a href="viewreports">Report</a></li> -->
           				</ul>
 						<ul id="ddsubmenu2" class="ddsubmenustyle">
-							<li><a href="showaddparticipants">Auto Accident</a></li>
+							<li><a href="autoaccident">Auto Accident</a></li>
 				            <li><a href="viewparticipants">Work Accident</a></li>
 				            <!-- <li><a href="showaddparticipantgroups">Add Participant Groups</a></li>
 							<li><a href="viewparticipantgroups">View Participant Groups</a></li> -->
 						</ul>
-						<!-- <ul id="ddsubmenu3" class="ddsubmenustyle">
+						<ul id="ddsubmenu3" class="ddsubmenustyle">
 							<li><a href="showaddadminuser">Add Admin User</a></li>        
 				            <li><a href="viewadminuser">View Admin User</a></li>
 				            <li><a href="activityofadmin">User Activity Logs</a></li>
@@ -173,7 +172,7 @@
 							<li><a href="textmsgsettings">Text Message API settings</a></li>
 							<li><a href="addmailtemplate">Mail Templates</a></li>
 							<li><a href="changepassword">Change My Password</a></li>
-						</ul> -->
+						</ul>
 					</div>
 					<div class="menu_r"></div>
 					<div class="clear"></div>
