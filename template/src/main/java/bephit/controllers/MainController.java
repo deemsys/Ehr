@@ -13,11 +13,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 
-import bephit.dao.AutoaccidentDAO;
 import bephit.dao.MainDAO;
-import bephit.forms.AutoaccidentForm;
+import bephit.dao.PatientDAO;
 import bephit.forms.ParticipantsDetailsForm;
-import bephit.model.*;
+import bephit.forms.PatientDetailsForm;
+import bephit.model.PatientDetails;
+import bephit.model.UserProfile;
+
 
  
  
@@ -28,11 +30,11 @@ public class MainController {
 	@Autowired  
 	MainDAO mainDAO; 
 	
-	@Autowired  
-	AutoaccidentDAO autoDAO;
+	@Autowired
+	PatientDAO patientDAO;
  
 	@RequestMapping(value={"/", "/welcome"}, method = RequestMethod.GET)
-	public String printWelcome(ModelMap model) {
+	public String printWelcome(ModelMap model, Principal principal ) {
 		
 		ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
 		participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
@@ -42,28 +44,11 @@ public class MainController {
  
 	}
 	
+	
+	
 	@RequestMapping(value="/login", method = RequestMethod.GET)
 	public String login(ModelMap model) {
 		return "login";
- 
-	}
-	@RequestMapping(value="/autoaccident", method = RequestMethod.GET)
-	public String autoaccident(ModelMap model) {
-		return "autoaccident";
- 
-	}
-	@RequestMapping(value="/autoaccident", method = RequestMethod.POST)
-	public String insert_autoaccident(@ModelAttribute("Autoaccident")  Autoaccident autoaccident,ModelMap model) {
-		model.put("Autoaccident", autoaccident);
-		model.addAttribute("AutoaccidentForm",autoaccident);
-		int a=autoDAO.setAutoaccident(autoaccident);
-		AutoaccidentForm autoaccidentForm= new AutoaccidentForm();
-		autoaccidentForm.setAutoaccident(autoDAO.getAutoaccident());
-		model.addAttribute("AutoaccidentForm",autoaccidentForm);
-
-		//System.out.println("insert auto accident");
-	    
-		return "autoaccident";
  
 	}
 	
@@ -79,6 +64,34 @@ public class MainController {
 		return "login";
  
 	}
+	
+	@RequestMapping(value="/patientDetails",method=RequestMethod.GET)
+	public String patientDetails(ModelMap model)
+	{
+		return "patientDetails";
+	}
+	
+	
+    @RequestMapping(value="/presentComplaint",method=RequestMethod.GET)
+	public String presentComplaint(ModelMap model)
+	{
+		return "presentComplaint";
+	}
+	@RequestMapping(value="/patientDetails", method = RequestMethod.POST)
+	public String insertpatientDetails(@ModelAttribute("PatientDetails") PatientDetails patientdetails,ModelMap model) {
+		model.put("PatientDetails", patientdetails);
+		model.addAttribute("PatientDetailsForm",patientdetails);
+		int a=patientDAO.setPatientDetails(patientdetails);
+         PatientDetailsForm patientdetailsform= new PatientDetailsForm();
+		patientdetailsform.setPatientDetails(patientDAO.getPatientDetails());
+		model.addAttribute("PatientDetailsForm",patientdetailsform);
+
+		System.out.println("patientdetails");
+	    
+		return "presentComplaint";
+ 
+	}
+	
 	
 	@RequestMapping(value="/createuser", method=RequestMethod.GET)
 	public String createSpitterProfile(Model model) {
