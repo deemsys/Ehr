@@ -9,6 +9,8 @@
 	<bean id="AutoaccidentDAO" class="bephit.dao.AutoaccidentDAO">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
- 
+    <bean id="WorkaccidentDAO" class="bephit.dao.WorkaccidentDAO">
+    	<property name="dataSource" ref="dataSource" />
+    </bean>
  
 </beans>

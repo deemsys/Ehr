@@ -159,7 +159,7 @@
           				</ul>
 						<ul id="ddsubmenu2" class="ddsubmenustyle">
 							<li><a href="autoaccident">Auto Accident</a></li>
-				            <li><a href="viewparticipants">Work Accident</a></li>
+				            <li><a href="workaccident">Work Accident</a></li>
 				            <!-- <li><a href="showaddparticipantgroups">Add Participant Groups</a></li>
 							<li><a href="viewparticipantgroups">View Participant Groups</a></li> -->
 						</ul>

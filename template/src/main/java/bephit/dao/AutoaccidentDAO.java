@@ -12,7 +12,9 @@ import java.util.List;
 import javax.sql.DataSource;
 
 import bephit.model.Autoaccident;
-import bephit.model.ParticipantsDetails;
+ 
+
+
 
 public class AutoaccidentDAO {
 	private DataSource dataSource;
@@ -20,6 +22,10 @@ public class AutoaccidentDAO {
 	public void setDataSource(DataSource dataSource) {
 		this.dataSource = dataSource;
 	}
+	
+	
+	
+	
 	public int setAutoaccident(Autoaccident autoaccident)
 	{
 		Connection con = null;
@@ -37,7 +43,7 @@ public class AutoaccidentDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 //System.out.println(dateFormat.format(date));
-	    	 String cmd="INSERT INTO `tbl_autoaccident` (`claimnumber`,`adjustersname`,`estimate`,`seating`,`companion`,`vehicle_desc`,`vehicle_hit`,`other_vehicle_desc`,`carstopped`,`driverposition`,`vehicle_moving_time`,`wascar`,`estimated_rate`,`time_of_day`,`road_conditions`,`head_restraints`) VALUES ('"+autoaccident.getClaimnumber()+"','"+autoaccident.getAdjustersname()+"','"+autoaccident.getEstimate()+"','"+autoaccident.getSeating()+"','"+autoaccident.getCompanion()+"','"+autoaccident.getVehicle_desc()+"','"+autoaccident.getVehicle_hit()+"','"+autoaccident.getOther_vehicle_desc()+"','"+autoaccident.getCarstopped()+"','"+autoaccident.getDriverposition()+"','"+autoaccident.getVehicle_moving_time()+"','"+autoaccident.getWascar()+"','"+autoaccident.getEstimated_rate()+"','"+autoaccident.getTime_of_day()+"','"+autoaccident.getRoad_conditions()+"','"+autoaccident.getHead_restraints()+"')";
+	    	 String cmd="INSERT INTO `tbl_autoaccident` (`claimnumber`,`adjustersname`,`estimate`,`seating`,`companion`,`vehicle_make`,`vehicle_model`,`vehicle_year`,`vehicle_hit`,`other_vehicle_make`,`other_vehicle_model`,`other_vehicle_year`,`carstopped`,`driverposition`,`vehicle_moving_time`,`wascar`,`estimated_rate`,`time_of_day`,`road_conditions`,`head_restraints`,`seatpos_after_accident`,`seat_after_accident`,`lap_seat_belt`,`shoulder_seat_belt`,`airbag`,`wereyou`,`body_position`,`head_position`,`hands_on_wheel`,`aware_of_crash`,`brace`,`ifyes`,`further_injury`,`ifyes_explain`,`during_after_crash`,`patient_body`,`body_strike`,`head_hit`,`rlshoulder_hit`,`rlhip_hit`,`rlknee_hit`,`chest_hit`,`rlarm_hit`,`rlleg_hit`,`otherpart_hit`,`wearing_glasses`,`glasses_impact`,`unconscious`,`uncon`,`estimated_amount`,`damage`,`was_anyone_cited`,`who`,`headache`,`dizziness`,`nausea`,`confusion`,`disorientation`,`neckpain`,`otherpain`,`first_symptom`,`after_accident`,`hosname`,`city`,`staylength`,`hospitalget`,`xray`,`wrong`) VALUES ('"+autoaccident.getClaimnumber()+"','"+autoaccident.getAdjustersname()+"','"+autoaccident.getEstimate()+"','"+autoaccident.getSeating()+"','"+autoaccident.getCompanion()+"','"+autoaccident.getVehicle_make()+"','"+autoaccident.getVehicle_model()+"','"+autoaccident.getVehicle_year()+"','"+autoaccident.getVehicle_hit()+"','"+autoaccident.getOther_vehicle_make()+"','"+autoaccident.getOther_vehicle_model()+"','"+autoaccident.getOther_vehicle_year()+"','"+autoaccident.getCarstopped()+"','"+autoaccident.getDriverposition()+"','"+autoaccident.getVehicle_moving_time()+"','"+autoaccident.getWascar()+"','"+autoaccident.getEstimated_rate()+"','"+autoaccident.getTime_of_day()+"','"+autoaccident.getRoad_conditions()+"','"+autoaccident.getHead_restraints()+"','"+autoaccident.getSeatpos_after_accident()+"','"+autoaccident.getSeat_after_accident()+"','"+autoaccident.getLap_seat_belt()+"','"+autoaccident.getShoulder_seat_belt()+"','"+autoaccident.getAirbag()+"','"+autoaccident.getWereyou()+"','"+autoaccident.getBody_position()+"','"+autoaccident.getHead_position()+"','"+autoaccident.getHands_on_wheel()+"','"+autoaccident.getAware_of_crash()+"','"+autoaccident.getBrace()+"','"+autoaccident.getIfyes()+"','"+autoaccident.getFurther_injury()+"','"+autoaccident.getIfyes_explain()+"','"+autoaccident.getDuring_after_crash()+"','"+autoaccident.getPatient_body()+"','"+autoaccident.getBody_strike()+"','"+autoaccident.getHead_hit()+"','"+autoaccident.getRlshoulder_hit()+"','"+autoaccident.getRlhip_hit()+"','"+autoaccident.getRlknee_hit()+"','"+autoaccident.getChest_hit()+"','"+autoaccident.getRlarm_hit()+"','"+autoaccident.getRlleg_hit()+"','"+autoaccident.getOtherpart_hit()+"','"+autoaccident.getWearing_glasses()+"','"+autoaccident.getGlasses_impact()+"','"+autoaccident.getUnconscious()+"','"+autoaccident.getUncon()+"','"+autoaccident.getEstimated_amount()+"','"+autoaccident.getDamage()+"','"+autoaccident.getWas_anyone_cited()+"','"+autoaccident.getWho()+"','"+autoaccident.getHeadache()+"','"+autoaccident.getDizziness()+"','"+autoaccident.getNausea()+"','"+autoaccident.getConfusion()+"','"+autoaccident.getDisorientation()+"','"+autoaccident.getNeckpain()+"','"+autoaccident.getOtherpain()+"','"+autoaccident.getFirst_symptom()+"','"+autoaccident.getAfter_accident()+"','"+autoaccident.getHosname()+"','"+autoaccident.getCity()+"','"+autoaccident.getStaylength()+"','"+autoaccident.getHospitalget()+"','"+autoaccident.getXray()+"','"+autoaccident.getWrong()+"')";
 	    	 System.out.println(cmd);
 	    	 statement.execute(cmd);
 	    	/* String cmd_getparticipantname="select fname from participants_table where participants_id='"+participant_id+"'";
@@ -89,9 +95,13 @@ public List<Autoaccident> getAutoaccident(){
 		    		resultSet.getString("estimate"),
 		    		resultSet.getString("seating"),
 		    		resultSet.getString("companion"),
-		    		resultSet.getString("vehicle_desc"),
+		    		resultSet.getString("vehicle_make"),
+		    		resultSet.getString("vehicle_model"),
+		    		resultSet.getString("vehicle_year"),
 		    		resultSet.getString("vehicle_hit"),
-		    		resultSet.getString("other_vehicle_desc"),
+		    		resultSet.getString("other_vehicle_make"),
+		    		resultSet.getString("other_vehicle_model"),
+		    		resultSet.getString("other_vehicle_year"),
 		    		resultSet.getString("carstopped"),
 		    		resultSet.getString("driverposition"),
 		    		resultSet.getString("vehicle_moving_time"),
@@ -99,7 +109,55 @@ public List<Autoaccident> getAutoaccident(){
 		    		resultSet.getString("estimated_rate"),
 		    		resultSet.getString("time_of_day"),
 		    		resultSet.getString("road_conditions"),
-		    		resultSet.getString("head_restraints")));
+		    		resultSet.getString("head_restraints"),
+		    		resultSet.getString("seatpos_after_accident"),
+		    		resultSet.getString("seat_after_accident"),
+		    		resultSet.getString("lap_seat_belt"),
+		    		resultSet.getString("shoulder_seat_belt"),
+		    		resultSet.getString("airbag"),
+		    		resultSet.getString("wereyou"),
+		    		resultSet.getString("body_position"),
+		    		resultSet.getString("head_position"),
+		    		resultSet.getString("hands_on_wheel"),
+		    		resultSet.getString("aware_of_crash"),
+		    		resultSet.getString("brace"),
+		    		resultSet.getString("ifyes"),
+		    		resultSet.getString("further_injury"),
+		    		resultSet.getString("ifyes_explain"),
+		    		resultSet.getString("during_after_crash"),
+		    		resultSet.getString("patient_body"),
+		    		resultSet.getString("body_strike"),
+		    		resultSet.getString("head_hit"),
+		    		resultSet.getString("rlshoulder_hit"),
+		    		resultSet.getString("rlhip_hit"),
+		    		resultSet.getString("rlknee_hit"),
+		    		resultSet.getString("chest_hit"),
+		    		resultSet.getString("rlarm_hit"),
+		    		resultSet.getString("rlleg_hit"),
+		    		resultSet.getString("otherpart_hit"),
+		    		resultSet.getString("wearing_glasses"),
+		    		resultSet.getString("glasses_impact"),
+		    		resultSet.getString("unconscious"),
+		    		resultSet.getString("uncon"),
+		    		resultSet.getString("estimated_amount"),
+		    		resultSet.getString("damage"),
+		    		resultSet.getString("was_anyone_cited"),
+		    		resultSet.getString("who"),
+		    		resultSet.getString("headache"),
+		    		resultSet.getString("dizziness"),
+		    		resultSet.getString("nausea"),
+		    		resultSet.getString("confusion"),
+		    		resultSet.getString("disorientation"),
+		    		resultSet.getString("neckpain"),
+		    		resultSet.getString("otherpain"),
+		    		resultSet.getString("first_symptom"),
+		    		resultSet.getString("after_accident"),
+		    		resultSet.getString("hosname"),
+		    		resultSet.getString("city"),
+		    		resultSet.getString("staylength"),
+		    		resultSet.getString("hospitalget"),
+		    		resultSet.getString("xray"),
+		    		resultSet.getString("wrong")));
 		}
     }catch(Exception e){
     	releaseResultSet(resultSet);
