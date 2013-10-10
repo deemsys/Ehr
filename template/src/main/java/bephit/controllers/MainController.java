@@ -20,14 +20,31 @@ import bephit.dao.AssignmentDAO;
 import bephit.dao.HippaDAO;
 =======
 import bephit.dao.AutoaccidentDAO;
+<<<<<<< .mine
+import bephit.dao.HardshipagreementDAO;
+import bephit.dao.InsuranceinformationDAO;
+import bephit.dao.InsuranceplanDAO;
+import bephit.dao.InsuranceverificationDAO;
+=======
 >>>>>>> .r17
+>>>>>>> .r22
 import bephit.dao.MainDAO;
+<<<<<<< .mine
+import bephit.dao.StaffchecklistDAO;
+=======
 <<<<<<< .mine
 import bephit.dao.MedicalDAO;
 import bephit.dao.PatientDAO;
 =======
+>>>>>>> .r22
 import bephit.dao.WorkaccidentDAO;
 import bephit.forms.AutoaccidentForm;
+<<<<<<< .mine
+import bephit.forms.HardshipagreementForm;
+import bephit.forms.InsuranceinformationForm;
+import bephit.forms.InsuranceplanForm;
+import bephit.forms.InsuranceverificationForm;
+=======
 >>>>>>> .r17
 import bephit.dao.ScreenDAO;
 import bephit.dao.TreatDAO;
@@ -35,7 +52,11 @@ import bephit.dao.TreatMinorDAO;
 import bephit.forms.AssignmentDetailsForm;
 import bephit.forms.HippaPrivacyForm;
 import bephit.forms.MedicalRecordsForm;
+>>>>>>> .r22
 import bephit.forms.ParticipantsDetailsForm;
+<<<<<<< .mine
+import bephit.forms.StaffchecklistForm;
+=======
 <<<<<<< .mine
 import bephit.forms.PatientDetailsForm;
 import bephit.forms.ScreeningAuthzForm;
@@ -46,6 +67,7 @@ import bephit.model.PatientDetails;
 import bephit.model.TreatMinor;
 import bephit.model.UserProfile;
 =======
+>>>>>>> .r22
 import bephit.forms.WorkaccidentForm;
 import bephit.model.*;
 >>>>>>> .r17
@@ -69,10 +91,26 @@ public class MainController {
 	@Autowired
 	WorkaccidentDAO workDAO;
 	
+	@Autowired
+	InsuranceinformationDAO infoDAO;
+	
+	@Autowired
+	InsuranceverificationDAO veriDAO;
+	
+	@Autowired
+	InsuranceplanDAO planDAO;
+	
+	@Autowired
+	HardshipagreementDAO hardDAO;
+	
+<<<<<<< .mine
+	@Autowired
+	StaffchecklistDAO staffDAO;
 	
 	
 	
 	
+=======
 	
 	@Autowired
 	AssignmentDAO assignmentDAO;
@@ -91,6 +129,7 @@ public class MainController {
 	
 	@Autowired
 	HippaDAO hippaDAO;
+>>>>>>> .r22
  
 	@RequestMapping(value={"/", "/welcome"}, method = RequestMethod.GET)
 	public String printWelcome(ModelMap model) {
@@ -150,7 +189,115 @@ public class MainController {
 		
 		return "workaccident";
 	}
+	@RequestMapping(value="/insuranceinformation", method = RequestMethod.GET)
+	public String insuranceinformation(ModelMap model) {
+		
+		return "insuranceinformation";
+ 
+	}
 	
+	@RequestMapping(value="/insuranceinformation", method = RequestMethod.POST)
+	public String insert_insuranceinformation(@ModelAttribute("Insuranceinformation")  Insuranceinformation insuranceinformation,ModelMap model) {
+		model.put("Insuranceinformation", insuranceinformation);
+		model.addAttribute("InsuranceinformationForm",insuranceinformation);
+    	int c =infoDAO.setInsuranceinformation(insuranceinformation);
+    	InsuranceinformationForm insuranceinformationForm= new InsuranceinformationForm();
+    	insuranceinformationForm.setInsuranceinformation(infoDAO.getInsuranceinformation());
+		model.addAttribute("InsuranceinformationForm",insuranceinformationForm);
+
+		//System.out.println(autoaccident.getAdjustersname());
+	    
+		
+		return "insuranceinformation";
+	}
+	
+	@RequestMapping(value="/insuranceverification", method = RequestMethod.GET)
+	public String insuranceverification(ModelMap model) {
+		
+		return "insuranceverification";
+ 
+	}
+	
+	@RequestMapping(value="/insuranceverification", method = RequestMethod.POST)
+	public String insert_insuranceverification(@ModelAttribute("Insuranceverification")  Insuranceverification insuranceverification,ModelMap model) {
+		model.put("Insuranceverification", insuranceverification);
+		model.addAttribute("InsuranceverificationForm",insuranceverification);
+    	int d =veriDAO.setInsuranceverification(insuranceverification);
+    	InsuranceverificationForm insuranceverificationForm= new InsuranceverificationForm();
+    	insuranceverificationForm.setInsuranceverification(veriDAO.getInsuranceverification());
+		model.addAttribute("InsuranceverificationForm",insuranceverificationForm);
+
+		//System.out.println(autoaccident.getAdjustersname());
+	    
+		
+		return "insuranceverification";
+	}
+	@RequestMapping(value="/insuranceplan", method = RequestMethod.GET)
+	public String insuranceplan(ModelMap model) {
+		
+		return "insuranceplan";
+ 
+	}
+	
+	@RequestMapping(value="/insuranceplan", method = RequestMethod.POST)
+	public String insert_insuranceplan(@ModelAttribute("Insuranceplan")  Insuranceplan insuranceplan,ModelMap model) {
+		model.put("Insuranceplan", insuranceplan);
+		model.addAttribute("InsuranceplanForm",insuranceplan);
+    	int e =planDAO.setInsuranceplan(insuranceplan);
+    	InsuranceplanForm insuranceplanForm= new InsuranceplanForm();
+    	insuranceplanForm.setInsuranceplan(planDAO.getInsuranceplan());
+		model.addAttribute("InsuranceplanForm",insuranceplanForm);
+
+		//System.out.println(autoaccident.getAdjustersname());
+	    
+		
+		return "insuranceplan";
+	}
+	
+	@RequestMapping(value="/hardshipagreement", method = RequestMethod.GET)
+	public String hardshipagreement(ModelMap model) {
+		
+		return "hardshipagreement";
+ 
+	}
+	
+
+	@RequestMapping(value="/hardshipagreement", method = RequestMethod.POST)
+	public String insert_hardshipagreement(@ModelAttribute("Hardshipagreement")  Hardshipagreement hardshipagreement,ModelMap model) {
+		model.put("Hardshipagreement", hardshipagreement);
+		model.addAttribute("HardshipagreementForm",hardshipagreement);
+    	int f =hardDAO.setHardshipagreement(hardshipagreement);
+    	HardshipagreementForm hardshipagreementForm= new HardshipagreementForm();
+    	hardshipagreementForm.setHardshipagreement(hardDAO.getHardshipagreement());
+		model.addAttribute("HardshipagreementForm",hardshipagreementForm);
+
+		//System.out.println(autoaccident.getAdjustersname());
+	    
+		
+		return "hardshipagreement";
+	}
+	
+	@RequestMapping(value="/staffchecklist", method = RequestMethod.GET)
+	public String staffchecklist(ModelMap model) {
+		
+		return "staffchecklist";
+ 
+	}
+	
+	@RequestMapping(value="/staffchecklist", method = RequestMethod.POST)
+	public String insert_staffchecklist(@ModelAttribute("Staffchecklist")  Staffchecklist staffchecklist,ModelMap model) {
+		model.put("Staffchecklist", staffchecklist);
+		model.addAttribute("StaffchecklistForm",staffchecklist);
+    	int g =staffDAO.setStaffchecklist(staffchecklist);
+    	StaffchecklistForm staffchecklistForm= new StaffchecklistForm();
+    	staffchecklistForm.setStaffchecklist(staffDAO.getStaffchecklist());
+		model.addAttribute("StaffchecklistForm",staffchecklistForm);
+
+		//System.out.println(autoaccident.getAdjustersname());
+	    
+		
+		return "staffchecklist";
+	}
 	@RequestMapping(value="/loginfailed", method = RequestMethod.GET)
 	public String loginerror(ModelMap model) {
 		model.addAttribute("error", "true");
