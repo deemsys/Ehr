@@ -15,13 +15,44 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 
+<<<<<<< .mine
+import bephit.dao.AssignmentDAO;
+import bephit.dao.HippaDAO;
+=======
 import bephit.dao.AutoaccidentDAO;
+>>>>>>> .r17
 import bephit.dao.MainDAO;
+<<<<<<< .mine
+import bephit.dao.MedicalDAO;
+import bephit.dao.PatientDAO;
+=======
 import bephit.dao.WorkaccidentDAO;
 import bephit.forms.AutoaccidentForm;
+>>>>>>> .r17
+import bephit.dao.ScreenDAO;
+import bephit.dao.TreatDAO;
+import bephit.dao.TreatMinorDAO;
+import bephit.forms.AssignmentDetailsForm;
+import bephit.forms.HippaPrivacyForm;
+import bephit.forms.MedicalRecordsForm;
 import bephit.forms.ParticipantsDetailsForm;
+<<<<<<< .mine
+import bephit.forms.PatientDetailsForm;
+import bephit.forms.ScreeningAuthzForm;
+import bephit.forms.TreatDetailsForm;
+import bephit.forms.TreatMinorDetailsForm;
+import bephit.model.MedicalRecords;
+import bephit.model.PatientDetails;
+import bephit.model.TreatMinor;
+import bephit.model.UserProfile;
+=======
 import bephit.forms.WorkaccidentForm;
 import bephit.model.*;
+>>>>>>> .r17
+import bephit.model.Assignment;
+import bephit.model.Treatform;
+import bephit.model.screeningAuthz;
+import bephit.model.HippaPrivacy;
 
  
  
@@ -42,6 +73,24 @@ public class MainController {
 	
 	
 	
+	
+	@Autowired
+	AssignmentDAO assignmentDAO;
+	
+	@Autowired
+	TreatDAO treatDAO;
+	
+	@Autowired
+	TreatMinorDAO minorDAO;
+	
+	@Autowired
+	MedicalDAO medicalDAO;
+	
+	@Autowired
+	ScreenDAO screenDAO;
+	
+	@Autowired
+	HippaDAO hippaDAO;
  
 	@RequestMapping(value={"/", "/welcome"}, method = RequestMethod.GET)
 	public String printWelcome(ModelMap model) {
@@ -112,6 +161,158 @@ public class MainController {
 	@RequestMapping(value="/logout", method = RequestMethod.GET)
 	public String logout(ModelMap model) {
 		return "login";
+ 
+	}
+	
+<<<<<<< .mine
+	@RequestMapping(value="/patientDetails",method=RequestMethod.GET)
+	public String patientDetails(ModelMap model)
+	{
+		return "patientDetails";
+	}
+
+	@RequestMapping(value="/Assignment",method=RequestMethod.GET)
+	public String Assignment(ModelMap model)
+	{
+		return "Assignment";
+	}
+	
+	@RequestMapping(value="/treatform",method=RequestMethod.GET)
+	public String treatform(ModelMap model)
+	{
+		return "treatform";
+	}
+	@RequestMapping(value="/treatminor",method=RequestMethod.GET)
+	public String treatminor(ModelMap model)
+	{
+		return "treatminor";
+	}
+	
+	
+	@RequestMapping(value="/medicalrecords",method=RequestMethod.GET)
+	public String medicalrecords(ModelMap model)
+	{
+		return "medicalrecords";
+	}
+	
+	@RequestMapping(value="/screeningAuthz",method=RequestMethod.GET)
+	public String screeningAuthz(ModelMap model)
+	{
+		return "screeningAuthz";
+	}
+	
+	@RequestMapping(value="/Hippaprivacy",method=RequestMethod.GET)
+	public String Hippaprivacy(ModelMap model)
+	{
+		return "Hippaprivacy";
+	}
+	
+	@RequestMapping(value="/patientDetails", method = RequestMethod.POST)
+	public String insertpatientDetails(@ModelAttribute("PatientDetails") PatientDetails patientdetails,ModelMap model) {
+		model.put("PatientDetails", patientdetails);
+		model.addAttribute("PatientDetailsForm",patientdetails);
+		int a=patientDAO.setPatientDetails(patientdetails);
+         PatientDetailsForm patientdetailsform= new PatientDetailsForm();
+		patientdetailsform.setPatientDetails(patientDAO.getPatientDetails());
+		model.addAttribute("PatientDetailsForm",patientdetailsform);
+
+		System.out.println("patientdetails");
+	    
+		return "patientDetails";
+ 
+	}
+	
+	@RequestMapping(value="/Assignment", method = RequestMethod.POST)
+	public String insertassignmentDetails(@ModelAttribute("Assignment") Assignment assignmentdetails,ModelMap model) {
+		model.put("Assignment", assignmentdetails);
+		model.addAttribute("AssignmentDetailsForm",assignmentdetails);
+		int a=assignmentDAO.setAssignmentDetails(assignmentdetails);
+         AssignmentDetailsForm assignmentdetailsform= new AssignmentDetailsForm();
+		assignmentdetailsform.setAssignmentDetails(assignmentDAO.getAssignmentDetails());
+		model.addAttribute("AssignmentDetailsForm",assignmentdetailsform);
+
+		System.out.println("assignment");
+	    
+		return "Assignment";
+ 
+	}
+	
+=======
+>>>>>>> .r17
+	@RequestMapping(value="/treatform", method = RequestMethod.POST)
+	public String inserttreatDetails(@ModelAttribute("Treatform") Treatform treatdetails,ModelMap model) {
+		model.put("Treatform", treatdetails);
+		model.addAttribute("TreatDetailsForm",treatdetails);
+		int a=treatDAO.setTreatDetails(treatdetails);
+         TreatDetailsForm treatdetailsform= new TreatDetailsForm();
+		treatdetailsform.setTreatDetails(treatDAO.getTreatDetails());
+		model.addAttribute("TreatDetailsForm",treatdetailsform);
+
+		System.out.println("treat");
+	    
+		return "treatform";
+ 
+	}
+	
+	@RequestMapping(value="/treatminor", method = RequestMethod.POST)
+	public String insertminorDetails(@ModelAttribute("TreatMinor") TreatMinor minordetails,ModelMap model) {
+		model.put("TreatMinor", minordetails);
+		model.addAttribute("TreatMinorDetailsForm",minordetails);
+		int a=minorDAO.setMinorDetails(minordetails);
+         TreatMinorDetailsForm treatminordetailsform= new TreatMinorDetailsForm();
+		treatminordetailsform.setMinorDetails(minorDAO.getMinorDetails());
+		model.addAttribute("TreatMinorDetailsForm",treatminordetailsform);
+
+		System.out.println("treatminor");
+	    
+		return "treatminor";
+ 
+	}
+	
+	
+	@RequestMapping(value="/medicalrecords", method = RequestMethod.POST)
+	public String insertmedicalDetails(@ModelAttribute("MedicalRecords") MedicalRecords medicaldetails,ModelMap model) {
+		model.put("MedicalRecords", medicaldetails);
+		model.addAttribute("MedicalRecordsForm",medicaldetails);
+		int a=medicalDAO.setMedicalDetails(medicaldetails);
+        MedicalRecordsForm medicalrecordsform= new MedicalRecordsForm();
+		medicalrecordsform.setMedicalDetails(medicalDAO.getMedicalDetails());
+		model.addAttribute("MedicalRecordsForm",medicalrecordsform);
+
+		System.out.println("MedicalRecords");
+	    
+		return "medicalrecords";
+ 
+	}
+	
+	@RequestMapping(value="/screeningAuthz", method = RequestMethod.POST)
+	public String insertscreenDetails(@ModelAttribute("screeningAuthz") screeningAuthz screeningdetails,ModelMap model) {
+		model.put("screeningAuthz", screeningdetails);
+		model.addAttribute("ScreeningAuthzForm",screeningdetails);
+		int a=screenDAO.setScreeningDetails(screeningdetails);
+        ScreeningAuthzForm screeningauthzform= new ScreeningAuthzForm();
+		screeningauthzform.setScreeningDetails(screenDAO.getScreeningDetails());
+		model.addAttribute("ScreeningAuthzForm",screeningauthzform);
+
+		System.out.println("Screening");
+	    
+		return "screeningAuthz";
+ 
+	}
+	
+	
+	@RequestMapping(value="/Hippaprivacy", method = RequestMethod.POST)
+	public String inserthippaDetails(@ModelAttribute("HippaPrivacy") HippaPrivacy privacydetails,ModelMap model) {
+		model.put("HippaPrivacy", privacydetails);
+		model.addAttribute("HippaPrivacyForm",privacydetails);
+		int a=hippaDAO.setPrivacyDetails(privacydetails);
+		HippaPrivacyForm hippaprivacyform= new HippaPrivacyForm();
+		hippaprivacyform.setPrivacyDetails(hippaDAO.getPrivacyDetails());
+		model.addAttribute("HippaPrivacyForm",hippaprivacyform);
+
+		System.out.println("Hippa");
+	    
+		return "Hippaprivacy";
  
 	}
 	
