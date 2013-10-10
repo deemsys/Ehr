@@ -587,13 +587,13 @@ $(function() {
 				  <tr class="row1">
                 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>After accident,I had the following</td>
 				 <td valign="top" align="left" class="input_txt">
-				 <input type="checkbox" name="check1" value="headache">Headache&nbsp;&nbsp;&nbsp;&nbsp; 
-				 <input type="checkbox" name="check1" value="dizziness">Dizziness&nbsp;&nbsp;&nbsp;&nbsp;
-				 <input type="checkbox" name="check1" value="nausea">Nausea&nbsp;&nbsp;&nbsp;&nbsp;
-				 <input type="checkbox" name="check1" value="confusion">Confusion&nbsp;&nbsp;&nbsp;&nbsp;
-				 <input type="checkbox" name="check1" value="disorientation">Disorientation&nbsp;&nbsp;&nbsp;&nbsp;
-				 <input type="checkbox" name="check1" value="neckpain">Neck pain&nbsp;&nbsp;&nbsp;&nbsp;
-				 <input type="checkbox" name="check1" value="otherpain">Other&nbsp;&nbsp;&nbsp;&nbsp;
+				 <input type="checkbox" name="headache" value="headache">Headache&nbsp;&nbsp;&nbsp;&nbsp; 
+				 <input type="checkbox" name="dizziness" value="dizziness">Dizziness&nbsp;&nbsp;&nbsp;&nbsp;
+				 <input type="checkbox" name="nausea" value="nausea">Nausea&nbsp;&nbsp;&nbsp;&nbsp;
+				 <input type="checkbox" name="confusion" value="confusion">Confusion&nbsp;&nbsp;&nbsp;&nbsp;
+				 <input type="checkbox" name="disorientation" value="disorientation">Disorientation&nbsp;&nbsp;&nbsp;&nbsp;
+				 <input type="checkbox" name="neckpain" value="neckpain">Neck pain&nbsp;&nbsp;&nbsp;&nbsp;
+				 <input type="checkbox" name="otherpain" value="otherpain">Other&nbsp;&nbsp;&nbsp;&nbsp;
 				 <input type="text" class="input_txtbx1" id="inp_id" name="otherpain" placeholder="If other" />
 				 </td>
 				 </tr>

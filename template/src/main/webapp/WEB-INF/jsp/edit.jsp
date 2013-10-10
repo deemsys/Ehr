@@ -2,7 +2,6 @@
 
 <div>
 <h2>Create a free account</h2>
-
 <sf:form action="submituser" method="POST" modelAttribute="userProfile">         
    <fieldset> 
    <table cellspacing="0">
