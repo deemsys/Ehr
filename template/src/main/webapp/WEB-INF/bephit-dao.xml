@@ -36,6 +36,25 @@
     <bean id="WorkaccidentDAO" class="bephit.dao.WorkaccidentDAO">
     	<property name="dataSource" ref="dataSource" />
     </bean>
+<<<<<<< .mine
+    <bean id="InsuranceinformationDAO" class="bephit.dao.InsuranceinformationDAO">
+    	<property name="dataSource" ref="dataSource" />
+    </bean>
+    <bean id="InsuranceverificationDAO" class="bephit.dao.InsuranceverificationDAO">
+    	<property name="dataSource" ref="dataSource" />
+    </bean>
+     <bean id="InsuranceplanDAO" class="bephit.dao.InsuranceplanDAO">
+    	<property name="dataSource" ref="dataSource" />
+    </bean>
+    <bean id="HardshipagreementDAO" class="bephit.dao.HardshipagreementDAO">
+    	<property name="dataSource" ref="dataSource" />
+    </bean>
+    <bean id="StaffchecklistDAO" class="bephit.dao.StaffchecklistDAO">
+    	<property name="dataSource" ref="dataSource" />
+    </bean>
+   
+=======
 >>>>>>> .r17
  
+>>>>>>> .r22
 </beans>
