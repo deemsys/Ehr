@@ -1,35 +1,67 @@
 package bephit.model;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class Workaccident {
+	@NotEmpty
 	private String job_classification;
+	@NotEmpty
 	private String doyou_pos;
+	@NotEmpty
 	private String doyou;
+	@NotEmpty
 	private String pick;
+	@NotEmpty
 	private String carry;
+	@NotEmpty
 	private String injury_occur;
+	@NotEmpty
 	private String saw_accident;
+	@NotEmpty
 	private String title;
+	@NotEmpty
 	private String present_job;
+	@NotEmpty
 	private String time_loss;
+	@NotEmpty
 	private String absenteeism;
+	@NotEmpty
 	private String type_of_light;
+	@NotEmpty
 	private String lighting;
+	@NotEmpty
 	private String pick_lift;
+	@NotEmpty
 	private String how_much;
+	@NotEmpty
 	private String how_often;
+	@NotEmpty
 	private String where_to_where;
+	@NotEmpty
 	private String lift_from;
+	@NotEmpty
 	private String liftin_orout;
+	@NotEmpty
 	private String workpos;
+	@NotEmpty
 	private String push_pull;
+	@NotEmpty
 	private String jobpp;
+	@NotEmpty
 	private String work_area;
+	@NotEmpty
 	private String warea;
+	@NotEmpty
 	private String levers;
+	@NotEmpty
 	private String overhead;
+	@NotEmpty
 	private String no_of_employees;
+	@NotEmpty
 	private String like_job;
+	@NotEmpty
 	private String return_job;
+	@NotEmpty
 	private String changes_in_job;
 	
 

@@ -1,4 +1,4 @@
-<%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
@@ -21,7 +21,7 @@
 <div id="right_content">
 <form action="insuranceplan" method="POST">
 
-<table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table">
+<table cellpadding="0" cellspacing="0" border="0" width="55%" class="margin_table">
        <tr>
         <td valign="top" align="left" style="padding:5px 0 10px 0;">&nbsp;
 		<div class="status success" style="display: none;">
@@ -38,11 +38,11 @@
 	            <div class="contentbox">
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr class="row1">
-              <td ><input type="text" class="input_txtbx1" name="insure_comp" id="insure_comp" placeholder="Name of Insurance Company" /></td>
+              <td ><input type="text" class="input_txtbx1" name="insure_comp" id="insure_comp" placeholder="Name of Insurance Company" /><span class="err"><form:errors path="Insuranceplan.insure_comp"></form:errors></td>
               </tr>
               <tr class="row1">
               <td>
-              <input type="text" class="input_txtbx1" name="addr" id="addr" placeholder="Address"/></td>
+              <input type="text" class="input_txtbx1" name="addr" id="addr" placeholder="Address"/><span class="err"><form:errors path="Insuranceplan.addr"></form:errors></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -51,13 +51,13 @@
 		BENEFITS FOR ACCIDENT</p></tr></table>
 		<table cellpadding="0" cellspacing="0" border="0" width="100%">
 		<tr class="row1">
-        <td ><input type="text" class="input_txtbx1" name="pat_name" id="pat_name" placeholder="Patient's Name" /></td>
+        <td ><input type="text" class="input_txtbx1" name="pat_name" id="pat_name" placeholder="Patient's Name" /><span class="err"><form:errors path="Insuranceplan.pat_name"></form:errors></td>
         </tr>
         <tr class="row1">
-        <td ><input type="text" class="input_txtbx1" name="accident_date" id="datepicker" placeholder="Date of Accident" /></td>
+        <td ><input type="text" class="input_txtbx1" name="accident_date" id="datepicker" placeholder="Date of Accident" /><span class="err"><form:errors path="Insuranceplan.accident_date"></form:errors></td>
         </tr>
         <tr class="row1">
-        <td ><input type="text" class="input_txtbx1" name="enrollee" id="enrollee" placeholder="Subscriber/Enrollee No" /></td>
+        <td ><input type="text" class="input_txtbx1" name="enrollee" id="enrollee" placeholder="Subscriber/Enrollee No" /><span class="err"><form:errors path="Insuranceplan.enrollee"></form:errors></td>
         </tr>
         </table>
         <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -86,11 +86,11 @@
         </tr>
         <tr class="row1">
         <td></td>
-        <td align="center"><input type="text" class="input_txtbx1" name="name_of_clinic" id="name_of_clinic" placeholder="Name of clinic"/></td>
+        <td align="center"><input type="text" class="input_txtbx1" name="name_of_clinic" id="name_of_clinic" placeholder="Name of clinic"/><br><span class="err"><form:errors path="Insuranceplan.name_of_clinic"></form:errors></td>
         </tr>
         <tr>
-        <td><input type="text" class="input_txtbx1" name="pat" id="pat"/></td>
-        <td align="center"><input type="text" class="input_txtbx1" name="authorized" id="authorized"/></td>
+        <td><input type="text" class="input_txtbx1" name="pat" id="pat"/><br><span class="err"><form:errors path="Insuranceplan.pat"></form:errors></td>
+        <td align="center"><input type="text" class="input_txtbx1" name="authorized" id="authorized"/><br><span class="err"><form:errors path="Insuranceplan.authorized"></form:errors></td>
         </tr>
         <tr>
         <td>Patient</td>
@@ -112,4 +112,4 @@
         </div>
         </body>
         </html>
-            
+         <jsp:include page="footer.jsp"></jsp:include>   

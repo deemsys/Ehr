@@ -1,9 +1,18 @@
 package bephit.model;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class Hardshipagreement{
+	@NotEmpty
 	private String date;
+	
+	@NotEmpty
 	private String print_pat_name;
+	
+	@NotEmpty
 	private String pat_sign;
+	
+	@NotEmpty
 	private String witness_sign;
 	
 public Hardshipagreement(){

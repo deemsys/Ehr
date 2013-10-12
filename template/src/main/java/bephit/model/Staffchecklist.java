@@ -1,21 +1,39 @@
 package bephit.model;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class Staffchecklist{
+	@NotEmpty
 	private String patinfo;
+	@NotEmpty
 	private String screening;
+	@NotEmpty
 	private String aob;
+	@NotEmpty
 	private String history;
+	@NotEmpty
 	private String xray_sheet;
+	@NotEmpty
 	private String consent;
+	@NotEmpty
 	private String report;
+	@NotEmpty
 	private String pat_name;
+	@NotEmpty
 	private String insure;
+	@NotEmpty
 	private String damage_amount;
+	@NotEmpty
 	private String fault_insure;
+	@NotEmpty
 	private String med_pay;
+	@NotEmpty
 	private String other_attorney;
+	@NotEmpty
 	private String protect_received;
+	@NotEmpty
 	private String bill;
+	@NotEmpty
 	private String re_date;
 	
 public Staffchecklist(){

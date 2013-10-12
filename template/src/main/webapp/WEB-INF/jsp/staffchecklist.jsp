@@ -1,4 +1,4 @@
-<%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
@@ -24,7 +24,7 @@
 <div id="right_content">
 <form action="staffchecklist" method="POST">
 
-<table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table">
+<table cellpadding="0" cellspacing="0" border="0" width="55%" class="margin_table">
        <tr>
         <td valign="top" align="left" style="padding:5px 0 10px 0;">&nbsp;
 		<div class="status success" style="display: none;">
@@ -75,7 +75,7 @@
               <tr class="row1">
               <td valign="middle" align="left" class="input_txt">Patient Name</td>
 			  <td valign="top" align="left" class="input_txt">
-		      <input type="text" class="input_txtbx1" id="inp_id" name="pat_name" />
+		      <input type="text" class="input_txtbx1" id="inp_id" name="pat_name" /><span class="err"><form:errors path="Staffchecklist.pat_name"></form:errors>
 		      </td>
 			  </tr>
 			  <!-- </table>
@@ -84,49 +84,49 @@
 			  <tr class="row1">
               <td valign="middle" align="left" class="input_txt">Insurance/Attorney</td>
 			  <td valign="top" align="left" class="input_txt">
-		      <input type="text" class="input_txtbx1" id="inp_id" name="insure" />
+		      <input type="text" class="input_txtbx1" id="inp_id" name="insure" /><span class="err"><form:errors path="Staffchecklist.insure"></form:errors>
 		      </td>
 			  </tr>
 			  <tr class="row1">
               <td valign="middle" align="left" class="input_txt">Damage Amount</td>
 			  <td valign="top" align="left" class="input_txt">
-		      <input type="text" class="input_txtbx1" id="inp_id" name="damage_amount" />
+		      <input type="text" class="input_txtbx1" id="inp_id" name="damage_amount" /><span class="err"><form:errors path="Staffchecklist.damage_amount"></form:errors>
 		      </td>
 			  </tr>
 			  <tr class="row1">
               <td valign="middle" align="left" class="input_txt">Notice of Assignment to Fault Insurance</td>
 			  <td valign="top" align="left" class="input_txt">
-		      <input type="text" class="input_txtbx1" id="inp_id" name="fault_insure" />
+		      <input type="text" class="input_txtbx1" id="inp_id" name="fault_insure" /><span class="err"><form:errors path="Staffchecklist.fault_insure"></form:errors>
 		      </td>
 			  </tr>
 			  <tr class="row1">
               <td valign="middle" align="left" class="input_txt">Notice of Assignment to Med Pay</td>
 			  <td valign="top" align="left" class="input_txt">
-		      <input type="text" class="input_txtbx1" id="inp_id" name="med_pay" />
+		      <input type="text" class="input_txtbx1" id="inp_id" name="med_pay" /><span class="err"><form:errors path="Staffchecklist.med_pay"></form:errors>
 		      </td>
 			  </tr>
 			  <tr class="row1">
               <td valign="middle" align="left" class="input_txt">Notice of Assignment to other Attorney</td>
 			  <td valign="top" align="left" class="input_txt">
-		      <input type="text" class="input_txtbx1" id="inp_id" name="other_attorney" />
+		      <input type="text" class="input_txtbx1" id="inp_id" name="other_attorney" /><span class="err"><form:errors path="Staffchecklist.other_attorney"></form:errors>
 		      </td>
 			  </tr>
 			  <tr class="row1">
               <td valign="middle" align="left" class="input_txt">Attorney Letter of Protection Received</td>
 			  <td valign="top" align="left" class="input_txt">
-		      <input type="text" class="input_txtbx1" id="inp_id" name="protect_received" />
+		      <input type="text" class="input_txtbx1" id="inp_id" name="protect_received" /><span class="err"><form:errors path="Staffchecklist.protect_received"></form:errors>
 		      </td>
 			  </tr>
 			  <tr class="row1">
               <td valign="middle" align="left" class="input_txt">Amount & Dated Billed</td>
 			  <td valign="top" align="left" class="input_txt">
-		      <input type="text" class="input_txtbx1" name="bill" id="datepicker"/>
+		      <input type="text" class="input_txtbx1" name="bill" id="datepicker"/><span class="err"><form:errors path="Staffchecklist.bill"></form:errors>
 		      </td>
 			  </tr>
 			  <tr class="row1">
               <td valign="middle" align="left" class="input_txt">Reimbursement Date</td>
 			  <td valign="top" align="left" class="input_txt">
-		      <input type="text" class="input_txtbx1" name="re_date" id="datepicker1" />
+		      <input type="text" class="input_txtbx1" name="re_date" id="datepicker1" /><span class="err"><form:errors path="Staffchecklist.re_date"></form:errors>
 		      </td>
 			  </tr>
 			  </table>
@@ -146,7 +146,7 @@
 			  </body>
 			  </html>
 			  
-			  
+			 <jsp:include page="footer.jsp"></jsp:include> 
 			  
 			  
 			

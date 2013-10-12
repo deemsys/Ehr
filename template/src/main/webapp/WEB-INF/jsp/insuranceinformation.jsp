@@ -1,4 +1,4 @@
-<%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
@@ -48,11 +48,11 @@
               <br>
               <tr class="row1">
               <td>Patient's Name</td>
-              <td> <input type="text" class="input_txtbx1" name="patient_name" id="patient_name" /></td>
+              <td> <input type="text" class="input_txtbx1" name="patient_name" id="patient_name" /><br><span class="err"><form:errors path="Insuranceinformation.patient_name"></form:errors></td>
               </tr>
               <tr class="row1">
               <td>Date of Accident/injury</td>
-              <td> <input type="text" class="input_txtbx1" name="date_of_accident" id="datepicker" /></td>
+              <td> <input type="text" class="input_txtbx1" name="date_of_accident" id="datepicker" /><span class="err"><form:errors path="Insuranceinformation.date_of_accident"></form:errors></td>
               </tr>
               <tr class="row1">
               <td>Do you have health insurance?</td>
@@ -60,25 +60,25 @@
               </tr>
               <tr class="row1">
               <td>Employer's Name</td>
-              <td> <input type="text" class="input_txtbx1" name="employers_name" id="employers_name" /></td>
+              <td> <input type="text" class="input_txtbx1" name="employers_name" id="employers_name" /><span class="err"><form:errors path="Insuranceinformation.employers_name"></form:errors></td>
               </tr>
               <tr class="row1">
               <td>Insurance Company</td>
-              <td> <input type="text" class="input_txtbx1" name="insurance_company" id="insurance_company" /></td>
+              <td> <input type="text" class="input_txtbx1" name="insurance_company" id="insurance_company" /><br><span class="err"><form:errors path="Insuranceinformation.insurance_company"></form:errors></td>
               <td>Phone#</td>
-              <td><input type="text" class="input_txtbx1" name="phone" id="phone" /></td>
+              <td><input type="text" class="input_txtbx1" name="phone" id="phone" /><br><span class="err"><form:errors path="Insuranceinformation.phone"></form:errors></td>
               </tr>
               <tr class="row1">
               <td>Policy #</td>
-              <td> <input type="text" class="input_txtbx1" name="policy" id="policy" /></td>
+              <td> <input type="text" class="input_txtbx1" name="policy" id="policy" /><br><span class="err"><form:errors path="Insuranceinformation.policy"></form:errors></td>
               <td>Group#</td>
-              <td><input type="text" class="input_txtbx1" name="group" id="group" /></td>
+              <td><input type="text" class="input_txtbx1" name="group" id="group" /><br><span class="err"><form:errors path="Insuranceinformation.policy"></form:errors></td>
               </tr>
               <tr class="row1">
               <td>Supplemental Insurance Company</td>
-              <td> <input type="text" class="input_txtbx1" name="supplemental_company" id="supplemental_company" /></td>
+              <td> <input type="text" class="input_txtbx1" name="supplemental_company" id="supplemental_company" /><br><span class="err"><form:errors path="Insuranceinformation.supplemental_company"></form:errors></td>
               <td>Phone#</td>
-              <td> <input type="text" class="input_txtbx1" name="sup_phone" id="sup_phone" /></td>
+              <td> <input type="text" class="input_txtbx1" name="sup_phone" id="sup_phone" /><br><span class="err"><form:errors path="Insuranceinformation.sup_phone"></form:errors></td>
               </tr>
               </table>
               
@@ -96,15 +96,15 @@
  		<table cellpadding="0" cellspacing="0" border="0" width="100%">
  		<tr class="row1">
  		<td>Patient Signature</td>
-        <td> <input type="text" class="input_txtbx1" name="patient_sign" id="patient_sign" /></td>
+        <td> <input type="text" class="input_txtbx1" name="patient_sign" id="patient_sign" /><br><span class="err"><form:errors path="Insuranceinformation.patient_sign"></form:errors></td>
         <td>Date</td>
-        <td> <input type="text" class="input_txtbx1" name="date" id="datepicker1" /></td>
+        <td> <input type="text" class="input_txtbx1" name="date" id="datepicker1" /><br><span class="err"><form:errors path="Insuranceinformation.date"></form:errors></td>
         </tr>
         <tr class="row1">
  		<td>Spouse or Guardian Signature</td>
-        <td> <input type="text" class="input_txtbx1" name="spouse_sign" id="spouse_sign" /></td>
+        <td> <input type="text" class="input_txtbx1" name="spouse_sign" id="spouse_sign" /><br><span class="err"><form:errors path="Insuranceinformation.spouse_sign"></form:errors></td>
         <td>Date</td>
-        <td> <input type="text" class="input_txtbx1" name="date1" id="datepicker2" /></td>
+        <td> <input type="text" class="input_txtbx1" name="date1" id="datepicker2" /><br><span class="err"><form:errors path="Insuranceinformation.date1"></form:errors></td>
         </tr>
         <tr>
 	    <td valign="top" align="center">&nbsp;</td>
@@ -121,5 +121,5 @@
         </body>
         </html>
         
-	
+	<jsp:include page="footer.jsp"></jsp:include>
               

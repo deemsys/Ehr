@@ -1,73 +1,143 @@
 package bephit.model;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class Autoaccident {
+	@NotEmpty
 	private String claimnumber;
+	@NotEmpty
 	private String adjustersname;
+	@NotEmpty
 	private String estimate;
+	@NotEmpty
 	private String seating;
+	@NotEmpty
 	private String companion;
+	@NotEmpty
 	private String vehicle_make;
+	@NotEmpty
 	private String vehicle_model;
+	@NotEmpty
 	private String vehicle_year;
+	@NotEmpty
 	private String vehicle_hit;
+	@NotEmpty
 	private String other_vehicle_make;
+	@NotEmpty
 	private String other_vehicle_model;
+	@NotEmpty
 	private String other_vehicle_year;
+	@NotEmpty
 	private String carstopped;
+	@NotEmpty
 	private String driverposition;
+	@NotEmpty
 	private String vehicle_moving_time;
+	@NotEmpty
 	private String wascar;
+	@NotEmpty
 	private String estimated_rate;
+	@NotEmpty
 	private String time_of_day;
+	@NotEmpty
 	private String road_conditions;
+	@NotEmpty
 	private String head_restraints;
+	@NotEmpty
 	private String seatpos_after_accident;
+	@NotEmpty
 	private String seat_after_accident;
+	@NotEmpty
 	private String lap_seat_belt;
+	@NotEmpty
 	private String shoulder_seat_belt;
+	@NotEmpty
 	private String airbag;
+	@NotEmpty
 	private String wereyou;
+	@NotEmpty
 	private String body_position;
+	@NotEmpty
 	private String head_position;
+	@NotEmpty
 	private String hands_on_wheel;
+	@NotEmpty
 	private String aware_of_crash;
+	@NotEmpty
 	private String brace;
+	@NotEmpty
 	private String ifyes;
+	@NotEmpty
 	private String further_injury;
+	@NotEmpty
 	private String ifyes_explain;
+	@NotEmpty
 	private String during_after_crash;
+	@NotEmpty
 	private String patient_body;
+	@NotEmpty
 	private String body_strike;
+	@NotEmpty
 	private String head_hit;
+	@NotEmpty
 	private String rlshoulder_hit;
+	@NotEmpty
 	private String rlhip_hit;
+	@NotEmpty
 	private String rlknee_hit;
+	@NotEmpty
 	private String chest_hit;
+	@NotEmpty
 	private String rlarm_hit;
+	@NotEmpty
 	private String rlleg_hit;
+	@NotEmpty
 	private String otherpart_hit;
+	@NotEmpty
 	private String wearing_glasses;
+	@NotEmpty
 	private String glasses_impact;
+	@NotEmpty
 	private String unconscious;
+	@NotEmpty
 	private String uncon;
+	@NotEmpty
 	private String estimated_amount;
+	@NotEmpty
 	private String damage;
+	@NotEmpty
 	private String was_anyone_cited;
+	@NotEmpty
 	private String who;
+	@NotEmpty
 	private String headache;
+	@NotEmpty
 	private String dizziness;
+	@NotEmpty
 	private String nausea;
+	@NotEmpty
 	private String confusion;
+	@NotEmpty
 	private String disorientation;
+	@NotEmpty
 	private String neckpain;
+	@NotEmpty
 	private String otherpain;
+	@NotEmpty
 	private String first_symptom;
+	@NotEmpty
 	private String after_accident;
+	@NotEmpty
 	private String hosname;
+	@NotEmpty
 	private String city;
+	@NotEmpty
 	private String staylength;
+	@NotEmpty
 	private String hospitalget;
+	@NotEmpty
 	private String xray;
+	@NotEmpty
 	private String wrong;
 	
 	

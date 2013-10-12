@@ -1,19 +1,35 @@
 package bephit.model;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class Insuranceinformation {
+	@NotEmpty
 	private String patient_name;
+	@NotEmpty
 	private String date_of_accident;
+	@NotEmpty
 	private String have_insurance;
+	@NotEmpty
 	private String employers_name;
+	@NotEmpty
 	private String insurance_company;
+	@NotEmpty
 	private String phone;
+	@NotEmpty
 	private String policy;
+	@NotEmpty
 	private String group;
+	@NotEmpty
 	private String supplemental_company;
+	@NotEmpty
 	private String sup_phone;
+	@NotEmpty
 	private String patient_sign;
+	@NotEmpty
 	private String date;
+	@NotEmpty
 	private String spouse_sign;
+	@NotEmpty
 	private String date1;
 	
 	
