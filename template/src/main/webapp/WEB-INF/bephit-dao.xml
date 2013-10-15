@@ -6,14 +6,16 @@
 	<bean id="mainDAO" class="bephit.dao.MainDAO">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
-<<<<<<< .mine
+
 	<bean id="patientDAO" class="bephit.dao.PatientDAO">
-=======
-	<bean id="AutoaccidentDAO" class="bephit.dao.AutoaccidentDAO">
->>>>>>> .r17
 		<property name="dataSource" ref="dataSource" />
 	</bean>
-<<<<<<< .mine
+
+	<bean id="AutoaccidentDAO" class="bephit.dao.AutoaccidentDAO">
+
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
 	<bean id="AssignmentDAO" class="bephit.dao.AssignmentDAO">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
@@ -32,11 +34,11 @@
 	<bean id="HippaDAO" class="bephit.dao.HippaDAO">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
-=======
+
     <bean id="WorkaccidentDAO" class="bephit.dao.WorkaccidentDAO">
     	<property name="dataSource" ref="dataSource" />
     </bean>
-<<<<<<< .mine
+
     <bean id="InsuranceinformationDAO" class="bephit.dao.InsuranceinformationDAO">
     	<property name="dataSource" ref="dataSource" />
     </bean>
@@ -53,8 +55,5 @@
     	<property name="dataSource" ref="dataSource" />
     </bean>
    
-=======
->>>>>>> .r17
- 
->>>>>>> .r22
+
 </beans>
