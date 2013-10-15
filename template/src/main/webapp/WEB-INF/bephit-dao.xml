@@ -8,11 +8,10 @@
 	</bean>
 
 	<bean id="patientDAO" class="bephit.dao.PatientDAO">
-		<property name="dataSource" ref="dataSource" />
+	<property name="dataSource" ref="dataSource" />
 	</bean>
 
 	<bean id="AutoaccidentDAO" class="bephit.dao.AutoaccidentDAO">
-
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 
@@ -39,21 +38,5 @@
     	<property name="dataSource" ref="dataSource" />
     </bean>
 
-    <bean id="InsuranceinformationDAO" class="bephit.dao.InsuranceinformationDAO">
-    	<property name="dataSource" ref="dataSource" />
-    </bean>
-    <bean id="InsuranceverificationDAO" class="bephit.dao.InsuranceverificationDAO">
-    	<property name="dataSource" ref="dataSource" />
-    </bean>
-     <bean id="InsuranceplanDAO" class="bephit.dao.InsuranceplanDAO">
-    	<property name="dataSource" ref="dataSource" />
-    </bean>
-    <bean id="HardshipagreementDAO" class="bephit.dao.HardshipagreementDAO">
-    	<property name="dataSource" ref="dataSource" />
-    </bean>
-    <bean id="StaffchecklistDAO" class="bephit.dao.StaffchecklistDAO">
-    	<property name="dataSource" ref="dataSource" />
-    </bean>
-   
-
+ 
 </beans>

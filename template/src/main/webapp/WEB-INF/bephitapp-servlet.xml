@@ -14,9 +14,11 @@
         <!-- Scans within the base package of the application for @Components to 
         configure as beans -->
     <!-- @Controller, @Service, @Configuration, etc. -->
+    
     <mvc:annotation-driven/>
     <mvc:resources mapping="/resources/**" location="/resources/" />
     <context:component-scan base-package="bephit" />
+   
     <bean id="viewResolver"
         class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/" />
