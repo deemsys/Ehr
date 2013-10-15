@@ -23,6 +23,7 @@ import bephit.dao.InsuranceinformationDAO;
 import bephit.dao.InsuranceplanDAO;
 import bephit.dao.InsuranceverificationDAO;
 import bephit.dao.MainDAO;
+import bephit.dao.SignupDAO;
 import bephit.dao.StaffchecklistDAO;
 import bephit.dao.WorkaccidentDAO;
 import bephit.forms.AutoaccidentForm;
@@ -31,6 +32,7 @@ import bephit.forms.InsuranceinformationForm;
 import bephit.forms.InsuranceplanForm;
 import bephit.forms.InsuranceverificationForm;
 import bephit.forms.ParticipantsDetailsForm;
+import bephit.forms.SignupForm;
 import bephit.forms.StaffchecklistForm;
 import bephit.forms.WorkaccidentForm;
 import bephit.model.*;
@@ -64,6 +66,10 @@ public class MainController {
 	
 	@Autowired
 	StaffchecklistDAO staffDAO;
+	
+	@Autowired
+	SignupDAO signDAO;
+	
 	
 	
 	
@@ -318,6 +324,33 @@ public class MainController {
 		return "signup";
  
 	}
+	
+
+	@RequestMapping(value="/signup", method = RequestMethod.POST)
+	public String insert_signup(@ModelAttribute("Signup")  @Valid Signup signup,BindingResult result,ModelMap model) {
+		if(result.hasErrors())
+		{
+			SignupForm signupForm= new SignupForm();
+	    	signupForm.setSignup(signDAO.getSignup());
+			model.addAttribute("SignupForm",signupForm);
+			model.addAttribute("Success","true");
+			return "signup";
+		}
+		
+		model.put("Signup", signup);
+		model.addAttribute("SignupForm",signup);
+    	int h =signDAO.setSignup(signup);
+    	SignupForm signupForm= new SignupForm();
+    	signupForm.setSignup(signDAO.getSignup());
+		model.addAttribute("SignupForm",signupForm);
+
+		//System.out.println(autoaccident.getAdjustersname());
+	    
+		
+		return "signup";
+	}
+	
+	
 	@RequestMapping(value="/loginfailed", method = RequestMethod.GET)
 	public String loginerror(ModelMap model) {
 		model.addAttribute("error", "true");
