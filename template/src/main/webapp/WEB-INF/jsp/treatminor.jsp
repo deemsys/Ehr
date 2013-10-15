@@ -37,8 +37,8 @@
                         <table cellpadding="0" cellspacing="0" border="0" width="50%">
                         <tr>
                         <div align="justify">
-                        <p id="mypar">I (We) being the parent or guardian of <input type="text" class="input_txtbx1" id="inp_id" name="guardian" />, a minor, being the age of <input type="text" class="input_txtbx1" id="inp_id" name="age" /> do hereby consent, authorize and request</p>
-                        <p id="mypar">Dr.<input type="text" class="input_txtbx1" id="inp_id" name="Drname" />to administer such treatment deemed advisable, necessary or requested on the above minor.</p>
+                        <p id="mypar">I (We) being the parent or guardian of <input type="text" class="input_txtbx1" id="inp_id" name="guardian" /><span class="err"><form:errors path="TreatMinor.guardian"></form:errors></span>, a minor, being the age of <input type="text" class="input_txtbx1" id="inp_id" name="age" /><span class="err"><form:errors path="TreatMinor.age"></form:errors></span> do hereby consent, authorize and request</p>
+                        <p id="mypar">Dr.<input type="text" class="input_txtbx1" id="inp_id" name="Drname" /><span class="err"><form:errors path="TreatMinor.Drname"></form:errors></span>to administer such treatment deemed advisable, necessary or requested on the above minor.</p>
                         <p id="mypar">I (We) agree to hold him free and harmless from any claims, suits for damages or complications which may result from such treatment.
                         
                         </p>
@@ -50,20 +50,20 @@
                         <tr class="row1">
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err"></span>Signed:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Signed">(Parent Or Guardian)</td>
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="signed"></td><br><span class="err"><form:errors path="TreatMinor.signed"></form:errors></span>
 				                  <tr> <td></td></tr>
                         
                         </tr>
                         <tr class="row1">
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="datepicker" name="pdate" /><br>
+				                  	<input type="text" class="input_txtbx1" id="datepicker" name="pdate" /><br><span class="err"><form:errors path="TreatMinor.pdate"></form:errors></span>
                         </td>
                         </tr>
                         <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Witness: </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="pwitness" /><br>
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="pwitness" /><br><span class="err"><form:errors path="TreatMinor.pwitness"></form:errors></span>
 				                  	</tr>
                         <tr>
 				  <td valign="top" align="center">&nbsp;</td>

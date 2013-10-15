@@ -16,6 +16,15 @@
 <form action="medicalrecords" method="POST">
 
 <table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table">
+<c:if test="${success==true}">
+        <tr>
+        <td valign="top" align="left" style="padding:5px 0 10px 0;">&nbsp;
+            <div id="success_statusbar" class="status success">
+            <p class="closestatus"><a title="Close" href="">x</a></p>
+            <p><img alt="Success" src="resources/images/icons/icon_success.png"><span>Success!</span>.</p>
+          </div>
+      </tr>
+    </c:if> 
       <tr>
       <td valign="top" align="left">
         	<div>
@@ -30,15 +39,15 @@
                         <table cellpadding="0" cellspacing="0" border="0" width="50%">
                         <tr>
                         <div align="justify">
-				                <p id="mypar">&nbsp;I, <input type="text" class="input_txtbx1" id="inp_id" name="name" />
-				                &nbsp;&nbsp;give my permission to release Medical Information, Records, X-ray Reports, or the following &nbsp;&nbsp;<input type="text" class="input_txtbx1" id="inp_id" name="medicalinformation" /> &nbsp;&nbsp;to Lorain Injury Center, <br>Dr. Darrin Pordash D.C.<br>
+				                <p id="mypar">&nbsp;I, <input type="text" class="input_txtbx1" id="inp_id" name="name" /><span class="err"><form:errors path="MedicalRecords.name"></form:errors></span>
+				                &nbsp;&nbsp;give my permission to release Medical Information, Records, X-ray Reports, or the following &nbsp;&nbsp;<input type="text" class="input_txtbx1" id="inp_id" name="medicalinformation" /><span class="err"><form:errors path="MedicalRecords.medicalinformation"></form:errors></span> &nbsp;&nbsp;to Lorain Injury Center, <br>Dr. Darrin Pordash D.C.<br>
 				                5190 Deroit Rd.<br>
                                 Sheffield Village, Ohio 44035<br>
                                 Fax 440-934-3107  </p>
                          <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Signature:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="patientsignature" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="patientsignature" /><span class="err"><form:errors path="MedicalRecords.patientsignature"></form:errors></span>
 				                  	</td>
 				                  	</tr>
 				                  	<tr>

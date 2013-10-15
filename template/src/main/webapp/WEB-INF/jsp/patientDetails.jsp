@@ -39,6 +39,8 @@
 	  .tabs-bottom .ui-tabs-nav li { top: auto; bottom: 0; margin: 0 .2em 1px 0; border-bottom: auto; border-top: 0; }
 	  .tabs-bottom .ui-tabs-nav li.ui-tabs-active { margin-top: -1px; padding-top: 1px; }
 	  </style>
+	  <script>
+	  </script>
 	</head>
 	<body>
 	 
@@ -53,6 +55,16 @@
 <div id="right_content">
 <form method="POST" action="patientDetails">
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
+<c:if test="${success==true}">
+        <tr>
+        <td valign="top" align="left" style="padding:5px 0 10px 0;">&nbsp;
+            <div id="success_statusbar" class="status success">
+            <p class="closestatus"><a title="Close" href="">x</a></p>
+            <p><img alt="Success" src="resources/images/icons/icon_success.png"><span>Success!</span>.</p>
+          </div>
+      </tr>
+    </c:if>  
+
       <tr>
         <td valign="top" align="left">
         	<div> 
@@ -70,67 +82,67 @@
                         <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name :</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Name" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Name" /><br><span class="err"><form:errors path="PatientDetails.Name"></form:errors></span>
 				                  </td>
 				                </tr>
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Date:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" id="datepicker" class="input_txtbx1" />
+				                  	<input type="text" id="datepicker" class="input_txtbx1" name="Date" /><br><span class="err"><form:errors path="PatientDetails.Date"></form:errors></span>
 				                  </td>
 				                </tr>
                                   <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Street Address:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="StreetAddress"/>
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="StreetAddress"/><br><span class="err"><form:errors path="PatientDetails.StreetAddress"></form:errors></span>
 				                  </td>
 				                </tr>
                                   <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>City:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="City" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="City" /><br><span class="err"><form:errors path="PatientDetails.City"></form:errors></span>
 				                  </td>
 				                </tr>
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>State:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="State" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="State" /><br><span class="err"><form:errors path="PatientDetails.State"></form:errors></span>
 				                  </td>
 				                </tr>
                                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>ZipCode:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="ZipCode" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="ZipCode" /><br><span class="err"><form:errors path="PatientDetails.ZipCode"></form:errors></span>
 				                  </td>
 				                </tr>
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Homephone:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Homephone" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Homephone" /><br><span class="err"><form:errors path="PatientDetails.Homephone"></form:errors></span>
 				                  </td>
 				                </tr>
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Pager:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Pager" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Pager" /><br><span class="err"><form:errors path="PatientDetails.Pager"></form:errors></span>
 				                  </td>
 				                </tr>
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>MobileNumber:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="MobileNumber" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="MobileNumber" /><br><span class="err"><form:errors path="PatientDetails.MobileNumber"></form:errors></span>
 				                  </td>
 				                </tr>
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>DateOfBirth:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" id="datepicker1" class="input_txtbx1" name="DateOfBirth"/>
+				                  	<input type="text" id="datepicker1" class="input_txtbx1" name="DateOfBirth"/><br><span class="err"><form:errors path="PatientDetails.DateOfBirth"></form:errors></span>
 				                  </td>
 				                </tr>
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>SocialSecurityNumber:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="SocialSecurityNumber" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="SocialSecurityNumber" /><br><span class="err"><form:errors path="PatientDetails.SocialSecurityNumber"></form:errors></span>
 				                  </td>
 				                </tr>
 				                <tr class="row2">
@@ -158,80 +170,80 @@
 				                </tr><tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Employer Name:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="EmployerName" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="EmployerName" /><br><span class="err"><form:errors path="PatientDetails.EmployerName"></form:errors></span>
 				                  </td>
 				                </tr>
 				                
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Occupation:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Occupation" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Occupation" /><br><span class="err"><form:errors path="PatientDetails.Occupation"></form:errors></span>
 				                  </td>
 				                </tr>
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Employer Address:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="EmployerAddress" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="EmployerAddress" /><br><span class="err"><form:errors path="PatientDetails.EmployerAddress"></form:errors></span>
 				                  </td>
 				                </tr>
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>WorkPhone:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Workphone" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Workphone" /><br><span class="err"><form:errors path="PatientDetails.Workphone"></form:errors></span>
 				                  </td>
 				                </tr>
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>EmployerCity:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="EmployerCity" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="EmployerCity" /><br><span class="err"><form:errors path="PatientDetails.EmployerCity"></form:errors></span>
 				                  </td>
 				                </tr>
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>State:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Estate" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Estate" /><br><span class="err"><form:errors path="PatientDetails.Estate"></form:errors></span>
 				                  	
 				                  </td>
 				                </tr>
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Zip:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Ezip" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Ezip" /><br><span class="err"><form:errors path="PatientDetails.Ezip"></form:errors></span>
 				                  	
 				                  </td>
 				                </tr>
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Spouse's or significant others name:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="SpousesName" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="SpousesName" /><br><span class="err"><form:errors path="PatientDetails.SpousesName"></form:errors></span>
 				                  	
 				                  </td>
 				                </tr>
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Spouses Employer:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="SpousesEmp" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="SpousesEmp" /><br><span class="err"><form:errors path="PatientDetails.SpousesEmp"></form:errors></span>
 				                  	
 				                  </td>
 				                </tr>
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Spouse's Workphone:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Spousesph" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Spousesph" /><br><span class="err"><form:errors path="PatientDetails.Spousesph"></form:errors></span>
 				                  	
 				                  </td>
 				                </tr>
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name and Phone # of Nearest Friend/ Relative Not Living With You:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Name_phone" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Name_phone" /><br><span class="err"><form:errors path="PatientDetails.Name_phone"></form:errors></span>
 				                  	
 				                  </td>
 				                </tr>
 				                 <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Have you ever had chiropractic care? </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="Chiropatic_care" value="0" class="input_txt" checked="true">yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Chiropratic_care" value="1" class="input_txt">No</td>
+				                  	<input type="radio" name="Chiropratic_care" value="0" class="input_txt" checked="true">yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Chiropratic_care" value="1" class="input_txt">No</td>
 				                </tr> 
 				                
               </table>
@@ -270,7 +282,7 @@
                         <tr>
                         <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Please Describe Your Symptoms Briefly:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<textarea rows="3" cols="25" placeholder="Specify your Symptoms" name="Symptoms"></textarea>&nbsp;&nbsp;&nbsp; 
+				                  	<textarea rows="3" cols="25" placeholder="Specify your Symptoms" name="Symptoms"></textarea>&nbsp;&nbsp;&nbsp; <br><span class="err"><form:errors path="PatientDetails.Symptoms"></form:errors></span>
 				                  	</td>
 				                  	<td>
 				                  	<label for="amount"><b>Pain Scale:</b></label>
@@ -326,7 +338,7 @@
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date Of Accident:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" id="datepicker2" class="input_txtbx1" name="Date_Of_Accident"/>
+				                  	<input type="text" id="datepicker2" class="input_txtbx1" name="Date_Of_Accident"/><br><span class="err"><form:errors path="PatientDetails.Date_Of_Accident"></form:errors></span>
 				                  	<td>                                                                                                                                      </td>
 				                  	
 				                  </td>
@@ -341,10 +353,10 @@
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Medical Treatment for this Condition: &nbsp;&nbsp;&nbsp;&nbsp;When:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="When" /> 
-				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Where:</td>
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="When" /> <br><span class="err"><form:errors path="PatientDetails.When"></form:errors></span>
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Where:</td><br><span class="err"><form:errors path="PatientDetails.when"></form:errors></span>
 				                  	<td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbox1" id="inp_id" name="Where"/>
+				                  	<input type="text" class="input_txtbox1" id="inp_id" name="Where"/><br><span class="err"><form:errors path="PatientDetails.Where"></form:errors></span>
 				                  </td>
 				                </tr>
 				                <tr class="row1">
@@ -357,77 +369,77 @@
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name Of Attorney:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="NameOfAttorney" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="NameOfAttorney" /><br><span class="err"><form:errors path="PatientDetails.NameOfAttorney"></form:errors></span>
 				                  	<td>                                                                                                       </td>
 				                  </td>
 				                </tr>
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>phone:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="phone_Number" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Phone_Number" /><br><span class="err"><form:errors path="PatientDetails.Phone_Number"></form:errors></span>
 				                  	
 				                  </td>
 				                </tr>
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name of Person at Fault for the Accident:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Fault_accident" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Fault_accident" /><br><span class="err"><form:errors path="PatientDetails.Fault_accident"></form:errors></span>
 				                  	<td>                                                                                           </td>
 				                  </td>
 				                </tr>
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Insurance Company of the at Fault Person:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Insurance" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Insurance" /><br><span class="err"><form:errors path="PatientDetails.Insurance"></form:errors></span>
 				                  	
 				                  </td>
 				                </tr>
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Phone:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Insurance_phone" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Insurance_phone" /><br><span class="err"><form:errors path="PatientDetails.Insurance_phone"></form:errors></span>
 				                  	<td>                                                                                       </td>
 				                  </td>
 				                </tr>
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name And phone of your auto insurance:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Name_ph" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Name_ph" /><br><span class="err"><form:errors path="PatientDetails.Name_ph"></form:errors></span>
 				                  	
 				                  </td>
 				                </tr>
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Policy#:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="policy" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Policy" /><br><span class="err"><form:errors path="PatientDetails.Policy"></form:errors></span>
 				                  	<td>                                                                            </td>
 				                  </td>
 				                </tr>
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name of Your Health Insurance:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Name_health" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Name_health" /><br><span class="err"><form:errors path="PatientDetails.Name_health"></form:errors></span>
 				                  	
 				                  </td>
 				                </tr>
 				            <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Phone:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Health_phone" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Health_phone" /><br><span class="err"><form:errors path="PatientDetails.Health_phone"></form:errors></span>
 				                  	<td>                                                                            </td>
 				                  </td>
 				                </tr>
 				               <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Have You Ever Been Involved in a Previous Auto or Work Accident:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="prev_accident" value="0" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="prev_accident" value="1" class="input_txt">No</td>
+				                  	<input type="radio" name="Prev_accident" value="0" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Prev_accident" value="1" class="input_txt">No</td>
 				                  	
 				                  </td>
 				                </tr>
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>When:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Prev_When" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Prev_When" /><br><span class="err"><form:errors path="PatientDetails.Prev_When"></form:errors></span>
 				                  	</tr>   
 				
 				  
@@ -464,7 +476,7 @@
 				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>CheckBox if it applies to you,parents,siblings,children</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                 
-				                  	<input type="checkbox" name="anemia" value="anemia">Anemia &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				                  	<input type="checkbox" name="Anemia" value="Anemia">Anemia &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                      <input type="checkbox" name="Muscular" value="Muscular">Muscular Dystrophy &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				                  	<input type="checkbox" name="Rheumatic" value="Rheumatic">Rheumatic Fever &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				                  	<input type="checkbox" name="Allergies" value="Allergies">Allergies&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -495,25 +507,25 @@
 				                  	<input type="checkbox" name="High" value="High">High Blood Pressure<br>
 				                  	<input type="checkbox" name="Digestive" value="Digestive">Digestive Disorders &nbsp;&nbsp;&nbsp;
 				                  	<input type="checkbox" name="Heart" value="Heart">Heart trouble	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				                  	<input type="checkbox" name="other" value="other">other
+				                  	<input type="checkbox" name="Other" value="Other">other
 				                  	
 				                  	</tr> 
 				                  <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Surgeries or Major Illnesses You Have Had: </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="illness" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Illness" /><br><span class="err"><form:errors path="PatientDetails.Illness"></form:errors></span>
 				                  	</tr>   
 				                 
 				                 <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Dates:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="datepicker3" name="Dates" />
+				                  	<input type="text" class="input_txtbx1" id="datepicker3" name="Dates" /><br><span class="err"><form:errors path="PatientDetails.Dates"></form:errors></span>
 				                  	</tr>    		
 				                  	
 				                  	<tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Medications You are Currently Taking and Why:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<textarea rows="3" cols="25" placeholder="Medications" name="medications"></textarea>&nbsp;&nbsp;&nbsp;
+				                  	<textarea rows="3" cols="25" placeholder="Medications" name="Medications"></textarea>&nbsp;&nbsp;&nbsp;<br><span class="err"><form:errors path="PatientDetails.Medications"></form:errors></span>
 				                  	</tr> 
 				                  	
 				                  	<tr class="row1">
@@ -530,30 +542,33 @@
 				                  	<tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Do You Work Around Hazardous Substances:  </td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="radio" name="hazordous" value="0" class="input_txt" checked="true" onclick="toggle4('show4')" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="hazordous" value="1" class="input_txt" onclick="toggle4('hide4')" >No&nbsp;&nbsp;&nbsp;
-			      <input type="text" class="input_txtbx1" id="inp_id" name="hazardousyes" > &nbsp;If yes,Please List</input>
+				  <div id="send_to">
+				  <input type="radio" name="Hazordous" value="0" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<div id="send_to_one"><label>If yes,Please List: </label><input type="text" id="list" name="Hazardousyes" /><br/><br/>
+    </div><input type="radio" name="Hazordous" value="1" class="input_txt">No
+			      
+			      </div>
 			      </td>
 				  </tr>
 				  <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Females Only:<br>Are you pregnant:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="female" value="0" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="female" value="1" class="input_txt">No</td>
+				                  	<input type="radio" name="Female" value="0" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Female" value="1" class="input_txt">No</td>
 				                
 				                  	</tr>
 				                  	<tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Dr:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="dr" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Dr" /><br><span class="err"><form:errors path="PatientDetails.Dr"></form:errors></span>
 				                  	</tr>  
 				                  	<tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="patient" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Patient" /><br><span class="err"><form:errors path="PatientDetails.Patient"></form:errors></span>
 				                  	</tr>  
 				                  	<tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Signature:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="sign" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Sign" /><br><span class="err"><form:errors path="PatientDetails.Sign"></form:errors></span>
 				                  	</tr>  
 				                  	
 				                  	 <tr>
@@ -616,13 +631,21 @@
 	    $( "#amount2" ).val(+ $( "#slider2" ).slider( "value" ) );
 	  });
 
-  function toggle4(value){
-  if(value=='show4')
-   document.getElementById('yes').style.visibility='visible';
-  else
-   document.getElementById('yes').style.visibility='hidden';
-  }
+  $(document).ready(function(){
+	  
+	    $("#send_to_one").hide();
+	  
+	    $("input:radio[name='Hazordous']").change(function(){  
 
+	            if(this.value == '0' && this.checked){
+	              $("#send_to_one").show();
+	            }else{
+	              $("#send_to_one").hide();
+	            }
+
+	    });
+
+	});
   </script>
   
         <jsp:include page="footer.jsp"></jsp:include>

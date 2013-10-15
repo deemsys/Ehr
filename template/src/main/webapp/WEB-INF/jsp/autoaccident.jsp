@@ -1,5 +1,5 @@
 
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
@@ -64,13 +64,13 @@ $(function() {
                  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>What is the claim number of your accident</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="claimnumber" /><span class="err"><form:errors path="Autoaccident.claimnumber"></form:errors>
+				  <input type="text" class="input_txtbx1" id="inp_id" name="claimnumber" />
 				  </td>
 				  </tr>
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Adjuster's name</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="adjustersname" /><span class="err"><form:errors path="Autoaccident.adjustersname"></form:errors>
+				  <input type="text" class="input_txtbx1" id="inp_id" name="adjustersname" />
 				  </td>
 				  </tr>
 				  <tr class="row1">
@@ -97,7 +97,7 @@ $(function() {
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Was anyone else in the car with you during the accident?who?</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="companion" /><span class="err"><form:errors path="Autoaccident.companion"></form:errors>
+				  <input type="text" class="input_txtbx1" id="inp_id" name="companion" />
 				  </td>
 				  </tr>
 				  <tr class="row2">
@@ -105,7 +105,7 @@ $(function() {
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="smlinput_txtbx1" id="inp_id" name="vehicle_make" style="width:70px" placeholder="    make"/>
 				  <input type="text" class="smlinput_txtbx1" id="inp_id" name="vehicle_model" style="width:70px" placeholder="     model" />
-				  <input type="text" class="smlinput_txtbx1" id="inp_id" name="vehicle_year" style="width:70px"  placeholder="      year"/><span class="err"><form:errors path="Autoaccident.vehicle_year"></form:errors>
+				  <input type="text" class="smlinput_txtbx1" id="inp_id" name="vehicle_year" style="width:70px"  placeholder="      year"/>
 				  </td>
 				  </tr>
 				  <tr class="row1">
@@ -126,7 +126,7 @@ $(function() {
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="smlinput_txtbx1" id="inp_id" name="other_vehicle_make" style="width:70px" placeholder="    make" />
 				  <input type="text" class="smlinput_txtbx1" id="inp_id" name="other_vehicle_model" style="width:70px" placeholder="     model" />
-				  <input type="text" class="smlinput_txtbx1" id="inp_id" name="other_vehicle_year" style="width:70px" placeholder="      year"/><span class="err"><form:errors path="Autoaccident.other_vehicle_year"></form:errors>
+				  <input type="text" class="smlinput_txtbx1" id="inp_id" name="other_vehicle_year" style="width:70px" placeholder="      year"/>
 				  </td>
 				  </tr>
 				  <tr class="row1">
@@ -154,7 +154,7 @@ $(function() {
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Estimated rate of speed</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="estimated_rate" /><span class="err"><form:errors path="Autoaccident.estimated_rate"></form:errors>
+				  <input type="text" class="input_txtbx1" id="inp_id" name="estimated_rate" />
 				  </td>
 				  </tr>
 				 <tr class="row2">
@@ -195,9 +195,9 @@ $(function() {
 				  </select>
 				  </td>
 				  </tr>
-				  <!--  <tr>
+				  <!-- <tr>
 				  <td valign="top" align="center">&nbsp;</td>
-                  <td valign="top" align="right"><input type="submit" class="submit_btn2" value="Next" ></td>
+                  <td valign="top" align="right"><input type="submit" class="submit_btn2" value="Next"></td>
 				  </tr> -->
 				  </table>
 				  </td>
@@ -353,7 +353,7 @@ $(function() {
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Did this cause further injury</td>
 				  <td valign="top" align="left" class="input_txt"><input type="radio" name="further_injury" value="0" class="input_txt" checked="true" onclick="toggle2('show2')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="further_injury" value="1" class="input_txt" onclick="toggle2('hide2')">No&nbsp;&nbsp;&nbsp;
-				  <textarea rows='3' cols='35' id="injury" name="injury" placeholder="Please explain"></textarea><span class="err"><form:errors path="Autoaccident.injury"></form:errors>
+				  <textarea rows='3' cols='35' id="injury"  placeholder="Please explain"></textarea>
 				  </td>
 				  </tr>
 				  <!--  <tr class="row2">
@@ -526,7 +526,7 @@ $(function() {
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt">Estimated amount of property damage</td>
 				  <td valign="top" align="left" class="input_txt">$
-				  <input type="text" class="input_txtbx1" id="inp_id" name="estimated_amount" /><span class="err"><form:errors path="Autoaccident.estimated_amount"></form:errors>
+				  <input type="text" class="input_txtbx1" id="inp_id" name="estimated_amount" />
 				  </td>
 				  </tr>
 				  <tr class="row2">
@@ -587,13 +587,13 @@ $(function() {
 				  <tr class="row1">
                 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>After accident,I had the following</td>
 				 <td valign="top" align="left" class="input_txt">
-				 <input type="checkbox" name="headache" value="headache">Headache&nbsp;&nbsp;&nbsp;&nbsp; 
-				 <input type="checkbox" name="dizziness" value="dizziness">Dizziness&nbsp;&nbsp;&nbsp;&nbsp;
-				 <input type="checkbox" name="nausea" value="nausea">Nausea&nbsp;&nbsp;&nbsp;&nbsp;
-				 <input type="checkbox" name="confusion" value="confusion">Confusion&nbsp;&nbsp;&nbsp;&nbsp;
-				 <input type="checkbox" name="disorientation" value="disorientation">Disorientation&nbsp;&nbsp;&nbsp;&nbsp;
-				 <input type="checkbox" name="neckpain" value="neckpain">Neck pain&nbsp;&nbsp;&nbsp;&nbsp;
-				 <input type="checkbox" name="otherpain" value="otherpain">Other&nbsp;&nbsp;&nbsp;&nbsp;
+				 <input type="checkbox" name="check1" value="headache">Headache&nbsp;&nbsp;&nbsp;&nbsp; 
+				 <input type="checkbox" name="check1" value="dizziness">Dizziness&nbsp;&nbsp;&nbsp;&nbsp;
+				 <input type="checkbox" name="check1" value="nausea">Nausea&nbsp;&nbsp;&nbsp;&nbsp;
+				 <input type="checkbox" name="check1" value="confusion">Confusion&nbsp;&nbsp;&nbsp;&nbsp;
+				 <input type="checkbox" name="check1" value="disorientation">Disorientation&nbsp;&nbsp;&nbsp;&nbsp;
+				 <input type="checkbox" name="check1" value="neckpain">Neck pain&nbsp;&nbsp;&nbsp;&nbsp;
+				 <input type="checkbox" name="check1" value="otherpain">Other&nbsp;&nbsp;&nbsp;&nbsp;
 				 <input type="text" class="input_txtbx1" id="inp_id" name="otherpain" placeholder="If other" />
 				 </td>
 				 </tr>
@@ -629,19 +629,19 @@ $(function() {
 				   <tr class="row2">
                   <td valign="middle" align="left" class="input_txt">Name of the hospital</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="hosname" /><span class="err"><form:errors path="Autoaccident.hosname"></form:errors>
+				  <input type="text" class="input_txtbx1" id="inp_id" name="hosname" />
 				  </td>
 				  </tr>
 				   <tr class="row1">
                   <td valign="middle" align="left" class="input_txt">City</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="city" /><span class="err"><form:errors path="Autoaccident.city"></form:errors>
+				  <input type="text" class="input_txtbx1" id="inp_id" name="city" />
 				  </td>
 				  </tr>
 				   <tr class="row2">
                   <td valign="middle" align="left" class="input_txt">Length of stay</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="staylength" /><span class="err"><form:errors path="Autoaccident.staylength"></form:errors>
+				  <input type="text" class="input_txtbx1" id="inp_id" name="staylength" />
 				  </td>
 				  </tr>
 				  <tr class="row1">
@@ -657,13 +657,13 @@ $(function() {
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt">What body parts were x-rayed,what treatment was given</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="xray" /><span class="err"><form:errors path="Autoaccident.xray"></form:errors>
+				  <input type="text" class="input_txtbx1" id="inp_id" name="xray" />
 				  </td>
 				  </tr>
 				   <tr class="row1">
                   <td valign="middle" align="left" class="input_txt">What did they tell you was wrong</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="wrong" /><span class="err"><form:errors path="Autoaccident.wrong"></form:errors>
+				  <input type="text" class="input_txtbx1" id="inp_id" name="wrong" />
 				  </td>
 				  </tr>
 				  
@@ -684,7 +684,6 @@ $(function() {
 				  </form>
 				  </div>
 				  </div>
-				 
 				  </body>
 				  </html>
 				  

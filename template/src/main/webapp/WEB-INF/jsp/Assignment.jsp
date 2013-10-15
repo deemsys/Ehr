@@ -30,6 +30,17 @@
 <form action="Assignment" method="POST">
 
 <table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table">
+<c:if test="${success==true}">
+        <tr>
+        <td valign="top" align="left" style="padding:5px 0 10px 0;">&nbsp;
+            <div id="success_statusbar" class="status success">
+            <p class="closestatus"><a title="Close" href="">x</a></p>
+            <p><img alt="Success" src="resources/images/icons/icon_success.png"><span>Success!</span>.</p>
+          </div>
+      </tr>
+    </c:if>  
+
+
       <tr>
       <td valign="top" align="left">
         	<div>
@@ -44,13 +55,13 @@
                         <table cellpadding="0" cellspacing="0" border="0" width="50%">
                         <tr>
                         <div align="justify">
-				                <p id="mypar">&nbsp;This agreement made this the: <input type="text" class="input_txtbx1" id="inp_id" name="Day" />
+				                <p id="mypar">&nbsp;This agreement made this the: <input type="text" class="input_txtbx1" id="inp_id" name="Day" /><span class="err"><form:errors path="Assignment.Day"></form:errors></span>
 				                  	  
-				                  	day of <input type="text" class="input_txtbx1" id="inp_id" name="month" />
-				                  	2013 between <input type="text" class="input_txtbx1" id="inp_id" name="year" />
-				                  	(claimant) and <input type="text" class="input_txtbx1" id="inp_id" name="center" /> constitutes an irrevocable and binding agreement between the parties as follows:
-Claimant was involved in an accident on or about the <input type="text" class="input_txtbx1" id="inp_id" name="day1" />
-day of <input type="text" class="input_txtbx1" id="inp_id" name="month1" /> and I therein incurred injuries for which I have sought medical treatment from PCTC.</p>
+				                  	day of <input type="text" class="input_txtbx1" id="inp_id" name="month" /><span class="err"><form:errors path="Assignment.month"></form:errors></span>
+				                  	2013 between <input type="text" class="input_txtbx1" id="inp_id" name="year" /><span class="err"><form:errors path="Assignment.year"></form:errors></span>
+				                  	(claimant) and <input type="text" class="input_txtbx1" id="inp_id" name="center" /> <span class="err"><form:errors path="Assignment.center"></form:errors></span>constitutes an irrevocable and binding agreement between the parties as follows:
+Claimant was involved in an accident on or about the <input type="text" class="input_txtbx1" id="inp_id" name="day1" /><span class="err"><form:errors path="Assignment.day1"></form:errors></span>
+day of <input type="text" class="input_txtbx1" id="inp_id" name="month1" /> <span class="err"><form:errors path="Assignment.month1"></form:errors></span>and I therein incurred injuries for which I have sought medical treatment from PCTC.</p>
 
 <P id="mypar"> Claimant herby directs any and all insurance carriers, attorneys, 
 agencies, companies, individuals, and/or other legal entities (“payers.”), 
@@ -77,38 +88,38 @@ and exclusively in the name of Perry Chiropractic and Therapy Center, such sums 
                        <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>PatientName: </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="patientname" /><br>
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="patientname" /><br><span class="err"><form:errors path="Assignment.patientname"></form:errors>
 				                  	</tr>
 				                  	<tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Signature:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="patientsign" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="patientsign" /><span class="err"><form:errors path="Assignment.patientsign"></form:errors>
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="datepicker" name="patientdate" /><br>
+				                  	<input type="text" class="input_txtbx1" id="datepicker" name="patientdate" /><br><span class="err"><form:errors path="Assignment.patientdate"></form:errors>
 				                  	</tr> 
 				                  	
 				                  	<tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name of Custodial Parent or Legal Guardian :  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="parentname" /><br>
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="parentname" /><br><span class="err"><form:errors path="Assignment.parentname"></form:errors>
 				                  	</tr> 
 				                  	<tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Parent/Guardian Signature:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="parentsign" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="parentsign" /><span class="err"><form:errors path="Assignment.parentsign"></form:errors>
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="datepicker1" name="parentdate" /><br>
+				                  	<input type="text" class="input_txtbx1" id="datepicker1" name="parentdate" /><br><span class="err"><form:errors path="Assignment.parentdate"></form:errors>
 				                  	</tr> 
 				                  	
 				                  	<tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Perry Chiropractic and Therapy Center Representative:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="representative" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="representative" /><span class="err"><form:errors path="Assignment.representative"></form:errors>
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="datepicker2" name="representativedate" /><br>
+				                  	<input type="text" class="input_txtbx1" id="datepicker2" name="representativedate" /><br><span class="err"><form:errors path="Assignment.representativedate"></form:errors>
 				                  	</tr>
 				                  	 <tr>
 				  <td valign="top" align="center">&nbsp;</td>
@@ -130,3 +141,4 @@ and exclusively in the name of Perry Chiropractic and Therapy Center, such sums 
                         </div>
                         </body>
                         </html>
+                        <jsp:include page="footer.jsp"></jsp:include> 

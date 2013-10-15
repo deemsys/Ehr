@@ -1,4 +1,4 @@
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
@@ -61,7 +61,7 @@ $(function() {
   				<tr class="row1">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>What is the job classification of your normal job</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="job_classification" /><span class="err"><form:errors path="Workaccident.job_classification"></form:errors>
+				  <input type="text" class="input_txtbx1" id="inp_id" name="job_classification" />
 				  </td>
 				  </tr>
 				 <tr class="row2">
@@ -90,25 +90,25 @@ $(function() {
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>How did the injury occur?</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="injury_occur" /><span class="err"><form:errors path="Workaccident.injury_occur"></form:errors>
+				  <input type="text" class="input_txtbx1" id="inp_id" name="injury_occur" />
 				  </td>
 				  </tr>
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Who saw the accident?</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="saw_accident" /><span class="err"><form:errors path="Workaccident.saw_accident"></form:errors>
+				  <input type="text" class="input_txtbx1" id="inp_id" name="saw_accident" />
 				  </td>
 				  </tr>
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Title</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="title" /><span class="err"><form:errors path="Workaccident.title"></form:errors>
+				  <input type="text" class="input_txtbx1" id="inp_id" name="title" />
 				  </td>
 				  </tr>
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>How long have you been at your present job</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="present_job" /><span class="err"><form:errors path="Workaccident.present_job"></form:errors>
+				  <input type="text" class="input_txtbx1" id="inp_id" name="present_job" />
 				  </td>
 				  </tr>
 				  <tr class="row2">
@@ -251,7 +251,7 @@ $(function() {
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>How many employees have been injured doing your job</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="no_of_employees" /><span class="err"><form:errors path="Workaccident.no_of_employees"></form:errors>
+				  <input type="text" class="input_txtbx1" id="inp_id" name="no_of_employees" />
 				  </td>
 				  </tr>
 				  <tr class="row1">
@@ -272,7 +272,7 @@ $(function() {
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>What changes would you make in your job</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="changes_in_job" /><span class="err"><form:errors path="Workaccident.changes_in_job"></form:errors>
+				  <input type="text" class="input_txtbx1" id="inp_id" name="changes_in_job" />
 				  </td>
 				  </tr>
 				  </table>

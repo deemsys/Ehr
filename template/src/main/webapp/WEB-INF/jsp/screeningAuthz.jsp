@@ -24,6 +24,20 @@
 <form action="screeningAuthz" method="POST">
 
 <table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table">
+<c:if test="${success==true}">
+        <tr>
+        <td valign="top" align="left" style="padding:5px 0 10px 0;">&nbsp;
+            <div id="success_statusbar" class="status success">
+            <p class="closestatus"><a title="Close" href="">x</a></p>
+            <p><img alt="Success" src="resources/images/icons/icon_success.png"><span>Success!</span>.</p>
+          </div>
+      </tr>
+    </c:if>  
+
+
+
+
+
       <tr>
       <td valign="top" align="left">
         	<div>
@@ -44,12 +58,12 @@
                         <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date: </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="datepicker" name="date" /><br>
+				                  	<input type="text" class="input_txtbx1" id="datepicker" name="date" /><br><span class="err"><form:errors path="screeningAuthz.date"></form:errors></span>
 				                  	</tr>
 				                  	<tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="name" /><br>
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="name" /><br><span class="err"><form:errors path="screeningAuthz.name"></form:errors></span>
 				                  	</tr>
                         <tr>
 				  <td valign="top" align="center">&nbsp;</td>
@@ -68,5 +82,5 @@
                         </div>
                         </body>
                         </html>
-                        
+                       <jsp:include page="footer.jsp"></jsp:include>  
                         

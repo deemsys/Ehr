@@ -1,40 +1,36 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <jsp:include page="header.jsp"></jsp:include>
 <div id="right_content">
-	<form action="?do=viewparticipants" name="dashboard" method="POST">
+	<form action="viewpatient?page=1" name="dashboard" method="POST">
 		<table cellpadding="0" cellspacing="0" border="0" width="98%"
 			class="margin_table">
 
 			<tr>
 				<td valign="top" align="left"><div>
 						<div class="headings altheading">
-							<h2>Participants Stat</h2>
+							<h2>Patient Information</h2>
 						</div>
 						<div class="contentbox">
 							<table cellpadding="0" cellspacing="0" border="0" width="100%">
 								<tr class="title">
-									<td valign="top" align="left" width="10%">First&nbsp;Name</td>
+									<td valign="top" align="left" width="10%">Name</td>
 									<td valign="top" align="left" width="15%">Mobile Number</td>
 									<td valign="top" align="left" width="10%">City</td>
-									<td valign="top" align="left" width="10%">Age</td>
-
-									<td valign="top" align="left" width="15%">Associated&nbsp;Streams</td>
-									<td valign="top" align="left" width="15%">Education</td>
-									<td valign="top" align="left" width="15%">Date Of Join</td>
+									<td valign="top" align="left" width="10%">State</td>
+									<td valign="top" align="left" width="15%">Action</td>
+									
 
 
 								</tr>
 
 								<!-- Display Admin Userd here  Suresh--> 
-									<c:forEach items="${participantsDetailsForm.participantsDetails}" var="participantsDetails" varStatus="status">
+									<c:forEach items="${PatientDetailsForm.patientdetails}" var="patientdetails" varStatus="status">
 							       		<tr class="row1" onmouseover="mouse_event(this,"row_hover");" onmouseout="mouse_event(this,"row1");">
-								           	<td valign="top" align="left"  width="10%">${participantsDetails.fname}</td>
-											<td valign="top" align="left" width="15%">${participantsDetails.mobile_num}</td>
-											<td valign="top" align="left" width="10%">${participantsDetails.city}</td>
-											<td valign="top" align="left" width="10%">${participantsDetails.age}</td>
-											<td valign="top" align="left" width="15%">${participantsDetails.age}</td>
-											<td valign="top" align="left" width="15%">${participantsDetails.education}</td>
-											<td valign="top" align="left" width="15%">${participantsDetails.date_of_join}</td>
+								           	<td valign="top" align="left"  width="10%">${patientdetails.Name}</td>
+											<td valign="top" align="left" width="15%">${patientdetails.MobileNumber}</td>
+											<td valign="top" align="left" width="10%">${patientdetails.City}</td>
+											<td valign="top" align="left" width="10%">${patientdetails.State}</td>
+											
 										</tr>
 							    	</c:forEach>
 						    	

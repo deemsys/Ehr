@@ -23,6 +23,16 @@
 <form action="treatform" method="POST">
 
 <table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table">
+<c:if test="${success==true}">
+        <tr>
+        <td valign="top" align="left" style="padding:5px 0 10px 0;">&nbsp;
+            <div id="success_statusbar" class="status success">
+            <p class="closestatus"><a title="Close" href="">x</a></p>
+            <p><img alt="Success" src="resources/images/icons/icon_success.png"><span>Success!</span>.</p>
+          </div>
+      </tr>
+    </c:if>  
+
       <tr>
       <td valign="top" align="left">
         	<div>
@@ -50,23 +60,23 @@
                         <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>PatientsName: </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="patientsname" /><br>
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="patientsname"/><br><span class="err"><form:errors path="Treatform.patientsname"></form:errors></span>
 				                  	</tr>
                         <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patients Signature: </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="patientssign" /><br>
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="patientssign"  /><br><span class="err"><form:errors path="Treatform.patientssign"></form:errors></span>
 				                  	</tr>
 				                  	<tr class="row1">
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Todays Date:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="datepicker" name="todaydate" /><br>
+				                  	<input type="text" class="input_txtbx1" id="datepicker" name="todaydate" /><br><span class="err"><form:errors path="Treatform.todaydate"></form:errors></span>
                         </td>
                         </tr>
                         <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Witness: </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="witness" /><br>
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="witness" /><br><span class="err"><form:errors path="Treatform.witness"></form:errors></span>
 				                  	</tr>
                         <tr>
 				  <td valign="top" align="center">&nbsp;</td>
@@ -92,5 +102,6 @@
                         </div>
                         </body>
                         </html>
+                        
                         <jsp:include page="footer.jsp"></jsp:include>
                         
