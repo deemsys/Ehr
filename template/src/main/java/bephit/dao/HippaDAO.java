@@ -77,7 +77,10 @@ public class HippaDAO {
 	    try{
 			resultSet = statement.executeQuery("select * from Hippa_Privacy");
 			while(resultSet.next()){
-				privacy.add(new HippaPrivacy(resultSet.getString("date"),resultSet.getString("printpname"),resultSet.getString("printpdate"),resultSet.getString("legalguardian"),
+				privacy.add(new HippaPrivacy(resultSet.getString("date"),
+						resultSet.getString("printpname"),
+						resultSet.getString("printpdate"),
+						resultSet.getString("legalguardian"),
 			    		resultSet.getString("staffwitness")
 			    		 ));
 			    	

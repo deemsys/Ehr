@@ -20,7 +20,7 @@ public class ScreenDAO {
 		this.dataSource = dataSource;
 	}
 	
-	public int setScreeningDetails(screeningAuthz screendetails)
+	public int setScreeningDetails(screeningAuthz ScreeningDetails)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -37,7 +37,7 @@ public class ScreenDAO {
 	    try{
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
-	    	 String cmd="INSERT INTO `Screening_Details`(`date`,`name`) VALUES ('"+screendetails.getDate()+"','"+screendetails.getName()+"')";
+	    	 String cmd="INSERT INTO `Screening_Details`(`date`,`name`) VALUES ('"+ScreeningDetails.getDate()+"','"+ScreeningDetails.getName()+"')";
 	    	 System.out.println(cmd);
 	    	 statement.execute(cmd);
 		     flag=1;
