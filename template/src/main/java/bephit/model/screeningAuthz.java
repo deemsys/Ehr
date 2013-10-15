@@ -1,16 +1,20 @@
 package bephit.model;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class screeningAuthz
 {
-	
+	@NotEmpty
 	private String date;
+	
+	@NotEmpty
 	private String name;
 	
 
 
 	public screeningAuthz()
 	{
-		
+	
 	}
 	
 	public screeningAuthz(String date,

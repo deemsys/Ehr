@@ -1,11 +1,24 @@
 package bephit.model;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class HippaPrivacy
 {
+	
+	
+	@NotEmpty
 	private String date;
+	
+	@NotEmpty
 	private String printpname;
+	
+	@NotEmpty
 	private String printpdate;
+	
+	@NotEmpty
 	private String legalguardian;
+	
+	@NotEmpty
 	private String staffwitness;
 	
 

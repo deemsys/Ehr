@@ -1,10 +1,19 @@
 package bephit.model;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class Treatform
 {
+	@NotEmpty
 	private String patientsname;
+	
+	
+	@NotEmpty
 	private String patientssign;
+	
+	@NotEmpty
 	private String todaydate;
+	@NotEmpty
 	private String witness;
 	
 	

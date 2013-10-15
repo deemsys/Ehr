@@ -1,10 +1,14 @@
 package bephit.model;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class MedicalRecords
 {
-	
+	@NotEmpty
 	private String name;
+	@NotEmpty
 	private String medicalinformation;
+	@NotEmpty
 	private String patientsignature;
 
 
