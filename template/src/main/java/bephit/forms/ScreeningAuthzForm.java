@@ -6,15 +6,15 @@ import bephit.model.screeningAuthz;
 
 public class ScreeningAuthzForm
 {
-	private List<screeningAuthz> screeningdetails;
+	private List<screeningAuthz> ScreeningDetails;
 	{
 		
 	}
 	public List<screeningAuthz> getScreeningDetails() {
-		return screeningdetails;
+		return ScreeningDetails;
 	}
-	public void setScreeningDetails(List<screeningAuthz> screeningdetails) {
-		this.screeningdetails = screeningdetails;
+	public void setScreeningDetails(List<screeningAuthz> ScreeningDetails) {
+		this.ScreeningDetails = ScreeningDetails;
 	}
 
 }

@@ -6,15 +6,12 @@ import bephit.model.PatientDetails;
 
 public class PatientDetailsForm
 {
-	private List<PatientDetails> patientdetails;
-	{
-		
-	}
+	private List<PatientDetails> patientDetails;
+	
 	public List<PatientDetails> getPatientDetails() {
-		return patientdetails;
+		return patientDetails;
 	}
-	public void setPatientDetails(List<PatientDetails> patientdetails) {
-		this.patientdetails = patientdetails;
+	public void setPatientDetails(List<PatientDetails> patientDetails) {
+		this.patientDetails=patientDetails;
 	}
-
 }
