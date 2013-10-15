@@ -23,15 +23,13 @@
 <form action="treatform" method="POST">
 
 <table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table">
-<c:if test="${success==true}">
-        <tr>
+ <tr>
         <td valign="top" align="left" style="padding:5px 0 10px 0;">&nbsp;
-            <div id="success_statusbar" class="status success">
+		<div class="status success" style="display: none;">
             <p class="closestatus"><a title="Close" href="">x</a></p>
-            <p><img alt="Success" src="resources/images/icons/icon_success.png"><span>Success!</span>.</p>
+            <p><img alt="Success" src="images/icons/icon_success.png"><span>Success!</span>.</p>
           </div>
-      </tr>
-    </c:if>  
+      </tr>  
 
       <tr>
       <td valign="top" align="left">

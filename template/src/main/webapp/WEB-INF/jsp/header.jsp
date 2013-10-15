@@ -151,6 +151,31 @@
 				            		<span><img src="<c:url value="/resources/images/icon_07.png" />" alt="" style="padding:5px 5px 0 0;" />Staff checklist</span>
 				            	</a>
 				            </li>
+				            <%--  <li>
+				            	<a href="Assignment" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" >
+				            		<span><img src="<c:url value="/resources/images/icon_03.png" />" alt="" style="padding:5px 5px 0 0;" />Assignment of Benefits</span>
+				            	</a>
+				            </li> --%>
+				            <li>
+				            	<a href="#" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" rel="ddsubmenu2">
+				            		<span><img src="<c:url value="/resources/images/icon_03.png" />" alt="" style="padding:5px 5px 0 0;" />Consent To Treat</span>
+				            	</a>
+				            </li>
+				            <li>
+								<a href="#" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" rel="ddsubmenu3">
+									<span><img src="<c:url value="/resources/images/icon_01.png" />" alt="" style="padding:5px 5px 0 0;" />Authorization Forms</span>
+								</a>
+							</li>
+							<%-- <li>
+								<a href="#" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" >
+									<span><img src="<c:url value="/resources/images/icon_01.png" />" alt="" style="padding:5px 5px 0 0;" />Screening Disclosure</span>
+								</a>
+							</li>
+							<li>
+								<a href="Hippaprivacy" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>">
+									<span><img src="<c:url value="/resources/images/icon_01.png" />" alt="" style="padding:5px 5px 0 0;" />HIPPA Privacy</span>
+								</a>
+							</li> --%>
 						</ul>
 						<div class="clear">
 						<script type="text/javascript">
@@ -186,41 +211,7 @@
 				            		<span><img src="<c:url value="/resources/images/icon_03.png" />" alt="" style="padding:5px 5px 0 0;" />Accident</span>
 				            	</a>
 				            </li> --%>
-				            <li>
-				            	<a href="Assignment" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" >
-				            		<span><img src="<c:url value="/resources/images/icon_03.png" />" alt="" style="padding:5px 5px 0 0;" />Assignment of Benefits</span>
-				            	</a>
-				            </li>
-				            <li>
-				            	<a href="#" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" rel="ddsubmenu2">
-				            		<span><img src="<c:url value="/resources/images/icon_03.png" />" alt="" style="padding:5px 5px 0 0;" />Consent To Treat</span>
-				            	</a>
-				            </li>
-				            <li>
-								<a href="medicalrecords" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>">
-									<span><img src="<c:url value="/resources/images/icon_01.png" />" alt="" style="padding:5px 5px 0 0;" />Medical Record</span>
-								</a>
-							</li>
-							<li>
-								<a href="#" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" >
-									<span><img src="<c:url value="/resources/images/icon_01.png" />" alt="" style="padding:5px 5px 0 0;" />Screening Disclosure</span>
-								</a>
-							</li>
-							<li>
-								<a href="Hippaprivacy" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>">
-									<span><img src="<c:url value="/resources/images/icon_01.png" />" alt="" style="padding:5px 5px 0 0;" />HIPPA Privacy</span>
-								</a>
-							</li>
-				            <%-- <li>
-				            	<a href="#" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" rel="ddsubmenu3">
-				            		<span><img src="<c:url value="/resources/images/icon_06.png" />" alt="" style="padding:5px 5px 0 0;" />Admin User</span>
-				            	</a>
-				            </li>
-				            <li>
-				            	<a href="#" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" rel="ddsubmenu4">
-				            		<span><img src="<c:url value="/resources/images/icon_07.png" />" alt="" style="padding:5px 5px 0 0;" />Settings</span>
-				            	</a>
-				            </li> --%>
+				           
 						</ul>
 						<div class="clear"></div>
 						<script type="text/javascript">
@@ -236,12 +227,12 @@
 							<li><a href="treatform">Authorization And Consent To Treat</a></li>
 				            <li><a href="treatminor">Consent To Treat A minor</a></li>
 				            
-
+</ul>
 							
 				            <!-- <li><a href="showaddparticipantgroups">Add Participant Groups</a></li>
 							<li><a href="viewparticipantgroups">View Participant Groups</a></li> -->
 
-						</ul>
+						<%-- </ul>
 						<li>
 				            	<a href="patientDetails" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" rel="ddsubmenu5">
 				            		<span><img src="<c:url value="/resources/images/email.png" />" alt="" style="padding:5px 5px 0 0;" />Patient Information</span>
@@ -277,7 +268,7 @@
 									<span><img src="<c:url value="/resources/images/icon_01.png" />" alt="" style="padding:5px 5px 0 0;" />HIPPA Privacy</span>
 								</a>
 							</li>
-				            <%-- <li>
+				            <li>
 				            	<a href="#" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" rel="ddsubmenu3">
 				            		<span><img src="<c:url value="/resources/images/icon_06.png" />" alt="" style="padding:5px 5px 0 0;" />Admin User</span>
 				            	</a>
@@ -286,8 +277,8 @@
 				            	<a href="#" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" rel="ddsubmenu4">
 				            		<span><img src="<c:url value="/resources/images/icon_07.png" />" alt="" style="padding:5px 5px 0 0;" />Settings</span>
 				            	</a>
-				            </li> --%>
-						</ul>
+				            </li>
+						</ul> --%>
 						<div class="clear"></div>
 						<script type="text/javascript">
 							ddlevelsmenu.setup("ddtopmenubar", "topbar")
@@ -310,7 +301,9 @@
 						</ul>
 						<ul id="ddsubmenu3" class="ddsubmenustyle">
 							<li><a href="screeningAuthz">Screening Disclosure</a></li>        
-				            <li><a href="viewscreen">ViewScreen</a></li>
+				            <li><a href="medicalrecords">Medical Records</a></li>
+				            <li><a href="Assignment">Assignment Of Benefits</a></li>
+				            <li><a href="Hippaprivacy">Hippa Privacy</a></li>
 				         </ul>
 						<!-- <ul id="ddsubmenu4" class="ddsubmenustyle">
 							<li><a href="textmsgsettings">Text Message API settings</a></li>
@@ -323,10 +316,10 @@
 						</ul>
 						
 						
-						<ul id="ddsubmenu5" class="ddsubmenustyle">
+						<!-- <ul id="ddsubmenu5" class="ddsubmenustyle">
 						<li><a href="patientDetails">Patient Information</a></li>
 						<li><a href="viewpatient">View Patient</a></li>
-						</ul>
+						</ul> -->
 
 
 

@@ -67,6 +67,7 @@
               <tr class="row1">
               <td>Maximum visits/year?</td>
               <td><input type="text" class="input_txtbx1" name="max_visit" id="max_visit" /><span class="err"><form:errors path="Insuranceverification.max_visit"></form:errors></td>
+              <td></td>
               </tr>
               <tr class="row1">
               <td>Is chiropractic manipulation covered? </td>

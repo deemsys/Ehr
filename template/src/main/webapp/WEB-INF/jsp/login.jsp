@@ -48,7 +48,7 @@
 		        </a></li>
 		      <li><a href="#" class="forgot-password"></a></li>
 		      <li><input name="reset" type="reset" /></li>
-		      <li><a href="createuser" style="color:ffffff">Register</a></li>
+		      <li><a href="signup" style="color:ffffff">Register</a></li>
 		    </ul>
 		  </div>
 		  <div class="login-bottom"></div>
