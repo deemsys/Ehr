@@ -23,7 +23,7 @@
             
             
   
-             <c:forEach items="${patientdetailsform.patientDetails}" var="patientDetails" varStatus="status">
+             <c:forEach items="${PatientDetailsForm.patientDetails}" var="patientDetails" varStatus="status">
                    <tr class="row2">
                   <td width="15%" valign="middle" align="left" >Name </td>
                     <td width="1%" valign="middle" align="left" >  :</td>
@@ -152,7 +152,7 @@
                     <td width="1%" valign="middle" align="left" >  :</td>
                   <td width="84%" valign="top" align="left" >${patientDetails.EmployerCity}</td>
                 </tr>
-                <tr class="row1">
+                <tr class="row2">
                   <td width="15%" valign="middle" align="left" >State</td>
                     <td width="1%" valign="middle" align="left" >  :</td>
                   <td width="84%" valign="top" align="left" >${patientDetails.Estate}</td>
@@ -162,7 +162,7 @@
                     <td width="1%" valign="middle" align="left" >  :</td>
                   <td width="84%" valign="top" align="left" >${patientDetails.Ezip}</td>
                 </tr>
-                <tr class="row1">
+                <tr class="row2">
                   <td width="15%" valign="middle" align="left" >Spouse's or significant others name</td>
                     <td width="1%" valign="middle" align="left" >  :</td>
                   <td width="84%" valign="top" align="left" >${patientDetails.SpousesName}</td>
@@ -172,57 +172,57 @@
                     <td width="1%" valign="middle" align="left" >  :</td>
                   <td width="84%" valign="top" align="left" >${patientDetails.SpousesEmp}</td>
                 </tr>
-                <tr class="row1">
+                <tr class="row2">
                   <td width="15%" valign="middle" align="left" >EmployerCity</td>
                     <td width="1%" valign="middle" align="left" >  :</td>
                   <td width="84%" valign="top" align="left" >${patientDetails.EmployerCity}</td>
                 </tr>
-              <tr class="row2">
+              <tr class="row1">
                   <td width="15%" valign="middle" align="left" >Spouse's Workphone</td>
                     <td width="1%" valign="middle" align="left" >  :</td>
                   <td width="84%" valign="top" align="left" >${patientDetails.Spousesph}</td>
-                </tr><tr class="row1">
+                </tr><tr class="row2">
                   <td width="15%" valign="middle" align="left" > Name and Phone # of Nearest Friend/ Relative Not Living With You:</td>
                     <td width="1%" valign="middle" align="left" >  :</td>
                   <td width="84%" valign="top" align="left" >${patientDetails.Name_phone}</td>
                 </tr>
-              <tr class="row2">
+              <tr class="row1">
                   <td width="15%" valign="middle" align="left" > Have you ever had chiropractic care? </td>
                     <td width="1%" valign="middle" align="left" >  :</td>
                   <td width="84%" valign="top" align="left" >${patientDetails.Chiropratic_care}</td>
                 </tr>   
-              <tr class="row1">
+              <tr class="row2">
                   <td width="15%" valign="middle" align="left" >Please Describe Your Symptoms Briefly:<br> Symptoms</td>
                     <td width="1%" valign="middle" align="left" >  :</td>
                   <td width="84%" valign="top" align="left" >${patientDetails.Symptoms}</td>
                 </tr>
-                <tr class="row2">
+                <tr class="row1">
                   <td width="15%" valign="middle" align="left" >Pain Scale </td>
                     <td width="1%" valign="middle" align="left" >  :</td>
                   <td width="84%" valign="top" align="left" >${patientDetails.Painscale}</td>
                 </tr>
-                <tr class="row1">
+                <tr class="row2">
                   <td width="15%" valign="middle" align="left" > Symptom1:</td>
                     <td width="1%" valign="middle" align="left" >  :</td>
                   <td width="84%" valign="top" align="left" >${patientDetails.Symptom1}</td>
                 </tr>
-              <tr class="row2">
+              <tr class="row1">
                   <td width="15%" valign="middle" align="left" >Pain Scale1 </td>
                     <td width="1%" valign="middle" align="left" >  :</td>
                   <td width="84%" valign="top" align="left" >${patientDetails.Painscale1}</td>
                 </tr>
-                <tr class="row1">
+                <tr class="row2">
                   <td width="15%" valign="middle" align="left" >Symptom2 </td>
                     <td width="1%" valign="middle" align="left" >  :</td>
                   <td width="84%" valign="top" align="left" >${patientDetails.Symptom2}</td>
                 </tr>
-                <tr class="row2">
+                <tr class="row1">
                   <td width="15%" valign="middle" align="left" >Pain Scale2 </td>
                     <td width="1%" valign="middle" align="left" >  :</td>
                   <td width="84%" valign="top" align="left" >${patientDetails.Painscale2}</td>
                 </tr>
                       
-              <tr class="row1">
+              <tr class="row2">
                   <td width="15%" valign="middle" align="left" >Are These Symptoms Due to an Accident?</td>
                     <td width="1%" valign="middle" align="left" >  :</td>
                   <td width="84%" valign="top" align="left" >${patientDetails.Symptom_Accident}</td>
@@ -232,7 +232,7 @@
                     <td width="1%" valign="middle" align="left" >  :</td>
                   <td width="84%" valign="top" align="left" >${patientDetails.Type_Of_Accident}</td>
                 </tr>
-                <tr class="row1">
+                <tr class="row2">
                   <td width="15%" valign="middle" align="left" >Date Of Accident </td>
                     <td width="1%" valign="middle" align="left" >  :</td>
                   <td width="84%" valign="top" align="left" >${patientDetails.Date_Of_Accident}</td>
@@ -242,7 +242,7 @@
                     <td width="1%" valign="middle" align="left" >  :</td>
                   <td width="84%" valign="top" align="left" >${patientDetails.Accident_Reported}</td>
                 </tr>
-                <tr class="row1">
+                <tr class="row2">
                   <td width="15%" valign="middle" align="left" >Medical Treatment for this Condition:<br>When </td>
                     <td width="1%" valign="middle" align="left" >  :</td>
                   <td width="84%" valign="top" align="left" >${patientDetails.When}</td>
@@ -274,10 +274,127 @@
                   <td width="84%" valign="top" align="left" >${patientDetails.Date_Of_Accident}</td>
                 </tr>
                 
-                
+                <tr class="row2">
+                  <td width="15%" valign="middle" align="left" >phone</td>
+                    <td width="1%" valign="middle" align="left" >  :</td>
+                  <td width="84%" valign="top" align="left" >${patientDetails.Phone_Number}</td>
+                </tr>
+                <tr class="row1">
+                  <td width="15%" valign="middle" align="left" >Name of Person at Fault for the Accident:</td>
+                    <td width="1%" valign="middle" align="left" >  :</td>
+                  <td width="84%" valign="top" align="left" >${patientDetails.Fault_accident}</td>
+                </tr>
+                <tr class="row2">
+                  <td width="15%" valign="middle" align="left" >Insurance Company of the at Fault Person</td>
+                    <td width="1%" valign="middle" align="left" >  :</td>
+                  <td width="84%" valign="top" align="left" >${patientDetails.Insurance}</td>
+                </tr>
+              <tr class="row1">
+                  <td width="15%" valign="middle" align="left" >Phone</td>
+                    <td width="1%" valign="middle" align="left" >  :</td>
+                  <td width="84%" valign="top" align="left" >${patientDetails.Insurance_phone}</td>
+                </tr>
+              <tr class="row2">
+                  <td width="15%" valign="middle" align="left" >Name And phone of your auto insurance</td>
+                    <td width="1%" valign="middle" align="left" >  :</td>
+                  <td width="84%" valign="top" align="left" >${patientDetails.Name_ph}</td>
+                </tr>
+              <tr class="row1">
+                  <td width="15%" valign="middle" align="left" >Policy#</td>
+                    <td width="1%" valign="middle" align="left" >  :</td>
+                  <td width="84%" valign="top" align="left" >${patientDetails.Policy}</td>
+                </tr>
+              <tr class="row2">
+                  <td width="15%" valign="middle" align="left" >Name of Your Health Insurance</td>
+                    <td width="1%" valign="middle" align="left" >  :</td>
+                  <td width="84%" valign="top" align="left" >${patientDetails.Name_health}</td>
+                </tr>
+              <tr class="row1">
+                  <td width="15%" valign="middle" align="left" >Phone</td>
+                    <td width="1%" valign="middle" align="left" >  :</td>
+                  <td width="84%" valign="top" align="left" >${patientDetails.Health_phone}</td>
+                </tr>
+                <tr class="row2">
+                  <td width="15%" valign="middle" align="left" >Have You Ever Been Involved in a Previous Auto or Work Accident</td>
+                    <td width="1%" valign="middle" align="left" >  :</td>
+                  <td width="84%" valign="top" align="left" >${patientDetails.Prev_accident}</td>
+                </tr>
+                <tr class="row1">
+                  <td width="15%" valign="middle" align="left" >When</td>
+                    <td width="1%" valign="middle" align="left" >  :</td>
+                  <td width="84%" valign="top" align="left" >${patientDetails.Prev_When}</td>
+                </tr>
+              <tr class="row1">
+                  <td width="15%" valign="middle" align="left" >Anemia</td>
+                    <td width="1%" valign="middle" align="left" >  :</td>
+                  <td width="84%" valign="top" align="left" >${patientDetails.Anemia}</td>
+                </tr>
+              <tr class="row1">
+                  <td width="15%" valign="middle" align="left" >Surgeries or Major Illnesses You Have Had</td>
+                    <td width="1%" valign="middle" align="left" >  :</td>
+                  <td width="84%" valign="top" align="left" >${patientDetails.Illness}</td>
+                </tr>
+              <tr class="row1">
+                  <td width="15%" valign="middle" align="left" >Dates</td>
+                    <td width="1%" valign="middle" align="left" >  :</td>
+                  <td width="84%" valign="top" align="left" >${patientDetails.Dates}</td>
+                </tr>
+              <tr class="row1">
+                  <td width="15%" valign="middle" align="left" >Medications You are Currently Taking and Why</td>
+                    <td width="1%" valign="middle" align="left" >  :</td>
+                  <td width="84%" valign="top" align="left" >${patientDetails.Medications}</td>
+                </tr>
+                 <tr class="row1">
+                  <td width="15%" valign="middle" align="left" >Do You</td>
+                    <td width="1%" valign="middle" align="left" >  :</td>
+                  <td width="84%" valign="top" align="left" >${patientDetails.Drink}</td>
+                </tr>
+                 <tr class="row1">
+                  <td width="15%" valign="middle" align="left" >Do You Work Around Hazardous Substances</td>
+                  <td width="1%" valign="middle" align="left" >  :</td>
+                   <c:choose>
+                    <c:when test="${patientDetails.Hazordous==0}">
+                     <td width="84%" valign="top" align="left" >Yes</td>
+                    </c:when>                
+                    <c:when test="${patientDetails.Hazordous==1}">
+                     <td width="84%" valign="top" align="left" >No</td>
+                    </c:when>
+                    <c:otherwise>
+                     <td width="84%" valign="top" align="left" ></td>
+                    </c:otherwise>
+                  </c:choose>
+                </tr>
+                 <tr class="row1">
+                  <td width="15%" valign="middle" align="left" >Females Only:<br>Are you pregnant</td>
+                    <td width="1%" valign="middle" align="left" >  :</td>
+                   <c:choose>
+                    <c:when test="${patientDetails.Female==0}">
+                     <td width="84%" valign="top" align="left" >Yes</td>
+                    </c:when>                
+                    <c:when test="${patientDetails.Female==1}">
+                     <td width="84%" valign="top" align="left" >No</td>
+                    </c:when>
+                    <c:otherwise>
+                     <td width="84%" valign="top" align="left" ></td>
+                    </c:otherwise>
+                  </c:choose>
+                </tr>
               
-              
-              
+              <tr class="row1">
+                  <td width="15%" valign="middle" align="left" >Dr</td>
+                    <td width="1%" valign="middle" align="left" >  :</td>
+                  <td width="84%" valign="top" align="left" >${patientDetails.Dr}</td>
+                </tr>
+                <tr class="row1">
+                  <td width="15%" valign="middle" align="left" >Patient</td>
+                    <td width="1%" valign="middle" align="left" >  :</td>
+                  <td width="84%" valign="top" align="left" >${patientDetails.Patient}</td>
+                </tr>
+                <tr class="row1">
+                  <td width="15%" valign="middle" align="left" >Signature</td>
+                    <td width="1%" valign="middle" align="left" >  :</td>
+                  <td width="84%" valign="top" align="left" >${patientDetails.Sign}</td>
+                </tr>
             </c:forEach>
                 
                 

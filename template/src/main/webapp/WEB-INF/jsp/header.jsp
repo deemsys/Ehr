@@ -121,13 +121,13 @@
 		$previ=explode(",",$rec);
 	<AJDF:output>/php</AJDF:output>	 Suresh-->
 						<ul class="menu">
-							<%-- <li>
+							 <%-- <li>
 								<a href="welcome" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>">
 									<span><img src="<c:url value="/resources/images/icon_01.png" />" alt="" style="padding:5px 5px 0 0;" />Dashboard</span>
 								</a>
 							</li> --%>
 				            <li>
-				            	<a href="patientDetails" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" >
+				            	<a href="patientDetails" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" rel="ddsubmenu5">
 				            		<span><img src="<c:url value="/resources/images/email.png" />" alt="" style="padding:5px 5px 0 0;" />Patient Information</span>
 				            	</a>
 				            </li>
@@ -311,8 +311,8 @@
 							<li><a href="changepassword">Change My Password</a></li>
 						</ul> -->
 						<ul id="ddsubmenu5" class="ddsubmenustyle">
-						<li><a href="patientDetails">Patient Information</a></li>
-						<li><a href="viewpatient">View Patient</a></li>
+						<!-- <li><a href="patientDetails">Patient Information</a></li> -->
+						<!-- <li><a href="viewpatient">View Patient</a></li> -->
 						</ul>
 						
 						

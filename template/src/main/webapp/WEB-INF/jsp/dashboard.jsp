@@ -17,20 +17,20 @@
 									<td valign="top" align="left" width="15%">Mobile Number</td>
 									<td valign="top" align="left" width="10%">City</td>
 									<td valign="top" align="left" width="10%">State</td>
-									<td valign="top" align="left" width="15%">Action</td>
+									<td valign="top" align="left" width="15%">DateOfBirth</td>
 									
 
 
 								</tr>
 
 								<!-- Display Admin Userd here  Suresh--> 
-									<c:forEach items="${PatientDetailsForm.patientdetails}" var="patientdetails" varStatus="status">
-							       		<tr class="row1" onmouseover="mouse_event(this,"row_hover");" onmouseout="mouse_event(this,"row1");">
-								           	<td valign="top" align="left"  width="10%">${patientdetails.Name}</td>
-											<td valign="top" align="left" width="15%">${patientdetails.MobileNumber}</td>
-											<td valign="top" align="left" width="10%">${patientdetails.City}</td>
-											<td valign="top" align="left" width="10%">${patientdetails.State}</td>
-											
+									<c:forEach items="${PatientDetailsForm.patientDetails}" var="patientDetails" varStatus="status">
+							       		<tr class="row1">
+								           	<td valign="top" align="left"  width="10%"><a href="patientDetails?id=${patientDetails.Patient_id}">${patientDetails.Name}</a></td>
+											<td valign="top" align="left" width="15%">${patientDetails.MobileNumber}</td>
+											<td valign="top" align="left" width="10%">${patientDetails.City}</td>
+											<td valign="top" align="left" width="10%">${patientDetails.State}</td>
+											<td valign="top" align="left" width="10%">${patientDetails.DateOfBirth}</td>
 										</tr>
 							    	</c:forEach>
 						    	

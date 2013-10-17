@@ -326,12 +326,12 @@
 				                <tr class="row1">
 				                 	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Type Of Accident:</td>
 				                  	<td valign="top" align="left" class="input_txt">
-				                  		<select name="Type_Of_Accident" class="input_cmbbx1">
+				                  		<select name="Type_Of_Accident" class="input_cmbbx1" onchange='Checklight(this.value)';>
 						                    <option selected="selected" value="auto" >Auto</option>
 											<option value="work">Work</option>
 											<option value="other">Other</option>
 				                   		</select>
-				                   	
+				                   <input type="text" name="accident" id="accident" style='display:none'/>
 				                   	</td>
 				                   	
 				                </tr>  
@@ -383,12 +383,13 @@
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Phone_Number" /><br><span class="err"><form:errors path="PatientDetails.Phone_Number"></form:errors></span>
 				                  	
 				                  </td>
+				                  <td></td>
 				                </tr>
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name of Person at Fault for the Accident:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Fault_accident" /><br><span class="err"><form:errors path="PatientDetails.Fault_accident"></form:errors></span></td>
-				                  	<td>   </td>                                                                                        
+				                  	<td></td>                                                                                        
 				                 
 				                </tr>
 				                <tr class="row2">
@@ -509,8 +510,9 @@
 				                  	<input type="checkbox" name="High" value="High">High Blood Pressure<br>
 				                  	<input type="checkbox" name="Digestive" value="Digestive">Digestive Disorders &nbsp;&nbsp;&nbsp;
 				                  	<input type="checkbox" name="Heart" value="Heart">Heart trouble	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				                  	<input type="checkbox" name="Other" value="Other">other
-				                  	
+				                  	<input type="checkbox" name="Other" value="Other">other &nbsp;&nbsp;&nbsp;&nbsp;
+				                  <input type="text" class="input_txtbx1" id="inp_id" name="Ifother" placeholder="If other" />
+				                  	</td>
 				                  	</tr> 
 				                  <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Surgeries or Major Illnesses You Have Had: </td>
@@ -572,10 +574,14 @@
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Sign" /><br><span class="err"><form:errors path="PatientDetails.Sign"></form:errors></span>
 				                  	</tr>  
-				                  	
+				                  	</table>
+				                   <table cellpadding="0" cellspacing="0" border="0" width="100%">
 				                  	 <tr>
-				  <td valign="top" align="center">&nbsp;</td><br>
-				                <td valign="top" align="right"><br><input type="submit" class="submit_btn2" value="Submit"></td>
+				  <td valign="top" align="center">&nbsp;</td>
+				                <td valign="top" align="right"><br><input type="submit" class="submit_btn" value="Save"></td>
+				                <td valign="top" align="right"><br><input type="reset" class="submit_btn" value="Cancel" ONCLICK="window.location.href='patientDetails'"></td>
+				                <td valign="top" align="right"><br><input type="button" class="submit_btn" value="View" ONCLICK="window.location.href='viewpatient'"></td>
+				                
 				  </tr>
 				  
 				                  	</table>
@@ -649,6 +655,16 @@
 
 	});
   </script>
+  <script type="text/javascript">
+function Checklight(val){
+ var element=document.getElementById('accident');
+ if(val=='other')
+   element.style.display='block';
+ else  
+   element.style.display='none';
+} 
+</script>
+
   
         <jsp:include page="footer.jsp"></jsp:include>
 
