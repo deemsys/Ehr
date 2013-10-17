@@ -11,6 +11,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -126,6 +127,12 @@ public class MainController {
 	@RequestMapping(value="/login", method = RequestMethod.GET)
 	public String login(ModelMap model) {
 		return "login";
+ 
+	}
+	
+	@RequestMapping(value="/viewpatient", method = RequestMethod.GET)
+	public String viewpatient(ModelMap model) {
+		return "viewpatient";
  
 	}
 	@RequestMapping(value="/autoaccident", method = RequestMethod.GET)
@@ -430,17 +437,10 @@ public class MainController {
 		return "Hippaprivacy";
 	}
 	
+
 	
 	
-	@RequestMapping(value="/viewpatient", method=RequestMethod.GET)
-	public String viewPatient(HttpServletRequest request,ModelMap model, Principal principal) {
-		 model.addAttribute("success","false");
-		PatientDetailsForm patientdetailsform = new PatientDetailsForm();
-		patientdetailsform.setPatientDetails(patientDAO.getPatientDetails());
-		System.out.println(patientdetailsform);		
-        model.addAttribute("patientdetailsform", patientdetailsform);
-		return "viewpatient";
-	}
+	
 	
 	//view screening
 	
@@ -609,6 +609,19 @@ public class MainController {
  
 	}
 	
+	@RequestMapping(value="/addpatients",method=RequestMethod.GET)
+	public String showAddpatient(HttpServletRequest request,@RequestParam("id") String Patient_id,ModelMap model,PatientDetails patientdetails)
+	{
+		PatientDetailsForm patientdetailsform= new PatientDetailsForm();
+		patientdetailsform.setPatientDetails(patientDAO.getPatientDetails());
+		model.addAttribute("PatientDetailsForm",patientdetailsform);
+        model.addAttribute("menu","dashboard");
+		return "/addpatients";
+		
+		
+	
+	}
+	
 	@RequestMapping(value="/patientDetails", method = RequestMethod.POST)
 	public String insertpatientDetails(@ModelAttribute("PatientDetails") @Valid PatientDetails patientdetails,BindingResult result,ModelMap model) {
 		if (result.hasErrors())
@@ -626,14 +639,22 @@ public class MainController {
          PatientDetailsForm patientdetailsform= new PatientDetailsForm();
 		patientdetailsform.setPatientDetails(patientDAO.getPatientDetails());
 		model.addAttribute("PatientDetailsForm",patientdetailsform);
-
+		 model.addAttribute("noofrows",patientDAO.getPatientDetails().size());
 		System.out.println("patientdetails");
 	    
 		return "patientDetails";
  
 	}
 	
-	
+	@RequestMapping(value="/viewpatient", method=RequestMethod.POST)
+	public String viewPatient(HttpServletRequest request,ModelMap model, Principal principal) {
+		 model.addAttribute("success","false");
+		PatientDetailsForm patientdetailsform = new PatientDetailsForm();
+		patientdetailsform.setPatientDetails(patientDAO.getPatientDetails());
+		System.out.println(patientdetailsform);		
+        model.addAttribute("patientdetailsform", patientdetailsform);
+		return "viewpatient";
+	}
 	
 
 	@RequestMapping(value="/loginfailed", method = RequestMethod.GET)

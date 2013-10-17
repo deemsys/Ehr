@@ -162,6 +162,7 @@ private String High;
 private String Digestive;
 private String Heart;
 private String Other;
+private String Ifother;
 @NotEmpty
 private String Illness;
 @NotEmpty
@@ -2379,6 +2380,7 @@ public PatientDetails(String Patient_id,
 		String Digestive,
 		String Heart,
 		String Other,
+		String Ifother,
 		String Illness,
 		String Dates,
 		String Medications,
@@ -2476,6 +2478,7 @@ public PatientDetails(String Patient_id,
 	this.Digestive=Digestive;
 	this.Heart=Heart;
 	this.Other=Other;
+	this.Ifother=Ifother;
 	this.Illness=Illness;
 	this.Dates=Dates;
 	this.Medications=Medications;
@@ -2491,5 +2494,27 @@ public PatientDetails(String Patient_id,
 	this.Patient=Patient;
 	this.Sign=Sign;
 	
+}
+
+
+
+
+
+
+
+
+public String getIfother() {
+	return Ifother;
+}
+
+
+
+
+
+
+
+
+public void setIfother(String ifother) {
+	Ifother = ifother;
 }
 }
