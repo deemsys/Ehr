@@ -493,6 +493,22 @@ ul.pagination li.page a:hover {
 	border:0;
 	outline:none;
 }
+.submit_btn3 {
+	background:url(../images/login_btn.png) 0 0 no-repeat;
+	width:100px;
+	height:30px;
+	
+	line-height:30px;
+	text-align:center;
+	color:#d8ebff;
+	font-weight:bold;
+	font-size:14px;
+	cursor:pointer;
+	display:block;
+	border:0;
+	outline:none;
+	
+}
 .input_txt .chk_bx {
 	vertical-align:middle;
 }
