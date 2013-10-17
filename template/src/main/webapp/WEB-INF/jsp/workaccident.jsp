@@ -84,7 +84,7 @@ $(function() {
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Do you carry anything or pick anything up</td>
 				  <td valign="top" align="left" class="input_txt"><input type="radio" name="pick" value="0" class="input_txt" checked="true" onclick="pick('show')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="pick" value="1" class="input_txt" onclick="pick('hide')">No&nbsp;&nbsp;&nbsp;
-				   <input type="text" class="input_txtbx1" id="inp_id" name="carry" placeholder="If yes, What"/>
+				   <input type="text" class="input_txtbx1" id="carry" name="carry" placeholder="If yes, What"/>
 				  </td>
 				  </tr>
 				  <tr class="row2">
@@ -186,7 +186,7 @@ $(function() {
 					<tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>In your job, do you push or pull</td>
 				  <td valign="top" align="left" class="input_txt"><input type="radio" name="push_pull" value="0" class="input_txt" checked="true" onclick="pull('show4')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="push_pull" value="1" class="input_txt" onclick="pull('hide4')">No&nbsp;&nbsp;&nbsp;
-				   <input type="text" class="input_txtbx1" id="inp_id" name="jobpp" placeholder="If yes, give specifics"/>
+				   <input type="text" class="input_txtbx1" id="jobpp" name="jobpp" placeholder="If yes, give specifics"/>
 				  </td>
 				  </tr>
 				  </table>
@@ -285,11 +285,12 @@ $(function() {
 				  </tr>
 				  </table>
 				  </div>
+				  <table cellpadding="0" cellspacing="0" border="0" width="100%">
 				  <tr>
-				  <td valign="top" align="center">&nbsp;</td>
-				  <!-- <td valign="top" align="left"><input type="button" class="submit_btn2" value="Previous" onclick="history.go(-1)"></td>  -->
-                  <td valign="top" align="right"><input type="submit" class="submit_btn2" value="Submit"></td>
+                  <td valign="top" align="center"><input type="submit" class="submit_btn" value="Save"></td>
+                  <td valign="top" align="center"><input type="reset" class="submit_btn" value="Cancel" onclick="window.location.href='workaccident'"></td>
 				  </tr> 
+				  </table>
 				  </div>
 				  </div>
 				  </body>

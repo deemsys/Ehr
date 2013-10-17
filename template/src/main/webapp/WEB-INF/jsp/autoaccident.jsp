@@ -423,6 +423,7 @@ $(function() {
   				<table cellpadding="0" cellspacing="0" border="0" width="100%">
   				<tr class="row1">
   				<td valign="middle" align="left" class="input_txt"><h6 >During / After crash</h6></td>
+  				<td></td>
   				</tr>
   				<tr class="row2">
                 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient's body</td>
@@ -520,7 +521,7 @@ $(function() {
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Unconscious</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="unconscious" value="0" class="input_txt" checked="true" onclick="toggle4('show4')" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="unconscious" value="1" class="input_txt" onclick="toggle4('hide4')" >No&nbsp;&nbsp;&nbsp;
-			      <input type="text" class="input_txtbx1" id="inp_id" name="uncon" > (minutes)</input>
+			      <input type="text" class="input_txtbx1" id="uncon" name="uncon" > (minutes)</input>
 			      </td>
 				  </tr>
 				  <tr class="row1">
@@ -676,11 +677,13 @@ $(function() {
 				  </tr>
 				  </table>
 				  </div>
-				   <tr>
-				  <td valign="top" align="center">&nbsp;</td>
-				  <!-- <td valign="top" align="left"><input type="button" class="submit_btn2" value="Previous" onclick="history.go(-1)"></td>  -->
-                  <td valign="top" align="right"><input type="submit" class="submit_btn2" value="Submit"></td>
+				  <table cellpadding="0" cellspacing="0" border="0" width="100%">
+				  <tr>
+                  <td valign="top" align="center"><input type="submit" class="submit_btn" value="Save"></td>
+                  <td valign="top" align="center"><input type="reset" class="submit_btn" value="Cancel" onclick="window.location.href='autoaccident'"></td>
 				  </tr> 
+				  </table>
+				  
 				  </form>
 				  </div>
 				  </div>
