@@ -83,7 +83,7 @@ $(function() {
 				  </tr>
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Do you carry anything or pick anything up</td>
-				  <td valign="top" align="left" class="input_txt"><input type="radio" name="pick" value="0" class="input_txt" checked="true" onclick="pick('show')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="pick" value="1" class="input_txt" onclick="pick('hide')">No&nbsp;&nbsp;&nbsp;
+				  <td valign="top" align="left" class="input_txt"><input type="radio" name="pick" value="0" class="input_txt" checked="true" onclick="any('show')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="pick" value="1" class="input_txt" onclick="any('hide')">No&nbsp;&nbsp;&nbsp;
 				   <input type="text" class="input_txtbx1" id="carry" name="carry" placeholder="If yes, What"/>
 				  </td>
 				  </tr>
@@ -138,7 +138,7 @@ $(function() {
 				  <div id="lift">
 				  <table cellpadding="0" cellspacing="0" border="0" width="100%">
 				  <tr class="row1">
-                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>If yes, how much</td>
+                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>If yes, how much&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="input_txtbx1" id="inp_id" name="how_much" />
 				  </td>
@@ -159,7 +159,7 @@ $(function() {
 				  </div>
 				  <table cellpadding="0" cellspacing="0" border="0" width="100%">
                   <tr class="row1">
-                <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Do you lift from</td>
+                <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Do you lift from&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="lift_from" class="input_cmbbx1" >
 					<option selected="selected" value="ground" >Ground</option>
@@ -313,14 +313,7 @@ else
  document.getElementById('absenteeism').style.visibility='hidden';
 }
 </script>					  
-<script type="text/javascript">
-function pick(value){
-if(value=='show')
- document.getElementById('carry').style.visibility='visible';
-else
- document.getElementById('carry').style.visibility='hidden';
-}
-</script>				  
+			  
 				  				  
 <script type="text/javascript">
 function Checkpos(val){
@@ -358,6 +351,14 @@ else
  document.getElementById('jobpp').style.visibility='hidden';
 }
 </script>
+<script type="text/javascript">
+function any(value){
+if(value=='show')
+ document.getElementById('carry').style.visibility='visible';
+else
+ document.getElementById('carry').style.visibility='hidden';
+}
+</script>	
 <script type="text/javascript">
 function work(val){
  var element=document.getElementById('warea');

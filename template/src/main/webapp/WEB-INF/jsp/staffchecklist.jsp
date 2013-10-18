@@ -133,7 +133,8 @@
 			  <br>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
-              <td valign="top" align="center"><input type="submit" class="submit_btn2" value="Submit"></td>
+              <td valign="top" align="center"><input type="submit" class="submit_btn" value="Save"></td>
+               <td valign="top" align="center"><input type="reset" class="submit_btn" value="Cancel"></td>
         	  </tr>
         	  </table>
 			  </div>

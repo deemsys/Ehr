@@ -53,7 +53,8 @@
 				                  	</tr>
 				                  	<tr>
 				  <td valign="top" align="center">&nbsp;</td>
-				                <td valign="top" align="center"><br><input type="submit" class="submit_btn2" value="Submit"></td>
+				                <td valign="top" align="center"><br><input type="submit" class="submit_btn" value="Save"></td>
+				   <td valign="top" align="center"><br><input type="reset" class="submit_btn" value="Cancel"></td>
 				  </tr>
 				                  	</div>
 				                  	

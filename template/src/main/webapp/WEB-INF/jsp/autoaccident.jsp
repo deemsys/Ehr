@@ -451,7 +451,7 @@ $(function() {
 				<table cellpadding="0" cellspacing="0" border="0" width="100%">
 				  
 				  <tr class="row2">
-                  <td valign="middle" align="left" class="input_txt">My head hit</td>
+                  <td valign="middle" align="left" class="input_txt">My head hit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="input_txtbx1" id="inp_id" name="head_hit" />
 				  </td>
@@ -506,7 +506,7 @@ $(function() {
 				  
 				  <table cellpadding="0" cellspacing="0" border="0" width="100%"> 
 				  <tr class="row2">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Were you wearing glasses at the time of accident</td>
+				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Were you wearing glasses at the time of accident&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="wearing_glasses" value="0" class="input_txt" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="wearing_glasses" value="1" class="input_txt" >No&nbsp;&nbsp;&nbsp;
 			      </td>
@@ -628,26 +628,30 @@ $(function() {
 				  <div id="accident_hospital">
 				  <table cellpadding="0" cellspacing="0" border="0" width="100%">
 				   <tr class="row2">
-                  <td valign="middle" align="left" class="input_txt">Name of the hospital</td>
-				  <td valign="top" align="left" class="input_txt">
+                  <td valign="middle" align="left" class="input_txt">Name of the hospital&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				  
 				  <input type="text" class="input_txtbx1" id="inp_id" name="hosname" />
+				  <td></td>
+				  <td></td>
 				  </td>
 				  </tr>
 				   <tr class="row1">
-                  <td valign="middle" align="left" class="input_txt">City</td>
-				  <td valign="top" align="left" class="input_txt">
+                  <td valign="middle" align="left" class="input_txt">City&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				  
 				  <input type="text" class="input_txtbx1" id="inp_id" name="city" />
 				  </td>
 				  </tr>
 				   <tr class="row2">
-                  <td valign="middle" align="left" class="input_txt">Length of stay</td>
-				  <td valign="top" align="left" class="input_txt">
+                  <td valign="middle" align="left" class="input_txt">Length of stay&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				  
 				  <input type="text" class="input_txtbx1" id="inp_id" name="staylength" />
 				  </td>
+				  <td></td>
+				  <td></td>
 				  </tr>
 				  <tr class="row1">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>How did you get to the hospital?</td>
-				 <td valign="top" align="left" class="input_txt">
+				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>How did you get to the hospital?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				
 				  <select name="hospitalget" class="input_cmbbx1"  onchange='Checkhospital(this.value);'>
 					<option selected="selected" value="ambulance" >Ambulance</option>
 					<option value="otherhos">Other</option>
@@ -656,16 +660,20 @@ $(function() {
 				  </td>
 				  </tr> 
 				  <tr class="row2">
-                  <td valign="middle" align="left" class="input_txt">What body parts were x-rayed,what treatment was given</td>
-				  <td valign="top" align="left" class="input_txt">
+                  <td valign="middle" align="left" class="input_txt">What body parts were x-rayed,what treatment was given
+				  
 				  <input type="text" class="input_txtbx1" id="inp_id" name="xray" />
 				  </td>
+				  <td></td>
+				  <td></td>
 				  </tr>
 				   <tr class="row1">
-                  <td valign="middle" align="left" class="input_txt">What did they tell you was wrong</td>
-				  <td valign="top" align="left" class="input_txt">
+                  <td valign="middle" align="left" class="input_txt">What did they tell you was wrong&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				  
 				  <input type="text" class="input_txtbx1" id="inp_id" name="wrong" />
 				  </td>
+				  <td></td>
+				  <td></td>
 				  </tr>
 				  
 				  </table>
@@ -679,8 +687,12 @@ $(function() {
 				  </div>
 				  <table cellpadding="0" cellspacing="0" border="0" width="100%">
 				  <tr>
+				  <td valign="top" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				   
                   <td valign="top" align="center"><input type="submit" class="submit_btn" value="Save"></td>
                   <td valign="top" align="center"><input type="reset" class="submit_btn" value="Cancel" onclick="window.location.href='autoaccident'"></td>
+				 <td valign="top" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				
 				  </tr> 
 				  </table>
 				  

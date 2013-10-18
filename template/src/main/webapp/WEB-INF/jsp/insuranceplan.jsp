@@ -88,19 +88,21 @@
         <td></td>
         <td align="center"><input type="text" class="input_txtbx1" name="name_of_clinic" id="name_of_clinic" placeholder="Name of clinic"/><br><span class="err"><form:errors path="Insuranceplan.name_of_clinic"></form:errors></td>
         </tr>
-        <tr>
-        <td><input type="text" class="input_txtbx1" name="pat" id="pat"/><br><span class="err"><form:errors path="Insuranceplan.pat"></form:errors></td>
-        <td align="center"><input type="text" class="input_txtbx1" name="authorized" id="authorized"/><br><span class="err"><form:errors path="Insuranceplan.authorized"></form:errors></td>
+        <tr class="row1">
+        <td><input type="text" class="input_txtbx1" name="pat" id="pat" placeholder="Patient"/><br><span class="err"><form:errors path="Insuranceplan.pat"></form:errors></td>
+        <td align="center"><input type="text" class="input_txtbx1" name="authorized" id="authorized" placeholder="Authorized Clinic Representative"/><br><span class="err"><form:errors path="Insuranceplan.authorized"></form:errors></td>
         </tr>
-        <tr>
+       <!--  <tr>
         <td>Patient</td>
         <td align="center">Authorized Clinic Representative</td>
         </tr>
         </table>
         <br>
-        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+        <table cellpadding="0" cellspacing="0" border="0" width="100%">  -->
         <tr>
-        <td valign="top" align="center"><input type="submit" class="submit_btn2" value="Submit"></td>
+       <!-- <td valign="top" align="center">&nbsp;</td>  -->
+        <td valign="top" align="center"><br><input type="submit" class="submit_btn" value="Save"></td>
+        <td valign="top" align="center"><br><input type="reset" class="submit_btn" value="Cancel"></td>
         </tr>
         </table>
         </div>
