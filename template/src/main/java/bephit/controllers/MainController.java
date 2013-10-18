@@ -3,6 +3,7 @@ package bephit.controllers;
  
 
 import java.security.Principal;
+import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -657,6 +658,19 @@ public class MainController {
 	}
 	
 
+	@RequestMapping(value="/viewhardship", method = RequestMethod.GET)
+	public String viewhardship(HttpServletRequest request,ModelMap model) {
+		
+		HardshipagreementForm hardshipagreementForm= new HardshipagreementForm();
+    	hardshipagreementForm.setHardshipagreement(hardDAO.getHardshipagreement());
+		model.addAttribute("hardshipagreementform",hardshipagreementForm);
+		
+		return "viewhardship";
+ 
+	}
+	
+
+	
 	@RequestMapping(value="/loginfailed", method = RequestMethod.GET)
 	public String loginerror(ModelMap model) {
 		model.addAttribute("error", "true");
