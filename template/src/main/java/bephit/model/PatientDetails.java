@@ -68,6 +68,7 @@ private String Gender;
 
 private String MaritalStatus;
 
+private String Areyou;
 private String Student;
 @NotEmpty
 @Pattern(regexp="(/^[a-zA-Z ]*$/)",message="Should be a alphabets")
@@ -2332,6 +2333,7 @@ public PatientDetails(String Patient_id,
 		String SocialSecurityNumber,
 		String Gender,
 		String MaritalStatus,
+		String Areyou,
 		String Student,
 		String EmployerName,
 		String Occupation,
@@ -2430,6 +2432,7 @@ public PatientDetails(String Patient_id,
 	this.SocialSecurityNumber=SocialSecurityNumber;
 	this.Gender=Gender;
 	this.MaritalStatus=MaritalStatus;
+	this.Areyou=Areyou;
 	this.Student=Student;
 	this.EmployerName=EmployerName;
 	this.Occupation=Occupation;
@@ -2514,6 +2517,28 @@ public PatientDetails(String Patient_id,
 	this.Patient=Patient;
 	this.Sign=Sign;
 	
+}
+
+
+
+
+
+
+
+
+public String getAreyou() {
+	return Areyou;
+}
+
+
+
+
+
+
+
+
+public void setAreyou(String areyou) {
+	Areyou = areyou;
 }
 
 
