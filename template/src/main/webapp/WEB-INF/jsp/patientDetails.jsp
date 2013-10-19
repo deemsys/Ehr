@@ -55,7 +55,7 @@
 <div id="right_content">
 <form method="POST" action="patientDetails">
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
-<c:if test="${success==true}">
+<%-- <c:if test="${success==true}">
         <tr>
         <td valign="top" align="left" style="padding:5px 0 10px 0;">&nbsp;
             <div id="success_statusbar" class="status success">
@@ -63,7 +63,7 @@
             <p><img alt="Success" src="resources/images/icons/icon_success.png"><span>Success!</span>.</p>
           </div>
       </tr>
-    </c:if>  
+    </c:if>   --%>
 
       <tr>
         <td valign="top" align="left">
@@ -77,8 +77,10 @@
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
   				<tr>
     				<td align="left" valign="top" width="50%" style="padding-right:25px;">
-    					<h2 class="quck-txt">Patient Details</h2>
+    					<!-- <h2 class="quck-txt">Patient Details</h2> -->
                         <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                       <br>
+                        <br>
                         <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name :</td>
 				                  <td valign="top" align="left" class="input_txt">
@@ -160,15 +162,29 @@
 				                </table>
 				                <td align="left" valign="top"> <h2 class="quck-txt"></h2>
 							<table cellpadding="0" cellspacing="0" border="0" width="100%">
-				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Student:</td>
+							 <tr class="row1">
+							 
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Are you:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="radio" name="Areyou" value="0" class="input_txt"  onchange="toggle3('show3')">Student&nbsp;&nbsp;&nbsp;<input type="radio" name="Areyou" value="1" class="input_txt" checked="true" onclick="toggle3('hide3')">Employee</td>
+				                  
+				                </tr>
+							</table>
+							<div id="student" style="display:none;">
+							<table cellpadding="0" cellspacing="0" border="0" width="100%">
+							<tr class="row2">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Student:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="radio" name="Student" value="0" class="input_txt" checked="true">FullTime&nbsp;&nbsp;&nbsp;<input type="radio" name="Student" value="1" class="input_txt">PartTime</td>
 				                  
 				                </tr>
-				                
-				                </tr><tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Employer Name:</td>
+							
+							</table>
+							</div>
+							<div id="employee" >
+							<table cellpadding="0" cellspacing="0" border="0" width="100%">
+							<tr class="row1">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Employer Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="EmployerName" /><br><span class="err"><form:errors path="PatientDetails.EmployerName"></form:errors></span>
 				                  </td>
@@ -206,41 +222,51 @@
 				                  </td>
 				                </tr>
 				                <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Zip:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>ZipCode:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Ezip" /><br><span class="err"><form:errors path="PatientDetails.Ezip"></form:errors></span>
 				                  	
 				                  </td>
 				                </tr>
-				                <tr class="row2">
+							
+							
+							</table>
+							</div>
+							
+							
+							
+				                
+				                <table cellpadding="0" cellspacing="0" border="0" width="100%">
+				                
+				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Spouse's or significant others name:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="SpousesName" /><br><span class="err"><form:errors path="PatientDetails.SpousesName"></form:errors></span>
 				                  	
 				                  </td>
 				                </tr>
-				                <tr class="row1">
+				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Spouses Employer:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="SpousesEmp" /><br><span class="err"><form:errors path="PatientDetails.SpousesEmp"></form:errors></span>
 				                  	
 				                  </td>
 				                </tr>
-				                <tr class="row2">
+				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Spouse's Workphone:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Spousesph" /><br><span class="err"><form:errors path="PatientDetails.Spousesph"></form:errors></span>
 				                  	
 				                  </td>
 				                </tr>
-				                <tr class="row1">
+				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name and Phone # of Nearest Friend/ Relative Not Living With You:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Name_phone" /><br><span class="err"><form:errors path="PatientDetails.Name_phone"></form:errors></span>
 				                  	
 				                  </td>
 				                </tr>
-				                 <tr class="row2">
+				                 <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Have you ever had chiropractic care? </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="radio" name="Chiropratic_care" value="0" class="input_txt" checked="true">yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Chiropratic_care" value="1" class="input_txt">No</td>
@@ -665,7 +691,33 @@ function Checklight(val){
 } 
 </script>
 
-  
+ <script type="text/javascript">
+function toggle3(value){
+	/* alert(value); */
+	var e = document.getElementById('student');
+	var e1=document.getElementById('employee');
+if(value=='show3')
+	{
+ e.style.display="block";
+ e1.style.display="none";
+	}
+else
+	{
+ e.style.display="none";
+ e1.style.display="block";
+	}
+}
+</script>
+ <!-- <script type="text/javascript">
+function toggle4(value){
+	/* alert(value); */
+	var e = document.getElementById('employee');
+if(value=='show3')
+ e.style.display="block";
+else
+ e.style.display="none";
+}
+</script> -->
         <jsp:include page="footer.jsp"></jsp:include>
 
 

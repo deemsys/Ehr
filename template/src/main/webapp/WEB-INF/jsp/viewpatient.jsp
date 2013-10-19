@@ -4,7 +4,7 @@
 <script type="text/javascript" src="js/ajaxpaging.js"></script>
 
 <div id="right_content">
-	<form name="grid" onSubmit="return validate(this)" action="" method="POST">
+	<form name="grid" onSubmit="return validate(this)" action="viewpatient" method="POST">
     	<table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
       		<tr>
 				<td valign="top" align="left" style="padding:5px 0 10px 0;">
@@ -30,17 +30,17 @@
 								<td valign="top" align="left" width="10%">State</td>
           						<td valign="top" align="left" width="25%">Action</td>
         					</tr>
-        					<c:forEach items="${PatientDetailsForm.patientDetails}" var="patientDetails" varStatus="status">
+        					<c:forEach items="${patientdetailsform.PatientDetails}" var="PatientDetails">
         				       	<tr class="row1">
-							       		<td valign="center" align="right" width="10%"><input type="checkbox" value="${patientDetails.Patient_id}" name="chkUser"></td>
-					     		     <td valign="top" align="left"  width="10%">${patientDetails.Name}</td> 
-										 	<td valign="top" align="left" width="15%">${patientDetails.MobileNumber}</td>
-											<td valign="top" align="left" width="10%">${patientDetails.City}</td>
-											<td valign="top" align="left" width="10%">${patientDetails.State}</td>
-											<td>
+							       		<td valign="center" align="right" width="10%"><input type="checkbox" value="${PatientDetails.Patient_id}"></td>
+					     		     <td valign="top" align="left"  width="10%">${PatientDetails.Name}</td> 
+										 	<td valign="top" align="left" width="15%">${PatientDetails.MobileNumber}</td>
+											<td valign="top" align="left" width="10%">${PatientDetails.City}</td>
+											<td valign="top" align="left" width="10%">${PatientDetails.State}</td>
+											 <td>
 												<a href="#" title="" ><img src="resources/images/icons/icon_edit.png" alt="Edit" /></a><a href="<c:out value="editparticipant?id=${patientDetails.Patient_id}"/>" style="padding-right:10px;">Edit</a>
 												<a href="#" title=""><img src="resources/images/icons/icon_delete.png" alt="Delete" /></a><a id="delete_confirm" href="<c:out value="deleteparticipants?id=${patientDetails.Patient_id}"/>">Remove</a>
-											</td>
+											</td> 
 								</tr>
 							    	</c:forEach>
         					

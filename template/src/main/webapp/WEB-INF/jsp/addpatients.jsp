@@ -396,26 +396,7 @@
                   <td width="84%" valign="top" align="left" >${patientDetails.Sign}</td>
                 </tr>
             </c:forEach>
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
+                         
               </table>
           
             </div>

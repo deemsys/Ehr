@@ -198,7 +198,135 @@ public class PatientDAO {
 	}
 	
 	
-	
+	 public List<PatientDetails> getPatientDetails(String Patient_id){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<PatientDetails> patientDetails = new ArrayList<PatientDetails>();
+	    try{
+	    	String cmd="select * from Patient_Details where Patient_id='"+Patient_id+"'";
+			resultSet = statement.executeQuery(cmd);
+			System.out.println(cmd);			
+			while(resultSet.next()){
+				patientDetails.add(new PatientDetails(
+						resultSet.getString("Patient_id"),
+			    		resultSet.getString("Name"),
+			    		resultSet.getString("Date"),
+			    		resultSet.getString("StreetAddress"),
+			    		resultSet.getString("City"),
+			    		resultSet.getString("State"),
+			    		resultSet.getString("Zipcode"),
+			    		resultSet.getString("Homephone"),
+			    		resultSet.getString("Pager"),
+			    		resultSet.getString("MobileNumber"),
+			    		resultSet.getString("DateOfBirth"),
+			    		resultSet.getString("SocialSecurityNumber"),
+			    		resultSet.getString("Gender"),
+			    		resultSet.getString("MaritalStatus"),
+			    		resultSet.getString("Student"),
+			    		resultSet.getString("EmployerName"),
+			    		resultSet.getString("Occupation"),
+			    		resultSet.getString("EmployerAddress"),
+			    		resultSet.getString("Workphone"),
+			    	    resultSet.getString("EmployerCity"),
+			    	    resultSet.getString("Estate"),
+			    	    resultSet.getString("Ezip"),
+			    	    resultSet.getString("SpousesName"),
+			    	    resultSet.getString("SpousesEmp"),
+			    	    resultSet.getString("Spousesph"),
+			    	    resultSet.getString("Name_phone"),
+			    	    resultSet.getString("Chiropratic_care"),
+			    	    resultSet.getString("Symptoms"),
+			    	    resultSet.getString("Painscale"),
+			    	    resultSet.getString("Symptom1"),
+			    	    resultSet.getString("Painscale1"),
+			    	    resultSet.getString("Symptom2"),
+			    	    resultSet.getString("Painscale2"),
+			    	    resultSet.getString("Symptom_Accident"),
+			    	    resultSet.getString("Type_Of_Accident"),
+			    	    resultSet.getString("Date_Of_Accident"),
+			    	    resultSet.getString("Accident_Reported"),
+			    	    resultSet.getString("When"),
+			    	    resultSet.getString("Where"),
+			    	    resultSet.getString("Attorney_accident"),
+			    	    resultSet.getString("NameOfAttorney"),
+			    	    resultSet.getString("Phone_Number"),
+			    	    resultSet.getString("Fault_accident"),
+			    	    resultSet.getString("Insurance"),
+			    	    resultSet.getString("Insurance_phone"),
+			    	    resultSet.getString("Name_ph"),
+			    	    resultSet.getString("policy"),
+			    	    resultSet.getString("Name_health"),
+			    	    resultSet.getString("Health_phone"),
+			    	    resultSet.getString("Prev_accident"),
+			    	    resultSet.getString("Prev_When"),
+			    	    resultSet.getString("Anemia"),
+			    	    resultSet.getString("Muscular"),
+			    	    resultSet.getString("Rheumatic"),
+			    	    resultSet.getString("Allergies"),
+			    	    resultSet.getString("Polio1"),
+			    	    resultSet.getString("Multiple"),
+			    	    resultSet.getString("HIV"),
+			    	    resultSet.getString("Sinus"),
+			    	    resultSet.getString("Asthma"),
+			    	    resultSet.getString("German"),
+			    	    resultSet.getString("Nervousness"),
+			    	    resultSet.getString("Numbness"),
+			    	    resultSet.getString("Convulsions"),
+			    	    resultSet.getString("Epilepsy"),
+			    	    resultSet.getString("Concussion"),
+			    	    resultSet.getString("Neuritis"),
+			    	    resultSet.getString("Rheumatism"),
+			    	    resultSet.getString("Diabetes"),
+			    	    resultSet.getString("Arthritis"),
+			    	    resultSet.getString("Venereal"),
+			    	    resultSet.getString("Backaches"),
+			    	    resultSet.getString("Liver"),
+			    	    resultSet.getString("Kidney"),
+			    	    resultSet.getString("Thyroid"),
+			    	    resultSet.getString("Alcoholism"),
+			    	    resultSet.getString("Hepatitis"),
+			    	    resultSet.getString("Mental"),
+			    	    resultSet.getString("High"),
+			    	    resultSet.getString("Digestive"),
+			    	    resultSet.getString("Heart"), 
+			    	    resultSet.getString("Other"),
+			    	    resultSet.getString("Ifother"),
+			    	    resultSet.getString("Illness"), 
+			    	    resultSet.getString("Dates"),
+			    	    resultSet.getString("Medications"),
+			    	    resultSet.getString("Drink"),
+			    	    resultSet.getString("Smoke"),
+			    	    resultSet.getString("Drugs"),
+			    	    resultSet.getString("Diet"),
+			    	    resultSet.getString("Exercise"),
+			    	    resultSet.getString("Hazardous"),
+			    	    resultSet.getString("Hazardousyes"),
+			    	    resultSet.getString("Female"),
+			    	    resultSet.getString("Dr"),
+			    	    resultSet.getString("Patient"),
+			    	    resultSet.getString("Sign")
+			    	    ));
+			}
+	    }catch(Exception e){
+	    	System.out.println(e.toString());
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    }finally{
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);	    	
+	    }
+	    return patientDetails;
+		
+	}
 	public void releaseConnection(Connection con){
 		try{if(con != null)
 			con.close();

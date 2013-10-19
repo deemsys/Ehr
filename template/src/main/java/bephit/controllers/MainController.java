@@ -131,11 +131,7 @@ public class MainController {
  
 	}
 	
-	@RequestMapping(value="/viewpatient", method = RequestMethod.GET)
-	public String viewpatient(ModelMap model) {
-		return "viewpatient";
- 
-	}
+	
 	@RequestMapping(value="/autoaccident", method = RequestMethod.GET)
 	public String autoaccident(ModelMap model) {
 		
@@ -396,11 +392,7 @@ public class MainController {
 	}
 	
 	
-	@RequestMapping(value="/patientDetails",method=RequestMethod.GET)
-	public String patientDetails(ModelMap model)
-	{
-		return "patientDetails";
-	}
+	
 
 	@RequestMapping(value="/Assignment",method=RequestMethod.GET)
 	public String Assignment(ModelMap model)
@@ -614,17 +606,27 @@ public class MainController {
 	public String showAddpatient(HttpServletRequest request,@RequestParam("id") String Patient_id,ModelMap model,PatientDetails patientdetails)
 	{
 		PatientDetailsForm patientdetailsform= new PatientDetailsForm();
-		patientdetailsform.setPatientDetails(patientDAO.getPatientDetails());
+		patientdetailsform.setPatientDetails(patientDAO.getPatientDetails(Patient_id));
 		model.addAttribute("PatientDetailsForm",patientdetailsform);
         model.addAttribute("menu","dashboard");
 		return "/addpatients";
 		
-		
+	
 	
 	}
 	
+	@RequestMapping(value="/patientDetails",method=RequestMethod.GET)
+	public String patientDetails(ModelMap model)
+	{
+		PatientDetailsForm patientdetailsform= new PatientDetailsForm();
+		patientdetailsform.setPatientDetails(patientDAO.getPatientDetails());
+		model.addAttribute("PatientDetailsForm",patientdetailsform);
+		 model.addAttribute("noofrows",patientDAO.getPatientDetails().size());
+		return "/patientDetails";
+	}
+	
 	@RequestMapping(value="/patientDetails", method = RequestMethod.POST)
-	public String insertpatientDetails(@ModelAttribute("PatientDetails") @Valid PatientDetails patientdetails,BindingResult result,ModelMap model) {
+	public String insertpatientDetails(@ModelAttribute("PatientDetails") @Valid PatientDetails patientdetails,BindingResult result,ModelMap model,Principal principal) {
 		if (result.hasErrors())
 		{
 			PatientDetailsForm patientdetailsform= new PatientDetailsForm();
@@ -646,17 +648,25 @@ public class MainController {
 		return "patientDetails";
  
 	}
-	
-	@RequestMapping(value="/viewpatient", method=RequestMethod.POST)
-	public String viewPatient(HttpServletRequest request,ModelMap model, Principal principal) {
-		 model.addAttribute("success","false");
+	@RequestMapping(value="/viewpatient", method=RequestMethod.GET)
+	public String viewpatient(HttpServletRequest request,ModelMap model, Principal principal) {
+		
 		PatientDetailsForm patientdetailsform = new PatientDetailsForm();
 		patientdetailsform.setPatientDetails(patientDAO.getPatientDetails());
-		System.out.println(patientdetailsform);		
-        model.addAttribute("patientdetailsform", patientdetailsform);
+        model.addAttribute("PatientDetailsForm", patientdetailsform);
+        System.out.println("Patient");
 		return "viewpatient";
 	}
 	
+	/*@RequestMapping(value="/viewpatient", method=RequestMethod.POST)
+	public String viewpatientdetails(ModelMap model) {
+		
+		PatientDetailsForm patientdetailsform = new PatientDetailsForm();
+		patientdetailsform.setPatientDetails(patientDAO.getPatientDetails());
+        model.addAttribute("PatientDetailsForm", patientdetailsform);
+        System.out.println("Patient");
+		return "viewpatient";
+	}*/
 
 	@RequestMapping(value="/viewhardship", method = RequestMethod.GET)
 	public String viewhardship(HttpServletRequest request,ModelMap model) {
