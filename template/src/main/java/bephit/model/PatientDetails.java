@@ -36,32 +36,32 @@ public void setPatient_id(String patient_id) {
 
 
 @NotEmpty
-@Pattern(regexp="(/^[a-zA-Z ]*$/)",message="Should be a alphabets")
+
 private String Name;
 @NotEmpty
 private String Date;
 @NotEmpty
 private String StreetAddress;
 @NotEmpty
-@Pattern(regexp="(/^[a-zA-Z ]*$/)",message="Should be a alphabets")
+
 private String City;
 @NotEmpty
-@Pattern(regexp="(/^[a-zA-Z ]*$/)",message="Should be a alphabets")
+
 private String State;
 @NotEmpty
-@Pattern(regexp="(^$|[0-9]{10})",message="Should be a number")
+
 private String ZipCode;
 @NotEmpty
 private String Homephone;
 @NotEmpty
 private String Pager;
 @NotEmpty
-@Pattern(regexp="(^$|[0-9]{10})",message="Should be a number")
+
 private String MobileNumber;
 @NotEmpty
 private String DateOfBirth;
 @NotEmpty
-@Pattern(regexp="(^$|[0-9]{10})",message="Should be a number")
+
 private String SocialSecurityNumber;
 
 private String Gender;
@@ -71,28 +71,28 @@ private String MaritalStatus;
 private String Areyou;
 private String Student;
 @NotEmpty
-@Pattern(regexp="(/^[a-zA-Z ]*$/)",message="Should be a alphabets")
+
 private String EmployerName;
 @NotEmpty
-@Pattern(regexp="(/^[a-zA-Z ]*$/)",message="Should be a alphabets")
+
 private String Occupation;
 @NotEmpty
 private String EmployerAddress;
 @NotEmpty
 private String Workphone;
 @NotEmpty
-@Pattern(regexp="(/^[a-zA-Z ]*$/)",message="Should be a alphabets")
+
 private String EmployerCity;
 @NotEmpty
-@Pattern(regexp="(/^[a-zA-Z ]*$/)",message="Should be a alphabets")
+
 private String Estate;
 @NotEmpty
 private String Ezip;
 @NotEmpty
-@Pattern(regexp="(/^[a-zA-Z ]*$/)",message="Should be a alphabets")
+
 private String SpousesName;
 @NotEmpty
-@Pattern(regexp="(/^[a-zA-Z ]*$/)",message="Should be a alphabets")
+
 private String SpousesEmp;
 @NotEmpty
 private String Spousesph;
@@ -123,15 +123,15 @@ private String When;
 private String Where;
 private String Attorney_accident;
 @NotEmpty
-@Pattern(regexp="(/^[a-zA-Z ]*$/)",message="Should be a alphabets")
+
 private String NameOfAttorney;
 @NotEmpty
 private String Phone_Number;
 @NotEmpty
-@Pattern(regexp="(/^[a-zA-Z ]*$/)",message="Should be a alphabets")
+
 private String Fault_accident;
 @NotEmpty
-@Pattern(regexp="(/^[a-zA-Z ]*$/)",message="Should be a alphabets")
+
 private String Insurance;
 @NotEmpty
 private String Insurance_phone;
@@ -196,13 +196,13 @@ private String Hazardous;
 private String Hazardousyes;
 private String Female;
 @NotEmpty
-@Pattern(regexp="(/^[a-zA-Z ]*$/)",message="Should be a alphabets")
+
 private String Dr;
 @NotEmpty
-@Pattern(regexp="(/^[a-zA-Z ]*$/)",message="Should be a alphabets")
+
 private String Patient;
 @NotEmpty
-@Pattern(regexp="(/^[a-zA-Z ]*$/)",message="Should be a alphabets")
+
 private String Sign;
 
 
