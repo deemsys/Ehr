@@ -701,6 +701,16 @@ public class MainController {
  
 	}
 	
+	@RequestMapping(value="/viewinsuranceverification", method = RequestMethod.GET)
+	public String viewinsuranceverification(HttpServletRequest request,ModelMap model) {
+		
+		InsuranceverificationForm insuranceverificationForm= new InsuranceverificationForm();
+    	insuranceverificationForm.setInsuranceverification(veriDAO.getInsuranceverification());
+		model.addAttribute("InsuranceverificationForm",insuranceverificationForm);
+		
+		return "viewinsuranceverification";
+ 
+	}
 	
 	@RequestMapping(value="/loginfailed", method = RequestMethod.GET)
 	public String loginerror(ModelMap model) {

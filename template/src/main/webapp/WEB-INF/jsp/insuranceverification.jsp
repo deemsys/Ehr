@@ -76,7 +76,7 @@
               </tr>
               <tr class="row1">
               <td>Is chiropractic manipulation covered? </td>
-              <td><input type="radio" name="is_chiropractic" value="0" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="have_insurance" value="1" class="input_txt">No</td>
+              <td><input type="radio" name="is_chiropractic" value="Yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="is_chiropractic" value="No" class="input_txt">No</td>
               <td>At what%?</td>
               <td><input type="text" class="input_txtbx1" name="at_what" id="at_what" /><span class="err"><form:errors path="Insuranceverification.at_what"></form:errors></td>
              <td></td>
@@ -84,7 +84,7 @@
               </tr>
               <tr class="row1">
               <td>Are x-rays covered?</td>
-              <td><input type="radio" name="xray_cover" value="0" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="xray_cover" value="1" class="input_txt">No</td>
+              <td><input type="radio" name="xray_cover" value="Yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="xray_cover" value="No" class="input_txt">No</td>
               <td>At what%?</td>
               <td><input type="text" class="input_txtbx1" name="atwhat" id="atwhat" /><br><span class="err"><form:errors path="Insuranceverification.atwhat"></form:errors></td>
               <td>Subject to deductible</td>
@@ -94,7 +94,7 @@
               <table cellpadding="0" cellspacing="0" border="0" width="100%"> -->
               <tr class="row1">
               <td>Is the Doctor's assignment of benefits honored?</td>
-             <td><input type="radio" name="benefits_honored" value="0" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="benefits_honored" value="1" class="input_txt">No</td>
+             <td><input type="radio" name="benefits_honored" value="Yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="benefits_honored" value="No" class="input_txt">No</td>
               <td></td>
               <td></td>
               <td></td>
@@ -108,7 +108,7 @@
               <br>
               <tr class="row1">
               <td>Are there out of network benefits?</td>
-             <td><input type="radio" name="network_benefits" value="0" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="network_benefits" value="1" class="input_txt">No</td>
+             <td><input type="radio" name="network_benefits" value="Yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="network_benefits" value="No" class="input_txt">No</td>
               <td></td>
               <td></td>
               </tr>
@@ -131,13 +131,13 @@
               </tr>
                <tr class="row1">
               <td>Are x-rays subject to deductible?</td>
-              <td><input type="radio" name="xray_deduct" value="0" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="xray_deduct" value="1" class="input_txt">No</td>
+              <td><input type="radio" name="xray_deduct" value="Yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="xray_deduct" value="No" class="input_txt">No</td>
               <td></td>
               <td></td>
               </tr>
               <tr class="row1">
               <td>Is the Doctor's assignment of benefits honored?</td>
-             <td><input type="radio" name="doctors_assign" value="0" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="doctors_assign" value="1" class="input_txt">No</td>
+             <td><input type="radio" name="doctors_assign" value="Yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="doctors_assign" value="No" class="input_txt">No</td>
               <td></td>
               <td></td>
               </tr>
@@ -151,6 +151,7 @@
 	        <!-- <td valign="top" align="left">&nbsp;</td>  -->
               <td valign="top" align="center"><br><input type="submit" class="submit_btn" value="Save"></td>
                <td valign="top" align="center"><br><input type="reset" class="submit_btn" value="Cancel"></td>
+	     <td valign="top" align="center"><br><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewinsuranceverification'"></td>
 	    </tr>
 	    </table>
 	    </div>

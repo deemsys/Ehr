@@ -80,7 +80,7 @@ public List<Insuranceinformation> getInsuranceinformation(){
 	
 	List<Insuranceinformation> Insuranceinformation = new ArrayList<Insuranceinformation>();
     try{
-		resultSet = statement.executeQuery("select * from tbl_insuranceinformation");
+		resultSet = statement.executeQuery("select * from tbl_insuranceinformation order by Number DESC");
 		while(resultSet.next()){
 			Insuranceinformation.add(new Insuranceinformation(resultSet.getString("patient_name"),
 		    		resultSet.getString("date_of_accident"),

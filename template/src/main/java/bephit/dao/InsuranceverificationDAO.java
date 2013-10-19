@@ -38,7 +38,7 @@ public class InsuranceverificationDAO {
 		} catch (SQLException e1) {
 			e1.printStackTrace();
 		}
-		//List<ParticipantsDetails> participants = new ArrayList<ParticipantsDetails>();
+		
 	    try{
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
@@ -80,7 +80,7 @@ public List<Insuranceverification> getInsuranceverification(){
 	
 	List<Insuranceverification> Insuranceverification = new ArrayList<Insuranceverification>();
     try{
-		resultSet = statement.executeQuery("select * from tbl_insuranceverification");
+		resultSet = statement.executeQuery("select * from tbl_insuranceverification order by form_no DESC");
 		while(resultSet.next()){
 			Insuranceverification.add(new Insuranceverification(resultSet.getString("verify_name"),
 		    		resultSet.getString("spoke_with"),
