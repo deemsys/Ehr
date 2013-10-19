@@ -1,5 +1,7 @@
 package bephit.model;
 
+import javax.validation.constraints.Pattern;
+
 import org.hibernate.validator.constraints.NotEmpty;
 
 public class HippaPrivacy
@@ -10,15 +12,18 @@ public class HippaPrivacy
 	private String date;
 	
 	@NotEmpty
+	
 	private String printpname;
 	
 	@NotEmpty
 	private String printpdate;
 	
 	@NotEmpty
+	
 	private String legalguardian;
 	
 	@NotEmpty
+	
 	private String staffwitness;
 	
 

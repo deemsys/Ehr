@@ -1,9 +1,12 @@
 package bephit.model;
 
+import javax.validation.constraints.Pattern;
+
 import org.hibernate.validator.constraints.NotEmpty;
 
 public class Staffchecklist{
 	@NotEmpty
+	
 	private String patinfo;
 	@NotEmpty
 	private String screening;
@@ -18,10 +21,13 @@ public class Staffchecklist{
 	@NotEmpty
 	private String report;
 	@NotEmpty
+	@Pattern(regexp="(/^[a-zA-Z ]*$/)",message="Should be a alphabets")
 	private String pat_name;
 	@NotEmpty
+	@Pattern(regexp="(/^[a-zA-Z ]*$/)",message="Should be a alphabets")
 	private String insure;
 	@NotEmpty
+	@Pattern(regexp="(^$|[0-9]{10})",message="Should be a number")
 	private String damage_amount;
 	@NotEmpty
 	private String fault_insure;

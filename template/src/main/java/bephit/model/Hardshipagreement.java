@@ -1,5 +1,7 @@
 package bephit.model;
 
+import javax.validation.constraints.Pattern;
+
 import org.hibernate.validator.constraints.NotEmpty;
 
 public class Hardshipagreement{
@@ -7,12 +9,15 @@ public class Hardshipagreement{
 	private String date;
 	
 	@NotEmpty
+	
 	private String print_pat_name;
 	
 	@NotEmpty
+	
 	private String pat_sign;
 	
 	@NotEmpty
+	
 	private String witness_sign;
 	
 public Hardshipagreement(){

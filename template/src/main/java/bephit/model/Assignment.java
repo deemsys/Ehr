@@ -1,5 +1,7 @@
 package bephit.model;
 
+import javax.validation.constraints.Pattern;
+
 import org.hibernate.validator.constraints.NotEmpty;
 
 public class Assignment
@@ -10,25 +12,29 @@ public class Assignment
 	private String month;
 	@NotEmpty
 	private String year;
-	@NotEmpty
-	private String center;
+	
 	@NotEmpty
 	private String day1;
 	@NotEmpty
 	private String month1;
 	@NotEmpty
+	
 	private String patientname;
 	@NotEmpty
+	
 	private String patientsign;
 	@NotEmpty
 	private String patientdate;
 	@NotEmpty
+	
 	private String parentname;
 	@NotEmpty
+	
 	private String parentsign;
 	@NotEmpty
 	private String parentdate;
 	@NotEmpty
+	
 	private String representative;
 	@NotEmpty
 	private String representativedate;
@@ -52,12 +58,7 @@ public class Assignment
 	public void setYear(String year) {
 		this.year = year;
 	}
-	public String getCenter() {
-		return center;
-	}
-	public void setCenter(String center) {
-		this.center = center;
-	}
+
 	public String getDay1() {
 		return day1;
 	}
@@ -125,7 +126,6 @@ public class Assignment
 	public Assignment(String Day,
 			String month,
 			String year,
-			String center,
 			String day1,
 			String month1,
 			String patientname,
@@ -140,7 +140,7 @@ public class Assignment
 	this.Day=Day;
 	this.month=month;
 	this.year=year;
-	this.center=center;
+	
 	this.day1=day1;
 	this.month1=month1;
 	this.patientname=patientname;

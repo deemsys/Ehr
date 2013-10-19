@@ -52,16 +52,18 @@ private String State;
 
 private String ZipCode;
 @NotEmpty
+@Pattern(regexp="(^$|[0-9]{10})",message="Not a valid Mobile number")
 private String Homephone;
 @NotEmpty
+@Pattern(regexp="(^$|[0-9]{10})",message="Not a valid Mobile number")
 private String Pager;
 @NotEmpty
-
+@Pattern(regexp="(^$|[0-9]{10})",message="Not a valid Mobile number")
 private String MobileNumber;
 @NotEmpty
 private String DateOfBirth;
 @NotEmpty
-
+@Pattern(regexp="(^$|[0-9]{10})",message="Not a valid Mobile number")
 private String SocialSecurityNumber;
 
 private String Gender;
@@ -79,6 +81,7 @@ private String Occupation;
 @NotEmpty
 private String EmployerAddress;
 @NotEmpty
+@Pattern(regexp="(^$|[0-9]{10})",message="Not a valid Mobile number")
 private String Workphone;
 @NotEmpty
 
@@ -87,6 +90,7 @@ private String EmployerCity;
 
 private String Estate;
 @NotEmpty
+@Pattern(regexp="(^$|[0-9]{10})",message="Not a valid Mobile number")
 private String Ezip;
 @NotEmpty
 
@@ -126,6 +130,8 @@ private String Attorney_accident;
 
 private String NameOfAttorney;
 @NotEmpty
+
+@Pattern(regexp="(^$|[0-9]{10})",message="Not a valid Mobile number")
 private String Phone_Number;
 @NotEmpty
 
@@ -144,6 +150,7 @@ private String Policy;
 @NotEmpty
 private String Name_health;
 @NotEmpty
+@Pattern(regexp="(^$|[0-9]{10})",message="Not a valid Mobile number")
 private String Health_phone;
 
 private String Prev_accident;
