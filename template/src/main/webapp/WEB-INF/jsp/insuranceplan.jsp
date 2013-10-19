@@ -22,13 +22,7 @@
 <form action="insuranceplan" method="POST">
 
 <table cellpadding="0" cellspacing="0" border="0" width="55%" class="margin_table">
-       <tr>
-        <td valign="top" align="left" style="padding:5px 0 10px 0;">&nbsp;
-		<div class="status success" style="display: none;">
-            <p class="closestatus"><a title="Close" href="">x</a></p>
-            <p><img alt="Success" src="images/icons/icon_success.png"><span>Success!</span>.</p>
-          </div>
-      </tr> 
+       
       <tr>
         <td valign="top" align="left">
         	<div>
@@ -38,10 +32,10 @@
 	            <div class="contentbox">
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr class="row1">
-              <td ><input type="text" class="input_txtbx1" name="insure_comp" id="insure_comp" placeholder="Name of Insurance Company" /><span class="err"><form:errors path="Insuranceplan.insure_comp"></form:errors></td>
+              <td width="100%"><input type="text" class="input_txtbx1" name="insure_comp" id="insure_comp" placeholder="Name of Insurance Company" /><span class="err"><form:errors path="Insuranceplan.insure_comp"></form:errors></td>
               </tr>
-              <tr class="row1">
-              <td>
+              <tr class="row1"> 
+              <td width="100%">
               <input type="text" class="input_txtbx1" name="addr" id="addr" placeholder="Address"/><span class="err"><form:errors path="Insuranceplan.addr"></form:errors></td>
               </tr>
               </table>
@@ -76,19 +70,19 @@
         <td>By</td>
         </tr> 
          <tr class="row1">
-        <td><input type="text" class="input_txtbx1" name="by" id="by" placeholder="Authorized Company Representative"/></td>
+        <td><input type="text" class="input_txtbx1" name="by" id="by" placeholder="Authorized Company Representative"/><span class="err"><form:errors path="Insuranceplan.by"></form:errors></td>
         <td></td>
         <td></td>
         </tr>
         <tr class="row1">
-        <td>Please fax this back to&nbsp;&nbsp;
-        <input type="text" class="input_txtbx1" name="fax" id="fax" placeholder="Clinic's Fax No"/></td>
-        <td></td>
+        <td width="100%">Please fax this back to&nbsp;&nbsp;
+        <input type="text" class="input_txtbx1" name="fax" id="fax" placeholder="Clinic's Fax No"/><br><span class="err"><form:errors path="Insuranceplan.fax"></form:errors></td>
+        <td width="100%"></td>
         <td></td>
         </tr>
         <tr >
         <td></td>
-        <td align="center ">Sincerly,</td>
+        <td align="center ">Sincerely,</td>
         </tr>
         <tr class="row1">
         <td></td>
@@ -97,7 +91,7 @@
         <td></td>
         </tr>
         <tr class="row1">
-        <td><input type="text" class="input_txtbx1" name="pat" id="pat" placeholder="Patient"/><br><span class="err"><form:errors path="Insuranceplan.pat"></form:errors></td>
+        <td><input type="text" class="input_txtbx1" name="pat" id="pat" placeholder="Patient"/><span class="err"><form:errors path="Insuranceplan.pat"></form:errors></td>
         <td align="center"><input type="text" class="input_txtbx1" name="authorized" id="authorized" placeholder="Authorized Clinic Representative"/><br><span class="err"><form:errors path="Insuranceplan.authorized"></form:errors></td>
         <td></td>
         </tr>

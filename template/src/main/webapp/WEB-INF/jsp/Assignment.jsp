@@ -57,7 +57,7 @@
 				                  	  
 				                  	day of <input type="text" class="input_txtbx1" id="inp_id" name="month" /><span class="err"><form:errors path="Assignment.month"></form:errors></span>
 				                  	2013 between <input type="text" class="input_txtbx1" id="inp_id" name="year" /><span class="err"><form:errors path="Assignment.year"></form:errors></span>
-				                  	(claimant) and <input type="text" class="input_txtbx1" id="inp_id" name="center" /> <span class="err"><form:errors path="Assignment.center"></form:errors></span>constitutes an irrevocable and binding agreement between the parties as follows:
+				                  	(claimant) and Perry Chiropractic and Therapy Center constitutes an irrevocable and binding agreement between the parties as follows:
 Claimant was involved in an accident on or about the <input type="text" class="input_txtbx1" id="inp_id" name="day1" /><span class="err"><form:errors path="Assignment.day1"></form:errors></span>
 day of <input type="text" class="input_txtbx1" id="inp_id" name="month1" /> <span class="err"><form:errors path="Assignment.month1"></form:errors></span>and I therein incurred injuries for which I have sought medical treatment from PCTC.</p>
 

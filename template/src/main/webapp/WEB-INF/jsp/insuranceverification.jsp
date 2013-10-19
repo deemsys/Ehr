@@ -22,13 +22,13 @@
 <form action="insuranceverification" method="POST">
 
 <table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table">
-       <tr>
+       <!-- <tr>
         <td valign="top" align="left" style="padding:5px 0 10px 0;">&nbsp;
 		<div class="status success" style="display: none;">
             <p class="closestatus"><a title="Close" href="">x</a></p>
             <p><img alt="Success" src="images/icons/icon_success.png"><span>Success!</span>.</p>
           </div>
-      </tr> 
+      </tr>  -->
       <tr>
         <td valign="top" align="left">
         	<div>
@@ -44,11 +44,11 @@
               <tr><p>Hi, I'm calling to verify chiropractic benefits for Mr./ Mrs.<input type="text" class="input_txtbx1" name="verify_name" id="verify_name" /><span class="err"><form:errors path="Insuranceverification.verify_name"></form:errors></p></tr>
               <tr class="row1">
               <td>Spoke with</td>
-              <td><input type="text" class="input_txtbx1" name="spoke_with" id="spoke_with" /><br><span class="err"><form:errors path="Insuranceverification.spoke_with"></form:errors></td>
+              <td><input type="text" class="input_txtbx1" name="spoke_with" id="spoke_with" /><span class="err"><form:errors path="Insuranceverification.spoke_with"></form:errors></td>
               <td>Date</td>
-              <td><input type="text" class="input_txtbx1" name="date" id="datepicker" /><br><span class="err"><form:errors path="Insuranceverification.date"></form:errors></td>
+              <td><input type="text" class="input_txtbx1" name="date" id="datepicker" /><span class="err"><form:errors path="Insuranceverification.date"></form:errors></td>
               <td>Fax#</td>
-              <td><input type="text" class="input_txtbx1" name="fax" id="fax" /><br><span class="err"><form:errors path="Insuranceverification.fax"></form:errors></td>
+              <td><input type="text" class="input_txtbx1" name="fax" id="fax" /><span class="err"><form:errors path="Insuranceverification.fax"></form:errors></td>
               </tr>
               <!-- </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%"> -->
@@ -115,7 +115,7 @@
               <!-- </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%"> -->
               <tr class="row1">
-              <td>Deuctible</td>
+              <td>Deductible</td>
               <td><input type="text" class="input_txtbx1" name="deductible" id="deductible" /><br><span class="err"><form:errors path="Insuranceverification.deductible"></form:errors></td>
               <td>%covered</td>
               <td><input type="text" class="input_txtbx1" name="covered" id="covered" /><br><span class="err"><form:errors path="Insuranceverification.covered"></form:errors></td>
