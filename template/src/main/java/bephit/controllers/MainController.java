@@ -679,7 +679,28 @@ public class MainController {
  
 	}
 	
-
+	@RequestMapping(value="/viewinsuranceplan", method = RequestMethod.GET)
+	public String viewinsuranceplan(HttpServletRequest request,ModelMap model) {
+		
+		InsuranceplanForm insuranceplanForm= new InsuranceplanForm();
+    	insuranceplanForm.setInsuranceplan(planDAO.getInsuranceplan());
+		model.addAttribute("InsuranceplanForm",insuranceplanForm);
+		
+		return "viewinsuranceplan";
+ 
+	}
+	
+	@RequestMapping(value="/viewinsuranceinformation", method = RequestMethod.GET)
+	public String viewinsuranceinformation(HttpServletRequest request,ModelMap model) {
+		
+		InsuranceinformationForm insuranceinformationForm= new InsuranceinformationForm();
+    	insuranceinformationForm.setInsuranceinformation(infoDAO.getInsuranceinformation());
+		model.addAttribute("InsuranceinformationForm",insuranceinformationForm);
+		
+		return "viewinsuranceinformation";
+ 
+	}
+	
 	
 	@RequestMapping(value="/loginfailed", method = RequestMethod.GET)
 	public String loginerror(ModelMap model) {

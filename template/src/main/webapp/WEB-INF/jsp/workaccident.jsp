@@ -65,7 +65,7 @@ $(function() {
 				  </td>
 				  </tr>
 				 <tr class="row2">
-                <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Do you</td>
+                <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Job Position</td>
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="doyou_pos" class="input_cmbbx1" onchange='Checkpos(this.value);'>
 					<option selected="selected" value="sit_at_desk" >Sit at desk</option>
@@ -100,7 +100,7 @@ $(function() {
 				  </td>
 				  </tr>
 				  <tr class="row2">
-                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Title</td>
+                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Job Title</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="input_txtbx1" id="inp_id" name="title" />
 				  </td>

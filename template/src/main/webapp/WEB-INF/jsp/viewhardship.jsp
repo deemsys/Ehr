@@ -41,9 +41,9 @@
                <c:set value="${hardshipagreementform.hardshipagreement[0]}" var="Hardshipagreement"> </c:set>
               <tr>
            
-              <td width="15%" valig="middle" align="left">Date</td>
-              <td width="1%" valig="middle" align="left">:</td>
-              <td width="84%" valig="middle" align="left">${Hardshipagreement.date}</td>
+              <td width="15%" valign="middle" align="left">Date</td>
+              <td width="1%" valign="middle" align="left">:</td>
+              <td width="84%" valign="middle" align="left">${Hardshipagreement.date}</td>
             
               </tr> 
               </table>  

@@ -72,13 +72,19 @@
         <tr class="row1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <input type="checkbox" name="no_objection" value="no_objection">No Objection
         </tr>
-        <tr class="row1">
+        <tr>
         <td>By</td>
-        <td><input type="text" class="input_txtbx1" name="by" id="by" />&nbsp;&nbsp;&nbsp;(Authorized Company Representative)</td>
+        </tr> 
+         <tr class="row1">
+        <td><input type="text" class="input_txtbx1" name="by" id="by" placeholder="Authorized Company Representative"/></td>
+        <td></td>
+        <td></td>
         </tr>
         <tr class="row1">
-        <td>Please fax this back to</td>
-        <td><input type="text" class="input_txtbx1" name="fax" id="fax" />&nbsp;&nbsp;&nbsp;(Clinic's Fax No)</td>
+        <td>Please fax this back to&nbsp;&nbsp;
+        <input type="text" class="input_txtbx1" name="fax" id="fax" placeholder="Clinic's Fax No"/></td>
+        <td></td>
+        <td></td>
         </tr>
         <tr >
         <td></td>
@@ -86,11 +92,14 @@
         </tr>
         <tr class="row1">
         <td></td>
+        
         <td align="center"><input type="text" class="input_txtbx1" name="name_of_clinic" id="name_of_clinic" placeholder="Name of clinic"/><br><span class="err"><form:errors path="Insuranceplan.name_of_clinic"></form:errors></td>
+        <td></td>
         </tr>
         <tr class="row1">
         <td><input type="text" class="input_txtbx1" name="pat" id="pat" placeholder="Patient"/><br><span class="err"><form:errors path="Insuranceplan.pat"></form:errors></td>
         <td align="center"><input type="text" class="input_txtbx1" name="authorized" id="authorized" placeholder="Authorized Clinic Representative"/><br><span class="err"><form:errors path="Insuranceplan.authorized"></form:errors></td>
+        <td></td>
         </tr>
        <!--  <tr>
         <td>Patient</td>
@@ -103,6 +112,7 @@
        <!-- <td valign="top" align="center">&nbsp;</td>  -->
         <td valign="top" align="center"><br><input type="submit" class="submit_btn" value="Save"></td>
         <td valign="top" align="center"><br><input type="reset" class="submit_btn" value="Cancel"></td>
+         <td valign="top" align="center"><br><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewinsuranceplan'"></td>
         </tr>
         </table>
         </div>
