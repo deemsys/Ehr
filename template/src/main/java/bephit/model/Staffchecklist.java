@@ -27,7 +27,7 @@ public class Staffchecklist{
 	
 	private String insure;
 	@NotEmpty
-	@Pattern(regexp="(^$|[0-9]{10})",message="Should be a number")
+	
 	private String damage_amount;
 	@NotEmpty
 	private String fault_insure;
