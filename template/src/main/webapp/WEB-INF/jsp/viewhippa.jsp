@@ -41,6 +41,7 @@
 	            </div>
             <div class="contentbox">
             <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <c:set value="${HippaPrivacy.privacydetails[0]}" var="privacydetails"> </c:set>
   				<tr>
     				<td align="left" valign="top" width="100%" style="padding-right:25px;">
                         
@@ -66,7 +67,7 @@
                         <p id="mypar"><u><b>You may have the right to have your physician amend your protected healthy information.</b></u>If we deny your request for amendment, you have the right to file a statement of disagreement with us and we may prepare a rebuttal to your statement and will provide you with a copy of any such rebuttal.</p>
                         <p id="mypar"><u><b>You have the right to receive an accounting of certain disclosures we have made, if any, of your protected health information.</b></u>We reserve the right to change the terms of this notice and will inform you by mail of any changes.  You then have the right to object or withdraw as provided in this notice.</p>
                         <p id="mypar"><u><b>Complaints</b></u>You may complain to us or to the Secretary of Health and Human Services if you believe your privacy rights have been violated by us.  You may file a complaint with us by notifying our privacy contact of you complaint.<u><b>We will not retaliate against you for filing a complaint.</b></u></p>
-                        <p id="mypar">This notice was publishes and becomes effective on/or before &nbsp;&nbsp;<input type="text" class="input_txtbx1" id="datepicker" name="date" /><span class="err"><form:errors path="HippaPrivacy.date"></form:errors></p>
+                        <p id="mypar">This notice was publishes and becomes effective on/or before &nbsp;&nbsp;${HippaPrivacy.date}</p>
                         <br>
                         <br>
                         <br>
@@ -78,30 +79,29 @@
                         <tr class="row1">
                         <td valign="middle" align="left" class="input_txt"><span class="err">*</span>PrintPatientname: </td>
 				                   <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="printpname" /><span class="err"><form:errors path="HippaPrivacy.printpname"></form:errors>
+				                  	${HippaPrivacy.printpname}
 				                  	</td>
 				                  	</tr>
 				                  	<tr class="row1">
 				                  	 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date: </td>
 				                  	<td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="datepicker1" name="printpdate" /><span class="err"><form:errors path="HippaPrivacy.printpdate"></form:errors>
+				                  	${HippaPrivacy.printpdate}
 				         </span></td>
 				         </tr>
 				         <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Signature Of parent or Legal Guardian: </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="legalguardian" /><span class="err"><form:errors path="HippaPrivacy.legalguardian"></form:errors>
+				                  	${HippaPrivacy.legalguardian}
 				                  	</tr>
 				                  	 <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Staff Witness: </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="staffwitness" /><span class="err"><form:errors path="HippaPrivacy.staffwitness"></form:errors>
+				                  	${HippaPrivacy.staffwitness}
 				                  	</tr>
 				                  	<tr>
 				  <td valign="top" align="center">&nbsp;</td>
-				                <td valign="top" align="center"><br><input type="submit" class="submit_btn" value="Save"></td>
-				    <td valign="top" align="center"><br><input type="reset" class="submit_btn" value="Cancel"></td>
-				     <td valign="top" align="center"><br><input type="button" class="submit_btn" value="view" onclick="window.location.href='viewhippa'"></td>
+				                <td valign="top" align="center"><br><input type="button" class="submit_btn" value="Edit"></td>
+				    <td valign="top" align="center"><br><input type="button" class="submit_btn" value="Delete"></td>
 				  </tr>
                         </div>
                         </tr>
