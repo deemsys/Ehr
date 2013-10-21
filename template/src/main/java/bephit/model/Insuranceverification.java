@@ -12,26 +12,26 @@ public class Insuranceverification{
 	@NotEmpty
 	private String date;
 	@NotEmpty
-	@Pattern(regexp="(^$|[0-9]{10})",message="Should be a number")
+	
 	private String fax;
 	@NotEmpty
-	@Pattern(regexp="(^$|[0-9]{10})",message="Should be a number")
+	
 	private String amount_deduct;
 	@NotEmpty
-	@Pattern(regexp="(^$|[0-9]{10})",message="Should be a number")
+
 	private String amount_deduct_met;
 	@NotEmpty
 	private String max_visit;
 	@NotEmpty
 	private String is_chiropractic;
 	@NotEmpty
-	@Pattern(regexp="(^$|[0-9]{10})",message="Should be a number")
+	
 	private String at_what;
 	
 	@NotEmpty
 	private String xray_cover;
 	@NotEmpty
-	@Pattern(regexp="(^$|[0-9]{10})",message="Should be a number")
+	
 	private String atwhat;
 	@NotEmpty
 	private String subject_deduct;
@@ -42,7 +42,7 @@ public class Insuranceverification{
 	@NotEmpty
 	private String deductible;
 	@NotEmpty
-	@Pattern(regexp="(^$|[0-9]{10})",message="Should be a number")
+	
 	private String covered;
 	@NotEmpty
 	private String cm;

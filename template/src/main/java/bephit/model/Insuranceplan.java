@@ -16,7 +16,7 @@ public class Insuranceplan {
 	@NotEmpty
 	private String accident_date;
 	@NotEmpty
-	@Pattern(regexp="(^$|[0-9]{10})",message="Should be a number")
+	
 	private String enrollee;
 	@NotEmpty
 	private String no_objection;
@@ -24,7 +24,7 @@ public class Insuranceplan {
 	
 	private String by;
 	@NotEmpty
-	@Pattern(regexp="(^$|[0-9]{10})",message="Should be a number")
+	
 	private String fax;
 	@NotEmpty
 	
