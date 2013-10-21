@@ -5,7 +5,7 @@
 <head>
  <link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
   <link rel="stylesheet" href="/resources/css/style.css" />
-  <script src="resources/js/jquery-1.9.1.js"></script>
+  <script src="resources/js/jquery.min.js"></script>
   <script src="resources/js/jquery-ui.js"></script>
 <script>
   $(function() {
@@ -32,6 +32,41 @@
 	    $( ".tabs-bottom .ui-tabs-nav" ).appendTo( ".tabs-bottom" );
 	  });
 	  </script>
+	  <script type="text/javascript">
+    var currentTab = 0;
+    $(function () {
+        $("#tabs").tabs({
+            select: function (e, i) {
+                currentTab = i.index;
+            }
+        });
+    });
+    $("#btnNext").live("click", function () {
+        var tabs = $('#tabs').tabs();
+        var c = $('#tabs').tabs("length");
+        currentTab = currentTab == (c - 1) ? currentTab : (currentTab + 1);
+        tabs.tabs('select', currentTab);
+        $("#btnPrevious").show();
+        if (currentTab == (c - 1)) {
+            $("#btnNext").hide();
+        } else {
+            $("#btnNext").show();
+        }
+    });
+    $("#btnPrevious").live("click", function () {
+        var tabs = $('#tabs').tabs();
+        var c = $('#tabs').tabs("length");
+        currentTab = currentTab == 0 ? currentTab : (currentTab - 1);
+        tabs.tabs('select', currentTab);
+        if (currentTab == 0) {
+            $("#btnNext").show();
+            $("#btnPrevious").hide();
+        }
+        if (currentTab < (c - 1)) {
+            $("#btnNext").show();
+        }
+    });
+</script>
 	  <style>
 	  /* force a height so the tabs don't jump as content height changes */
 	  #tabs .tabs-spacer { float: left; height: 200px; }
@@ -46,7 +81,7 @@
 	 
 	<div id="tabs" class="tabs-bottom">
 	  <ul>
-	    <li><a href="#tabs-1">1</a></li>
+	    <li><a href="#tabs-1" >1</a></li>
 	    <li><a href="#tabs-2">2</a></li>
 	    <li><a href="#tabs-3">3</a></li>
 	  </ul>
@@ -55,15 +90,6 @@
 <div id="right_content">
 <form method="POST" action="patientDetails">
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
-<%-- <c:if test="${success==true}">
-        <tr>
-        <td valign="top" align="left" style="padding:5px 0 10px 0;">&nbsp;
-            <div id="success_statusbar" class="status success">
-            <p class="closestatus"><a title="Close" href="">x</a></p>
-            <p><img alt="Success" src="resources/images/icons/icon_success.png"><span>Success!</span>.</p>
-          </div>
-      </tr>
-    </c:if>   --%>
 
       <tr>
         <td valign="top" align="left">
@@ -606,7 +632,7 @@
 				  <td valign="top" align="center">&nbsp;</td>
 				                <td valign="top" align="right"><br><input type="submit" class="submit_btn" value="Save"></td>
 				                <td valign="top" align="right"><br><input type="reset" class="submit_btn" value="Cancel" ONCLICK="window.location.href='patientDetails'"></td>
-				                <td valign="top" align="right"><br><input type="button" class="submit_btn" value="View" ONCLICK="window.location.href='viewpatient'"></td>
+				                <td valign="baseline" align="right"><br><input type="button" class="submit_btn" value="View" ONCLICK="window.location.href='viewpatient'"></td>
 				                
 				  </tr>
 				  
@@ -621,6 +647,12 @@
 				                  	</table>
 				                  	</div>
 				                  	</div>
+				                  	<table>
+				                  	<tr>
+				                  	<td valign="top" align="right"><input type="button" id="btnPrevious" class="submit_btn" value="Previous" style = "display:none" />&nbsp;
+<input type="button" id="btnNext" class="submit_btn" value="Next" /><br></td>
+</tr></table>
+
 				                  	</div>
 				               
                 </body>
@@ -708,16 +740,7 @@ else
 	}
 }
 </script>
- <!-- <script type="text/javascript">
-function toggle4(value){
-	/* alert(value); */
-	var e = document.getElementById('employee');
-if(value=='show3')
- e.style.display="block";
-else
- e.style.display="none";
-}
-</script> -->
+ 
         <jsp:include page="footer.jsp"></jsp:include>
 
 
