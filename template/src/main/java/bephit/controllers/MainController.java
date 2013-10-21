@@ -712,6 +712,16 @@ public class MainController {
  
 	}
 	
+	@RequestMapping(value="/viewstaffchecklist", method = RequestMethod.GET)
+	public String viewstaffchecklist(HttpServletRequest request,ModelMap model) {
+		
+		StaffchecklistForm staffchecklistForm= new StaffchecklistForm();
+    	staffchecklistForm.setStaffchecklist(staffDAO.getStaffchecklist());
+		model.addAttribute("StaffchecklistForm",staffchecklistForm);
+		
+		return "viewstaffchecklist";
+ 
+	}
 	@RequestMapping(value="/loginfailed", method = RequestMethod.GET)
 	public String loginerror(ModelMap model) {
 		model.addAttribute("error", "true");

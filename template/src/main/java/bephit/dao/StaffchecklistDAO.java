@@ -80,7 +80,7 @@ public List<Staffchecklist> getStaffchecklist(){
 	
 	List<Staffchecklist> Staffchecklist = new ArrayList<Staffchecklist>();
     try{
-		resultSet = statement.executeQuery("select * from tbl_staffchecklist");
+		resultSet = statement.executeQuery("select * from tbl_staffchecklist order by form_no DESC");
 		while(resultSet.next()){
 			Staffchecklist.add(new Staffchecklist(resultSet.getString("patinfo"),
 		    		resultSet.getString("screening"),

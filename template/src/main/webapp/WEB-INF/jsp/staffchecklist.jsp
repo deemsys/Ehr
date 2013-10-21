@@ -135,6 +135,7 @@
               <tr >
               <td valign="top" align="center"><input type="submit" class="submit_btn" value="Save"></td>
                <td valign="top" align="center"><input type="reset" class="submit_btn" value="Cancel"></td>
+               <td valign="top" align="center"><br><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewstaffchecklist'"></td>
         	  </tr>
         	  </table>
 			  </div>
