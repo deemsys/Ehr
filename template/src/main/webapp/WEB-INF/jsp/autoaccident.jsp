@@ -725,7 +725,7 @@ $(function() {
 				  </div>
 				  <table align="right">
 				  <br><tr>
-				  <td><br><input type="button" id="btnPrevious" class="submit_btn" value="Previous" style = "display:none" />&nbsp;</td>
+				 <td><br><input type="button" id="btnPrevious" class="submit_btn" value="Previous" style = "display:none" />&nbsp;</td>
                   <td><br><input type="button" id="btnNext" class="submit_btn" value="Next"/><br></td>
  
                   <td><input type="submit" class="submit_btn" value="Save"></td>

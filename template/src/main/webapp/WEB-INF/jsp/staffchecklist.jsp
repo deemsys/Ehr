@@ -3,7 +3,7 @@
 <html>
 <head>
 <link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
-<script src="resources/js/jquery-1.9.1.js"></script>
+<script src="resources/js/jquery.min.js"></script>
  <script src="resources/js/jquery-ui.js"></script>
  <STYLE type="text/css">
   P#mypar {font-style:calibri;
