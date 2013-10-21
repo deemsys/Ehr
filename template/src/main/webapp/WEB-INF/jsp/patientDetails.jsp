@@ -209,45 +209,45 @@
 							</div>
 							<div id="employee" >
 							<table cellpadding="0" cellspacing="0" border="0" width="100%">
-							<tr class="row1">
+							<tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Employer Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="EmployerName" /><br><span class="err"><form:errors path="PatientDetails.EmployerName"></form:errors></span>
 				                  </td>
 				                </tr>
 				                
-				                <tr class="row2">
+				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Occupation:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Occupation" /><br><span class="err"><form:errors path="PatientDetails.Occupation"></form:errors></span>
 				                  </td>
 				                </tr>
-				                <tr class="row1">
+				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Employer Address:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="EmployerAddress" /><br><span class="err"><form:errors path="PatientDetails.EmployerAddress"></form:errors></span>
 				                  </td>
 				                </tr>
-				                <tr class="row2">
+				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>WorkPhone:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Workphone" /><br><span class="err"><form:errors path="PatientDetails.Workphone"></form:errors></span>
 				                  </td>
 				                </tr>
-				                <tr class="row1">
+				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>EmployerCity:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="EmployerCity" /><br><span class="err"><form:errors path="PatientDetails.EmployerCity"></form:errors></span>
 				                  </td>
 				                </tr>
-				                <tr class="row2">
+				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>State:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Estate" /><br><span class="err"><form:errors path="PatientDetails.Estate"></form:errors></span>
 				                  	
 				                  </td>
 				                </tr>
-				                <tr class="row1">
+				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>ZipCode:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Ezip" /><br><span class="err"><form:errors path="PatientDetails.Ezip"></form:errors></span>
@@ -627,31 +627,27 @@
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Sign" /><br><span class="err"><form:errors path="PatientDetails.Sign"></form:errors></span>
 				                  	</tr>  
 				                  	</table>
-				                   <table cellpadding="0" cellspacing="0" border="0" width="100%">
-				                  	 <tr>
-				  <td valign="top" align="center">&nbsp;</td>
-				                <td valign="top" align="right"><br><input type="submit" class="submit_btn" value="Save"></td>
-				                <td valign="top" align="right"><br><input type="reset" class="submit_btn" value="Cancel" ONCLICK="window.location.href='patientDetails'"></td>
-				                <td valign="baseline" align="right"><br><input type="button" class="submit_btn" value="View" ONCLICK="window.location.href='viewpatient'"></td>
-				                
-				  </tr>
-				  
-				                  	</table>
+				                   
 				                  	</td>
 				                  	</tr>
 				                  	</table>
 				                  	</div>
 				                  	</td>
 				                  	</tr>
-				                  	</form>
+				                  	
 				                  	</table>
 				                  	</div>
+				                  	
 				                  	</div>
-				                  	<table>
-				                  	<tr>
-				                  	<td valign="top" align="right"><input type="button" id="btnPrevious" class="submit_btn" value="Previous" style = "display:none" />&nbsp;
-<input type="button" id="btnNext" class="submit_btn" value="Next" /><br></td>
-</tr></table>
+				                  	<table align="right">
+				  <tr>
+				  <td><br><input type="button" id="btnPrevious" class="submit_btn" value="Previous" style = "display:none" />&nbsp;</td>
+                  <td><br><input type="button" id="btnNext" class="submit_btn" value="Next"/><br></td>
+ 
+                  <td><input type="submit" class="submit_btn" value="Save"></td>
+                  <td><input type="reset" class="submit_btn" value="Cancel" onclick="window.location.href='autoaccident'"></td>
+				 
+				</table>  
 
 				                  	</div>
 				               

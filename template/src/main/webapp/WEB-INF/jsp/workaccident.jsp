@@ -2,8 +2,9 @@
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
-<link rel="stylesheet" href="resources/css/jquery-ui.css" />
-  <script src="resources/js/jquery-1.9.1.js"></script>
+ <link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
+  <link rel="stylesheet" href="/resources/css/style.css" />
+  <script src="resources/js/jquery.min.js"></script>
   <script src="resources/js/jquery-ui.js"></script>
 <script type="text/javascript">
 $(function() {
@@ -17,6 +18,41 @@ $(function() {
     // move the nav to the bottom
     $( ".tabs-bottom .ui-tabs-nav" ).appendTo( ".tabs-bottom" );
   });
+</script>
+<script type="text/javascript">
+    var currentTab = 0;
+    $(function () {
+        $("#tabs").tabs({
+            select: function (e, i) {
+                currentTab = i.index;
+            }
+        });
+    });
+    $("#btnNext").live("click", function () {
+        var tabs = $('#tabs').tabs();
+        var c = $('#tabs').tabs("length");
+        currentTab = currentTab == (c - 1) ? currentTab : (currentTab + 1);
+        tabs.tabs('select', currentTab);
+        $("#btnPrevious").show();
+        if (currentTab == (c - 1)) {
+            $("#btnNext").hide();
+        } else {
+            $("#btnNext").show();
+        }
+    });
+    $("#btnPrevious").live("click", function () {
+        var tabs = $('#tabs').tabs();
+        var c = $('#tabs').tabs("length");
+        currentTab = currentTab == 0 ? currentTab : (currentTab - 1);
+        tabs.tabs('select', currentTab);
+        if (currentTab == 0) {
+            $("#btnNext").show();
+            $("#btnPrevious").hide();
+        }
+        if (currentTab < (c - 1)) {
+            $("#btnNext").show();
+        }
+    });
 </script>
 <style>
   /* force a height so the tabs don't jump as content height changes */
@@ -285,14 +321,17 @@ $(function() {
 				  </tr>
 				  </table>
 				  </div>
-				  <table cellpadding="0" cellspacing="0" border="0" width="100%">
-				  <tr>
-                  <td valign="top" align="center"><input type="submit" class="submit_btn" value="Save"></td>
-                  <td valign="top" align="center"><input type="reset" class="submit_btn" value="Cancel" onclick="window.location.href='workaccident'"></td>
-				  </tr> 
-				  </table>
+				  
 				  </div>
-				  </div>
+				 <table align="right"> <tr><td><input type="button" id="btnPrevious" class="submit_btn" value="Previous" style = "display:none" />&nbsp;</td>
+<td><input type="button" id="btnNext" class="submit_btn" value="Next"/>
+<td valign="top" align="center"><input type="submit" class="submit_btn" value="Save"></td>
+                  <td valign="top" align="center"><input type="reset" class="submit_btn" value="Cancel" onclick="window.location.href='workaccident'"></td></td>
+<tr>
+</table>
+
+				 
+				   </div>
 				  </body>
 				  </html>
 				  
