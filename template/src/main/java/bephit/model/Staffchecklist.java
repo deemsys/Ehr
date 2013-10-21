@@ -21,10 +21,10 @@ public class Staffchecklist{
 	@NotEmpty
 	private String report;
 	@NotEmpty
-	@Pattern(regexp="(/^[a-zA-Z ]*$/)",message="Should be a alphabets")
+	
 	private String pat_name;
 	@NotEmpty
-	@Pattern(regexp="(/^[a-zA-Z ]*$/)",message="Should be a alphabets")
+	
 	private String insure;
 	@NotEmpty
 	@Pattern(regexp="(^$|[0-9]{10})",message="Should be a number")
