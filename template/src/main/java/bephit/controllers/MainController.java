@@ -712,6 +712,39 @@ public class MainController {
  
 	}
 	
+
+	@RequestMapping(value="/viewmedicalrecords", method = RequestMethod.GET)
+	public String viewmedicalrecords(HttpServletRequest request,ModelMap model) {
+		
+		MedicalRecordsForm medicalrecordsform= new MedicalRecordsForm();
+		medicalrecordsform.setMedicalDetails(medicalDAO.getMedicalDetails());
+		model.addAttribute("MedicalRecordsForm",medicalrecordsform);
+		
+		return "viewmedicalrecords";
+ 
+	}
+	@RequestMapping(value="/viewassignment", method = RequestMethod.GET)
+	public String viewassignment(HttpServletRequest request,ModelMap model) {
+		
+		 AssignmentDetailsForm assignmentdetailsform= new AssignmentDetailsForm();
+			assignmentdetailsform.setAssignmentDetails(assignmentDAO.getAssignmentDetails());
+			model.addAttribute("AssignmentDetailsForm",assignmentdetailsform);
+		
+		return "viewassignment";
+ 
+	}
+	@RequestMapping(value="/viewhippa", method = RequestMethod.GET)
+	public String viewhippa(HttpServletRequest request,ModelMap model) {
+		
+		HippaPrivacyForm hippaprivacyform= new HippaPrivacyForm();
+		hippaprivacyform.setPrivacyDetails(hippaDAO.getPrivacyDetails());
+		model.addAttribute("HippaPrivacyForm",hippaprivacyform);
+		
+		return "viewhippa";
+ 
+	}
+	
+
 	@RequestMapping(value="/viewstaffchecklist", method = RequestMethod.GET)
 	public String viewstaffchecklist(HttpServletRequest request,ModelMap model) {
 		
@@ -756,6 +789,7 @@ public class MainController {
 	
 	
 	
+
 	@RequestMapping(value="/loginfailed", method = RequestMethod.GET)
 	public String loginerror(ModelMap model) {
 		model.addAttribute("error", "true");
