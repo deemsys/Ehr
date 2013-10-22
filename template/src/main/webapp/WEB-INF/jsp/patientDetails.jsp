@@ -286,13 +286,20 @@
 				                  </td>
 				                </tr>
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name and Phone # of Nearest Friend/ Relative Not Living With You:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name of Nearest Friend/ Relative Not Living With You:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Name_phone" /><br><span class="err"><form:errors path="PatientDetails.Name_phone"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Name_friend" /><br><span class="err"><form:errors path="PatientDetails.Name_friend"></form:errors></span>
 				                  	
 				                  </td>
 				                </tr>
 				                 <tr class="row1">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Phone of Nearest Friend/ Relative Not Living With You:</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Phone_friend" /><br><span class="err"><form:errors path="PatientDetails.Phone_friend"></form:errors></span>
+				                  	
+				                  </td>
+				                  </tr>
+				                 <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Have you ever had chiropractic care? </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="radio" name="Chiropratic_care" value="0" class="input_txt" checked="true">yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Chiropratic_care" value="1" class="input_txt">No</td>
@@ -457,9 +464,15 @@
 				                  	<td></td>
 				                  </tr>
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name And phone of your auto insurance:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name of your auto insurance:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Name_ph" /><br><span class="err"><form:errors path="PatientDetails.Name_ph"></form:errors></span></td>
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Name_auto" /><br><span class="err"><form:errors path="PatientDetails.Name_auto"></form:errors></span></td>
+				                  	<td> </td>
+				                </tr>
+				               <tr class="row1">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>phone of your auto insurance:</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Phone_auto" /><br><span class="err"><form:errors path="PatientDetails.Phone_auto"></form:errors></span></td>
 				                  	<td> </td>
 				                </tr>
 				                <tr class="row1">
@@ -617,15 +630,11 @@
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Dr" /><br><span class="err"><form:errors path="PatientDetails.Dr"></form:errors></span>
 				                  	</tr>  
 				                  	<tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Signature:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Patient" /><br><span class="err"><form:errors path="PatientDetails.Patient"></form:errors></span>
 				                  	</tr>  
-				                  	<tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Signature:</td>
-				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Sign" /><br><span class="err"><form:errors path="PatientDetails.Sign"></form:errors></span>
-				                  	</tr>  
+				                  	 
 				                  	</table>
 				                   
 				                  	</td>
