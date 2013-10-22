@@ -101,7 +101,9 @@ private String SpousesEmp;
 @NotEmpty
 private String Spousesph;
 @NotEmpty
-private String Name_phone;
+private String Name_friend;
+@NotEmpty
+private String Phone_friend;
 
 private String Chiropratic_care;
 @NotEmpty
@@ -142,8 +144,9 @@ private String Insurance;
 @NotEmpty
 private String Insurance_phone;
 @NotEmpty
-private String Name_ph;
-
+private String Name_auto;
+@NotEmpty
+private String Phone_auto;
 
 @NotEmpty
 private String Policy;
@@ -761,22 +764,6 @@ public void setSpousesph(String spousesph) {
 
 
 
-public String getName_phone() {
-	return Name_phone;
-}
-
-
-
-
-
-
-
-
-public void setName_phone(String name_phone) {
-	Name_phone = name_phone;
-}
-
-
 
 
 
@@ -1201,20 +1188,6 @@ public void setInsurance_phone(String insurance_phone) {
 
 
 
-public String getName_ph() {
-	return Name_ph;
-}
-
-
-
-
-
-
-
-
-public void setName_ph(String name_ph) {
-	Name_ph = name_ph;
-}
 
 
 
@@ -2352,7 +2325,8 @@ public PatientDetails(String Patient_id,
 		String SpousesName,
 		String SpousesEmp,
 		String Spousesph,
-		String Name_phone,
+		String Name_friend,
+		String Phone_friend,
 		String Chiropratic_care,
 		String Symptoms,
 		String Symptom1,
@@ -2372,7 +2346,8 @@ public PatientDetails(String Patient_id,
 		String Fault_accident,
 		String Insurance,
 		String Insurance_phone,
-		String Name_ph,
+		String Name_auto,
+		String Phone_auto,
 		String Policy,
 		String Name_health,
 		String Health_phone,
@@ -2422,8 +2397,8 @@ public PatientDetails(String Patient_id,
 		String Hazardousyes,
 		String Female,
 		String Dr,
-		String Patient,
-		String Sign)
+		String Patient
+		)
 {
 	this.Patient_id=Patient_id;
 	this.Name=Name;
@@ -2451,7 +2426,8 @@ public PatientDetails(String Patient_id,
 	this.SpousesName=SpousesName;
 	this.SpousesEmp=SpousesEmp;
 	this.Spousesph=Spousesph;
-	this.Name_phone=Name_phone;
+	this.Name_friend=Name_friend;
+	this.Phone_friend=Phone_friend;
 	this.Chiropratic_care=Chiropratic_care;
 	this.Symptoms=Symptoms;
 	this.Symptom1=Symptom1;
@@ -2471,7 +2447,8 @@ public PatientDetails(String Patient_id,
 	this.Fault_accident=Fault_accident;
 	this.Insurance=Insurance;
 	this.Insurance_phone=Insurance_phone;
-	this.Name_ph=Name_ph;
+	this.Name_auto=Name_auto;
+	this.Phone_auto=Phone_auto;
 	this.Policy=Policy;
 	this.Name_health=Name_health;
 	this.Health_phone=Health_phone;
@@ -2524,6 +2501,94 @@ public PatientDetails(String Patient_id,
 	this.Patient=Patient;
 	this.Sign=Sign;
 	
+}
+
+
+
+
+
+
+
+
+public String getName_friend() {
+	return Name_friend;
+}
+
+
+
+
+
+
+
+
+public void setName_friend(String name_friend) {
+	Name_friend = name_friend;
+}
+
+
+
+
+
+
+
+
+public String getPhone_friend() {
+	return Phone_friend;
+}
+
+
+
+
+
+
+
+
+public void setPhone_friend(String phone_friend) {
+	Phone_friend = phone_friend;
+}
+
+
+
+
+
+
+
+
+public String getName_auto() {
+	return Name_auto;
+}
+
+
+
+
+
+
+
+
+public void setName_auto(String name_auto) {
+	Name_auto = name_auto;
+}
+
+
+
+
+
+
+
+
+public String getPhone_auto() {
+	return Phone_auto;
+}
+
+
+
+
+
+
+
+
+public void setPhone_auto(String phone_auto) {
+	Phone_auto = phone_auto;
 }
 
 

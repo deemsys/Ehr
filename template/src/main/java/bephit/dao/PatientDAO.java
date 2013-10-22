@@ -37,7 +37,7 @@ public class PatientDAO {
 	    try{
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
-	    	 String cmd="INSERT INTO `Patient_Details` (`Name`,`Date`,`StreetAddress`,`City`,`State`,`ZipCode`,`Homephone`,`Pager`,`MobileNumber`,`DateOfBirth`,`SocialSecurityNumber`,`Gender`,`MaritalStatus`,`Areyou`,`Student`,`EmployerName`,`Occupation`,`EmployerAddress`,`Workphone`,`EmployerCity`,`Estate`,`Ezip`,`SpousesName`,`SpousesEmp`,`Spousesph`,`Name_phone`,`Chiropratic_care`,`Symptoms`,`Painscale`,`Symptom1`,`Painscale1`,`Symptom2`,`Painscale2`,`Symptom_Accident`,`Type_Of_Accident`,`Date_Of_Accident`,`Accident_Reported`,`When`,`Where`,`Attorney_accident`,`NameOfAttorney`,`Phone_Number`,`Fault_accident`,`Insurance`,`Insurance_phone`,`Name_ph`,`Policy`,`Name_health`,`Health_phone`,`Prev_accident`,`Prev_When`,`Anemia`,`Muscular`,`Rheumatic`,`Allergies`,`Polio1`,`Multiple`,`HIV`,`Sinus`,`Asthma`,`German`,`Nervousness`,`Numbness`,`Convulsions`,`Epilepsy`,`Concussion`,`Neuritis`,`Rheumatism`,`Diabetes`,`Arthritis`,`Venereal`,`Backaches`,`Liver`,`Kidney`,`Thyroid`,`Alcoholism`,`Hepatitis`,`Mental`,`High`,`Digestive`,`Heart`,`Other`,`Ifother`,`Illness`,`Dates`,`Medications`,`Drink`,`Smoke`,`Drugs`,`Diet`,`Exercise`,`Hazardous`,`Hazardousyes`,`Female`,`Dr`,`Patient`,`Sign`) VALUES ('"+patientdetails.getName()+"','"+dateFormat.format(date)+"','"+patientdetails.getStreetAddress()+"','"+patientdetails.getCity()+"','"+patientdetails.getState()+"','"+patientdetails.getZipCode()+"','"+patientdetails.getHomephone()+"','"+patientdetails.getPager()+"','"+patientdetails.getMobileNumber()+"','"+dateFormat.format(date)+"','"+patientdetails.getSocialSecurityNumber()+"','"+patientdetails.getGender()+"','"+patientdetails.getMaritalStatus()+"','"+patientdetails.getAreyou()+"','"+patientdetails.getStudent()+"','"+patientdetails.getEmployerName()+"','"+patientdetails.getOccupation()+"','"+patientdetails.getEmployerAddress()+"','"+patientdetails.getWorkphone()+"','"+patientdetails.getEmployerCity()+"','"+patientdetails.getEstate()+"','"+patientdetails.getEzip()+"','"+patientdetails.getSpousesName()+"','"+patientdetails.getSpousesEmp()+"','"+patientdetails.getSpousesph()+"','"+patientdetails.getName_phone()+"','"+patientdetails.getChiropratic_care()+"','"+patientdetails.getSymptoms()+"','"+patientdetails.getPainscale()+"','"+patientdetails.getSymptom1()+"','"+patientdetails.getPainscale1()+"','"+patientdetails.getSymptom2()+"','"+patientdetails.getPainscale2()+"','"+patientdetails.getSymptom_Accident()+"','"+patientdetails.getType_Of_Accident()+"','"+dateFormat.format(date)+"','"+patientdetails.getAccident_Reported()+"','"+patientdetails.getWhen()+"','"+patientdetails.getWhere()+"','"+patientdetails.getAttorney_accident()+"','"+patientdetails.getNameOfAttorney()+"','"+patientdetails.getPhone_Number()+"','"+patientdetails.getFault_accident()+"','"+patientdetails.getInsurance()+"','"+patientdetails.getInsurance_phone()+"','"+patientdetails.getName_ph()+"','"+patientdetails.getPolicy()+"','"+patientdetails.getName_health()+"','"+patientdetails.getHealth_phone()+"','"+patientdetails+"','"+patientdetails.getPrev_When()+"','"+patientdetails.getAnemia()+"','"+patientdetails.getMuscular()+"','"+patientdetails.getRheumatic()+"','"+patientdetails.getAllergies()+"','"+patientdetails.getPolio1()+"','"+patientdetails.getMultiple()+"','"+patientdetails.getHIV()+"','"+patientdetails.getSinus()+"','"+patientdetails.getAsthma()+"','"+patientdetails.getGerman()+"','"+patientdetails.getNervousness()+"','"+patientdetails.getNumbness()+"','"+patientdetails.getConvulsions()+"','"+patientdetails.getEpilepsy()+"','"+patientdetails.getConcussion()+"','"+patientdetails.getNeuritis()+"','"+patientdetails.getRheumatism()+"','"+patientdetails.getDiabetes()+"','"+patientdetails.getArthritis()+"','"+patientdetails.getVenereal()+"','"+patientdetails.getBackaches()+"','"+patientdetails.getLiver()+"','"+patientdetails.getKidney()+"','"+patientdetails.getThyroid()+"','"+patientdetails.getAlchoholism()+"','"+patientdetails.getHepatitis()+"','"+patientdetails.getMental()+"','"+patientdetails.getHigh()+"','"+patientdetails.getDigestive()+"','"+patientdetails.getHeart()+"','"+patientdetails.getOther()+"','"+patientdetails.getIfother()+"','"+patientdetails.getIllness()+"','"+patientdetails.getDates()+"','"+patientdetails.getMedications()+"','"+patientdetails.getDrink()+"','"+patientdetails.getSmoke()+"','"+patientdetails.getDrugs()+"','"+patientdetails.getDiet()+"','"+patientdetails.getExercise()+"','"+patientdetails.getHazardous()+"','"+patientdetails.getHazardousyes()+"','"+patientdetails.getFemale()+"','"+patientdetails.getDr()+"','"+patientdetails.getPatient()+"','"+patientdetails.getSign()+"')";
+	    	 String cmd="INSERT INTO `Patient_Details` (`Name`,`Date`,`StreetAddress`,`City`,`State`,`ZipCode`,`Homephone`,`Pager`,`MobileNumber`,`DateOfBirth`,`SocialSecurityNumber`,`Gender`,`MaritalStatus`,`Areyou`,`Student`,`EmployerName`,`Occupation`,`EmployerAddress`,`Workphone`,`EmployerCity`,`Estate`,`Ezip`,`SpousesName`,`SpousesEmp`,`Spousesph`,`Name_friend`,`Phone_friend`,`Chiropratic_care`,`Symptoms`,`Painscale`,`Symptom1`,`Painscale1`,`Symptom2`,`Painscale2`,`Symptom_Accident`,`Type_Of_Accident`,`Date_Of_Accident`,`Accident_Reported`,`When`,`Where`,`Attorney_accident`,`NameOfAttorney`,`Phone_Number`,`Fault_accident`,`Insurance`,`Insurance_phone`,`Name_auto`,`Phone_auto`,`Policy`,`Name_health`,`Health_phone`,`Prev_accident`,`Prev_When`,`Anemia`,`Muscular`,`Rheumatic`,`Allergies`,`Polio1`,`Multiple`,`HIV`,`Sinus`,`Asthma`,`German`,`Nervousness`,`Numbness`,`Convulsions`,`Epilepsy`,`Concussion`,`Neuritis`,`Rheumatism`,`Diabetes`,`Arthritis`,`Venereal`,`Backaches`,`Liver`,`Kidney`,`Thyroid`,`Alcoholism`,`Hepatitis`,`Mental`,`High`,`Digestive`,`Heart`,`Other`,`Ifother`,`Illness`,`Dates`,`Medications`,`Drink`,`Smoke`,`Drugs`,`Diet`,`Exercise`,`Hazardous`,`Hazardousyes`,`Female`,`Dr`,`Patient`) VALUES ('"+patientdetails.getName()+"','"+dateFormat.format(date)+"','"+patientdetails.getStreetAddress()+"','"+patientdetails.getCity()+"','"+patientdetails.getState()+"','"+patientdetails.getZipCode()+"','"+patientdetails.getHomephone()+"','"+patientdetails.getPager()+"','"+patientdetails.getMobileNumber()+"','"+dateFormat.format(date)+"','"+patientdetails.getSocialSecurityNumber()+"','"+patientdetails.getGender()+"','"+patientdetails.getMaritalStatus()+"','"+patientdetails.getAreyou()+"','"+patientdetails.getStudent()+"','"+patientdetails.getEmployerName()+"','"+patientdetails.getOccupation()+"','"+patientdetails.getEmployerAddress()+"','"+patientdetails.getWorkphone()+"','"+patientdetails.getEmployerCity()+"','"+patientdetails.getEstate()+"','"+patientdetails.getEzip()+"','"+patientdetails.getSpousesName()+"','"+patientdetails.getSpousesEmp()+"','"+patientdetails.getSpousesph()+"','"+patientdetails.getName_friend()+"','"+patientdetails.getPhone_friend()+"','"+patientdetails.getChiropratic_care()+"','"+patientdetails.getSymptoms()+"','"+patientdetails.getPainscale()+"','"+patientdetails.getSymptom1()+"','"+patientdetails.getPainscale1()+"','"+patientdetails.getSymptom2()+"','"+patientdetails.getPainscale2()+"','"+patientdetails.getSymptom_Accident()+"','"+patientdetails.getType_Of_Accident()+"','"+dateFormat.format(date)+"','"+patientdetails.getAccident_Reported()+"','"+patientdetails.getWhen()+"','"+patientdetails.getWhere()+"','"+patientdetails.getAttorney_accident()+"','"+patientdetails.getNameOfAttorney()+"','"+patientdetails.getPhone_Number()+"','"+patientdetails.getFault_accident()+"','"+patientdetails.getInsurance()+"','"+patientdetails.getInsurance_phone()+"','"+patientdetails.getName_auto()+"','"+patientdetails.getPhone_auto()+"','"+patientdetails.getPolicy()+"','"+patientdetails.getName_health()+"','"+patientdetails.getHealth_phone()+"','"+patientdetails+"','"+patientdetails.getPrev_When()+"','"+patientdetails.getAnemia()+"','"+patientdetails.getMuscular()+"','"+patientdetails.getRheumatic()+"','"+patientdetails.getAllergies()+"','"+patientdetails.getPolio1()+"','"+patientdetails.getMultiple()+"','"+patientdetails.getHIV()+"','"+patientdetails.getSinus()+"','"+patientdetails.getAsthma()+"','"+patientdetails.getGerman()+"','"+patientdetails.getNervousness()+"','"+patientdetails.getNumbness()+"','"+patientdetails.getConvulsions()+"','"+patientdetails.getEpilepsy()+"','"+patientdetails.getConcussion()+"','"+patientdetails.getNeuritis()+"','"+patientdetails.getRheumatism()+"','"+patientdetails.getDiabetes()+"','"+patientdetails.getArthritis()+"','"+patientdetails.getVenereal()+"','"+patientdetails.getBackaches()+"','"+patientdetails.getLiver()+"','"+patientdetails.getKidney()+"','"+patientdetails.getThyroid()+"','"+patientdetails.getAlchoholism()+"','"+patientdetails.getHepatitis()+"','"+patientdetails.getMental()+"','"+patientdetails.getHigh()+"','"+patientdetails.getDigestive()+"','"+patientdetails.getHeart()+"','"+patientdetails.getOther()+"','"+patientdetails.getIfother()+"','"+patientdetails.getIllness()+"','"+patientdetails.getDates()+"','"+patientdetails.getMedications()+"','"+patientdetails.getDrink()+"','"+patientdetails.getSmoke()+"','"+patientdetails.getDrugs()+"','"+patientdetails.getDiet()+"','"+patientdetails.getExercise()+"','"+patientdetails.getHazardous()+"','"+patientdetails.getHazardousyes()+"','"+patientdetails.getFemale()+"','"+patientdetails.getDr()+"','"+patientdetails.getPatient()+"')";
 	    	 System.out.println(cmd);
 	    	 statement.execute(cmd);
 		     flag=1;
@@ -104,7 +104,8 @@ public class PatientDAO {
 			    	    resultSet.getString("SpousesName"),
 			    	    resultSet.getString("SpousesEmp"),
 			    	    resultSet.getString("Spousesph"),
-			    	    resultSet.getString("Name_phone"),
+			    	    resultSet.getString("Name_friend"),
+			    	    resultSet.getString("Phone_friend"),
 			    	    resultSet.getString("Chiropratic_care"),
 			    	    resultSet.getString("Symptoms"),
 			    	    resultSet.getString("Painscale"),
@@ -124,7 +125,8 @@ public class PatientDAO {
 			    	    resultSet.getString("Fault_accident"),
 			    	    resultSet.getString("Insurance"),
 			    	    resultSet.getString("Insurance_phone"),
-			    	    resultSet.getString("Name_ph"),
+			    	    resultSet.getString("Name_auto"),
+			    	    resultSet.getString("Phone_auto"),
 			    	    resultSet.getString("policy"),
 			    	    resultSet.getString("Name_health"),
 			    	    resultSet.getString("Health_phone"),
@@ -174,9 +176,8 @@ public class PatientDAO {
 			    	    resultSet.getString("Hazardousyes"),
 			    	    resultSet.getString("Female"),
 			    	    resultSet.getString("Dr"),
-			    	    resultSet.getString("Patient"),
-			    	    resultSet.getString("Sign")
-			    	    ));
+			    	    resultSet.getString("Patient")
+			    	   ));
 			    	
 			}
 	    }catch(Exception e){
@@ -242,7 +243,8 @@ public class PatientDAO {
 			    	    resultSet.getString("SpousesName"),
 			    	    resultSet.getString("SpousesEmp"),
 			    	    resultSet.getString("Spousesph"),
-			    	    resultSet.getString("Name_phone"),
+			    	    resultSet.getString("Name_friend"),
+			    	    resultSet.getString("Phone_friend"),
 			    	    resultSet.getString("Chiropratic_care"),
 			    	    resultSet.getString("Symptoms"),
 			    	    resultSet.getString("Painscale"),
@@ -262,7 +264,8 @@ public class PatientDAO {
 			    	    resultSet.getString("Fault_accident"),
 			    	    resultSet.getString("Insurance"),
 			    	    resultSet.getString("Insurance_phone"),
-			    	    resultSet.getString("Name_ph"),
+			    	    resultSet.getString("Name_auto"),
+			    	    resultSet.getString("Phone_auto"),
 			    	    resultSet.getString("policy"),
 			    	    resultSet.getString("Name_health"),
 			    	    resultSet.getString("Health_phone"),
@@ -312,9 +315,7 @@ public class PatientDAO {
 			    	    resultSet.getString("Hazardousyes"),
 			    	    resultSet.getString("Female"),
 			    	    resultSet.getString("Dr"),
-			    	    resultSet.getString("Patient"),
-			    	    resultSet.getString("Sign")
-			    	    ));
+			    	    resultSet.getString("Patient")));
 			}
 	    }catch(Exception e){
 	    	System.out.println(e.toString());
