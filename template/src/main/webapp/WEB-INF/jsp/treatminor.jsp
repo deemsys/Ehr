@@ -73,9 +73,14 @@
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="pwitness" /><br><span class="err"><form:errors path="TreatMinor.pwitness"></form:errors></span>
 				                  	</tr>
                         <tr>
-				  <td valign="top" align="center">&nbsp;</td>
-				                <td valign="top" align="center"><br><input type="submit" class="submit_btn" value="Save"></td>
+                        </table>
+                        <table>
+				  <td valign="top" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				  <td valign="top" align="center"><br><input type="submit" class="submit_btn" value="Save"></td>
+				  <td>&nbsp;&nbsp;</td>
 				    <td valign="top" align="center"><br><input type="reset" class="submit_btn" value="Cancel"></td>
+				    <td>&nbsp;&nbsp;</td>
+				     <td valign="top" align="center"><br><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewtreatminor'"></td>
 				  </tr>
                         </table>
                         </tr>

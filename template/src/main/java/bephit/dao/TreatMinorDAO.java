@@ -79,10 +79,11 @@ public class TreatMinorDAO {
 			while(resultSet.next()){
 				minor.add(new TreatMinor(resultSet.getString("guardian"),resultSet.getString("age"),resultSet.getString("Drname"),resultSet.getString("signed"),
 			    		resultSet.getString("pdate"),
-			    		resultSet.getString("pwitness") ));
-			    	
+			    		resultSet.getString("pwitness")));
+			    System.out.println(minor);	
 			}
 	    }catch(Exception e){
+	    	System.out.println(e.toString());
 	    	releaseResultSet(resultSet);
 	    	releaseStatement(statement);
 	    	releaseConnection(con);

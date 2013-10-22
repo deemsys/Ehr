@@ -147,10 +147,14 @@
               <td></td>
 			  <td></td>              
               </tr>
+              </table>
+              <table>
                <tr>
-	        <!-- <td valign="top" align="left">&nbsp;</td>  -->
+	        <td valign="top" align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> 
               <td valign="top" align="center"><br><input type="submit" class="submit_btn" value="Save"></td>
+              <td>&nbsp;&nbsp;</td>
               <td valign="top" align="center"><br><input type="reset" class="submit_btn" value="Cancel"></td>
+	     	  <td>&nbsp;&nbsp;</td>
 	     	  <td valign="top" align="center"><br><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewinsuranceverification'"></td>
 	    </tr>
 	    </table>

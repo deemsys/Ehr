@@ -82,10 +82,12 @@
             <td valign="middle" align="left" width="74%">${Hardshipagreement.witness_sign}</td> </tr>
               </table>
               <br>
-              <table cellpadding="0" cellspacing="0" border="0" width="100%">
+              <table>
               <tr >
-              <td valign="top" align="center"><input type="submit" class="submit_btn" value="Edit"></td>
-               <td valign="top" align="center"><input type="reset" class="submit_btn" value="Delete"></td>
+              <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+              <td ><input type="submit" class="submit_btn" value="Edit"></td>
+              <td>&nbsp;&nbsp;</td>
+               <td><input type="reset" class="submit_btn" value="Delete"></td>
         	  </tr>
         	  
         	  </table>

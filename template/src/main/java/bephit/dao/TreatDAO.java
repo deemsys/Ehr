@@ -75,15 +75,17 @@ public class TreatDAO {
 		}
 		List<Treatform> treat = new ArrayList<Treatform>();
 	    try{
-			resultSet = statement.executeQuery("select * from Treat_Details");
+			resultSet = statement.executeQuery("select * from Treat_Details order by treat_no DESC");
 			while(resultSet.next()){
 				treat.add(new Treatform(resultSet.getString("patientsname"),
 			    		resultSet.getString("patientssign"),
 			    		resultSet.getString("todaydate"),
-			    		resultSet.getString("witness") ));
+			    		resultSet.getString("witness")));
 			    	
 			}
+			System.out.println(treat);
 	    }catch(Exception e){
+	    	System.out.println(e.toString());
 	    	releaseResultSet(resultSet);
 	    	releaseStatement(statement);
 	    	releaseConnection(con);

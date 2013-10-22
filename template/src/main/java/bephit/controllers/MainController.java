@@ -722,6 +722,40 @@ public class MainController {
 		return "viewstaffchecklist";
  
 	}
+	
+	@RequestMapping(value="/viewtreatform", method = RequestMethod.GET)
+	public String viewtreatform(HttpServletRequest request,ModelMap model) {
+		
+		TreatDetailsForm treatdetailsform= new TreatDetailsForm();
+		treatdetailsform.setTreatDetails(treatDAO.getTreatDetails());
+		model.addAttribute("treatdetails",treatdetailsform);
+		return "viewtreatform";
+ 
+	}
+	
+	@RequestMapping(value="/viewtreatminor", method = RequestMethod.GET)
+	public String viewtreatminor(HttpServletRequest request,ModelMap model) {
+		
+		TreatMinorDetailsForm treatminordetailsform= new TreatMinorDetailsForm();
+		treatminordetailsform.setMinorDetails(minorDAO.getMinorDetails());
+		model.addAttribute("TreatMinorDetailsForm",treatminordetailsform);
+		return "viewtreatminor";
+ 
+	}
+	
+	@RequestMapping(value="/viewscreeningauthz", method = RequestMethod.GET)
+	public String viewscreeningauthz(HttpServletRequest request,ModelMap model) {
+		
+		ScreeningAuthzForm screeningauthzform= new ScreeningAuthzForm();
+		screeningauthzform.setScreeningDetails(screenDAO.getScreeningDetails());
+		model.addAttribute("screeningauthzform",screeningauthzform);
+		return "viewscreeningauthz";
+ 
+	}
+	
+	
+	
+	
 	@RequestMapping(value="/loginfailed", method = RequestMethod.GET)
 	public String loginerror(ModelMap model) {
 		model.addAttribute("error", "true");

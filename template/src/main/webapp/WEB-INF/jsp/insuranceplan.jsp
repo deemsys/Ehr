@@ -95,18 +95,16 @@
         <td align="center"><input type="text" class="input_txtbx1" name="authorized" id="authorized" placeholder="Authorized Clinic Representative"/><br><span class="err"><form:errors path="Insuranceplan.authorized"></form:errors></td>
         <td></td>
         </tr>
-       <!--  <tr>
-        <td>Patient</td>
-        <td align="center">Authorized Clinic Representative</td>
-        </tr>
-        </table>
-        <br>
-        <table cellpadding="0" cellspacing="0" border="0" width="100%">  -->
+       </table>
+       <br>
+        <table>
         <tr>
-       <!-- <td valign="top" align="center">&nbsp;</td>  -->
-        <td valign="top" align="center"><br><input type="submit" class="submit_btn" value="Save"></td>
-        <td valign="top" align="center"><br><input type="reset" class="submit_btn" value="Cancel"></td>
-         <td valign="top" align="center"><br><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewinsuranceplan'"></td>
+     	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> 
+        <td><br><input type="submit" class="submit_btn" value="Save"></td>
+        <td>&nbsp;&nbsp;</td>
+        <td><br><input type="reset" class="submit_btn" value="Cancel"></td>
+        <td>&nbsp;&nbsp;</td>
+        <td><br><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewinsuranceplan'"></td>
         </tr>
         </table>
         </div>

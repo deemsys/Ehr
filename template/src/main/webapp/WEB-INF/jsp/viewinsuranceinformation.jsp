@@ -117,10 +117,13 @@
         <td>Date</td>
         <td>${Insuranceinformation.date1}</td>
         </tr>
+        </table>
+        <table>
        <tr>
-	    <td valign="top" align="center">&nbsp;</td>
-        <td valign="top" align="center"><br><input type="submit" class="submit_btn" value="Edit"></td>
-        <td valign="top" align="center"><br><input type="reset" class="submit_btn" value="Delete"></td>
+	    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td><br><input type="submit" class="submit_btn" value="Edit"></td>
+        <td>&nbsp;&nbsp;</td>
+        <td><br><input type="reset" class="submit_btn" value="Delete"></td>
 	    </tr>
         </table>
         </div>

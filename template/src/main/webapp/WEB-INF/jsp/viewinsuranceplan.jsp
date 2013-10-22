@@ -101,16 +101,13 @@
         <td align="center">${Insuranceplan.authorized}</td>
         <td></td>
         </tr>
-       <!--  <tr>
-        <td>Patient</td>
-        <td align="center">Authorized Clinic Representative</td>
-        </tr>
-        </table>
+       </table>
         <br>
-        <table cellpadding="0" cellspacing="0" border="0" width="100%">  -->
+        <table>
         <tr>
-       <!-- <td valign="top" align="center">&nbsp;</td>  -->
+       <td valign="top" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>  
         <td valign="top" align="center"><br><input type="button" class="submit_btn" value="Edit"></td>
+        <td>&nbsp;&nbsp;</td>
         <td valign="top" align="center"><br><input type="button" class="submit_btn" value="Delete"></td>
          
         </tr>

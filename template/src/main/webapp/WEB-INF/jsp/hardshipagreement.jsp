@@ -75,11 +75,14 @@
               </tr>
               </table>
               <br>
-              <table cellpadding="0" cellspacing="0" border="0" width="100%">
-              <tr >
-              <td valign="top" align="center"><input type="submit" class="submit_btn" value="Save"></td>
-               <td valign="top" align="center"><input type="reset" class="submit_btn" value="Cancel"></td>
-               <td valign="top" align="center"><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewhardship'"></td>
+              <table>
+              <tr>
+              <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+              <td><input type="submit" class="submit_btn" value="Save"></td>
+              <td>&nbsp;&nbsp;</td>
+              <td><input type="reset" class="submit_btn" value="Cancel"></td>
+              <td>&nbsp;&nbsp;</td>
+              <td><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewhardship'"></td>
         	  </tr>
         	  </table>
         	  </div>

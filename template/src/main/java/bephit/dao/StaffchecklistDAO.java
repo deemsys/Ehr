@@ -96,12 +96,14 @@ public List<Staffchecklist> getStaffchecklist(){
 		    		resultSet.getString("med_pay"),
 		    		resultSet.getString("other_attorney"),
 		    		resultSet.getString("protect_received"),
-		    		resultSet.getString("bil"),
+		    		resultSet.getString("bill"),
 		    		resultSet.getString("re_date")));
 		    		
 		    		
 		}
+		System.out.println(Staffchecklist);
     }catch(Exception e){
+    	System.out.println(e.toString());
     	releaseResultSet(resultSet);
     	releaseStatement(statement);
     	releaseConnection(con);
