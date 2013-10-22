@@ -119,10 +119,14 @@ and exclusively in the name of Perry Chiropractic and Therapy Center, such sums 
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="datepicker2" name="representativedate" /><br><span class="err"><form:errors path="Assignment.representativedate"></form:errors>
 				                  	</tr>
+				                  	</table>
+				                  	<table>
 				                  	 <tr>
-				  <td valign="top" align="center">&nbsp;</td>
+				  <td valign="top" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				                <td valign="top" align="center"><br><input type="submit" class="submit_btn" value="Save"></td>
+				                <td>&nbsp;&nbsp;</td>
 				   <td valign="top" align="center"><br><input type="reset" class="submit_btn" value="Cancel"></td>
+				   <td>&nbsp;&nbsp;</td>
 				   <td valign="top" align="center"><br><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewassignment'"></td>
 				  </tr>
 				  </div>

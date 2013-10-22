@@ -786,7 +786,27 @@ public class MainController {
  
 	}
 	
+	@RequestMapping(value="/edithardship", method = RequestMethod.GET)
+	public String edithardship(HttpServletRequest request,ModelMap model) {
+		HardshipagreementForm hardshipagreementForm= new HardshipagreementForm();
+    	hardshipagreementForm.setHardshipagreement(hardDAO.getHardshipagreement());
+		model.addAttribute("hardshipagreementform",hardshipagreementForm);
+		
+		return "edithardship";
+		
+ 
+	}
 	
+	
+	@RequestMapping(value="/editinsuranceplan", method = RequestMethod.GET)
+	public String editinsuranceplan(HttpServletRequest request,ModelMap model) {
+		InsuranceplanForm insuranceplanForm= new InsuranceplanForm();
+    	insuranceplanForm.setInsuranceplan(planDAO.getInsuranceplan());
+		model.addAttribute("InsuranceplanForm",insuranceplanForm);
+		
+		return "editinsuranceplan";
+ 
+	}
 	
 	
 

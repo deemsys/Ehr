@@ -97,10 +97,14 @@
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="staffwitness" /><span class="err"><form:errors path="HippaPrivacy.staffwitness"></form:errors>
 				                  	</tr>
+				                  	</table>
+				                  	<table>
 				                  	<tr>
-				  <td valign="top" align="center">&nbsp;</td>
+				  <td valign="top" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				                <td valign="top" align="center"><br><input type="submit" class="submit_btn" value="Save"></td>
+				                <td>&nbsp;&nbsp;</td>
 				    <td valign="top" align="center"><br><input type="reset" class="submit_btn" value="Cancel"></td>
+				    <td>&nbsp;&nbsp;</td>
 				     <td valign="top" align="center"><br><input type="button" class="submit_btn" value="view" onclick="window.location.href='viewhippa'"></td>
 				  </tr>
                         </div>

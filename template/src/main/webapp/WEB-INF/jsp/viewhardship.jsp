@@ -85,9 +85,9 @@
               <table>
               <tr >
               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-              <td ><input type="submit" class="submit_btn" value="Edit"></td>
+              <td ><input type="button" class="submit_btn" value="Edit" onclick="window.location.href='edithardship'"></td>
               <td>&nbsp;&nbsp;</td>
-               <td><input type="reset" class="submit_btn" value="Delete"></td>
+               <td><input type="button" class="submit_btn" value="Delete"></td>
         	  </tr>
         	  
         	  </table>

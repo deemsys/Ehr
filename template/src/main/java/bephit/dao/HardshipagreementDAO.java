@@ -65,6 +65,54 @@ public class HardshipagreementDAO {
     		return 0;
 	    
 	}
+	public int updatehardship(Hardshipagreement hardshipagreement,String agreement_no)
+	{
+		Connection con = null;
+		Statement statement = null;
+		int flag=0;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		//List<ParticipantsDetails> participants = new ArrayList<ParticipantsDetails>();
+	    try{
+	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+	    	 Date date = new Date();
+	    	 //System.out.println(dateFormat.format(date));
+	    	String cmd="UPDATE tbl_hardshipagreement SET date='"+hardshipagreement.getDate()+"',print_pat_name='"+hardshipagreement.getPrint_pat_name()+"',pat_sign='"+hardshipagreement.getPat_sign()+"',witness_sign='"+hardshipagreement.getWitness_sign()+"';";
+	    	String Desc="Update hardship "+hardshipagreement.getPrint_pat_name();
+	    	
+	    	
+	    	
+	    	//String cmd_activity="insert into admin_log_activity_table(admin_id,ip_address,admin_date_time,admin_desc) values('"+admin+"','127.0.0.1','"+dateFormat.format(date)+"','"+Desc+"')";
+	    	    	
+	    	System.out.println(cmd);
+	    	//System.out.println(cmd_activity);
+			
+	    	statement.execute(cmd);
+			//statement.execute(cmd_activity);
+			flag=1;
+	 }
+	    catch(Exception e){
+	    	System.out.println(e.toString());
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    	flag=0;
+	    	//return 0;
+	    }finally{
+	     	releaseStatement(statement);
+	    	releaseConnection(con);	    
+	    	
+	    }
+	    if(flag==1)
+    		return 1;
+    	else
+    		return 0;
+	    
+	}
+	
 
 	
 public List<Hardshipagreement> getHardshipagreement(){

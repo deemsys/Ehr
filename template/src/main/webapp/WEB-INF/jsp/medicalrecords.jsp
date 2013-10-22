@@ -51,10 +51,14 @@
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="patientsignature" /><span class="err"><form:errors path="MedicalRecords.patientsignature"></form:errors></span>
 				                  	</td>
 				                  	</tr>
+				                  	</table>
+				                  	<table>
 				                  	<tr>
-				  <td valign="top" align="center">&nbsp;</td>
-				                <td valign="top" align="center"><br><input type="submit" class="submit_btn" value="Save"></td>
-				   <td valign="top" align="center"><br><input type="reset" class="submit_btn" value="Cancel"></td>
+				  <td valign="top" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				<td valign="top" align="center"><br><input type="submit" class="submit_btn" value="Save"></td>
+				<td>&nbsp;&nbsp;</td>
+				<td valign="top" align="center"><br><input type="reset" class="submit_btn" value="Cancel"></td>
+				<td>&nbsp;&nbsp;</td>
 				 <td valign="top" align="center"><br><input type="button" class="submit_btn" value="view" onclick="window.location.href='viewmedicalrecords'"></td>
 				  </tr>
 				                  	</div>

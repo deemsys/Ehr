@@ -47,11 +47,15 @@
 				                  	${medicalrecords.patientsignature}
 				                  	</td>
 				                  	</tr>
+				                  	</table>
+				                  	<table>
 				                  	<tr>
-				  <td valign="top" align="center">&nbsp;</td>
+				  <td valign="top" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				                <td valign="top" align="center"><br><input type="button" class="submit_btn" value="Edit"></td>
+				  <td>&nbsp;&nbsp;</td>
 				   <td valign="top" align="center"><br><input type="button" class="submit_btn" value="Delete"></td>
 				  </tr>
+				  </table>
 				                  	</div>
 				                  	
 				                  
