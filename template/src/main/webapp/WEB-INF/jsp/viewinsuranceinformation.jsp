@@ -121,9 +121,9 @@
         <table>
        <tr>
 	    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td><br><input type="submit" class="submit_btn" value="Edit"></td>
+        <td><br><input type="button" class="submit_btn" value="Edit" onclick="window.location.href='editinsuranceinformation'"></td>
         <td>&nbsp;&nbsp;</td>
-        <td><br><input type="reset" class="submit_btn" value="Delete"></td>
+        <td><br><input type="button" class="submit_btn" value="Delete"></td>
 	    </tr>
         </table>
         </div>

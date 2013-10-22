@@ -808,6 +808,35 @@ public class MainController {
  
 	}
 	
+	@RequestMapping(value="/editinsuranceinformation", method = RequestMethod.GET)
+	public String editinsuranceinformation(HttpServletRequest request,ModelMap model) {
+		InsuranceinformationForm insuranceinformationForm= new InsuranceinformationForm();
+    	insuranceinformationForm.setInsuranceinformation(infoDAO.getInsuranceinformation());
+		model.addAttribute("InsuranceinformationForm",insuranceinformationForm);
+		
+		return "editinsuranceinformation";
+	}
+	
+	@RequestMapping(value="/editinsuranceverification", method = RequestMethod.GET)
+	public String editinsuranceverification(HttpServletRequest request,ModelMap model) {
+		
+		InsuranceverificationForm insuranceverificationForm= new InsuranceverificationForm();
+    	insuranceverificationForm.setInsuranceverification(veriDAO.getInsuranceverification());
+		model.addAttribute("InsuranceverificationForm",insuranceverificationForm);
+		
+		return "editinsuranceverification";
+	}
+	
+	@RequestMapping(value="/editstaffchecklist", method = RequestMethod.GET)
+	public String editstaffchecklist(HttpServletRequest request,ModelMap model) {
+		
+		StaffchecklistForm staffchecklistForm= new StaffchecklistForm();
+    	staffchecklistForm.setStaffchecklist(staffDAO.getStaffchecklist());
+		model.addAttribute("StaffchecklistForm",staffchecklistForm);
+		
+		return "editstaffchecklist";
+	}
+	
 	
 
 	@RequestMapping(value="/loginfailed", method = RequestMethod.GET)

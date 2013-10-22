@@ -11,6 +11,7 @@ import java.util.Date;
 import java.util.List;
 import javax.sql.DataSource;
 
+import bephit.model.Hardshipagreement;
 import bephit.model.Staffchecklist;
  
 
@@ -66,6 +67,53 @@ public class StaffchecklistDAO {
 	    
 	}
 
+	public int updatestaffchecklist(Staffchecklist staffchecklist,String form_no)
+	{
+		Connection con = null;
+		Statement statement = null;
+		int flag=0;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		//List<ParticipantsDetails> participants = new ArrayList<ParticipantsDetails>();
+	    try{
+	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+	    	 Date date = new Date();
+	    	 //System.out.println(dateFormat.format(date));
+	    	String cmd="UPDATE tbl_staffchecklist SET patinfo='"+staffchecklist.getPatinfo()+"',screening='"+staffchecklist.getScreening()+"',aob='"+staffchecklist.getAob()+"',history='"+staffchecklist.getHistory()+"',xray_sheet='"+staffchecklist.getXray_sheet()+"',consent='"+staffchecklist.getConsent()+"',report='"+staffchecklist.getReport()+"',pat_name='"+staffchecklist.getPat_name()+"',insure='"+staffchecklist.getInsure()+"',damage_amount='"+staffchecklist.getDamage_amount()+"',fault_insure='"+staffchecklist.getFault_insure()+"',med_pay='"+staffchecklist.getMed_pay()+"',other_attorney='"+staffchecklist.getOther_attorney()+"',protect_received='"+staffchecklist.getProtect_received()+"',bill='"+staffchecklist.getBill()+"',re_date='"+staffchecklist.getRe_date()+"';";
+	    	String Desc="Update staffchecklist "+staffchecklist.getPat_name();
+	    	
+	    	
+	    	
+	    	//String cmd_activity="insert into admin_log_activity_table(admin_id,ip_address,admin_date_time,admin_desc) values('"+admin+"','127.0.0.1','"+dateFormat.format(date)+"','"+Desc+"')";
+	    	    	
+	    	System.out.println(cmd);
+	    	//System.out.println(cmd_activity);
+			
+	    	statement.execute(cmd);
+			//statement.execute(cmd_activity);
+			flag=1;
+	 }
+	    catch(Exception e){
+	    	System.out.println(e.toString());
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    	flag=0;
+	    	//return 0;
+	    }finally{
+	     	releaseStatement(statement);
+	    	releaseConnection(con);	    
+	    	
+	    }
+	    if(flag==1)
+    		return 1;
+    	else
+    		return 0;
+	    
+	}
 	
 public List<Staffchecklist> getStaffchecklist(){
 	Connection con = null;

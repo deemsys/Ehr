@@ -11,6 +11,7 @@ import java.util.Date;
 import java.util.List;
 import javax.sql.DataSource;
 
+import bephit.model.Hardshipagreement;
 import bephit.model.Insuranceinformation;
  
 
@@ -65,6 +66,55 @@ public class InsuranceinformationDAO {
     		return 0;
 	    
 	}
+
+	public int updateinsuranceinformation(Insuranceinformation insuranceinformation,String Number)
+	{
+		Connection con = null;
+		Statement statement = null;
+		int flag=0;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		//List<ParticipantsDetails> participants = new ArrayList<ParticipantsDetails>();
+	    try{
+	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+	    	 Date date = new Date();
+	    	 //System.out.println(dateFormat.format(date));
+	    	String cmd="UPDATE tbl_insuranceinformation SET patient_name='"+insuranceinformation.getPatient_name()+"',date_of_accident='"+insuranceinformation.getDate_of_accident()+"',have_insurance='"+insuranceinformation.getHave_insurance()+"',employers_name='"+insuranceinformation.getEmployers_name()+"',insurance_company='"+insuranceinformation.getInsurance_company()+"',phone='"+insuranceinformation.getPhone()+"',policy='"+insuranceinformation.getPolicy()+"',group='"+insuranceinformation.getGroup()+"',supplemental_company='"+insuranceinformation.getSupplemental_company()+"',sup_phone='"+insuranceinformation.getSup_phone()+"',patient_sign='"+insuranceinformation.getPatient_sign()+"',date='"+insuranceinformation.getDate()+"',spouse_sign='"+insuranceinformation.getSpouse_sign()+"',date1='"+insuranceinformation.getDate1()+"';";
+	    	String Desc="Update insuranceinformation "+insuranceinformation.getPatient_name();
+	    	
+	    	
+	    	
+	    	//String cmd_activity="insert into admin_log_activity_table(admin_id,ip_address,admin_date_time,admin_desc) values('"+admin+"','127.0.0.1','"+dateFormat.format(date)+"','"+Desc+"')";
+	    	    	
+	    	System.out.println(cmd);
+	    	//System.out.println(cmd_activity);
+			
+	    	statement.execute(cmd);
+			//statement.execute(cmd_activity);
+			flag=1;
+	 }
+	    catch(Exception e){
+	    	System.out.println(e.toString());
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    	flag=0;
+	    	//return 0;
+	    }finally{
+	     	releaseStatement(statement);
+	    	releaseConnection(con);	    
+	    	
+	    }
+	    if(flag==1)
+    		return 1;
+    	else
+    		return 0;
+	    
+	}
+	
 
 	
 public List<Insuranceinformation> getInsuranceinformation(){
