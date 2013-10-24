@@ -86,10 +86,8 @@ public class MainController {
 	@Autowired
 	SignupDAO signDAO;
 	
-@Autowired
+	@Autowired
 	PatientDAO patientDAO;
-	
-	
 	
 	@Autowired
 	AssignmentDAO assignmentDAO;
