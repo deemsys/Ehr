@@ -31,14 +31,20 @@ ul, li {
 	width:400px;
 	margin:100px auto auto auto;
 }
+
+#role_div {
+	width:500px;
+    padding-left:380px;
+	
+}
 .login-top {
-	background:url(../images/loginhead.png) no-repeat;
+	background:url(../images/login-head.png) no-repeat;
 	width:400px;
 	height:59px;
 	display:block;
 }
 .login-center {
-	background:url(../images/logincen.png) repeat-x;
+	background:url(../images/login-cen.png) repeat-x;
 	width:360px;
 	padding:20px;
 	color:#fff;
@@ -98,7 +104,7 @@ ul.login-list li p {
 	background:url(../images/forgot-password-hov.gif) no-repeat;
 }
 .login-bottom {
-	background:url(../images/loginbottom.png) no-repeat;
+	background:url(../images/login-bottom.png) no-repeat;
 	width:400px;
 	height:61px;
 	display:block;
@@ -359,7 +365,7 @@ ul.pagination li.page a:hover {
 	margin:16px 0 0 10px;
 	height:33px;
 	overflow:hidden;
-	background:#490149;
+	background:#243d6e;
 }
 .menu li {
 	float:left;

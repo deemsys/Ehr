@@ -30,14 +30,14 @@
 		  <div class="login-center">
 		    <ul class="login-list">
 		      <li>
-		        <p>Enter Your Email-Id</p>
+		        <p>Username</p>
 		      </li>
 		      <li>
 		        <input type="text" class="inputbx" name="j_username" value=''>
 				<p><font color="Red"></font></p>
 		      </li>
 		      <li>
-		        <p>Enter Your Password</p>
+		        <p>Password</p>
 		      </li>
 		      <li>
 		        <input type="password" class="inputbx" name="j_password">
@@ -51,8 +51,20 @@
 		      <li><a href="signup" style="color:ffffff">Register</a></li>
 		    </ul>
 		  </div>
-		  <div class="login-bottom"></div>
+		 <!--  <div class="login-bottom"></div> -->
+		 </div>
+		 <br>
+		<div id="role_div">
+		<table>
+		<tr>
+		<td><input type="button" id="btnNext" class="submit_btn1" value="Admin Login" onclick="window.location.href='adminlogin'" /></td>
+		<td><input type="button" id="btnNext" class="submit_btn1" value="Doctor Login" onclick="window.location.href='doctorlogin'"/></td>
+		<td><input type="button" id="btnNext" class="submit_btn1" value="Patient Login" onclick="window.location.href='login'"/></td>
+		<td><input type="button" id="btnNext" class="submit_btn1" value="Register" onclick="window.location.href='signup'"/></td>
+		</tr>
+		</table>
 		</div>
+		
 	</form>
 </body>
 </html>

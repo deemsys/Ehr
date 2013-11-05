@@ -122,6 +122,17 @@ public class MainController {
 		return "dashboard";
  
 	}
+	@RequestMapping(value="/adminlogin", method = RequestMethod.GET)
+	public String adminlogin(ModelMap model) {
+		return "adminlogin";
+ 
+	}
+	
+	@RequestMapping(value="/doctorlogin", method = RequestMethod.GET)
+	public String doctorlogin(ModelMap model) {
+		return "doctorlogin";
+ 
+	}
 	
 	@RequestMapping(value="/login", method = RequestMethod.GET)
 	public String login(ModelMap model) {
