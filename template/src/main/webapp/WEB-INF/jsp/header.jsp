@@ -226,7 +226,7 @@
 
 							<li><a href="treatform">Authorization And Consent To Treat</a></li>
 				            <li><a href="treatminor">Consent To Treat A minor</a></li>
-				            
+				            <li><a href="physicalexam">PhysicalExamForm</a></li>
 </ul>
 							
 				            <!-- <li><a href="showaddparticipantgroups">Add Participant Groups</a></li>
@@ -301,7 +301,7 @@
 						</ul>
 						<ul id="ddsubmenu3" class="ddsubmenustyle">
 							<li><a href="screeningAuthz">Screening Disclosure</a></li>        
-				            <li><a href="medicalrecords">Medical Records</a></li>
+				            <li><a href="medicalrecords">Release Of Records</a></li>
 				            <li><a href="Assignment">Assignment Of Benefits</a></li>
 				            <li><a href="Hippaprivacy">Hippa Privacy</a></li>
 				         </ul>
@@ -326,7 +326,7 @@
 
 
 							<ul id="ddsubmenu4" class="ddsubmenustyle">
-							<li><a href="insuranceplan">Health Insurance Plan</a></li>
+							<li><a href="insuranceplan">Insurance Waiver</a></li>
 							<li><a href="insuranceinformation">Health Insurance Information</a></li>
 							<li><a href="insuranceverification">Health Insurance Verification</a></li>
 						</ul>

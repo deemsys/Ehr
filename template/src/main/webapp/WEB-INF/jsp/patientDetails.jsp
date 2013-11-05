@@ -67,10 +67,11 @@
         }
     });
 </script>
+
 	  <style>
 	  /* force a height so the tabs don't jump as content height changes */
 	  #tabs .tabs-spacer { float: left; height: 200px; }
-	  .tabs-bottom .ui-tabs-nav { clear: left; padding: 0 .2em .2em .2em; }
+	  .tabs-bottom .ui-tabs-nav { clear: right; padding: 0 .2em .2em .2em; }
 	  .tabs-bottom .ui-tabs-nav li { top: auto; bottom: 0; margin: 0 .2em 1px 0; border-bottom: auto; border-top: 0; }
 	  .tabs-bottom .ui-tabs-nav li.ui-tabs-active { margin-top: -1px; padding-top: 1px; }
 	  </style>
@@ -144,15 +145,15 @@
 				                  </td>
 				                </tr>
 				                <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Homephone:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Home phone:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Homephone" /><br><span class="err"><form:errors path="PatientDetails.Homephone"></form:errors></span>
 				                  </td>
 				                </tr>
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Pager:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>E-mail Id:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Pager" /><br><span class="err"><form:errors path="PatientDetails.Pager"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Emailid" /><br><span class="err"><form:errors path="PatientDetails.Emailid"></form:errors></span>
 				                  </td>
 				                </tr>
 				                <tr class="row1">
@@ -265,6 +266,7 @@
 				                <table cellpadding="0" cellspacing="0" border="0" width="100%">
 				                
 				                <tr class="row1">
+				               
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Spouse's or significant others name:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="SpousesName" /><br><span class="err"><form:errors path="PatientDetails.SpousesName"></form:errors></span>
@@ -272,7 +274,7 @@
 				                  </td>
 				                </tr>
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Spouses Employer:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Spouses Employer:&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="SpousesEmp" /><br><span class="err"><form:errors path="PatientDetails.SpousesEmp"></form:errors></span>
 				                  	
@@ -289,7 +291,7 @@
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name of Nearest Friend/ Relative Not Living With You:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Name_friend" /><br><span class="err"><form:errors path="PatientDetails.Name_friend"></form:errors></span>
-				                  	
+				               
 				                  </td>
 				                </tr>
 				                 <tr class="row1">
@@ -300,7 +302,7 @@
 				                  </td>
 				                  </tr>
 				                 <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Have you ever had chiropractic care? </td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Have you ever had chiropractic care? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="radio" name="Chiropratic_care" value="0" class="input_txt" checked="true">yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Chiropratic_care" value="1" class="input_txt">No</td>
 				                </tr> 
@@ -543,42 +545,58 @@
                 <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>CheckBox if it applies to you,parents,siblings,children</td>
 				                  <td valign="top" align="left" class="input_txt">
+				                 <table>
 				                 
-				                  	<input type="checkbox" name="Anemia" value="Anemia">Anemia &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                     <input type="checkbox" name="Muscular" value="Muscular">Muscular Dystrophy &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				                  	<input type="checkbox" name="Rheumatic" value="Rheumatic">Rheumatic Fever &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				                  	<input type="checkbox" name="Allergies" value="Allergies">Allergies&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				                  	<input type="checkbox" name="Polio1" value="Polio1">Polio&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				                  	<input type="checkbox" name="Multiple" value="Multiple">Multiple Sclerosis<br>
-				                  	<input type="checkbox" name="HIV" value="HIV">HIV &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				                  	<input type="checkbox" name="Sinus" value="Sinus">Sinus Trouble &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				                  	<input type="checkbox" name="Asthma" value="Asthma">Asthma &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				                  	<input type="checkbox" name="German" value="German">German Measles &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				                  	<input type="checkbox" name="Nervousness" value="Nervousness">Nervousness &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				                  	<input type="checkbox" name="Numbness" value="Numbness">Numbness<br>
-				                  	<input type="checkbox" name="Convulsions" value="Convulsions">Convulsions &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				                  	<input type="checkbox" name="Epilepsy" value="Epilepsy">Epilepsy &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				                  	<input type="checkbox" name="Concussion" value="Concussion">Concussion &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				                  	<input type="checkbox" name="Dizziness" value="Dizziness">Dizziness &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				                  	<input type="checkbox" name="Neuritis" value="Neuritis">Neuritis &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				                  	<input type="checkbox" name="Rheumatism" value="Rheumatism">Rheumatism<br>
-				                  	<input type="checkbox" name="Diabetes" value="Diabetes">Diabetes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				                  	<input type="checkbox" name="Arthritis" value="Arthritis">Arthritis &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				                  	<input type="checkbox" name="Venereal" value="Venereal">Venereal Disease &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				                  	<input type="checkbox" name="Backaches" value="Backaches">Backaches &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				                  	<input type="checkbox" name="Liver" value="Liver">Liver Disease &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				                  	<input type="checkbox" name="Kidney" value="Kidney">Kidney Disease<br>
-				                  	<input type="checkbox" name="Thyroid" value="Thyroid">Thyroid Disease &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				                  	<input type="checkbox" name="Alcoholism" value="Alcoholism">Alcoholism &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				                  	<input type="checkbox" name="Hepatitis" value="Hepatitis">Hepatitis &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				                  	<input type="checkbox" name="Mental" value="Mental">Mental Illness &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				                  	<input type="checkbox" name="High" value="High">High Blood Pressure<br>
-				                  	<input type="checkbox" name="Digestive" value="Digestive">Digestive Disorders &nbsp;&nbsp;&nbsp;
-				                  	<input type="checkbox" name="Heart" value="Heart">Heart trouble	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				                  	<input type="checkbox" name="Other" value="Other">other &nbsp;&nbsp;&nbsp;&nbsp;
-				                  <input type="text" class="input_txtbx1" id="inp_id" name="Ifother" placeholder="If other" />
-				                  	</td>
-				                  	</tr> 
+				                 <tr>
+				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Anemia" value="Anemia">Anemia </td>
+				                  	 <td class="input_txt" align="left"><input type="checkbox" name="Muscular" value="Muscular">Muscular Dystrophy </td>
+				                  	 <td class="input_txt" align="left"><input type="checkbox" name="Rheumatic" value="Rheumatic">Rheumatic Fever </td>
+				                  	 <td class="input_txt" align="left"><input type="checkbox" name="Allergies" value="Allergies">Allergies</td>
+				                  	 <td class="input_txt" align="left"><input type="checkbox" name="Cancer" value="Cancer">Cancer </td>
+				                   <td class="input_txt" align="left"><input type="checkbox" name="Polio1" value="Polio1">Polio </td>
+				                  </tr>
+				                  <tr>
+				                  	 <td valign="top" align="left" class="input_txt"><input type="checkbox" name="Multiple" value="Multiple">Multiple Sclerosis</td>
+				                  	 <td class="input_txt" align="left"><input type="checkbox" name="Scarlet" value="Scarlet">ScarletFever </td>
+                                      <td class="input_txt" align="left"><input type="checkbox" name="HIV" value="HIV">HIV </td>
+				                  	 <td class="input_txt" align="left"><input type="checkbox" name="Sinus" value="Sinus">Sinus Trouble </td>
+				                  	 <td class="input_txt" align="left"><input type="checkbox" name="Asthma" value="Asthma">Asthma </td>
+				                  	 <td class="input_txt" align="left"><input type="checkbox" name="German" value="German">German Measles </td>
+				                  	 </tr>
+				                  	 <tr>
+				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Nervousness" value="Nervousness">Nervousness </td>
+				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Numbness" value="Numbness">Numbness </td>
+				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Convulsions" value="Convulsions">Convulsions </td>
+				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Epilepsy" value="Epilepsy">Epilepsy </td>
+				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Concussion" value="Concussion">Concussion </td>
+				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Dizziness" value="Dizziness">Dizziness </td>
+				                  	</tr>
+				                  	<tr>
+				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Neuritis" value="Neuritis">Neuritis </td>
+				                  	 <td valign="top" align="left" class="input_txt"><input type="checkbox" name="Rheumatism" value="Rheumatism">Rheumatism </td>
+				                  	 <td valign="top" align="left" class="input_txt"><input type="checkbox" name="Diabetes" value="Diabetes">Diabetes</td>
+				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Arthritis" value="Arthritis">Arthritis </td>
+				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Venereal" value="Venereal">Venereal Disease</td>
+				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Backaches" value="Backaches">Backaches </td>
+				                  	</tr>
+				                  	<tr>
+				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Tuberculosis" value="Tuberculosis">Tuberculosis	</td>    
+				                    <td valign="top" align="left" class="input_txt"><input type="checkbox" name="Liver" value="Liver">Liver Disease </td>
+				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Kidney" value="Kidney">Kidney Disease </td>
+				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Thyroid" value="Thyroid">Thyroid Disease </td>
+				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Alcoholism" value="Alcoholism">Alcoholism </td>
+				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Hepatitis" value="Hepatitis">Hepatitis </td>
+				                  	</tr>
+				                  	<tr>
+				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Mental" value="Mental">Mental Illness </td>
+				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="High" value="High">High Blood Pressure</td>
+				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Digestive" value="Digestive">Digestive Disorders </td>
+				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Heart" value="Heart">Heart trouble	</td>
+				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Other" value="Other">other </td>
+				                 <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="Ifother" placeholder="If other" /></td>
+				                  	</tr>
+				                  	
+				                  	</table> 
 				                  <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Surgeries or Major Illnesses You Have Had: </td>
 				                  <td valign="top" align="left" class="input_txt">
@@ -654,7 +672,7 @@
                   <td><br><input type="button" id="btnNext" class="submit_btn" value="Next"/><br></td>
  
                   <td><input type="submit" class="submit_btn" value="Save"></td>
-                  <td><input type="reset" class="submit_btn" value="Cancel" onclick="window.location.href='autoaccident'"></td>
+                  <td><input type="reset" class="submit_btn" value="Cancel" onclick="window.location.href='patientDetails'"></td>
 				 
 				</table>  
 

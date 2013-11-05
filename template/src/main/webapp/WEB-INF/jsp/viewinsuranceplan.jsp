@@ -34,7 +34,7 @@
         <td valign="top" align="left">
         	<div>
 	            <div class="headings altheading">
-	             <h2>Viewing Health Insurance Plan</h2> 
+	             <h2>Viewing Insurance Waiver</h2> 
 	            </div>
 	            <div class="contentbox">
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
