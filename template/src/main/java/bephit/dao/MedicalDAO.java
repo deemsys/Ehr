@@ -11,6 +11,7 @@ import java.util.Date;
 import java.util.List;
 import javax.sql.DataSource;
 
+import bephit.model.Hardshipagreement;
 import bephit.model.MedicalRecords;
 
 public class MedicalDAO {
@@ -62,6 +63,53 @@ public class MedicalDAO {
 	    
 	}
 	
+	public int updatemedical(MedicalRecords medicaldetails,String medical_no)
+	{
+		Connection con = null;
+		Statement statement = null;
+		int flag=0;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		//List<ParticipantsDetails> participants = new ArrayList<ParticipantsDetails>();
+	    try{
+	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+	    	 Date date = new Date();
+	    	 //System.out.println(dateFormat.format(date));
+	    	String cmd="UPDATE medical_details SET name='"+medicaldetails.getName()+"',medicalinformation='"+medicaldetails.getMedicalinformation()+"',patientsignature='"+medicaldetails.getPatientsignature()+"';";
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	    	
+	    	System.out.println(cmd);
+	    	//System.out.println(cmd_activity);
+			
+	    	statement.execute(cmd);
+			//statement.execute(cmd_activity);
+			flag=1;
+	 }
+	    catch(Exception e){
+	    	System.out.println(e.toString());
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    	flag=0;
+	    	//return 0;
+	    }finally{
+	     	releaseStatement(statement);
+	    	releaseConnection(con);	    
+	    	
+	    }
+	    if(flag==1)
+    		return 1;
+    	else
+    		return 0;
+	    
+	}
 	
 	public List<MedicalRecords> getMedicalDetails(){
 		Connection con = null;
@@ -75,7 +123,7 @@ public class MedicalDAO {
 		}
 		List<MedicalRecords> medical = new ArrayList<MedicalRecords>();
 	    try{
-			resultSet = statement.executeQuery("select * from Medical_Details");
+			resultSet = statement.executeQuery("select * from Medical_Details order by medical_no DESC");
 			while(resultSet.next()){
 				medical.add(new MedicalRecords(resultSet.getString("name"),
 						resultSet.getString("medicalinformation"),
