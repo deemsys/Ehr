@@ -55,15 +55,15 @@ private String ZipCode;
 @Pattern(regexp="(^$|[0-9]{10})",message="Not a valid Mobile number")
 private String Homephone;
 @NotEmpty
-@Pattern(regexp="(^$|[0-9]{10})",message="Not a valid Mobile number")
-private String Pager;
+
+private String Emailid;
 @NotEmpty
 @Pattern(regexp="(^$|[0-9]{10})",message="Not a valid Mobile number")
 private String MobileNumber;
 @NotEmpty
 private String DateOfBirth;
 @NotEmpty
-@Pattern(regexp="(^$|[0-9]{10})",message="Not a valid Mobile number")
+
 private String SocialSecurityNumber;
 
 private String Gender;
@@ -90,7 +90,7 @@ private String EmployerCity;
 
 private String Estate;
 @NotEmpty
-@Pattern(regexp="(^$|[0-9]{10})",message="Not a valid Mobile number")
+
 private String Ezip;
 @NotEmpty
 
@@ -375,42 +375,6 @@ public String getHomephone() {
 public void setHomephone(String homephone) {
 	Homephone = homephone;
 }
-
-
-
-
-
-
-
-
-public String getPager() {
-	return Pager;
-}
-
-
-
-
-
-
-
-
-public void setPager(String pager) {
-	Pager = pager;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 public String getDateOfBirth() {
 	return DateOfBirth;
@@ -2307,7 +2271,7 @@ public PatientDetails(String Patient_id,
 		String State,
 		String ZipCode,
 		String Homephone,
-		String Pager,
+		String Emailid,
 		String MobileNumber,
 		String DateOfBirth,
 		String SocialSecurityNumber,
@@ -2408,7 +2372,7 @@ public PatientDetails(String Patient_id,
 	this.State=State;
 	this.ZipCode=ZipCode;
 	this.Homephone=Homephone;
-	this.Pager=Pager;
+	this.Emailid=Emailid;
 	this.MobileNumber=MobileNumber;
 	this.DateOfBirth=DateOfBirth;
 	this.SocialSecurityNumber=SocialSecurityNumber;
@@ -2501,6 +2465,28 @@ public PatientDetails(String Patient_id,
 	this.Patient=Patient;
 	this.Sign=Sign;
 	
+}
+
+
+
+
+
+
+
+
+public String getEmailid() {
+	return Emailid;
+}
+
+
+
+
+
+
+
+
+public void setEmailid(String emailid) {
+	Emailid = emailid;
 }
 
 
