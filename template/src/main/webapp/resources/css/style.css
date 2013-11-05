@@ -373,11 +373,11 @@ ul.pagination li.page a:hover {
 	text-transform:uppercase;
 }
 .select, .unselect:hover, .login:hover {
-	background:url(../images/menu1.png) 0 0 no-repeat;
+	background:url(../images/menu-1.png) 0 0 no-repeat;
 	display:block;
 }
 .select span, .unselect:hover span, .login:hover span {
-	background:url(../images/menu2.png) 100% 0 no-repeat;
+	background:url(../images/menu-2.png) 100% 0 no-repeat;
 	color:#fff;
 	display:block;
 	line-height:30px;

@@ -89,7 +89,7 @@
 	<div id="main">
 		<div id="header">
 			<div class="logo">
-			    <a href="#"><img src="<c:url value="/resources/images/title.png" />" alt="Company Logo" /></a> 
+			    <a href="#"><img src="<c:url value="/resources/images/title1.png" />" alt="Company Logo" /></a> 
 				<!-- <a href ="#">Electronic Healthcare Record</a> -->
 			</div>
 			<div class="top_link">
