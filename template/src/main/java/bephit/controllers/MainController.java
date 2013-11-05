@@ -128,6 +128,11 @@ public class MainController {
 		return "login";
  
 	}
+	@RequestMapping(value="/physicalexam", method = RequestMethod.GET)
+	public String physicalform(ModelMap model) {
+		return "physicalexam";
+ 
+	}
 	
 	
 	@RequestMapping(value="/autoaccident", method = RequestMethod.GET)
@@ -600,7 +605,7 @@ public class MainController {
  
 	}
 	
-	@RequestMapping(value="/addpatients",method=RequestMethod.GET)
+	/*@RequestMapping(value="/addpatients",method=RequestMethod.GET)
 	public String showAddpatient(HttpServletRequest request,@RequestParam("id") String Patient_id,ModelMap model,PatientDetails patientdetails)
 	{
 		PatientDetailsForm patientdetailsform= new PatientDetailsForm();
@@ -611,7 +616,7 @@ public class MainController {
 		
 	
 	
-	}
+	}*/
 	
 	@RequestMapping(value="/patientDetails",method=RequestMethod.GET)
 	public String patientDetails(ModelMap model)
@@ -716,7 +721,7 @@ public class MainController {
 		
 		MedicalRecordsForm medicalrecordsform= new MedicalRecordsForm();
 		medicalrecordsform.setMedicalDetails(medicalDAO.getMedicalDetails());
-		model.addAttribute("MedicalRecordsForm",medicalrecordsform);
+		model.addAttribute("medicalrecordsform",medicalrecordsform);
 		
 		return "viewmedicalrecords";
  
@@ -834,7 +839,15 @@ public class MainController {
 		
 		return "editstaffchecklist";
 	}
-	
+	@RequestMapping(value="/editmedical", method = RequestMethod.GET)
+	public String editmedical(HttpServletRequest request,ModelMap model) {
+		
+		MedicalRecordsForm medicalrecordsform= new MedicalRecordsForm();
+		medicalrecordsform.setMedicalDetails(medicalDAO.getMedicalDetails());
+		model.addAttribute("MedicalRecordsForm",medicalrecordsform);
+		
+		return "editmedical";
+	}
 	
 
 	@RequestMapping(value="/loginfailed", method = RequestMethod.GET)
