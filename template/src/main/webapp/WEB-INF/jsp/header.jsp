@@ -227,7 +227,11 @@
 							<li><a href="treatform">Authorization And Consent To Treat</a></li>
 				            <li><a href="treatminor">Consent To Treat A minor</a></li>
 				            <li><a href="physicalexam">PhysicalExamForm</a></li>
+
+				            <li><a href="radiologicreport">Radiologic report Form</a></li>
+
 				             <li><a href="hamiltonchiropractic">InitialExam</a></li>
+
 </ul>
 							
 				            <!-- <li><a href="showaddparticipantgroups">Add Participant Groups</a></li>
