@@ -152,6 +152,11 @@ public class MainController {
 		return "physicalexam";
  
 	}
+	@RequestMapping(value="/hamiltonchiropractic", method = RequestMethod.GET)
+	public String hamiltonchiropractic(ModelMap model) {
+		return "hamiltonchiropractic";
+ 
+	}
 	
 	
 	@RequestMapping(value="/autoaccident", method = RequestMethod.GET)
