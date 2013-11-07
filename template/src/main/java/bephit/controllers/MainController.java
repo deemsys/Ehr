@@ -120,8 +120,14 @@ public class MainController {
         model.addAttribute("participantsDetailsForm", participantsDetailsForm);
 		
 		return "dashboard";
+	}
+	
+	@RequestMapping(value="/adminwelcome", method = RequestMethod.GET)
+	public String admindashboard(ModelMap model) {
+		return "admindashboard";
  
 	}
+	
 	@RequestMapping(value="/adminlogin", method = RequestMethod.GET)
 	public String adminlogin(ModelMap model) {
 		return "adminlogin";
@@ -139,6 +145,8 @@ public class MainController {
 		return "login";
  
 	}
+	
+	
 	@RequestMapping(value="/physicalexam", method = RequestMethod.GET)
 	public String physicalform(ModelMap model) {
 		return "physicalexam";
@@ -773,9 +781,9 @@ public class MainController {
 	@RequestMapping(value="/viewtreatform", method = RequestMethod.GET)
 	public String viewtreatform(HttpServletRequest request,ModelMap model) {
 		
-		TreatDetailsForm treatdetailsform= new TreatDetailsForm();
-		treatdetailsform.setTreatDetails(treatDAO.getTreatDetails());
-		model.addAttribute("treatdetails",treatdetailsform);
+		TreatDetailsForm treatdetailsForm= new TreatDetailsForm();
+		treatdetailsForm.setTreatDetails(treatDAO.getTreatDetails());
+		model.addAttribute("treatdetailsform",treatdetailsForm);
 		return "viewtreatform";
  
 	}

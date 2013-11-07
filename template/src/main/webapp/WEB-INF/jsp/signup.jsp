@@ -1,9 +1,10 @@
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
-<%-- <jsp:include page="header.jsp"></jsp:include> --%>
-<%-- <jsp:include page="header.jsp"></jsp:include> --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
-
+<title>Registration Page</title> 
+<link href="<c:url value="/resources/css/style.css" />" rel="stylesheet"  type="text/css" />
+<link href="<c:url value="/resources/css/home.css" />" rel="stylesheet"  type="text/css" />
 <style>
 .errorblock {
 	color: #ff0000;
@@ -12,11 +13,8 @@
 	padding: 8px;
 	margin: 16px;
 }
-
-body{background:#e5e5e5 url(../images/login-bg.gif) repeat-x;}
 </style>
 </head>
- <body>
 <div id="right_content">
 <form action="signup" method="POST">
 
@@ -30,7 +28,7 @@ body{background:#e5e5e5 url(../images/login-bg.gif) repeat-x;}
       </tr> 
       <tr>
         <td valign="top" align="left">
-        	<div>
+        	<div id="login_div">
 	            <div class="headings altheading">
 	             <h2>Register your account<h2> 
 	            </div>
@@ -77,5 +75,11 @@ body{background:#e5e5e5 url(../images/login-bg.gif) repeat-x;}
         	  </body>
         	  </html>
         	   <jsp:include page="footer.jsp"></jsp:include> 
-        	  
-				  
+        
+
+
+
+
+
+
+

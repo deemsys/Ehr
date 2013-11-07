@@ -328,7 +328,7 @@ ul.pagination li.page a:hover {
 	margin:5px 5px 0 0;
 	text-align:right;
 	line-height:18px;
-	color:#490149;
+	color:#243d6e;
 }
 .cart {
 	float:left;
@@ -349,7 +349,7 @@ ul.pagination li.page a:hover {
 	display:inline-block;
 	float:right;
 	line-height:22px;
-	color:#490149;
+	color:#243d6e;
 	font-size:14px;
 	font-weight:bold;
 }

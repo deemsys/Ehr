@@ -103,7 +103,7 @@
 					</tr>
 					<tr>
 						<td align="right" valign="middle"><span class="cart_txt">Welcome
-								<sec:authentication property="principal.username" />&nbsp;&nbsp;|&nbsp;&nbsp;<a href="<c:url value="/j_spring_security_logout" />" style="color:#490149">Logout</a>
+								<sec:authentication property="principal.username" />&nbsp;&nbsp;|&nbsp;&nbsp;<a href="<c:url value="/j_spring_security_logout" />" style="color:#243d6e">Logout</a>
 						</span></td>
 					</tr>
 				</table>
@@ -146,11 +146,11 @@
 				            		<span><img src="<c:url value="/resources/images/icon_07.png" />" alt="" style="padding:5px 5px 0 0;" />Health Insurance</span>
 				            	</a>
 				            </li> 
-				            <li> 
+				           <%--  <li> 
 				            	<a href="staffchecklist" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>">
 				            		<span><img src="<c:url value="/resources/images/icon_07.png" />" alt="" style="padding:5px 5px 0 0;" />Staff checklist</span>
 				            	</a>
-				            </li>
+				            </li> --%>
 				            <%--  <li>
 				            	<a href="Assignment" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" >
 				            		<span><img src="<c:url value="/resources/images/icon_03.png" />" alt="" style="padding:5px 5px 0 0;" />Assignment of Benefits</span>
@@ -328,7 +328,7 @@
 							<ul id="ddsubmenu4" class="ddsubmenustyle">
 							<li><a href="insuranceplan">Insurance Waiver</a></li>
 							<li><a href="insuranceinformation">Health Insurance Information</a></li>
-							<li><a href="insuranceverification">Health Insurance Verification</a></li>
+							<!-- <li><a href="insuranceverification">Health Insurance Verification</a></li> -->
 						</ul>
 						
 					</div>

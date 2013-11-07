@@ -57,21 +57,21 @@
                         <table cellpadding="0" cellspacing="0" border="0" width="50%">
                         <tr class="row1">
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err"></span>Signed:  </td>
-				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="signed"></td><br><span class="err"><form:errors path="TreatMinor.signed"></form:errors></span>
+				                  <td valign="top" align="left" class="input_txt">${Minordetails.signed}</td>
+				                  	
 				                  <tr> <td></td></tr>
                         
                         </tr>
                         <tr class="row1">
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date:  </td>
-				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="datepicker" name="pdate" /><br><span class="err"><form:errors path="TreatMinor.pdate"></form:errors></span>
-                        </td>
+				                  <td valign="top" align="left" class="input_txt">${Minordetails.pdate}</td>
+				                  	
+                        
                         </tr>
                         <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Witness: </td>
-				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="pwitness" /><br><span class="err"><form:errors path="TreatMinor.pwitness"></form:errors></span>
+				                  <td valign="top" align="left" class="input_txt">${Minordetails.pwitness}</td>
+				                  	
 				                  	</tr>
 				                  	</table>
 				                  	<table>
