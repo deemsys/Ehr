@@ -943,4 +943,9 @@ public class MainController {
 		
 		return "textmsg";
 	}
+	@RequestMapping(value="/radiologicreport", method=RequestMethod.GET)
+	public String radiologicreport(ModelMap model) {
+		
+		return "radiologicreport";
+	}
   }
