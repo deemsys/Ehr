@@ -65,7 +65,7 @@ public class HardshipagreementDAO {
     		return 0;
 	    
 	}
-	public int updatehardship(Hardshipagreement hardshipagreement,String agreement_no)
+	public int updatehardship(Hardshipagreement hardshipagreement)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -81,9 +81,9 @@ public class HardshipagreementDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 //System.out.println(dateFormat.format(date));
-	    	String cmd="UPDATE tbl_hardshipagreement SET date='"+hardshipagreement.getDate()+"',print_pat_name='"+hardshipagreement.getPrint_pat_name()+"',pat_sign='"+hardshipagreement.getPat_sign()+"',witness_sign='"+hardshipagreement.getWitness_sign()+"';";
-	    	String Desc="Update hardship "+hardshipagreement.getPrint_pat_name();
-	    	
+	    	String cmd="UPDATE tbl_hardshipagreement SET date='"+hardshipagreement.getDate()+"',print_pat_name='"+hardshipagreement.getPrint_pat_name()+"',pat_sign='"+hardshipagreement.getPat_sign()+"',witness_sign='"+hardshipagreement.getWitness_sign()+"' where agreement_no=max(agreement_no);";
+	    /*	String Desc="Update hardship "+hardshipagreement.getPrint_pat_name();
+	    	*/
 	    	
 	    	
 	    	//String cmd_activity="insert into admin_log_activity_table(admin_id,ip_address,admin_date_time,admin_desc) values('"+admin+"','127.0.0.1','"+dateFormat.format(date)+"','"+Desc+"')";

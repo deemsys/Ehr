@@ -40,7 +40,7 @@
 	            </div>
             <div class="contentbox">
             <table cellpadding="0" cellspacing="0" border="0" width="100%">
-            <c:set value="${TreatDetailsform.treatdetails[0]}" var="Treatdetails"> </c:set>
+            <c:set value="${treatform.treatform[0]}" var="Treatdetails"> </c:set>
   				<tr>
     				<td align="left" valign="top" width="100%" style="padding-right:25px;">
                         
@@ -59,11 +59,11 @@
                         
                         <tr class="row1">
 				                  <td>PatientsName: </td>
-				                  <td>${Treatdetails.patientsname}</td>
+				                  <td><c:out value="${Treatdetails.patientsname}"></c:out></td>
 				                  </tr>
                         <tr class="row1">
 				                  <td>Patients Signature: </td>
-				                  <td>${Treatdetails.patientssign}</td>
+				                  <td><c:out value="${Treatdetails.patientssign}"></c:out></td>
 				                  </tr>
 				         <tr class="row1">
 				                  	<td>Todays Date:  </td>

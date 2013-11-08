@@ -48,7 +48,7 @@ import bephit.forms.PatientDetailsForm;
 import bephit.forms.ScreeningAuthzForm;
 import bephit.forms.SignupForm;
 import bephit.forms.StaffchecklistForm;
-import bephit.forms.TreatDetailsForm;
+import bephit.forms.TreatForm;
 import bephit.forms.TreatMinorDetailsForm;
 import bephit.forms.WorkaccidentForm;
 import bephit.model.*;
@@ -336,6 +336,7 @@ public class MainController {
 		 
 		if(result.hasErrors())
 		{
+			
 			HardshipagreementForm hardshipagreementForm= new HardshipagreementForm();
 	    	hardshipagreementForm.setHardshipagreement(hardDAO.getHardshipagreement());
 			model.addAttribute("HardshipagreementForm",hardshipagreementForm);
@@ -586,18 +587,18 @@ public class MainController {
 			ModelMap model) {
 		if (result.hasErrors())
 		{
-			TreatDetailsForm treatdetailsform= new TreatDetailsForm();
-			treatdetailsform.setTreatDetails(treatDAO.getTreatDetails());
-			model.addAttribute("TreatDetailsForm",treatdetailsform);
+			TreatForm treatform= new TreatForm();
+			treatform.setTreatform(treatDAO.getTreatDetails());
+			model.addAttribute("TreatDetailsForm",treatform);
 			model.addAttribute("success","true");
 			return "treatform";
 		}
 		
 		model.addAttribute("TreatDetailsForm",treatdetails);
 		int a=treatDAO.setTreatDetails(treatdetails);
-         TreatDetailsForm treatdetailsform= new TreatDetailsForm();
-		treatdetailsform.setTreatDetails(treatDAO.getTreatDetails());
-		model.addAttribute("TreatDetailsForm",treatdetailsform);
+         TreatForm treatform= new TreatForm();
+		treatform.setTreatform(treatDAO.getTreatDetails());
+		model.addAttribute("TreatDetailsForm",treatform);
 
 		System.out.println("treat");
 	    
@@ -786,9 +787,10 @@ public class MainController {
 	@RequestMapping(value="/viewtreatform", method = RequestMethod.GET)
 	public String viewtreatform(HttpServletRequest request,ModelMap model) {
 		
-		TreatDetailsForm treatdetailsForm= new TreatDetailsForm();
-		treatdetailsForm.setTreatDetails(treatDAO.getTreatDetails());
-		model.addAttribute("treatdetailsform",treatdetailsForm);
+		TreatForm treatform= new TreatForm();
+		treatform.setTreatform(treatDAO.getTreatDetails());
+		System.out.println(treatform);
+		model.addAttribute("treatform",treatform);
 		return "viewtreatform";
  
 	}
@@ -808,6 +810,7 @@ public class MainController {
 		
 		ScreeningAuthzForm screeningauthzform= new ScreeningAuthzForm();
 		screeningauthzform.setScreeningDetails(screenDAO.getScreeningDetails());
+		System.out.println(screeningauthzform);
 		model.addAttribute("screeningauthzform",screeningauthzform);
 		return "viewscreeningauthz";
  

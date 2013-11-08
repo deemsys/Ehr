@@ -93,7 +93,7 @@ public class InsuranceplanDAO {
 	    	System.out.println(cmd);
 	    	//System.out.println(cmd_activity);
 			
-	    	statement.execute(cmd);
+	    	statement.executeQuery(cmd);
 			//statement.execute(cmd_activity);
 			flag=1;
 			

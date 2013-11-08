@@ -38,7 +38,7 @@
 	            </div>
             <div class="contentbox">
             <table cellpadding="0" cellspacing="0" border="0" width="100%">
-            <c:set value="${TreatForm.minordetails[0]}" var="Minordetails"> </c:set>
+            <c:set value="${TreatMinorDetailsForm.minordetails[0]}" var="Minordetails"> </c:set>
   				<tr>
     				<td align="left" valign="top" width="100%" style="padding-right:25px;">
                         
