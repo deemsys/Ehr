@@ -64,6 +64,7 @@ public class Hamiltonchiropractic {
 	private String foramin_comp;
 	private String shoulder_depr;
 	private String georges;
+	private String odono;
 	private String bakody_sign;
 	private String distraction_test;
 	private String valsalva;
@@ -74,6 +75,7 @@ public class Hamiltonchiropractic {
 	private String rustsign;
 	private String spinal_percusst;
 	private String adams_test;
+	private String sheppal_sign;
 	private String soto_hall;
 	private String compression_test;
 	private String antalgia;
@@ -97,7 +99,7 @@ public class Hamiltonchiropractic {
 	private String supraspinatus;
 	private String codmans;
 	private String speeds_test;
-	private String yargasons;
+	private String yergasons;
 	private String tinelse;
 	private String lingaminstab;
 	private String golfers_elbow;
@@ -138,11 +140,11 @@ public class Hamiltonchiropractic {
 			String otherdn, String conditionw, String work, String day,
 			String condition, String othercondition, String assessment,
 			String treatmentplan, String shortterm, String longterm,
-			String jacksons, String foramin_comp, String shoulder_depr,
-			String georges, String bakody_sign, String distraction_test,
+			String jacksons, String foramin_comp, String shoulder_depr,			
+			String georges,String odono, String bakody_sign, String distraction_test,
 			String valsalva, String spinal_percuss, String gripdynamomright,
 			String gripdynamomleft, String adsons, String rustsign,
-			String spinal_percusst, String adams_test, String soto_hall,
+			String spinal_percusst, String adams_test,String sheppal_sign, String soto_hall,
 			String compression_test, String antalgia, String spinal_percussl,
 			String valsalval, String minors_sign, String braggards_test,
 			String slr, String wlr, String hoovers, String dbl_leg_raise,
@@ -150,7 +152,7 @@ public class Hamiltonchiropractic {
 			String milgrams_test, String obers, String illiaccomp,
 			String yeomans, String allis_sign, String dugas,
 			String supraspinatus, String codmans, String speeds_test,
-			String yargasons, String tinelse, String lingaminstab,
+			String yergasons, String tinelse, String lingaminstab,
 			String golfers_elbow, String tennis_elbow, String tinels,
 			String phalens, String finkelsteins_test, String bracelet,
 			String allens, String valgus_varus, String pat_ball, String drawer,
@@ -220,6 +222,7 @@ public class Hamiltonchiropractic {
 		this.foramin_comp = foramin_comp;
 		this.shoulder_depr = shoulder_depr;
 		this.georges = georges;
+		this.odono = odono;
 		this.bakody_sign = bakody_sign;
 		this.distraction_test = distraction_test;
 		this.valsalva = valsalva;
@@ -230,6 +233,7 @@ public class Hamiltonchiropractic {
 		this.rustsign = rustsign;
 		this.spinal_percusst = spinal_percusst;
 		this.adams_test = adams_test;
+		this.sheppal_sign = sheppal_sign;
 		this.soto_hall = soto_hall;
 		this.compression_test = compression_test;
 		this.antalgia = antalgia;
@@ -253,7 +257,7 @@ public class Hamiltonchiropractic {
 		this.supraspinatus = supraspinatus;
 		this.codmans = codmans;
 		this.speeds_test = speeds_test;
-		this.yargasons = yargasons;
+		this.yergasons = yergasons;
 		this.tinelse = tinelse;
 		this.lingaminstab = lingaminstab;
 		this.golfers_elbow = golfers_elbow;
@@ -771,6 +775,13 @@ public class Hamiltonchiropractic {
 	public void setGeorges(String georges) {
 		this.georges = georges;
 	}
+	public String getOdono() {
+		return odono;
+	}
+
+	public void setOdono(String shoulder_depr) {
+		this.odono = odono;
+	}
 
 	public String getBakody_sign() {
 		return bakody_sign;
@@ -850,6 +861,13 @@ public class Hamiltonchiropractic {
 
 	public void setAdams_test(String adams_test) {
 		this.adams_test = adams_test;
+	}
+	public String getSheppal_sign() {
+		return sheppal_sign;
+	}
+
+	public void setSheppal_sign(String shoulder_depr) {
+		this.sheppal_sign = sheppal_sign;
 	}
 
 	public String getSoto_hall() {
@@ -1036,12 +1054,12 @@ public class Hamiltonchiropractic {
 		this.speeds_test = speeds_test;
 	}
 
-	public String getYargasons() {
-		return yargasons;
+	public String getYergasons() {
+		return yergasons;
 	}
 
-	public void setYargasons(String yargasons) {
-		this.yargasons = yargasons;
+	public void setYargasons(String yergasons) {
+		this.yergasons = yergasons;
 	}
 
 	public String getTinelse() {
