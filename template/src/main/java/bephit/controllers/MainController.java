@@ -29,6 +29,7 @@ import bephit.dao.InsuranceverificationDAO;
 import bephit.dao.MainDAO;
 import bephit.dao.MedicalDAO;
 import bephit.dao.PatientDAO;
+import bephit.dao.RadiologicReportDAO;
 import bephit.dao.ScreenDAO;
 import bephit.dao.SignupDAO;
 import bephit.dao.StaffchecklistDAO;
@@ -45,6 +46,7 @@ import bephit.forms.InsuranceverificationForm;
 import bephit.forms.MedicalRecordsForm;
 import bephit.forms.ParticipantsDetailsForm;
 import bephit.forms.PatientDetailsForm;
+import bephit.forms.RadiologicReportForm;
 import bephit.forms.ScreeningAuthzForm;
 import bephit.forms.SignupForm;
 import bephit.forms.StaffchecklistForm;
@@ -107,7 +109,8 @@ public class MainController {
 	@Autowired
 	HippaDAO hippaDAO;
 
-	
+	@Autowired
+	RadiologicReportDAO radioDAO;
 	
 	
 	
@@ -120,14 +123,8 @@ public class MainController {
         model.addAttribute("participantsDetailsForm", participantsDetailsForm);
 		
 		return "dashboard";
-	}
-	
-	@RequestMapping(value="/adminwelcome", method = RequestMethod.GET)
-	public String admindashboard(ModelMap model) {
-		return "admindashboard";
  
 	}
-	
 	@RequestMapping(value="/adminlogin", method = RequestMethod.GET)
 	public String adminlogin(ModelMap model) {
 		return "adminlogin";
@@ -145,16 +142,9 @@ public class MainController {
 		return "login";
  
 	}
-	
-	
 	@RequestMapping(value="/physicalexam", method = RequestMethod.GET)
 	public String physicalform(ModelMap model) {
 		return "physicalexam";
- 
-	}
-	@RequestMapping(value="/hamiltonchiropractic", method = RequestMethod.GET)
-	public String hamiltonchiropractic(ModelMap model) {
-		return "hamiltonchiropractic";
  
 	}
 	
@@ -176,10 +166,6 @@ public class MainController {
 			return "autoaccident";
 		}
 		
-		
-		
-		
-		
 		model.put("Autoaccident", autoaccident);
 		model.addAttribute("AutoaccidentForm",autoaccident);
     	int a=autoDAO.setAutoaccident(autoaccident);
@@ -188,15 +174,43 @@ public class MainController {
 		model.addAttribute("AutoaccidentForm",autoaccidentForm);
 
 		//System.out.println(autoaccident.getAdjustersname());
-	    
-		
 		return "autoaccident";
  
 	}
+	@RequestMapping(value="/radiologicreport", method=RequestMethod.GET)
+	public String radiologicreport(ModelMap model) {
+		
+		return "radiologicreport";
+	}
+	@RequestMapping(value="/radiologicreport", method = RequestMethod.POST)
+	public String insert_radiologicreport(@ModelAttribute("RadiologicReport")  @Valid RadiologicReport radiologicreport,BindingResult result,ModelMap model) {
+			/*if(result.hasErrors())
+			{
+				RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
+				radiologicReportForm.setRadiologicReport(radiologicReportDAO.getRadiologicReport());
+				model.addAttribute("RadiologicReportForm",radiologicReportForm);
+				model.addAttribute("Success","true");
+				return "radiologicreport";
+			}*/
+			
+			model.put("RadiologicReport", radiologicreport);
+			model.addAttribute("RadiologicReportForm",radiologicreport);
+	    	
+	    	int a=radioDAO.setRadiologicReport(radiologicreport);
+			
+	    	RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
+			
+	    	radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport());
+			
+	    	model.addAttribute("RadiologicReportForm", radiologicReportForm);
+			
+			return "radiologicreport";
+	 
+		}
 	@RequestMapping(value="/workaccident", method = RequestMethod.GET)
 	public String workaccident(ModelMap model) {
-		
 		return "workaccident";
+		
  
 	}
 	
@@ -787,6 +801,10 @@ public class MainController {
 	@RequestMapping(value="/viewtreatform", method = RequestMethod.GET)
 	public String viewtreatform(HttpServletRequest request,ModelMap model) {
 		
+
+		TreatDetailsForm treatdetailsform= new TreatDetailsForm();
+		treatdetailsform.setTreatDetails(treatDAO.getTreatDetails());
+		model.addAttribute("treatdetails",treatdetailsform);
 		TreatForm treatform= new TreatForm();
 		treatform.setTreatform(treatDAO.getTreatDetails());
 		System.out.println(treatform);
@@ -946,9 +964,5 @@ public class MainController {
 		
 		return "textmsg";
 	}
-	@RequestMapping(value="/radiologicreport", method=RequestMethod.GET)
-	public String radiologicreport(ModelMap model) {
-		
-		return "radiologicreport";
-	}
+	
   }
