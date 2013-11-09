@@ -21,6 +21,7 @@ import org.springframework.ui.ModelMap;
 
 import bephit.dao.AssignmentDAO;
 import bephit.dao.AutoaccidentDAO;
+import bephit.dao.HamiltonchiropracticDAO;
 import bephit.dao.HardshipagreementDAO;
 import bephit.dao.HippaDAO;
 import bephit.dao.InsuranceinformationDAO;
@@ -38,6 +39,7 @@ import bephit.dao.TreatMinorDAO;
 import bephit.dao.WorkaccidentDAO;
 import bephit.forms.AssignmentDetailsForm;
 import bephit.forms.AutoaccidentForm;
+import bephit.forms.HamiltonchiropracticForm;
 import bephit.forms.HardshipagreementForm;
 import bephit.forms.HippaPrivacyForm;
 import bephit.forms.InsuranceinformationForm;
@@ -66,6 +68,9 @@ public class MainController {
 	
 	@Autowired  
 	AutoaccidentDAO autoDAO;
+	
+	@Autowired  
+	HamiltonchiropracticDAO hamiDAO;
 	
 	@Autowired
 	WorkaccidentDAO workDAO;
@@ -148,6 +153,31 @@ public class MainController {
  
 	}
 	
+	@RequestMapping(value="/hamiltonchiropractic", method = RequestMethod.POST)
+	public String insert_hamiltonchiropractic(@ModelAttribute("Hamiltonchiropractic")  @Valid Hamiltonchiropractic hamiltonchiropractic,BindingResult result,ModelMap model) {
+		/*if(result.hasErrors())
+		{
+			HamiltonchiropracticForm hamiltonchiropracticForm= new HamiltonchiropracticForm();
+			hamiltonchiropracticForm.setHamiltonchiropractic(autoDAO.getHamiltonchiropractic());
+			model.addAttribute("Hamiltonchiropractic",hamiltonchiropracticForm);
+			model.addAttribute("Success","true");
+			return "hamiltonchiropractic";
+		}
+		*/
+		model.put("Hamiltonchiropractic", hamiltonchiropractic);
+		model.addAttribute("HamiltonchiropracticForm",hamiltonchiropractic);
+    	int a=hamiDAO.setHamiltonchiropractic(hamiltonchiropractic);
+    	HamiltonchiropracticForm hamiltonchiropracticForm= new HamiltonchiropracticForm();
+    	hamiltonchiropracticForm.setHamiltonchiropractic(hamiDAO.getHamiltonchiropractic());
+		model.addAttribute("Hamiltonchiropractic",hamiltonchiropracticForm);
+
+		//System.out.println(autoaccident.getAdjustersname());
+	    
+		
+		return "hamiltonchiropractic";
+ 
+	}
+		
 	
 	@RequestMapping(value="/autoaccident", method = RequestMethod.GET)
 	public String autoaccident(ModelMap model) {
@@ -963,6 +993,12 @@ public class MainController {
 	public String textMsgSettings(ModelMap model) {
 		
 		return "textmsg";
+	}
+	
+	@RequestMapping(value="/moretest", method=RequestMethod.GET)
+	public String moretest(ModelMap model) {
+		
+		return "moretest";
 	}
 	
   }
