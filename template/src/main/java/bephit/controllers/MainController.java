@@ -30,7 +30,11 @@ import bephit.dao.InsuranceverificationDAO;
 import bephit.dao.MainDAO;
 import bephit.dao.MedicalDAO;
 import bephit.dao.PatientDAO;
+
+import bephit.dao.PhysicalexamDAO;
+
 import bephit.dao.RadiologicReportDAO;
+
 import bephit.dao.ScreenDAO;
 import bephit.dao.SignupDAO;
 import bephit.dao.StaffchecklistDAO;
@@ -48,7 +52,11 @@ import bephit.forms.InsuranceverificationForm;
 import bephit.forms.MedicalRecordsForm;
 import bephit.forms.ParticipantsDetailsForm;
 import bephit.forms.PatientDetailsForm;
+
+import bephit.forms.PhysicalexamForm;
+
 import bephit.forms.RadiologicReportForm;
+
 import bephit.forms.ScreeningAuthzForm;
 import bephit.forms.SignupForm;
 import bephit.forms.StaffchecklistForm;
@@ -113,6 +121,11 @@ public class MainController {
 	
 	@Autowired
 	HippaDAO hippaDAO;
+	
+	@Autowired
+	PhysicalexamDAO physicalDAO;
+	
+	
 
 	@Autowired
 	RadiologicReportDAO radioDAO;
@@ -152,6 +165,41 @@ public class MainController {
 		return "physicalexam";
  
 	}
+
+	
+	@RequestMapping(value="/physicalexam", method = RequestMethod.POST)
+	public String insert_physicalexam(@ModelAttribute("Physicalexam")  @Valid Physicalexam physicalexam,BindingResult result,ModelMap model) {
+		/*if(result.hasErrors())
+		{
+			AutoaccidentForm autoaccidentForm= new AutoaccidentForm();
+			autoaccidentForm.setAutoaccident(autoDAO.getAutoaccident());
+			model.addAttribute("AutoaccidentForm",autoaccidentForm);
+			model.addAttribute("Success","true");
+			return "autoaccident";
+		}*/
+		
+		
+		
+		
+		
+		model.put("Physicalexam", physicalexam);
+		model.addAttribute("PhysicalexamForm",physicalexam);
+    	int a=physicalDAO.setPhysicalexam(physicalexam);
+		PhysicalexamForm physicalexamForm= new PhysicalexamForm();
+		physicalexamForm.setPhysicalexam(physicalDAO.getPhysicalexam());
+		model.addAttribute("PhysicalexamForm",physicalexamForm);
+
+		//System.out.println(autoaccident.getAdjustersname());
+	    
+		
+		return "physicalexam";
+ 
+	}
+	
+	
+	@RequestMapping(value="/hamiltonchiropractic", method = RequestMethod.GET)
+	public String hamiltonchiropractic(ModelMap model) {
+
 	
 	@RequestMapping(value="/hamiltonchiropractic", method = RequestMethod.POST)
 	public String insert_hamiltonchiropractic(@ModelAttribute("Hamiltonchiropractic")  @Valid Hamiltonchiropractic hamiltonchiropractic,BindingResult result,ModelMap model) {
@@ -174,6 +222,7 @@ public class MainController {
 		//System.out.println(autoaccident.getAdjustersname());
 	    
 		
+
 		return "hamiltonchiropractic";
  
 	}
@@ -846,9 +895,9 @@ public class MainController {
 	@RequestMapping(value="/viewtreatminor", method = RequestMethod.GET)
 	public String viewtreatminor(HttpServletRequest request,ModelMap model) {
 		
-		TreatMinorDetailsForm treatminordetailsform= new TreatMinorDetailsForm();
-		treatminordetailsform.setMinorDetails(minorDAO.getMinorDetails());
-		model.addAttribute("TreatMinorDetailsForm",treatminordetailsform);
+		TreatMinorDetailsForm treatminordetailsForm= new TreatMinorDetailsForm();
+		treatminordetailsForm.setMinorDetails(minorDAO.getMinorDetails());
+		model.addAttribute("treatminordetailsform",treatminordetailsForm);
 		return "viewtreatminor";
  
 	}
@@ -859,7 +908,7 @@ public class MainController {
 		ScreeningAuthzForm screeningauthzform= new ScreeningAuthzForm();
 		screeningauthzform.setScreeningDetails(screenDAO.getScreeningDetails());
 		System.out.println(screeningauthzform);
-		model.addAttribute("screeningauthzform",screeningauthzform);
+		model.addAttribute("screeningauthzForm",screeningauthzform);
 		return "viewscreeningauthz";
  
 	}

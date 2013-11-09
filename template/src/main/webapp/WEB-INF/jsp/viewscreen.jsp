@@ -28,7 +28,7 @@
 					         	<td valign="top" align="left" width="15%">Name</td>
           						<td valign="top" align="left" width="25%">Action</td>
         					</tr>
-        					<c:forEach items="${screeningauthzform.ScreeningDetails}" var="ScreeningDetails" varStatus="status">
+        					<c:forEach items="${screeningauthzForm.ScreeningDetails}" var="ScreeningDetails" varStatus="status">
         				       	<tr class="row1">
 							       		<td valign="center" align="right" width="10%"><input type="checkbox" value="" name="chkUser"></td>
 					     		     	<td valign="top" align="left"  width="10%">${screeningAuthz.date}</td>

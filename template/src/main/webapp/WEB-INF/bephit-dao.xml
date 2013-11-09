@@ -55,7 +55,9 @@
     <bean id="SignupDAO" class="bephit.dao.SignupDAO">
     	<property name="dataSource" ref="dataSource" />
     </bean>
-
+<bean id="PhysicalexamDAO" class="bephit.dao.PhysicalexamDAO">
+    	<property name="dataSource" ref="dataSource" />
+    </bean>
    <bean id="HamiltonchiropracticDAO" class="bephit.dao.HamiltonchiropracticDAO">
     	<property name="dataSource" ref="dataSource" />
     </bean>

@@ -339,26 +339,26 @@
 				                <tr class="row1">
 				                   <td>C-5:</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="c5" /></td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="c5right" value="c5right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="c5left" value="c5left">Left</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="c5check" value="c5right">Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="c5check" value="c5left">Left</td>
 				                  </tr>
 				                <tr class="row1">
 				                   <td>C-6:</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="c6" /></td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="c6right" value="c6right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="c6left" value="c6left">Left</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="c6check" value="c6right">Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="c6check" value="c6left">Left</td>
 				                  </tr>
 				                  <tr class="row1">
 				                   <td>C-7:</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="c7" /></td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="c7right" value="c7right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="c7left" value="c7left">Left</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="c7check" value="c7right">Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="c7check" value="c7left">Left</td>
 				                  </tr>
 				                  <tr class="row1">
 				                   <td>C-8:</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="c8" /></td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="c8right" value="c8right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="c8left" value="c8left">Left</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="c8check" value="c8right">Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="c8check" value="c8left">Left</td>
 				                  </tr>
 				                  <tr class="row1">
 				                   <td>T-1:</td>
@@ -369,8 +369,8 @@
 				                  <tr class="row1">
 				                   <td>Other:</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="other" /></td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="otherright" value="otherright">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="otherleft" value="otherleft">Left</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="othercheck" value="otherright">Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="othercheck" value="otherleft">Left</td>
 				                  </tr>
 				       </table>
 				       
@@ -747,26 +747,26 @@
 				                <tr class="row1">
 				                   <td>T-1:</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="thot1" /></td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot1right" value="thot1right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot1left" value="thot1left">Left</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot1check" value="thot1right">Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot1check" value="thot1left">Left</td>
 				                  </tr>
 				                <tr class="row1">
 				                   <td>T-4:</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="thot4" /></td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot4right" value="thot4right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot4left" value="thot4left">Left</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot4check" value="thot4right">Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot4check" value="thot4left">Left</td>
 				                  </tr>
 				                  <tr class="row1">
 				                   <td>T-10:</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="thot10" /></td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot10right" value="thot10right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot10left" value="thot10left">Left</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot10check" value="thot10right">Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot10check" value="thot10left">Left</td>
 				                  </tr>
 				                  <tr class="row1">
 				                   <td>Other:</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="thoother" /></td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="thootherright" value="thootherright">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="thootherleft" value="thootherleft">Left</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="thoothercheck" value="thootherright">Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="thoothercheck" value="thootherleft">Left</td>
 				                  </tr>
 				                  </table>
 				                  <table border="0">
@@ -1097,6 +1097,13 @@
 				                  <td>Babinski(UMNL)</td>
 				                  <td valign="top" align="left" class="input_txt"><input type="radio" name="babinskiright" value="Positive" class="input_txt" checked="true" >Positive&nbsp;&nbsp;&nbsp;<input type="radio" name="babinskiright" value="Negative" class="input_txt" >Negative&nbsp;&nbsp;&nbsp;</td>
 				                  <td valign="top" align="left" class="input_txt"><input type="radio" name="babinskileft" value="Positive" class="input_txt" checked="true" >Positive&nbsp;&nbsp;&nbsp;<input type="radio" name="babinskileft" value="Negative" class="input_txt" >Negative&nbsp;&nbsp;&nbsp;</td>
+				                  </tr>
+				                  
+				                  </table>
+				                  <table align="right">
+				                  <tr>
+				                   <td><input type="submit" class="submit_btn" value="Save"></td>&nbsp;&nbsp;
+				                    <td><input type="reset" class="submit_btn" value="Cancel"></td>
 				                  </tr>
 				                  </table>
 				                  </td>
