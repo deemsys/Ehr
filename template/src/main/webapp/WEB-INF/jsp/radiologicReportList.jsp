@@ -93,9 +93,9 @@
                   <td width="84%" valign="top" align="left" >${radiologicReport.positive_1} ${radiologicReport.positive_text1}</td>
                 </tr>
                  <tr class="row1">
-                  <td width="15%" valign="middle" align="left" >  Negative for recent fracture, dislocation or gross Osteopathology : </td>
+                  <td width="15%" valign="middle" align="left" >  Break in Georges line at: </td>
                     <td width="1%" valign="middle" align="left" >  :</td>
-                  <td width="84%" valign="top" align="left" >${radiologicReport.negative_1}</td>
+                  <td width="84%" valign="top" align="left" >${radiologicReport.break_1} ${radiologicReport.break_text1}</td>
                 </tr>
                  <tr class="row2">
                   <td width="15%" valign="middle" align="left" > Views </td>
