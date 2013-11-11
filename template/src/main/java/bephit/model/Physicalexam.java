@@ -20,15 +20,34 @@ public class Physicalexam {
 	      String romber;
 	      String exam;
 	      String abnormal;
-	      String headtilt;
-	      String rotation;
-	      String tmj;
-	      String high;
-	      String lord;
-	      String lymph;
-	      String paras;
-	      String trapezius;
-	      String vertebrae;
+	      String headtiltright;
+	      String headtiltleft;
+	      String headtiltnormal;
+	      String rotationright;
+	      String rotationleft;
+	      String rotationnormal;
+	      String tmjright;
+	      String tmjleft;
+	      String tmjnormal;
+	      String highright;
+	      String highleft;
+	      String highnormal;
+	      String lordhyper;
+	      String lordhypo;
+	      String lordnormal;
+	      String lymphedema;
+	      String lymphnormal;
+	      String paraspain;
+	      String parasspasm;
+	      String parasedema;
+	      String parastriggerpoint;
+	      String trapeziusrl;
+	      String trapeziustono;
+	      String trapeziusnormal;
+	      
+	      String vertebraefix;
+	      String vertebraenofix;
+	      
 	      String flexnormal;
 	      String flexpain;
 	      String flexspasm;
@@ -54,23 +73,23 @@ public class Physicalexam {
 	      String lrspasm;
 	      String lrstiff;
 	      String c5;
-	      String c5check;
-	
+	      String c5right;
+	      String c5left;
 	      String c6;
-	      String c6check;
-	
+	      String c6right;
+	      String c6left;
 	      String c7;
-	      String c7check;
-	 
+	      String c7right;
+	      String c7left;
 	      String c8;
-	      String c8check;
-	 
+	      String c8right;
+	      String c8left;
 	      String t1;
-	      String t1check;
-	
+	      String t1right;
+	      String t1left;
 	      String other;
-	      String othercheck;
-	
+	      String otherright;
+	      String otherleft;
 	      String deltoidright;
 	      String deltoidleft;
 	      String wristright;
@@ -89,15 +108,31 @@ public class Physicalexam {
 	      String bracioradleft;
 	      String tricepright;
 	      String tricepleft;
-	      String highshoulder;
-	      String curvature;
-	      String winging;
-	      String ribhump;
-	      String chestmeasure;
-	      String kyphosis;
-	      String para;
-	      String ribs;
-	      String verte;
+	      String highshoulderright;
+	      String highshoulderleft;
+	      String highshouldernormal;
+	      String curvatureright;
+	      String curvatureleft;
+	      String curvaturenormal;
+	      String wingingright;
+	      String wingingleft;
+	      String wingingnormal;
+	      String ribhumpright;
+	      String ribhumpleft;
+	      String ribhumpnormal;
+	      String chestmeasurein;
+	      String chestmeasureex;
+	      String kyphosishyper;
+	      String kyphosishypo;
+	      String kyphosisnormal;
+	      String parapain;
+	      String paraspasm;
+	      String paraedema;
+	      String paratriggerpoint;
+	      String ribspost;
+	      String ribsnor;
+	      String vertefix;
+	      String vertenofix;
 	      String thoracicnormal;
 	      String thoracicpain;
 	      String thoracicspasm;
@@ -124,10 +159,8 @@ public class Physicalexam {
 	      String tholrstiff;
 	      String thot1;
 	      String thot1check;
-	      
 	      String thot4;
 	      String thot4check;
-	      
 	      String thot10;
 	      String thot10check;
 	      
@@ -135,16 +168,37 @@ public class Physicalexam {
 	      String thoothercheck;
 	      
 	      String myotomes;
-	      String positive;
-	      String highcrest;
-	      String highpsis;
-	      String curve;
-	      String lordosis;
-	      String paraspinal;
-	      String quad;
-	      String hamstring;
-	      String ver;
-	      String abdomen;
+	      String positiveruq;
+	      String positiveluq;
+	      String positiverlq;
+	      String positivellq;
+	      String highcrestright;
+	      String highcrestleft;
+	      String highcrestnormal;
+	      String highpsisright;
+	      String highpsisleft;
+	      String highpsisnormal;
+	      String curveright;
+	      String curveleft;
+	      String curvenormal;
+	      String lordosishyper;
+	      String lordosishypo;
+	      String lordosisnormal;
+	      String paraspinalpain;
+	      String paraspinalspasm;
+	      String paraspinaledema;
+	      String paraspinaltp;
+	      String quadrl;
+	      String quadtono;
+	      String quadnor;
+	      String hamstringrl;
+	      String hamstringtono;
+	      String hamstringnor;
+	      String verfix;
+	      String vernofix;
+	      String abdomentender;
+	      String abdomenpulse;
+	      String abdomenascites;
 	      String lumflexnormal;
 	      String lumflexpain;
 	      String lumflexspasm;
@@ -191,369 +245,319 @@ public class Physicalexam {
 	public Physicalexam(){
 	
 	}
-	
-	public Physicalexam(String sign,
-			String name,
-			String id,
-			String date,
-			String age,
-			String sex,
-			String height,
-			String weight,
-			String temp,
-			String bp,
-			String pulse,
-			String appearance,
-			String weight1,
-			String gait,
-			String head,
-			String posture,
-			String romber,
-			String exam,
-			String abnormal,
-			String headtilt,
-			String rotation,
-			String tmj,
-			String high,
-			String lord,
-			String lymph,
-			String paras,
-			String trapezius,
-			String vertebrae,
-			String flexnormal,
-			String flexpain,
-			String flexspasm,
-			String flexstiff,
-			String extnormal,
-			String extpain,
-			String extspasm,
-			String extstiff,
-			String rlfnormal,
-			String rlfpain,
-			String rlfspasm,
-			String rlfstiff,
-			String llfnormal,
-			String llfpain,
-			String llfspasm,
-			String llfstiff,
-			String rrnormal,
-			String rrpain,
-			String rrspasm,
-			String rrstiff,
-			String lrnormal,
-			String lrpain,
-			String lrspasm,
-			String lrstiff,
-			String c5,
-			String c5check,
-			
-			String c6,
-			String c6check,
-			
-			String c7,
-			String c7check,
-			
-			String c8,
-			String c8check,
-			
-			String t1,
-			String t1check,
-			
-			String other,
-			String othercheck,
-			
-			String deltoidright,
-			String deltoidleft,
-			String wristright,
-			String wristleft,
-			String wristflexright,
-			String wristflexleft,
-			String fingerflexright,
-			String fingerflexleft,
-			String fingeraddright,
-			String fingeraddleft,
-			String wristextright,
-			String wristextleft,
-			String bicepright,
-	      String bicepleft,
-	      String bracioradright,
-	      String bracioradleft,
-	      String tricepright,
-	      String tricepleft,
-	      String highshoulder,
-	      String curvature,
-	      String winging,
-	      String ribhump,
-	      String chestmeasure,
-	      String kyphosis,
-	      String para,
-	      String ribs,
-	      String verte,
-	      String thoracicnormal,
-	      String thoracicpain,
-	      String thoracicspasm,
-	      String thoracicstiff,
-	      String thoextnormal,
-	      String thoextpain,
-	      String thoextspasm,
-	      String thoextstiff,
-	      String thorlfnormal,
-	      String thorlfpain,
-	      String thorlfspasm,
-	      String thorlfstiff,
-	      String thollfnormal,
-	      String thollfpain,
-	      String thollfspasm,
-	      String thollfstiff,
-	      String thorrnormal,
-	      String thorrpain,
-	      String thorrspasm,
-	      String thorrstiff,
-	      String tholrnormal,
-	      String tholrpain,
-	      String tholrspasm,
-	      String tholrstiff,
-	      String thot1,
-	      String thot1check,
-	      
-	      String thot4,
-	      String thot4check,
-	      
-	      String thot10,
-	      String thot10check,
-	      
-	      String thoother,
-	      String thoothercheck,
-	      
-	      String myotomes,
-	      String positive,
-	      String highcrest,
-	      String highpsis,
-	      String curve,
-	      String lordosis,
-	      String paraspinal,
-	      String quad,
-	      String hamstring,
-	      String ver,
-	      String abdomen,
-	      String lumflexnormal,
-	      String lumflexpain,
-	      String lumflexspasm,
-	      String lumflexstiff,
-	      String lumextnormal,
-	      String lumextpain,
-	      String lumextspasm,
-	      String lumextstiff,
-	      String lumrlfnormal,
-	      String lumrlfpain,
-	      String lumrlfspasm,
-	      String lumrlfstiff,
-	      String lumllfnormal,
-	      String lumllfpain,
-	      String lumllfspasm,
-	      String lumllfstiff,
-	      String lumrrnormal,
-	      String lumrrpain,
-	      String lumrrspasm,
-	      String lumrrstiff,
-	      String lumlrnormal,
-	      String lumlrpain,
-	      String lumlrspasm,
-	      String lumlrstiff,
-	      String hipflexright,
-	      String hipflexleft,
-	      String legextright,
-	      String legextleft,
-	      String dorsiflexright,
-	      String dorsiflexleft,
-	      String digitflexright,
-	      String digitflexleft,
-	      String heelright,
-	      String heelleft,
-	      String toeright,
-	      String toeleft,
-	      String patellarright,
-	      String patellarleft,
-	      String achillesright,
-	      String achillesleft,
-	      String babinskiright,
-	      String babinskileft){
-		this.sign=sign;
-		this.name=name;
-		this.id=id;
-		this.date=date;
-		this.age=age;
-		this.sex=sex;
-		this.height=height;
-		this.weight=weight;
-		this.temp=temp;
-		this.bp=bp;
-		this.pulse=pulse;
-		this.appearance=appearance;
-		this.weight1=weight1;
-		this.gait=gait;
-		this.head=head;
-		this.posture=posture;
-		this.romber=romber;
-		this.exam=exam;
-		this.abnormal=abnormal;
-		this.headtilt=headtilt;
-		this.rotation=rotation;
-		this.tmj=tmj;
-		this.high=high;
-		this.lord=lord;
-		this.lymph=lymph;
-		this.paras=paras;
-		this.trapezius=trapezius;
-		this.vertebrae=vertebrae;
-		this.flexnormal=flexnormal;
-		this.flexpain=flexpain;
-		this.flexspasm=flexspasm;
-		this.flexstiff=flexstiff;
-		this.extnormal=extnormal;
-		this.extpain=extpain;
-		this.extspasm=extspasm;
-		this.extstiff=extstiff;
-		this.rlfnormal=rlfnormal;
-		this.rlfpain=rlfpain;
-		this.rlfspasm=rlfspasm;
-		this.rlfstiff=rlfstiff;
-		this.llfnormal=llfnormal;
-		this.llfpain=llfpain;
-		this.llfspasm=llfspasm;
-		this.llfstiff=llfstiff;
-		this.rrnormal=rrnormal;
-		this.rrpain=rrpain;
-		this.rrspasm=rrspasm;
-		this.rrstiff=rrstiff;
-		this.lrnormal=lrnormal;
-		this.lrpain=lrpain;
-		this.lrspasm=lrspasm;
-		this.lrstiff=lrstiff;
-		this.c5=c5;
-		this.c5check=c5check;
-		this.c6=c6;
-		this.c6check=c6check;
-		this.c7=c7;
-		this.c7check=c7check;
-		this.c8=c8;
-		this.c8check=c8check;
-		this.t1=t1;
-		this.t1check=t1check;
-		this.other=other;
-		this.othercheck=othercheck;
-		this.deltoidright=deltoidright;
-		this.deltoidleft=deltoidleft;
-		this.wristright=wristright;
-		this.wristleft=wristleft;
-		this.wristflexright=wristflexright;
-		this.wristflexleft=wristflexleft;
-		this.fingerflexright=fingerflexright;
-		this.fingerflexleft=fingerflexleft;
-		this.fingeraddright=fingeraddright;
-		this.fingeraddleft=fingeraddleft;
-		this.wristextright=wristextright;
-		this.wristextleft=wristextleft;
-		this.bicepright=bicepright;
-		this.bicepleft=bicepleft;
-		this.bracioradright=bracioradright;
-		this.bracioradleft=bracioradleft;
-		this.tricepright=tricepright;
-		this.tricepleft=tricepleft;
-		this.highshoulder=highshoulder;
-		this.curvature=curvature;
-		this.winging=winging;
-		this.ribhump=ribhump;
-		this.chestmeasure=chestmeasure;
-		this.kyphosis=kyphosis;
-		this.para=para;
-		this.ribs=ribs;
-		this.verte=verte;
-		this.thoracicnormal=thoracicnormal;
-		this.thoracicpain=thoracicpain;
-		this.thoracicspasm=thoracicspasm;
-		this.thoracicstiff=thoracicstiff;
-		this.thoextnormal=thoextnormal;
-		this.thoextpain=thoextpain;
-		this.thoextspasm=thoextspasm;
-		this.thoextstiff=thoextstiff;
-		this.thorlfnormal=thorlfnormal;
-		this.thorlfpain=thorlfpain;
-		this.thorlfspasm=thorlfspasm;
-		this.thorlfstiff=thorlfstiff;
-		this.thollfnormal=thollfnormal;
-		this.thollfpain=thollfpain;
-		this.thollfspasm=thollfspasm;
-		this.thollfstiff=thollfstiff;
-		this.thorrnormal=thorrnormal;
-		this.thorrpain=thorrpain;
-		this.thorrspasm=thorrspasm;
-		this.thorrstiff=thorrstiff;
-		this.tholrnormal=tholrnormal;
-		this.tholrpain=tholrpain;
-		this.tholrspasm=tholrspasm;
-		this.tholrstiff=tholrstiff;
-		this.thot1=thot1;
-		this.thot1check=thot1check;
-		this.thot4=thot4;
-		this.thot4check=thot4check;
-		this.thot10=thot10;
-		this.thot10check=thot10check;
-		this.thoother=thoother;
-		this.thoothercheck=thoothercheck;
-		this.myotomes=myotomes;
-		this.positive=positive;
-		this.highcrest=highcrest;
-		this.highpsis=highpsis;
-		this.curve=curve;
-		this.lordosis=lordosis;
-		this.paraspinal=paraspinal;
-		this.quad=quad;
-		this.hamstring=hamstring;
-		this.ver=ver;
-		this.abdomen=abdomen;
-		this.lumflexnormal=lumflexnormal;
-		this.lumflexpain=lumflexpain;
-		this.lumflexspasm=lumflexspasm;
-		this.lumflexstiff=lumflexstiff;
-		this.lumextnormal=lumextnormal;
-		this.lumextpain=lumextpain;
-		this.lumextspasm=lumextspasm;
-		this.lumextstiff=lumextstiff;
-		this.lumrlfnormal=lumrlfnormal;
-		this.lumrlfpain=lumrlfpain;
-		this.lumrlfspasm=lumrlfspasm;
-		this.lumrlfstiff=lumrlfstiff;
-		this.lumllfnormal=lumllfnormal;
-		this.lumllfpain=lumllfpain;
-		this.lumllfspasm=lumllfspasm;
-		this.lumllfstiff=lumllfstiff;
-		this.lumrrnormal=lumrrnormal;
-		this.lumrrpain=lumrrpain;
-		this.lumrrspasm=lumrrspasm;
-		this.lumrrstiff=lumrrstiff;
-		this.lumlrnormal=lumlrnormal;
-		this.lumlrpain=lumlrpain;
-		this.lumlrspasm=lumlrspasm;
-		this.lumlrstiff=lumlrstiff;
-		this.hipflexright=hipflexright;
-		this.hipflexleft=hipflexleft;
-		this.legextright=legextright;
-		this.legextleft=legextleft;
-		this.dorsiflexright=dorsiflexright;
-		this.dorsiflexleft=dorsiflexleft;
-		this.digitflexright=digitflexright;
-		this.digitflexleft=digitflexleft;
-		this.heelright=heelright;
-		this.heelleft=heelleft;
-		this.toeright=toeright;
-		this.toeleft=toeleft;
-		this.patellarright=patellarright;
-		this.patellarleft=patellarleft;
-		this.achillesright=achillesright;
-		this.achillesleft=achillesleft;
-		this.babinskiright=babinskiright;
-		this.babinskileft=babinskileft;
+
+	public Physicalexam(String sign, String name, String id, String date,
+			String age, String sex, String height, String weight, String temp,
+			String bp, String pulse, String appearance, String weight1,
+			String gait, String head, String posture, String romber,
+			String exam, String abnormal, String headtiltright,
+			String headtiltleft, String headtiltnormal, String rotationright,
+			String rotationleft, String rotationnormal, String tmjright,
+			String tmjleft, String tmjnormal, String highright,
+			String highleft, String highnormal, String lordhyper,
+			String lordhypo, String lordnormal, String lymphedema,
+			String lymphnormal, String paraspain, String parasspasm,
+			String parasedema, String parastriggerpoint, String trapeziusrl,
+			String trapeziustono, String trapeziusnormal, String vertebraefix,
+			String vertebraenofix, String flexnormal, String flexpain,
+			String flexspasm, String flexstiff, String extnormal,
+			String extpain, String extspasm, String extstiff, String rlfnormal,
+			String rlfpain, String rlfspasm, String rlfstiff, String llfnormal,
+			String llfpain, String llfspasm, String llfstiff, String rrnormal,
+			String rrpain, String rrspasm, String rrstiff, String lrnormal,
+			String lrpain, String lrspasm, String lrstiff, String c5,
+			String c5right, String c5left, String c6, String c6right,
+			String c6left, String c7, String c7right, String c7left, String c8,
+			String c8right, String c8left, String t1, String t1right,
+			String t1left, String other, String otherright, String otherleft,
+			String deltoidright, String deltoidleft, String wristright,
+			String wristleft, String wristflexright, String wristflexleft,
+			String fingerflexright, String fingerflexleft,
+			String fingeraddright, String fingeraddleft, String wristextright,
+			String wristextleft, String bicepright, String bicepleft,
+			String bracioradright, String bracioradleft, String tricepright,
+			String tricepleft, String highshoulderright,
+			String highshoulderleft, String highshouldernormal,
+			String curvatureright, String curvatureleft,
+			String curvaturenormal, String wingingright, String wingingleft,
+			String wingingnormal, String ribhumpright, String ribhumpleft,
+			String ribhumpnormal, String chestmeasurein, String chestmeasureex,
+			String kyphosishyper, String kyphosishypo, String kyphosisnormal,
+			String parapain, String paraspasm, String paraedema,
+			String paratriggerpoint, String ribspost, String ribsnor,
+			String vertefix, String vertenofix, String thoracicnormal,
+			String thoracicpain, String thoracicspasm, String thoracicstiff,
+			String thoextnormal, String thoextpain, String thoextspasm,
+			String thoextstiff, String thorlfnormal, String thorlfpain,
+			String thorlfspasm, String thorlfstiff, String thollfnormal,
+			String thollfpain, String thollfspasm, String thollfstiff,
+			String thorrnormal, String thorrpain, String thorrspasm,
+			String thorrstiff, String tholrnormal, String tholrpain,
+			String tholrspasm, String tholrstiff, String thot1,
+			String thot1check, String thot4, String thot4check, String thot10,
+			String thot10check, String thoother, String thoothercheck,
+			String myotomes, String positiveruq, String positiveluq,
+			String positiverlq, String positivellq, String highcrestright,
+			String highcrestleft, String highcrestnormal, String highpsisright,
+			String highpsisleft, String highpsisnormal, String curveright,
+			String curveleft, String curvenormal, String lordosishyper,
+			String lordosishypo, String lordosisnormal, String paraspinalpain,
+			String paraspinalspasm, String paraspinaledema,
+			String paraspinaltp, String quadrl, String quadtono,
+			String quadnor, String hamstringrl, String hamstringtono,
+			String hamstringnor, String verfix, String vernofix,
+			String abdomentender, String abdomenpulse, String abdomenascites,
+			String lumflexnormal, String lumflexpain, String lumflexspasm,
+			String lumflexstiff, String lumextnormal, String lumextpain,
+			String lumextspasm, String lumextstiff, String lumrlfnormal,
+			String lumrlfpain, String lumrlfspasm, String lumrlfstiff,
+			String lumllfnormal, String lumllfpain, String lumllfspasm,
+			String lumllfstiff, String lumrrnormal, String lumrrpain,
+			String lumrrspasm, String lumrrstiff, String lumlrnormal,
+			String lumlrpain, String lumlrspasm, String lumlrstiff,
+			String hipflexright, String hipflexleft, String legextright,
+			String legextleft, String dorsiflexright, String dorsiflexleft,
+			String digitflexright, String digitflexleft, String heelright,
+			String heelleft, String toeright, String toeleft,
+			String patellarright, String patellarleft, String achillesright,
+			String achillesleft, String babinskiright, String babinskileft) {
+		
+		this.sign = sign;
+		this.name = name;
+		this.id = id;
+		this.date = date;
+		this.age = age;
+		this.sex = sex;
+		this.height = height;
+		this.weight = weight;
+		this.temp = temp;
+		this.bp = bp;
+		this.pulse = pulse;
+		this.appearance = appearance;
+		this.weight1 = weight1;
+		this.gait = gait;
+		this.head = head;
+		this.posture = posture;
+		this.romber = romber;
+		this.exam = exam;
+		this.abnormal = abnormal;
+		this.headtiltright = headtiltright;
+		this.headtiltleft = headtiltleft;
+		this.headtiltnormal = headtiltnormal;
+		this.rotationright = rotationright;
+		this.rotationleft = rotationleft;
+		this.rotationnormal = rotationnormal;
+		this.tmjright = tmjright;
+		this.tmjleft = tmjleft;
+		this.tmjnormal = tmjnormal;
+		this.highright = highright;
+		this.highleft = highleft;
+		this.highnormal = highnormal;
+		this.lordhyper = lordhyper;
+		this.lordhypo = lordhypo;
+		this.lordnormal = lordnormal;
+		this.lymphedema = lymphedema;
+		this.lymphnormal = lymphnormal;
+		this.paraspain = paraspain;
+		this.parasspasm = parasspasm;
+		this.parasedema = parasedema;
+		this.parastriggerpoint = parastriggerpoint;
+		this.trapeziusrl = trapeziusrl;
+		this.trapeziustono = trapeziustono;
+		this.trapeziusnormal = trapeziusnormal;
+		this.vertebraefix = vertebraefix;
+		this.vertebraenofix = vertebraenofix;
+		this.flexnormal = flexnormal;
+		this.flexpain = flexpain;
+		this.flexspasm = flexspasm;
+		this.flexstiff = flexstiff;
+		this.extnormal = extnormal;
+		this.extpain = extpain;
+		this.extspasm = extspasm;
+		this.extstiff = extstiff;
+		this.rlfnormal = rlfnormal;
+		this.rlfpain = rlfpain;
+		this.rlfspasm = rlfspasm;
+		this.rlfstiff = rlfstiff;
+		this.llfnormal = llfnormal;
+		this.llfpain = llfpain;
+		this.llfspasm = llfspasm;
+		this.llfstiff = llfstiff;
+		this.rrnormal = rrnormal;
+		this.rrpain = rrpain;
+		this.rrspasm = rrspasm;
+		this.rrstiff = rrstiff;
+		this.lrnormal = lrnormal;
+		this.lrpain = lrpain;
+		this.lrspasm = lrspasm;
+		this.lrstiff = lrstiff;
+		this.c5 = c5;
+		this.c5right = c5right;
+		this.c5left = c5left;
+		this.c6 = c6;
+		this.c6right = c6right;
+		this.c6left = c6left;
+		this.c7 = c7;
+		this.c7right = c7right;
+		this.c7left = c7left;
+		this.c8 = c8;
+		this.c8right = c8right;
+		this.c8left = c8left;
+		this.t1 = t1;
+		this.t1right = t1right;
+		this.t1left = t1left;
+		this.other = other;
+		this.otherright = otherright;
+		this.otherleft = otherleft;
+		this.deltoidright = deltoidright;
+		this.deltoidleft = deltoidleft;
+		this.wristright = wristright;
+		this.wristleft = wristleft;
+		this.wristflexright = wristflexright;
+		this.wristflexleft = wristflexleft;
+		this.fingerflexright = fingerflexright;
+		this.fingerflexleft = fingerflexleft;
+		this.fingeraddright = fingeraddright;
+		this.fingeraddleft = fingeraddleft;
+		this.wristextright = wristextright;
+		this.wristextleft = wristextleft;
+		this.bicepright = bicepright;
+		this.bicepleft = bicepleft;
+		this.bracioradright = bracioradright;
+		this.bracioradleft = bracioradleft;
+		this.tricepright = tricepright;
+		this.tricepleft = tricepleft;
+		this.highshoulderright = highshoulderright;
+		this.highshoulderleft = highshoulderleft;
+		this.highshouldernormal = highshouldernormal;
+		this.curvatureright = curvatureright;
+		this.curvatureleft = curvatureleft;
+		this.curvaturenormal = curvaturenormal;
+		this.wingingright = wingingright;
+		this.wingingleft = wingingleft;
+		this.wingingnormal = wingingnormal;
+		this.ribhumpright = ribhumpright;
+		this.ribhumpleft = ribhumpleft;
+		this.ribhumpnormal = ribhumpnormal;
+		this.chestmeasurein = chestmeasurein;
+		this.chestmeasureex = chestmeasureex;
+		this.kyphosishyper = kyphosishyper;
+		this.kyphosishypo = kyphosishypo;
+		this.kyphosisnormal = kyphosisnormal;
+		this.parapain = parapain;
+		this.paraspasm = paraspasm;
+		this.paraedema = paraedema;
+		this.paratriggerpoint = paratriggerpoint;
+		this.ribspost = ribspost;
+		this.ribsnor = ribsnor;
+		this.vertefix = vertefix;
+		this.vertenofix = vertenofix;
+		this.thoracicnormal = thoracicnormal;
+		this.thoracicpain = thoracicpain;
+		this.thoracicspasm = thoracicspasm;
+		this.thoracicstiff = thoracicstiff;
+		this.thoextnormal = thoextnormal;
+		this.thoextpain = thoextpain;
+		this.thoextspasm = thoextspasm;
+		this.thoextstiff = thoextstiff;
+		this.thorlfnormal = thorlfnormal;
+		this.thorlfpain = thorlfpain;
+		this.thorlfspasm = thorlfspasm;
+		this.thorlfstiff = thorlfstiff;
+		this.thollfnormal = thollfnormal;
+		this.thollfpain = thollfpain;
+		this.thollfspasm = thollfspasm;
+		this.thollfstiff = thollfstiff;
+		this.thorrnormal = thorrnormal;
+		this.thorrpain = thorrpain;
+		this.thorrspasm = thorrspasm;
+		this.thorrstiff = thorrstiff;
+		this.tholrnormal = tholrnormal;
+		this.tholrpain = tholrpain;
+		this.tholrspasm = tholrspasm;
+		this.tholrstiff = tholrstiff;
+		this.thot1 = thot1;
+		this.thot1check = thot1check;
+		this.thot4 = thot4;
+		this.thot4check = thot4check;
+		this.thot10 = thot10;
+		this.thot10check = thot10check;
+		this.thoother = thoother;
+		this.thoothercheck = thoothercheck;
+		this.myotomes = myotomes;
+		this.positiveruq = positiveruq;
+		this.positiveluq = positiveluq;
+		this.positiverlq = positiverlq;
+		this.positivellq = positivellq;
+		this.highcrestright = highcrestright;
+		this.highcrestleft = highcrestleft;
+		this.highcrestnormal = highcrestnormal;
+		this.highpsisright = highpsisright;
+		this.highpsisleft = highpsisleft;
+		this.highpsisnormal = highpsisnormal;
+		this.curveright = curveright;
+		this.curveleft = curveleft;
+		this.curvenormal = curvenormal;
+		this.lordosishyper = lordosishyper;
+		this.lordosishypo = lordosishypo;
+		this.lordosisnormal = lordosisnormal;
+		this.paraspinalpain = paraspinalpain;
+		this.paraspinalspasm = paraspinalspasm;
+		this.paraspinaledema = paraspinaledema;
+		this.paraspinaltp = paraspinaltp;
+		this.quadrl = quadrl;
+		this.quadtono = quadtono;
+		this.quadnor = quadnor;
+		this.hamstringrl = hamstringrl;
+		this.hamstringtono = hamstringtono;
+		this.hamstringnor = hamstringnor;
+		this.verfix = verfix;
+		this.vernofix = vernofix;
+		this.abdomentender = abdomentender;
+		this.abdomenpulse = abdomenpulse;
+		this.abdomenascites = abdomenascites;
+		this.lumflexnormal = lumflexnormal;
+		this.lumflexpain = lumflexpain;
+		this.lumflexspasm = lumflexspasm;
+		this.lumflexstiff = lumflexstiff;
+		this.lumextnormal = lumextnormal;
+		this.lumextpain = lumextpain;
+		this.lumextspasm = lumextspasm;
+		this.lumextstiff = lumextstiff;
+		this.lumrlfnormal = lumrlfnormal;
+		this.lumrlfpain = lumrlfpain;
+		this.lumrlfspasm = lumrlfspasm;
+		this.lumrlfstiff = lumrlfstiff;
+		this.lumllfnormal = lumllfnormal;
+		this.lumllfpain = lumllfpain;
+		this.lumllfspasm = lumllfspasm;
+		this.lumllfstiff = lumllfstiff;
+		this.lumrrnormal = lumrrnormal;
+		this.lumrrpain = lumrrpain;
+		this.lumrrspasm = lumrrspasm;
+		this.lumrrstiff = lumrrstiff;
+		this.lumlrnormal = lumlrnormal;
+		this.lumlrpain = lumlrpain;
+		this.lumlrspasm = lumlrspasm;
+		this.lumlrstiff = lumlrstiff;
+		this.hipflexright = hipflexright;
+		this.hipflexleft = hipflexleft;
+		this.legextright = legextright;
+		this.legextleft = legextleft;
+		this.dorsiflexright = dorsiflexright;
+		this.dorsiflexleft = dorsiflexleft;
+		this.digitflexright = digitflexright;
+		this.digitflexleft = digitflexleft;
+		this.heelright = heelright;
+		this.heelleft = heelleft;
+		this.toeright = toeright;
+		this.toeleft = toeleft;
+		this.patellarright = patellarright;
+		this.patellarleft = patellarleft;
+		this.achillesright = achillesright;
+		this.achillesleft = achillesleft;
+		this.babinskiright = babinskiright;
+		this.babinskileft = babinskileft;
 	}
 
 	public String getSign() {
@@ -708,68 +712,212 @@ public class Physicalexam {
 		this.abnormal = abnormal;
 	}
 
-	public String getHeadtilt() {
-		return headtilt;
+	public String getHeadtiltright() {
+		return headtiltright;
 	}
 
-	public void setHeadtilt(String headtilt) {
-		this.headtilt = headtilt;
+	public void setHeadtiltright(String headtiltright) {
+		this.headtiltright = headtiltright;
 	}
 
-	public String getRotation() {
-		return rotation;
+	public String getHeadtiltleft() {
+		return headtiltleft;
 	}
 
-	public void setRotation(String rotation) {
-		this.rotation = rotation;
+	public void setHeadtiltleft(String headtiltleft) {
+		this.headtiltleft = headtiltleft;
 	}
 
-	public String getTmj() {
-		return tmj;
+	public String getHeadtiltnormal() {
+		return headtiltnormal;
 	}
 
-	public void setTmj(String tmj) {
-		this.tmj = tmj;
+	public void setHeadtiltnormal(String headtiltnormal) {
+		this.headtiltnormal = headtiltnormal;
 	}
 
-	public String getHigh() {
-		return high;
+	public String getRotationright() {
+		return rotationright;
 	}
 
-	public void setHigh(String high) {
-		this.high = high;
+	public void setRotationright(String rotationright) {
+		this.rotationright = rotationright;
 	}
 
-	public String getLord() {
-		return lord;
+	public String getRotationleft() {
+		return rotationleft;
 	}
 
-	public void setLord(String lord) {
-		this.lord = lord;
+	public void setRotationleft(String rotationleft) {
+		this.rotationleft = rotationleft;
 	}
 
-	public String getLymph() {
-		return lymph;
+	public String getRotationnormal() {
+		return rotationnormal;
 	}
 
-	public void setLymph(String lymph) {
-		this.lymph = lymph;
+	public void setRotationnormal(String rotationnormal) {
+		this.rotationnormal = rotationnormal;
 	}
 
-	public String getParas() {
-		return paras;
+	public String getTmjright() {
+		return tmjright;
 	}
 
-	public void setParas(String paras) {
-		this.paras = paras;
+	public void setTmjright(String tmjright) {
+		this.tmjright = tmjright;
 	}
 
-	public String getVertebrae() {
-		return vertebrae;
+	public String getTmjleft() {
+		return tmjleft;
 	}
 
-	public void setVertebrae(String vertebrae) {
-		this.vertebrae = vertebrae;
+	public void setTmjleft(String tmjleft) {
+		this.tmjleft = tmjleft;
+	}
+
+	public String getTmjnormal() {
+		return tmjnormal;
+	}
+
+	public void setTmjnormal(String tmjnormal) {
+		this.tmjnormal = tmjnormal;
+	}
+
+	public String getHighright() {
+		return highright;
+	}
+
+	public void setHighright(String highright) {
+		this.highright = highright;
+	}
+
+	public String getHighleft() {
+		return highleft;
+	}
+
+	public void setHighleft(String highleft) {
+		this.highleft = highleft;
+	}
+
+	public String getHighnormal() {
+		return highnormal;
+	}
+
+	public void setHighnormal(String highnormal) {
+		this.highnormal = highnormal;
+	}
+
+	public String getLordhyper() {
+		return lordhyper;
+	}
+
+	public void setLordhyper(String lordhyper) {
+		this.lordhyper = lordhyper;
+	}
+
+	public String getLordhypo() {
+		return lordhypo;
+	}
+
+	public void setLordhypo(String lordhypo) {
+		this.lordhypo = lordhypo;
+	}
+
+	public String getLordnormal() {
+		return lordnormal;
+	}
+
+	public void setLordnormal(String lordnormal) {
+		this.lordnormal = lordnormal;
+	}
+
+	public String getLymphedema() {
+		return lymphedema;
+	}
+
+	public void setLymphedema(String lymphedema) {
+		this.lymphedema = lymphedema;
+	}
+
+	public String getLymphnormal() {
+		return lymphnormal;
+	}
+
+	public void setLymphnormal(String lymphnormal) {
+		this.lymphnormal = lymphnormal;
+	}
+
+	public String getParaspain() {
+		return paraspain;
+	}
+
+	public void setParaspain(String paraspain) {
+		this.paraspain = paraspain;
+	}
+
+	public String getParasspasm() {
+		return parasspasm;
+	}
+
+	public void setParasspasm(String parasspasm) {
+		this.parasspasm = parasspasm;
+	}
+
+	public String getParasedema() {
+		return parasedema;
+	}
+
+	public void setParasedema(String parasedema) {
+		this.parasedema = parasedema;
+	}
+
+	public String getParastriggerpoint() {
+		return parastriggerpoint;
+	}
+
+	public void setParastriggerpoint(String parastriggerpoint) {
+		this.parastriggerpoint = parastriggerpoint;
+	}
+
+	public String getTrapeziusrl() {
+		return trapeziusrl;
+	}
+
+	public void setTrapeziusrl(String trapeziusrl) {
+		this.trapeziusrl = trapeziusrl;
+	}
+
+	public String getTrapeziustono() {
+		return trapeziustono;
+	}
+
+	public void setTrapeziustono(String trapeziustono) {
+		this.trapeziustono = trapeziustono;
+	}
+
+	public String getTrapeziusnormal() {
+		return trapeziusnormal;
+	}
+
+	public void setTrapeziusnormal(String trapeziusnormal) {
+		this.trapeziusnormal = trapeziusnormal;
+	}
+
+	public String getVertebraefix() {
+		return vertebraefix;
+	}
+
+	public void setVertebraefix(String vertebraefix) {
+		this.vertebraefix = vertebraefix;
+	}
+
+	public String getVertebraenofix() {
+		return vertebraenofix;
+	}
+
+	public void setVertebraenofix(String vertebraenofix) {
+		this.vertebraenofix = vertebraenofix;
 	}
 
 	public String getFlexnormal() {
@@ -972,7 +1120,22 @@ public class Physicalexam {
 		this.c5 = c5;
 	}
 
-	
+	public String getC5right() {
+		return c5right;
+	}
+
+	public void setC5right(String c5right) {
+		this.c5right = c5right;
+	}
+
+	public String getC5left() {
+		return c5left;
+	}
+
+	public void setC5left(String c5left) {
+		this.c5left = c5left;
+	}
+
 	public String getC6() {
 		return c6;
 	}
@@ -981,7 +1144,22 @@ public class Physicalexam {
 		this.c6 = c6;
 	}
 
-	
+	public String getC6right() {
+		return c6right;
+	}
+
+	public void setC6right(String c6right) {
+		this.c6right = c6right;
+	}
+
+	public String getC6left() {
+		return c6left;
+	}
+
+	public void setC6left(String c6left) {
+		this.c6left = c6left;
+	}
+
 	public String getC7() {
 		return c7;
 	}
@@ -990,7 +1168,22 @@ public class Physicalexam {
 		this.c7 = c7;
 	}
 
-	
+	public String getC7right() {
+		return c7right;
+	}
+
+	public void setC7right(String c7right) {
+		this.c7right = c7right;
+	}
+
+	public String getC7left() {
+		return c7left;
+	}
+
+	public void setC7left(String c7left) {
+		this.c7left = c7left;
+	}
+
 	public String getC8() {
 		return c8;
 	}
@@ -999,7 +1192,22 @@ public class Physicalexam {
 		this.c8 = c8;
 	}
 
-	
+	public String getC8right() {
+		return c8right;
+	}
+
+	public void setC8right(String c8right) {
+		this.c8right = c8right;
+	}
+
+	public String getC8left() {
+		return c8left;
+	}
+
+	public void setC8left(String c8left) {
+		this.c8left = c8left;
+	}
+
 	public String getT1() {
 		return t1;
 	}
@@ -1008,7 +1216,22 @@ public class Physicalexam {
 		this.t1 = t1;
 	}
 
-	
+	public String getT1right() {
+		return t1right;
+	}
+
+	public void setT1right(String t1right) {
+		this.t1right = t1right;
+	}
+
+	public String getT1left() {
+		return t1left;
+	}
+
+	public void setT1left(String t1left) {
+		this.t1left = t1left;
+	}
+
 	public String getOther() {
 		return other;
 	}
@@ -1017,7 +1240,22 @@ public class Physicalexam {
 		this.other = other;
 	}
 
-	
+	public String getOtherright() {
+		return otherright;
+	}
+
+	public void setOtherright(String otherright) {
+		this.otherright = otherright;
+	}
+
+	public String getOtherleft() {
+		return otherleft;
+	}
+
+	public void setOtherleft(String otherleft) {
+		this.otherleft = otherleft;
+	}
+
 	public String getDeltoidright() {
 		return deltoidright;
 	}
@@ -1162,76 +1400,204 @@ public class Physicalexam {
 		this.tricepleft = tricepleft;
 	}
 
-	public String getHighshoulder() {
-		return highshoulder;
+	public String getHighshoulderright() {
+		return highshoulderright;
 	}
 
-	public void setHighshoulder(String highshoulder) {
-		this.highshoulder = highshoulder;
+	public void setHighshoulderright(String highshoulderright) {
+		this.highshoulderright = highshoulderright;
 	}
 
-	public String getCurvature() {
-		return curvature;
+	public String getHighshoulderleft() {
+		return highshoulderleft;
 	}
 
-	public void setCurvature(String curvature) {
-		this.curvature = curvature;
+	public void setHighshoulderleft(String highshoulderleft) {
+		this.highshoulderleft = highshoulderleft;
 	}
 
-	public String getWinging() {
-		return winging;
+	public String getHighshouldernormal() {
+		return highshouldernormal;
 	}
 
-	public void setWinging(String winging) {
-		this.winging = winging;
+	public void setHighshouldernormal(String highshouldernormal) {
+		this.highshouldernormal = highshouldernormal;
 	}
 
-	public String getRibhump() {
-		return ribhump;
+	public String getCurvatureright() {
+		return curvatureright;
 	}
 
-	public void setRibhump(String ribhump) {
-		this.ribhump = ribhump;
+	public void setCurvatureright(String curvatureright) {
+		this.curvatureright = curvatureright;
 	}
 
-	public String getChestmeasure() {
-		return chestmeasure;
+	public String getCurvatureleft() {
+		return curvatureleft;
 	}
 
-	public void setChestmeasure(String chestmeasure) {
-		this.chestmeasure = chestmeasure;
+	public void setCurvatureleft(String curvatureleft) {
+		this.curvatureleft = curvatureleft;
 	}
 
-	public String getKyphosis() {
-		return kyphosis;
+	public String getCurvaturenormal() {
+		return curvaturenormal;
 	}
 
-	public void setKyphosis(String kyphosis) {
-		this.kyphosis = kyphosis;
+	public void setCurvaturenormal(String curvaturenormal) {
+		this.curvaturenormal = curvaturenormal;
 	}
 
-	public String getPara() {
-		return para;
+	public String getWingingright() {
+		return wingingright;
 	}
 
-	public void setPara(String para) {
-		this.para = para;
+	public void setWingingright(String wingingright) {
+		this.wingingright = wingingright;
 	}
 
-	public String getRibs() {
-		return ribs;
+	public String getWingingleft() {
+		return wingingleft;
 	}
 
-	public void setRibs(String ribs) {
-		this.ribs = ribs;
+	public void setWingingleft(String wingingleft) {
+		this.wingingleft = wingingleft;
 	}
 
-	public String getVerte() {
-		return verte;
+	public String getWingingnormal() {
+		return wingingnormal;
 	}
 
-	public void setVerte(String verte) {
-		this.verte = verte;
+	public void setWingingnormal(String wingingnormal) {
+		this.wingingnormal = wingingnormal;
+	}
+
+	public String getRibhumpright() {
+		return ribhumpright;
+	}
+
+	public void setRibhumpright(String ribhumpright) {
+		this.ribhumpright = ribhumpright;
+	}
+
+	public String getRibhumpleft() {
+		return ribhumpleft;
+	}
+
+	public void setRibhumpleft(String ribhumpleft) {
+		this.ribhumpleft = ribhumpleft;
+	}
+
+	public String getRibhumpnormal() {
+		return ribhumpnormal;
+	}
+
+	public void setRibhumpnormal(String ribhumpnormal) {
+		this.ribhumpnormal = ribhumpnormal;
+	}
+
+	public String getChestmeasurein() {
+		return chestmeasurein;
+	}
+
+	public void setChestmeasurein(String chestmeasurein) {
+		this.chestmeasurein = chestmeasurein;
+	}
+
+	public String getChestmeasureex() {
+		return chestmeasureex;
+	}
+
+	public void setChestmeasureex(String chestmeasureex) {
+		this.chestmeasureex = chestmeasureex;
+	}
+
+	public String getKyphosishyper() {
+		return kyphosishyper;
+	}
+
+	public void setKyphosishyper(String kyphosishyper) {
+		this.kyphosishyper = kyphosishyper;
+	}
+
+	public String getKyphosishypo() {
+		return kyphosishypo;
+	}
+
+	public void setKyphosishypo(String kyphosishypo) {
+		this.kyphosishypo = kyphosishypo;
+	}
+
+	public String getKyphosisnormal() {
+		return kyphosisnormal;
+	}
+
+	public void setKyphosisnormal(String kyphosisnormal) {
+		this.kyphosisnormal = kyphosisnormal;
+	}
+
+	public String getParapain() {
+		return parapain;
+	}
+
+	public void setParapain(String parapain) {
+		this.parapain = parapain;
+	}
+
+	public String getParaspasm() {
+		return paraspasm;
+	}
+
+	public void setParaspasm(String paraspasm) {
+		this.paraspasm = paraspasm;
+	}
+
+	public String getParaedema() {
+		return paraedema;
+	}
+
+	public void setParaedema(String paraedema) {
+		this.paraedema = paraedema;
+	}
+
+	public String getParatriggerpoint() {
+		return paratriggerpoint;
+	}
+
+	public void setParatriggerpoint(String paratriggerpoint) {
+		this.paratriggerpoint = paratriggerpoint;
+	}
+
+	public String getRibspost() {
+		return ribspost;
+	}
+
+	public void setRibspost(String ribspost) {
+		this.ribspost = ribspost;
+	}
+
+	public String getRibsnor() {
+		return ribsnor;
+	}
+
+	public void setRibsnor(String ribsnor) {
+		this.ribsnor = ribsnor;
+	}
+
+	public String getVertefix() {
+		return vertefix;
+	}
+
+	public void setVertefix(String vertefix) {
+		this.vertefix = vertefix;
+	}
+
+	public String getVertenofix() {
+		return vertenofix;
+	}
+
+	public void setVertenofix(String vertenofix) {
+		this.vertenofix = vertenofix;
 	}
 
 	public String getThoracicnormal() {
@@ -1434,89 +1800,20 @@ public class Physicalexam {
 		this.thot1 = thot1;
 	}
 
-		public String getThot4() {
-		return thot4;
-	}
-
-	public void setThot4(String thot4) {
-		this.thot4 = thot4;
-	}
-
-	
-
-	public String getThot10() {
-		return thot10;
-	}
-
-	public void setThot10(String thot10) {
-		this.thot10 = thot10;
-	}
-
-	
-
-	public String getThoother() {
-		return thoother;
-	}
-
-	public void setThoother(String thoother) {
-		this.thoother = thoother;
-	}
-
-	
-	public String getC5check() {
-		return c5check;
-	}
-
-	public void setC5check(String c5check) {
-		this.c5check = c5check;
-	}
-
-	public String getC6check() {
-		return c6check;
-	}
-
-	public void setC6check(String c6check) {
-		this.c6check = c6check;
-	}
-
-	public String getC7check() {
-		return c7check;
-	}
-
-	public void setC7check(String c7check) {
-		this.c7check = c7check;
-	}
-
-	public String getC8check() {
-		return c8check;
-	}
-
-	public void setC8check(String c8check) {
-		this.c8check = c8check;
-	}
-
-	public String getT1check() {
-		return t1check;
-	}
-
-	public void setT1check(String t1check) {
-		this.t1check = t1check;
-	}
-
-	public String getOthercheck() {
-		return othercheck;
-	}
-
-	public void setOthercheck(String othercheck) {
-		this.othercheck = othercheck;
-	}
-
 	public String getThot1check() {
 		return thot1check;
 	}
 
 	public void setThot1check(String thot1check) {
 		this.thot1check = thot1check;
+	}
+
+	public String getThot4() {
+		return thot4;
+	}
+
+	public void setThot4(String thot4) {
+		this.thot4 = thot4;
 	}
 
 	public String getThot4check() {
@@ -1527,12 +1824,28 @@ public class Physicalexam {
 		this.thot4check = thot4check;
 	}
 
+	public String getThot10() {
+		return thot10;
+	}
+
+	public void setThot10(String thot10) {
+		this.thot10 = thot10;
+	}
+
 	public String getThot10check() {
 		return thot10check;
 	}
 
 	public void setThot10check(String thot10check) {
 		this.thot10check = thot10check;
+	}
+
+	public String getThoother() {
+		return thoother;
+	}
+
+	public void setThoother(String thoother) {
+		this.thoother = thoother;
 	}
 
 	public String getThoothercheck() {
@@ -1551,84 +1864,252 @@ public class Physicalexam {
 		this.myotomes = myotomes;
 	}
 
-	public String getPositive() {
-		return positive;
+	public String getPositiveruq() {
+		return positiveruq;
 	}
 
-	public void setPositive(String positive) {
-		this.positive = positive;
+	public void setPositiveruq(String positiveruq) {
+		this.positiveruq = positiveruq;
 	}
 
-	public String getHighcrest() {
-		return highcrest;
+	public String getPositiveluq() {
+		return positiveluq;
 	}
 
-	public void setHighcrest(String highcrest) {
-		this.highcrest = highcrest;
+	public void setPositiveluq(String positiveluq) {
+		this.positiveluq = positiveluq;
 	}
 
-	public String getHighpsis() {
-		return highpsis;
+	public String getPositiverlq() {
+		return positiverlq;
 	}
 
-	public void setHighpsis(String highpsis) {
-		this.highpsis = highpsis;
+	public void setPositiverlq(String positiverlq) {
+		this.positiverlq = positiverlq;
 	}
 
-	public String getCurve() {
-		return curve;
+	public String getPositivellq() {
+		return positivellq;
 	}
 
-	public void setCurve(String curve) {
-		this.curve = curve;
+	public void setPositivellq(String positivellq) {
+		this.positivellq = positivellq;
 	}
 
-	public String getLordosis() {
-		return lordosis;
+	public String getHighcrestright() {
+		return highcrestright;
 	}
 
-	public void setLordosis(String lordosis) {
-		this.lordosis = lordosis;
+	public void setHighcrestright(String highcrestright) {
+		this.highcrestright = highcrestright;
 	}
 
-	public String getParaspinal() {
-		return paraspinal;
+	public String getHighcrestleft() {
+		return highcrestleft;
 	}
 
-	public void setParaspinal(String paraspinal) {
-		this.paraspinal = paraspinal;
+	public void setHighcrestleft(String highcrestleft) {
+		this.highcrestleft = highcrestleft;
 	}
 
-	public String getQuad() {
-		return quad;
+	public String getHighcrestnormal() {
+		return highcrestnormal;
 	}
 
-	public void setQuad(String quad) {
-		this.quad = quad;
+	public void setHighcrestnormal(String highcrestnormal) {
+		this.highcrestnormal = highcrestnormal;
 	}
 
-	public String getHamstring() {
-		return hamstring;
+	public String getHighpsisright() {
+		return highpsisright;
 	}
 
-	public void setHamstring(String hamstring) {
-		this.hamstring = hamstring;
+	public void setHighpsisright(String highpsisright) {
+		this.highpsisright = highpsisright;
 	}
 
-	public String getVer() {
-		return ver;
+	public String getHighpsisleft() {
+		return highpsisleft;
 	}
 
-	public void setVer(String ver) {
-		this.ver = ver;
+	public void setHighpsisleft(String highpsisleft) {
+		this.highpsisleft = highpsisleft;
 	}
 
-	public String getAbdomen() {
-		return abdomen;
+	public String getHighpsisnormal() {
+		return highpsisnormal;
 	}
 
-	public void setAbdomen(String abdomen) {
-		this.abdomen = abdomen;
+	public void setHighpsisnormal(String highpsisnormal) {
+		this.highpsisnormal = highpsisnormal;
+	}
+
+	public String getCurveright() {
+		return curveright;
+	}
+
+	public void setCurveright(String curveright) {
+		this.curveright = curveright;
+	}
+
+	public String getCurveleft() {
+		return curveleft;
+	}
+
+	public void setCurveleft(String curveleft) {
+		this.curveleft = curveleft;
+	}
+
+	public String getCurvenormal() {
+		return curvenormal;
+	}
+
+	public void setCurvenormal(String curvenormal) {
+		this.curvenormal = curvenormal;
+	}
+
+	public String getLordosishyper() {
+		return lordosishyper;
+	}
+
+	public void setLordosishyper(String lordosishyper) {
+		this.lordosishyper = lordosishyper;
+	}
+
+	public String getLordosishypo() {
+		return lordosishypo;
+	}
+
+	public void setLordosishypo(String lordosishypo) {
+		this.lordosishypo = lordosishypo;
+	}
+
+	public String getLordosisnormal() {
+		return lordosisnormal;
+	}
+
+	public void setLordosisnormal(String lordosisnormal) {
+		this.lordosisnormal = lordosisnormal;
+	}
+
+	public String getParaspinalpain() {
+		return paraspinalpain;
+	}
+
+	public void setParaspinalpain(String paraspinalpain) {
+		this.paraspinalpain = paraspinalpain;
+	}
+
+	public String getParaspinalspasm() {
+		return paraspinalspasm;
+	}
+
+	public void setParaspinalspasm(String paraspinalspasm) {
+		this.paraspinalspasm = paraspinalspasm;
+	}
+
+	public String getParaspinaledema() {
+		return paraspinaledema;
+	}
+
+	public void setParaspinaledema(String paraspinaledema) {
+		this.paraspinaledema = paraspinaledema;
+	}
+
+	public String getParaspinaltp() {
+		return paraspinaltp;
+	}
+
+	public void setParaspinaltp(String paraspinaltp) {
+		this.paraspinaltp = paraspinaltp;
+	}
+
+	public String getQuadrl() {
+		return quadrl;
+	}
+
+	public void setQuadrl(String quadrl) {
+		this.quadrl = quadrl;
+	}
+
+	public String getQuadtono() {
+		return quadtono;
+	}
+
+	public void setQuadtono(String quadtono) {
+		this.quadtono = quadtono;
+	}
+
+	public String getQuadnor() {
+		return quadnor;
+	}
+
+	public void setQuadnor(String quadnor) {
+		this.quadnor = quadnor;
+	}
+
+	public String getHamstringrl() {
+		return hamstringrl;
+	}
+
+	public void setHamstringrl(String hamstringrl) {
+		this.hamstringrl = hamstringrl;
+	}
+
+	public String getHamstringtono() {
+		return hamstringtono;
+	}
+
+	public void setHamstringtono(String hamstringtono) {
+		this.hamstringtono = hamstringtono;
+	}
+
+	public String getHamstringnor() {
+		return hamstringnor;
+	}
+
+	public void setHamstringnor(String hamstringnor) {
+		this.hamstringnor = hamstringnor;
+	}
+
+	public String getVerfix() {
+		return verfix;
+	}
+
+	public void setVerfix(String verfix) {
+		this.verfix = verfix;
+	}
+
+	public String getVernofix() {
+		return vernofix;
+	}
+
+	public void setVernofix(String vernofix) {
+		this.vernofix = vernofix;
+	}
+
+	public String getAbdomentender() {
+		return abdomentender;
+	}
+
+	public void setAbdomentender(String abdomentender) {
+		this.abdomentender = abdomentender;
+	}
+
+	public String getAbdomenpulse() {
+		return abdomenpulse;
+	}
+
+	public void setAbdomenpulse(String abdomenpulse) {
+		this.abdomenpulse = abdomenpulse;
+	}
+
+	public String getAbdomenascites() {
+		return abdomenascites;
+	}
+
+	public void setAbdomenascites(String abdomenascites) {
+		this.abdomenascites = abdomenascites;
 	}
 
 	public String getLumflexnormal() {
@@ -1967,15 +2448,8 @@ public class Physicalexam {
 		this.babinskileft = babinskileft;
 	}
 
-	public String getTrapezius() {
-		return trapezius;
-	}
+}
 
-	public void setTrapezius(String trapezius) {
-		this.trapezius = trapezius;
-	}
-		
-		
-	}
-			
-			
+
+	
+				

@@ -62,9 +62,9 @@
     	<property name="dataSource" ref="dataSource" />
     </bean>
 
-<bean id="RadiologicReportDAO" class="bephit.dao.RadiologicReportDAO">
+ <bean id="RadiologicReportDAO" class="bephit.dao.RadiologicReportDAO">
     	<property name="dataSource" ref="dataSource" />
     </bean>
-
+ 
  
 </beans>

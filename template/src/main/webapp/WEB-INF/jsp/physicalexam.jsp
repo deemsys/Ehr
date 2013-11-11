@@ -204,37 +204,37 @@
 				                 
 				                  <tr class="row1">
 				                  <td>Head Tilt:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="headtilt" value="Right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="headtilt" value="Left">Left</td>
-				                  <td class="input_txt"><input type="checkbox" name="headtilt" value="Normal">Normal</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="headtiltright" value="Right">Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="headtiltleft" value="Left">Left</td>
+				                  <td class="input_txt"><input type="checkbox" name="headtiltnormal" value="Normal">Normal</td>
 				                 
 				                  </tr>
 				                  <tr class="row1">
 				                  <td>Rotation:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="rotation" value="Right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="rotation" value="Left">Left</td>
-				                  <td class="input_txt"><input type="checkbox" name="rotation" value="Normal">Normal</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="rotationright" value="Right">Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="rotationleft" value="Left">Left</td>
+				                  <td class="input_txt"><input type="checkbox" name="rotationnormal" value="Normal">Normal</td>
 				                 
 				                  </tr>
 				                   <tr class="row1">
 				                   <td>TMJ Syndrome:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="tmj" value="Right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="tmj" value="Left">Left</td>
-				                  <td class="input_txt"><input type="checkbox" name="tmj" value="Normal">Normal</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="tmjright" value="Right">Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="tmjleft" value="Left">Left</td>
+				                  <td class="input_txt"><input type="checkbox" name="tmjnormal" value="Normal">Normal</td>
 				                 
 				                  </tr>
 				                   <tr class="row1">
 				                   <td>High Shoulder:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="high" value="Right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="high" value="Left">Left</td>
-				                  <td class="input_txt"><input type="checkbox" name="high" value="Normal">Normal</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="highright" value="Right">Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="highleft" value="Left">Left</td>
+				                  <td class="input_txt"><input type="checkbox" name="highnormal" value="Normal">Normal</td>
 				                 
 				                  </tr>
 				                   <tr class="row1">
 				                   <td>Lordosis:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="lord" value="Hyper">Hyper</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="lord" value="Hypo">Hypo</td>
-				                  <td class="input_txt"><input type="checkbox" name="lord" value="Normal">Normal</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="lordhyper" value="Hyper">Hyper</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="lordhypo" value="Hypo">Hypo</td>
+				                  <td class="input_txt"><input type="checkbox" name="lordnormal" value="Normal">Normal</td>
 				                 
 				                  </tr>
 				                
@@ -246,26 +246,26 @@
 				                  </tr>
 				                <tr class="row1">
 				                  <td>Lymph Nodes:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="lymph" value="Lymphedema">Lymphedema</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="lymph" value="Normal">Normal</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="lymphedema" value="Lymphedema">Lymphedema</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="lymphnorma" value="Normal">Normal</td>
 				                  </tr>
 				                   <tr class="row1">
 				                  <td>Paraspinal:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="paras" value="Pain">Pain</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="paras" value="Spasm">Spasm</td>
-				                  <td class="input_txt" align="left"> <input type="checkbox" name="paras" value="Edema">Edema</td>
-				                   <td class="input_txt" align="left"> <input type="checkbox" name="paras" value="TriggerPoint">TriggerPoint</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="paraspain" value="Pain">Pain</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="parasspasm" value="Spasm">Spasm</td>
+				                  <td class="input_txt" align="left"> <input type="checkbox" name="parasedema" value="Edema">Edema</td>
+				                   <td class="input_txt" align="left"> <input type="checkbox" name="parastriggerpont" value="TriggerPoint">TriggerPoint</td>
 				                  </tr>
 				                  <tr class="row1">
 				                  <td>Trapezius/SCM:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="trapezius" value="R-L">R-L</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="trapezius" value="Tonocity">Tonicity</td>
-				                  <td class="input_txt" align="left"> <input type="checkbox" name="trapezius" value="Normal">Normal</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="trapeziusrl" value="R-L">R-L</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="trapeziustono" value="Tonocity">Tonicity</td>
+				                  <td class="input_txt" align="left"> <input type="checkbox" name="trapeziusnormal" value="Normal">Normal</td>
 				                  </tr>
 				                  <tr class="row1">
 				                  <td>Vertebrae:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="vertebrae" value="Fixations">Fixations</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="vertebrae" value="No_fixations">No Fixations</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="vertebraefix" value="Fixations">Fixations</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="vertebraenofix" value="No_fixations">No Fixations</td>
 				                  </tr>
 				                  </table>
 				               <table border="0">
@@ -339,38 +339,38 @@
 				                <tr class="row1">
 				                   <td>C-5:</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="c5" /></td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="c5check" value="c5right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="c5check" value="c5left">Left</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="c5right" value="Right">Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="c5left" value="Left">Left</td>
 				                  </tr>
 				                <tr class="row1">
 				                   <td>C-6:</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="c6" /></td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="c6check" value="c6right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="c6check" value="c6left">Left</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="c6right" value="Right">Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="c6left" value="Left">Left</td>
 				                  </tr>
 				                  <tr class="row1">
 				                   <td>C-7:</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="c7" /></td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="c7check" value="c7right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="c7check" value="c7left">Left</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="c7right" value="Right">Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="c7left" value="Left">Left</td>
 				                  </tr>
 				                  <tr class="row1">
 				                   <td>C-8:</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="c8" /></td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="c8check" value="c8right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="c8check" value="c8left">Left</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="c8right" value="Right">Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="c8left" value="Left">Left</td>
 				                  </tr>
 				                  <tr class="row1">
 				                   <td>T-1:</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="t1" /></td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="t1right" value="t1right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="t1left" value="t1left">Left</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="t1right" value="Right">Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="t1left" value="Left">Left</td>
 				                  </tr>
 				                  <tr class="row1">
 				                   <td>Other:</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="other" /></td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="othercheck" value="otherright">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="othercheck" value="otherleft">Left</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="otherright" value="Right">Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="otherleft" value="Left">Left</td>
 				                  </tr>
 				       </table>
 				       
@@ -612,43 +612,43 @@
 				                  </tr>
 				                 <tr class="row1">
 				                  <td>High Shoulder:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="highshoulder" value="Right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="highshoulder" value="Left">Left</td>
-				                  <td class="input_txt"><input type="checkbox" name="highshoulder" value="Normal">Normal</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="highshoulderright" value="Right">Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="highshoulderleft" value="Left">Left</td>
+				                  <td class="input_txt"><input type="checkbox" name="highshouldernormal" value="Normal">Normal</td>
 				                 
 				                  </tr>
 				                  <tr class="row1">
 				                  <td>Curvature:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="curvature" value="Right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="curvature" value="Left">Left</td>
-				                  <td class="input_txt"><input type="checkbox" name="curvature" value="Normal">Normal</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="curvatureright" value="Right">Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="curvatureleft" value="Left">Left</td>
+				                  <td class="input_txt"><input type="checkbox" name="curvaturenormal" value="Normal">Normal</td>
 				                 
 				                  </tr>
 				                   <tr class="row1">
 				                   <td>Winging:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="winging" value="Right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="winging" value="Left">Left</td>
-				                  <td class="input_txt"><input type="checkbox" name="winging" value="Normal">Normal</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="wingingright" value="Right">Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="wingingleft" value="Left">Left</td>
+				                  <td class="input_txt"><input type="checkbox" name="wingingnormal" value="Normal">Normal</td>
 				                 
 				                  </tr>
 				                   <tr class="row1">
 				                   <td>Rib Hump:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="ribhump" value="Right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="ribhump" value="Left">Left</td>
-				                  <td class="input_txt"><input type="checkbox" name="ribhump" value="Normal">Normal</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="ribhumpright" value="Right">Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="ribhumpleft" value="Left">Left</td>
+				                  <td class="input_txt"><input type="checkbox" name="ribhumpnormal" value="Normal">Normal</td>
 				                 
 				                  </tr>
 				                   <tr class="row1">
 				                   <td>Chest Measure:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="chestmeasure" value="Inhale">Inhale</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="chestmeasure" value="Exhale">Exhale</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="chestmeasurein" value="Inhale">Inhale</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="chestmeasureex" value="Exhale">Exhale</td>
 				                  
 				                  </tr>
 				                  <tr class="row1">
 				                   <td>kyphosis:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="kyphosis" value="Hyper">Hyper</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="kyphosis" value="Hypo">Hypo</td>
-				                  <td class="input_txt"><input type="checkbox" name="kyphosis" value="Normal">Normal</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="kyphosishyper" value="Hyper">Hyper</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="kyphosishypo" value="Hypo">Hypo</td>
+				                  <td class="input_txt"><input type="checkbox" name="kyphosisnormal" value="Normal">Normal</td>
 				                 
 				                  </tr>
 				                
@@ -661,20 +661,20 @@
 				                  </tr>
 				                <tr class="row1">
 				                  <td>Paraspinal:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="para" value="Pain">Pain</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="para" value="Spasm">Spasm</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="para" value="Edema">Edema</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="para" value="TriggerPoint">TriggerPoint</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="parapain" value="Pain">Pain</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="paraspasm" value="Spasm">Spasm</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="paraedema" value="Edema">Edema</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="paratriggerpoint" value="TriggerPoint">TriggerPoint</td>
 				                  </tr> 
 				                  <tr class="row1">
 				                  <td>Ribs:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="ribs" value="Posterior">Posterior</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="ribs" value="Normal">Normal</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="ribspost" value="Posterior">Posterior</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="ribsnor" value="Normal">Normal</td>
 				                 </tr>
 				                   <tr class="row1">
 				                  <td>Vertebrae:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="verte" value="Fixation">Fixations</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="verte" value="No_Fixation">No Fixations</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="vertefix" value="Fixation">Fixations</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="vertenofix" value="No_Fixation">No Fixations</td>
 				                  </tr>
 				                  </table>
 				                   <table border="0">
@@ -782,10 +782,10 @@
 				                  <div id="positive">
 				                   <table border="0">
 				                   <tr class="row1">
-				                    <td><input type="checkbox" name="positive" value="RUQ">RUQ</td>
-				                    <td><input type="checkbox" name="positive" value="LUQ">LUQ</td>
-				                    <td><input type="checkbox" name="positive" value="RLQ">RLQ</td>
-				                    <td><input type="checkbox" name="positive" value="LLQ">LLQ</td>
+				                    <td><input type="checkbox" name="positiveruq" value="RUQ">RUQ</td>
+				                    <td><input type="checkbox" name="positiveluq" value="LUQ">LUQ</td>
+				                    <td><input type="checkbox" name="positiverlq" value="RLQ">RLQ</td>
+				                    <td><input type="checkbox" name="positivellq" value="LLQ">LLQ</td>
 				                   </tr>
 				                   </table>
 				                 </div>
@@ -823,29 +823,29 @@
 				               </tr>
 				                 <tr class="row1">
 				                  <td>High Crest:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="highcrest" value="Right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="highcrest" value="Left">Left</td>
-				                  <td class="input_txt"><input type="checkbox" name="highcrest" value="Normal">Normal</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="highcrestright" value="Right">Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="highcrestleft" value="Left">Left</td>
+				                  <td class="input_txt"><input type="checkbox" name="highcrestnormal" value="Normal">Normal</td>
 				                 
 				                  </tr>
 				                  <tr class="row1">
 				                  <td>High PSIS:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="highpsis" value="Right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="highpsis" value="Left">Left</td>
-				                  <td class="input_txt"><input type="checkbox" name="highpsis" value="Normal">Normal</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="highpsisright" value="Right">Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="highpsisleft" value="Left">Left</td>
+				                  <td class="input_txt"><input type="checkbox" name="highpsisnormal" value="Normal">Normal</td>
 				                 
 				                  </tr>
 				                   <tr class="row1">
 				                   <td>Curvature:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="curve" value="Right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="curve" value="Left">Left</td>
-				                  <td class="input_txt"><input type="checkbox" name="curve" value="Normal">Normal</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="curveright" value="Right">Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="curveleft" value="Left">Left</td>
+				                  <td class="input_txt"><input type="checkbox" name="curvenormal" value="Normal">Normal</td>
 				                 </tr>
 				                 <tr class="row1">
 				                   <td>Lordosis:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="lordosis" value="Hyper">Hyper</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="lordosis" value="Hypo">Hypo</td>
-				                  <td class="input_txt"><input type="checkbox" name="lordosis" value="Normal">Normal</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="lordosishyper" value="Hyper">Hyper</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="lordosishypo" value="Hypo">Hypo</td>
+				                  <td class="input_txt"><input type="checkbox" name="lordosisnormal" value="Normal">Normal</td>
 				                 
 				                  </tr>
 				                  </table>
@@ -857,33 +857,33 @@
 				                  </tr>
 				                <tr class="row1">
 				                  <td>Paraspinal:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="paraspinal" value="Pain">Pain</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="paraspinal" value="Spasm">Spasm</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="paraspinal" value="Edema">Edema</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="paraspinal" value="TriggerPoint">TriggerPoint</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="paraspinalpain" value="Pain">Pain</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="paraspinalspasm" value="Spasm">Spasm</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="paraspinaledema" value="Edema">Edema</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="paraspinaltp" value="TriggerPoint">TriggerPoint</td>
 				                  </tr> 
 				                   <tr class="row1">
 				                  <td>Quadratus Lumborum:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="quad" value="R-L">R-L</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="quad" value="Tonicity">Tonicity</td>
-				                  <td class="input_txt" align="left"> <input type="checkbox" name="quad" value="Normal">Normal</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="quadrl" value="R-L">R-L</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="quadtono" value="Tonicity">Tonicity</td>
+				                  <td class="input_txt" align="left"> <input type="checkbox" name="quadnor" value="Normal">Normal</td>
 				                  </tr>
 				                  <tr class="row1">
 				                  <td>Hamstring:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="hamstring" value="R-L">R-L</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="hamstring" value="Tonicity">Tonicity</td>
-				                  <td class="input_txt" align="left"> <input type="checkbox" name="hamstring" value="Normal">Normal</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="hamstringrl" value="R-L">R-L</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="hamstringtono" value="Tonicity">Tonicity</td>
+				                  <td class="input_txt" align="left"> <input type="checkbox" name="hamstringnor" value="Normal">Normal</td>
 				                  </tr>
 				                  <tr class="row1">
 				                  <td>Vertebrae:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="ver" value="Fixations">Fixations</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="ver" value="No_Fixations">No Fixations</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="verfix" value="Fixations">Fixations</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="vernofix" value="No_Fixations">No Fixations</td>
 				                  </tr>
 				                  <tr class="row1">
 				                  <td>Abdomen:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="abdomen" value="Tender">Tender</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="abdomen" value="Pulsations">Pulsations</td>
-				                  <td class="input_txt" align="left"> <input type="checkbox" name="abdomen" value="Ascites">Ascites</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="abdomentender" value="Tender">Tender</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="abdomenpulse" value="Pulsations">Pulsations</td>
+				                  <td class="input_txt" align="left"> <input type="checkbox" name="abdomenascites" value="Ascites">Ascites</td>
 				                  </tr>
 				                  </table>
 				                   <table border="0">
