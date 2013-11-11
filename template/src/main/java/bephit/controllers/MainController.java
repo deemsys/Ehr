@@ -199,6 +199,8 @@ public class MainController {
 	
 	@RequestMapping(value="/hamiltonchiropractic", method = RequestMethod.GET)
 	public String hamiltonchiropractic(ModelMap model) {
+	      return "hamiltinchiropractic";
+	}
 
 	
 	@RequestMapping(value="/hamiltonchiropractic", method = RequestMethod.POST)
@@ -263,14 +265,14 @@ public class MainController {
 	}
 	@RequestMapping(value="/radiologicreport", method = RequestMethod.POST)
 	public String insert_radiologicreport(@ModelAttribute("RadiologicReport")  @Valid RadiologicReport radiologicreport,BindingResult result,ModelMap model) {
-			/*if(result.hasErrors())
+			if(result.hasErrors())
 			{
 				RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
-				radiologicReportForm.setRadiologicReport(radiologicReportDAO.getRadiologicReport());
+				radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport());
 				model.addAttribute("RadiologicReportForm",radiologicReportForm);
 				model.addAttribute("Success","true");
 				return "radiologicreport";
-			}*/
+			}
 			
 			model.put("RadiologicReport", radiologicreport);
 			model.addAttribute("RadiologicReportForm",radiologicreport);
@@ -687,7 +689,7 @@ public class MainController {
 			return "treatform";
 		}
 		
-		model.addAttribute("TreatDetailsForm",treatdetails);
+		model.addAttribute("TreatForm",treatdetails);
 		int a=treatDAO.setTreatDetails(treatdetails);
          TreatForm treatform= new TreatForm();
 		treatform.setTreatform(treatDAO.getTreatDetails());
@@ -881,8 +883,8 @@ public class MainController {
 	public String viewtreatform(HttpServletRequest request,ModelMap model) {
 		
 
-		TreatDetailsForm treatdetailsform= new TreatDetailsForm();
-		treatdetailsform.setTreatDetails(treatDAO.getTreatDetails());
+		TreatForm treatdetailsform= new TreatForm();
+		treatdetailsform.setTreatform(treatDAO.getTreatDetails());
 		model.addAttribute("treatdetails",treatdetailsform);
 		TreatForm treatform= new TreatForm();
 		treatform.setTreatform(treatDAO.getTreatDetails());
