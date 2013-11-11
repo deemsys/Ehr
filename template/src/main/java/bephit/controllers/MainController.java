@@ -51,6 +51,8 @@ import bephit.forms.InsuranceplanForm;
 import bephit.forms.InsuranceverificationForm;
 import bephit.forms.MedicalRecordsForm;
 import bephit.forms.ParticipantsDetailsForm;
+
+
 import bephit.forms.PatientDetailsForm;
 
 import bephit.forms.PhysicalexamForm;
@@ -288,6 +290,47 @@ public class MainController {
 			return "radiologicreport";
 	 
 		}
+	@RequestMapping(value="/findPatients",method=RequestMethod.GET)
+	public String findPatients(HttpServletRequest request,ModelMap model)
+	{
+		
+		RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
+		
+		
+		radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport());
+		
+     
+       model.addAttribute("radiologicReportForm", radiologicReportForm);
+      
+		return "viewradiologicreport";
+		
+	}
+	@RequestMapping(value="/viewradiologicreport", method=RequestMethod.GET)
+	public String viewPatients(HttpServletRequest request,ModelMap model, Principal principal) {
+		 model.addAttribute("success","false");
+		//ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
+		  RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
+		 //participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
+		  radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport());
+		  //model.addAttribute("participantsDetailsForm", participantsDetailsForm);
+		  	model.addAttribute("radiologicReportForm", radiologicReportForm);
+        
+		return "viewradiologicreport";
+	}
+	@RequestMapping(value="/radiologicReportList", method=RequestMethod.GET)
+	public String radiologicreportlist(HttpServletRequest request,@RequestParam("id") String id,ModelMap model,RadiologicReport radiologic)
+	{
+		//ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
+		RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
+        //participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants(participants_id));
+		radiologicReportForm.setRadiologicReport(radioDAO.getParticipants(id));
+		//model.addAttribute("participantsDetailsForm", participantsDetailsForm);
+		model.addAttribute("radiologicReportForm", radiologicReportForm);
+		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
+		
+		return "radiologicReportList";
+	}
+	
 	@RequestMapping(value="/workaccident", method = RequestMethod.GET)
 	public String workaccident(ModelMap model) {
 		return "workaccident";
@@ -701,6 +744,7 @@ public class MainController {
  
 	}
 	
+		
 	
 	@RequestMapping(value="/treatminor", method = RequestMethod.POST)
 	public String insertminorDetails(@ModelAttribute("TreatMinor") @Valid TreatMinor minordetails,BindingResult result,ModelMap model) {

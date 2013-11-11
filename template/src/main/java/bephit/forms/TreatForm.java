@@ -6,15 +6,15 @@ import bephit.model.Treatform;
 
 public class TreatForm
 {
-	private List<Treatform> treatform;
+	private List<Treatform> treatdetails;
 	{
 		
 	}
 	public List<Treatform> getTreatform() {
-		return treatform;
+		return treatdetails;
 	}
-	public void setTreatform(List<Treatform> treatform) {
-		this.treatform = treatform;
+	public void setTreatform(List<Treatform> treatdetails) {
+		this.treatdetails = treatdetails;
 	}
 
 }
