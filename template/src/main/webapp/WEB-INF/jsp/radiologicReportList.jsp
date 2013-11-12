@@ -78,56 +78,77 @@
             
             <c:forEach items="${radiologicReportForm.radiologicReport}" var="radiologicReport" varStatus="status">
                    <tr class="row2">
-                  <td width="15%" valign="middle" align="left" > Views </td>
-                    <td width="1%" valign="middle" align="left" >  :</td>
-                  <td width="84%" valign="top" align="left" >${radiologicReport.views1}</td>
+                  <td> Views :</td>
+                     
+                   <td>${radiologicReport.views1}</td>
                 </tr>
                  <tr class="row1">
-                  <td width="15%" valign="middle" align="left" >  Negative for recent fracture, dislocation or gross Osteopathology : </td>
-                    <td width="1%" valign="middle" align="left" >  :</td>
-                  <td width="84%" valign="top" align="left" >${radiologicReport.negative_1}</td>
+                   <td>${radiologicReport.negative_1}</td>
                 </tr>
                  <tr class="row2">
-                  <td width="15%" valign="middle" align="left" > Positive for </td>
-                    <td width="1%" valign="middle" align="left" >  :</td>
-                  <td width="84%" valign="top" align="left" >${radiologicReport.positive_1} ${radiologicReport.positive_text1}</td>
+                  <td>${radiologicReport.positive_for} ${radiologicReport.positive_text1}</td>
                 </tr>
                  <tr class="row1">
-                  <td width="15%" valign="middle" align="left" >  Break in Georges line at: </td>
-                    <td width="1%" valign="middle" align="left" >  :</td>
-                  <td width="84%" valign="top" align="left" >${radiologicReport.break_1} ${radiologicReport.break_text1}</td>
+                  <td> ${radiologicReport.break_1}  ${radiologicReport.break_text1}</td>
                 </tr>
                  <tr class="row2">
-                  <td width="15%" valign="middle" align="left" > Views </td>
-                    <td width="1%" valign="middle" align="left" >  :</td>
-                  <td width="84%" valign="top" align="left" >${radiologicReport.views1}</td>
+                  <td> ${radiologicReport.adi_1}  </td>
+                </tr>
+                <tr class="row1">
+                  <td>${radiologicReport.hypolorodosis_1} </td>
+                  <td> ${radiologicReport.normalcurvature_1} </td>
+                  <td> ${radiologicReport.hyperlordosis_1} </td>
+                  <td>${radiologicReport.hyperlordosis_select1}</td>
+                </tr>
+                <tr class="row2">
+                  <td>${radiologicReport.mcGregorslinenormal_1} </td>
+                   <td> ${radiologicReport.mcGregorslineinterupted_1}</td>  
+                    <td>${radiologicReport.degenerativejointdisease_1}  </td>
+                  <td> ${radiologicReport.degenerativejointdisease_select1} </td>
                 </tr>
                  <tr class="row1">
-                  <td width="15%" valign="middle" align="left" >  Negative for recent fracture, dislocation or gross Osteopathology : </td>
-                    <td width="1%" valign="middle" align="left" >  :</td>
-                  <td width="84%" valign="top" align="left" >${radiologicReport.negative_1}</td>
+                  <td>${radiologicReport.mild_1} </td>
+                  <td> ${radiologicReport.moderate_1}  </td>
+                  <td>  ${radiologicReport.severe_1}</td>
                 </tr>
-                 <tr class="row2">
-                  <td width="15%" valign="middle" align="left" > Views </td>
-                    <td width="1%" valign="middle" align="left" >  :</td>
-                  <td width="84%" valign="top" align="left" >${radiologicReport.views1}</td>
+                <tr class="row2">
+                  <td> ${radiologicReport.narrowed_1}  ${radiologicReport.narrowed_text1}</td>
+                    
+                  <td>${radiologicReport.anterior_1}  ${radiologicReport.anterior_text1}  </td>
+                </tr> <tr class="row1">
+                  <td> ${radiologicReport.subchondral_1}  ${radiologicReport.subchondral_text1} </td>
+                  <td>${radiologicReport.schmorls_1} ${radiologicReport.schmorls_text1}</td>
+                  
                 </tr>
-                 <tr class="row1">
-                  <td width="15%" valign="middle" align="left" >  Negative for recent fracture, dislocation or gross Osteopathology : </td>
-                    <td width="1%" valign="middle" align="left" >  :</td>
-                  <td width="84%" valign="top" align="left" >${radiologicReport.negative_1}</td>
+                <tr class="row2">
+                  <td>  ${radiologicReport.foraminal_1} </td>
+                    
+                  <td> ${radiologicReport.foraminal_select1} </td>
+                </tr> <tr class="row1">
+                  <td>${radiologicReport.osteoporosis_1} </td>
+                  
+                  <td>  ${radiologicReport.osteoporosis_select1}</td>
                 </tr>
-                 <tr class="row2">
-                  <td width="15%" valign="middle" align="left" > Views </td>
-                    <td width="1%" valign="middle" align="left" >  :</td>
-                  <td width="84%" valign="top" align="left" >${radiologicReport.views1}</td>
+                <tr class="row2">
+                  <td>  ${radiologicReport.decreasedFlexExt_1} </td>
+                   <td> ${radiologicReport.decreasedFlexExt_select1} </td>
+                  
+                  <td>${radiologicReport.decreasedRLFlex_1}</td>
+                  <td>${radiologicReport.decreasedRLFlex_select1}</td>
+                </tr> <tr class="row1">
+                  <td> ${radiologicReport.dextro_Levoscoliosis_towering_select1}</td>
+                  
+                  <td>  ${radiologicReport.mild_11}  ${radiologicReport.moderate_11}  ${radiologicReport.severe_11}</td>
                 </tr>
-                 <tr class="row1">
-                  <td width="15%" valign="middle" align="left" >  Negative for recent fracture, dislocation or gross Osteopathology : </td>
-                    <td width="1%" valign="middle" align="left" >  :</td>
-                  <td width="84%" valign="top" align="left" >${radiologicReport.negative_1}</td>
-                </tr>
+                <tr class="row2">
+                  <td>  ${radiologicReport.apexat_1}  ${radiologicReport.apexat_text1} </td>
+                    
+                  <td>${radiologicReport.softtissueedemaof_1}  ${radiologicReport.softtissueedemaof_text1}  </td>
+                </tr> <tr class="row1">
+                  <td> ${radiologicReport.other_1}  ${radiologicReport.other_text1}</td>
                 
+                </tr>
+               
   
                 </c:forEach>
                </table>
@@ -135,35 +156,210 @@
                </div>
                </td>
                </tr>
-                
-              
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-              </table>
-          
-            </div>
-          </div>
-          </td>
+                </table>
+               </div>
+               </div>
+               
+              <div id="tabs-2"> 
+   		 <div id="right_content">
+    <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
+      <tr>
+        <td valign="top" align="left" style="padding:5px 0 10px 0;"></td>
       </tr>
-      </table>
-      </div>
-</form>
-
-
-
-                <jsp:include page="footer.jsp"></jsp:include>
+      <tr>
+        <td valign="top" align="left"><div>
+            <div class="headings altheading">
+              <h2>Thoracic Spine</h2>
+            </div>
+            <div class="contentbox">
+              <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            
+            <c:forEach items="${radiologicReportForm.radiologicReport}" var="radiologicReport" varStatus="status">
+                   <tr class="row2">
+                 	 <td> Views :</td>
+                     <td>${radiologicReport.views2}</td>
+               	   </tr>
+                   <tr class="row1">
+                 	 <td>${radiologicReport.negative_2}</td>
+                     <td>${radiologicReport.hyperkyphosis_2}</td>
+                     <td>${radiologicReport.normalkyphosis_2}</td>
+                     <td>${radiologicReport.hypokyphosis_2}</td>
+               	   </tr>
+               	   <tr class="row2">
+                 	 <td> ${radiologicReport.degenerative_2} ${radiologicReport.degenerative_text2}</td>
+               	   </tr>
+               	    <tr class="row1">
+                   		 <td>${radiologicReport.mild_2}  ${radiologicReport.moderate_2}  ${radiologicReport.severe_2}</td>
+                   		 <td> ${radiologicReport.narrowed_2}   ${radiologicReport.narrowed_text2}</td>
+                   		 
+               	   </tr>
+               	   <tr class="row2">
+                 	 <td> ${radiologicReport.schmorlsnodesat_2}  ${radiologicReport.schmorlsnodesat_text2}</td>
+                     <td>${radiologicReport.anterior_2} ${radiologicReport.anterior_text2}</td>
+               	   </tr>
+               	    <tr class="row1">
+                 	 <td>${radiologicReport.subchondral_2}  ${radiologicReport.subchondral_text2}</td>
+                     <td>${radiologicReport.foraminal_2} ${radiologicReport.foraminal_text2}</td>
+               	   </tr>
+               	   <tr class="row2">
+                 	 <td> ${radiologicReport.osteoporosis_2}  </td>
+                     <td>${radiologicReport.osteoporosis_select2}</td>
+               	   </tr>
+               	    <tr class="row1">
+                 	 <td>${radiologicReport.dextro_Levoscoliosis_towering_select2}</td>
+                     <td>${radiologicReport.mild_22} ${radiologicReport.moderate_22}  ${radiologicReport.severe_22}</td>
+               	   </tr>
+               	   <tr class="row2">
+                 	 <td> ${radiologicReport.apexat_2}  ${radiologicReport.apexat_text2}</td>
+                     <td>${radiologicReport.softtissueedemaof_2} ${radiologicReport.softtissueedemaof_text2}</td>
+               	   </tr>
+               	    <tr class="row1">
+                 	 <td>${radiologicReport.other_2} ${radiologicReport.other_text2}</td>
+                    
+               	   </tr>
+               	  
+               	   
+            </c:forEach>
+                </table>
+                </div>
+                </div>
+                </td>
+                </tr>
+             	</table>
+             	</div>
+             	</div>
+             
+                
+               <div id="tabs-3"> 
+   		 <div id="right_content">
+    <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
+      <tr>
+        <td valign="top" align="left" style="padding:5px 0 10px 0;"></td>
+      </tr>
+      <tr>
+        <td valign="top" align="left"><div>
+            <div class="headings altheading">
+              <h2>Lumbar Spine</h2>
+            </div>
+            <div class="contentbox">
+              <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            
+            <c:forEach items="${radiologicReportForm.radiologicReport}" var="radiologicReport" varStatus="status">
+                   <tr class="row2">
+                 	 <td> Views :</td>
+                     <td>${radiologicReport.views3}</td>
+               	   </tr> 
+               	   <tr class="row1">
+                 	 <td>${radiologicReport.negative_3}</td>
+                     <td>${radiologicReport.break_3}  ${radiologicReport.break_text3}</td>
+               	   </tr>
+               	   <tr class="row2">
+                 	 <td>${radiologicReport.osteoporosis_3}</td>
+                     <td>${radiologicReport.osteoporosis_select3}</td>
+               	   </tr>   
+               	   <tr class="row1">
+                 	 <td>${radiologicReport.hyperkyphosis_3}  ${radiologicReport.normalkyphosis_3}  ${radiologicReport.hypokyphosis_3}  ${radiologicReport.hypokyphosos_select_3} </td>
+                     <td>${radiologicReport.degenerative_3}  ${radiologicReport.degenerative_select3}</td>
+               	   </tr>
+               	   <tr class="row2">
+                 	 <td> ${radiologicReport.mild_3}  ${radiologicReport.moderate_3}  ${radiologicReport.severe_3}</td>
+                     <td>${radiologicReport.narrowed_3}  ${radiologicReport.narrowed_text3}</td>
+               	   </tr>   
+               	   <tr class="row1">
+                 	 <td>${radiologicReport.anterior_3}  ${radiologicReport.anterior_text3} </td>
+                     <td>${radiologicReport.subchondral_3}  ${radiologicReport.subchondral_text3}</td>
+                     <td>${radiologicReport.schmorls_3}  ${radiologicReport.schmorls_text3}</td>
+               	   </tr>
+               	   <tr class="row2">
+                 	 <td>${radiologicReport.spondylolisthesisof_3} </td>
+                     <td>${radiologicReport.spondylolisthesisof_select3}</td>
+               	   </tr>   
+               	   <tr class="row1">
+                 	 <td> Other:</td>
+                     <td>${radiologicReport.other_text3}</td>
+                     <td>Grade:</td>
+                     <td>${radiologicReport.grade_3}</td>
+                     </tr>
+                    <tr class="row1">
+                 	 <td>${radiologicReport.decreasedRLF_3}  ${radiologicReport.decreasedLLF_3}  ${radiologicReport.facettropism_3}</td>
+                     <td>${radiologicReport.sacralization_3}  ${radiologicReport.lumbarization_3}</td>
+                    </tr>
+                    <tr class="row2">
+                 	 <td>${radiologicReport.dextro_Levoscoliosis_towering_select3}</td>
+                     <td>${radiologicReport.mild_33}  ${radiologicReport.moderate_33}  ${radiologicReport.severe_33}</td>
+                    </tr>
+                    <tr class="row1">
+                 	 <td>${radiologicReport.apexat_3}  ${radiologicReport.apexat_text3}</td>
+                     <td>${radiologicReport.softtissueedemaof_3}  ${radiologicReport.softtissueedemaof_text3}</td>
+                    </tr>
+                    <tr class="row2">
+                 	 <td>${radiologicReport.other_3}  ${radiologicReport.other_text33}</td>
+                    </tr>
+			</c:forEach>
+                   </table>
+                   </div>
+                   </div>
+                   </td>
+                   </tr>
+                   </table>
+                   </div>
+                   </div>
+                   
+                   
+                   
+                   
+                     <div id="tabs-4"> 
+   		 <div id="right_content">
+    <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
+      <tr>
+        <td valign="top" align="left" style="padding:5px 0 10px 0;"></td>
+      </tr>
+      <tr>
+        <td valign="top" align="left"><div>
+            <div class="headings altheading">
+              <h2>Extremities</h2>
+            </div>
+            <div class="contentbox">
+              <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            
+            <c:forEach items="${radiologicReportForm.radiologicReport}" var="radiologicReport" varStatus="status">
+                   <tr class="row2">
+                 	 <td> Views :</td>
+                     <td>${radiologicReport.views4}</td>
+               	   </tr> 
+               	    <tr class="row1">
+                 	
+                     <td>${radiologicReport.normal_4}</td>
+               	   </tr> 
+               	    <tr class="row2">
+                 
+                     <td>${radiologicReport.positivefor_4}</td>
+               	   </tr> 
+            </c:forEach>
+            </table>
+            </div>
+            </div>
+            </td>
+            </tr>
+            </table>
+            </div>
+            </div>
+              	   
+                   
+                   
+                   
+                   
+                   
+                   
+                   
+                   
+                   </div>
+                   </td>
+                 </tr>
+               </table>
+               </div>
+               </td>
+               </tr>
+               </table>
+               </form>
+               </html>

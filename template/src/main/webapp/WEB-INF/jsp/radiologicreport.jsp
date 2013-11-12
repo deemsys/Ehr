@@ -87,24 +87,24 @@
 											<option value="ext">Ext</option>
 				                   		</select>
 				                   		</td>
-				                   	<td valign="top" align="left" class="input_txt"> <input type="checkbox" value="negative_1">  Negative for recent fracture, dislocation or gross Osteopathology</td>
+				                   	<td valign="top" align="left" class="input_txt"> <input type="checkbox" value=" Negative_for_Osteopathology" name="negative_1">  Negative for recent fracture, dislocation or gross Osteopathology</td>
 				                  </tr> 
 				                   	 <tr class="row2">
 				             
-				                 <td class="input_txt" align="left"> <input type="checkbox" value="positive_1"> Positive for
+				                 <td class="input_txt" align="left"> <input type="checkbox" value="positive_for" name="positive_for"> Positive for
 				                 		<input type="text" class="input_txtbx1" id="inp_id" name="positive_text1" />
 				                 </td>
-				                 <td class="input_txt"><input type="checkbox" value="break_1"> Break in Georges line at 
+				                 <td class="input_txt"><input type="checkbox" name="break_1" value="Break_in_Georges"> Break in Georges line at 
 				           		        <input type="text" class="input_txtbx1" id="inp_id" name="break_text1" />
 				           		 </td>
-				           		 <td valign="top" align="left" class="input_txt"> <input type="checkbox" value="adi_1"> ADI more than 3mm</td>
+				           		 <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="adi_1" value="ADI_more_than_3mm"> ADI more than 3mm</td>
 				           		
 				                 
 				                  </tr>
 				                   <tr class="row1">
-				                 	 <td valign="top" align="left" class="input_txt"> <input type="checkbox" value="hypolordosis_1"> Hypolordosis</td>
-				                     <td valign="top" align="left" class="input_txt"> <input type="checkbox" value="normalcurvature_1"> Normal Curvature</td>    
-				                 	 <td valign="top" align="left" class="input_txt"> <input type="checkbox" value="hyperlordosis_1"> Hyperlordosis
+				                 	 <td valign="top" align="left" class="input_txt"> <input type="checkbox"name="hypolorodosis_1"value="Hypolordosis"> Hypolordosis</td>
+				                     <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="normalcurvature_1" value="Normal_Curvature"> Normal Curvature</td>    
+				                 	 <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="hyperlordosis_1" value="Hyperlordosis:"> Hyperlordosis
 				                 	 
 				                 	 
 				                 	 <select name="hyperlordosis_select1" class="input_cmbbx1">
@@ -118,9 +118,9 @@
 				                  </tr>
 				                                     
 				                   <tr class="row2">
-				                 	 <td valign="top" align="left" class="input_txt"> <input type="checkbox" value="mcGregorslinenormal_1"> McGregor's line normal</td>
-				                     <td valign="top" align="left" class="input_txt"> <input type="checkbox" value="mcGregorslineinterupted_1"> McGregor's line interupted more than 8-M or 10-F mm</td>    
-				                 	 <td valign="top" align="left" class="input_txt"> <input type="checkbox" value="degenerativejointdisease_1"> Degenerative joint disease at:
+				                 	 <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="mcGregorslinenormal_1"value="McGregors_line_normal"> McGregor's line normal</td>
+				                     <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="mcGregorslineinterupted_1" value="McGregors_line_interupted"> McGregor's line interupted more than 8-M or 10-F mm</td>    
+				                 	 <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="degenerativejointdisease_1" value="Degenerative_joint_disease_at:"> Degenerative joint disease at:
 				                 	 
 				                 	 
 				                 	 <select name="degenerativejointdisease_select1" class="input_cmbbx1">
@@ -134,27 +134,27 @@
 									</select>		
 									</td>               
 								 <tr class="row1">
-				                 	 <td valign="top" align="left" class="input_txt"> <input type="checkbox" value="mild_1"> Mild
-				                 	 												  <input type="checkbox" value="moderate_1"> Moderate
-				                 	 												  <input type="checkbox" value="severe_1"> Severe
+				                 	 <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="mild_1" value="Mild"> Mild
+				                 	 												  <input type="checkbox" name="moderate_1" value="Moderate"> Moderate
+				                 	 												  <input type="checkbox" name="severe_1" value="Severe"> Severe
 				                 	 </td> 
-				                 	  <td class="input_txt" align="left"> <input type="checkbox" value="narrowed_1"> Narrowed disc space at
+				                 	  <td class="input_txt" align="left"> <input type="checkbox" name="narrowed_1" value="Narrowed_disc_space_at"> Narrowed disc space at
 				                 		<input type="text" class="input_txtbx1" id="inp_id" name="narrowed_text1" />
 				                	 </td>
-				               	     <td class="input_txt" align="left"> <input type="checkbox" value="anterior_1"> Anterior vertebral body osteophytes at
+				               	     <td class="input_txt" align="left"> <input type="checkbox" name="anterior_1" value="Anterior_osteophytes_at"> Anterior vertebral body osteophytes at
 				                 		<input type="text" class="input_txtbx1" id="inp_id" name="anterior_text1" />
 				                 	 </td> 		
 				                 </tr>
 				                 <tr class="row2">
-				             			 <td class="input_txt" align="left"> <input type="checkbox" value="subchondral_1"> Subchondral sclerosis of
+				             			 <td class="input_txt" align="left"> <input type="checkbox" name="subchondral_1" value="Subchondral_sclerosis_of"> Subchondral sclerosis of
 				                 		<input type="text" class="input_txtbx1" id="inp_id" name="subchondral_text1" />
 				                	 </td>
-				                	 <td class="input_txt" align="left"> <input type="checkbox" value="schmorls_1"> Schmorl's nodes at:
+				                	 <td class="input_txt" align="left"> <input type="checkbox" name="schmorls_1" value="Schmorls_nodes_at:"> Schmorl's nodes at:
 				                 		<input type="text" class="input_txtbx1" id="inp_id" name="schmorls_text1" />
 				                	 </td>
 				                 </tr>
 				                 <tr class="row1">
-				                 	 <td valign="top" align="left" class="input_txt"> <input type="checkbox" value="foraminal_1"> Foraminal enchroachment between:
+				                 	 <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="foraminal_1" value="Foraminal_enchroachment_b/w:"> Foraminal enchroachment between:
 				                 	 
 				                 	 
 				                 	 <select name="foraminal_select1" class="input_cmbbx1">
@@ -167,7 +167,7 @@
 											<option value="C-7/T-1">C-7/T-1</option>
 									 </select>		
 									</td>               
-				                    <td valign="top" align="left" class="input_txt"> <input type="checkbox" value="osteoporosis_1"> Osteoporosis
+				                    <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="osteoporosis_1" value="Osteoporosis"> Osteoporosis
 				                 	 
 				                 	 
 				                 	 <select name="osteoporosis_select1" class="input_cmbbx1">
@@ -177,7 +177,7 @@
 											<option value="severe">Severe</option>
 									</select>		
 									</td> 
-									 <td valign="top" align="left" class="input_txt"> <input type="checkbox" value="decreasedFlexExt_1"> Decreased Flex/Ext
+									 <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="decreasedFlexExt_1" value="Decreased Flex/Ext:"> Decreased Flex/Ext
 				                 	 
 				                 	 
 				                 	 <select name="decreasedFlexExt_select1" class="input_cmbbx1">
@@ -190,7 +190,7 @@
 				                 </tr>
 				                 <tr class="row2">		  
 				                     
-				                     <td valign="top" align="left" class="input_txt"> <input type="checkbox" value="decreasedRLFlex_1"> Decreased R/L Flex
+				                     <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="decreasedRLFlex_1" value="Decreased_R/L_Flex:"> Decreased R/L Flex
 				                 	 
 				                 	 
 				                 	 <select name="decreasedRLFlex_select1" class="input_cmbbx1">
@@ -208,22 +208,22 @@
 											<option value="towering">Towering</option>
 								    	  </select>
 								 	  
-								    	 <input type="checkbox" value="mild_11"> Mild
-				                    	 <input type="checkbox" value="moderate_11"> Moderate   
-				                 		<input type="checkbox" value="severe_11"> Severe
+								    	 <input type="checkbox" name="mild_11" value="Mild"> Mild
+				                    	 <input type="checkbox" name="moderate_11" value="Moderate"> Moderate   
+				                 		<input type="checkbox" name="severe_11" value="Severe"> Severe
 				                 	    </td>
 										
 									    
 				                 </tr>
 				                 <tr class="row1">
 				             
-				                	 <td class="input_txt" align="left"> <input type="checkbox" value="apexat_1"> Apex at:
+				                	 <td class="input_txt" align="left"> <input type="checkbox" name="apexat_1" value="Apex at:"> Apex at:
 				                 		<input type="text" class="input_txtbx1" id="inp_id" name="apexat_text1" />
 				                	 </td>
-				               	     <td class="input_txt" align="left"> <input type="checkbox" value="softtissueedemaof_1"> Soft tissue edema of
+				               	     <td class="input_txt" align="left"> <input type="checkbox" name="softtissueedemaof_1" value="Soft_tissue_edema_of"> Soft tissue edema of
 				                 		<input type="text" class="input_txtbx1" id="inp_id" name="softtissueedemaof_text1" />
 				                 	 </td>
-				                  	 <td class="input_txt" align="left"> <input type="checkbox" value="other_1"> Other
+				                  	 <td class="input_txt" align="left"> <input type="checkbox" name="other_1" value="Other"> Other
 				                 		<input type="text" class="input_txtbx1" id="inp_id" name="other_text1" />
 				                	 </td>
 				                 </tr>
@@ -274,43 +274,43 @@
 											<option value="lateralChest">Lateral Chest</option>
 				                   		 </select>
 				                   	</td>
-				                   	<td valign="top" align="left" class="input_txt"> <input type="checkbox" value="negative_2">  Negative for recent fracture, dislocation or gross Osteopathology</td>
+				                   	<td valign="top" align="left" class="input_txt"> <input type="checkbox" name="negative_2" value="Negative_Osteopathology">  Negative for recent fracture, dislocation or gross Osteopathology</td>
 				                  </tr>
 				                  <tr class="row2">
-				                   <td valign="top" align="left" class="input_txt"> <input type="checkbox" value="hyperkyphosis_2"> Hyperkyphosis 
-				                   													<input type="checkbox" value="normalkyphosis_2"> Normal kyphosis 
-				                   													<input type="checkbox" value="hypokyphosis_2"> Hypokyphosis
+				                   <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="hyperkyphosis_2" value="Hyperkyphosis"> Hyperkyphosis 
+				                   													<input type="checkbox" name="normalkyphosis_2" value="Normal_kyphosis"> Normal kyphosis 
+				                   													<input type="checkbox" name="hypokyphosis_2" value="Hypokyphosis"> Hypokyphosis
 				                   </td>  	
-				                  <td class="input_txt" align="left"> <input type="checkbox" value="degenerative_2"> Degenerative joint disease at:
+				                  <td class="input_txt" align="left"> <input type="checkbox" name="degenerative_2" value="Degenerative_joint_disease_at:"> Degenerative joint disease at:
 				                 		<input type="text" class="input_txtbx1" id="inp_id" name="degenerative_text2" />
 				                	 </td>
-				                	 <td valign="top" align="left" class="input_txt"> <input type="checkbox" value="mild_2"> Mild
-				                    													 <input type="checkbox" value="moderate_2"> Moderate   
-				                 														 <input type="checkbox" value="severe_2"> Severe
+				                	 <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="mild_2" value="Mild"> Mild
+				                    													 <input type="checkbox" name="moderate_2" value="Moderate"> Moderate   
+				                 														 <input type="checkbox" name="severe_2" value="Severe"> Severe
 				                 	    </td>	
 				                   </tr>
 				                    <tr class="row1">
 				             
-				                	 <td class="input_txt" align="left"> <input type="checkbox" value="narrowed_2"> Narrowed disc space at:
+				                	 <td class="input_txt" align="left"> <input type="checkbox" name="narrowed_2" value="Narrowed_disc_space_at:"> Narrowed disc space at:
 				                 		<input type="text" class="input_txtbx1" id="inp_id" name="narrowed_text2" />
 				                	 </td>
-				               	     <td class="input_txt" align="left"> <input type="checkbox" value="schmorlsnodesat_2"> Schmorl's nodes at:
+				               	     <td class="input_txt" align="left"> <input type="checkbox" name="schmorlsnodesat_2" value="Schmorls_nodes_at:"> Schmorl's nodes at:
 				                 		<input type="text" class="input_txtbx1" id="inp_id" name="schmorlsnodesat_text2" />
 				                 	 </td>
 				                    </tr>	 
 				                 	 <tr class="row2">
-				             			<td class="input_txt" align="left"> <input type="checkbox" value="anterior_2"> Anterior vertebral body osteophytes at:
+				             			<td class="input_txt" align="left"> <input type="checkbox" name="anterior_2" value="Anterior_body_osteophytes_at:"> Anterior vertebral body osteophytes at:
 				                 			<input type="text" class="input_txtbx1" id="inp_id" name="anterior_text2" />
 				                		 </td>
-				               	    	 <td class="input_txt" align="left"> <input type="checkbox" value="subchondral_2"> Subchondral sclerosis of
+				               	    	 <td class="input_txt" align="left"> <input type="checkbox" name="subchondral_2" value="Subchondral_sclerosis_of"> Subchondral sclerosis of
 				                 			<input type="text" class="input_txtbx1" id="inp_id" name="subchondral_text2" />
 				                 	 	</td>
-				                 	 	<td class="input_txt" align="left"> <input type="checkbox" value="foraminal_2"> Foraminal enchroachment between:
+				                 	 	<td class="input_txt" align="left"> <input type="checkbox" name="foraminal_2" value="Foraminal_enchroachment_b/w:"> Foraminal enchroachment between:
 				                 		<input type="text" class="input_txtbx1" id="inp_id" name="foraminal_text2" />
 				                	 </td>
 				                 	</tr>
 				                 	<tr class="row1">
-				             			<td valign="top" align="left" class="input_txt"> <input type="checkbox" value="osteoporosis_2"> Osteoporosis
+				             			<td valign="top" align="left" class="input_txt"> <input type="checkbox" name="osteoporosis_2" value="Osteoporosis"> Osteoporosis
 				                 	 		<select name="osteoporosis_select2" class="input_cmbbx1">
 				                 	              
 						                    <option selected="selected" value="mild" >Mild</option>
@@ -326,20 +326,20 @@
 											<option value="towering">Towering</option>
 								    	  </select>
 								 	  
-								    	 <input type="checkbox" value="mild_22"> Mild
-				                    	 <input type="checkbox" value="moderate_22"> Moderate   
-				                 		<input type="checkbox" value="severe_22"> Severe
+								    	 <input type="checkbox" name="mild_22" value="Mild"> Mild
+				                    	 <input type="checkbox" name="moderate_22" value="Moderate"> Moderate   
+				                 		<input type="checkbox" name="severe_22" value="Severe"> Severe
 				                 	    </td>
 				                </tr>
 				                <tr class="row1">
 				             
-				                	 <td class="input_txt" align="left"> <input type="checkbox" value="apexat_2"> Apex at:
+				                	 <td class="input_txt" align="left"> <input type="checkbox" name="apexat_2" value="Apex at:"> Apex at:
 				                 		<input type="text" class="input_txtbx1" id="inp_id" name="apexat_text2" />
 				                	 </td>
-				               	     <td class="input_txt" align="left"> <input type="checkbox" value="softtissueedemaof_2"> Soft tissue edema of
+				               	     <td class="input_txt" align="left"> <input type="checkbox" name="softtissueedemaof_2" value="Soft_tissue_edema_of"> Soft tissue edema of
 				                 		<input type="text" class="input_txtbx1" id="inp_id" name="softtissueedemaof_text2" />
 				                 	 </td>
-				                  	 <td class="input_txt" align="left"> <input type="checkbox" value="other_2"> Other
+				                  	 <td class="input_txt" align="left"> <input type="checkbox" name="other_2" value="Other"> Other
 				                 		<input type="text" class="input_txtbx1" id="inp_id" name="other_text2" />
 				                	 </td>
 				                 </tr>
@@ -383,13 +383,13 @@
 											<option value="llf">LLF</option>
 				                   		 </select>
 				                   	</td>
-				                   	<td valign="top" align="left" class="input_txt"> <input type="checkbox" value="negative_3">  Negative for recent fracture, dislocation or gross Osteopathology</td>
+				                   	<td valign="top" align="left" class="input_txt"> <input type="checkbox" name="negative_3" value="Negative_for_recent_fracture">  Negative for recent fracture, dislocation or gross Osteopathology</td>
 				                  </tr>
 				                  <tr class="row2">
-				                  	 <td class="input_txt"><input type="checkbox" value="break_3"> Break in Georges line at 
+				                  	 <td class="input_txt"><input type="checkbox" name="break_3" value="Break_Georges_at"> Break in Georges line at 
 				           		        <input type="text" class="input_txtbx1" id="inp_id" name="break_text3" />
 				           		 	 </td>
-				           		 	 <td valign="top" align="left" class="input_txt"> <input type="checkbox" value="osteoporosis_3"> Osteoporosis
+				           		 	 <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="osteoporosis_3" value="Osteoporosis"> Osteoporosis
 				                 	 		<select name="osteoporosis_select3" class="input_cmbbx1">
 				                 	              
 						                    <option selected="selected" value="mild" >Mild</option>
@@ -397,9 +397,9 @@
 											<option value="severe">Severe</option>
 											</select>		
 										</td>
-										 <td valign="top" align="left" class="input_txt"> <input type="checkbox" value="hyperkyphosis_3"> Hyperkyphosis 
-				                   													<input type="checkbox" value="normalkyphosis_3"> Normal kyphosis 
-				                   													<input type="checkbox" value="hypokyphosis_3"> Hypokyphosis
+										 <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="hyperkyphosis_3" value="Hyperkyphosis"> Hyperkyphosis 
+				                   													<input type="checkbox" name="normalkyphosis_3" value="Normal_kyphosis"> Normal kyphosis 
+				                   													<input type="checkbox" name="hypokyphosis_3" value="Hypokyphosis"> Hypokyphosis
 				                   													<select name="hypokyphosos_select_3" class="input_cmbbx1">
 				                 	              
 						                    <option selected="selected" value="mild" >Mild</option>
@@ -409,7 +409,7 @@
 				                   		</td>   
 				                  </tr>
 				                  <tr class="row1">
-				                  	 <td class="input_txt" align="left"> <input type="checkbox" value="degenerative_3"> Degenerative joint disease at: 
+				                  	 <td class="input_txt" align="left"> <input type="checkbox" name="degenerative_3" value="Degenerative_disease_at:"> Degenerative joint disease at: 
 				                	 
 				                  		<select name="degenerative_select3" class="input_cmbbx1">
 											<option selected="selected" value="L-1/2" >L-1/2</option>
@@ -418,27 +418,27 @@
 											<option value="L-4/5">L-4/5</option>
 											<option value="L-5/S-1">L-5/ S-1</option>
 				                   		 </select>
-				                   		  <td valign="top" align="left" class="input_txt"> <input type="checkbox" value="mild_3"> Mild
-				                 	 												  <input type="checkbox" value="moderate_3"> Moderate
-				                 	 												  <input type="checkbox" value="severe_3"> Severe
+				                   		  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="mild_3" value="Mild"> Mild
+				                 	 												  <input type="checkbox" name="moderate_3" value="Moderate"> Moderate
+				                 	 												  <input type="checkbox" name="severe_3" value="Severe"> Severe
 				                 	 </td> 
-				                 	  <td class="input_txt" align="left"> <input type="checkbox" value="narrowed_3"> Narrowed disc space at
+				                 	  <td class="input_txt" align="left"> <input type="checkbox" name="narrowed_3" value="Narrowed_disc_space_at"> Narrowed disc space at:
 				                 		<input type="text" class="input_txtbx1" id="inp_id" name="narrowed_text3" />
 				                	 </td>
 				                	 </tr>
 				                	 <tr class="row2">
-				               	     <td class="input_txt" align="left"> <input type="checkbox" value="anterior_3"> Anterior vertebral body osteophytes at
+				               	     <td class="input_txt" align="left"> <input type="checkbox" name="anterior_3" value="Anterior_osteophytes_at:"> Anterior vertebral body osteophytes at:
 				                 		<input type="text" class="input_txtbx1" id="inp_id" name="anterior_text3" />
 				                 	 </td> 	
-				                 	  <td class="input_txt" align="left"> <input type="checkbox" value="subchondral_3"> Subchondral sclerosis of
+				                 	  <td class="input_txt" align="left"> <input type="checkbox" name="subchondral_3" value="Subchondral_sclerosis_of"> Subchondral sclerosis of
 				                 		<input type="text" class="input_txtbx1" id="inp_id" name="subchondral_text3" />
 				                	 </td>
-				                 	  <td class="input_txt" align="left"> <input type="checkbox" value="schmorls_3"> Schmorl's nodes at:
+				                 	  <td class="input_txt" align="left"> <input type="checkbox" name="schmorls_3" value="Schmorls_nodes_at:"> Schmorl's nodes at:
 				                 		<input type="text" class="input_txtbx1" id="inp_id" name="schmorls_text3" />
 				                	 </td>
 				                 	 </tr>
 				                 	  <tr class="row1">
-				                  	 <td class="input_txt" align="left"> <input type="checkbox" value="spondylolisthesisof_3"> Spondylolisthesis of 
+				                  	 <td class="input_txt" align="left"> <input type="checkbox" name="spondylolisthesisof_3" value="Spondylolisthesis_of"> Spondylolisthesis of 
 				                	 
 				                  		<select name="spondylolisthesisof_select3" class="input_cmbbx1">
 											<option selected="selected" value="L-4" >L-4</option>
@@ -459,13 +459,13 @@
 									</tr>
 	
 									 <tr class="row2">
-				                 	 <td valign="top" align="left" class="input_txt"> <input type="checkbox" value="decreasedRLF_3"> Decreased RLF</td>
-				                     <td valign="top" align="left" class="input_txt"> <input type="checkbox" value="decreasedLLF_3"> Decreased LLF</td>    
-				                 	 <td valign="top" align="left" class="input_txt"> <input type="checkbox" value="facettropism_3"> Facet tropism</td> 		
+				                 	 <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="decreasedRLF_3" value="Decreased_RLF"> Decreased RLF</td>
+				                     <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="decreasedLLF_3" value="Decreased_LLF"> Decreased LLF</td>    
+				                 	 <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="facettropism_3" value="Facet_tropism"> Facet tropism</td> 		
 									</tr>
 									<tr class="row1">
-				                 	 <td valign="top" align="left" class="input_txt"> <input type="checkbox" value="sacralization_3"> Sacralization</td>
-				                     <td valign="top" align="left" class="input_txt"> <input type="checkbox" value="lumbarization_3"> Lumbarization</td>    
+				                 	 <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="sacralization_3" value="Sacralization"> Sacralization</td>
+				                     <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="lumbarization_3" value="Lumbarization"> Lumbarization</td>    
 				                 	 <td valign="top" align="left" class="input_txt">
 										<select name="dextro_Levoscoliosis_towering_select3" class="input_cmbbx1">
 				                 	              
@@ -474,20 +474,20 @@
 											<option value="towering">Towering</option>
 								    	  </select>
 								 	  
-								    	 <input type="checkbox" value="mild_33"> Mild
-				                    	 <input type="checkbox" value="moderate_33"> Moderate   
-				                 		<input type="checkbox" value="severe_33"> Severe
+								    	 <input type="checkbox" name="mild_33" value="Mild"> Mild
+				                    	 <input type="checkbox" name="moderate_33" value="Moderate"> Moderate   
+				                 		<input type="checkbox" name="severe_33" value="Severe"> Severe
 				                 	    </td>		
 									</tr>
 									 <tr class="row2">
 				             
-				                	 <td class="input_txt" align="left"> <input type="checkbox" value="apexat_3"> Apex at:
+				                	 <td class="input_txt" align="left"> <input type="checkbox" name="apexat_3" value="Apex_at:"> Apex at:
 				                 		<input type="text" class="input_txtbx1" id="inp_id" name="apexat_text3" />
 				                	 </td>
-				               	     <td class="input_txt" align="left"> <input type="checkbox" value="softtissueedemaof_3"> Soft tissue edema of
+				               	     <td class="input_txt" align="left"> <input type="checkbox" name="softtissueedemaof_3" value="Soft_tissue_edema_of"> Soft tissue edema of
 				                 		<input type="text" class="input_txtbx1" id="inp_id" name="softtissueedemaof_text3" />
 				                 	 </td>
-				                  	 <td class="input_txt" align="left"> <input type="checkbox" value="other_3"> Other
+				                  	 <td class="input_txt" align="left"> <input type="checkbox" name="other_3" value="Other"> Other
 				                 		<input type="text" class="input_txtbx1" id="inp_id" name="other_text33" />
 				                	 </td>
 				                 </tr>		
@@ -522,8 +522,8 @@
 				               		 <td>Views:
 				               		 <input type="text" class="input_txtbx1" id="inp_id" name="views4" />
 				               		 </td>
-				               		 <td valign="top" align="left" class="input_txt"> <input type="checkbox" value="normal_4"> Normal</td>
-				                     <td valign="top" align="left" class="input_txt"> <input type="checkbox" value="positivefor_4"> Positive for</td>   
+				               		 <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="normal_4" value="Normal"> Normal</td>
+				                     <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="positivefor_4" value="Positive for"> Positive for</td>   
 				                 </tr>
 				          </table>
 				           <table>

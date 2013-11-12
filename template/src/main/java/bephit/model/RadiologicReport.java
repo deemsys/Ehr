@@ -8,7 +8,7 @@ public class RadiologicReport{
 	
 	private String views1;
 	private String negative_1;
-	private String positive_1;
+	private String positive_for;
 	private String positive_text1;
 	private String break_1;
 	private String break_text1;
@@ -139,7 +139,7 @@ public class RadiologicReport{
 	}
 
 	public RadiologicReport(String pname, String date, String id, String dob,
-			String views1, String negative_1, String positive_1,
+			String views1, String negative_1, String positive_for,
 			String positive_text1, String break_1, String break_text1,
 			String adi_1, String hypolorodosis_1, String normalcurvature_1,
 			String hyperlordosis_1, String hyperlordosis_select1,
@@ -198,7 +198,7 @@ public class RadiologicReport{
 		this.dob = dob;
 		this.views1 = views1;
 		this.negative_1 = negative_1;
-		this.positive_1 = positive_1;
+		this.positive_for = positive_for;
 		this.positive_text1 = positive_text1;
 		this.break_1 = break_1;
 		this.break_text1 = break_text1;
@@ -367,12 +367,12 @@ public class RadiologicReport{
 		this.negative_1 = negative_1;
 	}
 
-	public String getPositive_1() {
-		return positive_1;
+	public String getPositive_for() {
+		return positive_for;
 	}
 
-	public void setPositive_1(String positive_1) {
-		this.positive_1 = positive_1;
+	public void setPositive_for(String positive_for) {
+		this.positive_for = positive_for;
 	}
 
 	public String getPositive_text1() {
