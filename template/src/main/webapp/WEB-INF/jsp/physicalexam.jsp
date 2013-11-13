@@ -390,17 +390,17 @@
 						                    <option selected="selected" value="0" >0</option>
 											<option value="1">1</option>
 											<option value="2">2</option>
-											<option value="2">3</option>
-											<option value="2">4</option>
-											<option value="2">5</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
 				                   		</select></td>
 				                   		<td><select name="deltoidleft">
 						                    <option selected="selected" value="0" >0</option>
 											<option value="1">1</option>
 											<option value="2">2</option>
-											<option value="2">3</option>
-											<option value="2">4</option>
-											<option value="2">5</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
 				                   		</select></td>
 				                   		
 				                  </tr>
@@ -410,17 +410,17 @@
 						                    <option selected="selected" value="0" >0</option>
 											<option value="1">1</option>
 											<option value="2">2</option>
-											<option value="2">3</option>
-											<option value="2">4</option>
-											<option value="2">5</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
 				                   		</select></td>
 				                   		<td><select name="wristleft">
 						                    <option selected="selected" value="0" >0</option>
 											<option value="1">1</option>
 											<option value="2">2</option>
-											<option value="2">3</option>
-											<option value="2">4</option>
-											<option value="2">5</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
 				                   		</select></td>
 				                   		
 				                  </tr>
@@ -430,17 +430,17 @@
 						                    <option selected="selected" value="0" >0</option>
 											<option value="1">1</option>
 											<option value="2">2</option>
-											<option value="2">3</option>
-											<option value="2">4</option>
-											<option value="2">5</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
 				                   		</select></td>
 				                   		<td><select name="wristflexleft">
 						                    <option selected="selected" value="0" >0</option>
 											<option value="1">1</option>
 											<option value="2">2</option>
-											<option value="2">3</option>
-											<option value="2">4</option>
-											<option value="2">5</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
 				                   		</select></td>
 				                   		
 				                  </tr>
@@ -450,17 +450,17 @@
 						                    <option selected="selected" value="0" >0</option>
 											<option value="1">1</option>
 											<option value="2">2</option>
-											<option value="2">3</option>
-											<option value="2">4</option>
-											<option value="2">5</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
 				                   		</select></td>
 				                   		<td><select name="fingerflexleft">
 						                    <option selected="selected" value="0" >0</option>
 											<option value="1">1</option>
 											<option value="2">2</option>
-											<option value="2">3</option>
-											<option value="2">4</option>
-											<option value="2">5</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
 				                   		</select></td>
 				                   		
 				                  </tr>
@@ -470,17 +470,17 @@
 						                    <option selected="selected" value="0" >0</option>
 											<option value="1">1</option>
 											<option value="2">2</option>
-											<option value="2">3</option>
-											<option value="2">4</option>
-											<option value="2">5</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
 				                   		</select></td>
 				                   		<td><select name="fingeraddleft">
 						                    <option selected="selected" value="0" >0</option>
 											<option value="1">1</option>
 											<option value="2">2</option>
-											<option value="2">3</option>
-											<option value="2">4</option>
-											<option value="2">5</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
 				                   		</select></td>
 				                   		
 				                  </tr>
@@ -490,17 +490,17 @@
 						                    <option selected="selected" value="0" >0</option>
 											<option value="1">1</option>
 											<option value="2">2</option>
-											<option value="2">3</option>
-											<option value="2">4</option>
-											<option value="2">5</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
 				                   		</select></td>
 				                   		<td><select name="wristextleft">
 						                    <option selected="selected" value="0" >0</option>
 											<option value="1">1</option>
 											<option value="2">2</option>
-											<option value="2">3</option>
-											<option value="2">4</option>
-											<option value="2">5</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
 				                   		</select></td>
 				                   		
 				                  </tr>
@@ -521,16 +521,16 @@
 						                    <option selected="selected" value="0" >0</option>
 											<option value="1">1</option>
 											<option value="2">2</option>
-											<option value="2">3</option>
-											<option value="2">4</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
 											
 				                   		</select></td>
 				                   		<td><select name="bicepleft">
 						                    <option selected="selected" value="0" >0</option>
 											<option value="1">1</option>
 											<option value="2">2</option>
-											<option value="2">3</option>
-											<option value="2">4</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
 											
 				                   		</select></td>
 				                   		
@@ -541,16 +541,16 @@
 						                    <option selected="selected" value="0" >0</option>
 											<option value="1">1</option>
 											<option value="2">2</option>
-											<option value="2">3</option>
-											<option value="2">4</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
 											
 				                   		</select></td>
 				                   		<td><select name="bracioradleft">
 						                    <option selected="selected" value="0" >0</option>
 											<option value="1">1</option>
 											<option value="2">2</option>
-											<option value="2">3</option>
-											<option value="2">4</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
 											
 				                   		</select></td>
 				                   		
