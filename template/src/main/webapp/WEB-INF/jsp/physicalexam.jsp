@@ -747,26 +747,26 @@
 				                <tr class="row1">
 				                   <td>T-1:</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="thot1" /></td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot1check" value="thot1right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot1check" value="thot1left">Left</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot1right" value="Right">Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot1left" value="Left">Left</td>
 				                  </tr>
 				                <tr class="row1">
 				                   <td>T-4:</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="thot4" /></td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot4check" value="thot4right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot4check" value="thot4left">Left</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot4right" value="Right">Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot4left" value="Left">Left</td>
 				                  </tr>
 				                  <tr class="row1">
 				                   <td>T-10:</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="thot10" /></td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot10check" value="thot10right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot10check" value="thot10left">Left</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot10right" value="Right">Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot10left" value="Left">Left</td>
 				                  </tr>
 				                  <tr class="row1">
 				                   <td>Other:</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="thoother" /></td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="thoothercheck" value="thootherright">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="thoothercheck" value="thootherleft">Left</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="thootherright" value="Right">Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="thootherleft" value="Left">Left</td>
 				                  </tr>
 				                  </table>
 				                  <table border="0">
@@ -1102,7 +1102,10 @@
 				                  </table>
 				                  <table align="right">
 				                  <tr>
-				                   <td><input type="submit" class="submit_btn" value="Save"></td>&nbsp;&nbsp;
+				                   <td><input type="submit" class="submit_btn" value="Save"></td>
+				                   <td>&nbsp;&nbsp;</td>
+				                    <td><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewphysicalexam'"></td>
+				                    <td>&nbsp;&nbsp;</td>
 				                    <td><input type="reset" class="submit_btn" value="Cancel"></td>
 				                  </tr>
 				                  </table>

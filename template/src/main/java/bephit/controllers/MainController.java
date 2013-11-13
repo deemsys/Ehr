@@ -189,7 +189,7 @@ public class MainController {
     	int a=physicalDAO.setPhysicalexam(physicalexam);
 		PhysicalexamForm physicalexamForm= new PhysicalexamForm();
 		physicalexamForm.setPhysicalexam(physicalDAO.getPhysicalexam());
-		model.addAttribute("PhysicalexamForm",physicalexamForm);
+		model.addAttribute("physicalexamForm",physicalexamForm);
 
 		//System.out.println(autoaccident.getAdjustersname());
 	    
@@ -198,6 +198,31 @@ public class MainController {
  
 	}
 	
+	@RequestMapping(value="/viewphysicalexam", method=RequestMethod.GET)
+	public String viewexam(HttpServletRequest request,ModelMap model, Principal principal) {
+		 model.addAttribute("success","false");
+		//ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
+		  PhysicalexamForm physicalexamForm = new PhysicalexamForm();
+		 //participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
+		  physicalexamForm.setPhysicalexam(physicalDAO.getPhysicalexam());
+		  //model.addAttribute("participantsDetailsForm", participantsDetailsForm);
+		  	model.addAttribute("physicalexamForm", physicalexamForm);
+        
+		return "viewphysicalexam";
+	}
+	@RequestMapping(value="/physicalexamlist", method=RequestMethod.GET)
+	public String physicalexamlist(HttpServletRequest request,@RequestParam("id") String id,ModelMap model,Physicalexam exam)
+	{
+		//ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
+		PhysicalexamForm physicalexamForm = new PhysicalexamForm();
+        //participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants(participants_id));
+		physicalexamForm.setPhysicalexam(physicalDAO.getPhysical(id));
+		//model.addAttribute("participantsDetailsForm", participantsDetailsForm);
+		model.addAttribute("physicalexamForm", physicalexamForm);
+		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
+		
+		return "physicalexamlist";
+	}
 	
 	@RequestMapping(value="/hamiltonchiropractic", method = RequestMethod.GET)
 	public String hamiltonchiropractic(ModelMap model) {

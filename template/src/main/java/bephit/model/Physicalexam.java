@@ -16,6 +16,7 @@ public class Physicalexam {
 	      String weight1;
 	      String gait;
 	      String head;
+	      String path;
 	      String posture;
 	      String romber;
 	      String exam;
@@ -158,14 +159,19 @@ public class Physicalexam {
 	      String tholrspasm;
 	      String tholrstiff;
 	      String thot1;
-	      String thot1check;
+	      String thot1right;
+	      String thot1left;
 	      String thot4;
-	      String thot4check;
+	      String thot4right;
+	      String thot4left;
 	      String thot10;
-	      String thot10check;
+	      String thot10right;
+	      String thot10left;
+	      
 	      
 	      String thoother;
-	      String thoothercheck;
+	      String thootherright;
+	      String thootherleft;
 	      
 	      String myotomes;
 	      String positiveruq;
@@ -249,7 +255,7 @@ public class Physicalexam {
 	public Physicalexam(String sign, String name, String id, String date,
 			String age, String sex, String height, String weight, String temp,
 			String bp, String pulse, String appearance, String weight1,
-			String gait, String head, String posture, String romber,
+			String gait, String head,String path, String posture, String romber,
 			String exam, String abnormal, String headtiltright,
 			String headtiltleft, String headtiltnormal, String rotationright,
 			String rotationleft, String rotationnormal, String tmjright,
@@ -294,8 +300,8 @@ public class Physicalexam {
 			String thorrnormal, String thorrpain, String thorrspasm,
 			String thorrstiff, String tholrnormal, String tholrpain,
 			String tholrspasm, String tholrstiff, String thot1,
-			String thot1check, String thot4, String thot4check, String thot10,
-			String thot10check, String thoother, String thoothercheck,
+			String thot1right,String thot1left, String thot4, String thot4right,String thot4left, String thot10,
+			String thot10right,String thot10left, String thoother, String thootherright,String thootherleft,
 			String myotomes, String positiveruq, String positiveluq,
 			String positiverlq, String positivellq, String highcrestright,
 			String highcrestleft, String highcrestnormal, String highpsisright,
@@ -337,6 +343,7 @@ public class Physicalexam {
 		this.weight1 = weight1;
 		this.gait = gait;
 		this.head = head;
+		this.path=path;
 		this.posture = posture;
 		this.romber = romber;
 		this.exam = exam;
@@ -477,13 +484,17 @@ public class Physicalexam {
 		this.tholrspasm = tholrspasm;
 		this.tholrstiff = tholrstiff;
 		this.thot1 = thot1;
-		this.thot1check = thot1check;
+		this.thot1right = thot1right;
+		this.thot1left=thot1left;
 		this.thot4 = thot4;
-		this.thot4check = thot4check;
+		this.thot4right = thot4right;
+		this.thot4left=thot4left;
 		this.thot10 = thot10;
-		this.thot10check = thot10check;
+		this.thot10right = thot10right;
+		this.thot10left=thot10left;
 		this.thoother = thoother;
-		this.thoothercheck = thoothercheck;
+		this.thootherright = thootherright;
+		this.thootherleft=thootherleft;
 		this.myotomes = myotomes;
 		this.positiveruq = positiveruq;
 		this.positiveluq = positiveluq;
@@ -1800,13 +1811,7 @@ public class Physicalexam {
 		this.thot1 = thot1;
 	}
 
-	public String getThot1check() {
-		return thot1check;
-	}
-
-	public void setThot1check(String thot1check) {
-		this.thot1check = thot1check;
-	}
+	
 
 	public String getThot4() {
 		return thot4;
@@ -1816,13 +1821,7 @@ public class Physicalexam {
 		this.thot4 = thot4;
 	}
 
-	public String getThot4check() {
-		return thot4check;
-	}
-
-	public void setThot4check(String thot4check) {
-		this.thot4check = thot4check;
-	}
+	
 
 	public String getThot10() {
 		return thot10;
@@ -1832,13 +1831,7 @@ public class Physicalexam {
 		this.thot10 = thot10;
 	}
 
-	public String getThot10check() {
-		return thot10check;
-	}
-
-	public void setThot10check(String thot10check) {
-		this.thot10check = thot10check;
-	}
+	
 
 	public String getThoother() {
 		return thoother;
@@ -1848,13 +1841,7 @@ public class Physicalexam {
 		this.thoother = thoother;
 	}
 
-	public String getThoothercheck() {
-		return thoothercheck;
-	}
-
-	public void setThoothercheck(String thoothercheck) {
-		this.thoothercheck = thoothercheck;
-	}
+	
 
 	public String getMyotomes() {
 		return myotomes;
@@ -2446,6 +2433,78 @@ public class Physicalexam {
 
 	public void setBabinskileft(String babinskileft) {
 		this.babinskileft = babinskileft;
+	}
+
+	public String getThot1right() {
+		return thot1right;
+	}
+
+	public void setThot1right(String thot1right) {
+		this.thot1right = thot1right;
+	}
+
+	public String getThot1left() {
+		return thot1left;
+	}
+
+	public void setThot1left(String thot1left) {
+		this.thot1left = thot1left;
+	}
+
+	public String getThot4right() {
+		return thot4right;
+	}
+
+	public void setThot4right(String thot4right) {
+		this.thot4right = thot4right;
+	}
+
+	public String getThot4left() {
+		return thot4left;
+	}
+
+	public void setThot4left(String thot4left) {
+		this.thot4left = thot4left;
+	}
+
+	public String getThot10right() {
+		return thot10right;
+	}
+
+	public void setThot10right(String thot10right) {
+		this.thot10right = thot10right;
+	}
+
+	public String getThot10left() {
+		return thot10left;
+	}
+
+	public void setThot10left(String thot10left) {
+		this.thot10left = thot10left;
+	}
+
+	public String getThootherright() {
+		return thootherright;
+	}
+
+	public void setThootherright(String thootherright) {
+		this.thootherright = thootherright;
+	}
+
+	public String getThootherleft() {
+		return thootherleft;
+	}
+
+	public void setThootherleft(String thootherleft) {
+		this.thootherleft = thootherleft;
+	}
+
+	public String getPath() {
+		return path;
+	}
+
+	public void setPath(String path) {
+		this.path = path;
 	}
 
 }

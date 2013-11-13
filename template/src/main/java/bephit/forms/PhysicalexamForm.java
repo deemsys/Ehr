@@ -5,14 +5,14 @@ import java.util.List;
 import bephit.model.Physicalexam;
 
 public class PhysicalexamForm {
-	private List<Physicalexam> Physicalexam;
+	private List<Physicalexam> physicalexam;
 	
 	 public List<Physicalexam> getPhysicalexam() {
-			return Physicalexam;
+			return physicalexam;
 		}
 
 		public void setPhysicalexam(List<Physicalexam> physicalexam) {
-			this.Physicalexam = physicalexam;
+			this.physicalexam = physicalexam;
 		}
 		
 	}
