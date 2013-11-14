@@ -53,6 +53,7 @@ import bephit.forms.MedicalRecordsForm;
 import bephit.forms.ParticipantsDetailsForm;
 
 
+
 import bephit.forms.PatientDetailsForm;
 
 import bephit.forms.PhysicalexamForm;
@@ -343,17 +344,56 @@ public class MainController {
 		return "viewradiologicreport";
 	}
 	@RequestMapping(value="/radiologicReportList", method=RequestMethod.GET)
-	public String radiologicreportlist(HttpServletRequest request,@RequestParam("id") String id,ModelMap model,RadiologicReport radiologic)
+	public String radiologicreportlist(HttpServletRequest request,@RequestParam("pid") String pid,ModelMap model,RadiologicReport radiologic)
 	{
 		//ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
 		RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
         //participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants(participants_id));
-		radiologicReportForm.setRadiologicReport(radioDAO.getParticipants(id));
+		radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport((pid)));
 		//model.addAttribute("participantsDetailsForm", participantsDetailsForm);
 		model.addAttribute("radiologicReportForm", radiologicReportForm);
 		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
 		
 		return "radiologicReportList";
+	}
+	@RequestMapping(value="/editradiologicreport", method=RequestMethod.GET)
+	public String editRadiologicReport(HttpServletRequest request,@RequestParam("pid") String pid,ModelMap model,RadiologicReport report)
+	{
+		
+		RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
+       
+        radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport(pid));
+	
+		model.addAttribute("radiologicReportForm", radiologicReportForm);
+		
+		return "editradiologicreport";
+	}
+	@RequestMapping(value="/updateradiologicreport", method=RequestMethod.POST)
+	public String updateRadiologicReport(HttpServletRequest request,@ModelAttribute("report") @Valid RadiologicReport report,
+			BindingResult result,ModelMap model,Principal principal)
+	{
+		if (result.hasErrors())
+		{
+			RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
+	     //   participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants(participant.getParticipants_id()));
+	      radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport(report.getPid()));
+	      
+	        model.addAttribute("radiologicReportForm", radiologicReportForm);
+			    
+		        return "editradiologicreport";
+		}
+		
+		int status = radioDAO.updateRadiologicReport(report, report.getPid(), principal.getName());
+		System.out.println(status);
+		
+		RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
+        
+        radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport());
+       
+        model.addAttribute("radiologicReportForm", radiologicReportForm);
+	       model.addAttribute("success","true");
+	        return "viewradiologicreport";
+		
 	}
 	
 	@RequestMapping(value="/workaccident", method = RequestMethod.GET)

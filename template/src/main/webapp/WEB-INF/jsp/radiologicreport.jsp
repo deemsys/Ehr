@@ -87,7 +87,7 @@
 											<option value="ext">Ext</option>
 				                   		</select>
 				                   		</td>
-				                   	<td valign="top" align="left" class="input_txt"> <input type="checkbox" value=" Negative_for_Osteopathology" name="negative_1">  Negative for recent fracture, dislocation or gross Osteopathology</td>
+				                   	<td valign="top" align="left" class="input_txt"> <input type="checkbox" value="Negative_for_Osteopathology" name="negative_1">  Negative for recent fracture, dislocation or gross Osteopathology</td>
 				                  </tr> 
 				                   	 <tr class="row2">
 				             
@@ -534,7 +534,7 @@
              		 <td valign="top" align="center"><br><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewradiologicreport'"></td>
 				  <td>&nbsp;&nbsp;</td>
 				    <td valign="top" align="center"><br><input type="reset" class="submit_btn" value="Cancel"></td>
-				 
+				 			 
 				  </tr>
 				  </table>
 				         </td>

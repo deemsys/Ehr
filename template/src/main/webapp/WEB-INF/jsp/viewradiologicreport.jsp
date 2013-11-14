@@ -29,7 +29,7 @@
 						<table cellpadding="0" cellspacing="0" border="0" width="100%">
 				     <tr class="title">
 								
-								<td valign="center" align="right" width="10%"><input type="checkbox" value="" name="chkAll"></td>
+								
          						<td valign="top" align="left" width="10%">Patient Name</td>
 					         	<td valign="top" align="left" width="15%">Date</td>
 					         	<td valign="top" align="left" width="10%">ID</td>
@@ -39,20 +39,20 @@
 						<c:if test="${fn:length(radiologicReportForm.radiologicReport) gt 0}">
         				  <c:forEach items="${radiologicReportForm.radiologicReport}" var="radiologicReport" varStatus="status">
         				       				<tr class="row1">
-        				       				<td valign="center" align="right" width="10%"></td>
-								        <td valign="top" align="left"  width="10%"> <a href="radiologicReportList?id=${radiologicReport.id}">${radiologicReport.pname}</a></td>
+        				       				
+								        <td valign="top" align="left"  width="10%"> <a href="radiologicReportList?pid=${radiologicReport.pid}">${radiologicReport.pname}</a></td>
 											<td valign="top" align="left" width="15%">${radiologicReport.date}</td>
 											<td valign="top" align="left" width="10%">${radiologicReport.id}</td>
 											<td valign="top" align="left" width="10%">${radiologicReport.dob}</td>
-											
-										<%-- 	<td>
-											<c:if test="${currentuser.adminuser[0].editparticipant==1}">
-												<a href="#" title="" ><img src="resources/images/icons/icon_edit.png" alt="Edit" /></a><a href="<c:out value="editparticipant?id=${participantsDetails.participants_id}"/>" style="padding-right:10px;">Edit</a>
-												</c:if>
-												<c:if test="${currentuser.adminuser[0].deleteparticipant==1}">
-											<a href="#" title=""><img src="resources/images/icons/icon_delete.png" alt="Delete" /></a><a href="<c:out value="deleteparticipants?id=${participantsDetails.participants_id}"/>" onclick="return confirmation()">Remove</a>
-											</c:if>
-											</td> --%>
+												<td valign="top" align="center">
+											<%--  <c:if test="${currentuser.adminuser[0].editradiologicreport==1}"> --%>
+												<a href="#" title="" ><img src="resources/images/icons/icon_edit.png" alt="Edit" /></a><a href="<c:out value="editradiologicreport?pid=${radiologicReport.pid}"/>" style="padding-right:10px;">Edit</a>
+											<%-- 	 </c:if>
+ --%>												<%--<c:if test="${currentuser.adminuser[0].deleteparticipant==1}"> --%>
+											<a href="#" title=""><img src="resources/images/icons/icon_delete.png" alt="Delete" /></a><a href="<c:out value="deleteparticipants?pid=${radiologicReport.pid}"/>" onclick="return confirmation()">Remove</a>
+											<%-- </c:if> --%>
+											</td>	
+										
 								</tr>
 							    	</c:forEach>
 							    	</c:if>

@@ -1,6 +1,7 @@
 package bephit.model;
 
 public class RadiologicReport{
+	private String pid;
 	private String pname;
 	private String date;
 	private String id;
@@ -138,7 +139,7 @@ public class RadiologicReport{
 		
 	}
 
-	public RadiologicReport(String pname, String date, String id, String dob,
+	public RadiologicReport(String pid,String pname, String date, String id, String dob,
 			String views1, String negative_1, String positive_for,
 			String positive_text1, String break_1, String break_text1,
 			String adi_1, String hypolorodosis_1, String normalcurvature_1,
@@ -192,6 +193,7 @@ public class RadiologicReport{
 			String other_text33, String views4, String normal_4,
 			String positivefor_4) {
 		super();
+		this.pid = pid;
 		this.pname = pname;
 		this.date = date;
 		this.id = id;
@@ -318,7 +320,13 @@ public class RadiologicReport{
 		this.normal_4 = normal_4;
 		this.positivefor_4 = positivefor_4;
 	}
+	public String getPid() {
+		return pid;
+	}
 
+	public void setPid(String pid) {
+		this.pid = pid;
+	}
 	public String getPname() {
 		return pname;
 	}

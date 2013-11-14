@@ -75,8 +75,8 @@ public class RadiologicReportDAO
 	 		try{
 	 			resultSet = statement.executeQuery("select * from tbl_radiologicreport");
 	 			while(resultSet.next()){
-	 				radiologicReport.add(new RadiologicReport(resultSet.getString("pname"),resultSet.getString("date"),resultSet.getString("id"),resultSet.getString("dob"),
-	 						resultSet.getString("views1"),resultSet.getString("negative_1"),resultSet.getString("positive_for"),resultSet.getString("positive_text1"),resultSet.getString("break_1"),resultSet.getString("break_text1"),resultSet.getString("adi_1"),resultSet.getString("hypolordosis_1"),resultSet.getString("normalcurvature_1"),resultSet.getString("hyperlordosis_1"),resultSet.getString("hyperlordosis_select1"),
+	 				radiologicReport.add(new RadiologicReport(resultSet.getString("pid"),resultSet.getString("pname"),resultSet.getString("date"),resultSet.getString("id"),resultSet.getString("dob"),
+	 						resultSet.getString("views1"),resultSet.getString("negative_1"),resultSet.getString("positive_for"),resultSet.getString("positive_text1"),resultSet.getString("break_1"),resultSet.getString("break_text1"),resultSet.getString("adi_1"),resultSet.getString("hypolorodosis_1"),resultSet.getString("normalcurvature_1"),resultSet.getString("hyperlordosis_1"),resultSet.getString("hyperlordosis_select1"),
 	 						resultSet.getString("mcGregorslinenormal_1"),resultSet.getString("mcGregorslineinterupted_1"),resultSet.getString("degenerativejointdisease_1"),resultSet.getString("degenerativejointdisease_select1"),resultSet.getString("mild_1"),resultSet.getString("moderate_1"),resultSet.getString("severe_1"),resultSet.getString("narrowed_1"),resultSet.getString("narrowed_text1"),resultSet.getString("anterior_1"),resultSet.getString("anterior_text1"),resultSet.getString("subchondral_1"),resultSet.getString("subchondral_text1"),resultSet.getString("schmorls_1"),resultSet.getString("schmorls_text1"),resultSet.getString("foraminal_1"),resultSet.getString("foraminal_select1"),resultSet.getString("osteoporosis_1"),resultSet.getString("osteoporosis_select1"),resultSet.getString("decreasedFlexExt_1"),
 	 						resultSet.getString("decreasedFlexExt_select1"),resultSet.getString("decreasedRLFlex_1"),resultSet.getString("decreasedRLFlex_select1"),resultSet.getString("dextro_Levoscoliosis_towering_select1"),resultSet.getString("mild_11"),resultSet.getString("moderate_11"),resultSet.getString("severe_11"),resultSet.getString("apexat_1"),resultSet.getString("apexat_text1"),resultSet.getString("softtissueedemaof_1"),resultSet.getString("softtissueedemaof_text1"),resultSet.getString("other_1"),resultSet.getString("other_text1"),
 	 						resultSet.getString("views2"),resultSet.getString("negative_2"),resultSet.getString("hyperkyphosis_2"),resultSet.getString("normalkyphosis_2"),resultSet.getString("hypokyphosis_2"),
@@ -98,7 +98,7 @@ public class RadiologicReportDAO
 	 	    return radiologicReport;
 	 		
 	 	}
-		public List<RadiologicReport> getParticipants(String id){
+		public List<RadiologicReport> getRadiologicReport(String pid){
 			Connection con = null;
 			Statement statement = null;
 			ResultSet resultSet = null;
@@ -110,12 +110,12 @@ public class RadiologicReportDAO
 			}
 			List<RadiologicReport> radiologicReport = new ArrayList<RadiologicReport>();
 		    try{
-		    	String cmd="select * from tbl_radiologicreport where id='"+id+"'";
+		    	String cmd="select * from tbl_radiologicreport where pid='"+pid+"'";
 				resultSet = statement.executeQuery(cmd);
 				System.out.println(cmd);			
 				while(resultSet.next()){
-					radiologicReport.add(new RadiologicReport(resultSet.getString("pname"),resultSet.getString("date"),resultSet.getString("id"),resultSet.getString("dob"),
-	 						resultSet.getString("views1"),resultSet.getString("negative_1"),resultSet.getString("positive_for"),resultSet.getString("positive_text1"),resultSet.getString("break_1"),resultSet.getString("break_text1"),resultSet.getString("adi_1"),resultSet.getString("hypolordosis_1"),resultSet.getString("normalcurvature_1"),resultSet.getString("hyperlordosis_1"),resultSet.getString("hyperlordosis_select1"),
+					radiologicReport.add(new RadiologicReport(resultSet.getString("pid"),resultSet.getString("pname"),resultSet.getString("date"),resultSet.getString("id"),resultSet.getString("dob"),
+	 						resultSet.getString("views1"),resultSet.getString("negative_1"),resultSet.getString("positive_for"),resultSet.getString("positive_text1"),resultSet.getString("break_1"),resultSet.getString("break_text1"),resultSet.getString("adi_1"),resultSet.getString("hypolorodosis_1"),resultSet.getString("normalcurvature_1"),resultSet.getString("hyperlordosis_1"),resultSet.getString("hyperlordosis_select1"),
 	 						resultSet.getString("mcGregorslinenormal_1"),resultSet.getString("mcGregorslineinterupted_1"),resultSet.getString("degenerativejointdisease_1"),resultSet.getString("degenerativejointdisease_select1"),resultSet.getString("mild_1"),resultSet.getString("moderate_1"),resultSet.getString("severe_1"),resultSet.getString("narrowed_1"),resultSet.getString("narrowed_text1"),resultSet.getString("anterior_1"),resultSet.getString("anterior_text1"),resultSet.getString("subchondral_1"),resultSet.getString("subchondral_text1"),resultSet.getString("schmorls_1"),resultSet.getString("schmorls_text1"),resultSet.getString("foraminal_1"),resultSet.getString("foraminal_select1"),resultSet.getString("osteoporosis_1"),resultSet.getString("osteoporosis_select1"),resultSet.getString("decreasedFlexExt_1"),
 	 						resultSet.getString("decreasedFlexExt_select1"),resultSet.getString("decreasedRLFlex_1"),resultSet.getString("decreasedRLFlex_select1"),resultSet.getString("dextro_Levoscoliosis_towering_select1"),resultSet.getString("mild_11"),resultSet.getString("moderate_11"),resultSet.getString("severe_11"),resultSet.getString("apexat_1"),resultSet.getString("apexat_text1"),resultSet.getString("softtissueedemaof_1"),resultSet.getString("softtissueedemaof_text1"),resultSet.getString("other_1"),resultSet.getString("other_text1"),
 	 						resultSet.getString("views2"),resultSet.getString("negative_2"),resultSet.getString("hyperkyphosis_2"),resultSet.getString("normalkyphosis_2"),resultSet.getString("hypokyphosis_2"),
@@ -138,6 +138,45 @@ public class RadiologicReportDAO
 		    return radiologicReport;
 			
 		}
+		public int updateRadiologicReport(RadiologicReport report,String pid,String admin)
+		{
+			Connection con = null;
+			Statement statement = null;
+			int flag=0;
+			try {
+				con = dataSource.getConnection();
+				statement = con.createStatement();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+		    try{
+		    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		    	 Date date = new Date();
+		    	 //System.out.println(dateFormat.format(date));
+		    	String cmd="UPDATE tbl_radiologicreport SET pname ='"+report.getPname()+"',date='"+report.getDate()+"',id='"+report.getId()+"',dob='"+report.getDob()+"',views1='"+report.getViews1()+"',negative_1='"+report.getNegative_1()+"',positive_for='"+report.getPositive_for()+"',positive_text1='"+report.getPositive_text1()+"',break_1='"+report.getBreak_1()+"',break_text1='"+report.getBreak_text1()+"',adi_1='"+report.getAdi_1()+"',hypolorodosis_1='"+report.getHypolorodosis_1()+"',normalcurvature_1='"+report.getNormalcurvature_1()+"',hyperlordosis_1='"+report.getHyperlordosis_1()+"',hyperlordosis_select1='"+report.getHyperlordosis_select1()+"',mcGregorslinenormal_1='"+report.getMcGregorslinenormal_1()+"',mcGregorslineinterupted_1='"+report.getMcGregorslineinterupted_1()+"',degenerativejointdisease_1='"+report.getDegenerativejointdisease_1()+"',degenerativejointdisease_select1='"+report.getDegenerativejointdisease_select1()+"',mild_1='"+report.getMild_1()+"',moderate_1='"+report.getModerate_1()+"',severe_1='"+report.getSevere_1()+"',narrowed_1='"+report.getNarrowed_1()+"',narrowed_text1='"+report.getNarrowed_text1()+"',anterior_1='"+report.getAnterior_1()+"',anterior_text1='"+report.getAnterior_text1()+"',subchondral_1='"+report.getSubchondral_1()+"',subchondral_text1='"+report.getSubchondral_text1()+"',schmorls_1='"+report.getSchmorls_1()+"',schmorls_text1='"+report.getSchmorls_text1()+"' WHERE pid='"+pid+"';";
+		    	String Desc="Update report "+report.getPname();
+		    	System.out.println(cmd);
+		    	statement.execute(cmd);
+		    	flag=1;
+		    }
+		    	 catch(Exception e){
+		 	    	System.out.println(e.toString());
+		 	    	releaseStatement(statement);
+		 	    	releaseConnection(con);
+		 	    	flag=0;
+		 	    	//return 0;
+		 	    }finally{
+		 	     	releaseStatement(statement);
+		 	    	releaseConnection(con);	    
+		 	    	
+		 	    }
+		 	    if(flag==1)
+		     		return 1;
+		     	else
+		     		return 0;
+		 	    
+			
+		}	
 	public void releaseConnection(Connection con){
 		try{if(con != null)
 			con.close();
