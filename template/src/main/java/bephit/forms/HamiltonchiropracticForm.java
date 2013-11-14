@@ -5,14 +5,14 @@ import java.util.List;
 
 import bephit.model.Hamiltonchiropractic;
 public class HamiltonchiropracticForm {
-	private List<Hamiltonchiropractic> Hamiltonchiropractic;
+	private List<Hamiltonchiropractic> hamiltonchiropractic;
 	 
     public List<Hamiltonchiropractic> getHamiltonchiropractic() {
-		return Hamiltonchiropractic;
+		return hamiltonchiropractic;
 	}
 
 	public void setHamiltonchiropractic(List<Hamiltonchiropractic> hamiltonchiropractic) {
-		this.Hamiltonchiropractic = hamiltonchiropractic;
+		this.hamiltonchiropractic = hamiltonchiropractic;
 	}
 	
  

@@ -38,7 +38,7 @@
 	            </div>
 	            <div class="contentbox">
               
-            <c:set value="${Hamiltonchiropracticform.hamiltonchiropractic[0]}" var="Hamiltonchiropractic"> </c:set>
+            <c:set value="${hamiltonchiropracticform.hamiltonchiropractic[0]}" var="Hamiltonchiropractic"> </c:set>
               
   <div id="tabs">
        <ul>
@@ -66,7 +66,7 @@
                  <td width="84%" valign="middle" align="left">${Hamiltonchiropractic.hacheck}</td>
                  <td width="84%" valign="middle" align="left">${Hamiltonchiropractic.ha}</td>
                  </tr>
-                <tr class="row2">
+                <tr class="row1">
                 <td width="84%" valign="middle" align="left"> ${Hamiltonchiropractic.neckcheck}</td>
                  <td width="84%" valign="middle" align="left">${Hamiltonchiropractic.neck}</td>
                   </tr>
@@ -74,7 +74,7 @@
                  <td width="84%" valign="middle" align="left">${Hamiltonchiropractic.mbcheck}</td>
                  <td width="84%" valign="middle" align="left">${Hamiltonchiropractic.mb}</td>
                  </tr>
-                 <tr class="row2">
+                 <tr class="row1">
                  <td width="84%" valign="middle" align="left">${Hamiltonchiropractic.ribscheck}</td>
                  <td width="84%" valign="middle" align="left">${Hamiltonchiropractic.ribs}</td>
                   </tr>
@@ -82,7 +82,7 @@
                  <td width="84%" valign="middle" align="left">${Hamiltonchiropractic.shouldercheck}</td>
                  <td width="84%" valign="middle" align="left">${Hamiltonchiropractic.shoulder}</td>
                   </tr>
-                 <tr class="row2">
+                 <tr class="row1">
                  <td width="84%" valign="middle" align="left">${Hamiltonchiropractic.elbowcheck}</td>
                  <td width="84%" valign="middle" align="left">${Hamiltonchiropractic.elbow}</td>
                  </tr>
@@ -90,7 +90,7 @@
                 <td width="84%" valign="middle" align="left">${Hamiltonchiropractic.handcheck}</td>
                  <td width="84%" valign="middle" align="left">${Hamiltonchiropractic.hand}</td>
                   </tr>
-                 <tr class="row2">                
+                 <tr class="row1">                
                 <td width="84%" valign="middle" align="left">${Hamiltonchiropractic.wristcheck}</td>
                  <td width="84%" valign="middle" align="left">${Hamiltonchiropractic.wrist}</td>
                   </tr>
@@ -98,7 +98,7 @@
                  <td width="84%" valign="middle" align="left">${Hamiltonchiropractic.lbpcheck}</td>
                  <td width="84%" valign="middle" align="left">${Hamiltonchiropractic.lbp}</td>
                   </tr>
-                 <tr class="row2">
+                 <tr class="row1">
                  <td width="84%" valign="middle" align="left">${Hamiltonchiropractic.hipcheck}</td>
                  <td width="84%" valign="middle" align="left">${Hamiltonchiropractic.hip}</td>
                   </tr>
@@ -106,7 +106,7 @@
                  <td width="84%" valign="middle" align="left">${Hamiltonchiropractic.legcheck}</td>
                  <td width="84%" valign="middle" align="left">${Hamiltonchiropractic.leg}</td>
                  </tr>
-                <tr class="row2">
+                <tr class="row1">
                  <td width="84%" valign="middle" align="left">${Hamiltonchiropractic.kneecheck}</td>
                  <td width="84%" valign="middle" align="left">${Hamiltonchiropractic.knee}</td>
                  </tr>
@@ -114,7 +114,7 @@
                  <td width="84%" valign="middle" align="left">${Hamiltonchiropractic.footcheck}</td>
                  <td width="84%" valign="middle" align="left">${Hamiltonchiropractic.foot}</td>
                  </tr>
-                 <tr class="row2">
+                 <tr class="row1">
                 <td width="84%" valign="middle" align="left">${Hamiltonchiropractic.anklecheck}</td>
                  <td width="84%" valign="middle" align="left">${Hamiltonchiropractic.ankle}</td>
                   </tr>
@@ -151,7 +151,6 @@
                  <td width="84%" valign="middle" align="left">${Hamiltonchiropractic.bending}</td>
                  <td width="84%" valign="middle" align="left">${Hamiltonchiropractic.rest}</td>
                  <td width="84%" valign="middle" align="left">${Hamiltonchiropractic.otherb}</td>
-                  <td width="84%" valign="middle" align="left">other</td>
                  <td width="84%" valign="middle" align="left">${Hamiltonchiropractic.othere}</td>
                  </tr>
                   <tr class="row1">
@@ -177,7 +176,6 @@
                  <td width="84%" valign="middle" align="left">${Hamiltonchiropractic.walking}</td>
                 <td width="84%" valign="middle" align="left">${Hamiltonchiropractic.activity}</td>
                 <td width="84%" valign="middle" align="left">${Hamiltonchiropractic.otherworse}</td>
-                <td width="84%" valign="middle" align="left">other </td>
                  <td width="84%" valign="middle" align="left">${Hamiltonchiropractic.otherfeel}</td>
                   </tr>
                   <tr class="row1">
@@ -187,7 +185,6 @@
                  <td width="84%" valign="middle" align="left">${Hamiltonchiropractic.burning}</td>
                  </tr>
                  <tr class="row2">
-                <td width="84%" valign="middle" align="left">${Hamiltonchiropractic.burning}</td>
                 <td width="84%" valign="middle" align="left">${Hamiltonchiropractic.nagging}</td>
                 <td width="84%" valign="middle" align="left">${Hamiltonchiropractic.throbbing}</td>
                   </tr>
@@ -200,7 +197,6 @@
                  <td width="84%" valign="middle" align="left">${Hamiltonchiropractic.stabbing}</td>
                 <td width="84%" valign="middle" align="left">${Hamiltonchiropractic.cramping}</td>
                 <td width="84%" valign="middle" align="left">${Hamiltonchiropractic.otherdescribe}</td>
-                <td width="84%" valign="middle" align="left">other </td> 
                 <td width="84%" valign="middle" align="left"> ${Hamiltonchiropractic.otherpain}</td>
                   </tr>
                  <tr class="row1">
@@ -587,9 +583,9 @@
 				                 
 				                  </tr>	
 				                   <tr class="row1">
-				                  <td>Hoovers	</td>
-				                  <td width="84%" valign="middle" align="left">${Hamiltonchiropractic.hooversr} <input type="checkbox" name="hooversr" value="hooversr">Right</td>
-				                 <td width="84%" valign="middle" align="left"> ${Hamiltonchiropractic.hooversl}<input type="checkbox" name="hooversl" value="hooversl">Left</td>
+				                  <td width="84%" valign="middle" align="left">Hoovers	</td>
+				                  <td width="84%" valign="middle" align="left">${Hamiltonchiropractic.hooversr} </td>
+				                 <td width="84%" valign="middle" align="left"> ${Hamiltonchiropractic.hooversl}</td>
 				                 
 				                  </tr>	
 				                   <tr class="row2">
@@ -624,8 +620,8 @@
 				                  </tr>	
 				                   <tr class="row1">
 				                  <td width="84%" valign="middle" align="left">Obers		</td>
-				                  <td width="84%" valign="middle" align="left"> ${Hamiltonchiropractic.obersr}<input type="checkbox" name="obersr" value="obersr">Right</td>
-				                 <td width="84%" valign="middle" align="left"> ${Hamiltonchiropractic.obersl}<input type="checkbox" name="obersl" value="obersl">Left</td>
+				                  <td width="84%" valign="middle" align="left"> ${Hamiltonchiropractic.obersr}</td>
+				                 <td width="84%" valign="middle" align="left"> ${Hamiltonchiropractic.obersl}</td>
 				                 
 				                  </tr>	
 				                   <tr class="row2">
@@ -687,8 +683,8 @@
 				                  </tr>
 				                  <tr class="row2">
 				                  <td width="84%" valign="middle" align="left">Supraspinatus</td>
-				                  <td width="84%" valign="middle" align="left">${Hamiltonchiropractic.supraspinatus}</td>
-				                 <td width="84%" valign="middle" align="left"> ${Hamiltonchiropractic.supraspinatus}</td>
+				                  <td width="84%" valign="middle" align="left">${Hamiltonchiropractic.supraspinatusr}</td>
+				                 <td width="84%" valign="middle" align="left"> ${Hamiltonchiropractic.supraspinatusl}</td>
 				                 
 				                  </tr>
 				                  <tr class="row1">

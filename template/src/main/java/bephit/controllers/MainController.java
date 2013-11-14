@@ -1193,6 +1193,10 @@ public class MainController {
 		return "viewhamiltonchiropractic";
  
 	}
+	@RequestMapping(value="/soapnotes", method = RequestMethod.GET)
+	public String soapnotes(ModelMap model) {
+	      return "soapnotes";
+	}
 	
 
 	}

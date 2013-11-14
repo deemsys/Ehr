@@ -231,6 +231,7 @@
 				            <li><a href="radiologicreport">Radiologic report Form</a></li>
 
 				             <li><a href="hamiltonchiropractic">InitialExam</a></li>
+				             <li><a href="soapnotes">SOAP Notes</a></li>
 
 </ul>
 							
