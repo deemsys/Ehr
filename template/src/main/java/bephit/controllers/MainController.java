@@ -400,7 +400,25 @@ public class MainController {
 	        return "viewradiologicreport";
 		
 	}
+
+	@RequestMapping(value="/deleteradoiologicreport", method=RequestMethod.GET)
+	public String removeRadiologicReport(@RequestParam("pid") String pid,ModelMap model, Principal principal) {
 	
+		int status=radioDAO.deleteRadiologicReport(pid, principal.getName());
+		
+		if(status==1)
+		{
+        model.addAttribute("success","true");
+		//ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
+		RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
+		//participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
+		radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport());
+        model.addAttribute("radiologicReportForm", radiologicReportForm);
+      
+		}
+		
+		return "viewradiologicreport";
+	}
 	@RequestMapping(value="/workaccident", method = RequestMethod.GET)
 	public String workaccident(ModelMap model) {
 		return "workaccident";

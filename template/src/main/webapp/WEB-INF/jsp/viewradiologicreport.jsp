@@ -50,7 +50,7 @@
 												<a href="#" title="" ><img src="resources/images/icons/icon_edit.png" alt="Edit" /></a><a href="<c:out value="editradiologicreport?pid=${radiologicReport.pid}"/>" style="padding-right:10px;">Edit</a>
 											<%-- 	 </c:if>
  --%>												<%--<c:if test="${currentuser.adminuser[0].deleteparticipant==1}"> --%>
-											<a href="#" title=""><img src="resources/images/icons/icon_delete.png" alt="Delete" /></a><a href="<c:out value="deleteparticipants?pid=${radiologicReport.pid}"/>" onclick="return confirmation()">Remove</a>
+											<a href="#" title=""><img src="resources/images/icons/icon_delete.png" alt="Delete" /></a><a href="<c:out value="deleteradoiologicreport?pid=${radiologicReport.pid}"/>" onclick="return confirmation()">Remove</a>
 											<%-- </c:if> --%>
 											</td>	
 										
@@ -69,9 +69,9 @@
 							 </tr>
 							 </table>
 							 </div>
-<!-- 							   	
+							   	
 				
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 $(function () {
 $('input[name="chkUser"]').click(function () {
 if ($('input[name="chkUser"]').length == $('input[name="chkUser"]:checked').length) {
@@ -93,7 +93,7 @@ slvals = null;
 });
 })
 </script>
-
+ -->
 
 
 
@@ -114,6 +114,7 @@ slvals = null;
 }
 
  */ 
+
 function confirmation() {
 	var answer = confirm("Are you Sure You Want to Delete Participant ?")
 	if (answer){
@@ -126,7 +127,7 @@ function confirmation() {
 
 
 ////////////////////////---------------------------
-function validate()
+/* function validate()
 {
 //alert(fname);
 var chks = document.getElementsByName('chkUser');
@@ -151,9 +152,9 @@ return true;
 	}
 else
 	return false;
-}
+} */
 /////////////////////////----------------------------
-
+/* 
 function findpart()
 {
  alert("sdasdasdas");
@@ -161,8 +162,8 @@ function findpart()
  alert(document.getElementById("group").value);
  alert(document.getElementById("city").value); 
 window.location="?do=viewparticipants&moblie="+document.getElementById("moblie").value+"&group="+document.getElementById("group").value+"&city="+document.getElementById("city").value;
-}
-</script> -->
+} */
+</script> 
 
 <jsp:include page="footer.jsp"></jsp:include>	
 		

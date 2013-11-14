@@ -176,7 +176,49 @@ public class RadiologicReportDAO
 		     		return 0;
 		 	    
 			
-		}	
+		}
+		public int deleteRadiologicReport(String pid,String admin){
+			Connection con = null;
+			Statement statement = null;
+			ResultSet resultSet = null;
+			int flag=0;
+			try {
+				con = dataSource.getConnection();
+				statement = con.createStatement();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+			try{
+				DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		    	 Date date = new Date();
+		    	 String cmd_getpatient_name="select pname from tbl_radiologicreport where pid='"+pid+"'";
+		    	 String Desc="Delete report ";
+		    	 resultSet=statement.executeQuery(cmd_getpatient_name);
+					
+					if(resultSet.next())
+						Desc=Desc+resultSet.getString(1);
+					statement.execute("delete from tbl_radiologicreport where pid='"+pid+"'");
+					
+					flag=1;
+					
+			    }catch(Exception e){
+			    	System.out.println(e.toString());
+			    	flag=0;
+			    	releaseResultSet(resultSet);
+			    	releaseStatement(statement);
+			    	releaseConnection(con);
+			    }finally{
+			    	
+			    	releaseResultSet(resultSet);
+			    	releaseStatement(statement);
+			    	releaseConnection(con);	    	
+			    }
+			   		if(flag==1)
+			   			return 1;
+			   		else
+			   			return 0;
+			}
+			
 	public void releaseConnection(Connection con){
 		try{if(con != null)
 			con.close();
