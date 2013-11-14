@@ -30,96 +30,231 @@ public class Hamiltonchiropractic {
 	private String foot;
 	private String anklecheck;
 	private String ankle;
-	private String begin;
+	private String suddenly;
+	private String gradually;
 	private String hours;
 	private String days;
 	private String date;
 	private String reason;
+	private String acute;
+	private String subacute;
 	private String chronic;
-	private String bestfeel;
+	private String lyingdown;
+	private String sitting;
+	private String standing;
+	private String bending;
+	private String rest;
+	private String otherb;
 	private String othere;
-	private String solution;
+	private String ice;
+	private String heat;
+	private String massage;
+	private String aspirin;
+	private String otherdone;
 	private String otherit;
-	private String worsefeel;
+	private String bendingworse;
+	private String twisting;
+	private String lifting;
+	private String walking;
+	private String activity;
+	private String otherworse;
 	private String otherfeel;
-	private String paindes;
+	private String sharp;
+	private String severe;
+	private String dull;
+	private String burning;
+	private String nagging;
+	private String throbbing;
+	private String numb;
+	private String tingling;
+	private String stiff;
+	private String stabbing;
+	private String cramping;
+	private String otherdescribe;
 	private String otherpain;
-	private String consinter;
-	private String pain;
+	private String constant;
+	private String intermittent;
+	private String local;
+	private String diffuse;
 	private String radiates;
 	private String otherradiates;
-	private String description;
-	private String worse;
+	private String mild;
+	private String moderate;
+	private String severepain;
+	private String crippling;
+	private String am;
+	private String pm;
+	private String othertime;
 	private String otherdn;
-	private String conditionw;
-	private String work;
+	private String better;
+	private String same;
+	private String worse;
+	private String yes;
+	private String no;
 	private String day;
-	private String condition;
+	private String work;
+	private String sleep;
+	private String otherdaily;
 	private String othercondition;
-	private String assessment;
-	private String treatmentplan;
-	private String shortterm;
-	private String longterm;
-	private String jacksons;
-	private String foramin_comp;
-	private String shoulder_depr;
-	private String georges;
-	private String odono;
-	private String bakody_sign;
-	private String distraction_test;
-	private String valsalva;
+	private String sameass;
+	private String improved;
+	private String worseass;
+	private String plateau;
+	private String preinjury;
+	private String slight;
+	private String moderatly;
+	private String great;
+	private String chiropractic;
+	private String ems;
+	private String iceplan;
+	private String heatplan;
+	private String nimmo;
+	private String ultrasound;
+	private String manualtraction;
+	private String massageplan;
+	private String neuromuscular;
+	private String stretching;
+	private String strengthening;
+	private String remobilization;
+	private String rehab;
+	private String modificat;
+	private String release;
+	private String refer;
+	private String decreasepain;
+	private String decreasespam;
+	private String increaserom;
+	private String improveadl;
+	private String improvesubluxations;
+	private String fullactivity;
+	private String returntowork;
+	private String renewsports;
+	private String jacksonsr;
+	private String jacksonsl;
+	private String jacksonslo;
+	private String foramin_compr;
+	private String foramin_compl;
+	private String foramin_complo;
+	private String shoulder_deprr;
+	private String shoulder_deprl;
+	private String shoulder_deprlo;
+	private String georgesr;
+	private String georgesl;
+	private String georgeslo;
+	private String odonor;
+	private String odonol;
+	private String odonolo;
+	private String bakody_signr;
+	private String bakody_signl;
+	private String bakody_signlo;
+	private String distraction_testr;
+	private String distraction_testl;
+	private String distraction_testlo;
+	private String valsalvar;
+	private String valsalval;
+	private String valsalvalo;
 	private String spinal_percuss;
 	private String gripdynamomright;
 	private String gripdynamomleft;
-	private String adsons;
-	private String rustsign;
+	private String adsonsr;
+	private String adsonsl;
+	private String adsonslo;
+	private String rustsignr;
+	private String rustsignl;
+	private String rustsignlo;
 	private String spinal_percusst;
-	private String adams_test;
-	private String sheppal_sign;
-	private String soto_hall;
-	private String compression_test;
-	private String antalgia;
-	private String spinal_percussl;
-	private String valsalval;
-	private String minors_sign;
-	private String braggards_test;
-	private String slr;
-	private String wlr;
-	private String hoovers;
-	private String dbl_leg_raise;
-	private String long_leg_test;
-	private String anvil_test;
-	private String thomas;
-	private String milgrams_test;
-	private String obers;
-	private String illiaccomp;
-	private String yeomans;
-	private String allis_sign;
-	private String dugas;
-	private String supraspinatus;
-	private String codmans;
-	private String speeds_test;
-	private String yergasons;
-	private String tinelse;
-	private String lingaminstab;
-	private String golfers_elbow;
-	private String tennis_elbow;
-	private String tinels;
-	private String phalens;
-	private String finkelsteins_test;
-	private String bracelet;
-	private String allens;
-	private String valgus_varus;
-	private String pat_ball;
-	private String drawer;
-	private String val_varus;
-	private String apleys;
-	private String drawera;
-	private String thompsons;
-	private String tinelsa;
-	private String strunskys;
-	private String homans;
-	private String claudication_test;
+	private String adams_testr;
+	private String adams_testl;
+	private String sheppal_signr;
+	private String sheppal_signl;
+	private String soto_hallr;
+	private String soto_halll;
+	private String compression_testr;
+	private String compression_testl;
+	private String compression_testlo;
+	private String antalgiar;
+	private String antalgial;
+	private String spinal_percusslr;
+	private String spinal_percussll;
+	private String valsalvalr;
+	private String valsalvall;
+	private String minors_signr;
+	private String minors_signl;
+	private String braggards_testr;
+	private String braggards_testl;
+	private String slrr;
+	private String slrl;
+	private String wlrr;
+	private String wlrl;
+	private String hooversr;
+	private String hooversl;
+	private String dbl_leg_raiser;
+	private String dbl_leg_raisel;
+	private String long_leg_testr;
+	private String long_leg_testl;
+	private String anvil_testr;
+	private String anvil_testl;
+	private String thomasr;
+	private String thomasl;
+	private String milgrams_testr;
+	private String milgrams_testl;
+	private String obersr;
+	private String obersl;
+	private String illiaccompr;
+	private String illiaccompl;
+	private String yeomansr;
+	private String yeomansl;
+	private String allis_signr;
+	private String allis_signl;
+	private String dugasr;
+	private String dugasl;
+	private String supraspinatusr;
+	private String supraspinatusl;
+	private String codmansr;
+	private String codmansl;
+	private String speeds_testr;
+	private String speeds_testl;
+	private String yergasonsr;
+	private String yergasonsl;
+	private String tinelser;
+	private String tinelsel;
+	private String lingaminstabr;
+	private String lingaminstabl;
+	private String golfers_elbowr;
+	private String golfers_elbowl;
+	private String tennis_elbowr;
+	private String tennis_elbowl;
+	private String tinelsr;
+	private String tinelsl;
+	private String phalensr;
+	private String phalensl;
+	private String finkelsteins_testr;
+	private String finkelsteins_testl;
+	private String braceletr;
+	private String braceletl;
+	private String allensr;
+	private String allensl;
+	private String valgus_varusr;
+	private String valgus_varusl;
+	private String pat_ballr;
+	private String pat_balll;
+	private String drawerr;
+	private String drawerl;
+	private String val_varusr;
+	private String val_varusl;
+	private String apleysr;
+	private String apleysl;
+	private String drawerar;
+	private String draweral;
+	private String thompsonsr;
+	private String thompsonsl;
+	private String tinelsar;
+	private String tinelsal;
+	private String strunskysr;
+	private String strunskysl;
+	private String homansr;
+	private String homansl;
+	private String claudication_testr;
+	private String claudication_testl;
 	
 	public Hamiltonchiropractic(){
 	}
@@ -131,34 +266,77 @@ public class Hamiltonchiropractic {
 			String wristcheck, String wrist, String lbpcheck, String lbp,
 			String hipcheck, String hip, String legcheck, String leg,
 			String kneecheck, String knee, String footcheck, String foot,
-			String anklecheck, String ankle, String begin, String hours,
-			String days, String date, String reason, String chronic,
-			String bestfeel, String othere, String solution, String otherit,
-			String worsefeel, String otherfeel, String paindes,
-			String otherpain, String consinter, String pain, String radiates,
-			String otherradiates, String description, String worse,
-			String otherdn, String conditionw, String work, String day,
-			String condition, String othercondition, String assessment,
-			String treatmentplan, String shortterm, String longterm,
-			String jacksons, String foramin_comp, String shoulder_depr,			
-			String georges,String odono, String bakody_sign, String distraction_test,
-			String valsalva, String spinal_percuss, String gripdynamomright,
-			String gripdynamomleft, String adsons, String rustsign,
-			String spinal_percusst, String adams_test,String sheppal_sign, String soto_hall,
-			String compression_test, String antalgia, String spinal_percussl,
-			String valsalval, String minors_sign, String braggards_test,
-			String slr, String wlr, String hoovers, String dbl_leg_raise,
-			String long_leg_test, String anvil_test, String thomas,
-			String milgrams_test, String obers, String illiaccomp,
-			String yeomans, String allis_sign, String dugas,
-			String supraspinatus, String codmans, String speeds_test,
-			String yergasons, String tinelse, String lingaminstab,
-			String golfers_elbow, String tennis_elbow, String tinels,
-			String phalens, String finkelsteins_test, String bracelet,
-			String allens, String valgus_varus, String pat_ball, String drawer,
-			String val_varus, String apleys, String drawera, String thompsons,
-			String tinelsa, String strunskys, String homans,
-			String claudication_test) {
+			String anklecheck, String ankle, String suddenly, String gradually,
+			String hours, String days, String date, String reason,
+			String acute, String subacute, String chronic, String lyingdown,
+			String sitting, String standing, String bending, String rest,
+			String otherb, String othere, String ice, String heat,
+			String massage, String aspirin, String otherdone, String otherit,
+			String bendingworse, String twisting, String lifting,
+			String walking, String activity, String otherworse,
+			String otherfeel, String sharp, String severe, String dull,
+			String burning, String nagging, String throbbing, String numb,
+			String tingling, String stiff, String stabbing, String cramping,
+			String otherdescribe, String otherpain, String constant,
+			String intermittent, String local, String diffuse, String radiates,
+			String otherradiates, String mild, String moderate,
+			String severepain, String crippling, String am, String pm,
+			String othertime, String otherdn, String better, String same,
+			String worse, String yes, String no, String day, String work,
+			String sleep, String otherdaily, String othercondition,
+			String sameass, String improved, String worseass, String plateau,
+			String preinjury, String slight, String moderatly, String great,
+			String chiropractic, String ems, String iceplan, String heatplan,
+			String nimmo, String ultrasound, String manualtraction,
+			String massageplan, String neuromuscular, String stretching,
+			String strengthening, String remobilization, String rehab,
+			String modificat, String release, String refer,
+			String decreasepain, String decreasespam, String increaserom,
+			String improveadl, String improvesubluxations, String fullactivity,
+			String returntowork, String renewsports, String jacksonsr,
+			String jacksonsl, String jacksonslo, String foramin_compr,
+			String foramin_compl, String foramin_complo, String shoulder_deprr,
+			String shoulder_deprl, String shoulder_deprlo, String georgesr,
+			String georgesl, String georgeslo, String odonor, String odonol,
+			String odonolo, String bakody_signr, String bakody_signl,
+			String bakody_signlo, String distraction_testr,
+			String distraction_testl, String distraction_testlo,
+			String valsalvar, String valsalval, String valsalvalo,
+			String spinal_percuss, String gripdynamomright,
+			String gripdynamomleft, String adsonsr, String adsonsl,
+			String adsonslo, String rustsignr, String rustsignl,
+			String rustsignlo, String spinal_percusst, String adams_testr,
+			String adams_testl, String sheppal_signr, String sheppal_signl,
+			String soto_hallr, String soto_halll, String compression_testr,
+			String compression_testl, String compression_testlo,
+			String antalgiar, String antalgial, String spinal_percusslr,
+			String spinal_percussll, String valsalvalr, String valsalvall,
+			String minors_signr, String minors_signl, String braggards_testr,
+			String braggards_testl, String slrr, String slrl, String wlrr,
+			String wlrl, String hooversr, String hooversl,
+			String dbl_leg_raiser, String dbl_leg_raisel,
+			String long_leg_testr, String long_leg_testl, String anvil_testr,
+			String anvil_testl, String thomasr, String thomasl,
+			String milgrams_testr, String milgrams_testl, String obersr,
+			String obersl, String illiaccompr, String illiaccompl,
+			String yeomansr, String yeomansl, String allis_signr,
+			String allis_signl, String dugasr, String dugasl,
+			String supraspinatusr, String supraspinatusl, String codmansr,
+			String codmansl, String speeds_testr, String speeds_testl,
+			String yergasonsr, String yergasonsl, String tinelser,
+			String tinelsel, String lingaminstabr, String lingaminstabl,
+			String golfers_elbowr, String golfers_elbowl, String tennis_elbowr,
+			String tennis_elbowl, String tinelsr, String tinelsl,
+			String phalensr, String phalensl, String finkelsteins_testr,
+			String finkelsteins_testl, String braceletr, String braceletl,
+			String allensr, String allensl, String valgus_varusr,
+			String valgus_varusl, String pat_ballr, String pat_balll,
+			String drawerr, String drawerl, String val_varusr,
+			String val_varusl, String apleysr, String apleysl, String drawerar,
+			String draweral, String thompsonsr, String thompsonsl,
+			String tinelsar, String tinelsal, String strunskysr,
+			String strunskysl, String homansr, String homansl,
+			String claudication_testr, String claudication_testl) {
 		super();
 		this.hacheck = hacheck;
 		this.ha = ha;
@@ -188,96 +366,231 @@ public class Hamiltonchiropractic {
 		this.foot = foot;
 		this.anklecheck = anklecheck;
 		this.ankle = ankle;
-		this.begin = begin;
+		this.suddenly = suddenly;
+		this.gradually = gradually;
 		this.hours = hours;
 		this.days = days;
 		this.date = date;
 		this.reason = reason;
+		this.acute = acute;
+		this.subacute = subacute;
 		this.chronic = chronic;
-		this.bestfeel = bestfeel;
+		this.lyingdown = lyingdown;
+		this.sitting = sitting;
+		this.standing = standing;
+		this.bending = bending;
+		this.rest = rest;
+		this.otherb = otherb;
 		this.othere = othere;
-		this.solution = solution;
+		this.ice = ice;
+		this.heat = heat;
+		this.massage = massage;
+		this.aspirin = aspirin;
+		this.otherdone = otherdone;
 		this.otherit = otherit;
-		this.worsefeel = worsefeel;
+		this.bendingworse = bendingworse;
+		this.twisting = twisting;
+		this.lifting = lifting;
+		this.walking = walking;
+		this.activity = activity;
+		this.otherworse = otherworse;
 		this.otherfeel = otherfeel;
-		this.paindes = paindes;
+		this.sharp = sharp;
+		this.severe = severe;
+		this.dull = dull;
+		this.burning = burning;
+		this.nagging = nagging;
+		this.throbbing = throbbing;
+		this.numb = numb;
+		this.tingling = tingling;
+		this.stiff = stiff;
+		this.stabbing = stabbing;
+		this.cramping = cramping;
+		this.otherdescribe = otherdescribe;
 		this.otherpain = otherpain;
-		this.consinter = consinter;
-		this.pain = pain;
+		this.constant = constant;
+		this.intermittent = intermittent;
+		this.local = local;
+		this.diffuse = diffuse;
 		this.radiates = radiates;
 		this.otherradiates = otherradiates;
-		this.description = description;
-		this.worse = worse;
+		this.mild = mild;
+		this.moderate = moderate;
+		this.severepain = severepain;
+		this.crippling = crippling;
+		this.am = am;
+		this.pm = pm;
+		this.othertime = othertime;
 		this.otherdn = otherdn;
-		this.conditionw = conditionw;
-		this.work = work;
+		this.better = better;
+		this.same = same;
+		this.worse = worse;
+		this.yes = yes;
+		this.no = no;
 		this.day = day;
-		this.condition = condition;
+		this.work = work;
+		this.sleep = sleep;
+		this.otherdaily = otherdaily;
 		this.othercondition = othercondition;
-		this.assessment = assessment;
-		this.treatmentplan = treatmentplan;
-		this.shortterm = shortterm;
-		this.longterm = longterm;
-		this.jacksons = jacksons;
-		this.foramin_comp = foramin_comp;
-		this.shoulder_depr = shoulder_depr;
-		this.georges = georges;
-		this.odono = odono;
-		this.bakody_sign = bakody_sign;
-		this.distraction_test = distraction_test;
-		this.valsalva = valsalva;
+		this.sameass = sameass;
+		this.improved = improved;
+		this.worseass = worseass;
+		this.plateau = plateau;
+		this.preinjury = preinjury;
+		this.slight = slight;
+		this.moderatly = moderatly;
+		this.great = great;
+		this.chiropractic = chiropractic;
+		this.ems = ems;
+		this.iceplan = iceplan;
+		this.heatplan = heatplan;
+		this.nimmo = nimmo;
+		this.ultrasound = ultrasound;
+		this.manualtraction = manualtraction;
+		this.massageplan = massageplan;
+		this.neuromuscular = neuromuscular;
+		this.stretching = stretching;
+		this.strengthening = strengthening;
+		this.remobilization = remobilization;
+		this.rehab = rehab;
+		this.modificat = modificat;
+		this.release = release;
+		this.refer = refer;
+		this.decreasepain = decreasepain;
+		this.decreasespam = decreasespam;
+		this.increaserom = increaserom;
+		this.improveadl = improveadl;
+		this.improvesubluxations = improvesubluxations;
+		this.fullactivity = fullactivity;
+		this.returntowork = returntowork;
+		this.renewsports = renewsports;
+		this.jacksonsr = jacksonsr;
+		this.jacksonsl = jacksonsl;
+		this.jacksonslo = jacksonslo;
+		this.foramin_compr = foramin_compr;
+		this.foramin_compl = foramin_compl;
+		this.foramin_complo = foramin_complo;
+		this.shoulder_deprr = shoulder_deprr;
+		this.shoulder_deprl = shoulder_deprl;
+		this.shoulder_deprlo = shoulder_deprlo;
+		this.georgesr = georgesr;
+		this.georgesl = georgesl;
+		this.georgeslo = georgeslo;
+		this.odonor = odonor;
+		this.odonol = odonol;
+		this.odonolo = odonolo;
+		this.bakody_signr = bakody_signr;
+		this.bakody_signl = bakody_signl;
+		this.bakody_signlo = bakody_signlo;
+		this.distraction_testr = distraction_testr;
+		this.distraction_testl = distraction_testl;
+		this.distraction_testlo = distraction_testlo;
+		this.valsalvar = valsalvar;
+		this.valsalval = valsalval;
+		this.valsalvalo = valsalvalo;
 		this.spinal_percuss = spinal_percuss;
 		this.gripdynamomright = gripdynamomright;
 		this.gripdynamomleft = gripdynamomleft;
-		this.adsons = adsons;
-		this.rustsign = rustsign;
+		this.adsonsr = adsonsr;
+		this.adsonsl = adsonsl;
+		this.adsonslo = adsonslo;
+		this.rustsignr = rustsignr;
+		this.rustsignl = rustsignl;
+		this.rustsignlo = rustsignlo;
 		this.spinal_percusst = spinal_percusst;
-		this.adams_test = adams_test;
-		this.sheppal_sign = sheppal_sign;
-		this.soto_hall = soto_hall;
-		this.compression_test = compression_test;
-		this.antalgia = antalgia;
-		this.spinal_percussl = spinal_percussl;
-		this.valsalval = valsalval;
-		this.minors_sign = minors_sign;
-		this.braggards_test = braggards_test;
-		this.slr = slr;
-		this.wlr = wlr;
-		this.hoovers = hoovers;
-		this.dbl_leg_raise = dbl_leg_raise;
-		this.long_leg_test = long_leg_test;
-		this.anvil_test = anvil_test;
-		this.thomas = thomas;
-		this.milgrams_test = milgrams_test;
-		this.obers = obers;
-		this.illiaccomp = illiaccomp;
-		this.yeomans = yeomans;
-		this.allis_sign = allis_sign;
-		this.dugas = dugas;
-		this.supraspinatus = supraspinatus;
-		this.codmans = codmans;
-		this.speeds_test = speeds_test;
-		this.yergasons = yergasons;
-		this.tinelse = tinelse;
-		this.lingaminstab = lingaminstab;
-		this.golfers_elbow = golfers_elbow;
-		this.tennis_elbow = tennis_elbow;
-		this.tinels = tinels;
-		this.phalens = phalens;
-		this.finkelsteins_test = finkelsteins_test;
-		this.bracelet = bracelet;
-		this.allens = allens;
-		this.valgus_varus = valgus_varus;
-		this.pat_ball = pat_ball;
-		this.drawer = drawer;
-		this.val_varus = val_varus;
-		this.apleys = apleys;
-		this.drawera = drawera;
-		this.thompsons = thompsons;
-		this.tinelsa = tinelsa;
-		this.strunskys = strunskys;
-		this.homans = homans;
-		this.claudication_test = claudication_test;
+		this.adams_testr = adams_testr;
+		this.adams_testl = adams_testl;
+		this.sheppal_signr = sheppal_signr;
+		this.sheppal_signl = sheppal_signl;
+		this.soto_hallr = soto_hallr;
+		this.soto_halll = soto_halll;
+		this.compression_testr = compression_testr;
+		this.compression_testl = compression_testl;
+		this.compression_testlo = compression_testlo;
+		this.antalgiar = antalgiar;
+		this.antalgial = antalgial;
+		this.spinal_percusslr = spinal_percusslr;
+		this.spinal_percussll = spinal_percussll;
+		this.valsalvalr = valsalvalr;
+		this.valsalvall = valsalvall;
+		this.minors_signr = minors_signr;
+		this.minors_signl = minors_signl;
+		this.braggards_testr = braggards_testr;
+		this.braggards_testl = braggards_testl;
+		this.slrr = slrr;
+		this.slrl = slrl;
+		this.wlrr = wlrr;
+		this.wlrl = wlrl;
+		this.hooversr = hooversr;
+		this.hooversl = hooversl;
+		this.dbl_leg_raiser = dbl_leg_raiser;
+		this.dbl_leg_raisel = dbl_leg_raisel;
+		this.long_leg_testr = long_leg_testr;
+		this.long_leg_testl = long_leg_testl;
+		this.anvil_testr = anvil_testr;
+		this.anvil_testl = anvil_testl;
+		this.thomasr = thomasr;
+		this.thomasl = thomasl;
+		this.milgrams_testr = milgrams_testr;
+		this.milgrams_testl = milgrams_testl;
+		this.obersr = obersr;
+		this.obersl = obersl;
+		this.illiaccompr = illiaccompr;
+		this.illiaccompl = illiaccompl;
+		this.yeomansr = yeomansr;
+		this.yeomansl = yeomansl;
+		this.allis_signr = allis_signr;
+		this.allis_signl = allis_signl;
+		this.dugasr = dugasr;
+		this.dugasl = dugasl;
+		this.supraspinatusr = supraspinatusr;
+		this.supraspinatusl = supraspinatusl;
+		this.codmansr = codmansr;
+		this.codmansl = codmansl;
+		this.speeds_testr = speeds_testr;
+		this.speeds_testl = speeds_testl;
+		this.yergasonsr = yergasonsr;
+		this.yergasonsl = yergasonsl;
+		this.tinelser = tinelser;
+		this.tinelsel = tinelsel;
+		this.lingaminstabr = lingaminstabr;
+		this.lingaminstabl = lingaminstabl;
+		this.golfers_elbowr = golfers_elbowr;
+		this.golfers_elbowl = golfers_elbowl;
+		this.tennis_elbowr = tennis_elbowr;
+		this.tennis_elbowl = tennis_elbowl;
+		this.tinelsr = tinelsr;
+		this.tinelsl = tinelsl;
+		this.phalensr = phalensr;
+		this.phalensl = phalensl;
+		this.finkelsteins_testr = finkelsteins_testr;
+		this.finkelsteins_testl = finkelsteins_testl;
+		this.braceletr = braceletr;
+		this.braceletl = braceletl;
+		this.allensr = allensr;
+		this.allensl = allensl;
+		this.valgus_varusr = valgus_varusr;
+		this.valgus_varusl = valgus_varusl;
+		this.pat_ballr = pat_ballr;
+		this.pat_balll = pat_balll;
+		this.drawerr = drawerr;
+		this.drawerl = drawerl;
+		this.val_varusr = val_varusr;
+		this.val_varusl = val_varusl;
+		this.apleysr = apleysr;
+		this.apleysl = apleysl;
+		this.drawerar = drawerar;
+		this.draweral = draweral;
+		this.thompsonsr = thompsonsr;
+		this.thompsonsl = thompsonsl;
+		this.tinelsar = tinelsar;
+		this.tinelsal = tinelsal;
+		this.strunskysr = strunskysr;
+		this.strunskysl = strunskysl;
+		this.homansr = homansr;
+		this.homansl = homansl;
+		this.claudication_testr = claudication_testr;
+		this.claudication_testl = claudication_testl;
 	}
 
 	public String getHacheck() {
@@ -504,12 +817,20 @@ public class Hamiltonchiropractic {
 		this.ankle = ankle;
 	}
 
-	public String getBegin() {
-		return begin;
+	public String getSuddenly() {
+		return suddenly;
 	}
 
-	public void setBegin(String begin) {
-		this.begin = begin;
+	public void setSuddenly(String suddenly) {
+		this.suddenly = suddenly;
+	}
+
+	public String getGradually() {
+		return gradually;
+	}
+
+	public void setGradually(String gradually) {
+		this.gradually = gradually;
 	}
 
 	public String getHours() {
@@ -544,6 +865,22 @@ public class Hamiltonchiropractic {
 		this.reason = reason;
 	}
 
+	public String getAcute() {
+		return acute;
+	}
+
+	public void setAcute(String acute) {
+		this.acute = acute;
+	}
+
+	public String getSubacute() {
+		return subacute;
+	}
+
+	public void setSubacute(String subacute) {
+		this.subacute = subacute;
+	}
+
 	public String getChronic() {
 		return chronic;
 	}
@@ -552,12 +889,52 @@ public class Hamiltonchiropractic {
 		this.chronic = chronic;
 	}
 
-	public String getBestfeel() {
-		return bestfeel;
+	public String getLyingdown() {
+		return lyingdown;
 	}
 
-	public void setBestfeel(String bestfeel) {
-		this.bestfeel = bestfeel;
+	public void setLyingdown(String lyingdown) {
+		this.lyingdown = lyingdown;
+	}
+
+	public String getSitting() {
+		return sitting;
+	}
+
+	public void setSitting(String sitting) {
+		this.sitting = sitting;
+	}
+
+	public String getStanding() {
+		return standing;
+	}
+
+	public void setStanding(String standing) {
+		this.standing = standing;
+	}
+
+	public String getBending() {
+		return bending;
+	}
+
+	public void setBending(String bending) {
+		this.bending = bending;
+	}
+
+	public String getRest() {
+		return rest;
+	}
+
+	public void setRest(String rest) {
+		this.rest = rest;
+	}
+
+	public String getOtherb() {
+		return otherb;
+	}
+
+	public void setOtherb(String otherb) {
+		this.otherb = otherb;
 	}
 
 	public String getOthere() {
@@ -568,12 +945,44 @@ public class Hamiltonchiropractic {
 		this.othere = othere;
 	}
 
-	public String getSolution() {
-		return solution;
+	public String getIce() {
+		return ice;
 	}
 
-	public void setSolution(String solution) {
-		this.solution = solution;
+	public void setIce(String ice) {
+		this.ice = ice;
+	}
+
+	public String getHeat() {
+		return heat;
+	}
+
+	public void setHeat(String heat) {
+		this.heat = heat;
+	}
+
+	public String getMassage() {
+		return massage;
+	}
+
+	public void setMassage(String massage) {
+		this.massage = massage;
+	}
+
+	public String getAspirin() {
+		return aspirin;
+	}
+
+	public void setAspirin(String aspirin) {
+		this.aspirin = aspirin;
+	}
+
+	public String getOtherdone() {
+		return otherdone;
+	}
+
+	public void setOtherdone(String otherdone) {
+		this.otherdone = otherdone;
 	}
 
 	public String getOtherit() {
@@ -584,12 +993,52 @@ public class Hamiltonchiropractic {
 		this.otherit = otherit;
 	}
 
-	public String getWorsefeel() {
-		return worsefeel;
+	public String getBendingworse() {
+		return bendingworse;
 	}
 
-	public void setWorsefeel(String worsefeel) {
-		this.worsefeel = worsefeel;
+	public void setBendingworse(String bendingworse) {
+		this.bendingworse = bendingworse;
+	}
+
+	public String getTwisting() {
+		return twisting;
+	}
+
+	public void setTwisting(String twisting) {
+		this.twisting = twisting;
+	}
+
+	public String getLifting() {
+		return lifting;
+	}
+
+	public void setLifting(String lifting) {
+		this.lifting = lifting;
+	}
+
+	public String getWalking() {
+		return walking;
+	}
+
+	public void setWalking(String walking) {
+		this.walking = walking;
+	}
+
+	public String getActivity() {
+		return activity;
+	}
+
+	public void setActivity(String activity) {
+		this.activity = activity;
+	}
+
+	public String getOtherworse() {
+		return otherworse;
+	}
+
+	public void setOtherworse(String otherworse) {
+		this.otherworse = otherworse;
 	}
 
 	public String getOtherfeel() {
@@ -600,12 +1049,100 @@ public class Hamiltonchiropractic {
 		this.otherfeel = otherfeel;
 	}
 
-	public String getPaindes() {
-		return paindes;
+	public String getSharp() {
+		return sharp;
 	}
 
-	public void setPaindes(String paindes) {
-		this.paindes = paindes;
+	public void setSharp(String sharp) {
+		this.sharp = sharp;
+	}
+
+	public String getSevere() {
+		return severe;
+	}
+
+	public void setSevere(String severe) {
+		this.severe = severe;
+	}
+
+	public String getDull() {
+		return dull;
+	}
+
+	public void setDull(String dull) {
+		this.dull = dull;
+	}
+
+	public String getBurning() {
+		return burning;
+	}
+
+	public void setBurning(String burning) {
+		this.burning = burning;
+	}
+
+	public String getNagging() {
+		return nagging;
+	}
+
+	public void setNagging(String nagging) {
+		this.nagging = nagging;
+	}
+
+	public String getThrobbing() {
+		return throbbing;
+	}
+
+	public void setThrobbing(String throbbing) {
+		this.throbbing = throbbing;
+	}
+
+	public String getNumb() {
+		return numb;
+	}
+
+	public void setNumb(String numb) {
+		this.numb = numb;
+	}
+
+	public String getTingling() {
+		return tingling;
+	}
+
+	public void setTingling(String tingling) {
+		this.tingling = tingling;
+	}
+
+	public String getStiff() {
+		return stiff;
+	}
+
+	public void setStiff(String stiff) {
+		this.stiff = stiff;
+	}
+
+	public String getStabbing() {
+		return stabbing;
+	}
+
+	public void setStabbing(String stabbing) {
+		this.stabbing = stabbing;
+	}
+
+	public String getCramping() {
+		return cramping;
+	}
+
+	public void setCramping(String cramping) {
+		this.cramping = cramping;
+	}
+
+	public String getOtherdescribe() {
+		return otherdescribe;
+	}
+
+	public void setOtherdescribe(String otherdescribe) {
+		this.otherdescribe = otherdescribe;
 	}
 
 	public String getOtherpain() {
@@ -616,20 +1153,36 @@ public class Hamiltonchiropractic {
 		this.otherpain = otherpain;
 	}
 
-	public String getConsinter() {
-		return consinter;
+	public String getConstant() {
+		return constant;
 	}
 
-	public void setConsinter(String consinter) {
-		this.consinter = consinter;
+	public void setConstant(String constant) {
+		this.constant = constant;
 	}
 
-	public String getPain() {
-		return pain;
+	public String getIntermittent() {
+		return intermittent;
 	}
 
-	public void setPain(String pain) {
-		this.pain = pain;
+	public void setIntermittent(String intermittent) {
+		this.intermittent = intermittent;
+	}
+
+	public String getLocal() {
+		return local;
+	}
+
+	public void setLocal(String local) {
+		this.local = local;
+	}
+
+	public String getDiffuse() {
+		return diffuse;
+	}
+
+	public void setDiffuse(String diffuse) {
+		this.diffuse = diffuse;
 	}
 
 	public String getRadiates() {
@@ -648,20 +1201,60 @@ public class Hamiltonchiropractic {
 		this.otherradiates = otherradiates;
 	}
 
-	public String getDescription() {
-		return description;
+	public String getMild() {
+		return mild;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setMild(String mild) {
+		this.mild = mild;
 	}
 
-	public String getWorse() {
-		return worse;
+	public String getModerate() {
+		return moderate;
 	}
 
-	public void setWorse(String worse) {
-		this.worse = worse;
+	public void setModerate(String moderate) {
+		this.moderate = moderate;
+	}
+
+	public String getSeverepain() {
+		return severepain;
+	}
+
+	public void setSeverepain(String severepain) {
+		this.severepain = severepain;
+	}
+
+	public String getCrippling() {
+		return crippling;
+	}
+
+	public void setCrippling(String crippling) {
+		this.crippling = crippling;
+	}
+
+	public String getAm() {
+		return am;
+	}
+
+	public void setAm(String am) {
+		this.am = am;
+	}
+
+	public String getPm() {
+		return pm;
+	}
+
+	public void setPm(String pm) {
+		this.pm = pm;
+	}
+
+	public String getOthertime() {
+		return othertime;
+	}
+
+	public void setOthertime(String othertime) {
+		this.othertime = othertime;
 	}
 
 	public String getOtherdn() {
@@ -672,20 +1265,44 @@ public class Hamiltonchiropractic {
 		this.otherdn = otherdn;
 	}
 
-	public String getConditionw() {
-		return conditionw;
+	public String getBetter() {
+		return better;
 	}
 
-	public void setConditionw(String conditionw) {
-		this.conditionw = conditionw;
+	public void setBetter(String better) {
+		this.better = better;
 	}
 
-	public String getWork() {
-		return work;
+	public String getSame() {
+		return same;
 	}
 
-	public void setWork(String work) {
-		this.work = work;
+	public void setSame(String same) {
+		this.same = same;
+	}
+
+	public String getWorse() {
+		return worse;
+	}
+
+	public void setWorse(String worse) {
+		this.worse = worse;
+	}
+
+	public String getYes() {
+		return yes;
+	}
+
+	public void setYes(String yes) {
+		this.yes = yes;
+	}
+
+	public String getNo() {
+		return no;
+	}
+
+	public void setNo(String no) {
+		this.no = no;
 	}
 
 	public String getDay() {
@@ -696,12 +1313,28 @@ public class Hamiltonchiropractic {
 		this.day = day;
 	}
 
-	public String getCondition() {
-		return condition;
+	public String getWork() {
+		return work;
 	}
 
-	public void setCondition(String condition) {
-		this.condition = condition;
+	public void setWork(String work) {
+		this.work = work;
+	}
+
+	public String getSleep() {
+		return sleep;
+	}
+
+	public void setSleep(String sleep) {
+		this.sleep = sleep;
+	}
+
+	public String getOtherdaily() {
+		return otherdaily;
+	}
+
+	public void setOtherdaily(String otherdaily) {
+		this.otherdaily = otherdaily;
 	}
 
 	public String getOthercondition() {
@@ -712,99 +1345,452 @@ public class Hamiltonchiropractic {
 		this.othercondition = othercondition;
 	}
 
-	public String getAssessment() {
-		return assessment;
+	public String getSameass() {
+		return sameass;
 	}
 
-	public void setAssessment(String assessment) {
-		this.assessment = assessment;
+	public void setSameass(String sameass) {
+		this.sameass = sameass;
 	}
 
-	public String getTreatmentplan() {
-		return treatmentplan;
+	public String getImproved() {
+		return improved;
 	}
 
-	public void setTreatmentplan(String treatmentplan) {
-		this.treatmentplan = treatmentplan;
+	public void setImproved(String improved) {
+		this.improved = improved;
 	}
 
-	public String getShortterm() {
-		return shortterm;
+	public String getWorseass() {
+		return worseass;
 	}
 
-	public void setShortterm(String shortterm) {
-		this.shortterm = shortterm;
+	public void setWorseass(String worseass) {
+		this.worseass = worseass;
 	}
 
-	public String getLongterm() {
-		return longterm;
+	public String getPlateau() {
+		return plateau;
 	}
 
-	public void setLongterm(String longterm) {
-		this.longterm = longterm;
+	public void setPlateau(String plateau) {
+		this.plateau = plateau;
 	}
 
-	public String getJacksons() {
-		return jacksons;
+	public String getPreinjury() {
+		return preinjury;
 	}
 
-	public void setJacksons(String jacksons) {
-		this.jacksons = jacksons;
+	public void setPreinjury(String preinjury) {
+		this.preinjury = preinjury;
 	}
 
-	public String getForamin_comp() {
-		return foramin_comp;
+	public String getSlight() {
+		return slight;
 	}
 
-	public void setForamin_comp(String foramin_comp) {
-		this.foramin_comp = foramin_comp;
+	public void setSlight(String slight) {
+		this.slight = slight;
 	}
 
-	public String getShoulder_depr() {
-		return shoulder_depr;
+	public String getModeratly() {
+		return moderatly;
 	}
 
-	public void setShoulder_depr(String shoulder_depr) {
-		this.shoulder_depr = shoulder_depr;
+	public void setModeratly(String moderatly) {
+		this.moderatly = moderatly;
 	}
 
-	public String getGeorges() {
-		return georges;
+	public String getGreat() {
+		return great;
 	}
 
-	public void setGeorges(String georges) {
-		this.georges = georges;
-	}
-	public String getOdono() {
-		return odono;
+	public void setGreat(String great) {
+		this.great = great;
 	}
 
-	public void setOdono(String shoulder_depr) {
-		this.odono = odono;
+	public String getChiropractic() {
+		return chiropractic;
 	}
 
-	public String getBakody_sign() {
-		return bakody_sign;
+	public void setChiropractic(String chiropractic) {
+		this.chiropractic = chiropractic;
 	}
 
-	public void setBakody_sign(String bakody_sign) {
-		this.bakody_sign = bakody_sign;
+	public String getEms() {
+		return ems;
 	}
 
-	public String getDistraction_test() {
-		return distraction_test;
+	public void setEms(String ems) {
+		this.ems = ems;
 	}
 
-	public void setDistraction_test(String distraction_test) {
-		this.distraction_test = distraction_test;
+	public String getIceplan() {
+		return iceplan;
 	}
 
-	public String getValsalva() {
-		return valsalva;
+	public void setIceplan(String iceplan) {
+		this.iceplan = iceplan;
 	}
 
-	public void setValsalva(String valsalva) {
-		this.valsalva = valsalva;
+	public String getHeatplan() {
+		return heatplan;
+	}
+
+	public void setHeatplan(String heatplan) {
+		this.heatplan = heatplan;
+	}
+
+	public String getNimmo() {
+		return nimmo;
+	}
+
+	public void setNimmo(String nimmo) {
+		this.nimmo = nimmo;
+	}
+
+	public String getUltrasound() {
+		return ultrasound;
+	}
+
+	public void setUltrasound(String ultrasound) {
+		this.ultrasound = ultrasound;
+	}
+
+	public String getManualtraction() {
+		return manualtraction;
+	}
+
+	public void setManualtraction(String manualtraction) {
+		this.manualtraction = manualtraction;
+	}
+
+	public String getMassageplan() {
+		return massageplan;
+	}
+
+	public void setMassageplan(String massageplan) {
+		this.massageplan = massageplan;
+	}
+
+	public String getNeuromuscular() {
+		return neuromuscular;
+	}
+
+	public void setNeuromuscular(String neuromuscular) {
+		this.neuromuscular = neuromuscular;
+	}
+
+	public String getStretching() {
+		return stretching;
+	}
+
+	public void setStretching(String stretching) {
+		this.stretching = stretching;
+	}
+
+	public String getStrengthening() {
+		return strengthening;
+	}
+
+	public void setStrengthening(String strengthening) {
+		this.strengthening = strengthening;
+	}
+
+	public String getRemobilization() {
+		return remobilization;
+	}
+
+	public void setRemobilization(String remobilization) {
+		this.remobilization = remobilization;
+	}
+
+	public String getRehab() {
+		return rehab;
+	}
+
+	public void setRehab(String rehab) {
+		this.rehab = rehab;
+	}
+
+	public String getModificat() {
+		return modificat;
+	}
+
+	public void setModificat(String modificat) {
+		this.modificat = modificat;
+	}
+
+	public String getRelease() {
+		return release;
+	}
+
+	public void setRelease(String release) {
+		this.release = release;
+	}
+
+	public String getRefer() {
+		return refer;
+	}
+
+	public void setRefer(String refer) {
+		this.refer = refer;
+	}
+
+	public String getDecreasepain() {
+		return decreasepain;
+	}
+
+	public void setDecreasepain(String decreasepain) {
+		this.decreasepain = decreasepain;
+	}
+
+	public String getDecreasespam() {
+		return decreasespam;
+	}
+
+	public void setDecreasespam(String decreasespam) {
+		this.decreasespam = decreasespam;
+	}
+
+	public String getIncreaserom() {
+		return increaserom;
+	}
+
+	public void setIncreaserom(String increaserom) {
+		this.increaserom = increaserom;
+	}
+
+	public String getImproveadl() {
+		return improveadl;
+	}
+
+	public void setImproveadl(String improveadl) {
+		this.improveadl = improveadl;
+	}
+
+	public String getImprovesubluxations() {
+		return improvesubluxations;
+	}
+
+	public void setImprovesubluxations(String improvesubluxations) {
+		this.improvesubluxations = improvesubluxations;
+	}
+
+	public String getFullactivity() {
+		return fullactivity;
+	}
+
+	public void setFullactivity(String fullactivity) {
+		this.fullactivity = fullactivity;
+	}
+
+	public String getReturntowork() {
+		return returntowork;
+	}
+
+	public void setReturntowork(String returntowork) {
+		this.returntowork = returntowork;
+	}
+
+	public String getRenewsports() {
+		return renewsports;
+	}
+
+	public void setRenewsports(String renewsports) {
+		this.renewsports = renewsports;
+	}
+
+	public String getJacksonsr() {
+		return jacksonsr;
+	}
+
+	public void setJacksonsr(String jacksonsr) {
+		this.jacksonsr = jacksonsr;
+	}
+
+	public String getJacksonsl() {
+		return jacksonsl;
+	}
+
+	public void setJacksonsl(String jacksonsl) {
+		this.jacksonsl = jacksonsl;
+	}
+
+	public String getJacksonslo() {
+		return jacksonslo;
+	}
+
+	public void setJacksonslo(String jacksonslo) {
+		this.jacksonslo = jacksonslo;
+	}
+
+	public String getForamin_compr() {
+		return foramin_compr;
+	}
+
+	public void setForamin_compr(String foramin_compr) {
+		this.foramin_compr = foramin_compr;
+	}
+
+	public String getForamin_compl() {
+		return foramin_compl;
+	}
+
+	public void setForamin_compl(String foramin_compl) {
+		this.foramin_compl = foramin_compl;
+	}
+
+	public String getForamin_complo() {
+		return foramin_complo;
+	}
+
+	public void setForamin_complo(String foramin_complo) {
+		this.foramin_complo = foramin_complo;
+	}
+
+	public String getShoulder_deprr() {
+		return shoulder_deprr;
+	}
+
+	public void setShoulder_deprr(String shoulder_deprr) {
+		this.shoulder_deprr = shoulder_deprr;
+	}
+
+	public String getShoulder_deprl() {
+		return shoulder_deprl;
+	}
+
+	public void setShoulder_deprl(String shoulder_deprl) {
+		this.shoulder_deprl = shoulder_deprl;
+	}
+
+	public String getShoulder_deprlo() {
+		return shoulder_deprlo;
+	}
+
+	public void setShoulder_deprlo(String shoulder_deprlo) {
+		this.shoulder_deprlo = shoulder_deprlo;
+	}
+
+	public String getGeorgesr() {
+		return georgesr;
+	}
+
+	public void setGeorgesr(String georgesr) {
+		this.georgesr = georgesr;
+	}
+
+	public String getGeorgesl() {
+		return georgesl;
+	}
+
+	public void setGeorgesl(String georgesl) {
+		this.georgesl = georgesl;
+	}
+
+	public String getGeorgeslo() {
+		return georgeslo;
+	}
+
+	public void setGeorgeslo(String georgeslo) {
+		this.georgeslo = georgeslo;
+	}
+
+	public String getOdonor() {
+		return odonor;
+	}
+
+	public void setOdonor(String odonor) {
+		this.odonor = odonor;
+	}
+
+	public String getOdonol() {
+		return odonol;
+	}
+
+	public void setOdonol(String odonol) {
+		this.odonol = odonol;
+	}
+
+	public String getOdonolo() {
+		return odonolo;
+	}
+
+	public void setOdonolo(String odonolo) {
+		this.odonolo = odonolo;
+	}
+
+	public String getBakody_signr() {
+		return bakody_signr;
+	}
+
+	public void setBakody_signr(String bakody_signr) {
+		this.bakody_signr = bakody_signr;
+	}
+
+	public String getBakody_signl() {
+		return bakody_signl;
+	}
+
+	public void setBakody_signl(String bakody_signl) {
+		this.bakody_signl = bakody_signl;
+	}
+
+	public String getBakody_signlo() {
+		return bakody_signlo;
+	}
+
+	public void setBakody_signlo(String bakody_signlo) {
+		this.bakody_signlo = bakody_signlo;
+	}
+
+	public String getDistraction_testr() {
+		return distraction_testr;
+	}
+
+	public void setDistraction_testr(String distraction_testr) {
+		this.distraction_testr = distraction_testr;
+	}
+
+	public String getDistraction_testl() {
+		return distraction_testl;
+	}
+
+	public void setDistraction_testl(String distraction_testl) {
+		this.distraction_testl = distraction_testl;
+	}
+
+	public String getDistraction_testlo() {
+		return distraction_testlo;
+	}
+
+	public void setDistraction_testlo(String distraction_testlo) {
+		this.distraction_testlo = distraction_testlo;
+	}
+
+	public String getValsalvar() {
+		return valsalvar;
+	}
+
+	public void setValsalvar(String valsalvar) {
+		this.valsalvar = valsalvar;
+	}
+
+	public String getValsalval() {
+		return valsalval;
+	}
+
+	public void setValsalval(String valsalval) {
+		this.valsalval = valsalval;
+	}
+
+	public String getValsalvalo() {
+		return valsalvalo;
+	}
+
+	public void setValsalvalo(String valsalvalo) {
+		this.valsalvalo = valsalvalo;
 	}
 
 	public String getSpinal_percuss() {
@@ -831,20 +1817,52 @@ public class Hamiltonchiropractic {
 		this.gripdynamomleft = gripdynamomleft;
 	}
 
-	public String getAdsons() {
-		return adsons;
+	public String getAdsonsr() {
+		return adsonsr;
 	}
 
-	public void setAdsons(String adsons) {
-		this.adsons = adsons;
+	public void setAdsonsr(String adsonsr) {
+		this.adsonsr = adsonsr;
 	}
 
-	public String getRustsign() {
-		return rustsign;
+	public String getAdsonsl() {
+		return adsonsl;
 	}
 
-	public void setRustsign(String rustsign) {
-		this.rustsign = rustsign;
+	public void setAdsonsl(String adsonsl) {
+		this.adsonsl = adsonsl;
+	}
+
+	public String getAdsonslo() {
+		return adsonslo;
+	}
+
+	public void setAdsonslo(String adsonslo) {
+		this.adsonslo = adsonslo;
+	}
+
+	public String getRustsignr() {
+		return rustsignr;
+	}
+
+	public void setRustsignr(String rustsignr) {
+		this.rustsignr = rustsignr;
+	}
+
+	public String getRustsignl() {
+		return rustsignl;
+	}
+
+	public void setRustsignl(String rustsignl) {
+		this.rustsignl = rustsignl;
+	}
+
+	public String getRustsignlo() {
+		return rustsignlo;
+	}
+
+	public void setRustsignlo(String rustsignlo) {
+		this.rustsignlo = rustsignlo;
 	}
 
 	public String getSpinal_percusst() {
@@ -855,374 +1873,749 @@ public class Hamiltonchiropractic {
 		this.spinal_percusst = spinal_percusst;
 	}
 
-	public String getAdams_test() {
-		return adams_test;
+	public String getAdams_testr() {
+		return adams_testr;
 	}
 
-	public void setAdams_test(String adams_test) {
-		this.adams_test = adams_test;
+	public void setAdams_testr(String adams_testr) {
+		this.adams_testr = adams_testr;
 	}
-	public String getSheppal_sign() {
-		return sheppal_sign;
+
+	public String getAdams_testl() {
+		return adams_testl;
+	}
+
+	public void setAdams_testl(String adams_testl) {
+		this.adams_testl = adams_testl;
+	}
+
+	public String getSheppal_signr() {
+		return sheppal_signr;
+	}
+
+	public void setSheppal_signr(String sheppal_signr) {
+		this.sheppal_signr = sheppal_signr;
+	}
+
+	public String getSheppal_signl() {
+		return sheppal_signl;
+	}
+
+	public void setSheppal_signl(String sheppal_signl) {
+		this.sheppal_signl = sheppal_signl;
+	}
+
+	public String getSoto_hallr() {
+		return soto_hallr;
+	}
+
+	public void setSoto_hallr(String soto_hallr) {
+		this.soto_hallr = soto_hallr;
+	}
+
+	public String getSoto_halll() {
+		return soto_halll;
+	}
+
+	public void setSoto_halll(String soto_halll) {
+		this.soto_halll = soto_halll;
+	}
+
+	public String getCompression_testr() {
+		return compression_testr;
+	}
+
+	public void setCompression_testr(String compression_testr) {
+		this.compression_testr = compression_testr;
+	}
+
+	public String getCompression_testl() {
+		return compression_testl;
+	}
+
+	public void setCompression_testl(String compression_testl) {
+		this.compression_testl = compression_testl;
+	}
+
+	public String getCompression_testlo() {
+		return compression_testlo;
+	}
+
+	public void setCompression_testlo(String compression_testlo) {
+		this.compression_testlo = compression_testlo;
+	}
+
+	public String getAntalgiar() {
+		return antalgiar;
+	}
+
+	public void setAntalgiar(String antalgiar) {
+		this.antalgiar = antalgiar;
+	}
+
+	public String getAntalgial() {
+		return antalgial;
+	}
+
+	public void setAntalgial(String antalgial) {
+		this.antalgial = antalgial;
+	}
+
+	public String getSpinal_percusslr() {
+		return spinal_percusslr;
+	}
+
+	public void setSpinal_percusslr(String spinal_percusslr) {
+		this.spinal_percusslr = spinal_percusslr;
+	}
+
+	public String getSpinal_percussll() {
+		return spinal_percussll;
+	}
+
+	public void setSpinal_percussll(String spinal_percussll) {
+		this.spinal_percussll = spinal_percussll;
+	}
+
+	public String getValsalvalr() {
+		return valsalvalr;
+	}
+
+	public void setValsalvalr(String valsalvalr) {
+		this.valsalvalr = valsalvalr;
+	}
+
+	public String getValsalvall() {
+		return valsalvall;
+	}
+
+	public void setValsalvall(String valsalvall) {
+		this.valsalvall = valsalvall;
+	}
+
+	public String getMinors_signr() {
+		return minors_signr;
+	}
+
+	public void setMinors_signr(String minors_signr) {
+		this.minors_signr = minors_signr;
+	}
+
+	public String getMinors_signl() {
+		return minors_signl;
+	}
+
+	public void setMinors_signl(String minors_signl) {
+		this.minors_signl = minors_signl;
+	}
+
+	public String getBraggards_testr() {
+		return braggards_testr;
+	}
+
+	public void setBraggards_testr(String braggards_testr) {
+		this.braggards_testr = braggards_testr;
+	}
+
+	public String getBraggards_testl() {
+		return braggards_testl;
+	}
+
+	public void setBraggards_testl(String braggards_testl) {
+		this.braggards_testl = braggards_testl;
+	}
+
+	public String getSlrr() {
+		return slrr;
+	}
+
+	public void setSlrr(String slrr) {
+		this.slrr = slrr;
+	}
+
+	public String getSlrl() {
+		return slrl;
+	}
+
+	public void setSlrl(String slrl) {
+		this.slrl = slrl;
+	}
+
+	public String getWlrr() {
+		return wlrr;
+	}
+
+	public void setWlrr(String wlrr) {
+		this.wlrr = wlrr;
+	}
+
+	public String getWlrl() {
+		return wlrl;
+	}
+
+	public void setWlrl(String wlrl) {
+		this.wlrl = wlrl;
+	}
+
+	public String getHooversr() {
+		return hooversr;
+	}
+
+	public void setHooversr(String hooversr) {
+		this.hooversr = hooversr;
+	}
+
+	public String getHooversl() {
+		return hooversl;
+	}
+
+	public void setHooversl(String hooversl) {
+		this.hooversl = hooversl;
+	}
+
+	public String getDbl_leg_raiser() {
+		return dbl_leg_raiser;
+	}
+
+	public void setDbl_leg_raiser(String dbl_leg_raiser) {
+		this.dbl_leg_raiser = dbl_leg_raiser;
+	}
+
+	public String getDbl_leg_raisel() {
+		return dbl_leg_raisel;
+	}
+
+	public void setDbl_leg_raisel(String dbl_leg_raisel) {
+		this.dbl_leg_raisel = dbl_leg_raisel;
+	}
+
+	public String getLong_leg_testr() {
+		return long_leg_testr;
+	}
+
+	public void setLong_leg_testr(String long_leg_testr) {
+		this.long_leg_testr = long_leg_testr;
+	}
+
+	public String getLong_leg_testl() {
+		return long_leg_testl;
+	}
+
+	public void setLong_leg_testl(String long_leg_testl) {
+		this.long_leg_testl = long_leg_testl;
+	}
+
+	public String getAnvil_testr() {
+		return anvil_testr;
+	}
+
+	public void setAnvil_testr(String anvil_testr) {
+		this.anvil_testr = anvil_testr;
+	}
+
+	public String getAnvil_testl() {
+		return anvil_testl;
+	}
+
+	public void setAnvil_testl(String anvil_testl) {
+		this.anvil_testl = anvil_testl;
+	}
+
+	public String getThomasr() {
+		return thomasr;
+	}
+
+	public void setThomasr(String thomasr) {
+		this.thomasr = thomasr;
+	}
+
+	public String getThomasl() {
+		return thomasl;
+	}
+
+	public void setThomasl(String thomasl) {
+		this.thomasl = thomasl;
+	}
+
+	public String getMilgrams_testr() {
+		return milgrams_testr;
+	}
+
+	public void setMilgrams_testr(String milgrams_testr) {
+		this.milgrams_testr = milgrams_testr;
+	}
+
+	public String getMilgrams_testl() {
+		return milgrams_testl;
+	}
+
+	public void setMilgrams_testl(String milgrams_testl) {
+		this.milgrams_testl = milgrams_testl;
+	}
+
+	public String getObersr() {
+		return obersr;
+	}
+
+	public void setObersr(String obersr) {
+		this.obersr = obersr;
+	}
+
+	public String getObersl() {
+		return obersl;
 	}
 
-	public void setSheppal_sign(String shoulder_depr) {
-		this.sheppal_sign = sheppal_sign;
+	public void setObersl(String obersl) {
+		this.obersl = obersl;
 	}
 
-	public String getSoto_hall() {
-		return soto_hall;
+	public String getIlliaccompr() {
+		return illiaccompr;
 	}
 
-	public void setSoto_hall(String soto_hall) {
-		this.soto_hall = soto_hall;
+	public void setIlliaccompr(String illiaccompr) {
+		this.illiaccompr = illiaccompr;
 	}
 
-	public String getCompression_test() {
-		return compression_test;
+	public String getIlliaccompl() {
+		return illiaccompl;
 	}
 
-	public void setCompression_test(String compression_test) {
-		this.compression_test = compression_test;
+	public void setIlliaccompl(String illiaccompl) {
+		this.illiaccompl = illiaccompl;
 	}
 
-	public String getAntalgia() {
-		return antalgia;
+	public String getYeomansr() {
+		return yeomansr;
 	}
 
-	public void setAntalgia(String antalgia) {
-		this.antalgia = antalgia;
+	public void setYeomansr(String yeomansr) {
+		this.yeomansr = yeomansr;
 	}
 
-	public String getSpinal_percussl() {
-		return spinal_percussl;
+	public String getYeomansl() {
+		return yeomansl;
 	}
 
-	public void setSpinal_percussl(String spinal_percussl) {
-		this.spinal_percussl = spinal_percussl;
+	public void setYeomansl(String yeomansl) {
+		this.yeomansl = yeomansl;
 	}
 
-	public String getValsalval() {
-		return valsalval;
+	public String getAllis_signr() {
+		return allis_signr;
 	}
 
-	public void setValsalval(String valsalval) {
-		this.valsalval = valsalval;
+	public void setAllis_signr(String allis_signr) {
+		this.allis_signr = allis_signr;
 	}
 
-	public String getMinors_sign() {
-		return minors_sign;
+	public String getAllis_signl() {
+		return allis_signl;
 	}
 
-	public void setMinors_sign(String minors_sign) {
-		this.minors_sign = minors_sign;
+	public void setAllis_signl(String allis_signl) {
+		this.allis_signl = allis_signl;
 	}
 
-	public String getBraggards_test() {
-		return braggards_test;
+	public String getDugasr() {
+		return dugasr;
 	}
 
-	public void setBraggards_test(String braggards_test) {
-		this.braggards_test = braggards_test;
+	public void setDugasr(String dugasr) {
+		this.dugasr = dugasr;
 	}
 
-	public String getSlr() {
-		return slr;
+	public String getDugasl() {
+		return dugasl;
 	}
 
-	public void setSlr(String slr) {
-		this.slr = slr;
+	public void setDugasl(String dugasl) {
+		this.dugasl = dugasl;
 	}
 
-	public String getWlr() {
-		return wlr;
+	public String getSupraspinatusr() {
+		return supraspinatusr;
 	}
 
-	public void setWlr(String wlr) {
-		this.wlr = wlr;
+	public void setSupraspinatusr(String supraspinatusr) {
+		this.supraspinatusr = supraspinatusr;
 	}
 
-	public String getHoovers() {
-		return hoovers;
+	public String getSupraspinatusl() {
+		return supraspinatusl;
 	}
 
-	public void setHoovers(String hoovers) {
-		this.hoovers = hoovers;
+	public void setSupraspinatusl(String supraspinatusl) {
+		this.supraspinatusl = supraspinatusl;
 	}
 
-	public String getDbl_leg_raise() {
-		return dbl_leg_raise;
+	public String getCodmansr() {
+		return codmansr;
 	}
 
-	public void setDbl_leg_raise(String dbl_leg_raise) {
-		this.dbl_leg_raise = dbl_leg_raise;
+	public void setCodmansr(String codmansr) {
+		this.codmansr = codmansr;
 	}
 
-	public String getLong_leg_test() {
-		return long_leg_test;
+	public String getCodmansl() {
+		return codmansl;
 	}
 
-	public void setLong_leg_test(String long_leg_test) {
-		this.long_leg_test = long_leg_test;
+	public void setCodmansl(String codmansl) {
+		this.codmansl = codmansl;
 	}
 
-	public String getAnvil_test() {
-		return anvil_test;
+	public String getSpeeds_testr() {
+		return speeds_testr;
 	}
 
-	public void setAnvil_test(String anvil_test) {
-		this.anvil_test = anvil_test;
+	public void setSpeeds_testr(String speeds_testr) {
+		this.speeds_testr = speeds_testr;
 	}
 
-	public String getThomas() {
-		return thomas;
+	public String getSpeeds_testl() {
+		return speeds_testl;
 	}
 
-	public void setThomas(String thomas) {
-		this.thomas = thomas;
+	public void setSpeeds_testl(String speeds_testl) {
+		this.speeds_testl = speeds_testl;
 	}
 
-	public String getMilgrams_test() {
-		return milgrams_test;
+	public String getYergasonsr() {
+		return yergasonsr;
 	}
 
-	public void setMilgrams_test(String milgrams_test) {
-		this.milgrams_test = milgrams_test;
+	public void setYergasonsr(String yergasonsr) {
+		this.yergasonsr = yergasonsr;
 	}
 
-	public String getObers() {
-		return obers;
+	public String getYergasonsl() {
+		return yergasonsl;
 	}
 
-	public void setObers(String obers) {
-		this.obers = obers;
+	public void setYergasonsl(String yergasonsl) {
+		this.yergasonsl = yergasonsl;
 	}
 
-	public String getIlliaccomp() {
-		return illiaccomp;
+	public String getTinelser() {
+		return tinelser;
 	}
 
-	public void setIlliaccomp(String illiaccomp) {
-		this.illiaccomp = illiaccomp;
+	public void setTinelser(String tinelser) {
+		this.tinelser = tinelser;
 	}
 
-	public String getYeomans() {
-		return yeomans;
+	public String getTinelsel() {
+		return tinelsel;
 	}
 
-	public void setYeomans(String yeomans) {
-		this.yeomans = yeomans;
+	public void setTinelsel(String tinelsel) {
+		this.tinelsel = tinelsel;
 	}
 
-	public String getAllis_sign() {
-		return allis_sign;
+	public String getLingaminstabr() {
+		return lingaminstabr;
 	}
 
-	public void setAllis_sign(String allis_sign) {
-		this.allis_sign = allis_sign;
+	public void setLingaminstabr(String lingaminstabr) {
+		this.lingaminstabr = lingaminstabr;
 	}
 
-	public String getDugas() {
-		return dugas;
+	public String getLingaminstabl() {
+		return lingaminstabl;
 	}
 
-	public void setDugas(String dugas) {
-		this.dugas = dugas;
+	public void setLingaminstabl(String lingaminstabl) {
+		this.lingaminstabl = lingaminstabl;
 	}
 
-	public String getSupraspinatus() {
-		return supraspinatus;
+	public String getGolfers_elbowr() {
+		return golfers_elbowr;
 	}
 
-	public void setSupraspinatus(String supraspinatus) {
-		this.supraspinatus = supraspinatus;
+	public void setGolfers_elbowr(String golfers_elbowr) {
+		this.golfers_elbowr = golfers_elbowr;
 	}
 
-	public String getCodmans() {
-		return codmans;
+	public String getGolfers_elbowl() {
+		return golfers_elbowl;
 	}
 
-	public void setCodmans(String codmans) {
-		this.codmans = codmans;
+	public void setGolfers_elbowl(String golfers_elbowl) {
+		this.golfers_elbowl = golfers_elbowl;
 	}
 
-	public String getSpeeds_test() {
-		return speeds_test;
+	public String getTennis_elbowr() {
+		return tennis_elbowr;
 	}
 
-	public void setSpeeds_test(String speeds_test) {
-		this.speeds_test = speeds_test;
+	public void setTennis_elbowr(String tennis_elbowr) {
+		this.tennis_elbowr = tennis_elbowr;
 	}
 
-	public String getYergasons() {
-		return yergasons;
+	public String getTennis_elbowl() {
+		return tennis_elbowl;
 	}
 
-	public void setYargasons(String yergasons) {
-		this.yergasons = yergasons;
+	public void setTennis_elbowl(String tennis_elbowl) {
+		this.tennis_elbowl = tennis_elbowl;
 	}
 
-	public String getTinelse() {
-		return tinelse;
+	public String getTinelsr() {
+		return tinelsr;
 	}
 
-	public void setTinelse(String tinelse) {
-		this.tinelse = tinelse;
+	public void setTinelsr(String tinelsr) {
+		this.tinelsr = tinelsr;
 	}
 
-	public String getLingaminstab() {
-		return lingaminstab;
+	public String getTinelsl() {
+		return tinelsl;
 	}
 
-	public void setLingaminstab(String lingaminstab) {
-		this.lingaminstab = lingaminstab;
+	public void setTinelsl(String tinelsl) {
+		this.tinelsl = tinelsl;
 	}
 
-	public String getGolfers_elbow() {
-		return golfers_elbow;
+	public String getPhalensr() {
+		return phalensr;
 	}
 
-	public void setGolfers_elbow(String golfers_elbow) {
-		this.golfers_elbow = golfers_elbow;
+	public void setPhalensr(String phalensr) {
+		this.phalensr = phalensr;
 	}
 
-	public String getTennis_elbow() {
-		return tennis_elbow;
+	public String getPhalensl() {
+		return phalensl;
 	}
 
-	public void setTennis_elbow(String tennis_elbow) {
-		this.tennis_elbow = tennis_elbow;
+	public void setPhalensl(String phalensl) {
+		this.phalensl = phalensl;
 	}
 
-	public String getTinels() {
-		return tinels;
+	public String getFinkelsteins_testr() {
+		return finkelsteins_testr;
 	}
 
-	public void setTinels(String tinels) {
-		this.tinels = tinels;
+	public void setFinkelsteins_testr(String finkelsteins_testr) {
+		this.finkelsteins_testr = finkelsteins_testr;
 	}
 
-	public String getPhalens() {
-		return phalens;
+	public String getFinkelsteins_testl() {
+		return finkelsteins_testl;
 	}
 
-	public void setPhalens(String phalens) {
-		this.phalens = phalens;
+	public void setFinkelsteins_testl(String finkelsteins_testl) {
+		this.finkelsteins_testl = finkelsteins_testl;
 	}
 
-	public String getFinkelsteins_test() {
-		return finkelsteins_test;
+	public String getBraceletr() {
+		return braceletr;
 	}
 
-	public void setFinkelsteins_test(String finkelsteins_test) {
-		this.finkelsteins_test = finkelsteins_test;
+	public void setBraceletr(String braceletr) {
+		this.braceletr = braceletr;
 	}
 
-	public String getBracelet() {
-		return bracelet;
+	public String getBraceletl() {
+		return braceletl;
 	}
 
-	public void setBracelet(String bracelet) {
-		this.bracelet = bracelet;
+	public void setBraceletl(String braceletl) {
+		this.braceletl = braceletl;
 	}
 
-	public String getAllens() {
-		return allens;
+	public String getAllensr() {
+		return allensr;
 	}
 
-	public void setAllens(String allens) {
-		this.allens = allens;
+	public void setAllensr(String allensr) {
+		this.allensr = allensr;
 	}
 
-	public String getValgus_varus() {
-		return valgus_varus;
+	public String getAllensl() {
+		return allensl;
 	}
 
-	public void setValgus_varus(String valgus_varus) {
-		this.valgus_varus = valgus_varus;
+	public void setAllensl(String allensl) {
+		this.allensl = allensl;
 	}
 
-	public String getPat_ball() {
-		return pat_ball;
+	public String getValgus_varusr() {
+		return valgus_varusr;
 	}
 
-	public void setPat_ball(String pat_ball) {
-		this.pat_ball = pat_ball;
+	public void setValgus_varusr(String valgus_varusr) {
+		this.valgus_varusr = valgus_varusr;
 	}
 
-	public String getDrawer() {
-		return drawer;
+	public String getValgus_varusl() {
+		return valgus_varusl;
 	}
 
-	public void setDrawer(String drawer) {
-		this.drawer = drawer;
+	public void setValgus_varusl(String valgus_varusl) {
+		this.valgus_varusl = valgus_varusl;
 	}
 
-	public String getVal_varus() {
-		return val_varus;
+	public String getPat_ballr() {
+		return pat_ballr;
 	}
 
-	public void setVal_varus(String val_varus) {
-		this.val_varus = val_varus;
+	public void setPat_ballr(String pat_ballr) {
+		this.pat_ballr = pat_ballr;
 	}
 
-	public String getApleys() {
-		return apleys;
+	public String getPat_balll() {
+		return pat_balll;
 	}
 
-	public void setApleys(String apleys) {
-		this.apleys = apleys;
+	public void setPat_balll(String pat_balll) {
+		this.pat_balll = pat_balll;
 	}
 
-	public String getDrawera() {
-		return drawera;
+	public String getDrawerr() {
+		return drawerr;
 	}
 
-	public void setDrawera(String drawera) {
-		this.drawera = drawera;
+	public void setDrawerr(String drawerr) {
+		this.drawerr = drawerr;
 	}
 
-	public String getThompsons() {
-		return thompsons;
+	public String getDrawerl() {
+		return drawerl;
 	}
 
-	public void setThompsons(String thompsons) {
-		this.thompsons = thompsons;
+	public void setDrawerl(String drawerl) {
+		this.drawerl = drawerl;
 	}
 
-	public String getTinelsa() {
-		return tinelsa;
+	public String getVal_varusr() {
+		return val_varusr;
 	}
 
-	public void setTinelsa(String tinelsa) {
-		this.tinelsa = tinelsa;
+	public void setVal_varusr(String val_varusr) {
+		this.val_varusr = val_varusr;
 	}
 
-	public String getStrunskys() {
-		return strunskys;
+	public String getVal_varusl() {
+		return val_varusl;
 	}
 
-	public void setStrunskys(String strunskys) {
-		this.strunskys = strunskys;
+	public void setVal_varusl(String val_varusl) {
+		this.val_varusl = val_varusl;
 	}
 
-	public String getHomans() {
-		return homans;
+	public String getApleysr() {
+		return apleysr;
 	}
 
-	public void setHomans(String homans) {
-		this.homans = homans;
+	public void setApleysr(String apleysr) {
+		this.apleysr = apleysr;
 	}
 
-	public String getClaudication_test() {
-		return claudication_test;
+	public String getApleysl() {
+		return apleysl;
 	}
 
-	public void setClaudication_test(String claudication_test) {
-		this.claudication_test = claudication_test;
+	public void setApleysl(String apleysl) {
+		this.apleysl = apleysl;
 	}
-   	
+
+	public String getDrawerar() {
+		return drawerar;
+	}
+
+	public void setDrawerar(String drawerar) {
+		this.drawerar = drawerar;
+	}
+
+	public String getDraweral() {
+		return draweral;
+	}
+
+	public void setDraweral(String draweral) {
+		this.draweral = draweral;
+	}
+
+	public String getThompsonsr() {
+		return thompsonsr;
+	}
+
+	public void setThompsonsr(String thompsonsr) {
+		this.thompsonsr = thompsonsr;
+	}
+
+	public String getThompsonsl() {
+		return thompsonsl;
+	}
+
+	public void setThompsonsl(String thompsonsl) {
+		this.thompsonsl = thompsonsl;
+	}
+
+	public String getTinelsar() {
+		return tinelsar;
+	}
+
+	public void setTinelsar(String tinelsar) {
+		this.tinelsar = tinelsar;
+	}
+
+	public String getTinelsal() {
+		return tinelsal;
+	}
+
+	public void setTinelsal(String tinelsal) {
+		this.tinelsal = tinelsal;
+	}
+
+	public String getStrunskysr() {
+		return strunskysr;
+	}
+
+	public void setStrunskysr(String strunskysr) {
+		this.strunskysr = strunskysr;
+	}
+
+	public String getStrunskysl() {
+		return strunskysl;
+	}
+
+	public void setStrunskysl(String strunskysl) {
+		this.strunskysl = strunskysl;
+	}
+
+	public String getHomansr() {
+		return homansr;
+	}
+
+	public void setHomansr(String homansr) {
+		this.homansr = homansr;
+	}
+
+	public String getHomansl() {
+		return homansl;
+	}
+
+	public void setHomansl(String homansl) {
+		this.homansl = homansl;
+	}
+
+	public String getClaudication_testr() {
+		return claudication_testr;
+	}
+
+	public void setClaudication_testr(String claudication_testr) {
+		this.claudication_testr = claudication_testr;
+	}
+
+	public String getClaudication_testl() {
+		return claudication_testl;
+	}
+
+	public void setClaudication_testl(String claudication_testl) {
+		this.claudication_testl = claudication_testl;
 	}
 	
-	
-	
+
+}

@@ -29,6 +29,7 @@ import bephit.dao.InsuranceplanDAO;
 import bephit.dao.InsuranceverificationDAO;
 import bephit.dao.MainDAO;
 import bephit.dao.MedicalDAO;
+import bephit.dao.MoretestDAO;
 import bephit.dao.PatientDAO;
 
 import bephit.dao.PhysicalexamDAO;
@@ -50,6 +51,7 @@ import bephit.forms.InsuranceinformationForm;
 import bephit.forms.InsuranceplanForm;
 import bephit.forms.InsuranceverificationForm;
 import bephit.forms.MedicalRecordsForm;
+import bephit.forms.MoretestForm;
 import bephit.forms.ParticipantsDetailsForm;
 
 
@@ -127,6 +129,9 @@ public class MainController {
 	
 	@Autowired
 	PhysicalexamDAO physicalDAO;
+	
+	@Autowired
+	MoretestDAO moreDAO;
 	
 	
 
@@ -227,7 +232,7 @@ public class MainController {
 	
 	@RequestMapping(value="/hamiltonchiropractic", method = RequestMethod.GET)
 	public String hamiltonchiropractic(ModelMap model) {
-	      return "hamiltinchiropractic";
+	      return "hamiltonchiropractic";
 	}
 
 	
@@ -1161,4 +1166,35 @@ public class MainController {
 		return "moretest";
 	}
 	
-  }
+	@RequestMapping(value="/moretest", method = RequestMethod.POST)
+	public String insert_moretest(@ModelAttribute("Moretest")  @Valid Moretest moretest,BindingResult result,ModelMap model) {
+		
+		model.put("Moretest", moretest);
+		model.addAttribute("MoretestForm",moretest);
+    	int a=moreDAO.setMoretest(moretest);
+    	MoretestForm moretestForm= new MoretestForm();
+    	moretestForm.setMoretest(moreDAO.getMoretest());
+		model.addAttribute("Moretest",moretestForm);
+
+		//System.out.println(autoaccident.getAdjustersname());
+	    
+		
+
+		return "moretest";
+ 
+	}
+	@RequestMapping(value="/viewhamiltonchiropractic", method = RequestMethod.GET)
+	public String viewhamiltonchiropractic(HttpServletRequest request,ModelMap model) {
+		
+		HamiltonchiropracticForm hamiltonchiropracticForm= new HamiltonchiropracticForm();
+		hamiltonchiropracticForm.setHamiltonchiropractic(hamiDAO.getHamiltonchiropractic());
+		model.addAttribute("hamiltonchiropracticform",hamiltonchiropracticForm);
+		
+		return "viewhamiltonchiropractic";
+ 
+	}
+	
+
+	}
+	
+  
