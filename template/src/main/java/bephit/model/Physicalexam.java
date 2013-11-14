@@ -1,6 +1,7 @@
 package bephit.model;
 
 public class Physicalexam {
+	      String physical_id;
 	      String sign;
 	      String name;
 	      String id;
@@ -252,7 +253,7 @@ public class Physicalexam {
 	
 	}
 
-	public Physicalexam(String sign, String name, String id, String date,
+	public Physicalexam(String physical_id,String sign, String name, String id, String date,
 			String age, String sex, String height, String weight, String temp,
 			String bp, String pulse, String appearance, String weight1,
 			String gait, String head,String path, String posture, String romber,
@@ -327,7 +328,7 @@ public class Physicalexam {
 			String heelleft, String toeright, String toeleft,
 			String patellarright, String patellarleft, String achillesright,
 			String achillesleft, String babinskiright, String babinskileft) {
-		
+		this.physical_id=physical_id;
 		this.sign = sign;
 		this.name = name;
 		this.id = id;
@@ -569,6 +570,14 @@ public class Physicalexam {
 		this.achillesleft = achillesleft;
 		this.babinskiright = babinskiright;
 		this.babinskileft = babinskileft;
+	}
+
+	public String getPhysical_id() {
+		return physical_id;
+	}
+
+	public void setPhysical_id(String physical_id) {
+		this.physical_id = physical_id;
 	}
 
 	public String getSign() {

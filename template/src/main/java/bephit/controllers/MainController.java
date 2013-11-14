@@ -1,4 +1,4 @@
-package bephit.controllers;
+	package bephit.controllers;
  
  
 
@@ -217,12 +217,12 @@ public class MainController {
 		return "viewphysicalexam";
 	}
 	@RequestMapping(value="/physicalexamlist", method=RequestMethod.GET)
-	public String physicalexamlist(HttpServletRequest request,@RequestParam("id") String id,ModelMap model,Physicalexam exam)
+	public String physicalexamlist(HttpServletRequest request,@RequestParam("physical_id") String physical_id,ModelMap model,Physicalexam exam)
 	{
 		//ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
 		PhysicalexamForm physicalexamForm = new PhysicalexamForm();
         //participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants(participants_id));
-		physicalexamForm.setPhysicalexam(physicalDAO.getPhysical(id));
+		physicalexamForm.setPhysicalexam(physicalDAO.getPhysical(physical_id));
 		//model.addAttribute("participantsDetailsForm", participantsDetailsForm);
 		model.addAttribute("physicalexamForm", physicalexamForm);
 		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
@@ -230,6 +230,45 @@ public class MainController {
 		return "physicalexamlist";
 	}
 	
+	@RequestMapping(value="/editphysicalexam", method=RequestMethod.GET)
+	public String editphysicalexam(HttpServletRequest request,@RequestParam("physical_id") String physical_id,ModelMap model,Physicalexam exam)
+	{
+		
+		PhysicalexamForm physicalexamForm = new PhysicalexamForm();
+       
+        physicalexamForm.setPhysicalexam(physicalDAO.getPhysical(physical_id));
+	
+		model.addAttribute("physicalexamForm", physicalexamForm);
+		
+		return "editphysicalexam";
+	}
+	@RequestMapping(value="/updatephysicalexam", method=RequestMethod.POST)
+	public String updatephysicalexam(HttpServletRequest request,@ModelAttribute("exam") @Valid Physicalexam exam,
+			BindingResult result,ModelMap model,Principal principal)
+	{
+		if (result.hasErrors())
+		{
+			PhysicalexamForm physicalexamForm = new PhysicalexamForm();
+	     //   participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants(participant.getParticipants_id()));
+	      physicalexamForm.setPhysicalexam(physicalDAO.getPhysical(exam.getPhysical_id()));
+	      
+	        model.addAttribute("physicalexamForm", physicalexamForm);
+			    
+		        return "editphysicalexam";
+		}
+		
+		int status = physicalDAO.updatephysicalexam(exam, exam.getPhysical_id(), principal.getName());
+		System.out.println(status);
+		
+		PhysicalexamForm physicalexamForm = new PhysicalexamForm();
+        
+       physicalexamForm.setPhysicalexam(physicalDAO.getPhysicalexam());
+       
+        model.addAttribute("physicalexamForm", physicalexamForm);
+	       model.addAttribute("success","true");
+	        return "viewphysicalexam";
+		
+	}
 	@RequestMapping(value="/hamiltonchiropractic", method = RequestMethod.GET)
 	public String hamiltonchiropractic(ModelMap model) {
 	      return "hamiltonchiropractic";
