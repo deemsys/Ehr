@@ -34,6 +34,7 @@
 					         	<td valign="top" align="left" width="15%">Date</td>
 					         	<td valign="top" align="left" width="10%">ID</td>
 								<td valign="top" align="left" width="10%">Date of Birth</td>
+								<td valign="top" align="left" width="10%">Action</td>
           			</tr>
 							<!-- getting addAttibute value -->
 						<c:if test="${fn:length(radiologicReportForm.radiologicReport) gt 0}">
@@ -44,7 +45,7 @@
 											<td valign="top" align="left" width="15%">${radiologicReport.date}</td>
 											<td valign="top" align="left" width="10%">${radiologicReport.id}</td>
 											<td valign="top" align="left" width="10%">${radiologicReport.dob}</td>
-												<td valign="top" align="center">
+												<td valign="top" align="left">
 											<%--  <c:if test="${currentuser.adminuser[0].editradiologicreport==1}"> --%>
 												<a href="#" title="" ><img src="resources/images/icons/icon_edit.png" alt="Edit" /></a><a href="<c:out value="editradiologicreport?pid=${radiologicReport.pid}"/>" style="padding-right:10px;">Edit</a>
 											<%-- 	 </c:if>
