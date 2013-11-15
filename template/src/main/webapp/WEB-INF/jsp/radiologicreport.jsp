@@ -7,6 +7,7 @@
   <script src="resources/js/tabs-ui.js"></script>
    
 <title>Insert title here</title>
+
 </head>
 <script>
   $(function() {
@@ -31,13 +32,13 @@
     				<table cellpadding="0" cellspacing="0" border="0" width="100%">
 	                            <tr class="row1">
 				                  <td>Patient Name:</td>
-				                  <td><input type="text" class="input_txtbx1" id="inp_id" name="pname" /></td>
+				                  <td><input type="text" class="input_txtbx1" id="pname" name="pname" /></td>
 				                  <td>Date:</td>
-				                  <td><input type="text" class="input_txtbx1" id="inp_id" name="date" /></td>
+				                  <td><input type="text" class="input_txtbx1" id="date" name="date" /></td>
 				                  <td>I.D.#:</td>
-				                  <td><input type="text" class="input_txtbx1" id="inp_id" name="id" /></td>
+				                  <td><input type="text" class="input_txtbx1" id="id" name="id" /></td>
 				                  <td>Date Of Birth</td>
-				                  <td><input type="text" class="input_txtbx1" id="inp_id" name="dob" /></td>
+				                  <td><input type="text" class="input_txtbx1" id="dob" name="dob" /></td>
 				                </tr>
 				    </table>
 				    </td>
@@ -91,11 +92,11 @@
 				                  </tr> 
 				                   	 <tr class="row2">
 				             
-				                 <td class="input_txt" align="left"> <input type="checkbox" value="positive for" name="positive_for"> Positive for
-				                 		<input type="text" class="input_txtbx1" id="inp_id" name="positive_text1" />
+				                 <td class="input_txt" align="left"> <input type="checkbox" value="positive for" name="positive_for"  onclick="this.form.positive1.style.visibility = this.checked? 'visible' : 'hidden'"/> Positive for
+				                 		<input type="text" class="input_txtbx1" style="visibility:hidden" id="positive1" name="positive_text1" />
 				                 </td>
-				                 <td class="input_txt"><input type="checkbox" name="break_1" value="Break in Georges"> Break in Georges line at 
-				           		        <input type="text" class="input_txtbx1" id="inp_id" name="break_text1" />
+				                 <td class="input_txt"><input type="checkbox" name="break_1" value="Break in Georges" onclick="this.form.break1.style.visibility = this.checked? 'visible' : 'hidden'"/> Break in Georges line at 
+				           		        <input type="text" class="input_txtbx1" id="break1" name="break_text1" style="visibility:hidden" />
 				           		 </td>
 				           		 <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="adi_1" value="ADI more than 3mm"> ADI more than 3mm</td>
 				           		
@@ -104,10 +105,10 @@
 				                   <tr class="row1">
 				                 	 <td valign="top" align="left" class="input_txt"> <input type="checkbox"name="hypolorodosis_1"value="Hypolordosis"> Hypolordosis</td>
 				                     <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="normalcurvature_1" value="Normal Curvature"> Normal Curvature</td>    
-				                 	 <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="hyperlordosis_1" value="Hyperlordosis:"> Hyperlordosis
+				                 	 <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="hyperlordosis_1" value="Hyperlordosis:" onclick="this.form.hyperlordosis1.style.visibility = this.checked? 'visible' : 'hidden'"/> Hyperlordosis
 				                 	 
 				                 	 
-				                 	 <select name="hyperlordosis_select1" class="input_cmbbx1">
+				                 	 <select name="hyperlordosis_select1" class="input_cmbbx1" id="hyperlordosis1" style="visibility:hidden">
 				                 	              
 						                    <option selected="selected" value="Mild" >Mild</option>
 											<option value="Moderate">Moderate</option>
@@ -120,10 +121,10 @@
 				                   <tr class="row2">
 				                 	 <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="mcGregorslinenormal_1"value="McGregors line normal"> McGregor's line normal</td>
 				                     <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="mcGregorslineinterupted_1" value="McGregors line interupted"> McGregor's line interupted more than 8-M or 10-F mm</td>    
-				                 	 <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="degenerativejointdisease_1" value="Degenerative joint disease at:"> Degenerative joint disease at:
+				                 	 <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="degenerativejointdisease_1" value="Degenerative joint disease at:" onclick="this.form.degenerativejointdisease1.style.visibility = this.checked? 'visible' : 'hidden'"/> Degenerative joint disease at:
 				                 	 
 				                 	 
-				                 	 <select name="degenerativejointdisease_select1" class="input_cmbbx1">
+				                 	 <select name="degenerativejointdisease_select1" class="input_cmbbx1" id="degenerativejointdisease1" style="visibility:hidden">
 				                 	              
 						                    <option selected="selected" value="C-2/3" >C-2/3</option>
 											<option value="C-3/4">C-3/4</option>
@@ -138,26 +139,26 @@
 				                 	 												  <input type="checkbox" name="moderate_1" value="Moderate"> Moderate
 				                 	 												  <input type="checkbox" name="severe_1" value="Severe"> Severe
 				                 	 </td> 
-				                 	  <td class="input_txt" align="left"> <input type="checkbox" name="narrowed_1" value="Narrowed disc space at"> Narrowed disc space at
-				                 		<input type="text" class="input_txtbx1" id="inp_id" name="narrowed_text1" />
+				                 	  <td class="input_txt" align="left"> <input type="checkbox" name="narrowed_1" value="Narrowed disc space at" onclick="this.form.narrowed1.style.visibility = this.checked? 'visible' : 'hidden'"/> Narrowed disc space at
+				                 		<input type="text" class="input_txtbx1" id="narrowed1" name="narrowed_text1" style="visibility:hidden"/>
 				                	 </td>
-				               	     <td class="input_txt" align="left"> <input type="checkbox" name="anterior_1" value="Anterior osteophytes at"> Anterior vertebral body osteophytes at
-				                 		<input type="text" class="input_txtbx1" id="inp_id" name="anterior_text1" />
+				               	     <td class="input_txt" align="left"> <input type="checkbox" name="anterior_1" value="Anterior osteophytes at" onclick="this.form.anterior1.style.visibility = this.checked? 'visible' : 'hidden'"/> Anterior vertebral body osteophytes at
+				                 		<input type="text" class="input_txtbx1" id="anterior1" name="anterior_text1" style="visibility:hidden"/>
 				                 	 </td> 		
 				                 </tr>
 				                 <tr class="row2">
-				             			 <td class="input_txt" align="left"> <input type="checkbox" name="subchondral_1" value="Subchondral sclerosis of"> Subchondral sclerosis of
-				                 		<input type="text" class="input_txtbx1" id="inp_id" name="subchondral_text1" />
+				             			 <td class="input_txt" align="left"> <input type="checkbox" name="subchondral_1" value="Subchondral sclerosis of" onclick="this.form.subchondral1.style.visibility = this.checked? 'visible' : 'hidden'"/> Subchondral sclerosis of
+				                 		<input type="text" class="input_txtbx1" id="subchondral1" name="subchondral_text1" style="visibility:hidden"/>
 				                	 </td>
-				                	 <td class="input_txt" align="left"> <input type="checkbox" name="schmorls_1" value="Schmorls nodes at:"> Schmorl's nodes at:
-				                 		<input type="text" class="input_txtbx1" id="inp_id" name="schmorls_text1" />
+				                	 <td class="input_txt" align="left"> <input type="checkbox" name="schmorls_1" value="Schmorls nodes at:" onclick="this.form.schmorls1.style.visibility = this.checked? 'visible' : 'hidden'"/> Schmorl's nodes at:
+				                 		<input type="text" class="input_txtbx1" id="schmorls1" name="schmorls_text1" style="visibility:hidden"/>
 				                	 </td>
 				                 </tr>
 				                 <tr class="row1">
-				                 	 <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="foraminal_1" value="Foraminal enchroachment b/w:"> Foraminal enchroachment between:
+				                 	 <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="foraminal_1" value="Foraminal enchroachment b/w:"onclick="this.form.foraminal1.style.visibility = this.checked? 'visible' : 'hidden'"/> Foraminal enchroachment between:
 				                 	 
 				                 	 
-				                 	 <select name="foraminal_select1" class="input_cmbbx1">
+				                 	 <select name="foraminal_select1" class="input_cmbbx1" id="foraminal1"  style="visibility:hidden">
 				                 	              
 						                    <option selected="selected" value="C-2/3" >C-2/3</option>
 											<option value="C-3/4">C-3/4</option>
@@ -167,20 +168,20 @@
 											<option value="C-7/T-1">C-7/T-1</option>
 									 </select>		
 									</td>               
-				                    <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="osteoporosis_1" value="Osteoporosis"> Osteoporosis
+				                    <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="osteoporosis_1" value="Osteoporosis" onclick="this.form.osteoporosis1.style.visibility = this.checked? 'visible' : 'hidden'"/> Osteoporosis
 				                 	 
 				                 	 
-				                 	 <select name="osteoporosis_select1" class="input_cmbbx1">
+				                 	 <select name="osteoporosis_select1" class="input_cmbbx1" id="osteoporosis1" style="visibility:hidden">
 				                 	              
 						                    <option selected="selected" value="Mild" >Mild</option>
 											<option value="Moderate">Moderate</option>
 											<option value="Severe">Severe</option>
 									</select>		
 									</td> 
-									 <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="decreasedFlexExt_1" value="Decreased Flex/Ext:"> Decreased Flex/Ext
+									 <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="decreasedFlexExt_1" value="Decreased Flex/Ext:" onclick="this.form.decreasedFlexExt1.style.visibility = this.checked? 'visible' : 'hidden'"/> Decreased Flex/Ext
 				                 	 
 				                 	 
-				                 	 <select name="decreasedFlexExt_select1" class="input_cmbbx1">
+				                 	 <select name="decreasedFlexExt_select1" class="input_cmbbx1" id="decreasedFlexExt1" style="visibility:hidden">
 				                 	              
 						                    <option selected="selected" value="Mild" >Mild</option>
 											<option value="Moderate">Moderate</option>
@@ -190,10 +191,10 @@
 				                 </tr>
 				                 <tr class="row2">		  
 				                     
-				                     <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="decreasedRLFlex_1" value="Decreased R/L Flex:"> Decreased R/L Flex
+				                     <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="decreasedRLFlex_1" value="Decreased R/L Flex:" onclick="this.form.decreasedRLFlex1.style.visibility = this.checked? 'visible' : 'hidden'"/> Decreased R/L Flex
 				                 	 
 				                 	 
-				                 	 <select name="decreasedRLFlex_select1" class="input_cmbbx1">
+				                 	 <select name="decreasedRLFlex_select1" class="input_cmbbx1" id="decreasedRLFlex1" style="visibility:hidden">
 				                 	              
 						                    <option selected="selected" value="Mild" >Mild</option>
 											<option value="Moderate">Moderate</option>
@@ -207,24 +208,25 @@
 											<option value="Levo scoliosis">Levo scoliosis</option>
 											<option value="Towering">Towering</option>
 								    	  </select>
-								 	  
+								 	  	
 								    	 <input type="checkbox" name="mild_11" value="Mild"> Mild
 				                    	 <input type="checkbox" name="moderate_11" value="Moderate"> Moderate   
 				                 		<input type="checkbox" name="severe_11" value="Severe"> Severe
+				                 		
 				                 	    </td>
 										
 									    
 				                 </tr>
 				                 <tr class="row1">
 				             
-				                	 <td class="input_txt" align="left"> <input type="checkbox" name="apexat_1" value="Apex at:"> Apex at:
-				                 		<input type="text" class="input_txtbx1" id="inp_id" name="apexat_text1" />
+				                	 <td class="input_txt" align="left"> <input type="checkbox" name="apexat_1" value="Apex at:" onclick="this.form.apexat1.style.visibility = this.checked? 'visible' : 'hidden'"/> Apex at:
+				                 		<input type="text" class="input_txtbx1" id="apexat1" name="apexat_text1" style="visibility:hidden"/>
 				                	 </td>
-				               	     <td class="input_txt" align="left"> <input type="checkbox" name="softtissueedemaof_1" value="Soft tissue edema of"> Soft tissue edema of
-				                 		<input type="text" class="input_txtbx1" id="inp_id" name="softtissueedemaof_text1" />
+				               	     <td class="input_txt" align="left"> <input type="checkbox" name="softtissueedemaof_1" value="Soft tissue edema of" onclick="this.form.softtissueedemaof1.style.visibility = this.checked? 'visible' : 'hidden'"/> Soft tissue edema of
+				                 		<input type="text" class="input_txtbx1" id="softtissueedemaof1" name="softtissueedemaof_text1" style="visibility:hidden"/>
 				                 	 </td>
-				                  	 <td class="input_txt" align="left"> <input type="checkbox" name="other_1" value="Other"> Other
-				                 		<input type="text" class="input_txtbx1" id="inp_id" name="other_text1" />
+				                  	 <td class="input_txt" align="left"> <input type="checkbox" name="other_1" value="Other" onclick="this.form.other1.style.visibility = this.checked? 'visible' : 'hidden'"/> Other
+				                 		<input type="text" class="input_txtbx1" id="other1" name="other_text1" style="visibility:hidden"/>
 				                	 </td>
 				                 </tr>
 				                 
@@ -281,8 +283,8 @@
 				                   													<input type="checkbox" name="normalkyphosis_2" value="Normal kyphosis"> Normal kyphosis 
 				                   													<input type="checkbox" name="hypokyphosis_2" value="Hypokyphosis"> Hypokyphosis
 				                   </td>  	
-				                  <td class="input_txt" align="left"> <input type="checkbox" name="degenerative_2" value="Degenerative joint disease at:"> Degenerative joint disease at:
-				                 		<input type="text" class="input_txtbx1" id="inp_id" name="degenerative_text2" />
+				                  <td class="input_txt" align="left"> <input type="checkbox" name="degenerative_2" value="Degenerative joint disease at:" onclick="this.form.degenerative2.style.visibility = this.checked? 'visible' : 'hidden'"/> Degenerative joint disease at:
+				                 		<input type="text" class="input_txtbx1" id="degenerative2" name="degenerative_text2" style="visibility:hidden"/>
 				                	 </td>
 				                	 <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="mild_2" value="Mild"> Mild
 				                    													 <input type="checkbox" name="moderate_2" value="Moderate"> Moderate   
@@ -291,34 +293,34 @@
 				                   </tr>
 				                    <tr class="row1">
 				             
-				                	 <td class="input_txt" align="left"> <input type="checkbox" name="narrowed_2" value="Narrowed disc space at:"> Narrowed disc space at:
-				                 		<input type="text" class="input_txtbx1" id="inp_id" name="narrowed_text2" />
+				                	 <td class="input_txt" align="left"> <input type="checkbox" name="narrowed_2" value="Narrowed disc space at:" onclick="this.form.narrowed2.style.visibility = this.checked? 'visible' : 'hidden'"/> Narrowed disc space at:
+				                 		<input type="text" class="input_txtbx1" id="narrowed2" name="narrowed_text2" style="visibility:hidden" />
 				                	 </td>
-				               	     <td class="input_txt" align="left"> <input type="checkbox" name="schmorlsnodesat_2" value="Schmorls nodes at:"> Schmorl's nodes at:
-				                 		<input type="text" class="input_txtbx1" id="inp_id" name="schmorlsnodesat_text2" />
+				               	     <td class="input_txt" align="left"> <input type="checkbox" name="schmorlsnodesat_2" value="Schmorls nodes at:" onclick="this.form.schmorlsnodesat2.style.visibility = this.checked? 'visible' : 'hidden'"/> Schmorl's nodes at:
+				                 		<input type="text" class="input_txtbx1" id="schmorlsnodesat2" name="schmorlsnodesat_text2" style="visibility:hidden" />
 				                 	 </td>
 				                    </tr>	 
 				                 	 <tr class="row2">
-				             			<td class="input_txt" align="left"> <input type="checkbox" name="anterior_2" value="Anterior body osteophytes at:"> Anterior vertebral body osteophytes at:
-				                 			<input type="text" class="input_txtbx1" id="inp_id" name="anterior_text2" />
+				             			<td class="input_txt" align="left"> <input type="checkbox" name="anterior_2" value="Anterior body osteophytes at:" onclick="this.form.anterior2.style.visibility = this.checked? 'visible' : 'hidden'"/> Anterior vertebral body osteophytes at:
+				                 			<input type="text" class="input_txtbx1" id="anterior2" name="anterior_text2" style="visibility:hidden" />
 				                		 </td>
-				               	    	 <td class="input_txt" align="left"> <input type="checkbox" name="subchondral_2" value="Subchondral sclerosis of"> Subchondral sclerosis of
-				                 			<input type="text" class="input_txtbx1" id="inp_id" name="subchondral_text2" />
+				               	    	 <td class="input_txt" align="left"> <input type="checkbox" name="subchondral_2" value="Subchondral sclerosis of" onclick="this.form.subchondral2.style.visibility = this.checked? 'visible' : 'hidden'"/> Subchondral sclerosis of
+				                 			<input type="text" class="input_txtbx1" id="subchondral2" name="subchondral_text2" style="visibility:hidden"/>
 				                 	 	</td>
-				                 	 	<td class="input_txt" align="left"> <input type="checkbox" name="foraminal_2" value="Foraminal enchroachment b/w:"> Foraminal enchroachment between:
-				                 		<input type="text" class="input_txtbx1" id="inp_id" name="foraminal_text2" />
+				                 	 	<td class="input_txt" align="left"> <input type="checkbox" name="foraminal_2" value="Foraminal enchroachment b/w:" onclick="this.form.foraminal2.style.visibility = this.checked? 'visible' : 'hidden'"/> Foraminal enchroachment between:
+				                 		<input type="text" class="input_txtbx1" id="foraminal2" name="foraminal_text2" style="visibility:hidden"/>
 				                	 </td>
 				                 	</tr>
 				                 	<tr class="row1">
-				             			<td valign="top" align="left" class="input_txt"> <input type="checkbox" name="osteoporosis_2" value="Osteoporosis"> Osteoporosis
-				                 	 		<select name="osteoporosis_select2" class="input_cmbbx1">
+				             			<td valign="top" align="left" class="input_txt"> <input type="checkbox" name="osteoporosis_2" value="Osteoporosis" onclick="this.form.osteoporosis2.style.visibility = this.checked? 'visible' : 'hidden'"/> Osteoporosis
+				                 	 		<select name="osteoporosis_select2" class="input_cmbbx1" style="visibility:hidden" id="osteoporosis2">
 				                 	              
 						                    <option selected="selected" value="mild" >Mild</option>
 											<option value="moderate">Moderate</option>
 											<option value="severe">Severe</option>
 											</select>		
 										</td> 
-										<td valign="top" align="left" class="input_txt">
+										<td valign="top" align="left" class="input_txt" >
 										<select name="dextro_Levoscoliosis_towering_select2" class="input_cmbbx1">
 				                 	              
 						                    <option selected="selected" value="Dextro" >Dextro</option>
@@ -333,14 +335,14 @@
 				                </tr>
 				                <tr class="row1">
 				             
-				                	 <td class="input_txt" align="left"> <input type="checkbox" name="apexat_2" value="Apex at:"> Apex at:
-				                 		<input type="text" class="input_txtbx1" id="inp_id" name="apexat_text2" />
+				                	 <td class="input_txt" align="left"> <input type="checkbox" name="apexat_2" value="Apex at:" onclick="this.form.apexat2.style.visibility = this.checked? 'visible' : 'hidden'"/> Apex at:
+				                 		<input type="text" class="input_txtbx1" id="apexat2" name="apexat_text2" style="visibility:hidden"/>
 				                	 </td>
-				               	     <td class="input_txt" align="left"> <input type="checkbox" name="softtissueedemaof_2" value="Soft tissue edema of"> Soft tissue edema of
-				                 		<input type="text" class="input_txtbx1" id="inp_id" name="softtissueedemaof_text2" />
+				               	     <td class="input_txt" align="left"> <input type="checkbox" name="softtissueedemaof_2" value="Soft tissue edema of" onclick="this.form.softtissueedemaof2.style.visibility = this.checked? 'visible' : 'hidden'"/> Soft tissue edema of
+				                 		<input type="text" class="input_txtbx1" id="softtissueedemaof2" name="softtissueedemaof_text2" style="visibility:hidden"/>
 				                 	 </td>
-				                  	 <td class="input_txt" align="left"> <input type="checkbox" name="other_2" value="Other"> Other
-				                 		<input type="text" class="input_txtbx1" id="inp_id" name="other_text2" />
+				                  	 <td class="input_txt" align="left"> <input type="checkbox" name="other_2" value="Other" onclick="this.form.other2.style.visibility = this.checked? 'visible' : 'hidden'"/> Other
+				                 		<input type="text" class="input_txtbx1" id="other2" name="other_text2" style="visibility:hidden" />
 				                	 </td>
 				                 </tr>
 				                 </table>	
@@ -386,11 +388,11 @@
 				                   	<td valign="top" align="left" class="input_txt"> <input type="checkbox" name="negative_3" value="Negative for recent fracture">  Negative for recent fracture, dislocation or gross Osteopathology</td>
 				                  </tr>
 				                  <tr class="row2">
-				                  	 <td class="input_txt"><input type="checkbox" name="break_3" value="Break Georges at"> Break in Georges line at 
-				           		        <input type="text" class="input_txtbx1" id="inp_id" name="break_text3" />
+				                  	 <td class="input_txt"><input type="checkbox" name="break_3" value="Break Georges at" onclick="this.form.break3.style.visibility = this.checked? 'visible' : 'hidden'"/> Break in Georges line at 
+				           		        <input type="text" class="input_txtbx1" id="break3" name="break_text3" style="visibility:hidden" />
 				           		 	 </td>
-				           		 	 <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="osteoporosis_3" value="Osteoporosis"> Osteoporosis
-				                 	 		<select name="osteoporosis_select3" class="input_cmbbx1">
+				           		 	 <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="osteoporosis_3" value="Osteoporosis" onclick="this.form.osteoporosis3.style.visibility = this.checked? 'visible' : 'hidden'"/> Osteoporosis
+				                 	 		<select name="osteoporosis_select3" class="input_cmbbx1" style="visibility:hidden" id="osteoporosis3">
 				                 	              
 						                    <option selected="selected" value="mild" >Mild</option>
 											<option value="moderate">Moderate</option>
@@ -399,8 +401,8 @@
 										</td>
 										 <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="hyperkyphosis_3" value="Hyperkyphosis"> Hyperkyphosis 
 				                   													<input type="checkbox" name="normalkyphosis_3" value="Normal kyphosis"> Normal kyphosis 
-				                   													<input type="checkbox" name="hypokyphosis_3" value="Hypokyphosis"> Hypokyphosis
-				                   													<select name="hypokyphosos_select_3" class="input_cmbbx1">
+				                   													<input type="checkbox" name="hypokyphosis_3" value="Hypokyphosis" onclick="this.form.hypokyphosis3.style.visibility = this.checked? 'visible' : 'hidden'"/> Hypokyphosis
+				                   													<select name="hypokyphosos_select_3" class="input_cmbbx1" style="visibility:hidden" id="hypokyphosis3">
 				                 	              
 						                    <option selected="selected" value="Mild" >Mild</option>
 											<option value="Moderate">Moderate</option>
@@ -409,9 +411,9 @@
 				                   		</td>   
 				                  </tr>
 				                  <tr class="row1">
-				                  	 <td class="input_txt" align="left"> <input type="checkbox" name="degenerative_3" value="Degenerative joint disease at:"> Degenerative joint disease at: 
+				                  	 <td class="input_txt" align="left"> <input type="checkbox" name="degenerative_3" value="Degenerative joint disease at:" onclick="this.form.degenerative3.style.visibility = this.checked? 'visible' : 'hidden'"/> Degenerative joint disease at: 
 				                	 
-				                  		<select name="degenerative_select3" class="input_cmbbx1">
+				                  		<select name="degenerative_select3" class="input_cmbbx1" style="visibility:hidden" id="degenerative3">
 											<option selected="selected" value="L-1/2" >L-1/2</option>
 											<option value="L-2/3">L-2/3</option>
 											<option value="L-3/4">L-3/4</option>
@@ -422,31 +424,31 @@
 				                 	 												  <input type="checkbox" name="moderate_3" value="Moderate"> Moderate
 				                 	 												  <input type="checkbox" name="severe_3" value="Severe"> Severe
 				                 	 </td> 
-				                 	  <td class="input_txt" align="left"> <input type="checkbox" name="narrowed_3" value="Narrowed disc space at"> Narrowed disc space at:
-				                 		<input type="text" class="input_txtbx1" id="inp_id" name="narrowed_text3" />
+				                 	  <td class="input_txt" align="left"> <input type="checkbox" name="narrowed_3" value="Narrowed disc space at" onclick="this.form.narrowed3.style.visibility = this.checked? 'visible' : 'hidden'"/> Narrowed disc space at:
+				                 		<input type="text" class="input_txtbx1" id="narrowed3" name="narrowed_text3" style="visibility:hidden" />
 				                	 </td>
 				                	 </tr>
 				                	 <tr class="row2">
-				               	     <td class="input_txt" align="left"> <input type="checkbox" name="anterior_3" value="Anterior osteophytes at"> Anterior vertebral body osteophytes at:
-				                 		<input type="text" class="input_txtbx1" id="inp_id" name="anterior_text3" />
+				               	     <td class="input_txt" align="left"> <input type="checkbox" name="anterior_3" value="Anterior osteophytes at" onclick="this.form.anterior3.style.visibility = this.checked? 'visible' : 'hidden'"/> Anterior vertebral body osteophytes at:
+				                 		<input type="text" class="input_txtbx1" id="anterior3" name="anterior_text3" style="visibility:hidden"/>
 				                 	 </td> 	
-				                 	  <td class="input_txt" align="left"> <input type="checkbox" name="subchondral_3" value="Subchondral sclerosis of"> Subchondral sclerosis of
-				                 		<input type="text" class="input_txtbx1" id="inp_id" name="subchondral_text3" />
+				                 	  <td class="input_txt" align="left"> <input type="checkbox" name="subchondral_3" value="Subchondral sclerosis of" onclick="this.form.subchondral3.style.visibility = this.checked? 'visible' : 'hidden'"/> Subchondral sclerosis of
+				                 		<input type="text" class="input_txtbx1" id="subchondral3" name="subchondral_text3" style="visibility:hidden"/>
 				                	 </td>
-				                 	  <td class="input_txt" align="left"> <input type="checkbox" name="schmorls_3" value="Schmorls nodes at:"> Schmorl's nodes at:
-				                 		<input type="text" class="input_txtbx1" id="inp_id" name="schmorls_text3" />
+				                 	  <td class="input_txt" align="left"> <input type="checkbox" name="schmorls_3" value="Schmorls nodes at:" onclick="this.form.schmorls3.style.visibility = this.checked? 'visible' : 'hidden'"/> Schmorl's nodes at:
+				                 		<input type="text" class="input_txtbx1" id="schmorls3" name="schmorls_text3" style="visibility:hidden"/>
 				                	 </td>
 				                 	 </tr>
 				                 	  <tr class="row1">
-				                  	 <td class="input_txt" align="left"> <input type="checkbox" name="spondylolisthesisof_3" value="Spondylolisthesis of"> Spondylolisthesis of 
+				                  	 <td class="input_txt" align="left"> <input type="checkbox" name="spondylolisthesisof_3" value="Spondylolisthesis of" onclick="this.form.spondylolisthesisof3.style.visibility = this.checked? 'visible' : 'hidden'"/> Spondylolisthesis of 
 				                	 
-				                  		<select name="spondylolisthesisof_select3" class="input_cmbbx1">
+				                  		<select name="spondylolisthesisof_select3" class="input_cmbbx1" style="visibility:hidden" id="spondylolisthesisof3">
 											<option selected="selected" value="L-4" >L-4</option>
 											<option value="L-5">L-5</option>
 										</select>
 									</td>
 									 <td valign="middle" align="left" class="input_txt">Other:
-				           		        <input type="text" class="input_txtbx1" id="inp_id" name="other_text3" />
+				           		        <input type="text" class="input_txtbx1" id="inp_id" name="other_text3"/>
 				           		 	 </td>
 				           		 	 <td valign="middle" align="left" class="input_txt">Grade:
 				           		 	 	<select name="grade_3" class="input_cmbbx1">
@@ -481,14 +483,14 @@
 									</tr>
 									 <tr class="row2">
 				             
-				                	 <td class="input_txt" align="left"> <input type="checkbox" name="apexat_3" value="Apex at:"> Apex at:
-				                 		<input type="text" class="input_txtbx1" id="inp_id" name="apexat_text3" />
+				                	 <td class="input_txt" align="left"> <input type="checkbox" name="apexat_3" value="Apex at:" onclick="this.form.apexat3.style.visibility = this.checked? 'visible' : 'hidden'"/> Apex at:
+				                 		<input type="text" class="input_txtbx1" id="apexat3" name="apexat_text3" style="visibility:hidden"/>
 				                	 </td>
-				               	     <td class="input_txt" align="left"> <input type="checkbox" name="softtissueedemaof_3" value="Soft tissue edema of"> Soft tissue edema of
-				                 		<input type="text" class="input_txtbx1" id="inp_id" name="softtissueedemaof_text3" />
+				               	     <td class="input_txt" align="left"> <input type="checkbox" name="softtissueedemaof_3" value="Soft tissue edema of" onclick="this.form.softtissueedemaof3.style.visibility = this.checked? 'visible' : 'hidden'"/> Soft tissue edema of
+				                 		<input type="text" class="input_txtbx1" name="softtissueedemaof_text3" id="softtissueedemaof3"style="visibility:hidden"/>
 				                 	 </td>
-				                  	 <td class="input_txt" align="left"> <input type="checkbox" name="other_3" value="Other"> Other
-				                 		<input type="text" class="input_txtbx1" id="inp_id" name="other_text33" />
+				                  	 <td class="input_txt" align="left"> <input type="checkbox" name="other_3" value="Other" onclick="this.form.other3.style.visibility = this.checked? 'visible' : 'hidden'"/> Other
+				                 		<input type="text" class="input_txtbx1" id="other3" name="other_text33" style="visibility:hidden"/>
 				                	 </td>
 				                 </tr>		
 				               </table>

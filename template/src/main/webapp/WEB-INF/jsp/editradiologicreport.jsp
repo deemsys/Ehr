@@ -102,8 +102,8 @@
 						                     			
 						                     </tr>
 						                     <tr class="row2">
-						                     			<td valign="top" align="left" class="input_txt"><input type="checkbox"  value="positive for" name="positive_for" <c:if test="${radiologicReport.positive_for=='positive for'}"><c:out value="Checked"/></c:if>   />Positive for
-						                     			<input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${radiologicReport.positive_text1 }" name="positive_text1" /><span class="err"><form:errors path="report.positive_text1"></form:errors></span></td>
+						                     			<td valign="top" align="left" class="input_txt"><input type="checkbox"  value="positive for" name="positive_for" onclick="this.form.positive1.style.visibility = this.checked? 'visible' : 'hidden'" <c:if test="${radiologicReport.positive_for=='positive for'}"><c:out value="Checked"/></c:if>   />Positive for
+						                     			<input type="text" class="input_txtbx1" id="positive1"  style="visibility:hidden" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${radiologicReport.positive_text1 }" name="positive_text1" /><span class="err"><form:errors path="report.positive_text1"></form:errors></span></td>
 						                                
 						                                <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Break in Georges" name="break_1" <c:if test="${radiologicReport.break_1=='Break in Georges'}"><c:out value="Checked"/></c:if>   />Break in Georges line at
 						                                <input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${radiologicReport.break_text1 }" name="break_text1" /><span class="err"><form:errors path="report.break_text1"></form:errors></span></td>
@@ -301,7 +301,7 @@
 						          <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Subchondral sclerosis of" name="subchondral_2" <c:if test="${radiologicReport.subchondral_2=='Subchondral sclerosis of'}"><c:out value="Checked"/></c:if>   />Subchondral sclerosis of
 						                                <input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${radiologicReport.subchondral_text2 }" name="subchondral_text2" /><span class="err"><form:errors path="report.subchondral_text2"></form:errors></span>
 						                             </td>   
-						          <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Foraminal enchroachment b/w:" name="foraminal_2" <c:if test="${radiologicReport.foraminal_2=='Foraminal enchroachment b/w:'}"><c:out value="Checked"/></c:if>   />Subchondral sclerosis of
+						          <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Foraminal enchroachment b/w:" name="foraminal_2" <c:if test="${radiologicReport.foraminal_2=='Foraminal enchroachment b/w:'}"><c:out value="Checked"/></c:if>   />Foraminal enchroachment between: 
 						                                <input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${radiologicReport.foraminal_text2 }" name="foraminal_text2" /><span class="err"><form:errors path="report.foraminal_text2"></form:errors></span>
 						                             </td>               		                    		           		
 						         </tr>
