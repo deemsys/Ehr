@@ -214,37 +214,37 @@
 				                 
 				                  <tr class="row1">
 				                  <td>Head Tilt:</td>
-				                  <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Right" name="headtiltright" <c:if test="${physicalexam.headtiltright==Right}"><c:out value="checked=checked"/></c:if>> Right</td>
-				                  <td class="input_txt" align="left"> <input type="checkbox"  value="Left" name="headtiltleft" <c:if test="${physicalexam.headtiltleft==Left}"><c:out value="Checked"/></c:if>   /> Left</td>
-				                  <td class="input_txt"><input type="checkbox"  value="Normal" name="headtiltnormal" <c:if test="${physicalexam.headtiltnormal==Normal}"><c:out value="Checked"/></c:if>   /> Normal</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="headtiltright" value="Right" <c:if test="${physicalexam.headtiltright=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="headtiltleft" value="Left" <c:if test="${physicalexam.headtiltleft=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
+				                  <td class="input_txt"><input type="checkbox" name="headtiltnormal" value="Normal" <c:if test="${physicalexam.headtiltnormal=='Normal'}"><c:out value="checked=checked"/></c:if>>Normal</td>
 				                 
 				                  </tr>
 				                  <tr class="row1">
 				                  <td>Rotation:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="rotationright" value="Right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="rotationleft" value="Left">Left</td>
-				                  <td class="input_txt"><input type="checkbox" name="rotationnormal" value="Normal">Normal</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="rotationright" value="Right" <c:if test="${physicalexam.rotationright=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="rotationleft" value="Left"  <c:if test="${physicalexam.rotationleft=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
+				                  <td class="input_txt"><input type="checkbox" name="rotationnormal" value="Normal" <c:if test="${physicalexam.rotationnormal=='Normal'}"><c:out value="checked=checked"/></c:if>>Normal</td>
 				                 
 				                  </tr>
 				                   <tr class="row1">
 				                   <td>TMJ Syndrome:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="tmjright" value="Right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="tmjleft" value="Left">Left</td>
-				                  <td class="input_txt"><input type="checkbox" name="tmjnormal" value="Normal">Normal</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="tmjright" value="Right" <c:if test="${physicalexam.tmjright=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="tmjleft" value="Left" <c:if test="${physicalexam.tmjleft=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
+				                  <td class="input_txt"><input type="checkbox" name="tmjnormal" value="Normal" <c:if test="${physicalexam.tmjnormal=='Normal'}"><c:out value="checked=checked"/></c:if>>Normal</td>
 				                 
 				                  </tr>
 				                   <tr class="row1">
 				                   <td>High Shoulder:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="highright" value="Right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="highleft" value="Left">Left</td>
-				                  <td class="input_txt"><input type="checkbox" name="highnormal" value="Normal">Normal</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="highright" value="Right" <c:if test="${physicalexam.highright=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="highleft" value="Left" <c:if test="${physicalexam.highleft=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
+				                  <td class="input_txt"><input type="checkbox" name="highnormal" value="Normal" <c:if test="${physicalexam.highnormal=='Normal'}"><c:out value="checked=checked"/></c:if>>Normal</td>
 				                 
 				                  </tr>
 				                   <tr class="row1">
 				                   <td>Lordosis:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="lordhyper" value="Hyper">Hyper</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="lordhypo" value="Hypo">Hypo</td>
-				                  <td class="input_txt"><input type="checkbox" name="lordnormal" value="Normal">Normal</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="lordhyper" value="Hyper" <c:if test="${physicalexam.lordhyper=='Hyper'}"><c:out value="checked=checked"/></c:if>>Hyper</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="lordhypo" value="Hypo" <c:if test="${physicalexam.lordhypo=='Hypo'}"><c:out value="checked=checked"/></c:if>>Hypo</td>
+				                  <td class="input_txt"><input type="checkbox" name="lordnormal" value="Normal" <c:if test="${physicalexam.lordnormal=='Normal'}"><c:out value="checked=checked"/></c:if>>Normal</td>
 				                 
 				                  </tr>
 				                
@@ -256,26 +256,26 @@
 				                  </tr>
 				                <tr class="row1">
 				                  <td>Lymph Nodes:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="lymphedema" value="Lymphedema">Lymphedema</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="lymphnorma" value="Normal">Normal</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="lymphedema" value="Lymphedema" <c:if test="${physicalexam.lymphedema=='Lymphedema'}"><c:out value="checked=checked"/></c:if>>Lymphedema</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="lymphnormal" value="Normal" <c:if test="${physicalexam.lymphnormal=='Normal'}"><c:out value="checked=checked"/></c:if>>Normal</td>
 				                  </tr>
 				                   <tr class="row1">
 				                  <td>Paraspinal:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="paraspain" value="Pain">Pain</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="parasspasm" value="Spasm">Spasm</td>
-				                  <td class="input_txt" align="left"> <input type="checkbox" name="parasedema" value="Edema">Edema</td>
-				                   <td class="input_txt" align="left"> <input type="checkbox" name="parastriggerpont" value="TriggerPoint">TriggerPoint</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="paraspain" value="Pain" <c:if test="${physicalexam.paraspain=='Pain'}"><c:out value="checked=checked"/></c:if>>Pain</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="parasspasm" value="Spasm" <c:if test="${physicalexam.parasspasm=='Spasm'}"><c:out value="checked=checked"/></c:if>>Spasm</td>
+				                  <td class="input_txt" align="left"> <input type="checkbox" name="parasedema" value="Edema" <c:if test="${physicalexam.parasedema=='Edema'}"><c:out value="checked=checked"/></c:if>>Edema</td>
+				                   <td class="input_txt" align="left"> <input type="checkbox" name="parastriggerpoint" value="TriggerPoint" <c:if test="${physicalexam.parastriggerpoint=='TriggerPoint'}"><c:out value="checked=checked"/></c:if>>TriggerPoint</td>
 				                  </tr>
 				                  <tr class="row1">
 				                  <td>Trapezius/SCM:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="trapeziusrl" value="R-L">R-L</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="trapeziustono" value="Tonocity">Tonicity</td>
-				                  <td class="input_txt" align="left"> <input type="checkbox" name="trapeziusnormal" value="Normal">Normal</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="trapeziusrl" value="R-L" <c:if test="${physicalexam.trapeziusrl=='R-L'}"><c:out value="checked=checked"/></c:if>>R-L</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="trapeziustono" value="Tonocity" <c:if test="${physicalexam.trapeziustono=='Tonocity'}"><c:out value="checked=checked"/></c:if>>Tonicity</td>
+				                  <td class="input_txt" align="left"> <input type="checkbox" name="trapeziusnormal" value="Normal" <c:if test="${physicalexam.trapeziusnormal=='Normal'}"><c:out value="checked=checked"/></c:if>>Normal</td>
 				                  </tr>
 				                  <tr class="row1">
 				                  <td>Vertebrae:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="vertebraefix" value="Fixations">Fixations</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="vertebraenofix" value="No_fixations">No Fixations</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="vertebraefix" value="Fixations" <c:if test="${physicalexam.vertebraefix=='Fixations'}"><c:out value="checked=checked"/></c:if>>Fixations</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="vertebraenofix" value="No_fixations" <c:if test="${physicalexam.vertebraenofix=='No_fixations'}"><c:out value="checked=checked"/></c:if>>No Fixations</td>
 				                  </tr>
 				                  </table>
 				               <table border="0">
@@ -349,38 +349,38 @@
 				                <tr class="row1">
 				                   <td>C-5:</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="c5" value="${physicalexam.c5 }"/></td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="c5right" value="Right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="c5left" value="Left">Left</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="c5right" value="Right" <c:if test="${physicalexam.c5right=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="c5left" value="Left" <c:if test="${physicalexam.c5left=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
 				                  </tr>
 				                <tr class="row1">
 				                   <td>C-6:</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="c6" value="${physicalexam.c6 }"/></td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="c6right" value="Right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="c6left" value="Left">Left</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="c6right" value="Right" <c:if test="${physicalexam.c6right=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="c6left" value="Left" <c:if test="${physicalexam.c6left=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
 				                  </tr>
 				                  <tr class="row1">
 				                   <td>C-7:</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="c7" value="${physicalexam.c7 }"/></td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="c7right" value="Right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="c7left" value="Left">Left</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="c7right" value="Right" <c:if test="${physicalexam.c7right=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="c7left" value="Left" <c:if test="${physicalexam.c7left=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
 				                  </tr>
 				                  <tr class="row1">
 				                   <td>C-8:</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="c8" value="${physicalexam.c8 }"/></td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="c8right" value="Right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="c8left" value="Left">Left</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="c8right" value="Right" <c:if test="${physicalexam.c8right=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="c8left" value="Left" <c:if test="${physicalexam.c8left=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
 				                  </tr>
 				                  <tr class="row1">
 				                   <td>T-1:</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="t1" value="${physicalexam.t1 }"/></td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="t1right" value="Right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="t1left" value="Left">Left</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="t1right" value="Right"<c:if test="${physicalexam.t1right=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="t1left" value="Left"<c:if test="${physicalexam.t1left=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
 				                  </tr>
 				                  <tr class="row1">
 				                   <td>Other:</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="other" value="${physicalexam.other }"/></td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="otherright" value="Right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="otherleft" value="Left">Left</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="otherright" value="Right" <c:if test="${physicalexam.otherright=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="otherleft" value="Left" <c:if test="${physicalexam.otherleft=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
 				                  </tr>
 				       </table>
 				       
@@ -629,43 +629,43 @@
 				                  </tr>
 				                 <tr class="row1">
 				                  <td>High Shoulder:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="highshoulderright" value="Right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="highshoulderleft" value="Left">Left</td>
-				                  <td class="input_txt"><input type="checkbox" name="highshouldernormal" value="Normal">Normal</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="highshoulderright" value="Right" <c:if test="${physicalexam.highshoulderright=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="highshoulderleft" value="Left" <c:if test="${physicalexam.highshoulderleft=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
+				                  <td class="input_txt"><input type="checkbox" name="highshouldernormal" value="Normal" <c:if test="${physicalexam.highshouldernormal=='Normal'}"><c:out value="checked=checked"/></c:if>>Normal</td>
 				                 
 				                  </tr>
 				                  <tr class="row1">
 				                  <td>Curvature:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="curvatureright" value="Right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="curvatureleft" value="Left">Left</td>
-				                  <td class="input_txt"><input type="checkbox" name="curvaturenormal" value="Normal">Normal</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="curvatureright" value="Right" <c:if test="${physicalexam.curvatureright=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="curvatureleft" value="Left" <c:if test="${physicalexam.curvatureleft=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
+				                  <td class="input_txt"><input type="checkbox" name="curvaturenormal" value="Normal" <c:if test="${physicalexam.curvaturenormal=='Normal'}"><c:out value="checked=checked"/></c:if>>Normal</td>
 				                 
 				                  </tr>
 				                   <tr class="row1">
 				                   <td>Winging:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="wingingright" value="Right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="wingingleft" value="Left">Left</td>
-				                  <td class="input_txt"><input type="checkbox" name="wingingnormal" value="Normal">Normal</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="wingingright" value="Right" <c:if test="${physicalexam.wingingright=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="wingingleft" value="Left" <c:if test="${physicalexam.wingingleft=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
+				                  <td class="input_txt"><input type="checkbox" name="wingingnormal" value="Normal" <c:if test="${physicalexam.wingingnormal=='Normal'}"><c:out value="checked=checked"/></c:if>>Normal</td>
 				                 
 				                  </tr>
 				                   <tr class="row1">
 				                   <td>Rib Hump:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="ribhumpright" value="Right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="ribhumpleft" value="Left">Left</td>
-				                  <td class="input_txt"><input type="checkbox" name="ribhumpnormal" value="Normal">Normal</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="ribhumpright" value="Right"<c:if test="${physicalexam.ribhumpright=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="ribhumpleft" value="Left" <c:if test="${physicalexam.ribhumpleft=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
+				                  <td class="input_txt"><input type="checkbox" name="ribhumpnormal" value="Normal" <c:if test="${physicalexam.ribhumpnormal=='Normal'}"><c:out value="checked=checked"/></c:if>>Normal</td>
 				                 
 				                  </tr>
 				                   <tr class="row1">
 				                   <td>Chest Measure:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="chestmeasurein" value="Inhale">Inhale</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="chestmeasureex" value="Exhale">Exhale</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="chestmeasurein" value="Inhale" <c:if test="${physicalexam.chestmeasurein=='Inhale'}"><c:out value="checked=checked"/></c:if>>Inhale</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="chestmeasureex" value="Exhale" <c:if test="${physicalexam.chestmeasureex=='Exhale'}"><c:out value="checked=checked"/></c:if>>Exhale</td>
 				                  
 				                  </tr>
 				                  <tr class="row1">
 				                   <td>kyphosis:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="kyphosishyper" value="Hyper">Hyper</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="kyphosishypo" value="Hypo">Hypo</td>
-				                  <td class="input_txt"><input type="checkbox" name="kyphosisnormal" value="Normal">Normal</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="kyphosishyper" value="Hyper" <c:if test="${physicalexam.kyphosishyper=='Hyper'}"><c:out value="checked=checked"/></c:if>>Hyper</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="kyphosishypo" value="Hypo" <c:if test="${physicalexam.kyphosishypo=='Hypo'}"><c:out value="checked=checked"/></c:if>>Hypo</td>
+				                  <td class="input_txt"><input type="checkbox" name="kyphosisnormal" value="Normal" <c:if test="${physicalexam.kyphosisnormal=='Normal'}"><c:out value="checked=checked"/></c:if>>Normal</td>
 				                 
 				                  </tr>
 				                
@@ -678,20 +678,20 @@
 				                  </tr>
 				                <tr class="row1">
 				                  <td>Paraspinal:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="parapain" value="Pain">Pain</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="paraspasm" value="Spasm">Spasm</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="paraedema" value="Edema">Edema</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="paratriggerpoint" value="TriggerPoint">TriggerPoint</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="parapain" value="Pain" <c:if test="${physicalexam.parapain=='Pain'}"><c:out value="checked=checked"/></c:if>>Pain</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="paraspasm" value="Spasm" <c:if test="${physicalexam.paraspasm=='Spasm'}"><c:out value="checked=checked"/></c:if>>Spasm</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="paraedema" value="Edema" <c:if test="${physicalexam.paraedema=='Edema'}"><c:out value="checked=checked"/></c:if>>Edema</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="paratriggerpoint" value="TriggerPoint"<c:if test="${physicalexam.paratriggerpoint=='TriggerPoint'}"><c:out value="checked=checked"/></c:if>>TriggerPoint</td>
 				                  </tr> 
 				                  <tr class="row1">
 				                  <td>Ribs:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="ribspost" value="Posterior">Posterior</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="ribsnor" value="Normal">Normal</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="ribspost" value="Posterior" <c:if test="${physicalexam.ribspost=='Posterior'}"><c:out value="checked=checked"/></c:if>>Posterior</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="ribsnor" value="Normal" <c:if test="${physicalexam.ribsnor=='Normal'}"><c:out value="checked=checked"/></c:if>>Normal</td>
 				                 </tr>
 				                   <tr class="row1">
 				                  <td>Vertebrae:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="vertefix" value="Fixation">Fixations</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="vertenofix" value="No_Fixation">No Fixations</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="vertefix" value="Fixation"<c:if test="${physicalexam.vertefix=='Fixation'}"><c:out value="checked=checked"/></c:if>>Fixations</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="vertenofix" value="No_Fixation" <c:if test="${physicalexam.vertenofix=='No_Fixation'}"><c:out value="checked=checked"/></c:if>>No Fixations</td>
 				                  </tr>
 				                  </table>
 				                   <table border="0">
@@ -764,26 +764,26 @@
 				                <tr class="row1">
 				                   <td>T-1:</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="thot1" value="${physicalexam.thot1 }"/></td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot1right" value="Right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot1left" value="Left">Left</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot1right" value="Right"<c:if test="${physicalexam.thot1right=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot1left" value="Left"<c:if test="${physicalexam.thot1left=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
 				                  </tr>
 				                <tr class="row1">
 				                   <td>T-4:</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="thot4" value="${physicalexam.thot4 }"/></td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot4right" value="Right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot4left" value="Left">Left</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot4right" value="Right"<c:if test="${physicalexam.thot4right=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot4left" value="Left"<c:if test="${physicalexam.thot4left=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
 				                  </tr>
 				                  <tr class="row1">
 				                   <td>T-10:</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="thot10" value="${physicalexam.thot10 }"/></td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot10right" value="Right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot10left" value="Left">Left</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot10right" value="Right"<c:if test="${physicalexam.thot10right=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot10left" value="Left"<c:if test="${physicalexam.thot10left=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
 				                  </tr>
 				                  <tr class="row1">
 				                   <td>Other:</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="thoother" value="${physicalexam.thoother }"/></td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="thootherright" value="Right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="thootherleft" value="Left">Left</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="thootherright" value="Right" <c:if test="${physicalexam.thootherright=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="thootherleft" value="Left" <c:if test="${physicalexam.thootherleft=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
 				                  </tr>
 				                  </table>
 				                  <table border="0">
@@ -801,10 +801,10 @@
 				                  <div id="positive">
 				                   <table border="0">
 				                   <tr class="row1">
-				                    <td><input type="checkbox" name="positiveruq" value="RUQ">RUQ</td>
-				                    <td><input type="checkbox" name="positiveluq" value="LUQ">LUQ</td>
-				                    <td><input type="checkbox" name="positiverlq" value="RLQ">RLQ</td>
-				                    <td><input type="checkbox" name="positivellq" value="LLQ">LLQ</td>
+				                    <td><input type="checkbox" name="positiveruq" value="RUQ" <c:if test="${physicalexam.positiveruq=='RUQ'}"><c:out value="checked=checked"/></c:if>>RUQ</td>
+				                    <td><input type="checkbox" name="positiveluq" value="LUQ" <c:if test="${physicalexam.positiveluq=='LUQ'}"><c:out value="checked=checked"/></c:if>>LUQ</td>
+				                    <td><input type="checkbox" name="positiverlq" value="RLQ" <c:if test="${physicalexam.positiverlq=='RLQ'}"><c:out value="checked=checked"/></c:if>>RLQ</td>
+				                    <td><input type="checkbox" name="positivellq" value="LLQ" <c:if test="${physicalexam.positivellq=='LLQ'}"><c:out value="checked=checked"/></c:if>>LLQ</td>
 				                   </tr>
 				                   </table>
 				                 </div>

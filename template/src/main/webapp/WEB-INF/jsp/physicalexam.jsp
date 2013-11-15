@@ -5,12 +5,20 @@
 <head>
  <link rel="stylesheet" href="resources/css/tabs.css" type="text/css" />
   <link rel="stylesheet" href="/resources/css/style.css" />
+  <link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
   <script src="resources/js/tabs-1.9.1.js"></script>
   <script src="resources/js/tabs-ui.js"></script>
+  <script src="resources/js/jquery.min.js"></script>
+ <script src="resources/js/jquery-ui.js"></script>
 	</head>
 	<script>
   $(function() {
     $( "#tabs" ).tabs();
+  });
+  </script>
+  <script>
+  $(function() {
+    $( "#datepicker" ).datepicker();
   });
   </script>
 	<body>
@@ -51,7 +59,7 @@
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date :</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="date" />
+				                  	<input type="text" class="input_txtbx1" id="datepicker" name="date" />
 				                  </td>
 				                </tr>
 				                <tr class="row2">
@@ -247,14 +255,14 @@
 				                <tr class="row1">
 				                  <td>Lymph Nodes:</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="lymphedema" value="Lymphedema">Lymphedema</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="lymphnorma" value="Normal">Normal</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="lymphnormal" value="Normal">Normal</td>
 				                  </tr>
 				                   <tr class="row1">
 				                  <td>Paraspinal:</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="paraspain" value="Pain">Pain</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="parasspasm" value="Spasm">Spasm</td>
 				                  <td class="input_txt" align="left"> <input type="checkbox" name="parasedema" value="Edema">Edema</td>
-				                   <td class="input_txt" align="left"> <input type="checkbox" name="parastriggerpont" value="TriggerPoint">TriggerPoint</td>
+				                   <td class="input_txt" align="left"> <input type="checkbox" name="parastriggerpoint" value="TriggerPoint">TriggerPoint</td>
 				                  </tr>
 				                  <tr class="row1">
 				                  <td>Trapezius/SCM:</td>
