@@ -29,6 +29,7 @@ import bephit.dao.InsuranceplanDAO;
 import bephit.dao.InsuranceverificationDAO;
 import bephit.dao.MainDAO;
 import bephit.dao.MedicalDAO;
+import bephit.dao.MoretestDAO;
 
 import bephit.dao.PatientDAO;
 
@@ -51,6 +52,7 @@ import bephit.forms.InsuranceinformationForm;
 import bephit.forms.InsuranceplanForm;
 import bephit.forms.InsuranceverificationForm;
 import bephit.forms.MedicalRecordsForm;
+import bephit.forms.MoretestForm;
 
 import bephit.forms.ParticipantsDetailsForm;
 
