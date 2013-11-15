@@ -32,6 +32,7 @@ import bephit.dao.MedicalDAO;
 import bephit.dao.MoretestDAO;
 
 import bephit.dao.PatientDAO;
+import bephit.dao.SoapnotesDAO;
 
 import bephit.dao.PhysicalexamDAO;
 
@@ -55,6 +56,7 @@ import bephit.forms.MedicalRecordsForm;
 import bephit.forms.MoretestForm;
 
 import bephit.forms.ParticipantsDetailsForm;
+import bephit.forms.SoapnotesForm;
 
 
 
@@ -139,6 +141,9 @@ public class MainController {
 
 	@Autowired
 	RadiologicReportDAO radioDAO;
+	
+	@Autowired
+	SoapnotesDAO soapDAO;
 	
 	
 	
@@ -1276,6 +1281,32 @@ public class MainController {
 	      return "soapnotes";
 	}
 	
+	@RequestMapping(value="/soapnotes", method = RequestMethod.POST)
+	public String insert_soapnotes(@ModelAttribute("SoapNotes")  @Valid SoapNotes soapnotes,BindingResult result,ModelMap model) {
+		/*if(result.hasErrors())
+		{
+			HamiltonchiropracticForm hamiltonchiropracticForm= new HamiltonchiropracticForm();
+			hamiltonchiropracticForm.setHamiltonchiropractic(autoDAO.getHamiltonchiropractic());
+			model.addAttribute("Hamiltonchiropractic",hamiltonchiropracticForm);
+			model.addAttribute("Success","true");
+			return "hamiltonchiropractic";
+		}
+		*/
+		model.put("SoapNotes", soapnotes);
+		model.addAttribute("SoapnotesForm",soapnotes);
+    	int a=soapDAO.setSoapnotes(soapnotes);
+    	SoapnotesForm soapnotesForm= new SoapnotesForm();
+    	soapnotesForm.setSoapnotes(soapDAO.getSoapnotes());
+		model.addAttribute("Soapnotes",soapnotesForm);
+
+		//System.out.println(autoaccident.getAdjustersname());
+	    
+		
+
+		return "soapnotes";
+ 
+	}
+
 
 	}
 	

@@ -119,11 +119,11 @@ function Checksymptom(val){
  <td></td>
  <td>
  
- Diagonosis:<br/>
+ &nbsp &nbspDiagonosis:<br/>
 &nbsp &nbsp 1&nbsp &nbsp &nbsp<input type="text" name="diagnosis1"><br/><br/>
 &nbsp &nbsp 2&nbsp &nbsp &nbsp<input type="text" name="diagnosis2"><br/><br/>
 &nbsp &nbsp 3&nbsp &nbsp &nbsp<input type="text" name="diagnosis3"><br/><br/>
-&nbsp &nbsp 4&nbsp &nbsp &nbsp<input type="text" name="diagnosis4">
+&nbsp &nbsp 4&nbsp &nbsp &nbsp<input type="text" name="diagnosis4"><br/><br/>
  </td>
  <td>
  &nbsp &nbsp E1/E2 X-Rays: <select name="e1e2" id="e1e2" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
@@ -763,7 +763,20 @@ function Checksymptom(val){
 				  </select>
  </td>
  </tr>
- 
+ <table align="right"> <tr>
+				                   <td><input type="submit" class="submit_btn" value="Save"></td>
+				                   </tr>
+				                   </table>
+				                   </table>
+				                   </div>
+				                   </div>
+				                   </td>
+				                   </tr>
+				                   </table>
+				                   </form>
+				                   </div>
+				                   </body>
+				                   </html>
 	      
 	            
 	            

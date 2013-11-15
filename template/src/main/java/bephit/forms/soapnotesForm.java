@@ -5,13 +5,13 @@ import java.util.List;
 
 import bephit.model.SoapNotes;
 public class SoapnotesForm {
-	private List<Soapnotes> soapnotes;
+	private List<SoapNotes> soapnotes;
 	 
-    public List<Soapnotes> getSoapnotes() {
+    public List<SoapNotes> getSoapnotes() {
 		return soapnotes;
 	}
 
-	public void setSoapnotes(List<Soapnotes> soapnotes) {
+	public void setSoapnotes(List<SoapNotes> soapnotes) {
 		this.soapnotes = soapnotes;
 	}
 	
