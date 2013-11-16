@@ -174,7 +174,7 @@ function Checksymptom(val){
 					<option value="improved3">75%</option>
 					<option value="improved4">85%</option>
 					<option value="improved5">95%</option>
-&nbsp &nbsp Improved: <select name="improved1" id="improved1" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+&nbsp &nbsp Worsened: <select name="worsened1" id="worsened1" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
 					<option value="25%">25%</option>
 					<option value="50%">50%</option>
@@ -184,37 +184,7 @@ function Checksymptom(val){
 
 					</select><br/><br/><br/>
 
-&nbsp &nbsp Worsened: <select name="worsened1" id="worsened1" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="worsened" >10%</option>
-					<option value="worsened1">25%</option>
-					<option value="worsened2">50%</option>
-					<option value="worsened3">75%</option>
-					<option value="worsened4">85%</option>
-					<option value="worsened5">95%</option>
-
-&nbsp &nbsp Worsened: <select name="worsened1" id="worsened1" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="10%" >10%</option>
-					<option value="25%">25%</option>
-					<option value="50%">50%</option>
-					<option value="75%">75%</option>
-					<option value="85%">85%</option>
-					<option value="95%">95%</option>
-
-					</select></td>
- <td>
-
- &nbsp &nbsp <select name="impoved2" id="improved2" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="fixation1" >Fixations</option>
-					<option value="tender1">Tendernesstopalpation</option>
-					<option value="spasm1">Spasm</option>
-					<option value="trigger1">Trigger pts.</option>
-					<option value="hypertonocity1">Hypertonocity</option>
-					<option value="edema1">Edema</option>
-					<option value="decreased1">Decreased ROM</option>
-					<option value="shortleg1">Short leg R/L Temp.Change</option>
-					<option value="atrophy1">Atrophy</option>
-					<option value="decr1">Decr Strength</option>
-
+ 
  &nbsp &nbsp <select name="fixation1" id="fixation1" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixation" >Fixations</option>
 					<option value="Tendernesstopalpation">Tendernesstopalpation</option>
@@ -230,14 +200,6 @@ function Checksymptom(val){
 					</select></td>
  <td>
 
- &nbsp &nbsp<select name="improved3" id="improved3" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="notimproved1" >Not Improved</option>
-					<option value="progressslow1">Progress Slow Due to exacerbation of CC</option>
-					<option value="mildly1">Mildly imp.</option>
-					<option value="moderatly1">Moderatly imp.</option>
-					<option value="plateu1">Plateu</option>
-					<option value="preinjury1">Pre Injury Status</option>
-
  &nbsp &nbsp<select name="notimproved1" id="notimproved1" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="notimproved" >Not Improved</option>
 					<option value="progressslow">Progress Slow Due to exacerbation of CC</option>
@@ -245,12 +207,10 @@ function Checksymptom(val){
 					<option value="moderatly">Moderatly imp.</option>
 					<option value="plateu">Plateu</option>
 					<option value="preinjury">Pre Injury Status</option>
->>>>>>> .r147
 					</select></td>
  <td>
 
- &nbsp &nbsp <select name="e1e21" id="e1e21" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
- &nbsp &nbsp <select name="scsm1" id="scsm1" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+  &nbsp &nbsp <select name="scsm1" id="scsm1" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					
 					<option selected="selected" value="scsm">SCSM</option>
 					<option value="ems">EMS</option>
@@ -279,14 +239,7 @@ function Checksymptom(val){
  <td></td>
  <td>
 
- <br/>&nbsp &nbspImproved: <select name="improved4" id="improved4" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="improved6" >10%</option>
-					<option value="improved7">25%</option>
-					<option value="improved8">50%</option>
-					<option value="improved9">75%</option>
-					<option value="improved10">85%</option>
-					<option value="improved11">95%</option>
-
+ 
  <br/>&nbsp &nbspImproved: <select name="improved2" id="improved2" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
 					<option value="25%">25%</option>
@@ -297,13 +250,6 @@ function Checksymptom(val){
 
 					</select><br/><br/><br/>
 
-&nbsp &nbsp Worsened: <select name="worsened2" id="worsened2" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="worsened6" >10%</option>
-					<option value="worsened7">25%</option>
-					<option value="worsened8">50%</option>
-					<option value="worsened9">75%</option>
-					<option value="worsened10">85%</option>
-					<option value="worsened11">95%</option>
 
 &nbsp &nbsp Worsened: <select name="worsened2" id="worsened2" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
@@ -316,19 +262,7 @@ function Checksymptom(val){
 					</select></td>
  <td>
 
- &nbsp &nbsp <select name="improved6" id="improved6" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="fixation2" >Fixations</option>
-					<option value="tender2">Tendernesstopalpation</option>
-					<option value="spasm2">Spasm</option>
-					<option value="trigger2">Trigger pts.</option>
-					<option value="hypertonocity2">Hypertonocity</option>
-					<option value="edema2">Edema</option>
-					<option value="decreased2">Decreased ROM</option>
-					<option value="shortleg2">Short leg R/L Temp.Change</option>
-					<option value="atrophy2">Atrophy</option>
-					<option value="decr2">Decr Strength</option>
-
- &nbsp &nbsp <select name="fixation2" id="fixation2" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+  &nbsp &nbsp <select name="fixation2" id="fixation2" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="fixation" >Fixations</option>
 					<option value="tendernesstopalpation">Tendernesstopalpation</option>
 					<option value="spasm">Spasm</option>
