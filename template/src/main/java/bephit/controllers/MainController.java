@@ -1335,8 +1335,10 @@ public class MainController {
 			    
 		        return "editphysicalexam";
 		}
-		System.out.println("Soap id"+soapnotes.getSoapid());
+
+		System.out.println("Soap id`"+soapnotes.getSoapid());
 		int status = soapDAO.updatesoapnotes(soapnotes, soapnotes.getSoapid(), soapnotes.getPname());
+		
 		System.out.println(status);
 		
 		SoapnotesForm soapnotesForm = new SoapnotesForm();
