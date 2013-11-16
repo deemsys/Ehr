@@ -1308,7 +1308,19 @@ public class MainController {
 		return "soapnotes";
  
 	}
-
+	@RequestMapping(value="/editsoapnotes", method=RequestMethod.GET)
+	public String editsoapnotes(HttpServletRequest request,@RequestParam("soapid") String soapid,ModelMap model,SoapNotes soap)
+	{
+		
+		SoapnotesForm soapnotesForm = new SoapnotesForm();
+       
+        soapnotesForm.setSoapnotes(soapDAO.getSoap(soapid));
+	
+		model.addAttribute("soapnotesForm", soapnotesForm);
+		
+		return "editsoapnotes";
+	}
+	
 	@RequestMapping(value="/updatesoapnotes", method=RequestMethod.POST)
 	public String updatsoapnotes(HttpServletRequest request,@ModelAttribute("SoapNotes") @Valid SoapNotes soapnotes,
 			BindingResult result,ModelMap model,Principal principal)
@@ -1323,8 +1335,8 @@ public class MainController {
 			    
 		        return "editphysicalexam";
 		}
-		System.out.println("Soap id`"+soapnotes.getSoapid());
-		int status = soapDAO.updatesoapnotes(soapnotes, soapnotes.getsoapid(), principal.getPname());
+		System.out.println("Soap id"+soapnotes.getSoapid());
+		int status = soapDAO.updatesoapnotes(soapnotes, soapnotes.getSoapid(), soapnotes.getPname());
 		System.out.println(status);
 		
 		SoapnotesForm soapnotesForm = new SoapnotesForm();
