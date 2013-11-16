@@ -23,14 +23,81 @@
           <table cellpadding="0" cellspacing="0" border="0" width="98%">
            
           
-          <tr class="row1">
- 					<c:forEach items="${soapnotesForm.soapnotes}" var="soapnotes" varStatus="status">                   
-<td>patient</td>
-<td>${soapnotes.pname}</td>
+         
+ 					<c:forEach items="${soapnotesForm.soapnotes}" var="soapnotes" varStatus="status">
+ 					 <tr class="row1">
+<td></td><td></td>
+<td></td><td></td><td></td><td></td> 					                   
+<td>patient: ${soapnotes.pname}</td>
 
-</c:forEach>
+</tr>
+<tr class="row1">
+<td>Chief Complaint:</td>
+<td> ${soapnotes.headache}</td>
+<td> ${soapnotes.neckpain}</td>
+<td> ${soapnotes.rightshoulderpain}</td>
+<td> ${soapnotes.leftshoulderpain}</td>
+<td> ${soapnotes.chestpain}</td>
+<td> ${soapnotes.rightarmpain}</td>
+<td> ${soapnotes.leftarmpain}</td>
+</tr>
+<tr class="row2">
+<td> ${soapnotes.rightelbowpain}</td>
+<td> ${soapnotes.leftelbowpain}</td>
+<td> ${soapnotes.rightwristpain}</td>
+<td> ${soapnotes.leftwristpain}</td>
+<td> ${soapnotes.righthandpain}</td>
+<td> ${soapnotes.lefthandpain}</td>
+<td> ${soapnotes.mbp}</td>
+</tr>
+<tr class="row2">
+<td> ${soapnotes.rightribpain}</td>
+<td> ${soapnotes.leftribpain}</td>
+<td> ${soapnotes.lbp}</td>
+<td> ${soapnotes.rightsipain}</td>
+<td> ${soapnotes.leftsipain}</td>
+<td> ${soapnotes.righthippain}</td>
+<td> ${soapnotes.lefthippain}</td>
+</tr>
+<tr class="row2">
+<td> ${soapnotes.rightgluteulpain}</td>
+<td> ${soapnotes.leftgluteulpain}</td>
+<td> ${soapnotes.rightlegpain}</td>
+<td> ${soapnotes.leftlegpain}</td>
+<td> ${soapnotes.rightkneepain}</td>
+<td> ${soapnotes.leftkneepain}</td>
+<td> ${soapnotes.rightanklepain}</td>
+</tr>
+<tr class="row2">
+<td> ${soapnotes.leftanklepain}</td>
+<td> ${soapnotes.rightfootpain}</td>
+<td> ${soapnotes.leftfootpain}</td>
 </tr>
 </table>
+<table cellpadding="0" cellspacing="0" border="1" width="98%">
+ <tr>
+  <td>
+<bold><center> Date </center> </bold>
+  </td>
+ <td>
+<bold><center> S</center></bold>
+ </td>
+ <td>
+ <bold><center>O</center></bold>
+ </td>
+ <td>
+ <bold><center>A</center></bold>
+ </td>
+ <td>
+ <bold><center>P</center></bold>
+ </td>
+ </tr>
+ <tr>
+ <td>&nbsp;&nbsp;${soapnotes.date}</td>
+ 
+</c:forEach>
+
+
 </div>
 </div>
 </td>
