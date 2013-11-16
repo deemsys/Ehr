@@ -1308,6 +1308,35 @@ public class MainController {
 		return "soapnotes";
  
 	}
+
+	@RequestMapping(value="/updatesoapnotes", method=RequestMethod.POST)
+	public String updatsoapnotes(HttpServletRequest request,@ModelAttribute("SoapNotes") @Valid SoapNotes soapnotes,
+			BindingResult result,ModelMap model,Principal principal)
+	{
+		if (result.hasErrors())
+		{
+			SoapnotesForm soapnotesForm = new SoapnotesForm();
+	     
+	      soapnotesForm.setSoapnotes(soapDAO.getSoap(soapnotes.getSoapid()));
+	      
+	        model.addAttribute("SoapnotesForm", soapnotesForm);
+			    
+		        return "editphysicalexam";
+		}
+		System.out.println("Soap id`"+soapnotes.getSoapid());
+		int status = soapDAO.updatesoapnotes(soapnotes, soapnotes.getsoapid(), principal.getPname());
+		System.out.println(status);
+		
+		SoapnotesForm soapnotesForm = new SoapnotesForm();
+        
+       soapnotesForm.setSoapnotes(soapDAO.getSoapnotes());
+       
+        model.addAttribute("soapnotesForm", soapnotesForm);
+	       model.addAttribute("success","true");
+	        return "viewsoapnotes";
+		
+	}
+
 	@RequestMapping(value="/viewsoapnotes", method=RequestMethod.GET)
 	public String viewSoapNotes(HttpServletRequest request,ModelMap model, Principal principal) {
 		 model.addAttribute("success","false");
@@ -1333,6 +1362,7 @@ public class MainController {
 		
 		return "radiologicReportList";
 	}
+
 
 	}
 	

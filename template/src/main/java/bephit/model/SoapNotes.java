@@ -1,7 +1,7 @@
 package bephit.model;
 
 public class SoapNotes {
-	
+	private String soapid;
 	private String pname;
 	private String headache;
 	private String neckpain;
@@ -85,7 +85,7 @@ public class SoapNotes {
 	
 	public SoapNotes(){
 	}
-	public SoapNotes(String pname, String headache, String neckpain,
+	public SoapNotes(String soapid,String pname, String headache, String neckpain,
 			String rightshoulderpain, String leftshoulderpain,
 			String chestpain, String rightarmpain, String leftarmpain,
 			String rightelbowpain, String leftelbowpain, String rightwristpain,
@@ -111,6 +111,7 @@ public class SoapNotes {
 			String scsm7, String improved8, String worsened8, String fixation8,
 			String notimproved8, String scsm8, String sign) {
 		super();
+		this.soapid = soapid;
 		this.pname = pname;
 		this.headache = headache;
 		this.neckpain = neckpain;
@@ -193,6 +194,14 @@ public class SoapNotes {
 		this.sign=sign;
 		
 		
+		
+	}
+	
+	public String getSoapid() {
+		return soapid;
+	}
+	public void setSoapid(String soapid) {
+		this.soapid = soapid;
 	}
 	public String getPname() {
 		return pname;

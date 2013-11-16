@@ -103,21 +103,7 @@ public List<SoapNotes> getSoapnotes(){
     return soapnotes;
 	
 }
-public void releaseConnection(Connection con){
-	try{if(con != null)
-		con.close();
-	}catch(Exception e){}
-}
-public void releaseResultSet(ResultSet rs){
-	try{if(rs != null)
-		rs.close();
-}catch(Exception e){}
-}
-public void releaseStatement(Statement stmt){
-	try{if(stmt != null)
-		stmt.close();
-}catch(Exception e){}
-}
+
 public List<SoapNotes> getSoap(String soapid){
 	Connection con = null;
 	Statement statement = null;
@@ -190,7 +176,23 @@ public int updatesoapnotes(SoapNotes soapnotes,String soapid,String admin)
 }	
 
 
-}
+
 
 	
 
+public void releaseConnection(Connection con){
+	try{if(con != null)
+		con.close();
+	}catch(Exception e){}
+}
+public void releaseResultSet(ResultSet rs){
+	try{if(rs != null)
+		rs.close();
+}catch(Exception e){}
+}
+public void releaseStatement(Statement stmt){
+	try{if(stmt != null)
+		stmt.close();
+}catch(Exception e){}
+}
+}
