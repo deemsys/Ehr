@@ -24,7 +24,28 @@ function Checksymptom(val){
 </script >
 <script type="text/javascript">
 $(function() {
-    $( "#datepicker" ).datepicker();
+    $( "#datepicker1" ).datepicker();
+  });
+$(function() {
+    $( "#datepicker2" ).datepicker();
+  });
+$(function() {
+    $( "#datepicker3" ).datepicker();
+  });
+$(function() {
+    $( "#datepicker4" ).datepicker();
+  });
+$(function() {
+    $( "#datepicker5" ).datepicker();
+  });
+$(function() {
+    $( "#datepicker6" ).datepicker();
+  });
+$(function() {
+    $( "#datepicker7" ).datepicker();
+  });
+$(function() {
+    $( "#datepicker8" ).datepicker();
   });
 </script>
 
@@ -120,7 +141,7 @@ $(function() {
  </tr>
  <tr>
  <td>&nbsp;&nbsp;
- <input type="text" name="date" id="datepicker"></td>
+ <input type="text" name="date" id="datepicker1"></td>
  <td></td>
  <td></td>
  <td>
@@ -170,7 +191,8 @@ $(function() {
 				  </td>
  </tr>
  <tr>
- <td></td>
+ <td>&nbsp;&nbsp;
+ <input type="text" name="date" id="datepicker"></td>
  <td>
  <br/>
 &nbsp &nbsp Improved: <select name="improved1" id="improved1" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
@@ -244,7 +266,8 @@ $(function() {
  </td>
  </tr>
  <tr>
- <td></td>
+ <td>&nbsp;&nbsp;
+ <input type="text" name="date" id="datepicker2"></td>
  <td>
 
  
@@ -318,7 +341,8 @@ $(function() {
  </td>
  </tr>
  <tr>
- <td></td>
+ <td>&nbsp;&nbsp;
+ <input type="text" name="date" id="datepicker3"></td>
  <td>
  <br/>&nbsp &nbspImproved: <select name="improved3" id="improved3" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
@@ -384,7 +408,8 @@ $(function() {
   </td>
  </tr>
  <tr>
- <td></td>
+ <td>&nbsp;&nbsp;
+ <input type="text" name="date" id="datepicker4"></td>
  <td>
  <br/>&nbsp &nbspImproved: <select name="improved4" id="improved4" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
@@ -449,7 +474,8 @@ $(function() {
  </td>
  </tr>
  <tr>
- <td></td>
+ <td>&nbsp;&nbsp;
+ <input type="text" name="date" id="datepicker5"></td>
  <td>
  <br/>&nbsp &nbspImproved: <select name="improved5" id="improved5" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
@@ -514,7 +540,8 @@ $(function() {
  </td>
  </tr>
  <tr>
- <td></td>
+ <td>&nbsp;&nbsp;
+ <input type="text" name="date" id="datepicker6"></td>
  <td>
  <br/>&nbsp &nbspImproved: <select name="improved6" id="improved6" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
@@ -578,7 +605,8 @@ $(function() {
  </td>
  </tr>
  <tr>
- <td></td>
+ <td>&nbsp;&nbsp;
+ <input type="text" name="date" id="datepicker7"></td>
  <td>
  <br/>&nbsp &nbspImproved: <select name="improved7" id="improved7" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
@@ -642,7 +670,8 @@ $(function() {
  </td>
  </tr>
  <tr>
- <td></td>
+ <td>&nbsp;&nbsp;
+ <input type="text" name="date" id="datepicker8"></td>
  <td>
  <br/>&nbsp &nbspImproved: <select name="improved8" id="improved8" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
