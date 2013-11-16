@@ -714,8 +714,8 @@ $(function() {
 				                   
 				                   <table align="right"> <tr>
 				                   <td><input type="submit" class="submit_btn" value="Save"></td>
-				                   <td><input type="submit" class="submit_btn" value="View"></td>
-				                   <td><input type="submit" class="submit_btn" value="Cancel"></td>
+				                   <td><input type="submit" class="submit_btn" value="View" onclick="window.location.href='viewsoapnotes'"></td>
+				                   <td><input type="reset" class="submit_btn" value="Cancel"></td>
 				                   </tr>
 				                   </table>
 				                   </form>
