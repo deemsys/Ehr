@@ -8,13 +8,14 @@
    </head>
  <body>
  <div id="right_content">
+
 <form method="post" action="">
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
 <tr>
 <td valign="top" align="left">
  <div>
 	            <div class="headings altheading">
-	            <center> <h2>View SOAP NOTES</h2> </center><br/>
+	            <center> <h2>VIEW SOAP NOTES</h2> </center><br/>
 	            
 	            </div>
 	            
@@ -23,22 +24,19 @@
            
           
           <tr class="row1">
-             <c:forEach items="${soapnotesForm.soapnotes}" var="soapnotes" varStatus="status">
-<td></td><td></td>
-<td></td><td></td><td></td><td></td>
-<td><h2>patient</h2></td>
-   <td>${soapnotes.pname}</td>
-   
-   </c:forEach>
-   </tr>
-   </table>
-   </div>
-   </div>
-   </td>
-   </tr>
-   </table>
-   </form>
-   </div>
-   </body>
-   </html>
-   
+ 					<c:forEach items="${soapnotesForm.soapnotes}" var="soapnotes" varStatus="status">                   
+<td>patient</td>
+<td>${soapnotes.pname}</td>
+
+</c:forEach>
+</tr>
+</table>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</form>
+</div>
+</body>
+</html>

@@ -1308,12 +1308,6 @@ public class MainController {
     	SoapnotesForm soapnotesForm= new SoapnotesForm();
     	soapnotesForm.setSoapnotes(soapDAO.getSoapnotes());
 		model.addAttribute("SoapnotesForm",soapnotesForm);
-		
- 
-		
-	    
-		
-
 		return "soapnotes";
  
 	}
@@ -1370,7 +1364,7 @@ public class MainController {
 		 soapnotesForm.setSoapnotes(soapDAO.getSoapnotes());
 		  //model.addAttribute("participantsDetailsForm", participantsDetailsForm);
 		  	model.addAttribute("soapnotesForm", soapnotesForm);
-        System.out.println(soapnotesForm.getSoapnotes().toString());
+        
 		return "viewsoapnotes";
 	}
 	@RequestMapping(value="/soapNotesList", method=RequestMethod.GET)
@@ -1379,7 +1373,7 @@ public class MainController {
 		//ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
 		SoapnotesForm soapnotesForm = new SoapnotesForm();
         //participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants(participants_id));
-		soapnotesForm.setSoapnotes(soapDAO.getSoap(soapid));
+		soapnotesForm.setSoapnotes(soapDAO.getSoap((soapid)));
 		//model.addAttribute("participantsDetailsForm", participantsDetailsForm);
 		model.addAttribute("soapnotesForm", soapnotesForm);
 		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
