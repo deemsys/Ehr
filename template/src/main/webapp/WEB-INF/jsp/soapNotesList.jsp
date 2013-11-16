@@ -93,7 +93,7 @@
  </td>
  </tr>
  <tr>
- <td>&nbsp;&nbsp;${soapnotes.date}</td>
+ <td>&nbsp;&nbsp;${soapnotes.date1}</td>
  
 </c:forEach>
 
