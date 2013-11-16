@@ -1286,22 +1286,31 @@ public class MainController {
 	@RequestMapping(value="/soapnotes", method = RequestMethod.POST)
 	public String insert_soapnotes(@ModelAttribute("SoapNotes")  @Valid SoapNotes soapnotes,BindingResult result,ModelMap model) {
 		/*if(result.hasErrors())
-		{
-			HamiltonchiropracticForm hamiltonchiropracticForm= new HamiltonchiropracticForm();
-			hamiltonchiropracticForm.setHamiltonchiropractic(autoDAO.getHamiltonchiropractic());
-			model.addAttribute("Hamiltonchiropractic",hamiltonchiropracticForm);
-			model.addAttribute("Success","true");
-			return "hamiltonchiropractic";
-		}
+			{
+				RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
+				radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport());
+				model.addAttribute("RadiologicReportForm",radiologicReportForm);
+				model.addAttribute("Success","true");
+				return "radiologicreport";
+			}
 		*/
+		if(result.hasErrors())
+		{
+			SoapnotesForm soapnotesForm = new SoapnotesForm();
+			soapnotesForm.setSoapnotes(soapDAO.getSoapnotes());
+			model.addAttribute("SoapnotesForm", soapnotesForm);
+			model.addAttribute("Success","true");
+			return "soapnotes";
+		}
 		model.put("SoapNotes", soapnotes);
 		model.addAttribute("SoapnotesForm",soapnotes);
     	int a=soapDAO.setSoapnotes(soapnotes);
     	SoapnotesForm soapnotesForm= new SoapnotesForm();
     	soapnotesForm.setSoapnotes(soapDAO.getSoapnotes());
-		model.addAttribute("Soapnotes",soapnotesForm);
-
-		//System.out.println(autoaccident.getAdjustersname());
+		model.addAttribute("SoapnotesForm",soapnotesForm);
+		
+ 
+		
 	    
 		
 
@@ -1351,6 +1360,7 @@ public class MainController {
 		
 	}
 
+
 	@RequestMapping(value="/viewsoapnotes", method=RequestMethod.GET)
 	public String viewSoapNotes(HttpServletRequest request,ModelMap model, Principal principal) {
 		 model.addAttribute("success","false");
@@ -1364,19 +1374,18 @@ public class MainController {
 		return "viewsoapnotes";
 	}
 	@RequestMapping(value="/soapNotesList", method=RequestMethod.GET)
-	public String soapnoteslist(HttpServletRequest request,@RequestParam("pid") String pid,ModelMap model,RadiologicReport radiologic)
+	public String soapnoteslist(HttpServletRequest request,@RequestParam("soapid") String soapid,ModelMap model,SoapNotes soap)
 	{
 		//ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
-		RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
+		SoapnotesForm soapnotesForm = new SoapnotesForm();
         //participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants(participants_id));
-		radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport((pid)));
+		soapnotesForm.setSoapnotes(soapDAO.getSoap(soapid));
 		//model.addAttribute("participantsDetailsForm", participantsDetailsForm);
-		model.addAttribute("radiologicReportForm", radiologicReportForm);
+		model.addAttribute("soapnotesForm", soapnotesForm);
 		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
 		
-		return "radiologicReportList";
+		return "soapNotesList";
 	}
-
 
 	}
 	

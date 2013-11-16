@@ -28,9 +28,10 @@
 			      <form action="soapnotes" method="POST"> 
 						<table cellpadding="0" cellspacing="0" border="0" width="100%">
 				     <tr class="title">
-									<td valign="top" align="left" width="10%">Patient Name</td>
+									<td valign="top" align="left" width="30%">Patient Name</td>
+									<td valign="top" align="left" width="30%">Action</td>
 					</tr>
-					<c:out value="${fn:length(soapnotesForm.soapnotes)}"></c:out>
+					
 					<c:if test="${fn:length(soapnotesForm.soapnotes) gt 0}">
         				  <c:forEach items="${soapnotesForm.soapnotes}" var="soapnotes" varStatus="status">
         				       				<tr class="row1">
@@ -39,7 +40,7 @@
 								        
 										<td valign="top" align="left">
 											<%--  <c:if test="${currentuser.adminuser[0].editradiologicreport==1}"> --%>
-												<a href="#" title="" ><img src="resources/images/icons/icon_edit.png" alt="Edit" /></a><a href="<c:out value="editsoapnotes?soapid=${soapnotes.sopaid}"/>" style="padding-right:10px;">Edit</a>
+												<a href="#" title="" ><img src="resources/images/icons/icon_edit.png" alt="Edit" /></a><a href="<c:out value="editsoapnotes?soapid=${soapnotes.soapid}"/>" style="padding-right:10px;">Edit</a>
 											<%-- 	 </c:if>
  --%>												<%--<c:if test="${currentuser.adminuser[0].deleteparticipant==1}"> --%>
 											<a href="#" title=""><img src="resources/images/icons/icon_delete.png" alt="Delete" /></a><a href="<c:out value="deletesoapnotes?soapid=${soapnotes.soapid}"/>" onclick="return confirmation()">Remove</a>

@@ -111,7 +111,11 @@ public class SoapNotes {
 			String scsm7, String improved8, String worsened8, String fixation8,
 			String notimproved8, String scsm8, String sign) {
 		super();
-		this.soapid = soapid;
+
+		this.soapid=soapid;
+
+	
+
 		this.pname = pname;
 		this.headache = headache;
 		this.neckpain = neckpain;
