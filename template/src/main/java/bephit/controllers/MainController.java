@@ -6,6 +6,7 @@ import java.security.Principal;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.validation.BindingResult;
@@ -77,7 +78,7 @@ import bephit.model.*;
  
  
 @Controller
-@SessionAttributes
+@SessionAttributes({"screen"})
 public class MainController {
 	
 	@Autowired  
@@ -794,9 +795,10 @@ public class MainController {
 	}
 	
 	@RequestMapping(value="/screeningAuthz", method=RequestMethod.POST)
-	public String AddscreeningDetails(@ModelAttribute("screeningAuthz") @Valid screeningAuthz screeningdetails,
+	public String AddscreeningDetails(HttpSession session,@ModelAttribute("screeningAuthz") @Valid screeningAuthz screeningdetails,
 			BindingResult result,ModelMap model) 
 	{		
+		session.setAttribute("screen",screeningdetails);
 		if (result.hasErrors())
 		{
 			ScreeningAuthzForm screeningauthzform= new ScreeningAuthzForm();
@@ -812,7 +814,7 @@ public class MainController {
         ScreeningAuthzForm screeningauthzform= new ScreeningAuthzForm();
 		screeningauthzform.setScreeningDetails(screenDAO.getScreeningDetails());
 		model.addAttribute("ScreeningAuthzForm",screeningauthzform);
-
+		
 		System.out.println("Screening");
 		
 		//Show view page
