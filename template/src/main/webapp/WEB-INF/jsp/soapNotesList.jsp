@@ -93,8 +93,79 @@
  </td>
  </tr>
  <tr>
- <td>&nbsp;&nbsp;${soapnotes.date1}</td>
- 
+ <td> &nbsp;&nbsp;${soapnotes.date1}</td>
+ <td></td>
+ <td></td>
+ <td>Diagnosis: &nbsp;&nbsp;${soapnotes.diagnosis1}<br/><br/>
+ &nbsp;&nbsp;${soapnotes.diagnosis2}<br/><br/>
+ &nbsp;&nbsp;${soapnotes.diagnosis3}<br/><br/>
+ &nbsp;&nbsp;${soapnotes.diagnosis4}<br/><br/></td>
+ <td>E1E2 X rays:${soapnotes.e1e2}</td>
+ </tr>
+ <tr>
+ <td>&nbsp;&nbsp;${soapnotes.date2}</td>
+ <td>&nbsp;&nbsp;${soapnotes.improved1}
+ &nbsp;&nbsp;${soapnotes.worsened1}</td>
+ <td>&nbsp;&nbsp;${soapnotes.fixation1}</td>
+  <td>&nbsp;&nbsp;${soapnotes.notimproved1}</td>
+  <td>&nbsp;&nbsp;${soapnotes.scsm1}</td>
+  </tr>
+  <tr>
+ <td>&nbsp;&nbsp;${soapnotes.date3}</td>
+ <td>&nbsp;&nbsp;${soapnotes.improved2}
+ &nbsp;&nbsp;${soapnotes.worsened2}</td>
+ <td>&nbsp;&nbsp;${soapnotes.fixation2}</td>
+  <td>&nbsp;&nbsp;${soapnotes.notimproved2}</td>
+  <td>&nbsp;&nbsp;${soapnotes.scsm2}</td>
+  </tr>
+  <tr>
+ <td>&nbsp;&nbsp;${soapnotes.date4}</td>
+ <td>&nbsp;&nbsp;${soapnotes.improved3}
+ &nbsp;&nbsp;${soapnotes.worsened3}</td>
+ <td>&nbsp;&nbsp;${soapnotes.fixation3}</td>
+  <td>&nbsp;&nbsp;${soapnotes.notimproved3}</td>
+  <td>&nbsp;&nbsp;${soapnotes.scsm3}</td>
+  </tr>
+  <tr>
+ <td>&nbsp;&nbsp;${soapnotes.date5}</td>
+ <td>&nbsp;&nbsp;${soapnotes.improved4}
+ &nbsp;&nbsp;${soapnotes.worsened4}</td>
+ <td>&nbsp;&nbsp;${soapnotes.fixation4}</td>
+  <td>&nbsp;&nbsp;${soapnotes.notimproved4}</td>
+  <td>&nbsp;&nbsp;${soapnotes.scsm4}</td>
+  </tr>
+  <tr>
+ <td>&nbsp;&nbsp;${soapnotes.date6}</td>
+ <td>&nbsp;&nbsp;${soapnotes.improved5}
+ &nbsp;&nbsp;${soapnotes.worsened5}</td>
+ <td>&nbsp;&nbsp;${soapnotes.fixation5}</td>
+  <td>&nbsp;&nbsp;${soapnotes.notimproved5}</td>
+  <td>&nbsp;&nbsp;${soapnotes.scsm5}</td>
+  </tr>
+  <tr>
+ <td>&nbsp;&nbsp;${soapnotes.date7}</td>
+ <td>&nbsp;&nbsp;${soapnotes.improved6}
+ &nbsp;&nbsp;${soapnotes.worsened6}</td>
+ <td>&nbsp;&nbsp;${soapnotes.fixation6}</td>
+  <td>&nbsp;&nbsp;${soapnotes.notimproved6}</td>
+  <td>&nbsp;&nbsp;${soapnotes.scsm6}</td>
+  </tr>
+  <tr>
+ <td>&nbsp;&nbsp;${soapnotes.date8}</td>
+ <td>&nbsp;&nbsp;${soapnotes.improved7}
+ &nbsp;&nbsp;${soapnotes.worsened7}</td>
+ <td>&nbsp;&nbsp;${soapnotes.fixation7}</td>
+  <td>&nbsp;&nbsp;${soapnotes.notimproved7}</td>
+  <td>&nbsp;&nbsp;${soapnotes.scsm7}</td>
+  </tr>
+  <tr>
+ <td>&nbsp;&nbsp;${soapnotes.date9}</td>
+ <td>&nbsp;&nbsp;${soapnotes.improved8}
+ &nbsp;&nbsp;${soapnotes.worsened8}</td>
+ <td>&nbsp;&nbsp;${soapnotes.fixation8}</td>
+  <td>&nbsp;&nbsp;${soapnotes.notimproved8}</td>
+  <td>&nbsp;&nbsp;${soapnotes.scsm8}</td>
+  </tr>
 </c:forEach>
 
 

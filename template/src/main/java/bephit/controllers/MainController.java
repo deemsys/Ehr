@@ -1336,7 +1336,7 @@ public class MainController {
 	      
 	        model.addAttribute("SoapnotesForm", soapnotesForm);
 			    
-		        return "editphysicalexam";
+		        return "editsoapnotes";
 		}
 
 		System.out.println("Soap id`"+soapnotes.getSoapid());
