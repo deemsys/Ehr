@@ -73,7 +73,7 @@ $(function() {
 <td></td><td></td><td></td><td></td>
 <td><h2>patient</h2></td><td><input type="text" name="pname"></td>
 </tr>
-<tr class="row2">
+<tr class="row1">
 <td>Chief Complaint:</td>
 <td><input type="checkbox" name="headache" value="headache" >Headache</td>
 <td><input type="checkbox" name="neckpain" value="Neck pain" >Neck Pain</td>
@@ -93,7 +93,7 @@ $(function() {
 <td><input type="checkbox" name="lefthandpain" value="lefthandpain" >Left Hand Pain</td>
 <td><input type="checkbox" name="mbp" value="mbp" >MBP</td>
 </tr>
-<tr class="row2">
+<tr class="row1">
 <td></td>
 <td><input type="checkbox" name="rightribpain" value="rightribpain" >Right Rib Pain</td>
 <td><input type="checkbox" name="leftribpain" value="leftribpain" >Left Rib Pain</td>
@@ -113,7 +113,7 @@ $(function() {
 <td><input type="checkbox" name="leftkneepain" value="leftkneepain" >Left Knee Pain</td>
 <td><input type="checkbox" name="rightanklepain" value="rightanklepain" >Right Ankle Pain</td>
 </tr>
-<tr class="row2">
+<tr class="row1">
 <td></td>
 <td><input type="checkbox" name="leftanklepain" value="leftanklepain" >Right Rib Pain</td>
 <td><input type="checkbox" name="rightfootpain" value="rightfootpain" >right Foot Pain</td>
