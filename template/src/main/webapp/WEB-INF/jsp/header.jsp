@@ -123,17 +123,17 @@
 						<ul class="menu">
 							  <li>
 								<a href="welcome" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>">
-									<span><img src="<c:url value="/resources/images/icon_01.png" />" alt="" style="padding:5px 5px 0 0;" />Dashboard</span>
+									<span>Dashboard</span>
 								</a>
 							</li> 
 				            <li>
 				            	<a href="patientDetails" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" rel="ddsubmenu5">
-				            		<span><img src="<c:url value="/resources/images/email.png" />" alt="" style="padding:5px 5px 0 0;" />Patient Information</span>
+				            		<span>Patient Information</span>
 				            	</a>
 				            </li>
 				            <li>
 				            	<a href="#" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" rel="ddsubmenu1">
-				            		<span><img src="<c:url value="/resources/images/icon_03.png" />" alt="" style="padding:5px 5px 0 0;" />Accident</span>
+				            		<span>Accident</span>
 				            	</a>
 				            </li>
 				            <%-- <li>
@@ -143,7 +143,7 @@
 				            </li> --%>
 				            <li> 
 				            	<a href="#" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" rel="ddsubmenu4">
-				            		<span><img src="<c:url value="/resources/images/icon_07.png" />" alt="" style="padding:5px 5px 0 0;" />Health Insurance</span>
+				            		<span>Health Insurance</span>
 				            	</a>
 				            </li> 
 				           <%--  <li> 
@@ -158,18 +158,18 @@
 				            </li> --%>
 				            <li>
 				            	<a href="#" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" rel="ddsubmenu2">
-				            		<span><img src="<c:url value="/resources/images/icon_03.png" />" alt="" style="padding:5px 5px 0 0;" />Consent To Treat</span>
+				            		<span>Consent To Treat</span>
 				            	</a>
 				            </li>
 				            <li>
 								<a href="#" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" rel="ddsubmenu3">
-									<span><img src="<c:url value="/resources/images/icon_01.png" />" alt="" style="padding:5px 5px 0 0;" />Authorization Forms</span>
+									<span>Authorization Forms</span>
 								</a>
 							</li>
 							
 							<li>
 								<a href="#" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" rel="ddsubmenu6">
-									<span><img src="<c:url value="/resources/images/icon_01.png" />" alt="" style="padding:5px 5px 0 0;" />Doctor Forms</span>
+									<span>Doctor Forms</span>
 								</a>
 							</li>
 							<%-- <li>
