@@ -2,7 +2,12 @@
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
+
 <link rel="stylesheet" href="resources/css/tabs.css" type="text/css" />
+<link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
+  <link rel="stylesheet" href="/resources/css/style.css" />
+<script src="resources/js/jquery.min.js"></script>
+ <script src="resources/js/jquery-ui.js"></script>
  <script src="resources/js/tabs-1.9.1.js"></script>
   <script src="resources/js/tabs-ui.js"></script>
    
@@ -13,6 +18,15 @@
   $(function() {
     $( "#tabs" ).tabs();
   });
+  </script>
+  <script>
+  $(function() {
+    $( "#datepicker" ).datepicker();
+  });
+  $(function() {
+	    $( "#datepicker1" ).datepicker();
+	  });
+  
   </script>
 <body>
 <form method="POST" action="radiologicreport">
@@ -34,11 +48,11 @@
 				                  <td>Patient Name:</td>
 				                  <td><input type="text" class="input_txtbx1" id="pname" name="pname" /></td>
 				                  <td>Date:</td>
-				                  <td><input type="text" class="input_txtbx1" id="date" name="date" /></td>
+				                  <td><input type="text" class="input_txtbx1" id="datepicker" name="date" /></td>
 				                  <td>I.D.#:</td>
 				                  <td><input type="text" class="input_txtbx1" id="id" name="id" /></td>
 				                  <td>Date Of Birth</td>
-				                  <td><input type="text" class="input_txtbx1" id="dob" name="dob" /></td>
+				                  <td><input type="text" class="input_txtbx1" id="datepicker1" name="dob" /></td>
 				                </tr>
 				    </table>
 				    </td>
@@ -89,6 +103,7 @@
 				                   		</select>
 				                   		</td>
 				                   	<td valign="top" align="left" class="input_txt"> <input type="checkbox" value="Negative for Osteopathology" name="negative_1">  Negative for recent fracture, dislocation or gross Osteopathology</td>
+				                  <td></td>
 				                  </tr> 
 				                   	 <tr class="row2">
 				             
@@ -153,6 +168,7 @@
 				                	 <td class="input_txt" align="left"> <input type="checkbox" name="schmorls_1" value="Schmorls nodes at:" onclick="this.form.schmorls1.style.visibility = this.checked? 'visible' : 'hidden'"/> Schmorl's nodes at:
 				                 		<input type="text" class="input_txtbx1" id="schmorls1" name="schmorls_text1" style="visibility:hidden"/>
 				                	 </td>
+				                	 <td></td>
 				                 </tr>
 				                 <tr class="row1">
 				                 	 <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="foraminal_1" value="Foraminal enchroachment b/w:"onclick="this.form.foraminal1.style.visibility = this.checked? 'visible' : 'hidden'"/> Foraminal enchroachment between:
@@ -187,7 +203,8 @@
 											<option value="Moderate">Moderate</option>
 											<option value="Severe">Severe</option>
 									</select>		
-									</td>    
+									</td>
+									
 				                 </tr>
 				                 <tr class="row2">		  
 				                     
@@ -214,6 +231,7 @@
 				                 		<input type="checkbox" name="severe_11" value="Severe"> Severe
 				                 		
 				                 	    </td>
+				                 	    <td></td>
 										
 									    
 				                 </tr>
@@ -277,6 +295,7 @@
 				                   		 </select>
 				                   	</td>
 				                   	<td valign="top" align="left" class="input_txt"> <input type="checkbox" name="negative_2" value="Negative for Osteopathology">  Negative for recent fracture, dislocation or gross Osteopathology</td>
+				                 <td></td>
 				                  </tr>
 				                  <tr class="row2">
 				                   <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="hyperkyphosis_2" value="Hyperkyphosis"> Hyperkyphosis 
@@ -333,7 +352,7 @@
 				                 		<input type="checkbox" name="severe_22" value="Severe"> Severe
 				                 	    </td>
 				                </tr>
-				                <tr class="row1">
+				                <tr class="row2">
 				             
 				                	 <td class="input_txt" align="left"> <input type="checkbox" name="apexat_2" value="Apex at:" onclick="this.form.apexat2.style.visibility = this.checked? 'visible' : 'hidden'"/> Apex at:
 				                 		<input type="text" class="input_txtbx1" id="apexat2" name="apexat_text2" style="visibility:hidden"/>
@@ -386,6 +405,7 @@
 				                   		 </select>
 				                   	</td>
 				                   	<td valign="top" align="left" class="input_txt"> <input type="checkbox" name="negative_3" value="Negative for recent fracture">  Negative for recent fracture, dislocation or gross Osteopathology</td>
+				                  <td></td>
 				                  </tr>
 				                  <tr class="row2">
 				                  	 <td class="input_txt"><input type="checkbox" name="break_3" value="Break Georges at" onclick="this.form.break3.style.visibility = this.checked? 'visible' : 'hidden'"/> Break in Georges line at 

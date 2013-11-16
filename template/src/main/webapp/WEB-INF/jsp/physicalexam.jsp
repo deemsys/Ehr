@@ -4,13 +4,16 @@
 <html>
 <head>
  <link rel="stylesheet" href="resources/css/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="/resources/css/style.css" />
+  
   <link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
+  <link rel="stylesheet" href="/resources/css/style.css" /> 
+     <script src="resources/js/jquery.min.js"></script>
+ <script src="resources/js/jquery-ui.js"></script> 
   <script src="resources/js/tabs-1.9.1.js"></script>
   <script src="resources/js/tabs-ui.js"></script>
-  <script src="resources/js/jquery.min.js"></script>
- <script src="resources/js/jquery-ui.js"></script>
-	</head>
+ 
+ 
+	
 	<script>
   $(function() {
     $( "#tabs" ).tabs();
@@ -21,6 +24,7 @@
     $( "#datepicker" ).datepicker();
   });
   </script>
+  </head>
 	<body>
 	<form method="POST" action="physicalexam">
 

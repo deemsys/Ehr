@@ -24,6 +24,9 @@ function Checksymptom(val){
 </script >
 <script type="text/javascript">
 $(function() {
+    $( "#datepicker" ).datepicker();
+  });
+$(function() {
     $( "#datepicker1" ).datepicker();
   });
 $(function() {

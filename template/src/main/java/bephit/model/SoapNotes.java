@@ -81,6 +81,7 @@ public class SoapNotes {
 	private String fixation8;
 	private String notimproved8;
 	private String scsm8;
+	private String sign;
 	
 	public SoapNotes(){
 	}
@@ -108,7 +109,7 @@ public class SoapNotes {
 			String notimproved6, String scsm6, String improved7,
 			String worsened7, String fixation7, String notimproved7,
 			String scsm7, String improved8, String worsened8, String fixation8,
-			String notimproved8, String scsm8) {
+			String notimproved8, String scsm8, String sign) {
 		super();
 		this.pname = pname;
 		this.headache = headache;
@@ -189,6 +190,7 @@ public class SoapNotes {
 		this.fixation8 = fixation8;
 		this.notimproved8 = notimproved8;
 		this.scsm8 = scsm8;
+		this.sign=sign;
 		
 		
 	}
@@ -665,6 +667,12 @@ public class SoapNotes {
 	}
 	public void setScsm8(String scsm8) {
 		this.scsm8 = scsm8;
+	}
+	public String getSign() {
+		return sign;
+	}
+	public void setSign(String sign) {
+		this.sign = sign;
 	}
 	
 }
