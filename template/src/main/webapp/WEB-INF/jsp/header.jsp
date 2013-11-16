@@ -136,11 +136,11 @@
 				            		<span><img src="<c:url value="/resources/images/icon_03.png" />" alt="" style="padding:5px 5px 0 0;" />Accident</span>
 				            	</a>
 				            </li>
-				            <li>
+				            <%-- <li>
 				            	<a href="hardshipagreement" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" >
 				            		<span><img src="<c:url value="/resources/images/icon_06.png" />" alt="" style="padding:5px 5px 0 0;" />Hardship Agreement</span>
 				            	</a>
-				            </li>
+				            </li> --%>
 				            <li> 
 				            	<a href="#" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" rel="ddsubmenu4">
 				            		<span><img src="<c:url value="/resources/images/icon_07.png" />" alt="" style="padding:5px 5px 0 0;" />Health Insurance</span>
@@ -166,16 +166,17 @@
 									<span><img src="<c:url value="/resources/images/icon_01.png" />" alt="" style="padding:5px 5px 0 0;" />Authorization Forms</span>
 								</a>
 							</li>
-							<%-- <li>
-								<a href="#" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" >
-									<span><img src="<c:url value="/resources/images/icon_01.png" />" alt="" style="padding:5px 5px 0 0;" />Screening Disclosure</span>
+							
+							<li>
+								<a href="#" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" rel="ddsubmenu6">
+									<span><img src="<c:url value="/resources/images/icon_01.png" />" alt="" style="padding:5px 5px 0 0;" />Doctor Forms</span>
 								</a>
 							</li>
-							<li>
+							<%-- <li>
 								<a href="Hippaprivacy" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>">
 									<span><img src="<c:url value="/resources/images/icon_01.png" />" alt="" style="padding:5px 5px 0 0;" />HIPPA Privacy</span>
 								</a>
-							</li> --%>
+							</li>  --%>
 						</ul>
 						<div class="clear">
 						<script type="text/javascript">
@@ -226,9 +227,17 @@
 
 							<li><a href="treatform">Authorization And Consent To Treat</a></li>
 				            <li><a href="treatminor">Consent To Treat A minor</a></li>
-				            <li><a href="physicalexam">PhysicalExamForm</a></li>
+				           
+
+</ul>
+<ul id="ddsubmenu6" class="ddsubmenustyle">
+
+							
+				            <li><a href="physicalexam">Physical Exam Form</a></li>
+				            <li><a href="viewphysicalexam">View Physical exam Form</a></li>
 
 				            <li><a href="radiologicreport">Radiologic report Form</a></li>
+				            <li><a href="viewradiologicreport">View Radiologic report Form</a></li>
 
 				             <li><a href="hamiltonchiropractic">InitialExam</a></li>
 				             <li><a href="soapnotes">SOAP Notes</a></li>
@@ -306,6 +315,7 @@
 
 						</ul>
 						<ul id="ddsubmenu3" class="ddsubmenustyle">
+							<li><a href="hardshipagreement">Hardship Agreement</a></li>
 							<li><a href="screeningAuthz">Screening Disclosure</a></li>        
 				            <li><a href="medicalrecords">Release Of Records</a></li>
 				            <li><a href="Assignment">Assignment Of Benefits</a></li>
