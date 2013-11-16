@@ -2,10 +2,10 @@
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
+
+
 <link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
-<link rel="stylesheet" href="resources/css/tabs.css" type="text/css" />
- <script src="resources/js/tabs-1.9.1.js"></script>
-  <script src="resources/js/tabs-ui.js"></script>
+ <link rel="stylesheet" href="/resources/css/style.css" />
 <script src="resources/js/jquery.min.js"></script>
  <script src="resources/js/jquery-ui.js"></script>
  <STYLE type="text/css">
@@ -21,6 +21,11 @@ function Checksymptom(val){
  else  
    element.style.display='none';
 } 
+</script >
+<script type="text/javascript">
+$(function() {
+    $( "#datepicker" ).datepicker();
+  });
 </script>
 
  <body>
@@ -114,7 +119,8 @@ function Checksymptom(val){
  </td>
  </tr>
  <tr>
- <td></td>
+ <td>&nbsp;&nbsp;
+ <input type="text" name="date" id="datepicker"></td>
  <td></td>
  <td></td>
  <td>
@@ -168,12 +174,14 @@ function Checksymptom(val){
  <td>
  <br/>
 &nbsp &nbsp Improved: <select name="improved1" id="improved1" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="improved" >10%</option>
-					<option value="improved1">25%</option>
-					<option value="improved2">50%</option>
-					<option value="improved3">75%</option>
-					<option value="improved4">85%</option>
-					<option value="improved5">95%</option>
+					<option selected="selected" value="10%" >10%</option>
+					<option value="25%">25%</option>
+					<option value="50%">50%</option>
+					<option value="75%">75%</option>
+					<option value="85%">85%</option>
+					<option value="95%">95%</option>
+					</select>
+					<br/><br/><br/>
 &nbsp &nbsp Worsened: <select name="worsened1" id="worsened1" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
 					<option value="25%">25%</option>
@@ -182,9 +190,9 @@ function Checksymptom(val){
 					<option value="85%">85%</option>
 					<option value="95">95%</option>
 
-					</select><br/><br/><br/>
+					</select><br/><br/><br/></td>
 
- 
+ <td>
  &nbsp &nbsp <select name="fixation1" id="fixation1" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixation" >Fixations</option>
 					<option value="Tendernesstopalpation">Tendernesstopalpation</option>
@@ -697,20 +705,24 @@ function Checksymptom(val){
 				  </select>
  </td>
  </tr>
- <table align="right"> <tr>
+ </table>
+ 
+				                   
+<br/><br/>
+<table align="right"><tr><td> Physicians Signature:<input type="text" name="sign"></td></tr></table>
+				                   </table>
+				                   
+				                   <table align="right"> <tr>
 				                   <td><input type="submit" class="submit_btn" value="Save"></td>
-				                   </tr>
-				                   </table>
-				                   </table>
-				                   </div>
-				                   </div>
-				                   </td>
+				                   <td><input type="submit" class="submit_btn" value="View"></td>
+				                   <td><input type="submit" class="submit_btn" value="Cancel"></td>
 				                   </tr>
 				                   </table>
 				                   </form>
 				                   </div>
 				                   </body>
 				                   </html>
+				                   
 	      
 	            
 	            
