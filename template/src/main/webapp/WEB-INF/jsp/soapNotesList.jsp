@@ -1,27 +1,20 @@
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
 
-
-<link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
- <link rel="stylesheet" href="/resources/css/style.css" />
-<script src="resources/js/jquery.min.js"></script>
- <script src="resources/js/jquery-ui.js"></script>
- <STYLE type="text/css">
-  P#mypar {font-style:calibri;
-  line-height:18px;}
-   </STYLE>
    </head>
  <body>
  <div id="right_content">
-<form action="soapnotes" method="POST" name="soapnotes">
+<form method="post" action="">
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
 <tr>
 <td valign="top" align="left">
  <div>
 	            <div class="headings altheading">
-	            <center> <h2>SOAP NOTES</h2> </center><br/>
+	            <center> <h2>View SOAP NOTES</h2> </center><br/>
 	            
 	            </div>
 	            
@@ -30,6 +23,22 @@
            
           
           <tr class="row1">
+             <c:forEach items="${soapnotesForm.soapnotes}" var="soapnotes" varStatus="status">
 <td></td><td></td>
 <td></td><td></td><td></td><td></td>
-<td><h2>patient</h2></td><td>
+<td><h2>patient</h2></td>
+   <td>${soapnotes.pname}</td>
+   
+   </c:forEach>
+   </tr>
+   </table>
+   </div>
+   </div>
+   </td>
+   </tr>
+   </table>
+   </form>
+   </div>
+   </body>
+   </html>
+   
