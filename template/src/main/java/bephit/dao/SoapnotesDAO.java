@@ -11,7 +11,7 @@ import java.util.Date;
 import java.util.List;
 import javax.sql.DataSource;
 
-import bephit.model.Physicalexam;
+
 import bephit.model.SoapNotes;
  
 

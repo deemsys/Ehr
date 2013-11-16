@@ -46,7 +46,12 @@
                			 
                  <tr class="row1">
                   <td valign="top" align="center">&nbsp;</td>
-                  <td valign="top" align="left"><input type="submit" class="submit_btn1" value="Update Report" name="insert"></td>
+                  <td valign="top" align="center">&nbsp;</td>
+                  <td valign="top" align="center">&nbsp;</td>
+                  <td valign="top" align="center">&nbsp;</td>
+                  <td valign="top" align="center">&nbsp;</td>
+                  <td valign="top" align="right">&nbsp;</td>
+                  <td valign="top" align="right"><input type="submit" class="submit_btn1" value="Update Report" ></td>
                     
                 </tr>
                 </table>
@@ -542,8 +547,11 @@
 				              		 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Positive for" name="positivefor_4" <c:if test="${radiologicReport.positivefor_4=='Positive for'}"><c:out value="Checked"/></c:if>   />Positive for</td>
 				               	</tr>
 				               	<tr class="row1">
-                  								<td valign="top" align="center">&nbsp;</td>
-                  								<td valign="top" align="left"><input type="submit" class="submit_btn1" value="Update Report" name="insert"></td>
+                  								 <td>&nbsp;&nbsp;</td>
+                  								<td><input type="submit" class="submit_btn1" value="Update Report" name="insert"></td>
+                  								
+				                    
+				                    <td><input type="reset" class="submit_btn" value="Cancel" ></td>
                     
                 </tr>
                 </table>

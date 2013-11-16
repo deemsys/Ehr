@@ -1306,7 +1306,31 @@ public class MainController {
 		return "soapnotes";
  
 	}
-
+	@RequestMapping(value="/viewsoapnotes", method=RequestMethod.GET)
+	public String viewSoapNotes(HttpServletRequest request,ModelMap model, Principal principal) {
+		 model.addAttribute("success","false");
+		//ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
+		  SoapnotesForm soapnotesForm = new SoapnotesForm();
+		 //participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
+		 soapnotesForm.setSoapnotes(soapDAO.getSoapnotes());
+		  //model.addAttribute("participantsDetailsForm", participantsDetailsForm);
+		  	model.addAttribute("soapnotesForm", soapnotesForm);
+        System.out.println(soapnotesForm.getSoapnotes().toString());
+		return "viewsoapnotes";
+	}
+	@RequestMapping(value="/soapNotesList", method=RequestMethod.GET)
+	public String soapnoteslist(HttpServletRequest request,@RequestParam("pid") String pid,ModelMap model,RadiologicReport radiologic)
+	{
+		//ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
+		RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
+        //participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants(participants_id));
+		radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport((pid)));
+		//model.addAttribute("participantsDetailsForm", participantsDetailsForm);
+		model.addAttribute("radiologicReportForm", radiologicReportForm);
+		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
+		
+		return "radiologicReportList";
+	}
 
 	}
 	
