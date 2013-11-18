@@ -57,7 +57,7 @@ import bephit.forms.MedicalRecordsForm;
 import bephit.forms.MoretestForm;
 
 import bephit.forms.ParticipantsDetailsForm;
-import bephit.forms.soapnotesForm;
+import bephit.forms.SoapnotesForm;
 
 
 
@@ -1296,7 +1296,7 @@ public class MainController {
 		*/
 		if(result.hasErrors())
 		{
-			soapnotesForm soapnotesForm = new soapnotesForm();
+			SoapnotesForm soapnotesForm = new SoapnotesForm();
 			soapnotesForm.setSoapnotes(soapDAO.getSoapnotes());
 			model.addAttribute("SoapnotesForm", soapnotesForm);
 			model.addAttribute("Success","true");
@@ -1305,7 +1305,7 @@ public class MainController {
 		model.put("SoapNotes", soapnotes);
 		model.addAttribute("SoapnotesForm",soapnotes);
     	int a=soapDAO.setSoapnotes(soapnotes);
-    	soapnotesForm soapnotesForm= new soapnotesForm();
+    	SoapnotesForm soapnotesForm= new SoapnotesForm();
     	soapnotesForm.setSoapnotes(soapDAO.getSoapnotes());
 		model.addAttribute("SoapnotesForm",soapnotesForm);
 		return "soapnotes";
@@ -1315,7 +1315,7 @@ public class MainController {
 	public String editsoapnotes(HttpServletRequest request,@RequestParam("soapid") String soapid,ModelMap model,SoapNotes soap)
 	{
 		
-		soapnotesForm soapnotesForm = new soapnotesForm();
+		SoapnotesForm soapnotesForm = new SoapnotesForm();
        
         soapnotesForm.setSoapnotes(soapDAO.getSoap(soapid));
 	
@@ -1330,7 +1330,7 @@ public class MainController {
 	{
 		if (result.hasErrors())
 		{
-			soapnotesForm soapnotesForm = new soapnotesForm();
+			SoapnotesForm soapnotesForm = new SoapnotesForm();
 	     
 	      soapnotesForm.setSoapnotes(soapDAO.getSoap(soapnotes.getSoapid()));
 	      
@@ -1344,7 +1344,7 @@ public class MainController {
 		
 		System.out.println(status);
 		
-		soapnotesForm soapnotesForm = new soapnotesForm();
+		SoapnotesForm soapnotesForm = new SoapnotesForm();
         
        soapnotesForm.setSoapnotes(soapDAO.getSoapnotes());
        
@@ -1359,7 +1359,7 @@ public class MainController {
 	public String viewSoapNotes(HttpServletRequest request,ModelMap model, Principal principal) {
 		 model.addAttribute("success","false");
 		//ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
-		  soapnotesForm soapnotesForm = new soapnotesForm();
+		  SoapnotesForm soapnotesForm = new SoapnotesForm();
 		 //participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
 		 soapnotesForm.setSoapnotes(soapDAO.getSoapnotes());
 		  //model.addAttribute("participantsDetailsForm", participantsDetailsForm);
@@ -1371,7 +1371,7 @@ public class MainController {
 	public String soapnoteslist(HttpServletRequest request,@RequestParam("soapid") String soapid,ModelMap model,SoapNotes soap)
 	{
 		//ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
-		soapnotesForm soapnotesForm = new soapnotesForm();
+		SoapnotesForm soapnotesForm = new SoapnotesForm();
         //participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants(participants_id));
 		soapnotesForm.setSoapnotes(soapDAO.getSoap((soapid)));
 		//model.addAttribute("participantsDetailsForm", participantsDetailsForm);
