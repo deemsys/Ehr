@@ -4,7 +4,7 @@ import java.util.List;
 
 
 import bephit.model.SoapNotes;
-public class SoapnotesForm {
+public class soapnotesForm {
 	private List<SoapNotes> soapnotes;
 	 
     public List<SoapNotes> getSoapnotes() {
