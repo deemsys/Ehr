@@ -35,10 +35,8 @@
 					<c:if test="${fn:length(soapnotesForm.soapnotes) gt 0}">
         				  <c:forEach items="${soapnotesForm.soapnotes}" var="soapnotes" varStatus="status">
         				       				<tr class="row1">
-        				       				
-								        <td valign="top" align="left"  width="10%"> <a href="soapNotesList?soapid=${soapnotes.soapid}">${soapnotes.pname}</a></td>
-								        
-										<td valign="top" align="left">
+        				       				<td valign="top" align="left"  width="10%"> <a href="soapNotesList?soapid=${soapnotes.soapid}">${soapnotes.pname}</a></td>
+								         	<td valign="top" align="left">
 											
 												<a href="#" title="" ><img src="resources/images/icons/icon_edit.png" alt="Edit" /></a><a href="<c:out value="editsoapnotes?soapid=${soapnotes.soapid}"/>" style="padding-right:10px;">Edit</a>
 											
@@ -64,7 +62,7 @@
 					
 <script language="javascript">
 function confirmation() {
-	var answer = confirm("Are you Sure You Want to Delete  Patient SoapNotes ?")
+	var answer = confirm("Are you Sure You Want to Delete  Patient  ?")
 	if (answer){
 		return true;
 	}

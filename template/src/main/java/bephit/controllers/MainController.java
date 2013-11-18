@@ -609,7 +609,7 @@ public class MainController {
     	insuranceplanForm.setInsuranceplan(planDAO.getInsuranceplan());
 		model.addAttribute("InsuranceplanForm",insuranceplanForm);
 
-		//System.out.println(autoaccident.getAdjustersname());
+		
 	    
 		
 		return "insuranceplan";
@@ -1261,8 +1261,7 @@ public class MainController {
     	moretestForm.setMoretest(moreDAO.getMoretest());
 		model.addAttribute("Moretest",moretestForm);
 
-		//System.out.println(autoaccident.getAdjustersname());
-	    
+		
 		
 
 		return "moretest";
@@ -1379,6 +1378,24 @@ public class MainController {
 		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
 		
 		return "soapNotesList";
+	}
+	@RequestMapping(value="/deletesoapnotes", method=RequestMethod.GET)
+	public String removesoapnotes(@RequestParam("soapid") String soapid,ModelMap model, Principal principal) {
+	
+		int status=soapDAO.deletesoapnotes(soapid);
+		
+		if(status==1)
+		{
+        model.addAttribute("success","true");
+		//ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
+		SoapnotesForm soapnotesForm = new SoapnotesForm();
+		//participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
+		soapnotesForm.setSoapnotes(soapDAO.getSoapnotes());
+        model.addAttribute("soapnotesForm", soapnotesForm);
+      
+		}
+		
+		return "viewsoapnotes";
 	}
 
 	}

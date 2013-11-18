@@ -41,7 +41,7 @@
         				  <c:forEach items="${physicalexamForm.physicalexam}" var="physicalexam" varStatus="status">
         				       				<tr class="row1">
         				       				<td valign="center" align="right" width="10%"></td>
-								        <td valign="top" align="left"  width="10%"> <a href="physicalexamlist?physical_id=${physicalexam.physical_id}">${physicalexam.name}</a></td>
+								            <td valign="top" align="left"  width="10%"><a href="physicalexamlist?physical_id=${physicalexam.physical_id}">${physicalexam.name}</a></td>
 											<td valign="top" align="left" width="10%">${physicalexam.id}</td>
 											<td valign="top" align="left" width="10%">${physicalexam.date}</td>
 											<td valign="top" align="left" width="10%">${physicalexam.age}</td>
