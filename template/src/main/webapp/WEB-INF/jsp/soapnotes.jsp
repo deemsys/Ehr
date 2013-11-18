@@ -83,7 +83,7 @@ $(function() {
 <td><input type="checkbox" name="rightarmpain" value="Right Arm Pain" >Right Arm Pain</td>
 <td><input type="checkbox" name="leftarmpain" value="Left Arm Pain" >Left Arm Pain</td>
 </tr>
-<tr class="row2">
+<tr class="row1">
 <td></td>
 <td><input type="checkbox" name="rightelbowpain" value="Right Elbow Pain" >Right Elbow Pain</td>
 <td><input type="checkbox" name="leftelbowpain" value="Left Elbow Pain" >Left Elbow Pain</td>
@@ -103,7 +103,7 @@ $(function() {
 <td><input type="checkbox" name="righthippain" value="Right Hip Pain" >Right Hip Pain</td>
 <td><input type="checkbox" name="lefthippain" value="Left Hip Pain" >Left Hip Pain</td>
 </tr>
-<tr class="row2">
+<tr class="row1">
 <td></td>
 <td><input type="checkbox" name="rightgluteulpain" value="Right Gluteul Pain" >Right Gluteul Pain</td>
 <td><input type="checkbox" name="leftgluteulpain" value="Left Gluteul Pain" >Left Gluteul Pain</td>
