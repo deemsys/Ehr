@@ -12,7 +12,7 @@
         <tr>
         <td valign="top" align="left" style="padding:5px 0 10px 0;">&nbsp;
             <div id="success_statusbar" class="status success">
-            <p class="closestatus"><a title="Close" href="viewradiologicreport">x</a></p>
+            <p class="closestatus"><a title="Close" href="viewsoapnotes">x</a></p>
             <p><img alt="Success" src="resources/images/icons/icon_success.png"><span>Success!</span>.</p>
           </div>
       </tr>
@@ -39,12 +39,11 @@
 								        <td valign="top" align="left"  width="10%"> <a href="soapNotesList?soapid=${soapnotes.soapid}">${soapnotes.pname}</a></td>
 								        
 										<td valign="top" align="left">
-											<%--  <c:if test="${currentuser.adminuser[0].editradiologicreport==1}"> --%>
+											
 												<a href="#" title="" ><img src="resources/images/icons/icon_edit.png" alt="Edit" /></a><a href="<c:out value="editsoapnotes?soapid=${soapnotes.soapid}"/>" style="padding-right:10px;">Edit</a>
-											<%-- 	 </c:if>
- --%>												<%--<c:if test="${currentuser.adminuser[0].deleteparticipant==1}"> --%>
+											
 											<a href="#" title=""><img src="resources/images/icons/icon_delete.png" alt="Delete" /></a><a href="<c:out value="deletesoapnotes?soapid=${soapnotes.soapid}"/>" onclick="return confirmation()">Remove</a>
-											<%-- </c:if> --%>
+											
 											</td>	
 										
 							</tr>

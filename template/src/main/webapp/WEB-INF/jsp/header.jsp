@@ -241,6 +241,7 @@
 
 				             <li><a href="hamiltonchiropractic">InitialExam</a></li>
 				             <li><a href="soapnotes">SOAP Notes</a></li>
+				             <li><a href="viewsoapnotes">View Soap Notes</a></li>
 
 </ul>
 							
