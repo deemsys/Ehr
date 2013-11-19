@@ -1,4 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
@@ -13,10 +14,46 @@
   line-height:18px;}
    </STYLE>
    </head>
-   
- <body>
- <div id="right_content">
-<form action="updatesoapnotes" method="POST">
+ <script type="text/javascript">
+function Checksymptom(val){
+ var element=document.getElementById('offwork1');
+ if(val=='offwork'|| val=='reeval')
+   element.style.display='block';
+ else  
+   element.style.display='none';
+} 
+</script >
+<script type="text/javascript">
+$(function() {
+    $( "#datepicker" ).datepicker();
+  });
+$(function() {
+    $( "#datepicker1" ).datepicker();
+  });
+$(function() {
+    $( "#datepicker2" ).datepicker();
+  });
+$(function() {
+    $( "#datepicker3" ).datepicker();
+  });
+$(function() {
+    $( "#datepicker4" ).datepicker();
+  });
+$(function() {
+    $( "#datepicker5" ).datepicker();
+  });
+$(function() {
+    $( "#datepicker6" ).datepicker();
+  });
+$(function() {
+    $( "#datepicker7" ).datepicker();
+  });
+$(function() {
+    $( "#datepicker8" ).datepicker();
+  });
+</script>
+<body>
+<form  method="POST" action="updatesoapnotes" name="update" id="update">
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
 <tr>
 <td valign="top" align="left">
@@ -32,59 +69,60 @@
     				<td align="left" valign="top" width="50%" style="padding-right:25px;">
     					<!-- <h2 class="quck-txt">Patient Details</h2> -->
     					<c:set value="${soapnotesForm.soapnotes[0]}" var="soapnotes"/>
-          
-          <tr class="row1">
-<td></td><td></td>
-<td></td><td></td><td></td><td></td>
-<td><input type="hidden" class="input_txtbx1" id="inp_id" value="${soapnotes.soapid}" name="soapid" /></td>
-<td valign="middle" align="left" class="input_txt"><h2>patient</h2>
-<td valign="middle" align="left" class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="pname" value="${soapnotes.pname}" /></td>
-</tr>
-<tr class="row2">
+<table align="right">
+    <tr class="row1">
+       <td><h2>patient:</h2></td>
+              <input type="hidden" class="input_txtbx1" id="inp_id" value="${soapnotes.soapid}" name="soapid" />
+              <td><input type="text" class="input_txtbx1" name="pname" value="${soapnotes.pname}" /></td>
+             </tr>
+        </table>
+        
+ <table cellpadding="0" cellspacing="0" border="0" width="98%">
+<tr class="row1">
 <td>Chief Complaint:</td>
-<td><input type="checkbox" name="headache" value="headache" <c:if test="${soapnotes.headache=='headache'}"><c:out value="checked=checked"/></c:if>>Headache</td>
+<td><input type="checkbox" name="headache" value="Headache" <c:if test="${soapnotes.headache=='Headache'}"><c:out value="Checked"/></c:if>   />Headache</td>
 <td><input type="checkbox" name="neckpain" value="Neck pain" <c:if test="${soapnotes.neckpain=='Neck pain'}"><c:out value="checked=checked"/></c:if>>Neck Pain</td>
-<td><input type="checkbox" name="rightshoulderpain" value="rightshoulderpain" <c:if test="${soapnotes.rightshoulderpain=='rightshoulderpain'}"><c:out value="checked=checked"/></c:if>>Right Shoulder pain</td>
-<td><input type="checkbox" name="leftshoulderpain" value="leftshoulderpain" <c:if test="${soapnotes.leftshoulderpain=='leftshoulderpain'}"><c:out value="checked=checked"/></c:if>>Left Shoulder Pain</td>
-<td><input type="checkbox" name="chestpain" value="chestpain" <c:if test="${soapnotes.chestpain=='chestpain'}"><c:out value="checked=checked"/></c:if>>Chest Pain</td>
-<td><input type="checkbox" name="rightarmpain" value="rightarmpain" <c:if test="${soapnotes.rightarmpain=='rightarmpain'}"><c:out value="checked=checked"/></c:if>>Right Arm Pain</td>
-<td><input type="checkbox" name="leftarmpain" value="leftarmpain" <c:if test="${soapnotes.leftarmpain=='leftarmpain'}"><c:out value="checked=checked"/></c:if>>Left Arm Pain</td>
+<td><input type="checkbox" name="rightshoulderpain" value="Right Shoulder pain" <c:if test="${soapnotes.rightshoulderpain=='Right Shoulder pain'}"><c:out value="checked=checked"/></c:if>>Right Shoulder pain</td>
+<td><input type="checkbox" name="leftshoulderpain" value="Left Shoulder Pain" <c:if test="${soapnotes.leftshoulderpain=='Left Shoulder Pain'}"><c:out value="checked=checked"/></c:if>>Left Shoulder Pain</td>
+<td><input type="checkbox" name="chestpain" value="Chest Pain" <c:if test="${soapnotes.chestpain=='Chest Pain'}"><c:out value="checked=checked"/></c:if>>Chest Pain</td>
+<td><input type="checkbox" name="rightarmpain" value="Right Arm Pain" <c:if test="${soapnotes.rightarmpain=='Right Arm Pain'}"><c:out value="checked=checked"/></c:if>>Right Arm Pain</td>
+<td><input type="checkbox" name="leftarmpain" value="Left Arm Pain" <c:if test="${soapnotes.leftarmpain=='Left Arm Pain'}"><c:out value="checked=checked"/></c:if>>Left Arm Pain</td>
 </tr>
 <tr class="row1">
 <td></td>
-<td><input type="checkbox" name="rightelbowpain" value="rightelbowpain" <c:if test="${soapnotes.rightelbowpain=='rightelbowpain'}"><c:out value="checked=checked"/></c:if>>Right Elbow Pain</td>
-<td><input type="checkbox" name="leftelbowpain" value="leftelbowpain" <c:if test="${soapnotes.leftelbowpain=='leftelbowpain'}"><c:out value="checked=checked"/></c:if>>Left Elbow Pain</td>
-<td><input type="checkbox" name="rightwristpain" value="rightwristpain" <c:if test="${soapnotes.rightwristpain=='rightwristpain'}"><c:out value="checked=checked"/></c:if>>Right Wrist pain</td>
-<td><input type="checkbox" name="leftwristpain" value="leftwristpain" <c:if test="${soapnotes.leftwristpain=='leftwristpain'}"><c:out value="checked=checked"/></c:if>>Left Wrist Pain</td>
-<td><input type="checkbox" name="righthandpain" value="righthandpain" <c:if test="${soapnotes.righthandpain=='righthandpain'}"><c:out value="checked=checked"/></c:if>>Right Hand Pain</td>
-<td><input type="checkbox" name="lefthandpain" value="lefthandpain" <c:if test="${soapnotes.lefthandpain=='lefthandpain'}"><c:out value="checked=checked"/></c:if>>Left Hand Pain</td>
-<td><input type="checkbox" name="mbp" value="mbp" <c:if test="${soapnotes.mbp=='mbp'}"><c:out value="checked=checked"/></c:if>>MBP</td>
-</tr>
-<tr class="row2">
-<td></td>
-<td><input type="checkbox" name="rightribpain" value="rightribpain" <c:if test="${soapnotes.rightribpain=='rightribpain'}"><c:out value="checked=checked"/></c:if>>Right Rib Pain</td>
-<td><input type="checkbox" name="leftribpain" value="leftribpain" <c:if test="${soapnotes.leftribpain=='leftribpain'}"><c:out value="checked=checked"/></c:if>>Left Rib Pain</td>
-<td><input type="checkbox" name="lbp" value="lbp" <c:if test="${soapnotes.lbp=='lbp'}"><c:out value="checked=checked"/></c:if>>LBP</td>
-<td><input type="checkbox" name="rightsipain" value="rightsipain" <c:if test="${soapnotes.rightsipain=='rightsipain'}"><c:out value="checked=checked"/></c:if>>Right SI Pain</td>
-<td><input type="checkbox" name="leftsipain" value="leftsipain" <c:if test="${soapnotes.leftsipain=='leftsipain'}"><c:out value="checked=checked"/></c:if>>Left SI Pain</td>
-<td><input type="checkbox" name="righthippain" value="righthippain" <c:if test="${soapnotes.righthippain=='righthippain'}"><c:out value="checked=checked"/></c:if>>Right Hip Pain</td>
-<td><input type="checkbox" name="lefthippain" value="lefthippain" <c:if test="${soapnotes.lefthippain=='lefthippain'}"><c:out value="checked=checked"/></c:if>>Left Hip Pain</td>
+<td><input type="checkbox" name="rightelbowpain" value="Right Elbow Pain" <c:if test="${soapnotes.rightelbowpain=='Right Elbow Pain'}"><c:out value="checked=checked"/></c:if>>Right Elbow Pain</td>
+<td><input type="checkbox" name="leftelbowpain" value="Left Elbow Pain" <c:if test="${soapnotes.leftelbowpain=='Left Elbow Pain'}"><c:out value="checked=checked"/></c:if>>Left Elbow Pain</td>
+<td><input type="checkbox" name="rightwristpain" value="Right Wrist Pain" <c:if test="${soapnotes.rightwristpain=='Right Wrist Pain'}"><c:out value="checked=checked"/></c:if>>Right Wrist pain</td>
+<td><input type="checkbox" name="leftwristpain" value="Left Wrist Pain" <c:if test="${soapnotes.leftwristpain=='Left Wrist Pain'}"><c:out value="checked=checked"/></c:if>>Left Wrist Pain</td>
+<td><input type="checkbox" name="righthandpain" value="Right Hand Pain" <c:if test="${soapnotes.righthandpain=='Right Hand Pain'}"><c:out value="checked=checked"/></c:if>>Right Hand Pain</td>
+<td><input type="checkbox" name="lefthandpain" value="Left Hand Pain" <c:if test="${soapnotes.lefthandpain=='Left Hand Pain'}"><c:out value="checked=checked"/></c:if>>Left Hand Pain</td>
+<td><input type="checkbox" name="mbp" value="MBP" <c:if test="${soapnotes.mbp=='MBP'}"><c:out value="checked=checked"/></c:if>>MBP</td>
 </tr>
 <tr class="row1">
 <td></td>
-<td><input type="checkbox" name="rightgluteulpain" value="rightgluteulpain" <c:if test="${soapnotes.rightgluteulpain=='rightgluteulpain'}"><c:out value="checked=checked"/></c:if>>Right Gluteul Pain</td>
-<td><input type="checkbox" name="leftgluteulpain" value="leftgluteulpain" <c:if test="${soapnotes.leftgluteulpain=='leftgluteulpain'}"><c:out value="checked=checked"/></c:if>>Left Gluteul Pain</td>
-<td><input type="checkbox" name="rightlegpain" value="rightlegpain" <c:if test="${soapnotes.rightlegpain=='rightlegpain'}"><c:out value="checked=checked"/></c:if>>Right Leg Pain</td>
-<td><input type="checkbox" name="leftlegpain" value="leftlegpain" <c:if test="${soapnotes.leftlegpain=='leftlegpain'}"><c:out value="checked=checked"/></c:if>>Left Leg Pain</td>
-<td><input type="checkbox" name="rightkneepain" value="rightkneepain" <c:if test="${soapnotes.rightkneepain=='rightkneepain'}"><c:out value="checked=checked"/></c:if>>Right Knee Pain</td>
-<td><input type="checkbox" name="leftkneepain" value="leftkneepain" <c:if test="${soapnotes.leftkneepain=='leftkneepain'}"><c:out value="checked=checked"/></c:if>>Left Knee Pain</td>
-<td><input type="checkbox" name="rightanklepain" value="rightanklepain" <c:if test="${soapnotes.rightanklepain=='rightanklepain'}"><c:out value="checked=checked"/></c:if>>Right Ankle Pain</td>
+<td><input type="checkbox" name="rightribpain" value="Right Rib Pain" <c:if test="${soapnotes.rightribpain=='Right Rib Pain'}"><c:out value="checked=checked"/></c:if>>Right Rib Pain</td>
+<td><input type="checkbox" name="leftribpain" value="Left Rib Pain" <c:if test="${soapnotes.leftribpain=='Left Rib Pain'}"><c:out value="checked=checked"/></c:if>>Left Rib Pain</td>
+<td><input type="checkbox" name="lbp" value="LBP" <c:if test="${soapnotes.lbp=='LBP'}"><c:out value="checked=checked"/></c:if>>LBP</td>
+<td><input type="checkbox" name="rightsipain" value="Right SI Pain" <c:if test="${soapnotes.rightsipain=='Right SI Pain'}"><c:out value="checked=checked"/></c:if>>Right SI Pain</td>
+<td><input type="checkbox" name="leftsipain" value="Left SI Pain" <c:if test="${soapnotes.leftsipain=='Left SI Pain'}"><c:out value="checked=checked"/></c:if>>Left SI Pain</td>
+<td><input type="checkbox" name="righthippain" value="Right Hip Pain" <c:if test="${soapnotes.righthippain=='Right Hip Pain'}"><c:out value="checked=checked"/></c:if>>Right Hip Pain</td>
+<td><input type="checkbox" name="lefthippain" value="Left Hip Pain" <c:if test="${soapnotes.lefthippain=='Left Hip Pain'}"><c:out value="checked=checked"/></c:if>>Left Hip Pain</td>
 </tr>
-<tr class="row2">
+<tr class="row1">
 <td></td>
-<td><input type="checkbox" name="leftanklepain" value="leftanklepain" <c:if test="${soapnotes.leftanklepain=='leftanklepain'}"><c:out value="checked=checked"/></c:if>>Right Rib Pain</td>
-<td><input type="checkbox" name="rightfootpain" value="rightfootpain" <c:if test="${soapnotes.rightfootpain=='rightfootpain'}"><c:out value="checked=checked"/></c:if>>Right Foot Pain</td>
-<td><input type="checkbox" name="leftfootpain" value="leftfootpain" <c:if test="${soapnotes.leftfootpain=='leftfootpain'}"><c:out value="checked=checked"/></c:if>>Left Foot Pain</td>
+<td><input type="checkbox" name="rightgluteulpain" value="Right Gluteul Pain" <c:if test="${soapnotes.rightgluteulpain=='Right Gluteul Pain'}"><c:out value="checked=checked"/></c:if>>Right Gluteul Pain</td>
+<td><input type="checkbox" name="leftgluteulpain" value="Left Gluteul Pain" <c:if test="${soapnotes.leftgluteulpain=='Left Gluteul Pain'}"><c:out value="checked=checked"/></c:if>>Left Gluteul Pain</td>
+<td><input type="checkbox" name="rightlegpain" value="Right Leg Pain" <c:if test="${soapnotes.rightlegpain=='Right Leg Pain'}"><c:out value="checked=checked"/></c:if>>Right Leg Pain</td>
+<td><input type="checkbox" name="leftlegpain" value="Left Leg Pain" <c:if test="${soapnotes.leftlegpain=='Left Leg Pain'}"><c:out value="checked=checked"/></c:if>>Left Leg Pain</td>
+<td><input type="checkbox" name="rightkneepain" value="Right Knee Pain" <c:if test="${soapnotes.rightkneepain=='Right Knee Pain'}"><c:out value="checked=checked"/></c:if>>Right Knee Pain</td>
+<td><input type="checkbox" name="leftkneepain" value="Left Knee Pain" <c:if test="${soapnotes.leftkneepain=='Left Knee Pain'}"><c:out value="checked=checked"/></c:if>>Left Knee Pain</td>
+<td><input type="checkbox" name="rightanklepain" value="Right Ankle Pain" <c:if test="${soapnotes.rightanklepain=='Right Ankle Pain'}"><c:out value="checked=checked"/></c:if>>Right Ankle Pain</td>
+</tr>
+<tr class="row1">
+<td></td>
+<td><input type="checkbox" name="leftanklepain" value="Left Ankle Pain" <c:if test="${soapnotes.leftanklepain=='Left Ankle Pain'}"><c:out value="checked=checked"/></c:if>>Right Rib Pain</td>
+<td><input type="checkbox" name="rightfootpain" value="Right Foot Pain" <c:if test="${soapnotes.rightfootpain=='Right Foot Pain'}"><c:out value="checked=checked"/></c:if>>Right Foot Pain</td>
+<td><input type="checkbox" name="leftfootpain" value="Left Foot Pain" <c:if test="${soapnotes.leftfootpain=='Left Foot Pain'}"><c:out value="checked=checked"/></c:if>>Left Foot Pain</td>
 <td></td>
 <td></td>
 <td></td>
@@ -110,12 +148,12 @@
  </td>
  </tr>
  <tr>
- <td></td>
+ <td>&nbsp;&nbsp;<input type="text" id="datepicker" class="input_txtbx1"  name="date1" value="${soapnotes.date1}"></td>
  <td></td>
  <td></td>
  <td>
  
- &nbsp &nbspDiagonosis:<br/>
+ &nbsp &nbsp Diagonosis:<br/>
 &nbsp &nbsp 1&nbsp &nbsp &nbsp<input class="input_txtbx1" id="inp_id" type="text" name="diagnosis1" value="${soapnotes.diagnosis1}"><br/><br/>
 &nbsp &nbsp 2&nbsp &nbsp &nbsp<input class="input_txtbx1" id="inp_id" type="text" name="diagnosis2" value="${soapnotes.diagnosis2}"><br/><br/>
 &nbsp &nbsp 3&nbsp &nbsp &nbsp<input class="input_txtbx1" id="inp_id" type="text" name="diagnosis3" value="${soapnotes.diagnosis3}"><br/><br/>
@@ -155,21 +193,22 @@
 					<option value="reeval" <c:if test="${soapnotes.e1e2=='reeval'}"><c:out value="selected"/></c:if>>Re Eval.in </option>
 				  </select>
 				  
-				  <input type="text" name="offwork1" class="input_txtbx1" id="inp_id"  value="${soapnotes.offwork1}" >
-				  <input type="text" name="reeval1" class="input_txtbx1" id="inp_id"  value="${soapnotes.reeval1}">
+				  <input type="text" name="offwork1" class="input_txtbx1" id="inp_id"  value="${soapnotes.offwork1}" style='display:none' >
+				  <input type="text" name="reeval1" class="input_txtbx1" id="inp_id"  value="${soapnotes.reeval1}" style='display:none'>
 				  </td>
  </tr>
  <tr>
- <td></td>
+ <td>&nbsp;&nbsp;<input type="text" id="datepicker1" class="input_txtbx1"  name="date2" value="${soapnotes.date2}"></td>
  <td>
  <br/>
 &nbsp &nbsp Improved: <select name="improved1" id="improved1" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" <c:if test="${soapnotes.improved1=='10%'}"><c:out value="selected"/></c:if>>10%</option>
-					<option value="25%" <c:if test="${soapnotes.improved1=='25%'}"><c:out value="selected"/></c:if> >25%</option>
+					<option value="25%" <c:if test="${soapnotes.improved1=='25%'}"><c:out value="selected"/></c:if>>25%</option>
 					<option value="50%" <c:if test="${soapnotes.improved1=='50%'}"><c:out value="selected"/></c:if>>50%</option>
 					<option value="75%" <c:if test="${soapnotes.improved1=='75%'}"><c:out value="selected"/></c:if>>75%</option>
 					<option value="85%" <c:if test="${soapnotes.improved1=='85%'}"><c:out value="selected"/></c:if>>85%</option>
 					<option value="95%" <c:if test="${soapnotes.improved1=='95%'}"><c:out value="selected"/></c:if>>95%</option>
+					</select><br/><br/><br/>
 &nbsp &nbsp Worsened: <select name="worsened1" id="worsened1" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" <c:if test="${soapnotes.worsened1=='10%'}"><c:out value="selected"/></c:if>>10%</option>
 					<option value="25%" <c:if test="${soapnotes.worsened1=='25%'}"><c:out value="selected"/></c:if>>25%</option>
@@ -178,9 +217,9 @@
 					<option value="85%" <c:if test="${soapnotes.worsened1=='85%'}"><c:out value="selected"/></c:if>>85%</option>
 					<option value="95" <c:if test="${soapnotes.worsened1=='95%'}"><c:out value="selected"/></c:if>>95%</option>
 
-					</select><br/><br/><br/>
+					</select><br/><br/><br/></td>
 
- 
+ <td>
  &nbsp &nbsp <select name="fixation1" id="fixation1" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixation" <c:if test="${soapnotes.fixation1=='fixation'}"><c:out value="selected"/></c:if>>Fixations</option>
 					<option value="Tendernesstopalpation" <c:if test="${soapnotes.fixation1=='tendernesstopalpation'}"><c:out value="selected"/></c:if>>Tendernesstopalpation</option>
@@ -232,13 +271,11 @@
  </td>
  </tr>
  <tr>
- <td></td>
+ <td>&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="date3" id="datepicker2" value="${soapnotes.date3}"></td>
  <td>
-
- 
- <br/>&nbsp &nbspImproved: <select name="improved2" id="improved2" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+<br/>&nbsp &nbspImproved: <select name="improved2" id="improved2" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" <c:if test="${soapnotes.improved2=='10%'}"><c:out value="selected"/></c:if>>10%</option>
-					<option value="25%" <c:if test="${soapnotes.improved2=='25%'}"><c:out value="selected"/></c:if> >25%</option>
+					<option value="25%" <c:if test="${soapnotes.improved2=='25%'}"><c:out value="selected"/></c:if>>25%</option>
 					<option value="50%" <c:if test="${soapnotes.improved2=='50%'}"><c:out value="selected"/></c:if>>50%</option>
 					<option value="75%" <c:if test="${soapnotes.improved2=='75%'}"><c:out value="selected"/></c:if>>75%</option>
 					<option value="85%" <c:if test="${soapnotes.improved2=='85%'}"><c:out value="selected"/></c:if>>85%</option>
@@ -259,7 +296,7 @@
  <td>
 
   &nbsp &nbsp <select name="fixation2" id="fixation2" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="Fixation" <c:if test="${soapnotes.fixation2=='Fixation'}"><c:out value="selected"/></c:if> >Fixations</option>
+					<option selected="selected" value="Fixation" <c:if test="${soapnotes.fixation2=='Fixation'}"><c:out value="selected"/></c:if>>Fixations</option>
 					<option value="Tendernesstopalpation" <c:if test="${soapnotes.fixation2=='Tendernesstopalpation'}"><c:out value="selected"/></c:if>>Tendernesstopalpation</option>
 					<option value="spasm" <c:if test="${soapnotes.fixation2=='spasm'}"><c:out value="selected"/></c:if>>Spasm</option>
 					<option value="trigger" <c:if test="${soapnotes.fixation2=='trigger'}"><c:out value="selected"/></c:if>>Trigger pts.</option>
@@ -308,7 +345,7 @@
  </td>
  </tr>
  <tr>
- <td></td>
+ <td>&nbsp;&nbsp;<input type="text" class="input_txtbx1" id="datepicker3" name="date4" value="${soapnotes.date4}"></td>
  <td>
  <br/>&nbsp &nbspImproved: <select name="improved3" id="improved3" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" <c:if test="${soapnotes.improved1=='10%'}"><c:out value="selected"/></c:if>>10%</option>
@@ -378,9 +415,9 @@
   </td>
  </tr>
  <tr>
- <td></td>
+ <td>&nbsp;&nbsp;<input type="text" id="datepicker4" class="input_txtbx1" name="date5"  value="${soapnotes.date5}"></td>
  <td>
- <br/>&nbsp &nbspImproved: Improved: <select name="improved4" id="improved4" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+ <br/>&nbsp &nbsp Improved: <select name="improved4" id="improved4" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" <c:if test="${soapnotes.improved4=='10%'}"><c:out value="selected"/></c:if>>10%</option>
 					<option value="25%" <c:if test="${soapnotes.improved4=='25%'}"><c:out value="selected"/></c:if>>25%</option>
 					<option value="50%" <c:if test="${soapnotes.improved4=='50%'}"><c:out value="selected"/></c:if>>50%</option>
@@ -389,7 +426,7 @@
 					<option value="95%" <c:if test="${soapnotes.improved4=='95%'}"><c:out value="selected"/></c:if>>95%</option>
 
 					</select><br/><br/><br/>
-&nbsp &nbspWorsened: Worsened: <select name="worsened4" id="worsened4" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+&nbsp &nbsp Worsened: <select name="worsened4" id="worsened4" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" <c:if test="${soapnotes.worsened4=='10%'}"><c:out value="selected"/></c:if>>10%</option>
 					<option value="25%" <c:if test="${soapnotes.worsened4=='25%'}"><c:out value="selected"/></c:if>>25%</option>
 					<option value="50%" <c:if test="${soapnotes.worsened4=='50%'}"><c:out value="selected"/></c:if>>50%</option>
@@ -446,7 +483,7 @@
  </td>
  </tr>
  <tr>
- <td></td>
+ <td>&nbsp;&nbsp;<input type="text"  class="input_txtbx1" id="datepicker5" name="date6"  value="${soapnotes.date6}"></td>
  <td>
  <br/>&nbsp &nbspImproved: <select name="improved5" id="improved5" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" <c:if test="${soapnotes.improved5=='10%'}"><c:out value="selected"/></c:if>>10%</option>
@@ -513,7 +550,7 @@
  </td>
  </tr>
  <tr>
- <td></td>
+ <td>&nbsp;&nbsp;<input type="text" id="datepicker6" name="date7" class="input_txtbx1" value="${soapnotes.date7}"></td>
  <td>
  <br/>&nbsp &nbspImproved: <select name="improved6" id="improved6" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" <c:if test="${soapnotes.improved6=='10%'}"><c:out value="selected"/></c:if>>10%</option>
@@ -524,7 +561,7 @@
 					<option value="95%" <c:if test="${soapnotes.improved6=='95%'}"><c:out value="selected"/></c:if>>95%</option>
 
 					</select><br/><br/><br/>
-&nbsp &nbsp Worsened: Worsened: <select name="worsened6" id="worsened6" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+&nbsp &nbsp  Worsened: <select name="worsened6" id="worsened6" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" <c:if test="${soapnotes.worsened6=='10%'}"><c:out value="selected"/></c:if>>10%</option>
 					<option value="25%" <c:if test="${soapnotes.worsened6=='25%'}"><c:out value="selected"/></c:if>>25%</option>
 					<option value="50%" <c:if test="${soapnotes.worsened6=='50%'}"><c:out value="selected"/></c:if>>50%</option>
@@ -580,7 +617,7 @@
  </td>
  </tr>
  <tr>
- <td></td>
+ <td>&nbsp;&nbsp;<input type="text" id="datepicker7" class="input_txtbx1"  name="date8" value="${soapnotes.date8}"></td>
  <td>
  <br/>&nbsp &nbspImproved: <select name="improved7" id="improved7" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" <c:if test="${soapnotes.improved7=='10%'}"><c:out value="selected"/></c:if>>10%</option>
@@ -647,9 +684,9 @@
  </td>
  </tr>
  <tr>
- <td></td>
+ <td>&nbsp;&nbsp;<input type="text" id="datepicker8" class="input_txtbx1" name="date9" value="${soapnotes.date9}"></td>
  <td>
- <br/>&nbsp &nbspImproved: <select name="improved8" id="improved8" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+ <br/>&nbsp &nbsp Improved: <select name="improved8" id="improved8" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" <c:if test="${soapnotes.improved8=='10%'}"><c:out value="selected"/></c:if>>10%</option>
 					<option value="25%" <c:if test="${soapnotes.improved8=='25%'}"><c:out value="selected"/></c:if> >25%</option>
 					<option value="50%" <c:if test="${soapnotes.improved8=='50%'}"><c:out value="selected"/></c:if>>50%</option>
@@ -658,7 +695,7 @@
 					<option value="95%" <c:if test="${soapnotes.improved8=='95%'}"><c:out value="selected"/></c:if>>95%</option>
 
 					</select><br/><br/><br/>
-&nbsp &Worsened: <select name="worsened8" id="worsened8" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+&nbsp &nbsp Worsened: <select name="worsened8" id="worsened8" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" <c:if test="${soapnotes.worsened8=='10%'}"><c:out value="selected"/></c:if>>10%</option>
 					<option value="25%" <c:if test="${soapnotes.worsened8=='25%'}"><c:out value="selected"/></c:if>>25%</option>
 					<option value="50%" <c:if test="${soapnotes.worsened8=='50%'}"><c:out value="selected"/></c:if>>50%</option>
@@ -715,21 +752,19 @@
   <table align="right"><tr><td> Physicians Signature:<input type="text" name="sign" class="input_txtbx1" id="inp_id"  value="${soapnotes.sign}"></td></tr></table>
 				                   </table>
  <table align="right"> <tr>
-				                   <td><input type="submit" class="submit_btn" value="Save"></td>
+				                   <td><input type="submit" class="submit_btn" value="Update"></td>
 				                   </tr>
 				                   </table>
-				                  
-				                  
-				                   
-				                   </div>
-				                   </div>
-				                   </td>
-				                   </tr>
-				                   </table>
-				                   </form>
-				                   </div>
-				                   </body>
-				                   </html>
-	      
-	            
-	            
+
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</form>
+</body>
+</html>
+
+

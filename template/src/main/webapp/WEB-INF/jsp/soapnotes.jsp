@@ -211,7 +211,8 @@ $(function() {
 					<option value="85%">85%</option>
 					<option value="95">95%</option>
 
-					</select><br/><br/><br/></td>
+					</select><br/><br/><br/>
+					</td>
 
  <td>
  &nbsp &nbsp <select name="fixation1" id="fixation1" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
@@ -289,7 +290,7 @@ $(function() {
 					<option value="85%">85%</option>
 					<option value="95%">95%</option>
 
-					</select></td>
+					</select><br/><br/><br/></td>
  <td>
 
   &nbsp &nbsp <select name="fixation2" id="fixation2" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
@@ -358,7 +359,7 @@ $(function() {
 					<option value="75%">75%</option>
 					<option value="85%">85%</option>
 					<option value="95%">95%</option>
-					</select></td>
+					</select><br/><br/><br/></td>
  <td>
   &nbsp &nbsp<select name="fixation3" id="fixation3" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixations" >Fixations</option>
@@ -425,7 +426,7 @@ $(function() {
 					<option value="75%">75%</option>
 					<option value="85%">85%</option>
 					<option value="95%">95%</option>
-					</select></td>
+					</select><br/><br/><br/></td>
  <td>&nbsp &nbsp <select name="fixation4" id="fixation4" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixation" >Fixations</option>
 					<option value="Tendernesstopalpation">Tendernesstopalpation</option>
@@ -491,7 +492,7 @@ $(function() {
 					<option value="75%">75%</option>
 					<option value="85%">85%</option>
 					<option value="95%">95%</option>
-					</select></td>
+					</select><br/><br/><br/></td>
  <td>
   &nbsp &nbsp<select name="fixation5" id="fixation5" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="fixation" >Fixations</option>
@@ -557,7 +558,7 @@ $(function() {
 					<option value="75%">75%</option>
 					<option value="85%">85%</option>
 					<option value="95%">95%</option>
-					</select></td>
+					</select><br/><br/><br/></td>
  <td>&nbsp &nbsp <select name="fixation6" id="fixation6" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="fixation" >Fixations</option>
 					<option value="tendernesstopalpation">Tendernesstopalpation</option>
@@ -622,7 +623,7 @@ $(function() {
 					<option value="75%">75%</option>
 					<option value="85%">85%</option>
 					<option value="95%">95%</option>
-					</select></td>
+					</select><br/><br/><br/></td>
  <td> &nbsp &nbsp<select name="fixation7" id="fixation7" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="fixations" >Fixations</option>
 					<option value="tendernesstopalpation">Tendernesstopalpation</option>
@@ -687,7 +688,7 @@ $(function() {
 					<option value="75%">75%</option>
 					<option value="85%">85%</option>
 					<option value="95%">95%</option>
-					</select></td>
+					</select><br/><br/><br/></td>
  <td> &nbsp &nbsp<select name="fixation8" id="fixation8" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="fixation" >Fixations</option>
 					<option value="tendernesstopalpation">Tendernesstopalpation</option>

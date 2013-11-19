@@ -1324,7 +1324,7 @@ public class MainController {
 	}
 	
 	@RequestMapping(value="/updatesoapnotes", method=RequestMethod.POST)
-	public String updatsoapnotes(HttpServletRequest request,@ModelAttribute("SoapNotes") @Valid SoapNotes soapnotes,
+	public String updatesoapnotes(HttpServletRequest request,@ModelAttribute("soapnotes") @Valid SoapNotes soapnotes,
 			BindingResult result,ModelMap model,Principal principal)
 	{
 		if (result.hasErrors())
@@ -1333,14 +1333,12 @@ public class MainController {
 	     
 	      soapnotesForm.setSoapnotes(soapDAO.getSoap(soapnotes.getSoapid()));
 	      
-	        model.addAttribute("SoapnotesForm", soapnotesForm);
+	        model.addAttribute("soapnotesForm", soapnotesForm);
 			    
 		        return "editsoapnotes";
 		}
-
-		System.out.println("Soap id`"+soapnotes.getSoapid());
-		int status = soapDAO.updatesoapnotes(soapnotes, soapnotes.getSoapid(), soapnotes.getPname());
-		
+		System.out.println("soapid"+soapnotes.getSoapid());
+		int status = soapDAO.updatesoapnotes(soapnotes, soapnotes.getSoapid(), principal.getName());
 		System.out.println(status);
 		
 		SoapnotesForm soapnotesForm = new SoapnotesForm();
@@ -1352,7 +1350,7 @@ public class MainController {
 	        return "viewsoapnotes";
 		
 	}
-
+	
 
 	@RequestMapping(value="/viewsoapnotes", method=RequestMethod.GET)
 	public String viewSoapNotes(HttpServletRequest request,ModelMap model, Principal principal) {
