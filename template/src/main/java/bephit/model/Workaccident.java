@@ -1,6 +1,7 @@
 package bephit.model;
 
 public class Workaccident {
+	private String patient_no;
 	private String job_classification;
 	private String doyou_pos;
 	private String doyou;
@@ -36,7 +37,7 @@ public class Workaccident {
 public Workaccident(){
 }
 
-public Workaccident(String job_classification,
+public Workaccident(String patient_no,String job_classification,
 		String doyou_pos,
 		String doyou,
 		String pick,
@@ -66,6 +67,7 @@ public Workaccident(String job_classification,
 		String like_job,
 		String return_job,
 		String changes_in_job){
+	this.patient_no = patient_no;
 	this.job_classification=job_classification;
 	this.doyou_pos=doyou_pos;
 	this.doyou=doyou;
@@ -96,6 +98,14 @@ public Workaccident(String job_classification,
 	this.like_job=like_job;
 	this.return_job=return_job;
 	this.changes_in_job=changes_in_job;
+}
+
+public String getPatient_no() {
+	return patient_no;
+}
+
+public void setPatient_no(String patient_no) {
+	this.patient_no = patient_no;
 }
 
 public String getJob_classification() {

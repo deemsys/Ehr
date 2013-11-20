@@ -379,10 +379,7 @@
 				                  <td valign="top" align="left" class="input_txt">
 				                  
 				                  	<input type="radio" name="Symptom_Accident" value="0" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Symptom_Accident" value="1" class="input_txt">No</td>
-				                  	<td>																										                                                              </td>
-				                  	<br>
-				
-				                  </td>
+				                  	
 				                </tr>   
 				                <tr class="row1">
 				                 	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Type Of Accident:</td>
@@ -400,43 +397,37 @@
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date Of Accident:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" id="datepicker2" class="input_txtbx1" name="Date_Of_Accident"/><br><span class="err"><form:errors path="PatientDetails.Date_Of_Accident"></form:errors></span>
-				                  	<td>                                                                                                                                      </td>
-				                  	
 				                  </td>
 				                </tr>
 				               <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Accident Reported:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="radio" name="Accident_Reported" value="0" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Accident_Reported" value="1" class="input_txt">No</td>
-				                  	<td></td>
-				                  </td>
+				                  
+				                  
 				                </tr>
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Medical Treatment for this Condition: &nbsp;&nbsp;&nbsp;&nbsp;When:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="When" /> <br><span class="err"><form:errors path="PatientDetails.When"></form:errors></span></td>
-				                  	<td></td>
+				                  	
 				                  	</tr>
 				                  	<tr class="row1">
-				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Where:</td></span>
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Where:</td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Where"/><br><span class="err"><form:errors path="PatientDetails.Where"></form:errors></span>
-				                  <td></td>
-				                  </td>
-				                </tr>
+				                    </tr>
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Have You Retained an Attorney for this Accident:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="radio" name="Attorney_accident" value="0" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Attorney_accident" value="1" class="input_txt">No</td>
-				                  	<td></td>
-				                  </td>
+				                
 				                </tr>
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name Of Attorney:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="NameOfAttorney" /><br><span class="err"><form:errors path="PatientDetails.NameOfAttorney"></form:errors></span>
-				                  	<td>                                                                                                      </td>
-				                  </td>
+				                  
 				                </tr>
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>phone:</td>
@@ -674,13 +665,14 @@
                   <td><input type="submit" class="submit_btn" value="Save"></td>
                   <td><input type="reset" class="submit_btn" value="Cancel" onclick="window.location.href='patientDetails'"></td>
 				 
-				</table>  
-
-				                  	</div>
-				               
-                </body>
-                </html>
-               <script>          
+			</tr>
+			</table>
+			</div>
+			
+			</body>
+			</html>
+		
+<script>          
   
   $(function() {
 	    $( "#slider" ).slider({

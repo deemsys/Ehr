@@ -174,6 +174,7 @@ private String Numbness;
 private String Convulsions;
 private String Epilepsy;
 private String Concussion;
+private String Dizziness;
 private String Neuritis;
 private String Rheumatism;
 private String Diabetes;
@@ -2263,6 +2264,28 @@ public PatientDetails()
 
 
 
+public String getDizziness() {
+	return Dizziness;
+}
+
+
+
+
+
+
+
+
+public void setDizziness(String dizziness) {
+	Dizziness = dizziness;
+}
+
+
+
+
+
+
+
+
 public PatientDetails(String Patient_id,
 		String Name,
 		String Date,
@@ -2332,6 +2355,7 @@ public PatientDetails(String Patient_id,
 		String Convulsions,
 		String Epilepsy,
 		String Concussion,
+		String Dizziness,
 		String Neuritis,
 		String Rheumatism,
 		String Diabetes,
@@ -2433,6 +2457,7 @@ public PatientDetails(String Patient_id,
 	this.Convulsions=Convulsions;
 	this.Epilepsy=Epilepsy;
 	this.Concussion=Concussion;
+	this.Dizziness = Dizziness;
 	this.Neuritis=Neuritis;
 	this.Rheumatism=Rheumatism;
 	this.Diabetes=Diabetes;

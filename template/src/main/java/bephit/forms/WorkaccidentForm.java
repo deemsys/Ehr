@@ -6,14 +6,14 @@ import bephit.model.Workaccident;
 
 
 public class WorkaccidentForm {
-	private List<Workaccident> Workaccident;
+	private List<Workaccident> workaccident;
 	 
     public List<Workaccident> getWorkaccident() {
-		return Workaccident;
+		return workaccident;
 	}
 
 	public void setWorkaccident(List<Workaccident> workaccident) {
-		this.Workaccident = workaccident;
+		this.workaccident = workaccident;
 	}
 	
  
