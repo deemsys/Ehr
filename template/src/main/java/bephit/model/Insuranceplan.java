@@ -5,35 +5,39 @@ import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.NotEmpty;
 
 public class Insuranceplan {
-	@NotEmpty 
 	
+	private String no;
+	@NotEmpty 
 	private String insure_comp;
+	
 	@NotEmpty
 	private String addr;
-	@NotEmpty
 	
+	@NotEmpty
 	private String pat_name;
+	
 	@NotEmpty
 	private String accident_date;
-	@NotEmpty
 	
+	@NotEmpty
 	private String enrollee;
+	
 	@NotEmpty
 	private String no_objection;
-	@NotEmpty
 	
-	private String by;
 	@NotEmpty
+	private String agentname;
 	
+	@NotEmpty
 	private String fax;
-	@NotEmpty
 	
+	@NotEmpty
 	private String name_of_clinic;
-	@NotEmpty
 	
+	@NotEmpty
 	private String pat;
-	@NotEmpty
 	
+	@NotEmpty
 	private String authorized;
 	
 	
@@ -41,28 +45,37 @@ public class Insuranceplan {
 public Insuranceplan(){
 }
 
-public Insuranceplan(String insure_comp,
+public Insuranceplan(String no,String insure_comp,
 		String addr,
 		String pat_name,
 		String accident_date,
 		String enrollee,
 		String no_objection,
-		String by,
+		String agentname,
 		String fax,
 		String name_of_clinic,
 		String pat,
 		String authorized){
+	this.no=no;
 	this.insure_comp=insure_comp;
 	this.addr=addr;
 	this.pat_name=pat_name;
 	this.accident_date=accident_date;
 	this.enrollee=enrollee;
 	this.no_objection=no_objection;
-	this.by=by;
+	this.agentname=agentname;
 	this.fax=fax;
 	this.name_of_clinic=name_of_clinic;
 	this.pat=pat;
 	this.authorized=authorized;
+}
+
+public String getNo() {
+	return no;
+}
+
+public void setNo(String no) {
+	this.no = no;
 }
 
 public String getInsure_comp() {
@@ -113,12 +126,12 @@ public void setNo_objection(String no_objection) {
 	this.no_objection = no_objection;
 }
 
-public String getBy() {
-	return by;
+public String getAgentname() {
+	return agentname;
 }
 
-public void setBy(String by) {
-	this.by = by;
+public void setAgentname(String agentname) {
+	this.agentname = agentname;
 }
 
 public String getFax() {

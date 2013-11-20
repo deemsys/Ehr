@@ -148,7 +148,7 @@ $(function() {
  </td>
  </tr>
  <tr>
- <td>&nbsp;&nbsp;<input type="text" id="datepicker" class="input_txtbx1"  name="date1" value="${soapnotes.date1}"></td>
+ <td>&nbsp;&nbsp;<input type="text" id="datepicker1" class="input_txtbx1"  name="date1" value="${soapnotes.date1}"></td>
  <td></td>
  <td></td>
  <td>
@@ -198,7 +198,7 @@ $(function() {
 				  </td>
  </tr>
  <tr>
- <td>&nbsp;&nbsp;<input type="text" id="datepicker1" class="input_txtbx1"  name="date2" value="${soapnotes.date2}"></td>
+ <td>&nbsp;&nbsp;<input type="text" id="datepicker"  name="date2" value="${soapnotes.date2}"></td>
  <td>
  <br/>
 &nbsp &nbsp Improved: <select name="improved1" id="improved1" class="input_cmbbx1" onchange='Checksymptom(this.value);'>

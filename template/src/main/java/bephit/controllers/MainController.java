@@ -623,7 +623,7 @@ public class MainController {
 	@RequestMapping(value="/insuranceplan", method = RequestMethod.POST)
 	public String insert_insuranceplan(HttpSession session,@ModelAttribute("Insuranceplan") @Valid Insuranceplan insuranceplan,BindingResult result,ModelMap model) {
 		session.setAttribute("waiver",insuranceplan);
-		if(result.hasErrors())
+		/*if(result.hasErrors())
 		{
 			InsuranceplanForm insuranceplanForm= new InsuranceplanForm();
 	    	insuranceplanForm.setInsuranceplan(planDAO.getInsuranceplan());
@@ -632,20 +632,14 @@ public class MainController {
 			return "insuranceplan";
 			
 		}
-		
-		
-		
+	*/	
 		model.put("Insuranceplan", insuranceplan);
 		model.addAttribute("InsuranceplanForm",insuranceplan);
     	int e =planDAO.setInsuranceplan(insuranceplan);
     	InsuranceplanForm insuranceplanForm= new InsuranceplanForm();
     	insuranceplanForm.setInsuranceplan(planDAO.getInsuranceplan());
 		model.addAttribute("InsuranceplanForm",insuranceplanForm);
-
-		
-	    
-		
-		return "insuranceplan";
+        return "insuranceplan";
 	}
 	
 	@RequestMapping(value="/hardshipagreement", method = RequestMethod.GET)
@@ -1061,17 +1055,7 @@ public class MainController {
  
 	}
 	
-	@RequestMapping(value="/viewinsuranceplan", method = RequestMethod.GET)
-	public String viewinsuranceplan(HttpServletRequest request,ModelMap model) {
-		
-		InsuranceplanForm insuranceplanForm= new InsuranceplanForm();
-    	insuranceplanForm.setInsuranceplan(planDAO.getInsuranceplan());
-		model.addAttribute("InsuranceplanForm",insuranceplanForm);
-		
-		return "viewinsuranceplan";
- 
-	}
-	
+	/*	
 	@RequestMapping(value="/viewinsuranceinformation", method = RequestMethod.GET)
 	public String viewinsuranceinformation(HttpServletRequest request,ModelMap model) {
 		
@@ -1081,6 +1065,74 @@ public class MainController {
 		
 		return "viewinsuranceinformation";
  
+	}
+*/	
+	
+	@RequestMapping(value="/viewinsuranceplan", method = RequestMethod.GET)
+	public String viewinsuranceplan(HttpServletRequest request,ModelMap model) {
+		
+		InsuranceplanForm insuranceplanForm= new InsuranceplanForm();
+    	insuranceplanForm.setInsuranceplan(planDAO.getInsuranceplan());
+		model.addAttribute("insuranceplanform",insuranceplanForm);
+		
+		return "viewinsuranceplan";
+ 
+	}
+   
+	@RequestMapping(value="/editinsuranceplan", method = RequestMethod.GET)
+	public String editinsuranceplan(HttpServletRequest request,ModelMap model) {
+		InsuranceplanForm insuranceplanForm= new InsuranceplanForm();
+    	insuranceplanForm.setInsuranceplan(planDAO.getInsuranceplan());
+		model.addAttribute("insuranceplanform",insuranceplanForm);
+		
+		return "editinsuranceplan";
+ 
+	}
+	@RequestMapping(value="/updateinsuranceplan", method=RequestMethod.POST)
+	public String updateinsuranceplan(HttpServletRequest request,@ModelAttribute("insuranceplan") @Valid Insuranceplan insuranceplan,
+			BindingResult result,ModelMap model,Principal principal)
+	{
+		/*if (result.hasErrors())
+		{
+			InsuranceplanForm insuranceplanForm = new InsuranceplanForm();
+	     //   participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants(participant.getParticipants_id()));
+	      insuranceplanForm.setInsuranceplan(planDAO.getPlan(insuranceplan.getNo()));
+	      
+	        model.addAttribute("insuranceplanForm", insuranceplanForm);
+			    
+		        return "editinsuranceplan";
+		}*/
+		
+		int status = planDAO.updateinsuranceplan(insuranceplan, insuranceplan.getNo(), principal.getName());
+		System.out.println(status);
+		
+		InsuranceplanForm insuranceplanForm = new InsuranceplanForm();
+        
+        insuranceplanForm.setInsuranceplan(planDAO.getInsuranceplan());
+       
+        model.addAttribute("insuranceplanform", insuranceplanForm);
+	       model.addAttribute("success","true");
+	        return "viewinsuranceplan";
+		
+	}
+
+	@RequestMapping(value="/deleteinsuranceplan", method=RequestMethod.GET)
+	public String removeInsuranceplan(@RequestParam("no") String no,ModelMap model, Principal principal) {
+	
+		int status=planDAO.deleteinsuranceplan(no);
+		
+		if(status==1)
+		{
+        model.addAttribute("success","true");
+		//ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
+		InsuranceplanForm insuranceplanForm = new InsuranceplanForm();
+		//participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
+		insuranceplanForm.setInsuranceplan(planDAO.getInsuranceplan());
+        model.addAttribute("insuranceplanform", insuranceplanForm);
+      
+		}
+		
+		return "insuranceplan";
 	}
 	
 	@RequestMapping(value="/viewinsuranceverification", method = RequestMethod.GET)
@@ -1186,15 +1238,7 @@ public class MainController {
 	}
 	
 	
-	@RequestMapping(value="/editinsuranceplan", method = RequestMethod.GET)
-	public String editinsuranceplan(HttpServletRequest request,ModelMap model) {
-		InsuranceplanForm insuranceplanForm= new InsuranceplanForm();
-    	insuranceplanForm.setInsuranceplan(planDAO.getInsuranceplan());
-		model.addAttribute("InsuranceplanForm",insuranceplanForm);
-		
-		return "editinsuranceplan";
- 
-	}
+	
 	
 	@RequestMapping(value="/editinsuranceinformation", method = RequestMethod.GET)
 	public String editinsuranceinformation(HttpServletRequest request,ModelMap model) {

@@ -38,7 +38,7 @@
 	            </div>
 	            <div class="contentbox">
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
-               <c:set value="${InsuranceplanForm.insuranceplan[0]}" var="Insuranceplan"> </c:set>
+               <c:set value="${insuranceplanform.insuranceplan[0]}" var="Insuranceplan"> </c:set>
               <tr class="row1">
               <td >${Insuranceplan.insure_comp}</td>
               </tr>
@@ -77,7 +77,7 @@
         <td>By</td>
         </tr>
         <tr class="row1">
-        <td>${Insuranceplan.by}</td>
+        <td>${Insuranceplan.agentname}</td>
         <td></td>
         <td></td>
         </tr>
@@ -108,7 +108,7 @@
        <td valign="top" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>  
         <td valign="top" align="center"><br><input type="button" class="submit_btn" value="Edit" onclick="window.location.href='editinsuranceplan'"></td>
         <td>&nbsp;&nbsp;</td>
-        <td valign="top" align="center"><br><input type="button" class="submit_btn" value="Delete"></td>
+       <td valign="top" align="center"> <a href="<c:out value="deleteinsuranceplan?no=${Insuranceplan.no}"/>"><br/><input type="button" class="submit_btn" value="Delete" onclick='confirmation()'/></a></td>
          
         </tr>
         </table>
@@ -119,6 +119,16 @@
         </table>
         </form>
         </div>
-        </body>
-        </html>
-         <jsp:include page="footer.jsp"></jsp:include>   
+        
+        <script language="javascript">
+        function confirmation() {
+	var answer = confirm("Are you Sure You Want to Delete  Patient insuranceplan ?")
+	if (answer){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+        </script>
+                <jsp:include page="footer.jsp"></jsp:include>   

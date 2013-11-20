@@ -166,4 +166,3 @@ window.location="?do=viewparticipants&moblie="+document.getElementById("moblie")
 </script> 
 
 <jsp:include page="footer.jsp"></jsp:include>	
-		
