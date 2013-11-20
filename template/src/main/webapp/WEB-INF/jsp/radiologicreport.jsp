@@ -1,13 +1,12 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
 
 <link rel="stylesheet" href="resources/css/tabs.css" type="text/css" />
-<link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
-  <link rel="stylesheet" href="/resources/css/style.css" />
-<script src="resources/js/jquery.min.js"></script>
- <script src="resources/js/jquery-ui.js"></script>
+
  <script src="resources/js/tabs-1.9.1.js"></script>
   <script src="resources/js/tabs-ui.js"></script>
    
@@ -40,24 +39,45 @@
 	              <h2 align="center" >Radiologic Report<br></b></h2>
 	       </div></div> 
 	        <div class="contentbox">
+	          <c:choose>
+		     <c:when test="${empty radio}">
 	        <table cellpadding="0" cellspacing="0" border="0" width="100%">
   				<tr>
     				<td>
     				<table cellpadding="0" cellspacing="0" border="0" width="100%">
 	                            <tr class="row1">
 				                  <td>Patient Name:</td>
-				                  <td><input type="text" class="input_txtbx1" id="pname" name="pname" /></td>
+				                  <td><input type="text" class="input_txtbx1" id="pname" name="pname" /><br/><span class="err"><form:errors path="RadiologicReport.pname"></form:errors></td>
 				                  <td>Date:</td>
-				                  <td><input type="text" class="input_txtbx1" id="datepicker" name="date" /></td>
+				                  <td><input type="text" class="input_txtbx1" id="datepicker" name="date" /><br/><span class="err"><form:errors path="RadiologicReport.date"></form:errors></td>
 				                  <td>I.D.#:</td>
-				                  <td><input type="text" class="input_txtbx1" id="id" name="id" /></td>
+				                  <td><input type="text" class="input_txtbx1" id="id" name="id" /><br/><span class="err"><form:errors path="RadiologicReport.id"></form:errors></td>
 				                  <td>Date Of Birth</td>
-				                  <td><input type="text" class="input_txtbx1" id="datepicker1" name="dob" /></td>
+				                  <td><input type="text" class="input_txtbx1" id="datepicker1" name="dob" /><br/><span class="err"><form:errors path="RadiologicReport.dob"></form:errors></td>
 				                </tr>
 				    </table>
+				    
+				   
 				    </td>
 				    </tr>
 				    </table>
+				   </c:when>
+				   
+				    <c:otherwise>
+				    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+	                            <tr class="row1">
+				                  <td>Patient Name:</td>
+				                  <td><input type="text" class="input_txtbx1" id="pname" name="pname" value="${radio.pname }"/><br/><span class="err"><form:errors path="RadiologicReport.pname"></form:errors></td>
+				                  <td>Date:</td>
+				                  <td><input type="text" class="input_txtbx1" id="datepicker" name="date" value="${radio.date }"/><br/><span class="err"><form:errors path="RadiologicReport.date"></form:errors></td>
+				                  <td>I.D.#:</td>
+				                  <td><input type="text" class="input_txtbx1" id="id" name="id" value="${radio.id }"/><br/><span class="err"><form:errors path="RadiologicReport.id"></form:errors></td>
+				                  <td>Date Of Birth</td>
+				                  <td><input type="text" class="input_txtbx1" id="datepicker1" name="dob" value="${radio.dob }"/><br/><span class="err"><form:errors path="RadiologicReport.dob"></form:errors></td>
+				                </tr>
+				    </table>
+				    </c:otherwise>
+				    </c:choose> 
 				    </div>
 				    </td>
 				    </tr>

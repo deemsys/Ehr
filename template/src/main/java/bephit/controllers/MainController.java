@@ -78,7 +78,7 @@ import bephit.model.*;
  
  
 @Controller
-@SessionAttributes({"screen"})
+@SessionAttributes({"physical","radio","waiver","info","consent","minor","hard","screen","medical","assignment","hippa","staff","veri"})
 public class MainController {
 	
 	@Autowired  
@@ -177,22 +177,25 @@ public class MainController {
  
 	}
 	@RequestMapping(value="/physicalexam", method = RequestMethod.GET)
-	public String physicalform(ModelMap model) {
+	public String physicalform(HttpSession session, ModelMap model) {
+		session.removeAttribute("physical");
 		return "physicalexam";
  
 	}
 
 	
 	@RequestMapping(value="/physicalexam", method = RequestMethod.POST)
-	public String insert_physicalexam(@ModelAttribute("Physicalexam")  @Valid Physicalexam physicalexam,BindingResult result,ModelMap model) {
-		/*if(result.hasErrors())
+	public String insert_physicalexam(HttpSession session,@ModelAttribute("Physicalexam")  @Valid Physicalexam physicalexam,BindingResult result,ModelMap model) {
+		
+		session.setAttribute("physical",physicalexam);
+		if(result.hasErrors())
 		{
-			AutoaccidentForm autoaccidentForm= new AutoaccidentForm();
-			autoaccidentForm.setAutoaccident(autoDAO.getAutoaccident());
-			model.addAttribute("AutoaccidentForm",autoaccidentForm);
+			PhysicalexamForm physicalexamForm= new PhysicalexamForm();
+			physicalexamForm.setPhysicalexam(physicalDAO.getPhysicalexam());
+			model.addAttribute("physicalexamForm",physicalexamForm);
 			model.addAttribute("Success","true");
-			return "autoaccident";
-		}*/
+			return "physicalexam";
+		}
 		
 		
 		
@@ -205,7 +208,6 @@ public class MainController {
 		physicalexamForm.setPhysicalexam(physicalDAO.getPhysicalexam());
 		model.addAttribute("physicalexamForm",physicalexamForm);
 
-		//System.out.println(autoaccident.getAdjustersname());
 	    
 		
 		return "physicalexam";
@@ -358,13 +360,14 @@ public class MainController {
  
 	}
 	@RequestMapping(value="/radiologicreport", method=RequestMethod.GET)
-	public String radiologicreport(ModelMap model) {
-		
+	public String radiologicreport(HttpSession session,ModelMap model) {
+		session.removeAttribute("radio");
 		return "radiologicreport";
 	}
 	@RequestMapping(value="/radiologicreport", method = RequestMethod.POST)
-	public String insert_radiologicreport(@ModelAttribute("RadiologicReport")  @Valid RadiologicReport radiologicreport,BindingResult result,ModelMap model) {
-			if(result.hasErrors())
+	public String insert_radiologicreport(HttpSession session,@ModelAttribute("RadiologicReport")  @Valid RadiologicReport radiologicreport,BindingResult result,ModelMap model) {
+		session.setAttribute("radio",radiologicreport);	
+		if(result.hasErrors())
 			{
 				RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
 				radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport());
@@ -518,14 +521,16 @@ public class MainController {
 		return "workaccident";
 	}
 	@RequestMapping(value="/insuranceinformation", method = RequestMethod.GET)
-	public String insuranceinformation(ModelMap model) {
+	public String insuranceinformation(HttpSession session,ModelMap model) {
 		
+		session.removeAttribute("info");
 		return "insuranceinformation";
  
 	}
 	
 	@RequestMapping(value="/insuranceinformation", method = RequestMethod.POST)
-	public String insert_insuranceinformation(@ModelAttribute("Insuranceinformation")  @Valid Insuranceinformation insuranceinformation,BindingResult result,ModelMap model) {
+	public String insert_insuranceinformation(HttpSession session,@ModelAttribute("Insuranceinformation")  @Valid Insuranceinformation insuranceinformation,BindingResult result,ModelMap model) {
+		session.setAttribute("info",insuranceinformation);
 		if(result.hasErrors())
 		{
 			InsuranceinformationForm insuranceinformationForm= new InsuranceinformationForm();
@@ -551,14 +556,15 @@ public class MainController {
 	}
 	
 	@RequestMapping(value="/insuranceverification", method = RequestMethod.GET)
-	public String insuranceverification(ModelMap model) {
-		
+	public String insuranceverification(HttpSession session,ModelMap model) {
+		session.removeAttribute("veri");
 		return "insuranceverification";
  
 	}
 	
 	@RequestMapping(value="/insuranceverification", method = RequestMethod.POST)
-	public String insert_insuranceverification(@ModelAttribute("Insuranceverification")  @Valid Insuranceverification insuranceverification,BindingResult result,ModelMap model) {
+	public String insert_insuranceverification(HttpSession session,@ModelAttribute("Insuranceverification")  @Valid Insuranceverification insuranceverification,BindingResult result,ModelMap model) {
+		session.setAttribute("veri",insuranceverification);
 		if(result.hasErrors())
 		{
 			InsuranceverificationForm insuranceverificationForm= new InsuranceverificationForm();
@@ -582,14 +588,15 @@ public class MainController {
 		return "insuranceverification";
 	}
 	@RequestMapping(value="/insuranceplan", method = RequestMethod.GET)
-	public String insuranceplan(ModelMap model) {
-		
+	public String insuranceplan(HttpSession session,ModelMap model) {
+		session.removeAttribute("waiver");
 		return "insuranceplan";
  
 	}
 	
 	@RequestMapping(value="/insuranceplan", method = RequestMethod.POST)
-	public String insert_insuranceplan(@ModelAttribute("Insuranceplan") @Valid Insuranceplan insuranceplan,BindingResult result,ModelMap model) {
+	public String insert_insuranceplan(HttpSession session,@ModelAttribute("Insuranceplan") @Valid Insuranceplan insuranceplan,BindingResult result,ModelMap model) {
+		session.setAttribute("waiver",insuranceplan);
 		if(result.hasErrors())
 		{
 			InsuranceplanForm insuranceplanForm= new InsuranceplanForm();
@@ -616,16 +623,18 @@ public class MainController {
 	}
 	
 	@RequestMapping(value="/hardshipagreement", method = RequestMethod.GET)
-	public String hardshipagreement(ModelMap model) {
+	public String hardshipagreement(HttpSession session,ModelMap model) {
 		
+		session.removeAttribute("hard");
 		return "hardshipagreement";
  
 	}
 	
 
 	@RequestMapping(value="/hardshipagreement", method = RequestMethod.POST)
-	public String insert_hardshipagreement(@ModelAttribute("Hardshipagreement") @Valid Hardshipagreement Hardshipagreement,BindingResult result,ModelMap model) {
-		 
+	public String insert_hardshipagreement(HttpSession session,@ModelAttribute("Hardshipagreement") @Valid Hardshipagreement Hardshipagreement,BindingResult result,ModelMap model) {
+		
+		session.setAttribute("hard",Hardshipagreement);
 		if(result.hasErrors())
 		{
 			
@@ -649,14 +658,16 @@ public class MainController {
 	}
 	
 	@RequestMapping(value="/staffchecklist", method = RequestMethod.GET)
-	public String staffchecklist(ModelMap model) {
+	public String staffchecklist(HttpSession session,ModelMap model) {
 		
+		session.removeAttribute("staff");
 		return "staffchecklist";
  
 	}
 	
 	@RequestMapping(value="/staffchecklist", method = RequestMethod.POST)
-	public String insert_staffchecklist(@ModelAttribute("Staffchecklist")  @Valid Staffchecklist staffchecklist,BindingResult result,ModelMap model) {
+	public String insert_staffchecklist(HttpSession session,@ModelAttribute("Staffchecklist")  @Valid Staffchecklist staffchecklist,BindingResult result,ModelMap model) {
+		session.setAttribute("staff",staffchecklist);
 		if(result.hasErrors())
 		{
 			StaffchecklistForm staffchecklistForm= new StaffchecklistForm();
@@ -715,38 +726,44 @@ public class MainController {
 	
 
 	@RequestMapping(value="/Assignment",method=RequestMethod.GET)
-	public String Assignment(ModelMap model)
+	public String Assignment(HttpSession session,ModelMap model)
 	{
+		session.removeAttribute("assignment");
 		return "Assignment";
 	}
 	
 	@RequestMapping(value="/treatform",method=RequestMethod.GET)
-	public String treatform(ModelMap model)
+	public String treatform(HttpSession session, ModelMap model)
 	{
+		session.removeAttribute("consent");
 		return "treatform";
 	}
 	@RequestMapping(value="/treatminor",method=RequestMethod.GET)
-	public String treatminor(ModelMap model)
+	public String treatminor(HttpSession session,ModelMap model)
 	{
+		session.removeAttribute("minor");
 		return "treatminor";
 	}
 	
 	
 	@RequestMapping(value="/medicalrecords",method=RequestMethod.GET)
-	public String medicalrecords(ModelMap model)
+	public String medicalrecords(HttpSession session,ModelMap model)
 	{
+		session.removeAttribute("medical");
 		return "medicalrecords";
 	}
 	
 	@RequestMapping(value="/screeningAuthz",method=RequestMethod.GET)
-	public String screeningAuthz(ModelMap model)
+	public String screeningAuthz(HttpSession session,ModelMap model)
 	{
+		session.removeAttribute("screen");
 		return "screeningAuthz";
 	}
 	
 	@RequestMapping(value="/Hippaprivacy",method=RequestMethod.GET)
-	public String Hippaprivacy(ModelMap model)
+	public String Hippaprivacy(HttpSession session,ModelMap model)
 	{
+		session.removeAttribute("hippa");
 		return "Hippaprivacy";
 	}
 	
@@ -770,9 +787,9 @@ public class MainController {
 	//validation
 	
 	@RequestMapping(value="/Assignment", method = RequestMethod.POST)
-	public String insertassignmentDetails(@ModelAttribute("Assignment") @Valid Assignment assignmentdetails,BindingResult result,ModelMap model) {
+	public String insertassignmentDetails(HttpSession session,@ModelAttribute("Assignment") @Valid Assignment assignmentdetails,BindingResult result,ModelMap model) {
 		
-				
+			session.setAttribute("assignment",assignmentdetails);	
 			if (result.hasErrors())
 			{
 				AssignmentDetailsForm assignmentdetailsform= new AssignmentDetailsForm();
@@ -798,7 +815,7 @@ public class MainController {
 	public String AddscreeningDetails(HttpSession session,@ModelAttribute("screeningAuthz") @Valid screeningAuthz screeningdetails,
 			BindingResult result,ModelMap model) 
 	{		
-		session.setAttribute("screen",screeningdetails);
+		session.setAttribute("screen", screeningdetails);
 		if (result.hasErrors())
 		{
 			ScreeningAuthzForm screeningauthzform= new ScreeningAuthzForm();
@@ -825,9 +842,10 @@ public class MainController {
 	
 	
 	@RequestMapping(value="/Hippaprivacy", method = RequestMethod.POST)
-	public String inserthippaDetails(@ModelAttribute("HippaPrivacy") @Valid HippaPrivacy privacydetails,BindingResult result,ModelMap model) 
+	public String inserthippaDetails(HttpSession session,@ModelAttribute("HippaPrivacy") @Valid HippaPrivacy privacydetails,BindingResult result,ModelMap model) 
 		{		
-			if (result.hasErrors())
+		session.setAttribute("hippa",privacydetails);	
+		if (result.hasErrors())
 			{
 				HippaPrivacyForm hippaprivacyform= new HippaPrivacyForm();
 				hippaprivacyform.setPrivacyDetails(hippaDAO.getPrivacyDetails());
@@ -850,10 +868,11 @@ public class MainController {
 
 	
 	@RequestMapping(value="/medicalrecords", method = RequestMethod.POST)
-	public String insertmedicalDetails(@ModelAttribute("MedicalRecords") @Valid MedicalRecords medicaldetails,BindingResult result,
+	public String insertmedicalDetails(HttpSession session,@ModelAttribute("MedicalRecords") @Valid MedicalRecords medicaldetails,BindingResult result,
 			ModelMap model) 
 		{		
-			if (result.hasErrors())
+		session.setAttribute("medical",medicaldetails);	
+		if (result.hasErrors())
 			{
 				MedicalRecordsForm medicalrecordsform= new MedicalRecordsForm();
 				medicalrecordsform.setMedicalDetails(medicalDAO.getMedicalDetails());
@@ -876,8 +895,9 @@ public class MainController {
 	}
 	
 	@RequestMapping(value="/treatform", method = RequestMethod.POST)
-	public String inserttreatDetails(@ModelAttribute("Treatform") @Valid Treatform treatdetails,BindingResult result,
+	public String inserttreatDetails(HttpSession session,@ModelAttribute("Treatform") @Valid Treatform treatdetails,BindingResult result,
 			ModelMap model) {
+		session.setAttribute("consent",treatdetails);
 		if (result.hasErrors())
 		{
 			TreatForm treatform= new TreatForm();
@@ -902,7 +922,8 @@ public class MainController {
 		
 	
 	@RequestMapping(value="/treatminor", method = RequestMethod.POST)
-	public String insertminorDetails(@ModelAttribute("TreatMinor") @Valid TreatMinor minordetails,BindingResult result,ModelMap model) {
+	public String insertminorDetails(HttpSession session,@ModelAttribute("TreatMinor") @Valid TreatMinor minordetails,BindingResult result,ModelMap model) {
+		session.setAttribute("minor",minordetails);
 		if (result.hasErrors())
 		{
 			TreatMinorDetailsForm treatminordetailsform= new TreatMinorDetailsForm();
@@ -1385,9 +1406,7 @@ public class MainController {
 		if(status==1)
 		{
         model.addAttribute("success","true");
-		//ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
 		SoapnotesForm soapnotesForm = new SoapnotesForm();
-		//participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
 		soapnotesForm.setSoapnotes(soapDAO.getSoapnotes());
         model.addAttribute("soapnotesForm", soapnotesForm);
       

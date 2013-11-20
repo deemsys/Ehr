@@ -33,6 +33,8 @@
 	              <h2>Release Of Medical Records Authorization</h2>
 	            </div>
             <div class="contentbox">
+            <c:choose>
+            <c:when test="${empty medical}">
             <table cellpadding="0" cellspacing="0" border="0" width="100%">
   				<tr>
     				<td align="left" valign="top" width="100%" style="padding-right:25px;">
@@ -52,6 +54,29 @@
 				                  	</td>
 				                  	</tr>
 				                  	</table>
+				                  	</c:when>
+				                  	<c:otherwise>
+				                  	 <table cellpadding="0" cellspacing="0" border="0" width="100%">
+  				<tr>
+    				<td align="left" valign="top" width="100%" style="padding-right:25px;">
+                        
+                        <table cellpadding="0" cellspacing="0" border="0" width="50%">
+                        <tr>
+                        <div align="justify">
+				                <p id="mypar">&nbsp;I, <input type="text" class="input_txtbx1" id="inp_id" name="name" value="${medical.name}"/><span class="err"><form:errors path="MedicalRecords.name"></form:errors></span>
+				                &nbsp;&nbsp;give my permission to release Medical Information, Records, X-ray Reports, or the following &nbsp;&nbsp;<input type="text" class="input_txtbx1" id="inp_id" name="medicalinformation" value="${medical.medicalinformation}"/><span class="err"><form:errors path="MedicalRecords.medicalinformation"></form:errors></span> &nbsp;&nbsp;to Lorain Injury Center, <br>Dr. Darrin Pordash D.C.<br>
+				                5190 Deroit Rd.<br>
+                                Sheffield Village, Ohio 44035<br>
+                                Fax 440-934-3107  </p>
+                         <tr class="row1">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Signature:  </td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="patientsignature" value="${medical.patientsignature}"/><span class="err"><form:errors path="MedicalRecords.patientsignature"></form:errors></span>
+				                  	</td>
+				                  	</tr>
+				                  	</table>
+				                  	</c:otherwise>
+				                  	</c:choose>
 				                  	<table>
 				                  	<tr>
 				  <td valign="top" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>

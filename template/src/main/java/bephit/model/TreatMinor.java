@@ -12,16 +12,17 @@ public class TreatMinor
 	@NotEmpty
 	
 	private String age;
-	@NotEmpty
 	
-	private String Drname;
 	@NotEmpty
+	private String drname;
 	
+	@NotEmpty
 	private String signed;
+	
 	@NotEmpty
 	private String pdate;
-	@NotEmpty
 	
+	@NotEmpty
 	private String pwitness;
 
 	public TreatMinor()
@@ -52,11 +53,11 @@ public class TreatMinor
 	public void setAge(String age) {
 		this.age = age;
 	}
-	public String getDrname() {
-		return Drname;
+	public String getdrname() {
+		return drname;
 	}
-	public void setDrname(String drname) {
-		Drname = drname;
+	public void setdrname(String drname) {
+		this.drname = drname;
 	}
 	public String getPwitness() {
 		return pwitness;
@@ -66,7 +67,7 @@ public class TreatMinor
 	}
 	public TreatMinor(String guardian,
 			String age,
-			String Drname,
+			String drname,
 			String signed,
 			String pdate,
 			String pwitness
@@ -74,7 +75,7 @@ public class TreatMinor
 	{
 	this.guardian=guardian;
 	this.age=age;
-	this.Drname=Drname;
+	this.drname=drname;
 	this.signed=signed;
 	this.pdate=pdate;
 	this.pwitness=pwitness;

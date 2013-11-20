@@ -37,7 +37,7 @@ public class TreatMinorDAO {
 	    try{
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
-	    	 String cmd="INSERT INTO `Minor_Details`(`guardian`,`age`,`Drname`,`signed`,`pdate`,`pwitness`) VALUES ('"+minordetails.getGuardian()+"','"+minordetails.getAge()+"','"+minordetails.getDrname()+"','"+minordetails.getSigned()+"','"+minordetails.getPdate()+"','"+minordetails.getPwitness()+"')";
+	    	 String cmd="INSERT INTO `Minor_Details`(`guardian`,`age`,`Drname`,`signed`,`pdate`,`pwitness`) VALUES ('"+minordetails.getGuardian()+"','"+minordetails.getAge()+"','"+minordetails.getdrname()+"','"+minordetails.getSigned()+"','"+minordetails.getPdate()+"','"+minordetails.getPwitness()+"')";
 	    	 System.out.println(cmd);
 	    	 statement.execute(cmd);
 		     flag=1;
@@ -77,7 +77,7 @@ public class TreatMinorDAO {
 	    try{
 			resultSet = statement.executeQuery("select * from Minor_Details");
 			while(resultSet.next()){
-				minor.add(new TreatMinor(resultSet.getString("guardian"),resultSet.getString("age"),resultSet.getString("Drname"),resultSet.getString("signed"),
+				minor.add(new TreatMinor(resultSet.getString("guardian"),resultSet.getString("age"),resultSet.getString("drname"),resultSet.getString("signed"),
 			    		resultSet.getString("pdate"),
 			    		resultSet.getString("pwitness")));
 			    System.out.println(minor);	

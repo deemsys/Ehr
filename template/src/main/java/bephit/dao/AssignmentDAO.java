@@ -37,7 +37,7 @@ public class AssignmentDAO {
 	    try{
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
-	    	 String cmd="INSERT INTO `Assignment_Details`(`Day`,`month`,`year`,`day1`,`month1`,`patientname`,`patientsign`,`patientdate`,`parentname`,`parentsign`,`parentdate`,`representative`,`representativedate`) VALUES ('"+assignmentdetails.getDay()+"','"+assignmentdetails.getMonth()+"','"+assignmentdetails.getYear()+"','"+assignmentdetails.getDay1()+"','"+assignmentdetails.getMonth1()+"','"+assignmentdetails.getPatientname()+"','"+assignmentdetails.getPatientsign()+"','"+assignmentdetails.getPatientdate()+"','"+assignmentdetails.getParentname()+"','"+assignmentdetails.getParentsign()+"','"+assignmentdetails.getParentdate()+"','"+assignmentdetails.getRepresentative()+"','"+assignmentdetails.getRepresentativedate()+"')";
+	    	 String cmd="INSERT INTO `Assignment_Details`(`day`,`month`,`year`,`day1`,`month1`,`patientname`,`patientsign`,`patientdate`,`parentname`,`parentsign`,`parentdate`,`representative`,`representativedate`) VALUES ('"+assignmentdetails.getday()+"','"+assignmentdetails.getMonth()+"','"+assignmentdetails.getYear()+"','"+assignmentdetails.getDay1()+"','"+assignmentdetails.getMonth1()+"','"+assignmentdetails.getPatientname()+"','"+assignmentdetails.getPatientsign()+"','"+assignmentdetails.getPatientdate()+"','"+assignmentdetails.getParentname()+"','"+assignmentdetails.getParentsign()+"','"+assignmentdetails.getParentdate()+"','"+assignmentdetails.getRepresentative()+"','"+assignmentdetails.getRepresentativedate()+"')";
 	    	 System.out.println(cmd);
 	    	 statement.execute(cmd);
 		     flag=1;
@@ -77,7 +77,7 @@ public class AssignmentDAO {
 	    try{
 			resultSet = statement.executeQuery("select * from Assignment_Details");
 			while(resultSet.next()){
-				assignment.add(new Assignment(resultSet.getString("Day"),
+				assignment.add(new Assignment(resultSet.getString("day"),
 			    		resultSet.getString("month"),
 			    		resultSet.getString("year"),
 			    		resultSet.getString("day1"),

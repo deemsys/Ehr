@@ -1,26 +1,71 @@
 package bephit.model;
 
+import javax.validation.constraints.Pattern;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class Physicalexam {
+	
 	      String physical_id;
+	     
+	      @NotEmpty
 	      String sign;
+	      
+	      @NotEmpty
 	      String name;
+	      
+	      @NotEmpty
 	      String id;
+	      
+	      @NotEmpty
 	      String date;
+	      
+	      @NotEmpty
 	      String age;
+	      
+	      @NotEmpty
 	      String sex;
+	      
+	      @NotEmpty
 	      String height;
+	      
+	      @NotEmpty
 	      String weight;
+	      
+	      @NotEmpty
 	      String temp;
+	      
+	      @NotEmpty
 	      String bp;
+	      
+	      @NotEmpty
 	      String pulse;
+	      
+	      @NotEmpty
 	      String appearance;
+	      
+	      @NotEmpty
 	      String weight1;
+	      
+	      @NotEmpty
 	      String gait;
+	      
+	      @NotEmpty
 	      String head;
+	      
+	      @NotEmpty
 	      String path;
+	      
+	      @NotEmpty
 	      String posture;
+	      
+	      @NotEmpty
 	      String romber;
+	      
+	      @NotEmpty
 	      String exam;
+	      
+	      @NotEmpty
 	      String abnormal;
 	      String headtiltright;
 	      String headtiltleft;

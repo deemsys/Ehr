@@ -172,11 +172,11 @@
 									<span>Doctor Forms</span>
 								</a>
 							</li>
-							<%-- <li>
-								<a href="Hippaprivacy" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>">
-									<span><img src="<c:url value="/resources/images/icon_01.png" />" alt="" style="padding:5px 5px 0 0;" />HIPPA Privacy</span>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" rel="ddsubmenu7">
+									<span>Admin Forms</span>
 								</a>
-							</li>  --%>
+							</li>  
 						</ul>
 						<div class="clear">
 						<script type="text/javascript">
@@ -244,6 +244,14 @@
 				             <li><a href="viewsoapnotes">View Soap Notes</a></li>
 
 </ul>
+
+<ul id="ddsubmenu7" class="ddsubmenustyle">
+
+							
+				            <li><a href="staffchecklist">Staff checklist</a></li>
+				            <li><a href="insuranceverification">Insurance verification</a></li>
+				            </ul>
+
 							
 				            <!-- <li><a href="showaddparticipantgroups">Add Participant Groups</a></li>
 							<li><a href="viewparticipantgroups">View Participant Groups</a></li> -->

@@ -5,10 +5,7 @@
 <head>
  <link rel="stylesheet" href="resources/css/tabs.css" type="text/css" />
   
-  <link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
-  <link rel="stylesheet" href="/resources/css/style.css" /> 
-     <script src="resources/js/jquery.min.js"></script>
- <script src="resources/js/jquery-ui.js"></script> 
+
   <script src="resources/js/tabs-1.9.1.js"></script>
   <script src="resources/js/tabs-ui.js"></script>
  
@@ -37,6 +34,8 @@
 	              <h2 align="center" >Chiropractic Therapy Center<br></b></h2>
 	       </div></div> 
 	       <div class="contentbox">
+	      <c:choose>
+		 <c:when test="${empty physical}">
 	        <table cellpadding="0" cellspacing="0" border="0" width="100%">
   				<tr>
     				<td align="left" valign="top" width="50%" style="padding-right:25px;">
@@ -45,61 +44,61 @@
 	                            <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Physician Signature :</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="sign" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="sign" /><span class="err"><form:errors path="Physicalexam.sign"></form:errors>
 				                  </td>
 				                </tr>
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Name :</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="name" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="name" /><span class="err"><form:errors path="Physicalexam.name"></form:errors>
 				                  </td>
 				                </tr>
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>ID :</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="id" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="id" /><span class="err"><form:errors path="Physicalexam.id"></form:errors>
 				                  </td>
 				                </tr>
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date :</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="datepicker" name="date" />
+				                  	<input type="text" class="input_txtbx1" id="datepicker" name="date" /><span class="err"><form:errors path="Physicalexam.date"></form:errors>
 				                  </td>
 				                </tr>
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Vitals-Age:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="age" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="age" /><span class="err"><form:errors path="Physicalexam.age"></form:errors>
 				                  </td>
 				                </tr>
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Sex:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="sex" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="sex" /><span class="err"><form:errors path="Physicalexam.sex"></form:errors>
 				                  </td>
 				                </tr>
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Height:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="height" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="height" /><span class="err"><form:errors path="Physicalexam.height"></form:errors>
 				                  </td>
 				                </tr>
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Weight:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="weight" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="weight" /><span class="err"><form:errors path="Physicalexam.weight"></form:errors>
 				                  </td>
 				                </tr>
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Temp:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="temp" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="temp" /><span class="err"><form:errors path="Physicalexam.temp"></form:errors>
 				                  </td>
 				                </tr>
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>BP:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="bp" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="bp" /><span class="err"><form:errors path="Physicalexam.bp"></form:errors>
 				                  </td>
 				                </tr>
 				                </table>
@@ -108,7 +107,7 @@
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Pulse:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="pulse" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="pulse" /><span class="err"><form:errors path="Physicalexam.pulse"></form:errors>
 				                  </td>
 				                </tr>
 				                <tr class="row1">
@@ -170,12 +169,165 @@
 				               <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Abnormal Findings:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="abnormal" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="abnormal" /><span class="err"><form:errors path="Physicalexam.abnormal"></form:errors>
 				                  </td>
 				                </tr>
 				               
 				              
 				                </table>
+				                </c:when>
+				                <c:otherwise>
+				                <table cellpadding="0" cellspacing="0" border="0" width="100%">
+  				<tr>
+    				<td align="left" valign="top" width="50%" style="padding-right:25px;">
+    					<!-- <h2 class="quck-txt">Patient Details</h2> -->
+    					<%-- <c:set value="${physicalexamForm.physicalexam[0]}" var="physicalexam"/> --%>
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+	                            <tr class="row2">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Physician Signature :</td>
+				                  <input type="hidden" class="input_txtbx1" id="inp_id" value="${physicalexam.physical_id}" name="physical_id" />
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="sign" value="${physical.sign}" /><span class="err"><form:errors path="Physicalexam.sign"></form:errors>
+				                  </td>
+				                </tr>
+				                <tr class="row1">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Name :</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="name" value="${physical.name}"/><span class="err"><form:errors path="Physicalexam.name"></form:errors>
+				                  </td>
+				                </tr>
+				                <tr class="row2">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>ID :</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="id" value="${physical.id}"/><span class="err"><form:errors path="Physicalexam.id"></form:errors>
+				                  </td>
+				                </tr>
+				                <tr class="row1">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date :</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="date" value="${physical.date}" /><span class="err"><form:errors path="Physicalexam.date"></form:errors>
+				                  </td>
+				                </tr>
+				                <tr class="row2">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Vitals-Age:</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="age" value="${physical.age}"/><span class="err"><form:errors path="Physicalexam.age"></form:errors>
+				                  </td>
+				                </tr>
+				                <tr class="row1">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Sex:</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="sex" value="${physical.sex}"/><span class="err"><form:errors path="Physicalexam.sex"></form:errors>
+				                  </td>
+				                </tr>
+				                <tr class="row2">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Height:</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="height" value="${physical.height}"/><span class="err"><form:errors path="Physicalexam.height"></form:errors>
+				                  </td>
+				                </tr>
+				                <tr class="row1">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Weight:</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="weight" value="${physical.weight}"/><span class="err"><form:errors path="Physicalexam.weight"></form:errors>
+				                  </td>
+				                </tr>
+				                <tr class="row2">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Temp:</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="temp" value="${physical.temp}"/><span class="err"><form:errors path="Physicalexam.temp"></form:errors>
+				                  </td>
+				                </tr>
+				                <tr class="row1">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>BP:</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="bp" value="${physical.bp}"/><span class="err"><form:errors path="Physicalexam.bp"></form:errors>
+				                  </td>
+				                </tr>
+				                </table>
+				                <td align="left" valign="top"> 
+							<table cellpadding="0" cellspacing="0" border="0" width="100%">
+				                <tr class="row2">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Pulse:</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="pulse" value="${physical.pulse}"/><span class="err"><form:errors path="Physicalexam.pulse"></form:errors>
+				                  </td>
+				                </tr>
+				                <tr class="row1">
+				                 	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Appearance:</td>
+				                  	<td valign="top" align="left" class="input_txt">
+				                  		<select name="appearance" class="input_cmbbx1">
+				                  		<option value="excellent" <c:if test="${physical.appearance=='excellent'}"><c:out value="selected"/></c:if>>Excellent</option>
+						                 <option value="good" <c:if test="${physical.appearance=='good'}"><c:out value="selected"/></c:if>>Good</option>   
+						                 <option value="fair" <c:if test="${physical.appearance=='fair'}"><c:out value="selected"/></c:if>>Fair</option>
+						                 <option value="Severe" <c:if test="${physical.appearance=='Severe'}"><c:out value="selected"/></c:if>>Severe</option>
+						          
+				                   		</select>
+				                   	</td> </tr>  
+				                   	 <tr class="row2">
+				                 	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Weight:</td>
+				                  	<td valign="top" align="left" class="input_txt">
+				                  		<select name="weight1" class="input_cmbbx1">
+				                  		<option value="un" <c:if test="${physical.weight1=='un'}"><c:out value="selected"/></c:if>>UN</option>
+				                  		<option value="n" <c:if test="${physical.weight1=='n'}"><c:out value="selected"/></c:if>>N</option>
+				                  		<option value="wn" <c:if test="${physical.weight1=='wn'}"><c:out value="selected"/></c:if>>WN</option>
+						                    
+				                   		</select>
+				                   	</td> </tr>  
+				                   	 <tr class="row1">
+				                 	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>GAIT:</td>
+				                  	<td valign="top" align="left" class="input_txt">
+				                  		<select name="gait" class="input_cmbbx1">
+				                  		<option value="antalgic" <c:if test="${physical.gait=='antalgic'}"><c:out value="selected"/></c:if>>Antalgic</option>
+				                  		<option value="limp" <c:if test="${physical.gait=='limp'}"><c:out value="selected"/></c:if>>Limp</option>
+				                  		<option value="sway" <c:if test="${physical.gait=='sway'}"><c:out value="selected"/></c:if>>Sway</option>
+				                  		<option value="stagger" <c:if test="${physical.gait=='stagger'}"><c:out value="selected"/></c:if>>Stagger</option>
+				                  		<option value="normal" <c:if test="${physical.gait=='normal'}"><c:out value="selected"/></c:if>>Normal</option>
+				                  		
+				                   		</select>
+				                   		
+				                   	</td> </tr>
+				                   	 <tr class="row2">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>HEAD,EENT:</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="radio" name="head" value="Normal" class="input_txt"  <c:if test="${physical.head=='Normal'}"><c:out value="checked=checked"/></c:if>>Normal&nbsp;&nbsp;&nbsp;
+				                  	<input type="radio" name="head" value="Abnormal" class="input_txt"  <c:if test="${physical.head=='Abnormal'}"><c:out value="checked=checked"/></c:if>>Abnormal&nbsp;&nbsp;&nbsp;</td>
+				                </tr>
+				                 <tr class="row1">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Visceral Pathologies:</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="radio" name="path" value="Normal" class="input_txt"  <c:if test="${physical.path=='Normal'}"><c:out value="checked=checked"/></c:if>>Normal&nbsp;&nbsp;&nbsp;
+				                  	<input type="radio" name="path" value="Abnormal" class="input_txt"  <c:if test="${physical.path=='Abnormal'}"><c:out value="checked=checked"/></c:if>>Abnormal&nbsp;&nbsp;&nbsp;</td>
+				                </tr>
+				                <tr class="row2">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Posture:</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="radio" name="posture" value="Good" class="input_txt"  <c:if test="${physical.posture=='Good'}"><c:out value="checked=checked"/></c:if>>Good&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				                  	<input type="radio" name="posture" value="Poor" class="input_txt"  <c:if test="${physical.posture=='Poor'}"><c:out value="checked=checked"/></c:if>>Poor&nbsp;&nbsp;&nbsp;</td>
+				                </tr>
+				                   	<tr class="row1">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Romberg's Sign:</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="radio" name="romber" value="Present" class="input_txt"  <c:if test="${physical.romber=='Present'}"><c:out value="checked=checked"/></c:if>>Present&nbsp;&nbsp;&nbsp;
+				                  	<input type="radio" name="romber" value="NotPresent" class="input_txt"  <c:if test="${physical.romber=='NotPresent'}"><c:out value="checked=checked"/></c:if>>NotPresent&nbsp;&nbsp;&nbsp;</td>
+				                </tr>
+				                 <tr class="row2">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>CN Exam:</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="radio" name="exam" value="Normal" class="input_txt"  <c:if test="${physical.exam=='Normal'}"><c:out value="checked=checked"/></c:if>>Normal&nbsp;&nbsp;&nbsp;
+				                  	<input type="radio" name="exam" value="DNP" class="input_txt"  <c:if test="${physical.exam=='DNP'}"><c:out value="checked=checked"/></c:if>>DNP&nbsp;&nbsp;&nbsp;</td>
+				                </tr>  	
+				               <tr class="row1">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Abnormal Findings:</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="abnormal" value=${physical.abnormal } /><span class="err"><form:errors path="Physicalexam.abnormal"></form:errors>
+				                  </td>
+				                </tr>
+				               
+				              
+				                </table>
+				                </c:otherwise>
+				                </c:choose>
 				               
 				                </td>
 				                </tr>
@@ -1119,7 +1271,7 @@
 				                    <td><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewphysicalexam'"></td>
 				                    <td>&nbsp;&nbsp;</td>
 				                    <td><input type="reset" class="submit_btn" value="Cancel"></td>
-				                  </tr>
+				              </tr>
 				                  </table>
 				                  </td>
 				                  </tr>
@@ -1134,7 +1286,8 @@
 				                  </form>
 				                  </body>
 				                  </html>
-				                  
+				                   
+				                   
 				                  
 				                  
 				                   		

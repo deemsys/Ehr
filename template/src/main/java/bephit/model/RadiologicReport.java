@@ -1,10 +1,23 @@
 package bephit.model;
 
+import javax.validation.constraints.Pattern;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
+
 public class RadiologicReport{
 	private String pid;
+	
+	@NotEmpty
 	private String pname;
+	
+	@NotEmpty
 	private String date;
+	
+	@NotEmpty
 	private String id;
+	
+	@NotEmpty
 	private String dob;
 	
 	private String views1;

@@ -7,7 +7,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Assignment
 {
 	@NotEmpty
-	private String Day;
+	private String day;
 	@NotEmpty
 	private String month;
 	@NotEmpty
@@ -40,11 +40,11 @@ public class Assignment
 	private String representativedate;
 	
 	
-	public String getDay() {
-		return Day;
+	public String getday() {
+		return day;
 	}
 	public void setDay(String day) {
-		Day = day;
+		day = day;
 	}
 	public String getMonth() {
 		return month;
@@ -137,7 +137,7 @@ public class Assignment
 			String representative,
 			String representativedate)
 	{
-	this.Day=Day;
+	this.day=day;
 	this.month=month;
 	this.year=year;
 	

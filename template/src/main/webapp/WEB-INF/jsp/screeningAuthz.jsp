@@ -43,6 +43,8 @@
 	              <h2>Screening Disclosure:</h2>
 	            </div>
             <div class="contentbox">
+            <c:choose>
+            <c:when test="${empty screen}">
             <table cellpadding="0" cellspacing="0" border="0" width="100%">
   				<tr>
     				<td align="left" valign="top" width="100%" style="padding-right:25px;">
@@ -64,6 +66,31 @@
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="name" /><br><span class="err"><form:errors path="screeningAuthz.name"></form:errors></span>
 				                  	</tr>
 				                  	</table>
+				                  	</c:when>
+				                  	<c:otherwise>
+				                  	 <table cellpadding="0" cellspacing="0" border="0" width="100%">
+  				<tr>
+    				<td align="left" valign="top" width="100%" style="padding-right:25px;">
+                        
+                        <table cellpadding="0" cellspacing="0" border="0" width="50%">
+                        <tr>
+                        <div align="justify">
+                       <p id="mypar"> This confirms my understanding that a representative of the clinic contacted me regarding the availability of a consultation and spinal examination. I understand and acknowledge that no representations were made to me that this service is in any way affiliated with any insurance company or governmental agency. </p>
+	<p id="mypar">The consultation and examination were offered without obligation to accept the appointment, without obligation to respond immediately and was accepted by me willingly with regard to seeking treatment for injuries I sustained in an automobile accident or work related accident.</p>
+                        </div>
+                        <tr class="row1">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date: </td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="datepicker" name="date" value="${screen.date}"/><br><span class="err"><form:errors path="screeningAuthz.date"></form:errors></span>
+				                  	</tr>
+				                  	<tr class="row1">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name:  </td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="name" value="${screen.name}"/><br><span class="err"><form:errors path="screeningAuthz.name"></form:errors></span>
+				                  	</tr>
+				                  	</table>
+				                  	</c:otherwise>
+				                  	</c:choose>
 				                  	<table>
                         <tr>
 				  <td valign="top" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
