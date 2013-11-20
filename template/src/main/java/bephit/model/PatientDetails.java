@@ -52,13 +52,13 @@ private String State;
 
 private String ZipCode;
 @NotEmpty
-@Pattern(regexp="(^$|[0-9]{10})",message="Not a valid Mobile number")
+/*@Pattern(regexp="(^$|[0-9]{10})",message="Not a valid Mobile number")*/
 private String Homephone;
 @NotEmpty
 
 private String Emailid;
 @NotEmpty
-@Pattern(regexp="(^$|[0-9]{10})",message="Not a valid Mobile number")
+/*@Pattern(regexp="(^$|[0-9]{10})",message="Not a valid Mobile number")*/
 private String MobileNumber;
 @NotEmpty
 private String DateOfBirth;
@@ -81,7 +81,7 @@ private String Occupation;
 @NotEmpty
 private String EmployerAddress;
 @NotEmpty
-@Pattern(regexp="(^$|[0-9]{10})",message="Not a valid Mobile number")
+/*@Pattern(regexp="(^$|[0-9]{10})",message="Not a valid Mobile number")*/
 private String Workphone;
 @NotEmpty
 
@@ -124,16 +124,16 @@ private String Type_Of_Accident;
 private String Date_Of_Accident;
 private String Accident_Reported;
 @NotEmpty
-private String When;
+private String when;
 @NotEmpty
-private String Where;
+private String where;
 private String Attorney_accident;
 @NotEmpty
 
 private String NameOfAttorney;
 @NotEmpty
 
-@Pattern(regexp="(^$|[0-9]{10})",message="Not a valid Mobile number")
+/*@Pattern(regexp="(^$|[0-9]{10})",message="Not a valid Mobile number")*/
 private String Phone_Number;
 @NotEmpty
 
@@ -153,7 +153,7 @@ private String Policy;
 @NotEmpty
 private String Name_health;
 @NotEmpty
-@Pattern(regexp="(^$|[0-9]{10})",message="Not a valid Mobile number")
+/*@Pattern(regexp="(^$|[0-9]{10})",message="Not a valid Mobile number")*/
 private String Health_phone;
 
 private String Prev_accident;
@@ -978,7 +978,7 @@ public void setAccident_Reported(String accident_Reported) {
 
 
 public String getWhen() {
-	return When;
+	return when;
 }
 
 
@@ -988,8 +988,8 @@ public String getWhen() {
 
 
 
-public void setWhen(String when) {
-	When = when;
+public void setwhen(String when) {
+	when = when;
 }
 
 
@@ -1000,7 +1000,7 @@ public void setWhen(String when) {
 
 
 public String getWhere() {
-	return Where;
+	return where;
 }
 
 
@@ -1011,7 +1011,7 @@ public String getWhere() {
 
 
 public void setWhere(String where) {
-	Where = where;
+	where = where;
 }
 
 
@@ -2427,8 +2427,8 @@ public PatientDetails(String Patient_id,
 	this.Type_Of_Accident=Type_Of_Accident;
 	this.Date_Of_Accident=Date_Of_Accident;
 	this.Accident_Reported=Accident_Reported;
-	this.When=When;
-	this.Where=Where;
+	this.when=when;
+	this.where=where;
 	this.Attorney_accident=Attorney_accident;
 	this.NameOfAttorney=NameOfAttorney;
 	this.Phone_Number=Phone_Number;

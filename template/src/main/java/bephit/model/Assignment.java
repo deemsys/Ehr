@@ -44,7 +44,7 @@ public class Assignment
 		return day;
 	}
 	public void setDay(String day) {
-		day = day;
+		this.day = day;
 	}
 	public String getMonth() {
 		return month;
@@ -123,7 +123,7 @@ public class Assignment
 	{
 		
 	}
-	public Assignment(String Day,
+	public Assignment(String day,
 			String month,
 			String year,
 			String day1,

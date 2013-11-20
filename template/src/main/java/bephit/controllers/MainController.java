@@ -983,16 +983,15 @@ public class MainController {
 	}
 	@RequestMapping(value="/patientDetails", method = RequestMethod.POST)
 	public String insert_patientdetails(@ModelAttribute("PatientDetails")  @Valid PatientDetails patientDetails,BindingResult result,ModelMap model) {
-			if(result.hasErrors())
+			/*if(result.hasErrors())
 			{
-			//	RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
+			
 				PatientDetailsForm patientDetailsForm = new PatientDetailsForm();
-				//radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport());
 				patientDetailsForm.setPatientDetails(patientDAO.getPatientDetails());
 				model.addAttribute("PatientDetailsForm",patientDetailsForm);
 				model.addAttribute("Success","true");
 				return "patientDetails";
-			}
+			}*/
 			
 			model.put("PatientDetails", patientDetails);
 			model.addAttribute("PatientDetailsForm",patientDetails);

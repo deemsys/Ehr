@@ -409,13 +409,13 @@
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Medical Treatment for this Condition: &nbsp;&nbsp;&nbsp;&nbsp;When:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="When" /> <br><span class="err"><form:errors path="PatientDetails.When"></form:errors></span></td>
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="when" /> <br><span class="err"><form:errors path="PatientDetails.When"></form:errors></span></td>
 				                  	
 				                  	</tr>
 				                  	<tr class="row1">
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Where:</td>
 				                  	<td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Where"/><br><span class="err"><form:errors path="PatientDetails.Where"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="where"/><br><span class="err"><form:errors path="PatientDetails.Where"></form:errors></span>
 				                    </tr>
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Have You Retained an Attorney for this Accident:</td>
