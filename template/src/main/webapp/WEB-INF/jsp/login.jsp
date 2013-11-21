@@ -53,7 +53,7 @@
 		  </div>
 		 <!--  <div class="login-bottom"></div> -->
 		 </div>
-		 <br>
+		<!--  <br>
 		<div id="role_div">
 		<table>
 		<tr>
@@ -63,7 +63,7 @@
 		<td><input type="button" id="btnNext" class="submit_btn1" value="Register" onclick="window.location.href='signup'"/></td>
 		</tr>
 		</table>
-		</div>
+		</div> -->
 		
 	</form>
 </body>

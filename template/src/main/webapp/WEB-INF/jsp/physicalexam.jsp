@@ -34,8 +34,8 @@
 	              <h2 align="center" >Chiropractic Therapy Center<br></b></h2>
 	       </div></div> 
 	       <div class="contentbox">
-	      <c:choose>
-		 <c:when test="${empty physical}">
+	    <%--   <c:choose>
+		 <c:when test="${empty physical}"> --%>
 	        <table cellpadding="0" cellspacing="0" border="0" width="100%">
   				<tr>
     				<td align="left" valign="top" width="50%" style="padding-right:25px;">
@@ -175,13 +175,13 @@
 				               
 				              
 				                </table>
-				                </c:when>
+				               <%--  </c:when>
 				                <c:otherwise>
 				                <table cellpadding="0" cellspacing="0" border="0" width="100%">
   				<tr>
     				<td align="left" valign="top" width="50%" style="padding-right:25px;">
     					<!-- <h2 class="quck-txt">Patient Details</h2> -->
-    					<%-- <c:set value="${physicalexamForm.physicalexam[0]}" var="physicalexam"/> --%>
+    					<c:set value="${physicalexamForm.physicalexam[0]}" var="physicalexam"/>
                         <table cellpadding="0" cellspacing="0" border="0" width="100%">
 	                            <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Physician Signature :</td>
@@ -328,7 +328,7 @@
 				                </table>
 				                </c:otherwise>
 				                </c:choose>
-				               
+				                --%>
 				                </td>
 				                </tr>
 	</table>
