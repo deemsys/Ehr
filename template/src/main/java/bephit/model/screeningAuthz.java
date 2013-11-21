@@ -4,6 +4,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 public class screeningAuthz
 {
+	private String screen_no;
 	@NotEmpty
 	private String date;
 	
@@ -17,14 +18,23 @@ public class screeningAuthz
 	
 	}
 	
-	public screeningAuthz(String date,
+	public screeningAuthz(String screen_no,String date,
 			String name
 			
 			)
 	{
+		this.screen_no=screen_no;
 		this.date=date;
 	this.name=name;
 	
+	}
+
+	public String getScreen_no() {
+		return screen_no;
+	}
+
+	public void setScreen_no(String screen_no) {
+		this.screen_no = screen_no;
 	}
 
 	public String getDate() {

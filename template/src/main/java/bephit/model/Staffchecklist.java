@@ -5,6 +5,8 @@ import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.NotEmpty;
 
 public class Staffchecklist{
+	
+	private String form_no;
 	@NotEmpty
 	
 	private String patinfo;
@@ -45,7 +47,7 @@ public class Staffchecklist{
 public Staffchecklist(){
 }
 
-public Staffchecklist(String patinfo,
+public Staffchecklist(String form_no,String patinfo,
 		String screening,
 		String aob,
 		String history,
@@ -61,6 +63,7 @@ public Staffchecklist(String patinfo,
 		String protect_received,
 		String bill,
 		String re_date){
+	this.form_no=form_no;
 	this.patinfo=patinfo;
 	this.screening=screening;
 	this.aob=aob;
@@ -79,10 +82,17 @@ public Staffchecklist(String patinfo,
 	this.re_date=re_date;
 }
 
+
+public String getForm_no() {
+	return form_no;
+}
+
+public void setForm_no(String form_no) {
+	this.form_no = form_no;
+}
 public String getPatinfo() {
 	return patinfo;
 }
-
 public void setPatinfo(String patinfo) {
 	this.patinfo = patinfo;
 }

@@ -11,6 +11,7 @@ import java.util.Date;
 import java.util.List;
 import javax.sql.DataSource;
 
+import bephit.model.SoapNotes;
 import bephit.model.screeningAuthz;
 
 public class ScreenDAO {
@@ -75,9 +76,9 @@ public class ScreenDAO {
 		}
 		List<screeningAuthz> screen = new ArrayList<screeningAuthz>();
 	    try{
-			resultSet = statement.executeQuery("select * from Screening_Details");
+			resultSet = statement.executeQuery("select * from Screening_Details order by screen_no DESC");
 			while(resultSet.next()){
-				screen.add(new screeningAuthz(resultSet.getString("date"),
+				screen.add(new screeningAuthz(resultSet.getString("screen_no"),resultSet.getString("date"),
 			    		resultSet.getString("name")
 			    		 ));
 			    	
@@ -94,6 +95,124 @@ public class ScreenDAO {
 	    return screen;
 		
 	}
+	
+	public List<screeningAuthz> getScreening(){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<screeningAuthz> screen = new ArrayList<screeningAuthz>();
+	    try{
+			resultSet = statement.executeQuery("select * from Screening_Details order by screen_no DESC");
+			while(resultSet.next()){
+				screen.add(new screeningAuthz(resultSet.getString("screen_no"),resultSet.getString("date"),
+			    		resultSet.getString("name")
+			    		 ));
+			    	
+			}
+	    }catch(Exception e){
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    }finally{
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);	    	
+	    }
+	    return screen;
+		
+	}
+	
+	
+	
+	public int updatescreeningauthz(screeningAuthz screeningauthz,String screen_no,String admin){
+		Connection con = null;
+		Statement statement = null;
+		int flag=0;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+	    try{
+	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+	    	 Date date = new Date();
+	    	 //System.out.println(dateFormat.format(date));
+	    	String cmd="UPDATE Screening_Details SET date='"+screeningauthz.getDate()+"',name='"+screeningauthz.getName()+"' WHERE screen_no='"+screen_no+"';";
+	    			
+	    			String Desc="Update screeningauthz "+screeningauthz.getName();
+	    	System.out.println(cmd);
+	    	statement.execute(cmd);
+	    	flag=1;
+	    }
+	    	 catch(Exception e){
+	 	    	System.out.println(e.toString());
+	 	    	releaseStatement(statement);
+	 	    	releaseConnection(con);
+	 	    	flag=0;
+	 	    	//return 0;
+	 	    }finally{
+	 	     	releaseStatement(statement);
+	 	    	releaseConnection(con);	    
+	 	    	
+	 	    }
+	 	    if(flag==1)
+	     		return 1;
+	     	else
+	     		return 0;
+	 	    
+		
+	}	
+
+	public int deletescreeningauthz(String screen_no){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		int flag=0;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		try{
+			DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+	    	 Date date = new Date();
+	    	 String cmd_getpatient_name="select name from Screening_Details where screen_no='"+screen_no+"'";
+	    	 String Desc="Delete report ";
+	    	 resultSet=statement.executeQuery(cmd_getpatient_name);
+				
+				if(resultSet.next())
+					Desc=Desc+resultSet.getString(1);
+				statement.execute("delete from Screening_Details where screen_no='"+screen_no+"'");
+				
+				flag=1;
+				
+		    }catch(Exception e){
+		    	System.out.println(e.toString());
+		    	flag=0;
+		    	releaseResultSet(resultSet);
+		    	releaseStatement(statement);
+		    	releaseConnection(con);
+		    }finally{
+		    	
+		    	releaseResultSet(resultSet);
+		    	releaseStatement(statement);
+		    	releaseConnection(con);	    	
+		    }
+		   		if(flag==1)
+		   			return 1;
+		   		else
+		   			return 0;
+		}
+		
+
 	
 	
 	

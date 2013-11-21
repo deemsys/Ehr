@@ -48,7 +48,7 @@
     				<td align="left" valign="top" width="100%" style="padding-right:25px;">
                         
                         <table cellpadding="0" cellspacing="0" border="0" width="50%">
-                         <c:set value="${ScreeningAuthz.ScreeningDetails[0]}" var="ScreeningDetails"> </c:set>
+                         <c:set value="${ScreeningAuthzForm.screeningDetails[0]}" var="ScreeningDetails"> </c:set>
                         <tr>
                         <div align="justify">
                        <p id="mypar"> This confirms my understanding that a representative of the clinic contacted me regarding the availability of a consultation and spinal examination. I understand and acknowledge that no representations were made to me that this service is in any way affiliated with any insurance company or governmental agency. </p>
@@ -67,9 +67,9 @@
 				                  	<table>
                         <tr>
 				  <td valign="top" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-				                <td valign="top" align="center"><br><input type="button" class="submit_btn" value="Edit"></td>
+				                <td valign="top" align="center"><br><input type="button" class="submit_btn" value="Edit" onclick="window.location.href='editscreeningauthz'"></td>
 				                <td>&nbsp;&nbsp;</td>
-				 				  <td valign="top" align="center"><br><input type="button" class="submit_btn" value="Delete"></td>
+				 				  <td valign="top" align="center"><a href="<c:out value="deletescreeningauthz?screen_no=${ScreeningDetails.screen_no}"/>"><br/><input type="button" class="submit_btn" value="Delete" onclick='confirmation()'></a></td>
 				 
 				  </tr>
                         </table>
@@ -83,7 +83,19 @@
                         </table>
                         </form>
                         </div>
-                        </body>
+                         <script language="javascript">
+        function confirmation() {
+	var answer = confirm("Are you Sure You Want to Delete patient screening disclosure ?")
+	if (answer){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+        </script>
+                       </body>
                         </html>
+                       
                        <jsp:include page="footer.jsp"></jsp:include>  
                         

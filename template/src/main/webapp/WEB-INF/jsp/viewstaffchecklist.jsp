@@ -43,32 +43,25 @@
 	            <table cellpadding="0" cellspacing="0" border="0" width="100%">
 	             <c:set value="${StaffchecklistForm.staffchecklist[0]}" var="Staffchecklist"> </c:set>
 	            <tr class="row1">
-	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="patinfo" value="patinfo"/></td>
-	            <td valign="top" align="left" class="input_txt">Confidential Patient Information</td>
+	            <td>${Staffchecklist.patinfo}</td>
 	            </tr>
 	            <tr class="row1">
-	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="screening" value="screening"/></td>
-	            <td valign="top" align="left" class="input_txt">Screening Disclosure/referral</td>
+	            <td>${Staffchecklist.screening}</td>
 	            </tr>
 	            <tr class="row1">
-	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="aob" value="aob"/></td>
-	            <td valign="top" align="left" class="input_txt">Assignment of Benefits/Lien</td>
+	            <td>${Staffchecklist.aob}
 	            </tr>
 	            <tr class="row1">
-	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="history" value="history"/></td>
-	            <td valign="top" align="left" class="input_txt">History/Exam Sheet</td>
+	            <td>${Staffchecklist.history}</td>
 	            </tr>
 	            <tr class="row1">
-	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="xray_sheet" value="xray_sheet"/></td>
-	            <td valign="top" align="left" class="input_txt">SOAP Note/X-ray Sheet</td>
+	            <td>${Staffchecklist.xray_sheet}</td>
 	            </tr>
 	            <tr class="row1">
-	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="consent" value="consent"/></td>
-	            <td valign="top" align="left" class="input_txt">Consent to Treat Form/Minor</td>
+	            <td>${Staffchecklist.consent}</td>
 	            </tr>
 	            <tr class="row1">
-	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="report" value="report"/></td>
-	            <td valign="top" align="left" class="input_txt">Accident Report </td>
+	            <td>${Staffchecklist.report}
 	            </tr>
 	            </table>
 	            <br>
@@ -128,7 +121,7 @@
               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
               <td valign="top" align="center"><input type="button" class="submit_btn" value="Edit" onclick="window.location.href='editstaffchecklist'"></td>
               <td>&nbsp;&nbsp;</td>
-               <td valign="top" align="center"><input type="button" class="submit_btn" value="Delete"></td>
+               <td valign="top" align="center"><a href="<c:out value="deletestaffchecklist?form_no=${Staffchecklist.form_no}"/>"><input type="button" class="submit_btn" value="Delete" onclick='confirmation()'></a></td>
         	  </tr>
         	  </table>
 			  </div>
@@ -138,6 +131,17 @@
 			  </table>
 			  </form>
 			  </div>
+			  <script language="javascript">
+        function confirmation() {
+	var answer = confirm("Are you Sure You Want to Delete  Patient Staffcheck list ?")
+	if (answer){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+        </script>
 			  </body>
 			  </html>
 			  

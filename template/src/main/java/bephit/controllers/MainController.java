@@ -383,6 +383,13 @@ public class MainController {
 			
 	    	RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
 			
+	    	// Populate all screen values in the model
+	    	
+	    	// Form will have list of model, so set the model in the form
+	    	
+	    	// Create DAO instance and pass the form created now with  all screen values to be inserted into database
+	    	
+	    	// 
 	    	radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport());
 			
 	    	model.addAttribute("RadiologicReportForm", radiologicReportForm);
@@ -688,14 +695,14 @@ public class MainController {
 	@RequestMapping(value="/staffchecklist", method = RequestMethod.POST)
 	public String insert_staffchecklist(HttpSession session,@ModelAttribute("Staffchecklist")  @Valid Staffchecklist staffchecklist,BindingResult result,ModelMap model) {
 		session.setAttribute("staff",staffchecklist);
-		if(result.hasErrors())
+		/*if(result.hasErrors())
 		{
 			StaffchecklistForm staffchecklistForm= new StaffchecklistForm();
 	    	staffchecklistForm.setStaffchecklist(staffDAO.getStaffchecklist());
 			model.addAttribute("StaffchecklistForm",staffchecklistForm);
 			model.addAttribute("Success","true");
 			return "staffchecklist";
-		}
+		}*/
 		
 		model.put("Staffchecklist", staffchecklist);
 		model.addAttribute("StaffchecklistForm",staffchecklist);
@@ -709,6 +716,73 @@ public class MainController {
 		
 		return "staffchecklist";
 	}
+	@RequestMapping(value="/viewstaffchecklist", method = RequestMethod.GET)
+	public String viewstaffchecklist(HttpServletRequest request,ModelMap model) {
+		
+		StaffchecklistForm staffchecklistForm= new StaffchecklistForm();
+    	staffchecklistForm.setStaffchecklist(staffDAO.getStaffchecklist());
+		model.addAttribute("StaffchecklistForm",staffchecklistForm);
+		
+		return "viewstaffchecklist";
+ 
+	}
+
+	@RequestMapping(value="/editstaffchecklist", method = RequestMethod.GET)
+	public String editstaffchecklist(HttpServletRequest request,ModelMap model) {
+		
+		StaffchecklistForm staffchecklistForm= new StaffchecklistForm();
+    	staffchecklistForm.setStaffchecklist(staffDAO.getStaffchecklist());
+		model.addAttribute("StaffchecklistForm",staffchecklistForm);
+		
+		return "editstaffchecklist";
+	}
+	
+	@RequestMapping(value="/updatestaffchecklist", method=RequestMethod.POST)
+	public String updatestaffchecklist(HttpServletRequest request,@ModelAttribute("staffchecklist") @Valid Staffchecklist staffchecklist,
+			BindingResult result,ModelMap model,Principal principal)
+	{
+		/*if (result.hasErrors())
+		{
+			InsuranceplanForm insuranceplanForm = new InsuranceplanForm();
+	     //   participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants(participant.getParticipants_id()));
+	      insuranceplanForm.setInsuranceplan(planDAO.getPlan(insuranceplan.getNo()));
+	      
+	        model.addAttribute("insuranceplanForm", insuranceplanForm);
+			    
+		        return "editinsuranceplan";
+		}*/
+		
+		int status = staffDAO.updatestaffchecklist(staffchecklist, staffchecklist.getForm_no(), principal.getName());
+		System.out.println(status);
+		
+		StaffchecklistForm staffchecklistForm = new StaffchecklistForm();
+        
+        staffchecklistForm.setStaffchecklist(staffDAO.getStaffchecklist());
+       
+        model.addAttribute("StaffchecklistForm", staffchecklistForm);
+	       model.addAttribute("success","true");
+	        return "viewstaffchecklist";
+		
+	}
+	@RequestMapping(value="/deletestaffchecklist", method=RequestMethod.GET)
+	public String removestaffchecklist(@RequestParam("form_no") String form_no,ModelMap model, Principal principal) {
+	
+		int status=staffDAO.deletestaffchecklist(form_no);
+		
+		if(status==1)
+		{
+        model.addAttribute("success","true");
+		//ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
+		StaffchecklistForm staffchecklistForm = new StaffchecklistForm();
+		//participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
+		staffchecklistForm.setStaffchecklist(staffDAO.getStaffchecklist());
+        model.addAttribute("StaffchecklistForm", staffchecklistForm);
+      
+		}
+		
+		return "staffchecklist";
+	}
+	
 	
 	@RequestMapping(value="/signup", method = RequestMethod.GET)
 	public String signup(ModelMap model) {
@@ -779,8 +853,102 @@ public class MainController {
 		session.removeAttribute("screen");
 		return "screeningAuthz";
 	}
+	@RequestMapping(value="/screeningAuthz", method=RequestMethod.POST)
+	public String AddscreeningDetails(HttpSession session,@ModelAttribute("screeningAuthz") @Valid screeningAuthz screeningdetails,
+			BindingResult result,ModelMap model) 
+	{		
+		session.setAttribute("screen", screeningdetails);
+		if (result.hasErrors())
+		{
+			ScreeningAuthzForm screeningauthzform= new ScreeningAuthzForm();
+			screeningauthzform.setScreeningDetails(screenDAO.getScreeningDetails());
+			model.addAttribute("ScreeningAuthzForm",screeningauthzform);
+			model.addAttribute("success","true");
+			return "screeningAuthz";
+	    }
+		
+		//Add function
+		model.addAttribute("ScreeningAuthzForm",screeningdetails);
+		int a=screenDAO.setScreeningDetails(screeningdetails);
+        ScreeningAuthzForm screeningauthzform= new ScreeningAuthzForm();
+		screeningauthzform.setScreeningDetails(screenDAO.getScreeningDetails());
+		model.addAttribute("ScreeningAuthzForm",screeningauthzform);
+		
+		System.out.println("Screening");
+		
+		//Show view page
+		 return "screeningAuthz";
+	}
+	@RequestMapping(value="/viewscreeningauthz", method = RequestMethod.GET)
+	public String viewscreeningauthz(HttpServletRequest request,ModelMap model) {
+		
+		ScreeningAuthzForm screeningauthzForm= new ScreeningAuthzForm();
+    	screeningauthzForm.setScreeningDetails(screenDAO.getScreeningDetails());
+		model.addAttribute("ScreeningAuthzForm",screeningauthzForm);
+		
+		return "viewscreeningauthz";
+ 
+	}
+	@RequestMapping(value="/editscreeningauthz", method = RequestMethod.GET)
+	public String editscreeningauthz(HttpServletRequest request,ModelMap model) {
+		
+		ScreeningAuthzForm screeningauthzForm= new ScreeningAuthzForm();
+    	screeningauthzForm.setScreeningDetails(screenDAO.getScreeningDetails());
+		model.addAttribute("ScreeningAuthzForm",screeningauthzForm);
+		
+		return "editscreeningauthz";
+	}
 	
-	@RequestMapping(value="/Hippaprivacy",method=RequestMethod.GET)
+	@RequestMapping(value="/updatescreeningauthz", method=RequestMethod.POST)
+	public String updatescreeningauthz(HttpServletRequest request,@ModelAttribute("screeningAuthz") @Valid screeningAuthz screeningauthz,
+			BindingResult result,ModelMap model,Principal principal)
+	{
+		/*if (result.hasErrors())
+		{
+			InsuranceplanForm insuranceplanForm = new InsuranceplanForm();
+	     //   participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants(participant.getParticipants_id()));
+	      insuranceplanForm.setInsuranceplan(planDAO.getPlan(insuranceplan.getNo()));
+	      
+	        model.addAttribute("insuranceplanForm", insuranceplanForm);
+			    
+		        return "editinsuranceplan";
+		}*/
+		
+		int status = screenDAO.updatescreeningauthz(screeningauthz, screeningauthz.getScreen_no(), principal.getName());
+		System.out.println(status);
+		
+		ScreeningAuthzForm screeningauthzForm = new ScreeningAuthzForm();
+        
+        screeningauthzForm.setScreeningDetails(screenDAO.getScreeningDetails());
+       
+        model.addAttribute("ScreeningAuthzForm", screeningauthzForm);
+	       model.addAttribute("success","true");
+	        return "viewscreeningauthz";
+		
+	}
+	@RequestMapping(value="/deletescreeningauthz", method=RequestMethod.GET)
+	public String removescreeningauthz(@RequestParam("screen_no") String screen_no,ModelMap model, Principal principal) {
+	
+		int status=screenDAO.deletescreeningauthz(screen_no);
+		
+		if(status==1)
+		{
+        model.addAttribute("success","true");
+		//ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
+		ScreeningAuthzForm screeningauthzForm = new ScreeningAuthzForm();
+		//participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
+		screeningauthzForm.setScreeningDetails(screenDAO.getScreeningDetails());
+        model.addAttribute("ScreeningAuthzForm", screeningauthzForm);
+      
+		}
+		
+		return "screeningAuthz";
+	}
+	
+	
+	
+
+		@RequestMapping(value="/Hippaprivacy",method=RequestMethod.GET)
 	public String Hippaprivacy(HttpSession session,ModelMap model)
 	{
 		session.removeAttribute("hippa");
@@ -792,16 +960,7 @@ public class MainController {
 	
 	
 	
-	//view screening
 	
-	@RequestMapping(value="/viewscreen", method=RequestMethod.GET)
-	public String viewscreen(HttpServletRequest request,ModelMap model, Principal principal) {
-		 model.addAttribute("success","false");
-		 ScreeningAuthzForm screeningauthzform = new ScreeningAuthzForm();
-		screeningauthzform.setScreeningDetails(screenDAO.getScreeningDetails());
-        model.addAttribute("ScreeningAuthzForm", screeningauthzform);
-		return "viewscreen";
-	}
 	
 	
 	//validation
@@ -831,32 +990,6 @@ public class MainController {
  
 	}
 	
-	@RequestMapping(value="/screeningAuthz", method=RequestMethod.POST)
-	public String AddscreeningDetails(HttpSession session,@ModelAttribute("screeningAuthz") @Valid screeningAuthz screeningdetails,
-			BindingResult result,ModelMap model) 
-	{		
-		session.setAttribute("screen", screeningdetails);
-		if (result.hasErrors())
-		{
-			ScreeningAuthzForm screeningauthzform= new ScreeningAuthzForm();
-			screeningauthzform.setScreeningDetails(screenDAO.getScreeningDetails());
-			model.addAttribute("ScreeningAuthzForm",screeningauthzform);
-			model.addAttribute("success","true");
-			return "screeningAuthz";
-	    }
-		
-		//Add function
-		model.addAttribute("ScreeningAuthzForm",screeningdetails);
-		int a=screenDAO.setScreeningDetails(screeningdetails);
-        ScreeningAuthzForm screeningauthzform= new ScreeningAuthzForm();
-		screeningauthzform.setScreeningDetails(screenDAO.getScreeningDetails());
-		model.addAttribute("ScreeningAuthzForm",screeningauthzform);
-		
-		System.out.println("Screening");
-		
-		//Show view page
-		 return "screeningAuthz";
-	}
 	
 	
 	
@@ -1179,17 +1312,7 @@ public class MainController {
 	}
 	
 
-	@RequestMapping(value="/viewstaffchecklist", method = RequestMethod.GET)
-	public String viewstaffchecklist(HttpServletRequest request,ModelMap model) {
 		
-		StaffchecklistForm staffchecklistForm= new StaffchecklistForm();
-    	staffchecklistForm.setStaffchecklist(staffDAO.getStaffchecklist());
-		model.addAttribute("StaffchecklistForm",staffchecklistForm);
-		
-		return "viewstaffchecklist";
- 
-	}
-	
 	@RequestMapping(value="/viewtreatform", method = RequestMethod.GET)
 	public String viewtreatform(HttpServletRequest request,ModelMap model) {
 		
@@ -1215,16 +1338,7 @@ public class MainController {
  
 	}
 	
-	@RequestMapping(value="/viewscreeningauthz", method = RequestMethod.GET)
-	public String viewscreeningauthz(HttpServletRequest request,ModelMap model) {
-		
-		ScreeningAuthzForm screeningauthzform= new ScreeningAuthzForm();
-		screeningauthzform.setScreeningDetails(screenDAO.getScreeningDetails());
-		System.out.println(screeningauthzform);
-		model.addAttribute("screeningauthzForm",screeningauthzform);
-		return "viewscreeningauthz";
- 
-	}
+	
 	
 	@RequestMapping(value="/edithardship", method = RequestMethod.GET)
 	public String edithardship(HttpServletRequest request,ModelMap model) {
@@ -1299,6 +1413,10 @@ public class MainController {
 		return "editinsuranceverification";
 	}
 	
+
+
+
+
 	@RequestMapping(value="/updateinsuranceverification", method=RequestMethod.POST)
 	public String updateinsuranceverification(HttpServletRequest request,@ModelAttribute("Insuranceverification") @Valid Insuranceverification insuranceverification,
 			BindingResult result,ModelMap model,Principal principal)
@@ -1340,6 +1458,8 @@ public class MainController {
 		
 		return "editstaffchecklist";
 	}
+
+
 	@RequestMapping(value="/editmedical", method = RequestMethod.GET)
 	public String editmedical(HttpServletRequest request,ModelMap model) {
 		

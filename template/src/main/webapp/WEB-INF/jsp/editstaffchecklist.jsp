@@ -23,7 +23,7 @@
 </head>
  <body>
 <div id="right_content">
-<form action="staffchecklist" method="POST">
+<form action="updatestaffchecklist" method="POST">
 
 <table cellpadding="0" cellspacing="0" border="0" width="55%" class="margin_table">
        <tr>
@@ -43,32 +43,33 @@
 	            <table cellpadding="0" cellspacing="0" border="0" width="100%">
 	            <c:set value="${StaffchecklistForm.staffchecklist[0]}" var="Staffchecklist"> </c:set>
 	            <tr class="row1">
-	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="patinfo" value="patinfo"/></td>
-	            <td valign="top" align="left" class="input_txt">Confidential Patient Information</td>
+	            <input type="hidden" class="input_txtbx1" id="inp_id" value="${Staffchecklist.form_no}" name="form_no" />
+    
+	            <td><input type="checkbox" name="patinfo" value="Confidential Patient Information" <c:if test="${Staffchecklist.patinfo=='Confidential Patient Information'}"><c:out value="Checked"/></c:if>/>Confidential Patient Information</td>
 	            </tr>
 	            <tr class="row1">
-	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="screening" value="screening"/></td>
-	            <td valign="top" align="left" class="input_txt">Screening Disclosure/referral</td>
+	            <td><input type="checkbox" name="screening" value="Screening Disclosure/referral" <c:if test="${Staffchecklist.screening=='Screening Disclosure/referral'}"><c:out value="Checked"/></c:if>/>
+	           Screening Disclosure/referral</td>
 	            </tr>
 	            <tr class="row1">
-	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="aob" value="aob"/></td>
-	            <td valign="top" align="left" class="input_txt">Assignment of Benefits/Lien</td>
+	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="aob" value="Assignment of Benefits/Lien" <c:if test="${Staffchecklist.aob=='Assignment of Benefits/Lien'}"><c:out value="Checked"/></c:if>/>
+	            Assignment of Benefits/Lien</td>
 	            </tr>
 	            <tr class="row1">
-	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="history" value="history"/></td>
-	            <td valign="top" align="left" class="input_txt">History/Exam Sheet</td>
+	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="history" value="History/Exam Sheet" <c:if test="${Staffchecklist.history=='History/Exam Sheet'}"><c:out value="Checked"/></c:if>/>
+	            History/Exam Sheet</td>
 	            </tr>
 	            <tr class="row1">
-	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="xray_sheet" value="xray_sheet"/></td>
-	            <td valign="top" align="left" class="input_txt">SOAP Note/X-ray Sheet</td>
+	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="xray_sheet" value="SOAP Note/X-ray_sheet" <c:if test="${Staffchecklist.xray_sheet=='SOAP Note/X-ray_sheet'}"><c:out value="Checked"/></c:if>/>
+	            SOAP Note/X-ray Sheet</td>
 	            </tr>
 	            <tr class="row1">
-	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="consent" value="consent"/></td>
-	            <td valign="top" align="left" class="input_txt">Consent to Treat Form/Minor</td>
+	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="consent" value="Consent to treat Form/Minor" <c:if test="${Staffchecklist.consent=='Consent to treat Form/Minor'}"><c:out value="Checked"/></c:if>/>
+	            Consent to Treat Form/Minor</td>
 	            </tr>
 	            <tr class="row1">
-	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="report" value="report"/></td>
-	            <td valign="top" align="left" class="input_txt">Accident Report </td>
+	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="report" value="Accident Report" <c:if test="${Staffchecklist.report=='Accident Report'}"><c:out value="Checked"/></c:if>/>
+	            Accident Report </td>
 	            </tr>
 	            </table>
 	            <br>
@@ -136,7 +137,7 @@
               <table>
               <tr >
               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-              <td ><input type="submit" class="submit_btn" value="Save"></td>
+              <td ><input type="submit" class="submit_btn" value="Update"></td>
               <td>&nbsp;&nbsp;</td>
               <td><input type="reset" class="submit_btn" value="Cancel"></td>
         	  </tr>

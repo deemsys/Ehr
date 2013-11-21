@@ -44,31 +44,31 @@
 				<c:when test="${empty staff}">
 	            <table cellpadding="0" cellspacing="0" border="0" width="100%">
 	            <tr class="row1">
-	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="patinfo" value="patinfo"/></td>
+	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="patinfo" value="confidential Patient Information"/></td>
 	            <td valign="top" align="left" class="input_txt">Confidential Patient Information</td>
 	            </tr>
 	            <tr class="row1">
-	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="screening" value="screening"/></td>
+	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="screening" value="Screening Disclosure/referral"/></td>
 	            <td valign="top" align="left" class="input_txt">Screening Disclosure/referral</td>
 	            </tr>
 	            <tr class="row1">
-	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="aob" value="aob"/></td>
+	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="aob" value="Assignment of Benefits/Lien"/></td>
 	            <td valign="top" align="left" class="input_txt">Assignment of Benefits/Lien</td>
 	            </tr>
 	            <tr class="row1">
-	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="history" value="history"/></td>
+	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="history" value="History/Exam Sheet"/></td>
 	            <td valign="top" align="left" class="input_txt">History/Exam Sheet</td>
 	            </tr>
 	            <tr class="row1">
-	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="xray_sheet" value="xray_sheet"/></td>
+	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="xray_sheet" value="SOAP Note/X-ray Sheet"/></td>
 	            <td valign="top" align="left" class="input_txt">SOAP Note/X-ray Sheet</td>
 	            </tr>
 	            <tr class="row1">
-	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="consent" value="consent"/></td>
+	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="consent" value="Consent to treat Form/Minor"/></td>
 	            <td valign="top" align="left" class="input_txt">Consent to Treat Form/Minor</td>
 	            </tr>
 	            <tr class="row1">
-	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="report" value="report"/></td>
+	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="report" value="Accident Report"/></td>
 	            <td valign="top" align="left" class="input_txt">Accident Report </td>
 	            </tr>
 	            </table>
@@ -137,31 +137,31 @@
 			  <c:otherwise>
 			   <table cellpadding="0" cellspacing="0" border="0" width="100%">
 	            <tr class="row1">
-	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="patinfo" value="patinfo"/></td>
+	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="patinfo" value="Confidential Patient Information"/></td>
 	            <td valign="top" align="left" class="input_txt">Confidential Patient Information</td>
 	            </tr>
 	            <tr class="row1">
-	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="screening" value="screening"/></td>
+	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="screening" value="Screening Disclosure/referral"/></td>
 	            <td valign="top" align="left" class="input_txt">Screening Disclosure/referral</td>
 	            </tr>
 	            <tr class="row1">
-	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="aob" value="aob"/></td>
+	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="aob" value="Assignment of Benefits/Lien"/></td>
 	            <td valign="top" align="left" class="input_txt">Assignment of Benefits/Lien</td>
 	            </tr>
 	            <tr class="row1">
-	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="history" value="history"/></td>
+	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="history" value="History/Exam Sheet"/></td>
 	            <td valign="top" align="left" class="input_txt">History/Exam Sheet</td>
 	            </tr>
 	            <tr class="row1">
-	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="xray_sheet" value="xray_sheet"/></td>
+	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="xray_sheet" value="SOAP Note/X-ray_sheet"/></td>
 	            <td valign="top" align="left" class="input_txt">SOAP Note/X-ray Sheet</td>
 	            </tr>
 	            <tr class="row1">
-	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="consent" value="consent"/></td>
+	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="consent" value="Consent to treat Form/Minor"/></td>
 	            <td valign="top" align="left" class="input_txt">Consent to Treat Form/Minor</td>
 	            </tr>
 	            <tr class="row1">
-	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="report" value="report"/></td>
+	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="report" value="Accident Report"/></td>
 	            <td valign="top" align="left" class="input_txt">Accident Report </td>
 	            </tr>
 	            </table>

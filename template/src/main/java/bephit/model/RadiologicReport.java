@@ -4,7 +4,14 @@ import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
-
+/**
+ * 
+ * @author Administrator
+ * Date 
+ *
+ * This is a form which is equivalent for Radiological form.
+ * There are 4 tabs in the UI but all the data is captured with this single model.
+ */
 public class RadiologicReport{
 	private String pid;
 	
@@ -152,6 +159,135 @@ public class RadiologicReport{
 		
 	}
 
+	/**
+	 * 
+	 * @param pid
+	 * @param pname
+	 * @param date
+	 * @param id
+	 * @param dob
+	 * @param views1
+	 * @param negative_1
+	 * @param positive_for
+	 * @param positive_text1
+	 * @param break_1
+	 * @param break_text1
+	 * @param adi_1
+	 * @param hypolorodosis_1
+	 * @param normalcurvature_1
+	 * @param hyperlordosis_1
+	 * @param hyperlordosis_select1
+	 * @param mcGregorslinenormal_1
+	 * @param mcGregorslineinterupted_1
+	 * @param degenerativejointdisease_1
+	 * @param degenerativejointdisease_select1
+	 * @param mild_1
+	 * @param moderate_1
+	 * @param severe_1
+	 * @param narrowed_1
+	 * @param narrowed_text1
+	 * @param anterior_1
+	 * @param anterior_text1
+	 * @param subchondral_1
+	 * @param subchondral_text1
+	 * @param schmorls_1
+	 * @param schmorls_text1
+	 * @param foraminal_1
+	 * @param foraminal_select1
+	 * @param osteoporosis_1
+	 * @param osteoporosis_select1
+	 * @param decreasedFlexExt_1
+	 * @param decreasedFlexExt_select1
+	 * @param decreasedRLFlex_1
+	 * @param decreasedRLFlex_select1
+	 * @param dextro_Levoscoliosis_towering_select1
+	 * @param mild_11
+	 * @param moderate_11
+	 * @param severe_11
+	 * @param apexat_1
+	 * @param apexat_text1
+	 * @param softtissueedemaof_1
+	 * @param softtissueedemaof_text1
+	 * @param other_1
+	 * @param other_text1
+	 * @param views2
+	 * @param negative_2
+	 * @param hyperkyphosis_2
+	 * @param normalkyphosis_2
+	 * @param hypokyphosis_2
+	 * @param degenerative_2
+	 * @param degenerative_text2
+	 * @param mild_2
+	 * @param moderate_2
+	 * @param severe_2
+	 * @param narrowed_2
+	 * @param narrowed_text2
+	 * @param schmorlsnodesat_2
+	 * @param schmorlsnodesat_text2
+	 * @param anterior_2
+	 * @param anterior_text2
+	 * @param subchondral_2
+	 * @param subchondral_text2
+	 * @param foraminal_2
+	 * @param foraminal_text2
+	 * @param osteoporosis_2
+	 * @param osteoporosis_select2
+	 * @param dextro_Levoscoliosis_towering_select2
+	 * @param mild_22
+	 * @param moderate_22
+	 * @param severe_22
+	 * @param apexat_2
+	 * @param apexat_text2
+	 * @param softtissueedemaof_2
+	 * @param softtissueedemaof_text2
+	 * @param other_2
+	 * @param other_text2
+	 * @param views3
+	 * @param negative_3
+	 * @param break_3
+	 * @param break_text3
+	 * @param osteoporosis_3
+	 * @param osteoporosis_select3
+	 * @param hyperkyphosis_3
+	 * @param normalkyphosis_3
+	 * @param hypokyphosis_3
+	 * @param hypokyphosos_select_3
+	 * @param degenerative_3
+	 * @param degenerative_select3
+	 * @param mild_3
+	 * @param moderate_3
+	 * @param severe_3
+	 * @param narrowed_3
+	 * @param narrowed_text3
+	 * @param anterior_3
+	 * @param anterior_text3
+	 * @param subchondral_3
+	 * @param subchondral_text3
+	 * @param schmorls_3
+	 * @param schmorls_text3
+	 * @param spondylolisthesisof_3
+	 * @param spondylolisthesisof_select3
+	 * @param other_text3
+	 * @param grade_3
+	 * @param decreasedRLF_3
+	 * @param decreasedLLF_3
+	 * @param facettropism_3
+	 * @param sacralization_3
+	 * @param lumbarization_3
+	 * @param dextro_Levoscoliosis_towering_select3
+	 * @param mild_33
+	 * @param moderate_33
+	 * @param severe_33
+	 * @param apexat_3
+	 * @param apexat_text3
+	 * @param softtissueedemaof_3
+	 * @param softtissueedemaof_text3
+	 * @param other_3
+	 * @param other_text33
+	 * @param views4
+	 * @param normal_4
+	 * @param positivefor_4
+	 */
 	public RadiologicReport(String pid,String pname, String date, String id, String dob,
 			String views1, String negative_1, String positive_for,
 			String positive_text1, String break_1, String break_text1,
