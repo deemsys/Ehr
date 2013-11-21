@@ -20,7 +20,7 @@
 </head>
  <body>
 <div id="right_content">
-<form action="hardshipagreement" method="POST">
+<form action="updatehardship" method="POST">
 
 <table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table">
        <tr>
@@ -41,6 +41,7 @@
               <c:set value="${hardshipagreementform.hardshipagreement[0]}" var="Hardshipagreement"> </c:set>
               <tr>
               <td>Date</td>
+              <input type="hidden" class="input_txtbx1" id="inp_id" value="${Hardshipagreement.agreement_no}" name="agreement_no" />
               <td ><input type="text" class="input_txtbx1" name="date" id="datepicker" value="${Hardshipagreement.date}"/><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>

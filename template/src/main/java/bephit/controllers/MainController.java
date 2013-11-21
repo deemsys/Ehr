@@ -1237,7 +1237,47 @@ public class MainController {
  
 	}
 	
+	@RequestMapping(value="/updatehardship", method=RequestMethod.POST)
+	public String updatehardship(HttpServletRequest request,@ModelAttribute("Hardshipagreement") @Valid Hardshipagreement Hardshipagreement,
+			BindingResult result,ModelMap model,Principal principal)
+	{
+		/*if (result.hasErrors())
+		{
+			InsuranceplanForm insuranceplanForm = new InsuranceplanForm();
+	     //   participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants(participant.getParticipants_id()));
+	      insuranceplanForm.setInsuranceplan(planDAO.getPlan(insuranceplan.getNo()));
+	      
+	        model.addAttribute("insuranceplanForm", insuranceplanForm);
+			    
+		        return "editinsuranceplan";
+		}*/
+		
+		int status = hardDAO.updatehardship(Hardshipagreement, Hardshipagreement.getAgreement_no(), principal.getName());
+		System.out.println(status);
+		HardshipagreementForm hardshipagreementForm= new HardshipagreementForm();
+    	hardshipagreementForm.setHardshipagreement(hardDAO.getHardshipagreement());
+		model.addAttribute("hardshipagreementform",hardshipagreementForm);
+	       model.addAttribute("success","true");
+	        return "viewhardship";
+		
+	}
 	
+
+	@RequestMapping(value="/deletehardship", method=RequestMethod.GET)
+	public String removehardship(@RequestParam("agreement_no") String agreement_no,ModelMap model, Principal principal) {
+	
+		int status=hardDAO.deletehardship(agreement_no);
+		
+		if(status==1)
+		{
+        model.addAttribute("success","true");
+		//ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
+        HardshipagreementForm hardshipagreementForm= new HardshipagreementForm();
+    	hardshipagreementForm.setHardshipagreement(hardDAO.getHardshipagreement());
+		model.addAttribute("hardshipagreementform",hardshipagreementForm);		}
+		
+		return "hardshipagreement";
+	}
 	
 	
 	@RequestMapping(value="/editinsuranceinformation", method = RequestMethod.GET)
@@ -1257,6 +1297,38 @@ public class MainController {
 		model.addAttribute("InsuranceverificationForm",insuranceverificationForm);
 		
 		return "editinsuranceverification";
+	}
+	
+	@RequestMapping(value="/updateinsuranceverification", method=RequestMethod.POST)
+	public String updateinsuranceverification(HttpServletRequest request,@ModelAttribute("Insuranceverification") @Valid Insuranceverification insuranceverification,
+			BindingResult result,ModelMap model,Principal principal)
+	{
+		
+		int status = veriDAO.updateinsuranceverification(insuranceverification, insuranceverification.getForm_no());
+		System.out.println(status);
+		InsuranceverificationForm insuranceverificationForm= new InsuranceverificationForm();
+    	insuranceverificationForm.setInsuranceverification(veriDAO.getInsuranceverification());
+		model.addAttribute("InsuranceverificationForm",insuranceverificationForm);    
+		model.addAttribute("success","true");
+	        return "viewinsuranceverification";
+		
+	}
+	
+
+	@RequestMapping(value="/deleteinsuranceverification", method=RequestMethod.GET)
+	public String removeinsuranceverification(@RequestParam("form_no") String form_no,ModelMap model, Principal principal) {
+	
+		int status=veriDAO.deleteinsuranceverification(form_no);
+		
+		if(status==1)
+		{
+        model.addAttribute("success","true");
+		
+        InsuranceverificationForm insuranceverificationForm= new InsuranceverificationForm();
+    	insuranceverificationForm.setInsuranceverification(veriDAO.getInsuranceverification());
+		model.addAttribute("InsuranceverificationForm",insuranceverificationForm);    
+		}
+		return "insuranceverification";
 	}
 	
 	@RequestMapping(value="/editstaffchecklist", method = RequestMethod.GET)

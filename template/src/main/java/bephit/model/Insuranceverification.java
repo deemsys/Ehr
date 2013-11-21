@@ -5,6 +5,9 @@ import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.NotEmpty;
 
 public class Insuranceverification{
+	
+	private String form_no;
+	
 	@NotEmpty
 	private String verify_name;
 	@NotEmpty
@@ -60,7 +63,7 @@ public class Insuranceverification{
 	public Insuranceverification(){
 	}
 	
-	public Insuranceverification(String verify_name,
+	public Insuranceverification(String form_no,String verify_name,
 			String spoke_with,
 			String date,
 			String fax,
@@ -82,6 +85,7 @@ public class Insuranceverification{
 			String xray_deduct,
 			String doctors_assign,
 			String mail_claims){
+		this.form_no=form_no;
 		this.verify_name=verify_name;
 		this.spoke_with=spoke_with;
 		this.date=date;
@@ -104,6 +108,14 @@ public class Insuranceverification{
 		this.xray_deduct=xray_deduct;
 		this.doctors_assign=doctors_assign;
 		this.mail_claims=mail_claims;
+	}
+
+	public String getForm_no() {
+		return form_no;
+	}
+
+	public void setForm_no(String form_no) {
+		this.form_no = form_no;
 	}
 
 	public String getVerify_name() {

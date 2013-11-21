@@ -67,55 +67,6 @@ public class InsuranceverificationDAO {
 	    
 	}
 	
-	public int updateinsuranceverification(Insuranceverification insuranceverification,String form_no)
-	{
-		Connection con = null;
-		Statement statement = null;
-		int flag=0;
-		try {
-			con = dataSource.getConnection();
-			statement = con.createStatement();
-		} catch (SQLException e1) {
-			e1.printStackTrace();
-		}
-		//List<ParticipantsDetails> participants = new ArrayList<ParticipantsDetails>();
-	    try{
-	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-	    	 Date date = new Date();
-	    	 //System.out.println(dateFormat.format(date));
-	    	String cmd="UPDATE tbl_insuranceverification SET verify_name='"+insuranceverification.getVerify_name()+"',spoke_with='"+insuranceverification.getSpoke_with()+"',date='"+insuranceverification.getDate()+"',fax='"+insuranceverification.getFax()+"',amount_deduct='"+insuranceverification.getAmount_deduct()+"',amount_deduct_met='"+insuranceverification.getAmount_deduct_met()+"',max_visit='"+insuranceverification.getMax_visit()+"',is_chiropractic='"+insuranceverification.getIs_chiropractic()+"',at_what='"+insuranceverification.getAt_what()+"',xray_cover='"+insuranceverification.getXray_cover()+"',atwhat='"+insuranceverification.getAtwhat()+"',subject_deduct='"+insuranceverification.getSubject_deduct()+"',benefits_honored='"+insuranceverification.getBenefits_honored()+"',network_benefits='"+insuranceverification.getNetwork_benefits()+"',deductible='"+insuranceverification.getDeductible()+"',covered='"+insuranceverification.getCovered()+"',cm='"+insuranceverification.getCm()+"',pt='"+insuranceverification.getPt()+"',ov='"+insuranceverification.getOv()+"',xray_deduct='"+insuranceverification.getXray_deduct()+"',doctors_assign='"+insuranceverification.getDoctors_assign()+"',mail_claims='"+insuranceverification.getMail_claims()+"';";
-	    		
-	    	String Desc="Update insuranceverification "+insuranceverification.getVerify_name();
-	    	
-	    	
-	    	
-	    	//String cmd_activity="insert into admin_log_activity_table(admin_id,ip_address,admin_date_time,admin_desc) values('"+admin+"','127.0.0.1','"+dateFormat.format(date)+"','"+Desc+"')";
-	    	    	
-	    	System.out.println(cmd);
-	    	//System.out.println(cmd_activity);
-			
-	    	statement.execute(cmd);
-			//statement.execute(cmd_activity);
-			flag=1;
-	 }
-	    catch(Exception e){
-	    	System.out.println(e.toString());
-	    	releaseStatement(statement);
-	    	releaseConnection(con);
-	    	flag=0;
-	    	//return 0;
-	    }finally{
-	     	releaseStatement(statement);
-	    	releaseConnection(con);	    
-	    	
-	    }
-	    if(flag==1)
-    		return 1;
-    	else
-    		return 0;
-	    
-	}
-
 	
 public List<Insuranceverification> getInsuranceverification(){
 	Connection con = null;
@@ -132,7 +83,7 @@ public List<Insuranceverification> getInsuranceverification(){
     try{
 		resultSet = statement.executeQuery("select * from tbl_insuranceverification order by form_no DESC");
 		while(resultSet.next()){
-			Insuranceverification.add(new Insuranceverification(resultSet.getString("verify_name"),
+			Insuranceverification.add(new Insuranceverification(resultSet.getString("form_no"),resultSet.getString("verify_name"),
 		    		resultSet.getString("spoke_with"),
 		    		resultSet.getString("date"),
 		    		resultSet.getString("fax"),
@@ -168,6 +119,152 @@ public List<Insuranceverification> getInsuranceverification(){
     return Insuranceverification;
 	
 }
+
+public List<Insuranceverification> getInsuranceverification(String form_no){
+	Connection con = null;
+	Statement statement = null;
+	ResultSet resultSet = null;
+	try {
+		con = dataSource.getConnection();
+		statement = con.createStatement();
+	} catch (SQLException e1) {
+		e1.printStackTrace();
+	}
+	
+	List<Insuranceverification> Insuranceverification = new ArrayList<Insuranceverification>();
+    try{
+		resultSet = statement.executeQuery("select * from tbl_insuranceverification order by form_no DESC");
+		while(resultSet.next()){
+			Insuranceverification.add(new Insuranceverification(resultSet.getString("form_no"),resultSet.getString("verify_name"),
+		    		resultSet.getString("spoke_with"),
+		    		resultSet.getString("date"),
+		    		resultSet.getString("fax"),
+		    		resultSet.getString("amount_deduct"),
+		    		resultSet.getString("amount_deduct_met"),
+		    		resultSet.getString("max_visit"),
+		    		resultSet.getString("is_chiropractic"),
+		    		resultSet.getString("at_what"),
+		    		resultSet.getString("xray_cover"),
+		    		resultSet.getString("atwhat"),
+		    		resultSet.getString("subject_deduct"),
+		    		resultSet.getString("benefits_honored"),
+		    		resultSet.getString("network_benefits"),
+		    		resultSet.getString("deductible"),
+		    		resultSet.getString("covered"),
+		    		resultSet.getString("cm"),
+		    		resultSet.getString("pt"),
+		    		resultSet.getString("ov"),
+		    		resultSet.getString("xray_deduct"),
+		    		resultSet.getString("doctors_assign"),
+		    		resultSet.getString("mail_claims")));
+		    		
+		}
+    }catch(Exception e){
+    	releaseResultSet(resultSet);
+    	releaseStatement(statement);
+    	releaseConnection(con);
+    }finally{
+    	releaseResultSet(resultSet);
+    	releaseStatement(statement);
+    	releaseConnection(con);	    	
+    }
+    return Insuranceverification;
+	
+}
+/**
+ * 
+ * @param insuranceverification
+ * @param form_no
+ * @return
+ */
+public int updateinsuranceverification(Insuranceverification insuranceverification,String form_no)
+{
+	Connection con = null;
+	Statement statement = null;
+	int flag=0;
+	try {
+		con = dataSource.getConnection();
+		statement = con.createStatement();
+	} catch (SQLException e1) {
+		e1.printStackTrace();
+	}
+	//List<ParticipantsDetails> participants = new ArrayList<ParticipantsDetails>();
+    try{
+    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+    	 Date date = new Date();
+    	 //System.out.println(dateFormat.format(date));
+    	String cmd="UPDATE tbl_insuranceverification SET verify_name='"+insuranceverification.getVerify_name()+"',spoke_with='"+insuranceverification.getSpoke_with()+"',date='"+insuranceverification.getDate()+"',fax='"+insuranceverification.getFax()+"',amount_deduct='"+insuranceverification.getAmount_deduct()+"',amount_deduct_met='"+insuranceverification.getAmount_deduct_met()+"',max_visit='"+insuranceverification.getMax_visit()+"',is_chiropractic='"+insuranceverification.getIs_chiropractic()+"',at_what='"+insuranceverification.getAt_what()+"',xray_cover='"+insuranceverification.getXray_cover()+"',atwhat='"+insuranceverification.getAtwhat()+"',subject_deduct='"+insuranceverification.getSubject_deduct()+"',benefits_honored='"+insuranceverification.getBenefits_honored()+"',network_benefits='"+insuranceverification.getNetwork_benefits()+"',deductible='"+insuranceverification.getDeductible()+"',covered='"+insuranceverification.getCovered()+"',cm='"+insuranceverification.getCm()+"',pt='"+insuranceverification.getPt()+"',ov='"+insuranceverification.getOv()+"',xray_deduct='"+insuranceverification.getXray_deduct()+"',doctors_assign='"+insuranceverification.getDoctors_assign()+"',mail_claims='"+insuranceverification.getMail_claims()+"' where form_no='"+form_no+"';";
+    		
+    	String Desc="Update insuranceverification "+insuranceverification.getVerify_name();
+    	
+    	    	
+    	System.out.println(cmd);
+    	
+		
+    	statement.execute(cmd);
+
+		flag=1;
+ }
+    catch(Exception e){
+    	System.out.println(e.toString());
+    	releaseStatement(statement);
+    	releaseConnection(con);
+    	flag=0;
+    	//return 0;
+    }finally{
+     	releaseStatement(statement);
+    	releaseConnection(con);	    
+    	
+    }
+    if(flag==1)
+		return 1;
+	else
+		return 0;
+    
+}
+
+public int deleteinsuranceverification(String form_no){
+	Connection con = null;
+	Statement statement = null;
+	ResultSet resultSet = null;
+	int flag=0;
+	try {
+		con = dataSource.getConnection();
+		statement = con.createStatement();
+	} catch (SQLException e1) {
+		e1.printStackTrace();
+	}
+	try{
+		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+    	 Date date = new Date();
+    	 String cmd_getverifyname="select verify_name from tbl_insuranceverification where form_no='"+form_no+"'";
+    	 String Desc="Delete report ";
+    	 resultSet=statement.executeQuery(cmd_getverifyname);
+			
+			if(resultSet.next())
+				Desc=Desc+resultSet.getString(1);
+			statement.execute("delete from tbl_insuranceverification where form_no='"+form_no+"'");
+			
+			flag=1;
+			
+	    }catch(Exception e){
+	    	System.out.println(e.toString());
+	    	flag=0;
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    }finally{
+	    	
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);	    	
+	    }
+	   		if(flag==1)
+	   			return 1;
+	   		else
+	   			return 0;
+	}
+
 public void releaseConnection(Connection con){
 	try{if(con != null)
 		con.close();

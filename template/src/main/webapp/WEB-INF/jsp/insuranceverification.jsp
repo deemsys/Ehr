@@ -260,7 +260,7 @@
               </tr>
               <tr class="row1">
               <td>What address do we mail claims to?</td>
-              <td><textarea rows="3" cols="35" name="mail_claims" id="mail_claims" value="${veri.mail_claims}"></textarea><br><span class="err"><form:errors path="Insuranceverification.mail_claims"></form:errors></td>
+              <td><textarea rows="3" cols="35" name="mail_claims" id="mail_claims" >${Insuranceverification.mail_claims}</textarea><br><span class="err"><form:errors path="Insuranceverification.mail_claims"></form:errors></td>
               <td></td>
 			  <td></td>              
               </tr>

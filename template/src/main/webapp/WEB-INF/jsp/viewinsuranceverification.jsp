@@ -155,7 +155,7 @@
 	          <td valign="top" align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>  
               <td valign="top" align="center"><br><input type="button" class="submit_btn" value="Edit" onclick="window.location.href='editinsuranceverification'"></td>
               <td>&nbsp;&nbsp;</td>
-               <td valign="top" align="center"><br><input type="button" class="submit_btn" value="Delete"></td>
+               <td valign="top" align="center"> <a href="<c:out value="deleteinsuranceverification?form_no=${Insuranceverification.form_no}"/>"><br/><input type="button" class="submit_btn" value="Delete" onclick='confirmation()'/></a></td>
 	    </tr>
 	    </table>
 	    </div>
@@ -167,6 +167,17 @@
 	    </div>
 	    </body>
 	    </html>
+	     <script language="javascript">
+        function confirmation() {
+	var answer = confirm("Are you Sure You Want to Delete  Patient  ?")
+	if (answer){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+        </script>
 	    <jsp:include page="footer.jsp"></jsp:include>
               
               
