@@ -68,7 +68,7 @@
                         <p id="mypar"><u><b>You may have the right to have your physician amend your protected healthy information.</b></u>If we deny your request for amendment, you have the right to file a statement of disagreement with us and we may prepare a rebuttal to your statement and will provide you with a copy of any such rebuttal.</p>
                         <p id="mypar"><u><b>You have the right to receive an accounting of certain disclosures we have made, if any, of your protected health information.</b></u>We reserve the right to change the terms of this notice and will inform you by mail of any changes.  You then have the right to object or withdraw as provided in this notice.</p>
                         <p id="mypar"><u><b>Complaints</b></u>You may complain to us or to the Secretary of Health and Human Services if you believe your privacy rights have been violated by us.  You may file a complaint with us by notifying our privacy contact of you complaint.<u><b>We will not retaliate against you for filing a complaint.</b></u></p>
-                        <p id="mypar">This notice was publishes and becomes effective on/or before &nbsp;&nbsp;<input type="text" class="input_txtbx1" id="datepicker" name="date" /><span class="err"><form:errors path="HippaPrivacy.date"></form:errors></p>
+                        <p id="mypar">This notice was publishes and becomes effective on/or before &nbsp;&nbsp;<input type="text" class="input_txtbx1" id="datepicker" name="date" /></p>
                         <br>
                         <br>
                         <br>
@@ -80,24 +80,24 @@
                         <tr class="row1">
                         <td valign="middle" align="left" class="input_txt"><span class="err">*</span>PrintPatientname: </td>
 				                   <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="printpname" /><span class="err"><form:errors path="HippaPrivacy.printpname"></form:errors>
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="printpname" />
 				                  	</td>
 				                  	</tr>
 				                  	<tr class="row1">
 				                  	 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date: </td>
 				                  	<td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="datepicker1" name="printpdate" /><span class="err"><form:errors path="HippaPrivacy.printpdate"></form:errors>
+				                  	<input type="text" class="input_txtbx1" id="datepicker1" name="printpdate" />
 				         </span></td>
 				         </tr>
 				         <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Signature Of parent or Legal Guardian: </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="legalguardian" /><span class="err"><form:errors path="HippaPrivacy.legalguardian"></form:errors>
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="legalguardian" />
 				                  	</tr>
 				                  	 <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Staff Witness: </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="staffwitness" /><span class="err"><form:errors path="HippaPrivacy.staffwitness"></form:errors>
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="staffwitness" />
 				                  	</tr>
 				                  	</table>
 				                  	</c:when>
@@ -128,7 +128,7 @@
                         <p id="mypar"><u><b>You may have the right to have your physician amend your protected healthy information.</b></u>If we deny your request for amendment, you have the right to file a statement of disagreement with us and we may prepare a rebuttal to your statement and will provide you with a copy of any such rebuttal.</p>
                         <p id="mypar"><u><b>You have the right to receive an accounting of certain disclosures we have made, if any, of your protected health information.</b></u>We reserve the right to change the terms of this notice and will inform you by mail of any changes.  You then have the right to object or withdraw as provided in this notice.</p>
                         <p id="mypar"><u><b>Complaints</b></u>You may complain to us or to the Secretary of Health and Human Services if you believe your privacy rights have been violated by us.  You may file a complaint with us by notifying our privacy contact of you complaint.<u><b>We will not retaliate against you for filing a complaint.</b></u></p>
-                        <p id="mypar">This notice was publishes and becomes effective on/or before &nbsp;&nbsp;<input type="text" class="input_txtbx1" id="datepicker" name="date" value="${hippa.date}"/><span class="err"><form:errors path="HippaPrivacy.date"></form:errors></p>
+                        <p id="mypar">This notice was publishes and becomes effective on/or before &nbsp;&nbsp;<input type="text" class="input_txtbx1" id="datepicker" name="date" value="${hippa.date}"/></p>
                         <br>
                         <br>
                         <br>
@@ -140,24 +140,24 @@
                         <tr class="row1">
                         <td valign="middle" align="left" class="input_txt"><span class="err">*</span>PrintPatientname: </td>
 				                   <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="printpname" value="${hippa.printpname}"/><span class="err"><form:errors path="HippaPrivacy.printpname"></form:errors>
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="printpname" value="${hippa.printpname}"/>
 				                  	</td>
 				                  	</tr>
 				                  	<tr class="row1">
 				                  	 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date: </td>
 				                  	<td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="datepicker1" name="printpdate" value="${hippa.printpdate}"/><span class="err"><form:errors path="HippaPrivacy.printpdate"></form:errors>
+				                  	<input type="text" class="input_txtbx1" id="datepicker1" name="printpdate" value="${hippa.printpdate}"/>
 				         </span></td>
 				         </tr>
 				         <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Signature Of parent or Legal Guardian: </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="legalguardian" value="${hippa.legalguardian}"/><span class="err"><form:errors path="HippaPrivacy.legalguardian"></form:errors>
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="legalguardian" value="${hippa.legalguardian}"/>
 				                  	</tr>
 				                  	 <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Staff Witness: </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="staffwitness" value="${hippa.staffwitness}"/><span class="err"><form:errors path="HippaPrivacy.staffwitness"></form:errors>
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="staffwitness" value="${hippa.staffwitness}"/>	
 				                  	</tr>
 				                  	</table>
 				                  	</c:otherwise>

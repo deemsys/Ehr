@@ -13,8 +13,8 @@ public class HippaPrivacyForm
 	public List<HippaPrivacy> getPrivacyDetails() {
 		return privacydetails;
 	}
-	public void setPrivacyDetails(List<HippaPrivacy> privacydetails) {
-		this.privacydetails = privacydetails;
+	public void setPrivacyDetails(List<HippaPrivacy> privacyDetails) {
+		this.privacydetails = privacyDetails;
 	}
 
 }

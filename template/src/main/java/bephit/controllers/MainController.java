@@ -1231,14 +1231,14 @@ public class MainController {
 		return "viewpatient";
 	}*/
 
-	@RequestMapping(value="/viewhardship", method = RequestMethod.GET)
+	@RequestMapping(value="/hardshiplist", method = RequestMethod.GET)
 	public String viewhardship(HttpServletRequest request,ModelMap model) {
 		
 		HardshipagreementForm hardshipagreementForm= new HardshipagreementForm();
     	hardshipagreementForm.setHardshipagreement(hardDAO.getHardshipagreement());
 		model.addAttribute("hardshipagreementform",hardshipagreementForm);
 		
-		return "viewhardship";
+		return "hardshiplist";
  
 	}
 	
