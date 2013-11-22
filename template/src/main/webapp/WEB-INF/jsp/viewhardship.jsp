@@ -82,7 +82,7 @@
             <td valign="middle" align="left" width="74%">${Hardshipagreement.witness_sign}</td> </tr>
               </table>
               <br>
-              <table>
+             <%--  <table>
               <tr >
               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
               <td ><input type="button" class="submit_btn" value="Edit" onclick="window.location.href='edithardship'"></td>
@@ -90,7 +90,7 @@
               <td valign="top" align="center"> <a href="<c:out value="deletehardship?agreement_no=${Hardshipagreement.agreement_no}"/>"><input type="button" class="submit_btn" value="Delete" onclick='confirmation()'/></a></td>
         	  </tr>
         	  
-        	  </table>
+        	  </table> --%>
         	  </div>
         	  </div>
         	  </td>

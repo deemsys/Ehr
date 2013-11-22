@@ -82,7 +82,7 @@ public List<Hardshipagreement> getHardshipagreement(){
 	
 	List<Hardshipagreement> Hardshipagreement = new ArrayList<Hardshipagreement>();
     try{
-		resultSet = statement.executeQuery("select * from tbl_hardshipagreement order by agreement_no DESC" );
+		resultSet = statement.executeQuery("select * from tbl_hardshipagreement " );
 		while(resultSet.next()){
 			Hardshipagreement.add(new Hardshipagreement(resultSet.getString("agreement_no"),resultSet.getString("date"),
 		    		resultSet.getString("print_pat_name"),
@@ -119,7 +119,7 @@ public List<Hardshipagreement> getHardshipagreement(String agreement_no){
 	
 	List<Hardshipagreement> Hardshipagreement = new ArrayList<Hardshipagreement>();
     try{
-		resultSet = statement.executeQuery("select * from tbl_hardshipagreement order by agreement_no DESC" );
+		resultSet = statement.executeQuery("select * from tbl_hardshipagreement where agreement_no='"+agreement_no+"'" );
 		while(resultSet.next()){
 			Hardshipagreement.add(new Hardshipagreement(resultSet.getString("agreement_no"),resultSet.getString("date"),
 		    		resultSet.getString("print_pat_name"),
