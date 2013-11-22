@@ -136,7 +136,7 @@ public class TreatDAO {
 	
 	
 	
-	public int updatetreatform(Treatform treatdetails,String treat_no,String admin)
+	public int updatetreatform(Treatform treatdetails,String treat_no)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -152,7 +152,7 @@ public class TreatDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 //System.out.println(dateFormat.format(date));
-	    	String cmd="UPDATE treat_details SET patienrsname='"+treatdetails.getPatientsname()+"',patientssign='"+treatdetails.getPatientssign()+"',todaydate='"+treatdetails.getTodaydate()+"',witness='"+treatdetails.getWitness()+"' where treat_no='"+treat_no+"';";
+	    	String cmd="UPDATE treat_details SET patientsname='"+treatdetails.getPatientsname()+"',patientssign='"+treatdetails.getPatientssign()+"',todaydate='"+treatdetails.getTodaydate()+"',witness='"+treatdetails.getWitness()+"' where treat_no='"+treat_no+"';";
 	    /*	String Desc="Update hardship "+hardshipagreement.getPrint_pat_name();
 	    	*/
 	    	
@@ -184,6 +184,48 @@ public class TreatDAO {
 	    
 	}
 	
+	public int deletetreatform(String treat_no){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		int flag=0;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		try{
+			DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+	    	 Date date = new Date();
+	    	 String cmd_getpat_pname="select patientsname from treat_details where treat_no='"+treat_no+"'";
+	    	 String Desc="Delete report ";
+	    	 resultSet=statement.executeQuery(cmd_getpat_pname);
+				
+				if(resultSet.next())
+					Desc=Desc+resultSet.getString(1);
+				statement.execute("delete from treat_details where treat_no='"+treat_no+"'");
+				
+				flag=1;
+				
+		    }catch(Exception e){
+		    	System.out.println(e.toString());
+		    	flag=0;
+		    	releaseResultSet(resultSet);
+		    	releaseStatement(statement);
+		    	releaseConnection(con);
+		    }finally{
+		    	
+		    	releaseResultSet(resultSet);
+		    	releaseStatement(statement);
+		    	releaseConnection(con);	    	
+		    }
+		   		if(flag==1)
+		   			return 1;
+		   		else
+		   			return 0;
+		}
+
 	
 	public void releaseConnection(Connection con){
 		try{if(con != null)

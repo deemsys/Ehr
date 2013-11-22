@@ -1328,6 +1328,63 @@ public class MainController {
  
 	}
 	
+
+	@RequestMapping(value="/edittreatform", method = RequestMethod.GET)
+	public String edittreatform(HttpServletRequest request,ModelMap model) {
+		 TreatForm treatform= new TreatForm();
+			treatform.setTreatform(treatDAO.getTreatDetails());
+			model.addAttribute("treatform",treatform);
+
+		
+		return "edittreatform";
+		
+ 
+	}
+	
+	@RequestMapping(value="/updatetreatform", method=RequestMethod.POST)
+	public String updatetreatform(HttpSession session,@ModelAttribute("Treatform") @Valid Treatform treatdetails,BindingResult result,
+			ModelMap model) {
+		/*if (result.hasErrors())
+		{
+			InsuranceplanForm insuranceplanForm = new InsuranceplanForm();
+	     //   participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants(participant.getParticipants_id()));
+	      insuranceplanForm.setInsuranceplan(planDAO.getPlan(insuranceplan.getNo()));
+	      
+	        model.addAttribute("insuranceplanForm", insuranceplanForm);
+			    
+		        return "editinsuranceplan";
+		}*/
+		
+		int status = treatDAO.updatetreatform(treatdetails, treatdetails.getTreat_no());
+		System.out.println(status);
+		 TreatForm treatform= new TreatForm();
+			treatform.setTreatform(treatDAO.getTreatDetails());
+			model.addAttribute("treatform",treatform);
+	       model.addAttribute("success","true");
+	        return "viewtreatform";
+		
+	}
+	
+
+	@RequestMapping(value="/deletetreatform", method=RequestMethod.GET)
+	public String removetreatform(@RequestParam("treat_no") String treat_no,ModelMap model, Principal principal) {
+	
+		int status=treatDAO.deletetreatform(treat_no);
+		
+		if(status==1)
+		{
+        model.addAttribute("success","true");
+        TreatForm treatform= new TreatForm();
+		treatform.setTreatform(treatDAO.getTreatDetails());
+		model.addAttribute("treatform",treatform);
+		}
+		
+		return "treatform";
+	}
+	
+	
+
+	
 	@RequestMapping(value="/viewtreatminor", method = RequestMethod.GET)
 	public String viewtreatminor(HttpServletRequest request,ModelMap model) {
 		
@@ -1337,6 +1394,59 @@ public class MainController {
 		return "viewtreatminor";
  
 	}
+
+	@RequestMapping(value="/edittreatminor", method = RequestMethod.GET)
+	public String edittreatminor(HttpServletRequest request,ModelMap model) {
+
+		TreatMinorDetailsForm treatminordetailsForm= new TreatMinorDetailsForm();
+		treatminordetailsForm.setMinorDetails(minorDAO.getMinorDetails());
+		model.addAttribute("treatminordetailsform",treatminordetailsForm);
+		
+		return "edittreatminor";
+		
+ 
+	}
+	
+	@RequestMapping(value="/updatetreatminor", method=RequestMethod.POST)
+	public String updatetreatminor(HttpSession session,@ModelAttribute("TreatMinor") @Valid TreatMinor minordetails,BindingResult result,ModelMap model) {
+		/*if (result.hasErrors())
+		{
+			InsuranceplanForm insuranceplanForm = new InsuranceplanForm();
+	     //   participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants(participant.getParticipants_id()));
+	      insuranceplanForm.setInsuranceplan(planDAO.getPlan(insuranceplan.getNo()));
+	      
+	        model.addAttribute("insuranceplanForm", insuranceplanForm);
+			    
+		        return "editinsuranceplan";
+		}*/
+		
+		int status =minorDAO.updatetreatminor(minordetails, minordetails.getMinor_no());
+		System.out.println(status);
+		TreatMinorDetailsForm treatminordetailsForm= new TreatMinorDetailsForm();
+		treatminordetailsForm.setMinorDetails(minorDAO.getMinorDetails());
+		model.addAttribute("treatminordetailsform",treatminordetailsForm);
+	       model.addAttribute("success","true");
+	        return "viewtreatminor";
+		
+	}
+	
+
+	@RequestMapping(value="/deletetreatminor", method=RequestMethod.GET)
+	public String removetreatminor(@RequestParam("minor_no") String minor_no,ModelMap model, Principal principal) {
+	
+		int status=minorDAO.deletetreatminor(minor_no);
+		
+		if(status==1)
+		{
+        model.addAttribute("success","true");
+		//ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
+        TreatMinorDetailsForm treatminordetailsForm= new TreatMinorDetailsForm();
+		treatminordetailsForm.setMinorDetails(minorDAO.getMinorDetails());
+		model.addAttribute("treatminordetailsform",treatminordetailsForm);
+		}
+		return "treatminor";
+	}
+	
 	
 	
 	

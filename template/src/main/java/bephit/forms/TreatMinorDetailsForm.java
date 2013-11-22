@@ -6,15 +6,15 @@ import bephit.model.TreatMinor;
 
 public class TreatMinorDetailsForm
 {
-	private List<TreatMinor> minordetails;
+	private List<TreatMinor> Minordetails;
 	{
 		
 	}
 	public List<TreatMinor> getMinorDetails() {
-		return minordetails;
+		return Minordetails;
 	}
-	public void setMinorDetails(List<TreatMinor> minordetails) {
-		this.minordetails = minordetails;
+	public void setMinorDetails(List<TreatMinor> minorDetails) {
+		this.Minordetails = minorDetails;
 	}
 
 }

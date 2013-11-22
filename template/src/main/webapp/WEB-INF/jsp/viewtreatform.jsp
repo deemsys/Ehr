@@ -67,7 +67,7 @@
 				                  </tr>
 				         <tr class="row1">
 				                  	<td>Todays Date:  </td>
-				                  	<td>${Treatdetails.patientsname}</td>
+				                  	<td>${Treatdetails.todaydate}</td>
 				         </tr>
                         <tr class="row1">
 				                  <td>Witness: </td>
@@ -79,7 +79,7 @@
 				  				<td valign="top" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				                <td valign="top" align="center"><br><input type="button" class="submit_btn" value="Edit" onclick="window.location.href='edittreatform'"></td>
 				                <td>&nbsp;&nbsp;</td>
-				 				 <td valign="top" align="center"> <a href="<c:out value="deletetreatform?treat_no=${Treatdetails.treat_no}"/>"><input type="button" class="submit_btn" value="Delete" onclick='confirmation()'/></a></td>
+				 				 <td valign="top" align="center"> <a href="<c:out value="deletetreatform?treat_no=${Treatdetails.treat_no}"/>"><br/><input type="button" class="submit_btn" value="Delete" onclick='confirmation()'/></a></td>
 				  </tr>
                         
                         

@@ -6,6 +6,8 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 public class TreatMinor
 {
+	private String minor_no;
+	
 	@NotEmpty
 	
 	private String guardian;
@@ -29,6 +31,23 @@ public class TreatMinor
 	{
 		
 	}
+	
+	public String getMinor_no() {
+		return minor_no;
+	}
+
+	public void setMinor_no(String minor_no) {
+		this.minor_no = minor_no;
+	}
+
+	public String getDrname() {
+		return drname;
+	}
+
+	public void setDrname(String drname) {
+		this.drname = drname;
+	}
+
 	public String getSigned() {
 		return signed;
 	}
@@ -53,19 +72,15 @@ public class TreatMinor
 	public void setAge(String age) {
 		this.age = age;
 	}
-	public String getdrname() {
-		return drname;
-	}
-	public void setdrname(String drname) {
-		this.drname = drname;
-	}
+	
+
 	public String getPwitness() {
 		return pwitness;
 	}
 	public void setPwitness(String pwitness) {
 		this.pwitness = pwitness;
 	}
-	public TreatMinor(String guardian,
+	public TreatMinor(String minor_no,String guardian,
 			String age,
 			String drname,
 			String signed,
@@ -73,6 +88,7 @@ public class TreatMinor
 			String pwitness
 			)
 	{
+	this.minor_no=minor_no;
 	this.guardian=guardian;
 	this.age=age;
 	this.drname=drname;

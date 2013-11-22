@@ -38,7 +38,7 @@
 	            </div>
             <div class="contentbox">
             <table cellpadding="0" cellspacing="0" border="0" width="100%">
-            <c:set value="${treatminordetailsform.minordetails[0]}" var="Minordetails"> </c:set>
+            <c:set value="${treatminordetailsform.minorDetails[0]}" var="Minordetails"> </c:set>
   				<tr>
     				<td align="left" valign="top" width="100%" style="padding-right:25px;">
                         
@@ -46,7 +46,7 @@
                         <tr>
                         <div align="justify">
                         <p id="mypar">I (We) being the parent or guardian of ${Minordetails.guardian}, a minor, being the age of ${Minordetails.age}do hereby consent, authorize and request</p>
-                        <p id="mypar">Dr.${Minordetails.Drname} to administer such treatment deemed advisable, necessary or requested on the above minor.</p>
+                        <p id="mypar">Dr.${Minordetails.drname} to administer such treatment deemed advisable, necessary or requested on the above minor.</p>
                         <p id="mypar">I (We) agree to hold him free and harmless from any claims, suits for damages or complications which may result from such treatment.
                         
                         </p>
@@ -77,9 +77,9 @@
 				                  	<table>
                         <tr>
 				  <td valign="top" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-				                <td valign="top" align="center"><br><input type="button" class="submit_btn" value="Edit"></td>
+				                <td valign="top" align="center"><br><input type="button" class="submit_btn" value="Edit" onclick="window.location.href='edittreatminor'"></td>
 				                <td>&nbsp;&nbsp;</td>
-				    <td valign="top" align="center"><br><input type="button" class="submit_btn" value="Delete"></td>
+				    <td valign="top" align="center"> <a href="<c:out value="deletetreatminor?minor_no=${Minordetails.minor_no}"/>"><br/><input type="button" class="submit_btn" value="Delete" onclick='confirmation()'/></a></td>
 				  </tr>
                         </table>
                         </tr>
@@ -91,6 +91,17 @@
                         </table>
                         </form>
                         </div>
+                         <script language="javascript">
+        function confirmation() {
+	var answer = confirm("Are you Sure You Want to Delete  Patient  ?")
+	if (answer){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+        </script>
                         </body>
                         </html>
                          <jsp:include page="footer.jsp"></jsp:include>

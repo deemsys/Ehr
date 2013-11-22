@@ -12,6 +12,7 @@ import java.util.List;
 import javax.sql.DataSource;
 
 import bephit.model.TreatMinor;
+import bephit.model.Treatform;
 
 public class TreatMinorDAO {
 	private DataSource dataSource;
@@ -37,7 +38,7 @@ public class TreatMinorDAO {
 	    try{
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
-	    	 String cmd="INSERT INTO `Minor_Details`(`guardian`,`age`,`Drname`,`signed`,`pdate`,`pwitness`) VALUES ('"+minordetails.getGuardian()+"','"+minordetails.getAge()+"','"+minordetails.getdrname()+"','"+minordetails.getSigned()+"','"+minordetails.getPdate()+"','"+minordetails.getPwitness()+"')";
+	    	 String cmd="INSERT INTO `Minor_Details`(`guardian`,`age`,`Drname`,`signed`,`pdate`,`pwitness`) VALUES ('"+minordetails.getGuardian()+"','"+minordetails.getAge()+"','"+minordetails.getDrname()+"','"+minordetails.getSigned()+"','"+minordetails.getPdate()+"','"+minordetails.getPwitness()+"')";
 	    	 System.out.println(cmd);
 	    	 statement.execute(cmd);
 		     flag=1;
@@ -75,9 +76,9 @@ public class TreatMinorDAO {
 		}
 		List<TreatMinor> minor = new ArrayList<TreatMinor>();
 	    try{
-			resultSet = statement.executeQuery("select * from Minor_Details");
+			resultSet = statement.executeQuery("select * from Minor_Details order by minor_no DESC");
 			while(resultSet.next()){
-				minor.add(new TreatMinor(resultSet.getString("guardian"),resultSet.getString("age"),resultSet.getString("drname"),resultSet.getString("signed"),
+				minor.add(new TreatMinor(resultSet.getString("minor_no"),resultSet.getString("guardian"),resultSet.getString("age"),resultSet.getString("drname"),resultSet.getString("signed"),
 			    		resultSet.getString("pdate"),
 			    		resultSet.getString("pwitness")));
 			    System.out.println(minor);	
@@ -96,9 +97,129 @@ public class TreatMinorDAO {
 		
 	}
 	
+	public List<TreatMinor> getMinorDetails(String minor_no){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<TreatMinor> minor = new ArrayList<TreatMinor>();
+	    try{
+			resultSet = statement.executeQuery("select * from Minor_Details order by minor_no DESC");
+			while(resultSet.next()){
+				minor.add(new TreatMinor(resultSet.getString("minor_no"),resultSet.getString("guardian"),resultSet.getString("age"),resultSet.getString("drname"),resultSet.getString("signed"),
+			    		resultSet.getString("pdate"),
+			    		resultSet.getString("pwitness")));
+			    System.out.println(minor);	
+			}
+	    }catch(Exception e){
+	    	System.out.println(e.toString());
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    }finally{
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);	    	
+	    }
+	    return minor;
+		
+	}
 	
+	public int updatetreatminor(TreatMinor minordetails,String minor_no)
+	{
+		Connection con = null;
+		Statement statement = null;
+		int flag=0;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		//List<ParticipantsDetails> participants = new ArrayList<ParticipantsDetails>();
+	    try{
+	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+	    	 Date date = new Date();
+	    	 //System.out.println(dateFormat.format(date));
+	    	String cmd="UPDATE minor_details SET guardian='"+minordetails.getGuardian()+"',age='"+minordetails.getAge()+"',drname='"+minordetails.getDrname()+"',signed='"+minordetails.getSigned()+"',pdate='"+minordetails.getPdate()+"',pwitness='"+minordetails.getPwitness()+"' where minor_no='"+minor_no+"';";
+	    /*	String Desc="Update hardship "+hardshipagreement.getPrint_pat_name();
+	    	*/
+	    	
+	    	
+	    	//String cmd_activity="insert into admin_log_activity_table(admin_id,ip_address,admin_date_time,admin_desc) values('"+admin+"','127.0.0.1','"+dateFormat.format(date)+"','"+Desc+"')";
+	    	    	
+	    	System.out.println(cmd);
+	    	//System.out.println(cmd_activity);
+			
+	    	statement.execute(cmd);
+			//statement.execute(cmd_activity);
+			flag=1;
+	 }
+	    catch(Exception e){
+	    	System.out.println(e.toString());
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    	flag=0;
+	    	//return 0;
+	    }finally{
+	     	releaseStatement(statement);
+	    	releaseConnection(con);	    
+	    	
+	    }
+	    if(flag==1)
+			return 1;
+		else
+			return 0;
+	    
+	}
 	
-	
+	public int deletetreatminor(String minor_no){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		int flag=0;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		try{
+			DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+	    	 Date date = new Date();
+	    	 String cmd_getpat_pname="select guardian from minor_details where minor_no='"+minor_no+"'";
+	    	 String Desc="Delete report ";
+	    	 resultSet=statement.executeQuery(cmd_getpat_pname);
+				
+				if(resultSet.next())
+					Desc=Desc+resultSet.getString(1);
+				statement.execute("delete from minor_details where minor_no='"+minor_no+"'");
+				
+				flag=1;
+				
+		    }catch(Exception e){
+		    	System.out.println(e.toString());
+		    	flag=0;
+		    	releaseResultSet(resultSet);
+		    	releaseStatement(statement);
+		    	releaseConnection(con);
+		    }finally{
+		    	
+		    	releaseResultSet(resultSet);
+		    	releaseStatement(statement);
+		    	releaseConnection(con);	    	
+		    }
+		   		if(flag==1)
+		   			return 1;
+		   		else
+		   			return 0;
+		}
+
 	public void releaseConnection(Connection con){
 		try{if(con != null)
 			con.close();
