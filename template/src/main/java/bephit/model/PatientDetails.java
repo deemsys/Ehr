@@ -75,21 +75,21 @@ private String Student;
 @NotEmpty
 
 private String EmployerName;
-@NotEmpty
+
 
 private String Occupation;
-@NotEmpty
+
 private String EmployerAddress;
-@NotEmpty
+
 /*@Pattern(regexp="(^$|[0-9]{10})",message="Not a valid Mobile number")*/
 private String Workphone;
-@NotEmpty
+
 
 private String EmployerCity;
-@NotEmpty
+
 
 private String Estate;
-@NotEmpty
+
 
 private String Ezip;
 @NotEmpty
@@ -120,13 +120,14 @@ private String Painscale2;
 private String Symptom_Accident;
 
 private String Type_Of_Accident;
+private String accident;
 @NotEmpty
 private String Date_Of_Accident;
 private String Accident_Reported;
 @NotEmpty
-private String when;
+private String when1;
 @NotEmpty
-private String where;
+private String where1;
 private String Attorney_accident;
 @NotEmpty
 
@@ -163,8 +164,10 @@ private String Anemia;
 private String Muscular;
 private String Rheumatic;
 private String Allergies;
+private String Cancer;
 private String Polio1;
 private String Multiple;
+private String Scarlet;
 private String HIV;
 private String Sinus;
 private String Asthma;
@@ -181,6 +184,7 @@ private String Diabetes;
 private String Arthritis;
 private String Venereal;
 private String Backaches;
+private String Tuberculosis;
 private String Liver;
 private String Kidney;
 private String Thyroid;
@@ -944,6 +948,28 @@ public String getDate_Of_Accident() {
 
 
 
+public String getAccident() {
+	return accident;
+}
+
+
+
+
+
+
+
+
+public void setAccident(String accident) {
+	this.accident = accident;
+}
+
+
+
+
+
+
+
+
 public void setDate_Of_Accident(String date_Of_Accident) {
 	Date_Of_Accident = date_Of_Accident;
 }
@@ -977,8 +1003,8 @@ public void setAccident_Reported(String accident_Reported) {
 
 
 
-public String getWhen() {
-	return when;
+public String getWhen1() {
+	return when1;
 }
 
 
@@ -988,8 +1014,8 @@ public String getWhen() {
 
 
 
-public void setwhen(String when) {
-	when = when;
+public void setwhen1(String when1) {
+	this.when1 = when1;
 }
 
 
@@ -999,8 +1025,8 @@ public void setwhen(String when) {
 
 
 
-public String getWhere() {
-	return where;
+public String getWhere1() {
+	return where1;
 }
 
 
@@ -1010,8 +1036,8 @@ public String getWhere() {
 
 
 
-public void setWhere(String where) {
-	where = where;
+public void setWhere1(String where1) {
+	this.where1 = where1;
 }
 
 
@@ -1359,6 +1385,28 @@ public void setAllergies(String allergies) {
 
 
 
+public String getCancer() {
+	return Cancer;
+}
+
+
+
+
+
+
+
+
+public void setCancer(String cancer) {
+	Cancer = cancer;
+}
+
+
+
+
+
+
+
+
 public String getPolio1() {
 	return Polio1;
 }
@@ -1394,6 +1442,28 @@ public String getMultiple() {
 
 public void setMultiple(String multiple) {
 	Multiple = multiple;
+}
+
+
+
+
+
+
+
+
+public String getScarlet() {
+	return Scarlet;
+}
+
+
+
+
+
+
+
+
+public void setScarlet(String scarlet) {
+	Scarlet = scarlet;
 }
 
 
@@ -1724,6 +1794,28 @@ public String getBackaches() {
 
 public void setBackaches(String backaches) {
 	Backaches = backaches;
+}
+
+
+
+
+
+
+
+
+public String getTuberculosis() {
+	return Tuberculosis;
+}
+
+
+
+
+
+
+
+
+public void setTuberculosis(String tuberculosis) {
+	Tuberculosis = tuberculosis;
 }
 
 
@@ -2323,10 +2415,11 @@ public PatientDetails(String Patient_id,
 		String Painscale2,
 		String Symptom_Accident,
 		String Type_Of_Accident,
+		String accident,
 		String Date_Of_Accident,
 		String Accident_Reported,
-		String When,
-		String Where,
+		String when1,
+		String where1,
 		String Attorney_accident,
 		String NameOfAttorney,
 		String Phone_Number,
@@ -2344,8 +2437,10 @@ public PatientDetails(String Patient_id,
 		String Muscular,
 		String Rheumatic,
 		String Allergies,
+		String Cancer,
 		String Polio1,
 		String Multiple,
+		String Scarlet,
 		String HIV,
 		String Sinus,
 		String Asthma,
@@ -2362,6 +2457,7 @@ public PatientDetails(String Patient_id,
 		String Arthritis,
 		String Venereal,
 		String Backaches,
+		String Tuberculosis,
 		String Liver,
 		String Kidney,
 		String Thyroid,
@@ -2425,10 +2521,11 @@ public PatientDetails(String Patient_id,
 	this.Painscale2=Painscale2;
 	this.Symptom_Accident=Symptom_Accident;
 	this.Type_Of_Accident=Type_Of_Accident;
+	this.accident = accident;
 	this.Date_Of_Accident=Date_Of_Accident;
 	this.Accident_Reported=Accident_Reported;
-	this.when=when;
-	this.where=where;
+	this.when1=when1;
+	this.where1=where1;
 	this.Attorney_accident=Attorney_accident;
 	this.NameOfAttorney=NameOfAttorney;
 	this.Phone_Number=Phone_Number;
@@ -2446,8 +2543,10 @@ public PatientDetails(String Patient_id,
 	this.Muscular=Muscular;
 	this.Rheumatic=Rheumatic;
 	this.Allergies=Allergies;
+	this.Cancer = Cancer;
 	this.Polio1=Polio1;
 	this.Multiple=Multiple;
+	this.Scarlet = Scarlet;
 	this.HIV=HIV;
 	this.Sinus=Sinus;
 	this.Asthma=Asthma;
@@ -2464,6 +2563,7 @@ public PatientDetails(String Patient_id,
 	this.Arthritis=Arthritis;
 	this.Venereal=Venereal;
 	this.Backaches=Backaches;
+	this.Tuberculosis = Tuberculosis;
 	this.Liver=Liver;
 	this.Kidney=Kidney;
 	this.Thyroid=Thyroid;
