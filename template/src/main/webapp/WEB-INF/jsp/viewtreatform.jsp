@@ -77,9 +77,9 @@
 				        <table>
                         <tr>
 				  				<td valign="top" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-				                <td valign="top" align="center"><br><input type="button" class="submit_btn" value="Edit"></td>
+				                <td valign="top" align="center"><br><input type="button" class="submit_btn" value="Edit" onclick="window.location.href='edittreatform'"></td>
 				                <td>&nbsp;&nbsp;</td>
-				 				 <td valign="top" align="center"><br><input type="button" class="submit_btn" value="Delete"></td>
+				 				 <td valign="top" align="center"> <a href="<c:out value="deletetreatform?treat_no=${Treatdetails.treat_no}"/>"><input type="button" class="submit_btn" value="Delete" onclick='confirmation()'/></a></td>
 				  </tr>
                         
                         
@@ -99,6 +99,17 @@
                         </table>
                         </form>
                         </div>
+                         <script language="javascript">
+        function confirmation() {
+	var answer = confirm("Are you Sure You Want to Delete  Patient  ?")
+	if (answer){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+        </script>
                         </body>
                         </html>
                         

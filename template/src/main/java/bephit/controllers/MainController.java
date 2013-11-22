@@ -1481,7 +1481,7 @@ public class MainController {
 		return "insuranceverification";
 	}
 	
-	@RequestMapping(value="/editstaffchecklist", method = RequestMethod.GET)
+	/*@RequestMapping(value="/editstaffchecklist", method = RequestMethod.GET)
 	public String editstaffchecklist(HttpServletRequest request,ModelMap model) {
 		
 		StaffchecklistForm staffchecklistForm= new StaffchecklistForm();
@@ -1489,7 +1489,7 @@ public class MainController {
 		model.addAttribute("StaffchecklistForm",staffchecklistForm);
 		
 		return "editstaffchecklist";
-	}
+	}*/
 
 
 	@RequestMapping(value="/editmedical", method = RequestMethod.GET)

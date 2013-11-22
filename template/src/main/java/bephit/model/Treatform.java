@@ -6,6 +6,9 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 public class Treatform
 {
+	
+	private String treat_no;
+	
 	@NotEmpty
 	
 	private String patientsname;
@@ -24,6 +27,12 @@ public class Treatform
 	
 	
 	
+	public String getTreat_no() {
+		return treat_no;
+	}
+	public void setTreat_no(String treat_no) {
+		this.treat_no = treat_no;
+	}
 	public String getPatientsname() {
 		return patientsname;
 	}
@@ -52,12 +61,13 @@ public class Treatform
 	{
 		
 	}
-	public Treatform(String patientsname,
+	public Treatform(String treat_no,String patientsname,
 			String patientssign,
 			String todaydate,
 			String witness
 			)
 	{
+		this.treat_no=treat_no;
 	this.patientsname=patientsname;
 	this.patientssign=patientssign;
 	this.todaydate=todaydate;
