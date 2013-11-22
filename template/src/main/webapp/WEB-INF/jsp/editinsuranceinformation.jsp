@@ -25,7 +25,7 @@
 </head>
  <body>
 <div id="right_content">
-<form action="insuranceinformation" method="POST">
+<form action="updateinsuranceinformation" method="POST">
 
 <table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table">
        <tr>
@@ -50,6 +50,7 @@
               <br>
               <tr class="row1">
               <td>Patient's Name</td>
+              <input type="hidden" class="input_txtbx1" id="inp_id" value="${Insuranceinformation.number}" name="number" />
               <td> <input type="text" class="input_txtbx1" name="patient_name" id="patient_name" value="${Insuranceinformation.patient_name}"/><br><span class="err"><form:errors path="Insuranceinformation.patient_name"></form:errors></td>
               </tr>
               <tr class="row1">
@@ -74,7 +75,7 @@
               <td>Policy #</td>
               <td> <input type="text" class="input_txtbx1" name="policy" id="policy" value="${Insuranceinformation.policy}"/><br><span class="err"><form:errors path="Insuranceinformation.policy"></form:errors></td>
               <td>Group#</td>
-              <td><input type="text" class="input_txtbx1" name="group" id="group" value="${Insuranceinformation.group}"/><br><span class="err"><form:errors path="Insuranceinformation.policy"></form:errors></td>
+              <td><input type="text" class="input_txtbx1" name="infono" id="infono" value="${Insuranceinformation.infono}"/><br><span class="err"><form:errors path="Insuranceinformation.infono"></form:errors></td>
               </tr>
               <tr class="row1">
               <td>Supplemental Insurance Company</td>

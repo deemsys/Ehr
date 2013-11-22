@@ -144,7 +144,7 @@
               <td>Policy #</td>
               <td> <input type="text" class="input_txtbx1" name="policy" id="policy" value="${info.policy}"/><br><span class="err"><form:errors path="Insuranceinformation.policy"></form:errors></td>
               <td>Group#</td>
-              <td><input type="text" class="input_txtbx1" name="group" id="group" value="${info.group}"/><br><span class="err"><form:errors path="Insuranceinformation.policy"></form:errors></td>
+              <td><input type="text" class="input_txtbx1" name="infono" id="infono" value="${info.infono}"/><br><span class="err"><form:errors path="Insuranceinformation.infono"></form:errors></td>
               </tr>
               <tr class="row1">
               <td>Supplemental Insurance Company</td>

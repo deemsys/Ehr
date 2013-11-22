@@ -83,7 +83,7 @@
               <td>Policy #</td>
               <td> ${Insuranceinformation.policy}</td>
               <td>Group#</td>
-              <td>${Insuranceinformation.group}</td>
+              <td>${Insuranceinformation.infono}</td>
               </tr>
               <tr class="row1">
               <td>Supplemental Insurance Company</td>
@@ -123,7 +123,7 @@
 	    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
         <td><br><input type="button" class="submit_btn" value="Edit" onclick="window.location.href='editinsuranceinformation'"></td>
         <td>&nbsp;&nbsp;</td>
-        <td><br><input type="button" class="submit_btn" value="Delete"></td>
+        <td valign="top" align="center"> <a href="<c:out value="deleteinsuranceinformation?number=${Insuranceinformation.number}"/>"><br/><input type="button" class="submit_btn" value="Delete" onclick='confirmation()'/></a></td>
 	    </tr>
         </table>
         </div>
@@ -133,6 +133,17 @@
         </table>
         </form>
         </div>
+         <script language="javascript">
+        function confirmation() {
+	var answer = confirm("Are you Sure You Want to Delete  Patient  ?")
+	if (answer){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+        </script>
         </body>
         </html>
         

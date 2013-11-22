@@ -1188,7 +1188,7 @@ public class MainController {
  
 	}
 	
-	/*	
+		
 	@RequestMapping(value="/viewinsuranceinformation", method = RequestMethod.GET)
 	public String viewinsuranceinformation(HttpServletRequest request,ModelMap model) {
 		
@@ -1199,7 +1199,7 @@ public class MainController {
 		return "viewinsuranceinformation";
  
 	}
-*/	
+	
 	
 	@RequestMapping(value="/viewinsuranceplan", method = RequestMethod.GET)
 	public String viewinsuranceplan(HttpServletRequest request,ModelMap model) {
@@ -1401,6 +1401,38 @@ public class MainController {
 		model.addAttribute("InsuranceinformationForm",insuranceinformationForm);
 		
 		return "editinsuranceinformation";
+	}
+	
+
+	@RequestMapping(value="/updateinsuranceinformation", method=RequestMethod.POST)
+	public String updateinsuranceinformation(HttpServletRequest request,@ModelAttribute("Insuranceinformation") @Valid Insuranceinformation insuranceinformation,
+			BindingResult result,ModelMap model,Principal principal)
+	{
+		
+		int status = infoDAO.updateinsuranceinformation(insuranceinformation, insuranceinformation.getNumber());
+		System.out.println(status);
+		InsuranceinformationForm insuranceinformationForm= new InsuranceinformationForm();
+    	insuranceinformationForm.setInsuranceinformation(infoDAO.getInsuranceinformation());
+		model.addAttribute("InsuranceinformationForm",insuranceinformationForm);   
+		model.addAttribute("success","true");
+	        return "viewinsuranceinformation";
+		
+	}
+	
+	@RequestMapping(value="/deleteinsuranceinformation", method=RequestMethod.GET)
+	public String removeinsuranceinformation(@RequestParam("number") String number,ModelMap model, Principal principal) {
+	
+		int status=infoDAO.deleteinsuranceinformation(number);
+		
+		if(status==1)
+		{
+        model.addAttribute("success","true");
+		
+        InsuranceinformationForm insuranceinformationForm= new InsuranceinformationForm();
+    	insuranceinformationForm.setInsuranceinformation(infoDAO.getInsuranceinformation());
+		model.addAttribute("InsuranceinformationForm",insuranceinformationForm);       
+		}
+	return "insuranceinformation";
 	}
 	
 	@RequestMapping(value="/editinsuranceverification", method = RequestMethod.GET)

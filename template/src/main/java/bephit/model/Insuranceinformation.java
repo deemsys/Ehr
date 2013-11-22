@@ -3,6 +3,9 @@ package bephit.model;
 import org.hibernate.validator.constraints.NotEmpty;
 
 public class Insuranceinformation {
+	
+	private String number;
+	
 	@NotEmpty
 	private String patient_name;
 	@NotEmpty
@@ -18,7 +21,7 @@ public class Insuranceinformation {
 	@NotEmpty
 	private String policy;
 	@NotEmpty
-	private String group;
+	private String infono;
 	@NotEmpty
 	private String supplemental_company;
 	@NotEmpty
@@ -36,20 +39,21 @@ public class Insuranceinformation {
 public Insuranceinformation(){
 }
 
-public Insuranceinformation(String patient_name,
+public Insuranceinformation(String number,String patient_name,
 		String date_of_accident,
 		String have_insurance,
 		String employers_name,
 		String insurance_company,
 		String phone,
 		String policy,
-		String group,
+		String infono,
 		String supplemental_company,
 		String sup_phone,
 		String patient_sign,
 		String date,
 		String spouse_sign,
 		String date1){
+	this.number=number;
 	this.patient_name=patient_name;
 	this.date_of_accident=date_of_accident;
 	this.have_insurance=have_insurance;
@@ -57,13 +61,22 @@ public Insuranceinformation(String patient_name,
 	this.insurance_company=insurance_company;
 	this.phone=phone;
 	this.policy=policy;
-	this.group=group;
+	this.infono=infono;
 	this.supplemental_company=supplemental_company;
 	this.sup_phone=sup_phone;
 	this.patient_sign=patient_sign;
 	this.date=date;
 	this.spouse_sign=spouse_sign;
 	this.date1=date1;
+}
+
+
+public String getNumber() {
+	return number;
+}
+
+public void setNumber(String number) {
+	this.number = number;
 }
 
 public String getPatient_name() {
@@ -122,12 +135,12 @@ public void setPolicy(String policy) {
 	this.policy = policy;
 }
 
-public String getGroup() {
-	return group;
+public String getInfono() {
+	return infono;
 }
 
-public void setGroup(String group) {
-	this.group = group;
+public void setInfono(String infono) {
+	this.infono = infono;
 }
 
 public String getSupplemental_company() {
