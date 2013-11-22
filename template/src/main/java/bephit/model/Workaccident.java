@@ -30,6 +30,7 @@ public class Workaccident {
 	private String overhead;
 	private String no_of_employees;
 	private String like_job;
+	private String pre_employment;
 	private String return_job;
 	private String changes_in_job;
 	
@@ -65,6 +66,7 @@ public Workaccident(String patient_no,String job_classification,
 		String overhead,
 		String no_of_employees,
 		String like_job,
+		String pre_employment,
 		String return_job,
 		String changes_in_job){
 	this.patient_no = patient_no;
@@ -96,6 +98,7 @@ public Workaccident(String patient_no,String job_classification,
 	this.overhead=overhead;
 	this.no_of_employees=no_of_employees;
 	this.like_job=like_job;
+	this.pre_employment = pre_employment;
 	this.return_job=return_job;
 	this.changes_in_job=changes_in_job;
 }
@@ -330,6 +333,14 @@ public String getLike_job() {
 
 public void setLike_job(String like_job) {
 	this.like_job = like_job;
+}
+
+public String getPre_employment() {
+	return pre_employment;
+}
+
+public void setPre_employment(String pre_employment) {
+	this.pre_employment = pre_employment;
 }
 
 public String getReturn_job() {

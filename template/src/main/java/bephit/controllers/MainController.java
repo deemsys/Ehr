@@ -552,6 +552,60 @@ public class MainController {
 		
 		return "workAccidentList";
 	}
+	@RequestMapping(value="/editworkaccident", method=RequestMethod.GET)
+	public String editWorkAccident(HttpServletRequest request,@RequestParam("patient_no") String patient_no,ModelMap model,Workaccident workAcc)
+	{
+		
+       WorkaccidentForm workaccidentForm = new WorkaccidentForm();
+       
+       	workaccidentForm.setWorkaccident(workDAO.getWorkaccident(patient_no));
+		model.addAttribute("workaccidentForm",workaccidentForm);
+		
+		return "editworkaccident";
+	}
+	
+	@RequestMapping(value="/updateworkaccident", method=RequestMethod.POST)
+	public String updateWorkAccident(HttpServletRequest request,@ModelAttribute("workAcc") @Valid Workaccident workAcc,
+			BindingResult result,ModelMap model,Principal principal)
+	{
+		if (result.hasErrors())
+		{
+		//	RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
+			WorkaccidentForm workaccidentForm = new WorkaccidentForm();
+	     // radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport(report.getPid()));
+	      workaccidentForm.setWorkaccident(workDAO.getWorkaccident(workAcc.getPatient_no()));
+	        model.addAttribute("workaccidentForm", workaccidentForm);
+			    
+		        return "editworkaccident";
+		}
+		
+		int status = workDAO.updateWorkAccident(workAcc,workAcc.getPatient_no(),principal.getName());
+		System.out.println(status);
+		
+		WorkaccidentForm workaccidentForm = new WorkaccidentForm();
+	      workaccidentForm.setWorkaccident(workDAO.getWorkaccident());
+	        model.addAttribute("workaccidentForm", workaccidentForm);
+	       model.addAttribute("success","true");
+	        return "viewworkaccident";
+		
+	}
+	@RequestMapping(value="/deleteworkaccident", method=RequestMethod.GET)
+	public String removeWorkAccident(@RequestParam("patient_no") String patient_no,ModelMap model, Principal principal) {
+	
+		
+		int status = workDAO.deleteWorkAccident(patient_no, principal.getName());
+		if(status==1)
+		{
+        model.addAttribute("success","true");
+        WorkaccidentForm workaccidentForm= new WorkaccidentForm();
+		workaccidentForm.setWorkaccident(workDAO.getWorkaccident());
+		model.addAttribute("WorkaccidentForm",workaccidentForm);
+      
+		}
+		
+		return "viewworkaccident";
+	}
+
 	
 	@RequestMapping(value="/insuranceinformation", method = RequestMethod.GET)
 	public String insuranceinformation(HttpSession session,ModelMap model) {
