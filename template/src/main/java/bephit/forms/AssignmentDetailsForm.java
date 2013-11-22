@@ -13,8 +13,8 @@ public class AssignmentDetailsForm
 	public List<Assignment> getAssignmentDetails() {
 		return assignmentdetails;
 	}
-	public void setAssignmentDetails(List<Assignment> assignmentdetails) {
-		this.assignmentdetails = assignmentdetails;
+	public void setAssignmentDetails(List<Assignment> assignmentDetails) {
+		this.assignmentdetails = assignmentDetails;
 	}
 
 }

@@ -47,14 +47,14 @@
 	            </div>
             <div class="contentbox">
             <table cellpadding="0" cellspacing="0" border="0" width="100%">
-            <c:set value="${Assignment.assignmentdetails[0]}" var="assignmentdetails"> </c:set>
+            <c:set value="${AssignmentDetailsForm.assignmentDetails[0]}" var="assignmentdetails"> </c:set>
   				<tr>
     				<td align="left" valign="top" width="100%" style="padding-right:25px;">
                         
                         <table cellpadding="0" cellspacing="0" border="0" width="50%">
                         <tr>
                         <div align="justify">
-				                <p id="mypar">&nbsp;This agreement made this the:        ${assignmentdetails.Day}
+				                <p id="mypar">&nbsp;This agreement made this the:        ${assignmentdetails.day}
 				                  	  
 				                  	day of ${assignmentdetails.month}
 				                  	2013 between ${assignmentdetails.year}
@@ -124,9 +124,9 @@ and exclusively in the name of Perry Chiropractic and Therapy Center, such sums 
 				                  	<table>
 				                  	 <tr>
 				  <td valign="top" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-				                <td valign="top" align="center"><br><input type="button" class="submit_btn" value="Edit"></td>
+				                <td valign="top" align="center"><br><input type="button" class="submit_btn" value="Edit" onclick="window.location.href='editassignment'"></td>
 				  <td>&nbsp;&nbsp;</td>
-				   <td valign="top" align="center"><br><input type="button" class="submit_btn" value="Delete"></td>
+				   <td valign="top" align="center"><a href="<c:out value="deleteassignmentdetails?assignment_no=${assignmentdetails.assignment_no}"/>"><br><input type="button" class="submit_btn" value="Delete" onclick="confirmation()"></a></td>
 				  </tr>
 				  </div>
                         </table>
@@ -142,6 +142,17 @@ and exclusively in the name of Perry Chiropractic and Therapy Center, such sums 
                         </table>
                         </form>
                         </div>
+   <script language="javascript">
+        function confirmation() {
+	var answer = confirm("Are you Sure You Want to Delete patient assignment details ?")
+	if (answer){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+        </script>
                         </body>
                         </html>
                         <jsp:include page="footer.jsp"></jsp:include> 

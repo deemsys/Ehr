@@ -62,8 +62,41 @@ public class MedicalDAO {
     		return 0;
 	    
 	}
+
+	public List<MedicalRecords> getMedicalDetails(){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<MedicalRecords> medical = new ArrayList<MedicalRecords>();
+	    try{
+			resultSet = statement.executeQuery("select * from Medical_Details order by medical_no DESC");
+			while(resultSet.next()){
+				medical.add(new MedicalRecords(resultSet.getString("medical_no"),resultSet.getString("name"),
+						resultSet.getString("medicalinformation"),
+						resultSet.getString("patientsignature")
+			    		 ));
+			    	
+			}
+	    }catch(Exception e){
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    }finally{
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);	    	
+	    }
+	    return medical;
+		
+	}
 	
-	public int updatemedical(MedicalRecords medicaldetails,String medical_no)
+	public int updatemedical(MedicalRecords medicaldetails,String medical_no,String admin)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -79,13 +112,8 @@ public class MedicalDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 //System.out.println(dateFormat.format(date));
-	    	String cmd="UPDATE medical_details SET name='"+medicaldetails.getName()+"',medicalinformation='"+medicaldetails.getMedicalinformation()+"',patientsignature='"+medicaldetails.getPatientsignature()+"';";
+	    	String cmd="UPDATE medical_details SET name='"+medicaldetails.getName()+"',medicalinformation='"+medicaldetails.getMedicalinformation()+"',patientsignature='"+medicaldetails.getPatientsignature()+"' WHERE medical_no='"+medical_no+"';";
 	    	
-	    	
-	    	
-	    	
-	    	
-	    	    	
 	    	System.out.println(cmd);
 	    	//System.out.println(cmd_activity);
 			
@@ -111,39 +139,48 @@ public class MedicalDAO {
 	    
 	}
 	
-	public List<MedicalRecords> getMedicalDetails(){
+	
+	public int deletemedicalrecords(String medical_no){
 		Connection con = null;
 		Statement statement = null;
 		ResultSet resultSet = null;
+		int flag=0;
 		try {
 			con = dataSource.getConnection();
 			statement = con.createStatement();
 		} catch (SQLException e1) {
 			e1.printStackTrace();
 		}
-		List<MedicalRecords> medical = new ArrayList<MedicalRecords>();
-	    try{
-			resultSet = statement.executeQuery("select * from Medical_Details order by medical_no DESC");
-			while(resultSet.next()){
-				medical.add(new MedicalRecords(resultSet.getString("name"),
-						resultSet.getString("medicalinformation"),
-						resultSet.getString("patientsignature")
-			    		 ));
-			    	
-			}
-	    }catch(Exception e){
-	    	releaseResultSet(resultSet);
-	    	releaseStatement(statement);
-	    	releaseConnection(con);
-	    }finally{
-	    	releaseResultSet(resultSet);
-	    	releaseStatement(statement);
-	    	releaseConnection(con);	    	
-	    }
-	    return medical;
-		
-	}
-	
+		try{
+			DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+	    	 Date date = new Date();
+	    	 String cmd_getpatient_name="select name from medical_details where medical_no='"+medical_no+"'";
+	    	 String Desc="Delete report ";
+	    	 resultSet=statement.executeQuery(cmd_getpatient_name);
+				
+				if(resultSet.next())
+					Desc=Desc+resultSet.getString(1);
+				statement.execute("delete from medical_details where medical_no='"+medical_no+"'");
+				
+				flag=1;
+				
+		    }catch(Exception e){
+		    	System.out.println(e.toString());
+		    	flag=0;
+		    	releaseResultSet(resultSet);
+		    	releaseStatement(statement);
+		    	releaseConnection(con);
+		    }finally{
+		    	
+		    	releaseResultSet(resultSet);
+		    	releaseStatement(statement);
+		    	releaseConnection(con);	    	
+		    }
+		   		if(flag==1)
+		   			return 1;
+		   		else
+		   			return 0;
+		}
 	
 	
 	

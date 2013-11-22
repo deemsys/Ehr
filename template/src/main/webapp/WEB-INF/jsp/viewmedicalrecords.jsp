@@ -13,7 +13,7 @@
 </head>
 <body>
 <div id="right_content">
-<form action="medicalrecords" method="POST">
+<form action="updatemedicalrecords" method="POST">
 
 <table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table">
  
@@ -34,17 +34,15 @@
 	            </div>
             <div class="contentbox">
             <table cellpadding="0" cellspacing="0" border="0" width="100%">
-            <c:set value="${MedicalRecords.medicaldetails[0]}" var="medicaldetails"> </c:set>
+            <c:set value="${MedicalRecordsForm.medicalDetails[0]}" var="Medicaldetails"> </c:set>
   				<tr>
-  				    <p id="mypar">&nbsp;I, ${medicaldetails.name}
-				                &nbsp;&nbsp;give my permission to release Medical Information, Records, X-ray Reports, or the following &nbsp;&nbsp;${medicaldetails.medicalinformation} &nbsp;&nbsp;to Lorain Injury Center, <br>Dr. Darrin Pordash D.C.<br>
+  				    <p id="mypar">&nbsp;I, ${Medicaldetails.name}
+				                &nbsp;&nbsp;give my permission to release Medical Information, Records, X-ray Reports, or the following &nbsp;&nbsp;${Medicaldetails.medicalinformation} &nbsp;&nbsp;to Lorain Injury Center, <br>Dr. Darrin Pordash D.C.<br>
 				                5190 Deroit Rd.<br>
                                 Sheffield Village, Ohio 44035<br>
                                 Fax 440-934-3107  </p>
                          <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Signature:  </td>
-				                  <td valign="top" align="left" class="input_txt">
-				                  	${medicaldetails.patientsignature}
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Signature: ${Medicaldetails.patientsignature}
 				                  	</td>
 				                  	</tr>
 				                  	</table>
@@ -53,7 +51,7 @@
 				  <td valign="top" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				                <td valign="top" align="center"><br><input type="button" class="submit_btn" value="Edit" onclick="window.location.href='editmedical'"></td>
 				  <td>&nbsp;&nbsp;</td>
-				   <td valign="top" align="center"><br><input type="button" class="submit_btn" value="Delete"></td>
+				   <td valign="top" align="center"><a href="<c:out value="deletemedicalrecords?medical_no=${Medicaldetails.medical_no}"/>"><br><input type="button" class="submit_btn" value="Delete" onclick='confirmation()'></td>
 				  </tr>
 				  </table>
 				                  	</div>
@@ -71,6 +69,19 @@
                         </table>
                         </form>
                         </div>
+                        
+                        <script language="javascript">
+        function confirmation() {
+	var answer = confirm("Are you Sure You Want to Delete patient medical records ?")
+	if (answer){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+        </script>
+ 
                         </body>
                         </html>
                          <jsp:include page="footer.jsp"></jsp:include> 

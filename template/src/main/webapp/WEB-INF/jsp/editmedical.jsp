@@ -13,7 +13,7 @@
 </head>
 <body>
 <div id="right_content">
-<form action="medicalrecords" method="POST">
+<form action="updatemedicalrecords" method="POST">
 
 <table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table">
 
@@ -38,18 +38,19 @@
     				<td align="left" valign="top" width="100%" style="padding-right:25px;">
                         
                         <table cellpadding="0" cellspacing="0" border="0" width="50%">
-                        <c:set value="${MedicalRecords.medicaldetails[0]}" var="medicaldetails"> </c:set>
+                        <c:set value="${MedicalRecordsForm.medicalDetails[0]}" var="Medicaldetails"> </c:set>
                         <tr>
                         <div align="justify">
-				                <p id="mypar">&nbsp;I, <input type="text" class="input_txtbx1" id="inp_id" name="name" value="${medicaldetails.name}"/>
-				                &nbsp;&nbsp;give my permission to release Medical Information, Records, X-ray Reports, or the following &nbsp;&nbsp;<input type="text" class="input_txtbx1" id="inp_id" name="medicalinformation" value="${medicaldetails.medicalinformation}"/><span class="err"><form:errors path="MedicalRecords.medicalinformation"></form:errors></span> &nbsp;&nbsp;to Lorain Injury Center, <br>Dr. Darrin Pordash D.C.<br>
+                        <input type="hidden" class="input_txtbx1" id="inp_id" value="${Medicaldetails.medical_no}" name="medical_no" />
+				                <p id="mypar">&nbsp;I, <input type="text" class="input_txtbx1" id="inp_id" name="name" value="${Medicaldetails.name}"/>
+				                &nbsp;&nbsp;give my permission to release Medical Information, Records, X-ray Reports, or the following &nbsp;&nbsp;<input type="text" class="input_txtbx1" id="inp_id" name="medicalinformation" value="${Medicaldetails.medicalinformation}"/><span class="err"><form:errors path="MedicalRecords.medicalinformation"></form:errors></span> &nbsp;&nbsp;to Lorain Injury Center, <br>Dr. Darrin Pordash D.C.<br>
 				                5190 Deroit Rd.<br>
                                 Sheffield Village, Ohio 44035<br>
                                 Fax 440-934-3107  </p>
                          <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Signature:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="patientsignature" value="${medicaldetails.patientsignature}"/><span class="err"><form:errors path="MedicalRecords.patientsignature"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="patientsignature" value="${Medicaldetails.patientsignature}"/><span class="err"><form:errors path="MedicalRecords.patientsignature"></form:errors></span>
 				                  	</td>
 				                  	</tr>
 				                  	</table>
@@ -58,7 +59,7 @@
 				                  	<tr>
 				  <td valign="top" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				
-				<td valign="top" align="center"><br><input type="submit" class="submit_btn" value="save"></td>
+				<td valign="top" align="center"><br><input type="submit" class="submit_btn" value="Updtae"></td>
 				<td>&nbsp;&nbsp;</td>
 				 <td valign="top" align="center"><br><input type="reset" class="submit_btn" value="cancel" ></td>
 				  </tr>

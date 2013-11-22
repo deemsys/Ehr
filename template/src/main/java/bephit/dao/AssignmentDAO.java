@@ -12,6 +12,7 @@ import java.util.List;
 import javax.sql.DataSource;
 
 import bephit.model.Assignment;
+import bephit.model.SoapNotes;
 
 public class AssignmentDAO {
 	private DataSource dataSource;
@@ -37,7 +38,7 @@ public class AssignmentDAO {
 	    try{
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
-	    	 String cmd="INSERT INTO `Assignment_Details`(`day`,`month`,`year`,`day1`,`month1`,`patientname`,`patientsign`,`patientdate`,`parentname`,`parentsign`,`parentdate`,`representative`,`representativedate`) VALUES ('"+assignmentdetails.getday()+"','"+assignmentdetails.getMonth()+"','"+assignmentdetails.getYear()+"','"+assignmentdetails.getDay1()+"','"+assignmentdetails.getMonth1()+"','"+assignmentdetails.getPatientname()+"','"+assignmentdetails.getPatientsign()+"','"+assignmentdetails.getPatientdate()+"','"+assignmentdetails.getParentname()+"','"+assignmentdetails.getParentsign()+"','"+assignmentdetails.getParentdate()+"','"+assignmentdetails.getRepresentative()+"','"+assignmentdetails.getRepresentativedate()+"')";
+	    	 String cmd="INSERT INTO `Assignment_Details`(`day`,`month`,`year`,`day1`,`month1`,`patientname`,`patientsign`,`patientdate`,`parentname`,`parentsign`,`parentdate`,`representative`,`representativedate`) VALUES ('"+assignmentdetails.getDay()+"','"+assignmentdetails.getMonth()+"','"+assignmentdetails.getYear()+"','"+assignmentdetails.getDay1()+"','"+assignmentdetails.getMonth1()+"','"+assignmentdetails.getPatientname()+"','"+assignmentdetails.getPatientsign()+"','"+assignmentdetails.getPatientdate()+"','"+assignmentdetails.getParentname()+"','"+assignmentdetails.getParentsign()+"','"+assignmentdetails.getParentdate()+"','"+assignmentdetails.getRepresentative()+"','"+assignmentdetails.getRepresentativedate()+"')";
 	    	 System.out.println(cmd);
 	    	 statement.execute(cmd);
 		     flag=1;
@@ -75,9 +76,9 @@ public class AssignmentDAO {
 		}
 		List<Assignment> assignment = new ArrayList<Assignment>();
 	    try{
-			resultSet = statement.executeQuery("select * from Assignment_Details");
+			resultSet = statement.executeQuery("select * from Assignment_Details order by assignment_no DESC");
 			while(resultSet.next()){
-				assignment.add(new Assignment(resultSet.getString("day"),
+				assignment.add(new Assignment(resultSet.getString("assignment_no"),resultSet.getString("day"),
 			    		resultSet.getString("month"),
 			    		resultSet.getString("year"),
 			    		resultSet.getString("day1"),
@@ -107,7 +108,137 @@ public class AssignmentDAO {
 		
 	}
 	
-	
+
+	public List<Assignment> getAssignment(String assignment_no){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<Assignment> assignment = new ArrayList<Assignment>();
+	    try{
+			String cmd="select * from Assignment_Details where assignment_no='"+assignment_no+"'";
+			System.out.println(assignment_no);
+			resultSet = statement.executeQuery(cmd);
+			while(resultSet.next()){
+				assignment.add(new Assignment(resultSet.getString("assignment_no"),resultSet.getString("day"),
+			    		resultSet.getString("month"),
+			    		resultSet.getString("year"),
+			    		resultSet.getString("day1"),
+			    		resultSet.getString("month1"),
+			    		resultSet.getString("patientname"),
+			    		resultSet.getString("patientsign"),
+			    		resultSet.getString("Patientdate"),
+			    		resultSet.getString("parentname"),
+			    		resultSet.getString("parentsign"),
+			    		resultSet.getString("parentdate"),
+			    		resultSet.getString("representative"),
+			    		resultSet.getString("representativedate")
+			    	
+			    	    ));
+			    	
+			}
+	    }catch(Exception e){
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    }finally{
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);	    	
+	    }
+	    return assignment;
+		
+	}
+	public int updateassignment(Assignment assignment,String assignment_no,String admin)
+	{
+		Connection con = null;
+		Statement statement = null;
+		int flag=0;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+	    try{
+	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+	    	 Date date = new Date();
+	    	 //System.out.println(dateFormat.format(date));
+	    	String cmd="UPDATE assignment_details SET day='"+assignment.getDay()+"',month='"+assignment.getMonth()+"',year='"+assignment.getYear()+"',day1='"+assignment.getMonth1()+"',patientname='"+assignment.getPatientname()+"',patientsign='"+assignment.getPatientsign()+"',patientdate='"+assignment.getPatientdate()+"',parentname='"+assignment.getParentname()+"',parentsign='"+assignment.getParentsign()+"',parentdate='"+assignment.getParentdate()+"',representative='"+assignment.getRepresentative()+"',representativedate='"+assignment.getRepresentativedate()+"' WHERE assignment_no='"+assignment_no+"';";
+	    			
+	    			String Desc="Update assignment "+assignment.getPatientname();
+	    	System.out.println(cmd);
+	    	statement.execute(cmd);
+	    	flag=1;
+	    }
+	    	 catch(Exception e){
+	 	    	System.out.println(e.toString());
+	 	    	releaseStatement(statement);
+	 	    	releaseConnection(con);
+	 	    	flag=0;
+	 	    	//return 0;
+	 	    }finally{
+	 	     	releaseStatement(statement);
+	 	    	releaseConnection(con);	    
+	 	    	
+	 	    }
+	 	    if(flag==1)
+	     		return 1;
+	     	else
+	     		return 0;
+	 	    
+		
+	}	
+
+	public int deleteassignment(String assignment_no){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		int flag=0;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		try{
+			DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+	    	 Date date = new Date();
+	    	 String cmd_getpatient_name="select patientname from assignment_details where assignment_no='"+assignment_no+"'";
+	    	 String Desc="Delete report ";
+	    	 resultSet=statement.executeQuery(cmd_getpatient_name);
+				
+				if(resultSet.next())
+					Desc=Desc+resultSet.getString(1);
+				statement.execute("delete from assignment_details where assignment_no='"+assignment_no+"'");
+				
+				flag=1;
+				
+		    }catch(Exception e){
+		    	System.out.println(e.toString());
+		    	flag=0;
+		    	releaseResultSet(resultSet);
+		    	releaseStatement(statement);
+		    	releaseConnection(con);
+		    }finally{
+		    	
+		    	releaseResultSet(resultSet);
+		    	releaseStatement(statement);
+		    	releaseConnection(con);	    	
+		    }
+		   		if(flag==1)
+		   			return 1;
+		   		else
+		   			return 0;
+		}
+		
+
+
 	
 	
 	public void releaseConnection(Connection con){

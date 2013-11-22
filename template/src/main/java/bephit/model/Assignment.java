@@ -5,7 +5,8 @@ import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.NotEmpty;
 
 public class Assignment
-{
+{   private String assignment_no;
+
 	@NotEmpty
 	private String day;
 	@NotEmpty
@@ -39,8 +40,48 @@ public class Assignment
 	@NotEmpty
 	private String representativedate;
 	
+	public Assignment()
+	{
+		
+	}
+	public Assignment(String assignment_no,String day,
+			String month,
+			String year,
+			String day1,
+			String month1,
+			String patientname,
+			String patientsign,
+			String patientdate,
+			String parentname,
+			String parentsign,
+			String parentdate,
+			String representative,
+			String representativedate)
+	{
+	this.assignment_no=assignment_no;
+	this.day=day;
+	this.month=month;
+	this.year=year;
 	
-	public String getday() {
+	this.day1=day1;
+	this.month1=month1;
+	this.patientname=patientname;
+	this.patientsign=patientsign;
+	this.patientdate=patientdate;
+	this.parentname=parentname;
+	this.parentsign=parentsign;
+	this.parentdate=parentdate;
+	this.representative=representative;
+	this.representativedate=representativedate;
+	}
+	public String getAssignment_no() {
+		
+		return assignment_no;
+	}
+	public void setAssignment_no(String assignment_no) {
+		this.assignment_no = assignment_no;
+	}
+	public String getDay() {
 		return day;
 	}
 	public void setDay(String day) {
@@ -58,7 +99,6 @@ public class Assignment
 	public void setYear(String year) {
 		this.year = year;
 	}
-
 	public String getDay1() {
 		return day1;
 	}
@@ -119,39 +159,8 @@ public class Assignment
 	public void setRepresentativedate(String representativedate) {
 		this.representativedate = representativedate;
 	}
-	public Assignment()
-	{
-		
-	}
-	public Assignment(String day,
-			String month,
-			String year,
-			String day1,
-			String month1,
-			String patientname,
-			String patientsign,
-			String patientdate,
-			String parentname,
-			String parentsign,
-			String parentdate,
-			String representative,
-			String representativedate)
-	{
-	this.day=day;
-	this.month=month;
-	this.year=year;
 	
-	this.day1=day1;
-	this.month1=month1;
-	this.patientname=patientname;
-	this.patientsign=patientsign;
-	this.patientdate=patientdate;
-	this.parentname=parentname;
-	this.parentsign=parentsign;
-	this.parentdate=parentdate;
-	this.representative=representative;
-	this.representativedate=representativedate;
-	}
+
 	
-	
+			
 }

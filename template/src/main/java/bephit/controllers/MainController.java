@@ -736,6 +736,7 @@ public class MainController {
 		
 		return "editstaffchecklist";
 	}
+
 	
 	@RequestMapping(value="/updatestaffchecklist", method=RequestMethod.POST)
 	public String updatestaffchecklist(HttpServletRequest request,@ModelAttribute("staffchecklist") @Valid Staffchecklist staffchecklist,
@@ -819,12 +820,6 @@ public class MainController {
 	
 	
 
-	@RequestMapping(value="/Assignment",method=RequestMethod.GET)
-	public String Assignment(HttpSession session,ModelMap model)
-	{
-		session.removeAttribute("assignment");
-		return "Assignment";
-	}
 	
 	@RequestMapping(value="/treatform",method=RequestMethod.GET)
 	public String treatform(HttpSession session, ModelMap model)
@@ -846,6 +841,101 @@ public class MainController {
 		session.removeAttribute("medical");
 		return "medicalrecords";
 	}
+	
+	@RequestMapping(value="/medicalrecords", method = RequestMethod.POST)
+	public String insertmedicalDetails(HttpSession session,@ModelAttribute("MedicalRecords") @Valid MedicalRecords medicaldetails,BindingResult result,
+			ModelMap model) 
+		{		
+		session.setAttribute("medical",medicaldetails);	
+		if (result.hasErrors())
+			{
+				MedicalRecordsForm medicalrecordsform= new MedicalRecordsForm();
+				medicalrecordsform.setMedicalDetails(medicalDAO.getMedicalDetails());
+				model.addAttribute("MedicalRecordsForm",medicalrecordsform);
+				model.addAttribute("success","true");
+				return "medicalrecords";
+
+			}
+		
+		model.addAttribute("MedicalRecordsForm",medicaldetails);
+		int a=medicalDAO.setMedicalDetails(medicaldetails);
+        MedicalRecordsForm medicalrecordsform= new MedicalRecordsForm();
+		medicalrecordsform.setMedicalDetails(medicalDAO.getMedicalDetails());
+		model.addAttribute("MedicalRecordsForm",medicalrecordsform);
+
+		System.out.println("MedicalRecords");
+	    
+		return "medicalrecords";
+ 
+	}
+
+	@RequestMapping(value="/viewmedicalrecords", method = RequestMethod.GET)
+	public String viewmedicalrecords(HttpServletRequest request,ModelMap model) {
+		
+		MedicalRecordsForm medicalrecordsform= new MedicalRecordsForm();
+		medicalrecordsform.setMedicalDetails(medicalDAO.getMedicalDetails());
+		model.addAttribute("MedicalRecordsForm",medicalrecordsform);
+		
+		return "viewmedicalrecords";
+ 
+	}
+	
+	@RequestMapping(value="/editmedical", method = RequestMethod.GET)
+	public String editmedical(HttpServletRequest request,ModelMap model) {
+		
+		MedicalRecordsForm medicalrecordsform= new MedicalRecordsForm();
+		medicalrecordsform.setMedicalDetails(medicalDAO.getMedicalDetails());
+		model.addAttribute("MedicalRecordsForm",medicalrecordsform);
+		
+		return "editmedical";
+	}
+	
+	@RequestMapping(value="/updatemedicalrecords", method=RequestMethod.POST)
+	public String updatemedicalrecords(HttpServletRequest request,@ModelAttribute("MedicalRecords") @Valid MedicalRecords medicaldetails,
+			BindingResult result,ModelMap model,Principal principal)
+	{
+		/*if (result.hasErrors())
+		{
+			InsuranceplanForm insuranceplanForm = new InsuranceplanForm();
+	     //   participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants(participant.getParticipants_id()));
+	      insuranceplanForm.setInsuranceplan(planDAO.getPlan(insuranceplan.getNo()));
+	      
+	        model.addAttribute("insuranceplanForm", insuranceplanForm);
+			    
+		        return "editinsuranceplan";
+		}*/
+		
+		int status = medicalDAO.updatemedical(medicaldetails, medicaldetails.getMedical_no(), principal.getName());
+		System.out.println(status);
+		
+		MedicalRecordsForm medicalrecordForm = new MedicalRecordsForm();
+        
+        medicalrecordForm.setMedicalDetails(medicalDAO.getMedicalDetails());
+       
+        model.addAttribute("MedicalRecordsForm", medicalrecordForm);
+	       model.addAttribute("success","true");
+	        return "viewmedicalrecords";
+		
+	}
+	@RequestMapping(value="/deletemedicalrecords", method=RequestMethod.GET)
+	public String removemedicalrecords(@RequestParam("medical_no") String medical_no,ModelMap model, Principal principal) {
+	
+		int status=medicalDAO.deletemedicalrecords(medical_no);
+		
+		if(status==1)
+		{
+        model.addAttribute("success","true");
+		//ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
+		MedicalRecordsForm medicalrecordsForm = new MedicalRecordsForm();
+		//participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
+		medicalrecordsForm.setMedicalDetails(medicalDAO.getMedicalDetails());
+        model.addAttribute("MedicalRecordsForm", medicalrecordsForm);
+      
+		}
+		
+		return "medicalrecords";
+	}
+	
 	
 	@RequestMapping(value="/screeningAuthz",method=RequestMethod.GET)
 	public String screeningAuthz(HttpSession session,ModelMap model)
@@ -955,14 +1045,13 @@ public class MainController {
 		return "Hippaprivacy";
 	}
 	
-
-	
-	
-	
-	
-	
-	
-	
+		@RequestMapping(value="/Assignment",method=RequestMethod.GET)
+		public String Assignment(HttpSession session,ModelMap model)
+		{
+			session.removeAttribute("assignment");
+			return "Assignment";
+		}
+			
 	//validation
 	
 	@RequestMapping(value="/Assignment", method = RequestMethod.POST)
@@ -990,8 +1079,73 @@ public class MainController {
  
 	}
 	
+	@RequestMapping(value="/viewassignment", method = RequestMethod.GET)
+	public String viewassignment(HttpServletRequest request,ModelMap model) {
+		
+		 AssignmentDetailsForm assignmentdetailsform= new AssignmentDetailsForm();
+			assignmentdetailsform.setAssignmentDetails(assignmentDAO.getAssignmentDetails());
+			model.addAttribute("AssignmentDetailsForm",assignmentdetailsform);
+		
+		return "viewassignment";
+ 
+	}
+
+	@RequestMapping(value="/editassignment", method = RequestMethod.GET)
+	public String editassignment(HttpServletRequest request,ModelMap model) {
+		
+		AssignmentDetailsForm assignmentdetailsform= new AssignmentDetailsForm();
+    	assignmentdetailsform.setAssignmentDetails(assignmentDAO.getAssignmentDetails());
+		model.addAttribute("AssignmentDetailsForm",assignmentdetailsform);
+		
+		return "editassignment";
+	}
 	
+	@RequestMapping(value="/updateassignment", method=RequestMethod.POST)
+	public String updateassignment(HttpServletRequest request,@ModelAttribute("Assignment") @Valid Assignment assignmentdetails,
+			BindingResult result,ModelMap model,Principal principal)
+	{
+		/*if (result.hasErrors())
+		{
+			InsuranceplanForm insuranceplanForm = new InsuranceplanForm();
+	     //   participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants(participant.getParticipants_id()));
+	      insuranceplanForm.setInsuranceplan(planDAO.getPlan(insuranceplan.getNo()));
+	      
+	        model.addAttribute("insuranceplanForm", insuranceplanForm);
+			    
+		        return "editinsuranceplan";
+		}*/
+		
+		int status = assignmentDAO.updateassignment(assignmentdetails, assignmentdetails.getAssignment_no(), principal.getName());
+		System.out.println("assignment_id"+assignmentdetails.getAssignment_no());
+		System.out.println(status);
+		
+		AssignmentDetailsForm assignmentdetailsform = new AssignmentDetailsForm();
+        
+        assignmentdetailsform.setAssignmentDetails(assignmentDAO.getAssignmentDetails());
+       
+        model.addAttribute("AssignmentDetailsForm", assignmentdetailsform);
+	       model.addAttribute("success","true");
+	        return "viewassignment";
+		
+	}
+	@RequestMapping(value="/deleteassignmentdetails", method=RequestMethod.GET)
+	public String removeassignmentdetails(@RequestParam("assignment_no") String assignment_no,ModelMap model, Principal principal) {
 	
+		int status=assignmentDAO.deleteassignment(assignment_no);
+		
+		if(status==1)
+		{
+        model.addAttribute("success","true");
+		//ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
+		AssignmentDetailsForm assignmentdetailsform = new AssignmentDetailsForm();
+		//participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
+		assignmentdetailsform.setAssignmentDetails(assignmentDAO.getAssignmentDetails());
+        model.addAttribute("AssignmentDetailsForm", assignmentdetailsform);
+      
+		}
+		
+		return "Assignment";
+	}
 	
 	
 	@RequestMapping(value="/Hippaprivacy", method = RequestMethod.POST)
@@ -1020,33 +1174,7 @@ public class MainController {
 		}
 
 	
-	@RequestMapping(value="/medicalrecords", method = RequestMethod.POST)
-	public String insertmedicalDetails(HttpSession session,@ModelAttribute("MedicalRecords") @Valid MedicalRecords medicaldetails,BindingResult result,
-			ModelMap model) 
-		{		
-		session.setAttribute("medical",medicaldetails);	
-		if (result.hasErrors())
-			{
-				MedicalRecordsForm medicalrecordsform= new MedicalRecordsForm();
-				medicalrecordsform.setMedicalDetails(medicalDAO.getMedicalDetails());
-				model.addAttribute("MedicalRecordsForm",medicalrecordsform);
-				model.addAttribute("success","true");
-				return "medicalrecords";
-
-			}
 		
-		model.addAttribute("MedicalRecordsForm",medicaldetails);
-		int a=medicalDAO.setMedicalDetails(medicaldetails);
-        MedicalRecordsForm medicalrecordsform= new MedicalRecordsForm();
-		medicalrecordsform.setMedicalDetails(medicalDAO.getMedicalDetails());
-		model.addAttribute("MedicalRecordsForm",medicalrecordsform);
-
-		System.out.println("MedicalRecords");
-	    
-		return "medicalrecords";
- 
-	}
-	
 	@RequestMapping(value="/treatform", method = RequestMethod.POST)
 	public String inserttreatDetails(HttpSession session,@ModelAttribute("Treatform") @Valid Treatform treatdetails,BindingResult result,
 			ModelMap model) {
@@ -1151,6 +1279,7 @@ public class MainController {
          PatientDetailsForm patientdetailsform= new PatientDetailsForm();
 		patientdetailsform.setPatientDetails(patientDAO.getPatientDetails());
 		model.addAttribute("PatientDetailsForm",patientdetailsform);
+		
 		 model.addAttribute("noofrows",patientDAO.getPatientDetails().size());
 		System.out.println("patientdetails");
 	    
@@ -1293,27 +1422,8 @@ public class MainController {
 	}
 	
 
-	@RequestMapping(value="/viewmedicalrecords", method = RequestMethod.GET)
-	public String viewmedicalrecords(HttpServletRequest request,ModelMap model) {
-		
-		MedicalRecordsForm medicalrecordsform= new MedicalRecordsForm();
-		medicalrecordsform.setMedicalDetails(medicalDAO.getMedicalDetails());
-		model.addAttribute("medicalrecordsform",medicalrecordsform);
-		
-		return "viewmedicalrecords";
- 
-	}
-	@RequestMapping(value="/viewassignment", method = RequestMethod.GET)
-	public String viewassignment(HttpServletRequest request,ModelMap model) {
-		
-		 AssignmentDetailsForm assignmentdetailsform= new AssignmentDetailsForm();
-			assignmentdetailsform.setAssignmentDetails(assignmentDAO.getAssignmentDetails());
-			model.addAttribute("AssignmentDetailsForm",assignmentdetailsform);
-		
-		return "viewassignment";
- 
-	}
-	@RequestMapping(value="/viewhippa", method = RequestMethod.GET)
+	
+		@RequestMapping(value="/viewhippa", method = RequestMethod.GET)
 	public String viewhippa(HttpServletRequest request,ModelMap model) {
 		
 		HippaPrivacyForm hippaprivacyform= new HippaPrivacyForm();
@@ -1604,6 +1714,7 @@ public class MainController {
 		return "insuranceverification";
 	}
 	
+
 	/*@RequestMapping(value="/editstaffchecklist", method = RequestMethod.GET)
 	public String editstaffchecklist(HttpServletRequest request,ModelMap model) {
 		
@@ -1615,15 +1726,6 @@ public class MainController {
 	}*/
 
 
-	@RequestMapping(value="/editmedical", method = RequestMethod.GET)
-	public String editmedical(HttpServletRequest request,ModelMap model) {
-		
-		MedicalRecordsForm medicalrecordsform= new MedicalRecordsForm();
-		medicalrecordsform.setMedicalDetails(medicalDAO.getMedicalDetails());
-		model.addAttribute("MedicalRecordsForm",medicalrecordsform);
-		
-		return "editmedical";
-	}
 	
 
 	@RequestMapping(value="/loginfailed", method = RequestMethod.GET)
