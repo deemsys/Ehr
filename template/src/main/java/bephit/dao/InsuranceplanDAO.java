@@ -81,7 +81,7 @@ public List<Insuranceplan> getInsuranceplan(){
 	
 	List<Insuranceplan> Insuranceplan = new ArrayList<Insuranceplan>();
     try{
-		resultSet = statement.executeQuery("select * from tbl_insuranceplan order by no DESC");
+		resultSet = statement.executeQuery("select * from tbl_insuranceplan");
 		while(resultSet.next()){
 			Insuranceplan.add(new Insuranceplan(resultSet.getString("no"),resultSet.getString("insure_comp"),
 		    		resultSet.getString("addr"),
@@ -122,7 +122,7 @@ public List<Insuranceplan> getInsurance(String no){
 	
 	List<Insuranceplan> Insuranceplan = new ArrayList<Insuranceplan>();
     try{
-		resultSet = statement.executeQuery("select * from tbl_insuranceplan order by no DESC");
+		resultSet = statement.executeQuery("select * from tbl_insuranceplan where no='"+no+"'");
 		while(resultSet.next()){
 			Insuranceplan.add(new Insuranceplan(resultSet.getString("no"),resultSet.getString("insure_comp"),
 		    		resultSet.getString("addr"),

@@ -1418,6 +1418,17 @@ public class MainController {
 		
 		return "viewhardship";
 	}
+	
+	@RequestMapping(value="/insuranceinfolist", method = RequestMethod.GET)
+	public String insuranceinfolist(HttpServletRequest request,ModelMap model) {
+		
+		InsuranceinformationForm insuranceinformationForm= new InsuranceinformationForm();
+    	insuranceinformationForm.setInsuranceinformation(infoDAO.getInsuranceinformation());
+		model.addAttribute("InsuranceinformationForm",insuranceinformationForm);
+		
+		return "insuranceinfolist";
+ 
+	}
 		
 	@RequestMapping(value="/viewinsuranceinformation", method = RequestMethod.GET)
 	public String viewinsuranceinformation(HttpServletRequest request,ModelMap model) {
@@ -1429,7 +1440,16 @@ public class MainController {
 		return "viewinsuranceinformation";
  
 	}
-	
+	@RequestMapping(value="/insuranceplanlist", method = RequestMethod.GET)
+	public String insuranceplanlist(HttpServletRequest request,ModelMap model) {
+		
+		InsuranceplanForm insuranceplanForm= new InsuranceplanForm();
+    	insuranceplanForm.setInsuranceplan(planDAO.getInsuranceplan());
+		model.addAttribute("insuranceplanform",insuranceplanForm);
+		
+		return "insuranceplanlist";
+ 
+	}
 	
 	@RequestMapping(value="/viewinsuranceplan", method = RequestMethod.GET)
 	public String viewinsuranceplan(HttpServletRequest request,ModelMap model) {

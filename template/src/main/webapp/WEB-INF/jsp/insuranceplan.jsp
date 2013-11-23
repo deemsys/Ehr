@@ -22,7 +22,13 @@
 <form action="insuranceplan" method="POST">
 
 <table cellpadding="0" cellspacing="0" border="0" width="55%" class="margin_table">
-       
+       <tr>
+        <td valign="top" align="left" style="padding:5px 0 10px 0;">&nbsp;
+		<div class="status success" style="display: none;">
+            <p class="closestatus"><a title="Close" href="">x</a></p>
+            <p><img alt="Success" src="images/icons/icon_success.png"><span>Success!</span>.</p>
+          </div>
+      </tr>
       <tr>
         <td valign="top" align="left">
         	<div>
@@ -104,7 +110,7 @@
         <td>&nbsp;&nbsp;</td>
         <td><br><input type="reset" class="submit_btn" value="Cancel"></td>
         <td>&nbsp;&nbsp;</td>
-        <td><br><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewinsuranceplan'"></td>
+        <td><br><input type="button" class="submit_btn" value="View" onclick="window.location.href='insuranceplanlist'"></td>
         </tr>
         </table>
         </div>

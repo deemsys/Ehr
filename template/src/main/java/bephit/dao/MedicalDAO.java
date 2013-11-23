@@ -75,7 +75,7 @@ public class MedicalDAO {
 		}
 		List<MedicalRecords> medical = new ArrayList<MedicalRecords>();
 	    try{
-			resultSet = statement.executeQuery("select * from Medical_Details order by medical_no DESC");
+			resultSet = statement.executeQuery("select * from Medical_Details");
 			while(resultSet.next()){
 				medical.add(new MedicalRecords(resultSet.getString("medical_no"),resultSet.getString("name"),
 						resultSet.getString("medicalinformation"),
