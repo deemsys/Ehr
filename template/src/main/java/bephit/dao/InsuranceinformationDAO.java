@@ -180,10 +180,10 @@ public int updateinsuranceinformation(Insuranceinformation insuranceinformation,
     
     	    	
     	System.out.println(cmd);
-    	//System.out.println(cmd_activity);
+    	
 		
     	statement.execute(cmd);
-		//statement.execute(cmd_activity);
+		
 		flag=1;
  }
     catch(Exception e){
@@ -191,7 +191,7 @@ public int updateinsuranceinformation(Insuranceinformation insuranceinformation,
     	releaseStatement(statement);
     	releaseConnection(con);
     	flag=0;
-    	//return 0;
+    	
     }finally{
      	releaseStatement(statement);
     	releaseConnection(con);	    

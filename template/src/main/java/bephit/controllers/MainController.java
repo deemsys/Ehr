@@ -1531,16 +1531,26 @@ public class MainController {
 	
 
 	
-			
+
+	@RequestMapping(value="/treatformlist", method = RequestMethod.GET)
+	public String treatformlist(HttpServletRequest request,ModelMap model) {
+		
+
+		TreatForm treatform= new TreatForm();
+		treatform.setTreatform(treatDAO.getTreatDetails());
+		System.out.println(treatform);
+		model.addAttribute("treatform",treatform);
+
+		
+		return "treatformlist";
+ 
+	}	
 
 		
 	@RequestMapping(value="/viewtreatform", method = RequestMethod.GET)
 	public String viewtreatform(HttpServletRequest request,ModelMap model) {
 		
 
-		TreatForm treatdetailsform= new TreatForm();
-		treatdetailsform.setTreatform(treatDAO.getTreatDetails());
-		model.addAttribute("treatdetails",treatdetailsform);
 		TreatForm treatform= new TreatForm();
 		treatform.setTreatform(treatDAO.getTreatDetails());
 		System.out.println(treatform);

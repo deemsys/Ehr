@@ -76,7 +76,7 @@ public class TreatDAO {
 		}
 		List<Treatform> treat = new ArrayList<Treatform>();
 	    try{
-			resultSet = statement.executeQuery("select * from Treat_Details order by treat_no DESC");
+			resultSet = statement.executeQuery("select * from Treat_Details where treat_no='"+treat_no+"'");
 			while(resultSet.next()){
 				treat.add(new Treatform(resultSet.getString("treat_no"),resultSet.getString("patientsname"),
 			    		resultSet.getString("patientssign"),
