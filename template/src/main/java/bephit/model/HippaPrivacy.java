@@ -6,7 +6,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 public class HippaPrivacy
 {
-	
+	private String hippa_no;
 	
 	@NotEmpty
 	private String date;
@@ -26,6 +26,35 @@ public class HippaPrivacy
 	
 	private String staffwitness;
 	
+	public HippaPrivacy()
+	{
+		
+	}
+	
+	public HippaPrivacy(String hippa_no,String date,
+			String printpname,
+			String printpdate,
+			String legalguardian,
+			String staffwitness
+			)
+	{
+	this.hippa_no=hippa_no;
+	this.date=date;
+	this.printpname=printpname;
+	this.printpdate=printpdate;
+	this.legalguardian=legalguardian;
+	this.staffwitness=staffwitness;
+	
+	}
+	
+
+	public String getHippa_no() {
+		return hippa_no;
+	}
+
+	public void setHippa_no(String hippa_no) {
+		this.hippa_no = hippa_no;
+	}
 
 	public String getDate() {
 		return date;
@@ -39,6 +68,7 @@ public class HippaPrivacy
 		return printpname;
 	}
 
+	
 	public void setPrintpname(String printpname) {
 		this.printpname = printpname;
 	}
@@ -67,25 +97,5 @@ public class HippaPrivacy
 		this.staffwitness = staffwitness;
 	}
 
-	public HippaPrivacy()
-	{
 		
-	}
-	
-	public HippaPrivacy(String date,
-			String printpname,
-			String printpdate,
-			String legalguardian,
-			String staffwitness
-			)
-	{
-	this.date=date;
-	this.printpname=printpname;
-	this.printpdate=printpdate;
-	this.legalguardian=legalguardian;
-	this.staffwitness=staffwitness;
-	
-	}
-	
-	
 }

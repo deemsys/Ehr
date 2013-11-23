@@ -1038,13 +1038,7 @@ public class MainController {
 	
 	
 
-		@RequestMapping(value="/Hippaprivacy",method=RequestMethod.GET)
-	public String Hippaprivacy(HttpSession session,ModelMap model)
-	{
-		session.removeAttribute("hippa");
-		return "Hippaprivacy";
-	}
-	
+		
 		@RequestMapping(value="/Assignment",method=RequestMethod.GET)
 		public String Assignment(HttpSession session,ModelMap model)
 		{
@@ -1147,6 +1141,13 @@ public class MainController {
 		return "Assignment";
 	}
 	
+	@RequestMapping(value="/Hippaprivacy",method=RequestMethod.GET)
+	public String Hippaprivacy(HttpSession session,ModelMap model)
+	{
+		session.removeAttribute("hippa");
+		return "Hippaprivacy";
+	}
+	
 	
 	@RequestMapping(value="/Hippaprivacy", method = RequestMethod.POST)
 	public String inserthippaDetails(HttpSession session,@ModelAttribute("HippaPrivacy") @Valid HippaPrivacy privacydetails,BindingResult result,ModelMap model) 
@@ -1173,7 +1174,17 @@ public class MainController {
 		return "Hippaprivacy";
 		}
 
-	
+	@RequestMapping(value="/viewhippa", method = RequestMethod.GET)
+	public String viewhippa(HttpServletRequest request,ModelMap model) {
+		
+		HippaPrivacyForm hippaprivacyform= new HippaPrivacyForm();
+		hippaprivacyform.setPrivacyDetails(hippaDAO.getPrivacyDetails());
+		model.addAttribute("HippaPrivacyForm",hippaprivacyform);
+		
+		return "viewhippa";
+ 
+	}
+
 		
 	@RequestMapping(value="/treatform", method = RequestMethod.POST)
 	public String inserttreatDetails(HttpSession session,@ModelAttribute("Treatform") @Valid Treatform treatdetails,BindingResult result,
@@ -1423,17 +1434,7 @@ public class MainController {
 	
 
 	
-		@RequestMapping(value="/viewhippa", method = RequestMethod.GET)
-	public String viewhippa(HttpServletRequest request,ModelMap model) {
-		
-		HippaPrivacyForm hippaprivacyform= new HippaPrivacyForm();
-		hippaprivacyform.setPrivacyDetails(hippaDAO.getPrivacyDetails());
-		model.addAttribute("HippaPrivacyForm",hippaprivacyform);
-		
-		return "viewhippa";
- 
-	}
-	
+			
 
 		
 	@RequestMapping(value="/viewtreatform", method = RequestMethod.GET)

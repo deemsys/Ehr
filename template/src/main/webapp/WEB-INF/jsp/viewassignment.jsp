@@ -129,7 +129,7 @@ and exclusively in the name of Perry Chiropractic and Therapy Center, such sums 
 				   <td valign="top" align="center"><a href="<c:out value="deleteassignmentdetails?assignment_no=${assignmentdetails.assignment_no}"/>"><br><input type="button" class="submit_btn" value="Delete" onclick="confirmation()"></a></td>
 				  </tr>
 				  </div>
-                        </table>
+                        </table>1
                        
                         </td>
                       
