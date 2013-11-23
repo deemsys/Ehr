@@ -37,7 +37,7 @@
 								<td valign="top" align="left" width="10%">Action</td>
           			</tr>
 							<!-- getting addAttibute value -->
-							<%-- <c:set value="${hardshipagreementform.hardshipagreement[0]}" var="Hardshipagreement"> </c:set> --%>
+							
 						<c:if test="${fn:length(hardshipagreementform.hardshipagreement) gt 0}">
         				  <c:forEach items="${hardshipagreementform.hardshipagreement}" var="Hardshipagreement" varStatus="status">
         				       				<tr class="row1">

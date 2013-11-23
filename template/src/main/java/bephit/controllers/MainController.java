@@ -880,10 +880,10 @@ public class MainController {
  
 	}
 	@RequestMapping(value="/viewmedicalrecords", method = RequestMethod.GET)
-	public String viewmedicalrecords(HttpServletRequest request,ModelMap model) {
+	public String viewmedicalrecords(HttpServletRequest request,@RequestParam("medical_no") String medical_no,ModelMap model,MedicalRecords medicaldetails){
 		
 		MedicalRecordsForm medicalrecordsform= new MedicalRecordsForm();
-		medicalrecordsform.setMedicalDetails(medicalDAO.getMedicalDetails());
+		medicalrecordsform.setMedicalDetails(medicalDAO.getMedicalDetails(medical_no));
 		model.addAttribute("MedicalRecordsForm",medicalrecordsform);
 		
 		return "viewmedicalrecords";
@@ -992,10 +992,10 @@ public class MainController {
 	}
 	
 	@RequestMapping(value="/viewscreeningauthz", method = RequestMethod.GET)
-	public String viewscreeningauthz(HttpServletRequest request,ModelMap model) {
+	public String viewscreeningauthz(HttpServletRequest request,@RequestParam("screen_no") String screen_no,ModelMap model,screeningAuthz screeningdetails){
 		
 		ScreeningAuthzForm screeningauthzForm= new ScreeningAuthzForm();
-    	screeningauthzForm.setScreeningDetails(screenDAO.getScreeningDetails());
+    	screeningauthzForm.setScreeningDetails(screenDAO.getScreening(screen_no));
 		model.addAttribute("ScreeningAuthzForm",screeningauthzForm);
 		
 		return "viewscreeningauthz";
@@ -1431,10 +1431,10 @@ public class MainController {
 	}
 		
 	@RequestMapping(value="/viewinsuranceinformation", method = RequestMethod.GET)
-	public String viewinsuranceinformation(HttpServletRequest request,ModelMap model) {
+	public String viewinsuranceinformation(HttpServletRequest request,@RequestParam("number") String number,ModelMap model,Insuranceinformation insuranceinformation){
 		
 		InsuranceinformationForm insuranceinformationForm= new InsuranceinformationForm();
-    	insuranceinformationForm.setInsuranceinformation(infoDAO.getInsuranceinformation());
+    	insuranceinformationForm.setInsuranceinformation(infoDAO.getInsuranceinformation(number));
 		model.addAttribute("InsuranceinformationForm",insuranceinformationForm);
 		
 		return "viewinsuranceinformation";
@@ -1452,10 +1452,10 @@ public class MainController {
 	}
 	
 	@RequestMapping(value="/viewinsuranceplan", method = RequestMethod.GET)
-	public String viewinsuranceplan(HttpServletRequest request,ModelMap model) {
+	public String viewinsuranceplan(HttpServletRequest request,@RequestParam("no") String no,ModelMap model,Insuranceplan insuranceplan){
 		
 		InsuranceplanForm insuranceplanForm= new InsuranceplanForm();
-    	insuranceplanForm.setInsuranceplan(planDAO.getInsuranceplan());
+    	insuranceplanForm.setInsuranceplan(planDAO.getInsurance(no));
 		model.addAttribute("insuranceplanform",insuranceplanForm);
 		
 		return "viewinsuranceplan";
@@ -1548,11 +1548,11 @@ public class MainController {
 
 		
 	@RequestMapping(value="/viewtreatform", method = RequestMethod.GET)
-	public String viewtreatform(HttpServletRequest request,ModelMap model) {
+	public String viewtreatform(HttpServletRequest request,@RequestParam("treat_no") String treat_no,ModelMap model,Treatform treatdetails){
 		
 
 		TreatForm treatform= new TreatForm();
-		treatform.setTreatform(treatDAO.getTreatDetails());
+		treatform.setTreatform(treatDAO.getTreatDetails(treat_no));
 		System.out.println(treatform);
 		model.addAttribute("treatform",treatform);
 		return "viewtreatform";
@@ -1613,14 +1613,23 @@ public class MainController {
 		return "treatform";
 	}
 	
-	
-
-	
-	@RequestMapping(value="/viewtreatminor", method = RequestMethod.GET)
-	public String viewtreatminor(HttpServletRequest request,ModelMap model) {
+	@RequestMapping(value="/treatminorlist", method = RequestMethod.GET)
+	public String treatminorlist(HttpServletRequest request,ModelMap model) {
 		
 		TreatMinorDetailsForm treatminordetailsForm= new TreatMinorDetailsForm();
 		treatminordetailsForm.setMinorDetails(minorDAO.getMinorDetails());
+		model.addAttribute("treatminordetailsform",treatminordetailsForm);
+		
+		return "treatminorlist";
+ 
+	}
+
+	
+	@RequestMapping(value="/viewtreatminor", method = RequestMethod.GET)
+	public String viewtreatminor(HttpServletRequest request,@RequestParam("minor_no") String minor_no,ModelMap model,TreatMinor minordetails){
+		
+		TreatMinorDetailsForm treatminordetailsForm= new TreatMinorDetailsForm();
+		treatminordetailsForm.setMinorDetails(minorDAO.getMinorDetails(minor_no));
 		model.addAttribute("treatminordetailsform",treatminordetailsForm);
 		return "viewtreatminor";
  

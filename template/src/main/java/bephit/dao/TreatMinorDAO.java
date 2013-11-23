@@ -76,7 +76,7 @@ public class TreatMinorDAO {
 		}
 		List<TreatMinor> minor = new ArrayList<TreatMinor>();
 	    try{
-			resultSet = statement.executeQuery("select * from Minor_Details order by minor_no DESC");
+			resultSet = statement.executeQuery("select * from Minor_Details ");
 			while(resultSet.next()){
 				minor.add(new TreatMinor(resultSet.getString("minor_no"),resultSet.getString("guardian"),resultSet.getString("age"),resultSet.getString("drname"),resultSet.getString("signed"),
 			    		resultSet.getString("pdate"),
@@ -109,7 +109,7 @@ public class TreatMinorDAO {
 		}
 		List<TreatMinor> minor = new ArrayList<TreatMinor>();
 	    try{
-			resultSet = statement.executeQuery("select * from Minor_Details order by minor_no DESC");
+			resultSet = statement.executeQuery("select * from Minor_Details where minor_no='"+minor_no+"'");
 			while(resultSet.next()){
 				minor.add(new TreatMinor(resultSet.getString("minor_no"),resultSet.getString("guardian"),resultSet.getString("age"),resultSet.getString("drname"),resultSet.getString("signed"),
 			    		resultSet.getString("pdate"),

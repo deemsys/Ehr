@@ -38,11 +38,11 @@ public class HardshipagreementDAO {
 		} catch (SQLException e1) {
 			e1.printStackTrace();
 		}
-		//List<ParticipantsDetails> participants = new ArrayList<ParticipantsDetails>();
+		
 	    try{
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
-	    	 //System.out.println(dateFormat.format(date));
+	    	 
 	    	 String cmd="INSERT INTO `tbl_hardshipagreement` (`date`,`print_pat_name`,`pat_sign`,`witness_sign`) VALUES ('"+hardshipagreement.getDate()+"','"+hardshipagreement.getPrint_pat_name()+"','"+hardshipagreement.getPat_sign()+"','"+hardshipagreement.getWitness_sign()+"')";
 	    	 System.out.println(cmd);
 	    	 statement.execute(cmd);
@@ -154,24 +154,18 @@ public int updatehardship(Hardshipagreement hardshipagreement,String agreement_n
 	} catch (SQLException e1) {
 		e1.printStackTrace();
 	}
-	//List<ParticipantsDetails> participants = new ArrayList<ParticipantsDetails>();
+	
     try{
     	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
     	 Date date = new Date();
-    	 //System.out.println(dateFormat.format(date));
+    	 
     	String cmd="UPDATE tbl_hardshipagreement SET date='"+hardshipagreement.getDate()+"',print_pat_name='"+hardshipagreement.getPrint_pat_name()+"',pat_sign='"+hardshipagreement.getPat_sign()+"',witness_sign='"+hardshipagreement.getWitness_sign()+"' where agreement_no='"+agreement_no+"';";
-    /*	String Desc="Update hardship "+hardshipagreement.getPrint_pat_name();
-    	*/
+   
     	
-    	
-    	//String cmd_activity="insert into admin_log_activity_table(admin_id,ip_address,admin_date_time,admin_desc) values('"+admin+"','127.0.0.1','"+dateFormat.format(date)+"','"+Desc+"')";
-    	    	
     	System.out.println(cmd);
-    	//System.out.println(cmd_activity);
-		
+    	
     	statement.execute(cmd);
-		//statement.execute(cmd_activity);
-		flag=1;
+				flag=1;
  }
     catch(Exception e){
     	System.out.println(e.toString());
