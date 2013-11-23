@@ -1,49 +1,62 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <jsp:include page="header.jsp"></jsp:include>
-
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <script type="text/javascript" src="js/ajaxpaging.js"></script>
-
+<script src="resources/js/jquery_checkbox.js" type="text/javascript"></script>
 <div id="right_content">
-	<form name="grid" onSubmit="return validate(this)" action="viewpatient" method="POST">
+	
     	<table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
-      		<tr>
-				<td valign="top" align="left" style="padding:5px 0 10px 0;">
-					<div class="del_div">
-						<p><label style="padding: 0pt 20px 0pt 0pt;"><input type="submit" name="delete" value="" class="icon1" onclick="form.action='?do=deleteparticipant'" /></label></p>
-	          		</div>
-				</td>
-			</tr>
-			
+      		
+			<tr>
+			<c:if test="${success==true}">
+        <tr>
+        <td valign="top" align="left" style="padding:5px 0 10px 0;">&nbsp;
+            <div id="success_statusbar" class="status success">
+            <p class="closestatus"><a title="Close" href="patientDetails">x</a></p>
+            <p><img alt="Success" src="resources/images/icons/icon_success.png"><span>Success!</span>.</p>
+          </div>
+      </tr>
+    </c:if>
+    </tr>
       		<tr>
         		<td valign="top" align="left">
 			        <div class="headings altheading">
+			        
 			          <h2>View Patients</h2>
 			        </div>
 			        <div class="contentbox">
-						
-				        <table cellpadding="0" cellspacing="0" border="0" width="100%">
-							<tr class="title">
-								<td valign="center" align="left" width="5%"><input type="checkbox" onclick="selectall(this.form)" value="" name="checkall"></td>
+			      <!--   <form action="findPatients" method="GET">  --> 
+			      <form action="patientDetails" method="POST"> 
+						<table cellpadding="0" cellspacing="0" border="0" width="100%">
+				     <tr class="title">
          						<td valign="top" align="left" width="10%">Name</td>
 					         	<td valign="top" align="left" width="15%">MobileNumber</td>
 					         	<td valign="top" align="left" width="10%">City</td>
 								<td valign="top" align="left" width="10%">State</td>
           						<td valign="top" align="left" width="25%">Action</td>
         					</tr>
-        					<c:forEach items="${patientdetailsform.PatientDetails}" var="PatientDetails">
+        					
+        					<c:if test="${fn:length(patientdetailsform.patientDetails) gt 0}">
+        				  <c:forEach items="${patientdetailsform.patientDetails}" var="patientDetails" varStatus="status">
         				       	<tr class="row1">
-							       		<td valign="center" align="right" width="10%"><input type="checkbox" value="${PatientDetails.Patient_id}"></td>
-					     		     <td valign="top" align="left"  width="10%">${PatientDetails.Name}</td> 
-										 	<td valign="top" align="left" width="15%">${PatientDetails.MobileNumber}</td>
-											<td valign="top" align="left" width="10%">${PatientDetails.City}</td>
-											<td valign="top" align="left" width="10%">${PatientDetails.State}</td>
+							      	 <td valign="top" align="left"  width="10%"> <a href="patientDetailsList?patient_id=${patientDetails.patient_id}">${patientDetails.name}</a></td>
+											
+										 	<td valign="top" align="left" width="15%">${patientDetails.mobileNumber}</td>
+											<td valign="top" align="left" width="10%">${patientDetails.city}</td>
+											<td valign="top" align="left" width="10%">${patientDetails.state}</td>
 											 <td>
-												<a href="#" title="" ><img src="resources/images/icons/icon_edit.png" alt="Edit" /></a><a href="<c:out value="editparticipant?id=${patientDetails.Patient_id}"/>" style="padding-right:10px;">Edit</a>
-												<a href="#" title=""><img src="resources/images/icons/icon_delete.png" alt="Delete" /></a><a id="delete_confirm" href="<c:out value="deleteparticipants?id=${patientDetails.Patient_id}"/>">Remove</a>
+												<a href="#" title="" ><img src="resources/images/icons/icon_edit.png" alt="Edit" /></a><a href="<c:out value="editparticipant?patient_id=${patientDetails.patient_id}"/>" style="padding-right:10px;">Edit</a>
+												<a href="#" title=""><img src="resources/images/icons/icon_delete.png" alt="Delete" /></a><a id="delete_confirm" href="<c:out value="deleteparticipants?patient_id=${patientDetails.patient_id}"/>">Remove</a>
 											</td> 
 								</tr>
 							    	</c:forEach>
-        					
+							    	</c:if>
+        							
+							    <c:if test="${fn:length(patientdetailsform.patientDetails) == 0}">	
+							    	<tr class="row1">
+							    	<td colspan="7" width="100%"><center><b>No Participants Found!!!</b></center></td>
+							    	</tr>
+							    	</c:if>
         					
 						</table>
 					</div>
@@ -81,7 +94,8 @@ function selectall(field)
 			field[i].checked = false;
 	}
 }
-
+</script>
+<!-- 
 function validate(fname)
 {
 // alert(fname);
@@ -111,6 +125,6 @@ return true;
 // alert(document.getElementById("city").value);
 window.location="?do=viewparticipants&moblie="+document.getElementById("moblie").value+"&group="+document.getElementById("group").value+"&city="+document.getElementById("city").value;
 } */
-</script>
+</script> -->
 
 <jsp:include page="footer.jsp"></jsp:include>

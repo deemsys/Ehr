@@ -664,7 +664,9 @@
 				  <tr>
 				  <td><br><input type="button" id="btnPrevious" class="submit_btn" value="Previous" style = "display:none" />&nbsp;</td>
                   <td><br><input type="button" id="btnNext" class="submit_btn" value="Next"/><br></td>
- 
+ 				  <td>&nbsp;&nbsp;</td>
+             		 <td valign="top" align="center"><br><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewpatient'"></td>
+				 
                   <td><input type="submit" class="submit_btn" value="Save"></td>
                   <td><input type="reset" class="submit_btn" value="Cancel" onclick="window.location.href='patientDetails'"></td>
 				 

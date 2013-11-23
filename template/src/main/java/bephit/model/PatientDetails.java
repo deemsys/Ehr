@@ -9,53 +9,23 @@ public class PatientDetails
 {
 private String Patient_id;
 
-
-
-
-
-
-
-
-
-public String getPatient_id() {
-	return Patient_id;
-}
-
-
-
-
-
-
-
-
-public void setPatient_id(String patient_id) {
-	Patient_id = patient_id;
-}
-
-
-
-
 @NotEmpty
-
 private String Name;
+
 @NotEmpty
 private String Date;
 @NotEmpty
 private String StreetAddress;
 @NotEmpty
-
 private String City;
 @NotEmpty
-
 private String State;
 @NotEmpty
-
 private String ZipCode;
 @NotEmpty
 /*@Pattern(regexp="(^$|[0-9]{10})",message="Not a valid Mobile number")*/
 private String Homephone;
 @NotEmpty
-
 private String Emailid;
 @NotEmpty
 /*@Pattern(regexp="(^$|[0-9]{10})",message="Not a valid Mobile number")*/
@@ -63,9 +33,7 @@ private String MobileNumber;
 @NotEmpty
 private String DateOfBirth;
 @NotEmpty
-
 private String SocialSecurityNumber;
-
 private String Gender;
 
 private String MaritalStatus;
@@ -73,7 +41,6 @@ private String MaritalStatus;
 private String Areyou;
 private String Student;
 @NotEmpty
-
 private String EmployerName;
 
 
@@ -93,10 +60,8 @@ private String Estate;
 
 private String Ezip;
 @NotEmpty
-
 private String SpousesName;
 @NotEmpty
-
 private String SpousesEmp;
 @NotEmpty
 private String Spousesph;
@@ -211,15 +176,235 @@ private String Hazardous;
 private String Hazardousyes;
 private String Female;
 @NotEmpty
-
 private String Dr;
 @NotEmpty
-
 private String Patient;
 @NotEmpty
 
-private String Sign;
 
+
+
+
+public PatientDetails()
+{
+
+}
+
+
+public PatientDetails(String Patient_id,
+		String Name,
+		String Date,
+		String StreetAddress,
+		String City,
+		String State,
+		String ZipCode,
+		String Homephone,
+		String Emailid,
+		String MobileNumber,
+		String DateOfBirth,
+		String SocialSecurityNumber,
+		String Gender,
+		String MaritalStatus,
+		String Areyou,
+		String Student,
+		String EmployerName,
+		String Occupation,
+		String EmployerAddress,
+		String Workphone,
+		String EmployerCity,
+		String Estate,
+		String Ezip,
+		String SpousesName,
+		String SpousesEmp,
+		String Spousesph,
+		String Name_friend,
+		String Phone_friend,
+		String Chiropratic_care,
+		String Symptoms,
+		String Symptom1,
+		String Symptom2,
+		String Painscale,
+		String Painscale1,
+		String Painscale2,
+		String Symptom_Accident,
+		String Type_Of_Accident,
+		String accident,
+		String Date_Of_Accident,
+		String Accident_Reported,
+		String when1,
+		String where1,
+		String Attorney_accident,
+		String NameOfAttorney,
+		String Phone_Number,
+		String Fault_accident,
+		String Insurance,
+		String Insurance_phone,
+		String Name_auto,
+		String Phone_auto,
+		String Policy,
+		String Name_health,
+		String Health_phone,
+		String Prev_accident,
+		String Prev_When,
+		String Anemia,
+		String Muscular,
+		String Rheumatic,
+		String Allergies,
+		String Cancer,
+		String Polio1,
+		String Multiple,
+		String Scarlet,
+		String HIV,
+		String Sinus,
+		String Asthma,
+		String German,
+		String Nervousness,
+		String Numbness,
+		String Convulsions,
+		String Epilepsy,
+		String Concussion,
+		String Dizziness,
+		String Neuritis,
+		String Rheumatism,
+		String Diabetes,
+		String Arthritis,
+		String Venereal,
+		String Backaches,
+		String Tuberculosis,
+		String Liver,
+		String Kidney,
+		String Thyroid,
+		String Alchoholism,
+		String Hepatitis,
+		String Mental,
+		String High,
+		String Digestive,
+		String Heart,
+		String Other,
+		String Ifother,
+		String Illness,
+		String Dates,
+		String Medications,
+		String Drink,
+		String Smoke,
+		String Drugs,
+		String Diet,
+		String Exercise,
+		String Hazardous,
+		String Hazardousyes,
+		String Female,
+		String Dr,
+		String Patient
+		)
+{
+	super();
+	this.Patient_id=Patient_id;
+	this.Name=Name;
+	this.Date=Date;
+	this.StreetAddress=StreetAddress;
+	this.City=City;
+	this.State=State;
+	this.ZipCode=ZipCode;
+	this.Homephone=Homephone;
+	this.Emailid=Emailid;
+	this.MobileNumber=MobileNumber;
+	this.DateOfBirth=DateOfBirth;
+	this.SocialSecurityNumber=SocialSecurityNumber;
+	this.Gender=Gender;
+	this.MaritalStatus=MaritalStatus;
+	this.Areyou=Areyou;
+	this.Student=Student;
+	this.EmployerName=EmployerName;
+	this.Occupation=Occupation;
+	this.EmployerAddress=EmployerAddress;
+	this.Workphone=Workphone;
+	this.EmployerCity=EmployerCity;
+	this.Estate=Estate;
+	this.Ezip=Ezip;
+	this.SpousesName=SpousesName;
+	this.SpousesEmp=SpousesEmp;
+	this.Spousesph=Spousesph;
+	this.Name_friend=Name_friend;
+	this.Phone_friend=Phone_friend;
+	this.Chiropratic_care=Chiropratic_care;
+	this.Symptoms=Symptoms;
+	this.Symptom1=Symptom1;
+	this.Symptom2=Symptom2;
+	this.Painscale=Painscale;
+	this.Painscale1=Painscale1;
+	this.Painscale2=Painscale2;
+	this.Symptom_Accident=Symptom_Accident;
+	this.Type_Of_Accident=Type_Of_Accident;
+	this.accident = accident;
+	this.Date_Of_Accident=Date_Of_Accident;
+	this.Accident_Reported=Accident_Reported;
+	this.when1=when1;
+	this.where1=where1;
+	this.Attorney_accident=Attorney_accident;
+	this.NameOfAttorney=NameOfAttorney;
+	this.Phone_Number=Phone_Number;
+	this.Fault_accident=Fault_accident;
+	this.Insurance=Insurance;
+	this.Insurance_phone=Insurance_phone;
+	this.Name_auto=Name_auto;
+	this.Phone_auto=Phone_auto;
+	this.Policy=Policy;
+	this.Name_health=Name_health;
+	this.Health_phone=Health_phone;
+	this.Prev_accident=Prev_accident;
+	this.Prev_When=Prev_When;
+	this.Anemia=Anemia;
+	this.Muscular=Muscular;
+	this.Rheumatic=Rheumatic;
+	this.Allergies=Allergies;
+	this.Cancer = Cancer;
+	this.Polio1=Polio1;
+	this.Multiple=Multiple;
+	this.Scarlet = Scarlet;
+	this.HIV=HIV;
+	this.Sinus=Sinus;
+	this.Asthma=Asthma;
+	this.German=German;
+	this.Nervousness=Nervousness;
+	this.Numbness=Numbness;
+	this.Convulsions=Convulsions;
+	this.Epilepsy=Epilepsy;
+	this.Concussion=Concussion;
+	this.Dizziness = Dizziness;
+	this.Neuritis=Neuritis;
+	this.Rheumatism=Rheumatism;
+	this.Diabetes=Diabetes;
+	this.Arthritis=Arthritis;
+	this.Venereal=Venereal;
+	this.Backaches=Backaches;
+	this.Tuberculosis = Tuberculosis;
+	this.Liver=Liver;
+	this.Kidney=Kidney;
+	this.Thyroid=Thyroid;
+	this.Alchoholism=Alchoholism;
+	this.Hepatitis=Hepatitis;
+	this.Mental=Mental;
+	this.High=High;
+	this.Digestive=Digestive;
+	this.Heart=Heart;
+	this.Other=Other;
+	this.Ifother=Ifother;
+	this.Illness=Illness;
+	this.Dates=Dates;
+	this.Medications=Medications;
+	this.Drink=Drink;
+	this.Smoke=Smoke;
+	this.Drugs=Drugs;
+	this.Diet=Diet;
+	this.Exercise=Exercise;
+	this.Hazardous=Hazardous;
+	this.Hazardousyes=Hazardousyes;
+	this.Female=Female;
+	this.Dr=Dr;
+	this.Patient=Patient;
+	
+	
+}
 
 
 
@@ -248,12 +433,6 @@ public String getName() {
 public void setName(String name) {
 	Name = name;
 }
-
-
-
-
-
-
 
 
 public String getDate() {
@@ -571,6 +750,24 @@ public String getEmployerAddress() {
 public void setEmployerAddress(String employerAddress) {
 	EmployerAddress = employerAddress;
 }
+
+
+
+public String getPatient_id() {
+	return Patient_id;
+}
+
+
+
+
+
+
+
+
+public void setPatient_id(String patient_id) {
+	Patient_id = patient_id;
+}
+
 
 
 
@@ -2331,31 +2528,6 @@ public void setPatient(String patient) {
 
 
 
-public String getSign() {
-	return Sign;
-}
-
-
-
-
-
-
-
-
-public void setSign(String sign) {
-	this.Sign = sign;
-}
-
-
-
-public PatientDetails()
-{
-
-}
-
-
-
-
 public String getDizziness() {
 	return Dizziness;
 }
@@ -2376,221 +2548,6 @@ public void setDizziness(String dizziness) {
 
 
 
-
-
-public PatientDetails(String Patient_id,
-		String Name,
-		String Date,
-		String StreetAddress,
-		String City,
-		String State,
-		String ZipCode,
-		String Homephone,
-		String Emailid,
-		String MobileNumber,
-		String DateOfBirth,
-		String SocialSecurityNumber,
-		String Gender,
-		String MaritalStatus,
-		String Areyou,
-		String Student,
-		String EmployerName,
-		String Occupation,
-		String EmployerAddress,
-		String Workphone,
-		String EmployerCity,
-		String Estate,
-		String Ezip,
-		String SpousesName,
-		String SpousesEmp,
-		String Spousesph,
-		String Name_friend,
-		String Phone_friend,
-		String Chiropratic_care,
-		String Symptoms,
-		String Symptom1,
-		String Symptom2,
-		String Painscale,
-		String Painscale1,
-		String Painscale2,
-		String Symptom_Accident,
-		String Type_Of_Accident,
-		String accident,
-		String Date_Of_Accident,
-		String Accident_Reported,
-		String when1,
-		String where1,
-		String Attorney_accident,
-		String NameOfAttorney,
-		String Phone_Number,
-		String Fault_accident,
-		String Insurance,
-		String Insurance_phone,
-		String Name_auto,
-		String Phone_auto,
-		String Policy,
-		String Name_health,
-		String Health_phone,
-		String Prev_accident,
-		String Prev_When,
-		String Anemia,
-		String Muscular,
-		String Rheumatic,
-		String Allergies,
-		String Cancer,
-		String Polio1,
-		String Multiple,
-		String Scarlet,
-		String HIV,
-		String Sinus,
-		String Asthma,
-		String German,
-		String Nervousness,
-		String Numbness,
-		String Convulsions,
-		String Epilepsy,
-		String Concussion,
-		String Dizziness,
-		String Neuritis,
-		String Rheumatism,
-		String Diabetes,
-		String Arthritis,
-		String Venereal,
-		String Backaches,
-		String Tuberculosis,
-		String Liver,
-		String Kidney,
-		String Thyroid,
-		String Alchoholism,
-		String Hepatitis,
-		String Mental,
-		String High,
-		String Digestive,
-		String Heart,
-		String Other,
-		String Ifother,
-		String Illness,
-		String Dates,
-		String Medications,
-		String Drink,
-		String Smoke,
-		String Drugs,
-		String Diet,
-		String Exercise,
-		String Hazardous,
-		String Hazardousyes,
-		String Female,
-		String Dr,
-		String Patient
-		)
-{
-	this.Patient_id=Patient_id;
-	this.Name=Name;
-	this.Date=Date;
-	this.StreetAddress=StreetAddress;
-	this.City=City;
-	this.State=State;
-	this.ZipCode=ZipCode;
-	this.Homephone=Homephone;
-	this.Emailid=Emailid;
-	this.MobileNumber=MobileNumber;
-	this.DateOfBirth=DateOfBirth;
-	this.SocialSecurityNumber=SocialSecurityNumber;
-	this.Gender=Gender;
-	this.MaritalStatus=MaritalStatus;
-	this.Areyou=Areyou;
-	this.Student=Student;
-	this.EmployerName=EmployerName;
-	this.Occupation=Occupation;
-	this.EmployerAddress=EmployerAddress;
-	this.Workphone=Workphone;
-	this.EmployerCity=EmployerCity;
-	this.Estate=Estate;
-	this.Ezip=Ezip;
-	this.SpousesName=SpousesName;
-	this.SpousesEmp=SpousesEmp;
-	this.Spousesph=Spousesph;
-	this.Name_friend=Name_friend;
-	this.Phone_friend=Phone_friend;
-	this.Chiropratic_care=Chiropratic_care;
-	this.Symptoms=Symptoms;
-	this.Symptom1=Symptom1;
-	this.Symptom2=Symptom2;
-	this.Painscale=Painscale;
-	this.Painscale1=Painscale1;
-	this.Painscale2=Painscale2;
-	this.Symptom_Accident=Symptom_Accident;
-	this.Type_Of_Accident=Type_Of_Accident;
-	this.accident = accident;
-	this.Date_Of_Accident=Date_Of_Accident;
-	this.Accident_Reported=Accident_Reported;
-	this.when1=when1;
-	this.where1=where1;
-	this.Attorney_accident=Attorney_accident;
-	this.NameOfAttorney=NameOfAttorney;
-	this.Phone_Number=Phone_Number;
-	this.Fault_accident=Fault_accident;
-	this.Insurance=Insurance;
-	this.Insurance_phone=Insurance_phone;
-	this.Name_auto=Name_auto;
-	this.Phone_auto=Phone_auto;
-	this.Policy=Policy;
-	this.Name_health=Name_health;
-	this.Health_phone=Health_phone;
-	this.Prev_accident=Prev_accident;
-	this.Prev_When=Prev_When;
-	this.Anemia=Anemia;
-	this.Muscular=Muscular;
-	this.Rheumatic=Rheumatic;
-	this.Allergies=Allergies;
-	this.Cancer = Cancer;
-	this.Polio1=Polio1;
-	this.Multiple=Multiple;
-	this.Scarlet = Scarlet;
-	this.HIV=HIV;
-	this.Sinus=Sinus;
-	this.Asthma=Asthma;
-	this.German=German;
-	this.Nervousness=Nervousness;
-	this.Numbness=Numbness;
-	this.Convulsions=Convulsions;
-	this.Epilepsy=Epilepsy;
-	this.Concussion=Concussion;
-	this.Dizziness = Dizziness;
-	this.Neuritis=Neuritis;
-	this.Rheumatism=Rheumatism;
-	this.Diabetes=Diabetes;
-	this.Arthritis=Arthritis;
-	this.Venereal=Venereal;
-	this.Backaches=Backaches;
-	this.Tuberculosis = Tuberculosis;
-	this.Liver=Liver;
-	this.Kidney=Kidney;
-	this.Thyroid=Thyroid;
-	this.Alchoholism=Alchoholism;
-	this.Hepatitis=Hepatitis;
-	this.Mental=Mental;
-	this.High=High;
-	this.Digestive=Digestive;
-	this.Heart=Heart;
-	this.Other=Other;
-	this.Ifother=Ifother;
-	this.Illness=Illness;
-	this.Dates=Dates;
-	this.Medications=Medications;
-	this.Drink=Drink;
-	this.Smoke=Smoke;
-	this.Drugs=Drugs;
-	this.Diet=Diet;
-	this.Exercise=Exercise;
-	this.Hazardous=Hazardous;
-	this.Hazardousyes=Hazardousyes;
-	this.Female=Female;
-	this.Dr=Dr;
-	this.Patient=Patient;
-	this.Sign=Sign;
-	
-}
 
 
 
