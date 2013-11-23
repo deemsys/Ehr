@@ -102,9 +102,9 @@
 				                  	<table>
 				                  	<tr>
 				  <td valign="top" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-				                <td valign="top" align="center"><br><input type="button" class="submit_btn" value="Edit"></td>
+				                <td valign="top" align="center"><br><input type="button" class="submit_btn" value="Edit" onclick="window.location.href='edithippaprivacy'"></td>
 				                <td>&nbsp;&nbsp;</td>
-				    <td valign="top" align="center"><br><input type="button" class="submit_btn" value="Delete"></td>
+				    <td valign="top" align="center"><a href="<c:out value="deletehippaprivacy?hippa_no=${privacydetails.hippa_no}"/>"><br><input type="button" class="submit_btn" value="Delete" onclick="confirmation()"></td>
 				  </tr>
 				  </table>
                         </div>
@@ -120,6 +120,18 @@
                         </table>
                         </form>
                         </div>
+                        
+                          <script language="javascript">
+        function confirmation() {
+	var answer = confirm("Are you Sure You Want to Delete patient screening disclosure ?")
+	if (answer){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+        </script>
                         </body>
                         </html>
                        <jsp:include page="footer.jsp"></jsp:include>  

@@ -1184,7 +1184,62 @@ public class MainController {
 		return "viewhippa";
  
 	}
-
+	@RequestMapping(value="/edithippaprivacy", method = RequestMethod.GET)
+	public String edithippa(HttpServletRequest request,ModelMap model) {
+		
+		HippaPrivacyForm hippaprivacyform= new HippaPrivacyForm();
+    	hippaprivacyform.setPrivacyDetails(hippaDAO.getPrivacyDetails());
+		model.addAttribute("HippaPrivacyForm",hippaprivacyform);
+		
+		return "edithippaprivacy";
+	}
+	
+	@RequestMapping(value="/updatehippaprivacy", method=RequestMethod.POST)
+	public String updatehippaprivacy(HttpServletRequest request,@ModelAttribute("HippaPrivacy") @Valid HippaPrivacy privacydetails,
+			BindingResult result,ModelMap model,Principal principal)
+	{
+		/*if (result.hasErrors())
+		{
+			InsuranceplanForm insuranceplanForm = new InsuranceplanForm();
+	     //   participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants(participant.getParticipants_id()));
+	      insuranceplanForm.setInsuranceplan(planDAO.getPlan(insuranceplan.getNo()));
+	      
+	        model.addAttribute("insuranceplanForm", insuranceplanForm);
+			    
+		        return "editinsuranceplan";
+		}*/
+		
+		int status = hippaDAO.updatehippaprivacy(privacydetails, privacydetails.getHippa_no(), principal.getName());
+		System.out.println(status);
+		
+		HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
+        
+        hippaprivacyform.setPrivacyDetails(hippaDAO.getPrivacyDetails());
+       
+        model.addAttribute("HippaPrivacyForm", hippaprivacyform);
+	       model.addAttribute("success","true");
+	        return "viewhippa";
+		
+	}
+	@RequestMapping(value="/deletehippaprivacy", method=RequestMethod.GET)
+	public String removehippa(@RequestParam("hippa_no") String hippa_no,ModelMap model, Principal principal) {
+	
+		int status=hippaDAO.deletehippaprivacy(hippa_no);
+		
+		if(status==1)
+		{
+        model.addAttribute("success","true");
+		//ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
+		HippaPrivacyForm hippaprivacyForm = new HippaPrivacyForm();
+		//participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
+		hippaprivacyForm.setPrivacyDetails(hippaDAO.getPrivacyDetails());
+        model.addAttribute("HippaPrivacyDetails", hippaprivacyForm);
+      
+		}
+		
+		return "Hippaprivacy";
+	}
+	
 		
 	@RequestMapping(value="/treatform", method = RequestMethod.POST)
 	public String inserttreatDetails(HttpSession session,@ModelAttribute("Treatform") @Valid Treatform treatdetails,BindingResult result,
