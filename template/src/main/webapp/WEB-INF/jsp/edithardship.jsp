@@ -81,9 +81,11 @@
               <table>
               <tr>
               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-              <td><input type="submit" class="submit_btn" value="Save"></td>
+              <td><input type="submit" class="submit_btn" value="Update"></td>
               <td>&nbsp;&nbsp;</td>
               <td><input type="reset" class="submit_btn" value="Cancel"></td>
+              <td>&nbsp;&nbsp;</td>
+              <td><input type="button" class="submit_btn" value="Back" onclick="window.location.href='hardshiplist'"></td>
               
         	  </tr>
         	  </table>

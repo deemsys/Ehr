@@ -76,7 +76,7 @@ public class ScreenDAO {
 		}
 		List<screeningAuthz> screen = new ArrayList<screeningAuthz>();
 	    try{
-			resultSet = statement.executeQuery("select * from Screening_Details order by screen_no DESC");
+			resultSet = statement.executeQuery("select * from Screening_Details");
 			while(resultSet.next()){
 				screen.add(new screeningAuthz(resultSet.getString("screen_no"),resultSet.getString("date"),
 			    		resultSet.getString("name")
@@ -96,7 +96,7 @@ public class ScreenDAO {
 		
 	}
 	
-	public List<screeningAuthz> getScreening(){
+	public List<screeningAuthz> getScreening(String screen_no){
 		Connection con = null;
 		Statement statement = null;
 		ResultSet resultSet = null;
@@ -108,7 +108,7 @@ public class ScreenDAO {
 		}
 		List<screeningAuthz> screen = new ArrayList<screeningAuthz>();
 	    try{
-			resultSet = statement.executeQuery("select * from Screening_Details order by screen_no DESC");
+			resultSet = statement.executeQuery("select * from Screening_Details where screen_no='"+screen_no+"'");
 			while(resultSet.next()){
 				screen.add(new screeningAuthz(resultSet.getString("screen_no"),resultSet.getString("date"),
 			    		resultSet.getString("name")

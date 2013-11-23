@@ -35,6 +35,7 @@
 	            <div class="headings altheading">
 	              <h2>Editing Screening Disclosure:</h2>
 	            </div>
+	            <div class="contentbox">
   <table cellpadding="0" cellspacing="0" border="0" width="100%">
       <c:set value="${ScreeningAuthzForm.screeningDetails[0]}" var="ScreeningDetails"> </c:set>
   				<tr>
@@ -64,8 +65,11 @@
               <td ><input type="submit" class="submit_btn" value="Update"></td>
               <td>&nbsp;&nbsp;</td>
               <td><input type="reset" class="submit_btn" value="Cancel"></td>
+              <td>&nbsp;&nbsp;</td>
+              <td><input type="button" class="submit_btn" value="Back" onclick="window.location.href='hardshiplist'"></td>
         	  </tr>
         	  </table>
+        	  
 				    </td>
 				    </tr>
 				    </table>

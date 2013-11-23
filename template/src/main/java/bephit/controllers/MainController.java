@@ -869,6 +869,16 @@ public class MainController {
  
 	}
 
+	@RequestMapping(value="/medicalrecordslist", method = RequestMethod.GET)
+	public String medicalrecordslist(HttpServletRequest request,ModelMap model) {
+		
+		MedicalRecordsForm medicalrecordsform= new MedicalRecordsForm();
+		medicalrecordsform.setMedicalDetails(medicalDAO.getMedicalDetails());
+		model.addAttribute("MedicalRecordsForm",medicalrecordsform);
+		
+		return "medicalrecordslist";
+ 
+	}
 	@RequestMapping(value="/viewmedicalrecords", method = RequestMethod.GET)
 	public String viewmedicalrecords(HttpServletRequest request,ModelMap model) {
 		
@@ -969,6 +979,18 @@ public class MainController {
 		//Show view page
 		 return "screeningAuthz";
 	}
+	
+	@RequestMapping(value="/screeninglist", method = RequestMethod.GET)
+	public String screeniglist(HttpServletRequest request,ModelMap model) {
+		
+		ScreeningAuthzForm screeningauthzForm= new ScreeningAuthzForm();
+    	screeningauthzForm.setScreeningDetails(screenDAO.getScreeningDetails());
+		model.addAttribute("ScreeningAuthzForm",screeningauthzForm);
+		
+		return "screeninglist";
+ 
+	}
+	
 	@RequestMapping(value="/viewscreeningauthz", method = RequestMethod.GET)
 	public String viewscreeningauthz(HttpServletRequest request,ModelMap model) {
 		
@@ -1373,7 +1395,7 @@ public class MainController {
 	}*/
 
 	@RequestMapping(value="/hardshiplist", method = RequestMethod.GET)
-	public String viewhardship(HttpServletRequest request,ModelMap model) {
+	public String hardshiplist(HttpServletRequest request,ModelMap model) {
 		
 		HardshipagreementForm hardshipagreementForm= new HardshipagreementForm();
     	hardshipagreementForm.setHardshipagreement(hardDAO.getHardshipagreement());

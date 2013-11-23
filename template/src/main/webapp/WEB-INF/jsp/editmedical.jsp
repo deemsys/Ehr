@@ -59,9 +59,12 @@
 				                  	<tr>
 				  <td valign="top" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				
-				<td valign="top" align="center"><br><input type="submit" class="submit_btn" value="Updtae"></td>
+				<td valign="top" align="center"><br><input type="submit" class="submit_btn" value="Update"></td>
 				<td>&nbsp;&nbsp;</td>
-				 <td valign="top" align="center"><br><input type="reset" class="submit_btn" value="cancel" ></td>
+				 <td valign="top" align="center"><br><input type="reset" class="submit_btn" value="Cancel" ></td>
+				 <td>&nbsp;&nbsp;</td>
+				 <td><br><input type="button" class="submit_btn" value="Back" onclick="window.location.href='medicalrecordslist'"></td>
+				 
 				  </tr>
 				                  	</div>
 				                  	
