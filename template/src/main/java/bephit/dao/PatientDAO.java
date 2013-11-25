@@ -12,6 +12,7 @@ import java.util.List;
 import javax.sql.DataSource;
 
 import bephit.model.PatientDetails;
+import bephit.model.RadiologicReport;
 
 public class PatientDAO {
 	private DataSource dataSource;
@@ -347,7 +348,86 @@ public class PatientDAO {
 	    return patientDetails;
 		
 	}
-	
+	public int updatePatientDetails(PatientDetails patient,String patient_id,String admin)
+	{
+		Connection con = null;
+		Statement statement = null;
+		int flag=0;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+	    try{
+	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+	    	 Date date = new Date();
+	    	 //System.out.println(dateFormat.format(date));
+	    	String cmd="UPDATE patient_details SET  WHERE patient_id='"+patient_id+"';";
+	    	String Desc="Update patient "+patient.getPatient_id();
+	    	System.out.println(cmd);
+	    	statement.execute(cmd);
+	    	flag=1;
+	    }
+	    	 catch(Exception e){
+	 	    	System.out.println(e.toString());
+	 	    	releaseStatement(statement);
+	 	    	releaseConnection(con);
+	 	    	flag=0;
+	 	    	//return 0;
+	 	    }finally{
+	 	     	releaseStatement(statement);
+	 	    	releaseConnection(con);	    
+	 	    	
+	 	    }
+	 	    if(flag==1)
+	     		return 1;
+	     	else
+	     		return 0;
+	 	    
+		
+	}
+	public int deletePatientDetails(String patient_id,String admin){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		int flag=0;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		try{
+			DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+	    	 Date date = new Date();
+	    	 String cmd_getpatient_name="select name from patient_details where patient_id='"+patient_id+"'";
+	    	 String Desc="Delete patient ";
+	    	 resultSet=statement.executeQuery(cmd_getpatient_name);
+				
+				if(resultSet.next())
+					Desc=Desc+resultSet.getString(1);
+				statement.execute("delete from patient_details where patient_id='"+patient_id+"'");
+				
+				flag=1;
+				
+		    }catch(Exception e){
+		    	System.out.println(e.toString());
+		    	flag=0;
+		    	releaseResultSet(resultSet);
+		    	releaseStatement(statement);
+		    	releaseConnection(con);
+		    }finally{
+		    	
+		    	releaseResultSet(resultSet);
+		    	releaseStatement(statement);
+		    	releaseConnection(con);	    	
+		    }
+		   		if(flag==1)
+		   			return 1;
+		   		else
+		   			return 0;
+		}
 	 
 	public void releaseConnection(Connection con){
 		try{if(con != null)

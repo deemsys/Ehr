@@ -1569,41 +1569,42 @@ public class MainController {
 	    PatientDetailsForm patientDetailsForm = new PatientDetailsForm();
 	    //  radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport(report.getPid()));
 	      patientDetailsForm.setPatientDetails(patientDAO.viewPatientDetails(patient.getPatient_id()));
-	        model.addAttribute("radiologicReportForm", radiologicReportForm);
+	        model.addAttribute("patientDetailsForm", patientDetailsForm);
 			    
 		        return "editradiologicreport";
 		}
 		
-		int status = radioDAO.updateRadiologicReport(report, report.getPid(), principal.getName());
+		//int status = radioDAO.updateRadiologicReport(report, report.getPid(), principal.getName());
+		int status = patientDAO.updatePatientDetails(patient, patient.getPatient_id(), principal.getName());
 		System.out.println(status);
 		
-		RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
-        
-        radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport());
-       
-        model.addAttribute("radiologicReportForm", radiologicReportForm);
+		//RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
+        PatientDetailsForm patientDetailsForm = new PatientDetailsForm();
+        //radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport());
+       patientDetailsForm.setPatientDetails(patientDAO.getPatientDetails());
+        model.addAttribute("patientDetailsForm", patientDetailsForm);
 	       model.addAttribute("success","true");
-	        return "viewradiologicreport";
+	        return "viewpatient";
 		
 	}
 
 	@RequestMapping(value="/deleteradoiologicreport", method=RequestMethod.GET)
-	public String removeRadiologicReport(@RequestParam("pid") String pid,ModelMap model, Principal principal) {
+	public String removePatientDetails(@RequestParam("patient_id") String patient_id,ModelMap model, Principal principal) {
 	
-		int status=radioDAO.deleteRadiologicReport(pid, principal.getName());
 		
+		int status = patientDAO.deletePatientDetails(patient_id,  principal.getName());
 		if(status==1)
 		{
         model.addAttribute("success","true");
-		//ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
-		RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
-		//participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
-		radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport());
-        model.addAttribute("radiologicReportForm", radiologicReportForm);
-      
+      //RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
+        PatientDetailsForm patientDetailsForm = new PatientDetailsForm();
+        //radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport());
+       patientDetailsForm.setPatientDetails(patientDAO.getPatientDetails());
+        model.addAttribute("patientDetailsForm", patientDetailsForm);
 		}
 		
-		return "viewradiologicreport";
+		return "viewpatient";
+		
 	}
 
 	@RequestMapping(value="/hardshiplist", method = RequestMethod.GET)
