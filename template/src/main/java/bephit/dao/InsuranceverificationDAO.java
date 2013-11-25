@@ -81,7 +81,7 @@ public List<Insuranceverification> getInsuranceverification(){
 	
 	List<Insuranceverification> Insuranceverification = new ArrayList<Insuranceverification>();
     try{
-		resultSet = statement.executeQuery("select * from tbl_insuranceverification order by form_no DESC");
+		resultSet = statement.executeQuery("select * from tbl_insuranceverification ");
 		while(resultSet.next()){
 			Insuranceverification.add(new Insuranceverification(resultSet.getString("form_no"),resultSet.getString("verify_name"),
 		    		resultSet.getString("spoke_with"),
@@ -133,7 +133,7 @@ public List<Insuranceverification> getInsuranceverification(String form_no){
 	
 	List<Insuranceverification> Insuranceverification = new ArrayList<Insuranceverification>();
     try{
-		resultSet = statement.executeQuery("select * from tbl_insuranceverification order by form_no DESC");
+		resultSet = statement.executeQuery("select * from tbl_insuranceverification where form_no='"+form_no+"'");
 		while(resultSet.next()){
 			Insuranceverification.add(new Insuranceverification(resultSet.getString("form_no"),resultSet.getString("verify_name"),
 		    		resultSet.getString("spoke_with"),

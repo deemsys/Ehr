@@ -81,7 +81,7 @@ public List<Staffchecklist> getStaffchecklist(){
 	
 	List<Staffchecklist> Staffchecklist = new ArrayList<Staffchecklist>();
     try{
-		resultSet = statement.executeQuery("select * from tbl_staffchecklist order by form_no DESC");
+		resultSet = statement.executeQuery("select * from tbl_staffchecklist");
 		while(resultSet.next()){
 			Staffchecklist.add(new Staffchecklist(resultSet.getString("form_no"),resultSet.getString("patinfo"),
 		    		resultSet.getString("screening"),
@@ -116,7 +116,7 @@ public List<Staffchecklist> getStaffchecklist(){
     return Staffchecklist;
 	
 }
-public List<Staffchecklist> getStaff(){
+public List<Staffchecklist> getStaff(String form_no){
 	Connection con = null;
 	Statement statement = null;
 	ResultSet resultSet = null;
@@ -129,7 +129,7 @@ public List<Staffchecklist> getStaff(){
 	
 	List<Staffchecklist> Staffchecklist = new ArrayList<Staffchecklist>();
     try{
-		resultSet = statement.executeQuery("select * from tbl_staffchecklist order by form_no DESC");
+		resultSet = statement.executeQuery("select * from tbl_staffchecklist where form_no='"+form_no+"'");
 		while(resultSet.next()){
 			Staffchecklist.add(new Staffchecklist(resultSet.getString("form_no"),resultSet.getString("patinfo"),
 		    		resultSet.getString("screening"),

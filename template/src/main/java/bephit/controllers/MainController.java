@@ -758,11 +758,22 @@ public class MainController {
 		
 		return "staffchecklist";
 	}
-	@RequestMapping(value="/viewstaffchecklist", method = RequestMethod.GET)
-	public String viewstaffchecklist(HttpServletRequest request,ModelMap model) {
+	
+	@RequestMapping(value="/staffdetails", method = RequestMethod.GET)
+	public String staffdetails(HttpServletRequest request,ModelMap model) {
 		
 		StaffchecklistForm staffchecklistForm= new StaffchecklistForm();
     	staffchecklistForm.setStaffchecklist(staffDAO.getStaffchecklist());
+		model.addAttribute("StaffchecklistForm",staffchecklistForm);
+		
+		return "staffdetails";
+ 
+	}
+	@RequestMapping(value="/viewstaffchecklist", method = RequestMethod.GET)
+	public String viewstaffchecklist(HttpServletRequest request,@RequestParam("form_no") String form_no,ModelMap model,Staffchecklist staffchecklist){
+		
+		StaffchecklistForm staffchecklistForm= new StaffchecklistForm();
+    	staffchecklistForm.setStaffchecklist(staffDAO.getStaff(form_no));
 		model.addAttribute("StaffchecklistForm",staffchecklistForm);
 		
 		return "viewstaffchecklist";
@@ -1578,11 +1589,22 @@ public class MainController {
 		return "insuranceplan";
 	}
 	
-	@RequestMapping(value="/viewinsuranceverification", method = RequestMethod.GET)
-	public String viewinsuranceverification(HttpServletRequest request,ModelMap model) {
+	@RequestMapping(value="/insuranceverifylist", method = RequestMethod.GET)
+	public String insuranceverifylist(HttpServletRequest request,ModelMap model) {
 		
 		InsuranceverificationForm insuranceverificationForm= new InsuranceverificationForm();
     	insuranceverificationForm.setInsuranceverification(veriDAO.getInsuranceverification());
+		model.addAttribute("InsuranceverificationForm",insuranceverificationForm);
+		
+		return "insuranceverifylist";
+ 
+	}
+	
+	@RequestMapping(value="/viewinsuranceverification", method = RequestMethod.GET)
+	public String viewinsuranceverification(HttpServletRequest request,@RequestParam("form_no") String form_no,ModelMap model,Insuranceverification insuranceverification){
+		
+		InsuranceverificationForm insuranceverificationForm= new InsuranceverificationForm();
+    	insuranceverificationForm.setInsuranceverification(veriDAO.getInsuranceverification(form_no));
 		model.addAttribute("InsuranceverificationForm",insuranceverificationForm);
 		
 		return "viewinsuranceverification";
