@@ -1547,7 +1547,64 @@ public class MainController {
 		
 		return "patientDetailsList";
 	}
+	@RequestMapping(value="/editradiologicreport", method=RequestMethod.GET)
+	public String editPatientDetails(HttpServletRequest request,@RequestParam("patient_id") String patient_id,ModelMap model,PatientDetails patient)
+	{
+		
+		//RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
+       PatientDetailsForm patientDetailsForm = new PatientDetailsForm();
+      //  radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport(pid));
+        patientDetailsForm.setPatientDetails(patientDAO.viewPatientDetails(patient_id));
+        model.addAttribute("patientDetailsForm", patientDetailsForm);
+		
+		return "editpatientdetails";
+	}
+	@RequestMapping(value="/updatepatientdetails", method=RequestMethod.POST)
+	public String updatePatientDetails(HttpServletRequest request,@ModelAttribute("patient") @Valid PatientDetails patient,
+			BindingResult result,ModelMap model,Principal principal)
+	{
+		if (result.hasErrors())
+		{
+		//	RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
+	    PatientDetailsForm patientDetailsForm = new PatientDetailsForm();
+	    //  radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport(report.getPid()));
+	      patientDetailsForm.setPatientDetails(patientDAO.viewPatientDetails(patient.getPatient_id()));
+	        model.addAttribute("radiologicReportForm", radiologicReportForm);
+			    
+		        return "editradiologicreport";
+		}
+		
+		int status = radioDAO.updateRadiologicReport(report, report.getPid(), principal.getName());
+		System.out.println(status);
+		
+		RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
+        
+        radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport());
+       
+        model.addAttribute("radiologicReportForm", radiologicReportForm);
+	       model.addAttribute("success","true");
+	        return "viewradiologicreport";
+		
+	}
+
+	@RequestMapping(value="/deleteradoiologicreport", method=RequestMethod.GET)
+	public String removeRadiologicReport(@RequestParam("pid") String pid,ModelMap model, Principal principal) {
 	
+		int status=radioDAO.deleteRadiologicReport(pid, principal.getName());
+		
+		if(status==1)
+		{
+        model.addAttribute("success","true");
+		//ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
+		RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
+		//participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
+		radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport());
+        model.addAttribute("radiologicReportForm", radiologicReportForm);
+      
+		}
+		
+		return "viewradiologicreport";
+	}
 
 	@RequestMapping(value="/hardshiplist", method = RequestMethod.GET)
 	public String hardshiplist(HttpServletRequest request,ModelMap model) {
