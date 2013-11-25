@@ -309,8 +309,13 @@
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="radio" name="Chiropratic_care" value="0" class="input_txt" checked="true">yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Chiropratic_care" value="1" class="input_txt">No</td>
 				                </tr> 
-				                
-              </table>
+				               </table>
+				               <table align="right">
+				               <tr>
+				  
+                     <td><br><input type="button" id="btnNext" class="submit_btn" value="Next"/><br></td>
+                  </tr>
+				               </table>
               
                 </td>
                 </tr>
@@ -382,7 +387,7 @@
 				                  <td valign="top" align="left" class="input_txt">
 				                  
 				                  	<input type="radio" name="Symptom_Accident" value="0" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Symptom_Accident" value="1" class="input_txt">No</td>
-				                  	
+				                  	<td></td>
 				                </tr>   
 				                <tr class="row1">
 				                 	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Type Of Accident:</td>
@@ -401,6 +406,7 @@
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" id="datepicker2" class="input_txtbx1" name="Date_Of_Accident"/><br><span class="err"><form:errors path="PatientDetails.Date_Of_Accident"></form:errors></span>
 				                  </td>
+				                  <td></td>
 				                </tr>
 				               <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Accident Reported:</td>
@@ -413,7 +419,7 @@
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Medical Treatment for this Condition: &nbsp;&nbsp;&nbsp;&nbsp;When:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="when1" /> <br><span class="err"><form:errors path="PatientDetails.when1"></form:errors></span></td>
-				                  	
+				                  	<td></td>
 				                  	</tr>
 				                  	<tr class="row1">
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Where:</td>
@@ -424,7 +430,7 @@
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Have You Retained an Attorney for this Accident:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="radio" name="Attorney_accident" value="0" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Attorney_accident" value="1" class="input_txt">No</td>
-				                
+				                <td></td>
 				                </tr>
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name Of Attorney:</td>
@@ -471,28 +477,28 @@
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Phone_auto" /><br><span class="err"><form:errors path="PatientDetails.Phone_auto"></form:errors></span></td>
 				                  	<td> </td>
 				                </tr>
-				                <tr class="row1">
+				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Policy#:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Policy" /><br><span class="err"><form:errors path="PatientDetails.Policy"></form:errors></span></td>
 				                  	<td> </td>
 				                 
 				                </tr>
-				                <tr class="row2">
+				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name of Your Health Insurance:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Name_health" /><br><span class="err"><form:errors path="PatientDetails.Name_health"></form:errors></span></td>
 				                  	
 				                  <td></td>
 				                </tr>
-				            <tr class="row1">
+				            <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Phone:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Health_phone" /><br><span class="err"><form:errors path="PatientDetails.Health_phone"></form:errors></span></td>
 				                  	<td></td>
 				                  
 				                </tr>
-				               <tr class="row2">
+				               <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Have You Ever Been Involved in a Previous Auto or Work Accident:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="radio" name="Prev_accident" value="0" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Prev_accident" value="1" class="input_txt">No</td>
@@ -500,14 +506,20 @@
 				                 
 				                  <td></td>
 				                </tr>
-				                <tr class="row1">
+				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>When:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Prev_When" /><br><span class="err"><form:errors path="PatientDetails.Prev_When"></form:errors></span>
+				                  	<td></td>
 				                  	</tr>   
-				
-				  
-                </table>
+				                  	</table>
+				                  	<table align="right">
+				                  	 <tr>
+				  <td><br><input type="button" id="btnPrevious" class="submit_btn" value="Previous" style = "display:none" />&nbsp;</td>
+                  <td>&nbsp;&nbsp;</td>
+                  <td><br><input type="button" id="btnNext" class="submit_btn" value="Next"/><br></td>
+                  </tr>
+				                  	</table>
                
                 </td>
                 </tr>
@@ -646,6 +658,19 @@
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Patient" /><br><span class="err"><form:errors path="PatientDetails.Patient"></form:errors></span>
 				                  	</tr>  
+				                  	<table align="right">
+				  <tr>
+				  <td><br><input type="button" id="btnPrevious" class="submit_btn" value="Previous"  />&nbsp;</td>
+                 
+ 				  <td>&nbsp;&nbsp;</td>
+             		 <td valign="top" align="center"><br><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewpatient'"></td>
+				 <td>&nbsp;&nbsp;</td>
+                  <td><input type="submit" class="submit_btn" value="Save" ></td>
+                  <td>&nbsp;&nbsp;</td>
+                  <td><input type="reset" class="submit_btn" value="Cancel" onclick="window.location.href='patientDetails'"></td>
+				 
+			</tr>
+			</table>
 				                  	 
 				                  	</table>
 				                   
@@ -660,24 +685,26 @@
 				                  	</div>
 				                  	
 				                  	</div>
-				                  	<table align="right">
+				                  	<!-- <table align="right">
 				  <tr>
 				  <td><br><input type="button" id="btnPrevious" class="submit_btn" value="Previous" style = "display:none" />&nbsp;</td>
                   <td><br><input type="button" id="btnNext" class="submit_btn" value="Next"/><br></td>
  				  <td>&nbsp;&nbsp;</td>
              		 <td valign="top" align="center"><br><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewpatient'"></td>
 				 
-                  <td><input type="submit" class="submit_btn" value="Save"></td>
+                  <td><input type="submit" class="submit_btn" value="Save" ></td>
                   <td><input type="reset" class="submit_btn" value="Cancel" onclick="window.location.href='patientDetails'"></td>
 				 
 			</tr>
-			</table>
+			</table> -->
 			</div>
 			
 			</body>
 			</html>
 		
-<script>          
+<script> 
+
+
   
   $(function() {
 	    $( "#slider" ).slider({
