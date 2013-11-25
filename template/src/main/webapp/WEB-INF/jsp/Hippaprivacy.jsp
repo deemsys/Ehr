@@ -169,7 +169,7 @@
 				                <td>&nbsp;&nbsp;</td>
 				    <td valign="top" align="center"><br><input type="reset" class="submit_btn" value="Cancel"></td>
 				    <td>&nbsp;&nbsp;</td>
-				     <td valign="top" align="center"><br><input type="button" class="submit_btn" value="view" onclick="window.location.href='viewhippa'"></td>
+				     <td valign="top" align="center"><br><input type="button" class="submit_btn" value="view" onclick="window.location.href='hippalist'"></td>
 				  </tr>
                         </div>
                         </tr>

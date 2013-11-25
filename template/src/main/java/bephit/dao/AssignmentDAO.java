@@ -76,7 +76,7 @@ public class AssignmentDAO {
 		}
 		List<Assignment> assignment = new ArrayList<Assignment>();
 	    try{
-			resultSet = statement.executeQuery("select * from Assignment_Details order by assignment_no DESC");
+			resultSet = statement.executeQuery("select * from Assignment_Details");
 			while(resultSet.next()){
 				assignment.add(new Assignment(resultSet.getString("assignment_no"),resultSet.getString("day"),
 			    		resultSet.getString("month"),

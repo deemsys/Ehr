@@ -103,15 +103,16 @@
 				                  	</tr>
 				                  	</table>
 				     <table>
-				                  	<tr>
-				  <td valign="top" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-				                <td valign="top" align="center"><br><input type="submit" class="submit_btn" value="Update"></td>
-				                <td>&nbsp;&nbsp;</td>
-				    <td valign="top" align="center"><br><input type="reset" class="submit_btn" value="Cancel"></td>
-				     </tr>
-                        </div>
-                        </tr>
-                        </table>
+              <tr>
+              <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+              <td><input type="submit" class="submit_btn" value="Update"></td>
+              <td>&nbsp;&nbsp;</td>
+              <td><input type="reset" class="submit_btn" value="Cancel"></td>
+              <td>&nbsp;&nbsp;</td>
+              <td><input type="button" class="submit_btn" value="Back" onclick="window.location.href='hippalist'"></td>
+              
+        	  </tr>
+        	  </table>
                         </td>
                         </tr>
                         </table>

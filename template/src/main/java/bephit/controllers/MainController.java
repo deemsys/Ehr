@@ -1137,11 +1137,25 @@ public class MainController {
  
 	}
 	
-	@RequestMapping(value="/viewassignment", method = RequestMethod.GET)
-	public String viewassignment(HttpServletRequest request,ModelMap model) {
+	
+	@RequestMapping(value="/assignmentlist", method = RequestMethod.GET)
+	public String assignmentlist(HttpServletRequest request,ModelMap model) {
 		
 		 AssignmentDetailsForm assignmentdetailsform= new AssignmentDetailsForm();
 			assignmentdetailsform.setAssignmentDetails(assignmentDAO.getAssignmentDetails());
+			model.addAttribute("AssignmentDetailsForm",assignmentdetailsform);
+		
+		
+		return "assignmentlist";
+ 
+	}
+	
+	@RequestMapping(value="/viewassignment", method = RequestMethod.GET)
+	public String viewassignment(HttpServletRequest request,@RequestParam("assignment_no") String assignment_no,ModelMap model)
+	{
+		
+		 AssignmentDetailsForm assignmentdetailsform= new AssignmentDetailsForm();
+			assignmentdetailsform.setAssignmentDetails(assignmentDAO.getAssignment(assignment_no));
 			model.addAttribute("AssignmentDetailsForm",assignmentdetailsform);
 		
 		return "viewassignment";
@@ -1237,12 +1251,22 @@ public class MainController {
 	    
 		return "Hippaprivacy";
 		}
-
-	@RequestMapping(value="/viewhippa", method = RequestMethod.GET)
-	public String viewhippa(HttpServletRequest request,ModelMap model) {
+	@RequestMapping(value="/hippalist", method = RequestMethod.GET)
+	public String hippalist(HttpServletRequest request,ModelMap model) {
 		
 		HippaPrivacyForm hippaprivacyform= new HippaPrivacyForm();
 		hippaprivacyform.setPrivacyDetails(hippaDAO.getPrivacyDetails());
+		model.addAttribute("HippaPrivacyForm",hippaprivacyform);
+		
+		return "hippalist";
+ 
+	}
+	
+	@RequestMapping(value="/viewhippa", method = RequestMethod.GET)
+	public String viewhippa(HttpServletRequest request,@RequestParam("hippa_no") String hippa_no,ModelMap model,HippaPrivacy privacydetails){
+		
+		HippaPrivacyForm hippaprivacyform= new HippaPrivacyForm();
+		hippaprivacyform.setPrivacyDetails(hippaDAO.getHippa(hippa_no));
 		model.addAttribute("HippaPrivacyForm",hippaprivacyform);
 		
 		return "viewhippa";
@@ -1450,7 +1474,7 @@ public class MainController {
 		hardshipagreementForm.setHardshipagreement(hardDAO.getHardshipagreement(agreement_no));
 	
 		model.addAttribute("hardshipagreementform",hardshipagreementForm);
-		/*model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));*/
+		
 		
 		return "viewhardship";
 	}

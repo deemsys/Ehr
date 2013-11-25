@@ -111,7 +111,7 @@ public class HippaDAO {
 		}
 		List<HippaPrivacy> privacy = new ArrayList<HippaPrivacy>();
 	    try{
-	    	String cmd="select * from hippa_details where hippa_no='"+hippa_no+"'";
+	    	String cmd="select * from hippa_privacy where hippa_no='"+hippa_no+"'";
 	    	System.out.println(hippa_no);
 			resultSet = statement.executeQuery(cmd);
 	    	while(resultSet.next())
