@@ -1,7 +1,7 @@
 package bephit.model;
 
 public class Hamiltonchiropractic {
-	
+	private String initialexamid;
 	private String hacheck;
 	private String ha;
 	private String neckcheck;
@@ -118,7 +118,7 @@ public class Hamiltonchiropractic {
 	private String remobilization;
 	private String rehab;
 	private String modificat;
-	private String release;
+	private String care;
 	private String refer;
 	private String decreasepain;
 	private String decreasespam;
@@ -259,7 +259,7 @@ public class Hamiltonchiropractic {
 	public Hamiltonchiropractic(){
 	}
 
-	public Hamiltonchiropractic(String hacheck, String ha, String neckcheck,
+	public Hamiltonchiropractic(String initialexamid,String hacheck, String ha, String neckcheck,
 			String neck, String mbcheck, String mb, String ribscheck,
 			String ribs, String shouldercheck, String shoulder,
 			String elbowcheck, String elbow, String handcheck, String hand,
@@ -290,7 +290,7 @@ public class Hamiltonchiropractic {
 			String nimmo, String ultrasound, String manualtraction,
 			String massageplan, String neuromuscular, String stretching,
 			String strengthening, String remobilization, String rehab,
-			String modificat, String release, String refer,
+			String modificat, String care, String refer,
 			String decreasepain, String decreasespam, String increaserom,
 			String improveadl, String improvesubluxations, String fullactivity,
 			String returntowork, String renewsports, String jacksonsr,
@@ -338,6 +338,7 @@ public class Hamiltonchiropractic {
 			String strunskysl, String homansr, String homansl,
 			String claudication_testr, String claudication_testl) {
 		super();
+		this.initialexamid=initialexamid;
 		this.hacheck = hacheck;
 		this.ha = ha;
 		this.neckcheck = neckcheck;
@@ -454,7 +455,7 @@ public class Hamiltonchiropractic {
 		this.remobilization = remobilization;
 		this.rehab = rehab;
 		this.modificat = modificat;
-		this.release = release;
+		this.care = care;
 		this.refer = refer;
 		this.decreasepain = decreasepain;
 		this.decreasespam = decreasespam;
@@ -591,6 +592,14 @@ public class Hamiltonchiropractic {
 		this.homansl = homansl;
 		this.claudication_testr = claudication_testr;
 		this.claudication_testl = claudication_testl;
+	}
+
+	public String getInitialexamid() {
+		return initialexamid;
+	}
+
+	public void setInitialexamid(String initialexamid) {
+		this.initialexamid = initialexamid;
 	}
 
 	public String getHacheck() {
@@ -1521,12 +1530,12 @@ public class Hamiltonchiropractic {
 		this.modificat = modificat;
 	}
 
-	public String getRelease() {
-		return release;
+	public String getCare() {
+		return care;
 	}
 
-	public void setRelease(String release) {
-		this.release = release;
+	public void setCare(String care) {
+		this.care = care;
 	}
 
 	public String getRefer() {
