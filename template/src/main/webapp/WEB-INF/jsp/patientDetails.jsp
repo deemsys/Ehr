@@ -169,7 +169,7 @@
 				                  </td>
 				                </tr>
 				                <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>SocialSecurityNumber:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Social Security Number:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="SocialSecurityNumber" /><br><span class="err"><form:errors path="PatientDetails.SocialSecurityNumber"></form:errors></span>
 				                  </td>
@@ -177,12 +177,12 @@
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Gender:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="Gender" value="0" class="input_txt" checked="true">Male&nbsp;&nbsp;&nbsp;<input type="radio" name="Gender" value="1" class="input_txt">Female&nbsp;&nbsp;&nbsp;<input type="radio" name="Gender" value="2" class="input_txt">Transgender</td>
+				                  	<input type="radio" name="Gender" value="Male" class="input_txt" checked="true">Male&nbsp;&nbsp;&nbsp;<input type="radio" name="Gender" value="Female" class="input_txt">Female&nbsp;&nbsp;&nbsp;<input type="radio" name="Gender" value="2" class="input_txt">Transgender</td>
 				                </tr>
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>MaritalStatus:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="MaritalStatus" value="0" class="input_txt" checked="true">Single&nbsp;&nbsp;&nbsp;<input type="radio" name="MaritalStatus" value="1" class="input_txt">Married&nbsp;&nbsp;&nbsp;<input type="radio" name="MaritalStatus" value="2" class="input_txt">Divorced</td>
+				                  	<input type="radio" name="MaritalStatus" value="Single" class="input_txt" checked="true">Single&nbsp;&nbsp;&nbsp;<input type="radio" name="MaritalStatus" value="Married" class="input_txt">Married&nbsp;&nbsp;&nbsp;<input type="radio" name="MaritalStatus" value="Divorced" class="input_txt">Divorced</td>
 				                
 				                </tr>
 				                
@@ -193,7 +193,7 @@
 							 
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Are you:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="Areyou" value="0" class="input_txt"  onchange="toggle3('show3')">Student&nbsp;&nbsp;&nbsp;<input type="radio" name="Areyou" value="1" class="input_txt" checked="true" onclick="toggle3('hide3')">Employee</td>
+				                  	<input type="radio" name="Areyou" value="Student" class="input_txt"  onchange="toggle3('show3')">Student&nbsp;&nbsp;&nbsp;<input type="radio" name="Areyou" value="Employee" class="input_txt" checked="true" onclick="toggle3('hide3')">Employee</td>
 				                  
 				                </tr>
 							</table>
@@ -202,7 +202,7 @@
 							<tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Student:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="Student" value="0" class="input_txt" checked="true">FullTime&nbsp;&nbsp;&nbsp;<input type="radio" name="Student" value="1" class="input_txt">PartTime</td>
+				                  	<input type="radio" name="Student" value="FullTime" class="input_txt" checked="true">Full Time&nbsp;&nbsp;&nbsp;<input type="radio" name="Student" value="PartTime" class="input_txt">Part Time</td>
 				                  
 				                </tr>
 							
@@ -307,7 +307,7 @@
 				                 <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Have you ever had chiropractic care? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="Chiropratic_care" value="0" class="input_txt" checked="true">yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Chiropratic_care" value="1" class="input_txt">No</td>
+				                  	<input type="radio" name="Chiropratic_care" value="yes" class="input_txt" checked="true">yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Chiropratic_care" value="No" class="input_txt">No</td>
 				                </tr> 
 				               </table>
 				               <table align="right">
@@ -386,7 +386,7 @@
                         <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Are These Symptoms Due to an Accident?</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  
-				                  	<input type="radio" name="Symptom_Accident" value="0" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Symptom_Accident" value="1" class="input_txt">No</td>
+				                  	<input type="radio" name="Symptom_Accident" value="yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Symptom_Accident" value="No" class="input_txt">No</td>
 				                  	<td></td>
 				                </tr>   
 				                <tr class="row1">
@@ -411,7 +411,7 @@
 				               <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Accident Reported:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="Accident_Reported" value="0" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Accident_Reported" value="1" class="input_txt">No</td>
+				                  	<input type="radio" name="Accident_Reported" value="yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Accident_Reported" value="No" class="input_txt">No</td>
 				                  
 				                  
 				                </tr>
@@ -429,7 +429,7 @@
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Have You Retained an Attorney for this Accident:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="Attorney_accident" value="0" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Attorney_accident" value="1" class="input_txt">No</td>
+				                  	<input type="radio" name="Attorney_accident" value="yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Attorney_accident" value="No" class="input_txt">No</td>
 				                <td></td>
 				                </tr>
 				                <tr class="row1">
@@ -501,7 +501,7 @@
 				               <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Have You Ever Been Involved in a Previous Auto or Work Accident:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="Prev_accident" value="0" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Prev_accident" value="1" class="input_txt">No</td>
+				                  	<input type="radio" name="Prev_accident" value="yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Prev_accident" value="No" class="input_txt">No</td>
 				                  	
 				                 
 				                  <td></td>
@@ -636,8 +636,8 @@
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Do You Work Around Hazardous Substances:  </td>
 				  <td valign="top" align="left" class="input_txt">
 				  <div id="send_to">
-				  <input type="radio" name="Hazardous" value="0" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<div id="send_to_one"><label>If yes,Please List: </label><input type="text" id="list" name="Hazardousyes" /><br/><br/>
-    </div><input type="radio" name="Hazardous" value="1" class="input_txt">No
+				  <input type="radio" name="Hazardous" value="yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<div id="send_to_one"><label>If yes,Please List: </label><input type="text" id="list" name="Hazardousyes" /><br/><br/>
+    </div><input type="radio" name="Hazardous" value="No" class="input_txt">No
 			      
 			      </div>
 			      </td>
@@ -645,7 +645,7 @@
 				  <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Females Only:<br>Are you pregnant:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="Female" value="0" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Female" value="1" class="input_txt">No</td>
+				                  	<input type="radio" name="Female" value="yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Female" value="No" class="input_txt">No</td>
 				                
 				                  	</tr>
 				                  	<tr class="row2">

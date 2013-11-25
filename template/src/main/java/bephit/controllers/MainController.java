@@ -552,8 +552,18 @@ public class MainController {
 		
 		return "workAccidentList";
 	}
+	@RequestMapping(value="/editworkaccident", method=RequestMethod.GET)
+	public String editWorkAccident(HttpServletRequest request,@RequestParam("patient_no") String patient_no,ModelMap model,Workaccident workAcc)
+	{
+		
+       WorkaccidentForm workaccidentForm = new WorkaccidentForm();
+       
+       	workaccidentForm.setWorkaccident(workDAO.getWorkaccident(patient_no));
+		model.addAttribute("workaccidentForm",workaccidentForm);
+		
+		return "editworkaccident";
+	}
 	
-
 	@RequestMapping(value="/updateworkaccident", method=RequestMethod.POST)
 	public String updateWorkAccident(HttpServletRequest request,@ModelAttribute("workAcc") @Valid Workaccident workAcc,
 			BindingResult result,ModelMap model,Principal principal)
@@ -595,6 +605,7 @@ public class MainController {
 		
 		return "viewworkaccident";
 	}
+	
 	@RequestMapping(value="/insuranceinformation", method = RequestMethod.GET)
 	public String insuranceinformation(HttpSession session,ModelMap model) {
 		
@@ -1403,7 +1414,7 @@ public class MainController {
 	}
 	@RequestMapping(value="/patientDetails", method = RequestMethod.POST)
 	public String insert_patientdetails(@ModelAttribute("PatientDetails")  @Valid PatientDetails patientDetails,BindingResult result,ModelMap model) {
-		if(result.hasErrors())
+		/*if(result.hasErrors())
 			{
 			
 				PatientDetailsForm patientDetailsForm = new PatientDetailsForm();
@@ -1411,7 +1422,7 @@ public class MainController {
 				model.addAttribute("PatientDetailsForm",patientDetailsForm);
 				model.addAttribute("Success","true");
 				return "patientDetails";
-			}
+			}*/
 			
 			model.put("PatientDetails", patientDetails);
 			model.addAttribute("PatientDetailsForm",patientDetails);
@@ -1425,32 +1436,7 @@ public class MainController {
 			return "patientDetails";
 	 
 		}
-	
-	/*@RequestMapping(value="/patientDetails", method = RequestMethod.POST)
-	public String insertpatientDetails(@ModelAttribute("PatientDetails") @Valid PatientDetails patientdetails,BindingResult result,ModelMap model,Principal principal) {
-		if (result.hasErrors())
-		{
-			PatientDetailsForm patientdetailsform= new PatientDetailsForm();
-			patientdetailsform.setPatientDetails(patientDAO.getPatientDetails());
-			model.addAttribute("PatientDetailsForm",patientdetailsform);
-			model.addAttribute("success","true");
-			return "patientDetails";
 
-		}
-		
-		model.addAttribute("PatientDetailsForm",patientdetails);
-		int a=patientDAO.setPatientDetails(patientdetails);
-		
-         PatientDetailsForm patientdetailsform= new PatientDetailsForm();
-		patientdetailsform.setPatientDetails(patientDAO.getPatientDetails());
-		model.addAttribute("PatientDetailsForm",patientdetailsform);
-		
-		 model.addAttribute("noofrows",patientDAO.getPatientDetails().size());
-		System.out.println("patientdetails");
-	    
-		return "patientDetails";
- 
-	}*/
 
 	@RequestMapping(value="/viewpatient", method=RequestMethod.GET)
 	public String viewpatient(HttpServletRequest request,ModelMap model, Principal principal) {
@@ -1462,7 +1448,19 @@ public class MainController {
         System.out.println("Patient");
 		return "viewpatient";
 	}
-	
+	@RequestMapping(value="/patientDetailsList", method=RequestMethod.GET)
+	public String patientDetailsList(HttpServletRequest request,@RequestParam("patient_id") String patient_id,ModelMap model,PatientDetails patient)
+	{
+		//ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
+		PatientDetailsForm patientDetailsForm = new PatientDetailsForm();
+        //participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants(participants_id));
+		patientDetailsForm.setPatientDetails(patientDAO.viewPatientDetails(patient_id));
+		//model.addAttribute("participantsDetailsForm", participantsDetailsForm);
+		model.addAttribute("patientDetailsForm", patientDetailsForm);
+		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
+		
+		return "patientDetailsList";
+	}
 	
 
 	@RequestMapping(value="/hardshiplist", method = RequestMethod.GET)
