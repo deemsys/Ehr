@@ -1,6 +1,7 @@
 package bephit.model;
 
 public class Autoaccident {
+	private String patient_number;
 	private String claimnumber;
 	private String adjustersname;
 	private String estimate;
@@ -76,7 +77,7 @@ public class Autoaccident {
 public Autoaccident(){
 }
 
-public Autoaccident(String claimnumber,
+public Autoaccident(String patient_number,String claimnumber,
 		String adjustersname,
 		String estimate,
 		String seating,
@@ -144,6 +145,7 @@ public Autoaccident(String claimnumber,
         String hospitalget,
         String xray,
         String wrong){
+	this.patient_number=patient_number;
 	this.claimnumber=claimnumber;
 	this.adjustersname=adjustersname;
 	this.estimate=estimate;
@@ -220,6 +222,14 @@ public Autoaccident(String claimnumber,
 
 
 
+
+public String getPatient_number() {
+	return patient_number;
+}
+
+public void setPatient_number(String patient_number) {
+	this.patient_number = patient_number;
+}
 
 public String getClaimnumber() {
 	return claimnumber;

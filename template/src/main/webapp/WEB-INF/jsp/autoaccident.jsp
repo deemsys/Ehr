@@ -167,15 +167,15 @@ $(function() {
 				  </tr>
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Was you car stopped at the time of accident</td>
-				  <td valign="top" align="left" class="input_txt"><input type="radio" name="carstopped" value="0" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="carstopped" value="1" class="input_txt">No</td>
+				  <td valign="top" align="left" class="input_txt"><input type="radio" name="carstopped" value="yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="carstopped" value="no" class="input_txt">No</td>
 				  </tr>
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>If you were the driver,was your foot on the brake</td>
-				  <td valign="top" align="left" class="input_txt"><input type="radio" name="driverposition" value="0" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="driverposition" value="1" class="input_txt">No</td>
+				  <td valign="top" align="left" class="input_txt"><input type="radio" name="driverposition" value="yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="driverposition" value="no" class="input_txt">No</td>
 				  </tr>
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Was your vehicle moving at time of impact</td>
-				  <td valign="top" align="left" class="input_txt"><input type="radio" name="vehicle_moving_time" value="0" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="vehicle_moving_time" value="1" class="input_txt">No</td>
+				  <td valign="top" align="left" class="input_txt"><input type="radio" name="vehicle_moving_time" value="yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="vehicle_moving_time" value="no" class="input_txt">No</td>
 				  </tr>
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Was car</td>
@@ -357,7 +357,7 @@ $(function() {
 				  </tr>
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Hands on wheel</td>
-				  <td valign="top" align="left" class="input_txt"><input type="radio" name="hands_on_wheel" value="0" class="input_txt" checked="true">One&nbsp;&nbsp;&nbsp;<input type="radio" name="hands_on_wheel" value="1" class="input_txt">Two</td>
+				  <td valign="top" align="left" class="input_txt"><input type="radio" name="hands_on_wheel" value="one" class="input_txt" checked="true">One&nbsp;&nbsp;&nbsp;<input type="radio" name="hands_on_wheel" value="two" class="input_txt">Two</td>
 				  </tr>
 				  <tr class="row2">
                 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Aware of crash</td>
@@ -388,7 +388,7 @@ $(function() {
 				  </tr>  -->
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Did this cause further injury</td>
-				  <td valign="top" align="left" class="input_txt"><input type="radio" name="further_injury" value="0" class="input_txt" checked="true" onclick="toggle2('show2')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="further_injury" value="1" class="input_txt" onclick="toggle2('hide2')">No&nbsp;&nbsp;&nbsp;
+				  <td valign="top" align="left" class="input_txt"><input type="radio" name="further_injury" value="yes" class="input_txt" checked="true" onclick="toggle2('show2')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="further_injury" value="no" class="input_txt" onclick="toggle2('hide2')">No&nbsp;&nbsp;&nbsp;
 				  <textarea rows='3' cols='35' id="injury"  placeholder="Please explain"></textarea>
 				  </td>
 				  </tr>
@@ -478,7 +478,7 @@ $(function() {
 				  </tr> 
 				   <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Did patient's body strike interior of car</td>
-				  <td valign="top" align="left" class="input_txt"><input type="radio" name="body_strike" value="0" class="input_txt" checked="true" onclick="toggle3('show3');">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="body_strike" value="1" class="input_txt" onchange="toggle3('hide3');">No&nbsp;&nbsp;&nbsp;
+				  <td valign="top" align="left" class="input_txt"><input type="radio" name="body_strike" value="yes" class="input_txt" checked="true" onclick="toggle3('show3');">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="body_strike" value="no" class="input_txt" onchange="toggle3('hide3');">No&nbsp;&nbsp;&nbsp;
 				  </td>
 				  </tr>
 				  </table>
@@ -544,19 +544,19 @@ $(function() {
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Were you wearing glasses at the time of accident&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="radio" name="wearing_glasses" value="0" class="input_txt" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="wearing_glasses" value="1" class="input_txt" >No&nbsp;&nbsp;&nbsp;
+				  <input type="radio" name="wearing_glasses" value="yes" class="input_txt" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="wearing_glasses" value="no" class="input_txt" >No&nbsp;&nbsp;&nbsp;
 			      </td>
 				  </tr>
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Were the glasses still in place after impact</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="radio" name="glasses_impact" value="0" class="input_txt" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="glasses_impact" value="1" class="input_txt" >No&nbsp;&nbsp;&nbsp;
+				  <input type="radio" name="glasses_impact" value="yes" class="input_txt" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="glasses_impact" value="no" class="input_txt" >No&nbsp;&nbsp;&nbsp;
 			      </td>
 				  </tr>
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Unconscious</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="radio" name="unconscious" value="0" class="input_txt" checked="true" onclick="toggle4('show4')" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="unconscious" value="1" class="input_txt" onclick="toggle4('hide4')" >No&nbsp;&nbsp;&nbsp;
+				  <input type="radio" name="unconscious" value="yes" class="input_txt" checked="true" onclick="toggle4('show4')" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="unconscious" value="no" class="input_txt" onclick="toggle4('hide4')" >No&nbsp;&nbsp;&nbsp;
 			      <input type="text" class="input_txtbx1" id="uncon" name="uncon" > (minutes)</input>
 			      </td>
 				  </tr>
@@ -609,7 +609,7 @@ $(function() {
 				 <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Was anyone cited</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="radio" name="was_anyone_cited" value="0" class="input_txt" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="was_anyone_cited" value="1" class="input_txt" >No&nbsp;&nbsp;&nbsp;
+				  <input type="radio" name="was_anyone_cited" value="yes" class="input_txt" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="was_anyone_cited" value="no" class="input_txt" >No&nbsp;&nbsp;&nbsp;
 			      </td>
 				  </tr> 
 				  <tr class="row2">
@@ -624,13 +624,13 @@ $(function() {
 				  <tr class="row1">
                 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>After accident,I had the following</td>
 				 <td valign="top" align="left" class="input_txt">
-				 <input type="checkbox" name="check1" value="headache">Headache&nbsp;&nbsp;&nbsp;&nbsp; 
-				 <input type="checkbox" name="check1" value="dizziness">Dizziness&nbsp;&nbsp;&nbsp;&nbsp;
-				 <input type="checkbox" name="check1" value="nausea">Nausea&nbsp;&nbsp;&nbsp;&nbsp;
-				 <input type="checkbox" name="check1" value="confusion">Confusion&nbsp;&nbsp;&nbsp;&nbsp;
-				 <input type="checkbox" name="check1" value="disorientation">Disorientation&nbsp;&nbsp;&nbsp;&nbsp;
-				 <input type="checkbox" name="check1" value="neckpain">Neck pain&nbsp;&nbsp;&nbsp;&nbsp;
-				 <input type="checkbox" name="check1" value="otherpain">Other&nbsp;&nbsp;&nbsp;&nbsp;
+				 <input type="checkbox" name="headache" value="headache">Headache&nbsp;&nbsp;&nbsp;&nbsp; 
+				 <input type="checkbox" name="dizziness" value="dizziness">Dizziness&nbsp;&nbsp;&nbsp;&nbsp;
+				 <input type="checkbox" name="nausea" value="nausea">Nausea&nbsp;&nbsp;&nbsp;&nbsp;
+				 <input type="checkbox" name="confusion" value="confusion">Confusion&nbsp;&nbsp;&nbsp;&nbsp;
+				 <input type="checkbox" name="disorientation" value="disorientation">Disorientation&nbsp;&nbsp;&nbsp;&nbsp;
+				 <input type="checkbox" name="neckpain" value="neckpain">Neck pain&nbsp;&nbsp;&nbsp;&nbsp;
+				 <input type="checkbox" name="otherpain" value="otherpain">Other&nbsp;&nbsp;&nbsp;&nbsp;
 				 <input type="text" class="input_txtbx1" id="inp_id" name="otherpain" placeholder="If other" />
 				 </td>
 				 </tr>
@@ -730,7 +730,7 @@ $(function() {
  
                   <td><input type="submit" class="submit_btn" value="Save"></td>
                   <td><input type="reset" class="submit_btn" value="Cancel" onclick="window.location.href='autoaccident'"></td>
-				 
+				 <td><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewautoaccident'"></td>
 				</table>  
 				  </div>
 				  </body>

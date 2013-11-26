@@ -445,6 +445,94 @@ public class MainController {
 		return "autoaccident";
  
 	}
+	
+	@RequestMapping(value="/viewautoaccident", method=RequestMethod.GET)
+	public String viewautoaccident(HttpServletRequest request,ModelMap model, Principal principal) {
+		 model.addAttribute("success","false");
+		//ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
+		  AutoaccidentForm autoaccidentForm = new AutoaccidentForm();
+		 //participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
+		  autoaccidentForm.setAutoaccident(autoDAO.getAutoaccident());
+		  //model.addAttribute("participantsDetailsForm", participantsDetailsForm);
+		  	model.addAttribute("autoaccidentForm", autoaccidentForm);
+        
+		return "viewautoaccident";
+	}
+	@RequestMapping(value="/autoaccidentlist", method=RequestMethod.GET)
+	public String autoaccidentlist(HttpServletRequest request,@RequestParam("patient_number") String patient_number,ModelMap model,Autoaccident autoaccident)
+	{
+		//ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
+		AutoaccidentForm autoaccidentForm = new AutoaccidentForm();
+        //participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants(participants_id));
+		autoaccidentForm.setAutoaccident(autoDAO.getAuto((patient_number)));
+		//model.addAttribute("participantsDetailsForm", participantsDetailsForm);
+		model.addAttribute("autoaccidentForm", autoaccidentForm);
+		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
+		
+		return "autoaccidentlist";
+	}
+	@RequestMapping(value="/editautoaccident", method=RequestMethod.GET)
+	public String editautoaccident(HttpServletRequest request,@RequestParam("patient_number") String patient_number,ModelMap model,Autoaccident autoaccident)
+	{
+		
+		AutoaccidentForm autoaccidentForm = new AutoaccidentForm();
+       
+        autoaccidentForm.setAutoaccident(autoDAO.getAuto(patient_number));
+	
+		model.addAttribute("autoaccidentForm", autoaccidentForm);
+		
+		return "editautoaccident";
+	}
+	
+	
+	@RequestMapping(value="/updateautoaccident", method=RequestMethod.POST)
+	public String updateautoaccident(HttpServletRequest request,@ModelAttribute("Autoaccident") @Valid Autoaccident autoaccident,
+			BindingResult result,ModelMap model,Principal principal)
+	{
+		/*if (result.hasErrors())
+		{
+			PhysicalexamForm physicalexamForm = new PhysicalexamForm();
+	     
+	      physicalexamForm.setPhysicalexam(physicalDAO.getPhysical(physicalexam.getPhysical_id()));
+	      
+	        model.addAttribute("physicalexamForm", physicalexamForm);
+			    
+		        return "editphysicalexam";
+		}
+		*/
+		/*System.out.println("physical id"+physicalexam.getPhysical_id());*/
+		int status = autoDAO.updateautoaccident(autoaccident, autoaccident.getPatient_number(), principal.getName());
+		System.out.println(status);
+		
+		AutoaccidentForm autoaccidentForm = new AutoaccidentForm();
+        
+       autoaccidentForm.setAutoaccident(autoDAO.getAutoaccident());
+       
+        model.addAttribute("autoaccidentForm", autoaccidentForm);
+	       model.addAttribute("success","true");
+	        return "viewautoaccident";
+		
+	}
+	
+
+	@RequestMapping(value="/deleteautoaccident", method=RequestMethod.GET)
+	public String removeautoaccident(@RequestParam("patient_number") String patient_number,ModelMap model, Principal principal) {
+	
+		int status=autoDAO.deleteautoaccident(patient_number, principal.getName());
+		
+		if(status==1)
+		{
+        model.addAttribute("success","true");
+		//ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
+		AutoaccidentForm autoaccidentForm = new AutoaccidentForm();
+		//participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
+		autoaccidentForm.setAutoaccident(autoDAO.getAutoaccident());
+        model.addAttribute("autoaccidentForm", autoaccidentForm);
+      
+		}
+		
+		return "viewautoaccident";
+	}
 	@RequestMapping(value="/radiologicreport", method=RequestMethod.GET)
 	public String radiologicreport(HttpSession session,ModelMap model) {
 		session.removeAttribute("radio");
