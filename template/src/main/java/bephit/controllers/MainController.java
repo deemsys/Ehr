@@ -78,7 +78,7 @@ import bephit.model.*;
  
  
 @Controller
-@SessionAttributes({"physical","radio","waiver","info","consent","minor","hard","screen","medical","assignment","hippa","staff","veri"})
+@SessionAttributes({"physical","radio","waiver","info","consent","minor","hard","screen","medical","assignment","hippa","staff","veri","patient"})
 public class MainController {
 	
 	RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
@@ -866,8 +866,8 @@ public class MainController {
 			model.addAttribute("Success","true");
 			return "insuranceplan";
 			
-		}
-	*/	
+		}*/
+	
 		model.put("Insuranceplan", insuranceplan);
 		model.addAttribute("InsuranceplanForm",insuranceplan);
     	int e =planDAO.setInsuranceplan(insuranceplan);
@@ -1579,8 +1579,10 @@ public class MainController {
 	
 	
 	@RequestMapping(value="/patientDetails",method=RequestMethod.GET)
-	public String patientDetails(ModelMap model)
+	public String patientDetails(HttpSession session,ModelMap model)
+	
 	{
+		session.removeAttribute("patient");
 		PatientDetailsForm patientdetailsform= new PatientDetailsForm();
 		patientdetailsform.setPatientDetails(patientDAO.getPatientDetails());
 		model.addAttribute("PatientDetailsForm",patientdetailsform);
@@ -1588,8 +1590,9 @@ public class MainController {
 		return "patientDetails";
 	}
 	@RequestMapping(value="/patientDetails", method = RequestMethod.POST)
-	public String insert_patientdetails(@ModelAttribute("PatientDetails")  @Valid PatientDetails patientDetails,BindingResult result,ModelMap model) {
-		/*if(result.hasErrors())
+	public String insert_patientdetails(HttpSession session,@ModelAttribute("PatientDetails")  @Valid PatientDetails patientDetails,BindingResult result,ModelMap model) {
+		session.setAttribute("patient",patientDetails);
+		if(result.hasErrors())
 			{
 			
 				PatientDetailsForm patientDetailsForm = new PatientDetailsForm();
@@ -1597,15 +1600,13 @@ public class MainController {
 				model.addAttribute("PatientDetailsForm",patientDetailsForm);
 				model.addAttribute("Success","true");
 				return "patientDetails";
-			}*/
+			}
 			
-			model.put("PatientDetails", patientDetails);
-			model.addAttribute("PatientDetailsForm",patientDetails);
-	    	
-	    	
-			int a = patientDAO.setPatientDetails(patientDetails);
+			
+			
+			
+	    	int a = patientDAO.setPatientDetails(patientDetails);
 			PatientDetailsForm patientDetailsForm = new PatientDetailsForm();
-			//radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport());
 			patientDetailsForm.setPatientDetails(patientDAO.getPatientDetails());
 			model.addAttribute("PatientDetailsForm",patientDetailsForm);
 			return "patientDetails";
