@@ -50,7 +50,7 @@
 												<a href="#" title="" ><img src="resources/images/icons/icon_edit.png" alt="Edit" /></a><a href="<c:out value="editradiologicreport?pid=${radiologicReport.pid}"/>" style="padding-right:10px;">Edit</a>
 											<%-- 	 </c:if>
  --%>												<%--<c:if test="${currentuser.adminuser[0].deleteparticipant==1}"> --%>
-											<a href="#" title=""><img src="resources/images/icons/icon_delete.png" alt="Delete" /></a><a href="<c:out value="deleteradoiologicreport?pid=${radiologicReport.pid}"/>" onclick="return confirmation()">Remove</a>
+											<a href="#" title=""><img src="resources/images/icons/icon_delete.png" alt="Delete" /></a><a href="<c:out value="deleteradiologicreport?pid=${radiologicReport.pid}"/>" onclick="return confirmation()">Remove</a>
 											<%-- </c:if> --%>
 											</td>	
 										

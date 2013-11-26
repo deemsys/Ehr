@@ -45,8 +45,8 @@
 											<td valign="top" align="left" width="10%">${patientDetails.city}</td>
 											<td valign="top" align="left" width="10%">${patientDetails.state}</td>
 											 <td>
-												<a href="#" title="" ><img src="resources/images/icons/icon_edit.png" alt="Edit" /></a><a href="<c:out value="editparticipant?patient_id=${patientDetails.patient_id}"/>" style="padding-right:10px;">Edit</a>
-												<a href="#" title=""><img src="resources/images/icons/icon_delete.png" alt="Delete" /></a><a id="delete_confirm" href="<c:out value="deleteparticipants?patient_id=${patientDetails.patient_id}"/>">Remove</a>
+												<a href="#" title="" ><img src="resources/images/icons/icon_edit.png" alt="Edit" /></a><a href="<c:out value="editpatientdetails?patient_id=${patientDetails.patient_id}"/>" style="padding-right:10px;">Edit</a>
+												<a href="#" title=""><img src="resources/images/icons/icon_delete.png" alt="Delete" /></a><a id="delete_confirm" href="<c:out value="deletepatientdetails?patient_id=${patientDetails.patient_id}"/>">Remove</a>
 											</td> 
 								</tr>
 							    	</c:forEach>
