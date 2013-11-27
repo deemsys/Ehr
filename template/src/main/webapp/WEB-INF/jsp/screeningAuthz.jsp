@@ -58,12 +58,12 @@
                         <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date: </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="datepicker" name="date" /><br><span class="err"><form:errors path="screeningAuthz.date"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="datepicker" name="date" /><span class="err"><form:errors path="screeningAuthz.date"></form:errors></span>
 				                  	</tr>
 				                  	<tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="name" /><br><span class="err"><form:errors path="screeningAuthz.name"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="name" /><span class="err"><form:errors path="screeningAuthz.name"></form:errors></span>
 				                  	</tr>
 				                  	</table>
 				                  	</c:when>

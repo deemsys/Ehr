@@ -25,37 +25,37 @@ public class Insuranceverification{
 	private String amount_deduct_met;
 	@NotEmpty
 	private String max_visit;
-	@NotEmpty
+	
 	private String is_chiropractic;
 	@NotEmpty
 	
 	private String at_what;
 	
-	@NotEmpty
+	
 	private String xray_cover;
 	@NotEmpty
 	
 	private String atwhat;
 	@NotEmpty
 	private String subject_deduct;
-	@NotEmpty
+	
 	private String benefits_honored;
-	@NotEmpty
+	
 	private String network_benefits;
 	@NotEmpty
 	private String deductible;
 	@NotEmpty
 	
 	private String covered;
-	@NotEmpty
+	
 	private String cm;
-	@NotEmpty
+	
 	private String pt;
-	@NotEmpty
+	
 	private String ov;
-	@NotEmpty
+	
 	private String xray_deduct;
-	@NotEmpty
+	
 	private String doctors_assign;
 	@NotEmpty
 	private String mail_claims;

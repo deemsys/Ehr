@@ -22,7 +22,7 @@ public class Insuranceplan {
 	@NotEmpty
 	private String enrollee;
 	
-	@NotEmpty
+	
 	private String no_objection;
 	
 	@NotEmpty

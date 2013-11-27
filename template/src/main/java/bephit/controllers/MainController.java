@@ -836,8 +836,7 @@ public class MainController {
 		}
 		
 		
-		model.put("Insuranceverification", insuranceverification);
-		model.addAttribute("InsuranceverificationForm",insuranceverification);
+		
     	int d =veriDAO.setInsuranceverification(insuranceverification);
     	InsuranceverificationForm insuranceverificationForm= new InsuranceverificationForm();
     	insuranceverificationForm.setInsuranceverification(veriDAO.getInsuranceverification());
@@ -858,7 +857,7 @@ public class MainController {
 	@RequestMapping(value="/insuranceplan", method = RequestMethod.POST)
 	public String insert_insuranceplan(HttpSession session,@ModelAttribute("Insuranceplan") @Valid Insuranceplan insuranceplan,BindingResult result,ModelMap model) {
 		session.setAttribute("waiver",insuranceplan);
-		/*if(result.hasErrors())
+		if(result.hasErrors())
 		{
 			InsuranceplanForm insuranceplanForm= new InsuranceplanForm();
 	    	insuranceplanForm.setInsuranceplan(planDAO.getInsuranceplan());
@@ -866,10 +865,9 @@ public class MainController {
 			model.addAttribute("Success","true");
 			return "insuranceplan";
 			
-		}*/
+		}
 	
-		model.put("Insuranceplan", insuranceplan);
-		model.addAttribute("InsuranceplanForm",insuranceplan);
+		
     	int e =planDAO.setInsuranceplan(insuranceplan);
     	InsuranceplanForm insuranceplanForm= new InsuranceplanForm();
     	insuranceplanForm.setInsuranceplan(planDAO.getInsuranceplan());
@@ -897,10 +895,10 @@ public class MainController {
 	    	hardshipagreementForm.setHardshipagreement(hardDAO.getHardshipagreement());
 			model.addAttribute("HardshipagreementForm",hardshipagreementForm);
 			model.addAttribute("Success","true");
-			return "hardshiplist";
+			return "hardshipagreement";
 		}
-		/*model.put("Hardshipagreement", hardshipagreement);*/
-		model.addAttribute("HardshipagreementForm",Hardshipagreement);
+
+
     	int f =hardDAO.setHardshipagreement(Hardshipagreement);
     	HardshipagreementForm hardshipagreementForm= new HardshipagreementForm();
     	hardshipagreementForm.setHardshipagreement(hardDAO.getHardshipagreement());
