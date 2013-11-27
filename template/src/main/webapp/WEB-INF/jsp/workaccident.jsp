@@ -119,7 +119,7 @@ $(function() {
 				  </tr>
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Do you carry anything or pick anything up</td>
-				  <td valign="top" align="left" class="input_txt"><input type="radio" name="pick" value="0" class="input_txt" checked="true" onclick="any('show')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="pick" value="1" class="input_txt" onclick="any('hide')">No&nbsp;&nbsp;&nbsp;
+				  <td valign="top" align="left" class="input_txt"><input type="radio" name="pick" value="yes" class="input_txt" checked="true" onclick="any('show')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="pick" value="No" class="input_txt" onclick="any('hide')">No&nbsp;&nbsp;&nbsp;
 				   <input type="text" class="input_txtbx1" id="carry" name="carry" placeholder="If yes, What"/>
 				  </td>
 				  </tr>
@@ -149,7 +149,7 @@ $(function() {
 				  </tr>
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Has there been a time loss or absenteeism caused from job injury</td>
-				  <td valign="top" align="left" class="input_txt"><input type="radio" name="time_loss" value="0" class="input_txt" checked="true" onclick="time('show1')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="time_loss" value="1" class="input_txt" onclick="time('hide1')">No&nbsp;&nbsp;&nbsp;
+				  <td valign="top" align="left" class="input_txt"><input type="radio" name="time_loss" value="yes" class="input_txt" checked="true" onclick="time('show1')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="time_loss" value="No" class="input_txt" onclick="time('hide1')">No&nbsp;&nbsp;&nbsp;
 				  <textarea rows='3' cols='35' id="absenteeism" name="absenteeism" placeholder="If yes, explain(include dates)"></textarea>
 				  </td>
 				  </tr>
@@ -167,7 +167,7 @@ $(function() {
 				  </tr>
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Do you pick up or lift?</td>
-				  <td valign="top" align="left" class="input_txt"><input type="radio" name="pick_lift" value="0" class="input_txt" checked="true" onclick="toggle3('show3')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="pick_lift" value="1" class="input_txt" onclick="toggle3('hide3')">No&nbsp;&nbsp;&nbsp;
+				  <td valign="top" align="left" class="input_txt"><input type="radio" name="pick_lift" value="yes" class="input_txt" checked="true" onclick="toggle3('show3')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="pick_lift" value="No" class="input_txt" onclick="toggle3('hide3')">No&nbsp;&nbsp;&nbsp;
 				  </td>
 				  </tr>
 				  </table>
@@ -206,7 +206,7 @@ $(function() {
 					</tr>
 					<tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Do you lift in or out of a machine?</td>
-				  <td valign="top" align="left" class="input_txt"><input type="radio" name="liftin_orout" value="0" class="input_txt" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="liftin_orout" value="1" class="input_txt">No&nbsp;&nbsp;&nbsp;
+				  <td valign="top" align="left" class="input_txt"><input type="radio" name="liftin_orout" value="yes" class="input_txt" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="liftin_orout" value="No" class="input_txt">No&nbsp;&nbsp;&nbsp;
 				  </td>
 				  </tr>
 				  <tr class="row1">
@@ -221,7 +221,7 @@ $(function() {
 					</tr>
 					<tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>In your job, do you push or pull</td>
-				  <td valign="top" align="left" class="input_txt"><input type="radio" name="push_pull" value="0" class="input_txt" checked="true" onclick="pull('show4')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="push_pull" value="1" class="input_txt" onclick="pull('hide4')">No&nbsp;&nbsp;&nbsp;
+				  <td valign="top" align="left" class="input_txt"><input type="radio" name="push_pull" value="yes" class="input_txt" checked="true" onclick="pull('show4')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="push_pull" value="No" class="input_txt" onclick="pull('hide4')">No&nbsp;&nbsp;&nbsp;
 				   <input type="text" class="input_txtbx1" id="jobpp" name="jobpp" placeholder="If yes, give specifics"/>
 				  </td>
 				  </tr>
@@ -276,12 +276,12 @@ $(function() {
 				  </tr>
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Do you use foot or hand levers</td>
-				  <td valign="top" align="left" class="input_txt"><input type="radio" name="levers" value="0" class="input_txt" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="levers" value="1" class="input_txt">No&nbsp;&nbsp;&nbsp;
+				  <td valign="top" align="left" class="input_txt"><input type="radio" name="levers" value="yes" class="input_txt" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="levers" value="No" class="input_txt">No&nbsp;&nbsp;&nbsp;
 				  </td>
 				  </tr>
 				   <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Do you work overhead</td>
-				  <td valign="top" align="left" class="input_txt"><input type="radio" name="overhead" value="0" class="input_txt" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="overhead" value="1" class="input_txt">No&nbsp;&nbsp;&nbsp;
+				  <td valign="top" align="left" class="input_txt"><input type="radio" name="overhead" value="yes" class="input_txt" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="overhead" value="No" class="input_txt">No&nbsp;&nbsp;&nbsp;
 				  </td>
 				  </tr>
 				  <tr class="row2">
@@ -292,17 +292,17 @@ $(function() {
 				  </tr>
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Do you like your job</td>
-				  <td valign="top" align="left" class="input_txt"><input type="radio" name="like_job" value="0" class="input_txt" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="like_job" value="1" class="input_txt">No&nbsp;&nbsp;&nbsp;
+				  <td valign="top" align="left" class="input_txt"><input type="radio" name="like_job" value="yes" class="input_txt" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="like_job" value="No" class="input_txt">No&nbsp;&nbsp;&nbsp;
 				  </td>
 				  </tr>
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Was a pre-employment exam performed or required</td>
-				  <td valign="top" align="left" class="input_txt"><input type="radio" name="pre_employment" value="0" class="input_txt" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="pre_employment" value="1" class="input_txt">No&nbsp;&nbsp;&nbsp;
+				  <td valign="top" align="left" class="input_txt"><input type="radio" name="pre_employment" value="yes" class="input_txt" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="pre_employment" value="No" class="input_txt">No&nbsp;&nbsp;&nbsp;
 				  </td>
 				  </tr>
 				   <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>If off work, do you want to return to your job</td>
-				  <td valign="top" align="left" class="input_txt"><input type="radio" name="return_job" value="0" class="input_txt" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="return_job" value="1" class="input_txt">No&nbsp;&nbsp;&nbsp;
+				  <td valign="top" align="left" class="input_txt"><input type="radio" name="return_job" value="yes" class="input_txt" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="return_job" value="No" class="input_txt">No&nbsp;&nbsp;&nbsp;
 				  </td>
 				  </tr>
 				  <tr class="row2">

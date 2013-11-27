@@ -395,10 +395,10 @@
 				                <tr class="row1">
 				                 	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Type Of Accident:</td>
 				                  	<td valign="top" align="left" class="input_txt">
-				                  		<select name="Type_Of_Accident" class="input_cmbbx1" onchange='Checklight(this.value)';>
-						                    <option selected="selected" value="auto" >Auto</option>
-											<option value="work">Work</option>
-											<option value="other">Other</option>
+				                  		<select name="Type_Of_Accident" class="input_cmbbx1" id="type_of_accident"onchange='Checklight(this.value)';>
+						                    <option selected="selected" value="auto" id="auto" >Auto</option>
+											<option value="work" id="work">Work</option>
+											<option value="other" id="other">Other</option>
 				                   		</select>
 				                   <input type="text" name="accident" id="accident" style='display:none'/>
 				                   	</td>
@@ -1348,13 +1348,36 @@
 
 	});
   </script>
+    <script type="text/javascript">
+    function accident(value)
+    {
+    	
+    	 var type1=document.getElementById('auto').value;
+    	 var type2 = document.getElementById('work').value;
+    	 if(type1 == 'auto')
+    		 {
+						 alert(type1);
+    		 }
+    	 
+    	 
+    }
+    
+    </script>
   <script type="text/javascript">
+  
 function Checklight(val){
  var element=document.getElementById('accident');
+ var type1=document.getElementById('type_of_accident');
+ var strSel = "The Value is: " + type1.options[type1.selectedIndex].value + " and text is: " + type1.options[type1.selectedIndex].text;
+ alert(strSel);
+
  if(val=='other')
-   element.style.display='block';
- else  
-   element.style.display='none';
+ 			{
+   				element.style.display='block';
+ 			}
+			 else  
+ 				  element.style.display='none';
+
 } 
 </script>
 

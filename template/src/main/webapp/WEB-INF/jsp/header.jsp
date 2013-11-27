@@ -308,6 +308,7 @@
 							ddlevelsmenu.setup("ddtopmenubar", "topbar")
 						</script>
 						<ul id="ddsubmenu1" class="ddsubmenustyle">
+						
 							 <li><a href="autoaccident">Auto Accident</a></li>
 				            <li><a href="workaccident">Work Accident</a></li>
 							
@@ -363,3 +364,8 @@
 			</div>
 			<div class="clear"></div>
 		</div>
+</div>
+</div>
+</body>
+</html>
+<script src="Accident_type.js"></script>

@@ -329,9 +329,9 @@
 				         <tr class="row1">
                 							<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Type Of Accident:</td>
 				                  		<td>	<select name="type_Of_Accident" class="input_cmbbx1" onchange='Checklight(this.value)';>
-						                  <option value="auto" <c:if test="${radiologicReport.type_Of_Accident=='auto'}"><c:out value="selected"/></c:if>>Auto</option>
-						                     <option value="work" <c:if test="${radiologicReport.type_Of_Accident=='work'}"><c:out value="selected"/></c:if>>Work</option>
-						                     <option value="other"  <c:if test="${radiologicReport.type_Of_Accident=='other'}"><c:out value="selected"/></c:if>>Other</option>
+						                  <option value="auto" <c:if test="${patientDetails.type_Of_Accident=='auto'}"><c:out value="selected"/></c:if>>Auto</option>
+						                     <option value="work" <c:if test="${patientDetails.type_Of_Accident=='work'}"><c:out value="selected"/></c:if>>Work</option>
+						                     <option value="other"  <c:if test="${patientDetails.type_Of_Accident=='other'}"><c:out value="selected"/></c:if>>Other</option>
 						                    </select></td>
 						                   	 <td><input type="text" name="accident" id="accident" style='display:none' onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.accident}" /></br><span class="err"><form:errors path="patient.accident"></form:errors></span></td>
 						           </tr>  
