@@ -109,11 +109,7 @@ $(function() {
 				 <tr class="row2">
                 						<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Job Position</td>
                 						 <td valign="top" align="left" class="input_txt">
-				  							<select name="doyou_pos" class="input_cmbbx1" id="do_you"  onchange="if ($('#do_you').val() == 'other') {
-                      $('#doyou').show();
-                    } else {
-                      $('#doyou').hide();
-                    }">	
+				  							<select name="doyou_pos" class="input_cmbbx1" id="do_you"  onchange='Checkpos(this.value);'>	
 				  							 <option value="sit_at_desk" <c:if test="${workaccident.doyou_pos=='sit_at_desk'}"><c:out value="selected"/></c:if>>Sit at desk</option>
 						                     <option value="walk" <c:if test="${workaccident.doyou_pos=='walk'}"><c:out value="selected"/></c:if>>Walk</option>	
 						                     <option value="stand" <c:if test="${workaccident.doyou_pos=='stand'}"><c:out value="selected"/></c:if>>Stand</option>
@@ -170,7 +166,7 @@ $(function() {
                 						<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Type of lighting in the building</td>
                 						<td valign="top" align="left" class="input_txt">
 										  <select name="type_of_light" class="input_cmbbx1" onchange='Checklight(this.value);'>
-					 						<option value="fluorescent" <c:if test="${workaccident.doyou_pos=='fluorescent'}"><c:out value="selected"/></c:if>>Fluorescent</option>
+					 						<option value="fluorescent" <c:if test="${workaccident.type_of_light=='fluorescent'}"><c:out value="selected"/></c:if>>Fluorescent</option>
 						                     <option value="overhead" <c:if test="${workaccident.type_of_light=='overhead'}"><c:out value="selected"/></c:if>>Overhead</option>	
 						                     <option value="onmachine" <c:if test="${workaccident.type_of_light=='onmachine'}"><c:out value="selected"/></c:if>>On machine</option>
 						                    <option value="others" <c:if test="${workaccident.type_of_light=='others'}"><c:out value="selected"/></c:if>>Others</option> 
@@ -378,12 +374,12 @@ $(function() {
 
 <script type="text/javascript">
 $(document).ready(function(){
-
+	
 $('input[name="value"]').change(function(){
 var v = $('input[name="value"]').val();
 if(v=="other") $('#field').show();
 else $('#field').hide();
-})
+} )
 })				  
 </script>				  
 <script type="text/javascript">
@@ -395,8 +391,11 @@ else
 }
 </script>					  
 			  
-<!-- 				  				  
+ 				  				  
 <script type="text/javascript">
+window.onload = function(){
+	Checkpos(val);
+}
 function Checkpos(val){
  var element=document.getElementById('doyou');
  if(val=='other')
@@ -404,15 +403,18 @@ function Checkpos(val){
  else  
    element.style.display='none';
 } 
-</script> -->
+
+</script>
 <script type="text/javascript">
-function Checklight(val){
+$(document).ready(function() {
+(function Checklight(val){
  var element=document.getElementById('lighting');
  if(val=='others')
    element.style.display='block';
  else  
    element.style.display='none';
-} 
+})
+})
 </script>
 <script type="text/javascript">
 function toggle3(value){
