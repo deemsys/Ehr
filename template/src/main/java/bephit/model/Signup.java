@@ -3,16 +3,16 @@ package bephit.model;
 import org.hibernate.validator.constraints.NotEmpty;
 
 public class Signup{
-	@NotEmpty
+	
 	private String username;
 	
-	@NotEmpty
+	
 	private String password;
 	
-	@NotEmpty
+	
 	private String confirm;
 	
-	@NotEmpty
+	
 	private String email;
 	
 public Signup(){

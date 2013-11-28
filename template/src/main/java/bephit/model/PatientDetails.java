@@ -21,11 +21,14 @@ private String City;
 @NotEmpty
 private String State;
 @NotEmpty
+
 private String ZipCode;
 @NotEmpty
 @Pattern(regexp="(^$|[0-9]{10})",message="Not a valid Mobile number")
 private String Homephone;
 @NotEmpty
+@Pattern(regexp="^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$",message="Please Enetr a valid mail id")
+
 private String Emailid;
 @NotEmpty
 @Pattern(regexp="(^$|[0-9]{10})",message="Not a valid Mobile number")

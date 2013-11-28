@@ -46,13 +46,13 @@
     				<td>
     				<table cellpadding="0" cellspacing="0" border="0" width="100%">
 	                            <tr class="row1">
-				                  <td>Patient Name:</td>
+				                  <td><span class="err">*</span>Patient Name:</td>
 				                  <td><input type="text" class="input_txtbx1" id="pname" name="pname" /><br/><span class="err"><form:errors path="RadiologicReport.pname"></form:errors></td>
-				                  <td>Date:</td>
+				                  <td><span class="err">*</span>Date:</td>
 				                  <td><input type="text" class="input_txtbx1" id="datepicker" name="date" /><br/><span class="err"><form:errors path="RadiologicReport.date"></form:errors></td>
-				                  <td>I.D.#:</td>
+				                  <td><span class="err">*</span>I.D.#:</td>
 				                  <td><input type="text" class="input_txtbx1" id="id" name="id" /><br/><span class="err"><form:errors path="RadiologicReport.id"></form:errors></td>
-				                  <td>Date Of Birth</td>
+				                  <td><span class="err">*</span>Date Of Birth</td>
 				                  <td><input type="text" class="input_txtbx1" id="datepicker1" name="dob" /><br/><span class="err"><form:errors path="RadiologicReport.dob"></form:errors></td>
 				                </tr>
 				    </table>
