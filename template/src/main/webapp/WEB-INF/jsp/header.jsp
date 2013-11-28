@@ -190,7 +190,10 @@
 
 						<ul id="ddsubmenu1" class="ddsubmenustyle">
 							<li><a href="autoaccident">Auto Accident</a></li>
+							<li><a href="viewautoaccident">View Auto Accident</a></li>
 							<li><a href="workaccident">Work Accident</a></li>
+							<li><a href="wiewworkaccident"> View Work Accident</a></li>
+							
 							<!-- <li><a href="viewauto">View Autoaccident</a></li> -->
 							<!-- <li><a href="broadcast">Send Stream</a></li>
             				<li><a href="viewreports">Report</a></li>  -->
@@ -223,15 +226,18 @@
 						<script type="text/javascript">
 							ddlevelsmenu.setup("ddtopmenubar", "topbar")
 						</script>
+
+						<ul id="ddsubmenu5" class="ddsubmenustyle">
 						
 						<ul id="ddsubmenu1" class="ddsubmenustyle">
+
 							 <li><a href="viewpatient">View Patient Details</a></li>
 							
           				</ul>
 						<ul id="ddsubmenu1" class="ddsubmenustyle">							 <li><a href="autoaccident">Auto Accident</a></li>
-							 <li><a href="viewautoaccident">View Auto Accident</a></li>
+							 
 				            <li><a href="workaccident">Work Accident</a></li>
-				            <li><a href="wiewworkaccident"> Work Auto Accident</a></li>
+				            <li><a href="wiewworkaccident"> View Work Accident</a></li>
 							
           				</ul>
           				
@@ -240,8 +246,8 @@
 							<li><a href="treatform">Authorization And Consent To Treat</a></li>
 						<li><a href="viewtreatform">View Authorization And Consent To Treat</a></li>
 						<c:if test="${age <18}">						
-				        <li id="consent"><a href="treatminor">Consent To Treat A minor</a></li></c:if>
-				         <li><a href="viewtreatminor">View Consent To Treat minor</a></li>  
+				        <li id="consent"><a href="treatminor">Consent To Treat A minor</a></li>
+				         <li><a href="viewtreatminor">View Consent To Treat minor</a></li> </c:if> 
 
 </ul>
 <ul id="ddsubmenu6" class="ddsubmenustyle">
@@ -254,6 +260,7 @@
 				            <li><a href="viewradiologicreport">View Radiologic report Form</a></li>
 
 				             <li><a href="hamiltonchiropractic">InitialExam</a></li>
+				             <li><a href="viewfirsthamiltonchiropractic">View InitialExam</a></li>
 				             <li><a href="soapnotes">SOAP Notes</a></li>
 				             <li><a href="viewsoapnotes">View Soap Notes</a></li>
 
@@ -264,65 +271,17 @@
 
 							
 				            <li><a href="staffchecklist">Staff checklist</a></li>
+				            <li><a href="staffdetails">View Staff checklist</a></li>
 				            <li><a href="insuranceverification">Insurance verification</a></li>
+				             <li><a href="insuranceverifylist">View Insurance verification</a></li>
 				            </ul>
 
 							
-				            <!-- <li><a href="showaddparticipantgroups">Add Participant Groups</a></li>
-							<li><a href="viewparticipantgroups">View Participant Groups</a></li> -->
-
-						<%-- </ul>
-						<li>
-				            	<a href="patientDetails" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" rel="ddsubmenu5">
-				            		<span><img src="<c:url value="/resources/images/email.png" />" alt="" style="padding:5px 5px 0 0;" />Patient Information</span>
-				            	</a>
-				            </li>
-				            <li>
-				            	<a href="#" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" rel="ddsubmenu1">
-				            		<span><img src="<c:url value="/resources/images/icon_03.png" />" alt="" style="padding:5px 5px 0 0;" />Accident</span>
-				            	</a>
-				            </li>
-				            <li>
-				            	<a href="Assignment" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" >
-				            		<span><img src="<c:url value="/resources/images/icon_03.png" />" alt="" style="padding:5px 5px 0 0;" />Assignment of Benefits</span>
-				            	</a>
-				            </li>
-				            <li>
-				            	<a href="#" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" rel="ddsubmenu2">
-				            		<span><img src="<c:url value="/resources/images/icon_03.png" />" alt="" style="padding:5px 5px 0 0;" />Consent To Treat</span>
-				            	</a>
-				            </li>
-				            <li>
-								<a href="medicalrecords" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>">
-									<span><img src="<c:url value="/resources/images/icon_01.png" />" alt="" style="padding:5px 5px 0 0;" />Medical Record</span>
-								</a>
-							</li>
-							<li>
-								<a href="#" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" rel="ddsubmenu3">
-									<span><img src="<c:url value="/resources/images/icon_01.png" />" alt="" style="padding:5px 5px 0 0;" />Screening Disclosure</span>
-								</a>
-							</li>
-							<li>
-								<a href="Hippaprivacy" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>">
-									<span><img src="<c:url value="/resources/images/icon_01.png" />" alt="" style="padding:5px 5px 0 0;" />HIPPA Privacy</span>
-								</a>
-							</li>
-				            <li>
-				            	<a href="#" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" rel="ddsubmenu3">
-				            		<span><img src="<c:url value="/resources/images/icon_06.png" />" alt="" style="padding:5px 5px 0 0;" />Admin User</span>
-				            	</a>
-				            </li>
-				            <li>
-				            	<a href="#" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" rel="ddsubmenu4">
-				            		<span><img src="<c:url value="/resources/images/icon_07.png" />" alt="" style="padding:5px 5px 0 0;" />Settings</span>
-				            	</a>
-				            </li>
-						</ul> --%>
-						<div class="clear"></div>
+				           						<div class="clear"></div>
 						<script type="text/javascript">
 							ddlevelsmenu.setup("ddtopmenubar", "topbar")
 						</script>
-						<ul id="ddsubmenu1" class="ddsubmenustyle">
+						<!-- <ul id="ddsubmenu1" class="ddsubmenustyle">
 						
 							 <li><a href="autoaccident">Auto Accident</a></li>
 				            <li><a href="workaccident">Work Accident</a></li>
@@ -335,16 +294,21 @@
 				            
 
 							
-				            <!-- <li><a href="showaddparticipantgroups">Add Participant Groups</a></li>
-							<li><a href="viewparticipantgroups">View Participant Groups</a></li> -->
+				            <li><a href="showaddparticipantgroups">Add Participant Groups</a></li>
+							<li><a href="viewparticipantgroups">View Participant Groups</a></li>
 
 						</ul>
-						<ul id="ddsubmenu3" class="ddsubmenustyle">
+ -->						<ul id="ddsubmenu3" class="ddsubmenustyle">
 							<li><a href="hardshipagreement">Hardship Agreement</a></li>
-							<li><a href="screeningAuthz">Screening Disclosure</a></li>        
+							<li><a href="hardshiplist">View Hardship Agreement</a></li>
+							<li><a href="screeningAuthz">Screening Disclosure</a></li> 
+							<li><a href="screeninglist">View Screening Disclosure</a></li>       
 				            <li><a href="medicalrecords">Release Of Records</a></li>
+				            <li><a href="medicalrecordslist">View Release Of Records</a></li>
 				            <li><a href="Assignment">Assignment Of Benefits</a></li>
+				            <li><a href="assignmentlist">View Assignment Of Benefits</a></li>
 				            <li><a href="Hippaprivacy">Hippa Privacy</a></li>
+				            <li><a href="hippalist">View Hippa Privacy</a></li>
 				         </ul>
 						<!-- <ul id="ddsubmenu4" class="ddsubmenustyle">
 							<li><a href="textmsgsettings">Text Message API settings</a></li>
@@ -368,7 +332,9 @@
 
 							<ul id="ddsubmenu4" class="ddsubmenustyle">
 							<li><a href="insuranceplan">Insurance Waiver</a></li>
+							<li><a href="insuranceplanlist">View Insurance Waiver</a></li>
 							<li><a href="insuranceinformation">Health Insurance Information</a></li>
+							<li><a href="insuranceinfolist">View Health Insurance Information</a></li>
 							<!-- <li><a href="insuranceverification">Health Insurance Verification</a></li> -->
 						</ul>
 						
