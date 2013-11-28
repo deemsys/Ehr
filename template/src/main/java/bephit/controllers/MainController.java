@@ -128,7 +128,7 @@ public class MainController {
 	*/
 
 //	DoctorsignupDAO docDAO;
-	*/
+	
 
 	@Autowired
 	PatientDAO patientDAO;
