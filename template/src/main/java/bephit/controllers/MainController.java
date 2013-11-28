@@ -25,7 +25,11 @@ import org.springframework.ui.ModelMap;
 
 import bephit.dao.AssignmentDAO;
 import bephit.dao.AutoaccidentDAO;
+<<<<<<< .mine
+/*import bephit.dao.DoctorsignupDAO;*/
+=======
 //import bephit.dao.DoctorsignupDAO;
+>>>>>>> .r244
 import bephit.dao.HamiltonchiropracticDAO;
 import bephit.dao.HardshipagreementDAO;
 import bephit.dao.HippaDAO;
@@ -51,7 +55,11 @@ import bephit.dao.TreatMinorDAO;
 import bephit.dao.WorkaccidentDAO;
 import bephit.forms.AssignmentDetailsForm;
 import bephit.forms.AutoaccidentForm;
+<<<<<<< .mine
+/*import bephit.forms.DoctorsignupForm;*/
+=======
 //import bephit.forms.DoctorsignupForm;
+>>>>>>> .r244
 import bephit.forms.HamiltonchiropracticForm;
 import bephit.forms.HardshipagreementForm;
 import bephit.forms.HippaPrivacyForm;
@@ -117,9 +125,14 @@ public class MainController {
 	@Autowired
 	SignupDAO signDAO;
 	/*
-	@Autowired
+	/*@Autowired
+<<<<<<< .mine
+	DoctorsignupDAO docDAO;
+	*/
+=======
 //	DoctorsignupDAO docDAO;
 	*/
+>>>>>>> .r244
 	@Autowired
 	PatientDAO patientDAO;
 	
@@ -1708,7 +1721,11 @@ public class MainController {
 			model.addAttribute("menu", "patientInfo");
 			return  type;
 	 
+<<<<<<< .mine
+	       
+=======
 	       // return "patientDetails";
+>>>>>>> .r244
 		}
 	
 
