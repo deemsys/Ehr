@@ -36,8 +36,8 @@
           						<td valign="top" align="left" width="25%">Action</td>
         					</tr>
         					
-        					<c:if test="${fn:length(patientdetailsform.patientDetails) gt 0}">
-        				  <c:forEach items="${patientdetailsform.patientDetails}" var="patientDetails" varStatus="status">
+        					<c:if test="${fn:length(patientDetailsForm.patientDetails) gt 0}">
+        				  <c:forEach items="${patientDetailsForm.patientDetails}" var="patientDetails" varStatus="status">
         				       	<tr class="row1">
 							      	 <td valign="top" align="left"  width="10%"> <a href="patientDetailsList?patient_id=${patientDetails.patient_id}">${patientDetails.name}</a></td>
 											
@@ -46,13 +46,13 @@
 											<td valign="top" align="left" width="10%">${patientDetails.state}</td>
 											 <td>
 												<a href="#" title="" ><img src="resources/images/icons/icon_edit.png" alt="Edit" /></a><a href="<c:out value="editpatientdetails?patient_id=${patientDetails.patient_id}"/>" style="padding-right:10px;">Edit</a>
-												<a href="#" title=""><img src="resources/images/icons/icon_delete.png" alt="Delete" /></a><a id="delete_confirm" href="<c:out value="deletepatientdetails?patient_id=${patientDetails.patient_id}"/>">Remove</a>
+												<a href="#" title=""><img src="resources/images/icons/icon_delete.png" alt="Delete" /></a><a href="<c:out value="deletepatientdetails?patient_id=${patientDetails.patient_id}"/>" onclick="return confirmation()">Remove</a>
 											</td> 
 								</tr>
 							    	</c:forEach>
 							    	</c:if>
         							
-							    <c:if test="${fn:length(patientdetailsform.patientDetails) == 0}">	
+							    <c:if test="${fn:length(patientDetailsForm.patientDetails) == 0}">	
 							    	<tr class="row1">
 							    	<td colspan="7" width="100%"><center><b>No Participants Found!!!</b></center></td>
 							    	</tr>
@@ -94,10 +94,22 @@ function selectall(field)
 			field[i].checked = false;
 	}
 }
+
+
+function confirmation() {
+	var answer = confirm("Are you Sure You Want to Delete  Patient Record ?")
+	if (answer){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
 </script>
 <script> 
 function showCourses() {
-    str = document.getElementById("age").value;
+   var str = document.getElementById("age").value;
+}
     
     </script>
 

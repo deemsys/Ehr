@@ -464,14 +464,14 @@ public class PatientDAO {
 		try{
 			DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
-	    	 String cmd_getpatient_name="select name from patient_details where patient_id='"+patient_id+"'";
+	    	 String cmd_getpatient_name="select * from patient_details where patient_id='"+patient_id+"'";
 	    	 String Desc="Delete patient ";
 	    	 resultSet=statement.executeQuery(cmd_getpatient_name);
 				
 				if(resultSet.next())
 					Desc=Desc+resultSet.getString(1);
 				statement.execute("delete from patient_details where patient_id='"+patient_id+"'");
-				
+				System.out.println("deleted id="+patient_id);
 				flag=1;
 				
 		    }catch(Exception e){

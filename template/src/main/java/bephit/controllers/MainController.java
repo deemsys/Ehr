@@ -55,7 +55,9 @@ import bephit.dao.WorkaccidentDAO;
 import bephit.forms.AssignmentDetailsForm;
 import bephit.forms.AutoaccidentForm;
 /*import bephit.forms.DoctorsignupForm;*/
+
 //import bephit.forms.DoctorsignupForm;
+
 import bephit.forms.HamiltonchiropracticForm;
 import bephit.forms.HardshipagreementForm;
 import bephit.forms.HippaPrivacyForm;
@@ -126,7 +128,6 @@ public class MainController {
 	DoctorsignupDAO docDAO;
 	*/
 //	DoctorsignupDAO docDAO;
-	
 	@Autowired
 	PatientDAO patientDAO;
 	
@@ -698,6 +699,7 @@ public class MainController {
 		//ParticipantsDetailsForm participantsDetaisForm = new ParticipantsDetailsForm();
 		//RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
 		//participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
+
 		radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport());
         model.addAttribute("radiologicReportForm", radiologicReportForm);
         model.addAttribute("menu", "doctor");
@@ -813,7 +815,7 @@ public class MainController {
         model.addAttribute("success","true");
         WorkaccidentForm workaccidentForm= new WorkaccidentForm();
 		workaccidentForm.setWorkaccident(workDAO.getWorkaccident());
-		model.addAttribute("WorkaccidentForm",workaccidentForm);
+		model.addAttribute("workaccidentForm",workaccidentForm);
 		model.addAttribute("menu", "Accident");
 		}
 		
@@ -1679,10 +1681,10 @@ public class MainController {
 	
 	{
 		session.removeAttribute("patient");
-		PatientDetailsForm patientdetailsform= new PatientDetailsForm();
+		/*PatientDetailsForm patientdetailsform= new PatientDetailsForm();
 		patientdetailsform.setPatientDetails(patientDAO.getPatientDetails());
 		model.addAttribute("PatientDetailsForm",patientdetailsform);
-		 model.addAttribute("noofrows",patientDAO.getPatientDetails().size());
+		 model.addAttribute("noofrows",patientDAO.getPatientDetails().size());*/
 		 model.addAttribute("menu", "patientInfo");
 		return "patientDetails";
 	}
@@ -1691,6 +1693,7 @@ public class MainController {
 	public String insert_patientdetails(HttpServletRequest request,HttpSession session,@ModelAttribute("PatientDetails")  @Valid PatientDetails patientDetails,BindingResult result,ModelMap model) {
 		session.setAttribute("patient",patientDetails);
 		String type= request.getParameter("Type_Of_Accident");
+		
 		System.out.println("type of accident="+type);
 		
 		if(result.hasErrors())
@@ -1715,7 +1718,9 @@ public class MainController {
 			model.addAttribute("PatientDetailsForm",patientDetailsForm);
 			model.addAttribute("menu", "patientInfo");
 			return  type;
-	       
+
+
+	       // return "patientDetails";
 		}
 	
 
@@ -1723,10 +1728,10 @@ public class MainController {
 	@RequestMapping(value="/viewpatient", method=RequestMethod.GET)
 	public String viewpatient(HttpServletRequest request,ModelMap model, Principal principal) {
 		
-		PatientDetailsForm patientdetailsform = new PatientDetailsForm();
-		patientdetailsform.setPatientDetails(patientDAO.getPatientDetails());
-        model.addAttribute("patientdetailsform", patientdetailsform);
-        System.out.println("patient="+patientdetailsform.getPatientDetails().size());
+		PatientDetailsForm patientDetailsForm = new PatientDetailsForm();
+		patientDetailsForm.setPatientDetails(patientDAO.getPatientDetails());
+        model.addAttribute("patientDetailsForm", patientDetailsForm);
+        System.out.println("patient="+patientDetailsForm.getPatientDetails().size());
         model.addAttribute("menu", "patientInfo");
         System.out.println("Patient");
 		return "viewpatient";
@@ -1756,13 +1761,21 @@ public class MainController {
         model.addAttribute("menu", "patientInfo");
 		return "editpatientdetails";
 	}
+	
 	@RequestMapping(value="/updatepatientdetails", method=RequestMethod.POST)
 	public String updatePatientDetails(HttpSession session,HttpServletRequest request,@ModelAttribute("PatientDetails") @Valid PatientDetails patient,
 			BindingResult result,ModelMap model,Principal principal)
 	{
+
+		if (result.hasErrors())
 		session.setAttribute("patient",patient);
 		/*if(result.hasErrors())
-		{
+			PatientDetailsForm patientDetailsForm = new PatientDetailsForm();
+	      patientDetailsForm.setPatientDetails(patientDAO.viewPatientDetails(patient.getPatient_id()));
+	        model.addAttribute("patientDetailsForm", patientDetailsForm);
+	        model.addAttribute("menu", "patientInfo");    
+		        return "editpatientdetails";
+		}
 		
 			PatientDetailsForm patientDetailsForm = new PatientDetailsForm();
 			patientDetailsForm.setPatientDetails(patientDAO.getPatientDetails());
@@ -1776,11 +1789,11 @@ public class MainController {
 		int status = patientDAO.updatePatientDetails(patient, patient.getPatient_id(), principal.getName());
 		System.out.println(status);
 		
-		PatientDetailsForm patientdetailsform = new PatientDetailsForm();
-		patientdetailsform.setPatientDetails(patientDAO.getPatientDetails());
-        model.addAttribute("patientdetailsform", patientdetailsform);
-        model.addAttribute("success","true");
-        model.addAttribute("menu", "patientInfo");
+        PatientDetailsForm patientDetailsForm = new PatientDetailsForm();
+       patientDetailsForm.setPatientDetails(patientDAO.getPatientDetails());
+        model.addAttribute("patientDetailsForm", patientDetailsForm);
+	       model.addAttribute("success","true");
+	       model.addAttribute("menu", "doctor");
 	        return "viewpatient";
 		
 	}
@@ -1788,15 +1801,20 @@ public class MainController {
 	@RequestMapping(value="/deletepatientdetails", method=RequestMethod.GET)
 	public String removePatientDetails(@RequestParam("patient_id") String patient_id,ModelMap model, Principal principal) {
 	
-		int status = patientDAO.deletePatientDetails(patient_id,  principal.getName());
+		int status = patientDAO.deletePatientDetails(patient_id, principal.getName());
+		System.out.println(status);
 		if(status==1)
 		{
         model.addAttribute("success","true");
-      //RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
+      
         PatientDetailsForm patientDetailsForm = new PatientDetailsForm();
-        //radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport());
+       
        patientDetailsForm.setPatientDetails(patientDAO.getPatientDetails());
+int size=       patientDAO.getPatientDetails().size();
+System.out.println("patients after removing = "+size);
         model.addAttribute("patientDetailsForm", patientDetailsForm);
+        int patient = patientDetailsForm.getPatientDetails().size();
+       System.out.println("patient in table ="+patient);
         model.addAttribute("menu", "patientInfo");
 		}
 		
