@@ -95,6 +95,13 @@ function selectall(field)
 	}
 }
 </script>
+<script> 
+function showCourses() {
+    str = document.getElementById("age").value;
+    
+    </script>
+
+
 <!-- 
 function validate(fname)
 {

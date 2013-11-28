@@ -84,8 +84,6 @@
 </head>
 <body onload="javascript:startTime();">
 
-
-
 	<div id="main">
 		<div id="header">
 			<div class="logo">
@@ -102,7 +100,7 @@
 							</div></td>
 					</tr>
 					<tr>
-						<td align="right" valign="middle"><span class="cart_txt">Welcome
+						<td align="right" valign="middle"><span class="cart_txt">Welcome "/>
 								<sec:authentication property="principal.username" />&nbsp;&nbsp;|&nbsp;&nbsp;<a href="<c:url value="/j_spring_security_logout" />" style="color:#243d6e">Logout</a>
 						</span></td>
 					</tr>
@@ -219,15 +217,23 @@
 							ddlevelsmenu.setup("ddtopmenubar", "topbar")
 						</script>
 						<ul id="ddsubmenu1" class="ddsubmenustyle">
+							 <li><a href="viewpatient">View Patient Details</a></li>
+							
+          				</ul>
+						<ul id="ddsubmenu1" class="ddsubmenustyle">
 							 <li><a href="autoaccident">Auto Accident</a></li>
+							 <li><a href="viewautoaccident">View Auto Accident</a></li>
 				            <li><a href="workaccident">Work Accident</a></li>
+				            <li><a href="wiewworkaccident"> Work Auto Accident</a></li>
 							
           				</ul>
 						<ul id="ddsubmenu2" class="ddsubmenustyle">
 
 							<li><a href="treatform">Authorization And Consent To Treat</a></li>
-				            <li><a href="treatminor">Consent To Treat A minor</a></li>
-				           
+						<li><a href="viewtreatform">View Authorization And Consent To Treat</a></li>
+						<c:if test="${age <18}">						
+				        <li id="consent"><a href="treatminor">Consent To Treat A minor</a></li></c:if>
+				         <li><a href="viewtreatminor">View Consent To Treat minor</a></li>  
 
 </ul>
 <ul id="ddsubmenu6" class="ddsubmenustyle">

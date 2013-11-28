@@ -41,6 +41,20 @@ public class PatientDAO {
 	    	 String cmd="INSERT INTO patient_details (Name,Date,StreetAddress,City,State,ZipCode,Homephone,Emailid,MobileNumber,DateOfBirth,SocialSecurityNumber,Gender,MaritalStatus,Areyou,Student,EmployerName,Occupation,EmployerAddress,Workphone,EmployerCity,Estate,Ezip,SpousesName,SpousesEmp,Spousesph,Name_friend,Phone_friend,Chiropratic_care,Symptoms,Painscale,Symptom1,Painscale1,Symptom2,Painscale2,Symptom_Accident,Type_Of_Accident,accident,Date_Of_Accident,Accident_Reported,when1,where1,Attorney_accident,NameOfAttorney,Phone_Number,Fault_accident,Insurance,Insurance_phone,Name_auto,Phone_auto,Policy,Name_health,Health_phone,Prev_accident,Prev_When,Anemia,Muscular,Rheumatic,Allergies,Cancer,Polio1,Multiple,Scarlet,HIV,Sinus,Asthma,German,Nervousness,Numbness,Convulsions,Epilepsy,Concussion,Dizziness,Neuritis,Rheumatism,Diabetes,Arthritis,Venereal,Backaches,Tuberculosis,Liver,Kidney,Thyroid,Alcoholism,Hepatitis,Mental,High,Digestive,Heart,Other,Ifother,Illness,Dates,Medications,Drink,Smoke,Drugs,Diet,Exercise,Hazardous,Hazardousyes,Female,Dr,Patient) VALUES('"+patientdetails.getName()+"','"+patientdetails.getDate()+"','"+patientdetails.getStreetAddress()+"','"+patientdetails.getCity()+"','"+patientdetails.getState()+"','"+patientdetails.getZipCode()+"','"+patientdetails.getHomephone()+"','"+patientdetails.getEmailid()+"','"+patientdetails.getMobileNumber()+"','"+patientdetails.getDateOfBirth()+"','"+patientdetails.getSocialSecurityNumber()+"','"+patientdetails.getGender()+"','"+patientdetails.getMaritalStatus()+"','"+patientdetails.getAreyou()+"','"+patientdetails.getStudent()+"','"+patientdetails.getEmployerName()+"','"+patientdetails.getOccupation()+"','"+patientdetails.getEmployerAddress()+"','"+patientdetails.getWorkphone()+"','"+patientdetails.getEmployerCity()+"','"+patientdetails.getEstate()+"','"+patientdetails.getEzip()+"','"+patientdetails.getSpousesName()+"','"+patientdetails.getSpousesEmp()+"','"+patientdetails.getSpousesph()+"','"+patientdetails.getName_friend()+"','"+patientdetails.getPhone_friend()+"','"+patientdetails.getChiropratic_care()+"','"+patientdetails.getSymptoms()+"','"+patientdetails.getPainscale()+"','"+patientdetails.getSymptom1()+"','"+patientdetails.getPainscale1()+"','"+patientdetails.getSymptom2()+"','"+patientdetails.getPainscale2()+"','"+patientdetails.getSymptom_Accident()+"','"+patientdetails.getType_Of_Accident()+"','"+patientdetails.getAccident()+"','"+patientdetails.getDate_Of_Accident()+"','"+patientdetails.getAccident_Reported()+"','"+patientdetails.getWhen1()+"','"+patientdetails.getWhere1()+"','"+patientdetails.getAttorney_accident()+"','"+patientdetails.getNameOfAttorney()+"','"+patientdetails.getPhone_Number()+"','"+patientdetails.getFault_accident()+"','"+patientdetails.getInsurance()+"','"+patientdetails.getInsurance_phone()+"','"+patientdetails.getName_auto()+"','"+patientdetails.getPhone_auto()+"','"+patientdetails.getPolicy()+"','"+patientdetails.getName_health()+"','"+patientdetails.getHealth_phone()+"','"+patientdetails.getPrev_accident()+"','"+patientdetails.getPrev_When()+"','"+patientdetails.getAnemia()+"','"+patientdetails.getMuscular()+"','"+patientdetails.getRheumatic()+"','"+patientdetails.getAllergies()+"','"+patientdetails.getCancer()+"','"+patientdetails.getPolio1()+"','"+patientdetails.getMultiple()+"','"+patientdetails.getScarlet()+"','"+patientdetails.getHIV()+"','"+patientdetails.getSinus()+"','"+patientdetails.getAsthma()+"','"+patientdetails.getGerman()+"','"+patientdetails.getNervousness()+"','"+patientdetails.getNumbness()+"','"+patientdetails.getConvulsions()+"','"+patientdetails.getEpilepsy()+"','"+patientdetails.getConcussion()+"','"+patientdetails.getDizziness()+"','"+patientdetails.getNeuritis()+"','"+patientdetails.getRheumatism()+"','"+patientdetails.getDiabetes()+"','"+patientdetails.getArthritis()+"','"+patientdetails.getVenereal()+"','"+patientdetails.getBackaches()+"','"+patientdetails.getTuberculosis()+"','"+patientdetails.getLiver()+"','"+patientdetails.getKidney()+"','"+patientdetails.getThyroid()+"','"+patientdetails.getAlchoholism()+"','"+patientdetails.getHepatitis()+"','"+patientdetails.getMental()+"','"+patientdetails.getHigh()+"','"+patientdetails.getDigestive()+"','"+patientdetails.getHeart()+"','"+patientdetails.getOther()+"','"+patientdetails.getIfother()+"','"+patientdetails.getIllness()+"','"+patientdetails.getDates()+"','"+patientdetails.getMedications()+"','"+patientdetails.getDrink()+"','"+patientdetails.getSmoke()+"','"+patientdetails.getDrugs()+"','"+patientdetails.getDiet()+"','"+patientdetails.getExercise()+"','"+patientdetails.getHazardous()+"','"+patientdetails.getHazardousyes()+"','"+patientdetails.getFemale()+"','"+patientdetails.getDr()+"','"+patientdetails.getPatient()+"')";
 	    	 System.out.println(cmd);
 	    	 statement.execute(cmd);
+	    	 String cmd1="select patient_id as patient_id,TIMESTAMPDIFF(YEAR,DateOfBirth,CURDATE()) AS age from patient_details ORDER BY patient_id DESC";
+	    	 resultSet=statement.executeQuery(cmd1);
+	    	 String age="";
+	    	 String patient_id="";
+	    	 if(resultSet.next())
+	    	 {
+	    		age=resultSet.getString("age");
+	    		patient_id=resultSet.getString("patient_id");
+	    	 }
+	    	 System.out.println("age.."+age);
+	    	
+	    	 String cmd2="INSERT INTO agecalculation (patient_id,DateOfBirth,age) VALUES ('"+patient_id+"','"+patientdetails.getDateOfBirth()+"','"+age+"') ";
+	    	 statement.execute(cmd2);
+	    	 System.out.println(cmd2);
 	    	 System.out.println("inserted");
 		     flag=1;
 
@@ -63,6 +77,7 @@ public class PatientDAO {
     		return 0;
 	    
 	}
+	
 	
 	
 	public List<PatientDetails> getPatientDetails(){
@@ -205,7 +220,55 @@ public class PatientDAO {
 	    return patientDetails;
 		
 	}
+	public String getAge(){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		ResultSet patientresultSet = null;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		String age="",patient_id="";
+	    try{
+	    	
+	    	String cmd1="select patient_id as patient_id from patient_details ORDER BY patient_id DESC";
+	    	patientresultSet=statement.executeQuery(cmd1);
+	    	
+	    	 if(patientresultSet.next())
+	    	 {
+	    		
+	    		patient_id=patientresultSet.getString("patient_id");
+	    	 }
+	    	 System.out.println("patient_id"+patient_id);
+	    	
+	    	
+			resultSet = statement.executeQuery("select age from agecalculation where patient_id='"+patient_id+"'");
+			while(resultSet.next()){
+				age=resultSet.getString("age");
+				}
+			System.out.println("age"+age);
+	    }catch(Exception e){
+	        System.out.println(e.toString());
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    }finally{
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);	    	
+	    }
+	   
+	  
+	   
+	   
+	    return age;
+		
+	}
 
+	
 	public List<PatientDetails> viewPatientDetails(String patient_id){
 		Connection con = null;
 		Statement statement = null;

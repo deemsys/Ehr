@@ -2,10 +2,13 @@
  
  
 
+import java.io.IOException;
 import java.security.Principal;
 import java.util.ArrayList;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -1590,6 +1593,7 @@ public class MainController {
 	@RequestMapping(value="/patientDetails", method = RequestMethod.POST)
 	public String insert_patientdetails(HttpSession session,@ModelAttribute("PatientDetails")  @Valid PatientDetails patientDetails,BindingResult result,ModelMap model) {
 		session.setAttribute("patient",patientDetails);
+		
 		if(result.hasErrors())
 			{
 			
@@ -1599,17 +1603,19 @@ public class MainController {
 				model.addAttribute("Success","true");
 				return "patientDetails";
 			}
-			
-			
-			
-			
-	    	int a = patientDAO.setPatientDetails(patientDetails);
+			int a = patientDAO.setPatientDetails(patientDetails);
 			PatientDetailsForm patientDetailsForm = new PatientDetailsForm();
 			patientDetailsForm.setPatientDetails(patientDAO.getPatientDetails());
+		    String age=patientDAO.getAge();
+		    System.out.println("controller age"+age);
+		    /*int major=Integer.parseInt(age);*/
+		    /*String major=""+age;*/
+		    /*request.setAttribute("major",age);*/
+		    model.addAttribute("age",age);
 			model.addAttribute("PatientDetailsForm",patientDetailsForm);
-			return "patientDetails";
-	 
+	        return "patientDetails";
 		}
+	
 
 
 	@RequestMapping(value="/viewpatient", method=RequestMethod.GET)

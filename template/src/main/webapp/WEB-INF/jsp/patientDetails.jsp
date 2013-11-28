@@ -67,7 +67,6 @@
         }
     });
 </script>
-
 	  <style>
 	  /* force a height so the tabs don't jump as content height changes */
 	  #tabs .tabs-spacer { float: left; height: 200px; }
