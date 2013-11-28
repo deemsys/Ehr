@@ -25,11 +25,10 @@ import org.springframework.ui.ModelMap;
 
 import bephit.dao.AssignmentDAO;
 import bephit.dao.AutoaccidentDAO;
-<<<<<<< .mine
+
 /*import bephit.dao.DoctorsignupDAO;*/
-=======
 //import bephit.dao.DoctorsignupDAO;
->>>>>>> .r244
+
 import bephit.dao.HamiltonchiropracticDAO;
 import bephit.dao.HardshipagreementDAO;
 import bephit.dao.HippaDAO;
@@ -55,11 +54,8 @@ import bephit.dao.TreatMinorDAO;
 import bephit.dao.WorkaccidentDAO;
 import bephit.forms.AssignmentDetailsForm;
 import bephit.forms.AutoaccidentForm;
-<<<<<<< .mine
 /*import bephit.forms.DoctorsignupForm;*/
-=======
 //import bephit.forms.DoctorsignupForm;
->>>>>>> .r244
 import bephit.forms.HamiltonchiropracticForm;
 import bephit.forms.HardshipagreementForm;
 import bephit.forms.HippaPrivacyForm;
@@ -126,13 +122,11 @@ public class MainController {
 	SignupDAO signDAO;
 	/*
 	/*@Autowired
-<<<<<<< .mine
+
 	DoctorsignupDAO docDAO;
 	*/
-=======
 //	DoctorsignupDAO docDAO;
-	*/
->>>>>>> .r244
+	
 	@Autowired
 	PatientDAO patientDAO;
 	
@@ -701,7 +695,7 @@ public class MainController {
 		if(status==1)
 		{
         model.addAttribute("success","true");
-		//ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
+		//ParticipantsDetailsForm participantsDetaisForm = new ParticipantsDetailsForm();
 		//RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
 		//participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
 		radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport());
@@ -1692,6 +1686,7 @@ public class MainController {
 		 model.addAttribute("menu", "patientInfo");
 		return "patientDetails";
 	}
+	
 	@RequestMapping(value="/patientDetails", method = RequestMethod.POST)
 	public String insert_patientdetails(HttpServletRequest request,HttpSession session,@ModelAttribute("PatientDetails")  @Valid PatientDetails patientDetails,BindingResult result,ModelMap model) {
 		session.setAttribute("patient",patientDetails);
@@ -1720,12 +1715,7 @@ public class MainController {
 			model.addAttribute("PatientDetailsForm",patientDetailsForm);
 			model.addAttribute("menu", "patientInfo");
 			return  type;
-	 
-<<<<<<< .mine
 	       
-=======
-	       // return "patientDetails";
->>>>>>> .r244
 		}
 	
 
@@ -1755,9 +1745,9 @@ public class MainController {
 		return "patientDetailsList";
 	}
 	@RequestMapping(value="/editpatientdetails", method=RequestMethod.GET)
-	public String editPatientDetails(HttpServletRequest request,@RequestParam("patient_id") String patient_id,ModelMap model,PatientDetails patient)
+	public String editPatientDetails(HttpSession session,HttpServletRequest request,@RequestParam("patient_id") String patient_id,ModelMap model,PatientDetails patient)
 	{
-		
+		session.removeAttribute("patient");
 		//RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
        PatientDetailsForm patientDetailsForm = new PatientDetailsForm();
       //  radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport(pid));
@@ -1767,21 +1757,22 @@ public class MainController {
 		return "editpatientdetails";
 	}
 	@RequestMapping(value="/updatepatientdetails", method=RequestMethod.POST)
-	public String updatePatientDetails(HttpServletRequest request,@ModelAttribute("patient") @Valid PatientDetails patient,
+	public String updatePatientDetails(HttpSession session,HttpServletRequest request,@ModelAttribute("PatientDetails") @Valid PatientDetails patient,
 			BindingResult result,ModelMap model,Principal principal)
 	{
-		/*if (result.hasErrors())
+		session.setAttribute("patient",patient);
+		/*if(result.hasErrors())
 		{
-		//	RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
-	    PatientDetailsForm patientDetailsForm = new PatientDetailsForm();
-	    //  radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport(report.getPid()));
-	      patientDetailsForm.setPatientDetails(patientDAO.viewPatientDetails(patient.getPatient_id()));
-	        model.addAttribute("patientDetailsForm", patientDetailsForm);
-			    model.addAttribute("menu", "patientInfo");
-		        return "editpatientdetails";
-		}*/
 		
+			PatientDetailsForm patientDetailsForm = new PatientDetailsForm();
+			patientDetailsForm.setPatientDetails(patientDAO.getPatientDetails());
+			model.addAttribute("PatientDetailsForm",patientDetailsForm);
+			model.addAttribute("Success","true");
+			model.addAttribute("menu", "patientInfo");
+			return "updatepatientdetails";
+		}
 		
+		*/
 		int status = patientDAO.updatePatientDetails(patient, patient.getPatient_id(), principal.getName());
 		System.out.println(status);
 		

@@ -21,7 +21,7 @@ private String City;
 @NotEmpty
 private String State;
 @NotEmpty
-
+@Pattern(regexp="(^$|[0-9]{6})",message="Not a valid Zip Code")
 private String ZipCode;
 @NotEmpty
 @Pattern(regexp="(^$|[0-9]{10})",message="Not a valid Mobile number")
@@ -36,6 +36,7 @@ private String MobileNumber;
 @NotEmpty
 private String DateOfBirth;
 @NotEmpty
+@Pattern(regexp="(^$|[0-9]{12})",message="Not a valid Social Security number")
 private String SocialSecurityNumber;
 private String Gender;
 
@@ -59,8 +60,6 @@ private String EmployerCity;
 
 
 private String Estate;
-
-
 private String Ezip;
 @NotEmpty
 private String SpousesName;
