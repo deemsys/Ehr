@@ -186,7 +186,7 @@
 							<li><a href="autoaccident">Auto Accident</a></li>
 							<li><a href="viewautoaccident">View Auto Accident</a></li>
 							<li><a href="workaccident">Work Accident</a></li>
-							<li><a href="wiewworkaccident"> View Work Accident</a></li>
+							<li><a href="viewworkaccident"> View Work Accident</a></li>
 							
 							<!-- <li><a href="viewauto">View Autoaccident</a></li> -->
 							<!-- <li><a href="broadcast">Send Stream</a></li>
@@ -228,7 +228,7 @@
 							 <li><a href="autoaccident">Auto Accident</a></li>
 							 
 				            <li><a href="workaccident">Work Accident</a></li>
-				            <li><a href="wiewworkaccident"> View Work Accident</a></li>
+				            <li><a href="viewworkaccident"> View Work Accident</a></li>
 							
           				</ul>
 						<ul id="ddsubmenu2" class="ddsubmenustyle">
@@ -237,7 +237,8 @@
 						<li><a href="viewtreatform">View Authorization And Consent To Treat</a></li>
 						<c:if test="${age <18}">						
 				        <li id="consent"><a href="treatminor">Consent To Treat A minor</a></li>
-				         <li><a href="viewtreatminor">View Consent To Treat minor</a></li> </c:if> 
+				         <li><a href="viewtreatminor">View Consent To Treat minor</a></li>
+				          </c:if> 
 
 </ul>
 <ul id="ddsubmenu6" class="ddsubmenustyle">

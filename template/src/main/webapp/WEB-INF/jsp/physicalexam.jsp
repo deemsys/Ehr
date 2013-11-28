@@ -1268,7 +1268,7 @@
 				                  <tr>
 				                   <td><input type="submit" class="submit_btn" value="Save"></td>
 				                   <td>&nbsp;&nbsp;</td>
-				                    <td><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewphysicalexam'"></td>
+				                    <!-- <td><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewphysicalexam'"></td> -->
 				                    <td>&nbsp;&nbsp;</td>
 				                    <td><input type="reset" class="submit_btn" value="Cancel"></td>
 				              </tr>

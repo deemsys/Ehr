@@ -877,8 +877,9 @@
 				                  </tr>
 				                   <table align="right"> <tr>
 				                   <td><input type="submit" class="submit_btn" value="Save"></td>
+				                   <td><input type="reset" class="submit_btn" value="Cancel"></td>
                                   <td valign="top" align="center"><input type="button" class="submit_btn" value="More Tests" onclick="window.location.href='moretest'"></td></td>
-				                   <td><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewfirsthamiltonchiropractic'"></td>
+				                  <!--  <td><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewfirsthamiltonchiropractic'"></td> -->
 				                 </table>
 				                 </td>
 				                 </tr>

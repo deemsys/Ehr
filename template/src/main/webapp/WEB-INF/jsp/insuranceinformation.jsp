@@ -188,7 +188,7 @@
         <td>&nbsp;&nbsp;</td>
         <td valign="top" align="center"><br><input type="reset" class="submit_btn" value="Cancel"></td>
 	    <td>&nbsp;&nbsp;</td>
-	    <td valign="top" align="center"><br><input type="button" class="submit_btn" value="View" onclick="window.location.href='insuranceinfolist'"></td>
+	    <!-- <td valign="top" align="center"><br><input type="button" class="submit_btn" value="View" onclick="window.location.href='insuranceinfolist'"></td> -->
 	    </tr>
         </table>
         </div>

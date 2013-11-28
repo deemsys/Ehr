@@ -327,7 +327,7 @@ $(function() {
 <td><input type="button" id="btnNext" class="submit_btn" value="Next"/>
 <td valign="top" align="center"><input type="submit" class="submit_btn" value="Save"></td>
  
-             		 <td valign="top" align="center"><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewworkaccident'"></td>
+             		<!--  <td valign="top" align="center"><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewworkaccident'"></td> -->
 				  
                   <td valign="top" align="center"><input type="reset" class="submit_btn" value="Cancel" onclick="window.location.href='workaccident'"></td></td>
 <tr>

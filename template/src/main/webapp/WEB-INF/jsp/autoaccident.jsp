@@ -730,7 +730,6 @@ $(function() {
  
                   <td><input type="submit" class="submit_btn" value="Save"></td>
                   <td><input type="reset" class="submit_btn" value="Cancel" onclick="window.location.href='autoaccident'"></td>
-				 <td><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewautoaccident'"></td>
 				</table>  
 				  </div>
 				  </body>
