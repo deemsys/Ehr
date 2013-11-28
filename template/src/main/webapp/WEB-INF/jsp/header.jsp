@@ -1,8 +1,12 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -22,6 +26,7 @@
 	position: absolute;
 	left: 0;
 	top: 0;
+	
 	list-style-type: none;
 	border: 1px solid #444;
 	border-bottom: 0;
@@ -56,21 +61,21 @@
 	border-bottom: 1px solid #ccc;
 	color: #333333;
 }
-
+/* 
 .downarrowpointer {
 	/*CSS for "down" arrow image added to top menu items*/
 	padding: 0;
 	border: 0;
 }
-
+ *//* 
 .rightarrowpointer {
 	/*CSS for "right" arrow image added to drop down menu items*/
 	position: absolute;
 	padding-top: 3px;
 	left: 100px;
 	border: 0;
-}
-
+} */
+/* 
 .ddiframeshim {
 	position: absolute;
 	z-index: 500;
@@ -79,7 +84,7 @@
 	width: 0;
 	height: 0;
 	display: block;
-}
+} */
 </style>
 </head>
 <body onload="javascript:startTime();">
@@ -120,18 +125,20 @@
 	<AJDF:output>/php</AJDF:output>	 Suresh-->
 						<ul class="menu">
 							  <li>
-								<a href="welcome" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>">
+								<a href="welcome" class="<c:choose><c:when test="${menu=='dashboard'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>">
 									<span>Dashboard</span>
 								</a>
 							</li> 
 				            <li>
-				            	<a href="patientDetails" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" rel="ddsubmenu5">
+				            	<a href="patientDetails" class="<c:choose>
+				            	<c:when test="${menu=='patientInfo'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu5">
 				            		<span>Patient Information</span>
 				            	</a>
 				            </li>
 				            <li>
-				            	<a href="#" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" rel="ddsubmenu1">
-				            		<span>Accident</span>
+				            	<a href="#" class="<c:choose>
+				            	<c:when test="${menu=='Accident'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu1">
+				            		<span Style="color:white">Accident</span>
 				            	</a>
 				            </li>
 				            <%-- <li>
@@ -140,7 +147,7 @@
 				            	</a>
 				            </li> --%>
 				            <li> 
-				            	<a href="#" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" rel="ddsubmenu4">
+				            	<a href="#" class="<c:choose><c:when test="${menu=='health'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu4">
 				            		<span>Health Insurance</span>
 				            	</a>
 				            </li> 
@@ -155,23 +162,23 @@
 				            	</a>
 				            </li> --%>
 				            <li>
-				            	<a href="#" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" rel="ddsubmenu2">
+				            	<a href="#" class="<c:choose><c:when test="${menu=='consent'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu2">
 				            		<span>Consent To Treat</span>
 				            	</a>
 				            </li>
 				            <li>
-								<a href="#" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" rel="ddsubmenu3">
+								<a href="#" class="<c:choose><c:when test="${menu=='authorization'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu3">
 									<span>Authorization Forms</span>
 								</a>
 							</li>
 							
 							<li>
-								<a href="#" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" rel="ddsubmenu6">
+								<a href="#" class="<c:choose><c:when test="${menu=='doctor'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu6">
 									<span>Doctor Forms</span>
 								</a>
 							</li>
 							<li>
-								<a href="#" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" rel="ddsubmenu7">
+								<a href="#" class="<c:choose><c:when test="${menu=='admin'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu7">
 									<span>Admin Forms</span>
 								</a>
 							</li>  
@@ -216,17 +223,18 @@
 						<script type="text/javascript">
 							ddlevelsmenu.setup("ddtopmenubar", "topbar")
 						</script>
+						
 						<ul id="ddsubmenu1" class="ddsubmenustyle">
 							 <li><a href="viewpatient">View Patient Details</a></li>
 							
           				</ul>
-						<ul id="ddsubmenu1" class="ddsubmenustyle">
-							 <li><a href="autoaccident">Auto Accident</a></li>
+						<ul id="ddsubmenu1" class="ddsubmenustyle">							 <li><a href="autoaccident">Auto Accident</a></li>
 							 <li><a href="viewautoaccident">View Auto Accident</a></li>
 				            <li><a href="workaccident">Work Accident</a></li>
 				            <li><a href="wiewworkaccident"> Work Auto Accident</a></li>
 							
           				</ul>
+          				
 						<ul id="ddsubmenu2" class="ddsubmenustyle">
 
 							<li><a href="treatform">Authorization And Consent To Treat</a></li>
@@ -252,6 +260,7 @@
 </ul>
 
 <ul id="ddsubmenu7" class="ddsubmenustyle">
+
 
 							
 				            <li><a href="staffchecklist">Staff checklist</a></li>

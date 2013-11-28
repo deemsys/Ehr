@@ -164,6 +164,7 @@ public class MainController {
 		ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
 		participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
         model.addAttribute("participantsDetailsForm", participantsDetailsForm);
+        model.addAttribute("menu","dashboard");
 		
 		return "dashboard";
  
@@ -188,6 +189,7 @@ public class MainController {
 	@RequestMapping(value="/physicalexam", method = RequestMethod.GET)
 	public String physicalform(HttpSession session, ModelMap model) {
 		session.removeAttribute("physical");
+		model.addAttribute("menu", "doctor");
 		return "physicalexam";
  
 	}
@@ -203,6 +205,7 @@ public class MainController {
 			physicalexamForm.setPhysicalexam(physicalDAO.getPhysicalexam());
 			model.addAttribute("physicalexamForm",physicalexamForm);
 			model.addAttribute("Success","true");
+			model.addAttribute("menu", "doctor");
 			return "physicalexam";
 		}
 		
@@ -216,7 +219,7 @@ public class MainController {
 		PhysicalexamForm physicalexamForm= new PhysicalexamForm();
 		physicalexamForm.setPhysicalexam(physicalDAO.getPhysicalexam());
 		model.addAttribute("physicalexamForm",physicalexamForm);
-
+		model.addAttribute("menu", "doctor");	
 	    
 		
 		return "physicalexam";
@@ -232,7 +235,7 @@ public class MainController {
 		  physicalexamForm.setPhysicalexam(physicalDAO.getPhysicalexam());
 		  
 		  	model.addAttribute("physicalexamForm", physicalexamForm);
-        
+		  	model.addAttribute("menu", "doctor");
 		return "viewphysicalexam";
 	}
 	@RequestMapping(value="/physicalexamlist", method=RequestMethod.GET)
@@ -245,7 +248,7 @@ public class MainController {
 		//model.addAttribute("participantsDetailsForm", participantsDetailsForm);
 		model.addAttribute("physicalexamForm", physicalexamForm);
 		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
-		
+		model.addAttribute("menu", "doctor");
 		return "physicalexamlist";
 	}
 	
@@ -258,7 +261,7 @@ public class MainController {
         physicalexamForm.setPhysicalexam(physicalDAO.getPhysical(physical_id));
 	
 		model.addAttribute("physicalexamForm", physicalexamForm);
-		
+		model.addAttribute("menu", "doctor");
 		return "editphysicalexam";
 	}
 	@RequestMapping(value="/updatephysicalexam", method=RequestMethod.POST)
@@ -272,7 +275,7 @@ public class MainController {
 	      physicalexamForm.setPhysicalexam(physicalDAO.getPhysical(physicalexam.getPhysical_id()));
 	      
 	        model.addAttribute("physicalexamForm", physicalexamForm);
-			    
+	        model.addAttribute("menu", "doctor");  
 		        return "editphysicalexam";
 		}
 		System.out.println("physical id"+physicalexam.getPhysical_id());
@@ -285,6 +288,7 @@ public class MainController {
        
         model.addAttribute("physicalexamForm", physicalexamForm);
 	       model.addAttribute("success","true");
+	       model.addAttribute("menu", "doctor");
 	        return "viewphysicalexam";
 		
 	}
@@ -302,13 +306,14 @@ public class MainController {
 		//participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
 		physicalexamForm.setPhysicalexam(physicalDAO.getPhysicalexam());
         model.addAttribute("physicalexamForm", physicalexamForm);
-      
+        model.addAttribute("menu", "doctor");
 		}
 		
 		return "viewphysicalexam";
 	}
 	@RequestMapping(value="/hamiltonchiropractic", method = RequestMethod.GET)
 	public String hamiltonchiropractic(ModelMap model) {
+		 model.addAttribute("menu", "doctor");
 	      return "hamiltonchiropractic";
 	}
 
@@ -321,6 +326,7 @@ public class MainController {
 			hamiltonchiropracticForm.setHamiltonchiropractic(autoDAO.getHamiltonchiropractic());
 			model.addAttribute("Hamiltonchiropractic",hamiltonchiropracticForm);
 			model.addAttribute("Success","true");
+			 model.addAttribute("menu", "doctor");
 			return "hamiltonchiropractic";
 		}
 		*/
@@ -330,7 +336,7 @@ public class MainController {
     	HamiltonchiropracticForm hamiltonchiropracticForm= new HamiltonchiropracticForm();
     	hamiltonchiropracticForm.setHamiltonchiropractic(hamiDAO.getHamiltonchiropractic());
 		model.addAttribute("HamiltonchiropracticForm",hamiltonchiropracticForm);
-
+		 model.addAttribute("menu", "doctor");
 		//System.out.println(autoaccident.getAdjustersname());
 	    
 		
@@ -345,6 +351,7 @@ public class MainController {
 		HamiltonchiropracticForm hamiltonchiropracticForm= new HamiltonchiropracticForm();
 		hamiltonchiropracticForm.setHamiltonchiropractic(hamiDAO.getHamiltonchiropractic());
 		model.addAttribute("hamiltonchiropracticForm",hamiltonchiropracticForm);
+		 model.addAttribute("menu", "doctor");
 		/*System.out.println("ham....="+hamiltonchiropracticForm.getHamiltonchiropractic().size());*/
 		return "viewfirsthamiltonchiropractic";
  
@@ -359,6 +366,7 @@ public class MainController {
 		//model.addAttribute("participantsDetailsForm", participantsDetailsForm);
 		model.addAttribute("hamiltonchiropracticForm", hamiltonchiropracticForm);
 		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
+		 model.addAttribute("menu", "doctor");
 		
 		return "viewhamiltonchiropractic";
 	}
@@ -372,6 +380,7 @@ public class MainController {
         hamiltonchiropracticForm.setHamiltonchiropractic(hamiDAO.getHamiltonchiropractic(initialexamid));
 	
 		model.addAttribute("hamiltonchiropracticForm", hamiltonchiropracticForm);
+		 model.addAttribute("menu", "doctor");
 		
 		return "edithamiltonchiropractic";
 	}
@@ -388,7 +397,7 @@ public class MainController {
 	      physicalexamForm.setPhysicalexam(physicalDAO.getPhysical(physicalexam.getPhysical_id()));
 	      
 	        model.addAttribute("physicalexamForm", physicalexamForm);
-			    
+			     model.addAttribute("menu", "doctor");
 		        return "editphysicalexam";
 		}
 		*/
@@ -402,6 +411,7 @@ public class MainController {
        
         model.addAttribute("hamiltonchiropracticForm", hamiltonchiropracticForm);
 	       model.addAttribute("success","true");
+	       model.addAttribute("menu", "doctor");
 	        return "viewfirsthamiltonchiropractic";
 		
 	}
@@ -419,6 +429,7 @@ public class MainController {
 		//participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
 		hamiltonchiropracticForm.setHamiltonchiropractic(hamiDAO.getHamiltonchiropractic());
         model.addAttribute("hamiltonchiropracticForm", hamiltonchiropracticForm);
+        model.addAttribute("menu", "doctor");
       
 		}
 		
@@ -429,6 +440,7 @@ public class MainController {
 	@RequestMapping(value="/autoaccident", method = RequestMethod.GET)
 	public String autoaccident(ModelMap model) {
 		
+		 model.addAttribute("menu", "Accident");
 		return "autoaccident";
  
 	}
@@ -440,6 +452,7 @@ public class MainController {
 			autoaccidentForm.setAutoaccident(autoDAO.getAutoaccident());
 			model.addAttribute("AutoaccidentForm",autoaccidentForm);
 			model.addAttribute("Success","true");
+			 model.addAttribute("menu", "Accident");
 			return "autoaccident";
 		}
 		
@@ -449,6 +462,7 @@ public class MainController {
 		AutoaccidentForm autoaccidentForm= new AutoaccidentForm();
 		autoaccidentForm.setAutoaccident(autoDAO.getAutoaccident());
 		model.addAttribute("AutoaccidentForm",autoaccidentForm);
+		model.addAttribute("menu", "Accident");
 
 		//System.out.println(autoaccident.getAdjustersname());
 		return "autoaccident";
@@ -464,6 +478,7 @@ public class MainController {
 		  autoaccidentForm.setAutoaccident(autoDAO.getAutoaccident());
 		  //model.addAttribute("participantsDetailsForm", participantsDetailsForm);
 		  	model.addAttribute("autoaccidentForm", autoaccidentForm);
+		  	model.addAttribute("menu", "Accident");
         
 		return "viewautoaccident";
 	}
@@ -477,7 +492,7 @@ public class MainController {
 		//model.addAttribute("participantsDetailsForm", participantsDetailsForm);
 		model.addAttribute("autoaccidentForm", autoaccidentForm);
 		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
-		
+		model.addAttribute("menu", "Accident");
 		return "autoaccidentlist";
 	}
 	@RequestMapping(value="/editautoaccident", method=RequestMethod.GET)
@@ -489,7 +504,7 @@ public class MainController {
         autoaccidentForm.setAutoaccident(autoDAO.getAuto(patient_number));
 	
 		model.addAttribute("autoaccidentForm", autoaccidentForm);
-		
+		model.addAttribute("menu", "Accident");
 		return "editautoaccident";
 	}
 	
@@ -505,7 +520,7 @@ public class MainController {
 	      physicalexamForm.setPhysicalexam(physicalDAO.getPhysical(physicalexam.getPhysical_id()));
 	      
 	        model.addAttribute("physicalexamForm", physicalexamForm);
-			    
+			  model.addAttribute("menu", "Accident");  
 		        return "editphysicalexam";
 		}
 		*/
@@ -519,6 +534,7 @@ public class MainController {
        
         model.addAttribute("autoaccidentForm", autoaccidentForm);
 	       model.addAttribute("success","true");
+	       model.addAttribute("menu", "Accident");
 	        return "viewautoaccident";
 		
 	}
@@ -537,7 +553,7 @@ public class MainController {
 		//participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
 		autoaccidentForm.setAutoaccident(autoDAO.getAutoaccident());
         model.addAttribute("autoaccidentForm", autoaccidentForm);
-      
+        model.addAttribute("menu", "Accident");
 		}
 		
 		return "viewautoaccident";
@@ -545,6 +561,7 @@ public class MainController {
 	@RequestMapping(value="/radiologicreport", method=RequestMethod.GET)
 	public String radiologicreport(HttpSession session,ModelMap model) {
 		session.removeAttribute("radio");
+		model.addAttribute("menu", "doctor");
 		return "radiologicreport";
 	}
 	@RequestMapping(value="/radiologicreport", method = RequestMethod.POST)
@@ -556,6 +573,7 @@ public class MainController {
 				radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport());
 				model.addAttribute("RadiologicReportForm",radiologicReportForm);
 				model.addAttribute("Success","true");
+				model.addAttribute("menu", "doctor");
 				return "radiologicreport";
 			}
 			
@@ -576,7 +594,7 @@ public class MainController {
 	    	radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport());
 			
 	    	model.addAttribute("RadiologicReportForm", radiologicReportForm);
-			
+	    	model.addAttribute("menu", "doctor");
 			return "radiologicreport";
 	 
 		}
@@ -591,7 +609,7 @@ public class MainController {
 		
      
        model.addAttribute("radiologicReportForm", radiologicReportForm);
-      
+       model.addAttribute("menu", "doctor");
 		return "viewradiologicreport";
 		
 	}
@@ -603,6 +621,7 @@ public class MainController {
 		 //participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
 		  radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport());
 		  //model.addAttribute("participantsDetailsForm", participantsDetailsForm);
+		  model.addAttribute("menu", "doctor");
 		  	model.addAttribute("radiologicReportForm", radiologicReportForm);
         
 		return "viewradiologicreport";
@@ -617,7 +636,7 @@ public class MainController {
 		//model.addAttribute("participantsDetailsForm", participantsDetailsForm);
 		model.addAttribute("radiologicReportForm", radiologicReportForm);
 		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
-		
+		model.addAttribute("menu", "doctor");
 		return "radiologicReportList";
 	}
 	@RequestMapping(value="/editradiologicreport", method=RequestMethod.GET)
@@ -629,7 +648,7 @@ public class MainController {
         radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport(pid));
 	
 		model.addAttribute("radiologicReportForm", radiologicReportForm);
-		
+		model.addAttribute("menu", "doctor");
 		return "editradiologicreport";
 	}
 	@RequestMapping(value="/updateradiologicreport", method=RequestMethod.POST)
@@ -643,7 +662,7 @@ public class MainController {
 	      radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport(report.getPid()));
 	      
 	        model.addAttribute("radiologicReportForm", radiologicReportForm);
-			    
+	        model.addAttribute("menu", "doctor");    
 		        return "editradiologicreport";
 		}
 		
@@ -656,6 +675,7 @@ public class MainController {
        
         model.addAttribute("radiologicReportForm", radiologicReportForm);
 	       model.addAttribute("success","true");
+	       model.addAttribute("menu", "doctor");
 	        return "viewradiologicreport";
 		
 	}
@@ -673,13 +693,14 @@ public class MainController {
 		//participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
 		radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport());
         model.addAttribute("radiologicReportForm", radiologicReportForm);
-      
+        model.addAttribute("menu", "doctor");
 		}
 		
 		return "viewradiologicreport";
 	}
 	@RequestMapping(value="/workaccident", method = RequestMethod.GET)
 	public String workaccident(ModelMap model) {
+		model.addAttribute("menu", "Accident");
 		return "workaccident";
 		
  
@@ -693,6 +714,7 @@ public class MainController {
 			workaccidentForm.setWorkaccident(workDAO.getWorkaccident());
 			model.addAttribute("WorkaccidentForm",workaccidentForm);
 			model.addAttribute("Success","true");
+			model.addAttribute("menu", "Accident");
 			return "workaccident";
 		}
 		
@@ -704,7 +726,7 @@ public class MainController {
 		WorkaccidentForm workaccidentForm= new WorkaccidentForm();
 		workaccidentForm.setWorkaccident(workDAO.getWorkaccident());
 		model.addAttribute("WorkaccidentForm",workaccidentForm);
-
+		model.addAttribute("menu", "Accident");
 		//System.out.println(autoaccident.getAdjustersname());
 	    
 		
@@ -719,7 +741,7 @@ public class MainController {
 			workaccidentForm.setWorkaccident(workDAO.getWorkaccident());
 			//model.addAttribute("participantsDetailsForm", participantsDetailsForm);
 			model.addAttribute("workaccidentForm", workaccidentForm);
-	
+			model.addAttribute("menu", "Accident");
 		return "viewworkaccident";
 	}
 	@RequestMapping(value="/workAccidentList", method=RequestMethod.GET)
@@ -731,6 +753,7 @@ public class MainController {
 		workaccidentForm.setWorkaccident(workDAO.getWorkaccident(patient_no));
 		//model.addAttribute("participantsDetailsForm", participantsDetailsForm);
 		model.addAttribute("workaccidentForm", workaccidentForm);
+		model.addAttribute("menu", "Accident");
 		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
 		
 		return "workAccidentList";
@@ -743,7 +766,7 @@ public class MainController {
        
        	workaccidentForm.setWorkaccident(workDAO.getWorkaccident(patient_no));
 		model.addAttribute("workaccidentForm",workaccidentForm);
-		
+		model.addAttribute("menu", "Accident");
 		return "editworkaccident";
 	}
 	
@@ -758,7 +781,7 @@ public class MainController {
 	     // radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport(report.getPid()));
 	      workaccidentForm.setWorkaccident(workDAO.getWorkaccident(workAcc.getPatient_no()));
 	        model.addAttribute("workaccidentForm", workaccidentForm);
-			    
+	        model.addAttribute("menu", "Accident");    
 		        return "editworkaccident";
 		}
 		
@@ -769,6 +792,7 @@ public class MainController {
 	      workaccidentForm.setWorkaccident(workDAO.getWorkaccident());
 	        model.addAttribute("workaccidentForm", workaccidentForm);
 	       model.addAttribute("success","true");
+	       model.addAttribute("menu", "Accident");
 	        return "viewworkaccident";
 		
 	}
@@ -783,7 +807,7 @@ public class MainController {
         WorkaccidentForm workaccidentForm= new WorkaccidentForm();
 		workaccidentForm.setWorkaccident(workDAO.getWorkaccident());
 		model.addAttribute("WorkaccidentForm",workaccidentForm);
-      
+		model.addAttribute("menu", "Accident");
 		}
 		
 		return "viewworkaccident";
@@ -793,6 +817,7 @@ public class MainController {
 	public String insuranceinformation(HttpSession session,ModelMap model) {
 		
 		session.removeAttribute("info");
+		model.addAttribute("menu", "health");
 		return "insuranceinformation";
  
 	}
@@ -806,6 +831,7 @@ public class MainController {
 	    	insuranceinformationForm.setInsuranceinformation(infoDAO.getInsuranceinformation());
 			model.addAttribute("InsuranceinformationForm",insuranceinformationForm);
 			model.addAttribute("Success","true");
+			model.addAttribute("menu", "health");
 			return "insuranceinformation";
 	
 		}
@@ -817,7 +843,7 @@ public class MainController {
     	InsuranceinformationForm insuranceinformationForm= new InsuranceinformationForm();
     	insuranceinformationForm.setInsuranceinformation(infoDAO.getInsuranceinformation());
 		model.addAttribute("InsuranceinformationForm",insuranceinformationForm);
-
+		model.addAttribute("menu", "health");
 		//System.out.println(autoaccident.getAdjustersname());
 	    
 		
@@ -827,6 +853,7 @@ public class MainController {
 	@RequestMapping(value="/insuranceverification", method = RequestMethod.GET)
 	public String insuranceverification(HttpSession session,ModelMap model) {
 		session.removeAttribute("veri");
+		model.addAttribute("menu", "admin");
 		return "insuranceverification";
  
 	}
@@ -840,6 +867,7 @@ public class MainController {
 	    	insuranceverificationForm.setInsuranceverification(veriDAO.getInsuranceverification());
 			model.addAttribute("InsuranceverificationForm",insuranceverificationForm);
 			model.addAttribute("Success","true");
+			model.addAttribute("menu", "admin");
 			return "insuranceverification";
 		}
 		
@@ -849,7 +877,7 @@ public class MainController {
     	InsuranceverificationForm insuranceverificationForm= new InsuranceverificationForm();
     	insuranceverificationForm.setInsuranceverification(veriDAO.getInsuranceverification());
 		model.addAttribute("InsuranceverificationForm",insuranceverificationForm);
-
+		model.addAttribute("menu", "admin");
 		//System.out.println(autoaccident.getAdjustersname());
 	    
 		
@@ -858,6 +886,7 @@ public class MainController {
 	@RequestMapping(value="/insuranceplan", method = RequestMethod.GET)
 	public String insuranceplan(HttpSession session,ModelMap model) {
 		session.removeAttribute("waiver");
+		model.addAttribute("menu", "health");
 		return "insuranceplan";
  
 	}
@@ -871,6 +900,7 @@ public class MainController {
 	    	insuranceplanForm.setInsuranceplan(planDAO.getInsuranceplan());
 			model.addAttribute("InsuranceplanForm",insuranceplanForm);
 			model.addAttribute("Success","true");
+			model.addAttribute("menu", "health");
 			return "insuranceplan";
 			
 		}
@@ -880,6 +910,7 @@ public class MainController {
     	InsuranceplanForm insuranceplanForm= new InsuranceplanForm();
     	insuranceplanForm.setInsuranceplan(planDAO.getInsuranceplan());
 		model.addAttribute("InsuranceplanForm",insuranceplanForm);
+		model.addAttribute("menu", "health");
         return "insuranceplan";
 	}
 	
@@ -887,6 +918,7 @@ public class MainController {
 	public String hardshipagreement(HttpSession session,ModelMap model) {
 		
 		session.removeAttribute("hard");
+		model.addAttribute("menu", "authorization");
 		return "hardshipagreement";
  
 	}
@@ -903,6 +935,7 @@ public class MainController {
 	    	hardshipagreementForm.setHardshipagreement(hardDAO.getHardshipagreement());
 			model.addAttribute("HardshipagreementForm",hardshipagreementForm);
 			model.addAttribute("Success","true");
+			model.addAttribute("menu", "authorization");
 			return "hardshipagreement";
 		}
 
@@ -911,7 +944,7 @@ public class MainController {
     	HardshipagreementForm hardshipagreementForm= new HardshipagreementForm();
     	hardshipagreementForm.setHardshipagreement(hardDAO.getHardshipagreement());
 		model.addAttribute("HardshipagreementForm",hardshipagreementForm);
-
+		model.addAttribute("menu", "authorization");
 		//System.out.println(autoaccident.getAdjustersname());
 	    
 		
@@ -920,7 +953,7 @@ public class MainController {
 	
 	@RequestMapping(value="/staffchecklist", method = RequestMethod.GET)
 	public String staffchecklist(HttpSession session,ModelMap model) {
-		
+		model.addAttribute("menu", "admin");
 		session.removeAttribute("staff");
 		return "staffchecklist";
  
@@ -935,6 +968,7 @@ public class MainController {
 	    	staffchecklistForm.setStaffchecklist(staffDAO.getStaffchecklist());
 			model.addAttribute("StaffchecklistForm",staffchecklistForm);
 			model.addAttribute("Success","true");
+			model.addAttribute("menu", "admin");
 			return "staffchecklist";
 		}*/
 		
@@ -944,7 +978,7 @@ public class MainController {
     	StaffchecklistForm staffchecklistForm= new StaffchecklistForm();
     	staffchecklistForm.setStaffchecklist(staffDAO.getStaffchecklist());
 		model.addAttribute("StaffchecklistForm",staffchecklistForm);
-
+		model.addAttribute("menu", "admin");
 		//System.out.println(autoaccident.getAdjustersname());
 	    
 		
@@ -957,7 +991,7 @@ public class MainController {
 		StaffchecklistForm staffchecklistForm= new StaffchecklistForm();
     	staffchecklistForm.setStaffchecklist(staffDAO.getStaffchecklist());
 		model.addAttribute("StaffchecklistForm",staffchecklistForm);
-		
+		model.addAttribute("menu", "admin");
 		return "staffdetails";
  
 	}
@@ -967,7 +1001,7 @@ public class MainController {
 		StaffchecklistForm staffchecklistForm= new StaffchecklistForm();
     	staffchecklistForm.setStaffchecklist(staffDAO.getStaff(form_no));
 		model.addAttribute("StaffchecklistForm",staffchecklistForm);
-		
+		model.addAttribute("menu", "admin");
 		return "viewstaffchecklist";
  
 	}
@@ -978,7 +1012,7 @@ public class MainController {
 		StaffchecklistForm staffchecklistForm= new StaffchecklistForm();
     	staffchecklistForm.setStaffchecklist(staffDAO.getStaffchecklist());
 		model.addAttribute("StaffchecklistForm",staffchecklistForm);
-		
+		model.addAttribute("menu", "admin");
 		return "editstaffchecklist";
 	}
 
@@ -992,7 +1026,7 @@ public class MainController {
 			InsuranceplanForm insuranceplanForm = new InsuranceplanForm();
 	     //   participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants(participant.getParticipants_id()));
 	      insuranceplanForm.setInsuranceplan(planDAO.getPlan(insuranceplan.getNo()));
-	      
+	      model.addAttribute("menu", "admin");
 	        model.addAttribute("insuranceplanForm", insuranceplanForm);
 			    
 		        return "editinsuranceplan";
@@ -1007,6 +1041,7 @@ public class MainController {
        
         model.addAttribute("StaffchecklistForm", staffchecklistForm);
 	       model.addAttribute("success","true");
+	       model.addAttribute("menu", "admin");
 	        return "viewstaffchecklist";
 		
 	}
@@ -1023,7 +1058,7 @@ public class MainController {
 		//participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
 		staffchecklistForm.setStaffchecklist(staffDAO.getStaffchecklist());
         model.addAttribute("StaffchecklistForm", staffchecklistForm);
-      
+        model.addAttribute("menu", "admin");
 		}
 		
 		return "staffchecklist";
@@ -1100,12 +1135,14 @@ public class MainController {
 	public String treatform(HttpSession session, ModelMap model)
 	{
 		session.removeAttribute("consent");
+		model.addAttribute("menu", "consent");
 		return "treatform";
 	}
 	@RequestMapping(value="/treatminor",method=RequestMethod.GET)
 	public String treatminor(HttpSession session,ModelMap model)
 	{
 		session.removeAttribute("minor");
+		model.addAttribute("menu", "consent");
 		return "treatminor";
 	}
 	
@@ -1114,6 +1151,7 @@ public class MainController {
 	public String medicalrecords(HttpSession session,ModelMap model)
 	{
 		session.removeAttribute("medical");
+		model.addAttribute("menu", "authorization");
 		return "medicalrecords";
 	}
 	
@@ -1128,6 +1166,7 @@ public class MainController {
 				medicalrecordsform.setMedicalDetails(medicalDAO.getMedicalDetails());
 				model.addAttribute("MedicalRecordsForm",medicalrecordsform);
 				model.addAttribute("success","true");
+				model.addAttribute("menu", "authorization");
 				return "medicalrecords";
 
 			}
@@ -1137,7 +1176,7 @@ public class MainController {
         MedicalRecordsForm medicalrecordsform= new MedicalRecordsForm();
 		medicalrecordsform.setMedicalDetails(medicalDAO.getMedicalDetails());
 		model.addAttribute("MedicalRecordsForm",medicalrecordsform);
-
+		model.addAttribute("menu", "authorization");
 		System.out.println("MedicalRecords");
 	    
 		return "medicalrecords";
@@ -1150,7 +1189,7 @@ public class MainController {
 		MedicalRecordsForm medicalrecordsform= new MedicalRecordsForm();
 		medicalrecordsform.setMedicalDetails(medicalDAO.getMedicalDetails());
 		model.addAttribute("MedicalRecordsForm",medicalrecordsform);
-		
+		model.addAttribute("menu", "authorization");
 		return "medicalrecordslist";
  
 	}
@@ -1160,7 +1199,7 @@ public class MainController {
 		MedicalRecordsForm medicalrecordsform= new MedicalRecordsForm();
 		medicalrecordsform.setMedicalDetails(medicalDAO.getMedicalDetails(medical_no));
 		model.addAttribute("MedicalRecordsForm",medicalrecordsform);
-		
+		model.addAttribute("menu", "authorization");
 		return "viewmedicalrecords";
  
 	}
@@ -1171,7 +1210,7 @@ public class MainController {
 		MedicalRecordsForm medicalrecordsform= new MedicalRecordsForm();
 		medicalrecordsform.setMedicalDetails(medicalDAO.getMedicalDetails());
 		model.addAttribute("MedicalRecordsForm",medicalrecordsform);
-		
+		model.addAttribute("menu", "authorization");
 		return "editmedical";
 	}
 	
@@ -1186,7 +1225,7 @@ public class MainController {
 	      insuranceplanForm.setInsuranceplan(planDAO.getPlan(insuranceplan.getNo()));
 	      
 	        model.addAttribute("insuranceplanForm", insuranceplanForm);
-			    
+			    model.addAttribute("menu", "authorization");
 		        return "editinsuranceplan";
 		}*/
 		
@@ -1198,6 +1237,7 @@ public class MainController {
         medicalrecordForm.setMedicalDetails(medicalDAO.getMedicalDetails());
        
         model.addAttribute("MedicalRecordsForm", medicalrecordForm);
+        model.addAttribute("menu", "authorization");
 	       model.addAttribute("success","true");
 	        return "viewmedicalrecords";
 		
@@ -1215,6 +1255,7 @@ public class MainController {
 		//participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
 		medicalrecordsForm.setMedicalDetails(medicalDAO.getMedicalDetails());
         model.addAttribute("MedicalRecordsForm", medicalrecordsForm);
+        model.addAttribute("menu", "authorization");
       
 		}
 		
@@ -1226,6 +1267,7 @@ public class MainController {
 	public String screeningAuthz(HttpSession session,ModelMap model)
 	{
 		session.removeAttribute("screen");
+		model.addAttribute("menu", "authorization");
 		return "screeningAuthz";
 	}
 	@RequestMapping(value="/screeningAuthz", method=RequestMethod.POST)
@@ -1239,6 +1281,7 @@ public class MainController {
 			screeningauthzform.setScreeningDetails(screenDAO.getScreeningDetails());
 			model.addAttribute("ScreeningAuthzForm",screeningauthzform);
 			model.addAttribute("success","true");
+			model.addAttribute("menu", "authorization");
 			return "screeningAuthz";
 	    }
 		
@@ -1248,7 +1291,7 @@ public class MainController {
         ScreeningAuthzForm screeningauthzform= new ScreeningAuthzForm();
 		screeningauthzform.setScreeningDetails(screenDAO.getScreeningDetails());
 		model.addAttribute("ScreeningAuthzForm",screeningauthzform);
-		
+		model.addAttribute("menu", "authorization");
 		System.out.println("Screening");
 		
 		//Show view page
@@ -1261,7 +1304,7 @@ public class MainController {
 		ScreeningAuthzForm screeningauthzForm= new ScreeningAuthzForm();
     	screeningauthzForm.setScreeningDetails(screenDAO.getScreeningDetails());
 		model.addAttribute("ScreeningAuthzForm",screeningauthzForm);
-		
+		model.addAttribute("menu", "authorization");
 		return "screeninglist";
  
 	}
@@ -1272,7 +1315,7 @@ public class MainController {
 		ScreeningAuthzForm screeningauthzForm= new ScreeningAuthzForm();
     	screeningauthzForm.setScreeningDetails(screenDAO.getScreening(screen_no));
 		model.addAttribute("ScreeningAuthzForm",screeningauthzForm);
-		
+		model.addAttribute("menu", "authorization");
 		return "viewscreeningauthz";
  
 	}
@@ -1282,7 +1325,7 @@ public class MainController {
 		ScreeningAuthzForm screeningauthzForm= new ScreeningAuthzForm();
     	screeningauthzForm.setScreeningDetails(screenDAO.getScreeningDetails());
 		model.addAttribute("ScreeningAuthzForm",screeningauthzForm);
-		
+		model.addAttribute("menu", "authorization");
 		return "editscreeningauthz";
 	}
 	
@@ -1297,7 +1340,7 @@ public class MainController {
 	      insuranceplanForm.setInsuranceplan(planDAO.getPlan(insuranceplan.getNo()));
 	      
 	        model.addAttribute("insuranceplanForm", insuranceplanForm);
-			    
+			    model.addAttribute("menu", "authorization");
 		        return "editinsuranceplan";
 		}*/
 		
@@ -1310,6 +1353,7 @@ public class MainController {
        
         model.addAttribute("ScreeningAuthzForm", screeningauthzForm);
 	       model.addAttribute("success","true");
+	       model.addAttribute("menu", "authorization");
 	        return "viewscreeningauthz";
 		
 	}
@@ -1326,7 +1370,7 @@ public class MainController {
 		//participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
 		screeningauthzForm.setScreeningDetails(screenDAO.getScreeningDetails());
         model.addAttribute("ScreeningAuthzForm", screeningauthzForm);
-      
+        model.addAttribute("menu", "authorization");
 		}
 		
 		return "screeningAuthz";
@@ -1340,6 +1384,7 @@ public class MainController {
 		public String Assignment(HttpSession session,ModelMap model)
 		{
 			session.removeAttribute("assignment");
+			model.addAttribute("menu", "authorization");
 			return "Assignment";
 		}
 			
@@ -1355,6 +1400,7 @@ public class MainController {
 				assignmentdetailsform.setAssignmentDetails(assignmentDAO.getAssignmentDetails());
 				model.addAttribute("AssignmentDetailsForm",assignmentdetailsform);
 				model.addAttribute("success","true");
+				model.addAttribute("menu", "authorization");
 				return "Assignment";
 			}
 				
@@ -1363,7 +1409,7 @@ public class MainController {
          AssignmentDetailsForm assignmentdetailsform= new AssignmentDetailsForm();
 		assignmentdetailsform.setAssignmentDetails(assignmentDAO.getAssignmentDetails());
 		model.addAttribute("AssignmentDetailsForm",assignmentdetailsform);
-
+		model.addAttribute("menu", "authorization");
 		System.out.println("assignment");
 	    
 		return "Assignment";
@@ -1377,7 +1423,7 @@ public class MainController {
 		 AssignmentDetailsForm assignmentdetailsform= new AssignmentDetailsForm();
 			assignmentdetailsform.setAssignmentDetails(assignmentDAO.getAssignmentDetails());
 			model.addAttribute("AssignmentDetailsForm",assignmentdetailsform);
-		
+			model.addAttribute("menu", "authorization");
 		
 		return "assignmentlist";
  
@@ -1390,7 +1436,7 @@ public class MainController {
 		 AssignmentDetailsForm assignmentdetailsform= new AssignmentDetailsForm();
 			assignmentdetailsform.setAssignmentDetails(assignmentDAO.getAssignment(assignment_no));
 			model.addAttribute("AssignmentDetailsForm",assignmentdetailsform);
-		
+			model.addAttribute("menu", "authorization");
 		return "viewassignment";
  
 	}
@@ -1401,7 +1447,7 @@ public class MainController {
 		AssignmentDetailsForm assignmentdetailsform= new AssignmentDetailsForm();
     	assignmentdetailsform.setAssignmentDetails(assignmentDAO.getAssignmentDetails());
 		model.addAttribute("AssignmentDetailsForm",assignmentdetailsform);
-		
+		model.addAttribute("menu", "authorization");
 		return "editassignment";
 	}
 	
@@ -1416,7 +1462,7 @@ public class MainController {
 	      insuranceplanForm.setInsuranceplan(planDAO.getPlan(insuranceplan.getNo()));
 	      
 	        model.addAttribute("insuranceplanForm", insuranceplanForm);
-			    
+			model.addAttribute("menu", "authorization");    
 		        return "editinsuranceplan";
 		}*/
 		
@@ -1430,6 +1476,7 @@ public class MainController {
        
         model.addAttribute("AssignmentDetailsForm", assignmentdetailsform);
 	       model.addAttribute("success","true");
+	       model.addAttribute("menu", "authorization");
 	        return "viewassignment";
 		
 	}
@@ -1446,7 +1493,7 @@ public class MainController {
 		//participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
 		assignmentdetailsform.setAssignmentDetails(assignmentDAO.getAssignmentDetails());
         model.addAttribute("AssignmentDetailsForm", assignmentdetailsform);
-      
+        model.addAttribute("menu", "authorization");
 		}
 		
 		return "Assignment";
@@ -1456,6 +1503,7 @@ public class MainController {
 	public String Hippaprivacy(HttpSession session,ModelMap model)
 	{
 		session.removeAttribute("hippa");
+		model.addAttribute("menu", "authorization");
 		return "Hippaprivacy";
 	}
 	
@@ -1470,6 +1518,7 @@ public class MainController {
 				hippaprivacyform.setPrivacyDetails(hippaDAO.getPrivacyDetails());
 				model.addAttribute("HippaPrivacyForm",hippaprivacyform);
 				model.addAttribute("success","true");
+				model.addAttribute("menu", "authorization");
 				return "Hippaprivacy";
 			}
 
@@ -1479,7 +1528,7 @@ public class MainController {
 		HippaPrivacyForm hippaprivacyform= new HippaPrivacyForm();
 		hippaprivacyform.setPrivacyDetails(hippaDAO.getPrivacyDetails());
 		model.addAttribute("HippaPrivacyForm",hippaprivacyform);
-
+		model.addAttribute("menu", "authorization");
 		System.out.println("Hippa");
 	    
 		return "Hippaprivacy";
@@ -1490,7 +1539,7 @@ public class MainController {
 		HippaPrivacyForm hippaprivacyform= new HippaPrivacyForm();
 		hippaprivacyform.setPrivacyDetails(hippaDAO.getPrivacyDetails());
 		model.addAttribute("HippaPrivacyForm",hippaprivacyform);
-		
+		model.addAttribute("menu", "authorization");
 		return "hippalist";
  
 	}
@@ -1501,7 +1550,7 @@ public class MainController {
 		HippaPrivacyForm hippaprivacyform= new HippaPrivacyForm();
 		hippaprivacyform.setPrivacyDetails(hippaDAO.getHippa(hippa_no));
 		model.addAttribute("HippaPrivacyForm",hippaprivacyform);
-		
+		model.addAttribute("menu", "authorization");
 		return "viewhippa";
  
 	}
@@ -1511,7 +1560,7 @@ public class MainController {
 		HippaPrivacyForm hippaprivacyform= new HippaPrivacyForm();
     	hippaprivacyform.setPrivacyDetails(hippaDAO.getPrivacyDetails());
 		model.addAttribute("HippaPrivacyForm",hippaprivacyform);
-		
+		model.addAttribute("menu", "authorization");
 		return "edithippaprivacy";
 	}
 	
@@ -1526,7 +1575,7 @@ public class MainController {
 	      insuranceplanForm.setInsuranceplan(planDAO.getPlan(insuranceplan.getNo()));
 	      
 	        model.addAttribute("insuranceplanForm", insuranceplanForm);
-			    
+			  model.addAttribute("menu", "authorization");  
 		        return "editinsuranceplan";
 		}*/
 		
@@ -1539,6 +1588,7 @@ public class MainController {
        
         model.addAttribute("HippaPrivacyForm", hippaprivacyform);
 	       model.addAttribute("success","true");
+	       model.addAttribute("menu", "authorization");
 	        return "viewhippa";
 		
 	}
@@ -1555,7 +1605,7 @@ public class MainController {
 		//participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
 		hippaprivacyForm.setPrivacyDetails(hippaDAO.getPrivacyDetails());
         model.addAttribute("HippaPrivacyDetails", hippaprivacyForm);
-      
+        model.addAttribute("menu", "authorization");
 		}
 		
 		return "Hippaprivacy";
@@ -1572,6 +1622,7 @@ public class MainController {
 			treatform.setTreatform(treatDAO.getTreatDetails());
 			model.addAttribute("TreatDetailsForm",treatform);
 			model.addAttribute("success","true");
+			model.addAttribute("menu", "consent");
 			return "treatform";
 		}
 		
@@ -1580,6 +1631,7 @@ public class MainController {
          TreatForm treatform= new TreatForm();
 		treatform.setTreatform(treatDAO.getTreatDetails());
 		model.addAttribute("TreatDetailsForm",treatform);
+		model.addAttribute("menu", "consent");
 
 		System.out.println("treat");
 	    
@@ -1598,6 +1650,7 @@ public class MainController {
 			treatminordetailsform.setMinorDetails(minorDAO.getMinorDetails());
 			model.addAttribute("TreatMinorDetailsForm",treatminordetailsform);
 			model.addAttribute("success","true");
+			model.addAttribute("menu", "consent");
 			return "treatminor";
 		}
 			
@@ -1606,7 +1659,7 @@ public class MainController {
          TreatMinorDetailsForm treatminordetailsform= new TreatMinorDetailsForm();
 		treatminordetailsform.setMinorDetails(minorDAO.getMinorDetails());
 		model.addAttribute("TreatMinorDetailsForm",treatminordetailsform);
-
+		model.addAttribute("menu", "consent");
 		System.out.println("treatminor");
 	    
 		return "treatminor";
@@ -1623,11 +1676,14 @@ public class MainController {
 		patientdetailsform.setPatientDetails(patientDAO.getPatientDetails());
 		model.addAttribute("PatientDetailsForm",patientdetailsform);
 		 model.addAttribute("noofrows",patientDAO.getPatientDetails().size());
+		 model.addAttribute("menu", "patientInfo");
 		return "patientDetails";
 	}
 	@RequestMapping(value="/patientDetails", method = RequestMethod.POST)
-	public String insert_patientdetails(HttpSession session,@ModelAttribute("PatientDetails")  @Valid PatientDetails patientDetails,BindingResult result,ModelMap model) {
+	public String insert_patientdetails(HttpServletRequest request,HttpSession session,@ModelAttribute("PatientDetails")  @Valid PatientDetails patientDetails,BindingResult result,ModelMap model) {
 		session.setAttribute("patient",patientDetails);
+		String type= request.getParameter("Type_Of_Accident");
+		System.out.println("type of accident="+type);
 		
 		if(result.hasErrors())
 			{
@@ -1636,6 +1692,7 @@ public class MainController {
 				patientDetailsForm.setPatientDetails(patientDAO.getPatientDetails());
 				model.addAttribute("PatientDetailsForm",patientDetailsForm);
 				model.addAttribute("Success","true");
+				model.addAttribute("menu", "patientInfo");
 				return "patientDetails";
 			}
 			int a = patientDAO.setPatientDetails(patientDetails);
@@ -1648,6 +1705,9 @@ public class MainController {
 		    /*request.setAttribute("major",age);*/
 		    model.addAttribute("age",age);
 			model.addAttribute("PatientDetailsForm",patientDetailsForm);
+			model.addAttribute("menu", "patientInfo");
+			return  type;
+	 
 	        return "patientDetails";
 		}
 	
@@ -1660,6 +1720,7 @@ public class MainController {
 		patientdetailsform.setPatientDetails(patientDAO.getPatientDetails());
         model.addAttribute("patientdetailsform", patientdetailsform);
         System.out.println("patient="+patientdetailsform.getPatientDetails().size());
+        model.addAttribute("menu", "patientInfo");
         System.out.println("Patient");
 		return "viewpatient";
 	}
@@ -1673,7 +1734,7 @@ public class MainController {
 		//model.addAttribute("participantsDetailsForm", participantsDetailsForm);
 		model.addAttribute("patientDetailsForm", patientDetailsForm);
 		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
-		
+		model.addAttribute("menu", "patientInfo");
 		return "patientDetailsList";
 	}
 	@RequestMapping(value="/editpatientdetails", method=RequestMethod.GET)
@@ -1685,7 +1746,7 @@ public class MainController {
       //  radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport(pid));
         patientDetailsForm.setPatientDetails(patientDAO.viewPatientDetails(patient_id));
         model.addAttribute("patientDetailsForm", patientDetailsForm);
-		
+        model.addAttribute("menu", "patientInfo");
 		return "editpatientdetails";
 	}
 	@RequestMapping(value="/updatepatientdetails", method=RequestMethod.POST)
@@ -1699,7 +1760,7 @@ public class MainController {
 	    //  radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport(report.getPid()));
 	      patientDetailsForm.setPatientDetails(patientDAO.viewPatientDetails(patient.getPatient_id()));
 	        model.addAttribute("patientDetailsForm", patientDetailsForm);
-			    
+			    model.addAttribute("menu", "patientInfo");
 		        return "editpatientdetails";
 		}*/
 		
@@ -1711,11 +1772,12 @@ public class MainController {
 		patientdetailsform.setPatientDetails(patientDAO.getPatientDetails());
         model.addAttribute("patientdetailsform", patientdetailsform);
         model.addAttribute("success","true");
+        model.addAttribute("menu", "patientInfo");
 	        return "viewpatient";
 		
 	}
 
-	@RequestMapping(value="/deleteradoiologicreport", method=RequestMethod.GET)
+	@RequestMapping(value="/deletepatientdetails", method=RequestMethod.GET)
 	public String removePatientDetails(@RequestParam("patient_id") String patient_id,ModelMap model, Principal principal) {
 	
 		int status = patientDAO.deletePatientDetails(patient_id,  principal.getName());
@@ -1727,6 +1789,7 @@ public class MainController {
         //radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport());
        patientDetailsForm.setPatientDetails(patientDAO.getPatientDetails());
         model.addAttribute("patientDetailsForm", patientDetailsForm);
+        model.addAttribute("menu", "patientInfo");
 		}
 		
 		return "viewpatient";
@@ -1739,7 +1802,7 @@ public class MainController {
 		HardshipagreementForm hardshipagreementForm= new HardshipagreementForm();
     	hardshipagreementForm.setHardshipagreement(hardDAO.getHardshipagreement());
 		model.addAttribute("hardshipagreementform",hardshipagreementForm);
-		
+		model.addAttribute("menu", "authorization");
 		return "hardshiplist";
  
 	}
@@ -1753,7 +1816,7 @@ public class MainController {
 		hardshipagreementForm.setHardshipagreement(hardDAO.getHardshipagreement(agreement_no));
 	
 		model.addAttribute("hardshipagreementform",hardshipagreementForm);
-		
+		model.addAttribute("menu", "authorization");
 		
 		return "viewhardship";
 	}
@@ -1764,7 +1827,7 @@ public class MainController {
 		InsuranceinformationForm insuranceinformationForm= new InsuranceinformationForm();
     	insuranceinformationForm.setInsuranceinformation(infoDAO.getInsuranceinformation());
 		model.addAttribute("InsuranceinformationForm",insuranceinformationForm);
-		
+		model.addAttribute("menu", "health");
 		return "insuranceinfolist";
  
 	}
@@ -1775,7 +1838,7 @@ public class MainController {
 		InsuranceinformationForm insuranceinformationForm= new InsuranceinformationForm();
     	insuranceinformationForm.setInsuranceinformation(infoDAO.getInsuranceinformation(number));
 		model.addAttribute("InsuranceinformationForm",insuranceinformationForm);
-		
+		model.addAttribute("menu", "health");
 		return "viewinsuranceinformation";
  
 	}
@@ -1785,7 +1848,7 @@ public class MainController {
 		InsuranceplanForm insuranceplanForm= new InsuranceplanForm();
     	insuranceplanForm.setInsuranceplan(planDAO.getInsuranceplan());
 		model.addAttribute("insuranceplanform",insuranceplanForm);
-		
+		model.addAttribute("menu", "health");
 		return "insuranceplanlist";
  
 	}
@@ -1796,7 +1859,7 @@ public class MainController {
 		InsuranceplanForm insuranceplanForm= new InsuranceplanForm();
     	insuranceplanForm.setInsuranceplan(planDAO.getInsurance(no));
 		model.addAttribute("insuranceplanform",insuranceplanForm);
-		
+		model.addAttribute("menu", "health");
 		return "viewinsuranceplan";
  
 	}
@@ -1806,7 +1869,7 @@ public class MainController {
 		InsuranceplanForm insuranceplanForm= new InsuranceplanForm();
     	insuranceplanForm.setInsuranceplan(planDAO.getInsuranceplan());
 		model.addAttribute("insuranceplanform",insuranceplanForm);
-		
+		model.addAttribute("menu", "health");
 		return "editinsuranceplan";
  
 	}
@@ -1821,7 +1884,7 @@ public class MainController {
 	      insuranceplanForm.setInsuranceplan(planDAO.getPlan(insuranceplan.getNo()));
 	      
 	        model.addAttribute("insuranceplanForm", insuranceplanForm);
-			    
+			    model.addAttribute("menu", "health");
 		        return "editinsuranceplan";
 		}*/
 		
@@ -1834,6 +1897,7 @@ public class MainController {
        
         model.addAttribute("insuranceplanform", insuranceplanForm);
 	       model.addAttribute("success","true");
+	       model.addAttribute("menu", "health");
 	        return "viewinsuranceplan";
 		
 	}
@@ -1851,7 +1915,7 @@ public class MainController {
 		//participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
 		insuranceplanForm.setInsuranceplan(planDAO.getInsuranceplan());
         model.addAttribute("insuranceplanform", insuranceplanForm);
-      
+        model.addAttribute("menu", "health");
 		}
 		
 		return "insuranceplan";
@@ -1863,7 +1927,7 @@ public class MainController {
 		InsuranceverificationForm insuranceverificationForm= new InsuranceverificationForm();
     	insuranceverificationForm.setInsuranceverification(veriDAO.getInsuranceverification());
 		model.addAttribute("InsuranceverificationForm",insuranceverificationForm);
-		
+		  model.addAttribute("menu", "admin");
 		return "insuranceverifylist";
  
 	}
@@ -1874,7 +1938,7 @@ public class MainController {
 		InsuranceverificationForm insuranceverificationForm= new InsuranceverificationForm();
     	insuranceverificationForm.setInsuranceverification(veriDAO.getInsuranceverification(form_no));
 		model.addAttribute("InsuranceverificationForm",insuranceverificationForm);
-		
+		 model.addAttribute("menu", "admin");
 		return "viewinsuranceverification";
  
 	}
@@ -1890,7 +1954,7 @@ public class MainController {
 		treatform.setTreatform(treatDAO.getTreatDetails());
 		System.out.println(treatform);
 		model.addAttribute("treatform",treatform);
-
+		 model.addAttribute("menu", "admin");
 		
 		return "treatformlist";
  
@@ -1905,6 +1969,7 @@ public class MainController {
 		treatform.setTreatform(treatDAO.getTreatDetails(treat_no));
 		System.out.println(treatform);
 		model.addAttribute("treatform",treatform);
+		 model.addAttribute("menu", "consent");
 		return "viewtreatform";
  
 	}
@@ -1915,7 +1980,7 @@ public class MainController {
 		 TreatForm treatform= new TreatForm();
 			treatform.setTreatform(treatDAO.getTreatDetails());
 			model.addAttribute("treatform",treatform);
-
+			 model.addAttribute("menu", "consent");
 		
 		return "edittreatform";
 		
@@ -1942,6 +2007,7 @@ public class MainController {
 			treatform.setTreatform(treatDAO.getTreatDetails());
 			model.addAttribute("treatform",treatform);
 	       model.addAttribute("success","true");
+	       model.addAttribute("menu", "consent");
 	        return "viewtreatform";
 		
 	}
@@ -1958,6 +2024,7 @@ public class MainController {
         TreatForm treatform= new TreatForm();
 		treatform.setTreatform(treatDAO.getTreatDetails());
 		model.addAttribute("treatform",treatform);
+		 model.addAttribute("menu", "consent");
 		}
 		
 		return "treatform";
@@ -1969,7 +2036,7 @@ public class MainController {
 		TreatMinorDetailsForm treatminordetailsForm= new TreatMinorDetailsForm();
 		treatminordetailsForm.setMinorDetails(minorDAO.getMinorDetails());
 		model.addAttribute("treatminordetailsform",treatminordetailsForm);
-		
+		 model.addAttribute("menu", "consent");
 		return "treatminorlist";
  
 	}
@@ -1981,6 +2048,7 @@ public class MainController {
 		TreatMinorDetailsForm treatminordetailsForm= new TreatMinorDetailsForm();
 		treatminordetailsForm.setMinorDetails(minorDAO.getMinorDetails(minor_no));
 		model.addAttribute("treatminordetailsform",treatminordetailsForm);
+		 model.addAttribute("menu", "consent");
 		return "viewtreatminor";
  
 	}
@@ -1991,7 +2059,7 @@ public class MainController {
 		TreatMinorDetailsForm treatminordetailsForm= new TreatMinorDetailsForm();
 		treatminordetailsForm.setMinorDetails(minorDAO.getMinorDetails());
 		model.addAttribute("treatminordetailsform",treatminordetailsForm);
-		
+		 model.addAttribute("menu", "consent");
 		return "edittreatminor";
 		
  
@@ -2006,7 +2074,7 @@ public class MainController {
 	      insuranceplanForm.setInsuranceplan(planDAO.getPlan(insuranceplan.getNo()));
 	      
 	        model.addAttribute("insuranceplanForm", insuranceplanForm);
-			    
+			 model.addAttribute("menu", "consent");    
 		        return "editinsuranceplan";
 		}*/
 		
@@ -2016,6 +2084,7 @@ public class MainController {
 		treatminordetailsForm.setMinorDetails(minorDAO.getMinorDetails());
 		model.addAttribute("treatminordetailsform",treatminordetailsForm);
 	       model.addAttribute("success","true");
+	       model.addAttribute("menu", "consent");
 	        return "viewtreatminor";
 		
 	}
@@ -2033,6 +2102,7 @@ public class MainController {
         TreatMinorDetailsForm treatminordetailsForm= new TreatMinorDetailsForm();
 		treatminordetailsForm.setMinorDetails(minorDAO.getMinorDetails());
 		model.addAttribute("treatminordetailsform",treatminordetailsForm);
+		 model.addAttribute("menu", "consent");
 		}
 		return "treatminor";
 	}
@@ -2045,7 +2115,7 @@ public class MainController {
 		HardshipagreementForm hardshipagreementForm= new HardshipagreementForm();
     	hardshipagreementForm.setHardshipagreement(hardDAO.getHardshipagreement());
 		model.addAttribute("hardshipagreementform",hardshipagreementForm);
-		
+		 model.addAttribute("menu", "authorization");
 		return "edithardship";
 		
  
@@ -2062,7 +2132,7 @@ public class MainController {
 	      insuranceplanForm.setInsuranceplan(planDAO.getPlan(insuranceplan.getNo()));
 	      
 	        model.addAttribute("insuranceplanForm", insuranceplanForm);
-			    
+			 model.addAttribute("menu", "authorization");    
 		        return "editinsuranceplan";
 		}*/
 		
@@ -2072,6 +2142,7 @@ public class MainController {
     	hardshipagreementForm.setHardshipagreement(hardDAO.getHardshipagreement());
 		model.addAttribute("hardshipagreementform",hardshipagreementForm);
 	       model.addAttribute("success","true");
+	       model.addAttribute("menu", "authorization");
 	        return "viewhardship";
 		
 	}
@@ -2089,7 +2160,7 @@ public class MainController {
         HardshipagreementForm hardshipagreementForm= new HardshipagreementForm();
     	hardshipagreementForm.setHardshipagreement(hardDAO.getHardshipagreement());
 		model.addAttribute("hardshipagreementform",hardshipagreementForm);		}
-		
+		 model.addAttribute("menu", "authorization");
 		return "hardshiplist";
 	}
 	
@@ -2099,7 +2170,7 @@ public class MainController {
 		InsuranceinformationForm insuranceinformationForm= new InsuranceinformationForm();
     	insuranceinformationForm.setInsuranceinformation(infoDAO.getInsuranceinformation());
 		model.addAttribute("InsuranceinformationForm",insuranceinformationForm);
-		
+		 model.addAttribute("menu", "health");
 		return "editinsuranceinformation";
 	}
 	
@@ -2115,6 +2186,7 @@ public class MainController {
     	insuranceinformationForm.setInsuranceinformation(infoDAO.getInsuranceinformation());
 		model.addAttribute("InsuranceinformationForm",insuranceinformationForm);   
 		model.addAttribute("success","true");
+		 model.addAttribute("menu", "health");
 	        return "viewinsuranceinformation";
 		
 	}
@@ -2130,7 +2202,8 @@ public class MainController {
 		
         InsuranceinformationForm insuranceinformationForm= new InsuranceinformationForm();
     	insuranceinformationForm.setInsuranceinformation(infoDAO.getInsuranceinformation());
-		model.addAttribute("InsuranceinformationForm",insuranceinformationForm);       
+		model.addAttribute("InsuranceinformationForm",insuranceinformationForm);
+		 model.addAttribute("menu", "health");
 		}
 	return "insuranceinformation";
 	}
@@ -2141,7 +2214,7 @@ public class MainController {
 		InsuranceverificationForm insuranceverificationForm= new InsuranceverificationForm();
     	insuranceverificationForm.setInsuranceverification(veriDAO.getInsuranceverification());
 		model.addAttribute("InsuranceverificationForm",insuranceverificationForm);
-		
+		 model.addAttribute("menu", "admin");
 		return "editinsuranceverification";
 	}
 	
@@ -2160,6 +2233,7 @@ public class MainController {
     	insuranceverificationForm.setInsuranceverification(veriDAO.getInsuranceverification());
 		model.addAttribute("InsuranceverificationForm",insuranceverificationForm);    
 		model.addAttribute("success","true");
+		 model.addAttribute("menu", "admin");
 	        return "viewinsuranceverification";
 		
 	}
@@ -2176,7 +2250,8 @@ public class MainController {
 		
         InsuranceverificationForm insuranceverificationForm= new InsuranceverificationForm();
     	insuranceverificationForm.setInsuranceverification(veriDAO.getInsuranceverification());
-		model.addAttribute("InsuranceverificationForm",insuranceverificationForm);    
+		model.addAttribute("InsuranceverificationForm",insuranceverificationForm);  
+		 model.addAttribute("menu", "admin");
 		}
 		return "insuranceverification";
 	}
@@ -2188,7 +2263,7 @@ public class MainController {
 		StaffchecklistForm staffchecklistForm= new StaffchecklistForm();
     	staffchecklistForm.setStaffchecklist(staffDAO.getStaffchecklist());
 		model.addAttribute("StaffchecklistForm",staffchecklistForm);
-		
+				 model.addAttribute("menu", "admin");
 		return "editstaffchecklist";
 	}*/
 
@@ -2280,7 +2355,7 @@ public class MainController {
     	MoretestForm moretestForm= new MoretestForm();
     	moretestForm.setMoretest(moreDAO.getMoretest());
 		model.addAttribute("Moretest",moretestForm);
-
+		 model.addAttribute("menu", "doctor");
 		
 		
 
@@ -2289,6 +2364,7 @@ public class MainController {
 	}
 		@RequestMapping(value="/soapnotes", method = RequestMethod.GET)
 	public String soapnotes(ModelMap model) {
+			model.addAttribute("menu", "doctor");
 	      return "soapnotes";
 	}
 	
@@ -2300,6 +2376,7 @@ public class MainController {
 				radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport());
 				model.addAttribute("RadiologicReportForm",radiologicReportForm);
 				model.addAttribute("Success","true");
+				model.addAttribute("menu", "doctor");
 				return "radiologicreport";
 			}
 		*/
@@ -2309,6 +2386,7 @@ public class MainController {
 			soapnotesForm.setSoapnotes(soapDAO.getSoapnotes());
 			model.addAttribute("SoapnotesForm", soapnotesForm);
 			model.addAttribute("Success","true");
+			model.addAttribute("menu", "doctor");
 			return "soapnotes";
 		}
 		model.put("SoapNotes", soapnotes);
@@ -2317,6 +2395,7 @@ public class MainController {
     	SoapnotesForm soapnotesForm= new SoapnotesForm();
     	soapnotesForm.setSoapnotes(soapDAO.getSoapnotes());
 		model.addAttribute("SoapnotesForm",soapnotesForm);
+		model.addAttribute("menu", "doctor");
 		return "soapnotes";
  
 	}
@@ -2329,6 +2408,7 @@ public class MainController {
         soapnotesForm.setSoapnotes(soapDAO.getSoap(soapid));
 	
 		model.addAttribute("soapnotesForm", soapnotesForm);
+		model.addAttribute("menu", "doctor");
 		
 		return "editsoapnotes";
 	}
@@ -2344,7 +2424,7 @@ public class MainController {
 	      soapnotesForm.setSoapnotes(soapDAO.getSoap(soapnotes.getSoapid()));
 	      
 	        model.addAttribute("soapnotesForm", soapnotesForm);
-			    
+	        model.addAttribute("menu", "doctor");    
 		        return "editsoapnotes";
 		}
 		System.out.println("soapid"+soapnotes.getSoapid());
@@ -2357,6 +2437,7 @@ public class MainController {
        
         model.addAttribute("soapnotesForm", soapnotesForm);
 	       model.addAttribute("success","true");
+	       model.addAttribute("menu", "doctor");
 	        return "viewsoapnotes";
 		
 	}
@@ -2371,7 +2452,7 @@ public class MainController {
 		 soapnotesForm.setSoapnotes(soapDAO.getSoapnotes());
 		  //model.addAttribute("participantsDetailsForm", participantsDetailsForm);
 		  	model.addAttribute("soapnotesForm", soapnotesForm);
-        
+		  	model.addAttribute("menu", "doctor");
 		return "viewsoapnotes";
 	}
 	@RequestMapping(value="/soapNotesList", method=RequestMethod.GET)
@@ -2384,7 +2465,7 @@ public class MainController {
 		//model.addAttribute("participantsDetailsForm", participantsDetailsForm);
 		model.addAttribute("soapnotesForm", soapnotesForm);
 		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
-		
+		model.addAttribute("menu", "doctor");
 		return "soapNotesList";
 	}
 	@RequestMapping(value="/deletesoapnotes", method=RequestMethod.GET)
@@ -2398,7 +2479,7 @@ public class MainController {
 		SoapnotesForm soapnotesForm = new SoapnotesForm();
 		soapnotesForm.setSoapnotes(soapDAO.getSoapnotes());
         model.addAttribute("soapnotesForm", soapnotesForm);
-      
+        model.addAttribute("menu", "doctor");
 		}
 		
 		return "viewsoapnotes";

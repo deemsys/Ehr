@@ -363,7 +363,7 @@ ul.pagination li.page a:hover {
 /* ----------------------------- Menu Portion ----------------------- */
 .menu {
 	margin:16px 0 0 10px;
-	height:33px;
+	height:30px;
 	overflow:hidden;
 	background:#243d6e;
 }
@@ -373,11 +373,11 @@ ul.pagination li.page a:hover {
 	text-transform:uppercase;
 }
 .select, .unselect:hover, .login:hover {
-	background:url(../images/menu-1.png) 0 0 no-repeat;
+	background:url(../images/menu-sel-left.gif) 0 0 no-repeat;
 	display:block;
 }
 .select span, .unselect:hover span, .login:hover span {
-	background:url(../images/menu-2.png) 100% 0 no-repeat;
+	background:url(../images/menu-sel-left.gif) 100% 0 no-repeat;
 	color:#fff;
 	display:block;
 	line-height:30px;
@@ -385,11 +385,11 @@ ul.pagination li.page a:hover {
 	font-weight:bold;
 }
 .unselect {
-	background:url(../images/menu-unsel-left.gif) 0 0 no-repeat;
+	background:url(../images/menu-2.png) 0 0 no-repeat;
 	display:block;
 }
 .unselect span {
-	background:url(../images/menu-unsel-right.gif) 100% 0 no-repeat;
+	background:url(../images/menu-2.png) 100% 0 no-repeat;
 	color:#fff;
 	display:block;
 	line-height:30px;

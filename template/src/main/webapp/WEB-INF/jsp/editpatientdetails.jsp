@@ -1,6 +1,8 @@
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
@@ -110,8 +112,10 @@
                         <table cellpadding="0" cellspacing="0" border="0" width="100%">
                        <br>
                         <br>
+                       
                         <tr class="row1">
                         	 <td><span class="err">*</span>Name :</td>
+                        	 
 				                  <input type="hidden" class="input_txtbx1" id="inp_id" value="${patientDetails.patient_id}" name="patient_id" />
                                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.name }" name="name" /></br><span class="err"><form:errors path="patient.name"></form:errors></span></td>
                         </tr>
