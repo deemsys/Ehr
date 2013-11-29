@@ -171,10 +171,26 @@
 							</c:if>
 							<c:if test="${role==1}">
 							<li>
-								<a href="#" class="<c:choose><c:when test="${menu=='doctor'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu6">
-									<span>Doctor Forms</span>
+								<a href="#" class="<c:choose><c:when test="${menu=='phyexam'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu6">
+									<span>Physical exam</span>
 								</a>
 							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='report'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu8">
+									<span>Radiologic Report</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='iniexam'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu9">
+									<span>Initial Exam</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='notes'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu10">
+									<span>Soap Notes</span>
+								</a>
+							</li>
+							
 							</c:if>
 							<c:if test="${role==2}">
 							<li>
@@ -252,12 +268,16 @@
 							
 				            <li><a href="physicalexam">Physical Exam Form</a></li>
 				            <li><a href="viewphysicalexam">View Physical exam Form</a></li>
-
+</ul>
+<ul id="ddsubmenu8" class="ddsubmenustyle">
 				            <li><a href="radiologicreport">Radiologic report Form</a></li>
 				            <li><a href="viewradiologicreport">View Radiologic report Form</a></li>
-
+</ul>
+<ul id="ddsubmenu9" class="ddsubmenustyle">
 				             <li><a href="hamiltonchiropractic">InitialExam</a></li>
 				             <li><a href="viewfirsthamiltonchiropractic">View InitialExam</a></li>
+				             </ul>
+				             <ul id="ddsubmenu10" class="ddsubmenustyle">
 				             <li><a href="soapnotes">SOAP Notes</a></li>
 				             <li><a href="viewsoapnotes">View Soap Notes</a></li>
 

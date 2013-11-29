@@ -217,7 +217,7 @@ public class MainController {
 			physicalexamForm.setPhysicalexam(physicalDAO.getPhysicalexam());
 			model.addAttribute("physicalexamForm",physicalexamForm);
 			model.addAttribute("Success","true");
-			model.addAttribute("menu", "doctor");
+			model.addAttribute("menu", "phyexam");
 			return "physicalexam";
 		}
 		
@@ -231,7 +231,7 @@ public class MainController {
 		PhysicalexamForm physicalexamForm= new PhysicalexamForm();
 		physicalexamForm.setPhysicalexam(physicalDAO.getPhysicalexam());
 		model.addAttribute("physicalexamForm",physicalexamForm);
-		model.addAttribute("menu", "doctor");	
+		model.addAttribute("menu", "phyexam");	
 	    
 		
 		return "physicalexam";
@@ -247,7 +247,7 @@ public class MainController {
 		  physicalexamForm.setPhysicalexam(physicalDAO.getPhysicalexam());
 		  
 		  	model.addAttribute("physicalexamForm", physicalexamForm);
-		  	model.addAttribute("menu", "doctor");
+		  	model.addAttribute("menu", "phyexam");
 		return "viewphysicalexam";
 	}
 	@RequestMapping(value="/physicalexamlist", method=RequestMethod.GET)
@@ -260,7 +260,7 @@ public class MainController {
 	
 		model.addAttribute("physicalexamForm", physicalexamForm);
 		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
-		model.addAttribute("menu", "doctor");
+		model.addAttribute("menu", "phyexam");
 		return "physicalexamlist";
 	}
 	
@@ -273,7 +273,7 @@ public class MainController {
         physicalexamForm.setPhysicalexam(physicalDAO.getPhysical(physical_id));
 	
 		model.addAttribute("physicalexamForm", physicalexamForm);
-		model.addAttribute("menu", "doctor");
+		model.addAttribute("menu", "phyexam");
 		return "editphysicalexam";
 	}
 	@RequestMapping(value="/updatephysicalexam", method=RequestMethod.POST)
@@ -287,7 +287,7 @@ public class MainController {
 	      physicalexamForm.setPhysicalexam(physicalDAO.getPhysical(physicalexam.getPhysical_id()));
 	      
 	        model.addAttribute("physicalexamForm", physicalexamForm);
-	        model.addAttribute("menu", "doctor");  
+	        model.addAttribute("menu", "phyexam");  
 		        return "editphysicalexam";
 		}
 		System.out.println("physical id"+physicalexam.getPhysical_id());
@@ -300,7 +300,7 @@ public class MainController {
        
         model.addAttribute("physicalexamForm", physicalexamForm);
 	       model.addAttribute("success","true");
-	       model.addAttribute("menu", "doctor");
+	       model.addAttribute("menu", "phyexam");
 	        return "viewphysicalexam";
 		
 	}
@@ -318,14 +318,14 @@ public class MainController {
 		//participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
 		physicalexamForm.setPhysicalexam(physicalDAO.getPhysicalexam());
         model.addAttribute("physicalexamForm", physicalexamForm);
-        model.addAttribute("menu", "doctor");
+        model.addAttribute("menu", "phyexam");
 		}
 		
 		return "viewphysicalexam";
 	}
 	@RequestMapping(value="/hamiltonchiropractic", method = RequestMethod.GET)
 	public String hamiltonchiropractic(ModelMap model) {
-		 model.addAttribute("menu", "doctor");
+		 model.addAttribute("iniexam", "doctor");
 	      return "hamiltonchiropractic";
 	}
 
@@ -348,7 +348,7 @@ public class MainController {
     	HamiltonchiropracticForm hamiltonchiropracticForm= new HamiltonchiropracticForm();
     	hamiltonchiropracticForm.setHamiltonchiropractic(hamiDAO.getHamiltonchiropractic());
 		model.addAttribute("HamiltonchiropracticForm",hamiltonchiropracticForm);
-		 model.addAttribute("menu", "doctor");
+		 model.addAttribute("menu", "iniexam");
 		//System.out.println(autoaccident.getAdjustersname());
 	    
 		
@@ -363,7 +363,7 @@ public class MainController {
 		HamiltonchiropracticForm hamiltonchiropracticForm= new HamiltonchiropracticForm();
 		hamiltonchiropracticForm.setHamiltonchiropractic(hamiDAO.getHamiltonchiropractic());
 		model.addAttribute("hamiltonchiropracticForm",hamiltonchiropracticForm);
-		 model.addAttribute("menu", "doctor");
+		 model.addAttribute("menu", "iniexam");
 	
 		return "viewfirsthamiltonchiropractic";
  
@@ -378,7 +378,7 @@ public class MainController {
 		
 		model.addAttribute("hamiltonchiropracticForm", hamiltonchiropracticForm);
 		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
-		 model.addAttribute("menu", "doctor");
+		 model.addAttribute("menu", "iniexam");
 		
 		return "viewhamiltonchiropractic";
 	}
@@ -392,7 +392,7 @@ public class MainController {
         hamiltonchiropracticForm.setHamiltonchiropractic(hamiDAO.getHamiltonchiropractic(initialexamid));
 	
 		model.addAttribute("hamiltonchiropracticForm", hamiltonchiropracticForm);
-		 model.addAttribute("menu", "doctor");
+		 model.addAttribute("menu", "iniexam");
 		
 		return "edithamiltonchiropractic";
 	}
@@ -423,7 +423,7 @@ public class MainController {
        
         model.addAttribute("hamiltonchiropracticForm", hamiltonchiropracticForm);
 	       model.addAttribute("success","true");
-	       model.addAttribute("menu", "doctor");
+	       model.addAttribute("menu", "iniexam");
 	        return "viewfirsthamiltonchiropractic";
 		
 	}
@@ -441,7 +441,7 @@ public class MainController {
 		
 		hamiltonchiropracticForm.setHamiltonchiropractic(hamiDAO.getHamiltonchiropractic());
         model.addAttribute("hamiltonchiropracticForm", hamiltonchiropracticForm);
-        model.addAttribute("menu", "doctor");
+        model.addAttribute("menu", "iniexam");
       
 		}
 		
@@ -573,7 +573,7 @@ public class MainController {
 	@RequestMapping(value="/radiologicreport", method=RequestMethod.GET)
 	public String radiologicreport(HttpSession session,ModelMap model) {
 		session.removeAttribute("radio");
-		model.addAttribute("menu", "doctor");
+		model.addAttribute("menu", "report");
 		return "radiologicreport";
 	}
 	@RequestMapping(value="/radiologicreport", method = RequestMethod.POST)
@@ -585,7 +585,7 @@ public class MainController {
 				radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport());
 				model.addAttribute("RadiologicReportForm",radiologicReportForm);
 				model.addAttribute("Success","true");
-				model.addAttribute("menu", "doctor");
+				model.addAttribute("menu", "report");
 				return "radiologicreport";
 			}
 			
@@ -606,7 +606,7 @@ public class MainController {
 	    	radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport());
 			
 	    	model.addAttribute("RadiologicReportForm", radiologicReportForm);
-	    	model.addAttribute("menu", "doctor");
+	    	model.addAttribute("menu", "report");
 			return "radiologicreport";
 	 
 		}
@@ -621,7 +621,7 @@ public class MainController {
 		
      
        model.addAttribute("radiologicReportForm", radiologicReportForm);
-       model.addAttribute("menu", "doctor");
+       model.addAttribute("menu", "report");
 		return "viewradiologicreport";
 		
 	}
@@ -633,7 +633,7 @@ public class MainController {
 		 //participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
 		  radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport());
 		  //model.addAttribute("participantsDetailsForm", participantsDetailsForm);
-		  model.addAttribute("menu", "doctor");
+		  model.addAttribute("menu", "report");
 		  	model.addAttribute("radiologicReportForm", radiologicReportForm);
         
 		return "viewradiologicreport";
@@ -648,7 +648,7 @@ public class MainController {
 		//model.addAttribute("participantsDetailsForm", participantsDetailsForm);
 		model.addAttribute("radiologicReportForm", radiologicReportForm);
 		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
-		model.addAttribute("menu", "doctor");
+		model.addAttribute("menu", "report");
 		return "radiologicReportList";
 	}
 	@RequestMapping(value="/editradiologicreport", method=RequestMethod.GET)
@@ -660,7 +660,7 @@ public class MainController {
         radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport(pid));
 	
 		model.addAttribute("radiologicReportForm", radiologicReportForm);
-		model.addAttribute("menu", "doctor");
+		model.addAttribute("menu", "report");
 		return "editradiologicreport";
 	}
 	@RequestMapping(value="/updateradiologicreport", method=RequestMethod.POST)
@@ -674,7 +674,7 @@ public class MainController {
 	      radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport(report.getPid()));
 	      
 	        model.addAttribute("radiologicReportForm", radiologicReportForm);
-	        model.addAttribute("menu", "doctor");    
+	        model.addAttribute("menu", "report");    
 		        return "editradiologicreport";
 		}
 		
@@ -687,7 +687,7 @@ public class MainController {
        
         model.addAttribute("radiologicReportForm", radiologicReportForm);
 	       model.addAttribute("success","true");
-	       model.addAttribute("menu", "doctor");
+	       model.addAttribute("menu", "report");
 	        return "viewradiologicreport";
 		
 	}
@@ -705,7 +705,7 @@ public class MainController {
 		//participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
 		radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport());
         model.addAttribute("radiologicReportForm", radiologicReportForm);
-        model.addAttribute("menu", "doctor");
+        model.addAttribute("menu", "report");
 		}
 		
 		return "viewradiologicreport";
@@ -2378,7 +2378,7 @@ public class MainController {
 	}
 		@RequestMapping(value="/soapnotes", method = RequestMethod.GET)
 	public String soapnotes(ModelMap model) {
-			model.addAttribute("menu", "doctor");
+			model.addAttribute("menu", "motes");
 	      return "soapnotes";
 	}
 	
@@ -2400,7 +2400,7 @@ public class MainController {
 			soapnotesForm.setSoapnotes(soapDAO.getSoapnotes());
 			model.addAttribute("SoapnotesForm", soapnotesForm);
 			model.addAttribute("Success","true");
-			model.addAttribute("menu", "doctor");
+			model.addAttribute("menu", "notes");
 			return "soapnotes";
 		}
 		model.put("SoapNotes", soapnotes);
@@ -2409,7 +2409,7 @@ public class MainController {
     	SoapnotesForm soapnotesForm= new SoapnotesForm();
     	soapnotesForm.setSoapnotes(soapDAO.getSoapnotes());
 		model.addAttribute("SoapnotesForm",soapnotesForm);
-		model.addAttribute("menu", "doctor");
+		model.addAttribute("menu", "notes");
 		return "soapnotes";
  
 	}
@@ -2422,7 +2422,7 @@ public class MainController {
         soapnotesForm.setSoapnotes(soapDAO.getSoap(soapid));
 	
 		model.addAttribute("soapnotesForm", soapnotesForm);
-		model.addAttribute("menu", "doctor");
+		model.addAttribute("menu", "notes");
 		
 		return "editsoapnotes";
 	}
@@ -2438,7 +2438,7 @@ public class MainController {
 	      soapnotesForm.setSoapnotes(soapDAO.getSoap(soapnotes.getSoapid()));
 	      
 	        model.addAttribute("soapnotesForm", soapnotesForm);
-	        model.addAttribute("menu", "doctor");    
+	        model.addAttribute("menu", "notes");    
 		        return "editsoapnotes";
 		}
 		System.out.println("soapid"+soapnotes.getSoapid());
@@ -2451,7 +2451,7 @@ public class MainController {
        
         model.addAttribute("soapnotesForm", soapnotesForm);
 	       model.addAttribute("success","true");
-	       model.addAttribute("menu", "doctor");
+	       model.addAttribute("menu", "notes");
 	        return "viewsoapnotes";
 		
 	}
@@ -2466,7 +2466,7 @@ public class MainController {
 		 soapnotesForm.setSoapnotes(soapDAO.getSoapnotes());
 		  //model.addAttribute("participantsDetailsForm", participantsDetailsForm);
 		  	model.addAttribute("soapnotesForm", soapnotesForm);
-		  	model.addAttribute("menu", "doctor");
+		  	model.addAttribute("menu", "notes");
 		return "viewsoapnotes";
 	}
 	@RequestMapping(value="/soapNotesList", method=RequestMethod.GET)
@@ -2479,7 +2479,7 @@ public class MainController {
 		//model.addAttribute("participantsDetailsForm", participantsDetailsForm);
 		model.addAttribute("soapnotesForm", soapnotesForm);
 		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
-		model.addAttribute("menu", "doctor");
+		model.addAttribute("menu", "notes");
 		return "soapNotesList";
 	}
 	@RequestMapping(value="/deletesoapnotes", method=RequestMethod.GET)
@@ -2493,7 +2493,7 @@ public class MainController {
 		SoapnotesForm soapnotesForm = new SoapnotesForm();
 		soapnotesForm.setSoapnotes(soapDAO.getSoapnotes());
         model.addAttribute("soapnotesForm", soapnotesForm);
-        model.addAttribute("menu", "doctor");
+        model.addAttribute("menu", "notes");
 		}
 		
 		return "viewsoapnotes";
