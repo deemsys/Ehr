@@ -256,7 +256,7 @@
 						<ul id="ddsubmenu2" class="ddsubmenustyle">
 
 							<li><a href="treatform">Authorization And Consent To Treat</a></li>
-						<li><a href="viewtreatform">View Authorization And Consent To Treat</a></li>
+						<li><a href="treatformlist">View Authorization And Consent To Treat</a></li>
 						<c:if test="${age <18}">						
 				        <li id="consent"><a href="treatminor">Consent To Treat A minor</a></li>
 				         <li><a href="viewtreatminor">View Consent To Treat minor</a></li>

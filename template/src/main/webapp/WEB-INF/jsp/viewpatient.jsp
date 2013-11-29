@@ -111,8 +111,6 @@ function showCourses() {
    var str = document.getElementById("age").value;
 }
 
-   var str = document.getElementById("age").value;
-}
     
 
     </script>

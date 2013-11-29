@@ -38,7 +38,7 @@ public class ScreenDAO {
 	    try{
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
-	    	 String cmd="INSERT INTO `Screening_Details`(`date`,`name`) VALUES ('"+ScreeningDetails.getDate()+"','"+ScreeningDetails.getName()+"')";
+	    	 String cmd="INSERT INTO `screening_details`(`date`,`name`) VALUES ('"+ScreeningDetails.getDate()+"','"+ScreeningDetails.getName()+"')";
 	    	 System.out.println(cmd);
 	    	 statement.execute(cmd);
 		     flag=1;

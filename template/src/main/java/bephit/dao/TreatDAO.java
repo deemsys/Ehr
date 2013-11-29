@@ -38,7 +38,7 @@ public class TreatDAO {
 	    try{
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
-	    	 String cmd="INSERT INTO `Treat_Details`(`patientsname`,`patientssign`,`todaydate`,`witness`) VALUES ('"+treatdetails.getPatientsname()+"','"+treatdetails.getPatientssign()+"','"+treatdetails.getTodaydate()+"','"+treatdetails.getWitness()+"')";
+	    	 String cmd="INSERT INTO `treat_details`(`patientsname`,`patientssign`,`todaydate`,`witness`) VALUES ('"+treatdetails.getPatientsname()+"','"+treatdetails.getPatientssign()+"','"+treatdetails.getTodaydate()+"','"+treatdetails.getWitness()+"')";
 	    	 System.out.println(cmd);
 	    	 statement.execute(cmd);
 		     flag=1;
