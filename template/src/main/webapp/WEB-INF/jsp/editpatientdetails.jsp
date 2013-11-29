@@ -91,34 +91,27 @@
 	  </ul>
 	  <div class="tabs-spacer"></div>
 	  <div id="tabs-1">
-<div id="right_content">
-<form action="updatepatientdetails" method="post" name="update" id="update">
-<table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
-
-      <tr>
-        <td valign="top" align="left">
-        	<div> 
-        	<div class="headings altheading">
-	              <h2>Edit Patient Information</h2>
-	       </div>     </div>
-	       
-<div class="contentbox">
-
-              <table cellpadding="0" cellspacing="0" border="0" width="100%">
-  				<tr>
-    				<td align="left" valign="top" width="50%" style="padding-right:25px;">
-    				<c:set value="${patientDetailsForm.patientDetails[0]}" var="patientDetails"/>
-    					
-                        <table cellpadding="0" cellspacing="0" border="0" width="100%">
-                       <br>
-                        <br>
-                       
-                        <tr class="row1">
-                        	 <td><span class="err">*</span>Name :</td>
-                        	 
-				                  <input type="hidden" class="input_txtbx1" id="inp_id" value="${patientDetails.patient_id}" name="patient_id" />
-                                 <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.name }" name="name" /></br><span class="err"><form:errors path="PatientDetails.name"></form:errors></span></td>
-                        </tr>
+			<div id="right_content">
+				<form action="updatepatientdetails" method="post" name="update" id="update">
+					<table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
+						<tr>
+        					<td valign="top" align="left">
+        						<div> 
+        							<div class="headings altheading">
+	             				    <h2>Edit Patient Information</h2>
+	       							</div>
+	       				        </div>
+	       						<div class="contentbox">
+									<table cellpadding="0" cellspacing="0" border="0" width="100%">
+  									  <tr>
+    									<td align="left" valign="top" width="50%" style="padding-right:25px;">
+    										<c:set value="${patientDetailsForm.patientDetails[0]}" var="patientDetails"/>
+    											<table cellpadding="0" cellspacing="0" border="0" width="100%">
+                       								 <tr class="row1">
+                        	 							<td><span class="err">*</span>Name :</td>
+                        	 							<input type="hidden" class="input_txtbx1" id="inp_id" value="${patientDetails.patient_id}" name="patient_id" />
+                                 						<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.name }" name="name" /></br><span class="err"><form:errors path="PatientDetails.name"></form:errors></span></td>
+                      								  </tr>
                         <tr class="row2">
                         	<td><span class="err">*</span>Date:</td>
                         	 <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.date }" name="date" /></br><span class="err"><form:errors path="PatientDetails.date"></form:errors></span></td>
@@ -128,136 +121,143 @@
 							<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.streetAddress }" name="streetAddress" /></br><span class="err"><form:errors path="PatientDetails.streetAddress"></form:errors></span></td>
                         </tr> 
                         <tr class="row2">
-                        <td><span class="err">*</span>City:</td>
-                        <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.city}" name="city" /></br><span class="err"><form:errors path="PatientDetails.city"></form:errors></span></td>
+                        	<td><span class="err">*</span>City:</td>
+                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.city}" name="city" /></br><span class="err"><form:errors path="PatientDetails.city"></form:errors></span></td>
 						</tr>                        
-						 <tr class="row1">
-                        <td><span class="err">*</span>State:</td>
-                        <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.state }" name="state" /></br><span class="err"><form:errors path="PatientDetails.state"></form:errors></span></td>
+						<tr class="row1">
+                        	<td><span class="err">*</span>State:</td>
+                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.state }" name="state" /></br><span class="err"><form:errors path="PatientDetails.state"></form:errors></span></td>
 						</tr>                        
-						 <tr class="row2">
-                        <td><span class="err">*</span>ZipCode:</td>
-                        <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.zipCode}" name="zipCode" /></br><span class="err"><form:errors path="PatientDetails.zipCode"></form:errors></span></td>
-						</tr>                        
-						
-						 <tr class="row1">
-                        <td><span class="err">*</span>Home phone:</td>
-                        <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.homephone}" name="homephone" /></br><span class="err"><form:errors path="PatientDetails.homephone"></form:errors></span></td>
+						<tr class="row2">
+                        	<td><span class="err">*</span>ZipCode:</td>
+                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.zipCode}" name="zipCode" /></br><span class="err"><form:errors path="PatientDetails.zipCode"></form:errors></span></td>
 						</tr>                        
 						
-						 <tr class="row2">
-                        <td><span class="err">*</span>E-mail Id:</td>
-                        <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.emailid }" name="emailid" /></br><span class="err"><form:errors path="PatientDetails.emailid"></form:errors></span></td>
+						<tr class="row1">
+                        	<td><span class="err">*</span>Home phone:</td>
+                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.homephone}" name="homephone" /></br><span class="err"><form:errors path="PatientDetails.homephone"></form:errors></span></td>
 						</tr>                        
 						
-						 <tr class="row1">
-                        <td><span class="err">*</span>MobileNumber:</td>
-                        <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.mobileNumber}" name="mobileNumber" /></br><span class="err"><form:errors path="PatientDetails.mobileNumber"></form:errors></span></td>
+						<tr class="row2">
+                        	<td><span class="err">*</span>E-mail Id:</td>
+                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.emailid }" name="emailid" /></br><span class="err"><form:errors path="PatientDetails.emailid"></form:errors></span></td>
 						</tr>                        
 						
-						 <tr class="row2">
-                        <td><span class="err">*</span>DateOfBirth:</td>
-                        <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.dateOfBirth}" name="dateOfBirth" /></br><span class="err"><form:errors path="PatientDetails.dateOfBirth"></form:errors></span></td>
+						<tr class="row1">
+                        	<td><span class="err">*</span>MobileNumber:</td>
+                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.mobileNumber}" name="mobileNumber" /></br><span class="err"><form:errors path="PatientDetails.mobileNumber"></form:errors></span></td>
 						</tr>                        
 						
-						 <tr class="row1">
-                        <td><span class="err">*</span>Social Security Number:</td>
-                        <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.socialSecurityNumber}" name="socialSecurityNumber" /></br><span class="err"><form:errors path="PatientDetails.socialSecurityNumber"></form:errors></span></td>
+						<tr class="row2">
+                        	<td><span class="err">*</span>DateOfBirth:</td>
+                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.dateOfBirth}" name="dateOfBirth" /></br><span class="err"><form:errors path="PatientDetails.dateOfBirth"></form:errors></span></td>
 						</tr>                        
-						 <tr class="row2">
-                         <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Gender:</td>
-				         <td>	<input type="radio" name="gender" value="Male" class="input_txt"  <c:if test="${patientDetails.gender=='Male'}"><c:out value="checked=checked"/></c:if>>Male&nbsp;&nbsp;&nbsp;
+						
+						<tr class="row1">
+                        	<td><span class="err">*</span>Social Security Number:</td>
+                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.socialSecurityNumber}" name="socialSecurityNumber" /></br><span class="err"><form:errors path="PatientDetails.socialSecurityNumber"></form:errors></span></td>
+						</tr>                        
+						<tr class="row2">
+                        	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Gender:</td>
+				         	<td>	<input type="radio" name="gender" value="Male" class="input_txt"  <c:if test="${patientDetails.gender=='Male'}"><c:out value="checked=checked"/></c:if>>Male&nbsp;&nbsp;&nbsp;
 				                  	<input type="radio" name="gender" value="Female" class="input_txt"  <c:if test="${patientDetails.gender=='Female'}"><c:out value="checked=checked"/></c:if>>Female&nbsp;&nbsp;&nbsp;
-				                  	<input type="radio" name="gender" value="Transgender" class="input_txt"  <c:if test="${patientDetails.gender=='Transgender'}"><c:out value="checked=checked"/></c:if>>Transgender&nbsp;&nbsp;&nbsp;</td>
+				                  	<input type="radio" name="gender" value="Transgender" class="input_txt"  <c:if test="${patientDetails.gender=='Transgender'}"><c:out value="checked=checked"/></c:if>>Transgender&nbsp;&nbsp;&nbsp;
+				            </td>
 				                  	
-				         </tr>
-				          <tr class="row1">
-                         <td valign="middle" align="left" class="input_txt"><span class="err">*</span>MaritalStatus:</td>
-				         <td>	<input type="radio" name="maritalStatus" value="Single" class="input_txt"  <c:if test="${patientDetails.maritalStatus=='Single'}"><c:out value="checked=checked"/></c:if>>Single&nbsp;&nbsp;&nbsp;
+				        </tr>
+				        <tr class="row1">
+                        	 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>MaritalStatus:</td>
+				        	 <td>	<input type="radio" name="maritalStatus" value="Single" class="input_txt"  <c:if test="${patientDetails.maritalStatus=='Single'}"><c:out value="checked=checked"/></c:if>>Single&nbsp;&nbsp;&nbsp;
 				                  	<input type="radio" name="maritalStatus" value="Married" class="input_txt"  <c:if test="${patientDetails.maritalStatus=='Married'}"><c:out value="checked=checked"/></c:if>>Married&nbsp;&nbsp;&nbsp;
 				                  	<input type="radio" name="maritalStatus" value="Divorced" class="input_txt"  <c:if test="${patientDetails.maritalStatus=='Divorced'}"><c:out value="checked=checked"/></c:if>>Divorced&nbsp;&nbsp;&nbsp;
 				         	</td>
-				         </tr>
+				        </tr>
 				               
-				                </table>
+				          </table></td>
+				          
 				                <td align="left" valign="top"> <h2 class="quck-txt"></h2>
-							<table cellpadding="0" cellspacing="0" border="0" width="100%">
-							 <tr class="row2">
-								<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Are you:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-				                 <td><input type="radio" name="areyou" value="Student" class="input_txt"  <c:if test="${patientDetails.areyou=='Student'}"><c:out value="checked=checked"/></c:if>>Student
-				                  	<input type="radio" name="areyou" value="Employee" class="input_txt"  <c:if test="${patientDetails.areyou=='Employee'}"><c:out value="checked=checked"/></c:if>>Employee</td>
-				            </tr>
-				            <c:if test="${patientDetails.areyou =='Student'}">
-				            <tr class="row1">
-							 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Student:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="student" value="FullTime" class="input_txt" <c:if test="${patientDetails.student=='FullTime'}"><c:out value="checked=checked"/></c:if>>Full Time&nbsp;&nbsp;&nbsp;
-				                  	<input type="radio" name="student" value="PartTime" class="input_txt" <c:if test="${patientDetails.student=='PartTime'}"><c:out value="checked=checked"/></c:if>>Part Time</td>
-				            </tr>
-				            </c:if>
+								<table cellpadding="0" cellspacing="0" border="0" width="100%">
+							 	<tr class="row2">
+									<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Are you:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				                 <td><input type="radio" name="areyou" value="Student" class="input_txt" onchange="toggle3('show3')" <c:if test="${patientDetails.areyou=='Student'}"><c:out value="checked=checked"/></c:if>>Student
+				                  	<input type="radio" name="areyou" value="Employee" class="input_txt" onclick="toggle3('hide3')" <c:if test="${patientDetails.areyou=='Employee'}"><c:out value="checked=checked"/></c:if>>Employee
+				                  </td>
+				            	</tr>
+				            	<c:if test="${patientDetails.areyou =='Student'}">
+				           			 <tr class="row1">
+							 			<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Student:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				            		    <td valign="top" align="left" class="input_txt">
+				                  			<input type="radio" name="student" value="FullTime" class="input_txt" <c:if test="${patientDetails.student=='FullTime'}"><c:out value="checked=checked"/></c:if>>Full Time&nbsp;&nbsp;&nbsp;
+				                  			<input type="radio" name="student" value="PartTime" class="input_txt" <c:if test="${patientDetails.student=='PartTime'}"><c:out value="checked=checked"/></c:if>>Part Time
+				             			</td>
+				           			</tr>
+				               </c:if>
 				            
 				            	<c:if test="${patientDetails.areyou =='Employee'}">
 							
-				            <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Employer Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp</td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.employerName}" name="employerName" /></br><span class="err"><form:errors path="PatientDetails.employerName"></form:errors></span></td>
-							</tr> 
-							 <tr class="row2">
-                        <td><span class="err">*</span>Occupation:</td>
-                        <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.occupation}" name="occupation" /></br><span class="err"><form:errors path="PatientDetails.occupation"></form:errors></span></td>
-						</tr>                        
-						 <tr class="row1">
-                        <td><span class="err">*</span>Employer Address:</td>
-                        <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.employerAddress }" name="employerAddress" /></br><span class="err"><form:errors path="PatientDetails.employerAddress"></form:errors></span></td>
-						</tr>                        
-						 <tr class="row2">
-                        <td><span class="err">*</span>WorkPhone:</td>
-                        <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.workphone}" name="workphone" /></br><span class="err"><form:errors path="PatientDetails.workphone"></form:errors></span></td>
-						</tr>                        
-						 <tr class="row1">
-                        <td><span class="err">*</span>EmployerCity:</td>
-                        <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.employerCity}" name="employerCity" /></br><span class="err"><form:errors path="PatientDetails.employerCity"></form:errors></span></td>
-						</tr>                        
-						 <tr class="row2">
-                        <td><span class="err">*</span>State:</td>
-                        <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.estate}" name="estate" /></br><span class="err"><form:errors path="PatientDetails.estate"></form:errors></span></td>
-						</tr>
-						 <tr class="row1">
-                        <td><span class="err">*</span>ZipCode:</td>
-                        <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.ezip}" name="ezip" /></br><span class="err"><form:errors path="PatientDetails.ezip"></form:errors></span></td>
-						</tr>                       
-				</c:if>
+					            <tr class="row1">
+					                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Employer Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp</td>
+					                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.employerName}" name="employerName" /></br><span class="err"><form:errors path="PatientDetails.employerName"></form:errors></span></td>
+								</tr> 
+				   			    <tr class="row2">
+                        			<td><span class="err">*</span>Occupation:</td>
+                        			<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.occupation}" name="occupation" /></br><span class="err"><form:errors path="PatientDetails.occupation"></form:errors></span></td>
+								</tr>                        
+						 		<tr class="row1">
+                        			<td><span class="err">*</span>Employer Address:</td>
+                        			<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.employerAddress }" name="employerAddress" /></br><span class="err"><form:errors path="PatientDetails.employerAddress"></form:errors></span></td>
+								</tr>                        
+						 		<tr class="row2">
+                        			<td><span class="err">*</span>WorkPhone:</td>
+                        			<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.workphone}" name="workphone" /></br><span class="err"><form:errors path="PatientDetails.workphone"></form:errors></span></td>
+								</tr>                        
+			    				<tr class="row1">
+                        			<td><span class="err">*</span>EmployerCity:</td>
+                        			<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.employerCity}" name="employerCity" /></br><span class="err"><form:errors path="PatientDetails.employerCity"></form:errors></span></td>
+								</tr>                        
+						 		<tr class="row2">
+                        			<td><span class="err">*</span>State:</td>
+                        			<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.estate}" name="estate" /></br><span class="err"><form:errors path="PatientDetails.estate"></form:errors></span></td>
+								</tr>
+							    <tr class="row1">
+                        			<td><span class="err">*</span>ZipCode:</td>
+                        			<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.ezip}" name="ezip" /></br><span class="err"><form:errors path="PatientDetails.ezip"></form:errors></span></td>
+								</tr>                       
+							</c:if>
 				 			 <tr class="row2">
 				               
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Spouse's or significant others name:</td>
 				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.spousesName}" name="spousesName" /></br><span class="err"><form:errors path="PatientDetails.spousesName"></form:errors></span></td>
-						</tr>
-						 <tr class="row1">
-                        <td><span class="err">*</span>Spouses Employer:&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                        <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.spousesEmp}" name="spousesEmp" /></br><span class="err"><form:errors path="PatientDetails.spousesEmp"></form:errors></span></td>
-						</tr>                        
+							</tr>
+							 <tr class="row1">
+                        		<td><span class="err">*</span>Spouses Employer:&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                        		<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.spousesEmp}" name="spousesEmp" /></br><span class="err"><form:errors path="PatientDetails.spousesEmp"></form:errors></span></td>
+							</tr>   	                     
 						
-						 <tr class="row2">
-                        <td><span class="err">*</span>Spouse's Workphone:</td>
-                        <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.spousesph}" name="spousesph" /></br><span class="err"><form:errors path="PatientDetails.spousesph"></form:errors></span></td>
-						</tr>                        
-						 <tr class="row1">
-                        <td><span class="err">*</span>Name of Nearest Friend/ Relative Not Living With You:</td>
-                        <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.name_friend}" name="name_friend" /></br><span class="err"><form:errors path="PatientDetails.name_friend"></form:errors></span></td>
-						</tr>                        
-						 <tr class="row2">
-                        <td><span class="err">*</span>Phone of Nearest Friend/ Relative Not Living With You:</td>
-                        <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.phone_friend}" name="phone_friend" /></br><span class="err"><form:errors path="PatientDetails.phone_friend"></form:errors></span></td>
-						</tr>                        
-						 <tr class="row1">
-                        <td><span class="err">*</span>Have you ever had chiropractic care? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-				                 <td> 	<input type="radio" name="chiropratic_care" value="yes" class="input_txt" <c:if test="${patientDetails.chiropratic_care=='yes'}"><c:out value="checked=checked"/></c:if>>yes&nbsp;&nbsp;&nbsp;
-				                  	<input type="radio" name="chiropratic_care" value="No" class="input_txt"<c:if test="${patientDetails.chiropratic_care=='No'}"><c:out value="checked=checked"/></c:if>>No</td>
-						</tr>                        
+						    <tr class="row2">
+                        		<td><span class="err">*</span>Spouse's Workphone:</td>
+                        		<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.spousesph}" name="spousesph" /></br><span class="err"><form:errors path="PatientDetails.spousesph"></form:errors></span></td>
+							</tr>                        
+						    <tr class="row1">
+                        		<td><span class="err">*</span>Name of Nearest Friend/ Relative Not Living With You:</td>
+                        		<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.name_friend}" name="name_friend" /></br><span class="err"><form:errors path="PatientDetails.name_friend"></form:errors></span></td>
+							</tr>                        
+						 	<tr class="row2">
+                        		<td><span class="err">*</span>Phone of Nearest Friend/ Relative Not Living With You:</td>
+                        		<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.phone_friend}" name="phone_friend" /></br><span class="err"><form:errors path="PatientDetails.phone_friend"></form:errors></span></td>
+							</tr>                        
+						    <tr class="row1">
+                        		<td><span class="err">*</span>Have you ever had chiropractic care? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				                <td> 	<input type="radio" name="chiropratic_care" value="yes" class="input_txt" <c:if test="${patientDetails.chiropratic_care=='yes'}"><c:out value="checked=checked"/></c:if>>yes&nbsp;&nbsp;&nbsp;
+				                  		<input type="radio" name="chiropratic_care" value="No" class="input_txt"<c:if test="${patientDetails.chiropratic_care=='No'}"><c:out value="checked=checked"/></c:if>>No
+				                </td>
+						   </tr>                        
+						</table>
+						</td>
+					<td>
+					</tr>
+					</table>
 						
-                  </td>
-                  </tr>
-                  </table> 
                    <table align="right">
 				               <tr>
 				  
@@ -266,13 +266,12 @@
                      <td><input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='viewpatient'"></td>
                   </tr>
 				             
-				   </table>        
-                  </div>
-                  </td>
-                  </tr>
-                  </table>
-                  </div>
-                  </div>            
+				  </table>
+				  </td>
+				  </tr>
+				  </table>
+				  </div>
+				   </div>     
 				                
 		<div id="tabs-2">           
          <div id="right_content">
@@ -429,16 +428,16 @@
                   <td>&nbsp;&nbsp;</td>
                   <td><br><input type="button" id="btnNext" class="submit_btn" value="Next"/><br></td>
                   </tr>
-				                  	</table>			        
-				       
-               
-                 </table>
-                 </div>
-                 </td>
-                 </tr>
-                 </table>
-                 </div>
-                 </div>
+				                </table>
+				                </td>
+				                </tr>
+				                </table>
+				                </div>
+				                </td>
+				                </tr>
+				                </table>
+				                </div>
+				                </div>
                  
                    <div id="tabs-3">           
                  <div id="right_content">
@@ -588,9 +587,6 @@
 			</tr>               	                               
 						
 					</table>
-				
-					</td>
-					</tr>
 					</table>
 					</td>
 					</tr>
