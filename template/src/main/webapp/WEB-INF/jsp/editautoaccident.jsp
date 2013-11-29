@@ -242,12 +242,17 @@ $(function() {
 				  </select>
 				  </td>
 				  </tr>
-				  <!-- <tr>
-				  <td valign="top" align="center">&nbsp;</td>
-                  <td valign="top" align="right"><input type="submit" class="submit_btn2" value="Next"></td>
-				  </tr> -->
+				  
 				  </table>
+				  
 				  </td>
+				  </tr>
+				  </table>
+				  <table align="right">
+				  <tr>
+				  <td><br><input type="button" id="btnNext" class="submit_btn" value="Next"/><br></td>
+				  <td>&nbsp;&nbsp;</td>
+				  <td><br><input type="button"  class="submit_btn" value="Cancel" onclick="window.location.href='viewautoaccident'"/><br></td>
 				  </tr>
 				  </table>
 				  </div>
@@ -443,6 +448,18 @@ $(function() {
 				  </td>
 				  </tr>
 				  </table>
+				   <table align="right">
+				  <tr>
+				  <td valign="top" align="right"><input type="button" id="btnPrevious" class="submit_btn" value="Previous"></td>
+				  <td>&nbsp;&nbsp;</td>
+				   <td valign="top" align="right"><input type="button" id="btnNext" class="submit_btn" value="Next"/></td>
+
+                  	<td>&nbsp;&nbsp;</td>							
+				           
+                  <td valign="top" align="center"><input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='viewautoaccident'"></td>
+                  
+				  </tr>
+				  </table>
 				  </div>
 				  </div>
 				  </td>
@@ -598,9 +615,19 @@ $(function() {
 				  </td>
 				  </tr> 
 				 </table>
+				 
 				 </td>
 				 </tr>
 				 </table>
+				  <table align="right">
+				  <tr>
+				  	<td><input type="button" id="btnPrevious" class="submit_btn" value="Previous"  /></td>
+				  	<td>&nbsp;&nbsp;</td>
+				  <td><br><input type="button" id="btnNext" class="submit_btn" value="Next"/><br></td>
+				  <td>&nbsp;&nbsp;</td>
+				  <td><br><input type="button"  class="submit_btn" value="Cancel" onclick="window.location.href='viewautoaccient'"/><br></td>
+				  </tr>
+				  </table>
 				 </div>
 				 </div>
 				 </td>
@@ -733,6 +760,14 @@ $(function() {
 				  </tr>
 				  
 				  </table>
+				   <table align="right">
+				  <br><tr>
+				 <td><br><input type="button" id="btnPrevious" class="submit_btn" value="Previous" style = "display:none" />&nbsp;</td>
+                
+ 
+                  <td><input type="submit" class="submit_btn" value="Update"></td>
+                  <td><input type="reset" class="submit_btn" value="Cancel" onclick="window.location.href='viewautoaccident'"></td>				 
+				</table>  
 				  </div>
 				  
 				  </div>
@@ -744,14 +779,7 @@ $(function() {
 				  
 				     </div>
 				  </div>
-				  <table align="right">
-				  <br><tr>
-				 <td><br><input type="button" id="btnPrevious" class="submit_btn" value="Previous" style = "display:none" />&nbsp;</td>
-                  <td><br><input type="button" id="btnNext" class="submit_btn" value="Next"/><br></td>
- 
-                  <td><input type="submit" class="submit_btn" value="Update"></td>
-                  <td><input type="reset" class="submit_btn" value="Cancel" onclick="window.location.href='autoaccident'"></td>				 
-				</table>  
+				 
 				  </div>
 				  </body>
 				  </html>

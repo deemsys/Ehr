@@ -201,6 +201,13 @@ $(function() {
                		</tr>
                		</table>
                		</table>
+               		<table align="right">
+               		<tr>
+               	    <td><input type="button" id="btnNext" class="submit_btn" value="Next"/></td>
+               	    <td>&nbsp;&nbsp;</td>
+               		<td><input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='viewworkaccident'"></td>
+               		</tr>
+               		</table>
                		</td>
                		</tr>
                		</table>
@@ -297,6 +304,13 @@ $(function() {
 				</tr>               
                	</table>
                	</td>
+               	</tr>
+               	</table>
+               	<table align="right">
+               	<tr>
+               	<td><input type="button" id="btnPrevious" class="submit_btn" value="Previous" style = "display:none" /></td>
+               	<td>&nbsp;&nbsp;</td>
+                <td><input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='viewworkaccident'"></td> 
                	</tr>
                	</table>
                	</div>

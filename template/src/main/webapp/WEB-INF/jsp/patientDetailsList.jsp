@@ -243,6 +243,18 @@
 				                  </td>
 				                  </tr>
 				                  </table>
+				                 
+				                   <table align="right">
+				  <tr>
+				   <td valign="top" align="right"><input type="button" id="btnNext" class="submit_btn" value="Next"/></td>
+
+                  	<td>&nbsp;&nbsp;</td>							
+				           
+                  <td valign="top" align="center"><input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='viewpatient'"></td>
+                  
+				  </tr>
+				  </table>
+				                  
 				                  </td>
 				                  </tr>
 				                  </table>
@@ -390,6 +402,19 @@
 				</td>
 				</tr>
 				</table>
+				<br>
+				 <table align="right">
+				  <tr>
+				  <td valign="top" align="right"><input type="button" id="btnPrevious" class="submit_btn" value="Previous"></td>
+                   <td>&nbsp;&nbsp;</td>
+				   <td valign="top" align="right"><input type="button" id="btnNext" class="submit_btn" value="Next"/></td>
+
+                  	<td>&nbsp;&nbsp;</td>							
+				           
+                  <td valign="top" align="center"><input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='viewpatient'"></td>
+                  
+				  </tr>
+				  </table>
 				</div>
 				</td>
 				</tr>
@@ -520,6 +545,19 @@
 				      </td>
 				      </tr>
 				      </table>
+				      <br>
+				       <table align="right">
+				  <tr>
+				  <td valign="top" align="right"><input type="button" id="btnPrevious" class="submit_btn" value="Previous"></td>
+                   <td>&nbsp;&nbsp;</td>
+				   <td valign="top" align="right"><input type="submit"  class="submit_btn" value="Update"/></td>
+
+                  	<td>&nbsp;&nbsp;</td>							
+				           
+                  <td valign="top" align="center"><input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='viewpatient'"></td>
+                  
+				  </tr>
+				  </table>
 				      </div>
 				      </td>
 				      </tr>

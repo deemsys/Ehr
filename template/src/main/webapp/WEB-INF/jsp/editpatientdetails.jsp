@@ -254,16 +254,19 @@
 				                 <td> 	<input type="radio" name="chiropratic_care" value="yes" class="input_txt" <c:if test="${patientDetails.chiropratic_care=='yes'}"><c:out value="checked=checked"/></c:if>>yes&nbsp;&nbsp;&nbsp;
 				                  	<input type="radio" name="chiropratic_care" value="No" class="input_txt"<c:if test="${patientDetails.chiropratic_care=='No'}"><c:out value="checked=checked"/></c:if>>No</td>
 						</tr>                        
-						 <table align="right">
+						
+                  </td>
+                  </tr>
+                  </table> 
+                   <table align="right">
 				               <tr>
 				  
                      <td><br><input type="button" id="btnNext" class="submit_btn" value="Next"/><br></td>
+                     <td>&nbsp;&nbsp;</td>
+                     <td><input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='viewpatient'"></td>
                   </tr>
 				             
-				   </table>
-                  </td>
-                  </tr>
-                  </table>         
+				   </table>        
                   </div>
                   </td>
                   </tr>

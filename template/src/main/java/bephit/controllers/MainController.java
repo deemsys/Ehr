@@ -468,15 +468,14 @@ public class MainController {
 			return "autoaccident";
 		}
 		
-		model.put("Autoaccident", autoaccident);
-		model.addAttribute("autoaccidentForm",autoaccident);
+		
     	int a=autoDAO.setAutoaccident(autoaccident);
 		AutoaccidentForm autoaccidentForm= new AutoaccidentForm();
 		autoaccidentForm.setAutoaccident(autoDAO.getAutoaccident());
 		model.addAttribute("autoaccidentForm",autoaccidentForm);
 		model.addAttribute("menu", "Accident");
 
-		//System.out.println(autoaccident.getAdjustersname());
+	
 		return "viewautoaccident";
  
 	}
@@ -484,11 +483,11 @@ public class MainController {
 	@RequestMapping(value="/viewautoaccident", method=RequestMethod.GET)
 	public String viewautoaccident(HttpServletRequest request,ModelMap model, Principal principal) {
 		 model.addAttribute("success","false");
-		//ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
+		
 		  AutoaccidentForm autoaccidentForm = new AutoaccidentForm();
-		 //participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
+		
 		  autoaccidentForm.setAutoaccident(autoDAO.getAutoaccident());
-		  //model.addAttribute("participantsDetailsForm", participantsDetailsForm);
+	
 		  	model.addAttribute("autoaccidentForm", autoaccidentForm);
 		  	model.addAttribute("menu", "Accident");
         

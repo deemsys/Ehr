@@ -12,7 +12,7 @@
         <tr>
         <td valign="top" align="left" style="padding:5px 0 10px 0;">&nbsp;
             <div id="success_statusbar" class="status success">
-            <p class="closestatus"><a title="Close" href="viewworkaccident">x</a></p>
+            <p class="closestatus"><a title="Close" href="viewautoaccident">x</a></p>
             <p><img alt="Success" src="resources/images/icons/icon_success.png"><span>Success!</span>.</p>
           </div>
       </tr>
@@ -25,7 +25,7 @@
 			        </div>
 			        <div class="contentbox">
 			     
-			      <form action="workaccident" method="POST"> 
+			      <form action="autoaccident" method="POST"> 
 						<table cellpadding="0" cellspacing="0" border="0" width="100%">
 				     <tr class="title">
 							<td>Patient_Consulted</td>

@@ -283,21 +283,18 @@ window.onload(){
 				   <input type="text" class="input_txtbx1" id="jobpp" name="jobpp" placeholder="If yes, give specifics" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.jobpp}" name="jobpp" /></br><span class="err"><form:errors path="workAcc.jobpp"></form:errors></span>
 				  </td>
 				  </tr>						                   
-				   <tr class="row1">
-                  <td valign="top" align="center">&nbsp;</td>
-                  <td valign="top" align="center">&nbsp;</td>
-                  <td valign="top" align="center">&nbsp;</td>
-                  <td valign="top" align="center">&nbsp;</td>
-                  <td valign="top" align="center">&nbsp;</td>
-                  <td valign="top" align="right">&nbsp;</td>
-                  <td valign="top" align="right"><input type="button" id="btnNext" class="submit_btn" value="Next"/></td>
-                  <td valign="top" align="right"><input type="submit" class="submit_btn1" value="Update" name="insert"></td>
-                  								
+				  		                     		 
+				  </table>
+				  <br>
+				  <table align="right">
+				  <tr>
+				   <td valign="top" align="right"><input type="button" id="btnNext" class="submit_btn" value="Next"/></td>
+
+                  	<td>&nbsp;&nbsp;</td>							
 				           
                   <td valign="top" align="center"><input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='viewworkaccident'"></td></td>
                   
-                    
-                </tr>			                     		 
+				  </tr>
 				  </table>
 				  </td>
 				  </tr>
@@ -396,20 +393,21 @@ window.onload(){
 				  </td>
 				   <td></td>   <td></td><td></td><td></td><td></td> <td></td><td></td>
 				  </tr>
-				   <tr class="row1">
-                  <td valign="top" align="center">&nbsp;</td>
-                  <td valign="top" align="center">&nbsp;</td>
-                  <td valign="top" align="center">&nbsp;</td>
-                  <td valign="top" align="center">&nbsp;</td>
-                  <td valign="top" align="center">&nbsp;</td>
-                  <td valign="top" align="right">&nbsp;</td>
-                   <td valign="top" align="right"><input type="button" id="btnPrevious" class="submit_btn" value="Previous"></td>
-                   
-                   <td valign="top" align="right"><input type="submit" class="submit_btn1" value="Update" name="insert"></td>
-                  	
-                  <td valign="top" align="center"><input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='viewworkaccident'"></td>
+				   
+                  
+                  
                   
                     
+               
+                </table>
+                <br>
+                <table align="right">
+                <tr>
+                 <td valign="top" align="right"><input type="button" id="btnPrevious" class="submit_btn" value="Previous"></td>
+                   <td>&nbsp;&nbsp;</td>
+                   <td valign="top" align="right"><input type="submit" class="submit_btn" value="Update" name="insert"></td>
+                  	<td>&nbsp;&nbsp;</td>
+                  <td valign="top" align="center"><input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='viewworkaccident'"></td>
                 </tr>
                 </table>
                 </td>
