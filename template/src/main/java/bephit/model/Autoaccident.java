@@ -80,6 +80,7 @@ public class Autoaccident {
 	private String otherpain;
 	private String first_symptom;
 	private String after_accident;
+	private String accident;
 	private String hosname;
 	private String city;
 	private String staylength;
@@ -160,6 +161,7 @@ public Autoaccident(String patient_number,String claimnumber,
         String otherpain,
         String first_symptom,
         String after_accident,
+        String accident,
         String hosname,
         String city,
         String staylength,
@@ -234,6 +236,7 @@ public Autoaccident(String patient_number,String claimnumber,
 	this.otherpain=otherpain;
 	this.first_symptom=first_symptom;
 	this.after_accident=after_accident;
+	this.accident = accident;
 	this.hosname=hosname;
 	this.city=city;
 	this.staylength=staylength;
@@ -759,6 +762,14 @@ public String getAfter_accident() {
 
 public void setAfter_accident(String after_accident) {
 	this.after_accident = after_accident;
+}
+
+public String getAccident() {
+	return accident;
+}
+
+public void setAccident(String accident) {
+	this.accident = accident;
 }
 
 public String getHosname() {

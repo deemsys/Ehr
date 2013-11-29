@@ -492,12 +492,13 @@ $(function() {
 				  </td>
 				  </tr> 
 				  </table>
+				  <c:if test="${autoaccident.after_accident == 'hospital' }">
 				  <div id="accident_hospital">
 				  <table cellpadding="0" cellspacing="0" border="0" width="100%">
 				   <tr class="row2">
                   <td valign="middle" align="left" class="input_txt">Name of the hospital&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				  
-				  <input type="text" class="input_txtbx1" id="inp_id" name="hosname" />
+				   ${autoaccident.hosname}</td>
 				  <td></td>
 				  <td></td>
 				  </td>
@@ -516,7 +517,7 @@ $(function() {
 				  </tr>
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>How did you get to the hospital?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				${autoaccident.hospitalget}		
+				${autoaccident.hospitalget}		${autoaccident.hospital1}
 				  </td>
 				  </tr> 
 				  <tr class="row2">
@@ -532,6 +533,9 @@ $(function() {
 				  </td>
 				  
 				  </tr>
+				  
+				   </table> 
+
 				   </table>
 				    <table align="right">
 				  <tr>
@@ -542,8 +546,9 @@ $(function() {
 				  <td><br><input type="button"  class="submit_btn" value="Cancel" onclick="window.location.href='viewautoaccient'"/><br></td>
 				  </tr>
 				  </table> 
+
 				  </div>
-				  
+				  </c:if>
 				  </div>
 				  </div>
 				  </td>
