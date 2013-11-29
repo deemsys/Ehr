@@ -25,6 +25,7 @@ import org.springframework.ui.ModelMap;
 
 import bephit.dao.AssignmentDAO;
 import bephit.dao.AutoaccidentDAO;
+import bephit.dao.DoctorsignupDAO;
 /*import bephit.dao.DoctorsignupDAO;*/
 //import bephit.dao.DoctorsignupDAO;
 import bephit.dao.HamiltonchiropracticDAO;
@@ -57,6 +58,7 @@ import bephit.forms.AutoaccidentForm;
 
 //import bephit.forms.DoctorsignupForm;
 
+import bephit.forms.DoctorsignupForm;
 import bephit.forms.HamiltonchiropracticForm;
 import bephit.forms.HardshipagreementForm;
 import bephit.forms.HippaPrivacyForm;
@@ -121,13 +123,12 @@ public class MainController {
 	
 	@Autowired
 	SignupDAO signDAO;
-	/*
-	/*@Autowired
+	
+	@Autowired
 
 	DoctorsignupDAO docDAO;
-	*/
 
-//	DoctorsignupDAO docDAO;
+
 	
 
 	@Autowired
@@ -173,7 +174,7 @@ public class MainController {
 		
 		 int role=mainDAO.getrole();
 	       System.out.println("Role:"+role);
-        model.addAttribute("menu","dashboard");
+        model.addAttribute("menu","patientDetails");
 		
 		
 		model.addAttribute("role",role);
@@ -1118,7 +1119,7 @@ public class MainController {
 	}
 	
 
-	/*@RequestMapping(value="/doctorsignup", method = RequestMethod.POST)
+	@RequestMapping(value="/doctorsignup", method = RequestMethod.POST)
 	public String insert_doctorsignup(@ModelAttribute("Doctorsignup")  @Valid Doctorsignup doctorsignup,BindingResult result,ModelMap model) {
 		if(result.hasErrors())
 		{
@@ -1135,12 +1136,12 @@ public class MainController {
     	doctorsignupForm.setDoctorsignup(docDAO.getDoctorsignup());
 		model.addAttribute("DoctorsignupForm",doctorsignupForm);
 
-		//System.out.println(autoaccident.getAdjustersname());
+	
 	    
 		
 		return "doctorsignup";
 	}
-*/
+
 	
 	@RequestMapping(value="/treatform",method=RequestMethod.GET)
 	public String treatform(HttpSession session, ModelMap model)
