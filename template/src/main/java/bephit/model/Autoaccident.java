@@ -21,6 +21,7 @@ public class Autoaccident {
 	private String estimated_rate;
 	private String time_of_day;
 	private String road_conditions;
+	private String conditions;
 	private String head_restraints;
 	private String seatpos_after_accident;
 	private String seat_after_accident;
@@ -29,7 +30,9 @@ public class Autoaccident {
 	private String airbag;
 	private String wereyou;
 	private String body_position;
+	private String body_position1;
 	private String head_position;
+	private String head_position1;
 	private String hands_on_wheel;
 	private String aware_of_crash;
 	private String brace;
@@ -38,6 +41,7 @@ public class Autoaccident {
 	private String ifyes_explain;
 	private String during_after_crash;
 	private String patient_body;
+	private String patient_body1;
 	private String body_strike;
 	private String head_hit;
 	private String rlshoulder_hit;
@@ -68,6 +72,7 @@ public class Autoaccident {
 	private String city;
 	private String staylength;
 	private String hospitalget;
+	private String hospital1;
 	private String xray;
 	private String wrong;
 	
@@ -96,6 +101,7 @@ public Autoaccident(String patient_number,String claimnumber,
 		String estimated_rate,
 		String time_of_day,
 		String road_conditions,
+		String conditions,
 		String head_restraints,
 		String seatpos_after_accident,
         String seat_after_accident,
@@ -104,7 +110,9 @@ public Autoaccident(String patient_number,String claimnumber,
         String airbag,
         String wereyou,
         String body_position,
+        String body_position1,
         String head_position,
+        String head_position1,
         String hands_on_wheel,
         String aware_of_crash,
         String brace,
@@ -113,6 +121,7 @@ public Autoaccident(String patient_number,String claimnumber,
         String ifyes_explain,
         String during_after_crash,
         String patient_body,
+        String patient_body1,
         String body_strike,
         String head_hit,
         String rlshoulder_hit,
@@ -143,6 +152,7 @@ public Autoaccident(String patient_number,String claimnumber,
         String city,
         String staylength,
         String hospitalget,
+        String hospital1,
         String xray,
         String wrong){
 	this.patient_number=patient_number;
@@ -165,6 +175,7 @@ public Autoaccident(String patient_number,String claimnumber,
 	this.estimated_rate=estimated_rate;
 	this.time_of_day=time_of_day;
 	this.road_conditions=road_conditions;
+	this.conditions = conditions;
 	this.head_restraints=head_restraints;
 	this.seatpos_after_accident=seatpos_after_accident;
 	this.seat_after_accident=seat_after_accident;
@@ -173,7 +184,9 @@ public Autoaccident(String patient_number,String claimnumber,
 	this.airbag=airbag;
 	this.wereyou=wereyou;
 	this.body_position=body_position;
+	this.body_position1=body_position1;
 	this.head_position=head_position;
+	this.head_position1=head_position1;
 	this.hands_on_wheel=hands_on_wheel;
 	this.aware_of_crash=aware_of_crash;
 	this.brace=brace;
@@ -182,6 +195,7 @@ public Autoaccident(String patient_number,String claimnumber,
 	this.ifyes_explain=ifyes_explain;
 	this.during_after_crash=during_after_crash;
 	this.patient_body=patient_body;
+	this.patient_body1=patient_body1;
 	this.body_strike=body_strike;
 	this.head_hit=head_hit;
 	this.rlshoulder_hit=rlshoulder_hit;
@@ -212,6 +226,7 @@ public Autoaccident(String patient_number,String claimnumber,
 	this.city=city;
 	this.staylength=staylength;
 	this.hospitalget=hospitalget;
+	this.hospital1 = hospital1;
 	this.xray=xray;
 	this.wrong=wrong;
 	
@@ -379,6 +394,15 @@ public String getRoad_conditions() {
 
 public void setRoad_conditions(String road_conditions) {
 	this.road_conditions = road_conditions;
+}
+
+
+public String getConditions() {
+	return conditions;
+}
+
+public void setConditions(String conditions) {
+	this.conditions = conditions;
 }
 
 public String getHead_restraints() {
@@ -755,6 +779,39 @@ public String getHospitalget() {
 
 public void setHospitalget(String hospitalget) {
 	this.hospitalget = hospitalget;
+}
+
+
+public String getBody_position1() {
+	return body_position1;
+}
+
+public void setBody_position1(String body_position1) {
+	this.body_position1 = body_position1;
+}
+
+public String getHead_position1() {
+	return head_position1;
+}
+
+public void setHead_position1(String head_position1) {
+	this.head_position1 = head_position1;
+}
+
+public String getPatient_body1() {
+	return patient_body1;
+}
+
+public void setPatient_body1(String patient_body1) {
+	this.patient_body1 = patient_body1;
+}
+
+public String getHospital1() {
+	return hospital1;
+}
+
+public void setHospital1(String hospital1) {
+	this.hospital1 = hospital1;
 }
 
 public String getXray() {

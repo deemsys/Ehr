@@ -330,20 +330,20 @@ $(function() {
 				  <tr class="row1">
                 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Body position at time of accident</td>
 				 <td valign="top" align="left" class="input_txt">
-				  <select name="body_position" class="input_cmbbx1" onchange='Checkposition(this.value);'>
+				  <select name="body_position" class="input_cmbbx1" id="body_position" onchange='Checkposition(this.value);'>
 					<option selected="selected" value="good" >Good</option>
 					<option value="forward">Forward</option>
 					<option value="leaning">Leaning</option>
 					<option value="others">Other</option>
 					<option value="un_known">Unknown</option>
 				  </select>
-				   <input type="text" name="body_position" id="body_position" style='display:none'/>
+				   <input type="text" name="body_position1" id="body_position1" style='display:none'/>
 				  </td>
 				  </tr>
 				 <tr class="row2">
                 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Head position</td>
 				 <td valign="top" align="left" class="input_txt">
-				  <select name="head_position" class="input_cmbbx1" onchange='Checkposition(this.value);'>
+				  <select name="head_position" class="input_cmbbx1" id="head_position" onchange='CheckHeadposition(this.value);'>
 					<option selected="selected" value="forwardpos" >Forward</option>
 					<option value="left">Left</option>
 					<option value="right">Right</option>
@@ -352,7 +352,7 @@ $(function() {
 					<option value="others">Other</option>
 					<option value="unknown_pos">Unknown</option>
 				  </select>
-				   <input type="text" name="head_position" id="body_position" style='display:none'/>
+				   <input type="text" name="head_position1" id="head_position1" style='display:none'/>
 				  </td>
 				  </tr>
 				  <tr class="row1">
@@ -464,7 +464,7 @@ $(function() {
   				<tr class="row2">
                 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient's body</td>
 				 <td valign="top" align="left" class="input_txt">
-				  <select name="patient_body" class="input_cmbbx1" onchange='Checkposition(this.value);'>
+				  <select name="patient_body" class="input_cmbbx1" id="patient_body" onchange='CheckPatientposition(this.value);'>
 					<option selected="selected" value="jolted" >Jolted</option>
 					<option value="thrown_about">Thrown About</option>
 					<option value="stunned">Stunned</option>
@@ -473,7 +473,7 @@ $(function() {
 					<option value="slammed">Slammed</option>
 					<option value="otherbody">Other</option>
 				  </select>
-				  <input type="text" name="patient_body" id="body_position" style='display:none'/>
+				  <input type="text" name="patient_body1" id="patient_body1" style='display:none'/>
 				  </td>
 				  </tr> 
 				   <tr class="row1">
@@ -688,11 +688,11 @@ $(function() {
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>How did you get to the hospital?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				
-				  <select name="hospitalget" class="input_cmbbx1"  onchange='Checkhospital(this.value);'>
+				  <select name="hospitalget" class="input_cmbbx1" id="hospitalget" onchange='Checkhospital(this.value);'>
 					<option selected="selected" value="ambulance" >Ambulance</option>
-					<option value="otherhos">Other</option>
+					<option value="other hos">Other</option>
 				  </select>
-				 <input type="text" name="hospital" id="hospital" style='display:none'/>
+				 <input type="text" name="hospital1" id="hospital1" style='display:none'/>
 				  </td>
 				  </tr> 
 				  <tr class="row2">
@@ -747,14 +747,31 @@ function CheckConditions(val){
 </script>
 <script type="text/javascript">
 function Checkposition(val){
- var element=document.getElementById('body_position');
+ var element=document.getElementById('body_position1');
  if(val=='others')
    element.style.display='block';
  else  
    element.style.display='none';
 } 
 </script>
-
+<script type="text/javascript">
+function CheckHeadposition(val){
+ var element=document.getElementById('head_position1');
+ if(val=='others')
+   element.style.display='block';
+ else  
+   element.style.display='none';
+} 
+</script>
+<script type="text/javascript">
+function CheckPatientposition(val){
+ var element=document.getElementById('patient_body1');
+ if(val=='otherbody')
+   element.style.display='block';
+ else  
+   element.style.display='none';
+} 
+</script>
 <script type="text/javascript">
 function toggle(value){
 if(value=='show')
@@ -819,8 +836,8 @@ function Checkaccident(val){
 </script>
 <script type="text/javascript">
 function Checkhospital(val){
- var element=document.getElementById('hospital');
- if(val=='otherhos')
+ var element=document.getElementById('hospital1');
+ if(val=='other hos')
    element.style.display='block';
  else  
    element.style.display='none';

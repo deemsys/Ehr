@@ -217,7 +217,7 @@ $(function() {
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Road conditions</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <select name="road_conditions" class="input_cmbbx1" onchange='CheckConditions(this.value);'>
+				  <select name="road_conditions" class="input_cmbbx1" onclick='CheckConditions(this.value);'>
 					<option selected="selected" value="select conditions" <c:if test="${autoaccident.road_conditions=='select conditions'}"><c:out value="selected"/></c:if> >Select conditions</option>
 					<option value="dry" <c:if test="${autoaccident.road_conditions=='dry'}"><c:out value="selected"/></c:if>>Dry</option>
 					<option value="damp" <c:if test="${autoaccident.road_conditions=='damp'}"><c:out value="selected"/></c:if>>Damp</option>
@@ -227,8 +227,10 @@ $(function() {
 					<option value="other" <c:if test="${autoaccident.road_conditions=='other'}"><c:out value="selected"/></c:if>>Other</option>
 					<option value="unknown" <c:if test="${autoaccident.road_conditions=='unknown'}"><c:out value="selected"/></c:if>>Unknown</option>
 				  </select>
-				  <input type="text" name="conditions" id="conditions" style='display:none'/>
+				  
+				
 				  </td>
+				   <td><input type="text"name="conditions" id="conditions" style='display:none' value="${autoaccident.conditions}" name="conditions" /></td>
 				  </tr> 
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Head Restraints</td>
@@ -339,20 +341,20 @@ $(function() {
 				  <tr class="row1">
                 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Body position at time of accident</td>
 				 <td valign="top" align="left" class="input_txt">
-				  <select name="body_position" class="input_cmbbx1" onchange='Checkposition(this.value);'>
+				  <select name="body_position" class="input_cmbbx1" id="body_position" onclick='Checkposition(this.value);'>
 					<option selected="selected" value="good" <c:if test="${autoaccident.body_position=='good'}"><c:out value="selected"/></c:if>>Good</option>
 					<option value="forward" <c:if test="${autoaccident.body_position=='forward'}"><c:out value="selected"/></c:if>>Forward</option>
 					<option value="leaning" <c:if test="${autoaccident.body_position=='learning'}"><c:out value="selected"/></c:if>>Leaning</option>
 					<option value="others" <c:if test="${autoaccident.body_position=='others'}"><c:out value="selected"/></c:if>>Other</option>
 					<option value="un_known" <c:if test="${autoaccident.body_position=='un_known'}"><c:out value="selected"/></c:if>>Unknown</option>
 				  </select>
-				   <input type="text" name="body_position" id="body_position" style='display:none'/>
+				   <input type="text" name="body_position1" id="body_position1" value="${autoaccident.body_position}"style='display:none'/>
 				  </td>
 				  </tr>
 				 <tr class="row2">
                 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Head position</td>
 				 <td valign="top" align="left" class="input_txt">
-				  <select name="head_position" class="input_cmbbx1" onchange='Checkposition(this.value);'>
+				  <select name="head_position" class="input_cmbbx1" id="head_position"onclick='CheckHeadposition(this.value);'>
 					<option selected="selected" value="forwardpos" <c:if test="${autoaccident.head_position=='forwardpos'}"><c:out value="selected"/></c:if>>Forward</option>
 					<option value="left" <c:if test="${autoaccident.head_position=='left'}"><c:out value="selected"/></c:if>>Left</option>
 					<option value="right" <c:if test="${autoaccident.head_position=='right'}"><c:out value="selected"/></c:if>>Right</option>
@@ -361,7 +363,7 @@ $(function() {
 					<option value="others" <c:if test="${autoaccident.head_position=='others'}"><c:out value="selected"/></c:if>>Other</option>
 					<option value="unknown_pos" <c:if test="${autoaccident.head_position=='unknown_pos'}"><c:out value="selected"/></c:if>>Unknown</option>
 				  </select>
-				   <input type="text" name="head_position" id="body_position" style='display:none'/>
+				   <input type="text" name="head_position1" id="head_position1" style='display:none'/>
 				  </td>
 				  </tr>
 				  <tr class="row1">
@@ -773,7 +775,14 @@ function Checkposition(val){
    element.style.display='none';
 } 
 </script>
-
+function CheckHeadposition(val){
+ var element=document.getElementById('head_position');
+ if(val=='others')
+   element.style.display='block';
+ else  
+   element.style.display='none';
+} 
+</script>
 <script type="text/javascript">
 function toggle(value){
 if(value=='show')
