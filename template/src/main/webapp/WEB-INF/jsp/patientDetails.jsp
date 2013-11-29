@@ -394,7 +394,7 @@
 				                <tr class="row1">
 				                 	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Type Of Accident:</td>
 				                  	<td valign="top" align="left" class="input_txt">
-				                  		<select name="Type_Of_Accident" class="input_cmbbx1" id="type_of_accident"onchange='Checklight(this.value)';>
+				                  		<select name="Type_Of_Accident" class="input_cmbbx1" id="type_of_accident"onclick='Checklight(this.value)';>
 						                    <option selected="selected" value="autoaccident" id="auto" >Auto</option>
 											<option value="workaccident" id="work">Work</option>
 											<option value="other" id="other">Other</option>
@@ -601,8 +601,8 @@
 				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="High" value="High">High Blood Pressure</td>
 				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Digestive" value="Digestive">Digestive Disorders </td>
 				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Heart" value="Heart">Heart trouble	</td>
-				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Other" value="Other">other </td>
-				                 <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="Ifother" placeholder="If other" /></td>
+				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Other" value="Other"onclick="this.form.ifother.style.visibility = this.checked? 'visible' : 'hidden'"/>other </td>
+				                 <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="ifother" style="visibility:hidden" name="Ifother" placeholder="If other" /></td>
 				                  	</tr>
 				                  	
 				                  	</table> 
@@ -639,7 +639,8 @@
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Do You Work Around Hazardous Substances:  </td>
 				  <td valign="top" align="left" class="input_txt">
 				  <div id="send_to">
-				  <input type="radio" name="Hazardous" value="yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<div id="send_to_one"><label>If yes,Please List: </label><input type="text" id="list" name="Hazardousyes" /><br/><br/>
+				  <input type="radio" name="Hazardous" value="yes" class="input_txt" checked="true" onclick="this.form.list.style.visibility = this.checked? 'visible' : 'hidden'">Yes&nbsp;&nbsp;&nbsp;<div id="send_to_one">
+				  <label>If yes,Please List: </label><input type="text" id="list" name="Hazardousyes" style="visibility:hidden"/><br/><br/>
     </div><input type="radio" name="Hazardous" value="No" class="input_txt">No
 			      
 			      </div>

@@ -26,7 +26,6 @@ public class WorkaccidentDAO {
 	
 	
 	
-	
 	public int setWorkaccident(Workaccident workaccident)
 	{
 		Connection con = null;
@@ -203,7 +202,7 @@ public int updateWorkAccident(Workaccident workAcc,String patient_no,String admi
 	 try{
     	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
     	 Date date = new Date();
-    
+    	 
     	String cmd="UPDATE tbl_workaccident SET job_classification ='"+workAcc.getJob_classification()+"',doyou_pos='"+workAcc.getDoyou_pos()+"',doyou='"+workAcc.getDoyou()+"',pick='"+workAcc.getPick()+"',carry='"+workAcc.getCarry()+"',injury_occur='"+workAcc.getInjury_occur()+"',saw_accident='"+workAcc.getSaw_accident()+"',title='"+workAcc.getTitle()+"',present_job='"+workAcc.getPresent_job()+"',time_loss='"+workAcc.getTime_loss()+"',absenteeism='"+workAcc.getAbsenteeism()+"',type_of_light='"+workAcc.getType_of_light()+"',lighting='"+workAcc.getLighting()+"',pick_lift='"+workAcc.getPick_lift()+"',how_much='"+workAcc.getHow_much()+"',how_often='"+workAcc.getHow_often()+"',where_to_where='"+workAcc.getWhere_to_where()+"',lift_from='"+workAcc.getLift_from()+"',liftin_orout='"+workAcc.getLiftin_orout()+"',workpos='"+workAcc.getWorkpos()+"',push_pull='"+workAcc.getPush_pull()+"',jobpp='"+workAcc.getJobpp()+"',work_area='"+workAcc.getWork_area()+"',warea='"+workAcc.getWarea()+"',levers='"+workAcc.getLevers()+"',overhead='"+workAcc.getOverhead()+"',no_of_employees='"+workAcc.getNo_of_employees()+"',like_job='"+workAcc.getLike_job()+"',pre_employment='"+workAcc.getPre_employment()+"',return_job='"+workAcc.getReturn_job()+"',changes_in_job='"+workAcc.getChanges_in_job()+"' WHERE patient_no='"+patient_no+"';"; 
     	//String Desc="Update workAcc "+workAcc.getJob_classification();
     	System.out.println(cmd);

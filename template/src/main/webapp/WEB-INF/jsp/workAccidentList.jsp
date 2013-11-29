@@ -45,9 +45,9 @@ $(function() {
     $("#btnPrevious").live("click", function () {
         var tabs = $('#tabs').tabs();
         var c = $('#tabs').tabs("length");
-        currentTab = currentTab == 0 ? currentTab : (currentTab - 1);
+        currentTab = currentTab =='No' ? currentTab : (currentTab - 1);
         tabs.tabs('select', currentTab);
-        if (currentTab == 0) {
+        if (currentTab =='No') {
             $("#btnNext").show();
             $("#btnPrevious").hide();
         }
@@ -99,11 +99,11 @@ $(function() {
                	</tr>	 
                	<tr class="row1">
                	   <td><span class="err">*</span>Do you carry anything or pick anything up</td>
-               	    <c:if test="${workaccident.pick == 1}">
+               	    <c:if test="${workaccident.pick =='yes'}">
                		  
                		    <td>No </td>
                		</c:if>
-               		 <c:if test="${workaccident.pick == 0}">
+               		 <c:if test="${workaccident.pick =='No'}">
                		  
                		    <td>yes ${workaccident.carry}</td>
                		</c:if>
@@ -129,11 +129,10 @@ $(function() {
                </tr>
                <tr class="row2">
                		<td><span class="err">*</span>Has there been a time loss or absenteeism caused from job injury</td>
-               		 <c:if test="${workaccident.time_loss == 1}">
-               		  
+               		 <c:if test="${workaccident.time_loss =='yes'}">
                		    <td>No </td>
                		</c:if>
-               		 <c:if test="${workaccident.time_loss == 0}">
+               		 <c:if test="${workaccident.time_loss =='No'}">
                		  
                		    <td>yes ${workaccident.absenteeism}</td>
                		</c:if>
@@ -149,15 +148,14 @@ $(function() {
                 </tr>
                  <tr class="row2">
                  		 	<td><span class="err">*</span>Do you pick up or lift?</td>
-                 		 	 <c:if test="${workaccident.pick_lift == 0}">
+                 		 	 <c:if test="${workaccident.pick_lift =='No'}">
                  		 	 	<td>Yes</td>
                  		 	 </c:if>
-                 		 	  <c:if test="${workaccident.pick_lift == 1}">
+                 		 	  <c:if test="${workaccident.pick_lift =='yes'}">
                  		 	 	<td>No</td>
                  		 	 </c:if>
                  </tr>
-                  <div id="lift">
-				  <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                 
 				  <tr class="row1">		
                  		<td><span class="err">*</span>If yes, how much&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                		  <td>${workaccident.how_much}</td>
@@ -170,20 +168,18 @@ $(function() {
                			<td><span class="err">*</span>From where to where</td>
                		  <td>${workaccident.where_to_where}</td>
                	</tr>
-               	  </table>
-               		  </div>
-               		  <table cellpadding="0" cellspacing="0" border="0" width="100%">
-                  <tr class="row1">
+               	 
+                  <tr class="row2">
                			<td><span class="err">*</span>Do you lift from&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                		  <td>${workaccident.lift_from}</td>
                	</tr> 
-               	<tr class="row2">
+               	<tr class="row1">
                			<td><span class="err">*</span>Do you lift in or out of a machine?</td>
-               			 <c:if test="${workaccident.liftin_orout == 1}">
+               			 <c:if test="${workaccident.liftin_orout =='yes'}">
                		  
                		    <td>No </td>
                		</c:if>
-               		 <c:if test="${workaccident.liftin_orout == 0}">
+               		 <c:if test="${workaccident.liftin_orout =='No'}">
                		  
                		    <td>yes</td>
                		</c:if>
@@ -192,13 +188,13 @@ $(function() {
                			<td><span class="err">*</span>If working at a machine,do you</td>
                		  <td>${workaccident.workpos}</td>
                	</tr> 
-               	<tr class="row2">
+               	<tr class="row1">
                			<td><span class="err">*</span>In your job, do you push or pull</td>
-               			 <c:if test="${workaccident.push_pull == 1}">
+               			 <c:if test="${workaccident.push_pull =='yes'}">
                		  
                		    <td>No </td>
                		</c:if>
-               		 <c:if test="${workaccident.push_pull == 0}">
+               		 <c:if test="${workaccident.push_pull =='No'}">
                		  
                		    <td>yes  ${workaccident.jobpp}</td>
                		</c:if>
@@ -238,22 +234,22 @@ $(function() {
                	</tr>
                		<tr class="row2">
                			<td><span class="err">*</span>Do you use foot or hand levers</td>
-               			 <c:if test="${workaccident.levers == 1}">
+               			 <c:if test="${workaccident.levers =='yes'}">
                		  
                		    <td>No </td>
                		</c:if>
-               		 <c:if test="${workaccident.levers == 0}">
+               		 <c:if test="${workaccident.levers =='No'}">
                		  
                		    <td>yes</td>
                		</c:if>
                	</tr> 
                	<tr class="row2">
                			<td><span class="err">*</span>Do you work overhead</td>
-               			 <c:if test="${workaccident.overhead == 1}">
+               			 <c:if test="${workaccident.overhead =='yes'}">
                		  
                		    <td>No </td>
                		</c:if>
-               		 <c:if test="${workaccident.overhead == 0}">
+               		 <c:if test="${workaccident.overhead =='No'}">
                		  
                		    <td>yes</td>
                		</c:if>
@@ -264,33 +260,33 @@ $(function() {
                	</tr>
                	<tr class="row2">
                			<td><span class="err">*</span>Do you like your job</td>
-               			 <c:if test="${workaccident.like_job == 1}">
+               			 <c:if test="${workaccident.like_job =='yes'}">
                		  
                		    <td>No </td>
                		</c:if>
-               		 <c:if test="${workaccident.like_job == 0}">
+               		 <c:if test="${workaccident.like_job =='No'}">
                		  
                		    <td>yes</td>
                		</c:if>
                	</tr>
                	<tr class="row1">
                			<td><span class="err">*</span>Was a pre-employment exam performed or required</td>
-               			 <c:if test="${workaccident.pre_employment == 1}">
+               			 <c:if test="${workaccident.pre_employment =='yes'}">
                		  
                		    <td>No </td>
                		</c:if>
-               		 <c:if test="${workaccident.pre_employment == 0}">
+               		 <c:if test="${workaccident.pre_employment =='No'}">
                		  
                		    <td>yes</td>
                		</c:if>
                	</tr>
                	 	<tr class="row2">
                			<td><span class="err">*</span>If off work, do you want to return to your job</td>
-               			 <c:if test="${workaccident.return_job == 1}">
+               			 <c:if test="${workaccident.return_job =='yes'}">
                		  
                		    <td>No </td>
                		</c:if>
-               		 <c:if test="${workaccident.return_job == 0}">
+               		 <c:if test="${workaccident.return_job =='No'}">
                		  
                		    <td>yes</td>
                		</c:if>

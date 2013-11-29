@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="/resources/css/style.css" />
   <script src="resources/js/jquery.min.js"></script>
   <script src="resources/js/jquery-ui.js"></script>
+ 
 <script type="text/javascript">
 $(function() {
     $( "#tabs" ).tabs();
@@ -25,6 +26,14 @@ $(function() {
     $( ".tabs-bottom .ui-tabs-nav" ).appendTo( ".tabs-bottom" );
   });
 </script>
+<!-- <script type="text/javascript">
+window.onload(){
+	alert("onload");
+	Checkpos(val);
+	work(val);
+	Checklight(val);
+};
+</script> -->
 <script type="text/javascript">
     var currentTab = 0;
     $(function () {
@@ -91,6 +100,8 @@ $(function() {
       <tr>
         <td valign="top" align="left">
         	<div>
+        	
+        	
 	            <div class="headings altheading">
 	              <h2>Edit Work Accident</h2>
 	            </div>
@@ -109,7 +120,7 @@ $(function() {
 				 <tr class="row2">
                 						<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Job Position</td>
                 						 <td valign="top" align="left" class="input_txt">
-				  							<select name="doyou_pos" class="input_cmbbx1" id="do_you"  onchange='Checkpos(this.value);'>	
+				  							<select name="doyou_pos" class="input_cmbbx1" id="do_you"  onclick='Checkpos(this.value);'>	
 				  							 <option value="sit_at_desk" <c:if test="${workaccident.doyou_pos=='sit_at_desk'}"><c:out value="selected"/></c:if>>Sit at desk</option>
 						                     <option value="walk" <c:if test="${workaccident.doyou_pos=='walk'}"><c:out value="selected"/></c:if>>Walk</option>	
 						                     <option value="stand" <c:if test="${workaccident.doyou_pos=='stand'}"><c:out value="selected"/></c:if>>Stand</option>
@@ -120,11 +131,12 @@ $(function() {
 						                     <option value="load" <c:if test="${workaccident.doyou_pos=='load'}"><c:out value="selected"/></c:if>>Load</option>
 						                   <option value="other" <c:if test="${workaccident.doyou_pos=='other'}"><c:out value="selected"/></c:if>>Other</option> 
 						                      
-						                     </select>
-						                     <c:if test="${workaccident.doyou_pos=='other'}">
-						                     <td><input type="text" name="doyou" id="doyou" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.doyou}" name="doyou" /></br><span class="err"><form:errors path="workAcc.doyou"></form:errors></span></td>
-						                 		</c:if>
-						                     <td><input type="text" name="doyou" id="doyou" style='display:none' onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.doyou}" name="doyou" /></br><span class="err"><form:errors path="workAcc.doyou"></form:errors></span></td>
+						                    
+						                    <%--  <c:if test="${workaccident.doyou_pos=='other'}">
+						                     <td><input type="text" id="doyou" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.doyou}" name="doyou" /></br><span class="err"><form:errors path="workAcc.doyou"></form:errors></span></td>
+						                 		</c:if> --%>
+						                 		 </select>
+						                      <td><input type="text" name="doyou" id="doyou" style='display:none' onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.doyou}" name="doyou" /></br><span class="err"><form:errors path="workAcc.doyou"></form:errors></span></td>
 						                     
 						                 		
 			  	 </tr>
@@ -166,18 +178,18 @@ $(function() {
 				   <tr class="row1">
                 						<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Type of lighting in the building</td>
                 						<td valign="top" align="left" class="input_txt">
-										  <select name="type_of_light" class="input_cmbbx1" onchange='Checklight(this.value);'>
+										  <select name="type_of_light" class="input_cmbbx1" onclick='Checklight(this.value);'>
 					 						<option value="fluorescent" <c:if test="${workaccident.type_of_light=='fluorescent'}"><c:out value="selected"/></c:if>>Fluorescent</option>
 						                     <option value="overhead" <c:if test="${workaccident.type_of_light=='overhead'}"><c:out value="selected"/></c:if>>Overhead</option>	
 						                     <option value="onmachine" <c:if test="${workaccident.type_of_light=='onmachine'}"><c:out value="selected"/></c:if>>On machine</option>
 						                    <option value="others" <c:if test="${workaccident.type_of_light=='others'}"><c:out value="selected"/></c:if>>Others</option> 
 						                    </select>
-						                      <c:if test="${workaccident.type_of_light=='others'}">
+						                      <%-- <c:if test="${workaccident.type_of_light=='others'}">
 						                     <td> <input type="text" name="lighting" id="lighting" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.lighting}" name="lighting" /></br><span class="err"><form:errors path="workAcc.lighting"></form:errors></span></td>
-						                 		</c:if> 
-						                     
-						                      <td> <input type="text" name="lighting" id="lighting" style='display:none' onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.lighting}" name="lighting" /></br><span class="err"><form:errors path="workAcc.lighting"></form:errors></span></td>
-				 </tr>
+						                 		</c:if>  --%>
+						                   <td> <input type="text" name="lighting" id="lighting_div" style='display:none' onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.lighting}" name="lighting" /></br><span class="err"><form:errors path="workAcc.lighting"></form:errors></span></td>  
+				
+						             			 </tr>
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Do you pick up or lift?</td>
 				  <td valign="top" align="left" class="input_txt">
@@ -287,15 +299,15 @@ $(function() {
   				<tr class="row1">
                 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Is your work area</td>
 				 <td valign="top" align="left" class="input_txt">
-				  <select name="work_area" class="input_cmbbx1" onchange='work(this.value);'>
+				  <select name="work_area" class="input_cmbbx1" onclick='work(this.value);'>
 					<option value="oily" <c:if test="${workaccident.work_area=='oily'}"><c:out value="selected"/></c:if>>Oily</option>
 					<option value="dirty" <c:if test="${workaccident.work_area=='dirty'}"><c:out value="selected"/></c:if>>Dirty</option>	
 					<option value="slippery" <c:if test="${workaccident.work_area=='slippery'}"><c:out value="selected"/></c:if>>Slippery</option>
-					 <option value="Other" <c:if test="${workaccident.type_of_light=='Other'}"><c:out value="selected"/></c:if>>Other</option> 
+					 <option value="Other" <c:if test="${workaccident.work_area=='Other'}"><c:out value="selected"/></c:if>>Other</option> 
 						                      				  
-				    <c:if test="${workaccident.work_area=='Other'}">
+				   <%--  <c:if test="${workaccident.work_area=='Other'}">
 						                     <td> <input type="text" name="warea" id="warea" style='display:none'onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.warea}" name="warea" /></br><span class="err"><form:errors path="workAcc.warea"></form:errors></span></td>
-						                 		</c:if> 
+						                 		</c:if> --%> 
 						                     </select>
 						                     <td> <input type="text" name="warea" id="warea" style='display:none' onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.warea}" name="warea" /></br><span class="err"><form:errors path="workAcc.warea"></form:errors></span></td>
 				 </tr>
@@ -400,24 +412,10 @@ else
 <script type="text/javascript">
 
 
-function Checkpos(val){
- var element=document.getElementById('doyou');
- if(val=='other')
-   element.style.display='block';
- else  
-   element.style.display='none';
-} 
-
 </script>
 
 <script type="text/javascript">
-function Checklight(val){
- var element=document.getElementById('lighting');
- if(val=='others')
-   element.style.display='block';
- else  
-   element.style.display='none';
-} 
+
 </script>
 <script type="text/javascript">
 function toggle3(value){
@@ -437,16 +435,34 @@ else
  document.getElementById('jobpp').style.visibility='hidden';
 }
 </script>
+
 <script type="text/javascript">
-function any(value){
-if(value=='show')
- document.getElementById('carry').style.visibility='visible';
-else
- document.getElementById('carry').style.visibility='hidden';
-}
+function Checkpos(val){
+	 var element=document.getElementById('doyou');
+	 
+
+	 if(val=='other')
+	   element.style.display='block';
+	 else  
+	   element.style.display='none';
+	} 
+	function Checklight(val){
+		 var element=document.getElementById('lighting_div');
+		 if(val=='others')
+		   element.style.display='block';
+		 else  
+		   element.style.display='none';
+		} 
+	function any(value){
+		if(value=='show')
+		 document.getElementById('carry').style.visibility='visible';
+		else
+		 document.getElementById('carry').style.visibility='hidden';
+		}
 </script>	
 <script type="text/javascript">
 function work(val){
+
  var element=document.getElementById('warea');
  if(val=='Other')
    element.style.display='block';
@@ -455,4 +471,8 @@ function work(val){
 } 
 </script>
 
+<!--
+
+//-->
+</script>
  <jsp:include page="footer.jsp"></jsp:include>

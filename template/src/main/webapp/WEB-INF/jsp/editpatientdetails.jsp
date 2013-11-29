@@ -506,8 +506,12 @@
 				                 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="High" name="high" <c:if test="${patientDetails.high=='High'}"><c:out value="Checked"/></c:if>   />High</td>
 								 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Digestive" name="digestive" <c:if test="${patientDetails.digestive=='Digestive'}"><c:out value="Checked"/></c:if>   />Digestive</td>
 								 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Heart" name="heart" <c:if test="${patientDetails.heart=='Heart'}"><c:out value="Checked"/></c:if>   />Heart</td>
+								 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Other" name="other" onclick="this.form.ifother.style.visibility = this.checked? 'visible' : 'hidden'"<c:if test="${patientDetails.other=='Other'}"><c:out value="Checked"/></c:if>   />Other</td>
+								 <td class="input_txt"><input type="text" class="input_txtbx1"  style="visibility:hidden" id="ifother" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.ifother}" name="ifother" /></br><span class="err"><form:errors path="patient.ifother"></form:errors></span></td>
+
 								 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Other" name="other" <c:if test="${patientDetails.other=='Other'}"><c:out value="Checked"/></c:if>   />Other</td>
 								 <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.ifother}" name="ifother" /></br><span class="err"><form:errors path="PatientDetails.ifother"></form:errors></span></td>
+
 					
 					</tr>
 					</table>
@@ -546,17 +550,16 @@
 				  				 <td valign="top" align="left" class="input_txt">
 				 
 										  <input type="radio" name="hazardous" value="yes" class="input_txt" <c:if test="${patientDetails.hazardous=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
-				 						  <label>If yes,Please List: </label>
+				 						  <label>If yes,Please List:</label>
 				 						  <input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.hazardousyes}" name="hazardousyes" /></br><span class="err"><form:errors path="PatientDetails.hazardousyes"></form:errors></span>
-								 </td>
-				 				 <td>
- 										  <input type="radio" name="hazardous" value="No" class="input_txt"<c:if test="${patientDetails.hazardous=='No'}"><c:out value="checked=checked"/></c:if>>No
+										
+										  <input type="radio" name="hazardous" value="No" class="input_txt"<c:if test="${patientDetails.hazardous=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;&nbsp;
 			    				 </td>
 					  </tr>
 					   <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Females Only:<br>Are you pregnant:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="female" value="yes" class="input_txt" <c:if test="${patientDetails.female=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
+				                  	<input type="radio" name="female" value="yes" class="input_txt" <c:if test="${patientDetails.female=='yes'}"><c:out value="checked=checked"/></c:if>>Yes
 				                  	<input type="radio" name="female" value="No" class="input_txt"<c:if test="${patientDetails.female=='No'}"><c:out value="checked=checked"/></c:if>>No
 				                
 				      </tr>
