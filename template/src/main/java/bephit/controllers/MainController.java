@@ -88,7 +88,7 @@ import bephit.model.*;
  
  
 @Controller
-@SessionAttributes({"physical","radio","waiver","info","consent","minor","hard","screen","medical","assignment","hippa","staff","veri","patient"})
+@SessionAttributes({"physical","radio","waiver","info","consent","minor","hard","screen","medical","assignment","hippa","staff","veri","patient","role"})
 public class MainController {
 	
 	RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
@@ -169,27 +169,28 @@ public class MainController {
 	
  
 	@RequestMapping(value={"/", "/welcome"}, method = RequestMethod.GET)
-	public String printWelcome(ModelMap model) {
+	public String printWelcome(HttpSession session,HttpServletRequest request,ModelMap model, Principal principal ) {
 		
-		ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
-		participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
-        model.addAttribute("participantsDetailsForm", participantsDetailsForm);
+		 int role=mainDAO.getrole();
+	       System.out.println("Role:"+role);
         model.addAttribute("menu","dashboard");
 		
+		
+		model.addAttribute("role",role);
+	    session.setAttribute("role", role);
+		if(role==0)
+		{
+			return "patientDetails";
+		}
+		else if(role==2)
+		{ 
+			return "staffchecklist";
+		}
+		else
 		return "dashboard";
  
 	}
-	@RequestMapping(value="/adminlogin", method = RequestMethod.GET)
-	public String adminlogin(ModelMap model) {
-		return "adminlogin";
- 
-	}
 	
-	@RequestMapping(value="/doctorlogin", method = RequestMethod.GET)
-	public String doctorlogin(ModelMap model) {
-		return "doctorlogin";
- 
-	}
 	
 	@RequestMapping(value="/login", method = RequestMethod.GET)
 	public String login(ModelMap model) {
@@ -255,7 +256,7 @@ public class MainController {
 		PhysicalexamForm physicalexamForm = new PhysicalexamForm();
         
 		physicalexamForm.setPhysicalexam(physicalDAO.getPhysical(physical_id));
-		//model.addAttribute("participantsDetailsForm", participantsDetailsForm);
+	
 		model.addAttribute("physicalexamForm", physicalexamForm);
 		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
 		model.addAttribute("menu", "doctor");
@@ -362,18 +363,18 @@ public class MainController {
 		hamiltonchiropracticForm.setHamiltonchiropractic(hamiDAO.getHamiltonchiropractic());
 		model.addAttribute("hamiltonchiropracticForm",hamiltonchiropracticForm);
 		 model.addAttribute("menu", "doctor");
-		/*System.out.println("ham....="+hamiltonchiropracticForm.getHamiltonchiropractic().size());*/
+	
 		return "viewfirsthamiltonchiropractic";
  
 	}
 	@RequestMapping(value="/viewhamiltonchiropractic", method=RequestMethod.GET)
 	public String viewhamiltonchiropractic(HttpServletRequest request,@RequestParam("initialexamid") String initialexamid,ModelMap model,Hamiltonchiropractic hamiltonchiropractic)
 	{
-		//ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
+		
 		HamiltonchiropracticForm hamiltonchiropracticForm = new HamiltonchiropracticForm();
-        //participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants(participants_id));
+        
 		hamiltonchiropracticForm.setHamiltonchiropractic(hamiDAO.getHamiltonchiropractic((initialexamid)));
-		//model.addAttribute("participantsDetailsForm", participantsDetailsForm);
+		
 		model.addAttribute("hamiltonchiropracticForm", hamiltonchiropracticForm);
 		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
 		 model.addAttribute("menu", "doctor");
@@ -434,9 +435,9 @@ public class MainController {
 		if(status==1)
 		{
         model.addAttribute("success","true");
-		//ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
+		
 		HamiltonchiropracticForm hamiltonchiropracticForm = new HamiltonchiropracticForm();
-		//participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
+		
 		hamiltonchiropracticForm.setHamiltonchiropractic(hamiDAO.getHamiltonchiropractic());
         model.addAttribute("hamiltonchiropracticForm", hamiltonchiropracticForm);
         model.addAttribute("menu", "doctor");

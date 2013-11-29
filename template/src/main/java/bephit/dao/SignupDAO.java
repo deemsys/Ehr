@@ -49,9 +49,11 @@ public class SignupDAO {
 	    	 String cmd_login="INSERT INTO login (`username`,`password`,`email`,`role`) VALUES ('"+signup.getUsername()+"','"+signup.getPassword()+"','"+signup.getEmail()+"','0')";
 	    	 System.out.println(cmd_login);
 	    	 statement.execute(cmd_login);
-		  resultSet=statement.executeQuery("select max(Num) as id from tbl_signup");
-		  resultSet.next();
-		  String cmd_role="INSERT INTO user_roles(`user_id`,`authority`) VALUES ('"+resultSet.getString("id")+"','ROLE_USER')";
+	    	 String cmd_getid="SELECT LAST_INSERT_ID() as lastid";
+	    	 resultSet=statement.executeQuery(cmd_getid);
+	    		resultSet.next();
+	    		int lastinsertedid=Integer.parseInt(resultSet.getString("lastid"));
+	    		String cmd_role="insert into user_roles(user_id,authority) values('"+lastinsertedid+"','ROLE_USER')";
 		  System.out.println(cmd_role);
 	    	 statement.execute(cmd_role);
 		  flag=1;

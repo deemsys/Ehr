@@ -100,7 +100,7 @@
 							</div></td>
 					</tr>
 					<tr>
-						<td align="right" valign="middle"><span class="cart_txt">Welcome "/>
+						<td align="right" valign="middle"><span class="cart_txt">Welcome 
 								<sec:authentication property="principal.username" />&nbsp;&nbsp;|&nbsp;&nbsp;<a href="<c:url value="/j_spring_security_logout" />" style="color:#243d6e">Logout</a>
 						</span></td>
 					</tr>
@@ -119,6 +119,8 @@
 		$previ=explode(",",$rec);
 	<AJDF:output>/php</AJDF:output>	 Suresh-->
 						<ul class="menu">
+						
+						<c:if test="${role==0}">
 							  <li>
 								<a href="welcome" class="<c:choose><c:when test="${menu=='dashboard'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>">
 									<span>Dashboard</span>
@@ -166,17 +168,21 @@
 									<span>Authorization Forms</span>
 								</a>
 							</li>
-							
+							</c:if>
+							<c:if test="${role==1}">
 							<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='doctor'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu6">
 									<span>Doctor Forms</span>
 								</a>
 							</li>
+							</c:if>
+							<c:if test="${role==2}">
 							<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='admin'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu7">
 									<span>Admin Forms</span>
 								</a>
-							</li>  
+							</li>
+							</c:if>  
 						</ul><div class="clear">
 						<script type="text/javascript">
 							ddlevelsmenu.setup("ddtopmenubar", "topbar")

@@ -7,14 +7,15 @@
 	http://www.springframework.org/schema/security/spring-security-3.0.3.xsd">
  
 	<http auto-config="true">
-		<intercept-url pattern="/" access="ROLE_USER" />
-		<intercept-url pattern="/welcome*" access="ROLE_USER" />
+		 <intercept-url pattern="/" access="ROLE_USER" />
+		<intercept-url pattern="/" access="ROLE_ADMIN" />
+		<intercept-url pattern="/physicalexam" access="ROLE_DOCTOR" />
 		<form-login login-page="/login" default-target-url="/welcome"
 			authentication-failure-url="/loginfailed" />
 		<logout logout-success-url="/logout" />
 	</http>
 	
-	<!-- <authentication-manager>
+	 <authentication-manager>
 	   <authentication-provider>
 		<jdbc-user-service data-source-ref="dataSource"
  
@@ -24,15 +25,15 @@
  
 		/>
 	   </authentication-provider>
-	</authentication-manager> -->
+	</authentication-manager>
  
-	<authentication-manager>
+	<!-- <authentication-manager>
 	  <authentication-provider>
 		<user-service>
 			<user name="krishna" password="krishna" authorities="ROLE_USER" />
 		</user-service>
 	  </authentication-provider>
-	</authentication-manager>
+	</authentication-manager> -->
 
  
 </beans:beans>

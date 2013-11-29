@@ -63,6 +63,7 @@
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
               <td valign="top" align="center"><input type="submit" class="submit_btn" value="Submit"></td>
+              <td valign="top" align="center"><input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='login'"></td>
         	  </tr>
         	  </table>
         	  </div>

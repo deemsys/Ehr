@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <html>
 <head>
 <title>Login Page</title> 
@@ -41,29 +42,29 @@
 		      </li>
 		      <li>
 		        <input type="password" class="inputbx" name="j_password">
-				<p><font color="Red">Required Field Cannot Be Blank</font></p>	
+				<!-- <p><font color="Red">Required Field Cannot Be Blank</font></p>	 -->
 		      </li>
 		      <li><a href="#">
 		        <input type="submit" class="submit-btn" value=" " name="submit">
 		        </a></li>
-		      <li><a href="#" class="forgot-password"></a></li>
+		      <!-- <li><a href="#" class="forgot-password"></a></li -->>
 		      <li><input name="reset" type="reset" /></li>
-		     <!--  <li><a href="signup" style="color:ffffff">Register</a></li> -->
+		      <!-- <li><a href="signup" style="color:ffffff">Register</a></li> --> 
 		    </ul>
 		  </div>
-		 <!--  <div class="login-bottom"></div> -->
+		 <!--  <div class="login-bottom"></div>  -->
 		 </div>
-		<!--  <br>
-		<div id="role_div">
+		 <br>
+		 <div id="role_div">
 		<table>
 		<tr>
-		<td><input type="button" id="btnNext" class="submit_btn1" value="Admin Login" onclick="window.location.href='adminlogin'" /></td>
-		<td><input type="button" id="btnNext" class="submit_btn1" value="Doctor Login" onclick="window.location.href='doctorlogin'"/></td>
-		<td><input type="button" id="btnNext" class="submit_btn1" value="Patient Login" onclick="window.location.href='login'"/></td>
-		<td><input type="button" id="btnNext" class="submit_btn1" value="Register" onclick="window.location.href='signup'"/></td>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		<td><input type="button" id="btnNext" class="submit_btn2" value="Doctor Registration" onclick="window.location.href='doctorsignup'" /></td>
+        <td>&nbsp;&nbsp;</td>
+		<td><input type="button" id="btnNext" class="submit_btn2" value="Patient Registration" onclick="window.location.href='signup'"/></td>
 		</tr>
 		</table>
-		</div> -->
+		</div>   
 		
 	</form>
 </body>
