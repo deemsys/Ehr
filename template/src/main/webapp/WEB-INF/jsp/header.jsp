@@ -121,13 +121,13 @@
 						<ul class="menu">
 						
 						<c:if test="${role==0}">
-							  <li>
+							  <%-- <li>
 								<a href="welcome" class="<c:choose><c:when test="${menu=='dashboard'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>">
 									<span>Dashboard</span>
 								</a>
-							</li> 
+							 </li> --%> 
 				            <li>
-				            	<a href="patientDetails" class="<c:choose>
+				            	<a href="#" class="<c:choose>
 				            	<c:when test="${menu=='patientInfo'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu5">
 				            		<span>Patient Information</span>
 				            	</a>
@@ -243,6 +243,7 @@
 							ddlevelsmenu.setup("ddtopmenubar", "topbar")
 						</script>
 						<ul id="ddsubmenu5" class="ddsubmenustyle">
+						<li><a href="patientDetails">Add Patiet Details</a></li>
 							 <li><a href="viewpatient">View Patient Details</a></li>
 							
           				</ul>

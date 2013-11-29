@@ -1,18 +1,21 @@
 package bephit.model;
 
+import javax.validation.constraints.Pattern;
+
 import org.hibernate.validator.constraints.NotEmpty;
 
 public class Signup{
-	
+	@NotEmpty
 	private String username;
 	
-	
+	@NotEmpty
 	private String password;
 	
-	
+	@NotEmpty
 	private String confirm;
 	
-	
+	@NotEmpty
+	@Pattern(regexp="^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$",message="Please Enetr a valid mail id")
 	private String email;
 	
 public Signup(){

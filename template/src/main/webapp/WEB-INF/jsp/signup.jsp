@@ -1,4 +1,4 @@
-<%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
@@ -33,37 +33,69 @@
 	             <h2>Register your account<h2> 
 	            </div>
 	            <div class="contentbox">
+	             <c:choose>
+                 <c:when test="${empty signup}">
 	            <table cellpadding="0" cellspacing="0" border="0" width="100%">
 	            <tr class="row1">
 	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Username</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="username" />
+				  <input type="text" class="input_txtbx1" id="inp_id" name="username" /><br/><span class="err"><form:errors path="Signup.username"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
 	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Password</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="password" class="input_txtbx1" id="inp_id" name="password" />
+				  <input type="password" class="input_txtbx1" id="inp_id" name="password" /><br><span class="err"><form:errors path="Signup.password"></form:errors></span>
 				  </td>
 				  </tr>
 				   <tr class="row1">
 	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Confirm Password</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="password" class="input_txtbx1" id="inp_id" name="confirm" />
+				  <input type="password" class="input_txtbx1" id="inp_id" name="confirm" /><br><span class="err"><form:errors path="Signup.confirm"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
 	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>E-mail Id</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="email" />
+				  <input type="text" class="input_txtbx1" id="inp_id" name="email" /><br><span class="err"><form:errors path="Signup.email"></form:errors></span>
 				  </td>
 				  </tr>
 				  </table>
+				  </c:when>
+				  <c:otherwise>
+				   <table cellpadding="0" cellspacing="0" border="0" width="100%">
+	            <tr class="row1">
+	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Username</td>
+				  <td valign="top" align="left" class="input_txt">
+				  <input type="text" class="input_txtbx1" id="inp_id" name="username" value="${signup.username}"/><span class="err"><form:errors path="Signup.username"></form:errors></span>
+				  </td>
+				  </tr>
+				  <tr class="row1">
+	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Password</td>
+				  <td valign="top" align="left" class="input_txt">
+				  <input type="password" class="input_txtbx1" id="inp_id" name="password" value="${signup.password}"/><span class="err"><form:errors path="Signup.password"></form:errors></span>
+				  </td>
+				  </tr>
+				   <tr class="row1">
+	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Confirm Password</td>
+				  <td valign="top" align="left" class="input_txt">
+				  <input type="password" class="input_txtbx1" id="inp_id" name="confirm" value="${signup.confirm}"/><span class="err"><form:errors path="Signup.confirm"></form:errors></span>
+				  </td>
+				  </tr>
+				  <tr class="row1">
+	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>E-mail Id</td>
+				  <td valign="top" align="left" class="input_txt">
+				  <input type="text" class="input_txtbx1" id="inp_id" name="email" value="${signup.email}"/><span class="err"><form:errors path="Signup.email"></form:errors></span>
+				  </td>
+				  </tr>
+				  </table>
+				  </c:otherwise>
+				  </c:choose>
 				  <br>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
               <td valign="top" align="center"><input type="submit" class="submit_btn" value="Submit"></td>
-              <td valign="top" align="center"><input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='login'"></td>
+              <td valign="top" align="center"><input type="button" class="submit_btn1" value="Back to Login" onclick="window.location.href='login'"></td>
         	  </tr>
         	  </table>
         	  </div>

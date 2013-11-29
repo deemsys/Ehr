@@ -1,5 +1,5 @@
 
-<%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
@@ -100,13 +100,13 @@ $(function() {
                  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>What is the claim number of your accident</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="claimnumber" /></td>
+				  <input type="text" class="input_txtbx1" id="inp_id" name="claimnumber" /><span class="err"><form:errors path="Autoaccident.claimnumber"></form:errors></span></td>
 
 				  </tr>
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Adjuster's name</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="adjustersname" />
+				  <input type="text" class="input_txtbx1" id="inp_id" name="adjustersname" /><span class="err"><form:errors path="Autoaccident.adjustersname"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
@@ -133,7 +133,7 @@ $(function() {
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Was anyone else in the car with you during the accident?who?</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="companion" />
+				  <input type="text" class="input_txtbx1" id="inp_id" name="companion" /><span class="err"><form:errors path="Autoaccident.companion"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row2">
@@ -190,7 +190,7 @@ $(function() {
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Estimated rate of speed</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="estimated_rate" />
+				  <input type="text" class="input_txtbx1" id="inp_id" name="estimated_rate" /><span class="err"><form:errors path="Autoaccident.estimated_rate"></form:errors></span>
 				  </td>
 				  </tr>
 				 <tr class="row2">
@@ -231,11 +231,14 @@ $(function() {
 				  </select>
 				  </td>
 				  </tr>
-				  <!-- <tr>
-				  <td valign="top" align="center">&nbsp;</td>
-                  <td valign="top" align="right"><input type="submit" class="submit_btn2" value="Next"></td>
-				  </tr> -->
+				  
 				  </table>
+				   <table align="right">
+				               <tr>
+				  
+                     <td><br><input type="button" id="btnNext" class="submit_btn" value="Next"/><br></td>
+                  </tr>
+				               </table>
 				  </td>
 				  </tr>
 				  </table>
@@ -392,39 +395,16 @@ $(function() {
 				  <textarea rows='3' cols='35' id="injury"  placeholder="Please explain"></textarea>
 				  </td>
 				  </tr>
-				  <!--  <tr class="row2">
-                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>If yes, please explain</td>
-				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="ifyes_explain" />
-				  </td>
-				  </tr> -->
-				  <!-- <tr class="row1">
-                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>During/After crash</td>
-				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="during_after_crash" />
-				  </td>
-				  </tr>
-				 <tr class="row2">
-                <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient's body</td>
-				 <td valign="top" align="left" class="input_txt">
-				  <select name="patient_body" class="input_cmbbx1" onchange='Checkposition(this.value);'>
-					<option selected="selected" value="jolted" >Jolted</option>
-					<option value="thrown_about">Thrown About</option>
-					<option value="stunned">Stunned</option>
-					<option value="dazed">Dazed</option>
-					<option value="whipped">Whipped</option>
-					<option value="slammed">Slammed</option>
-					<option value="otherbody">Other</option>
-				  </select>
-				  <input type="text" name="patient_body" id="body_position" style='display:none'/>
-				  </td>
-				  </tr>  -->
-				 <!--  <tr>
-				  <td valign="top" align="center">&nbsp;</td>
-				  <td valign="top" align="left"><input type="button" class="submit_btn2" value="Previous" onclick="history.go(-1)"></td> 
-                  <td valign="top" align="right"><input type="submit" class="submit_btn2" value="Submit"></td>
-				  </tr>  -->
+				  
+				  
 				  </table>
+				  	<table align="right">
+				                  	 <tr>
+				  <td><br><input type="button" id="btnPrevious" class="submit_btn" value="Previous"  />&nbsp;</td>
+                  <td>&nbsp;&nbsp;</td>
+                  <td><br><input type="button" id="btnNext" class="submit_btn" value="Next"/><br></td>
+                  </tr>
+				                  	</table>
 				  </td>
 				  </tr>
 				  </table>
@@ -563,7 +543,7 @@ $(function() {
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt">Estimated amount of property damage</td>
 				  <td valign="top" align="left" class="input_txt">$
-				  <input type="text" class="input_txtbx1" id="inp_id" name="estimated_amount" />
+				  <input type="text" class="input_txtbx1" id="inp_id" name="estimated_amount" /><span class="err"><form:errors path="Autoaccident.estimated_amount"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row2">
@@ -578,6 +558,13 @@ $(function() {
 				  </td>
 				  </tr> 
 				 </table>
+				 	<table align="right">
+				                  	 <tr>
+				  <td><br><input type="button" id="btnPrevious" class="submit_btn" value="Previous"  />&nbsp;</td>
+                  <td>&nbsp;&nbsp;</td>
+                  <td><br><input type="button" id="btnNext" class="submit_btn" value="Next"/><br></td>
+                  </tr>
+				                  	</table>
 				 </td>
 				 </tr>
 				 </table>
@@ -710,8 +697,9 @@ $(function() {
 				  </td>
 				  
 				  </tr>
-				  
+				   
 				  </table>
+				  
 				  </div>
 				  
 				  </div>
@@ -720,17 +708,18 @@ $(function() {
 				  </tr>
 				  </table>
 				
-				  
-				     </div>
-				  </div>
-				  <table align="right">
+				   <table align="right">
 				  <br><tr>
-				 <td><br><input type="button" id="btnPrevious" class="submit_btn" value="Previous" style = "display:none" />&nbsp;</td>
-                  <td><br><input type="button" id="btnNext" class="submit_btn" value="Next"/><br></td>
+				 <td><input type="button" id="btnPrevious" class="submit_btn" value="Previous"  /></td>
+				 <td>&nbsp;&nbsp;</td>
  
                   <td><input type="submit" class="submit_btn" value="Save"></td>
+                  <td>&nbsp;&nbsp;</td>
                   <td><input type="reset" class="submit_btn" value="Cancel" onclick="window.location.href='autoaccident'"></td>
-				</table>  
+				</table> 
+				     </div>
+				  </div>
+				 
 				  </div>
 				  </body>
 				  </html>

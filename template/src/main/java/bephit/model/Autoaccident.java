@@ -1,11 +1,19 @@
 package bephit.model;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class Autoaccident {
 	private String patient_number;
+	
+	@NotEmpty
 	private String claimnumber;
+	
+	@NotEmpty
 	private String adjustersname;
 	private String estimate;
 	private String seating;
+	
+	@NotEmpty
 	private String companion;
 	private String vehicle_make;
 	private String vehicle_model;
@@ -18,6 +26,8 @@ public class Autoaccident {
 	private String driverposition;
 	private String vehicle_moving_time;
 	private String wascar;
+	
+	@NotEmpty
 	private String estimated_rate;
 	private String time_of_day;
 	private String road_conditions;
@@ -55,6 +65,8 @@ public class Autoaccident {
 	private String glasses_impact;
 	private String unconscious;
 	private String uncon;
+	
+	@NotEmpty
 	private String estimated_amount;
 	private String damage;
 	private String was_anyone_cited;

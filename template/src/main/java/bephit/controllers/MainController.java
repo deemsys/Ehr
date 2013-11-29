@@ -90,7 +90,7 @@ import bephit.model.*;
  
  
 @Controller
-@SessionAttributes({"physical","radio","waiver","info","consent","minor","hard","screen","medical","assignment","hippa","staff","veri","patient","role"})
+@SessionAttributes({"physical","radio","waiver","info","consent","minor","hard","screen","medical","assignment","hippa","staff","veri","patient","role","signup","doctorsignup"})
 public class MainController {
 	
 	RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
@@ -181,14 +181,14 @@ public class MainController {
 	    session.setAttribute("role", role);
 		if(role==0)
 		{
-			return "patientDetails";
+			return "viewpatient";
 		}
 		else if(role==2)
 		{ 
 			return "staffchecklist";
 		}
 		else
-		return "dashboard";
+		return "physicalexam";
  
 	}
 	
@@ -700,9 +700,7 @@ public class MainController {
 		if(status==1)
 		{
         model.addAttribute("success","true");
-		//ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
-		//RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
-		//participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
+		
 		radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport());
         model.addAttribute("radiologicReportForm", radiologicReportForm);
         model.addAttribute("menu", "report");
@@ -1072,15 +1070,16 @@ public class MainController {
 	
 	
 	@RequestMapping(value="/signup", method = RequestMethod.GET)
-	public String signup(ModelMap model) {
-		
+	public String signup(HttpSession session,ModelMap model) {
+		session.removeAttribute("signup");
 		return "signup";
  
 	}
 	
 
 	@RequestMapping(value="/signup", method = RequestMethod.POST)
-	public String insert_signup(@ModelAttribute("Signup")  @Valid Signup signup,BindingResult result,ModelMap model) {
+	public String insert_signup(HttpSession session,@ModelAttribute("Signup")  @Valid Signup signup,BindingResult result,ModelMap model) {
+		session.setAttribute("signup",signup);
 		if(result.hasErrors())
 		{
 			SignupForm signupForm= new SignupForm();
@@ -1090,31 +1089,29 @@ public class MainController {
 			return "signup";
 		}
 		
-		model.put("Signup", signup);
-		model.addAttribute("SignupForm",signup);
+		
     	int h =signDAO.setSignup(signup);
     	SignupForm signupForm= new SignupForm();
     	signupForm.setSignup(signDAO.getSignup());
 		model.addAttribute("SignupForm",signupForm);
 
-		//System.out.println(autoaccident.getAdjustersname());
-	    
 		
-		return "signup";
+		return "login";
 	}
 	
 	
 	
 	@RequestMapping(value="/doctorsignup", method = RequestMethod.GET)
-	public String doctorsignup(ModelMap model) {
-		
+	public String doctorsignup(HttpSession session,ModelMap model) {
+		session.removeAttribute("doctorsignup");
 		return "doctorsignup";
  
 	}
 	
 
 	@RequestMapping(value="/doctorsignup", method = RequestMethod.POST)
-	public String insert_doctorsignup(@ModelAttribute("Doctorsignup")  @Valid Doctorsignup doctorsignup,BindingResult result,ModelMap model) {
+	public String insert_doctorsignup(HttpSession session,@ModelAttribute("Doctorsignup")  @Valid Doctorsignup doctorsignup,BindingResult result,ModelMap model) {
+		session.setAttribute("doctorsignup",doctorsignup);
 		if(result.hasErrors())
 		{
 			DoctorsignupForm doctorsignupForm= new DoctorsignupForm();
@@ -1129,11 +1126,7 @@ public class MainController {
     	DoctorsignupForm doctorsignupForm= new DoctorsignupForm();
     	doctorsignupForm.setDoctorsignup(docDAO.getDoctorsignup());
 		model.addAttribute("DoctorsignupForm",doctorsignupForm);
-
-	
-	    
-		
-		return "doctorsignup";
+        return "login";
 	}
 
 	
@@ -1384,6 +1377,7 @@ public class MainController {
 	
 	
 	
+
 
 		
 		@RequestMapping(value="/Assignment",method=RequestMethod.GET)

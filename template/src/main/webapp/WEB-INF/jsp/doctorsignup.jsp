@@ -1,4 +1,4 @@
-<%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
@@ -33,37 +33,69 @@
 	             <h2>Registration For Doctor<h2> 
 	            </div>
 	            <div class="contentbox">
+	            <c:choose>
+	            <c:when test="${empty doctorsignup}">
 	            <table cellpadding="0" cellspacing="0" border="0" width="100%">
 	            <tr class="row1">
 	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Username</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="doctorusername" />
+				  <input type="text" class="input_txtbx1" id="inp_id" name="doctorusername" /><span class="err"><form:errors path="Doctorsignup.doctorusername"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
 	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Password</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="password" class="input_txtbx1" id="inp_id" name="doctorpassword" />
+				  <input type="password" class="input_txtbx1" id="inp_id" name="doctorpassword" /><span class="err"><form:errors path="Doctorsignup.doctorpassword"></form:errors></span>
 				  </td>
 				  </tr>
 				   <tr class="row1">
 	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Confirm Password</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="password" class="input_txtbx1" id="inp_id" name="doctorconfirm" />
+				  <input type="password" class="input_txtbx1" id="inp_id" name="doctorconfirm" /><span class="err"><form:errors path="Doctorsignup.doctorconfirm"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
 	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>E-mail Id</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="doctoremail" />
+				  <input type="text" class="input_txtbx1" id="inp_id" name="doctoremail" /><span class="err"><form:errors path="Doctorsignup.doctoremail"></form:errors></span>
 				  </td>
 				  </tr>
 				  </table>
+				  </c:when>
+				  <c:otherwise>
+				  <table cellpadding="0" cellspacing="0" border="0" width="100%">
+	            <tr class="row1">
+	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Username</td>
+				  <td valign="top" align="left" class="input_txt">
+				  <input type="text" class="input_txtbx1" id="inp_id" name="doctorusername" value="${doctorsignup.doctorusername}"/><span class="err"><form:errors path="Doctorsignup.doctorusername"></form:errors></span>
+				  </td>
+				  </tr>
+				  <tr class="row1">
+	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Password</td>
+				  <td valign="top" align="left" class="input_txt">
+				  <input type="password" class="input_txtbx1" id="inp_id" name="doctorpassword" value="${doctorsignup.doctorpassword}"/><span class="err"><form:errors path="Doctorsignup.doctorpassword"></form:errors></span>
+				  </td>
+				  </tr>
+				   <tr class="row1">
+	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Confirm Password</td>
+				  <td valign="top" align="left" class="input_txt">
+				  <input type="password" class="input_txtbx1" id="inp_id" name="doctorconfirm" value="${doctorsignup.doctorconfirm }"/><span class="err"><form:errors path="Doctorsignup.doctorconfirm"></form:errors></span>
+				  </td>
+				  </tr>
+				  <tr class="row1">
+	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>E-mail Id</td>
+				  <td valign="top" align="left" class="input_txt">
+				  <input type="text" class="input_txtbx1" id="inp_id" name="doctoremail" value="${doctorsignup.doctoremail}"/><span class="err"><form:errors path="Doctorsignup.doctoremail"></form:errors></span>
+				  </td>
+				  </tr>
+				  </table>
+				  </c:otherwise>
+				  </c:choose>
 				  <br>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
               <td valign="top" align="center"><input type="submit" class="submit_btn" value="Submit"></td>
-              <td valign="top" align="center"><input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='login'"></td>
+              <td valign="top" align="center"><input type="button" class="submit_btn1" value="Back to Login" onclick="window.location.href='login'"></td>
         	  </tr>
         	  </table>
         	  </div>
