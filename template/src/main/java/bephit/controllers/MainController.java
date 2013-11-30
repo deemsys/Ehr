@@ -1900,7 +1900,7 @@ public class MainController {
         model.addAttribute("insuranceplanform", insuranceplanForm);
 	       model.addAttribute("success","true");
 	       model.addAttribute("menu", "health");
-	        return "viewinsuranceplan";
+	        return "insuranceplanlist";
 		
 	}
 
@@ -1920,7 +1920,7 @@ public class MainController {
         model.addAttribute("menu", "health");
 		}
 		
-		return "insuranceplan";
+		return "insuranceplanlist";
 	}
 	
 	@RequestMapping(value="/insuranceverifylist", method = RequestMethod.GET)
