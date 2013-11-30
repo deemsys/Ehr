@@ -694,7 +694,7 @@ $(function() {
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>After the accident I went</td>
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="after_accident" class="input_cmbbx1"  onchange='Check(this.value);'>
-					<option  value="hospital" <c:if test="${autoaccident.after_accident=='hospital '}"><c:out value="Checked"/></c:if>  >Hospital</option>
+					<option  value="hospital" <c:if test="${autoaccident.after_accident=='hospital'}"><c:out value="Checked"/></c:if>  >Hospital</option>
 					<option value="work" <c:if test="${autoaccident.after_accident=='work'}"><c:out value="Checked"/></c:if> >Work</option>
 					<option value="home" <c:if test="${autoaccident.after_accident=='home'}"><c:out value="Checked"/></c:if> >Home</option>
 					<option value="family" <c:if test="${autoaccident.after_accident=='family'}"><c:out value="Checked"/></c:if> >Family</option>
@@ -705,7 +705,9 @@ $(function() {
 				  </td>
 				  </tr> 
 				  </table>
-				  <div id="accident_hospital">
+				   
+				   <div id="accident_hospital">
+				   <c:if test="autoaccident.after_accident=='hospital'">		
 				  <table cellpadding="0" cellspacing="0" border="0" width="100%">
 				   <tr class="row2">
                   <td valign="middle" align="left" class="input_txt">Name of the hospital&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -754,9 +756,9 @@ $(function() {
 				  </td>				  
 				  </tr>				  
 				  </table>
+				   				  </c:if>		
 				   
 				  </div>
-				  
 				  </div>
 				  </div>
 				  </td>
@@ -788,7 +790,7 @@ function CheckConditions(val){
 </script>
 <script type="text/javascript">
 function Checkposition(val){
- var element=document.getElementById('body_position');
+ var element=document.getElementById('body_position1');
  if(val=='others')
    element.style.display='block';
  else  
@@ -797,8 +799,17 @@ function Checkposition(val){
 </script>
 <script type="text/javascript">
 function CheckHeadposition(val){
- var element=document.getElementById('head_position');
+ var element=document.getElementById('head_position1');
  if(val=='others')
+   element.style.display='block';
+ else  
+   element.style.display='none';
+} 
+</script>
+<script type="text/javascript">
+function CheckPatientposition(val){
+ var element=document.getElementById('patient_body1');
+ if(val=='otherbody')
    element.style.display='block';
  else  
    element.style.display='none';
