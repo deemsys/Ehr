@@ -1,6 +1,6 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
+
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
@@ -22,19 +22,19 @@ $(function() {
   });
 </script>
 <script type="text/javascript">
-var currentTab = 0;
-$(function () {
-    $("#tabs").tabs({
-        select: function (e, i) {
-            currentTab = i.index;
-        }
+    var currentTab = 0;
+    $(function () {
+        $("#tabs").tabs({
+            select: function (e, i) {
+                currentTab = i.index;
+            }
+        });
     });
-});
     $("#btnNext").live("click", function () {
         var tabs = $('#tabs').tabs();
         var c = $('#tabs').tabs("length");
         currentTab = currentTab == (c - 1) ? currentTab : (currentTab + 1);
-        tabs.tabs('', currentTab);
+        tabs.tabs('select', currentTab);
         $("#btnPrevious").show();
         if (currentTab == (c - 1)) {
             $("#btnNext").hide();
@@ -46,7 +46,7 @@ $(function () {
         var tabs = $('#tabs').tabs();
         var c = $('#tabs').tabs("length");
         currentTab = currentTab == 0 ? currentTab : (currentTab - 1);
-        tabs.tabs('', currentTab);
+        tabs.tabs('select', currentTab);
         if (currentTab == 0) {
             $("#btnNext").show();
             $("#btnPrevious").hide();
@@ -64,7 +64,6 @@ $(function () {
   .tabs-bottom .ui-tabs-nav li.ui-tabs-active { margin-top: -1px; padding-top: 1px; }
   </style>
 </head>
-<body>
 <div id="tabs" class="tabs-bottom" >
   <ul>
     <li><a href="#tabs-1">1</a></li>
