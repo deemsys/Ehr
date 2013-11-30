@@ -754,12 +754,7 @@ $(function() {
 				  </td>				  
 				  </tr>				  
 				  </table>
-				   <table align="right">
-				  <br><tr>
-				 <td><br><input type="button" id="btnPrevious" class="submit_btn" value="Previous" style = "display:none" />&nbsp;</td>
-                <td><input type="submit" class="submit_btn" value="Update"></td>
-                <td><input type="reset" class="submit_btn" value="Cancel" onclick="window.location.href='viewautoaccident'"></td>				 
-				</table>  
+				   
 				  </div>
 				  
 				  </div>
@@ -767,7 +762,12 @@ $(function() {
 				  </td>
 				  </tr>
 				  </table>
-				
+				 <table align="right">
+				  <br><tr>
+				 <td><br><input type="button" id="btnPrevious" class="submit_btn" value="Previous" style = "display:none" />&nbsp;</td>
+                <td><input type="submit" class="submit_btn" value="Update"></td>
+                <td><input type="reset" class="submit_btn" value="Cancel" onclick="window.location.href='viewautoaccident'"></td>				 
+				</table> 
 				  
 				     </div>
 				  </div>
