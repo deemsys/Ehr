@@ -40,7 +40,7 @@
 	       </div></div> 
 	        <div class="contentbox">
 	          <c:choose>
-		     <c:when test="${empty radio}">
+		     <c:when test="${empty radio}">.
 	        <table cellpadding="0" cellspacing="0" border="0" width="100%">
   				<tr>
     				<td>

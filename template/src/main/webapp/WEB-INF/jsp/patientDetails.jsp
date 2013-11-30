@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="/resources/css/style.css" />
   <script src="resources/js/jquery.min.js"></script>
   <script src="resources/js/jquery-ui.js"></script>
+  
 <script>
 $(function(){
 	$("#datepicker3").datepicker({ dateFormat: 'yy-mm-dd' });
