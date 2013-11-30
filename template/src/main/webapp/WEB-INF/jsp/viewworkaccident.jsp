@@ -28,7 +28,7 @@
 			      <form action="workaccident" method="POST"> 
 						<table cellpadding="0" cellspacing="0" border="0" width="100%">
 				     <tr class="title">
-							<td valign="top" align="left" width="30%">Patient_Consulted</td>
+							<td valign="top" align="left" width="30%">Patient Consulted</td>
 							<td valign="top" align="left" width="70%">Actions</td>
 							</tr>
 							<c:if test="${fn:length(workaccidentForm.workaccident) gt 0}">
@@ -38,13 +38,12 @@
         				       				
         				       				 <td valign="top" align="left"  width="10%"> <a href="workAccidentList?patient_no=${workaccident.patient_no}">${workaccident.patient_no}</a></td>
         				       					<td valign="top" align="left">
-							    	<%--  <c:if test="${currentuser.adminuser[0].editradiologicreport==1}"> --%>
+							    	
 												<a href="#" title="" ><img src="resources/images/icons/icon_edit.png" alt="Edit" /></a><a href="<c:out value="editworkaccident?patient_no=${workaccident.patient_no}"/>" style="padding-right:10px;">Edit</a>
 													
-											<%-- 	 </c:if>
- --%>												<%--<c:if test="${currentuser.adminuser[0].deleteparticipant==1}"> --%>
+											
 											<a href="#" title=""><img src="resources/images/icons/icon_delete.png" alt="Delete" /></a><a href="<c:out value="deleteworkaccident?patient_no=${workaccident.patient_no}"/>" onclick="return confirmation()">Remove</a>
-											<%-- </c:if> --%>
+											
 											</td>
         				       				 </tr>
         				       				 </c:forEach>

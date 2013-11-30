@@ -28,7 +28,8 @@
 			      <form action="autoaccident" method="POST"> 
 						<table cellpadding="0" cellspacing="0" border="0" width="100%">
 				     <tr class="title">
-							<td>Patient_Consulted</td>
+							<td valign="top" align="left" width="30%">Patient Consulted</td>
+							<td valign="top" align="left" width="70%">Actions</td>
 							</tr>
 							<c:if test="${fn:length(autoaccidentForm.autoaccident) gt 0}">
         				  <c:forEach items="${autoaccidentForm.autoaccident}" var="autoaccident" varStatus="status">
