@@ -84,8 +84,8 @@
         <td></td>
         </tr>
         <tr class="row1">
-        <td width="100%">Please fax this back to&nbsp;&nbsp;
-        <input type="text" class="input_txtbx1" name="fax" id="fax" placeholder="Clinic's Fax No"/><span class="err"> <form:errors path="Insuranceplan.fax"></form:errors> </td>
+        <td width="100%">Please eMail this back to&nbsp;&nbsp;
+        <input type="text" class="input_txtbx1" name="fax" id="fax" placeholder="Clinic's EMail Id"/><span class="err"> <form:errors path="Insuranceplan.fax"></form:errors> </td>
         <td width="100%"></td>
         <td></td>
         </tr>

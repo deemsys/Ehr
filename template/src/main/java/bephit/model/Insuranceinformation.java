@@ -1,5 +1,7 @@
 package bephit.model;
 
+import javax.validation.constraints.Pattern;
+
 import org.hibernate.validator.constraints.NotEmpty;
 
 public class Insuranceinformation {
@@ -17,6 +19,7 @@ public class Insuranceinformation {
 	@NotEmpty
 	private String insurance_company;
 	@NotEmpty
+	@Pattern(regexp="(^$|[0-9]{10})",message="Not a valid Phone number")
 	private String phone;
 	@NotEmpty
 	private String policy;
@@ -25,6 +28,7 @@ public class Insuranceinformation {
 	@NotEmpty
 	private String supplemental_company;
 	@NotEmpty
+	@Pattern(regexp="(^$|[0-9]{10})",message="Not a valid Phone number")
 	private String sup_phone;
 	@NotEmpty
 	private String patient_sign;
