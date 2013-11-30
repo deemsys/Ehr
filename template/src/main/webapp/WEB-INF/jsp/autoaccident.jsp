@@ -835,16 +835,16 @@ function Checkhospital(val){
 function Check(val){
  var element=document.getElementById('accident_hospital');
  
- alert(val);
+
  var element1 = document.getElementById('accident');
- alert(element1);
+
  if(val=='hospital'){
-	 alert("hostial");
+
    element.style.display='block';
    element1.style.display='none';
  }
  else if(val =='otheracc'){
-	 alert(" In otheracc ");
+	 
 	 element1.style.display='block';
 	 element.style.display='none';
  }

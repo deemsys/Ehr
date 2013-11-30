@@ -107,7 +107,7 @@
 						                     			
 						                     </tr>
 						                     <tr class="row2">
-						                     			<td valign="top" align="left" class="input_txt"><input type="checkbox"  value="positive for" name="positive_for" onclick="this.form.positive1.style.visibility = this.checked? 'visible' : 'hidden'" <c:if test="${radiologicReport.positive_for=='positive for'}"><c:out value="Checked"/></c:if>   />Positive for
+						                     			<td valign="top" align="left" class="input_txt"><input type="checkbox"  value="positive for" name="positive_for"  onclick="this.form.positive1.style.visibility = this.checked? 'visible' : 'hidden'" <c:if test="${radiologicReport.positive_for=='positive for'}"><c:out value="Checked"/></c:if>   />Positive for
 						                     			
 						                     			<input type="text" class="input_txtbx1" id="positive1"  style="visibility:hidden" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${radiologicReport.positive_text1 }" name="positive_text1" /><span class="err"><form:errors path="report.positive_text1"></form:errors></span></td>
 						                            
