@@ -15,7 +15,7 @@ public class Insuranceverification{
 	@NotEmpty
 	private String date;
 	@NotEmpty
-	
+	@Pattern(regexp="(^$|[0-9]{11})",message="Not a valid Fax No")
 	private String fax;
 	@NotEmpty
 	
