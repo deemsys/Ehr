@@ -216,7 +216,7 @@ $(function() {
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Road conditions</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <select name="road_conditions" class="input_cmbbx1" onclick='CheckConditions(this.value);'>
+				  <select name="road_conditions" class="input_cmbbx1" id="road" onclick='CheckConditions();'>
 					<option  value=" conditions" <c:if test="${autoaccident.road_conditions==' conditions'}"><c:out value="selected"/></c:if> > conditions</option>
 					<option value="dry" <c:if test="${autoaccident.road_conditions=='dry'}"><c:out value="selected"/></c:if>>Dry</option>
 					<option value="damp" <c:if test="${autoaccident.road_conditions=='damp'}"><c:out value="selected"/></c:if>>Damp</option>
@@ -345,7 +345,7 @@ $(function() {
 				  <tr class="row1">
                 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Body position at time of accident</td>
 				 <td valign="top" align="left" class="input_txt">
-				  <select name="body_position" class="input_cmbbx1" id="body_position" onclick='Checkposition(this.value);'>
+				  <select name="body_position" class="input_cmbbx1" id="bodyposition" onclick='Checkposition();'>
 					<option  value="good" <c:if test="${autoaccident.body_position=='good'}"><c:out value="selected"/></c:if>>Good</option>
 					<option value="forward" <c:if test="${autoaccident.body_position=='forward'}"><c:out value="selected"/></c:if>>Forward</option>
 					<option value="leaning" <c:if test="${autoaccident.body_position=='learning'}"><c:out value="selected"/></c:if>>Leaning</option>
@@ -693,7 +693,7 @@ $(function() {
 				   <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>After the accident I went</td>
 				 <td valign="top" align="left" class="input_txt">
-				  <select name="after_accident" class="input_cmbbx1"  onchange='Check(this.value);'>
+				  <select name="after_accident" class="input_cmbbx1"  id="afteraccident"onclick='Check();'>
 					<option  value="hospital" <c:if test="${autoaccident.after_accident=='hospital'}"><c:out value="Checked"/></c:if>  >Hospital</option>
 					<option value="work" <c:if test="${autoaccident.after_accident=='work'}"><c:out value="Checked"/></c:if> >Work</option>
 					<option value="home" <c:if test="${autoaccident.after_accident=='home'}"><c:out value="Checked"/></c:if> >Home</option>
@@ -734,10 +734,11 @@ $(function() {
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>How did you get to the hospital?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				
-				  <select name="hospitalget" class="input_cmbbx1"  onchange='Checkhospital(this.value);'>
+				  <select name="hospitalget" class="input_cmbbx1"  onclick='Checkhospital(this.value);'>
 					<option  value="ambulance" <c:if test="${autoaccident.hospitalget=='ambulance'}"><c:out value="Checked"/></c:if>>Ambulance</option>
 					<option value="otherhos" <c:if test="${autoaccident.hospitalget=='otherhos'}"><c:out value="Checked"/></c:if>>Other</option>
-				  </select>
+				   </select>
+				  
 				 <input type="text" name="hospital1" id="hospital1" value="${autoaccident.hospital1}" style='display:none'/>
 				  </td>
 				  </tr> 
@@ -780,18 +781,22 @@ $(function() {
 				  
 				  
 <script type="text/javascript">
-function CheckConditions(val){
+function CheckConditions(){
  var element=document.getElementById('conditions');
- if(val=='other')
+ var type1=document.getElementById('road');
+ var type = type1.options[type1.selectedIndex].value;
+ if(type=='other')
    element.style.display='block';
  else  
    element.style.display='none';
 } 
 </script>
 <script type="text/javascript">
-function Checkposition(val){
+function Checkposition(){
  var element=document.getElementById('body_position1');
- if(val=='others')
+ var type1=document.getElementById('bodyposition');
+ var type = type1.options[type1.selectedIndex].value;
+ if(type=='others')
    element.style.display='block';
  else  
    element.style.display='none';
@@ -871,7 +876,8 @@ function Checksymptom(val){
 
 <script type="text/javascript">
 function Checkhospital(val){
- var element=document.getElementById('hospital');
+	alert(val);
+ var element=document.getElementById('hospital1');
  if(val=='otherhos')
    element.style.display='block';
  else  
@@ -879,17 +885,18 @@ function Checkhospital(val){
 } 
 </script>
 <script type="text/javascript">
-function Check(val){
+function Check(){
  var element=document.getElementById('accident_hospital');
  
  var element1 = document.getElementById('accident');
- 
- if(val=='hospital'){
+ var type1=document.getElementById('afteraccident');
+ var type = type1.options[type1.selectedIndex].value;
+ if(type=='hospital'){
 	
    element.style.display='block';
    element1.style.display='none';
  }
- else if(val =='otheracc'){
+ else if(type =='otheracc'){
 	
 	 element1.style.display='block';
 	 element.style.display='none';
@@ -899,6 +906,15 @@ function Check(val){
  element1.style.display='none';
  }
 } 
+</script>
+<script>
+window.onload = function(){
+
+	Checkhospital("otherhos");CheckPatientposition("otherbody");CheckHeadposition("others");Checkposition();  CheckConditions(); Check();
+	
+	
+}
+
 </script>
 
 

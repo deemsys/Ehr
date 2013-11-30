@@ -511,4 +511,10 @@ function work(val){
 
 //-->
 </script>
+<script>
+window.onload = function(){
+	Checkpos("other");Checklight("others");work("Other");
+}
+
+</script>
  <jsp:include page="footer.jsp"></jsp:include>

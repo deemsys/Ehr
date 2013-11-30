@@ -529,15 +529,15 @@ public class MainController {
 	{
 		/*if (result.hasErrors())
 		{
-			PhysicalexamForm physicalexamForm = new PhysicalexamForm();
-	     
-	      physicalexamForm.setPhysicalexam(physicalDAO.getPhysical(physicalexam.getPhysical_id()));
-	      
-	        model.addAttribute("physicalexamForm", physicalexamForm);
+			//PhysicalexamForm physicalexamForm = new PhysicalexamForm();
+	     AutoaccidentForm autoaccidentForm = new AutoaccidentForm();
+	     // physicalexamForm.setPhysicalexam(physicalDAO.getPhysical(physicalexam.getPhysical_id()));
+	      autoaccidentForm.setAutoaccident(autoDAO.getAuto(autoaccident.getPatient_number()));
+	        model.addAttribute("autoaccidentForm", autoaccidentForm);
 			  model.addAttribute("menu", "Accident");  
-		        return "editphysicalexam";
-		}
-		*/
+		        return "editautoaccident";
+		}*/
+		
 		/*System.out.println("physical id"+physicalexam.getPhysical_id());*/
 		int status = autoDAO.updateautoaccident(autoaccident, autoaccident.getPatient_number(), principal.getName());
 		System.out.println(status);
@@ -777,7 +777,7 @@ public class MainController {
 	}
 	
 	@RequestMapping(value="/updateworkaccident", method=RequestMethod.POST)
-	public String updateWorkAccident(HttpServletRequest request,@ModelAttribute("workAccident") @Valid Workaccident workAccident,
+	public String updateWorkAccident(HttpServletRequest request,@ModelAttribute("workAcc") @Valid Workaccident workAccident,
 			BindingResult result,ModelMap model,Principal principal)
 	{
 		if (result.hasErrors())
@@ -787,7 +787,8 @@ public class MainController {
 	     // radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport(report.getPid()));
 	      workaccidentForm.setWorkaccident(workDAO.getWorkaccident(workAccident.getPatient_no()));
 	        model.addAttribute("workaccidentForm", workaccidentForm);
-	        model.addAttribute("menu", "Accident");    
+	        model.addAttribute("menu", "Accident"); 
+	        System.out.println("has error");
 		        return "editworkaccident";
 		}
 		

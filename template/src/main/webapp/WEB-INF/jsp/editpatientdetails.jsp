@@ -667,12 +667,14 @@
   <script type="text/javascript">
   
 function Checklight(){
+	
  var element=document.getElementById('accident');
  var type1=document.getElementById('Type_of_accident');
  var type = type1.options[type1.selectedIndex].value;
 
  if(type=='other')
 	 {
+	 alert("type");
    element.style.display='block';
 
 	 }
@@ -698,7 +700,12 @@ else
 	}
 }
 </script>
-
+<script>
+window.onload = function(){
+	alert("onload");
+	Checklight();
+}
+</script>
 
 
         <jsp:include page="footer.jsp"></jsp:include>
