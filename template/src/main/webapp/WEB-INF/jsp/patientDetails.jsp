@@ -976,8 +976,8 @@ $(function(){
 				                 	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Type Of Accident:</td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  		<select name="Type_Of_Accident" class="input_cmbbx1" onchange='Checklight(this.value)';>
-						                    <option selected="selected" value="auto" >Auto</option>
-											<option value="work">Work</option>
+						                    <option selected="selected" value="autoaccident" >Auto</option>
+											<option value="workaccident">Work</option>
 											<option value="other">Other</option>
 				                   		</select>
 				                   <input type="text" name="accident" id="accident" style='display:none'/>
