@@ -181,6 +181,9 @@ public class MainController {
 	    session.setAttribute("role", role);
 		if(role==0)
 		{
+			PatientDetailsForm patientdetailsform = new PatientDetailsForm();
+			patientdetailsform.setPatientDetails(patientDAO.getPatientDetails());
+	        model.addAttribute("patientDetailsForm", patientdetailsform);
 			return "viewpatient";
 		}
 		else if(role==2)
