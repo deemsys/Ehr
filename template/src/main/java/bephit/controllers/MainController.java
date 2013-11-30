@@ -1240,7 +1240,7 @@ public class MainController {
         model.addAttribute("MedicalRecordsForm", medicalrecordForm);
         model.addAttribute("menu", "authorization");
 	       model.addAttribute("success","true");
-	        return "viewmedicalrecords";
+	        return "medicalrecordslist";
 		
 	}
 	@RequestMapping(value="/deletemedicalrecords", method=RequestMethod.GET)
@@ -1260,7 +1260,7 @@ public class MainController {
       
 		}
 		
-		return "medicalrecords";
+		return "medicalrecordslist";
 	}
 	
 	
@@ -1479,7 +1479,7 @@ public class MainController {
         model.addAttribute("AssignmentDetailsForm", assignmentdetailsform);
 	       model.addAttribute("success","true");
 	       model.addAttribute("menu", "authorization");
-	        return "viewassignment";
+	        return "assignmentlist";
 		
 	}
 	@RequestMapping(value="/deleteassignmentdetails", method=RequestMethod.GET)
@@ -1498,7 +1498,7 @@ public class MainController {
         model.addAttribute("menu", "authorization");
 		}
 		
-		return "Assignment";
+		return "assignmentlist";
 	}
 	
 	@RequestMapping(value="/Hippaprivacy",method=RequestMethod.GET)
@@ -2013,7 +2013,7 @@ public class MainController {
 			model.addAttribute("treatform",treatform);
 	       model.addAttribute("success","true");
 	       model.addAttribute("menu", "consent");
-	        return "viewtreatform";
+	        return "treatformlist";
 		
 	}
 	
@@ -2032,7 +2032,7 @@ public class MainController {
 		 model.addAttribute("menu", "consent");
 		}
 		
-		return "treatform";
+		return "treatformlist";
 	}
 	
 	@RequestMapping(value="/treatminorlist", method = RequestMethod.GET)
@@ -2090,7 +2090,7 @@ public class MainController {
 		model.addAttribute("treatminordetailsform",treatminordetailsForm);
 	       model.addAttribute("success","true");
 	       model.addAttribute("menu", "consent");
-	        return "viewtreatminor";
+	        return "treatminorlist";
 		
 	}
 	
@@ -2109,7 +2109,7 @@ public class MainController {
 		model.addAttribute("treatminordetailsform",treatminordetailsForm);
 		 model.addAttribute("menu", "consent");
 		}
-		return "treatminor";
+		return "treatminorlist";
 	}
 	
 	
@@ -2192,7 +2192,7 @@ public class MainController {
 		model.addAttribute("InsuranceinformationForm",insuranceinformationForm);   
 		model.addAttribute("success","true");
 		 model.addAttribute("menu", "health");
-	        return "viewinsuranceinformation";
+	        return "insuranceinfolist";
 		
 	}
 	
@@ -2210,7 +2210,7 @@ public class MainController {
 		model.addAttribute("InsuranceinformationForm",insuranceinformationForm);
 		 model.addAttribute("menu", "health");
 		}
-	return "insuranceinformation";
+	return "insuranceinfolist";
 	}
 	
 	@RequestMapping(value="/editinsuranceverification", method = RequestMethod.GET)
