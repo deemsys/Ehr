@@ -1682,6 +1682,7 @@ public class MainController {
 	public String insert_patientdetails(HttpServletRequest request,HttpSession session,@ModelAttribute("PatientDetails")  @Valid PatientDetails patientDetails,BindingResult result,ModelMap model) {
 		session.setAttribute("patient",patientDetails);
 		String type= request.getParameter("Type_Of_Accident");
+		model.addAttribute("Type_Of_Accident",type);
 		System.out.println("type of accident="+type);
 		
 		if(result.hasErrors())

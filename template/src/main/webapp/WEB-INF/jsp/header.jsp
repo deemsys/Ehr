@@ -209,7 +209,6 @@
 							<li><a href="viewautoaccident">View Auto Accident</a></li>
 							<li><a href="workaccident">Work Accident</a></li>
 							<li><a href="viewworkaccident"> View Work Accident</a></li>
-							
 							<!-- <li><a href="viewauto">View Autoaccident</a></li> -->
 							<!-- <li><a href="broadcast">Send Stream</a></li>
             				<li><a href="viewreports">Report</a></li>  -->

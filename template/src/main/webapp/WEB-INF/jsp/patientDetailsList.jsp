@@ -240,6 +240,13 @@
 				                  <td>${patientDetails.chiropratic_care}</td>
 				                  </tr>
 				                  </table>
+				                  <table align="right">
+				  <tr>
+				  <td><br><input type="button" id="btnNext" class="submit_btn" value="Next"/><br></td>
+				  <td>&nbsp;&nbsp;</td>
+				  <td><br><input type="button"  class="submit_btn" value="Cancel" onclick="window.location.href='viewpatient'"/><br></td>
+				  </tr>
+				  </table>
 				                  </td>
 				                  </tr>
 				                  </table>
@@ -295,15 +302,18 @@
 				         
 				        </tr>
 				        
-				       <tr class="row2">
+				       <tr class="row1">
 				         	<td><span class="err">*</span>Are These Symptoms Due to an Accident?</td>
 				         	<td>${patientDetails.symptom_Accident}</td>
-				         		
+				         	<td></td>
+				         	<td></td>	
 				        </tr>
-				         <tr class="row1">
+				         <tr class="row2">
 				         
 				         	<td><span class="err">*</span>Type Of Accident:</td>
 				         	<td>${patientDetails.type_Of_Accident}</td>
+				         	<td></td>
+				         	<td></td>
 				         	</tr>
 				         				         	<%-- <c:if test="${patientDetails.type_Of_Accident == 'other'}">
 				         			<td>${patientDetails.accident}</td>
@@ -313,80 +323,123 @@
 				         	<td>${patientDetails.type_Of_Accident}</td>
 				         	</c:if> --%>
 				        </tr>
-				         <tr class="row2">
+				         <tr class="row1">
 				         	<td><span class="err">*</span>Date Of Accident:</td>
 				         	<td>${patientDetails.date_Of_Accident}</td>
+				         	<td></td>
+				         	<td></td>
 				        </tr>
 				      
-				         <tr class="row1">
+				         <tr class="row2">
 				         	<td><span class="err">*</span>Accident Reported:</td>
 				         	<td>${patientDetails.accident_Reported}</td>
+				         	<td></td>
+				         	<td></td>
 				        </tr>
 				          
-				          <tr class="row2">
+				          <tr class="row1">
 				         	<td><span class="err">*</span>Medical Treatment for this Condition: &nbsp;&nbsp;&nbsp;&nbsp;When:</td>
 				         	<td>${patientDetails.when1}</td>
+				         	<td></td>
+				         	<td></td>
 				        </tr>
-				         <tr class="row1">
+				         <tr class="row2">
 				         	<td><span class="err">*</span>Where:</td>
 				         	<td>${patientDetails.where1}</td>
+				         	<td></td>
+				         	<td></td>
 				        </tr>
 				        
-				          <tr class="row2">
+				          <tr class="row1">
 				         	<td><span class="err">*</span>Have You Retained an Attorney for this Accident:</td>
 				         	<td>${patientDetails.attorney_accident}</td>
+				         	<td></td>
+				         	<td></td>
 				        </tr>
-				         <tr class="row1">
+				         <tr class="row2">
 				         	<td><span class="err">*</span>Name Of Attorney:</td>
 				         	<td>${patientDetails.nameOfAttorney}</td>
+				         	<td></td>
+				         	<td></td>
 				        </tr>
 				        
-				          <tr class="row2">
+				          <tr class="row1">
 				         	<td><span class="err">*</span>phone:</td>
 				         	<td>${patientDetails.phone_Number}</td>
+				         	<td></td>
+				         	<td></td>
 				        </tr>
-				         <tr class="row1">
+				         <tr class="row2">
 				         	<td><span class="err">*</span>Name of Person at Fault for the Accident:</td>
 				         	<td>${patientDetails.fault_accident}</td>
+				         	<td></td>
+				         	<td></td>
 				        </tr>
-				         <tr class="row2">
+				         <tr class="row1">
 				         	<td><span class="err">*</span>Insurance Company of the at Fault Person:</td>
 				         	<td>${patientDetails.insurance}</td>
+				         	<td></td>
+				         	<td></td>
 				        </tr>
-				         <tr class="row1">
+				         <tr class="row2">
 				         	<td><span class="err">*</span>Phone:</td>
 				         	<td>${patientDetails.insurance_phone}</td>
+				         	<td></td>
+				         	<td></td>
 				        </tr>
-				         <tr class="row2">
+				         <tr class="row1">
 				         	<td><span class="err">*</span>Name of your auto insurance:</td>
 				         	<td>${patientDetails.name_auto}</td>
+				         	<td></td>
+				         	<td></td>
 				        </tr>
-				         <tr class="row1">
+				         <tr class="row2">
 				         	<td><span class="err">*</span>phone of your auto insurance:</td>
 				         	<td>${patientDetails.phone_auto}</td>
+				         	<td></td>
+				         	<td></td>
 				        </tr>
-				         <tr class="row2">
+				         <tr class="row1">
 				         	<td><span class="err">*</span>Policy#:</td>
 				         	<td>${patientDetails.policy}</td>
+				         	<td></td>
+				         	<td></td>
 				        </tr>
-				         <tr class="row1">
+				         <tr class="row2">
 				         	<td><span class="err">*</span>Name of Your Health Insurance</td>
 				         	<td>${patientDetails.name_health}</td>
-				        </tr>
-				         <tr class="row2">
-				         	<td><span class="err">*</span>Phone:</td>
-				         	<td>${patientDetails.health_phone}</td>
+				         	<td></td>
+				         	<td></td>
 				        </tr>
 				         <tr class="row1">
-				         	<td><span class="err">*</span>Have You Ever Been Involved in a Previous Auto or Work Accident:</td>
-				         	<td>${patientDetails.prev_accident}</td>
+				         	<td><span class="err">*</span>Phone:</td>
+				         	<td>${patientDetails.health_phone}</td>
+				         	<td></td>
+				         	<td></td>
 				        </tr>
 				         <tr class="row2">
+				         	<td><span class="err">*</span>Have You Ever Been Involved in a Previous Auto or Work Accident:</td>
+				         	<td>${patientDetails.prev_accident}</td>
+				         	<td></td>
+				         	<td></td>
+				        </tr>
+				         <tr class="row1">
 				         	<td><span class="err">*</span>When:</td>
 				         	<td>${patientDetails.prev_When}</td>
+				         	<td></td>
+				         	<td></td>
 				        </tr>
 				           	</tr>   
 				</table>
+				<table align="right">
+				  <tr>
+				  <td><input type="button" id="btnPrevious" class="submit_btn" value="Previous"  /></td>
+				  	<td>&nbsp;&nbsp;</td>
+				  <td><br><input type="button" id="btnNext" class="submit_btn" value="Next"/><br></td>
+				  <td>&nbsp;&nbsp;</td>
+				  <td><br><input type="button"  class="submit_btn" value="Cancel" onclick="window.location.href='viewpatient'"/><br></td>
+				  </tr>
+				  </table>
 				</td>
 				</tr>
 				</table>
@@ -430,7 +483,7 @@
 				         	<td>${patientDetails.polio1}</td>
 				         
 				        </tr>
-				         <tr class="row2">
+				         <tr class="row1">
 				         <td>${patientDetails.multiple}</td>
 				         	<td>${patientDetails.scarlet}</td>
 				         	<td>${patientDetails.HIV}</td>
@@ -446,7 +499,7 @@
 				         	<td>${patientDetails.concussion}</td>
 				         	<td>${patientDetails.dizziness}</td>
 				        </tr>
-				         <tr class="row2">
+				         <tr class="row1">
 				         <td>${patientDetails.neuritis}</td>
 				         	<td>${patientDetails.rheumatism}</td>
 				         	<td>${patientDetails.diabetes}</td>
@@ -463,7 +516,7 @@
 				         	<td>${patientDetails.hepatitis}</td>
 				        </tr>
 				        
-				         <tr class="row2">
+				         <tr class="row1">
 				         	<td>${patientDetails.mental}</td>
 				         	<td>${patientDetails.high}</td>
 				         	<td>${patientDetails.digestive}</td>
@@ -474,26 +527,26 @@
 				        </table>
 				        
 				        
-				         <tr class="row1">
+				         <tr class="row2">
 				         <td><span class="err">*</span>Surgeries or Major Illnesses You Have Had: </td>
 				         <td>${patientDetails.illness}</td>
 				         </tr>
-				         <tr class="row2">
+				         <tr class="row1">
 				         	<td><span class="err">*</span>Dates:</td>
 				         	<td>${patientDetails.dates}</td>
 				         </tr>	
-				         <tr class="row1">
+				         <tr class="row2">
 				         	<td><span class="err">*</span>Medications You are Currently Taking and Why:</td>
 				         	<td>${patientDetails.medications}</td>
 				        </tr>
-				        <tr class="row2">
+				        <tr class="row1">
 				        	<td><span class="err">*</span>Do You:</td>
 				         	<td>${patientDetails.drink}  ${patientDetails.smoke}
 				         	${patientDetails.drugs}
 				         	${patientDetails.diet}
-				         	${patientDetails.exercise}
+				         	${patientDetails.exercise}</td>
 				        </tr>
-				        <tr class="row1">
+				        <tr class="row2">
 				        	<td><span class="err">*</span>Do You Work Around Hazardous Substances:
 				        	<c:if test="${patientDetails.hazardous=='yes'}">
 				        	${patientDetails.hazardousyes}
@@ -502,12 +555,13 @@
 				        	${patientDetails.hazardous}
 				        	</c:if>
 				        	 </td>
+				        	 <td></td>
 				        </tr>
-				        <tr class="row2">
+				        <tr class="row1">
 				        <td><span class="err">*</span>Females Only:<br>Are you pregnant:</td>
 				        <td>${patientDetails.female}</td>
 				        </tr>
-				        <tr class="row1">
+				        <tr class="row2">
 				        	<td><span class="err">*</span>Dr:</td>
 				        	<td>${patientDetails.dr}</td>
 				        
@@ -517,6 +571,13 @@
 				        <td>${patientDetails.patient}</td>
 				      </tr>
 				      </table>
+				      <table align="right">
+				  <tr>
+				  <td><input type="button" id="btnPrevious" class="submit_btn" value="Previous"  /></td>
+				  	<td>&nbsp;&nbsp;</td>
+				  <td><br><input type="button"  class="submit_btn" value="Cancel" onclick="window.location.href='viewpatient'"/><br></td>
+				  </tr>
+				  </table>
 				      </td>
 				      </tr>
 				      </table>

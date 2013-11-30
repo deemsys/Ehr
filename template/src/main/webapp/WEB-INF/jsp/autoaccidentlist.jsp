@@ -294,7 +294,7 @@ $(function() {
 				  	<td>&nbsp;&nbsp;</td>
 				  <td><br><input type="button" id="btnNext" class="submit_btn" value="Next"/><br></td>
 				  <td>&nbsp;&nbsp;</td>
-				  <td><br><input type="button"  class="submit_btn" value="Cancel" onclick="window.location.href='viewautoaccient'"/><br></td>
+				  <td><br><input type="button"  class="submit_btn" value="Cancel" onclick="window.location.href='viewautoaccident'"/><br></td>
 				  </tr>
 				  </table>
 				  </div>
@@ -429,7 +429,7 @@ $(function() {
 				  	<td>&nbsp;&nbsp;</td>
 				  <td><br><input type="button" id="btnNext" class="submit_btn" value="Next"/><br></td>
 				  <td>&nbsp;&nbsp;</td>
-				  <td><br><input type="button"  class="submit_btn" value="Cancel" onclick="window.location.href='viewautoaccient'"/><br></td>
+				  <td><br><input type="button"  class="submit_btn" value="Cancel" onclick="window.location.href='viewautoaccident'"/><br></td>
 				  </tr>
 				  </table>
 				 </div>
@@ -543,7 +543,7 @@ $(function() {
 				  	<td>&nbsp;&nbsp;</td>
 				  <td><br><input type="submit" class="submit_btn" value="Update"/><br></td>
 				  <td>&nbsp;&nbsp;</td>
-				  <td><br><input type="button"  class="submit_btn" value="Cancel" onclick="window.location.href='viewautoaccient'"/><br></td>
+				  <td><br><input type="button"  class="submit_btn" value="Cancel" onclick="window.location.href='viewautoaccident'"/><br></td>
 				  </tr>
 				  </table> 
 
