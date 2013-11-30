@@ -813,15 +813,7 @@ function Checksymptom(val){
    element.style.display='none';
 } 
 </script>
-<script type="text/javascript">
-function Checkaccident(val){
- var element=document.getElementById('accident');
- if(val=='otheracc')
-   element.style.display='block';
- else  
-   element.style.display='none';
-} 
-</script>
+
 <script type="text/javascript">
 function Checkhospital(val){
  var element=document.getElementById('hospital1');

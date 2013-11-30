@@ -701,13 +701,13 @@ $(function() {
 					<option value="physician" <c:if test="${autoaccident.after_accident=='physician'}"><c:out value="Checked"/></c:if> >Physician</option>
 					<option value="otheracc" <c:if test="${autoaccident.after_accident=='otheracc'}"><c:out value="Checked"/></c:if> >Other</option>
 				  </select>
-				 <input type="text" name="accident" id="accident" style='display:none'/>
+				 <input type="text" name="accident" id="accident" value="${autoaccident.accident}"style='display:none'/>
 				  </td>
 				  </tr> 
 				  </table>
 				   
 				   <div id="accident_hospital">
-				   <c:if test="autoaccident.after_accident=='hospital'">		
+				  	
 				  <table cellpadding="0" cellspacing="0" border="0" width="100%">
 				   <tr class="row2">
                   <td valign="middle" align="left" class="input_txt">Name of the hospital&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -756,7 +756,7 @@ $(function() {
 				  </td>				  
 				  </tr>				  
 				  </table>
-				   				  </c:if>		
+				   				 	
 				   
 				  </div>
 				  </div>
@@ -868,15 +868,7 @@ function Checksymptom(val){
    element.style.display='none';
 } 
 </script>
-<script type="text/javascript">
-function Checkaccident(val){
- var element=document.getElementById('accident');
- if(val=='otheracc')
-   element.style.display='block';
- else  
-   element.style.display='none';
-} 
-</script>
+
 <script type="text/javascript">
 function Checkhospital(val){
  var element=document.getElementById('hospital');
