@@ -873,15 +873,14 @@
 				                  </tr>
 				                  
 				                  </table>
-				                 <!--  <table align="right">
+				                  <table align="right">
 				                  <tr>
-				                   <td><input type="submit" class="submit_btn" value="Save"></td>
 				                   <td>&nbsp;&nbsp;</td>
-				                    <td><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewphysicalexam'"></td>
-				                    <td>&nbsp;&nbsp;</td>
-				                    <td><input type="reset" class="submit_btn" value="Cancel"></td>
+				                    <td><input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='viewphysicalexam'"></td>
+				                   
+				                    
 				                  </tr>
-				                  </table> -->
+				                  </table> 
 				                   </td>
 				                  </tr>
 				                  </table>

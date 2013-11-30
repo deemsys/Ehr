@@ -83,9 +83,7 @@
      	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> 
         <td><br><input type="submit" class="submit_btn" value="Update"></td>
         <td>&nbsp;&nbsp;</td>
-        <td><br><input type="reset" class="submit_btn" value="Cancel"></td>
-        <td>&nbsp;&nbsp;</td>
-        <td><br><input type="button" class="submit_btn" value="Back" onclick="window.location.href='treatminorlist'"></td>
+        <td><br><input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='treatminorlist'"></td>
         </tr>
         </table>
                         </tr>

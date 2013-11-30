@@ -181,5 +181,11 @@
 </table>
 </form>
 </div>
+<table align="right">
+<tr>
+<td>
+<input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='viewsoapnotes'">
+</td></tr>
+</table>
 </body>
 </html>

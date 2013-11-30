@@ -881,7 +881,7 @@
 				                   <table align="right"> <tr>
 				                   <td><input type="submit" class="submit_btn" value="Update"></td>
                                   
-				                   <td><input type="Reset" class="submit_btn" value="Cancel"></td>
+				                   <td><input type="Button" class="submit_btn" value="Cancel" onclick="window.location.href='viewfirsthamiltonchiropractic'"></td>
 				                 </table>
 				                 </td>
 				                 </tr>

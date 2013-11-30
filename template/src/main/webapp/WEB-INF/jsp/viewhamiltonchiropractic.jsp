@@ -859,6 +859,11 @@
             </c:forEach>
  
             </table>
+            <table align="right">
+            <tr><td><input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='viewfirsthamiltonchiropractic'">
+            </td>
+            </tr>
+            </table>
             </div>
             </div>
             </td>

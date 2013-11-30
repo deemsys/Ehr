@@ -8,18 +8,18 @@
   <script src="resources/js/jquery.min.js"></script>
   <script src="resources/js/jquery-ui.js"></script>
 <script>
-  $(function() {
-    $( "#datepicker" ).datepicker();
-  });
-  $(function() {
-	    $( "#datepicker1" ).datepicker();
-	  });
-  $(function() {
-	    $( "#datepicker2" ).datepicker();
-	  });
-  $(function() {
-	    $( "#datepicker3" ).datepicker();
-	  });
+$(function(){
+	$("#datepicker3").datepicker({ dateFormat: 'yy-mm-dd' });
+	$("#datepicker2").datepicker({ dateFormat: 'yy-mm-dd' });
+	$("#datepicker1").datepicker({ dateFormat: 'yy-mm-dd' });
+    $("#datepicker").datepicker({ dateFormat: 'yy-mm-dd' }).bind("change",function(){
+        var minValue = $(this).val();
+        minValue = $.datepicker.parseDate("yy-mm-dd", minValue);
+        minValue.setDate(minValue.getDate()+1);
+        $("#datepicker").datepicker( "option", "minDate", minValue );
+    })
+});
+  
   $(function() {
 	    $( "#tabs" ).tabs();
 	 
@@ -195,8 +195,7 @@
 							 
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Are you:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="Areyou" value="Student" class="input_txt"  onchange="toggle3('show3')">Student&nbsp;&nbsp;&nbsp;
-				                  	<input type="radio" name="Areyou" value="Employee" class="input_txt" checked="true" onclick="toggle3('hide3')">Employee</td>
+				                  	<input type="radio" name="Areyou" value="Student" class="input_txt"  onchange="toggle3('show3')">Student&nbsp;&nbsp;&nbsp;<input type="radio" name="Areyou" value="Employee" class="input_txt" checked="true" onclick="toggle3('hide3')">Employee</td>
 				                  
 				                </tr>
 							</table>

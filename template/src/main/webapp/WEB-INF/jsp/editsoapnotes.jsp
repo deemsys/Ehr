@@ -753,6 +753,7 @@ $(function() {
 				                   </table>
  <table align="right"> <tr>
 				                   <td><input type="submit" class="submit_btn" value="Update"></td>
+				                   <td><input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='viewsoapnotes'"></td>
 				                   </tr>
 				                   </table>
 

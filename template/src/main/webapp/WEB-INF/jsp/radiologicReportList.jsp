@@ -339,6 +339,14 @@
                	   </tr> 
             </c:forEach>
             </table>
+            <table align="right">
+               <tr>
+               <td>
+               <input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='viewradiologicreport'"></td>
+               </tr>
+               </table>
+               </table>
+               
             </div>
             </div>
             </td>
@@ -346,22 +354,13 @@
             </table>
             </div>
             </div>
-              	   
-                   
-                   
-                   
-                   
-                   
-                   
-                   
-                   
-                   </div>
+              	</div>
                    </td>
                  </tr>
                </table>
                </div>
                </td>
                </tr>
-               </table>
+               
                </form>
                </html>

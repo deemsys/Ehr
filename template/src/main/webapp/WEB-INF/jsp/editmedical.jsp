@@ -61,9 +61,7 @@
 				
 				<td valign="top" align="center"><br><input type="submit" class="submit_btn" value="Update"></td>
 				<td>&nbsp;&nbsp;</td>
-				 <td valign="top" align="center"><br><input type="reset" class="submit_btn" value="Cancel" ></td>
-				 <td>&nbsp;&nbsp;</td>
-				 <td><br><input type="button" class="submit_btn" value="Back" onclick="window.location.href='medicalrecordslist'"></td>
+				 <td><br><input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='medicalrecordslist'"></td>
 				 
 				  </tr>
 				                  	</div>

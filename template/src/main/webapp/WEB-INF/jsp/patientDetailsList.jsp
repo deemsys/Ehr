@@ -86,10 +86,10 @@
 	    <li><a href="#tabs-2">2</a></li>
 	    <li><a href="#tabs-3">3</a></li>
 	  </ul>
+	  <form method="post" action="patientDetails">
 	  <div class="tabs-spacer"></div>
 	  <div id="tabs-1">
 		<div id="right_content">
-			<form method="post" action="">
 				<table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
 
 	 			 <tr>
@@ -243,18 +243,6 @@
 				                  </td>
 				                  </tr>
 				                  </table>
-				                 
-				                   <table align="right">
-				  <tr>
-				   <td valign="top" align="right"><input type="button" id="btnNext" class="submit_btn" value="Next"/></td>
-
-                  	<td>&nbsp;&nbsp;</td>							
-				           
-                  <td valign="top" align="center"><input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='viewpatient'"></td>
-                  
-				  </tr>
-				  </table>
-				                  
 				                  </td>
 				                  </tr>
 				                  </table>
@@ -402,19 +390,6 @@
 				</td>
 				</tr>
 				</table>
-				<br>
-				 <table align="right">
-				  <tr>
-				  <td valign="top" align="right"><input type="button" id="btnPrevious" class="submit_btn" value="Previous"></td>
-                   <td>&nbsp;&nbsp;</td>
-				   <td valign="top" align="right"><input type="button" id="btnNext" class="submit_btn" value="Next"/></td>
-
-                  	<td>&nbsp;&nbsp;</td>							
-				           
-                  <td valign="top" align="center"><input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='viewpatient'"></td>
-                  
-				  </tr>
-				  </table>
 				</div>
 				</td>
 				</tr>
@@ -545,19 +520,6 @@
 				      </td>
 				      </tr>
 				      </table>
-				      <br>
-				       <table align="right">
-				  <tr>
-				  <td valign="top" align="right"><input type="button" id="btnPrevious" class="submit_btn" value="Previous"></td>
-                   <td>&nbsp;&nbsp;</td>
-				   <td valign="top" align="right"><input type="submit"  class="submit_btn" value="Update"/></td>
-
-                  	<td>&nbsp;&nbsp;</td>							
-				           
-                  <td valign="top" align="center"><input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='viewpatient'"></td>
-                  
-				  </tr>
-				  </table>
 				      </div>
 				      </td>
 				      </tr>
@@ -565,7 +527,9 @@
 				      </div>
 				      </div>
 				      </div>
-				      </c:forEach>	 
+				      
+				      </c:forEach>	
+				      
 				      </form>
 				      </body>
 				      </html>

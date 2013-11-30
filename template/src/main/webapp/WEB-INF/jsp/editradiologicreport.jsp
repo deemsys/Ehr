@@ -51,7 +51,7 @@
                   <td valign="top" align="center">&nbsp;</td>
                   <td valign="top" align="center">&nbsp;</td>
                   <td valign="top" align="right">&nbsp;</td>
-                  <td valign="top" align="right"><input type="submit" class="submit_btn1" value="Update Report" ></td>
+                  <td valign="top" align="right"></td>
                     
                 </tr>
                 </table>
@@ -225,7 +225,7 @@
 						                      
 						                       <tr class="row1">
                   								<td valign="top" align="center">&nbsp;</td>
-                  								<td valign="top" align="left"><input type="submit" class="submit_btn1" value="Update Report" name="insert"></td>
+                  								<td valign="top" align="left"></td>
                     
                 </tr>
 						                     </table>
@@ -349,7 +349,7 @@
 						         
 						           <tr class="row1">
                   								<td valign="top" align="center">&nbsp;</td>
-                  								<td valign="top" align="left"><input type="submit" class="submit_btn1" value="Update Report" name="insert"></td>
+                  								<td valign="top" align="left"></td>
                     
                 </tr>
 						        
@@ -508,7 +508,7 @@
 						                      </tr>	
 						      <tr class="row1">
                   								<td valign="top" align="center">&nbsp;</td>
-                  								<td valign="top" align="left"><input type="submit" class="submit_btn1" value="Update Report" name="insert"></td>
+                  								<td valign="top" align="left"></td>
                     
                 </tr>
 						                           
@@ -548,10 +548,10 @@
 				               	</tr>
 				               	<tr class="row1">
                   								 <td>&nbsp;&nbsp;</td>
-                  								<td><input type="submit" class="submit_btn1" value="Update Report" name="insert"></td>
+                  								<td><input type="submit" class="submit_btn1" value="Update" name="insert"></td>
                   								
 				                    
-				                    <td><input type="reset" class="submit_btn" value="Cancel" ></td>
+				                    <td><input type="button" class="submit_btn1" value="Cancel" onclick="window.location.href='viewradiologicreport'"></td>
                     
                 </tr>
                 </table>

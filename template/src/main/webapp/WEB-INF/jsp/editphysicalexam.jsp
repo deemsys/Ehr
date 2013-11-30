@@ -1142,7 +1142,7 @@
 				                   <td><input type="submit" class="submit_btn" value="Update" ></td>
 				                   <td>&nbsp;&nbsp;</td>
 				                    
-				                    <td><input type="reset" class="submit_btn" value="Cancel" ></td>
+				                    <td><input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='viewphysicalexam'" ></td>
 				                  </tr>
 				                  </table>
 				                  </td>
