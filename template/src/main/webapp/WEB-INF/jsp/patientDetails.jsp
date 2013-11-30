@@ -399,7 +399,7 @@ $(function(){
 											<option value="workaccident" id="work">Work</option>
 											<option value="other" id="other">Other</option>
 				                   		</select>
-				                   <input type="text" name="accident" id="accident" style='display:none'/>
+				                   <input type="text" name="accident" id="accident" style='display:none' />
 				                   	</td>
 				                   	
 				                </tr>  
@@ -938,14 +938,14 @@ $(function(){
 				                  	</td>
 				                  	<td>
 				                  	<label for="amount"><b>Pain Scale:</b></label>
-				                  	<input type="text" id="amount" name="Painscale" />&nbsp;&nbsp;&nbsp;
+				                  	<input type="text" id="amount" name="Painscale"/>&nbsp;&nbsp;&nbsp;
 				                  	<div id="slider"></div>
 				                  </td>
 				                </tr>
 				                <tr>
                                  <td valign="middle" align="left" class="input_txt"></td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<textarea rows="3" cols="25" placeholder="Specify your Symptoms" name="Symptom1"></textarea>&nbsp;&nbsp;&nbsp; 
+				                  	<textarea rows="3" cols="25" placeholder="Specify your Symptoms" name="Symptom1">${patient.symptom1}</textarea>&nbsp;&nbsp;&nbsp; 
 				                  	</td>
 				                  	<td>
 				                  	<label for="amount"><b>Pain Scale:</b></label>
@@ -956,7 +956,7 @@ $(function(){
 				                <tr>
                                  <td valign="middle" align="left" class="input_txt"></td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<textarea rows="3" cols="25" placeholder="Specify your Symptoms" name="Symptom2"></textarea>&nbsp;&nbsp;&nbsp; 
+				                  	<textarea rows="3" cols="25" placeholder="Specify your Symptoms" name="Symptom2">${patient.symptom2}</textarea>&nbsp;&nbsp;&nbsp; 
 				                  	</td>
 				                  	<td>
 				                  	<label for="amount"><b>Pain Scale:</b></label>
@@ -1343,10 +1343,11 @@ function Checklight(val){
  var type1=document.getElementById('type_of_accident');
  var type = type1.options[type1.selectedIndex].value;
  /* document.location.href = "/header.jsp?value=type"; */
- type1.setAttribute(name, value)
+ 
  if(val=='other')
  			{
    				element.style.display='block';
+   				element.focus(); 
  			}
 			 else  
  				  element.style.display='none';

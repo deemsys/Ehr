@@ -298,7 +298,7 @@
 				          			<textarea rows="3" cols="25" name="symptoms" > ${patientDetails.symptoms}</textarea>&nbsp;&nbsp;&nbsp;
 				          		</td>
 				          			<td><label for="amount"><b>Pain Scale:</b></label>
-				          			<input type="text" class="input_txtbx1" id="amount" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.painscale}" name="painscale" /></br><span class="err"><form:errors path="PatientDetails.painscale"></form:errors></span>
+				          			<input type="text" class="input_txtbx1" id="amount"  value="${patientDetails.painscale}" name="painscale" /></br><span class="err"><form:errors path="PatientDetails.painscale"></form:errors></span>
 				          				<div id="slider"></div>
 				                 	 </td>
 				                </tr>
@@ -309,9 +309,9 @@
 				          		<td ></td>
 				          		<td>
 				          			<textarea rows="3" cols="25" name="symptom1" > ${patientDetails.symptom1}</textarea>&nbsp;&nbsp;&nbsp; </td>
-				          			<td><label for="amount1"><b>Pain Scale:</b></label>
+				          			<td><label for="amount"><b>Pain Scale:</b></label>
 				          			
-				          			<input type="text" class="input_txtbx1" id="amount1" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.painscale1}" name="painscale1" /></br><span class="err"><form:errors path="PatientDetails.painscale1"></form:errors></span>
+				          			<input type="text" class="input_txtbx1" id="amount1"value="${patientDetails.painscale1}" name="painscale1" /></br><span class="err"><form:errors path="PatientDetails.painscale1"></form:errors></span>
 				          				<div id="slider1"></div>
 				                  </td>
 				                </tr>
@@ -320,8 +320,8 @@
 				         	
 				          		<td>
 				          			<textarea rows="3" cols="25" name="symptom2" > ${patientDetails.symptom2}</textarea>&nbsp;&nbsp;&nbsp; </td>
-				          			<td><label for="amount2"><b>Pain Scale:</b></label>
-				          			<input type="text" class="input_txtbx1" id="amount2" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.painscale2}" name="painscale2" /></br><span class="err"><form:errors path="PatientDetails.painscale2"></form:errors></span>
+				          			<td><label for="amount"><b>Pain Scale:</b></label>
+				          			<input type="text" class="input_txtbx1" id="amount2"  name="painscale2" /></br><span class="err"><form:errors path="PatientDetails.painscale2"></form:errors></span>
 				          				<div id="slider2"></div>
 				                  </td>
 				                </tr>
@@ -334,9 +334,9 @@
 				        </tr>  
 				         <tr class="row1">
                 							<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Type Of Accident:</td>
-				                  		<td>	<select name="type_Of_Accident" class="input_cmbbx1" onchange='Checklight(this.value)';>
-						                  <option value="auto" <c:if test="${patientDetails.type_Of_Accident=='auto'}"><c:out value="selected"/></c:if>>Auto</option>
-						                     <option value="work" <c:if test="${patientDetails.type_Of_Accident=='work'}"><c:out value="selected"/></c:if>>Work</option>
+				                  		<td>	<select name="type_Of_Accident" class="input_cmbbx1" onclick='Checklight(this.value)';>
+						                  <option value="autoaccident" <c:if test="${patientDetails.type_Of_Accident=='autoaccident'}"><c:out value="selected"/></c:if>>Auto</option>
+						                     <option value="workaccident" <c:if test="${patientDetails.type_Of_Accident=='workaccident'}"><c:out value="selected"/></c:if>>Work</option>
 						                     <option value="other"  <c:if test="${patientDetails.type_Of_Accident=='other'}"><c:out value="selected"/></c:if>>Other</option>
 						                    </select></td>
 						                   	 <td><input type="text" name="accident" id="accident" style='display:none' onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.accident}" /></br><span class="err"><form:errors path="PatientDetails.accident"></form:errors></span></td>
@@ -669,7 +669,10 @@
 function Checklight(val){
  var element=document.getElementById('accident');
  if(val=='other')
+	 {
    element.style.display='block';
+ element.focus();
+	 }
  else  
    element.style.display='none';
 } 

@@ -1751,7 +1751,7 @@ public class MainController {
 		return "editpatientdetails";
 	}
 	@RequestMapping(value="/updatepatientdetails", method=RequestMethod.POST)
-	public String updatePatientDetails(HttpServletRequest request,@ModelAttribute("patient") @Valid PatientDetails patient,
+	public String updatePatientDetails(HttpServletRequest request,@ModelAttribute("PatientDetails") @Valid PatientDetails patient,
 			BindingResult result,ModelMap model,Principal principal)
 	{
 		/*if (result.hasErrors())
