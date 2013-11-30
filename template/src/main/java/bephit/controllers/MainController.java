@@ -2239,7 +2239,7 @@ public class MainController {
 		model.addAttribute("InsuranceverificationForm",insuranceverificationForm);    
 		model.addAttribute("success","true");
 		 model.addAttribute("menu", "admin");
-	        return "viewinsuranceverification";
+	        return "insuranceverifylist";
 		
 	}
 	
@@ -2258,7 +2258,7 @@ public class MainController {
 		model.addAttribute("InsuranceverificationForm",insuranceverificationForm);  
 		 model.addAttribute("menu", "admin");
 		}
-		return "insuranceverification";
+		return "insuranceverifylist";
 	}
 	
 

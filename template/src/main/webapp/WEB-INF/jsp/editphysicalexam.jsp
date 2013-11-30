@@ -320,10 +320,10 @@
 				                  </tr>
 				                   <tr class="row1">
 				                   <td>RR 80:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="rrnormal" value=${physicalexam.rrnormal }/></td>
-				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="rrpain" value=${physicalexam.rrpain }/></td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="rrspasm" value=${physicalexam.rrspasm }/></td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="rrstiff" value=${physicalexam.rrstiff }/></td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="rrnormal" value=${physicalexam.rrnormal }></td>
+				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="rrpain" value=${physicalexam.rrpain }></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="rrspasm" value=${physicalexam.rrspasm }></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="rrstiff" value=${physicalexam.rrstiff }></td>
 				                  </tr>
 				                <tr class="row1">
 				                   <td>LR 80:</td>
