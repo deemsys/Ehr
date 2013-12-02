@@ -1695,7 +1695,7 @@ public class MainController {
 	public String insert_patientdetails(HttpServletRequest request,HttpSession session,@ModelAttribute("PatientDetails")  @Valid PatientDetails patientDetails,BindingResult result,ModelMap model) {
 		session.setAttribute("patient",patientDetails);
 		String type= request.getParameter("Type_Of_Accident");
-		model.addAttribute("Type_Of_Accident",type);
+		
 		System.out.println("type of accident="+type);
 		
 		if(result.hasErrors())
@@ -1751,6 +1751,7 @@ public class MainController {
 		PatientDetailsForm patientdetailsform = new PatientDetailsForm();
         //participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants(participants_id));
 		patientdetailsform.setPatientDetails(patientDAO.viewPatientDetails(patient_id));
+		
 		//model.addAttribute("participantsDetailsForm", participantsDetailsForm);
 		model.addAttribute("patientDetailsForm", patientdetailsform);
 		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
@@ -1763,9 +1764,10 @@ public class MainController {
 		
 		//RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
        PatientDetailsForm patientdetailsform = new PatientDetailsForm();
-      //  radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport(pid));
+      
         patientdetailsform.setPatientDetails(patientDAO.viewPatientDetails(patient_id));
         model.addAttribute("patientDetailsForm", patientdetailsform);
+        
         model.addAttribute("menu", "patientInfo");
 		return "editpatientdetails";
 	}
@@ -1773,7 +1775,7 @@ public class MainController {
 	public String updatePatientDetails(HttpServletRequest request,@ModelAttribute("PatientDetails") @Valid PatientDetails patient,
 			BindingResult result,ModelMap model,Principal principal)
 	{
-		/*if (result.hasErrors())
+		if (result.hasErrors())
 		{
 		//	RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
 	    PatientDetailsForm patientDetailsForm = new PatientDetailsForm();
@@ -1782,7 +1784,7 @@ public class MainController {
 	        model.addAttribute("patientDetailsForm", patientDetailsForm);
 			    model.addAttribute("menu", "patientInfo");
 		        return "editpatientdetails";
-		}*/
+		}
 		
 		
 		int status = patientDAO.updatePatientDetails(patient, patient.getPatient_id(), principal.getName());
@@ -1790,7 +1792,7 @@ public class MainController {
 		
 		PatientDetailsForm patientdetailsform = new PatientDetailsForm();
 		patientdetailsform.setPatientDetails(patientDAO.getPatientDetails());
-        model.addAttribute("patientDetailsForm", patientdetailsform);
+        model.addAttribute("patientDetailsForm",patientdetailsform);
         model.addAttribute("success","true");
         model.addAttribute("menu", "patientInfo");
 	        return "viewpatient";

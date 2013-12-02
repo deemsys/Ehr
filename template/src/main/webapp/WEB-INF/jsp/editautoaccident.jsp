@@ -358,7 +358,7 @@ $(function() {
 				 <tr class="row2">
                 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Head position</td>
 				 <td valign="top" align="left" class="input_txt">
-				  <select name="head_position" class="input_cmbbx1" id="head_position"onclick='CheckHeadposition(this.value);'>
+				  <select name="head_position" class="input_cmbbx1" id="headposition"onclick='CheckHeadposition();'>
 					<option  value="forwardpos" <c:if test="${autoaccident.head_position=='forwardpos'}"><c:out value="selected"/></c:if>>Forward</option>
 					<option value="left" <c:if test="${autoaccident.head_position=='left'}"><c:out value="selected"/></c:if>>Left</option>
 					<option value="right" <c:if test="${autoaccident.head_position=='right'}"><c:out value="selected"/></c:if>>Right</option>
@@ -493,7 +493,7 @@ $(function() {
   				<tr class="row2">
                 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient's body</td>
 				 <td valign="top" align="left" class="input_txt">
-				  <select name="patient_body" class="input_cmbbx1" onclick='CheckPatientposition(this.value);'>
+				  <select name="patient_body" class="input_cmbbx1" id="patientbody" onclick='CheckPatientposition();'>
 					<option value="jolted" <c:if test="${autoaccident.patient_body=='jolted'}"><c:out value="selected"/></c:if>>Jolted</option>
 					<option value="thrown_about" <c:if test="${autoaccident.patient_body=='thrown_about'}"><c:out value="selected"/></c:if>>Thrown About</option>
 					<option value="stunned" <c:if test="${autoaccident.patient_body=='stunned'}"><c:out value="selected"/></c:if>>Stunned</option>
@@ -734,7 +734,7 @@ $(function() {
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>How did you get to the hospital?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				
-				  <select name="hospitalget" class="input_cmbbx1"  onclick='Checkhospital(this.value);'>
+				  <select name="hospitalget" class="input_cmbbx1" id="checkhospital"  onclick='Checkhospital();'>
 					<option  value="ambulance" <c:if test="${autoaccident.hospitalget=='ambulance'}"><c:out value="Checked"/></c:if>>Ambulance</option>
 					<option value="otherhos" <c:if test="${autoaccident.hospitalget=='otherhos'}"><c:out value="Checked"/></c:if>>Other</option>
 				   </select>
@@ -790,8 +790,7 @@ function CheckConditions(){
  else  
    element.style.display='none';
 } 
-</script>
-<script type="text/javascript">
+
 function Checkposition(){
  var element=document.getElementById('body_position1');
  var type1=document.getElementById('bodyposition');
@@ -801,52 +800,48 @@ function Checkposition(){
  else  
    element.style.display='none';
 } 
-</script>
-<script type="text/javascript">
-function CheckHeadposition(val){
+
+function CheckHeadposition(){
  var element=document.getElementById('head_position1');
- if(val=='others')
+ var type1=document.getElementById('headposition');
+ var type = type1.options[type1.selectedIndex].value;
+ if(type=='others')
    element.style.display='block';
  else  
    element.style.display='none';
 } 
-</script>
-<script type="text/javascript">
-function CheckPatientposition(val){
+
+function CheckPatientposition(){
  var element=document.getElementById('patient_body1');
- if(val=='otherbody')
+ var type1=document.getElementById('patientbody');
+ var type = type1.options[type1.selectedIndex].value;
+ if(type=='otherbody')
    element.style.display='block';
  else  
    element.style.display='none';
 } 
-</script>
-<script type="text/javascript">
+
 function toggle(value){
 if(value=='show')
  document.getElementById('mytext').style.visibility='visible';
 else
  document.getElementById('mytext').style.visibility='hidden';
 }
-</script>
 
-<script type="text/javascript">
 function toggle1(value){
 if(value=='show1')
  document.getElementById('mybrace').style.visibility='visible';
 else
  document.getElementById('mybrace').style.visibility='hidden';
 }
-</script>
 
-<script type="text/javascript">
 function toggle2(value){
 if(value=='show2')
  document.getElementById('injury').style.visibility='visible';
 else
  document.getElementById('injury').style.visibility='hidden';
 }
-</script>
-<script type="text/javascript">
+
 function toggle3(value){
 	/* alert(value); */
 	var e = document.getElementById('hit');
@@ -855,16 +850,14 @@ if(value=='show3')
 else
  e.style.display="none";
 }
-</script>
-<script type="text/javascript">
+
 function toggle4(value){
 if(value=='show4')
  document.getElementById('uncon').style.visibility='visible';
 else
  document.getElementById('uncon').style.visibility='hidden';
 }
-</script>
-<script type="text/javascript">
+
 function Checksymptom(val){
  var element=document.getElementById('symptom');
  if(val=='hours' ||  val=='days')
@@ -872,19 +865,19 @@ function Checksymptom(val){
  else  
    element.style.display='none';
 } 
-</script>
 
-<script type="text/javascript">
-function Checkhospital(val){
-	alert(val);
+function Checkhospital(){
+	
  var element=document.getElementById('hospital1');
- if(val=='otherhos')
+ var type1=document.getElementById('checkhospital');
+ var type = type1.options[type1.selectedIndex].value;
+ 
+ if(type=='otherhos')
    element.style.display='block';
  else  
    element.style.display='none';
 } 
-</script>
-<script type="text/javascript">
+
 function Check(){
  var element=document.getElementById('accident_hospital');
  
@@ -910,7 +903,7 @@ function Check(){
 <script>
 window.onload = function(){
 
-	Checkhospital("otherhos");CheckPatientposition("otherbody");CheckHeadposition("others");Checkposition();  CheckConditions(); Check();
+	Checkhospital();CheckPatientposition();CheckHeadposition();Checkposition();CheckConditions();Check();
 	
 	
 }

@@ -311,17 +311,19 @@
 				         <tr class="row2">
 				         
 				         	<td><span class="err">*</span>Type Of Accident:</td>
+				         	<%-- <td>${patientDetails.type_Of_Accident}</td>
+				         	<td>${patientDetails.accident}</td>
+				         	<td></td>
+				         	</tr> --%>
+				         	  <c:if test="${patientDetails.type_Of_Accident != 'otheraccident'}">
+				       
 				         	<td>${patientDetails.type_Of_Accident}</td>
-				         	<td></td>
-				         	<td></td>
-				         	</tr>
-				         				         	<%-- <c:if test="${patientDetails.type_Of_Accident == 'other'}">
+				         	</c:if>
+				         <c:if test="${patientDetails.type_Of_Accident == 'otheraccident'}">
+				         	<td>${patientDetails.type_Of_Accident}</td>
 				         			<td>${patientDetails.accident}</td>
 				         </c:if>
-				         <c:if test="${patientDetails.type_Of_Accident != 'other'}">
-				         <c:out value="${patientDetails.type_Of_Accident}"></c:out>
-				         	<td>${patientDetails.type_Of_Accident}</td>
-				         	</c:if> --%>
+				       
 				        </tr>
 				         <tr class="row1">
 				         	<td><span class="err">*</span>Date Of Accident:</td>

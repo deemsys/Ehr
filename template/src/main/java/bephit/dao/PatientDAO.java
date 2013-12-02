@@ -323,7 +323,6 @@ public class PatientDAO {
 			    	    resultSet.getString("Symptom2"),
 			    	    resultSet.getString("Painscale2"),
 			    	    resultSet.getString("Symptom_Accident"),
-			    	    
 			    	    resultSet.getString("Type_Of_Accident"),
 			    	    resultSet.getString("accident"),
 			    	    resultSet.getString("Date_Of_Accident"),
