@@ -201,6 +201,15 @@ public class MainController {
 		return "login";
  
 	}
+	
+	@RequestMapping(value="/doctorsearch", method = RequestMethod.GET)
+	public String searchform(HttpSession session, ModelMap model) {
+		
+		
+		return "doctorsearch";
+ 
+	}
+	
 	@RequestMapping(value="/physicalexam", method = RequestMethod.GET)
 	public String physicalform(HttpSession session, ModelMap model) {
 		session.removeAttribute("physical");

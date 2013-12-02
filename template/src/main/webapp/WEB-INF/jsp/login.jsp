@@ -16,7 +16,7 @@
 </style>
 </head>
 <body onload='document.f.j_username.focus();'>
-	<
+	
 
 	<c:if test="${not empty error}">
 		<div class="errorblock">
@@ -47,7 +47,7 @@
 		      <li><a href="#">
 		        <input type="submit" class="submit-btn" value=" " name="submit">
 		        </a></li>
-		      <!-- <li><a href="#" class="forgot-password"></a></li -->>
+		      <!-- <li><a href="#" class="forgot-password"></a></li -->
 		      <li><input name="reset" type="reset" /></li>
 		      <!-- <li><a href="signup" style="color:ffffff">Register</a></li> --> 
 		    </ul>
