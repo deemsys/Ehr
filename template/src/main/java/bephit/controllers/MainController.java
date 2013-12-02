@@ -1719,6 +1719,11 @@ public class MainController {
 		    model.addAttribute("age",age);
 			model.addAttribute("patientDetailsForm",patientdetailsform);
 			model.addAttribute("menu", "patientInfo");
+			if(type =="other")
+			{
+				return "patientDetails";
+			} 
+			else
 			return  type;
 	
 	       

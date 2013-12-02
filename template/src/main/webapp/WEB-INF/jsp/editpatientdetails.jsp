@@ -331,15 +331,16 @@
 				                 	<input type="radio" name="symptom_Accident" value="No" class="input_txt"<c:if test="${patientDetails.symptom_Accident=='No'}"><c:out value="checked=checked"/></c:if>>No
 				                 	</td>
 				                  	<td></td>
-				        </tr>  
-				         <tr class="row1">
+				        </tr> 
+				       
+				          <tr class="row1">
                 							<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Type Of Accident:</td>
 				                  		<td>	<select name="type_Of_Accident" id="Type_of_accident" class="input_cmbbx1" onclick='Checklight()';>
-						                  <option value="auto" <c:if test="${patientDetails.type_Of_Accident=='auto'}"><c:out value="selected"/></c:if>>Auto</option>
-						                     <option value="work" <c:if test="${patientDetails.type_Of_Accident=='work'}"><c:out value="selected"/></c:if>>Work</option>
-						                     <option value="other"  <c:if test="${patientDetails.type_Of_Accident=='other'}"><c:out value="selected"/></c:if>>Other</option>
+						                  <option value="autoaccident" <c:if test="${patientDetails.type_Of_Accident=='autoaccident'}"><c:out value="Checked"/></c:if>>Auto</option>
+						                     <option value="workaccident" <c:if test="${patientDetails.type_Of_Accident=='workaccident'}"><c:out value="Checked"/></c:if>>Work</option>
+						                     <option value="other"  <c:if test="${patientDetails.type_Of_Accident=='other'}"><c:out value="Checked"/></c:if>>Other</option>
 						                    </select></td>
-						                   	 <td><input type="text" name="accident" id="accident" style='display:none' onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.accident}" /></br><span class="err"><form:errors path="PatientDetails.accident"></form:errors></span></td>
+						                   	 <td><input type="text" name="accident" id="accident" style='display:none' value="${patientDetails.accident}" /></br><span class="err"><form:errors path="PatientDetails.accident"></form:errors></span></td>
 						           </tr>  
 						 <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date Of Accident:</td>
@@ -669,17 +670,22 @@
 function Checklight(){
 	
  var element=document.getElementById('accident');
- var type1=document.getElementById('Type_of_accident');
- var type = type1.options[type1.selectedIndex].value;
-
- if(type=='other')
+  var type1=document.getElementById('Type_of_accident');
+ var type2 = type1.options[type1.selectedIndex].value;
+ var index = type1.selectedIndex; 
+/*  alert(type2);
+ alert(index); */ 
+ if(type2=='other')
 	 {
-	 alert("type");
+	
    element.style.display='block';
 
 	 }
- else  
+ else 
+	 {
+	
    element.style.display='none';
+	 }
 } 
 </script>
 
@@ -702,11 +708,11 @@ else
 </script>
 <script>
 window.onload = function(){
-	alert("onload");
 	Checklight();
+	
 }
-</script>
 
+</script>
 
         <jsp:include page="footer.jsp"></jsp:include>
                    	
