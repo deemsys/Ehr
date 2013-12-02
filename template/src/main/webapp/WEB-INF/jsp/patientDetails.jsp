@@ -399,7 +399,7 @@ $(function(){
 
 						                    <option selected="selected" value="autoaccident" id="auto" >Auto</option>
 
-						                    <option selected="selected" value="autoaccident" id="autoaccident" >Auto</option>
+						                   
 
 											<option value="workaccident" id="work">Work</option>
 											<option value="other" id="other">Other</option>
