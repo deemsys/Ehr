@@ -242,7 +242,7 @@
 							ddlevelsmenu.setup("ddtopmenubar", "topbar")
 						</script>
 						<ul id="ddsubmenu5" class="ddsubmenustyle">
-						<li><a href="patientDetails">Add Patiet Details</a></li>
+						<li><a href="patientDetails">Add Patient Details</a></li>
 							 <li><a href="viewpatient">View Patient Details</a></li>
 							
           				</ul>

@@ -191,7 +191,7 @@ public class MainController {
 			return "staffchecklist";
 		}
 		else
-		return "physicalexam";
+		return "doctorsearch";
  
 	}
 	
