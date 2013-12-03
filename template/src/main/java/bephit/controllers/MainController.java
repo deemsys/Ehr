@@ -2193,7 +2193,7 @@ public class MainController {
 		model.addAttribute("hardshipagreementform",hardshipagreementForm);
 	       model.addAttribute("success","true");
 	       model.addAttribute("menu", "authorization");
-	        return "viewhardship";
+	        return "hardshiplist";
 		
 	}
 	

@@ -29,7 +29,7 @@
 						<table cellpadding="0" cellspacing="0" border="0" width="100%">
 				     <tr class="title">
 								
-								<td valign="center" align="right" width="10%"><input type="checkbox" value="" name="chkAll"></td>
+								
          						<td valign="top" align="left" width="10%">Patient Name</td>
 					         	<td valign="top" align="left" width="10%">ID</td>
 					         	<td valign="top" align="left" width="10%">Date</td>
@@ -40,7 +40,7 @@
 						<c:if test="${fn:length(physicalexamForm.physicalexam) gt 0}">
         				  <c:forEach items="${physicalexamForm.physicalexam}" var="physicalexam" varStatus="status">
         				       				<tr class="row1">
-        				       				<td valign="center" align="right" width="10%"></td>
+        				       				
 								            <td valign="top" align="left"  width="10%"><a href="physicalexamlist?physical_id=${physicalexam.physical_id}">${physicalexam.name}</a></td>
 											<td valign="top" align="left" width="10%">${physicalexam.id}</td>
 											<td valign="top" align="left" width="10%">${physicalexam.date}</td>

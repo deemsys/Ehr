@@ -29,10 +29,10 @@
 						<table cellpadding="0" cellspacing="0" border="0" width="100%">
 				     <tr class="title">
 								
-								<td valign="center" align="right" width="10%"><input type="checkbox" value="" name="chkAll"></td>
+								
          						<td valign="top" align="left" width="10%">Patient Name</td>
 					         	
-					         	<td valign="top" align="left" width="10%">Date</td>
+					         	<td valign="top" align="left" width="5%">Date</td>
 								
 								<td valign="top" align="left" width="10%">Action</td>
           			</tr>
@@ -41,7 +41,7 @@
 						<c:if test="${fn:length(ScreeningAuthzForm.screeningDetails) gt 0}">
         				  <c:forEach items="${ScreeningAuthzForm.screeningDetails}" var="ScreeningDetails" varStatus="status">
         				       				<tr class="row1">
-        				       				<td valign="center" align="right" width="10%"></td>
+        				       				
 								            <td valign="top" align="left"  width="10%"><a href="viewscreeningauthz?screen_no=${ScreeningDetails.screen_no}">${ScreeningDetails.name}</a></td>
 											
 											<td valign="top" align="left" width="10%">${ScreeningDetails.date}</td>

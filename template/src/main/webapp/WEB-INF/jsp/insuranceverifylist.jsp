@@ -29,7 +29,7 @@
 						<table cellpadding="0" cellspacing="0" border="0" width="100%">
 				     <tr class="title">
 								
-								<td valign="center" align="right" width="10%"><input type="checkbox" value="" name="chkAll"></td>
+								
          						<td valign="top" align="left" width="10%">Patient Name</td>
 
 								
@@ -40,7 +40,7 @@
 						<c:if test="${fn:length(InsuranceverificationForm.insuranceverification) gt 0}">
         				  <c:forEach items="${InsuranceverificationForm.insuranceverification}" var="Insuranceverification" varStatus="status">
         				       				<tr class="row1">
-        				       				<td valign="center" align="right" width="10%"></td>
+        				       				
 								            <td valign="top" align="left"  width="10%"><a href="viewinsuranceverification?form_no=${Insuranceverification.form_no}">${Insuranceverification.verify_name}</a></td>
 											
 											

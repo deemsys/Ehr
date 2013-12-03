@@ -29,7 +29,7 @@
 						<table cellpadding="0" cellspacing="0" border="0" width="100%">
 				     <tr class="title">
 								
-								<td valign="center" align="right" width="10%"><input type="checkbox" value="" name="chkAll"></td>
+								
          						<td valign="top" align="left" width="10%">Patient Name</td>
 					         	<td valign="top" align="left" width="15%">Date of Accident</td>
 					         	<td valign="top" align="left" width="20%">Subscriber/Enrollee No</td>
@@ -42,7 +42,7 @@
 						<c:if test="${fn:length(insuranceplanform.insuranceplan) gt 0}">
         				  <c:forEach items="${insuranceplanform.insuranceplan}" var="Insuranceplan" varStatus="status">
         				       				<tr class="row1">
-        				       				<td valign="center" align="right" width="10%"></td>
+        				       				
 								            <td valign="top" align="left"  width="10%"><a href="viewinsuranceplan?no=${Insuranceplan.no}">${Insuranceplan.pat_name}</a></td>
 											<td valign="top" align="left" width="10%">${Insuranceplan.accident_date}</td>
 											<td valign="top" align="left" width="10%">${Insuranceplan.enrollee}</td>

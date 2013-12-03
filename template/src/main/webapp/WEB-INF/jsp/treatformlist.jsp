@@ -30,11 +30,10 @@
 						<table cellpadding="0" cellspacing="0" border="0" width="100%">
 				     <tr class="title">
 								
-								<td valign="center" align="right" width="10%"><input type="checkbox" value="" name="chkAll"></td>
+				
          						<td valign="top" align="left" width="10%">Patient Name</td>
 					         	<td valign="top" align="left" width="10%">Patient Sign</td>
 					         	<td valign="top" align="left" width="10%">Witness</td>
-								
 								<td valign="top" align="left" width="10%">Action</td>
           			</tr>
 							<!-- getting addAttibute value -->
@@ -42,7 +41,7 @@
 						<c:if test="${fn:length(treatform.treatform) gt 0}">
         				  <c:forEach items="${treatform.treatform}" var="Treatdetails" varStatus="status">
         				       				<tr class="row1">
-        				       				<td valign="center" align="right" width="10%"></td>
+        				       			
 								            <td valign="top" align="left"  width="10%"><a href="viewtreatform?treat_no=${Treatdetails.treat_no}">${Treatdetails.patientsname}</a></td>
 											<td valign="top" align="left" width="10%">${Treatdetails.patientssign}</td>
 											<td valign="top" align="left" width="10%">${Treatdetails.witness}</td>

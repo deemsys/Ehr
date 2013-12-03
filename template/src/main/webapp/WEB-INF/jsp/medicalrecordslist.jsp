@@ -29,7 +29,7 @@
 						<table cellpadding="0" cellspacing="0" border="0" width="100%">
 				     <tr class="title">
 								
-								<td valign="center" align="right" width="10%"><input type="checkbox" value="" name="chkAll"></td>
+								
          						<td valign="top" align="left" width="10%">Patient Name</td>
 					         	
 					         	<td valign="top" align="left" width="10%">Patient Sign</td>
@@ -41,7 +41,7 @@
 						<c:if test="${fn:length(MedicalRecordsForm.medicalDetails) gt 0}">
         				  <c:forEach items="${MedicalRecordsForm.medicalDetails}" var="MedicalDetails" varStatus="status">
         				       				<tr class="row1">
-        				       				<td valign="center" align="right" width="10%"></td>
+        				       				
 								            <td valign="top" align="left"  width="10%"><a href="viewmedicalrecords?medical_no=${MedicalDetails.medical_no}">${MedicalDetails.name}</a></td>
 											
 											<td valign="top" align="left" width="10%">${MedicalDetails.patientsignature}</td>

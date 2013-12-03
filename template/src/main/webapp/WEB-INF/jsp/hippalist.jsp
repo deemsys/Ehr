@@ -29,7 +29,7 @@
 						<table cellpadding="0" cellspacing="0" border="0" width="100%">
 				     <tr class="title">
 								
-								<td valign="center" align="right" width="10%"><input type="checkbox" value="" name="chkAll"></td>
+								
          						<td valign="top" align="left" width="10%">Patient Name</td>
 					         	<td valign="top" align="left" width="10%">Date</td>
 					         	<td valign="top" align="left" width="10%">Parent Sign</td>
@@ -41,7 +41,7 @@
 						<c:if test="${fn:length(HippaPrivacyForm.privacyDetails) gt 0}">
         				  <c:forEach items="${HippaPrivacyForm.privacyDetails}" var="privacydetails" varStatus="status">
         				       				<tr class="row1">
-        				       				<td valign="center" align="right" width="10%"></td>
+        				       				
 								            <td valign="top" align="left"  width="10%"><a href="viewhippa?hippa_no=${privacydetails.hippa_no}">${privacydetails.printpname}</a></td>
 											<td valign="top" align="left" width="10%">${privacydetails.printpdate}</td>
 											<td valign="top" align="left" width="10%">${privacydetails.legalguardian}</td>
