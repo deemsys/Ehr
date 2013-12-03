@@ -1976,7 +1976,7 @@ public class MainController {
 		treatform.setTreatform(treatDAO.getTreatDetails());
 		System.out.println(treatform);
 		model.addAttribute("treatform",treatform);
-		 model.addAttribute("menu", "admin");
+		 model.addAttribute("menu", "consent");
 		
 		return "treatformlist";
  
@@ -1985,8 +1985,6 @@ public class MainController {
 		
 	@RequestMapping(value="/viewtreatform", method = RequestMethod.GET)
 	public String viewtreatform(HttpServletRequest request,@RequestParam("treat_no") String treat_no,ModelMap model,Treatform treatdetails){
-		
-
 		TreatForm treatform= new TreatForm();
 		treatform.setTreatform(treatDAO.getTreatDetails(treat_no));
 		System.out.println(treatform);
@@ -2012,16 +2010,7 @@ public class MainController {
 	@RequestMapping(value="/updatetreatform", method=RequestMethod.POST)
 	public String updatetreatform(HttpSession session,@ModelAttribute("Treatform") @Valid Treatform treatdetails,BindingResult result,
 			ModelMap model) {
-		/*if (result.hasErrors())
-		{
-			InsuranceplanForm insuranceplanForm = new InsuranceplanForm();
-	     //   participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants(participant.getParticipants_id()));
-	      insuranceplanForm.setInsuranceplan(planDAO.getPlan(insuranceplan.getNo()));
-	      
-	        model.addAttribute("insuranceplanForm", insuranceplanForm);
-			    
-		        return "editinsuranceplan";
-		}*/
+		
 		
 		int status = treatDAO.updatetreatform(treatdetails, treatdetails.getTreat_no());
 		System.out.println(status);
