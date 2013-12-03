@@ -541,8 +541,7 @@ $(function() {
 				  <tr>
 				  	<td><input type="button" id="btnPrevious" class="submit_btn" value="Previous"  /></td>
 				  	<td>&nbsp;&nbsp;</td>
-				  <td><br><input type="submit" class="submit_btn" value="Update"/><br></td>
-				  <td>&nbsp;&nbsp;</td>
+				  
 				  <td><br><input type="button"  class="submit_btn" value="Cancel" onclick="window.location.href='viewautoaccident'"/><br></td>
 				  </tr>
 				  </table> 

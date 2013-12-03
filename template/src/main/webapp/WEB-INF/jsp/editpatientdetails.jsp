@@ -335,6 +335,14 @@
 				       
 				          <tr class="row1">
                 							<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Type Of Accident:</td>
+
+				                  		<td>	<select name="type_Of_Accident" id="Type_of_accident" class="input_cmbbx1" onclick='Checklight(this.value);'>
+						                  <option value="autoaccident" <c:if test="${patientDetails.type_Of_Accident=='autoaccident'}"><c:out value="Checked"/></c:if>>Auto</option>
+						                     <option value="workaccident" <c:if test="${patientDetails.type_Of_Accident=='workaccident'}"><c:out value="Checked"/></c:if>>Work</option>
+						                     <option value="other"  <c:if test="${patientDetails.type_Of_Accident=='other'}"><c:out value="Checked"/></c:if>>Other</option>
+						                    </select></td>
+						                   	 <td><input type="text" name="accident" id="accident" style='display:none' value="${patientDetails.accident}" /></br><span class="err"><form:errors path="PatientDetails.accident"></form:errors></span></td>
+
 				                  		<td>	<select name="type_Of_Accident" id="typeofaccident" class="input_cmbbx1" onclick='Checklight();'>
 						                  <option value="autoaccident" <c:if test="${patientDetails.type_Of_Accident=='autoaccident'}"><c:out value="selected"/></c:if>>Auto</option>
 						                  <option value="workaccident" <c:if test="${patientDetails.type_Of_Accident=='workaccident'}"><c:out value="selected"/></c:if>>Work</option>
@@ -342,6 +350,7 @@
 						                    </select>
 						                    </td>
 						                   	 <td><input type="text" name="accident" id="accident1" style='display:none' value="${patientDetails.accident}" /></br><span class="err"><form:errors path="PatientDetails.accident"></form:errors></span></td>
+
 						           </tr>  
 						 <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date Of Accident:</td>
@@ -668,16 +677,26 @@
   </script>
   <script type="text/javascript">
   
-function Checklight(){
+function Checklight(val){
 	
+<<<<<<< .mine
+ var element=document.getElementById('accident');
+ /*  var type1=document.getElementById('Type_of_accident');
+ var type2 = type1.options[type1.selectedIndex].value;
+=======
  var element=document.getElementById('accident1');
   var type1=document.getElementById('typeofaccident');
  var type = type1.options[type1.selectedIndex].value;
- var index = type1.selectedIndex; 
+>>>>>>> .r289
+ var index = type1.selectedIndex;  */
  
 /*  alert(type2);
  alert(index); */ 
+<<<<<<< .mine
+ if(val=='other')
+=======
  if(type=='otheraccident')
+>>>>>>> .r289
 	 {
 	
    element.style.display='block';
@@ -708,12 +727,12 @@ else
 	}
 }
 </script>
-<script>
+<!-- <script>
 window.onload = function(){
 	Checklight();
 }
 
-</script>
+</script> -->
 
         <jsp:include page="footer.jsp"></jsp:include>
                    	
