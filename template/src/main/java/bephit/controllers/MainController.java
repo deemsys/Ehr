@@ -28,6 +28,7 @@ import bephit.dao.AutoaccidentDAO;
 import bephit.dao.DoctorsignupDAO;
 /*import bephit.dao.DoctorsignupDAO;*/
 //import bephit.dao.DoctorsignupDAO;
+import bephit.dao.DoctorsearchDAO;
 import bephit.dao.HamiltonchiropracticDAO;
 import bephit.dao.HardshipagreementDAO;
 import bephit.dao.HippaDAO;
@@ -58,6 +59,7 @@ import bephit.forms.AutoaccidentForm;
 
 //import bephit.forms.DoctorsignupForm;
 
+import bephit.forms.DoctorsearchForm;
 import bephit.forms.DoctorsignupForm;
 import bephit.forms.HamiltonchiropracticForm;
 import bephit.forms.HardshipagreementForm;
@@ -158,7 +160,8 @@ public class MainController {
 	@Autowired
 	MoretestDAO moreDAO;
 	
-	
+	@Autowired
+	DoctorsearchDAO doctorDAO;
 
 	@Autowired
 	RadiologicReportDAO radioDAO;
@@ -210,6 +213,42 @@ public class MainController {
  
 	}
 	
+	@RequestMapping(value="/doctorsearch", method = RequestMethod.POST)
+	public String insert_doctorsearch(HttpServletRequest request,HttpSession session,@ModelAttribute("Doctorsearch")  @Valid Doctorsearch doctorsearch,BindingResult result,ModelMap model) {
+	String emailid=request.getParameter("emailid");
+	String patientname=request.getParameter("patientname");
+	int v=doctorDAO.Checkvalid(emailid,patientname);
+	
+		
+		/*if(result.hasErrors())
+		{
+			PhysicalexamForm physicalexamForm= new PhysicalexamForm();
+			physicalexamForm.setPhysicalexam(physicalDAO.getPhysicalexam());
+			model.addAttribute("physicalexamForm",physicalexamForm);
+			model.addAttribute("Success","true");
+			model.addAttribute("menu", "phyexam");
+			return "physicalexam";
+		}*/		
+		model.put("Doctorsearch", doctorsearch);
+		model.addAttribute("DoctorsearchForm",doctorsearch);
+		
+		if(v>0)
+		{
+    	int a=doctorDAO.setDoctorsearch(doctorsearch);
+    
+		DoctorsearchForm doctorsearchForm= new DoctorsearchForm();
+		doctorsearchForm.setDoctorsearch(doctorDAO.getDoctorsearch());
+		model.addAttribute("doctorsearchForm",doctorsearchForm);
+		return "physicalexam";
+		}
+		else
+		{
+			model.addAttribute("error","error");
+		}
+		return "doctorsearch";
+ 
+	}
+
 	@RequestMapping(value="/physicalexam", method = RequestMethod.GET)
 	public String physicalform(HttpSession session, ModelMap model) {
 		session.removeAttribute("physical");

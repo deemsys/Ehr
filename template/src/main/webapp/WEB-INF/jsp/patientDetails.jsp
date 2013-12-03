@@ -1376,8 +1376,11 @@ else
  e1.style.display="block";
 	}
 }
+
 </script>
- 
+<script>
+
+</script> 
         <jsp:include page="footer.jsp"></jsp:include>
 
 

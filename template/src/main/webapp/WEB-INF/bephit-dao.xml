@@ -72,6 +72,9 @@
  <bean id="RadiologicReportDAO" class="bephit.dao.RadiologicReportDAO">
     	<property name="dataSource" ref="dataSource" />
     </bean>
+    <bean id="DoctorsearchDAO" class="bephit.dao.DoctorsearchDAO">
+    	<property name="dataSource" ref="dataSource" />
+    </bean>
  <bean id="SoapnotesDAO" class="bephit.dao.SoapnotesDAO">
     	<property name="dataSource" ref="dataSource" />
     </bean>
