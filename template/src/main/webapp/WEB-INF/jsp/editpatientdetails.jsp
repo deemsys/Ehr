@@ -691,24 +691,24 @@
   
 function Checklight(val){
 	
-<<<<<<< .mine
+
  var element=document.getElementById('accident');
  /*  var type1=document.getElementById('Type_of_accident');
  var type2 = type1.options[type1.selectedIndex].value;
-=======
+
  var element=document.getElementById('accident1');
   var type1=document.getElementById('typeofaccident');
  var type = type1.options[type1.selectedIndex].value;
->>>>>>> .r289
+
  var index = type1.selectedIndex;  */
  
 /*  alert(type2);
  alert(index); */ 
-<<<<<<< .mine
+
  if(val=='other')
-=======
+
  if(type=='otheraccident')
->>>>>>> .r289
+
 	 {
 	
    element.style.display='block';

@@ -25,7 +25,7 @@
 			        </div>
 			        <div class="contentbox">
 			      <!--   <form action="findPatients" method="GET">  --> 
-			      <form action="screeningAuthz" method="POST"> 
+			      <form action="medicalrecords" method="POST"> 
 						<table cellpadding="0" cellspacing="0" border="0" width="100%">
 				     <tr class="title">
 								
@@ -37,7 +37,7 @@
 								<td valign="top" align="left" width="10%">Action</td>
           			</tr>
 							<!-- getting addAttibute value -->
-							<%-- <c:set value="${hardshipagreementform.hardshipagreement[0]}" var="Hardshipagreement"> </c:set> --%>
+							
 						<c:if test="${fn:length(MedicalRecordsForm.medicalDetails) gt 0}">
         				  <c:forEach items="${MedicalRecordsForm.medicalDetails}" var="MedicalDetails" varStatus="status">
         				       				<tr class="row1">

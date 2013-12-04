@@ -168,7 +168,7 @@ private String Ifother;
 private String Illness;
 @NotEmpty
 private String Dates;
-@NotEmpty
+
 private String Medications;
 private String Drink;
 private String Smoke;

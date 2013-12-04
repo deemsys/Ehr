@@ -1817,9 +1817,8 @@ public class MainController {
 	{
 		if (result.hasErrors())
 		{
-		//	RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
+		
 	    PatientDetailsForm patientDetailsForm = new PatientDetailsForm();
-	    //  radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport(report.getPid()));
 	      patientDetailsForm.setPatientDetails(patientDAO.viewPatientDetails(patient.getPatient_id()));
 	        model.addAttribute("patientDetailsForm", patientDetailsForm);
 			    model.addAttribute("menu", "patientInfo");
@@ -1846,9 +1845,9 @@ public class MainController {
 		if(status==1)
 		{
         model.addAttribute("success","true");
-      //RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
+      
         PatientDetailsForm patientDetailsForm = new PatientDetailsForm();
-        //radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport());
+        
        patientDetailsForm.setPatientDetails(patientDAO.getPatientDetails());
         model.addAttribute("patientDetailsForm", patientDetailsForm);
         model.addAttribute("menu", "patientInfo");
