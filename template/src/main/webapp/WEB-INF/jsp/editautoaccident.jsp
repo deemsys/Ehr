@@ -508,8 +508,8 @@ $(function() {
 				   <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Did patient's body strike interior of car</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="radio" name="body_strike" value="yes" class="input_txt"  onclick="toggle3('show3');" <c:if test="${autoaccident.body_strike=='yes'}"><c:out value="Checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
-				  <input type="radio" name="body_strike" value="no" class="input_txt" onchange="toggle3('hide3');" <c:if test="${autoaccident.body_strike=='no'}"><c:out value="Checked"/></c:if>>No&nbsp;&nbsp;&nbsp;
+				  <input type="radio" name="body_strike" value="yes" id="yeschecked" class="input_txt"  onclick="strike();" <c:if test="${autoaccident.body_strike=='yes'}"><c:out value="Checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
+				  <input type="radio" name="body_strike" value="no" id="nochecked" class="input_txt"  onclick="strike();"<c:if test="${autoaccident.body_strike=='no'}"><c:out value="Checked"/></c:if>>No&nbsp;&nbsp;&nbsp;
 				  </td>
 				  </tr>
 				  </table>
@@ -694,19 +694,19 @@ $(function() {
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>After the accident I went</td>
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="after_accident" class="input_cmbbx1"  id="afteraccident"onclick='Check();'>
-					<option  value="hospital" <c:if test="${autoaccident.after_accident=='hospital'}"><c:out value="Checked"/></c:if>  >Hospital</option>
-					<option value="work" <c:if test="${autoaccident.after_accident=='work'}"><c:out value="Checked"/></c:if> >Work</option>
-					<option value="home" <c:if test="${autoaccident.after_accident=='home'}"><c:out value="Checked"/></c:if> >Home</option>
-					<option value="family" <c:if test="${autoaccident.after_accident=='family'}"><c:out value="Checked"/></c:if> >Family</option>
-					<option value="physician" <c:if test="${autoaccident.after_accident=='physician'}"><c:out value="Checked"/></c:if> >Physician</option>
-					<option value="otheracc" <c:if test="${autoaccident.after_accident=='otheracc'}"><c:out value="Checked"/></c:if> >Other</option>
+					<option  value="hospital" <c:if test="${autoaccident.after_accident=='hospital'}"><c:out  value="selected"/></c:if>  >Hospital</option>
+					<option value="work" <c:if test="${autoaccident.after_accident=='work'}"><c:out  value="selected"/></c:if> >Work</option>
+					<option value="home" <c:if test="${autoaccident.after_accident=='home'}"><c:out  value="selected"/></c:if> >Home</option>
+					<option value="family" <c:if test="${autoaccident.after_accident=='family'}"><c:out  value="selected"/></c:if> >Family</option>
+					<option value="physician" <c:if test="${autoaccident.after_accident=='physician'}"><c:out  value="selected"/></c:if> >Physician</option>
+					<option value="otheracc" <c:if test="${autoaccident.after_accident=='otheracc'}"><c:out  value="selected"/></c:if> >Other</option>
 				  </select>
 				 <input type="text" name="accident" id="accident" value="${autoaccident.accident}"style='display:none'/>
 				  </td>
 				  </tr> 
 				  </table>
 				   
-				   <div id="accident_hospital">
+				   <div id="accident_hospital" style='display:none' >
 				  	
 				  <table cellpadding="0" cellspacing="0" border="0" width="100%">
 				   <tr class="row2">
@@ -735,8 +735,8 @@ $(function() {
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>How did you get to the hospital?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				
 				  <select name="hospitalget" class="input_cmbbx1" id="checkhospital"  onclick='Checkhospital();'>
-					<option  value="ambulance" <c:if test="${autoaccident.hospitalget=='ambulance'}"><c:out value="Checked"/></c:if>>Ambulance</option>
-					<option value="otherhos" <c:if test="${autoaccident.hospitalget=='otherhos'}"><c:out value="Checked"/></c:if>>Other</option>
+					<option  value="ambulance" <c:if test="${autoaccident.hospitalget=='ambulance'}"><c:out value="selected"/></c:if>>Ambulance</option>
+					<option value="otherhos" <c:if test="${autoaccident.hospitalget=='otherhos'}"><c:out value="selected"/></c:if>>Other</option>
 				   </select>
 				  
 				 <input type="text" name="hospital1" id="hospital1" value="${autoaccident.hospital1}" style='display:none'/>
@@ -757,8 +757,6 @@ $(function() {
 				  </td>				  
 				  </tr>				  
 				  </table>
-				   				 	
-				   
 				  </div>
 				  </div>
 				  </div>
@@ -842,13 +840,15 @@ else
  document.getElementById('injury').style.visibility='hidden';
 }
 
-function toggle3(value){
+function strike(){
 	/* alert(value); */
 	var e = document.getElementById('hit');
-if(value=='show3')
- e.style.display="block";
-else
- e.style.display="none";
+	if(document.getElementById('yeschecked').checked)
+	
+		
+		e.style.display="block";
+	else
+		 e.style.display="none";
 }
 
 function toggle4(value){
@@ -867,7 +867,7 @@ function Checksymptom(val){
 } 
 
 function Checkhospital(){
-	alert("e");
+	
  var element=document.getElementById('hospital1');
  var type1=document.getElementById('checkhospital');
  var type = type1.options[type1.selectedIndex].value;
@@ -884,6 +884,7 @@ function Check(){
  var element1 = document.getElementById('accident');
  var type1=document.getElementById('afteraccident');
  var type = type1.options[type1.selectedIndex].value;
+ 
  if(type=='hospital'){
 	
    element.style.display='block';
@@ -903,7 +904,7 @@ function Check(){
 <script>
 window.onload = function(){
 
-	Checkhospital();CheckPatientposition();CheckHeadposition();Checkposition();CheckConditions();Check();
+	Checkhospital();CheckPatientposition();CheckHeadposition();Checkposition();CheckConditions();Check();strike();
 	
 	
 }

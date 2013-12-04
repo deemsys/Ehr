@@ -576,7 +576,7 @@ public class MainController {
 	public String updateautoaccident(HttpServletRequest request,@ModelAttribute("Autoaccident") @Valid Autoaccident autoaccident,
 			BindingResult result,ModelMap model,Principal principal)
 	{
-		/*if (result.hasErrors())
+		if (result.hasErrors())
 		{
 			//PhysicalexamForm physicalexamForm = new PhysicalexamForm();
 	     AutoaccidentForm autoaccidentForm = new AutoaccidentForm();
@@ -585,7 +585,7 @@ public class MainController {
 	        model.addAttribute("autoaccidentForm", autoaccidentForm);
 			  model.addAttribute("menu", "Accident");  
 		        return "editautoaccident";
-		}*/
+		}
 		
 		/*System.out.println("physical id"+physicalexam.getPhysical_id());*/
 		int status = autoDAO.updateautoaccident(autoaccident, autoaccident.getPatient_number(), principal.getName());

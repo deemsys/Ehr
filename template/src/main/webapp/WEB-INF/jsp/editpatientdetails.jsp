@@ -179,12 +179,13 @@
 								<table cellpadding="0" cellspacing="0" border="0" width="100%">
 							 	<tr class="row2">
 									<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Are you:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-				                 <td><input type="radio" name="areyou" value="Student" class="input_txt" onclick="toggle3('hide3');" <c:if test="${patientDetails.areyou=='Student'}"><c:out value="checked=checked"/></c:if>>Student
-				                  	<input type="radio" name="areyou" value="Employee" class="input_txt"  onchange="toggle3('show3');" <c:if test="${patientDetails.areyou=='Employee'}"><c:out value="checked=checked"/></c:if>>Employee
+				                 <td><input type="radio" name="areyou" value="Student" id="studentchecked" class="input_txt" onclick="radiocheck();" <c:if test="${patientDetails.areyou=='Student'}"><c:out value="checked=checked"/></c:if>>Student
+				                  	<input type="radio" name="areyou" value="Employee" id="employeechecked" class="input_txt"  onclick="radiocheck();" <c:if test="${patientDetails.areyou=='Employee'}"><c:out value="checked=checked"/></c:if>>Employee
 				                  </td>
 				            	</tr>
 				            	
-				            	<div id="student">
+							</table>
+				            	<div id="studentno1" style="display:none;">
 				            	<table cellpadding="0" cellspacing="0" border="0" width="100%">
 				            	
 				           			 <tr class="row1">
@@ -193,12 +194,11 @@
 				                  			<input type="radio" name="student" value="FullTime" class="input_txt" <c:if test="${patientDetails.student=='FullTime'}"><c:out value="checked=checked"/></c:if>>Full Time&nbsp;&nbsp;&nbsp;
 				                  			<input type="radio" name="student" value="PartTime" class="input_txt" <c:if test="${patientDetails.student=='PartTime'}"><c:out value="checked=checked"/></c:if>>Part Time
 				             			</td>
-				           			</tr>
-				           			
-				           			</table>
-				               </div>
-				               
-				              
+				           			   </tr>
+							
+							</table>
+							</div>
+							
 				          	<div id="employee" style="display:none;">
 				            	
 								<table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -638,8 +638,10 @@
 <script> 
 
 
-  
+$(document).ready(function(){
+	
   $(function() {
+	 
 	    $( "#slider" ).slider({
 	      value:1,
 	      min: 0,
@@ -676,6 +678,7 @@
 	    });
 	    $( "#amount2" ).val(+ $( "#slider2" ).slider( "value" ) );
 	  });
+});
 
   $(document).ready(function(){
 	  
@@ -692,6 +695,7 @@
 	    });
 
 	});
+
   </script>
   <script type="text/javascript">
   
@@ -748,26 +752,31 @@ function Checklight(){
 	}
 
 
-function toggle3(value){
-	/* alert(value); */
-	var e = document.getElementById('student');
+
+function radiocheck()
+{
+	var e = document.getElementById('studentno1');
 	var e1=document.getElementById('employee');
-if(value=='show3')
+	if(document.getElementById('studentchecked').checked)
 	{
- e1.style.display="block";
- e.style.display="none";
+		
+		e.style.display="block";
+		e1.style.display="none";
 	}
-else
+else if(document.getElementById('employeechecked').checked)
 	{
- e1.style.display="none";
- e.style.display="block";
-	}
+		
+		e.style.display="none";
+		e1.style.display="block";
+	}		
 }
+	
+
 </script>
 <script>
 
 window.onload = function(){
-	Checklight();Other();
+	Checklight();Other();radiocheck();
 }
 
 </script>
