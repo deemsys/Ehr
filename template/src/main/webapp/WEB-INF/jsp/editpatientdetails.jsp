@@ -350,12 +350,12 @@
 
 				                  		
 				                  		<td>	<select name="type_Of_Accident" id="typeofaccident" class="input_cmbbx1" onclick='Checklight();'>
-						                  <option value="autoaccident" <c:if test="${patientDetails.accident=='autoaccident'}"><c:out value="selected"/></c:if>>Auto</option>
-						                  <option value="workaccident" <c:if test="${patientDetails.accident=='workaccident'}"><c:out value="selected"/></c:if>>Work</option>
-						                  <option value="otheraccident"  <c:if test="${patientDetails.accident=='otheraccident'}"><c:out value="selected"/></c:if>>Other</option>
+						                  <option value="autoaccident" <c:if test="${patientDetails.type_Of_Accident=='autoaccident'}"><c:out value="selected"/></c:if>>Auto</option>
+						                  <option value="workaccident" <c:if test="${patientDetails.type_Of_Accident=='workaccident'}"><c:out value="selected"/></c:if>>Work</option>
+						                  <option value="otheraccident"  <c:if test="${patientDetails.type_Of_Accident=='otheraccident'}"><c:out value="selected"/></c:if>>Other</option>
 						                    </select>
 						                    </td>
-						                   	 <td><input type="text" name="accident" id="accident1" style='display:none' value="${patientDetails.type_Of_Accident}" /></br><span class="err"><form:errors path="PatientDetails.accident"></form:errors></span></td>
+						                   	 <td><input type="text" name="accident" id="accident1" style='display:none' value="${patientDetails.accident}" /></br><span class="err"><form:errors path="PatientDetails.accident"></form:errors></span></td>
 
 						           </tr>  
 						 <tr class="row2">
@@ -538,8 +538,8 @@
 								 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Digestive" name="digestive" <c:if test="${patientDetails.digestive=='Digestive'}"><c:out value="Checked"/></c:if>   />Digestive</td>
 								 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Heart" name="heart" <c:if test="${patientDetails.heart=='Heart'}"><c:out value="Checked"/></c:if>   />Heart</td>
 								 <td valign="top" align="left" class="input_txt">
-								 <input type="checkbox"  value="Other" name="other" onclick="this.form.ifother.style.visibility = this.checked? 'visible' : 'hidden'"<c:if test="${patientDetails.other=='Other'}"><c:out value="Checked"/></c:if>   />Other
-								<input type="text" class="input_txtbx1"  style="visibility:hidden" id="ifother"   value="${patientDetails.ifother}" name="ifother" /></br><span class="err"><form:errors path="patient.ifother"></form:errors></span></td>
+								 <input type="checkbox"  value="Other" name="other" id="othercheck"onclick="Other();"<c:if test="${patientDetails.other=='Other'}"><c:out value="Checked"/></c:if>   />Other
+								<input type="text" class="input_txtbx1"   id="other1" style='display:none'  value="${patientDetails.ifother}" name="ifother" /></br><span class="err"><form:errors path="patient.ifother"></form:errors></span></td>
 
 								
 					
@@ -557,7 +557,7 @@
 				                  	<tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Medications You are Currently Taking and Why:</td>
 				                  <td>
-				                  	<textarea rows="3" cols="25" >${patientDetails.medications}</textarea>  </td>  
+				                  	<textarea rows="3" cols="25" name="medications">${patientDetails.medications}</textarea>  </td>  
 				                  </tr>
 				      	
 				                  	
@@ -710,7 +710,7 @@ function Checklight(){
 
 
 
- var index = type1.selectedIndex;  */
+ var index = type1.selectedIndex; 
  
 /*  alert(type2);
  alert(index); */ 
@@ -736,7 +736,16 @@ function Checklight(){
 </script>
 
  <script type="text/javascript">
-
+ function Other()
+	{
+		var element = document.getElementById('other1');
+		if(document.getElementById('othercheck').checked)
+			{
+				element.style.display="block";
+			}
+		else
+			element.style.display="none";
+	}
 
 
 function toggle3(value){
@@ -758,7 +767,7 @@ else
 <script>
 
 window.onload = function(){
-	Checklight();
+	Checklight();Other();
 }
 
 </script>

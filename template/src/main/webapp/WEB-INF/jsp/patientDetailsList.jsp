@@ -318,12 +318,12 @@
 				         	<td></td>
 				         	</tr> --%>
 				        
-				         	  <c:if test="${patientDetails.accident != 'otheraccident'}">
+				         	  <c:if test="${patientDetails.type_Of_Accident != 'otheraccident'}">
 				       
-				         	<td>${patientDetails.accident}</td>
-				         	</c:if>
-				         <c:if test="${patientDetails.accident == 'otheraccident'}">
 				         	<td>${patientDetails.type_Of_Accident}</td>
+				         	</c:if>
+				         <c:if test="${patientDetails.type_Of_Accident == 'otheraccident'}">
+				         	<td>${patientDetails.accident}</td>
 				         			
 				         </c:if>
 				       
