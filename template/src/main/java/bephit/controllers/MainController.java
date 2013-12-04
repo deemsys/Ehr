@@ -1759,13 +1759,14 @@ public class MainController {
 		    model.addAttribute("age",age);
 			model.addAttribute("patientDetailsForm",patientdetailsform);
 			model.addAttribute("menu", "patientInfo");
-			if(type =="other")
+			if(type.equals("other"))
 			{
 				return "patientDetails";
 			} 
 			else
+			{
 			return  type;
-	
+			}
 	       
 	       // return "patientDetails";
 
@@ -1817,6 +1818,8 @@ public class MainController {
 	{
 		if (result.hasErrors())
 		{
+			System.out.println("haserrors");
+		//	RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
 		
 	    PatientDetailsForm patientDetailsForm = new PatientDetailsForm();
 	      patientDetailsForm.setPatientDetails(patientDAO.viewPatientDetails(patient.getPatient_id()));

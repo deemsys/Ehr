@@ -389,7 +389,7 @@ public class PatientDAO {
 			    	    resultSet.getString("Dr"),
 			    	    resultSet.getString("Patient")
 			    	   ));
-				 System.out.println("type of accident="+resultSet.getString("Type_Of_Accident").toString());
+				
 			}
 	    }catch(Exception e){
 	        System.out.println(e.toString());

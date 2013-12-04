@@ -1208,7 +1208,7 @@ $(function(){
 				                  	<tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Medications You are Currently Taking and Why:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<textarea rows="3" cols="25" placeholder="Medications" name="Medications">${patient.medications}</textarea>&nbsp;&nbsp;&nbsp;<span class="err"><form:errors path="PatientDetails.Medications"></form:errors></span>
+				                  	<textarea rows="3" cols="25" placeholder="Medications" name="Medications">${patient.medications}</textarea>&nbsp;&nbsp;&nbsp;
 				                  	</tr> 
 				                  	
 				                  	<tr class="row1">

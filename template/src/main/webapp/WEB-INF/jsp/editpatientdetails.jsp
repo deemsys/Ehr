@@ -81,7 +81,7 @@
 	  <script>
 	  </script>
 	</head>
-	<body onload = "Checklight();">
+	<body>
 	 
 	<div id="tabs" class="tabs-bottom">
 	  <ul>
@@ -110,52 +110,52 @@
                        								 <tr class="row1">
                         	 							<td><span class="err">*</span>Name :</td>
                         	 							<input type="hidden" class="input_txtbx1" id="inp_id" value="${patientDetails.patient_id}" name="patient_id" />
-                                 						<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.name }" name="name" /></br><span class="err"><form:errors path="PatientDetails.name"></form:errors></span></td>
+                                 						<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.name }" name="name" /></br><span class="err"><form:errors path="PatientDetails.name"></form:errors></span></td>
                       								  </tr>
                         <tr class="row2">
                         	<td><span class="err">*</span>Date:</td>
-                        	 <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.date }" name="date" /></br><span class="err"><form:errors path="PatientDetails.date"></form:errors></span></td>
+                        	 <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.date }" name="date" /></br><span class="err"><form:errors path="PatientDetails.date"></form:errors></span></td>
                         </tr> 
                         <tr class="row1">
                         	<td><span class="err">*</span>Street Address:</td>
-							<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.streetAddress }" name="streetAddress" /></br><span class="err"><form:errors path="PatientDetails.streetAddress"></form:errors></span></td>
+							<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.streetAddress }" name="streetAddress" /></br><span class="err"><form:errors path="PatientDetails.streetAddress"></form:errors></span></td>
                         </tr> 
                         <tr class="row2">
                         	<td><span class="err">*</span>City:</td>
-                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.city}" name="city" /></br><span class="err"><form:errors path="PatientDetails.city"></form:errors></span></td>
+                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.city}" name="city" /></br><span class="err"><form:errors path="PatientDetails.city"></form:errors></span></td>
 						</tr>                        
 						<tr class="row1">
                         	<td><span class="err">*</span>State:</td>
-                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.state }" name="state" /></br><span class="err"><form:errors path="PatientDetails.state"></form:errors></span></td>
+                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.state }" name="state" /></br><span class="err"><form:errors path="PatientDetails.state"></form:errors></span></td>
 						</tr>                        
 						<tr class="row2">
                         	<td><span class="err">*</span>ZipCode:</td>
-                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.zipCode}" name="zipCode" /></br><span class="err"><form:errors path="PatientDetails.zipCode"></form:errors></span></td>
+                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.zipCode}" name="zipCode" /></br><span class="err"><form:errors path="PatientDetails.zipCode"></form:errors></span></td>
 						</tr>                        
 						
 						<tr class="row1">
                         	<td><span class="err">*</span>Home phone:</td>
-                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.homephone}" name="homephone" /></br><span class="err"><form:errors path="PatientDetails.homephone"></form:errors></span></td>
+                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.homephone}" name="homephone" /></br><span class="err"><form:errors path="PatientDetails.homephone"></form:errors></span></td>
 						</tr>                        
 						
 						<tr class="row2">
                         	<td><span class="err">*</span>E-mail Id:</td>
-                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.emailid }" name="emailid" /></br><span class="err"><form:errors path="PatientDetails.emailid"></form:errors></span></td>
+                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.emailid }" name="emailid" /></br><span class="err"><form:errors path="PatientDetails.emailid"></form:errors></span></td>
 						</tr>                        
 						
 						<tr class="row1">
                         	<td><span class="err">*</span>MobileNumber:</td>
-                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.mobileNumber}" name="mobileNumber" /></br><span class="err"><form:errors path="PatientDetails.mobileNumber"></form:errors></span></td>
+                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.mobileNumber}" name="mobileNumber" /></br><span class="err"><form:errors path="PatientDetails.mobileNumber"></form:errors></span></td>
 						</tr>                        
 						
 						<tr class="row2">
                         	<td><span class="err">*</span>DateOfBirth:</td>
-                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.dateOfBirth}" name="dateOfBirth" /></br><span class="err"><form:errors path="PatientDetails.dateOfBirth"></form:errors></span></td>
+                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.dateOfBirth}" name="dateOfBirth" /></br><span class="err"><form:errors path="PatientDetails.dateOfBirth"></form:errors></span></td>
 						</tr>                        
 						
 						<tr class="row1">
                         	<td><span class="err">*</span>Social Security Number:</td>
-                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.socialSecurityNumber}" name="socialSecurityNumber" /></br><span class="err"><form:errors path="PatientDetails.socialSecurityNumber"></form:errors></span></td>
+                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.socialSecurityNumber}" name="socialSecurityNumber" /></br><span class="err"><form:errors path="PatientDetails.socialSecurityNumber"></form:errors></span></td>
 						</tr>                        
 						<tr class="row2">
                         	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Gender:</td>
@@ -205,31 +205,31 @@
 								
 					            <tr class="row1">
 					                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Employer Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp</td>
-					                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.employerName}" name="employerName" /></br><span class="err"><form:errors path="PatientDetails.employerName"></form:errors></span></td>
+					                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.employerName}" name="employerName" /></br><span class="err"><form:errors path="PatientDetails.employerName"></form:errors></span></td>
 								</tr> 
 				   			    <tr class="row2">
                         			<td><span class="err">*</span>Occupation:</td>
-                        			<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.occupation}" name="occupation" /></br><span class="err"><form:errors path="PatientDetails.occupation"></form:errors></span></td>
+                        			<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.occupation}" name="occupation" /></br><span class="err"><form:errors path="PatientDetails.occupation"></form:errors></span></td>
 								</tr>                        
 						 		<tr class="row1">
                         			<td><span class="err">*</span>Employer Address:</td>
-                        			<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.employerAddress }" name="employerAddress" /></br><span class="err"><form:errors path="PatientDetails.employerAddress"></form:errors></span></td>
+                        			<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.employerAddress }" name="employerAddress" /></br><span class="err"><form:errors path="PatientDetails.employerAddress"></form:errors></span></td>
 								</tr>                        
 						 		<tr class="row2">
                         			<td><span class="err">*</span>WorkPhone:</td>
-                        			<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.workphone}" name="workphone" /></br><span class="err"><form:errors path="PatientDetails.workphone"></form:errors></span></td>
+                        			<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.workphone}" name="workphone" /></br><span class="err"><form:errors path="PatientDetails.workphone"></form:errors></span></td>
 								</tr>                        
 			    				<tr class="row1">
                         			<td><span class="err">*</span>EmployerCity:</td>
-                        			<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.employerCity}" name="employerCity" /></br><span class="err"><form:errors path="PatientDetails.employerCity"></form:errors></span></td>
+                        			<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.employerCity}" name="employerCity" /></br><span class="err"><form:errors path="PatientDetails.employerCity"></form:errors></span></td>
 								</tr>                        
 						 		<tr class="row2">
                         			<td><span class="err">*</span>State:</td>
-                        			<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.estate}" name="estate" /></br><span class="err"><form:errors path="PatientDetails.estate"></form:errors></span></td>
+                        			<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.estate}" name="estate" /></br><span class="err"><form:errors path="PatientDetails.estate"></form:errors></span></td>
 								</tr>
 							    <tr class="row1">
                         			<td><span class="err">*</span>ZipCode:</td>
-                        			<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.ezip}" name="ezip" /></br><span class="err"><form:errors path="PatientDetails.ezip"></form:errors></span></td>
+                        			<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.ezip}" name="ezip" /></br><span class="err"><form:errors path="PatientDetails.ezip"></form:errors></span></td>
 								</tr> 
 								                   
 							</table>
@@ -239,24 +239,24 @@
 				 			 <tr class="row2">
 				               
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Spouse's or significant others name:</td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.spousesName}" name="spousesName" /></br><span class="err"><form:errors path="PatientDetails.spousesName"></form:errors></span></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.spousesName}" name="spousesName" /></br><span class="err"><form:errors path="PatientDetails.spousesName"></form:errors></span></td>
 							</tr>
 							 <tr class="row1">
                         		<td><span class="err">*</span>Spouses Employer:&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                        		<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.spousesEmp}" name="spousesEmp" /></br><span class="err"><form:errors path="PatientDetails.spousesEmp"></form:errors></span></td>
+                        		<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.spousesEmp}" name="spousesEmp" /></br><span class="err"><form:errors path="PatientDetails.spousesEmp"></form:errors></span></td>
 							</tr>   	                     
 						
 						    <tr class="row2">
                         		<td><span class="err">*</span>Spouse's Workphone:</td>
-                        		<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.spousesph}" name="spousesph" /></br><span class="err"><form:errors path="PatientDetails.spousesph"></form:errors></span></td>
+                        		<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.spousesph}" name="spousesph" /></br><span class="err"><form:errors path="PatientDetails.spousesph"></form:errors></span></td>
 							</tr>                        
 						    <tr class="row1">
                         		<td><span class="err">*</span>Name of Nearest Friend/ Relative Not Living With You:</td>
-                        		<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.name_friend}" name="name_friend" /></br><span class="err"><form:errors path="PatientDetails.name_friend"></form:errors></span></td>
+                        		<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.name_friend}" name="name_friend" /></br><span class="err"><form:errors path="PatientDetails.name_friend"></form:errors></span></td>
 							</tr>                        
 						 	<tr class="row2">
                         		<td><span class="err">*</span>Phone of Nearest Friend/ Relative Not Living With You:</td>
-                        		<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.phone_friend}" name="phone_friend" /></br><span class="err"><form:errors path="PatientDetails.phone_friend"></form:errors></span></td>
+                        		<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.phone_friend}" name="phone_friend" /></br><span class="err"><form:errors path="PatientDetails.phone_friend"></form:errors></span></td>
 							</tr>                        
 						    <tr class="row1">
                         		<td><span class="err">*</span>Have you ever had chiropractic care? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
@@ -348,13 +348,7 @@
 				          <tr class="row1">
                 							<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Type Of Accident:</td>
 
-				                  		<td>	<select name="type_Of_Accident" id="Type_of_accident" class="input_cmbbx1" onclick='Checklight(this.value);'>
-						                  <option value="autoaccident" <c:if test="${patientDetails.type_Of_Accident=='autoaccident'}"><c:out value="Checked"/></c:if>>Auto</option>
-						                     <option value="workaccident" <c:if test="${patientDetails.type_Of_Accident=='workaccident'}"><c:out value="Checked"/></c:if>>Work</option>
-						                     <option value="other"  <c:if test="${patientDetails.type_Of_Accident=='other'}"><c:out value="Checked"/></c:if>>Other</option>
-						                    </select></td>
-						                   	 <td><input type="text" name="accident" id="accident" style='display:none' value="${patientDetails.accident}" /></br><span class="err"><form:errors path="PatientDetails.accident"></form:errors></span></td>
-
+				                  		
 				                  		<td>	<select name="type_Of_Accident" id="typeofaccident" class="input_cmbbx1" onclick='Checklight();'>
 						                  <option value="autoaccident" <c:if test="${patientDetails.accident=='autoaccident'}"><c:out value="selected"/></c:if>>Auto</option>
 						                  <option value="workaccident" <c:if test="${patientDetails.accident=='workaccident'}"><c:out value="selected"/></c:if>>Work</option>
@@ -366,7 +360,7 @@
 						           </tr>  
 						 <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date Of Accident:</td>
-                        <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.date_Of_Accident}" name="date_Of_Accident" /><span class="err"><form:errors path="PatientDetails.date_Of_Accident"></form:errors></span></td>
+                        <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.date_Of_Accident}" name="date_Of_Accident" /><span class="err"><form:errors path="PatientDetails.date_Of_Accident"></form:errors></span></td>
 				                 <td></td>                   
 						  </tr>
 						  <tr class="row1">
@@ -380,12 +374,12 @@
 				            
 						 <tr class="row2">
 				          <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Medical Treatment for this Condition: &nbsp;&nbsp;&nbsp;&nbsp;When:</td>
-                        <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.when1}" name="when1" /></br><span class="err"><form:errors path="PatientDetails.when1"></form:errors></span></td>
+                        <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.when1}" name="when1" /></br><span class="err"><form:errors path="PatientDetails.when1"></form:errors></span></td>
 						<td></td>
 						</tr>   
 						<tr class="row1">
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Where:</td>
-                        <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.where1}" name="where1" /></br><span class="err"><form:errors path="PatientDetails.where1"></form:errors></span></td>
+                        <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.where1}" name="where1" /></br><span class="err"><form:errors path="PatientDetails.where1"></form:errors></span></td>
 				         </tr>
 				          <tr class="row2">
                         <td><span class="err">*</span>Have You Retained an Attorney for this Accident:</td>
@@ -395,39 +389,51 @@
 						</tr>   
 						 <tr class="row1">
                         <td><span class="err">*</span>Name Of Attorney:</td>
-                        <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.nameOfAttorney}" name="nameOfAttorney" /></br><span class="err"><form:errors path="PatientDetails.nameOfAttorney"></form:errors></span></td>
+                        <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.nameOfAttorney}" name="nameOfAttorney" /></br><span class="err"><form:errors path="PatientDetails.nameOfAttorney"></form:errors></span></td>
 						</tr>          	
 				          
 						 <tr class="row2">
                         <td><span class="err">*</span>phone:</td>
-                        <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.phone_Number}" name="phone_Number" /></br><span class="err"><form:errors path="PatientDetails.phone_Number"></form:errors></span></td>
+                        <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.phone_Number}" name="phone_Number" /></br><span class="err"><form:errors path="PatientDetails.phone_Number"></form:errors></span></td>
 						<td></td>
 						</tr> 
 						    <tr class="row1">
                         <td><span class="err">*</span>Name of Person at Fault for the Accident:</td>
-                        <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.fault_accident}" name="fault_accident" /></br><span class="err"><form:errors path="PatientDetails.fault_accident"></form:errors></span></td>
+                        <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.fault_accident}" name="fault_accident" /></br><span class="err"><form:errors path="PatientDetails.fault_accident"></form:errors></span></td>
 						</tr>  
 						<tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Insurance Company of the at Fault Person:</td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.insurance}" name="insurance" /></br><span class="err"><form:errors path="PatientDetails.insurance"></form:errors></span></td>     	         
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.insurance}" name="insurance" /></br><span class="err"><form:errors path="PatientDetails.insurance"></form:errors></span></td>     	         
 				       			<td></td>
 				        </tr>
 				         <tr class="row1">
                         <td><span class="err">*</span>Phone:</td>
-                        <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.insurance_phone}" name="insurance_phone" /></br><span class="err"><form:errors path="PatientDetails.insurance_phone"></form:errors></span></td>
-						</tr>                        
+                        <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.insurance_phone}" name="insurance_phone" /></br><span class="err"><form:errors path="PatientDetails.insurance_phone"></form:errors></span></td>
+						</tr>   
+						  <tr class="row2">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name of your auto insurance:</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="name_auto" value="${patientDetails.name_auto}"/><span class="err"><form:errors path="PatientDetails.name_auto"></form:errors></span></td>
+				                  	<td> </td>
+				                </tr>
+				               <tr class="row1">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>phone of your auto insurance:</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="phone_auto" value="${patientDetails.phone_auto}"/><span class="err"><form:errors path="PatientDetails.phone_auto"></form:errors></span></td>
+				                  	<td> </td>
+				                </tr>                     
 						 <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Policy#:</td>
-				                 <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.policy}" name="policy" /></br><span class="err"><form:errors path="PatientDetails.policy"></form:errors></span></td>	 
+				                 <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.policy}" name="policy" /></br><span class="err"><form:errors path="PatientDetails.policy"></form:errors></span></td>	 
 				        			<td></td>
 				        </tr>
 				         <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name of Your Health Insurance:</td>
-				                   <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.name_health}" name="name_health" /></br><span class="err"><form:errors path="PatientDetails.name_health"></form:errors></span></td>
+				                   <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.name_health}" name="name_health" /></br><span class="err"><form:errors path="PatientDetails.name_health"></form:errors></span></td>
 				         </tr>
 				         <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Phone:</td>
-				                   <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.health_phone }" name="health_phone" /></br><span class="err"><form:errors path="PatientDetails.health_phone"></form:errors></span></td>
+				                   <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.health_phone }" name="health_phone" /></br><span class="err"><form:errors path="PatientDetails.health_phone"></form:errors></span></td>
 				        			<td></td>
 				         </tr>                  
 				         <tr class="row1">
@@ -441,7 +447,7 @@
 				                </tr>
 				          <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>When:</td>
-				                   <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.prev_When }" name="prev_When" /></br><span class="err"><form:errors path="PatientDetails.prev_When"></form:errors></span></td>       
+				                   <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.prev_When }" name="prev_When" /></br><span class="err"><form:errors path="PatientDetails.prev_When"></form:errors></span></td>       
 									<td></td>
 						</tr>
 						</table>
@@ -533,7 +539,7 @@
 								 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Heart" name="heart" <c:if test="${patientDetails.heart=='Heart'}"><c:out value="Checked"/></c:if>   />Heart</td>
 								 <td valign="top" align="left" class="input_txt">
 								 <input type="checkbox"  value="Other" name="other" onclick="this.form.ifother.style.visibility = this.checked? 'visible' : 'hidden'"<c:if test="${patientDetails.other=='Other'}"><c:out value="Checked"/></c:if>   />Other
-								<input type="text" class="input_txtbx1"  style="visibility:hidden" id="ifother" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.ifother}" name="ifother" /></br><span class="err"><form:errors path="patient.ifother"></form:errors></span></td>
+								<input type="text" class="input_txtbx1"  style="visibility:hidden" id="ifother"   value="${patientDetails.ifother}" name="ifother" /></br><span class="err"><form:errors path="patient.ifother"></form:errors></span></td>
 
 								
 					
@@ -541,11 +547,11 @@
 					</table>
 					 <tr class="row2">
                         <td><span class="err">*</span>Surgeries or Major Illnesses You Have Had: </td>
-                        <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.illness }" name="illness" /></br><span class="err"><form:errors path="PatientDetails.illness"></form:errors></span></td>
+                        <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.illness }" name="illness" /></br><span class="err"><form:errors path="PatientDetails.illness"></form:errors></span></td>
 					</tr>   
 					  <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Dates:</td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.dates }" name="dates" /></br><span class="err"><form:errors path="PatientDetails.dates"></form:errors></span></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.dates }" name="dates" /></br><span class="err"><form:errors path="PatientDetails.dates"></form:errors></span></td>
 				    	</tr>    		
 				                  	
 				                  	<tr class="row2">
@@ -575,7 +581,7 @@
 				 
 										  <input type="radio" name="hazardous" value="yes" class="input_txt" <c:if test="${patientDetails.hazardous=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
 				 						  <label>If yes,Please List:</label>
-				 						  <input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.hazardousyes}" name="hazardousyes" /></br><span class="err"><form:errors path="PatientDetails.hazardousyes"></form:errors></span>
+				 						  <input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.hazardousyes}" name="hazardousyes" /></br><span class="err"><form:errors path="PatientDetails.hazardousyes"></form:errors></span>
 										
 										  <input type="radio" name="hazardous" value="No" class="input_txt"<c:if test="${patientDetails.hazardous=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;&nbsp;
 			    				 </td>
@@ -589,11 +595,11 @@
 				      </tr>
 				      	<tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Dr:</td>
-				                  <td> <input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.dr}" name="dr" /></br><span class="err"><form:errors path="PatientDetails.dr"></form:errors></span></td>
+				                  <td> <input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.dr}" name="dr" /></br><span class="err"><form:errors path="PatientDetails.dr"></form:errors></span></td>
 				       </tr>
 				       <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Signature:</td>
-				                  <td> <input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.patient}" name="patient" /></br><span class="err"><form:errors path="PatientDetails.patient"></form:errors></span></td>
+				                  <td> <input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.patient}" name="patient" /></br><span class="err"><form:errors path="PatientDetails.patient"></form:errors></span></td>
 				      </tr>
 				        <table align="right">        
 				         
@@ -689,25 +695,32 @@
   </script>
   <script type="text/javascript">
   
-function Checklight(val){
+function Checklight(){
 	
 
- var element=document.getElementById('accident');
- /*  var type1=document.getElementById('Type_of_accident');
- var type2 = type1.options[type1.selectedIndex].value;
+ 
+
 
  var element=document.getElementById('accident1');
   var type1=document.getElementById('typeofaccident');
  var type = type1.options[type1.selectedIndex].value;
+
+
+ var index = type1.selectedIndex; 
+
+
 
  var index = type1.selectedIndex;  */
  
 /*  alert(type2);
  alert(index); */ 
 
- if(val=='other')
+ 
 
+
+ 
  if(type=='otheraccident')
+
 
 	 {
 	
@@ -742,13 +755,13 @@ else
 	}
 }
 </script>
-<!-- <script>
+<script>
 
 window.onload = function(){
 	Checklight();
 }
 
-</script> -->
+</script>
 
         <jsp:include page="footer.jsp"></jsp:include>
                    	
