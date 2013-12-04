@@ -867,7 +867,7 @@ function Checksymptom(val){
 } 
 
 function Checkhospital(){
-	
+	alert("e");
  var element=document.getElementById('hospital1');
  var type1=document.getElementById('checkhospital');
  var type = type1.options[type1.selectedIndex].value;

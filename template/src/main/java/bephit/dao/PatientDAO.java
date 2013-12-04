@@ -200,7 +200,7 @@ public class PatientDAO {
 			    	    resultSet.getString("Dr"),
 			    	    resultSet.getString("Patient")
 			    	   ));
-			    	
+				
 			}
 	    }catch(Exception e){
 	        System.out.println(e.toString());
@@ -210,7 +210,8 @@ public class PatientDAO {
 	    }finally{
 	    	releaseResultSet(resultSet);
 	    	releaseStatement(statement);
-	    	releaseConnection(con);	    	
+	    	releaseConnection(con);	
+	    	
 	    }
 	   System.out.println(patientDetails);
 	   
@@ -391,7 +392,7 @@ public class PatientDAO {
 			    	    resultSet.getString("Dr"),
 			    	    resultSet.getString("Patient")
 			    	   ));
-			    	
+				 System.out.println("type of accident="+resultSet.getString("Type_Of_Accident").toString());
 			}
 	    }catch(Exception e){
 	        System.out.println(e.toString());

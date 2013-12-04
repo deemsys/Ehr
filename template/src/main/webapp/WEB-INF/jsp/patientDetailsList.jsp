@@ -145,7 +145,7 @@
 				        <td>${patientDetails.homephone}</td>
 				        </tr>
 				         <tr class="row2">
-				        <td>><span class="err">*</span>E-mail Id:</td>
+				        <td><span class="err">*</span>E-mail Id:</td>
 				        <td>${patientDetails.emailid}</td>
 				        </tr>
 				          <tr class="row1">
@@ -177,14 +177,16 @@
 				                  <td valign="top" align="left" class="input_txt">${patientDetails.areyou}</td>
 				                 
 				        		</tr>
-				           
-							
-							 
-							<c:if test="${patientDetails.areyou =='Employee'}">
-							<tr class="row2">
+				           <c:if test="${patientDetails.areyou == 'Student' }">
+				           <tr class="row2">
 							<td><span class="err">*</span>Student:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				        <td>${patientDetails.student}</td>
 				        </tr>
+				           </c:if>
+							
+							 
+							<c:if test="${patientDetails.areyou =='Employee'}">
+							
 							<tr class="row1">
 							<td><span class="err">*</span>Employer Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 							<td>${patientDetails.employerName}</td>
@@ -315,13 +317,14 @@
 				         	<td>${patientDetails.accident}</td>
 				         	<td></td>
 				         	</tr> --%>
-				         	  <c:if test="${patientDetails.type_Of_Accident != 'otheraccident'}">
+				        
+				         	  <c:if test="${patientDetails.accident != 'otheraccident'}">
 				       
-				         	<td>${patientDetails.type_Of_Accident}</td>
+				         	<td>${patientDetails.accident}</td>
 				         	</c:if>
-				         <c:if test="${patientDetails.type_Of_Accident == 'otheraccident'}">
+				         <c:if test="${patientDetails.accident == 'otheraccident'}">
 				         	<td>${patientDetails.type_Of_Accident}</td>
-				         			<td>${patientDetails.accident}</td>
+				         			
 				         </c:if>
 				       
 				        </tr>

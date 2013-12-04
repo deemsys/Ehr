@@ -179,11 +179,14 @@
 								<table cellpadding="0" cellspacing="0" border="0" width="100%">
 							 	<tr class="row2">
 									<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Are you:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-				                 <td><input type="radio" name="areyou" value="Student" class="input_txt" onchange="toggle3('show3')" <c:if test="${patientDetails.areyou=='Student'}"><c:out value="checked=checked"/></c:if>>Student
-				                  	<input type="radio" name="areyou" value="Employee" class="input_txt" onclick="toggle3('hide3')" <c:if test="${patientDetails.areyou=='Employee'}"><c:out value="checked=checked"/></c:if>>Employee
+				                 <td><input type="radio" name="areyou" value="Student" class="input_txt" onclick="toggle3('hide3');" <c:if test="${patientDetails.areyou=='Student'}"><c:out value="checked=checked"/></c:if>>Student
+				                  	<input type="radio" name="areyou" value="Employee" class="input_txt"  onchange="toggle3('show3');" <c:if test="${patientDetails.areyou=='Employee'}"><c:out value="checked=checked"/></c:if>>Employee
 				                  </td>
 				            	</tr>
-				            	<c:if test="${patientDetails.areyou =='Student'}">
+				            	
+				            	<div id="student">
+				            	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+				            	
 				           			 <tr class="row1">
 							 			<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Student:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				            		    <td valign="top" align="left" class="input_txt">
@@ -191,10 +194,15 @@
 				                  			<input type="radio" name="student" value="PartTime" class="input_txt" <c:if test="${patientDetails.student=='PartTime'}"><c:out value="checked=checked"/></c:if>>Part Time
 				             			</td>
 				           			</tr>
-				               </c:if>
-				            
-				            	<c:if test="${patientDetails.areyou =='Employee'}">
-							
+				           			
+				           			</table>
+				               </div>
+				               
+				              
+				          	<div id="employee" style="display:none;">
+				            	
+								<table cellpadding="0" cellspacing="0" border="0" width="100%">
+								
 					            <tr class="row1">
 					                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Employer Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp</td>
 					                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.employerName}" name="employerName" /></br><span class="err"><form:errors path="PatientDetails.employerName"></form:errors></span></td>
@@ -222,8 +230,12 @@
 							    <tr class="row1">
                         			<td><span class="err">*</span>ZipCode:</td>
                         			<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.ezip}" name="ezip" /></br><span class="err"><form:errors path="PatientDetails.ezip"></form:errors></span></td>
-								</tr>                       
-							</c:if>
+								</tr> 
+								                   
+							</table>
+							</div>
+							 <table cellpadding="0" cellspacing="0" border="0" width="100%">
+				                
 				 			 <tr class="row2">
 				               
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Spouse's or significant others name:</td>
@@ -344,17 +356,17 @@
 						                   	 <td><input type="text" name="accident" id="accident" style='display:none' value="${patientDetails.accident}" /></br><span class="err"><form:errors path="PatientDetails.accident"></form:errors></span></td>
 
 				                  		<td>	<select name="type_Of_Accident" id="typeofaccident" class="input_cmbbx1" onclick='Checklight();'>
-						                  <option value="autoaccident" <c:if test="${patientDetails.type_Of_Accident=='autoaccident'}"><c:out value="selected"/></c:if>>Auto</option>
-						                  <option value="workaccident" <c:if test="${patientDetails.type_Of_Accident=='workaccident'}"><c:out value="selected"/></c:if>>Work</option>
-						                  <option value="otheraccident"  <c:if test="${patientDetails.type_Of_Accident=='otheraccident'}"><c:out value="selected"/></c:if>>Other</option>
+						                  <option value="autoaccident" <c:if test="${patientDetails.accident=='autoaccident'}"><c:out value="selected"/></c:if>>Auto</option>
+						                  <option value="workaccident" <c:if test="${patientDetails.accident=='workaccident'}"><c:out value="selected"/></c:if>>Work</option>
+						                  <option value="otheraccident"  <c:if test="${patientDetails.accident=='otheraccident'}"><c:out value="selected"/></c:if>>Other</option>
 						                    </select>
 						                    </td>
-						                   	 <td><input type="text" name="accident" id="accident1" style='display:none' value="${patientDetails.accident}" /></br><span class="err"><form:errors path="PatientDetails.accident"></form:errors></span></td>
+						                   	 <td><input type="text" name="accident" id="accident1" style='display:none' value="${patientDetails.type_Of_Accident}" /></br><span class="err"><form:errors path="PatientDetails.accident"></form:errors></span></td>
 
 						           </tr>  
 						 <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date Of Accident:</td>
-                        <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.date_Of_Accident}" name="date_Of_Accident" /></br><span class="err"><form:errors path="PatientDetails.date_Of_Accident"></form:errors></span></td>
+                        <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${patientDetails.date_Of_Accident}" name="date_Of_Accident" /><span class="err"><form:errors path="PatientDetails.date_Of_Accident"></form:errors></span></td>
 				                 <td></td>                   
 						  </tr>
 						  <tr class="row1">
@@ -711,23 +723,27 @@ function Checklight(val){
 </script>
 
  <script type="text/javascript">
+
+
+
 function toggle3(value){
 	/* alert(value); */
 	var e = document.getElementById('student');
 	var e1=document.getElementById('employee');
 if(value=='show3')
 	{
- e.style.display="block";
- e1.style.display="none";
+ e1.style.display="block";
+ e.style.display="none";
 	}
 else
 	{
- e.style.display="none";
- e1.style.display="block";
+ e1.style.display="none";
+ e.style.display="block";
 	}
 }
 </script>
 <!-- <script>
+
 window.onload = function(){
 	Checklight();
 }

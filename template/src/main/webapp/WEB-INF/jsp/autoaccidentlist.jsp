@@ -171,8 +171,14 @@ $(function() {
 				  </tr> 
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Road conditions</td>
-				  <td valign="top" align="left" class="input_txt">${autoaccident.road_conditions}
-				  </td>
+				 
+				   <c:if test="${autoaccident.road_conditions != 'other'}">
+				       <td>${autoaccident.road_conditions}</td>
+				    </c:if>
+				    <c:if test="${autoaccident.road_conditions == 'other'}">
+				         	<td>${autoaccident.road_conditions}</td>
+				        	<td>${autoaccident.conditions}</td>
+				    </c:if>
 				  </tr> 
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Head Restraints</td>
@@ -258,13 +264,27 @@ $(function() {
 				  </tr> -->
 				  <tr class="row1">
                 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Body position at time of accident</td>
-				 <td valign="top" align="left" class="input_txt">${autoaccident.body_position}
-				  </td>
+				
+				    <c:if test="${autoaccident.body_position != 'others'}">
+				       <td>${autoaccident.body_position}</td>
+				    </c:if>
+				    <c:if test="${autoaccident.body_position == 'others'}">
+				         	<td>${autoaccident.body_position}</td>
+				        	<td>${autoaccident.body_position1}</td>
+				    </c:if>
 				  </tr>
 				 <tr class="row2">
                 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Head position</td>
-				 <td valign="top" align="left" class="input_txt">${autoaccident.head_position} </td>
+				 
+				 <c:if test="${autoaccident.head_position != 'others'}">
+				       <td>${autoaccident.head_position}</td>
+				    </c:if>
+				    <c:if test="${autoaccident.head_position == 'others'}">
+				         	<td>${autoaccident.head_position}</td>
+				        	<td>${autoaccident.head_position1}</td>
+				    </c:if>
 				  </tr>
+				  
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Hands on wheel</td>
 				  <td valign="top" align="left" class="input_txt">${autoaccident.hands_on_wheel}</td>
@@ -331,8 +351,14 @@ $(function() {
   				</tr>
   				<tr class="row2">
                 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient's body</td>
-				 <td valign="top" align="left" class="input_txt">${autoaccident.patient_body}
-				  </td>
+				 
+				   <c:if test="${autoaccident.patient_body != 'otherbody'}">
+				       <td>${autoaccident.patient_body}</td>
+				    </c:if>
+				    <c:if test="${autoaccident.patient_body == 'otherbody'}">
+				         	<td>${autoaccident.patient_body}</td>
+				        	<td>${autoaccident.patient_body1}</td>
+				    </c:if>
 				  </tr> 
 				   <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Did patient's body strike interior of car</td>
@@ -340,6 +366,7 @@ $(function() {
 				  </td>
 				  </tr>
 				  </table>
+				  <c:if test="${autoaccident.body_strike== 'yes'}">
 				<div id="hit" style="display:block;">
 				<!-- <div class="contentbox"> -->
 				<table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -387,6 +414,7 @@ $(function() {
 				  </table>
 				  </div>
 				  </div>
+				  </c:if>
 				  <!-- </td>
 				  </tr> -->
 				  
@@ -517,7 +545,15 @@ $(function() {
 				  </tr>
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>How did you get to the hospital?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				${autoaccident.hospitalget}		${autoaccident.hospital1}
+				
+				 <c:if test="${autoaccident.hospitalget != 'otherhos'}">
+				       <td>${autoaccident.hospitalget}</td>
+				    </c:if>
+				    <c:if test="${autoaccident.hospitalget == 'otherhos'}">
+				         	<td>${autoaccident.hospitalget}</td>
+				        	<td>${autoaccident.hospital1}</td>
+				    </c:if>
+				
 				  </td>
 				  </tr> 
 				  <tr class="row2">
@@ -540,8 +576,11 @@ $(function() {
 				    <table align="right">
 				  <tr>
 				  	<td><input type="button" id="btnPrevious" class="submit_btn" value="Previous"  /></td>
+				    <td>&nbsp;&nbsp;</td>
+
 				  	<td>&nbsp;&nbsp;</td>
 				  
+
 				  <td><br><input type="button"  class="submit_btn" value="Cancel" onclick="window.location.href='viewautoaccident'"/><br></td>
 				  </tr>
 				  </table> 
