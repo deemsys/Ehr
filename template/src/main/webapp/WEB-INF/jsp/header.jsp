@@ -170,6 +170,7 @@
 							</li>
 							</c:if>
 							<c:if test="${role==1}">
+<c:choose><c:when test="${visit eq 0 }">
 							<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='phyexam'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu6">
 									<span>Physical exam</span>
@@ -190,7 +191,12 @@
 									<span>Soap Notes</span>
 								</a>
 							</li>
-							
+</c:when>
+<c:otherwise><li>
+								<a href="#" class="<c:choose><c:when test="${menu=='notes'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu10">
+									<span>Soap Notes</span>
+								</a>
+							</li></c:otherwise></c:choose>
 							</c:if>
 							<c:if test="${role==2}">
 							<li>
@@ -263,6 +269,8 @@
 				          </c:if> 
 
 </ul>
+
+
 <ul id="ddsubmenu6" class="ddsubmenustyle">
 
 							
@@ -277,7 +285,13 @@
 				             <li><a href="hamiltonchiropractic">InitialExam</a></li>
 				             <li><a href="viewfirsthamiltonchiropractic">View InitialExam</a></li>
 				             </ul>
-				             <ul id="ddsubmenu10" class="ddsubmenustyle">
+ <ul id="ddsubmenu10" class="ddsubmenustyle">
+				             <li><a href="soapnotes">SOAP Notes</a></li>
+				             <li><a href="viewsoapnotes">View Soap Notes</a></li>
+
+</ul>
+
+<ul id="ddsubmenu10" class="ddsubmenustyle">
 				             <li><a href="soapnotes">SOAP Notes</a></li>
 				             <li><a href="viewsoapnotes">View Soap Notes</a></li>
 

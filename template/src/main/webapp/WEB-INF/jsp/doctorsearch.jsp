@@ -19,6 +19,13 @@
 <form action="doctorsearch" method="POST">
 
 <table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table">
+  <tr>
+        <td valign="top" align="left" style="padding:5px 0 10px 0;">&nbsp;
+		<div class="status success" style="display: none;">
+            <p class="closestatus"><a title="Close" href="">x</a></p>
+            <p><img alt="Error" src="resources/images/Close.png"><span>User was not registered in a patient interface.Please register in patient interface!!!</span>.</p>
+          </div>
+      </tr> 
        <tr>
         <td valign="top" align="left" style="padding:5px 0 10px 0;">&nbsp;
 		<div class="status success" style="display: none;">

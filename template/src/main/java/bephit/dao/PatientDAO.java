@@ -262,9 +262,6 @@ public class PatientDAO {
 	    	releaseConnection(con);	    	
 	    }
 	   
-	  
-	   
-	   
 	    return age;
 		
 	}

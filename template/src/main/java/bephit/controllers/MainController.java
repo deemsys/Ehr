@@ -218,35 +218,41 @@ public class MainController {
 	String emailid=request.getParameter("emailid");
 	String patientname=request.getParameter("patientname");
 	int v=doctorDAO.Checkvalid(emailid,patientname);
-	
-		
-		/*if(result.hasErrors())
-		{
-			PhysicalexamForm physicalexamForm= new PhysicalexamForm();
-			physicalexamForm.setPhysicalexam(physicalDAO.getPhysicalexam());
-			model.addAttribute("physicalexamForm",physicalexamForm);
-			model.addAttribute("Success","true");
-			model.addAttribute("menu", "phyexam");
-			return "physicalexam";
-		}*/		
+			
 		model.put("Doctorsearch", doctorsearch);
 		model.addAttribute("DoctorsearchForm",doctorsearch);
 		
 		if(v>0)
-		{
-    	int a=doctorDAO.setDoctorsearch(doctorsearch);
-    
-		DoctorsearchForm doctorsearchForm= new DoctorsearchForm();
-		doctorsearchForm.setDoctorsearch(doctorDAO.getDoctorsearch());
-		model.addAttribute("doctorsearchForm",doctorsearchForm);
-		return "physicalexam";
-		}
-		else
-		{
-			model.addAttribute("error","error");
-		}
-		return "doctorsearch";
- 
+		   {
+		    int b=doctorDAO.CheckDoctorsearch(emailid);
+		    if(b==0)
+	     	{	
+    	     int a=doctorDAO.setDoctorsearch(doctorsearch);    
+		     DoctorsearchForm doctorsearchForm= new DoctorsearchForm();
+		     doctorsearchForm.setDoctorsearch(doctorDAO.getDoctorsearch());
+		     String visit=doctorDAO.getVisit(emailid);
+	          System.out.println("visit"+visit);
+	         model.addAttribute("visit",visit);
+	         model.addAttribute("doctorsearchForm",doctorsearchForm);
+	           if (visit.equals("0"))
+	               {	
+	    
+		           return "physicalexam";		
+		           }
+	     	}
+		      else
+		      {
+		    	  int d=doctorDAO.getUpdation(emailid);
+		    	  String visit=doctorDAO.getVisit(emailid);
+		    	  System.out.println("visit"+visit);		    
+		    	  model.addAttribute("visit",visit);
+		    	  return "soapnotes";
+		       }
+	    }
+		   
+			model.addAttribute("Error","true");
+			return "doctorsearch";
+		
 	}
 
 	@RequestMapping(value="/physicalexam", method = RequestMethod.GET)
@@ -271,11 +277,6 @@ public class MainController {
 			model.addAttribute("menu", "phyexam");
 			return "physicalexam";
 		}
-		
-		
-		
-		
-		
 		model.put("Physicalexam", physicalexam);
 		model.addAttribute("PhysicalexamForm",physicalexam);
     	int a=physicalDAO.setPhysicalexam(physicalexam);
