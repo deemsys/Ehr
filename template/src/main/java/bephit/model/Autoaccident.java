@@ -48,6 +48,7 @@ public class Autoaccident {
 	private String brace;
 	private String ifyes;
 	private String further_injury;
+	private String injurytext;
 	private String ifyes_explain;
 	private String during_after_crash;
 	private String patient_body;
@@ -78,6 +79,7 @@ public class Autoaccident {
 	private String disorientation;
 	private String neckpain;
 	private String otherpain;
+	private String otherpaintext;
 	private String first_symptom;
 	private String after_accident;
 	private String accident;
@@ -131,6 +133,7 @@ public Autoaccident(String patient_number,String claimnumber,
         String brace,
         String ifyes,
         String further_injury,
+        String injurytext,
         String ifyes_explain,
         String during_after_crash,
         String patient_body,
@@ -159,6 +162,7 @@ public Autoaccident(String patient_number,String claimnumber,
         String disorientation,
         String neckpain,
         String otherpain,
+        String otherpaintext,
         String first_symptom,
         String after_accident,
         String accident,
@@ -206,6 +210,7 @@ public Autoaccident(String patient_number,String claimnumber,
 	this.brace=brace;
 	this.ifyes=ifyes;
 	this.further_injury=further_injury;
+	this.injurytext = injurytext;
 	this.ifyes_explain=ifyes_explain;
 	this.during_after_crash=during_after_crash;
 	this.patient_body=patient_body;
@@ -234,6 +239,7 @@ public Autoaccident(String patient_number,String claimnumber,
 	this.disorientation=disorientation;
 	this.neckpain=neckpain;
 	this.otherpain=otherpain;
+	this.otherpaintext = otherpaintext;
 	this.first_symptom=first_symptom;
 	this.after_accident=after_accident;
 	this.accident = accident;
@@ -532,6 +538,14 @@ public void setFurther_injury(String further_injury) {
 	this.further_injury = further_injury;
 }
 
+public String getInjurytext() {
+	return injurytext;
+}
+
+public void setInjurytext(String injurytext) {
+	this.injurytext = injurytext;
+}
+
 public String getIfyes_explain() {
 	return ifyes_explain;
 }
@@ -746,6 +760,15 @@ public String getOtherpain() {
 
 public void setOtherpain(String otherpain) {
 	this.otherpain = otherpain;
+}
+
+
+public String getOtherpaintext() {
+	return otherpaintext;
+}
+
+public void setOtherpaintext(String otherpaintext) {
+	this.otherpaintext = otherpaintext;
 }
 
 public String getFirst_symptom() {

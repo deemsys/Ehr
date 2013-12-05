@@ -579,11 +579,11 @@
 				 			     </td>
 				  				 <td valign="top" align="left" class="input_txt">
 				 
-										  <input type="radio" name="hazardous" value="yes" class="input_txt" <c:if test="${patientDetails.hazardous=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
+										  <input type="radio" name="hazardous" value="yes" class="input_txt" id="hazardouscheck" onclick="Hazardous();"<c:if test="${patientDetails.hazardous=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
 				 						  <label>If yes,Please List:</label>
-				 						  <input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.hazardousyes}" name="hazardousyes" /></br><span class="err"><form:errors path="PatientDetails.hazardousyes"></form:errors></span>
+				 						  <input type="text" class="input_txtbx1"   value="${patientDetails.hazardousyes}" name="hazardousyes" id="hazardousyes1" style='display:none'/></br><span class="err"><form:errors path="PatientDetails.hazardousyes"></form:errors></span>
 										
-										  <input type="radio" name="hazardous" value="No" class="input_txt"<c:if test="${patientDetails.hazardous=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;&nbsp;
+										  <input type="radio" name="hazardous" value="No" class="input_txt"  onclick="Hazardous();"<c:if test="${patientDetails.hazardous=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;&nbsp;
 			    				 </td>
 					  </tr>
 					   <tr class="row1">
@@ -770,13 +770,27 @@ else if(document.getElementById('employeechecked').checked)
 		e1.style.display="block";
 	}		
 }
+function Hazardous()
+{
 	
+	var element = document.getElementById('hazardousyes1');
+	if(document.getElementById('hazardouscheck').checked)
+		{
+		
+			element.style.display="block";
+		
+		}
+	else
+		element.style.display="none";
+	
+	
+}	
 
 </script>
 <script>
 
 window.onload = function(){
-	Checklight();Other();radiocheck();
+	Checklight();Other();radiocheck();Hazardous();
 }
 
 </script>

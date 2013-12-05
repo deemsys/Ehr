@@ -390,8 +390,9 @@ $(function() {
 				  </tr>  -->
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Did this cause further injury</td>
-				  <td valign="top" align="left" class="input_txt"><input type="radio" name="further_injury" value="yes" class="input_txt" checked="true" onclick="toggle2('show2')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="further_injury" value="no" class="input_txt" onclick="toggle2('hide2')">No&nbsp;&nbsp;&nbsp;
-				  <textarea rows='3' cols='35' id="injury"  placeholder="Please explain"></textarea>
+				  <td valign="top" align="left" class="input_txt"><input type="radio" name="further_injury" value="yes" class="input_txt" checked="true" onclick="toggle2('show2')">Yes&nbsp;&nbsp;&nbsp;
+				  <input type="radio" name="further_injury" value="no" class="input_txt" onclick="toggle2('hide2')">No&nbsp;&nbsp;&nbsp;
+				  <textarea rows='3' cols='35' id="injury" name="injurytext" placeholder="Please explain"></textarea>
 				  </td>
 				  </tr>
 				  
@@ -616,8 +617,8 @@ $(function() {
 				 <input type="checkbox" name="confusion" value="confusion">Confusion&nbsp;&nbsp;&nbsp;&nbsp;
 				 <input type="checkbox" name="disorientation" value="disorientation">Disorientation&nbsp;&nbsp;&nbsp;&nbsp;
 				 <input type="checkbox" name="neckpain" value="neckpain">Neck pain&nbsp;&nbsp;&nbsp;&nbsp;
-				 <input type="checkbox" name="otherpain" value="otherpain">Other&nbsp;&nbsp;&nbsp;&nbsp;
-				 <input type="text" class="input_txtbx1" id="inp_id" name="otherpain" placeholder="If other" />
+				 <input type="checkbox" name="otherpain" value="otherpain" id="otherpaincheck" onclick="this.form.otherplain1.style.visibility = this.checked? 'visible' : 'hidden'">Other&nbsp;&nbsp;&nbsp;&nbsp;
+				 <input type="text" class="input_txtbx1" id="otherplain1" name="otherpaintext" placeholder="If other" style="visibility:hidden"/>
 				 </td>
 				 </tr>
 				 <tr class="row2">

@@ -645,9 +645,9 @@ $(function(){
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Do You Work Around Hazardous Substances:  </td>
 				  <td valign="top" align="left" class="input_txt">
 				  <div id="send_to">
-				  <input type="radio" name="Hazardous" value="yes" class="input_txt" checked="true" onclick="this.form.list.style.visibility = this.checked? 'visible' : 'hidden'">Yes&nbsp;&nbsp;&nbsp;<div id="send_to_one">
-				  <label>If yes,Please List: </label><input type="text" id="list" name="Hazardousyes" style="visibility:hidden"/><br/><br/>
-    </div><input type="radio" name="Hazardous" value="No" class="input_txt">No
+				  <input type="radio" name="Hazardous" value="yes" class="input_txt" checked="true" onclick="toggle2('show2')">Yes&nbsp;&nbsp;&nbsp;
+				  <label>If yes,Please List: </label><input type="text" id="list" name="Hazardousyes"  /><br/><br/>
+    </div><input type="radio" name="Hazardous" value="No" class="input_txt"onclick="toggle2('hide2')">No
 			      
 			      </div>
 			      </td>
@@ -1378,6 +1378,15 @@ else
 	}
 }
 
+</script>
+
+<script type="text/javascript">
+function toggle2(value){
+if(value=='show2')
+ document.getElementById('list').style.visibility='visible';
+else
+ document.getElementById('list').style.visibility='hidden';
+}
 </script>
 <script>
 

@@ -326,8 +326,10 @@ $(function() {
 				  </tr>
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Air bag deployed</td>
-				  <td valign="top" align="left" class="input_txt"><input type="radio" name="airbag" value="0" class="input_txt" checked="true" onclick="toggle('show')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="airbag" value="1" class="input_txt" onclick="toggle('hide')">No&nbsp;&nbsp;&nbsp;
-				  <select name="wereyou" class="input_cmbbx1" id="mytext">
+				  <td valign="top" align="left" class="input_txt">
+				  <input type="radio" name="airbag" value="yes" class="input_txt" id="airbagcheck" onclick="toggle()"<c:if test="${autoaccident.airbag=='yes'}"><c:out value="Checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
+				  <input type="radio" name="airbag" value="No" class="input_txt" onclick="toggle()"<c:if test="${autoaccident.airbag=='No'}"><c:out value="Checked"/></c:if>>No&nbsp;&nbsp;&nbsp;
+				  <select name="wereyou" class="input_cmbbx1" id="mytext"  style='display:none'>
 				 <option  value="struck" <c:if test="${autoaccident.wereyou=='struck'}"><c:out value="selected"/></c:if>>Struck</option>
 				 <option value="notstruck" <c:if test="${autoaccident.wereyou=='notstruck'}"><c:out value="selected"/></c:if>>Not Struck</option>
 				  </select>
@@ -387,10 +389,12 @@ $(function() {
 				  </tr>
 				   <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Did you brace yourself</td>
-				  <td valign="top" align="left" class="input_txt"><input type="radio" name="brace" value="0" class="input_txt" checked="true" onclick="toggle1('show1')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="brace" value="1" class="input_txt" onclick="toggle1('hide1')">No&nbsp;&nbsp;&nbsp;
-				  <select name="ifyes" class="input_cmbbx1" id="mybrace">
+				  <td valign="top" align="left" class="input_txt">
+				  <input type="radio" name="brace" value="yes" class="input_txt" id="bracecheck" onclick="toggle1();"<c:if test="${autoaccident.brace=='yes'}"><c:out value="Checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
+				  <input type="radio" name="brace" value="No" class="input_txt" onclick="toggle1()"<c:if test="${autoaccident.brace=='No'}"><c:out value="Checked"/></c:if>>No&nbsp;&nbsp;&nbsp;
+				  <select name="ifyes" class="input_cmbbx1" id="mybrace"  style='display:none'>
 				  <option  value="bracearms" <c:if test="${autoaccident.ifyes=='bracearms'}"><c:out value="selected"/></c:if>>Braced with arms</option>
-				  <option value="bracelegs" <c:if test="${autoaccident.ifyes=='bracearms'}"><c:out value="selected"/></c:if>>Braced with legs</option>
+				  <option value="bracelegs" <c:if test="${autoaccident.ifyes=='bracelegs'}"><c:out value="selected"/></c:if>>Braced with legs</option>
 				  </select>
 				  </td>
 				  </tr>
@@ -406,9 +410,9 @@ $(function() {
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Did this cause further injury</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="radio" name="further_injury" value="yes" class="input_txt" checked="true" onclick="toggle2('show2')" <c:if test="${autoaccident.further_injury=='yes'}"><c:out value="Checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
-				  <input type="radio" name="further_injury" value="no" class="input_txt" onclick="toggle2('hide2')" <c:if test="${autoaccident.further_injury=='no'}"><c:out value="Checked"/></c:if>>No&nbsp;&nbsp;&nbsp;
-				  <textarea rows='3' cols='35' id="injury"  placeholder="Please explain"></textarea>
+				  <input type="radio" name="further_injury" value="yes" class="input_txt" id="furthercheck" onclick="toggle2();" <c:if test="${autoaccident.further_injury=='yes'}"><c:out value="Checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
+				  <input type="radio" name="further_injury" value="no" class="input_txt" onclick="toggle2();" <c:if test="${autoaccident.further_injury=='no'}"><c:out value="Checked"/></c:if>>No&nbsp;&nbsp;&nbsp;
+				  <textarea rows='3' cols='35' id="injury"  style='display:none' placeholder="Please explain" name="injurytext">${autoaccident.injurytext}</textarea>
 				  </td>
 				  </tr>
 				  <!--  <tr class="row2">
@@ -589,9 +593,9 @@ $(function() {
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Unconscious</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="radio" name="unconscious" value="yes" class="input_txt" onclick="toggle4('show4')" <c:if test="${autoaccident.unconscious=='yes'}"><c:out value="Checked"/></c:if> >Yes&nbsp;&nbsp;&nbsp;
-				  <input type="radio" name="unconscious" value="no" class="input_txt" onclick="toggle4('hide4')" <c:if test="${autoaccident.unconscious=='no'}"><c:out value="Checked"/></c:if> >No&nbsp;&nbsp;&nbsp;
-			      <input type="text" class="input_txtbx1" id="uncon" name="uncon" value="${autoaccident.uncon }" > (minutes)</input>
+				  <input type="radio" name="unconscious" value="yes" class="input_txt" id="unconcheck"onclick="toggle4();" <c:if test="${autoaccident.unconscious=='yes'}"><c:out value="Checked"/></c:if> >Yes&nbsp;&nbsp;&nbsp;
+				  <input type="radio" name="unconscious" value="no" class="input_txt" onclick="toggle4();" <c:if test="${autoaccident.unconscious=='no'}"><c:out value="Checked"/></c:if> >No&nbsp;&nbsp;&nbsp;
+			      <input type="text" class="input_txtbx1" id="uncon" name="uncon" value="${autoaccident.uncon }"  style='display:none'> (minutes)</input>
 			      </td>
 				  </tr>
 				  <tr class="row1">
@@ -674,18 +678,21 @@ $(function() {
 				 <input type="checkbox" name="confusion" value="confusion" <c:if test="${autoaccident.confusion=='confusion'}"><c:out value="Checked"/></c:if> >Confusion&nbsp;&nbsp;&nbsp;&nbsp;
 				 <input type="checkbox" name="disorientation" value="disorientation" <c:if test="${autoaccident.disorientation=='disorientation'}"><c:out value="Checked"/></c:if> >Disorientation&nbsp;&nbsp;&nbsp;&nbsp;
 				 <input type="checkbox" name="neckpain" value="neckpain" <c:if test="${autoaccident.neckpain=='neckpain'}"><c:out value="Checked"/></c:if> >Neck pain&nbsp;&nbsp;&nbsp;&nbsp;
-				 <input type="checkbox" name="otherpain" value="otherpain" <c:if test="${autoaccident.otherpain=='otherpain'}"><c:out value="Checked"/></c:if> >Other&nbsp;&nbsp;&nbsp;&nbsp;
-				 <input type="text" class="input_txtbx1" id="inp_id" name="otherpain" placeholder="If other" />
+				 
+				 <input type="checkbox" name="otherpain" value="other pain" id="othercheck" onclick="Other();" <c:if test="${autoaccident.otherpain=='other pain'}"><c:out value="Checked"/></c:if> >Other&nbsp;&nbsp;&nbsp;&nbsp;
+				 <input type="text" class="input_txtbx1" id="other1" name="otherpaintext"  placeholder="If other" value="${autoaccident.otherpaintext}" style='display:none'/>
+				 
+				 
 				 </td>
 				 </tr>
 				 <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Symptoms first appeared</td>
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="first_symptom" class="input_cmbbx1"  onchange='Checksymptom(this.value);'>
-					<option  value="immediately" <c:if test="${autoaccident.first_symptom=='immediately'}"><c:out value="Checked"/></c:if> >Immediately</option>
-					<option value="hours" <c:if test="${autoaccident.first_symptom=='hours'}"><c:out value="Checked"/></c:if> >hours after the accident</option>
-					<option value="next_day" <c:if test="${autoaccident.first_symptom=='next_day'}"><c:out value="Checked"/></c:if> >The next day</option>
-					<option value="days" <c:if test="${autoaccident.first_symptom=='days'}"><c:out value="Checked"/></c:if> >days</option>
+					<option  value="immediately" <c:if test="${autoaccident.first_symptom=='immediately'}"><c:out value="selected"/></c:if> >Immediately</option>
+					<option value="hours" <c:if test="${autoaccident.first_symptom=='hours'}"><c:out value="selected"/></c:if> >hours after the accident</option>
+					<option value="next_day" <c:if test="${autoaccident.first_symptom=='next_day'}"><c:out value="selected"/></c:if> >The next day</option>
+					<option value="days" <c:if test="${autoaccident.first_symptom=='days'}"><c:out value="selected"/></c:if> >days</option>
 				  </select>
 				 <input type="text" name="symptom" id="symptom" style='display:none'/>
 				  </td>
@@ -819,26 +826,51 @@ function CheckPatientposition(){
    element.style.display='none';
 } 
 
-function toggle(value){
-if(value=='show')
- document.getElementById('mytext').style.visibility='visible';
-else
- document.getElementById('mytext').style.visibility='hidden';
-}
+function toggle(){
+	
+		var element = document.getElementById('mytext');
+		if(document.getElementById('airbagcheck').checked)
+			{
+			
+				element.style.display="block";
+			
+			}
+		else
+			element.style.display="none";
+		
+		
+	}
+function toggle1(){
+	
+		
+		var element = document.getElementById('mybrace');
+		if(document.getElementById('bracecheck').checked)
+			{
+			
+				element.style.display="block";
+			
+			}
+		else
+			element.style.display="none";
+		
+		
+	}
 
-function toggle1(value){
-if(value=='show1')
- document.getElementById('mybrace').style.visibility='visible';
-else
- document.getElementById('mybrace').style.visibility='hidden';
-}
 
-function toggle2(value){
-if(value=='show2')
- document.getElementById('injury').style.visibility='visible';
-else
- document.getElementById('injury').style.visibility='hidden';
-}
+function toggle2(){
+
+		var element = document.getElementById('injury');
+		if(document.getElementById('furthercheck').checked)
+			{
+			
+				element.style.display="block";
+			
+			}
+		else
+			element.style.display="none";
+		
+		
+	}
 
 function strike(){
 	/* alert(value); */
@@ -851,13 +883,17 @@ function strike(){
 		 e.style.display="none";
 }
 
-function toggle4(value){
-if(value=='show4')
- document.getElementById('uncon').style.visibility='visible';
-else
- document.getElementById('uncon').style.visibility='hidden';
+function toggle4(){
+		var element = document.getElementById('uncon');
+		if(document.getElementById('unconcheck').checked)
+			{
+			
+				element.style.display="block";
+			
+			}
+		else
+			element.style.display="none";
 }
-
 function Checksymptom(val){
  var element=document.getElementById('symptom');
  if(val=='hours' ||  val=='days')
@@ -899,12 +935,26 @@ function Check(){
    element.style.display='none';
  element1.style.display='none';
  }
-} 
+}
+</script>
+<script type="text/javascript">
+function Other()
+	{
+		var element = document.getElementById('other1');
+		if(document.getElementById('othercheck').checked)
+			{
+				element.style.display="block";
+			}
+		else
+			element.style.display="none";
+	}
+
+
 </script>
 <script>
 window.onload = function(){
 
-	Checkhospital();CheckPatientposition();CheckHeadposition();Checkposition();CheckConditions();Check();strike();
+	Checkhospital();CheckPatientposition();CheckHeadposition();Checkposition();CheckConditions();Check();strike();Other();toggle2();toggle1();toggle();toggle4();
 	
 	
 }
