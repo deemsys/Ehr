@@ -5,9 +5,75 @@
 <head>
  <link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
   <link rel="stylesheet" href="/resources/css/style.css" />
-  <script src="resources/js/jquery.min.js"></script>
-  <script src="resources/js/jquery-ui.js"></script>
+   <script src="resources/js/jquery.min.js"></script> 
+  <script src="resources/js/jquery-ui.js"></script> 
   
+  <script>
+
+	  $(function() {
+		    $( "#slider" ).slider({
+		      value:1,
+		      min: 0,
+		      max: 10,
+		      step: 1,
+		      slide: function( event, ui ) {
+		        $( "#amount" ).val(+ ui.value );
+		      }
+		    });
+		    $( "#amount" ).val(+ $( "#slider" ).slider( "value" ) );
+		  });
+	  $(function() {
+		    $( "#slider1" ).slider({
+		      value:1,
+		      min: 0,
+		      max: 10,
+		      step: 1,
+		      slide: function( event, ui ) {
+		        $( "#amount1" ).val(+ ui.value );
+		      }
+		    });
+		    $( "#amount1" ).val(+ $( "#slider1" ).slider( "value" ) );
+		  });
+	 
+	  $(function() {
+		    $( "#slider2" ).slider({
+		      value:1,
+		      min: 0,
+		      max: 10,
+		      step: 1,
+		      slide: function( event, ui ) {
+		        $( "#amount2" ).val(+ ui.value );
+		      }
+		    });
+		    $( "#amount2" ).val(+ $( "#slider2" ).slider( "value" ) );
+		  });
+	  
+	    $("#btnNext").live("click", function () {
+	        var tabs = $('#tabs').tabs();
+	        var c = $('#tabs').tabs("length");
+	        currentTab = currentTab == (c - 1) ? currentTab : (currentTab + 1);
+	        tabs.tabs('select', currentTab);
+	        $("#btnPrevious").show();
+	        if (currentTab == (c - 1)) {
+	            $("#btnNext").hide();
+	        } else {
+	            $("#btnNext").show();
+	        }
+	    });
+	    $("#btnPrevious").live("click", function () {
+	        var tabs = $('#tabs').tabs();
+	        var c = $('#tabs').tabs("length");
+	        currentTab = currentTab == 0 ? currentTab : (currentTab - 1);
+	        tabs.tabs('select', currentTab);
+	        if (currentTab == 0) {
+	            $("#btnNext").show();
+	            $("#btnPrevious").hide();
+	        }
+	        if (currentTab < (c - 1)) {
+	            $("#btnNext").show();
+	        }
+	    });
+	  </script>
 <script>
 $(function(){
 	$("#datepicker3").datepicker({ dateFormat: 'yy-mm-dd' });
@@ -42,32 +108,10 @@ $(function(){
             }
         });
     });
-    $("#btnNext").live("click", function () {
-        var tabs = $('#tabs').tabs();
-        var c = $('#tabs').tabs("length");
-        currentTab = currentTab == (c - 1) ? currentTab : (currentTab + 1);
-        tabs.tabs('select', currentTab);
-        $("#btnPrevious").show();
-        if (currentTab == (c - 1)) {
-            $("#btnNext").hide();
-        } else {
-            $("#btnNext").show();
-        }
-    });
-    $("#btnPrevious").live("click", function () {
-        var tabs = $('#tabs').tabs();
-        var c = $('#tabs').tabs("length");
-        currentTab = currentTab == 0 ? currentTab : (currentTab - 1);
-        tabs.tabs('select', currentTab);
-        if (currentTab == 0) {
-            $("#btnNext").show();
-            $("#btnPrevious").hide();
-        }
-        if (currentTab < (c - 1)) {
-            $("#btnNext").show();
-        }
-    });
+   
+  
 </script>
+
 	  <style>
 	  /* force a height so the tabs don't jump as content height changes */
 	  #tabs .tabs-spacer { float: left; height: 200px; }
@@ -75,8 +119,7 @@ $(function(){
 	  .tabs-bottom .ui-tabs-nav li { top: auto; bottom: 0; margin: 0 .2em 1px 0; border-bottom: auto; border-top: 0; }
 	  .tabs-bottom .ui-tabs-nav li.ui-tabs-active { margin-top: -1px; padding-top: 1px; }
 	  </style>
-	  <script>
-	  </script>
+	  
 	</head>
 	<body>
 	 
@@ -954,7 +997,7 @@ $(function(){
 				                  	<textarea rows="3" cols="25" placeholder="Specify your Symptoms" name="Symptom1">${patient.symptom1}</textarea>&nbsp;&nbsp;&nbsp; 
 				                  	</td>
 				                  	<td>
-				                  	<label for="amount"><b>Pain Scale:</b></label>
+				                  	<label for="amount1"><b>Pain Scale:</b></label>
 				                  	<input type="text" id="amount1" name="Painscale1"/>&nbsp;&nbsp;&nbsp;
 				                  	<div id="slider1"></div>
 				                  </td>
@@ -965,7 +1008,7 @@ $(function(){
 				                  	<textarea rows="3" cols="25" placeholder="Specify your Symptoms" name="Symptom2">${patient.symptom2}</textarea>&nbsp;&nbsp;&nbsp; 
 				                  	</td>
 				                  	<td>
-				                  	<label for="amount"><b>Pain Scale:</b></label>
+				                  	<label for="amount1"><b>Pain Scale:</b></label>
 				                  	<input type="text" id="amount2" name="Painscale2" />&nbsp;&nbsp;&nbsp;
 				                  	<div id="slider2"></div>
 				                  </td>
@@ -1287,44 +1330,6 @@ $(function(){
 
 
   
-  $(function() {
-	    $( "#slider" ).slider({
-	      value:1,
-	      min: 0,
-	      max: 10,
-	      step: 1,
-	      slide: function( event, ui ) {
-	        $( "#amount" ).val(+ ui.value );
-	      }
-	    });
-	    $( "#amount" ).val(+ $( "#slider" ).slider( "value" ) );
-	  });
-  $(function() {
-	    $( "#slider1" ).slider({
-	      value:1,
-	      min: 0,
-	      max: 10,
-	      step: 1,
-	      slide: function( event, ui ) {
-	        $( "#amount1" ).val(+ ui.value );
-	      }
-	    });
-	    $( "#amount1" ).val(+ $( "#slider1" ).slider( "value" ) );
-	  });
- 
-  $(function() {
-	    $( "#slider2" ).slider({
-	      value:1,
-	      min: 0,
-	      max: 10,
-	      step: 1,
-	      slide: function( event, ui ) {
-	        $( "#amount2" ).val(+ ui.value );
-	      }
-	    });
-	    $( "#amount2" ).val(+ $( "#slider2" ).slider( "value" ) );
-	  });
-
   $(document).ready(function(){
 	  
 	    $("#send_to_one").hide();
