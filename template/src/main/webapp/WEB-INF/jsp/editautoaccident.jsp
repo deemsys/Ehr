@@ -688,13 +688,13 @@ $(function() {
 				 <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Symptoms first appeared</td>
 				 <td valign="top" align="left" class="input_txt">
-				  <select name="first_symptom" class="input_cmbbx1"  onchange='Checksymptom(this.value);'>
+				  <select name="first_symptom" class="input_cmbbx1" id="firstsymptom"  onchange='Checksymptom();'>
 					<option  value="immediately" <c:if test="${autoaccident.first_symptom=='immediately'}"><c:out value="selected"/></c:if> >Immediately</option>
 					<option value="hours" <c:if test="${autoaccident.first_symptom=='hours'}"><c:out value="selected"/></c:if> >hours after the accident</option>
 					<option value="next_day" <c:if test="${autoaccident.first_symptom=='next_day'}"><c:out value="selected"/></c:if> >The next day</option>
 					<option value="days" <c:if test="${autoaccident.first_symptom=='days'}"><c:out value="selected"/></c:if> >days</option>
 				  </select>
-				 <input type="text" name="symptom" id="symptom" style='display:none'/>
+				 <input type="text" name="symptom" id="symptom" value="${autoaccident.symptom}"style='display:none'/>
 				  </td>
 				  </tr> 
 				   <tr class="row1">
@@ -894,9 +894,12 @@ function toggle4(){
 		else
 			element.style.display="none";
 }
-function Checksymptom(val){
+function Checksymptom(){
  var element=document.getElementById('symptom');
- if(val=='hours' ||  val=='days')
+ var type1=document.getElementById('firstsymptom');
+ var type = type1.options[type1.selectedIndex].value;
+
+ if(type=='hours' ||  type=='days')
    element.style.display='block';
  else  
    element.style.display='none';
@@ -954,7 +957,7 @@ function Other()
 <script>
 window.onload = function(){
 
-	Checkhospital();CheckPatientposition();CheckHeadposition();Checkposition();CheckConditions();Check();strike();Other();toggle2();toggle1();toggle();toggle4();
+	Checkhospital();CheckPatientposition();CheckHeadposition();Checkposition();CheckConditions();Check();strike();Other();toggle2();toggle1();toggle();toggle4();Checksymptom();
 	
 	
 }

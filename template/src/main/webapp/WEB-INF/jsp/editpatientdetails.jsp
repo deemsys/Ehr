@@ -643,7 +643,7 @@ $(document).ready(function(){
   $(function() {
 	 
 	    $( "#slider" ).slider({
-	      value:1,
+	      value:("${patientDetails.painscale}"),
 	      min: 0,
 	      max: 10,
 	      step: 1,
@@ -655,7 +655,7 @@ $(document).ready(function(){
 	  });
   $(function() {
 	    $( "#slider1" ).slider({
-	      value:1,
+	      value:("${patientDetails.painscale1}"),
 	      min: 0,
 	      max: 10,
 	      step: 1,
@@ -668,7 +668,7 @@ $(document).ready(function(){
  
   $(function() {
 	    $( "#slider2" ).slider({
-	      value:1,
+	      value:("${patientDetails.painscale2}"),
 	      min: 0,
 	      max: 10,
 	      step: 1,
