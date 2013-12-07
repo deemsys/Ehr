@@ -6,13 +6,14 @@
 
 <link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
  <link rel="stylesheet" href="/resources/css/style.css" />
-<script src="resources/js/jquery.min.js"></script>
+ <script src="resources/js/jquery.min.js"></script> 
  <script src="resources/js/jquery-ui.js"></script>
+ <script src="resources/js/jquey-1.9.1.js"></script>
  <STYLE type="text/css">
   P#mypar {font-style:calibri;
   line-height:18px;}
    </STYLE>
-   </head>
+   
    <script type="text/javascript">
 function Checksymptom(val){
  var element=document.getElementById('offwork1');
@@ -51,7 +52,21 @@ $(function() {
     $( "#datepicker8" ).datepicker();
   });
 </script>
-
+<script>
+$(function() {
+    $( "#slider" ).slider({
+      value:1,
+      min: 0,
+      max: 10,
+      step: 1,
+      slide: function( event, ui ) {
+        $( "#amount" ).val(+ ui.value );
+      }
+    });
+    $( "#amount" ).val( + $( "#slider" ).slider( "value" ) );
+  });
+</script>
+</head>
  <body>
  <div id="right_content">
 <form action="soapnotes" method="POST" name="soapnotes">
@@ -142,7 +157,10 @@ $(function() {
  <td>&nbsp;&nbsp;
  <input type="text" name="date1" id="datepicker1"></td>
  <td></td>
- <td></td>
+ <td>
+<label for="amount"><b>Pain Scale:</b></label>
+	 <input type="text" id="amount" style="border:0; color:#f6931f; font-weight:bold;" name="Painscale" />&nbsp;&nbsp;&nbsp;
+ <div id="slider"></div></td>
  <td>
  
  &nbsp &nbspDiagonosis:<br/>

@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="/resources/css/style.css" />
    <script src="resources/js/jquery.min.js"></script> 
   <script src="resources/js/jquery-ui.js"></script> 
+  <script src="resources/js/jquery-1.9.1.js"></script>
   
   <script>
 
@@ -406,7 +407,7 @@ $(function(){
 				                  	<div id="slider"></div>
 				                  </td>
 				                </tr>
-				                <tr>
+				        <tr>
                                  <td valign="middle" align="left" class="input_txt"></td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<textarea rows="3" cols="25" placeholder="Specify your Symptoms" name="Symptom1"></textarea>&nbsp;&nbsp;&nbsp; 
@@ -1013,7 +1014,6 @@ $(function(){
 				                  	<div id="slider2"></div>
 				                  </td>
 				                </tr>
-				           
 				           <tr class="row2">
                         <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Are These Symptoms Due to an Accident?</td>
 				                  <td valign="top" align="left" class="input_txt">
@@ -1330,6 +1330,46 @@ $(function(){
 
 
   
+
+  $(function() {
+	    $( "#slider" ).slider({
+	      value:1,
+	      min: 0,
+	      max: 10,
+	      step: 1,
+	      slide: function( event, ui ) {
+	        $( "#amount" ).val(+ ui.value );
+	      }
+	    });
+	    $( "#amount" ).val(+ $( "#slider" ).slider( "value" ) );
+	  });
+   $(function() {
+	    $( "#slider1" ).slider({
+	      value:1,
+	      min: 0,
+	      max: 10,
+	      step: 1,
+	      slide: function( event, ui ) {
+	        $( "#amount1" ).val(+ ui.value );
+	      }
+	    });
+	    $( "#amount1" ).val(+ $( "#slider1" ).slider( "value" ) );
+	  });
+ 
+  $(function() {
+	    $( "#slider2" ).slider({
+	      value:1,
+	      min: 0,
+	      max: 10,
+	      step: 1,
+	      slide: function( event, ui ) {
+	        $( "#amount2" ).val(+ ui.value );
+	      }
+	    });
+	    $( "#amount2" ).val(+ $( "#slider2" ).slider( "value" ) );
+	  });
+ 
+
   $(document).ready(function(){
 	  
 	    $("#send_to_one").hide();
