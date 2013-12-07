@@ -76,11 +76,31 @@
 	    });
 	  </script>
 <script>
+/* $(function() {
+	$( "#datepicker" ).datepicker({
+		changeMonth: true,
+		changeYear: true
+	});
+});
+ */
 $(function(){
-	$("#datepicker3").datepicker({ dateFormat: 'yy-mm-dd' });
-	$("#datepicker2").datepicker({ dateFormat: 'yy-mm-dd' });
-	$("#datepicker1").datepicker({ dateFormat: 'yy-mm-dd' });
-    $("#datepicker").datepicker({ dateFormat: 'yy-mm-dd' }).bind("change",function(){
+	$("#datepicker3").datepicker({changeMonth: true,changeYear: true,showOn: "button",
+		buttonImage: "resources/images/calendar.gif",
+		buttonImageOnly: true,dateFormat: 'yy-mm-dd'});
+	
+	$("#datepicker2").datepicker({changeMonth: true, changeYear: true,showOn: "button",
+		buttonImage: "resources/images/calendar.gif",
+		buttonImageOnly: true,dateFormat: 'yy-mm-dd' });
+	
+	
+	$("#datepicker1").datepicker({ changeMonth: true,changeYear: true,showOn: "button",
+		buttonImage: "resources/images/calendar.gif",
+		buttonImageOnly: true,dateFormat: 'yy-mm-dd' });
+	
+	
+    $("#datepicker").datepicker({ changeYear: true,changeMonth: true,showOn: "button",
+		buttonImage: "resources/images/calendar.gif",
+		buttonImageOnly: true,dateFormat: 'yy-mm-dd' }).bind("change",function(){
         var minValue = $(this).val();
         minValue = $.datepicker.parseDate("yy-mm-dd", minValue);
         minValue.setDate(minValue.getDate()+1);

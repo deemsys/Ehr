@@ -14,9 +14,12 @@
 
 </head>
 <script>
-  $(function() {
-    $( "#tabs" ).tabs();
-  });
+$(function() {
+	$( "#tabs" ).tabs({
+		event: "mouseover"
+	});
+});
+
   </script>
   <script>
   $(function() {
@@ -138,11 +141,24 @@
 				                 
 				                  </tr>
 				                   <tr class="row1">
-				                 	 <td valign="top" align="left" class="input_txt"> <input type="checkbox"name="hypolorodosis_1"value="Hypolordosis"> Hypolordosis</td>
-				                     <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="normalcurvature_1" value="Normal Curvature"> Normal Curvature</td>    
+				                 	 <td valign="top" align="left" class="input_txt"> <input type="checkbox"name="hypolorodosis_1"value="Hypolordosis"onclick="this.form.hypolordosis1.style.visibility = this.checked? 'visible' : 'hidden'"/> Hypolordosis
+				                 	    <select name="hypolordosis_select1" class="input_cmbbx1" id="hypolordosis1" style="visibility:hidden">
+				                 	        <option selected="selected" value="Mild" >Mild</option>
+											<option value="Moderate">Moderate</option>
+											<option value="Severe">Severe</option>
+										</select>	
+				                 	 </td>
+				                   
+				                     <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="normalcurvature_1" value="Normal Curvature"onclick="this.form.normalcurvature1.style.visibility = this.checked? 'visible' : 'hidden'"/> Normal Curvature
+				                     	<select name="normalcurvature_select1" class="input_cmbbx1" id="normalcurvature1" style="visibility:hidden">
+				                 	              
+						                    <option selected="selected" value="Mild" >Mild</option>
+											<option value="Moderate">Moderate</option>
+											<option value="Severe">Severe</option>
+										</select>
+				                     </td>    
+				                 	 
 				                 	 <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="hyperlordosis_1" value="Hyperlordosis:" onclick="this.form.hyperlordosis1.style.visibility = this.checked? 'visible' : 'hidden'"/> Hyperlordosis
-				                 	 
-				                 	 
 				                 	 <select name="hyperlordosis_select1" class="input_cmbbx1" id="hyperlordosis1" style="visibility:hidden">
 				                 	              
 						                    <option selected="selected" value="Mild" >Mild</option>
@@ -318,10 +334,29 @@
 				                 <td></td>
 				                  </tr>
 				                  <tr class="row2">
-				                   <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="hyperkyphosis_2" value="Hyperkyphosis"> Hyperkyphosis 
-				                   													<input type="checkbox" name="normalkyphosis_2" value="Normal kyphosis"> Normal kyphosis 
-				                   													<input type="checkbox" name="hypokyphosis_2" value="Hypokyphosis"> Hypokyphosis
-				                   </td>  	
+				                   <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="hyperkyphosis_2" value="Hyperkyphosis" onclick="this.form.hyperkyphosis2.style.visibility = this.checked? 'visible' : 'hidden'"/> Hyperkyphosis
+				                    						<select name="hyperkyphosis_select2" class="input_cmbbx1" id="hyperkyphosis2" style="visibility:hidden">
+				                 	        <option selected="selected" value="Mild" >Mild</option>
+											<option value="Moderate">Moderate</option>
+											<option value="Severe">Severe</option>
+										</select>	
+									</td>	
+				                   	<td valign="top" align="left" class="input_txt"> <input type="checkbox" name="normalkyphosis_2" value="Normal kyphosis" onclick="this.form.normalkyphosis2.style.visibility = this.checked? 'visible' : 'hidden'"/> Normal kyphosis 
+				                   						<select name="normalkyphosis_select2" class="input_cmbbx1" id="normalkyphosis2" style="visibility:hidden">
+				                 	        <option selected="selected" value="Mild" >Mild</option>
+											<option value="Moderate">Moderate</option>
+											<option value="Severe">Severe</option>
+										</select>	
+									</td>
+									<td valign="top" align="left" class="input_txt"> <input type="checkbox" name="hypokyphosis_2" value="Hypokyphosis" onclick="this.form.hypokyphosis2.style.visibility = this.checked? 'visible' : 'hidden'"/> Hypokyphosis
+				                 	<select name="hypokyphosis_select2" class="input_cmbbx1" id="hypokyphosis2" style="visibility:hidden">
+				                 	        <option selected="selected" value="Mild" >Mild</option>
+											<option value="Moderate">Moderate</option>
+											<option value="Severe">Severe</option>
+										</select>	
+				                   </td> 
+				                   </tr>
+				                   <tr class="row1"> 	
 				                  <td class="input_txt" align="left"> <input type="checkbox" name="degenerative_2" value="Degenerative joint disease at:" onclick="this.form.degenerative2.style.visibility = this.checked? 'visible' : 'hidden'"/> Degenerative joint disease at:
 				                 		<input type="text" class="input_txtbx1" id="degenerative2" name="degenerative_text2" style="visibility:hidden"/>
 				                	 </td>
@@ -330,7 +365,7 @@
 				                 														 <input type="checkbox" name="severe_2" value="Severe"> Severe
 				                 	    </td>	
 				                   </tr>
-				                    <tr class="row1">
+				                    <tr class="row2">
 				             
 				                	 <td class="input_txt" align="left"> <input type="checkbox" name="narrowed_2" value="Narrowed disc space at:" onclick="this.form.narrowed2.style.visibility = this.checked? 'visible' : 'hidden'"/> Narrowed disc space at:
 				                 		<input type="text" class="input_txtbx1" id="narrowed2" name="narrowed_text2" style="visibility:hidden" />
@@ -339,7 +374,7 @@
 				                 		<input type="text" class="input_txtbx1" id="schmorlsnodesat2" name="schmorlsnodesat_text2" style="visibility:hidden" />
 				                 	 </td>
 				                    </tr>	 
-				                 	 <tr class="row2">
+				                 	 <tr class="row1">
 				             			<td class="input_txt" align="left"> <input type="checkbox" name="anterior_2" value="Anterior body osteophytes at:" onclick="this.form.anterior2.style.visibility = this.checked? 'visible' : 'hidden'"/> Anterior vertebral body osteophytes at:
 				                 			<input type="text" class="input_txtbx1" id="anterior2" name="anterior_text2" style="visibility:hidden" />
 				                		 </td>
@@ -425,12 +460,13 @@
 				                   		 </select>
 				                   	</td>
 				                   	<td valign="top" align="left" class="input_txt"> <input type="checkbox" name="negative_3" value="Negative for recent fracture">  Negative for recent fracture, dislocation or gross Osteopathology</td>
-				                  <td></td>
-				                  </tr>
-				                  <tr class="row2">
 				                  	 <td class="input_txt"><input type="checkbox" name="break_3" value="Break Georges at" onclick="this.form.break3.style.visibility = this.checked? 'visible' : 'hidden'"/> Break in Georges line at 
 				           		        <input type="text" class="input_txtbx1" id="break3" name="break_text3" style="visibility:hidden" />
 				           		 	 </td>
+				                  <td></td>
+				                  </tr>
+				                  <tr class="row2">
+				                  	
 				           		 	 <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="osteoporosis_3" value="Osteoporosis" onclick="this.form.osteoporosis3.style.visibility = this.checked? 'visible' : 'hidden'"/> Osteoporosis
 				                 	 		<select name="osteoporosis_select3" class="input_cmbbx1" style="visibility:hidden" id="osteoporosis3">
 				                 	              
@@ -439,10 +475,22 @@
 											<option value="severe">Severe</option>
 											</select>		
 										</td>
-										 <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="hyperkyphosis_3" value="Hyperkyphosis"> Hyperkyphosis 
-				                   													<input type="checkbox" name="normalkyphosis_3" value="Normal kyphosis"> Normal kyphosis 
-				                   													<input type="checkbox" name="hypokyphosis_3" value="Hypokyphosis" onclick="this.form.hypokyphosis3.style.visibility = this.checked? 'visible' : 'hidden'"/> Hypokyphosis
-				                   													<select name="hypokyphosos_select_3" class="input_cmbbx1" style="visibility:hidden" id="hypokyphosis3">
+										 <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="hyperkyphosis_3" value="Hyperkyphosis"onclick="this.form.hyperkyphosis3.style.visibility = this.checked? 'visible' : 'hidden'"/> Hyperkyphosis
+				                    		<select name="hyperkyphosis_select3" class="input_cmbbx1" id="hyperkyphosis3" style="visibility:hidden">
+				                 	        <option selected="selected" value="Mild" >Mild</option>
+											<option value="Moderate">Moderate</option>
+											<option value="Severe">Severe</option>
+										</select>	
+									</td>	 
+				                   		 <td valign="top" align="left" class="input_txt"><input type="checkbox" name="normalkyphosis_3" value="Normal kyphosis"onclick="this.form.normalkyphosis3.style.visibility = this.checked? 'visible' : 'hidden'"/> Normal kyphosis 
+				                   		<select name="normalkyphosis_select3" class="input_cmbbx1" id="normalkyphosis3" style="visibility:hidden">
+				                 	        <option selected="selected" value="Mild" >Mild</option>
+											<option value="Moderate">Moderate</option>
+											<option value="Severe">Severe</option>
+										</select>	
+									</td>	 
+				                    <td valign="top" align="left" class="input_txt"><input type="checkbox" name="hypokyphosis_3" value="Hypokyphosis" onclick="this.form.hypokyphosis3.style.visibility = this.checked? 'visible' : 'hidden'"/> Hypokyphosis
+				                   		<select name="hypokyphosos_select_3" class="input_cmbbx1" style="visibility:hidden" id="hypokyphosis3">
 				                 	              
 						                    <option selected="selected" value="Mild" >Mild</option>
 											<option value="Moderate">Moderate</option>

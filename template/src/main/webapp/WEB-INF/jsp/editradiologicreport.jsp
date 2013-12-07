@@ -11,9 +11,12 @@
 <title>Insert title here</title>
 </head>
 <script>
-  $(function() {
-    $( "#tabs" ).tabs();
-  });
+$(function() {
+	$( "#tabs" ).tabs({
+		event: "mouseover"
+	});
+});
+
   </script>
 <body>
 <form action="updateradiologicreport" method="post" name="update" id="update">
@@ -35,11 +38,11 @@
                         <tr class="row1">
 	                              <td>Patient Name:</td>
 				                  <input type="hidden" class="input_txtbx1" id="inp_id" value="${radiologicReport.pid}" name="pid" />
-                                 <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${radiologicReport.pname }" name="pname" /></br><span class="err"><form:errors path="report.pname"></form:errors></span></td>
+                                 <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" value="${radiologicReport.pname }" name="pname" /></br><span class="err"><form:errors path="report.pname"></form:errors></span></td>
                                  <td>Date:</td>
                                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${radiologicReport.date }" name="date" /></br><span class="err"><form:errors path="report.date"></form:errors></span></td>
                                  <td>I.D.#:</td>
-                                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${radiologicReport.id }" name="id" /></br><span class="err"><form:errors path="report.id"></form:errors></span></td>
+                                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" value="${radiologicReport.id }" name="id" /></br><span class="err"><form:errors path="report.id"></form:errors></span></td>
                					<td>Date Of Birth</td>
                					 <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${radiologicReport.dob }" name="dob" /></br><span class="err"><form:errors path="report.dob"></form:errors></span></td>
                			 </tr>
@@ -117,8 +120,21 @@
 						                     			
 						                     </tr>
 						                     <tr class="row1">
-						                     			<td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Hypolordosis" name="hypolorodosis_1" <c:if test="${radiologicReport.hypolorodosis_1=='Hypolordosis'}"><c:out value="Checked"/></c:if>   />hypolorodosis</td>
-						                     			<td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Normal Curvature" name="normalcurvature_1" <c:if test="${radiologicReport.normalcurvature_1=='Normal Curvature'}"><c:out value="Checked"/></c:if>   />Normal_Curvature</td>
+						                     			<td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Hypolordosis" name="hypolorodosis_1" id="hypolordosischeck1" onclick="Hypolordosis1();"<c:if test="${radiologicReport.hypolorodosis_1=='Hypolordosis'}"><c:out value="Checked"/></c:if>   />hypolorodosis
+						                     			<select name="hypolordosis_select1" class="input_cmbbx1" id="hypolordosis1"style="display:none;">
+						                    <option value="Mild" <c:if test="${radiologicReport.hypolordosis_select1=='Mild'}"><c:out value="selected"/></c:if>>Mild</option>
+						                     <option value="Moderate" <c:if test="${radiologicReport.hypolordosis_select1=='Moderate'}"><c:out value="selected"/></c:if>>Moderate</option>
+						                     <option value="Severe"  <c:if test="${radiologicReport.hypolordosis_select1=='Severe'}"><c:out value="selected"/></c:if>>Severe</option>
+						                     </select>
+						                     			</td>
+						                     			
+						                     			<td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Normal Curvature" name="normalcurvature_1" id="normalcurvaturecheck1" onclick="Normalcurvature1();"<c:if test="${radiologicReport.normalcurvature_1=='Normal Curvature'}"><c:out value="Checked"/></c:if>   />Normal_Curvature
+						                     			<select name="normalcurvature_select1" class="input_cmbbx1" id="normalcurvature1"style="display:none;">
+						                    <option value="Mild" <c:if test="${radiologicReport.normalcurvature_select1=='Mild'}"><c:out value="selected"/></c:if>>Mild</option>
+						                     <option value="Moderate" <c:if test="${radiologicReport.normalcurvature_select1=='Moderate'}"><c:out value="selected"/></c:if>>Moderate</option>
+						                     <option value="Severe"  <c:if test="${radiologicReport.normalcurvature_select1=='Severe'}"><c:out value="selected"/></c:if>>Severe</option>
+						                     </select>
+						                     			</td>
 						                     			<td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Hyperlordosis" id="hyperlordosischeck"name="hyperlordosis_1" onclick="Hyperlordosis();"<c:if test="${radiologicReport.hyperlordosis_1=='Hyperlordosis'}"><c:out value="Checked"/></c:if>   />Hyperlordosis
 						                     			<select name="hyperlordosis_select1" class="input_cmbbx1" id="hyperlordosis1"style="display:none;">
 						                    <option value="Mild" <c:if test="${radiologicReport.hyperlordosis_select1=='Mild'}"><c:out value="selected"/></c:if>>Mild</option>
@@ -275,13 +291,30 @@
 						                     <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Negative for Osteopathology" name="negative_2" <c:if test="${radiologicReport.negative_2=='Negative for Osteopathology'}"><c:out value="Checked"/></c:if>   />Negative for recent fracture, dislocation or gross Osteopathology</td>
 						         </tr>
 						         <tr class="row2">
-						         <td>
-						         				 <input type="checkbox"  value="Hyperkyphosis" name="hyperkyphosis_2" <c:if test="${radiologicReport.hyperkyphosis_2=='Hyperkyphosis'}"><c:out value="Checked"/></c:if>   />Hyperkyphosis
-						                     				<input type="checkbox"  value="Normal kyphosis" name="normalkyphosis_2" <c:if test="${radiologicReport.normalkyphosis_2=='Normal kyphosis'}"><c:out value="Checked"/></c:if>   />Normal kyphosis
-						                     				<input type="checkbox"  value="Hypokyphosis" name="hypokyphosis_2" <c:if test="${radiologicReport.hypokyphosis_2=='Hypokyphosis'}"><c:out value="Checked"/></c:if>   />Hypokyphosis
-						                     				
+						         	<td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Hyperkyphosis" name="hyperkyphosis_2" id="hyperkyphosischeck2" onclick="Hyperkyphosis2();" <c:if test="${radiologicReport.hyperkyphosis_2=='Hyperkyphosis'}"><c:out value="Checked"/></c:if>   />Hyperkyphosis
+						             <select name="hyperkyphosis_select2" class="input_cmbbx1" id="hyperkyphosis2"style="display:none;">
+						                    <option value="Mild" <c:if test="${radiologicReport.hyperkyphosis_select2=='Mild'}"><c:out value="selected"/></c:if>>Mild</option>
+						                     <option value="Moderate" <c:if test="${radiologicReport.hyperkyphosis_select2=='Moderate'}"><c:out value="selected"/></c:if>>Moderate</option>
+						                     <option value="Severe"  <c:if test="${radiologicReport.hyperkyphosis_select2=='Severe'}"><c:out value="selected"/></c:if>>Severe</option>
+						             </select>
+						            </td>
+						                     			
+						           <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Normal kyphosis" name="normalkyphosis_2" id="normalkyphosischeck2" onclick="Normalkyphosis2();"<c:if test="${radiologicReport.normalkyphosis_2=='Normal kyphosis'}"><c:out value="Checked"/></c:if>   />Normal kyphosis
+						                     	 <select name="normalkyphosis_select2" class="input_cmbbx1" id="normalkyphosis2"style="display:none;">
+						                    <option value="Mild" <c:if test="${radiologicReport.normalkyphosis_select2=='Mild'}"><c:out value="selected"/></c:if>>Mild</option>
+						                     <option value="Moderate" <c:if test="${radiologicReport.normalkyphosis_select2=='Moderate'}"><c:out value="selected"/></c:if>>Moderate</option>
+						                     <option value="Severe"  <c:if test="${radiologicReport.normalkyphosis_select2=='Severe'}"><c:out value="selected"/></c:if>>Severe</option>
+						             </select>
+						            </td>			
+						            <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Hypokyphosis" name="hypokyphosis_2" id="hypokyphosischeck2" onclick="Hypokyphosis2();"<c:if test="${radiologicReport.hypokyphosis_2=='Hypokyphosis'}"><c:out value="Checked"/></c:if>   />Hypokyphosis
+						                     	<select name="hypokyphosis_select2" class="input_cmbbx1" id="hypokyphosis2"style="display:none;">
+						                    <option value="Mild" <c:if test="${radiologicReport.hypokyphosis_select2=='Mild'}"><c:out value="selected"/></c:if>>Mild</option>
+						                     <option value="Moderate" <c:if test="${radiologicReport.hypokyphosis_select2=='Moderate'}"><c:out value="selected"/></c:if>>Moderate</option>
+						                     <option value="Severe"  <c:if test="${radiologicReport.hypokyphosis_select2=='Severe'}"><c:out value="selected"/></c:if>>Severe</option>
+						             </select>			
 						         </td>
-						         
+						         </tr>
+						         <tr class="row1">
 						         <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Degenerative joint disease at:" name="degenerative_2" id="degenerative2check"onclick="Degenerative2();"<c:if test="${radiologicReport.degenerative_2=='Degenerative joint disease at:'}"><c:out value="Checked"/></c:if>   />Degenerative joint disease at:
 											<input type="text" class="input_txtbx1" id="degenerative2" value="${radiologicReport.degenerative_text2 }" name="degenerative_text2" style='display:none'/><span class="err"><form:errors path="report.degenerative_text2"></form:errors></span>				         			
 						         </td>
@@ -291,7 +324,7 @@
 						                     				<input type="checkbox"  value="Severe" name="severe_2" <c:if test="${radiologicReport.severe_2=='Severe'}"><c:out value="Checked"/></c:if>   />Severe
 						                     		</td>
 						         </tr>
-						         <tr class="row1">            		
+						         <tr class="row2">            		
 						          <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Narrowed disc space at:" name="narrowed_2" id="narrowed2check"onclick="Narrowed2();"<c:if test="${radiologicReport.narrowed_2=='Narrowed disc space at:'}"><c:out value="Checked"/></c:if>   />Narrowed disc space at:
 						                                <input type="text" class="input_txtbx1" id="narrowed2"  value="${radiologicReport.narrowed_text2 }" name="narrowed_text2" style='display:none'/><span class="err"><form:errors path="report.narrowed_text2"></form:errors></span>
 						                             </td>   
@@ -300,7 +333,7 @@
 						                             </td>   
 						                     		                    		           		
 						         </tr>
-						         <tr class="row2">            		
+						         <tr class="row1">            		
 						          <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Anterior body osteophytes at:" name="anterior_2" id="anterior2check" onclick="Anterior2();" <c:if test="${radiologicReport.anterior_2=='Anterior body osteophytes at:'}"><c:out value="Checked"/></c:if>   />Anterior body osteophytes at:
 						                                <input type="text" class="input_txtbx1" id="anterior2"  value="${radiologicReport.anterior_text2 }" name="anterior_text2" style='display:none'/><span class="err"><form:errors path="report.anterior_text2"></form:errors></span>
 						                             </td>   
@@ -311,7 +344,7 @@
 						                                <input type="text" class="input_txtbx1" id="foraminal2"  style='display:none' value="${radiologicReport.foraminal_text2 }" name="foraminal_text2" /><span class="err"><form:errors path="report.foraminal_text2"></form:errors></span>
 						                             </td>               		                    		           		
 						         </tr>
-						         <tr class="row1">
+						         <tr class="row2">
 						         			<td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Osteoporosis" name="osteoporosis_2" id="osteoporosis2check" onclick="Osteoporosis2();"<c:if test="${radiologicReport.osteoporosis_2=='Osteoporosis'}"><c:out value="Checked"/></c:if>   />Osteoporosis
 						                     			<select name="osteoporosis_select2" class="input_cmbbx1" id="osteoporosis2" style='display:none'>
 						                    <option value="mild" <c:if test="${radiologicReport.osteoporosis_select2=='mild'}"><c:out value="selected"/></c:if>>Mild</option>
@@ -333,7 +366,7 @@
 						                      </td>
 						         
 						         </tr>
-						         <tr class="row2">
+						         <tr class="row1">
 						                     			<td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Apex at:" name="apexat_2" id="apexat2check" onclick="Apexat2();"<c:if test="${radiologicReport.apexat_2=='Apex at:'}"><c:out value="Checked"/></c:if>   />Apex at:
 						                     			<input type="text" class="input_txtbx1" id="apexat2"  value="${radiologicReport.apexat_text2}" name="apexat_text2" style='display:none'/><span class="err"><form:errors path="report.apexat_text2"></form:errors></span>
 						                     			</td>
@@ -348,7 +381,7 @@
 						         
 						         
 						         
-						           <tr class="row1">
+						           <tr class="row2">
                   								<td valign="top" align="center">&nbsp;</td>
                   								<td valign="top" align="left"></td>
                     
@@ -397,10 +430,11 @@
 						                     </select>
 						                     </td>
 					 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Negative for recent fracture" name="negative_3" <c:if test="${radiologicReport.negative_3=='Negative for recent fracture'}"><c:out value="Checked"/></c:if>   />Negative for recent fracture, dislocation or gross Osteopathology</td>	                     
-					</tr>
-					<tr class="row2">
-							 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Break in Georges" name="break_3" id="break3check" onclick="Break3();"<c:if test="${radiologicReport.break_3=='Break in Georges'}"><c:out value="Checked"/></c:if>   />Break in Georges line at
+					
+					 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Break in Georges" name="break_3" id="break3check" onclick="Break3();"<c:if test="${radiologicReport.break_3=='Break in Georges'}"><c:out value="Checked"/></c:if>   />Break in Georges line at
 						                                <input type="text" class="input_txtbx1" id="break3"style='display:none' value="${radiologicReport.break_text3 }" name="break_text3" /><span class="err"><form:errors path="report.break_text3"></form:errors></span></td>
+						</tr>	
+					<tr class="row2">
 							 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Osteoporosis" name="osteoporosis_3" id="osteoporosis3check" onclick="Osteoporosis3();"<c:if test="${radiologicReport.osteoporosis_3=='Osteoporosis'}"><c:out value="Checked"/></c:if>   />Osteoporosis
 						                     			<select name="osteoporosis_select3" class="input_cmbbx1" id="osteoporosis3"style='display:none' >
 						                    <option value="mild" <c:if test="${radiologicReport.osteoporosis_select3=='mild'}"><c:out value="selected"/></c:if>>Mild</option>
@@ -408,10 +442,21 @@
 						                     <option value="severe"  <c:if test="${radiologicReport.osteoporosis_select3=='severe'}"><c:out value="selected"/></c:if>>Severe</option>
 						                     </select>
 						    </td>
-						     <td>
-						         				 <input type="checkbox"  value="Hyperkyphosis" name="hyperkyphosis_3" id="hyperkyphosis3check" onclick ="Hypokyphosis3();"<c:if test="${radiologicReport.hyperkyphosis_3=='Hyperkyphosis'}"><c:out value="Checked"/></c:if>   />Hyperkyphosis
-						                     				<input type="checkbox"  value="Normal kyphosis" name="normalkyphosis_3" id="normalkyphosis3"onclick="Hypokyphosis3();"<c:if test="${radiologicReport.normalkyphosis_3=='Normal kyphosis'}"><c:out value="Checked"/></c:if>   />Normal kyphosis
-						                     				<input type="checkbox"  value="Hypokyphosis" name="hypokyphosis_3" id="hypokyphosis3check" onclick="Hypokyphosis3();"<c:if test="${radiologicReport.hypokyphosis_3=='Hypokyphosis'}"><c:out value="Checked"/></c:if>   />Hypokyphosis
+						      <td valign="top" align="left" class="input_txt"> <input type="checkbox"  value="Hyperkyphosis" name="hyperkyphosis_3" id="hyperkyphosis3check" onclick ="Hyperkyphosis3();"<c:if test="${radiologicReport.hyperkyphosis_3=='Hyperkyphosis'}"><c:out value="Checked"/></c:if>   />Hyperkyphosis
+						      		<select name="hyperkyphosis_select3" class="input_cmbbx1" id="hyperkyphosis3" style='display:none'>
+						                    <option value="Mild" <c:if test="${radiologicReport.hyperkyphosis_select3=='Mild'}"><c:out value="selected"/></c:if>>Mild</option>
+						                     <option value="Moderate" <c:if test="${radiologicReport.hyperkyphosis_select3=='Moderate'}"><c:out value="selected"/></c:if>>Moderate</option>
+						                     <option value="Severe"  <c:if test="${radiologicReport.hyperkyphosis_select3=='Severe'}"><c:out value="selected"/></c:if>>Severe</option>
+						                     </select>
+						        </td>
+						      <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Normal kyphosis" name="normalkyphosis_3" id="normalkyphosis3check"onclick="Normalkyphosis3();"<c:if test="${radiologicReport.normalkyphosis_3=='Normal kyphosis'}"><c:out value="Checked"/></c:if>   />Normal kyphosis
+						                     		<select name="normalkyphosis_select3" class="input_cmbbx1" id="normalkyphosis3" style='display:none'>
+						                    <option value="Mild" <c:if test="${radiologicReport.normalkyphosis_select3=='Mild'}"><c:out value="selected"/></c:if>>Mild</option>
+						                     <option value="Moderate" <c:if test="${radiologicReport.normalkyphosis_select3=='Moderate'}"><c:out value="selected"/></c:if>>Moderate</option>
+						                     <option value="Severe"  <c:if test="${radiologicReport.normalkyphosis_select3=='Severe'}"><c:out value="selected"/></c:if>>Severe</option>
+						                     </select>
+						        </td>		
+						        <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Hypokyphosis" name="hypokyphosis_3" id="hypokyphosis3check" onclick="Hypokyphosis3();"<c:if test="${radiologicReport.hypokyphosis_3=='Hypokyphosis'}"><c:out value="Checked"/></c:if>   />Hypokyphosis
 						                     				<select name="hypokyphosos_select_3" class="input_cmbbx1" id="hypokyphosis3" style='display:none'>
 						                    <option value="Mild" <c:if test="${radiologicReport.hypokyphosos_select_3=='Mild'}"><c:out value="selected"/></c:if>>Mild</option>
 						                     <option value="Moderate" <c:if test="${radiologicReport.hypokyphosos_select_3=='Moderate'}"><c:out value="selected"/></c:if>>Moderate</option>
@@ -601,6 +646,7 @@
 		
 		
 	}
+
 	function Hyperlordosis()
 	{
 		
@@ -616,6 +662,83 @@
 		
 		
 	}
+	
+	function Hypolordosis1()
+	{
+		
+		var element = document.getElementById('hypolordosis1');
+		if(document.getElementById('hypolordosischeck1').checked)
+			{
+			
+				element.style.display="block";
+			
+			}
+		else
+			element.style.display="none";
+		
+		
+	}
+	function Normalcurvature1()
+	{
+		
+		var element = document.getElementById('normalcurvature1');
+		if(document.getElementById('normalcurvaturecheck1').checked)
+			{
+			
+				element.style.display="block";
+			
+			}
+		else
+			element.style.display="none";
+		
+		
+	}
+	function Hyperkyphosis2()
+	{
+		
+		var element = document.getElementById('hyperkyphosis2');
+		if(document.getElementById('hyperkyphosischeck2').checked)
+			{
+			
+				element.style.display="block";
+			
+			}
+		else
+			element.style.display="none";
+		
+		
+	}
+	function Normalkyphosis2()
+	{
+		
+		var element = document.getElementById('normalkyphosis2');
+		if(document.getElementById('normalkyphosischeck2').checked)
+			{
+			
+				element.style.display="block";
+			
+			}
+		else
+			element.style.display="none";
+		
+		
+	}
+	function Hypokyphosis2()
+	{
+		
+		var element = document.getElementById('hypokyphosis2');
+		if(document.getElementById('hypokyphosischeck2').checked)
+			{
+			
+				element.style.display="block";
+			
+			}
+		else
+			element.style.display="none";
+		
+		
+	}
+	
 	function Degenerative()
 	{
 		
@@ -914,13 +1037,34 @@
 	function Hypokyphosis3()
 	{
 		var element = document.getElementById('hypokyphosis3');
-		if(document.getElementById('hypokyphosis3check').checked || document.getElementById('hyperkyphosis3check').checked || document.getElementById('normalkyphosis3').checked)
+		if(document.getElementById('hypokyphosis3check').checked)
 			{
 				element.style.display="block";
 			}
 		else
 			element.style.display="none";
 	}
+	function Hyperkyphosis3()
+	{
+		var element = document.getElementById('hyperkyphosis3');
+		if(document.getElementById('hyperkyphosis3check').checked)
+			{
+				element.style.display="block";
+			}
+		else
+			element.style.display="none";
+	}
+	function Normalkyphosis3()
+	{
+		var element = document.getElementById('normalkyphosis3');
+		if(document.getElementById('normalkyphosis3check').checked)
+			{
+				element.style.display="block";
+			}
+		else
+			element.style.display="none";
+	}
+	
 	function Degenerative3()
 	{
 		var element = document.getElementById('degenerative3');
@@ -1026,7 +1170,7 @@
 	<script>
 	
 	window.onload = function(){
-		Positive();Break();Hyperlordosis();Degenerative();Narrowed();Subchondral();Anterior();Schmorls();Foraminal();Osteoporosis();DecreasedFlex();DecreasedRLFlex();Apex();Softtissueedemaof();Other();Degenerative2();Narrowed2();Schmorlsnodesat2();Anterior2();Subchondral2();Foraminal2();Osteoporosis2();Apexat2();Softtissueedemaof2();Other2();Break3();Osteoporosis2();Hypokyphosis3();Degenerative3();Narrowed3();Anterior3();Subchondral3();Schmorls3();Spondylolisthesisof3();Apexat3();Softtissueedemaof3();Other3();Osteoporosis3();
+		Positive();Break();Hyperlordosis();Degenerative();Narrowed();Subchondral();Anterior();Schmorls();Foraminal();Osteoporosis();DecreasedFlex();DecreasedRLFlex();Apex();Softtissueedemaof();Other();Degenerative2();Narrowed2();Schmorlsnodesat2();Anterior2();Subchondral2();Foraminal2();Osteoporosis2();Apexat2();Softtissueedemaof2();Other2();Break3();Osteoporosis2();Hypokyphosis3();Degenerative3();Narrowed3();Anterior3();Subchondral3();Schmorls3();Spondylolisthesisof3();Apexat3();Softtissueedemaof3();Other3();Osteoporosis3();Hypolordosis1();Normalcurvature1();Hyperkyphosis2();Normalkyphosis2();Hypokyphosis2();Hyperkyphosis3();Normalkyphosis3();
 		
 	}
 	</script>

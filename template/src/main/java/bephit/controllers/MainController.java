@@ -1927,11 +1927,12 @@ public class MainController {
 		return "viewinsuranceplan";
  
 	}
+	
    
 	@RequestMapping(value="/editinsuranceplan", method = RequestMethod.GET)
-	public String editinsuranceplan(HttpServletRequest request,ModelMap model) {
+	public String editinsuranceplan(HttpServletRequest request,@RequestParam("no") String no,ModelMap model,Insuranceplan insuranceplan) {
 		InsuranceplanForm insuranceplanForm= new InsuranceplanForm();
-    	insuranceplanForm.setInsuranceplan(planDAO.getInsuranceplan());
+    	insuranceplanForm.setInsuranceplan(planDAO.getInsurance(no));
 		model.addAttribute("insuranceplanform",insuranceplanForm);
 		model.addAttribute("menu", "health");
 		return "editinsuranceplan";
@@ -1941,16 +1942,16 @@ public class MainController {
 	public String updateinsuranceplan(HttpServletRequest request,@ModelAttribute("insuranceplan") @Valid Insuranceplan insuranceplan,
 			BindingResult result,ModelMap model,Principal principal)
 	{
-		/*if (result.hasErrors())
+		if (result.hasErrors())
 		{
 			InsuranceplanForm insuranceplanForm = new InsuranceplanForm();
 	     //   participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants(participant.getParticipants_id()));
-	      insuranceplanForm.setInsuranceplan(planDAO.getPlan(insuranceplan.getNo()));
+	      insuranceplanForm.setInsuranceplan(planDAO.getInsurance(insuranceplan.getNo()));
 	      
 	        model.addAttribute("insuranceplanForm", insuranceplanForm);
 			    model.addAttribute("menu", "health");
 		        return "editinsuranceplan";
-		}*/
+		}
 		
 		int status = planDAO.updateinsuranceplan(insuranceplan, insuranceplan.getNo(), principal.getName());
 		System.out.println(status);

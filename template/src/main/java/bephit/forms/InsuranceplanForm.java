@@ -5,14 +5,14 @@ import java.util.List;
 import bephit.model.Insuranceplan;
 
 public class InsuranceplanForm {
-	private List<Insuranceplan> Insuranceplan;
-	 
-    public List<Insuranceplan> getInsuranceplan() {
-		return Insuranceplan;
+	private List<Insuranceplan> insuranceplan;
+
+	public List<Insuranceplan> getInsuranceplan() {
+		return insuranceplan;
 	}
 
 	public void setInsuranceplan(List<Insuranceplan> insuranceplan) {
-		this.Insuranceplan = insuranceplan;
+		this.insuranceplan = insuranceplan;
 	}
 	
  

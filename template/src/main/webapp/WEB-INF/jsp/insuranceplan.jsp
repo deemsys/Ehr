@@ -13,7 +13,11 @@
   </STYLE>
  <script>
  $(function() {
-           $( "#datepicker" ).datepicker();
+
+		$("#datepicker").datepicker({ changeMonth: true,changeYear: true,showOn: "button",
+			buttonImage: "resources/images/calendar.gif",
+			buttonImageOnly: true,dateFormat: 'dd-mm-yy' });
+		
          });
  
 </script>

@@ -13,8 +13,12 @@
   </STYLE>
  <script>
  $(function() {
-           $( "#datepicker" ).datepicker();
-         });
+	 $("#datepicker").datepicker({ changeMonth: true,changeYear: true,showOn: "button",
+			buttonImage: "resources/images/calendar.gif",
+			buttonImageOnly: true,dateFormat: 'dd-mm-yy' });
+		
+      });
+       
  
 </script>
 </head>
@@ -32,10 +36,12 @@
 	            </div>
 	            <div class="contentbox">
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
-               <c:set value="${insuranceplanform.insuranceplan[0]}" var="Insuranceplan"> </c:set>
+              
+               
               <tr class="row1">
-              <input type="hidden" class="input_txtbx1" id="inp_id" value="${Insuranceplan.no}" name="no" />
+              <c:set value="${insuranceplanform.insuranceplan[0]}" var="Insuranceplan"> </c:set>
               <td width="100%"><input type="text" class="input_txtbx1" name="insure_comp" id="insure_comp" placeholder="Name of Insurance Company" value="${Insuranceplan.insure_comp}" /><%-- <span class="err"><form:errors path="Insuranceplan.insure_comp"></form:errors> --%></td>
+            	 <input type="hidden" class="input_txtbx1" id="inp_id" value="${Insuranceplan.no}" name="no" />
               </tr>
               <tr class="row1"> 
               <td width="100%">
@@ -67,7 +73,9 @@
         <p id="mypar">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Please advise if your company has no objection:</p>
         </tr>
         <tr class="row1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="checkbox" name="no_objection" value="no_objection">No Objection
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="checkbox" name="no_objection" value="no_objection" <c:if test="${Insuranceplan.no_objection=='no_objection'}"><c:out value="Checked"/></c:if>   />No Objection
+        </td>
         </tr>
         <tr>
         <td>By</td>

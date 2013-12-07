@@ -122,7 +122,9 @@ public List<Insuranceplan> getInsurance(String no){
 	
 	List<Insuranceplan> Insuranceplan = new ArrayList<Insuranceplan>();
     try{
-		resultSet = statement.executeQuery("select * from tbl_insuranceplan where no='"+no+"'");
+    	String cmd = "select * from tbl_insuranceplan where no='"+no+"'";
+		resultSet = statement.executeQuery(cmd);
+		System.out.println(cmd);
 		while(resultSet.next()){
 			Insuranceplan.add(new Insuranceplan(resultSet.getString("no"),resultSet.getString("insure_comp"),
 		    		resultSet.getString("addr"),

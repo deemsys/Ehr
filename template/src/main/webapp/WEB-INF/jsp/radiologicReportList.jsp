@@ -12,9 +12,11 @@
 </head>
 
 <script>
-  $(function() {
-    $( "#tabs" ).tabs();
-  });
+$(function() {
+	$( "#tabs" ).tabs({
+		event: "mouseover"
+	});
+});
   </script>
 
 <form method="post" action="">
@@ -94,8 +96,8 @@
                  
                 
                 <tr class="row2">
-                  <td>${radiologicReport.hypolorodosis_1} </td>
-                  <td> ${radiologicReport.normalcurvature_1} </td>
+                  <td>${radiologicReport.hypolorodosis_1} ${radiologicReport.hypolordosis_select1} </td>
+                  <td> ${radiologicReport.normalcurvature_1} ${radiologicReport.normalcurvature_select1}</td>
                   <td> ${radiologicReport.hyperlordosis_1} ${radiologicReport.hyperlordosis_select1}</td>
                 </tr>
                 <tr class="row1">
@@ -183,28 +185,29 @@
                  	 <td></td>
                  	 </tr>
                  	 <tr class="row1">
-                     <td>${radiologicReport.hyperkyphosis_2}&nbsp;&nbsp;
-                    ${radiologicReport.normalkyphosis_2}&nbsp;&nbsp;
-                    ${radiologicReport.hypokyphosis_2}</td>
-               	  
+                     <td>${radiologicReport.hyperkyphosis_2} ${radiologicReport.hyperkyphosis_select2}</td>
+                   <td> ${radiologicReport.normalkyphosis_2} ${radiologicReport.normalkyphosis_select2}</td>
+                    <td>${radiologicReport.hypokyphosis_2} ${radiologicReport.hypokyphosis_select2}</td>
+               	  	</tr>
+               	  	<tr class="row2">
                  	 <td> ${radiologicReport.degenerative_2} ${radiologicReport.degenerative_text2}</td>
                	   
                    		 <td>${radiologicReport.mild_2}  ${radiologicReport.moderate_2}  ${radiologicReport.severe_2}</td>
                    		 </tr>
-                   		 <tr class="row2">
+                   		 <tr class="row1">
                    		 <td> ${radiologicReport.narrowed_2}   ${radiologicReport.narrowed_text2}</td>
                    		 
                	  
                  	 <td> ${radiologicReport.schmorlsnodesat_2}  ${radiologicReport.schmorlsnodesat_text2}</td>
                  	 <td></td>
                  	 </tr>
-                 	 <tr class="row1">
+                 	 <tr class="row2">
                      <td>${radiologicReport.anterior_2} ${radiologicReport.anterior_text2}</td>
                	   
                  	 <td>${radiologicReport.subchondral_2}  ${radiologicReport.subchondral_text2}</td>
                      <td>${radiologicReport.foraminal_2} ${radiologicReport.foraminal_text2}</td>
                	   </tr>
-               	   <tr class="row2">
+               	   <tr class="row1">
                  	 <td> ${radiologicReport.osteoporosis_2} 
                      ${radiologicReport.osteoporosis_select2}</td>
                	   
@@ -212,7 +215,7 @@
                     ${radiologicReport.mild_22} &nbsp; ${radiologicReport.moderate_22} &nbsp;  ${radiologicReport.severe_22}</td>
                	   <td></td>
                	   </tr>
-               	   <tr class="row1">
+               	   <tr class="row2">
                  	 <td> ${radiologicReport.apexat_2}  ${radiologicReport.apexat_text2}</td>
                      <td>${radiologicReport.softtissueedemaof_2} ${radiologicReport.softtissueedemaof_text2}</td>
                	  
@@ -252,15 +255,18 @@
                      ${radiologicReport.views3}</td>
                	  
                  	 <td>${radiologicReport.negative_3}</td>
+                 	  <td>${radiologicReport.break_3}  ${radiologicReport.break_text3}</td>
+               	  	<td></td>
                  	 <td></td>
                  	 </tr>
                  	 <tr class="row1">
-                     <td>${radiologicReport.break_3}  ${radiologicReport.break_text3}</td>
-               	  
+                    
                  	 <td>${radiologicReport.osteoporosis_3}
                     ${radiologicReport.osteoporosis_select3}</td>
                	  
-                 	 <td>${radiologicReport.hyperkyphosis_3}  ${radiologicReport.normalkyphosis_3}  ${radiologicReport.hypokyphosis_3}  ${radiologicReport.hypokyphosos_select_3} </td>
+                 	 <td>${radiologicReport.hyperkyphosis_3} ${radiologicReport.hyperkyphosis_select3}</td>
+                 	 <td> ${radiologicReport.normalkyphosis_3} ${radiologicReport.normalkyphosis_select3}</td>
+                 	 <td> ${radiologicReport.hypokyphosis_3}  ${radiologicReport.hypokyphosos_select_3} </td>
                      </tr>
                      <tr class="row2">
                      <td>${radiologicReport.degenerative_3}  ${radiologicReport.degenerative_select3}</td>
@@ -286,6 +292,7 @@
                  	 <td>${radiologicReport.decreasedRLF_3}</td>
                  	 <td>  ${radiologicReport.decreasedLLF_3} </td>
                  	 <td> ${radiologicReport.facettropism_3}</td>
+                 	 <td></td>
                  	 </tr>
                  	 <tr class="row2">
                      <td>${radiologicReport.sacralization_3} </td>

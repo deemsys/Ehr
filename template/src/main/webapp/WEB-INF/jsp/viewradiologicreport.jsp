@@ -3,6 +3,29 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <script type="text/javascript" src="js/ajaxpaging.js"></script>
 <script src="resources/js/jquery_checkbox.js" type="text/javascript"></script>
+<script src="resources/js/jquery.ui.dialog.js" type="text/javascript"></script>
+<script src="resources/js/jquery.ui.position.js" type="text/javascript"></script>
+<!-- 
+<script>
+$(function() {
+	alert("delete");
+	
+	$( "#dialog-confirm" ).dialog({
+		resizable: false,
+		height:140,
+		modal: true,
+		buttons: {
+			"Delete all items": function() {
+				$( this ).dialog( "close" );
+			},
+			Cancel: function() {
+				$( this ).dialog( "close" );
+			}
+		}
+	});
+	
+});
+</script> -->
 <div id="right_content">
 	
     	<table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
@@ -50,7 +73,9 @@
 												<a href="#" title="" ><img src="resources/images/icons/icon_edit.png" alt="Edit" /></a><a href="<c:out value="editradiologicreport?pid=${radiologicReport.pid}"/>" style="padding-right:10px;">Edit</a>
 											<%-- 	 </c:if>
  --%>												<%--<c:if test="${currentuser.adminuser[0].deleteparticipant==1}"> --%>
-											<a href="#" title=""><img src="resources/images/icons/icon_delete.png" alt="Delete" /></a><a href="<c:out value="deleteradiologicreport?pid=${radiologicReport.pid}"/>" onclick="return confirmation()">Remove</a>
+
+ 
+											<a href="#" title=""><img src="resources/images/icons/icon_delete.png" alt="Delete" /></a><a href="<c:out value="deleteradiologicreport?pid=${radiologicReport.pid}"/>" onclick="confirmation();">Remove</a>
 											<%-- </c:if> --%>
 											</td>	
 										
@@ -63,6 +88,9 @@
 							    	</tr>
 							    	</c:if>
 							 </table>
+							<!--   <div id="dialog-confirm" title="Empty the recycle bin?">
+	<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>These items will be permanently deleted and cannot be recovered. Are you sure?</p>
+</div> -->
 							 </form>
 							 </div>
 							 </td>
@@ -116,7 +144,7 @@ slvals = null;
  */ 
 
 function confirmation() {
-	var answer = confirm("Are you Sure You Want to Delete  Patient RadiologicReport ?")
+	var answer = confirm("Are you Sure You Want to Delete  Patient RadiologicReport ?");
 	if (answer){
 		return true;
 	}

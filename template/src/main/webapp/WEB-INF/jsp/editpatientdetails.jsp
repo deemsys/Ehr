@@ -12,7 +12,26 @@
   <script src="resources/js/jquery-ui.js"></script>
 <script>
   $(function() {
-    $( "#datepicker" ).datepicker();
+	  $("#datepicker3").datepicker({changeMonth: true,changeYear: true,showOn: "button",
+			buttonImage: "resources/images/calendar.gif",
+			buttonImageOnly: true,dateFormat: 'yy-mm-dd'});
+		
+		$("#datepicker2").datepicker({changeMonth: true, changeYear: true,showOn: "button",
+			buttonImage: "resources/images/calendar.gif",
+			buttonImageOnly: true,dateFormat: 'yy-mm-dd' });
+		
+		
+		$("#datepicker1").datepicker({ changeMonth: true,changeYear: true,showOn: "button",
+			buttonImage: "resources/images/calendar.gif",
+			buttonImageOnly: true,dateFormat: 'yy-mm-dd' });
+	  $("#datepicker").datepicker({ changeYear: true,changeMonth: true,showOn: "button",
+			buttonImage: "resources/images/calendar.gif",
+			buttonImageOnly: true,dateFormat: 'yy-mm-dd' }).bind("change",function(){
+	        var minValue = $(this).val();
+	        minValue = $.datepicker.parseDate("yy-mm-dd", minValue);
+	        minValue.setDate(minValue.getDate()+1);
+	        $("#datepicker").datepicker( "option", "minDate", minValue );
+	    })
   });
   $(function() {
 	    $( "#datepicker1" ).datepicker();
@@ -114,7 +133,7 @@
                       								  </tr>
                         <tr class="row2">
                         	<td><span class="err">*</span>Date:</td>
-                        	 <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.date }" name="date" /></br><span class="err"><form:errors path="PatientDetails.date"></form:errors></span></td>
+                        	 <td class="input_txt"><input type="text" class="input_txtbx1" id="datepicker"   value="${patientDetails.date }" name="date" /></br><span class="err"><form:errors path="PatientDetails.date"></form:errors></span></td>
                         </tr> 
                         <tr class="row1">
                         	<td><span class="err">*</span>Street Address:</td>
@@ -150,7 +169,7 @@
 						
 						<tr class="row2">
                         	<td><span class="err">*</span>DateOfBirth:</td>
-                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.dateOfBirth}" name="dateOfBirth" /></br><span class="err"><form:errors path="PatientDetails.dateOfBirth"></form:errors></span></td>
+                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="datepicker1"   value="${patientDetails.dateOfBirth}" name="dateOfBirth" /></br><span class="err"><form:errors path="PatientDetails.dateOfBirth"></form:errors></span></td>
 						</tr>                        
 						
 						<tr class="row1">
@@ -349,7 +368,7 @@
                 							<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Type Of Accident:</td>
 
 				                  		
-				                  		<td>	<select name="type_Of_Accident" id="typeofaccident" class="input_cmbbx1" onclick='Checklight();'>
+				                  		<td>	<select name="type_Of_Accident" id="typeofaccident" class="input_cmbbx1" onchange='Checklight();'>
 						                  <option value="autoaccident" <c:if test="${patientDetails.type_Of_Accident=='autoaccident'}"><c:out value="selected"/></c:if>>Auto</option>
 						                  <option value="workaccident" <c:if test="${patientDetails.type_Of_Accident=='workaccident'}"><c:out value="selected"/></c:if>>Work</option>
 						                  <option value="otheraccident"  <c:if test="${patientDetails.type_Of_Accident=='otheraccident'}"><c:out value="selected"/></c:if>>Other</option>
@@ -360,7 +379,7 @@
 						           </tr>  
 						 <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date Of Accident:</td>
-                        <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.date_Of_Accident}" name="date_Of_Accident" /><span class="err"><form:errors path="PatientDetails.date_Of_Accident"></form:errors></span></td>
+                        <td class="input_txt"><input type="text" class="input_txtbx1" id="datepicker2"   value="${patientDetails.date_Of_Accident}" name="date_Of_Accident" /><span class="err"><form:errors path="PatientDetails.date_Of_Accident"></form:errors></span></td>
 				                 <td></td>                   
 						  </tr>
 						  <tr class="row1">
@@ -551,7 +570,7 @@
 					</tr>   
 					  <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Dates:</td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.dates }" name="dates" /></br><span class="err"><form:errors path="PatientDetails.dates"></form:errors></span></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="datepicker3"   value="${patientDetails.dates }" name="dates" /></br><span class="err"><form:errors path="PatientDetails.dates"></form:errors></span></td>
 				    	</tr>    		
 				                  	
 				                  	<tr class="row2">

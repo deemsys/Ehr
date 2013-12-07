@@ -12,9 +12,13 @@
  
 	
 	<script>
-  $(function() {
-    $( "#tabs" ).tabs();
-  });
+	
+	$(function() {
+		$( "#tabs" ).tabs({
+			event: "mouseover"
+		});
+	});
+
   </script>
   <script>
   $(function(){

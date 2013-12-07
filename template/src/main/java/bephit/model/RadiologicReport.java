@@ -35,7 +35,9 @@ public class RadiologicReport{
 	private String break_text1;
 	private String adi_1;
 	private String hypolorodosis_1;
+	private String hypolordosis_select1;
 	private String normalcurvature_1;
+	private String normalcurvature_select1;
 	private String hyperlordosis_1;
 	private String hyperlordosis_select1;
 	private String mcGregorslinenormal_1;
@@ -75,8 +77,11 @@ public class RadiologicReport{
 	private String views2;
 	private String negative_2;
 	private String hyperkyphosis_2;
+	private String hyperkyphosis_select2;
 	private String normalkyphosis_2;
+	private String normalkyphosis_select2;
 	private String hypokyphosis_2;
+	private String hypokyphosis_select2;
 	private String degenerative_2;
 	private String degenerative_text2;
 	private String mild_2;
@@ -113,7 +118,9 @@ public class RadiologicReport{
 	private String osteoporosis_3;
 	private String osteoporosis_select3;
 	private String hyperkyphosis_3;
+	private String hyperkyphosis_select3;
 	private String normalkyphosis_3;
+	private String normalkyphosis_select3;
 	private String hypokyphosis_3;
 	private String hypokyphosos_select_3;
 	private String degenerative_3;
@@ -291,7 +298,7 @@ public class RadiologicReport{
 	public RadiologicReport(String pid,String pname, String date, String id, String dob,
 			String views1, String negative_1, String positive_for,
 			String positive_text1, String break_1, String break_text1,
-			String adi_1, String hypolorodosis_1, String normalcurvature_1,
+			String adi_1, String hypolorodosis_1, String hypolordosis_select1,String normalcurvature_1,String normalcurvature_select1,
 			String hyperlordosis_1, String hyperlordosis_select1,
 			String mcGregorslinenormal_1, String mcGregorslineinterupted_1,
 			String degenerativejointdisease_1,
@@ -308,8 +315,8 @@ public class RadiologicReport{
 			String moderate_11, String severe_11, String apexat_1,
 			String apexat_text1, String softtissueedemaof_1,
 			String softtissueedemaof_text1, String other_1, String other_text1,
-			String views2, String negative_2, String hyperkyphosis_2,
-			String normalkyphosis_2, String hypokyphosis_2,
+			String views2, String negative_2, String hyperkyphosis_2,String hyperkyphosis_select2,
+			String normalkyphosis_2,String normalkyphosis_select2, String hypokyphosis_2,String hypokyphosis_select2,
 			String degenerative_2, String degenerative_text2, String mild_2,
 			String moderate_2, String severe_2, String narrowed_2,
 			String narrowed_text2, String schmorlsnodesat_2,
@@ -324,8 +331,8 @@ public class RadiologicReport{
 			String softtissueedemaof_text2, String other_2, String other_text2,
 			String views3, String negative_3, String break_3,
 			String break_text3, String osteoporosis_3,
-			String osteoporosis_select3, String hyperkyphosis_3,
-			String normalkyphosis_3, String hypokyphosis_3,
+			String osteoporosis_select3, String hyperkyphosis_3,String hyperkyphosis_select3,
+			String normalkyphosis_3,String normalkyphosis_select3, String hypokyphosis_3,
 			String hypokyphosos_select_3, String degenerative_3,
 			String degenerative_select3, String mild_3, String moderate_3,
 			String severe_3, String narrowed_3, String narrowed_text3,
@@ -355,7 +362,9 @@ public class RadiologicReport{
 		this.break_text1 = break_text1;
 		this.adi_1 = adi_1;
 		this.hypolorodosis_1 = hypolorodosis_1;
+		this.hypolordosis_select1 = hypolordosis_select1;
 		this.normalcurvature_1 = normalcurvature_1;
+		this.normalcurvature_select1 = normalcurvature_select1;
 		this.hyperlordosis_1 = hyperlordosis_1;
 		this.hyperlordosis_select1 = hyperlordosis_select1;
 		this.mcGregorslinenormal_1 = mcGregorslinenormal_1;
@@ -394,8 +403,11 @@ public class RadiologicReport{
 		this.views2 = views2;
 		this.negative_2 = negative_2;
 		this.hyperkyphosis_2 = hyperkyphosis_2;
+		this.hyperkyphosis_select2 = hyperkyphosis_select2;
 		this.normalkyphosis_2 = normalkyphosis_2;
+		this.normalkyphosis_select2 = normalkyphosis_select2;
 		this.hypokyphosis_2 = hypokyphosis_2;
+		this.hypokyphosis_select2 = hypokyphosis_select2;
 		this.degenerative_2 = degenerative_2;
 		this.degenerative_text2 = degenerative_text2;
 		this.mild_2 = mild_2;
@@ -430,7 +442,9 @@ public class RadiologicReport{
 		this.osteoporosis_3 = osteoporosis_3;
 		this.osteoporosis_select3 = osteoporosis_select3;
 		this.hyperkyphosis_3 = hyperkyphosis_3;
+		this.hyperkyphosis_select3 = hyperkyphosis_select3;
 		this.normalkyphosis_3 = normalkyphosis_3;
+		this.normalkyphosis_select3 = normalkyphosis_select3;
 		this.hypokyphosis_3 = hypokyphosis_3;
 		this.hypokyphosos_select_3 = hypokyphosos_select_3;
 		this.degenerative_3 = degenerative_3;
@@ -570,6 +584,22 @@ public class RadiologicReport{
 
 	public void setHypolorodosis_1(String hypolorodosis_1) {
 		this.hypolorodosis_1 = hypolorodosis_1;
+	}
+
+	public String getHypolordosis_select1() {
+		return hypolordosis_select1;
+	}
+
+	public void setHypolordosis_select1(String hypolordosis_select1) {
+		this.hypolordosis_select1 = hypolordosis_select1;
+	}
+
+	public String getNormalcurvature_select1() {
+		return normalcurvature_select1;
+	}
+
+	public void setNormalcurvature_select1(String normalcurvature_select1) {
+		this.normalcurvature_select1 = normalcurvature_select1;
 	}
 
 	public String getNormalcurvature_1() {
@@ -886,6 +916,30 @@ public class RadiologicReport{
 		this.hyperkyphosis_2 = hyperkyphosis_2;
 	}
 
+	public String getHyperkyphosis_select2() {
+		return hyperkyphosis_select2;
+	}
+
+	public void setHyperkyphosis_select2(String hyperkyphosis_select2) {
+		this.hyperkyphosis_select2 = hyperkyphosis_select2;
+	}
+
+	public String getNormalkyphosis_select2() {
+		return normalkyphosis_select2;
+	}
+
+	public void setNormalkyphosis_select2(String normalkyphosis_select2) {
+		this.normalkyphosis_select2 = normalkyphosis_select2;
+	}
+
+	public String getHypokyphosis_select2() {
+		return hypokyphosis_select2;
+	}
+
+	public void setHypokyphosis_select2(String hypokyphosis_select2) {
+		this.hypokyphosis_select2 = hypokyphosis_select2;
+	}
+
 	public String getNormalkyphosis_2() {
 		return normalkyphosis_2;
 	}
@@ -1173,6 +1227,23 @@ public class RadiologicReport{
 
 	public void setHyperkyphosis_3(String hyperkyphosis_3) {
 		this.hyperkyphosis_3 = hyperkyphosis_3;
+	}
+	
+
+	public String getHyperkyphosis_select3() {
+		return hyperkyphosis_select3;
+	}
+
+	public void setHyperkyphosis_select3(String hyperkyphosis_select3) {
+		this.hyperkyphosis_select3 = hyperkyphosis_select3;
+	}
+
+	public String getNormalkyphosis_select3() {
+		return normalkyphosis_select3;
+	}
+
+	public void setNormalkyphosis_select3(String normalkyphosis_select3) {
+		this.normalkyphosis_select3 = normalkyphosis_select3;
 	}
 
 	public String getNormalkyphosis_3() {
