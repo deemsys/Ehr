@@ -6,13 +6,13 @@
 <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet"  type="text/css" />
 <link href="<c:url value="/resources/css/home.css" />" rel="stylesheet"  type="text/css" />
 <style>
-.errorblock {
+/* .errorblock {
 	color: #ff0000;
 	background-color: #ffEEEE;
 	border: 3px solid #ff0000;
 	padding: 8px;
 	margin: 16px;
-}
+} */
 </style>
 </head>
 <body onload='document.f.j_username.focus();'>
@@ -48,7 +48,12 @@
 		        <input type="submit" class="submit-btn" value=" " name="submit">
 		        </a></li>
 		      <!-- <li><a href="#" class="forgot-password"></a></li -->
-		      <li><input name="reset" type="reset" /></li>
+		     <table><tr><td>
+		     <li><a style="text-decoration: underline;" href="doctorsignup"><font color="white">Doctor Registration</font></a></li></td>
+		    <td width="100"></td>
+		     <td align="right"> <li><a  style="text-decoration: underline;" href="signup"><font color="white">Patient Registration</font></a></li>
+		     </td></tr>
+		     </table>
 		      <!-- <li><a href="signup" style="color:ffffff">Register</a></li> --> 
 		    </ul>
 		  </div>
@@ -56,14 +61,7 @@
 		 </div>
 		 <br>
 		 <div id="role_div">
-		<table>
-		<tr>
-		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-		<td><input type="button" id="btnNext" class="submit_btn2" value="Doctor Registration" onclick="window.location.href='doctorsignup'" /></td>
-        <td>&nbsp;&nbsp;</td>
-		<td><input type="button" id="btnNext" class="submit_btn2" value="Patient Registration" onclick="window.location.href='signup'"/></td>
-		</tr>
-		</table>
+		
 		</div>   
 		
 	</form>
