@@ -60,6 +60,7 @@ $(function() {
  <div>
 	            <div class="headings altheading">
 	            <center> <h2>Editing Soap Notes</h2> </center><br/>
+	             <!-- <td><a href="doctorsearch">doctersearch</a></td> -->
 	            
 	            </div></div>
 	            

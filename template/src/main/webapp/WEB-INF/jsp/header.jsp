@@ -170,9 +170,14 @@
 							</li>
 							</c:if>
 							<c:if test="${role==1}">
-<c:choose><c:when test="${visit eq 0 }">
-							<li>
-								<a href="#" class="<c:choose><c:when test="${menu=='phyexam'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu6">
+
+<c:choose>
+<c:when test="${visit=='0'}">
+
+
+
+						<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='phyexam'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu11">
 									<span>Physical exam</span>
 								</a>
 							</li>
@@ -187,16 +192,20 @@
 								</a>
 							</li>
 							<li>
-								<a href="#" class="<c:choose><c:when test="${menu=='notes'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu10">
+								<a href="#" class="<c:choose><c:when test="${menu=='soapnotes'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu10">
 									<span>Soap Notes</span>
 								</a>
 							</li>
 </c:when>
-<c:otherwise><li>
-								<a href="#" class="<c:choose><c:when test="${menu=='notes'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu10">
+  <c:otherwise>
+        <li><a href="editsoapnotes" class="<c:choose><c:when test="${menu=='notes123'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>">
 									<span>Soap Notes</span>
 								</a>
-							</li></c:otherwise></c:choose>
+								
+							</li>
+							</c:otherwise>
+							</c:choose>
+					
 							</c:if>
 							<c:if test="${role==2}">
 							<li>
@@ -269,6 +278,12 @@
 				          </c:if> 
 
 </ul>
+<ul id="ddsubmenu11" class="ddsubmenustyle">
+
+							
+				            <li><a href="physicalexam">Physical Exam Form</a></li>
+				            <li><a href="viewphysicalexam">View Physical exam Form</a></li>
+</ul>
 
 
 <ul id="ddsubmenu6" class="ddsubmenustyle">
@@ -291,11 +306,6 @@
 
 </ul>
 
-<ul id="ddsubmenu10" class="ddsubmenustyle">
-				             <li><a href="soapnotes">SOAP Notes</a></li>
-				             <li><a href="viewsoapnotes">View Soap Notes</a></li>
-
-</ul>
 
 <ul id="ddsubmenu7" class="ddsubmenustyle">
 

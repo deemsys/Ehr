@@ -142,7 +142,6 @@ public class Hamiltonchiropractic {
 	private String georgeslo;
 	private String odonor;
 	private String odonol;
-	private String odonolo;
 	private String bakody_signr;
 	private String bakody_signl;
 	private String bakody_signlo;
@@ -298,7 +297,7 @@ public class Hamiltonchiropractic {
 			String foramin_compl, String foramin_complo, String shoulder_deprr,
 			String shoulder_deprl, String shoulder_deprlo, String georgesr,
 			String georgesl, String georgeslo, String odonor, String odonol,
-			String odonolo, String bakody_signr, String bakody_signl,
+		    String bakody_signr, String bakody_signl,
 			String bakody_signlo, String distraction_testr,
 			String distraction_testl, String distraction_testlo,
 			String valsalvar, String valsalval, String valsalvalo,
@@ -479,7 +478,6 @@ public class Hamiltonchiropractic {
 		this.georgeslo = georgeslo;
 		this.odonor = odonor;
 		this.odonol = odonol;
-		this.odonolo = odonolo;
 		this.bakody_signr = bakody_signr;
 		this.bakody_signl = bakody_signl;
 		this.bakody_signlo = bakody_signlo;
@@ -1720,16 +1718,7 @@ public class Hamiltonchiropractic {
 
 	public void setOdonol(String odonol) {
 		this.odonol = odonol;
-	}
-
-	public String getOdonolo() {
-		return odonolo;
-	}
-
-	public void setOdonolo(String odonolo) {
-		this.odonolo = odonolo;
-	}
-
+	}	
 	public String getBakody_signr() {
 		return bakody_signr;
 	}

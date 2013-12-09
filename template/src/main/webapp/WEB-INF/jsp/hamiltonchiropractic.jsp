@@ -445,9 +445,9 @@
 				                  </tr>
 				                  <tr class="row2">
 				                  <td>O'Donoghues</td>	
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="odonor" value="Right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="odonol" value="Left">Left</td>
-				                  <td class="input_txt"><input type="checkbox" name="odonolo" value="Localized">Localized</td>			                 
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="odonor" value="Right">Pain Ad/Pass</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="odonol" value="Left">Pain Ad/Pass</td>
+				                  			                 
 				                  </tr>
 				                  <tr class="row1">
 				                  <td>Bakody Sign</td>
@@ -458,8 +458,8 @@
 				                  </tr>
 				                  <tr class="row2">
 				                  <td>Distraction Test*</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="distraction_testr" value="Right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="distraction_testl" value="Left">Left</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="distraction_testr" value="Right">Relief</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="distraction_testl" value="Left">No relief</td>
 				                  <td class="input_txt"><input type="checkbox" name="distraction_testlo" value="Localized">Localized</td>
 				                 
 				                  </tr>

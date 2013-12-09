@@ -2,6 +2,7 @@
  
  
 
+import java.awt.List;
 import java.io.IOException;
 import java.security.Principal;
 import java.util.ArrayList;
@@ -170,7 +171,7 @@ public class MainController {
 	SoapnotesDAO soapDAO;
 	
 	
-	
+	static int id;
  
 	@RequestMapping(value={"/", "/welcome"}, method = RequestMethod.GET)
 	public String printWelcome(HttpSession session,HttpServletRequest request,ModelMap model, Principal principal ) {
@@ -218,7 +219,7 @@ public class MainController {
 	String emailid=request.getParameter("emailid");
 	String patientname=request.getParameter("patientname");
 	int v=doctorDAO.Checkvalid(emailid,patientname);
-			
+			//id=getpatient_id();
 		model.put("Doctorsearch", doctorsearch);
 		model.addAttribute("DoctorsearchForm",doctorsearch);
 		
@@ -227,16 +228,21 @@ public class MainController {
 		    int b=doctorDAO.CheckDoctorsearch(emailid);
 		    if(b==0)
 	     	{	
-    	     int a=doctorDAO.setDoctorsearch(doctorsearch);    
+    	     int a=doctorDAO.setDoctorsearch(doctorsearch);     	     
 		     DoctorsearchForm doctorsearchForm= new DoctorsearchForm();
 		     doctorsearchForm.setDoctorsearch(doctorDAO.getDoctorsearch());
+		     model.addAttribute("doctorsearchForm",doctorsearchForm);
+		     int d=doctorDAO.getPatientdetails(emailid);
 		     String visit=doctorDAO.getVisit(emailid);
 	          System.out.println("visit"+visit);
-	         model.addAttribute("visit",visit);
-	         model.addAttribute("doctorsearchForm",doctorsearchForm);
+	         model.addAttribute("visit",visit);	        
 	           if (visit.equals("0"))
-	               {	
-	    
+	               {
+	        	   model.addAttribute("menu","phyexam");
+	        	   /*model.addAttribute("menu","report");
+	        	   model.addAttribute("menu","iniexam");
+	        	   model.addAttribute("menu","soapnotes");	       	   
+	    */
 		           return "physicalexam";		
 		           }
 	     	}
@@ -246,7 +252,9 @@ public class MainController {
 		    	  String visit=doctorDAO.getVisit(emailid);
 		    	  System.out.println("visit"+visit);		    
 		    	  model.addAttribute("visit",visit);
-		    	  return "soapnotes";
+		    	   model.addAttribute("menu"," notes123");	
+		    	 return "editsoapnotes";
+		    	  
 		       }
 	    }
 		   
@@ -258,7 +266,12 @@ public class MainController {
 	@RequestMapping(value="/physicalexam", method = RequestMethod.GET)
 	public String physicalform(HttpSession session, ModelMap model) {
 		session.removeAttribute("physical");
-		model.addAttribute("menu", "doctor");
+		 model.addAttribute("menu","phyexam");
+  	   /*model.addAttribute("menu","report");
+  	   model.addAttribute("menu","iniexam");
+  	   model.addAttribute("menu","soapnotes"); */   
+  	  model.addAttribute("visit","0");
+	 //model.addAttribute("menu", "doctor");
 		return "physicalexam";
  
 	}
@@ -285,7 +298,7 @@ public class MainController {
 		model.addAttribute("physicalexamForm",physicalexamForm);
 		model.addAttribute("menu", "phyexam");	
 	    
-		
+		 model.addAttribute("visit","0");
 		return "viewphysicalexam";
  
 	}
@@ -300,6 +313,7 @@ public class MainController {
 		  
 		  	model.addAttribute("physicalexamForm", physicalexamForm);
 		  	model.addAttribute("menu", "phyexam");
+		  	 model.addAttribute("visit","0");
 		return "viewphysicalexam";
 	}
 	@RequestMapping(value="/physicalexamlist", method=RequestMethod.GET)
@@ -313,6 +327,7 @@ public class MainController {
 		model.addAttribute("physicalexamForm", physicalexamForm);
 		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
 		model.addAttribute("menu", "phyexam");
+		 model.addAttribute("visit","0");
 		return "physicalexamlist";
 	}
 	
@@ -326,6 +341,7 @@ public class MainController {
 	
 		model.addAttribute("physicalexamForm", physicalexamForm);
 		model.addAttribute("menu", "phyexam");
+		 model.addAttribute("visit","0");
 		return "editphysicalexam";
 	}
 	@RequestMapping(value="/updatephysicalexam", method=RequestMethod.POST)
@@ -353,6 +369,7 @@ public class MainController {
         model.addAttribute("physicalexamForm", physicalexamForm);
 	       model.addAttribute("success","true");
 	       model.addAttribute("menu", "phyexam");
+	       model.addAttribute("visit","0");
 	        return "viewphysicalexam";
 		
 	}
@@ -370,6 +387,7 @@ public class MainController {
 		//participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
 		physicalexamForm.setPhysicalexam(physicalDAO.getPhysicalexam());
         model.addAttribute("physicalexamForm", physicalexamForm);
+        model.addAttribute("visit","0");
         model.addAttribute("menu", "phyexam");
 		}
 		
@@ -378,6 +396,7 @@ public class MainController {
 	@RequestMapping(value="/hamiltonchiropractic", method = RequestMethod.GET)
 	public String hamiltonchiropractic(ModelMap model) {
 		 model.addAttribute("iniexam", "doctor");
+		 model.addAttribute("visit","0");
 	      return "hamiltonchiropractic";
 	}
 
@@ -404,7 +423,7 @@ public class MainController {
 		//System.out.println(autoaccident.getAdjustersname());
 	    
 		
-
+		 model.addAttribute("visit","0");
 		return "viewfirsthamiltonchiropractic";
  
 	}
@@ -416,7 +435,7 @@ public class MainController {
 		hamiltonchiropracticForm.setHamiltonchiropractic(hamiDAO.getHamiltonchiropractic());
 		model.addAttribute("hamiltonchiropracticForm",hamiltonchiropracticForm);
 		 model.addAttribute("menu", "iniexam");
-	
+		 model.addAttribute("visit","0");
 		return "viewfirsthamiltonchiropractic";
  
 	}
@@ -431,7 +450,7 @@ public class MainController {
 		model.addAttribute("hamiltonchiropracticForm", hamiltonchiropracticForm);
 		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
 		 model.addAttribute("menu", "iniexam");
-		
+		 model.addAttribute("visit","0");
 		return "viewhamiltonchiropractic";
 	}
 	
@@ -445,7 +464,7 @@ public class MainController {
 	
 		model.addAttribute("hamiltonchiropracticForm", hamiltonchiropracticForm);
 		 model.addAttribute("menu", "iniexam");
-		
+		 model.addAttribute("visit","0");
 		return "edithamiltonchiropractic";
 	}
 	
@@ -476,6 +495,7 @@ public class MainController {
         model.addAttribute("hamiltonchiropracticForm", hamiltonchiropracticForm);
 	       model.addAttribute("success","true");
 	       model.addAttribute("menu", "iniexam");
+	       model.addAttribute("visit","0");
 	        return "viewfirsthamiltonchiropractic";
 		
 	}
@@ -494,7 +514,7 @@ public class MainController {
 		hamiltonchiropracticForm.setHamiltonchiropractic(hamiDAO.getHamiltonchiropractic());
         model.addAttribute("hamiltonchiropracticForm", hamiltonchiropracticForm);
         model.addAttribute("menu", "iniexam");
-      
+        model.addAttribute("visit","0");
 		}
 		
 		return "viewfirsthamiltonchiropractic";
@@ -625,6 +645,7 @@ public class MainController {
 	public String radiologicreport(HttpSession session,ModelMap model) {
 		session.removeAttribute("radio");
 		model.addAttribute("menu", "report");
+		 model.addAttribute("visit","0");
 		return "radiologicreport";
 	}
 	@RequestMapping(value="/radiologicreport", method = RequestMethod.POST)
@@ -658,6 +679,7 @@ public class MainController {
 			
 	    	model.addAttribute("radiologicReportForm", radiologicReportForm);
 	    	model.addAttribute("menu", "report");
+	    	 model.addAttribute("visit","0");
 			return "viewradiologicreport";
 	 
 		}
@@ -686,7 +708,7 @@ public class MainController {
 		  //model.addAttribute("participantsDetailsForm", participantsDetailsForm);
 		  model.addAttribute("menu", "report");
 		  	model.addAttribute("radiologicReportForm", radiologicReportForm);
-        
+		  	 model.addAttribute("visit","0");
 		return "viewradiologicreport";
 	}
 	@RequestMapping(value="/radiologicReportList", method=RequestMethod.GET)
@@ -700,7 +722,9 @@ public class MainController {
 		model.addAttribute("radiologicReportForm", radiologicReportForm);
 		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
 		model.addAttribute("menu", "report");
+		 model.addAttribute("visit","0");
 		return "radiologicReportList";
+		
 	}
 	@RequestMapping(value="/editradiologicreport", method=RequestMethod.GET)
 	public String editRadiologicReport(HttpServletRequest request,@RequestParam("pid") String pid,ModelMap model,RadiologicReport report)
@@ -712,6 +736,7 @@ public class MainController {
 	
 		model.addAttribute("radiologicReportForm", radiologicReportForm);
 		model.addAttribute("menu", "report");
+		 model.addAttribute("visit","0");
 		return "editradiologicreport";
 	}
 	@RequestMapping(value="/updateradiologicreport", method=RequestMethod.POST)
@@ -739,6 +764,7 @@ public class MainController {
         model.addAttribute("radiologicReportForm", radiologicReportForm);
 	       model.addAttribute("success","true");
 	       model.addAttribute("menu", "report");
+	       model.addAttribute("visit","0");
 	        return "viewradiologicreport";
 		
 	}
@@ -755,6 +781,7 @@ public class MainController {
 		radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport());
         model.addAttribute("radiologicReportForm", radiologicReportForm);
         model.addAttribute("menu", "report");
+        model.addAttribute("visit","0");
 		}
 		
 		return "viewradiologicreport";
@@ -2419,7 +2446,8 @@ public class MainController {
 	}
 		@RequestMapping(value="/soapnotes", method = RequestMethod.GET)
 	public String soapnotes(ModelMap model) {
-			model.addAttribute("menu", "motes");
+			model.addAttribute("menu", "notes");
+			 model.addAttribute("visit","0");
 	      return "soapnotes";
 	}
 	
@@ -2451,22 +2479,33 @@ public class MainController {
     	soapnotesForm.setSoapnotes(soapDAO.getSoapnotes());
 		model.addAttribute("soapnotesForm",soapnotesForm);
 		model.addAttribute("menu", "notes");
+		 model.addAttribute("visit","0");
 		return "viewsoapnotes";
  
 	}
 	@RequestMapping(value="/editsoapnotes", method=RequestMethod.GET)
 	public String editsoapnotes(HttpServletRequest request,@RequestParam("soapid") String soapid,ModelMap model,SoapNotes soap)
 	{
-		
-		SoapnotesForm soapnotesForm = new SoapnotesForm();
-       
+		String soapnotes=request.getParameter("soapnotes");
+		SoapnotesForm soapnotesForm = new SoapnotesForm();       
         soapnotesForm.setSoapnotes(soapDAO.getSoap(soapid));
-	
+        model.addAttribute("soapnotesForm", soapnotesForm);		
+		soapnotesForm.setSoapnotes(soapDAO.getSoapid());
 		model.addAttribute("soapnotesForm", soapnotesForm);
 		model.addAttribute("menu", "notes");
-		
-		return "editsoapnotes";
-	}
+		 model.addAttribute("visit","0"); 
+        
+        if(soapDAO.getSoapid().size()>0)
+        {
+        	return "editsoapnotes";
+        	
+        }	
+        else
+        {
+           return "soapnotes";
+        }
+  
+        }
 	
 	@RequestMapping(value="/updatesoapnotes", method=RequestMethod.POST)
 	public String updatesoapnotes(HttpServletRequest request,@ModelAttribute("soapnotes") @Valid SoapNotes soapnotes,
@@ -2493,6 +2532,7 @@ public class MainController {
         model.addAttribute("soapnotesForm", soapnotesForm);
 	       model.addAttribute("success","true");
 	       model.addAttribute("menu", "notes");
+	       model.addAttribute("visit","0");
 	        return "viewsoapnotes";
 		
 	}
@@ -2508,6 +2548,7 @@ public class MainController {
 		  //model.addAttribute("participantsDetailsForm", participantsDetailsForm);
 		  	model.addAttribute("soapnotesForm", soapnotesForm);
 		  	model.addAttribute("menu", "notes");
+		  	 model.addAttribute("visit","0");
 		return "viewsoapnotes";
 	}
 	@RequestMapping(value="/soapNotesList", method=RequestMethod.GET)
@@ -2521,6 +2562,7 @@ public class MainController {
 		model.addAttribute("soapnotesForm", soapnotesForm);
 		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
 		model.addAttribute("menu", "notes");
+		 model.addAttribute("visit","0");
 		return "soapNotesList";
 	}
 	@RequestMapping(value="/deletesoapnotes", method=RequestMethod.GET)
@@ -2535,6 +2577,7 @@ public class MainController {
 		soapnotesForm.setSoapnotes(soapDAO.getSoapnotes());
         model.addAttribute("soapnotesForm", soapnotesForm);
         model.addAttribute("menu", "notes");
+        model.addAttribute("visit","0");
 		}
 		
 		return "viewsoapnotes";
