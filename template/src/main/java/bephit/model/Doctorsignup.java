@@ -1,10 +1,12 @@
 package bephit.model;
 
+import javax.validation.GroupSequence;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotEmpty;
-
+@GroupSequence({Doctorsignup.class})
 public class Doctorsignup{
+	
 	
 	@NotEmpty
 	private String doctorusername;
@@ -16,7 +18,7 @@ public class Doctorsignup{
 	private String doctorconfirm;
 	
 	@NotEmpty
-	@Pattern(regexp="^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$",message="Please Enetr a valid mail id")
+	@Pattern(regexp="^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$",message="Please Enter a valid mail id",groups=Doctorsignup.class)
 	private String doctoremail;
 	
 public Doctorsignup(){

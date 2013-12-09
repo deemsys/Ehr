@@ -14,7 +14,14 @@
 	margin: 16px;
 }
 </style>
+
 </head>
+
+	<c:if test="${not empty Error}">
+		<div class="errorblock" align="center">
+		 The user was not registered.....Please check the details.
+		</div>
+	</c:if>
 <div id="right_content">
 <form action="doctorsearch" method="POST">
 

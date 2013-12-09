@@ -6,13 +6,13 @@
 <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet"  type="text/css" />
 <link href="<c:url value="/resources/css/home.css" />" rel="stylesheet"  type="text/css" />
 <style>
-/* .errorblock {
+.errorblock {
 	color: #ff0000;
 	background-color: #ffEEEE;
 	border: 3px solid #ff0000;
 	padding: 8px;
 	margin: 16px;
-} */
+} 
 </style>
 </head>
 <body onload='document.f.j_username.focus();'>

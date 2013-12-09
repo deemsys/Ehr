@@ -39,7 +39,8 @@
 	            <tr class="row1">
 	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Username</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="username" /><br/><span class="err"><form:errors path="Signup.username"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="inp_id" name="username" />
+				 </br> <span><form:errors path="Signup.username"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
@@ -67,25 +68,25 @@
 	            <tr class="row1">
 	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Username</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="username" value="${signup.username}"/><span class="err"><form:errors path="Signup.username"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="inp_id" name="username" value="${signup.username}"/></br><span class="err"><form:errors path="Signup.username"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
 	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Password</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="password" class="input_txtbx1" id="inp_id" name="password" value="${signup.password}"/><span class="err"><form:errors path="Signup.password"></form:errors></span>
+				  <input type="password" class="input_txtbx1" id="inp_id" name="password" value="${signup.password}"/></br><span class="err"><form:errors path="Signup.password"></form:errors></span>
 				  </td>
 				  </tr>
 				   <tr class="row1">
 	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Confirm Password</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="password" class="input_txtbx1" id="inp_id" name="confirm" value="${signup.confirm}"/><span class="err"><form:errors path="Signup.confirm"></form:errors></span>
+				  <input type="password" class="input_txtbx1" id="inp_id" name="confirm" value="${signup.confirm}"/></br><span class="err"><form:errors path="Signup.confirm"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
 	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>E-mail Id</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="email" value="${signup.email}"/><span class="err"><form:errors path="Signup.email"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="inp_id" name="email" value="${signup.email}"/></br><span class="err"><form:errors path="Signup.email"></form:errors></span>
 				  </td>
 				  </tr>
 				  </table>

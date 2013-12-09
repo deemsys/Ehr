@@ -67,25 +67,25 @@
 	            <tr class="row1">
 	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Username</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="doctorusername" value="${doctorsignup.doctorusername}"/><span class="err"><form:errors path="Doctorsignup.doctorusername"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="inp_id" name="doctorusername" value="${doctorsignup.doctorusername}"/></br><span class="err"><form:errors path="Doctorsignup.doctorusername"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
 	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Password</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="password" class="input_txtbx1" id="inp_id" name="doctorpassword" value="${doctorsignup.doctorpassword}"/><span class="err"><form:errors path="Doctorsignup.doctorpassword"></form:errors></span>
+				  <input type="password" class="input_txtbx1" id="inp_id" name="doctorpassword" value="${doctorsignup.doctorpassword}"/></br><span class="err"><form:errors path="Doctorsignup.doctorpassword"></form:errors></span>
 				  </td>
 				  </tr>
 				   <tr class="row1">
 	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Confirm Password</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="password" class="input_txtbx1" id="inp_id" name="doctorconfirm" value="${doctorsignup.doctorconfirm }"/><span class="err"><form:errors path="Doctorsignup.doctorconfirm"></form:errors></span>
+				  <input type="password" class="input_txtbx1" id="inp_id" name="doctorconfirm" value="${doctorsignup.doctorconfirm }"/></br><span class="err"><form:errors path="Doctorsignup.doctorconfirm"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
 	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>E-mail Id</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="doctoremail" value="${doctorsignup.doctoremail}"/><span class="err"><form:errors path="Doctorsignup.doctoremail"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="inp_id" name="doctoremail" value="${doctorsignup.doctoremail}"/></br><span class="err"><form:errors path="Doctorsignup.doctoremail"></form:errors></span>
 				  </td>
 				  </tr>
 				  </table>
