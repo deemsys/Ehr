@@ -14,13 +14,25 @@
   </STYLE>
  <script>
  $(function() {
-           $( "#datepicker" ).datepicker();
-         });
- $(function() {
-     $( "#datepicker1" ).datepicker();
-   });
- $(function() {
-     $( "#datepicker2" ).datepicker();
+
+		$("#datepicker2").datepicker({changeMonth: true, changeYear: true,showOn: "button",
+			buttonImage: "resources/images/calendar.gif",
+			buttonImageOnly: true,dateFormat: 'dd-mm-yy' });
+		
+		
+		$("#datepicker1").datepicker({ changeMonth: true,changeYear: true,showOn: "button",
+			buttonImage: "resources/images/calendar.gif",
+			buttonImageOnly: true,dateFormat: 'dd-mm-yy' });
+		
+		
+	    $("#datepicker").datepicker({ changeYear: true,changeMonth: true,showOn: "button",
+			buttonImage: "resources/images/calendar.gif",
+			buttonImageOnly: true,dateFormat: 'dd-mm-yy' }).bind("change",function(){
+	        var minValue = $(this).val();
+	        minValue = $.datepicker.parseDate("dd-mm-yy", minValue);
+	        minValue.setDate(minValue.getDate()+1);
+	        $("#datepicker").datepicker( "option", "minDate", minValue );
+	    })
    });
 </script>
 </head>

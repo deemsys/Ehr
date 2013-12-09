@@ -2220,11 +2220,12 @@ public class MainController {
 	
 	
 	@RequestMapping(value="/editinsuranceinformation", method = RequestMethod.GET)
-	public String editinsuranceinformation(HttpServletRequest request,ModelMap model) {
-		InsuranceinformationForm insuranceinformationForm= new InsuranceinformationForm();
-    	insuranceinformationForm.setInsuranceinformation(infoDAO.getInsuranceinformation());
-		model.addAttribute("InsuranceinformationForm",insuranceinformationForm);
-		 model.addAttribute("menu", "health");
+	public String editinsuranceinformation(HttpServletRequest request,@RequestParam("number") String number,ModelMap model,Insuranceinformation insuranceinformation) {
+			
+			InsuranceinformationForm insuranceinformationForm= new InsuranceinformationForm();
+	    	insuranceinformationForm.setInsuranceinformation(infoDAO.getInsuranceinformation(number));
+			model.addAttribute("InsuranceinformationForm",insuranceinformationForm);
+			model.addAttribute("menu", "health");
 		return "editinsuranceinformation";
 	}
 	
