@@ -1,8 +1,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <jsp:include page="header.jsp"></jsp:include>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<script type="text/javascript" src="js/ajaxpaging.js"></script>
-<script src="resources/js/jquery_checkbox.js" type="text/javascript"></script>
+
 <div id="right_content">
 	
     	<table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
@@ -46,8 +45,11 @@
 											<td valign="top" align="left" width="10%">${patientDetails.state}</td>
 											 <td>
 												<a href="#" title="" ><img src="resources/images/icons/icon_edit.png" alt="Edit" /></a><a href="<c:out value="editpatientdetails?patient_id=${patientDetails.patient_id}"/>" style="padding-right:10px;">Edit</a>
-												<a href="#" title=""><img src="resources/images/icons/icon_delete.png" alt="Delete" /></a><a href="<c:out value="deletepatientdetails?patient_id=${patientDetails.patient_id}"/>" onclick="return confirmation()">Remove</a>
+												<a  href="#" title=""><img src="resources/images/icons/icon_delete.png" alt="Delete" /></a><a href="<c:out value="deletepatientdetails?patient_id=${patientDetails.patient_id}" />" onclick="return confirmation()">Remove</a>
 											</td> 
+									
+												
+											
 								</tr>
 							    	</c:forEach>
 							    	</c:if>
@@ -65,6 +67,8 @@
 		</table> 
 	</form>
 </div>
+			
+
 
 <!-- <script>
 function confirmation(val) {
@@ -104,7 +108,7 @@ function confirmation() {
 	else{
 		return false;
 	}
-}
+} 
 </script>
 <script> 
 function showCourses() {

@@ -3,12 +3,11 @@
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
- <link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
+
+   <link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
   <link rel="stylesheet" href="/resources/css/style.css" />
-   <script src="resources/js/jquery.min.js"></script> 
-  <script src="resources/js/jquery-ui.js"></script> 
-  <script src="resources/js/jquery-1.9.1.js"></script>
-  
+  <script src="resources/js/jquery.min.js"></script>
+  <script src="resources/js/jquery-ui.js"></script>
   <script>
 
 	  $(function() {
