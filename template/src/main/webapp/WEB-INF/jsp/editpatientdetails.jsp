@@ -1,4 +1,4 @@
-<%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
+<%-- <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form"%> --%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
@@ -129,7 +129,7 @@
                        								 <tr class="row1">
                         	 							<td><span class="err">*</span>Name :</td>
                         	 							<input type="hidden" class="input_txtbx1" id="inp_id" value="${patientDetails.patient_id}" name="patient_id" />
-                                 						<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.name }" name="name" /></br><span class="err"><form:errors path="PatientDetails.name"></form:errors></span></td>
+                                 						<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.name }" name="name" /></br><span class="err"><form:errors path="PatientDetails.Name"></form:errors></span></td>
                       								  </tr>
                         <tr class="row2">
                         	<td><span class="err">*</span>Date:</td>
@@ -197,9 +197,9 @@
 				                <td align="left" valign="top"> <h2 class="quck-txt"></h2>
 								<table cellpadding="0" cellspacing="0" border="0" width="100%">
 							 	<tr class="row2">
-									<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Are you:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-				                 <td><input type="radio" name="areyou" value="Student" id="studentchecked" class="input_txt" onclick="radiocheck();" <c:if test="${patientDetails.areyou=='Student'}"><c:out value="checked=checked"/></c:if>>Student
-				                  	<input type="radio" name="areyou" value="Employee" id="employeechecked" class="input_txt"  onclick="radiocheck();" <c:if test="${patientDetails.areyou=='Employee'}"><c:out value="checked=checked"/></c:if>>Employee
+									<td style="padding-right:100px;" valign="middle" align="left" class="input_txt" ><span class="err">*</span>Are you:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				                 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="areyou" value="Student" id="studentchecked" class="input_txt" onclick="radiocheck();" <c:if test="${patientDetails.areyou=='Student'}"><c:out value="checked=checked"/></c:if>>Student
+				                  	<input type="radio" name="areyou" value="Employee" id="employeechecked" class="input_txt"  onclick="radiocheck();" <c:if test="${patientDetails.areyou=='Employee'}"><c:out value="checked=checked"/></c:if>>&nbsp;Employee
 				                  </td>
 				            	</tr>
 				            	
@@ -208,8 +208,8 @@
 				            	<table cellpadding="0" cellspacing="0" border="0" width="100%">
 				            	
 				           			 <tr class="row1">
-							 			<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Student:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-				            		    <td valign="top" align="left" class="input_txt">
+							 			<td valign="middle" style="padding-right:150px;" align="left" class="input_txt"><span class="err">*</span>Student:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				            		    <td  valign="top" class="input_txt">
 				                  			<input type="radio" name="student" value="FullTime" class="input_txt" <c:if test="${patientDetails.student=='FullTime'}"><c:out value="checked=checked"/></c:if>>Full Time&nbsp;&nbsp;&nbsp;
 				                  			<input type="radio" name="student" value="PartTime" class="input_txt" <c:if test="${patientDetails.student=='PartTime'}"><c:out value="checked=checked"/></c:if>>Part Time
 				             			</td>
@@ -223,7 +223,7 @@
 								<table cellpadding="0" cellspacing="0" border="0" width="100%">
 								
 					            <tr class="row1">
-					                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Employer Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp</td>
+					                  <td valign="middle" style=" padding-right: 160px;" align="left" class="input_txt"><span class="err">*</span>Employer Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp</td>
 					                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.employerName}" name="employerName" /></br><span class="err"><form:errors path="PatientDetails.employerName"></form:errors></span></td>
 								</tr> 
 				   			    <tr class="row2">
