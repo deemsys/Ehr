@@ -231,6 +231,8 @@ return 0;
     		 statement.execute(cmd3);
     		 System.out.println(cmd3);
     		
+    		 
+    		/*String cmd4="update tbl_soapnotes SET patient_no='"+patient_no+"' WHERE emailid='"+emailid+"'";*/
 	 	}
     		 catch(Exception e){
     		    	System.out.println(e.toString());
@@ -246,6 +248,46 @@ return 0;
 		return 0;
 	
 	}
+	public String getPatientid(String emailid)
+	{
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		String patient_id="";
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		try{
+			 
+    		 String cmd2="SELECT Patient_id as patient_id from patient_details WHERE emailid='"+emailid+"'";
+    		 resultSet=statement.executeQuery(cmd2);
+    		 System.out.println(cmd2);
+    		 while(resultSet.next())
+    		 {              
+    			patient_id=resultSet.getString("patient_id"); 
+    		 }   		
+    		System.out.print(patient_id);
+    		 
+    		/*String cmd4="update tbl_soapnotes SET patient_no='"+patient_no+"' WHERE emailid='"+emailid+"'";*/
+	 	}
+    		 catch(Exception e){
+    		    	System.out.println(e.toString());
+    		    	releaseStatement(statement);
+    		    	releaseConnection(con);
+    		    	//return 0;
+    		    }finally{
+    		     	releaseStatement(statement);
+    		    	releaseConnection(con);	    
+    		    	
+    		    }
+    		 
+		return patient_id;
+	
+	}
+	
 	public int getUpdation(String emailid)
 	{
 		Connection con = null;
@@ -266,17 +308,18 @@ return 0;
 	    	 String cmd1="UPDATE `tbl_doctorsearch` SET visit='1' where emailid='"+emailid+"'";
 	    	 System.out.println(cmd1);
 	    	 statement.execute(cmd1);
-	    	 String cmd2="SELECT patient_id from `tbl_doctorsearch` where emailid='"+emailid+"'";
+	    	/* String cmd2="SELECT patient_id from `tbl_doctorsearch` where emailid='"+emailid+"'";
 	    	 resultSet=statement.executeQuery(cmd2);
 	    	 String patient_id="";
 	    		if(resultSet.next())
 	    		{
 	    		patient_id=resultSet.getString("patient_id");
 	    		}
-	    		 System.out.println(cmd2);
-	    String cmd_role="insert into tbl_soapnotes(`patient_id`) values('"+patient_id+"')";
+	    		 System.out.println(cmd2);*/
+	    		 
+	    /*String cmd_role="insert into tbl_soapnotes(`patient_id`) values('"+patient_id+"')";
 	    		 System.out.println(cmd_role);
-		    	 statement.execute(cmd_role);
+		    	 statement.execute(cmd_ro*/
 	    	 
 	    	 flag=1;
 	    }

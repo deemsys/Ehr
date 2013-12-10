@@ -501,13 +501,13 @@
 				                  </tr>
 			                     <tr class="row1">
 				                  <td width="84%" valign="middle" align="left">Adam's Test</td>
-				                  <td width="84%" valign="middle" align="left">${hamiltonchiropractic.adams_testr} Hump Remains</td>
-				                 <td width="84%" valign="middle" align="left"> ${hamiltonchiropractic.adams_testl}Hump Dissap</td>				                  			                 
+				                  <td width="84%" valign="middle" align="left">${hamiltonchiropractic.adams_testr} </td>
+				                 <td width="84%" valign="middle" align="left"> ${hamiltonchiropractic.adams_testl}</td>				                  			                 
 				                  </tr>
          <tr class="row2">
 				                  <td width="84%" valign="middle" align="left">Sheppal Sign</td>
-				                    <td width="84%" valign="middle" align="left">${hamiltonchiropractic.sheppal_signr} Hump Remains</td>
-				                 <td width="84%" valign="middle" align="left"> ${hamiltonchiropractic.sheppal_signl}Hump Dissap</td>				                  			                    			                 
+				                    <td width="84%" valign="middle" align="left">${hamiltonchiropractic.sheppal_signr} </td>
+				                 <td width="84%" valign="middle" align="left"> ${hamiltonchiropractic.sheppal_signl}</td>				                  			                    			                 
 				                  </tr>
    <tr class="row1">
 				                  <td width="84%" valign="middle" align="left">Soto Hall</td>

@@ -460,8 +460,6 @@
 				                  <td>Distraction Test*</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="distraction_testr" value="Right">Relief</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="distraction_testl" value="Left">No relief</td>
-				                  <td class="input_txt"><input type="checkbox" name="distraction_testlo" value="Localized">Localized</td>
-				                 
 				                  </tr>
 				                  <tr class="row1">
 				                  <td>Valsalva 	</td>
@@ -535,8 +533,8 @@
 				                  </tr>
          <tr class="row2">
 				                  <td>Sheppal Sign</td>
-				                    <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="sheppal_signr" value="Hump Remains">Hump Remains</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="sheppal_signl" value="Hump Dissap">Hump Dissap</td>				                  			                    			                 
+				                    <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="sheppal_signr" value="Pain When Bending towards Thoracic Lesison">Pain When Bending towards Thoracic Lesison</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="sheppal_signl" value="Pain When Bending away from Thoracic Leison">Pain When Bending away from Thoracic Leison</td>				                  			                    			                 
 				                  </tr>
    <tr class="row1">
 				                  <td>Soto Hall</td>
@@ -798,8 +796,8 @@
 				                  </tr>
 				                   <tr class="row1">
 				                  <td>Allens</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="allensr" value="Right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="allensl" value="Left">Left</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="allensr" value=" Blood refilling capacity in radial "> Blood refilling capacity in radial </td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="allensl" value="Ulnar artery bilaterally">Ulnar artery bilaterally</td>
 				                 
 				                  </tr>
 				                   <tr class="row2">

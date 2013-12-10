@@ -538,8 +538,8 @@
 				                  </tr>
          <tr class="row2">
 				                  <td>Sheppal Sign</td>
-				                    <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="sheppal_signr" value="Hump Remains" <c:if test="${hamiltonchiropractic.sheppal_signr=='Hump Remains'}"><c:out value="Checked"/></c:if>>Hump Remains</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="sheppal_signl" value="Hump Dissap" <c:if test="${hamiltonchiropractic.sheppal_signl=='Hump Dissap'}"><c:out value="Checked"/></c:if>>Hump Dissap</td>				                  			                    			                 
+				                    <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="sheppal_signr" value="Pain When Bending towards Thoracic Lesison" <c:if test="${hamiltonchiropractic.sheppal_signr=='Pain When Bending towards Thoracic Lesison'}"><c:out value="Checked"/></c:if>>Hump Remains</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="sheppal_signl" value="Pain When Bending away from Thoracic Leison" <c:if test="${hamiltonchiropractic.sheppal_signl=='Pain When Bending away from Thoracic Leison'}"><c:out value="Checked"/></c:if>>Hump Dissap</td>				                  			                    			                 
 				                  </tr>
    <tr class="row1">
 				                  <td>Soto Hall</td>
@@ -801,8 +801,8 @@
 				                  </tr>
 				                   <tr class="row1">
 				                  <td>Allens</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="allensr" value="Right" <c:if test="${hamiltonchiropractic.allensr=='Right'}"><c:out value="Checked"/></c:if>>Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="allensl" value="Left" <c:if test="${hamiltonchiropractic.allensl=='Left'}"><c:out value="Checked"/></c:if>>Left</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="allensr" value="Blood refilling capacity in radial" <c:if test="${hamiltonchiropractic.allensr=='Blood refilling capacity in radial'}"><c:out value="Checked"/></c:if>>Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="allensl" value="Ulnar artery bilaterally" <c:if test="${hamiltonchiropractic.allensl=='Ulnar artery bilaterally'}"><c:out value="Checked"/></c:if>>Left</td>
 				                 
 				                  </tr>
 				                   <tr class="row2">

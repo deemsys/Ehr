@@ -1,6 +1,7 @@
 package bephit.model;
 
 public class SoapNotes {
+	private String patient_id;
 	private String soapid;
 	private String pname;
 	private String headache;
@@ -35,6 +36,7 @@ public class SoapNotes {
 	private String rightfootpain;
 	private String leftfootpain;
 	private String date1;
+	private String painscale;
 	private String diagnosis1;
 	private String diagnosis2;
 	private String diagnosis3;
@@ -95,7 +97,7 @@ public class SoapNotes {
 	public SoapNotes(){
 	}
 
-	public SoapNotes(String soapid, String pname, String headache,
+	public SoapNotes(String patient_id,String soapid, String pname, String headache,
 			String neckpain, String rightshoulderpain, String leftshoulderpain,
 			String chestpain, String rightarmpain, String leftarmpain,
 			String rightelbowpain, String leftelbowpain, String rightwristpain,
@@ -106,7 +108,7 @@ public class SoapNotes {
 			String leftgluteulpain, String rightlegpain, String leftlegpain,
 			String rightkneepain, String leftkneepain, String rightanklepain,
 			String leftanklepain, String rightfootpain, String leftfootpain,
-			String date1, String diagnosis1, String diagnosis2,
+			String date1,String painscale, String diagnosis1, String diagnosis2,
 			String diagnosis3, String diagnosis4, String e1e2, String offwork1,
 			String reeval1, String date2, String improved1, String worsened1,
 			String fixation1, String notimproved1, String scsm1, String date3,
@@ -123,6 +125,7 @@ public class SoapNotes {
 			String improved8, String worsened8, String fixation8,
 			String notimproved8, String scsm8, String sign) {
 		super();
+		this.patient_id=patient_id;
 		this.soapid = soapid;
 		this.pname = pname;
 		this.headache = headache;
@@ -157,6 +160,7 @@ public class SoapNotes {
 		this.rightfootpain = rightfootpain;
 		this.leftfootpain = leftfootpain;
 		this.date1 = date1;
+		this.painscale=painscale;
 		this.diagnosis1 = diagnosis1;
 		this.diagnosis2 = diagnosis2;
 		this.diagnosis3 = diagnosis3;
@@ -213,6 +217,15 @@ public class SoapNotes {
 		this.notimproved8 = notimproved8;
 		this.scsm8 = scsm8;
 		this.sign = sign;
+	}
+
+
+	public String getPatient_id() {
+		return patient_id;
+	}
+
+	public void setPatient_id(String patient_id) {
+		this.patient_id = patient_id;
 	}
 
 	public String getSoapid() {
@@ -485,6 +498,14 @@ public class SoapNotes {
 
 	public void setDate1(String date1) {
 		this.date1 = date1;
+	}
+
+	public String getPainscale() {
+		return painscale;
+	}
+
+	public void setPainscale(String painscale) {
+		this.painscale = painscale;
 	}
 
 	public String getDiagnosis1() {

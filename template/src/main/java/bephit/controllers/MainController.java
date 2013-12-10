@@ -93,7 +93,7 @@ import bephit.model.*;
  
  
 @Controller
-@SessionAttributes({"physical","radio","waiver","info","consent","minor","hard","screen","medical","assignment","hippa","staff","veri","patient","role","signup","doctorsignup"})
+@SessionAttributes({"physical","radio","waiver","info","consent","minor","hard","screen","medical","assignment","hippa","staff","veri","patient","role","signup","doctorsignup","patientid"})
 public class MainController {
 	
 	RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
@@ -238,6 +238,9 @@ public class MainController {
 	         model.addAttribute("visit",visit);	        
 	           if (visit.equals("0"))
 	               {
+	        	   String patientid=doctorDAO.getPatientid(emailid);
+	        	   request.getSession().setAttribute("patientid",patientid);
+	        	   System.out.println("sessionpatientid"+patientid);
 	        	   model.addAttribute("menu","phyexam");
 	        	   /*model.addAttribute("menu","report");
 	        	   model.addAttribute("menu","iniexam");
@@ -247,7 +250,7 @@ public class MainController {
 		           }
 	     	}
 		      else
-		      {
+		      {		    	  
 		    	  int d=doctorDAO.getUpdation(emailid);
 		    	  String visit=doctorDAO.getVisit(emailid);
 		    	  System.out.println("visit"+visit);		    

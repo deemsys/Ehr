@@ -147,7 +147,6 @@ public class Hamiltonchiropractic {
 	private String bakody_signlo;
 	private String distraction_testr;
 	private String distraction_testl;
-	private String distraction_testlo;
 	private String valsalvar;
 	private String valsalval;
 	private String valsalvalo;
@@ -299,7 +298,7 @@ public class Hamiltonchiropractic {
 			String georgesl, String georgeslo, String odonor, String odonol,
 		    String bakody_signr, String bakody_signl,
 			String bakody_signlo, String distraction_testr,
-			String distraction_testl, String distraction_testlo,
+			String distraction_testl, 
 			String valsalvar, String valsalval, String valsalvalo,
 			String spinal_percuss, String gripdynamomright,
 			String gripdynamomleft, String adsonsr, String adsonsl,
@@ -483,7 +482,6 @@ public class Hamiltonchiropractic {
 		this.bakody_signlo = bakody_signlo;
 		this.distraction_testr = distraction_testr;
 		this.distraction_testl = distraction_testl;
-		this.distraction_testlo = distraction_testlo;
 		this.valsalvar = valsalvar;
 		this.valsalval = valsalval;
 		this.valsalvalo = valsalvalo;
@@ -1759,14 +1757,7 @@ public class Hamiltonchiropractic {
 		this.distraction_testl = distraction_testl;
 	}
 
-	public String getDistraction_testlo() {
-		return distraction_testlo;
-	}
-
-	public void setDistraction_testlo(String distraction_testlo) {
-		this.distraction_testlo = distraction_testlo;
-	}
-
+	
 	public String getValsalvar() {
 		return valsalvar;
 	}

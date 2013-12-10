@@ -3,9 +3,8 @@
 <html>
 <head>
 
-
-<link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
- <link rel="stylesheet" href="/resources/css/style.css" />
+ <link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
+  <link rel="stylesheet" href="/resources/css/style.css" />
  <script src="resources/js/jquery.min.js"></script> 
  <script src="resources/js/jquery-ui.js"></script>
  <script src="resources/js/jquey-1.9.1.js"></script>
@@ -63,8 +62,9 @@ $(function() {
         $( "#amount" ).val(+ ui.value );
       }
     });
-    $( "#amount" ).val( + $( "#slider" ).slider( "value" ) );
+    $( "#amount" ).val(+ $( "#slider" ).slider( "value" ) );
   });
+
 </script>
 </head>
  <body>
@@ -78,7 +78,7 @@ $(function() {
 	            <center> <h2>SOAP NOTES</h2> </center><br/>
 	            
 	            </div>
-	            
+	            <input type="hidden" name="patient_id" value="${patientid}">
 	    <div class="contentbox">
           <table cellpadding="0" cellspacing="0" border="0" width="98%">
            
@@ -159,7 +159,7 @@ $(function() {
  <td></td>
  <td>
 <label for="amount"><b>Pain Scale:</b></label>
-	 <input type="text" id="amount" style="border:0; color:#f6931f; font-weight:bold;" name="Painscale" />&nbsp;&nbsp;&nbsp;
+	 <input type="text" id="amount" style="border:0; color:#f6931f; font-weight:bold;" name="painscale" />&nbsp;&nbsp;&nbsp;
  <div id="slider"></div></td>
  <td>
  
