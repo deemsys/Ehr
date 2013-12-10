@@ -256,7 +256,22 @@ public class MainController {
 		    	  System.out.println("visit"+visit);		    
 		    	  model.addAttribute("visit",visit);
 		    	   model.addAttribute("menu"," notes123");	
-		    	 return "editsoapnotes";
+		    	   String patientid=doctorDAO.getPatientid(emailid);
+		    	   if(soapDAO.getSoapid(patientid).size()>0)
+		           { 
+		    		   SoapnotesForm soapnotesForm = new SoapnotesForm();       
+		    	        soapnotesForm.setSoapnotes(soapDAO.getSoapid(patientid));
+		    	        model.addAttribute("soapnotesForm", soapnotesForm);		
+		    			
+		           	return "editsoapnotes";
+		           	
+		           }	
+		           else
+		           {
+		              return "soapnotes";
+		           }
+		     
+		     
 		    	  
 		       }
 	    }
@@ -2493,27 +2508,19 @@ public class MainController {
 		SoapnotesForm soapnotesForm = new SoapnotesForm();       
         soapnotesForm.setSoapnotes(soapDAO.getSoap(soapid));
         model.addAttribute("soapnotesForm", soapnotesForm);		
-		soapnotesForm.setSoapnotes(soapDAO.getSoapid());
+		/*soapnotesForm.setSoapnotes(soapDAO.getSoapid());*/
 		model.addAttribute("soapnotesForm", soapnotesForm);
 		model.addAttribute("menu", "notes");
 		 model.addAttribute("visit","0"); 
         
-        if(soapDAO.getSoapid().size()>0)
-        {
-        	return "editsoapnotes";
-        	
-        }	
-        else
-        {
-           return "soapnotes";
-        }
-  
+        return soapnotes;
         }
 	
 	@RequestMapping(value="/updatesoapnotes", method=RequestMethod.POST)
 	public String updatesoapnotes(HttpServletRequest request,@ModelAttribute("soapnotes") @Valid SoapNotes soapnotes,
 			BindingResult result,ModelMap model,Principal principal)
 	{
+		soapnotes.getPatient_id();
 		if (result.hasErrors())
 		{
 			SoapnotesForm soapnotesForm = new SoapnotesForm();
@@ -2525,7 +2532,7 @@ public class MainController {
 		        return "editsoapnotes";
 		}
 		System.out.println("soapid"+soapnotes.getSoapid());
-		int status = soapDAO.updatesoapnotes(soapnotes, soapnotes.getSoapid(), principal.getName());
+		int status = soapDAO.updatesoapnotes(soapnotes, soapnotes.getPatient_id(), principal.getName());
 		System.out.println(status);
 		
 		SoapnotesForm soapnotesForm = new SoapnotesForm();

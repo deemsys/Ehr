@@ -73,6 +73,7 @@ $(function() {
 <table align="right">
     <tr class="row1">
        <td><h2>patient:</h2></td>
+             <input type="hidden" value="${soapnotes.patient_id }" name="patient_id" />
               <input type="hidden" class="input_txtbx1" id="inp_id" value="${soapnotes.soapid}" name="soapid" />
               <td><input type="text" class="input_txtbx1" name="pname" value="${soapnotes.pname}" /></td>
              </tr>

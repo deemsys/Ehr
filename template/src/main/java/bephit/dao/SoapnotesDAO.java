@@ -136,7 +136,7 @@ public List<SoapNotes> getSoap(String soapid){
 	
 
     }
-public List<SoapNotes> getSoapid(){
+public List<SoapNotes> getSoapid(String patient_id){
 	Connection con = null;
 	Statement statement = null;
 	ResultSet resultSet = null;
@@ -146,16 +146,16 @@ public List<SoapNotes> getSoapid(){
 	} catch (SQLException e1) {
 		e1.printStackTrace();
 	}
-	String patient_id="";
+	
 	List<SoapNotes> soapnotes = new ArrayList<SoapNotes>();
     try{
-    	String cmd="select patient_id from tbl_soapnotes where tbl_doctorsearch.patient_id=tbl_soapnotes.patient_id ";
+    	/*String cmd="select patient_id from tbl_soapnotes where tbl_doctorsearch.patient_id=tbl_soapnotes.patient_id ";
     	System.out.println(cmd);
 		resultSet = statement.executeQuery(cmd);
     	while(resultSet.next())
     	{
     		patient_id=resultSet.getString("patient_id");
-		}
+		}*/
     	String cmd1="select * from tbl_soapnotes where patient_id='"+patient_id+"'";
     	System.out.println(patient_id);
 		resultSet = statement.executeQuery(cmd1);
@@ -177,7 +177,7 @@ public List<SoapNotes> getSoapid(){
     }
     return soapnotes;
     }
-public int updatesoapnotes(SoapNotes soapnotes,String soapid,String admin)
+public int updatesoapnotes(SoapNotes soapnotes,String patient_id,String admin)
 {
 	Connection con = null;
 	Statement statement = null;
@@ -191,8 +191,9 @@ public int updatesoapnotes(SoapNotes soapnotes,String soapid,String admin)
     try{
     	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
     	 Date date = new Date();
+    	 System.out.println("updatepatient_id"+patient_id);
     	 //System.out.println(dateFormat.format(date));
-    	String cmd="UPDATE tbl_soapnotes SET pname='"+soapnotes.getPname()+"',headache='"+soapnotes.getHeadache()+"',neckpain='"+soapnotes.getNeckpain()+"',rightshoulderpain='"+soapnotes.getRightshoulderpain()+"',leftshoulderpain='"+soapnotes.getLeftshoulderpain()+"',chestpain='"+soapnotes.getChestpain()+"',rightarmpain='"+soapnotes.getRightarmpain()+"',rightelbowpain='"+soapnotes.getRightelbowpain()+"',leftelbowpain='"+soapnotes.getLeftelbowpain()+"',rightwristpain='"+soapnotes.getRightwristpain()+"',leftwristpain='"+soapnotes.getLeftwristpain()+"',righthandpain='"+soapnotes.getRighthandpain()+"',lefthandpain='"+soapnotes.getLefthandpain()+"',mbp='"+soapnotes.getMbp()+"',rightribpain='"+soapnotes.getRightribpain()+"',leftribpain='"+soapnotes.getLeftribpain()+"',lbp='"+soapnotes.getLbp()+"',rightsipain='"+soapnotes.getRightsipain()+"',leftsipain='"+soapnotes.getLeftsipain()+"',righthippain='"+soapnotes.getRighthippain()+"',lefthippain='"+soapnotes.getLefthippain()+"',rightgluteulpain='"+soapnotes.getRightgluteulpain()+"',leftgluteulpain='"+soapnotes.getLeftgluteulpain()+"',rightlegpain='"+soapnotes.getRightlegpain()+"',leftlegpain='"+soapnotes.getLeftlegpain()+"',rightkneepain='"+soapnotes.getRightkneepain()+"',leftkneepain='"+soapnotes.getLeftkneepain()+"',rightanklepain='"+soapnotes.getRightanklepain()+"',leftanklepain='"+soapnotes.getLeftanklepain()+"',rightfootpain='"+soapnotes.getRightfootpain()+"',leftfootpain='"+soapnotes.getLeftfootpain()+"',date1='"+soapnotes.getDate1()+"',diagnosis1='"+soapnotes.getDiagnosis1()+"',diagnosis2='"+soapnotes.getDiagnosis2()+"',diagnosis3='"+soapnotes.getDiagnosis3()+"',diagnosis4='"+soapnotes.getDiagnosis4()+"',e1e2='"+soapnotes.getE1e2()+"',offwork1='"+soapnotes.getOffwork1()+"',reeval1='"+soapnotes.getReeval1()+"',date2='"+soapnotes.getDate2()+"',improved1='"+soapnotes.getImproved1()+"',worsened1='"+soapnotes.getWorsened1()+"',fixation1='"+soapnotes.getFixation1()+"',notimproved1='"+soapnotes.getNotimproved1()+"',scsm1='"+soapnotes.getScsm1()+"',date3='"+soapnotes.getDate3()+"',improved2='"+soapnotes.getImproved2()+"',worsened2='"+soapnotes.getWorsened2()+"',fixation2='"+soapnotes.getFixation2()+"',notimproved2='"+soapnotes.getNotimproved2()+"',scsm2='"+soapnotes.getScsm2()+"',date4='"+soapnotes.getDate4()+"',improved3='"+soapnotes.getImproved3()+"',worsened3='"+soapnotes.getWorsened3()+"',fixation3='"+soapnotes.getFixation3()+"',notimproved3='"+soapnotes.getNotimproved3()+"',scsm3='"+soapnotes.getScsm3()+"',date5='"+soapnotes.getDate5()+"',improved4='"+soapnotes.getImproved4()+"',worsened4='"+soapnotes.getWorsened4()+"',fixation4='"+soapnotes.getFixation4()+"',notimproved4='"+soapnotes.getNotimproved4()+"',scsm4='"+soapnotes.getScsm4()+"',date6='"+soapnotes.getDate6()+"',improved5='"+soapnotes.getImproved5()+"',worsened5='"+soapnotes.getWorsened5()+"',fixation5='"+soapnotes.getFixation5()+"',notimproved5='"+soapnotes.getNotimproved5()+"',scsm5='"+soapnotes.getScsm5()+"',date7='"+soapnotes.getDate7()+"',improved6='"+soapnotes.getImproved6()+"',worsened6='"+soapnotes.getWorsened6()+"',fixation6='"+soapnotes.getFixation6()+"',notimproved6='"+soapnotes.getNotimproved6()+"',scsm6='"+soapnotes.getScsm6()+"',date8='"+soapnotes.getDate8()+"',improved7='"+soapnotes.getImproved7()+"',worsened7='"+soapnotes.getWorsened7()+"',fixation7='"+soapnotes.getFixation7()+"',notimproved7='"+soapnotes.getNotimproved7()+"',scsm7='"+soapnotes.getScsm7()+"',date9='"+soapnotes.getDate9()+"',improved8='"+soapnotes.getImproved8()+"',worsened8='"+soapnotes.getWorsened8()+"',fixation8='"+soapnotes.getFixation8()+"',notimproved8='"+soapnotes.getNotimproved8()+"',scsm8='"+soapnotes.getScsm8()+"',sign='"+soapnotes.getSign()+"' WHERE soapid='"+soapid+"';";
+    	String cmd="UPDATE tbl_soapnotes SET pname='"+soapnotes.getPname()+"',headache='"+soapnotes.getHeadache()+"',neckpain='"+soapnotes.getNeckpain()+"',rightshoulderpain='"+soapnotes.getRightshoulderpain()+"',leftshoulderpain='"+soapnotes.getLeftshoulderpain()+"',chestpain='"+soapnotes.getChestpain()+"',rightarmpain='"+soapnotes.getRightarmpain()+"',rightelbowpain='"+soapnotes.getRightelbowpain()+"',leftelbowpain='"+soapnotes.getLeftelbowpain()+"',rightwristpain='"+soapnotes.getRightwristpain()+"',leftwristpain='"+soapnotes.getLeftwristpain()+"',righthandpain='"+soapnotes.getRighthandpain()+"',lefthandpain='"+soapnotes.getLefthandpain()+"',mbp='"+soapnotes.getMbp()+"',rightribpain='"+soapnotes.getRightribpain()+"',leftribpain='"+soapnotes.getLeftribpain()+"',lbp='"+soapnotes.getLbp()+"',rightsipain='"+soapnotes.getRightsipain()+"',leftsipain='"+soapnotes.getLeftsipain()+"',righthippain='"+soapnotes.getRighthippain()+"',lefthippain='"+soapnotes.getLefthippain()+"',rightgluteulpain='"+soapnotes.getRightgluteulpain()+"',leftgluteulpain='"+soapnotes.getLeftgluteulpain()+"',rightlegpain='"+soapnotes.getRightlegpain()+"',leftlegpain='"+soapnotes.getLeftlegpain()+"',rightkneepain='"+soapnotes.getRightkneepain()+"',leftkneepain='"+soapnotes.getLeftkneepain()+"',rightanklepain='"+soapnotes.getRightanklepain()+"',leftanklepain='"+soapnotes.getLeftanklepain()+"',rightfootpain='"+soapnotes.getRightfootpain()+"',leftfootpain='"+soapnotes.getLeftfootpain()+"',date1='"+soapnotes.getDate1()+"',painscale='"+soapnotes.getPainscale()+"',diagnosis1='"+soapnotes.getDiagnosis1()+"',diagnosis2='"+soapnotes.getDiagnosis2()+"',diagnosis3='"+soapnotes.getDiagnosis3()+"',diagnosis4='"+soapnotes.getDiagnosis4()+"',e1e2='"+soapnotes.getE1e2()+"',offwork1='"+soapnotes.getOffwork1()+"',reeval1='"+soapnotes.getReeval1()+"',date2='"+soapnotes.getDate2()+"',improved1='"+soapnotes.getImproved1()+"',worsened1='"+soapnotes.getWorsened1()+"',fixation1='"+soapnotes.getFixation1()+"',notimproved1='"+soapnotes.getNotimproved1()+"',scsm1='"+soapnotes.getScsm1()+"',date3='"+soapnotes.getDate3()+"',improved2='"+soapnotes.getImproved2()+"',worsened2='"+soapnotes.getWorsened2()+"',fixation2='"+soapnotes.getFixation2()+"',notimproved2='"+soapnotes.getNotimproved2()+"',scsm2='"+soapnotes.getScsm2()+"',date4='"+soapnotes.getDate4()+"',improved3='"+soapnotes.getImproved3()+"',worsened3='"+soapnotes.getWorsened3()+"',fixation3='"+soapnotes.getFixation3()+"',notimproved3='"+soapnotes.getNotimproved3()+"',scsm3='"+soapnotes.getScsm3()+"',date5='"+soapnotes.getDate5()+"',improved4='"+soapnotes.getImproved4()+"',worsened4='"+soapnotes.getWorsened4()+"',fixation4='"+soapnotes.getFixation4()+"',notimproved4='"+soapnotes.getNotimproved4()+"',scsm4='"+soapnotes.getScsm4()+"',date6='"+soapnotes.getDate6()+"',improved5='"+soapnotes.getImproved5()+"',worsened5='"+soapnotes.getWorsened5()+"',fixation5='"+soapnotes.getFixation5()+"',notimproved5='"+soapnotes.getNotimproved5()+"',scsm5='"+soapnotes.getScsm5()+"',date7='"+soapnotes.getDate7()+"',improved6='"+soapnotes.getImproved6()+"',worsened6='"+soapnotes.getWorsened6()+"',fixation6='"+soapnotes.getFixation6()+"',notimproved6='"+soapnotes.getNotimproved6()+"',scsm6='"+soapnotes.getScsm6()+"',date8='"+soapnotes.getDate8()+"',improved7='"+soapnotes.getImproved7()+"',worsened7='"+soapnotes.getWorsened7()+"',fixation7='"+soapnotes.getFixation7()+"',notimproved7='"+soapnotes.getNotimproved7()+"',scsm7='"+soapnotes.getScsm7()+"',date9='"+soapnotes.getDate9()+"',improved8='"+soapnotes.getImproved8()+"',worsened8='"+soapnotes.getWorsened8()+"',fixation8='"+soapnotes.getFixation8()+"',notimproved8='"+soapnotes.getNotimproved8()+"',scsm8='"+soapnotes.getScsm8()+"',sign='"+soapnotes.getSign()+"' WHERE patient_id='"+patient_id+"';";
     			
     			String Desc="Update soapnotes "+soapnotes.getPname();
     	System.out.println(cmd);
