@@ -78,8 +78,10 @@
  <bean id="SoapnotesDAO" class="bephit.dao.SoapnotesDAO">
     	<property name="dataSource" ref="dataSource" />
     </bean>
- <bean id="LumbopelvicexamDAO" class="bephit.dao.LumbopelvicexamDAO">
+     <bean id="HipexamDAO" class="bephit.dao.HipexamDAO">
     	<property name="dataSource" ref="dataSource" />
     </bean>
- 
+ <bean id="LumbopelvicexamDAO" class="bephit.dao.LumbopelvicexamDAO">
+    	<property name="dataSource" ref="dataSource" />
+    </bean> 
 </beans>
