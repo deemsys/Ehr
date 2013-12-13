@@ -35,6 +35,7 @@ import bephit.dao.HippaDAO;
 import bephit.dao.InsuranceinformationDAO;
 import bephit.dao.InsuranceplanDAO;
 import bephit.dao.InsuranceverificationDAO;
+import bephit.dao.LumbopelvicexamDAO;
 import bephit.dao.MainDAO;
 import bephit.dao.MedicalDAO;
 import bephit.dao.MoretestDAO;
@@ -67,6 +68,7 @@ import bephit.forms.HippaPrivacyForm;
 import bephit.forms.InsuranceinformationForm;
 import bephit.forms.InsuranceplanForm;
 import bephit.forms.InsuranceverificationForm;
+import bephit.forms.LumbopelvicexamForm;
 import bephit.forms.MedicalRecordsForm;
 import bephit.forms.MoretestForm;
 
@@ -93,7 +95,29 @@ import bephit.model.*;
  
 @Controller
 public class DoctorController {
+	@Autowired
+	LumbopelvicexamDAO lumboDAO;
+	
+	@RequestMapping(value="/lumbopelvicexam", method = RequestMethod.GET)
+	public String searchform(HttpSession session, ModelMap model) {
+		
+		
+		return "lumbopelvicexam";
+ 
+	}
 
+	@RequestMapping(value="/lumbopelvicexam", method = RequestMethod.POST)
+	public String insert_lumbopelvicexam(HttpSession session,@ModelAttribute("Lumbopelvicexam")  @Valid Lumbopelvicexam lumbopelvicexam,BindingResult result,ModelMap model) {
+		
+		model.put("Lumbopelvicexam", lumbopelvicexam);
+		model.addAttribute("LumbopelvicexamForm",lumbopelvicexam);
+    	int a=lumboDAO.setLumbopelvicexam(lumbopelvicexam);
+		LumbopelvicexamForm lumbopelvicexamForm= new LumbopelvicexamForm();
+		lumbopelvicexamForm.setLumbopelvicexam(lumboDAO.getLumbopelvicexam());
+		model.addAttribute("lumbopelvicexamForm",lumbopelvicexamForm);
+		return "lumbopelvicexam";
+ 
+	}
 
 	}
 	

@@ -571,9 +571,9 @@ public class MainController {
 	}
 	
 	@RequestMapping(value="/viewautoaccident", method=RequestMethod.GET)
-	public String viewautoaccident(HttpServletRequest request,ModelMap model, Principal principal) {
-		 model.addAttribute("success","false");
-		
+	public String viewautoaccident(HttpServletRequest request,ModelMap model, Principal principal)
+	{
+	
 		  AutoaccidentForm autoaccidentForm = new AutoaccidentForm();
 		
 		  autoaccidentForm.setAutoaccident(autoDAO.getAutoaccident());

@@ -196,12 +196,18 @@
 									<span>Soap Notes</span>
 								</a>
 							</li>
+							
 </c:when>
   <c:otherwise>
         <li><a href="editsoapnotes" class="<c:choose><c:when test="${menu=='notes123'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>">
 									<span>Soap Notes</span>
 								</a>
 								
+							</li>
+							
+							<li>
+							<a href="#" class="<c:choose><c:when test="${menu=='lumbopelic'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu12">
+							</a>
 							</li>
 							</c:otherwise>
 							</c:choose>
@@ -277,6 +283,12 @@
 				         <li><a href="viewtreatminor">View Consent To Treat minor</a></li>
 				          </c:if> 
 
+</ul>
+<ul id="ddsubmenu12" class="ddsubmenustyle">
+    <li><a href="lumbopelvicexam">Lumbo Pelvic Exam</a></li>
+				            <li><a href="viewlumbopelvic">View Lumbo Pelvic Exam </a></li>
+   
+   
 </ul>
 <ul id="ddsubmenu11" class="ddsubmenustyle">
 
