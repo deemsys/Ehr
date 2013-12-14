@@ -31,6 +31,7 @@ import bephit.dao.DoctorsignupDAO;
 import bephit.dao.DoctorsearchDAO;
 import bephit.dao.HamiltonchiropracticDAO;
 import bephit.dao.HardshipagreementDAO;
+import bephit.dao.HipexamDAO;
 import bephit.dao.HippaDAO;
 import bephit.dao.InsuranceinformationDAO;
 import bephit.dao.InsuranceplanDAO;
@@ -90,13 +91,28 @@ import bephit.forms.TreatForm;
 import bephit.forms.TreatMinorDetailsForm;
 import bephit.forms.WorkaccidentForm;
 import bephit.model.*;
+import bephit.dao.*;
+
+
 
  
  
 @Controller
 public class DoctorController {
+
+	@Autowired  
+	HipexamDAO hipexamDAO;
 	@Autowired
 	LumbopelvicexamDAO lumboDAO;
+	
+	@RequestMapping(value="/perry", method = RequestMethod.GET)
+	public String hip(ModelMap model) {
+	
+	
+		 return "hipexam";
+	}
+
+	
 	
 	@RequestMapping(value="/lumbopelvicexam", method = RequestMethod.GET)
 	public String searchform(HttpSession session, ModelMap model) {
@@ -119,6 +135,17 @@ public class DoctorController {
  
 	}
 
+
+	
+	@RequestMapping(value="/inserthipexam", method = RequestMethod.POST)
+	public String insert_hipexam(HttpServletRequest request,HttpSession session,@ModelAttribute("HipExam")  @Valid HipExam hipexamdetails,BindingResult result,ModelMap model) {
+		System.out.print(hipexamdetails.getOutsidereferral());
+		int c=hipexamDAO.sethipexam(hipexamdetails);
+		System.out.println("c---"+c);
+		
+		
+		return "hipexam";
 	}
+}
 	
   

@@ -1867,7 +1867,7 @@ public class MainController {
 		//	RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
 		
 	    PatientDetailsForm patientDetailsForm = new PatientDetailsForm();
-	      patientDetailsForm.setPatientDetails(patientDAO.viewPatientDetails(patient.getPatient_id()));
+	    patientDetailsForm.setPatientDetails(patientDAO.viewPatientDetails(patient.getPatient_id()));
 	        model.addAttribute("patientDetailsForm", patientDetailsForm);
 			    model.addAttribute("menu", "patientInfo");
 		        return "editpatientdetails";
@@ -1882,7 +1882,7 @@ public class MainController {
         model.addAttribute("patientDetailsForm",patientdetailsform);
         model.addAttribute("success","true");
         model.addAttribute("menu", "patientInfo");
-	        return "viewpatient";
+	    return "viewpatient";
 		
 	}
 
