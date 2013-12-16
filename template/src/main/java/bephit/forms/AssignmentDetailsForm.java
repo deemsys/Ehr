@@ -7,9 +7,7 @@ import bephit.model.Assignment;
 public class AssignmentDetailsForm
 {
 	private List<Assignment> assignmentdetails;
-	{
-		
-	}
+	
 	public List<Assignment> getAssignmentDetails() {
 		return assignmentdetails;
 	}
