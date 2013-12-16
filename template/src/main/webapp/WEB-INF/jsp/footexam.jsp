@@ -61,6 +61,7 @@ if(document.getElementById('other').checked)
  }
  
 }
+
 function shortlegvalidate(val)
 {
 if(document.getElementById('leftvalue').checked)
@@ -86,6 +87,20 @@ var element=document.getElementById('shortlegright');
  var element=document.getElementById('shortlegright');
  element.style.display='none';
  }
+}
+function othervisible(val)
+{
+if(document.getElementById('others').checked)
+{
+ var element=document.getElementById('othervalue');
+ element.style.display='block';
+ }
+ else
+ {
+ var element=document.getElementById('othervalue');
+ element.style.display='none';
+ }
+ 
 }
 </script >
 
@@ -165,15 +180,14 @@ $(function() {
   </ul>  
 	     <div id="tabs-1">
 	     
-<form action="inserthipexam" method="POST">  
+<form action="insertfootexam" method="POST">  
 	      <div id="right_content">
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
 <tr>
 <td valign="top" align="left">
  <div>
 	            <div class="headings altheading">
-	            <center> <h2>
-	            HIP	EXAM</h2></center><br/>
+	            <center> <h2>ANKLE / FOOT 	EXAM</h2></center><br/>
 	            
 	            </div>
 	           
@@ -197,84 +211,56 @@ $(function() {
            </tr>
 <tr height="10"></tr>
            <tr>
-           <td>Pelvic Unleveling:</td><td></td>
-           <td><select name="pelvic"><option>none</option><option>superior illiac crest right</option><option>superior iliac crest left</option></select></td>
-             <td width="80"></td>
+           <td >Muscle Symmetry:</td><td></td>
+           <td><input type="text" name="muscle"></td><td width="10"></td>
+             <td width="130">Swelling  / Discoloration</td>
+             <td width="40"><input type="text" name="swelling"></td>
            
-           
-           <td width="80">A & O</td><td><select name="ao"><option>excellent</option><option> good</option><option> fair</option><option> severe</option></select></td>
+           <td width="59"></td>
+           <td width="120">A & O</td><td><select name="ao"><option>excellent</option><option> good</option><option> fair</option><option> severe</option></select></td>
            </tr>  
            </table> 
+           
+           <table>
+           <tr>
+           <td width="129">Pronation:</td><td><input type="radio" value="left" name="pronation">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td> <td width="140"><input type="radio" value="right" name="pronation">&nbsp;&nbsp;&nbsp;Right</td>
+                     
+           <td width="130">Supination:</td><td><input type="radio" value="left" name="supination">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td>&nbsp;&nbsp;&nbsp;<td width="110"> <input type="radio" value="right" name="supination">&nbsp;&nbsp;&nbsp;Right</td>
+           <td width="35"></td>
+           <td width="120">Calcaneus Varus:</td><td><input type="radio" value="left" name="calcaneus">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp; <input type="radio" value="right" name="calcaneus">&nbsp;&nbsp;&nbsp;Right</td>
+           <td width="73"></td>
+           <td width="120">Calcaneus Valgus:</td><td><input type="radio" value="left" name="valgus">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp; <input type="radio" value="right" name="valgus">&nbsp;&nbsp;&nbsp;Right</td>
+           </tr><tr>
+           <td width="129">Forefoot Varus:</td><td><input type="radio" value="left" name="forefoot">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td><td width="110"> <input type="radio" value="right" name="forefoot">&nbsp;&nbsp;&nbsp;Right</td>
+           <td width="130">Forefoot Valgus:</td><td><input type="radio" value="left" name="forefootvalgus">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td><td width="110"> <input type="radio" value="right" name="forefootvalgus">&nbsp;&nbsp;&nbsp;Right</td>
+           </tr>
+               
+           </table>
            </br>           
          
           <table  style="border:10">      
          <tr><td> <b style="font-size:14px">PALPATION / SOFT TISSUE DYSFUNCTION
  </b></td>
-         <td width="100"></td>
-         <td align="left"><input type="radio" id="softtissuess" onclick="softtissuevalidate()" name="dysfunction" value="All Soft Tissue Unremarkable">All Soft Tissue Unremarkable</td>
+         <td width="40"></td>
+         <td align="left"><input type="checkbox" id="softtissuess" onclick="softtissuevalidate()" name="dysfunction" value="All Soft Tissue Unremarkable">All Soft Tissue Unremarkable</td>
          <td width="180"></td>
           </tr>  </table>       
 <br>
-<table id="softtissue" style="display: none">	
-	<tr><td  width="300">Leg Length Discrepancy:  Short Leg-  </td>
-
-	<td ><input type="checkbox" id="leftvalue" onclick="shortlegvalidate(this.value)" name="shortlegleft" value="left">&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<td><select style="display:none" id="shortlegleft" name="shortlegleftvalue" onchange='Checksymptom(this.value)'>	
-	<option>1/8	</option>
-	<option>1/4	</option>
-	<option>3/8	</option>
-	<option>1/2</option>
-	<option>5/8	</option>
-	<option>	3/4</option>
-	<option>7/8</option>
-	<option>1</option>
-	<option >other</option>
-	</select></td><td align="right"><input type="text" size="9" name="shortlegleftother" id="legother" style="display: none" ></td>
-	<td width="112"></td>
-	<td>
-	<input type="checkbox" id="shortlegcheck" name="shortlegright" onclick= "shortlegvalidate1(this.value)" value="right">&nbsp;&nbsp;Right &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-	<td><select style="display:none" id="shortlegright" name="shortlegrightvalue" onchange='Checksymptom1(this.value)'>	
-	<option>1/8	</option>
-	<option>1/4	</option>
-	<option>3/8	</option>
-	<option>1/2</option>
-	<option>5/8	</option>
-	<option>	3/4</option>
-	<option>7/8</option>
-	<option>1</option>
-	<option>other</option>
-	</select></td>&nbsp;<td><input type="text" id="legother1" size="9" name="shortlegrightother" style="display: none" >
-	
-	</td>
-	
-	
+<table>	
+	<tr><td  width="130">Note  </td>
+<td><textarea rows="5" cols="50" name="note" ></textarea></td>	
 	
 	</tr></table>
-	<table id="softtissue1" style="display: none">
-	<tr height="10"></tr>
-	<tr ><td width="300">Piriformis:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" value="left" name="piriformisleft">Left&nbsp;&nbsp;<input type="radio" value="right" name="piriformisleft">Right</td>
-	
-	<td width="210">Gluteus Medius:&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" value="left" name="gluteusleft">Left&nbsp;&nbsp;<input type="radio" name="gluteusleft" value="right">Right</td>
-	<td></td>
-	<td width="230">Iliopsoas:&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="iliopsoasleft" value="left">Left&nbsp;&nbsp;<input type="radio" name="iliopsoasleft" value="right">Right</td>
-	
-	<td>Hamstrings:&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="hamstringsleft" value="left">Left&nbsp;&nbsp;<input type="radio" value="right" name="hamstringsleft">Right</td>
-	
-	</tr>
-	<tr height="10"></tr></table>
-	<table id="softtissue2" style="display: none"><tr><td valign="top">Other / Note:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<textarea rows="5" cols="50" name="note"></textarea></td></tr>
-	
-	</table>	
 	</br>
 	<table  style="border:10">      
          <tr>
          <td> <b style="font-size:14px">FUNCTIONAL RANGE OF MOTION     </b></td><td width="70"></td>
-         <td><input type="radio" value="Unremarkable" name="functional" id="functional">Unremarkable
+         <td><input type="checkbox" value="Unremarkable" name="functional" id="functional">Unremarkable
          
          </td>
-         <td width="60"></td>
-         <td> <b style="font-size:14px">ORTHOTPEDIC TESTING    </b></td><td width="100"></td>
-         <td><input type="radio" name="orthotpedic" value="unremarkable">Unremarkable
+         <td width="120"></td>
+         <td> <b style="font-size:14px">ORTHOTPEDIC TESTING    </b></td><td width="120"></td>
+         <td><input type="checkbox" name="orthotpedic" value="unremarkable">Unremarkable
         
          </td>  </tr></table>
          </br>
@@ -291,13 +277,13 @@ $(function() {
          
          </tr>
          <tr height="10"></tr>
-         <tr><td>Flexion:		</td><td>100</td><td><input type="text" size="5" name="flexionleft">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="flexionright"></td><td width="90"></td><td>Patrick Fabere:	</td><td width="150"></td><td><input size="5" type="text"  name="fabereleft">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="5" name="fabereright"></td></tr>
-         <tr><td>Extension:			</td><td>30</td><td><input size="5" type="text" name="extensionleft">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="extensionright"></td><td width="90"></td><td>Nachlas:</td><td width="150"></td><td><input type="text"  size="5" name="nachlasleft">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="5"  name="nachlasright"></td></tr>
-         <tr><td>Abduction:				</td><td>45</td><td><input size="5" type="text" name="abductionleft">&nbsp;&nbsp;&nbsp;&nbsp;<input  size="5" type="text" name="abductionright"></td><td width="90"></td><td>Ely's:</td><td width="150"></td><td><input type="text" size="5"  name="elysleft">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text"  name="elysright"></td></tr>
-         <tr><td>Adduction:				</td><td>30</td><td><input size="5" type="text" name="adductionleft">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="adductionright"></td><td width="90"></td><td>Yeoman's:</td><td width="150"></td><td><input type="text" size="5"  name="yeomansleft">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text"  name="yeomansright"></td></tr></tr>
-         <tr><td>Internal Rotation:</td><td>40</td><td><input type="text" size="5" name="internalrotationleft">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="internalrotationright"><td width="90"></td><td>Ober's:	</td><td width="150"></td><td><input type="text" size="5"  name="obersleft">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="5" name="obersright"></td></td></tr>
-         <tr><td>External Rotation:</td><td>45</td><td><input type="text" size="5" name="externalrotationleft">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="externalrotationright"></td><td width="90"></td><td>	Hibbs:</td><td width="150"></td><td><input type="text" size="5" name="hibbsleft">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text"  name="hibbsright"></td></tr>
-          <tr><td></td><td></td><td>&nbsp;&nbsp;</td><td width="90"></td><td>Thomas:</td><td width="150"></td><td><input type="text" size="5"  name="thomasleft">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="5" name="thomasright"></td></tr>
+         <tr><td>Plantar Flexion:		</td><td>50</td><td><input type="text" size="5" name="plantarflexionleft">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="plantarflexionright"></td><td width="90"></td><td>Tinel's Tap:	</td><td width="150"></td><td><input size="5" type="text"  name="tinelstapleft">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="5" name="tinelstapright"></td></tr>
+         <tr><td>Dorsiflexion:				</td><td>20</td><td><input size="5" type="text" name="dorsiflexionleft">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="dorsiflexionright"></td><td width="90"></td><td>Achilles Tap:</td><td width="150"></td><td><input type="text"  size="5" name="achillestapleft">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="5"  name="achillestapright"></td></tr>
+         <tr><td>Inversion:				</td><td>35</td><td><input size="5" type="text" name="inversionleft">&nbsp;&nbsp;&nbsp;&nbsp;<input  size="5" type="text" name="inversionright"></td><td width="90"></td><td>Long / Transv Arch:</td><td width="150"></td><td><input type="text" size="5"  name="longleft">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text"  name="longright"></td></tr>
+         <tr><td>Eversion:					</td><td>15</td><td><input size="5" type="text" name="eversionleft">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="eversionright"></td><td width="90"></td><td>Thompson's:	</td><td width="150"></td><td><input type="text" size="5"  name="thompsonsleft">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text"  name="thompsonsright"></td></tr></tr>
+         <tr><td>Great Toe Extension:</td><td>70</td><td><input type="text" size="5" name="greattoeextensionleft">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="greattoeextensionright"><td width="90"></td><td>Drawer:		</td><td width="150"></td><td><input type="text" size="5"  name="drawerleft">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="5" name="drawerright"></td></td></tr>
+         <tr><td>Great Toe Flexion:	</td><td>45</td><td><input type="text" size="5" name="greattoeflexionleft">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="greattoeflexionright"></td><td width="90"></td><td>Lateral (Varus) Stability:</td><td width="150"></td><td><input type="text" size="5" name="lateralleft">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text"  name="lateralright"></td></tr>
+          <tr><td></td><td></td><td>&nbsp;&nbsp;</td><td width="90"></td><td>Medial (Valgus) Stability:</td><td width="150"></td><td><input type="text" size="5"  name="medialstabilityleft">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="5" name="medialstabilityright"></td></tr>
          </table>
          </td></tr></table></div></div>
         <div id="tabs-2">     
@@ -319,19 +305,19 @@ $(function() {
 	    
         <tr>
          <td width="130"><b style="font-size:14px">NEUROLOGICAL</b></td>
-         <td width="246"><input type="checkbox"  id=neurologicalunremarkable name="neurological" value="Neurological Testing Unremarkable">Neurological Testing Unremarkable</td>
+         <td width="246"><input type="checkbox" id=neurologicalunremarkable name="neurological" value="Neurological Testing Unremarkable">Neurological Testing Unremarkable</td>
          
            </tr></table>
            </br><table id="neurological" ><tr><td width="120"><b>Level</b></td>  <td width="250">  <b> Sensory	</b></td> <td width="100"><b>Level</b></td>  <td   width="250">  <b> Motor / Strength		</b></td> <td width="100"><b>Level</b></td>  <td   width="250">  <b> Reflexes</b> (Muscle Spindles)	</td>  </tr>
            <tr height="10"></tr>
           <tr> <td width="30"></td><td>Left&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Right</td>  <td width="30"></td><td>Left&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Right</td>  <td width="30"></td><td>Left&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Right</td> </tr>
           <tr height="10"></tr>
-           <tr><td>L1</td><td><input type="text"  size="5" name="inguinalarealeft">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="inguinalarearight">&nbsp;&nbsp; (Inguinal area)</td><td>L1</td><td><input size="5" type="text" name="iliopsoasfirstleft">/5&nbsp;&nbsp;&nbsp;&nbsp;<input type="text"  size="5" name="iliopsoasfirstright">/5&nbsp;&nbsp; Iliopsoas</td><td></td><td></td></tr>
-           <tr><td>L2</td><td><input size="5" type="text" name="antleft">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="antright">&nbsp;&nbsp;Ant/med thigh</td><td>L2</td><td><input type="text" name="iliopsoas1left" size="5">/5&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="iliopsoas1right">/5&nbsp;&nbsp;Iliopsoas</td><td></td><td>&nbsp;(2+/5 is Normal)</td></tr>
-           <tr><td>L3</td><td><input type="text" name="kneeleft" size="5">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="kneeright">&nbsp;&nbsp;Medial knee</td><td>L3</td><td><input type="text" name="iliopsoas2left" size="5">/5&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="iliopsoas2right">/5&nbsp;&nbsp;Iliopsoas</td><td></td><td>&nbsp; </td></tr>
-           <tr><td>L4</td><td><input type="text" size="5" name="medialleft">&nbsp;&nbsp;&nbsp;&nbsp;<input  size="5"type="text" name="medialright">&nbsp;&nbsp;Medial leg</td><td>L4</td><td><input type="text" name="femleft" size="5">/5&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="femright">/5&nbsp;&nbsp;Rectus Fem</td><td>L4</td><td><input type="text" name="patellarleft" size="5">/5&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="patellarright" size="5">/5&nbsp;&nbsp;Patellar</td></tr>
-            <tr><td>L5</td><td><input type="text" size="5" name="latleft">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="5" name="latright">&nbsp;&nbsp;Ant/lat leg</td><td>L5</td><td><input type="text" name="medleft" size="5">/5&nbsp;&nbsp;&nbsp;&nbsp;<input size="5"  type="text" name="medright">/5&nbsp;&nbsp;Glut Med</td><td>L5</td><td><input type="text" name="hsleft" size="5">/5&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="hsright"  size="5">/5&nbsp;&nbsp;Med HS</td></tr>
-            <tr><td>S1</td><td><input size="5" type="text" name="plantarleft">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="plantarright">&nbsp;&nbsp;Big toe/plantar</td><td>S1</td><td><input type="text" name="maxleft" size="5">/5&nbsp;&nbsp;&nbsp;&nbsp;<input  size="5"type="text" name="maxright">/5&nbsp;&nbsp;Glut Max</td><td>S1</td><td><input type="text" name="achillesleft" size="5">/5&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="achillesright">/5&nbsp;&nbsp;Achilles</td></tr>
+           <tr><td>L1</td><td><input type="text"  size="5" name="inguinalarealeft">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="inguinalarearight">&nbsp;&nbsp; (Inguinal area)</td><td>L1</td><td><input size="5" type="text" name="iliopsoasfirstleft">/5&nbsp;&nbsp;&nbsp;&nbsp;<input type="text"  size="5" name="iliopsoasfirstright">/5&nbsp;&nbsp; (Iliopsoas)</td><td></td><td></td></tr>
+           <tr><td>L2</td><td><input size="5" type="text" name="antleft">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="antright">&nbsp;&nbsp;(Ant/med thigh)</td><td>L2</td><td><input type="text" name="iliopsoas1left" size="5">/5&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="iliopsoas1right">/5&nbsp;&nbsp;(Iliopsoas)</td><td></td><td>&nbsp;(2+/5 is Normal)</td></tr>
+           <tr><td>L3</td><td><input type="text" name="kneeleft" size="5">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="kneeright">&nbsp;&nbsp;(Medial knee)</td><td>L3</td><td><input type="text" name="kneeextensionleft" size="5">/5&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="kneeextensionright">/5&nbsp;&nbsp;(Knee extension)</td><td></td><td>&nbsp; </td></tr>
+           <tr><td>L4</td><td><input type="text" size="5" name="medialleft">&nbsp;&nbsp;&nbsp;&nbsp;<input  size="5"type="text" name="medialright">&nbsp;&nbsp;(Medial leg)</td><td>L4</td><td><input type="text" name="kneeflexionleft" size="5">/5&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="kneeflexionright">/5&nbsp;&nbsp;(Knee flexion)</td><td>L4</td><td><input type="text" name="patellarleft" size="5">/5&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="patellarright" size="5">/5&nbsp;&nbsp;Patellar</td></tr>
+            <tr><td>L5</td><td><input type="text" size="5" name="latleft">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="5" name="latright">&nbsp;&nbsp;(Ant/lat leg)</td><td>L5</td><td><input type="text" name="dorsiflexionleft1" size="5">/5&nbsp;&nbsp;&nbsp;&nbsp;<input size="5"  type="text" name="dorsiflexionright1">/5&nbsp;&nbsp;(Dorsiflexion)</td><td>L5</td><td><input type="text" name="hsleft" size="5">/5&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="hsright"  size="5">/5&nbsp;&nbsp;Med HS</td></tr>
+            <tr><td>S1</td><td><input size="5" type="text" name="plantarleft">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="plantarright">&nbsp;&nbsp;(Big toe/plantar)</td><td>S1</td><td><input type="text" name="pfleft" size="5">/5&nbsp;&nbsp;&nbsp;&nbsp;<input  size="5"type="text" name="pfright">/5&nbsp;&nbsp;(Grt toe ext, PF)</td><td>S1</td><td><input type="text" name="achillesleft" size="5">/5&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="achillesright">/5&nbsp;&nbsp;Achilles</td></tr>
            <tr><td></td><td>(""-"" is Normal)			</td><td></td><td>	(5/5 is Normal)</td><td></td><td></td></tr>
            
            
@@ -367,7 +353,11 @@ $(function() {
            <tr><td width="95"></td><td width="160"><input type="checkbox" name="radiographic" value="Radiographic X-Ray">Radiographic X-Ray</td><td width="100"><input type="checkbox" name="mri" value="MRI">MRI</td>
            <td width="150"><input type="checkbox" name="scan" value="CT Scan">CT Scan</td><td width="150"><input type="checkbox" name="conduction" value="Nerve Conduction">Nerve Conduction</td>
            <td width="150"><input type="checkbox" name="emg" value="EMG		">EMG	</td> <td width="150"><input type="checkbox" name="outsidereferral" value="Outside Referral ">Outside Referral 	</td><td><input type="checkbox" name="dc" value="D/C">D/C</td>
-           </tr>         
+           </tr>   
+            <tr height="10"></tr>
+           <tr><td width="95"></td><td width="160">
+           <input type="checkbox" id="others" name="others" value="other" onclick="othervisible('this.value')">Other</td><td><input type="text" name="othervalue" id="othervalue" style="display:none ">
+           </td></tr>   
                       
            </table>
            </br>
