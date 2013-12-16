@@ -63,8 +63,10 @@ import bephit.forms.AutoaccidentForm;
 
 import bephit.forms.DoctorsearchForm;
 import bephit.forms.DoctorsignupForm;
+import bephit.forms.FootExamForm;
 import bephit.forms.HamiltonchiropracticForm;
 import bephit.forms.HardshipagreementForm;
+import bephit.forms.HipExamForm;
 import bephit.forms.HippaPrivacyForm;
 import bephit.forms.InsuranceinformationForm;
 import bephit.forms.InsuranceplanForm;
@@ -94,8 +96,6 @@ import bephit.model.*;
 import bephit.dao.*;
 
 
-
- 
  
 @Controller
 public class DoctorController {
@@ -104,12 +104,88 @@ public class DoctorController {
 	HipexamDAO hipexamDAO;
 	@Autowired
 	LumbopelvicexamDAO lumboDAO;
+	@Autowired
+	FootexamDAO footexamDAO;
+	
+	
 	
 	@RequestMapping(value="/perry", method = RequestMethod.GET)
 	public String hip(ModelMap model) {
 	
 	
 		 return "hipexam";
+	}
+	@RequestMapping(value="/ankle", method = RequestMethod.GET)
+	public String ankle(ModelMap model) {
+	
+	
+		 return "footexam";
+	}
+	@RequestMapping(value="/viewhipexam", method = RequestMethod.GET)
+	public String viewhipexamdetails(ModelMap model,HipExam hipexam) {	
+	HipExamForm hipexamform=new HipExamForm();
+	hipexamform.setHipexamdetails(hipexamDAO.gethipexamallDetails());
+	System.out.println("yes");
+	System.out.println(hipexamform.getHipexamdetails().get(0).getPname());
+	model.addAttribute("hipexamform",hipexamform);
+	return "viewhipexamdetails";
+	}
+	
+	@RequestMapping(value="/viewfootexam", method = RequestMethod.GET)
+	public String viewfootexam(ModelMap model,HipExam hipexam) {
+		FootExamForm footexamform=new FootExamForm();
+		footexamform.setFootexamdetails(footexamDAO.getfootexamDetails());		
+	System.out.println(footexamform.getFootexamdetails().get(0).getPname());
+	model.addAttribute("footexamform",footexamform);
+	return "viewfootexam";
+	}
+	
+	@RequestMapping(value="/deletehipexam", method = RequestMethod.GET)
+	public String deletehipexam(@RequestParam("hipexamno") String hipexamno,ModelMap model,HipExam hipexam) {	
+	hipexamDAO.deletehipexamdetails(hipexamno);	
+	HipExamForm hipexamform=new HipExamForm();
+	hipexamform.setHipexamdetails(hipexamDAO.gethipexamallDetails());
+	System.out.println("yes");
+	System.out.println(hipexamform.getHipexamdetails().get(0).getPname());
+	model.addAttribute("hipexamform",hipexamform);
+	return "viewhipexamdetails";
+	
+	}
+	@RequestMapping(value="/deletefootexam", method = RequestMethod.GET)
+	public String deletefootexam(@RequestParam("footexamno") String footexamno,ModelMap model,HipExam hipexam) {	
+		footexamDAO.deletehipexamdetails(footexamno);
+		FootExamForm footexamform=new FootExamForm();
+		footexamform.setFootexamdetails(footexamDAO.getfootexamDetails());		
+	System.out.println(footexamform.getFootexamdetails().get(0).getPname());
+	model.addAttribute("footexamform",footexamform);		
+	return "viewfootexam";
+	
+	}
+	@RequestMapping(value="/footexamlist", method = RequestMethod.GET)
+	public String viewfootexam(@RequestParam("footexamno") String footexamno,ModelMap model,HipExam hipexam) {	
+	FootExamForm footexamform=new FootExamForm();
+	footexamform.setFootexamdetails(footexamDAO.getfootexamDetails(footexamno));
+	model.addAttribute("footexamform",footexamform);	
+	return "footexamlist";
+	}
+	
+	@RequestMapping(value="/hipexamlist", method = RequestMethod.GET)
+	public String viewhipexam(@RequestParam("hipexamno") String hipexamno,ModelMap model,HipExam hipexam) {	
+	HipExamForm hipexamform=new HipExamForm();
+	hipexamform.setHipexamdetails(hipexamDAO.gethipexamDetails(hipexamno));
+	System.out.println("yes");	
+	model.addAttribute("hipexamform",hipexamform);
+	return "viewhipexam";
+	}
+
+	@RequestMapping(value="/hipreexam", method = RequestMethod.GET)
+	public String hipreexam(@RequestParam("hipexamno") String hipexamno,ModelMap model,HipExam hipexam) {	
+	HipExamForm hipexamform=new HipExamForm();
+	hipexamform.setHipexamdetails(hipexamDAO.gethipexamDetails(hipexamno));
+	System.out.println("yes");
+	System.out.println(hipexamform.getHipexamdetails().get(0).getPname());
+	model.addAttribute("hipexamform",hipexamform);
+	return "hipreexam";
 	}
 
 	
@@ -135,7 +211,31 @@ public class DoctorController {
  
 	}
 
+	@RequestMapping(value="/updatehipexam", method = RequestMethod.POST)
+	public String updatehipexam(HttpServletRequest request,HttpSession session,@ModelAttribute("HipExam")  @Valid HipExam hipexamdetails,BindingResult result,ModelMap model) {
+		System.out.print(hipexamdetails.getOutsidereferral());
+		
+		int c=hipexamDAO.updatehipexam(hipexamdetails,hipexamdetails.getHipexamno());
+		System.out.println("c---"+c);
+		HipExamForm hipexamform=new HipExamForm();
+		hipexamform.setHipexamdetails(hipexamDAO.gethipexamallDetails());
+		System.out.println("yes");
+		System.out.println(hipexamform.getHipexamdetails().get(0).getPname());
+		model.addAttribute("hipexamform",hipexamform);
 
+		
+		
+		return "viewhipexamdetails";
+	}
+	@RequestMapping(value="/insertfootexam", method = RequestMethod.POST)
+	public String insert_footexam(HttpServletRequest request,HttpSession session,@ModelAttribute("FootExam")  @Valid FootExam footexamdetails,BindingResult result,ModelMap model) {
+		//System.out.print(hipexamdetails.getOutsidereferral());
+		int c=footexamDAO.setfootexam(footexamdetails);
+		System.out.println("c---"+c);
+		
+		
+		return "footexam";
+	}
 	
 	@RequestMapping(value="/inserthipexam", method = RequestMethod.POST)
 	public String insert_hipexam(HttpServletRequest request,HttpSession session,@ModelAttribute("HipExam")  @Valid HipExam hipexamdetails,BindingResult result,ModelMap model) {
