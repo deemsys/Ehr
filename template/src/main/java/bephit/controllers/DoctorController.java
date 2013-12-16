@@ -56,6 +56,7 @@ import bephit.dao.TreatMinorDAO;
 import bephit.dao.WorkaccidentDAO;
 import bephit.forms.AssignmentDetailsForm;
 import bephit.forms.AutoaccidentForm;
+import bephit.forms.*;
 
 /*import bephit.forms.DoctorsignupForm;*/
 
@@ -106,6 +107,8 @@ public class DoctorController {
 	LumbopelvicexamDAO lumboDAO;
 	@Autowired
 	FootexamDAO footexamDAO;
+	@Autowired
+	KneeexamDAO kneeDAO;
 	
 	
 	
