@@ -161,7 +161,7 @@
                  </tr>
                  <tr class="row1">
                  <td>How did it happen?  </td>
-                 <td><textarea rows="5" cols="25" name="reason" >${hamiltonchiropractic.reason }"</textarea></td>
+                 <td><textarea rows="5" cols="25" name="reason" >"${hamiltonchiropractic.reason }"</textarea></td>
                  </tr>
                  <tr class="row2">
                  <td>Was this the first episode or is this a chronic injury? </td>

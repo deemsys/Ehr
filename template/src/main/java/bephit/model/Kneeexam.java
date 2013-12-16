@@ -1,67 +1,59 @@
 package bephit.model;
 
-public class Lumbopelvicexam {
-	private String lumbopelvicexamid;
+public class Kneeexam {
+	private String kneeexamid;
 	private String pname;
 	private String date;
 	private String gait;
 	private String pelvicunleveling;
 	private String ao;
 	private String allsoft;
-	/*private String except;*/
-	private String leglengthcheckl;
 	private String leglengthl;
-	private String other1;
-	private String leglengthcheckr;
+	private String leglengthtextl;
 	private String leglengthr;
-	private String other2;
-	private String piriformis;
-	private String quadlumb;
-	private String paraspinals;
-	private String gluteus;
-	private String gluteusmedius;
-	private String hamstrings;
-	private String iliopsoas;
-	private String rectus;
-	private String obliques;
-	private String othernotes;
+	private String leglengthtextr;
+	private String vmo;
+	private String quads;
+	private String semimemb;
+	private String semitend;
+	private String gastroc;
+	private String soleus;
+	private String iliotibband;
+	private String bicepsfem;
 	private String functionalrangeofmotion;
-	private String subluxation;
 	private String orthopedic;
 	private String flexion;
-	private String t89;
-	private String t910;
-	private String trendelburgl;
-	private String trendelburgr;
+	private String acll;
+	private String aclr;
 	private String extension;
-	private String t1011;
-	private String t1112;
-	private String kempsl;
-	private String kempsr;
-	private String lflexion;
-	private String rflexion;
-	private String t12l1;
-	private String l12;
-	private String slumpl;
-	private String slumpr;
-	private String lrotation;
-	private String rrotation;
-	private String l23;
-	private String l34;
-	private String straightlegl;
-	private String straightlegr;
-	private String l45;
-	private String l5s1;
-	private String welllegl;
-	private String welllegr;
-	private String lsi;
-	private String rsi;
-	private String nachlasl;
-	private String nachlasr;
-	private String positiveminor;
-	private String positiveadam;
+	private String pcll;
+	private String pclr;
+	private String internalrotation;
+	private String lcll;
+	private String lclr;
+	private String externalrotation;
+	private String mcll;
+	private String mclr;
+	private String circumferential;
+	private String meniscusl;
+	private String meniscusr;
+	private String apleysl;
+	private String apleysr;
+	private String cmabovel;
+	private String suprapatellarl;
+	private String infrapatellarl;
+	private String belowl;
+	private String distractionl;
+	private String distractionr;
+	private String cmabover;
+	private String suprapatellarr;
+	private String infrapatellarr;
+	private String belowr;
+	private String cmpl;
+	private String cmpr;
+	private String patdll;
+	private String patdlr;
 	private String neurologicaltest;
-	/*private String exceptn;*/
 	private String l1l;
 	private String l1r;
 	private String l15l;
@@ -92,9 +84,8 @@ public class Lumbopelvicexam {
 	private String s5r;
 	private String sil;
 	private String sir;
-	private String sitting;
-	private String lifting;
 	private String walking;
+	private String standing;
 	private String stairs;
 	private String otherfunctional;
 	private String break_text3;
@@ -105,6 +96,7 @@ public class Lumbopelvicexam {
 	private String diagnosis3;
 	private String diagnosis4;
 	private String diagnosis5;
+	private String diagnosis6;
 	private String times;
 	private String week;
 	private String spinal;
@@ -125,101 +117,96 @@ public class Lumbopelvicexam {
 	private String break_text4;
 	private String sign;
 	
-	public Lumbopelvicexam()
+	public Kneeexam()
 	{
 		
 	}
 
-	public Lumbopelvicexam(String lumbopelvicexamid,String pname, String date, String gait,
-			String pelvicunleveling, String ao, String allsoft, 
-			String leglengthcheckl,String leglengthl,String other1,String leglengthcheckr, String leglengthr,String other2, String piriformis,
-			String quadlumb, String paraspinals, String gluteus,
-			String gluteusmedius, String hamstrings, String iliopsoas,
-			String rectus, String obliques, String othernotes,
-			String functionalrangeofmotion, String subluxation,
-			String orthopedic, String flexion, String t89, String t910,
-			String trendelburgl, String trendelburgr, String extension,
-			String t1011, String t1112, String kempsl, String kempsr,
-			String lflexion,String rflexion, String t12l1, String l12, String slumpl,
-			String slumpr, String lrotation,String rrotation, String l23, String l34,
-			String straightlegl, String straightlegr, String l45, String l5s1,
-			String welllegl, String welllegr, String lsi, String rsi,
-			String nachlasl, String nachlasr, String positiveminor,
-			String positiveadam, String neurologicaltest, 
-			String l1l, String l1r, String l15l, String l15r, String l2l,
-			String l2r, String l25l, String l25r, String l3l, String l3r,
-			String l35l, String l35r, String l4l, String l4r, String l45l,
-			String l45r, String l4l3, String l4r3, String l5l, String l5r,
-			String l55l, String l55r, String l5l3, String l5r3, String sl,
-			String sr, String s5l, String s5r, String sil, String sir,
-			String sitting, String lifting, String walking, String stairs,
-			String otherfunctional, String break_text3, String assessment,
-			String patientstatus, String diagnosis1, String diagnosis2,
-			String diagnosis3, String diagnosis4, String diagnosis5,
+	public Kneeexam(String kneeexamid, String pname, String date, String gait,
+			String pelvicunleveling, String ao, String allsoft,
+			String leglengthl, String leglengthtextl, String leglengthr,
+			String leglengthtextr, String vmo, String quads, String semimemb,
+			String semitend, String gastroc, String soleus, String iliotibband,
+			String bicepsfem, String functionalrangeofmotion,
+			String orthopedic, String flexion, String acll, String aclr,
+			String extension, String pcll, String pclr,
+			String internalrotation, String lcll, String lclr,
+			String externalrotation, String mcll, String mclr,
+			String circumferential, String meniscusl, String meniscusr,
+			String apleysl, String apleysr, String cmabovel,
+			String suprapatellarl, String infrapatellarl, String belowl,
+			String distractionl, String distractionr, String cmabover,
+			String suprapatellarr, String infrapatellarr, String belowr,
+			String cmpl, String cmpr, String patdll, String patdlr,
+			String neurologicaltest, String l1l, String l1r, String l15l,
+			String l15r, String l2l, String l2r, String l25l, String l25r,
+			String l3l, String l3r, String l35l, String l35r, String l4l,
+			String l4r, String l45l, String l45r, String l4l3, String l4r3,
+			String l5l, String l5r, String l55l, String l55r, String l5l3,
+			String l5r3, String sl, String sr, String s5l, String s5r,
+			String sil, String sir, String walking,String standing, String stairs, String otherfunctional,
+			String break_text3, String assessment, String patientstatus,
+			String diagnosis1, String diagnosis2, String diagnosis3,
+			String diagnosis4, String diagnosis5, String diagnosis6,
 			String times, String week, String spinal, String chiropractic,
 			String physical, String orthotics, String modalities,
 			String supplementation, String hep, String radiographic,
 			String mri, String ctscan, String nerve, String emg,
-			String outside, String dc, String otheraddress,String break_text4, String sign) {
+			String outside, String dc, String otheraddress, String break_text4,
+			String sign) {
 		super();
-		this.lumbopelvicexamid=lumbopelvicexamid;
+		this.kneeexamid = kneeexamid;
 		this.pname = pname;
 		this.date = date;
 		this.gait = gait;
 		this.pelvicunleveling = pelvicunleveling;
 		this.ao = ao;
 		this.allsoft = allsoft;
-		this.leglengthcheckl=leglengthcheckl;
 		this.leglengthl = leglengthl;
-		this.other1=other1;
-	    this.leglengthcheckr=leglengthcheckr;
+		this.leglengthtextl = leglengthtextl;
 		this.leglengthr = leglengthr;
-		this.other2=other2;
-		this.piriformis = piriformis;
-		this.quadlumb = quadlumb;
-		this.paraspinals = paraspinals;
-		this.gluteus = gluteus;
-		this.gluteusmedius = gluteusmedius;
-		this.hamstrings = hamstrings;
-		this.iliopsoas = iliopsoas;
-		this.rectus = rectus;
-		this.obliques = obliques;
-		this.othernotes = othernotes;
+		this.leglengthtextr = leglengthtextr;
+		this.vmo = vmo;
+		this.quads = quads;
+		this.semimemb = semimemb;
+		this.semitend = semitend;
+		this.gastroc = gastroc;
+		this.soleus = soleus;
+		this.iliotibband = iliotibband;
+		this.bicepsfem = bicepsfem;
 		this.functionalrangeofmotion = functionalrangeofmotion;
-		this.subluxation = subluxation;
 		this.orthopedic = orthopedic;
 		this.flexion = flexion;
-		this.t89 = t89;
-		this.t910 = t910;
-		this.trendelburgl = trendelburgl;
-		this.trendelburgr = trendelburgr;
+		this.acll = acll;
+		this.aclr = aclr;
 		this.extension = extension;
-		this.t1011 = t1011;
-		this.t1112 = t1112;
-		this.kempsl = kempsl;
-		this.kempsr = kempsr;
-		this.lflexion = lflexion;
-		this.rflexion=rflexion;
-		this.t12l1 = t12l1;
-		this.l12 = l12;
-		this.slumpl = slumpl;
-		this.slumpr = slumpr;
-		this.lrotation = lrotation;
-		this.rrotation=rrotation;
-		this.l23 = l23;
-		this.l34 = l34;
-		this.straightlegl = straightlegl;
-		this.straightlegr = straightlegr;
-		this.l45 = l45;
-		this.l5s1 = l5s1;
-		this.welllegl = welllegl;
-		this.welllegr = welllegr;
-		this.lsi = lsi;
-		this.rsi = rsi;
-		this.nachlasl = nachlasl;
-		this.nachlasr = nachlasr;
-		this.positiveminor = positiveminor;
-		this.positiveadam = positiveadam;
+		this.pcll = pcll;
+		this.pclr = pclr;
+		this.internalrotation = internalrotation;
+		this.lcll = lcll;
+		this.lclr = lclr;
+		this.externalrotation = externalrotation;
+		this.mcll = mcll;
+		this.mclr = mclr;
+		this.circumferential = circumferential;
+		this.meniscusl = meniscusl;
+		this.meniscusr = meniscusr;
+		this.apleysl = apleysl;
+		this.apleysr = apleysr;
+		this.cmabovel = cmabovel;
+		this.suprapatellarl = suprapatellarl;
+		this.infrapatellarl = infrapatellarl;
+		this.belowl = belowl;
+		this.distractionl = distractionl;
+		this.distractionr = distractionr;
+		this.cmabover = cmabover;
+		this.suprapatellarr = suprapatellarr;
+		this.infrapatellarr = infrapatellarr;
+		this.belowr = belowr;
+		this.cmpl = cmpl;
+		this.cmpr = cmpr;
+		this.patdll = patdll;
+		this.patdlr = patdlr;
 		this.neurologicaltest = neurologicaltest;
 		this.l1l = l1l;
 		this.l1r = l1r;
@@ -251,9 +238,8 @@ public class Lumbopelvicexam {
 		this.s5r = s5r;
 		this.sil = sil;
 		this.sir = sir;
-		this.sitting = sitting;
-		this.lifting = lifting;
 		this.walking = walking;
+		this.standing=standing;
 		this.stairs = stairs;
 		this.otherfunctional = otherfunctional;
 		this.break_text3 = break_text3;
@@ -264,6 +250,7 @@ public class Lumbopelvicexam {
 		this.diagnosis3 = diagnosis3;
 		this.diagnosis4 = diagnosis4;
 		this.diagnosis5 = diagnosis5;
+		this.diagnosis6 = diagnosis6;
 		this.times = times;
 		this.week = week;
 		this.spinal = spinal;
@@ -281,16 +268,16 @@ public class Lumbopelvicexam {
 		this.outside = outside;
 		this.dc = dc;
 		this.otheraddress = otheraddress;
-		this.break_text4=break_text4;
+		this.break_text4 = break_text4;
 		this.sign = sign;
 	}
 
-	public String getLumbopelvicexamid() {
-		return lumbopelvicexamid;
+	public String getKneeexamid() {
+		return kneeexamid;
 	}
 
-	public void setLumbopelvicexamid(String lumbopelvicexamid) {
-		this.lumbopelvicexamid = lumbopelvicexamid;
+	public void setKneeexamid(String kneeexamid) {
+		this.kneeexamid = kneeexamid;
 	}
 
 	public String getPname() {
@@ -341,14 +328,6 @@ public class Lumbopelvicexam {
 		this.allsoft = allsoft;
 	}
 
-	public String getLeglengthcheckl() {
-		return leglengthcheckl;
-	}
-
-	public void setLeglengthcheckl(String leglengthcheckl) {
-		this.leglengthcheckl = leglengthcheckl;
-	}
-
 	public String getLeglengthl() {
 		return leglengthl;
 	}
@@ -357,20 +336,12 @@ public class Lumbopelvicexam {
 		this.leglengthl = leglengthl;
 	}
 
-	public String getOther1() {
-		return other1;
+	public String getLeglengthtextl() {
+		return leglengthtextl;
 	}
 
-	public void setOther1(String other1) {
-		this.other1 = other1;
-	}
-
-	public String getLeglengthcheckr() {
-		return leglengthcheckr;
-	}
-
-	public void setLeglengthcheckr(String leglengthcheckr) {
-		this.leglengthcheckr = leglengthcheckr;
+	public void setLeglengthtextl(String leglengthtextl) {
+		this.leglengthtextl = leglengthtextl;
 	}
 
 	public String getLeglengthr() {
@@ -380,93 +351,77 @@ public class Lumbopelvicexam {
 	public void setLeglengthr(String leglengthr) {
 		this.leglengthr = leglengthr;
 	}
-    
-	public String getOther2() {
-		return other2;
+
+	public String getLeglengthtextr() {
+		return leglengthtextr;
 	}
 
-	public void setOther2(String other2) {
-		this.other2 = other2;
+	public void setLeglengthtextr(String leglengthtextr) {
+		this.leglengthtextr = leglengthtextr;
 	}
 
-	public String getPiriformis() {
-		return piriformis;
+	public String getVmo() {
+		return vmo;
 	}
 
-	public void setPiriformis(String piriformis) {
-		this.piriformis = piriformis;
+	public void setVmo(String vmo) {
+		this.vmo = vmo;
 	}
 
-	public String getQuadlumb() {
-		return quadlumb;
+	public String getQuads() {
+		return quads;
 	}
 
-	public void setQuadlumb(String quadlumb) {
-		this.quadlumb = quadlumb;
+	public void setQuads(String quads) {
+		this.quads = quads;
 	}
 
-	public String getParaspinals() {
-		return paraspinals;
+	public String getSemimemb() {
+		return semimemb;
 	}
 
-	public void setParaspinals(String paraspinals) {
-		this.paraspinals = paraspinals;
+	public void setSemimemb(String semimemb) {
+		this.semimemb = semimemb;
 	}
 
-	public String getGluteus() {
-		return gluteus;
+	public String getSemitend() {
+		return semitend;
 	}
 
-	public void setGluteus(String gluteus) {
-		this.gluteus = gluteus;
+	public void setSemitend(String semitend) {
+		this.semitend = semitend;
 	}
 
-	public String getGluteusmedius() {
-		return gluteusmedius;
+	public String getGastroc() {
+		return gastroc;
 	}
 
-	public void setGluteusmedius(String gluteusmedius) {
-		this.gluteusmedius = gluteusmedius;
+	public void setGastroc(String gastroc) {
+		this.gastroc = gastroc;
 	}
 
-	public String getHamstrings() {
-		return hamstrings;
+	public String getSoleus() {
+		return soleus;
 	}
 
-	public void setHamstrings(String hamstrings) {
-		this.hamstrings = hamstrings;
+	public void setSoleus(String soleus) {
+		this.soleus = soleus;
 	}
 
-	public String getIliopsoas() {
-		return iliopsoas;
+	public String getIliotibband() {
+		return iliotibband;
 	}
 
-	public void setIliopsoas(String iliopsoas) {
-		this.iliopsoas = iliopsoas;
+	public void setIliotibband(String iliotibband) {
+		this.iliotibband = iliotibband;
 	}
 
-	public String getRectus() {
-		return rectus;
+	public String getBicepsfem() {
+		return bicepsfem;
 	}
 
-	public void setRectus(String rectus) {
-		this.rectus = rectus;
-	}
-
-	public String getObliques() {
-		return obliques;
-	}
-
-	public void setObliques(String obliques) {
-		this.obliques = obliques;
-	}
-
-	public String getOthernotes() {
-		return othernotes;
-	}
-
-	public void setOthernotes(String othernotes) {
-		this.othernotes = othernotes;
+	public void setBicepsfem(String bicepsfem) {
+		this.bicepsfem = bicepsfem;
 	}
 
 	public String getFunctionalrangeofmotion() {
@@ -475,14 +430,6 @@ public class Lumbopelvicexam {
 
 	public void setFunctionalrangeofmotion(String functionalrangeofmotion) {
 		this.functionalrangeofmotion = functionalrangeofmotion;
-	}
-
-	public String getSubluxation() {
-		return subluxation;
-	}
-
-	public void setSubluxation(String subluxation) {
-		this.subluxation = subluxation;
 	}
 
 	public String getOrthopedic() {
@@ -501,36 +448,20 @@ public class Lumbopelvicexam {
 		this.flexion = flexion;
 	}
 
-	public String getT89() {
-		return t89;
+	public String getAcll() {
+		return acll;
 	}
 
-	public void setT89(String t89) {
-		this.t89 = t89;
+	public void setAcll(String acll) {
+		this.acll = acll;
 	}
 
-	public String getT910() {
-		return t910;
+	public String getAclr() {
+		return aclr;
 	}
 
-	public void setT910(String t910) {
-		this.t910 = t910;
-	}
-
-	public String getTrendelburgl() {
-		return trendelburgl;
-	}
-
-	public void setTrendelburgl(String trendelburgl) {
-		this.trendelburgl = trendelburgl;
-	}
-
-	public String getTrendelburgr() {
-		return trendelburgr;
-	}
-
-	public void setTrendelburgr(String trendelburgr) {
-		this.trendelburgr = trendelburgr;
+	public void setAclr(String aclr) {
+		this.aclr = aclr;
 	}
 
 	public String getExtension() {
@@ -541,212 +472,220 @@ public class Lumbopelvicexam {
 		this.extension = extension;
 	}
 
-	public String getT1011() {
-		return t1011;
+	public String getPcll() {
+		return pcll;
 	}
 
-	public void setT1011(String t1011) {
-		this.t1011 = t1011;
+	public void setPcll(String pcll) {
+		this.pcll = pcll;
 	}
 
-	public String getT1112() {
-		return t1112;
+	public String getPclr() {
+		return pclr;
 	}
 
-	public void setT1112(String t1112) {
-		this.t1112 = t1112;
+	public void setPclr(String pclr) {
+		this.pclr = pclr;
 	}
 
-	public String getKempsl() {
-		return kempsl;
+	public String getInternalrotation() {
+		return internalrotation;
 	}
 
-	public void setKempsl(String kempsl) {
-		this.kempsl = kempsl;
+	public void setInternalrotation(String internalrotation) {
+		this.internalrotation = internalrotation;
 	}
 
-	public String getKempsr() {
-		return kempsr;
+	public String getLcll() {
+		return lcll;
 	}
 
-	public void setKempsr(String kempsr) {
-		this.kempsr = kempsr;
+	public void setLcll(String lcll) {
+		this.lcll = lcll;
 	}
 
-	public String getLflexion() {
-		return lflexion;
+	public String getLclr() {
+		return lclr;
 	}
 
-	public void setLflexion(String lflexion) {
-		this.lflexion = lflexion;
+	public void setLclr(String lclr) {
+		this.lclr = lclr;
 	}
 
-	public String getRflexion() {
-		return rflexion;
+	public String getExternalrotation() {
+		return externalrotation;
 	}
 
-	public void setRflexion(String rflexion) {
-		this.rflexion = rflexion;
+	public void setExternalrotation(String externalrotation) {
+		this.externalrotation = externalrotation;
 	}
 
-	public String getT12l1() {
-		return t12l1;
+	public String getMcll() {
+		return mcll;
 	}
 
-	public void setT12l1(String t12l1) {
-		this.t12l1 = t12l1;
+	public void setMcll(String mcll) {
+		this.mcll = mcll;
 	}
 
-	public String getL12() {
-		return l12;
+	public String getMclr() {
+		return mclr;
 	}
 
-	public void setL12(String l12) {
-		this.l12 = l12;
+	public void setMclr(String mclr) {
+		this.mclr = mclr;
 	}
 
-	public String getSlumpl() {
-		return slumpl;
+	public String getCircumferential() {
+		return circumferential;
 	}
 
-	public void setSlumpl(String slumpl) {
-		this.slumpl = slumpl;
+	public void setCircumferential(String circumferential) {
+		this.circumferential = circumferential;
 	}
 
-	public String getSlumpr() {
-		return slumpr;
+	public String getMeniscusl() {
+		return meniscusl;
 	}
 
-	public void setSlumpr(String slumpr) {
-		this.slumpr = slumpr;
+	public void setMeniscusl(String meniscusl) {
+		this.meniscusl = meniscusl;
 	}
 
-	public String getLrotation() {
-		return lrotation;
+	public String getMeniscusr() {
+		return meniscusr;
 	}
 
-	public void setLrotation(String lrotation) {
-		this.lrotation = lrotation;
+	public void setMeniscusr(String meniscusr) {
+		this.meniscusr = meniscusr;
 	}
 
-	public String getRrotation() {
-		return rrotation;
+	public String getApleysl() {
+		return apleysl;
 	}
 
-	public void setRrotation(String rrotation) {
-		this.rrotation = rrotation;
+	public void setApleysl(String apleysl) {
+		this.apleysl = apleysl;
 	}
 
-	public String getL23() {
-		return l23;
+	public String getApleysr() {
+		return apleysr;
 	}
 
-	public void setL23(String l23) {
-		this.l23 = l23;
+	public void setApleysr(String apleysr) {
+		this.apleysr = apleysr;
 	}
 
-	public String getL34() {
-		return l34;
+	public String getCmabovel() {
+		return cmabovel;
 	}
 
-	public void setL34(String l34) {
-		this.l34 = l34;
+	public void setCmabovel(String cmabovel) {
+		this.cmabovel = cmabovel;
 	}
 
-	public String getStraightlegl() {
-		return straightlegl;
+	public String getSuprapatellarl() {
+		return suprapatellarl;
 	}
 
-	public void setStraightlegl(String straightlegl) {
-		this.straightlegl = straightlegl;
+	public void setSuprapatellarl(String suprapatellarl) {
+		this.suprapatellarl = suprapatellarl;
 	}
 
-	public String getStraightlegr() {
-		return straightlegr;
+	public String getInfrapatellarl() {
+		return infrapatellarl;
 	}
 
-	public void setStraightlegr(String straightlegr) {
-		this.straightlegr = straightlegr;
+	public void setInfrapatellarl(String infrapatellarl) {
+		this.infrapatellarl = infrapatellarl;
 	}
 
-	public String getL45() {
-		return l45;
+	public String getBelowl() {
+		return belowl;
 	}
 
-	public void setL45(String l45) {
-		this.l45 = l45;
+	public void setBelowl(String belowl) {
+		this.belowl = belowl;
 	}
 
-	public String getL5s1() {
-		return l5s1;
+	public String getDistractionl() {
+		return distractionl;
 	}
 
-	public void setL5s1(String l5s1) {
-		this.l5s1 = l5s1;
+	public void setDistractionl(String distractionl) {
+		this.distractionl = distractionl;
 	}
 
-	public String getWelllegl() {
-		return welllegl;
+	public String getDistractionr() {
+		return distractionr;
 	}
 
-	public void setWelllegl(String welllegl) {
-		this.welllegl = welllegl;
+	public void setDistractionr(String distractionr) {
+		this.distractionr = distractionr;
 	}
 
-	public String getWelllegr() {
-		return welllegr;
+	public String getCmabover() {
+		return cmabover;
 	}
 
-	public void setWelllegr(String welllegr) {
-		this.welllegr = welllegr;
+	public void setCmabover(String cmabover) {
+		this.cmabover = cmabover;
 	}
 
-	public String getLsi() {
-		return lsi;
+	public String getSuprapatellarr() {
+		return suprapatellarr;
 	}
 
-	public void setLsi(String lsi) {
-		this.lsi = lsi;
+	public void setSuprapatellarr(String suprapatellarr) {
+		this.suprapatellarr = suprapatellarr;
 	}
 
-	public String getRsi() {
-		return rsi;
+	public String getInfrapatellarr() {
+		return infrapatellarr;
 	}
 
-	public void setRsi(String rsi) {
-		this.rsi = rsi;
+	public void setInfrapatellarr(String infrapatellarr) {
+		this.infrapatellarr = infrapatellarr;
 	}
 
-	public String getNachlasl() {
-		return nachlasl;
+	public String getBelowr() {
+		return belowr;
 	}
 
-	public void setNachlasl(String nachlasl) {
-		this.nachlasl = nachlasl;
+	public void setBelowr(String belowr) {
+		this.belowr = belowr;
 	}
 
-	public String getNachlasr() {
-		return nachlasr;
+	public String getCmpl() {
+		return cmpl;
 	}
 
-	public void setNachlasr(String nachlasr) {
-		this.nachlasr = nachlasr;
+	public void setCmpl(String cmpl) {
+		this.cmpl = cmpl;
 	}
 
-	public String getPositiveminor() {
-		return positiveminor;
+	public String getCmpr() {
+		return cmpr;
 	}
 
-	public void setPositiveminor(String positiveminor) {
-		this.positiveminor = positiveminor;
+	public void setCmpr(String cmpr) {
+		this.cmpr = cmpr;
 	}
 
-	public String getPositiveadam() {
-		return positiveadam;
+	public String getPatdll() {
+		return patdll;
 	}
 
-	public void setPositiveadam(String positiveadam) {
-		this.positiveadam = positiveadam;
+	public void setPatdll(String patdll) {
+		this.patdll = patdll;
+	}
+
+	public String getPatdlr() {
+		return patdlr;
+	}
+
+	public void setPatdlr(String patdlr) {
+		this.patdlr = patdlr;
 	}
 
 	public String getNeurologicaltest() {
@@ -997,28 +936,20 @@ public class Lumbopelvicexam {
 		this.sir = sir;
 	}
 
-	public String getSitting() {
-		return sitting;
-	}
-
-	public void setSitting(String sitting) {
-		this.sitting = sitting;
-	}
-
-	public String getLifting() {
-		return lifting;
-	}
-
-	public void setLifting(String lifting) {
-		this.lifting = lifting;
-	}
-
 	public String getWalking() {
 		return walking;
 	}
 
 	public void setWalking(String walking) {
 		this.walking = walking;
+	}
+    
+	public String getStanding() {
+		return standing;
+	}
+
+	public void setStanding(String standing) {
+		this.standing = standing;
 	}
 
 	public String getStairs() {
@@ -1099,6 +1030,14 @@ public class Lumbopelvicexam {
 
 	public void setDiagnosis5(String diagnosis5) {
 		this.diagnosis5 = diagnosis5;
+	}
+
+	public String getDiagnosis6() {
+		return diagnosis6;
+	}
+
+	public void setDiagnosis6(String diagnosis6) {
+		this.diagnosis6 = diagnosis6;
 	}
 
 	public String getTimes() {
@@ -1253,5 +1192,4 @@ public class Lumbopelvicexam {
 		this.sign = sign;
 	}
 	
-	
-}
+	}
