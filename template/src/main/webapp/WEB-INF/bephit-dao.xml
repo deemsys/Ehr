@@ -84,4 +84,8 @@
  <bean id="LumbopelvicexamDAO" class="bephit.dao.LumbopelvicexamDAO">
     	<property name="dataSource" ref="dataSource" />
     </bean> 
+    <bean id="FootexamDAO" class="bephit.dao.FootexamDAO">
+    	<property name="dataSource" ref="dataSource" />
+    </bean> 
+    
 </beans>
