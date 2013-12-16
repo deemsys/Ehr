@@ -246,6 +246,184 @@ public class DoctorController {
 		
 		return "hipexam";
 	}
+	@RequestMapping(value="/viewlumbopelvicexam", method=RequestMethod.GET)
+	public String viewexam(HttpServletRequest request,ModelMap model, Principal principal) {
+		 model.addAttribute("success","false");
+		
+		  LumbopelvicexamForm lumbopelvicexamForm = new LumbopelvicexamForm();
+		 
+		  lumbopelvicexamForm.setLumbopelvicexam(lumboDAO.getLumbopelvicexam());
+		  
+		  	model.addAttribute("lumbopelvicexamForm", lumbopelvicexamForm);
+		  
+		return "viewlumbopelvicexam";
+	}
+	@RequestMapping(value="/lumbopelvicexamlist", method=RequestMethod.GET)
+	public String lumbopelvicexamlist(HttpServletRequest request,@RequestParam("lumbopelvicexamid") String lumbopelvicexamid,ModelMap model,Lumbopelvicexam lumbopelvicexam)
+	{
+		
+		LumbopelvicexamForm lumbopelvicexamForm = new LumbopelvicexamForm();
+		lumbopelvicexamForm.setLumbopelvicexam(lumboDAO.getLumbopelvic(lumbopelvicexamid));	
+		model.addAttribute("lumbopelvicexamForm", lumbopelvicexamForm);
+		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
+		return "lumbopelvicexamlist";
+	}
+	
+	@RequestMapping(value="/editlumbopelvicexam", method=RequestMethod.GET)
+	public String editlumbopelvicexam(HttpServletRequest request,@RequestParam("lumbopelvicexamid") String lumbopelvicexamid,ModelMap model,Lumbopelvicexam lumbopelvicexam) 
+	{
+		/*String lumbopelvicexam=request.getParameter("lumbopelvicexam");*/
+		LumbopelvicexamForm lumbopelvicexamForm = new LumbopelvicexamForm();       
+        lumbopelvicexamForm.setLumbopelvicexam(lumboDAO.getLumbopelvic(lumbopelvicexamid));
+        model.addAttribute("lumbopelvicexamForm",lumbopelvicexamForm);
+		 
+		return "editlumbopelvicexam";
+	}
+	
+
+	@RequestMapping(value="/updatelumbopelvicexam", method=RequestMethod.POST)
+	public String updatelumbopelvicexam(HttpServletRequest request,@ModelAttribute("lumbopelvicexam") @Valid Lumbopelvicexam lumbopelvicexam,
+			BindingResult result,ModelMap model,Principal principal)
+	{
+		/*soapnotes.getPatient_id();
+		if (result.hasErrors())
+		{
+			SoapnotesForm soapnotesForm = new SoapnotesForm();
+	     
+	      soapnotesForm.setSoapnotes(soapDAO.getSoap(soapnotes.getSoapid()));
+	      
+	        model.addAttribute("soapnotesForm", soapnotesForm);
+	        model.addAttribute("menu", "notes");    
+		        return "editsoapnotes";
+		}*/
+		/*System.out.println("soapid"+soapnotes.getSoapid());*/
+		int status = lumboDAO.updatelumbopelvic(lumbopelvicexam, lumbopelvicexam.getLumbopelvicexamid(), principal.getName());
+		System.out.println(status);
+		
+		LumbopelvicexamForm lumbopelvicexamForm = new LumbopelvicexamForm();
+        
+       lumbopelvicexamForm.setLumbopelvicexam(lumboDAO.getLumbopelvicexam());
+       
+        model.addAttribute("lumbopelvicexamForm", lumbopelvicexamForm);
+	        return "viewlumbopelvicexam";
+		
+	}
+	@RequestMapping(value="/deletelumbopelvicexam", method=RequestMethod.GET)
+	public String removelumbopelvicexam(@RequestParam("lumbopelvicexamid") String lumbopelvicexamid,ModelMap model, Principal principal) {
+	
+		int status=lumboDAO.deletelumbopelvicexam(lumbopelvicexamid);
+		
+		if(status==1)
+		{
+        model.addAttribute("success","true");
+		
+        LumbopelvicexamForm lumbopelvicexamForm= new LumbopelvicexamForm();
+        lumbopelvicexamForm.setLumbopelvicexam(lumboDAO.getLumbopelvicexam());
+		model.addAttribute("lumbopelvicexamForm",lumbopelvicexamForm);  
+		}
+		return "viewlumbopelvicexam";
+	}
+	@RequestMapping(value="/kneeexam", method = RequestMethod.GET)
+	public String viewingform(HttpSession session, ModelMap model) {
+		
+		
+		return "kneeexam";
+ 
+	}
+	@RequestMapping(value="/kneeexam", method = RequestMethod.POST)
+	public String insert_kneeexam(HttpSession session,@ModelAttribute("Kneeexam")  @Valid Kneeexam kneeexam,BindingResult result,ModelMap model) {
+		
+		model.put("Kneeexam", kneeexam);
+		model.addAttribute("KneeexamForm",kneeexam);
+    	int a=kneeDAO.setKneeexam(kneeexam);
+		KneeexamForm kneeexamForm= new KneeexamForm();
+		kneeexamForm.setKneeexam(kneeDAO.getKneeexam());
+		model.addAttribute("kneeexamForm",kneeexamForm);
+		return "kneeexam";
+ 
+	}
+	@RequestMapping(value="/viewkneeexam", method=RequestMethod.GET)
+	public String viewkneeexam(HttpServletRequest request,ModelMap model, Principal principal) {
+		 model.addAttribute("success","false");
+		
+		  KneeexamForm kneeexamForm = new KneeexamForm();
+		 
+		  kneeexamForm.setKneeexam(kneeDAO.getKneeexam());
+		  
+		  	model.addAttribute("kneeexamForm", kneeexamForm);
+		  
+		return "viewkneeexam";
+	}
+	@RequestMapping(value="/kneeexamlist", method=RequestMethod.GET)
+	public String kneeexamlist(HttpServletRequest request,@RequestParam("kneeexamid") String kneeexamid,ModelMap model,Kneeexam kneeexam)
+	{
+		
+		KneeexamForm kneeexamForm = new KneeexamForm();
+		kneeexamForm.setKneeexam(kneeDAO.getKnee(kneeexamid));	
+		model.addAttribute("kneeexamForm", kneeexamForm);
+		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
+		return "kneeexamlist";
+	}
+	@RequestMapping(value="/editkneeexam", method=RequestMethod.GET)
+	public String editkneeexam(HttpServletRequest request,@RequestParam("kneeexamid") String kneeexamid,ModelMap model,Kneeexam kneeexam) 
+	{
+		/*String lumbopelvicexam=request.getParameter("lumbopelvicexam");*/
+		KneeexamForm kneeexamForm = new KneeexamForm();       
+        kneeexamForm.setKneeexam(kneeDAO.getKnee(kneeexamid));
+        model.addAttribute("kneeexamForm",kneeexamForm);
+		 
+		return "editkneeexam";
+	}
+	
+
+	@RequestMapping(value="/updatekneeexam", method=RequestMethod.POST)
+	public String updatekneeexam(HttpServletRequest request,@ModelAttribute("kneeexam") @Valid Kneeexam kneeexam,
+			BindingResult result,ModelMap model,Principal principal)
+	{
+		/*soapnotes.getPatient_id();
+		if (result.hasErrors())
+		{
+			SoapnotesForm soapnotesForm = new SoapnotesForm();
+	     
+	      soapnotesForm.setSoapnotes(soapDAO.getSoap(soapnotes.getSoapid()));
+	      
+	        model.addAttribute("soapnotesForm", soapnotesForm);
+	        model.addAttribute("menu", "notes");    
+		        return "editsoapnotes";
+		}*/
+		/*System.out.println("soapid"+soapnotes.getSoapid());*/
+		int status = kneeDAO.updateknee(kneeexam, kneeexam.getKneeexamid(), principal.getName());
+		System.out.println(status);
+		
+		KneeexamForm kneeexamForm = new KneeexamForm();
+        
+       kneeexamForm.setKneeexam(kneeDAO.getKneeexam());
+       
+        model.addAttribute("kneeexamForm", kneeexamForm);
+	        return "viewkneeexam";
+		
+	}
+	@RequestMapping(value="/deletekneeexam", method=RequestMethod.GET)
+	public String removekneeexam(@RequestParam("kneeexamid") String kneeexamid,ModelMap model, Principal principal) {
+	
+		int status=kneeDAO.deletekneeexam(kneeexamid);
+		
+		if(status==1)
+		{
+        model.addAttribute("success","true");
+		
+        KneeexamForm kneeexamForm= new KneeexamForm();
+        kneeexamForm.setKneeexam(kneeDAO.getKneeexam());
+		model.addAttribute("kneeexamForm",kneeexamForm);  
+		}
+		return "viewkneeexam";
+	}
+
+
+
+	
+	
+	
 }
 	
   
