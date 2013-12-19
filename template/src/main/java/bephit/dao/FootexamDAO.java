@@ -196,6 +196,154 @@ public class FootexamDAO
   
 		return 0;
 	}
+	public int updatefootexam(FootExam footexamdetails,String footexamno)
+	{
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		int flag=0;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			
+			
+			e1.printStackTrace();
+		}
+	    try{
+	    	 String cmd="update footexam set pname='"+footexamdetails.getPname()
+	    +"',date='"+footexamdetails.getDate()
+	    +"',gait='"+footexamdetails.getGait()
+	    +"',muscle='"+ footexamdetails.getMuscle()
+	    +"',swelling='"+ footexamdetails.getSwelling()		    
+	    +"',ao='"+footexamdetails.getAo()
+	    +"',pronation='"+footexamdetails.getPronation()
+	    +"',supination='"+footexamdetails.getSupination()
+	    +"',calcaneus='"+footexamdetails.getCalcaneus()
+	    +"',valgus='"+footexamdetails.getValgus()
+	    +"',forefoot='"+footexamdetails.getForefoot()
+	    +"',forefootvalgus='"+footexamdetails.getForefootvalgus()
+	    +"',dysfunction='"+footexamdetails.getDysfunction()	    
+	    +"',note='" +footexamdetails.getNote()
+	    +"',functional='"+footexamdetails.getFunctional()
+	    +"',orthotpedic='"+footexamdetails.getOrthotpedic()
+	    +"',plantarflexionleft='"+footexamdetails.getPlantarflexionleft()
+	    +"',plantarflexionright='"+footexamdetails.getPlantarflexionright()
+	    +"',dorsiflexionleft='" +footexamdetails.getDorsiflexionleft()
+	    +"',dorsiflexionright='"+footexamdetails.getDorsiflexionright()
+	    +"',inversionleft='" +footexamdetails.getInversionleft()
+	    +"',inversionright='"+footexamdetails.getInversionright()
+	    +"',eversionleft='"+footexamdetails.getEversionleft()
+	    +"',eversionright='"+footexamdetails.getEversionright()
+	    +"',greattoeextensionleft='"+footexamdetails.getGreattoeextensionleft()
+	    +"',greattoeextensionright='"+footexamdetails.getGreattoeextensionright()
+	    +"',greattoeflexionleft='"+footexamdetails.getGreattoeflexionleft()
+	    +"',greattoeflexionright='"+footexamdetails.getGreattoeflexionright()
+	    +"',tinelstapleft='"+footexamdetails.getTinelstapleft()
+	    +"',tinelstapright='"+footexamdetails.getTinelstapright()
+	    +"',achillestapleft='"+ footexamdetails.getAchillestapleft()
+	    +"',achillestapright='"+footexamdetails.getAchillestapright()
+	    +"',longleft='"+footexamdetails.getLongleft()
+	    +"',longright='"+footexamdetails.getLongright()
+	    +"',thompsonsleft='"+footexamdetails.getThompsonsleft()
+	    +"',thompsonsright='"+footexamdetails.getThompsonsright()
+	    +"',drawerleft='"+footexamdetails.getDrawerleft()
+	    +"',drawerright='"+footexamdetails.getDrawerright()
+	    +"',lateralleft='"+footexamdetails.getLateralleft()
+	    +"',lateralright='"+footexamdetails.getLateralright()
+	    +"',medialstabilityleft='"+footexamdetails.getMedialstabilityleft()
+	    +"',medialstabilityright='"+footexamdetails.getMedialstabilityright()
+	    +"',neurological='"+footexamdetails.getNeurological()
+	    +"',inguinalarealeft='"+footexamdetails.getInguinalarealeft()
+	    +"',inguinalarearight='"+footexamdetails.getInguinalarearight()
+	    +"',antleft='"+footexamdetails.getAntleft()
+	    +"',antright='"+footexamdetails.getAntright()
+	    +"',kneeleft='"+footexamdetails.getKneeleft()
+	    +"',kneeright='"+footexamdetails.getKneeright()
+	    +"',medialleft='"+footexamdetails.getMedialleft()
+	    +"',medialright='"+footexamdetails.getMedialright()
+	    +"',latleft='"+footexamdetails.getLatleft()
+	    +"',latright='"+footexamdetails.getLatright()
+	    +"',plantarleft='"+footexamdetails.getPlantarleft()
+	    +"',plantarright='"+footexamdetails.getPlantarright()
+	    +"',iliopsoasfirstleft='"+footexamdetails.getIliopsoasfirstleft()
+	    +"',iliopsoasfirstright='"+footexamdetails.getIliopsoasfirstright()
+	    +"',iliopsoas1left='"+footexamdetails.getIliopsoas1left()
+	    +"',iliopsoas1right='"+footexamdetails.getIliopsoas1right()
+	    +"',kneeextensionleft='"+footexamdetails.getKneeextensionleft()
+	    +"',kneeextensionright='"+footexamdetails.getKneeextensionright()
+	    +"',kneeflexionleft='"+footexamdetails.getKneeflexionleft()
+	    +"',kneeflexionright='"+footexamdetails.getKneeflexionright()
+	    +"',dorsiflexionleft1='"+footexamdetails.getDorsiflexionleft1()
+	    +"',dorsiflexionright1='"+footexamdetails.getDorsiflexionright1()
+	    +"',pfleft='"+footexamdetails.getPfleft()
+	    +"',pfright='"+footexamdetails.getPfright()
+	    +"',patellarleft='"+footexamdetails.getPatellarleft()
+	    +"',patellarright='"+footexamdetails.getPatellarright()
+	    +"',hsleft='"+footexamdetails.getHsleft()
+	    +"',hsright='"+footexamdetails.getHsright()
+	    +"',achillesleft='"+footexamdetails.getAchillesleft()
+	    +"',achillesright='"+footexamdetails.getAchillesright()
+	    +"',walking='"+ footexamdetails.getWalking()
+	    +"',standing='"+footexamdetails.getStanding()
+	    +"',stairs='"+footexamdetails.getStairs()
+	    +"',other='"+footexamdetails.getOther()
+	    +"',otherdefict='"+footexamdetails.getOtherdefict()
+	    +"',comments='"+footexamdetails.getComments()
+	    +"',patientstatus='"+footexamdetails.getPatientstatus()
+	    +"',diagnosis1='"+footexamdetails.getDiagnosis1()
+	    +"',diagnosis2='"+footexamdetails.getDiagnosis2()
+	    +"',diagnosis3='"+footexamdetails.getDiagnosis3()
+	    +"',diagnosis4='"+footexamdetails.getDiagnosis4()
+	    +"',diagnosis5='"+footexamdetails.getDiagnosis5()
+	    +"',times='"+footexamdetails.getTimes()
+	    +"',weeks='"+footexamdetails.getWeeks()
+	    +"',spinaldecompression='"+footexamdetails.getSpinaldecompression()
+	    +"',chiropractic='"+footexamdetails.getChiropractic()
+	    +"',physicaltherapy='"+footexamdetails.getPhysicaltherapy()
+	    +"',bracing='"+ footexamdetails.getBracing()
+	    +"',modalities='"+footexamdetails.getModalities()
+	    +"',supplementation='"+footexamdetails.getSupplementation()
+	    +"',hep='"+footexamdetails.getHep()
+	    +"',radiographic='"+footexamdetails.getRadiographic()
+	    +"',mri='"+footexamdetails.getMri()
+	    +"',scan='"+footexamdetails.getScan()
+	    +"',conduction='"+footexamdetails.getConduction()
+	    +"',emg='"+footexamdetails.getEmg()
+	    +"',outsidereferral='"+footexamdetails.getOutsidereferral()
+	    +"',dc='"+footexamdetails.getDc()
+	    +"',others='"+footexamdetails.getOthers()
+	    +"',othervalue='"+footexamdetails.getOthervalue()
+	    +"',signature='"+footexamdetails.getSignature()+"' where footexamno='"+footexamno+"'";
+	   
+	        
+	    
+	    
+	   
+	    
+		   	 		 
+	    	 		 
+	    	 		 
+	    System.out.println("cmd insert value"+cmd);
+	    statement.executeUpdate(cmd);
+	    }
+	    catch(Exception e){
+	    	System.out.println(e.toString());
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    	flag=0;
+	    	//return 0;
+	    }finally{
+	     	releaseStatement(statement);
+	    	releaseConnection(con);	    
+	    	
+	    }
+	    if(flag==1)
+    		return 1;
+    	else
+    		return 0;
+	}
+	
 	
 	public List<FootExam> getfootexamDetails(String footexamno){
 		Connection con = null;
