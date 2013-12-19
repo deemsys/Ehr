@@ -108,7 +108,9 @@ public class DoctorController {
 	@Autowired
 	FootexamDAO footexamDAO;
 	@Autowired
-	KneeexamDAO kneeDAO;
+	KneeexamDAO kneeDAO;	
+	@Autowired
+	ShoulderexamDAO shoulderexamDAO;
 	
 	
 	
@@ -124,6 +126,78 @@ public class DoctorController {
 	
 		 return "footexam";
 	}
+	@RequestMapping(value="/shoulderexam", method = RequestMethod.GET)
+	public String shoulderexam(ModelMap model) {
+	
+	
+		 return "shoulderexam";
+	}
+	
+	@RequestMapping(value="/wristexam", method = RequestMethod.GET)
+	public String wristexam(ModelMap model) {
+	
+	
+		 return "wristandhand";
+	}
+	
+	@RequestMapping(value="/insertshoulderexam", method = RequestMethod.POST)
+	public String insert_shoulderexam(HttpServletRequest request,HttpSession session,@ModelAttribute("ShoulderExam")  @Valid ShoulderExam shoulderexamdetails,BindingResult result,ModelMap model) {
+		System.out.print("outsiderefferal"+shoulderexamdetails.getOutsiderefferal());
+		int c=shoulderexamDAO.setshoulderexam(shoulderexamdetails);
+		System.out.println("c---"+c);
+		
+		
+		return "viewshoulderexam";
+	}
+	
+	@RequestMapping(value="/deleteshoulderexam", method = RequestMethod.GET)
+	public String deleteshoulderexam(@RequestParam("shoulderexamno") String shoulderexamno,ModelMap model,HipExam hipexam) {	
+		shoulderexamDAO.deleteshoulderexamdetails(shoulderexamno);
+		ShoulderExamForm shoulderexamform=new ShoulderExamForm();
+		shoulderexamform.setShoulderexamdetails(shoulderexamDAO.getshoulderexamallDetails());	
+	model.addAttribute("shoulderexamform",shoulderexamform);		
+	return "viewshoulderexam";	
+	}
+	
+	@RequestMapping(value="/viewshoulderexamdetails", method = RequestMethod.GET)	
+	public String viewshoulderexamdetail(ModelMap model,ShoulderExam shoulderexamdetails) {
+		ShoulderExamForm shoulderexamform=new ShoulderExamForm();
+		shoulderexamform.setShoulderexamdetails(shoulderexamDAO.getshoulderexamallDetails());	
+	model.addAttribute("shoulderexamform",shoulderexamform);
+	//System.out.println(shoulderexamform.getShoulderexamdetails().get(0).getPname());
+	return "viewshoulderexam";
+	}
+	
+	@RequestMapping(value="/shoulderexamlist", method = RequestMethod.GET)	
+	public String shoulderexamlist(@RequestParam("shoulderexamno") String shoulderexamno,ModelMap model,HipExam hipexam) {	
+	ShoulderExamForm shoulderexamform=new ShoulderExamForm();
+	shoulderexamform.setShoulderexamdetails(shoulderexamDAO.getShoulderexamDetails(shoulderexamno));
+	model.addAttribute("shoulderexamform",shoulderexamform);	
+	return "shoulderexamlist";
+	}
+	
+	@RequestMapping(value="/editshoulderexam", method = RequestMethod.GET)
+	public String editshoulderexam(@RequestParam("shoulderexamno") String shoulderexamno,ModelMap model,HipExam hipexam) {	
+	ShoulderExamForm shoulderexamform=new ShoulderExamForm();
+	shoulderexamform.setShoulderexamdetails(shoulderexamDAO.getShoulderexamDetails(shoulderexamno));	
+	model.addAttribute("shoulderexamform",shoulderexamform);		
+	return "editshoulderexam";
+	
+	}
+	@RequestMapping(value="/updateshoulderexam", method = RequestMethod.POST)
+	public String updateshoulderexam(HttpServletRequest request,HttpSession session,@ModelAttribute("ShoulderExam")  @Valid ShoulderExam shoulderexamdetails,BindingResult result,ModelMap model) {
+		//System.out.print(hipexamdetails.getOutsidereferral());
+		
+		int c=shoulderexamDAO.updateshoulderexam(shoulderexamdetails,shoulderexamdetails.getShoulderexamno());
+		System.out.println("c---"+c);
+		ShoulderExamForm shoulderexamform=new ShoulderExamForm();
+		shoulderexamform.setShoulderexamdetails(shoulderexamDAO.getshoulderexamallDetails());	
+		model.addAttribute("shoulderexamform",shoulderexamform);		
+		
+		return "viewshoulderexam";
+	}
+
+
 	@RequestMapping(value="/viewhipexam", method = RequestMethod.GET)
 	public String viewhipexamdetails(ModelMap model,HipExam hipexam) {	
 	HipExamForm hipexamform=new HipExamForm();
@@ -164,6 +238,14 @@ public class DoctorController {
 	return "viewfootexam";
 	
 	}
+	@RequestMapping(value="/editfootexam", method = RequestMethod.GET)
+	public String editfootexam(@RequestParam("footexamno") String footexamno,ModelMap model,HipExam hipexam) {	
+	FootExamForm footexamform=new FootExamForm();
+	footexamform.setFootexamdetails(footexamDAO.getfootexamDetails(footexamno));		
+	System.out.println(footexamform.getFootexamdetails().get(0).getPname());
+	model.addAttribute("footexamform",footexamform);
+	return "editfootexam";
+	}
 	@RequestMapping(value="/footexamlist", method = RequestMethod.GET)
 	public String viewfootexam(@RequestParam("footexamno") String footexamno,ModelMap model,HipExam hipexam) {	
 	FootExamForm footexamform=new FootExamForm();
@@ -171,6 +253,19 @@ public class DoctorController {
 	model.addAttribute("footexamform",footexamform);	
 	return "footexamlist";
 	}
+	@RequestMapping(value="/updatefootexam", method = RequestMethod.POST)
+	public String updatefootexam(HttpServletRequest request,HttpSession session,@ModelAttribute("FootExam")  @Valid FootExam footexamdetails,BindingResult result,ModelMap model) {
+		//System.out.print(hipexamdetails.getOutsidereferral());
+		
+		int c=footexamDAO.updatefootexam(footexamdetails,footexamdetails.getFootexamno());
+		System.out.println("c---"+c);
+		FootExamForm footexamform=new FootExamForm();
+		footexamform.setFootexamdetails(footexamDAO.getfootexamDetails());
+		model.addAttribute("footexamform",footexamform);
+		
+		return "viewfootexam";
+	}
+
 	
 	@RequestMapping(value="/hipexamlist", method = RequestMethod.GET)
 	public String viewhipexam(@RequestParam("hipexamno") String hipexamno,ModelMap model,HipExam hipexam) {	
@@ -180,6 +275,7 @@ public class DoctorController {
 	model.addAttribute("hipexamform",hipexamform);
 	return "viewhipexam";
 	}
+	
 
 	@RequestMapping(value="/hipreexam", method = RequestMethod.GET)
 	public String hipreexam(@RequestParam("hipexamno") String hipexamno,ModelMap model,HipExam hipexam) {	
@@ -190,6 +286,8 @@ public class DoctorController {
 	model.addAttribute("hipexamform",hipexamform);
 	return "hipreexam";
 	}
+	
+	
 
 	
 	
