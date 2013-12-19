@@ -147,36 +147,36 @@ $(function() {
  </table>
  <table>
  <tr class="row1">
- <td width="250"><B style="font-size:14px">FUNCTIONAL RANGE OF MOTION</B> </td><td width="200"><B style="font-size:14px"></B></td>  
- <td></td>
- <td width="250"><B style="font-size:14px">ORTHOTPEDIC TESTING </B></td><td><B style="font-size:14px"></B></td>
+ <td width="250"><B style="font-size:14px">FUNCTIONAL RANGE OF MOTION</B> </td><td><B style="font-size:14px"></B></td> 
+ <td width="250"></td>
+ <td width="300"><B style="font-size:14px">ORTHOPEDIC TESTING </B></td><td width="300"><B style="font-size:14px"></B></td>
  </tr>
   <tr class="row2">
- <td><input type="radio" name="functionalrangeofmotion" value="Unremarkable" <c:if test="${kneeexam.functionalrangeofmotion=='Unremarkable'}"><c:out value="checked=checked"/></c:if>>Unremarkable &nbsp;&nbsp;<%-- <input type="radio" name="functionalrangeofmotion" value="Except" <c:if test="${kneeexam.functionalrangeofmotion=='Except'}"><c:out value="checked=checked"/></c:if>>Except --%></td><td> </td> 
- <td></td><td> </td> 
- <td> <input type="radio" name="orthopedic" value="Unremarkable" <c:if test="${kneeexam.orthopedic=='Unremarkable'}"><c:out value="checked=checked"/></c:if>>Unremarkable&nbsp;&nbsp;<%-- <input type="radio" name="orthopedic" value="Except" <c:if test="${kneeexam.orthopedic=='Except'}"><c:out value="checked=checked"/></c:if>>Except --%></td><td> </td>
+ <td><input type="radio" name="functionalrangeofmotion" value="Unremarkable" <c:if test="${kneeexam.functionalrangeofmotion=='Unremarkable'}"><c:out value="checked=checked"/></c:if> >Unremarkable &nbsp;&nbsp;<!-- <input type="radio" name="functionalrangeofmotion" value="Except">Except --></td><td> </td>  
+ <td></td>
+ <td> <input type="radio" name="orthopedic" value="Unremarkable" <c:if test="${kneeexam.orthopedic=='Unremarkable'}"><c:out value="checked=checked"/></c:if>>Unremarkable&nbsp;&nbsp;<!-- <input type="radio" name="orthopedic" value="Except">Except --></td><td> </td>
  </tr>
- <tr class="row1">
+  <tr class="row1">
  <td></td><td width="50"> <b>Normal</b> </td><td><b> Actual</b></td>  
  <td></td><td><b>Left</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> Right</b></td>
  </tr>
-   <tr class="row2">
- <td><b>Flexion:</b> </td><td> (60)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="flexion" size="7" value="${kneeexam.flexion}"></td>  
+  <tr class="row2">
+ <td><b>Flexion:</b> </td><td> (60)</td><td>&nbsp;&nbsp;&nbsp; <input type="text" name="flexion" size="7" value="${kneeexam.flexion}"></td>  
  <td><b>Ant. Drawer (ACL):</b> </td><td><input type="text" name="acll" size="5" value="${kneeexam.acll}"> <input type="text" name="aclr" size="5" value="${kneeexam.aclr}"></td>
  </tr>
   <tr class="row1">
- <td><b>Extension:	</b> </td><td> (25)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="extension" size="7" value="${kneeexam.extension}"></td>  
+ <td><b>Extension:	</b> </td><td> (25) </td><td> &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="extension" size="7" value="${kneeexam.extension}"></td>  
  <td><b>Post. Drawer (PCL):	</b> </td><td><input type="text" name="pcll" size="5" value="${kneeexam.pcll}"> <input type="text" name="pclr" size="5" value="${kneeexam.pclr}"></td>
  </tr>
   <tr class="row2">
- <td><b>Internal Rotation:</b> </td><td> (25)&nbsp;&nbsp;&nbsp;L <input type="text" name="internalrotation" size="7" value="${kneeexam.internalrotation}"><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R <input type="text" name="internalrotationr" size="7"  <%-- value="${kneeexam.internalrotationr} --%> "></td>  
+ <td><b>Internal Rotation:</b> </td><td> (25)</td><td>L &nbsp;<input type="text" name="internalrotationl" size="7" value="${kneeexam.internalrotationl}"><br/><br/>R <input type="text" name="internalrotationr" size="7" value="${kneeexam.internalrotationr}"></td>  
  <td><b>Lateral (Varus) Stability (LCL):</b> </td><td><input type="text" name="lcll" size="5" value="${kneeexam.lcll}"> <input type="text" name="lclr" size="5" value="${kneeexam.lclr}"></td>
  </tr>
   <tr class="row1">
-  <td><b> External Rotation:</b> </td><td> (45)&nbsp;&nbsp;&nbsp;L <input type="text" name="externalrotation" size="7" value="${kneeexam.externalrotation}"><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R <input type="text" name="externalrotationr" size="7" <%-- value="${kneeexam.externalrotationr} --%>"></td>  
- <td><b>Medial (Valgus) Stability (MCL):</b> </td><td><input type="text" name="mcll" size="5" value="${kneeexam.mcll}"> <input type="text" name="mclr" size="5" "value="${kneeexam.mclr}"></td>
+  <td><b> External Rotation:</b> </td><td> (45)</td><td>L &nbsp;<input type="text" name="externalrotationl" size="7" value="${kneeexam.externalrotationl}"><br/><br/>R <input type="text" name="externalrotationr" size="7" value="${kneeexam.externalrotationr}"></td>  
+ <td><b>Medial (Valgus) Stability (MCL):</b> </td><td><input type="text" name="mcll" size="5" value="${kneeexam.mcll}"> <input type="text" name="mclr" size="5" value="${kneeexam.mclr}"> </td>
  </tr>
-   <tr class="row2">
+  <tr class="row2">
  <td><b>GIRTH</b>&nbsp;&nbsp;&nbsp; <input type="checkbox" name="circumferential" value="Circumferential Measures are Unremarkable" <c:if test="${kneeexam.circumferential=='Circumferential Measures are Unremarkable'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Circumferential Measures are 	</td><td>Unremarkable </td>  
  <td></td>
  <td><b>McMurray's (Med Meniscus):	</b> </td><td><input type="text" name="meniscusl" size="5" value="${kneeexam.meniscusl}"> <input type="text" name="meniscusr" size="5" value="${kneeexam.meniscusr}"></td>
@@ -187,13 +187,13 @@ $(function() {
  <td><b>Apley's Compress (Meniscus):	</b> </td><td><input type="text" name="apleysl" size="5" value="${kneeexam.apleysl}"> <input type="text" name="apleysr" size="5" value="${kneeexam.apleysr}"></td>
  </tr>
   <tr class="row2">
- <td>Left &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="cmabovel" size="8" value="${kneeexam.cmabovel}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="suprapatellarl" size="8" value="${kneeexam.suprapatellarl}"></td><td><input type="text" name="infrapatellarl" size="8" value="${kneeexam.infrapatellarl}"> </td>  
- <td><input type="text" name="belowl" size="8"></td>
+ <td>Left &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="cmabovel" size="8" value="${kneeexam.cmabovel}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="suprapatellarl" size="8" value="${kneeexam.suprapatellarl}"></td><td><input type="text" name="infrapatellarl" size="8" value="${kneeexam.infrapatellarl }"> </td>  
+ <td><input type="text" name="belowl" size="8" value="${kneeexam.belowl}"></td>
  <td><b>Apley's Distraction (Cor ligs):		</b> </td><td><input type="text" name="distractionl" size="5" value="${kneeexam.distractionl}"> <input type="text" name="distractionr" size="5" value="${kneeexam.distractionr}"> </td>
  </tr>
  <tr class="row1">
  <td>Right &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="cmabover" size="8" value="${kneeexam.cmabover}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="suprapatellarr" size="8" value="${kneeexam.suprapatellarr}"></td><td><input type="text" name="infrapatellarr" size="8" value="${kneeexam.infrapatellarr}"> </td>  
- <td><input type="text" name="belowr" size="8"></td>
+ <td><input type="text" name="belowr" size="8" value="${kneeexam.belowr}"></td>
  <td><b>Patellar Grind (CMP):		</b> </td><td><input type="text" name="cmpl" size="5" value="${kneeexam.cmpl}"> <input type="text" name="cmpr" size="5" value="${kneeexam.cmpr}"> </td>
  </tr>
  <tr class="row2">
@@ -386,4 +386,4 @@ $(function() {
   </div>
 </div>
 </form>
-</body>
+</body>   ;'

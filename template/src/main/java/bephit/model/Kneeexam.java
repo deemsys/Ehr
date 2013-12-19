@@ -28,10 +28,12 @@ public class Kneeexam {
 	private String extension;
 	private String pcll;
 	private String pclr;
-	private String internalrotation;
+	private String internalrotationr;
+	private String internalrotationl;
 	private String lcll;
 	private String lclr;
-	private String externalrotation;
+	private String externalrotationr;
+	private String externalrotationl;
 	private String mcll;
 	private String mclr;
 	private String circumferential;
@@ -130,8 +132,8 @@ public class Kneeexam {
 			String bicepsfem, String functionalrangeofmotion,
 			String orthopedic, String flexion, String acll, String aclr,
 			String extension, String pcll, String pclr,
-			String internalrotation, String lcll, String lclr,
-			String externalrotation, String mcll, String mclr,
+			String internalrotationl,String internalrotationr, String lcll, String lclr,
+			String externalrotationl,String externalrotationr, String mcll, String mclr,
 			String circumferential, String meniscusl, String meniscusr,
 			String apleysl, String apleysr, String cmabovel,
 			String suprapatellarl, String infrapatellarl, String belowl,
@@ -182,10 +184,12 @@ public class Kneeexam {
 		this.extension = extension;
 		this.pcll = pcll;
 		this.pclr = pclr;
-		this.internalrotation = internalrotation;
+		this.internalrotationl = internalrotationl;
+		this.internalrotationr = internalrotationr;
 		this.lcll = lcll;
 		this.lclr = lclr;
-		this.externalrotation = externalrotation;
+		this.externalrotationl = externalrotationl;
+		this.externalrotationr = externalrotationr;
 		this.mcll = mcll;
 		this.mclr = mclr;
 		this.circumferential = circumferential;
@@ -487,15 +491,24 @@ public class Kneeexam {
 	public void setPclr(String pclr) {
 		this.pclr = pclr;
 	}
-
-	public String getInternalrotation() {
-		return internalrotation;
+ 
+	public String getInternalrotationl() {
+		return internalrotationl;
 	}
 
-	public void setInternalrotation(String internalrotation) {
-		this.internalrotation = internalrotation;
+	public void setInternalrotationl(String internalrotationl) {
+		this.internalrotationl = internalrotationl;
 	}
 
+	public String getInternalrotationr() {
+		return internalrotationr;
+	}
+
+	public void setInternalrotationr(String internalrotationr) {
+		this.internalrotationr = internalrotationr;
+	}
+
+	
 	public String getLcll() {
 		return lcll;
 	}
@@ -512,12 +525,23 @@ public class Kneeexam {
 		this.lclr = lclr;
 	}
 
-	public String getExternalrotation() {
-		return externalrotation;
+	
+
+	public String getExternalrotationl() {
+		return externalrotationl;
 	}
 
-	public void setExternalrotation(String externalrotation) {
-		this.externalrotation = externalrotation;
+	public void setExternalrotationl(String externalrotationl) {
+		this.externalrotationl = externalrotationl;
+	}
+
+	
+	public String getExternalrotationr() {
+		return externalrotationr;
+	}
+
+	public void setExternalrotationr(String externalrotationr) {
+		this.externalrotationr = externalrotationr;
 	}
 
 	public String getMcll() {

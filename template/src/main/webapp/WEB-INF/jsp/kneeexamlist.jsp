@@ -150,11 +150,11 @@ $(function() {
  <td><b>Post. Drawer (PCL):	</b> </td><td>${kneeexam.pcll} ${kneeexam.pclr} </td>
  </tr>
   <tr class="row2">
- <td><b>Internal Rotation:</b> </td><td> (25)</td><td>L &nbsp;${kneeexam.internalrotation}<br/><br/>R </td>  
+ <td><b>Internal Rotation:</b> </td><td> (25)</td><td>L &nbsp;${kneeexam.internalrotationl}<br/><br/>R ${kneeexam.internalrotationr}</td>  
  <td><b>Lateral (Varus) Stability (LCL):</b> </td><td> ${kneeexam.lcll}${kneeexam.lclr}</td>
  </tr>
   <tr class="row1">
-  <td><b> External Rotation:</b> </td><td> (45)</td><td>L &nbsp;${kneeexam.externalrotation}<br/><br/>R </td>  
+  <td><b> External Rotation:</b> </td><td> (45)</td><td>L &nbsp;${kneeexam.externalrotationl}<br/><br/>R ${kneeexam.externalrotationr}</td>  
  <td><b>Medial (Valgus) Stability (MCL):</b> </td><td>${kneeexam.mcll} ${kneeexam.mclr} </td>
  </tr>
   <tr class="row2">
