@@ -111,6 +111,8 @@ public class DoctorController {
 	KneeexamDAO kneeDAO;	
 	@Autowired
 	ShoulderexamDAO shoulderexamDAO;
+	@Autowired
+	WristexamDAO wristexamDAO;
 	
 	
 	
@@ -139,6 +141,67 @@ public class DoctorController {
 	
 		 return "wristandhand";
 	}
+	
+	@RequestMapping(value="/insertwristexam", method = RequestMethod.POST)
+	public String insert_wristexam(HttpServletRequest request,HttpSession session,@ModelAttribute("WristExam")  @Valid WristExam wristexamdetails,BindingResult result,ModelMap model) {
+		int c=wristexamDAO.setwristexam(wristexamdetails);
+		System.out.println("c---"+c);
+		
+		
+		return "wristandhand";
+	}
+	
+	@RequestMapping(value="/viewwristexamdetails", method = RequestMethod.GET)	
+	public String viewwristexamdetail(ModelMap model,WristExam wristexamdetails) {
+		WristExamForm wristexamform=new WristExamForm();
+		wristexamform.setWristexamdetails(wristexamDAO.getwristexamallDetails());	
+	model.addAttribute("wristexamform",wristexamform);
+	//System.out.println(shoulderexamform.getShoulderexamdetails().get(0).getPname());
+	return "viewwristexam";
+	}
+	
+	@RequestMapping(value="/deletewristexam", method = RequestMethod.GET)
+	public String deletewristexam(@RequestParam("wristexamno") String wristexamno,ModelMap model) {	
+		wristexamDAO.deletewristexamdetails(wristexamno);
+		WristExamForm wristexamform=new WristExamForm();
+		wristexamform.setWristexamdetails(wristexamDAO.getwristexamallDetails());
+	    model.addAttribute("wristexamform",wristexamform);		
+	    return "viewwristexam";
+	
+	}
+	
+	@RequestMapping(value="/editwristexam", method = RequestMethod.GET)
+	public String editwristexam(@RequestParam("wristexamno") String wristexamno,ModelMap model,HipExam hipexam) {	
+		WristExamForm wristexamform=new WristExamForm();
+		wristexamform.setWristexamdetails(wristexamDAO.getwristexamDetails(wristexamno));
+	    model.addAttribute("wristexamform",wristexamform);			
+	return "editwristexam";
+	
+	}
+	
+	@RequestMapping(value="/updatewristexam", method = RequestMethod.POST)
+	public String updatewristexam(HttpServletRequest request,HttpSession session,@ModelAttribute("wristExam")  @Valid WristExam wristexamdetails,BindingResult result,ModelMap model) {
+		//System.out.print(hipexamdetails.getOutsidereferral());
+		System.out.println(wristexamdetails.getWristexamno());
+		int c=wristexamDAO.updatewristexam(wristexamdetails,wristexamdetails.getWristexamno());
+		System.out.println("c---"+c);
+		WristExamForm wristexamform=new WristExamForm();
+		wristexamform.setWristexamdetails(wristexamDAO.getwristexamallDetails());	
+		model.addAttribute("wristexamform",wristexamform);		
+		
+		return "viewwristexam";
+	}
+	
+	@RequestMapping(value="/wristexamlist", method = RequestMethod.GET)	
+	public String wristexamlist(@RequestParam("wristexamno") String wristexamno,ModelMap model) {	
+		WristExamForm wristexamform=new WristExamForm();
+		wristexamform.setWristexamdetails(wristexamDAO.getwristexamDetails(wristexamno));	
+		model.addAttribute("wristexamform",wristexamform);				
+			
+	return "wristexamlist";
+	}
+	
+	
 	
 	@RequestMapping(value="/insertshoulderexam", method = RequestMethod.POST)
 	public String insert_shoulderexam(HttpServletRequest request,HttpSession session,@ModelAttribute("ShoulderExam")  @Valid ShoulderExam shoulderexamdetails,BindingResult result,ModelMap model) {
@@ -184,6 +247,7 @@ public class DoctorController {
 	return "editshoulderexam";
 	
 	}
+	
 	@RequestMapping(value="/updateshoulderexam", method = RequestMethod.POST)
 	public String updateshoulderexam(HttpServletRequest request,HttpSession session,@ModelAttribute("ShoulderExam")  @Valid ShoulderExam shoulderexamdetails,BindingResult result,ModelMap model) {
 		//System.out.print(hipexamdetails.getOutsidereferral());
@@ -229,7 +293,7 @@ public class DoctorController {
 	
 	}
 	@RequestMapping(value="/deletefootexam", method = RequestMethod.GET)
-	public String deletefootexam(@RequestParam("footexamno") String footexamno,ModelMap model,HipExam hipexam) {	
+	public String deletefootexam(@RequestParam("footexamno") String footexamno,ModelMap model) {	
 		footexamDAO.deletehipexamdetails(footexamno);
 		FootExamForm footexamform=new FootExamForm();
 		footexamform.setFootexamdetails(footexamDAO.getfootexamDetails());		
