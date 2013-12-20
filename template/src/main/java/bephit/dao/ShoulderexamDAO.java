@@ -272,6 +272,8 @@ public class ShoulderexamDAO
 	    +"',emg='"+shoulderexamdetails.getEmg()
 	    +"',outsiderefferal='"+shoulderexamdetails.getOutsiderefferal()
 	    +"',dc='"+shoulderexamdetails.getDc()
+	    +"',others='"+shoulderexamdetails.getOthers()
+	    +"',othervalue='"+shoulderexamdetails.getOthervalue()
 	    +"',signature='"+shoulderexamdetails.getSignature()+"' where shoulderexamno='"+shoulderexamno+"'";
 	   
 	        
