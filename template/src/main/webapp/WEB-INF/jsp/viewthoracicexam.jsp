@@ -23,11 +23,11 @@
       		<tr>
         		<td valign="top" align="left">
 			        <div class="headings altheading">
-			          <h2>View Cervical Exam</h2>
+			          <h2>View Thoracic Exam</h2>
 			        </div>
 			        <div class="contentbox">
 			      <!--   <form action="findPatients" method="GET">  --> 
-			      <form action="cervicalexam" method="POST"> 
+			      <form action="thoracicexam" method="POST"> 
 						<table cellpadding="0" cellspacing="0" border="0" width="100%">
 				     <tr class="title">
 								
@@ -39,28 +39,28 @@
 					         	
           			</tr>
 							<!-- getting addAttibute value -->
-						<c:if test="${fn:length(cervicalexamForm.cervicalexam) gt 0}">
-        				  <c:forEach items="${cervicalexamForm.cervicalexam}" var="cervicalexam" varStatus="status">
+						<c:if test="${fn:length(thoracicexamForm.thoracicexam) gt 0}">
+        				  <c:forEach items="${thoracicexamForm.thoracicexam}" var="thoracicexam" varStatus="status">
         				       				<tr class="row1">
         				       				
-								        <td valign="top" align="left"  width="10%"> <a href="cervicalexamlist?cervicalexamid=${cervicalexam.cervicalexamid}">${cervicalexam.pname}</a></td>
-											<td valign="top" align="left" width="15%">${cervicalexam.date}</td>
+								        <td valign="top" align="left"  width="10%"> <a href="thoracicexamlist?thoracicexamid=${thoracicexam.thoracicexamid}">${thoracicexam.pname}</a></td>
+											<td valign="top" align="left" width="15%">${thoracicexam.date}</td>
 											
 												<td valign="top" align="left">
 											<%--  <c:if test="${currentuser.adminuser[0].editradiologicreport==1}"> --%>
-												<a href="#" title="" ><img src="resources/images/icons/icon_edit.png" alt="Edit" /></a><a href="<c:out value="editcervicalexam?cervicalexamid=${cervicalexam.cervicalexamid}"/>" style="padding-right:10px;">Edit</a>
+												<a href="#" title="" ><img src="resources/images/icons/icon_edit.png" alt="Edit" /></a><a href="<c:out value="editthoracicexam?thoracicexamid=${thoracicexam.thoracicexamid}"/>" style="padding-right:10px;">Edit</a>
 											<%-- 	 </c:if>
  --%>												<%--<c:if test="${currentuser.adminuser[0].deleteparticipant==1}"> --%>
 
  
-											<a href="#" title=""><img src="resources/images/icons/icon_delete.png" alt="Delete" /></a><a href="<c:out value="deletecervicalexam?cervicalexamid=${cervicalexam.cervicalexamid}"/>" onclick="return confirmation()">Remove</a>
+											<a href="#" title=""><img src="resources/images/icons/icon_delete.png" alt="Delete" /></a><a href="<c:out value="deletethoracicexam?thoracicexamid=${thoracicexam.thoracicexamid}"/>" onclick="return confirmation()">Remove</a>
 											<%-- </c:if> --%>
 											</td>	
 										
 								</tr>
 							    	</c:forEach>
 							    	</c:if>
-							    <c:if test="${fn:length(cervicalexamForm.cervicalexam) == 0}">	
+							    <c:if test="${fn:length(thoracicexamForm.thoracicexam) == 0}">	
 							    	<tr class="row1">
 							    	<td colspan="7" width="100%"><center><b>No Participants Found!!!</b></center></td>
 							    	</tr>
@@ -79,7 +79,7 @@
 <script language="javascript">
 
 function confirmation() {
-	var answer = confirm("Are you Sure You Want to Delete  Patient from Cervical exam ?");
+	var answer = confirm("Are you Sure You Want to Delete  Patient from Thoracic exam ?");
 	if (answer){
 		return true;
 	}

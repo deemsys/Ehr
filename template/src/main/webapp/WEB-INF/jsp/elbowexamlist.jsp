@@ -86,16 +86,17 @@ $(function() {
  <td width="150">Swelling / Discoloration:</td> 
  <td>${elbowexam.swelling}</td>
  </tr>
- <tr class="row2">
+ <tr class="row1">
  <td>Dominant Hand: </td> <td>${elbowexam.dominanthand}</td> 
   <td></td>
  <td></td>
  <td><input type="text" style="visibility:hidden"> </td> 
  <td> <input type="text" style="visibility:hidden"></td>
  </tr>
- <tr class="row1">
+ <tr class="row2">
  <td width="200"><B style="font-size:14px">PALPATION / SOFT TISSUE DYSFUNCTION</B></td> 
  <td width="200">${elbowexam.allsoft}</td> 
+ <td width="200"></td>
  <!-- <td> <input type="checkbox" name="except" value="Except"> Except </td> -->
  <td></td>
  <td></td> 
@@ -108,24 +109,24 @@ $(function() {
  <td>Triceps Brachii:</td><td>${elbowexam.triceps}</td>
  <td>Common Flexors:</td><td width="200">${elbowexam.common}</td>
  </tr>
- <tr class="row2">
+ <tr class="row1">
  <td>Pronator Teres:</td><td width="200">${elbowexam.pronator}</td>
   <td>Anconeus:</td><td width="200">${elbowexam.anconeus}</td>
   <td>Common Extensors:</td><td width="200">${elbowexam.commonextensors}</td>
  </tr>
- <tr class="row2">
+ <tr class="row1">
  <td>Other/Notes: ${elbowexam.othernotes}</td> 
  <td></td><td></td>
  <td></td><td></td>
  </tr>
  </table>
  <table>
- <tr class="row1">
+ <tr class="row2">
  <td width="250"><B style="font-size:14px">FUNCTIONAL RANGE OF MOTION</B> </td><td><B style="font-size:14px"></B></td> 
  <td width="250"></td>
  <td width="300"><B style="font-size:14px">ORTHOPEDIC TESTING </B></td><td width="300"><B style="font-size:14px"></B></td>
  </tr>
-  <tr class="row2">
+  <tr class="row1">
  <td> ${elbowexam.functionalrangeofmotion}</td><td> </td>  
  <td></td>
  <td> ${elbowexam.orthopedic}</td><td> </td>
@@ -134,7 +135,7 @@ $(function() {
  <td></td><td width="50"> <b>Normal</b> </td><td><b> Actual</b></td>  
  <td></td><td><b>Left</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> Right</b></td>
  </tr>
-  <tr class="row2">
+  <tr class="row1">
  <td><b>Flexion:</b> </td><td> (150)</td><td>&nbsp;L ${elbowexam.flexionl} <br/><br/>R  ${elbowexam.flexionr}</td>  
  <td><b>Golfer's Elbow (MCL):</b> </td><td>${elbowexam.mcll} ${elbowexam.mclr} </td>
  </tr>
@@ -142,7 +143,7 @@ $(function() {
  <td><b>Extension:	</b> </td><td> (o) </td><td> &nbsp;L ${elbowexam.extensionl} <br/><br/>R ${elbowexam.extensionr}</td>  
  <td><b>Tennis Elbow (LCL):	</b> </td><td> ${elbowexam.lcll}${elbowexam.lclr}</td>
  </tr>
-  <tr class="row2">
+  <tr class="row1">
  <td><b>Pronation:	</b> </td><td> (90)</td><td>L &nbsp;${elbowexam.pronationl}<br/><br/>R ${elbowexam.pronationr}</td>  
  <td><b>Varus Stress (LCL):</b> </td><td>${elbowexam.varusl}${elbowexam.varusr} </td>
  </tr>
@@ -150,7 +151,7 @@ $(function() {
   <td><b> Supination:</b> </td><td> (90)</td><td>L &nbsp;${elbowexam.suppinationl}<br/><br/>R ${elbowexam.suppinationr}</td>  
  <td><b>Valgus Stress (MCL):</b> </td><td>${elbowexam.mcl1l}${elbowexam.mcl1r} </td>
  </tr>
-  <tr class="row2">
+  <tr class="row1">
  <td> 	</td><td> </td>  
  <td></td>
  <td><b>Tinnel's:	</b> </td><td>${elbowexam.tinnelsl}${elbowexam.tinnelsr} </td>
@@ -183,11 +184,11 @@ $(function() {
          <table cellpadding="0" cellspacing="0" border="0" width="98%">  
          <tr height="20"> 
           <c:forEach items="${elbowexamForm.elbowexam}" var="elbowexam" varStatus="status">        
- <tr class="row1">
+ <tr class="row2">
  <td><B style="font-size:14px">NEUROLOGICAL</B></td><td>${elbowexam.neurologicaltest}</td><td><!-- <input type="checkbox" name="exceptn" value="Except">Except --></td>
  <td></td><td></td><td></td>
  </tr>
- <tr class="row2">
+ <tr class="row1">
  <td><b>Level</b> </td>
  <td><b> Sensory</b></td>
  <td width="110"><b>Level</b></td>
@@ -203,7 +204,7 @@ $(function() {
  <td> </td>
  <td> Left &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; Right</td>
  </tr>
- <tr class="row2">
+ <tr class="row1">
  <td>C5</td>
  <td> ${elbowexam.c5l}&nbsp; &nbsp; &nbsp;${elbowexam.c5r}&nbsp;(Lat deltoid)</td>
  <td>C5 </td>
@@ -221,7 +222,7 @@ $(function() {
  <td> ${elbowexam.c63l}&nbsp;/5&nbsp; &nbsp; &nbsp;${elbowexam.c63r}&nbsp;/5&nbsp;(Brachiorad.) </td>
 
  </tr>
- <tr class="row2">
+ <tr class="row1">
  <td>C7</td>
  <td>${elbowexam.c7l}&nbsp; &nbsp; &nbsp;${elbowexam.c7r}&nbsp;(3rd digit)</td>
  <td>C7 </td>
@@ -237,7 +238,7 @@ $(function() {
  <td></td>
  <td> </td>
  </tr>
- <tr class="row2">
+ <tr class="row1">
  <td>T1</td>
  <td>${elbowexam.t1l}&nbsp; &nbsp; &nbsp;${elbowexam.t1r}&nbsp;(Med elbow/arm)	</td>
  <td>T1 </td>
@@ -255,12 +256,13 @@ $(function() {
  </tr>
  </table>
 <table>         
- <tr class="row1">
+ <tr class="row2">
  <td><B style="font-size:14px">FUNCTIONAL DEFICIT:</B></td><td>${elbowexam.overheadactivities} &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;${elbowexam.lifting}</td>
  <td width="150"> ${elbowexam.otherfunctional} </td><td>${elbowexam.break_text3}</td>
  <td width="150"></td><td width="150"></td>
+ <td width="150"></td>
  </tr>         
- <tr class="row2">
+ <tr class="row1">
  <td><B style="font-size:14px">ASSESSMENT / ADDITIONAL COMMENTS:</B></td><td>${elbowexam.assessment}</td><td></td>
  <td></td><td></td>
  <td></td>
@@ -288,7 +290,7 @@ $(function() {
  </tr>
  </table>
  <table>
- <tr class="row2">
+ <tr class="row1">
  <td width="120"><B style="font-size:14px">PLAN:</B></td>
  <td> ${elbowexam.times} Times/week for </td>
  <td>${elbowexam.week}weeks to address the </td>
@@ -305,7 +307,7 @@ $(function() {
  <td width="250"> ${elbowexam.orthotics}</td>
  <td width="250"> ${elbowexam.modalities}</td>
  </tr>
- <tr class="row2">
+ <tr class="row1">
  <td width="120">
  <td width="250"> ${elbowexam.supplementation}</td>
  <td width="250"> ${elbowexam.hep}</td>

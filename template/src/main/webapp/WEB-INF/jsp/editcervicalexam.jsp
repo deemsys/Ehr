@@ -64,6 +64,7 @@ $(function() {
           <table cellpadding="0" cellspacing="0" border="0" width="98%">
            <c:set value="${cervicalexamForm.cervicalexam[0]}" var="cervicalexam"/>  
  <tr class="row1">
+ <input type="hidden" name="cervicalexamid" id="inp_id" value="${cervicalexam.cervicalexamid}">
 <td><h2>Patient Name:</h2></td><td><input type="text"  name="pname" value="${cervicalexam.pname}" /></td>
 <td width="600">
 <td><h2>Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${cervicalexam.date}"/></td>
@@ -85,7 +86,7 @@ $(function() {
  <td width="150">Swelling / Discoloration:</td> 
  <td><input type="text" name="swelling" value="${cervicalexam.swelling}"></td>
  </tr>
- <tr class="row2">
+ <tr class="row1">
  <td width="200">Forward Head Posture:</td><td><input type="text" name="headposture" value="${cervicalexam.headposture}"></td> 
  <td>Rounded Shoulders: </td> <td><input type="radio" name="roundshoulder" value="Left" <c:if test="${cervicalexam.roundshoulder=='Left'}"><c:out value="checked=checked"/></c:if>>Left <input type="radio" name="roundshoulder" value="Right" <c:if test="${cervicalexam.roundshoulder=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
   <td>A & O: </td>
@@ -97,12 +98,13 @@ $(function() {
 					</select></td> 
  
  </tr>
- <tr class="row1">
+ <tr class="row2">
  <td width="200"><B style="font-size:14px">PALPATION / SOFT TISSUE DYSFUNCTION</B></td> 
  <td width="200"><input type="checkbox" name="allsoft" value="All Soft Tissue Unremarkable" <c:if test="${cervicalexam.allsoft=='All Soft Tissue Unremarkable'}"><c:out value="Checked"/></c:if>> All Soft Tissue Unremarkable</td> 
  <!-- <td> <input type="checkbox" name="except" value="Except"> Except </td> -->
  <td></td>
  <td></td> 
+ <td></td>
  <td></td>
  </tr>
   <tr class="row1">
@@ -112,29 +114,29 @@ $(function() {
  
  <td>Levator Scapulae:</td><td width="100"><input type="radio" name="levator" value="Left" <c:if test="${cervicalexam.levator=='Left'}"><c:out value="checked=checked"/></c:if>>Left <input type="radio" name="levator" value="Right" <c:if test="${cervicalexam.levator=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
  </tr>
- <tr class="row2">
+ <tr class="row1">
  <td>Teres Minor:</td><td><input type="radio" name="teresminor" value="Left" <c:if test="${cervicalexam.teresminor=='Left'}"><c:out value="checked=checked"/></c:if>>Left  <input type="radio" name="teresminor" value="Right" <c:if test="${cervicalexam.teresminor=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td> 
  <td>Teres Major:</td><td width="200"><input type="radio" name="teresmajor" value="Left" <c:if test="${cervicalexam.teresmajor=='Left'}"><c:out value="checked=checked"/></c:if>>Left  <input type="radio" name="teresmajor" value="Right" <c:if test="${cervicalexam.teresmajor=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td> 
  <td>Rhomboids:</td><td><input type="radio" name="rhomboids" value="Left" <c:if test="${cervicalexam.rhomboids=='Left'}"><c:out value="checked=checked"/></c:if>>Left <input type="radio" name="rhomboids" value="Right" <c:if test="${cervicalexam.rhomboids=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
  </tr>
  <tr class="row1">
  <td>Trapezius:</td><td><input type="radio" name="trapezius" value="Left" <c:if test="${cervicalexam.trapezius=='Left'}"><c:out value="checked=checked"/></c:if>>Left  <input type="radio" name="trapezius" value="Right" <c:if test="${cervicalexam.trapezius=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td> 
- <td>Pectoralis Minor:	</td><td><input type="radio" name="pectoralis" value="Left" <c:if test="${cervicalexam.pectoralis=='Left'}"><c:out value="checked=checked"/></c:if>>Left <input type="radio" name="pectoralis" value="Right" <c:if test="${cervicalexam.pectorails=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td> 
+ <td>Pectoralis Minor:	</td><td><input type="radio" name="pectoralis" value="Left" <c:if test="${cervicalexam.pectoralis=='Left'}"><c:out value="checked=checked"/></c:if>>Left <input type="radio" name="pectoralis" value="Right" <c:if test="${cervicalexam.pectoralis=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td> 
  <td>Paraspinals:</td><td><input type="radio" name="paraspinals" value="Left" <c:if test="${cervicalexam.paraspinals=='Left'}"><c:out value="checked=checked"/></c:if>>Left <input type="radio" name="paraspinals" value="Right" <c:if test="${cervicalexam.paraspinals=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
  </tr>
  </table>
  <table>
- <tr class="row2">
+ <tr class="row1">
  <td>Other/Notes:<input type="text" name="othernotes" value="${cervicalexam.othernotes}"></td> 
  <td></td><td></td>
  <td></td><td></td>
  </tr>
- <tr class="row1">
+ <tr class="row2">
  <td width="250"><B style="font-size:14px">FUNCTIONAL RANGE OF MOTION</B> </td><td width="150"><B style="font-size:14px"></B></td> 
  <td width="280"><B style="font-size:14px">SUBLUXATION /DYSFUNCTION  </B></td><td></td> 
  <td width="150"><B style="font-size:14px">ORTHOTPEDIC TESTING </B></td><td><B style="font-size:14px"></B></td>
  </tr>
-  <tr class="row2">
+  <tr class="row1">
  <td><input type="radio" name="functionalrangeofmotion" value="Unremarkable" <c:if test="${cervicalexam.functionalrangeofmotion=='Unremarkable'}"><c:out value="checked=checked"/></c:if>>Unremarkable &nbsp;&nbsp;<!-- <input type="radio" name="functionalrangeofmotion" value="Except">Except --></td><td> </td> 
  <td><input type="radio" name="subluxation" value="Unremarkable" <c:if test="${cervicalexam.subluxation=='Unremarkable'}"><c:out value="checked=checked"/></c:if>>Unremarkable&nbsp;&nbsp;<!-- <input type="radio" name="subluxation" value="Except">Except --></td><td> </td> 
  <td> <input type="radio" name="orthopedic" value="Unremarkable" <c:if test="${cervicalexam.orthopedic=='Unremarkable'}"><c:out value="checked=checked"/></c:if>>Unremarkable&nbsp;&nbsp;<!-- <input type="radio" name="orthopedic" value="Except">Except --></td><td> </td>
@@ -144,7 +146,7 @@ $(function() {
  <td></td><td width="150"> </td> 
  <td>  </td><td>   <b>Left</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> Right</b></td>
  </tr>
-  <tr class="row2">
+  <tr class="row1">
  <td><b>Flexion:</b> </td><td> (50)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="flexion" size="7" value="${cervicalexam.flexion}"></td> 
  <td width="100">C0-1:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="c01" size="7" value="${cervicalexam.c01}"> &nbsp;&nbsp;C1-2:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="c12" size="7" value="${cervicalexam.c12}"></td><td width="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C2-3: &nbsp;&nbsp;<input type="text" name="c23" size="7" value="${cervicalexam.c23}"> </td> 
  <td><b>Hautant's:	</b> </td><td><input type="text" name="hautantl" size="5" value="${cervicalexam.hautantl}"> <input type="text" name="hautantr" size="5" value="${cervicalexam.hautantr}"></td>
@@ -154,7 +156,7 @@ $(function() {
  <td width="100">C3-4:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="c34" size="7" value="${cervicalexam.c34}"> &nbsp;&nbsp;C4-5:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="c45" size="7" value="${cervicalexam.c45}"></td><td width="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C5-6: &nbsp;&nbsp;<input type="text" name="c56" size="7" value="${cervicalexam.c56}"> </td> 
  <td><b>Foraminal Comp:	</b> </td><td><input type="text" name="foraminall" size="5" value="${cervicalexam.foraminall}"> <input type="text" name="foraminalr" size="5" value="${cervicalexam.foraminalr}"></td>
  </tr>
-  <tr class="row2">
+  <tr class="row1">
  <td><b>Lateral Flexion:</b> </td><td> (45)&nbsp;&nbsp;&nbsp;L <input type="text" name="lflexion" size="7" value="${cervicalexam.lflexion}"><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R <input type="text" name="rflexion" size="7" value="${cervicalexam.rflexion}"></td> 
  <td width="100">C6-7:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="c67" size="7" value="${cervicalexam.c67}"> &nbsp;&nbsp;C7-T1:  &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="c7t1" size="7" value="${cervicalexam.c7t1}"></td><td width="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T1-2: &nbsp;&nbsp;<input type="text" name="t12" size="7" value="${cervicalexam.t12}"> </td> 
  <td><b>Soto Hall:	</b> </td><td><input type="text" name="sotohalll" size="5" value="${cervicalexam.sotohalll}"> <input type="text" name="sotohallr" size="5" value="${cervicalexam.sotohallr}"></td>
@@ -164,7 +166,7 @@ $(function() {
  <td width="100">T2-3:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t23" size="7" value="${cervicalexam.t23}"> &nbsp;&nbsp;T3-4:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t34" size="7" value="${cervicalexam.t34}"></td><td width="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T4-5: &nbsp;&nbsp;<input type="text" name="t45" size="7" value="${cervicalexam.t45}"> </td> 
  <td><b>Adson's:</b> </td><td><input type="text" name="adsonsl" size="5" value="${cervicalexam.adsonsl}"> <input type="text" name="adsonsr" size="5" value="${cervicalexam.adsonsr}"></td>
  </tr>
-  <tr class="row2">
+  <tr class="row1">
  <td></td><td> </td> 
 <td width="100">T5-6:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t56" size="7" value="${cervicalexam.t56}"> &nbsp;&nbsp;T6-7:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t67" size="7" value="${cervicalexam.t67}"></td><td width="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T7-8: &nbsp;&nbsp;<input type="text" name="t78" size="7" value="${cervicalexam.t78}"> </td> 
  <td><b>ULTT:	</b> </td><td><input type="text" name="ulttl" size="5" value="${cervicalexam.ulttl}"> <input type="text" name="ulttr" size="5" value="${cervicalexam.ulttr}"></td>
@@ -191,11 +193,11 @@ $(function() {
 	    <div class="contentbox">
          <table cellpadding="0" cellspacing="0" border="0" width="98%">  
          <tr height="20">         
- <tr class="row1">
+ <tr class="row2">
  <td><B style="font-size:14px">NEUROLOGICAL</B></td><td><input type="checkbox" name="neurologicaltest" value="Neurological Testing Unremarkable" <c:if test="${cervicalexam.neurologicaltest=='Neurological Testing Unremarkable'}"><c:out value="Checked"/></c:if>>Neurological Testing Unremarkable</td><td><!-- <input type="checkbox" name="exceptn" value="Except">Except --></td>
  <td></td><td></td><td></td>
  </tr>
- <tr class="row2">
+ <tr class="row1">
  <td><b>Level</b> </td>
  <td><b> Sensory</b></td>
  <td width="110"><b>Level</b></td>
@@ -211,7 +213,7 @@ $(function() {
  <td> </td>
  <td> Left &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; Right</td>
  </tr>
- <tr class="row2">
+ <tr class="row1">
  <td>C5</td>
  <td><input type="text" name="c5l" size="5" value="${cervicalexam.c5l}">&nbsp; &nbsp; &nbsp;<input type="text" name="c5r" size="5"  value="${cervicalexam.c5r}">&nbsp;(Lat deltoid)</td>
  <td>C5 </td>
@@ -229,7 +231,7 @@ $(function() {
  <td><input type="text" name="c63l" size="5" value="${cervicalexam.c63l}">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c63r" size="5" value="${cervicalexam.c63r}">&nbsp;/5&nbsp;(Brachiorad.) </td>
 
  </tr>
- <tr class="row2">
+ <tr class="row1">
  <td>C7</td>
  <td><input type="text" name="c7l" size="5" value="${cervicalexam.c7l}">&nbsp; &nbsp; &nbsp;<input type="text" name="c7r" size="5" value="${cervicalexam.c7r}">&nbsp;(3rd digit)</td>
  <td>C7 </td>
@@ -245,7 +247,7 @@ $(function() {
  <td></td>
  <td> </td>
  </tr>
- <tr class="row2">
+ <tr class="row1">
  <td>T1</td>
  <td><input type="text" name="t1l" size="5" value="${cervicalexam.t1l}">&nbsp; &nbsp; &nbsp;<input type="text" name="t1r" size="5" value="${cervicalexam.t1r}">&nbsp;(Med elbow/arm)	</td>
  <td>T1 </td>
@@ -263,12 +265,12 @@ $(function() {
  </tr>
  </table>
 <table>         
- <tr class="row1">
+ <tr class="row2">
  <td><B style="font-size:14px">FUNCTIONAL DEFICIT:</B></td><td><input type="checkbox" name="sitting" value="Sitting" <c:if test="${cervicalexam.sitting=='Sitting'}"><c:out value="Checked"/></c:if>>Sitting &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<input type="checkbox" name="standing" value="Standing" <c:if test="${cervicalexam.standing=='Standing'}"><c:out value="Checked"/></c:if>>Standing</td>
  <td width="150"><input type="checkbox" name="driving" value="Driving" <c:if test="${cervicalexam.driving=='Driving'}"><c:out value="Checked"/></c:if>> Driving</td><td width="150"><input type="checkbox" name="computeruse" value="Computer Use" <c:if test="${cervicalexam.computeruse=='Computer Use'}"><c:out value="Checked"/></c:if>>Computer Use</td>
  <td width="150"><input type="checkbox" name="otherfunctional" value="Other"  <c:if test="${cervicalexam.otherfunctional=='Other'}"><c:out value="Checked"/></c:if> onclick="this.form.break3.style.visibility = this.checked? 'visible' : 'hidden'">Other&nbsp; </td><td><input type="text"  id="break3" name="break_text3" style="visibility:hidden" value="${cervicalexam.break_text3}"/></td>
  </tr>         
- <tr class="row2">
+ <tr class="row1">
  <td><B style="font-size:14px">ASSESSMENT / ADDITIONAL COMMENTS:</B></td><td><textarea name="assessment" rows='5' cols='40'>${cervicalexam.assessment }</textarea></td><td></td>
  <td></td><td></td>
  <td></td>
@@ -301,7 +303,7 @@ $(function() {
  </tr>
  </table>
  <table>
- <tr class="row2">
+ <tr class="row1">
  <td width="120"><B style="font-size:14px">PLAN:</B></td>
  <td><input type="text" name="times" value="${cervicalexam.times}">Times/week for </td>
  <td><input type="text" name="week" value="${cervicalexam.week}">weeks to address the </td>
@@ -318,7 +320,7 @@ $(function() {
  <td width="250"><input type="checkbox" name="orthotics" value="Orthotics/Bracing" <c:if test="${cervicalexam.orthotics=='Orthotics/Bracing'}"><c:out value="Checked"/></c:if>>Orthotics/Bracing</td>
  <td width="250"><input type="checkbox" name="modalities" value="Modalities" <c:if test="${cervicalexam.modalities=='Modalities'}"><c:out value="Checked"/></c:if>>Modalities	</td>
  </tr>
- <tr class="row2">
+ <tr class="row1">
  <td width="120">
  <td width="250"><input type="checkbox" name="supplementation" value="Supplementation" <c:if test="${cervicalexam.supplementation=='Supplementation'}"><c:out value="Checked"/></c:if>>Supplementation</td>
  <td width="250"><input type="checkbox" name="hep" value="HEP" <c:if test="${cervicalexam.hep=='HEP'}"><c:out value="Checked"/></c:if>>HEP</td>
@@ -339,7 +341,7 @@ $(function() {
  <table><tr><td><B style="font-size:14px">PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sign" value="${cervicalexam.sign}"></B></td></tr></table>
 <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="Save"></td>
+<td><input type="submit" class="submit_btn" value="Update"></td>
 <td><input type="reset" class="submit_btn" value="Cancel"></td>
 </tr>
 </table>
