@@ -196,6 +196,11 @@
 									<span>Soap Notes</span>
 								</a>
 							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='initialexam'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu10">
+									<span>Initial Exam & Re Exam</span>
+								</a>
+							</li>
 							
 </c:when>
   <c:otherwise>
@@ -204,11 +209,12 @@
 								</a>
 								
 							</li>
-							
 							<li>
-							<a href="#" class="<c:choose><c:when test="${menu=='lumbopelic'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu12">
-							</a>
+								<a href="#" class="<c:choose><c:when test="${menu=='initialexam'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu13">
+									<span>Initial Exam & Re Exam</span>
+								</a>
 							</li>
+							
 							</c:otherwise>
 							</c:choose>
 					
@@ -389,6 +395,17 @@
 							<li><a href="insuranceinfolist">View Health Insurance Information</a></li>
 							<!-- <li><a href="insuranceverification">Health Insurance Verification</a></li> -->
 						</ul>
+						<ul id="ddsubmenu13" class="ddsubmenustyle">
+							<li><a href="lumbopelvicexam">Lumbopelvic Exam</a></li>
+							<li><a href="hipexam">Hip Exam</a></li>
+							<li><a href="kneeexam">Knee Exam</a></li> 
+							<li><a href="footexam">Foot Exam</a></li>       
+				            <li><a href="cervicalexam">Cervical Exam</a></li>
+				            <li><a href="shoulderexam">Shoulder Exam</a></li>
+				            <li><a href="elbowexam">Elbow Exam</a></li>
+				            <li><a href="wristexam">Wrist And Hand Exam</a></li>
+				            <li><a href="thoracicexam">Thoracic Exam</a></li>
+				         </ul>
 						
 					</div>
 					<div class="menu_r"></div>
