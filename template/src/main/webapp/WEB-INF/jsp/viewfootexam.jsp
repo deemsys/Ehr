@@ -44,7 +44,7 @@
 											<td valign="top" align="left" width="10%">${footexamdetails.date}</td>
 											
 											<td valign="top" align="left" width="10%">
-											<a href="#" title="" ><img src="resources/images/icons/icon_edit.png" alt="Edit" /></a><a href="<c:out value="hipreexam?hipexamno=${footexamdetails.footexamno}"/>" style="padding-right:10px; ">Edit</a>
+											<a href="#" title="" ><img src="resources/images/icons/icon_edit.png" alt="Edit" /></a><a href="<c:out value="editfootexam?footexamno=${footexamdetails.footexamno}"/>" style="padding-right:10px; ">Edit</a>
 											<a href="#" title=""><img src="resources/images/icons/icon_delete.png" alt="Delete" /></a><a href=" <c:out value="deletefootexam?footexamno=${footexamdetails.footexamno}"/>" onclick="return confirmation() ">Remove</a>
 											</td>
 										

@@ -230,7 +230,9 @@ $(function() {
            <td width="120">Calcaneus Varus:</td><td><input type="radio" value="left" name="calcaneus">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp; <input type="radio" value="right" name="calcaneus">&nbsp;&nbsp;&nbsp;Right</td>
            <td width="73"></td>
            <td width="120">Calcaneus Valgus:</td><td><input type="radio" value="left" name="valgus">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp; <input type="radio" value="right" name="valgus">&nbsp;&nbsp;&nbsp;Right</td>
-           </tr><tr>
+           </tr>
+           <tr height="10"></tr>
+           <tr>
            <td width="129">Forefoot Varus:</td><td><input type="radio" value="left" name="forefoot">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td><td width="110"> <input type="radio" value="right" name="forefoot">&nbsp;&nbsp;&nbsp;Right</td>
            <td width="130">Forefoot Valgus:</td><td><input type="radio" value="left" name="forefootvalgus">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td><td width="110"> <input type="radio" value="right" name="forefootvalgus">&nbsp;&nbsp;&nbsp;Right</td>
            </tr>
@@ -254,11 +256,11 @@ $(function() {
 	</br>
 	<table  style="border:10">      
          <tr>
-         <td> <b style="font-size:14px">FUNCTIONAL RANGE OF MOTION     </b></td><td width="70"></td>
+         <td> <b style="font-size:14px">FUNCTIONAL RANGE OF MOTION     </b></td><td width="98"></td>
          <td><input type="checkbox" value="Unremarkable" name="functional" id="functional">Unremarkable
          
          </td>
-         <td width="120"></td>
+         <td width="230"></td>
          <td> <b style="font-size:14px">ORTHOTPEDIC TESTING    </b></td><td width="120"></td>
          <td><input type="checkbox" name="orthotpedic" value="unremarkable">Unremarkable
         
@@ -269,7 +271,7 @@ $(function() {
          <td width="140" valign="top">
          (*  Pain Elicited)	
          </td>   
-         <td width="160" valign="top">Normal </td><td align="center">Actual</br></br>
+         <td width="180" valign="top">Normal </td><td align="center">Actual</br></br>
           Left&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Right
          </td>
          <td></td> <td></td><td></td> <td>Left&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Right</td>
@@ -277,7 +279,7 @@ $(function() {
          
          </tr>
          <tr height="10"></tr>
-         <tr><td>Plantar Flexion:		</td><td>50</td><td><input type="text" size="5" name="plantarflexionleft">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="plantarflexionright"></td><td width="90"></td><td>Tinel's Tap:	</td><td width="150"></td><td><input size="5" type="text"  name="tinelstapleft">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="5" name="tinelstapright"></td></tr>
+         <tr><td>Plantar Flexion:		</td><td>50</td><td><input type="text" size="5" name="plantarflexionleft">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="plantarflexionright"></td><td width="210"></td><td>Tinel's Tap:	</td><td width="150"></td><td><input size="5" type="text"  name="tinelstapleft">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="5" name="tinelstapright"></td></tr>
          <tr><td>Dorsiflexion:				</td><td>20</td><td><input size="5" type="text" name="dorsiflexionleft">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="dorsiflexionright"></td><td width="90"></td><td>Achilles Tap:</td><td width="150"></td><td><input type="text"  size="5" name="achillestapleft">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="5"  name="achillestapright"></td></tr>
          <tr><td>Inversion:				</td><td>35</td><td><input size="5" type="text" name="inversionleft">&nbsp;&nbsp;&nbsp;&nbsp;<input  size="5" type="text" name="inversionright"></td><td width="90"></td><td>Long / Transv Arch:</td><td width="150"></td><td><input type="text" size="5"  name="longleft">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text"  name="longright"></td></tr>
          <tr><td>Eversion:					</td><td>15</td><td><input size="5" type="text" name="eversionleft">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="eversionright"></td><td width="90"></td><td>Thompson's:	</td><td width="150"></td><td><input type="text" size="5"  name="thompsonsleft">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text"  name="thompsonsright"></td></tr></tr>
@@ -352,7 +354,7 @@ $(function() {
            <tr height="10"></tr>
            <tr><td width="95"></td><td width="160"><input type="checkbox" name="radiographic" value="Radiographic X-Ray">Radiographic X-Ray</td><td width="100"><input type="checkbox" name="mri" value="MRI">MRI</td>
            <td width="150"><input type="checkbox" name="scan" value="CT Scan">CT Scan</td><td width="150"><input type="checkbox" name="conduction" value="Nerve Conduction">Nerve Conduction</td>
-           <td width="150"><input type="checkbox" name="emg" value="EMG		">EMG	</td> <td width="150"><input type="checkbox" name="outsidereferral" value="Outside Referral ">Outside Referral 	</td><td><input type="checkbox" name="dc" value="D/C">D/C</td>
+           <td width="150"><input type="checkbox" name="emg" value="EMG">EMG	</td> <td width="150"><input type="checkbox" name="outsidereferral" value="Outside Referral ">Outside Referral 	</td><td><input type="checkbox" name="dc" value="D/C">D/C</td>
            </tr>   
             <tr height="10"></tr>
            <tr><td width="95"></td><td width="160">

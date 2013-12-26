@@ -211,7 +211,7 @@ $(function() {
          <tr><td> <b style="font-size:14px">PALPATION / SOFT TISSUE DYSFUNCTION
  </b></td>
          <td width="100"></td>
-         <td align="left"><input type="radio" id="softtissuess" onclick="softtissuevalidate()" name="dysfunction" value="All Soft Tissue Unremarkable">All Soft Tissue Unremarkable</td>
+         <td align="left"><input type="checkbox" id="softtissuess" onclick="softtissuevalidate()" name="dysfunction" value="All Soft Tissue Unremarkable">All Soft Tissue Unremarkable</td>
          <td width="180"></td>
           </tr>  </table>       
 <br>
@@ -269,12 +269,12 @@ $(function() {
 	<table  style="border:10">      
          <tr>
          <td> <b style="font-size:14px">FUNCTIONAL RANGE OF MOTION     </b></td><td width="70"></td>
-         <td><input type="radio" value="Unremarkable" name="functional" id="functional">Unremarkable
+         <td><input type="checkbox" value="Unremarkable" name="functional" id="functional">Unremarkable
          
          </td>
-         <td width="60"></td>
-         <td> <b style="font-size:14px">ORTHOTPEDIC TESTING    </b></td><td width="100"></td>
-         <td><input type="radio" name="orthotpedic" value="unremarkable">Unremarkable
+         <td width="120"></td>
+         <td> <b style="font-size:14px">ORTHOTPEDIC TESTING    </b></td><td width="70"></td>
+         <td><input type="checkbox" name="orthotpedic" value="unremarkable">Unremarkable
         
          </td>  </tr></table>
          </br>

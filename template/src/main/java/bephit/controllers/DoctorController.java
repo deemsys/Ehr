@@ -113,7 +113,15 @@ public class DoctorController {
 	ShoulderexamDAO shoulderexamDAO;
 	@Autowired
 	WristexamDAO wristexamDAO;
+	@Autowired
+	CervicalexamDAO cervicalDAO;
+	@Autowired
+	ElbowexamDAO elbowDAO;
+	@Autowired
+	ThoracicexamDAO thoracicDAO;
 	
+	@Autowired
+	DcfeeslipDAO feeslipDAO;
 	
 	
 	@RequestMapping(value="/perry", method = RequestMethod.GET)
@@ -584,6 +592,311 @@ public class DoctorController {
 		return "viewkneeexam";
 	}
 
+	@RequestMapping(value="/cervicalexam", method = RequestMethod.GET)
+	public String viewingcervicalexam(HttpSession session, ModelMap model) {
+		
+		
+		return "cervicalexam";
+ 
+	}
+
+	@RequestMapping(value="/cervicalexam", method = RequestMethod.POST)
+	public String insert_cervicalexam(HttpSession session,@ModelAttribute("Cervicalexam")  @Valid Cervicalexam cervicalexam,BindingResult result,ModelMap model) {
+		
+		model.put("Cervicalexam", cervicalexam);
+		model.addAttribute("CervicalexamForm",cervicalexam);
+    	int a=cervicalDAO.setCervicalexam(cervicalexam);
+		CervicalexamForm cervicalexamForm= new CervicalexamForm();
+		cervicalexamForm.setCervicalexam(cervicalDAO.getCervicalexam());
+		model.addAttribute("cervicalexamForm",cervicalexamForm);
+		return "cervicalexam";
+ 
+	}
+	@RequestMapping(value="/viewcervicalexam", method=RequestMethod.GET)
+	public String viewcervicalexam(HttpServletRequest request,ModelMap model, Principal principal) {
+		 model.addAttribute("success","false");
+		
+		  CervicalexamForm cervicalexamForm = new CervicalexamForm();
+		 
+		  cervicalexamForm.setCervicalexam(cervicalDAO.getCervicalexam());
+		  
+		  	model.addAttribute("cervicalexamForm", cervicalexamForm);
+		  
+		return "viewcervicalexam";
+	}
+	
+	@RequestMapping(value="/cervicalexamlist", method=RequestMethod.GET)
+	public String cervicalexamlist(HttpServletRequest request,@RequestParam("cervicalexamid") String cervicalexamid,ModelMap model,Cervicalexam cervicalexam)
+	{
+		
+		CervicalexamForm cervicalexamForm = new CervicalexamForm();
+		cervicalexamForm.setCervicalexam(cervicalDAO.getCervical(cervicalexamid));	
+		model.addAttribute("cervicalexamForm", cervicalexamForm);
+		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
+		return "cervicalexamlist";
+	}
+	@RequestMapping(value="/editcervicalexam", method=RequestMethod.GET)
+	public String editcervicalexam(HttpServletRequest request,@RequestParam("cervicalexamid") String cervicalexamid,ModelMap model,Cervicalexam cervicalexam) 
+	{
+		/*String lumbopelvicexam=request.getParameter("lumbopelvicexam");*/
+		CervicalexamForm cervicalexamForm = new CervicalexamForm();       
+        cervicalexamForm.setCervicalexam(cervicalDAO.getCervical(cervicalexamid));
+        model.addAttribute("cervicalexamForm",cervicalexamForm);
+		 
+		return "editcervicalexam";
+	}
+	
+
+	@RequestMapping(value="/updatecervicalexam", method=RequestMethod.POST)
+	public String updatecervicalexam(HttpServletRequest request,@ModelAttribute("cervicalexam") @Valid Cervicalexam cervicalexam,
+			BindingResult result,ModelMap model,Principal principal)
+	{
+		/*soapnotes.getPatient_id();
+		if (result.hasErrors())
+		{
+			SoapnotesForm soapnotesForm = new SoapnotesForm();
+	     
+	      soapnotesForm.setSoapnotes(soapDAO.getSoap(soapnotes.getSoapid()));
+	      
+	        model.addAttribute("soapnotesForm", soapnotesForm);
+	        model.addAttribute("menu", "notes");    
+		        return "editsoapnotes";
+		}*/
+		/*System.out.println("soapid"+soapnotes.getSoapid());*/
+		int status = cervicalDAO.updatecervicalexam(cervicalexam, cervicalexam.getCervicalexamid(), principal.getName());
+		System.out.println(status);
+		
+		CervicalexamForm cervicalexamForm = new CervicalexamForm();
+        
+       cervicalexamForm.setCervicalexam(cervicalDAO.getCervicalexam());
+       
+        model.addAttribute("cervicalexamForm", cervicalexamForm);
+	        return "viewcervicalexam";
+		
+	}
+	@RequestMapping(value="/deletecervicalexam", method=RequestMethod.GET)
+	public String removecervicalexam(@RequestParam("cervicalexamid") String cervicalexamid,ModelMap model, Principal principal) {
+	
+		int status=cervicalDAO.deletecervicalexam(cervicalexamid);
+		
+		if(status==1)
+		{
+        model.addAttribute("success","true");
+		
+        CervicalexamForm cervicalexamForm= new CervicalexamForm();
+        cervicalexamForm.setCervicalexam(cervicalDAO.getCervicalexam());
+		model.addAttribute("cervicalexamForm",cervicalexamForm);  
+		}
+		return "viewcervicalexam";
+	}
+	@RequestMapping(value="/elbowexam", method = RequestMethod.GET)
+	public String viewingelbowexam(HttpSession session, ModelMap model) {
+		
+		
+		return "elbowexam";
+ 
+	}
+	@RequestMapping(value="/elbowexam", method = RequestMethod.POST)
+	public String insert_elbowexam(HttpSession session,@ModelAttribute("Elbowexam")  @Valid Elbowexam elbowexam,BindingResult result,ModelMap model) {
+		
+		model.put("Elbowexam", elbowexam);
+		model.addAttribute("ElbowexamForm",elbowexam);
+    	int a=elbowDAO.setElbowexam(elbowexam);
+		ElbowexamForm elbowexamForm= new ElbowexamForm();
+		elbowexamForm.setElbowexam(elbowDAO.getElbowexam());
+		model.addAttribute("elbowexamForm",elbowexamForm);
+		return "elbowexam";
+ 
+	}
+	@RequestMapping(value="/viewelbowexam", method=RequestMethod.GET)
+	public String viewelbowexam(HttpServletRequest request,ModelMap model, Principal principal) {
+		 model.addAttribute("success","false");
+		
+		  ElbowexamForm elbowexamForm = new ElbowexamForm();
+		 
+		  elbowexamForm.setElbowexam(elbowDAO.getElbowexam());
+		  
+		  	model.addAttribute("elbowexamForm", elbowexamForm);
+		  
+		return "viewelbowexam";
+	}
+	@RequestMapping(value="/elbowexamlist", method=RequestMethod.GET)
+	public String elbowexamlist(HttpServletRequest request,@RequestParam("elbowexamid") String elbowexamid,ModelMap model,Elbowexam elbowexam)
+	{
+		
+		ElbowexamForm elbowexamForm = new ElbowexamForm();
+		elbowexamForm.setElbowexam(elbowDAO.getElbow(elbowexamid));	
+		model.addAttribute("elbowexamForm", elbowexamForm);
+		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
+		return "elbowexamlist";
+	}
+	@RequestMapping(value="/editelbowlist", method=RequestMethod.GET)
+	public String editelbowexam(HttpServletRequest request,@RequestParam("elbowexamid") String elbowexamid,ModelMap model,Kneeexam kneeexam) 
+	{
+		/*String lumbopelvicexam=request.getParameter("lumbopelvicexam");*/
+		ElbowexamForm elbowexamForm = new ElbowexamForm();       
+        elbowexamForm.setElbowexam(elbowDAO.getElbow(elbowexamid));
+        model.addAttribute("elbowexamForm",elbowexamForm);
+		 
+		return "editelbowlist";
+	}
+	
+
+	@RequestMapping(value="/updateelbowexam", method=RequestMethod.POST)
+	public String updateelbowexam(HttpServletRequest request,@ModelAttribute("elbowexam") @Valid Elbowexam elbowexam,
+			BindingResult result,ModelMap model,Principal principal)
+	{
+		/*soapnotes.getPatient_id();
+		if (result.hasErrors())
+		{
+			SoapnotesForm soapnotesForm = new SoapnotesForm();
+	     
+	      soapnotesForm.setSoapnotes(soapDAO.getSoap(soapnotes.getSoapid()));
+	      
+	        model.addAttribute("soapnotesForm", soapnotesForm);
+	        model.addAttribute("menu", "notes");    
+		        return "editsoapnotes";
+		}*/
+		/*System.out.println("soapid"+soapnotes.getSoapid());*/
+		int status = elbowDAO.updateelbowexam(elbowexam, elbowexam.getElbowexamid(), principal.getName());
+		System.out.println(status);
+		
+		ElbowexamForm elbowexamForm = new ElbowexamForm();
+        
+       elbowexamForm.setElbowexam(elbowDAO.getElbowexam());
+       
+        model.addAttribute("elbowexamForm", elbowexamForm);
+	        return "viewelbowexam";
+		
+	}
+	@RequestMapping(value="/deleteelbowexam", method=RequestMethod.GET)
+	public String removeelbowexam(@RequestParam("elbowexamid") String elbowexamid,ModelMap model, Principal principal) {
+	
+		int status=elbowDAO.deleteelbowexam(elbowexamid);
+		
+		if(status==1)
+		{
+        model.addAttribute("success","true");
+		
+        ElbowexamForm elbowexamForm= new ElbowexamForm();
+        elbowexamForm.setElbowexam(elbowDAO.getElbowexam());
+		model.addAttribute("elbowexamForm",elbowexamForm);  
+		}
+		return "viewelbowexam";
+	}
+	@RequestMapping(value="/thoracicexam", method = RequestMethod.GET)
+	public String viewingthoracicexam(HttpSession session, ModelMap model) {
+		
+		
+		return "thoracicexam";
+ 
+	}
+    
+	@RequestMapping(value="/thoracicexam", method = RequestMethod.POST)
+	public String insert_thoracicexam(HttpSession session,@ModelAttribute("Thoracicexam")  @Valid Thoracicexam thoracicexam,BindingResult result,ModelMap model) {
+		
+		model.put("Thoracicexam", thoracicexam);
+		model.addAttribute("ThoracicexamForm",thoracicexam);
+    	int a=thoracicDAO.setThoracicexam(thoracicexam);
+		ThoracicexamForm thoracicexamForm= new ThoracicexamForm();
+		thoracicexamForm.setThoracicexam(thoracicDAO.getThoracicexam());
+		model.addAttribute("thoracicexamForm",thoracicexamForm);
+		return "elbowexam";
+ 
+	}
+	@RequestMapping(value="/viewthoracicexam", method=RequestMethod.GET)
+	public String viewthoracicexam(HttpServletRequest request,ModelMap model, Principal principal) {
+		 model.addAttribute("success","false");
+		
+		  ThoracicexamForm thoracicexamForm = new ThoracicexamForm();
+		 
+		  thoracicexamForm.setThoracicexam(thoracicDAO.getThoracicexam());
+		  
+		  	model.addAttribute("thoracicexamForm", thoracicexamForm);
+		  
+		return "viewthoracicexam";
+	}
+	@RequestMapping(value="/editthoracicexam", method=RequestMethod.GET)
+	public String editthoracicexam(HttpServletRequest request,@RequestParam("thoracicexamid") String thoracicexamid,ModelMap model,Thoracicexam thoracicexam) 
+	{
+		/*String lumbopelvicexam=request.getParameter("lumbopelvicexam");*/
+		ThoracicexamForm thoracicexamForm = new ThoracicexamForm();       
+        thoracicexamForm.setThoracicexam(thoracicDAO.getThoracic(thoracicexamid));
+        model.addAttribute("thoracicexamForm",thoracicexamForm);
+		 
+		return "editthoracicexam";
+	}
+	@RequestMapping(value="/thoracicexamlist", method=RequestMethod.GET)
+	public String thoracicexamlist(HttpServletRequest request,@RequestParam("thoracicexamid") String thoracicexamid,ModelMap model,Thoracicexam thoracicexam)
+	{
+		
+		ThoracicexamForm thoracicexamForm = new ThoracicexamForm();
+		thoracicexamForm.setThoracicexam(thoracicDAO.getThoracic(thoracicexamid));	
+		model.addAttribute("thoracicexamForm", thoracicexamForm);
+		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
+		return "thoracicexamlist";
+	}
+	@RequestMapping(value="/updatethoracicexam", method=RequestMethod.POST)
+	public String updatethoracicexam(HttpServletRequest request,@ModelAttribute("thoracicexam") @Valid Thoracicexam thoracicexam,
+			BindingResult result,ModelMap model,Principal principal)
+	{
+		/*soapnotes.getPatient_id();
+		if (result.hasErrors())
+		{
+			SoapnotesForm soapnotesForm = new SoapnotesForm();
+	     
+	      soapnotesForm.setSoapnotes(soapDAO.getSoap(soapnotes.getSoapid()));
+	      
+	        model.addAttribute("soapnotesForm", soapnotesForm);
+	        model.addAttribute("menu", "notes");    
+		        return "editsoapnotes";
+		}*/
+		/*System.out.println("soapid"+soapnotes.getSoapid());*/
+		int status = thoracicDAO.updateThoracicexam(thoracicexam, thoracicexam.getThoracicexamid(), principal.getName());
+		System.out.println(status);
+		
+		ThoracicexamForm thoracicexamForm = new ThoracicexamForm();
+        
+       thoracicexamForm.setThoracicexam(thoracicDAO.getThoracicexam());
+       
+        model.addAttribute("thoracicexamForm", thoracicexamForm);
+	        return "viewthoracicexam";
+		
+	}
+	@RequestMapping(value="/deletethoracicexam", method=RequestMethod.GET)
+	public String removethoracicexam(@RequestParam("thoracicexamid") String thoracicexamid,ModelMap model, Principal principal) {
+	
+		int status=thoracicDAO.deleteThoracicexam(thoracicexamid);
+		
+		if(status==1)
+		{
+        model.addAttribute("success","true");
+		
+        ThoracicexamForm thoracicexamForm= new ThoracicexamForm();
+        thoracicexamForm.setThoracicexam(thoracicDAO.getThoracicexam());
+		model.addAttribute("thoracicexamForm",thoracicexamForm);  
+		}
+		return "viewthoracicexam";
+	}
+	@RequestMapping(value="/dcfeeslip", method = RequestMethod.GET)
+	public String viewdcfeeslip(HttpSession session, ModelMap model) {
+		
+		
+		return "dcfeeslip";
+ 
+	}
+	@RequestMapping(value="/dcfeeslip", method = RequestMethod.POST)
+	public String insert_dcfeeslip(HttpSession session,@ModelAttribute("Dcfeeslip")  @Valid Dcfeeslip dcfeeslip,BindingResult result,ModelMap model) {
+		
+		model.put("Dcfeeslip", dcfeeslip);
+		model.addAttribute("DcfeeslipForm",dcfeeslip);
+    	int a=feeslipDAO.setDcfeeslip(dcfeeslip);
+		DcfeeslipForm dcfeeslipForm= new DcfeeslipForm();
+		dcfeeslipForm.setDcfeeslip(feeslipDAO.getDcfeeslip());
+		model.addAttribute("DcfeeslipForm",dcfeeslipForm);
+		return "dcfeeslip";
+ 
+	}
 
 
 	

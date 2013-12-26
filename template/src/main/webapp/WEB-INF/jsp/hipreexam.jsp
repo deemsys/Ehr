@@ -176,7 +176,7 @@ $(function() {
           <table cellpadding="0" cellspacing="0" border="0" >
            <tr><td width="130">Patient Name:</td>
           
-           <c:out value="${hipexamdetails.hipexamno}"></c:out>
+          
            <td><input type="hidden" value="${hipexamdetails.hipexamno}" name="hipexamno"><input type="text" name="pname" value="${hipexamdetails.pname}"></td><td width="480"></td>
            <td >Date:&nbsp;</td> <td><input type="text" name="date" id="datepicker" value="${hipexamdetails.date}"></td>
            </tr>
@@ -280,8 +280,8 @@ $(function() {
          <td><input type="checkbox" value="Unremarkable" name="functional" id="functional" <c:if test="${hipexamdetails.functional=='Unremarkable'}"> <c:out value="checked=checked"></c:out></c:if>>Unremarkable
          
          </td>
-         <td width="60"></td>
-         <td> <b style="font-size:14px">ORTHOTPEDIC TESTING    </b></td><td width="100"></td>
+         <td width="120"></td>
+         <td> <b style="font-size:14px">ORTHOTPEDIC TESTING    </b></td><td width="70"></td>
          <td><input type="checkbox" name="orthotpedic" <c:if test="${hipexamdetails.orthotpedic=='unremarkable'}"> <c:out value="checked=checked"></c:out></c:if> value="unremarkable">Unremarkable
         
          </td>  </tr></table>
@@ -346,7 +346,7 @@ $(function() {
            </table>
            </br>
            <table width="100%">
-           <tr><td width="350"><b style="font-size:14px">FUNCTIONAL DEFICIT:	</b></td><td width="100"><input type="checkbox"  <c:if test="${hipexamdetails.walking=='walking'}"> <c:out value="checked=checked"></c:out></c:if> name="walking" value="walking">Walking</td><td width="110"><input type="checkbox" name="standing"  <c:if test="${hipexamdetails.standing=='standing'}"> <c:out value="checked=checked"></c:out></c:if> value="standing"> Standing</td><td width="70"><input type="checkbox" name="stairs"  <c:if test="${hipexamdetails.stairs=='stairs'}"> <c:out value="checked=checked"></c:out></c:if> value="stairs">Stairs</td><td><input type="checkbox" id="other" name="other"  <c:if test="${hipexamdetails.other=='other'}"> <c:out value="checked=checked"></c:out></c:if> value="other"  onclick="visible('this.value')">Other</td><td><input type="text" name="otherdefict" value="${hipexamdetails.otherdefict}" id="otherdefict" style="display:none "></td><td width="300"></td></tr>
+           <tr><td width="350"><b style="font-size:14px">FUNCTIONAL DEFICIT:	</b></td><td width="100"><input type="checkbox"  <c:if test="${hipexamdetails.walking=='walking'}"> <c:out value="checked=checked"></c:out></c:if> name="walking" value="walking">Walking</td><td width="110"><input type="checkbox" name="standing"  <c:if test="${hipexamdetails.standing=='standing'}"> <c:out value="checked=checked"></c:out></c:if> value="standing"> Standing</td><td width="70"><input type="checkbox" name="stairs"  <c:if test="${hipexamdetails.stairs=='stairs'}"> <c:out value="checked=checked"></c:out></c:if> value="stairs">Stairs</td><td><input type="checkbox" name="other"  <c:if test="${hipexamdetails.other=='other'}"> <c:out value="checked=checked"></c:out></c:if> value="other">Other</td><td><input type="text" name="otherdefict" value="${hipexamdetails.otherdefict}" id="otherdefict" style="display:none "></td><td width="300"></td></tr>
            
            </table>
            <table>
