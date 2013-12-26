@@ -87,5 +87,26 @@
     <bean id="FootexamDAO" class="bephit.dao.FootexamDAO">
     	<property name="dataSource" ref="dataSource" />
     </bean> 
+    <bean id="KneeexamDAO" class="bephit.dao.KneeexamDAO">
+    	<property name="dataSource" ref="dataSource" />
+    </bean>     
+     <bean id="ShoulderexamDAO" class="bephit.dao.ShoulderexamDAO">
+    	<property name="dataSource" ref="dataSource" />
+    </bean>
+    <bean id="WristexamDAO" class="bephit.dao.WristexamDAO">
+    	<property name="dataSource" ref="dataSource" />
+    </bean>
+    <bean id="CervicalexamDAO" class="bephit.dao.CervicalexamDAO">
+    	<property name="dataSource" ref="dataSource" />
+    </bean>
+    <bean id="ElbowexamDAO" class="bephit.dao.ElbowexamDAO">
+    	<property name="dataSource" ref="dataSource" />
+    </bean>
+    <bean id="ThoracicexamDAO" class="bephit.dao.ThoracicexamDAO">
+    	<property name="dataSource" ref="dataSource" />
+    </bean>
+    <bean id="DcfeeslipDAO" class="bephit.dao.DcfeeslipDAO">
+    	<property name="dataSource" ref="dataSource" />
+    </bean> 
     
 </beans>
