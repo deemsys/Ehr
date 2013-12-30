@@ -85,14 +85,14 @@ $(function() {
  <td width="150">Swelling / Discoloration:</td> 
  <td>${cervicalexam.swelling}</td>
  </tr>
- <tr class="row2">
+ <tr class="row1">
  <td width="200">Forward Head Posture:</td><td>${cervicalexam.headposture}</td> 
  <td>Rounded Shoulders: </td> <td>${cervicalexam.roundshoulder}</td>
   <td>A & O: </td>
  <td> ${cervicalexam.ao}</td> 
  
  </tr>
- <tr class="row1">
+ <tr class="row2">
  <td width="200"><B style="font-size:14px">PALPATION / SOFT TISSUE DYSFUNCTION</B></td> 
  <td width="200">${cervicalexam.allsoft}</td> 
  <!-- <td> <input type="checkbox" name="except" value="Except"> Except </td> -->
@@ -107,7 +107,7 @@ $(function() {
  
  <td>Levator Scapulae:</td><td width="100">${cervicalexam.levator}</td>
  </tr>
- <tr class="row2">
+ <tr class="row1">
  <td>Teres Minor:</td><td>${cervicalexam.teresminor}</td> 
  <td>Teres Major:</td><td width="200">${cervicalexam.teresmajor}</td> 
  <td>Rhomboids:</td><td>${cervicalexam.rhomboids}</td>
@@ -119,17 +119,17 @@ $(function() {
  </tr>
  </table>
  <table>
- <tr class="row2">
+ <tr class="row1">
  <td>Other/Notes: ${cervicalexam.othernotes}</td> 
  <td></td><td></td>
  <td></td><td></td>
  </tr>
- <tr class="row1">
+ <tr class="row2">
  <td width="250"><B style="font-size:14px">FUNCTIONAL RANGE OF MOTION</B> </td><td width="150"><B style="font-size:14px"></B></td> 
  <td width="280"><B style="font-size:14px">SUBLUXATION /DYSFUNCTION  </B></td><td></td> 
  <td width="150"><B style="font-size:14px">ORTHOTPEDIC TESTING </B></td><td><B style="font-size:14px"></B></td>
  </tr>
-  <tr class="row2">
+  <tr class="row1">
  <td> ${cervicalexam.functionalrangeofmotion}</td><td> </td> 
  <td> ${cervicalexam.subluxation}</td><td> </td> 
  <td> ${cervicalexam.orthopedic}</td><td> </td>
@@ -139,7 +139,7 @@ $(function() {
  <td></td><td width="150"> </td> 
  <td>  </td><td>   <b>Left</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> Right</b></td>
  </tr>
-  <tr class="row2">
+  <tr class="row1">
  <td><b>Flexion:</b> </td><td> (50)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${cervicalexam.flexion} </td> 
  <td width="100">C0-1:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${cervicalexam.c01} &nbsp;&nbsp;C1-2:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${cervicalexam.c12}</td><td width="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C2-3: &nbsp;&nbsp;${cervicalexam.c23}</td> 
  <td><b>Hautant's:	</b> </td><td>${cervicalexam.hautantl} ${cervicalexam.hautantr}</td>
@@ -149,7 +149,7 @@ $(function() {
  <td width="100">C3-4:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${cervicalexam.c34} &nbsp;&nbsp;C4-5:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${cervicalexam.c45}</td><td width="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C5-6: &nbsp;&nbsp;${cervicalexam.c56} </td> 
  <td><b>Foraminal Comp:	</b> </td><td>${cervicalexam.foraminall} ${cervicalexam.foraminalr} </td>
  </tr>
-  <tr class="row2">
+  <tr class="row1">
  <td><b>Lateral Flexion:</b> </td><td> (45)&nbsp;&nbsp;&nbsp;L ${cervicalexam.lflexion}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R ${cervicalexam.rflexion}</td> 
  <td width="100">C6-7:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${cervicalexam.c67} &nbsp;&nbsp;C7-T1:  &nbsp;&nbsp;&nbsp;&nbsp;${cervicalexam.c7t1}</td><td width="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T1-2: &nbsp;&nbsp;${cervicalexam.t12} </td> 
  <td><b>Soto Hall:	</b> </td><td> ${cervicalexam.sotohalll} ${cervicalexam.sotohallr} </td>
@@ -159,7 +159,7 @@ $(function() {
  <td width="100">T2-3:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${cervicalexam.t23} &nbsp;&nbsp;T3-4:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${cervicalexam.t34}</td><td width="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T4-5: &nbsp;&nbsp;${cervicalexam.t45}</td> 
  <td><b>Adson's:</b> </td><td>${cervicalexam.adsonsl} ${cervicalexam.adsonsr} </td>
  </tr>
-  <tr class="row2">
+  <tr class="row1">
  <td></td><td> </td> 
 <td width="100">T5-6:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${cervicalexam.t56} &nbsp;&nbsp;T6-7:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${cervicalexam.t67}</td><td width="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T7-8: &nbsp;&nbsp;${cervicalexam.t78} </td> 
  <td><b>ULTT:	</b> </td><td>${cervicalexam.ulttl} ${cervicalexam.ulttr} </td>
@@ -188,11 +188,11 @@ $(function() {
          <table cellpadding="0" cellspacing="0" border="0" width="98%">  
          <tr height="20"> 
           <c:forEach items="${cervicalexamForm.cervicalexam}" var="cervicalexam" varStatus="status">        
- <tr class="row1">
+ <tr class="row2">
  <td><B style="font-size:14px">NEUROLOGICAL</B></td><td>${cervicalexam.neurologicaltest}</td><td><!-- <input type="checkbox" name="exceptn" value="Except">Except --></td>
  <td></td><td></td><td></td>
  </tr>
- <tr class="row2">
+ <tr class="row1">
  <td><b>Level</b> </td>
  <td><b> Sensory</b></td>
  <td width="110"><b>Level</b></td>
@@ -208,7 +208,7 @@ $(function() {
  <td> </td>
  <td> Left &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; Right</td>
  </tr>
- <tr class="row2">
+ <tr class="row1">
  <td>C5</td>
  <td> ${cervicalexam.c5l}&nbsp; &nbsp; &nbsp;${cervicalexam.c5r}&nbsp;(Lat deltoid)</td>
  <td>C5 </td>
@@ -226,7 +226,7 @@ $(function() {
  <td> ${cervicalexam.c63l}&nbsp;/5&nbsp; &nbsp; &nbsp;${cervicalexam.c63r}&nbsp;/5&nbsp;(Brachiorad.) </td>
 
  </tr>
- <tr class="row2">
+ <tr class="row1">
  <td>C7</td>
  <td>${cervicalexam.c7l}&nbsp; &nbsp; &nbsp;${cervicalexam.c7r}&nbsp;(3rd digit)</td>
  <td>C7 </td>
@@ -242,7 +242,7 @@ $(function() {
  <td></td>
  <td> </td>
  </tr>
- <tr class="row2">
+ <tr class="row1">
  <td>T1</td>
  <td>${cervicalexam.t1l}&nbsp; &nbsp; &nbsp;${cervicalexam.t1r}&nbsp;(Med elbow/arm)	</td>
  <td>T1 </td>
@@ -260,12 +260,12 @@ $(function() {
  </tr>
  </table>
 <table>         
- <tr class="row1">
+ <tr class="row2">
  <td><B style="font-size:14px">FUNCTIONAL DEFICIT:</B></td><td>${cervicalexam.sitting} &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;${cervicalexam.standing}</td>
  <td width="150">${cervicalexam.driving}</td><td width="150">${cervicalexam.computeruse}</td>
  <td width="150"> ${cervicalexam.otherfunctional} </td><td>${cervicalexam.break_text3}</td>
  </tr>         
- <tr class="row2">
+ <tr class="row1">
  <td><B style="font-size:14px">ASSESSMENT / ADDITIONAL COMMENTS:</B></td><td>${cervicalexam.assessment}</td><td></td>
  <td></td><td></td>
  <td></td>
@@ -293,7 +293,7 @@ $(function() {
  </tr>
  </table>
  <table>
- <tr class="row2">
+ <tr class="row1">
  <td width="120"><B style="font-size:14px">PLAN:</B></td>
  <td> ${cervicalexam.times} Times/week for </td>
  <td>${cervicalexam.week}weeks to address the </td>
@@ -310,7 +310,7 @@ $(function() {
  <td width="250"> ${cervicalexam.orthotics}</td>
  <td width="250"> ${cervicalexam.modalities}</td>
  </tr>
- <tr class="row2">
+ <tr class="row1">
  <td width="120">
  <td width="250"> ${cervicalexam.supplementation}</td>
  <td width="250"> ${cervicalexam.hep}</td>

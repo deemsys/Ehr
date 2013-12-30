@@ -290,12 +290,6 @@
 				          </c:if> 
 
 </ul>
-<ul id="ddsubmenu12" class="ddsubmenustyle">
-    <li><a href="lumbopelvicexam">Lumbo Pelvic Exam</a></li>
-				            <li><a href="viewlumbopelvic">View Lumbo Pelvic Exam </a></li>
-   
-   
-</ul>
 <ul id="ddsubmenu11" class="ddsubmenustyle">
 
 							
@@ -396,15 +390,60 @@
 							<!-- <li><a href="insuranceverification">Health Insurance Verification</a></li> -->
 						</ul>
 						<ul id="ddsubmenu13" class="ddsubmenustyle">
-							<li><a href="lumbopelvicexam">Lumbopelvic Exam</a></li>
-							<li><a href="hipexam">Hip Exam</a></li>
-							<li><a href="kneeexam">Knee Exam</a></li> 
-							<li><a href="footexam">Foot Exam</a></li>       
-				            <li><a href="cervicalexam">Cervical Exam</a></li>
-				            <li><a href="shoulderexam">Shoulder Exam</a></li>
-				            <li><a href="elbowexam">Elbow Exam</a></li>
-				            <li><a href="wristexam">Wrist And Hand Exam</a></li>
-				            <li><a href="thoracicexam">Thoracic Exam</a></li>
+							<li><a href="#" rel="ddsubmenu14">Lumbopelvic Exam</a>
+							     <ul id="ddsubmenu14" class="ddsubmenustyle">
+							      <li><a href="lumbopelvicexam" >Lumbopelvic Exam</a></li>
+							      <li><a href="viewlumbopelvicexam">View Lumbopelvic Exam</a></li>
+							     </ul>
+							     </li>
+							<li><a href="#" rel="ddsubmenu15" >Hip Exam</a>
+							     <ul id="ddsubmenu15" class="ddsubmenustyle">
+							      <li><a href="hipexam" >Hip Exam</a></li>
+							      <li><a href="viewhipexam">View Hip Exam</a></li>
+							     </ul>
+							     </li>
+							<li><a href="#" rel="ddsubmenu16">Knee Exam</a> 
+							<ul id="ddsubmenu16" class="ddsubmenustyle">
+							      <li><a href="kneeexam" >Knee Exam</a></li>
+							      <li><a href="viewkneeexam">View Knee Exam</a></li>
+							     </ul>
+							     </li>
+							<li><a href="#" rel="ddsubmenu17">Foot Exam</a>
+							<ul id="ddsubmenu17" class="ddsubmenustyle">
+							      <li><a href="footexam" >Foot Exam</a></li>
+							      <li><a href="viewfootexam">View Foot Exam</a></li>
+							     </ul>
+							     </li>     
+				            <li><a href="#" rel="ddsubmenu18">Cervical Exam</a>
+				              <ul id="ddsubmenu18" class="ddsubmenustyle">
+							      <li><a href="cervicalexam" >Cervical Exam</a></li>
+							      <li><a href="viewcervicalexam">View Cervical Exam</a></li>
+							     </ul>
+							     </li>
+				            <li><a href="#" rel="ddsubmenu19">Shoulder Exam</a>
+				             <ul id="ddsubmenu19" class="ddsubmenustyle">
+							      <li><a href="shoulderexam" >Shoulder Exam</a></li>
+							      <li><a href="viewshoulderexam">View Shoulder Exam</a></li>
+							     </ul>
+							     </li>
+				            <li><a href="#" rel="ddsubmenu20">Elbow Exam</a>
+				                <ul id="ddsubmenu20" class="ddsubmenustyle">
+							      <li><a href="elbowexam" >Hip Exam</a></li>
+							      <li><a href="viewelboqexam">View Elbow Exam</a></li>
+							     </ul>
+							     </li>
+				            <li><a href="#" rel="ddsubmenu21">Wrist And Hand Exam</a>
+				               <ul id="ddsubmenu21" class="ddsubmenustyle">
+							      <li><a href="wristexam" >Wrist Exam</a></li>
+							      <li><a href="viewwristexam">View Wrist Exam</a></li>
+							     </ul>
+							     </li>
+				            <li><a href="#" rel="ddsubmenu22">Thoracic Exam</a>
+				               <ul id="ddsubmenu22" class="ddsubmenustyle">
+							      <li><a href="thoracicexam" >Thoracic Exam</a></li>
+							      <li><a href="viewthoracicexam">View Thoracic Exam</a></li>
+							     </ul>
+							     </li>
 				         </ul>
 						
 					</div>

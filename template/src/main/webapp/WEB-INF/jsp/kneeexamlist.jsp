@@ -86,7 +86,7 @@ $(function() {
  <td> <input type="text" style="visibility:hidden"></td> 
  <td><input type="text" style="visibility:hidden"></td>
  </tr>
- <tr class="row2">
+ <tr class="row1">
  <td width="200">Pelvic Unleveling:</td><td>${kneeexam.pelvicunleveling}</td> 
   <td>A & O:${kneeexam.ao} </td>
  <td><input type="text" style="visibility:hidden"></td>
@@ -101,7 +101,7 @@ $(function() {
  <td><input type="text" style="visibility:hidden"></td> 
  <td><input type="text" style="visibility:hidden"></td>
  </tr>
-   <tr class="row2">
+   <tr class="row1">
  <td width="200">Leg Length (ASIS to Medial Malleolus): </td> 
  <td>${kneeexam.leglengthl} ${kneeexam.leglengthtextl}
 					</td>
@@ -119,7 +119,7 @@ $(function() {
  <td>Semimemb:</td> ${kneeexam.semimemb}</td>
  <td>Semitend:</td>${kneeexam.semitend}</td>
  </tr>
- <tr class="row2">
+ <tr class="row1">
  <td>Gastroc:</td><td width="200">${kneeexam.gastroc}</td>
   <td>Soleus:</td><td width="200">${kneeexam.soleus}</td>
   <td>Iliotib Band:</td><td width="200">${kneeexam.iliotibband}</td>
@@ -127,12 +127,12 @@ $(function() {
  </tr>
  </table>
  <table>
- <tr class="row1">
+ <tr class="row2">
  <td width="250"><B style="font-size:14px">FUNCTIONAL RANGE OF MOTION</B> </td><td><B style="font-size:14px"></B></td> 
  <td width="250"></td>
  <td width="300"><B style="font-size:14px">ORTHOPEDIC TESTING </B></td><td width="300"><B style="font-size:14px"></B></td>
  </tr>
-  <tr class="row2">
+  <tr class="row1">
  <td>${kneeexam.functionalrangeofmotion} &nbsp;&nbsp;<!-- <input type="radio" name="functionalrangeofmotion" value="Except">Except --></td><td> </td>  
  <td></td>
  <td> ${kneeexam.orthopedic}&nbsp;&nbsp;<!-- <input type="radio" name="orthopedic" value="Except">Except --></td><td> </td>
@@ -141,7 +141,7 @@ $(function() {
  <td></td><td width="50"> <b>Normal</b> </td><td><b> Actual</b></td>  
  <td></td><td><b>Left</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> Right</b></td>
  </tr>
-  <tr class="row2">
+  <tr class="row1">
  <td><b>Flexion:</b> </td><td> (60)</td><td>&nbsp;&nbsp;&nbsp; ${kneeexam.flexion} </td>  
  <td><b>Ant. Drawer (ACL):</b> </td><td>${kneeexam.acll} ${kneeexam.aclr} </td>
  </tr>
@@ -157,7 +157,7 @@ $(function() {
   <td><b> External Rotation:</b> </td><td> (45)</td><td>L &nbsp;${kneeexam.externalrotationl}<br/><br/>R ${kneeexam.externalrotationr}</td>  
  <td><b>Medial (Valgus) Stability (MCL):</b> </td><td>${kneeexam.mcll} ${kneeexam.mclr} </td>
  </tr>
-  <tr class="row2">
+  <tr class="row1">
  <td><b>GIRTH</b>&nbsp;&nbsp;&nbsp;${kneeexam.circumferential} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	</td><td> </td>  
  <td></td>
  <td><b>McMurray's (Med Meniscus):	</b> </td><td>${kneeexam.meniscusl} ${kneeexam.meniscusr}</td>
@@ -167,7 +167,7 @@ $(function() {
  <td><b>5 cm Below</b>	</td>
  <td><b>Apley's Compress (Meniscus):	</b> </td><td>${kneeexam.apleysl} ${kneeexam.apleysr} </td>
  </tr>
-  <tr class="row2">
+  <tr class="row1">
  <td>Left &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${kneeexam.cmabovel}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${kneeexam.suprapatellarl}</td><td>${kneeexam.infrapatellarl} </td>  
  <td>${kneeexam.belowl}</td>
  <td><b>Apley's Distraction (Cor ligs):		</b> </td><td>${kneeexam.distractionl} ${kneeexam.distractionr}  </td>
@@ -177,7 +177,7 @@ $(function() {
  <td>${kneeexam.belowr}</td>
  <td><b>Patellar Grind (CMP):</b> </td><td>${kneeexam.cmpl}${kneeexam.cmpr} </td>
  </tr>
- <tr class="row2">
+ <tr class="row1">
  <td></td><td> </td> 
  <td></td> 
  <td><b>Patellar Apprehension (Pat D/L):</b> </td><td> ${kneeexam.patdll} ${kneeexam.patdlr}  </td>
@@ -206,11 +206,11 @@ $(function() {
          <tr height="20"> 
          <c:forEach items="${kneeexamForm.kneeexam}" var="kneeexam" varStatus="status">
                  
- <tr class="row1">
+ <tr class="row2">
  <td><B style="font-size:14px">NEUROLOGICAL</B></td><td>${kneeexam.neurologicaltest}</td><td><%-- ${kneeexam.exceptn} --%></td>
  <td></td><td></td><td></td>
  </tr>
- <tr class="row2">
+ <tr class="row1">
  <td><b>Level</b> </td>
  <td><b> Sensory</b></td>
  <td width="110"><b>Level</b></td>
@@ -226,7 +226,7 @@ $(function() {
  <td> </td>
  <td> Left &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; Right</td>
  </tr>
- <tr class="row2">
+ <tr class="row1">
  <td>L1</td>
  <td>${kneeexam.l1l}&nbsp; &nbsp; &nbsp;${kneeexam.l1r}&nbsp;(Inguinal area)</td>
  <td>L1 </td>
@@ -242,7 +242,7 @@ $(function() {
  <td> </td>
  <td> </td>
  </tr>
- <tr class="row2">
+ <tr class="row1">
  <td>L3</td>
  <td>${kneeexam.l3l}&nbsp; &nbsp; &nbsp;${kneeexam.l3r}&nbsp;(Medial knee)	</td>
  <td>L3 </td>
@@ -258,7 +258,7 @@ $(function() {
  <td> L4</td>
  <td> ${kneeexam.l4l3}&nbsp;/5&nbsp; &nbsp; &nbsp;${kneeexam.l4r3}&nbsp;/5&nbsp;(Patellar)</td>
  </tr>
- <tr class="row2">
+ <tr class="row1">
  <td>L5</td>
  <td>${kneeexam.l5l}&nbsp; &nbsp; &nbsp;${kneeexam.l5r}&nbsp;(Ant/lat leg)	</td>
  <td>L5 </td>
@@ -274,7 +274,7 @@ $(function() {
  <td>SI </td>
  <td> ${kneeexam.sil}&nbsp;/5&nbsp; &nbsp; &nbsp;${kneeexam.sir}&nbsp;/5&nbsp;(Achilles)</td>
  </tr>
- <tr class="row2">
+ <tr class="row1">
  <td></td>
  <td>("-" is Normal)</td>
  <td> </td>
@@ -284,14 +284,14 @@ $(function() {
  </tr>
  </table>
 <table>         
- <tr class="row1">
+ <tr class="row2">
  <td><B style="font-size:14px">FUNCTIONAL DEFICIT:</B></td>
  <td width="150">${kneeexam.walking} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${kneeexam.standing}</td>
  <td width="150">${kneeexam.stairs}</td>
  <td width="150">${kneeexam.otherfunctional}<input type="checkbox" name="otherfunctional" value="Other" onclick="this.form.break3.style.visibility = this.checked? 'visible' : 'hidden'">Other&nbsp;</td>
  <td>${kneeexam.break_text3} </td>
  </tr>         
- <tr class="row2">
+ <tr class="row1">
  <td><B style="font-size:14px">ASSESSMENT / ADDITIONAL COMMENTS:</B></td><td>${kneeexam.assessment}</td><td></td>
  <td></td><td></td>
  <td></td>
@@ -320,7 +320,7 @@ $(function() {
  </tr>
  </table>
  <table>
- <tr class="row2">
+ <tr class="row1">
  <td width="120"><B style="font-size:14px">PLAN:</B></td>
  <td>${kneeexam.times}Times/week for </td>
  <td>${kneeexam.week}weeks to address the </td>
@@ -337,7 +337,7 @@ $(function() {
  <td width="250">${kneeexam.orthotics}</td>
  <td width="250">${kneeexam.modalities}</td>
  </tr>
- <tr class="row2">
+ <tr class="row1">
  <td width="120">
  <td width="250">${kneeexam.supplementation}</td>
  <td width="250">${kneeexam.hep}</td>

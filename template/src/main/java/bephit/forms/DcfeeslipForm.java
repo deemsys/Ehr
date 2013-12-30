@@ -12,8 +12,8 @@ public class DcfeeslipForm {
 		return dcfeeslip;
 	}
 
-	public void setDcfeeslip(List<Dcfeeslip> dcfeeSlip) {
-		this.dcfeeslip = dcfeeSlip;
+	public void setDcfeeslip(List<Dcfeeslip> dcfeeslip) {
+		this.dcfeeslip = dcfeeslip;
 	}
 	
  

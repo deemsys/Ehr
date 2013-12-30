@@ -6,114 +6,116 @@ public class Dcfeeslip {
 	private String date;
 	private String pname;
 	private String dr1;
-	private String dr2;
-	private String dr3;
 	private String rpt;
 	private String pta;
-	private String initialemlimited;
-	private String initialexpanded;
-	private String initialdetailed;
-	private String initialextended;
-	private String estpatientltd;
-	private String estpatientexp;
-	private String estpatientdetails;
-	private String estpatientcomp;
-	private String consultphys;
-	private String consultdetail;
-	private String consultcomp;
-	private String patientexp;
-	private String patientdetails;
-	private String patientcomp;
-	private String telephonebrief;
-	private String telephoneintermediate;
-	private String telephonecomp;
-	private String tractionmechanical;
-	private String electricstim;
-	private String vasopneumatic;
-	private String paraffin;
-	private String microwave;
-	private String whirlpool;
-	private String diathermy;
-	private String infrared;
-	private String ultraviolet;
-	private String manualelectricalstim;
-	private String iontophoresis;
-	private String contrastbaths;
-	private String ultrasound;
-	private String unlisted;
-	private String therapeutic;
-	private String neuromuscular;
-	private String aquatic;
-	private String gaittraining;
-	private String massage;
-	private String manualtherapy;
-	private String unlistedother;
-	private String grouptherapy;
-	private String orthotics;
-	private String kinetic;
-	private String adlselfcare;
-	private String reintegration;
-	private String acupuncturewo;
-	private String acupuncturew;
-	private String spine12;
-	private String spine34;
-	private String spine5;
-	private String extremity;
-	private String routine;
-	private String muscle;
-	private String musclehand;
-	private String rangeofmotion;
-	private String rangeofmotionhand;
-	private String ncv;
-	private String ncvw;
-	private String ncvea;
-	private String ssepupper;
-	private String sseplower;
-	private String ssephead;
-	private String hreflex;
-	private String physicalperformance;
-	private String functionalcapacity;
-	private String text1;
-	private String text2;
-	private String supplies;
-	private String patienteducation;
-	private String medicaltestimony;
-	private String insuranceform;
-	private String teamconference;
-	private String completespine;
-	private String cervical23;
-	private String cervical4;
-	private String cervical67;
-	private String thoracic4;
-	private String thoracic2;
-	private String scoliosis;
-	private String lumbosacral;
-	private String lumbosacral4;
-	private String pelvis2;
-	private String lumbarcomplete;
-	private String elbow2;
-	private String wrist2;
-	private String hand2;
-	private String knee2;
-	private String ankle2;
-	private String foot2;
-	private String readotherfilms;
-	private String cervicalpillow;
-	private String lumbarsupport;
-	private String orthoticcustoml;
-	private String orthoticcustomr;
-	private String tensunit;
-	private String coldpack;
-	private String wristsplint;
-	private String heellift;
-	private String exerciseball;
-	private String exerciseband;
-	private String unlisteditem;
-	private String charges;
-	private String less;
-	private String balance;
+	private int initialemlimited;
+	private int initialexpanded;
+	private int initialdetailed;
+	private int initialemextended;
+	private int estpatientltd;
+	private int estpatientexp;
+	private int estpatientdetails;
+	private int estpatientcomp;
+	private int consultphys;
+	private int consultdetail;
+	private int consultcomp;
+	private int patientexp;
+	private int patientdetails;
+	private int patientcomp;
+	private int telephonebrief;
+	private int telephoneintermediate;
+	private int telephonecomp;
+	private int tractionmechanical;
+	private int electricstim;
+	private int vasopneumatic;
+	private int paraffin;
+	private int microwave;
+	private int whirlpool;
+	private int diathermy;
+	private int infrared;
+	private int ultraviolet;
+	private int manualelectricalstim;
+	private int iontophoresis;
+	private int contrastbaths;
+	private int ultrasound;
+	private int unlisted;
+	private int therapeutic;
+	private int neuromuscular;
+	private int aquatic;
+	private int gaittraining;
+	private int massage;
+	private int manualtherapy;
+	private int unlistedother;
+	private int grouptherapy;
+	private int orthotics;
+	private int kinetic;
+	private int adlselfcare;
+	private int reintegration;
+	private int acupuncturewo;
+	private int acupuncturew;
+	private int spine12;
+	private int spine34;
+	private int spine5;
+	private int extremity;
+	private int routine;
+	private int muscle;
+	private int musclehand;
+	private int rangeofmotion;
+	private int rangeofmotionhand;
+	private int ncv;
+	private int ncvw;
+	private int ncvea;
+	private int ssepupper;
+	private int sseplower;
+	private int ssephead;
+	private int hreflex;
+	private int physicalperformance;
+	private int functionalcapacity;
+	private int text1;
+	private int text2;
+	private int supplies;
+	private int patienteducation;
+	private int medicaltestimony;
+	private int insuranceform;
+	private int teamconference;
+	private int completespine;
+	private int cervical23;
+	private int cervical4;
+	private int cervical67;
+	private int thoracic4;
+	private int thoracic2;
+	private int scoliosis;
+	private int lumbosacral;
+	private int lumbosacral4;
+	private int pelvis2;
+	private int lumbarcomplete;
+	private int elbow2;
+	private int wrist2;
+	private int hand2;
+	private int knee2;
+	private int ankle2;
+	private int foot2;
+	private int readotherfilms;
+	private int cervicalpillow;
+	private int lumbarsupport;
+	private int orthoticcustoml;
+	private int orthoticcustomr;
+	private int tensunit;
+	private int coldpack;
+	private int wristsplint;
+	private int heellift;
+	private int exerciseball;
+	private int exerciseband;
+	private int unlisteditem;
+	private int charges;
+	private int less;
+	private int balance;
+	private String payment;
 	private String paymentcashcheck;
-	private String chargeamex;
+	private String amex;
+	private String discover;
+	private String mc;
+	private String visa;
 	private String cardsign;
 	private String date1;
 	private String parentsign;
@@ -127,43 +129,43 @@ public class Dcfeeslip {
 	}
 
 	public Dcfeeslip(String dcfeeid, String pid, String date, String pname,
-			String dr1, String dr2, String dr3, String rpt, String pta,
-			String initialemlimited, String initialexpanded,
-			String initialdetailed, String initialextended,
-			String estpatientltd, String estpatientexp,
-			String estpatientdetails, String estpatientcomp,
-			String consultphys, String consultdetail, String consultcomp,
-			String patientexp, String patientdetails, String patientcomp,
-			String telephonebrief, String telephoneintermediate,
-			String telephonecomp, String tractionmechanical,
-			String electricstim, String vasopneumatic, String paraffin,
-			String microwave, String whirlpool, String diathermy,
-			String infrared, String ultraviolet, String manualelectricalstim,
-			String iontophoresis, String contrastbaths, String ultrasound,
-			String unlisted, String therapeutic, String neuromuscular,
-			String aquatic, String gaittraining, String massage,
-			String manualtherapy, String unlistedother, String grouptherapy,
-			String orthotics, String kinetic, String adlselfcare,
-			String reintegration, String acupuncturewo, String acupuncturew,
-			String spine12, String spine34, String spine5, String extremity,
-			String routine, String muscle, String musclehand,
-			String rangeofmotion, String rangeofmotionhand, String ncv,
-			String ncvw, String ncvea, String ssepupper, String sseplower,
-			String ssephead, String hreflex, String physicalperformance,
-			String functionalcapacity, String text1, String text2,
-			String supplies, String patienteducation, String medicaltestimony,
-			String insuranceform, String teamconference, String completespine,
-			String cervical23, String cervical4, String cervical67,
-			String thoracic4, String thoracic2, String scoliosis,
-			String lumbosacral, String lumbosacral4, String pelvis2,
-			String lumbarcomplete, String elbow2, String wrist2, String hand2,
-			String knee2, String ankle2, String foot2, String readotherfilms,
-			String cervicalpillow, String lumbarsupport,
-			String orthoticcustoml, String orthoticcustomr, String tensunit,
-			String coldpack, String wristsplint, String heellift,
-			String exerciseball, String exerciseband, String unlisteditem,
-			String charges, String less, String balance,
-			String paymentcashcheck, String chargeamex, String cardsign,
+			String dr1, String rpt, String pta,
+			int initialemlimited, int initialexpanded,
+			int initialdetailed, int initialextended,
+			int estpatientltd, int estpatientexp,
+			int estpatientdetails, int estpatientcomp,
+			int consultphys, int consultdetail, int consultcomp,
+			int patientexp, int patientdetails, int patientcomp,
+			int telephonebrief, int telephoneintermediate,
+			int telephonecomp, int tractionmechanical,
+			int electricstim, int vasopneumatic, int paraffin,
+			int microwave, int whirlpool, int diathermy,
+			int infrared, int ultraviolet, int manualelectricalstim,
+			int iontophoresis, int contrastbaths, int ultrasound,
+			int unlisted, int therapeutic, int neuromuscular,
+			int aquatic, int gaittraining, int massage,
+			int manualtherapy, int unlistedother, int grouptherapy,
+			int orthotics, int kinetic, int adlselfcare,
+			int reintegration, int acupuncturewo, int acupuncturew,
+			int spine12, int spine34, int spine5, int extremity,
+			int routine, int muscle, int musclehand,
+			int rangeofmotion, int rangeofmotionhand, int ncv,
+			int ncvw, int ncvea, int ssepupper, int sseplower,
+			int ssephead, int hreflex, int physicalperformance,
+			int functionalcapacity, int text1, int text2,
+			int supplies, int patienteducation, int medicaltestimony,
+			int insuranceform, int teamconference, int completespine,
+			int cervical23, int cervical4, int cervical67,
+			int thoracic4, int thoracic2, int scoliosis,
+			int lumbosacral, int lumbosacral4, int pelvis2,
+			int lumbarcomplete, int elbow2, int wrist2, int hand2,
+			int knee2, int ankle2, int foot2, int readotherfilms,
+			int cervicalpillow, int lumbarsupport,
+			int orthoticcustoml, int orthoticcustomr, int tensunit,
+			int coldpack, int wristsplint, int heellift,
+			int exerciseball, int exerciseband, int unlisteditem,
+			int charges, int less, int balance,String payment,
+			String paymentcashcheck, String amex,String discover,String mc,String visa, String cardsign,
 			String date1, String parentsign, String doctorsign, String week,
 			String months) {
 		super();
@@ -172,14 +174,12 @@ public class Dcfeeslip {
 		this.date = date;
 		this.pname = pname;
 		this.dr1 = dr1;
-		this.dr2 = dr2;
-		this.dr3 = dr3;
 		this.rpt = rpt;
 		this.pta = pta;
 		this.initialemlimited = initialemlimited;
 		this.initialexpanded = initialexpanded;
 		this.initialdetailed = initialdetailed;
-		this.initialextended = initialextended;
+		this.initialemextended = initialemextended;
 		this.estpatientltd = estpatientltd;
 		this.estpatientexp = estpatientexp;
 		this.estpatientdetails = estpatientdetails;
@@ -278,8 +278,12 @@ public class Dcfeeslip {
 		this.charges = charges;
 		this.less = less;
 		this.balance = balance;
+		this.payment=payment;
 		this.paymentcashcheck = paymentcashcheck;
-		this.chargeamex = chargeamex;
+		this.amex = amex;
+		this.discover=discover;
+		this.mc=mc;
+		this.visa=visa;
 		this.cardsign = cardsign;
 		this.date1 = date1;
 		this.parentsign = parentsign;
@@ -328,21 +332,6 @@ public class Dcfeeslip {
 		this.dr1 = dr1;
 	}
 
-	public String getDr2() {
-		return dr2;
-	}
-
-	public void setDr2(String dr2) {
-		this.dr2 = dr2;
-	}
-
-	public String getDr3() {
-		return dr3;
-	}
-
-	public void setDr3(String dr3) {
-		this.dr3 = dr3;
-	}
 
 	public String getRpt() {
 		return rpt;
@@ -360,820 +349,829 @@ public class Dcfeeslip {
 		this.pta = pta;
 	}
 
-	public String getInitialemlimited() {
+	public int getInitialemlimited() {
 		return initialemlimited;
 	}
 
-	public void setInitialemlimited(String initialemlimited) {
+	public void setInitialemlimited(int initialemlimited) {
 		this.initialemlimited = initialemlimited;
 	}
 
-	public String getInitialexpanded() {
+	public int getInitialexpanded() {
 		return initialexpanded;
 	}
 
-	public void setInitialexpanded(String initialexpanded) {
+	public void setInitialexpanded(int initialexpanded) {
 		this.initialexpanded = initialexpanded;
 	}
 
-	public String getInitialdetailed() {
+		public int getInitialdetailed() {
 		return initialdetailed;
 	}
 
-	public void setInitialdetailed(String initialdetailed) {
+	public void setInitialdetailed(int initialdetailed) {
 		this.initialdetailed = initialdetailed;
 	}
 
-	public String getInitialextended() {
-		return initialextended;
+	public int getInitialemextended() {
+		return initialemextended;
 	}
 
-	public void setInitialextended(String initialextended) {
-		this.initialextended = initialextended;
+	public void setInitialemextended(int initialemextended) {
+		this.initialemextended = initialemextended;
 	}
 
-	public String getEstpatientltd() {
+	public int getEstpatientltd() {
 		return estpatientltd;
 	}
 
-	public void setEstpatientltd(String estpatientltd) {
+	public void setEstpatientltd(int estpatientltd) {
 		this.estpatientltd = estpatientltd;
 	}
 
-	public String getEstpatientexp() {
+	public int getEstpatientexp() {
 		return estpatientexp;
 	}
 
-	public void setEstpatientexp(String estpatientexp) {
+	public void setEstpatientexp(int estpatientexp) {
 		this.estpatientexp = estpatientexp;
 	}
 
-	public String getEstpatientdetails() {
+	public int getEstpatientdetails() {
 		return estpatientdetails;
 	}
 
-	public void setEstpatientdetails(String estpatientdetails) {
+	public void setEstpatientdetails(int estpatientdetails) {
 		this.estpatientdetails = estpatientdetails;
 	}
 
-	public String getEstpatientcomp() {
+	public int getEstpatientcomp() {
 		return estpatientcomp;
 	}
 
-	public void setEstpatientcomp(String estpatientcomp) {
+	public void setEstpatientcomp(int estpatientcomp) {
 		this.estpatientcomp = estpatientcomp;
 	}
 
-	public String getConsultphys() {
+	public int getConsultphys() {
 		return consultphys;
 	}
 
-	public void setConsultphys(String consultphys) {
+	public void setConsultphys(int consultphys) {
 		this.consultphys = consultphys;
 	}
 
-	public String getConsultdetail() {
+	public int getConsultdetail() {
 		return consultdetail;
 	}
 
-	public void setConsultdetail(String consultdetail) {
+	public void setConsultdetail(int consultdetail) {
 		this.consultdetail = consultdetail;
 	}
 
-	public String getConsultcomp() {
+	public int getConsultcomp() {
 		return consultcomp;
 	}
 
-	public void setConsultcomp(String consultcomp) {
+	public void setConsultcomp(int consultcomp) {
 		this.consultcomp = consultcomp;
 	}
 
-	public String getPatientexp() {
+	public int getPatientexp() {
 		return patientexp;
 	}
 
-	public void setPatientexp(String patientexp) {
+	public void setPatientexp(int patientexp) {
 		this.patientexp = patientexp;
 	}
 
-	public String getPatientdetails() {
+	public int getPatientdetails() {
 		return patientdetails;
 	}
 
-	public void setPatientdetails(String patientdetails) {
+	public void setPatientdetails(int patientdetails) {
 		this.patientdetails = patientdetails;
 	}
 
-	public String getPatientcomp() {
+	public int getPatientcomp() {
 		return patientcomp;
 	}
 
-	public void setPatientcomp(String patientcomp) {
+	public void setPatientcomp(int patientcomp) {
 		this.patientcomp = patientcomp;
 	}
 
-	public String getTelephonebrief() {
+	public int getTelephonebrief() {
 		return telephonebrief;
 	}
 
-	public void setTelephonebrief(String telephonebrief) {
+	public void setTelephonebrief(int telephonebrief) {
 		this.telephonebrief = telephonebrief;
 	}
 
-	public String getTelephoneintermediate() {
+	public int getTelephoneintermediate() {
 		return telephoneintermediate;
 	}
 
-	public void setTelephoneintermediate(String telephoneintermediate) {
+	public void setTelephoneintermediate(int telephoneintermediate) {
 		this.telephoneintermediate = telephoneintermediate;
 	}
 
-	public String getTelephonecomp() {
+	public int getTelephonecomp() {
 		return telephonecomp;
 	}
 
-	public void setTelephonecomp(String telephonecomp) {
+	public void setTelephonecomp(int telephonecomp) {
 		this.telephonecomp = telephonecomp;
 	}
 
-	public String getTractionmechanical() {
+	public int getTractionmechanical() {
 		return tractionmechanical;
 	}
 
-	public void setTractionmechanical(String tractionmechanical) {
+	public void setTractionmechanical(int tractionmechanical) {
 		this.tractionmechanical = tractionmechanical;
 	}
 
-	public String getElectricstim() {
+	public int getElectricstim() {
 		return electricstim;
 	}
 
-	public void setElectricstim(String electricstim) {
+	public void setElectricstim(int electricstim) {
 		this.electricstim = electricstim;
 	}
 
-	public String getVasopneumatic() {
+	public int getVasopneumatic() {
 		return vasopneumatic;
 	}
 
-	public void setVasopneumatic(String vasopneumatic) {
+	public void setVasopneumatic(int vasopneumatic) {
 		this.vasopneumatic = vasopneumatic;
 	}
 
-	public String getParaffin() {
+	public int getParaffin() {
 		return paraffin;
 	}
 
-	public void setParaffin(String paraffin) {
+	public void setParaffin(int paraffin) {
 		this.paraffin = paraffin;
 	}
 
-	public String getMicrowave() {
+	public int getMicrowave() {
 		return microwave;
 	}
 
-	public void setMicrowave(String microwave) {
+	public void setMicrowave(int microwave) {
 		this.microwave = microwave;
 	}
 
-	public String getWhirlpool() {
+	public int getWhirlpool() {
 		return whirlpool;
 	}
 
-	public void setWhirlpool(String whirlpool) {
+	public void setWhirlpool(int whirlpool) {
 		this.whirlpool = whirlpool;
 	}
 
-	public String getDiathermy() {
+	public int getDiathermy() {
 		return diathermy;
 	}
 
-	public void setDiathermy(String diathermy) {
+	public void setDiathermy(int diathermy) {
 		this.diathermy = diathermy;
 	}
 
-	public String getInfrared() {
+	public int getInfrared() {
 		return infrared;
 	}
 
-	public void setInfrared(String infrared) {
+	public void setInfrared(int infrared) {
 		this.infrared = infrared;
 	}
 
-	public String getUltraviolet() {
+	public int getUltraviolet() {
 		return ultraviolet;
 	}
 
-	public void setUltraviolet(String ultraviolet) {
+	public void setUltraviolet(int ultraviolet) {
 		this.ultraviolet = ultraviolet;
 	}
 
-	public String getManualelectricalstim() {
+	public int getManualelectricalstim() {
 		return manualelectricalstim;
 	}
 
-	public void setManualelectricalstim(String manualelectricalstim) {
+	public void setManualelectricalstim(int manualelectricalstim) {
 		this.manualelectricalstim = manualelectricalstim;
 	}
 
-	public String getIontophoresis() {
+	public int getIontophoresis() {
 		return iontophoresis;
 	}
 
-	public void setIontophoresis(String iontophoresis) {
+	public void setIontophoresis(int iontophoresis) {
 		this.iontophoresis = iontophoresis;
 	}
 
-	public String getContrastbaths() {
+	public int getContrastbaths() {
 		return contrastbaths;
 	}
 
-	public void setContrastbaths(String contrastbaths) {
+	public void setContrastbaths(int contrastbaths) {
 		this.contrastbaths = contrastbaths;
 	}
 
-	public String getUltrasound() {
+	public int getUltrasound() {
 		return ultrasound;
 	}
 
-	public void setUltrasound(String ultrasound) {
+	public void setUltrasound(int ultrasound) {
 		this.ultrasound = ultrasound;
 	}
 
-	public String getUnlisted() {
+	public int getUnlisted() {
 		return unlisted;
 	}
 
-	public void setUnlisted(String unlisted) {
+	public void setUnlisted(int unlisted) {
 		this.unlisted = unlisted;
 	}
 
-	public String getTherapeutic() {
+	public int getTherapeutic() {
 		return therapeutic;
 	}
 
-	public void setTherapeutic(String therapeutic) {
+	public void setTherapeutic(int therapeutic) {
 		this.therapeutic = therapeutic;
 	}
 
-	public String getNeuromuscular() {
+	public int getNeuromuscular() {
 		return neuromuscular;
 	}
 
-	public void setNeuromuscular(String neuromuscular) {
+	public void setNeuromuscular(int neuromuscular) {
 		this.neuromuscular = neuromuscular;
 	}
 
-	public String getAquatic() {
+	public int getAquatic() {
 		return aquatic;
 	}
 
-	public void setAquatic(String aquatic) {
+	public void setAquatic(int aquatic) {
 		this.aquatic = aquatic;
 	}
 
-	public String getGaittraining() {
+	public int getGaittraining() {
 		return gaittraining;
 	}
 
-	public void setGaittraining(String gaittraining) {
+	public void setGaittraining(int gaittraining) {
 		this.gaittraining = gaittraining;
 	}
 
-	public String getMassage() {
+	public int getMassage() {
 		return massage;
 	}
 
-	public void setMassage(String massage) {
+	public void setMassage(int massage) {
 		this.massage = massage;
 	}
 
-	public String getManualtherapy() {
+	public int getManualtherapy() {
 		return manualtherapy;
 	}
 
-	public void setManualtherapy(String manualtherapy) {
+	public void setManualtherapy(int manualtherapy) {
 		this.manualtherapy = manualtherapy;
 	}
 
-	public String getUnlistedother() {
+	public int getUnlistedother() {
 		return unlistedother;
 	}
 
-	public void setUnlistedother(String unlistedother) {
+	public void setUnlistedother(int unlistedother) {
 		this.unlistedother = unlistedother;
 	}
 
-	public String getGrouptherapy() {
+	public int getGrouptherapy() {
 		return grouptherapy;
 	}
 
-	public void setGrouptherapy(String grouptherapy) {
+	public void setGrouptherapy(int grouptherapy) {
 		this.grouptherapy = grouptherapy;
 	}
 
-	public String getOrthotics() {
+	public int getOrthotics() {
 		return orthotics;
 	}
 
-	public void setOrthotics(String orthotics) {
+	public void setOrthotics(int orthotics) {
 		this.orthotics = orthotics;
 	}
 
-	public String getKinetic() {
+	public int getKinetic() {
 		return kinetic;
 	}
 
-	public void setKinetic(String kinetic) {
+	public void setKinetic(int kinetic) {
 		this.kinetic = kinetic;
 	}
 
-	public String getAdlselfcare() {
+	public int getAdlselfcare() {
 		return adlselfcare;
 	}
 
-	public void setAdlselfcare(String adlselfcare) {
+	public void setAdlselfcare(int adlselfcare) {
 		this.adlselfcare = adlselfcare;
 	}
 
-	public String getReintegration() {
+	public int getReintegration() {
 		return reintegration;
 	}
 
-	public void setReintegration(String reintegration) {
+	public void setReintegration(int reintegration) {
 		this.reintegration = reintegration;
 	}
 
-	public String getAcupuncturewo() {
+	public int getAcupuncturewo() {
 		return acupuncturewo;
 	}
 
-	public void setAcupuncturewo(String acupuncturewo) {
+	public void setAcupuncturewo(int acupuncturewo) {
 		this.acupuncturewo = acupuncturewo;
 	}
 
-	public String getAcupuncturew() {
+	public int getAcupuncturew() {
 		return acupuncturew;
 	}
 
-	public void setAcupuncturew(String acupuncturew) {
+	public void setAcupuncturew(int acupuncturew) {
 		this.acupuncturew = acupuncturew;
 	}
 
-	public String getSpine12() {
+	public int getSpine12() {
 		return spine12;
 	}
 
-	public void setSpine12(String spine12) {
+	public void setSpine12(int spine12) {
 		this.spine12 = spine12;
 	}
 
-	public String getSpine34() {
+	public int getSpine34() {
 		return spine34;
 	}
 
-	public void setSpine34(String spine34) {
+	public void setSpine34(int spine34) {
 		this.spine34 = spine34;
 	}
 
-	public String getSpine5() {
+	public int getSpine5() {
 		return spine5;
 	}
 
-	public void setSpine5(String spine5) {
+	public void setSpine5(int spine5) {
 		this.spine5 = spine5;
 	}
 
-	public String getExtremity() {
+	public int getExtremity() {
 		return extremity;
 	}
 
-	public void setExtremity(String extremity) {
+	public void setExtremity(int extremity) {
 		this.extremity = extremity;
 	}
 
-	public String getRoutine() {
+	public int getRoutine() {
 		return routine;
 	}
 
-	public void setRoutine(String routine) {
+	public void setRoutine(int routine) {
 		this.routine = routine;
 	}
 
-	public String getMuscle() {
+	public int getMuscle() {
 		return muscle;
 	}
 
-	public void setMuscle(String muscle) {
+	public void setMuscle(int muscle) {
 		this.muscle = muscle;
 	}
 
-	public String getMusclehand() {
+	public int getMusclehand() {
 		return musclehand;
 	}
 
-	public void setMusclehand(String musclehand) {
+	public void setMusclehand(int musclehand) {
 		this.musclehand = musclehand;
 	}
 
-	public String getRangeofmotion() {
+	public int getRangeofmotion() {
 		return rangeofmotion;
 	}
 
-	public void setRangeofmotion(String rangeofmotion) {
+	public void setRangeofmotion(int rangeofmotion) {
 		this.rangeofmotion = rangeofmotion;
 	}
 
-	public String getRangeofmotionhand() {
+	public int getRangeofmotionhand() {
 		return rangeofmotionhand;
 	}
 
-	public void setRangeofmotionhand(String rangeofmotionhand) {
+	public void setRangeofmotionhand(int rangeofmotionhand) {
 		this.rangeofmotionhand = rangeofmotionhand;
 	}
 
-	public String getNcv() {
+	public int getNcv() {
 		return ncv;
 	}
 
-	public void setNcv(String ncv) {
+	public void setNcv(int ncv) {
 		this.ncv = ncv;
 	}
 
-	public String getNcvw() {
+	public int getNcvw() {
 		return ncvw;
 	}
 
-	public void setNcvw(String ncvw) {
+	public void setNcvw(int ncvw) {
 		this.ncvw = ncvw;
 	}
 
-	public String getNcvea() {
+	public int getNcvea() {
 		return ncvea;
 	}
 
-	public void setNcvea(String ncvea) {
+	public void setNcvea(int ncvea) {
 		this.ncvea = ncvea;
 	}
 
-	public String getSsepupper() {
+	public int getSsepupper() {
 		return ssepupper;
 	}
 
-	public void setSsepupper(String ssepupper) {
+	public void setSsepupper(int ssepupper) {
 		this.ssepupper = ssepupper;
 	}
 
-	public String getSseplower() {
+	public int getSseplower() {
 		return sseplower;
 	}
 
-	public void setSseplower(String sseplower) {
+	public void setSseplower(int sseplower) {
 		this.sseplower = sseplower;
 	}
 
-	public String getSsephead() {
+	public int getSsephead() {
 		return ssephead;
 	}
 
-	public void setSsephead(String ssephead) {
+	public void setSsephead(int ssephead) {
 		this.ssephead = ssephead;
 	}
 
-	public String getHreflex() {
+	public int getHreflex() {
 		return hreflex;
 	}
 
-	public void setHreflex(String hreflex) {
+	public void setHreflex(int hreflex) {
 		this.hreflex = hreflex;
 	}
 
-	public String getPhysicalperformance() {
+	public int getPhysicalperformance() {
 		return physicalperformance;
 	}
 
-	public void setPhysicalperformance(String physicalperformance) {
+	public void setPhysicalperformance(int physicalperformance) {
 		this.physicalperformance = physicalperformance;
 	}
 
-	public String getFunctionalcapacity() {
+	public int getFunctionalcapacity() {
 		return functionalcapacity;
 	}
 
-	public void setFunctionalcapacity(String functionalcapacity) {
+	public void setFunctionalcapacity(int functionalcapacity) {
 		this.functionalcapacity = functionalcapacity;
 	}
 
-	public String getText1() {
+	public int getText1() {
 		return text1;
 	}
 
-	public void setText1(String text1) {
+	public void setText1(int text1) {
 		this.text1 = text1;
 	}
 
-	public String getText2() {
+	public int getText2() {
 		return text2;
 	}
 
-	public void setText2(String text2) {
+	public void setText2(int text2) {
 		this.text2 = text2;
 	}
 
-	public String getSupplies() {
+	public int getSupplies() {
 		return supplies;
 	}
 
-	public void setSupplies(String supplies) {
+	public void setSupplies(int supplies) {
 		this.supplies = supplies;
 	}
 
-	public String getPatienteducation() {
+	public int getPatienteducation() {
 		return patienteducation;
 	}
 
-	public void setPatienteducation(String patienteducation) {
+	public void setPatienteducation(int patienteducation) {
 		this.patienteducation = patienteducation;
 	}
 
-	public String getMedicaltestimony() {
+	public int getMedicaltestimony() {
 		return medicaltestimony;
 	}
 
-	public void setMedicaltestimony(String medicaltestimony) {
+	public void setMedicaltestimony(int medicaltestimony) {
 		this.medicaltestimony = medicaltestimony;
 	}
 
-	public String getInsuranceform() {
+	public int getInsuranceform() {
 		return insuranceform;
 	}
 
-	public void setInsuranceform(String insuranceform) {
+	public void setInsuranceform(int insuranceform) {
 		this.insuranceform = insuranceform;
 	}
 
-	public String getTeamconference() {
+	public int getTeamconference() {
 		return teamconference;
 	}
 
-	public void setTeamconference(String teamconference) {
+	public void setTeamconference(int teamconference) {
 		this.teamconference = teamconference;
 	}
 
-	public String getCompletespine() {
+	public int getCompletespine() {
 		return completespine;
 	}
 
-	public void setCompletespine(String completespine) {
+	public void setCompletespine(int completespine) {
 		this.completespine = completespine;
 	}
 
-	public String getCervical23() {
+	public int getCervical23() {
 		return cervical23;
 	}
 
-	public void setCervical23(String cervical23) {
+	public void setCervical23(int cervical23) {
 		this.cervical23 = cervical23;
 	}
 
-	public String getCervical4() {
+	public int getCervical4() {
 		return cervical4;
 	}
 
-	public void setCervical4(String cervical4) {
+	public void setCervical4(int cervical4) {
 		this.cervical4 = cervical4;
 	}
 
-	public String getCervical67() {
+	public int getCervical67() {
 		return cervical67;
 	}
 
-	public void setCervical67(String cervical67) {
+	public void setCervical67(int cervical67) {
 		this.cervical67 = cervical67;
 	}
 
-	public String getThoracic4() {
+	public int getThoracic4() {
 		return thoracic4;
 	}
 
-	public void setThoracic4(String thoracic4) {
+	public void setThoracic4(int thoracic4) {
 		this.thoracic4 = thoracic4;
 	}
 
-	public String getThoracic2() {
+	public int getThoracic2() {
 		return thoracic2;
 	}
 
-	public void setThoracic2(String thoracic2) {
+	public void setThoracic2(int thoracic2) {
 		this.thoracic2 = thoracic2;
 	}
 
-	public String getScoliosis() {
+	public int getScoliosis() {
 		return scoliosis;
 	}
 
-	public void setScoliosis(String scoliosis) {
+	public void setScoliosis(int scoliosis) {
 		this.scoliosis = scoliosis;
 	}
 
-	public String getLumbosacral() {
+	public int getLumbosacral() {
 		return lumbosacral;
 	}
 
-	public void setLumbosacral(String lumbosacral) {
+	public void setLumbosacral(int lumbosacral) {
 		this.lumbosacral = lumbosacral;
 	}
 
-	public String getLumbosacral4() {
+	public int getLumbosacral4() {
 		return lumbosacral4;
 	}
 
-	public void setLumbosacral4(String lumbosacral4) {
+	public void setLumbosacral4(int lumbosacral4) {
 		this.lumbosacral4 = lumbosacral4;
 	}
 
-	public String getPelvis2() {
+	public int getPelvis2() {
 		return pelvis2;
 	}
 
-	public void setPelvis2(String pelvis2) {
+	public void setPelvis2(int pelvis2) {
 		this.pelvis2 = pelvis2;
 	}
 
-	public String getLumbarcomplete() {
+	public int getLumbarcomplete() {
 		return lumbarcomplete;
 	}
 
-	public void setLumbarcomplete(String lumbarcomplete) {
+	public void setLumbarcomplete(int lumbarcomplete) {
 		this.lumbarcomplete = lumbarcomplete;
 	}
 
-	public String getElbow2() {
+	public int getElbow2() {
 		return elbow2;
 	}
 
-	public void setElbow2(String elbow2) {
+	public void setElbow2(int elbow2) {
 		this.elbow2 = elbow2;
 	}
 
-	public String getWrist2() {
+	public int getWrist2() {
 		return wrist2;
 	}
 
-	public void setWrist2(String wrist2) {
+	public void setWrist2(int wrist2) {
 		this.wrist2 = wrist2;
 	}
 
-	public String getHand2() {
+	public int getHand2() {
 		return hand2;
 	}
 
-	public void setHand2(String hand2) {
+	public void setHand2(int hand2) {
 		this.hand2 = hand2;
 	}
 
-	public String getKnee2() {
+	public int getKnee2() {
 		return knee2;
 	}
 
-	public void setKnee2(String knee2) {
+	public void setKnee2(int knee2) {
 		this.knee2 = knee2;
 	}
 
-	public String getAnkle2() {
+	public int getAnkle2() {
 		return ankle2;
 	}
 
-	public void setAnkle2(String ankle2) {
+	public void setAnkle2(int ankle2) {
 		this.ankle2 = ankle2;
 	}
 
-	public String getFoot2() {
+	public int getFoot2() {
 		return foot2;
 	}
 
-	public void setFoot2(String foot2) {
+	public void setFoot2(int foot2) {
 		this.foot2 = foot2;
 	}
 
-	public String getReadotherfilms() {
+	public int getReadotherfilms() {
 		return readotherfilms;
 	}
 
-	public void setReadotherfilms(String readotherfilms) {
+	public void setReadotherfilms(int readotherfilms) {
 		this.readotherfilms = readotherfilms;
 	}
 
-	public String getCervicalpillow() {
+	public int getCervicalpillow() {
 		return cervicalpillow;
 	}
 
-	public void setCervicalpillow(String cervicalpillow) {
+	public void setCervicalpillow(int cervicalpillow) {
 		this.cervicalpillow = cervicalpillow;
 	}
 
-	public String getLumbarsupport() {
+	public int getLumbarsupport() {
 		return lumbarsupport;
 	}
 
-	public void setLumbarsupport(String lumbarsupport) {
+	public void setLumbarsupport(int lumbarsupport) {
 		this.lumbarsupport = lumbarsupport;
 	}
 
-	public String getOrthoticcustoml() {
+	public int getOrthoticcustoml() {
 		return orthoticcustoml;
 	}
 
-	public void setOrthoticcustoml(String orthoticcustoml) {
+	public void setOrthoticcustoml(int orthoticcustoml) {
 		this.orthoticcustoml = orthoticcustoml;
 	}
 
-	public String getOrthoticcustomr() {
+	public int getOrthoticcustomr() {
 		return orthoticcustomr;
 	}
 
-	public void setOrthoticcustomr(String orthoticcustomr) {
+	public void setOrthoticcustomr(int orthoticcustomr) {
 		this.orthoticcustomr = orthoticcustomr;
 	}
 
-	public String getTensunit() {
+	public int getTensunit() {
 		return tensunit;
 	}
 
-	public void setTensunit(String tensunit) {
+	public void setTensunit(int tensunit) {
 		this.tensunit = tensunit;
 	}
 
-	public String getColdpack() {
+	public int getColdpack() {
 		return coldpack;
 	}
 
-	public void setColdpack(String coldpack) {
+	public void setColdpack(int coldpack) {
 		this.coldpack = coldpack;
 	}
 
-	public String getWristsplint() {
+	public int getWristsplint() {
 		return wristsplint;
 	}
 
-	public void setWristsplint(String wristsplint) {
+	public void setWristsplint(int wristsplint) {
 		this.wristsplint = wristsplint;
 	}
 
-	public String getHeellift() {
+	public int getHeellift() {
 		return heellift;
 	}
 
-	public void setHeellift(String heellift) {
+	public void setHeellift(int heellift) {
 		this.heellift = heellift;
 	}
 
-	public String getExerciseball() {
+	public int getExerciseball() {
 		return exerciseball;
 	}
 
-	public void setExerciseball(String exerciseball) {
+	public void setExerciseball(int exerciseball) {
 		this.exerciseball = exerciseball;
 	}
 
-	public String getExerciseband() {
+	public int getExerciseband() {
 		return exerciseband;
 	}
 
-	public void setExerciseband(String exerciseband) {
+	public void setExerciseband(int exerciseband) {
 		this.exerciseband = exerciseband;
 	}
 
-	public String getUnlisteditem() {
+	public int getUnlisteditem() {
 		return unlisteditem;
 	}
 
-	public void setUnlisteditem(String unlisteditem) {
+	public void setUnlisteditem(int unlisteditem) {
 		this.unlisteditem = unlisteditem;
 	}
 
-	public String getCharges() {
+		public int getCharges() {
 		return charges;
 	}
 
-	public void setCharges(String charges) {
+	public void setCharges(int charges) {
 		this.charges = charges;
 	}
 
-	public String getLess() {
+	public int getLess() {
 		return less;
 	}
 
-	public void setLess(String less) {
+	public void setLess(int less) {
 		this.less = less;
 	}
 
-	public String getBalance() {
+	public int getBalance() {
 		return balance;
 	}
 
-	public void setBalance(String balance) {
+	public void setBalance(int balance) {
 		this.balance = balance;
+	}
+ 
+	
+	public String getPayment() {
+		return payment;
+	}
+
+	public void setPayment(String payment) {
+		this.payment = payment;
 	}
 
 	public String getPaymentcashcheck() {
@@ -1184,12 +1182,38 @@ public class Dcfeeslip {
 		this.paymentcashcheck = paymentcashcheck;
 	}
 
-	public String getChargeamex() {
-		return chargeamex;
+	
+
+	public String getAmex() {
+		return amex;
 	}
 
-	public void setChargeamex(String chargeamex) {
-		this.chargeamex = chargeamex;
+	public void setAmex(String amex) {
+		this.amex = amex;
+	}
+
+	public String getDiscover() {
+		return discover;
+	}
+
+	public void setDiscover(String discover) {
+		this.discover = discover;
+	}
+
+	public String getMc() {
+		return mc;
+	}
+
+	public void setMc(String mc) {
+		this.mc = mc;
+	}
+
+	public String getVisa() {
+		return visa;
+	}
+
+	public void setVisa(String visa) {
+		this.visa = visa;
 	}
 
 	public String getCardsign() {

@@ -92,7 +92,7 @@ $(function() {
  <td></td> 
  <td></td>
  </tr>
- <tr class="row2">
+ <tr class="row1">
  <td width="200">Pelvic Unleveling:</td><td><select style="width:180px" name="pelvicunleveling" id="pelvicunleveling"  onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="none" >None</option>
 					<option value="superiorilliaccrestright">superior illiac crest right</option>
@@ -108,15 +108,17 @@ $(function() {
  <td><input type="text" style="visibility:hidden"> </td> 
  <td> <input type="text" style="visibility:hidden"></td>
  </tr>
- <tr class="row1">
+ <tr class="row2">
  <td width="200"><B style="font-size:14px">PALPATION / SOFT TISSUE DYSFUNCTION</B></td> 
  <td width="200"><input type="checkbox" name="allsoft" value="All Soft Tissue Unremarkable"> All Soft Tissue Unremarkable</td> 
  <!-- <td> <input type="checkbox" name="except" value="Except"> Except </td> -->
  <td></td>
  <td></td> 
  <td></td>
+ <td></td>
  </tr>
-  <tr class="row2">
+ 
+  <tr class="row1">
  <td width="200">Leg Length (ASIS to Medial Malleolus): </td> 
  <td><input type="checkbox" name="leglengthl" value="left" onclick="this.form.break5.style.visibility = this.checked? 'visible' : 'hidden'">Left
 					<input type="text" name="leglengthtextl" id="break5" style="visibility:hidden">
@@ -135,7 +137,7 @@ $(function() {
  <td>Semimemb:</td><td width="200"><input type="radio" name="semimemb" value="Left">Left  <input type="radio" name="semimemb" value="Right">Right</td>
  <td>Semitend:</td><td width="200"><input type="radio" name="semitend" value="Left">Left  <input type="radio" name="semitend" value="Right">Right</td>
  </tr>
- <tr class="row2">
+ <tr class="row1">
  <td>Gastroc:</td><td width="200"><input type="radio" name="gastroc" value="Left">Left  <input type="radio" name="gastroc" value="Right">Right</td>
   <td>Soleus:</td><td width="200"><input type="radio" name="soleus" value="Left">Left  <input type="radio" name="soleus" value="Right">Right</td>
   <td>Iliotib Band:</td><td width="200"><input type="radio" name="iliotibband" value="Left">Left  <input type="radio" name="iliotibband" value="Right">Right</td>
@@ -143,12 +145,12 @@ $(function() {
  </tr>
  </table>
  <table>
- <tr class="row1">
+ <tr class="row2">
  <td width="250"><B style="font-size:14px">FUNCTIONAL RANGE OF MOTION</B> </td><td><B style="font-size:14px"></B></td> 
  <td width="250"></td>
  <td width="300"><B style="font-size:14px">ORTHOPEDIC TESTING </B></td><td width="300"><B style="font-size:14px"></B></td>
  </tr>
-  <tr class="row2">
+  <tr class="row1">
  <td><input type="radio" name="functionalrangeofmotion" value="Unremarkable">Unremarkable &nbsp;&nbsp;<!-- <input type="radio" name="functionalrangeofmotion" value="Except">Except --></td><td> </td>  
  <td></td>
  <td> <input type="radio" name="orthopedic" value="Unremarkable">Unremarkable&nbsp;&nbsp;<!-- <input type="radio" name="orthopedic" value="Except">Except --></td><td> </td>
@@ -157,7 +159,7 @@ $(function() {
  <td></td><td width="50"> <b>Normal</b> </td><td><b> Actual</b></td>  
  <td></td><td><b>Left</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> Right</b></td>
  </tr>
-  <tr class="row2">
+  <tr class="row1">
  <td><b>Flexion:</b> </td><td> (60)</td><td>&nbsp;&nbsp;&nbsp; <input type="text" name="flexion" size="7"></td>  
  <td><b>Ant. Drawer (ACL):</b> </td><td><input type="text" name="acll" size="5"> <input type="text" name="aclr" size="5"></td>
  </tr>
@@ -165,7 +167,7 @@ $(function() {
  <td><b>Extension:	</b> </td><td> (25) </td><td> &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="extension" size="7"></td>  
  <td><b>Post. Drawer (PCL):	</b> </td><td><input type="text" name="pcll" size="5"> <input type="text" name="pclr" size="5"></td>
  </tr>
-  <tr class="row2">
+  <tr class="row1">
  <td><b>Internal Rotation:</b> </td><td> (25)</td><td>L &nbsp;<input type="text" name="internalrotationl" size="7"><br/><br/>R <input type="text" name="internalrotationr" size="7"></td>  
  <td><b>Lateral (Varus) Stability (LCL):</b> </td><td><input type="text" name="lcll" size="5"> <input type="text" name="lclr" size="5"></td>
  </tr>
@@ -173,7 +175,7 @@ $(function() {
   <td><b> External Rotation:</b> </td><td> (45)</td><td>L &nbsp;<input type="text" name="externalrotationl" size="7"><br/><br/>R <input type="text" name="externalrotationr" size="7"></td>  
  <td><b>Medial (Valgus) Stability (MCL):</b> </td><td><input type="text" name="mcll" size="5"> <input type="text" name="mclr" size="5"></td>
  </tr>
-  <tr class="row2">
+  <tr class="row1">
  <td><b>GIRTH</b>&nbsp;&nbsp;&nbsp; <input type="checkbox" name="circumferential" value="Circumferential Measures are Unremarkable">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Circumferential Measures are 	</td><td>Unremarkable </td>  
  <td></td>
  <td><b>McMurray's (Med Meniscus):	</b> </td><td><input type="text" name="meniscusl" size="5"> <input type="text" name="meniscusr" size="5"></td>
@@ -183,7 +185,7 @@ $(function() {
  <td><b>5 cm Below</b>	</td>
  <td><b>Apley's Compress (Meniscus):	</b> </td><td><input type="text" name="apleysl" size="5"> <input type="text" name="apleysr" size="5"></td>
  </tr>
-  <tr class="row2">
+  <tr class="row1">
  <td>Left &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="cmabovel" size="8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="suprapatellarl" size="8"></td><td><input type="text" name="infrapatellarl" size="8"> </td>  
  <td><input type="text" name="belowl" size="8"></td>
  <td><b>Apley's Distraction (Cor ligs):		</b> </td><td><input type="text" name="distractionl" size="5"> <input type="text" name="distractionr" size="5"> </td>
@@ -193,7 +195,7 @@ $(function() {
  <td><input type="text" name="belowr" size="8"></td>
  <td><b>Patellar Grind (CMP):		</b> </td><td><input type="text" name="cmpl" size="5"> <input type="text" name="cmpr" size="5"> </td>
  </tr>
- <tr class="row2">
+ <tr class="row1">
  <td></td><td> </td> 
  <td></td> 
  <td><b>Patellar Apprehension (Pat D/L):		</b> </td><td><input type="text" name="patdll" size="5"> <input type="text" name="patdlr" size="5"> </td>
@@ -220,11 +222,11 @@ $(function() {
 	    <div class="contentbox">
          <table cellpadding="0" cellspacing="0" border="0" width="98%">  
          <tr height="20">         
- <tr class="row1">
+ <tr class="row2">
  <td><B style="font-size:14px">NEUROLOGICAL</B></td><td><input type="checkbox" name="neurologicaltest" value="Neurological Testing Unremarkable">Neurological Testing Unremarkable</td><td><!-- <input type="checkbox" name="exceptn" value="Except">Except --></td>
  <td></td><td></td><td></td>
  </tr>
- <tr class="row2">
+ <tr class="row1">
  <td><b>Level</b> </td>
  <td><b> Sensory</b></td>
  <td width="110"><b>Level</b></td>
@@ -240,7 +242,7 @@ $(function() {
  <td> </td>
  <td> Left &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; Right</td>
  </tr>
- <tr class="row2">
+ <tr class="row1">
  <td>L1</td>
  <td><input type="text" name="l1l" size="5">&nbsp; &nbsp; &nbsp;<input type="text" name="l1r" size="5">&nbsp;(Inguinal area)</td>
  <td>L1 </td>
@@ -256,7 +258,7 @@ $(function() {
  <td> </td>
  <td> </td>
  </tr>
- <tr class="row2">
+ <tr class="row1">
  <td>L3</td>
  <td><input type="text" name="l3l" size="5">&nbsp; &nbsp; &nbsp;<input type="text" name="l3r" size="5">&nbsp;(Medial knee)	</td>
  <td>L3 </td>
@@ -272,7 +274,7 @@ $(function() {
  <td> L4</td>
  <td> <input type="text" name="l4l3" size="5">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l4r3" size="5">&nbsp;/5&nbsp;(Patellar)</td>
  </tr>
- <tr class="row2">
+ <tr class="row1">
  <td>L5</td>
  <td><input type="text" name="l5l" size="5">&nbsp; &nbsp; &nbsp;<input type="text" name="l5r" size="5">&nbsp;(Ant/lat leg)	</td>
  <td>L5 </td>
@@ -288,7 +290,7 @@ $(function() {
  <td>SI </td>
  <td> <input type="text" name="sil" size="5">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="sir" size="5">&nbsp;/5&nbsp;(Achilles)</td>
  </tr>
- <tr class="row2">
+ <tr class="row1">
  <td></td>
  <td>("-" is Normal)</td>
  <td> </td>
@@ -298,14 +300,14 @@ $(function() {
  </tr>
  </table>
 <table>         
- <tr class="row1">
+ <tr class="row2">
  <td><B style="font-size:14px">FUNCTIONAL DEFICIT:</B></td>
  <td width="150"><input type="checkbox" name="walking" value="Walking">Walking &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="standing" value="Standing">Standing</td>
  <td width="150"><input type="checkbox" name="stairs" value="Stairs">Stairs</td>
  <td width="150"><input type="checkbox" name="otherfunctional" value="Other" onclick="this.form.break3.style.visibility = this.checked? 'visible' : 'hidden'">Other&nbsp;</td>
  <td> <input type="text" id="break3" name="break_text3" style="visibility:hidden" /></td>
  </tr>         
- <tr class="row2">
+ <tr class="row1">
  <td><B style="font-size:14px">ASSESSMENT / ADDITIONAL COMMENTS:</B></td><td><textarea name="assessment" rows='5' cols='40'></textarea></td><td></td>
  <td></td><td></td>
  <td><input type="text" style="visibility:hidden" ></td>
@@ -338,7 +340,7 @@ $(function() {
  </tr>
  </table>
  <table>
- <tr class="row2">
+ <tr class="row1">
  <td width="120"><B style="font-size:14px">PLAN:</B></td>
  <td><input type="text" name="times">Times/week for </td>
  <td><input type="text" name="week">weeks to address the </td>
@@ -355,7 +357,7 @@ $(function() {
  <td width="250"><input type="checkbox" name="orthotics" value="Orthotics/Bracing">Orthotics/Bracing</td>
  <td width="250"><input type="checkbox" name="modalities" value="Modalities">Modalities	</td>
  </tr>
- <tr class="row2">
+ <tr class="row1">
  <td width="120">
  <td width="250"><input type="checkbox" name="supplementation" value="Supplementation">Supplementation</td>
  <td width="250"><input type="checkbox" name="hep" value="HEP">HEP</td>
