@@ -11,9 +11,9 @@ import java.util.Date;
 import java.util.List;
 import javax.sql.DataSource;
 
-import bephit.model.Assignment;
-import bephit.model.HipExam;
-import bephit.model.HippaPrivacy;
+import bephit.model.*;;
+
+;
 public class HipexamDAO
 {
 	private DataSource dataSource;
@@ -21,6 +21,7 @@ public class HipexamDAO
 	public void setDataSource(DataSource dataSource) {
 		this.dataSource = dataSource;
 	}
+	
 	public int sethipexam(HipExam hipexamdetails)
 	{
 		Connection con = null;
