@@ -23,44 +23,44 @@
       		<tr>
         		<td valign="top" align="left">
 			        <div class="headings altheading">
-			          <h2>View Thoracic Exam</h2>
+			          <h2>View Lumbopelvic Exam</h2>
 			        </div>
 			        <div class="contentbox">
 			      <!--   <form action="findPatients" method="GET">  --> 
-			      <form action="thoracicexam" method="POST"> 
+			      <form action="lowbackdisability" method="POST"> 
 						<table cellpadding="0" cellspacing="0" border="0" width="100%">
 				     <tr class="title">
 								
 								
-         						<td valign="top" align="left" width="38%">Patient Name</td>
+         						<td valign="top" align="left" width="35%">Patient Name</td>
 					         	<td valign="top" align="left" width="35%">Date</td>
 					         	<td></td>
 					         	<td></td>
 					         	
           			</tr>
 							<!-- getting addAttibute value -->
-						<c:if test="${fn:length(thoracicexamForm.thoracicexam) gt 0}">
-        				  <c:forEach items="${thoracicexamForm.thoracicexam}" var="thoracicexam" varStatus="status">
+						<c:if test="${fn:length(lowbackForm.lowback) gt 0}">
+        				  <c:forEach items="${lowbackForm.lowback}" var="lowback" varStatus="status">
         				       				<tr class="row1">
         				       				
-								        <td valign="top" align="left"  width="10%"> <a href="thoracicexamlist?thoracicexamid=${thoracicexam.thoracicexamid}">${thoracicexam.pname}</a></td>
-											<td valign="top" align="left" width="15%">${thoracicexam.date}</td>
+								        <td valign="top" align="left"  width="10%"> <a href="lowbacklist?lowbackno=${lowback.lowbackno}">${lowback.pname}</a></td>
+											<td valign="top" align="left" width="15%">${lowback.date}</td>
 											
 												<td valign="top" align="left">
 											<%--  <c:if test="${currentuser.adminuser[0].editradiologicreport==1}"> --%>
-												<a href="#" title="" ><img src="resources/images/icons/icon_edit.png" alt="Edit" /></a><a href="<c:out value="editthoracicexam?thoracicexamid=${thoracicexam.thoracicexamid}"/>" style="padding-right:10px;">Edit</a>
+												<a href="#" title="" ><img src="resources/images/icons/icon_edit.png" alt="Edit" /></a><a href="<c:out value="editlowback?lowbackno=${lowback.lowbackno}"/>" style="padding-right:10px;">Edit</a>
 											<%-- 	 </c:if>
  --%>												<%--<c:if test="${currentuser.adminuser[0].deleteparticipant==1}"> --%>
 
  
-											<a href="#" title=""><img src="resources/images/icons/icon_delete.png" alt="Delete" /></a><a href="<c:out value="deletethoracicexam?thoracicexamid=${thoracicexam.thoracicexamid}"/>" onclick="return confirmation()">Remove</a>
+											<a href="#" title=""><img src="resources/images/icons/icon_delete.png" alt="Delete" /></a><a href="<c:out value="deletelowback?lowbackno=${lowback.lowbackno}"/>" onclick="return confirmation()">Remove</a>
 											<%-- </c:if> --%>
 											</td>	
 										
 								</tr>
 							    	</c:forEach>
 							    	</c:if>
-							    <c:if test="${fn:length(thoracicexamForm.thoracicexam) == 0}">	
+							    <c:if test="${fn:length(lowbackForm.lowback) == 0}">	
 							    	<tr class="row1">
 							    	<td colspan="7" width="100%"><center><b>No Participants Found!!!</b></center></td>
 							    	</tr>
@@ -79,7 +79,7 @@
 <script language="javascript">
 
 function confirmation() {
-	var answer = confirm("Are you Sure You Want to Delete  Patient from Thoracic exam ?");
+	var answer = confirm("Are you Sure You Want to Delete  Patient Lowback ?");
 	if (answer){
 		return true;
 	}

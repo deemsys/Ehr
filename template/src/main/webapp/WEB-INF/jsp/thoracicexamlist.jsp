@@ -296,7 +296,7 @@ $(function() {
  </c:forEach>
 <table align="right">
 <tr>
-<<td><input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='viewthoracicexam'"></td>
+<td><input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='viewthoracicexam'"></td>
 </tr>
 </table>
  </table>

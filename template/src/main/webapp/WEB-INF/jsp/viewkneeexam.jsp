@@ -32,8 +32,8 @@
 				     <tr class="title">
 								
 								
-         						<td valign="top" align="left" width="10%">Patient Name</td>
-					         	<td valign="top" align="left" width="15%">Date</td>
+         						<td valign="top" align="left" width="38%">Patient Name</td>
+					         	<td valign="top" align="left" width="38%">Date</td>
 					         	<td></td>
 					         	<td></td>
 					         	
