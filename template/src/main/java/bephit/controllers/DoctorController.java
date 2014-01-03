@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -54,8 +55,6 @@ import bephit.dao.StaffchecklistDAO;
 import bephit.dao.TreatDAO;
 import bephit.dao.TreatMinorDAO;
 import bephit.dao.WorkaccidentDAO;
-import bephit.forms.AssignmentDetailsForm;
-import bephit.forms.AutoaccidentForm;
 import bephit.forms.*;
 
 /*import bephit.forms.DoctorsignupForm;*/
@@ -122,7 +121,8 @@ public class DoctorController {
 	
 	@Autowired
 	DcfeeslipDAO feeslipDAO;
-	
+	@Autowired
+	LowbackDAO lowDAO;
 	
 	@RequestMapping(value="/perry", method = RequestMethod.GET)
 	public String hip(ModelMap model) {
@@ -885,22 +885,193 @@ public class DoctorController {
 		return "dcfeeslip";
  
 	}
+	@RequestMapping(value="/dcfeeslip_ajax",method=RequestMethod.POST)
+	public @ResponseBody String addUser(@ModelAttribute(value="dcfeeslip") Dcfeeslip dcfeeslip, BindingResult result,ModelMap model ) {
+		String returnText="";
+		System.out.println("initialemlimited"+dcfeeslip.getInitialemlimited());
+	
+		
+			int ans=feeslipDAO.setAns(dcfeeslip);
+			System.out.println("ans"+ans);
+			returnText=Integer.toString(ans);
+				returnText="<input type=text value='"+returnText+"'>";
+				return returnText;
+				
+	}
 	@RequestMapping(value="/dcfeeslip", method = RequestMethod.POST)
 	public String insert_dcfeeslip(HttpSession session,@ModelAttribute("Dcfeeslip")  @Valid Dcfeeslip dcfeeslip,BindingResult result,ModelMap model) {
 		
-		model.put("Dcfeeslip", dcfeeslip);
+ 
+	    model.put("Dcfeeslip", dcfeeslip);
 		model.addAttribute("DcfeeslipForm",dcfeeslip);
     	int a=feeslipDAO.setDcfeeslip(dcfeeslip);
 		DcfeeslipForm dcfeeslipForm= new DcfeeslipForm();
 		dcfeeslipForm.setDcfeeslip(feeslipDAO.getDcfeeslip());
-		model.addAttribute("DcfeeslipForm",dcfeeslipForm);
+		model.addAttribute("dcfeeslipForm",dcfeeslipForm);
 		return "dcfeeslip";
  
+	
 	}
 
-
+	@RequestMapping(value="/viewdcfeeslip", method=RequestMethod.GET)
+	public String viewdcfeeslip(HttpServletRequest request,ModelMap model, Principal principal) {
+		 model.addAttribute("success","false");
+		
+		  DcfeeslipForm dcfeeslipForm = new DcfeeslipForm();
+		 
+		  dcfeeslipForm.setDcfeeslip(feeslipDAO.getDcfeeslip());
+		  
+		  	model.addAttribute("dcfeeslipForm", dcfeeslipForm);
+		  
+		return "viewdcfeeslip";
+	}
 	
+	@RequestMapping(value="/dcfeesliplist", method=RequestMethod.GET)
+	public String dcfeesliplist(HttpServletRequest request,@RequestParam("dcfeeid") String dcfeeid,ModelMap model,Dcfeeslip dcfeeslip)
+	{
+		
+		DcfeeslipForm dcfeeslipForm = new DcfeeslipForm();
+		dcfeeslipForm.setDcfeeslip(feeslipDAO.getDcfee(dcfeeid));	
+		model.addAttribute("dcfeeslipForm", dcfeeslipForm);
+		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
+		return "dcfeesliplist";
+	}
 	
+	@RequestMapping(value="/editdcfeeslip", method=RequestMethod.GET)
+	public String editdcfeeslip(HttpServletRequest request,@RequestParam("dcfeeid") String dcfeeid,ModelMap model,Dcfeeslip dcfeeslip) 
+	{
+		/*String lumbopelvicexam=request.getParameter("lumbopelvicexam");*/
+		DcfeeslipForm dcfeeslipForm = new DcfeeslipForm();       
+        dcfeeslipForm.setDcfeeslip(feeslipDAO.getDcfee(dcfeeid));
+        model.addAttribute("dcfeeslipForm",dcfeeslipForm);
+		 
+		return "editdcfeeslip";
+	}
+	@RequestMapping(value="/updatedcfeeslip", method=RequestMethod.POST)
+	public String updatedcfeeslip(HttpServletRequest request,@ModelAttribute("dcfeeslip") @Valid Dcfeeslip dcfeeslip,
+			BindingResult result,ModelMap model,Principal principal)
+	{
+		int status = feeslipDAO.updatedcfeeslip(dcfeeslip, dcfeeslip.getDcfeeid(), principal.getName());
+		System.out.println(status);
+		
+		DcfeeslipForm dcfeeslipForm = new DcfeeslipForm();
+        
+       dcfeeslipForm.setDcfeeslip(feeslipDAO.getDcfeeslip());
+       
+        model.addAttribute("dcfeeslipForm", dcfeeslipForm);
+	        return "viewdcfeeslip";
+		
+	}
+	
+	@RequestMapping(value="/deletedcfeeslip", method=RequestMethod.GET)
+	public String removedcfeeslip(@RequestParam("dcfeeid") String dcfeeid,ModelMap model, Principal principal) {
+	
+		int status=feeslipDAO.deletedcfeeslip(dcfeeid);
+		
+		if(status==1)
+		{
+        model.addAttribute("success","true");
+		
+        DcfeeslipForm dcfeeslipForm= new DcfeeslipForm();
+        dcfeeslipForm.setDcfeeslip(feeslipDAO.getDcfeeslip());
+		model.addAttribute("dcfeeslipForm",dcfeeslipForm);  
+		}
+		return "viewdcfeeslip";
+	}
+	@RequestMapping(value="/lowbackdisability", method = RequestMethod.GET)
+	public String viewinglowbackdisability(HttpSession session, ModelMap model) {
+		
+		
+		return "lowbackdisability";
+ 
+	}
+	
+	@RequestMapping(value="/lowbackdisability", method = RequestMethod.POST)
+	public String insert_lowback(HttpSession session,@ModelAttribute("Lowback")  @Valid Lowback lowback,BindingResult result,ModelMap model) {
+		
+ 
+	    model.put("Lowback", lowback);
+		model.addAttribute("lowbackForm",lowback);
+    	int a=lowDAO.setLowback(lowback);
+		LowbackForm lowbackForm= new LowbackForm();
+		lowbackForm.setLowback(lowDAO.getLowback());
+		model.addAttribute("lowbackForm",lowbackForm);
+		return "lowbackdisability";
+ 
+	
+	}
+	@RequestMapping(value="/viewlowback", method=RequestMethod.GET)
+	public String viewlowback(HttpServletRequest request,ModelMap model, Principal principal) {
+		 model.addAttribute("success","false");
+		
+		  LowbackForm lowbackForm = new LowbackForm();
+		 
+		  lowbackForm.setLowback(lowDAO.getLowback());
+		  
+		  	model.addAttribute("lowbackForm", lowbackForm);
+		  
+		return "viewlowback";
+	}
+	@RequestMapping(value="/lowbacklist", method=RequestMethod.GET)
+	public String lowbacklist(HttpServletRequest request,@RequestParam("lowbackno") String lowbackno,ModelMap model,Lowback lowback)
+	{
+		
+		LowbackForm lowbackForm = new LowbackForm();
+		lowbackForm.setLowback(lowDAO.getLow(lowbackno));	
+		model.addAttribute("lowbackForm", lowbackForm);
+		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
+		return "lowbacklist";
+	}
+	
+	@RequestMapping(value="/editlowback", method=RequestMethod.GET)
+	public String editlowback(HttpServletRequest request,@RequestParam("lowbackno") String lowbackno,ModelMap model,Lowback lowback) 
+	{
+		/*String lumbopelvicexam=request.getParameter("lumbopelvicexam");*/
+		LowbackForm lowbackForm = new LowbackForm();       
+        lowbackForm.setLowback(lowDAO.getLow(lowbackno));
+        model.addAttribute("lowbackForm",lowbackForm);
+		 
+		return "editlowback";
+	}
+	@RequestMapping(value="/updatelowback", method=RequestMethod.POST)
+	public String updatelowback(HttpServletRequest request,@ModelAttribute("lowback") @Valid Lowback lowback,
+			BindingResult result,ModelMap model,Principal principal)
+	{
+		int status = lowDAO.updatelowback(lowback,lowback.getLowbackno(), principal.getName());
+		System.out.println(status);
+		
+		LowbackForm lowbackForm = new LowbackForm();
+        
+       lowbackForm.setLowback(lowDAO.getLowback());
+       
+        model.addAttribute("lowbackForm", lowbackForm);
+	        return "viewlowback";
+		
+	}
+	
+	@RequestMapping(value="/deletelowback", method=RequestMethod.GET)
+	public String removelowback(@RequestParam("lowbackno") String lowbackno,ModelMap model, Principal principal) {
+	
+		int status=lowDAO.deletelowback(lowbackno);
+		
+		if(status==1)
+		{
+        model.addAttribute("success","true");
+		
+        LowbackForm lowbackForm= new LowbackForm();
+        lowbackForm.setLowback(lowDAO.getLowback());
+		model.addAttribute("lowbackForm",lowbackForm);  
+		}
+		return "viewlowback";
+	}
+	
+	@RequestMapping(value="/dutiesunderduress", method = RequestMethod.GET)
+	public String viewingdutiesunderduress(HttpSession session, ModelMap model) {
+		
+		
+		return "dutiesunderduress";
+ 
+	}
 	
 }
 	
