@@ -48,7 +48,7 @@
 											
 												<td valign="top" align="left">
 											<%--  <c:if test="${currentuser.adminuser[0].editradiologicreport==1}"> --%>
-												<a href="#" title="" ><img src="resources/images/icons/icon_edit.png" alt="Edit" /></a><a href="<c:out value="editcervicalexam?cervicalexamid=${cervicalexam.cervicalexamid}"/>" style="padding-right:10px;">Edit</a>
+												<a href="#" title="" ><img src="resources/images/icons/icon_edit.png" alt="Edit" /></a><a href="<c:out value="editcervicalexam?cervicalexamid=${cervicalexam.cervicalexamid}"/>" style="padding-right:10px;">Reexam</a>
 											<%-- 	 </c:if>
  --%>												<%--<c:if test="${currentuser.adminuser[0].deleteparticipant==1}"> --%>
 

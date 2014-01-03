@@ -428,7 +428,7 @@
 							     </li>
 				            <li><a href="#" rel="ddsubmenu20">Elbow Exam</a>
 				                <ul id="ddsubmenu20" class="ddsubmenustyle">
-							      <li><a href="elbowexam" >Hip Exam</a></li>
+							      <li><a href="elbowexam" >Elbow Exam</a></li>
 							      <li><a href="viewelbowexam">View Elbow Exam</a></li>
 							     </ul>
 							     </li>

@@ -108,9 +108,12 @@
     <bean id="DcfeeslipDAO" class="bephit.dao.DcfeeslipDAO">
     	<property name="dataSource" ref="dataSource" />
     </bean> 
+    <bean id="DutiesunderDAO" class="bephit.dao.DutiesunderDAO">
+    	<property name="dataSource" ref="dataSource" />
+    </bean>
      <bean id="SymptomDAO" class="bephit.dao.SymptomDAO">
     	<property name="dataSource" ref="dataSource" />
-    </bean> 
+    </bean>
     <bean id="ManualtherapyDAO" class="bephit.dao.ManualtherapyDAO">
     	<property name="dataSource" ref="dataSource" />
     </bean>   

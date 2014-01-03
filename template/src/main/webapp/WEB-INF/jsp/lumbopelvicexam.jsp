@@ -33,7 +33,7 @@ function Checksymptom(val){
 $(function() {
     $( "#datepicker" ).datepicker();
   });
-
+ 
 </script>
   <script>
   $(function() {
@@ -51,7 +51,7 @@ $(function() {
    <div id="tabs-1"> 
  <div id="right_content">
 <form action="lumbopelvicexam" method="POST" name="lumbopelvicexam">
-<table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
+<table  width="98%" class="margin_table">
 <tr>
 <td valign="top" align="left">
  <div>
@@ -60,7 +60,7 @@ $(function() {
 	            
 	            </div>
 	    <div class="contentbox">
-          <table cellpadding="0" cellspacing="0" border="0" width="98%">
+          <table width="98%">
            
  <tr class="row1">
 <td><h2>Patient Name:</h2></td><td><input type="text"  name="pname" /></td>
@@ -177,8 +177,8 @@ $(function() {
  <td></td><td></td>
  </tr>
  <tr class="row2">
- <td width="250"><B style="font-size:14px">FUNCTIONAL RANGE OF MOTION</B> </td><td width="200"><B style="font-size:14px"></B></td> 
- <td width="250"><B style="font-size:14px">SUBLUXATION /DYSFUNCTION  </B></td><td width="150"></td> 
+ <td width="350"><B style="font-size:14px">FUNCTIONAL RANGE OF MOTION</B> </td><td width="200"><B style="font-size:14px"></B></td> 
+ <td width="350"><B style="font-size:14px">SUBLUXATION /DYSFUNCTION  </B></td><td width="150"></td> 
  <td width="250"><B style="font-size:14px">ORTHOTPEDIC TESTING </B></td><td><B style="font-size:14px"></B></td>
  </tr>
   <tr class="row1">
@@ -332,12 +332,12 @@ $(function() {
  </table>
 <table>         
  <tr class="row2">
- <td><B style="font-size:14px">FUNCTIONAL DEFICIT:</B></td><td><input type="checkbox" name="sitting" value="Sitting to Standing">Sitting to Standing	</td><td width="150"><input type="checkbox" name="lifting" value="Lifting">Lifting	</td>
+ <td><B style="font-size:14px">FUNCTIONAL DEFICIT:</B></td><td><input type="checkbox" name="sitting" value="Sitting to Standing">Sitting to Standing &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" name="lifting" value="Lifting">Lifting	</td>
  <td width="150"><input type="checkbox" name="walking" value="Walking">Walking</td><td width="150"><input type="checkbox" name="stairs" value="Stairs">Stairs</td>
- <td width="150"><input type="checkbox" name="otherfunctional" value="Other" onclick="this.form.break3.style.visibility = this.checked? 'visible' : 'hidden'">Other&nbsp; <input type="text" class="input_txtbx1" id="break3" name="break_text3" style="visibility:hidden" /></td>
+ <td width="150"><input type="checkbox" name="otherfunctional" value="Other" onclick="this.form.break3.style.visibility = this.checked? 'visible' : 'hidden'">Other&nbsp;</td><td> <input type="text" class="input_txtbx1" id="break3" name="break_text3" style="visibility:hidden" /></td>
  </tr>         
  <tr class="row1">
- <td><B style="font-size:14px">ASSESSMENT / ADDITIONAL COMMENTS:</B></td><td><textarea name="assessment" rows='5' cols='40'></textarea></td><td></td>
+ <td width="400"><B style="font-size:14px">ASSESSMENT / ADDITIONAL COMMENTS:</B></td><td><textarea name="assessment" rows='5' cols='40'></textarea></td><td></td>
  <td></td><td></td>
  <td></td>
  </tr>         
