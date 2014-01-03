@@ -154,9 +154,12 @@ public class DoctorController {
 	public String insert_wristexam(HttpServletRequest request,HttpSession session,@ModelAttribute("WristExam")  @Valid WristExam wristexamdetails,BindingResult result,ModelMap model) {
 		int c=wristexamDAO.setwristexam(wristexamdetails);
 		System.out.println("c---"+c);
+		WristExamForm wristexamform=new WristExamForm();
+		wristexamform.setWristexamdetails(wristexamDAO.getwristexamallDetails());
+		model.addAttribute("success", true);
+	model.addAttribute("wristexamform",wristexamform);
 		
-		
-		return "wristandhand";
+		return "viewwristexam";
 	}
 	
 	@RequestMapping(value="/viewwristexamdetails", method = RequestMethod.GET)	
@@ -196,7 +199,7 @@ public class DoctorController {
 		WristExamForm wristexamform=new WristExamForm();
 		wristexamform.setWristexamdetails(wristexamDAO.getwristexamallDetails());	
 		model.addAttribute("wristexamform",wristexamform);		
-		
+		model.addAttribute("success", true);
 		return "viewwristexam";
 	}
 	
@@ -265,7 +268,7 @@ public class DoctorController {
 		ShoulderExamForm shoulderexamform=new ShoulderExamForm();
 		shoulderexamform.setShoulderexamdetails(shoulderexamDAO.getshoulderexamallDetails());	
 		model.addAttribute("shoulderexamform",shoulderexamform);		
-		
+		model.addAttribute("success", true);
 		return "viewshoulderexam";
 	}
 
@@ -334,6 +337,7 @@ public class DoctorController {
 		FootExamForm footexamform=new FootExamForm();
 		footexamform.setFootexamdetails(footexamDAO.getfootexamDetails());
 		model.addAttribute("footexamform",footexamform);
+		model.addAttribute("success", true);
 		
 		return "viewfootexam";
 	}
@@ -395,7 +399,7 @@ public class DoctorController {
 		System.out.println("yes");
 		System.out.println(hipexamform.getHipexamdetails().get(0).getPname());
 		model.addAttribute("hipexamform",hipexamform);
-
+		model.addAttribute("success", true);
 		
 		
 		return "viewhipexamdetails";
@@ -405,9 +409,12 @@ public class DoctorController {
 		//System.out.print(hipexamdetails.getOutsidereferral());
 		int c=footexamDAO.setfootexam(footexamdetails);
 		System.out.println("c---"+c);
-		
-		
-		return "footexam";
+		FootExamForm footexamform=new FootExamForm();
+		footexamform.setFootexamdetails(footexamDAO.getfootexamDetails());		
+	//System.out.println(footexamform.getFootexamdetails().get(0).getPname());
+	model.addAttribute("footexamform",footexamform);
+		model.addAttribute("success", true);
+		return "viewfootexam";
 	}
 	
 	@RequestMapping(value="/inserthipexam", method = RequestMethod.POST)
@@ -416,7 +423,7 @@ public class DoctorController {
 		int c=hipexamDAO.sethipexam(hipexamdetails);
 		System.out.println("c---"+c);
 		
-		
+		model.addAttribute("success", true);
 		return "hipexam";
 	}
 	@RequestMapping(value="/viewlumbopelvicexam", method=RequestMethod.GET)

@@ -398,7 +398,7 @@
 							     </li>
 							<li><a href="#" rel="ddsubmenu15" >Hip Exam</a>
 							     <ul id="ddsubmenu15" class="ddsubmenustyle">
-							      <li><a href="hipexam" >Hip Exam</a></li>
+							      <li><a href="perry" >Hip Exam</a></li>
 							      <li><a href="viewhipexam">View Hip Exam</a></li>
 							     </ul>
 							     </li>
@@ -410,7 +410,7 @@
 							     </li>
 							<li><a href="#" rel="ddsubmenu17">Foot Exam</a>
 							<ul id="ddsubmenu17" class="ddsubmenustyle">
-							      <li><a href="footexam" >Foot Exam</a></li>
+							      <li><a href="ankle" >Foot Exam</a></li>
 							      <li><a href="viewfootexam">View Foot Exam</a></li>
 							     </ul>
 							     </li>     
@@ -423,7 +423,7 @@
 				            <li><a href="#" rel="ddsubmenu19">Shoulder Exam</a>
 				             <ul id="ddsubmenu19" class="ddsubmenustyle">
 							      <li><a href="shoulderexam" >Shoulder Exam</a></li>
-							      <li><a href="viewshoulderexam">View Shoulder Exam</a></li>
+							      <li><a href="viewshoulderexamdetails">View Shoulder Exam</a></li>
 							     </ul>
 							     </li>
 				            <li><a href="#" rel="ddsubmenu20">Elbow Exam</a>
@@ -435,7 +435,7 @@
 				            <li><a href="#" rel="ddsubmenu21">Wrist And Hand Exam</a>
 				               <ul id="ddsubmenu21" class="ddsubmenustyle">
 							      <li><a href="wristexam" >Wrist Exam</a></li>
-							      <li><a href="viewwristexam">View Wrist Exam</a></li>
+							      <li><a href="viewwristexamdetails">View Wrist Exam</a></li>
 							     </ul>
 							     </li>
 				            <li><a href="#" rel="ddsubmenu22">Thoracic Exam</a>
