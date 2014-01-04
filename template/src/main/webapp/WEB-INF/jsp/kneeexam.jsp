@@ -56,7 +56,7 @@ $(function() {
 <td valign="top" align="left">
  <div>
 	            <div class="headings altheading">
-	            <center> <h2>KNEE EXAM</h2> </center><br/>
+	            <center> <h2>KNEE INITIAL EXAM</h2> </center><br/>
 	            
 	            </div>
 	    <div class="contentbox">
@@ -71,7 +71,7 @@ $(function() {
 <br/>
 <br/>
  <table>
- <tr class="row2">
+ <tr class="row1">
  <td><B style="font-size:14px">OBSERVATION / APPEARANCE / MOOD / ORIENTATION</B></td>
  <td></td>
  <td></td>
@@ -108,7 +108,7 @@ $(function() {
  <td><input type="text" style="visibility:hidden"> </td> 
  <td> <input type="text" style="visibility:hidden"></td>
  </tr>
- <tr class="row2">
+ <tr class="row1">
  <td width="200"><B style="font-size:14px">PALPATION / SOFT TISSUE DYSFUNCTION</B></td> 
  <td width="200"><input type="checkbox" name="allsoft" value="All Soft Tissue Unremarkable"> All Soft Tissue Unremarkable</td> 
  <!-- <td> <input type="checkbox" name="except" value="Except"> Except </td> -->
@@ -145,15 +145,9 @@ $(function() {
  </tr>
  </table>
  <table>
- <tr class="row2">
- <td width="250"><B style="font-size:14px">FUNCTIONAL RANGE OF MOTION</B> </td><td><B style="font-size:14px"></B></td> 
- <td width="250"></td>
- <td width="300"><B style="font-size:14px">ORTHOPEDIC TESTING </B></td><td width="300"><B style="font-size:14px"></B></td>
- </tr>
-  <tr class="row1">
- <td><input type="radio" name="functionalrangeofmotion" value="Unremarkable">Unremarkable &nbsp;&nbsp;<!-- <input type="radio" name="functionalrangeofmotion" value="Except">Except --></td><td> </td>  
- <td></td>
- <td> <input type="radio" name="orthopedic" value="Unremarkable">Unremarkable&nbsp;&nbsp;<!-- <input type="radio" name="orthopedic" value="Except">Except --></td><td> </td>
+ <tr class="row1">
+ <td width="250"><B style="font-size:14px">FUNCTIONAL RANGE OF MOTION</B> </td><td width="100"><input type="radio" name="functionalrangeofmotion" value="Unremarkable">Unremarkable</td><td width="300"> </td> 
+ <td width="300"><B style="font-size:14px">ORTHOPEDIC TESTING </B></td><td width="300"><input type="radio" name="orthopedic" value="Unremarkable">Unremarkable</td>
  </tr>
   <tr class="row1">
  <td></td><td width="50"> <b>Normal</b> </td><td><b> Actual</b></td>  
@@ -176,7 +170,7 @@ $(function() {
  <td><b>Medial (Valgus) Stability (MCL):</b> </td><td><input type="text" name="mcll" size="5"> <input type="text" name="mclr" size="5"></td>
  </tr>
   <tr class="row1">
- <td><b>GIRTH</b>&nbsp;&nbsp;&nbsp; <input type="checkbox" name="circumferential" value="Circumferential Measures are Unremarkable">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Circumferential Measures are 	</td><td>Unremarkable </td>  
+ <td width="250"><b>GIRTH</b>&nbsp;&nbsp;&nbsp; <input type="checkbox" name="circumferential" value="Circumferential Measures are Unremarkable">&nbsp; Circumferential Measures &nbsp;&nbsp;are 	</td><td>Unremarkable </td>  
  <td></td>
  <td><b>McMurray's (Med Meniscus):	</b> </td><td><input type="text" name="meniscusl" size="5"> <input type="text" name="meniscusr" size="5"></td>
  </tr>
@@ -216,13 +210,13 @@ $(function() {
 <td valign="top" align="left">
  <div>
 	            <div class="headings altheading">
-	            <center> <h2>KNEE EXAM</h2> </center><br/>
+	            <center> <h2>KNEE INITIAL EXAM</h2> </center><br/>
 	            
 	            </div>
 	    <div class="contentbox">
          <table cellpadding="0" cellspacing="0" border="0" width="98%">  
          <tr height="20">         
- <tr class="row2">
+ <tr class="row1">
  <td><B style="font-size:14px">NEUROLOGICAL</B></td><td><input type="checkbox" name="neurologicaltest" value="Neurological Testing Unremarkable">Neurological Testing Unremarkable</td><td><!-- <input type="checkbox" name="exceptn" value="Except">Except --></td>
  <td></td><td></td><td></td>
  </tr>
@@ -300,7 +294,7 @@ $(function() {
  </tr>
  </table>
 <table>         
- <tr class="row2">
+ <tr class="row1">
  <td><B style="font-size:14px">FUNCTIONAL DEFICIT:</B></td>
  <td width="150"><input type="checkbox" name="walking" value="Walking">Walking &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="standing" value="Standing">Standing</td>
  <td width="150"><input type="checkbox" name="stairs" value="Stairs">Stairs</td>
@@ -324,7 +318,7 @@ $(function() {
  </tr>
  </table>
  <table>
- <tr class="row2">
+ <tr class="row1">
  <td width="360"><B style="font-size:14px">DIAGNOSIS:</B></td>
  <td width="250">1)<input type="text" name="diagnosis1"></td>
  <td width="250">2)<input type="text" name="diagnosis2"></td>

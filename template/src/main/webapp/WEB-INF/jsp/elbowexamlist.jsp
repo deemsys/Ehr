@@ -57,7 +57,7 @@ $(function() {
 <td valign="top" align="left">
  <div>
 	            <div class="headings altheading">
-	            <center> <h2>ELBOW EXAM</h2> </center><br/>
+	            <center> <h2> Viewing Elbow Exam</h2> </center><br/>
 	            
 	            </div>
 	    <div class="contentbox">
@@ -72,7 +72,7 @@ $(function() {
 </table>
 <br/>
 <br/>
- <table>
+ <table cellpadding="0" cellspacing="0" border="0">
  <tr class="row2">
  <td><B style="font-size:14px">OBSERVATION / APPEARANCE / MOOD / ORIENTATION</B></td>
  <td></td>
@@ -103,7 +103,7 @@ $(function() {
  <td></td>
  </tr>
  </table>
- <table>
+ <table cellpadding="0" cellspacing="0" border="0">
  <tr class="row1">
  <td>Biceps Brachii:</td><td width="100">${elbowexam.biceps}</td> 
  <td>Triceps Brachii:</td><td>${elbowexam.triceps}</td>
@@ -120,7 +120,7 @@ $(function() {
  <td></td><td></td>
  </tr>
  </table>
- <table>
+ <table cellpadding="0" cellspacing="0" border="0">
  <tr class="row2">
  <td width="250"><B style="font-size:14px">FUNCTIONAL RANGE OF MOTION</B> </td><td><B style="font-size:14px"></B></td> 
  <td width="250"></td>
@@ -177,7 +177,7 @@ $(function() {
 <td valign="top" align="left">
  <div>
 	            <div class="headings altheading">
-	            <center> <h2> VIEWING CERVICAL EXAM</h2> </center><br/>
+	            <center> <h2> Viewing Elbow Exam</h2> </center><br/>
 	            
 	            </div>
 	    <div class="contentbox">
@@ -255,7 +255,7 @@ $(function() {
  <td> (2+/5 is Normal)</td>
  </tr>
  </table>
-<table>         
+<table cellpadding="0" cellspacing="0" border="0">         
  <tr class="row2">
  <td><B style="font-size:14px">FUNCTIONAL DEFICIT:</B></td><td>${elbowexam.overheadactivities} &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;${elbowexam.lifting}</td>
  <td width="150"> ${elbowexam.otherfunctional} </td><td>${elbowexam.break_text3}</td>
@@ -273,7 +273,7 @@ $(function() {
  <td></td>
  </tr>
  </table>
- <table>
+ <table cellpadding="0" cellspacing="0" border="0">
  <tr class="row2">
  <td width="360"><B style="font-size:14px">DIAGNOSIS:</B></td>
  <td width="250">1) ${elbowexam.diagnosis1}</td>
@@ -289,7 +289,7 @@ $(function() {
  <td></td>
  </tr>
  </table>
- <table>
+ <table cellpadding="0" cellspacing="0" border="0">
  <tr class="row1">
  <td width="120"><B style="font-size:14px">PLAN:</B></td>
  <td> ${elbowexam.times} Times/week for </td>
@@ -298,7 +298,7 @@ $(function() {
  <td>Treatment will consist of the following:</td>
  </tr>
  </table>
- <table>
+ <table cellpadding="0" cellspacing="0" border="0">
  <tr class="row1">
  <td width="120">
  <td width="250"> ${elbowexam.spinal}</td>
@@ -325,7 +325,7 @@ $(function() {
  </tr>
  </tr>
  <br/>
- <table><tr><td><B style="font-size:14px">PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;${elbowexam.sign}</B></td></tr></table>
+ <table cellpadding="0" cellspacing="0" border="0"><tr><td><B style="font-size:14px">PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;${elbowexam.sign}</B></td></tr></table>
  </c:forEach>
 <table align="right">
 <tr>

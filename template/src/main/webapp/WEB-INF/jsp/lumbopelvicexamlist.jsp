@@ -72,13 +72,14 @@ $(function() {
 </table>
 <br/>
 <br/>
- <table>
+ <table cellpadding="0" cellspacing="0" border="0">
  <tr class="row2">
- <td><B style="font-size:14px">OBSERVATION / APPEARANCE / MOOD / ORIENTATION</B></td>
+ <td width="500"><B style="font-size:14px">OBSERVATION / APPEARANCE / MOOD / ORIENTATION</B></td>
  <td></td>
  <td></td>
  <td></td>
  <td></td>
+ <td width="150"></td>
  <td></td>
  </tr>
  <tr class="row1">
@@ -99,6 +100,7 @@ $(function() {
  <td> <%-- ${lumbopelvicexam.except} --%> </td>
  <td></td>
  <td></td> 
+ <td width="150"></td>
  <td></td>
  </tr>
   <tr class="row1">
@@ -129,7 +131,7 @@ $(function() {
  <td>Obliques:</td><td>${lumbopelvicexam.obliques}</td>
  </tr>
  </table>
- <table>
+ <table cellpadding="0" cellspacing="0" border="0">
  <tr class="row1">
  <td>Other/Notes:${lumbopelvicexam.othernotes}</td> 
  <td width="150">
@@ -138,9 +140,9 @@ $(function() {
  <td></td><td></td>
  </tr>
  <tr class="row2">
- <td width="250"><B style="font-size:14px">FUNCTIONAL RANGE OF MOTION</B> </td><td width="200"><B style="font-size:14px"></B></td> 
- <td width="250"><B style="font-size:14px">SUBLUXATION /DYSFUNCTION  </B></td><td width="150"></td> 
- <td width="250"><B style="font-size:14px">ORTHOTPEDIC TESTING </B></td><td><B style="font-size:14px"></B></td>
+ <td width="350"><B style="font-size:14px">FUNCTIONAL RANGE OF MOTION</B> </td><td width="200"><B style="font-size:14px"></B></td> 
+ <td width="350"><B style="font-size:14px">SUBLUXATION /DYSFUNCTION  </B></td><td width="150"></td> 
+ <td width="300"><B style="font-size:14px">ORTHOTPEDIC TESTING </B></td><td><B style="font-size:14px"></B></td>
  </tr>
   <tr class="row1">
  <td>${lumbopelvicexam.functionalrangeofmotion}</td><td> </td> 
@@ -208,7 +210,7 @@ $(function() {
 <td valign="top" align="left">
  <div>
 	            <div class="headings altheading">
-	            <center> <h2>LUMBOPELVIC EXAM</h2> </center><br/>
+	            <center> <h2>Viewing Lumbopelvic Exam</h2> </center><br/>
 	            
 	            </div>
 	    <div class="contentbox">
@@ -217,8 +219,8 @@ $(function() {
          <c:forEach items="${lumbopelvicexamForm.lumbopelvicexam}" var="lumbopelvicexam" varStatus="status">
                  
  <tr class="row2">
- <td><B style="font-size:14px">NEUROLOGICAL</B></td><td>${lumbopelvicexam.neurologicaltest}</td><td><%-- ${lumbopelvicexam.exceptn} --%></td>
- <td></td><td></td><td></td>
+ <td width="150"><B style="font-size:14px">NEUROLOGICAL</B></td><td width="150">${lumbopelvicexam.neurologicaltest}</td><td><%-- ${lumbopelvicexam.exceptn} --%></td>
+ <td width="200"></td><td width="200"></td><td width="200"></td>
  </tr>
  <tr class="row1">
  <td><b>Level</b> </td>
@@ -293,11 +295,11 @@ $(function() {
  <td> (2+/5 is Normal)</td>
  </tr>
  </table>
-<table>         
+<table cellpadding="0" cellspacing="0" border="0">         
  <tr class="row2">
  <td><B style="font-size:14px">FUNCTIONAL DEFICIT:</B></td><td>${lumbopelvicexam.sitting}	</td><td width="150">${lumbopelvicexam.lifting}</td>
  <td width="150">${lumbopelvicexam.walking}</td><td width="150">${lumbopelvicexam.stairs}</td>
- <td width="150">${lumbopelvicexam.otherfunctional} ${lumbopelvicexam.break_text3}</td>
+ <td width="250">${lumbopelvicexam.otherfunctional} ${lumbopelvicexam.break_text3}</td>
  </tr>         
  <tr class="row1">
  <td><B style="font-size:14px">ASSESSMENT / ADDITIONAL COMMENTS:</B></td><td>${lumbopelvicexam.assessment}</td><td></td>
@@ -311,7 +313,7 @@ $(function() {
  <td></td>
  </tr>
  </table>
- <table>
+ <table cellpadding="0" cellspacing="0" border="0">
  <tr class="row2">
  <td width="360"><B style="font-size:14px">DIAGNOSIS:</B></td>
  <td width="250">1)${lumbopelvicexam.diagnosis1}</td>
@@ -327,7 +329,7 @@ $(function() {
  <td></td>
  </tr>
  </table>
- <table>
+ <table cellpadding="0" cellspacing="0" border="0">
  <tr class="row1">
  <td width="120"><B style="font-size:14px">PLAN:</B></td>
  <td>${lumbopelvicexam.times}Times/week for </td>
@@ -336,7 +338,7 @@ $(function() {
  <td>Treatment will consist of the following:</td>
  </tr>
  </table>
- <table>
+ <table cellpadding="0" cellspacing="0" border="0">
  <tr class="row1">
  <td width="120">
  <td width="250">${lumbopelvicexam.spinal}</td>
@@ -363,7 +365,7 @@ $(function() {
  </tr>
  </tr>
  <br/>
- <table><tr><td><B style="font-size:14px">PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;${lumbopelvicexam.sign}</B></td></tr>
+ <table cellpadding="0" cellspacing="0" border="0"><tr><td><B style="font-size:14px">PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;${lumbopelvicexam.sign}</B></td></tr>
  </table>
  </c:forEach>
 <table align="right">

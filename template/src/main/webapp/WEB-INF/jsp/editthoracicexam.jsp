@@ -57,7 +57,7 @@ $(function() {
 <td valign="top" align="left">
  <div>
 	            <div class="headings altheading">
-	            <center> <h2>EDITING THORACIC EXAM</h2> </center><br/>
+	            <center> <h2>THORACIC REEXAM</h2> </center><br/>
 	            
 	            </div>
 	    <div class="contentbox">
@@ -73,7 +73,7 @@ $(function() {
 <br/>
 <br/>
  <table>
- <tr class="row2">
+ <tr class="row1">
  <td><B style="font-size:14px">OBSERVATION / APPEARANCE / MOOD / ORIENTATION</B></td>
  <td></td>
  <td></td>
@@ -100,7 +100,7 @@ $(function() {
  <td><input type="radio" name="ribhumping" value="Left" <c:if test="${thoracicexam.ribhumping=='Left'}"><c:out value="checked=checked"/></c:if>>Left <input type="radio" name="ribhumping" value="Right" <c:if test="${thoracicexam.ribhumping=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td> 
  <td></td>
  </tr>
- <tr class="row2">
+ <tr class="row1">
  <td width="200"><B style="font-size:14px">PALPATION / SOFT TISSUE DYSFUNCTION</B></td> 
  <td width="200"><input type="checkbox" name="allsoft" value="All Soft Tissue Unremarkable" <c:if test="${thoracicexam.allsoft=='All Soft Tissue Unremarkable'}"><c:out value="Checked"/></c:if>> All Soft Tissue Unremarkable</td> 
  <!-- <td> <input type="checkbox" name="except" value="Except"> Except </td> -->
@@ -136,15 +136,10 @@ $(function() {
  <td width="150">
  <td></td><td></td>
  </tr>
- <tr class="row2">
- <td width="250"><B style="font-size:14px">FUNCTIONAL RANGE OF MOTION</B> </td><td width="200"><B style="font-size:14px"></B></td> 
- <td width="250"><B style="font-size:14px">SUBLUXATION /DYSFUNCTION  </B></td><td width="150"></td> 
- <td width="250"><B style="font-size:14px">ORTHOTPEDIC TESTING </B></td><td><B style="font-size:14px"></B></td>
- </tr>
-  <tr class="row1">
- <td><input type="radio" name="functionalrangeofmotion" value="Unremarkable" <c:if test="${thoracicexam.functionalrangeofmotion=='Unremarkable'}"><c:out value="checked=checked"/></c:if>>Unremarkable &nbsp;&nbsp;<!-- <input type="radio" name="functionalrangeofmotion" value="Except">Except --></td><td> </td> 
- <td><input type="radio" name="subluxation" value="Unremarkable" <c:if test="${thoracicexam.subluxation=='Unremarkable'}"><c:out value="checked=checked"/></c:if>>Unremarkable&nbsp;&nbsp;<!-- <input type="radio" name="subluxation" value="Except">Except --></td><td> </td> 
- <td> <input type="radio" name="orthopedic" value="Unremarkable" <c:if test="${thoracicexam.orthopedic=='Unremarkable'}"><c:out value="checked=checked"/></c:if>>Unremarkable&nbsp;&nbsp;<!-- <input type="radio" name="orthopedic" value="Except">Except --></td><td> </td>
+ <tr class="row1">
+ <td width="250"><B style="font-size:14px">FUNCTIONAL RANGE OF MOTION</B> </td><td width="200"><input type="radio" name="functionalrangeofmotion" value="Unremarkable" <c:if test="${thoracicexam.functionalrangeofmotion=='Unremarkable'}"><c:out value="checked=checked"/></c:if>>Unremarkable </td> 
+ <td width="250"><B style="font-size:14px">SUBLUXATION /DYSFUNCTION  </B></td><td width="150"><input type="radio" name="subluxation" value="Unremarkable" <c:if test="${thoracicexam.subluxation=='Unremarkable'}"><c:out value="checked=checked"/></c:if>>Unremarkable</td> 
+ <td width="250"><B style="font-size:14px">ORTHOTPEDIC TESTING </B></td><td><input type="radio" name="orthopedic" value="Unremarkable" <c:if test="${thoracicexam.orthopedic=='Unremarkable'}"><c:out value="checked=checked"/></c:if>>Unremarkable</td>
  </tr>
   <tr class="row1">
  <td>  </td><td> <b>Normal</b> &nbsp;&nbsp;&nbsp;<b> Actual</b></td> 
@@ -202,13 +197,13 @@ $(function() {
 <td valign="top" align="left">
  <div>
 	            <div class="headings altheading">
-	            <center> <h2>THORACIC EXAM</h2> </center><br/>
+	            <center> <h2>THORACIC REEXAM</h2> </center><br/>
 	            
 	            </div>
 	    <div class="contentbox">
          <table cellpadding="0" cellspacing="0" border="0" width="98%">  
          <tr height="20">         
- <tr class="row2">
+ <tr class="row1">
  <td><B style="font-size:14px">NEUROLOGICAL</B></td><td><input type="checkbox" name="neurologicaltest" value="Neurological Testing Unremarkable">Neurological Testing Unremarkable</td><td><!-- <input type="checkbox" name="exceptn" value="Except">Except --></td>
  <td></td><td></td><td></td>
  </tr>
@@ -235,7 +230,7 @@ $(function() {
  </tr>
  </table>
 <table>         
- <tr class="row2">
+ <tr class="row1">
  <td><B style="font-size:14px">FUNCTIONAL DEFICIT:</B></td><td><input type="checkbox" name="sitting" value="Sitting" <c:if test="${thoracicexam.sitting=='Sitting'}"><c:out value="Checked"/></c:if>>Sitting 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="standing" value="Standing" <c:if test="${thoracicexam.standing=='Standing'}"><c:out value="Checked"/></c:if>>Standing</td>
  <td width="150"><input type="checkbox" name="driving" value="Driving" <c:if test="${thoracicexam.driving=='Driving'}"><c:out value="Checked"/></c:if>>Driving</td>
  <td width="150"><input type="checkbox" name="otherfunctional" value="Other" <c:if test="${thoracicexam.otherfunctional=='Other'}"><c:out value="Checked"/></c:if> onclick="this.form.break3.style.visibility = this.checked? 'visible' : 'hidden'">Other&nbsp; </td>
@@ -258,7 +253,7 @@ $(function() {
  </tr>
  </table>
  <table>
- <tr class="row2">
+ <tr class="row1">
  <td width="360"><B style="font-size:14px">DIAGNOSIS:</B></td>
  <td width="250">1)<input type="text" name="diagnosis1" value="${thoracicexam.diagnosis1}"></td>
  <td width="250">2)<input type="text" name="diagnosis2" value="${thoracicexam.diagnosis2 }"></td>
@@ -312,7 +307,7 @@ $(function() {
  <table><tr><td><B style="font-size:14px">PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sign" value="${thoracicexam.sign}"></B></td></tr></table>
 <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="Update"></td>
+<td><input type="submit" class="submit_btn" value="Save"></td>
 <td><input type="reset" class="submit_btn" value="Cancel"></td>
 </tr>
 </table>

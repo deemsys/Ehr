@@ -57,7 +57,7 @@ $(function() {
 <td valign="top" align="left">
  <div>
 	            <div class="headings altheading">
-	            <center> <h2>UPDATE ELBOW EXAM</h2> </center><br/>
+	            <center> <h2>ELBOW REEXAM</h2> </center><br/>
 	            
 	            </div>
 	    <div class="contentbox">
@@ -73,8 +73,8 @@ $(function() {
 <br/>
 <br/>
  <table>
- <tr class="row2">
- <td><B style="font-size:14px">OBSERVATION / APPEARANCE / MOOD / ORIENTATION</B></td>
+ <tr class="row1">
+ <td width="500"><B style="font-size:14px">OBSERVATION / APPEARANCE / MOOD / ORIENTATION</B></td>
  <td></td>
  <td></td>
  <td></td>
@@ -93,7 +93,7 @@ $(function() {
  <td><input type="text" style="visibility:hidden"> </td> 
  <td> <input type="text" style="visibility:hidden"></td>
  </tr>
- <tr class="row2">
+ <tr class="row1">
  <td width="200"><B style="font-size:14px">PALPATION / SOFT TISSUE DYSFUNCTION</B></td> 
  <td width="200"><input type="checkbox" name="allsoft" value="All Soft Tissue Unremarkable" <c:if test="${elbowexam.allsoft=='All Soft Tissue Unremarkable'}"><c:out value="Checked"/></c:if>> All Soft Tissue Unremarkable</td> 
  <!-- <td> <input type="checkbox" name="except" value="Except"> Except </td> -->
@@ -121,15 +121,10 @@ $(function() {
  </tr>
  </table>
  <table>
- <tr class="row2">
- <td width="250"><B style="font-size:14px">FUNCTIONAL RANGE OF MOTION</B> </td><td><B style="font-size:14px"></B></td> 
+ <tr class="row1">
+ <td width="250"><B style="font-size:14px">FUNCTIONAL RANGE OF MOTION</B> </td><td width="150"><input type="radio" name="functionalrangeofmotion" value="Unremarkable" <c:if test="${elbowexam.functionalrangeofmotion=='Unremarkable'}"><c:out value="checked=checked"/></c:if>>Unremarkable </td> 
  <td width="250"></td>
- <td width="300"><B style="font-size:14px">ORTHOPEDIC TESTING </B></td><td width="300"><B style="font-size:14px"></B></td>
- </tr>
-  <tr class="row1">
- <td><input type="radio" name="functionalrangeofmotion" value="Unremarkable" <c:if test="${elbowexam.functionalrangeofmotion=='Unremarkable'}"><c:out value="checked=checked"/></c:if>>Unremarkable &nbsp;&nbsp;<!-- <input type="radio" name="functionalrangeofmotion" value="Except">Except --></td><td> </td>  
- <td></td>
- <td> <input type="radio" name="orthopedic" value="Unremarkable" <c:if test="${elbowexam.orthopedic=='Unremarkable'}"><c:out value="checked=checked"/></c:if>>Unremarkable&nbsp;&nbsp;<!-- <input type="radio" name="orthopedic" value="Except">Except --></td><td> </td>
+ <td width="300"><B style="font-size:14px">ORTHOPEDIC TESTING </B></td><td width="300"><input type="radio" name="orthopedic" value="Unremarkable" <c:if test="${elbowexam.orthopedic=='Unremarkable'}"><c:out value="checked=checked"/></c:if>>Unremarkable</td>
  </tr>
   <tr class="row1">
  <td></td><td width="50"> <b>Normal</b> </td><td><b> Actual</b></td>  
@@ -177,13 +172,13 @@ $(function() {
 <td valign="top" align="left">
  <div>
 	            <div class="headings altheading">
-	            <center> <h2>CERVICAL EXAM</h2> </center><br/>
+	            <center> <h2>ELBOW REEXAM</h2> </center><br/>
 	            
 	            </div>
 	    <div class="contentbox">
          <table cellpadding="0" cellspacing="0" border="0" width="98%">  
          <tr height="20">         
- <tr class="row2">
+ <tr class="row1">
  <td><B style="font-size:14px">NEUROLOGICAL</B></td><td><input type="checkbox" name="neurologicaltest" value="Neurological Testing Unremarkable" <c:if test="${elbowexam.neurologicaltest=='Neurological Testing Unremarkable'}"><c:out value="Checked"/></c:if>>Neurological Testing Unremarkable</td><td><!-- <input type="checkbox" name="exceptn" value="Except">Except --></td>
  <td></td><td></td><td></td>
  </tr>
@@ -255,7 +250,7 @@ $(function() {
  </tr>
  </table>
 <table>         
- <tr class="row2">
+ <tr class="row1">
  <td><B style="font-size:14px">FUNCTIONAL DEFICIT:</B></td>
  <td width="150"><input type="checkbox" name="overheadactivities" value="Overhead Activities" <c:if test="${elbowexam.overheadactivities=='Overhead Activities'}"><c:out value="Checked"/></c:if>>Overhead Activities &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="lifting" value="Lifting" <c:if test="${elbowexam.lifting=='Lifting'}"><c:out value="Checked"/></c:if>>Lifting</td>
  <td width="150"><input type="checkbox" name="otherfunctional" value="Other" <c:if test="${elbowexam.otherfunctional=='Other'}"><c:out value="Checked"/></c:if> onclick="this.form.break3.style.visibility = this.checked? 'visible' : 'hidden'">Other&nbsp;</td>
@@ -280,7 +275,7 @@ $(function() {
  </tr>
  </table>
  <table>
- <tr class="row2">
+ <tr class="row1">
  <td width="360"><B style="font-size:14px">DIAGNOSIS:</B></td>
  <td width="250">1)<input type="text" name="diagnosis1" value="${elbowexam.diagnosis1}"></td>
  <td width="250">2)<input type="text" name="diagnosis2" value="${elbowexam.diagnosis2 }"></td>
@@ -334,7 +329,7 @@ $(function() {
  <table><tr><td><B style="font-size:14px">PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sign" value="${elbowexam.sign}"></B></td></tr></table>
 <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="Update"></td>
+<td><input type="submit" class="submit_btn" value="Save"></td>
 <td><input type="reset" class="submit_btn" value="Cancel"></td>
 </tr>
 </table>

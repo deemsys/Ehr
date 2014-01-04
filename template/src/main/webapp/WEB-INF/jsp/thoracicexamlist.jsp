@@ -57,7 +57,7 @@ $(function() {
 <td valign="top" align="left">
  <div>
 	            <div class="headings altheading">
-	            <center> <h2>THORACIC EXAM</h2> </center><br/>
+	            <center> <h2>Viewing Thoracic Exam</h2> </center><br/>
 	            
 	            </div>
 	    <div class="contentbox">
@@ -71,7 +71,7 @@ $(function() {
 </table>
 <br/>
 <br/>
- <table>
+ <table cellpadding="0" cellspacing="0" border="0">
  <tr class="row2">
  <td><B style="font-size:14px">OBSERVATION / APPEARANCE / MOOD / ORIENTATION</B></td>
  <td></td>
@@ -127,7 +127,7 @@ $(function() {
  <td>Paraspinals:</td><td>${thoracicexam.paraspinals}</td>
  </tr>
  </table>
- <table>
+ <table cellpadding="0" cellspacing="0" border="0">
  <tr class="row1">
  <td>Other/Notes: ${thoracicexam.othernotes}</td> 
  <td width="150">
@@ -136,9 +136,9 @@ $(function() {
  <td></td><td></td>
  </tr>
  <tr class="row2">
- <td width="250"><B style="font-size:14px">FUNCTIONAL RANGE OF MOTION</B> </td><td width="200"><B style="font-size:14px"></B></td> 
- <td width="250"><B style="font-size:14px">SUBLUXATION /DYSFUNCTION  </B></td><td width="150"></td> 
- <td width="250"><B style="font-size:14px">ORTHOTPEDIC TESTING </B></td><td><B style="font-size:14px"></B></td>
+ <td width="350"><B style="font-size:14px">FUNCTIONAL RANGE OF MOTION</B> </td><td width="200"><B style="font-size:14px"></B></td> 
+ <td width="350"><B style="font-size:14px">SUBLUXATION /DYSFUNCTION  </B></td><td width="150"></td> 
+ <td width="300"><B style="font-size:14px">ORTHOTPEDIC TESTING </B></td><td><B style="font-size:14px"></B></td>
  </tr>
   <tr class="row1">
  <td>${thoracicexam.functionalrangeofmotion} &nbsp;&nbsp;<!-- <input type="radio" name="functionalrangeofmotion" value="Except">Except --></td><td> </td> 
@@ -201,7 +201,7 @@ $(function() {
 <td valign="top" align="left">
  <div>
 	            <div class="headings altheading">
-	            <center> <h2>THORACIC EXAM</h2> </center><br/>
+	            <center> <h2>Viewing Thoracic Exam</h2> </center><br/>
 	            
 	            </div>
 	    <div class="contentbox">
@@ -220,7 +220,7 @@ $(function() {
  <td> </td> 
  </tr>
  </table>
-<table>         
+<table cellpadding="0" cellspacing="0" border="0">         
  <tr class="row2">
  <td><B style="font-size:14px">FUNCTIONAL DEFICIT:</B></td><td>${thoracicexam.sitting}</td>
  <td>${thoracicexam.standing}</td>
@@ -240,7 +240,7 @@ $(function() {
  <td></td>
  </tr>
  </table>
- <table>
+ <table cellpadding="0" cellspacing="0" border="0">
  <tr class="row2">
  <td width="360"><B style="font-size:14px">DIAGNOSIS:</B></td>
  <td width="250">1)${thoracicexam.diagnosis1}</td>
@@ -256,7 +256,7 @@ $(function() {
  <td></td>
  </tr>
  </table>
- <table>
+ <table cellpadding="0" cellspacing="0" border="0">
  <tr class="row1">
  <td width="120"><B style="font-size:14px">PLAN:</B></td>
  <td>${thoracicexam.times}Times/week for </td>
@@ -265,7 +265,7 @@ $(function() {
  <td>Treatment will consist of the following:</td>
  </tr>
  </table>
- <table>
+ <table cellpadding="0" cellspacing="0" border="0">
  <tr class="row1">
  <td width="120">
  <td width="250">${thoracicexam.spinal}</td>
@@ -292,7 +292,7 @@ $(function() {
  </tr>
  </tr>
  <br/>
- <table><tr><td><B style="font-size:14px">PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;${thoracicexam.sign}</B></td></tr></table>
+ <table cellpadding="0" cellspacing="0" border="0"><tr><td><B style="font-size:14px">PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;${thoracicexam.sign}</B></td></tr></table>
  </c:forEach>
 <table align="right">
 <tr>

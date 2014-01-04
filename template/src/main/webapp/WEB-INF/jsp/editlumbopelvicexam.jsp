@@ -41,6 +41,89 @@ $(function() {
     $( "#tabs" ).tabs();
   });
   </script>
+  <script>
+$(function() {
+   //$( "#draggable" ).draggable({ revert: "not valid" });
+   
+   $(window).load(function(){	
+	   alert("hi");
+   var leftvalue=$('#break5').val();
+ var rightvalue=$('#break6').val(); 
+   if(leftvalue=="other")
+   {
+   document.getElementById("other1").style.display="block";
+   }
+   else
+   {
+    document.getElementById("other1").style.display="none";
+   }
+   if(rightvalue=="other")
+
+   {
+   document.getElementById("other2").style.display="block";
+   }
+   else
+   {
+    document.getElementById("other2").style.display="none";
+   }
+   
+   });
+   $('input:checkbox[name=leglengthcheckl]').each(function() 
+			{    
+			   if($(this).is(':checked'))
+			   var other=$(this).val();
+			      if(other=="left")
+			   {
+			   document.getElementById("break5").style.display="block";
+			   }
+			   else
+			   {
+				   document.getElementById("break5").style.display="none";
+			   }  
+			});
+   $('input:checkbox[name=leglengthcheckr]').each(function() 
+			{    
+			   if($(this).is(':checked'))
+			   var other=$(this).val();
+			      if(other=="right")
+			   {
+			   document.getElementById("break6").style.display="block";
+			   }
+			   else
+			   {
+				   document.getElementById("break6").style.display="none";
+			   }  
+			});
+
+    $('input:checkbox[name=otherfunctional]').each(function() 
+		{    
+		   if($(this).is(':checked'))
+		   var other=$(this).val();
+		      if(other=="Other")
+		   {
+		   document.getElementById("break3").style.display="block";
+		   }
+		   else
+		   {
+			   document.getElementById("break3").style.display="none";
+		   }  
+		});
+    
+    $('input:checkbox[name=otheraddress]').each(function() 
+    		{    
+    		   if($(this).is(':checked'))
+    		   var other=$(this).val();   
+    		      if(other=="Other")
+    		   {
+    		   document.getElementById("break4").style.display="block";
+    		   }
+    		   else
+    		   {
+    			   document.getElementById("break4").style.display="none";
+    		   }  
+    		});
+});
+</script>
 </head>
  <body>
  <div id="tabs">
@@ -58,7 +141,7 @@ $(function() {
 <td valign="top" align="left">
  <div>
 	            <div class="headings altheading">
-	            <center> <h2>Edit Lumbopelvic Exam</h2> </center><br/>
+	            <center> <h2>LUMBOPELVIC REEXAM</h2> </center><br/>
 	            
 	            </div>
 	    <div class="contentbox">
@@ -74,7 +157,7 @@ $(function() {
 <br/>
 <br/>
  <table>
- <tr class="row2">
+ <tr class="row1">
  <td><B style="font-size:14px">OBSERVATION / APPEARANCE / MOOD / ORIENTATION</B></td>
  <td></td>
  <td></td>
@@ -111,7 +194,7 @@ $(function() {
  <td></td> 
  <td></td>
  </tr>
- <tr class="row2">
+ <tr class="row1">
  <td width="200"><B style="font-size:14px">PALPATION / SOFT TISSUE DYSFUNCTION</B></td> 
  <td width="200"><input type="checkbox" name="allsoft" value="All Soft Tissue Unremarkable" <c:if test="${lumbopelvicexam.allsoft=='All Soft Tissue Unremarkable'}"><c:out value="Checked"/></c:if>> All Soft Tissue Unremarkable</td> 
  <td> <%-- <input type="checkbox" name="except" value="Except" <c:if test="${lumbopelvicexam.except=='Except'}"><c:out value="Checked"/></c:if>> Except --%> </td>
@@ -121,8 +204,8 @@ $(function() {
  </tr>
   <tr class="row1">
  <td width="200">Leg Length Discrepancy:Short Leg-  </td> 
- <td><input type="checkbox" name="leglengthcheckl" value="left" <c:if test="${lumbopelvicexam.leglengthcheckl=='left'}"><c:out value="Checked"/></c:if> onclick="this.form.break5.style.visibility = this.checked? 'visible' : 'hidden'">Left
- <select name="leglengthl" id="break5" style="visibility:hidden" onchange='Checksymptom(this.value);'>
+ <td><input type="checkbox" id="leglengthcheckl" name="leglengthcheckl" value="left" <c:if test="${lumbopelvicexam.leglengthcheckl=='left'}"><c:out value="Checked"/></c:if> onclick="this.form.break5.style.visibility = this.checked? 'visible' : 'hidden'">Left</td>
+ <td><select name="leglengthl" id="break5" style="display:none" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="1/8" <c:if test="${lumbopelvicexam.leglengthl=='1/8'}"><c:out value="Selected"/></c:if>>1/8</option>
 					<option value="1/4" <c:if test="${lumbopelvicexam.leglengthl=='1/4'}"><c:out value="Selected"/></c:if>>1/4</option>
 					<option value="3/8" <c:if test="${lumbopelvicexam.leglengthl=='3/8'}"><c:out value="Selected"/></c:if>>3/8</option>
@@ -131,11 +214,11 @@ $(function() {
 					<option value="3/4" <c:if test="${lumbopelvicexam.leglengthl=='3/4'}"><c:out value="Selected"/></c:if>>3/4</option>
 					<option value="7/8" <c:if test="${lumbopelvicexam.leglengthl=='7/8'}"><c:out value="Selected"/></c:if>>7/8</option>
 					<option value="1" <c:if test="${lumbopelvicexam.leglengthl=='1'}"><c:out value="Selected"/></c:if>>1</option>
-					<option value="other" <c:if test="${lumbopelvicexam.allsoft=='Except'}"><c:out value="Selected"/></c:if>>other</option>
+					<option value="other" <c:if test="${lumbopelvicexam.leglengthl=='other'}"><c:out value="Selected"/></c:if>>other</option>
 					<input type="text" name="other1" id="other1" style='display:none' value="${lumbopelvicexam.other1 }" >
 					</select></td>
-					<td><input type="checkbox" name="leglengthcheckr" value="right" <c:if test="${lumbopelvicexam.leglengthcheckr=='right'}"><c:out value="Checked"/></c:if>onclick="this.form.break6.style.visibility = this.checked? 'visible' : 'hidden'">Right
-					<select name="leglengthr" id="break6" style="visibility:hidden" onchange='Checksymptom(this.value);'>
+					<td><input type="checkbox" id="leglengthcheckr" name="leglengthcheckr" value="right" <c:if test="${lumbopelvicexam.leglengthcheckr=='right'}"><c:out value="Checked"/></c:if>onclick="this.form.break6.style.visibility = this.checked? 'visible' : 'hidden'">Right</td>
+					 <td><select name="leglengthr" id="break6" style="display:none" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="1/8" <c:if test="${lumbopelvicexam.leglengthr=='1/8'}"><c:out value="Selected"/></c:if>>1/8</option>
 					<option value="1/4" <c:if test="${lumbopelvicexam.leglengthr=='1/4'}"><c:out value="Selected"/></c:if>>1/4</option>
 					<option value="3/8" <c:if test="${lumbopelvicexam.leglengthr=='3/8'}"><c:out value="Selected"/></c:if>>3/8</option>
@@ -178,15 +261,10 @@ $(function() {
  <td width="150">
  <td></td><td></td>
  </tr>
- <tr class="row2">
- <td width="250"><B style="font-size:14px">FUNCTIONAL RANGE OF MOTION</B> </td><td width="200"><B style="font-size:14px"></B></td> 
- <td width="250"><B style="font-size:14px">SUBLUXATION /DYSFUNCTION  </B></td><td width="150"></td> 
- <td width="250"><B style="font-size:14px">ORTHOTPEDIC TESTING </B></td><td><B style="font-size:14px"></B></td>
- </tr>
-  <tr class="row1">
- <td><input type="radio" name="functionalrangeofmotion" value="Unremarkable" <c:if test="${lumbopelvicexam.functionalrangeofmotion=='Unremarkable'}"><c:out value="checked=checked"/></c:if>>Unremarkable &nbsp;&nbsp;<input type="radio" name="functionalrangeofmotion" value="Except" <c:if test="${lumbopelvicexam.functionalrangeofmotion=='Except'}"><c:out value="checked=checked"/></c:if>>Except</td><td> </td> 
- <td><input type="radio" name="subluxation" value="Unremarkable" <c:if test="${lumbopelvicexam.subluxation=='Unremarkable'}"><c:out value="checked=checked"/></c:if>>Unremarkable&nbsp;&nbsp;<input type="radio" name="subluxation" value="Except" <c:if test="${lumbopelvicexam.iliopsoas=='Except'}"><c:out value="checked=checked"/></c:if>>Except</td><td> </td> 
- <td> <input type="radio" name="orthopedic" value="Unremarkable" <c:if test="${lumbopelvicexam.orthopedic=='Unremarkable'}"><c:out value="checked=checked"/></c:if>>Unremarkable&nbsp;&nbsp;<input type="radio" name="orthopedic" value="Except" <c:if test="${lumbopelvicexam.orthopedic=='Except'}"><c:out value="checked=checked"/></c:if>>Except</td><td> </td>
+ <tr class="row1">
+ <td width="350"><B style="font-size:14px">FUNCTIONAL RANGE OF MOTION</B> </td><td width="200"><input type="radio" name="functionalrangeofmotion" value="Unremarkable" <c:if test="${lumbopelvicexam.functionalrangeofmotion=='Unremarkable'}"><c:out value="checked=checked"/></c:if>>Unremarkable </td> 
+ <td width="350"><B style="font-size:14px">SUBLUXATION /DYSFUNCTION  </B></td><td width="150"><input type="radio" name="subluxation" value="Unremarkable" <c:if test="${lumbopelvicexam.subluxation=='Unremarkable'}"><c:out value="checked=checked"/></c:if>>Unremarkable</td> 
+ <td width="300"><B style="font-size:14px">ORTHOTPEDIC TESTING </B></td><td><input type="radio" name="orthopedic" value="Unremarkable" <c:if test="${lumbopelvicexam.orthopedic=='Unremarkable'}"><c:out value="checked=checked"/></c:if>>Unremarkable</td>
  </tr>
   <tr class="row1">
  <td>  </td><td> <b>Normal</b> &nbsp;&nbsp;&nbsp;<b> Actual</b></td> 
@@ -248,13 +326,13 @@ $(function() {
 <td valign="top" align="left">
  <div>
 	            <div class="headings altheading">
-	            <center> <h2>LUMBOPELVIC EXAM</h2> </center><br/>
+	            <center> <h2>LUMBOPELVIC REEXAM</h2> </center><br/>
 	            
 	            </div>
 	    <div class="contentbox">
          <table cellpadding="0" cellspacing="0" border="0" width="98%">  
          <tr height="20">         
- <tr class="row2">
+ <tr class="row1">
  <td><B style="font-size:14px">NEUROLOGICAL</B></td><td><input type="checkbox" name="neurologicaltest" value="Neurological Testing Unremarkable" <c:if test="${lumbopelvicexam.neurologicaltest=='Neurological Testing Unremarkable'}"><c:out value="Checked"/></c:if> >Neurological Testing Unremarkable</td><td><%-- <input type="checkbox" name="exceptn" value="Except" <c:if test="${lumbopelvicexam.exceptn=='Except'}"><c:out value="Checked"/></c:if>>Except --%></td>
  <td></td><td></td><td></td>
  </tr>
@@ -332,10 +410,10 @@ $(function() {
  </tr>
  </table>
 <table>         
- <tr class="row2">
- <td><B style="font-size:14px">FUNCTIONAL DEFICIT:</B></td><td><input type="checkbox" name="sitting" value="Sitting to Standing" <c:if test="${lumbopelvicexam.sitting=='Sitting to Standing'}"><c:out value="Checked"/></c:if>>Sitting to Standing	</td><td width="150"><input type="checkbox" name="lifting" value="Lifting" <c:if test="${lumbopelvicexam.lifting=='Lifting'}"><c:out value="Checked"/></c:if>>Lifting	</td>
+ <tr class="row1">
+ <td><B style="font-size:14px">FUNCTIONAL DEFICIT:</B></td><td><input type="checkbox" name="sitting" value="Sitting to Standing" <c:if test="${lumbopelvicexam.sitting=='Sitting to Standing'}"><c:out value="Checked"/></c:if>>Sitting to Standing	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="lifting" value="Lifting" <c:if test="${lumbopelvicexam.lifting=='Lifting'}"><c:out value="Checked"/></c:if>>Lifting	</td>
  <td width="150"><input type="checkbox" name="walking" value="Walking" <c:if test="${lumbopelvicexam.walking=='Walking'}"><c:out value="Checked"/></c:if>>Walking</td><td width="150"><input type="checkbox" name="stairs" value="Stairs" <c:if test="${lumbopelvicexam.stairs=='Stairs'}"><c:out value="Checked"/></c:if>>Stairs</td>
- <td width="150"><input type="checkbox" name="otherfunctional" value="Other" <c:if test="${lumbopelvicexam.otherfunctional=='Other'}"><c:out value="Checked"/></c:if> onclick="this.form.break3.style.visibility = this.checked? 'visible' : 'hidden'">Other&nbsp; <input type="text" class="input_txtbx1" id="break3" name="break_text3" style="visibility:hidden" style="display:none;"  value="${lumbopelvicexam.break_text3 }" /></td>
+ <td width="150"><input type="checkbox" id="otherfunctional" name="otherfunctional" value="Other" <c:if test="${lumbopelvicexam.otherfunctional=='Other'}"><c:out value="Checked"/></c:if> onclick="this.form.break3.style.visibility = this.checked? 'visible' : 'hidden'">Other&nbsp;</td><td> <input type="text" class="input_txtbx1" id="break3" name="break_text3"  style="display:none;"  value="${lumbopelvicexam.break_text3 }" /></td>
  </tr>         
  <tr class="row1">
  <td><B style="font-size:14px">ASSESSMENT / ADDITIONAL COMMENTS:</B></td><td><textarea name="assessment" rows='5' cols='40'> ${lumbopelvicexam.assessment }</textarea></td><td></td>
@@ -354,7 +432,7 @@ $(function() {
  </tr>
  </table>
  <table>
- <tr class="row2">
+ <tr class="row1">
  <td width="360"><B style="font-size:14px">DIAGNOSIS:</B></td>
  <td width="250">1)<input type="text" name="diagnosis1" value="${lumbopelvicexam.diagnosis1}"></td>
  <td width="250">2)<input type="text" name="diagnosis2" value="${lumbopelvicexam.diagnosis2 }"></td>
@@ -401,14 +479,14 @@ $(function() {
  <td width="250"><input type="checkbox" name="emg" value="EMG"  <c:if test="${lumbopelvicexam.emg=='EMG'}"><c:out value="Checked"/></c:if>>EMG</td>
  <td width="250"><input type="checkbox" name="outside" value="Outside Referral"  <c:if test="${lumbopelvicexam.outside=='Outside Referral'}"><c:out value="Checked"/></c:if>>Outside Referral </td>
  <td width="250"><input type="checkbox" name="dc" value="D/C"  <c:if test="${lumbopelvicexam.dc=='D/C'}"><c:out value="Checked"/></c:if>>D/C</td>
- <td width="250"><input type="checkbox" name="otheraddress" value="Other"  <c:if test="${lumbopelvicexam.otheraddress=='Other'}"><c:out value="Checked"/></c:if> onclick="this.form.break4.style.visibility = this.checked? 'visible' : 'hidden'">Other<input type="text" class="input_txtbx1" id="break4" name="break_text4" style="visibility:hidden" style="display:none"  value="${lumbopelvicexam.break_text4}" /></td>
+ <td width="250"><input type="checkbox" id="otheraddress" name="otheraddress" value="Other"  <c:if test="${lumbopelvicexam.otheraddress=='Other'}"><c:out value="Checked"/></c:if> onclick="this.form.break4.style.visibility = this.checked? 'visible' : 'hidden'">Other<input type="text" class="input_txtbx1" id="break4" name="break_text4"  style="display:none"  value="${lumbopelvicexam.break_text4}" /></td>
  </tr>
  </tr>
  <br/>
  <table><tr><td><B style="font-size:14px">PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sign" value="${lumbopelvicexam.sign}"></B></td></tr></table>
 <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="Update"></td>
+<td><input type="submit" class="submit_btn" value="Save"></td>
 <td><input type="reset" class="submit_btn" value="Cancel"></td>
 </tr>
 </table>
