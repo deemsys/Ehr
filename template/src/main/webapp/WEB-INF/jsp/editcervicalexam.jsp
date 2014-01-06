@@ -45,8 +45,9 @@ $(function() {
 $(function() {
    //$( "#draggable" ).draggable({ revert: "not valid" });
    
-   $(window).load(function(){	   
-   
+   $(window).load(function(){	
+	     });
+  
     $('input:checkbox[name=otherfunctional]').each(function() 
 		{    
 		   if($(this).is(':checked'))
@@ -64,8 +65,7 @@ $(function() {
     $('input:checkbox[name=otheraddress]').each(function() 
     		{    
     		   if($(this).is(':checked'))
-    		   var other=$(this).val();  
-    		   alert("other"+other);
+    		   var other=$(this).val();   
     		      if(other=="Other")
     		   {
     		   document.getElementById("break4").style.display="block";
@@ -76,6 +76,35 @@ $(function() {
     		   }  
     		});
 });
+</script>
+<script>
+function visible(val)
+{
+
+if(document.getElementById('otherfunctional').checked)
+{
+var element=document.getElementById('break3');
+element.style.display='block';
+}
+else
+{
+var element=document.getElementById('break3');
+element.style.display='none';
+}
+
+if(document.getElementById('otheraddress').checked)
+{
+var element=document.getElementById('break4');
+element.style.display='block';
+}
+else
+{
+var element=document.getElementById('break4');
+element.style.display='none';
+}
+
+
+}
 </script>
   
 </head>
@@ -300,7 +329,7 @@ $(function() {
  <tr class="row1">
  <td><B style="font-size:14px">FUNCTIONAL DEFICIT:</B></td><td><input type="checkbox" name="sitting" value="Sitting" <c:if test="${cervicalexam.sitting=='Sitting'}"><c:out value="Checked"/></c:if>>Sitting &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<input type="checkbox" name="standing" value="Standing" <c:if test="${cervicalexam.standing=='Standing'}"><c:out value="Checked"/></c:if>>Standing</td>
  <td width="150"><input type="checkbox" name="driving" value="Driving" <c:if test="${cervicalexam.driving=='Driving'}"><c:out value="Checked"/></c:if>> Driving</td><td width="150"><input type="checkbox" name="computeruse" value="Computer Use" <c:if test="${cervicalexam.computeruse=='Computer Use'}"><c:out value="Checked"/></c:if>>Computer Use</td>
- <td width="150"><input type="checkbox" name="otherfunctional" value="Other"  <c:if test="${cervicalexam.otherfunctional=='Other'}"><c:out value="Checked"/></c:if> onclick="this.form.break3.style.visibility = this.checked? 'visible' : 'hidden'">Other&nbsp; </td><td><input type="text"  id="break3" name="break_text3" style="visibility:hidden" value="${cervicalexam.break_text3}"/></td>
+ <td width="150"><input type="checkbox" id="otherfunctional" name="otherfunctional" value="Other" onclick="visible(this.value)" <c:if test="${cervicalexam.otherfunctional=='Other'}"><c:out value="Checked"/></c:if>>Other&nbsp; </td><td><input type="text"  id="break3" name="break_text3" style="display:none" value="${cervicalexam.break_text3}"/></td>
  </tr>         
  <tr class="row1">
  <td><B style="font-size:14px">ASSESSMENT / ADDITIONAL COMMENTS:</B></td><td><textarea name="assessment" rows='5' cols='40'>${cervicalexam.assessment }</textarea></td><td></td>
@@ -366,7 +395,7 @@ $(function() {
  <td width="250"><input type="checkbox" name="emg" value="EMG" <c:if test="${cervicalexam.emg=='EMG'}"><c:out value="Checked"/></c:if>>EMG</td>
  <td width="250"><input type="checkbox" name="outside" value="Outside Referral" <c:if test="${cervicalexam.outside=='Outside Referral'}"><c:out value="Checked"/></c:if>>Outside Referral </td>
  <td width="250"><input type="checkbox" name="dc" value="D/C" <c:if test="${cervicalexam.dc=='D/C'}"><c:out value="Checked"/></c:if>>D/C</td>
- <td width="250"><input type="checkbox" name="otheraddress" value="Other" <c:if test="${cervicalexam.otheraddress=='Other'}"><c:out value="Checked"/></c:if> onclick="this.form.break4.style.visibility = this.checked? 'visible' : 'hidden'">Other<input type="text" class="input_txtbx1" id="break4" name="break_text4" style="display:none" value="${cervicalexam.break_text4}"/></td>
+ <td width="250"><input type="checkbox" id="otheraddress" name="otheraddress" value="Other" onclick="visible(this.value)" <c:if test="${cervicalexam.otheraddress=='Other'}"><c:out value="Checked"/></c:if>>Other<input type="text" class="input_txtbx1" id="break4" name="break_text4" style="display:none" value="${cervicalexam.break_text4}"/></td>
  </tr>
  </tr>
  <br/>

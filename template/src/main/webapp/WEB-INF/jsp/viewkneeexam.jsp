@@ -23,7 +23,7 @@
       		<tr>
         		<td valign="top" align="left">
 			        <div class="headings altheading">
-			          <h2>View Knee Exam</h2>
+			          <h2>View Knee Exams</h2>
 			        </div>
 			        <div class="contentbox">
 			      <!--   <form action="findPatients" method="GET">  --> 
@@ -32,10 +32,10 @@
 				     <tr class="title">
 								
 								
-         						<td valign="top" align="left" width="38%">Patient Name</td>
-					         	<td valign="top" align="left" width="38%">Date</td>
-					         	<td></td>
-					         	<td></td>
+         						<td valign="top" align="left" width="25%">Patient Id</td>
+         						<td valign="top" align="left" width="25%">Patient Name</td>
+					         	<td valign="top" align="left" width="25%">Date</td>
+					            <td valign="top" align="left" width="25%">Action</td>
 					         	
           			</tr>
 							<!-- getting addAttibute value -->
@@ -43,7 +43,8 @@
         				  <c:forEach items="${kneeexamForm.kneeexam}" var="kneeexam" varStatus="status">
         				       				<tr class="row1">
         				       				
-								        <td valign="top" align="left"  width="10%"> <a href="kneeexamlist?kneeexamid=${kneeexam.kneeexamid}">${kneeexam.pname}</a></td>
+								        <td valign="top" align="left"  width="10%"> <a href="kneeexamlist?kneeexamid=${kneeexam.kneeexamid}">${kneeexam.kneeexamid}</a></td>
+											<td valign="top" align="left" width="15%">${kneeexam.pname}</td>
 											<td valign="top" align="left" width="15%">${kneeexam.date}</td>
 											
 												<td valign="top" align="left">

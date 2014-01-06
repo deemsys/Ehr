@@ -197,7 +197,7 @@
 								</a>
 							</li>
 							<li>
-								<a href="#" class="<c:choose><c:when test="${menu=='initialexam'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu10">
+								<a href="#" class="<c:choose><c:when test="${menu=='initialexam'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu13">
 									<span>Initial Exam & Re Exam</span>
 								</a>
 							</li>

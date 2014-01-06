@@ -14,6 +14,71 @@
   line-height:18px;}
    </STYLE>
    
+    <script>
+$(function() {
+   //$( "#draggable" ).draggable({ revert: "not valid" });
+   
+   $(window).load(function(){	
+	     });
+  
+    $('input:checkbox[name=otherfunctional]').each(function() 
+		{    
+		   if($(this).is(':checked'))
+		   var other=$(this).val();
+		      if(other=="Other")
+		   {
+		   document.getElementById("break3").style.display="block";
+		   }
+		   else
+		   {
+			   document.getElementById("break3").style.display="none";
+		   }  
+		});
+    
+    $('input:checkbox[name=otheraddress]').each(function() 
+    		{    
+    		   if($(this).is(':checked'))
+    		   var other=$(this).val();   
+    		      if(other=="Other")
+    		   {
+    		   document.getElementById("break4").style.display="block";
+    		   }
+    		   else
+    		   {
+    			   document.getElementById("break4").style.display="none";
+    		   }  
+    		});
+});
+</script>
+<script>
+function visible(val)
+{
+
+if(document.getElementById('otherfunctional').checked)
+{
+var element=document.getElementById('break3');
+element.style.display='block';
+}
+else
+{
+var element=document.getElementById('break3');
+element.style.display='none';
+}
+
+if(document.getElementById('otheraddress').checked)
+{
+var element=document.getElementById('break4');
+element.style.display='block';
+}
+else
+{
+var element=document.getElementById('break4');
+element.style.display='none';
+}
+
+
+}
+</script>
    <script type="text/javascript">
 function Checksymptom(val){
  var element=document.getElementById('other1');
@@ -233,8 +298,8 @@ $(function() {
  <tr class="row1">
  <td><B style="font-size:14px">FUNCTIONAL DEFICIT:</B></td><td><input type="checkbox" name="sitting" value="Sitting" <c:if test="${thoracicexam.sitting=='Sitting'}"><c:out value="Checked"/></c:if>>Sitting 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="standing" value="Standing" <c:if test="${thoracicexam.standing=='Standing'}"><c:out value="Checked"/></c:if>>Standing</td>
  <td width="150"><input type="checkbox" name="driving" value="Driving" <c:if test="${thoracicexam.driving=='Driving'}"><c:out value="Checked"/></c:if>>Driving</td>
- <td width="150"><input type="checkbox" name="otherfunctional" value="Other" <c:if test="${thoracicexam.otherfunctional=='Other'}"><c:out value="Checked"/></c:if> onclick="this.form.break3.style.visibility = this.checked? 'visible' : 'hidden'">Other&nbsp; </td>
- <td width="250"><input type="text" class="input_txtbx1" id="break3" name="break_text3" style="visibility:hidden" value="${thoracicexam.break_text3 }"/></td>
+ <td width="150"><input type="checkbox" id="otherfunctional" name="otherfunctional" value="Other" onclick="visible(this.value)" <c:if test="${thoracicexam.otherfunctional=='Other'}"><c:out value="Checked"/></c:if>>Other&nbsp; </td>
+ <td width="250"><input type="text" class="input_txtbx1" id="break3" name="break_text3" style="display:none" value="${thoracicexam.break_text3 }"/></td>
  </tr>         
  <tr class="row1">
  <td><B style="font-size:14px">ASSESSMENT / ADDITIONAL COMMENTS:</B></td><td><textarea name="assessment" rows='5' cols='40'>${thoracicexam.assessment }</textarea></td><td></td>
@@ -300,8 +365,7 @@ $(function() {
  <td width="250"><input type="checkbox" name="emg" value="EMG" <c:if test="${thoracicexam.emg=='EMG'}"><c:out value="Checked"/></c:if>>EMG</td>
  <td width="250"><input type="checkbox" name="outside" value="Outside Referral" <c:if test="${thoracicexam.outside=='Outside Referral'}"><c:out value="Checked"/></c:if>>Outside Referral </td>
  <td width="250"><input type="checkbox" name="dc" value="D/C" <c:if test="${thoracicexam.dc=='D/C'}"><c:out value="Checked"/></c:if>>D/C</td>
- <td width="250"><input type="checkbox" name="otheraddress" value="Other" <c:if test="${thoracicexam.otheraddress=='Other'}"><c:out value="Checked"/></c:if> onclick="this.form.break4.style.visibility = this.checked? 'visible' : 'hidden'">Other<input type="text" class="input_txtbx1" id="break4" name="break_text4" style="visibility:hidden" value="${thoracicexam.break_text4}"/></td>
- </tr>
+ <td width="250"><input type="checkbox" id="otheraddress" name="otheraddress" value="Other" onclick="visible(this.value)" <c:if test="${thoracicexam.otheraddress=='Other'}"><c:out value="Checked"/></c:if>>Other<input type="text" class="input_txtbx1" id="break4" name="break_text4" style="display:none" value="${thoracicexam.break_text4}"/></td>
  </tr>
  <br/>
  <table><tr><td><B style="font-size:14px">PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sign" value="${thoracicexam.sign}"></B></td></tr></table>

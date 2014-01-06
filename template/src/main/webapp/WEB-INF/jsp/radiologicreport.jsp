@@ -109,7 +109,7 @@ $(function() {
   				<tr>
     				<td align="left" valign="top" width="80%" style="padding-right:25px;">		                
                                
-                        <table border="0">
+                        <table cellpadding="0" cellspacing="0" border="0">
 				               <tr class="row1">
 				               <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Views:
 				                  	
@@ -316,7 +316,7 @@ $(function() {
   				<tr>
     				<td align="left" valign="top" width="80%" style="padding-right:25px;">
                         
-                        <table border="0">
+                        <table cellpadding="0" cellspacing="0" border="0">
 				               <tr class="row1">
 				                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Views:
 				                  		<select name="views2" class="input_cmbbx1">
@@ -373,6 +373,7 @@ $(function() {
 				               	     <td class="input_txt" align="left"> <input type="checkbox" name="schmorlsnodesat_2" value="Schmorls nodes at:" onclick="this.form.schmorlsnodesat2.style.visibility = this.checked? 'visible' : 'hidden'"/> Schmorl's nodes at:
 				                 		<input type="text" class="input_txtbx1" id="schmorlsnodesat2" name="schmorlsnodesat_text2" style="visibility:hidden" />
 				                 	 </td>
+				                 	 <td></td>
 				                    </tr>	 
 				                 	 <tr class="row1">
 				             			<td class="input_txt" align="left"> <input type="checkbox" name="anterior_2" value="Anterior body osteophytes at:" onclick="this.form.anterior2.style.visibility = this.checked? 'visible' : 'hidden'"/> Anterior vertebral body osteophytes at:
@@ -446,7 +447,7 @@ $(function() {
   				<tr>
     				<td align="left" valign="top" width="80%" style="padding-right:25px;">
                         
-                        <table border="0">
+                        <table cellpadding="0" cellspacing="0" border="0">
 				               <tr class="row1">
 				              
 				                <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Views:
@@ -526,6 +527,7 @@ $(function() {
 				                 	  <td class="input_txt" align="left"> <input type="checkbox" name="schmorls_3" value="Schmorls nodes at:" onclick="this.form.schmorls3.style.visibility = this.checked? 'visible' : 'hidden'"/> Schmorl's nodes at:
 				                 		<input type="text" class="input_txtbx1" id="schmorls3" name="schmorls_text3" style="visibility:hidden"/>
 				                	 </td>
+				                	 <td></td>
 				                 	 </tr>
 				                 	  <tr class="row1">
 				                  	 <td class="input_txt" align="left"> <input type="checkbox" name="spondylolisthesisof_3" value="Spondylolisthesis of" onclick="this.form.spondylolisthesisof3.style.visibility = this.checked? 'visible' : 'hidden'"/> Spondylolisthesis of 
@@ -545,13 +547,15 @@ $(function() {
 											<option  value="III" >III</option>
 											<option  value="IV" >IV</option>
 										</select>
-									</td>		
+									</td>
+											
 									</tr>
 	
 									 <tr class="row2">
 				                 	 <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="decreasedRLF_3" value="Decreased RLF"> Decreased RLF</td>
 				                     <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="decreasedLLF_3" value="Decreased LLF"> Decreased LLF</td>    
 				                 	 <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="facettropism_3" value="Facet tropism"> Facet tropism</td> 		
+									<td></td>
 									</tr>
 									<tr class="row1">
 				                 	 <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="sacralization_3" value="Sacralization"> Sacralization</td>
@@ -580,6 +584,7 @@ $(function() {
 				                  	 <td class="input_txt" align="left"> <input type="checkbox" name="other_3" value="Other" onclick="this.form.other3.style.visibility = this.checked? 'visible' : 'hidden'"/> Other
 				                 		<input type="text" class="input_txtbx1" id="other3" name="other_text33" style="visibility:hidden"/>
 				                	 </td>
+				                	 <td></td>
 				                 </tr>		
 				               </table>
 				               </td>
@@ -607,7 +612,7 @@ $(function() {
   				<tr>
     				<td align="left" valign="top" width="80%" style="padding-right:25px;">
                         
-                        <table border="0">
+                        <table cellpadding="0" cellspacing="0" border="0">
 				               <tr class="row1">
 				               		 <td>Views:
 				               		 <input type="text" class="input_txtbx1" id="inp_id" name="views4" />
@@ -616,7 +621,7 @@ $(function() {
 				                     <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="positivefor_4" value="Positive for"> Positive for</td>   
 				                 </tr>
 				          </table>
-				           <table>
+				           <table cellpadding="0" cellspacing="0" border="0">
 				           <tr>
 				   <td valign="top" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				  <td valign="top" align="center"><br><input type="submit" class="submit_btn" value="Save"></td>

@@ -23,7 +23,7 @@
       		<tr>
         		<td valign="top" align="left">
 			        <div class="headings altheading">
-			          <h2>View Elbow Exam</h2>
+			          <h2>View Elbow Exams</h2>
 			        </div>
 			        <div class="contentbox">
 			      <!--   <form action="findPatients" method="GET">  --> 
@@ -32,10 +32,10 @@
 				     <tr class="title">
 								
 								
-         						<td valign="top" align="left" width="38%">Patient Name</td>
-					         	<td valign="top" align="left" width="35%">Date</td>
-					         	<td></td>
-					         	<td></td>
+         						<td valign="top" align="left" width="25%">Patient Id</td>
+         						<td valign="top" align="left" width="25%">Patient Name</td>
+					         	<td valign="top" align="left" width="25%">Date</td>
+					            <td valign="top" align="left" width="25%">Action</td>
 					         	
           			</tr>
 							<!-- getting addAttibute value -->
@@ -43,7 +43,8 @@
         				  <c:forEach items="${elbowexamForm.elbowexam}" var="elbowexam" varStatus="status">
         				       				<tr class="row1">
         				       				
-								        <td valign="top" align="left"  width="10%"> <a href="elbowexamlist?elbowexamid=${elbowexam.elbowexamid}">${elbowexam.pname}</a></td>
+								        <td valign="top" align="left"  width="10%"> <a href="elbowexamlist?elbowexamid=${elbowexam.elbowexamid}">${elbowexam.elbowexamid}</a></td>
+											<td valign="top" align="left" width="15%">${elbowexam.pname}</td>
 											<td valign="top" align="left" width="15%">${elbowexam.date}</td>
 											
 												<td valign="top" align="left">

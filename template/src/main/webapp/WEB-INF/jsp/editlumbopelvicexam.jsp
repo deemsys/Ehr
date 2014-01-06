@@ -46,9 +46,10 @@ $(function() {
    //$( "#draggable" ).draggable({ revert: "not valid" });
    
    $(window).load(function(){	
-	   alert("hi");
+	   
    var leftvalue=$('#break5').val();
  var rightvalue=$('#break6').val(); 
+      
    if(leftvalue=="other")
    {
    document.getElementById("other1").style.display="block";
@@ -123,6 +124,56 @@ $(function() {
     		   }  
     		});
 });
+</script>
+<script>
+function visible(val)
+{
+
+if(document.getElementById('otherfunctional').checked)
+{
+var element=document.getElementById('break3');
+element.style.display='block';
+}
+else
+{
+var element=document.getElementById('break3');
+element.style.display='none';
+}
+
+if(document.getElementById('otheraddress').checked)
+{
+var element=document.getElementById('break4');
+element.style.display='block';
+}
+else
+{
+var element=document.getElementById('break4');
+element.style.display='none';
+}
+
+if(document.getElementById('leglengthcheckl').checked)
+{
+var element=document.getElementById('break5');
+element.style.display='block';
+}
+else
+{
+var element=document.getElementById('break5');
+element.style.display='none';
+}
+
+
+if(document.getElementById('leglengthcheckr').checked)
+{
+var element=document.getElementById('break6');
+element.style.display='block';
+}
+else
+{
+var element=document.getElementById('break6');
+element.style.display='none';
+}
+}
 </script>
 </head>
  <body>
@@ -204,7 +255,7 @@ $(function() {
  </tr>
   <tr class="row1">
  <td width="200">Leg Length Discrepancy:Short Leg-  </td> 
- <td><input type="checkbox" id="leglengthcheckl" name="leglengthcheckl" value="left" <c:if test="${lumbopelvicexam.leglengthcheckl=='left'}"><c:out value="Checked"/></c:if> onclick="this.form.break5.style.visibility = this.checked? 'visible' : 'hidden'">Left</td>
+ <td><input type="checkbox" id="leglengthcheckl" name="leglengthcheckl" value="left" onclick="visible(this.value)" <c:if test="${lumbopelvicexam.leglengthcheckl=='left'}"><c:out value="Checked"/></c:if> >Left</td>
  <td><select name="leglengthl" id="break5" style="display:none" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="1/8" <c:if test="${lumbopelvicexam.leglengthl=='1/8'}"><c:out value="Selected"/></c:if>>1/8</option>
 					<option value="1/4" <c:if test="${lumbopelvicexam.leglengthl=='1/4'}"><c:out value="Selected"/></c:if>>1/4</option>
@@ -215,9 +266,11 @@ $(function() {
 					<option value="7/8" <c:if test="${lumbopelvicexam.leglengthl=='7/8'}"><c:out value="Selected"/></c:if>>7/8</option>
 					<option value="1" <c:if test="${lumbopelvicexam.leglengthl=='1'}"><c:out value="Selected"/></c:if>>1</option>
 					<option value="other" <c:if test="${lumbopelvicexam.leglengthl=='other'}"><c:out value="Selected"/></c:if>>other</option>
+					</td>
+					<td>
 					<input type="text" name="other1" id="other1" style='display:none' value="${lumbopelvicexam.other1 }" >
 					</select></td>
-					<td><input type="checkbox" id="leglengthcheckr" name="leglengthcheckr" value="right" <c:if test="${lumbopelvicexam.leglengthcheckr=='right'}"><c:out value="Checked"/></c:if>onclick="this.form.break6.style.visibility = this.checked? 'visible' : 'hidden'">Right</td>
+					<td><input type="checkbox" id="leglengthcheckr" name="leglengthcheckr" value="right" onclick="visible(this.value)" <c:if test="${lumbopelvicexam.leglengthcheckr=='right'}"><c:out value="Checked"/></c:if>onclick="this.form.break6.style.visibility = this.checked? 'visible' : 'hidden'">Right</td>
 					 <td><select name="leglengthr" id="break6" style="display:none" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="1/8" <c:if test="${lumbopelvicexam.leglengthr=='1/8'}"><c:out value="Selected"/></c:if>>1/8</option>
 					<option value="1/4" <c:if test="${lumbopelvicexam.leglengthr=='1/4'}"><c:out value="Selected"/></c:if>>1/4</option>
@@ -227,9 +280,9 @@ $(function() {
 					<option value="3/4" <c:if test="${lumbopelvicexam.leglengthr=='3/4'}"><c:out value="Selected"/></c:if>>3/4</option>
 					<option value="7/8" <c:if test="${lumbopelvicexam.leglengthr=='7/8'}"><c:out value="Selected"/></c:if>>7/8</option>
 					<option value="1" <c:if test="${lumbopelvicexam.leglengthr=='1'}"><c:out value="Selected"/></c:if>>1</option>
-					<option value="other" <c:if test="${lumbopelvicexam.leglengthr=='other'}"><c:out value="Selected"/></c:if>>other</option>
-					</select><input type="text" name="other2" id="other2"  style='display:none' value=${lumbopelvicexam.other2 }>
-					</td>
+					<option value="other" <c:if test="${lumbopelvicexam.leglengthr=='other'}"><c:out value="Selected"/></c:if>>other</option></td>
+					<td><input type="text" name="other2" id="other2"  style='display:none' value=${lumbopelvicexam.other2 }>
+					</select></td>
 					<td></td>
 					<td></td>
 					<td></td> 
@@ -413,7 +466,7 @@ $(function() {
  <tr class="row1">
  <td><B style="font-size:14px">FUNCTIONAL DEFICIT:</B></td><td><input type="checkbox" name="sitting" value="Sitting to Standing" <c:if test="${lumbopelvicexam.sitting=='Sitting to Standing'}"><c:out value="Checked"/></c:if>>Sitting to Standing	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="lifting" value="Lifting" <c:if test="${lumbopelvicexam.lifting=='Lifting'}"><c:out value="Checked"/></c:if>>Lifting	</td>
  <td width="150"><input type="checkbox" name="walking" value="Walking" <c:if test="${lumbopelvicexam.walking=='Walking'}"><c:out value="Checked"/></c:if>>Walking</td><td width="150"><input type="checkbox" name="stairs" value="Stairs" <c:if test="${lumbopelvicexam.stairs=='Stairs'}"><c:out value="Checked"/></c:if>>Stairs</td>
- <td width="150"><input type="checkbox" id="otherfunctional" name="otherfunctional" value="Other" <c:if test="${lumbopelvicexam.otherfunctional=='Other'}"><c:out value="Checked"/></c:if> onclick="this.form.break3.style.visibility = this.checked? 'visible' : 'hidden'">Other&nbsp;</td><td> <input type="text" class="input_txtbx1" id="break3" name="break_text3"  style="display:none;"  value="${lumbopelvicexam.break_text3 }" /></td>
+ <td width="150"><input type="checkbox" id="otherfunctional" name="otherfunctional" value="Other" onclick="visible(this.value)" <c:if test="${lumbopelvicexam.otherfunctional=='Other'}"><c:out value="Checked"/></c:if> >Other&nbsp;</td><td> <input type="text" class="input_txtbx1" id="break3" name="break_text3"  style="display:none"  value="${lumbopelvicexam.break_text3 }" /></td>
  </tr>         
  <tr class="row1">
  <td><B style="font-size:14px">ASSESSMENT / ADDITIONAL COMMENTS:</B></td><td><textarea name="assessment" rows='5' cols='40'> ${lumbopelvicexam.assessment }</textarea></td><td></td>
@@ -479,7 +532,7 @@ $(function() {
  <td width="250"><input type="checkbox" name="emg" value="EMG"  <c:if test="${lumbopelvicexam.emg=='EMG'}"><c:out value="Checked"/></c:if>>EMG</td>
  <td width="250"><input type="checkbox" name="outside" value="Outside Referral"  <c:if test="${lumbopelvicexam.outside=='Outside Referral'}"><c:out value="Checked"/></c:if>>Outside Referral </td>
  <td width="250"><input type="checkbox" name="dc" value="D/C"  <c:if test="${lumbopelvicexam.dc=='D/C'}"><c:out value="Checked"/></c:if>>D/C</td>
- <td width="250"><input type="checkbox" id="otheraddress" name="otheraddress" value="Other"  <c:if test="${lumbopelvicexam.otheraddress=='Other'}"><c:out value="Checked"/></c:if> onclick="this.form.break4.style.visibility = this.checked? 'visible' : 'hidden'">Other<input type="text" class="input_txtbx1" id="break4" name="break_text4"  style="display:none"  value="${lumbopelvicexam.break_text4}" /></td>
+ <td width="250"><input type="checkbox" id="otheraddress" name="otheraddress" value="Other" onclick="visible(this.value)" <c:if test="${lumbopelvicexam.otheraddress=='Other'}"><c:out value="Checked"/></c:if>>Other<input type="text" class="input_txtbx1" id="break4" name="break_text4"  style="display:none"  value="${lumbopelvicexam.break_text4}" /></td>
  </tr>
  </tr>
  <br/>

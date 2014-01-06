@@ -13,6 +13,70 @@
   P#mypar {font-style:calibri;
   line-height:18px;}
    </STYLE>
+  <script>
+$(function() {
+   //$( "#draggable" ).draggable({ revert: "not valid" });
+   
+   $(window).load(function(){	
+	    
+   
+   }); 
+   $('input:checkbox[name=leglengthl]').each(function() 
+			{    
+			   if($(this).is(':checked'))
+			   var other=$(this).val();
+			      if(other=="left")
+			   {
+			   document.getElementById("break5").style.display="block";
+			   }
+			   else
+			   {
+				   document.getElementById("break5").style.display="none";
+			   }  
+			});
+   $('input:checkbox[name=leglengthr]').each(function() 
+			{    
+			   if($(this).is(':checked'))
+			   var other=$(this).val();
+			      if(other=="right")
+			   {
+			   document.getElementById("break6").style.display="block";
+			   }
+			   else
+			   {
+				   document.getElementById("break6").style.display="none";
+			   }  
+			});
+
+    $('input:checkbox[name=otherfunctional]').each(function() 
+		{    
+		   if($(this).is(':checked'))
+		   var other=$(this).val();
+		      if(other=="Other")
+		   {
+		   document.getElementById("break3").style.display="block";
+		   }
+		   else
+		   {
+			   document.getElementById("break3").style.display="none";
+		   }  
+		});
+    
+    $('input:checkbox[name=otheraddress]').each(function() 
+    		{    
+    		   if($(this).is(':checked'))
+    		   var other=$(this).val();   
+    		      if(other=="Other")
+    		   {
+    		   document.getElementById("break4").style.display="block";
+    		   }
+    		   else
+    		   {
+    			   document.getElementById("break4").style.display="none";
+    		   }  
+    		});
+});
+</script>
    
    <script type="text/javascript">
 function Checksymptom(val){
@@ -42,69 +106,54 @@ $(function() {
   });
   </script>
   <script>
-  $(function() {
-   //$( "#draggable" ).draggable({ revert: "not valid" });
-   
-   $(window).load(function(){	   
-  
-   
-   $('input:checkbox[name=leglengthl]').each(function() 
-			{    
-			   if($(this).is(':checked'))
-			   var other=$(this).val();
-			   alert("other"+other);
-			      if(other=="left")
-			   {
-			   document.getElementById("break5").style.display="block";
-			   }
-			   else
-			   {
-				   document.getElementById("break5").style.display="none";
-			   }  
-			});
-   $('input:checkbox[name=leglengthr]').each(function() 
-			{    
-			   if($(this).is(':checked'))
-			   var other=$(this).val();
-			      if(other=="right")
-			   {
-			   document.getElementById("break6").style.display="block";
-			   }
-			   else
-			   {
-				   document.getElementById("break6").style.display="none";
-			   }  
-			});
+function visible(val)
+{
 
-    $('input:checkbox[name=otherfunctional]').each(function() 
-		{    
-		   if($(this).is(':checked'))
-		   var other=$(this).val();
-		   alert("other"+other);
-		      if(other=="Other")
-		   {
-		   document.getElementById("break3").style.display="block";
-		   }
-		   else
-		   {
-			   document.getElementById("break3").style.display="none";
-		   }  
-		});
-    
-    $('input:checkbox[name=otheraddress]').each(function() 
-    		{    
-    		   if($(this).is(':checked'))
-    		   var other=$(this).val();   
-    		      if(other=="Other")
-    		   {
-    		   document.getElementById("break4").style.display="block";
-    		   }
-    		   else
-    		   {
-    			   document.getElementById("break4").style.display="none";
-    		   }  
-    		});
-});
+if(document.getElementById('otherfunctional').checked)
+{
+var element=document.getElementById('break3');
+element.style.display='block';
+}
+else
+{
+var element=document.getElementById('break3');
+element.style.display='none';
+}
+
+if(document.getElementById('otheraddress').checked)
+{
+var element=document.getElementById('break4');
+element.style.display='block';
+}
+else
+{
+var element=document.getElementById('break4');
+element.style.display='none';
+}
+
+if(document.getElementById('leglengthl').checked)
+{
+var element=document.getElementById('break5');
+element.style.display='block';
+}
+else
+{
+var element=document.getElementById('break5');
+element.style.display='none';
+}
+
+
+if(document.getElementById('leglengthr').checked)
+{
+var element=document.getElementById('break6');
+element.style.display='block';
+}
+else
+{
+var element=document.getElementById('break6');
+element.style.display='none';
+}
+}
 </script>
   
 </head>
@@ -195,10 +244,10 @@ $(function() {
  <table>
   <tr class="row1">
  <td width="200">Leg Length Discrepancy:Short Leg-  </td> 
- <td><input type="checkbox" id="leglengthl" name="leglengthl" value="left" <c:if test="${kneeexam.leglengthl=='left'}"><c:out value="Checked"/></c:if> onclick="this.form.break5.style.visibility = this.checked? 'visible' : 'hidden'">Left</td>
+ <td><input type="checkbox" id="leglengthl" name="leglengthl" value="left" onclick="visible(this.value)" <c:if test="${kneeexam.leglengthl=='left'}"><c:out value="Checked"/></c:if>>Left</td>
  <td><input type="text" name="leglengthtextl" id="break5" style="display:none" value="${kneeexam.leglengthtextl}"></td>
-					<td><input type="checkbox" name="leglengthr" id="leglengthr" value="right" <c:if test="${kneeexam.leglengthr=='right'}"><c:out value="Checked"/></c:if>onclick="this.form.break6.style.visibility = this.checked? 'visible' : 'hidden'">Right</td>
-					<td><input type="text" name="leglengthtextr" id="break6" style="display:none" value="${kneeexam.leglengthtextr}"></td>
+ <td><input type="checkbox" id="leglengthr" name="leglengthr" value="right" onclick="visible(this.value)" <c:if test="${kneeexam.leglengthr=='right'}"><c:out value="Checked"/></c:if>>Right</td>
+ <td><input type="text" name="leglengthtextr" id="break6" style="display:none" value="${kneeexam.leglengthtextr}"></td>
 					<td></td>
 					<td></td>
 					<td></td> 
@@ -373,8 +422,8 @@ $(function() {
  <td><B style="font-size:14px">FUNCTIONAL DEFICIT:</B></td>
  <td width="150"><input type="checkbox" name="walking" value="Walking" <c:if test="${kneeexam.walking=='Walking'}"><c:out value="Checked"/></c:if>>Walking &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="standing" value="Standing" <c:if test="${kneeexam.standing=='Standing'}"><c:out value="Checked"/></c:if>>Standing</td>
  <td width="150"><input type="checkbox" name="stairs" value="Stairs" <c:if test="${kneeexam.stairs=='Stairs'}"><c:out value="Checked"/></c:if>>Stairs</td>
- <td width="150"><input type="checkbox" name="otherfunctional" value="Other" <c:if test="${kneeexam.otherfunctional=='Other'}"><c:out value="Checked"/></c:if> onclick="this.form.break3.style.visibility = this.checked? 'visible' : 'hidden'">Other&nbsp;</td>
- <td> <input type="text" id="break3" name="break_text3" style="visibility:hidden" value="break_text3"/></td>
+ <td width="150"><input type="checkbox" id="otherfunctional" name="otherfunctional" value="Other"  onclick="visible(this.value)" <c:if test="${kneeexam.otherfunctional=='Other'}"><c:out value="Checked"/></c:if> >Other&nbsp;</td>
+ <td> <input type="text" id="break3" name="break_text3" style="display:none" value="break_text3"/></td>
  </tr>         
  <tr class="row1">
  <td><B style="font-size:14px">ASSESSMENT / ADDITIONAL COMMENTS:</B></td><td><textarea name="assessment" rows='5' cols='40'> ${kneeexam.assessment }</textarea></td><td></td>
@@ -440,7 +489,7 @@ $(function() {
  <td width="250"><input type="checkbox" name="emg" value="EMG"  <c:if test="${kneeexam.emg=='EMG'}"><c:out value="Checked"/></c:if>>EMG</td>
  <td width="250"><input type="checkbox" name="outside" value="Outside Referral"  <c:if test="${kneeexam.outside=='Outside Referral'}"><c:out value="Checked"/></c:if>>Outside Referral </td>
  <td width="250"><input type="checkbox" name="dc" value="D/C"  <c:if test="${kneeexam.dc=='D/C'}"><c:out value="Checked"/></c:if>>D/C</td>
- <td width="250"><input type="checkbox" name="otheraddress" value="Other"  <c:if test="${kneeexam.otheraddress=='Other'}"><c:out value="Checked"/></c:if> onclick="this.form.break4.style.visibility = this.checked? 'visible' : 'hidden'">Other<input type="text" class="input_txtbx1" id="break4" name="break_text4" style="visibility:hidden" style="display:none"  value="${kneeexam.break_text4}" /></td>
+ <td width="250"><input type="checkbox" id="otheraddress" name="otheraddress" value="Other" onclick="visible(this.value)" <c:if test="${kneeexam.otheraddress=='Other'}"><c:out value="Checked"/></c:if>>Other<input type="text" class="input_txtbx1" id="break4" name="break_text4"  style="display:none"  value="${kneeexam.break_text4}" /></td>
  </tr>
  </tr>
  <br/>
