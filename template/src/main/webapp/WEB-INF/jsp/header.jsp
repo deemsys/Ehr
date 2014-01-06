@@ -87,7 +87,7 @@
 	<div id="main">
 		<div id="header">
 			<div class="logo">
-			    <a href="#"><img src="<c:url value="/resources/images/title1.png" />" alt="Company Logo" /></a> 
+			   <a href="#"><img src="<c:url value="/resources/images/title1.png" />" alt="Company Logo" /></a> 
 				<!-- <a href ="#">Electronic Healthcare Record</a> -->
 			</div>
 			<div class="top_link">
@@ -111,6 +111,9 @@
 				<div class="menu_container">
 					<div class="menu_l"></div>
 					<div class="menu_c">
+					
+					
+					
 						<!-- <AJDF:output>php</AJDF:output>
 		$obj=new Bin_Query();
 		$sql="SELECT previlages FROM admin_log_table WHERE admin_id = '".$_SESSION['admin']['id']."'";
@@ -119,7 +122,11 @@
 		$previ=explode(",",$rec);
 	<AJDF:output>/php</AJDF:output>	 Suresh-->
 						<ul class="menu">
-						
+						<c:choose>
+						<c:when test="${menu=='search'}">
+					
+					</c:when>
+					<c:otherwise>
 						<c:if test="${role==0}">
 							  <%-- <li>
 								<a href="welcome" class="<c:choose><c:when test="${menu=='dashboard'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>">
@@ -197,8 +204,22 @@
 								</a>
 							</li>
 							<li>
-								<a href="#" class="<c:choose><c:when test="${menu=='initialexam'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu13">
+
+								<a href="#" class="<c:choose><c:when test="${menu=='initial'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu13">
+
+								
+
 									<span>Initial Exam & Re Exam</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='symptom'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu23">
+									<span>Symptom</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='therapy'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu24">
+									<span>Manual Therapy Treatment</span>
 								</a>
 							</li>
 							
@@ -210,8 +231,18 @@
 								
 							</li>
 							<li>
-								<a href="#" class="<c:choose><c:when test="${menu=='initialexam'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu13">
+								<a href="#" class="<c:choose><c:when test="${menu=='initial'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu13">
 									<span>Initial Exam & Re Exam</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='symptom'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu23">
+									<span>Symptom</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='therapy'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu24">
+									<span>Manual Therapy Treatment</span>
 								</a>
 							</li>
 							
@@ -445,6 +476,18 @@
 							     </ul>
 							     </li>
 				         </ul>
+				         <ul id="ddsubmenu23" class="ddsubmenustyle">
+							      <li><a href="symptom" >Symptom</a></li>
+							      <li><a href="viewsymptom">View Symptom</a></li>
+							     </ul>
+							     </li>
+				         </ul>
+				         <ul id="ddsubmenu24" class="ddsubmenustyle">
+							      <li><a href="manual" >Manual Therapy Daily Eval And Treatment </a></li>
+							      <li><a href="viewmanualtherapy">View Manual Therapy Daily Eval And Treatment</a></li>
+							     </ul>
+							     </li>
+				         </ul>
 						
 					</div>
 					<div class="menu_r"></div>
@@ -453,6 +496,8 @@
 			</div>
 			<div class="clear"></div>
 		</div>
+		</c:otherwise>
+		</c:choose>
 </div>
 </div>
 </body>
