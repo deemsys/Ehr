@@ -195,6 +195,7 @@ public class MainController {
 			return "staffchecklist";
 		}
 		else
+			model.addAttribute("menu","search");
 		return "doctorsearch";
  
 	}

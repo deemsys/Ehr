@@ -52,6 +52,7 @@ public class SymptomController
 		SymptomForm symptomform=new SymptomForm();
 		symptomform.setSymptomdetails(symptomdao.getsymptomDetails());
 		model.addAttribute("symptomform", symptomform);
+		model.addAttribute("menu","symptom");
 		return "viewsymptom";
 	}
 	@RequestMapping (value="/viewsymptomlist", method = RequestMethod.GET)
@@ -133,6 +134,7 @@ public class SymptomController
 	@RequestMapping (value="/symptom", method = RequestMethod.GET)
 	public String exam(ModelMap model)
 	{
+		model.addAttribute("menu","symptom");
 		return "symptom";
 	}
 	
@@ -142,7 +144,35 @@ public class SymptomController
 	{
 		return "wristindex";
 	}
-	
+	@RequestMapping (value="/viewwristindex", method = RequestMethod.GET)
+	public String viewwristindex(ModelMap model)	
+	{
+		WristindexForm wristindexform=new WristindexForm();
+		wristindexform.setWristindexdetails(wristdao.getwristindexDetails());
+		model.addAttribute("wristindexform", wristindexform);
+		model.addAttribute("menu","symptom");
+		return "viewwristindex";
+	}
+	@RequestMapping (value="/editwristindex", method = RequestMethod.GET)
+	public String editwristindex(@RequestParam(value="wristindexno") String wristindexno,ModelMap model)	
+	{
+		System.out.println("sym"+wristindexno);
+		WristindexForm wristindexform=new WristindexForm();
+		wristindexform.setWristindexdetails(wristdao.getwristindexDetails(wristindexno));
+		model.addAttribute("wristindexform", wristindexform);
+		return "editwristindex";
+	}
+	@RequestMapping (value="/updatewristindex", method = RequestMethod.POST)
+	public String updatewristindex(HttpServletRequest request,ModelMap model,Wristindex wristindex) throws IOException
+	{
+		
+	wristdao.updatewristindex(wristindex, wristindex.getWristindexno());
+	WristindexForm wristindexform=new WristindexForm();
+	wristindexform.setWristindexdetails(wristdao.getwristindexDetails());
+	model.addAttribute("wristindexform", wristindexform);
+	model.addAttribute("success", true);
+	return "viewwristindex";
+	}
 	@RequestMapping (value="/updatesymptom", method = RequestMethod.POST)
 	public String updatesymptom(HttpServletRequest request,ModelMap model,Symptom symptom) throws IOException
 	{
@@ -160,6 +190,9 @@ public class SymptomController
 		System.out.println("path"+symptom.getAchepath());
 	symptomdao.insertsymptomimage(symptom);
 	model.addAttribute("success", true);
+	SymptomForm symptomform=new SymptomForm();
+	symptomform.setSymptomdetails(symptomdao.getsymptomDetails());
+	model.addAttribute("symptomform", symptomform);
 		return "viewsymptom";
 	}
 	

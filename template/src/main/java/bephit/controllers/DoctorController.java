@@ -127,25 +127,25 @@ public class DoctorController {
 	@RequestMapping(value="/perry", method = RequestMethod.GET)
 	public String hip(ModelMap model) {
 	
-	
+		model.addAttribute("menu","initial");
 		 return "hipexam";
 	}
 	@RequestMapping(value="/ankle", method = RequestMethod.GET)
 	public String ankle(ModelMap model) {
 	
-	
+		model.addAttribute("menu","initial");
 		 return "footexam";
 	}
 	@RequestMapping(value="/shoulderexam", method = RequestMethod.GET)
 	public String shoulderexam(ModelMap model) {
 	
-	
+		model.addAttribute("menu","initial");
 		 return "shoulderexam";
 	}
 	
 	@RequestMapping(value="/wristexam", method = RequestMethod.GET)
 	public String wristexam(ModelMap model) {
-	
+		model.addAttribute("menu","initial");
 	
 		 return "wristandhand";
 	}
@@ -168,6 +168,7 @@ public class DoctorController {
 		wristexamform.setWristexamdetails(wristexamDAO.getwristexamallDetails());	
 	model.addAttribute("wristexamform",wristexamform);
 	//System.out.println(shoulderexamform.getShoulderexamdetails().get(0).getPname());
+	model.addAttribute("menu","initial");
 	return "viewwristexam";
 	}
 	
@@ -185,7 +186,8 @@ public class DoctorController {
 	public String editwristexam(@RequestParam("wristexamno") String wristexamno,ModelMap model,HipExam hipexam) {	
 		WristExamForm wristexamform=new WristExamForm();
 		wristexamform.setWristexamdetails(wristexamDAO.getwristexamDetails(wristexamno));
-	    model.addAttribute("wristexamform",wristexamform);			
+	    model.addAttribute("wristexamform",wristexamform);	
+	    model.addAttribute("menu","initial");
 	return "editwristexam";
 	
 	}
@@ -208,7 +210,7 @@ public class DoctorController {
 		WristExamForm wristexamform=new WristExamForm();
 		wristexamform.setWristexamdetails(wristexamDAO.getwristexamDetails(wristexamno));	
 		model.addAttribute("wristexamform",wristexamform);				
-			
+		 model.addAttribute("menu","initial");	
 	return "wristexamlist";
 	}
 	
@@ -239,6 +241,7 @@ public class DoctorController {
 		shoulderexamform.setShoulderexamdetails(shoulderexamDAO.getshoulderexamallDetails());	
 	model.addAttribute("shoulderexamform",shoulderexamform);
 	//System.out.println(shoulderexamform.getShoulderexamdetails().get(0).getPname());
+	model.addAttribute("menu","initial");
 	return "viewshoulderexam";
 	}
 	
@@ -247,6 +250,7 @@ public class DoctorController {
 	ShoulderExamForm shoulderexamform=new ShoulderExamForm();
 	shoulderexamform.setShoulderexamdetails(shoulderexamDAO.getShoulderexamDetails(shoulderexamno));
 	model.addAttribute("shoulderexamform",shoulderexamform);	
+	model.addAttribute("menu","initial");
 	return "shoulderexamlist";
 	}
 	
@@ -254,7 +258,8 @@ public class DoctorController {
 	public String editshoulderexam(@RequestParam("shoulderexamno") String shoulderexamno,ModelMap model,HipExam hipexam) {	
 	ShoulderExamForm shoulderexamform=new ShoulderExamForm();
 	shoulderexamform.setShoulderexamdetails(shoulderexamDAO.getShoulderexamDetails(shoulderexamno));	
-	model.addAttribute("shoulderexamform",shoulderexamform);		
+	model.addAttribute("shoulderexamform",shoulderexamform);
+	 model.addAttribute("menu","initial");
 	return "editshoulderexam";
 	
 	}
@@ -280,6 +285,7 @@ public class DoctorController {
 	System.out.println("yes");
 	System.out.println(hipexamform.getHipexamdetails().get(0).getPname());
 	model.addAttribute("hipexamform",hipexamform);
+	model.addAttribute("menu","initial");
 	return "viewhipexamdetails";
 	}
 	
@@ -289,6 +295,7 @@ public class DoctorController {
 		footexamform.setFootexamdetails(footexamDAO.getfootexamDetails());		
 	System.out.println(footexamform.getFootexamdetails().get(0).getPname());
 	model.addAttribute("footexamform",footexamform);
+	model.addAttribute("menu","initial");
 	return "viewfootexam";
 	}
 	
@@ -319,13 +326,15 @@ public class DoctorController {
 	footexamform.setFootexamdetails(footexamDAO.getfootexamDetails(footexamno));		
 	System.out.println(footexamform.getFootexamdetails().get(0).getPname());
 	model.addAttribute("footexamform",footexamform);
+	 model.addAttribute("menu","initial");
 	return "editfootexam";
 	}
 	@RequestMapping(value="/footexamlist", method = RequestMethod.GET)
 	public String viewfootexam(@RequestParam("footexamno") String footexamno,ModelMap model,HipExam hipexam) {	
 	FootExamForm footexamform=new FootExamForm();
 	footexamform.setFootexamdetails(footexamDAO.getfootexamDetails(footexamno));
-	model.addAttribute("footexamform",footexamform);	
+	model.addAttribute("footexamform",footexamform);
+	 model.addAttribute("menu","initial");
 	return "footexamlist";
 	}
 	@RequestMapping(value="/updatefootexam", method = RequestMethod.POST)
@@ -349,6 +358,7 @@ public class DoctorController {
 	hipexamform.setHipexamdetails(hipexamDAO.gethipexamDetails(hipexamno));
 	System.out.println("yes");	
 	model.addAttribute("hipexamform",hipexamform);
+	 model.addAttribute("menu","initial");
 	return "viewhipexam";
 	}
 	
@@ -360,6 +370,7 @@ public class DoctorController {
 	System.out.println("yes");
 	System.out.println(hipexamform.getHipexamdetails().get(0).getPname());
 	model.addAttribute("hipexamform",hipexamform);
+	 model.addAttribute("menu","initial");
 	return "hipreexam";
 	}
 	
@@ -370,7 +381,7 @@ public class DoctorController {
 	@RequestMapping(value="/lumbopelvicexam", method = RequestMethod.GET)
 	public String searchform(HttpSession session, ModelMap model) {
 		
-		
+		model.addAttribute("menu","initial");
 		return "lumbopelvicexam";
  
 	}
@@ -435,7 +446,7 @@ public class DoctorController {
 		  lumbopelvicexamForm.setLumbopelvicexam(lumboDAO.getLumbopelvicexam());
 		  
 		  	model.addAttribute("lumbopelvicexamForm", lumbopelvicexamForm);
-		  
+		  	model.addAttribute("menu","initial");
 		return "viewlumbopelvicexam";
 	}
 	@RequestMapping(value="/lumbopelvicexamlist", method=RequestMethod.GET)
@@ -446,6 +457,7 @@ public class DoctorController {
 		lumbopelvicexamForm.setLumbopelvicexam(lumboDAO.getLumbopelvic(lumbopelvicexamid));	
 		model.addAttribute("lumbopelvicexamForm", lumbopelvicexamForm);
 		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
+		model.addAttribute("menu","initial");
 		return "lumbopelvicexamlist";
 	}
 	
@@ -456,7 +468,7 @@ public class DoctorController {
 		LumbopelvicexamForm lumbopelvicexamForm = new LumbopelvicexamForm();       
         lumbopelvicexamForm.setLumbopelvicexam(lumboDAO.getLumbopelvic(lumbopelvicexamid));
         model.addAttribute("lumbopelvicexamForm",lumbopelvicexamForm);
-		 
+        model.addAttribute("menu","initial"); 
 		return "editlumbopelvicexam";
 	}
 	
@@ -505,7 +517,7 @@ public class DoctorController {
 	}
 	@RequestMapping(value="/kneeexam", method = RequestMethod.GET)
 	public String viewingform(HttpSession session, ModelMap model) {
-		
+		model.addAttribute("menu","initial");
 		
 		return "kneeexam";
  
@@ -531,7 +543,7 @@ public class DoctorController {
 		  kneeexamForm.setKneeexam(kneeDAO.getKneeexam());
 		  
 		  	model.addAttribute("kneeexamForm", kneeexamForm);
-		  
+		  	model.addAttribute("menu","initial");
 		return "viewkneeexam";
 	}
 	@RequestMapping(value="/kneeexamlist", method=RequestMethod.GET)
@@ -542,6 +554,7 @@ public class DoctorController {
 		kneeexamForm.setKneeexam(kneeDAO.getKnee(kneeexamid));	
 		model.addAttribute("kneeexamForm", kneeexamForm);
 		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
+		 model.addAttribute("menu","initial");
 		return "kneeexamlist";
 	}
 	@RequestMapping(value="/editkneeexam", method=RequestMethod.GET)
@@ -551,7 +564,7 @@ public class DoctorController {
 		KneeexamForm kneeexamForm = new KneeexamForm();       
         kneeexamForm.setKneeexam(kneeDAO.getKnee(kneeexamid));
         model.addAttribute("kneeexamForm",kneeexamForm);
-		 
+        model.addAttribute("menu","initial");
 		return "editkneeexam";
 	}
 	
@@ -602,7 +615,7 @@ public class DoctorController {
 	@RequestMapping(value="/cervicalexam", method = RequestMethod.GET)
 	public String viewingcervicalexam(HttpSession session, ModelMap model) {
 		
-		
+		model.addAttribute("menu","initial");
 		return "cervicalexam";
  
 	}
@@ -628,7 +641,7 @@ public class DoctorController {
 		  cervicalexamForm.setCervicalexam(cervicalDAO.getCervicalexam());
 		  
 		  	model.addAttribute("cervicalexamForm", cervicalexamForm);
-		  
+		  	model.addAttribute("menu","initial");
 		return "viewcervicalexam";
 	}
 	
@@ -640,6 +653,7 @@ public class DoctorController {
 		cervicalexamForm.setCervicalexam(cervicalDAO.getCervical(cervicalexamid));	
 		model.addAttribute("cervicalexamForm", cervicalexamForm);
 		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
+		model.addAttribute("menu","initial");
 		return "cervicalexamlist";
 	}
 	@RequestMapping(value="/editcervicalexam", method=RequestMethod.GET)
@@ -649,7 +663,7 @@ public class DoctorController {
 		CervicalexamForm cervicalexamForm = new CervicalexamForm();       
         cervicalexamForm.setCervicalexam(cervicalDAO.getCervical(cervicalexamid));
         model.addAttribute("cervicalexamForm",cervicalexamForm);
-		 
+        model.addAttribute("menu","initial"); 
 		return "editcervicalexam";
 	}
 	
@@ -699,7 +713,7 @@ public class DoctorController {
 	@RequestMapping(value="/elbowexam", method = RequestMethod.GET)
 	public String viewingelbowexam(HttpSession session, ModelMap model) {
 		
-		
+		model.addAttribute("menu","initial");
 		return "elbowexam";
  
 	}
@@ -724,7 +738,7 @@ public class DoctorController {
 		  elbowexamForm.setElbowexam(elbowDAO.getElbowexam());
 		  
 		  	model.addAttribute("elbowexamForm", elbowexamForm);
-		  
+		  	model.addAttribute("menu","initial");
 		return "viewelbowexam";
 	}
 	@RequestMapping(value="/elbowexamlist", method=RequestMethod.GET)
@@ -735,6 +749,7 @@ public class DoctorController {
 		elbowexamForm.setElbowexam(elbowDAO.getElbow(elbowexamid));	
 		model.addAttribute("elbowexamForm", elbowexamForm);
 		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
+		model.addAttribute("menu","initial");
 		return "elbowexamlist";
 	}
 	@RequestMapping(value="/editelbowlist", method=RequestMethod.GET)
@@ -744,7 +759,7 @@ public class DoctorController {
 		ElbowexamForm elbowexamForm = new ElbowexamForm();       
         elbowexamForm.setElbowexam(elbowDAO.getElbow(elbowexamid));
         model.addAttribute("elbowexamForm",elbowexamForm);
-		 
+        model.addAttribute("menu","initial"); 
 		return "editelbowlist";
 	}
 	
@@ -794,7 +809,7 @@ public class DoctorController {
 	@RequestMapping(value="/thoracicexam", method = RequestMethod.GET)
 	public String viewingthoracicexam(HttpSession session, ModelMap model) {
 		
-		
+		model.addAttribute("menu","initial");
 		return "thoracicexam";
  
 	}
@@ -820,7 +835,7 @@ public class DoctorController {
 		  thoracicexamForm.setThoracicexam(thoracicDAO.getThoracicexam());
 		  
 		  	model.addAttribute("thoracicexamForm", thoracicexamForm);
-		  
+		  	model.addAttribute("menu","initial");
 		return "viewthoracicexam";
 	}
 	@RequestMapping(value="/editthoracicexam", method=RequestMethod.GET)
@@ -830,7 +845,7 @@ public class DoctorController {
 		ThoracicexamForm thoracicexamForm = new ThoracicexamForm();       
         thoracicexamForm.setThoracicexam(thoracicDAO.getThoracic(thoracicexamid));
         model.addAttribute("thoracicexamForm",thoracicexamForm);
-		 
+        model.addAttribute("menu","initial"); 
 		return "editthoracicexam";
 	}
 	@RequestMapping(value="/thoracicexamlist", method=RequestMethod.GET)
@@ -841,6 +856,7 @@ public class DoctorController {
 		thoracicexamForm.setThoracicexam(thoracicDAO.getThoracic(thoracicexamid));	
 		model.addAttribute("thoracicexamForm", thoracicexamForm);
 		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
+		model.addAttribute("menu","initial");
 		return "thoracicexamlist";
 	}
 	@RequestMapping(value="/updatethoracicexam", method=RequestMethod.POST)
