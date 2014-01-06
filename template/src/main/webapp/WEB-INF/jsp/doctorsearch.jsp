@@ -1,5 +1,6 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
 <title>Registration Page</title> 
@@ -42,7 +43,7 @@
       </tr> 
       <tr>
         <td valign="top" align="left">
-        	<div id="login_div">
+        	<div id="search_div">
 	            <div class="headings altheading">
 	             <h2>Checking for a Patient<h2> 
 	            </div>

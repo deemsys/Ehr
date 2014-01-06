@@ -12,7 +12,7 @@
         <tr>
         <td valign="top" align="left" style="padding:5px 0 10px 0;">&nbsp;
             <div id="success_statusbar" class="status success">
-            <p class="closestatus"><a title="Close" href="viewhipexamdetails">x</a></p>
+            <p class="closestatus"><a title="Close" href="viewhipexam">x</a></p>
             <p><img alt="Success" src="resources/images/icons/icon_success.png"><span>Success!</span>.</p>
           </div>
       </tr>
@@ -44,7 +44,7 @@
 											<td valign="top" align="left" width="10%">${hipexamdetails.date}</td>
 											
 											<td valign="top" align="left" width="10%">
-											<a href="#" title="" ><img src="resources/images/icons/icon_edit.png" alt="Edit" /></a><a href="<c:out value="hipreexam?hipexamno=${hipexamdetails.hipexamno}"/>" style="padding-right:10px; ">Edit</a>
+											<a href="#" title="" ><img src="resources/images/icons/icon_edit.png" alt="Edit" /></a><a href="<c:out value="hipreexam?hipexamno=${hipexamdetails.hipexamno}"/>" style="padding-right:10px; ">Reexam</a>
 											<a href="#" title=""><img src="resources/images/icons/icon_delete.png" alt="Delete" /></a><a href=" <c:out value="deletehipexam?hipexamno=${hipexamdetails.hipexamno}"/>" onclick="return confirmation() ">Remove</a>
 											</td>
 										

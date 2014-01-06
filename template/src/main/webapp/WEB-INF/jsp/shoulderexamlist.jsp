@@ -211,7 +211,7 @@ $(function() {
  </b></td>
          
          <td align="left"><c:out value="${shoulderexamdetails.dysfunction}"></c:out></td>
-         <td width="820"></td>
+         <td width="870"></td>
           </tr>  </table>       
 <br>
 <table>
@@ -248,7 +248,7 @@ $(function() {
          <td> <b style="font-size:14px">ORTHOTPEDIC TESTING:    </b></td><td width="25"></td>
          <td><c:out value="${shoulderexamdetails.orthotpedic}"/> 
         
-         </td> <td width="188"></td> </tr></table>
+         </td> <td width="280"></td> </tr></table>
          </br>
          <table >
          <tr>
@@ -316,7 +316,7 @@ $(function() {
            </table>
            </br>
            <table cellspacing="0" cellpadding="0"s>
-           <tr class="row2"><td width="350"><b style="font-size:14px">ASSESSMENT / ADDITIONAL COMMENTS:  </b></td>
+           <tr><td width="350"><b style="font-size:14px">ASSESSMENT / ADDITIONAL COMMENTS:  </b></td>
            <td>&nbsp;&nbsp;&nbsp;<c:out value="${shoulderexamdetails.comments}"/></td><td width="850"></td></tr>
            <tr height="10"></tr>
            <tr height="10"></tr>
@@ -326,8 +326,8 @@ $(function() {
                </td></tr>      
                 </table>
                 </br>
-                <table width="100%">
-           <tr><td width="420"><b style="font-size:14px">DIAGNOSIS:	</b></td><td width="250">1)&nbsp;&nbsp;&nbsp;<c:out value="${shoulderexamdetails.diagnosis1}" /></td><td width="250">2)&nbsp;&nbsp;&nbsp;<c:out value="${shoulderexamdetails.diagnosis2}" /></td><td width="250">3)&nbsp;&nbsp;&nbsp;<c:out value="${shoulderexamdetails.diagnosis3}"/></td><td width="250">4)&nbsp;&nbsp;&nbsp;<c:out value="${shoulderexamdetails.diagnosis4}"/></td></tr>
+                <table width="100%" cellspacing="0" cellpadding="0">
+           <tr class="row2"><td width="420"><b style="font-size:14px">DIAGNOSIS:	</b></td><td width="250">1)&nbsp;&nbsp;&nbsp;<c:out value="${shoulderexamdetails.diagnosis1}" /></td><td width="250">2)&nbsp;&nbsp;&nbsp;<c:out value="${shoulderexamdetails.diagnosis2}" /></td><td width="250">3)&nbsp;&nbsp;&nbsp;<c:out value="${shoulderexamdetails.diagnosis3}"/></td><td width="250">4)&nbsp;&nbsp;&nbsp;<c:out value="${shoulderexamdetails.diagnosis4}"/></td></tr>
            <tr height="10"></tr>
            <tr><td></td><td width="250">5)&nbsp;&nbsp;&nbsp;<c:out value="${shoulderexamdetails.diagnosis5}" /></td></tr>
            </table>

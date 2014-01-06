@@ -4,6 +4,49 @@
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
+ <script src="resources/js/jquery.min.js"></script> 
+ <script src="resources/js/jquery-ui.js"></script>
+ <script src="resources/js/jquey-1.9.1.js"></script>
+<script>
+$(function() {
+    //$( "#draggable" ).draggable({ revert: "not valid" });
+    
+    $(window).load(function(){    
+    $('input:checkbox[name=other]').each(function() 
+{    
+    if($(this).is(':checked'))
+    var other=$(this).val();     
+       if(other=="other")
+    {
+    document.getElementById("otherdefict").style.display="block";
+    }
+    else
+    {document.getElementById("otherdefict").style.display="none";
+    }  
+});
+   
+    $('input:checkbox[name=others]').each(function() 
+{    
+    if($(this).is(':checked'))
+    var others=$(this).val();     
+       if(others=="other")
+    {
+    document.getElementById("othervalue").style.display="block";
+    }
+    else
+    {document.getElementById("othervalue").style.display="none";
+    }  
+});   
+   
+
+  
+
+    
+   
+    });
+    });
+
+</script>
 <script type="text/javascript">
 function softtissuevalidate()
 {
@@ -189,7 +232,7 @@ $(function() {
 <td valign="top" align="left">
  <div>
 	            <div class="headings altheading">
-	            <center> <h2>ANKLE / FOOT 	EXAM</h2></center><br/>
+	            <center> <h2>ANKLE / FOOT 	REEXAM</h2></center><br/>
 	            
 	            </div>
 	           
@@ -199,7 +242,7 @@ $(function() {
           <table cellpadding="0" cellspacing="0" border="0" >
            <tr><td width="130">Patient Name:</td>
            <td><input type="hidden" value="${footexamdetails.footexamno}" name="footexamno"><input type="text" value="${footexamdetails.pname}" name="pname"></td><td width="690"></td>
-           <td >Date:&nbsp;</td> <td><input type="text" name="date" id="datepicker" value="${footexamdetails.date}"></td>
+           <td width="120">Date:&nbsp;</td> <td><input type="text" name="date" id="datepicker" value="${footexamdetails.date}"></td>
            </tr>
             </table>
             </br>
@@ -310,7 +353,7 @@ $(function() {
  <div>
 	            <div class="headings altheading">
 	            <center> <h2>
-	            HIP	EXAM</h2></center><br/>
+	            ANKLE / FOOT 	REEXAM</h2></center><br/>
 	             
 	            </div>
           <div class="contentbox">

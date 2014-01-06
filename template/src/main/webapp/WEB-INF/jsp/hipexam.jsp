@@ -173,7 +173,7 @@ $(function() {
  <div>
 	            <div class="headings altheading">
 	            <center> <h2>
-	            HIP	EXAM</h2></center><br/>
+	            HIP	INITIAL EXAM</h2></center><br/>
 	            
 	            </div>
 	           
@@ -215,7 +215,7 @@ $(function() {
          <td width="180"></td>
           </tr>  </table>       
 <br>
-<table id="softtissue" style="display: none">	
+<table id="softtissue" ">	
 	<tr><td  width="300">Leg Length Discrepancy:  Short Leg-  </td>
 
 	<td ><input type="checkbox" id="leftvalue" onclick="shortlegvalidate(this.value)" name="shortlegleft" value="left">&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -310,7 +310,7 @@ $(function() {
  <div>
 	            <div class="headings altheading">
 	            <center> <h2>
-	            HIP	EXAM</h2></center><br/>
+	            HIP	INITIAL EXAM</h2></center><br/>
 	             
 	            </div>
           <div class="contentbox">

@@ -210,7 +210,7 @@ $(function() {
  </b></td>
          
          <td align="left"><c:out value="${hipexamdetails.dysfunction}"></c:out></td>
-         <td width="720"></td>
+         <td width="730"></td>
           </tr>  </table>       
 <br>
 <table id="softtissue" >	
@@ -257,7 +257,7 @@ $(function() {
          <td> <b style="font-size:14px">ORTHOTPEDIC TESTING:    </b></td><td width="35"></td>
          <td><c:out value="${hipexamdetails.orthotpedic}"/> 
         
-         </td> <td width="280"></td> </tr></table>
+         </td> <td width="390"></td> </tr></table>
          </br>
          <table >
          <tr>
@@ -267,7 +267,7 @@ $(function() {
          <td width="160" valign="top"><b>Normal </b></td><td ><b>Actual</br></br>
           Left</td><td></br></br><b>Right</b>
          </td>
-         <td width=""></td> <td></td><td></td> <td><b>Left</td><td>Right</b></td>
+         <td width=""></td> <td></td><td></td> <td><b>Left</td><td><b>Right</b></td>
                
          
          </tr>
@@ -324,7 +324,7 @@ $(function() {
            </table>
            <br>
            <table cellpadding="0" cellspacing="0" >
-           <tr class="row2"><td width="350"><b style="font-size:14px">ASSESSMENT / ADDITIONAL COMMENTS:  </b></td>
+           <tr ><td width="350"><b style="font-size:14px">ASSESSMENT / ADDITIONAL COMMENTS:  </b></td>
            <td><c:out value="${hipexamdetails.comments}"/></td><td width="850"></td></tr>
            <tr height="20"></tr>
            <tr><td>Patient's Status for being a candidate for conservative care:</td>
@@ -333,8 +333,8 @@ $(function() {
                </td></tr>      
                 </table>
                 </br>
-                <table width="100%">
-           <tr><td width="400"><b style="font-size:14px">DIAGNOSIS:	</b></td><td width="250">1)&nbsp;&nbsp;&nbsp;<c:out value="${hipexamdetails.diagnosis1}" /></td><td width="250">2)&nbsp;&nbsp;&nbsp;<c:out value="${hipexamdetails.diagnosis2}" /></td><td width="250">3)&nbsp;&nbsp;&nbsp;<c:out value="${hipexamdetails.diagnosis3}"/></td><td width="250">4)&nbsp;&nbsp;&nbsp;<c:out value="${hipexamdetails.diagnosis4}"/></td></tr>
+                <table width="100%" cellspacing="0" cellpadding="0">
+           <tr class="row2" ><td width="400"><b style="font-size:14px">DIAGNOSIS:	</b></td><td width="250">1)&nbsp;&nbsp;&nbsp;<c:out value="${hipexamdetails.diagnosis1}" /></td><td width="250">2)&nbsp;&nbsp;&nbsp;<c:out value="${hipexamdetails.diagnosis2}" /></td><td width="250">3)&nbsp;&nbsp;&nbsp;<c:out value="${hipexamdetails.diagnosis3}"/></td><td width="250">4)&nbsp;&nbsp;&nbsp;<c:out value="${hipexamdetails.diagnosis4}"/></td></tr>
            <tr height="10"></tr>
            <tr><td></td><td width="250">5)&nbsp;&nbsp;&nbsp;<c:out value="${hipexamdetails.diagnosis5}" /></td></tr>
            </table>

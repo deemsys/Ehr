@@ -1,25 +1,87 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+ <script src="js/jquery-1.4.4.js"></script>
+    <script src="js/jquery.ui.core.js"></script>
+    <script src="js/jquery.ui.widget.js"></script>
+    <script src="js/jquery.ui.mouse.js"></script>
+    <script src="js/jquery.ui.draggable.js"></script>
+    <script src="js/jquery.ui.droppable.js"></script>
+ <script src="resources/js/jquery.min.js"></script> 
+ <script src="resources/js/jquery-ui.js"></script>
+ <script src="resources/js/jquey-1.9.1.js"></script>
 
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
+
+<script>
+$(function() {
+    //$( "#draggable" ).draggable({ revert: "not valid" });
+    
+    $(window).load(function(){
+    var leftvalue=$('#shortlegleft').val();
+    var rightvalue=$('#shortlegright').val();
+    $('input:checkbox[name=other]').each(function() 
+{    
+    if($(this).is(':checked'))
+    var other=$(this).val();     
+       if(other=="other")
+    {
+    document.getElementById("otherdefict").style.display="block";
+    }
+    else
+    {document.getElementById("otherdefict").style.display="none";
+    }  
+});
+   
+    $('input:checkbox[name=shortlegleft]').each(function() 
+{    
+    if($(this).is(':checked'))
+    var left=$(this).val();     
+       if(left=="left")
+    {
+    document.getElementById("shortlegleft").style.display="block";
+    }
+    else
+    {document.getElementById("shortlegleft").style.display="none";
+    }  
+});
+  
+   $('input:checkbox[name=shortlegright]').each(function() 
+{    
+    if($(this).is(':checked'))
+    var right=$(this).val();     
+       if(right=="right")
+    {
+    document.getElementById("shortlegright").style.display="block";
+    }
+    else
+    {document.getElementById("shortlegright").style.display="none";
+    }  
+});
+  
+    
+    if(leftvalue=="other")
+    {
+    document.getElementById("legother").style.display="block";
+    }
+    else
+    {document.getElementById("legother").style.display="none";
+    }
+    if(rightvalue=="other")
+    {
+    document.getElementById("legother1").style.display="block";
+    }
+    else
+    {document.getElementById("legother1").style.display="none";
+    }
+    
+    });
+    });
+
+</script>
 <script type="text/javascript">
-function softtissuevalidate()
-{
-if(document.getElementById('softtissuess').checked)
-{
-document.getElementById('softtissue').style.display="none";
-document.getElementById('softtissue1').style.display="none";
-document.getElementById('softtissue2').style.display="none";
- }
- else if(document.getElementById('softtissues').checked)
-{
-document.getElementById('softtissue').style.display="block";
-document.getElementById('softtissue1').style.display="block";
-document.getElementById('softtissue2').style.display="block";
- } 
-}
+
 
 function neurologicalvalidate()
 {
@@ -49,10 +111,19 @@ function Checksymptom1(val){
  else  
    element.style.display='none';
 } 
+
 function visible(val)
 {
- var element=document.getElementById('otherdefict');
+if(document.getElementById('other').checked)
+{
+var element=document.getElementById('otherdefict');
  element.style.display='block';
+ }
+ else
+ {
+ var element=document.getElementById('otherdefict');
+ element.style.display='none';
+ }
 }
 function shortlegvalidate(val)
 {
@@ -60,11 +131,13 @@ if(document.getElementById('leftvalue').checked)
 {
 var element=document.getElementById('shortlegleft');
  element.style.display='block';
+ 
  }
  else
  {
  var element=document.getElementById('shortlegleft');
  element.style.display='none';
+  
  }
 }
 function shortlegvalidate1(val)
@@ -166,7 +239,7 @@ $(function() {
  <div>
 	            <div class="headings altheading">
 	            <center> <h2>
-	            HIP	EXAM</h2></center><br/>
+	            HIP	REEXAM</h2></center><br/>
 	            
 	            </div>
 	           
@@ -226,31 +299,31 @@ $(function() {
 <table id="softtissue" >	
 	<tr><td  width="300">Leg Length Discrepancy:  Short Leg-  </td>
 
-	<td ><input type="checkbox" id="leftvalue"  <c:if test="${hipexamdetails.shortlegleft=='left'}"></c:if> <c:out value="checked=checked"></c:out> onclick="shortlegvalidate(this.value)" name="shortlegleft" value="left">&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<td><select style="display:none" id="shortlegleft" name="shortlegleftvalue" onchange='Checksymptom(this.value)'>	
-	<option  <c:if test="${hipexamdetails.shortlegleft=='1/8'}"></c:if> <c:out value="selected"></c:out>>1/8	</option>
-	<option  <c:if test="${hipexamdetails.shortlegleft=='1/4'}"></c:if> <c:out value="selected"></c:out>>1/4	</option>
-	<option  <c:if test="${hipexamdetails.shortlegleft=='3/8'}"></c:if> <c:out value="selected"></c:out>>3/8	</option>
-	<option  <c:if test="${hipexamdetails.shortlegleft=='1/2'}"></c:if> <c:out value="selected"></c:out>>1/2</option>
-	<option  <c:if test="${hipexamdetails.shortlegleft=='5/8'}"></c:if> <c:out value="selected"></c:out>>5/8	</option>
-	<option  <c:if test="${hipexamdetails.shortlegleft=='3/4'}"></c:if> <c:out value="selected"></c:out>>	3/4</option>
-	<option  <c:if test="${hipexamdetails.shortlegleft=='7/8'}"></c:if> <c:out value="selected"></c:out>>7/8</option>
-	<option  <c:if test="${hipexamdetails.shortlegleft=='1'}"></c:if> <c:out value="selected"></c:out>>1</option>
-	<option  <c:if test="${hipexamdetails.shortlegleft=='other'}"></c:if> <c:out value="selected"></c:out>>other</option>
+	<td ><input type="checkbox" id="leftvalue"  <c:if test="${hipexamdetails.shortlegleft=='left'}"> <c:out value="checked=checked"></c:out></c:if> onclick="shortlegvalidate(this.value)" name="shortlegleft" value="left">&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<td><select  id="shortlegleft" style="display: none"name="shortlegleftvalue" onchange='Checksymptom(this.value)'>	
+	<option value="1/8"  <c:if test="${hipexamdetails.shortlegleftvalue=='1/8'}"> <c:out value="selected"></c:out></c:if>>1/8</option>
+	<option  value="1/4"<c:if test="${hipexamdetails.shortlegleftvalue=='1/4'}"><c:out value="selected"></c:out></c:if>>1/4</option>
+	<option  value="3/8"<c:if test="${hipexamdetails.shortlegleftvalue=='3/8'}"> <c:out value="selected"></c:out></c:if>>3/8</option>
+	<option  value="1/2"<c:if test="${hipexamdetails.shortlegleftvalue=='1/2'}"> <c:out value="selected"></c:out></c:if>>1/2</option>
+	<option  value="5/8"<c:if test="${hipexamdetails.shortlegleftvalue=='5/8'}"> <c:out value="selected"></c:out></c:if>>5/8</option>
+	<option  value="3/4"<c:if test="${hipexamdetails.shortlegleftvalue=='3/4'}"> <c:out value="selected"></c:out></c:if>>3/4</option>
+	<option  value="7/8"<c:if test="${hipexamdetails.shortlegleftvalue=='7/8'}"> <c:out value="selected"></c:out></c:if>>7/8</option>
+	<option  value="1"<c:if test="${hipexamdetails.shortlegleftvalue=='1'}"> <c:out value="selected"></c:out></c:if>>1</option>
+	<option  value="other"<c:if test="${hipexamdetails.shortlegleftvalue=='other'}"><c:out value="selected"></c:out></c:if>>other</option>
 	</select></td><td align="right"><input type="text" size="9" value="${hipexamdetails.shortlegleftother}" name="shortlegleftother" id="legother" style="display: none"  ></td>
 	<td width="112"></td>
 	<td>
 	<input type="checkbox" id="shortlegcheck" name="shortlegright" onclick= "shortlegvalidate1(this.value)" value="right"  <c:if test="${hipexamdetails.shortlegright=='right'}"></c:if> <c:out value="checked=checked"></c:out>>&nbsp;&nbsp;Right &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-	<td><select style="display:none" id="shortlegright" name="shortlegrightvalue" onchange='Checksymptom1(this.value)'>	
-	<option  <c:if test="${hipexamdetails.shortlegrightvalue=='1/8'}"></c:if> <c:out value="selected"></c:out>>1/8	</option>
-	<option <c:if test="${hipexamdetails.shortlegrightvalue=='1/4'}"></c:if> <c:out value="selected"></c:out>>1/4	</option>
-	<option <c:if test="${hipexamdetails.shortlegrightvalue=='3/8'}"></c:if> <c:out value="selected"></c:out>>3/8	</option>
-	<option <c:if test="${hipexamdetails.shortlegrightvalue=='1/2'}"></c:if> <c:out value="selected"></c:out>>1/2</option>
-	<option <c:if test="${hipexamdetails.shortlegrightvalue=='5/8'}"></c:if> <c:out value="selected"></c:out>>5/8	</option>
-	<option <c:if test="${hipexamdetails.shortlegrightvalue=='3/4'}"></c:if> <c:out value="selected"></c:out>>	3/4</option>
-	<option <c:if test="${hipexamdetails.shortlegrightvalue=='7/8'}"></c:if> <c:out value="selected"></c:out>>7/8</option>
-	<option <c:if test="${hipexamdetails.shortlegrightvalue=='1'}"></c:if> <c:out value="selected"></c:out>>1</option>
-	<option <c:if test="${hipexamdetails.shortlegrightvalue=='other'}"></c:if> <c:out value="selected"></c:out>>other</option>
+	<td><select  id="shortlegright" style="display: none"  name="shortlegrightvalue" onchange='Checksymptom1(this.value)'>	
+	<option  <c:if test="${hipexamdetails.shortlegrightvalue=='1/8'}"> <c:out value="selected"></c:out></c:if>> 1/8	</option>
+	<option <c:if test="${hipexamdetails.shortlegrightvalue=='1/4'}"> <c:out value="selected"></c:out></c:if>> 1/4	</option>
+	<option <c:if test="${hipexamdetails.shortlegrightvalue=='3/8'}"> <c:out value="selected"></c:out></c:if>> 3/8	</option>
+	<option <c:if test="${hipexamdetails.shortlegrightvalue=='1/2'}"> <c:out value="selected"></c:out></c:if>> 1/2</option>
+	<option <c:if test="${hipexamdetails.shortlegrightvalue=='5/8'}"><c:out value="selected"></c:out></c:if>> 5/8	</option>
+	<option <c:if test="${hipexamdetails.shortlegrightvalue=='3/4'}"> <c:out value="selected"></c:out></c:if>> 3/4</option>
+	<option <c:if test="${hipexamdetails.shortlegrightvalue=='7/8'}"> <c:out value="selected"></c:out></c:if>> 7/8</option>
+	<option <c:if test="${hipexamdetails.shortlegrightvalue=='1'}"><c:out value="selected"></c:out></c:if>> 1</option>
+	<option <c:if test="${hipexamdetails.shortlegrightvalue=='other'}"> <c:out value="selected"></c:out></c:if>>other</option>
 	</select></td>&nbsp;<td><input type="text" id="legother1" value="${hipexamdetails.shortlegrightother}"size="9" name="shortlegrightother" style="display: none" >
 	
 	</td>
@@ -318,7 +391,7 @@ $(function() {
  <div>
 	            <div class="headings altheading">
 	            <center> <h2>
-	            HIP	EXAM</h2></center><br/>
+	            HIP	REEXAM</h2></center><br/>
 	             
 	            </div>
           <div class="contentbox">
@@ -346,7 +419,7 @@ $(function() {
            </table>
            </br>
            <table width="100%">
-           <tr><td width="350"><b style="font-size:14px">FUNCTIONAL DEFICIT:	</b></td><td width="100"><input type="checkbox"  <c:if test="${hipexamdetails.walking=='walking'}"> <c:out value="checked=checked"></c:out></c:if> name="walking" value="walking">Walking</td><td width="110"><input type="checkbox" name="standing"  <c:if test="${hipexamdetails.standing=='standing'}"> <c:out value="checked=checked"></c:out></c:if> value="standing"> Standing</td><td width="70"><input type="checkbox" name="stairs"  <c:if test="${hipexamdetails.stairs=='stairs'}"> <c:out value="checked=checked"></c:out></c:if> value="stairs">Stairs</td><td><input type="checkbox" name="other"  <c:if test="${hipexamdetails.other=='other'}"> <c:out value="checked=checked"></c:out></c:if> value="other">Other</td><td><input type="text" name="otherdefict" value="${hipexamdetails.otherdefict}" id="otherdefict" style="display:none "></td><td width="300"></td></tr>
+           <tr><td width="350"><b style="font-size:14px">FUNCTIONAL DEFICIT:	</b></td><td width="100"><input type="checkbox"  <c:if test="${hipexamdetails.walking=='walking'}"> <c:out value="checked=checked"></c:out></c:if> name="walking" value="walking">Walking</td><td width="110"><input type="checkbox" name="standing"  <c:if test="${hipexamdetails.standing=='standing'}"> <c:out value="checked=checked"></c:out></c:if> value="standing"> Standing</td><td width="70"><input type="checkbox" name="stairs"  <c:if test="${hipexamdetails.stairs=='stairs'}"> <c:out value="checked=checked" ></c:out></c:if> value="stairs">Stairs</td><td><input type="checkbox" name="other" id="other" <c:if test="${hipexamdetails.other=='other'}"> <c:out value="checked=checked"></c:out></c:if> value="other"   onclick="visible(this.value)">Other</td><td><input type="text" name="otherdefict" value="${hipexamdetails.otherdefict}" id="otherdefict" style="display:none "></td><td width="300"></td></tr>
            
            </table>
            <table>
@@ -372,7 +445,7 @@ $(function() {
            </br>
            <table><tr><td width="95"></td><td width="160"><input type="checkbox"  <c:if test="${hipexamdetails.spinaldecompression=='Spinal Decompression'}"> <c:out value="checked=checked"></c:out></c:if> name="spinaldecompression" value="Spinal Decompression">Spinal Decompression</td><td width="100"><input type="checkbox" name="chiropractic"  <c:if test="${hipexamdetails.chiropractic=='Chiropractic'}"> <c:out value="checked=checked"></c:out></c:if> value="Chiropractic">Chiropractic</td>
            <td width="150"><input type="checkbox" name="physicaltherapy"   <c:if test="${hipexamdetails.physicaltherapy=='Physical Therapy'}"> <c:out value="checked=checked"></c:out></c:if> value="Physical Therapy">Physical Therapy</td><td width="150"><input type="checkbox"  <c:if test="${hipexamdetails.bracing=='Orthotics/Bracing'}"> <c:out value="checked=checked"></c:out></c:if>  name="bracing" value="Orthotics/Bracing">Orthotics/Bracing</td>
-           <td width="150"><input type="checkbox" name="modalities"   <c:if test="${hipexamdetails.modalities=='Modalities'}"> <c:out value="checked=checked"></c:out></c:if> value="Modalities	">Modalities</td> <td width="150"><input type="checkbox" name="supplementation"  <c:if test="${hipexamdetails.supplementation=='Supplementation'}"> <c:out value="checked=checked"></c:out></c:if>  value="Supplementation">Supplementation	</td><td><input type="checkbox" name="hep"  <c:if test="${hipexamdetails.hep=='HEP'}"> <c:out value="checked=checked"></c:out></c:if>  value="HEP">HEP</td>
+           <td width="150"><input type="checkbox" name="modalities"   <c:if test="${hipexamdetails.modalities=='Modalities'}"> <c:out value="checked=checked"></c:out></c:if> value="Modalities">Modalities</td> <td width="150"><input type="checkbox" name="supplementation"  <c:if test="${hipexamdetails.supplementation=='Supplementation'}"> <c:out value="checked=checked"></c:out></c:if>  value="Supplementation">Supplementation	</td><td><input type="checkbox" name="hep"  <c:if test="${hipexamdetails.hep=='HEP'}"> <c:out value="checked=checked"></c:out></c:if>  value="HEP">HEP</td>
            </tr>
            <tr height="10"></tr>
            <tr><td width="95"></td><td width="160"><input type="checkbox" name="radiographic"   <c:if test="${hipexamdetails.radiographic=='Radiographic X-Ray'}"> <c:out value="checked=checked"></c:out></c:if> value="Radiographic X-Ray">Radiographic X-Ray</td><td width="100"><input type="checkbox" name="mri"   <c:if test="${hipexamdetails.mri=='MRI'}"> <c:out value="checked=checked"></c:out></c:if> value="MRI">MRI</td>

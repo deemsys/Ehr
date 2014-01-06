@@ -187,7 +187,7 @@ $(function() {
 <td valign="top" align="left">
  <div>
 	            <div class="headings altheading">
-	            <center> <h2>WRIST AND HAND </h2></center><br/>
+	            <center> <h2>WRIST AND HAND INITIAL EXAM </h2></center><br/>
 	            
 	            </div>
 	           
@@ -196,7 +196,7 @@ $(function() {
           <table cellpadding="0" cellspacing="0" border="0" >
            <tr><td width="130">Patient Name:</td>
            <td><input type="text" name="pname"></td><td width="712"></td>
-           <td >Date:&nbsp;</td> <td><input type="text" name="date" id="datepicker"></td>
+           <td width="125">Date:&nbsp;</td> <td><input type="text" name="date" id="datepicker"></td>
            </tr>
             </table>
             </br>
@@ -301,7 +301,7 @@ $(function() {
  <div>
 	            <div class="headings altheading">
 	            <center> <h2>
-	            WRIST AND HAND EXAM</h2></center><br/>
+	            WRIST AND HAND INITIAL EXAM</h2></center><br/>
 	             
 	            </div>
           <div class="contentbox">

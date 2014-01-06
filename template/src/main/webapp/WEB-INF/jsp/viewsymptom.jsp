@@ -33,7 +33,7 @@
       		<tr>
         		<td valign="top" align="left">
 			        <div class="headings altheading">
-			          <h2>View Foot Exam</h2>
+			          <h2>VIEW SYMPTOMS</h2>
 			        </div>
 			        <div class="contentbox">
 			      <!--   <form action="findPatients" method="GET">  --> 

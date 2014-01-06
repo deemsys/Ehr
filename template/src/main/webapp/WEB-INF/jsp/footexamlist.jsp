@@ -315,7 +315,7 @@ $(function() {
            </table>
            </br>
            <table  cellpadding="0" cellspacing="0">
-           <tr class="row2"><td width="328"><b style="font-size:14px">ASSESSMENT / ADDITIONAL COMMENTS:  </b></td>
+           <tr ><td width="328"><b style="font-size:14px">ASSESSMENT / ADDITIONAL COMMENTS:  </b></td>
            <td><c:out value="${footexamdetails.comments}"/></td><td width="850"></td></tr>
            <tr height="20"></tr>
            
@@ -325,8 +325,8 @@ $(function() {
                </td></tr>      
                 </table>
                 </br>
-                <table width="100%">
-           <tr><td width="400"><b style="font-size:14px">DIAGNOSIS:	</b></td><td width="250">1)&nbsp;&nbsp;&nbsp;<c:out value="${footexamdetails.diagnosis1}" /></td><td width="250">2)&nbsp;&nbsp;&nbsp;<c:out value="${footexamdetails.diagnosis2}" /></td><td width="250">3)&nbsp;&nbsp;&nbsp;<c:out value="${footexamdetails.diagnosis3}"/></td><td width="250">4)&nbsp;&nbsp;&nbsp;<c:out value="${footexamdetails.diagnosis4}"/></td></tr>
+                <table width="100%" cellspacing="0" cellpadding="0">
+           <tr class="row2"><td width="400"><b style="font-size:14px">DIAGNOSIS:	</b></td><td width="250">1)&nbsp;&nbsp;&nbsp;<c:out value="${footexamdetails.diagnosis1}" /></td><td width="250">2)&nbsp;&nbsp;&nbsp;<c:out value="${footexamdetails.diagnosis2}" /></td><td width="250">3)&nbsp;&nbsp;&nbsp;<c:out value="${footexamdetails.diagnosis3}"/></td><td width="250">4)&nbsp;&nbsp;&nbsp;<c:out value="${footexamdetails.diagnosis4}"/></td></tr>
            <tr height="10"></tr>
            <tr><td></td><td width="250">5)&nbsp;&nbsp;&nbsp;<c:out value="${footexamdetails.diagnosis5}" /></td></tr>
            </table>

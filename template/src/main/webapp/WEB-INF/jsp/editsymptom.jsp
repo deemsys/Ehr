@@ -626,7 +626,7 @@ w=0;
 <td valign="top" align="left">
  <div>
 	            <div class="headings altheading">
-	            <center> <h2>SYMPTOM DIAGRAM</h2></center><br/>
+	            <center> <h2>EDIT SYMPTOM DIAGRAM</h2></center><br/>
 	            
 	            </div>
 	           
@@ -823,7 +823,7 @@ w=0;
 <table width="100" align="right"><tr ><td  ><input  type="submit" value="Save" class="submit_btn"></td><td  ><input  type="reset" value="Cancel" class="submit_btn"></td></tr>
 </table>
 </form>
-<div id="position"></div><div id="position1"></div>
+<!-- <div id="position"></div><div id="position1"></div> -->
  
      
          	

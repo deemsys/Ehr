@@ -3,6 +3,49 @@
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
+ <script src="resources/js/jquery.min.js"></script> 
+ <script src="resources/js/jquery-ui.js"></script>
+ <script src="resources/js/jquey-1.9.1.js"></script>
+<script>
+$(function() {
+    //$( "#draggable" ).draggable({ revert: "not valid" });
+    
+    $(window).load(function(){    
+    $('input:checkbox[name=other]').each(function() 
+{    
+    if($(this).is(':checked'))
+    var other=$(this).val();     
+       if(other=="other")
+    {
+    document.getElementById("otherdefict").style.display="block";
+    }
+    else
+    {document.getElementById("otherdefict").style.display="none";
+    }  
+});
+   
+    $('input:checkbox[name=others]').each(function() 
+{    
+    if($(this).is(':checked'))
+    var others=$(this).val();     
+       if(others=="other")
+    {
+    document.getElementById("othervalue").style.display="block";
+    }
+    else
+    {document.getElementById("othervalue").style.display="none";
+    }  
+});   
+   
+
+  
+
+    
+   
+    });
+    });
+
+</script>
 <script type="text/javascript">
 	function softtissuevalidate() {
 		if (document.getElementById('softtissuess').checked) {
@@ -168,7 +211,7 @@ P#mypar {
 								<div>
 									<div class="headings altheading">
 										<center>
-											<h2>WRIST AND HAND EXAM</h2>
+											<h2>WRIST AND HAND REEXAM</h2>
 										</center>
 										<br />
 
@@ -186,7 +229,7 @@ P#mypar {
 													type="text" value="${wristexamdetails.pname}" name="pname"></td>
 												<td width="712"></td>
 												<td>Date:&nbsp;</td>
-												<td><input type="text" name="date"
+												<td width="125"><input type="text" name="date"
 													value="${wristexamdetails.date}" id="datepicker"></td>
 											</tr>
 										</table>
@@ -457,7 +500,7 @@ P#mypar {
 							<div>
 								<div class="headings altheading">
 									<center>
-										<h2>WRIST AND HAND EXAM</h2>
+										<h2>WRIST AND HAND REEXAM</h2>
 									</center>
 									<br />
 

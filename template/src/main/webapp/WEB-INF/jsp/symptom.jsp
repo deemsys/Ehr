@@ -794,7 +794,7 @@ w=0;
 <table width="100" align="right"><tr ><td  ><input  type="submit" value="Save" class="submit_btn"></td><td  ><input  type="reset" value="Cancel" class="submit_btn"></td></tr>
 </table>
 </form>
-<div id="position"></div><div id="position1"></div>
+<!-- <div id="position"></div><div id="position1"></div> -->
  
      
          	

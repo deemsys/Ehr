@@ -12,7 +12,7 @@
         <tr>
         <td valign="top" align="left" style="padding:5px 0 10px 0;">&nbsp;
             <div id="success_statusbar" class="status success">
-            <p class="closestatus"><a title="Close" href="viewwristexamdetails">x</a></p>
+            <p class="closestatus"><a title="Close" href="viewwristindex">x</a></p>
             <p><img alt="Success" src="resources/images/icons/icon_success.png"><span>Success!</span>.</p>
           </div>
       </tr>
@@ -21,11 +21,11 @@
       		<tr>
         		<td valign="top" align="left">
 			        <div class="headings altheading">
-			          <h2>VIEW WRIST EXAMS</h2>
+			          <h2>VIEW FOOT EXAMS</h2>
 			        </div>
 			        <div class="contentbox">
 			      <!--   <form action="findPatients" method="GET">  --> 
-			      <form action="" method="POST"> 
+			      <form action="physicalexam" method="POST"> 
 						<table cellpadding="0" cellspacing="0" border="0" width="100%">
 				     <tr class="title">
 								
@@ -35,24 +35,23 @@
 							<td valign="top" align="left" width="10%">Action</td>
           			</tr>
 							<!-- getting addAttibute value -->
-							
-						<c:if test="${fn:length(wristexamform.wristexamdetails) gt 0}">
-        				 <c:forEach items="${wristexamform.wristexamdetails}" var="wristexamdetails" varStatus="status">
+						<c:if test="${fn:length(wristindexform.wristindexdetails) gt 0}">
+        				 <c:forEach items="${wristindexform.wristindexdetails}" var="wristindexdetails" varStatus="status">
         				       				<tr class="row1">
-        				       				<td valign="top" align="left" width="10%">${wristexamdetails.wristexamno}</td>
-								            <td valign="top" align="left"  width="10%"><a href="wristexamlist?wristexamno=${wristexamdetails.wristexamno}">${wristexamdetails.pname}</a></td>
+        				       				<td valign="top" align="left" width="10%">${wristindexdetails.wristindexno}</td>
+								            <td valign="top" align="left"  width="10%"><a href="wristindexlist?wristindexno=${wristindexdetails.wristindexno}">${wristindexdetails.name}</a></td>
 											
-											<td valign="top" align="left" width="10%">${wristexamdetails.date}</td>
+											<td valign="top" align="left" width="10%">${wristindexdetails.date}</td>
 											
 											<td valign="top" align="left" width="10%">
-											<a href="#" title="" ><img src="resources/images/icons/icon_edit.png" alt="Edit" /></a><a href="<c:out value="editwristexam?wristexamno=${wristexamdetails.wristexamno}"/>" style="padding-right:10px; ">Reexam</a>
-											<a href="#" title=""><img src="resources/images/icons/icon_delete.png" alt="Delete" /></a><a href=" <c:out value="deletewristexam?wristexamno=${wristexamdetails.wristexamno}"/>" onclick="return confirmation() ">Remove</a>
+											<a href="#" title="" ><img src="resources/images/icons/icon_edit.png" alt="Edit" /></a><a href="<c:out value="editwristindex?wristindexno=${wristindexdetails.wristindexno}"/>" style="padding-right:10px; ">Edit</a>
+											<a href="#" title=""><img src="resources/images/icons/icon_delete.png" alt="Delete" /></a><a href=" <c:out value="deletewristindex?wristindexno=${wristindexdetails.wristindexno}"/>" onclick="return confirmation() ">Remove</a>
 											</td>
 										
 								</tr>
 							    	</c:forEach>
 							    </c:if>	
-							    <c:if test="${fn:length(wristexamform.wristexamdetails) == 0}">	
+							    <c:if test="${fn:length(wristindexform.wristindexdetails) == 0}">	
 							    	<tr class="row1">
 							    	<td colspan="7" width="100%"><center><b>No Participants Found!!!</b></center></td>
 							    	</tr>
