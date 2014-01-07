@@ -286,7 +286,7 @@ $(function() {
            <td><input type="radio" id="recreation" class="recreation" <c:if test="${wristindexdetails.recreation=='5'}"> <c:out value="checked"></c:out></c:if> name="recreation" value="5">&nbsp;&nbsp;I am unable to do any recreation/sports activities because of my symptoms in my wrist/hand</td>
            </tr>
            </table>
-           <P>Please mark on the line below the pain you have had in the past 24 hours.USe the line as a scale to mark the level of your pain from no pain to the worst</P>
+           <P>Please mark on the line below the pain you have had in the past 24 hours.Use the line as a scale to mark the level of your pain from no pain to the worst</P>
            <table><tr><td>No pain at all</td>
            <td><label for="amount"><b>Pain Scale:</b></label>
 	 <input type="text" id="amount" style="border:0; color:#f6931f; font-weight:bold;" name="painscale" value="${wristindexdetails.painscale}" />&nbsp;&nbsp;&nbsp;

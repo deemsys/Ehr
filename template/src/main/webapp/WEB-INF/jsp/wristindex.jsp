@@ -178,7 +178,7 @@ $(function() {
           
             </table>
             </br>
-            <p><b>Please read:</b>This questionairre has been designed to give the Physical Therapist information as to how your wrist/hand pain has affected your ability to manage everyday life.</p>
+            <p>This questionairre has been designed to give the doctor information as to how your neck pain has affected your ability to manage in everyday life.Please answer every section and mark in each section only the ONE box which applies to you.We realize you may consider that two of the statements in any one section relate to you,but please just mark the box which most closely describes your problem.</p>
            <table>
            <tr ><td width="300"><b>Section 1-Pain intensity</b></td><td width="300"><b>Section 6-Work</b></td></tr>
            <tr><td><input type="radio" class="painintensity" id="painintensity" name="painintensity" value="0">&nbsp;&nbsp;I have no pain in my wrist/hand</td>
@@ -283,7 +283,7 @@ $(function() {
            <td><input type="radio" id="recreation" class="recreation" name="recreation" value="5">&nbsp;&nbsp;I am unable to do any recreation/sports activities because of my symptoms in my wrist/hand</td>
            </tr>
            </table>
-           <P>Please mark on the line below the pain you have had in the past 24 hours.USe the line as a scale to mark the level of your pain from no pain to the worst</P>
+           <P>Please mark on the line below the pain you have had in the past 24 hours.Use the line as a scale to mark the level of your pain from no pain to the worst</P>
            <table><tr><td>No pain at all</td>
            <td><label for="amount"><b>Pain Scale:</b></label>
 	 <input type="text" id="amount" style="border:0; color:#f6931f; font-weight:bold;" name="painscale" />&nbsp;&nbsp;&nbsp;

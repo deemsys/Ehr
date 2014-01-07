@@ -223,6 +223,12 @@
 								</a>
 							</li>
 							
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='wristindex'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu25">
+									<span>Wrist/Hand Disability Index</span>
+								</a>
+							</li>
+							
 </c:when>
   <c:otherwise>
         <li><a href="editsoapnotes" class="<c:choose><c:when test="${menu=='notes123'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>">
@@ -245,7 +251,11 @@
 									<span>Manual Therapy Treatment</span>
 								</a>
 							</li>
-							
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='wristindex'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu25">
+									<span>Wrist/Hand Disability Index</span>
+								</a>
+							</li>
 							</c:otherwise>
 							</c:choose>
 					
@@ -488,7 +498,12 @@
 							     </ul>
 							     </li>
 				         </ul>
-						
+						 <ul id="ddsubmenu25" class="ddsubmenustyle">
+							      <li><a href="wristdisabilityindex" >Wrist/Hand Disability Index</a></li>
+							      <li><a href="viewwristindex">View Wrist/Hand Disability Index</a></li>
+							     </ul>
+							     </li>
+				         </ul>
 					</div>
 					<div class="menu_r"></div>
 					<div class="clear"></div>
