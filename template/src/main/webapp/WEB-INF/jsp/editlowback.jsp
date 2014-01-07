@@ -13,6 +13,95 @@
   P#mypar {font-style:calibri;
   line-height:18px;}
    </STYLE>
+  <script type="text/javascript">
+ function percentage()
+ {
+	 alert("hi");
+	 var score=document.getElementById("score").value;
+	 var section=document.getElementById("section").value;
+	 var div=(score*2)/(section*10);
+	 var adl=div/100;
+	 alert("div"+div);
+	 document.getElementById("adl").value=adl;
+ }
+ 
+ 
+ </script>
+ <script type="text/javascript">
+ function doAjaxPost() {
+	 
+	 document.getElementById("page").style.display="block";
+	 var section1=0;
+	 var tolerate=0;
+	 if($("input[type='radio'].tolerate").is(':checked')) {
+		 tolerate = $("input[type='radio'].tolerate:checked").val();
+		 section1=1;
+		}
+	// var painintensity=$('input[name=painintensity]:radio').click(function() {var value = $(this).val();});
+	 //var painintensity = $('#painintensity').val();
+	 //alert(painintensity);
+	 var section2=0;
+	 var withoutpain = 0;
+	 if($("input[type='radio'].withoutpain").is(':checked')) {
+		 withoutpain = $("input[type='radio'].withoutpain:checked").val();	
+		 section2=1;
+	}
+	 var section3=0;
+	 var withoutcausingpain =0;
+	 if($("input[type='radio'].withoutcausingpain").is(':checked')) {
+		 withoutcausingpain = $("input[type='radio'].withoutcausingpain:checked").val();		    
+	     section3=1;
+	 }
+	 var section4=0;
+	 var sleepingwell =0;
+	 if($("input[type='radio'].sleepingwell").is(':checked')) {
+		 sleepingwell = $("input[type='radio'].sleepingwell:checked").val();		    
+	     section4=1;
+	 }
+	 var section5=0;
+	 var canlift = 0;
+	 if($("input[type='radio'].canlift").is(':checked')) {
+		 canlift = $("input[type='radio'].canlift:checked").val();		    
+	     section5=1;
+	 }
+	 var section6=0;
+	 var normal = 0;
+	 if($("input[type='radio'].normal").is(':checked')) {
+		 normal  = $("input[type='radio'].normal:checked").val();		    
+	     section6=1;
+	 }
+	 var section7=0;
+	 var walkingdistance = 0;
+	 if($("input[type='radio'].walkingdistance").is(':checked')) {
+		 sleeping = $("input[type='radio'].sleeping:checked").val();		    
+	     section7=1;
+	 }
+	 var section8=0;
+	 var withoutextrapain = 0;
+	 if($("input[type='radio'].withoutextrapain").is(':checked')) {
+		 withoutextrapain = $("input[type='radio'].withoutextrapain:checked").val();		    
+	     section8=1;
+	 }
+	 var section9=0;
+	 var cansit = 0;
+	 if($("input[type='radio'].cansit").is(':checked')) {
+		 cansit = $("input[type='radio'].cansit:checked").val();
+		 section9=1;
+	}
+	 var section10=0;
+	 var rapidlybetter = 0;
+	 if($("input[type='radio'].rapidlybetter").is(':checked')) {
+		 rapidlybetter = $("input[type='radio'].rapidlybetter:checked").val();		    
+	     section10=1;
+	 }
+	 var total=parseInt(tolerate)+parseInt(withoutpain)+parseInt(withoutcausingpain)+parseInt(sleepingwell)+parseInt(canlift)+parseInt(normal)+parseInt(walkingdistance)+parseInt(withoutextrapain)+parseInt(cansit)+parseInt(rapidlybetter);
+	 document.getElementById("score").value=total;
+	 var sectiontotal=parseInt(section1)+parseInt(section2)+parseInt(section3)+parseInt(section4)+parseInt(section5)+parseInt(section6)+parseInt(section7)+parseInt(section8)+parseInt(section9)+parseInt(section10);
+	 document.getElementById("section").value=sectiontotal;		   
+ }
+		  
+ </script>
+
    
    <script type="text/javascript">
 function Checksymptom(val){
@@ -80,33 +169,33 @@ $(function() {
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="tolerate" value="I Can tolerate the pain" <c:if test="${lowback.tolerate=='I Can tolerate the pain'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;I Can tolerate the pain without having to use painkillers </td>
- <td width="50%"><input type="checkbox" name="withoutpain" value="I Can stand as long as I want " <c:if test="${lowback.withoutpain=='I Can stand as long as I want'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;I Can stand as long as I want without extrapain</td> 
+ <td width="50%"><input type="radio" class="tolerate" id="tolerate" name="tolerate" value="0" <c:if test= "${lowback.tolerate== '0'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;I Can tolerate the pain without having to use painkillers </td>
+ <td width="50%"><input type="radio"  class="withoutpain" id="withoutpain" name="withoutpain" value="0" <c:if test= "${lowback.withoutpain== '0'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;I Can stand as long as I want without extrapain</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="badpain" value="The pain is bad but I manage without using painkillers" <c:if test="${lowback.badpain=='The pain is bad but I manage without using painkillers'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;The pain is bad but I manage without using painkillers </td>
- <td width="50%"><input type="checkbox" name="withpain" value="I Can stand as long as I want but it gives extra pain" <c:if test="${lowback.withpain=='I Can stand as long as I want but it gives extra pain'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;I Can stand as long as I want but it gives extrapain</td> 
+ <td width="50%"><input type="radio" class="tolerate" id="tolerate" name="tolerate" value="1" <c:if test= "${lowback.tolerate== '1'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;The pain is bad but I manage without using painkillers </td>
+ <td width="50%"><input type="radio" class="withoutpain" id="withoutpain" name="withoutpain" value="1" <c:if test= "${lowback.withoutpain== '1'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;I Can stand as long as I want but it gives extrapain</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="complete" value="Painkillers give complete relief from pain" <c:if test="${lowback.complete=='Painkillers give complete relief from pain'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;Painkillers give complete relief from pain </td>
- <td width="50%"><input type="checkbox" name="onehour" value="Pain prevents me from standing more than 1 hour" <c:if test="${lowback.onehour=='Pain prevents me from standing more than 1 hour'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;Pain prevents me from standing more than 1 hour</td> 
+ <td width="50%"><input type="radio" class="tolerate" id="tolerate" name="tolerate" value="2" <c:if test= "${lowback.tolerate== '2'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Painkillers give complete relief from pain </td>
+ <td width="50%"><input type="radio" class="withoutpain" id="withoutpain" name="withoutpain" value="2" <c:if test= "${lowback.withoutpain== '2'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Pain prevents me from standing more than 1 hour</td> 
  </tr>
   <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="moderate" value="Painkillers give moderate relief from pain" <c:if test="${lowback.moderate=='Painkillers give complete relief from pain'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;Painkillers give moderate relief from pain </td>
- <td width="50%"><input type="checkbox" name="thirtyminutes" value="Pain prevents me from standing more than 30 minutes" <c:if test="${lowback.thirtyminutes=='Pain prevents me from standing more than 30 minutes'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;Pain prevents me from standing more than 30 minutes</td> 
+ <td width="50%"><input type="radio" class="tolerate" id="tolerate" name="tolerate" value="3" <c:if test= "${lowback.tolerate== '3'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Painkillers give moderate relief from pain </td>
+ <td width="50%"><input type="radio" class="withoutpain" id="withoutpain" name="withoutpain" value="3" <c:if test= "${lowback.withoutpain== '3'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Pain prevents me from standing more than 30 minutes</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="little" value="Painkillers give very little relief from pain" <c:if test="${lowback.little=='Painkillers give very little relief from pain'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;Painkillers give very little relief from pain </td>
- <td width="50%"><input type="checkbox" name="tenminutes" value="Pain prevents me from standing more than 10 minutes" <c:if test="${lowback.tenminutes=='Pain prevents me from standing more than 10 minutes'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;Pain prevents me from standing more than 10 minutes</td> 
+ <td width="50%"><input type="radio" class="tolerate" id="tolerate" name="tolerate" value="4" <c:if test= "${lowback.tolerate== '4'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Painkillers give very little relief from pain </td>
+ <td width="50%"><input type="radio"  class="withoutpain" id="withoutpain" name="withoutpain" value="4" <c:if test= "${lowback.withoutpain== '4'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Pain prevents me from standing more than 10 minutes</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="noeffect" value="Painkillers have no effect on the pain and I do not use them" <c:if test="${lowback.noeffect=='Painkillers have no effect on the pain and I do not use them'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;Painkillers have no effect on the pain and I do not use them </td>
- <td width="50%"><input type="checkbox" name="atall" value="Pain prevents me from standing at all" <c:if test="${lowback.atall=='Pain prevents me from standing at all'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;Pain prevents me from standing at all</td> 
+ <td width="50%"><input type="radio" class="tolerate" id="tolerate" name="tolerate" value="5" <c:if test= "${lowback.tolerate== '5'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Painkillers have no effect on the pain and I do not use them </td>
+ <td width="50%"><input type="radio" class="withoutpain" id="withoutpain" name="withoutpain" value="5" <c:if test= "${lowback.withoutpain== '5'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Pain prevents me from standing at all</td> 
  </tr>
  <tr class="row2">  
  <td></td>
@@ -117,33 +206,33 @@ $(function() {
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="withoutcausingpain" value="I can look after myself normally without causing extra pain" <c:if test="${lowback.withoutcausingpain=='I can look after myself normally without causing extra pain'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;I can look after myself normally without causing extra pain </td>
- <td width="50%"><input type="checkbox" name="sleepingwell" value="pain does not prevent me from sleeping well" <c:if test="${lowback.sleepingwell=='pain does not prevent me from sleeping well'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;I Can stand as long as I want without extrapain</td> 
+ <td width="50%"><input type="radio" class="withoutcausingpain" id="withoutcausingpain" name="withoutcausingpain" value="0" <c:if test= "${lowback.withoutcausingpain== '0'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;I can look after myself normally without causing extra pain </td>
+ <td width="50%"><input type="radio" class="sleepingwell" id="sleepingwell" name="sleepingwell" value="0" <c:if test= "${lowback.sleepingwell== '0'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;I Can stand as long as I want without extrapain</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="extrapain" value="I can look after myself normally but it causes extra pain" <c:if test="${lowback.extrapain=='I can look after myself normally but it causes extra pain'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;I can look after myself normally but it causes extra pain </td>
- <td width="50%"><input type="checkbox" name="tablets" value="I Can sleep well only by using tablets" <c:if test="${lowback.tablets=='I Can sleep well only by using tablets'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;I Can sleep well only by using tablets</td> 
+ <td width="50%"><input type="radio" class="withoutcausingpain" id="withoutcausingpain" name="withoutcausingpain" value="1" <c:if test= "${lowback.withoutcausingpain== '1'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;I can look after myself normally but it causes extra pain </td>
+ <td width="50%"><input type="radio" class="sleepingwell" id="sleepingwell" name="sleepingwell" value="1" <c:if test= "${lowback.sleepingwell== '1'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;I Can sleep well only by using tablets</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="slow" value="It is painful to look after myself and I am slow and careful" <c:if test="${lowback.slow=='It is painful to look after myself and I am slow and careful'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;It is painful to look after myself and I am slow and careful </td>
- <td width="50%"><input type="checkbox" name="sixhour" value="Even when I take tablets I have less than 6 hours sleep" <c:if test="${lowback.sixhour=='Even when I take tablets I have less than 6 hours sleep'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;Even when I take tablets I have less than 6 hours sleep</td> 
+ <td width="50%"><input type="radio"  class="withoutcausingpain" id="withoutcausingpain" name="withoutcausingpain" value="2" <c:if test= "${lowback.withoutcausingpain== '2'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;It is painful to look after myself and I am slow and careful </td>
+ <td width="50%"><input type="radio" class="sleepingwell" id="sleepingwell" name="sleepingwell" value="2" <c:if test= "${lowback.sleepingwell== '2'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Even when I take tablets I have less than 6 hours sleep</td> 
  </tr>
   <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="personalcare" value="I need some help but manage  most of my personal care" <c:if test="${lowback.personalcare=='I need some help but manage  most of my personal care'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;I need some help but manage  most of my personal care </td>
- <td width="50%"><input type="checkbox" name="fourhours" value="Even when I take tablets I have less than 4 hours sleep" <c:if test="${lowback.fourhours=='Even when I take tablets I have less than 4 hours sleep'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;Even when I take tablets I have less than 4 hours sleep</td> 
+ <td width="50%"><input type="radio" class="withoutcausingpain" id="withoutcausingpain" name="withoutcausingpain" value="3" <c:if test= "${lowback.withoutcausingpain== '3'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;I need some help but manage  most of my personal care </td>
+ <td width="50%"><input type="radio" class="sleepingwell" id="sleepingwell" name="sleepingwell" value="3" <c:if test= "${lowback.sleepingwell== '3'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Even when I take tablets I have less than 4 hours sleep</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="littlehelp" value="I need help every day in most aspects of self care" <c:if test="${lowback.littlehelp=='I need help every day in most aspects of self care'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;I need help every day in most aspects of self care </td>
- <td width="50%"><input type="checkbox" name="twohours" value="Even when I take tablets I have less than 2 hours sleep" <c:if test="${lowback.twohours=='Even when I take tablets I have less than 2 hours sleep'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;Even when I take tablets I have less than 2 hours sleep</td> 
+ <td width="50%"><input type="radio" class="withoutcausingpain" id="withoutcausingpain" name="withoutcausingpain" value="4" <c:if test= "${lowback.withoutcausingpain== '4'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;I need help every day in most aspects of self care </td>
+ <td width="50%"><input type="radio" class="sleepingwell" id="sleepingwell" name="sleepingwell" value="4" <c:if test= "${lowback.sleepingwell== '4'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Even when I take tablets I have less than 2 hours sleep</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="difficulty" value="I do not get dressed;I wash without difficulty and stay in bed" <c:if test="${lowback.difficulty=='I do not get dressed;I wash without difficulty and stay in bed'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;I do not get dressed;I wash without difficulty and stay in bed </td>
- <td width="50%"><input type="checkbox" name="atall1" value="Pain prevents me from sleeping at all" <c:if test="${lowback.atall1=='Pain prevents me from sleeping at all'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;Pain prevents me from sleeping at all</td> 
+ <td width="50%"><input type="radio" class="withoutcausingpain" id="withoutcausingpain" name="withoutcausingpain" value="5" <c:if test= "${lowback.withoutcausingpain== '5'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;I do not get dressed;I wash without difficulty and stay in bed </td>
+ <td width="50%"><input type="radio" class="sleepingwell" id="sleepingwell" name="sleepingwell" value="5" <c:if test= "${lowback.sleepingwell== '5'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Pain prevents me from sleeping at all</td> 
  </tr>
   
  <tr class="row2">  
@@ -155,33 +244,33 @@ $(function() {
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="canlift" value="I can lift heavy weights without extra pain" <c:if test="${lowback.canlift=='I can lift heavy weights without extra pain'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;I can lift heavy weights without extra pain </td>
- <td width="50%"><input type="checkbox" name="normal" value="My social life is normal and gives me no extra pain" <c:if test="${lowback.normal=='My social life is normal and gives me no extra pain'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;My social life is normal and gives me no extra pain</td> 
+ <td width="50%"><input type="radio" class="canlift" id="canlift" name="canlift" value="0" <c:if test= "${lowback.canlift== '0'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;I can lift heavy weights without extra pain </td>
+ <td width="50%"><input type="radio"  class="normal" id="normal" name="normal" value="0" <c:if test= "${lowback.normal== '0'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;My social life is normal and gives me no extra pain</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="canliftwithpain" value="I can lift heavy weights  but it gives extra pain" <c:if test="${lowback.canliftwithpain=='I can lift heavy weights  but it gives extra pain'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;I can lift heavy weights  but it gives extra pain </td>
- <td width="50%"><input type="checkbox" name="normalwithpain" value="My social life is normal but increases the degree of pain" <c:if test="${lowback.normalwithpain=='My social life is normal but increases the degree of pain'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;My social life is normal but increases the degree of pain</td> 
+ <td width="50%"><input type="radio" class="canlift" id="canlift" name="canlift" value="1" <c:if test= "${lowback.canlift== '1'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;I can lift heavy weights  but it gives extra pain </td>
+ <td width="50%"><input type="radio" class="normal" id="normal" name="normal" value="1" <c:if test= "${lowback.normal== '1'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;I Can sleep well only by using tablets</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="heavyweights" value="Pain prevents me from lifting heavy weights off the floor,but I can manage if they are conveniently positions for example: On a table" <c:if test="${lowback.heavyweights=='Pain prevents me from lifting heavy weights off the floor,but I can manage if they are conveniently positions for example: On a table'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;Pain prevents me from lifting heavy weights off the floor,but I can manage if they are conveniently positions for example: On a table </td>
- <td width="50%"><input type="checkbox" name="significanteffect" value="Pain has no significant effect on my social life apart from limiting my more energetic interest,e.g. dancing" <c:if test="${lowback.significanteffect=='Pain has no significant effect on my social life apart from limiting my more energetic interest,e.g. dancing'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;Pain has no significant effect on my social life apart from limiting my more energetic interest,e.g. dancing</td> 
+ <td width="50%"><input type="radio" class="canlift" id="canlift" name="canlift" value="2" <c:if test= "${lowback.canlift== '2'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Pain prevents me from lifting heavy weights off the floor,but I can manage if they are conveniently positions for example: On a table </td>
+ <td width="50%"><input type="radio" class="normal" id="normal" name="normal" value="2" <c:if test= "${lowback.normal== '2'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Pain has no significant effect on my social life apart from limiting my more energetic interest,e.g. dancing</td> 
  </tr>
   <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="mediumweights" value="Pain prevents me from lifting heavy weights,but I can manage light to medium weights if they are conveniently positioned" <c:if test="${lowback.mediumweights=='Pain prevents me from lifting heavy weights,but I can manage light to medium weights if they are conveniently positioned'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;Pain prevents me from lifting heavy weights,but I can manage light to medium weights if they are conveniently positioned </td>
- <td width="50%"><input type="checkbox" name="restricted" value="Pain has restricted my social life and i do not go out as often " <c:if test="${lowback.restricted=='Pain has restricted my social life and i do not go out as often'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;Pain has restricted my social life and i do not go out as often </td> 
+ <td width="50%"><input type="radio" class="canlift" id="canlift" name="canlift" value="3" <c:if test= "${lowback.canlift== '3'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Pain prevents me from lifting heavy weights,but I can manage light to medium weights if they are conveniently positioned </td>
+ <td width="50%"><input type="radio" class="normal" id="normal" name="normal" value="3" <c:if test= "${lowback.normal== '3'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Pain has restricted my social life and i do not go out as often </td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="verylightweight" value="I can lift very light weights" <c:if test="${lowback.verylightweight=='I can lift very light weights'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;I can lift very light weights </td>
- <td width="50%"><input type="checkbox" name="myhome" value="Pain has restricted my social life to my home" <c:if test="${lowback.myhome=='Pain has restricted my social life to my home'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;Pain has restricted my social life to my home</td> 
+ <td width="50%"><input type="radio"  class="canlift" id="canlift" name="canlift" value="4" <c:if test= "${lowback.canlift== '4'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;I can lift very light weights </td>
+ <td width="50%"><input type="radio" class="normal" id="normal" name="normal" value="4" <c:if test= "${lowback.normal== '4'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Pain has restricted my social life to my home</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="carryatall" value="I cannot lift or carry anything at all" <c:if test="${lowback.carryatall=='I cannot lift or carry anything at all'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;I cannot lift or carry anything at all </td>
- <td width="50%"><input type="checkbox" name="nosociallife" value="I have no social life because of pain" <c:if test="${lowback.nosociallife=='I have no social life because of pain'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;I have no social life because of pain</td> 
+ <td width="50%"><input type="radio" class="canlift" id="canlift" name="canlift" value="5" <c:if test= "${lowback.canlift== '5'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;I cannot lift or carry anything at all </td>
+ <td width="50%"><input type="radio" class="normal" id="normal" name="normal" value="5" <c:if test= "${lowback.normal== '5'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;I have no social life because of pain</td> 
  </tr>
  <tr class="row2">  
  <td></td>
@@ -192,33 +281,33 @@ $(function() {
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="walkingdistance" value="Pain does not prevent me from walking any distance" <c:if test="${lowback.walkingdistance=='Pain does not prevent me from walking any distance'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;Pain does not prevent me from walking any distance </td>
- <td width="50%"><input type="checkbox" name="travelwithoutpain" value="I can travel anywhere without extra pain" <c:if test="${lowback.travelwithoutpain=='I can travel anywhere without extra pain'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;I can travel anywhere without extra pain</td> 
+ <td width="50%"><input type="radio" class="walkingdistance" id="walkingdistance" name="walkingdistance" value="0" <c:if test= "${lowback.walkingdistance== '0'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Pain does not prevent me from walking any distance </td>
+ <td width="50%"><input type="radio" class="withoutextrapain" id="withoutextrapain" name="withoutextrapain" value="0" <c:if test= "${lowback.withoutextrapain== '0'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;I can travel anywhere without extra pain</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="onemile" value="Pain prevents me from walking more than one mile" <c:if test="${lowback.onemile=='Pain prevents me from walking more than one mile'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;Pain prevents me from walking more than one mile </td>
- <td width="50%"><input type="checkbox" name="travelwithpain" value="I can travel anywhere but it gives me extra pain" <c:if test="${lowback.travelwithpain=='I can travel anywhere but it gives me extra pain'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;I can travel anywhere but it gives me extra pain</td> 
+ <td width="50%"><input type="radio" class="walkingdistance" id="walkingdistance" name="walkingdistance" value="1" <c:if test= "${lowback.walkingdistance== '1'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Pain prevents me from walking more than one mile </td>
+ <td width="50%"><input type="radio" class="withoutextrapain" id="withoutextrapain" name="withoutextrapain" value="1" <c:if test= "${lowback.withoutextrapain== '1'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;I can travel anywhere but it gives me extra pain</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="onehalfmile" value="Pain prevents me from walking more than one-half mile" <c:if test="${lowback.onehalfmile=='Pain prevents me from walking more than one-half mile'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;Pain prevents me from walking more than one-half mile </td>
- <td width="50%"><input type="checkbox" name="journey2hours" value="Pain is bad but I manage journeys over 2 hours" <c:if test="${lowback.journey2hours=='Pain is bad but I manage journeys over 2 hours'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;Pain is bad but I manage journeys over 2 hours</td> 
+ <td width="50%"><input type="radio" class="walkingdistance" id="walkingdistance" name="walkingdistance" value="2" <c:if test= "${lowback.walkingdistance== '2'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Pain prevents me from walking more than one-half mile </td>
+ <td width="50%"><input type="radio" class="withoutextrapain" id="withoutextrapain" name="withoutextrapain" value="2" <c:if test= "${lowback.withoutextrapain== '2 '}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Pain is bad but I manage journeys over 2 hours</td> 
  </tr>
   <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="onequartermile" value="Pain prevents me from walking more than one-quarter mile" <c:if test="${lowback.onequartermile=='Pain prevents me from walking more than one-quarter mile'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;Pain prevents me from walking more than one-quarter mile </td>
- <td width="50%"><input type="checkbox" name="onehourless" value="Pain is bad but I manage journeys less than one hour " <c:if test="${lowback.onehourless=='Pain is bad but I manage journeys less than one hour'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;Pain is bad but I manage journeys less than one hours </td> 
+ <td width="50%"><input type="radio" class="walkingdistance" id="walkingdistance" name="walkingdistance" value="3" <c:if test= "${lowback.walkingdistance== '3'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Pain prevents me from walking more than one-quarter mile </td>
+ <td width="50%"><input type="radio" class="withoutextrapain" id="withoutextrapain" name="withoutextrapain" value="3" <c:if test= "${lowback.withoutextrapain== '3'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Pain is bad but I manage journeys less than one hours </td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="usingstick" value="I can only using stick or crutches" <c:if test="${lowback.usingstick=='I can only using stick or crutches'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;I can only using stick or crutches </td>
- <td width="50%"><input type="checkbox" name="journeys30mins" value="Pain restrict me to short necessary journeys undo 30 minutes" <c:if test="${lowback.journeys30mins=='Pain restrict me to short necessary journeys undo 30 minutes'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;Pain restrict me to short necessary journeys undo 30 minutes</td> 
+ <td width="50%"><input type="radio" class="walkingdistance" id="walkingdistance" name="walkingdistance" value="4" <c:if test= "${lowback.walkingdistance== '4'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;I can only using stick or crutches </td>
+ <td width="50%"><input type="radio" class="withoutextrapain" id="withoutextrapain" name="withoutextrapain" value="4" <c:if test= "${lowback.withoutextrapain== '4'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Pain restrict me to short necessary journeys undo 30 minutes</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="bedtime" value="I am in bed most of the time and have to crawl to the toilet" <c:if test="${lowback.bedtime=='I am in bed most of the time and have to crawl to the toilet'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;I am in bed most of the time and have to crawl to the toilet </td>
- <td width="50%"><input type="checkbox" name="todoctor" value="Pain prevents me from traveling except to the doctor or hospital" <c:if test="${lowback.todoctor=='Pain prevents me from traveling except to the doctor or hospital'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;Pain prevents me from traveling except to the doctor or hospital</td> 
+ <td width="50%"><input type="radio" class="walkingdistance" id="walkingdistance" name="walkingdistance" value="5" <c:if test= "${lowback.walkingdistance== '5'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;I am in bed most of the time and have to crawl to the toilet </td>
+ <td width="50%"><input type="radio" class="withoutextrapain" id="withoutextrapain" name="withoutextrapain" value="5" <c:if test= "${lowback.withoutextrapain== '5'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Pain prevents me from traveling except to the doctor or hospital</td> 
  </tr>
  <tr class="row2">  
  <td></td>
@@ -229,39 +318,44 @@ $(function() {
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="cansit" value="I can sit in a chair as long as I like" <c:if test="${lowback.cansit=='I can sit in a chair as long as I like'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;I can sit in a chair as long as I like </td>
- <td width="50%"><input type="checkbox" name="rapidlybetter" value="My pain is rapidly getting better" <c:if test="${lowback.rapidlybetter=='My pain is rapidly getting better'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;My pain is rapidly getting better</td> 
+ <td width="50%"><input type="radio" class="cansit" id="cansit" name="cansit" value="0" <c:if test= "${lowback.cansit== '0'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;I can sit in a chair as long as I like </td>
+ <td width="50%"><input type="radio" class="rapidlybetter" id="rapidlybetter" name="rapidlybetter" value="0" <c:if test= "${lowback.rapidlybetter== '0'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;My pain is rapidly getting better</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="favoritechair" value="I can only sit in my favorite chair as long as I like" <c:if test="${lowback.favoritechair=='I can only sit in my favorite chair as long as I like'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;Pain prevents me from walking more than one mile </td>
- <td width="50%"><input type="checkbox" name="flucutates" value="My pain flucutates but overall is definitely getting better " <c:if test="${lowback.flucutates=='My pain flucutates but overall is definitely getting better'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;My pain flucutates but overall is definitely getting better</td> 
+ <td width="50%"><input type="radio" class="cansit" id="cansit" name="cansit" value="1" <c:if test= "${lowback.cansit== '1'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Pain prevents me from walking more than one mile </td>
+ <td width="50%"><input type="radio" class="rapidlybetter" id="rapidlybetter" name="rapidlybetter" value="1" <c:if test= "${lowback.rapidlybetter== '1'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;My pain flucutates but overall is definitely getting better</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="sitonehour" value="Pain prevents me from sitting more than one hour" <c:if test="${lowback.sitonehour=='Pain prevents me from sitting more than one hour'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;Pain prevents me from sitting more than one hour </td>
- <td width="50%"><input type="checkbox" name="slowimprovement" value="My pain seems to be getting better but improvement is slow at the present" <c:if test="${lowback.slowimprovement=='My pain seems to be getting better but improvement is slow at the present'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;My pain seems to be getting better but improvement is slow at the present</td> 
+ <td width="50%"><input type="radio" class="cansit" id="cansit" name="cansit" value="2" <c:if test= "${lowback.cansit== '2'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Pain prevents me from sitting more than one hour </td>
+ <td width="50%"><input type="radio" class="rapidlybetter" id="rapidlybetter" name="rapidlybetter" value="2" <c:if test= "${lowback.rapidlybetter== '2'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;My pain seems to be getting better but improvement is slow at the present</td> 
  </tr>
   <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="sit30mins" value="Pain prevents me from sitting more than 30 minutes" <c:if test="${lowback.sit30mins=='Pain prevents me from sitting more than 30 minutes'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;Pain prevents me from sitting more than 30 minutes </td>
- <td width="50%"><input type="checkbox" name="samepain" value="Pain is neither getting better nor worse " <c:if test="${lowback.samepain=='Pain is neither getting better nor worse'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;Pain is neither getting better nor worse </td> 
+ <td width="50%"><input type="radio" class="cansit" id="cansit" name="cansit" value="3" <c:if test= "${lowback.cansit== '3'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Pain prevents me from sitting more than 30 minutes </td>
+ <td width="50%"><input type="radio" class="rapidlybetter" id="rapidlybetter" name="rapidlybetter" value="3" <c:if test= "${lowback.rapidlybetter== '3'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Pain is neither getting better nor worse </td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="sit10mins" value="Pain prevents me from sitting more than 10 minutes" <c:if test="${lowback.sit10mins=='Pain prevents me from sitting more than 10 minutes'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;Pain prevents me from sitting more than 30 minutes </td>
- <td width="50%"><input type="checkbox" name="graduallyworsening" value="My pain is gradually worsening" <c:if test="${lowback.graduallyworsening=='My pain is gradually worsening'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;My pain is gradually worsening</td> 
+ <td width="50%"><input type="radio" class="cansit" id="cansit" name="cansit" value="4" <c:if test= "${lowback.cansit== '4'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Pain prevents me from sitting more than 30 minutes </td>
+ <td width="50%"><input type="radio" class="rapidlybetter" id="rapidlybetter" name="rapidlybetter" value="4" <c:if test= "${lowback.rapidlybetter== '4'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;My pain is gradually worsening</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="allthetime" value="Pain prevents me from sitting all most all the time" <c:if test="${lowback.allthetime=='Pain prevents me from sitting all most all the time'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;Pain prevents me from sitting all most all the time </td>
- <td width="50%"><input type="checkbox" name="rapidlyworsening" value="My pain is rapidly worsening" <c:if test="${lowback.rapidlyworsening=='My pain is rapidly worsening'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;My pain is rapidly worsening</td> 
+ <td width="50%"><input type="radio" class="cansit" id="cansit" name="cansit" value="5" <c:if test= "${lowback.cansit== '5'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Pain prevents me from sitting all most all the time </td>
+ <td width="50%"><input type="radio" class="rapidlybetter" id="rapidlybetter" name="rapidlybetter" value="5" <c:if test= "${lowback.rapidlybetter== '5'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;My pain is rapidly worsening</td> 
  </tr>
  </table>
  <table>
  <tr>
+  <td> <a  onclick="return doAjaxPost()" style="text-decoration: underline; cursor:pointer;color: brown" ><b>Show disability of patient score</b></td>
+</tr>
+</table>
+<table style="display:none" id="page">
+ <tr>
   <td></td>
- <td width="50%">Scoring:Questions are scored on a vertical scale of 0-5.Total scores and multiply by 2 .Divide by number of sections answered multiplied by 10.A score of 22% or more is considered significant activities of daily living disability.<br/><br/>(Score &nbsp;<input type="text" name="score" size="7" value="${lowback.score}">*2)&nbsp;/&nbsp;( <input type="text" name="section" size="7" value="${lowback.section}">Section *10)&nbsp;&nbsp;=&nbsp;&nbsp;<input type="text" name="adl" size="9" value="${lowback.adl}">&nbsp;%ADL&nbsp;<input type="text" name="adl2" size="9" value="${lowback.adl2}"></td>
+ <td width="50%">Scoring:Questions are scored on a vertical scale of 0-5.Total scores and multiply by 2 .Divide by number of sections answered multiplied by 10.A score of 22% or more is considered significant activities of daily living disability.<br/><br/>(Score &nbsp;<input type="text" class="score" id="score" name="score" size="7" value="${lowback.score}">*2)&nbsp;/&nbsp;( <input type="text" class="section" id="section" name="section" size="7" value="${lowback.section}">Section *10)&nbsp;&nbsp;=&nbsp;&nbsp;<input type="text" class="adl" id="adl" name="adl" size="9" value="${lowback.adl}">&nbsp;%ADL&nbsp;<input type="text" name="adl2" size="9" value="${lowback.adl2}"><br/><br/><input type="button" value="Calculate" onclick="return percentage()" class="submit_btn"></td>
  <td width="50%">Comments:&nbsp;&nbsp;<textarea rows="6" cols="50" name="comment">${lowback.comment}</textarea></td>
  </tr>
  </table>

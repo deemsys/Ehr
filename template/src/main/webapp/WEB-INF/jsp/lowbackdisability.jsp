@@ -5,6 +5,7 @@
 
  <link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
   <link rel="stylesheet" href="/resources/css/style.css" />
+  <script src="resources/js/jquery.js"></script> 
  <script src="resources/js/jquery.min.js"></script> 
  <script src="resources/js/jquery-ui.js"></script>
  <script src="resources/js/jquey-1.9.1.js"></script>
@@ -35,6 +36,95 @@ $(function() {
   });
 
 </script>
+<script type="text/javascript">
+ function percentage()
+ {
+	 alert("hi");
+	 var score=document.getElementById("score").value;
+	 var section=document.getElementById("section").value;
+	 var div=(score*2)/(section*10);
+	 var adl=div/100;
+	 alert("div"+div);
+	 document.getElementById("adl").value=adl;
+ }
+ 
+ 
+ </script>
+ <script type="text/javascript">
+ function doAjaxPost() {
+	 
+	 document.getElementById("page").style.display="block";
+	 var section1=0;
+	 var tolerate=0;
+	 if($("input[type='radio'].tolerate").is(':checked')) {
+		 tolerate = $("input[type='radio'].tolerate:checked").val();
+		 section1=1;
+		}
+	// var painintensity=$('input[name=painintensity]:radio').click(function() {var value = $(this).val();});
+	 //var painintensity = $('#painintensity').val();
+	 //alert(painintensity);
+	 var section2=0;
+	 var withoutpain = 0;
+	 if($("input[type='radio'].withoutpain").is(':checked')) {
+		 withoutpain = $("input[type='radio'].withoutpain:checked").val();	
+		 section2=1;
+	}
+	 var section3=0;
+	 var withoutcausingpain =0;
+	 if($("input[type='radio'].withoutcausingpain").is(':checked')) {
+		 withoutcausingpain = $("input[type='radio'].withoutcausingpain:checked").val();		    
+	     section3=1;
+	 }
+	 var section4=0;
+	 var sleepingwell =0;
+	 if($("input[type='radio'].sleepingwell").is(':checked')) {
+		 sleepingwell = $("input[type='radio'].sleepingwell:checked").val();		    
+	     section4=1;
+	 }
+	 var section5=0;
+	 var canlift = 0;
+	 if($("input[type='radio'].canlift").is(':checked')) {
+		 canlift = $("input[type='radio'].canlift:checked").val();		    
+	     section5=1;
+	 }
+	 var section6=0;
+	 var normal = 0;
+	 if($("input[type='radio'].normal").is(':checked')) {
+		 normal  = $("input[type='radio'].normal:checked").val();		    
+	     section6=1;
+	 }
+	 var section7=0;
+	 var walkingdistance = 0;
+	 if($("input[type='radio'].walkingdistance").is(':checked')) {
+		 sleeping = $("input[type='radio'].sleeping:checked").val();		    
+	     section7=1;
+	 }
+	 var section8=0;
+	 var withoutextrapain = 0;
+	 if($("input[type='radio'].withoutextrapain").is(':checked')) {
+		 withoutextrapain = $("input[type='radio'].withoutextrapain:checked").val();		    
+	     section8=1;
+	 }
+	 var section9=0;
+	 var cansit = 0;
+	 if($("input[type='radio'].cansit").is(':checked')) {
+		 cansit = $("input[type='radio'].cansit:checked").val();
+		 section9=1;
+	}
+	 var section10=0;
+	 var rapidlybetter = 0;
+	 if($("input[type='radio'].rapidlybetter").is(':checked')) {
+		 rapidlybetter = $("input[type='radio'].rapidlybetter:checked").val();		    
+	     section10=1;
+	 }
+	 var total=parseInt(tolerate)+parseInt(withoutpain)+parseInt(withoutcausingpain)+parseInt(sleepingwell)+parseInt(canlift)+parseInt(normal)+parseInt(walkingdistance)+parseInt(withoutextrapain)+parseInt(cansit)+parseInt(rapidlybetter);
+	 document.getElementById("score").value=total;
+	 var sectiontotal=parseInt(section1)+parseInt(section2)+parseInt(section3)+parseInt(section4)+parseInt(section5)+parseInt(section6)+parseInt(section7)+parseInt(section8)+parseInt(section9)+parseInt(section10);
+	 document.getElementById("section").value=sectiontotal;		   
+ }
+		  
+ </script>
+
   <script>
   $(function() {
     $( "#tabs" ).tabs();
@@ -78,33 +168,33 @@ $(function() {
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="tolerate" value="I Can tolerate the pain">&nbsp;&nbsp;I Can tolerate the pain without having to use painkillers </td>
- <td width="50%"><input type="checkbox" name="withoutpain" value="I Can stand as long as I want ">&nbsp;&nbsp;I Can stand as long as I want without extrapain</td> 
+ <td width="50%"><input type="radio" class="tolerate" id="tolerate" name="tolerate" value="0">&nbsp;&nbsp;I Can tolerate the pain without having to use painkillers </td>
+ <td width="50%"><input type="radio"  class="withoutpain" id="withoutpain" name="withoutpain" value="0">&nbsp;&nbsp;I Can stand as long as I want without extrapain</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="badpain" value="The pain is bad but I manage without using painkillers">&nbsp;&nbsp;The pain is bad but I manage without using painkillers </td>
- <td width="50%"><input type="checkbox" name="withpain" value="I Can stand as long as I want but it gives extra pain">&nbsp;&nbsp;I Can stand as long as I want but it gives extrapain</td> 
+ <td width="50%"><input type="radio" class="tolerate" id="tolerate" name="tolerate" value="1">&nbsp;&nbsp;The pain is bad but I manage without using painkillers </td>
+ <td width="50%"><input type="radio" class="withoutpain" id="withoutpain" name="withoutpain" value="1">&nbsp;&nbsp;I Can stand as long as I want but it gives extrapain</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="complete" value="Painkillers give complete relief from pain">&nbsp;&nbsp;Painkillers give complete relief from pain </td>
- <td width="50%"><input type="checkbox" name="onehour" value="Pain prevents me from standing more than 1 hour">&nbsp;&nbsp;Pain prevents me from standing more than 1 hour</td> 
+ <td width="50%"><input type="radio" class="tolerate" id="tolerate" name="tolerate" value="2">&nbsp;&nbsp;Painkillers give complete relief from pain </td>
+ <td width="50%"><input type="radio" class="withoutpain" id="withoutpain" name="withoutpain" value="2">&nbsp;&nbsp;Pain prevents me from standing more than 1 hour</td> 
  </tr>
   <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="moderate" value="Painkillers give moderate relief from pain">&nbsp;&nbsp;Painkillers give moderate relief from pain </td>
- <td width="50%"><input type="checkbox" name="thirtyminutes" value="Pain prevents me from standing more than 30 minutes">&nbsp;&nbsp;Pain prevents me from standing more than 30 minutes</td> 
+ <td width="50%"><input type="radio" class="tolerate" id="tolerate" name="tolerate" value="3">&nbsp;&nbsp;Painkillers give moderate relief from pain </td>
+ <td width="50%"><input type="radio" class="withoutpain" id="withoutpain" name="withoutpain" value="3">&nbsp;&nbsp;Pain prevents me from standing more than 30 minutes</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="little" value="Painkillers give very little relief from pain">&nbsp;&nbsp;Painkillers give very little relief from pain </td>
- <td width="50%"><input type="checkbox" name="tenminutes" value="Pain prevents me from standing more than 10 minutes">&nbsp;&nbsp;Pain prevents me from standing more than 10 minutes</td> 
+ <td width="50%"><input type="radio" class="tolerate" id="tolerate" name="tolerate" value="4">&nbsp;&nbsp;Painkillers give very little relief from pain </td>
+ <td width="50%"><input type="radio"  class="withoutpain" id="withoutpain" name="withoutpain" value="4">&nbsp;&nbsp;Pain prevents me from standing more than 10 minutes</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="noeffect" value="Painkillers have no effect on the pain and I do not use them">&nbsp;&nbsp;Painkillers have no effect on the pain and I do not use them </td>
- <td width="50%"><input type="checkbox" name="atall" value="Pain prevents me from standing at all">&nbsp;&nbsp;Pain prevents me from standing at all</td> 
+ <td width="50%"><input type="radio" class="tolerate" id="tolerate" name="tolerate" value="5">&nbsp;&nbsp;Painkillers have no effect on the pain and I do not use them </td>
+ <td width="50%"><input type="radio" class="withoutpain" id="withoutpain" name="withoutpain" value="5">&nbsp;&nbsp;Pain prevents me from standing at all</td> 
  </tr>
  <tr class="row2">  
  <td></td>
@@ -115,33 +205,33 @@ $(function() {
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="withoutcausingpain" value="I can look after myself normally without causing extra pain">&nbsp;&nbsp;I can look after myself normally without causing extra pain </td>
- <td width="50%"><input type="checkbox" name="sleepingwell" value="pain does not prevent me from sleeping well">&nbsp;&nbsp;I Can stand as long as I want without extrapain</td> 
+ <td width="50%"><input type="radio" class="withoutcausingpain" id="withoutcausingpain" name="withoutcausingpain" value="0">&nbsp;&nbsp;I can look after myself normally without causing extra pain </td>
+ <td width="50%"><input type="radio" class="sleepingwell" id="sleepingwell" name="sleepingwell" value="0">&nbsp;&nbsp;I Can stand as long as I want without extrapain</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="extrapain" value="I can look after myself normally but it causes extra pain">&nbsp;&nbsp;I can look after myself normally but it causes extra pain </td>
- <td width="50%"><input type="checkbox" name="tablets" value="I Can sleep well only by using tablets">&nbsp;&nbsp;I Can sleep well only by using tablets</td> 
+ <td width="50%"><input type="radio" class="withoutcausingpain" id="withoutcausingpain" name="withoutcausingpain" value="1">&nbsp;&nbsp;I can look after myself normally but it causes extra pain </td>
+ <td width="50%"><input type="radio" class="sleepingwell" id="sleepingwell" name="sleepingwell" value="1">&nbsp;&nbsp;I Can sleep well only by using tablets</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="slow" value="It is painful to look after myself and I am slow and careful">&nbsp;&nbsp;It is painful to look after myself and I am slow and careful </td>
- <td width="50%"><input type="checkbox" name="sixhour" value="Even when I take tablets I have less than 6 hours sleep">&nbsp;&nbsp;Even when I take tablets I have less than 6 hours sleep</td> 
+ <td width="50%"><input type="radio"  class="withoutcausingpain" id="withoutcausingpain" name="withoutcausingpain" value="2">&nbsp;&nbsp;It is painful to look after myself and I am slow and careful </td>
+ <td width="50%"><input type="radio" class="sleepingwell" id="sleepingwell" name="sleepingwell" value="2">&nbsp;&nbsp;Even when I take tablets I have less than 6 hours sleep</td> 
  </tr>
   <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="personalcare" value="I need some help but manage  most of my personal care">&nbsp;&nbsp;I need some help but manage  most of my personal care </td>
- <td width="50%"><input type="checkbox" name="fourhours" value="Even when I take tablets I have less than 4 hours sleep">&nbsp;&nbsp;Even when I take tablets I have less than 4 hours sleep</td> 
+ <td width="50%"><input type="radio" class="withoutcausingpain" id="withoutcausingpain" name="withoutcausingpain" value="3">&nbsp;&nbsp;I need some help but manage  most of my personal care </td>
+ <td width="50%"><input type="radio" class="sleepingwell" id="sleepingwell" name="sleepingwell" value="3">&nbsp;&nbsp;Even when I take tablets I have less than 4 hours sleep</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="littlehelp" value="I need help every day in most aspects of self care">&nbsp;&nbsp;I need help every day in most aspects of self care </td>
- <td width="50%"><input type="checkbox" name="twohours" value="Even when I take tablets I have less than 2 hours sleep">&nbsp;&nbsp;Even when I take tablets I have less than 2 hours sleep</td> 
+ <td width="50%"><input type="radio" class="withoutcausingpain" id="withoutcausingpain" name="withoutcausingpain" value="4">&nbsp;&nbsp;I need help every day in most aspects of self care </td>
+ <td width="50%"><input type="radio" class="sleepingwell" id="sleepingwell" name="sleepingwell" value="4">&nbsp;&nbsp;Even when I take tablets I have less than 2 hours sleep</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="difficulty" value="I do not get dressed;I wash without difficulty and stay in bed">&nbsp;&nbsp;I do not get dressed;I wash without difficulty and stay in bed </td>
- <td width="50%"><input type="checkbox" name="atall1" value="Pain prevents me from sleeping at all">&nbsp;&nbsp;Pain prevents me from sleeping at all</td> 
+ <td width="50%"><input type="radio" class="withoutcausingpain" id="withoutcausingpain" name="withoutcausingpain" value="5">&nbsp;&nbsp;I do not get dressed;I wash without difficulty and stay in bed </td>
+ <td width="50%"><input type="radio" class="sleepingwell" id="sleepingwell" name="sleepingwell" value="5">&nbsp;&nbsp;Pain prevents me from sleeping at all</td> 
  </tr>
   
  <tr class="row2">  
@@ -153,33 +243,33 @@ $(function() {
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="canlift" value="I can lift heavy weights without extra pain">&nbsp;&nbsp;I can lift heavy weights without extra pain </td>
- <td width="50%"><input type="checkbox" name="normal" value="My social life is normal and gives me no extra pain">&nbsp;&nbsp;My social life is normal and gives me no extra pain</td> 
+ <td width="50%"><input type="radio" class="canlift" id="canlift" name="canlift" value="0">&nbsp;&nbsp;I can lift heavy weights without extra pain </td>
+ <td width="50%"><input type="radio"  class="normal" id="normal" name="normal" value="">&nbsp;&nbsp;My social life is normal and gives me no extra pain</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="canliftwithpain" value="I can lift heavy weights  but it gives extra pain">&nbsp;&nbsp;I can lift heavy weights  but it gives extra pain </td>
- <td width="50%"><input type="checkbox" name="normalwithpain" value="My social life is normal but increases the degree of pain">&nbsp;&nbsp;I Can sleep well only by using tablets</td> 
+ <td width="50%"><input type="radio" class="canlift" id="canlift" name="canlift" value="1">&nbsp;&nbsp;I can lift heavy weights  but it gives extra pain </td>
+ <td width="50%"><input type="radio" class="normal" id="normal" name="normal" value="1">&nbsp;&nbsp;I Can sleep well only by using tablets</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="heavyweights" value="Pain prevents me from lifting heavy weights off the floor,but I can manage if they are conveniently positions for example: On a table">&nbsp;&nbsp;Pain prevents me from lifting heavy weights off the floor,but I can manage if they are conveniently positions for example: On a table </td>
- <td width="50%"><input type="checkbox" name="significanteffect" value="Pain has no significant effect on my social life apart from limiting my more energetic interest,e.g. dancing">&nbsp;&nbsp;Pain has no significant effect on my social life apart from limiting my more energetic interest,e.g. dancing</td> 
+ <td width="50%"><input type="radio" class="canlift" id="canlift" name="canlift" value="2">&nbsp;&nbsp;Pain prevents me from lifting heavy weights off the floor,but I can manage if they are conveniently positions for example: On a table </td>
+ <td width="50%"><input type="radio" class="normal" id="normal" name="normal" value="2">&nbsp;&nbsp;Pain has no significant effect on my social life apart from limiting my more energetic interest,e.g. dancing</td> 
  </tr>
   <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="mediumweights" value="Pain prevents me from lifting heavy weights,but I can manage light to medium weights if they are conveniently positioned">&nbsp;&nbsp;Pain prevents me from lifting heavy weights,but I can manage light to medium weights if they are conveniently positioned </td>
- <td width="50%"><input type="checkbox" name="restricted" value="Pain has restricted my social life and i do not go out as often ">&nbsp;&nbsp;Pain has restricted my social life and i do not go out as often </td> 
+ <td width="50%"><input type="radio" class="canlift" id="canlift" name="canlift" value="3">&nbsp;&nbsp;Pain prevents me from lifting heavy weights,but I can manage light to medium weights if they are conveniently positioned </td>
+ <td width="50%"><input type="radio" class="normal" id="normal" name="normal" value="3">&nbsp;&nbsp;Pain has restricted my social life and i do not go out as often </td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="verylightweight" value="I can lift very light weights">&nbsp;&nbsp;I can lift very light weights </td>
- <td width="50%"><input type="checkbox" name="myhome" value="Pain has restricted my social life to my home">&nbsp;&nbsp;Pain has restricted my social life to my home</td> 
+ <td width="50%"><input type="radio"  class="canlift" id="canlift" name="canlift" value="4">&nbsp;&nbsp;I can lift very light weights </td>
+ <td width="50%"><input type="radio" class="normal" id="normal" name="normal" value="4">&nbsp;&nbsp;Pain has restricted my social life to my home</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="carryatall" value="I cannot lift or carry anything at all">&nbsp;&nbsp;I cannot lift or carry anything at all </td>
- <td width="50%"><input type="checkbox" name="nosociallife" value="I have no social life because of pain">&nbsp;&nbsp;I have no social life because of pain</td> 
+ <td width="50%"><input type="radio" class="canlift" id="canlift" name="canlift" value="5">&nbsp;&nbsp;I cannot lift or carry anything at all </td>
+ <td width="50%"><input type="radio" class="normal" id="normal" name="normal" value="5">&nbsp;&nbsp;I have no social life because of pain</td> 
  </tr>
  <tr class="row2">  
  <td></td>
@@ -190,33 +280,33 @@ $(function() {
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="walkingdistance" value="Pain does not prevent me from walking any distance">&nbsp;&nbsp;Pain does not prevent me from walking any distance </td>
- <td width="50%"><input type="checkbox" name="travelwithoutpain" value="I can travel anywhere without extra pain">&nbsp;&nbsp;I can travel anywhere without extra pain</td> 
+ <td width="50%"><input type="radio" class="walkingdistance" id="walkingdistance" name="walkingdistance" value="0">&nbsp;&nbsp;Pain does not prevent me from walking any distance </td>
+ <td width="50%"><input type="radio" class="withoutextrapain" id="withoutextrapain" name="withoutextrapain" value="0">&nbsp;&nbsp;I can travel anywhere without extra pain</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="onemile" value="Pain prevents me from walking more than one mile">&nbsp;&nbsp;Pain prevents me from walking more than one mile </td>
- <td width="50%"><input type="checkbox" name="travelwithpain" value="I can travel anywhere but it gives me extra pain">&nbsp;&nbsp;Pain prevents me from walking more than one mile</td> 
+ <td width="50%"><input type="radio" class="walkingdistance" id="walkingdistance" name="walkingdistance" value="1">&nbsp;&nbsp;Pain prevents me from walking more than one mile </td>
+ <td width="50%"><input type="radio" class="withoutextrapain" id="withoutextrapain" name="withoutextrapain" value="1">&nbsp;&nbsp;I can travel anywhere but it gives me extra pain</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="onehalfmile" value="Pain prevents me from walking more than one-half mile">&nbsp;&nbsp;Pain prevents me from walking more than one-half mile </td>
- <td width="50%"><input type="checkbox" name="journeys2hours" value="Pain is bad but I manage journeys over 2 hours">&nbsp;&nbsp;Pain is bad but I manage journeys over 2 hours</td> 
+ <td width="50%"><input type="radio" class="walkingdistance" id="walkingdistance" name="walkingdistance" value="2">&nbsp;&nbsp;Pain prevents me from walking more than one-half mile </td>
+ <td width="50%"><input type="radio" class="withoutextrapain" id="withoutextrapain" name="withoutextrapain" value="2">&nbsp;&nbsp;Pain is bad but I manage journeys over 2 hours</td> 
  </tr>
   <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="onequartermile" value="Pain prevents me from walking more than one-quarter mile">&nbsp;&nbsp;Pain prevents me from walking more than one-quarter mile </td>
- <td width="50%"><input type="checkbox" name="onehourless" value="Pain is bad but I manage journeys less than one hour ">&nbsp;&nbsp;Pain is bad but I manage journeys less than one hours </td> 
+ <td width="50%"><input type="radio" class="walkingdistance" id="walkingdistance" name="walkingdistance" value="3">&nbsp;&nbsp;Pain prevents me from walking more than one-quarter mile </td>
+ <td width="50%"><input type="radio" class="withoutextrapain" id="withoutextrapain" name="withoutextrapain" value="3">&nbsp;&nbsp;Pain is bad but I manage journeys less than one hours </td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="usingstick" value="I can only using stick or crutches">&nbsp;&nbsp;I can only using stick or crutches </td>
- <td width="50%"><input type="checkbox" name="journeys30mins" value="Pain restrict me to short necessary journeys undo 30 minutes">&nbsp;&nbsp;Pain restrict me to short necessary journeys undo 30 minutes</td> 
+ <td width="50%"><input type="radio" class="walkingdistance" id="walkingdistance" name="walkingdistance" value="4">&nbsp;&nbsp;I can only using stick or crutches </td>
+ <td width="50%"><input type="radio" class="withoutextrapain" id="withoutextrapain" name="withoutextrapain" value="4">&nbsp;&nbsp;Pain restrict me to short necessary journeys undo 30 minutes</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="bedtime" value="I am in bed most of the time and have to crawl to the toilet">&nbsp;&nbsp;I am in bed most of the time and have to crawl to the toilet </td>
- <td width="50%"><input type="checkbox" name="todoctor" value="Pain prevents me from traveling except to the doctor or hospital">&nbsp;&nbsp;Pain prevents me from traveling except to the doctor or hospital</td> 
+ <td width="50%"><input type="radio" class="walkingdistance" id="walkingdistance" name="walkingdistance" value="5">&nbsp;&nbsp;I am in bed most of the time and have to crawl to the toilet </td>
+ <td width="50%"><input type="radio" class="withoutextrapain" id="withoutextrapain" name="withoutextrapain" value="5">&nbsp;&nbsp;Pain prevents me from traveling except to the doctor or hospital</td> 
  </tr>
  <tr class="row2">  
  <td></td>
@@ -227,39 +317,43 @@ $(function() {
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="cansit" value="I can sit in a chair as long as I like">&nbsp;&nbsp;I can sit in a chair as long as I like </td>
- <td width="50%"><input type="checkbox" name="rapidlybetter" value="My pain is rapidly getting better">&nbsp;&nbsp;My pain is rapidly getting better</td> 
+ <td width="50%"><input type="radio" class="cansit" id="cansit" name="cansit" value="0">&nbsp;&nbsp;I can sit in a chair as long as I like </td>
+ <td width="50%"><input type="radio" class="rapidlybetter" id="rapidlybetter" name="rapidlybetter" value="0">&nbsp;&nbsp;My pain is rapidly getting better</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="favoritechair" value="I can only sit in my favorite chair as long as I like">&nbsp;&nbsp;Pain prevents me from walking more than one mile </td>
- <td width="50%"><input type="checkbox" name="flucutates" value="My pain flucutates but overall is definitely getting better ">&nbsp;&nbsp;My pain flucutates but overall is definitely getting better</td> 
+ <td width="50%"><input type="radio" class="cansit" id="cansit" name="cansit" value="1">&nbsp;&nbsp;Pain prevents me from walking more than one mile </td>
+ <td width="50%"><input type="radio" class="rapidlybetter" id="rapidlybetter" name="rapidlybetter" value="1">&nbsp;&nbsp;My pain flucutates but overall is definitely getting better</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="sitonehour" value="Pain prevents me from sitting more than one hour">&nbsp;&nbsp;Pain prevents me from sitting more than one hour </td>
- <td width="50%"><input type="checkbox" name="slowimprovement" value="My pain seems to be getting better but improvement is slow at the present">&nbsp;&nbsp;My pain seems to be getting better but improvement is slow at the present</td> 
+ <td width="50%"><input type="radio" class="cansit" id="cansit" name="cansit" value="2">&nbsp;&nbsp;Pain prevents me from sitting more than one hour </td>
+ <td width="50%"><input type="radio" class="rapidlybetter" id="rapidlybetter" name="rapidlybetter" value="2">&nbsp;&nbsp;My pain seems to be getting better but improvement is slow at the present</td> 
  </tr>
   <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="sit30mins" value="Pain prevents me from sitting more than 30 minutes">&nbsp;&nbsp;Pain prevents me from sitting more than 30 minutes </td>
- <td width="50%"><input type="checkbox" name="samepain" value="Pain is neither getting better nor worse ">&nbsp;&nbsp;Pain is neither getting better nor worse </td> 
+ <td width="50%"><input type="radio" class="cansit" id="cansit" name="cansit" value="3">&nbsp;&nbsp;Pain prevents me from sitting more than 30 minutes </td>
+ <td width="50%"><input type="radio" class="rapidlybetter" id="rapidlybetter" name="rapidlybetter" value="3">&nbsp;&nbsp;Pain is neither getting better nor worse </td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="sit10mins" value="Pain prevents me from sitting more than 10 minutes">&nbsp;&nbsp;Pain prevents me from sitting more than 30 minutes </td>
- <td width="50%"><input type="checkbox" name="graduallyworsening" value="My pain is gradually worsening">&nbsp;&nbsp;My pain is gradually worsening</td> 
+ <td width="50%"><input type="radio" class="cansit" id="cansit" name="cansit" value="4">&nbsp;&nbsp;Pain prevents me from sitting more than 30 minutes </td>
+ <td width="50%"><input type="radio" class="rapidlybetter" id="rapidlybetter" name="rapidlybetter" value="4">&nbsp;&nbsp;My pain is gradually worsening</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="checkbox" name="allthetime" value="Pain prevents me from sitting all most all the time">&nbsp;&nbsp;Pain prevents me from sitting all most all the time </td>
- <td width="50%"><input type="checkbox" name="rapidlyworsening" value="My pain is rapidly worsening">&nbsp;&nbsp;My pain is rapidly worsening</td> 
+ <td width="50%"><input type="radio" class="cansit" id="cansit" name="cansit" value="5">&nbsp;&nbsp;Pain prevents me from sitting all most all the time </td>
+ <td width="50%"><input type="radio" class="rapidlybetter" id="rapidlybetter" name="rapidlybetter" value="5">&nbsp;&nbsp;My pain is rapidly worsening</td> 
  </tr>
  </table>
  <table>
  <tr>
-  <td></td>
- <td width="50%">Scoring:Questions are scored on a vertical scale of 0-5.Total scores and multiply by 2 .Divide by number of sections answered multiplied by 10.A score of 22% or more is considered significant activities of daily living disability.<br/><br/>(Score &nbsp;<input type="text" name="score" size="7">*2)&nbsp;/&nbsp;( <input type="text" name="section" size="7">Section *10)&nbsp;&nbsp;=&nbsp;&nbsp;<input type="text" name="adl" size="9">&nbsp;%ADL&nbsp;<input type="text" name="adl2" size="9"></td>
+  <td> <a  onclick="return doAjaxPost()" style="text-decoration: underline; cursor:pointer;color: brown" ><b>Show disability of patient score</b></td>
+</tr>
+</table>
+<table style="display:none" id="page">
+<tr>
+ <td width="50%">Scoring:Questions are scored on a vertical scale of 0-5.Total scores and multiply by 2 .Divide by number of sections answered multiplied by 10.A score of 22% or more is considered significant activities of daily living disability.<br/><br/>(Score &nbsp;<input type="text" id="score" name="score" size="7">*2)&nbsp;/&nbsp;( <input type="text" id="section" name="section" size="7">Section *10)&nbsp;&nbsp;=&nbsp;&nbsp;<input type="text" id="adl" name="adl" size="9">&nbsp;%ADL&nbsp;<input type="text" name="adl2" size="9"><br/><br/><input type="button" value="Calculate" onclick="return percentage()" class="submit_btn"></td>
  <td width="50%">Comments:&nbsp;&nbsp;<textarea rows="6" cols="50" name="comment"></textarea></td>
  </tr>
  </table>

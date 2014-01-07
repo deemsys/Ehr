@@ -6,6 +6,7 @@
 
  <link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
   <link rel="stylesheet" href="/resources/css/style.css" />
+  <script src="resources/js/jquery.js"></script>
  <script src="resources/js/jquery.min.js"></script> 
  <script src="resources/js/jquery-ui.js"></script>
  <script src="resources/js/jquey-1.9.1.js"></script>
@@ -14,6 +15,94 @@
   line-height:18px;}
    </STYLE>
    
+   <script type="text/javascript">
+ function percentage()
+ {
+	 alert("hi");
+	 var score=document.getElementById("score").value;
+	 var section=document.getElementById("section").value;
+	 var div=(score*2)/(section*10);
+	 var adl=div/100;
+	 alert("div"+div);
+	 document.getElementById("adl").value=adl;
+ }
+ 
+ 
+ </script>
+ <script type="text/javascript">
+ function doAjaxPost() {
+	 
+	 document.getElementById("page").style.display="block";
+	 var section1=0;
+	 var tolerate=0;
+	 if($("input[type='radio'].tolerate").is(':checked')) {
+		 tolerate = $("input[type='radio'].tolerate:checked").val();
+		 section1=1;
+		}
+	// var painintensity=$('input[name=painintensity]:radio').click(function() {var value = $(this).val();});
+	 //var painintensity = $('#painintensity').val();
+	 //alert(painintensity);
+	 var section2=0;
+	 var withoutpain = 0;
+	 if($("input[type='radio'].withoutpain").is(':checked')) {
+		 withoutpain = $("input[type='radio'].withoutpain:checked").val();	
+		 section2=1;
+	}
+	 var section3=0;
+	 var withoutcausingpain =0;
+	 if($("input[type='radio'].withoutcausingpain").is(':checked')) {
+		 withoutcausingpain = $("input[type='radio'].withoutcausingpain:checked").val();		    
+	     section3=1;
+	 }
+	 var section4=0;
+	 var sleepingwell =0;
+	 if($("input[type='radio'].sleepingwell").is(':checked')) {
+		 sleepingwell = $("input[type='radio'].sleepingwell:checked").val();		    
+	     section4=1;
+	 }
+	 var section5=0;
+	 var canlift = 0;
+	 if($("input[type='radio'].canlift").is(':checked')) {
+		 canlift = $("input[type='radio'].canlift:checked").val();		    
+	     section5=1;
+	 }
+	 var section6=0;
+	 var normal = 0;
+	 if($("input[type='radio'].normal").is(':checked')) {
+		 normal  = $("input[type='radio'].normal:checked").val();		    
+	     section6=1;
+	 }
+	 var section7=0;
+	 var walkingdistance = 0;
+	 if($("input[type='radio'].walkingdistance").is(':checked')) {
+		 sleeping = $("input[type='radio'].sleeping:checked").val();		    
+	     section7=1;
+	 }
+	 var section8=0;
+	 var withoutextrapain = 0;
+	 if($("input[type='radio'].withoutextrapain").is(':checked')) {
+		 withoutextrapain = $("input[type='radio'].withoutextrapain:checked").val();		    
+	     section8=1;
+	 }
+	 var section9=0;
+	 var cansit = 0;
+	 if($("input[type='radio'].cansit").is(':checked')) {
+		 cansit = $("input[type='radio'].cansit:checked").val();
+		 section9=1;
+	}
+	 var section10=0;
+	 var rapidlybetter = 0;
+	 if($("input[type='radio'].rapidlybetter").is(':checked')) {
+		 rapidlybetter = $("input[type='radio'].rapidlybetter:checked").val();		    
+	     section10=1;
+	 }
+	 var total=parseInt(tolerate)+parseInt(withoutpain)+parseInt(withoutcausingpain)+parseInt(sleepingwell)+parseInt(canlift)+parseInt(normal)+parseInt(walkingdistance)+parseInt(withoutextrapain)+parseInt(cansit)+parseInt(rapidlybetter);
+	 document.getElementById("score").value=total;
+	 var sectiontotal=parseInt(section1)+parseInt(section2)+parseInt(section3)+parseInt(section4)+parseInt(section5)+parseInt(section6)+parseInt(section7)+parseInt(section8)+parseInt(section9)+parseInt(section10);
+	 document.getElementById("section").value=sectiontotal;		   
+ }
+		  
+ </script>
    <script type="text/javascript">
 function Checksymptom(val){
  var element=document.getElementById('other1');
@@ -79,33 +168,20 @@ $(function() {
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%">${lowback.tolerate}</td>
- <td width="50%">${lowback.withoutpain}</td> 
- </tr>
- <tr class="row1"> 
- <td></td> 
- <td width="50%">${lowback.badpain} </td>
- <td width="50%">${lowback.withpain}</td> 
- </tr>
- <tr class="row1"> 
- <td></td> 
- <td width="50%">${lowback.complete} </td>
- <td width="50%">${lowback.onehour}</td> 
- </tr>
-  <tr class="row1"> 
- <td></td> 
- <td width="50%">${lowback.moderate} </td>
- <td width="50%">${lowback.thirtyminutes}</td> 
- </tr>
- <tr class="row1"> 
- <td></td> 
- <td width="50%">${lowback.little} </td>
- <td width="50%">${lowback.tenminutes}</td> 
- </tr>
- <tr class="row1"> 
- <td></td> 
- <td width="50%">${lowback.noeffect} </td>
- <td width="50%">${lowback.atall}</td> 
+ <td width="50%"><c:if test= "${lowback.tolerate== '0'}"> <c:out value="I Can tolerate the pain without having to use painkillers"></c:out></c:if> &nbsp;&nbsp;
+ <c:if test= "${lowback.tolerate== '1'}"> <c:out value="The pain is bad but I manage without using painkillers"></c:out></c:if> &nbsp;&nbsp;
+  <c:if test= "${lowback.tolerate== '2'}"> <c:out value="Painkillers give complete relief from pain"></c:out></c:if> &nbsp;&nbsp;
+  <c:if test= "${lowback.tolerate== '3'}"> <c:out value="Painkillers give moderate relief from pain"></c:out></c:if> &nbsp;&nbsp; 
+  <c:if test= "${lowback.tolerate== '4'}"> <c:out value="Painkillers give very little relief from pain"></c:out></c:if> &nbsp;&nbsp; 
+  <c:if test= "${lowback.tolerate== '5'}"> <c:out value="Painkillers have no effect on the pain and I do not use them"></c:out></c:if> &nbsp;&nbsp; </td> 
+ 
+ <td width="50%"><c:if test= "${lowback.withoutpain== '0'}"> <c:out value="I Can stand as long as I want but it gives extrapain"></c:out></c:if> &nbsp;&nbsp; 
+ <c:if test= "${lowback.withoutpain== '1'}"> <c:out value="I Can stand as long as I want without extrapain"></c:out></c:if> &nbsp;&nbsp;
+ <c:if test= "${lowback.withoutpain== '2'}"> <c:out value="Pain prevents me from standing more than 1 hour"></c:out></c:if> &nbsp;&nbsp;
+ <c:if test= "${lowback.withoutpain== '3'}"> <c:out value="Pain prevents me from standing more than 30 minutes"></c:out></c:if> &nbsp;&nbsp;
+ <c:if test= "${lowback.withoutpain== '4'}"> <c:out value="Pain prevents me from standing more than 10 minutes"></c:out></c:if> &nbsp;&nbsp;
+ <c:if test= "${lowback.withoutpain== '5'}"> <c:out value="Pain prevents me from standing at all"></c:out></c:if> &nbsp;&nbsp;</td>
+ <td></td>
  </tr>
  <tr class="row2">  
  <td></td>
@@ -116,33 +192,20 @@ $(function() {
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%">${lowback.withoutcausingpain} </td>
- <td width="50%">${lowback.sleepingwell}</td> 
- </tr>
- <tr class="row1"> 
- <td></td> 
- <td width="50%">${lowback.extrapain} </td>
- <td width="50%">${lowback.tablets}</td> 
- </tr>
- <tr class="row1"> 
- <td></td> 
- <td width="50%">${lowback.slow} </td>
- <td width="50%">${lowback.sixhour}</td> 
- </tr>
-  <tr class="row1"> 
- <td></td> 
- <td width="50%">${lowback.personalcare} </td>
- <td width="50%">${lowback.fourhours}</td> 
- </tr>
- <tr class="row1"> 
- <td></td> 
- <td width="50%">${lowback.littlehelp} </td>
- <td width="50%">${lowback.twohours}</td> 
- </tr>
- <tr class="row1"> 
- <td></td> 
- <td width="50%">${lowback.difficulty} </td>
- <td width="50%">${lowback.atall1}</td> 
+ <td width="50%"><c:if test= "${lowback.withoutcausingpain== '0'}"> <c:out value="I can look after myself normally without causing extra pain"></c:out></c:if> &nbsp;&nbsp;
+ <c:if test= "${lowback.withoutcausingpain== '1'}"> <c:out value="I can look after myself normally but it causes extra pain"></c:out></c:if> &nbsp;&nbsp; 
+ <c:if test= "${lowback.withoutcausingpain== '2'}"> <c:out value="It is painful to look after myself and I am slow and careful"></c:out></c:if> &nbsp;&nbsp; 
+ <c:if test= "${lowback.withoutcausingpain== '3'}"> <c:out value="I need some help but manage  most of my personal care"></c:out></c:if> &nbsp;&nbsp; 
+ <c:if test= "${lowback.withoutcausingpain== '4'}"> <c:out value="I need help every day in most aspects of self care"></c:out></c:if> &nbsp;&nbsp;
+ <c:if test= "${lowback.withoutcausingpain== '5'}"> <c:out value="I do not get dressed;I wash without difficulty and stay in bed"></c:out></c:if> &nbsp;&nbsp; </td> 
+ 
+ <td width="50%"><c:if test= "${lowback.sleepingwell== '0'}"> <c:out value="I Can stand as long as I want without extrapain"></c:out></c:if> &nbsp;&nbsp;
+ <c:if test= "${lowback.sleepingwell== '1'}"> <c:out value="I Can sleep well only by using tablets"></c:out></c:if> &nbsp;&nbsp;
+ <c:if test= "${lowback.sleepingwell== '2'}"> <c:out value="Even when I take tablets I have less than 6 hours sleep"></c:out></c:if> &nbsp;&nbsp;
+ <c:if test= "${lowback.sleepingwell== '3'}"> <c:out value="Even when I take tablets I have less than 4 hours sleep"></c:out></c:if> &nbsp;&nbsp;
+ <c:if test= "${lowback.sleepingwell== '4'}"> <c:out value="Even when I take tablets I have less than 2 hours sleep"></c:out></c:if> &nbsp;&nbsp;
+ <c:if test= "${lowback.sleepingwell== '5'}"> <c:out value="Pain prevents me from sleeping at all"></c:out></c:if> &nbsp;&nbsp;</td>
+ <td></td>
  </tr>
   
  <tr class="row2">  
@@ -154,33 +217,19 @@ $(function() {
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%">${lowback.canlift} </td>
- <td width="50%">${lowback.normal}</td> 
- </tr>
- <tr class="row1"> 
- <td></td> 
- <td width="50%">${lowback.canliftwithpain} </td>
- <td width="50%">${lowback.normalwithpain}</td> 
- </tr>
- <tr class="row1"> 
- <td></td> 
- <td width="50%">${lowback.heavyweights} </td>
- <td width="50%">${lowback.significanteffect}</td> 
- </tr>
-  <tr class="row1"> 
- <td></td> 
- <td width="50%">${lowback.mediumweights} </td>
- <td width="50%">${lowback.restricted} </td> 
- </tr>
- <tr class="row1"> 
- <td></td> 
- <td width="50%">${lowback.verylightweight} </td>
- <td width="50%">${lowback.myhome}</td> 
- </tr>
- <tr class="row1"> 
- <td></td> 
- <td width="50%">${lowback.carryatall} </td>
- <td width="50%">${lowback.nosociallife}</td> 
+ <td width="50%"><c:if test= "${lowback.canlift== '0'}"> <c:out value="I can lift heavy weights without extra pain"></c:out></c:if> &nbsp;&nbsp; 
+  <c:if test= "${lowback.canlift== '1'}"> <c:out value="I can lift heavy weights  but it gives extra pain"></c:out></c:if> &nbsp;&nbsp; 
+  <c:if test= "${lowback.canlift== '2'}"> <c:out value="Pain prevents me from lifting heavy weights off the floor,but I can manage if they are conveniently positions for example: On a table"></c:out></c:if> &nbsp;&nbsp; 
+  <c:if test= "${lowback.canlift== '3'}"> <c:out value="Pain prevents me from lifting heavy weights,but I can manage light to medium weights if they are conveniently positioned"></c:out></c:if> &nbsp;&nbsp; 
+ <c:if test= "${lowback.canlift== '4'}"> <c:out value="I can lift very light weights"></c:out></c:if> &nbsp;&nbsp; 
+ <c:if test= "${lowback.canlift== '5'}"> <c:out value="I cannot lift or carry anything at all"></c:out></c:if> &nbsp;&nbsp; </td> 
+ 
+ <td width="50%"><c:if test= "${lowback.normal== '0'}"> <c:out value="My social life is normal and gives me no extra pain"></c:out></c:if> &nbsp;&nbsp;
+ <c:if test= "${lowback.normal== '1'}"> <c:out value="I Can sleep well only by using tablets"></c:out></c:if> &nbsp;&nbsp;
+ <c:if test= "${lowback.normal== '2'}"> <c:out value="Pain has no significant effect on my social life apart from limiting my more energetic interest,e.g. dancing"></c:out></c:if> &nbsp;&nbsp;
+ <c:if test= "${lowback.normal== '3'}"> <c:out value="Pain has restricted my social life and i do not go out as often"></c:out></c:if> &nbsp;&nbsp; 
+ <c:if test= "${lowback.normal== '4'}"> <c:out value="Pain has restricted my social life to my home"></c:out></c:if> &nbsp;&nbsp;
+ <c:if test= "${lowback.normal== '5'}"> <c:out value="I have no social life because of pain"></c:out></c:if> &nbsp;&nbsp;</td>
  </tr>
  <tr class="row2">  
  <td></td>
@@ -191,33 +240,19 @@ $(function() {
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%">${lowback.walkingdistance} </td>
- <td width="50%">${lowback.travelwithoutpain}</td> 
- </tr>
- <tr class="row1"> 
- <td></td> 
- <td width="50%">${lowback.onemile} </td>
- <td width="50%">${lowback.travelwithpain}</td> 
- </tr>
- <tr class="row1"> 
- <td></td> 
- <td width="50%">${lowback.onehalfmile} </td>
- <td width="50%">${lowback.journey2hours}</td> 
- </tr>
-  <tr class="row1"> 
- <td></td> 
- <td width="50%">${lowback.onequartermile} </td>
- <td width="50%">${lowback.onehourless} </td> 
- </tr>
- <tr class="row1"> 
- <td></td> 
- <td width="50%">${lowback.usingstick} </td>
- <td width="50%">${lowback.journeys30mins}</td> 
- </tr>
- <tr class="row1"> 
- <td></td> 
- <td width="50%">${lowback.bedtime} </td>
- <td width="50%">${lowback.todoctor}</td> 
+ <td width="50%"><c:if test= "${lowback.walkingdistance== '0'}"> <c:out value="Pain does not prevent me from walking any distance"></c:out></c:if> &nbsp;&nbsp;
+ <c:if test= "${lowback.walkingdistance== '1'}"> <c:out value="Pain prevents me from walking more than one mile"></c:out></c:if> &nbsp;&nbsp; 
+ <c:if test= "${lowback.walkingdistance== '2'}"> <c:out value="Pain prevents me from walking more than one-half mile"></c:out></c:if> &nbsp;&nbsp; 
+ <c:if test= "${lowback.walkingdistance== '3'}"> <c:out value="Pain prevents me from walking more than one-quarter mile"></c:out></c:if> &nbsp;&nbsp; 
+<c:if test= "${lowback.walkingdistance== '4'}"> <c:out value="I can only using stick or crutches"></c:out></c:if> &nbsp;&nbsp; 
+ <c:if test= "${lowback.walkingdistance== '5'}"> <c:out value="I am in bed most of the time and have to crawl to the toilet"></c:out></c:if> &nbsp;&nbsp; </td> 
+ 
+ <td width="50%"><c:if test= "${lowback.withoutextrapain== '0'}"> <c:out value="I can travel anywhere without extra pain"></c:out></c:if> &nbsp;&nbsp;
+ <c:if test= "${lowback.withoutextrapain== '1'}"> <c:out value="I can travel anywhere but it gives me extra pain"></c:out></c:if> &nbsp;&nbsp; 
+ <c:if test= "${lowback.withoutextrapain== '2'}"> <c:out value="Pain is bad but I manage journeys over 2 hours"></c:out></c:if> &nbsp;&nbsp;
+  <c:if test= "${lowback.withoutextrapain== '3'}"> <c:out value="Pain is bad but I manage journeys less than one hours"></c:out></c:if> &nbsp;&nbsp; 
+ <c:if test= "${lowback.withoutextrapain== '4'}"> <c:out value="Pain restrict me to short necessary journeys undo 30 minutes"></c:out></c:if> &nbsp;&nbsp;
+ <c:if test= "${lowback.withoutextrapain== '5'}"> <c:out value="Pain prevents me from traveling except to the doctor or hospital"></c:out></c:if> &nbsp;&nbsp;</td>
  </tr>
  <tr class="row2">  
  <td></td>
@@ -228,33 +263,19 @@ $(function() {
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%">${lowback.cansit} </td>
- <td width="50%">${lowback.rapidlybetter}</td> 
- </tr>
- <tr class="row1"> 
- <td></td> 
- <td width="50%">${lowback.favoritechair} </td>
- <td width="50%">${lowback.flucutates}</td> 
- </tr>
- <tr class="row1"> 
- <td></td> 
- <td width="50%">${lowback.sitonehour} </td>
- <td width="50%">${lowback.slowimprovement}</td> 
- </tr>
-  <tr class="row1"> 
- <td></td> 
- <td width="50%">${lowback.sit30mins} </td>
- <td width="50%">${lowback.samepain} </td> 
- </tr>
- <tr class="row1"> 
- <td></td> 
- <td width="50%">${lowback.sit10mins} </td>
- <td width="50%">${lowback.graduallyworsening}</td> 
- </tr>
- <tr class="row1"> 
- <td></td> 
- <td width="50%">${lowback.allthetime} </td>
- <td width="50%">${lowback.rapidlyworsening}</td> 
+ <td width="50%"><c:if test= "${lowback.cansit== '0'}"> <c:out value="I can sit in a chair as long as I like"></c:out></c:if> &nbsp;&nbsp;
+  <c:if test= "${lowback.cansit== '1'}"> <c:out value="Pain prevents me from walking more than one mile"></c:out></c:if> &nbsp;&nbsp; 
+ <c:if test= "${lowback.cansit== '2'}"> <c:out value="Pain prevents me from sitting more than one hour"></c:out></c:if> &nbsp;&nbsp; 
+ <c:if test= "${lowback.cansit== '3'}"> <c:out value="Pain prevents me from sitting more than 30 minutes"></c:out></c:if> &nbsp;&nbsp;
+ <c:if test= "${lowback.cansit== '4'}"> <c:out value="Pain prevents me from sitting more than 30 minutes"></c:out></c:if> &nbsp;&nbsp; 
+<c:if test= "${lowback.cansit== '5'}"> <c:out value="Pain prevents me from sitting all most all the time"></c:out></c:if> &nbsp;&nbsp;</td> 
+ 
+ <td width="50%"><c:if test= "${lowback.rapidlybetter== '0'}"> <c:out value="My pain is rapidly getting better"></c:out></c:if> &nbsp;&nbsp;
+ <c:if test= "${lowback.rapidlybetter== '1'}"> <c:out value="My pain flucutates but overall is definitely getting better"></c:out></c:if> &nbsp;&nbsp;
+ <c:if test= "${lowback.rapidlybetter== '2'}"> <c:out value="My pain seems to be getting better but improvement is slow at the present"></c:out></c:if> &nbsp;&nbsp;
+ <c:if test= "${lowback.rapidlybetter== '3'}"> <c:out value="Pain is neither getting better nor worse"></c:out></c:if> &nbsp;&nbsp; 
+ <c:if test= "${lowback.rapidlybetter== '4'}"> <c:out value="My pain is gradually worsening"></c:out></c:if> &nbsp;&nbsp;
+ <c:if test= "${lowback.rapidlybetter== '5'}"> <c:out value="My pain is rapidly worsening"></c:out></c:if> &nbsp;&nbsp;</td>
  </tr>
  </table>
  <table>
