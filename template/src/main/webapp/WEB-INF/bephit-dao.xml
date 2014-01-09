@@ -126,5 +126,8 @@
     <bean id="HipquestionnaireDAO" class="bephit.dao.HipquestionnaireDAO">
            <property name="dataSource" ref="dataSource" />
    </bean>   
+   <bean id="DutiesunderDAO" class="bephit.dao.DutiesunderDAO">
+           <property name="dataSource" ref="dataSource" />
+   </bean>
     
 </beans>
