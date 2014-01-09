@@ -59,12 +59,39 @@
 		 recreation = $("input[type='radio'].recreation:checked").val();		    
 	}
 	 var total=parseInt(painintensity)+parseInt(work)+parseInt(lifting)+parseInt(driving)+parseInt(personal)+parseInt(sleeping)+parseInt(reading)+parseInt(headache)+parseInt(concentration)+parseInt(recreation);
-	 alert(total);
+	 alert(total); /* $check1>=406 && $check1<=429 */
+	 if(total >= 0 && total <= 4)
+		 {
+		 
+		 document.getElementById("disability").innerHTML="This Patient is having No Disability";
+		 document.getElementById("status").value="This Patient is having No Disability";
+		 }
+	 else if(total >= 5 && total <= 14)
+	 {
+	 document.getElementById("disability").innerHTML="This Patient is having Mild Disability";
+	 document.getElementById("status").value="This Patient is having Mild Disability";
+	 }
+	 else if(total >= 15 && total <= 24)
+	 {
+	 document.getElementById("disability").innerHTML="This Patient is having Moderate Disability";
+	 document.getElementById("status").value="This Patient is having Moderate Disability";
+	 }
+	 else if(total >= 25 && total <= 34)
+	 {
+	 document.getElementById("disability").innerHTML="This Patient is having Severe Disability";
+	 document.getElementById("status").value="This Patient is having Severe Disability";
+	 }
+	 else if(total>=35)
+		 {
+		 document.getElementById("disability").innerHTML="This Patient is having complete Disability";
+		 document.getElementById("status").value="This Patient is having complete Disability";
+		 }
 	 document.getElementById("score").value=total;
+	 document.getElementById("scores").innerHTML=total;
 		    }
 		  
  </script>
- <script type="text/javascript">
+ <!-- <script type="text/javascript">
  function percentage()
  {
 	 var percentage=document.getElementById("score").value;
@@ -74,7 +101,7 @@
  }
  
  
- </script>
+ </script> -->
  <script>
 $(function() {
     $( "#slider" ).slider({
@@ -157,9 +184,9 @@ $(function() {
 <body>
 
 	     
-<form action="insertwristindex" method="POST">  
+<form action="insertneckindex" method="POST">  
 	      <div id="right_content">
-<table cellpadding="0" cellspacing="0" border="0" width="100%" class="margin_table">
+<table cellpadding="0" cellspacing="0" border="1" width="100%" class="margin_table">
 <tr>
 <td valign="top" align="left">
  <div>
@@ -171,10 +198,13 @@ $(function() {
 	           
 	    
 	     <div class="contentbox">
-        
+        <table> <tr><td width="140">Name</td>
+           <td><input type="text" name="name"></td><td width="480"></td><td></td><td width="100"></td>
+           <td >&nbsp;&nbsp;&nbsp;&nbsp;Date:&nbsp;</td> <td><input type="text" name="date" id="datepicker"></td>
+           </tr></table>
             <p><b>Please read:</b>This questionairre has been designed to give the Physical Therapist information as to how your wrist/hand pain has affected your ability to manage everyday life.</p>
-           <table width="100%">
-           <tr ><td width="500"><b>Section 1-Pain Intensity</b></td><td width="500"><b>Section 6-Work</b></td></tr>
+           <table width="100%" class="margin_table" >
+           <tr ><td width="50%" class="margin_table" ><b>Section 1-Pain Intensity</b></td><td width="500"><b>Section 6-Work</b></td></tr>
            <tr><td><input type="radio" class="painintensity" id="painintensity" name="painintensity" value="0">&nbsp;&nbsp;I have no pain at the moment.</td>
            <td><input type="radio" name="work" class="work" id="work" value="0">&nbsp;&nbsp;I can do as much work as I want to.</td>
            </tr>
@@ -221,10 +251,10 @@ $(function() {
            <tr><td><input type="radio" id="lifting" name="lifting" class="lifting"  value="1">&nbsp;&nbsp;I can lift heavy weights but it gives extra pain.</td>
            <td><input type="radio"  id="sleeping" class="sleeping"  name="sleeping" value="1">&nbsp;&nbsp;My sleep is slightly disturbed(less than 1 hour sleepless).</td>
            </tr>
-          <tr><td><input type="radio" id="lifting" name="lifting" class="lifting" value="2">&nbsp;&nbsp;Pain prevents me from lifting heavy weights off the floor,but I can manage <br>if they are conveniently positioned,for example on a table. </td>
+          <tr><td><input type="radio" id="lifting" name="lifting" class="lifting" value="2">&nbsp;&nbsp;Pain prevents me from lifting heavy weights off the floor,but I can manage if they are conveniently positioned,for example on a table. </td>
            <td><input type="radio"  id="sleeping" class="sleeping"  name="sleeping" value="2">&nbsp;&nbsp;My sleep is mildly disturbed (1-2 hours sleepless).</td>
            </tr>
-            <tr><td><input type="radio" id="lifting"  name="lifting" class="lifting" value="3">&nbsp;&nbsp;Pain prevents me from lifting heavy weights,but I can manage light  <br> to medium weights if they are conveniently positioned.</td>
+            <tr><td><input type="radio" id="lifting"  name="lifting" class="lifting" value="3">&nbsp;&nbsp;Pain prevents me from lifting heavy weights,but I can manage light to medium weights if they are conveniently positioned.</td>
            <td><input type="radio" id="sleeping" class="sleeping"  name="sleeping" value="3">&nbsp;&nbsp;My sleep is moderately disturbed (2-3 hours sleepless).</td>
            </tr>
             <tr><td><input type="radio" id="lifting" name="lifting" class="lifting" value="4">&nbsp;&nbsp;I can lift very light weights.</td>
@@ -281,11 +311,12 @@ $(function() {
            <table><tr><td><a  onclick="return doAjaxPost()" style="text-decoration: underline; cursor:pointer;color: brown" ><b>Show disability of patient score</b></td></tr>
            
            </table>
-           <table style="display: none" id="page"><tr><td><input type="text"  size="5" name="score" id="score"> /50=<input type="text"  size="5" name="total" id="total">%</td>
-          <td><input type="button" value="Calculate" onclick="return percentage()" class="submit_btn"> </td>
+           <table style="display: none" id="page"><tr><td><input type="hidden"  size="5" name="score" id="score"><div id="scores"></div> </td><td><div id="disability"></div><input type="text" name="status" id="status"></td>
+         <!--  <td><input type="button" value="Calculate" onclick="return percentage()" class="submit_btn"> </td> -->
            </tr>          
                      
-           </table>   
+           </table> 
+             
             <div align="right"><input type="submit" value="save" class="submit_btn"></div>
     
             
