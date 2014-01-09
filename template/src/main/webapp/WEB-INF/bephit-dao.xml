@@ -118,10 +118,7 @@
            <property name="dataSource" ref="dataSource" />
    </bean>
     <bean id="WristindexDAO" class="bephit.dao.WristindexDAO">
-           <property name="dataSource" ref="dataSource" /
-   </bean>
-    <bean id="DutiesunderDAO" class="bephit.dao.DutiesunderDAO">
-           <property name="dataSource" ref="dataSource" /
+           <property name="dataSource" ref="dataSource" />
    </bean> 
     <bean id="NeckindexDAO" class="bephit.dao.NeckindexDAO">
            <property name="dataSource" ref="dataSource" />
