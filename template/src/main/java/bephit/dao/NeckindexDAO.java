@@ -12,7 +12,7 @@ import java.util.List;
 import javax.sql.DataSource;
 
 import bephit.model.*;
-public class WristindexDAO
+public class NeckindexDAO
 {
 	
 		private DataSource dataSource;
@@ -20,7 +20,7 @@ public class WristindexDAO
 		public void setDataSource(DataSource dataSource) {
 			this.dataSource = dataSource;
 		}
-		public int insertwristindex(Wristindex wristindexdetails)
+		public int insertneckindex(Neckindex neckindexdetails)
 		{
 			Connection con = null;
 			Statement statement = null;
@@ -35,22 +35,21 @@ public class WristindexDAO
 				e1.printStackTrace();
 			}
 		    try{
-		    	String d="insert into wristindex(name,date,painintensity,work,numbness,driving,personal,sleeping,strength,house,writing,recreation,painscale,score,total)values('"
-		    			+wristindexdetails.getName()
-						+"','"+wristindexdetails.getDate()
-						+"','"+wristindexdetails.getPainintensity()
-						+"','"+wristindexdetails.getWork()
-						+"','"+wristindexdetails.getNumbness()
-						+"','"+wristindexdetails.getDriving()					
-						+"','"+wristindexdetails.getPersonal()					
-						+"','"+wristindexdetails.getSleeping()					
-						+"','"+wristindexdetails.getStrength()
-						+"','"+wristindexdetails.getHouse()
-						+"','"+wristindexdetails.getWriting()
-						+"','"+wristindexdetails.getRecreation()
-						+"','"+wristindexdetails.getPainscale()
-						+"','"+wristindexdetails.getScore()
-						+"','"+wristindexdetails.getTotal()						
+		    	String d="insert into neckindex(name,date,painintensity,work,personal,driving,lifting,sleeping,reading,recreation,headache,concentration,score,status)values('"
+		    			+neckindexdetails.getName()
+		    			+"','"+neckindexdetails.getDate()
+						+"','"+neckindexdetails.getPainintensity()
+						+"','"+neckindexdetails.getWork()
+						+"','"+neckindexdetails.getPersonal()
+						+"','"+neckindexdetails.getDriving()					
+						+"','"+neckindexdetails.getLifting()					
+						+"','"+neckindexdetails.getSleeping()					
+						+"','"+neckindexdetails.getReading()
+						+"','"+neckindexdetails.getRecreation()
+						+"','"+neckindexdetails.getHeadache()					
+						+"','"+neckindexdetails.getConcentration()
+						+"','"+neckindexdetails.getScore()
+						+"','"+neckindexdetails.getStatus()						
 						+"')";
 		    			System.out.print(d);
 		    			statement.executeUpdate(d);
@@ -73,7 +72,7 @@ public class WristindexDAO
 	    		return 0;
 		    
 		}
-		public List<Wristindex> getwristindexDetails(){
+		public List<Neckindex> getneckindexDetails(){
 			Connection con = null;
 			Statement statement = null;
 			ResultSet resultSet = null;
@@ -83,27 +82,26 @@ public class WristindexDAO
 			} catch (SQLException e1) {
 				e1.printStackTrace();
 			}
-			List<Wristindex> wristindex = new ArrayList<Wristindex>();
+			List<Neckindex> neckindex = new ArrayList<Neckindex>();
 		    try{
-				resultSet = statement.executeQuery("select * from wristindex");
+				resultSet = statement.executeQuery("select * from neckindex");
 				while(resultSet.next()){
-					wristindex.add(new Wristindex(
-							resultSet.getString("wristindexno"),
-							resultSet.getString("name"),
-							resultSet.getString("date"),
+					neckindex.add(new Neckindex(
+							resultSet.getString("neckindexno"),	
+							resultSet.getString("name"),							
+							resultSet.getString("date"),													
 							resultSet.getString("painintensity"),
 							resultSet.getString("work"),
-							resultSet.getString("numbness"),
-							resultSet.getString("driving"),
 							resultSet.getString("personal"),
+							resultSet.getString("driving"),
+							resultSet.getString("lifting"),
 							resultSet.getString("sleeping"),
-							resultSet.getString("strength"),
-							resultSet.getString("house"),
-							resultSet.getString("writing"),
+							resultSet.getString("reading"),
 							resultSet.getString("recreation"),
-							resultSet.getString("painscale"),
+							resultSet.getString("headache"),
+							resultSet.getString("concentration"),							
 							resultSet.getString("score"),
-							resultSet.getString("total")
+							resultSet.getString("status")
 				    	    ));
 				    	
 				}
@@ -116,10 +114,10 @@ public class WristindexDAO
 		    	releaseStatement(statement);
 		    	releaseConnection(con);	    	
 		    }
-		    return wristindex;
+		    return neckindex;
 			
 		}
-		public List<Wristindex> getwristindexDetails(String wristindexno){
+		public List<Neckindex> getneckindexDetails(String neckindexno){
 			Connection con = null;
 			Statement statement = null;
 			ResultSet resultSet = null;
@@ -129,27 +127,26 @@ public class WristindexDAO
 			} catch (SQLException e1) {
 				e1.printStackTrace();
 			}
-			List<Wristindex> wristindex = new ArrayList<Wristindex>();
+			List<Neckindex> neckindex = new ArrayList<Neckindex>();
 		    try{
-				resultSet = statement.executeQuery("select * from wristindex where wristindexno='"+wristindexno+"'");
+				resultSet = statement.executeQuery("select * from neckindex where neckindexno='"+neckindexno+"'");
 				while(resultSet.next()){
-					wristindex.add(new Wristindex(
-							resultSet.getString("wristindexno"),
-							resultSet.getString("name"),
-							resultSet.getString("date"),
+					neckindex.add(new Neckindex(
+							resultSet.getString("neckindexno"),	
+							resultSet.getString("name"),							
+							resultSet.getString("date"),													
 							resultSet.getString("painintensity"),
 							resultSet.getString("work"),
-							resultSet.getString("numbness"),
-							resultSet.getString("driving"),
 							resultSet.getString("personal"),
+							resultSet.getString("driving"),
+							resultSet.getString("lifting"),
 							resultSet.getString("sleeping"),
-							resultSet.getString("strength"),
-							resultSet.getString("house"),
-							resultSet.getString("writing"),
+							resultSet.getString("reading"),
 							resultSet.getString("recreation"),
-							resultSet.getString("painscale"),
+							resultSet.getString("headache"),
+							resultSet.getString("concentration"),							
 							resultSet.getString("score"),
-							resultSet.getString("total")
+							resultSet.getString("status")
 				    	    ));
 				    	
 				}
@@ -162,10 +159,10 @@ public class WristindexDAO
 		    	releaseStatement(statement);
 		    	releaseConnection(con);	    	
 		    }
-		    return wristindex;
+		    return neckindex;
 			
 		}
-		public int updatewristindex(Wristindex wristindexdetails,String wristindexno)
+		public int updateneckindex(Neckindex neckindexdetails,String neckindexno)
 		{
 			Connection con = null;
 			Statement statement = null;
@@ -180,22 +177,21 @@ public class WristindexDAO
 		    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 		    	 Date date = new Date();
 		    	 //System.out.println(dateFormat.format(date));
-		    	String cmd="UPDATE wristindex SET " +
-		    			 "name='"+wristindexdetails.getName()
-							+"',date='"+wristindexdetails.getDate()
-							+"',painintensity='"+wristindexdetails.getPainintensity()
-							+"',work='"+wristindexdetails.getWork()
-							+"',numbness='"+wristindexdetails.getNumbness()
-							+"',driving='"+wristindexdetails.getDriving()					
-							+"',personal='"+wristindexdetails.getPersonal()					
-							+"',sleeping='"+wristindexdetails.getSleeping()					
-							+"',strength='"+wristindexdetails.getStrength()
-							+"',house='"+wristindexdetails.getHouse()
-							+"',writing='"+wristindexdetails.getWriting()
-							+"',recreation='"+wristindexdetails.getRecreation()
-							+"',painscale='"+wristindexdetails.getPainscale()
-							+"',score='"+wristindexdetails.getScore()
-							+"',total='"+wristindexdetails.getTotal()+"' WHERE wristindexno='"+wristindexno+"';";
+		    	String cmd="UPDATE neckindex SET " +		    			
+		    			    "name='"+neckindexdetails.getName()
+		    			    +"',date='"+neckindexdetails.getDate()
+		    			    +"',painintensity='"+neckindexdetails.getPainintensity()
+							+"',work='"+neckindexdetails.getWork()
+							+"',personal='"+neckindexdetails.getPersonal()
+							+"',driving='"+neckindexdetails.getDriving()					
+							+"',lifting='"+neckindexdetails.getLifting()					
+							+"',sleeping='"+neckindexdetails.getSleeping()					
+							+"',reading='"+neckindexdetails.getReading()
+							+"',recreation='"+neckindexdetails.getRecreation()
+							+"',headache='"+neckindexdetails.getHeadache()
+							+"',concentration='"+neckindexdetails.getConcentration()							
+							+"',score='"+neckindexdetails.getScore()
+							+"',status='"+neckindexdetails.getStatus()+"' WHERE neckindexno='"+neckindexno+"';";
 		    	
 		    	statement.execute(cmd);
 		    	flag=1;
@@ -219,7 +215,7 @@ public class WristindexDAO
 			
 		}	
 
-		public int deletewristindex(String wristindexno){
+		public int deleteneckindex(String neckindexno){
 			Connection con = null;
 			Statement statement = null;
 			ResultSet resultSet = null;
@@ -231,7 +227,7 @@ public class WristindexDAO
 				e1.printStackTrace();
 			}
 			try{		
-			statement.executeUpdate("delete from wristindex where wristindexno='"+wristindexno+"'");				
+			statement.executeUpdate("delete from neckindex where neckindexno='"+neckindexno+"'");				
 		      }catch(Exception e){
 			    	System.out.println(e.toString());
 			    	flag=0;
