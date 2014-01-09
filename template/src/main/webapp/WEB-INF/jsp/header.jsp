@@ -228,6 +228,8 @@
 									<span>Wrist/Hand Disability Index</span>
 								</a>
 							</li>
+
+
 							<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='hipknee'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu26">
 									<span>Hip And Knee Questionnarie</span>
@@ -243,9 +245,11 @@
 									<span>Duties Under Duress Summary </span>
 								</a>
 							</li>
+
+							
 </c:when>
   <c:otherwise>
-        <li><a href="editsoapnotes" class="<c:choose><c:when test="${menu=='notes123'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>">
+        <li><a href="<c:out value="editsoapnotes?soapid=${soapnotesid}"/>" class="<c:choose><c:when test="${menu=='notes'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>">
 									<span>Soap Notes</span>
 								</a>
 								
