@@ -228,7 +228,21 @@
 									<span>Wrist/Hand Disability Index</span>
 								</a>
 							</li>
-							
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='hipknee'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu26">
+									<span>Hip And Knee Questionnarie</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='dcfee'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu27">
+									<span>Dc Fee Slip</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='duties'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu29">
+									<span>Duties Under Duress Summary </span>
+								</a>
+							</li>
 </c:when>
   <c:otherwise>
         <li><a href="editsoapnotes" class="<c:choose><c:when test="${menu=='notes123'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>">
@@ -254,6 +268,22 @@
 							<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='wristindex'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu25">
 									<span>Wrist/Hand Disability Index</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='hipknee'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu26">
+									<span>Hip And Knee Questionnarie</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='dcfee'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu27">
+									<span>Dc Fee Slip</span>
+								</a>
+							</li>
+							
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='duties'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu29">
+									<span>Duties Under Duress Summary </span>
 								</a>
 							</li>
 							</c:otherwise>
@@ -501,6 +531,28 @@
 						 <ul id="ddsubmenu25" class="ddsubmenustyle">
 							      <li><a href="wristdisabilityindex" >Wrist/Hand Disability Index</a></li>
 							      <li><a href="viewwristindex">View Wrist/Hand Disability Index</a></li>
+							      <li><a href="lowbackdisability" >Low Back Disability</a></li>
+							      <li><a href="viewlowback">View Low Back Disability</a></li>
+							      <li><a href="neckindex" >Neck/Mild Back Disability Index</a></li>
+							      <li><a href="viewneckindex">View Neck/Mild Back Disability Index</a></li>
+							     </ul>
+							     </li>
+				         </ul>
+				         <ul id="ddsubmenu26" class="ddsubmenustyle">
+							      <li><a href="hipquestionnaire" >Hip And Knee Questionnarie</a></li>
+							      <li><a href="viewhipquestionnaire">View Hip And Knee Questionnarie</a></li>
+							     </ul>
+							     </li>
+				         </ul>
+				          <ul id="ddsubmenu27" class="ddsubmenustyle">
+							      <li><a href="dcfeeslip" >Dc Fee Slip</a></li>
+							      <li><a href="viewdcfeeslip">View Dc Fee Slip</a></li>
+							     </ul>
+							     </li>
+				         </ul>
+				         <ul id="ddsubmenu29" class="ddsubmenustyle">
+							      <li><a href="dutiesunderduress" >Duties Under Duress Summary</a></li>
+							      <li><a href="viewduties">View Duties Under Duress Summary</a></li>
 							     </ul>
 							     </li>
 				         </ul>
