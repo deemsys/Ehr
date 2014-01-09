@@ -124,6 +124,9 @@ public class DoctorController {
 	@Autowired
 	LowbackDAO lowDAO;
 	
+	@Autowired
+	DutiesunderDAO dutiesDAO;
+	
 	@RequestMapping(value="/perry", method = RequestMethod.GET)
 	public String hip(ModelMap model) {
 	
@@ -1095,6 +1098,86 @@ public class DoctorController {
 		return "dutiesunderduress";
  
 	}
+	@RequestMapping(value="/dutiesunderduress", method = RequestMethod.POST)
+	public String insert_duties(HttpSession session,@ModelAttribute("Dutiesunderduress")  @Valid Dutiesunderduress dutiesunderduress,BindingResult result,ModelMap model) {
+		
+ 
+	    model.put("Dutiesunderduress", dutiesunderduress);
+		model.addAttribute("dutiesunderduressForm",dutiesunderduress);
+    	int a=dutiesDAO.setDuties(dutiesunderduress);
+		DutiesduressForm dutiesduressForm= new DutiesduressForm();
+		dutiesduressForm.setDutiesunderduressdetails(dutiesDAO.getDuties());
+		model.addAttribute("dutiesduressForm",dutiesduressForm);
+		return "dutiesunderduress";
+ 
+	
+	}
+	@RequestMapping(value="/viewduties", method=RequestMethod.GET)
+	public String viewduties(HttpServletRequest request,ModelMap model, Principal principal) {
+		 model.addAttribute("success","false");
+		
+		  DutiesduressForm dutiesduressForm = new DutiesduressForm();
+		 
+		  dutiesduressForm.setDutiesunderduressdetails(dutiesDAO.getDuties());
+		  
+		  model.addAttribute("dutiesduressForm",dutiesduressForm);	
+		  
+		return "viewduties";
+	}
+	
+	@RequestMapping(value="/dutiesunderduresslist", method=RequestMethod.GET)
+	public String dutiesunderduresslist(HttpServletRequest request,@RequestParam("dutiesno") String dutiesno,ModelMap model,Dutiesunderduress dutiesunderduress)
+	{
+		
+		DutiesduressForm dutiesduressForm = new DutiesduressForm();
+		dutiesduressForm.setDutiesunderduressdetails(dutiesDAO.getDutiesunderduress(dutiesno));	
+		model.addAttribute("dutiesduressForm", dutiesduressForm);
+		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
+		return "dutiesunderduresslist";
+	}
+	
+	@RequestMapping(value="/editduties", method=RequestMethod.GET)
+	public String editduties(HttpServletRequest request,@RequestParam("dutiesno") String dutiesno,ModelMap model,Dutiesunderduress dutiesunderduress) 
+	{
+		/*String lumbopelvicexam=request.getParameter("lumbopelvicexam");*/
+		DutiesduressForm dutiesduressForm = new DutiesduressForm();       
+        dutiesduressForm.setDutiesunderduressdetails(dutiesDAO.getDutiesunderduress(dutiesno));
+        model.addAttribute("dutiesduressForm",dutiesduressForm);
+		 
+		return "editduties";
+	}
+	@RequestMapping(value="/updateduties", method=RequestMethod.POST)
+	public String updateduties(HttpServletRequest request,@ModelAttribute("Dutiesunderduress") @Valid Dutiesunderduress dutiesunderduress,
+			BindingResult result,ModelMap model,Principal principal)
+	{
+		int status = dutiesDAO.updatedutiesunderduress(dutiesunderduress,dutiesunderduress.getDutiesno(), principal.getName());
+		System.out.println(status);
+		
+		DutiesduressForm dutiesduressForm = new DutiesduressForm();
+        
+       dutiesduressForm.setDutiesunderduressdetails(dutiesDAO.getDuties());
+       
+        model.addAttribute("dutiesduressForm", dutiesduressForm);
+	        return "viewduties";
+		
+	}
+	
+	@RequestMapping(value="/deleteduties", method=RequestMethod.GET)
+	public String removeduties(@RequestParam("dutiesno") String dutiesno,ModelMap model, Principal principal) {
+	
+		int status=dutiesDAO.deletedutiesunderduress(dutiesno);
+		
+		if(status==1)
+		{
+        model.addAttribute("success","true");
+		
+        DutiesduressForm dutiesduressForm= new DutiesduressForm();
+        dutiesduressForm.setDutiesunderduressdetails(dutiesDAO.getDuties());
+		model.addAttribute("dutiesduressForm",dutiesduressForm);  
+		}
+		return "viewduties";
+	}
+	
 	
 }
 	
