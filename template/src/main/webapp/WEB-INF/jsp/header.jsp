@@ -545,6 +545,9 @@
 				         <ul id="ddsubmenu26" class="ddsubmenustyle">
 							      <li><a href="hipquestionnaire" >Hip And Knee Questionnarie</a></li>
 							      <li><a href="viewhipquestionnaire">View Hip And Knee Questionnarie</a></li>
+							      <li><a href="footquestionnarie" >Foot And Ankle Questionnarie</a></li>
+							      <li><a href="viewfootquestionnarie">View Foot And Ankle Questionnarie</a></li>
+							     
 							     </ul>
 							     </li>
 				         </ul>
