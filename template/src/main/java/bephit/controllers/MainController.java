@@ -2529,7 +2529,8 @@ public class MainController {
 	      soapnotesForm.setSoapnotes(soapDAO.getSoap(soapnotes.getSoapid()));
 	      
 	        model.addAttribute("soapnotesForm", soapnotesForm);
-	        model.addAttribute("menu", "notes");    
+	        model.addAttribute("menu", "notes"); 
+	        
 		        return "editsoapnotes";
 		}
 		System.out.println("soapid"+soapnotes.getSoapid());

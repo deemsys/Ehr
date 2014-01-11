@@ -127,6 +127,9 @@ public class DoctorController {
 	@Autowired
 	DutiesunderDAO dutiesDAO;
 	
+	@Autowired
+	FootquestionnarieDAO footDAO;
+	
 	@RequestMapping(value="/perry", method = RequestMethod.GET)
 	public String hip(ModelMap model) {
 	
@@ -1177,6 +1180,93 @@ public class DoctorController {
 		}
 		return "viewduties";
 	}
+	@RequestMapping(value="/footquestionnarie", method = RequestMethod.GET)
+	public String viewingfootquestionnarie(HttpSession session, ModelMap model) {
+		
+		
+		return "footquestionnarie";
+ 
+	}
+	
+	@RequestMapping(value="/footquestionnarie", method = RequestMethod.POST)
+	public String insert_footquestionnarie(HttpSession session,@ModelAttribute("Footquestionnarie")  @Valid Footquestionnarie footquestionnarie,BindingResult result,ModelMap model) {
+		
+ 
+	    model.put("Footquestionnarie", footquestionnarie);
+		model.addAttribute("footquestionnarieForm",footquestionnarie);
+    	int a=footDAO.setFootquestionnarie(footquestionnarie);
+		FootquestionnarieForm footquestionnarieForm= new FootquestionnarieForm();
+		footquestionnarieForm.setFootquestionnariedetails(footDAO.getFootquestionnarie());
+		model.addAttribute("footquestionnarieForm",footquestionnarieForm);
+		return "footquestionnarie";
+ 
+	
+	}
+	
+	@RequestMapping(value="/viewfootquestionnarie", method=RequestMethod.GET)
+	public String viewfootquestionnarie(HttpServletRequest request,ModelMap model, Principal principal) {
+		 model.addAttribute("success","false");
+		
+		  FootquestionnarieForm footquestionnarieForm = new FootquestionnarieForm();
+		 
+		  footquestionnarieForm.setFootquestionnariedetails(footDAO.getFootquestionnarie());
+		  
+		  model.addAttribute("footquestionnarieForm",footquestionnarieForm);	
+		  
+		return "viewfootquestionnarie";
+	}
+	@RequestMapping(value="/footquestionnarielist", method=RequestMethod.GET)
+	public String footquestionnarielist(HttpServletRequest request,@RequestParam("footquestionno") String footquestionno,ModelMap model,Footquestionnarie footquestionnarie)
+	{
+		
+		FootquestionnarieForm footquestionnarieForm = new FootquestionnarieForm();
+		footquestionnarieForm.setFootquestionnariedetails(footDAO.getFoot(footquestionno));	
+		model.addAttribute("footquestionnarieForm", footquestionnarieForm);
+		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
+		return "footquestionnarielist";
+	}
+	@RequestMapping(value="/editfootquestionnarie", method=RequestMethod.GET)
+	public String editfootquestionnarie(HttpServletRequest request,@RequestParam("footquestionno") String footquestionno,ModelMap model,Footquestionnarie footquestionnarie) 
+	{
+		/*String lumbopelvicexam=request.getParameter("lumbopelvicexam");*/
+		FootquestionnarieForm footquestionnarieForm = new FootquestionnarieForm();       
+        footquestionnarieForm.setFootquestionnariedetails(footDAO.getFoot(footquestionno));
+        model.addAttribute("footquestionnarieForm",footquestionnarieForm);
+		 
+		return "editfootquestionnarie";
+	}
+	@RequestMapping(value="/updatefootquestionnarie", method=RequestMethod.POST)
+	public String updatefootquestionnarie(HttpServletRequest request,@ModelAttribute("Footquestionnarie") @Valid Footquestionnarie footquestionnarie,
+			BindingResult result,ModelMap model,Principal principal)
+	{
+		int status = footDAO.updatefootquestionnarie(footquestionnarie,footquestionnarie.getFootquestionno(), principal.getName());
+		System.out.println(status);
+		
+		FootquestionnarieForm footquestionnarieForm = new FootquestionnarieForm();
+        
+       footquestionnarieForm.setFootquestionnariedetails(footDAO.getFootquestionnarie());
+       
+        model.addAttribute("footquestionnarieForm", footquestionnarieForm);
+	        return "viewfootquestionnarie";
+		
+	}
+	
+	@RequestMapping(value="/deletefootquestionnarie", method=RequestMethod.GET)
+	public String removedelete(@RequestParam("footquestionno") String footquestionno,ModelMap model, Principal principal) {
+	
+		int status=footDAO.deletefoot(footquestionno);
+		
+		if(status==1)
+		{
+        model.addAttribute("success","true");
+		
+        FootquestionnarieForm footquestionnarieForm= new FootquestionnarieForm();
+        footquestionnarieForm.setFootquestionnariedetails(footDAO.getFootquestionnarie());
+		model.addAttribute("footquestionnarieForm",footquestionnarieForm);  
+		}
+		return "viewfootquestionnarie";
+	}
+	
 	
 	
 }
