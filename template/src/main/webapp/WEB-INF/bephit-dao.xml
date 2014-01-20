@@ -130,5 +130,12 @@
    <bean id="DutiesunderDAO" class="bephit.dao.DutiesunderDAO">
            <property name="dataSource" ref="dataSource" />
    </bean>
+   <bean id="OswestryDAO" class="bephit.dao.OswestryDAO">
+           <property name="dataSource" ref="dataSource" />
+   </bean>
+    <bean id="FootquestionnarieDAO" class="bephit.dao.FootquestionnarieDAO">
+           <property name="dataSource" ref="dataSource" />
+   </bean>
+   
     
 </beans>
