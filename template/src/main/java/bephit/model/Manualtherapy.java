@@ -1,12 +1,21 @@
 package bephit.model;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class Manualtherapy
 {
 	private String manualtherapyno;
+	@NotEmpty
 	private String pid;
+	@NotEmpty
 	private String date;
+	@NotEmpty
 	private String pname;
+	@NotEmpty
 	private String timein;
+	@NotEmpty
 	private String timeout;
+	
 	private String majorcomplaint;
 	private String standing;
 	private String sitting;
@@ -102,6 +111,7 @@ public class Manualtherapy
 	private String futurerecommend;
 	private String session;
 	private String weeks;
+	@NotEmpty
 	private String signature;
 	private String daily;
 	public String getManualtherapyno() {

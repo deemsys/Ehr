@@ -1,11 +1,19 @@
 package bephit.model;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class Symptom
 {  
 	private String symptomno; 
-	private String pname;
+	
+	@NotEmpty
+	private String pname;	
+	
 	private String number;
+	
+	@NotEmpty
 	private String date;
+	
 	private String achepath;	
 	private String acheleft;
 	private String achetop;
