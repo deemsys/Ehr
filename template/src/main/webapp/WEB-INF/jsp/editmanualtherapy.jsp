@@ -198,15 +198,15 @@ $(function() {
 	    <c:set value="${manualform.manualtherapy[0]}" var="manualtherapy"></c:set>
 	     <div class="contentbox">
           <table cellpadding="0" cellspacing="0" border="0" >
-           <tr><td width="140">Patient ID:</td>
-           <td><input type="hidden" name="manualtherapyno" value="${manualtherapy.manualtherapyno}"><input type="text" name="pid" value="${manualtherapy.pid}"></td><td width="480"></td><td></td><td width="100"></td>
-           <td >&nbsp;&nbsp;&nbsp;&nbsp;Date:&nbsp;</td> <td><input type="text" name="date" value="${manualtherapy.date}" id="datepicker"></td>
+           <tr><td width="140"><span class="err"></span>Patient ID:</td>
+           <td width="200"><input type="hidden" name="manualtherapyno" value="${manualtherapy.manualtherapyno}"><input type="text" name="pid" value="${manualtherapy.pid}"><span class="err"><form:errors path="therapy.pid"></form:errors></td><td width="400"></td><td></td><td width="100"></td>
+           <td >&nbsp;&nbsp;&nbsp;&nbsp;<span class="err"></span>Date:&nbsp;</td> <td><input type="text" name="date" value="${manualtherapy.date}" id="datepicker"></td>
            </tr>
            <tr height="10"></tr>
-           <tr><td>Patient Name:</td><td><input type="text" name="pname" value="${manualtherapy.pname}"></td><td width="560"></td>
-           <td >Time In:&nbsp;</td> <td ><input type="text" name="timein" id="" value="${manualtherapy.timein}"></td>
+           <tr><td><span class="err"></span>Patient Name:</td><td><input type="text" name="pname" value="${manualtherapy.pname}"><span class="err"><form:errors path="therapy.pname"></form:errors></td><td ></td>
+           <td width="80" ><span class="err"></span>Time In:&nbsp;</td> <td width="200"><input type="text" name="timein" id="" value="${manualtherapy.timein}"></td>
           
-           <td >&nbsp;&nbsp;&nbsp;&nbsp;Time Out:&nbsp;</td> <td><input type="text" name="timeout" value="${manualtherapy.timeout}" id=""></td>        
+           <td width="80" >&nbsp;&nbsp;&nbsp;&nbsp;<span class="err"></span>Time Out:&nbsp;</td> <td width="200"><input type="text" name="timeout" value="${manualtherapy.timeout}" id=""></td>        
            
            
            
@@ -390,9 +390,9 @@ PATIENT ENTERED THE OFFICE TODAY & REPORTED THE FOLLOWING:
    </tr>
    <tr height="10"></tr>
    <tr>
-   <td>Signature:</td><td><input type="text" name="signature" value="${manualtherapy.signature}"></td><td></td><td><input type="text"  value="${manualtherapy.daily}" name="daily">Daily Supportive Care Visit</td>
+   <td><span class="err"></span>Signature:</td><td><input type="text" name="signature" value="${manualtherapy.signature}"><br><span class="err"><form:errors path="therapy.date"></form:errors></td><td></td><td><input type="text"  value="${manualtherapy.daily}" name="daily">Daily Supportive Care Visit</td>
    </tr></Table>    
-   <div align="right"><input type="submit" value="Update"  class="submit_btn"></div>       
+ <table align="right"><tr><td><input type="submit" value="Update" class="submit_btn"></td><td> <a href="viewmanualtherapy" style="color: white" class="submit_btn">Cancel</a></td></tr></table>      
             
      </div></div>
          

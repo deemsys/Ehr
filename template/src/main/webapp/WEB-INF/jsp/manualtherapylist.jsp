@@ -382,11 +382,11 @@ PATIENT ENTERED THE OFFICE TODAY & REPORTED THE FOLLOWING:
    </table>   
    <Table><tr><td></td><td></td>
    
-   <td width="320"></td><td><c:out value="${manualtherapy.session}"/>of sessions recommended for length of time:[30 min./1 hour]over <c:out  value="${manualtherapy.weeks}" />weeks.  </td>
+   <td width="320"></td><td><b><c:out value="${manualtherapy.session}"/></b>&nbsp;&nbsp;of sessions recommended for length of time:[30 min./1 hour]over&nbsp;&nbsp; <b><c:out  value="${manualtherapy.weeks}" /></b>&nbsp;&nbsp;weeks.  </td>
    </tr>
    <tr height="10"></tr>
    <tr>
-   <td>Signature:</td><td><c:out  value="${manualtherapy.signature}"/></td><td></td><td><c:out value="${manualtherapy.daily}" />Daily Supportive Care Visit</td>
+   <td>Signature:</td><td><c:out  value="${manualtherapy.signature}"/></td><td></td><td><c:out value="${manualtherapy.daily}" />Daily Supportive Care Visit</td><td width="" ></td> <td width="400" align="right"> <a href="viewmanualtherapy" style="color: white" class="submit_btn">Cancel</a></td></tr></table></td>
    </tr></Table>    
          
             

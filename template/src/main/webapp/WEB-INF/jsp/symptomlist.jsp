@@ -83,19 +83,19 @@ $(function() {
   <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
   <link rel="stylesheet" href="/resources/demos/style.css">
   <style>  
-  #droppable { width: 330px; height:330px;}
+  #droppable { width: 55px; height:81px;}
   #draggable { width: 10px; height: 10px;}
    #draggable1 { width: 10px; height: 10px;}
    #draggable2 { width: 10px; height: 10px;}
     #draggable3 { width: 10px; height: 10px;}
      #draggable4 { width: 10px; height: 10px;}
      #numbness { width: 10px; height: 10px;}
-     #bottom{ 
+     /* #bottom{ 
     background: url("resources/images/sym.png"); 
     position:relative; 
     width: 330; 
     height: 330;
-    }
+    } */
      
   </style>
   <script> 
@@ -637,8 +637,8 @@ w=0;
 <td ><div id="pins" class="ui-widget-content">
  <img alt="" src="${symptomdetails.pinpath}"  width="10px" height="10px" > 
  <input type="hidden" name="pinpath" id="pinpath" value="resources/images/pin.png">
-<input type="hidden" name="pinleft" id="pinleft" value="601.5" value="${symptomdetails.pinleft}">
-<input type="hidden" name="pintop" id="pintop" value="264" value="${symptomdetails.pintop}">  
+<input type="hidden" name="pinleft" id="pinleft"  value="${symptomdetails.pinleft}">
+<input type="hidden" name="pintop" id="pintop"  value="${symptomdetails.pintop}">  
 </div></td>
 <td><div id="pins1" class="ui-widget-content">
  <img alt="" src="${symptomdetails.pinpath1}"  width="10px" height="10px" >
@@ -729,21 +729,16 @@ w=0;
  <input type="hidden" name="stabpath4" id="stabpath4" value="resources/images/stabbing.png">
 <input type="hidden" name="stableft4" id="stableft4"  value="${symptomdetails.stableft4}">
 <input type="hidden" name="stabtop4" id="stabtop4" value="${symptomdetails.stabtop4}">  
-</div></td>      
-          
-          
-        
-          
-          
-          
-           </tr></table>
+</div></td>        
+</tr></table>
            </br>
-         <table width="98%"><tr><td align="center">
-    <img class="ui-widget-content" alt="" src="resources/images/sym.png" >
- </td></tr> </table> 
+         <table width="98%"><tr><td align="right">
+    <img id= "bodyfront" alt="" src="resources/images/bodyfront.png"> </td><td align="left" valign="top" width="55" height="81px"><img  id= "droppable" alt="" src="resources/images/face.png" >
+ </td><td align="left">
+    <img  id= "bodyback" alt="" src="resources/images/bodyback.png"> </td></tr> </table>
 </br>
 </br>
-<table width="100" align="center"><tr ><td align="center" ><input  type="hidden" value="save" class="submit_btn"></td></tr>
+<table width="100" align="right"><tr ><td  ><input  type="hidden" value="Save" class="submit_btn"></td><td  ><a href="viewsymptom" style="color: white" class="submit_btn">Cancel</a></td></tr>
 </table>
 </form>
 <div id="position"></div><div id="position1"></div>

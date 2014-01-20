@@ -30,7 +30,7 @@
 				     <tr class="title">
 								
 								
-         						<td valign="top" align="left" width="10%">InitialExamId</td>
+         						<td valign="top" align="left" width="10%">InitialExamId</td><td>Action</td><td></td>
 					         	</tr>
 							<!-- getting addAttibute value -->
 						<c:if test="${fn:length(hamiltonchiropracticForm.hamiltonchiropractic) gt 0}">

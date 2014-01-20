@@ -16,7 +16,19 @@
 </style>
 </head>
 <body onload='document.f.j_username.focus();'>
-	
+	<table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
+      		
+			<tr>
+			<c:if test="${success==true}">
+        <tr>
+        <td valign="top" align="left" style="padding:5px 0 10px 0;">&nbsp;
+            <div id="success_statusbar" class="status success">
+            <p class="closestatus"><a title="Close" href="viewautoaccident">x</a></p>
+            <p><img alt="Success" src="resources/images/icons/icon_success.png"><span>Success!</span>.</p>
+          </div>
+      </tr>
+    </c:if>
+    </tr></table>
 
 	<c:if test="${not empty error}">
 		<div class="errorblock">

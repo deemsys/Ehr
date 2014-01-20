@@ -200,7 +200,7 @@ $(function() {
 	    
 	     <div class="contentbox">
          <table> <tr><td width="140">Name</td>
-           <td><input type="text" name="neckindexno" value="${neckindexdetails.neckindexno}"><input type="text" name="name" value="${neckindexdetails.name}"></td><td width="480"></td><td></td><td width="100"></td>
+           <td><input type="hidden" name="neckindexno" value="${neckindexdetails.neckindexno}"><input type="text" name="name" value="${neckindexdetails.name}"></td><td width="480"></td><td></td><td width="100"></td>
            <td >&nbsp;&nbsp;&nbsp;&nbsp;Date:&nbsp;</td> <td><input type="text" name="date" id="datepicker" value="${neckindexdetails.date}"></td>
            </tr></table>
             <p><b>Please read:</b>This questionairre has been designed to give the Physical Therapist information as to how your wrist/hand pain has affected your ability to manage everyday life.</p>

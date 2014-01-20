@@ -1,4 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
@@ -78,7 +79,8 @@ $(function() {
 	            <center> <h2>SOAP NOTES</h2> </center><br/>
 	            
 	            </div>
-	            <input type="hidden" name="patient_id" value="${patientid}">
+	            
+	            <input type="hidden" value="${patient}" name="patient_id" />
 	    <div class="contentbox">
           <table cellpadding="0" cellspacing="0" border="0" width="98%">
            

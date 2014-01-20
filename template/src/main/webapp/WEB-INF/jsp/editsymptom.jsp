@@ -634,9 +634,9 @@ w=0;
 	     <div class="contentbox">
 	  <c:set value="${symptomform.symptomdetails[0]}" var="symptomdetails"/>
           <table cellpadding="0" cellspacing="0" border="0" width="98%" >
-          <tr><td width="100"><b>Name</b></td><td><input type="hidden" name="symptomno" value="${symptomdetails.symptomno} "><input type="text" name="pname" value="${symptomdetails.pname} "></td><td width="180"></td>
-<td  width="100">Number</td><td><input type="text" name="number" value="${symptomdetails.number}"></td><td width="200"></td>
-<td  width="100">Date</td><td><input type="text" name="date" value="${symptomdetails.date}" id="datepicker"></td>
+          <tr><td width="100"><span class="err">*</span>Name</td><td><input type="hidden" name="symptomno" value="${symptomdetails.symptomno} "><input type="text" name="pname" value="${symptomdetails.pname} "><span class="err"><form:errors path="symptom.pname"></form:errors></td><td width="40"></td>
+<td  width="100">Number</td><td><input type="text" name="number" value="${symptomdetails.number}"></td><td width="100"></td>
+<td  width="100"><span class="err">*</span>Date</td><td><input type="text" name="date" value="${symptomdetails.date}" id="datepicker"><span class="err"><form:errors path="symptom.date"></form:errors></td>
 </tr></table>
 </br>
 <p>Please be sure to fill this form out extremely accurately.Mark the area(s) on your body where you feel the described sensation(s).Use the appropriate symbol(s).Mark areas of radiating pain, and include all affected areas.You may draw on the face as well.</p>
@@ -713,8 +713,8 @@ w=0;
 <td ><div id="pins" class="ui-widget-content">
  <img alt="" src="${symptomdetails.pinpath}"  width="10px" height="10px" > 
  <input type="hidden" name="pinpath" id="pinpath" value="resources/images/pin.png">
-<input type="hidden" name="pinleft" id="pinleft" value="601.5" value="${symptomdetails.pinleft}">
-<input type="hidden" name="pintop" id="pintop" value="264" value="${symptomdetails.pintop}">  
+<input type="hidden" name="pinleft" id="pinleft"  value="${symptomdetails.pinleft}">
+<input type="hidden" name="pintop" id="pintop"  value="${symptomdetails.pintop}">  
 </div></td>
 <td><div id="pins1" class="ui-widget-content">
  <img alt="" src="${symptomdetails.pinpath1}"  width="10px" height="10px" >
@@ -820,7 +820,7 @@ w=0;
     <img  id= "bodyback" alt="" src="resources/images/bodyback.png"> </td></tr> </table>
 </br>
 </br>
-<table width="100" align="right"><tr ><td  ><input  type="submit" value="Save" class="submit_btn"></td><td  ><input  type="reset" value="Cancel" class="submit_btn"></td></tr>
+<table width="100" align="right"><tr ><td  ><input  type="submit" value="Save" class="submit_btn"></td><td  ><a href="viewsymptom" style="color: white" class="submit_btn">Cancel</a></td></tr>
 </table>
 </form>
 <!-- <div id="position"></div><div id="position1"></div> -->

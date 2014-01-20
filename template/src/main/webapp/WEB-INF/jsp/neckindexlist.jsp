@@ -297,9 +297,9 @@ $(function() {
            <table id="page"><tr><td width="200"><b>Disability of patient score:</b></td><td width="350"><c:out  value="${neckindexdetails.score}" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<c:out  value="${neckindexdetails.status}" /></td>
           
            </tr>          
-                     
+            <tr height="100"></tr>         
            </table>   
-            <div align="right"><input type="submit" value="Update" class="submit_btn"></div>
+            
     
             
      </div></div>  

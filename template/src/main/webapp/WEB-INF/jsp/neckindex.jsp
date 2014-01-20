@@ -192,7 +192,7 @@ $(function() {
  <div>
 	            <div class="headings altheading">
 	            <center> <h2>
-	             WRIST/HAND DISABILITY INDEX </h2></center><br/>
+	             NECK DISABILITY INDEX </h2></center><br/>
 	            
 	            </div>
 	           

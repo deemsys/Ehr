@@ -38,7 +38,7 @@
 						<c:if test="${fn:length(hipquestionnaireform.hipquestionnairedetails) gt 0}">
         				 <c:forEach items="${hipquestionnaireform.hipquestionnairedetails}" var="hipquestionnairedetails" varStatus="status">
         				       				<tr class="row1">
-        				       				<td valign="top" align="left" width="10%"><a href="hipquestionnairelist?hipquestionno=${hipquestionnairedetails.hipquestionno}">${hipquestionnairedetails.hipquestionno}</a></td>
+        				       				<td valign="top" align="left" width="10%"> <a href="hipquestionnairelist?hipquestionno=${hipquestionnairedetails.hipquestionno}">${hipquestionnairedetails.hipquestionno}</a></td>
 								           <%--  <td valign="top" align="left"  width="10%"><a href="hipexamlist?hipquestionno=${hipquestionnairedetails.hipquestionno}">${hipquestionnairedetails.pname}</a></td> --%>
 											
 											<td valign="top" align="left" width="10%">${hipquestionnairedetails.date}</td>

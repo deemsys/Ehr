@@ -83,12 +83,23 @@
 </style>
 </head>
 <body onload="javascript:startTime();">
-
+<c:choose>
+<c:when test="${menu=='sign'}">
 	<div id="main">
 		<div id="header">
 			<div class="logo">
-			   <a href="#"><img src="<c:url value="/resources/images/title1.png" />" alt="Company Logo" /></a> 
+			   <a href="#"><img src="<c:url value="/resources/images/title1.png" />" alt="Company Logo" /></a>
+		
+		
+			   <ul class="menu" style="width: 1340">
+			   </c:when> <c:otherwise>
+			   <div id="main">
+		<div id="header">
+			<div class="logo">
+			   <a href="#"><img src="<c:url value="/resources/images/title1.png" />" alt="Company Logo" /></a>
+		
 				<!-- <a href ="#">Electronic Healthcare Record</a> -->
+		
 			</div>
 			<div class="top_link">
 				<table border="0" cellspacing="0" cellpadding="0"
@@ -539,6 +550,8 @@
 							      <li><a href="viewlowback">View Low Back Disability</a></li>
 							      <li><a href="neckindex" >Neck/Mild Back Disability Index</a></li>
 							      <li><a href="viewneckindex">View Neck/Mild Back Disability Index</a></li>
+							      <li><a href="oswestryindex" >Oswestry Disability Index 2.0</a></li>
+							      <li><a href="viewoswestryindex">View Oswestry Disability Index 2.0</a></li>
 							     </ul>
 							     </li>
 				         </ul>
@@ -570,6 +583,8 @@
 			</div>
 			<div class="clear"></div>
 		</div>
+		</c:otherwise>
+		</c:choose>
 		</c:otherwise>
 		</c:choose>
 </div>

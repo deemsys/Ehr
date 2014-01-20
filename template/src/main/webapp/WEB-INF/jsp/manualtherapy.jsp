@@ -197,15 +197,15 @@ $(function() {
 	    
 	     <div class="contentbox">
           <table cellpadding="0" cellspacing="0" border="0" >
-           <tr><td width="140">Patient ID:</td>
-           <td><input type="text" name="pid"></td><td width="480"></td><td></td><td width="100"></td>
-           <td >&nbsp;&nbsp;&nbsp;&nbsp;Date:&nbsp;</td> <td><input type="text" name="date" id="datepicker"></td>
+           <tr><td width="140"><span class="err">*</span>Patient ID:</td>
+           <td width="200"><input type="text" name="pid"><br><span class="err"><form:errors path="therapy.pid"></form:errors></td><td width="400"></td><td></td><td width="100"></td>
+           <td >&nbsp;&nbsp;&nbsp;&nbsp;<span class="err">*</span>Date:&nbsp;</td> <td width="200"><input type="text" name="date" id="datepicker"><br><span class="err"><form:errors path="therapy.date"></form:errors></td>
            </tr>
            <tr height="10"></tr>
-           <tr><td>Patient Name:</td><td><input type="text" name="pname"></td><td width="560"></td>
-           <td >Time In:&nbsp;</td> <td ><input type="text" name="timein" id=""></td>
+           <tr><td><span class="err">*</span>Patient Name:</td><td><input type="text" name="pname"><br><span class="err"><form:errors path="therapy.pname"></form:errors></td><td width=""></td>
+           <td width="80"><span class="err">*</span>Time In:&nbsp;</td> <td width="200"><input type="text" name="timein" id=""><br><span class="err"><form:errors path="therapy.timein"></form:errors></td>
           
-           <td >&nbsp;&nbsp;&nbsp;&nbsp;Time Out:&nbsp;</td> <td><input type="text" name="timeout" id=""></td>        
+           <td width="80">&nbsp;&nbsp;&nbsp;&nbsp;<span class="err">*</span>Time Out:&nbsp;</td> <td><input type="text" name="timeout" id=""><br><span class="err"><form:errors path="therapy.timeout"></form:errors></td>        
            
            
            
@@ -389,9 +389,9 @@ PATIENT ENTERED THE OFFICE TODAY & REPORTED THE FOLLOWING:
    </tr>
    <tr height="10"></tr>
    <tr>
-   <td>Signature:</td><td><input type="text" name="signature"></td><td></td><td><input type="text" name="daily">Daily Supportive Care Visit</td>
+   <td><span class="err">*</span>Signature:</td><td><input type="text" name="signature"><br><span class="err"><form:errors path="therapy.date"></form:errors></td><td></td><td><input type="text" name="daily">Daily Supportive Care Visit</td>
    </tr></Table>    
-   <div align="right"><input type="submit" value="Save" class="submit_btn"> </div>      
+   <table align="right"><tr><td><input type="submit" value="Save" class="submit_btn"></td><td> <a href="viewmanualtherapy" style="color: white" class="submit_btn">Cancel</a></td></tr></table>      
             
      </div></div>
          

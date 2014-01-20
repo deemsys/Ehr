@@ -38,7 +38,7 @@
         				       				<td valign="top" align="left"  width="10%"> <a href="soapNotesList?soapid=${soapnotes.soapid}">${soapnotes.pname}</a></td>
 								         	<td valign="top" align="left">
 											
-												<a href="#" title="" ><img src="resources/images/icons/icon_edit.png" alt="Edit" /></a><a href="<c:out value="editsoapnotes?soapid=${soapnotes.soapid}"/>" style="padding-right:10px;">Edit</a>
+												<a href="#" title="" ><img src="resources/images/icons/icon_edit.png" alt="Edit" /></a><a href="<c:out value="editsoapnotes?soapid=${soapnotes.patient_id}"/>" style="padding-right:10px;">Edit</a>
 											
 											<a href="#" title=""><img src="resources/images/icons/icon_delete.png" alt="Delete" /></a><a href="<c:out value="deletesoapnotes?soapid=${soapnotes.soapid}"/>" onclick="return confirmation()">Remove</a>
 											

@@ -601,11 +601,13 @@ w=0;
 	           
 	    
 	     <div class="contentbox">
+	      <c:choose>
+		 <c:when test="${empty symptom}">
 	  
           <table cellpadding="0" cellspacing="0" border="0" width="98%" >
-          <tr><td width="100"><b>Name</b></td><td><input type="text" name="pname"></td><td width="180"></td>
-<td  width="100">Number</td><td><input type="text" name="number"></td><td width="200"></td>
-<td  width="100">Date</td><td><input type="text" name="date" id="datepicker"></td>
+          <tr><td width="100"><span class="err">*</span>Name</td><td><input type="text" name="pname"><span class="err"><form:errors path="symptom.pname"></form:errors></td><td width="40"></td>
+<td  width="100">Number</td><td><input type="text" name="number"></td><td width="100"></td>
+<td  width="100"><span class="err">*</span>Date</td><td><input type="text" name="date" id="datepicker"><span class="err"><form:errors path="symptom.date"></form:errors></td>
 </tr></table>
 </br>
 <p>Please be sure to fill this form out extremely accurately.Mark the area(s) on your body where you feel the described sensation(s).Use the appropriate symbol(s).Mark areas of radiating pain, and include all affected areas.You may draw on the face as well.</p>
@@ -789,12 +791,208 @@ w=0;
     <img id= "bodyfront" alt="" src="resources/images/bodyfront.png"> </td><td align="left" valign="top" width="55"><img  id= "droppable" alt="" src="resources/images/face.png" >
  </td><td align="left">
     <img  id= "bodyback" alt="" src="resources/images/bodyback.png"> </td></tr> </table> 
+    </c:when>
+    <c:otherwise>
+ 
+  <table cellpadding="0" cellspacing="0" border="0" width="98%" >
+          <tr><td width="100"><span class="err">*</span>Name</td><td><input type="hidden" name="symptomno" value="${symptoms.symptomno} "><input type="text" name="pname" value="${symptoms.pname} "><span class="err"><form:errors path="symptom.pname"></form:errors></td><td width="40"></td>
+<td  width="100">Number</td><td><input type="text" name="number" value="${symptoms.number}"></td><td width="100"></td>
+<td  width="100"><span class="err">*</span>Date</td><td><input type="text" name="date" value="${symptoms.date}" id="datepicker"><span class="err"><form:errors path="symptom.date"></form:errors></td>
+</tr></table>
+</br>
+<p>Please be sure to fill this form out extremely accurately.Mark the area(s) on your body where you feel the described sensation(s).Use the appropriate symbol(s).Mark areas of radiating pain, and include all affected areas.You may draw on the face as well.</p>
+ <table><tr><td width="100"><b>Aches:</b></td><td>
+<div id="draggable" >
+<img id="1" class="ui-widget-content" src="${symptoms.achepath}" width="10px" height="10px" > 
+<input type="hidden" name="achepath" value="resources/images/aches.jpg">
+<input type="hidden" name="acheleft" id="achesleft" value="${symptoms.acheleft}" >
+<input type="hidden" name="achetop" id="achestop" value="${symptoms.achetop}">
+</div></td>
+<td>
+<div id="draggable1">
+ <img id="1" class="ui-widget-content" src="${symptoms.achepath1}" width="10px" height="10px" >  
+<input type="hidden" name="achepath1" value="resources/images/aches.jpg">
+<input type="hidden" name="acheleft1" id="achesleft1" value="${symptoms.acheleft1}" >
+<input type="hidden" name="achetop1" id="achestop1" value="${symptoms.achetop1}" >  
+</div></td>
+<td>
+<div id="draggable2" >
+ <img alt=""  class="ui-widget-content" src="${symptoms.achepath2}" width="10px" height="10px" > 
+ <input type="hidden" name="achepath2" value="resources/images/aches.jpg">
+<input type="hidden" name="acheleft2" id="achesleft2" value="${symptoms.acheleft2}" >
+<input type="hidden" name="achetop2" id="achestop2" value="${symptoms.achetop2}" >
+</div></td>
+<td>
+<div id="draggable3">
+ <img alt="" class="ui-widget-content" src="${symptoms.achepath3}" width="10px" height="10px" >  
+ <input type="hidden" name="achepath3" value="resources/images/aches.jpg">
+<input type="hidden" name="acheleft3" id="achesleft3" value="${symptoms.acheleft3}">
+<input type="hidden" name="achetop3" id="achestop3" value="${symptoms.achetop3}"  >
+</div></td>
+<td>
+<div id="draggable4" >
+ <img alt="" class="ui-widget-content" src="${symptoms.achepath4}" width="10px" height="10px" > 
+ <input type="hidden" name="achepath4" value="resources/images/aches.jpg">
+<input type="hidden" name="acheleft4" id="achesleft4" value="${symptoms.acheleft4}" >
+<input type="hidden" name="achetop4" id="achestop4" value="${symptoms.achetop4}" > 
+</div></td>
+<td width="70"></td>
+<td width="100"><b>Numbness:</b></td>
+<td><div id="numbness" class="ui-widget-content">
+ <img alt="" src="${symptoms.numbpath}" width="10px" height="10px" > 
+ <input type="hidden" name="numbpath" value="resources/images/numb.png">
+<input type="hidden" name="numbleft" id="numbleft" value="${symptoms.numbleft}" >
+<input type="hidden" name="numbtop" id="numbtop" value="${symptoms.numbtop}" > 
+</div></td>
+<td><div id="numbness1" class="ui-widget-content">
+ <img alt="" src="${symptoms.numbpath1}"  width="10px" height="10px" >  
+ <input type="hidden" name="numbpath1" value="resources/images/numb.png">
+<input type="hidden" name="numbleft1" id="numbleft1" value="${symptoms.numbleft1}">
+<input type="hidden" name="numbtop1" id="numbtop1" value="${symptoms.numbtop1}"> 
+</div></td>
+<td><div id="numbness2" class="ui-widget-content">
+ <img alt="" src="${symptoms.numbpath2}"  width="10px" height="10px" > 
+ <input type="hidden" name="numbpath2" value="resources/images/numb.png">
+<input type="hidden" name="numbleft2" id="numbleft2" value="${symptoms.numbleft2}">
+<input type="hidden" name="numbtop2" id="numbtop2" value="${symptoms.numbtop2}">  
+</div></td>
+<td><div id="numbness3" class="ui-widget-content">
+ <img alt="" src="${symptoms.numbpath3}"  width="10px" height="10px" >  
+ <input type="hidden" name="numbpath3" id="numbpath3" value="resources/images/numb.png">
+<input type="hidden" name="numbleft3" id="numbleft3" value="${symptoms.numbleft3}">
+<input type="hidden" name="numbtop3" id="numbtop3" value="${symptoms.numbtop3}"> 
+</div></td>
+<td><div id="numbness4" class="ui-widget-content">
+ <img alt="" src="${symptoms.numbpath4}"  width="10px" height="10px" >  
+ <input type="hidden" name="numbpath4" id="numbpath4" value="resources/images/numb.png">
+<input type="hidden" name="numbleft4" id="numbleft4" value="${symptoms.numbleft4}">
+<input type="hidden" name="numbtop4" id="numbtop4" value="${symptoms.numbtop4}" > 
+</div></td>
+
+<td width="60"></td>
+<td width="100" ><b>Pins/Needles:</b></td>
+<td ><div id="pins" class="ui-widget-content">
+ <img alt="" src="${symptoms.pinpath}"  width="10px" height="10px" > 
+ <input type="hidden" name="pinpath" id="pinpath" value="resources/images/pin.png">
+<input type="hidden" name="pinleft" id="pinleft"  value="${symptoms.pinleft}">
+<input type="hidden" name="pintop" id="pintop"  value="${symptoms.pintop}">  
+</div></td>
+<td><div id="pins1" class="ui-widget-content">
+ <img alt="" src="${symptoms.pinpath1}"  width="10px" height="10px" >
+   <input type="hidden" name="pinpath1" id="pinpath1" value="resources/images/pin.png">
+<input type="hidden" name="pinleft1" id="pinleft1" value="${symptoms.pinleft1}">
+<input type="hidden" name="pintop1" id="pintop1" value="${symptoms.pintop1}" > 
+ 
+</div></td>
+<td><div id="pins2" class="ui-widget-content">
+ <img alt="" src="${symptoms.pinpath2}"  width="10px" height="10px" >
+  <input type="hidden" name="pinpath2" id="pinpath2" value="resources/images/pin.png">
+<input type="hidden" name="pinleft2" id="pinleft2" value="${symptoms.pinleft2}">
+<input type="hidden" name="pintop2" id="pintop2" value="${symptoms.pintop2}">   
+</div></td>
+<td><div id="pins3" class="ui-widget-content">
+ <img alt="" src="${symptoms.pinpath3}"  width="10px" height="10px" >  
+ <input type="hidden" name="pinpath3" id="pinpath3" value="resources/images/pin.png">
+<input type="hidden" name="pinleft3" id="pinleft3" value="${symptoms.pinleft3}">
+<input type="hidden" name="pintop3" id="pintop3" value="${symptoms.pintop3}"> 
+</div></td>
+<td><div id="pins4" class="ui-widget-content">
+ <img alt="" src="${symptoms.pinpath4}"  width="10px" height="10px" > 
+  <input type="hidden" name="pinpath4" id="pinpath4" value="resources/images/pin.png">
+<input type="hidden" name="pinleft4" id="pinleft4" value="${symptoms.pinleft4}">
+<input type="hidden" name="pintop4" id="pintop4" value="${symptoms.pintop4}">  
+</div></td>
+<td width="70"></td>
+<td width="100"><b>Burning</b></td>
+<td><div id="burn" class="ui-widget-content">
+ <img alt="" src="${symptoms.burnpath}"  width="10px" height="10px" > 
+  <input type="hidden" name="burnpath" id="burnpath" value="resources/images/burn.png">
+<input type="hidden" name="burnleft" id="burnleft" value="${symptoms.burnleft}">
+<input type="hidden" name="burntop" id="burntop" value="${symptoms.burntop}">  
+</div></td>
+<td><div id="burn1" class="ui-widget-content">
+ <img alt="" src="${symptoms.burnpath1}" width="10px" height="10px" >  
+ <input type="hidden" name="burnpath1" id="burnpath1" value="resources/images/burn.png">
+<input type="hidden" name="burnleft1" id="burnleft1" value="${symptoms.burnleft1}">
+<input type="hidden" name="burntop1" id="burntop1" value="${symptoms.burntop1}"> 
+</div></td>
+<td><div id="burn2" class="ui-widget-content">
+ <img alt="" src="${symptoms.burnpath2}" width="10px" height="10px" >  
+ <input type="hidden" name="burnpath2" id="burnpath2" value="resources/images/burn.png">
+<input type="hidden" name="burnleft2" id="burnleft2" value="${symptoms.burnleft2}">
+<input type="hidden" name="burntop2" id="burntop2" value="${symptoms.burntop2}">
+</div></td>
+<td><div id="burn3" class="ui-widget-content">
+ <img alt="" src="${symptoms.burnpath3}" width="10px" height="10px" > 
+ <input type="hidden" name="burnpath3" id="burnpath3" value="resources/images/burn.png">
+<input type="hidden" name="burnleft3" id="burnleft3" value="${symptoms.burnleft3}">
+<input type="hidden" name="burntop3" id="burntop3" value="${symptoms.burntop3}"> 
+</div></td>
+<td><div id="burn4" class="ui-widget-content">
+ <img alt="" src="${symptoms.burnpath4}" width="10px" height="10px" >
+ <input type="hidden" name="burnpath4" id="burnpath4" value="resources/images/burn.png">
+<input type="hidden" name="burnleft4" id="burnleft4" value="${symptoms.burnleft4}">
+<input type="hidden" name="burntop4" id="burntop4" value="${symptoms.burntop4}" >  
+</div></td>
+<td width="80"></td>
+<td width="100"><b>Stabbing</b></td>
+<td><div id="stabbing" class="ui-widget-content">
+ <img alt="" src="${symptoms.stabpath}" width="10px" height="10px" >  
+ <input type="hidden" name="stabpath" id="stabpath" value="resources/images/stabbing.png">
+<input type="hidden" name="stableft" id="stableft" value="${symptoms.stableft}" >
+<input type="hidden" name="stabtop" id="stabtop" value="${symptoms.stabtop}">  
+</div></td>
+<td><div id="stabbing1" class="ui-widget-content">
+ <img alt="" src="${symptoms.stabpath1}" width="10px" height="10px" >
+ <input type="hidden" name="stabpath1" id="stabpath1" value="resources/images/stabbing.png">
+<input type="hidden" name="stableft1" id="stableft1"  value="${symptoms.stableft1}">
+<input type="hidden" name="stabtop1" id="stabtop1" value="${symptoms.stabtop1}">  
+</div></td>
+<td><div id="stabbing2" class="ui-widget-content">
+ <img alt="" src="${symptoms.stabpath2}" width="10px" height="10px" > 
+ <input type="hidden" name="stabpath2" id="stabpath2" value="resources/images/stabbing.png">
+<input type="hidden" name="stableft2" id="stableft2"  value="${symptoms.stableft2}">
+<input type="hidden" name="stabtop2" id="stabtop2" value="${symptoms.stabtop2}">   
+ 
+</div></td>
+<td><div id="stabbing3" class="ui-widget-content">
+ <img alt="" src="${symptoms.stabpath3}" width="10px" height="10px" > 
+ <input type="hidden" name="stabpath3" id="stabpath3" value="resources/images/stabbing.png">
+<input type="hidden" name="stableft3" id="stableft3"  value="${symptoms.stableft3}">
+<input type="hidden" name="stabtop3" id="stabtop3" value="${symptoms.stabtop3}">   
+</div></td>
+<td><div id="stabbing4" class="ui-widget-content">
+ <img alt="" src="${symptoms.stabpath4}" width="10px" height="10px" >  
+ <input type="hidden" name="stabpath4" id="stabpath4" value="resources/images/stabbing.png">
+<input type="hidden" name="stableft4" id="stableft4"  value="${symptoms.stableft4}">
+<input type="hidden" name="stabtop4" id="stabtop4" value="${symptoms.stabtop4}">  
+</div></td>      
+          
+          
+        
+          
+          
+          
+           </tr></table>
+           </br>
+         <table width="98%"><tr><td align="right">
+    <img id= "bodyfront" alt="" src="resources/images/bodyfront.png"> </td><td align="left" valign="top" width="55"><img  id= "droppable" alt="" src="resources/images/face.png" >
+ </td><td align="left">
+    <img  id= "bodyback" alt="" src="resources/images/bodyback.png"> </td></tr> </table>
+    
+    
+    
+    
+    
+    </c:otherwise>
+    </c:choose>
 </br>
 </br>
-<table width="100" align="right"><tr ><td  ><input  type="submit" value="Save" class="submit_btn"></td><td  ><input  type="reset" value="Cancel" class="submit_btn"></td></tr>
+<table width="100" align="right"><tr ><td  ><input  type="submit" value="Save" class="submit_btn"></td><td ><a href="viewsymptom" style="color: white" class="submit_btn">Cancel</a></td></tr>
 </table>
 </form>
-<!-- <div id="position"></div><div id="position1"></div> -->
+<div id="position"></div><div id="position1"></div>
+
  
      
          	
