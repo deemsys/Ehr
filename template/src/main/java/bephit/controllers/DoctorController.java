@@ -130,6 +130,9 @@ public class DoctorController {
 	@Autowired
 	FootquestionnarieDAO footDAO;
 	
+	@Autowired
+	ShoulderpainscoreDAO shoulderDAO;
+	
 	@RequestMapping(value="/perry", method = RequestMethod.GET)
 	public String hip(ModelMap model) {
 	
@@ -1274,7 +1277,90 @@ public class DoctorController {
 		return "viewfootquestionnarie";
 	}
 	
+	@RequestMapping(value="/shoulderpainscore", method = RequestMethod.GET)
+	public String viewingshoulderpainscore(HttpSession session, ModelMap model) {
+		
+		
+		return "shoulderpainscore";
+ 
+	}
+	@RequestMapping(value="/shoulderpainscore", method = RequestMethod.POST)
+	public String insert_shoulderpainscore(HttpSession session,@ModelAttribute("Shoulderpainscore")  @Valid Shoulderpainscore shoulderpainscore,BindingResult result,ModelMap model) {
+		
+ 
+	    model.put("Shoulderpainscore", shoulderpainscore);
+		model.addAttribute("shoulderpainscoreForm",shoulderpainscore);
+    	int a=shoulderDAO.setShoulderpain(shoulderpainscore);
+    	ShoulderpainscoreForm shoulderpainscoreForm= new ShoulderpainscoreForm();
+    	shoulderpainscoreForm.setShoulderpainscore(shoulderDAO.getShoulderpainscore());
+		model.addAttribute("shoulderpainscoreForm",shoulderpainscoreForm);
+		return "shoulderpainscore";
+ 
 	
+	}
+	@RequestMapping(value="/viewshoulderpainscore", method=RequestMethod.GET)
+	public String viewshoulderpainscore(HttpServletRequest request,ModelMap model, Principal principal) {
+		 model.addAttribute("success","false");
+		
+		  ShoulderpainscoreForm shoulderpainscoreForm = new ShoulderpainscoreForm();
+		 
+		  shoulderpainscoreForm.setShoulderpainscore(shoulderDAO.getShoulderpainscore());
+		  
+		  model.addAttribute("shoulderpainscoreForm",shoulderpainscoreForm);	
+		  
+		return "viewshoulderpainscore";
+	}
+	@RequestMapping(value="/shoulderpainscorelist", method=RequestMethod.GET)
+	public String shoulderpainscorelist(HttpServletRequest request,@RequestParam("shoulderpainno") String shoulderpainno,ModelMap model,Shoulderpainscore shoulderpainscore)
+	{
+		
+		ShoulderpainscoreForm shoulderpainscoreForm = new ShoulderpainscoreForm();
+		shoulderpainscoreForm.setShoulderpainscore(shoulderDAO.getShoulder(shoulderpainno));	
+		model.addAttribute("shoulderpainscoreForm", shoulderpainscoreForm);
+		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
+		return "shoulderpainscorelist";
+	}
+	@RequestMapping(value="/editshoulderpainscore", method=RequestMethod.GET)
+	public String editshoulderpainscore(HttpServletRequest request,@RequestParam("shoulderpainno") String shoulderpainno,ModelMap model,Shoulderpainscore shoulderpainscore) 
+	{
+		/*String lumbopelvicexam=request.getParameter("lumbopelvicexam");*/
+		ShoulderpainscoreForm shoulderpainscoreForm = new ShoulderpainscoreForm();       
+        shoulderpainscoreForm.setShoulderpainscore(shoulderDAO.getShoulder(shoulderpainno));
+        model.addAttribute("shoulderpainscoreForm",shoulderpainscoreForm);
+		 
+		return "editshoulderpainscore";
+	}
+	@RequestMapping(value="/updateshoulderpainscore", method=RequestMethod.POST)
+	public String updateshoulderpainscore(HttpServletRequest request,@ModelAttribute("Shoulderpainscore") @Valid Shoulderpainscore shoulderpainscore,
+			BindingResult result,ModelMap model,Principal principal)
+	{
+		int status = shoulderDAO.updateshoulderpainscore(shoulderpainscore,shoulderpainscore.getShoulderpainno(), principal.getName());
+		System.out.println(status);
+		
+		ShoulderpainscoreForm shoulderpainscoreForm = new ShoulderpainscoreForm();
+        
+       shoulderpainscoreForm.setShoulderpainscore(shoulderDAO.getShoulderpainscore());
+       
+        model.addAttribute("shoulderpainscoreForm", shoulderpainscoreForm);
+	        return "viewshoulderpainscore";
+		
+	}
+	
+	@RequestMapping(value="/deleteshoulderpainscore", method=RequestMethod.GET)
+	public String removeshoulderpainscore(@RequestParam("shoulderpainno") String shoulderpainno,ModelMap model, Principal principal) {
+	
+		int status=shoulderDAO.deleteshoulderpainscore(shoulderpainno);
+		
+		if(status==1)
+		{
+        model.addAttribute("success","true");
+		
+        ShoulderpainscoreForm shoulderpainscoreForm= new ShoulderpainscoreForm();
+        shoulderpainscoreForm.setShoulderpainscore(shoulderDAO.getShoulderpainscore());
+		model.addAttribute("shoulderpainscoreForm",shoulderpainscoreForm);  
+		}
+		return "viewshoulderpainscore";
+	}
 	
 }
 	
