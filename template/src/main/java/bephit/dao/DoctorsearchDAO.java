@@ -199,11 +199,12 @@ return 0;
     		return 0;
 	    
 	}
-	public int getPatientdetails(String emailid)
+	public int getPatientdetails(String emailid,String patientname)
 	{
 		Connection con = null;
 		Statement statement = null;
 		ResultSet resultSet = null;
+		ResultSet resultSet1 = null;
 		try {
 			con = dataSource.getConnection();
 			statement = con.createStatement();
@@ -211,7 +212,7 @@ return 0;
 			e1.printStackTrace();
 		}
 		try{
-			 resultSet=statement.executeQuery("select emailid,patient_no from tbl_doctorsearch WHERE emailid='"+emailid+"'");
+			 resultSet=statement.executeQuery("select emailid,patient_no from tbl_doctorsearch WHERE emailid='"+emailid+"' and patientname='"+patientname+"'");
     		 String  patient_no="";
 			 while(resultSet.next())
     		 {
@@ -220,14 +221,14 @@ return 0;
     		 }
 			 
 	    	 String patient_id="";
-    		 String cmd2="SELECT patient_id as patient_id from patient_details WHERE emailid='"+emailid+"'";
-    		 resultSet=statement.executeQuery(cmd2);
+    		 String cmd2="SELECT patient_id as patient_id from patient_details WHERE emailid='"+emailid+"' and Name='"+patientname+"'";
+    		 resultSet1=statement.executeQuery(cmd2);
     		 System.out.println(cmd2);
-    		 while(resultSet.next())
+    		 while(resultSet1.next())
     		 {              
-    			patient_id=resultSet.getString("patient_id"); 
+    			patient_id=resultSet1.getString("patient_id"); 
     		 }
-    		 String cmd3="update tbl_doctorsearch SET patient_id='"+patient_id+"' WHERE emailid='"+emailid+"'";
+    		 String cmd3="update tbl_doctorsearch SET patient_id='"+patient_id+"' WHERE emailid='"+emailid+"' and patientname='"+patientname+"'";
     		 statement.execute(cmd3);
     		 System.out.println(cmd3);
     		
@@ -248,7 +249,7 @@ return 0;
 		return 0;
 	
 	}
-	public String getPatientid(String emailid)
+	public String getPatientid(String emailid,String name)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -262,7 +263,7 @@ return 0;
 		}
 		try{
 			 
-    		 String cmd2="SELECT Patient_id as patient_id from patient_details WHERE emailid='"+emailid+"'";
+    		 String cmd2="SELECT Patient_id as patient_id from patient_details WHERE emailid='"+emailid+"' and Name='"+name+"'";
     		 resultSet=statement.executeQuery(cmd2);
     		 System.out.println(cmd2);
     		 while(resultSet.next())
@@ -288,7 +289,7 @@ return 0;
 	
 	}
 	
-	public int getUpdation(String emailid)
+	public int getUpdation(String emailid,String name)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -305,7 +306,7 @@ return 0;
 	    try{
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
-	    	 String cmd1="UPDATE `tbl_doctorsearch` SET visit='1' where emailid='"+emailid+"'";
+	    	 String cmd1="UPDATE `tbl_doctorsearch` SET visit='1' where emailid='"+emailid+"' and patientname='"+name+"'";
 	    	 System.out.println(cmd1);
 	    	 statement.execute(cmd1);
 	    	/* String cmd2="SELECT patient_id from `tbl_doctorsearch` where emailid='"+emailid+"'";
@@ -368,7 +369,7 @@ return 0;
 	    }
 	    return doctorsearch;
 	}
-		public String getVisit(String emailid){
+		public String getVisit(String emailid,String name){
 			Connection con = null;
 			Statement statement = null;
 			ResultSet resultSet = null;
@@ -383,7 +384,7 @@ return 0;
 			String visit="";		
 			try{		    	
 				
-		    	String c2="SELECT visit from tbl_doctorsearch where emailid='"+emailid+"'";
+		    	String c2="SELECT visit from tbl_doctorsearch where emailid='"+emailid+"' and patientname='"+name+"'";
 		    	 resultSet=statement.executeQuery(c2);
 		    	 while(resultSet.next())
 		    	 {

@@ -18,7 +18,7 @@ public class SymptomDAO
 	public void setDataSource(DataSource dataSource) {
 		this.dataSource = dataSource;
 	}
-	public int updatefootexam(Symptom symptomdetails,String symptomno)
+	public int updatesymptomexam(Symptom symptomdetails,String symptomno)
 	{
 		Connection con = null;
 		Statement statement = null;
