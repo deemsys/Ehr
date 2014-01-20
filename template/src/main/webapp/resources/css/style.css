@@ -473,7 +473,7 @@ ul.pagination li.page a:hover {
 	display:block;
 	border:0;
 	outline:none;
-	text-shadow:1px 1px 1px #555;
+	
 }
 .submit_btn1 {
 	background:url(../images/login_btn1.png) 0 0 no-repeat;
