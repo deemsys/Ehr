@@ -93,7 +93,7 @@ import bephit.model.*;
  
  
 @Controller
-@SessionAttributes({"physical","radio","waiver","info","consent","minor","hard","screen","medical","assignment","hippa","staff","veri","patient","role","signup","doctorsignup","patientid"})
+@SessionAttributes({"physical","radio","waiver","info","consent","minor","hard","screen","medical","assignment","hippa","staff","veri","patient","role","signup","doctorsignup","patientid","soapnotesid"})
 public class MainController {
 	
 	RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
@@ -216,7 +216,7 @@ public class MainController {
 	}
 	
 	@RequestMapping(value="/doctorsearch", method = RequestMethod.POST)
-	public String insert_doctorsearch(HttpServletRequest request,HttpSession session,@ModelAttribute("Doctorsearch")  @Valid Doctorsearch doctorsearch,BindingResult result,ModelMap model) {
+	public String insert_doctorsearch(HttpSession session,HttpServletRequest request,@ModelAttribute("Doctorsearch")  @Valid Doctorsearch doctorsearch,BindingResult result,ModelMap model) {
 	String emailid=request.getParameter("emailid");
 	String patientname=request.getParameter("patientname");
 	int v=doctorDAO.Checkvalid(emailid,patientname);
@@ -233,13 +233,13 @@ public class MainController {
 		     DoctorsearchForm doctorsearchForm= new DoctorsearchForm();
 		     doctorsearchForm.setDoctorsearch(doctorDAO.getDoctorsearch());
 		     model.addAttribute("doctorsearchForm",doctorsearchForm);
-		     int d=doctorDAO.getPatientdetails(emailid);
-		     String visit=doctorDAO.getVisit(emailid);
+		     int d=doctorDAO.getPatientdetails(emailid,patientname);
+		     String visit=doctorDAO.getVisit(emailid,patientname);
 	          System.out.println("visit"+visit);
 	         model.addAttribute("visit",visit);	        
 	           if (visit.equals("0"))
 	               {
-	        	   String patientid=doctorDAO.getPatientid(emailid);
+	        	   String patientid=doctorDAO.getPatientid(emailid,patientname);
 	        	   request.getSession().setAttribute("patientid",patientid);
 	        	   System.out.println("sessionpatientid"+patientid);
 	        	   model.addAttribute("menu","phyexam");
@@ -252,24 +252,31 @@ public class MainController {
 	     	}
 		      else
 		      {		    	  
-		    	  int d=doctorDAO.getUpdation(emailid);
-		    	  String visit=doctorDAO.getVisit(emailid);
+		    	  int d=doctorDAO.getUpdation(emailid,patientname);
+		    	  String visit=doctorDAO.getVisit(emailid,patientname);
 		    	  System.out.println("visit"+visit);		    
 		    	  model.addAttribute("visit",visit);
-		    	   model.addAttribute("menu"," notes123");	
-		    	   String patientid=doctorDAO.getPatientid(emailid);
+		    	   model.addAttribute("menu"," notes");	
+		    	   String patientid=doctorDAO.getPatientid(emailid,patientname);
+		    	   session.setAttribute("soapnotesid",patientid);
+		    	   System.out.println("patientid"+patientid);
 		    	   if(soapDAO.getSoapid(patientid).size()>0)
 		           { 
 		    		   SoapnotesForm soapnotesForm = new SoapnotesForm();       
 		    	        soapnotesForm.setSoapnotes(soapDAO.getSoapid(patientid));
 		    	        model.addAttribute("soapnotesForm", soapnotesForm);		
-		    			
+		    	        model.addAttribute("menu","notes");	
 		           	return "editsoapnotes";
 		           	
 		           }	
 		           else
 		           {
-		              return "soapnotes";
+		        	   System.out.print("patientsis"+patientid);
+		        	   model.addAttribute("patient",patientid);
+		        	   SoapnotesForm soapnotesForm = new SoapnotesForm();       
+		    	        soapnotesForm.setSoapnotes(soapDAO.getSoapid(patientid));
+		    	        model.addAttribute("soapnotesForm", soapnotesForm);	
+		        	   return "soapnotes";
 		           }
 		     
 		     
@@ -1170,6 +1177,7 @@ public class MainController {
 	@RequestMapping(value="/signup", method = RequestMethod.GET)
 	public String signup(HttpSession session,ModelMap model) {
 		session.removeAttribute("signup");
+		model.addAttribute("menu","sign");
 		return "signup";
  
 	}
@@ -1202,6 +1210,7 @@ public class MainController {
 	@RequestMapping(value="/doctorsignup", method = RequestMethod.GET)
 	public String doctorsignup(HttpSession session,ModelMap model) {
 		session.removeAttribute("doctorsignup");
+		model.addAttribute("menu","sign");
 		return "doctorsignup";
  
 	}
@@ -1224,6 +1233,7 @@ public class MainController {
     	DoctorsignupForm doctorsignupForm= new DoctorsignupForm();
     	doctorsignupForm.setDoctorsignup(docDAO.getDoctorsignup());
 		model.addAttribute("DoctorsignupForm",doctorsignupForm);
+		model.addAttribute("success",true);
         return "login";
 	}
 
@@ -2502,19 +2512,35 @@ public class MainController {
 		return "viewsoapnotes";
  
 	}
-	@RequestMapping(value="/editsoapnotes", method=RequestMethod.GET)
-	public String editsoapnotes(HttpServletRequest request,@RequestParam("soapid") String soapid,ModelMap model,SoapNotes soap)
+	//@RequestMapping(value="/editsoapnotes", method=RequestMethod.GET)
+	/*public String editsoapnote(HttpSession session,HttpServletRequest request,ModelMap model,SoapNotes soap)
 	{
+       session.getAttribute("soapnotesid").
 		String soapnotes=request.getParameter("soapnotes");
 		SoapnotesForm soapnotesForm = new SoapnotesForm();       
         soapnotesForm.setSoapnotes(soapDAO.getSoap(soapid));
         model.addAttribute("soapnotesForm", soapnotesForm);		
-		/*soapnotesForm.setSoapnotes(soapDAO.getSoapid());*/
+		soapnotesForm.setSoapnotes(soapDAO.getSoapid());
 		model.addAttribute("soapnotesForm", soapnotesForm);
 		model.addAttribute("menu", "notes");
 		 model.addAttribute("visit","0"); 
         
-        return soapnotes;
+        return "editsoapnotes";
+        }*/
+	@RequestMapping(value="/editsoapnotes", method=RequestMethod.GET)
+	public String editsoapnotes(HttpSession session,HttpServletRequest request,@RequestParam("soapid") String soapid,ModelMap model,SoapNotes soap)
+	{
+		System.out.println("soapid"+soapid);
+		String soapnotes=request.getParameter("soapnotes");
+		SoapnotesForm soapnotesForm = new SoapnotesForm();       
+        soapnotesForm.setSoapnotes(soapDAO.getSoapid(soapid));
+        model.addAttribute("soapnotesForm", soapnotesForm);		
+		/*soapnotesForm.setSoapnotes(soapDAO.getSoapid());*/
+		model.addAttribute("soapnotesForm", soapnotesForm);
+		model.addAttribute("menu", "notes");
+		 model.addAttribute("visit","1"); 
+        
+        return "editsoapnotes";
         }
 	
 	@RequestMapping(value="/updatesoapnotes", method=RequestMethod.POST)
@@ -2544,7 +2570,7 @@ public class MainController {
         model.addAttribute("soapnotesForm", soapnotesForm);
 	       model.addAttribute("success","true");
 	       model.addAttribute("menu", "notes");
-	       model.addAttribute("visit","0");
+	       model.addAttribute("visit","1");
 	        return "viewsoapnotes";
 		
 	}
@@ -2560,7 +2586,7 @@ public class MainController {
 		  //model.addAttribute("participantsDetailsForm", participantsDetailsForm);
 		  	model.addAttribute("soapnotesForm", soapnotesForm);
 		  	model.addAttribute("menu", "notes");
-		  	 model.addAttribute("visit","0");
+		  	 model.addAttribute("visit","1");
 		return "viewsoapnotes";
 	}
 	@RequestMapping(value="/soapNotesList", method=RequestMethod.GET)

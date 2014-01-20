@@ -12,6 +12,8 @@ import javax.swing.*;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,6 +25,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.multipart.support.ByteArrayMultipartFileEditor;
@@ -33,6 +36,7 @@ import bephit.model.*;
 
 
 @Controller
+@SessionAttributes({"symptoms"})
 public class SymptomController
 {
 	@Autowired 
@@ -68,6 +72,7 @@ public class SymptomController
 		SymptomForm symptomform=new SymptomForm();
 		symptomform.setSymptomdetails(symptomdao.getsymptomDetails(symptomno));
 		model.addAttribute("symptomform", symptomform);
+		model.addAttribute("menu","symptom");
 		return "symptomlist";
 	}
 	@RequestMapping (value="/editsymptom", method = RequestMethod.GET)
@@ -77,6 +82,7 @@ public class SymptomController
 		SymptomForm symptomform=new SymptomForm();
 		symptomform.setSymptomdetails(symptomdao.getsymptomDetails(symptomno));
 		model.addAttribute("symptomform", symptomform);
+		model.addAttribute("menu","symptom");
 		return "editsymptom";
 	}
 	@RequestMapping (value="/deletesymptom", method = RequestMethod.GET)
@@ -92,6 +98,7 @@ public class SymptomController
 	@RequestMapping (value="/manual", method = RequestMethod.GET)
 	public String manual(ModelMap model)
 	{
+		model.addAttribute("menu","therapy");
 		return "manualtherapy";
 	}
 	@RequestMapping (value="/viewmanualtherapy", method = RequestMethod.GET)
@@ -100,7 +107,7 @@ public class SymptomController
 		ManualTherapyForm manualform=new ManualTherapyForm();
 		manualform.setManualtherapy(therapydao.getmanualtherapyDetails());
 		model.addAttribute("manualform", manualform);
-		
+		model.addAttribute("menu","therapy");
 		
 		return "viewmanualtherapy";
 	}
@@ -112,7 +119,7 @@ public class SymptomController
 		ManualTherapyForm manualform=new ManualTherapyForm();
 		manualform.setManualtherapy(therapydao.getmanualtherapyDetails());
 		model.addAttribute("manualform", manualform);
-		
+		model.addAttribute("menu","therapy");
 		return "viewmanualtherapy";
 	}
 	@RequestMapping (value="/editmanualtherapy", method = RequestMethod.GET)
@@ -122,7 +129,7 @@ public class SymptomController
 		ManualTherapyForm manualform=new ManualTherapyForm();
 		manualform.setManualtherapy(therapydao.getmanualtherapyDetails(manualtherapyno));
 		model.addAttribute("manualform", manualform);
-		
+		model.addAttribute("menu","therapy");
 		return "editmanualtherapy";
 	}
 	
@@ -133,7 +140,7 @@ public class SymptomController
 		ManualTherapyForm manualform=new ManualTherapyForm();
 		manualform.setManualtherapy(therapydao.getmanualtherapyDetails(manualtherapyno));
 		model.addAttribute("manualform", manualform);
-		
+		model.addAttribute("menu","therapy");
 		return "manualtherapylist";
 	}
 	
@@ -149,17 +156,17 @@ public class SymptomController
 	@RequestMapping (value="/wristdisabilityindex", method = RequestMethod.GET)
 	public String wristdisabilityindex(ModelMap model)
 	{
-		
+		model.addAttribute("menu","wristindex");
 		return "wristindex";
 	}
 	@RequestMapping (value="/hipquestionnaire", method = RequestMethod.GET)
 	public String hipquestionnaireindex(ModelMap model)
 	{
-		
+		model.addAttribute("menu","hipknee");
 		return "hipquestionnaire";
 	}
 	@RequestMapping (value="/inserthipquestionnaire", method = RequestMethod.POST)
-	public String exams(HttpServletRequest request,ModelMap model,Hipquestionnaire hipquestionnaire) throws IOException
+	public String exams(HttpServletRequest request,ModelMap model,@ModelAttribute("hipquestionnaire") @Valid Hipquestionnaire hipquestionnaire,BindingResult result) throws IOException
 	{
 		
     hipquestionnairedao.inserthipquestionnaire(hipquestionnaire);
@@ -170,7 +177,7 @@ public class SymptomController
 		return "viewhipquestionnaire";
 	}
 	@RequestMapping (value="/updatehipquestionnaire", method = RequestMethod.POST)
-	public String updatehipquestionnaire(HttpServletRequest request,ModelMap model,Hipquestionnaire hipquestionnaire) throws IOException
+	public String updatehipquestionnaire(HttpServletRequest request,ModelMap model,@ModelAttribute("hipquestionnaire") @Valid Hipquestionnaire hipquestionnaire,BindingResult result) throws IOException
 	{
 		
     hipquestionnairedao.updatequestionnaire(hipquestionnaire, hipquestionnaire.getHipquestionno());
@@ -187,6 +194,7 @@ public class SymptomController
 	HipquestionnaireForm hipquestionnaireform=new HipquestionnaireForm();
 	hipquestionnaireform.setHipquestionnairedetails(hipquestionnairedao.gethipquestionnairedetails());
 	model.addAttribute("hipquestionnaireform", hipquestionnaireform);
+	model.addAttribute("menu","hipknee");
 	return "viewhipquestionnaire";
 	}
 	@RequestMapping (value="/edithipquestionnaire", method = RequestMethod.GET)
@@ -197,6 +205,7 @@ public class SymptomController
 	hipquestionnaireform.setHipquestionnairedetails(hipquestionnairedao.gethipquestionnairedetails(hipquestionno));
 	model.addAttribute("hipquestionnaireform", hipquestionnaireform);
 	System.out.print(hipquestionnaireform.getHipquestionnairedetails().get(0).getStiff());
+	model.addAttribute("menu","hipknee");
 	return "edithipquestionnaire";
 	}
 	@RequestMapping (value="/hipquestionnairelist", method = RequestMethod.GET)
@@ -207,6 +216,7 @@ public class SymptomController
 	hipquestionnaireform.setHipquestionnairedetails(hipquestionnairedao.gethipquestionnairedetails(hipquestionno));
 	model.addAttribute("hipquestionnaireform", hipquestionnaireform);
 	System.out.print(hipquestionnaireform.getHipquestionnairedetails().get(0).getStiff());
+	model.addAttribute("menu","hipknee");
 	return "hipquestionnairelist";
 	}
 	@RequestMapping (value="/deletehipquestionnaire", method = RequestMethod.GET)
@@ -225,7 +235,7 @@ public class SymptomController
 	@RequestMapping (value="/neckindex", method = RequestMethod.GET)
 	public String neckindex(ModelMap model)
 	{
-		model.addAttribute("menu","neckindex");
+		model.addAttribute("menu","wristindex");
 		model.addAttribute("success", true);
 		return "neckindex";
 	}
@@ -244,7 +254,7 @@ public class SymptomController
 		NeckindexForm neckindexform=new NeckindexForm();
 		neckindexform.setneckindexdetails(neckdao.getneckindexDetails());
 		model.addAttribute("neckindexform", neckindexform);
-		model.addAttribute("menu","neckindex");
+		model.addAttribute("menu","wristindex");
 		return "viewneckindex";
 	}
 	@RequestMapping (value="/wristindexlist", method = RequestMethod.GET)
@@ -264,7 +274,7 @@ public class SymptomController
 		NeckindexForm neckindexform=new NeckindexForm();
 		neckindexform.setneckindexdetails(neckdao.getneckindexDetails(neckindexno));
 		model.addAttribute("neckindexform", neckindexform);
-		model.addAttribute("menu","neckindex");
+		model.addAttribute("menu","wristindex");
 		return "neckindexlist";
 	}
 	@RequestMapping (value="/editwristindex", method = RequestMethod.GET)
@@ -284,7 +294,7 @@ public class SymptomController
 		NeckindexForm neckindexform=new NeckindexForm();
 		neckindexform.setneckindexdetails(neckdao.getneckindexDetails(neckindexno));
 		model.addAttribute("neckindexform", neckindexform);
-		model.addAttribute("menu","neckindex");
+		model.addAttribute("menu","wristindex");
 		return "editneckindex";
 	}
 	@RequestMapping (value="/deleteneckindex", method = RequestMethod.GET)
@@ -310,7 +320,7 @@ public class SymptomController
 		return "viewwristindex";
 	}
 	@RequestMapping (value="/updatewristindex", method = RequestMethod.POST)
-	public String updatewristindex(HttpServletRequest request,ModelMap model,Wristindex wristindex) throws IOException
+	public String updatewristindex(HttpServletRequest request,ModelMap model,@ModelAttribute("wristindex") @Valid Wristindex wristindex,BindingResult result) throws IOException
 	{
 	System.out.println(wristindex.getWristindexno());	
 	wristdao.updatewristindex(wristindex, wristindex.getWristindexno());
@@ -321,7 +331,7 @@ public class SymptomController
 	return "viewwristindex";
 	}
 	@RequestMapping (value="/updateneckindex", method = RequestMethod.POST)
-	public String updateneckindex(HttpServletRequest request,ModelMap model,Neckindex neckindex) throws IOException
+	public String updateneckindex(HttpServletRequest request,ModelMap model,@ModelAttribute("neckindex") @Valid Neckindex neckindex,BindingResult result) throws IOException
 	{
 	System.out.println(neckindex.getNeckindexno());	
 	neckdao.updateneckindex(neckindex, neckindex.getNeckindexno());
@@ -332,10 +342,19 @@ public class SymptomController
 	return "viewneckindex";
 	}
 	@RequestMapping (value="/updatesymptom", method = RequestMethod.POST)
-	public String updatesymptom(HttpServletRequest request,ModelMap model,Symptom symptom) throws IOException
+	public String updatesymptom(HttpServletRequest request,ModelMap model,@ModelAttribute("symptom") @Valid Symptom symptom,BindingResult result) throws IOException
 	{
+		if(result.hasErrors())
+		{
+			SymptomForm symptomform=new SymptomForm();
+			symptomform.setSymptomdetails(symptomdao.getsymptomDetails(symptom.getSymptomno()));
+			model.addAttribute("symptomform", symptomform);
+			model.addAttribute("menu","symptom");
+			return "editsymptom";
+		}
+		
 		System.out.println("path"+symptom.getAchepath());
-	symptomdao.updatefootexam(symptom,symptom.getSymptomno());
+	symptomdao.updatesymptomexam(symptom,symptom.getSymptomno());
 	SymptomForm symptomform=new SymptomForm();
 	symptomform.setSymptomdetails(symptomdao.getsymptomDetails());
 	model.addAttribute("symptomform", symptomform);
@@ -343,21 +362,37 @@ public class SymptomController
 		return "viewsymptom";
 	}
 	@RequestMapping (value="/insertsymptom", method = RequestMethod.POST)
-	public String exams(HttpServletRequest request,ModelMap model,Symptom symptom) throws IOException
+	public String exams(HttpSession session,HttpServletRequest request,ModelMap model,@ModelAttribute("symptom") @Valid Symptom symptom,BindingResult result) throws IOException
 	{
-		System.out.println("path"+symptom.getAchepath());
+		session.setAttribute("symptoms",symptom);
+		
+		System.out.println(symptom.getAcheleft());
+		if(result.hasErrors())	{
+			SymptomForm symptomform=new SymptomForm();
+			symptomform.setSymptomdetails(symptomdao.getsymptomDetails());
+			model.addAttribute("symptomform", symptomform);
+			model.addAttribute("menu","symptom");	
+			return "symptom";
+		}
+	
+		System.out.println("no errors");
 	symptomdao.insertsymptomimage(symptom);
 	model.addAttribute("success", true);
 	SymptomForm symptomform=new SymptomForm();
 	symptomform.setSymptomdetails(symptomdao.getsymptomDetails());
 	model.addAttribute("symptomform", symptomform);
-		return "viewsymptom";
+	return "viewsymptom";
 	}
 	
 	
+	
 	@RequestMapping (value="/inserttherapy", method = RequestMethod.POST)
-	public String therapy(HttpServletRequest request,ModelMap model,Manualtherapy therapy) throws IOException
+	public String therapy(HttpServletRequest request,ModelMap model,@ModelAttribute("therapy") @Valid Manualtherapy therapy,BindingResult result) throws IOException
 	{
+		if(result.hasErrors())
+		{
+			return "manualtherapy";
+		}
 		therapydao.inserttherapydetails(therapy);
 		ManualTherapyForm manualform=new ManualTherapyForm();
 		manualform.setManualtherapy(therapydao.getmanualtherapyDetails());
@@ -366,7 +401,7 @@ public class SymptomController
 		return "viewmanualtherapy";
 	}
 	@RequestMapping (value="/insertwristindex", method = RequestMethod.POST)
-	public String insertwristindex(HttpServletRequest request,ModelMap model,Wristindex wristindexdetails) throws IOException
+	public String insertwristindex(HttpServletRequest request,ModelMap model,@ModelAttribute("wristindexdetails") @Valid Wristindex wristindexdetails,BindingResult result) throws IOException
 	{
 		wristdao.insertwristindex(wristindexdetails);
 		WristindexForm wristindexform=new WristindexForm();
@@ -376,7 +411,7 @@ public class SymptomController
 		return "viewwristindex";
 	}
 	@RequestMapping (value="/insertneckindex", method = RequestMethod.POST)
-	public String insertneckindex(HttpServletRequest request,ModelMap model,Neckindex neckindexdetails) throws IOException
+	public String insertneckindex(HttpServletRequest request,ModelMap model,@ModelAttribute("neckindexdetails") @Valid Neckindex neckindexdetails,BindingResult result) throws IOException
 	{
 		neckdao.insertneckindex(neckindexdetails);
 		NeckindexForm neckindexform=new NeckindexForm();
@@ -387,7 +422,7 @@ public class SymptomController
 	}
 	
 	@RequestMapping (value="/updatetherapy", method = RequestMethod.POST)
-	public String updatetherapy(HttpServletRequest request,ModelMap model,Manualtherapy therapy) throws IOException
+	public String updatetherapy(HttpServletRequest request,ModelMap model,@ModelAttribute("therapy") @Valid Manualtherapy therapy,BindingResult result) throws IOException
 	{
 		
 		therapydao.updatemanualtherapy(therapy,therapy.getManualtherapyno());
@@ -397,5 +432,5 @@ public class SymptomController
 		model.addAttribute("success", true);
 		return "viewmanualtherapy";
 	}	
-		
+	
 }
