@@ -21,7 +21,7 @@
       		<tr>
         		<td valign="top" align="left">
 			        <div class="headings altheading">
-			          <h2>VIEW NECK indexS</h2>
+			          <h2>VIEW  NECK/MILD BACK DISABILITY INDEX</h2>
 			        </div>
 			        <div class="contentbox">
 			      <!--   <form action="findPatients" method="GET">  --> 

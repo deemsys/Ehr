@@ -247,11 +247,11 @@ $(function() {
 	     <div class="contentbox">
 	     	<c:set value="${hipexamform.hipexamdetails[0]}" var="hipexamdetails"/> 
           <table cellpadding="0" cellspacing="0" border="0" >
-           <tr><td width="130">Patient Name:</td>
+           <tr><td width="130"><span class="err">*</span>Patient Name:</td>
           
           
-           <td><input type="hidden" value="${hipexamdetails.hipexamno}" name="hipexamno"><input type="text" name="pname" value="${hipexamdetails.pname}"></td><td width="480"></td>
-           <td >Date:&nbsp;</td> <td><input type="text" name="date" id="datepicker" value="${hipexamdetails.date}"></td>
+           <td><input type="hidden" value="${hipexamdetails.hipexamno}" name="hipexamno"><input type="text" name="pname" value="${hipexamdetails.pname}"><br><span class="err"><form:errors path="hipexamdetails.pname"></form:errors></td><td width="480"></td>
+           <td ><span class="err">*</span>Date:&nbsp;</td> <td><input type="text" name="date" id="datepicker" value="${hipexamdetails.date}"><br><span class="err"><form:errors path="hipexamdetails.date"></form:errors></td>
            </tr>
             </table>
             </br>
@@ -455,11 +455,10 @@ $(function() {
                       
            </table>
            </br>
-           <div><B style="font-size:14px">PHYSICIAN SIGNATURE:</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" value="${hipexamdetails.signature }" name="signature"></div>
+           <div><B style="font-size:14px"><span class="err">*</span>PHYSICIAN SIGNATURE:</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" value="${hipexamdetails.signature }" name="signature"><span class="err"><form:errors path="hipexamdetails.signature"></form:errors></div>
            
          
-         <div align="right"><input class="submit_btn" type="submit" value="save" ></div>
-         
+         <table align="right"><tr><td><input type="submit" value="Save" class="submit_btn"></td><td> <a href="viewhipexam" style="color: white" class="submit_btn">Cancel</a></td></tr></table>
          </div></td></tr></table></div></div></div>
          
          

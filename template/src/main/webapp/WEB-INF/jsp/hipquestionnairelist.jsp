@@ -175,7 +175,7 @@ $(function() {
  <div>
 	            <div class="headings altheading">
 	            <center> <h2>
-	            HIP	AND KNEE QUESTIONNAIRE</h2></center><br/>
+	            VIEW HIP AND KNEE QUESTIONNAIRE</h2></center><br/>
 	            
 	            </div>
 	           
@@ -293,7 +293,7 @@ $(function() {
 	    <table width="100%" height="150"><tr><Td></Td></tr></table>
 	    <table align="right"><tr><td  >
 	    
-	     
+	     <a href="viewhipquestionnaire" style="color: white" class="submit_btn">Cancel</a>
 	    </td></tr></table>
 	    
            

@@ -323,7 +323,7 @@ $(function() {
 	             
 	            </div>
           <div class="contentbox">
-	    Today's Date <input type="text" name="date" id="datepicker" value="${hipquestionnairedetails.date}" >
+	    <span class="err">*</span>Today's Date <input type="text" name="date" id="datepicker" value="${hipquestionnairedetails.date}" ><br><span class="err"><form:errors path="hipquestionnaire.date"></form:errors></span>
 	    <br>
 	    <br>
 	    
@@ -347,7 +347,7 @@ $(function() {
 	    <table width="100%" height="150"><tr><Td></Td></tr></table>
 	    <table align="right"><tr><td  >
 	    
-	     <input class="submit_btn" type="submit" value="Save" ></td><td><input class="submit_btn" type="reset" value="Cancel" >
+	     <input class="submit_btn" type="submit" value="Update" ></td><td><a href="viewhipquestionnaire" style="color: white" class="submit_btn">Cancel</a>
 	    </td></tr></table>
 	    
 	    </div></div>

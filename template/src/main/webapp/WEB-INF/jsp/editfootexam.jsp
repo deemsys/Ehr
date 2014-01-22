@@ -240,9 +240,9 @@ $(function() {
 	     <div class="contentbox">
 	     <c:set value="${footexamform.footexamdetails[0]}" var="footexamdetails"/>
           <table cellpadding="0" cellspacing="0" border="0" >
-           <tr><td width="130">Patient Name:</td>
-           <td><input type="hidden" value="${footexamdetails.footexamno}" name="footexamno"><input type="text" value="${footexamdetails.pname}" name="pname"></td><td width="690"></td>
-           <td width="120">Date:&nbsp;</td> <td><input type="text" name="date" id="datepicker" value="${footexamdetails.date}"></td>
+           <tr><td width="130"><span class="err">*</span>Patient Name:</td>
+           <td width="200"><input type="hidden" value="${footexamdetails.footexamno}" name="footexamno"><input type="text" value="${footexamdetails.pname}" name="pname"><br><span class="err"><form:errors path="footexamdetails.pname"></form:errors></td><td width="635"></td>
+           <td width="50"><span class="err">*</span>Date:&nbsp;</td> <td><input type="text" name="date" id="datepicker" value="${footexamdetails.date}"><br><span class="err"><form:errors path="footexamdetails.date"></form:errors></td>
            </tr>
             </table>
             </br>
@@ -421,10 +421,10 @@ $(function() {
                       
            </table>
            </br>
-           <div><B style="font-size:14px">PHYSICIAN SIGNATURE:</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="signature" value="${footexamdetails.signature}"></div>
+           <div><B style="font-size:14px"><span class="err">*</span>PHYSICIAN SIGNATURE:</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="signature" value="${footexamdetails.signature}"><span class="err"><form:errors path="footexamdetails.signature"></form:errors></div>
            
          
-         <div align="right"><input class="submit_btn" type="submit" value="save" ></div>
+        <table align="right"><tr><td><input type="submit" value="Save" class="submit_btn"></td><td> <a href="viewfootexam" style="color: white" class="submit_btn">Cancel</a></td></tr></table>
          
          </div></td></tr></table></div></div></div>
          

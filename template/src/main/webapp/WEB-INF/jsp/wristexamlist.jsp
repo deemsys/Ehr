@@ -320,18 +320,18 @@ $(function() {
            </br>
            <table >
            <tr ><td width="370"><b style="font-size:14px">ASSESSMENT / ADDITIONAL COMMENTS:  </b></td>
-           <td><c:out value="${wristexamdetails.comments}"/></td><td width="880"></td></tr>
+           <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<c:out value="${wristexamdetails.comments}"/></td><td width="880"></td></tr>
            <tr height="10"></tr>
            <tr><td td width="370">Patient's Status for being a candidate for conservative care:</td>
-               <td>
-               <c:out value="${wristexamdetails.patientstatus}"/>
+               <td width="100">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <c:out value="${wristexamdetails.patientstatus}"/>
+              
                </td></tr>      
                 </table>
                 </br>
                 <table width="100%" cellspacing="0" cellpadding="0">
-           <tr class="row2"><td width="390"><b style="font-size:14px">DIAGNOSIS:	</b></td><td >1)&nbsp;&nbsp;&nbsp;<c:out value="${wristexamdetails.diagnosis1}" /></td><td width="250">2)&nbsp;&nbsp;&nbsp;<c:out value="${wristexamdetails.diagnosis2}" /></td><td width="250">3)&nbsp;&nbsp;&nbsp;<c:out value="${wristexamdetails.diagnosis3}"/></td><td width="250">4)&nbsp;&nbsp;&nbsp;<c:out value="${wristexamdetails.diagnosis4}"/></td></tr>
+           <tr class="row2"><td width="390"><b style="font-size:14px">DIAGNOSIS:	</b></td><td >&nbsp;&nbsp;&nbsp;1)&nbsp;&nbsp;&nbsp;<c:out value="${wristexamdetails.diagnosis1}" /></td><td width="250">2)&nbsp;&nbsp;&nbsp;<c:out value="${wristexamdetails.diagnosis2}" /></td><td width="250">3)&nbsp;&nbsp;&nbsp;<c:out value="${wristexamdetails.diagnosis3}"/></td><td width="250">4)&nbsp;&nbsp;&nbsp;<c:out value="${wristexamdetails.diagnosis4}"/></td></tr>
            <tr height="10"></tr>
-           <tr><td width="390"></td><td width="250">&nbsp;&nbsp;&nbsp;&nbsp;5)&nbsp;&nbsp;&nbsp;<c:out value="${wristexamdetails.diagnosis5}" /></td><td width="100">&nbsp;&nbsp;&nbsp;6)&nbsp;&nbsp;&nbsp;<c:out value="${wristexamdetails.diagnosis6}" /></td></tr>
+           <tr><td width="390"></td><td width="250">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5)&nbsp;&nbsp;&nbsp;<c:out value="${wristexamdetails.diagnosis5}" /></td><td width="100">&nbsp;&nbsp;&nbsp;6)&nbsp;&nbsp;&nbsp;<c:out value="${wristexamdetails.diagnosis6}" /></td></tr>
            </table>
            </br>
            <div><b style="font-size:14px">PLAN:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><b><c:out value="${wristexamdetails.times}"/></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Times/week for&nbsp;&nbsp;&nbsp;&nbsp; </b><b><c:out value="${wristexamdetails.weeks}" /></b>&nbsp;&nbsp;&nbsp;&nbsp; weeks to address the above functional & structural deficits.  Treatment will consist of the following:</div>
@@ -354,7 +354,7 @@ $(function() {
            <div><B style="font-size:14px">PHYSICIAN SIGNATURE:</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<c:out value="${wristexamdetails.signature }"/></div>
            
          
-         <div align="right"></div>
+       <table align="right"><tr><td> <a href="viewwristexamdetails" style="color: white" class="submit_btn">Cancel</a></td></tr></table>
          
          </div></td></tr></table></div></div></div>
          

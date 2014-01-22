@@ -301,7 +301,7 @@ $(function() {
            </tr>          
                      
            </table>   
-            <div align="right"><input type="submit" value="Update" class="submit_btn"></div>
+            <table align="right"><tr><td> <a href="viewwristindex" style="color: white" class="submit_btn">Cancel</a></td></tr></table>
     
             
      </div></div>

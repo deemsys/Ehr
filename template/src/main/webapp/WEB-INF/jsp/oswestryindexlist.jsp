@@ -511,19 +511,12 @@ $(function() {
 	     <c:if test="${oswestrydetails.instrumentc=='5'}"> <c:out value="Unable"></c:out></c:if> 
 	     </td></tr>
 	     </table>
-	     <br>
-	    
-	    
-	    
-	    
-	    <br>
+	     <br>   
+	   <br>
 	    <br>
 	    <br>
 	   
-	    <table align="right"><tr><td  >
-	    
-	     
-	    </td></tr></table>
+	     <table align="right"><tr><td> <a href="viewoswestryindex" style="color: white" class="submit_btn">Cancel</a></td></tr></table>>
 	    
            
            

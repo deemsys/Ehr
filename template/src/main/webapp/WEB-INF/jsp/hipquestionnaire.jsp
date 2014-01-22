@@ -1,4 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
@@ -180,6 +181,8 @@ $(function() {
 	           
 	    
 	     <div class="contentbox">
+	     <c:choose>
+	     <c:when test="${empty hipquestionnairedetails}">
 	      <P style="font-size: 15px"><b>Please answer the following questions for the hip/knee being treated or followed up.If it is BOTH hips/knees,please answer the questions for your worse side.All questions are about how you have felt,on average,during the past week,If you are being treated for an injury that happened less than one week ago,please answer for the period since your injury.</b></P>
 	     </br>
 	     <p style="font-size: 15px"><b>1.During the past week,how stiff was your hip/knee?</b></p>
@@ -326,7 +329,7 @@ $(function() {
 	             
 	            </div>
           <div class="contentbox">
-	    Today's Date <input type="text" name="date" id="datepicker">
+	   <span class="err">*</span> Today's Date <input type="text" name="date" id="datepicker"><br><span class="err"><form:errors path="hipquestionnaire.date"></form:errors></span>
 	    <br>
 	    <br>
 	    
@@ -343,15 +346,150 @@ $(function() {
 	    Your Birth Date  <input type="date"  name="birthdate">
 	    <br><br>
 	    Your Social Security Number <input type="text" name="security">
+	    </c:when>
+	    <c:otherwise>
+	    <P style="font-size: 15px"><b>Please answer the following questions for the hip/knee being treated or followed up.If it is BOTH hips/knees,please answer the questions for your worse side.All questions are about how you have felt,on average,during the past week,If you are being treated for an injury that happened less than one week ago,please answer for the period since your injury.</b></P>
+	     </br><input type="hidden" value="${hipquestionnairedetails.hipquestionno}" name="hipquestionno"/>
+	     <p style="font-size: 15px"><b>1.During the past week,how stiff was your hip/knee?</b></p>
+	     <table><tr><td width="100"><input type="radio" name="stiff"  <c:if test="${hipquestionnairedetails.stiff=='Not at all'}"> <c:out value="checked"></c:out></c:if> value="Not at all">Not at all</td>
+	     <td width="100"><input type="radio" name="stiff" <c:if test="${hipquestionnairedetails.stiff=='Mildly'}"> <c:out value="checked"></c:out></c:if> value="Mildly">Mildly</td>
+	     <td width="100"><input type="radio" name="stiff" <c:if test="${hipquestionnairedetails.stiff=='Moderately'}"> <c:out value="checked"></c:out></c:if> value="Moderately">Moderately</td>
+	     <td width="100"><input type="radio" name="stiff" <c:if test="${hipquestionnairedetails.stiff=='Very'}"> <c:out value="checked"></c:out></c:if> value="Very">Very</td>
+	     <td><input type="radio" name="stiff" <c:if test="${hipquestionnairedetails.stiff=='Extremely'}"> <c:out value="checked"></c:out></c:if> value="Extremely">Extremely</td>
+	     
+	     </tr></table>
+	     <br>
+	     <p style="font-size: 15px"><b>&nbsp;2.During the past week,how swollen was your hip/knee?</b></p>
+	     <table><tr><td width="100"><input type="radio" name="swollen"  <c:if test="${hipquestionnairedetails.swollen=='Not at all'}"> <c:out value="checked"></c:out></c:if> value="Not at all">Not at all</td>
+	     <td width="100"><input type="radio" name="swollen" <c:if test="${hipquestionnairedetails.swollen=='Mildly'}"> <c:out value="checked"></c:out></c:if> value="Mildly">Mildly</td>
+	     <td width="100"><input type="radio" name="swollen" <c:if test="${hipquestionnairedetails.swollen=='Moderately'}"> <c:out value="checked"></c:out></c:if> value="Moderately">Moderately</td>
+	     <td width="100"><input type="radio" name="swollen" <c:if test="${hipquestionnairedetails.swollen=='Very'}"> <c:out value="checked"></c:out></c:if> value="Very">Very</td>
+	     <td><input type="radio" name="swollen" <c:if test="${hipquestionnairedetails.swollen=='Extremely'}"> <c:out value="checked"></c:out></c:if> value="Extremely">Extremely</td>
+	     
+	     </tr></table>
+	     <br>
+	     <P style="font-size: 15px"><b>The following instructions are for questions 3-5.</b></P>
+	     <p>During the past week,please tell us about how painful your hips/knees were during the following activities.</p>
+	     <table style="border-collapse: collapse;border:2px solid;">
+	    
+	    <tr><td width="170" style= "border:2px solid;"></td><td width="150" valign="top" style= "border:2px solid;" align="center"><b>Not painful</b></td><td width="150" valign="top" style= "border:2px solid;" align="center"><b>Mildly painful</b></td><td width="150" valign="top" style= "border:2px solid;" align="center"><b>Moderately painful</b></td><td width="150" valign="top" style= "border:2px solid;" align="center"><b>very painful</b></td><td width="150" valign="top" style= "border:2px solid;" align="center"><b>Extremely painful</b></td><td width="150" valign="top" style= "border:2px solid;"><b>Could not do because of hip/knee pain</b></td><td valign="top" style= "border:2px solid;"><b>Could not do for other reasons</b></td></tr>
+	     <tr   ><td ><b>&nbsp;3.Walking on flat surfaces?</b></td><td ></td><td></td><td></td><td ></td><td ></td><td ></td><td ></td></tr>
+	     <tr><td style= "border:1px solid;">Right Hip</td><td style= "border:1px solid;" align="center"><input type="radio" name="flatrighthip" <c:if test="${hipquestionnairedetails.flatrighthip=='1'}"> <c:out value="checked"></c:out></c:if> value="1">&nbsp;1</td><td style= "border:1px solid;" align="center"><input type="radio" <c:if test="${hipquestionnairedetails.flatrighthip=='2'}"> <c:out value="checked"></c:out></c:if> name="flatrighthip" value="2">&nbsp;2</td><td style= "border:1px solid;" align="center"><input type="radio"  <c:if test="${hipquestionnairedetails.flatrighthip=='3'}"> <c:out value="checked"></c:out></c:if> name="flatrighthip" value="3">&nbsp;3</td><td style= "border:1px solid;" align="center"><input type="radio"  <c:if test="${hipquestionnairedetails.flatrighthip=='4'}"> <c:out value="checked"></c:out></c:if> value="4" name="flatrighthip">&nbsp;4</td><td style= "border:1px solid;" align="center"><input type="radio" <c:if test="${hipquestionnairedetails.flatrighthip=='5'}"> <c:out value="checked"></c:out></c:if> name="flatrighthip" value="5">&nbsp;5</td><td style= "border:1px solid;" align="center"><input type="radio" <c:if test="${hipquestionnairedetails.flatrighthip=='6'}"> <c:out value="checked"></c:out></c:if> name="flatrighthip" value="6">&nbsp;6</td><td style= "border:1px solid;" align="center"><input type="radio" <c:if test="${hipquestionnairedetails.flatrighthip=='7'}"> <c:out value="checked"></c:out></c:if> name="flatrighthip" value="7">&nbsp;7</td></tr>
+	     
+	     <tr><td style= "border:1px solid;">Left Hip</td><td style= "border:1px solid;" align="center"><input type="radio" name="flatlefthip" <c:if test="${hipquestionnairedetails.flatlefthip=='1'}"> <c:out value="checked"></c:out></c:if> value="1">&nbsp;1</td><td style= "border:1px solid;" align="center"><input type="radio" name="flatlefthip"  <c:if test="${hipquestionnairedetails.flatlefthip=='2'}"> <c:out value="checked"></c:out></c:if> value="2">&nbsp;2</td><td style= "border:1px solid;" align="center"><input type="radio" <c:if test="${hipquestionnairedetails.flatlefthip=='3'}"> <c:out value="checked"></c:out></c:if> name="flatlefthip" value="3">&nbsp;3</td><td style= "border:1px solid;" align="center"><input type="radio"  <c:if test="${hipquestionnairedetails.flatlefthip=='4'}"> <c:out value="checked"></c:out></c:if> value="4" name="flatlefthip">&nbsp;4</td><td style= "border:1px solid;" align="center"><input type="radio" <c:if test="${hipquestionnairedetails.flatlefthip=='5'}"> <c:out value="checked"></c:out></c:if> name="flatlefthip" value="5">&nbsp;5</td><td style= "border:1px solid;" align="center"><input type="radio"  <c:if test="${hipquestionnairedetails.flatlefthip=='6'}"> <c:out value="checked"></c:out></c:if> name="flatlefthip" value="6">&nbsp;6</td><td style= "border:1px solid;" align="center"><input type="radio" name="flatlefthip"  <c:if test="${hipquestionnairedetails.flatlefthip=='7'}"> <c:out value="checked"></c:out></c:if> value="7">&nbsp;7</td></tr>
+	     <tr><td style= "border:1px solid;">Right Knee</td><td style= "border:1px solid;" align="center"><input type="radio" name="flatrightknee" value="1" <c:if test="${hipquestionnairedetails.flatrightknee=='1'}"> <c:out value="checked"></c:out></c:if>>&nbsp;1</td><td style= "border:1px solid;" align="center"><input type="radio" name="flatrightknee"  <c:if test="${hipquestionnairedetails.flatrightknee=='2'}"> <c:out value="checked"></c:out></c:if> value="2">&nbsp;2</td><td style= "border:1px solid;" align="center"><input type="radio" name="flatrightknee"  <c:if test="${hipquestionnairedetails.flatrightknee=='3'}"> <c:out value="checked"></c:out></c:if> value="3">&nbsp;3</td><td style= "border:1px solid;" align="center"><input type="radio" value="4" <c:if test="${hipquestionnairedetails.flatrightknee=='4'}"> <c:out value="checked"></c:out></c:if> name="flatrightknee">&nbsp;4</td><td style= "border:1px solid;" align="center"><input type="radio" <c:if test="${hipquestionnairedetails.flatrightknee=='5'}"> <c:out value="checked"></c:out></c:if> name="flatrightknee" value="5">&nbsp;5</td><td style= "border:1px solid;" align="center"><input type="radio" name="flatrightknee" <c:if test="${hipquestionnairedetails.flatrightknee=='6'}"> <c:out value="checked"></c:out></c:if> value="6">&nbsp;6</td><td style= "border:1px solid;" align="center"><input type="radio" name="flatrightknee" <c:if test="${hipquestionnairedetails.flatrightknee=='7'}"> <c:out value="checked"></c:out></c:if> value="7">&nbsp;7</td></tr>
+	     <tr><td style= "border:1px solid;">Left Knee</td><td style= "border:1px solid;" align="center"><input type="radio" name="flatleftknee"  <c:if test="${hipquestionnairedetails.flatleftknee=='1'}"> <c:out value="checked"></c:out></c:if>value="1">&nbsp;1</td><td style= "border:1px solid;" align="center"><input type="radio" <c:if test="${hipquestionnairedetails.flatleftknee=='2'}"> <c:out value="checked"></c:out></c:if> name="flatleftknee" value="2">&nbsp;2</td><td style= "border:1px solid;" align="center"><input type="radio" <c:if test="${hipquestionnairedetails.flatleftknee=='3'}"> <c:out value="checked"></c:out></c:if>  name="flatleftknee" value="3">&nbsp;3</td><td style= "border:1px solid;" align="center"><input type="radio" value="4" <c:if test="${hipquestionnairedetails.flatleftknee=='4'}"> <c:out value="checked"></c:out></c:if>  name="flatleftknee">&nbsp;4</td><td style= "border:1px solid;" align="center"><input type="radio" <c:if test="${hipquestionnairedetails.flatleftknee=='5'}"> <c:out value="checked"></c:out></c:if> name="flatleftknee" value="5">&nbsp;5</td><td style= "border:1px solid;" align="center"><input type="radio" <c:if test="${hipquestionnairedetails.flatleftknee=='6'}"> <c:out value="checked"></c:out></c:if> name="flatleftknee" value="6">&nbsp;6</td><td style= "border:1px solid;" align="center"><input type="radio" name="flatleftknee"  <c:if test="${hipquestionnairedetails.flatleftknee=='7'}"> <c:out value="checked"></c:out></c:if> value="7">&nbsp;7</td></tr>
+	     </table>
+	     <br>
+	     <table style="border-collapse: collapse;border:2px solid;">
+	    
+	    <tr><td width="170" style= "border:2px solid;"></td><td width="150" valign="top" style= "border:2px solid;" align="center"><b>Not painful</b></td><td width="150" valign="top" style= "border:2px solid;" align="center"><b>Mildly painful</b></td><td width="150" valign="top" style= "border:2px solid;" align="center"><b>Moderately painful</b></td><td width="150" valign="top" style= "border:2px solid;" align="center"><b>very painful</b></td><td width="150" valign="top" style= "border:2px solid;" align="center"><b>Extremely painful</b></td><td width="150" valign="top" style= "border:2px solid;"><b>Could not do because of hip/knee pain</b></td><td valign="top" style= "border:2px solid;"><b>Could not do for other reasons</b></td></tr>
+	     <tr   ><td ><b>&nbsp;4.Going up or down stairs?</td><td ></td><td></td><td></td><td ></td><td ></td><td ></td><td ></td></tr>
+	     <tr><td style= "border:1px solid;">Right Hip</td><td style= "border:1px solid;" align="center"><input type="radio" name="stairsrighthip" <c:if test="${hipquestionnairedetails.stairsrighthip=='1'}"> <c:out value="checked"></c:out></c:if> value="1">&nbsp;1</td><td style= "border:1px solid;" align="center"><input type="radio" <c:if test="${hipquestionnairedetails.stairsrighthip=='2'}"> <c:out value="checked"></c:out></c:if> name="stairsrighthip" value="2">&nbsp;2</td><td style= "border:1px solid;" align="center"><input type="radio"  <c:if test="${hipquestionnairedetails.stairsrighthip=='3'}"> <c:out value="checked"></c:out></c:if> name="stairsrighthip" value="3">&nbsp;3</td><td style= "border:1px solid;" align="center"><input type="radio"  <c:if test="${hipquestionnairedetails.stairsrighthip=='4'}"> <c:out value="checked"></c:out></c:if> value="4" name="stairsrighthip">&nbsp;4</td><td style= "border:1px solid;" align="center"><input type="radio" <c:if test="${hipquestionnairedetails.stairsrighthip=='5'}"> <c:out value="checked"></c:out></c:if> name="stairsrighthip" value="5">&nbsp;5</td><td style= "border:1px solid;" align="center"><input type="radio" <c:if test="${hipquestionnairedetails.stairsrighthip=='6'}"> <c:out value="checked"></c:out></c:if> name="stairsrighthip" value="6">&nbsp;6</td><td style= "border:1px solid;" align="center"><input type="radio" <c:if test="${hipquestionnairedetails.stairsrighthip=='7'}"> <c:out value="checked"></c:out></c:if> name="stairsrighthip" value="7">&nbsp;7</td></tr>
+	     
+	     <tr><td style= "border:1px solid;">Left Hip</td><td style= "border:1px solid;" align="center"><input type="radio" name="stairslefthip" <c:if test="${hipquestionnairedetails.stairslefthip=='1'}"> <c:out value="checked"></c:out></c:if> value="1">&nbsp;1</td><td style= "border:1px solid;" align="center"><input type="radio" name="stairslefthip"  <c:if test="${hipquestionnairedetails.stairslefthip=='2'}"> <c:out value="checked"></c:out></c:if> value="2">&nbsp;2</td><td style= "border:1px solid;" align="center"><input type="radio" <c:if test="${hipquestionnairedetails.stairslefthip=='3'}"> <c:out value="checked"></c:out></c:if> name="stairslefthip" value="3">&nbsp;3</td><td style= "border:1px solid;" align="center"><input type="radio"  <c:if test="${hipquestionnairedetails.stairslefthip=='4'}"> <c:out value="checked"></c:out></c:if> value="4" name="stairslefthip">&nbsp;4</td><td style= "border:1px solid;" align="center"><input type="radio" <c:if test="${hipquestionnairedetails.stairslefthip=='5'}"> <c:out value="checked"></c:out></c:if> name="stairslefthip" value="5">&nbsp;5</td><td style= "border:1px solid;" align="center"><input type="radio"  <c:if test="${hipquestionnairedetails.stairslefthip=='6'}"> <c:out value="checked"></c:out></c:if> name="stairslefthip" value="6">&nbsp;6</td><td style= "border:1px solid;" align="center"><input type="radio" name="stairslefthip"  <c:if test="${hipquestionnairedetails.stairslefthip=='7'}"> <c:out value="checked"></c:out></c:if> value="7">&nbsp;7</td></tr>
+	     <tr><td style= "border:1px solid;">Right Knee</td><td style= "border:1px solid;" align="center"><input type="radio" name="stairsrightknee" value="1" <c:if test="${hipquestionnairedetails.stairsrightknee=='1'}"> <c:out value="checked"></c:out></c:if>>&nbsp;1</td><td style= "border:1px solid;" align="center"><input type="radio" name="stairsrightknee"  <c:if test="${hipquestionnairedetails.stairsrightknee=='2'}"> <c:out value="checked"></c:out></c:if> value="2">&nbsp;2</td><td style= "border:1px solid;" align="center"><input type="radio" name="stairsrightknee"  <c:if test="${hipquestionnairedetails.stairsrightknee=='3'}"> <c:out value="checked"></c:out></c:if> value="3">&nbsp;3</td><td style= "border:1px solid;" align="center"><input type="radio" value="4" <c:if test="${hipquestionnairedetails.stairsrightknee=='4'}"> <c:out value="checked"></c:out></c:if> name="stairsrightknee">&nbsp;4</td><td style= "border:1px solid;" align="center"><input type="radio" <c:if test="${hipquestionnairedetails.stairsrightknee=='5'}"> <c:out value="checked"></c:out></c:if> name="stairsrightknee" value="5">&nbsp;5</td><td style= "border:1px solid;" align="center"><input type="radio" name="stairsrightknee" <c:if test="${hipquestionnairedetails.stairsrightknee=='6'}"> <c:out value="checked"></c:out></c:if> value="6">&nbsp;6</td><td style= "border:1px solid;" align="center"><input type="radio" name="stairsrightknee" <c:if test="${hipquestionnairedetails.stairsrightknee=='7'}"> <c:out value="checked"></c:out></c:if> value="7">&nbsp;7</td></tr>
+	     <tr><td style= "border:1px solid;">Left Knee</td><td style= "border:1px solid;" align="center"><input type="radio" name="stairsleftknee"  <c:if test="${hipquestionnairedetails.stairsleftknee=='1'}"> <c:out value="checked"></c:out></c:if>value="1">&nbsp;1</td><td style= "border:1px solid;" align="center"><input type="radio" <c:if test="${hipquestionnairedetails.stairsleftknee=='2'}"> <c:out value="checked"></c:out></c:if> name="stairsleftknee" value="2">&nbsp;2</td><td style= "border:1px solid;" align="center"><input type="radio" <c:if test="${hipquestionnairedetails.stairsleftknee=='3'}"> <c:out value="checked"></c:out></c:if>  name="stairsleftknee" value="3">&nbsp;3</td><td style= "border:1px solid;" align="center"><input type="radio" value="4" <c:if test="${hipquestionnairedetails.stairsleftknee=='4'}"> <c:out value="checked"></c:out></c:if>  name="stairsleftknee">&nbsp;4</td><td style= "border:1px solid;" align="center"><input type="radio" <c:if test="${hipquestionnairedetails.stairsleftknee=='5'}"> <c:out value="checked"></c:out></c:if> name="stairsleftknee" value="5">&nbsp;5</td><td style= "border:1px solid;" align="center"><input type="radio" <c:if test="${hipquestionnairedetails.stairsleftknee=='6'}"> <c:out value="checked"></c:out></c:if> name="stairsleftknee" value="6">&nbsp;6</td><td style= "border:1px solid;" align="center"><input type="radio" name="stairsleftknee"  <c:if test="${hipquestionnairedetails.stairsleftknee=='7'}"> <c:out value="checked"></c:out></c:if> value="7">&nbsp;7</td></tr>
+	     </table>
+
+	         </td></tr></table></div></div>
+        <div id="tabs-2">     
+
+	    <div id="right_content">
+
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="margin_table">
+<tr>
+<td valign="top" align="left">
+ <div>
+	            <div class="headings altheading">
+	            <center> <h2>
+	            HIP	AND KNEE QUESTIONNAIRE</h2></center><br/>
+	             
+	            </div>
+          <div class="contentbox">
+           <table style="border-collapse: collapse;border:2px solid;">
+	    
+	    <tr><td width="170" style= "border:2px solid;"></td><td width="150" valign="top" style= "border:2px solid;" align="center"><b>Not painful</b></td><td width="150" valign="top" style= "border:2px solid;" align="center"><b>Mildly painful</b></td><td width="150" valign="top" style= "border:2px solid;" align="center"><b>Moderately painful</b></td><td width="150" valign="top" style= "border:2px solid;" align="center"><b>very painful</b></td><td width="150" valign="top" style= "border:2px solid;" align="center"><b>Extremely painful</b></td><td width="150" valign="top" style= "border:2px solid;"><b>Could not do because of hip/knee pain</b></td><td valign="top" style= "border:2px solid;"><b>Could not do for other reasons</b></td></tr>
+	     <tr   ><td ><b>&nbsp;5.Lying in bed at night?</td><td ></td><td></td><td></td><td ></td><td ></td><td ></td><td ></td></tr>
+	     <tr><td style= "border:1px solid;">Right Hip</td><td style= "border:1px solid;" align="center"><input type="radio" name="bedrighthip" <c:if test="${hipquestionnairedetails.bedrighthip=='1'}"> <c:out value="checked"></c:out></c:if> value="1">&nbsp;1</td><td style= "border:1px solid;" align="center"><input type="radio" <c:if test="${hipquestionnairedetails.bedrighthip=='2'}"> <c:out value="checked"></c:out></c:if> name="bedrighthip" value="2">&nbsp;2</td><td style= "border:1px solid;" align="center"><input type="radio"  <c:if test="${hipquestionnairedetails.bedrighthip=='3'}"> <c:out value="checked"></c:out></c:if> name="bedrighthip" value="3">&nbsp;3</td><td style= "border:1px solid;" align="center"><input type="radio"  <c:if test="${hipquestionnairedetails.bedrighthip=='4'}"> <c:out value="checked"></c:out></c:if> value="4" name="bedrighthip">&nbsp;4</td><td style= "border:1px solid;" align="center"><input type="radio" <c:if test="${hipquestionnairedetails.bedrighthip=='5'}"> <c:out value="checked"></c:out></c:if> name="bedrighthip" value="5">&nbsp;5</td><td style= "border:1px solid;" align="center"><input type="radio" <c:if test="${hipquestionnairedetails.bedrighthip=='6'}"> <c:out value="checked"></c:out></c:if> name="bedrighthip" value="6">&nbsp;6</td><td style= "border:1px solid;" align="center"><input type="radio" <c:if test="${hipquestionnairedetails.bedrighthip=='7'}"> <c:out value="checked"></c:out></c:if> name="bedrighthip" value="7">&nbsp;7</td></tr>
+	     
+	     <tr><td style= "border:1px solid;">Left Hip</td><td style= "border:1px solid;" align="center"><input type="radio" name="bedlefthip" <c:if test="${hipquestionnairedetails.bedlefthip=='1'}"> <c:out value="checked"></c:out></c:if> value="1">&nbsp;1</td><td style= "border:1px solid;" align="center"><input type="radio" name="bedlefthip"  <c:if test="${hipquestionnairedetails.bedlefthip=='2'}"> <c:out value="checked"></c:out></c:if> value="2">&nbsp;2</td><td style= "border:1px solid;" align="center"><input type="radio" <c:if test="${hipquestionnairedetails.bedlefthip=='3'}"> <c:out value="checked"></c:out></c:if> name="bedlefthip" value="3">&nbsp;3</td><td style= "border:1px solid;" align="center"><input type="radio"  <c:if test="${hipquestionnairedetails.bedlefthip=='4'}"> <c:out value="checked"></c:out></c:if> value="4" name="bedlefthip">&nbsp;4</td><td style= "border:1px solid;" align="center"><input type="radio" <c:if test="${hipquestionnairedetails.bedlefthip=='5'}"> <c:out value="checked"></c:out></c:if> name="bedlefthip" value="5">&nbsp;5</td><td style= "border:1px solid;" align="center"><input type="radio"  <c:if test="${hipquestionnairedetails.bedlefthip=='6'}"> <c:out value="checked"></c:out></c:if> name="bedlefthip" value="6">&nbsp;6</td><td style= "border:1px solid;" align="center"><input type="radio" name="bedlefthip"  <c:if test="${hipquestionnairedetails.bedlefthip=='7'}"> <c:out value="checked"></c:out></c:if> value="7">&nbsp;7</td></tr>
+	     <tr><td style= "border:1px solid;">Right Knee</td><td style= "border:1px solid;" align="center"><input type="radio" name="bedrightknee" value="1" <c:if test="${hipquestionnairedetails.bedrightknee=='1'}"> <c:out value="checked"></c:out></c:if>>&nbsp;1</td><td style= "border:1px solid;" align="center"><input type="radio" name="bedrightknee"  <c:if test="${hipquestionnairedetails.bedrightknee=='2'}"> <c:out value="checked"></c:out></c:if> value="2">&nbsp;2</td><td style= "border:1px solid;" align="center"><input type="radio" name="bedrightknee"  <c:if test="${hipquestionnairedetails.bedrightknee=='3'}"> <c:out value="checked"></c:out></c:if> value="3">&nbsp;3</td><td style= "border:1px solid;" align="center"><input type="radio" value="4" <c:if test="${hipquestionnairedetails.bedrightknee=='4'}"> <c:out value="checked"></c:out></c:if> name="bedrightknee">&nbsp;4</td><td style= "border:1px solid;" align="center"><input type="radio" <c:if test="${hipquestionnairedetails.bedrightknee=='5'}"> <c:out value="checked"></c:out></c:if> name="bedrightknee" value="5">&nbsp;5</td><td style= "border:1px solid;" align="center"><input type="radio" name="bedrightknee" <c:if test="${hipquestionnairedetails.bedrightknee=='6'}"> <c:out value="checked"></c:out></c:if> value="6">&nbsp;6</td><td style= "border:1px solid;" align="center"><input type="radio" name="bedrightknee" <c:if test="${hipquestionnairedetails.bedrightknee=='7'}"> <c:out value="checked"></c:out></c:if> value="7">&nbsp;7</td></tr>
+	     <tr><td style= "border:1px solid;">Left Knee</td><td style= "border:1px solid;" align="center"><input type="radio" name="bedleftknee"  <c:if test="${hipquestionnairedetails.bedleftknee=='1'}"> <c:out value="checked"></c:out></c:if>value="1">&nbsp;1</td><td style= "border:1px solid;" align="center"><input type="radio" <c:if test="${hipquestionnairedetails.bedleftknee=='2'}"> <c:out value="checked"></c:out></c:if> name="bedleftknee" value="2">&nbsp;2</td><td style= "border:1px solid;" align="center"><input type="radio" <c:if test="${hipquestionnairedetails.bedleftknee=='3'}"> <c:out value="checked"></c:out></c:if>  name="bedleftknee" value="3">&nbsp;3</td><td style= "border:1px solid;" align="center"><input type="radio" value="4" <c:if test="${hipquestionnairedetails.bedleftknee=='4'}"> <c:out value="checked"></c:out></c:if>  name="bedleftknee">&nbsp;4</td><td style= "border:1px solid;" align="center"><input type="radio" <c:if test="${hipquestionnairedetails.bedleftknee=='5'}"> <c:out value="checked"></c:out></c:if> name="bedleftknee" value="5">&nbsp;5</td><td style= "border:1px solid;" align="center"><input type="radio" <c:if test="${hipquestionnairedetails.bedleftknee=='6'}"> <c:out value="checked"></c:out></c:if> name="bedleftknee" value="6">&nbsp;6</td><td style= "border:1px solid;" align="center"><input type="radio" name="bedleftknee"  <c:if test="${hipquestionnairedetails.bedleftknee=='7'}"> <c:out value="checked"></c:out></c:if> value="7">&nbsp;7</td></tr>
+	     </table>
+          <p><b>&nbsp;6.Which  of the following statements best describes your ability to get around most of the time during the past week?</b></p>
+              <table cellpadding="0" cellspacing="0" border="0" width="100%" >
+              <tr><td><input type="radio" name="best" <c:if test="${hipquestionnairedetails.best=='I did not need support or assitance at all.'}"> <c:out value="checked"></c:out></c:if> value="I did not need support or assitance at all.">I did not need support or assitance at all.</td></tr>
+              <tr><td><input type="radio" name="best" <c:if test="${hipquestionnairedetails.best=='I mostly walked without support or assitance.'}"> <c:out value="checked"></c:out></c:if> value="I mostly walked without support or assitance.">I mostly walked without support or assitance.</td></tr>
+              <tr><td><input type="radio" name="best" <c:if test="${hipquestionnairedetails.best=='I mostly used one cane or crutch to help me get around.'}"> <c:out value="checked"></c:out></c:if> value="I mostly used one cane or crutch to help me get around.">I mostly used one cane or crutch to help me get around.</td></tr>
+              <tr><td><input type="radio" name="best" <c:if test="${hipquestionnairedetails.best=='I mostly used two canes, two crutches or a walker to help me get around.'}"> <c:out value="checked"></c:out></c:if> value="I mostly used two canes, two crutches or a walker to help me get around.">I mostly used two canes, two crutches or a walker to help me get around.</td></tr>
+              <tr><td><input type="radio" name="best" <c:if test="${hipquestionnairedetails.best=='I used a wheelchair.'}"> <c:out value="checked"></c:out></c:if> value="I used a wheelchair.">I used a wheelchair.</td></tr>
+              <tr><td><input type="radio" name="best" <c:if test="${hipquestionnairedetails.best=='I mostly used other supports or someone else had to help me get around.'}"> <c:out value="checked"></c:out></c:if> value="I mostly used other supports or someone else had to help me get around.">I mostly used other supports or someone else had to help me get around.</td></tr>
+              <tr><td><input type="radio" name="best" <c:if test="${hipquestionnairedetails.best=='I was unable to get around at all.'}"> <c:out value="checked"></c:out></c:if> value="I was unable to get around at all.">I was unable to get around at all.</td></tr>
+              
+              
+              </table>
+              <br>
+              <p><b>&nbsp;7.How difficult was it for you to put on or take off socks/stockings during the past week?</b></p>
+        <table><tr><td width="150"><input type="radio"  <c:if test="${hipquestionnairedetails.socks=='Not at all difficult'}"> <c:out value="checked"></c:out></c:if> name="socks" value="Not at all difficult">Not at all difficult</td><td width="150"><input type="radio" name="socks" <c:if test="${hipquestionnairedetails.socks=='Slightly difficult'}"> <c:out value="checked"></c:out></c:if> value="Slightly difficult">Slightly difficult</td><td width="150"><input type="radio" name="socks"  <c:if test="${hipquestionnairedetails.socks=='Moderately difficult'}"> <c:out value="checked"></c:out></c:if> value="Moderately difficult">Moderately difficult</td><td width="150"><input type="radio" name="socks"  <c:if test="${hipquestionnairedetails.socks=='Very difficult'}"> <c:out value="checked"></c:out></c:if> value="Very difficult">Very difficult</td><td width="150"><input type="radio" name="socks" <c:if test="${hipquestionnairedetails.socks=='Extremely difficult'}"> <c:out value="checked"></c:out></c:if> value="Extremely difficult">Extremely difficult</td><td><input type="radio" name="socks" <c:if test="${hipquestionnairedetails.socks=='Cannot do it all'}"> <c:out value="checked"></c:out></c:if>  value="Cannot do it all">Cannot do it all</td></tr></table>     
+	    
+       
+             
+           </br>
+           </br>
+           
+          
+         
+        
+         
+         </div></td></tr></table></div></div>
+         
+         <div id="tabs-3">     
+
+	    <div id="right_content">
+	    <table cellpadding="0" cellspacing="0" border="0" width="100%"  class="margin_table">
+<tr>
+<td valign="top" align="left">
+ <div>
+	            <div class="headings altheading">
+	            <center> <h2>
+	            HIP	AND KNEE QUESTIONNAIRE</h2></center><br/>
+	             
+	            </div>
+          <div class="contentbox">
+	    <span class="err">*</span>Today's Date <input type="text" name="date" id="datepicker" value="${hipquestionnairedetails.date}" ><br><span class="err"><form:errors path="hipquestionnaire.date"></form:errors></span>
+	    <br>
+	    <br>
+	    
+	    <p>Thank you for completing this questionnaire!	 </br></br>
+	    This questionnaire will help us to better understand your general health and any problems related to bone and muscle conditions.
+	    <br>
+	    Your completion of this questionnaire is completely voluntary and your responses will be held in the strictest confidence.
+	    </br>
+	    </br>
+	    There are no rigth or wrong answers.If you are not sure how to answer a question,just give the best answer you can.You can make comments in the margin.We do read all your comments,so feel free to make as many you wish.
+	    </br>
+	    </br>
+	       </p>
+	    Your Birth Date  <input type="date"  value="${hipquestionnairedetails.birthdate}" name="birthdate">
+	    <br><br>
+	    Your Social Security Number <input type="text" name="security"  value="${hipquestionnairedetails.security}">
+	    
+	
+	    </c:otherwise>
+	    </c:choose>
 	    
 	    <br>
 	    <br>
 	    <br>
 	    <table width="100%" height="150"><tr><Td></Td></tr></table>
+	    
+	    
+	    
 	    <table align="right"><tr><td  >
 	    
-	     <input class="submit_btn" type="submit" value="Save" ></td><td><input class="submit_btn" type="reset" value="Cancel" >
-	    </td></tr></table>
+	     <input class="submit_btn" type="submit" value="Save" ></td><td>
+	     <a href="viewhipquestionnaire" style="color: white" class="submit_btn">Cancel</a>
 	    
 	    </div></div>
          

@@ -12,7 +12,7 @@
         <tr>
         <td valign="top" align="left" style="padding:5px 0 10px 0;">&nbsp;
             <div id="success_statusbar" class="status success">
-            <p class="closestatus"><a title="Close" href="viewoswestry">x</a></p>
+            <p class="closestatus"><a title="Close" href="viewoswestryindex">x</a></p>
             <p><img alt="Success" src="resources/images/icons/icon_success.png"><span>Success!</span>.</p>
           </div>
       </tr>
@@ -21,7 +21,7 @@
       		<tr>
         		<td valign="top" align="left">
 			        <div class="headings altheading">
-			          <h2>VIEW HIP EXAMS</h2>
+			          <h2>VIEW OSWESTRY DISABILITY INDEX 2.0</h2>
 			        </div>
 			        <div class="contentbox">
 			      <!--   <form action="findPatients" method="GET">  --> 

@@ -165,7 +165,7 @@ $(function() {
  <div>
 	            <div class="headings altheading">
 	            <center> <h2>
-	             VIEW NECK/HAND DISABILITY INDEX </h2></center><br/>
+	             VIEW  NECK/MILD BACK DISABILITY INDEX</h2></center><br/>
 	            
 	            </div>
 	           
@@ -297,8 +297,11 @@ $(function() {
            <table id="page"><tr><td width="200"><b>Disability of patient score:</b></td><td width="350"><c:out  value="${neckindexdetails.score}" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<c:out  value="${neckindexdetails.status}" /></td>
           
            </tr>          
-            <tr height="100"></tr>         
+              <tr height="100"></tr> 
+               
            </table>   
+           <table align="right"><tr><td> <a href="viewneckindex" style="color: white" class="submit_btn">Cancel</a></td></tr>
+                </table>
             
     
             

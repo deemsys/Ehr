@@ -602,12 +602,12 @@ w=0;
 	    
 	     <div class="contentbox">
 	      <c:choose>
-		 <c:when test="${empty symptom}">
+		 <c:when test="${empty symptoms}">
 	  
           <table cellpadding="0" cellspacing="0" border="0" width="98%" >
-          <tr><td width="100"><span class="err">*</span>Name</td><td><input type="text" name="pname"><span class="err"><form:errors path="symptom.pname"></form:errors></td><td width="40"></td>
-<td  width="100">Number</td><td><input type="text" name="number"></td><td width="100"></td>
-<td  width="100"><span class="err">*</span>Date</td><td><input type="text" name="date" id="datepicker"><span class="err"><form:errors path="symptom.date"></form:errors></td>
+          <tr><td width="100"><span class="err">*</span>Name</td><td width="300"><input type="text" name="pname"><span class="err"><form:errors path="symptom.pname"></form:errors></td>
+<td  width="100">Number</td><td width="100"><input type="text" name="number"></td>
+<td  width="100" align="right"><span class="err">*</span>Date</td><td width="300"><input type="text" name="date" id="datepicker"><span class="err"><form:errors path="symptom.date"></form:errors></td>
 </tr></table>
 </br>
 <p>Please be sure to fill this form out extremely accurately.Mark the area(s) on your body where you feel the described sensation(s).Use the appropriate symbol(s).Mark areas of radiating pain, and include all affected areas.You may draw on the face as well.</p>

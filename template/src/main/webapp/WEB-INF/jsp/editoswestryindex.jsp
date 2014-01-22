@@ -20,7 +20,7 @@ $(function() {
     document.getElementById('work').style.display="none";
     	}
     else
-    	{alert("yes");
+    	{
     	document.getElementById('circle').style.display="block";
         document.getElementById('work').style.display="block";
     	}
@@ -399,7 +399,7 @@ $(function() {
 	             
 	            </div>
           <div class="contentbox">
-         <Table><tr><td>Name:</td><td><input type="text" name="name" value="${oswestrydetails.name}"></td><Td width="245"></td><td >Date:</td><td><input type="date" name="date" value="${oswestrydetails.date}"></td><td width="380"></td><td>Score:</td><td><input type="hidden" name="scores" value="${oswestrydetails.scores}" id="scores"><div id="score" ><c:out value="${oswestrydetails.scores}"></c:out></div></td></tr></Table>
+         <Table><tr><td><span class="err">*</span>Name:</td><td width="250"><input type="text" name="name" value="${oswestrydetails.name}"><br><span class="err"><form:errors path="oswestrydetails.name"></form:errors></td><Td width="245"></td><td ><span class="err">*</span>Date:</td><td width="250"><input type="date" name="date" value="${oswestrydetails.date}"><br><span class="err"><form:errors path="oswestrydetails.date"></form:errors></td><td width="200"></td><td>Score:</td><td><input type="hidden" name="scores" value="${oswestrydetails.scores}" id="scores"><div id="score" ><c:out value="${oswestrydetails.scores}"></c:out></div></td></tr></Table>
 	    <table><tr><td valign="bottom"><b>1.What is your pain RIGHT NOW?</b>&nbsp;&nbsp;&nbsp;X</td><td width="10"></td><td valign="bottom">No Pain</td><Td><label for="amount"><b></label>
 	 <input type="text" id="amount" style="border:0; color:#f6931f; font-weight:bold;" name="painscale" value="${oswestrydetails.painscale}" />&nbsp;&nbsp;&nbsp;
  <div id="slider"></div></td><td valign="bottom"><b>Worst Possible Pain</Td><Td width="20"></Td><td valign="bottom"><b>What is your pain at its worse?</b>&nbsp;&nbsp;&nbsp;O</td><td width="10"></td><td valign="bottom">No Pain</td><Td>
@@ -449,7 +449,7 @@ $(function() {
 	     <tr><td style= "border:1px solid;">4.Spending your usual amount of time practicing or playing your instrument or sport?</td><td style= "border:1px solid;" align="center"><input type="radio" <c:if test="${oswestrydetails.instrumentc=='1'}"> <c:out value="checked"></c:out></c:if>  name="instrumentc" value="1">&nbsp;1</td><td style= "border:1px solid;" align="center"><input type="radio" <c:if test="${oswestrydetails.instrumentc=='2'}"> <c:out value="checked"></c:out></c:if>  name="instrumentc" value="2">&nbsp;2</td><td style= "border:1px solid;" align="center"><input type="radio"  name="instrumentc" <c:if test="${oswestrydetails.instrumentc=='3'}"> <c:out value="checked"></c:out></c:if> value="3">&nbsp;3</td><td style= "border:1px solid;" align="center"><input type="radio" value="4" <c:if test="${oswestrydetails.instrumentc=='4'}"> <c:out value="checked"></c:out></c:if>  name="instrumentc">&nbsp;4</td><td style= "border:1px solid;" align="center"><input type="radio" <c:if test="${oswestrydetails.instrumentc=='5'}"> <c:out value="checked"></c:out></c:if>  name="instrumentc" value="5">&nbsp;5</td></tr>
 	     </table>
 	     <br>
-	    <p align="right"><input type="submit" value="Update" class="submit_btn"></p>
+	     <table align="right"><tr><td><input type="submit" value="Update" class="submit_btn"></td><td> <a href="viewoswestryindex" style="color: white" class="submit_btn">Cancel</a></td></tr></table>
 	    
 	    
 	    

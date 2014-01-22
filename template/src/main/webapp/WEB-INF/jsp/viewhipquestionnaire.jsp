@@ -21,7 +21,7 @@
       		<tr>
         		<td valign="top" align="left">
 			        <div class="headings altheading">
-			          <h2>VIEW HIP EXAMS</h2>
+			          <h2>VIEW HIP	AND KNEE QUESTIONNAIRES</h2>
 			        </div>
 			        <div class="contentbox">
 			      <!--   <form action="findPatients" method="GET">  --> 

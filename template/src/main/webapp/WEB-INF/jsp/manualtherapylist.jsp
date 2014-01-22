@@ -218,7 +218,7 @@ PATIENT ENTERED THE OFFICE TODAY & REPORTED THE FOLLOWING:
  </b></div>
            </br>
            <table><tr><td width="140">Major Complaint:</td><td><c:out value="${manualtherapy.majorcomplaint}"/></td>
-           <td width="330"></td><td width="100"><b>DIFFICULTY IN</b></td>
+           <td width="325"></td><td width="100"><b>DIFFICULTY IN</b></td>
            <td width="70"><c:out value="${manualtherapy.standing}"/></td>
            <td width="70"> <c:out value="${manualtherapy.sitting}"/></td>
            <td width="70"><c:out value="${manualtherapy.walking}"/></td>
@@ -236,7 +236,7 @@ PATIENT ENTERED THE OFFICE TODAY & REPORTED THE FOLLOWING:
                  </br>
                  <table>
                  <tr>
-                 <td>Headache</td><td><c:out value="${manualtherapy.headache}"/> /10</td><td width="70"></td><td width="80">Shoulder</td><td><c:out value="${manualtherapy.shoulder}"/></td><td width="170"></td><td width="100"><b>WEAKNESS:</b></td><td><b>Arms:</b>&nbsp;&nbsp;&nbsp;&nbsp;<c:out value="${manualtherapy.armsweakness}"/> &nbsp;&nbsp;</td><td>&nbsp;&nbsp;<b>Hands:</b>&nbsp;&nbsp;&nbsp;&nbsp;<c:out value="${manualtherapy.handsweakness}"/></td><td>&nbsp;&nbsp;<b>Legs:</b>&nbsp;&nbsp;&nbsp;&nbsp;<c:out value="${manualtherapy.legsweakness}"/> &nbsp;&nbsp;</td><td><b>&nbsp;&nbsp;Feet&nbsp;&nbsp;&nbsp;&nbsp;</b><c:out value="${manualtherapy.feetweakness}"/> </td>
+                 <td>Headache</td><td><c:out value="${manualtherapy.headache}"/> /10</td><td width="70"></td><td width="80">Shoulder</td><td><c:out value="${manualtherapy.shoulder}"/></td><td width="155"></td><td width="100"><b>WEAKNESS:</b></td><td><b>Arms:</b>&nbsp;&nbsp;&nbsp;&nbsp;<c:out value="${manualtherapy.armsweakness}"/> &nbsp;&nbsp;</td><td>&nbsp;&nbsp;<b>Hands:</b>&nbsp;&nbsp;&nbsp;&nbsp;<c:out value="${manualtherapy.handsweakness}"/></td><td>&nbsp;&nbsp;<b>Legs:</b>&nbsp;&nbsp;&nbsp;&nbsp;<c:out value="${manualtherapy.legsweakness}"/> &nbsp;&nbsp;</td><td><b>&nbsp;&nbsp;Feet&nbsp;&nbsp;&nbsp;&nbsp;</b><c:out value="${manualtherapy.feetweakness}"/> </td>
                  </tr>
                  <tr>
                  <td>Neck pain/stiffness</td><td><c:out value="${manualtherapy.neckpain}"/> /10</td><td></td><td>Arm/elbow</td><td><c:out value="${manualtherapy.elbow}"/> </td><td></td><td><b>PINS & NEEDLES:</b></td><td><b>Arms:</b>&nbsp;&nbsp;&nbsp;&nbsp;<c:out value="${manualtherapy.armspins}"/> </td><td>&nbsp;&nbsp;<b>Hands:</b>&nbsp;&nbsp;&nbsp;&nbsp;<c:out value="${manualtherapy.handspins=='Left'}"/>&nbsp;&nbsp;</td><td>&nbsp;&nbsp;<b>Legs:</b>&nbsp;&nbsp;&nbsp;&nbsp;<c:out value="${manualtherapy.legspins}"/>&nbsp;&nbsp;</td><td>&nbsp;&nbsp;<b>Feet:</b>&nbsp;&nbsp;&nbsp;&nbsp;<c:out value="${manualtherapy.feetpins}"/> </td>
@@ -335,9 +335,9 @@ PATIENT ENTERED THE OFFICE TODAY & REPORTED THE FOLLOWING:
      <tr height="10">  </tr>   
      </table> 
      <table>
-     <tr><td width="30"><c:out value="${manualtherapy.MT}"/> </td><td>97140-59 (MT)</td></tr>
-     <tr><td width="30"><c:out value="${manualtherapy.TE}"/> </td><td>97140-59 (MT)</td></tr>
-     <tr><td width="30"><c:out value="${manualtherapy.MA}"/> </td><td>97140-59 (MT)</td></tr>
+     <tr><td width="120"><c:out value="${manualtherapy.MT}"/> </td><td></td></tr>
+     <tr><td width="30"><c:out value="${manualtherapy.TE}"/> </td><td></td></tr>
+     <tr><td width="30"><c:out value="${manualtherapy.MA}"/> </td><td></td></tr>
      
      </table>
      <br>
@@ -386,7 +386,7 @@ PATIENT ENTERED THE OFFICE TODAY & REPORTED THE FOLLOWING:
    </tr>
    <tr height="10"></tr>
    <tr>
-   <td>Signature:</td><td><c:out  value="${manualtherapy.signature}"/></td><td></td><td><c:out value="${manualtherapy.daily}" />Daily Supportive Care Visit</td><td width="" ></td> <td width="400" align="right"> <a href="viewmanualtherapy" style="color: white" class="submit_btn">Cancel</a></td></tr></table></td>
+   <td>Signature:</td><td><c:out  value="${manualtherapy.signature}"/></td><td></td><td><b><c:out value="${manualtherapy.daily}" /></b>&nbsp;&nbsp;Daily Supportive Care Visit</td><td width="" ></td> <td width="400" align="right"> <a href="viewmanualtherapy" style="color: white" class="submit_btn">Cancel</a></td></tr></table></td>
    </tr></Table>    
          
             

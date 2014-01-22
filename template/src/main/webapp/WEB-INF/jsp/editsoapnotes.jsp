@@ -70,6 +70,7 @@ $(function() {
     				<td align="left" valign="top" width="50%" style="padding-right:25px;">
     					<!-- <h2 class="quck-txt">Patient Details</h2> -->
     					<c:set value="${soapnotesForm.soapnotes[0]}" var="soapnotes"/>
+    					<br>
 <table align="right">
     <tr class="row1">
        <td><h2>patient:</h2></td>

@@ -317,19 +317,19 @@ $(function() {
            </br>
            <table cellspacing="0" cellpadding="0"s>
            <tr><td width="350"><b style="font-size:14px">ASSESSMENT / ADDITIONAL COMMENTS:  </b></td>
-           <td>&nbsp;&nbsp;&nbsp;<c:out value="${shoulderexamdetails.comments}"/></td><td width="850"></td></tr>
+           <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<c:out value="${shoulderexamdetails.comments}"/></td><td width="850"></td></tr>
            <tr height="10"></tr>
            <tr height="10"></tr>
            <tr><td>Patient's Status for being a candidate for conservative care:</td>
                <td>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <c:out value="${shoulderexamdetails.patientstatus}"/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<c:out value="${shoulderexamdetails.patientstatus}"/>
                </td></tr>      
                 </table>
                 </br>
                 <table width="100%" cellspacing="0" cellpadding="0">
            <tr class="row2"><td width="420"><b style="font-size:14px">DIAGNOSIS:	</b></td><td width="250">1)&nbsp;&nbsp;&nbsp;<c:out value="${shoulderexamdetails.diagnosis1}" /></td><td width="250">2)&nbsp;&nbsp;&nbsp;<c:out value="${shoulderexamdetails.diagnosis2}" /></td><td width="250">3)&nbsp;&nbsp;&nbsp;<c:out value="${shoulderexamdetails.diagnosis3}"/></td><td width="250">4)&nbsp;&nbsp;&nbsp;<c:out value="${shoulderexamdetails.diagnosis4}"/></td></tr>
            <tr height="10"></tr>
-           <tr><td></td><td width="250">5)&nbsp;&nbsp;&nbsp;<c:out value="${shoulderexamdetails.diagnosis5}" /></td></tr>
+           <tr><td></td><td width="250">&nbsp;&nbsp;&nbsp;5)&nbsp;&nbsp;&nbsp;&nbsp;<c:out value="${shoulderexamdetails.diagnosis5}" /></td></tr>
            </table>
            </br>
            <div><b style="font-size:14px">PLAN:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><b><c:out value="${shoulderexamdetails.times}"/></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Times/week for&nbsp;&nbsp;&nbsp;&nbsp; </b><b><c:out value="${shoulderexamdetails.weeks}" /></b>&nbsp;&nbsp;&nbsp;&nbsp; weeks to address the above functional & structural deficits.  Treatment will consist of the following:</div>
@@ -352,7 +352,7 @@ $(function() {
            <div><B style="font-size:14px">PHYSICIAN SIGNATURE:</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<c:out value="${shoulderexamdetails.signature }"/></div>
            
          
-         <div align="right"></div>
+       <table align="right"><tr><td> <a href="viewshoulderexamdetails" style="color: white" class="submit_btn">Cancel</a></td></tr></table>
          
          </div></td></tr></table></div></div></div>
          

@@ -325,18 +325,18 @@ $(function() {
            <br>
            <table cellpadding="0" cellspacing="0" >
            <tr ><td width="350"><b style="font-size:14px">ASSESSMENT / ADDITIONAL COMMENTS:  </b></td>
-           <td><c:out value="${hipexamdetails.comments}"/></td><td width="850"></td></tr>
+           <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<c:out value="${hipexamdetails.comments}"/></td><td width="850"></td></tr>
            <tr height="20"></tr>
            <tr><td>Patient's Status for being a candidate for conservative care:</td>
-               <td>
+               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                <c:out value="${hipexamdetails.patientstatus}"/>
                </td></tr>      
                 </table>
                 </br>
                 <table width="100%" cellspacing="0" cellpadding="0">
-           <tr class="row2" ><td width="400"><b style="font-size:14px">DIAGNOSIS:	</b></td><td width="250">1)&nbsp;&nbsp;&nbsp;<c:out value="${hipexamdetails.diagnosis1}" /></td><td width="250">2)&nbsp;&nbsp;&nbsp;<c:out value="${hipexamdetails.diagnosis2}" /></td><td width="250">3)&nbsp;&nbsp;&nbsp;<c:out value="${hipexamdetails.diagnosis3}"/></td><td width="250">4)&nbsp;&nbsp;&nbsp;<c:out value="${hipexamdetails.diagnosis4}"/></td></tr>
+           <tr class="row2" ><td width="400"><b style="font-size:14px">DIAGNOSIS:	</b></td><td width="250">&nbsp;&nbsp;&nbsp;1)&nbsp;&nbsp;&nbsp;<c:out value="${hipexamdetails.diagnosis1}" /></td><td width="250">2)&nbsp;&nbsp;&nbsp;<c:out value="${hipexamdetails.diagnosis2}" /></td><td width="250">3)&nbsp;&nbsp;&nbsp;<c:out value="${hipexamdetails.diagnosis3}"/></td><td width="250">4)&nbsp;&nbsp;&nbsp;<c:out value="${hipexamdetails.diagnosis4}"/></td></tr>
            <tr height="10"></tr>
-           <tr><td></td><td width="250">5)&nbsp;&nbsp;&nbsp;<c:out value="${hipexamdetails.diagnosis5}" /></td></tr>
+           <tr><td></td><td width="250">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5)&nbsp;&nbsp;&nbsp;<c:out value="${hipexamdetails.diagnosis5}" /></td></tr>
            </table>
            </br>
            <div><b style="font-size:14px">PLAN:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><b><c:out value="${hipexamdetails.times}"/></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Times/week for&nbsp;&nbsp;&nbsp;&nbsp; </b><b><c:out value="${hipexamdetails.weeks}"/></b>&nbsp;&nbsp;&nbsp;&nbsp; weeks to address the above functional & structural deficits.  Treatment will consist of the following:</div>
@@ -356,7 +356,7 @@ $(function() {
            <div><B style="font-size:14px">PHYSICIAN SIGNATURE:</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<c:out value="${hipexamdetails.signature }"/></div>
            
          
-         <div align="right"></div>
+        <table align="right"><tr><td> <a href="viewhipexam" style="color: white" class="submit_btn">Cancel</a></td></tr></table>
          
          </div></td></tr></table></div></div></div>
          

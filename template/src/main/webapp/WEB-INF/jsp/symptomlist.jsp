@@ -550,7 +550,7 @@ w=0;
 <td valign="top" align="left">
  <div>
 	            <div class="headings altheading">
-	            <center> <h2>SYMPTOM DIAGRAM</h2></center><br/>
+	            <center> <h2>VIEW SYMPTOM DIAGRAM</h2></center><br/>
 	            
 	            </div>
 	           
@@ -558,9 +558,9 @@ w=0;
 	     <div class="contentbox">
 	  <c:set value="${symptomform.symptomdetails[0]}" var="symptomdetails"/>
           <table cellpadding="0" cellspacing="0" border="0" width="98%" >
-          <tr><td width="100"><b>Name</b></td><td><input type="hidden" name="symptomno" value="${symptomdetails.symptomno} "><c:out value="${symptomdetails.pname} "/></td><td width="180"></td>
-<td  width="100">Number</td><td><c:out value="${symptomdetails.number}" /></td><td width="200"></td>
-<td  width="100">Date</td><td><c:out value="${symptomdetails.date}" /></td>
+          <tr><td width="100"><span class="err">*</span>Name</td><td width="300"><c:out value="${symptomdetails.pname} "/><span class="err"><form:errors path="symptom.pname"></form:errors></td>
+<td  width="100">Number</td><td width="100"><c:out value="${symptomdetails.number}"/></td>
+<td  width="100" align="right"><span class="err">*</span>Date</td><td width="300"><input type="text" name="date" value="${symptomdetails.date}" id="datepicker"><span class="err"><form:errors path="symptom.date"></form:errors></td>
 </tr></table>
 </br>
 <p>Please be sure to fill this form out extremely accurately.Mark the area(s) on your body where you feel the described sensation(s).Use the appropriate symbol(s).Mark areas of radiating pain, and include all affected areas.You may draw on the face as well.</p>
@@ -729,19 +729,25 @@ w=0;
  <input type="hidden" name="stabpath4" id="stabpath4" value="resources/images/stabbing.png">
 <input type="hidden" name="stableft4" id="stableft4"  value="${symptomdetails.stableft4}">
 <input type="hidden" name="stabtop4" id="stabtop4" value="${symptomdetails.stabtop4}">  
-</div></td>        
-</tr></table>
+</div></td>      
+          
+          
+        
+          
+          
+          
+           </tr></table>
            </br>
          <table width="98%"><tr><td align="right">
-    <img id= "bodyfront" alt="" src="resources/images/bodyfront.png"> </td><td align="left" valign="top" width="55" height="81px"><img  id= "droppable" alt="" src="resources/images/face.png" >
+    <img id= "bodyfront" alt="" src="resources/images/bodyfront.png"> </td><td align="left" valign="top" width="55"><img  id= "droppable" alt="" src="resources/images/face.png" >
  </td><td align="left">
     <img  id= "bodyback" alt="" src="resources/images/bodyback.png"> </td></tr> </table>
 </br>
 </br>
-<table width="100" align="right"><tr ><td  ><input  type="hidden" value="Save" class="submit_btn"></td><td  ><a href="viewsymptom" style="color: white" class="submit_btn">Cancel</a></td></tr>
+<table width="100" align="right"><tr ><td  ><input  type="submit" value="Save" class="submit_btn"></td><td  ><a href="viewsymptom" style="color: white" class="submit_btn">Cancel</a></td></tr>
 </table>
 </form>
-<div id="position"></div><div id="position1"></div>
+<!-- <div id="position"></div><div id="position1"></div> -->
  
      
          	
