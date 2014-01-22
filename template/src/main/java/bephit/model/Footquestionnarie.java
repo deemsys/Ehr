@@ -1,4 +1,7 @@
 package bephit.model;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class Footquestionnarie
 {
 	
@@ -28,6 +31,7 @@ public class Footquestionnarie
 	private String allversion;
 	private String foot;
 	private String ankle;
+	@NotEmpty
 	private String date;
 	private String birthdate;
 	private String security;

@@ -1,8 +1,12 @@
 package bephit.model;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class Kneeexam {
 	private String kneeexamid;
+	@NotEmpty
 	private String pname;
+	@NotEmpty
 	private String date;
 	private String gait;
 	private String pelvicunleveling;
@@ -117,6 +121,7 @@ public class Kneeexam {
 	private String dc;
 	private String otheraddress;
 	private String break_text4;
+	@NotEmpty
 	private String sign;
 	
 	public Kneeexam()

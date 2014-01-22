@@ -1,12 +1,17 @@
 package bephit.model;
 import javax.validation.constraints.Pattern;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 
 public class Shoulderpainscore
 {
 private String shoulderpainno;
+@NotEmpty
 private String pname;
+@NotEmpty
 private String number;
+@NotEmpty
 private String date;
 private String painatrest;
 private String paininmotion;

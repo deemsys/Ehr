@@ -1,10 +1,16 @@
 package bephit.model;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class Dcfeeslip {
 	private String dcfeeid;
+	@NotEmpty
 	private String pid;
+	@NotEmpty
 	private String date;
+	@NotEmpty
 	private String pname;
+	@NotEmpty
 	private String dr1;
 	private String rpt;
 	private String pta;

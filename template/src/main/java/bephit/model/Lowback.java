@@ -1,9 +1,13 @@
 package bephit.model;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class Lowback
 {
 	private String lowbackno;
+	@NotEmpty
 	private String pname;
+	@NotEmpty
 	private String date;
 	private String tolerate;
 	private String withoutpain;

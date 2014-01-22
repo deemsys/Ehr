@@ -98,6 +98,7 @@ import bephit.dao.*;
 
  
 @Controller
+@SessionAttributes({"lumbopelvic","knee","cervical","elbow","thoracic","low","fquestionnarie","dcfee","duties","shoulderpain"})
 public class DoctorController {
 
 	@Autowired  
@@ -390,17 +391,28 @@ public class DoctorController {
 	@RequestMapping(value="/lumbopelvicexam", method = RequestMethod.GET)
 	public String searchform(HttpSession session, ModelMap model) {
 		
+		session.removeAttribute("lumbopelvicexam");
 		model.addAttribute("menu","initial");
 		return "lumbopelvicexam";
  
 	}
 
 	@RequestMapping(value="/lumbopelvicexam", method = RequestMethod.POST)
-	public String insert_lumbopelvicexam(HttpSession session,@ModelAttribute("Lumbopelvicexam")  @Valid Lumbopelvicexam lumbopelvicexam,BindingResult result,ModelMap model) {
+	public String insert_lumbopelvicexam(HttpServletRequest request,HttpSession session,@ModelAttribute("Lumbopelvicexam")  @Valid Lumbopelvicexam Lumbopelvicexam,BindingResult result,ModelMap model) {
+		session.setAttribute("lumbopelvic",Lumbopelvicexam);
+		if(result.hasErrors())
+		{
 		
-		model.put("Lumbopelvicexam", lumbopelvicexam);
-		model.addAttribute("LumbopelvicexamForm",lumbopelvicexam);
-    	int a=lumboDAO.setLumbopelvicexam(lumbopelvicexam);
+			LumbopelvicexamForm lumbopelvicexamForm = new LumbopelvicexamForm();
+			lumbopelvicexamForm.setLumbopelvicexam(lumboDAO.getLumbopelvicexam());
+			model.addAttribute("LumbopelvicexamForm",lumbopelvicexamForm);
+			model.addAttribute("Success","true");
+			model.addAttribute("menu", "initial");
+			return "lumbopelvicexam";
+		}
+		model.put("Lumbopelvicexam", Lumbopelvicexam);
+		model.addAttribute("LumbopelvicexamForm",Lumbopelvicexam);
+    	int a=lumboDAO.setLumbopelvicexam(Lumbopelvicexam);
 		LumbopelvicexamForm lumbopelvicexamForm= new LumbopelvicexamForm();
 		lumbopelvicexamForm.setLumbopelvicexam(lumboDAO.getLumbopelvicexam());
 		model.addAttribute("lumbopelvicexamForm",lumbopelvicexamForm);
@@ -530,17 +542,28 @@ public class DoctorController {
 	}
 	@RequestMapping(value="/kneeexam", method = RequestMethod.GET)
 	public String viewingform(HttpSession session, ModelMap model) {
+		session.removeAttribute("knee");
 		model.addAttribute("menu","initial");
 		
 		return "kneeexam";
  
 	}
 	@RequestMapping(value="/kneeexam", method = RequestMethod.POST)
-	public String insert_kneeexam(HttpSession session,@ModelAttribute("Kneeexam")  @Valid Kneeexam kneeexam,BindingResult result,ModelMap model) {
+	public String insert_kneeexam(HttpServletRequest request,HttpSession session,@ModelAttribute("Kneeexam")  @Valid Kneeexam Kneeexam,BindingResult result,ModelMap model) {
+		session.setAttribute("knee",Kneeexam);
+		if(result.hasErrors())
+		{
 		
-		model.put("Kneeexam", kneeexam);
-		model.addAttribute("KneeexamForm",kneeexam);
-    	int a=kneeDAO.setKneeexam(kneeexam);
+			KneeexamForm kneeexamForm = new KneeexamForm();
+			kneeexamForm.setKneeexam(kneeDAO.getKneeexam());
+			model.addAttribute("kneeexamForm",kneeexamForm);
+			model.addAttribute("Success","true");
+			model.addAttribute("menu", "initial");
+			return "kneeexam";
+		}
+		model.put("Kneeexam", Kneeexam);
+		model.addAttribute("KneeexamForm",Kneeexam);
+    	int a=kneeDAO.setKneeexam(Kneeexam);
 		KneeexamForm kneeexamForm= new KneeexamForm();
 		kneeexamForm.setKneeexam(kneeDAO.getKneeexam());
 		model.addAttribute("kneeexamForm",kneeexamForm);
@@ -627,18 +650,28 @@ public class DoctorController {
 
 	@RequestMapping(value="/cervicalexam", method = RequestMethod.GET)
 	public String viewingcervicalexam(HttpSession session, ModelMap model) {
-		
+		session.removeAttribute("cervical");
 		model.addAttribute("menu","initial");
 		return "cervicalexam";
  
 	}
 
 	@RequestMapping(value="/cervicalexam", method = RequestMethod.POST)
-	public String insert_cervicalexam(HttpSession session,@ModelAttribute("Cervicalexam")  @Valid Cervicalexam cervicalexam,BindingResult result,ModelMap model) {
+	public String insert_cervicalexam(HttpServletRequest request,HttpSession session,@ModelAttribute("Cervicalexam")  @Valid Cervicalexam Cervicalexam,BindingResult result,ModelMap model) {
+		session.setAttribute("cervical",Cervicalexam);
+		if(result.hasErrors())
+		{
 		
-		model.put("Cervicalexam", cervicalexam);
-		model.addAttribute("CervicalexamForm",cervicalexam);
-    	int a=cervicalDAO.setCervicalexam(cervicalexam);
+			CervicalexamForm cervicalexamForm = new CervicalexamForm();
+			cervicalexamForm.setCervicalexam(cervicalDAO.getCervicalexam());
+			model.addAttribute("cervicalexamForm",cervicalexamForm);
+			model.addAttribute("Success","true");
+			model.addAttribute("menu", "initial");
+			return "cervicalexam";
+		}
+		model.put("Cervicalexam", Cervicalexam);
+		model.addAttribute("CervicalexamForm",Cervicalexam);
+    	int a=cervicalDAO.setCervicalexam(Cervicalexam);
 		CervicalexamForm cervicalexamForm= new CervicalexamForm();
 		cervicalexamForm.setCervicalexam(cervicalDAO.getCervicalexam());
 		model.addAttribute("cervicalexamForm",cervicalexamForm);
@@ -725,14 +758,25 @@ public class DoctorController {
 	}
 	@RequestMapping(value="/elbowexam", method = RequestMethod.GET)
 	public String viewingelbowexam(HttpSession session, ModelMap model) {
-		
+		session.removeAttribute("elbow");
 		model.addAttribute("menu","initial");
 		return "elbowexam";
  
 	}
 	@RequestMapping(value="/elbowexam", method = RequestMethod.POST)
-	public String insert_elbowexam(HttpSession session,@ModelAttribute("Elbowexam")  @Valid Elbowexam elbowexam,BindingResult result,ModelMap model) {
+	public String insert_elbowexam(HttpServletRequest request,HttpSession session,@ModelAttribute("Elbowexam")  @Valid Elbowexam elbowexam,BindingResult result,ModelMap model) {
 		
+		session.setAttribute("elbow", elbowexam);
+		if(result.hasErrors())
+		{
+		
+			ElbowexamForm elbowexamForm = new ElbowexamForm();
+			elbowexamForm.setElbowexam(elbowDAO.getElbowexam());
+			model.addAttribute("elbowexamForm",elbowexamForm);
+			model.addAttribute("Success","true");
+			model.addAttribute("menu", "initial");
+			return "elbowexam";
+		}
 		model.put("Elbowexam", elbowexam);
 		model.addAttribute("ElbowexamForm",elbowexam);
     	int a=elbowDAO.setElbowexam(elbowexam);
@@ -821,15 +865,25 @@ public class DoctorController {
 	}
 	@RequestMapping(value="/thoracicexam", method = RequestMethod.GET)
 	public String viewingthoracicexam(HttpSession session, ModelMap model) {
-		
+		session.removeAttribute("thoracic");
 		model.addAttribute("menu","initial");
 		return "thoracicexam";
  
 	}
     
 	@RequestMapping(value="/thoracicexam", method = RequestMethod.POST)
-	public String insert_thoracicexam(HttpSession session,@ModelAttribute("Thoracicexam")  @Valid Thoracicexam thoracicexam,BindingResult result,ModelMap model) {
+	public String insert_thoracicexam(HttpServletRequest request,HttpSession session,@ModelAttribute("Thoracicexam")  @Valid Thoracicexam thoracicexam,BindingResult result,ModelMap model) {
+		session.setAttribute("thoracic", thoracicexam);
+		if(result.hasErrors())
+		{
 		
+			ThoracicexamForm thoracicexamForm = new ThoracicexamForm();
+		     thoracicexamForm.setThoracicexam(thoracicDAO.getThoracicexam());
+			model.addAttribute("thoracicexamForm",thoracicexamForm);
+			model.addAttribute("Success","true");
+			model.addAttribute("menu", "initial");
+			return "thoracicexam";
+		}
 		model.put("Thoracicexam", thoracicexam);
 		model.addAttribute("ThoracicexamForm",thoracicexam);
     	int a=thoracicDAO.setThoracicexam(thoracicexam);
@@ -916,7 +970,7 @@ public class DoctorController {
 	}
 	@RequestMapping(value="/dcfeeslip", method = RequestMethod.GET)
 	public String viewdcfeeslip(HttpSession session, ModelMap model) {
-		
+		session.removeAttribute("dcfee");
 		model.addAttribute("menu","dcfee");
 		return "dcfeeslip";
  
@@ -935,10 +989,20 @@ public class DoctorController {
 				
 	}
 	@RequestMapping(value="/dcfeeslip", method = RequestMethod.POST)
-	public String insert_dcfeeslip(HttpSession session,@ModelAttribute("Dcfeeslip")  @Valid Dcfeeslip dcfeeslip,BindingResult result,ModelMap model) {
-		
+	public String insert_dcfeeslip(HttpServletRequest request,HttpSession session,@ModelAttribute("Dcfeeslip")  @Valid Dcfeeslip dcfeeslip,BindingResult result,ModelMap model) {
+		session.setAttribute("dcfee", dcfeeslip);
  
-	    model.put("Dcfeeslip", dcfeeslip);
+		if(result.hasErrors())
+		{
+		
+			DcfeeslipForm dcfeeslipForm = new DcfeeslipForm();
+			dcfeeslipForm.setDcfeeslip(feeslipDAO.getDcfeeslip());
+			model.addAttribute("dcfeeslipForm",dcfeeslipForm);
+			model.addAttribute("Success","true");
+			model.addAttribute("menu", "dcfee");
+			return "dcfeeslip";
+		}
+		model.put("Dcfeeslip", dcfeeslip);
 		model.addAttribute("DcfeeslipForm",dcfeeslip);
     	int a=feeslipDAO.setDcfeeslip(dcfeeslip);
 		DcfeeslipForm dcfeeslipForm= new DcfeeslipForm();
@@ -1017,23 +1081,33 @@ public class DoctorController {
 	}
 	@RequestMapping(value="/lowbackdisability", method = RequestMethod.GET)
 	public String viewinglowbackdisability(HttpSession session, ModelMap model) {
-		
+		session.removeAttribute("low");
 		model.addAttribute("menu","wristindex");
 		return "lowbackdisability";
  
 	}
 	
 	@RequestMapping(value="/lowbackdisability", method = RequestMethod.POST)
-	public String insert_lowback(HttpSession session,@ModelAttribute("Lowback")  @Valid Lowback lowback,BindingResult result,ModelMap model) {
-		
+	public String insert_lowback(HttpServletRequest request,HttpSession session,@ModelAttribute("Lowback")  @Valid Lowback lowback,BindingResult result,ModelMap model) {
+		session.setAttribute("low",lowback );
  
-	    model.put("Lowback", lowback);
+		if(result.hasErrors())
+		{
+		
+			LowbackForm lowbackForm = new LowbackForm();
+			lowbackForm.setLowback(lowDAO.getLowback());
+			model.addAttribute("lowbackForm",lowbackForm);
+			model.addAttribute("Success","true");
+			model.addAttribute("menu", "initial");
+			return "lowbackdisability";
+		}
+		model.put("Lowback", lowback);
 		model.addAttribute("lowbackForm",lowback);
     	int a=lowDAO.setLowback(lowback);
 		LowbackForm lowbackForm= new LowbackForm();
 		lowbackForm.setLowback(lowDAO.getLowback());
 		model.addAttribute("lowbackForm",lowbackForm);
-		return "lowbackdisability";
+		return "lowbacklist";
  
 	
 	}
@@ -1105,16 +1179,26 @@ public class DoctorController {
 	
 	@RequestMapping(value="/dutiesunderduress", method = RequestMethod.GET)
 	public String viewingdutiesunderduress(HttpSession session, ModelMap model) {
-		
+		session.removeAttribute("duties");
 		model.addAttribute("menu","duties");
 		return "dutiesunderduress";
  
 	}
 	@RequestMapping(value="/dutiesunderduress", method = RequestMethod.POST)
-	public String insert_duties(HttpSession session,@ModelAttribute("Dutiesunderduress")  @Valid Dutiesunderduress dutiesunderduress,BindingResult result,ModelMap model) {
-		
+	public String insert_duties(HttpServletRequest request,HttpSession session,@ModelAttribute("Dutiesunderduress")  @Valid Dutiesunderduress dutiesunderduress,BindingResult result,ModelMap model) {
+		session.setAttribute("duties", dutiesunderduress);
  
-	    model.put("Dutiesunderduress", dutiesunderduress);
+		if(result.hasErrors())
+		{
+		
+			DutiesduressForm dutiesduressForm = new DutiesduressForm();
+			dutiesduressForm.setDutiesunderduressdetails(dutiesDAO.getDuties());
+			model.addAttribute("dutiesduressForm",dutiesduressForm);
+			model.addAttribute("Success","true");
+			model.addAttribute("menu", "duties");
+			return "dutiesunderduress";
+		}
+		model.put("Dutiesunderduress", dutiesunderduress);
 		model.addAttribute("dutiesunderduressForm",dutiesunderduress);
     	int a=dutiesDAO.setDuties(dutiesunderduress);
 		DutiesduressForm dutiesduressForm= new DutiesduressForm();
@@ -1193,16 +1277,26 @@ public class DoctorController {
 	@RequestMapping(value="/footquestionnarie", method = RequestMethod.GET)
 	public String viewingfootquestionnarie(HttpSession session, ModelMap model) {
 		
-		
+		session.removeAttribute("fquestionnarie");
 		return "footquestionnarie";
  
 	}
 	
 	@RequestMapping(value="/footquestionnarie", method = RequestMethod.POST)
-	public String insert_footquestionnarie(HttpSession session,@ModelAttribute("Footquestionnarie")  @Valid Footquestionnarie footquestionnarie,BindingResult result,ModelMap model) {
+	public String insert_footquestionnarie(HttpServletRequest request,HttpSession session,@ModelAttribute("Footquestionnarie")  @Valid Footquestionnarie footquestionnarie,BindingResult result,ModelMap model) {
 		
- 
-	    model.put("Footquestionnarie", footquestionnarie);
+        session.setAttribute("fquestionnarie", footquestionnarie);
+		if(result.hasErrors())
+		{
+		
+			FootquestionnarieForm footquestionnarieForm = new FootquestionnarieForm();
+			footquestionnarieForm.setFootquestionnariedetails(footDAO.getFootquestionnarie());
+			model.addAttribute("footquestionnarieForm",footquestionnarieForm);
+			model.addAttribute("Success","true");
+			model.addAttribute("menu", "hipknee");
+			return "footquestionnarie";
+		}
+		model.put("Footquestionnarie", footquestionnarie);
 		model.addAttribute("footquestionnarieForm",footquestionnarie);
     	int a=footDAO.setFootquestionnarie(footquestionnarie);
 		FootquestionnarieForm footquestionnarieForm= new FootquestionnarieForm();
@@ -1280,13 +1374,23 @@ public class DoctorController {
 	@RequestMapping(value="/shoulderpainscore", method = RequestMethod.GET)
 	public String viewingshoulderpainscore(HttpSession session, ModelMap model) {
 		
-		
+		session.removeAttribute("shoulderpain");
 		return "shoulderpainscore";
  
 	}
 	@RequestMapping(value="/shoulderpainscore", method = RequestMethod.POST)
-	public String insert_shoulderpainscore(HttpSession session,@ModelAttribute("Shoulderpainscore")  @Valid Shoulderpainscore shoulderpainscore,BindingResult result,ModelMap model) {
+	public String insert_shoulderpainscore(HttpServletRequest request,HttpSession session,@ModelAttribute("Shoulderpainscore")  @Valid Shoulderpainscore shoulderpainscore,BindingResult result,ModelMap model) {
+		session.setAttribute("shoulderpain", shoulderpainscore);
+		if(result.hasErrors())
+		{
 		
+			ShoulderpainscoreForm shoulderpainscoreForm = new ShoulderpainscoreForm();
+			shoulderpainscoreForm.setShoulderpainscore(shoulderDAO.getShoulderpainscore());
+			model.addAttribute("shoulderpainscoreForm",shoulderpainscoreForm);
+			model.addAttribute("Success","true");
+			/*model.addAttribute("menu", "hipknee");*/
+			return "shoulderpainscore";
+		}
  
 	    model.put("Shoulderpainscore", shoulderpainscore);
 		model.addAttribute("shoulderpainscoreForm",shoulderpainscore);

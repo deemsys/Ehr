@@ -1,8 +1,12 @@
 package bephit.model;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class Cervicalexam {
 	private String cervicalexamid;
+	@NotEmpty
 	private String pname;
+	@NotEmpty
 	private String date;
 	private String muscle;
 	private String swelling;
@@ -113,6 +117,7 @@ public class Cervicalexam {
 	private String dc;
 	private String otheraddress;
 	private String break_text4;
+	@NotEmpty
 	private String sign;
 	
 	public Cervicalexam()
