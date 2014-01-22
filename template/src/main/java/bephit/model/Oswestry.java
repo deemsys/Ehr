@@ -1,4 +1,7 @@
 package bephit.model;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class Oswestry
 {
 	private String oswestryno;
@@ -13,8 +16,13 @@ public class Oswestry
 	private String sitting;
 	private String traveling;
 	private String comments;
+	
+	@NotEmpty
 	private String name;
+	
+	@NotEmpty
 	private String date;
+	
 	private String scores;
 	private String painscale;
 	private String painscale1;

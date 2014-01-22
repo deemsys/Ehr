@@ -1,9 +1,15 @@
 package bephit.model;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class WristExam
 {
 	private String wristexamno;
+	
+	@NotEmpty
 	private String pname;
+	
+	@NotEmpty
 	private String date;
 	private String muscle;
 	private String swelling;
@@ -101,6 +107,8 @@ public class WristExam
 	private String dc;
 	private String others;
 	private String othervalue;
+	
+	@NotEmpty
 	private String signature;
 	public WristExam() {
 		super();

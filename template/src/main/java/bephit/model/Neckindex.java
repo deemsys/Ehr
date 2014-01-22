@@ -1,10 +1,17 @@
 package bephit.model;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class Neckindex
 {
 	private String neckindexno;	
+	
+	@NotEmpty
 	private String name;
+	
+	@NotEmpty
 	private String date;
+	
 	private String painintensity;
 	private String work;
 	private String personal;

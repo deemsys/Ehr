@@ -1,11 +1,17 @@
 package bephit.model;
 import javax.validation.constraints.Pattern;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 
 public class FootExam
 {
 private String footexamno;	
+
+@NotEmpty
 private String pname;
+
+@NotEmpty
 private String date;
 private String gait;
 private String muscle;
@@ -108,7 +114,10 @@ private String outsidereferral;
 private String dc;
 private String others;
 private String othervalue;
+
+@NotEmpty
 private String signature;
+
 public String getFootexamno() {
 	return footexamno;
 }

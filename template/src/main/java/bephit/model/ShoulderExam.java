@@ -1,9 +1,15 @@
 package bephit.model;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class ShoulderExam
 {
 private String shoulderexamno;
+
+@NotEmpty
 private String pname;
+
+@NotEmpty
 private String date;
 private String muscle;
 private String swelling;
@@ -104,6 +110,8 @@ private String outsiderefferal;
 private String dc;
 private String others;
 private String othervalue;
+
+@NotEmpty
 private String signature;
 public String getShoulderexamno() {
 	return shoulderexamno;

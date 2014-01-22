@@ -1,4 +1,5 @@
 package bephit.controllers;
+
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.net.MalformedURLException;
@@ -34,403 +35,490 @@ import bephit.dao.*;
 import bephit.forms.*;
 import bephit.model.*;
 
-
 @Controller
-@SessionAttributes({"symptoms"})
-public class SymptomController
-{
-	@Autowired 
+@SessionAttributes({ "symptoms", "therapytreat","wristdisability","neckdisability","hipquestionnairedetails"})
+public class SymptomController {
+	@Autowired
 	SymptomDAO symptomdao;
-	
-	@Autowired 
+
+	@Autowired
 	HipquestionnaireDAO hipquestionnairedao;
-	
-	@Autowired 
+
+	@Autowired
 	ManualtherapyDAO therapydao;
-	
-	@Autowired 
+
+	@Autowired
 	WristindexDAO wristdao;
-	
-	@Autowired 
+
+	@Autowired
 	NeckindexDAO neckdao;
-	
-	   
-	  
-	@RequestMapping (value="/viewsymptom", method = RequestMethod.GET)
-	public String viewsymptom(ModelMap model)	
-	{
-		SymptomForm symptomform=new SymptomForm();
+
+	@RequestMapping(value = "/viewsymptom", method = RequestMethod.GET)
+	public String viewsymptom(ModelMap model) {
+		SymptomForm symptomform = new SymptomForm();
 		symptomform.setSymptomdetails(symptomdao.getsymptomDetails());
 		model.addAttribute("symptomform", symptomform);
-		model.addAttribute("menu","symptom");
+		model.addAttribute("menu", "symptom");
 		return "viewsymptom";
 	}
-	@RequestMapping (value="/viewsymptomlist", method = RequestMethod.GET)
-	public String viewsymptom(@RequestParam(value="symptomno") String symptomno,ModelMap model)	
-	{
-		System.out.println("sym"+symptomno);
-		SymptomForm symptomform=new SymptomForm();
+
+	@RequestMapping(value = "/viewsymptomlist", method = RequestMethod.GET)
+	public String viewsymptom(
+			@RequestParam(value = "symptomno") String symptomno, ModelMap model) {
+		System.out.println("sym" + symptomno);
+		SymptomForm symptomform = new SymptomForm();
 		symptomform.setSymptomdetails(symptomdao.getsymptomDetails(symptomno));
 		model.addAttribute("symptomform", symptomform);
-		model.addAttribute("menu","symptom");
+		model.addAttribute("menu", "symptom");
 		return "symptomlist";
 	}
-	@RequestMapping (value="/editsymptom", method = RequestMethod.GET)
-	public String editsymptom(@RequestParam(value="symptomno") String symptomno,ModelMap model)	
-	{
-		System.out.println("sym"+symptomno);
-		SymptomForm symptomform=new SymptomForm();
+
+	@RequestMapping(value = "/editsymptom", method = RequestMethod.GET)
+	public String editsymptom(
+			@RequestParam(value = "symptomno") String symptomno, ModelMap model) {
+		System.out.println("sym" + symptomno);
+		SymptomForm symptomform = new SymptomForm();
 		symptomform.setSymptomdetails(symptomdao.getsymptomDetails(symptomno));
 		model.addAttribute("symptomform", symptomform);
-		model.addAttribute("menu","symptom");
+		model.addAttribute("menu", "symptom");
 		return "editsymptom";
 	}
-	@RequestMapping (value="/deletesymptom", method = RequestMethod.GET)
-	public String deletesymptom(@RequestParam(value="symptomno") String symptomno,ModelMap model)	
-	{
-		System.out.println("sym"+symptomno);
+
+	@RequestMapping(value = "/deletesymptom", method = RequestMethod.GET)
+	public String deletesymptom(
+			@RequestParam(value = "symptomno") String symptomno, ModelMap model) {
+		System.out.println("sym" + symptomno);
 		symptomdao.deletesymptomdetails(symptomno);
-		SymptomForm symptomform=new SymptomForm();
+		SymptomForm symptomform = new SymptomForm();
 		symptomform.setSymptomdetails(symptomdao.getsymptomDetails());
 		model.addAttribute("symptomform", symptomform);
+		model.addAttribute("menu", "symptom");
 		return "viewsymptom";
 	}
-	@RequestMapping (value="/manual", method = RequestMethod.GET)
-	public String manual(ModelMap model)
-	{
-		model.addAttribute("menu","therapy");
+
+	@RequestMapping(value = "/manual", method = RequestMethod.GET)
+	public String manual(HttpSession session, ModelMap model) {
+		session.removeAttribute("therapytreat");
+		model.addAttribute("menu", "therapy");
 		return "manualtherapy";
 	}
-	@RequestMapping (value="/viewmanualtherapy", method = RequestMethod.GET)
-	public String viewmanualtherapy(ModelMap model)	
-	{
-		ManualTherapyForm manualform=new ManualTherapyForm();
+
+	@RequestMapping(value = "/viewmanualtherapy", method = RequestMethod.GET)
+	public String viewmanualtherapy(ModelMap model) {
+		ManualTherapyForm manualform = new ManualTherapyForm();
 		manualform.setManualtherapy(therapydao.getmanualtherapyDetails());
 		model.addAttribute("manualform", manualform);
-		model.addAttribute("menu","therapy");
-		
+		model.addAttribute("menu", "therapy");
+
 		return "viewmanualtherapy";
 	}
-	@RequestMapping (value="/deletemanualtherapy", method = RequestMethod.GET)
-	public String deletemanualtherapy(@RequestParam(value="manualtherapyno") String manualtherapyno,ModelMap model)	
-	{
-		System.out.println("sym"+manualtherapyno);
+
+	@RequestMapping(value = "/deletemanualtherapy", method = RequestMethod.GET)
+	public String deletemanualtherapy(
+			@RequestParam(value = "manualtherapyno") String manualtherapyno,
+			ModelMap model) {
+		System.out.println("sym" + manualtherapyno);
 		therapydao.deletemanualtherapydetails(manualtherapyno);
-		ManualTherapyForm manualform=new ManualTherapyForm();
+		ManualTherapyForm manualform = new ManualTherapyForm();
 		manualform.setManualtherapy(therapydao.getmanualtherapyDetails());
 		model.addAttribute("manualform", manualform);
-		model.addAttribute("menu","therapy");
+		model.addAttribute("menu", "therapy");
 		return "viewmanualtherapy";
 	}
-	@RequestMapping (value="/editmanualtherapy", method = RequestMethod.GET)
-	public String editmanualtherapy(@RequestParam(value="manualtherapyno") String manualtherapyno,ModelMap model)	
-	{
-		System.out.println("sym"+manualtherapyno);		
-		ManualTherapyForm manualform=new ManualTherapyForm();
-		manualform.setManualtherapy(therapydao.getmanualtherapyDetails(manualtherapyno));
+
+	@RequestMapping(value = "/editmanualtherapy", method = RequestMethod.GET)
+	public String editmanualtherapy(
+			@RequestParam(value = "manualtherapyno") String manualtherapyno,
+			ModelMap model) {
+		System.out.println("sym" + manualtherapyno);
+		ManualTherapyForm manualform = new ManualTherapyForm();
+		manualform.setManualtherapy(therapydao
+				.getmanualtherapyDetails(manualtherapyno));
 		model.addAttribute("manualform", manualform);
-		model.addAttribute("menu","therapy");
+		model.addAttribute("menu", "therapy");
 		return "editmanualtherapy";
 	}
-	
-	@RequestMapping (value="/manualtherapylist", method = RequestMethod.GET)
-	public String manualtherapylist(@RequestParam(value="manualtherapyno") String manualtherapyno,ModelMap model)	
-	{
-		System.out.println("sym"+manualtherapyno);		
-		ManualTherapyForm manualform=new ManualTherapyForm();
-		manualform.setManualtherapy(therapydao.getmanualtherapyDetails(manualtherapyno));
+
+	@RequestMapping(value = "/manualtherapylist", method = RequestMethod.GET)
+	public String manualtherapylist(
+			@RequestParam(value = "manualtherapyno") String manualtherapyno,
+			ModelMap model) {
+		System.out.println("sym" + manualtherapyno);
+		ManualTherapyForm manualform = new ManualTherapyForm();
+		manualform.setManualtherapy(therapydao
+				.getmanualtherapyDetails(manualtherapyno));
 		model.addAttribute("manualform", manualform);
-		model.addAttribute("menu","therapy");
+		model.addAttribute("menu", "therapy");
 		return "manualtherapylist";
 	}
-	
-	
-	@RequestMapping (value="/symptom", method = RequestMethod.GET)
-	public String exam(ModelMap model)
-	{
-		model.addAttribute("menu","symptom");
+
+	@RequestMapping(value = "/symptom", method = RequestMethod.GET)
+	public String exam(HttpSession session, ModelMap model) {
+		session.removeAttribute("symptoms");
+		model.addAttribute("menu", "symptom");
 		return "symptom";
 	}
-	
-	
-	@RequestMapping (value="/wristdisabilityindex", method = RequestMethod.GET)
-	public String wristdisabilityindex(ModelMap model)
-	{
-		model.addAttribute("menu","wristindex");
+
+	@RequestMapping(value = "/wristdisabilityindex", method = RequestMethod.GET)
+	public String wristdisabilityindex(HttpSession session,ModelMap model) {
+		session.removeAttribute("wristdisability");
+		model.addAttribute("menu", "wristindex");
 		return "wristindex";
 	}
-	@RequestMapping (value="/hipquestionnaire", method = RequestMethod.GET)
-	public String hipquestionnaireindex(ModelMap model)
-	{
-		model.addAttribute("menu","hipknee");
+
+	@RequestMapping(value = "/hipquestionnaire", method = RequestMethod.GET)
+	public String hipquestionnaireindex(HttpSession session,ModelMap model) {
+		session.removeAttribute("hipquestionnairedetails");
+		model.addAttribute("menu", "hipknee");
 		return "hipquestionnaire";
 	}
-	@RequestMapping (value="/inserthipquestionnaire", method = RequestMethod.POST)
-	public String exams(HttpServletRequest request,ModelMap model,@ModelAttribute("hipquestionnaire") @Valid Hipquestionnaire hipquestionnaire,BindingResult result) throws IOException
-	{
-		
-    hipquestionnairedao.inserthipquestionnaire(hipquestionnaire);
-	model.addAttribute("success", true);
-	HipquestionnaireForm hipquestionnaireform=new HipquestionnaireForm();
-	hipquestionnaireform.setHipquestionnairedetails(hipquestionnairedao.gethipquestionnairedetails());
-	model.addAttribute("hipquestionnaireform", hipquestionnaireform);
+
+	@RequestMapping(value = "/inserthipquestionnaire", method = RequestMethod.POST)
+	public String exams(HttpSession session,HttpServletRequest request,	ModelMap model,	@ModelAttribute("hipquestionnaire") @Valid Hipquestionnaire hipquestionnaire,BindingResult result) throws IOException {
+        session.setAttribute("hipquestionnairedetails",hipquestionnaire);
+		if(result.hasErrors())
+		{
+			return "hipquestionnaire";
+		}
+		hipquestionnairedao.inserthipquestionnaire(hipquestionnaire);
+		model.addAttribute("success", true);
+		HipquestionnaireForm hipquestionnaireform = new HipquestionnaireForm();
+		hipquestionnaireform.setHipquestionnairedetails(hipquestionnairedao.gethipquestionnairedetails());
+		model.addAttribute("hipquestionnaireform", hipquestionnaireform);
 		return "viewhipquestionnaire";
 	}
-	@RequestMapping (value="/updatehipquestionnaire", method = RequestMethod.POST)
-	public String updatehipquestionnaire(HttpServletRequest request,ModelMap model,@ModelAttribute("hipquestionnaire") @Valid Hipquestionnaire hipquestionnaire,BindingResult result) throws IOException
-	{
-		
-    hipquestionnairedao.updatequestionnaire(hipquestionnaire, hipquestionnaire.getHipquestionno());
-	model.addAttribute("success", true);
-	HipquestionnaireForm hipquestionnaireform=new HipquestionnaireForm();
-	hipquestionnaireform.setHipquestionnairedetails(hipquestionnairedao.gethipquestionnairedetails());
-	model.addAttribute("hipquestionnaireform", hipquestionnaireform);
+
+	@RequestMapping(value = "/updatehipquestionnaire", method = RequestMethod.POST)
+	public String updatehipquestionnaire(HttpServletRequest request,ModelMap model,@ModelAttribute("hipquestionnaire") @Valid Hipquestionnaire hipquestionnaire,BindingResult result) throws IOException {
+
+		if(result.hasErrors())
+		{
+			HipquestionnaireForm hipquestionnaireform = new HipquestionnaireForm();
+			hipquestionnaireform.setHipquestionnairedetails(hipquestionnairedao.gethipquestionnairedetails(hipquestionnaire.getHipquestionno()));
+			model.addAttribute("hipquestionnaireform", hipquestionnaireform);
+			return "edithipquestionnaire";
+		}
+		hipquestionnairedao.updatequestionnaire(hipquestionnaire,hipquestionnaire.getHipquestionno());
+		model.addAttribute("success", true);
+		HipquestionnaireForm hipquestionnaireform = new HipquestionnaireForm();
+		hipquestionnaireform.setHipquestionnairedetails(hipquestionnairedao.gethipquestionnairedetails());
+		model.addAttribute("hipquestionnaireform", hipquestionnaireform);
 		return "hipquestionnaire";
 	}
-	@RequestMapping (value="/viewhipquestionnaire", method = RequestMethod.GET)
-	public String viewhipquestionnaire(HttpServletRequest request,ModelMap model,Hipquestionnaire hipquestionnaire) throws IOException
-	{	
 
-	HipquestionnaireForm hipquestionnaireform=new HipquestionnaireForm();
-	hipquestionnaireform.setHipquestionnairedetails(hipquestionnairedao.gethipquestionnairedetails());
-	model.addAttribute("hipquestionnaireform", hipquestionnaireform);
-	model.addAttribute("menu","hipknee");
-	return "viewhipquestionnaire";
-	}
-	@RequestMapping (value="/edithipquestionnaire", method = RequestMethod.GET)
-	public String edithipquestionnaire(@RequestParam("hipquestionno") String hipquestionno,HttpServletRequest request,ModelMap model,Hipquestionnaire hipquestionnaire) throws IOException
-	{	
-    System.out.println(hipquestionno);
-	HipquestionnaireForm hipquestionnaireform=new HipquestionnaireForm();
-	hipquestionnaireform.setHipquestionnairedetails(hipquestionnairedao.gethipquestionnairedetails(hipquestionno));
-	model.addAttribute("hipquestionnaireform", hipquestionnaireform);
-	System.out.print(hipquestionnaireform.getHipquestionnairedetails().get(0).getStiff());
-	model.addAttribute("menu","hipknee");
-	return "edithipquestionnaire";
-	}
-	@RequestMapping (value="/hipquestionnairelist", method = RequestMethod.GET)
-	public String hipquestionnairelist(@RequestParam("hipquestionno") String hipquestionno,HttpServletRequest request,ModelMap model,Hipquestionnaire hipquestionnaire) throws IOException
-	{	
-    System.out.println(hipquestionno);
-	HipquestionnaireForm hipquestionnaireform=new HipquestionnaireForm();
-	hipquestionnaireform.setHipquestionnairedetails(hipquestionnairedao.gethipquestionnairedetails(hipquestionno));
-	model.addAttribute("hipquestionnaireform", hipquestionnaireform);
-	System.out.print(hipquestionnaireform.getHipquestionnairedetails().get(0).getStiff());
-	model.addAttribute("menu","hipknee");
-	return "hipquestionnairelist";
-	}
-	@RequestMapping (value="/deletehipquestionnaire", method = RequestMethod.GET)
-	public String deletehipquestionnaire(@RequestParam("hipquestionno") String hipquestionno,HttpServletRequest request,ModelMap model,Hipquestionnaire hipquestionnaire) throws IOException
-	{	
-    System.out.println(hipquestionno);
-    hipquestionnairedao.deletequestionnaire(hipquestionno);
-	HipquestionnaireForm hipquestionnaireform=new HipquestionnaireForm();
-	hipquestionnaireform.setHipquestionnairedetails(hipquestionnairedao.gethipquestionnairedetails());
-	model.addAttribute("hipquestionnaireform", hipquestionnaireform);
-	model.addAttribute("success", true);
-	//System.out.print(hipquestionnaireform.getHipquestionnairedetails().get(0).getStiff());
-	return "viewhipquestionnaire";
+	@RequestMapping(value = "/viewhipquestionnaire", method = RequestMethod.GET)
+	public String viewhipquestionnaire(HttpServletRequest request,
+			ModelMap model, Hipquestionnaire hipquestionnaire)
+			throws IOException {
+
+		HipquestionnaireForm hipquestionnaireform = new HipquestionnaireForm();
+		hipquestionnaireform.setHipquestionnairedetails(hipquestionnairedao
+				.gethipquestionnairedetails());
+		model.addAttribute("hipquestionnaireform", hipquestionnaireform);
+		model.addAttribute("menu", "hipknee");
+		return "viewhipquestionnaire";
 	}
 
-	@RequestMapping (value="/neckindex", method = RequestMethod.GET)
-	public String neckindex(ModelMap model)
-	{
-		model.addAttribute("menu","wristindex");
+	@RequestMapping(value = "/edithipquestionnaire", method = RequestMethod.GET)
+	public String edithipquestionnaire(HttpSession session,@RequestParam("hipquestionno") String hipquestionno,HttpServletRequest request, ModelMap model,
+			Hipquestionnaire hipquestionnaire) throws IOException {
+		session.removeAttribute("hipquestionnairedetails");
+		HipquestionnaireForm hipquestionnaireform = new HipquestionnaireForm();
+		hipquestionnaireform.setHipquestionnairedetails(hipquestionnairedao
+				.gethipquestionnairedetails(hipquestionno));
+		model.addAttribute("hipquestionnaireform", hipquestionnaireform);
+		System.out.print(hipquestionnaireform.getHipquestionnairedetails()
+				.get(0).getStiff());
+		model.addAttribute("menu", "hipknee");
+		return "edithipquestionnaire";
+	}
+
+	@RequestMapping(value = "/hipquestionnairelist", method = RequestMethod.GET)
+	public String hipquestionnairelist(
+			@RequestParam("hipquestionno") String hipquestionno,
+			HttpServletRequest request, ModelMap model,
+			Hipquestionnaire hipquestionnaire) throws IOException {
+		System.out.println(hipquestionno);
+		HipquestionnaireForm hipquestionnaireform = new HipquestionnaireForm();
+		hipquestionnaireform.setHipquestionnairedetails(hipquestionnairedao
+				.gethipquestionnairedetails(hipquestionno));
+		model.addAttribute("hipquestionnaireform", hipquestionnaireform);
+		System.out.print(hipquestionnaireform.getHipquestionnairedetails()
+				.get(0).getStiff());
+		model.addAttribute("menu", "hipknee");
+		return "hipquestionnairelist";
+	}
+
+	@RequestMapping(value = "/deletehipquestionnaire", method = RequestMethod.GET)
+	public String deletehipquestionnaire(
+			@RequestParam("hipquestionno") String hipquestionno,
+			HttpServletRequest request, ModelMap model,
+			Hipquestionnaire hipquestionnaire) throws IOException {
+		System.out.println(hipquestionno);
+		hipquestionnairedao.deletequestionnaire(hipquestionno);
+		HipquestionnaireForm hipquestionnaireform = new HipquestionnaireForm();
+		hipquestionnaireform.setHipquestionnairedetails(hipquestionnairedao
+				.gethipquestionnairedetails());
+		model.addAttribute("hipquestionnaireform", hipquestionnaireform);
+		model.addAttribute("success", true);
+		// System.out.print(hipquestionnaireform.getHipquestionnairedetails().get(0).getStiff());
+		return "viewhipquestionnaire";
+	}
+
+	@RequestMapping(value = "/neckindex", method = RequestMethod.GET)
+	public String neckindex(HttpSession session,ModelMap model) {
+		session.removeAttribute("neckdisability");
+		model.addAttribute("menu", "wristindex");
 		model.addAttribute("success", true);
 		return "neckindex";
 	}
-	@RequestMapping (value="/viewwristindex", method = RequestMethod.GET)
-	public String viewwristindex(ModelMap model)	
-	{
-		WristindexForm wristindexform=new WristindexForm();
+
+	@RequestMapping(value = "/viewwristindex", method = RequestMethod.GET)
+	public String viewwristindex(ModelMap model) {
+		WristindexForm wristindexform = new WristindexForm();
 		wristindexform.setWristindexdetails(wristdao.getwristindexDetails());
 		model.addAttribute("wristindexform", wristindexform);
-		model.addAttribute("menu","wristindex");
+		model.addAttribute("menu", "wristindex");
 		return "viewwristindex";
 	}
-	@RequestMapping (value="/viewneckindex", method = RequestMethod.GET)
-	public String viewneckindex(ModelMap model)	
-	{
-		NeckindexForm neckindexform=new NeckindexForm();
+
+	@RequestMapping(value = "/viewneckindex", method = RequestMethod.GET)
+	public String viewneckindex(ModelMap model) {
+		NeckindexForm neckindexform = new NeckindexForm();
 		neckindexform.setneckindexdetails(neckdao.getneckindexDetails());
 		model.addAttribute("neckindexform", neckindexform);
-		model.addAttribute("menu","wristindex");
+		model.addAttribute("menu", "wristindex");
 		return "viewneckindex";
 	}
-	@RequestMapping (value="/wristindexlist", method = RequestMethod.GET)
-	public String viewwristindexlist(@RequestParam(value="wristindexno") String wristindexno,ModelMap model)	
-	{
-		
-		WristindexForm wristindexform=new WristindexForm();
-		wristindexform.setWristindexdetails(wristdao.getwristindexDetails(wristindexno));
+
+	@RequestMapping(value = "/wristindexlist", method = RequestMethod.GET)
+	public String viewwristindexlist(
+			@RequestParam(value = "wristindexno") String wristindexno,
+			ModelMap model) {
+
+		WristindexForm wristindexform = new WristindexForm();
+		wristindexform.setWristindexdetails(wristdao
+				.getwristindexDetails(wristindexno));
 		model.addAttribute("wristindexform", wristindexform);
-		model.addAttribute("menu","wristindex");
+		model.addAttribute("menu", "wristindex");
 		return "wristindexlist";
 	}
-	@RequestMapping (value="/neckindexlist", method = RequestMethod.GET)
-	public String viewneckindexlist(@RequestParam(value="neckindexno") String neckindexno,ModelMap model)	
-	{
-		
-		NeckindexForm neckindexform=new NeckindexForm();
-		neckindexform.setneckindexdetails(neckdao.getneckindexDetails(neckindexno));
+
+	@RequestMapping(value = "/neckindexlist", method = RequestMethod.GET)
+	public String viewneckindexlist(
+			@RequestParam(value = "neckindexno") String neckindexno,
+			ModelMap model) {
+
+		NeckindexForm neckindexform = new NeckindexForm();
+		neckindexform.setneckindexdetails(neckdao
+				.getneckindexDetails(neckindexno));
 		model.addAttribute("neckindexform", neckindexform);
-		model.addAttribute("menu","wristindex");
+		model.addAttribute("menu", "wristindex");
 		return "neckindexlist";
 	}
-	@RequestMapping (value="/editwristindex", method = RequestMethod.GET)
-	public String editwristindex(@RequestParam(value="wristindexno") String wristindexno,ModelMap model)	
-	{
-		System.out.println("sym"+wristindexno);
-		WristindexForm wristindexform=new WristindexForm();
-		wristindexform.setWristindexdetails(wristdao.getwristindexDetails(wristindexno));
+
+	@RequestMapping(value = "/editwristindex", method = RequestMethod.GET)
+	public String editwristindex(
+			@RequestParam(value = "wristindexno") String wristindexno,
+			ModelMap model) {
+		System.out.println("sym" + wristindexno);
+		WristindexForm wristindexform = new WristindexForm();
+		wristindexform.setWristindexdetails(wristdao
+				.getwristindexDetails(wristindexno));
 		model.addAttribute("wristindexform", wristindexform);
-		model.addAttribute("menu","wristindex");
+		model.addAttribute("menu", "wristindex");
 		return "editwristindex";
 	}
-	@RequestMapping (value="/editneckindex", method = RequestMethod.GET)
-	public String editneckindex(@RequestParam(value="neckindexno") String neckindexno,ModelMap model)	
-	{
-		System.out.println("sym"+neckindexno);
-		NeckindexForm neckindexform=new NeckindexForm();
-		neckindexform.setneckindexdetails(neckdao.getneckindexDetails(neckindexno));
+
+	@RequestMapping(value = "/editneckindex", method = RequestMethod.GET)
+	public String editneckindex(
+			@RequestParam(value = "neckindexno") String neckindexno,
+			ModelMap model) {
+		System.out.println("sym" + neckindexno);
+		NeckindexForm neckindexform = new NeckindexForm();
+		neckindexform.setneckindexdetails(neckdao
+				.getneckindexDetails(neckindexno));
 		model.addAttribute("neckindexform", neckindexform);
-		model.addAttribute("menu","wristindex");
+		model.addAttribute("menu", "wristindex");
 		return "editneckindex";
 	}
-	@RequestMapping (value="/deleteneckindex", method = RequestMethod.GET)
-	public String deleteneckindex(@RequestParam(value="neckindexno") String neckindexno,ModelMap model)	
-	{
+
+	@RequestMapping(value = "/deleteneckindex", method = RequestMethod.GET)
+	public String deleteneckindex(
+			@RequestParam(value = "neckindexno") String neckindexno,
+			ModelMap model) {
 		neckdao.deleteneckindex(neckindexno);
-		NeckindexForm neckindexform=new NeckindexForm();
+		NeckindexForm neckindexform = new NeckindexForm();
 		neckindexform.setneckindexdetails(neckdao.getneckindexDetails());
 		model.addAttribute("neckindexform", neckindexform);
-		model.addAttribute("menu","neckindex");
+		model.addAttribute("menu", "neckindex");
 		model.addAttribute("success", true);
 		return "viewneckindex";
 	}
-	@RequestMapping (value="/deletewristindex", method = RequestMethod.GET)
-	public String deletewristindex(@RequestParam(value="wristindexno") String wristindexno,ModelMap model)	
-	{
+
+	@RequestMapping(value = "/deletewristindex", method = RequestMethod.GET)
+	public String deletewristindex(
+			@RequestParam(value = "wristindexno") String wristindexno,
+			ModelMap model) {
 		wristdao.deletewristindex(wristindexno);
-		WristindexForm wristindexform=new WristindexForm();
+		WristindexForm wristindexform = new WristindexForm();
 		wristindexform.setWristindexdetails(wristdao.getwristindexDetails());
 		model.addAttribute("wristindexform", wristindexform);
-		model.addAttribute("menu","wristindex");
+		model.addAttribute("menu", "wristindex");
 		model.addAttribute("success", true);
 		return "viewwristindex";
 	}
-	@RequestMapping (value="/updatewristindex", method = RequestMethod.POST)
-	public String updatewristindex(HttpServletRequest request,ModelMap model,@ModelAttribute("wristindex") @Valid Wristindex wristindex,BindingResult result) throws IOException
-	{
-	System.out.println(wristindex.getWristindexno());	
-	wristdao.updatewristindex(wristindex, wristindex.getWristindexno());
-	WristindexForm wristindexform=new WristindexForm();
-	wristindexform.setWristindexdetails(wristdao.getwristindexDetails());
-	model.addAttribute("wristindexform", wristindexform);
-	model.addAttribute("success", true);
-	return "viewwristindex";
-	}
-	@RequestMapping (value="/updateneckindex", method = RequestMethod.POST)
-	public String updateneckindex(HttpServletRequest request,ModelMap model,@ModelAttribute("neckindex") @Valid Neckindex neckindex,BindingResult result) throws IOException
-	{
-	System.out.println(neckindex.getNeckindexno());	
-	neckdao.updateneckindex(neckindex, neckindex.getNeckindexno());
-	NeckindexForm neckindexform=new NeckindexForm();
-	neckindexform.setneckindexdetails(neckdao.getneckindexDetails());
-	model.addAttribute("neckindexform", neckindexform);
-	model.addAttribute("success", true);
-	return "viewneckindex";
-	}
-	@RequestMapping (value="/updatesymptom", method = RequestMethod.POST)
-	public String updatesymptom(HttpServletRequest request,ModelMap model,@ModelAttribute("symptom") @Valid Symptom symptom,BindingResult result) throws IOException
-	{
+
+	@RequestMapping(value = "/updatewristindex", method = RequestMethod.POST)
+	public String updatewristindex(HttpServletRequest request, ModelMap model,@ModelAttribute("wristindexdetails") @Valid Wristindex wristindex,BindingResult result) throws IOException {
 		if(result.hasErrors())
 		{
-			SymptomForm symptomform=new SymptomForm();
-			symptomform.setSymptomdetails(symptomdao.getsymptomDetails(symptom.getSymptomno()));
+			model.addAttribute("menu", "wristindex");
+			WristindexForm wristindexform = new WristindexForm();
+			wristindexform.setWristindexdetails(wristdao.getwristindexDetails(wristindex.getWristindexno()));
+			model.addAttribute("wristindexform", wristindexform);	
+			return "editwristindex";
+		}
+		System.out.println(wristindex.getWristindexno());
+		wristdao.updatewristindex(wristindex, wristindex.getWristindexno());
+		WristindexForm wristindexform = new WristindexForm();
+		wristindexform.setWristindexdetails(wristdao.getwristindexDetails());
+		model.addAttribute("wristindexform", wristindexform);
+		model.addAttribute("success", true);
+		return "viewwristindex";
+	}
+
+	@RequestMapping(value = "/updateneckindex", method = RequestMethod.POST)
+	public String updateneckindex(HttpServletRequest request, ModelMap model,@ModelAttribute("neckindex") @Valid Neckindex neckindex,BindingResult result) throws IOException {
+		if(result.hasErrors())
+		{
+			NeckindexForm neckindexform = new NeckindexForm();
+			neckindexform.setneckindexdetails(neckdao.getneckindexDetails(neckindex.getNeckindexno()));
+			model.addAttribute("neckindexform", neckindexform);
+			return "editneckindex";
+		}
+		System.out.println(neckindex.getNeckindexno());
+		neckdao.updateneckindex(neckindex, neckindex.getNeckindexno());
+		NeckindexForm neckindexform = new NeckindexForm();
+		neckindexform.setneckindexdetails(neckdao.getneckindexDetails());
+		model.addAttribute("neckindexform", neckindexform);
+		model.addAttribute("success", true);
+		return "viewneckindex";
+	}
+
+	@RequestMapping(value = "/updatesymptom", method = RequestMethod.POST)
+	public String updatesymptom(HttpServletRequest request, ModelMap model,
+			@ModelAttribute("symptom") @Valid Symptom symptom,
+			BindingResult result) throws IOException {
+		if (result.hasErrors()) {
+			SymptomForm symptomform = new SymptomForm();
+			symptomform.setSymptomdetails(symptomdao.getsymptomDetails(symptom
+					.getSymptomno()));
 			model.addAttribute("symptomform", symptomform);
-			model.addAttribute("menu","symptom");
+			model.addAttribute("menu", "symptom");
 			return "editsymptom";
 		}
-		
-		System.out.println("path"+symptom.getAchepath());
-	symptomdao.updatesymptomexam(symptom,symptom.getSymptomno());
-	SymptomForm symptomform=new SymptomForm();
-	symptomform.setSymptomdetails(symptomdao.getsymptomDetails());
-	model.addAttribute("symptomform", symptomform);
-	model.addAttribute("success", true);
+
+		System.out.println("path" + symptom.getAchepath());
+		symptomdao.updatesymptomexam(symptom, symptom.getSymptomno());
+		SymptomForm symptomform = new SymptomForm();
+		symptomform.setSymptomdetails(symptomdao.getsymptomDetails());
+		model.addAttribute("symptomform", symptomform);
+		model.addAttribute("success", true);
 		return "viewsymptom";
 	}
-	@RequestMapping (value="/insertsymptom", method = RequestMethod.POST)
-	public String exams(HttpSession session,HttpServletRequest request,ModelMap model,@ModelAttribute("symptom") @Valid Symptom symptom,BindingResult result) throws IOException
-	{
-		session.setAttribute("symptoms",symptom);
-		
+
+	@RequestMapping(value = "/insertsymptom", method = RequestMethod.POST)
+	public String exams(HttpSession session, HttpServletRequest request,
+			ModelMap model, @ModelAttribute("symptom") @Valid Symptom symptom,
+			BindingResult result) throws IOException {
+		session.setAttribute("symptoms", symptom);
+
 		System.out.println(symptom.getAcheleft());
-		if(result.hasErrors())	{
-			SymptomForm symptomform=new SymptomForm();
+		if (result.hasErrors()) {
+			SymptomForm symptomform = new SymptomForm();
 			symptomform.setSymptomdetails(symptomdao.getsymptomDetails());
 			model.addAttribute("symptomform", symptomform);
-			model.addAttribute("menu","symptom");	
+			model.addAttribute("menu", "symptom");
 			return "symptom";
 		}
-	
+
 		System.out.println("no errors");
-	symptomdao.insertsymptomimage(symptom);
-	model.addAttribute("success", true);
-	SymptomForm symptomform=new SymptomForm();
-	symptomform.setSymptomdetails(symptomdao.getsymptomDetails());
-	model.addAttribute("symptomform", symptomform);
-	return "viewsymptom";
+		symptomdao.insertsymptomimage(symptom);
+		model.addAttribute("success", true);
+		SymptomForm symptomform = new SymptomForm();
+		symptomform.setSymptomdetails(symptomdao.getsymptomDetails());
+		model.addAttribute("symptomform", symptomform);
+		return "viewsymptom";
 	}
-	
-	
-	
-	@RequestMapping (value="/inserttherapy", method = RequestMethod.POST)
-	public String therapy(HttpServletRequest request,ModelMap model,@ModelAttribute("therapy") @Valid Manualtherapy therapy,BindingResult result) throws IOException
-	{
-		if(result.hasErrors())
-		{
+
+	@RequestMapping(value = "/inserttherapy", method = RequestMethod.POST)
+	public String therapy(HttpSession session, HttpServletRequest request,ModelMap model,@ModelAttribute("therapy") @Valid Manualtherapy therapy,
+			BindingResult result) throws IOException {
+		session.setAttribute("therapytreat", therapy);
+		if (result.hasErrors()) {
+			model.addAttribute("menu", "therapy");
 			return "manualtherapy";
 		}
 		therapydao.inserttherapydetails(therapy);
-		ManualTherapyForm manualform=new ManualTherapyForm();
+		ManualTherapyForm manualform = new ManualTherapyForm();
 		manualform.setManualtherapy(therapydao.getmanualtherapyDetails());
 		model.addAttribute("manualform", manualform);
 		model.addAttribute("success", true);
 		return "viewmanualtherapy";
 	}
-	@RequestMapping (value="/insertwristindex", method = RequestMethod.POST)
-	public String insertwristindex(HttpServletRequest request,ModelMap model,@ModelAttribute("wristindexdetails") @Valid Wristindex wristindexdetails,BindingResult result) throws IOException
-	{
+
+	@RequestMapping(value = "/insertwristindex", method = RequestMethod.POST)
+	public String insertwristindex(HttpSession session,	HttpServletRequest request,	ModelMap model,	@ModelAttribute("wristindexdetails") @Valid Wristindex wristindexdetails,
+			BindingResult result) throws IOException {
+		session.setAttribute("wristdisability",wristindexdetails);
+		if(result.hasErrors())
+		{
+			model.addAttribute("menu", "wristindex");
+			return "wristindex";
+		}
 		wristdao.insertwristindex(wristindexdetails);
-		WristindexForm wristindexform=new WristindexForm();
+		WristindexForm wristindexform = new WristindexForm();
 		wristindexform.setWristindexdetails(wristdao.getwristindexDetails());
 		model.addAttribute("wristindexform", wristindexform);
 		model.addAttribute("success", true);
 		return "viewwristindex";
 	}
-	@RequestMapping (value="/insertneckindex", method = RequestMethod.POST)
-	public String insertneckindex(HttpServletRequest request,ModelMap model,@ModelAttribute("neckindexdetails") @Valid Neckindex neckindexdetails,BindingResult result) throws IOException
-	{
+
+	@RequestMapping(value = "/insertneckindex", method = RequestMethod.POST)
+	public String insertneckindex(HttpSession session,HttpServletRequest request,ModelMap model,@ModelAttribute("neckindex") @Valid Neckindex neckindexdetails,
+			BindingResult result) throws IOException {
+		session.setAttribute("neckdisability",neckindexdetails);
+		if(result.hasErrors())
+		{
+			return "neckindex";
+		}
 		neckdao.insertneckindex(neckindexdetails);
-		NeckindexForm neckindexform=new NeckindexForm();
+		NeckindexForm neckindexform = new NeckindexForm();
 		neckindexform.setneckindexdetails(neckdao.getneckindexDetails());
 		model.addAttribute("neckindexform", neckindexform);
 		model.addAttribute("success", true);
 		return "viewneckindex";
 	}
-	
-	@RequestMapping (value="/updatetherapy", method = RequestMethod.POST)
-	public String updatetherapy(HttpServletRequest request,ModelMap model,@ModelAttribute("therapy") @Valid Manualtherapy therapy,BindingResult result) throws IOException
-	{
-		
-		therapydao.updatemanualtherapy(therapy,therapy.getManualtherapyno());
-		ManualTherapyForm manualform=new ManualTherapyForm();
+
+	@RequestMapping(value = "/updatetherapy", method = RequestMethod.POST)
+	public String updatetherapy(HttpServletRequest request, ModelMap model,
+			@ModelAttribute("therapy") @Valid Manualtherapy therapy,
+			BindingResult result) throws IOException {
+		if (result.hasErrors()) {
+			model.addAttribute("menu", "therapy");
+			ManualTherapyForm manualform = new ManualTherapyForm();
+			manualform.setManualtherapy(therapydao.getmanualtherapyDetails(therapy.getManualtherapyno()));
+			System.out.println(therapy.getManualtherapyno());
+			model.addAttribute("manualform", manualform);
+			return "editmanualtherapy";
+		}
+		therapydao.updatemanualtherapy(therapy, therapy.getManualtherapyno());
+		ManualTherapyForm manualform = new ManualTherapyForm();
 		manualform.setManualtherapy(therapydao.getmanualtherapyDetails());
 		model.addAttribute("manualform", manualform);
 		model.addAttribute("success", true);
 		return "viewmanualtherapy";
-	}	
-	
+	}
+
 }

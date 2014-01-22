@@ -1,4 +1,7 @@
 package bephit.model;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class Hipquestionnaire
 {
 	
@@ -19,6 +22,8 @@ public class Hipquestionnaire
 	private String bedleftknee;
 	private String best;
 	private String socks;
+	
+	@NotEmpty
 	private String date;
 	private String birthdate;
 	private String security;

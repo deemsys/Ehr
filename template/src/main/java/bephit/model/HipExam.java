@@ -1,13 +1,17 @@
 package bephit.model;
 import javax.validation.constraints.Pattern;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 
 public class HipExam
 {
 private String hipexamno;
 
+@NotEmpty
 private String pname;
 
+@NotEmpty
 private String date;
 
 private String gait;
@@ -133,6 +137,8 @@ private String conduction;
 private String emg;
 private String outsidereferral;
 private String dc;
+
+@NotEmpty
 private String signature;
 
 public HipExam() {
