@@ -94,7 +94,9 @@ import bephit.model.*;
  
  
 @Controller
-@SessionAttributes({"physical","radio","waiver","info","consent","minor","hard","screen","medical","assignment","hippa","staff","veri","patient","role","signup","doctorsignup","patientid","soap","auto","work"})
+
+@SessionAttributes({"physical","radio","waiver","info","consent","minor","hard","screen","medical","assignment","hippa","staff","veri","patient","role","signup","doctorsignup","patientid","soap","auto","visit","work"})
+
 public class MainController {
 	
 	RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
@@ -210,7 +212,7 @@ public class MainController {
 	
 	@RequestMapping(value="/doctorsearch", method = RequestMethod.GET)
 	public String searchform(HttpSession session, ModelMap model) {
-		
+		model.addAttribute("menu","search");
 		
 		return "doctorsearch";
  
@@ -237,9 +239,11 @@ public class MainController {
 		     int d=doctorDAO.getPatientdetails(emailid,patientname);
 		     String visit=doctorDAO.getVisit(emailid,patientname);
 	          System.out.println("visit"+visit);
-	         model.addAttribute("visit",visit);	        
+	         //model.addAttribute("visit",visit);	  
+	         
 	           if (visit.equals("0"))
 	               {
+	        	   session.setAttribute("visit","0");
 	        	   String patientid=doctorDAO.getPatientid(emailid,patientname);
 	        	   request.getSession().setAttribute("patientid",patientid);
 	        	   System.out.println("sessionpatientid"+patientid);
@@ -256,22 +260,85 @@ public class MainController {
 		    	  int d=doctorDAO.getUpdation(emailid,patientname);
 		    	  String visit=doctorDAO.getVisit(emailid,patientname);
 		    	  System.out.println("visit"+visit);		    
-		    	  model.addAttribute("visit",visit);
+		    	 // model.addAttribute("visit",visit);
 		    	   model.addAttribute("menu"," notes");	
 		    	   String patientid=doctorDAO.getPatientid(emailid,patientname);
 		    	   session.setAttribute("soapnotesid",patientid);
 		    	   System.out.println("patientid"+patientid);
+		    	   
+		    	   if(physicalDAO.getPhysicalpatient_id(patientid).size()==0 && radioDAO.getRadiologicpatient_id(patientid).size()==0 && hamiDAO.getHamiltonchiropracticpatientid(patientid).size()==0 )
+		    	   {
+		    		   model.addAttribute("patientid",patientid);
+		    		   model.addAttribute("menu","phyexam"); 
+		    		   session.setAttribute("visit","0");
+		    		   return "physicalexam";
+		    	   }
+		    	   
+		    	   if(physicalDAO.getPhysicalpatient_id(patientid).size()==0 && radioDAO.getRadiologicpatient_id(patientid).size()==0)
+		    	   {
+		    		  System.out.println("");
+		    		   model.addAttribute("patientid",patientid);
+		    		   model.addAttribute("menu","phyexam"); 
+		    		   session.setAttribute("visit","1");
+		    		   return "physicalexam";
+		    	   }
+		    	   if(physicalDAO.getPhysicalpatient_id(patientid).size()==0 &&hamiDAO.getHamiltonchiropracticpatientid(patientid).size()==0 )
+		    	   {
+		    		   model.addAttribute("patientid",patientid);
+		    		   model.addAttribute("menu","phyexam"); 
+		    		   session.setAttribute("visit","2");
+		    		   return "physicalexam";
+		    	   }
+		    	   if(radioDAO.getRadiologicpatient_id(patientid).size()==0 && hamiDAO.getHamiltonchiropracticpatientid(patientid).size()==0 )
+		    	   {
+		    		   model.addAttribute("patientid",patientid);
+		    		   model.addAttribute("menu","report");
+		    		   session.setAttribute("visit","3");
+		    		   return "radiologicreport";
+		    	   }
+		    	 
+		    	   
+		    		   if(physicalDAO.getPhysicalpatient_id(patientid).size()==0)
+		           {
+		    			   model.addAttribute("patientid",patientid);
+		    			   model.addAttribute("menu","phyexam");
+		    			   session.setAttribute("visit","4");
+		    		   return "physicalexam";
+		           	
+		           }
+		    	   if(radioDAO.getRadiologicpatient_id(patientid).size()==0)
+		           { 
+		    		   model.addAttribute("patientid",patientid);
+		    		   model.addAttribute("menu","report");
+		    		   session.setAttribute("visit","5");
+		    		   return "radiologicreport";
+		           	
+		           }
+		    	   
+		    	   if(hamiDAO.getHamiltonchiropracticpatientid(patientid).size()==0)
+		           { 
+		    		   model.addAttribute("patientid",patientid);
+		    		   model.addAttribute("menu","iniexam");
+		    		   session.setAttribute("visit","6");
+		    		   return "hamiltonchiropractic";
+		           	
+		           }
+		    	   
 		    	   if(soapDAO.getSoapid(patientid).size()>0)
 		           { 
+		    		  System.out.println("visit......."+visit);
+		    		   session.removeAttribute("visit");
 		    		   SoapnotesForm soapnotesForm = new SoapnotesForm();       
 		    	        soapnotesForm.setSoapnotes(soapDAO.getSoapid(patientid));
 		    	        model.addAttribute("soapnotesForm", soapnotesForm);		
 		    	        model.addAttribute("menu","notes");	
+		    	      
 		           	return "editsoapnotes";
 		           	
 		           }	
 		           else
 		           {
+		        	   session.removeAttribute("visit");
 		        	   System.out.print("patientsis"+patientid);
 		        	   model.addAttribute("patient",patientid);
 		        	   SoapnotesForm soapnotesForm = new SoapnotesForm();       
@@ -284,7 +351,7 @@ public class MainController {
 		    	  
 		       }
 	    }
-		   
+		model.addAttribute("menu","search");
 			model.addAttribute("Error","true");
 			return "doctorsearch";
 		
@@ -297,7 +364,7 @@ public class MainController {
   	   /*model.addAttribute("menu","report");
   	   model.addAttribute("menu","iniexam");
   	   model.addAttribute("menu","soapnotes"); */   
-  	  model.addAttribute("visit","0");
+  	
 	 //model.addAttribute("menu", "doctor");
 		return "physicalexam";
  
@@ -325,7 +392,7 @@ public class MainController {
 		model.addAttribute("physicalexamForm",physicalexamForm);
 		model.addAttribute("menu", "phyexam");	
 	    
-		 model.addAttribute("visit","0");
+	
 		return "viewphysicalexam";
  
 	}
@@ -340,7 +407,7 @@ public class MainController {
 		  
 		  	model.addAttribute("physicalexamForm", physicalexamForm);
 		  	model.addAttribute("menu", "phyexam");
-		  	 model.addAttribute("visit","0");
+		
 		return "viewphysicalexam";
 	}
 	@RequestMapping(value="/physicalexamlist", method=RequestMethod.GET)
@@ -354,7 +421,7 @@ public class MainController {
 		model.addAttribute("physicalexamForm", physicalexamForm);
 		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
 		model.addAttribute("menu", "phyexam");
-		 model.addAttribute("visit","0");
+
 		return "physicalexamlist";
 	}
 	
@@ -368,7 +435,7 @@ public class MainController {
 	
 		model.addAttribute("physicalexamForm", physicalexamForm);
 		model.addAttribute("menu", "phyexam");
-		 model.addAttribute("visit","0");
+	
 		return "editphysicalexam";
 	}
 	@RequestMapping(value="/updatephysicalexam", method=RequestMethod.POST)
@@ -396,7 +463,7 @@ public class MainController {
         model.addAttribute("physicalexamForm", physicalexamForm);
 	       model.addAttribute("success","true");
 	       model.addAttribute("menu", "phyexam");
-	       model.addAttribute("visit","0");
+	     
 	        return "viewphysicalexam";
 		
 	}
@@ -414,7 +481,7 @@ public class MainController {
 		//participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
 		physicalexamForm.setPhysicalexam(physicalDAO.getPhysicalexam());
         model.addAttribute("physicalexamForm", physicalexamForm);
-        model.addAttribute("visit","0");
+        
         model.addAttribute("menu", "phyexam");
 		}
 		
@@ -423,7 +490,7 @@ public class MainController {
 	@RequestMapping(value="/hamiltonchiropractic", method = RequestMethod.GET)
 	public String hamiltonchiropractic(ModelMap model) {
 		 model.addAttribute("iniexam", "doctor");
-		 model.addAttribute("visit","0");
+		
 	      return "hamiltonchiropractic";
 	}
 
@@ -450,7 +517,6 @@ public class MainController {
 		//System.out.println(autoaccident.getAdjustersname());
 	    
 		
-		 model.addAttribute("visit","0");
 		return "viewfirsthamiltonchiropractic";
  
 	}
@@ -462,7 +528,7 @@ public class MainController {
 		hamiltonchiropracticForm.setHamiltonchiropractic(hamiDAO.getHamiltonchiropractic());
 		model.addAttribute("hamiltonchiropracticForm",hamiltonchiropracticForm);
 		 model.addAttribute("menu", "iniexam");
-		 model.addAttribute("visit","0");
+		
 		return "viewfirsthamiltonchiropractic";
  
 	}
@@ -477,7 +543,8 @@ public class MainController {
 		model.addAttribute("hamiltonchiropracticForm", hamiltonchiropracticForm);
 		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
 		 model.addAttribute("menu", "iniexam");
-		 model.addAttribute("visit","0");
+
+
 		return "viewhamiltonchiropractic";
 	}
 	
@@ -491,7 +558,7 @@ public class MainController {
 	
 		model.addAttribute("hamiltonchiropracticForm", hamiltonchiropracticForm);
 		 model.addAttribute("menu", "iniexam");
-		 model.addAttribute("visit","0");
+	
 		return "edithamiltonchiropractic";
 	}
 	
@@ -522,7 +589,7 @@ public class MainController {
         model.addAttribute("hamiltonchiropracticForm", hamiltonchiropracticForm);
 	       model.addAttribute("success","true");
 	       model.addAttribute("menu", "iniexam");
-	       model.addAttribute("visit","0");
+	    
 	        return "viewfirsthamiltonchiropractic";
 		
 	}
@@ -541,7 +608,7 @@ public class MainController {
 		hamiltonchiropracticForm.setHamiltonchiropractic(hamiDAO.getHamiltonchiropractic());
         model.addAttribute("hamiltonchiropracticForm", hamiltonchiropracticForm);
         model.addAttribute("menu", "iniexam");
-        model.addAttribute("visit","0");
+    
 		}
 		
 		return "viewfirsthamiltonchiropractic";
@@ -716,7 +783,7 @@ public class MainController {
 	public String radiologicreport(HttpServletRequest request,HttpSession session,ModelMap model) {
 		session.removeAttribute("radio");
 		model.addAttribute("menu", "report");
-		 model.addAttribute("visit","0");
+		
 		return "radiologicreport";
 	}
 	@RequestMapping(value="/radiologicreport", method = RequestMethod.POST)
@@ -750,7 +817,7 @@ public class MainController {
 			
 	    	model.addAttribute("radiologicReportForm", radiologicReportForm);
 	    	model.addAttribute("menu", "report");
-	    	 model.addAttribute("visit","0");
+	    	
 			return "viewradiologicreport";
 	 
 		}
@@ -779,7 +846,7 @@ public class MainController {
 		  //model.addAttribute("participantsDetailsForm", participantsDetailsForm);
 		  model.addAttribute("menu", "report");
 		  	model.addAttribute("radiologicReportForm", radiologicReportForm);
-		  	 model.addAttribute("visit","0");
+		 
 		return "viewradiologicreport";
 	}
 	@RequestMapping(value="/radiologicReportList", method=RequestMethod.GET)
@@ -793,7 +860,7 @@ public class MainController {
 		model.addAttribute("radiologicReportForm", radiologicReportForm);
 		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
 		model.addAttribute("menu", "report");
-		 model.addAttribute("visit","0");
+	
 		return "radiologicReportList";
 		
 	}
@@ -807,7 +874,7 @@ public class MainController {
 	
 		model.addAttribute("radiologicReportForm", radiologicReportForm);
 		model.addAttribute("menu", "report");
-		 model.addAttribute("visit","0");
+		
 		return "editradiologicreport";
 	}
 	@RequestMapping(value="/updateradiologicreport", method=RequestMethod.POST)
@@ -835,7 +902,7 @@ public class MainController {
         model.addAttribute("radiologicReportForm", radiologicReportForm);
 	       model.addAttribute("success","true");
 	       model.addAttribute("menu", "report");
-	       model.addAttribute("visit","0");
+	     
 	        return "viewradiologicreport";
 		
 	}
@@ -852,7 +919,7 @@ public class MainController {
 		radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport());
         model.addAttribute("radiologicReportForm", radiologicReportForm);
         model.addAttribute("menu", "report");
-        model.addAttribute("visit","0");
+      
 		}
 		
 		return "viewradiologicreport";
@@ -2911,7 +2978,7 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 	public String soapnotes(HttpSession session,ModelMap model) {
 			session.removeAttribute("soap");
 			model.addAttribute("menu", "notes");
-			 model.addAttribute("visit","0");
+			
 	      return "soapnotes";
 	}
 	
@@ -2934,7 +3001,7 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
     	soapnotesForm.setSoapnotes(soapDAO.getSoapnotes());
 		model.addAttribute("soapnotesForm",soapnotesForm);
 		model.addAttribute("menu", "notes");
-		 model.addAttribute("visit","0");
+	
 		return "viewsoapnotes";
  
 	}
@@ -2964,7 +3031,6 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 		/*soapnotesForm.setSoapnotes(soapDAO.getSoapid());*/
 		model.addAttribute("soapnotesForm", soapnotesForm);
 		model.addAttribute("menu", "notes");
-		 model.addAttribute("visit","1"); 
         
         return "editsoapnotes";
         }
@@ -2996,7 +3062,7 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
         model.addAttribute("soapnotesForm", soapnotesForm);
 	       model.addAttribute("success","true");
 	       model.addAttribute("menu", "notes");
-	       model.addAttribute("visit","1");
+	       //model.addAttribute("visit","1");
 	        return "viewsoapnotes";
 		
 	}
@@ -3012,7 +3078,7 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 		  //model.addAttribute("participantsDetailsForm", participantsDetailsForm);
 		  	model.addAttribute("soapnotesForm", soapnotesForm);
 		  	model.addAttribute("menu", "notes");
-		  	 model.addAttribute("visit","1");
+		  	// model.addAttribute("visit","1");
 		return "viewsoapnotes";
 	}
 	@RequestMapping(value="/soapNotesList", method=RequestMethod.GET)
@@ -3026,7 +3092,7 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 		model.addAttribute("soapnotesForm", soapnotesForm);
 		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
 		model.addAttribute("menu", "notes");
-		 model.addAttribute("visit","0");
+	
 		return "soapNotesList";
 	}
 	@RequestMapping(value="/deletesoapnotes", method=RequestMethod.GET)
@@ -3041,7 +3107,7 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 		soapnotesForm.setSoapnotes(soapDAO.getSoapnotes());
         model.addAttribute("soapnotesForm", soapnotesForm);
         model.addAttribute("menu", "notes");
-        model.addAttribute("visit","0");
+      
 		}
 		
 		return "viewsoapnotes";

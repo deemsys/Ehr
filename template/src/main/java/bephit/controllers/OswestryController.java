@@ -2,10 +2,13 @@ package bephit.controllers;
 import java.io.IOException;
 
 import javax.servlet.http.HttpServletRequest;
+
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import javax.xml.ws.Binding;
 
+
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -35,14 +38,18 @@ public class OswestryController
 		return "oswestryindex";
 	}
 	@RequestMapping (value="/insertoswestryindex", method = RequestMethod.POST)
+
 	public String insertoswestryindex(HttpSession session,HttpServletRequest request,ModelMap model,@ModelAttribute("oswestrydetails") @Valid Oswestry oswestryindexdetails,BindingResult result) throws IOException
+
 	{
+
 		session.setAttribute("oswestrydisability",oswestryindexdetails);
 		if(result.hasErrors())
 		{
+			model.addAttribute("menu","wristindex");
 			return "oswestryindex";
 		}
-	
+
 		oswestrydao.insertoswestryindex(oswestryindexdetails);
 		OswestryForm oswestryindexform=new OswestryForm();
 		oswestryindexform.setOswestrydetails(oswestrydao.getoswestryindexDetails());
@@ -98,13 +105,17 @@ public class OswestryController
 	@RequestMapping (value="/updateoswestryindex", method = RequestMethod.POST)
 	public String updateoswestryindex(HttpServletRequest request,ModelMap model,@ModelAttribute("oswestrydetails") @Valid Oswestry oswestryindexdetails,BindingResult result) throws IOException
 	{
-		if(result.hasErrors())
-		{
-			OswestryForm oswestryindexform=new OswestryForm();
-			oswestryindexform.setOswestrydetails(oswestrydao.getoswestryindexDetails(oswestryindexdetails.getOswestryno()));
-			model.addAttribute("oswestryform", oswestryindexform);
-			return "editoswestryindex";
-		}
+
+	if(result.hasErrors())
+	{
+		model.addAttribute("menu","wristindex");
+		OswestryForm oswestryindexform=new OswestryForm();
+		oswestryindexform.setOswestrydetails(oswestrydao.getoswestryindexDetails(oswestryindexdetails.getOswestryno()));
+		model.addAttribute("oswestryform", oswestryindexform);
+
+		return "editoswestryindex";
+	}
+
 		oswestrydao.updateoswestryindex(oswestryindexdetails,oswestryindexdetails.getOswestryno());
 		OswestryForm oswestryindexform=new OswestryForm();
 		oswestryindexform.setOswestrydetails(oswestrydao.getoswestryindexDetails());
