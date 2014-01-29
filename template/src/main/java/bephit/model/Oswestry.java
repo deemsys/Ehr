@@ -22,7 +22,6 @@ public class Oswestry
 	
 	@NotEmpty
 	private String date;
-	
 	private String scores;
 	private String painscale;
 	private String painscale1;
