@@ -34,8 +34,13 @@
   </head>
 	<body>
 	<form method="POST" action="physicalexam">
+
+<br>
+<br>
+
 	 <c:choose>
             <c:when test="${empty physical}">
+
 
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
 
@@ -56,7 +61,7 @@
 	                            <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Physician Signature :</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="sign" /><span class="err"><form:errors path="Physicalexam.sign"></form:errors>
+				                  	<input type="hidden" name="patient_id" value="${patientid}"><input type="text" class="input_txtbx1" id="inp_id" name="sign" /><span class="err"><form:errors path="Physicalexam.sign"></form:errors>
 				                  </td>
 				                </tr>
 				                <tr class="row1">
