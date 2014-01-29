@@ -146,9 +146,9 @@ $(function() {
           <c:set value="${lowbackForm.lowback[0]}" var="lowback"/> 
  <tr class="row1">
  <input type="hidden" name="lowbackno" id="inp_id" value="${lowback.lowbackno}">
-<td><h2>Patient Name:</h2></td><td><input type="text"  name="pname" value="${lowback.pname}"/></td>
+<td><h2><span class="err">*</span>Patient Name:</h2></td><td><input type="text"  name="pname" value="${lowback.pname}"/><span class="err"><form:errors path="Lowback.pname"></form:errors></span></td>
 <td width="600">
-<td><h2>Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${lowback.date}" /></td>
+<td><h2><span class="err">*</span>Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${lowback.date}" /><span class="err"><form:errors path="Lowback.date"></form:errors></span></td>
 </tr>
 </table>
 <br/>
@@ -169,33 +169,33 @@ $(function() {
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="radio" class="tolerate" id="tolerate" name="tolerate" value="0" <c:if test= "${lowback.tolerate== '0'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;I Can tolerate the pain without having to use painkillers </td>
- <td width="50%"><input type="radio"  class="withoutpain" id="withoutpain" name="withoutpain" value="0" <c:if test= "${lowback.withoutpain== '0'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;I Can stand as long as I want without extrapain</td> 
+ <td width="50%"><input type="radio" class="tolerate" id="tolerate" name="tolerate" value="0"  <c:if test= "${lowback.tolerate== '0'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;I Can tolerate the pain without having to use painkillers </td>
+ <td width="50%"><input type="radio"  class="withoutpain" id="withoutpain" name="withoutpain" value="0"  <c:if test= "${lowback.withoutpain== '0'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;I Can stand as long as I want without extrapain</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="radio" class="tolerate" id="tolerate" name="tolerate" value="1" <c:if test= "${lowback.tolerate== '1'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;The pain is bad but I manage without using painkillers </td>
- <td width="50%"><input type="radio" class="withoutpain" id="withoutpain" name="withoutpain" value="1" <c:if test= "${lowback.withoutpain== '1'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;I Can stand as long as I want but it gives extrapain</td> 
+ <td width="50%"><input type="radio" class="tolerate" id="tolerate" name="tolerate" value="1"  <c:if test= "${lowback.tolerate== '1'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;The pain is bad but I manage without using painkillers </td>
+ <td width="50%"><input type="radio" class="withoutpain" id="withoutpain" name="withoutpain" value="1"  <c:if test= "${lowback.withoutpain== '1'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;I Can stand as long as I want but it gives extrapain</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="radio" class="tolerate" id="tolerate" name="tolerate" value="2" <c:if test= "${lowback.tolerate== '2'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Painkillers give complete relief from pain </td>
- <td width="50%"><input type="radio" class="withoutpain" id="withoutpain" name="withoutpain" value="2" <c:if test= "${lowback.withoutpain== '2'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Pain prevents me from standing more than 1 hour</td> 
+ <td width="50%"><input type="radio" class="tolerate" id="tolerate" name="tolerate" value="2"  <c:if test= "${lowback.tolerate== '2'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;Painkillers give complete relief from pain </td>
+ <td width="50%"><input type="radio" class="withoutpain" id="withoutpain" name="withoutpain" value="2"  <c:if test= "${lowback.withoutpain== '2'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;Pain prevents me from standing more than 1 hour</td> 
  </tr>
   <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="radio" class="tolerate" id="tolerate" name="tolerate" value="3" <c:if test= "${lowback.tolerate== '3'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Painkillers give moderate relief from pain </td>
- <td width="50%"><input type="radio" class="withoutpain" id="withoutpain" name="withoutpain" value="3" <c:if test= "${lowback.withoutpain== '3'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Pain prevents me from standing more than 30 minutes</td> 
+ <td width="50%"><input type="radio" class="tolerate" id="tolerate" name="tolerate" value="3"  <c:if test= "${lowback.tolerate== '3'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;Painkillers give moderate relief from pain </td>
+ <td width="50%"><input type="radio" class="withoutpain" id="withoutpain" name="withoutpain" value="3"  <c:if test= "${lowback.withoutpain== '3'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;Pain prevents me from standing more than 30 minutes</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="radio" class="tolerate" id="tolerate" name="tolerate" value="4" <c:if test= "${lowback.tolerate== '4'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Painkillers give very little relief from pain </td>
- <td width="50%"><input type="radio"  class="withoutpain" id="withoutpain" name="withoutpain" value="4" <c:if test= "${lowback.withoutpain== '4'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Pain prevents me from standing more than 10 minutes</td> 
+ <td width="50%"><input type="radio" class="tolerate" id="tolerate" name="tolerate" value="4"  <c:if test= "${lowback.tolerate== '4'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;Painkillers give very little relief from pain </td>
+ <td width="50%"><input type="radio"  class="withoutpain" id="withoutpain" name="withoutpain" value="4"  <c:if test= "${lowback.withoutpain== '4'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;Pain prevents me from standing more than 10 minutes</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="radio" class="tolerate" id="tolerate" name="tolerate" value="5" <c:if test= "${lowback.tolerate== '5'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Painkillers have no effect on the pain and I do not use them </td>
- <td width="50%"><input type="radio" class="withoutpain" id="withoutpain" name="withoutpain" value="5" <c:if test= "${lowback.withoutpain== '5'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Pain prevents me from standing at all</td> 
+ <td width="50%"><input type="radio" class="tolerate" id="tolerate" name="tolerate" value="5"  <c:if test= "${lowback.tolerate== '5'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;Painkillers have no effect on the pain and I do not use them </td>
+ <td width="50%"><input type="radio" class="withoutpain" id="withoutpain" name="withoutpain" value="5"  <c:if test= "${lowback.withoutpain== '5'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;Pain prevents me from standing at all</td> 
  </tr>
  <tr class="row2">  
  <td></td>
@@ -206,33 +206,33 @@ $(function() {
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="radio" class="withoutcausingpain" id="withoutcausingpain" name="withoutcausingpain" value="0" <c:if test= "${lowback.withoutcausingpain== '0'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;I can look after myself normally without causing extra pain </td>
- <td width="50%"><input type="radio" class="sleepingwell" id="sleepingwell" name="sleepingwell" value="0" <c:if test= "${lowback.sleepingwell== '0'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;I Can stand as long as I want without extrapain</td> 
+ <td width="50%"><input type="radio" class="withoutcausingpain" id="withoutcausingpain" name="withoutcausingpain" value="0"  <c:if test= "${lowback.withoutcausingpain== '0'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;I can look after myself normally without causing extra pain </td>
+ <td width="50%"><input type="radio" class="sleepingwell" id="sleepingwell" name="sleepingwell" value="0"  <c:if test= "${lowback.sleepingwell== '0'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;I Can stand as long as I want without extrapain</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="radio" class="withoutcausingpain" id="withoutcausingpain" name="withoutcausingpain" value="1" <c:if test= "${lowback.withoutcausingpain== '1'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;I can look after myself normally but it causes extra pain </td>
- <td width="50%"><input type="radio" class="sleepingwell" id="sleepingwell" name="sleepingwell" value="1" <c:if test= "${lowback.sleepingwell== '1'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;I Can sleep well only by using tablets</td> 
+ <td width="50%"><input type="radio" class="withoutcausingpain" id="withoutcausingpain" name="withoutcausingpain" value="1"  <c:if test= "${lowback.withoutcausingpain== '1'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;I can look after myself normally but it causes extra pain </td>
+ <td width="50%"><input type="radio" class="sleepingwell" id="sleepingwell" name="sleepingwell" value="1"  <c:if test= "${lowback.sleepingwell== '1'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;I Can sleep well only by using tablets</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="radio"  class="withoutcausingpain" id="withoutcausingpain" name="withoutcausingpain" value="2" <c:if test= "${lowback.withoutcausingpain== '2'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;It is painful to look after myself and I am slow and careful </td>
- <td width="50%"><input type="radio" class="sleepingwell" id="sleepingwell" name="sleepingwell" value="2" <c:if test= "${lowback.sleepingwell== '2'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Even when I take tablets I have less than 6 hours sleep</td> 
+ <td width="50%"><input type="radio"  class="withoutcausingpain" id="withoutcausingpain" name="withoutcausingpain" value="2"  <c:if test= "${lowback.withoutcausingpain== '2'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;It is painful to look after myself and I am slow and careful </td>
+ <td width="50%"><input type="radio" class="sleepingwell" id="sleepingwell" name="sleepingwell" value="2"  <c:if test= "${lowback.sleepingwell== '2'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;Even when I take tablets I have less than 6 hours sleep</td> 
  </tr>
   <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="radio" class="withoutcausingpain" id="withoutcausingpain" name="withoutcausingpain" value="3" <c:if test= "${lowback.withoutcausingpain== '3'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;I need some help but manage  most of my personal care </td>
- <td width="50%"><input type="radio" class="sleepingwell" id="sleepingwell" name="sleepingwell" value="3" <c:if test= "${lowback.sleepingwell== '3'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Even when I take tablets I have less than 4 hours sleep</td> 
+ <td width="50%"><input type="radio" class="withoutcausingpain" id="withoutcausingpain" name="withoutcausingpain" value="3"  <c:if test= "${lowback.withoutcausingpain== '3'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;I need some help but manage  most of my personal care </td>
+ <td width="50%"><input type="radio" class="sleepingwell" id="sleepingwell" name="sleepingwell" value="3"  <c:if test= "${lowback.sleepingwell== '3'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;Even when I take tablets I have less than 4 hours sleep</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="radio" class="withoutcausingpain" id="withoutcausingpain" name="withoutcausingpain" value="4" <c:if test= "${lowback.withoutcausingpain== '4'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;I need help every day in most aspects of self care </td>
- <td width="50%"><input type="radio" class="sleepingwell" id="sleepingwell" name="sleepingwell" value="4" <c:if test= "${lowback.sleepingwell== '4'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Even when I take tablets I have less than 2 hours sleep</td> 
+ <td width="50%"><input type="radio" class="withoutcausingpain" id="withoutcausingpain" name="withoutcausingpain" value="4"  <c:if test= "${lowback.withoutcausingpain== '4'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;I need help every day in most aspects of self care </td>
+ <td width="50%"><input type="radio" class="sleepingwell" id="sleepingwell" name="sleepingwell" value="4"  <c:if test= "${lowback.sleepingwell== '4'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;Even when I take tablets I have less than 2 hours sleep</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="radio" class="withoutcausingpain" id="withoutcausingpain" name="withoutcausingpain" value="5" <c:if test= "${lowback.withoutcausingpain== '5'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;I do not get dressed;I wash without difficulty and stay in bed </td>
- <td width="50%"><input type="radio" class="sleepingwell" id="sleepingwell" name="sleepingwell" value="5" <c:if test= "${lowback.sleepingwell== '5'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Pain prevents me from sleeping at all</td> 
+ <td width="50%"><input type="radio" class="withoutcausingpain" id="withoutcausingpain" name="withoutcausingpain" value="5"  <c:if test= "${lowback.withoutcausingpain== '5'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;I do not get dressed;I wash without difficulty and stay in bed </td>
+ <td width="50%"><input type="radio" class="sleepingwell" id="sleepingwell" name="sleepingwell" value="5"  <c:if test= "${lowback.sleepingwell== '5'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;Pain prevents me from sleeping at all</td> 
  </tr>
   
  <tr class="row2">  
@@ -244,33 +244,33 @@ $(function() {
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="radio" class="canlift" id="canlift" name="canlift" value="0" <c:if test= "${lowback.canlift== '0'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;I can lift heavy weights without extra pain </td>
- <td width="50%"><input type="radio"  class="normal" id="normal" name="normal" value="0" <c:if test= "${lowback.normal== '0'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;My social life is normal and gives me no extra pain</td> 
+ <td width="50%"><input type="radio" class="canlift" id="canlift" name="canlift" value="0"  <c:if test= "${lowback.canlift== '0'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;I can lift heavy weights without extra pain </td>
+ <td width="50%"><input type="radio"  class="normal" id="normal" name="normal" value="0"  <c:if test= "${lowback.normal== '0'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;My social life is normal and gives me no extra pain</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="radio" class="canlift" id="canlift" name="canlift" value="1" <c:if test= "${lowback.canlift== '1'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;I can lift heavy weights  but it gives extra pain </td>
- <td width="50%"><input type="radio" class="normal" id="normal" name="normal" value="1" <c:if test= "${lowback.normal== '1'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;I Can sleep well only by using tablets</td> 
+ <td width="50%"><input type="radio" class="canlift" id="canlift" name="canlift" value="1"  <c:if test= "${lowback.canlift== '1'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;I can lift heavy weights  but it gives extra pain </td>
+ <td width="50%"><input type="radio" class="normal" id="normal" name="normal" value="1"  <c:if test= "${lowback.normal== '1'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;I Can sleep well only by using tablets</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="radio" class="canlift" id="canlift" name="canlift" value="2" <c:if test= "${lowback.canlift== '2'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Pain prevents me from lifting heavy weights off the floor,but I can manage if they are conveniently positions for example: On a table </td>
- <td width="50%"><input type="radio" class="normal" id="normal" name="normal" value="2" <c:if test= "${lowback.normal== '2'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Pain has no significant effect on my social life apart from limiting my more energetic interest,e.g. dancing</td> 
+ <td width="50%"><input type="radio" class="canlift" id="canlift" name="canlift" value="2"  <c:if test= "${lowback.canlift== '2'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;Pain prevents me from lifting heavy weights off the floor,but I can manage if they are conveniently positions for example: On a table </td>
+ <td width="50%"><input type="radio" class="normal" id="normal" name="normal" value="2"  <c:if test= "${lowback.normal== '2'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;Pain has no significant effect on my social life apart from limiting my more energetic interest,e.g. dancing</td> 
  </tr>
   <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="radio" class="canlift" id="canlift" name="canlift" value="3" <c:if test= "${lowback.canlift== '3'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Pain prevents me from lifting heavy weights,but I can manage light to medium weights if they are conveniently positioned </td>
- <td width="50%"><input type="radio" class="normal" id="normal" name="normal" value="3" <c:if test= "${lowback.normal== '3'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Pain has restricted my social life and i do not go out as often </td> 
+ <td width="50%"><input type="radio" class="canlift" id="canlift" name="canlift" value="3"  <c:if test= "${lowback.canlift== '3'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;Pain prevents me from lifting heavy weights,but I can manage light to medium weights if they are conveniently positioned </td>
+ <td width="50%"><input type="radio" class="normal" id="normal" name="normal" value="3"  <c:if test= "${lowback.normal== '3'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;Pain has restricted my social life and i do not go out as often </td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="radio"  class="canlift" id="canlift" name="canlift" value="4" <c:if test= "${lowback.canlift== '4'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;I can lift very light weights </td>
- <td width="50%"><input type="radio" class="normal" id="normal" name="normal" value="4" <c:if test= "${lowback.normal== '4'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Pain has restricted my social life to my home</td> 
+ <td width="50%"><input type="radio"  class="canlift" id="canlift" name="canlift" value="4"  <c:if test= "${lowback.canlift== '4'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;I can lift very light weights </td>
+ <td width="50%"><input type="radio" class="normal" id="normal" name="normal" value="4"  <c:if test= "${lowback.normal== '4'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;Pain has restricted my social life to my home</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="radio" class="canlift" id="canlift" name="canlift" value="5" <c:if test= "${lowback.canlift== '5'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;I cannot lift or carry anything at all </td>
- <td width="50%"><input type="radio" class="normal" id="normal" name="normal" value="5" <c:if test= "${lowback.normal== '5'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;I have no social life because of pain</td> 
+ <td width="50%"><input type="radio" class="canlift" id="canlift" name="canlift" value="5"  <c:if test= "${lowback.canlift== '5'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;I cannot lift or carry anything at all </td>
+ <td width="50%"><input type="radio" class="normal" id="normal" name="normal" value="5"  <c:if test= "${lowback.normal== '5'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;I have no social life because of pain</td> 
  </tr>
  <tr class="row2">  
  <td></td>
@@ -281,33 +281,33 @@ $(function() {
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="radio" class="walkingdistance" id="walkingdistance" name="walkingdistance" value="0" <c:if test= "${lowback.walkingdistance== '0'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Pain does not prevent me from walking any distance </td>
- <td width="50%"><input type="radio" class="withoutextrapain" id="withoutextrapain" name="withoutextrapain" value="0" <c:if test= "${lowback.withoutextrapain== '0'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;I can travel anywhere without extra pain</td> 
+ <td width="50%"><input type="radio" class="walkingdistance" id="walkingdistance" name="walkingdistance" value="0"  <c:if test= "${lowback.walkingdistance== '0'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;Pain does not prevent me from walking any distance </td>
+ <td width="50%"><input type="radio" class="withoutextrapain" id="withoutextrapain" name="withoutextrapain" value="0"  <c:if test= "${lowback.withoutextrapain== '0'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;I can travel anywhere without extra pain</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="radio" class="walkingdistance" id="walkingdistance" name="walkingdistance" value="1" <c:if test= "${lowback.walkingdistance== '1'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Pain prevents me from walking more than one mile </td>
- <td width="50%"><input type="radio" class="withoutextrapain" id="withoutextrapain" name="withoutextrapain" value="1" <c:if test= "${lowback.withoutextrapain== '1'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;I can travel anywhere but it gives me extra pain</td> 
+ <td width="50%"><input type="radio" class="walkingdistance" id="walkingdistance" name="walkingdistance" value="1"  <c:if test= "${lowback.walkingdistance== '1'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;Pain prevents me from walking more than one mile </td>
+ <td width="50%"><input type="radio" class="withoutextrapain" id="withoutextrapain" name="withoutextrapain" value="1"  <c:if test= "${lowback.withoutextrapain== '1'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;I can travel anywhere but it gives me extra pain</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="radio" class="walkingdistance" id="walkingdistance" name="walkingdistance" value="2" <c:if test= "${lowback.walkingdistance== '2'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Pain prevents me from walking more than one-half mile </td>
- <td width="50%"><input type="radio" class="withoutextrapain" id="withoutextrapain" name="withoutextrapain" value="2" <c:if test= "${lowback.withoutextrapain== '2 '}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Pain is bad but I manage journeys over 2 hours</td> 
+ <td width="50%"><input type="radio" class="walkingdistance" id="walkingdistance" name="walkingdistance" value="2"  <c:if test= "${lowback.walkingdistance== '2'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;Pain prevents me from walking more than one-half mile </td>
+ <td width="50%"><input type="radio" class="withoutextrapain" id="withoutextrapain" name="withoutextrapain" value="2" <c:if test= "${lowback.withoutextrapain== '2 '}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;Pain is bad but I manage journeys over 2 hours</td> 
  </tr>
   <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="radio" class="walkingdistance" id="walkingdistance" name="walkingdistance" value="3" <c:if test= "${lowback.walkingdistance== '3'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Pain prevents me from walking more than one-quarter mile </td>
- <td width="50%"><input type="radio" class="withoutextrapain" id="withoutextrapain" name="withoutextrapain" value="3" <c:if test= "${lowback.withoutextrapain== '3'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Pain is bad but I manage journeys less than one hours </td> 
+ <td width="50%"><input type="radio" class="walkingdistance" id="walkingdistance" name="walkingdistance" value="3"  <c:if test= "${lowback.walkingdistance== '3'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;Pain prevents me from walking more than one-quarter mile </td>
+ <td width="50%"><input type="radio" class="withoutextrapain" id="withoutextrapain" name="withoutextrapain" value="3"  <c:if test= "${lowback.withoutextrapain== '3'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;Pain is bad but I manage journeys less than one hours </td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="radio" class="walkingdistance" id="walkingdistance" name="walkingdistance" value="4" <c:if test= "${lowback.walkingdistance== '4'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;I can only using stick or crutches </td>
- <td width="50%"><input type="radio" class="withoutextrapain" id="withoutextrapain" name="withoutextrapain" value="4" <c:if test= "${lowback.withoutextrapain== '4'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Pain restrict me to short necessary journeys undo 30 minutes</td> 
+ <td width="50%"><input type="radio" class="walkingdistance" id="walkingdistance" name="walkingdistance" value="4"  <c:if test= "${lowback.walkingdistance== '4'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;I can only using stick or crutches </td>
+ <td width="50%"><input type="radio" class="withoutextrapain" id="withoutextrapain" name="withoutextrapain" value="4"  <c:if test= "${lowback.withoutextrapain== '4'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;Pain restrict me to short necessary journeys undo 30 minutes</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="radio" class="walkingdistance" id="walkingdistance" name="walkingdistance" value="5" <c:if test= "${lowback.walkingdistance== '5'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;I am in bed most of the time and have to crawl to the toilet </td>
- <td width="50%"><input type="radio" class="withoutextrapain" id="withoutextrapain" name="withoutextrapain" value="5" <c:if test= "${lowback.withoutextrapain== '5'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Pain prevents me from traveling except to the doctor or hospital</td> 
+ <td width="50%"><input type="radio" class="walkingdistance" id="walkingdistance" name="walkingdistance" value="5"  <c:if test= "${lowback.walkingdistance== '5'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;I am in bed most of the time and have to crawl to the toilet </td>
+ <td width="50%"><input type="radio" class="withoutextrapain" id="withoutextrapain" name="withoutextrapain" value="5" <c:if test= "${lowback.withoutextrapain== '5'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()" >&nbsp;&nbsp;Pain prevents me from traveling except to the doctor or hospital</td> 
  </tr>
  <tr class="row2">  
  <td></td>
@@ -318,33 +318,33 @@ $(function() {
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="radio" class="cansit" id="cansit" name="cansit" value="0" <c:if test= "${lowback.cansit== '0'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;I can sit in a chair as long as I like </td>
- <td width="50%"><input type="radio" class="rapidlybetter" id="rapidlybetter" name="rapidlybetter" value="0" <c:if test= "${lowback.rapidlybetter== '0'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;My pain is rapidly getting better</td> 
+ <td width="50%"><input type="radio" class="cansit" id="cansit" name="cansit" value="0"  <c:if test= "${lowback.cansit== '0'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;I can sit in a chair as long as I like </td>
+ <td width="50%"><input type="radio" class="rapidlybetter" id="rapidlybetter" name="rapidlybetter" value="0"  <c:if test= "${lowback.rapidlybetter== '0'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;My pain is rapidly getting better</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="radio" class="cansit" id="cansit" name="cansit" value="1" <c:if test= "${lowback.cansit== '1'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Pain prevents me from walking more than one mile </td>
- <td width="50%"><input type="radio" class="rapidlybetter" id="rapidlybetter" name="rapidlybetter" value="1" <c:if test= "${lowback.rapidlybetter== '1'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;My pain flucutates but overall is definitely getting better</td> 
+ <td width="50%"><input type="radio" class="cansit" id="cansit" name="cansit" value="1"  <c:if test= "${lowback.cansit== '1'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;Pain prevents me from walking more than one mile </td>
+ <td width="50%"><input type="radio" class="rapidlybetter" id="rapidlybetter" name="rapidlybetter" value="1"  <c:if test= "${lowback.rapidlybetter== '1'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;My pain flucutates but overall is definitely getting better</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="radio" class="cansit" id="cansit" name="cansit" value="2" <c:if test= "${lowback.cansit== '2'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Pain prevents me from sitting more than one hour </td>
- <td width="50%"><input type="radio" class="rapidlybetter" id="rapidlybetter" name="rapidlybetter" value="2" <c:if test= "${lowback.rapidlybetter== '2'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;My pain seems to be getting better but improvement is slow at the present</td> 
+ <td width="50%"><input type="radio" class="cansit" id="cansit" name="cansit" value="2"  <c:if test= "${lowback.cansit== '2'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;Pain prevents me from sitting more than one hour </td>
+ <td width="50%"><input type="radio" class="rapidlybetter" id="rapidlybetter" name="rapidlybetter" value="2"  <c:if test= "${lowback.rapidlybetter== '2'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;My pain seems to be getting better but improvement is slow at the present</td> 
  </tr>
   <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="radio" class="cansit" id="cansit" name="cansit" value="3" <c:if test= "${lowback.cansit== '3'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Pain prevents me from sitting more than 30 minutes </td>
- <td width="50%"><input type="radio" class="rapidlybetter" id="rapidlybetter" name="rapidlybetter" value="3" <c:if test= "${lowback.rapidlybetter== '3'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Pain is neither getting better nor worse </td> 
+ <td width="50%"><input type="radio" class="cansit" id="cansit" name="cansit" value="3"  <c:if test= "${lowback.cansit== '3'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;Pain prevents me from sitting more than 30 minutes </td>
+ <td width="50%"><input type="radio" class="rapidlybetter" id="rapidlybetter" name="rapidlybetter" value="3"  <c:if test= "${lowback.rapidlybetter== '3'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;Pain is neither getting better nor worse </td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="radio" class="cansit" id="cansit" name="cansit" value="4" <c:if test= "${lowback.cansit== '4'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Pain prevents me from sitting more than 30 minutes </td>
- <td width="50%"><input type="radio" class="rapidlybetter" id="rapidlybetter" name="rapidlybetter" value="4" <c:if test= "${lowback.rapidlybetter== '4'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;My pain is gradually worsening</td> 
+ <td width="50%"><input type="radio" class="cansit" id="cansit" name="cansit" value="4"  <c:if test= "${lowback.cansit== '4'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;Pain prevents me from sitting more than 30 minutes </td>
+ <td width="50%"><input type="radio" class="rapidlybetter" id="rapidlybetter" name="rapidlybetter" value="4"  <c:if test= "${lowback.rapidlybetter== '4'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;My pain is gradually worsening</td> 
  </tr>
  <tr class="row1"> 
  <td></td> 
- <td width="50%"><input type="radio" class="cansit" id="cansit" name="cansit" value="5" <c:if test= "${lowback.cansit== '5'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;Pain prevents me from sitting all most all the time </td>
- <td width="50%"><input type="radio" class="rapidlybetter" id="rapidlybetter" name="rapidlybetter" value="5" <c:if test= "${lowback.rapidlybetter== '5'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;My pain is rapidly worsening</td> 
+ <td width="50%"><input type="radio" class="cansit" id="cansit" name="cansit" value="5" <c:if test= "${lowback.cansit== '5'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;Pain prevents me from sitting all most all the time </td>
+ <td width="50%"><input type="radio" class="rapidlybetter" id="rapidlybetter" name="rapidlybetter" value="5"  <c:if test= "${lowback.rapidlybetter== '5'}"> <c:out value="checked"></c:out></c:if> onclick="return doAjaxPost()">&nbsp;&nbsp;My pain is rapidly worsening</td> 
  </tr>
  </table>
  <table>

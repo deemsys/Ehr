@@ -40,21 +40,21 @@ $(function() {
 <script type="text/javascript">
  function percentage()
  {
-	 alert("hi");
 	 var score=document.getElementById("score").value;
 	 var section=document.getElementById("section").value;
 	 var div=(score*2)/(section*10);
 	 var adl=div/100;
 	 alert("div"+div);
 	 document.getElementById("adl").value=adl;
+	 document.getElementById("adldiv").innerHTML=adl;
  }
  
  
  </script>
  <script type="text/javascript">
  function doAjaxPost() {
-	 alert("hi");
 	 document.getElementById("page").style.display="block";
+	 document.getElementById("page1").style.display="block";
 	 var section1=0;
 	 var tolerate=0;
 	 if($("input[type='radio'].tolerate").is(':checked')) {
@@ -120,8 +120,10 @@ $(function() {
 	 }
 	 var total=parseInt(tolerate)+parseInt(withoutpain)+parseInt(withoutcausingpain)+parseInt(sleepingwell)+parseInt(canlift)+parseInt(normal)+parseInt(walkingdistance)+parseInt(withoutextrapain)+parseInt(cansit)+parseInt(rapidlybetter);
 	 document.getElementById("score").value=total;
+	 document.getElementById("score1").innerHTML=total;
 	 var sectiontotal=parseInt(section1)+parseInt(section2)+parseInt(section3)+parseInt(section4)+parseInt(section5)+parseInt(section6)+parseInt(section7)+parseInt(section8)+parseInt(section9)+parseInt(section10);
-	 document.getElementById("section").value=sectiontotal;		   
+	 document.getElementById("section").value=sectiontotal;	
+	 document.getElementById("section1").innerHTML=sectiontotal;
  }
 		  
  </script>
@@ -355,10 +357,18 @@ $(function() {
 </tr>
 </table>
 <table style="display:none" id="page">
-<tr>
- <td width="50%">Scoring:Questions are scored on a vertical scale of 0-5.Total scores and multiply by 2 .Divide by number of sections answered multiplied by 10.A score of 22% or more is considered significant activities of daily living disability.<br/><br/>(Score &nbsp;<input type="text" id="score" name="score" size="7">*2)&nbsp;/&nbsp;( <input type="text" id="section" name="section" size="7">Section *10)&nbsp;&nbsp;=&nbsp;&nbsp;<input type="text" id="adl" name="adl" size="9">&nbsp;%ADL&nbsp;<input type="text" name="adl2" size="9"><br/><br/><input type="button" value="Calculate" onclick="return percentage()" class="submit_btn"></td>
- <td width="50%">Comments:&nbsp;&nbsp;<textarea rows="6" cols="50" name="comment"></textarea></td>
+ <tr>
+ <td>Scoring:Questions are scored on a vertical scale of 0-5.Total scores and multiply by 2 .Divide by number of sections answered multiplied by 10.A score of 22% or more is considered significant activities of daily living disability.<br/><br/></td>
  </tr>
+ </table>
+ <table style="display:none" id="page1">
+ <tr>
+ <td>(</td><td><input type="hidden" id="score" name="score" size="7"><div id="score1"></div></td><td>*2)&nbsp;/&nbsp;( <input type="hidden" id="section" name="section" size="7"></td><td><div id="section1"></div></td><td> *10)</td><td>&nbsp;&nbsp;=&nbsp;&nbsp;<input type="hidden" id="adl" name="adl" size="9"></td><td><div id="adldiv"></div></td><td>&nbsp;%ADL&nbsp;<input type="hidden" name="adl2" size="9"> </td><td><input type="button" value="Calculate" onclick="return percentage()" class="submit_btn"></td>
+ </tr>
+ </table>
+ <table>
+ <tr>
+ <td width="250" valign="middle">Comments:&nbsp;&nbsp;</td><td><textarea rows="8" cols="150" name="comment"></textarea></td></tr>
  </table>
 <table align="right">
 <tr>
@@ -375,9 +385,9 @@ $(function() {
 	    <div class="contentbox">
           <table cellpadding="0" cellspacing="0" border="0" width="98%"> 
  <tr class="row1">
-<td><h2><span class="err">*</span>Patient Name:</h2></td><td><input type="text"  name="pname" value="${low.pname}"/><span class="err"><form:errors path="Lowback.pname"></form:errors></span></td>
-<td width="600">
-<td><h2><span class="err">*</span>Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${low.date}" /><span class="err"><form:errors path="Lowback.date"></form:errors></span></td>
+<td width="150"><h2><span class="err">*</span>Patient Name:</h2></td><td width="380"><input type="text"  name="pname" value="${low.pname}"/><span class="err"><form:errors path="Lowback.pname"></form:errors></span></td>
+<td width="300">
+<td><h2><span class="err">*</span>Date:</h2></td><td width="380"><input type="text"  id="datepicker" name="date" value="${low.date}" /><span class="err"><form:errors path="Lowback.date"></form:errors></span></td>
 </tr>
 </table>
 <br/>
@@ -583,10 +593,17 @@ $(function() {
 </table>
 <table style="display:none" id="page">
  <tr>
-  <td></td>
- <td width="50%">Scoring:Questions are scored on a vertical scale of 0-5.Total scores and multiply by 2 .Divide by number of sections answered multiplied by 10.A score of 22% or more is considered significant activities of daily living disability.<br/><br/>(Score &nbsp;<input type="text" class="score" id="score" name="score" size="7" value="${low.score}">*2)&nbsp;/&nbsp;( <input type="text" class="section" id="section" name="section" size="7" value="${low.section}">Section *10)&nbsp;&nbsp;=&nbsp;&nbsp;<input type="text" class="adl" id="adl" name="adl" size="9" value="${low.adl}">&nbsp;%ADL&nbsp;<input type="text" name="adl2" size="9" value="${low.adl2}"><br/><br/><input type="button" value="Calculate" onclick="return percentage()" class="submit_btn"></td>
- <td width="50%">Comments:&nbsp;&nbsp;<textarea rows="6" cols="50" name="comment">${low.comment}</textarea></td>
+ <td>Scoring:Questions are scored on a vertical scale of 0-5.Total scores and multiply by 2 .Divide by number of sections answered multiplied by 10.A score of 22% or more is considered significant activities of daily living disability.<br/><br/></td>
  </tr>
+ </table>
+ <table style="display:none" id="page1">
+ <tr>
+ <td>(</td><td><input type="hidden" id="score" name="score" size="7" value="${low.score}"><div id="score1"></div></td><td>*2)&nbsp;/&nbsp;( <input type="hidden" id="section" name="section" size="7" value="${low.section}"></td><td><div id="section1"></div></td><td> *10)</td><td>&nbsp;&nbsp;=&nbsp;&nbsp;<input type="hidden" id="adl" name="adl" size="9" value="${low.adl}"></td><td><div id="adldiv"></div></td><td>&nbsp;%ADL&nbsp;<input type="hidden" name="adl2" size="9" value="${low.adl2}"> </td><td><input type="button" value="Calculate" onclick="return percentage()" class="submit_btn"></td>
+ </tr>
+ </table>
+ <table>
+ <tr>
+ <td width="250" valign="middle">Comments:&nbsp;&nbsp;</td><td><textarea rows="8" cols="150" name="comment"></textarea></td></tr>
  </table>
 <table align="right">
 <tr>

@@ -128,9 +128,9 @@ $(function() {
            <c:set value="${elbowexamForm.elbowexam[0]}" var="elbowexam"/>
  <tr class="row1">
  <input type="hidden" name="elbowexamid" id="inp_id" value="${elbowexam.elbowexamid}">
-<td><h2>Patient Name:</h2></td><td><input type="text"  name="pname" value="${elbowexam.pname}"/></td>
+<td><h2><span class="err">*</span>Patient Name:</h2></td><td><input type="text"  name="pname" value="${elbowexam.pname}"/><span class="err"><form:errors path="Elbowexam.pname"></form:errors></span></td>
 <td width="600">
-<td><h2>Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${elbowexam.date}"/></td>
+<td><h2><span class="err">*</span>Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${elbowexam.date}"/><span class="err"><form:errors path="Elbowexam.date"></form:errors></span></td>
 </tr>
 </table>
 <br/>
@@ -389,7 +389,7 @@ $(function() {
  </tr>
  </tr>
  <br/>
- <table><tr><td><B style="font-size:14px">PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sign" value="${elbowexam.sign}"></B></td></tr></table>
+ <table><tr><td><B style="font-size:14px"><span class="err">*</span>PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sign" value="${elbowexam.sign}"></B><span class="err"><form:errors path="Elbowexam.sign"></form:errors></span></td></tr></table>
 <table align="right">
 <tr>
 <td><input type="submit" class="submit_btn" value="Save"></td>

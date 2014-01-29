@@ -13,6 +13,7 @@ import javax.sql.DataSource;
 
 import bephit.model.Hardshipagreement;
 import bephit.model.Insuranceinformation;
+import bephit.model.Treatform;
  
 
 
@@ -244,6 +245,93 @@ public int deleteinsuranceinformation(String number){
 	   		else
 	   			return 0;
 	}
+public List<Insuranceinformation> getlimitedinsuranceform(int page) {
+	Connection con = null;
+	Statement statement = null;
+	ResultSet resultSet = null;
+	
+	
+	try {
+		con = dataSource.getConnection();
+		statement = con.createStatement();
+	} catch (SQLException e1) {
+		e1.printStackTrace();
+	}
+	List<Insuranceinformation> Insuranceinformation = new ArrayList<Insuranceinformation>();
+	try {
+
+		String cmd;
+		int offset = 5 * (page - 1);
+		int limit = 5;
+		
+			
+				cmd = "select * from tbl_insuranceinformation order by patient_name asc limit " + offset + ","+ limit+"" ;
+
+		resultSet = statement.executeQuery(cmd);
+		while (resultSet.next()) {
+			Insuranceinformation.add(new Insuranceinformation(resultSet.getString("number"),resultSet.getString("patient_name"),
+		    		resultSet.getString("date_of_accident"),
+		    		resultSet.getString("have_insurance"),
+		    		resultSet.getString("employers_name"),
+		    		resultSet.getString("insurance_company"),
+		    		resultSet.getString("phone"),
+		    		resultSet.getString("policy"),
+		    		resultSet.getString("infono"),
+		    		resultSet.getString("supplemental_company"),
+		    		resultSet.getString("sup_phone"),
+		    		resultSet.getString("patient_sign"),
+		    		resultSet.getString("date"),
+		    		resultSet.getString("spouse_sign"),
+		    		resultSet.getString("date1")));
+		}
+	} catch (Exception e) {
+		/*logger.info(e.toString());*/
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	} finally {
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	}
+	return Insuranceinformation;
+
+}
+public int getnoofinsuranceinformation() {
+	Connection con = null;
+	Statement statement = null;
+	ResultSet resultSet = null;
+	int noofRecords = 0;
+	
+	try {
+		con = dataSource.getConnection();
+		statement = con.createStatement();
+	} catch (SQLException e1) {
+		e1.printStackTrace();
+	}
+	List<Insuranceinformation> Insuranceinformation = new ArrayList<Insuranceinformation>();
+	try {
+
+		String cmd;
+		
+				cmd = "select count(*) as noofrecords from tbl_insuranceinformation";
+				System.out.println("command"+cmd);			
+		resultSet = statement.executeQuery(cmd);
+		if (resultSet.next())
+			noofRecords = resultSet.getInt("noofrecords");
+
+	} catch (Exception e) {
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	} finally {
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	}
+	return noofRecords;
+
+}
 
 
 public void releaseConnection(Connection con){

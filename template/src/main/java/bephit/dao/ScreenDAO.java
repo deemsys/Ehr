@@ -11,6 +11,7 @@ import java.util.Date;
 import java.util.List;
 import javax.sql.DataSource;
 
+import bephit.model.Hardshipagreement;
 import bephit.model.SoapNotes;
 import bephit.model.screeningAuthz;
 
@@ -212,7 +213,82 @@ public class ScreenDAO {
 		   			return 0;
 		}
 		
+	public List<screeningAuthz> getlimitedscreeninglist(int page) {
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		
+		
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<screeningAuthz> screen = new ArrayList<screeningAuthz>();
+		try {
 
+			String cmd;
+			int offset = 5 * (page - 1);
+			int limit = 5;
+			
+				
+					cmd = "select * from Screening_Details order by name asc limit " + offset + ","+ limit+"" ;
+
+			resultSet = statement.executeQuery(cmd);
+			while (resultSet.next()) {
+				screen.add(new screeningAuthz(resultSet.getString("screen_no"),resultSet.getString("date"),
+			    		resultSet.getString("name")
+			    		 ));
+			}
+		} catch (Exception e) {
+			/*logger.info(e.toString());*/
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		} finally {
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		}
+		return screen;
+
+	}
+	public int getnoofscreeninglist() {
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		int noofRecords = 0;
+		
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<screeningAuthz> screen = new ArrayList<screeningAuthz>();
+		try {
+
+			String cmd;
+			
+					cmd = "select count(*) as noofrecords from Screening_Details";
+					System.out.println("command"+cmd);			
+			resultSet = statement.executeQuery(cmd);
+			if (resultSet.next())
+				noofRecords = resultSet.getInt("noofrecords");
+
+		} catch (Exception e) {
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		} finally {
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		}
+		return noofRecords;
+
+	}
 	
 	
 	

@@ -12,6 +12,7 @@ import java.util.List;
 import javax.sql.DataSource;
 
 import bephit.model.Assignment;
+import bephit.model.Hardshipagreement;
 import bephit.model.SoapNotes;
 
 public class AssignmentDAO {
@@ -237,6 +238,94 @@ public class AssignmentDAO {
 		   			return 0;
 		}
 		
+	public List<Assignment> getlimitedassignment(int page) {
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		
+		
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<Assignment> assignment = new ArrayList<Assignment>();
+		try {
+
+			String cmd;
+			int offset = 5 * (page - 1);
+			int limit = 5;
+			
+				
+					cmd = "select * from assignment_details order by patient_name asc limit " + offset + ","+ limit+"" ;
+
+			resultSet = statement.executeQuery(cmd);
+			while (resultSet.next()) {
+				assignment.add(new Assignment(resultSet.getString("assignment_no"),resultSet.getString("day"),
+			    		resultSet.getString("month"),
+			    		resultSet.getString("year"),
+			    		resultSet.getString("day1"),
+			    		resultSet.getString("month1"),
+			    		resultSet.getString("patientname"),
+			    		resultSet.getString("patientsign"),
+			    		resultSet.getString("Patientdate"),
+			    		resultSet.getString("parentname"),
+			    		resultSet.getString("parentsign"),
+			    		resultSet.getString("parentdate"),
+			    		resultSet.getString("representative"),
+			    		resultSet.getString("representativedate")
+			    	
+			    	    ));
+			}
+		} catch (Exception e) {
+			/*logger.info(e.toString());*/
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		} finally {
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		}
+		return assignment;
+
+	}
+	public int getnoofassignment() {
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		int noofRecords = 0;
+		
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<Assignment> assignment = new ArrayList<Assignment>();
+		try {
+
+			String cmd;
+			
+					cmd = "select count(*) as noofrecords from assignment_details";
+					System.out.println("command"+cmd);			
+			resultSet = statement.executeQuery(cmd);
+			if (resultSet.next())
+				noofRecords = resultSet.getInt("noofrecords");
+
+		} catch (Exception e) {
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		} finally {
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		}
+		return noofRecords;
+
+	}
 
 
 	

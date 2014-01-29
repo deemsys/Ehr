@@ -12,6 +12,7 @@ import java.util.List;
 import javax.sql.DataSource;
 
 import bephit.model.Hardshipagreement;
+import bephit.model.Insuranceplan;
 import bephit.model.MedicalRecords;
 
 public class MedicalDAO {
@@ -214,7 +215,84 @@ public class MedicalDAO {
 		   		else
 		   			return 0;
 		}
-	
+	public List<MedicalRecords> getlimitedmedicalrecords(int page) {
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		
+		
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<MedicalRecords> medical = new ArrayList<MedicalRecords>();
+		try {
+
+			String cmd;
+			int offset = 5 * (page - 1);
+			int limit = 5;
+			
+				
+					cmd = "select * from medical_details order by name asc limit " + offset + ","+ limit+"" ;
+
+			resultSet = statement.executeQuery(cmd);
+			while (resultSet.next()) {
+				medical.add(new MedicalRecords(resultSet.getString("medical_no"),resultSet.getString("name"),
+						resultSet.getString("medicalinformation"),
+						resultSet.getString("patientsignature")
+			    		 ));
+			}
+		} catch (Exception e) {
+			/*logger.info(e.toString());*/
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		} finally {
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		}
+		return medical;
+
+	}
+	public int getnoofmedicalrecords() {
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		int noofRecords = 0;
+		
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<MedicalRecords> medical = new ArrayList<MedicalRecords>();
+		try {
+
+			String cmd;
+			
+					cmd = "select count(*) as noofrecords from medical_details";
+					System.out.println("command"+cmd);			
+			resultSet = statement.executeQuery(cmd);
+			if (resultSet.next())
+				noofRecords = resultSet.getInt("noofrecords");
+
+		} catch (Exception e) {
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		} finally {
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		}
+		return noofRecords;
+
+	}
+
 	
 	
 	public void releaseConnection(Connection con){

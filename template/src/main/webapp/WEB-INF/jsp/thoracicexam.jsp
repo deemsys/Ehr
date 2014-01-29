@@ -48,11 +48,11 @@ $(function() {
           <li><a href="#tabs-1">1</a></li>
           <li><a href="#tabs-2">2</a></li>          
        </ul>
+       <form action="thoracicexam" method="POST" name="thoracic">
          <c:choose>
             <c:when test="${empty thoracic}">
    <div id="tabs-1"> 
  <div id="right_content">
-<form action="thoracicexam" method="POST" name="thoracic">
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
 <tr>
 <td valign="top" align="left">
@@ -330,9 +330,9 @@ $(function() {
 	    <div class="contentbox">
           <table cellpadding="0" cellspacing="0" border="0" width="98%">    
  <tr class="row1">
-<td><h2><span class="err">*</span>Patient Name:</h2></td><td><input type="text"  name="pname" value="${thoracic.pname}"/><span class="err"><form:errors path="Thoracicexam.pname"></form:errors></span></td>
-<td width="600">
-<td><h2><span class="err">*</span>Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${thoracic.date}"/><span class="err"><form:errors path="Thoracicexam.date"></form:errors></span></td>
+<td width="150"><h2><span class="err">*</span>Patient Name:</h2></td><td width="380"><input type="text"  name="pname" value="${thoracic.pname}"/><span class="err"><form:errors path="Thoracicexam.pname"></form:errors></span></td>
+<td width="300">
+<td><h2><span class="err">*</span>Date:</h2></td><td width="380"><input type="text"  id="datepicker" name="date" value="${thoracic.date}"/><span class="err"><form:errors path="Thoracicexam.date"></form:errors></span></td>
 </tr>
 </table>
 <br/>

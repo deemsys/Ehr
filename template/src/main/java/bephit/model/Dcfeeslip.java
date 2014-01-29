@@ -3,17 +3,26 @@ package bephit.model;
 import org.hibernate.validator.constraints.NotEmpty;
 
 public class Dcfeeslip {
+	
 	private String dcfeeid;
+	
 	@NotEmpty
 	private String pid;
+	
 	@NotEmpty
 	private String date;
+	
 	@NotEmpty
 	private String pname;
+	
 	@NotEmpty
 	private String dr1;
+	
+	
 	private String rpt;
+	
 	private String pta;
+	
 	private int initialemlimited;
 	private int initialexpanded;
 	private int initialdetailed;
@@ -123,8 +132,11 @@ public class Dcfeeslip {
 	private String mc;
 	private String visa;
 	private String cardsign;
+	@NotEmpty
 	private String date1;
+	@NotEmpty
 	private String parentsign;
+	@NotEmpty
 	private String doctorsign;
 	private String week;
 	private String months;
@@ -135,45 +147,47 @@ public class Dcfeeslip {
 	}
 
 	public Dcfeeslip(String dcfeeid, String pid, String date, String pname,
-			String dr1, String rpt, String pta,
-			int initialemlimited, int initialexpanded,
-			int initialdetailed, int initialextended,
-			int estpatientltd, int estpatientexp,
-			int estpatientdetails, int estpatientcomp,
-			int consultphys, int consultdetail, int consultcomp,
-			int patientexp, int patientdetails, int patientcomp,
-			int telephonebrief, int telephoneintermediate,
-			int telephonecomp, int tractionmechanical,
-			int electricstim, int vasopneumatic, int paraffin,
-			int microwave, int whirlpool, int diathermy,
-			int infrared, int ultraviolet, int manualelectricalstim,
+			String dr1, String rpt, String pta, int initialemlimited,
+			int initialexpanded, int initialdetailed,
+			int initialemextended, int estpatientltd,
+			int estpatientexp, int estpatientdetails,
+			int estpatientcomp, int consultphys, int consultdetail,
+			int consultcomp, int patientexp, int patientdetails,
+			int patientcomp, int telephonebrief,
+			int telephoneintermediate, int telephonecomp,
+			int tractionmechanical, int electricstim,
+			int vasopneumatic, int paraffin, int microwave,
+			int whirlpool, int diathermy, int infrared,
+			int ultraviolet, int manualelectricalstim,
 			int iontophoresis, int contrastbaths, int ultrasound,
 			int unlisted, int therapeutic, int neuromuscular,
 			int aquatic, int gaittraining, int massage,
 			int manualtherapy, int unlistedother, int grouptherapy,
 			int orthotics, int kinetic, int adlselfcare,
 			int reintegration, int acupuncturewo, int acupuncturew,
-			int spine12, int spine34, int spine5, int extremity,
-			int routine, int muscle, int musclehand,
-			int rangeofmotion, int rangeofmotionhand, int ncv,
-			int ncvw, int ncvea, int ssepupper, int sseplower,
+			int spine12, int spine34, int spine5,
+			int extremity, int routine, int muscle,
+			int musclehand, int rangeofmotion,
+			int rangeofmotionhand, int ncv, int ncvw,
+			int ncvea, int ssepupper, int sseplower,
 			int ssephead, int hreflex, int physicalperformance,
 			int functionalcapacity, int text1, int text2,
-			int supplies, int patienteducation, int medicaltestimony,
-			int insuranceform, int teamconference, int completespine,
-			int cervical23, int cervical4, int cervical67,
-			int thoracic4, int thoracic2, int scoliosis,
-			int lumbosacral, int lumbosacral4, int pelvis2,
-			int lumbarcomplete, int elbow2, int wrist2, int hand2,
-			int knee2, int ankle2, int foot2, int readotherfilms,
+			int supplies, int patienteducation,
+			int medicaltestimony, int insuranceform,
+			int teamconference, int completespine, int cervical23,
+			int cervical4, int cervical67, int thoracic4,
+			int thoracic2, int scoliosis, int lumbosacral,
+			int lumbosacral4, int pelvis2, int lumbarcomplete,
+			int elbow2, int wrist2, int hand2, int knee2,
+			int ankle2, int foot2, int readotherfilms,
 			int cervicalpillow, int lumbarsupport,
 			int orthoticcustoml, int orthoticcustomr, int tensunit,
 			int coldpack, int wristsplint, int heellift,
 			int exerciseball, int exerciseband, int unlisteditem,
-			int charges, int less, int balance,String payment,
-			String paymentcashcheck, String amex,String discover,String mc,String visa, String cardsign,
-			String date1, String parentsign, String doctorsign, String week,
-			String months) {
+			int charges, int less, int balance, String payment,
+			String paymentcashcheck, String amex, String discover, String mc,
+			String visa, String cardsign, String date1, String parentsign,
+			String doctorsign, String week, String months) {
 		super();
 		this.dcfeeid = dcfeeid;
 		this.pid = pid;
@@ -284,12 +298,12 @@ public class Dcfeeslip {
 		this.charges = charges;
 		this.less = less;
 		this.balance = balance;
-		this.payment=payment;
+		this.payment = payment;
 		this.paymentcashcheck = paymentcashcheck;
 		this.amex = amex;
-		this.discover=discover;
-		this.mc=mc;
-		this.visa=visa;
+		this.discover = discover;
+		this.mc = mc;
+		this.visa = visa;
 		this.cardsign = cardsign;
 		this.date1 = date1;
 		this.parentsign = parentsign;
@@ -338,7 +352,6 @@ public class Dcfeeslip {
 		this.dr1 = dr1;
 	}
 
-
 	public String getRpt() {
 		return rpt;
 	}
@@ -371,7 +384,7 @@ public class Dcfeeslip {
 		this.initialexpanded = initialexpanded;
 	}
 
-		public int getInitialdetailed() {
+	public int getInitialdetailed() {
 		return initialdetailed;
 	}
 
@@ -1147,7 +1160,7 @@ public class Dcfeeslip {
 		this.unlisteditem = unlisteditem;
 	}
 
-		public int getCharges() {
+	public int getCharges() {
 		return charges;
 	}
 
@@ -1170,8 +1183,7 @@ public class Dcfeeslip {
 	public void setBalance(int balance) {
 		this.balance = balance;
 	}
- 
-	
+
 	public String getPayment() {
 		return payment;
 	}
@@ -1187,8 +1199,6 @@ public class Dcfeeslip {
 	public void setPaymentcashcheck(String paymentcashcheck) {
 		this.paymentcashcheck = paymentcashcheck;
 	}
-
-	
 
 	public String getAmex() {
 		return amex;
@@ -1269,7 +1279,7 @@ public class Dcfeeslip {
 	public void setMonths(String months) {
 		this.months = months;
 	}
-	
+
 	
 
 }

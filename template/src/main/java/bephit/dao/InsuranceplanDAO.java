@@ -12,6 +12,7 @@ import java.util.List;
 import javax.sql.DataSource;
 
 import bephit.model.Insuranceplan;
+import bephit.model.Treatform;
  
 
 
@@ -242,6 +243,92 @@ public int deleteinsuranceplan(String no){
 	   		else
 	   			return 0;
 	}
+
+public List<Insuranceplan> getlimitedinsuranceplan(int page) {
+	Connection con = null;
+	Statement statement = null;
+	ResultSet resultSet = null;
+	
+	
+	try {
+		con = dataSource.getConnection();
+		statement = con.createStatement();
+	} catch (SQLException e1) {
+		e1.printStackTrace();
+	}
+	List<Insuranceplan> Insuranceplan = new ArrayList<Insuranceplan>();
+	try {
+
+		String cmd;
+		int offset = 5 * (page - 1);
+		int limit = 5;
+		
+			
+				cmd = "select * from tbl_insuranceplan order by pat_name asc limit " + offset + ","+ limit+"" ;
+
+		resultSet = statement.executeQuery(cmd);
+		while (resultSet.next()) {
+			Insuranceplan.add(new Insuranceplan(resultSet.getString("no"),resultSet.getString("insure_comp"),
+		    		resultSet.getString("addr"),
+		    		resultSet.getString("pat_name"),
+		    		resultSet.getString("accident_date"),
+		    		resultSet.getString("enrollee"),
+		    		resultSet.getString("no_objection"),
+		    		resultSet.getString("agentname"),
+		    		resultSet.getString("fax"),
+		    		resultSet.getString("name_of_clinic"),
+		    		resultSet.getString("pat"),
+		    		resultSet.getString("authorized")));
+		}
+	} catch (Exception e) {
+		/*logger.info(e.toString());*/
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	} finally {
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	}
+	return Insuranceplan;
+
+}
+public int getnoofinsuranceplan() {
+	Connection con = null;
+	Statement statement = null;
+	ResultSet resultSet = null;
+	int noofRecords = 0;
+	
+	try {
+		con = dataSource.getConnection();
+		statement = con.createStatement();
+	} catch (SQLException e1) {
+		e1.printStackTrace();
+	}
+	List<Insuranceplan> Insuranceplan = new ArrayList<Insuranceplan>();
+	try {
+
+		String cmd;
+		
+				cmd = "select count(*) as noofrecords from tbl_insuranceplan";
+				System.out.println("command"+cmd);			
+		resultSet = statement.executeQuery(cmd);
+		if (resultSet.next())
+			noofRecords = resultSet.getInt("noofrecords");
+
+	} catch (Exception e) {
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	} finally {
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	}
+	return noofRecords;
+
+}
+
 	
 public void releaseConnection(Connection con){
 	try{if(con != null)

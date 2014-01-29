@@ -12,6 +12,7 @@ import java.util.List;
 import javax.sql.DataSource;
 
 import bephit.model.Hardshipagreement;
+import bephit.model.Insuranceplan;
  
 
 
@@ -226,6 +227,83 @@ public int deletehardship(String agreement_no){
 	   		else
 	   			return 0;
 	}
+public List<Hardshipagreement> getlimitedhardshipagreement(int page) {
+	Connection con = null;
+	Statement statement = null;
+	ResultSet resultSet = null;
+	
+	
+	try {
+		con = dataSource.getConnection();
+		statement = con.createStatement();
+	} catch (SQLException e1) {
+		e1.printStackTrace();
+	}
+	List<Hardshipagreement> Hardshipagreement = new ArrayList<Hardshipagreement>();
+	try {
+
+		String cmd;
+		int offset = 5 * (page - 1);
+		int limit = 5;
+		
+			
+				cmd = "select * from tbl_hardshipagreement order by print_pat_name asc limit " + offset + ","+ limit+"" ;
+
+		resultSet = statement.executeQuery(cmd);
+		while (resultSet.next()) {
+			Hardshipagreement.add(new Hardshipagreement(resultSet.getString("agreement_no"),resultSet.getString("date"),
+		    		resultSet.getString("print_pat_name"),
+		    		resultSet.getString("pat_sign"),
+		    		resultSet.getString("witness_sign")));
+		}
+	} catch (Exception e) {
+		/*logger.info(e.toString());*/
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	} finally {
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	}
+	return Hardshipagreement;
+
+}
+public int getnoofhardshipagreement() {
+	Connection con = null;
+	Statement statement = null;
+	ResultSet resultSet = null;
+	int noofRecords = 0;
+	
+	try {
+		con = dataSource.getConnection();
+		statement = con.createStatement();
+	} catch (SQLException e1) {
+		e1.printStackTrace();
+	}
+	List<Hardshipagreement> Hardshipagreement = new ArrayList<Hardshipagreement>();
+	try {
+
+		String cmd;
+		
+				cmd = "select count(*) as noofrecords from tbl_hardshipagreement";
+				System.out.println("command"+cmd);			
+		resultSet = statement.executeQuery(cmd);
+		if (resultSet.next())
+			noofRecords = resultSet.getInt("noofrecords");
+
+	} catch (Exception e) {
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	} finally {
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	}
+	return noofRecords;
+
+}
 
 public void releaseConnection(Connection con){
 	try{if(con != null)

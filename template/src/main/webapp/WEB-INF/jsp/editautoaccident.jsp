@@ -102,13 +102,13 @@ $(function() {
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>What is the claim number of your accident</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="hidden" class="input_txtbx1" id="inp_id" value="${autoaccident.patient_number}" name="patient_number" />
-				  <input type="text" class="input_txtbx1" id="inp_id" name="claimnumber" value="${autoaccident.claimnumber }" /></td>
+				  <input type="text" class="input_txtbx1" id="inp_id" name="claimnumber" value="${autoaccident.claimnumber }" /><span class="err"><form:errors path="Autoaccident.claimnumber"></form:errors></span></td>
 
 				  </tr>
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Adjuster's name</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="adjustersname" value="${autoaccident.adjustersname }" />
+				  <input type="text" class="input_txtbx1" id="inp_id" name="adjustersname" value="${autoaccident.adjustersname }" /><span class="err"><form:errors path="Autoaccident.adjustersname"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
@@ -118,7 +118,7 @@ $(function() {
 					<option  value="your insurance" <c:if test="${autoaccident.estimate=='your insurance'}"><c:out value="selected"/></c:if>>Your Insurance company</option>
 					<option value="other insurance" <c:if test="${autoaccident.estimate=='other insurance'}"><c:out value="selected"/></c:if>>Other Driver's Insurance company</option>
 					<option value="body shop" <c:if test="${autoaccident.estimate=='body shop'}"><c:out value="selected"/></c:if>>Body shop</option>
-				  </select>
+				  </select><span class="err"><form:errors path="Autoaccident.estimate"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row2">
@@ -129,21 +129,21 @@ $(function() {
 					<option value="front seat" <c:if test="${autoaccident.seating=='front seat'}"><c:out value="selected"/></c:if>>Front seat Passenger</option>
 					<option value="back seat" <c:if test="${autoaccident.seating=='back seat'}"><c:out value="selected"/></c:if>>Back seat Passenger</option>
 					<option value="on job" <c:if test="${autoaccident.seating=='on job'}"><c:out value="selected"/></c:if>>On the job at the time of accident</option>
-				  </select>
+				  </select><span class="err"><form:errors path="Autoaccident.seating"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Was anyone else in the car with you during the accident?who?</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="companion" value="${autoaccident.companion }"/>
+				  <input type="text" class="input_txtbx1" id="inp_id" name="companion" value="${autoaccident.companion }"/><span class="err"><form:errors path="Autoaccident.companion"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Description of vehicle you were in</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="smlinput_txtbx1" id="inp_id" name="vehicle_make" style="width:70px" value="${autoaccident.vehicle_make }"/>
-				  <input type="text" class="smlinput_txtbx1" id="inp_id" name="vehicle_model" style="width:70px" value="${autoaccident.vehicle_model }" />
-				  <input type="text" class="smlinput_txtbx1" id="inp_id" name="vehicle_year" style="width:70px"  value="${autoaccident.vehicle_year }"/>
+				  <input type="text" class="smlinput_txtbx1" id="inp_id" name="vehicle_make" style="width:70px" value="${autoaccident.vehicle_make }"/><span class="err"><form:errors path="Autoaccident.vehicle_make"></form:errors></span>
+				  <input type="text" class="smlinput_txtbx1" id="inp_id" name="vehicle_model" style="width:70px" value="${autoaccident.vehicle_model }" /><span class="err"><form:errors path="Autoaccident.vehicle_model"></form:errors></span>
+				  <input type="text" class="smlinput_txtbx1" id="inp_id" name="vehicle_year" style="width:70px"  value="${autoaccident.vehicle_year }"/><span class="err"><form:errors path="Autoaccident.vehicle_year"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
@@ -156,34 +156,34 @@ $(function() {
 					<option value="left rear" <c:if test="${autoaccident.vehicle_hit=='left rear'}"><c:out value="selected"/></c:if>>Left Rear</option>
 					<option value="right side" <c:if test="${autoaccident.vehicle_hit=='right side'}"><c:out value="selected"/></c:if>>Right side</option>
 					<option value="left side" <c:if test="${autoaccident.vehicle_hit=='left side'}"><c:out value="selected"/></c:if>>Left side</option>
-				  </select>
+				  </select><span class="err"><form:errors path="Autoaccident.vehicle_hit"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Description of other vehicle </td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="smlinput_txtbx1" id="inp_id" name="other_vehicle_make" style="width:70px" value="${autoaccident.other_vehicle_make }" />
-				  <input type="text" class="smlinput_txtbx1" id="inp_id" name="other_vehicle_model" style="width:70px" value="${autoaccident.other_vehicle_model }" />
-				  <input type="text" class="smlinput_txtbx1" id="inp_id" name="other_vehicle_year" style="width:70px" value="${autoaccident.other_vehicle_year }"/>
+				  <input type="text" class="smlinput_txtbx1" id="inp_id" name="other_vehicle_make" style="width:70px" value="${autoaccident.other_vehicle_make }" /><span class="err"><form:errors path="Autoaccident.other_vehicle_make"></form:errors></span>
+				  <input type="text" class="smlinput_txtbx1" id="inp_id" name="other_vehicle_model" style="width:70px" value="${autoaccident.other_vehicle_model }" /><span class="err"><form:errors path="Autoaccident.other_vehicle_model"></form:errors></span>
+				  <input type="text" class="smlinput_txtbx1" id="inp_id" name="other_vehicle_year" style="width:70px" value="${autoaccident.other_vehicle_year }"/><span class="err"><form:errors path="Autoaccident.other_vehicle_year"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Was you car stopped at the time of accident</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="carstopped" value="yes" class="input_txt"  <c:if test="${autoaccident.carstopped=='yes'}"><c:out value="Checked"/></c:if> >Yes&nbsp;&nbsp;&nbsp;
-				  <input type="radio" name="carstopped" value="no" class="input_txt"  <c:if test="${autoaccident.carstopped=='no'}"><c:out value="Checked"/></c:if>>No</td>
+				  <input type="radio" name="carstopped" value="no" class="input_txt"  <c:if test="${autoaccident.carstopped=='no'}"><c:out value="Checked"/></c:if>>No<span class="err"><form:errors path="Autoaccident.carstopped"></form:errors></span></td>
 				  </tr>
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>If you were the driver,was your foot on the brake</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="driverposition" value="yes" class="input_txt" <c:if test="${autoaccident.driverposition=='yes'}"><c:out value="Checked"/></c:if> >Yes&nbsp;&nbsp;&nbsp;
-				  <input type="radio" name="driverposition" value="no" class="input_txt" <c:if test="${autoaccident.driverposition=='no'}"><c:out value="Checked"/></c:if>>No</td>
+				  <input type="radio" name="driverposition" value="no" class="input_txt" <c:if test="${autoaccident.driverposition=='no'}"><c:out value="Checked"/></c:if>>No <span class="err"><form:errors path="Autoaccident.driverposition"></form:errors></span></td>
 				  </tr>
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Was your vehicle moving at time of impact</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="vehicle_moving_time" value="yes" class="input_txt" <c:if test="${autoaccident.vehicle_moving_time=='yes'}"><c:out value="Checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
-				  <input type="radio" name="vehicle_moving_time" value="no" class="input_txt" <c:if test="${autoaccident.vehicle_moving_time=='no'}"><c:out value="Checked"/></c:if>>No</td>
+				  <input type="radio" name="vehicle_moving_time" value="no" class="input_txt" <c:if test="${autoaccident.vehicle_moving_time=='no'}"><c:out value="Checked"/></c:if>>No<span class="err"><form:errors path="Autoaccident.vehicle_moving_time"></form:errors></span></td>
 				  </tr>
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Was car</td>
@@ -192,13 +192,13 @@ $(function() {
 					<option  value="slowing down" <c:if test="${autoaccident.wascar=='slowing down'}"><c:out value="selected"/></c:if> >Slowing Down</option>
 					<option value="gaining speed" <c:if test="${autoaccident.wascar=='gaining speed'}"><c:out value="selected"/></c:if>>Gaining Speed</option>
 					<option value="steady rate of speed" <c:if test="${autoaccident.wascar=='steady rate of speed'}"><c:out value="selected"/></c:if>>Steady Rate of Speed</option>	
-				  </select>
+				  </select><span class="err"><form:errors path="Autoaccident.wascar"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Estimated rate of speed</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="estimated_rate" value="${autoaccident.estimated_rate }"/>
+				  <input type="text" class="input_txtbx1" id="inp_id" name="estimated_rate" value="${autoaccident.estimated_rate }"/><span class="err"><form:errors path="Autoaccident.estimated_rate"></form:errors></span>
 				  </td>
 				  </tr>
 				 <tr class="row2">
@@ -210,7 +210,7 @@ $(function() {
 					<option value="dusk" <c:if test="${autoaccident.time_of_day=='dusk'}"><c:out value="selected"/></c:if>>Dusk</option>
 					<option value="dark" <c:if test="${autoaccident.time_of_day=='dark'}"><c:out value="selected"/></c:if>>Dark</option>
 					<option value="unknown" <c:if test="${autoaccident.time_of_day=='unknown'}"><c:out value="selected"/></c:if>>Unknown</option>	
-				  </select>
+				  </select><span class="err"><form:errors path="Autoaccident.time_of_day"></form:errors></span>
 				  </td>
 				  </tr> 
 				  <tr class="row1">
@@ -225,7 +225,7 @@ $(function() {
 					<option value="ice" <c:if test="${autoaccident.road_conditions=='ice'}"><c:out value="selected"/></c:if>>Ice</option>	
 					<option value="other" <c:if test="${autoaccident.road_conditions=='other'}"><c:out value="selected"/></c:if>>Other</option>
 					<option value="unknown" <c:if test="${autoaccident.road_conditions=='unknown'}"><c:out value="selected"/></c:if>>Unknown</option>
-				  </select>
+				  </select><span class="err"><form:errors path="Autoaccident.road_conditions"></form:errors></span>
 				  
 				
 				  </td>
@@ -238,7 +238,7 @@ $(function() {
 					<option value="up" <c:if test="${autoaccident.head_restraints=='up'}"><c:out value="selected"/></c:if> >Up</option>
 					<option value="down" <c:if test="${autoaccident.head_restraints=='down'}"><c:out value="selected"/></c:if>>Down</option>
 					<option value="do_no" <c:if test="${autoaccident.head_restraints=='do_no'}"><c:out value="selected"/></c:if>>Don't know</option>	
-				  </select>
+				  </select><span class="err"><form:errors path="Autoaccident.head_restraints"></form:errors></span>
 				  </td>
 				  </tr>
 				  
@@ -292,7 +292,7 @@ $(function() {
 					<option  value="was_altered" <c:if test="${autoaccident.seatpos_after_accident=='was_altered'}"><c:out value="selected"/></c:if>>Was Altered</option>
 					<option value="was_not_altered" <c:if test="${autoaccident.seatpos_after_accident=='was_not_altered'}"><c:out value="selected"/></c:if>>Was Not Altered</option>
 					<option value="dontknow" <c:if test="${autoaccident.seatpos_after_accident=='dontknow'}"><c:out value="selected"/></c:if>>Don't know</option>
-				  </select>
+				  </select><span class="err"><form:errors path="Autoaccident.seatpos_after_accident"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row2">
@@ -300,8 +300,8 @@ $(function() {
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="seat_after_accident" class="input_cmbbx1">
 					<option  value="broken" <c:if test="${autoaccident.seat_after_accident=='broken'}"><c:out value="selected"/></c:if> >Broken</option>
-					<option value="notbroken" <c:if test="${autoaccident.seatpos_after_accident=='notbroken'}"><c:out value="selected"/></c:if>>Not Broken</option>
-				  </select>
+					<option value="notbroken" <c:if test="${autoaccident.seat_after_accident=='notbroken'}"><c:out value="selected"/></c:if>>Not Broken</option>
+				  </select><span class="err"><form:errors path="Autoaccident.seat_after_accident"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
@@ -311,7 +311,7 @@ $(function() {
 					<option  value="worn" <c:if test="${autoaccident.lap_seat_belt=='worn'}"><c:out value="selected"/></c:if>>Worn</option>
 					<option value="not_worn" <c:if test="${autoaccident.lap_seat_belt=='not_worn'}"><c:out value="selected"/></c:if>>Not Worn</option>
 					<option value="dont_know" <c:if test="${autoaccident.lap_seat_belt=='dont_know'}"><c:out value="selected"/></c:if>>Don't know</option>
-				  </select>
+				  </select><span class="err"><form:errors path="Autoaccident.lap_seat_belt"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row2">
@@ -321,7 +321,7 @@ $(function() {
 					<option  value="worns" <c:if test="${autoaccident.shoulder_seat_belt=='worns'}"><c:out value="selected"/></c:if>>Worn</option>
 					<option value="notworn" <c:if test="${autoaccident.shoulder_seat_belt=='notworn'}"><c:out value="selected"/></c:if>>Not Worn</option>
 					<option value="donno" <c:if test="${autoaccident.shoulder_seat_belt=='donno'}"><c:out value="selected"/></c:if>>Don't know</option>
-				  </select>
+				  </select><span class="err"><form:errors path="Autoaccident.shoulder_seat_belt"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
@@ -332,18 +332,9 @@ $(function() {
 				  <select name="wereyou" class="input_cmbbx1" id="mytext"  style='display:none'>
 				 <option  value="struck" <c:if test="${autoaccident.wereyou=='struck'}"><c:out value="selected"/></c:if>>Struck</option>
 				 <option value="notstruck" <c:if test="${autoaccident.wereyou=='notstruck'}"><c:out value="selected"/></c:if>>Not Struck</option>
-				  </select>
+				  </select><span class="err"><form:errors path="Autoaccident.wereyou"></form:errors></span>
 				 </td>
 				  </tr>
-				  <!-- <tr class="row2" id="mytext">
-                <td valign="middle" align="left" class="input_txt"><span class="err">*</span>If yes, were you</td>
-				 <td valign="top" align="left" class="input_txt">
-				  < name="wereyou" class="input_cmbbx1" id="mytext">
-					<option ed="ed" value="struck" >Struck</option>
-					<option value="notstruck">Not Struck</option>
-				  </>
-				  </td>
-				  </tr> -->
 				  <tr class="row1">
                 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Body position at time of accident</td>
 				 <td valign="top" align="left" class="input_txt">
@@ -353,8 +344,8 @@ $(function() {
 					<option value="leaning" <c:if test="${autoaccident.body_position=='learning'}"><c:out value="selected"/></c:if>>Leaning</option>
 					<option value="others" <c:if test="${autoaccident.body_position=='others'}"><c:out value="selected"/></c:if>>Other</option>
 					<option value="un_known" <c:if test="${autoaccident.body_position=='un_known'}"><c:out value="selected"/></c:if>>Unknown</option>
-				  </select>
-				   <input type="text" name="body_position1" id="body_position1" value="${autoaccident.body_position1}"style='display:none'/>
+				  </select><span class="err"><form:errors path="Autoaccident.body_position"></form:errors></span>
+				   <input type="text" name="body_position1" id="body_position1" value="${autoaccident.body_position1}"style='display:none'/><span class="err"><form:errors path="Autoaccident.body_position1"></form:errors></span>
 				  </td>
 				  </tr>
 				 <tr class="row2">
@@ -368,15 +359,15 @@ $(function() {
 					<option value="down_pos" <c:if test="${autoaccident.head_position=='down_pos'}"><c:out value="selected"/></c:if>>Down</option>
 					<option value="others" <c:if test="${autoaccident.head_position=='others'}"><c:out value="selected"/></c:if>>Other</option>
 					<option value="unknown_pos" <c:if test="${autoaccident.head_position=='unknown_pos'}"><c:out value="selected"/></c:if>>Unknown</option>
-				  </select>
-				   <input type="text" name="head_position1" id="head_position1" value="${autoaccident.head_position1}"style='display:none'/>
+				  </select><span class="err"><form:errors path="Autoaccident.head_position"></form:errors></span>
+				   <input type="text" name="head_position1" id="head_position1" value="${autoaccident.head_position1}"style='display:none'/><span class="err"><form:errors path="Autoaccident.head_position1"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Hands on wheel</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="hands_on_wheel" value="one" class="input_txt" <c:if test="${autoaccident.hands_on_wheel=='one'}"><c:out value="Checked"/></c:if>>One&nbsp;&nbsp;&nbsp;
-				  <input type="radio" name="hands_on_wheel" value="two" class="input_txt" <c:if test="${autoaccident.hands_on_wheel=='two'}"><c:out value="Checked"/></c:if>>Two</td>
+				  <input type="radio" name="hands_on_wheel" value="two" class="input_txt" <c:if test="${autoaccident.hands_on_wheel=='two'}"><c:out value="Checked"/></c:if>>Two<span class="err"><form:errors path="Autoaccident.hands_on_wheel"></form:errors></span></td>
 				  </tr>
 				  <tr class="row2">
                 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Aware of crash</td>
@@ -384,18 +375,18 @@ $(function() {
 				  <select name="aware_of_crash" class="input_cmbbx1" >
 					<option value="aware" <c:if test="${autoaccident.aware_of_crash=='aware'}"><c:out value="selected"/></c:if> >Aware</option>
 					<option value="surprised" <c:if test="${autoaccident.aware_of_crash=='surprised'}"><c:out value="selected"/></c:if>>Surprised</option>
-				  </select>
+				  </select><span class="err"><form:errors path="Autoaccident.aware_of_crash"></form:errors></span>
 				  </td>
 				  </tr>
 				   <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Did you brace yourself</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="brace" value="yes" class="input_txt" id="bracecheck" onclick="toggle1();"<c:if test="${autoaccident.brace=='yes'}"><c:out value="Checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
-				  <input type="radio" name="brace" value="No" class="input_txt" onclick="toggle1()"<c:if test="${autoaccident.brace=='No'}"><c:out value="Checked"/></c:if>>No&nbsp;&nbsp;&nbsp;
+				  <input type="radio" name="brace" value="No" class="input_txt" onclick="toggle1()"<c:if test="${autoaccident.brace=='No'}"><c:out value="Checked"/></c:if>>No&nbsp;&nbsp;&nbsp;<span class="err"><form:errors path="Autoaccident.brace"></form:errors></span>
 				  <select name="ifyes" class="input_cmbbx1" id="mybrace"  style='display:none'>
 				  <option  value="bracearms" <c:if test="${autoaccident.ifyes=='bracearms'}"><c:out value="selected"/></c:if>>Braced with arms</option>
 				  <option value="bracelegs" <c:if test="${autoaccident.ifyes=='bracelegs'}"><c:out value="selected"/></c:if>>Braced with legs</option>
-				  </select>
+				  </select><span class="err"><form:errors path="Autoaccident.ifyes"></form:errors></span>
 				  </td>
 				  </tr>
 				 <!--  <tr class="row2">
@@ -411,8 +402,8 @@ $(function() {
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Did this cause further injury</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="further_injury" value="yes" class="input_txt" id="furthercheck" onclick="toggle2();" <c:if test="${autoaccident.further_injury=='yes'}"><c:out value="Checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
-				  <input type="radio" name="further_injury" value="no" class="input_txt" onclick="toggle2();" <c:if test="${autoaccident.further_injury=='no'}"><c:out value="Checked"/></c:if>>No&nbsp;&nbsp;&nbsp;
-				  <textarea rows='3' cols='35' id="injury"  style='display:none' placeholder="Please explain" name="injurytext">${autoaccident.injurytext}</textarea>
+				  <input type="radio" name="further_injury" value="no" class="input_txt" onclick="toggle2();" <c:if test="${autoaccident.further_injury=='no'}"><c:out value="Checked"/></c:if>>No&nbsp;&nbsp;&nbsp;<span class="err"><form:errors path="Autoaccident.further_injury"></form:errors></span>
+				  <textarea rows='3' cols='35' id="injury"  style='display:none' placeholder="Please explain" name="injurytext">${autoaccident.injurytext}<span class="err"><form:errors path="Autoaccident.injurytext"></form:errors></span></textarea>
 				  </td>
 				  </tr>
 				  <!--  <tr class="row2">
@@ -505,15 +496,15 @@ $(function() {
 					<option value="whipped" <c:if test="${autoaccident.patient_body=='whipped'}"><c:out value="selected"/></c:if>>Whipped</option>
 					<option value="slammed" <c:if test="${autoaccident.patient_body=='slammed'}"><c:out value="selected"/></c:if>>Slammed</option>
 					<option value="otherbody" <c:if test="${autoaccident.patient_body=='otherbody'}"><c:out value="selected"/></c:if>>Other</option>
-				  </select>
-				  <input type="text" name="patient_body1" id="patient_body1" value="${autoaccident.patient_body1}"style='display:none'/>
+				  </select><span class="err"><form:errors path="Autoaccident.patient_body"></form:errors></span>
+				  <input type="text" name="patient_body1" id="patient_body1" value="${autoaccident.patient_body1}"style='display:none'/><span class="err"><form:errors path="Autoaccident.patient_body1"></form:errors></span>
 				  </td>
 				  </tr> 
 				   <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Did patient's body strike interior of car</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="body_strike" value="yes" id="yeschecked" class="input_txt"  onclick="strike();" <c:if test="${autoaccident.body_strike=='yes'}"><c:out value="Checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
-				  <input type="radio" name="body_strike" value="no" id="nochecked" class="input_txt"  onclick="strike();"<c:if test="${autoaccident.body_strike=='no'}"><c:out value="Checked"/></c:if>>No&nbsp;&nbsp;&nbsp;
+				  <input type="radio" name="body_strike" value="no" id="nochecked" class="input_txt"  onclick="strike();"<c:if test="${autoaccident.body_strike=='no'}"><c:out value="Checked"/></c:if>>No&nbsp;&nbsp;&nbsp;<span class="err"><form:errors path="Autoaccident.body_strike"></form:errors></span>
 				  </td>
 				  </tr>
 				  </table>
@@ -580,28 +571,28 @@ $(function() {
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Were you wearing glasses at the time of accident&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="wearing_glasses" value="yes" class="input_txt" <c:if test="${autoaccident.wearing_glasses=='yes'}"><c:out value="Checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
-				  <input type="radio" name="wearing_glasses" value="no" class="input_txt" <c:if test="${autoaccident.wearing_glasses=='no'}"><c:out value="Checked"/></c:if>>No&nbsp;&nbsp;&nbsp;
+				  <input type="radio" name="wearing_glasses" value="no" class="input_txt" <c:if test="${autoaccident.wearing_glasses=='no'}"><c:out value="Checked"/></c:if>>No&nbsp;&nbsp;&nbsp;<span class="err"><form:errors path="Autoaccident.wearing_glasses"></form:errors></span>
 			      </td>
 				  </tr>
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Were the glasses still in place after impact</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="glasses_impact" value="yes" class="input_txt" <c:if test="${autoaccident.glasses_impact=='yes'}"><c:out value="Checked"/></c:if> >Yes&nbsp;&nbsp;&nbsp;
-				  <input type="radio" name="glasses_impact" value="no" class="input_txt" <c:if test="${autoaccident.glasses_impact=='no'}"><c:out value="Checked"/></c:if> >No&nbsp;&nbsp;&nbsp;
+				  <input type="radio" name="glasses_impact" value="no" class="input_txt" <c:if test="${autoaccident.glasses_impact=='no'}"><c:out value="Checked"/></c:if> >No&nbsp;&nbsp;&nbsp;<span class="err"><form:errors path="Autoaccident.glasses_impact"></form:errors></span>
 			      </td>
 				  </tr>
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Unconscious</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="unconscious" value="yes" class="input_txt" id="unconcheck"onclick="toggle4();" <c:if test="${autoaccident.unconscious=='yes'}"><c:out value="Checked"/></c:if> >Yes&nbsp;&nbsp;&nbsp;
-				  <input type="radio" name="unconscious" value="no" class="input_txt" onclick="toggle4();" <c:if test="${autoaccident.unconscious=='no'}"><c:out value="Checked"/></c:if> >No&nbsp;&nbsp;&nbsp;
-			      <input type="text" class="input_txtbx1" id="uncon" name="uncon" value="${autoaccident.uncon }"  style='display:none'> (minutes)</input>
+				  <input type="radio" name="unconscious" value="no" class="input_txt" onclick="toggle4();" <c:if test="${autoaccident.unconscious=='no'}"><c:out value="Checked"/></c:if> >No&nbsp;&nbsp;&nbsp;<span class="err"><form:errors path="Autoaccident.unconscious"></form:errors></span>
+			      <input type="text" class="input_txtbx1" id="uncon" name="uncon" value="${autoaccident.uncon }"  style='display:none'> (minutes)<span class="err"><form:errors path="Autoaccident.uncon"></form:errors></span></input>
 			      </td>
 				  </tr>
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt">Estimated amount of property damage</td>
 				  <td valign="top" align="left" class="input_txt">$
-				  <input type="text" class="input_txtbx1" id="inp_id" name="estimated_amount" value="${autoaccident.estimated_amount }"/>
+				  <input type="text" class="input_txtbx1" id="inp_id" name="estimated_amount" value="${autoaccident.estimated_amount }"/><span class="err"><form:errors path="Autoaccident.estimated_amount"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row2">
@@ -612,7 +603,7 @@ $(function() {
 					<option value="moderate" <c:if test="${autoaccident.damage=='moderate'}"><c:out value="selected"/></c:if>>Moderate</option>
 					<option value="major" <c:if test="${autoaccident.damage=='major'}"><c:out value="selected"/></c:if>>Major</option>
 					<option value="totaled" <c:if test="${autoaccident.damage=='totaled'}"><c:out value="selected"/></c:if>>Totaled</option>
-				  </select>
+				  </select><span class="err"><form:errors path="Autoaccident.damage"></form:errors></span>
 				  </td>
 				  </tr> 
 				 </table>
@@ -657,7 +648,7 @@ $(function() {
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Was anyone cited</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="was_anyone_cited" value="yes" class="input_txt" <c:if test="${autoaccident.was_anyone_cited=='yes'}"><c:out value="Checked"/></c:if> >Yes&nbsp;&nbsp;&nbsp;
-				  <input type="radio" name="was_anyone_cited" value="no" class="input_txt" <c:if test="${autoaccident.was_anyone_cited=='no'}"><c:out value="Checked"/></c:if>>No&nbsp;&nbsp;&nbsp;
+				  <input type="radio" name="was_anyone_cited" value="no" class="input_txt" <c:if test="${autoaccident.was_anyone_cited=='no'}"><c:out value="Checked"/></c:if>>No&nbsp;&nbsp;&nbsp;<span class="err"><form:errors path="Autoaccident.was_anyone_cited"></form:errors></span>
 			      </td>
 				  </tr> 
 				  <tr class="row2">
@@ -666,7 +657,7 @@ $(function() {
 				  <select name="who" class="input_cmbbx1" >
 					<option  value="you" <c:if test="${autoaccident.who=='you'}"><c:out value="selected"/></c:if>>You</option>
 					<option value="other_driver" <c:if test="${autoaccident.who=='other_driver'}"><c:out value="selected"/></c:if>>Other Driver</option>
-				  </select>
+				  </select><span class="err"><form:errors path="Autoaccident.who"></form:errors></span>
 				  </td>
 				  </tr> 
 				  <tr class="row1">
@@ -693,7 +684,7 @@ $(function() {
 					<option value="hours" <c:if test="${autoaccident.first_symptom=='hours'}"><c:out value="selected"/></c:if> >hours after the accident</option>
 					<option value="next_day" <c:if test="${autoaccident.first_symptom=='next_day'}"><c:out value="selected"/></c:if> >The next day</option>
 					<option value="days" <c:if test="${autoaccident.first_symptom=='days'}"><c:out value="selected"/></c:if> >days</option>
-				  </select>
+				  </select><span class="err"><form:errors path="Autoaccident.first_symptom"></form:errors></span>
 				 <input type="text" name="symptom" id="symptom" value="${autoaccident.symptom}"style='display:none'/>
 				  </td>
 				  </tr> 
@@ -707,8 +698,8 @@ $(function() {
 					<option value="family" <c:if test="${autoaccident.after_accident=='family'}"><c:out  value="selected"/></c:if> >Family</option>
 					<option value="physician" <c:if test="${autoaccident.after_accident=='physician'}"><c:out  value="selected"/></c:if> >Physician</option>
 					<option value="otheracc" <c:if test="${autoaccident.after_accident=='otheracc'}"><c:out  value="selected"/></c:if> >Other</option>
-				  </select>
-				 <input type="text" name="accident" id="accident" value="${autoaccident.accident}"style='display:none'/>
+				  </select><span class="err"><form:errors path="Autoaccident.after_accident"></form:errors></span>
+				 <input type="text" name="accident" id="accident" value="${autoaccident.accident}"style='display:none'/><span class="err"><form:errors path="Autoaccident.accident"></form:errors></span>
 				  </td>
 				  </tr> 
 				  </table>
@@ -744,7 +735,7 @@ $(function() {
 				  <select name="hospitalget" class="input_cmbbx1" id="checkhospital"  onclick='Checkhospital();'>
 					<option  value="ambulance" <c:if test="${autoaccident.hospitalget=='ambulance'}"><c:out value="selected"/></c:if>>Ambulance</option>
 					<option value="otherhos" <c:if test="${autoaccident.hospitalget=='otherhos'}"><c:out value="selected"/></c:if>>Other</option>
-				   </select>
+				   </select><span class="err"><form:errors path="Autoaccident.hospitalget"></form:errors></span>
 				  
 				 <input type="text" name="hospital1" id="hospital1" value="${autoaccident.hospital1}" style='display:none'/>
 				  </td>

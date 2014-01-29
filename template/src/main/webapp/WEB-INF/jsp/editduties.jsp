@@ -57,9 +57,9 @@ $(function() {
           <c:set value="${dutiesduressForm.dutiesunderduressdetails[0]}" var="dutiesunderduressdetails"/> 
  <tr class="row1">
  <input type="hidden" name="dutiesno" id="inp_id" value="${dutiesunderduressdetails.dutiesno}">
-<td><h2>Patient Name:</h2></td><td><input type="text"  name="pname" value="${dutiesunderduressdetails.pname }"/></td>
+<td><h2><span class="err">*</span>Patient Name:</h2></td><td><input type="text"  name="pname" value="${dutiesunderduressdetails.pname }"/><span class="err"><form:errors path="Dutiesunderduress.pname"></form:errors></span></td>
 <td width="600">
-<td><h2>Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${dutiesunderduressdetails.date }"/></td>
+<td><h2><span class="err">*</span>Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${dutiesunderduressdetails.date }"/><span class="err"><form:errors path="Dutiesunderduress.date"></form:errors></span></td>
 </tr>
 </table>
 <br/>

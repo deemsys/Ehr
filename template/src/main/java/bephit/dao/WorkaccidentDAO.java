@@ -11,6 +11,7 @@ import java.util.Date;
 import java.util.List;
 import javax.sql.DataSource;
 
+import bephit.model.Autoaccident;
 import bephit.model.RadiologicReport;
 import bephit.model.Workaccident;
  
@@ -267,7 +268,112 @@ public int deleteWorkAccident(String patient_no,String admin){
 	   		else
 	   			return 0;
 	}
+public List<Workaccident> getlimitedworkaccident(int page) {
+	Connection con = null;
+	Statement statement = null;
+	ResultSet resultSet = null;
 	
+	
+	try {
+		con = dataSource.getConnection();
+		statement = con.createStatement();
+	} catch (SQLException e1) {
+		e1.printStackTrace();
+	}
+	List<Workaccident> Workaccident = new ArrayList<Workaccident>();
+	try {
+
+		String cmd;
+		int offset = 5 * (page - 1);
+		int limit = 5;
+		
+			
+				cmd = "select * from tbl_workaccident order by patient_no asc limit " + offset + ","+ limit+"" ;
+
+		resultSet = statement.executeQuery(cmd);
+		while (resultSet.next()) {
+			Workaccident.add(new Workaccident(resultSet.getString("patient_no"),resultSet.getString("job_classification"),
+					resultSet.getString("doyou_pos"),
+					resultSet.getString("doyou"),
+					resultSet.getString("pick"),
+					resultSet.getString("carry"),
+					resultSet.getString("injury_occur"),
+					resultSet.getString("saw_accident"),
+					resultSet.getString("title"),
+					resultSet.getString("present_job"),
+					resultSet.getString("time_loss"),
+					resultSet.getString("absenteeism"),
+					resultSet.getString("type_of_light"),
+					resultSet.getString("lighting"),
+					resultSet.getString("pick_lift"),
+					resultSet.getString("how_much"),
+					resultSet.getString("how_often"),
+					resultSet.getString("where_to_where"),
+					resultSet.getString("lift_from"),
+					resultSet.getString("liftin_orout"),
+					resultSet.getString("workpos"),
+					resultSet.getString("push_pull"),
+					resultSet.getString("jobpp"),
+					resultSet.getString("work_area"),
+					resultSet.getString("warea"),
+					resultSet.getString("levers"),
+					resultSet.getString("overhead"),
+					resultSet.getString("no_of_employees"),
+					resultSet.getString("like_job"),
+					resultSet.getString("pre_employment"),
+					resultSet.getString("return_job"),
+					resultSet.getString("changes_in_job")));
+	
+		}
+	} catch (Exception e) {
+		/*logger.info(e.toString());*/
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	} finally {
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	}
+	return Workaccident;
+
+}
+public int getnoofworkaccident() {
+	Connection con = null;
+	Statement statement = null;
+	ResultSet resultSet = null;
+	int noofRecords = 0;
+	
+	try {
+		con = dataSource.getConnection();
+		statement = con.createStatement();
+	} catch (SQLException e1) {
+		e1.printStackTrace();
+	}
+	List<Workaccident> Workaccident = new ArrayList<Workaccident>();
+	try {
+
+		String cmd;
+		
+				cmd = "select count(*) as noofrecords from tbl_workaccident";
+				System.out.println("command"+cmd);			
+		resultSet = statement.executeQuery(cmd);
+		if (resultSet.next())
+			noofRecords = resultSet.getInt("noofrecords");
+
+	} catch (Exception e) {
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	} finally {
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	}
+	return noofRecords;
+
+}
+
 public void releaseConnection(Connection con){
 	try{if(con != null)
 		con.close();

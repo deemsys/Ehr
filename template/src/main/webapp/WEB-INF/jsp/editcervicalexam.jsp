@@ -131,9 +131,9 @@ element.style.display='none';
            <c:set value="${cervicalexamForm.cervicalexam[0]}" var="cervicalexam"/>  
  <tr class="row1">
  <input type="hidden" name="cervicalexamid" id="inp_id" value="${cervicalexam.cervicalexamid}">
-<td><h2>Patient Name:</h2></td><td><input type="text"  name="pname" value="${cervicalexam.pname}" /></td>
+<td><h2><span class="err">*</span>Patient Name:</h2></td><td><input type="text"  name="pname" value="${cervicalexam.pname}" /><span class="err"><form:errors path="Cervicalexam.pname"></form:errors></span></td>
 <td width="600">
-<td><h2>Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${cervicalexam.date}"/></td>
+<td><h2><span class="err">*</span>Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${cervicalexam.date}"/><span class="err"><form:errors path="Cervicalexam.date"></form:errors></span></td>
 </tr>
 </table>
 <br/>
@@ -399,7 +399,7 @@ element.style.display='none';
  </tr>
  </tr>
  <br/>
- <table><tr><td><B style="font-size:14px">PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sign" value="${cervicalexam.sign}"></B></td></tr></table>
+ <table><tr><td><B style="font-size:14px"><span class="err">*</span>PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sign" value="${cervicalexam.sign}"></B><span class="err"><form:errors path="Cervicalexam.sign"></form:errors></span></td></tr></table>
 <table align="right">
 <tr>
 <td><input type="submit" class="submit_btn" value="Save"></td>

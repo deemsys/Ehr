@@ -84,9 +84,9 @@ $(function() {
      <c:set value="${shoulderpainscoreForm.shoulderpainscore[0]}" var="shoulderpainscore"/>      
  <tr class="row1">
  <input type="hidden" value="${shoulderpainscore.shoulderpainno }" name="shoulderpainno" />
-<td><h2>Patient Name:</h2></td><td width="400"><input type="text"  name="pname" value="${shoulderpainscore.pname }"/></td>
-<td><h2>Number:</h2></td><td width="400"><input type="text"  name="number" value="${shoulderpainscore.number}"/></td>
-<td><h2>Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${shoulderpainscore.date}"/></td>
+<td><h2><span class="err">*</span>Patient Name:</h2></td><td width="400"><input type="text"  name="pname" value="${shoulderpainscore.pname }"/><span class="err"><form:errors path="Shoulderpainscore.pname"></form:errors></span></td>
+<td><h2><span class="err">*</span>Number:</h2></td><td width="400"><input type="text"  name="number" value="${shoulderpainscore.number}"/><span class="err"><form:errors path="Shoulderpainscore.number"></form:errors></span></td>
+<td><h2><span class="err">*</span>Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${shoulderpainscore.date}"/><span class="err"><form:errors path="Shoulderpainscore.date"></form:errors></span></td>
 </tr>
 </table>
 <table width="70%" align="center">

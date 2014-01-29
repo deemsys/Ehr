@@ -3,6 +3,11 @@
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
+<link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
+ <link rel="stylesheet" href="/resources/css/style.css" />
+ <script src="resources/js/jquery.min.js"></script> 
+ <script src="resources/js/jquery-ui.js"></script>
+ <script src="resources/js/jquey-1.9.1.js"></script>
 <script type="text/javascript">
 function softtissuevalidate()
 {
@@ -89,12 +94,26 @@ var element=document.getElementById('shortlegright');
  }
 }
 </script >
-
-<link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
- <link rel="stylesheet" href="/resources/css/style.css" />
- <script src="resources/js/jquery.min.js"></script> 
- <script src="resources/js/jquery-ui.js"></script>
- <script src="resources/js/jquey-1.9.1.js"></script>
+ <script>
+  $(window).load(function(){
+$("#security").keyup(function() {
+	 $("#number").html(''); 
+	/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
+	var intRegex = /^\d+$/;
+	if(intRegex.test($(this).val())||$(this).val()=='') 
+	{
+		var $in = $(this).val();		 
+	}
+	else if($(this).val()!='')
+		{
+		
+		$("#number").html('Kindly enter a number!!!!');
+		}
+}).keydown(function() {
+    oldValue = $(this).val();
+})
+});
+</script>
 <script type="text/javascript">
 $(function() {
     $( "#tabs" ).tabs();
@@ -345,7 +364,8 @@ $(function() {
 	       </p>
 	    Your Birth Date  <input type="date"  name="birthdate">
 	    <br><br>
-	    Your Social Security Number <input type="text" name="security">
+	    <table>
+	    <td>Your Social Security Number </td><td><input type="text" name="security" id="security"></td><td><span class="err"> <div id="number"></span></td></div></table>
 	    </c:when>
 	    <c:otherwise>
 	    <P style="font-size: 15px"><b>Please answer the following questions for the hip/knee being treated or followed up.If it is BOTH hips/knees,please answer the questions for your worse side.All questions are about how you have felt,on average,during the past week,If you are being treated for an injury that happened less than one week ago,please answer for the period since your injury.</b></P>
@@ -471,9 +491,10 @@ $(function() {
 	    </br>
 	    </br>
 	       </p>
-	    Your Birth Date  <input type="date"  value="${hipquestionnairedetails.birthdate}" name="birthdate">
+	     Your Birth Date <input type="date"  value="${hipquestionnairedetails.birthdate}" name="birthdate">
 	    <br><br>
-	    Your Social Security Number <input type="text" name="security"  value="${hipquestionnairedetails.security}">
+	  <table>
+	  <tr><td> Your Social Security Number</td> <td> <input type="text" name="security"  value="${hipquestionnairedetails.security}"></td><td><span class="err"> <div id="number"></span></td></div></tr></table>
 	    
 	
 	    </c:otherwise>

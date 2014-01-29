@@ -751,3 +751,65 @@ font-size:11px; font-style:italic; color:#ff0000;
 }
 #send_to_one{display:none;}
 /*Delete button end here*/
+
+ul.pagination {
+	float: right;
+	font-size: 11px;
+	clear: both; padding-top:10px;
+}
+ul.pagination li {
+	float: left;
+	padding-right: 5px;
+}
+ul.pagination li a {
+	padding: 3px 7px;
+	border: 1px solid #ccc;
+	text-decoration: none;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	display: block;
+	background: #fff url(../images/bg_fade_up.png) repeat-x bottom;
+}
+ul.pagination li.page a {
+	color: #fff;
+	font-weight: 700;
+}
+ul.pagination li.page a:hover {
+	color: #fff;
+}
+ul.pagination li.text a {
+	border: none;
+	text-decoration: underline;
+	padding: 0 5px 0 0;
+}
+ul.pagination li.text {
+	line-height: 2em;
+}
+ul.pagination li.page a {
+	background: #00789F url(../images/bg_buttons.png) repeat-x top;
+	border: 1px solid #0D87AE;
+}
+ul.pagination li.page a:hover {
+	background: #00789F url(../images/bg_buttons.png) 0 -50px;
+	border: 1px solid #005977;
+}
+.extrabottom {
+	padding: 15px;
+	height: 40px;
+	background: url(../images/bg_fade_sml.png) repeat-x top;
+	border-radius:10px;
+	-moz-border-radius:10px;
+	margin-top:10px;
+}
+.extrabottom ul {
+	float: left;
+}
+.extrabottom li {
+	float: left;
+	padding-right: 25px;
+}
+.extrabottom li img {
+	float: left;
+	padding: 0 5px 0 0;
+}
+

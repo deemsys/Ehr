@@ -200,9 +200,9 @@ element.style.display='none';
         <c:set value="${lumbopelvicexamForm.lumbopelvicexam[0]}" var="lumbopelvicexam"/>   
  <tr class="row1">
  <input type="hidden" name="lumbopelvicexamid" id="inp_id" value="${lumbopelvicexam.lumbopelvicexamid}">
-<td><h2>Patient Name:</h2></td><td><input type="text"  name="pname" value="${lumbopelvicexam.pname}"/></td>
+<td><h2><span class="err">*</span>Patient Name:</h2></td><td><input type="text"  name="pname" value="${lumbopelvicexam.pname}"/><span class="err"><form:errors path="Lumbopelvicexam.pname"></form:errors></span></td>
 <td width="600">
-<td><h2>Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${lumbopelvicexam.date}"/></td>
+<td><h2><span class="err">*</span>Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${lumbopelvicexam.date}"/><span class="err"><form:errors path="Lumbopelvicexam.date"></form:errors></span></td>
 </tr>
 </table>
 <br/>
@@ -536,10 +536,10 @@ element.style.display='none';
  </tr>
  </tr>
  <br/>
- <table><tr><td><B style="font-size:14px">PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sign" value="${lumbopelvicexam.sign}"></B></td></tr></table>
+ <table><tr><td><B style="font-size:14px"><span class="err">*</span>PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sign" value="${lumbopelvicexam.sign}"></B><span class="err"><form:errors path="Lumbopelvicexam.sign"></form:errors></span></td></tr></table>
 <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="Save"></td>
+<td><input type="submit" class="submit_btn" value="Update"></td>
 <td><input type="reset" class="submit_btn" value="Cancel"></td>
 </tr>
 </table>

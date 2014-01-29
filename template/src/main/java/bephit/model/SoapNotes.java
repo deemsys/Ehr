@@ -1,8 +1,11 @@
 package bephit.model;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class SoapNotes {
 	private String patient_id;
 	private String soapid;
+	@NotEmpty
 	private String pname;
 	private String headache;
 	private String neckpain;
@@ -92,6 +95,7 @@ public class SoapNotes {
 	private String fixation8;
 	private String notimproved8;
 	private String scsm8;
+	@NotEmpty
 	private String sign;
 	
 	public SoapNotes(){

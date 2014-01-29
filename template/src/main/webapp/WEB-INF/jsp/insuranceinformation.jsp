@@ -63,11 +63,11 @@
               </tr>
               <br>
               <tr class="row1">
-              <td>Patient's Name</td>
+              <td><span class="err">*</span>Patient's Name</td>
               <td> <input type="text" class="input_txtbx1" name="patient_name" id="patient_name" /><br><span class="err"><form:errors path="Insuranceinformation.patient_name"></form:errors></td>
               </tr>
               <tr class="row1">
-              <td>Date of Accident/injury</td>
+              <td><span class="err">*</span>Date of Accident/injury</td>
               <td> <input type="text" class="input_txtbx1" name="date_of_accident" id="datepicker" /><span class="err"><form:errors path="Insuranceinformation.date_of_accident"></form:errors></td>
               </tr>
               <tr class="row1">
@@ -75,25 +75,25 @@
               <td><input type="radio" name="have_insurance" value="Yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="have_insurance" value="No" class="input_txt">No</td>
               </tr>
               <tr class="row1">
-              <td>Employer's Name</td>
+              <td><span class="err">*</span>Employer's Name</td>
               <td> <input type="text" class="input_txtbx1" name="employers_name" id="employers_name" /><span class="err"><form:errors path="Insuranceinformation.employers_name"></form:errors></td>
               </tr>
               <tr class="row1">
-              <td>Insurance Company</td>
+              <td><span class="err">*</span>Insurance Company</td>
               <td> <input type="text" class="input_txtbx1" name="insurance_company" id="insurance_company" /><br><span class="err"><form:errors path="Insuranceinformation.insurance_company"></form:errors></td>
-              <td>Phone#</td>
+              <td><span class="err">*</span>Phone#</td>
               <td><input type="text" class="input_txtbx1" name="phone" id="phone" /><br><span class="err"><form:errors path="Insuranceinformation.phone"></form:errors></td>
               </tr>
               <tr class="row1">
-              <td>Policy #</td>
+              <td><span class="err">*</span>Policy #</td>
               <td> <input type="text" class="input_txtbx1" name="policy" id="policy" /><br><span class="err"><form:errors path="Insuranceinformation.policy"></form:errors></td>
-              <td>Group#</td>
+              <td><span class="err">*</span>Group#</td>
               <td><input type="text" class="input_txtbx1" name="infono" id="infono" /><br><span class="err"><form:errors path="Insuranceinformation.infono"></form:errors></td>
               </tr>
               <tr class="row1">
-              <td>Supplemental Insurance Company</td>
+              <td><span class="err">*</span>Supplemental Insurance Company</td>
               <td> <input type="text" class="input_txtbx1" name="supplemental_company" id="supplemental_company" /><br><span class="err"><form:errors path="Insuranceinformation.supplemental_company"></form:errors></td>
-              <td>Phone#</td>
+              <td><span class="err">*</span>Phone#</td>
               <td> <input type="text" class="input_txtbx1" name="sup_phone" id="sup_phone" /><br><span class="err"><form:errors path="Insuranceinformation.sup_phone"></form:errors></td>
               </tr>
               </table>
@@ -111,15 +111,15 @@
 	</table>
  		<table cellpadding="0" cellspacing="0" border="0" width="100%">
  		<tr class="row1">
- 		<td>Patient Signature</td>
+ 		<td><span class="err">*</span>Patient Signature</td>
         <td> <input type="text" class="input_txtbx1" name="patient_sign" id="patient_sign" /><br><span class="err"><form:errors path="Insuranceinformation.patient_sign"></form:errors></td>
-        <td>Date</td>
+        <td><span class="err">*</span>Date</td>
         <td> <input type="text" class="input_txtbx1" name="date" id="datepicker1" /><br><span class="err"><form:errors path="Insuranceinformation.date"></form:errors></td>
         </tr>
         <tr class="row1">
- 		<td>Spouse or Guardian Signature</td>
+ 		<td><span class="err">*</span>Spouse or Guardian Signature</td>
         <td> <input type="text" class="input_txtbx1" name="spouse_sign" id="spouse_sign" /><br><span class="err"><form:errors path="Insuranceinformation.spouse_sign"></form:errors></td>
-        <td>Date</td>
+        <td><span class="err">*</span>Date</td>
         <td> <input type="text" class="input_txtbx1" name="date1" id="datepicker2" /><br><span class="err"><form:errors path="Insuranceinformation.date1"></form:errors></td>
         </tr>
         </table>
@@ -131,11 +131,11 @@
               </tr>
               <br>
               <tr class="row1">
-              <td>Patient's Name</td>
+              <td><span class="err">*</span>Patient's Name</td>
               <td> <input type="text" class="input_txtbx1" name="patient_name" id="patient_name" value="${info.patient_name}"/><br><span class="err"><form:errors path="Insuranceinformation.patient_name"></form:errors></td>
               </tr>
               <tr class="row1">
-              <td>Date of Accident/injury</td>
+              <td><span class="err">*</span>Date of Accident/injury</td>
               <td> <input type="text" class="input_txtbx1" name="date_of_accident" id="datepicker" value="${info.date_of_accident }"/><span class="err"><form:errors path="Insuranceinformation.date_of_accident"></form:errors></td>
               </tr>
               <tr class="row1">
@@ -143,25 +143,25 @@
               <td><input type="radio" name="have_insurance" value="Yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="have_insurance" value="No" class="input_txt">No</td>
               </tr>
               <tr class="row1">
-              <td>Employer's Name</td>
+              <td><span class="err">*</span>Employer's Name</td>
               <td> <input type="text" class="input_txtbx1" name="employers_name" id="employers_name" value="${info.employers_name}"/><span class="err"><form:errors path="Insuranceinformation.employers_name"></form:errors></td>
               </tr>
               <tr class="row1">
-              <td>Insurance Company</td>
+              <td><span class="err">*</span>Insurance Company</td>
               <td> <input type="text" class="input_txtbx1" name="insurance_company" id="insurance_company" value="${info.insurance_company}"/><br><span class="err"><form:errors path="Insuranceinformation.insurance_company"></form:errors></td>
-              <td>Phone#</td>
+              <td><span class="err">*</span>Phone#</td>
               <td><input type="text" class="input_txtbx1" name="phone" id="phone" value="${info.phone }"/><br><span class="err"><form:errors path="Insuranceinformation.phone"></form:errors></td>
               </tr>
               <tr class="row1">
-              <td>Policy #</td>
+              <td><span class="err">*</span>Policy #</td>
               <td> <input type="text" class="input_txtbx1" name="policy" id="policy" value="${info.policy}"/><br><span class="err"><form:errors path="Insuranceinformation.policy"></form:errors></td>
-              <td>Group#</td>
+              <td><span class="err">*</span>Group#</td>
               <td><input type="text" class="input_txtbx1" name="infono" id="infono" value="${info.infono}"/><br><span class="err"><form:errors path="Insuranceinformation.infono"></form:errors></td>
               </tr>
               <tr class="row1">
-              <td>Supplemental Insurance Company</td>
+              <td><span class="err">*</span>Supplemental Insurance Company</td>
               <td> <input type="text" class="input_txtbx1" name="supplemental_company" id="supplemental_company" value="${info.supplemental_company}"/><br><span class="err"><form:errors path="Insuranceinformation.supplemental_company"></form:errors></td>
-              <td>Phone#</td>
+              <td><span class="err">*</span>Phone#</td>
               <td> <input type="text" class="input_txtbx1" name="sup_phone" id="sup_phone" value="${info.sup_phone}"/><br><span class="err"><form:errors path="Insuranceinformation.sup_phone"></form:errors></td>
               </tr>
               </table>
@@ -179,15 +179,15 @@
 	</table>
  		<table cellpadding="0" cellspacing="0" border="0" width="100%">
  		<tr class="row1">
- 		<td>Patient Signature</td>
+ 		<td><span class="err">*</span>Patient Signature</td>
         <td> <input type="text" class="input_txtbx1" name="patient_sign" id="patient_sign" value="${info.patient_sign}"/><br><span class="err"><form:errors path="Insuranceinformation.patient_sign"></form:errors></td>
-        <td>Date</td>
+        <td><span class="err">*</span>Date</td>
         <td> <input type="text" class="input_txtbx1" name="date" id="datepicker1" value="${info.date }"/><br><span class="err"><form:errors path="Insuranceinformation.date"></form:errors></td>
         </tr>
         <tr class="row1">
- 		<td>Spouse or Guardian Signature</td>
+ 		<td><span class="err">*</span>Spouse or Guardian Signature</td>
         <td> <input type="text" class="input_txtbx1" name="spouse_sign" id="spouse_sign" value="${info.spouse_sign}"/><br><span class="err"><form:errors path="Insuranceinformation.spouse_sign"></form:errors></td>
-        <td>Date</td>
+        <td><span class="err">*</span>Date</td>
         <td> <input type="text" class="input_txtbx1" name="date1" id="datepicker2" value="${info.date1 }"/><br><span class="err"><form:errors path="Insuranceinformation.date1"></form:errors></td>
         </tr>
         </table>

@@ -13,8 +13,9 @@
 	type="text/css" />
 <link href="<c:url value="/resources/css/inner-clr.css" />"
 	rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="pro_dropdown_2/pro_dropdown_2.css" />
 
-
+<script src="pro_dropdown_2/stuHover.js" type="text/javascript"></script>
 <style type="text/css">
 .ddsubmenustyle,.ddsubmenustyle ul {
 	margin: 0;
@@ -45,7 +46,6 @@
 	border-bottom: 1px solid #fff;
 	font-size: 13px;
 }
-
 * html .ddsubmenustyle li { /*IE6 CSS hack*/
 	display: inline-block;
 	width: 140px; /*width of menu (include side paddings of LI A*/

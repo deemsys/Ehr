@@ -13,6 +13,26 @@
   P#mypar {font-style:calibri;
   line-height:18px;}
    </STYLE>
+   <script>
+  $(window).load(function(){
+$("#number1").keyup(function() {
+	 $("#number").html(''); 
+	/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
+	var intRegex = /^\d+$/;
+	if(intRegex.test($(this).val())||$(this).val()=='') 
+	{
+		var $in = $(this).val();		 
+	}
+	else if($(this).val()!='')
+		{
+		
+		$("#number").html('Kindly enter a number!!!!');
+		}
+}).keydown(function() {
+    oldValue = $(this).val();
+})
+});
+</script>
     <script>
 
 	  $(function() {
@@ -85,7 +105,7 @@ $(function() {
            
  <tr class="row1">
 <td><h2><span class="err">*</span>Patient Name:</h2></td><td width="400"><input type="text"  name="pname" /><span class="err"><form:errors path="Shoulderpainscore.pname"></form:errors></span></td>
-<td><h2><span class="err">*</span>Number:</h2></td><td width="400"><input type="text"  name="number" /><span class="err"><form:errors path="Shoulderpainscore.number"></form:errors></span></td>
+<td><h2><span class="err">*</span>Number:</h2></td><td width="400"><input type="text"  name="number" id="number1"/><span class="err"><form:errors path="Shoulderpainscore.number"></form:errors></span><span class="err"> <div id="number"></span></div></td>
 <td><h2><span class="err">*</span>Date:</h2></td><td><input type="text"  id="datepicker" name="date" /><span class="err"><form:errors path="Shoulderpainscore.date"></form:errors></span></td>
 </tr>
 </table>
@@ -344,7 +364,7 @@ $(function() {
           <table cellpadding="0" cellspacing="0" border="0" width="98%">      
  <tr class="row1">
 <td><h2><span class="err">*</span>Patient Name:</h2></td><td width="400"><input type="text"  name="pname" value="${shoulderpain.pname }"/><span class="err"><form:errors path="Shoulderpainscore.pname"></form:errors></span></td>
-<td><h2><span class="err">*</span>Number:</h2></td><td width="400"><input type="text"  name="number" value="${shoulderpain.number}"/><span class="err"><form:errors path="Shoulderpainscore.number"></form:errors></span></td>
+<td><h2><span class="err">*</span>Number:</h2></td><td width="400"><input type="text"  name="number" id="number1" value="${shoulderpain.number}"/><span class="err"><form:errors path="Shoulderpainscore.number"></form:errors></span><span class="err"> <div id="number"></span></div></td>
 <td><h2><span class="err">*</span>Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${shoulderpain.date}"/><span class="err"><form:errors path="Shoulderpainscore.date"></form:errors></span></td>
 </tr>
 </table>

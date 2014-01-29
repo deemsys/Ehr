@@ -42,7 +42,7 @@
 				<c:when test="${empty hard}">
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td>Date</td>
+              <td><span class="err">*</span>Date</td>
               <td ><input type="text" class="input_txtbx1" name="date" id="datepicker" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>
@@ -60,21 +60,21 @@
               <br>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
        		  <tr >
-       		  <td valign="middle" align="left" class="input_txt">Print Patients Name
+       		  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Print Patients Name
               <input type="text" class="input_txtbx1" name="print_pat_name" id="print_pat_name" /><span class="err"><form:errors path="Hardshipagreement.print_pat_name"></form:errors></span></td>
               </tr>
               </table>
               <br>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
-       		  <td valign="middle" align="left" class="input_txt">Patients Signature&nbsp;&nbsp;&nbsp;
+       		  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patients Signature&nbsp;&nbsp;&nbsp;
               <input type="text" class="input_txtbx1" name="pat_sign" id="pat_sign" /><span class="err"><form:errors path="Hardshipagreement.pat_sign"></form:errors></td>
               </tr>
               </table>
               <br>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
-       		  <td valign="middle" align="left" class="input_txt">Witness Signature&nbsp;&nbsp;&nbsp;  
+       		  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Witness Signature&nbsp;&nbsp;&nbsp;  
               <input type="text" class="input_txtbx1" name="witness_sign" id="witness_sign" /><span class="err"><form:errors path="Hardshipagreement.witness_sign"></form:errors></td>
               </tr>
               </table>
@@ -82,7 +82,7 @@
               <c:otherwise>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td>Date</td>
+              <td><span class="err">*</span>Date</td>
               <td ><input type="text" class="input_txtbx1" name="date" id="datepicker" value="${hard.date}"/><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>
@@ -100,21 +100,21 @@
               <br>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
        		  <tr >
-       		  <td valign="middle" align="left" class="input_txt">Print Patients Name
+       		  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Print Patients Name
               <input type="text" class="input_txtbx1" name="print_pat_name" id="print_pat_name" value="${hard.print_pat_name}"/><span class="err"><form:errors path="Hardshipagreement.print_pat_name"></form:errors></span></td>
               </tr>
               </table>
               <br>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
-       		  <td valign="middle" align="left" class="input_txt">Patients Signature&nbsp;&nbsp;&nbsp;
+       		  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patients Signature&nbsp;&nbsp;&nbsp;
               <input type="text" class="input_txtbx1" name="pat_sign" id="pat_sign" value="${hard.pat_sign}"/><span class="err"><form:errors path="Hardshipagreement.pat_sign"></form:errors></td>
               </tr>
               </table>
               <br>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
-       		  <td valign="middle" align="left" class="input_txt">Witness Signature&nbsp;&nbsp;&nbsp;  
+       		  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Witness Signature&nbsp;&nbsp;&nbsp;  
               <input type="text" class="input_txtbx1" name="witness_sign" id="witness_sign"  value="${hard.witness_sign}"/><span class="err"><form:errors path="Hardshipagreement.witness_sign"></form:errors></td>
               </tr>
               </table>

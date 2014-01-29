@@ -42,17 +42,20 @@ $(function() {
   });
   </script>
 </head>
+ 
  <body>
+ 
  <div id="tabs">
        <ul>
           <li><a href="#tabs-1">1</a></li>
           <li><a href="#tabs-2">2</a></li>          
        </ul>
+        <form action="cervicalexam" method="POST" name="cervical">
          <c:choose>
             <c:when test="${empty cervical}">
    <div id="tabs-1"> 
  <div id="right_content">
-<form action="cervicalexam" method="POST" name="cervical">
+
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
 <tr>
 <td valign="top" align="left">
@@ -345,7 +348,6 @@ $(function() {
   </td>
   </tr>
   </table>
-  </form>
   </div>
   </div>
   </c:when>
@@ -359,9 +361,9 @@ $(function() {
 	    <div class="contentbox">
           <table cellpadding="0" cellspacing="0" border="0" width="98%">  
  <tr class="row1">
-<td><h2><span class="err">*</span>Patient Name:</h2></td><td><input type="text"  name="pname" value="${cervical.pname}" /><span class="err"><form:errors path="Cervicalexam.pname"></form:errors></span></td>
-<td width="600">
-<td><h2><span class="err">*</span>Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${cervical.date}"/><span class="err"><form:errors path="Cervicalexam.date"></form:errors></span></td>
+<td width="150"><h2><span class="err">*</span>Patient Name:</h2></td><td width="380"><input type="text"  name="pname" value="${cervical.pname}" /><span class="err"><form:errors path="Cervicalexam.pname"></form:errors></span></td>
+<td width="300">
+<td><h2><span class="err">*</span>Date:</h2></td><td width="380"><input type="text"  id="datepicker" name="date" value="${cervical.date}"/><span class="err"><form:errors path="Cervicalexam.date"></form:errors></span></td>
 </tr>
 </table>
 <br/>
@@ -461,16 +463,15 @@ $(function() {
  <td><b>ULTT:	</b> </td><td><input type="text" name="ulttl" size="5" value="${cervical.ulttl}"> <input type="text" name="ulttr" size="5" value="${cervical.ulttr}"></td>
  </tr>
   </table>
- 
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
+ </div>
+ </div>
+ </td>
+ </tr>
+ </table>
+ </div>
+ </div>
 <div id="tabs-2"> 
  <div id="right_content">
-<form action="soapnotes" method="POST" name="soapnotes">
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
 <tr>
 <td valign="top" align="left">
@@ -640,12 +641,11 @@ $(function() {
  </td>
  </tr>
  </table>
- </form>
  </div>
  </div>
  </c:otherwise>
-  </c:choose>
-  
-</div>
-</form>
-</body>
+ </c:choose>
+ </form>
+ </div>
+ </body>
+ </html>

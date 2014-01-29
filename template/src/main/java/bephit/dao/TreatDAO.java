@@ -225,8 +225,84 @@ public class TreatDAO {
 		   		else
 		   			return 0;
 		}
+	public List<Treatform> getlimitedtreatformdetail(int page) {
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		
+		
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<Treatform> treatform = new ArrayList<Treatform>();
+		try {
 
+			String cmd;
+			int offset = 5 * (page - 1);
+			int limit = 5;
+			
+				
+					cmd = "select * from treat_details order by patientsname asc limit " + offset + ","+ limit+"" ;
 	
+			resultSet = statement.executeQuery(cmd);
+			while (resultSet.next()) {
+				treatform.add(new Treatform(resultSet.getString("treat_no"),resultSet.getString("patientsname"),
+			    		resultSet.getString("patientssign"),
+			    		resultSet.getString("todaydate"),
+			    		resultSet.getString("witness")));
+			}
+		} catch (Exception e) {
+			/*logger.info(e.toString());*/
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		} finally {
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		}
+		return treatform;
+
+	}
+	public int getnooftreatform() {
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		int noofRecords = 0;
+		
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<Treatform> treatform = new ArrayList<Treatform>();
+		try {
+
+			String cmd;
+			
+					cmd = "select count(*) as noofrecords from treat_details";
+					System.out.println("command"+cmd);			
+			resultSet = statement.executeQuery(cmd);
+			if (resultSet.next())
+				noofRecords = resultSet.getInt("noofrecords");
+
+		} catch (Exception e) {
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		} finally {
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		}
+		return noofRecords;
+
+	}
+
 	public void releaseConnection(Connection con){
 		try{if(con != null)
 			con.close();

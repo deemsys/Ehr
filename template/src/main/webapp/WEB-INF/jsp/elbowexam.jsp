@@ -48,11 +48,11 @@ $(function() {
           <li><a href="#tabs-1">1</a></li>
           <li><a href="#tabs-2">2</a></li>          
        </ul>
+<form action="elbowexam" method="POST" name="elbow">     
       <c:choose>
             <c:when test="${empty elbow}">   
    <div id="tabs-1"> 
  <div id="right_content">
-<form action="elbowexam" method="POST" name="elbow">
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
 <tr>
 <td valign="top" align="left">
@@ -327,7 +327,7 @@ $(function() {
  </tr>
  </tr>
  <br/>
- <table><tr><td><B style="font-size:14px"><span class="err">*</span>PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sign"><span class="err"><form:errors path="Elbowexam.sign"></form:errors></span></B></td></tr></table>
+ <table><tr><td><B style="font-size:14px"><span class="err">*</span>PHYSICIAN SIGNATURE:</B> </td><td><input type="text" name="sign"><span class="err"><form:errors path="Elbowexam.sign"></form:errors></span></td></tr></table>
 <table align="right">
 <tr>
 <td><input type="submit" class="submit_btn" value="Save"></td>
@@ -356,9 +356,9 @@ $(function() {
 	    <div class="contentbox">
           <table cellpadding="0" cellspacing="0" border="0" width="98%">
  <tr class="row1">
-<td><h2><span class="err">*</span>Patient Name:</h2></td><td><input type="text"  name="pname" value="${elbow.pname}"/><span class="err"><form:errors path="Elbowexam.pname"></form:errors></span></td>
-<td width="600">
-<td><h2><span class="err">*</span>Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${elbow.date}"/><span class="err"><form:errors path="Elbowexam.date"></form:errors></span></td>
+<td width="150"><h2><span class="err">*</span>Patient Name:</h2></td><td width="380"><input type="text"  name="pname" value="${elbow.pname}"/><span class="err"><form:errors path="Elbowexam.pname"></form:errors></span></td>
+<td width="300">
+<td><h2><span class="err">*</span>Date:</h2></td><td width="380"><input type="text"  id="datepicker" name="date" value="${elbow.date}"/><span class="err"><form:errors path="Elbowexam.date"></form:errors></span></td>
 </tr>
 </table>
 <br/>

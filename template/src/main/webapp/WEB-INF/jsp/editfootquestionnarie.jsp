@@ -313,7 +313,7 @@ $(function() {
 	             
 	            </div>
           <div class="contentbox">
-	    Today's Date <input type="text" name="date" id="datepicker" value="${footquestionnariedetails.date }">
+	   <span class="err">*</span> Today's Date <input type="text" name="date" id="datepicker" value="${footquestionnariedetails.date }"><span class="err"><form:errors path="Footquestionnarie.date"></form:errors></span>
 	    <br>
 	    <br>
 	    

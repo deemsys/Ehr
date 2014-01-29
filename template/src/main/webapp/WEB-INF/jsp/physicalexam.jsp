@@ -34,6 +34,8 @@
   </head>
 	<body>
 	<form method="POST" action="physicalexam">
+	 <c:choose>
+            <c:when test="${empty physical}">
 
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
 
@@ -182,163 +184,7 @@
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="abnormal" /><span class="err"><form:errors path="Physicalexam.abnormal"></form:errors>
 				                  </td>
 				                </tr>
-				               
-				              
 				                </table>
-				               <%--  </c:when>
-				                <c:otherwise>
-				                <table cellpadding="0" cellspacing="0" border="0" width="100%">
-  				<tr>
-    				<td align="left" valign="top" width="50%" style="padding-right:25px;">
-    					<!-- <h2 class="quck-txt">Patient Details</h2> -->
-    					<c:set value="${physicalexamForm.physicalexam[0]}" var="physicalexam"/>
-                        <table cellpadding="0" cellspacing="0" border="0" width="100%">
-	                            <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Physician Signature :</td>
-				                  <input type="hidden" class="input_txtbx1" id="inp_id" value="${physicalexam.physical_id}" name="physical_id" />
-				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="sign" value="${physical.sign}" /><span class="err"><form:errors path="Physicalexam.sign"></form:errors>
-				                  </td>
-				                </tr>
-				                <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Name :</td>
-				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="name" value="${physical.name}"/><span class="err"><form:errors path="Physicalexam.name"></form:errors>
-				                  </td>
-				                </tr>
-				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>ID :</td>
-				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="id" value="${physical.id}"/><span class="err"><form:errors path="Physicalexam.id"></form:errors>
-				                  </td>
-				                </tr>
-				                <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date :</td>
-				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="date" value="${physical.date}" /><span class="err"><form:errors path="Physicalexam.date"></form:errors>
-				                  </td>
-				                </tr>
-				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Vitals-Age:</td>
-				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="age" value="${physical.age}"/><span class="err"><form:errors path="Physicalexam.age"></form:errors>
-				                  </td>
-				                </tr>
-				                <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Sex:</td>
-				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="sex" value="${physical.sex}"/><span class="err"><form:errors path="Physicalexam.sex"></form:errors>
-				                  </td>
-				                </tr>
-				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Height:</td>
-				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="height" value="${physical.height}"/><span class="err"><form:errors path="Physicalexam.height"></form:errors>
-				                  </td>
-				                </tr>
-				                <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Weight:</td>
-				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="weight" value="${physical.weight}"/><span class="err"><form:errors path="Physicalexam.weight"></form:errors>
-				                  </td>
-				                </tr>
-				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Temp:</td>
-				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="temp" value="${physical.temp}"/><span class="err"><form:errors path="Physicalexam.temp"></form:errors>
-				                  </td>
-				                </tr>
-				                <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>BP:</td>
-				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="bp" value="${physical.bp}"/><span class="err"><form:errors path="Physicalexam.bp"></form:errors>
-				                  </td>
-				                </tr>
-				                </table>
-				                <td align="left" valign="top"> 
-							<table cellpadding="0" cellspacing="0" border="0" width="100%">
-				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Pulse:</td>
-				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="pulse" value="${physical.pulse}"/><span class="err"><form:errors path="Physicalexam.pulse"></form:errors>
-				                  </td>
-				                </tr>
-				                <tr class="row1">
-				                 	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Appearance:</td>
-				                  	<td valign="top" align="left" class="input_txt">
-				                  		<select name="appearance" class="input_cmbbx1">
-				                  		<option value="excellent" <c:if test="${physical.appearance=='excellent'}"><c:out value="selected"/></c:if>>Excellent</option>
-						                 <option value="good" <c:if test="${physical.appearance=='good'}"><c:out value="selected"/></c:if>>Good</option>   
-						                 <option value="fair" <c:if test="${physical.appearance=='fair'}"><c:out value="selected"/></c:if>>Fair</option>
-						                 <option value="Severe" <c:if test="${physical.appearance=='Severe'}"><c:out value="selected"/></c:if>>Severe</option>
-						          
-				                   		</select>
-				                   	</td> </tr>  
-				                   	 <tr class="row2">
-				                 	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Weight:</td>
-				                  	<td valign="top" align="left" class="input_txt">
-				                  		<select name="weight1" class="input_cmbbx1">
-				                  		<option value="un" <c:if test="${physical.weight1=='un'}"><c:out value="selected"/></c:if>>UN</option>
-				                  		<option value="n" <c:if test="${physical.weight1=='n'}"><c:out value="selected"/></c:if>>N</option>
-				                  		<option value="wn" <c:if test="${physical.weight1=='wn'}"><c:out value="selected"/></c:if>>WN</option>
-						                    
-				                   		</select>
-				                   	</td> </tr>  
-				                   	 <tr class="row1">
-				                 	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>GAIT:</td>
-				                  	<td valign="top" align="left" class="input_txt">
-				                  		<select name="gait" class="input_cmbbx1">
-				                  		<option value="antalgic" <c:if test="${physical.gait=='antalgic'}"><c:out value="selected"/></c:if>>Antalgic</option>
-				                  		<option value="limp" <c:if test="${physical.gait=='limp'}"><c:out value="selected"/></c:if>>Limp</option>
-				                  		<option value="sway" <c:if test="${physical.gait=='sway'}"><c:out value="selected"/></c:if>>Sway</option>
-				                  		<option value="stagger" <c:if test="${physical.gait=='stagger'}"><c:out value="selected"/></c:if>>Stagger</option>
-				                  		<option value="normal" <c:if test="${physical.gait=='normal'}"><c:out value="selected"/></c:if>>Normal</option>
-				                  		
-				                   		</select>
-				                   		
-				                   	</td> </tr>
-				                   	 <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>HEAD,EENT:</td>
-				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="head" value="Normal" class="input_txt"  <c:if test="${physical.head=='Normal'}"><c:out value="checked=checked"/></c:if>>Normal&nbsp;&nbsp;&nbsp;
-				                  	<input type="radio" name="head" value="Abnormal" class="input_txt"  <c:if test="${physical.head=='Abnormal'}"><c:out value="checked=checked"/></c:if>>Abnormal&nbsp;&nbsp;&nbsp;</td>
-				                </tr>
-				                 <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Visceral Pathologies:</td>
-				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="path" value="Normal" class="input_txt"  <c:if test="${physical.path=='Normal'}"><c:out value="checked=checked"/></c:if>>Normal&nbsp;&nbsp;&nbsp;
-				                  	<input type="radio" name="path" value="Abnormal" class="input_txt"  <c:if test="${physical.path=='Abnormal'}"><c:out value="checked=checked"/></c:if>>Abnormal&nbsp;&nbsp;&nbsp;</td>
-				                </tr>
-				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Posture:</td>
-				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="posture" value="Good" class="input_txt"  <c:if test="${physical.posture=='Good'}"><c:out value="checked=checked"/></c:if>>Good&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				                  	<input type="radio" name="posture" value="Poor" class="input_txt"  <c:if test="${physical.posture=='Poor'}"><c:out value="checked=checked"/></c:if>>Poor&nbsp;&nbsp;&nbsp;</td>
-				                </tr>
-				                   	<tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Romberg's Sign:</td>
-				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="romber" value="Present" class="input_txt"  <c:if test="${physical.romber=='Present'}"><c:out value="checked=checked"/></c:if>>Present&nbsp;&nbsp;&nbsp;
-				                  	<input type="radio" name="romber" value="NotPresent" class="input_txt"  <c:if test="${physical.romber=='NotPresent'}"><c:out value="checked=checked"/></c:if>>NotPresent&nbsp;&nbsp;&nbsp;</td>
-				                </tr>
-				                 <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>CN Exam:</td>
-				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="exam" value="Normal" class="input_txt"  <c:if test="${physical.exam=='Normal'}"><c:out value="checked=checked"/></c:if>>Normal&nbsp;&nbsp;&nbsp;
-				                  	<input type="radio" name="exam" value="DNP" class="input_txt"  <c:if test="${physical.exam=='DNP'}"><c:out value="checked=checked"/></c:if>>DNP&nbsp;&nbsp;&nbsp;</td>
-				                </tr>  	
-				               <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Abnormal Findings:</td>
-				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="abnormal" value=${physical.abnormal } /><span class="err"><form:errors path="Physicalexam.abnormal"></form:errors>
-				                  </td>
-				                </tr>
-				               
-				              
-				                </table>
-				                </c:otherwise>
-				                </c:choose>
-				                --%>
 				                </td>
 				                </tr>
 	</table>
@@ -1278,7 +1124,6 @@
 				                  <tr>
 				                   <td><input type="submit" class="submit_btn" value="Save"></td>
 				                   <td>&nbsp;&nbsp;</td>
-				                    <!-- <td><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewphysicalexam'"></td> -->
 				                    <td>&nbsp;&nbsp;</td>
 				                    <td><input type="reset" class="submit_btn" value="Cancel"></td>
 				              </tr>
@@ -1292,10 +1137,1153 @@
 				                  </table>
 				                  </div>
 				                  </div>
+				                  </c:when>
+				                  <c:otherwise>
+
+<table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
+
+      <tr>
+        <td valign="top" align="left">
+        	<div> 
+        	<div class="headings altheading">
+	              <h2 align="center"> Physical exam<br></b></h2>
+	       </div></div> 
+	       <div class="contentbox">
+	        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+  				<tr>
+    				<td align="left" valign="top" width="50%" style="padding-right:25px;">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+	                            <tr class="row2">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Physician Signature :</td>
+				                  <input type="hidden" class="input_txtbx1" id="inp_id" value="${physical.physical_id}" name="physical_id" />
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="sign" value="${physical.sign}" /><span class="err"><form:errors path="Physicalexam.sign"></form:errors></span>
+				                  </td>
+				                </tr>
+				                <tr class="row1">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Name :</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="name" value="${physical.name}"/><span class="err"><form:errors path="Physicalexam.name"></form:errors></span>
+				                  </td>
+				                </tr>
+				                <tr class="row2">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>ID :</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="id" value="${physical.id}"/><span class="err"><form:errors path="Physicalexam.id"></form:errors></span>
+				                  </td>
+				                </tr>
+				                <tr class="row1">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date :</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="date" value="${physical.date}" /><span class="err"><form:errors path="Physicalexam.date"></form:errors></span>
+				                  </td>
+				                </tr>
+				                <tr class="row2">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Vitals-Age:</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="age" value="${physical.age}"/><span class="err"><form:errors path="Physicalexam.age"></form:errors></span>
+				                  </td>
+				                </tr>
+				                <tr class="row1">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Sex:</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="sex" value="${physical.sex}"/><span class="err"><form:errors path="Physicalexam.sex"></form:errors></span>
+				                  </td>
+				                </tr>
+				                <tr class="row2">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Height:</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="height" value="${physical.height}"/><span class="err"><form:errors path="Physicalexam.height"></form:errors></span>
+				                  </td>
+				                </tr>
+				                <tr class="row1">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Weight:</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="weight" value="${physical.weight}"/><span class="err"><form:errors path="Physicalexam.weight"></form:errors></span>
+				                  </td>
+				                </tr>
+				                <tr class="row2">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Temp:</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="temp" value="${physical.temp}"/><span class="err"><form:errors path="Physicalexam.temp"></form:errors></span>
+				                  </td>
+				                </tr>
+				                <tr class="row1">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>BP:</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="bp" value="${physical.bp}"/><span class="err"><form:errors path="Physicalexam.bp"></form:errors></span>
+				                  </td>
+				                </tr>
+				                </table>
+				                <td align="left" valign="top"> 
+							<table cellpadding="0" cellspacing="0" border="0" width="100%">
+				                <tr class="row2">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Pulse:</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="pulse" value="${physical.pulse}"/><span class="err"><form:errors path="Physicalexam.pulse"></form:errors></span>
+				                  </td>
+				                </tr>
+				                <tr class="row1">
+				                 	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Appearance:</td>
+				                  	<td valign="top" align="left" class="input_txt">
+				                  		<select name="appearance" class="input_cmbbx1">
+				                  		<option value="excellent" <c:if test="${physical.appearance=='excellent'}"><c:out value="selected"/></c:if>>Excellent</option>
+						                 <option value="good" <c:if test="${physical.appearance=='good'}"><c:out value="selected"/></c:if>>Good</option>   
+						                 <option value="fair" <c:if test="${physical.appearance=='fair'}"><c:out value="selected"/></c:if>>Fair</option>
+						                 <option value="Severe" <c:if test="${physical.appearance=='Severe'}"><c:out value="selected"/></c:if>>Severe</option>
+						          
+				                   		</select><span class="err"><form:errors path="Physicalexam.appearance"></form:errors></span>
+				                   	</td> </tr>  
+				                   	 <tr class="row2">
+				                 	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Weight:</td>
+				                  	<td valign="top" align="left" class="input_txt">
+				                  		<select name="weight1" class="input_cmbbx1">
+				                  		<option value="un" <c:if test="${physical.weight1=='un'}"><c:out value="selected"/></c:if>>UN</option>
+				                  		<option value="n" <c:if test="${physical.weight1=='n'}"><c:out value="selected"/></c:if>>N</option>
+				                  		<option value="wn" <c:if test="${physical.weight1=='wn'}"><c:out value="selected"/></c:if>>WN</option>
+						                    
+				                   		</select><span class="err"><form:errors path="Physicalexam.weight1"></form:errors></span>
+				                   	</td> </tr>  
+				                   	 <tr class="row1">
+				                 	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>GAIT:</td>
+				                  	<td valign="top" align="left" class="input_txt">
+				                  		<select name="gait" class="input_cmbbx1">
+				                  		<option value="antalgic" <c:if test="${physical.gait=='antalgic'}"><c:out value="selected"/></c:if>>Antalgic</option>
+				                  		<option value="limp" <c:if test="${physical.gait=='limp'}"><c:out value="selected"/></c:if>>Limp</option>
+				                  		<option value="sway" <c:if test="${physical.gait=='sway'}"><c:out value="selected"/></c:if>>Sway</option>
+				                  		<option value="stagger" <c:if test="${physical.gait=='stagger'}"><c:out value="selected"/></c:if>>Stagger</option>
+				                  		<option value="normal" <c:if test="${physical.gait=='normal'}"><c:out value="selected"/></c:if>>Normal</option>
+				                  		
+				                   		</select><span class="err"><form:errors path="Physicalexam.gait"></form:errors></span>
+				                   		
+				                   	</td> </tr>
+				                   	 <tr class="row2">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>HEAD,EENT:</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="radio" name="head" value="Normal" class="input_txt"  <c:if test="${physical.head=='Normal'}"><c:out value="checked=checked"/></c:if>>Normal&nbsp;&nbsp;&nbsp;
+				                  	<input type="radio" name="head" value="Abnormal" class="input_txt"  <c:if test="${physical.head=='Abnormal'}"><c:out value="checked=checked"/></c:if>>Abnormal&nbsp;&nbsp;&nbsp;<span class="err"><form:errors path="Physicalexam.head"></form:errors></span></td>
+				                </tr>
+				                 <tr class="row1">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Visceral Pathologies:</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="radio" name="path" value="Normal" class="input_txt"  <c:if test="${physical.path=='Normal'}"><c:out value="checked=checked"/></c:if>>Normal&nbsp;&nbsp;&nbsp;
+				                  	<input type="radio" name="path" value="Abnormal" class="input_txt"  <c:if test="${physical.path=='Abnormal'}"><c:out value="checked=checked"/></c:if>>Abnormal&nbsp;&nbsp;&nbsp;<span class="err"><form:errors path="Physicalexam.path"></form:errors></span></td>
+				                </tr>
+				                <tr class="row2">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Posture:</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="radio" name="posture" value="Good" class="input_txt"  <c:if test="${physical.posture=='Good'}"><c:out value="checked=checked"/></c:if>>Good&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				                  	<input type="radio" name="posture" value="Poor" class="input_txt"  <c:if test="${physical.posture=='Poor'}"><c:out value="checked=checked"/></c:if>>Poor&nbsp;&nbsp;&nbsp;<span class="err"><form:errors path="Physicalexam.posture"></form:errors></span></td>
+				                </tr>
+				                   	<tr class="row1">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Romberg's Sign:</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="radio" name="romber" value="Present" class="input_txt"  <c:if test="${physical.romber=='Present'}"><c:out value="checked=checked"/></c:if>>Present&nbsp;&nbsp;&nbsp;
+				                  	<input type="radio" name="romber" value="NotPresent" class="input_txt"  <c:if test="${physical.romber=='NotPresent'}"><c:out value="checked=checked"/></c:if>>NotPresent&nbsp;&nbsp;&nbsp;<span class="err"><form:errors path="Physicalexam.romber"></form:errors></span></td>
+				                </tr>
+				                 <tr class="row2">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>CN Exam:</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="radio" name="exam" value="Normal" class="input_txt"  <c:if test="${physical.exam=='Normal'}"><c:out value="checked=checked"/></c:if>>Normal&nbsp;&nbsp;&nbsp;
+				                  	<input type="radio" name="exam" value="DNP" class="input_txt"  <c:if test="${physical.exam=='DNP'}"><c:out value="checked=checked"/></c:if>>DNP&nbsp;&nbsp;&nbsp;<span class="err"><form:errors path="Physicalexam.exam"></form:errors></span></td>
+				                </tr>  	
+				               <tr class="row1">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Abnormal Findings:</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="abnormal" value=${physical.abnormal } /><span class="err"><form:errors path="Physicalexam.abnormal"></form:errors></span>
+				                  </td>
+				                </tr>
+				               
+				              
+				                </table>
+				               
+				                </td>
+				                </tr>
+	</table>
+	</div>
+	</td>
+	</tr>
+	</table>
+	
+	<div id="tabs">
+       <ul>
+          <li><a href="#tabs-1">CERVICAL SPINE</a></li>
+          <li><a href="#tabs-2">THORACIC SPINE</a></li>
+          <li><a href="#tabs-3">LUMBAR SPINE - SI - HIP</a></li>
+       </ul>
+         
+   <div id="tabs-1">
+	 <div id="right_content">
+		 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
+      <tr>
+        <td valign="top" align="left">
+        	<div> 
+        	<div class="headings altheading">
+        	<h2>CERVICAL SPINE</h2>
+	            </div>
+	            </div>
+	             <div class="contentbox">
+              <table cellpadding="0" cellspacing="0" border="0" width="100%">
+  				<tr>
+    				<td align="left" valign="top" width="80%" style="padding-right:25px;">
+                        		                
+                               
+                        <table border="0">
+				               <tr class="row1">
+				               <td><b>INSPECTION:</b></td>
+				               
+				                  </tr>
+				                 
+				                  <tr class="row1">
+				                  <td>Head Tilt:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="headtiltright" value="Right" <c:if test="${physical.headtiltright=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="headtiltleft" value="Left" <c:if test="${physical.headtiltleft=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
+				                  <td class="input_txt"><input type="checkbox" name="headtiltnormal" value="Normal" <c:if test="${physical.headtiltnormal=='Normal'}"><c:out value="checked=checked"/></c:if>>Normal</td>
+				                 
+				                  </tr>
+				                  <tr class="row1">
+				                  <td>Rotation:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="rotationright" value="Right" <c:if test="${physical.rotationright=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="rotationleft" value="Left"  <c:if test="${physical.rotationleft=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
+				                  <td class="input_txt"><input type="checkbox" name="rotationnormal" value="Normal" <c:if test="${physical.rotationnormal=='Normal'}"><c:out value="checked=checked"/></c:if>>Normal</td>
+				                 
+				                  </tr>
+				                   <tr class="row1">
+				                   <td>TMJ Syndrome:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="tmjright" value="Right" <c:if test="${physical.tmjright=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="tmjleft" value="Left" <c:if test="${physical.tmjleft=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
+				                  <td class="input_txt"><input type="checkbox" name="tmjnormal" value="Normal" <c:if test="${physical.tmjnormal=='Normal'}"><c:out value="checked=checked"/></c:if>>Normal</td>
+				                 
+				                  </tr>
+				                   <tr class="row1">
+				                   <td>High Shoulder:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="highright" value="Right" <c:if test="${physical.highright=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="highleft" value="Left" <c:if test="${physical.highleft=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
+				                  <td class="input_txt"><input type="checkbox" name="highnormal" value="Normal" <c:if test="${physical.highnormal=='Normal'}"><c:out value="checked=checked"/></c:if>>Normal</td>
+				                 
+				                  </tr>
+				                   <tr class="row1">
+				                   <td>Lordosis:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="lordhyper" value="Hyper" <c:if test="${physical.lordhyper=='Hyper'}"><c:out value="checked=checked"/></c:if>>Hyper</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="lordhypo" value="Hypo" <c:if test="${physical.lordhypo=='Hypo'}"><c:out value="checked=checked"/></c:if>>Hypo</td>
+				                  <td class="input_txt"><input type="checkbox" name="lordnormal" value="Normal" <c:if test="${physical.lordnormal=='Normal'}"><c:out value="checked=checked"/></c:if>>Normal</td>
+				                 
+				                  </tr>
+				                
+				                </table>
+				                <table border="0">
+				               <tr class="row1">
+				               <td><b>PALPATION:</b></td>
+				               
+				                  </tr>
+				                <tr class="row1">
+				                  <td>Lymph Nodes:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="lymphedema" value="Lymphedema" <c:if test="${physical.lymphedema=='Lymphedema'}"><c:out value="checked=checked"/></c:if>>Lymphedema</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="lymphnormal" value="Normal" <c:if test="${physical.lymphnormal=='Normal'}"><c:out value="checked=checked"/></c:if>>Normal</td>
+				                  </tr>
+				                   <tr class="row1">
+				                  <td>Paraspinal:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="paraspain" value="Pain" <c:if test="${physical.paraspain=='Pain'}"><c:out value="checked=checked"/></c:if>>Pain</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="parasspasm" value="Spasm" <c:if test="${physical.parasspasm=='Spasm'}"><c:out value="checked=checked"/></c:if>>Spasm</td>
+				                  <td class="input_txt" align="left"> <input type="checkbox" name="parasedema" value="Edema" <c:if test="${physical.parasedema=='Edema'}"><c:out value="checked=checked"/></c:if>>Edema</td>
+				                   <td class="input_txt" align="left"> <input type="checkbox" name="parastriggerpoint" value="TriggerPoint" <c:if test="${physical.parastriggerpoint=='TriggerPoint'}"><c:out value="checked=checked"/></c:if>>TriggerPoint</td>
+				                  </tr>
+				                  <tr class="row1">
+				                  <td>Trapezius/SCM:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="trapeziusrl" value="R-L" <c:if test="${physical.trapeziusrl=='R-L'}"><c:out value="checked=checked"/></c:if>>R-L</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="trapeziustono" value="Tonocity" <c:if test="${physical.trapeziustono=='Tonocity'}"><c:out value="checked=checked"/></c:if>>Tonicity</td>
+				                  <td class="input_txt" align="left"> <input type="checkbox" name="trapeziusnormal" value="Normal" <c:if test="${physical.trapeziusnormal=='Normal'}"><c:out value="checked=checked"/></c:if>>Normal</td>
+				                  </tr>
+				                  <tr class="row1">
+				                  <td>Vertebrae:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="vertebraefix" value="Fixations" <c:if test="${physical.vertebraefix=='Fixations'}"><c:out value="checked=checked"/></c:if>>Fixations</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="vertebraenofix" value="No_fixations" <c:if test="${physical.vertebraenofix=='No_fixations'}"><c:out value="checked=checked"/></c:if>>No Fixations</td>
+				                  </tr>
+				                  </table>
+				               <table border="0">
+				               <tr class="row1">
+				               <td><b>RANGE OF MOTION:(Include Degrees)</b></td>
+				               <td valign="top" align="left" class="input_txt">Normal ROM </td>
+				                  <td class="input_txt">Pain</td>
+				                  <td class="input_txt">Spasm</td>
+				                  <td class="input_txt">Stiff</td>
+				                  </tr>
+				                 
+				                  <tr class="row1">
+				                  <td>FLEX 60:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="flexnormal" value="${physical.flexnormal }" /></td>
+				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="flexpain" value="${physical.flexpain }"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="flexspasm" value="${physical.flexspasm }"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="flexstiff" value="${physical.flexstiff }"/></td>
+				                  </tr>
+				                  <tr class="row1">
+				                  <td>EXT 75:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="extnormal" value="${physical.extnormal }"/></td>
+				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="extpain" value="${physical.extpain }"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="extspasm" value="${physical.extspasm }"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="extstiff" value="${physical.extstiff }"/></td>
+				                 
+				                  </tr>
+				                   <tr class="row1">
+				                   <td>RLF 45:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="rlfnormal" value="${physical.rlfnormal } "/></td>
+				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="rlfpain" value="${physical.rlfpain }"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="rlfspasm" value="${physical.rlfspasm }"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="rlfstiff" value="${physical.rlfstiff }"/></td>
+				                 
+				                  </tr>
+				                   <tr class="row1">
+				                   <td>LLF 45:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="llfnormal" value="${physical.llfnormal }"/></td>
+				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="llfpain" value="${physical.llfpain }"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="llfspasm" value="${physical.llfspasm }"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="llfstiff" value="${physical.llfstiff }"/></td>
+				                 
+				                  </tr>
+				                   <tr class="row1">
+				                   <td>RR 80:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="rrnormal" value=${physical.rrnormal }></td>
+				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="rrpain" value=${physical.rrpain }></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="rrspasm" value=${physical.rrspasm }></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="rrstiff" value=${physical.rrstiff }></td>
+				                  </tr>
+				                <tr class="row1">
+				                   <td>LR 80:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="lrnormal" value="${physical.lrnormal }"/></td>
+				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="lrpain" value="${physical.lrpain }"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lrspasm" value="${physical.lrspasm }"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lrstiff" value="${physical.lrstiff}"/></td>
+				                  </tr>
+				                </table>
+				                
+				                 <table border="0">
+				               <tr class="row1">
+				               <td><b>NEURO-EXAM:</b></td>
+				               <td><b>DERMATOMES:</td>
+				                  </tr>
+				               <tr class="row1">
+				                  <td><b>Sensation:</td>
+				                  <td valign="top" align="left" class="input_txt"><b>Normal</td>
+				                 <td class="input_txt" align="left"><b>Abnormal Sensation</td>
+				                  
+				                 
+				                  </tr>
+				                <tr class="row1">
+				                   <td>C-5:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="c5" value="${physical.c5 }"/></td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="c5right" value="Right" <c:if test="${physical.c5right=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="c5left" value="Left" <c:if test="${physical.c5left=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
+				                  </tr>
+				                <tr class="row1">
+				                   <td>C-6:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="c6" value="${physical.c6 }"/></td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="c6right" value="Right" <c:if test="${physical.c6right=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="c6left" value="Left" <c:if test="${physical.c6left=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
+				                  </tr>
+				                  <tr class="row1">
+				                   <td>C-7:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="c7" value="${physical.c7 }"/></td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="c7right" value="Right" <c:if test="${physical.c7right=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="c7left" value="Left" <c:if test="${physical.c7left=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
+				                  </tr>
+				                  <tr class="row1">
+				                   <td>C-8:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="c8" value="${physical.c8 }"/></td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="c8right" value="Right" <c:if test="${physical.c8right=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="c8left" value="Left" <c:if test="${physical.c8left=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
+				                  </tr>
+				                  <tr class="row1">
+				                   <td>T-1:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="t1" value="${physical.t1 }"/></td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="t1right" value="Right"<c:if test="${physical.t1right=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="t1left" value="Left"<c:if test="${physical.t1left=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
+				                  </tr>
+				                  <tr class="row1">
+				                   <td>Other:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="other" value="${physical.other }"/></td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="otherright" value="Right" <c:if test="${physical.otherright=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="otherleft" value="Left" <c:if test="${physical.otherleft=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
+				                  </tr>
+				       </table>
+				       
+				       <table border="0">
+				               <tr class="row1">
+				               <td><b>NEURO-EXAM:</b></td>
+				               <td><b>MYOTOMES:</td>
+				                  </tr>
+				               <tr class="row1">
+				                 <td></td>
+				                  <td valign="top" align="left" class="input_txt"><b>Right</td>
+				                 <td class="input_txt" align="left"><b>Left</td>
+				                  </tr>
+				                    <tr class="row1">
+				                 <td>(Deltoid) C-5	</td>
+				                 <td><select name="deltoidright">
+				                 		<option value="0" <c:if test="${physical.deltoidright=='0'}"><c:out value="selected"/></c:if>>0</option>
+				                  		<option value="1" <c:if test="${physical.deltoidright=='1'}"><c:out value="selected"/></c:if>>1</option>
+				                  		<option value="2" <c:if test="${physical.deltoidright=='2'}"><c:out value="selected"/></c:if>>2</option>
+				                  		<option value="3" <c:if test="${physical.deltoidright=='3'}"><c:out value="selected"/></c:if>>3</option>
+				                  		<option value="4" <c:if test="${physical.deltoidright=='4'}"><c:out value="selected"/></c:if>>4</option>
+						                <option value="5" <c:if test="${physical.deltoidright=='5'}"><c:out value="selected"/></c:if>>5</option> 
+						                    
+				                   		</select></td>
+				                   		<td><select name="deltoidleft">
+						                <option value="0" <c:if test="${physical.deltoidleft=='0'}"><c:out value="selected"/></c:if>>0</option>
+				                  		<option value="1" <c:if test="${physical.deltoidleft=='1'}"><c:out value="selected"/></c:if>>1</option>
+				                  		<option value="2" <c:if test="${physical.deltoidleft=='2'}"><c:out value="selected"/></c:if>>2</option>
+				                  		<option value="3" <c:if test="${physical.deltoidleft=='3'}"><c:out value="selected"/></c:if>>3</option>
+				                  		<option value="4" <c:if test="${physical.deltoidleft=='4'}"><c:out value="selected"/></c:if>>4</option>
+						                <option value="5" <c:if test="${physical.deltoidleft=='5'}"><c:out value="selected"/></c:if>>5</option>
+				                   		</select></td>
+				                   		
+				                  </tr>
+				                   <tr class="row1">
+				                 <td>(Wrist Ext.) C-6	</td>
+				                 <td><select name="wristright">
+						                    <option value="0" <c:if test="${physical.wristright=='0'}"><c:out value="selected"/></c:if>>0</option>
+				                  		<option value="1" <c:if test="${physical.wristright=='1'}"><c:out value="selected"/></c:if>>1</option>
+				                  		<option value="2" <c:if test="${physical.wristright=='2'}"><c:out value="selected"/></c:if>>2</option>
+				                  		<option value="3" <c:if test="${physical.wristright=='3'}"><c:out value="selected"/></c:if>>3</option>
+				                  		<option value="4" <c:if test="${physical.wristright=='4'}"><c:out value="selected"/></c:if>>4</option>
+						                <option value="5" <c:if test="${physical.wristright=='5'}"><c:out value="selected"/></c:if>>5</option>
+				                   		</select></td>
+				                   		<td><select name="wristleft">
+						                    <option value="0" <c:if test="${physical.wristleft=='0'}"><c:out value="selected"/></c:if>>0</option>
+				                  		<option value="1" <c:if test="${physical.wristleft=='1'}"><c:out value="selected"/></c:if>>1</option>
+				                  		<option value="2" <c:if test="${physical.wristleft=='2'}"><c:out value="selected"/></c:if>>2</option>
+				                  		<option value="3" <c:if test="${physical.wristleft=='3'}"><c:out value="selected"/></c:if>>3</option>
+				                  		<option value="4" <c:if test="${physical.wristleft=='4'}"><c:out value="selected"/></c:if>>4</option>
+						                <option value="5" <c:if test="${physical.wristleft=='5'}"><c:out value="selected"/></c:if>>5</option>
+				                   		</select></td>
+				                   		
+				                  </tr>
+				                  <tr class="row1">
+				                 <td>(Wrist Flex) C-7	</td>
+				                 <td><select name="wristflexright">
+						                    <option value="0" <c:if test="${physical.wristflexright=='0'}"><c:out value="selected"/></c:if>>0</option>
+				                  		<option value="1" <c:if test="${physical.wristflexright=='1'}"><c:out value="selected"/></c:if>>1</option>
+				                  		<option value="2" <c:if test="${physical.wristflexright=='2'}"><c:out value="selected"/></c:if>>2</option>
+				                  		<option value="3" <c:if test="${physical.wristflexright=='3'}"><c:out value="selected"/></c:if>>3</option>
+				                  		<option value="4" <c:if test="${physical.wristflexright=='4'}"><c:out value="selected"/></c:if>>4</option>
+						                <option value="5" <c:if test="${physical.wristflexright=='5'}"><c:out value="selected"/></c:if>>5</option>
+				                   		</select></td>
+				                   		<td><select name="wristflexleft">
+						                    <option value="0" <c:if test="${physical.wristflexleft=='0'}"><c:out value="selected"/></c:if>>0</option>
+				                  		<option value="1" <c:if test="${physical.wristflexleft=='1'}"><c:out value="selected"/></c:if>>1</option>
+				                  		<option value="2" <c:if test="${physical.wristflexleft=='2'}"><c:out value="selected"/></c:if>>2</option>
+				                  		<option value="3" <c:if test="${physical.wristflexleft=='3'}"><c:out value="selected"/></c:if>>3</option>
+				                  		<option value="4" <c:if test="${physical.wristflexleft=='4'}"><c:out value="selected"/></c:if>>4</option>
+						                <option value="5" <c:if test="${physical.wristflexleft=='5'}"><c:out value="selected"/></c:if>>5</option>
+				                   		</select></td>
+				                   		
+				                  </tr>
+				                  <tr class="row1">
+				                 <td>(Finger Flex) C-8</td>
+				                 <td><select name="fingerflexright">
+						                   <option value="0" <c:if test="${physical.fingerflexright=='0'}"><c:out value="selected"/></c:if>>0</option>
+				                  		<option value="1" <c:if test="${physical.fingerflexright=='1'}"><c:out value="selected"/></c:if>>1</option>
+				                  		<option value="2" <c:if test="${physical.fingerflexright=='2'}"><c:out value="selected"/></c:if>>2</option>
+				                  		<option value="3" <c:if test="${physical.fingerflexright=='3'}"><c:out value="selected"/></c:if>>3</option>
+				                  		<option value="4" <c:if test="${physical.fingerflexright=='4'}"><c:out value="selected"/></c:if>>4</option>
+						                <option value="5" <c:if test="${physical.fingerflexright=='5'}"><c:out value="selected"/></c:if>>5</option>
+				                   		</select></td>
+				                   		<td><select name="fingerflexleft">
+						                    <option value="0" <c:if test="${physical.fingerflexleft=='0'}"><c:out value="selected"/></c:if>>0</option>
+				                  		<option value="1" <c:if test="${physical.fingerflexleft=='1'}"><c:out value="selected"/></c:if>>1</option>
+				                  		<option value="2" <c:if test="${physical.fingerflexleft=='2'}"><c:out value="selected"/></c:if>>2</option>
+				                  		<option value="3" <c:if test="${physical.fingerflexleft=='3'}"><c:out value="selected"/></c:if>>3</option>
+				                  		<option value="4" <c:if test="${physical.fingerflexleft=='4'}"><c:out value="selected"/></c:if>>4</option>
+						                <option value="5" <c:if test="${physical.fingerflexleft=='5'}"><c:out value="selected"/></c:if>>5</option>
+				                   		</select></td>
+				                   		
+				                  </tr>
+				                  <tr class="row1">
+				                 <td>(Finger Add.) T-1</td>
+				                 <td><select name="fingeraddright">
+						                   <option value="0" <c:if test="${physical.fingeraddright=='0'}"><c:out value="selected"/></c:if>>0</option>
+				                  		<option value="1" <c:if test="${physical.fingeraddright=='1'}"><c:out value="selected"/></c:if>>1</option>
+				                  		<option value="2" <c:if test="${physical.fingeraddright=='2'}"><c:out value="selected"/></c:if>>2</option>
+				                  		<option value="3" <c:if test="${physical.fingeraddright=='3'}"><c:out value="selected"/></c:if>>3</option>
+				                  		<option value="4" <c:if test="${physical.fingeraddright=='4'}"><c:out value="selected"/></c:if>>4</option>
+						                <option value="5" <c:if test="${physical.fingeraddright=='5'}"><c:out value="selected"/></c:if>>5</option>
+				                   		</select></td>
+				                   		<td><select name="fingeraddleft">
+						                    <option value="0" <c:if test="${physical.fingeraddleft=='0'}"><c:out value="selected"/></c:if>>0</option>
+				                  		<option value="1" <c:if test="${physical.fingeraddleft=='1'}"><c:out value="selected"/></c:if>>1</option>
+				                  		<option value="2" <c:if test="${physical.fingeraddleft=='2'}"><c:out value="selected"/></c:if>>2</option>
+				                  		<option value="3" <c:if test="${physical.fingeraddleft=='3'}"><c:out value="selected"/></c:if>>3</option>
+				                  		<option value="4" <c:if test="${physical.fingeraddleft=='4'}"><c:out value="selected"/></c:if>>4</option>
+						                <option value="5" <c:if test="${physical.fingeraddleft=='5'}"><c:out value="selected"/></c:if>>5</option>
+				                   		</select></td>
+				                   		
+				                  </tr>
+				                  <tr class="row1">
+				                 <td>(Wrist Ext.) C-6	</td>
+				                 <td><select name="wristextright">
+						                   <option value="0" <c:if test="${physical.wristextright=='0'}"><c:out value="selected"/></c:if>>0</option>
+				                  		<option value="1" <c:if test="${physical.wristextright=='1'}"><c:out value="selected"/></c:if>>1</option>
+				                  		<option value="2" <c:if test="${physical.wristextright=='2'}"><c:out value="selected"/></c:if>>2</option>
+				                  		<option value="3" <c:if test="${physical.wristextright=='3'}"><c:out value="selected"/></c:if>>3</option>
+				                  		<option value="4" <c:if test="${physical.wristextright=='4'}"><c:out value="selected"/></c:if>>4</option>
+						                <option value="5" <c:if test="${physical.wristextright=='5'}"><c:out value="selected"/></c:if>>5</option>
+				                   		</select></td>
+				                   		<td><select name="wristextleft">
+						                    <option value="0" <c:if test="${physical.wristextleft=='0'}"><c:out value="selected"/></c:if>>0</option>
+				                  		<option value="1" <c:if test="${physical.wristextleft=='1'}"><c:out value="selected"/></c:if>>1</option>
+				                  		<option value="2" <c:if test="${physical.wristextleft=='2'}"><c:out value="selected"/></c:if>>2</option>
+				                  		<option value="3" <c:if test="${physical.wristextleft=='3'}"><c:out value="selected"/></c:if>>3</option>
+				                  		<option value="4" <c:if test="${physical.wristextleft=='4'}"><c:out value="selected"/></c:if>>4</option>
+						                <option value="5" <c:if test="${physical.wristextleft=='5'}"><c:out value="selected"/></c:if>>5</option>
+				                   		</select></td>
+				                   		
+				                  </tr>
+				                 </table>
+				                  <table border="0">
+				               <tr class="row1">
+				               <td><b>NEURO-EXAM:</b></td>
+				               <td><b>DEEP TENDON REFLEXES:</td>
+				                  </tr>
+				               <tr class="row1">
+				                 <td></td>
+				                  <td valign="top" align="left" class="input_txt"><b>Right</td>
+				                 <td class="input_txt" align="left"><b>Left</td>
+				                  </tr> 
+				                  <tr class="row1">
+				                 <td>C-5/6 (Bicep) </td>
+				                 <td><select name="bicepright">
+						                   <option value="0" <c:if test="${physical.bicepright=='0'}"><c:out value="selected"/></c:if>>0</option>
+				                  		<option value="1" <c:if test="${physical.bicepright=='1'}"><c:out value="selected"/></c:if>>1</option>
+				                  		<option value="2" <c:if test="${physical.bicepright=='2'}"><c:out value="selected"/></c:if>>2</option>
+				                  		<option value="3" <c:if test="${physical.bicepright=='3'}"><c:out value="selected"/></c:if>>3</option>
+				                  		<option value="4" <c:if test="${physical.bicepright=='4'}"><c:out value="selected"/></c:if>>4</option>
+						                
+											
+				                   		</select></td>
+				                   		<td><select name="bicepleft">
+						                    <option value="0" <c:if test="${physical.bicepleft=='0'}"><c:out value="selected"/></c:if>>0</option>
+				                  		<option value="1" <c:if test="${physical.bicepleft=='1'}"><c:out value="selected"/></c:if>>1</option>
+				                  		<option value="2" <c:if test="${physical.bicepleft=='2'}"><c:out value="selected"/></c:if>>2</option>
+				                  		<option value="3" <c:if test="${physical.bicepleft=='3'}"><c:out value="selected"/></c:if>>3</option>
+				                  		<option value="4" <c:if test="${physical.bicepleft=='4'}"><c:out value="selected"/></c:if>>4</option>
+						                
+											
+				                   		</select></td>
+				                   		
+				                  </tr>
+				                  <tr class="row1">
+				                 <td>C-6/7 (Bracio-Rad.)</td>
+				                 <td><select name="bracioradright">
+						                   <option value="0" <c:if test="${physical.bracioradright=='0'}"><c:out value="selected"/></c:if>>0</option>
+				                  		<option value="1" <c:if test="${physical.bracioradright=='1'}"><c:out value="selected"/></c:if>>1</option>
+				                  		<option value="2" <c:if test="${physical.bracioradright=='2'}"><c:out value="selected"/></c:if>>2</option>
+				                  		<option value="3" <c:if test="${physical.bracioradright=='3'}"><c:out value="selected"/></c:if>>3</option>
+				                  		<option value="4" <c:if test="${physical.bracioradright=='4'}"><c:out value="selected"/></c:if>>4</option>
+						                
+											
+				                   		</select></td>
+				                   		<td><select name="bracioradleft">
+						                    <option value="0" <c:if test="${physical.bracioradleft=='0'}"><c:out value="selected"/></c:if>>0</option>
+				                  		<option value="1" <c:if test="${physical.bracioradleft=='1'}"><c:out value="selected"/></c:if>>1</option>
+				                  		<option value="2" <c:if test="${physical.bracioradleft=='2'}"><c:out value="selected"/></c:if>>2</option>
+				                  		<option value="3" <c:if test="${physical.bracioradleft=='3'}"><c:out value="selected"/></c:if>>3</option>
+				                  		<option value="4" <c:if test="${physical.bracioradleft=='4'}"><c:out value="selected"/></c:if>>4</option>
+						                
+											
+				                   		</select></td>
+				                   		
+				                  </tr>
+				                  <tr class="row1">
+				                 <td>C-7/8 (Tricep)</td>
+				                 <td><select name="tricepright">
+						                    <option value="0" <c:if test="${physical.tricepright=='0'}"><c:out value="selected"/></c:if>>0</option>
+				                  		<option value="1" <c:if test="${physical.tricepright=='1'}"><c:out value="selected"/></c:if>>1</option>
+				                  		<option value="2" <c:if test="${physical.tricepright=='2'}"><c:out value="selected"/></c:if>>2</option>
+				                  		<option value="3" <c:if test="${physical.tricepright=='3'}"><c:out value="selected"/></c:if>>3</option>
+				                  		<option value="4" <c:if test="${physical.tricepright=='4'}"><c:out value="selected"/></c:if>>4</option>
+						                
+											
+				                   		</select></td>
+				                   		<td><select name="tricepleft">
+						                    <option value="0" <c:if test="${physical.tricepleft=='0'}"><c:out value="selected"/></c:if>>0</option>
+				                  		<option value="1" <c:if test="${physical.tricepleft=='1'}"><c:out value="selected"/></c:if>>1</option>
+				                  		<option value="2" <c:if test="${physical.tricepleft=='2'}"><c:out value="selected"/></c:if>>2</option>
+				                  		<option value="3" <c:if test="${physical.tricepleft=='3'}"><c:out value="selected"/></c:if>>3</option>
+				                  		<option value="4" <c:if test="${physical.tricepleft=='4'}"><c:out value="selected"/></c:if>>4</option>
+						                
+											
+				                   		</select></td>
+				                   		
+				                  </tr>
+				                 
+				              </table>
+				              </td>
+				              </tr>
+				              </table>
+				              </div>
+				              </td>
+				              </tr>
+				              </table>
+				              </div>
+				              </div>
+				              
+				              
+				                <div id="tabs-2">
+				                 
+				                 <div id="right_content">
+				                
+        <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
+      <tr>
+        <td valign="top" align="left">
+        	<div> 
+        	<div class="headings altheading">
+        	<h2>THORACIC SPINE</h2>
+	            </div>
+	            </div>
+	             <div class="contentbox">
+              <table cellpadding="0" cellspacing="0" border="0" width="100%">
+  				<tr>
+    				<td align="left" valign="top" width="80%" style="padding-right:25px;">
+                        
+                        <table border="0">
+				               <tr class="row1">
+				               <td><b>INSPECTION:</b></td>
+				               
+				                  </tr>
+				                 <tr class="row1">
+				                  <td>High Shoulder:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="highshoulderright" value="Right" <c:if test="${physical.highshoulderright=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="highshoulderleft" value="Left" <c:if test="${physical.highshoulderleft=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
+				                  <td class="input_txt"><input type="checkbox" name="highshouldernormal" value="Normal" <c:if test="${physical.highshouldernormal=='Normal'}"><c:out value="checked=checked"/></c:if>>Normal</td>
+				                 
+				                  </tr>
+				                  <tr class="row1">
+				                  <td>Curvature:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="curvatureright" value="Right" <c:if test="${physical.curvatureright=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="curvatureleft" value="Left" <c:if test="${physical.curvatureleft=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
+				                  <td class="input_txt"><input type="checkbox" name="curvaturenormal" value="Normal" <c:if test="${physical.curvaturenormal=='Normal'}"><c:out value="checked=checked"/></c:if>>Normal</td>
+				                 
+				                  </tr>
+				                   <tr class="row1">
+				                   <td>Winging:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="wingingright" value="Right" <c:if test="${physical.wingingright=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="wingingleft" value="Left" <c:if test="${physical.wingingleft=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
+				                  <td class="input_txt"><input type="checkbox" name="wingingnormal" value="Normal" <c:if test="${physical.wingingnormal=='Normal'}"><c:out value="checked=checked"/></c:if>>Normal</td>
+				                 
+				                  </tr>
+				                   <tr class="row1">
+				                   <td>Rib Hump:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="ribhumpright" value="Right"<c:if test="${physical.ribhumpright=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="ribhumpleft" value="Left" <c:if test="${physical.ribhumpleft=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
+				                  <td class="input_txt"><input type="checkbox" name="ribhumpnormal" value="Normal" <c:if test="${physical.ribhumpnormal=='Normal'}"><c:out value="checked=checked"/></c:if>>Normal</td>
+				                 
+				                  </tr>
+				                   <tr class="row1">
+				                   <td>Chest Measure:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="chestmeasurein" value="Inhale" <c:if test="${physical.chestmeasurein=='Inhale'}"><c:out value="checked=checked"/></c:if>>Inhale</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="chestmeasureex" value="Exhale" <c:if test="${physical.chestmeasureex=='Exhale'}"><c:out value="checked=checked"/></c:if>>Exhale</td>
+				                  
+				                  </tr>
+				                  <tr class="row1">
+				                   <td>kyphosis:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="kyphosishyper" value="Hyper" <c:if test="${physical.kyphosishyper=='Hyper'}"><c:out value="checked=checked"/></c:if>>Hyper</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="kyphosishypo" value="Hypo" <c:if test="${physical.kyphosishypo=='Hypo'}"><c:out value="checked=checked"/></c:if>>Hypo</td>
+				                  <td class="input_txt"><input type="checkbox" name="kyphosisnormal" value="Normal" <c:if test="${physical.kyphosisnormal=='Normal'}"><c:out value="checked=checked"/></c:if>>Normal</td>
+				                 
+				                  </tr>
+				                
+				                </table>
+				                
+				                <table border="0">
+				               <tr class="row1">
+				               <td><b>PALPATION:</b></td>
+				               
+				                  </tr>
+				                <tr class="row1">
+				                  <td>Paraspinal:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="parapain" value="Pain" <c:if test="${physical.parapain=='Pain'}"><c:out value="checked=checked"/></c:if>>Pain</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="paraspasm" value="Spasm" <c:if test="${physical.paraspasm=='Spasm'}"><c:out value="checked=checked"/></c:if>>Spasm</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="paraedema" value="Edema" <c:if test="${physical.paraedema=='Edema'}"><c:out value="checked=checked"/></c:if>>Edema</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="paratriggerpoint" value="TriggerPoint"<c:if test="${physical.paratriggerpoint=='TriggerPoint'}"><c:out value="checked=checked"/></c:if>>TriggerPoint</td>
+				                  </tr> 
+				                  <tr class="row1">
+				                  <td>Ribs:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="ribspost" value="Posterior" <c:if test="${physical.ribspost=='Posterior'}"><c:out value="checked=checked"/></c:if>>Posterior</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="ribsnor" value="Normal" <c:if test="${physical.ribsnor=='Normal'}"><c:out value="checked=checked"/></c:if>>Normal</td>
+				                 </tr>
+				                   <tr class="row1">
+				                  <td>Vertebrae:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="vertefix" value="Fixation"<c:if test="${physical.vertefix=='Fixation'}"><c:out value="checked=checked"/></c:if>>Fixations</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="vertenofix" value="No_Fixation" <c:if test="${physical.vertenofix=='No_Fixation'}"><c:out value="checked=checked"/></c:if>>No Fixations</td>
+				                  </tr>
+				                  </table>
+				                   <table border="0">
+				               <tr class="row1">
+				               <td><b>RANGE OF MOTION:(Include Degrees)</b></td>
+				               <td valign="top" align="left" class="input_txt">Normal ROM </td>
+				                  <td class="input_txt">Pain</td>
+				                  <td class="input_txt">Spasm</td>
+				                  <td class="input_txt">Stiff</td>
+				                  </tr>
+				                 
+				                  <tr class="row1">
+				                  <td>FLEX 40:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="thoracicnormal" value="${physical.thoracicnormal }"/></td>
+				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="thoracicpain" value="${physical.thoracicpain }"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="thoracicspasm" value="${physical.thoracicspasm }"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="thoracicstiff" value="${physical.thoracicstiff }"/></td>
+				                  </tr>
+				                  <tr class="row1">
+				                  <td>EXT 30:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="thoextnormal" value="${physical.thoextnormal }"/></td>
+				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="thoextpain" value="${physical.thoextpain }"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="thoextspasm" value="${physical.thoextspasm }"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="thoextstiff" value="${physical.thoextstiff }"/></td>
+				                 
+				                  </tr>
+				                   <tr class="row1">
+				                   <td>RLF 30:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="thorlfnormal" value="${physical.thorlfnormal }"/></td>
+				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="thorlfpain" value="${physical.thorlfpain }"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="thorlfspasm" value="${physical.thorlfspasm }"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="thorlfstiff" value="${physical.thorlfstiff }"/></td>
+				                 
+				                  </tr>
+				                   <tr class="row1">
+				                   <td>LLF 30:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="thollfnormal" value="${physical.thollfnormal }"/></td>
+				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="thollfpain" value="${physical.thollfpain }"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="thollfspasm" value="${physical.thollfspasm }"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="thollfstiff" value="${physical.thollfstiff }"/></td>
+				                 
+				                  </tr>
+				                   <tr class="row1">
+				                   <td>RR 40:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="thorrnormal" value="${physical.thorrnormal }"/></td>
+				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="thorrpain" value="${physical.thorrpain }"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="thorrspasm" value="${physical.thorrspasm }"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="thorrstiff" value="${physical.thorrstiff }"/></td>
+				                  </tr>
+				                <tr class="row1">
+				                   <td>LR 40:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="tholrnormal" value="${physical.tholrnormal }"/></td>
+				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="tholrpain" value="${physical.tholrpain }"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="tholrspasm" value="${physical.tholrspasm }"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="tholrstiff" value="${physical.tholrstiff }"/></td>
+				                  </tr>
+				                </table>
+				                 <table border="0">
+				               <tr class="row1">
+				               <td><b>NEURO-EXAM:</b></td>
+				               <td><b>DERMATOMES:</td>
+				                  </tr>
+				               <tr class="row1">
+				                  <td><b>Sensation:</td>
+				                  <td valign="top" align="left" class="input_txt"><b>Normal</td>
+				                 <td class="input_txt" align="left"><b>Abnormal Sensation</td>
+				                  
+				                 
+				                  </tr>
+				                <tr class="row1">
+				                   <td>T-1:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="thot1" value="${physical.thot1 }"/></td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot1right" value="Right"<c:if test="${physical.thot1right=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot1left" value="Left"<c:if test="${physical.thot1left=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
+				                  </tr>
+				                <tr class="row1">
+				                   <td>T-4:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="thot4" value="${physical.thot4 }"/></td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot4right" value="Right"<c:if test="${physical.thot4right=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot4left" value="Left"<c:if test="${physical.thot4left=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
+				                  </tr>
+				                  <tr class="row1">
+				                   <td>T-10:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="thot10" value="${physical.thot10 }"/></td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot10right" value="Right"<c:if test="${physical.thot10right=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot10left" value="Left"<c:if test="${physical.thot10left=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
+				                  </tr>
+				                  <tr class="row1">
+				                   <td>Other:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="thoother" value="${physical.thoother }"/></td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="thootherright" value="Right" <c:if test="${physical.thootherright=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="thootherleft" value="Left" <c:if test="${physical.thootherleft=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
+				                  </tr>
+				                  </table>
+				                  <table border="0">
+				               <tr class="row1">
+				               <td><b>NEURO-EXAM:</b></td>
+				               <td><b>MYOTOMES:</td>
+				                  </tr>
+				                  <tr class="row1">
+				                   <td valign="top" align="left" class="input_txt">
+				                  	
+				                  	<input type="radio" name="myotomes" value="Positive Beevors" class="input_txt"  onclick="toggle('show3')" <c:if test="${physical.myotomes=='Positive Beevors'}"><c:out value="checked=checked"/></c:if>>Positive Beevor's&nbsp;&nbsp;&nbsp;
+				                  	<input type="radio" name="myotomes" value="Negative Beevors" class="input_txt"  onclick="toggle('hide3')" <c:if test="${physical.myotomes=='Negative Beevors'}"><c:out value="checked=checked"/></c:if>>Negative Beevor's&nbsp;&nbsp;&nbsp;</td>
+				                  </tr>
+				                  </table>
+				                  <div id="positive">
+				                   <table border="0">
+				                   <tr class="row1">
+				                    <td><input type="checkbox" name="positiveruq" value="RUQ" <c:if test="${physical.positiveruq=='RUQ'}"><c:out value="checked=checked"/></c:if>>RUQ</td>
+				                    <td><input type="checkbox" name="positiveluq" value="LUQ" <c:if test="${physical.positiveluq=='LUQ'}"><c:out value="checked=checked"/></c:if>>LUQ</td>
+				                    <td><input type="checkbox" name="positiverlq" value="RLQ" <c:if test="${physical.positiverlq=='RLQ'}"><c:out value="checked=checked"/></c:if>>RLQ</td>
+				                    <td><input type="checkbox" name="positivellq" value="LLQ" <c:if test="${physical.positivellq=='LLQ'}"><c:out value="checked=checked"/></c:if>>LLQ</td>
+				                   </tr>
+				                   </table>
+				                 </div>
+				                 </td>
+				                 </tr>
+				                 </table>
+				                 </div>
+				                 </td>
+				                 </tr>
+				                 </table>
+				                 </div>
+				                 </div>
+				                 
+				                 
+				                   <div id="tabs-3">
+				                 
+				                 <div id="right_content">
+				                
+        <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
+      <tr>
+        <td valign="top" align="left">
+        	<div> 
+        	<div class="headings altheading">
+        	<h2>LUMBAR SPINE-SI-HIP</h2>
+	            </div>
+	            </div>
+	             <div class="contentbox">
+              <table cellpadding="0" cellspacing="0" border="0" width="100%">
+  				<tr>
+    				<td align="left" valign="top" width="80%" style="padding-right:25px;">
+                        
+                        <table border="0">
+				               <tr class="row1">
+				               <td><b>INSPECTION:</b></td>
+				               </tr>
+				                 <tr class="row1">
+				                  <td>High Crest:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="highcrestright" value="Right" <c:if test="${physical.highcrestright=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="highcrestleft" value="Left" <c:if test="${physical.highcrestleft=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
+				                  <td class="input_txt"><input type="checkbox" name="highcrestnormal" value="Normal" <c:if test="${physical.highcrestnormal=='Normal'}"><c:out value="checked=checked"/></c:if>>Normal</td>
+				                 
+				                  </tr>
+				                  <tr class="row1">
+				                  <td>High PSIS:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="highpsisright" value="Right" <c:if test="${physical.highpsisright=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="highpsisleft" value="Left" <c:if test="${physical.highpsisleft=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
+				                  <td class="input_txt"><input type="checkbox" name="highpsisnormal" value="Normal" <c:if test="${physical.highpsisnormal=='Normal'}"><c:out value="checked=checked"/></c:if>>Normal</td>
+				                 
+				                  </tr>
+				                   <tr class="row1">
+				                   <td>Curvature:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="curveright" value="Right"<c:if test="${physical.curveright=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="curveleft" value="Left"<c:if test="${physical.curveleft=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
+				                  <td class="input_txt"><input type="checkbox" name="curvenormal" value="Normal"<c:if test="${physical.curvenormal=='Normal'}"><c:out value="checked=checked"/></c:if>>Normal</td>
+				                 </tr>
+				                 <tr class="row1">
+				                   <td>Lordosis:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="lordosishyper" value="Hyper"<c:if test="${physical.lordosishyper=='Hyper'}"><c:out value="checked=checked"/></c:if>>Hyper</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="lordosishypo" value="Hypo"<c:if test="${physical.lordosishypo=='Hypo'}"><c:out value="checked=checked"/></c:if>>Hypo</td>
+				                  <td class="input_txt"><input type="checkbox" name="lordosisnormal" value="Normal"<c:if test="${physical.lordosisnormal=='Normal'}"><c:out value="checked=checked"/></c:if>>Normal</td>
+				                 
+				                  </tr>
+				                  </table>
+				                
+				                <table border="0">
+				               <tr class="row1">
+				               <td><b>PALPATION:</b></td>
+				               
+				                  </tr>
+				                <tr class="row1">
+				                  <td>Paraspinal:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="paraspinalpain" value="Pain"<c:if test="${physical.paraspinalpain=='Pain'}"><c:out value="checked=checked"/></c:if>>Pain</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="paraspinalspasm" value="Spasm"<c:if test="${physical.paraspinalspasm=='Spasm'}"><c:out value="checked=checked"/></c:if>>Spasm</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="paraspinaledema" value="Edema"<c:if test="${physical.paraspinaledema=='Edema'}"><c:out value="checked=checked"/></c:if>>Edema</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="paraspinaltp" value="TriggerPoint"<c:if test="${physical.paraspinaltp=='TriggerPoint'}"><c:out value="checked=checked"/></c:if>>TriggerPoint</td>
+				                  </tr> 
+				                   <tr class="row1">
+				                  <td>Quadratus Lumborum:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="quadrl" value="R-L"<c:if test="${physical.quadrl=='R-L'}"><c:out value="checked=checked"/></c:if>>R-L</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="quadtono" value="Tonicity"<c:if test="${physical.quadtono=='Tonocity'}"><c:out value="checked=checked"/></c:if>>Tonicity</td>
+				                  <td class="input_txt" align="left"> <input type="checkbox" name="quadnor" value="Normal"<c:if test="${physical.quadnor=='Normal'}"><c:out value="checked=checked"/></c:if>>Normal</td>
+				                  </tr>
+				                  <tr class="row1">
+				                  <td>Hamstring:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="hamstringrl" value="R-L"<c:if test="${physical.hamstringrl=='R-L'}"><c:out value="checked=checked"/></c:if>>R-L</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="hamstringtono" value="Tonicity"<c:if test="${physical.hamstringtono=='Tonocity'}"><c:out value="checked=checked"/></c:if>>Tonicity</td>
+				                  <td class="input_txt" align="left"> <input type="checkbox" name="hamstringnor" value="Normal"<c:if test="${physical.hamstringnor=='Normal'}"><c:out value="checked=checked"/></c:if>>Normal</td>
+				                  </tr>
+				                  <tr class="row1">
+				                  <td>Vertebrae:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="verfix" value="Fixations"<c:if test="${physical.verfix=='Fixations'}"><c:out value="checked=checked"/></c:if>>Fixations</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="vernofix" value="No_Fixations"<c:if test="${physical.vernofix=='No_Fixations'}"><c:out value="checked=checked"/></c:if>>No Fixations</td>
+				                  </tr>
+				                  <tr class="row1">
+				                  <td>Abdomen:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="abdomentender" value="Tender"<c:if test="${physical.abdomentender=='Tender'}"><c:out value="checked=checked"/></c:if>>Tender</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="abdomenpulse" value="Pulsations"<c:if test="${physical.abdomenpulse=='Pulsations'}"><c:out value="checked=checked"/></c:if>>Pulsations</td>
+				                  <td class="input_txt" align="left"> <input type="checkbox" name="abdomenascites" value="Ascites"<c:if test="${physical.abdomenascites=='Ascites'}"><c:out value="checked=checked"/></c:if>>Ascites</td>
+				                  </tr>
+				                  </table>
+				                   <table border="0">
+				               <tr class="row1">
+				               <td><b>RANGE OF MOTION:(Include Degrees)</b></td>
+				               <td valign="top" align="left" class="input_txt">Normal ROM </td>
+				                  <td class="input_txt">Pain</td>
+				                  <td class="input_txt">Spasm</td>
+				                  <td class="input_txt">Stiff</td>
+				                  </tr>
+				                 
+				                  <tr class="row1">
+				                  <td>FLEX 80:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="lumflexnormal" value="${physical.lumflexnormal }"/></td>
+				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="lumflexpain" value="${physical.lumflexpain }"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lumflexspasm" value="${physical.lumflexspasm }"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lumflexstiff" value="${physical.lumflexstiff }"/></td>
+				                  </tr>
+				                  <tr class="row1">
+				                  <td>EXT 30:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="lumextnormal" value="${physical.lumextnormal }"/></td>
+				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="lumextpain" value="${physical.lumextpain }"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lumextspasm" value="${physical.lumextspasm }"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lumextstiff" value="${physical.lumextstiff }"/></td>
+				                 
+				                  </tr>
+				                   <tr class="row1">
+				                   <td>RLF 25:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="lumrlfnormal" value="${physical.lumrlfnormal }"/></td>
+				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="lumrlfpain" value="${physical.lumrlfpain }"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lumrlfspasm" value="${physical.lumrlfspasm }"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lumrlfstiff" value="${physical.lumrlfstiff }"/></td>
+				                 
+				                  </tr>
+				                   <tr class="row1">
+				                   <td>LLF 25:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="lumllfnormal" value="${physical.lumllfnormal }"/></td>
+				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="lumllfpain" value="${physical.lumllfpain }"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lumllfspasm" value="${physical.lumllfspasm }"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lumllfstiff" value="${physical.lumllfstiff }"/></td>
+				                 
+				                  </tr>
+				                   <tr class="row1">
+				                   <td>RR 30:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="lumrrnormal" value="${physical.lumrrnormal }"/></td>
+				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="lumrrpain" value="${physical.lumrrpain }"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lumrrspasm" value="${physical.lumrrspasm }"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lumrrstiff" value="${physical.lumrrstiff }"/></td>
+				                  </tr>
+				                <tr class="row1">
+				                   <td>LR 30:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="lumlrnormal" value="${physical.lumlrnormal }"/></td>
+				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="lumlrpain" value="${physical.lumlrpain }"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lumlrspasm" value="${physical.lumlrspasm }"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lumlrstiff" value="${physical.lumlrstiff }"/></td>
+				                  </tr>
+				                </table>
+				                 <table border="0">
+				               <tr class="row1">
+				               <td><b>NEURO-EXAM:</b></td>
+				               <td><b>MYOTOMES:</td>
+				                  </tr>
+				               <tr class="row1">
+				                 <td></td>
+				                  <td valign="top" align="left" class="input_txt"><b>Right</td>
+				                 <td class="input_txt" align="left"><b>Left</td>
+				                  </tr>
+				                    <tr class="row1">
+				                 <td>(Hip Flex) L-5	</td>
+				                 <td><select name="hipflexright">
+						                      <option value="0" <c:if test="${physical.hipflexright=='0'}"><c:out value="selected"/></c:if>>0</option>
+				                  		<option value="1" <c:if test="${physical.hipflexright=='1'}"><c:out value="selected"/></c:if>>1</option>
+				                  		<option value="2" <c:if test="${physical.hipflexright=='2'}"><c:out value="selected"/></c:if>>2</option>
+				                  		<option value="3" <c:if test="${physical.hipflexright=='3'}"><c:out value="selected"/></c:if>>3</option>
+				                  		<option value="4" <c:if test="${physical.hipflexright=='4'}"><c:out value="selected"/></c:if>>4</option>
+						                <option value="5" <c:if test="${physical.hipflexright=='5'}"><c:out value="selected"/></c:if>>5</option>
+				                   		</select></td>
+				                   		<td><select name="hipflexleft">
+						                     <option value="0" <c:if test="${physical.hipflexleft=='0'}"><c:out value="selected"/></c:if>>0</option>
+				                  		<option value="1" <c:if test="${physical.hipflexleft=='1'}"><c:out value="selected"/></c:if>>1</option>
+				                  		<option value="2" <c:if test="${physical.hipflexleft=='2'}"><c:out value="selected"/></c:if>>2</option>
+				                  		<option value="3" <c:if test="${physical.hipflexleft=='3'}"><c:out value="selected"/></c:if>>3</option>
+				                  		<option value="4" <c:if test="${physical.hipflexleft=='4'}"><c:out value="selected"/></c:if>>4</option>
+						                <option value="5" <c:if test="${physical.hipflexleft=='5'}"><c:out value="selected"/></c:if>>5</option>
+				                   		</select></td>
+				                   		
+				                  </tr>
+				                   <tr class="row1">
+				                 <td>(Leg Ext.) L-3	</td>
+				                 <td><select name="legextright">
+						                     <option value="0" <c:if test="${physical.legextright=='0'}"><c:out value="selected"/></c:if>>0</option>
+				                  		<option value="1" <c:if test="${physical.legextright=='1'}"><c:out value="selected"/></c:if>>1</option>
+				                  		<option value="2" <c:if test="${physical.legextright=='2'}"><c:out value="selected"/></c:if>>2</option>
+				                  		<option value="3" <c:if test="${physical.legextright=='3'}"><c:out value="selected"/></c:if>>3</option>
+				                  		<option value="4" <c:if test="${physical.legextright=='4'}"><c:out value="selected"/></c:if>>4</option>
+						                <option value="5" <c:if test="${physical.legextright=='5'}"><c:out value="selected"/></c:if>>5</option>
+				                   		</select></td>
+				                   		<td><select name="legextleft">
+						                      <option value="0" <c:if test="${physical.legextleft=='0'}"><c:out value="selected"/></c:if>>0</option>
+				                  		<option value="1" <c:if test="${physical.legextleft=='1'}"><c:out value="selected"/></c:if>>1</option>
+				                  		<option value="2" <c:if test="${physical.legextleft=='2'}"><c:out value="selected"/></c:if>>2</option>
+				                  		<option value="3" <c:if test="${physical.legextleft=='3'}"><c:out value="selected"/></c:if>>3</option>
+				                  		<option value="4" <c:if test="${physical.legextleft=='4'}"><c:out value="selected"/></c:if>>4</option>
+						                <option value="5" <c:if test="${physical.legextleft=='5'}"><c:out value="selected"/></c:if>>5</option>
+				                   		</select></td>
+				                   		
+				                  </tr>
+				              
+				                    <tr class="row1">
+				                 <td>(Dorsiflex) L-4	</td>
+				                 <td><select name="dorsiflexright">
+						                     <option value="0" <c:if test="${physical.dorsiflexright=='0'}"><c:out value="selected"/></c:if>>0</option>
+				                  		<option value="1" <c:if test="${physical.dorsiflexright=='1'}"><c:out value="selected"/></c:if>>1</option>
+				                  		<option value="2" <c:if test="${physical.dorsiflexright=='2'}"><c:out value="selected"/></c:if>>2</option>
+				                  		<option value="3" <c:if test="${physical.dorsiflexright=='3'}"><c:out value="selected"/></c:if>>3</option>
+				                  		<option value="4" <c:if test="${physical.dorsiflexright=='4'}"><c:out value="selected"/></c:if>>4</option>
+						                <option value="5" <c:if test="${physical.dorsiflexright=='5'}"><c:out value="selected"/></c:if>>5</option>
+				                   		</select></td>
+				                   		<td><select name="dorsiflexleft">
+						                     <option value="0" <c:if test="${physical.dorsiflexleft=='0'}"><c:out value="selected"/></c:if>>0</option>
+				                  		<option value="1" <c:if test="${physical.dorsiflexleft=='1'}"><c:out value="selected"/></c:if>>1</option>
+				                  		<option value="2" <c:if test="${physical.dorsiflexleft=='2'}"><c:out value="selected"/></c:if>>2</option>
+				                  		<option value="3" <c:if test="${physical.dorsiflexleft=='3'}"><c:out value="selected"/></c:if>>3</option>
+				                  		<option value="4" <c:if test="${physical.dorsiflexleft=='4'}"><c:out value="selected"/></c:if>>4</option>
+						                <option value="5" <c:if test="${physical.dorsiflexleft=='5'}"><c:out value="selected"/></c:if>>5</option>
+				                   		</select></td>
+				                   		
+				                  </tr>
+				                   <tr class="row1">
+				                 <td>(1st digit flex.) L-5	</td>
+				                 <td><select name="digitflexright">
+						                     <option value="0" <c:if test="${physical.digitflexright=='0'}"><c:out value="selected"/></c:if>>0</option>
+				                  		<option value="1" <c:if test="${physical.digitflexright=='1'}"><c:out value="selected"/></c:if>>1</option>
+				                  		<option value="2" <c:if test="${physical.digitflexright=='2'}"><c:out value="selected"/></c:if>>2</option>
+				                  		<option value="3" <c:if test="${physical.digitflexright=='3'}"><c:out value="selected"/></c:if>>3</option>
+				                  		<option value="4" <c:if test="${physical.digitflexright=='4'}"><c:out value="selected"/></c:if>>4</option>
+						                <option value="5" <c:if test="${physical.digitflexright=='5'}"><c:out value="selected"/></c:if>>5</option>
+				                   		</select></td>
+				                   		<td><select name="digitflexleft">
+						                     <option value="0" <c:if test="${physical.digitflexleft=='0'}"><c:out value="selected"/></c:if>>0</option>
+				                  		<option value="1" <c:if test="${physical.digitflexleft=='1'}"><c:out value="selected"/></c:if>>1</option>
+				                  		<option value="2" <c:if test="${physical.digitflexleft=='2'}"><c:out value="selected"/></c:if>>2</option>
+				                  		<option value="3" <c:if test="${physical.digitflexleft=='3'}"><c:out value="selected"/></c:if>>3</option>
+				                  		<option value="4" <c:if test="${physical.digitflexleft=='4'}"><c:out value="selected"/></c:if>>4</option>
+						                <option value="5" <c:if test="${physical.digitflexleft=='5'}"><c:out value="selected"/></c:if>>5</option>
+				                   		</select></td>
+				                   		
+				                  </tr>
+				                  <tr class="row1">
+				                  <td>(Heel Walk)L-4/5</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  <input type="radio" name="heelright" value="Positive" class="input_txt"   <c:if test="${physical.heelright=='Positive'}"><c:out value="checked=checked"/></c:if>>Positive &nbsp;&nbsp;&nbsp;
+				                  	<input type="radio" name="heelright" value="Negative" class="input_txt"   <c:if test="${physical.heelright=='Negative'}"><c:out value="checked=checked"/></c:if>>Negative &nbsp;&nbsp;&nbsp;</td>
+				                  
+				                  
+				                  
+				                  <td valign="top" align="left" class="input_txt">
+				                  <input type="radio" name="heelleft" value="Positive" class="input_txt"   <c:if test="${physical.heelleft=='Positive'}"><c:out value="checked=checked"/></c:if>>Positive &nbsp;&nbsp;&nbsp;
+				                  	<input type="radio" name="heelleft" value="Negative" class="input_txt"  <c:if test="${physical.heelleft=='Negative'}"><c:out value="checked=checked"/></c:if>>Negative &nbsp;&nbsp;&nbsp;</td>
+				                  </tr>
+				                   <tr class="row1">
+				                  <td>(Toe Walk)S-1/2</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                   <input type="radio" name="toeright" value="Positive" class="input_txt"   <c:if test="${physical.toeright=='Positive'}"><c:out value="checked=checked"/></c:if>>Positive &nbsp;&nbsp;&nbsp;
+				                  	<input type="radio" name="toeright" value="Negative" class="input_txt"  <c:if test="${physical.toeright=='Negative'}"><c:out value="checked=checked"/></c:if>>Negative &nbsp;&nbsp;&nbsp;</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                   <input type="radio" name="toeleft" value="Positive" class="input_txt"   <c:if test="${physical.toeleft=='Positive'}"><c:out value="checked=checked"/></c:if>>Positive &nbsp;&nbsp;&nbsp;
+				                  	<input type="radio" name="toeleft" value="Negative" class="input_txt"  <c:if test="${physical.toeleft=='Negative'}"><c:out value="checked=checked"/></c:if>>Negative &nbsp;&nbsp;&nbsp;</td>
+				                  </tr>
+				                  </table>
+				                   <table border="0">
+				               <tr class="row1">
+				               <td><b>NEURO-EXAM:</b></td>
+				               <td><b>DEEP TENDON REFLEXES:</td>
+				                  </tr>
+				               <tr class="row1">
+				                 <td></td>
+				                  <td valign="top" align="left" class="input_txt"><b>Right</td>
+				                 <td class="input_txt" align="left"><b>Left</td>
+				                  </tr> 
+				                  <tr class="row1">
+				                 <td>L-2,3,4 (Patellar) </td>
+				                 <td><select name="patellarright">
+						                     <option value="0" <c:if test="${physical.patellarright=='0'}"><c:out value="selected"/></c:if>>0</option>
+				                  		<option value="1" <c:if test="${physical.patellarright=='1'}"><c:out value="selected"/></c:if>>1</option>
+				                  		<option value="2" <c:if test="${physical.patellarright=='2'}"><c:out value="selected"/></c:if>>2</option>
+				                  		<option value="3" <c:if test="${physical.patellarright=='3'}"><c:out value="selected"/></c:if>>3</option>
+				                  		<option value="4" <c:if test="${physical.patellarright=='4'}"><c:out value="selected"/></c:if>>4</option>
+						                
+				                   		</select></td>
+				                   		<td><select name="patellarleft">
+						                    <option value="0" <c:if test="${physical.patellarleft=='0'}"><c:out value="selected"/></c:if>>0</option>
+				                  		<option value="1" <c:if test="${physical.patellarleft=='1'}"><c:out value="selected"/></c:if>>1</option>
+				                  		<option value="2" <c:if test="${physical.patellarleft=='2'}"><c:out value="selected"/></c:if>>2</option>
+				                  		<option value="3" <c:if test="${physical.patellarleft=='3'}"><c:out value="selected"/></c:if>>3</option>
+				                  		<option value="4" <c:if test="${physical.patellarleft=='4'}"><c:out value="selected"/></c:if>>4</option>
+						                
+											
+				                   		</select></td>
+				                   		
+				                  </tr>
+				                  <tr class="row1">
+				                 <td>L-5,S-1,2(Achilles)</td>
+				                 <td><select name="achillesright">
+						                    <option value="0" <c:if test="${physical.achillesright=='0'}"><c:out value="selected"/></c:if>>0</option>
+				                  		<option value="1" <c:if test="${physical.achillesright=='1'}"><c:out value="selected"/></c:if>>1</option>
+				                  		<option value="2" <c:if test="${physical.achillesright=='2'}"><c:out value="selected"/></c:if>>2</option>
+				                  		<option value="3" <c:if test="${physical.achillesright=='3'}"><c:out value="selected"/></c:if>>3</option>
+				                  		<option value="4" <c:if test="${physical.achillesright=='4'}"><c:out value="selected"/></c:if>>4</option>
+						                
+											
+				                   		</select></td>
+				                   		<td><select name="achillesleft">
+						                     <option value="0" <c:if test="${physical.achillesleft=='0'}"><c:out value="selected"/></c:if>>0</option>
+				                  		<option value="1" <c:if test="${physical.achillesleft=='1'}"><c:out value="selected"/></c:if>>1</option>
+				                  		<option value="2" <c:if test="${physical.achillesleft=='2'}"><c:out value="selected"/></c:if>>2</option>
+				                  		<option value="3" <c:if test="${physical.achillesleft=='3'}"><c:out value="selected"/></c:if>>3</option>
+				                  		<option value="4" <c:if test="${physical.achillesleft=='4'}"><c:out value="selected"/></c:if>>4</option>
+						                
+											
+				                   		</select></td>
+				                   		
+				                  </tr>
+				                   <tr class="row1">
+				                  <td>Babinski(UMNL)</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                   <input type="radio" name="babinskiright" value="Positive" class="input_txt"   <c:if test="${physical.babinskiright=='Positive'}"><c:out value="checked=checked"/></c:if>>Positive &nbsp;&nbsp;&nbsp;
+				                  	<input type="radio" name="babinskiright" value="Negative" class="input_txt"  <c:if test="${physical.babinskiright=='Negative'}"><c:out value="checked=checked"/></c:if>>Negative &nbsp;&nbsp;&nbsp;</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                   <input type="radio" name="babinskileft" value="Positive" class="input_txt"   <c:if test="${physical.babinskileft=='Positive'}"><c:out value="checked=checked"/></c:if>>Positive &nbsp;&nbsp;&nbsp;
+				                  	<input type="radio" name="babinskileft" value="Negative" class="input_txt"  <c:if test="${physical.babinskileft=='Negative'}"><c:out value="checked=checked"/></c:if>>Negative &nbsp;&nbsp;&nbsp;</td>
+				                  </tr>
+				                  
+				                  </table>
+				                  <table align="right">
+				                  <tr>
+				                   <td><input type="submit" class="submit_btn" value="save" ></td>
+				                   <td>&nbsp;&nbsp;</td>
+				                    
+				                    <td><input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='viewphysicalexam'" ></td>
+				                  </tr>
+				                  </table>
+				                  </td>
+				                  </tr>
+				                  </table>
 				                  </div>
+				                  </td>
+				                  </tr>
+				                  </table>
+				                  </div>
+				                  </div>
+				                  </div>
+				                  </c:otherwise>
+				                  </c:choose>
 				                  </form>
 				                  </body>
 				                  </html>
+				                  
+				                  
 				                   
 				                   
 				                  

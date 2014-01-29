@@ -343,16 +343,16 @@ else
           <c:set value="${dcfeeslipForm.dcfeeslip[0]}" var="dcfeeslip"/> 
  <tr class="row1">
  <input type="hidden" name="dcfeeid" id="inp_id" value="${dcfeeslip.dcfeeid}">
-<td width="90"><h2>Patient Id:</h2></td><td><input type="text"  name="pid" size="25" value="${dcfeeslip.pid}"/></td>
+<td width="90"><h2><span class="err">*</span>Patient Id:</h2></td><td><input type="text"  name="pid" size="25" value="${dcfeeslip.pid}"/><span class="err"><form:errors path="dcfeeslipdetail.pid"></form:errors></span></td>
 <td width="800">
-<td><h2>Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${dcfeeslip.date}"/></td>
+<td><h2><span class="err">*</span>Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${dcfeeslip.date}"/></td><span class="err"><form:errors path="dcfeeslipdetail.date"></form:errors></span>
 </tr>
 </table>
 <table>
  <tr class="row1">
-<td><h2> Patient Name:</h2></td><td><input type="text"  name="pname" size="25" value="${dcfeeslip.pname}"/></td>
+<td><h2><span class="err">*</span> Patient Name:</h2></td><td><input type="text"  name="pname" size="25" value="${dcfeeslip.pname}"/><span class="err"><form:errors path="dcfeeslipdetail.pname"></form:errors></span></td>
 <td>
-<td><h2>Treating Physician Name:</h2></td><td><input type="text" name="dr1" size="14" value="${dcfeeslip.dr1}"/></td>
+<td><h2><span class="err">*</span>Treating Physician Name:</h2></td><td><input type="text" name="dr1" size="14" value="${dcfeeslip.dr1}"/><span class="err"><form:errors path="dcfeeslipdetail.dr1"></form:errors></span></td>
 <td><h2>RPT:</h2></td><td><input type="text" name="rpt" size="14" value="${dcfeeslip.rpt}"/></td>
 <td><h2>PTA:</h2></td><td><input type="text" name="pta" size="14" value="${dcfeeslip.pta}"/></td>
 </tr>
@@ -1114,7 +1114,7 @@ else
 
   <tr class="row1">
   <td></td><td> </td>
- <td width="200">Date </td><td><input type="text"  id="datepicker" name="date1" value="${dcfeeslip.date1}"/></td> </td> 
+ <td width="200"><span class="err">*</span>Date </td><td><input type="text"  id="datepicker" name="date1" value="${dcfeeslip.date1}"/><span class="err"><form:errors path="dcfeeslipdetail.date1"></form:errors></span></td> </td> 
   
  </tr>
  <tr class="row1">
@@ -1125,14 +1125,14 @@ charges."</b></td>
  </tr>
  <tr class="row1">
  <td> </td><td></td>
-  <td>Patient/Guardian Signature:</td>
- <td width="200"><input type="text" name="parentsign" value="${dcfeeslip.parentsign}"></td> 
+  <td><span class="err">*</span>Patient/Guardian Signature:</td>
+ <td width="200"><input type="text" name="parentsign" value="${dcfeeslip.parentsign}"><span class="err"><form:errors path="dcfeeslipdetail.parentsign"></form:errors></span></td> 
   
  </tr>
   <tr class="row1">
   <td> </td> <td></td>
-  <td>Dr. / Tech. Signature(s)</td>
- <td width="200"><input type="text" name="doctorsign" value="${dcfeeslip.doctorsign}"></td> 
+  <td><span class="err">*</span>Dr. / Tech. Signature(s)</td>
+ <td width="200"><input type="text" name="doctorsign" value="${dcfeeslip.doctorsign}"><span class="err"><form:errors path="dcfeeslipdetail.doctorsign"></form:errors></span></td> 
  
  </tr>
  <tr class="row1">

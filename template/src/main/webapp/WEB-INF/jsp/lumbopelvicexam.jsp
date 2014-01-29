@@ -41,6 +41,26 @@ $(function() {
     $( "#tabs" ).tabs();
   });
   </script>
+  <script>
+  $(window).load(function(){
+$("#flexion").keyup(function() {
+	 $("#number").html(''); 
+	/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
+	var intRegex = /^\d+$/;
+	if(intRegex.test($(this).val())||$(this).val()=='') 
+	{
+		var $in = $(this).val();		 
+	}
+	else if($(this).val()!='')
+		{
+		
+		$("#number").html('Kindly enter a number!!!!');
+		}
+}).keydown(function() {
+    oldValue = $(this).val();
+})
+});
+</script>
 </head>
  <body>
  <div id="tabs">
@@ -56,12 +76,17 @@ $(function() {
  <table  width="98%" class="margin_table">
 <tr>
 <td valign="top" align="left">
+       <div>
+       </div>   <div class="headings altheading">
+	            <center> <h2>LUMBOPELVIC INITIAL EXAM</h2> </center><br/>
+	            
+	            </div>
 	    <div class="contentbox">
 	    
           <table  cellpadding="0" cellspacing="0" border="0" width="98%">
            
  <tr class="row1">
-<td><h2><span class="err">*</span>Patient Name:</h2></td><td><input type="text"  name="pname" /><span class="err"><form:errors path="Lumbopelvicexam.pname"></form:errors></span></td>
+<td width="150"><h2><span class="err">*</span>Patient Name:</h2></td><td><input type="text"  name="pname" /><span class="err"><form:errors path="Lumbopelvicexam.pname"></form:errors></span></td>
 <td width="600">
 <td><h2><span class="err">*</span>Date:</h2></td><td><input type="text"  id="datepicker" name="date" /><span class="err"><form:errors path="Lumbopelvicexam.date"></form:errors></span></td>
 </tr>
@@ -174,6 +199,10 @@ $(function() {
  <td width="150">
  <td></td><td></td>
  </tr>
+ </table>
+ 
+
+ <table>
  <tr class="row1">
  <td width="350"><B style="font-size:14px">FUNCTIONAL RANGE OF MOTION</B> </td><td width="200"><input type="radio" name="functionalrangeofmotion" value="Unremarkable">Unremarkable</td> 
  <td width="350"><B style="font-size:14px">SUBLUXATION /DYSFUNCTION  </B></td><td width="150"><input type="radio" name="subluxation" value="Unremarkable">Unremarkable</td> 
@@ -185,10 +214,11 @@ $(function() {
  <td>  </td><td>   <b>Left</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> Right</b></td>
  </tr>
   <tr class="row1">
- <td><b>Flexion:</b> </td><td> (60)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="flexion" size="7"></td> 
+<span class="err"><div id="number"></span> <td><b> Flexion:</b> </td><td> (60)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="flexion" id="flexion" size="7"></div></td> 
  <td width="100">T8-9:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t89" size="7"></td><td width="250">T9-10:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t910" size="7"> </td> 
  <td><b>Trendelenburg:</b> </td><td><input type="text" name="trendelburgl" size="5"> <input type="text" name="trendelburgr" size="5"></td>
  </tr>
+ 
   <tr class="row1">
  <td><b>Extension:	</b> </td><td> (25)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="extension" size="7"></td> 
  <td width="100">T10-11:&nbsp;<input type="text" name="t1011" size="7"></td><td width="50">T11-12:&nbsp;&nbsp;&nbsp;<input type="text" name="t1112" size="7"> </td> 
@@ -410,11 +440,11 @@ $(function() {
  </div>
  </c:when>
  <c:otherwise>
-  <div id="tabs-1"> 
+ <div id="tabs-1"> 
  <div id="right_content">
-<table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
-<tr>
-<td valign="top" align="left">
+ <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
+   <tr>
+     <td valign="top" align="left">
  <div>
 	            <div class="headings altheading">
 	            <center> <h2>LUMBOPELVIC REEXAM</h2> </center><br/>
@@ -423,9 +453,9 @@ $(function() {
 	    <div class="contentbox">
           <table cellpadding="0" cellspacing="0" border="0" width="98%">   
  <tr class="row1">
-<td><h2><span class="err">*</span>Patient Name:</h2></td><td><input type="text"  name="pname" value="${lumbopelvic.pname}"/><span class="err"><form:errors path="Lumbopelvicexam.pname"></form:errors></span></td>
-<td width="600">
-<td><h2><span class="err">*</span>Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${lumbopelvic.date}"/><span class="err"><form:errors path="Lumbopelvicexam.date"></form:errors></span></td>
+<td width="150"><h2><span class="err">*</span>Patient Name:</h2></td><td width="380"><input type="text"  name="pname" value="${lumbopelvic.pname}"/><span class="err"><form:errors path="Lumbopelvicexam.pname"></form:errors></span></td>
+<td width="300">
+<td><h2><span class="err">*</span>Date:</h2></td><td width="380"><input type="text"  id="datepicker" name="date" value="${lumbopelvic.date}"/><span class="err"><form:errors path="Lumbopelvicexam.date"></form:errors></span></td>
 </tr>
 </table>
 <br/>

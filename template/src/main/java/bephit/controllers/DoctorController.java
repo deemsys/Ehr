@@ -499,20 +499,19 @@ public class DoctorController {
 	
 
 	@RequestMapping(value="/updatelumbopelvicexam", method=RequestMethod.POST)
-	public String updatelumbopelvicexam(HttpServletRequest request,@ModelAttribute("lumbopelvicexam") @Valid Lumbopelvicexam lumbopelvicexam,
-			BindingResult result,ModelMap model,Principal principal)
+	public String updatelumbopelvicexam(HttpServletRequest request,ModelMap model,@ModelAttribute("lumbopelvicexam") @Valid Lumbopelvicexam lumbopelvicexam,
+			BindingResult result,Principal principal)
 	{
-		/*soapnotes.getPatient_id();
 		if (result.hasErrors())
 		{
-			SoapnotesForm soapnotesForm = new SoapnotesForm();
+			LumbopelvicexamForm lumbopelvicexamForm = new LumbopelvicexamForm();
 	     
-	      soapnotesForm.setSoapnotes(soapDAO.getSoap(soapnotes.getSoapid()));
+	      lumbopelvicexamForm.setLumbopelvicexam(lumboDAO.getLumbopelvic(lumbopelvicexam.getLumbopelvicexamid()));
 	      
-	        model.addAttribute("soapnotesForm", soapnotesForm);
+	        model.addAttribute("lumbopelvicexamForm", lumbopelvicexamForm);
 	        model.addAttribute("menu", "notes");    
-		        return "editsoapnotes";
-		}*/
+		        return "editlumbopelvicexam";
+		}
 		/*System.out.println("soapid"+soapnotes.getSoapid());*/
 		int status = lumboDAO.updatelumbopelvic(lumbopelvicexam, lumbopelvicexam.getLumbopelvicexamid(), principal.getName());
 		System.out.println(status);
@@ -606,20 +605,19 @@ public class DoctorController {
 	
 
 	@RequestMapping(value="/updatekneeexam", method=RequestMethod.POST)
-	public String updatekneeexam(HttpServletRequest request,@ModelAttribute("kneeexam") @Valid Kneeexam kneeexam,
-			BindingResult result,ModelMap model,Principal principal)
+	public String updatekneeexam(HttpServletRequest request,ModelMap model,@ModelAttribute("kneeexam") @Valid Kneeexam kneeexam,
+			BindingResult result,Principal principal)
 	{
-		/*soapnotes.getPatient_id();
 		if (result.hasErrors())
 		{
-			SoapnotesForm soapnotesForm = new SoapnotesForm();
+			KneeexamForm kneeexamForm = new KneeexamForm();
 	     
-	      soapnotesForm.setSoapnotes(soapDAO.getSoap(soapnotes.getSoapid()));
+	      kneeexamForm.setKneeexam(kneeDAO.getKnee(kneeexam.getKneeexamid()));
 	      
-	        model.addAttribute("soapnotesForm", soapnotesForm);
+	        model.addAttribute("kneeexamForm", kneeexamForm);
 	        model.addAttribute("menu", "notes");    
-		        return "editsoapnotes";
-		}*/
+		        return "editkneeexam";
+		}
 		/*System.out.println("soapid"+soapnotes.getSoapid());*/
 		int status = kneeDAO.updateknee(kneeexam, kneeexam.getKneeexamid(), principal.getName());
 		System.out.println(status);
@@ -715,20 +713,19 @@ public class DoctorController {
 	
 
 	@RequestMapping(value="/updatecervicalexam", method=RequestMethod.POST)
-	public String updatecervicalexam(HttpServletRequest request,@ModelAttribute("cervicalexam") @Valid Cervicalexam cervicalexam,
-			BindingResult result,ModelMap model,Principal principal)
+	public String updatecervicalexam(HttpServletRequest request,ModelMap model,@ModelAttribute("cervicalexam") @Valid Cervicalexam cervicalexam,
+			BindingResult result,Principal principal)
 	{
-		/*soapnotes.getPatient_id();
-		if (result.hasErrors())
+		if(result.hasErrors())
 		{
-			SoapnotesForm soapnotesForm = new SoapnotesForm();
-	     
-	      soapnotesForm.setSoapnotes(soapDAO.getSoap(soapnotes.getSoapid()));
-	      
-	        model.addAttribute("soapnotesForm", soapnotesForm);
-	        model.addAttribute("menu", "notes");    
-		        return "editsoapnotes";
-		}*/
+		
+			CervicalexamForm cervicalexamForm = new CervicalexamForm();
+			cervicalexamForm.setCervicalexam(cervicalDAO.getCervical(cervicalexam.getCervicalexamid()));
+			model.addAttribute("cervicalexamForm",cervicalexamForm);
+			model.addAttribute("menu", "initial");
+			return "cervicalexam";
+		}
+		
 		/*System.out.println("soapid"+soapnotes.getSoapid());*/
 		int status = cervicalDAO.updatecervicalexam(cervicalexam, cervicalexam.getCervicalexamid(), principal.getName());
 		System.out.println(status);
@@ -822,20 +819,18 @@ public class DoctorController {
 	
 
 	@RequestMapping(value="/updateelbowexam", method=RequestMethod.POST)
-	public String updateelbowexam(HttpServletRequest request,@ModelAttribute("elbowexam") @Valid Elbowexam elbowexam,
-			BindingResult result,ModelMap model,Principal principal)
+	public String updateelbowexam(HttpServletRequest request,ModelMap model,@ModelAttribute("elbowexam") @Valid Elbowexam elbowexam,
+			BindingResult result,Principal principal)
 	{
-		/*soapnotes.getPatient_id();
-		if (result.hasErrors())
+		if(result.hasErrors())
 		{
-			SoapnotesForm soapnotesForm = new SoapnotesForm();
-	     
-	      soapnotesForm.setSoapnotes(soapDAO.getSoap(soapnotes.getSoapid()));
-	      
-	        model.addAttribute("soapnotesForm", soapnotesForm);
-	        model.addAttribute("menu", "notes");    
-		        return "editsoapnotes";
-		}*/
+		
+			ElbowexamForm elbowexamForm = new ElbowexamForm();
+			elbowexamForm.setElbowexam(elbowDAO.getElbow(elbowexam.getElbowexamid()));
+			model.addAttribute("elbowexamForm",elbowexamForm);
+			model.addAttribute("menu", "initial");
+			return "elbowexam";
+		}
 		/*System.out.println("soapid"+soapnotes.getSoapid());*/
 		int status = elbowDAO.updateelbowexam(elbowexam, elbowexam.getElbowexamid(), principal.getName());
 		System.out.println(status);
@@ -927,20 +922,19 @@ public class DoctorController {
 		return "thoracicexamlist";
 	}
 	@RequestMapping(value="/updatethoracicexam", method=RequestMethod.POST)
-	public String updatethoracicexam(HttpServletRequest request,@ModelAttribute("thoracicexam") @Valid Thoracicexam thoracicexam,
-			BindingResult result,ModelMap model,Principal principal)
+	public String updatethoracicexam(HttpServletRequest request,ModelMap model,@ModelAttribute("thoracicexam") @Valid Thoracicexam thoracicexam,
+			BindingResult result,Principal principal)
 	{
-		/*soapnotes.getPatient_id();
 		if (result.hasErrors())
 		{
-			SoapnotesForm soapnotesForm = new SoapnotesForm();
+			ThoracicexamForm thoracicexamForm = new ThoracicexamForm();
 	     
-	      soapnotesForm.setSoapnotes(soapDAO.getSoap(soapnotes.getSoapid()));
+	      thoracicexamForm.setThoracicexam(thoracicDAO.getThoracic(thoracicexam.getThoracicexamid()));
 	      
-	        model.addAttribute("soapnotesForm", soapnotesForm);
+	        model.addAttribute("thoracicexamForm", thoracicexamForm);
 	        model.addAttribute("menu", "notes");    
-		        return "editsoapnotes";
-		}*/
+		        return "editthoracicexam";
+		}
 		/*System.out.println("soapid"+soapnotes.getSoapid());*/
 		int status = thoracicDAO.updateThoracicexam(thoracicexam, thoracicexam.getThoracicexamid(), principal.getName());
 		System.out.println(status);
@@ -989,29 +983,25 @@ public class DoctorController {
 				
 	}
 	@RequestMapping(value="/dcfeeslip", method = RequestMethod.POST)
-	public String insert_dcfeeslip(HttpServletRequest request,HttpSession session,@ModelAttribute("Dcfeeslip")  @Valid Dcfeeslip dcfeeslip,BindingResult result,ModelMap model) {
+	public String insert_dcfeeslip(HttpServletRequest request,HttpSession session,ModelMap model,@ModelAttribute("dcfeeslipdetail")  @Valid Dcfeeslip dcfeeslip,BindingResult result) {
 		session.setAttribute("dcfee", dcfeeslip);
- 
 		if(result.hasErrors())
 		{
 		
 			DcfeeslipForm dcfeeslipForm = new DcfeeslipForm();
-			dcfeeslipForm.setDcfeeslip(feeslipDAO.getDcfeeslip());
+		    dcfeeslipForm.setDcfeeslip(feeslipDAO.getDcfeeslip());
 			model.addAttribute("dcfeeslipForm",dcfeeslipForm);
 			model.addAttribute("Success","true");
 			model.addAttribute("menu", "dcfee");
 			return "dcfeeslip";
 		}
-		model.put("Dcfeeslip", dcfeeslip);
-		model.addAttribute("DcfeeslipForm",dcfeeslip);
-    	int a=feeslipDAO.setDcfeeslip(dcfeeslip);
+
+		int b=feeslipDAO.setDcfeeslip(dcfeeslip);
 		DcfeeslipForm dcfeeslipForm= new DcfeeslipForm();
 		dcfeeslipForm.setDcfeeslip(feeslipDAO.getDcfeeslip());
 		model.addAttribute("dcfeeslipForm",dcfeeslipForm);
 		return "viewdcfeeslip";
- 
-	
-	}
+ }
 
 	@RequestMapping(value="/viewdcfeeslip", method=RequestMethod.GET)
 	public String viewdcfeeslip(HttpServletRequest request,ModelMap model, Principal principal) {
@@ -1049,9 +1039,19 @@ public class DoctorController {
 		return "editdcfeeslip";
 	}
 	@RequestMapping(value="/updatedcfeeslip", method=RequestMethod.POST)
-	public String updatedcfeeslip(HttpServletRequest request,@ModelAttribute("dcfeeslip") @Valid Dcfeeslip dcfeeslip,
-			BindingResult result,ModelMap model,Principal principal)
+	public String updatedcfeeslip(HttpServletRequest request,ModelMap model,@ModelAttribute("dcfeeslip") @Valid Dcfeeslip dcfeeslip,
+			BindingResult result,Principal principal)
 	{
+		if (result.hasErrors())
+		{
+			DcfeeslipForm dcfeeslipForm = new DcfeeslipForm();
+	     
+	       dcfeeslipForm.setDcfeeslip(feeslipDAO.getDcfee(dcfeeslip.getDcfeeid()));
+	      
+	        model.addAttribute("dcfeeslipForm", dcfeeslipForm);
+	        model.addAttribute("menu", "dcfee");    
+		        return "editdcfeeslip";
+		}
 		int status = feeslipDAO.updatedcfeeslip(dcfeeslip, dcfeeslip.getDcfeeid(), principal.getName());
 		System.out.println(status);
 		
@@ -1107,7 +1107,7 @@ public class DoctorController {
 		LowbackForm lowbackForm= new LowbackForm();
 		lowbackForm.setLowback(lowDAO.getLowback());
 		model.addAttribute("lowbackForm",lowbackForm);
-		return "lowbacklist";
+		return "viewlowback";
  
 	
 	}
@@ -1146,9 +1146,20 @@ public class DoctorController {
 		return "editlowback";
 	}
 	@RequestMapping(value="/updatelowback", method=RequestMethod.POST)
-	public String updatelowback(HttpServletRequest request,@ModelAttribute("lowback") @Valid Lowback lowback,
-			BindingResult result,ModelMap model,Principal principal)
+	public String updatelowback(HttpServletRequest request,ModelMap model,@ModelAttribute("lowback") @Valid Lowback lowback,
+			BindingResult result,Principal principal)
 	{
+		if (result.hasErrors())
+		{
+			LowbackForm lowbackForm = new LowbackForm();
+	     
+	       lowbackForm.setLowback(lowDAO.getLow(lowback.getLowbackno()));
+	      
+	        model.addAttribute("lowbackForm", lowbackForm);
+	        model.addAttribute("menu", "wristindex");    
+		        return "editlowback";
+		}
+		
 		int status = lowDAO.updatelowback(lowback,lowback.getLowbackno(), principal.getName());
 		System.out.println(status);
 		
@@ -1278,6 +1289,7 @@ public class DoctorController {
 	public String viewingfootquestionnarie(HttpSession session, ModelMap model) {
 		
 		session.removeAttribute("fquestionnarie");
+		model.addAttribute("menu","hipknee");
 		return "footquestionnarie";
  
 	}
@@ -1316,7 +1328,7 @@ public class DoctorController {
 		  footquestionnarieForm.setFootquestionnariedetails(footDAO.getFootquestionnarie());
 		  
 		  model.addAttribute("footquestionnarieForm",footquestionnarieForm);	
-		  
+		  model.addAttribute("menu", "hipknee");
 		return "viewfootquestionnarie";
 	}
 	@RequestMapping(value="/footquestionnarielist", method=RequestMethod.GET)
@@ -1340,9 +1352,20 @@ public class DoctorController {
 		return "editfootquestionnarie";
 	}
 	@RequestMapping(value="/updatefootquestionnarie", method=RequestMethod.POST)
-	public String updatefootquestionnarie(HttpServletRequest request,@ModelAttribute("Footquestionnarie") @Valid Footquestionnarie footquestionnarie,
-			BindingResult result,ModelMap model,Principal principal)
+	public String updatefootquestionnarie(HttpServletRequest request,ModelMap model,@ModelAttribute("Footquestionnarie") @Valid Footquestionnarie footquestionnarie,
+			BindingResult result,Principal principal)
 	{
+		
+		if (result.hasErrors())
+		{
+			FootquestionnarieForm footquestionnarieForm = new FootquestionnarieForm();
+	     
+	       footquestionnarieForm.setFootquestionnariedetails(footDAO.getFoot(footquestionnarie.getFootquestionno()));
+	      
+	        model.addAttribute("footquestionnarieForm", footquestionnarieForm);
+	        model.addAttribute("menu", "hipknee");    
+		        return "editfootquestionnarie";
+		}
 		int status = footDAO.updatefootquestionnarie(footquestionnarie,footquestionnarie.getFootquestionno(), principal.getName());
 		System.out.println(status);
 		

@@ -41,8 +41,12 @@
 	            </div>
           <div class="contentbox">
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
-              <tr class="row1">
-              <h6>Pain Assessment</h6>
+              <tr class="row2">
+             <td> <h2>Pain Assessment</h2></td>
+             <td></td>
+             <td></td>
+             <td></td>
+             <td></td>
               </tr>
               <tr class="row1">
                <td>I understand you have pain in your:</td>
@@ -51,7 +55,7 @@
                  <td><input type="radio" name="ha" value="Left" >&nbsp Left</td>
                  <td></td>
                  </tr>
-                <tr class="row2">
+                <tr class="row1">
                 <td></td>
                 <td><input type="checkbox" name="neckcheck" value="Neck" >&nbsp Neck</td>
                  <td><input type="radio" name="neck" value="Right" >&nbsp Right</td>
@@ -65,7 +69,7 @@
                  <td><input type="radio" name="mb" value="Left" >&nbsp Left</td>
                  <td></td>
                  </tr>
-                 <tr class="row2">
+                 <tr class="row1">
                 <td></td>
                 <td><input type="checkbox" name="ribscheck" value="ribscheck" >&nbsp Ribs</td>
                  <td><input type="radio" name="ribs" value="ribsr" >&nbsp Right</td>
@@ -79,7 +83,7 @@
                  <td><input type="radio" name="shoulder" value="Left" >&nbsp Left</td>
                  <td></td>
                  </tr>
-                 <tr class="row2">
+                 <tr class="row1">
                 <td></td>
                 <td><input type="checkbox" name="elbowcheck" value="Elbow" >&nbsp Elbow</td>
                  <td><input type="radio" name="elbow" value="Right" >&nbsp Right</td>
@@ -93,7 +97,7 @@
                  <td><input type="radio" name="hand" value="Left" >&nbsp Left</td>
                  <td></td>
                  </tr>
-                 <tr class="row2">
+                 <tr class="row1">
                 <td></td>
                 <td><input type="checkbox" name="wristcheck" value="Wrist" >&nbsp Wrist</td>
                  <td><input type="radio" name="wrist" value="Right" >&nbsp Right</td>
@@ -107,7 +111,7 @@
                  <td><input type="radio" name="lbp" value="Left" >&nbsp Left</td>
                  <td></td>
                  </tr>
-                 <tr class="row2">
+                 <tr class="row1">
                 <td></td>
                 <td><input type="checkbox" name="hipcheck" value="Hip" >&nbsp Hip</td>
                  <td><input type="radio" name="hip" value="Right" >&nbsp Right</td>
@@ -121,7 +125,7 @@
                  <td><input type="radio" name="leg" value="Left" >&nbsp Left</td>
                  <td></td>
                  </tr>
-                <tr class="row2">
+                <tr class="row1">
                 <td></td>
                 <td><input type="checkbox" name="kneecheck" value="Knee" >&nbsp Knee</td>
                  <td><input type="radio" name="knee" value="Right" >&nbsp Right</td>
@@ -135,7 +139,7 @@
                  <td><input type="radio" name="foot" value="Left" >&nbsp Left</td>
                  <td></td>
                  </tr>
-                 <tr class="row2">
+                 <tr class="row1">
                 <td></td>
                 <td><input type="checkbox" name="anklecheck" value="Ankle" >&nbsp Ankle</td>
                  <td><input type="radio" name="ankle" value="Right" >&nbsp Right</td>
@@ -149,7 +153,7 @@
                  <td> <input type="text" name="hours">Hours Later</td>
                  <td><input type="text" name="days">Days Later</td>
                  </tr>
-                 <tr class="row2">
+                 <tr class="row1">
                  <td>On what date did your injury occur?  </td>
                  <td><input type="text" name="date" class="input_txtbx1"></td>
                  <td></td>
@@ -160,7 +164,7 @@
                  <td>How did it happen?  </td>
                  <td><textarea rows="5" cols="25" name="reason"></textarea></td>
                  </tr>
-                 <tr class="row2">
+                 <tr class="row1">
                  <td>Was this the first episode or is this a chronic injury? </td>
                  <td><input type="checkbox" name="acute" value="Acute">&nbsp Acute</td>
                  <td><input type="checkbox" name="subacute" value="Subacute">&nbsp Subacute</td>
@@ -173,7 +177,7 @@
                  <td><input type="checkbox" name="sitting" value="Sitting">&nbsp Sitting</td>
                  <td><input type="checkbox" name="standing" value="Standing">&nbsp Standing</td>
                  </tr>
-                 <tr class="row2">
+                 <tr class="row1">
                  <td></td>
                  <td><input type="checkbox" name="bending" value="Bending">&nbsp Bending</td>
                  <td><input type="checkbox" name="rest" value="Rest">&nbsp Rest</td>
@@ -187,7 +191,7 @@
                  <td><input type="checkbox" name="heat" value="Heat">&nbsp Heat</td>
                  <td><input type="checkbox" name="massage" value="Massage">&nbsp Massage</td>
                  </tr>
-                 <tr class="row2">
+                 <tr class="row1">
                  <td></td>
                  <td><input type="checkbox" name="aspirin" value="Aspirin">&nbsp Aspirin</td>
                 <td><input type="checkbox" name="otherdone" value="Other">&nbsp other</td>
@@ -201,7 +205,7 @@
                  <td><input type="checkbox" name="twisting" value="Twisting">&nbsp Twisting</td>
                  <td><input type="checkbox" name="lifting" value="Lifting">&nbsp Lifting</td>
                  </tr>
-                 <tr class="row2">
+                 <tr class="row1">
                  <td></td>
                  <td><input type="checkbox" name="walking" value="Walking">&nbsp Walking</td>
                 <td><input type="checkbox" name="activity" value="Activity">&nbsp Activity</td>
@@ -215,7 +219,7 @@
                  <td><input type="checkbox" name="severe" value="Severe/intolerable">Severe/intolerable</td>
                  <td><input type="checkbox" name="dull" value="Dull/achy">&nbsp Dull/achy</td>
                  </tr>
-                 <tr class="row2">
+                 <tr class="row1">
                  <td></td>
                  <td><input type="checkbox" name="burning" value="Burning/Stinging">&nbsp Burning/Stinging</td>
                 <td><input type="checkbox" name="nagging" value="Deep/Nagging">&nbsp Deep/Nagging</td>
@@ -228,7 +232,7 @@
                 <td><input type="checkbox" name="tingling" value="Tingling">&nbsp Tingling</td>
                 <td><input type="checkbox" name="stiff" value="Stiff">&nbsp Stiff </td>
                  </tr>
-                  <tr class="row2">
+                  <tr class="row1">
                  <td></td>
                  <td><input type="checkbox" name="stabbing" value="Stabbing">&nbsp Stabbing  </td>
                 <td><input type="checkbox" name="cramping" value="Cramping">&nbsp Cramping</td>
@@ -241,7 +245,7 @@
                  <td><input type="checkbox" name="constant" value="Constant">&nbsp Constant</td>
                  <td><input type="checkbox" name="intermittent" value="Intermittent">&nbsp Intermittent</td>
                  </tr>
-                 <tr class="row2">
+                 <tr class="row1">
                  <td>Does the pain shoot down your arms and/or legs, or is it contained in one area?</td>
                  <td><input type="checkbox" name="local" value="Local">&nbsp Local</td>
                  <td><input type="checkbox" name="diffuse" value="Diffuse">&nbsp Diffuse</td>
@@ -256,7 +260,7 @@
                  <td><input type="checkbox" name="severepain" value="Severe">&nbsp Severe</td>
                  <td><input type="checkbox" name="crippling" value="Crippling">&nbsp Crippling</td>
                  </tr>
-                 <tr class="row2">
+                 <tr class="row1">
                  <td>Is it worse in the morning or at night?  </td>
                  <td><input type="checkbox" name="am" value="AM">&nbsp AM</td>
                  <td><input type="checkbox" name="pm" value="PM">&nbsp PM</td>
@@ -269,7 +273,7 @@
                  <td><input type="checkbox" name="same" value="Same">&nbsp Same</td>
                  <td><input type="checkbox" name="worse" value="Progressively Worse">&nbsp Progressively Worse</td>
                  </tr>
-                 <tr class="row2">
+                 <tr class="row1">
                  <td>Are you working? </td>
                   <td><input type="checkbox" name="yes" value="Yes">&nbsp Yes</td>
                  <td><input type="checkbox" name="no" value="No">&nbsp No</td>
@@ -305,21 +309,26 @@
 	            </div>
           <div class="contentbox">
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
-              <tr class="row1">
-              <h4>Diagnosis/TP/Goals</h4>
+              <tr class="row2">
+              
+              <td><h4>Diagnosis/TP/Goals</h4></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
               </tr>
               <tr class="row1">
-            <td>Assessment/Diagnosis:</td>
+            <td><b>Assessment/Diagnosis:</b></td>
              <td><input type="checkbox" name="sameass" value="Same">&nbsp Same</td>
-                 <td><input type="checkbox" name="improved" value="Improved">&nbsp Improved</td>
+                 <td width="150"><input type="checkbox" name="improved" value="Improved">&nbsp Improved</td>
                  <td><input type="checkbox" name="worseass" value="Worse">&nbsp Worse</td>
                  <td><input type="checkbox" name="plateau" value="Plateau">&nbsp Plateau</td>
              </tr>
-             <tr class="row2">
+             <tr class="row1">
                   <td></td>
              
-                 <td><input type="checkbox" name="preinjury" value=" At Pre-injury Status">&nbsp At pre-injury Status</td>
-                  <td>( <input type="checkbox" name="slight" value="Slightly">&nbsp Slightly
+                 <td><input type="checkbox" name="preinjury" value=" At Pre-injury Status">&nbsp At pre-injury Status
+                  ( <input type="checkbox" name="slight" value="Slightly">&nbsp Slightly
                    <input type="checkbox" name="moderatly" value="Moderatly">&nbsp Moderatly
                    <input type="checkbox" name="great" value="Greatly">&nbsp Greatly )</td>
                    
@@ -327,13 +336,13 @@
                    <td></td>
              </tr>
              <tr class="row1">
-                 <td>Treatment plan:</td>
+                 <td><b>Treatment plan:</b></td>
                  <td><input type="checkbox" name="chiropractic" value="Skilled Chiropractic Spinal Manipulation">&nbsp Skilled Chiropractic Spinal Manipulation  </td>
                  <td><input type="checkbox" name="ems" value="EMS">&nbsp EMS</td>
                  <td><input type="checkbox" name="iceplan" value="Ice">&nbsp Ice  </td>
                  <td><input type="checkbox" name="heatplan" value="Heat">&nbsp Heat</td>
             </tr>
-            <tr class="row2">
+            <tr class="row1">
             <td></td>            
             <td><input type="checkbox" name="nimmo" value="Nimmo">&nbsp Nimmo</td>
             <td><input type="checkbox" name="ultrasound" value="Ultrasound">&nbsp Ultrasound</td>
@@ -347,7 +356,7 @@
             <td><input type="checkbox" name="strengthening" value="Strengthening">&nbsp Strengthening</td>
             <td><input type="checkbox" name="remobilization" value="Remobilization">&nbsp Remobilization  </td>
             </tr>
-             <tr class="row2">
+             <tr class="row1">
             <td></td>
             <td><input type="checkbox" name="rehab" value="Rehab">&nbsp Rehab  </td>
             <td><input type="checkbox" name="modificat" value="Modificat">&nbsp Modificat  </td>
@@ -356,13 +365,13 @@
             </tr>      
             
             <tr class="row1">
-                <td>Goals:</td>
+                <td><b>Goals:</b></td>
                 <td> <h4>Short Term:</h4></td>
                 <td><input type="checkbox" name="decreasepain" value="Decrease Pain">&nbsp Decrease Pain </td>
                 <td><input type="checkbox" name="decreasespam" value="Decrease Spam">&nbsp Decrease Spasm  </td>
                 <td><input type="checkbox" name="increaserom" value="Increase ROM">&nbsp Increase ROM</td>
              </tr>
-             <tr class="row2">
+             <tr class="row1">
                 <td></td>
                 <td></td>                   
                 <td><input type="checkbox" name="improveadl" value="Improve ADL">&nbsp Improve ADL    </td>
@@ -376,7 +385,7 @@
                 <td><input type="checkbox" name="returntowork" value="Return to work">&nbsp Return to Work     </td>
                 <td><input type="checkbox" name="renewsports" value="Renew Sports">&nbsp Renew sports    </td>
              </tr>
-             
+             <tr height="200" class="row1"></tr>
              </table>
             </div>
             </div>
@@ -409,12 +418,16 @@
                 <tr>
     				<td align="left" valign="top" width="80%" style="padding-right:25px;">
                         		                
-                  <table border="0">
-                         <tr class="row1">
-				               <td><b>CERVICAL:</b></td>				               
+                  <table border="0" cellpadding="0" cellspacing="0">
+                         <tr class="row2">
+				               <td width="150"><b>CERVICAL:</b></td>
+				               <td width="150"></td>
+				               <td width="150"></td>	
+				               <td width="150"></td>	
+				               <td width="500"></td>				               
 				                  </tr>
 				                 
-				                  <tr class="row2">
+				                  <tr class="row1">
 				                  <td>Jacksons</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="jacksonsr" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="jacksonsl" value="Left">Left</td>
@@ -429,7 +442,7 @@
 				                 
 				                  </tr>
 				                  
-				                  <tr class="row2">
+				                  <tr class="row1">
 				                  <td>Shoulder Depr</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="shoulder_deprr" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="shoulder_deprl" value="Left">Left</td>
@@ -443,7 +456,7 @@
 				                  <td class="input_txt"><input type="checkbox" name="georgeslo" value="Localized">Localized</td>
 				                 
 				                  </tr>
-				                  <tr class="row2">
+				                  <tr class="row1">
 				                  <td>O'Donoghues</td>	
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="odonor" value="Right">Pain Ad/Pass</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="odonol" value="Left">Pain Ad/Pass</td>
@@ -456,7 +469,7 @@
 				                  <td class="input_txt"><input type="checkbox" name="bakody_signlo" value="Localized">Localized</td>
 				                 
 				                  </tr>
-				                  <tr class="row2">
+				                  <tr class="row1">
 				                  <td>Distraction Test*</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="distraction_testr" value="Right">Relief</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="distraction_testl" value="Left">No relief</td>
@@ -467,7 +480,7 @@
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="valsalval" value="Left">Left</td>
 				                  <td class="input_txt"><input type="checkbox" name="valsalvalo" value="Localized">Localized</td>				                 
 				                  </tr>
-				                  <tr class="row2">
+				                  <tr class="row1">
 				                  <td>Spinal Percuss</td>
 				                  <td>Painlevel</td>
 				                  <td><input type="text" name="spinal_percuss"></td>				                 
@@ -479,7 +492,7 @@
 				                  <td>Left</td>
 				                  <td><input type="text" name="gripdynamomleft"></td>			                 
 				                  </tr>
-				                  <tr class="row2">
+				                  <tr class="row1">
 				                  <td>Adsons</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="adsonsr" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="adsonsl" value="Left">Left</td>
@@ -516,12 +529,17 @@
                 <tr>
     				<td align="left" valign="top" width="80%" style="padding-right:25px;">
                         		                
-                  <table border="0">
-                         <tr class="row1">
-				               <td><b>THORACIC:</b></td>				               
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                         <tr class="row2">
+				               <td width="150"><b>THORACIC:</b></td>	
+				               	<td width="300"></td>
+				               <td width="300"></td>	
+				               <td width="200"></td>	
+				               <td width="100"></td>
+				               	               
 				                  </tr>
 				                 
-				                  <tr class="row2">
+				                  <tr class="row1">
 				                  <td>Spinal Percuss</td>
 				                  <td>Painlevel</td>
 				                  <td><input type="text" name="spinalpercusst"></td>				                 
@@ -531,7 +549,7 @@
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="adams_testr" value="Hump Remains">Hump Remains</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="adams_testl" value="Hump Dissap">Hump Dissap</td>				                  			                 
 				                  </tr>
-         <tr class="row2">
+         <tr class="row1">
 				                  <td>Sheppal Sign</td>
 				                    <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="sheppal_signr" value="Pain When Bending towards Thoracic Lesison">Pain When Bending towards Thoracic Lesison</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="sheppal_signl" value="Pain When Bending away from Thoracic Leison">Pain When Bending away from Thoracic Leison</td>				                  			                    			                 
@@ -541,13 +559,14 @@
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="soto_hallr" value="C/S Pain">C/S Pain   </td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="soto_halll" value="T/S Pain">T/S Pain</td>				                  			                 
 				                  </tr>
-				                  <tr class="row2">
+				                  <tr class="row1">
 				                  <td>Compression Test	</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="compression_testr" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="compression_testl" value="Left">Left</td>
 				                  <td class="input_txt"><input type="checkbox" name="compression_testlo" value="Localized">Localized</td>				                 
 				                  </tr>
-				                  </table>
+				                  <tr height="300" class="row1"></tr>             
+				                </table>
 				                  </td>
 				                  </tr>
 				                  </table>
@@ -572,111 +591,132 @@
                 <tr>
     				<td align="left" valign="top" width="80%" style="padding-right:25px;">
                         		                
-                  <table border="0">
-                         <tr class="row1">
-				               <td><b>LUMBAR:</b></td>				               
+                  <table border="0" cellpadding="0" cellspacing="0">
+                         <tr class="row2">
+				               <td width="150"><b>LUMBAR:</b></td>
+				               <td width="180"></td>
+				               <td width="300"></td>	
+				               <td width="300"></td>
+				               <td width="300"></td>			               
 				                  </tr>              
-<tr class="row2">
+<tr class="row1">
 				                  <td>Antalgia</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="antalgiar" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="antalgial" value="Left">Left</td>
-				                 
+				                 <td width="350"></td>	
+				               <td width="350"></td>
 				                  </tr>				            
 				                  <tr class="row1">
 				                  <td>Spinal Percuss</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="spinal_percusslr" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="spinal_percussll" value="Left">Left</td>
-				                 
+				                 <td width="350"></td>	
+				               <td width="350"></td>
 				                  </tr>	
-				                  <tr class="row2">
+				                  <tr class="row1">
 				                  <td>Valsalva	</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="valsalvalr" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="valsalvall" value="Left">Left</td>
-				                 
+				                 <td width="350"></td>	
+				               <td width="350"></td>
 				                  </tr>	
 				                  <tr class="row1">
 				                  <td>Minors Sign</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="minors_signr" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="minors_signl" value="Left">Left</td>
-				                 
+				                 <td width="350"></td>	
+				               <td width="350"></td>
 				                  </tr>	
-				                  <tr class="row2">
+				                  <tr class="row1">
 				                  <td>Braggard's Test</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="braggards_testr" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="braggards_testl" value="Left">Left</td>
-				                 
+				                 <td width="350"></td>	
+				               <td width="350"></td>
 				                  </tr>	
 				                  <tr class="row1">
 				                  <td>SLR</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="slrr" value="30-45-70">30-45-70     </td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="slrl" value="30-45-70">30-45-70</td>
-				                 
+				                 <td width="350"></td>	
+				               <td width="350"></td>
 				                  </tr>	
-				                  <tr class="row2">
+				                  <tr class="row1">
 				                  <td>WLR</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="wlrr" value="30-45-70">30-45-70</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="wlrl" value="30-45-70">30-45-70</td>
-				                 
+				                 <td width="350"></td>	
+				               <td width="350"></td>
 				                  </tr>	
 				                   <tr class="row1">
 				                  <td>Hoovers	</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="hooversr" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="hooversl" value="Left">Left</td>
-				                 
+				                 <td width="350"></td>	
+				               <td width="350"></td>
 				                  </tr>	
-				                   <tr class="row2">
+				                   <tr class="row1">
 				                  <td>Dbl Leg Raise</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="dbl_leg_raiser" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="dbl_leg_raisel" value="Left">Left</td>
-				                 
+				                 <td width="350"></td>	
+				               <td width="350"></td>
 				                  </tr>	
 				                   <tr class="row1">
 				                  <td>Long Leg Test</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="long_leg_testr" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="long_leg_testl" value="Left">Left</td>
-				                 
+				                 <td width="350"></td>	
+				               <td width="350"></td>
 				                  </tr>	
-				                   <tr class="row2">
+				                   <tr class="row1">
 				                  <td>Anvil Test</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="anvil_testr" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="anvil_testl" value="Left">Left</td>
-				                 
+				                 <td width="350"></td>	
+				               <td width="350"></td>
 				                  </tr>	
 				                   <tr class="row1">
 				                  <td>Thomas	</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="thomasr" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="thomasl" value="Left">Left</td>
-				                 
+				                 <td width="350"></td>	
+				               <td width="350"></td>
 				                  </tr>	
-				                   <tr class="row2">
+				                   <tr class="row1">
 				                  <td>Milgram's Test	</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="milgrams_testr" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="milgrams_testl" value="Left">Left</td>
-				                 
+				                 <td width="350"></td>	
+				               <td width="350"></td>
 				                  </tr>	
 				                   <tr class="row1">
 				                  <td>Obers		</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="obersr" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="obersl" value="Left">Left</td>
-				                 
+				                 <td width="350"></td>	
+				               <td width="350"></td>
 				                  </tr>	
-				                   <tr class="row2">
+				                   <tr class="row1">
 				                  <td>Illiac Comp	</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="illiaccompr" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="illiaccompl" value="Left">Left</td>
-				                 
+				                 <td width="350"></td>	
+				               <td width="350"></td>
 				                  </tr>	
 				                   <tr class="row1">
 				                  <td>Yeomans	</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="yeomansr" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="yeomansl" value="Left">Left</td>
-				                 
+				                 <td width="350"></td>	
+				               <td width="350"></td>
 				                  </tr>	
-				                  <tr class="row2">
+				                  <tr class="row1">
 				                  <td>Allis Sign        	</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="allis_signr" value="Long tibiafemur">Long tibiafemur  </td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="allis_signl" value="Long tibia/femur">Long tibia/femur</td>
-				                 
+				                 <td width="350"></td>	
+				               <td width="350"></td>
 				                  </tr>	
 				                  </table>
 				                  </td>
@@ -704,157 +744,204 @@
                 <tr>
     				<td align="left" valign="top" width="80%" style="padding-right:25px;">
                         		                
-                  <table border="0">
+                  <table border="0" cellpadding="0" cellspacing="0" >
                          <tr class="row1">
-				               <td><b>EXTREMITIES :</b></td>				               
+                               <td width="150"></td>
+				               <td width="200"><B style="font-size:14px">EXTREMITIES :</B></td>
+				               <td width="250"></td>
+				               <td width="150"></td>
+				               <td width="150"></td>				               
 				                  </tr> 
 				                  <tr class="row2">
+				                  <td width="150"></td>
 				               <td><b>SHOULDERS</b></td>				               
+				               <td></td>
+				               <td width="350"></td>
+				               <td width="350"></td>				               
 				                  </tr>      
 				                  <tr class="row1">
+				                  <td width="150"></td>
 				                  <td>Dugas</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="dugasr" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="dugasl" value="Left">Left</td>
 				                 
 				                  </tr>
-				                  <tr class="row2">
+				                  <tr class="row1">
+				                  <td width="150"></td>
 				                  <td>Supraspinatus</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="supraspinatusr" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="supraspinatusl" value="Left">Left</td>
 				                 
 				                  </tr>
 				                  <tr class="row1">
+				                  <td width="150"></td>
 				                  <td>Codmans	</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="codmansr" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="codmansl" value="Left">Left</td>
 				                 
 				                  </tr>
-				                  <tr class="row2">
+				                  <tr class="row1">
+				                  <td width="150"></td>
 				                  <td>Speed's Test</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="speeds_testr" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="speeds_testl" value="Left">Left</td>
 				                 
 				                  </tr>
 				                  <tr class="row1">
+				                  <td width="150"></td>
 				                  <td>Yergasons</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="yergasonsr" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="yergasonsl" value="Left">Left</td>
 				                 
 				                  </tr>
 				                  <tr class="row2">
-				               <td><b>ELBOWS</b></td>				               
+				                  <td width="150"></td>
+				               <td><b>ELBOWS</b></td>
+				               <td></td>
+				               <td width="350"></td>
+				               <td width="350"></td>				               
 				                  </tr> 
 				                  <tr class="row1">
-				                  <td>tinels</td>
+				                  <td width="150"></td>
+				                  <td>Tinels</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="tinelser" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="tinelsel" value="Left">Left</td>
 				                 
 				                  </tr>
-				                  <tr class="row2">
+				                  <tr class="row1">
+				                  <td width="150"></td>
 				                  <td>Ligam Instab   </td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="lingaminstabr" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="lingaminstabl" value="Left">Left</td>
 				                 
 				                  </tr>
 				                  <tr class="row1">
+				                  <td width="150"></td>
 				                  <td>Golfers Elbow</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="golfers_elbowr" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="golfers_elbowl" value="Left">Left</td>
 				                 
 				                  </tr>
-				                   <tr class="row2">
+				                   <tr class="row1">
+				                   <td width="150"></td>
 				                  <td>Tennis Elbow</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="tennis_elbowr" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="tennis_elbowl" value="Left">Left</td>
-				                 <tr class="row1">
-				               <td><b>WRISTS</b></td>				               
+				                 <tr class="row2">
+				                 <td width="150"></td>
+				               <td><b>WRISTS</b></td>	
+				               <td></td>
+				               <td width="350"></td>
+				               <td width="350"></td>			               
 				                  </tr>
 				                  </tr>
 				                   <tr class="row1">
+				                   <td width="150"></td>
 				                  <td>Tinels</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="tinelsr" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="tinelsl" value="Left">Left</td>
 				                 
 				                  </tr>
-				                   <tr class="row2">
+				                   <tr class="row1">
+				                   <td width="150"></td>
 				                  <td>Phalens</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="phalensr" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="phalensl" value="Left">Left</td>
 				                 
 				                  </tr>
 				                   <tr class="row1">
+				                   <td width="150"></td>
 				                  <td>Finkelstein's Test</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="finkelsteins_testr" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="finkelsteins_testl" value="Left">Left</td>
 				                 
 				                  </tr>
-				                   <tr class="row2">
+				                   <tr class="row1">
+				                   <td width="150"></td>
 				                  <td>Bracelet	</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="braceletr" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="braceletl" value="Left">Left</td>
 				                 
 				                  </tr>
 				                   <tr class="row1">
+				                   <td width="150"></td>
 				                  <td>Allens</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="allensr" value=" Blood refilling capacity in radial "> Blood refilling capacity in radial </td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="allensl" value="Ulnar artery bilaterally">Ulnar artery bilaterally</td>
 				                 
 				                  </tr>
-				                   <tr class="row2">
+				                   <tr class="row1">
+				                   <td width="150"></td>
 				                  <td>Valgus/Varus </td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="valgus_varusr" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="valgus_varusl" value="Left">Left</td>
 				                 
 				                  </tr>
-				                  <tr class="row1">
-				               <td><b>KNEES</b></td>				               
+				                  <tr class="row2">
+				                  <td width="150"></td>
+				               <td><b>KNEES</b></td>	
+				               <td></td>
+				               <td width="350"></td>
+				               <td width="350"></td>			               
 				                  </tr>
-				                   <tr class="row2">
+				                   <tr class="row1">
+				                   <td width="150"></td>
 				                  <td>Pat Ball</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="pat_ballr" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="pat_balll" value="Left">Left</td>
 				                 
 				                  </tr>
 				                   <tr class="row1">
+				                   <td width="150"></td>
 				                  <td>Drawer</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="drawerr" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="drawerl" value="Left">Left</td>
 				                 
 				                  </tr>
-				                   <tr class="row2">
+				                   <tr class="row1">
+				                   <td width="150"></td>
 				                  <td>Val/Varus  </td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="val_varusr" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="val_varusl" value="Left">Left</td>
 				                 
 				                  </tr>
 				                   <tr class="row1">
+				                   <td width="150"></td>
 				                  <td> Apleys   </td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="apleysr" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="apleysl" value="Left">Left</td>
 				                 
 				                  </tr>
 				                  <tr class="row2">
-				               <td><b>ANKLES</b></td>				               
+				                  <td width="150"></td>
+				               <td><b>ANKLES</b></td>	
+				               <td></td>
+				               <td width="350"></td>
+				               <td width="350"></td>			               
 				                  </tr>
 				                   <tr class="row1">
+				                   <td width="150"></td>
 				                  <td> Drawer  </td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="drawerar" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="draweral" value="Left">Left</td>
 				                 
 				                  </tr>
-				                   <tr class="row2">
+				                   <tr class="row1">
+				                   <td width="150"></td>
 				                  <td>Thompsons </td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="thompsonsr" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="thompsonsl" value="Left">Left</td>
 				                 
 				                  </tr>
 				                  <tr class="row1">
+				                  <td width="150"></td>
 				                  <td>Tinels </td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="tinelsar" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="tinelsal" value="Left">Left</td>
 				                 
 				                  </tr>
-				                  <tr class="row2">
+				                  <tr class="row1">
+				                  <td width="150"></td>
 				                  <td> Strunskys</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="strunskysr" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="strunskysl" value="Left">Left</td>
@@ -862,12 +949,14 @@
 				                  </tr>
 				                 
                         <tr class="row1">
-				                  <td> Homans </td>
+                        <td width="150"></td>
+				                  <td> Homans </td>				                  
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="homansr" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="homansl" value="Left">Left</td>
 				                 
 				                  </tr>
-				                   <tr class="row2">
+				                   <tr class="row1">
+				                   <td width="150"></td>
 				                  <td>Claudication Test </td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="claudication_testr" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="claudication_testl" value="Left">Left</td>
