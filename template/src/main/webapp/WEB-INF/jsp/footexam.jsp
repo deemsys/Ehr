@@ -174,6 +174,7 @@ $(function() {
 
 </head>
 <body>
+<br><br>
 <div id="tabs" >
   <ul>
     <li><a href="#tabs-1">1</a></li>
@@ -196,6 +197,8 @@ $(function() {
 	     <div class="contentbox">
 	     <c:choose>
 	     <c:when test="${empty footdetails}">
+	     <br>
+<br>
           <table cellpadding="0" cellspacing="0" border="0" >
            <tr><td width="130"><span class="err">*</span>Patient Name:</td>
            <td width="200"><input type="text" name="pname"><br><span class="err"><form:errors path="footexamdetails.signature"></form:errors></td><td width="635"></td>

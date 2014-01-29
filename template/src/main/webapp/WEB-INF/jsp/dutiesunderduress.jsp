@@ -43,6 +43,7 @@ $(function() {
   </script>
 </head>
  <body>
+ <br><br>
 <form action="dutiesunderduress" method="POST" name="dutiesunder">
 <c:choose>
             <c:when test="${empty duties}">

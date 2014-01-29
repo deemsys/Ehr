@@ -16,6 +16,8 @@
 	<body>
 	<form method="POST" action="physicalexam">
 <c:forEach items="${physicalexamForm.physicalexam}" var="physicalexam" varStatus="status">  
+<br>
+<br>
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
 <c:set value="${physicalexamForm.physicalexam[0]}" var="physicalexam"> </c:set>
       <tr>

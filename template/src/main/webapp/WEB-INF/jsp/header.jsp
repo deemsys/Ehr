@@ -17,8 +17,8 @@
 
 <script src="pro_dropdown_2/stuHover.js" type="text/javascript"></script>
 <style type="text/css">
-.ddsubmenustyle,.ddsubmenustyle ul {
-	margin: 0;
+ul.submenu {
+margin: 0;
 	padding: 0;
 	position: absolute;
 	left: 0;
@@ -30,13 +30,29 @@
 	z-index: 100;
 	font-size: 13px;
 }
+.ddsubmenustyle,.ddsubmenustyle ul {
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	left: 0;
+	top: 0;
+	
+	list-style-type: none;
+	border: 1px solid #444;
+	border-bottom: 0;
+	visibility: hidden;
+	z-index: 100;
+	font-size: 13px;
+}
 
 .ddsubmenustyle li {
+list-style-type: none;
 	line-height: 28px;
 	font-size: 13px;
 }
 
 .ddsubmenustyle li a {
+list-style-type: none;
 	display: block;
 	width: 160px;
 	color: #fff;
@@ -52,6 +68,7 @@
 }
 
 .ddsubmenustyle li a:hover {
+list-style-type: none;
 	background-color: #eee;
 	border-bottom: 1px solid #ccc;
 	color: #333333;
@@ -132,10 +149,10 @@
 		$rec=$obj->records[0]['previlages'];
 		$previ=explode(",",$rec);
 	<AJDF:output>/php</AJDF:output>	 Suresh-->
-						<ul class="menu">
+					
 						<c:choose>
 						<c:when test="${menu=='search'}">
-					
+						<ul class="menu">
 					</c:when>
 					<c:otherwise>
 						<c:if test="${role==0}">
@@ -144,6 +161,7 @@
 									<span>Dashboard</span>
 								</a>
 							 </li> --%> 
+				            	<ul class="menu">
 				            <li>
 				            	<a href="#" class="<c:choose>
 				            	<c:when test="${menu=='patientInfo'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu5">
@@ -188,10 +206,30 @@
 							</li>
 							</c:if>
 							<c:if test="${role==1}">
+							
+							
 
 <c:choose>
+
+
 <c:when test="${visit=='0'}">
 
+<ul class="menu2" width="1000">
+<style type="text/css">
+.menu2 {
+	margin:0;
+	height:60px;
+	overflow:hidden;
+	background:#243d6e;
+	z-index: 100;
+}
+.menu2 li img{vertical-align:top}
+.menu2 li {
+	float:left;
+	margin-right:8px;
+	text-transform:uppercase;
+}
+</style>
 
 
 						<li>
@@ -259,7 +297,426 @@
 
 							
 </c:when>
+<c:when test="${visit=='1'}">
+	<ul class="menu2" width="1000">
+<style type="text/css">
+.menu2 {
+	margin:16px 0 0 10px;
+	height:60px;
+	overflow:hidden;
+	background:#243d6e;
+}
+.menu2 li img{vertical-align:top}
+.menu2 li {
+	float:left;
+	margin-right:8px;
+	text-transform:uppercase;
+}
+</style>
+
+
+						<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='phyexam'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu11">
+									<span>Physical exam</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='report'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu8">
+									<span>Radiologic Report</span>
+								</a>
+							</li>
+							
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='soapnotes'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu10">
+									<span>Soap Notes</span>
+								</a>
+							</li>
+							<li>
+
+								<a href="#" class="<c:choose><c:when test="${menu=='initial'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu13">
+
+								
+
+									<span>Initial Exam & Re Exam</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='symptom'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu23">
+									<span>Symptom</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='therapy'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu24">
+									<span>Manual Therapy Treatment</span>
+								</a>
+							</li>
+							
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='wristindex'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu25">
+									<span>Wrist/Hand Disability Index</span>
+								</a>
+							</li>
+
+
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='hipknee'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu26">
+									<span>Hip And Knee Questionnarie</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='dcfee'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu27">
+									<span>Dc Fee Slip</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='duties'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu29">
+									<span>Duties Under Duress Summary </span>
+								</a>
+							</li>
+
+							
+</c:when>
+
+<c:when test="${visit=='2'}">
+	<ul class="menu2" width="1000">
+<style type="text/css">
+.menu2 {
+	margin:16px 0 0 10px;
+	height:60px;
+	overflow:hidden;
+	background:#243d6e;
+}
+.menu2 li img{vertical-align:top}
+.menu2 li {
+	float:left;
+	margin-right:8px;
+	text-transform:uppercase;
+}
+</style>
+		<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='phyexam'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu11">
+									<span>Physical exam</span>
+								</a>
+							</li>
+							
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='iniexam'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu9">
+									<span>Initial Exam</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='soapnotes'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu10">
+									<span>Soap Notes</span>
+								</a>
+							</li>
+							<li>
+
+								<a href="#" class="<c:choose><c:when test="${menu=='initial'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu13">
+
+								
+
+									<span>Initial Exam & Re Exam</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='symptom'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu23">
+									<span>Symptom</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='therapy'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu24">
+									<span>Manual Therapy Treatment</span>
+								</a>
+							</li>
+							
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='wristindex'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu25">
+									<span>Wrist/Hand Disability Index</span>
+								</a>
+							</li>
+
+
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='hipknee'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu26">
+									<span>Hip And Knee Questionnarie</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='dcfee'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu27">
+									<span>Dc Fee Slip</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='duties'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu29">
+									<span>Duties Under Duress Summary </span>
+								</a>
+							</li>
+
+	</ul>						
+</c:when>
+
+<c:when test="${visit=='3'}">
+		<ul class="menu2" width="1000">
+<style type="text/css">
+.menu2 {
+	margin:16px 0 0 10px;
+	height:60px;
+	overflow:hidden;
+	background:#243d6e;
+}
+.menu2 li img{vertical-align:top}
+.menu2 li {
+	float:left;
+	margin-right:8px;
+	text-transform:uppercase;
+}
+</style>
+	
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='report'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu8">
+									<span>Radiologic Report</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='iniexam'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu9">
+									<span>Initial Exam</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='soapnotes'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu10">
+									<span>Soap Notes</span>
+								</a>
+							</li>
+							<li>
+
+								<a href="#" class="<c:choose><c:when test="${menu=='initial'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu13">
+
+								
+
+									<span>Initial Exam & Re Exam</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='symptom'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu23">
+									<span>Symptom</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='therapy'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu24">
+									<span>Manual Therapy Treatment</span>
+								</a>
+							</li>
+							
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='wristindex'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu25">
+									<span>Wrist/Hand Disability Index</span>
+								</a>
+							</li>
+
+
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='hipknee'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu26">
+									<span>Hip And Knee Questionnarie</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='dcfee'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu27">
+									<span>Dc Fee Slip</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='duties'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu29">
+									<span>Duties Under Duress Summary </span>
+								</a>
+							</li>
+</ul>
+							
+</c:when>
+
+<c:when test="${visit=='4'}">
+
+	<ul class="menu">
+
+						<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='phyexam'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu11">
+									<span>Physical exam</span>
+								</a>
+							</li>
+							
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='soapnotes'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu10">
+									<span>Soap Notes</span>
+								</a>
+							</li>
+							<li>
+
+								<a href="#" class="<c:choose><c:when test="${menu=='initial'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu13">
+
+								
+
+									<span>Initial Exam & Re Exam</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='symptom'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu23">
+									<span>Symptom</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='therapy'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu24">
+									<span>Manual Therapy Treatment</span>
+								</a>
+							</li>
+							
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='wristindex'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu25">
+									<span>Wrist/Hand Disability Index</span>
+								</a>
+							</li>
+
+
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='hipknee'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu26">
+									<span>Hip And Knee Questionnarie</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='dcfee'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu27">
+									<span>Dc Fee Slip</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='duties'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu29">
+									<span>Duties Under Duress Summary </span>
+								</a>
+							</li>
+
+</ul>							
+</c:when>
+
+<c:when test="${visit=='5'}">
+
+	<ul class="menu">
+
+						
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='report'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu8">
+									<span>Radiologic Report</span>
+								</a>
+							</li>
+							
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='soapnotes'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu10">
+									<span>Soap Notes</span>
+								</a>
+							</li>
+							<li>
+
+								<a href="#" class="<c:choose><c:when test="${menu=='initial'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu13">
+
+								
+
+									<span>Initial Exam & Re Exam</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='symptom'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu23">
+									<span>Symptom</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='therapy'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu24">
+									<span>Manual Therapy Treatment</span>
+								</a>
+							</li>
+							
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='wristindex'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu25">
+									<span>Wrist/Hand Disability Index</span>
+								</a>
+							</li>
+
+
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='hipknee'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu26">
+									<span>Hip And Knee Questionnarie</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='dcfee'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu27">
+									<span>Dc Fee Slip</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='duties'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu29">
+									<span>Duties Under Duress Summary </span>
+								</a>
+							</li>
+
+	</ul>						
+</c:when>
+
+
+<c:when test="${visit=='6'}">
+	<ul class="menu">
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='iniexam'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu9">
+									<span>Initial Exam</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='soapnotes'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu10">
+									<span>Soap Notes</span>
+								</a>
+							</li>
+							<li>
+
+								<a href="#" class="<c:choose><c:when test="${menu=='initial'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu13">
+
+								
+
+									<span>Initial Exam & Re Exam</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='symptom'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu23">
+									<span>Symptom</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='therapy'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu24">
+									<span>Manual Therapy Treatment</span>
+								</a>
+							</li>
+							
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='wristindex'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu25">
+									<span>Wrist/Hand Disability Index</span>
+								</a>
+							</li>
+
+
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='hipknee'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu26">
+									<span>Hip And Knee Questionnarie</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='dcfee'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu27">
+									<span>Dc Fee Slip</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='duties'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu29">
+									<span>Duties Under Duress Summary </span>
+								</a>
+							</li>
+
+		</ul>					
+</c:when>
+
   <c:otherwise>
+  	<ul class="menu">
         <li><a href="<c:out value="editsoapnotes?soapid=${soapnotesid}"/>" class="<c:choose><c:when test="${menu=='notes'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>">
 									<span>Soap Notes</span>
 								</a>
@@ -306,6 +763,7 @@
 					
 							</c:if>
 							<c:if test="${role==2}">
+								<ul class="menu">
 							<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='admin'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu7">
 									<span>Admin Forms</span>
@@ -476,11 +934,12 @@
 							<!-- <li><a href="insuranceverification">Health Insurance Verification</a></li> -->
 						</ul>
 						<ul id="ddsubmenu13" class="ddsubmenustyle">
-							<li><a href="#" rel="ddsubmenu14">Lumbopelvic Exam</a>
-							     <ul id="ddsubmenu14" class="ddsubmenustyle">
-							      <li><a href="lumbopelvicexam" >Lumbopelvic Initial Exam</a></li>
+						
+							<li style="list-style-type: none"><a href="#" rel="ddsubmenu14" ><span>Lumbopelvic Exam</span> </a>
+							  <ul id="ddsubmenu14" style="list-style-type: none" class="ddsubmenustyle">
+							      <li style="list-style-type: none"><a href="lumbopelvicexam" >Lumbopelvic Initial Exam</a></li>
 							      <li><a href="viewlumbopelvicexam">View Lumbopelvic Exam & Reexam</a></li>
-							     </ul>
+							   </ul> 
 							     </li>
 							<li><a href="#" rel="ddsubmenu15" >Hip Exam</a>
 							     <ul id="ddsubmenu15" class="ddsubmenustyle">

@@ -110,30 +110,58 @@ $("#draggable1").offset({ left:  document.getElementById("achesleft1").value, to
 $("#draggable2").offset({ left:  document.getElementById("achesleft2").value, top:  document.getElementById("achestop2").value})
 $("#draggable3").offset({ left:  document.getElementById("achesleft3").value, top:  document.getElementById("achestop3").value})
 $("#draggable4").offset({ left:  document.getElementById("achesleft4").value, top:  document.getElementById("achestop4").value})
+$("#draggable5").offset({ left:  document.getElementById("achesleft5").value, top:  document.getElementById("achestop5").value})
+$("#draggable6").offset({ left:  document.getElementById("achesleft6").value, top:  document.getElementById("achestop6").value})
+$("#draggable7").offset({ left:  document.getElementById("achesleft7").value, top:  document.getElementById("achestop7").value})
+$("#draggable8").offset({ left:  document.getElementById("achesleft8").value, top:  document.getElementById("achestop8").value})
+$("#draggable9").offset({ left:  document.getElementById("achesleft9").value, top:  document.getElementById("achestop9").value})
 
 $("#numbness").offset({ left:  document.getElementById("numbleft").value, top:  document.getElementById("numbtop").value})
 $("#numbness1").offset({ left:  document.getElementById("numbleft1").value, top:  document.getElementById("numbtop1").value})
 $("#numbness2").offset({ left:  document.getElementById("numbleft2").value, top:  document.getElementById("numbtop2").value})
 $("#numbness3").offset({ left:  document.getElementById("numbleft3").value, top:  document.getElementById("numbtop3").value})
 $("#numbness4").offset({ left:  document.getElementById("numbleft4").value, top:  document.getElementById("numbtop4").value})
+$("#numbness5").offset({ left:  document.getElementById("numbleft5").value, top:  document.getElementById("numbtop5").value})
+$("#numbness6").offset({ left:  document.getElementById("numbleft6").value, top:  document.getElementById("numbtop6").value})
+$("#numbness7").offset({ left:  document.getElementById("numbleft7").value, top:  document.getElementById("numbtop7").value})
+$("#numbness8").offset({ left:  document.getElementById("numbleft8").value, top:  document.getElementById("numbtop8").value})
+$("#numbness9").offset({ left:  document.getElementById("numbleft9").value, top:  document.getElementById("numbtop9").value})
 
 $("#pins").offset({ left:  document.getElementById("pinleft").value, top:  document.getElementById("pintop").value})
 $("#pins1").offset({ left:  document.getElementById("pinleft1").value, top:  document.getElementById("pintop1").value})
 $("#pins2").offset({ left:  document.getElementById("pinleft2").value, top:  document.getElementById("pintop2").value})
 $("#pins3").offset({ left:  document.getElementById("pinleft3").value, top:  document.getElementById("pintop3").value})
 $("#pins4").offset({ left:  document.getElementById("pinleft4").value, top:  document.getElementById("pintop4").value})
+$("#pins5").offset({ left:  document.getElementById("pinleft5").value, top:  document.getElementById("pintop5").value})
+$("#pins6").offset({ left:  document.getElementById("pinleft6").value, top:  document.getElementById("pintop6").value})
+$("#pins7").offset({ left:  document.getElementById("pinleft7").value, top:  document.getElementById("pintop7").value})
+$("#pins8").offset({ left:  document.getElementById("pinleft8").value, top:  document.getElementById("pintop8").value})
+$("#pins9").offset({ left:  document.getElementById("pinleft9").value, top:  document.getElementById("pintop9").value})
+
 
 $("#burn").offset({ left:  document.getElementById("burnleft").value, top:  document.getElementById("burntop").value})
 $("#burn1").offset({ left:  document.getElementById("burnleft1").value, top:  document.getElementById("burntop1").value})
 $("#burn2").offset({ left:  document.getElementById("burnleft2").value, top:  document.getElementById("burntop2").value})
 $("#burn3").offset({ left:  document.getElementById("burnleft3").value, top:  document.getElementById("burntop3").value})
 $("#burn4").offset({ left:  document.getElementById("burnleft4").value, top:  document.getElementById("burntop4").value})
+$("#burn5").offset({ left:  document.getElementById("burnleft5").value, top:  document.getElementById("burntop5").value})
+$("#burn6").offset({ left:  document.getElementById("burnleft6").value, top:  document.getElementById("burntop6").value})
+$("#burn7").offset({ left:  document.getElementById("burnleft7").value, top:  document.getElementById("burntop7").value})
+$("#burn8").offset({ left:  document.getElementById("burnleft8").value, top:  document.getElementById("burntop8").value})
+$("#burn9").offset({ left:  document.getElementById("burnleft9").value, top:  document.getElementById("burntop9").value})
 
 $("#stabbing").offset({ left:  document.getElementById("stableft").value, top:  document.getElementById("stabtop").value})
 $("#stabbing1").offset({ left:  document.getElementById("stableft1").value, top:  document.getElementById("stabtop1").value})
 $("#stabbing2").offset({ left:  document.getElementById("stableft2").value, top:  document.getElementById("stabtop2").value})
 $("#stabbing3").offset({ left:  document.getElementById("stableft3").value, top:  document.getElementById("stabtop3").value})
 $("#stabbing4").offset({ left:  document.getElementById("stableft4").value, top:  document.getElementById("stabtop4").value})
+$("#stabbing5").offset({ left:  document.getElementById("stableft5").value, top:  document.getElementById("stabtop5").value})
+$("#stabbing6").offset({ left:  document.getElementById("stableft6").value, top:  document.getElementById("stabtop6").value})
+$("#stabbing7").offset({ left:  document.getElementById("stableft7").value, top:  document.getElementById("stabtop7").value})
+$("#stabbing8").offset({ left:  document.getElementById("stableft8").value, top:  document.getElementById("stabtop8").value})
+$("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:  document.getElementById("stabtop9").value})
+
+
     });
 
     
@@ -542,7 +570,7 @@ w=0;
 </head>
 <body>
 
-	     
+<br><br>	     
 <form action="updatesymptom" method="POST">  
 	      <div id="right_content">
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
@@ -560,7 +588,7 @@ w=0;
           <table cellpadding="0" cellspacing="0" border="0" width="98%" >
           <tr><td width="100"><span class="err">*</span>Name</td><td width="300"><c:out value="${symptomdetails.pname} "/><span class="err"><form:errors path="symptom.pname"></form:errors></td>
 <td  width="100">Number</td><td width="100"><c:out value="${symptomdetails.number}"/></td>
-<td  width="100" align="right"><span class="err">*</span>Date</td><td width="300"><input type="text" name="date" value="${symptomdetails.date}" id="datepicker"><span class="err"><form:errors path="symptom.date"></form:errors></td>
+<td  width="120" align="center"><span class="err">*</span>Date</td><td width="300"><c:out value="${symptomdetails.date}" /><span class="err"><form:errors path="symptom.date"></form:errors></td>
 </tr></table>
 </br>
 <p>Please be sure to fill this form out extremely accurately.Mark the area(s) on your body where you feel the described sensation(s).Use the appropriate symbol(s).Mark areas of radiating pain, and include all affected areas.You may draw on the face as well.</p>
@@ -599,7 +627,42 @@ w=0;
 <input type="hidden" name="acheleft4" id="achesleft4" value="${symptomdetails.acheleft4}" >
 <input type="hidden" name="achetop4" id="achestop4" value="${symptomdetails.achetop4}" > 
 </div></td>
-<td width="70"></td>
+<td>
+<div id="draggable5" >
+ <img alt="" class="ui-widget-content" src="${symptomdetails.achepath5}" width="10px" height="10px" > 
+ <input type="hidden" name="achepath5" value="resources/images/aches.jpg">
+<input type="hidden" name="acheleft5" id="achesleft5" value="${symptomdetails.acheleft5}" >
+<input type="hidden" name="achetop5" id="achestop5" value="${symptomdetails.achetop5}" > 
+</div></td>
+<td>
+<div id="draggable6" >
+ <img alt="" class="ui-widget-content" src="${symptomdetails.achepath6}" width="10px" height="10px" > 
+ <input type="hidden" name="achepath6" value="resources/images/aches.jpg">
+<input type="hidden" name="acheleft6" id="achesleft6" value="${symptomdetails.acheleft6}" >
+<input type="hidden" name="achetop6" id="achestop6" value="${symptomdetails.achetop6}" > 
+</div></td>
+<td>
+<div id="draggable7" >
+ <img alt="" class="ui-widget-content" src="${symptomdetails.achepath7}" width="10px" height="10px" > 
+ <input type="hidden" name="achepath7" value="resources/images/aches.jpg">
+<input type="hidden" name="acheleft7" id="achesleft7" value="${symptomdetails.acheleft7}" >
+<input type="hidden" name="achetop7" id="achestop7" value="${symptomdetails.achetop7}" > 
+</div></td>
+<td>
+<div id="draggable8" >
+ <img alt="" class="ui-widget-content" src="${symptomdetails.achepath8}" width="10px" height="10px" > 
+ <input type="hidden" name="achepath8" value="resources/images/aches.jpg">
+<input type="hidden" name="acheleft8" id="achesleft8" value="${symptomdetails.acheleft8}" >
+<input type="hidden" name="achetop8" id="achestop8" value="${symptomdetails.achetop8}" > 
+</div></td>
+<td>
+<div id="draggable9" >
+ <img alt="" class="ui-widget-content" src="${symptomdetails.achepath9}" width="10px" height="10px" > 
+ <input type="hidden" name="achepath9" value="resources/images/aches.jpg">
+<input type="hidden" name="acheleft9" id="achesleft9" value="${symptomdetails.acheleft9}" >
+<input type="hidden" name="achetop9" id="achestop9" value="${symptomdetails.achetop9}" > 
+</div></td>
+<td width="60"></td>
 <td width="100"><b>Numbness:</b></td>
 <td><div id="numbness" class="ui-widget-content">
  <img alt="" src="${symptomdetails.numbpath}" width="10px" height="10px" > 
@@ -631,6 +694,37 @@ w=0;
 <input type="hidden" name="numbleft4" id="numbleft4" value="${symptomdetails.numbleft4}">
 <input type="hidden" name="numbtop4" id="numbtop4" value="${symptomdetails.numbtop4}" > 
 </div></td>
+<td><div id="numbness5" class="ui-widget-content">
+ <img alt="" src="${symptomdetails.numbpath5}" width="10px" height="10px" > 
+ <input type="hidden" name="numbpath5" value="resources/images/numb.png">
+<input type="hidden" name="numbleft5" id="numbleft5" value="${symptomdetails.numbleft5}" >
+<input type="hidden" name="numbtop5" id="numbtop5" value="${symptomdetails.numbtop5}" > 
+</div></td>
+<td><div id="numbness6" class="ui-widget-content">
+ <img alt="" src="${symptomdetails.numbpath6}"  width="10px" height="10px" >  
+ <input type="hidden" name="numbpath6" value="resources/images/numb.png">
+<input type="hidden" name="numbleft6" id="numbleft6" value="${symptomdetails.numbleft6}">
+<input type="hidden" name="numbtop6" id="numbtop6" value="${symptomdetails.numbtop6}"> 
+</div></td>
+<td><div id="numbness7" class="ui-widget-content">
+ <img alt="" src="${symptomdetails.numbpath7}"  width="10px" height="10px" > 
+ <input type="hidden" name="numbpath7" value="resources/images/numb.png">
+<input type="hidden" name="numbleft7" id="numbleft7" value="${symptomdetails.numbleft7}">
+<input type="hidden" name="numbtop7" id="numbtop7" value="${symptomdetails.numbtop7}">  
+</div></td>
+<td><div id="numbness8" class="ui-widget-content">
+ <img alt="" src="${symptomdetails.numbpath8}"  width="10px" height="10px" >  
+ <input type="hidden" name="numbpath8" id="numbpath8" value="resources/images/numb.png">
+<input type="hidden" name="numbleft8" id="numbleft8" value="${symptomdetails.numbleft8}">
+<input type="hidden" name="numbtop8" id="numbtop8" value="${symptomdetails.numbtop8}"> 
+</div></td>
+<td><div id="numbness9" class="ui-widget-content">
+ <img alt="" src="${symptomdetails.numbpath9}"  width="10px" height="10px" >  
+ <input type="hidden" name="numbpath9" id="numbpath9" value="resources/images/numb.png">
+<input type="hidden" name="numbleft9" id="numbleft9" value="${symptomdetails.numbleft9}">
+<input type="hidden" name="numbtop9" id="numbtop9" value="${symptomdetails.numbtop9}" > 
+</div></td>
+
 
 <td width="60"></td>
 <td width="100" ><b>Pins/Needles:</b></td>
@@ -665,6 +759,38 @@ w=0;
 <input type="hidden" name="pinleft4" id="pinleft4" value="${symptomdetails.pinleft4}">
 <input type="hidden" name="pintop4" id="pintop4" value="${symptomdetails.pintop4}">  
 </div></td>
+<td ><div id="pins5" class="ui-widget-content">
+ <img alt="" src="${symptomdetails.pinpath5}"  width="10px" height="10px" > 
+ <input type="hidden" name="pinpath5" id="pinpath5" value="resources/images/pin.png">
+<input type="hidden" name="pinleft5" id="pinleft5"  value="${symptomdetails.pinleft5}">
+<input type="hidden" name="pintop5" id="pintop5"  value="${symptomdetails.pintop5}">  
+</div></td>
+<td><div id="pins6" class="ui-widget-content">
+ <img alt="" src="${symptomdetails.pinpath6}"  width="10px" height="10px" >
+   <input type="hidden" name="pinpath6" id="pinpath6" value="resources/images/pin.png">
+<input type="hidden" name="pinleft6" id="pinleft6" value="${symptomdetails.pinleft6}">
+<input type="hidden" name="pintop6" id="pintop6" value="${symptomdetails.pintop6}" > 
+ 
+</div></td>
+<td><div id="pins7" class="ui-widget-content">
+ <img alt="" src="${symptomdetails.pinpath7}"  width="10px" height="10px" >
+  <input type="hidden" name="pinpath7" id="pinpath7" value="resources/images/pin.png">
+<input type="hidden" name="pinleft7" id="pinleft7" value="${symptomdetails.pinleft7}">
+<input type="hidden" name="pintop7" id="pintop7" value="${symptomdetails.pintop7}">   
+</div></td>
+<td><div id="pins8" class="ui-widget-content">
+ <img alt="" src="${symptomdetails.pinpath8}"  width="10px" height="10px" >  
+ <input type="hidden" name="pinpath8" id="pinpath8" value="resources/images/pin.png">
+<input type="hidden" name="pinleft8" id="pinleft8" value="${symptomdetails.pinleft8}">
+<input type="hidden" name="pintop8" id="pintop8" value="${symptomdetails.pintop8}"> 
+</div></td>
+<td><div id="pins9" class="ui-widget-content">
+ <img alt="" src="${symptomdetails.pinpath9}"  width="10px" height="10px" > 
+  <input type="hidden" name="pinpath9" id="pinpath9" value="resources/images/pin.png">
+<input type="hidden" name="pinleft9" id="pinleft9" value="${symptomdetails.pinleft9}">
+<input type="hidden" name="pintop9" id="pintop9" value="${symptomdetails.pintop9}">  
+</div></td>
+
 <td width="70"></td>
 <td width="100"><b>Burning</b></td>
 <td><div id="burn" class="ui-widget-content">
@@ -697,6 +823,37 @@ w=0;
 <input type="hidden" name="burnleft4" id="burnleft4" value="${symptomdetails.burnleft4}">
 <input type="hidden" name="burntop4" id="burntop4" value="${symptomdetails.burntop4}" >  
 </div></td>
+<td><div id="burn5" class="ui-widget-content">
+ <img alt="" src="${symptomdetails.burnpath5}"  width="10px" height="10px" > 
+  <input type="hidden" name="burnpath5" id="burnpath5" value="resources/images/burn.png">
+<input type="hidden" name="burnleft5" id="burnleft5" value="${symptomdetails.burnleft5}">
+<input type="hidden" name="burntop5" id="burntop5" value="${symptomdetails.burntop5}">  
+</div></td>
+<td><div id="burn6" class="ui-widget-content">
+ <img alt="" src="${symptomdetails.burnpath6}" width="10px" height="10px" >  
+ <input type="hidden" name="burnpath6" id="burnpath6" value="resources/images/burn.png">
+<input type="hidden" name="burnleft6" id="burnleft6" value="${symptomdetails.burnleft6}">
+<input type="hidden" name="burntop6" id="burntop6" value="${symptomdetails.burntop6}"> 
+</div></td>
+<td><div id="burn7" class="ui-widget-content">
+ <img alt="" src="${symptomdetails.burnpath7}" width="10px" height="10px" >  
+ <input type="hidden" name="burnpath7" id="burnpath7" value="resources/images/burn.png">
+<input type="hidden" name="burnleft7" id="burnleft7" value="${symptomdetails.burnleft7}">
+<input type="hidden" name="burntop7" id="burntop7" value="${symptomdetails.burntop7}">
+</div></td>
+<td><div id="burn8" class="ui-widget-content">
+ <img alt="" src="${symptomdetails.burnpath8}" width="10px" height="10px" > 
+ <input type="hidden" name="burnpath8" id="burnpath8" value="resources/images/burn.png">
+<input type="hidden" name="burnleft8" id="burnleft8" value="${symptomdetails.burnleft8}">
+<input type="hidden" name="burntop8" id="burntop8" value="${symptomdetails.burntop8}"> 
+</div></td>
+<td><div id="burn9" class="ui-widget-content">
+ <img alt="" src="${symptomdetails.burnpath9}" width="10px" height="10px" >
+ <input type="hidden" name="burnpath9" id="burnpath9" value="resources/images/burn.png">
+<input type="hidden" name="burnleft9" id="burnleft9" value="${symptomdetails.burnleft9}">
+<input type="hidden" name="burntop9" id="burntop9" value="${symptomdetails.burntop9}" >  
+</div></td>
+
 <td width="80"></td>
 <td width="100"><b>Stabbing</b></td>
 <td><div id="stabbing" class="ui-widget-content">
@@ -731,13 +888,43 @@ w=0;
 <input type="hidden" name="stabtop4" id="stabtop4" value="${symptomdetails.stabtop4}">  
 </div></td>      
           
+  <td><div id="stabbing5" class="ui-widget-content">
+ <img alt="" src="${symptomdetails.stabpath5}" width="10px" height="10px" >  
+ <input type="hidden" name="stabpath5" id="stabpath5" value="resources/images/stabbing.png">
+<input type="hidden" name="stableft5" id="stableft5" value="${symptomdetails.stableft5}" >
+<input type="hidden" name="stabtop5" id="stabtop5" value="${symptomdetails.stabtop5}">  
+</div></td>
+<td><div id="stabbing6" class="ui-widget-content">
+ <img alt="" src="${symptomdetails.stabpath6}" width="10px" height="10px" >
+ <input type="hidden" name="stabpath6" id="stabpath6" value="resources/images/stabbing.png">
+<input type="hidden" name="stableft6" id="stableft6"  value="${symptomdetails.stableft6}">
+<input type="hidden" name="stabtop6" id="stabtop6" value="${symptomdetails.stabtop6}">  
+</div></td>
+<td><div id="stabbing7" class="ui-widget-content">
+ <img alt="" src="${symptomdetails.stabpath7}" width="10px" height="10px" > 
+ <input type="hidden" name="stabpath7" id="stabpath7" value="resources/images/stabbing.png">
+<input type="hidden" name="stableft7" id="stableft7"  value="${symptomdetails.stableft7}">
+<input type="hidden" name="stabtop7" id="stabtop7" value="${symptomdetails.stabtop7}">   
+ 
+</div></td>
+<td><div id="stabbing8" class="ui-widget-content">
+ <img alt="" src="${symptomdetails.stabpath8}" width="10px" height="10px" > 
+ <input type="hidden" name="stabpath8" id="stabpath8" value="resources/images/stabbing.png">
+<input type="hidden" name="stableft8" id="stableft8"  value="${symptomdetails.stableft8}">
+<input type="hidden" name="stabtop8" id="stabtop8" value="${symptomdetails.stabtop8}">   
+</div></td>
+<td><div id="stabbing9" class="ui-widget-content">
+ <img alt="" src="${symptomdetails.stabpath9}" width="10px" height="10px" >  
+ <input type="hidden" name="stabpath9" id="stabpath9" value="resources/images/stabbing.png">
+<input type="hidden" name="stableft9" id="stableft9"  value="${symptomdetails.stableft9}">
+<input type="hidden" name="stabtop9" id="stabtop9" value="${symptomdetails.stabtop9}">  
+</div></td>      
           
         
           
           
           
-           </tr></table>
-           </br>
+           </tr></table>           </br>
          <table width="98%"><tr><td align="right">
     <img id= "bodyfront" alt="" src="resources/images/bodyfront.png"> </td><td align="left" valign="top" width="55"><img  id= "droppable" alt="" src="resources/images/face.png" >
  </td><td align="left">

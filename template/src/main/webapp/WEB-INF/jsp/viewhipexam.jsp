@@ -152,6 +152,7 @@ $(function() {
 <link rel="stylesheet" href="/resources/css/style.css" />
 </head>
 <body>
+<br><br>
 <div id="tabs" >
   <ul>
     <li><a href="#tabs-1">1</a></li>

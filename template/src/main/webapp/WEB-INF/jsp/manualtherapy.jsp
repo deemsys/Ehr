@@ -296,6 +296,7 @@ $(function() {
 
 </head>
 <body>
+<br><br>
 
 	     
 <form action="inserttherapy" method="POST">  

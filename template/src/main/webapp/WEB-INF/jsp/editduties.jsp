@@ -43,6 +43,7 @@ $(function() {
   </script>
 </head>
  <body>
+ <br><br>
 <form action="updateduties" method="POST" name="dutiesunder">
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
 <tr>

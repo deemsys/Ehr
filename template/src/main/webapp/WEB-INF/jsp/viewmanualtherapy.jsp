@@ -3,6 +3,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <script type="text/javascript" src="js/ajaxpaging.js"></script>
 <script src="resources/js/jquery_checkbox.js" type="text/javascript"></script>
+<br><br>
 <div id="right_content">
 	
     	<table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">

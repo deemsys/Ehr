@@ -15,6 +15,7 @@
 	}
 }
 	</script>
+	<br><br>
 <div id="right_content">
 	
     	<table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">

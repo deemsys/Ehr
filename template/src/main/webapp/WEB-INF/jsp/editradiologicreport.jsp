@@ -20,7 +20,8 @@ $(function() {
   </script>
 <body>
 <form action="updateradiologicreport" method="post" name="update" id="update">
-
+<br>
+<br>
    <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
 
       <tr>

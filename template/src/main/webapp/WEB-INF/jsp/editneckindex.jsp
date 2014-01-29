@@ -183,7 +183,7 @@ $(function() {
 
 </head>
 <body>
-
+<br><br>
 	     
 <form action="updateneckindex" method="POST">  
 	      <div id="right_content">

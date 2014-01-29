@@ -22,6 +22,8 @@
 	  });
   </script>
  <body>
+ <br>
+<br>
 <div id="tabs">
        <ul>
           <li><a href="#tabs-1">Pain Assessment</a></li>
@@ -32,6 +34,8 @@
    <div id="tabs-1"> 
 <div id="right_content">
 <form action="hamiltonchiropractic" method="POST">
+<br>
+<br>
 <table cellpadding="0" cellspacing="0" border="0" width="100%" class="margin_table">
 <tr>
 <td valign="top" align="left">
@@ -50,7 +54,7 @@
               </tr>
               <tr class="row1">
                <td>I understand you have pain in your:</td>
-                 <td><input type="checkbox" name="hacheck" value="HA" >&nbsp HA</td>
+                 <td><input type="hidden" name="patient_id" value="${patientid}"><input type="checkbox" name="hacheck" value="HA" >&nbsp HA</td>
                  <td><input type="radio" name="ha" value="Right" >&nbsp Right</td>
                  <td><input type="radio" name="ha" value="Left" >&nbsp Left</td>
                  <td></td>

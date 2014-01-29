@@ -157,7 +157,7 @@ $(function() {
 
 </head>
 <body>
-
+<br><br>
 	     
 <form action="updatewristindex" method="POST">  
 	      <div id="right_content">

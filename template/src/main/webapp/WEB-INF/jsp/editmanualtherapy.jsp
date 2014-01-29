@@ -181,7 +181,7 @@ $(function() {
 
 </head>
 <body>
-
+<br><br>
 	     
 <form action="updatetherapy" method="POST">  
 	      <div id="right_content">
