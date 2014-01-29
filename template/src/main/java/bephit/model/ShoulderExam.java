@@ -11,6 +11,7 @@ private String pname;
 
 @NotEmpty
 private String date;
+
 private String muscle;
 private String swelling;
 private String ao;

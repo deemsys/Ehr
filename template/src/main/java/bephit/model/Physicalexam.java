@@ -7,6 +7,8 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Physicalexam {
 	
 	      String physical_id;
+	      
+	      String patient_id;
 	     
 	      @NotEmpty
 	      String sign;
@@ -297,31 +299,32 @@ public class Physicalexam {
 	public Physicalexam(){
 	
 	}
-
-	public Physicalexam(String physical_id,String sign, String name, String id, String date,
-			String age, String sex, String height, String weight, String temp,
-			String bp, String pulse, String appearance, String weight1,
-			String gait, String head,String path, String posture, String romber,
-			String exam, String abnormal, String headtiltright,
-			String headtiltleft, String headtiltnormal, String rotationright,
-			String rotationleft, String rotationnormal, String tmjright,
-			String tmjleft, String tmjnormal, String highright,
-			String highleft, String highnormal, String lordhyper,
-			String lordhypo, String lordnormal, String lymphedema,
-			String lymphnormal, String paraspain, String parasspasm,
-			String parasedema, String parastriggerpoint, String trapeziusrl,
-			String trapeziustono, String trapeziusnormal, String vertebraefix,
-			String vertebraenofix, String flexnormal, String flexpain,
-			String flexspasm, String flexstiff, String extnormal,
-			String extpain, String extspasm, String extstiff, String rlfnormal,
-			String rlfpain, String rlfspasm, String rlfstiff, String llfnormal,
-			String llfpain, String llfspasm, String llfstiff, String rrnormal,
-			String rrpain, String rrspasm, String rrstiff, String lrnormal,
-			String lrpain, String lrspasm, String lrstiff, String c5,
-			String c5right, String c5left, String c6, String c6right,
-			String c6left, String c7, String c7right, String c7left, String c8,
-			String c8right, String c8left, String t1, String t1right,
-			String t1left, String other, String otherright, String otherleft,
+	
+	public Physicalexam(String physical_id, String patient_id, String sign,
+			String name, String id, String date, String age, String sex,
+			String height, String weight, String temp, String bp, String pulse,
+			String appearance, String weight1, String gait, String head,
+			String path, String posture, String romber, String exam,
+			String abnormal, String headtiltright, String headtiltleft,
+			String headtiltnormal, String rotationright, String rotationleft,
+			String rotationnormal, String tmjright, String tmjleft,
+			String tmjnormal, String highright, String highleft,
+			String highnormal, String lordhyper, String lordhypo,
+			String lordnormal, String lymphedema, String lymphnormal,
+			String paraspain, String parasspasm, String parasedema,
+			String parastriggerpoint, String trapeziusrl, String trapeziustono,
+			String trapeziusnormal, String vertebraefix, String vertebraenofix,
+			String flexnormal, String flexpain, String flexspasm,
+			String flexstiff, String extnormal, String extpain,
+			String extspasm, String extstiff, String rlfnormal, String rlfpain,
+			String rlfspasm, String rlfstiff, String llfnormal, String llfpain,
+			String llfspasm, String llfstiff, String rrnormal, String rrpain,
+			String rrspasm, String rrstiff, String lrnormal, String lrpain,
+			String lrspasm, String lrstiff, String c5, String c5right,
+			String c5left, String c6, String c6right, String c6left, String c7,
+			String c7right, String c7left, String c8, String c8right,
+			String c8left, String t1, String t1right, String t1left,
+			String other, String otherright, String otherleft,
 			String deltoidright, String deltoidleft, String wristright,
 			String wristleft, String wristflexright, String wristflexleft,
 			String fingerflexright, String fingerflexleft,
@@ -346,14 +349,16 @@ public class Physicalexam {
 			String thorrnormal, String thorrpain, String thorrspasm,
 			String thorrstiff, String tholrnormal, String tholrpain,
 			String tholrspasm, String tholrstiff, String thot1,
-			String thot1right,String thot1left, String thot4, String thot4right,String thot4left, String thot10,
-			String thot10right,String thot10left, String thoother, String thootherright,String thootherleft,
-			String myotomes, String positiveruq, String positiveluq,
-			String positiverlq, String positivellq, String highcrestright,
-			String highcrestleft, String highcrestnormal, String highpsisright,
-			String highpsisleft, String highpsisnormal, String curveright,
-			String curveleft, String curvenormal, String lordosishyper,
-			String lordosishypo, String lordosisnormal, String paraspinalpain,
+			String thot1right, String thot1left, String thot4,
+			String thot4right, String thot4left, String thot10,
+			String thot10right, String thot10left, String thoother,
+			String thootherright, String thootherleft, String myotomes,
+			String positiveruq, String positiveluq, String positiverlq,
+			String positivellq, String highcrestright, String highcrestleft,
+			String highcrestnormal, String highpsisright, String highpsisleft,
+			String highpsisnormal, String curveright, String curveleft,
+			String curvenormal, String lordosishyper, String lordosishypo,
+			String lordosisnormal, String paraspinalpain,
 			String paraspinalspasm, String paraspinaledema,
 			String paraspinaltp, String quadrl, String quadtono,
 			String quadnor, String hamstringrl, String hamstringtono,
@@ -373,7 +378,9 @@ public class Physicalexam {
 			String heelleft, String toeright, String toeleft,
 			String patellarright, String patellarleft, String achillesright,
 			String achillesleft, String babinskiright, String babinskileft) {
-		this.physical_id=physical_id;
+		super();
+		this.physical_id = physical_id;
+		this.patient_id = patient_id;
 		this.sign = sign;
 		this.name = name;
 		this.id = id;
@@ -389,7 +396,7 @@ public class Physicalexam {
 		this.weight1 = weight1;
 		this.gait = gait;
 		this.head = head;
-		this.path=path;
+		this.path = path;
 		this.posture = posture;
 		this.romber = romber;
 		this.exam = exam;
@@ -531,16 +538,16 @@ public class Physicalexam {
 		this.tholrstiff = tholrstiff;
 		this.thot1 = thot1;
 		this.thot1right = thot1right;
-		this.thot1left=thot1left;
+		this.thot1left = thot1left;
 		this.thot4 = thot4;
 		this.thot4right = thot4right;
-		this.thot4left=thot4left;
+		this.thot4left = thot4left;
 		this.thot10 = thot10;
 		this.thot10right = thot10right;
-		this.thot10left=thot10left;
+		this.thot10left = thot10left;
 		this.thoother = thoother;
 		this.thootherright = thootherright;
-		this.thootherleft=thootherleft;
+		this.thootherleft = thootherleft;
 		this.myotomes = myotomes;
 		this.positiveruq = positiveruq;
 		this.positiveluq = positiveluq;
@@ -617,12 +624,22 @@ public class Physicalexam {
 		this.babinskileft = babinskileft;
 	}
 
+
+	
+
 	public String getPhysical_id() {
 		return physical_id;
 	}
 
 	public void setPhysical_id(String physical_id) {
 		this.physical_id = physical_id;
+	}
+	public String getPatient_id() {
+		return patient_id;
+	}
+
+	public void setPatient_id(String patient_id) {
+		this.patient_id = patient_id;
 	}
 
 	public String getSign() {

@@ -15,6 +15,8 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class RadiologicReport{
 	private String pid;
 	
+	private String patient_id;
+	
 	@NotEmpty
 	private String pname;
 	
@@ -295,10 +297,17 @@ public class RadiologicReport{
 	 * @param normal_4
 	 * @param positivefor_4
 	 */
-	public RadiologicReport(String pid,String pname, String date, String id, String dob,
-			String views1, String negative_1, String positive_for,
-			String positive_text1, String break_1, String break_text1,
-			String adi_1, String hypolorodosis_1, String hypolordosis_select1,String normalcurvature_1,String normalcurvature_select1,
+
+	public String getPid() {
+		return pid;
+	}
+
+	public RadiologicReport(String pid, String patient_id, String pname,
+			String date, String id, String dob, String views1,
+			String negative_1, String positive_for, String positive_text1,
+			String break_1, String break_text1, String adi_1,
+			String hypolorodosis_1, String hypolordosis_select1,
+			String normalcurvature_1, String normalcurvature_select1,
 			String hyperlordosis_1, String hyperlordosis_select1,
 			String mcGregorslinenormal_1, String mcGregorslineinterupted_1,
 			String degenerativejointdisease_1,
@@ -315,13 +324,14 @@ public class RadiologicReport{
 			String moderate_11, String severe_11, String apexat_1,
 			String apexat_text1, String softtissueedemaof_1,
 			String softtissueedemaof_text1, String other_1, String other_text1,
-			String views2, String negative_2, String hyperkyphosis_2,String hyperkyphosis_select2,
-			String normalkyphosis_2,String normalkyphosis_select2, String hypokyphosis_2,String hypokyphosis_select2,
-			String degenerative_2, String degenerative_text2, String mild_2,
-			String moderate_2, String severe_2, String narrowed_2,
-			String narrowed_text2, String schmorlsnodesat_2,
-			String schmorlsnodesat_text2, String anterior_2,
-			String anterior_text2, String subchondral_2,
+			String views2, String negative_2, String hyperkyphosis_2,
+			String hyperkyphosis_select2, String normalkyphosis_2,
+			String normalkyphosis_select2, String hypokyphosis_2,
+			String hypokyphosis_select2, String degenerative_2,
+			String degenerative_text2, String mild_2, String moderate_2,
+			String severe_2, String narrowed_2, String narrowed_text2,
+			String schmorlsnodesat_2, String schmorlsnodesat_text2,
+			String anterior_2, String anterior_text2, String subchondral_2,
 			String subchondral_text2, String foraminal_2,
 			String foraminal_text2, String osteoporosis_2,
 			String osteoporosis_select2,
@@ -331,8 +341,9 @@ public class RadiologicReport{
 			String softtissueedemaof_text2, String other_2, String other_text2,
 			String views3, String negative_3, String break_3,
 			String break_text3, String osteoporosis_3,
-			String osteoporosis_select3, String hyperkyphosis_3,String hyperkyphosis_select3,
-			String normalkyphosis_3,String normalkyphosis_select3, String hypokyphosis_3,
+			String osteoporosis_select3, String hyperkyphosis_3,
+			String hyperkyphosis_select3, String normalkyphosis_3,
+			String normalkyphosis_select3, String hypokyphosis_3,
 			String hypokyphosos_select_3, String degenerative_3,
 			String degenerative_select3, String mild_3, String moderate_3,
 			String severe_3, String narrowed_3, String narrowed_text3,
@@ -350,6 +361,7 @@ public class RadiologicReport{
 			String positivefor_4) {
 		super();
 		this.pid = pid;
+		this.patient_id = patient_id;
 		this.pname = pname;
 		this.date = date;
 		this.id = id;
@@ -482,9 +494,6 @@ public class RadiologicReport{
 		this.views4 = views4;
 		this.normal_4 = normal_4;
 		this.positivefor_4 = positivefor_4;
-	}
-	public String getPid() {
-		return pid;
 	}
 
 	public void setPid(String pid) {
@@ -648,6 +657,14 @@ public class RadiologicReport{
 
 	public void setDegenerativejointdisease_1(String degenerativejointdisease_1) {
 		this.degenerativejointdisease_1 = degenerativejointdisease_1;
+	}
+
+	public String getPatient_id() {
+		return patient_id;
+	}
+
+	public void setPatient_id(String patient_id) {
+		this.patient_id = patient_id;
 	}
 
 	public String getDegenerativejointdisease_select1() {

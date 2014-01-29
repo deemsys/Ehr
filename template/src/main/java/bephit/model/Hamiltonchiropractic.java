@@ -2,6 +2,7 @@ package bephit.model;
 
 public class Hamiltonchiropractic {
 	private String initialexamid;
+	private String patient_id;	
 	private String hacheck;
 	private String ha;
 	private String neckcheck;
@@ -257,19 +258,21 @@ public class Hamiltonchiropractic {
 	public Hamiltonchiropractic(){
 	}
 
-	public Hamiltonchiropractic(String initialexamid,String hacheck, String ha, String neckcheck,
-			String neck, String mbcheck, String mb, String ribscheck,
-			String ribs, String shouldercheck, String shoulder,
-			String elbowcheck, String elbow, String handcheck, String hand,
-			String wristcheck, String wrist, String lbpcheck, String lbp,
-			String hipcheck, String hip, String legcheck, String leg,
-			String kneecheck, String knee, String footcheck, String foot,
-			String anklecheck, String ankle, String suddenly, String gradually,
-			String hours, String days, String date, String reason,
-			String acute, String subacute, String chronic, String lyingdown,
-			String sitting, String standing, String bending, String rest,
-			String otherb, String othere, String ice, String heat,
-			String massage, String aspirin, String otherdone, String otherit,
+	
+	public Hamiltonchiropractic(String initialexamid, String patient_id,
+			String hacheck, String ha, String neckcheck, String neck,
+			String mbcheck, String mb, String ribscheck, String ribs,
+			String shouldercheck, String shoulder, String elbowcheck,
+			String elbow, String handcheck, String hand, String wristcheck,
+			String wrist, String lbpcheck, String lbp, String hipcheck,
+			String hip, String legcheck, String leg, String kneecheck,
+			String knee, String footcheck, String foot, String anklecheck,
+			String ankle, String suddenly, String gradually, String hours,
+			String days, String date, String reason, String acute,
+			String subacute, String chronic, String lyingdown, String sitting,
+			String standing, String bending, String rest, String otherb,
+			String othere, String ice, String heat, String massage,
+			String aspirin, String otherdone, String otherit,
 			String bendingworse, String twisting, String lifting,
 			String walking, String activity, String otherworse,
 			String otherfeel, String sharp, String severe, String dull,
@@ -288,17 +291,16 @@ public class Hamiltonchiropractic {
 			String nimmo, String ultrasound, String manualtraction,
 			String massageplan, String neuromuscular, String stretching,
 			String strengthening, String remobilization, String rehab,
-			String modificat, String care, String refer,
-			String decreasepain, String decreasespam, String increaserom,
-			String improveadl, String improvesubluxations, String fullactivity,
+			String modificat, String care, String refer, String decreasepain,
+			String decreasespam, String increaserom, String improveadl,
+			String improvesubluxations, String fullactivity,
 			String returntowork, String renewsports, String jacksonsr,
 			String jacksonsl, String jacksonslo, String foramin_compr,
 			String foramin_compl, String foramin_complo, String shoulder_deprr,
 			String shoulder_deprl, String shoulder_deprlo, String georgesr,
 			String georgesl, String georgeslo, String odonor, String odonol,
-		    String bakody_signr, String bakody_signl,
-			String bakody_signlo, String distraction_testr,
-			String distraction_testl, 
+			String bakody_signr, String bakody_signl, String bakody_signlo,
+			String distraction_testr, String distraction_testl,
 			String valsalvar, String valsalval, String valsalvalo,
 			String spinal_percuss, String gripdynamomright,
 			String gripdynamomleft, String adsonsr, String adsonsl,
@@ -336,7 +338,8 @@ public class Hamiltonchiropractic {
 			String strunskysl, String homansr, String homansl,
 			String claudication_testr, String claudication_testl) {
 		super();
-		this.initialexamid=initialexamid;
+		this.initialexamid = initialexamid;
+		this.patient_id = patient_id;
 		this.hacheck = hacheck;
 		this.ha = ha;
 		this.neckcheck = neckcheck;
@@ -589,6 +592,7 @@ public class Hamiltonchiropractic {
 		this.claudication_testr = claudication_testr;
 		this.claudication_testl = claudication_testl;
 	}
+
 
 	public String getInitialexamid() {
 		return initialexamid;
@@ -876,6 +880,14 @@ public class Hamiltonchiropractic {
 
 	public void setAcute(String acute) {
 		this.acute = acute;
+	}
+
+	public String getPatient_id() {
+		return patient_id;
+	}
+
+	public void setPatient_id(String patient_id) {
+		this.patient_id = patient_id;
 	}
 
 	public String getSubacute() {
