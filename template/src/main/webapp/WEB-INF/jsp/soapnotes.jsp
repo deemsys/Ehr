@@ -69,10 +69,16 @@ $(function() {
 </script>
 </head>
  <body>
+<br>
+<br>
  <div id="right_content">
+
+  
 <form action="soapnotes" method="POST" name="soap">
 <c:choose>
             <c:when test="${empty soap}">
+        
+
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
 <tr>
 <td valign="top" align="left">
