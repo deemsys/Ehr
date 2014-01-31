@@ -4,14 +4,158 @@
 <html>
 <head>
 <link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
-<script src="resources/js/jquery.min.js"></script>
- <script src="resources/js/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/css/style.css" />
+  <script src="resources/js/jquery.min.js"></script>
+  <script src="resources/js/jquery-ui.js"></script>
+<script src="resources/js/jquey-1.9.1.js"></script>
  <STYLE type="text/css">
   P#mypar {font-style:calibri;
   line-height:18px;}
   
   </STYLE>
  <script>
+ $(window).load(function(){
+	  $("#fax").keyup(function() {
+		
+		 $("#faxerror").html(''); 
+		/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
+		var intRegex = /^\d+$/;
+		if(intRegex.test($(this).val())||$(this).val()=='') 
+		{
+			var $in = $(this).val();		 
+		}
+		else if($(this).val()!='')
+			{
+			
+			$("#faxerror").html('Kindly enter a number!!!!');
+			}
+	}).keydown(function() {
+	    oldValue = $(this).val();
+	})
+	 $("#amountdeduct").keyup(function() {
+		
+		 $("#amountdeducterror").html(''); 
+		/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
+		var intRegex = /^\d+$/;
+		if(intRegex.test($(this).val())||$(this).val()=='') 
+		{
+			var $in = $(this).val();		 
+		}
+		else if($(this).val()!='')
+			{
+			
+			$("#amountdeducterror").html('Kindly enter a number!!!!');
+			}
+	}).keydown(function() {
+	    oldValue = $(this).val();
+	})
+	 $("#amountdeductmet").keyup(function() {
+		
+		 $("#amountdeductmeterror").html(''); 
+		/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
+		var intRegex = /^\d+$/;
+		if(intRegex.test($(this).val())||$(this).val()=='') 
+		{
+			var $in = $(this).val();		 
+		}
+		else if($(this).val()!='')
+			{
+			
+			$("#amountdeductmeterror").html('Kindly enter a number!!!!');
+			}
+	}).keydown(function() {
+	    oldValue = $(this).val();
+	})
+	 $("#atwhat").keyup(function() {
+		
+		 $("#atwhaterror").html(''); 
+		/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
+		var intRegex = /^\d+$/;
+		if(intRegex.test($(this).val())||$(this).val()=='') 
+		{
+			var $in = $(this).val();		 
+		}
+		else if($(this).val()!='')
+			{
+			
+			$("#atwhaterror").html('Kindly enter a number!!!!');
+			}
+	}).keydown(function() {
+	    oldValue = $(this).val();
+	})
+	 $("#atwhat1").keyup(function() {
+		
+		 $("#atwhat1error").html(''); 
+		/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
+		var intRegex = /^\d+$/;
+		if(intRegex.test($(this).val())||$(this).val()=='') 
+		{
+			var $in = $(this).val();		 
+		}
+		else if($(this).val()!='')
+			{
+			
+			$("#atwhat1error").html('Kindly enter a number!!!!');
+			}
+	}).keydown(function() {
+	    oldValue = $(this).val();
+	})
+	 $("#subjectdeduct").keyup(function() {
+		
+		 $("#subjecterror").html(''); 
+		/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
+		var intRegex = /^\d+$/;
+		if(intRegex.test($(this).val())||$(this).val()=='') 
+		{
+			var $in = $(this).val();		 
+		}
+		else if($(this).val()!='')
+			{
+			
+			$("#subjectdeducterror").html('Kindly enter a number!!!!');
+			}
+	}).keydown(function() {
+	    oldValue = $(this).val();
+	})
+	 $("#deductible").keyup(function() {
+		
+		 $("#deductibleerror").html(''); 
+		/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
+		var intRegex = /^\d+$/;
+		if(intRegex.test($(this).val())||$(this).val()=='') 
+		{
+			var $in = $(this).val();		 
+		}
+		else if($(this).val()!='')
+			{
+			
+			$("#deductibleerror").html('Kindly enter a number!!!!');
+			}
+	}).keydown(function() {
+	    oldValue = $(this).val();
+	})
+	$("#covered").keyup(function() {
+		
+		 $("#coverederror").html(''); 
+		/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
+		var intRegex = /^\d+$/;
+		if(intRegex.test($(this).val())||$(this).val()=='') 
+		{
+			var $in = $(this).val();		 
+		}
+		else if($(this).val()!='')
+			{
+			
+			$("#coverederror").html('Kindly enter a number!!!!');
+			}
+	}).keydown(function() {
+	    oldValue = $(this).val();
+	})
+});
+
+</script>
+
+<script>
  $(function() {
            $( "#datepicker" ).datepicker();
          });
@@ -51,7 +195,9 @@
               <td>Date</td>
               <td><input type="text" class="input_txtbx1" name="date" id="datepicker" value="${Insuranceverification.date}"/></td>
               <td>Fax#</td>
-              <td><input type="text" class="input_txtbx1" name="fax" id="fax" value="${Insuranceverification.fax}"/></td>
+              <td><input type="text" class="input_txtbx1" name="fax" id="fax" value="${Insuranceverification.fax}"/>
+              <span class="err" id="faxerror"></span>
+              </td>
               </tr>
               <!-- </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%"> -->
@@ -61,9 +207,13 @@
               <br>
               <tr class="row1">
               <td>Amount of deductible</td>
-              <td><input type="text" class="input_txtbx1" name="amount_deduct" id="amount_deduct" value="${Insuranceverification.amount_deduct}" /></td>
+              <td><input type="text" class="input_txtbx1" name="amount_deduct" id="amountdeduct" value="${Insuranceverification.amount_deduct}" />
+              <span class="err" id="amountdeducterror"></span>
+              </td>
               <td>Amount of deductible met</td>
-              <td><input type="text" class="input_txtbx1" name="amount_deduct_met" id="amount_deduct_met" value="${Insuranceverification.amount_deduct_met}"/></td>
+              <td><input type="text" class="input_txtbx1" name="amount_deduct_met" id="amountdeductmet" value="${Insuranceverification.amount_deduct_met}"/>
+              <span class="err" id="amountdeductmeterror"></span>
+              </td>
               <td></td>
               <td></td>
               </tr>
@@ -82,7 +232,9 @@
               <td>	<input type="radio" name="is_chiropractic" value="Yes" class="input_txt"  <c:if test="${Insuranceverification.is_chiropractic=='Yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
 				                  	<input type="radio" name="is_chiropractic" value="No" class="input_txt"  <c:if test="${Insuranceverification.is_chiropractic=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;</td>
               <td>At what%?</td>
-              <td><input type="text" class="input_txtbx1" name="at_what" id="at_what" value="${Insuranceverification.at_what}" /></td>
+              <td><input type="text" class="input_txtbx1" name="at_what" id="atwhat" value="${Insuranceverification.at_what}" />
+              <span class="err" id="atwhaterror"></span>
+              </td>
              <td></td>
              <td></td>
               </tr>
@@ -91,9 +243,13 @@
               <td>	<input type="radio" name="xray_cover" value="Yes" class="input_txt"  <c:if test="${Insuranceverification.xray_cover=='Yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
 				                  	<input type="radio" name="xray_cover" value="No" class="input_txt"  <c:if test="${Insuranceverification.xray_cover=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;</td>
               <td>At what%?</td>
-              <td><input type="text" class="input_txtbx1" name="atwhat" id="atwhat" value="${Insuranceverification.atwhat}"/></td>
+              <td><input type="text" class="input_txtbx1" name="atwhat" id="atwhat1" value="${Insuranceverification.atwhat}"/>
+              <span class="err" id="atwhat1error"></span>
+              </td>
               <td>Subject to deductible</td>
-              <td><input type="text" class="input_txtbx1" name="subject_deduct" id="subject_deduct" value="${Insuranceverification.subject_deduct}"/></td>
+              <td><input type="text" class="input_txtbx1" name="subject_deduct" id="subjectdeduct" value="${Insuranceverification.subject_deduct}"/>
+              <span class="err" id="subjectdeducterror"></span>
+              </td>
               </tr>
               <!-- </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%"> -->
@@ -122,10 +278,14 @@
               <!-- </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%"> -->
               <tr class="row1">
-              <td>Deuctible</td>
-              <td><input type="text" class="input_txtbx1" name="deductible" id="deductible" value="${Insuranceverification.deductible}"/></td>
+              <td>Deductible</td>
+              <td><input type="text" class="input_txtbx1" name="deductible" id="deductible" value="${Insuranceverification.deductible}"/>
+              <br><span class="err" id="deductibleerror"></span>
+              </td>
               <td>%covered</td>
-              <td><input type="text" class="input_txtbx1" name="covered" id="covered" value="${Insuranceverification.covered}"/></td>
+              <td><input type="text" class="input_txtbx1" name="covered" id="covered" value="${Insuranceverification.covered}"/>
+              <br><span class="err" id="coverederror"></span>
+              </td>
               </tr>
               <tr class="row1">
               <td>Therapies covered</td>
