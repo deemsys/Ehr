@@ -16,6 +16,7 @@ import javax.sql.DataSource;
 
 import bephit.model.ParticipantsDetails;
 import bephit.model.Dutiesunderduress;
+import bephit.model.RadiologicReport;
 
 
 
@@ -210,6 +211,80 @@ public int deletedutiesunderduress(String dutiesno){
 	   		else
 	   			return 0;
 	}
+public List<Dutiesunderduress> getlimitedduties(int page) {
+	Connection con = null;
+	Statement statement = null;
+	ResultSet resultSet = null;
+	
+	
+	try {
+		con = dataSource.getConnection();
+		statement = con.createStatement();
+	} catch (SQLException e1) {
+		e1.printStackTrace();
+	}
+	List<Dutiesunderduress> dutiesunderduress = new ArrayList<Dutiesunderduress>();
+	try {
+
+		String cmd;
+		int offset = 5 * (page - 1);
+		int limit = 5;
+		
+			
+				cmd = "select * from tbl_dutiesunderduress order by pname asc limit " + offset + ","+ limit+"" ;
+
+		resultSet = statement.executeQuery(cmd);
+		while (resultSet.next()) {
+			dutiesunderduress.add(new Dutiesunderduress(resultSet.getString("dutiesno"), resultSet.getString("pname"), resultSet.getString("date"), resultSet.getString("jobdescription"), resultSet.getString("lifting1"), resultSet.getString("incresedpain1"), resultSet.getString("restrictedmovement1"), resultSet.getString("weekness1"), resultSet.getString("sincemva1"), resultSet.getString("ongoing1"), resultSet.getString("bending1"), resultSet.getString("incresedpain2"), resultSet.getString("restrictedmovement2"), resultSet.getString("weekness2"), resultSet.getString("sincemva2"), resultSet.getString("ongoing2"), resultSet.getString("sitting1"), resultSet.getString("incresedpain3"), resultSet.getString("restrictedmovement3"), resultSet.getString("weekness3"), resultSet.getString("sincemva3"), resultSet.getString("ongoing3"), resultSet.getString("walking1"), resultSet.getString("incresedpain4"), resultSet.getString("restrictedmovement4"), resultSet.getString("weekness4"), resultSet.getString("sincemva4"), resultSet.getString("ongoing4"), resultSet.getString("computerduties1"), resultSet.getString("incresedpain5"), resultSet.getString("restrictedmovement5"), resultSet.getString("weekness5"), resultSet.getString("sincemva5"), resultSet.getString("ongoing5"), resultSet.getString("other1"), resultSet.getString("incresedpain6"), resultSet.getString("restrictedmovement6"), resultSet.getString("weekness6"), resultSet.getString("sincemva6"), resultSet.getString("ongoing6"), resultSet.getString("other2"), resultSet.getString("incresedpain7"), resultSet.getString("restrictedmovement7"), resultSet.getString("weekness7"), resultSet.getString("sincemva7"), resultSet.getString("ongoing7"), resultSet.getString("lifting2"), resultSet.getString("incresedpain8"), resultSet.getString("restrictedmovement8"), resultSet.getString("weekness8"), resultSet.getString("sincemva8"), resultSet.getString("ongoing8"), resultSet.getString("bending2"), resultSet.getString("incresedpain9"), resultSet.getString("restrictedmovement9"), resultSet.getString("weekness9"), resultSet.getString("sincemva9"), resultSet.getString("ongoing9"), resultSet.getString("sitting2"), resultSet.getString("incresedpain10"), resultSet.getString("restrictedmovement10"), resultSet.getString("weekness10"), resultSet.getString("sincemva10"), resultSet.getString("ongoing10"), resultSet.getString("walking2"), resultSet.getString("incresedpain11"), resultSet.getString("restrictedmovement11"), resultSet.getString("weekness11"), resultSet.getString("sincemva11"), resultSet.getString("ongoing11"), resultSet.getString("computerduties2"), resultSet.getString("incresedpain12"), resultSet.getString("restrictedmovement12"), resultSet.getString("weekness12"), resultSet.getString("sincemva12"), resultSet.getString("ongoing12"), resultSet.getString("studying"), resultSet.getString("incresedpainstudy"), resultSet.getString("restrictedmovementstudy"), resultSet.getString("weeknessstudy"), resultSet.getString("sincemvastudy"), resultSet.getString("ongoingstudy"), resultSet.getString("concentrating"), resultSet.getString("incresedpainconcentrate"), resultSet.getString("restrictedmovementconcentrate"), resultSet.getString("weeknessconcentrate"), resultSet.getString("sincemvaconcentrate"), resultSet.getString("ongoingconcentrate"), resultSet.getString("other3"), resultSet.getString("incresedpain13"), resultSet.getString("restrictedmovement13"), resultSet.getString("weekness13"), resultSet.getString("sincemva13"), resultSet.getString("ongoing13"), resultSet.getString("other4"), resultSet.getString("incresedpain14"), resultSet.getString("restrictedmovement14"), resultSet.getString("weekness14"), resultSet.getString("sincemva14"), resultSet.getString("ongoing14"), resultSet.getString("vacumming"), resultSet.getString("incresedpain15"), resultSet.getString("restrictedmovement15"), resultSet.getString("weekness15"), resultSet.getString("sincemva15"), resultSet.getString("ongoing15"), resultSet.getString("takingcareofkids"), resultSet.getString("incresedpain16"), resultSet.getString("restrictedmovement16"), resultSet.getString("weekness16"), resultSet.getString("sincemva16"), resultSet.getString("ongoing16"), resultSet.getString("cleaning"), resultSet.getString("incresedpain17"), resultSet.getString("restrictedmovement17"), resultSet.getString("weekness17"), resultSet.getString("sincemva17"), resultSet.getString("ongoing17"), resultSet.getString("preparingmeals"), resultSet.getString("incresedpain18"), resultSet.getString("restrictedmovement18"), resultSet.getString("weekness18"), resultSet.getString("sincemva18"), resultSet.getString("ongoing18"), resultSet.getString("other5"), resultSet.getString("incresedpain20"), resultSet.getString("restrictedmovement20"), resultSet.getString("weekness20"), resultSet.getString("sincemva20"), resultSet.getString("ongoing20"), resultSet.getString("other6"), resultSet.getString("incresedpain21"), resultSet.getString("restrictedmovement21"), resultSet.getString("weekness21"), resultSet.getString("sincemva21"), resultSet.getString("ongoing21"), resultSet.getString("yardwork"), resultSet.getString("incresedpain22"), resultSet.getString("restrictedmovement22"), resultSet.getString("weekness22"), resultSet.getString("sincemva22"), resultSet.getString("ongoing22"), resultSet.getString("transportation"), resultSet.getString("incresedpain23"), resultSet.getString("restrictedmovement23"), resultSet.getString("weekness23"), resultSet.getString("sincemva23"), resultSet.getString("ongoing23"), resultSet.getString("shopping"), resultSet.getString("incresedpain24"), resultSet.getString("restrictedmovement24"), resultSet.getString("weekness24"), resultSet.getString("sincemva24"), resultSet.getString("ongoing24"), resultSet.getString("takingouttrash"), resultSet.getString("incresedpain25"), resultSet.getString("restrictedmovement25"), resultSet.getString("weekness25"), resultSet.getString("sincemva25"), resultSet.getString("ongoing25"),  resultSet.getString("other7"), resultSet.getString("incresedpain27"), resultSet.getString("restrictedmovement27"), resultSet.getString("weekness27"), resultSet.getString("sincemva27"), resultSet.getString("ongoing27"), resultSet.getString("other8"), resultSet.getString("incresedpain28"), resultSet.getString("restrictedmovement28"), resultSet.getString("weekness28"), resultSet.getString("sincemva28"), resultSet.getString("ongoing28")));				
+		}
+	} catch (Exception e) {
+		/*logger.info(e.toString());*/
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	} finally {
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	}
+	return dutiesunderduress;
+
+}
+public int getnoofduties() {
+	Connection con = null;
+	Statement statement = null;
+	ResultSet resultSet = null;
+	int noofRecords = 0;
+	
+	try {
+		con = dataSource.getConnection();
+		statement = con.createStatement();
+	} catch (SQLException e1) {
+		e1.printStackTrace();
+	}
+	List<Dutiesunderduress> dutiesunderduress = new ArrayList<Dutiesunderduress>();
+	try {
+
+		String cmd;
+		
+				cmd = "select count(*) as noofrecords from tbl_dutiesunderduress";
+				System.out.println("command"+cmd);			
+		resultSet = statement.executeQuery(cmd);
+		if (resultSet.next())
+			noofRecords = resultSet.getInt("noofrecords");
+
+	} catch (Exception e) {
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	} finally {
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	}
+	return noofRecords;
+
+}
 
 
 

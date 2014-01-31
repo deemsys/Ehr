@@ -59,7 +59,7 @@
 							    	<td colspan="7" width="100%"><center><b>No Participants Found!!!</b></center></td>
 							    	</tr>
 							    	</c:if>
-							    						    						   <tr><td colspan="6">  
+		<tr><td colspan="6">  
 	<div class="extrabottom">
               <ul class="pagination">
          
@@ -89,6 +89,12 @@
                   <li class="page"><a href="assignmentlist" class="paging_select">Back</a></li>
               </c:otherwise>
               </c:choose>
+
+              </ul>
+              </div>
+              </td>
+              </tr>
+
 							 </table>
 							 </form>
 							 </div>

@@ -13,6 +13,8 @@ import javax.sql.DataSource;
 
 import bephit.model.Hardshipagreement;
 import bephit.model.Insuranceverification;
+import bephit.model.RadiologicReport;
+import bephit.model.Staffchecklist;
  
 
 
@@ -264,6 +266,103 @@ public int deleteinsuranceverification(String form_no){
 	   		else
 	   			return 0;
 	}
+public List<Insuranceverification> getlimitedinsuranceverification(int page) {
+	Connection con = null;
+	Statement statement = null;
+	ResultSet resultSet = null;
+	
+	
+	try {
+		con = dataSource.getConnection();
+		statement = con.createStatement();
+	} catch (SQLException e1) {
+		e1.printStackTrace();
+	}
+	List<Insuranceverification> Insuranceverification = new ArrayList<Insuranceverification>();
+	try {
+
+		String cmd;
+		int offset = 5 * (page - 1);
+		int limit = 5;
+		
+			
+				cmd = "select * from tbl_insuranceverification order by verify_name asc limit " + offset + ","+ limit+"" ;
+
+		resultSet = statement.executeQuery(cmd);
+		while (resultSet.next()) {
+			Insuranceverification.add(new Insuranceverification(resultSet.getString("form_no"),resultSet.getString("verify_name"),
+		    		resultSet.getString("spoke_with"),
+		    		resultSet.getString("date"),
+		    		resultSet.getString("fax"),
+		    		resultSet.getString("amount_deduct"),
+		    		resultSet.getString("amount_deduct_met"),
+		    		resultSet.getString("max_visit"),
+		    		resultSet.getString("is_chiropractic"),
+		    		resultSet.getString("at_what"),
+		    		resultSet.getString("xray_cover"),
+		    		resultSet.getString("atwhat"),
+		    		resultSet.getString("subject_deduct"),
+		    		resultSet.getString("benefits_honored"),
+		    		resultSet.getString("network_benefits"),
+		    		resultSet.getString("deductible"),
+		    		resultSet.getString("covered"),
+		    		resultSet.getString("cm"),
+		    		resultSet.getString("pt"),
+		    		resultSet.getString("ov"),
+		    		resultSet.getString("xray_deduct"),
+		    		resultSet.getString("doctors_assign"),
+		    		resultSet.getString("mail_claims")));
+				
+		}
+	} catch (Exception e) {
+		/*logger.info(e.toString());*/
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	} finally {
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	}
+	return Insuranceverification;
+
+}
+public int getnoofinsuranceverification() {
+	Connection con = null;
+	Statement statement = null;
+	ResultSet resultSet = null;
+	int noofRecords = 0;
+	
+	try {
+		con = dataSource.getConnection();
+		statement = con.createStatement();
+	} catch (SQLException e1) {
+		e1.printStackTrace();
+	}
+	List<Insuranceverification> Insuranceverification = new ArrayList<Insuranceverification>();
+	try {
+
+		String cmd;
+		
+				cmd = "select count(*) as noofrecords from tbl_insuranceverification";
+				System.out.println("command"+cmd);			
+		resultSet = statement.executeQuery(cmd);
+		if (resultSet.next())
+			noofRecords = resultSet.getInt("noofrecords");
+
+	} catch (Exception e) {
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	} finally {
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	}
+	return noofRecords;
+
+}
+
 
 public void releaseConnection(Connection con){
 	try{if(con != null)

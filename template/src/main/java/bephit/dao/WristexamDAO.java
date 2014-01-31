@@ -600,7 +600,180 @@ public class WristexamDAO
 	    return wristexam;
 		
 	}
-	
+	public List<WristExam> getlimitedwristexam(int page) {
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		
+		
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<WristExam> wristexam = new ArrayList<WristExam>();
+		try {
+
+			String cmd;
+			int offset = 5 * (page - 1);
+			int limit = 5;
+			
+				
+					cmd = "select * from wristexam order by pname asc limit " + offset + ","+ limit+"" ;
+
+			resultSet = statement.executeQuery(cmd);
+			while (resultSet.next()) {
+				wristexam.add(new WristExam(resultSet.getString("wristexamno"),
+						resultSet.getString("pname"),
+						resultSet.getString("date"),						
+						resultSet.getString("muscle"),
+						resultSet.getString("swelling"),
+						resultSet.getString("dominanthand"),
+						resultSet.getString("ao"),
+						resultSet.getString("dysfunction"),
+						resultSet.getString("thenareminence"),
+						resultSet.getString("flexorcarpiradialis"),
+						resultSet.getString("commonflexors"),
+						resultSet.getString("hypothenareminence"),
+						resultSet.getString("extensorcarpiradialis"),
+						resultSet.getString("commonextensor"),
+						resultSet.getString("abductorpolliuslongus"),
+						resultSet.getString("abductorpollicisbrevis"),
+						resultSet.getString("extensorpollicisbrevis"),
+						resultSet.getString("note"),
+						resultSet.getString("functional"),
+						resultSet.getString("orthotpedic"),
+						resultSet.getString("flexionleft"),
+						resultSet.getString("flexionright"),
+						resultSet.getString("extensionleft"),
+						resultSet.getString("extensionright"),
+						resultSet.getString("ulnarleft"),
+						resultSet.getString("ulnarright"),
+						resultSet.getString("radialleft"),
+						resultSet.getString("radialright"),
+						resultSet.getString("pronationleft"),
+						resultSet.getString("pronationright"),
+						resultSet.getString("allenleft"),
+						resultSet.getString("allenright")
+						,resultSet.getString("phalenleft"),
+						resultSet.getString("phalenright"),
+						resultSet.getString("reverseleft"),
+						resultSet.getString("reverseright"),
+						resultSet.getString("tenosynovitisleft"),
+						resultSet.getString("tenosynovitisright"),
+						resultSet.getString("tinnelsleft"),
+						resultSet.getString("tinnelsright"),
+						resultSet.getString("ulttleft"),
+						resultSet.getString("ulttright"),						
+						resultSet.getString("neurological")
+						,resultSet.getString("latdeltoidleft"),
+						resultSet.getString("latdeltoidright"),
+						resultSet.getString("latarmleft"),
+						resultSet.getString("latarmright"),
+						resultSet.getString("thirdleft"),
+						resultSet.getString("thirdright"),
+						resultSet.getString("medforearmleft"),
+						resultSet.getString("medforearmright"),
+			    	resultSet.getString("medelbowleft"),
+			    	resultSet.getString("medelbowright"),
+			    	resultSet.getString("shdleft"),
+			    	resultSet.getString("shdright"),
+			    	resultSet.getString("elbflexleft"),
+			    	resultSet.getString("elbflexright"),
+			    	resultSet.getString("elbextleft"),
+			    	resultSet.getString("elbextright"),
+			    	resultSet.getString("digitflexionleft"),
+			    	resultSet.getString("digitflexionright"),
+			    	resultSet.getString("digitabdleft"),
+			    	resultSet.getString("digitabdright"),
+			    	resultSet.getString("bicepsleft"),
+			    	resultSet.getString("bicepsright"),
+			    	resultSet.getString("brachioradleft"),
+			    	resultSet.getString("brachioradright"),
+			    	resultSet.getString("tricepsleft"),
+			    	resultSet.getString("tricepsright"),
+			    	resultSet.getString("typing"),
+			    	resultSet.getString("driving"),			    	
+			    	resultSet.getString("other"),
+			    	resultSet.getString("otherdefict"),
+			    	resultSet.getString("comments"),
+			    	resultSet.getString("patientstatus"),
+			    	resultSet.getString("diagnosis1"),
+			    	resultSet.getString("diagnosis2"),
+			    	resultSet.getString("diagnosis3"),
+			    	resultSet.getString("diagnosis4"),
+			    	resultSet.getString("diagnosis5"),
+			    	resultSet.getString("diagnosis6"),
+			    	resultSet.getString("times"),
+			    	resultSet.getString("weeks"),
+			    	resultSet.getString("spinaldecompression"),
+			    	resultSet.getString("chiropractic"),
+			    	resultSet.getString("physicaltherapy"),
+			    	resultSet.getString("bracing"),
+			    	resultSet.getString("modalities"),
+			    	resultSet.getString("supplementation"),
+			    	resultSet.getString("hep"),
+			    	resultSet.getString("radiographic"),
+			    	resultSet.getString("mri"),
+			    	resultSet.getString("scan"),
+			    	resultSet.getString("conduction"),
+			    	resultSet.getString("emg") ,
+			    	resultSet.getString("outsiderefferal"),
+			    	resultSet.getString("dc"),
+			    	resultSet.getString("others"),
+			    	resultSet.getString("othervalue"),
+			    	resultSet.getString("signature")));
+						
+			}
+		} catch (Exception e) {
+			/*logger.info(e.toString());*/
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		} finally {
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		}
+		return wristexam;
+
+	}
+	public int getnoofwristexam() {
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		int noofRecords = 0;
+		
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<WristExam> wristexam = new ArrayList<WristExam>();
+		try {
+
+			String cmd;
+			
+					cmd = "select count(*) as noofrecords from wristexam";
+					System.out.println("command"+cmd);			
+			resultSet = statement.executeQuery(cmd);
+			if (resultSet.next())
+				noofRecords = resultSet.getInt("noofrecords");
+
+		} catch (Exception e) {
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		} finally {
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		}
+		return noofRecords;
+
+	}
 
 	
 	

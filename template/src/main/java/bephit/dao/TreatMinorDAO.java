@@ -11,6 +11,7 @@ import java.util.Date;
 import java.util.List;
 import javax.sql.DataSource;
 
+import bephit.model.RadiologicReport;
 import bephit.model.TreatMinor;
 import bephit.model.Treatform;
 
@@ -114,6 +115,7 @@ public class TreatMinorDAO {
 				minor.add(new TreatMinor(resultSet.getString("minor_no"),resultSet.getString("guardian"),resultSet.getString("age"),resultSet.getString("drname"),resultSet.getString("signed"),
 			    		resultSet.getString("pdate"),
 			    		resultSet.getString("pwitness")));
+
 			    System.out.println(minor);	
 			}
 	    }catch(Exception e){
@@ -219,6 +221,84 @@ public class TreatMinorDAO {
 		   		else
 		   			return 0;
 		}
+	public List<TreatMinor> getlimitedtreatminor(int page) {
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		
+		
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<TreatMinor> minor = new ArrayList<TreatMinor>();
+		try {
+
+			String cmd;
+			int offset = 5 * (page - 1);
+			int limit = 5;
+			
+				
+					cmd = "select * from minor_details order by guardian asc limit " + offset + ","+ limit+"" ;
+	
+			resultSet = statement.executeQuery(cmd);
+			while (resultSet.next()) {
+				minor.add(new TreatMinor(resultSet.getString("minor_no"),resultSet.getString("guardian"),resultSet.getString("age"),resultSet.getString("drname"),resultSet.getString("signed"),
+			    		resultSet.getString("pdate"),
+			    		resultSet.getString("pwitness")));
+
+			}
+		} catch (Exception e) {
+			/*logger.info(e.toString());*/
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		} finally {
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		}
+		return minor;
+
+	}
+	public int getnoofminordetails() {
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		int noofRecords = 0;
+		
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<TreatMinor> minor = new ArrayList<TreatMinor>();
+		try {
+
+			String cmd;
+			
+					cmd = "select count(*) as noofrecords from minor_details";
+					System.out.println("command"+cmd);			
+			resultSet = statement.executeQuery(cmd);
+			if (resultSet.next())
+				noofRecords = resultSet.getInt("noofrecords");
+
+		} catch (Exception e) {
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		} finally {
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		}
+		return noofRecords;
+
+	}
+
 
 	public void releaseConnection(Connection con){
 		try{if(con != null)

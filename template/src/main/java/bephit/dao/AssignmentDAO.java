@@ -13,6 +13,7 @@ import javax.sql.DataSource;
 
 import bephit.model.Assignment;
 import bephit.model.Hardshipagreement;
+import bephit.model.RadiologicReport;
 import bephit.model.SoapNotes;
 
 public class AssignmentDAO {
@@ -258,8 +259,8 @@ public class AssignmentDAO {
 			int limit = 5;
 			
 				
-					cmd = "select * from assignment_details order by patient_name asc limit " + offset + ","+ limit+"" ;
-
+					cmd = "select * from assignment_details order by patientname asc limit " + offset + ","+ limit+"" ;
+	
 			resultSet = statement.executeQuery(cmd);
 			while (resultSet.next()) {
 				assignment.add(new Assignment(resultSet.getString("assignment_no"),resultSet.getString("day"),
@@ -277,6 +278,7 @@ public class AssignmentDAO {
 			    		resultSet.getString("representativedate")
 			    	
 			    	    ));
+ 				
 			}
 		} catch (Exception e) {
 			/*logger.info(e.toString());*/
@@ -328,9 +330,7 @@ public class AssignmentDAO {
 	}
 
 
-	
-	
-	public void releaseConnection(Connection con){
+  public void releaseConnection(Connection con){
 		try{if(con != null)
 			con.close();
 		}catch(Exception e){}

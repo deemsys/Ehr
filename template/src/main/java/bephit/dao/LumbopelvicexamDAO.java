@@ -13,6 +13,7 @@ import javax.sql.DataSource;
 
 
 import bephit.model.Lumbopelvicexam;
+import bephit.model.RadiologicReport;
 import bephit.model.SoapNotes;
  
 
@@ -208,6 +209,80 @@ public int deletelumbopelvicexam(String lumbopelvicexamid){
 	   		else
 	   			return 0;
 	}
+public List<Lumbopelvicexam> getlimitedlumbopelvicexam(int page) {
+	Connection con = null;
+	Statement statement = null;
+	ResultSet resultSet = null;
+	
+	
+	try {
+		con = dataSource.getConnection();
+		statement = con.createStatement();
+	} catch (SQLException e1) {
+		e1.printStackTrace();
+	}
+	List<Lumbopelvicexam> lumbopelvicexam = new ArrayList<Lumbopelvicexam>();
+	try {
+
+		String cmd;
+		int offset = 5 * (page - 1);
+		int limit = 5;
+		
+			
+				cmd = "select * from tbl_lumbopelvicexam order by pname asc limit " + offset + ","+ limit+"" ;
+
+		resultSet = statement.executeQuery(cmd);
+		while (resultSet.next()) {
+			lumbopelvicexam.add( new Lumbopelvicexam(resultSet.getString("lumbopelvicexamid"),resultSet.getString("pname"),resultSet.getString("date"),resultSet.getString("gait"),resultSet.getString("pelvicunleveling"), resultSet.getString("ao"),resultSet.getString("allsoft"),resultSet.getString("leglengthcheckl"),resultSet.getString("leglengthl"),resultSet.getString("other1"),resultSet.getString("leglengthcheckr"),resultSet.getString("leglengthr"),resultSet.getString("other2"),resultSet.getString("piriformis"),resultSet.getString("quadlumb"),resultSet.getString("paraspinals"),resultSet.getString("gluteus"), resultSet.getString("gluteusmedius"), resultSet.getString("hamstrings"), resultSet.getString("iliopsoas"), resultSet.getString("rectus"), resultSet.getString("obliques"), resultSet.getString("othernotes"), resultSet.getString("functionalrangeofmotion"), resultSet.getString("subluxation"), resultSet.getString("orthopedic"), resultSet.getString("flexion"),resultSet.getString("t89"), resultSet.getString("t910"), resultSet.getString("trendelburgl"), resultSet.getString("trendelburgr"), resultSet.getString("extension"), resultSet.getString("t1011"), resultSet.getString("t1112"), resultSet.getString("kempsl"),resultSet.getString("kempsr"), resultSet.getString("lflexion"),resultSet.getString("rflexion"), resultSet.getString("t12l1"),resultSet.getString("l12"),resultSet.getString("slumpl"), resultSet.getString("slumpr"), resultSet.getString("lrotation"),resultSet.getString("rrotation"),resultSet.getString("l23"),resultSet.getString("l34"), resultSet.getString("straightlegl"), resultSet.getString("straightlegr"),resultSet.getString("l45"),resultSet.getString("l5s1"), resultSet.getString("welllegl"),resultSet.getString("welllegr"),resultSet.getString("lsi"),resultSet.getString("rsi"), resultSet.getString("nachlasl"),resultSet.getString("nachlasr"),  resultSet.getString("positiveminor"),resultSet.getString("positiveadam"),resultSet.getString("neurologicaltest"),resultSet.getString("l1l"),resultSet.getString("l1r"),resultSet.getString("l15l"), resultSet.getString("l15r"),resultSet.getString("l2l"),resultSet.getString("l2r"),resultSet.getString("l25l"),resultSet.getString("l25r"),resultSet.getString("l3l"),resultSet.getString("l3r"), resultSet.getString("l35l"), resultSet.getString("l35r"),resultSet.getString("l4l"),resultSet.getString("l4r"),resultSet.getString("l45l"),resultSet.getString("l45r"),resultSet.getString("l4l3"),resultSet.getString("l4r3"),resultSet.getString("l5l"),resultSet.getString("l5r"),resultSet.getString("l55l"),resultSet.getString("l55r"),resultSet.getString("l5l3"),resultSet.getString("l5r3"),resultSet.getString("sl"),resultSet.getString("sr"),resultSet.getString("s5l"), resultSet.getString("s5r"),resultSet.getString("sil"), resultSet.getString("sir"),resultSet.getString("sitting"),resultSet.getString("lifting"),resultSet.getString("walking"),resultSet.getString("stairs"), resultSet.getString("otherfunctional"),resultSet.getString("break_text3"), resultSet.getString("assessment"), resultSet.getString("patientstatus"),resultSet.getString("diagnosis1"),resultSet.getString("diagnosis2"),resultSet.getString("diagnosis3"),resultSet.getString("diagnosis4"),resultSet.getString("diagnosis5"),resultSet.getString("times"),resultSet.getString("week"),resultSet.getString("spinal"),resultSet.getString("chiropractic"),resultSet.getString("physical"),resultSet.getString("orthotics"),resultSet.getString("modalities"),resultSet.getString("supplementation"),resultSet.getString("hep"),resultSet.getString("radiographic"),resultSet.getString("mri"),resultSet.getString("ctscan"),resultSet.getString("nerve"),resultSet.getString("emg"),resultSet.getString("outside"),resultSet.getString("dc"),resultSet.getString("otheraddress"),resultSet.getString("break_text4"),resultSet.getString("sign")));
+		}
+	} catch (Exception e) {
+		/*logger.info(e.toString());*/
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	} finally {
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	}
+	return lumbopelvicexam;
+
+}
+public int getnooflumbopelvicexam() {
+	Connection con = null;
+	Statement statement = null;
+	ResultSet resultSet = null;
+	int noofRecords = 0;
+	
+	try {
+		con = dataSource.getConnection();
+		statement = con.createStatement();
+	} catch (SQLException e1) {
+		e1.printStackTrace();
+	}
+	List<Lumbopelvicexam> lumbopelvicexam = new ArrayList<Lumbopelvicexam>();
+	try {
+
+		String cmd;
+		
+				cmd = "select count(*) as noofrecords from tbl_lumbopelvicexam";
+				System.out.println("command"+cmd);			
+		resultSet = statement.executeQuery(cmd);
+		if (resultSet.next())
+			noofRecords = resultSet.getInt("noofrecords");
+
+	} catch (Exception e) {
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	} finally {
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	}
+	return noofRecords;
+
+}
 
 
 public void releaseConnection(Connection con){

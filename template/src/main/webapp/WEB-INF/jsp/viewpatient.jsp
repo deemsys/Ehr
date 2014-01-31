@@ -89,7 +89,7 @@
                   <li class="page"><a href="viewpatient" class="paging_select">Back</a></li>
               </c:otherwise>
               </c:choose>
-              </ul>
+
               </div>
               </td>
               </tr>

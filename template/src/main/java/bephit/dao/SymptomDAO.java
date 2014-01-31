@@ -806,6 +806,160 @@ public class SymptomDAO
 	    return symptom;
 		
 	}
+	public List<Symptom> getlimitedsymptom(int page) {
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		
+		
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<Symptom> symptom = new ArrayList<Symptom>();
+		try {
+
+			String cmd;
+			int offset = 5 * (page - 1);
+			int limit = 5;
+			
+				
+					cmd = "select * from symptom order by pname asc limit " + offset + ","+ limit+"" ;
+
+			resultSet = statement.executeQuery(cmd);
+			while (resultSet.next()) {
+				symptom.add(new Symptom(resultSet.getString("symptomno"),
+						resultSet.getString("pname"),
+						resultSet.getString("number"),
+						resultSet.getString("date"),
+						resultSet.getString("achepath"),
+						resultSet.getString("acheleft"),
+						resultSet.getString("achetop"),
+						resultSet.getString("achepath1"),
+						resultSet.getString("acheleft1"),
+						resultSet.getString("achetop1"),
+						resultSet.getString("achepath2"),
+						resultSet.getString("acheleft2"),
+						resultSet.getString("achetop2"),
+						resultSet.getString("achepath3"),
+						resultSet.getString("acheleft3"),
+						resultSet.getString("achetop3"),
+						resultSet.getString("achepath4"),
+						resultSet.getString("acheleft4"),
+						resultSet.getString("achetop4"),
+						resultSet.getString("numbpath"),
+						resultSet.getString("numbleft"),
+						resultSet.getString("numbtop"),
+						resultSet.getString("numbpath1"),
+						resultSet.getString("numbleft1"),
+						resultSet.getString("numbtop1"),
+						resultSet.getString("numbpath2"),
+						resultSet.getString("numbleft2"),
+						resultSet.getString("numbtop2"),
+						resultSet.getString("numbpath3"),
+						resultSet.getString("numbleft3"),
+						resultSet.getString("numbtop3"),
+						resultSet.getString("numbpath4"),
+						resultSet.getString("numbleft4"),
+						resultSet.getString("numbtop4"),
+						resultSet.getString("pinpath"),
+						resultSet.getString("pinleft"),
+						resultSet.getString("pintop"),
+						resultSet.getString("pinpath1"),
+						resultSet.getString("pinleft1"),
+						resultSet.getString("pintop1"),
+						resultSet.getString("pinpath2"),
+						resultSet.getString("pinleft2"),
+						resultSet.getString("pintop2"),
+						resultSet.getString("pinpath3"),
+						resultSet.getString("pinleft3"),
+						resultSet.getString("pintop3"),
+						resultSet.getString("pinpath4"),
+						resultSet.getString("pinleft4"),
+						resultSet.getString("pintop4"),
+						resultSet.getString("burnpath"),
+						resultSet.getString("burnleft"),
+						resultSet.getString("burntop"),
+						resultSet.getString("burnpath1"),
+						resultSet.getString("burnleft1"),
+						resultSet.getString("burntop1"),
+						resultSet.getString("burnpath2"),
+						resultSet.getString("burnleft2"),
+						resultSet.getString("burntop2"),
+						resultSet.getString("burnpath3"),
+						resultSet.getString("burnleft3"),
+						resultSet.getString("burntop3"),
+						resultSet.getString("burnpath4"),
+						resultSet.getString("burnleft4"),
+						resultSet.getString("burntop4"),
+						resultSet.getString("stabpath"),
+						resultSet.getString("stableft"),
+						resultSet.getString("stabtop"),
+						resultSet.getString("stabpath1"),
+						resultSet.getString("stableft1"),
+						resultSet.getString("stabtop1"),
+						resultSet.getString("stabpath2"),
+						resultSet.getString("stableft2"),
+						resultSet.getString("stabtop2"),
+						resultSet.getString("stabpath3"),
+						resultSet.getString("stableft3"),
+						resultSet.getString("stabtop3"),
+						resultSet.getString("stabpath4"),
+						resultSet.getString("stableft4"),
+						resultSet.getString("stabtop4")							
+						));
+			}
+		} catch (Exception e) {
+			/*logger.info(e.toString());*/
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		} finally {
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		}
+		return symptom;
+
+	}
+	public int getnoofsymptom() {
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		int noofRecords = 0;
+		
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<Symptom> symptom = new ArrayList<Symptom>();
+		try {
+
+			String cmd;
+			
+					cmd = "select count(*) as noofrecords from symptom";
+					System.out.println("command"+cmd);			
+			resultSet = statement.executeQuery(cmd);
+			if (resultSet.next())
+				noofRecords = resultSet.getInt("noofrecords");
+
+		} catch (Exception e) {
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		} finally {
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		}
+		return noofRecords;
+
+	}
+
 	public void releaseConnection(Connection con){
 		try{if(con != null)
 			con.close();

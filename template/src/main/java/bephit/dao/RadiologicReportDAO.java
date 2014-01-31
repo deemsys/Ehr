@@ -15,6 +15,7 @@ import javax.sql.DataSource;
 
 import bephit.model.ParticipantsDetails;
 import bephit.model.RadiologicReport;
+import bephit.model.Treatform;
 
 
 public class RadiologicReportDAO
@@ -269,6 +270,90 @@ public class RadiologicReportDAO
 			   		else
 			   			return 0;
 			}
+		public List<RadiologicReport> getlimitedradiologicreport(int page) {
+			Connection con = null;
+			Statement statement = null;
+			ResultSet resultSet = null;
+			
+			
+			try {
+				con = dataSource.getConnection();
+				statement = con.createStatement();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+			List<RadiologicReport> radiologicReport = new ArrayList<RadiologicReport>();
+			try {
+
+				String cmd;
+				int offset = 5 * (page - 1);
+				int limit = 5;
+				
+					
+						cmd = "select * from tbl_radiologicreport order by pname asc limit " + offset + ","+ limit+"" ;
+		
+				resultSet = statement.executeQuery(cmd);
+				while (resultSet.next()) {
+					radiologicReport.add(new RadiologicReport(resultSet.getString("pid"),resultSet.getString("pname"),resultSet.getString("date"),resultSet.getString("id"),resultSet.getString("dob"),
+	 						resultSet.getString("views1"),resultSet.getString("negative_1"),resultSet.getString("positive_for"),resultSet.getString("positive_text1"),resultSet.getString("break_1"),resultSet.getString("break_text1"),resultSet.getString("adi_1"),resultSet.getString("hypolorodosis_1"),resultSet.getString("hypolordosis_select1"),resultSet.getString("normalcurvature_1"),resultSet.getString("normalcurvature_select1"),resultSet.getString("hyperlordosis_1"),resultSet.getString("hyperlordosis_select1"),
+	 						resultSet.getString("mcGregorslinenormal_1"),resultSet.getString("mcGregorslineinterupted_1"),resultSet.getString("degenerativejointdisease_1"),resultSet.getString("degenerativejointdisease_select1"),resultSet.getString("mild_1"),resultSet.getString("moderate_1"),resultSet.getString("severe_1"),resultSet.getString("narrowed_1"),resultSet.getString("narrowed_text1"),resultSet.getString("anterior_1"),resultSet.getString("anterior_text1"),resultSet.getString("subchondral_1"),resultSet.getString("subchondral_text1"),resultSet.getString("schmorls_1"),resultSet.getString("schmorls_text1"),resultSet.getString("foraminal_1"),resultSet.getString("foraminal_select1"),resultSet.getString("osteoporosis_1"),resultSet.getString("osteoporosis_select1"),resultSet.getString("decreasedFlexExt_1"),
+	 						resultSet.getString("decreasedFlexExt_select1"),resultSet.getString("decreasedRLFlex_1"),resultSet.getString("decreasedRLFlex_select1"),resultSet.getString("dextro_Levoscoliosis_towering_select1"),resultSet.getString("mild_11"),resultSet.getString("moderate_11"),resultSet.getString("severe_11"),resultSet.getString("apexat_1"),resultSet.getString("apexat_text1"),resultSet.getString("softtissueedemaof_1"),resultSet.getString("softtissueedemaof_text1"),resultSet.getString("other_1"),resultSet.getString("other_text1"),
+	 						resultSet.getString("views2"),resultSet.getString("negative_2"),resultSet.getString("hyperkyphosis_2"),resultSet.getString("hyperkyphosis_select2"),resultSet.getString("normalkyphosis_2"),resultSet.getString("normalkyphosis_select2"),resultSet.getString("hypokyphosis_2"),resultSet.getString("hypokyphosis_select2"),
+	 						resultSet.getString("degenerative_2"),resultSet.getString("degenerative_text2"),resultSet.getString("mild_2"),resultSet.getString("moderate_2"),resultSet.getString("severe_2"),resultSet.getString("narrowed_2"),resultSet.getString("narrowed_text2"),resultSet.getString("schmorlsnodesat_2"),resultSet.getString("schmorlsnodesat_text2"),resultSet.getString("anterior_2"),resultSet.getString("anterior_text2"),resultSet.getString("subchondral_2"),resultSet.getString("subchondral_text2"),resultSet.getString("foraminal_2"),resultSet.getString("foraminal_text2"),resultSet.getString("osteoporosis_2"),resultSet.getString("osteoporosis_select2"),resultSet.getString("dextro_Levoscoliosis_towering_select2"),resultSet.getString("mild_22"),resultSet.getString("moderate_22"),resultSet.getString("severe_22"),resultSet.getString("apexat_2"),resultSet.getString("apexat_text2"),resultSet.getString("softtissueedemaof_2"),resultSet.getString("softtissueedemaof_text2"),resultSet.getString("other_2"),resultSet.getString("other_text2"),
+	 						resultSet.getString("views3"),resultSet.getString("negative_3"),resultSet.getString("break_3"),resultSet.getString("break_text3"),resultSet.getString("osteoporosis_3"),resultSet.getString("osteoporosis_select3"),resultSet.getString("hyperkyphosis_3"),resultSet.getString("hyperkyphosis_select3"),resultSet.getString("normalkyphosis_3"),resultSet.getString("normalkyphosis_select3"),resultSet.getString("hypokyphosis_3"),resultSet.getString("hypokyphosos_select_3"),resultSet.getString("degenerative_3"),resultSet.getString("degenerative_select3"),resultSet.getString("mild_3"),resultSet.getString("moderate_3"),resultSet.getString("severe_3"),resultSet.getString("narrowed_3"),resultSet.getString("narrowed_text3"),resultSet.getString("anterior_3"),resultSet.getString("anterior_text3"),resultSet.getString("subchondral_3"),resultSet.getString("subchondral_text3"),resultSet.getString("schmorls_3"),resultSet.getString("schmorls_text3"),resultSet.getString("spondylolisthesisof_3"),resultSet.getString("spondylolisthesisof_select3"),resultSet.getString("other_text3"),resultSet.getString("grade_3"),resultSet.getString("decreasedRLF_3"),resultSet.getString("decreasedLLF_3"),resultSet.getString("facettropism_3"),resultSet.getString("sacralization_3"),
+	 						resultSet.getString("lumbarization_3"),resultSet.getString("dextro_Levoscoliosis_towering_select3"),resultSet.getString("mild_33"),resultSet.getString("moderate_33"),resultSet.getString("severe_33"),resultSet.getString("apexat_3"),resultSet.getString("apexat_text3"),resultSet.getString("softtissueedemaof_3"),resultSet.getString("softtissueedemaof_text3"),resultSet.getString("other_3"),resultSet.getString("other_text33"),
+	 						resultSet.getString("views4"),resultSet.getString("normal_4"),resultSet.getString("positivefor_4")));
+	 				
+				}
+			} catch (Exception e) {
+				/*logger.info(e.toString());*/
+				releaseResultSet(resultSet);
+				releaseStatement(statement);
+				releaseConnection(con);
+			} finally {
+				releaseResultSet(resultSet);
+				releaseStatement(statement);
+				releaseConnection(con);
+			}
+			return radiologicReport;
+
+		}
+		public int getnoofradiologicreport() {
+			Connection con = null;
+			Statement statement = null;
+			ResultSet resultSet = null;
+			int noofRecords = 0;
+			
+			try {
+				con = dataSource.getConnection();
+				statement = con.createStatement();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+			List<RadiologicReport> radiologicReport = new ArrayList<RadiologicReport>();
+			try {
+
+				String cmd;
+				
+						cmd = "select count(*) as noofrecords from tbl_radiologicreport";
+						System.out.println("command"+cmd);			
+				resultSet = statement.executeQuery(cmd);
+				if (resultSet.next())
+					noofRecords = resultSet.getInt("noofrecords");
+
+			} catch (Exception e) {
+				releaseResultSet(resultSet);
+				releaseStatement(statement);
+				releaseConnection(con);
+			} finally {
+				releaseResultSet(resultSet);
+				releaseStatement(statement);
+				releaseConnection(con);
+			}
+			return noofRecords;
+
+		}
+
 			
 	public void releaseConnection(Connection con){
 		try{if(con != null)

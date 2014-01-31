@@ -301,6 +301,109 @@ public class OswestryDAO
 			   			return 0;
 			}
 			
+		public List<Oswestry> getlimitedoswestry(int page) {
+			Connection con = null;
+			Statement statement = null;
+			ResultSet resultSet = null;
+			
+			
+			try {
+				con = dataSource.getConnection();
+				statement = con.createStatement();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+			List<Oswestry> oswestryindex = new ArrayList<Oswestry>();
+			try {
+
+				String cmd;
+				int offset = 5 * (page - 1);
+				int limit = 5;
+				
+					
+						cmd = "select * from oswestryindex order by name asc limit " + offset + ","+ limit+"" ;
+		
+				resultSet = statement.executeQuery(cmd);
+				while (resultSet.next()) {
+					oswestryindex.add(new Oswestry(
+							resultSet.getString("oswestryno"),
+							resultSet.getString("painintensity"),
+							resultSet.getString("standing"),
+							resultSet.getString("personal"),
+							resultSet.getString("sleeping"),
+							resultSet.getString("lifting"),
+							resultSet.getString("life"),
+							resultSet.getString("walking"),
+							resultSet.getString("social"),
+							resultSet.getString("sitting"),
+							resultSet.getString("traveling"),
+							resultSet.getString("comments"),
+							resultSet.getString("name"),
+							resultSet.getString("date"),
+							resultSet.getString("scores"),
+							resultSet.getString("painscale"),
+							resultSet.getString("painscale1"),
+							resultSet.getString("job"),
+							resultSet.getString("joboptional"),
+							resultSet.getString("work"),
+							resultSet.getString("worka"),
+							resultSet.getString("workb"),
+							resultSet.getString("workc"),
+							resultSet.getString("sport"),
+							resultSet.getString("sportoptional"),
+							resultSet.getString("instrument"),
+							resultSet.getString("instrumenta"),
+							resultSet.getString("instrumentb"),
+							resultSet.getString("instrumentc")));
+				}
+			} catch (Exception e) {
+				/*logger.info(e.toString());*/
+				releaseResultSet(resultSet);
+				releaseStatement(statement);
+				releaseConnection(con);
+			} finally {
+				releaseResultSet(resultSet);
+				releaseStatement(statement);
+				releaseConnection(con);
+			}
+			return oswestryindex;
+
+		}
+		public int getnoofoswestryindex() {
+			Connection con = null;
+			Statement statement = null;
+			ResultSet resultSet = null;
+			int noofRecords = 0;
+			
+			try {
+				con = dataSource.getConnection();
+				statement = con.createStatement();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+			List<Oswestry> oswestryindex = new ArrayList<Oswestry>();
+			try {
+
+				String cmd;
+				
+						cmd = "select count(*) as noofrecords from oswestryindex";
+						System.out.println("command"+cmd);			
+				resultSet = statement.executeQuery(cmd);
+				if (resultSet.next())
+					noofRecords = resultSet.getInt("noofrecords");
+
+			} catch (Exception e) {
+				releaseResultSet(resultSet);
+				releaseStatement(statement);
+				releaseConnection(con);
+			} finally {
+				releaseResultSet(resultSet);
+				releaseStatement(statement);
+				releaseConnection(con);
+			}
+			return noofRecords;
+
+		}
 
 
 		

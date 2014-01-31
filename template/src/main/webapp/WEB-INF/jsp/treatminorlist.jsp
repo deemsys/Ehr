@@ -29,7 +29,7 @@
 						<table cellpadding="0" cellspacing="0" border="0" width="100%">
 				     <tr class="title">
 								
-								<td valign="center" align="right" width="10%"><input type="checkbox" value="" name="chkAll"></td>
+								
          						<td valign="top" align="left" width="10%">Patient sign</td>
 					         	<td valign="top" align="left" width="10%">Age</td>
 					         	<td valign="top" align="left" width="10%">Guardian</td>
@@ -41,7 +41,7 @@
 						<c:if test="${fn:length(treatminordetailsform.minorDetails) gt 0}">
         				  <c:forEach items="${treatminordetailsform.minorDetails}" var="Minordetails" varStatus="status">
         				       				<tr class="row1">
-        				       				<td valign="center" align="right" width="10%"></td>
+        				       				
 								            <td valign="top" align="left"  width="10%"><a href="viewtreatminor?minor_no=${Minordetails.minor_no}">${Minordetails.signed}</a></td>
 											<td valign="top" align="left" width="10%">${Minordetails.age}</td>
 											<td valign="top" align="left" width="10%">${Minordetails.guardian}</td>
@@ -60,6 +60,37 @@
 							    	<td colspan="7" width="100%"><center><b>No Participants Found!!!</b></center></td>
 							    	</tr>
 							    	</c:if>
+							    	<tr><td colspan="6">  
+	<div class="extrabottom">
+              <ul class="pagination">
+         
+              <c:if test="${currentpage!=1&&currentpage!=null}">
+             <li class="page_unselect"><a href="treatminorlist_page?page=${currentpage - 1}" >Prev</a></li> 
+               </c:if>
+              
+             <%-- <c:forEach var="count" begin="1" end="${noofrows}">  --%>
+               <c:forEach begin="1" end="${noofpages}" var="i">
+                <c:choose>
+                    <c:when test="${currentpage eq i}">
+                      <li class="page"><a class="paging_select"><c:out value="${i}"></c:out></a></li>
+                     </c:when>
+                    <c:otherwise>
+                        <li class="page_unselect"><a href="treatminorlist_page?page=${i}"><c:out value="${i}"></c:out></a></li>
+                    </c:otherwise>
+                </c:choose>
+            </c:forEach>          
+            <c:if test="${currentpage!=noofpages}">
+              <li class="page_unselect"><a href="treatminorlist_page?page=${currentpage+1}">Next</a></li> 
+                 </c:if>
+              <c:choose>
+              <c:when test="${button=='viewall'}">
+                  <li class="page"><a href="viewalltreatminorlist" class="paging_select">ViewAll</a></li>
+             </c:when>
+                <c:otherwise>
+                  <li class="page"><a href="treatminorlist" class="paging_select">Back</a></li>
+              </c:otherwise>
+              </c:choose>
+							    	
 							 </table>
 							 </form>
 							 </div>

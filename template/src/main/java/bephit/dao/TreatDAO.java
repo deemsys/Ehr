@@ -12,6 +12,7 @@ import java.util.List;
 import javax.sql.DataSource;
 
 import bephit.model.Hardshipagreement;
+import bephit.model.RadiologicReport;
 import bephit.model.Treatform;
 
 public class TreatDAO {
@@ -225,7 +226,7 @@ public class TreatDAO {
 		   		else
 		   			return 0;
 		}
-	public List<Treatform> getlimitedtreatformdetail(int page) {
+	public List<Treatform> getlimitedtreatform(int page) {
 		Connection con = null;
 		Statement statement = null;
 		ResultSet resultSet = null;
@@ -237,7 +238,7 @@ public class TreatDAO {
 		} catch (SQLException e1) {
 			e1.printStackTrace();
 		}
-		List<Treatform> treatform = new ArrayList<Treatform>();
+		List<Treatform> treat = new ArrayList<Treatform>();
 		try {
 
 			String cmd;
@@ -249,7 +250,7 @@ public class TreatDAO {
 	
 			resultSet = statement.executeQuery(cmd);
 			while (resultSet.next()) {
-				treatform.add(new Treatform(resultSet.getString("treat_no"),resultSet.getString("patientsname"),
+				treat.add(new Treatform(resultSet.getString("treat_no"),resultSet.getString("patientsname"),
 			    		resultSet.getString("patientssign"),
 			    		resultSet.getString("todaydate"),
 			    		resultSet.getString("witness")));
@@ -264,10 +265,10 @@ public class TreatDAO {
 			releaseStatement(statement);
 			releaseConnection(con);
 		}
-		return treatform;
+		return treat;
 
 	}
-	public int getnooftreatform() {
+	public int getnooftreatdetails() {
 		Connection con = null;
 		Statement statement = null;
 		ResultSet resultSet = null;
@@ -279,7 +280,7 @@ public class TreatDAO {
 		} catch (SQLException e1) {
 			e1.printStackTrace();
 		}
-		List<Treatform> treatform = new ArrayList<Treatform>();
+		List<Treatform> treat = new ArrayList<Treatform>();
 		try {
 
 			String cmd;

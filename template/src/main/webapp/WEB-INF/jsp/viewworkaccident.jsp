@@ -84,7 +84,6 @@
                   <li class="page"><a href="viewworkaccident" class="paging_select">Back</a></li>
               </c:otherwise>
               </c:choose>
-        
         				       				 </table>
         				       				</form>
         				       				</div>

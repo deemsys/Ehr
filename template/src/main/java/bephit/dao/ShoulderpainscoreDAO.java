@@ -12,6 +12,7 @@ import java.util.List;
 import javax.sql.DataSource;
 
 import bephit.model.Hamiltonchiropractic;
+import bephit.model.RadiologicReport;
 import bephit.model.Shoulderpainscore;
 import bephit.model.screeningAuthz;
  
@@ -215,6 +216,80 @@ public int deleteshoulderpainscore(String shoulderpainno){
 	   		else
 	   			return 0;
 	}
+public List<Shoulderpainscore> getlimitedshoulderpainscore(int page) {
+	Connection con = null;
+	Statement statement = null;
+	ResultSet resultSet = null;
+	
+	
+	try {
+		con = dataSource.getConnection();
+		statement = con.createStatement();
+	} catch (SQLException e1) {
+		e1.printStackTrace();
+	}
+	List<Shoulderpainscore> shoulderpainscore = new ArrayList<Shoulderpainscore>();
+	try {
+
+		String cmd;
+		int offset = 5 * (page - 1);
+		int limit = 5;
+		
+			
+				cmd = "select * from tbl_shoulderpainscore order by pname asc limit " + offset + ","+ limit+"" ;
+
+		resultSet = statement.executeQuery(cmd);
+		while (resultSet.next()) {
+			shoulderpainscore.add( new Shoulderpainscore(resultSet.getString("shoulderpainno"), resultSet.getString("pname"), resultSet.getString("number"), resultSet.getString("date"), resultSet.getString("painatrest"), resultSet.getString("paininmotion"), resultSet.getString("nightlypain"),resultSet.getString("sleepingproblem"),resultSet.getString("incapability"), resultSet.getString("degreeofradiation"), resultSet.getString("painscale"), resultSet.getString("date1"), resultSet.getString("total"),resultSet.getString("f"), resultSet.getString("name123"), resultSet.getString("age"), resultSet.getString("headache"), resultSet.getString("myheadache"), resultSet.getString("handihapped"), resultSet.getString("restricted"), resultSet.getString("understand"), resultSet.getString("recreational"), resultSet.getString("angry"), resultSet.getString("control"), resultSet.getString("socialize"), resultSet.getString("family"), resultSet.getString("insane"), resultSet.getString("outlook"), resultSet.getString("afraid"), resultSet.getString("desperate"), resultSet.getString("penalties"), resultSet.getString("relationship"), resultSet.getString("avoid"), resultSet.getString("goals"), resultSet.getString("clear"), resultSet.getString("tension"), resultSet.getString("gatherings"), resultSet.getString("irritable"), resultSet.getString("travelling"),resultSet.getString("confused"), resultSet.getString("frustrated"), resultSet.getString("difficult"), resultSet.getString("attention")));				
+		}
+	} catch (Exception e) {
+		/*logger.info(e.toString());*/
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	} finally {
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	}
+	return shoulderpainscore;
+
+}
+public int getnoofshoulderpainscore() {
+	Connection con = null;
+	Statement statement = null;
+	ResultSet resultSet = null;
+	int noofRecords = 0;
+	
+	try {
+		con = dataSource.getConnection();
+		statement = con.createStatement();
+	} catch (SQLException e1) {
+		e1.printStackTrace();
+	}
+	List<Shoulderpainscore> shoulderpainscore = new ArrayList<Shoulderpainscore>();
+	try {
+
+		String cmd;
+		
+				cmd = "select count(*) as noofrecords from tbl_shoulderpainscore";
+				System.out.println("command"+cmd);			
+		resultSet = statement.executeQuery(cmd);
+		if (resultSet.next())
+			noofRecords = resultSet.getInt("noofrecords");
+
+	} catch (Exception e) {
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	} finally {
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	}
+	return noofRecords;
+
+}
 
 
 public void releaseConnection(Connection con){

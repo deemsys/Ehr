@@ -16,6 +16,7 @@ import javax.sql.DataSource;
 import bephit.model.Cervicalexam;
 import bephit.model.ParticipantsDetails;
 import bephit.model.Dcfeeslip;
+import bephit.model.RadiologicReport;
 
 
 
@@ -244,6 +245,80 @@ public class DcfeeslipDAO {
 		   		else
 		   			return 0;
 		}
+	public List<Dcfeeslip> getlimiteddcfeeslip(int page) {
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		
+		
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<Dcfeeslip> dcfeeslip = new ArrayList<Dcfeeslip>();
+		try {
+
+			String cmd;
+			int offset = 5 * (page - 1);
+			int limit = 5;
+			
+				
+					cmd = "select * from tbl_dcfeeslip1 order by pname asc limit " + offset + ","+ limit+"" ;
+	
+			resultSet = statement.executeQuery(cmd);
+			while (resultSet.next()) {
+				dcfeeslip.add( new Dcfeeslip(resultSet.getString("dcfeeid"),resultSet.getString("pid"),resultSet.getString("date"),resultSet.getString("pname"),resultSet.getString("dr1"), resultSet.getString("rpt"),resultSet.getString("pta"),resultSet.getInt("initialemlimited"),resultSet.getInt("initialexpanded"),resultSet.getInt("initialdetailed"),resultSet.getInt("initialemextended"),resultSet.getInt("estpatientltd"),resultSet.getInt("estpatientexp"),resultSet.getInt("estpatientdetails"), resultSet.getInt("estpatientcomp"),  resultSet.getInt("consultphys"),  resultSet.getInt("consultdetail"), resultSet.getInt("consultcomp"), resultSet.getInt("patientexp"), resultSet.getInt("patientdetails"), resultSet.getInt("patientcomp"),resultSet.getInt("telephonebrief"), resultSet.getInt("telephoneintermediate"),resultSet.getInt("telephonecomp"), resultSet.getInt("tractionmechanical"), resultSet.getInt("electricstim"), resultSet.getInt("vasopneumatic"), resultSet.getInt("paraffin"), resultSet.getInt("microwave"),resultSet.getInt("whirlpool"), resultSet.getInt("diathermy"),resultSet.getInt("infrared"), resultSet.getInt("ultraviolet"),resultSet.getInt("manualelectricalstim"), resultSet.getInt("iontophoresis"),resultSet.getInt("contrastbaths"),resultSet.getInt("ultrasound"),resultSet.getInt("unlisted"), resultSet.getInt("therapeutic"), resultSet.getInt("neuromuscular"),resultSet.getInt("aquatic"),resultSet.getInt("gaittraining"),resultSet.getInt("massage"),resultSet.getInt("manualtherapy"), resultSet.getInt("unlistedother"), resultSet.getInt("grouptherapy"),resultSet.getInt("orthotics"),resultSet.getInt("kinetic"),resultSet.getInt("adlselfcare"), resultSet.getInt("reintegration"),resultSet.getInt("acupuncturewo"),resultSet.getInt("acupuncturew"),resultSet.getInt("spine12"),resultSet.getInt("spine34"),resultSet.getInt("spine5"), resultSet.getInt("extremity"),resultSet.getInt("routine"),resultSet.getInt("muscle"),resultSet.getInt("musclehand"),resultSet.getInt("rangeofmotion"),resultSet.getInt("rangeofmotionhand"), resultSet.getInt("ncv"),resultSet.getInt("ncvw"),resultSet.getInt("ncvea"),resultSet.getInt("ssepupper"),resultSet.getInt("sseplower"),resultSet.getInt("ssephead"), resultSet.getInt("hreflex"),resultSet.getInt("physicalperformance"),resultSet.getInt("functionalcapacity"),resultSet.getInt("text1"),resultSet.getInt("text2"),resultSet.getInt("supplies"), resultSet.getInt("patienteducation"),resultSet.getInt("medicaltestimony"),resultSet.getInt("insuranceform"),resultSet.getInt("teamconference"), resultSet.getInt("completespine"),resultSet.getInt("cervical23"),resultSet.getInt("cervical4"),resultSet.getInt("cervical67"),resultSet.getInt("thoracic4"), resultSet.getInt("thoracic2"),resultSet.getInt("scoliosis"), resultSet.getInt("lumbosacral"), resultSet.getInt("lumbosacral4"),resultSet.getInt("pelvis2"),resultSet.getInt("lumbarcomplete"),resultSet.getInt("elbow2"),resultSet.getInt("wrist2"),resultSet.getInt("hand2"),resultSet.getInt("knee2"),resultSet.getInt("ankle2"),resultSet.getInt("foot2"),resultSet.getInt("readotherfilms"),resultSet.getInt("cervicalpillow"),resultSet.getInt("lumbarsupport"),resultSet.getInt("orthoticcustoml"),resultSet.getInt("orthoticcustomr"),resultSet.getInt("tensunit"),resultSet.getInt("coldpack"),resultSet.getInt("wristsplint"),resultSet.getInt("heellift"),resultSet.getInt("exerciseball"),resultSet.getInt("exerciseband"),resultSet.getInt("unlisteditem"),resultSet.getInt("charges"),resultSet.getInt("less"),resultSet.getInt("balance"),resultSet.getString("payment"),resultSet.getString("paymentcashcheck"),resultSet.getString("amex"),resultSet.getString("discover"),resultSet.getString("mc"),resultSet.getString("visa"),resultSet.getString("cardsign"),resultSet.getString("date1"),resultSet.getString("parentsign"),resultSet.getString("doctorsign"),resultSet.getString("week"),resultSet.getString("months"))); 				
+			}
+		} catch (Exception e) {
+			/*logger.info(e.toString());*/
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		} finally {
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		}
+		return dcfeeslip;
+
+	}
+	public int getnoofdcfeeslip() {
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		int noofRecords = 0;
+		
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<Dcfeeslip> dcfeeslip = new ArrayList<Dcfeeslip>();
+		try {
+
+			String cmd;
+			
+					cmd = "select count(*) as noofrecords from tbl_dcfeeslip1";
+					System.out.println("command"+cmd);			
+			resultSet = statement.executeQuery(cmd);
+			if (resultSet.next())
+				noofRecords = resultSet.getInt("noofrecords");
+
+		} catch (Exception e) {
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		} finally {
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		}
+		return noofRecords;
+
+	}
 
 	public void releaseConnection(Connection con){
     	try{if(con != null)

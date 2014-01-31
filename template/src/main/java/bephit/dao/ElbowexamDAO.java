@@ -16,6 +16,7 @@ import javax.sql.DataSource;
 
 import bephit.model.ParticipantsDetails;
 import bephit.model.Elbowexam;
+import bephit.model.ShoulderExam;
 
 
 
@@ -208,7 +209,80 @@ public int deleteelbowexam(String elbowexamid){
 	   		else
 	   			return 0;
 	}
+public List<Elbowexam> getlimitedelbowexam(int page) {
+	Connection con = null;
+	Statement statement = null;
+	ResultSet resultSet = null;
+	
+	
+	try {
+		con = dataSource.getConnection();
+		statement = con.createStatement();
+	} catch (SQLException e1) {
+		e1.printStackTrace();
+	}
+	List<Elbowexam> elbowexam = new ArrayList<Elbowexam>();
+	try {
 
+		String cmd;
+		int offset = 5 * (page - 1);
+		int limit = 5;
+		
+			
+				cmd = "select * from tbl_elbowexam order by pname asc limit " + offset + ","+ limit+"" ;
+
+		resultSet = statement.executeQuery(cmd);
+		while (resultSet.next()) {
+			elbowexam.add( new Elbowexam(resultSet.getString("elbowexamid"),resultSet.getString("pname"),resultSet.getString("date"),resultSet.getString("muscle"),resultSet.getString("swelling"),resultSet.getString("dominanthand"),resultSet.getString("allsoft"),resultSet.getString("biceps"),resultSet.getString("triceps"),resultSet.getString("common"),resultSet.getString("pronator"),resultSet.getString("anconeus"),resultSet.getString("commonextensors"), resultSet.getString("othernotes"), resultSet.getString("functionalrangeofmotion"), resultSet.getString("orthopedic"), resultSet.getString("flexionl"),resultSet.getString("flexionr"), resultSet.getString("mcll"),resultSet.getString("mclr"), resultSet.getString("extensionl"), resultSet.getString("extensionr"),  resultSet.getString("lcll"), resultSet.getString("lclr"),resultSet.getString("pronationl"), resultSet.getString("pronationr"),resultSet.getString("varusl"), resultSet.getString("varusr"),resultSet.getString("suppinationl"), resultSet.getString("suppinationr"),resultSet.getString("mcl1l"),resultSet.getString("mcl1r"),resultSet.getString("tinnelsl"), resultSet.getString("tinnelsr"), resultSet.getString("ulttl"),resultSet.getString("ulttl"),resultSet.getString("neurologicaltest"),resultSet.getString("c5l"),resultSet.getString("c5r"),resultSet.getString("c51l"), resultSet.getString("c51r"),resultSet.getString("c53l"),resultSet.getString("c53r"),resultSet.getString("c6l"),resultSet.getString("c6r"),resultSet.getString("c61l"), resultSet.getString("c61r"),resultSet.getString("c63l"),resultSet.getString("c63r"),resultSet.getString("c7l"),resultSet.getString("c7r"),resultSet.getString("c71l"), resultSet.getString("c71r"),resultSet.getString("c73l"),resultSet.getString("c73r"),resultSet.getString("c8l"),resultSet.getString("c8r"),resultSet.getString("c81l"), resultSet.getString("c81r"),resultSet.getString("t1l"),resultSet.getString("t1r"),resultSet.getString("t11l"), resultSet.getString("t11r"),resultSet.getString("overheadactivities"),resultSet.getString("lifting"), resultSet.getString("otherfunctional"),resultSet.getString("break_text3"), resultSet.getString("assessment"), resultSet.getString("patientstatus"),resultSet.getString("diagnosis1"),resultSet.getString("diagnosis2"),resultSet.getString("diagnosis3"),resultSet.getString("diagnosis4"),resultSet.getString("diagnosis5"),resultSet.getString("diagnosis6"),resultSet.getString("times"),resultSet.getString("week"),resultSet.getString("spinal"),resultSet.getString("chiropractic"),resultSet.getString("physical"),resultSet.getString("orthotics"),resultSet.getString("modalities"),resultSet.getString("supplementation"),resultSet.getString("hep"),resultSet.getString("radiographic"),resultSet.getString("mri"),resultSet.getString("ctscan"),resultSet.getString("nerve"),resultSet.getString("emg"),resultSet.getString("outside"),resultSet.getString("dc"),resultSet.getString("otheraddress"),resultSet.getString("break_text4"),resultSet.getString("sign")));				
+		}
+	} catch (Exception e) {
+		/*logger.info(e.toString());*/
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	} finally {
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	}
+	return elbowexam;
+
+}
+public int getnoofelbowexam() {
+	Connection con = null;
+	Statement statement = null;
+	ResultSet resultSet = null;
+	int noofRecords = 0;
+	
+	try {
+		con = dataSource.getConnection();
+		statement = con.createStatement();
+	} catch (SQLException e1) {
+		e1.printStackTrace();
+	}
+	List<Elbowexam> elbowexam = new ArrayList<Elbowexam>();
+	try {
+
+		String cmd;
+		
+				cmd = "select count(*) as noofrecords from tbl_elbowexam";
+				System.out.println("command"+cmd);			
+		resultSet = statement.executeQuery(cmd);
+		if (resultSet.next())
+			noofRecords = resultSet.getInt("noofrecords");
+
+	} catch (Exception e) {
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	} finally {
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	}
+	return noofRecords;
+
+}
 public void releaseConnection(Connection con){
     	try{if(con != null)
     		con.close();

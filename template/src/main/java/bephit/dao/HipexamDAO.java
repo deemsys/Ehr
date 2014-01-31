@@ -352,7 +352,101 @@ public class HipexamDAO
 	    return hipexam;
 		
 	}
+	public List<HipExam> getlimitedhipexam(int page) {
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		
+		
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<HipExam> hipexam = new ArrayList<HipExam>();
+		try {
+
+			String cmd;
+			int offset = 5 * (page - 1);
+			int limit = 5;
+			
+				
+					cmd = "select * from hipexam order by pname asc limit " + offset + ","+ limit+"" ;
 	
+			resultSet = statement.executeQuery(cmd);
+			while (resultSet.next()) {
+				hipexam.add(new HipExam(resultSet.getString("hipexamno"),resultSet.getString("pname"),resultSet.getString("date"),resultSet.getString("gait"),resultSet.getString("pelvic"),resultSet.getString("ao"),resultSet.getString("dysfunction"),resultSet.getString("shortlegleft"),resultSet.getString("shortlegleftvalue"),resultSet.getString("shortlegleftother"),resultSet.getString("shortlegright"),resultSet.getString("shortlegrightvalue"),resultSet.getString("shortlegrightother"),resultSet.getString("piriformisleft"),resultSet.getString("gluteusleft"),resultSet.getString("iliopsoasleft"),resultSet.getString("hamstringsleft"),resultSet.getString("note"),resultSet.getString("functional"),resultSet.getString("orthotpedic"),resultSet.getString("flexionleft"),resultSet.getString("flexionright"),resultSet.getString("extensionleft"),resultSet.getString("extensionright"),resultSet.getString("abductionleft"),resultSet.getString("abductionright"),resultSet.getString("adductionleft"),resultSet.getString("adductionright"),resultSet.getString("internalrotationleft"),resultSet.getString("internalrotationright"),resultSet.getString("externalrotationleft"),resultSet.getString("externalrotationright"),resultSet.getString("fabereleft"),resultSet.getString("fabereright"),
+						resultSet.getString("nachlasleft"),
+						resultSet.getString("nachlasright"),
+						resultSet.getString("elysleft"),
+						resultSet.getString("elysright"),
+						resultSet.getString("yeomansleft"),
+						resultSet.getString("yeomansright"),
+						resultSet.getString("obersleft"),
+						resultSet.getString("obersright"),
+						resultSet.getString("hibbsleft"),
+						resultSet.getString("hibbsright"),
+						resultSet.getString("thomasleft"),
+						resultSet.getString("thomasright"),resultSet.getString("neurological")
+						,resultSet.getString("inguinalarealeft"),
+						resultSet.getString("inguinalarearight"),
+						resultSet.getString("antleft"),
+						resultSet.getString("antright"),resultSet.getString("kneeleft"),
+						resultSet.getString("kneeright"),resultSet.getString("medialleft"),resultSet.getString("medialright"),
+			    	resultSet.getString("latleft"),resultSet.getString("latright"),resultSet.getString("plantarleft"),resultSet.getString("plantarright"),resultSet.getString("iliopsoasfirstleft"),resultSet.getString("iliopsoasfirstright"),resultSet.getString("iliopsoas1left"),resultSet.getString("iliopsoas1right"),resultSet.getString("iliopsoas2left"),resultSet.getString("iliopsoas2right"),resultSet.getString("femleft"),resultSet.getString("femright"),resultSet.getString("medleft"),resultSet.getString("medright"),resultSet.getString("maxleft"),resultSet.getString("maxright"),resultSet.getString("patellarleft"),resultSet.getString("patellarright"),resultSet.getString("hsleft"),resultSet.getString("hsright"),
+			    	resultSet.getString("achillesleft"),resultSet.getString("achillesright"),resultSet.getString("walking"),resultSet.getString("standing"),resultSet.getString("stairs"),resultSet.getString("other"),resultSet.getString("otherdefict"),resultSet.getString("comments"),resultSet.getString("patientstatus"),resultSet.getString("diagnosis1"),resultSet.getString("diagnosis2"),resultSet.getString("diagnosis3"),resultSet.getString("diagnosis4"),resultSet.getString("diagnosis5"),resultSet.getString("times"),resultSet.getString("weeks"),resultSet.getString("spinaldecompression"),resultSet.getString("chiropractic"),resultSet.getString("physicaltherapy"),resultSet.getString("bracing"),resultSet.getString("modalities"),resultSet.getString("supplementation"),resultSet.getString("hep"),resultSet.getString("radiographic"),resultSet.getString("mri"),resultSet.getString("scan"),resultSet.getString("conduction"),resultSet.getString("emg") ,resultSet.getString("outsidereferral"),resultSet.getString("dc"),resultSet.getString("signature")));
+		 				
+			}
+		} catch (Exception e) {
+			/*logger.info(e.toString());*/
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		} finally {
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		}
+		return hipexam;
+
+	}
+	public int getnoofhipexam() {
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		int noofRecords = 0;
+		
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<HipExam> hipexam = new ArrayList<HipExam>();
+		try {
+
+			String cmd;
+			
+					cmd = "select count(*) as noofrecords from hipexam";
+					System.out.println("command"+cmd);			
+			resultSet = statement.executeQuery(cmd);
+			if (resultSet.next())
+				noofRecords = resultSet.getInt("noofrecords");
+
+		} catch (Exception e) {
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		} finally {
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		}
+		return noofRecords;
+
+	}
+
 
 	
 	

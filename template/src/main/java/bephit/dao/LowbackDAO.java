@@ -16,6 +16,7 @@ import javax.sql.DataSource;
 
 import bephit.model.ParticipantsDetails;
 import bephit.model.Lowback;
+import bephit.model.RadiologicReport;
 
 
 
@@ -208,6 +209,80 @@ public int deletelowback(String lowbackno){
 	   		else
 	   			return 0;
 	}
+public List<Lowback> getlimitedlowback(int page) {
+	Connection con = null;
+	Statement statement = null;
+	ResultSet resultSet = null;
+	
+	
+	try {
+		con = dataSource.getConnection();
+		statement = con.createStatement();
+	} catch (SQLException e1) {
+		e1.printStackTrace();
+	}
+	List<Lowback> lowback = new ArrayList<Lowback>();
+	try {
+
+		String cmd;
+		int offset = 5 * (page - 1);
+		int limit = 5;
+		
+			
+				cmd = "select * from tbl_lowback order by pname asc limit " + offset + ","+ limit+"" ;
+
+		resultSet = statement.executeQuery(cmd);
+		while (resultSet.next()) {
+			lowback.add( new Lowback(resultSet.getString("lowbackno"),resultSet.getString("pname"),resultSet.getString("date"),resultSet.getString("tolerate"),resultSet.getString("withoutpain"), resultSet.getString("withoutcausingpain"), resultSet.getString("sleepingwell"), resultSet.getString("canlift"),resultSet.getString("normal"),resultSet.getString("walkingdistance"), resultSet.getString("withoutextrapain"),resultSet.getString("cansit"), resultSet.getString("rapidlybetter"),resultSet.getString("score"),resultSet.getString("section"), resultSet.getString("adl"),resultSet.getString("adl2"), resultSet.getString("comment")));				
+		}
+	} catch (Exception e) {
+		/*logger.info(e.toString());*/
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	} finally {
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	}
+	return lowback;
+
+}
+public int getnooflowback() {
+	Connection con = null;
+	Statement statement = null;
+	ResultSet resultSet = null;
+	int noofRecords = 0;
+	
+	try {
+		con = dataSource.getConnection();
+		statement = con.createStatement();
+	} catch (SQLException e1) {
+		e1.printStackTrace();
+	}
+	List<Lowback> lowback = new ArrayList<Lowback>();
+	try {
+
+		String cmd;
+		
+				cmd = "select count(*) as noofrecords from tbl_lowback";
+				System.out.println("command"+cmd);			
+		resultSet = statement.executeQuery(cmd);
+		if (resultSet.next())
+			noofRecords = resultSet.getInt("noofrecords");
+
+	} catch (Exception e) {
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	} finally {
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	}
+	return noofRecords;
+
+}
 
 
 public void releaseConnection(Connection con){

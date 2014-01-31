@@ -12,6 +12,8 @@ import java.util.List;
 import javax.sql.DataSource;
 
 import bephit.model.Hardshipagreement;
+import bephit.model.HippaPrivacy;
+import bephit.model.RadiologicReport;
 import bephit.model.Staffchecklist;
  
 
@@ -253,7 +255,96 @@ public int deletestaffchecklist(String form_no){
 	   		else
 	   			return 0;
 	}
+public List<Staffchecklist> getlimitedstaffchecklist(int page) {
+	Connection con = null;
+	Statement statement = null;
+	ResultSet resultSet = null;
 	
+	
+	try {
+		con = dataSource.getConnection();
+		statement = con.createStatement();
+	} catch (SQLException e1) {
+		e1.printStackTrace();
+	}
+	List<Staffchecklist> Staffchecklist = new ArrayList<Staffchecklist>();
+	try {
+
+		String cmd;
+		int offset = 5 * (page - 1);
+		int limit = 5;
+		
+			
+				cmd = "select * from tbl_staffchecklist order by pat_name asc limit " + offset + ","+ limit+"" ;
+
+		resultSet = statement.executeQuery(cmd);
+		while (resultSet.next()) {
+			Staffchecklist.add(new Staffchecklist(resultSet.getString("form_no"),resultSet.getString("patinfo"),
+		    		resultSet.getString("screening"),
+		    		resultSet.getString("aob"),
+		    		resultSet.getString("history"),
+		    		resultSet.getString("xray_sheet"),
+		    		resultSet.getString("consent"),
+		    		resultSet.getString("report"),
+		    		resultSet.getString("pat_name"),
+		    		resultSet.getString("insure"),
+		    		resultSet.getString("damage_amount"),
+		    		resultSet.getString("fault_insure"),
+		    		resultSet.getString("med_pay"),
+		    		resultSet.getString("other_attorney"),
+		    		resultSet.getString("protect_received"),
+		    		resultSet.getString("bill"),
+		    		resultSet.getString("re_date")));				
+		}
+	} catch (Exception e) {
+		/*logger.info(e.toString());*/
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	} finally {
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	}
+	return Staffchecklist;
+
+}
+public int getnoofstaffchecklist() {
+	Connection con = null;
+	Statement statement = null;
+	ResultSet resultSet = null;
+	int noofRecords = 0;
+	
+	try {
+		con = dataSource.getConnection();
+		statement = con.createStatement();
+	} catch (SQLException e1) {
+		e1.printStackTrace();
+	}
+	List<Staffchecklist> Staffchecklist = new ArrayList<Staffchecklist>();
+	try {
+
+		String cmd;
+		
+				cmd = "select count(*) as noofrecords from tbl_staffchecklist";
+				System.out.println("command"+cmd);			
+		resultSet = statement.executeQuery(cmd);
+		if (resultSet.next())
+			noofRecords = resultSet.getInt("noofrecords");
+
+	} catch (Exception e) {
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	} finally {
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	}
+	return noofRecords;
+
+}
+
 
 
 public void releaseConnection(Connection con){

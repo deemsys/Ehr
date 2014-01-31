@@ -14,6 +14,7 @@ import javax.sql.DataSource;
 
 import bephit.model.Footquestionnarie;
 import bephit.model.Lowback;
+import bephit.model.RadiologicReport;
 public class FootquestionnarieDAO {
 	private DataSource dataSource;
 	 
@@ -204,6 +205,80 @@ public int deletefoot(String footquestionno){
 	   		else
 	   			return 0;
 	}
+public List<Footquestionnarie> getlimitedfootquestionnarie(int page) {
+	Connection con = null;
+	Statement statement = null;
+	ResultSet resultSet = null;
+	
+	
+	try {
+		con = dataSource.getConnection();
+		statement = con.createStatement();
+	} catch (SQLException e1) {
+		e1.printStackTrace();
+	}
+	List<Footquestionnarie> footquestionnarie = new ArrayList<Footquestionnarie>();
+	try {
+
+		String cmd;
+		int offset = 5 * (page - 1);
+		int limit = 5;
+		
+			
+				cmd = "select * from tbl_footquestionnarie order by footquestionno asc limit " + offset + ","+ limit+"" ;
+
+		resultSet = statement.executeQuery(cmd);
+		while (resultSet.next()) {
+			footquestionnarie.add( new Footquestionnarie(resultSet.getString("footquestionno"), resultSet.getString("stiff"), resultSet.getString("swollen"), resultSet.getString("unevensurface"), resultSet.getString("flatsurface"), resultSet.getString("updownstairs"), resultSet.getString("lyinginbed"), resultSet.getString("sternous"), resultSet.getString("moderateactivity"), resultSet.getString("lightactivity"), resultSet.getString("best"), resultSet.getString("trouble"), resultSet.getString("socks"), resultSet.getString("heavywork"), resultSet.getString("jogging"), resultSet.getString("walking"), resultSet.getString("stand"), resultSet.getString("fewminutes"), resultSet.getString("difficulty"), resultSet.getString("women"), resultSet.getString("dress"), resultSet.getString("shoes"), resultSet.getString("orthopedic"), resultSet.getString("allversion"), resultSet.getString("foot"), resultSet.getString("ankle"), resultSet.getString("date"), resultSet.getString("birthdate"), resultSet.getString("security")));				
+		}
+	} catch (Exception e) {
+		/*logger.info(e.toString());*/
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	} finally {
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	}
+	return footquestionnarie;
+
+}
+public int getnooffootquestionnarie() {
+	Connection con = null;
+	Statement statement = null;
+	ResultSet resultSet = null;
+	int noofRecords = 0;
+	
+	try {
+		con = dataSource.getConnection();
+		statement = con.createStatement();
+	} catch (SQLException e1) {
+		e1.printStackTrace();
+	}
+	List<RadiologicReport> radiologicReport = new ArrayList<RadiologicReport>();
+	try {
+
+		String cmd;
+		
+				cmd = "select count(*) as noofrecords from tbl_radiologicreport";
+				System.out.println("command"+cmd);			
+		resultSet = statement.executeQuery(cmd);
+		if (resultSet.next())
+			noofRecords = resultSet.getInt("noofrecords");
+
+	} catch (Exception e) {
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	} finally {
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	}
+	return noofRecords;
+
+}
 
 
 public void releaseConnection(Connection con){

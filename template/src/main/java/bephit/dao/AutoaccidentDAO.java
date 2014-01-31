@@ -13,6 +13,7 @@ import javax.sql.DataSource;
 
 import bephit.model.Autoaccident;
 import bephit.model.PatientDetails;
+import bephit.model.RadiologicReport;
 import bephit.model.SoapNotes;
  
 
@@ -392,7 +393,7 @@ public List<Autoaccident> getlimitedautoaccident(int page) {
 		int limit = 5;
 		
 			
-				cmd = "select * from tbl_autoaccident order by patient_number asc limit " + offset + ","+ limit+"" ;
+				cmd = "select * from tbl_autoaccident order by adjustersname asc limit " + offset + ","+ limit+"" ;
 
 		resultSet = statement.executeQuery(cmd);
 		while (resultSet.next()) {
@@ -473,7 +474,7 @@ public List<Autoaccident> getlimitedautoaccident(int page) {
 		    		resultSet.getString("hospital1"),
 		    		resultSet.getString("xray"),
 		    		resultSet.getString("wrong")));
-
+				
 		}
 	} catch (Exception e) {
 		/*logger.info(e.toString());*/

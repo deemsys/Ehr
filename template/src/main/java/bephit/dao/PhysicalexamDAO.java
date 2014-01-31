@@ -14,6 +14,7 @@ import javax.sql.DataSource;
 import bephit.model.Autoaccident;
 import bephit.model.Physicalexam;
 import bephit.model.RadiologicReport;
+import bephit.model.Treatform;
 
 public class PhysicalexamDAO {
 	private DataSource dataSource;
@@ -997,7 +998,329 @@ public int deletephysicalexam(String physical_id){
 	   		else
 	   			return 0;
 	}
+public List<Physicalexam> getlimitedphysicalexam(int page) {
+	Connection con = null;
+	Statement statement = null;
+	ResultSet resultSet = null;
 	
+	
+	try {
+		con = dataSource.getConnection();
+		statement = con.createStatement();
+	} catch (SQLException e1) {
+		e1.printStackTrace();
+	}
+	List<Physicalexam> Physicalexam = new ArrayList<Physicalexam>();
+	try {
+
+		String cmd;
+		int offset = 5 * (page - 1);
+		int limit = 5;
+		
+			
+				cmd = "select * from tbl_physicalexam order by name asc limit " + offset + ","+ limit+"" ;
+
+		resultSet = statement.executeQuery(cmd);
+		while (resultSet.next()) {
+			Physicalexam.add(new Physicalexam(resultSet.getString("physical_id"),
+					resultSet.getString("sign"),
+		    		resultSet.getString("name"),
+		    		resultSet.getString("id"),
+		    		resultSet.getString("date"),
+		    		resultSet.getString("age"),
+		    		resultSet.getString("sex"),
+		    		resultSet.getString("height"),
+		    		resultSet.getString("weight"),
+		    		resultSet.getString("temp"),
+		    		resultSet.getString("bp"),
+		    		resultSet.getString("pulse"),
+		    		resultSet.getString("appearance"),
+		    		resultSet.getString("weight1"),
+		    		resultSet.getString("gait"),
+		    		resultSet.getString("head"),
+		    		resultSet.getString("path"),
+		    		resultSet.getString("posture"),
+		    		resultSet.getString("romber"),
+		    		resultSet.getString("exam"),
+		    		resultSet.getString("abnormal"),
+		    		resultSet.getString("headtiltright"),
+		    		resultSet.getString("headtiltleft"),
+		    		resultSet.getString("headtiltnormal"),
+		    		resultSet.getString("rotationright"),
+		    		resultSet.getString("rotationleft"),
+		    		resultSet.getString("rotationnormal"),
+		    		resultSet.getString("tmjright"),
+		    		resultSet.getString("tmjleft"),
+		    		resultSet.getString("tmjnormal"),
+		    		resultSet.getString("highright"),
+		    		resultSet.getString("highleft"),
+		    		resultSet.getString("highnormal"),
+		    		resultSet.getString("lordhyper"),
+		    		resultSet.getString("lordhypo"),
+		    		resultSet.getString("lordnormal"),
+		    		resultSet.getString("lymphedema"),
+		    		resultSet.getString("lymphnormal"),
+		    		resultSet.getString("paraspain"),
+		    		resultSet.getString("parasspasm"),
+		    		resultSet.getString("parasedema"),
+		    		resultSet.getString("parastriggerpoint"),
+		    		resultSet.getString("trapeziusrl"),
+		    		resultSet.getString("trapeziustono"),
+		    		resultSet.getString("trapeziusnormal"),
+		    		resultSet.getString("vertebraefix"),
+		    		resultSet.getString("vertebraenofix"),
+		    		resultSet.getString("flexnormal"),
+		    		resultSet.getString("flexpain"),
+		    		resultSet.getString("flexspasm"),
+		    		resultSet.getString("flexstiff"),
+		    		resultSet.getString("extnormal"),
+		    		resultSet.getString("extpain"),
+		    		resultSet.getString("extspasm"),
+		    		resultSet.getString("extstiff"),
+		    		resultSet.getString("rlfnormal"),
+		    		resultSet.getString("rlfpain"),
+		    		resultSet.getString("rlfspasm"),
+		    		resultSet.getString("rlfstiff"),
+		    		resultSet.getString("llfnormal"),
+		    		resultSet.getString("llfpain"),
+		    		resultSet.getString("llfspasm"),
+		    		resultSet.getString("llfstiff"),
+		    		resultSet.getString("rrnormal"),
+		    		resultSet.getString("rrpain"),
+		    		resultSet.getString("rrspasm"),
+		    		resultSet.getString("rrstiff"),
+		    		resultSet.getString("lrnormal"),
+		    		resultSet.getString("lrpain"),
+		    		resultSet.getString("lrspasm"),
+		    		resultSet.getString("lrstiff"),
+		    		resultSet.getString("c5"),
+		    		resultSet.getString("c5right"),
+		    		resultSet.getString("c5left"),
+		    		
+		    		resultSet.getString("c6"),
+		    		resultSet.getString("c6right"),
+		    		resultSet.getString("c6left"),
+		    		
+		    		resultSet.getString("c7"),
+		    		resultSet.getString("c7right"),
+		    		resultSet.getString("c7left"),
+		    	
+		    		resultSet.getString("c8"),
+		    		resultSet.getString("c8right"),
+		    		resultSet.getString("c8left"),		    		
+		    		resultSet.getString("t1"),
+		    		resultSet.getString("t1right"),
+		    		resultSet.getString("t1left"),
+		    		
+		    		resultSet.getString("other"),
+		    		resultSet.getString("otherright"),
+		    		resultSet.getString("otherleft"),
+		    		resultSet.getString("deltoidright"),
+		    		resultSet.getString("deltoidleft"),
+		    		resultSet.getString("wristright"),
+		    		resultSet.getString("wristleft"),
+		    		resultSet.getString("wristflexright"),
+		    		resultSet.getString("wristflexleft"),
+		    		resultSet.getString("fingerflexright"),
+		    		resultSet.getString("fingerflexleft"),
+		    		resultSet.getString("fingeraddright"),
+		    		resultSet.getString("fingeraddleft"),
+		    		resultSet.getString("wristextright"),
+		    		resultSet.getString("wristextleft"),
+		    		resultSet.getString("bicepright"),
+		    		resultSet.getString("bicepleft"),
+		    		resultSet.getString("bracioradright"),
+		    		resultSet.getString("bracioradleft"),
+		    		resultSet.getString("tricepright"),
+		    		resultSet.getString("tricepleft"),
+		    		resultSet.getString("highshoulderright"),
+		    		resultSet.getString("highshoulderleft"),
+		    		resultSet.getString("highshouldernormal"),
+		    		resultSet.getString("curvatureright"),
+		    		resultSet.getString("curvatureleft"),
+		    		resultSet.getString("curvaturenormal"),
+		    		resultSet.getString("wingingright"),
+		    		resultSet.getString("wingingleft"),
+		    		resultSet.getString("wingingnormal"),
+		    		resultSet.getString("ribhumpright"),
+		    		resultSet.getString("ribhumpleft"),
+		    		resultSet.getString("ribhumpnormal"),
+		    		resultSet.getString("chestmeasurein"),
+		    		resultSet.getString("chestmeasureex"),
+		    		resultSet.getString("kyphosishyper"),
+		    		resultSet.getString("kyphosishypo"),
+		    		resultSet.getString("kyphosisnormal"),
+		    		resultSet.getString("parapain"),
+		    		resultSet.getString("paraspasm"),
+		    		resultSet.getString("paraedema"),
+		    		resultSet.getString("paratriggerpoint"),
+		    		resultSet.getString("ribspost"),
+		    		resultSet.getString("ribsnor"),
+		    		resultSet.getString("vertefix"),
+		    		resultSet.getString("vertenofix"),
+		    		resultSet.getString("thoracicnormal"),
+		    		resultSet.getString("thoracicpain"),
+		    		resultSet.getString("thoracicspasm"),
+		    		resultSet.getString("thoracicstiff"),
+		    		resultSet.getString("thoextnormal"),
+		    		resultSet.getString("thoextpain"),
+		    		resultSet.getString("thoextspasm"),
+		    		resultSet.getString("thoextstiff"),
+		    		resultSet.getString("thorlfnormal"),
+		    		resultSet.getString("thorlfpain"),
+		    		resultSet.getString("thorlfspasm"),
+		    		resultSet.getString("thorlfstiff"),
+		    		resultSet.getString("thollfnormal"),
+		    		resultSet.getString("thollfpain"),
+		    		resultSet.getString("thollfspasm"),
+		    		resultSet.getString("thollfstiff"),
+		    		resultSet.getString("thorrnormal"),
+		    		resultSet.getString("thorrpain"),
+		    		resultSet.getString("thorrspasm"),
+		    		resultSet.getString("thorrstiff"),
+		    		resultSet.getString("tholrnormal"),
+		    		resultSet.getString("tholrpain"),
+		    		resultSet.getString("tholrspasm"),
+		    		resultSet.getString("tholrstiff"),
+		    		resultSet.getString("thot1"),
+		    		resultSet.getString("thot1right"),
+		    		resultSet.getString("thot1left"),
+		    		
+		    		resultSet.getString("thot4"),
+		    		resultSet.getString("thot4right"),
+		    		resultSet.getString("thot4left"),
+		    		resultSet.getString("thot10"),
+		    		resultSet.getString("thot10right"),
+		    		resultSet.getString("thot10left"),
+		    		
+		    		resultSet.getString("thoother"),
+		    		resultSet.getString("thootherright"),
+		    		resultSet.getString("thootherleft"),
+		    		resultSet.getString("myotomes"),
+		    		resultSet.getString("positiveruq"),
+		    		resultSet.getString("positiveluq"),
+		    		resultSet.getString("positiverlq"),
+		    		resultSet.getString("positivellq"),
+		    		resultSet.getString("highcrestright"),
+		    		resultSet.getString("highcrestleft"),
+		    		resultSet.getString("highcrestnormal"),
+		    		resultSet.getString("highpsisright"),
+		    		resultSet.getString("highpsisleft"),
+		    		resultSet.getString("highpsisnormal"),
+		    		resultSet.getString("curveright"),
+		    		resultSet.getString("curveleft"),
+		    		resultSet.getString("curvenormal"),
+		    		resultSet.getString("lordosishyper"),
+		    		resultSet.getString("lordosishypo"),
+		    		resultSet.getString("lordosisnormal"),
+		    		resultSet.getString("paraspinalpain"),
+		    		resultSet.getString("paraspinalspasm"),
+		    		resultSet.getString("paraspinaledema"),
+		    		resultSet.getString("paraspinaltp"),
+		    		resultSet.getString("quadrl"),
+		    		resultSet.getString("quadtono"),
+		    		resultSet.getString("quadnor"),
+		    		resultSet.getString("hamstringrl"),
+		    		resultSet.getString("hamstringtono"),
+		    		resultSet.getString("hamstringnor"),
+		    		resultSet.getString("verfix"),
+		    		resultSet.getString("vernofix"),
+		    		resultSet.getString("abdomentender"),
+		    		resultSet.getString("abdomenpulse"),
+		    		resultSet.getString("abdomenascites"),
+		    		resultSet.getString("lumflexnormal"),
+		    		resultSet.getString("lumflexpain"),
+		    		resultSet.getString("lumflexspasm"),
+		    		resultSet.getString("lumflexstiff"),
+		    		resultSet.getString("lumextnormal"),
+		    		resultSet.getString("lumextpain"),
+		    		resultSet.getString("lumextspasm"),
+		    		resultSet.getString("lumextstiff"),
+		    		resultSet.getString("lumrlfnormal"),
+		    		resultSet.getString("lumrlfpain"),
+		    		resultSet.getString("lumrlfspasm"),
+		    		resultSet.getString("lumrlfstiff"),
+		    		resultSet.getString("lumllfnormal"),
+		    		resultSet.getString("lumllfpain"),
+		    		resultSet.getString("lumllfspasm"),
+		    		resultSet.getString("lumllfstiff"),
+		    		resultSet.getString("lumrrnormal"),
+		    		resultSet.getString("lumrrpain"),
+		    		resultSet.getString("lumrrspasm"),
+		    		resultSet.getString("lumrrstiff"),
+		    		resultSet.getString("lumlrnormal"),
+		    		resultSet.getString("lumlrpain"),
+		    		resultSet.getString("lumlrspasm"),
+		    		resultSet.getString("lumlrstiff"),
+		    		resultSet.getString("hipflexright"),
+		    		resultSet.getString("hipflexleft"),
+		    		resultSet.getString("legextright"),
+		    		resultSet.getString("legextleft"),
+		    		resultSet.getString("dorsiflexright"),
+		    		resultSet.getString("dorsiflexleft"),
+		    		resultSet.getString("digitflexright"),
+		    		resultSet.getString("digitflexleft"),
+		    		resultSet.getString("heelright"),
+		    		resultSet.getString("heelleft"),
+		    		resultSet.getString("toeright"),
+		    		resultSet.getString("toeleft"),
+		    		resultSet.getString("patellarright"),
+		    		resultSet.getString("patellarleft"),
+		    		resultSet.getString("achillesright"),
+		    		resultSet.getString("achillesleft"),
+		    		resultSet.getString("babinskiright"),
+		    		resultSet.getString("babinskileft")));
+
+		}
+	} catch (Exception e) {
+		/*logger.info(e.toString());*/
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	} finally {
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	}
+	return Physicalexam;
+
+}
+public int getnoofphysicalexam() {
+	Connection con = null;
+	Statement statement = null;
+	ResultSet resultSet = null;
+	int noofRecords = 0;
+	
+	try {
+		con = dataSource.getConnection();
+		statement = con.createStatement();
+	} catch (SQLException e1) {
+		e1.printStackTrace();
+	}
+	List<Physicalexam> Physicalexam = new ArrayList<Physicalexam>();
+	try {
+
+		String cmd;
+		
+				cmd = "select count(*) as noofrecords from tbl_physicalexam";
+				System.out.println("command"+cmd);			
+		resultSet = statement.executeQuery(cmd);
+		if (resultSet.next())
+			noofRecords = resultSet.getInt("noofrecords");
+
+	} catch (Exception e) {
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	} finally {
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	}
+	return noofRecords;
+
+}
+
 
 public void releaseConnection(Connection con){
 	try{if(con != null)

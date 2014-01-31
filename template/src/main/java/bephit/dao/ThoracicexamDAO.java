@@ -12,6 +12,7 @@ import java.util.List;
 import javax.sql.DataSource;
 
 
+import bephit.model.Kneeexam;
 import bephit.model.Thoracicexam;
 import bephit.model.SoapNotes;
  
@@ -208,7 +209,80 @@ public int deleteThoracicexam(String thoracicexamid){
 	   		else
 	   			return 0;
 	}
+public List<Thoracicexam> getlimitedthoracicexam(int page) {
+	Connection con = null;
+	Statement statement = null;
+	ResultSet resultSet = null;
+	
+	
+	try {
+		con = dataSource.getConnection();
+		statement = con.createStatement();
+	} catch (SQLException e1) {
+		e1.printStackTrace();
+	}
+	List<Thoracicexam> thoracicexam = new ArrayList<Thoracicexam>();
+	try {
 
+		String cmd;
+		int offset = 5 * (page - 1);
+		int limit = 5;
+		
+			
+				cmd = "select * from tbl_thoracicexam order by pname asc limit " + offset + ","+ limit+"" ;
+
+		resultSet = statement.executeQuery(cmd);
+		while (resultSet.next()) {
+			thoracicexam.add( new Thoracicexam(resultSet.getString("thoracicexamid"),resultSet.getString("pname"),resultSet.getString("date"),resultSet.getString("muscle"),resultSet.getString("swelling"), resultSet.getString("acromion"),resultSet.getString("inferior"),resultSet.getString("iliac"),resultSet.getString("ribhumping"),resultSet.getString("allsoft"),resultSet.getString("rectus"),resultSet.getString("obliques"),resultSet.getString("levator"),resultSet.getString("serratus"),resultSet.getString("pectoralis"),resultSet.getString("trapezius"),resultSet.getString("rhomboids"), resultSet.getString("pectoralisminor"), resultSet.getString("paraspinals"), resultSet.getString("othernotes"), resultSet.getString("functionalrangeofmotion"), resultSet.getString("subluxation"), resultSet.getString("orthopedic"), resultSet.getString("flexion"),resultSet.getString("t12"), resultSet.getString("t23"), resultSet.getString("adamsignl"), resultSet.getString("adamsignr"), resultSet.getString("extension"), resultSet.getString("t34"), resultSet.getString("t45"), resultSet.getString("schepelmanl"),resultSet.getString("schepelmanr"), resultSet.getString("lflexion"),resultSet.getString("rflexion"), resultSet.getString("t56"),resultSet.getString("t67"),resultSet.getString("valsalval"), resultSet.getString("valsalvar"), resultSet.getString("lrotation"),resultSet.getString("rrotation"),resultSet.getString("t78"),resultSet.getString("t89"), resultSet.getString("dejerinel"), resultSet.getString("dejeriner"),resultSet.getString("t910"),resultSet.getString("t1011"), resultSet.getString("sotohalll"),resultSet.getString("sotohallr"),resultSet.getString("t1112"),resultSet.getString("t12l1"), resultSet.getString("sternall"),resultSet.getString("sternalr"),  resultSet.getString("beevorl"),resultSet.getString("beevorr"),resultSet.getString("neurologicaltest"),resultSet.getString("notes"),resultSet.getString("intercostal"),resultSet.getString("sitting"),resultSet.getString("standing"),resultSet.getString("driving"),resultSet.getString("otherfunctional"),resultSet.getString("break_text3"), resultSet.getString("assessment"), resultSet.getString("patientstatus"),resultSet.getString("diagnosis1"),resultSet.getString("diagnosis2"),resultSet.getString("diagnosis3"),resultSet.getString("diagnosis4"),resultSet.getString("diagnosis5"),resultSet.getString("diagnosis6"),resultSet.getString("times"),resultSet.getString("week"),resultSet.getString("spinal"),resultSet.getString("chiropractic"),resultSet.getString("physical"),resultSet.getString("orthotics"),resultSet.getString("modalities"),resultSet.getString("supplementation"),resultSet.getString("hep"),resultSet.getString("radiographic"),resultSet.getString("mri"),resultSet.getString("ctscan"),resultSet.getString("nerve"),resultSet.getString("emg"),resultSet.getString("outside"),resultSet.getString("dc"),resultSet.getString("otheraddress"),resultSet.getString("break_text4"),resultSet.getString("sign")));				
+		}
+	} catch (Exception e) {
+		/*logger.info(e.toString());*/
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	} finally {
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	}
+	return thoracicexam;
+
+}
+public int getnoofthoracicexam() {
+	Connection con = null;
+	Statement statement = null;
+	ResultSet resultSet = null;
+	int noofRecords = 0;
+	
+	try {
+		con = dataSource.getConnection();
+		statement = con.createStatement();
+	} catch (SQLException e1) {
+		e1.printStackTrace();
+	}
+	List<Thoracicexam> thoracicexam = new ArrayList<Thoracicexam>();
+	try {
+
+		String cmd;
+		
+				cmd = "select count(*) as noofrecords from tbl_thoracicexam";
+				System.out.println("command"+cmd);			
+		resultSet = statement.executeQuery(cmd);
+		if (resultSet.next())
+			noofRecords = resultSet.getInt("noofrecords");
+
+	} catch (Exception e) {
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	} finally {
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	}
+	return noofRecords;
+
+}
 
 public void releaseConnection(Connection con){
     	try{if(con != null)

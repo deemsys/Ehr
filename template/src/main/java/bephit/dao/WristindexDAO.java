@@ -250,6 +250,97 @@ public class WristindexDAO
 			   			return 0;
 			}
 			
+		public List<Wristindex> getlimitedwristindex(int page) {
+			Connection con = null;
+			Statement statement = null;
+			ResultSet resultSet = null;
+			
+			
+			try {
+				con = dataSource.getConnection();
+				statement = con.createStatement();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+			List<Wristindex> wristindex = new ArrayList<Wristindex>();
+			try {
+
+				String cmd;
+				int offset = 5 * (page - 1);
+				int limit = 5;
+				
+					
+						cmd = "select * from wristindex order by name asc limit " + offset + ","+ limit+"" ;
+		
+				resultSet = statement.executeQuery(cmd);
+				while (resultSet.next()) {
+					wristindex.add(new Wristindex(
+							resultSet.getString("wristindexno"),
+							resultSet.getString("name"),
+							resultSet.getString("date"),
+							resultSet.getString("painintensity"),
+							resultSet.getString("work"),
+							resultSet.getString("numbness"),
+							resultSet.getString("driving"),
+							resultSet.getString("personal"),
+							resultSet.getString("sleeping"),
+							resultSet.getString("strength"),
+							resultSet.getString("house"),
+							resultSet.getString("writing"),
+							resultSet.getString("recreation"),
+							resultSet.getString("painscale"),
+							resultSet.getString("score"),
+							resultSet.getString("total")
+				    	    ));
+				}
+			} catch (Exception e) {
+				/*logger.info(e.toString());*/
+				releaseResultSet(resultSet);
+				releaseStatement(statement);
+				releaseConnection(con);
+			} finally {
+				releaseResultSet(resultSet);
+				releaseStatement(statement);
+				releaseConnection(con);
+			}
+			return wristindex;
+
+		}
+		public int getnoofwristindex() {
+			Connection con = null;
+			Statement statement = null;
+			ResultSet resultSet = null;
+			int noofRecords = 0;
+			
+			try {
+				con = dataSource.getConnection();
+				statement = con.createStatement();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+			List<Wristindex> wristindex = new ArrayList<Wristindex>();
+			try {
+
+				String cmd;
+				
+						cmd = "select count(*) as noofrecords from wristindex";
+						System.out.println("command"+cmd);			
+				resultSet = statement.executeQuery(cmd);
+				if (resultSet.next())
+					noofRecords = resultSet.getInt("noofrecords");
+
+			} catch (Exception e) {
+				releaseResultSet(resultSet);
+				releaseStatement(statement);
+				releaseConnection(con);
+			} finally {
+				releaseResultSet(resultSet);
+				releaseStatement(statement);
+				releaseConnection(con);
+			}
+			return noofRecords;
+
+		}
 
 
 		

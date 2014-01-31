@@ -490,7 +490,7 @@ public class PatientDAO {
 		   		else
 		   			return 0;
 		}
-	public List<PatientDetails> getlimitedpatientdetail(int page) {
+	public List<PatientDetails> getlimitedpatientdetails(int page) {
 		Connection con = null;
 		Statement statement = null;
 		ResultSet resultSet = null;
@@ -510,7 +510,7 @@ public class PatientDAO {
 			int limit = 5;
 			
 				
-					cmd = "select * from patient_details order by Name asc limit " + offset + ","+ limit+"" ;
+					cmd = "select * from patient_details order by name asc limit " + offset + ","+ limit+"" ;
 	
 			resultSet = statement.executeQuery(cmd);
 			while (resultSet.next()) {
@@ -620,7 +620,7 @@ public class PatientDAO {
 			    	    resultSet.getString("Dr"),
 			    	    resultSet.getString("Patient")
 			    	   ));
-
+		 				
 			}
 		} catch (Exception e) {
 			/*logger.info(e.toString());*/
@@ -670,6 +670,7 @@ public class PatientDAO {
 		return noofRecords;
 
 	}
+
 
 	 
 	public void releaseConnection(Connection con){

@@ -292,38 +292,39 @@ public List<Workaccident> getlimitedworkaccident(int page) {
 
 		resultSet = statement.executeQuery(cmd);
 		while (resultSet.next()) {
-			Workaccident.add(new Workaccident(resultSet.getString("patient_no"),resultSet.getString("job_classification"),
-					resultSet.getString("doyou_pos"),
-					resultSet.getString("doyou"),
-					resultSet.getString("pick"),
-					resultSet.getString("carry"),
-					resultSet.getString("injury_occur"),
-					resultSet.getString("saw_accident"),
-					resultSet.getString("title"),
-					resultSet.getString("present_job"),
-					resultSet.getString("time_loss"),
-					resultSet.getString("absenteeism"),
-					resultSet.getString("type_of_light"),
-					resultSet.getString("lighting"),
-					resultSet.getString("pick_lift"),
-					resultSet.getString("how_much"),
-					resultSet.getString("how_often"),
-					resultSet.getString("where_to_where"),
-					resultSet.getString("lift_from"),
-					resultSet.getString("liftin_orout"),
-					resultSet.getString("workpos"),
-					resultSet.getString("push_pull"),
-					resultSet.getString("jobpp"),
-					resultSet.getString("work_area"),
-					resultSet.getString("warea"),
-					resultSet.getString("levers"),
-					resultSet.getString("overhead"),
-					resultSet.getString("no_of_employees"),
-					resultSet.getString("like_job"),
-					resultSet.getString("pre_employment"),
-					resultSet.getString("return_job"),
-					resultSet.getString("changes_in_job")));
-	
+			
+	               Workaccident.add(new Workaccident(resultSet.getString("patient_no"),resultSet.getString("job_classification"),
+							resultSet.getString("doyou_pos"),
+							resultSet.getString("doyou"),
+							resultSet.getString("pick"),
+							resultSet.getString("carry"),
+							resultSet.getString("injury_occur"),
+							resultSet.getString("saw_accident"),
+							resultSet.getString("title"),
+							resultSet.getString("present_job"),
+							resultSet.getString("time_loss"),
+							resultSet.getString("absenteeism"),
+							resultSet.getString("type_of_light"),
+							resultSet.getString("lighting"),
+							resultSet.getString("pick_lift"),
+							resultSet.getString("how_much"),
+							resultSet.getString("how_often"),
+							resultSet.getString("where_to_where"),
+							resultSet.getString("lift_from"),
+							resultSet.getString("liftin_orout"),
+							resultSet.getString("workpos"),
+							resultSet.getString("push_pull"),
+							resultSet.getString("jobpp"),
+							resultSet.getString("work_area"),
+							resultSet.getString("warea"),
+							resultSet.getString("levers"),
+							resultSet.getString("overhead"),
+							resultSet.getString("no_of_employees"),
+							resultSet.getString("like_job"),
+							resultSet.getString("pre_employment"),
+							resultSet.getString("return_job"),
+							resultSet.getString("changes_in_job")));
+
 		}
 	} catch (Exception e) {
 		/*logger.info(e.toString());*/
@@ -373,6 +374,7 @@ public int getnoofworkaccident() {
 	return noofRecords;
 
 }
+
 
 public void releaseConnection(Connection con){
 	try{if(con != null)

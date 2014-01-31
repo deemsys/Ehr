@@ -13,6 +13,7 @@ import javax.sql.DataSource;
 
 
 import bephit.model.Kneeexam;
+import bephit.model.RadiologicReport;
 import bephit.model.SoapNotes;
  
 
@@ -208,6 +209,80 @@ public int deletekneeexam(String kneeexamid){
 	   		else
 	   			return 0;
 	}
+public List<Kneeexam> getlimitedkneeexam(int page) {
+	Connection con = null;
+	Statement statement = null;
+	ResultSet resultSet = null;
+	
+	
+	try {
+		con = dataSource.getConnection();
+		statement = con.createStatement();
+	} catch (SQLException e1) {
+		e1.printStackTrace();
+	}
+	List<Kneeexam> kneeexam = new ArrayList<Kneeexam>();
+	try {
+
+		String cmd;
+		int offset = 5 * (page - 1);
+		int limit = 5;
+		
+			
+				cmd = "select * from tbl_kneeexam order by pname asc limit " + offset + ","+ limit+"" ;
+
+		resultSet = statement.executeQuery(cmd);
+		while (resultSet.next()) {
+			kneeexam.add( new Kneeexam(resultSet.getString("kneeexamid"),resultSet.getString("pname"),resultSet.getString("date"),resultSet.getString("gait"),resultSet.getString("pelvicunleveling"), resultSet.getString("ao"),resultSet.getString("allsoft"),resultSet.getString("leglengthl"),resultSet.getString("leglengthtextl"),resultSet.getString("leglengthr"),resultSet.getString("leglengthtextr"),resultSet.getString("vmo"),resultSet.getString("quads"),resultSet.getString("semimemb"),resultSet.getString("semitend"), resultSet.getString("gastroc"), resultSet.getString("soleus"), resultSet.getString("iliotibband"), resultSet.getString("bicepsfem"), resultSet.getString("functionalrangeofmotion"), resultSet.getString("orthopedic"), resultSet.getString("flexion"),resultSet.getString("acll"), resultSet.getString("aclr"), resultSet.getString("extension"), resultSet.getString("pcll"), resultSet.getString("pclr"), resultSet.getString("internalrotationl"),resultSet.getString("internalrotationr"), resultSet.getString("lcll"), resultSet.getString("lclr"),resultSet.getString("externalrotationl"),resultSet.getString("externalrotationr"), resultSet.getString("mcll"),resultSet.getString("mclr"), resultSet.getString("circumferential"),resultSet.getString("meniscusl"),resultSet.getString("meniscusr"), resultSet.getString("apleysl"), resultSet.getString("apleysr"),resultSet.getString("cmabovel"),resultSet.getString("suprapatellarl"),resultSet.getString("infrapatellarl"), resultSet.getString("belowl"), resultSet.getString("distractionl"),resultSet.getString("distractionr"),resultSet.getString("cmabover"), resultSet.getString("suprapatellarr"),resultSet.getString("infrapatellarr"),resultSet.getString("belowr"),resultSet.getString("cmpl"), resultSet.getString("cmpr"),resultSet.getString("patdll"),  resultSet.getString("patdlr"),resultSet.getString("neurologicaltest"),resultSet.getString("l1l"),resultSet.getString("l1r"),resultSet.getString("l15l"), resultSet.getString("l15r"),resultSet.getString("l2l"),resultSet.getString("l2r"),resultSet.getString("l25l"),resultSet.getString("l25r"),resultSet.getString("l3l"),resultSet.getString("l3r"), resultSet.getString("l35l"), resultSet.getString("l35r"),resultSet.getString("l4l"),resultSet.getString("l4r"),resultSet.getString("l45l"),resultSet.getString("l45r"),resultSet.getString("l4l3"),resultSet.getString("l4r3"),resultSet.getString("l5l"),resultSet.getString("l5r"),resultSet.getString("l55l"),resultSet.getString("l55r"),resultSet.getString("l5l3"),resultSet.getString("l5r3"),resultSet.getString("sl"),resultSet.getString("sr"),resultSet.getString("s5l"), resultSet.getString("s5r"),resultSet.getString("sil"), resultSet.getString("sir"),resultSet.getString("walking"),resultSet.getString("standing"),resultSet.getString("stairs"), resultSet.getString("otherfunctional"),resultSet.getString("break_text3"), resultSet.getString("assessment"), resultSet.getString("patientstatus"),resultSet.getString("diagnosis1"),resultSet.getString("diagnosis2"),resultSet.getString("diagnosis3"),resultSet.getString("diagnosis4"),resultSet.getString("diagnosis5"),resultSet.getString("diagnosis6"),resultSet.getString("times"),resultSet.getString("week"),resultSet.getString("spinal"),resultSet.getString("chiropractic"),resultSet.getString("physical"),resultSet.getString("orthotics"),resultSet.getString("modalities"),resultSet.getString("supplementation"),resultSet.getString("hep"),resultSet.getString("radiographic"),resultSet.getString("mri"),resultSet.getString("ctscan"),resultSet.getString("nerve"),resultSet.getString("emg"),resultSet.getString("outside"),resultSet.getString("dc"),resultSet.getString("otheraddress"),resultSet.getString("break_text4"),resultSet.getString("sign")));				
+		}
+	} catch (Exception e) {
+		/*logger.info(e.toString());*/
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	} finally {
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	}
+	return kneeexam;
+
+}
+public int getnoofkneeexam() {
+	Connection con = null;
+	Statement statement = null;
+	ResultSet resultSet = null;
+	int noofRecords = 0;
+	
+	try {
+		con = dataSource.getConnection();
+		statement = con.createStatement();
+	} catch (SQLException e1) {
+		e1.printStackTrace();
+	}
+	List<Kneeexam> kneeexam = new ArrayList<Kneeexam>();
+	try {
+
+		String cmd;
+		
+				cmd = "select count(*) as noofrecords from tbl_kneeexam";
+				System.out.println("command"+cmd);			
+		resultSet = statement.executeQuery(cmd);
+		if (resultSet.next())
+			noofRecords = resultSet.getInt("noofrecords");
+
+	} catch (Exception e) {
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	} finally {
+		releaseResultSet(resultSet);
+		releaseStatement(statement);
+		releaseConnection(con);
+	}
+	return noofRecords;
+
+}
 
 
 public void releaseConnection(Connection con){

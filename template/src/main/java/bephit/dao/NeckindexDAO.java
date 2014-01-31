@@ -246,6 +246,96 @@ public class NeckindexDAO
 			   			return 0;
 			}
 			
+		public List<Neckindex> getlimitedneckindex(int page) {
+			Connection con = null;
+			Statement statement = null;
+			ResultSet resultSet = null;
+			
+			
+			try {
+				con = dataSource.getConnection();
+				statement = con.createStatement();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+			List<Neckindex> neckindex = new ArrayList<Neckindex>();
+			try {
+
+				String cmd;
+				int offset = 5 * (page - 1);
+				int limit = 5;
+				
+					
+						cmd = "select * from neckindex order by name asc limit " + offset + ","+ limit+"" ;
+		
+				resultSet = statement.executeQuery(cmd);
+				while (resultSet.next()) {
+					neckindex.add(new Neckindex(
+							resultSet.getString("neckindexno"),	
+							resultSet.getString("name"),							
+							resultSet.getString("date"),													
+							resultSet.getString("painintensity"),
+							resultSet.getString("work"),
+							resultSet.getString("personal"),
+							resultSet.getString("driving"),
+							resultSet.getString("lifting"),
+							resultSet.getString("sleeping"),
+							resultSet.getString("reading"),
+							resultSet.getString("recreation"),
+							resultSet.getString("headache"),
+							resultSet.getString("concentration"),							
+							resultSet.getString("score"),
+							resultSet.getString("status")
+				    	    ));
+				}
+			} catch (Exception e) {
+				/*logger.info(e.toString());*/
+				releaseResultSet(resultSet);
+				releaseStatement(statement);
+				releaseConnection(con);
+			} finally {
+				releaseResultSet(resultSet);
+				releaseStatement(statement);
+				releaseConnection(con);
+			}
+			return neckindex;
+
+		}
+		public int getnoofneckindex() {
+			Connection con = null;
+			Statement statement = null;
+			ResultSet resultSet = null;
+			int noofRecords = 0;
+			
+			try {
+				con = dataSource.getConnection();
+				statement = con.createStatement();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+			List<Neckindex> neckindex = new ArrayList<Neckindex>();
+			try {
+
+				String cmd;
+				
+						cmd = "select count(*) as noofrecords from neckindex";
+						System.out.println("command"+cmd);			
+				resultSet = statement.executeQuery(cmd);
+				if (resultSet.next())
+					noofRecords = resultSet.getInt("noofrecords");
+
+			} catch (Exception e) {
+				releaseResultSet(resultSet);
+				releaseStatement(statement);
+				releaseConnection(con);
+			} finally {
+				releaseResultSet(resultSet);
+				releaseStatement(statement);
+				releaseConnection(con);
+			}
+			return noofRecords;
+
+		}
 
 
 		

@@ -11,7 +11,9 @@ import java.util.Date;
 import java.util.List;
 import javax.sql.DataSource;
 
+import bephit.model.Assignment;
 import bephit.model.HippaPrivacy;
+import bephit.model.RadiologicReport;
 import bephit.model.SoapNotes;
 
 public class HippaDAO {
@@ -218,7 +220,86 @@ public class HippaDAO {
 		   		else
 		   			return 0;
 		}
+	public List<HippaPrivacy> getlimitedhippaprivacy(int page) {
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
 		
+		
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<HippaPrivacy> privacy = new ArrayList<HippaPrivacy>();
+		try {
+
+			String cmd;
+			int offset = 5 * (page - 1);
+			int limit = 5;
+			
+				
+					cmd = "select * from hippa_privacy order by printpname asc limit " + offset + ","+ limit+"" ;
+	
+			resultSet = statement.executeQuery(cmd);
+			while (resultSet.next()) {
+				privacy.add( new HippaPrivacy(resultSet.getString("hippa_no"),resultSet.getString("date"),
+						resultSet.getString("printpname"),
+						resultSet.getString("printpdate"),
+						resultSet.getString("legalguardian"),
+			    		resultSet.getString("staffwitness")));
+ 				
+			}
+		} catch (Exception e) {
+			/*logger.info(e.toString());*/
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		} finally {
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		}
+		return privacy;
+
+	}
+	public int getnoofhippaprivacy() {
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		int noofRecords = 0;
+		
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<HippaPrivacy> privacy = new ArrayList<HippaPrivacy>();
+		try {
+
+			String cmd;
+			
+					cmd = "select count(*) as noofrecords from hippa_privacy";
+					System.out.println("command"+cmd);			
+			resultSet = statement.executeQuery(cmd);
+			if (resultSet.next())
+				noofRecords = resultSet.getInt("noofrecords");
+
+		} catch (Exception e) {
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		} finally {
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		}
+		return noofRecords;
+
+	}
+
 
 
 	

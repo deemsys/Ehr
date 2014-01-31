@@ -3,6 +3,7 @@ package bephit.controllers;
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.net.MalformedURLException;
+import java.security.Principal;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.*;
@@ -62,8 +63,53 @@ public class SymptomController {
 		symptomform.setSymptomdetails(symptomdao.getsymptomDetails());
 		model.addAttribute("symptomform", symptomform);
 		model.addAttribute("menu", "symptom");
+		model.addAttribute("noofrows",symptomform.getSymptomdetails().size());       
+	    symptomform.setSymptomdetails(symptomdao.getlimitedsymptom(1));
+	    model.addAttribute("noofpages",(int) Math.ceil(symptomdao.getnoofsymptom() * 1.0 / 5));	 
+	        model.addAttribute("button","viewall");
+	        model.addAttribute("success","false");
+	        model.addAttribute("currentpage",1);
+		
+		
 		return "viewsymptom";
+
+	}	
+
+	@RequestMapping(value="/viewsymptom_page", method=RequestMethod.GET)
+	public String viewsymptom_page(HttpServletRequest request,@RequestParam("page") int page,ModelMap model) {	
+		
+		SymptomForm symptomform = new SymptomForm();
+		symptomform.setSymptomdetails(symptomdao.getlimitedsymptom(page));
+		
+	   	model.addAttribute("noofpages",(int) Math.ceil(symptomdao.getnoofsymptom() * 1.0 / 5));
+	   	model.addAttribute("symptomform", symptomform);	
+	   	model.addAttribute("noofrows",symptomform.getSymptomdetails().size());   
+	    model.addAttribute("currentpage",page);
+	    model.addAttribute("menu","initial");
+	    model.addAttribute("button","viewall");
+	    return "viewsymptom";
+		
+	}	
+
+	@RequestMapping(value={"/", "/viewallsymptom"}, method = RequestMethod.GET)
+	public String viewallsymptom(HttpServletRequest request,ModelMap model, Principal principal ) {
+		
+	SymptomForm symptomform = new SymptomForm();
+	    symptomform.setSymptomdetails(symptomdao.getsymptomDetails());
+		
+	    model.addAttribute("symptomform", symptomform);	
+		model.addAttribute("noofrows",symptomform.getSymptomdetails().size());    
+	   
+	    model.addAttribute("menu","initial");
+	    model.addAttribute("button","close");
+	      
+	        model.addAttribute("menu","initial");
+	        model.addAttribute("success","false");
+	        model.addAttribute("button","close");
+	        return "viewsymptom";
+
 	}
+
 
 	@RequestMapping(value = "/viewsymptomlist", method = RequestMethod.GET)
 	public String viewsymptom(
@@ -114,8 +160,51 @@ public class SymptomController {
 		manualform.setManualtherapy(therapydao.getmanualtherapyDetails());
 		model.addAttribute("manualform", manualform);
 		model.addAttribute("menu", "therapy");
-
+		model.addAttribute("noofrows",manualform.getManualtherapy().size());       
+	    manualform.setManualtherapy(therapydao.getlimitedmanualtherapy(1));
+	    model.addAttribute("noofpages",(int) Math.ceil(therapydao.getnoofmanualtherapy() * 1.0 / 5));	 
+	        model.addAttribute("button","viewall");
+	        model.addAttribute("success","false");
+	        model.addAttribute("currentpage",1);
+		
+		
 		return "viewmanualtherapy";
+
+	}	
+
+	@RequestMapping(value="/viewmanualtherapy_page", method=RequestMethod.GET)
+	public String viewmanualtherapy_page(HttpServletRequest request,@RequestParam("page") int page,ModelMap model) {	
+		
+		ManualTherapyForm manualform = new ManualTherapyForm();
+		manualform.setManualtherapy(therapydao.getlimitedmanualtherapy(page));
+		
+	   	model.addAttribute("noofpages",(int) Math.ceil(therapydao.getnoofmanualtherapy() * 1.0 / 5));
+	   	model.addAttribute("manualform", manualform);	
+	   	model.addAttribute("noofrows",manualform.getManualtherapy().size());   
+	    model.addAttribute("currentpage",page);
+	    model.addAttribute("menu","initial");
+	    model.addAttribute("button","viewall");
+	    return "viewmanualtherapy";
+		
+	}	
+
+	@RequestMapping(value={"/", "/viewallmanualtherapy"}, method = RequestMethod.GET)
+	public String viewallmanualtherapy(HttpServletRequest request,ModelMap model, Principal principal ) {
+		
+	ManualTherapyForm manualform = new ManualTherapyForm();
+	    manualform.setManualtherapy(therapydao.getmanualtherapyDetails());
+		
+	    model.addAttribute("manualform", manualform);	
+		model.addAttribute("noofrows",manualform.getManualtherapy().size());    
+	   
+	    model.addAttribute("menu","initial");
+	    model.addAttribute("button","close");
+	      
+	        model.addAttribute("menu","initial");
+	        model.addAttribute("success","false");
+	        model.addAttribute("button","close");
+	        return "viewmanualtherapy";
+
 	}
 
 	@RequestMapping(value = "/deletemanualtherapy", method = RequestMethod.GET)
@@ -233,7 +322,51 @@ public class SymptomController {
 				.gethipquestionnairedetails());
 		model.addAttribute("hipquestionnaireform", hipquestionnaireform);
 		model.addAttribute("menu", "hipknee");
+		model.addAttribute("noofrows",hipquestionnaireform.getHipquestionnairedetails().size());       
+	    hipquestionnaireform.setHipquestionnairedetails(hipquestionnairedao.getlimitedhipquestionnaire(1));
+	    model.addAttribute("noofpages",(int) Math.ceil(hipquestionnairedao.getnoofhipquestionnaire() * 1.0 / 5));	 
+	        model.addAttribute("button","viewall");
+	        model.addAttribute("success","false");
+	        model.addAttribute("currentpage",1);
+		
+		
 		return "viewhipquestionnaire";
+
+	}	
+
+	@RequestMapping(value="/viewhipquestionnaire_page", method=RequestMethod.GET)
+	public String viewhipquestionnaire_page(HttpServletRequest request,@RequestParam("page") int page,ModelMap model) {	
+		
+		HipquestionnaireForm hipquestionnaireform = new HipquestionnaireForm();
+		hipquestionnaireform.setHipquestionnairedetails(hipquestionnairedao.getlimitedhipquestionnaire(page));
+		
+	   	model.addAttribute("noofpages",(int) Math.ceil(hipquestionnairedao.getnoofhipquestionnaire() * 1.0 / 5));
+	   	model.addAttribute("hipquestionnaireform", hipquestionnaireform);	
+	   	model.addAttribute("noofrows",hipquestionnaireform.getHipquestionnairedetails().size());   
+	    model.addAttribute("currentpage",page);
+	    model.addAttribute("menu", "wristindex");
+	    model.addAttribute("button","viewall");
+	    return "viewhipquestionnaire";
+		
+	}	
+
+	@RequestMapping(value={"/", "/viewallhipquestionnaire"}, method = RequestMethod.GET)
+	public String viewalloswestryindex(HttpServletRequest request,ModelMap model, Principal principal ) {
+		
+	HipquestionnaireForm hipquestionnaireform = new HipquestionnaireForm();
+	    hipquestionnaireform.setHipquestionnairedetails(hipquestionnairedao.gethipquestionnairedetails());
+		
+	    model.addAttribute("hipquestionnaireform", hipquestionnaireform);	
+		model.addAttribute("noofrows",hipquestionnaireform.getHipquestionnairedetails().size());    
+	   
+		model.addAttribute("menu", "wristindex");
+	    model.addAttribute("button","close");
+	      
+	    model.addAttribute("menu", "wristindex");
+	        model.addAttribute("success","false");
+	        model.addAttribute("button","close");
+	        return "viewhipquestionnaire";
+
 	}
 
 	@RequestMapping(value = "/edithipquestionnaire", method = RequestMethod.GET)
@@ -298,8 +431,53 @@ public class SymptomController {
 		wristindexform.setWristindexdetails(wristdao.getwristindexDetails());
 		model.addAttribute("wristindexform", wristindexform);
 		model.addAttribute("menu", "wristindex");
+		model.addAttribute("noofrows",wristindexform.getWristindexdetails().size());       
+	    wristindexform.setWristindexdetails(wristdao.getlimitedwristindex(1));
+	    model.addAttribute("noofpages",(int) Math.ceil(wristdao.getnoofwristindex() * 1.0 / 5));	 
+	        model.addAttribute("button","viewall");
+	        model.addAttribute("success","false");
+	        model.addAttribute("currentpage",1);
+		
+		
 		return "viewwristindex";
+
+	}	
+
+	@RequestMapping(value="/viewwristindex_page", method=RequestMethod.GET)
+	public String viewwristindex_page(HttpServletRequest request,@RequestParam("page") int page,ModelMap model) {	
+		
+		WristindexForm wristindexform = new WristindexForm();
+		wristindexform.setWristindexdetails(wristdao.getlimitedwristindex(page));
+		
+	   	model.addAttribute("noofpages",(int) Math.ceil(wristdao.getnoofwristindex() * 1.0 / 5));
+	   	model.addAttribute("wristindexform", wristindexform);	
+	   	model.addAttribute("noofrows",wristindexform.getWristindexdetails().size());   
+	    model.addAttribute("currentpage",page);
+	    model.addAttribute("menu", "wristindex");
+	    model.addAttribute("button","viewall");
+	    return "viewwristindex";
+		
+	}	
+
+	@RequestMapping(value={"/", "/viewallwristindex"}, method = RequestMethod.GET)
+	public String viewallwristindex(HttpServletRequest request,ModelMap model, Principal principal ) {
+		
+	WristindexForm wristindexform = new WristindexForm();
+	    wristindexform.setWristindexdetails(wristdao.getwristindexDetails());
+		
+	    model.addAttribute("wristindexform", wristindexform);	
+		model.addAttribute("noofrows",wristindexform.getWristindexdetails().size());    
+	   
+		model.addAttribute("menu", "wristindex");
+	    model.addAttribute("button","close");
+	      
+	    model.addAttribute("menu", "wristindex");
+	        model.addAttribute("success","false");
+	        model.addAttribute("button","close");
+	        return "viewwristindex";
+
 	}
+
 
 	@RequestMapping(value = "/viewneckindex", method = RequestMethod.GET)
 	public String viewneckindex(ModelMap model) {
@@ -307,7 +485,51 @@ public class SymptomController {
 		neckindexform.setneckindexdetails(neckdao.getneckindexDetails());
 		model.addAttribute("neckindexform", neckindexform);
 		model.addAttribute("menu", "wristindex");
+	  	model.addAttribute("noofrows",neckindexform.getneckindexdetails().size());       
+	    neckindexform.setneckindexdetails(neckdao.getlimitedneckindex(1));
+	    model.addAttribute("noofpages",(int) Math.ceil(neckdao.getnoofneckindex() * 1.0 / 5));	 
+	        model.addAttribute("button","viewall");
+	        model.addAttribute("success","false");
+	        model.addAttribute("currentpage",1);
+		
+		
 		return "viewneckindex";
+
+	}	
+
+	@RequestMapping(value="/viewneckindex_page", method=RequestMethod.GET)
+	public String viewneckindex_page(HttpServletRequest request,@RequestParam("page") int page,ModelMap model) {	
+		
+		NeckindexForm neckindexform = new NeckindexForm();
+		neckindexform.setneckindexdetails(neckdao.getlimitedneckindex(page));
+		
+	   	model.addAttribute("noofpages",(int) Math.ceil(neckdao.getnoofneckindex() * 1.0 / 5));
+	   	model.addAttribute("neckindexform", neckindexform);	
+	   	model.addAttribute("noofrows",neckindexform.getneckindexdetails().size());   
+	    model.addAttribute("currentpage",page);
+	    model.addAttribute("menu", "wristindex");
+	    model.addAttribute("button","viewall");
+	    return "viewneckindex";
+		
+	}	
+
+	@RequestMapping(value={"/", "/viewallneckindex"}, method = RequestMethod.GET)
+	public String viewallneckindex(HttpServletRequest request,ModelMap model, Principal principal ) {
+		
+	NeckindexForm neckindexform = new NeckindexForm();
+	    neckindexform.setneckindexdetails(neckdao.getneckindexDetails());
+		
+	    model.addAttribute("neckindexform", neckindexform);	
+		model.addAttribute("noofrows",neckindexform.getneckindexdetails().size());    
+	   
+		model.addAttribute("menu", "wristindex");
+	    model.addAttribute("button","close");
+	      
+	    model.addAttribute("menu", "wristindex");
+	        model.addAttribute("success","false");
+	        model.addAttribute("button","close");
+	        return "viewneckindex";
+
 	}
 
 	@RequestMapping(value = "/wristindexlist", method = RequestMethod.GET)

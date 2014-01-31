@@ -269,6 +269,102 @@ public class HipquestionnaireDAO
 		   			return 0;
 		}
 		
+	public List<Hipquestionnaire> getlimitedhipquestionnaire(int page) {
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		
+		
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<Hipquestionnaire> hipquestionnairedetails = new ArrayList<Hipquestionnaire>();
+		try {
+
+			String cmd;
+			int offset = 5 * (page - 1);
+			int limit = 5;
+			
+				
+					cmd = "select * from hipquestionnaire order by hipquestionno asc limit " + offset + ","+ limit+"" ;
+	
+			resultSet = statement.executeQuery(cmd);
+			while (resultSet.next()) {
+				hipquestionnairedetails.add(new Hipquestionnaire(
+						 resultSet.getString("hipquestionno"),
+							resultSet.getString("stiff"),
+							resultSet.getString("swollen"),
+							resultSet.getString("flatrighthip"),
+							resultSet.getString("flatlefthip"),
+							resultSet.getString("flatrightknee"),
+							resultSet.getString("flatleftknee"),							
+							resultSet.getString("stairsrighthip"),
+							resultSet.getString("stairslefthip"),
+							resultSet.getString("stairsrightknee"),
+							resultSet.getString("stairsleftknee"),							
+							resultSet.getString("bedrighthip"),
+							resultSet.getString("bedlefthip"),
+							resultSet.getString("bedrightknee"),
+							resultSet.getString("bedleftknee"),							
+							resultSet.getString("best"),
+							resultSet.getString("socks"),
+							resultSet.getString("date"),
+							resultSet.getString("birthdate"),
+							resultSet.getString("security")
+			    	    ));
+
+			}
+		} catch (Exception e) {
+			/*logger.info(e.toString());*/
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		} finally {
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		}
+		return hipquestionnairedetails;
+
+	}
+	public int getnoofhipquestionnaire() {
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		int noofRecords = 0;
+		
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<Hipquestionnaire> hipquestionnairedetails = new ArrayList<Hipquestionnaire>();
+		try {
+
+			String cmd;
+			
+					cmd = "select count(*) as noofrecords from hipquestionnaire";
+					System.out.println("command"+cmd);			
+			resultSet = statement.executeQuery(cmd);
+			if (resultSet.next())
+				noofRecords = resultSet.getInt("noofrecords");
+
+		} catch (Exception e) {
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		} finally {
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		}
+		return noofRecords;
+
+	}
 
 
 	

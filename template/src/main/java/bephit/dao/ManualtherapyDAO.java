@@ -593,6 +593,181 @@ public class ManualtherapyDAO
 	    return manualtherapy;
 		
 	}
+	public List<Manualtherapy> getlimitedmanualtherapy(int page) {
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		
+		
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<Manualtherapy> manualtherapy = new ArrayList<Manualtherapy>();
+		try {
+
+			String cmd;
+			int offset = 5 * (page - 1);
+			int limit = 5;
+			
+				
+					cmd = "select * from manualtherapy order by pname asc limit " + offset + ","+ limit+"" ;
+	
+			resultSet = statement.executeQuery(cmd);
+			while (resultSet.next()) {
+				 manualtherapy.add(new Manualtherapy(resultSet.getString("manualtherapyno"),
+						 resultSet.getString("pid"),
+						 resultSet.getString("date"),
+						 resultSet.getString("pname"),
+						 resultSet.getString("timein"),
+						 resultSet.getString("timeout"),
+						 resultSet.getString("majorcomplaint"),
+						 resultSet.getString("standing"),
+						 resultSet.getString("sitting"),
+						 resultSet.getString("walking"),
+						 resultSet.getString("sleeping"),
+						 resultSet.getString("lifting"),
+						 resultSet.getString("bending"),
+						 resultSet.getString("headache"),
+						 resultSet.getString("neckpain"),
+						 resultSet.getString("upperback"),
+						 resultSet.getString("midback"),
+						 resultSet.getString("lowback"),
+						 resultSet.getString("tmjpain"),
+						 resultSet.getString("other"),
+						 resultSet.getString("shoulder"),
+						 resultSet.getString("elbow"),
+						 resultSet.getString("wrist"),
+						 resultSet.getString("ribs"),
+						 resultSet.getString("hip"),
+						 resultSet.getString("leg"),
+						 resultSet.getString("ankle"),
+						 resultSet.getString("armsweakness"),	
+						 resultSet.getString("handsweakness"),	
+						 resultSet.getString("legsweakness"),	
+						 resultSet.getString("feetweakness"),	
+						 resultSet.getString("armspins"),	
+						 resultSet.getString("handspins"),	
+						 resultSet.getString("legspins"),	
+						 resultSet.getString("feetpins"),
+						 resultSet.getString("armsnumbness"),	
+						 resultSet.getString("handsnumbness"),	
+						 resultSet.getString("legsnumbness"),
+						 resultSet.getString("feetnumbness"),	
+						 resultSet.getString("armscoldness"),	
+						 resultSet.getString("handscoldness"),	
+						 resultSet.getString("legscoldness"),	
+						 resultSet.getString("feetcoldness"),
+						 resultSet.getString("painscale"),
+						 resultSet.getString("paraspinals"),	
+						 resultSet.getString("scm"),	
+						 resultSet.getString("uppertraps"),	
+						 resultSet.getString("suboccipitals"),	
+						 resultSet.getString("scalenes"),	
+						 resultSet.getString("triceps"),	
+						 resultSet.getString("biceps"),	
+						 resultSet.getString("brachioradialis"),	
+						 resultSet.getString("wristflex"),	
+						 resultSet.getString("hand"),	
+						 resultSet.getString("pectoralis"),	
+						 resultSet.getString("trapezius"),	
+						 resultSet.getString("supra"),	
+						 resultSet.getString("subscapularis"),	
+						 resultSet.getString("dorsi"),	
+						 resultSet.getString("levator"),
+						 resultSet.getString("rhomboids"),
+						 resultSet.getString("supraspinatus"),
+						 resultSet.getString("anterior"),
+						 resultSet.getString("paraspinalslum"),
+						 resultSet.getString("iliopsoas"),
+						 resultSet.getString("maximus"),
+						 resultSet.getString("medius"),
+						 resultSet.getString("piriformis"),
+						 resultSet.getString("sartorius"),
+						 resultSet.getString("hamstrings"),
+						 resultSet.getString("TFL"),
+						 resultSet.getString("HIP1"),
+						 resultSet.getString("achilles"),
+						 resultSet.getString("tibialis"),
+						 resultSet.getString("QLS"),
+						 resultSet.getString("ankles"),
+						 resultSet.getString("gracilis"),
+						 resultSet.getString("myofasical"),
+						 resultSet.getString("manualtraction"),
+						 resultSet.getString("triggerpoint"),
+						 resultSet.getString("lymphaticdrainage"),
+						 resultSet.getString("effleurage"),
+						 resultSet.getString("taponnement"),
+						 resultSet.getString("crossfrictionfiber"),
+						 resultSet.getString("PNF"),
+						 resultSet.getString("neuromuscular"),
+						 resultSet.getString("unit"),
+						 resultSet.getString("units"),						 
+						 resultSet.getString("unitperform"),						
+						 resultSet.getString("MT"),
+						 resultSet.getString("TE"),
+						 resultSet.getString("MA"),
+						 resultSet.getString("therapist"),
+						 resultSet.getString("therapistrecommend"),
+						 resultSet.getString("futurerecommend"),
+						 resultSet.getString("session"),
+						 resultSet.getString("weeks"),
+						 resultSet.getString("signature"),
+						 resultSet.getString("daily")
+							
+						));
+			}
+		} catch (Exception e) {
+			/*logger.info(e.toString());*/
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		} finally {
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		}
+		return manualtherapy;
+
+	}
+	public int getnoofmanualtherapy() {
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		int noofRecords = 0;
+		
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<Manualtherapy> manualtherapy = new ArrayList<Manualtherapy>();
+		try {
+
+			String cmd;
+			
+					cmd = "select count(*) as noofrecords from manualtherapy";
+					System.out.println("command"+cmd);			
+			resultSet = statement.executeQuery(cmd);
+			if (resultSet.next())
+				noofRecords = resultSet.getInt("noofrecords");
+
+		} catch (Exception e) {
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		} finally {
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		}
+		return noofRecords;
+
+	}
+
 	public void releaseConnection(Connection con){
 		try{if(con != null)
 			con.close();

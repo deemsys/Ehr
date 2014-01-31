@@ -89,7 +89,7 @@
                   <li class="page"><a href="treatformlist" class="paging_select">Back</a></li>
               </c:otherwise>
               </c:choose>
-              </ul>
+        </ul>
               </div>
               </td>
               </table>

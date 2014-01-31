@@ -408,8 +408,55 @@ public class MainController {
 		  	model.addAttribute("physicalexamForm", physicalexamForm);
 		  	model.addAttribute("menu", "phyexam");
 		
-		return "viewphysicalexam";
-	}
+		  	/*model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));*/
+	        model.addAttribute("noofrows",physicalexamForm.getPhysicalexam().size());       
+		    physicalexamForm.setPhysicalexam(physicalDAO.getlimitedphysicalexam(1));
+	        model.addAttribute("noofpages",(int) Math.ceil(physicalDAO.getnoofphysicalexam() * 1.0 / 5));	 
+		        model.addAttribute("button","viewall");
+		        model.addAttribute("success","false");
+		        model.addAttribute("currentpage",1);
+			
+			
+			return "viewphysicalexam";
+	 
+		}	
+		
+		@RequestMapping(value="/viewphysicalexam_page", method=RequestMethod.GET)
+		public String viewphysicalexam_page(HttpServletRequest request,@RequestParam("page") int page,ModelMap model) {	
+			
+			PhysicalexamForm physicalexamForm = new PhysicalexamForm();
+			physicalexamForm.setPhysicalexam(physicalDAO.getlimitedphysicalexam(page));
+			
+		   	model.addAttribute("noofpages",(int) Math.ceil(physicalDAO.getnoofphysicalexam() * 1.0 / 20));
+		    model.addAttribute("physicalexamForm", physicalexamForm);	
+		   	model.addAttribute("noofrows",physicalexamForm.getPhysicalexam().size());   
+	        model.addAttribute("currentpage",page);
+	        model.addAttribute("menu","phyexam");
+	        model.addAttribute("button","viewall");
+			return "viewphysicalexam";
+			
+		}	
+		
+		@RequestMapping(value={"/", "/viewallphysicalexam"}, method = RequestMethod.GET)
+		public String viewallphysicalexam(HttpServletRequest request,ModelMap model, Principal principal ) {
+			
+			PhysicalexamForm physicalexamForm = new PhysicalexamForm();
+			physicalexamForm.setPhysicalexam(physicalDAO.getPhysicalexam());
+			
+			  model.addAttribute("physicalexamForm", physicalexamForm);	
+			model.addAttribute("noofrows",physicalexamForm.getPhysicalexam().size());    
+	       
+	        model.addAttribute("menu","phyexam");
+	        model.addAttribute("button","close");
+		      
+		        model.addAttribute("menu","phyexam");
+		        model.addAttribute("success","false");
+		        model.addAttribute("button","close");
+				return "viewphysicalexam";
+	 
+		}
+
+
 	@RequestMapping(value="/physicalexamlist", method=RequestMethod.GET)
 	public String physicalexamlist(HttpServletRequest request,@RequestParam("physical_id") String physical_id,ModelMap model,Physicalexam exam)
 	{
@@ -529,10 +576,53 @@ public class MainController {
 		model.addAttribute("hamiltonchiropracticForm",hamiltonchiropracticForm);
 		 model.addAttribute("menu", "iniexam");
 		
-		return "viewfirsthamiltonchiropractic";
- 
-	}
-	@RequestMapping(value="/viewhamiltonchiropractic", method=RequestMethod.GET)
+	  	 model.addAttribute("noofrows",hamiltonchiropracticForm.getHamiltonchiropractic().size());       
+		    hamiltonchiropracticForm.setHamiltonchiropractic(hamiDAO.getlimitedhamiltonchiropractic(1));
+	        model.addAttribute("noofpages",(int) Math.ceil(hamiDAO.getnoofhamiltonchiropractic() * 1.0 / 5));	 
+		        model.addAttribute("button","viewall");
+		        model.addAttribute("success","false");
+		        model.addAttribute("currentpage",1);
+			
+			
+			return "viewfirsthamiltonchiropractic";
+	 
+		}	
+		
+		@RequestMapping(value="/viewfirsthamiltonchiropractic_page", method=RequestMethod.GET)
+		public String viewfirsthamiltonchiropractic_page(HttpServletRequest request,@RequestParam("page") int page,ModelMap model) {	
+			
+			HamiltonchiropracticForm hamiltonchiropracticForm = new HamiltonchiropracticForm();
+			hamiltonchiropracticForm.setHamiltonchiropractic(hamiDAO.getlimitedhamiltonchiropractic(page));
+			
+		   	model.addAttribute("noofpages",(int) Math.ceil(hamiDAO.getnoofhamiltonchiropractic() * 1.0 / 5));
+		    model.addAttribute("hamiltonchiropracticForm", hamiltonchiropracticForm);	
+		   	model.addAttribute("noofrows",hamiltonchiropracticForm.getHamiltonchiropractic().size());   
+	        model.addAttribute("currentpage",page);
+	        model.addAttribute("menu","iniexam");
+	        model.addAttribute("button","viewall");
+			return "viewfirsthamiltonchiropractic";
+			
+		}	
+		
+		@RequestMapping(value={"/", "/viewallhamiltonchiropractic"}, method = RequestMethod.GET)
+		public String viewallhamiltonchiropractic(HttpServletRequest request,ModelMap model, Principal principal ) {
+			
+			HamiltonchiropracticForm hamiltonchiropracticForm = new HamiltonchiropracticForm();
+			hamiltonchiropracticForm.setHamiltonchiropractic(hamiDAO.getHamiltonchiropractic());
+			
+			  model.addAttribute("hamiltonchiropracticForm", hamiltonchiropracticForm);	
+			model.addAttribute("noofrows",hamiltonchiropracticForm.getHamiltonchiropractic().size());    
+	       
+	        model.addAttribute("menu","iniexam");
+	        model.addAttribute("button","close");
+		      
+		        model.addAttribute("menu","iniexam");
+		        model.addAttribute("success","false");
+		        model.addAttribute("button","close");
+				return "viewfirsthamiltonchiropractic";
+	 
+		}	
+		@RequestMapping(value="/viewhamiltonchiropractic", method=RequestMethod.GET)
 	public String viewhamiltonchiropractic(HttpServletRequest request,@RequestParam("initialexamid") String initialexamid,ModelMap model,Hamiltonchiropractic hamiltonchiropractic)
 	{
 		
@@ -658,52 +748,52 @@ public class MainController {
 		  	model.addAttribute("autoaccidentForm", autoaccidentForm);
 		  	model.addAttribute("menu", "Accident");
 	        System.out.println("Patient");
-	        model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
 	        model.addAttribute("noofrows",autoaccidentForm.getAutoaccident().size());       
 		    autoaccidentForm.setAutoaccident(autoDAO.getlimitedautoaccident(1));
 	        model.addAttribute("noofpages",(int) Math.ceil(autoDAO.getnoofautoaccident() * 1.0 / 5));	 
 		        model.addAttribute("button","viewall");
 		        model.addAttribute("success","false");
 		        model.addAttribute("currentpage",1);
-		  	model.addAttribute("menu", "Accident");
-           
-		return "viewautoaccident";
-	}
-	@RequestMapping(value="/viewautoaccident_page", method=RequestMethod.GET)
-	public String viewautoaccident(HttpServletRequest request,@RequestParam("page") int page,ModelMap model) {	
-		
-		AutoaccidentForm autoaccidentForm = new AutoaccidentForm();
-		autoaccidentForm.setAutoaccident(autoDAO.getlimitedautoaccident(page));
-		
-	   	model.addAttribute("noofpages",(int) Math.ceil(autoDAO.getnoofautoaccident() * 1.0 / 20));
-	    model.addAttribute("autoaccidentForm", autoaccidentForm);	
-	   	model.addAttribute("noofrows",autoaccidentForm.getAutoaccident().size());   
-        model.addAttribute("currentpage",page);
-        model.addAttribute("menu","Accident");
-        model.addAttribute("button","viewall");
-		return "viewautoaccident";
-		
-	}	
-	
-	@RequestMapping(value={"/", "/viewallautoaccident"}, method = RequestMethod.GET)
-	public String viewallautoaccident(HttpServletRequest request,ModelMap model, Principal principal ) {
-		
-		AutoaccidentForm autoaccidentForm = new AutoaccidentForm();
-		autoaccidentForm.setAutoaccident(autoDAO.getAutoaccident());
-		
-		  model.addAttribute("autoaccidentForm", autoaccidentForm);	
-		model.addAttribute("noofrows",autoaccidentForm.getAutoaccident().size());    
-       
-        model.addAttribute("menu","Accident");
-        model.addAttribute("button","close");
-	      
-	        model.addAttribute("menu","Accident");
-	        model.addAttribute("success","false");
-	        model.addAttribute("button","close");
+			
+			
 			return "viewautoaccident";
- 
-	}
-	@RequestMapping(value="/autoaccidentlist", method=RequestMethod.GET)
+	 
+		}	
+		
+		@RequestMapping(value="/viewautoaccident_page", method=RequestMethod.GET)
+		public String viewautoaccident_page(HttpServletRequest request,@RequestParam("page") int page,ModelMap model) {	
+			
+			AutoaccidentForm autoaccidentForm = new AutoaccidentForm();
+			autoaccidentForm.setAutoaccident(autoDAO.getlimitedautoaccident(page));
+			
+		   	model.addAttribute("noofpages",(int) Math.ceil(autoDAO.getnoofautoaccident() * 1.0 / 5));
+		   	model.addAttribute("autoaccidentForm", autoaccidentForm);	
+		   	model.addAttribute("noofrows",autoaccidentForm.getAutoaccident().size());   
+	        model.addAttribute("currentpage",page);
+	        model.addAttribute("menu","Accident");
+	        model.addAttribute("button","viewall");
+			return "viewautoaccident";
+			
+		}	
+		
+		@RequestMapping(value={"/", "/viewallautoaccident"}, method = RequestMethod.GET)
+		public String viewallautoaccident(HttpServletRequest request,ModelMap model, Principal principal ) {
+			
+			AutoaccidentForm autoaccidentForm = new AutoaccidentForm();
+			autoaccidentForm.setAutoaccident(autoDAO.getAutoaccident());
+			
+			model.addAttribute("autoaccidentForm", autoaccidentForm);	
+			model.addAttribute("noofrows",autoaccidentForm.getAutoaccident().size());    
+	       
+	        model.addAttribute("menu","Accident");
+	        model.addAttribute("button","close");
+		      
+		        model.addAttribute("menu","Accident");
+		        model.addAttribute("success","false");
+		        model.addAttribute("button","close");
+				return "viewautoaccident";
+	 
+		}	@RequestMapping(value="/autoaccidentlist", method=RequestMethod.GET)
 	public String autoaccidentlist(HttpServletRequest request,@RequestParam("patient_number") String patient_number,ModelMap model,Autoaccident autoaccident)
 	{
 		//ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
@@ -840,15 +930,65 @@ public class MainController {
 	public String viewPatients(HttpServletRequest request,ModelMap model, Principal principal) {
 		 model.addAttribute("success","false");
 		//ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
-		 // RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
+		  RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
 		 //participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
 		  radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport());
 		  //model.addAttribute("participantsDetailsForm", participantsDetailsForm);
 		  model.addAttribute("menu", "report");
 		  	model.addAttribute("radiologicReportForm", radiologicReportForm);
+
+		  	 model.addAttribute("visit","0");       
+		  	 model.addAttribute("noofrows",radiologicReportForm.getRadiologicReport().size());       
+			    radiologicReportForm.setRadiologicReport(radioDAO.getlimitedradiologicreport(1));
+		        model.addAttribute("noofpages",(int) Math.ceil(radioDAO.getnoofradiologicreport() * 1.0 / 5));	 
+			        model.addAttribute("button","viewall");
+			        model.addAttribute("success","false");
+			        model.addAttribute("currentpage",1);
+				
+				
+				return "viewradiologicreport";
+		 
+			}	
+			
+			@RequestMapping(value="/viewradiologicreport_page", method=RequestMethod.GET)
+			public String viewradiologicreport_page(HttpServletRequest request,@RequestParam("page") int page,ModelMap model) {	
+				
+				RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
+				radiologicReportForm.setRadiologicReport(radioDAO.getlimitedradiologicreport(page));
+				
+			   	model.addAttribute("noofpages",(int) Math.ceil(radioDAO.getnoofradiologicreport() * 1.0 / 5));
+			    model.addAttribute("radiologicReportForm", radiologicReportForm);	
+			   	model.addAttribute("noofrows",radiologicReportForm.getRadiologicReport().size());   
+		        model.addAttribute("currentpage",page);
+		        model.addAttribute("menu","report");
+		        model.addAttribute("button","viewall");
+				return "viewradiologicreport";
+				
+			}	
+			
+			@RequestMapping(value={"/", "/viewallradiologicreport"}, method = RequestMethod.GET)
+			public String viewallradiologicreport(HttpServletRequest request,ModelMap model, Principal principal ) {
+				
+				RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
+				radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport());
+				
+				  model.addAttribute("radiologicReportForm", radiologicReportForm);	
+				model.addAttribute("noofrows",radiologicReportForm.getRadiologicReport().size());    
+		       
+		        model.addAttribute("menu","report");
+		        model.addAttribute("button","close");
+			      
+			        model.addAttribute("menu","report");
+			        model.addAttribute("success","false");
+			        model.addAttribute("button","close");
+					return "viewradiologicreport";
+		 
+			}
+
 		 
 		return "viewradiologicreport";
 	}
+
 	@RequestMapping(value="/radiologicReportList", method=RequestMethod.GET)
 	public String radiologicreportlist(HttpServletRequest request,@RequestParam("pid") String pid,ModelMap model,RadiologicReport radiologic)
 	{
@@ -961,52 +1101,53 @@ public class MainController {
 			workaccidentForm.setWorkaccident(workDAO.getWorkaccident());
 			model.addAttribute("workaccidentForm", workaccidentForm);
 			model.addAttribute("menu", "Accident");
-			model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
-	        model.addAttribute("noofrows",workaccidentForm.getWorkaccident().size());       
-		    workaccidentForm.setWorkaccident(workDAO.getlimitedworkaccident(1));
-	        model.addAttribute("noofpages",(int) Math.ceil(workDAO.getnoofworkaccident() * 1.0 / 5));	 
+			 model.addAttribute("noofrows",workaccidentForm.getWorkaccident().size());       
+			    workaccidentForm.setWorkaccident(workDAO.getlimitedworkaccident(1));
+		        model.addAttribute("noofpages",(int) Math.ceil(workDAO.getnoofworkaccident() * 1.0 / 5));	 
+			        model.addAttribute("button","viewall");
+			        model.addAttribute("success","false");
+			        model.addAttribute("currentpage",1);
+				
+				
+				return "viewworkaccident";
+		 
+			}	
+			
+			@RequestMapping(value="/viewworkaccident_page", method=RequestMethod.GET)
+			public String viewworkaccident_page(HttpServletRequest request,@RequestParam("page") int page,ModelMap model) {	
+				
+				WorkaccidentForm workaccidentForm = new WorkaccidentForm();
+				workaccidentForm.setWorkaccident(workDAO.getlimitedworkaccident(page));
+				
+			   	model.addAttribute("noofpages",(int) Math.ceil(workDAO.getnoofworkaccident() * 1.0 / 5));
+			   	model.addAttribute("workaccidentForm", workaccidentForm);	
+			   	model.addAttribute("noofrows",workaccidentForm.getWorkaccident().size());   
+		        model.addAttribute("currentpage",page);
+		        model.addAttribute("menu","Accident");
 		        model.addAttribute("button","viewall");
-		        model.addAttribute("success","false");
-		        model.addAttribute("currentpage",1);
-		  	model.addAttribute("menu", "Accident");
-           
-		return "viewworkaccident";
-	}
-	@RequestMapping(value="/viewworkaccident_page", method=RequestMethod.GET)
-	public String viewworkaccident(HttpServletRequest request,@RequestParam("page") int page,ModelMap model) {	
+				return "viewworkaccident";
+				
+			}	
+			
+			@RequestMapping(value={"/", "/viewallworkaccident"}, method = RequestMethod.GET)
+			public String viewallworkaccident(HttpServletRequest request,ModelMap model, Principal principal ) {
+				
+				WorkaccidentForm workaccidentForm = new WorkaccidentForm();
+				workaccidentForm.setWorkaccident(workDAO.getWorkaccident());
+				
+				model.addAttribute("workaccidentForm", workaccidentForm);	
+				model.addAttribute("noofrows",workaccidentForm.getWorkaccident().size());    
+		       
+		        model.addAttribute("menu","Accident");
+		        model.addAttribute("button","close");
+			      
+			        model.addAttribute("menu","Accident");
+			        model.addAttribute("success","false");
+			        model.addAttribute("button","close");
+					return "viewworkaccident";
+			}
+		 
 		
-		WorkaccidentForm workaccidentForm = new WorkaccidentForm();
-		workaccidentForm.setWorkaccident(workDAO.getlimitedworkaccident(page));
-		
-	   	model.addAttribute("noofpages",(int) Math.ceil(workDAO.getnoofworkaccident() * 1.0 / 20));
-	    model.addAttribute("workaccidentForm", workaccidentForm);	
-	   	model.addAttribute("noofrows",workaccidentForm.getWorkaccident().size());   
-        model.addAttribute("currentpage",page);
-        model.addAttribute("menu","Accident");
-        model.addAttribute("button","viewall");
-		return "viewworkaccident";
-		
-	}	
-	
-	@RequestMapping(value={"/", "/viewallworkaccident"}, method = RequestMethod.GET)
-	public String viewallworkaccident(HttpServletRequest request,ModelMap model, Principal principal ) {
-		
-		WorkaccidentForm workaccidentForm = new WorkaccidentForm();
-		workaccidentForm.setWorkaccident(workDAO.getWorkaccident());
-		
-		  model.addAttribute("workaccidentForm", workaccidentForm);	
-		model.addAttribute("noofrows",workaccidentForm.getWorkaccident().size());    
-       
-        model.addAttribute("menu","Accident");
-        model.addAttribute("button","close");
-	      
-	        model.addAttribute("menu","Accident");
-	        model.addAttribute("success","false");
-	        model.addAttribute("button","close");
-			return "viewworkaccident";
- 
-	}
-
 	@RequestMapping(value="/workAccidentList", method=RequestMethod.GET)
 	public String viewworkaccident(HttpServletRequest request,@RequestParam("patient_no") String patient_no,ModelMap model,Workaccident work)
 	{
@@ -1256,9 +1397,53 @@ public class MainController {
     	staffchecklistForm.setStaffchecklist(staffDAO.getStaffchecklist());
 		model.addAttribute("StaffchecklistForm",staffchecklistForm);
 		model.addAttribute("menu", "admin");
+		model.addAttribute("noofrows",staffchecklistForm.getStaffchecklist().size());       
+	    staffchecklistForm.setStaffchecklist(staffDAO.getlimitedstaffchecklist(1));
+        model.addAttribute("noofpages",(int) Math.ceil(staffDAO.getnoofstaffchecklist() * 1.0 / 5));	 
+	        model.addAttribute("button","viewall");
+	        model.addAttribute("success","false");
+	        model.addAttribute("currentpage",1);
+		
+		
 		return "staffdetails";
  
+	}	
+	
+	@RequestMapping(value="/staffdetails_page", method=RequestMethod.GET)
+	public String staffdetails_page(HttpServletRequest request,@RequestParam("page") int page,ModelMap model) {	
+		
+		StaffchecklistForm staffchecklistForm = new StaffchecklistForm();
+		staffchecklistForm.setStaffchecklist(staffDAO.getlimitedstaffchecklist(page));
+		
+	   	model.addAttribute("noofpages",(int) Math.ceil(staffDAO.getnoofstaffchecklist() * 1.0 / 5));
+	   	model.addAttribute("StaffchecklistForm",staffchecklistForm);	
+	   	model.addAttribute("noofrows",staffchecklistForm.getStaffchecklist().size());   
+        model.addAttribute("currentpage",page);
+        model.addAttribute("menu","admin");
+        model.addAttribute("button","viewall");
+		return "staffdetails";
+		
+	}	
+	
+	@RequestMapping(value={"/", "/viewallstaffdetails"}, method = RequestMethod.GET)
+	public String viewallstaffdetails(HttpServletRequest request,ModelMap model, Principal principal ) {
+		
+		StaffchecklistForm staffchecklistForm = new StaffchecklistForm();
+		staffchecklistForm.setStaffchecklist(staffDAO.getStaffchecklist());
+		
+		model.addAttribute("StaffchecklistForm",staffchecklistForm);	
+		model.addAttribute("noofrows",staffchecklistForm.getStaffchecklist().size());    
+       
+        model.addAttribute("menu","admin");
+        model.addAttribute("button","close");
+	      
+	        model.addAttribute("menu","admin");
+	        model.addAttribute("success","false");
+	        model.addAttribute("button","close");
+			return "staffdetails";
+ 
 	}
+
 	@RequestMapping(value="/viewstaffchecklist", method = RequestMethod.GET)
 	public String viewstaffchecklist(HttpServletRequest request,@RequestParam("form_no") String form_no,ModelMap model,Staffchecklist staffchecklist){
 		
@@ -1605,7 +1790,6 @@ public class MainController {
     	screeningauthzForm.setScreeningDetails(screenDAO.getScreeningDetails());
 		model.addAttribute("ScreeningAuthzForm",screeningauthzForm);
 		model.addAttribute("menu", "authorization");
-		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
         
 	     model.addAttribute("noofrows",screeningauthzForm.getScreeningDetails().size());       
 	    screeningauthzForm.setScreeningDetails(screenDAO.getlimitedscreeninglist(1));
@@ -1623,7 +1807,7 @@ public class MainController {
 		ScreeningAuthzForm screeningauthzForm = new ScreeningAuthzForm();
 		screeningauthzForm.setScreeningDetails(screenDAO.getlimitedscreeninglist(page));
 		
-	   	model.addAttribute("noofpages",(int) Math.ceil(hardDAO.getnoofhardshipagreement() * 1.0 / 5));
+	   	model.addAttribute("noofpages",(int) Math.ceil(screenDAO.getnoofscreeninglist() * 1.0 / 5));
 	    model.addAttribute("ScreeningAuthzForm", screeningauthzForm);	
 	   	model.addAttribute("noofrows",screeningauthzForm.getScreeningDetails().size());   
      model.addAttribute("currentpage",page);
@@ -1769,8 +1953,8 @@ public class MainController {
 			assignmentdetailsform.setAssignmentDetails(assignmentDAO.getAssignmentDetails());
 			model.addAttribute("AssignmentDetailsForm",assignmentdetailsform);
 			model.addAttribute("menu", "authorization");
-			model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
-	        model.addAttribute("noofrows",assignmentdetailsform.getAssignmentDetails().size());       
+			/*model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));*/
+			model.addAttribute("noofrows",assignmentdetailsform.getAssignmentDetails().size());       
 		    assignmentdetailsform.setAssignmentDetails(assignmentDAO.getlimitedassignment(1));
 	        model.addAttribute("noofpages",(int) Math.ceil(assignmentDAO.getnoofassignment() * 1.0 / 5));	 
 		        model.addAttribute("button","viewall");
@@ -1788,11 +1972,11 @@ public class MainController {
 			AssignmentDetailsForm assignmentdetailsform = new AssignmentDetailsForm();
 			assignmentdetailsform.setAssignmentDetails(assignmentDAO.getlimitedassignment(page));
 			
-		   	model.addAttribute("noofpages",(int) Math.ceil(assignmentDAO.getnoofassignment() * 1.0 / 20));
-		    model.addAttribute("AssignmentDetailsForm", assignmentdetailsform);	
+		   	model.addAttribute("noofpages",(int) Math.ceil(assignmentDAO.getnoofassignment() * 1.0 / 5));
+		   	model.addAttribute("AssignmentDetailsForm",assignmentdetailsform);	
 		   	model.addAttribute("noofrows",assignmentdetailsform.getAssignmentDetails().size());   
 	        model.addAttribute("currentpage",page);
-	        model.addAttribute("menu","authorization");
+	        model.addAttribute("menu","consent");
 	        model.addAttribute("button","viewall");
 			return "assignmentlist";
 			
@@ -1804,19 +1988,18 @@ public class MainController {
 			AssignmentDetailsForm assignmentdetailsform = new AssignmentDetailsForm();
 			assignmentdetailsform.setAssignmentDetails(assignmentDAO.getAssignmentDetails());
 			
-			  model.addAttribute("AssignmentDetailsForm", assignmentdetailsform);	
+			model.addAttribute("AssignmentDetailsForm",assignmentdetailsform);	
 			model.addAttribute("noofrows",assignmentdetailsform.getAssignmentDetails().size());    
 	       
-	        model.addAttribute("menu","authorization");
+	        model.addAttribute("menu","consent");
 	        model.addAttribute("button","close");
 		      
-		        model.addAttribute("menu","authorization");
+		        model.addAttribute("menu","consent");
 		        model.addAttribute("success","false");
 		        model.addAttribute("button","close");
 				return "assignmentlist";
 	 
 		}
-
 			
 	
 	@RequestMapping(value="/viewassignment", method = RequestMethod.GET)
@@ -1930,7 +2113,50 @@ public class MainController {
 		hippaprivacyform.setPrivacyDetails(hippaDAO.getPrivacyDetails());
 		model.addAttribute("HippaPrivacyForm",hippaprivacyform);
 		model.addAttribute("menu", "authorization");
+		model.addAttribute("noofrows",hippaprivacyform.getPrivacyDetails().size());       
+	    hippaprivacyform.setPrivacyDetails(hippaDAO.getlimitedhippaprivacy(1));
+        model.addAttribute("noofpages",(int) Math.ceil(hippaDAO.getnoofhippaprivacy() * 1.0 / 5));	 
+	        model.addAttribute("button","viewall");
+	        model.addAttribute("success","false");
+	        model.addAttribute("currentpage",1);
+		
+		
 		return "hippalist";
+ 
+	}	
+	
+	@RequestMapping(value="/hippalist_page", method=RequestMethod.GET)
+	public String hippalist_page(HttpServletRequest request,@RequestParam("page") int page,ModelMap model) {	
+		
+		HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
+		hippaprivacyform.setPrivacyDetails(hippaDAO.getlimitedhippaprivacy(page));
+		
+	   	model.addAttribute("noofpages",(int) Math.ceil(hippaDAO.getnoofhippaprivacy() * 1.0 / 5));
+	   	model.addAttribute("HippaPrivacyForm",hippaprivacyform);	
+	   	model.addAttribute("noofrows",hippaprivacyform.getPrivacyDetails().size());   
+        model.addAttribute("currentpage",page);
+        model.addAttribute("menu","authorization");
+        model.addAttribute("button","viewall");
+		return "hippalist";
+		
+	}	
+	
+	@RequestMapping(value={"/", "/viewallhippalist"}, method = RequestMethod.GET)
+	public String viewallhippalist(HttpServletRequest request,ModelMap model, Principal principal ) {
+		
+		HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
+		hippaprivacyform.setPrivacyDetails(hippaDAO.getPrivacyDetails());
+		
+		model.addAttribute("HippaPrivacyForm",hippaprivacyform);	
+		model.addAttribute("noofrows",hippaprivacyform.getPrivacyDetails().size());    
+       
+        model.addAttribute("menu","authorization");
+        model.addAttribute("button","close");
+	      
+	        model.addAttribute("menu","authorization");
+	        model.addAttribute("success","false");
+	        model.addAttribute("button","close");
+			return "hippalist";
  
 	}
 	
@@ -2114,23 +2340,26 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
         System.out.println("patient="+patientdetailsform.getPatientDetails().size());
         model.addAttribute("menu", "patientInfo");
         System.out.println("Patient");
-        model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
         model.addAttribute("noofrows",patientdetailsform.getPatientDetails().size());       
-	    patientdetailsform.setPatientDetails(patientDAO.getlimitedpatientdetail(1));
+	    patientdetailsform.setPatientDetails(patientDAO.getlimitedpatientdetails(1));
         model.addAttribute("noofpages",(int) Math.ceil(patientDAO.getnoofpatientdetails() * 1.0 / 5));	 
 	        model.addAttribute("button","viewall");
 	        model.addAttribute("success","false");
 	        model.addAttribute("currentpage",1);
+		
+		
 		return "viewpatient";
-	}
+ 
+	}	
+	
 	@RequestMapping(value="/viewpatient_page", method=RequestMethod.GET)
-	public String viewpatientpage(HttpServletRequest request,@RequestParam("page") int page,ModelMap model) {	
+	public String viewpatient_page(HttpServletRequest request,@RequestParam("page") int page,ModelMap model) {	
 		
 		PatientDetailsForm patientdetailsform = new PatientDetailsForm();
-		patientdetailsform.setPatientDetails(patientDAO.getlimitedpatientdetail(page));
+		patientdetailsform.setPatientDetails(patientDAO.getlimitedpatientdetails(page));
 		
-	   	model.addAttribute("noofpages",(int) Math.ceil(patientDAO.getnoofpatientdetails() * 1.0 / 20));
-	    model.addAttribute("patientDetailsForm", patientdetailsform);	
+	   	model.addAttribute("noofpages",(int) Math.ceil(patientDAO.getnoofpatientdetails() * 1.0 / 5));
+	   	model.addAttribute("patientDetailsForm", patientdetailsform);	
 	   	model.addAttribute("noofrows",patientdetailsform.getPatientDetails().size());   
         model.addAttribute("currentpage",page);
         model.addAttribute("menu","patientInfo");
@@ -2145,7 +2374,7 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 		PatientDetailsForm patientdetailsform = new PatientDetailsForm();
 		patientdetailsform.setPatientDetails(patientDAO.getPatientDetails());
 		
-		  model.addAttribute("patientDetailsForm", patientdetailsform);	
+		model.addAttribute("patientDetailsForm", patientdetailsform);	
 		model.addAttribute("noofrows",patientdetailsform.getPatientDetails().size());    
        
         model.addAttribute("menu","patientInfo");
@@ -2157,7 +2386,6 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 			return "viewpatient";
  
 	}
-
 	@RequestMapping(value="/patientDetailsList", method=RequestMethod.GET)
 	public String patientDetailsList(HttpServletRequest request,@RequestParam("patient_id") String patient_id,ModelMap model,PatientDetails patient)
 	{
@@ -2496,9 +2724,52 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
     	insuranceverificationForm.setInsuranceverification(veriDAO.getInsuranceverification());
 		model.addAttribute("InsuranceverificationForm",insuranceverificationForm);
 		  model.addAttribute("menu", "admin");
-		return "insuranceverifylist";
- 
-	}
+			model.addAttribute("noofrows",insuranceverificationForm.getInsuranceverification().size());       
+		    insuranceverificationForm.setInsuranceverification(veriDAO.getlimitedinsuranceverification(1));
+	        model.addAttribute("noofpages",(int) Math.ceil(veriDAO.getnoofinsuranceverification() * 1.0 / 5));	 
+		        model.addAttribute("button","viewall");
+		        model.addAttribute("success","false");
+		        model.addAttribute("currentpage",1);
+			
+			
+			return "insuranceverifylist";
+	 
+		}	
+		
+		@RequestMapping(value="/insuranceverifylist_page", method=RequestMethod.GET)
+		public String insuranceverifylist_page(HttpServletRequest request,@RequestParam("page") int page,ModelMap model) {	
+			
+			InsuranceverificationForm insuranceverificationForm = new InsuranceverificationForm();
+			insuranceverificationForm.setInsuranceverification(veriDAO.getlimitedinsuranceverification(page));
+			
+		   	model.addAttribute("noofpages",(int) Math.ceil(veriDAO.getnoofinsuranceverification() * 1.0 / 5));
+		   	model.addAttribute("InsuranceverificationForm",insuranceverificationForm);	
+		   	model.addAttribute("noofrows",insuranceverificationForm.getInsuranceverification().size());   
+	        model.addAttribute("currentpage",page);
+	        model.addAttribute("menu","admin");
+	        model.addAttribute("button","viewall");
+			return "insuranceverifylist";
+			
+		}	
+		
+		@RequestMapping(value={"/", "/viewallinsuranceverifylist"}, method = RequestMethod.GET)
+		public String viewallinsuranceverifylist(HttpServletRequest request,ModelMap model, Principal principal ) {
+			
+			InsuranceverificationForm insuranceverificationForm = new InsuranceverificationForm();
+			insuranceverificationForm.setInsuranceverification(veriDAO.getInsuranceverification());
+			
+			model.addAttribute("InsuranceverificationForm",insuranceverificationForm);	
+			model.addAttribute("noofrows",insuranceverificationForm.getInsuranceverification().size());    
+	       
+	        model.addAttribute("menu","admin");
+	        model.addAttribute("button","close");
+		      
+		        model.addAttribute("menu","admin");
+		        model.addAttribute("success","false");
+		        model.addAttribute("button","close");
+				return "insuranceverifylist";
+	 
+		}
 	
 	@RequestMapping(value="/viewinsuranceverification", method = RequestMethod.GET)
 	public String viewinsuranceverification(HttpServletRequest request,@RequestParam("form_no") String form_no,ModelMap model,Insuranceverification insuranceverification){
@@ -2523,54 +2794,51 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 		System.out.println(treatform);
 		model.addAttribute("treatform",treatform);
 		 model.addAttribute("menu", "consent");
-        model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
-        model.addAttribute("noofrows",treatform.getTreatform().size());       
-	    treatform.setTreatform(treatDAO.getlimitedtreatformdetail(1));
-        model.addAttribute("noofpages",(int) Math.ceil(treatDAO.getnooftreatform() * 1.0 / 5));	 
-	        model.addAttribute("button","viewall");
-	        model.addAttribute("success","false");
-	        model.addAttribute("currentpage",1);
-		
-		
-		return "treatformlist";
- 
-	}	
-	
-	@RequestMapping(value="/treatformlist_page", method=RequestMethod.GET)
-	public String pagestreatform(HttpServletRequest request,@RequestParam("page") int page,ModelMap model) {	
-		
-		TreatForm treatform = new TreatForm();
-		treatform.setTreatform(treatDAO.getlimitedtreatformdetail(page));
-		
-	   	model.addAttribute("noofpages",(int) Math.ceil(treatDAO.getnooftreatform() * 1.0 / 20));
-	    model.addAttribute("treatform", treatform);	
-	   	model.addAttribute("noofrows",treatform.getTreatform().size());   
-        model.addAttribute("currentpage",page);
-        model.addAttribute("menu","consent");
-        model.addAttribute("button","viewall");
-		return "treatformlist";
-		
-	}	
-	
-	@RequestMapping(value={"/", "/viewalltreatformlist"}, method = RequestMethod.GET)
-	public String viewalltreatform(HttpServletRequest request,ModelMap model, Principal principal ) {
-		
-		TreatForm treatform = new TreatForm();
-		treatform.setTreatform(treatDAO.getTreatDetails());
-		
-		  model.addAttribute("treatform", treatform);	
-		model.addAttribute("noofrows",treatform.getTreatform().size());    
-       
-        model.addAttribute("menu","consent");
-        model.addAttribute("button","close");
-	      
-	        model.addAttribute("menu","consent");
-	        model.addAttribute("success","false");
-	        model.addAttribute("button","close");
+		 model.addAttribute("noofrows",treatform.getTreatform().size());       
+		    treatform.setTreatform(treatDAO.getlimitedtreatform(1));
+	        model.addAttribute("noofpages",(int) Math.ceil(treatDAO.getnooftreatdetails() * 1.0 / 5));	 
+		        model.addAttribute("button","viewall");
+		        model.addAttribute("success","false");
+		        model.addAttribute("currentpage",1);
+			
+			
 			return "treatformlist";
- 
-	}
-
+	 
+		}	
+		
+		@RequestMapping(value="/treatformlist_page", method=RequestMethod.GET)
+		public String treatformlist_page(HttpServletRequest request,@RequestParam("page") int page,ModelMap model) {	
+			
+			TreatForm treatform = new TreatForm();
+			treatform.setTreatform(treatDAO.getlimitedtreatform(page));
+			
+		   	model.addAttribute("noofpages",(int) Math.ceil(treatDAO.getnooftreatdetails() * 1.0 / 5));
+		   	model.addAttribute("treatform",treatform);	
+		   	model.addAttribute("noofrows",treatform.getTreatform().size());   
+	        model.addAttribute("currentpage",page);
+	        model.addAttribute("menu","consent");
+	        model.addAttribute("button","viewall");
+			return "treatformlist";
+			
+		}	
+		
+		@RequestMapping(value={"/", "/viewalltreatformlist"}, method = RequestMethod.GET)
+		public String viewalltreatformlist(HttpServletRequest request,ModelMap model, Principal principal ) {
+			
+			TreatForm treatform = new TreatForm();
+			treatform.setTreatform(treatDAO.getTreatDetails());
+			
+			model.addAttribute("treatform",treatform);	
+			model.addAttribute("noofrows",treatform.getTreatform().size());    
+	       
+	        model.addAttribute("menu","consent");
+	        model.addAttribute("button","close");
+		      
+		        model.addAttribute("menu","consent");
+		        model.addAttribute("success","false");
+		        model.addAttribute("button","close");
+				return "treatformlist";
+		}
 		
 	@RequestMapping(value="/viewtreatform", method = RequestMethod.GET)
 	public String viewtreatform(HttpServletRequest request,@RequestParam("treat_no") String treat_no,ModelMap model,Treatform treatdetails){
@@ -2637,10 +2905,52 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 		treatminordetailsForm.setMinorDetails(minorDAO.getMinorDetails());
 		model.addAttribute("treatminordetailsform",treatminordetailsForm);
 		 model.addAttribute("menu", "consent");
-		return "treatminorlist";
- 
-	}
-
+			model.addAttribute("noofrows",treatminordetailsForm.getMinorDetails().size());       
+		    treatminordetailsForm.setMinorDetails(minorDAO.getlimitedtreatminor(1));
+	        model.addAttribute("noofpages",(int) Math.ceil(minorDAO.getnoofminordetails() * 1.0 / 5));	 
+		        model.addAttribute("button","viewall");
+		        model.addAttribute("success","false");
+		        model.addAttribute("currentpage",1);
+			
+			
+			return "treatminorlist";
+	 
+		}	
+		
+		@RequestMapping(value="/treatminorlist_page", method=RequestMethod.GET)
+		public String treatminorlist_page(HttpServletRequest request,@RequestParam("page") int page,ModelMap model) {	
+			
+			TreatMinorDetailsForm treatminordetailsForm = new TreatMinorDetailsForm();
+			treatminordetailsForm.setMinorDetails(minorDAO.getlimitedtreatminor(page));
+			
+		   	model.addAttribute("noofpages",(int) Math.ceil(minorDAO.getnoofminordetails() * 1.0 / 5));
+		   	model.addAttribute("treatminordetailsform",treatminordetailsForm);	
+		   	model.addAttribute("noofrows",treatminordetailsForm.getMinorDetails().size());   
+	        model.addAttribute("currentpage",page);
+	        model.addAttribute("menu","consent");
+	        model.addAttribute("button","viewall");
+			return "treatminorlist";
+			
+		}	
+		
+		@RequestMapping(value={"/", "/viewalltreatminorlist"}, method = RequestMethod.GET)
+		public String viewalltreatminorlist(HttpServletRequest request,ModelMap model, Principal principal ) {
+			
+			TreatMinorDetailsForm treatminordetailsForm = new TreatMinorDetailsForm();
+			treatminordetailsForm.setMinorDetails(minorDAO.getMinorDetails());
+			
+			model.addAttribute("treatminordetailsform",treatminordetailsForm);	
+			model.addAttribute("noofrows",treatminordetailsForm.getMinorDetails().size());    
+	       
+	        model.addAttribute("menu","consent");
+	        model.addAttribute("button","close");
+		      
+		        model.addAttribute("menu","consent");
+		        model.addAttribute("success","false");
+		        model.addAttribute("button","close");
+				return "treatminorlist";
+	 
+		}
 	
 	@RequestMapping(value="/viewtreatminor", method = RequestMethod.GET)
 	public String viewtreatminor(HttpServletRequest request,@RequestParam("minor_no") String minor_no,ModelMap model,TreatMinor minordetails){
@@ -3070,8 +3380,53 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 		  	model.addAttribute("soapnotesForm", soapnotesForm);
 		  	model.addAttribute("menu", "notes");
 		  	// model.addAttribute("visit","1");
-		return "viewsoapnotes";
-	}
+		  	 model.addAttribute("noofrows",soapnotesForm.getSoapnotes().size());       
+			    soapnotesForm.setSoapnotes(soapDAO.getlimitedsoapnotes(1));
+		        model.addAttribute("noofpages",(int) Math.ceil(soapDAO.getnoofsoapnotes() * 1.0 / 5));	 
+			        model.addAttribute("button","viewall");
+			        model.addAttribute("success","false");
+			        model.addAttribute("currentpage",1);
+				
+				
+				return "viewsoapnotes";
+		 
+			}	
+			
+			@RequestMapping(value="/viewsoapnotes_page", method=RequestMethod.GET)
+			public String viewsoapnotes_page(HttpServletRequest request,@RequestParam("page") int page,ModelMap model) {	
+				
+				SoapnotesForm soapnotesForm = new SoapnotesForm();
+				soapnotesForm.setSoapnotes(soapDAO.getlimitedsoapnotes(page));
+				
+			   	model.addAttribute("noofpages",(int) Math.ceil(soapDAO.getnoofsoapnotes() * 1.0 / 5));
+			    model.addAttribute("soapnotesForm", soapnotesForm);	
+			   	model.addAttribute("noofrows",soapnotesForm.getSoapnotes().size());   
+		        model.addAttribute("currentpage",page);
+		        model.addAttribute("menu","notes");
+		        model.addAttribute("button","viewall");
+				return "viewsoapnotes";
+				
+			}	
+			
+			@RequestMapping(value={"/", "/viewallsoapnotes"}, method = RequestMethod.GET)
+			public String viewallsoapnotes(HttpServletRequest request,ModelMap model, Principal principal ) {
+				
+				SoapnotesForm soapnotesForm = new SoapnotesForm();
+				soapnotesForm.setSoapnotes(soapDAO.getSoapnotes());
+				
+				  model.addAttribute("soapnotesForm", soapnotesForm);	
+				model.addAttribute("noofrows",soapnotesForm.getSoapnotes().size());    
+		       
+		        model.addAttribute("menu","notes");
+		        model.addAttribute("button","close");
+			      
+			        model.addAttribute("menu","notes");
+			        model.addAttribute("success","false");
+			        model.addAttribute("button","close");
+					return "viewsoapnotes";
+		 
+			}	
+
 	@RequestMapping(value="/soapNotesList", method=RequestMethod.GET)
 	public String soapnoteslist(HttpServletRequest request,@RequestParam("soapid") String soapid,ModelMap model,SoapNotes soap)
 	{
