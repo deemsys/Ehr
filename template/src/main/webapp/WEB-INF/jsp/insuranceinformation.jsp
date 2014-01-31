@@ -5,14 +5,90 @@
 <head>
 <link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
   <link rel="stylesheet" href="/resources/css/style.css" />
-<script src="resources/js/jquery.min.js"></script>
- <script src="resources/js/jquery-ui.js"></script>
+  <script src="resources/js/jquery.min.js"></script>
+  <script src="resources/js/jquery-ui.js"></script>
+<script src="resources/js/jquey-1.9.1.js"></script>
  <STYLE type="text/css">
   P#mypar {font-style:calibri;
   line-height:18px;}
   
   </STYLE>
  <script>
+ $(window).load(function(){
+	 
+	  $("#policy").keyup(function() {
+			
+			 $("#policyerror").html(''); 
+			/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
+			var intRegex = /^\d+$/;
+			if(intRegex.test($(this).val())||$(this).val()=='') 
+			{
+				var $in = $(this).val();		 
+			}
+			else if($(this).val()!='')
+				{
+				
+				$("#policyerror").html('Kindly enter a number!!!!');
+				}
+		}).keydown(function() {
+		    oldValue = $(this).val();
+		})
+ $("#phone").keyup(function() {
+			
+			 $("#phoneerror").html(''); 
+			/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
+			var intRegex = /^\d+$/;
+			if(intRegex.test($(this).val())||$(this).val()=='') 
+			{
+				var $in = $(this).val();		 
+			}
+			else if($(this).val()!='')
+				{
+				
+				$("#phoneerror").html('Kindly enter a number!!!!');
+				}
+		}).keydown(function() {
+		    oldValue = $(this).val();
+		})
+$("#groupno").keyup(function() {
+			
+			 $("#groupnoerror").html(''); 
+			/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
+			var intRegex = /^\d+$/;
+			if(intRegex.test($(this).val())||$(this).val()=='') 
+			{
+				var $in = $(this).val();		 
+			}
+			else if($(this).val()!='')
+				{
+				
+				$("#groupnoerror").html('Kindly enter a number!!!!');
+				}
+		}).keydown(function() {
+		    oldValue = $(this).val();
+		})
+		$("#supphone").keyup(function() {
+			
+			 $("#supphoneerror").html(''); 
+			/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
+			var intRegex = /^\d+$/;
+			if(intRegex.test($(this).val())||$(this).val()=='') 
+			{
+				var $in = $(this).val();		 
+			}
+			else if($(this).val()!='')
+				{
+				
+				$("#supphoneerror").html('Kindly enter a number!!!!');
+				}
+		}).keydown(function() {
+		    oldValue = $(this).val();
+		})
+});
+ 
+ 
+</script>
+<script>
  $(function() {
 
 		$("#datepicker2").datepicker({changeMonth: true, changeYear: true,showOn: "button",
@@ -82,19 +158,28 @@
               <td><span class="err">*</span>Insurance Company</td>
               <td> <input type="text" class="input_txtbx1" name="insurance_company" id="insurance_company" /><br><span class="err"><form:errors path="Insuranceinformation.insurance_company"></form:errors></td>
               <td><span class="err">*</span>Phone#</td>
-              <td><input type="text" class="input_txtbx1" name="phone" id="phone" /><br><span class="err"><form:errors path="Insuranceinformation.phone"></form:errors></td>
+              <td><input type="text" class="input_txtbx1" name="phone" id="phone" /><br><span class="err"><form:errors path="Insuranceinformation.phone"></form:errors>
+              <br><span class="err" id="phoneerror"></span>
+              </td>
               </tr>
               <tr class="row1">
               <td><span class="err">*</span>Policy #</td>
-              <td> <input type="text" class="input_txtbx1" name="policy" id="policy" /><br><span class="err"><form:errors path="Insuranceinformation.policy"></form:errors></td>
+              <td> <input type="text" class="input_txtbx1" name="policy" id="policy" /><br><span class="err"><form:errors path="Insuranceinformation.policy"></form:errors>
+              <br><span class="err" id="policyerror"></span>
+              </td>
               <td><span class="err">*</span>Group#</td>
-              <td><input type="text" class="input_txtbx1" name="infono" id="infono" /><br><span class="err"><form:errors path="Insuranceinformation.infono"></form:errors></td>
+              <td><input type="text" class="input_txtbx1" name="infono" id="groupno" /><br><span class="err"><form:errors path="Insuranceinformation.infono"></form:errors>
+              <br><span class="err" id="groupnoerror"></span>
+              </td>
               </tr>
               <tr class="row1">
               <td><span class="err">*</span>Supplemental Insurance Company</td>
               <td> <input type="text" class="input_txtbx1" name="supplemental_company" id="supplemental_company" /><br><span class="err"><form:errors path="Insuranceinformation.supplemental_company"></form:errors></td>
               <td><span class="err">*</span>Phone#</td>
-              <td> <input type="text" class="input_txtbx1" name="sup_phone" id="sup_phone" /><br><span class="err"><form:errors path="Insuranceinformation.sup_phone"></form:errors></td>
+              <td> <input type="text" class="input_txtbx1" name="sup_phone" id="supphone" /><br><span class="err"><form:errors path="Insuranceinformation.sup_phone"></form:errors>
+              <br>
+              <span class="err" id="supphoneerror"></span>
+              </td>
               </tr>
               </table>
               
@@ -150,19 +235,29 @@
               <td><span class="err">*</span>Insurance Company</td>
               <td> <input type="text" class="input_txtbx1" name="insurance_company" id="insurance_company" value="${info.insurance_company}"/><br><span class="err"><form:errors path="Insuranceinformation.insurance_company"></form:errors></td>
               <td><span class="err">*</span>Phone#</td>
-              <td><input type="text" class="input_txtbx1" name="phone" id="phone" value="${info.phone }"/><br><span class="err"><form:errors path="Insuranceinformation.phone"></form:errors></td>
+              <td><input type="text" class="input_txtbx1" name="phone" id="phone" value="${info.phone }"/><br><span class="err"><form:errors path="Insuranceinformation.phone"></form:errors>
+              <br><span class="err" id="phoneerror"></span>
+              </td>
               </tr>
               <tr class="row1">
               <td><span class="err">*</span>Policy #</td>
-              <td> <input type="text" class="input_txtbx1" name="policy" id="policy" value="${info.policy}"/><br><span class="err"><form:errors path="Insuranceinformation.policy"></form:errors></td>
+              <td> <input type="text" class="input_txtbx1" name="policy" id="policy" value="${info.policy}"/><br><span class="err"><form:errors path="Insuranceinformation.policy"></form:errors>
+              <br><span class="err" id="policyerror"></span> 
+              </td>
               <td><span class="err">*</span>Group#</td>
-              <td><input type="text" class="input_txtbx1" name="infono" id="infono" value="${info.infono}"/><br><span class="err"><form:errors path="Insuranceinformation.infono"></form:errors></td>
+              <td><input type="text" class="input_txtbx1" name="infono" id="groupno" value="${info.infono}"/><br><span class="err"><form:errors path="Insuranceinformation.infono"></form:errors>
+              <br><span class="err" id="groupnoerror"></span>
+              </td>
               </tr>
               <tr class="row1">
               <td><span class="err">*</span>Supplemental Insurance Company</td>
               <td> <input type="text" class="input_txtbx1" name="supplemental_company" id="supplemental_company" value="${info.supplemental_company}"/><br><span class="err"><form:errors path="Insuranceinformation.supplemental_company"></form:errors></td>
               <td><span class="err">*</span>Phone#</td>
-              <td> <input type="text" class="input_txtbx1" name="sup_phone" id="sup_phone" value="${info.sup_phone}"/><br><span class="err"><form:errors path="Insuranceinformation.sup_phone"></form:errors></td>
+              <td> <input type="text" class="input_txtbx1" name="sup_phone" id="supphone" value="${info.sup_phone}"/><br><span class="err"><form:errors path="Insuranceinformation.sup_phone"></form:errors></span>
+              <br>
+              <span class="err" id="supphoneerror"></span>
+            
+              </td>
               </tr>
               </table>
               
@@ -198,7 +293,7 @@
 	    <td valign="top" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
         <td valign="top" align="center"><br><input type="submit" class="submit_btn" value="Save"></td>
         <td>&nbsp;&nbsp;</td>
-        <td valign="top" align="center"><br><input type="reset" class="submit_btn" value="Cancel"></td>
+        <td valign="top" align="center"><br><a href="insuranceinfolist" class="submit_btn" style="color: white">Cancel</a></td>
 	    <td>&nbsp;&nbsp;</td>
 	    <!-- <td valign="top" align="center"><br><input type="button" class="submit_btn" value="View" onclick="window.location.href='insuranceinfolist'"></td> -->
 	    </tr>

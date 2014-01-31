@@ -1002,8 +1002,8 @@ w=0;
 	    
 	     <div class="contentbox">
 	  <c:set value="${symptomform.symptomdetails[0]}" var="symptomdetails"/>
-          <table cellpadding="0" cellspacing="0" border="0" width="98%" >
-          <tr><td width="100"><span class="err">*</span>Name</td><td width="300"><input type="hidden" name="symptomno" value="${symptomdetails.symptomno} "><input type="text" name="pname" value="${symptomdetails.pname} "><span class="err"><form:errors path="symptom.pname"></form:errors></td>
+          <table cellpadding="0" cellspacing="0" border="0" width="98%" height="20">
+          <tr><td width="100" ><span class="err">*</span>Name</td><td width="300"><input type="hidden" name="symptomno" value="${symptomdetails.symptomno} "><input type="text" name="pname" value="${symptomdetails.pname} "><span class="err"><form:errors path="symptom.pname"></form:errors></td>
 <td  width="100">Number</td><td width="100"><input type="text" name="number" value="${symptomdetails.number}"></td>
 <td width="100" align="right"><span class="err">*</span>Date</td><td width="300"><input type="text" name="date" value="${symptomdetails.date}" id="datepicker"><span class="err"><form:errors path="symptom.date"></form:errors></td>
 </tr></table>
@@ -1349,7 +1349,7 @@ w=0;
     <img  id= "bodyback" alt="" src="resources/images/bodyback.png"> </td></tr> </table>
 </br>
 </br>
-<table width="100" align="right"><tr ><td  ><input  type="submit" value="Save" class="submit_btn"></td><td  ><a href="viewsymptom" style="color: white" class="submit_btn">Cancel</a></td></tr>
+<table width="100" align="right"><tr ><td  ><input  type="submit" value="Update" class="submit_btn"></td><td  ><a href="viewsymptom" style="color: white" class="submit_btn">Cancel</a></td></tr>
 </table>
 </form>
 <!-- <div id="position"></div><div id="position1"></div> -->

@@ -1161,7 +1161,7 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
 	      <c:choose>
 		 <c:when test="${empty symptoms}">
 	  
-          <table cellpadding="0" cellspacing="0" border="0" width="98%" >
+          <table cellpadding="0" cellspacing="0" border="0" width="98%" height="20" >
           <tr><td width="100"><span class="err">*</span>Name</td><td width="300"><input type="text" name="pname"><span class="err"><form:errors path="symptom.pname"></form:errors></td>
 <td  width="100">Number</td><td width="100"><input type="text" name="number"></td>
 <td  width="100" align="right"><span class="err">*</span>Date </td><td width="300"><input type="text" name="date" id="datepicker"><span class="err"><form:errors path="symptom.date"></form:errors></td>

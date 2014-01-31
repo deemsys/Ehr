@@ -3,15 +3,41 @@
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
-<link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
-<script src="resources/js/jquery.min.js"></script>
- <script src="resources/js/jquery-ui.js"></script>
+ <link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
+  <link rel="stylesheet" href="/resources/css/style.css" />
+  <script src="resources/js/jquery.min.js"></script>
+  <script src="resources/js/jquery-ui.js"></script>
+<script src="resources/js/jquey-1.9.1.js"></script>
  <STYLE type="text/css">
   P#mypar {font-style:calibri;
   line-height:18px;}
   
   </STYLE>
  <script>
+ $(window).load(function(){
+	  alert("yes");
+	  $("#enrollee").keyup(function() {
+			
+			 $("#enrolleeerror").html(''); 
+			/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
+			var intRegex = /^\d+$/;
+			if(intRegex.test($(this).val())||$(this).val()=='') 
+			{
+				var $in = $(this).val();		 
+			}
+			else if($(this).val()!='')
+				{
+				
+				$("#enrolleeerror").html('Kindly enter a number!!!!');
+				}
+		}).keydown(function() {
+		    oldValue = $(this).val();
+		})
+
+});
+</script>
+<script>
+
  $(function() {
 	 $("#datepicker").datepicker({ changeMonth: true,changeYear: true,showOn: "button",
 			buttonImage: "resources/images/calendar.gif",
@@ -60,7 +86,9 @@
         <td ><input type="text" class="input_txtbx1" name="accident_date" id="datepicker" placeholder="Date of Accident" value="${Insuranceplan.accident_date}"/><%-- <span class="err"><form:errors path="Insuranceplan.accident_date"></form:errors> --%></td>
         </tr>
         <tr class="row1">
-        <td ><input type="text" class="input_txtbx1" name="enrollee" id="enrollee" placeholder="Subscriber/Enrollee No" value="${Insuranceplan.enrollee}" /><%-- <span class="err"><form:errors path="Insuranceplan.enrollee"></form:errors> --%></td>
+        <td ><input type="text" class="input_txtbx1" name="enrollee" id="enrollee" placeholder="Subscriber/Enrollee No" value="${Insuranceplan.enrollee}" /><%-- <span class="err"><form:errors path="Insuranceplan.enrollee"></form:errors> --%>
+        <br><span class="err" id="enrolleeerror"></span>
+        </td>
         </tr>
         </table>
         <table cellpadding="0" cellspacing="0" border="0" width="100%">

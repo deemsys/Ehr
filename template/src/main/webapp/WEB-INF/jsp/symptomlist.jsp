@@ -585,7 +585,7 @@ w=0;
 	    
 	     <div class="contentbox">
 	  <c:set value="${symptomform.symptomdetails[0]}" var="symptomdetails"/>
-          <table cellpadding="0" cellspacing="0" border="0" width="98%" >
+          <table cellpadding="0" cellspacing="0" border="0" width="98%" height="20" >
           <tr><td width="100"><span class="err">*</span>Name</td><td width="300"><c:out value="${symptomdetails.pname} "/><span class="err"><form:errors path="symptom.pname"></form:errors></td>
 <td  width="100">Number</td><td width="100"><c:out value="${symptomdetails.number}"/></td>
 <td  width="120" align="center"><span class="err">*</span>Date</td><td width="300"><c:out value="${symptomdetails.date}" /><span class="err"><form:errors path="symptom.date"></form:errors></td>

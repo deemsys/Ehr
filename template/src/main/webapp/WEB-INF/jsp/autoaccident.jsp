@@ -7,7 +7,78 @@
   <link rel="stylesheet" href="/resources/css/style.css" />
   <script src="resources/js/jquery.min.js"></script>
   <script src="resources/js/jquery-ui.js"></script>
-<script type="text/javascript">
+<script src="resources/js/jquey-1.9.1.js"></script>
+<script>
+$(window).load(function(){
+$("#claimno").keyup(function() {
+	 $("#claimnoerror").html(''); 
+	/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
+	var intRegex = /^\d+$/;
+	if(intRegex.test($(this).val())||$(this).val()=='') 
+	{
+		var $in = $(this).val();		 
+	}
+	else if($(this).val()!='')
+		{
+		
+		$("#claimnoerror").html('Kindly enter a number!!!!');
+		}
+}).keydown(function() {
+  oldValue = $(this).val();
+})
+$("#speed").keyup(function() {
+	 $("#speederror").html(''); 
+	/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
+	var intRegex = /^\d+$/;
+	if(intRegex.test($(this).val())||$(this).val()=='') 
+	{
+		var $in = $(this).val();		 
+	}
+	else if($(this).val()!='')
+		{
+		
+		$("#speederror").html('Kindly enter a number!!!!');
+		}
+}).keydown(function() {
+  oldValue = $(this).val();
+})
+$("#estimateddamage").keyup(function() {
+	 $("#estimateddamageerror").html(''); 
+	/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
+	var intRegex = /^\d+$/;
+	if(intRegex.test($(this).val())||$(this).val()=='') 
+	{
+		var $in = $(this).val();		 
+	}
+	else if($(this).val()!='')
+		{
+		
+		$("#estimateddamageerror").html('Kindly enter a number!!!!');
+		}
+}).keydown(function() {
+  oldValue = $(this).val();
+})
+$("#staylength").keyup(function() {
+	 $("#staylengtherror").html(''); 
+	/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
+	var intRegex = /^\d+$/;
+	if(intRegex.test($(this).val())||$(this).val()=='') 
+	{
+		var $in = $(this).val();		 
+	}
+	else if($(this).val()!='')
+		{
+		
+		$("#staylengtherror").html('Kindly enter a number!!!!');
+		}
+}).keydown(function() {
+  oldValue = $(this).val();
+})
+});
+</script>
+
+<script>
+
 $(function() {
     $( "#tabs" ).tabs();
  
@@ -72,13 +143,14 @@ $(function() {
     <li><a href="#tabs-4">4</a></li>
   </ul>
   <div class="tabs-spacer"></div>
+   <form action="autoaccident" method="POST"> 
    <c:choose>
     		<c:when test="${empty auto}">
   <div id="tabs-1">
  
 
 <div id="right_content">
- <form action="autoaccident" method="POST"> 
+
  
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
       <tr>
@@ -102,7 +174,9 @@ $(function() {
                  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>What is the claim number of your accident</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="claimnumber" /><span class="err"><form:errors path="Autoaccident.claimnumber"></form:errors></span></td>
+				  <input type="text" class="input_txtbx1" id="claimno" name="claimnumber" /><span class="err"><form:errors path="Autoaccident.claimnumber"></form:errors></span>
+				  <br><span class="err"r" id="claimnoerror"></span>
+				  </td>
 
 				  </tr>
 				  <tr class="row2">
@@ -192,8 +266,10 @@ $(function() {
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Estimated rate of speed</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="estimated_rate" /><span class="err"><form:errors path="Autoaccident.estimated_rate"></form:errors></span>
-				  </td>
+				  <input type="text" class="input_txtbx1" id="speed" name="estimated_rate" /><span class="err"><form:errors path="Autoaccident.estimated_rate"></form:errors></span>
+			<br>
+			<span class="err" id="speederror"></span>
+  </td>
 				  </tr>
 				 <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Time of day</td>
@@ -249,12 +325,12 @@ $(function() {
 				  </td>
 				  </tr>
 				  </table>
-				<!--  </form> -->
+			
 				  </div>
 				  </div>
 				  <div id="tabs-2">
 				  <div id="right_content">
-<!-- <form action="auto" method="POST"> -->
+
 
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
       <tr>
@@ -393,7 +469,7 @@ $(function() {
 				  </tr>  -->
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Did this cause further injury</td>
-				  <td valign="top" align="left" class="input_txt"><input type="radio" name="further_injury" value="yes" class="input_txt" checked="true" onclick="toggle2('show2')">Yes&nbsp;&nbsp;&nbsp;
+				  <td valign="middle" align="left" class="input_txt"><input type="radio" name="further_injury" value="yes" class="input_txt" checked="true" onclick="toggle2('show2')">Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="further_injury" value="no" class="input_txt" onclick="toggle2('hide2')">No&nbsp;&nbsp;&nbsp;
 				  <textarea rows='3' cols='35' id="injury" name="injurytext" placeholder="Please explain"></textarea>
 				  </td>
@@ -416,8 +492,7 @@ $(function() {
 				  </td>
 				  </tr>
 				  </table>
-				 <!--  </form> -->
-				  </div>
+								  </div>
 				  </div>
 				  <div id="tabs-3">
 				   <div id="right_content">
@@ -445,7 +520,7 @@ $(function() {
   				<td></td>
   				</tr>
   				<tr class="row2">
-                <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient's body</td>
+                <td valign="middle" align="left" class="input_txt" width="590"><span class="err">*</span>Patient's body</td>
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="patient_body" class="input_cmbbx1" id="patient_body" onchange='CheckPatientposition(this.value);'>
 					<option selected="selected" value="jolted" >Jolted</option>
@@ -470,7 +545,7 @@ $(function() {
 				<table cellpadding="0" cellspacing="0" border="0" width="100%">
 				  
 				  <tr class="row2">
-                  <td valign="middle" align="left" class="input_txt">My head hit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                  <td valign="middle" align="left" width="590" class="input_txt">My head hit</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="input_txtbx1" id="inp_id" name="head_hit" />
 				  </td>
@@ -546,7 +621,8 @@ $(function() {
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt">Estimated amount of property damage</td>
 				  <td valign="top" align="left" class="input_txt">$
-				  <input type="text" class="input_txtbx1" id="inp_id" name="estimated_amount" /><span class="err"><form:errors path="Autoaccident.estimated_amount"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="estimateddamage" name="estimated_amount" /><span class="err"><form:errors path="Autoaccident.estimated_amount"></form:errors></span>
+				 <br><span class="err" id="estimateddamageerror"></span>
 				  </td>
 				  </tr>
 				  <tr class="row2">
@@ -652,32 +728,34 @@ $(function() {
 				  </tr> 
 				  </table>
 				  <div id="accident_hospital">
-				  <table cellpadding="0" cellspacing="0" border="0" width="100%">
+				  <table cellpadding="0" cellspacing="0" border="0" width="100%" >
 				   <tr class="row2">
-                  <td valign="middle" align="left" class="input_txt">Name of the hospital&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <td valign="middle" align="left" class="input_txt" >Name of the hospital</td><td width="20"></td><!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
 				  
-				  <input type="text" class="input_txtbx1" id="inp_id" name="hosname" />
-				  <td></td>
-				  <td></td>
-				  </td>
+				 
+				  <td><input type="text" align="left" class="input_txtbx1" id="inp_id" name="hosname" /></td>
+				  <td width="680" ></td>
+				
 				  </tr>
 				   <tr class="row1">
-                  <td valign="middle" align="left" class="input_txt">City&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <td valign="middle" align="left" class="input_txt">City</td><td></td><td><!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
 				  
 				  <input type="text" class="input_txtbx1" id="inp_id" name="city" />
 				  </td>
 				  </tr>
 				   <tr class="row2">
-                  <td valign="middle" align="left" class="input_txt">Length of stay&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				  
-				  <input type="text" class="input_txtbx1" id="inp_id" name="staylength" />
+                  <td valign="middle" align="left" class="input_txt">Length of stay</td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				  <td></td>
+				  <td>
+				  <input type="text" class="input_txtbx1" id="staylength" name="staylength" />
+				  <br><span class="err" id="staylengtherror"></span>
 				  </td>
 				  <td></td>
-				  <td></td>
+				  
 				  </tr>
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>How did you get to the hospital?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				
+				</td><td></td><td>
 				  <select name="hospitalget" class="input_cmbbx1" id="hospitalget" onchange='Checkhospital(this.value);'>
 					<option selected="selected" value="ambulance" >Ambulance</option>
 					<option value="other hos">Other</option>
@@ -687,15 +765,15 @@ $(function() {
 				  </tr> 
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt">What body parts were x-rayed,what treatment was given
-				  
+				  </td><td></td><td>
 				  <input type="text" class="input_txtbx1" id="inp_id" name="xray" />
 				  </td>
-				  <td></td>
-				  <td></td>
+				  <td ></td>
+				 
 				  </tr>
 				   <tr class="row1">
-                  <td valign="middle" align="left" class="input_txt">What did they tell you was wrong&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				  
+                  <td valign="middle"  align="left" class="input_txt">What did they tell you was wrong<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+				  </td><td></td><td>
 				  <input type="text" class="input_txtbx1" id="inp_id" name="wrong" />
 				  </td>
 				  
@@ -711,21 +789,11 @@ $(function() {
 				  </tr>
 				  </table>
 				
-				   <table align="right">
-				  <br><tr>
-				 <td><input type="button" id="btnPrevious" class="submit_btn" value="Previous"  /></td>
-				 <td>&nbsp;&nbsp;</td>
- 
-                  <td><input type="submit" class="submit_btn" value="Save"></td>
-                  <td>&nbsp;&nbsp;</td>
-                  <td><input type="reset" class="submit_btn" value="Cancel" onclick="window.location.href='auto'"></td>
-				</table> 
-				</div>
-				</div>
 				</c:when>
 				<c:otherwise>
 				 <div id="tabs-1">
 				<div id="right_content"> 
+				
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
       <tr>
         <td valign="top" align="left" style="padding:5px 0 10px 0;">&nbsp;
@@ -749,7 +817,10 @@ $(function() {
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>What is the claim number of your accident</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="hidden" class="input_txtbx1" id="inp_id" value="${auto.patient_number}" name="patient_number" />
-				  <input type="text" class="input_txtbx1" id="inp_id" name="claimnumber" value="${auto.claimnumber }" /><span class="err"><form:errors path="Autoaccident.claimnumber"></form:errors></span></td>
+				  <input type="text" class="input_txtbx1" id="claimno" name="claimnumber" value="${auto.claimnumber }" /><span class="err"><form:errors path="Autoaccident.claimnumber"></form:errors></span>
+				  <br>
+				  <span class="err" id="claimnoerror"></span>
+				  </td>
 
 				  </tr>
 				  <tr class="row2">
@@ -845,7 +916,9 @@ $(function() {
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Estimated rate of speed</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="estimated_rate" value="${auto.estimated_rate }"/><span class="err"><form:errors path="Autoaccident.estimated_rate"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="speed" name="estimated_rate" value="${auto.estimated_rate }"/><span class="err"><form:errors path="Autoaccident.estimated_rate"></form:errors></span>
+				<br><span class="err" id="speederror">
+				</span>
 				  </td>
 				  </tr>
 				 <tr class="row2">
@@ -1111,7 +1184,7 @@ $(function() {
 				  </td>
 				  </tr>
 				  </table>
-				 <!--  </form> -->
+				
 				  </div>
 				  </div>
 				  <div id="tabs-3">
@@ -1130,7 +1203,7 @@ $(function() {
   				<td></td>
   				</tr>
   				<tr class="row2">
-                <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient's body</td>
+                <td valign="middle" align="left" class="input_txt" width="615"><span class="err">*</span>Patient's body</td>
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="patient_body" class="input_cmbbx1" id="patientbody" onclick='CheckPatientposition();'>
 					<option value="jolted" <c:if test="${auto.patient_body=='jolted'}"><c:out value="selected"/></c:if>>Jolted</option>
@@ -1212,7 +1285,7 @@ $(function() {
 				  
 				  <table cellpadding="0" cellspacing="0" border="0" width="100%"> 
 				  <tr class="row2">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Were you wearing glasses at the time of accident&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				  <td valign="middle" width="615" align="left" class="input_txt"><span class="err">*</span>Were you wearing glasses at the time of accident&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="wearing_glasses" value="yes" class="input_txt" <c:if test="${auto.wearing_glasses=='yes'}"><c:out value="Checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="wearing_glasses" value="no" class="input_txt" <c:if test="${auto.wearing_glasses=='no'}"><c:out value="Checked"/></c:if>>No&nbsp;&nbsp;&nbsp;<span class="err"><form:errors path="Autoaccident.wearing_glasses"></form:errors></span>
@@ -1236,7 +1309,9 @@ $(function() {
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt">Estimated amount of property damage</td>
 				  <td valign="top" align="left" class="input_txt">$
-				  <input type="text" class="input_txtbx1" id="inp_id" name="estimated_amount" value="${auto.estimated_amount }"/>
+				  <input type="text" class="input_txtbx1" id="estimateddamage" name="estimated_amount" value="${auto.estimated_amount }"/>
+				  <br>
+				 <span class="err" id="estimateddamageerror"></span>
 				  </td>
 				  </tr>
 				  <tr class="row2">
@@ -1335,7 +1410,7 @@ $(function() {
 				   <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>After the accident I went</td>
 				 <td valign="top" align="left" class="input_txt">
-				  <select name="after_accident" class="input_cmbbx1"  id="afteraccident"onclick='Check();'>
+				  <select name="after_accident" class="input_cmbbx1"  id="afteraccident" onchange='Check(this.value);'>
 					<option  value="hospital" <c:if test="${auto.after_accident=='hospital'}"><c:out  value="selected"/></c:if>  >Hospital</option>
 					<option value="work" <c:if test="${auto.after_accident=='work'}"><c:out  value="selected"/></c:if> >Work</option>
 					<option value="home" <c:if test="${auto.after_accident=='home'}"><c:out  value="selected"/></c:if> >Home</option>
@@ -1350,53 +1425,54 @@ $(function() {
 				   
 				   <div id="accident_hospital" style='display:none' >
 				  	
-				  <table cellpadding="0" cellspacing="0" border="0" width="100%">
+				  <table cellpadding="0" cellspacing="0" border="1" width="100%">
 				   <tr class="row2">
-                  <td valign="middle" align="left" class="input_txt">Name of the hospital&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <td valign="middle" align="left" class="input_txt" width="100" >Name of the hospital</td>
+				  <td  width="40"></td>
+				 <td> <input  align="left" type="text" class="input_txtbx1" id="inp_id" name="hosname" value="${auto.hosname }"/>
 				  
-				  <input type="text" class="input_txtbx1" id="inp_id" name="hosname" value="${auto.hosname }"/>
-				  <td></td>
-				  <td></td>
-				  </td>
+				  </td><td width="610" ></td><td></td>
 				  </tr>
 				   <tr class="row1">
-                  <td valign="middle" align="left" class="input_txt">City&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <td valign="middle" align="left" class="input_txt">City</td>
+                 <td></td> 
+                  <td>
 				  
 				  <input type="text" class="input_txtbx1" id="inp_id" name="city" value="${auto.city }" />
-				  </td>
+				  </td><td></td>
 				  </tr>
 				   <tr class="row2">
-                  <td valign="middle" align="left" class="input_txt">Length of stay&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				  
-				  <input type="text" class="input_txtbx1" id="inp_id" name="staylength" value="${auto.staylength }"/>
+                  <td valign="middle" align="left" class="input_txt">Length of stay</td>
+				  <td></td><td>
+				  <input type="text" class="input_txtbx1" id="staylength" name="staylength" value="${auto.staylength }"/>
+				  <br><span class="err" id="staylengtherror"></span>
 				  </td>
-				  <td></td>
-				  <td></td>
+				 <td></td>
 				  </tr>
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>How did you get to the hospital?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				
-				  <select name="hospitalget" class="input_cmbbx1" id="checkhospital"  onclick='Checkhospital();'>
+				</td><td></td><td>
+				  <select name="hospitalget" class="input_cmbbx1" id="hospitalget"  onchange='Checkhospital(this.value);'>
 					<option  value="ambulance" <c:if test="${auto.hospitalget=='ambulance'}"><c:out value="selected"/></c:if>>Ambulance</option>
-					<option value="otherhos" <c:if test="${auto.hospitalget=='otherhos'}"><c:out value="selected"/></c:if>>Other</option>
+					<option value="other hos" <c:if test="${auto.hospitalget=='otherhos'}"><c:out value="selected"/></c:if>>Other</option>
 				   </select><span class="err"><form:errors path="Autoaccident.hospitalget"></form:errors></span>
 				  
 				 <input type="text" name="hospital1" id="hospital1" value="${auto.hospital1}" style='display:none'/>
-				  </td>
+				  </td><td></td>
 				  </tr> 
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt">What body parts were x-rayed,what treatment was given
-				  
+				 <td></td><td> 
 				  <input type="text" class="input_txtbx1" id="inp_id" name="xray" value="${auto.xray }"/>
 				  </td>
 				  <td></td>
-				  <td></td>
+				  
 				  </tr>
 				   <tr class="row1">
-                  <td valign="middle" align="left" class="input_txt">What did they tell you was wrong&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				  
-				  <input type="text" class="input_txtbx1" id="inp_id" name="wrong" value="${auto.wrong }" />
-				  </td>				  
+                  <td valign="middle" align="left" class="input_txt">What did they tell you was wrong
+				  </td><td></td>
+				  <td><input type="text" class="input_txtbx1" id="inp_id" name="wrong" value="${auto.wrong }" />
+				  </td>	<td></td>			  
 				  </tr>				  
 				  </table>
 				  </div>
@@ -1405,17 +1481,29 @@ $(function() {
 				  </td>
 				  </tr>
 				  </table>
-				 <table align="right">
+				 <!-- <table align="right">
 				  <br><tr>
 				 <td><br><input type="button" id="btnPrevious" class="submit_btn" value="Previous" style = "display:none" />&nbsp;</td>
                 <td><input type="submit" class="submit_btn" value="Update"></td>
                 <td><input type="reset" class="submit_btn" value="Cancel" onclick="window.location.href='viewautoaccident'"></td>				 
-				</table> 
+				</table>  -->
 				</div>
 				</c:otherwise>
 				</c:choose>
-				</div>
+				  <table align="right">
+				  <br><tr>
+				 <td><input type="button" id="btnPrevious" class="submit_btn" value="Previous"  /></td>
+				 <td>&nbsp;&nbsp;</td>
+ 
+                  <td><input type="submit" class="submit_btn" value="Save"></td>
+                  <td>&nbsp;&nbsp;</td>
+                  <td><a href="viewpatient" class="submit_btn" style="color: white">Cancel</a></td>
+				</table> 
+				</form>
+				</div></div>
+				
 				</body>
+				  <jsp:include page="footer.jsp"></jsp:include>
 				</html>
 				  
 				  
@@ -1542,7 +1630,7 @@ function Check(val){
 } 
 </script>
 
-			  <jsp:include page="footer.jsp"></jsp:include>
+			
 				  
 				  
 				  

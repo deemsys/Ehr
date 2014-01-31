@@ -47,7 +47,7 @@
   				<tr>
     				<td align="left" valign="top" width="100%" style="padding-right:25px;">
                         
-                        <table cellpadding="0" cellspacing="0" border="0" width="50%">
+                        <table cellpadding="0" cellspacing="0" border="0" width="90%">
                         <tr>
                         <div align="justify">
                         <P id="mypar"><b>THIS NOTICE DESCRIBES HOW MEDICAL INFORMATION ABOUT YOU MAY BE USED AND DISCLOSED AND HOW YOU CAN GET ACCESS TO THIS INFORMATION.  PLEASE REVIEW IT CAREFULLY.</b></P>
@@ -83,24 +83,29 @@
 				                  <input type="hidden" class="input_txtbx1" id="inp_id" value="${privacydetails.hippa_no}" name="hippa_no" />
 				                   <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="printpname" value="${privacydetails.printpname}"/>
+				                  	  <br><span class="err"><form:errors path="HippaPrivacy.printpname"></form:errors>
 				                  	</td>
 				                  	</tr>
 				                  	<tr class="row1">
 				                  	 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date: </td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="datepicker1" name="printpdate" value="${privacydetails.printpdate}" />
-				         </span></td>
+				           <br><span class="err"><form:errors path="HippaPrivacy.printpdate"></form:errors>
+				           </td>
 				         </tr>
 				         <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Signature Of parent or Legal Guardian: </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="legalguardian" value="${privacydetails.legalguardian }"/>
+				                    <br><span class="err"><form:errors path="HippaPrivacy.legalguardian"></form:errors>
+				                  </td>
 				                  	</tr>
 				                  	 <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Staff Witness: </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="staffwitness" value="${privacydetails.staffwitness}"/>
-				                  	</tr>
+				                  <br><span class="err"><form:errors path="HippaPrivacy.staffwitness"></form:errors>
+				                  </td>	</tr>
 				                  	</table>
 				     <table>
               <tr>

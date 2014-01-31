@@ -30,8 +30,136 @@ margin: 0;
 	z-index: 100;
 	font-size: 13px;
 }
+.ddsubmenu,.ddsubmenu ul
+{
+list-style-type: none;
+	border: 1px solid #444;
+	border-bottom: 0;
+	visibility: hidden; 
+}
+.ddsubmenustyle li {
+list-style-type: none;
+	line-height: 28px;
+	font-size: 13px;
+}
+
+.ddsubmenu li a {
+list-style-type: none;
+	display: block;
+	width: 160px;
+	color: #fff;
+	text-decoration: none;
+	padding: 0 10px;
+	background: #243d6e;
+	border-bottom: 1px solid #fff;
+	font-size: 13px;
+}
+
 .ddsubmenustyle,.ddsubmenustyle ul {
 	margin: 0;
+	padding: 0;
+	position: absolute;
+	left: 0;
+	top: 0;
+	list-style-type: none; 
+	border: 1px solid #444;
+	border-bottom: 0;
+	visibility: hidden;
+	z-index: 100;
+	font-size: 13px;
+}
+/* .ddsubmenustyle ol{
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	left: 0;
+	top: 0;
+	list-style-type: none; 
+	border: 1px solid #444;
+	border-bottom: 0;
+	visibility: hidden;
+	z-index: 100;
+	font-size: 13px;
+} */
+/* .ddsubmenustyle ol li {
+list-style-type: none;
+	line-height: 28px;
+	font-size: 13px;
+} */
+
+.ddsubmenustyle li {
+list-style-type: none;
+	line-height: 28px;
+	font-size: 13px;
+}
+.ddsubmenustyle li li {
+list-style-type: none;
+	line-height: 28px;
+	font-size: 13px;
+}
+
+.ddsubmenustyle li a {
+
+list-style-type: none;
+	display: block;
+	width: 160;
+	color: #fff;
+	text-decoration: none;
+	padding: 0 10px ;
+	background: #243d6e;
+	 border-bottom: 1px solid #fff; 
+	font-size: 13px;
+}
+* html .ddsubmenustyle li { /*IE6 CSS hack*/
+	display: inline-block;	
+	width: 100px; /*width of menu (include side paddings of LI A*/
+}
+.ddsubmenustyle ol li a:hover {
+list-style-type: none;
+	background-color: #eee;
+	border-bottom: 1px solid #ccc;
+	color: #333333;
+}
+.ddsubmenustyle li a:hover {
+list-style-type: none;
+	background-color: #eee;
+	border-bottom: 1px solid #ccc;
+	color: #333333;
+}
+
+ .downarrowpointer {
+	/*CSS for "down" arrow image added to top menu items*/
+	padding: 0;
+	border: 0;
+	position: 0;
+} 
+
+   .rightarrowpointer {
+	/*CSS for "right" arrow image added to drop down menu items*/
+	 background:url(../images/login-head.png) no-repeat;
+	position: absolute;
+	padding-top: 3px;
+	left: 100px;
+	border: 10;
+}  
+
+.ddiframeshim {
+	position: absolute;
+	z-index: 500;
+	background:none;
+	border-width: 0;
+	width: 0;
+	height: 0;
+	display: block;
+}
+
+.nav {
+/* width:800px;
+margin:30px 50px;;
+padding: 0;
+float:left;
+margin: 0; */
+	
 	padding: 0;
 	position: absolute;
 	left: 0;
@@ -44,59 +172,73 @@ margin: 0;
 	z-index: 100;
 	font-size: 13px;
 }
-
-.ddsubmenustyle li {
-list-style-type: none;
-	line-height: 28px;
-	font-size: 13px;
+.nav li {
+ list-style: none;
+ float: left; 
+ padding:0 10px;
 }
 
-.ddsubmenustyle li a {
-list-style-type: none;
-	display: block;
-	width: 160px;
-	color: #fff;
-	text-decoration: none;
-	padding: 0 10px;
-	background: #243d6e;
-	border-bottom: 1px solid #fff;
-	font-size: 13px;
+/*--temp--*/
+.nav ul ul li {
+clear:left;
 }
-* html .ddsubmenustyle li { /*IE6 CSS hack*/
-	display: inline-block;
-	width: 140px; /*width of menu (include side paddings of LI A*/
+.nav ul ul {
+position:absolute;
+left:14em;
+top:0;
+}
+.nav ul ul li a {
+display:block;
+padding: 3px 15px;
+color: #242424;
+text-decoration: none;
+font-size:13px;
+font-family:"Lato" !important;
+}
+/*--end temp--*/
+.nav li a {
+display: block;
+padding: 3px 15px;
+color: #242424;
+text-decoration: none;
+font-size:13px; 
+font-family:"Lato" !important;
+}
+.nav a:hover {
+color:#367FB3;
+}
+.nav a:active {
+color:#367FB3;
+}
+.nav li ul {
+display: none; 
+width: 14em; /* Width to help Opera out */
+background-color:transparent;
+z-index:666;
+}
+.nav li:hover ul, .nav li.hover ul {
+display: block;
+position: absolute;
+margin:0px -10px;
+padding:0px; 
+}
+.nav li:hover li, .nav li.hover li {
+float: none; 
+line-height:30px;
+}
+.nav li:hover li a, .nav li.hover li a {
+ background-color:#367FB3;
+ color:#fff;
+ font-size:13px; 
+ font-family:"Lato" !important;
+}
+.nav li li a:hover {
+background-color:#52baff; 
+color:#fff;
 }
 
-.ddsubmenustyle li a:hover {
-list-style-type: none;
-	background-color: #eee;
-	border-bottom: 1px solid #ccc;
-	color: #333333;
-}
 
-.downarrowpointer {
-	/*CSS for "down" arrow image added to top menu items*/
-	padding: 0;
-	border: 0;
-}
 
-.rightarrowpointer {
-	/*CSS for "right" arrow image added to drop down menu items*/
-	position: absolute;
-	padding-top: 3px;
-	left: 100px;
-	border: 0;
-}
-
-.ddiframeshim {
-	position: absolute;
-	z-index: 500;
-	background: transparent;
-	border-width: 0;
-	width: 0;
-	height: 0;
-	display: block;
-}
 </style>
 </head>
 <body onload="javascript:startTime();">
@@ -933,58 +1075,65 @@ list-style-type: none;
 							<li><a href="insuranceinfolist">View Health Insurance Information</a></li>
 							<!-- <li><a href="insuranceverification">Health Insurance Verification</a></li> -->
 						</ul>
+						<script>
+						function lumbo()
+						{
+							document.getElementById("ddsubmenu14").style.display="block";
+						}
+						
+						</script>
 						<ul id="ddsubmenu13" class="ddsubmenustyle">
 						
-							<li style="list-style-type: none"><a href="#" rel="ddsubmenu14" ><span>Lumbopelvic Exam</span> </a>
-							  <ul id="ddsubmenu14" style="list-style-type: none" class="ddsubmenustyle">
-							      <li style="list-style-type: none"><a href="lumbopelvicexam" >Lumbopelvic Initial Exam</a></li>
+							<li style="list-style-type: none"><a href="#" rel="ddsubmenu14" onmouseover="lumbo()"><span>Lumbopelvic Exam</span> </a>
+							  <ul id="ddsubmenu14" style="display: none">
+							     <li > <a href="lumbopelvicexam" >Lumbopelvic Initial Exam</a>
 							      <li><a href="viewlumbopelvicexam">View Lumbopelvic Exam & Reexam</a></li>
 							   </ul> 
 							     </li>
-							<li><a href="#" rel="ddsubmenu15" >Hip Exam</a>
-							     <ul id="ddsubmenu15" class="ddsubmenustyle">
+							<li><a href="#" rel="ddsubmenu15" onmouseover="hipdi()">Hip Exam</a>
+							     <ul id="ddsubmenu15" style="display: none">
 							      <li><a href="perry" >Hip Initial Exam</a></li>
 							      <li><a href="viewhipexam">View Hip Exam & Reexam</a></li>
 							     </ul>
 							     </li>
-							<li><a href="#" rel="ddsubmenu16">Knee Exam</a> 
-							<ul id="ddsubmenu16" class="ddsubmenustyle">
+							<li><a href="#" rel="ddsubmenu16" onmouseover="kneedisplay()">Knee Exam</a> 
+							<ul id="ddsubmenu16" style="display: none">
 							      <li><a href="kneeexam" >Knee Initial Exam</a></li>
 							      <li><a href="viewkneeexam">View Knee Exam & Reexam</a></li>
 							     </ul>
 							     </li>
-							<li><a href="#" rel="ddsubmenu17">Foot Exam</a>
-							<ul id="ddsubmenu17" class="ddsubmenustyle">
+							<li><a href="#" rel="ddsubmenu17" onmouseover="footdisplay()">Foot Exam</a>
+							<ul id="ddsubmenu17" style="display: none">
 							      <li><a href="ankle" >Foot Initial Exam</a></li>
 							      <li><a href="viewfootexam">View Foot Exam & Reexam</a></li>
 							     </ul>
 							     </li>     
-				            <li><a href="#" rel="ddsubmenu18">Cervical Exam</a>
-				              <ul id="ddsubmenu18" class="ddsubmenustyle">
+				            <li><a href="#" rel="ddsubmenu18" onmouseover="cervicaldisplay()">Cervical Exam</a>
+				              <ul id="ddsubmenu18" style="display: none">
 							      <li><a href="cervicalexam" >Cervical Initial Exam</a></li>
 							      <li><a href="viewcervicalexam">View Cervical Exam & Reexam</a></li>
 							     </ul>
 							     </li>
-				            <li><a href="#" rel="ddsubmenu19">Shoulder Exam</a>
-				             <ul id="ddsubmenu19" class="ddsubmenustyle">
+				            <li><a href="#" rel="ddsubmenu19" onmouseover="shoulderdisplay()">Shoulder Exam</a>
+				             <ul id="ddsubmenu19" style="display: none">
 							      <li><a href="shoulderexam" >Shoulder Initial Exam</a></li>
 							      <li><a href="viewshoulderexamdetails">View Shoulder Exam & Reexam</a></li>
 							     </ul>
 							     </li>
-				            <li><a href="#" rel="ddsubmenu20">Elbow Exam</a>
-				                <ul id="ddsubmenu20" class="ddsubmenustyle">
+				            <li><a href="#" rel="ddsubmenu20" onmouseover="elbowdisplay()">Elbow Exam</a>
+				                <ul id="ddsubmenu20" style="display: none" >
 							      <li><a href="elbowexam" >Elbow Initial Exam</a></li>
 							      <li><a href="viewelbowexam">View Elbow Exam & Reexam</a></li>
 							     </ul>
 							     </li>
-				            <li><a href="#" rel="ddsubmenu21">Wrist And Hand Exam</a>
-				               <ul id="ddsubmenu21" class="ddsubmenustyle">
+				            <li><a href="#" rel="ddsubmenu21" onmouseover="wristdisplay()">Wrist And Hand Exam</a>
+				               <ul id="ddsubmenu21" style="display: none">
 							      <li><a href="wristexam" >Wrist Initial Exam</a></li>
 							      <li><a href="viewwristexamdetails">View Wrist Exam & Reexam</a></li>
 							     </ul>
 							     </li>
-				            <li><a href="#" rel="ddsubmenu22">Thoracic Exam</a>
-				               <ul id="ddsubmenu22" class="ddsubmenustyle">
+				            <li><a href="#" rel="ddsubmenu22" onmouseover="thoracicdisplay()">Thoracic Exam</a>
+				               <ul id="ddsubmenu22" style="display: none">
 							      <li><a href="thoracicexam" >Thoracic Initial Exam</a></li>
 							      <li><a href="viewthoracicexam">View Thoracic Exam & Reexam</a></li>
 							     </ul>

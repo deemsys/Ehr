@@ -3,14 +3,40 @@
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
-<link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
-<script src="resources/js/jquery.min.js"></script>
- <script src="resources/js/jquery-ui.js"></script>
+
+   <link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
+  <link rel="stylesheet" href="/resources/css/style.css" />
+  <script src="resources/js/jquery.min.js"></script>
+  <script src="resources/js/jquery-ui.js"></script>
+<script src="resources/js/jquey-1.9.1.js"></script>
  <STYLE type="text/css">
   P#mypar {font-style:calibri;
   line-height:18px;}
   
   </STYLE>
+ <script>
+ $(window).load(function(){
+	 
+	  $("#enrollee").keyup(function() {
+			
+			 $("#enrolleeerror").html(''); 
+			/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
+			var intRegex = /^\d+$/;
+			if(intRegex.test($(this).val())||$(this).val()=='') 
+			{
+				var $in = $(this).val();		 
+			}
+			else if($(this).val()!='')
+				{
+				
+				$("#enrolleeerror").html('Kindly enter a number!!!!');
+				}
+		}).keydown(function() {
+		    oldValue = $(this).val();
+		})
+
+ });
+ </script>
  <script>
  $(function() {
 
@@ -45,11 +71,11 @@
 	            <c:when test="${empty waiver}">
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr class="row1">
-              <td width="100%"><input type="text" class="input_txtbx1" name="insure_comp" id="insure_comp" placeholder="Name of Insurance Company" /> <span class="err"><form:errors path="Insuranceplan.insure_comp"></form:errors> </td>
+              <td width="100%"><input type="text" class="input_txtbx1" name="insure_comp" id="insure_comp" placeholder="Name of Insurance Company" /> <span class="err"><form:errors path="Insuranceplan.insure_comp"></form:errors></span> </td>
               </tr>
               <tr class="row1"> 
               <td width="100%">
-              <input type="text" class="input_txtbx1" name="addr" id="addr" placeholder="Address"/> <span class="err"><form:errors path="Insuranceplan.addr"></form:errors> </td>
+              <input type="text" class="input_txtbx1" name="addr" id="addr" placeholder="Address"/> <span class="err"><form:errors path="Insuranceplan.addr"></form:errors> </span></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -58,17 +84,19 @@
 		BENEFITS FOR ACCIDENT</p></tr></table>
 		<table cellpadding="0" cellspacing="0" border="0" width="100%">
 		<tr class="row1">
-        <td ><input type="text" class="input_txtbx1" name="pat_name" id="pat_name" placeholder="Patient's Name" /> <span class="err"><form:errors path="Insuranceplan.pat_name"></form:errors> </td>
+        <td ><input type="text" class="input_txtbx1" name="pat_name" id="pat_name" placeholder="Patient's Name" /> <span class="err"><form:errors path="Insuranceplan.pat_name"></form:errors></span></td>
         </tr>
         <tr class="row1">
-        <td ><input type="text" class="input_txtbx1" name="accident_date" id="datepicker" placeholder="Date of Accident" /> <span class="err"><form:errors path="Insuranceplan.accident_date"></form:errors> </td>
+        <td ><input type="text" class="input_txtbx1" name="accident_date" id="datepicker" placeholder="Date of Accident" /> <span class="err"><form:errors path="Insuranceplan.accident_date"></form:errors> </span></td>
         </tr>
         <tr class="row1">
-        <td ><input type="text" class="input_txtbx1" name="enrollee" id="enrollee" placeholder="Subscriber/Enrollee No" /> <span class="err"><form:errors path="Insuranceplan.enrollee"></form:errors> </td>
+        <td ><input type="text" class="input_txtbx1" name="enrollee" id="enrollee" placeholder="Subscriber/Enrollee No" /> <span class="err"><form:errors path="Insuranceplan.enrollee"></form:errors> </span>
+        <br><span class="err" id="enrolleeerror"></span>
+        </td>
         </tr>
         </table>
         <table cellpadding="0" cellspacing="0" border="0" width="100%">
-        <tr><br><p id="mypar">To Whom It May Concern:</p></tr>
+        <tr><br><p id="mypar">To Whomsoever It May Concern:</p></tr>
         </table>
         <table cellpadding="0" cellspacing="0" border="0" width="100%">
         <tr>
@@ -104,8 +132,8 @@
         <td></td>
         </tr>
         <tr class="row1">
-        <td><input type="text" class="input_txtbx1" name="pat" id="pat" placeholder="Patient"/><span class="err"> <form:errors path="Insuranceplan.pat"></form:errors> </td>
-        <td align="center"><input type="text" class="input_txtbx1" name="authorized" id="authorized" placeholder="Authorized Clinic Representative"/><br> <span class="err"> <form:errors path="Insuranceplan.authorized"></form:errors> </td>
+        <td><input type="text" class="input_txtbx1" name="pat" id="pat" placeholder="Patient"/><span class="err"> <form:errors path="Insuranceplan.pat"></form:errors></span> </td>
+        <td align="center"><input type="text" class="input_txtbx1" name="authorized" id="authorized" placeholder="Authorized Clinic Representative"/><br> <span class="err"> <form:errors path="Insuranceplan.authorized"></form:errors></span> </td>
         <td></td>
         </tr>
        </table>
@@ -113,11 +141,11 @@
       <c:otherwise>
        <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr class="row1">
-              <td width="100%"><input type="text" class="input_txtbx1" name="insure_comp" id="insure_comp" placeholder="Name of Insurance Company" value="${waiver.insure_comp}"/> <span class="err"><form:errors path="Insuranceplan.insure_comp"></form:errors> </td>
+              <td width="100%"><input type="text" class="input_txtbx1" name="insure_comp" id="insure_comp" placeholder="Name of Insurance Company" value="${waiver.insure_comp}"/> <span class="err"><form:errors path="Insuranceplan.insure_comp"></form:errors></span> </td>
               </tr>
               <tr class="row1"> 
               <td width="100%">
-              <input type="text" class="input_txtbx1" name="addr" id="addr" placeholder="Address" value="${waiver.addr}"/> <span class="err"><form:errors path="Insuranceplan.addr"></form:errors> </td>
+              <input type="text" class="input_txtbx1" name="addr" id="addr" placeholder="Address" value="${waiver.addr}"/> <span class="err"><form:errors path="Insuranceplan.addr"></form:errors></span> </td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -126,17 +154,20 @@
 		BENEFITS FOR ACCIDENT</p></tr></table>
 		<table cellpadding="0" cellspacing="0" border="0" width="100%">
 		<tr class="row1">
-        <td ><input type="text" class="input_txtbx1" name="pat_name" id="pat_name" placeholder="Patient's Name" value="${waiver.pat_name}"/> <span class="err"><form:errors path="Insuranceplan.pat_name"></form:errors> </td>
+        <td ><input type="text" class="input_txtbx1" name="pat_name" id="pat_name" placeholder="Patient's Name" value="${waiver.pat_name}"/> <span class="err"><form:errors path="Insuranceplan.pat_name"></form:errors></span> </td>
         </tr>
         <tr class="row1">
-        <td ><input type="text" class="input_txtbx1" name="accident_date" id="datepicker" placeholder="Date of Accident" value="${waiver.accident_date}"/> <span class="err"><form:errors path="Insuranceplan.accident_date"></form:errors> </td>
+        <td ><input type="text" class="input_txtbx1" name="accident_date" id="datepicker" placeholder="Date of Accident" value="${waiver.accident_date}"/> <span class="err"><form:errors path="Insuranceplan.accident_date"></form:errors></span> </td>
         </tr>
         <tr class="row1">
-        <td ><input type="text" class="input_txtbx1" name="enrollee" id="enrollee" placeholder="Subscriber/Enrollee No" value="${waiver.enrollee}"/> <span class="err"><form:errors path="Insuranceplan.enrollee"></form:errors> </td>
+        <td ><input type="text" class="input_txtbx1" name="enrollee" id="enrollee" placeholder="Subscriber/Enrollee No" value="${waiver.enrollee}"/> <span class="err"><form:errors path="Insuranceplan.enrollee"></form:errors> </span>
+        <br>
+        <span class="err" id="enrolleeerror"></span>
+        </td>
         </tr>
         </table>
         <table cellpadding="0" cellspacing="0" border="0" width="100%">
-        <tr><br><p id="mypar">To Whom It May Concern:</p></tr>
+        <tr><br><p id="mypar">To Whomsover It May Concern:</p></tr>
         </table>
         <table cellpadding="0" cellspacing="0" border="0" width="100%">
         <tr>
@@ -185,7 +216,7 @@
      	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> 
         <td><br><input type="submit" class="submit_btn" value="Save"></td>
         <td>&nbsp;&nbsp;</td>
-        <td><br><input type="reset" class="submit_btn" value="Cancel"></td>
+        <td><br><a href="insuranceplanlist"  class="submit_btn" style="color:white">Cancel</a></td>
         <td>&nbsp;&nbsp;</td>
        <!--  <td><br><input type="button" class="submit_btn" value="View" onclick="window.location.href='insuranceplanlist'"></td> -->
         </tr>
