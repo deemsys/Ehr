@@ -7,40 +7,46 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Staffchecklist{
 	
 	private String form_no;
-	@NotEmpty
+	
 	
 	private String patinfo;
-	@NotEmpty
+	
 	private String screening;
-	@NotEmpty
+
 	private String aob;
-	@NotEmpty
+	
 	private String history;
-	@NotEmpty
+	
 	private String xray_sheet;
-	@NotEmpty
+	
 	private String consent;
-	@NotEmpty
+
 	private String report;
+
 	@NotEmpty
-	
 	private String pat_name;
-	@NotEmpty
 	
+	@NotEmpty
 	private String insure;
-	@NotEmpty
 	
+	@NotEmpty	
 	private String damage_amount;
+	
 	@NotEmpty
 	private String fault_insure;
+	
 	@NotEmpty
 	private String med_pay;
+	
 	@NotEmpty
 	private String other_attorney;
+	
 	@NotEmpty
 	private String protect_received;
+	
 	@NotEmpty
 	private String bill;
+	
 	@NotEmpty
 	private String re_date;
 	

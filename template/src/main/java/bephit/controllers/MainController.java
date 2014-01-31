@@ -1226,7 +1226,7 @@ public class MainController {
 	@RequestMapping(value="/staffchecklist", method = RequestMethod.POST)
 	public String insert_staffchecklist(HttpSession session,@ModelAttribute("Staffchecklist")  @Valid Staffchecklist staffchecklist,BindingResult result,ModelMap model) {
 		session.setAttribute("staff",staffchecklist);
-		/*if(result.hasErrors())
+		if(result.hasErrors())
 		{
 			StaffchecklistForm staffchecklistForm= new StaffchecklistForm();
 	    	staffchecklistForm.setStaffchecklist(staffDAO.getStaffchecklist());
@@ -1234,7 +1234,7 @@ public class MainController {
 			model.addAttribute("Success","true");
 			model.addAttribute("menu", "admin");
 			return "staffchecklist";
-		}*/
+		}
 		
 		model.put("Staffchecklist", staffchecklist);
 		model.addAttribute("StaffchecklistForm",staffchecklist);
@@ -1282,32 +1282,26 @@ public class MainController {
 
 	
 	@RequestMapping(value="/updatestaffchecklist", method=RequestMethod.POST)
-	public String updatestaffchecklist(HttpServletRequest request,@ModelAttribute("staffchecklist") @Valid Staffchecklist staffchecklist,
+	public String updatestaffchecklist(HttpServletRequest request,@ModelAttribute("Staffchecklist") @Valid Staffchecklist staffchecklist,
 			BindingResult result,ModelMap model,Principal principal)
 	{
-		/*if (result.hasErrors())
+		if (result.hasErrors())
 		{
-			InsuranceplanForm insuranceplanForm = new InsuranceplanForm();
-	     //   participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants(participant.getParticipants_id()));
-	      insuranceplanForm.setInsuranceplan(planDAO.getPlan(insuranceplan.getNo()));
-	      model.addAttribute("menu", "admin");
-	        model.addAttribute("insuranceplanForm", insuranceplanForm);
-			    
-		        return "editinsuranceplan";
-		}*/
+			StaffchecklistForm staffchecklistForm = new StaffchecklistForm();	        
+	        staffchecklistForm.setStaffchecklist(staffDAO.getStaff(staffchecklist.getForm_no()));
+	        model.addAttribute("menu", "admin");
+	        model.addAttribute("StaffchecklistForm", staffchecklistForm);
+		    return "editstaffchecklist";
+		}
 		
 		int status = staffDAO.updatestaffchecklist(staffchecklist, staffchecklist.getForm_no(), principal.getName());
-		System.out.println(status);
-		
-		StaffchecklistForm staffchecklistForm = new StaffchecklistForm();
-        
-        staffchecklistForm.setStaffchecklist(staffDAO.getStaffchecklist());
-       
+		System.out.println(status);		
+		StaffchecklistForm staffchecklistForm = new StaffchecklistForm();        
+        staffchecklistForm.setStaffchecklist(staffDAO.getStaffchecklist());       
         model.addAttribute("StaffchecklistForm", staffchecklistForm);
-	       model.addAttribute("success","true");
-	       model.addAttribute("menu", "admin");
-	        return "viewstaffchecklist";
-		
+	    model.addAttribute("success","true");
+	    model.addAttribute("menu", "admin");
+	    return "staffdetails";		
 	}
 	@RequestMapping(value="/deletestaffchecklist", method=RequestMethod.GET)
 	public String removestaffchecklist(@RequestParam("form_no") String form_no,ModelMap model, Principal principal) {
@@ -1325,7 +1319,7 @@ public class MainController {
         model.addAttribute("menu", "admin");
 		}
 		
-		return "staffchecklist";
+		return "staffdetails";
 	}
 	
 	
@@ -1964,16 +1958,15 @@ public class MainController {
 	public String updatehippaprivacy(HttpServletRequest request,@ModelAttribute("HippaPrivacy") @Valid HippaPrivacy privacydetails,
 			BindingResult result,ModelMap model,Principal principal)
 	{
-		/*if (result.hasErrors())
+		if (result.hasErrors())
 		{
-			InsuranceplanForm insuranceplanForm = new InsuranceplanForm();
-	     //   participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants(participant.getParticipants_id()));
-	      insuranceplanForm.setInsuranceplan(planDAO.getPlan(insuranceplan.getNo()));
-	      
-	        model.addAttribute("insuranceplanForm", insuranceplanForm);
+			HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
+        
+	        hippaprivacyform.setPrivacyDetails(hippaDAO.getHippa(privacydetails.getHippa_no()));      
+	        model.addAttribute("HippaPrivacyForm", hippaprivacyform);
 			  model.addAttribute("menu", "authorization");  
-		        return "editinsuranceplan";
-		}*/
+		        return "edithippaprivacy";
+		}
 		
 		int status = hippaDAO.updatehippaprivacy(privacydetails, privacydetails.getHippa_no(), principal.getName());
 		System.out.println(status);
@@ -1985,26 +1978,22 @@ public class MainController {
         model.addAttribute("HippaPrivacyForm", hippaprivacyform);
 	       model.addAttribute("success","true");
 	       model.addAttribute("menu", "authorization");
-	        return "viewhippa";
+	        return "hippalist";
 		
 	}
 	@RequestMapping(value="/deletehippaprivacy", method=RequestMethod.GET)
-	public String removehippa(@RequestParam("hippa_no") String hippa_no,ModelMap model, Principal principal) {
-	
+	public String removehippa(@RequestParam("hippa_no") String hippa_no,ModelMap model, Principal principal) {	
 		int status=hippaDAO.deletehippaprivacy(hippa_no);
 		
-		if(status==1)
-		{
-        model.addAttribute("success","true");
-		//ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
-		HippaPrivacyForm hippaprivacyForm = new HippaPrivacyForm();
-		//participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
-		hippaprivacyForm.setPrivacyDetails(hippaDAO.getPrivacyDetails());
-        model.addAttribute("HippaPrivacyDetails", hippaprivacyForm);
-        model.addAttribute("menu", "authorization");
-		}
+HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
+        
+        hippaprivacyform.setPrivacyDetails(hippaDAO.getPrivacyDetails());
+       
+        model.addAttribute("HippaPrivacyForm", hippaprivacyform);
+	       model.addAttribute("success","true");
+	       model.addAttribute("menu", "authorization");
+	        return "hippalist";
 		
-		return "Hippaprivacy";
 	}
 	
 		
@@ -2829,15 +2818,17 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 		 model.addAttribute("menu", "admin");
 		return "editinsuranceverification";
 	}
-	
-
-
-
-
 	@RequestMapping(value="/updateinsuranceverification", method=RequestMethod.POST)
 	public String updateinsuranceverification(HttpServletRequest request,@ModelAttribute("Insuranceverification") @Valid Insuranceverification insuranceverification,
 			BindingResult result,ModelMap model,Principal principal)
 	{
+		if(result.hasErrors())
+		{
+			InsuranceverificationForm insuranceverificationForm= new InsuranceverificationForm();
+	    	insuranceverificationForm.setInsuranceverification(veriDAO.getInsuranceverification(insuranceverification.getForm_no()));
+			model.addAttribute("InsuranceverificationForm",insuranceverificationForm);
+			return "editinsuranceverification";
+		}
 		
 		int status = veriDAO.updateinsuranceverification(insuranceverification, insuranceverification.getForm_no());
 		System.out.println(status);
