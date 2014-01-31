@@ -3,14 +3,38 @@
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
-<link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
-<script src="resources/js/jquery.min.js"></script>
- <script src="resources/js/jquery-ui.js"></script>
+ <link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
+  <link rel="stylesheet" href="/resources/css/style.css" />
+  <script src="resources/js/jquery.min.js"></script>
+  <script src="resources/js/jquery-ui.js"></script>
+<script src="resources/js/jquey-1.9.1.js"></script>
  <STYLE type="text/css">
   P#mypar {font-style:calibri;
   line-height:18px;}
   
   </STYLE>
+ <script>
+ $(window).load(function(){
+	
+	  $("#damageamt").keyup(function() {
+			
+			 $("#damageamterror").html(''); 
+			/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
+			var intRegex = /^\d+$/;
+			if(intRegex.test($(this).val())||$(this).val()=='') 
+			{
+				var $in = $(this).val();		 
+			}
+			else if($(this).val()!='')
+				{
+				
+				$("#damageamterror").html('Kindly enter a number!!!!');
+				}
+		}).keydown(function() {
+		    oldValue = $(this).val();
+		})
+ });
+ </script>
  <script>
  $(function() {
            $( "#datepicker" ).datepicker();
@@ -93,7 +117,9 @@
 			  <tr class="row1">
               <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Damage Amount</td>
 			  <td valign="top" align="left" class="input_txt">
-		      <input type="text" class="input_txtbx1" id="inp_id" name="damage_amount" /><span class="err"><form:errors path="Staffchecklist.damage_amount"></form:errors>
+		      <input type="text" class="input_txtbx1" id="damageamt" name="damage_amount" /><span class="err"><form:errors path="Staffchecklist.damage_amount"></form:errors></span>
+		     <br>
+		      <span class="err" id="damageamterror"> </span>
 		      </td>
 			  </tr>
 			  <tr class="row1">
@@ -186,7 +212,8 @@
 			  <tr class="row1">
               <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Damage Amount</td>
 			  <td valign="top" align="left" class="input_txt">
-		      <input type="text" class="input_txtbx1" id="inp_id" name="damage_amount" value="${staff.damage_amount}"/><span class="err"><form:errors path="Staffchecklist.damage_amount"></form:errors>
+		      <input type="text" class="input_txtbx1" id="damageamt" name="damage_amount" value="${staff.damage_amount}"/><span class="err"><form:errors path="Staffchecklist.damage_amount"></form:errors></span>
+		      <br><span class="err" id="damageamterror"></span>
 		      </td>
 			  </tr>
 			  <tr class="row1">

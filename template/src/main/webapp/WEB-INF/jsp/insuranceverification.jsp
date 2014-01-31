@@ -3,14 +3,159 @@
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
-<link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
-<script src="resources/js/jquery.min.js"></script>
- <script src="resources/js/jquery-ui.js"></script>
+ <link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
+  <link rel="stylesheet" href="/resources/css/style.css" />
+  <script src="resources/js/jquery.min.js"></script>
+  <script src="resources/js/jquery-ui.js"></script>
+<script src="resources/js/jquey-1.9.1.js"></script>
+
  <STYLE type="text/css">
   P#mypar {font-style:calibri;
   line-height:18px;}
   
   </STYLE>
+ <script>
+ $(window).load(function(){
+	 	  $("#fax").keyup(function() {
+			
+			 $("#faxerror").html(''); 
+			/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
+			var intRegex = /^\d+$/;
+			if(intRegex.test($(this).val())||$(this).val()=='') 
+			{
+				var $in = $(this).val();		 
+			}
+			else if($(this).val()!='')
+				{
+				
+				$("#faxerror").html('Kindly enter a number!!!!');
+				}
+		}).keydown(function() {
+		    oldValue = $(this).val();
+		})
+		 $("#amountdeduct").keyup(function() {
+			
+			 $("#amountdeducterror").html(''); 
+			/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
+			var intRegex = /^\d+$/;
+			if(intRegex.test($(this).val())||$(this).val()=='') 
+			{
+				var $in = $(this).val();		 
+			}
+			else if($(this).val()!='')
+				{
+				
+				$("#amountdeducterror").html('Kindly enter a number!!!!');
+				}
+		}).keydown(function() {
+		    oldValue = $(this).val();
+		})
+		 $("#amountdeductmet").keyup(function() {
+			
+			 $("#amountdeductmeterror").html(''); 
+			/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
+			var intRegex = /^\d+$/;
+			if(intRegex.test($(this).val())||$(this).val()=='') 
+			{
+				var $in = $(this).val();		 
+			}
+			else if($(this).val()!='')
+				{
+				
+				$("#amountdeductmeterror").html('Kindly enter a number!!!!');
+				}
+		}).keydown(function() {
+		    oldValue = $(this).val();
+		})
+		 $("#atwhat").keyup(function() {
+			
+			 $("#atwhaterror").html(''); 
+			/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
+			var intRegex = /^\d+$/;
+			if(intRegex.test($(this).val())||$(this).val()=='') 
+			{
+				var $in = $(this).val();		 
+			}
+			else if($(this).val()!='')
+				{
+				
+				$("#atwhaterror").html('Kindly enter a number!!!!');
+				}
+		}).keydown(function() {
+		    oldValue = $(this).val();
+		})
+		 $("#atwhat1").keyup(function() {
+			
+			 $("#atwhat1error").html(''); 
+			/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
+			var intRegex = /^\d+$/;
+			if(intRegex.test($(this).val())||$(this).val()=='') 
+			{
+				var $in = $(this).val();		 
+			}
+			else if($(this).val()!='')
+				{
+				
+				$("#atwhat1error").html('Kindly enter a number!!!!');
+				}
+		}).keydown(function() {
+		    oldValue = $(this).val();
+		})
+		 $("#subjectdeduct").keyup(function() {
+			
+			 $("#subjecterror").html(''); 
+			/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
+			var intRegex = /^\d+$/;
+			if(intRegex.test($(this).val())||$(this).val()=='') 
+			{
+				var $in = $(this).val();		 
+			}
+			else if($(this).val()!='')
+				{
+				
+				$("#subjectdeducterror").html('Kindly enter a number!!!!');
+				}
+		}).keydown(function() {
+		    oldValue = $(this).val();
+		})
+		 $("#deductible").keyup(function() {
+			
+			 $("#deductibleerror").html(''); 
+			/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
+			var intRegex = /^\d+$/;
+			if(intRegex.test($(this).val())||$(this).val()=='') 
+			{
+				var $in = $(this).val();		 
+			}
+			else if($(this).val()!='')
+				{
+				
+				$("#deductibleerror").html('Kindly enter a number!!!!');
+				}
+		}).keydown(function() {
+		    oldValue = $(this).val();
+		})
+		$("#covered").keyup(function() {
+			
+			 $("#coverederror").html(''); 
+			/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
+			var intRegex = /^\d+$/;
+			if(intRegex.test($(this).val())||$(this).val()=='') 
+			{
+				var $in = $(this).val();		 
+			}
+			else if($(this).val()!='')
+				{
+				
+				$("#coverederror").html('Kindly enter a number!!!!');
+				}
+		}).keydown(function() {
+		    oldValue = $(this).val();
+		})
+ });
+ 
+ </script>
+ 
  <script>
  $(function() {
            $( "#datepicker" ).datepicker();
@@ -51,7 +196,9 @@
               <td><span class="err">*</span>Date</td>
               <td><input type="text" class="input_txtbx1" name="date" id="datepicker" /><br><span class="err"><form:errors path="Insuranceverification.date"></form:errors></td>
               <td><span class="err">*</span>Fax#</td>
-              <td><input type="text" class="input_txtbx1" name="fax" id="fax" /><br><span class="err"><form:errors path="Insuranceverification.fax"></form:errors></td>
+              <td><input type="text" class="input_txtbx1" name="fax" id="fax" /><br><span class="err"><form:errors path="Insuranceverification.fax"></form:errors></span>
+              <span class="err" id="faxerror"></span>
+              </td>
               </tr>
               <!-- </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%"> -->
@@ -61,9 +208,13 @@
               <br>
               <tr class="row1">
               <td><span class="err">*</span>Amount of deductible</td>
-              <td><input type="text" class="input_txtbx1" name="amount_deduct" id="amount_deduct" /><br><span class="err"><form:errors path="Insuranceverification.amount_deduct"></form:errors></td>
+              <td><input type="text" class="input_txtbx1" name="amount_deduct" id="amountdeduct" /><br><span class="err"><form:errors path="Insuranceverification.amount_deduct"></form:errors></span>
+              <span class="err" id="amountdeducterror"></span>
+              </td>
               <td><span class="err">*</span>Amount of deductible met</td>
-              <td><input type="text" class="input_txtbx1" name="amount_deduct_met" id="amount_deduct_met" /><br><span class="err"><form:errors path="Insuranceverification.amount_deduct_met"></form:errors></td>
+              <td><input type="text" class="input_txtbx1" name="amount_deduct_met" id="amountdeductmet" /><br><span class="err"><form:errors path="Insuranceverification.amount_deduct_met"></form:errors></span>
+              <span class="err" id="amountdeductmeterror"></span>
+              </td>
               <td></td>
               <td></td>
               </tr>
@@ -81,7 +232,9 @@
               <td>Is chiropractic manipulation covered? </td>
               <td><input type="radio" name="is_chiropractic" value="Yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="is_chiropractic" value="No" class="input_txt">No</td>
               <td><span class="err">*</span>At what%?</td>
-              <td><input type="text" class="input_txtbx1" name="at_what" id="at_what" /><span class="err"><form:errors path="Insuranceverification.at_what"></form:errors></td>
+              <td><input type="text" class="input_txtbx1" name="at_what" id="atwhat" /><span class="err"><form:errors path="Insuranceverification.at_what"></form:errors></span>
+              <span class="err" id="atwhaterror"></span>
+              </td>
              <td></td>
              <td></td>
               </tr>
@@ -89,9 +242,13 @@
               <td>Are x-rays covered?</td>
               <td><input type="radio" name="xray_cover" value="Yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="xray_cover" value="No" class="input_txt">No</td>
               <td><span class="err">*</span>At what%?</td>
-              <td><input type="text" class="input_txtbx1" name="atwhat" id="atwhat" /><br><span class="err"><form:errors path="Insuranceverification.atwhat"></form:errors></td>
+              <td><input type="text" class="input_txtbx1" name="atwhat" id="atwhat1" /><br><span class="err"><form:errors path="Insuranceverification.atwhat"></form:errors></span>
+              <span class="err" id="atwhat1error"></span>
+              </td>
               <td><span class="err">*</span>Subject to deductible</td>
-              <td><input type="text" class="input_txtbx1" name="subject_deduct" id="subject_deduct" /><br><span class="err"><form:errors path="Insuranceverification.subject_deduct"></form:errors></td>
+              <td><input type="text" class="input_txtbx1" name="subject_deduct" id="subjectdeduct" /><br><span class="err"><form:errors path="Insuranceverification.subject_deduct"></form:errors></span>
+              <span class="err" id="subjectdeducterror"></span>
+              </td>
               </tr>
               <!-- </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%"> -->
@@ -118,10 +275,14 @@
               <!-- </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%"> -->
               <tr class="row1">
-              <td><span class="err">*</span>Deuctible</td>
-              <td><input type="text" class="input_txtbx1" name="deductible" id="deductible" /><br><span class="err"><form:errors path="Insuranceverification.deductible"></form:errors></td>
+              <td><span class="err">*</span>Deductible</td>
+              <td><input type="text" class="input_txtbx1" name="deductible" id="deductible" /><br><span class="err"><form:errors path="Insuranceverification.deductible"></form:errors></span>
+              <span class="err" id="deductibleerror"></span>
+              </td>
               <td><span class="err">*</span>%covered</td>
-              <td><input type="text" class="input_txtbx1" name="covered" id="covered" /><br><span class="err"><form:errors path="Insuranceverification.covered"></form:errors></td>
+              <td><input type="text" class="input_txtbx1" name="covered" id="covered" /><br><span class="err"><form:errors path="Insuranceverification.covered"></form:errors></span>
+              <span class="err" id="coverederror"></span>
+              </td>
               </tr>
               <tr class="row1">
               <td>Therapies covered</td>
@@ -165,7 +326,9 @@
               <td><span class="err">*</span>Date</td>
               <td><input type="text" class="input_txtbx1" name="date" id="datepicker" value="${veri.date}"/><br><span class="err"><form:errors path="Insuranceverification.date"></form:errors></td>
               <td><span class="err">*</span>Fax#</td>
-              <td><input type="text" class="input_txtbx1" name="fax" id="fax" value="${veri.fax}"/><br><span class="err"><form:errors path="Insuranceverification.fax"></form:errors></td>
+              <td><input type="text" class="input_txtbx1" name="fax" id="fax" value="${veri.fax}"/><br><span class="err"><form:errors path="Insuranceverification.fax"></form:errors></span>
+              <span class="err" id="faxerror"></span>
+              </td>
               </tr>
               <!-- </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%"> -->
@@ -175,11 +338,14 @@
               <br>
               <tr class="row1">
               <td><span class="err">*</span>Amount of deductible</td>
-              <td><input type="text" class="input_txtbx1" name="amount_deduct" id="amount_deduct" value="${veri.amount_deduct}"/><br><span class="err"><form:errors path="Insuranceverification.amount_deduct"></form:errors></td>
+              <td><input type="text" class="input_txtbx1" name="amount_deduct" id="amountdeduct" value="${veri.amount_deduct}"/><br><span class="err"><form:errors path="Insuranceverification.amount_deduct"></form:errors></span>
+              <br><span class="err" id="amountdeducterror"></span>
+              </td>
               <td><span class="err">*</span>Amount of deductible met</td>
-              <td><input type="text" class="input_txtbx1" name="amount_deduct_met" id="amount_deduct_met" value="${veri.amount_deduct_met}"/><br><span class="err"><form:errors path="Insuranceverification.amount_deduct_met"></form:errors></td>
-              <td></td>
-              <td></td>
+              <td><input type="text" class="input_txtbx1" name="amount_deduct_met" id="amountdeductmet" value="${veri.amount_deduct_met}"/><br><span class="err"><form:errors path="Insuranceverification.amount_deduct_met"></form:errors></span>
+              <span class="err" id="amountdeductmeterror"></span>
+              </td>
+             
               </tr>
               <!-- </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%"> -->
@@ -195,7 +361,9 @@
               <td>Is chiropractic manipulation covered? </td>
               <td><input type="radio" name="is_chiropractic" value="Yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="is_chiropractic" value="No" class="input_txt">No</td>
               <td><span class="err">*</span>At what%?</td>
-              <td><input type="text" class="input_txtbx1" name="at_what" id="at_what" value="${veri.at_what}"/><span class="err"><form:errors path="Insuranceverification.at_what"></form:errors></td>
+              <td><input type="text" class="input_txtbx1" name="at_what" id="atwhat" value="${veri.at_what}"/><span class="err"><form:errors path="Insuranceverification.at_what"></form:errors></span>
+              <span class="err" id="atwhaterror"></span>
+              </td>
              <td></td>
              <td></td>
               </tr>
@@ -203,9 +371,13 @@
               <td>Are x-rays covered?</td>
               <td><input type="radio" name="xray_cover" value="Yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="xray_cover" value="No" class="input_txt">No</td>
               <td><span class="err">*</span>At what%?</td>
-              <td><input type="text" class="input_txtbx1" name="atwhat" id="atwhat" value="${veri.atwhat}"/><br><span class="err"><form:errors path="Insuranceverification.atwhat"></form:errors></td>
+              <td><input type="text" class="input_txtbx1" name="atwhat" id="atwhat1" value="${veri.atwhat}"/><br><span class="err"><form:errors path="Insuranceverification.atwhat"></form:errors></span>
+              <span class="err" id="atwhat1error"></span>
+              </td>
               <td><span class="err">*</span>Subject to deductible</td>
-              <td><input type="text" class="input_txtbx1" name="subject_deduct" id="subject_deduct" value="${veri.subject_deduct}"/><br><span class="err"><form:errors path="Insuranceverification.subject_deduct"></form:errors></td>
+              <td><input type="text" class="input_txtbx1" name="subject_deduct" id="subjectdeduct" value="${veri.subject_deduct}"/><br><span class="err"><form:errors path="Insuranceverification.subject_deduct"></form:errors></span>
+              <span class="err" id="subjectdeduct"></span>
+              </td>
               </tr>
               <!-- </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%"> -->
@@ -233,7 +405,9 @@
               <table cellpadding="0" cellspacing="0" border="0" width="100%"> -->
               <tr class="row1">
               <td><span class="err">*</span>Deuctible</td>
-              <td><input type="text" class="input_txtbx1" name="deductible" id="deductible" value="${veri.deductible}"/><br><span class="err"><form:errors path="Insuranceverification.deductible"></form:errors></td>
+              <td><input type="text" class="input_txtbx1" name="deductible" id="deductible" value="${veri.deductible}"/><br><span class="err"><form:errors path="Insuranceverification.deductible"></form:errors></span>
+              <span class="err" id="deductibleerror"></span>
+              </td>
               <td><span class="err">*</span>%covered</td>
               <td><input type="text" class="input_txtbx1" name="covered" id="covered" value="${veri.covered}"/><br><span class="err"><form:errors path="Insuranceverification.covered"></form:errors></td>
               </tr>
