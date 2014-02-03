@@ -215,7 +215,7 @@ $(function() {
          <tr><td> <b style="font-size:14px">PALPATION / SOFT TISSUE DYSFUNCTION
  </b></td>
          <td width="100"></td>
-         <td align="left"><input type="checkbox" id="softtissuess" onclick="softtissuevalidate()" name="dysfunction" value="All Soft Tissue Unremarkable">All Soft Tissue Unremarkable</td>
+         <td align="left"><input type="checkbox" id="softtissuess" name="dysfunction" value="All Soft Tissue Unremarkable">All Soft Tissue Unremarkable</td>
          <td width="180"></td>
           </tr>  </table>       
 <br>
@@ -254,7 +254,7 @@ $(function() {
 	
 	
 	</tr></table>
-	<table id="softtissue1" style="display: none">
+	<table >
 	<tr height="10"></tr>
 	<tr ><td width="300">Piriformis:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" value="left" name="piriformisleft">Left&nbsp;&nbsp;<input type="radio" value="right" name="piriformisleft">Right</td>
 	
@@ -266,7 +266,7 @@ $(function() {
 	
 	</tr>
 	<tr height="10"></tr></table>
-	<table id="softtissue2" style="display: none"><tr><td valign="top">Other / Note:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<textarea rows="5" cols="50" name="note"></textarea></td></tr>
+	<table ><tr><td valign="top">Other / Note:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<textarea rows="5" cols="50" name="note"></textarea></td></tr>
 	
 	</table>	
 	</br>
@@ -463,7 +463,7 @@ $(function() {
 	
 	
 	</tr></table>
-	<table id="softtissue1" >
+	<table >
 	<tr height="10"></tr>
 	<tr ><td width="300"><c:out value="${hipdetails.piriformisleft}"></c:out>Piriformis:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"  <c:if test="${hipdetails.piriformisleft=='left'}"><c:out value="checked"></c:out></c:if> value="left" name="piriformisleft">Left&nbsp;&nbsp;<input type="radio" <c:if test="${hipdetails.piriformisleft=='right'}"> <c:out value="checked=checked"></c:out></c:if> value="right" name="piriformisleft">Right</td>
 	
@@ -475,7 +475,7 @@ $(function() {
 	
 	</tr>
 	<tr height="10"></tr></table>
-	<table id="softtissue2" ><tr><td valign="top">Other / Note:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<textarea rows="5" cols="50" name="note">${hipdetails.note}</textarea></td></tr>
+	<table><tr><td valign="top">Other / Note:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<textarea rows="5" cols="50" name="note">${hipdetails.note}</textarea></td></tr>
 	
 	</table>	
 	</br>

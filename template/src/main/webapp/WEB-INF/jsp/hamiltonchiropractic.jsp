@@ -117,7 +117,36 @@
                  </tr>
                  <tr class="row1">
                 <td></td>
-                <td><input type="checkbox" name="hipcheck" value="Hip" >&nbsp Hip</td>
+                <script type="text/javascript">
+// Popup window code
+
+
+
+function newPopup() {
+if(document.getElementById("hipexam").checked)
+{
+alert("yes");
+	popupWindow = window.open("perry",'popUpWindow','height=700,width=800,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		}
+}
+function anklePopup() {
+if(document.getElementById("ankle").checked)
+{
+alert("yes");
+	popupWindow = window.open("ankle",'popUpWindow','height=700,width=800,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		}
+}
+function shoulderPopup() {
+if(document.getElementById("shoulder").checked)
+{
+alert("yes");
+	popupWindow = window.open("shoulderexam",'popUpWindow','height=700,width=800,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		}
+}
+
+</script>
+<!-- <a href="JavaScript:newPopup('http://www.quackit.com/html/html_help.cfm');">Open a popup window</a> -->
+                <td><input type="checkbox" name="hipcheck" value="Hip" id="hipexam" onclick="newPopup()">&nbsp Hip</td>
                  <td><input type="radio" name="hip" value="Right" >&nbsp Right</td>
                  <td><input type="radio" name="hip" value="Left" >&nbsp Left</td>
                  <td></td>

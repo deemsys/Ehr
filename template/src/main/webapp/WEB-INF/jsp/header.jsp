@@ -1084,56 +1084,56 @@ color:#fff;
 						</script>
 						<ul id="ddsubmenu13" class="ddsubmenustyle">
 						
-							<li style="list-style-type: none"><a href="#" rel="ddsubmenu14" onmouseover="lumbo()"><span>Lumbopelvic Exam</span> </a>
-							  <ul id="ddsubmenu14" style="display: none">
+							<li style="list-style-type: none"><a href="#" rel="ddsubmenu14" ><span>Lumbopelvic Exam</span> </a>
+							  <ul id="ddsubmenu14" >
 							     <li > <a href="lumbopelvicexam" >Lumbopelvic Initial Exam</a>
 							      <li><a href="viewlumbopelvicexam">View Lumbopelvic Exam & Reexam</a></li>
 							   </ul> 
 							     </li>
-							<li><a href="#" rel="ddsubmenu15" onmouseover="hipdi()">Hip Exam</a>
-							     <ul id="ddsubmenu15" style="display: none">
+							<li><a href="#" rel="ddsubmenu15" >Hip Exam</a>
+							     <ul id="ddsubmenu15" >
 							      <li><a href="perry" >Hip Initial Exam</a></li>
 							      <li><a href="viewhipexam">View Hip Exam & Reexam</a></li>
 							     </ul>
 							     </li>
-							<li><a href="#" rel="ddsubmenu16" onmouseover="kneedisplay()">Knee Exam</a> 
-							<ul id="ddsubmenu16" style="display: none">
+							<li><a href="#" rel="ddsubmenu16" >Knee Exam</a> 
+							<ul id="ddsubmenu16" >
 							      <li><a href="kneeexam" >Knee Initial Exam</a></li>
 							      <li><a href="viewkneeexam">View Knee Exam & Reexam</a></li>
 							     </ul>
 							     </li>
-							<li><a href="#" rel="ddsubmenu17" onmouseover="footdisplay()">Foot Exam</a>
-							<ul id="ddsubmenu17" style="display: none">
+							<li><a href="#" rel="ddsubmenu17" >Foot Exam</a>
+							<ul id="ddsubmenu17" >
 							      <li><a href="ankle" >Foot Initial Exam</a></li>
 							      <li><a href="viewfootexam">View Foot Exam & Reexam</a></li>
 							     </ul>
 							     </li>     
 				            <li><a href="#" rel="ddsubmenu18" onmouseover="cervicaldisplay()">Cervical Exam</a>
-				              <ul id="ddsubmenu18" style="display: none">
+				              <ul id="ddsubmenu18" >
 							      <li><a href="cervicalexam" >Cervical Initial Exam</a></li>
 							      <li><a href="viewcervicalexam">View Cervical Exam & Reexam</a></li>
 							     </ul>
 							     </li>
 				            <li><a href="#" rel="ddsubmenu19" onmouseover="shoulderdisplay()">Shoulder Exam</a>
-				             <ul id="ddsubmenu19" style="display: none">
+				             <ul id="ddsubmenu19" >
 							      <li><a href="shoulderexam" >Shoulder Initial Exam</a></li>
 							      <li><a href="viewshoulderexamdetails">View Shoulder Exam & Reexam</a></li>
 							     </ul>
 							     </li>
 				            <li><a href="#" rel="ddsubmenu20" onmouseover="elbowdisplay()">Elbow Exam</a>
-				                <ul id="ddsubmenu20" style="display: none" >
+				                <ul id="ddsubmenu20" >
 							      <li><a href="elbowexam" >Elbow Initial Exam</a></li>
 							      <li><a href="viewelbowexam">View Elbow Exam & Reexam</a></li>
 							     </ul>
 							     </li>
 				            <li><a href="#" rel="ddsubmenu21" onmouseover="wristdisplay()">Wrist And Hand Exam</a>
-				               <ul id="ddsubmenu21" style="display: none">
+				               <ul id="ddsubmenu21" >
 							      <li><a href="wristexam" >Wrist Initial Exam</a></li>
 							      <li><a href="viewwristexamdetails">View Wrist Exam & Reexam</a></li>
 							     </ul>
 							     </li>
 				            <li><a href="#" rel="ddsubmenu22" onmouseover="thoracicdisplay()">Thoracic Exam</a>
-				               <ul id="ddsubmenu22" style="display: none">
+				               <ul id="ddsubmenu22" >
 							      <li><a href="thoracicexam" >Thoracic Initial Exam</a></li>
 							      <li><a href="viewthoracicexam">View Thoracic Exam & Reexam</a></li>
 							     </ul>
