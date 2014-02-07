@@ -369,7 +369,7 @@
 				        </tr>
 				        
 				          <tr class="row1">
-				         	<td><span class="err">*</span>phone:</td>
+				         	<td><span class="err">*</span>Attorney Phone:</td>
 				         	<td>${patientDetails.phone_Number}</td>
 				         	<td></td>
 				         	<td></td>
@@ -387,7 +387,7 @@
 				         	<td></td>
 				        </tr>
 				         <tr class="row2">
-				         	<td><span class="err">*</span>Phone:</td>
+				         	<td><span class="err">*</span> Insurance Company Phone:</td>
 				         	<td>${patientDetails.insurance_phone}</td>
 				         	<td></td>
 				         	<td></td>
@@ -417,7 +417,7 @@
 				         	<td></td>
 				        </tr>
 				         <tr class="row1">
-				         	<td><span class="err">*</span>Phone:</td>
+				         	<td><span class="err">*</span>Phone of your Health Insurance:</td>
 				         	<td>${patientDetails.health_phone}</td>
 				         	<td></td>
 				         	<td></td>

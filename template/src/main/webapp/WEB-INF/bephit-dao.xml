@@ -141,7 +141,11 @@
    <bean id="OswestryDAO" class="bephit.dao.OswestryDAO">
            <property name="dataSource" ref="dataSource" />
    </bean>
+   <bean id="QuadraplevisualDAO" class="bephit.dao.QuadraplevisualDAO">
+           <property name="dataSource" ref="dataSource" />
+   </bean>
    
-   
-    
+   <bean id="CopyofrequestDAO" class="bephit.dao.CopyofrequestDAO">
+           <property name="dataSource" ref="dataSource" />
+   </bean> 
 </beans>

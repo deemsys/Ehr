@@ -31,6 +31,12 @@ public class OswestryController
 	@Autowired 
 	OswestryDAO oswestrydao;
 	
+	@Autowired 
+	QuadraplevisualDAO quadrapledao;
+	
+	@Autowired 
+	CopyofrequestDAO copydao;
+	
 	@RequestMapping (value="/oswestryindex", method = RequestMethod.GET)
 	public String oswestryindex(HttpSession session,ModelMap model)
 	{
@@ -169,6 +175,120 @@ public class OswestryController
 		model.addAttribute("success", true);
 		return "viewoswestryindex";
 	}
+	@RequestMapping (value="/quadraplevisual", method = RequestMethod.GET)
+	public String quadraplevisual(HttpSession session,ModelMap model)
+	{
+		
+		
+		return "quadraplevisual";
+	}
 	
+	@RequestMapping (value="/quadraplevisual", method = RequestMethod.POST)
+
+	public String insertquadraplevisual(HttpSession session,HttpServletRequest request,ModelMap model,@ModelAttribute("quadraplevisual") @Valid Quadraplevisual quadraplevisual,BindingResult result) throws IOException
+
+	{
+		quadrapledao.setQuadraplevisual(quadraplevisual);
+		QuadraplevisualForm quadraplevisualform=new QuadraplevisualForm();
+		quadraplevisualform.setQuadraplevisual(quadrapledao.getQuadraplevisual());
+		model.addAttribute("QuadraplevisualForm", quadraplevisualform);
+		model.addAttribute("success", true);
+		model.addAttribute("quadruple",1);
+		
+		return "quadraplevisual";
+	}
 	
+	@RequestMapping (value="/copyofrequest", method = RequestMethod.GET)
+	public String copyofrequest(HttpSession session,ModelMap model)
+	{
+		return "copyofrequest";
+	}
+	@RequestMapping (value="/copyofrequest", method = RequestMethod.POST)
+
+	public String insertcopyofreuest(HttpSession session,HttpServletRequest request,ModelMap model,@ModelAttribute("Copyofrequest") @Valid Copyofrequest copyofrequest,BindingResult result) throws IOException
+
+	{
+		copydao.insertcopy(copyofrequest);
+		CopyofrequestForm copyofrequestform=new CopyofrequestForm();
+		copyofrequestform.setCopyofrequest(copydao.viewcopyrequest());
+		model.addAttribute("copyofrequestform", copyofrequestform);
+		
+		return "copyofrequest";
+	}
+	
+	@RequestMapping (value="/viewcopyofrequest", method = RequestMethod.GET)
+	public String viewcopyofrequest(HttpServletRequest request,ModelMap model,Oswestry oswestryindexdetails) throws IOException
+	{
+		
+		CopyofrequestForm copyofrequestform=new CopyofrequestForm();
+		copyofrequestform.setCopyofrequest(copydao.viewcopyrequest());
+		model.addAttribute("copyofrequestform", copyofrequestform);
+		/*model.addAttribute("menu","wristindex");*/
+		/*model.addAttribute("noofrows",oswestryindexform.getOswestrydetails().size());       
+	    oswestryindexform.setOswestrydetails(oswestrydao.getlimitedoswestry(1));
+	    model.addAttribute("noofpages",(int) Math.ceil(oswestrydao.getnoofoswestryindex() * 1.0 / 5));	 
+	        model.addAttribute("button","viewall");
+	        model.addAttribute("success","false");
+	        model.addAttribute("currentpage",1);*/
+		
+		
+		return "viewcopyofrequest";
+
+	}
+	
+	@RequestMapping (value="/copyofrequestlist", method = RequestMethod.GET)
+	public String copyofrequestlist(@RequestParam("copyofrequestno") String copyofrequestno,HttpServletRequest request,ModelMap model,Copyofrequest copyofrequest) throws IOException
+	{
+		
+		
+		CopyofrequestForm copyofrequestform=new CopyofrequestForm();
+		copyofrequestform.setCopyofrequest(copydao.viewallcopyrequest(copyofrequestno));
+		model.addAttribute("copyofrequestform", copyofrequestform);		
+		return "copyofrequestlist";
+	}
+	
+	@RequestMapping (value="/editcopyofrequest", method = RequestMethod.GET)
+	public String editcopyofrequest(@RequestParam("copyofrequestno") String copyofrequestno,HttpServletRequest request,ModelMap model,Copyofrequest copyofrequest) throws IOException
+	{
+		
+		CopyofrequestForm copyofrequestform=new CopyofrequestForm();
+		copyofrequestform.setCopyofrequest(copydao.viewallcopyrequest(copyofrequestno));
+		model.addAttribute("copyofrequestform", copyofrequestform);
+		return "editcopyofrequest";
+	}
+	
+	@RequestMapping (value="/updatecopyofrequest", method = RequestMethod.POST)
+	public String updatecopyofrequest(HttpServletRequest request,ModelMap model,@ModelAttribute("Copyofrequest") @Valid Copyofrequest copyofrequest,BindingResult result,Principal principal) throws IOException
+	{
+
+	/*if(result.hasErrors())
+	{
+		model.addAttribute("menu","wristindex");
+		OswestryForm oswestryindexform=new OswestryForm();
+		oswestryindexform.setOswestrydetails(oswestrydao.getoswestryindexDetails(oswestryindexdetails.getOswestryno()));
+		model.addAttribute("oswestryform", oswestryindexform);
+
+		return "editoswestryindex";
+	}*/
+
+		int status = copydao.updatecopyofrequest(copyofrequest, copyofrequest.getCopyofrequestno(), principal.getName());
+		CopyofrequestForm copyofrequestform=new CopyofrequestForm();
+		copyofrequestform.setCopyofrequest(copydao.viewcopyrequest());
+		model.addAttribute("copyofrequestform", copyofrequestform);
+		model.addAttribute("success", true);
+		return "viewcopyofrequest";
+	}
+	
+	@RequestMapping (value="/deletecopyofrequest", method = RequestMethod.GET)
+	public String deletecopyofrequest(@RequestParam("copyofrequestno") String copyofrequestno,HttpServletRequest request,ModelMap model,Copyofrequest copyofrequest) throws IOException
+	{
+		
+		copydao.deletecopyofrequest(copyofrequestno);
+		CopyofrequestForm copyofrequestform=new CopyofrequestForm();
+		copyofrequestform.setCopyofrequest(copydao.viewcopyrequest());
+		model.addAttribute("copyofrequestform", copyofrequestform);
+		model.addAttribute("success",true);
+		model.addAttribute("menu","wristindex");
+		return "viewcopyofrequest";
+	}
 }

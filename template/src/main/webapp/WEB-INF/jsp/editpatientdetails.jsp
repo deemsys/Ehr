@@ -412,7 +412,7 @@
 						</tr>          	
 				          
 						 <tr class="row2">
-                        <td><span class="err">*</span>phone:</td>
+                        <td><span class="err">*</span>Attorney Phone:</td>
                         <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.phone_Number}" name="phone_Number" /></br><span class="err"><form:errors path="PatientDetails.Phone_Number"></form:errors></span></td>
 						<td></td>
 						</tr> 
@@ -426,7 +426,7 @@
 				       			<td></td>
 				        </tr>
 				         <tr class="row1">
-                        <td><span class="err">*</span>Phone:</td>
+                        <td><span class="err">*</span>Insurance Company Phone:</td>
                         <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.insurance_phone}" name="insurance_phone" /></br><span class="err"><form:errors path="PatientDetails.Insurance_phone"></form:errors></span></td>
 						</tr>   
 						  <tr class="row2">
@@ -451,7 +451,7 @@
 				                   <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.name_health}" name="name_health" /></br><span class="err"><form:errors path="PatientDetails.Name_health"></form:errors></span></td>
 				         </tr>
 				         <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Phone:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Phone of your Health Insurance:</td>
 				                   <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.health_phone }" name="health_phone" /></br><span class="err"><form:errors path="PatientDetails.Health_phone"></form:errors></span></td>
 				        			<td></td>
 				         </tr>                  

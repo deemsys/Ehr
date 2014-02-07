@@ -188,14 +188,14 @@
               </tr>
               <br>
               <input type="hidden" class="input_txtbx1" id="inp_id" value="${Insuranceverification.form_no}" name="form_no" />
-              <tr><p>Hi, I'm calling to verify chiropractic benefits for Mr./ Mrs.<input type="text" class="input_txtbx1" name="verify_name" id="verify_name" value="${Insuranceverification.verify_name}"/></p></tr>
+              <tr><p>Hi, I'm calling to verify chiropractic benefits for<span class="err">*</span> Mr./ Mrs.<input type="text" class="input_txtbx1" name="verify_name" id="verify_name" value="${Insuranceverification.verify_name}"/><span class="err"><form:errors path="Insuranceverification.verify_name"></form:errors></p></tr>
               <tr class="row1">
-              <td>Spoke with</td>
-              <td><input type="text" class="input_txtbx1" name="spoke_with" id="spoke_with" value="${Insuranceverification.spoke_with}" /></td>
-              <td>Date</td>
-              <td><input type="text" class="input_txtbx1" name="date" id="datepicker" value="${Insuranceverification.date}"/></td>
-              <td>Fax#</td>
-              <td><input type="text" class="input_txtbx1" name="fax" id="fax" value="${Insuranceverification.fax}"/>
+              <td><span class="err">*</span>Spoke with</td>
+              <td><input type="text" class="input_txtbx1" name="spoke_with" id="spoke_with" value="${Insuranceverification.spoke_with}" /><span class="err"><form:errors path="Insuranceverification.spoke_with"></form:errors></td>
+              <td><span class="err">*</span>Date</td>
+              <td><input type="text" class="input_txtbx1" name="date" id="datepicker" value="${Insuranceverification.date}"/><span class="err"><form:errors path="Insuranceverification.date"></form:errors></td>
+              <td><span class="err">*</span>Fax#</td>
+              <td><input type="text" class="input_txtbx1" name="fax" id="fax" value="${Insuranceverification.fax}"/><span class="err"><form:errors path="Insuranceverification.fax"></form:errors>
               <span class="err" id="faxerror"></span>
               </td>
               </tr>
@@ -206,12 +206,12 @@
               </tr>
               <br>
               <tr class="row1">
-              <td>Amount of deductible</td>
-              <td><input type="text" class="input_txtbx1" name="amount_deduct" id="amountdeduct" value="${Insuranceverification.amount_deduct}" />
+              <td><span class="err">*</span>Amount of deductible</td>
+              <td><input type="text" class="input_txtbx1" name="amount_deduct" id="amountdeduct" value="${Insuranceverification.amount_deduct}" /><span class="err"><form:errors path="Insuranceverification.amount_deduct"></form:errors>
               <span class="err" id="amountdeducterror"></span>
               </td>
-              <td>Amount of deductible met</td>
-              <td><input type="text" class="input_txtbx1" name="amount_deduct_met" id="amountdeductmet" value="${Insuranceverification.amount_deduct_met}"/>
+              <td><span class="err">*</span>Amount of deductible met</td>
+              <td><input type="text" class="input_txtbx1" name="amount_deduct_met" id="amountdeductmet" value="${Insuranceverification.amount_deduct_met}"/><span class="err"><form:errors path="Insuranceverification.amount_deduct_met"></form:errors>
               <span class="err" id="amountdeductmeterror"></span>
               </td>
               <td></td>
@@ -220,8 +220,8 @@
               <!-- </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%"> -->
               <tr class="row1"> 
-              <td>Maximum visits/year?</td>
-              <td><input type="text" class="input_txtbx1" name="max_visit" id="max_visit" value="${Insuranceverification.max_visit}"/></td>
+              <td><span class="err">*</span>Maximum visits/year?</td>
+              <td><input type="text" class="input_txtbx1" name="max_visit" id="max_visit" value="${Insuranceverification.max_visit}"/><span class="err"><form:errors path="Insuranceverification.max_visit"></form:errors></td>
               <td></td>
               <td></td>
               <td></td>
@@ -231,8 +231,8 @@
               <td>Is chiropractic manipulation covered? </td>
               <td>	<input type="radio" name="is_chiropractic" value="Yes" class="input_txt"  <c:if test="${Insuranceverification.is_chiropractic=='Yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
 				                  	<input type="radio" name="is_chiropractic" value="No" class="input_txt"  <c:if test="${Insuranceverification.is_chiropractic=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;</td>
-              <td>At what%?</td>
-              <td><input type="text" class="input_txtbx1" name="at_what" id="atwhat" value="${Insuranceverification.at_what}" />
+              <td><span class="err">*</span>At what%?</td>
+              <td><input type="text" class="input_txtbx1" name="at_what" id="atwhat" value="${Insuranceverification.at_what}" /><span class="err"><form:errors path="Insuranceverification.at_what"></form:errors>
               <span class="err" id="atwhaterror"></span>
               </td>
              <td></td>
@@ -242,12 +242,12 @@
               <td>Are x-rays covered?</td>
               <td>	<input type="radio" name="xray_cover" value="Yes" class="input_txt"  <c:if test="${Insuranceverification.xray_cover=='Yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
 				                  	<input type="radio" name="xray_cover" value="No" class="input_txt"  <c:if test="${Insuranceverification.xray_cover=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;</td>
-              <td>At what%?</td>
-              <td><input type="text" class="input_txtbx1" name="atwhat" id="atwhat1" value="${Insuranceverification.atwhat}"/>
+              <td><span class="err">*</span>At what%?</td>
+              <td><input type="text" class="input_txtbx1" name="atwhat" id="atwhat1" value="${Insuranceverification.atwhat}"/><span class="err"><form:errors path="Insuranceverification.atwhat"></form:errors>
               <span class="err" id="atwhat1error"></span>
               </td>
-              <td>Subject to deductible</td>
-              <td><input type="text" class="input_txtbx1" name="subject_deduct" id="subjectdeduct" value="${Insuranceverification.subject_deduct}"/>
+              <td><span class="err">*</span>Subject to deductible</td>
+              <td><input type="text" class="input_txtbx1" name="subject_deduct" id="subjectdeduct" value="${Insuranceverification.subject_deduct}"/><span class="err"><form:errors path="Insuranceverification.subject_deduct"></form:errors>
               <span class="err" id="subjectdeducterror"></span>
               </td>
               </tr>
@@ -278,12 +278,12 @@
               <!-- </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%"> -->
               <tr class="row1">
-              <td>Deductible</td>
-              <td><input type="text" class="input_txtbx1" name="deductible" id="deductible" value="${Insuranceverification.deductible}"/>
+              <td><span class="err">*</span>Deductible</td>
+              <td><input type="text" class="input_txtbx1" name="deductible" id="deductible" value="${Insuranceverification.deductible}"/><span class="err"><form:errors path="Insuranceverification.deductible"></form:errors>
               <br><span class="err" id="deductibleerror"></span>
               </td>
-              <td>%covered</td>
-              <td><input type="text" class="input_txtbx1" name="covered" id="covered" value="${Insuranceverification.covered}"/>
+              <td><span class="err">*</span>%covered</td>
+              <td><input type="text" class="input_txtbx1" name="covered" id="covered" value="${Insuranceverification.covered}"/><span class="err"><form:errors path="Insuranceverification.covered"></form:errors>
               <br><span class="err" id="coverederror"></span>
               </td>
               </tr>
@@ -311,8 +311,8 @@
               <td></td>
               </tr>
               <tr class="row1">
-              <td>What address do we mail claims to?</td>
-              <td><textarea rows="3" cols="35" name="mail_claims" id="mail_claims">${Insuranceverification.mail_claims}</textarea></td>
+              <td><span class="err">*</span>What address do we mail claims to?</td>
+              <td><textarea rows="3" cols="35" name="mail_claims" id="mail_claims">${Insuranceverification.mail_claims}</textarea><span class="err"><form:errors path="Insuranceverification.mail_claims"></form:errors></td>
               <td></td>
 			  <td></td>              
               </tr>

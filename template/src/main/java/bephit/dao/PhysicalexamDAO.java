@@ -1023,6 +1023,7 @@ public List<Physicalexam> getlimitedphysicalexam(int page) {
 		resultSet = statement.executeQuery(cmd);
 		while (resultSet.next()) {
 			Physicalexam.add(new Physicalexam(resultSet.getString("physical_id"),
+					resultSet.getString("patient_id"),
 					resultSet.getString("sign"),
 		    		resultSet.getString("name"),
 		    		resultSet.getString("id"),
