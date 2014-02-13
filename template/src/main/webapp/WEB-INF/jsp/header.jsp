@@ -242,6 +242,7 @@ color:#fff;
 </style>
 </head>
 <body onload="javascript:startTime();">
+
 <c:choose>
 <c:when test="${menu=='sign'}">
 	<div id="main">
@@ -295,6 +296,17 @@ color:#fff;
 						<c:choose>
 						<c:when test="${menu=='search'}">
 						<ul class="menu">
+						     <li>
+				            	<a href="viewpatient" class="<c:choose>
+				            	<c:when test="${menu=='patientInfo'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu1">
+				            		<span>View Patient Details</span>
+				            	</a> </li>
+				            	
+				            	</ul>
+				            
+				           
+				          
+				         
 					</c:when>
 					<c:otherwise>
 						<c:if test="${role==0}">
@@ -375,17 +387,17 @@ color:#fff;
 
 
 						<li>
-								<a href="#" class="<c:choose><c:when test="${menu=='phyexam'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu11">
+								<a href="physicalexam" class="<c:choose><c:when test="${menu=='phyexam'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" ><!-- rel="ddsubmenu11" -->
 									<span>Physical exam</span>
 								</a>
 							</li>
 							<li>
-								<a href="#" class="<c:choose><c:when test="${menu=='report'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu8">
+								<a href="radiologicreport" class="<c:choose><c:when test="${menu=='report'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" ><!-- rel="ddsubmenu8" -->
 									<span>Radiologic Report</span>
 								</a>
 							</li>
 							<li>
-								<a href="#" class="<c:choose><c:when test="${menu=='iniexam'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu9">
+								<a href="hamiltonchiropractic" class="<c:choose><c:when test="${menu=='iniexam'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" ><!-- rel="ddsubmenu9" -->
 									<span>Initial Exam</span>
 								</a>
 							</li>
@@ -394,7 +406,7 @@ color:#fff;
 									<span>Soap Notes</span>
 								</a>
 							</li>
-							<li>
+							<%-- <li>
 
 								<a href="#" class="<c:choose><c:when test="${menu=='initial'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu13">
 
@@ -402,7 +414,7 @@ color:#fff;
 
 									<span>Initial Exam & Re Exam</span>
 								</a>
-							</li>
+							</li> --%>
 							<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='symptom'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu23">
 									<span>Symptom</span>
@@ -458,22 +470,22 @@ color:#fff;
 
 
 						<li>
-								<a href="#" class="<c:choose><c:when test="${menu=='phyexam'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu11">
+								<a href="physicalexam" class="<c:choose><c:when test="${menu=='phyexam'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" ><!-- rel="ddsubmenu11" -->
 									<span>Physical exam</span>
 								</a>
 							</li>
 							<li>
-								<a href="#" class="<c:choose><c:when test="${menu=='report'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu8">
+								<a href="#" class="<c:choose><c:when test="${menu=='report'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" ><!-- rel="ddsubmenu8" -->
 									<span>Radiologic Report</span>
 								</a>
 							</li>
 							
 							<li>
-								<a href="#" class="<c:choose><c:when test="${menu=='soapnotes'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu10">
+								<a href="#" class="<c:choose><c:when test="${menu=='soapnotes'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" ><!-- rel="ddsubmenu10" -->
 									<span>Soap Notes</span>
 								</a>
 							</li>
-							<li>
+							<%-- <li>
 
 								<a href="#" class="<c:choose><c:when test="${menu=='initial'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu13">
 
@@ -481,7 +493,7 @@ color:#fff;
 
 									<span>Initial Exam & Re Exam</span>
 								</a>
-							</li>
+							</li> --%>
 							<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='symptom'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu23">
 									<span>Symptom</span>
@@ -536,13 +548,13 @@ color:#fff;
 }
 </style>
 		<li>
-								<a href="#" class="<c:choose><c:when test="${menu=='phyexam'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu11">
+								<a href="#" class="<c:choose><c:when test="${menu=='phyexam'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" ><!-- rel="ddsubmenu11" -->
 									<span>Physical exam</span>
 								</a>
 							</li>
 							
 							<li>
-								<a href="#" class="<c:choose><c:when test="${menu=='iniexam'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu9">
+								<a href="#" class="<c:choose><c:when test="${menu=='iniexam'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" ><!-- rel="ddsubmenu9" -->
 									<span>Initial Exam</span>
 								</a>
 							</li>
@@ -551,7 +563,7 @@ color:#fff;
 									<span>Soap Notes</span>
 								</a>
 							</li>
-							<li>
+							<%-- <li>
 
 								<a href="#" class="<c:choose><c:when test="${menu=='initial'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu13">
 
@@ -559,7 +571,7 @@ color:#fff;
 
 									<span>Initial Exam & Re Exam</span>
 								</a>
-							</li>
+							</li> --%>
 							<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='symptom'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu23">
 									<span>Symptom</span>
@@ -629,7 +641,7 @@ color:#fff;
 									<span>Soap Notes</span>
 								</a>
 							</li>
-							<li>
+							<%-- <li>
 
 								<a href="#" class="<c:choose><c:when test="${menu=='initial'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu13">
 
@@ -637,7 +649,7 @@ color:#fff;
 
 									<span>Initial Exam & Re Exam</span>
 								</a>
-							</li>
+							</li> --%>
 							<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='symptom'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu23">
 									<span>Symptom</span>
@@ -680,17 +692,17 @@ color:#fff;
 	<ul class="menu">
 
 						<li>
-								<a href="#" class="<c:choose><c:when test="${menu=='phyexam'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu11">
+								<a href="#" class="<c:choose><c:when test="${menu=='phyexam'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" ><!-- rel="ddsubmenu11" -->
 									<span>Physical exam</span>
 								</a>
 							</li>
 							
 							<li>
-								<a href="#" class="<c:choose><c:when test="${menu=='soapnotes'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu10">
+								<a href="#" class="<c:choose><c:when test="${menu=='soapnotes'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" ><!-- rel="ddsubmenu10" -->
 									<span>Soap Notes</span>
 								</a>
 							</li>
-							<li>
+						<%-- 	<li>
 
 								<a href="#" class="<c:choose><c:when test="${menu=='initial'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu13">
 
@@ -698,7 +710,7 @@ color:#fff;
 
 									<span>Initial Exam & Re Exam</span>
 								</a>
-							</li>
+							</li> --%>
 							<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='symptom'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu23">
 									<span>Symptom</span>
@@ -752,7 +764,7 @@ color:#fff;
 									<span>Soap Notes</span>
 								</a>
 							</li>
-							<li>
+							<%-- <li>
 
 								<a href="#" class="<c:choose><c:when test="${menu=='initial'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu13">
 
@@ -760,7 +772,7 @@ color:#fff;
 
 									<span>Initial Exam & Re Exam</span>
 								</a>
-							</li>
+							</li> --%>
 							<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='symptom'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu23">
 									<span>Symptom</span>
@@ -811,7 +823,7 @@ color:#fff;
 									<span>Soap Notes</span>
 								</a>
 							</li>
-							<li>
+						<%-- 	<li>
 
 								<a href="#" class="<c:choose><c:when test="${menu=='initial'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu13">
 
@@ -819,7 +831,7 @@ color:#fff;
 
 									<span>Initial Exam & Re Exam</span>
 								</a>
-							</li>
+							</li> --%>
 							<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='symptom'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu23">
 									<span>Symptom</span>
@@ -864,11 +876,11 @@ color:#fff;
 								</a>
 								
 							</li>
-							<li>
+						<%-- 	<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='initial'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu13">
 									<span>Initial Exam & Re Exam</span>
 								</a>
-							</li>
+							</li> --%>
 							<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='symptom'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu23">
 									<span>Symptom</span>
@@ -959,6 +971,7 @@ color:#fff;
 							 <li><a href="viewpatient">View Patient Details</a></li>
 							
           				</ul>
+          					
 						<ul id="ddsubmenu1" class="ddsubmenustyle">
 							 <li><a href="autoaccident">Auto Accident</a></li>
 							 
@@ -1053,7 +1066,7 @@ color:#fff;
 							<li><a href="addmailtemplate">Mail Templates</a></li>
 							<li><a href="changepassword">Change My Password</a></li>
 						</ul> -->
-						<ul id="ddsubmenu5" class="ddsubmenustyle">
+						<!-- <ul id="ddsubmenu5" class="ddsubmenustyle"> -->
 						<!-- <li><a href="patientDetails">Patient Information</a></li> -->
 						<!-- <li><a href="viewpatient">View Patient</a></li> -->
 						</ul>
@@ -1082,7 +1095,7 @@ color:#fff;
 						}
 						
 						</script>
-						<ul id="ddsubmenu13" class="ddsubmenustyle">
+						<!-- <ul id="ddsubmenu13" class="ddsubmenustyle">
 						
 							<li style="list-style-type: none"><a href="#" rel="ddsubmenu14" ><span>Lumbopelvic Exam</span> </a>
 							  <ul id="ddsubmenu14" >
@@ -1139,7 +1152,7 @@ color:#fff;
 							     </ul>
 							     </li>
 				         </ul>
-				         <ul id="ddsubmenu23" class="ddsubmenustyle">
+				         --> <ul id="ddsubmenu23" class="ddsubmenustyle">
 							      <li><a href="symptom" >Symptom</a></li>
 							      <li><a href="viewsymptom">View Symptom</a></li>
 							     </ul>

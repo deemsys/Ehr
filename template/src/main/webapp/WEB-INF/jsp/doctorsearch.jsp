@@ -50,15 +50,15 @@
 	            <div class="contentbox">
 	           <table cellpadding="0" cellspacing="0" border="0" width="100%">
 	            <tr class="row1">
-	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Please enter a Patient's Email ID</td>
-				  <td valign="top" align="left" class="input_txt">
-				   <input type="text" class="input_txtbx1" id="inp_id" name="emailid" /><br/><span class="err"><form:errors path="Signup.username"></form:errors></span>
+	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">*</span>Please enter a Patient's Email ID</td>
+				  <td valign="top" align="left" class="input_txt" width="200">
+				   <input type="text" class="input_txtbx1" id="inp_id" name="emailid" /><br/><span class="err"><form:errors path="Doctorsearch.emailid"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
 	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Please enter a Patient name</td>
-				  <td valign="top" align="left" class="input_txt">
-				   <input type="text" class="input_txtbx1" id="inp_id" name="patientname" /><br/><span class="err"><form:errors path="Signup.username"></form:errors></span>
+				  <td valign="top" align="left" class="input_txt" width="200">
+				   <input type="text" class="input_txtbx1" id="inp_id" name="patientname" /><br/><span class="err"><form:errors path="Doctorsearch.patientname"></form:errors></span>
 				  </td>
 				  </tr>
 				  </table>

@@ -82,28 +82,28 @@
                  </tr>
                  <tr class="row1">
                 <td></td>
-                <td><input type="checkbox" name="shouldercheck" value="Shoulder" >&nbsp Shoulder</td>
+                <td><input type="checkbox" name="shouldercheck" value="Shoulder" id="shoulder" onclick="shoulderPopup()">&nbsp Shoulder</td>
                  <td><input type="radio" name="shoulder" value="Right" >&nbsp Right</td>
                  <td><input type="radio" name="shoulder" value="Left" >&nbsp Left</td>
                  <td></td>
                  </tr>
                  <tr class="row1">
                 <td></td>
-                <td><input type="checkbox" name="elbowcheck" value="Elbow" >&nbsp Elbow</td>
+                <td><input type="checkbox" name="elbowcheck" value="Elbow" id="elbow" onclick="elbowPopup()">&nbsp Elbow</td>
                  <td><input type="radio" name="elbow" value="Right" >&nbsp Right</td>
                  <td><input type="radio" name="elbow" value="Left" >&nbsp Left</td>
                  <td></td>
                  </tr>
                  <tr class="row1">
                 <td></td>
-                <td><input type="checkbox" name="handcheck" value="Hand" >&nbsp Hand</td>
+                <td><input type="checkbox" name="handcheck" value="Hand" id="hand" onclick="handPopup()" >&nbsp Hand</td>
                  <td><input type="radio" name="hand" value="Right" >&nbsp Right</td>
                  <td><input type="radio" name="hand" value="Left" >&nbsp Left</td>
                  <td></td>
                  </tr>
                  <tr class="row1">
                 <td></td>
-                <td><input type="checkbox" name="wristcheck" value="Wrist" >&nbsp Wrist</td>
+                <td><input type="checkbox" name="wristcheck" value="Wrist" id="wrist" onclick="wristPopup()">&nbsp Wrist</td>
                  <td><input type="radio" name="wrist" value="Right" >&nbsp Right</td>
                  <td><input type="radio" name="wrist" value="Left" >&nbsp Left</td>
                  <td></td>
@@ -123,26 +123,73 @@
 
 
 function newPopup() {
+
 if(document.getElementById("hipexam").checked)
 {
-alert("yes");
-	popupWindow = window.open("perry",'popUpWindow','height=700,width=800,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+popupWindow = window.open("perry" ,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
 		}
 }
 function anklePopup() {
 if(document.getElementById("ankle").checked)
 {
-alert("yes");
-	popupWindow = window.open("ankle",'popUpWindow','height=700,width=800,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+popupWindow = window.open("ankle",'popUpWindow','width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
 		}
 }
+function footPopup() {
+	if(document.getElementById("foot").checked)
+	{
+	popupWindow = window.open("ankle",'popUpWindow','width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+			}
+	}
 function shoulderPopup() {
 if(document.getElementById("shoulder").checked)
 {
-alert("yes");
-	popupWindow = window.open("shoulderexam",'popUpWindow','height=700,width=800,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+
+popupWindow = window.open("shoulderexam",'popUpWindow','width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
 		}
 }
+
+function kneePopup() {
+	if(document.getElementById("knee").checked)
+	{
+
+	popupWindow = window.open("kneeexam",'popUpWindow','width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+			}
+	}
+	
+function wristPopup() {
+	if(document.getElementById("wrist").checked)
+	{
+
+	popupWindow = window.open("wristexam",'popUpWindow','width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+			}
+	}
+	
+function handPopup() {
+	if(document.getElementById("hand").checked)
+	{
+
+	popupWindow = window.open("wristexam",'popUpWindow','width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+			}
+	}
+
+
+function elbowPopup() {
+	if(document.getElementById("elbow").checked)
+	{
+
+	popupWindow = window.open("elbowexam",'popUpWindow','width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+			}
+	}
+
+/* function wristPopup() {
+	if(document.getElementById("hand").checked)
+	{
+
+	popupWindow = window.open("wristexam",'popUpWindow','height=700,width=800,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+			}
+	} */
+
 
 </script>
 <!-- <a href="JavaScript:newPopup('http://www.quackit.com/html/html_help.cfm');">Open a popup window</a> -->
@@ -160,21 +207,21 @@ alert("yes");
                  </tr>
                 <tr class="row1">
                 <td></td>
-                <td><input type="checkbox" name="kneecheck" value="Knee" >&nbsp Knee</td>
+                <td><input type="checkbox" name="kneecheck" value="Knee" id="knee" onclick="kneePopup()">&nbsp Knee</td>
                  <td><input type="radio" name="knee" value="Right" >&nbsp Right</td>
                  <td><input type="radio" name="knee" value="Left" >&nbsp Left</td>
                  <td></td>
                  </tr>
                  <tr class="row1">
                 <td></td>
-                <td><input type="checkbox" name="footcheck" value="Foot" >&nbsp Foot</td>
+                <td><input type="checkbox" name="footcheck" value="Foot" id="foot" onclick="footPopup()">&nbsp Foot</td>
                  <td><input type="radio" name="foot" value="Right" >&nbsp Right</td>
                  <td><input type="radio" name="foot" value="Left" >&nbsp Left</td>
                  <td></td>
                  </tr>
                  <tr class="row1">
                 <td></td>
-                <td><input type="checkbox" name="anklecheck" value="Ankle" >&nbsp Ankle</td>
+                <td><input type="checkbox" name="anklecheck" value="Ankle" id="ankle" onclick="anklePopup()">&nbsp Ankle</td>
                  <td><input type="radio" name="ankle" value="Right" >&nbsp Right</td>
                  <td><input type="radio" name="ankle" value="Left" >&nbsp Left</td>
                  <td></td>

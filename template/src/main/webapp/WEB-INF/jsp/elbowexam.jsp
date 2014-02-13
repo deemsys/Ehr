@@ -13,7 +13,11 @@
   P#mypar {font-style:calibri;
   line-height:18px;}
    </STYLE>
-   
+<c:if test="${elbow=='1'}">
+<script>
+window.close();
+</script>
+</c:if>   
    <script type="text/javascript">
 function Checksymptom(val){
  var element=document.getElementById('other1');

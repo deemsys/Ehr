@@ -3,6 +3,12 @@
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
+<c:if test="${ankle=='1'}">
+<script>
+window.close();
+</script>
+</c:if>
+
 <script type="text/javascript">
 function softtissuevalidate()
 {

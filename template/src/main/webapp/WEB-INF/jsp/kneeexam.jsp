@@ -3,7 +3,11 @@
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
-
+<c:if test="${knee=='1'}">
+<script>
+window.close();
+</script>
+</c:if>
  <link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
   <link rel="stylesheet" href="/resources/css/style.css" />
  <script src="resources/js/jquery.min.js"></script> 

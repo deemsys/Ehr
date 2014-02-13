@@ -59,7 +59,7 @@
                 <td></td>
                 <td><input type="checkbox" name="neckcheck" value="Neck" <c:if test="${hamiltonchiropractic.neckcheck=='Neck'}"><c:out value="Checked"/></c:if>>&nbsp Neck</td>
                  <td><input type="radio" name="neck" value="Right" <c:if test="${hamiltonchiropractic.neck=='Right'}"><c:out value="Checked"/></c:if>>&nbsp Right</td>
-                 <td><input type="radio" name="neck" value="Left" <c:if test="${hamiltonchiropractic.neck=='Left'}"><c:out value="Checked"/></c:if>>&nbsp Left</td>
+                 <td><input type="radio" name="neck" value="Left"  <c:if test="${hamiltonchiropractic.neck=='Left'}"><c:out value="Checked"/></c:if>>&nbsp Left</td>
                  <td></td>
                  </tr>
                  <tr class="row1">
@@ -81,29 +81,42 @@
                 <td><input type="checkbox" name="shouldercheck" value="Shoulder" <c:if test="${hamiltonchiropractic.shouldercheck=='Shoulder'}"><c:out value="Checked"/></c:if> >&nbsp Shoulder</td>
                  <td><input type="radio" name="shoulder" value="Right" <c:if test="${hamiltonchiropractic.shoulder=='Right'}"><c:out value="Checked"/></c:if>>&nbsp Right</td>
                  <td><input type="radio" name="shoulder" value="Left" <c:if test="${hamiltonchiropractic.shoulder=='Left'}"><c:out value="Checked"/></c:if>>&nbsp Left</td>
-                 <td></td>
+                 <td><a  style="cursor: pointer;"   onclick="viewshoulderpopup()">View Shoulder Exam</a></td>
                  </tr>
-                 <tr class="row2">
+                 <script>
+                 function viewshoulderpopup() {
+popupWindow = window.open("viewshoulderexamdetails" ,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+}</script> 
+  <tr class="row2">
                 <td></td>
                 <td><input type="checkbox" name="elbowcheck" value="Elbow" <c:if test="${hamiltonchiropractic.elbowcheck=='Elbow'}"><c:out value="Checked"/></c:if>>&nbsp Elbow</td>
                  <td><input type="radio" name="elbow" value="Right" <c:if test="${hamiltonchiropractic.elbow=='Right'}"><c:out value="Checked"/></c:if> >&nbsp Right</td>
                  <td><input type="radio" name="elbow" value="Left" <c:if test="${hamiltonchiropractic.elbow=='Left'}"><c:out value="Checked"/></c:if>>&nbsp Left</td>
-                 <td></td>
+                 <td><a style="cursor: pointer;" onclick="viewelbowpopup()">View Elbow Exam</a></td>
                  </tr>
+                  <script>
+                 function viewelbowpopup() {
+popupWindow = window.open("viewelbowexam" ,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+}</script> 
                  <tr class="row1">
                 <td></td>
                 <td><input type="checkbox" name="handcheck" value="Hand" <c:if test="${hamiltonchiropractic.handcheck=='Hand'}"><c:out value="Checked"/></c:if>>&nbsp Hand</td>
                  <td><input type="radio" name="hand" value="Right" <c:if test="${hamiltonchiropractic.hand=='Right'}"><c:out value="Checked"/></c:if>>&nbsp Right</td>
                  <td><input type="radio" name="hand" value="Left" <c:if test="${hamiltonchiropractic.hand=='Left'}"><c:out value="Checked"/></c:if>>&nbsp Left</td>
-                 <td></td>
+                 <td><a style="cursor: pointer;" onclick="viewhandpopup()">View Hand Exam</a></td>
                  </tr>
+                  <script>
+                 function viewhandpopup() {
+popupWindow = window.open("viewwristexamdetails" ,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+}</script> 
                  <tr class="row2">
                 <td></td>
                 <td><input type="checkbox" name="wristcheck" value="Wrist" <c:if test="${hamiltonchiropractic.wristcheck=='Wrist'}"><c:out value="Checked"/></c:if>>&nbsp Wrist</td>
                  <td><input type="radio" name="wrist" value="Right" <c:if test="${hamiltonchiropractic.wrist=='Right'}"><c:out value="Checked"/></c:if>>&nbsp Right</td>
                  <td><input type="radio" name="wrist" value="Left" <c:if test="${hamiltonchiropractic.wrist=='Left'}"><c:out value="Checked"/></c:if>>&nbsp Left</td>
-                 <td></td>
+                 <td><a style="cursor: pointer;" onclick="viewhandpopup()">View Wrist Exam</a></td>
                  </tr>
+                
                  <tr class="row1">
                 <td></td>
                 <td><input type="checkbox" name="lbpcheck" value="Lbp" <c:if test="${hamiltonchiropractic.lbpcheck=='Lbp'}"><c:out value="Checked"/></c:if>>&nbsp LBP</td>
@@ -116,8 +129,12 @@
                 <td><input type="checkbox" name="hipcheck" value="Hip" <c:if test="${hamiltonchiropractic.hipcheck=='Hip'}"><c:out value="Checked"/></c:if>>&nbsp Hip</td>
                  <td><input type="radio" name="hip" value="Right" <c:if test="${hamiltonchiropractic.hip=='Right'}"><c:out value="Checked"/></c:if> >&nbsp Right</td>
                  <td><input type="radio" name="hip" value="Left" <c:if test="${hamiltonchiropractic.hip=='Left'}"><c:out value="Checked"/></c:if> >&nbsp Left</td>
-                 <td></td>
+                 <td><a href="" onclick="viewhippopup()" style="cursor: pointer;">View Hip Exam</a></td>
                  </tr>
+                  <script>
+                 function viewhippopup() {
+popupWindow = window.open("viewhipexam" ,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+}</script> 
                  <tr class="row1">
                 <td></td>
                 <td><input type="checkbox" name="legcheck" value="Leg" <c:if test="${hamiltonchiropractic.legcheck=='Leg'}"><c:out value="Checked"/></c:if>>&nbsp Leg</td>
@@ -130,22 +147,31 @@
                 <td><input type="checkbox" name="kneecheck" value="Knee" <c:if test="${hamiltonchiropractic.kneecheck=='Knee'}"><c:out value="Checked"/></c:if>>&nbsp Knee</td>
                  <td><input type="radio" name="knee" value="Right" <c:if test="${hamiltonchiropractic.knee=='Right'}"><c:out value="Checked"/></c:if>>&nbsp Right</td>
                  <td><input type="radio" name="knee" value="Left" <c:if test="${hamiltonchiropractic.knee=='Left'}"><c:out value="Checked"/></c:if>>&nbsp Left</td>
-                 <td></td>
+                 <td><a onclick="viewkneepopup()">View Knee Exam</a></td>
                  </tr>
+                  <script>
+                 function viewkneepopup() {
+popupWindow = window.open("viewkneeexam" ,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+}</script> 
                  <tr class="row1">
                 <td></td>
                 <td><input type="checkbox" name="footcheck" value="Foot" <c:if test="${hamiltonchiropractic.footcheck=='Foot'}"><c:out value="Checked"/></c:if>>&nbsp Foot</td>
                  <td><input type="radio" name="foot" value="Right" <c:if test="${hamiltonchiropractic.foot=='Right'}"><c:out value="Checked"/></c:if>>&nbsp Right</td>
                  <td><input type="radio" name="foot" value="Left" <c:if test="${hamiltonchiropractic.foot=='Left'}"><c:out value="Checked"/></c:if>>&nbsp Left</td>
-                 <td></td>
+                 <td><a href="" onclick="viewfootpopup()">View Foot Exam</a></td>
                  </tr>
+                  <script>
+                 function viewfootpopup() {
+popupWindow = window.open("viewfootexam" ,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+}</script> 
                  <tr class="row2">
                 <td></td>
                 <td><input type="checkbox" name="anklecheck" value="Ankle" <c:if test="${hamiltonchiropractic.anklecheck=='Ankle'}"><c:out value="Checked"/></c:if>>&nbsp Ankle</td>
                  <td><input type="radio" name="ankle" value="Right" <c:if test="${hamiltonchiropractic.ankle=='Right'}"><c:out value="Checked"/></c:if>>&nbsp Right</td>
                  <td><input type="radio" name="ankle" value="Left" <c:if test="${hamiltonchiropractic.ankle=='Left'}"><c:out value="Checked"/></c:if>>&nbsp Left</td>
-                 <td></td>
+                 <td><a onclick="viewfootpopup()">View Ankle Exam</a></td>
                  </tr>
+                  
                  <tr class="row1">
                  <td>Did it begin gradually or suddenly?</td>
                  <td><input type="checkbox" name="suddenly" value="Sudden" <c:if test="${hamiltonchiropractic.suddenly=='Sudden'}"><c:out value="Checked"/></c:if>>&nbsp Sudden</td>

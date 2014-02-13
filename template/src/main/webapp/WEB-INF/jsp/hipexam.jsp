@@ -3,6 +3,12 @@
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
+
+<c:if test="${hip=='1'}">
+<script>
+window.close();
+</script>
+</c:if>
 <script type="text/javascript">
 function softtissuevalidate()
 {
@@ -159,6 +165,7 @@ $(function() {
 
 </head>
 <body>
+
 <br><br>
 <div id="tabs" >
   <ul>
