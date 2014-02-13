@@ -6,7 +6,9 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 public class Doctorsearch
 {   
+	@NotEmpty
 	private String emailid;
+	@NotEmpty
 	private String patientname;
      
   
