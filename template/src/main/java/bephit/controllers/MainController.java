@@ -220,6 +220,12 @@ public class MainController {
 	
 	@RequestMapping(value="/doctorsearch", method = RequestMethod.POST)
 	public String insert_doctorsearch(HttpSession session,HttpServletRequest request,@ModelAttribute("Doctorsearch")  @Valid Doctorsearch doctorsearch,BindingResult result,ModelMap model) {
+	if(result.hasErrors())
+	{
+		model.addAttribute("menu","search");
+		return "doctorsearch";
+	}
+		
 	String emailid=request.getParameter("emailid");
 	String patientname=request.getParameter("patientname");
 	int v=doctorDAO.Checkvalid(emailid,patientname);
@@ -537,7 +543,7 @@ public class MainController {
 	@RequestMapping(value="/hamiltonchiropractic", method = RequestMethod.GET)
 	public String hamiltonchiropractic(ModelMap model) {
 		 model.addAttribute("iniexam", "doctor");
-		
+		 model.addAttribute("menu", "iniexam");
 	      return "hamiltonchiropractic";
 	}
 
@@ -1526,10 +1532,10 @@ public class MainController {
 	    	signupForm.setSignup(signDAO.getSignup());
 			model.addAttribute("SignupForm",signupForm);
 			model.addAttribute("Success","true");
+			model.addAttribute("menu","sign");
 			return "signup";
 		}
-		
-		
+		model.addAttribute("menu","sign");		
     	int h =signDAO.setSignup(signup);
     	SignupForm signupForm= new SignupForm();
     	signupForm.setSignup(signDAO.getSignup());
@@ -1559,6 +1565,7 @@ public class MainController {
 	    	doctorsignupForm.setDoctorsignup(docDAO.getDoctorsignup());
 			model.addAttribute("DoctorsignupForm",doctorsignupForm);
 			model.addAttribute("Success","true");
+			model.addAttribute("menu","sign");
 			return "doctorsignup";
 		}
 		
@@ -1568,6 +1575,7 @@ public class MainController {
     	doctorsignupForm.setDoctorsignup(docDAO.getDoctorsignup());
 		model.addAttribute("DoctorsignupForm",doctorsignupForm);
 		model.addAttribute("success",true);
+		model.addAttribute("menu","sign");
         return "login";
 	}
 
@@ -3137,6 +3145,7 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 			InsuranceverificationForm insuranceverificationForm= new InsuranceverificationForm();
 	    	insuranceverificationForm.setInsuranceverification(veriDAO.getInsuranceverification(insuranceverification.getForm_no()));
 			model.addAttribute("InsuranceverificationForm",insuranceverificationForm);
+			model.addAttribute("menu", "admin");
 			return "editinsuranceverification";
 		}
 		
@@ -3146,7 +3155,7 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
     	insuranceverificationForm.setInsuranceverification(veriDAO.getInsuranceverification());
 		model.addAttribute("InsuranceverificationForm",insuranceverificationForm);    
 		model.addAttribute("success","true");
-		 model.addAttribute("menu", "admin");
+		model.addAttribute("menu", "admin");
 	        return "insuranceverifylist";
 		
 	}
