@@ -17,9 +17,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import bephit.dao.FormbillDAO;
 import bephit.dao.LetterofprotectionDAO;
-import bephit.dao.LettertopatientsDAO;
+/*import bephit.dao.LettertopatientsDAO;
 import bephit.dao.NoticeassignmentDAO;
-import bephit.dao.PatientattorneyDAO;
+import bephit.dao.PatientattorneyDAO;*/
 import bephit.dao.PerrychiropracticDAO;
 import bephit.dao.RequestfordemandDAO;
 import bephit.dao.UpdateletterDAO;
@@ -27,7 +27,7 @@ import bephit.dao.XrayDAO;
 import bephit.forms.FormbillForm;
 import bephit.forms.HippaPrivacyForm;
 import bephit.forms.LetterofprotectionForm;
-import bephit.forms.PatientattorneyForm;
+/*import bephit.forms.PatientattorneyForm;*/
 import bephit.forms.PerrychiropracticForm;
 import bephit.forms.PhysicalexamForm;
 import bephit.forms.RequestfordemandForm;
@@ -35,12 +35,12 @@ import bephit.forms.UpdateletterForm;
 import bephit.forms.XrayForm;
 import bephit.model.Formbill;
 import bephit.model.Letterofprotection;
-import bephit.model.Lettertopatients;
+/*import bephit.model.Lettertopatients;
 import bephit.model.Noticeassignment;
-import bephit.model.Patientattorney;
+import bephit.model.Patientattorney;*/
 import bephit.model.Perrychiropractic;
 import bephit.model.Requestfordemand;
-import bephit.model.Returntoschool;
+/*import bephit.model.Returntoschool;*/
 import bephit.model.Updateletter;
 import bephit.model.Xray;
 
@@ -60,7 +60,7 @@ public class AdminController
 	
 	
 	
-	@Autowired
+	/*@Autowired
 	LettertopatientsDAO lettertopatientsDAO;
 	
 	
@@ -71,7 +71,7 @@ public class AdminController
 	
 
 	@Autowired
-	  PatientattorneyDAO patientattorneyDAO;
+	  PatientattorneyDAO patientattorneyDAO;*/
 	
 
 	@Autowired
@@ -98,7 +98,7 @@ public class AdminController
 		return "viewperrychiropractic";
 	}
 	
-	@RequestMapping(value="/viewpatientattorney", method = RequestMethod.GET)
+	/*@RequestMapping(value="/viewpatientattorney", method = RequestMethod.GET)
 	public String viewpatientattorney(HttpSession session,ModelMap model) {		
 		PatientattorneyForm patientattorneyform=new PatientattorneyForm();
 		patientattorneyform.setPatientattorneydetails(patientattorneyDAO.getpatientattorney());
@@ -108,7 +108,7 @@ public class AdminController
 		return "viewpatientattorney";
 	}
 	
-	
+	*/
 	
 	
 	
@@ -629,7 +629,7 @@ public String insert_perrychiropractic(HttpServletRequest request,HttpSession se
 	 
 }
 
-@RequestMapping(value="/insertpatientattorney", method = RequestMethod.POST)
+/*@RequestMapping(value="/insertpatientattorney", method = RequestMethod.POST)
 
 public String insert_patientattorney(HttpServletRequest request,HttpSession session,@ModelAttribute("patientattorneydetails")  @Valid Patientattorney patientattorneydetails,BindingResult result,ModelMap model) {
 	//session.setAttribute("perrydetails",perrychiropracticdetails);
@@ -643,7 +643,7 @@ public String insert_patientattorney(HttpServletRequest request,HttpSession sess
 	patientattorneyDAO.setpatientattorney(patientattorneydetails);
 	return "patientattorney";
 	 
-}
+}*/
 
 
 
@@ -769,7 +769,7 @@ public String insert_updateletter(HttpServletRequest request,HttpSession session
 }
 
 
-
+/*
 @RequestMapping(value="/insertlettertopatient", method = RequestMethod.POST)
 
 public String insert_lettertopatient(HttpServletRequest request,HttpSession session,@ModelAttribute("lettertopatientsdetails")  @Valid Lettertopatients lettertopatientsdetails,BindingResult result,ModelMap model)
@@ -785,10 +785,10 @@ public String insert_lettertopatient(HttpServletRequest request,HttpSession sess
 	lettertopatientsDAO.setlettertopatients(lettertopatientsdetails);
 	return "lettertopatients";
 	 
-}
+}*/
 
 
-@RequestMapping(value="/insertnoticeofassignment", method = RequestMethod.POST)
+/*@RequestMapping(value="/insertnoticeofassignment", method = RequestMethod.POST)
 
 public String insert_noticeofassignment(HttpServletRequest request,HttpSession session,@ModelAttribute("noticeassignmentdetails")  @Valid Noticeassignment noticeassignmentdetails,BindingResult result,ModelMap model)
 {
@@ -804,7 +804,7 @@ public String insert_noticeofassignment(HttpServletRequest request,HttpSession s
 	return "noticeassignment";
 	 
 }
-
+*/
 
 
 

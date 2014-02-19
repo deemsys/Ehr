@@ -158,4 +158,21 @@
    <bean id="NarrativereportDAO" class="bephit.dao.NarrativereportDAO">
            <property name="dataSource" ref="dataSource" />
    </bean> 
+   <bean id="XrayDAO" class="bephit.dao.XrayDAO">
+           <property name="dataSource" ref="dataSource" />
+   </bean>
+
+
+<bean id="FormbillDAO" class="bephit.dao.FormbillDAO">
+           <property name="dataSource" ref="dataSource" />
+   </bean>
+
+ <bean id="LetterofprotectionDAO" class="bephit.dao.LetterofprotectionDAO">
+           <property name="dataSource" ref="dataSource" />
+   </bean>
+
+
+  <bean id="RequestfordemandDAO" class="bephit.dao.RequestfordemandDAO">
+           <property name="dataSource" ref="dataSource" />
+   </bean>
 </beans>
