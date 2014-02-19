@@ -154,5 +154,8 @@
    </bean> 
     <bean id="UpdateletterDAO" class="bephit.dao.UpdateletterDAO">
            <property name="dataSource" ref="dataSource" />
+   </bean>
+   <bean id="NarrativereportDAO" class="bephit.dao.NarrativereportDAO">
+           <property name="dataSource" ref="dataSource" />
    </bean> 
 </beans>

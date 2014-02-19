@@ -49,12 +49,12 @@ $(function() {
           <table cellpadding="0" cellspacing="0" border="0" width="70%" align="center">
           <tr height="30">
           <input type="hidden" class="input_txtbx1" id="inp_id" value="${copyofrequest.copyofrequestno}" name="copyofrequest" />
-          <td>Patients Attorney or Insurance Adjuster: </td>
-          <td><input type="text" name="patient" size="40" value="${copyofrequest.patient}"></td>
+          <td><span class="err">*</span>Patients Attorney or Insurance Adjuster: </td>
+          <td><input type="text" name="patient" size="40" value="${copyofrequest.patient}"><span class="err"><form:errors path="Copyofrequest.patient"></form:errors></span></td>
           </tr>   
           <tr height="30">
-          <td>Address: </td>
-          <td><textarea rows="4" cols="43" name="address">${copyofrequest.address}</textarea></td>
+          <td><span class="err">*</span>Address: </td>
+          <td><textarea rows="4" cols="43" name="address">${copyofrequest.address}</textarea><span class="err"><form:errors path="Copyofrequest.address"></form:errors></span></td>
           </tr>
           <tr height="30">
           <td>Regarding: </td>
@@ -65,8 +65,8 @@ $(function() {
           <td><input type="text" name="dateofaccident" id="datepicker" size="40" value="${copyofrequest.dateofaccident}"></td>
           </tr>
           <tr height="30">
-          <td>Claim Number: </td>
-          <td><input type="text" name="claimnumber"  size="40" value="${copyofrequest.claimnumber }"></td>
+          <td><span class="err">*</span>Claim Number: </td>
+          <td><input type="text" name="claimnumber"  size="40" value="${copyofrequest.claimnumber }"><span class="err"><form:errors path="Copyofrequest.claimnumber"></form:errors></span></td>
           </tr>
           <tr height="30">
           <td>Today's Date:  </td>
@@ -97,7 +97,7 @@ $(function() {
           </div>
           <div align="right">
           <p><B style="font-size:13px">Very truly yours,</B></p>
-          <p><input type="text" name="sign" size="30" value="${copyofrequest.sign}"></p>
+          <p><input type="text" name="sign" size="30" value="${copyofrequest.sign}"><span class="err"><form:errors path="Copyofrequest.sign"></form:errors></span></p>
           <p>Perry Chiropractic and Therapy Center of Canton, Inc.</p>
           <p>Dr. Charles T. Yang DC, DABFP</p>
           </div>

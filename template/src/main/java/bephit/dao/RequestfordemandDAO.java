@@ -11,14 +11,16 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.sql.DataSource;
-
+import bephit.forms.RequestfordemandForm;
+import bephit.model.HippaPrivacy;
 import bephit.model.Perrychiropractic;
-import bephit.model.Updateletter;;
+import bephit.model.Requestfordemand;
+import bephit.model.Symptom;
 
 
 
  
-public class UpdateletterDAO {
+public class RequestfordemandDAO{
 	private DataSource dataSource;
 	 
 	public void setDataSource(DataSource dataSource) {
@@ -27,7 +29,7 @@ public class UpdateletterDAO {
 	
 		
 	
-	public int setupdateletter(Updateletter updateletterdetails)
+	public int setrequestfordemand(Requestfordemand requestfordemanddetails)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -44,7 +46,7 @@ public class UpdateletterDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 
-	    	 String cmd="INSERT INTO updateletter (toattorney1,toattorney2,toattorney3,reg,injury,todaydate) VALUES ('"+updateletterdetails.getToattorney1()+"','"+updateletterdetails.getToattorney2()+"','"+updateletterdetails.getToattorney3()+"','"+updateletterdetails.getReg()+"','"+updateletterdetails.getInjury()+"','"+updateletterdetails.getTodaydate()+"')";
+	    	 String cmd="INSERT INTO requestfordemand (other1,other2,other3,other4,copymedpay,copyform,copyassign,greencard,defaultattorney,clinicrep) VALUES ('"+requestfordemanddetails.getOther1()+"','"+requestfordemanddetails.getOther2()+"','"+requestfordemanddetails.getOther3()+"','"+requestfordemanddetails.getOther4()+"','"+requestfordemanddetails.getCopymedpay()+"','"+requestfordemanddetails.getCopyform()+"','"+requestfordemanddetails.getCopyassign()+"','"+requestfordemanddetails.getGreencard()+"','"+requestfordemanddetails.getDefaultattorney()+"','"+requestfordemanddetails.getClinicrep()+"')";
 	    	    System.out.println("cmd insert value"+cmd);
 	    	    statement.executeUpdate(cmd);
 	    	    }
@@ -65,8 +67,8 @@ public class UpdateletterDAO {
 	        		return 0;
 	    	}
 	    	
-
-	public int deleteupdateletter(String updateid)
+	
+	public int deleterequestfordemand(String requestid)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -83,7 +85,7 @@ public class UpdateletterDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 
-	    	 String cmd="delete from updateletter where updateid='"+updateid+"'";
+	    	 String cmd="delete from requestfordemand where requestid='"+requestid+"'";
 	    	    System.out.println("cmd insert value"+cmd);
 	    	    statement.executeUpdate(cmd);
 	    	    }
@@ -103,10 +105,9 @@ public class UpdateletterDAO {
 	        	else
 	        		return 0;
 	    	}
+
 	
-	
-	
-	public List<Updateletter> getupdateletter(){
+	public List<Requestfordemand> getrequestfordemand(){
 		Connection con = null;
 		Statement statement = null;
 		ResultSet resultSet = null;
@@ -116,18 +117,22 @@ public class UpdateletterDAO {
 		} catch (SQLException e1) {
 			e1.printStackTrace();
 		}
-		List<Updateletter> updateletter = new ArrayList<Updateletter>();
+		List<Requestfordemand> requestfordemand = new ArrayList<Requestfordemand>();
 	    try{
-			resultSet = statement.executeQuery("select * from updateletter");
+			resultSet = statement.executeQuery("select * from requestfordemand");
 			while(resultSet.next()){
-				updateletter.add(new Updateletter
-						(resultSet.getString("updateid"),
-								resultSet.getString("toattorney1"),
-						resultSet.getString("toattorney2"),
-						resultSet.getString("toattorney3"),
-						resultSet.getString("reg"),
-			    		resultSet.getString("injury"),
-			    		resultSet.getString("todaydate")
+				requestfordemand.add(new Requestfordemand
+						(resultSet.getString("requestid"),
+								resultSet.getString("other1"),
+								resultSet.getString("other2"),
+								resultSet.getString("other3"),
+								resultSet.getString("other4"),
+						resultSet.getString("copymedpay"),
+						resultSet.getString("copyform"),
+						resultSet.getString("copyassign"),
+			    		resultSet.getString("greencard"),
+			    		resultSet.getString("defaultattorney"),
+						resultSet.getString("clinicrep")
 			    		 ));
 			    	
 			}
@@ -140,13 +145,12 @@ public class UpdateletterDAO {
 	    	releaseStatement(statement);
 	    	releaseConnection(con);	    	
 	    }
-	    return updateletter;
+	    return requestfordemand;
 		
 	}
 
 	
-	
-	public List<Updateletter> getupdateletter(String updateid){
+	public List<Requestfordemand> getrequestfordemand(String requestid){
 		Connection con = null;
 		Statement statement = null;
 		ResultSet resultSet = null;
@@ -156,20 +160,24 @@ public class UpdateletterDAO {
 		} catch (SQLException e1) {
 			e1.printStackTrace();
 		}
-		List<Updateletter> updateletter = new ArrayList<Updateletter>();
+		List<Requestfordemand> requestfordemand = new ArrayList<Requestfordemand>();
 	    try{
-			resultSet = statement.executeQuery("select * from updateletter where updateid='"+updateid+"'");
+			resultSet = statement.executeQuery("select * from requestfordemand where requestid='"+requestid+"'");
 			while(resultSet.next()){
-				updateletter.add(new Updateletter
-						(resultSet.getString("updateid"),
-								resultSet.getString("toattorney1"),
-								resultSet.getString("toattorney2"),
-								resultSet.getString("toattorney3"),
-								resultSet.getString("reg"),
-					    		resultSet.getString("injury"),
-					    		resultSet.getString("todaydate")
+				requestfordemand.add(new Requestfordemand
+						(resultSet.getString("requestid"),
+								resultSet.getString("other1"),
+								resultSet.getString("other2"),
+								resultSet.getString("other3"),
+								resultSet.getString("other4"),
+						resultSet.getString("copymedpay"),
+						resultSet.getString("copyform"),
+						resultSet.getString("copyassign"),
+			    		resultSet.getString("greencard"),
+			    		resultSet.getString("defaultattorney"),
+						resultSet.getString("clinicrep")
 			    		 ));
-				System.out.println("Name::::::::::::::::::"+updateletter.get(0).getToattorney1());
+				System.out.println("Name::::::::::::::::::"+requestfordemand.get(0).getOther1());
 			    	
 			}
 	    }catch(Exception e){
@@ -182,10 +190,12 @@ public class UpdateletterDAO {
 	    	releaseStatement(statement);
 	    	releaseConnection(con);	    	
 	    }
-	    return updateletter;
+	    return requestfordemand;
 		
 	}
-	public int updateupdateletter(Updateletter updateletter,String updateid)
+	
+	
+	public int updaterequestfordemand(Requestfordemand requestfordemand,String requestid)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -200,14 +210,14 @@ public class UpdateletterDAO {
 			e1.printStackTrace();
 		}
 	    try{
-	    	 String cmd="update updateletter set toattorney1='"+updateletter.getToattorney1()
+	    	 String cmd="update requestfordemand set other1='"+requestfordemand.getOther1()
 	    			
-	    +"',toattorney2='"+updateletter.getToattorney2()
-	    +"',toattorney3='"+updateletter.getToattorney3()
-	    +"',reg='"+ updateletter.getReg()
-	    +"',injury='"+ updateletter.getInjury()
-	    +"',todaydate='"+updateletter.getTodaydate()
-	    +"' where updateid='"+updateid+"'";
+	    +"',other2='"+requestfordemand.getOther2()
+	    +"',other3='"+requestfordemand.getOther3()
+	    +"',other4='"+ requestfordemand.getOther4()
+	    +"',copymedpay='"+ requestfordemand.getCopymedpay()
+	    +"',copyform='"+requestfordemand.getCopyform()
+	    +"',copyassign='"+requestfordemand.getCopyassign()+"',greencard='"+requestfordemand.getGreencard()+"',defaultattorney='"+requestfordemand.getDefaultattorney()+"',clinicrep='"+requestfordemand.getClinicrep()+"' where requestid='"+requestid+"'";
 	   
 	        
 	    
@@ -241,6 +251,9 @@ public class UpdateletterDAO {
 	
 	
 	
+	
+	
+	
 	public void releaseConnection(Connection con){
 		try{if(con != null)
 			con.close();
@@ -259,9 +272,5 @@ public class UpdateletterDAO {
 
 
 
-	
-	
+
 	}
-	
-	
-	

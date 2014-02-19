@@ -6,13 +6,18 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 public class Copyofrequest{
 	private String copyofrequestno;
+	@NotEmpty
 	private String patient;
+	@NotEmpty
 	private String address;
 	private String regarding;
 	private String dateofaccident;
+	@NotEmpty
 	private String claimnumber;
 	private String todaydate;
+	@NotEmpty
 	private String dear;
+	@NotEmpty
 	private String sign;
 	
 	public Copyofrequest()

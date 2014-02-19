@@ -201,7 +201,83 @@ public class CopyofrequestDAO {
 		   		else
 		   			return 0;
 		}
+	public List<Copyofrequest> getlimitedcopyofrequest(int page) {
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		
+		
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<Copyofrequest> copyofrequest = new ArrayList<Copyofrequest>();
+		try {
 
+			String cmd;
+			int offset = 5 * (page - 1);
+			int limit = 5;
+			
+				
+					cmd = "select * from tbl_copyofrequest order by patient asc limit " + offset + ","+ limit+"" ;
+	
+			resultSet = statement.executeQuery(cmd);
+			while(resultSet.next()){
+				copyofrequest.add( new Copyofrequest(resultSet.getString("copyofrequestno"),resultSet.getString("patient"), resultSet.getString("address"), resultSet.getString("regarding"), resultSet.getString("dateofaccident"), resultSet.getString("claimnumber"), resultSet.getString("todaydate"), resultSet.getString("dear"), resultSet.getString("sign")));
+				}
+				
+			} catch (Exception e) {
+			/*logger.info(e.toString());*/
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		} finally{
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		}
+		return copyofrequest;
+
+	}
+	public int getnoofcopyofrequest() {
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		int noofRecords = 0;
+		
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<Copyofrequest> copyofrequest = new ArrayList<Copyofrequest>();
+		try {
+
+			String cmd;
+			
+					cmd = "select count(*) as noofrecords from tbl_copyofrequest";
+					System.out.println("command"+cmd);			
+			resultSet = statement.executeQuery(cmd);
+			if (resultSet.next())
+				noofRecords = resultSet.getInt("noofrecords");
+
+		} catch (Exception e) {
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		} finally {
+			releaseResultSet(resultSet);
+			releaseStatement(statement);
+			releaseConnection(con);
+		}
+		return noofRecords;
+
+	}
+    
+	
 	public void releaseConnection(Connection con){
     	try{if(con != null)
     		con.close();

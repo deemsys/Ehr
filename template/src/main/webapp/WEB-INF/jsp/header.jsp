@@ -448,7 +448,11 @@ color:#fff;
 									<span>Duties Under Duress Summary </span>
 								</a>
 							</li>
-
+                           <li>
+								<a href="#" class="<c:choose><c:when test="${menu=='shoulder'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu31">
+									<span>Shoulder Pain Score </span>
+								</a>
+							</li>
 							
 </c:when>
 <c:when test="${visit=='1'}">
@@ -527,7 +531,11 @@ color:#fff;
 									<span>Duties Under Duress Summary </span>
 								</a>
 							</li>
-
+<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='shoulder'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu31">
+									<span>Shoulder Pain Score </span>
+								</a>
+							</li>
 							
 </c:when>
 
@@ -605,7 +613,11 @@ color:#fff;
 									<span>Duties Under Duress Summary </span>
 								</a>
 							</li>
-
+<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='shoulder'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu31">
+									<span>Shoulder Pain Score </span>
+								</a>
+							</li>
 	</ul>						
 </c:when>
 
@@ -683,6 +695,11 @@ color:#fff;
 									<span>Duties Under Duress Summary </span>
 								</a>
 							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='shoulder'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu31">
+									<span>Shoulder Pain Score </span>
+								</a>
+							</li>
 </ul>
 							
 </c:when>
@@ -742,6 +759,11 @@ color:#fff;
 							<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='duties'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu29">
 									<span>Duties Under Duress Summary </span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='shoulder'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu31">
+									<span>Shoulder Pain Score </span>
 								</a>
 							</li>
 
@@ -806,6 +828,11 @@ color:#fff;
 									<span>Duties Under Duress Summary </span>
 								</a>
 							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='shoulder'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu31">
+									<span>Shoulder Pain Score </span>
+								</a>
+							</li>
 
 	</ul>						
 </c:when>
@@ -865,7 +892,11 @@ color:#fff;
 									<span>Duties Under Duress Summary </span>
 								</a>
 							</li>
-
+                           <li>
+								<a href="#" class="<c:choose><c:when test="${menu=='shoulder'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu31">
+									<span>Shoulder Pain Score </span>
+								</a>
+							</li>
 		</ul>					
 </c:when>
 
@@ -912,6 +943,11 @@ color:#fff;
 									<span>Duties Under Duress Summary </span>
 								</a>
 							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='shoulder'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu31">
+									<span>Shoulder Pain Score </span>
+								</a>
+							</li>
 							</c:otherwise>
 							</c:choose>
 					
@@ -921,6 +957,16 @@ color:#fff;
 							<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='admin'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu7">
 									<span>Admin Forms</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='perry'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu30">
+									<span>Perry Chiropractic</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='narrative'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu32">
+									<span>Narrative Report</span>
 								</a>
 							</li>
 							</c:if>  
@@ -1194,6 +1240,22 @@ color:#fff;
 				         <ul id="ddsubmenu29" class="ddsubmenustyle">
 							      <li><a href="dutiesunderduress" >Duties Under Duress Summary</a></li>
 							      <li><a href="viewduties">View Duties Under Duress Summary</a></li>
+							     </ul>
+						<ul id="ddsubmenu30" class="ddsubmenustyle">
+							      <li><a href="perrychiropractic" >Form Cover Letter</a></li>
+							      <li><a href="viewperrychiropractic">View Form Cover Letter</a></li>
+							     <li><a href="updateletter" >Update Letter</a></li>
+							      <li><a href="viewupdateletter">View Update Letter</a></li>
+							     <li><a href="copyofrequest" >Requesting Fee Reduction</a></li>
+							     <li><a href="viewcopyofrequest" >View Requesting Fee Reduction</a></li>
+							     </ul>
+							     <ul id="ddsubmenu31" class="ddsubmenustyle">
+							      <li><a href="shoulderpainscore">Shoulder Pain Score</a></li>
+							      <li><a href="viewshoulderpainscore">View Shoulder Pain Score</a></li>
+							     </ul>
+							     <ul id="ddsubmenu32" class="ddsubmenustyle">
+							      <li><a href="narrativereport">Narrativereport</a></li>
+							      <li><a href="viewnarrativereport">View Narrativereport</a></li>
 							     </ul>
 							     </li>
 				         </ul>

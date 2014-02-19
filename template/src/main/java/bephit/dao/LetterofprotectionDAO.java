@@ -11,14 +11,19 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.sql.DataSource;
+import bephit.forms.LetterofprotectionForm;
+import bephit.model.HippaPrivacy;
+import bephit.model.Letterofprotection;
+import bephit.model.Letterofprotection;
+import bephit.model.Symptom;
 
-import bephit.model.Perrychiropractic;
-import bephit.model.Updateletter;;
+
+
 
 
 
  
-public class UpdateletterDAO {
+public class LetterofprotectionDAO {
 	private DataSource dataSource;
 	 
 	public void setDataSource(DataSource dataSource) {
@@ -27,7 +32,7 @@ public class UpdateletterDAO {
 	
 		
 	
-	public int setupdateletter(Updateletter updateletterdetails)
+	public int setletterofprotection(Letterofprotection letterofprotectiondetails)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -44,7 +49,7 @@ public class UpdateletterDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 
-	    	 String cmd="INSERT INTO updateletter (toattorney1,toattorney2,toattorney3,reg,injury,todaydate) VALUES ('"+updateletterdetails.getToattorney1()+"','"+updateletterdetails.getToattorney2()+"','"+updateletterdetails.getToattorney3()+"','"+updateletterdetails.getReg()+"','"+updateletterdetails.getInjury()+"','"+updateletterdetails.getTodaydate()+"')";
+	    	 String cmd="INSERT INTO letterofprotection (date,dc,clinicname,address1,address2,myclient,dateofaccident,dearsir,esq) VALUES ('"+letterofprotectiondetails.getDate()+"','"+letterofprotectiondetails.getDc()+"','"+letterofprotectiondetails.getClinicname()+"','"+letterofprotectiondetails.getAddress1()+"','"+letterofprotectiondetails.getAddress2()+"','"+letterofprotectiondetails.getMyclient()+"','"+letterofprotectiondetails.getDateofaccident()+"','"+letterofprotectiondetails.getDearsir()+"','"+letterofprotectiondetails.getEsq()+"')";
 	    	    System.out.println("cmd insert value"+cmd);
 	    	    statement.executeUpdate(cmd);
 	    	    }
@@ -64,9 +69,9 @@ public class UpdateletterDAO {
 	        	else
 	        		return 0;
 	    	}
-	    	
 
-	public int deleteupdateletter(String updateid)
+	
+	public int deleteletterofprotection(String letterid)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -83,7 +88,7 @@ public class UpdateletterDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 
-	    	 String cmd="delete from updateletter where updateid='"+updateid+"'";
+	    	 String cmd="delete from letterofprotection where letterid='"+letterid+"'";
 	    	    System.out.println("cmd insert value"+cmd);
 	    	    statement.executeUpdate(cmd);
 	    	    }
@@ -106,7 +111,8 @@ public class UpdateletterDAO {
 	
 	
 	
-	public List<Updateletter> getupdateletter(){
+	
+	public List<Letterofprotection> getletterofprotection(){
 		Connection con = null;
 		Statement statement = null;
 		ResultSet resultSet = null;
@@ -116,18 +122,21 @@ public class UpdateletterDAO {
 		} catch (SQLException e1) {
 			e1.printStackTrace();
 		}
-		List<Updateletter> updateletter = new ArrayList<Updateletter>();
+		List<Letterofprotection> letterofprotection = new ArrayList<Letterofprotection>();
 	    try{
-			resultSet = statement.executeQuery("select * from updateletter");
+			resultSet = statement.executeQuery("select * from letterofprotection");
 			while(resultSet.next()){
-				updateletter.add(new Updateletter
-						(resultSet.getString("updateid"),
-								resultSet.getString("toattorney1"),
-						resultSet.getString("toattorney2"),
-						resultSet.getString("toattorney3"),
-						resultSet.getString("reg"),
-			    		resultSet.getString("injury"),
-			    		resultSet.getString("todaydate")
+				letterofprotection.add(new Letterofprotection
+						(resultSet.getString("letterid"),
+								resultSet.getString("date"),
+						resultSet.getString("dc"),
+						resultSet.getString("clinicname"),
+						resultSet.getString("address1"),
+			    		resultSet.getString("address2"),
+			    		resultSet.getString("myclient"),
+						resultSet.getString("dateofaccident"),
+						resultSet.getString("dearsir"),
+						resultSet.getString("esq")
 			    		 ));
 			    	
 			}
@@ -140,13 +149,12 @@ public class UpdateletterDAO {
 	    	releaseStatement(statement);
 	    	releaseConnection(con);	    	
 	    }
-	    return updateletter;
+	    return letterofprotection;
 		
 	}
 
-	
-	
-	public List<Updateletter> getupdateletter(String updateid){
+
+	public List<Letterofprotection> getletterofprotection(String letterid){
 		Connection con = null;
 		Statement statement = null;
 		ResultSet resultSet = null;
@@ -156,20 +164,23 @@ public class UpdateletterDAO {
 		} catch (SQLException e1) {
 			e1.printStackTrace();
 		}
-		List<Updateletter> updateletter = new ArrayList<Updateletter>();
+		List<Letterofprotection> letterofprotection = new ArrayList<Letterofprotection>();
 	    try{
-			resultSet = statement.executeQuery("select * from updateletter where updateid='"+updateid+"'");
+			resultSet = statement.executeQuery("select * from letterofprotection where letterid='"+letterid+"'");
 			while(resultSet.next()){
-				updateletter.add(new Updateletter
-						(resultSet.getString("updateid"),
-								resultSet.getString("toattorney1"),
-								resultSet.getString("toattorney2"),
-								resultSet.getString("toattorney3"),
-								resultSet.getString("reg"),
-					    		resultSet.getString("injury"),
-					    		resultSet.getString("todaydate")
+				letterofprotection.add(new Letterofprotection
+						(resultSet.getString("letterid"),
+								resultSet.getString("date"),
+						resultSet.getString("dc"),
+						resultSet.getString("clinicname"),
+						resultSet.getString("address1"),
+			    		resultSet.getString("address2"),
+			    		resultSet.getString("myclient"),
+						resultSet.getString("dateofaccident"),
+						resultSet.getString("dearsir"),
+						resultSet.getString("esq")
 			    		 ));
-				System.out.println("Name::::::::::::::::::"+updateletter.get(0).getToattorney1());
+				System.out.println("Name::::::::::::::::::"+letterofprotection.get(0).getClinicname());
 			    	
 			}
 	    }catch(Exception e){
@@ -182,10 +193,12 @@ public class UpdateletterDAO {
 	    	releaseStatement(statement);
 	    	releaseConnection(con);	    	
 	    }
-	    return updateletter;
+	    return letterofprotection;
 		
 	}
-	public int updateupdateletter(Updateletter updateletter,String updateid)
+	
+	
+	public int updateletterofprotection(Letterofprotection letterofprotection,String letterid)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -200,14 +213,15 @@ public class UpdateletterDAO {
 			e1.printStackTrace();
 		}
 	    try{
-	    	 String cmd="update updateletter set toattorney1='"+updateletter.getToattorney1()
+	    	 String cmd="update letterofprotection set date='"+letterofprotection.getDate()
 	    			
-	    +"',toattorney2='"+updateletter.getToattorney2()
-	    +"',toattorney3='"+updateletter.getToattorney3()
-	    +"',reg='"+ updateletter.getReg()
-	    +"',injury='"+ updateletter.getInjury()
-	    +"',todaydate='"+updateletter.getTodaydate()
-	    +"' where updateid='"+updateid+"'";
+	    +"',dc='"+letterofprotection.getDc()
+	    +"',clinicname='"+letterofprotection.getClinicname()
+	    +"',address1='"+ letterofprotection.getAddress1()
+	    +"',address2='"+ letterofprotection.getAddress2()
+	    +"',myclient='"+letterofprotection.getMyclient()
+	    +"',dateofaccident='"+letterofprotection.getDateofaccident()+"',dearsir='"+letterofprotection.getDearsir()
+	    +"',esq='"+letterofprotection.getEsq()+"' where letterid='"+letterid+"'";
 	   
 	        
 	    
@@ -241,6 +255,9 @@ public class UpdateletterDAO {
 	
 	
 	
+	
+	
+	
 	public void releaseConnection(Connection con){
 		try{if(con != null)
 			con.close();
@@ -257,11 +274,4 @@ public class UpdateletterDAO {
 	}catch(Exception e){}
 	}
 
-
-
-	
-	
-	}
-	
-	
-	
+}
