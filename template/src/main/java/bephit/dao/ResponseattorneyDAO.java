@@ -12,11 +12,12 @@ import java.util.List;
 import javax.sql.DataSource;
 
 import bephit.model.Letterofprotection;
+import bephit.model.Responseattorney;
  
 
 
 
-public class LetterofprotectionDAO {
+public class ResponseattorneyDAO {
 	private DataSource dataSource;
 	 
 	public void setDataSource(DataSource dataSource) {
@@ -26,7 +27,7 @@ public class LetterofprotectionDAO {
 	
 	
 	
-	public int setletterofprotection(Letterofprotection letterofprotectiondetails)
+	public int setresponseattorney(Responseattorney responseattorneydetails)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -43,7 +44,7 @@ public class LetterofprotectionDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 
-	    	 String cmd="INSERT INTO `tbl_letterofprotection` (`date`,`myclient`,`dateofaccident`,`dear`,`truly`) VALUES ('"+letterofprotectiondetails.getDate()+"','"+letterofprotectiondetails.getMyclient()+"','"+letterofprotectiondetails.getDateofaccident()+"','"+letterofprotectiondetails.getDear()+"','"+letterofprotectiondetails.getTruly()+"')";
+	    	 String cmd="INSERT INTO `tbl_responseattorney` (`name`,`address`,`address1`,`address2`,`regarding`,`patientname`,`dateofaccident`,`nameofclinic`,`treatingphysician`) VALUES ('"+responseattorneydetails.getName()+"','"+responseattorneydetails.getAddress()+"','"+responseattorneydetails.getAddress1()+"','"+responseattorneydetails.getAddress2()+"','"+responseattorneydetails.getRegarding()+"','"+responseattorneydetails.getPatientname()+"','"+responseattorneydetails.getDateofaccident()+"','"+responseattorneydetails.getNameofclinic()+"','"+responseattorneydetails.getTreatingphysician()+"')";
 	    	 System.out.println(cmd);
 	    	 statement.execute(cmd);
 			flag=1;
@@ -65,7 +66,7 @@ public class LetterofprotectionDAO {
     		return 0;
 	    
 	}
-	public List<Letterofprotection> getletterofprotection(){
+	public List<Responseattorney> getresponseattorney(){
 		Connection con = null;
 		Statement statement = null;
 		ResultSet resultSet = null;
@@ -75,58 +76,21 @@ public class LetterofprotectionDAO {
 		} catch (SQLException e1) {
 			e1.printStackTrace();
 		}
-		List<Letterofprotection> letterofprotection = new ArrayList<Letterofprotection>();
+		List<Responseattorney> responseattorney = new ArrayList<Responseattorney>();
 	    try{
-			resultSet = statement.executeQuery("select * from tbl_letterofprotection");
+			resultSet = statement.executeQuery("select * from tbl_responseattorney");
 			while(resultSet.next()){
-				letterofprotection.add(new Letterofprotection
-						(resultSet.getString("letterid"),
-								resultSet.getString("date"),
-						resultSet.getString("myclient"),
-						resultSet.getString("dateofaccident"),
-						resultSet.getString("dear"),
-			    		resultSet.getString("truly")
-			    		
-						
-			    		 ));
-				System.out.println("letter"+letterofprotection.get(0).getDate());
-			    	
-			}
-	    }catch(Exception e){
-	    	System.out.println(e.toString());
-	    	releaseResultSet(resultSet);
-	    	releaseStatement(statement);
-	    	releaseConnection(con);
-	    }finally{
-	    	releaseResultSet(resultSet);
-	    	releaseStatement(statement);
-	    	releaseConnection(con);	    	
-	    }
-	    return letterofprotection;
-		
-	}
-	public List<Letterofprotection> getletterofprotection(String letterid){
-		Connection con = null;
-		Statement statement = null;
-		ResultSet resultSet = null;
-		try {
-			con = dataSource.getConnection();
-			statement = con.createStatement();
-		} catch (SQLException e1) {
-			e1.printStackTrace();
-		}
-		List<Letterofprotection> letterofprotection = new ArrayList<Letterofprotection>();
-	    try{
-			resultSet = statement.executeQuery("select * from tbl_letterofprotection where letterid='"+letterid+"'");
-			while(resultSet.next()){
-				letterofprotection.add(new Letterofprotection
-						(resultSet.getString("letterid"),
-								resultSet.getString("date"),
-						resultSet.getString("myclient"),
-						resultSet.getString("dateofaccident"),
-						resultSet.getString("dear"),
-			    		resultSet.getString("truly")
-			    		
+				responseattorney.add(new Responseattorney
+						(resultSet.getString("responseid"),
+								resultSet.getString("name"),
+						resultSet.getString("address"),
+						resultSet.getString("address1"),
+						resultSet.getString("address2"),
+			    		resultSet.getString("regarding"),
+			    		resultSet.getString("patientname"),
+			    		resultSet.getString("dateofaccident"),
+			    		resultSet.getString("nameofclinic"),
+			    		resultSet.getString("treatingphysician")
 			    		 ));
 				
 			    	
@@ -141,11 +105,52 @@ public class LetterofprotectionDAO {
 	    	releaseStatement(statement);
 	    	releaseConnection(con);	    	
 	    }
-	    return letterofprotection;
+	    return responseattorney;
 		
 	}
-	public int updateletterofprotection(Letterofprotection letterofprotectiondetails,String letterid)
-	{
+	public List<Responseattorney> getresponseattorney(String responseid){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<Responseattorney> responseattorney = new ArrayList<Responseattorney>();
+	    try{
+			resultSet = statement.executeQuery("select * from tbl_responseattorney where responseid='"+responseid+"'");
+			while(resultSet.next()){
+				responseattorney.add(new Responseattorney
+						(resultSet.getString("responseid"),
+								resultSet.getString("name"),
+						resultSet.getString("address"),
+						resultSet.getString("address1"),
+						resultSet.getString("address2"),
+			    		resultSet.getString("regarding"),
+			    		resultSet.getString("patientname"),
+			    		resultSet.getString("dateofaccident"),
+			    		resultSet.getString("nameofclinic"),
+			    		resultSet.getString("treatingphysician")
+			    		 ));
+				
+			    	
+			}
+	    }catch(Exception e){
+	    	System.out.println(e.toString());
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    }finally{
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);	    	
+	    }
+	    return responseattorney;
+		
+	}
+	public int updateresponseattorney(Responseattorney responseattorneydetail,String responseid)	{
 		Connection con = null;
 		Statement statement = null;
 		ResultSet resultSet = null;
@@ -159,12 +164,16 @@ public class LetterofprotectionDAO {
 			e1.printStackTrace();
 		}
 	    try{
-	    	 String cmd="update tbl_letterofprotection set date='"+letterofprotectiondetails.getDate()
+	    	 String cmd="update tbl_responseattorney set name='"+responseattorneydetail.getName()
 	    			
-	    +"',myclient='"+letterofprotectiondetails.getMyclient()
-	    +"',dateofaccident='"+letterofprotectiondetails.getDateofaccident()
-	    +"',dear='"+ letterofprotectiondetails.getDear()
-	    +"',truly='"+ letterofprotectiondetails.getTruly()+"' where letterid='"+letterid+"'";
+	    +"',address='"+responseattorneydetail.getAddress()
+	    +"',address1='"+responseattorneydetail.getAddress1()
+	    +"',address2='"+responseattorneydetail.getAddress2()
+	    +"',regarding='"+responseattorneydetail.getRegarding()
+	    +"',patientname='"+responseattorneydetail.getPatientname()	
+	    +"',dateofaccident='"+responseattorneydetail.getDateofaccident()
+	    +"',nameofclinic='"+ responseattorneydetail.getNameofclinic()
+	    +"',treatingphysician='"+ responseattorneydetail.getTreatingphysician()+"' where responseid='"+responseid+"'";
 	   System.out.println("cmd insert value"+cmd);
 	    statement.executeUpdate(cmd);
 	    }
@@ -184,7 +193,7 @@ public class LetterofprotectionDAO {
     	else
     		return 0;
 	}
-	public int deleteletterofprotection(String letterid)
+	public int deleteresponseattorney(String responseid)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -201,7 +210,7 @@ public class LetterofprotectionDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 
-	    	 String cmd="delete from tbl_letterofprotection where letterid='"+letterid+"'";
+	    	 String cmd="delete from tbl_responseattorney where responseid='"+responseid+"'";
 	    	    System.out.println("cmd insert value"+cmd);
 	    	    statement.executeUpdate(cmd);
 	    	    }
@@ -221,7 +230,7 @@ public class LetterofprotectionDAO {
 	        	else
 	        		return 0;
 	    	}
-	public void releaseConnection(Connection con){
+		public void releaseConnection(Connection con){
 		try{if(con != null)
 			con.close();
 		}catch(Exception e){}

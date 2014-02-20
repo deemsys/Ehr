@@ -1,6 +1,4 @@
 package bephit.dao;
-
-
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -11,15 +9,16 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.sql.DataSource;
-import bephit.forms.PerrychiropracticForm;
-import bephit.model.HippaPrivacy;
+import bephit.forms.ReturntoschoolForm;
 import bephit.model.Perrychiropractic;
-import bephit.model.Symptom;
+//import bephit.model.HippaPrivacy;
+import bephit.model.Returntoschool;
+//import bephit.model.Symptom;
 
 
 
  
-public class PerrychiropracticDAO {
+public class ReturntoschoolDAO {
 	private DataSource dataSource;
 	 
 	public void setDataSource(DataSource dataSource) {
@@ -28,7 +27,7 @@ public class PerrychiropracticDAO {
 	
 		
 	
-	public int setperrychiropractic(Perrychiropractic perrychiropracticdetails)
+	public int setreturntoschool(Returntoschool returntoschooldetails)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -45,45 +44,7 @@ public class PerrychiropracticDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 
-	    	 String cmd="INSERT INTO perrychiropractic (insurance,address,address1,reg,nameofperson,dateofaccident,subject,sign) VALUES ('"+perrychiropracticdetails.getInsurance()+"','"+perrychiropracticdetails.getAddress()+"','"+perrychiropracticdetails.getAddress1()+"','"+perrychiropracticdetails.getReg()+"','"+perrychiropracticdetails.getNameofperson()+"','"+perrychiropracticdetails.getDateofaccident()+"','"+perrychiropracticdetails.getSubject()+"','"+perrychiropracticdetails.getSign()+"')";
-	    	    System.out.println("cmd insert value"+cmd);
-	    	    statement.executeUpdate(cmd);
-	    	    }
-	    	    catch(Exception e){
-	    	    	System.out.println(e.toString());
-	    	    	releaseStatement(statement);
-	    	    	releaseConnection(con);
-	    	    	flag=0;
-	    	    	//return 0;
-	    	    }finally{
-	    	     	releaseStatement(statement);
-	    	    	releaseConnection(con);	    
-	    	    	
-	    	    }
-	    	    if(flag==1)
-	        		return 1;
-	        	else
-	        		return 0;
-	    	}
-	    	
-	public int deleteperrychiropractic(String perryid)
-	{
-		Connection con = null;
-		Statement statement = null;
-		ResultSet resultSet = null;
-		int flag=0;
-		try {
-			con = dataSource.getConnection();
-			statement = con.createStatement();
-		} catch (SQLException e1) {
-			e1.printStackTrace();
-		}
-		
-	    try{
-	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-	    	 Date date = new Date();
-	    	 
-	    	 String cmd="delete from perrychiropractic where perryid='"+perryid+"'";
+	    	 String cmd="INSERT INTO returntoschool1 (date,name,from,to,capability,force,distance,sittime,standtime,repetitive,cause, recreate,fromdate,todate,returnto,ondate,diagnosis) VALUES ('"+returntoschooldetails.getDate()+"','"+returntoschooldetails.getName()+"','"+returntoschooldetails.getFrom()+"','"+returntoschooldetails.getTo()+"','"+returntoschooldetails.getCapability()+"','"+returntoschooldetails.getForce()+"','"+returntoschooldetails.getDistance()+"','"+returntoschooldetails.getSittime()+"','"+returntoschooldetails.getStandtime()+"','"+returntoschooldetails.getRepetitive()+"','"+returntoschooldetails.getCause()+"','"+returntoschooldetails.getRecreate()+"','"+returntoschooldetails.getFromdate()+"','"+returntoschooldetails.getTodate()+"','"+returntoschooldetails.getReturnto()+"','"+returntoschooldetails.getOndate()+"','"+returntoschooldetails.getDiagnosis()+"')";
 	    	    System.out.println("cmd insert value"+cmd);
 	    	    statement.executeUpdate(cmd);
 	    	    }
@@ -104,7 +65,53 @@ public class PerrychiropracticDAO {
 	        		return 0;
 	    	}
 	
-	public List<Perrychiropractic> getperrychiropractic(){
+	
+	
+	
+	public int deletereturntoschool(String schoolid)
+	{
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		int flag=0;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		
+	    try{
+	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+	    	 Date date = new Date();
+	    	 
+	    	 String cmd="delete from returntoschool1 where schoolid='"+schoolid+"'";
+	    	    System.out.println("cmd insert value"+cmd);
+	    	    statement.executeUpdate(cmd);
+	    	    }
+	    	    catch(Exception e){
+	    	    	System.out.println(e.toString());
+	    	    	releaseStatement(statement);
+	    	    	releaseConnection(con);
+	    	    	flag=0;
+	    	    	//return 0;
+	    	    }finally{
+	    	     	releaseStatement(statement);
+	    	    	releaseConnection(con);	    
+	    	    	
+	    	    }
+	    	    if(flag==1)
+	        		return 1;
+	        	else
+	        		return 0;
+	    	}
+	
+	
+	
+	
+	
+
+	public List<Returntoschool> getreturntoschool(){
 		Connection con = null;
 		Statement statement = null;
 		ResultSet resultSet = null;
@@ -114,19 +121,29 @@ public class PerrychiropracticDAO {
 		} catch (SQLException e1) {
 			e1.printStackTrace();
 		}
-		List<Perrychiropractic> perrychiropractic = new ArrayList<Perrychiropractic>();
+		List<Returntoschool> returntoschool = new ArrayList<Returntoschool>();
 	    try{
-			resultSet = statement.executeQuery("select * from perrychiropractic");
+			resultSet = statement.executeQuery("select * from returntoschool1");
 			while(resultSet.next()){
-				perrychiropractic.add(new Perrychiropractic
-						(resultSet.getString("perryid"),
-								resultSet.getString("insurance"),
-						resultSet.getString("address"),
-						resultSet.getString("address1"),
-						resultSet.getString("reg"),
-			    		resultSet.getString("nameofperson"),
-			    		resultSet.getString("DateofAccident"),
-						resultSet.getString("subject"),resultSet.getString("sign")
+				returntoschool.add(new Returntoschool
+						(resultSet.getString("schoolid"),
+								resultSet.getString("date"),
+						resultSet.getString("name"),
+						resultSet.getString("from"),
+						resultSet.getString("to"),
+			    		resultSet.getString(" capability"),
+			    		resultSet.getString("force"),
+			    		resultSet.getString("distance"),
+			    		resultSet.getString("sittime"),
+			    		resultSet.getString(" standtime"),
+			    		resultSet.getString("repetitive"),
+			    		resultSet.getString("cause"),
+			    		resultSet.getString(" recreate"),
+			    		resultSet.getString("fromdate"),
+			    		resultSet.getString("todate"),
+						resultSet.getString("returnto"),
+						resultSet.getString("ondate"),
+						resultSet.getString("diagnosis")
 			    		 ));
 			    	
 			}
@@ -139,11 +156,13 @@ public class PerrychiropracticDAO {
 	    	releaseStatement(statement);
 	    	releaseConnection(con);	    	
 	    }
-	    return perrychiropractic;
+	    return returntoschool;
 		
 	}
-
-	public List<Perrychiropractic> getperrychiropractic(String perryid){
+	
+	
+	
+	public List<Returntoschool> getreturntoschool(String schoolid){
 		Connection con = null;
 		Statement statement = null;
 		ResultSet resultSet = null;
@@ -153,21 +172,31 @@ public class PerrychiropracticDAO {
 		} catch (SQLException e1) {
 			e1.printStackTrace();
 		}
-		List<Perrychiropractic> perrychiropractic = new ArrayList<Perrychiropractic>();
+		List<Returntoschool> returntoschool = new ArrayList<Returntoschool>();
 	    try{
-			resultSet = statement.executeQuery("select * from perrychiropractic where perryid='"+perryid+"'");
+			resultSet = statement.executeQuery("select * from returntoschool1 where schoolid='"+schoolid+"'");
 			while(resultSet.next()){
-				perrychiropractic.add(new Perrychiropractic
-						(resultSet.getString("perryid"),
-								resultSet.getString("insurance"),
-						resultSet.getString("address"),
-						resultSet.getString("address1"),
-						resultSet.getString("reg"),
-			    		resultSet.getString("nameofperson"),
-			    		resultSet.getString("DateofAccident"),
-						resultSet.getString("subject"),resultSet.getString("sign")
+				returntoschool.add(new Returntoschool
+						(resultSet.getString("schoolid"),
+								resultSet.getString("date"),
+						resultSet.getString("name"),
+						resultSet.getString("from"),
+						resultSet.getString("to"),
+			    		resultSet.getString(" capability"),
+			    		resultSet.getString("force"),
+			    		resultSet.getString("distance"),
+			    		resultSet.getString("sittime"),
+			    		resultSet.getString(" standtime"),
+			    		resultSet.getString("repetitive"),
+			    		resultSet.getString("cause"),
+			    		resultSet.getString(" recreate"),
+			    		resultSet.getString("fromdate"),
+			    		resultSet.getString("todate"),
+						resultSet.getString("returnto"),
+						resultSet.getString("ondate"),
+						resultSet.getString("diagnosis")
 			    		 ));
-				System.out.println("Name::::::::::::::::::"+perrychiropractic.get(0).getNameofperson());
+				System.out.println("Name::::::::::::::::::"+returntoschool.get(0).getName());
 			    	
 			}
 	    }catch(Exception e){
@@ -180,10 +209,13 @@ public class PerrychiropracticDAO {
 	    	releaseStatement(statement);
 	    	releaseConnection(con);	    	
 	    }
-	    return perrychiropractic;
+	    return returntoschool;
 		
 	}
-	public int updateperrychiropractic(Perrychiropractic perrychiropractic,String perryid)
+	
+	
+	
+	public int updatereturntoschool(Returntoschool returntoschool,String schoolid)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -198,21 +230,29 @@ public class PerrychiropracticDAO {
 			e1.printStackTrace();
 		}
 	    try{
-	    	 String cmd="update perrychiropractic set insurance='"+perrychiropractic.getInsurance()
+	    	 String cmd="update returntoschool1 set date='"+returntoschool.getDate()
 	    			
-	    +"',address='"+perrychiropractic.getAddress()
-	    +"',address1='"+perrychiropractic.getAddress1()
-	    +"',reg='"+ perrychiropractic.getReg()
-	    +"',nameofperson='"+ perrychiropractic.getNameofperson()
-	    +"',DateOfAccident='"+perrychiropractic.getDateofaccident()
-	    +"',subject='"+perrychiropractic.getSubject()+"',sign='"+perrychiropractic.getSign()+"' where perryid='"+perryid+"'";
+	    +"',name='"+returntoschool.getName()
+	    +"',from='"+returntoschool.getFrom()
+	    +"',to='"+ returntoschool.getTo()
+	    +"',capability='"+ returntoschool.getCapability()
+	    +"',force='"+returntoschool.getForce()
+	    +"',distance='"+returntoschool.getDistance()
+	    +"',sittime='"+returntoschool.getSittime()
+	    +"',standtime='"+returntoschool.getStandtime()
+	    +"',repetitive='"+returntoschool.getRepetitive()
+	    +"',cause='"+returntoschool.getCause()
+	    +"',recreate='"+returntoschool.getRecreate()
+	    +"',fromdate='"+returntoschool.getFromdate()
+	    +"',todate='"+returntoschool.getTodate()
+	    +"',returnto='"+returntoschool.getReturnto()
+	    +"',ondate='"+returntoschool.getOndate()
+	    
+	    +"',diagnosis='"+returntoschool.getDiagnosis()+"' where schoolid='"+schoolid+"'";
 	   
-	        
-	    
-	    
-	   
-	    
-		   	 		 
+	            
+	      
+	    	   	 		 
 	    	 		 
 	    	 		 
 	    System.out.println("cmd insert value"+cmd);
@@ -235,6 +275,10 @@ public class PerrychiropracticDAO {
     		return 0;
 	}
 
+		
+			
+	
+	
 	public void releaseConnection(Connection con){
 		try{if(con != null)
 			con.close();
@@ -257,4 +301,4 @@ public class PerrychiropracticDAO {
 	}
 	
 	
-	
+	    	

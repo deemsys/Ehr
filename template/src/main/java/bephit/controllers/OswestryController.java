@@ -202,6 +202,7 @@ public class OswestryController
 	public String copyofrequest(HttpSession session,ModelMap model)
 	{
 		session.removeAttribute("copy");
+		model.addAttribute("menu", "perry");
 		return "copyofrequest";
 	}
 	@RequestMapping (value="/copyofrequest", method = RequestMethod.POST)
@@ -223,7 +224,7 @@ public class OswestryController
 		CopyofrequestForm copyofrequestform=new CopyofrequestForm();
 		copyofrequestform.setCopyofrequest(copydao.viewcopyrequest());
 		model.addAttribute("copyofrequestform", copyofrequestform);
-		
+		model.addAttribute("menu", "perry");
 		return "viewcopyofrequest";
 	}
 	

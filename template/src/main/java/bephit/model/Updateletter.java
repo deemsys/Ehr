@@ -5,11 +5,17 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Updateletter
 {
 	private String updateid;
+	@NotEmpty
 	private String toattorney1;
+	@NotEmpty
 	private String toattorney2;
+	@NotEmpty
 	private String toattorney3;
+	@NotEmpty
 	private String reg;	
+	@NotEmpty
 	private String injury;
+	@NotEmpty
 	private String todaydate;
 	
 	public Updateletter() {

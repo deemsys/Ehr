@@ -5,15 +5,25 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Formbill
 {
 	private String formid;
+	@NotEmpty
 	private String date;
+	@NotEmpty
 	private String insurance;
+	@NotEmpty
 	private String address1;
+	@NotEmpty
 	private String address2;
-	private String name;	
+	@NotEmpty
+	private String name;
+	@NotEmpty
 	private String address3;
+	@NotEmpty
 	private String address4;
+	@NotEmpty
 	private String patientsname;
+	@NotEmpty
 	private String address5;
+	@NotEmpty
 	private String address6;
 	private String medicalfee;
 	private String amount;

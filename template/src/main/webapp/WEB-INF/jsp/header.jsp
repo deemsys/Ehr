@@ -965,6 +965,11 @@ color:#fff;
 								</a>
 							</li>
 							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='xray'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu33">
+									<span>Xray</span>
+								</a>
+							</li>
+							<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='narrative'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu32">
 									<span>Narrative Report</span>
 								</a>
@@ -1256,6 +1261,15 @@ color:#fff;
 							     <ul id="ddsubmenu32" class="ddsubmenustyle">
 							      <li><a href="narrativereport">Narrativereport</a></li>
 							      <li><a href="viewnarrativereport">View Narrativereport</a></li>
+							     </ul>
+							      <ul id="ddsubmenu33" class="ddsubmenustyle">
+							      <li><a href="xray">Xray</a></li>
+							      <li><a href="viewxray">View Xray</a></li>
+							      <li><a href="formbill">Form Bill</a></li>
+							      <li><a href="viewformbill">View Form Bill</a></li>
+							     <li><a href="letterofprotection">Letter of Protection</a></li>
+							      <li><a href="viewletterofprotection">View Xray</a></li>
+							     
 							     </ul>
 							     </li>
 				         </ul>

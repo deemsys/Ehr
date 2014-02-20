@@ -28,6 +28,7 @@ import bephit.forms.FormbillForm;
 import bephit.forms.HippaPrivacyForm;
 import bephit.forms.LetterofprotectionForm;
 /*import bephit.forms.PatientattorneyForm;*/
+import bephit.forms.NarrativereportForm;
 import bephit.forms.PerrychiropracticForm;
 import bephit.forms.PhysicalexamForm;
 import bephit.forms.RequestfordemandForm;
@@ -94,7 +95,7 @@ public class AdminController
 		perrychiropracticform.setPerrychiropracticdetails(perrychiropracticDAO.getperrychiropractic());
 		model.addAttribute("perrychiropracticform",perrychiropracticform);
 		
-		
+		model.addAttribute("menu","perry");
 		return "viewperrychiropractic";
 	}
 	
@@ -123,7 +124,7 @@ public class AdminController
 		UpdateletterForm updateletterform=new UpdateletterForm();
 		updateletterform.setUpdateletterdetails(updateletterDAO.getupdateletter());
 		model.addAttribute("updateletterform",updateletterform);
-		
+		model.addAttribute("menu","perry");
 		
 		return "viewupdateletter";
 	}
@@ -135,7 +136,7 @@ public class AdminController
 		RequestfordemandForm requestfordemandform=new RequestfordemandForm();
 		requestfordemandform.setRequestfordemanddetails(requestfordemandDAO.getrequestfordemand());
 		model.addAttribute("requestfordemandform",requestfordemandform);
-		
+		model.addAttribute("menu","perry");
 		
 		return "viewrequestfordemand";
 	}
@@ -148,7 +149,7 @@ public class AdminController
 		LetterofprotectionForm letterofprotectionform=new LetterofprotectionForm();
 		letterofprotectionform.setLetterofprotectiondetails(letterofprotectionDAO.getletterofprotection());
 		model.addAttribute("letterofprotectionform",letterofprotectionform);
-		
+		model.addAttribute("menu","xray");
 		
 		return "viewletterofprotection";
 	}
@@ -159,7 +160,7 @@ public class AdminController
 		XrayForm xrayform=new XrayForm();
 		xrayform.setxraydetails(xrayDAO.getxray());
 		model.addAttribute("xrayform",xrayform);
-		
+		model.addAttribute("menu","xray");
 		
 		return "viewxray";
 	}
@@ -175,7 +176,7 @@ public class AdminController
 		formbillForm.setFormbilldetails(formbillDAO.getformbill());
 		model.addAttribute("formbillform",formbillForm);
 		
-		
+		model.addAttribute("menu","xray");
 		return "viewformbill";
 	}
 	
@@ -189,7 +190,7 @@ public class AdminController
 		perrychiropracticform.setPerrychiropracticdetails(perrychiropracticDAO.getperrychiropractic(perryid));
 		model.addAttribute("perrychiropracticform",perrychiropracticform);
 		
-		
+		model.addAttribute("menu","perry");
 		return "editperrychiropractic";
 		
 			
@@ -200,7 +201,7 @@ public class AdminController
 		UpdateletterForm updateletterform=new UpdateletterForm();
 		updateletterform.setUpdateletterdetails(updateletterDAO.getupdateletter(updateid));
 		model.addAttribute("updateletterform",updateletterform);
-		
+		model.addAttribute("menu","perry");
 		
 		return "editupdateletter";
 		
@@ -227,7 +228,7 @@ public class AdminController
 		LetterofprotectionForm letterofprotectionform=new LetterofprotectionForm();
 		letterofprotectionform.setLetterofprotectiondetails(letterofprotectionDAO.getletterofprotection(letterid));
 		model.addAttribute("letterofprotectionform",letterofprotectionform);
-		
+		model.addAttribute("menu","xray");
 		
 		return "editletterofprotection";
 		
@@ -240,7 +241,7 @@ public class AdminController
 		XrayForm xrayForm=new XrayForm();
 		xrayForm.setxraydetails(xrayDAO.getxray(xrayid));
 		model.addAttribute("xrayform",xrayForm);
-		
+		model.addAttribute("menu","xray");
 		
 		return "editxray";
 		
@@ -257,7 +258,7 @@ public class AdminController
 		formbillForm.setFormbilldetails(formbillDAO.getformbill(formid));
 		model.addAttribute("formbillform",formbillForm);
 		
-		
+		model.addAttribute("menu","xray");
 		return "editformbill";
 		
 			
@@ -276,7 +277,7 @@ public class AdminController
 		perrychiropracticform.setPerrychiropracticdetails(perrychiropracticDAO.getperrychiropractic());
 		model.addAttribute("perrychiropracticform",perrychiropracticform);
 		
-		
+		model.addAttribute("menu","xray");
 		return "viewperrychiropractic";
 	}
 	
@@ -289,7 +290,7 @@ public class AdminController
 		updateletterform.setUpdateletterdetails(updateletterDAO.getupdateletter());
 		model.addAttribute("updateletterform",updateletterform);
 		
-		
+		model.addAttribute("menu","xray");
 		return "viewupdateletter";
 	}
 	
@@ -318,7 +319,7 @@ public class AdminController
 		letterofprotectionform.setLetterofprotectiondetails(letterofprotectionDAO.getletterofprotection());
 		model.addAttribute("letterofprotectionform",letterofprotectionform);
 		
-		
+		model.addAttribute("menu","xray");
 		return "viewletterofprotection";
 	}
 	
@@ -330,9 +331,9 @@ public class AdminController
 		XrayForm xrayForm=new XrayForm();
 		xrayForm.setxraydetails(xrayDAO.getxray());
 		model.addAttribute("xrayForm",xrayForm);
+		model.addAttribute("menu","xray");
 		
-		
-		return "viewperrychiropractic";
+		return "viewxray";
 	}
 	
 	
@@ -350,7 +351,7 @@ public class AdminController
 		FormbillForm formbillForm=new FormbillForm();
 		formbillForm.setFormbilldetails(formbillDAO.getformbill(formid));
 		model.addAttribute("formbillform",formbillForm);
-		
+		model.addAttribute("menu","xray");
 		
 		return "viewformbill";
 	}
@@ -373,13 +374,13 @@ public class AdminController
 	
 	@RequestMapping(value="/perrychiropractic", method = RequestMethod.GET)
 	public String perrychiropractic(HttpSession session,ModelMap model) {		
-		
+		model.addAttribute("menu","perry");
 		return "perrychiropractic";
 	}
  
 	@RequestMapping(value="/letterofprotection", method = RequestMethod.GET)
 	public String letterofprotection(HttpSession session,ModelMap model) {		
-		
+		model.addAttribute("menu","xray");
 		return "letterofprotection";
 	}
  
@@ -428,14 +429,14 @@ public class AdminController
 		
 	@RequestMapping(value="/updateletter", method = RequestMethod.GET)
 	public String updateletter(HttpSession session,ModelMap model) {		
-		
+		model.addAttribute("menu","perry");
 		return "updateletter";
 	}
 	
 	
 	@RequestMapping(value="/formbill", method = RequestMethod.GET)
 	public String formbill(HttpSession session,ModelMap model) {		
-		
+		model.addAttribute("menu","xray");
 		return "formbill";
 	}
 	
@@ -448,7 +449,7 @@ public class AdminController
 	
 	@RequestMapping(value="/xray", method = RequestMethod.GET)
 	public String xray(HttpSession session,ModelMap model) {		
-		
+		model.addAttribute("menu","xray");
 		return "xray";
 	}
  
@@ -459,7 +460,8 @@ public class AdminController
 		//session.setAttribute("perrydetails",perrychiropracticdetails);
 		if(result.hasErrors())
 		{ 
-			model.addAttribute("menu","initial");
+	
+			model.addAttribute("menu","perry");
 			return "perrychiropractic";
 		}	
 		
@@ -469,7 +471,7 @@ public class AdminController
 		perrychiropracticform.setPerrychiropracticdetails(perrychiropracticDAO.getperrychiropractic());
 		model.addAttribute("perrychiropracticform",perrychiropracticform);
 		
-		
+		model.addAttribute("menu","perry");
 		return "viewperrychiropractic";
 		 
 	}
@@ -482,7 +484,7 @@ public class AdminController
 		//session.setAttribute("perrydetails",perrychiropracticdetails);
 		if(result.hasErrors())
 		{ 
-			model.addAttribute("menu","initial");
+			model.addAttribute("menu","perry");
 			return "updateletter";
 		}	
 		
@@ -492,7 +494,7 @@ public class AdminController
 		updateletterform.setUpdateletterdetails(updateletterDAO.getupdateletter());
 		model.addAttribute("updateletterform",updateletterform);
 		
-		
+		model.addAttribute("menu","perry");
 		return "viewupdateletter";
 		 
 	}
@@ -531,7 +533,7 @@ public class AdminController
 		//session.setAttribute("perrydetails",perrychiropracticdetails);
 		if(result.hasErrors())
 		{ 
-			model.addAttribute("menu","initial");
+			model.addAttribute("menu","xray");
 			return "perrychiropractic";
 		}	
 		
@@ -541,7 +543,7 @@ public class AdminController
 		letterofprotectionform.setLetterofprotectiondetails(letterofprotectionDAO.getletterofprotection());
 		model.addAttribute("letterofprotectionform",letterofprotectionform);
 		
-		
+		model.addAttribute("menu","xray");
 		return "viewletterofprotection";
 		 
 	}
@@ -558,7 +560,7 @@ public class AdminController
 		//session.setAttribute("perrydetails",perrychiropracticdetails);
 		if(result.hasErrors())
 		{ 
-			model.addAttribute("menu","initial");
+			model.addAttribute("menu","xray");
 			return "xray";
 		}	
 		
@@ -567,7 +569,7 @@ public class AdminController
 		XrayForm xrayform=new XrayForm();
 		xrayform.setxraydetails(xrayDAO.getxray());
 		model.addAttribute("xrayform",xrayform);
-		
+		model.addAttribute("menu","xray");
 		
 		return "viewxray";
 		 
@@ -588,7 +590,7 @@ public class AdminController
 		//session.setAttribute("perrydetails",perrychiropracticdetails);
 		if(result.hasErrors())
 		{ 
-			model.addAttribute("menu","initial");
+			model.addAttribute("menu","xray");
 			return "formbill";
 		}	
 		
@@ -598,33 +600,32 @@ public class AdminController
 		formbillForm.setFormbilldetails(formbillDAO.getformbill());
 		model.addAttribute("formbillform",formbillForm);
 		
-		
+		model.addAttribute("menu","xray");
 		return "viewformbill";
 		 
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		
 @RequestMapping(value="/insertperrychiropractic", method = RequestMethod.POST)
 
 public String insert_perrychiropractic(HttpServletRequest request,HttpSession session,@ModelAttribute("perrychiropracticdetails")  @Valid Perrychiropractic perrychiropracticdetails,BindingResult result,ModelMap model) {
 	//session.setAttribute("perrydetails",perrychiropracticdetails);
 	if(result.hasErrors())
 	{ 
-		model.addAttribute("menu","initial");
+		PerrychiropracticForm perrychiropracticForm= new PerrychiropracticForm();
+		perrychiropracticForm.setPerrychiropracticdetails(perrychiropracticDAO.getperrychiropractic());
+		model.addAttribute("perrychiropracticForm",perrychiropracticForm);
+		model.addAttribute("Success","true");
+		model.addAttribute("menu","perry");
 		return "perrychiropractic";
 	}	
 	
 	//System.out.println(perrychiropracticdetails.getAddress()+""+perrychiropracticdetails.getAddress1());
 	perrychiropracticDAO.setperrychiropractic(perrychiropracticdetails);
+	PerrychiropracticForm perrychiroparcticForm= new PerrychiropracticForm();
+	perrychiroparcticForm.setPerrychiropracticdetails(perrychiropracticDAO.getperrychiropractic());
+	model.addAttribute("perrychiropracticForm",perrychiroparcticForm);
+	/*model.addAttribute("menu", "Accident");*/
+	model.addAttribute("menu","perry");
 	return "perrychiropractic";
 	 
 }
@@ -663,13 +664,22 @@ public String insert_letterofprotection(HttpServletRequest request,HttpSession s
 	//session.setAttribute("perrydetails",perrychiropracticdetails);
 	if(result.hasErrors())
 	{ 
-		model.addAttribute("menu","initial");
+		LetterofprotectionForm letterofprotectionForm= new LetterofprotectionForm();
+		letterofprotectionForm.setLetterofprotectiondetails(letterofprotectionDAO.getletterofprotection());
+		model.addAttribute("letterofprotectionForm",letterofprotectionForm);
+		model.addAttribute("menu","xray");
+		model.addAttribute("Success","true");
 		return "letterofprotection";
 	}	
 	
 	//System.out.println(perrychiropracticdetails.getAddress()+""+perrychiropracticdetails.getAddress1());
 	letterofprotectionDAO.setletterofprotection(letterofprotectiondetails);
-	return "letterofprotection";
+	LetterofprotectionForm letterofprotectionForm= new LetterofprotectionForm();
+	letterofprotectionForm.setLetterofprotectiondetails(letterofprotectionDAO.getletterofprotection());
+	model.addAttribute("letterofprotectionForm",letterofprotectionForm);
+	/*model.addAttribute("menu", "Accident");*/
+	model.addAttribute("menu","xray");
+	return "viewletterofprotection";
 	 
 }
 
@@ -705,12 +715,21 @@ public String insert_xray(HttpServletRequest request,HttpSession session,@ModelA
 	//session.setAttribute("perrydetails",perrychiropracticdetails);
 	if(result.hasErrors())
 	{ 
-		model.addAttribute("menu","initial");
-		return "perrychiropractic";
+		XrayForm xrayForm= new XrayForm();
+		xrayForm.setxraydetails(xrayDAO.getxray());
+		model.addAttribute("xrayForm",xrayForm);
+		model.addAttribute("Success","true");
+		model.addAttribute("menu","xray");
+		return "xray";
 	}	
 	
 	
 	xrayDAO.setxray(xraydetails);
+	XrayForm xrayForm= new XrayForm();
+	xrayForm.setxraydetails(xrayDAO.getxray());
+	model.addAttribute("xrayForm",xrayForm);
+	/*model.addAttribute("menu", "Accident");*/
+	model.addAttribute("menu","xray");
 	return "xray";
 	 
 }
@@ -739,11 +758,20 @@ public String insert_formbill(HttpServletRequest request,HttpSession session,@Mo
 	//session.setAttribute("perrydetails",perrychiropracticdetails);
 	if(result.hasErrors())
 	{ 
-		model.addAttribute("menu","initial");
+		FormbillForm formbillForm= new FormbillForm();
+		formbillForm.setFormbilldetails(formbillDAO.getformbill());
+		model.addAttribute("formbillForm",formbillForm);
+		model.addAttribute("Success","true");
+		model.addAttribute("menu","xray");
 		return "formbill";
 	}	
 	
 	//System.out.println(perrychiropracticdetails.getAddress()+""+perrychiropracticdetails.getAddress1());
+	FormbillForm formbillForm= new FormbillForm();
+	formbillForm.setFormbilldetails(formbillDAO.getformbill());
+	model.addAttribute("formbillForm",formbillForm);
+	/*model.addAttribute("menu", "Accident");*/
+	model.addAttribute("menu","xray");
 	formbillDAO.setformbill(formbilldetails);
 	return "formbill";
 	 
@@ -758,13 +786,23 @@ public String insert_updateletter(HttpServletRequest request,HttpSession session
 	//session.setAttribute("perrydetails",perrychiropracticdetails);
 	if(result.hasErrors())
 	{ 
-		model.addAttribute("menu","initial");
+		UpdateletterForm updateletterForm= new UpdateletterForm();
+		updateletterForm.setUpdateletterdetails(updateletterDAO.getupdateletter());
+		model.addAttribute("updateletterForm",updateletterForm);
+		model.addAttribute("menu","perry");
+		model.addAttribute("Success","true");
 		return "updateletter";
 	}	
 	
 	//System.out.println(perrychiropracticdetails.getAddress()+""+perrychiropracticdetails.getAddress1());
+	UpdateletterForm updateletterForm= new UpdateletterForm();
+	updateletterForm.setUpdateletterdetails(updateletterDAO.getupdateletter());
+	model.addAttribute("updateletterForm",updateletterForm);
+	/*model.addAttribute("menu", "Accident");*/
+	model.addAttribute("menu","perry");
+
 	updateletterDAO.setupdateletter(updateletterdetails);
-	return "updateletter";
+	return "viewupdateletter";
 	 
 }
 

@@ -42,9 +42,10 @@
         	<div>
 	             
  <table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table" style="width: 583px; "><tr><td>
+	            <div class="headings altheading">
+	            <center> <h2>PERRY CHIROPRACTIC & THERAPY CENTER OF CANTON, INC.</h2> </center><br/>
+	            </div>
 	            <div class="contentbox">
-	            
-				 <p align="left"><h2><center>PERRY CHIROPRACTIC & THERAPY CENTER OF CANTON, INC.</h2></p> <br><p align="center"> Charles T. Yang, DC, DABFP<br>4933 West Tuscarawas Street <br>Canton, Ohio 44708<br>(330) 477-3036 Phone<br>(330) 477-3037 Fax </center></p>
 				<h4 align="center">Form Cover Letter For Insurance Company, Copy To Attorney</h4> 
 				<p align="right"></p><h4 align="right"><u>SENT BY CERTIFIED MAIL</u><br>
 				PLEASE READ:  THIS IS NOTICE TO YOU OF<br> 
@@ -63,7 +64,7 @@
               <br>
                <table align="center" cellpadding="0" cellspacing="0" border="0" width="70%" style="width: 639px; ">
               <tr>
-              <td style="width: 212px; "><span class="err"></span>Address </td>
+              <td style="width: 212px; "><span class="err">*</span>Address </td>
               <td><input type="text" class="input_txtbx1" name="address" id="Address"><span class="err"><form:errors path="Perrychiropractic.insurance"></form:errors></span></td>
               </tr>
               </table>
@@ -77,21 +78,21 @@
               <br>
                <table align="center" cellpadding="0" cellspacing="0" border="0" width="70%" style="width: 639px; ">
               <tr>
-              <td style="width: 212px; "><span class="err"></span>Regarding: </td>
+              <td style="width: 212px; "><span class="err">*</span>Regarding: </td>
               <td><input type="text" class="input_txtbx1" name="reg" ><span class="err"><form:errors path="Perrychiropractic.insurance"></form:errors></span></td>
               </tr>
               </table>
               <br>
                <table align="center" cellpadding="0" cellspacing="0" border="0" width="70%" style="width: 639px; ">
               <tr>
-              <td style="width: 212px; "><span class="err"></span>Patient’s Name/ Name of Person Entitled To Coverage</td>
+              <td style="width: 212px; "><span class="err">*</span>Patient Name/ Name of Person Entitled To Coverage</td>
               <td><input type="text" class="input_txtbx1" name="nameofperson" id="nameofperson"><span class="err"><form:errors path="Perrychiropractic.insurance"></form:errors></span></td>
               </tr>
               </table>
               <br>
                <table align="center" cellpadding="0" cellspacing="0" border="0" width="70%">
               <tr>
-              <td style="width: 212px; "><span class="err"></span>Date of Accident: </td>
+              <td style="width: 212px; "><span class="err">*</span>Date of Accident: </td>
               <td><input type="text" class="input_txtbx1" name="dateofaccident" id="dateofaccident"><span class="err"><form:errors path="Perrychiropractic.insurance"></form:errors></span></td>
               </tr>
               </table>
@@ -127,8 +128,10 @@
 	<br>The patient has provided specific instructions that direct payment for outstanding treatment fees should be made to this clinic. Please again note that the patient cannot cancel the claim for coverage from your company—and neither can the attorney for the patient. If you disregard this Assignment, in whole or in part, we will seek recovery of our outstanding treatment fees directly from your company, even if it requires commencement of suit.  However, we do not expect this type of problem.  We want to stress that it is our primary objective to provide the immediate treatment this patient needs for injuries, despite financial circumstances which limit the patient’s ability to pay for treatment when received.
 	<br><b>Please advise us in writing if you will not honor this Assignment.  Please note that this does not mean or imply that your obligation to pay us is subject to your consent.  It is not.  We are simply seeking to determine your intentions now so that we may protect ourselves before a default in our treatment fees.  If we do not receive a response, we will act in reliance that you will comply with its instructions.
         	 </b></p>
-        	<p align="right">Sincerely,<br><br><br>Perry Chiropractic & Therapy Center of Canton, Inc.<br>
-                                                                                                         Dr. Charles T. Yang D.C.
+        	<p align="right">Sincerely,<br><br><br>Perry Chiropractic & Therapy Center of Canton, Inc.<br><br>
+              <input type="text" name="sign">  <br><br>
+              
+                                                                                                       Dr. Charles T. Yang D.C.
         	<br><br></p>
         	 <table align="center" cellpadding="0" cellspacing="0" border="0" width="70%">
               <tr>

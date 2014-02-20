@@ -11,22 +11,20 @@ import java.util.Date;
 import java.util.List;
 import javax.sql.DataSource;
 
+import bephit.model.Faxcover;
 import bephit.model.Letterofprotection;
  
 
 
 
-public class LetterofprotectionDAO {
+public class FaxcoverDAO {
 	private DataSource dataSource;
 	 
 	public void setDataSource(DataSource dataSource) {
 		this.dataSource = dataSource;
 	}
 	
-	
-	
-	
-	public int setletterofprotection(Letterofprotection letterofprotectiondetails)
+	public int setfaxcover(Faxcover faxcoverdetails)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -43,7 +41,7 @@ public class LetterofprotectionDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 
-	    	 String cmd="INSERT INTO `tbl_letterofprotection` (`date`,`myclient`,`dateofaccident`,`dear`,`truly`) VALUES ('"+letterofprotectiondetails.getDate()+"','"+letterofprotectiondetails.getMyclient()+"','"+letterofprotectiondetails.getDateofaccident()+"','"+letterofprotectiondetails.getDear()+"','"+letterofprotectiondetails.getTruly()+"')";
+	    	 String cmd="INSERT INTO `tbl_faxdetails` (`date`,`tos`,`faxno`,`froms`,`reply`,`regarding`,`pages`,`msg`,`claimno`,`doi`) VALUES ('"+faxcoverdetails.getDate()+"','"+faxcoverdetails.getTos()+"','"+faxcoverdetails.getFaxno()+"','"+faxcoverdetails.getFroms()+"','"+faxcoverdetails.getReply()+"','"+faxcoverdetails.getRegarding()+"','"+faxcoverdetails.getPages()+"','"+faxcoverdetails.getMsg()+"','"+faxcoverdetails.getClaimno()+"','"+faxcoverdetails.getDoi()+"')";
 	    	 System.out.println(cmd);
 	    	 statement.execute(cmd);
 			flag=1;
@@ -65,7 +63,7 @@ public class LetterofprotectionDAO {
     		return 0;
 	    
 	}
-	public List<Letterofprotection> getletterofprotection(){
+	public List<Faxcover> getfaxcover(){
 		Connection con = null;
 		Statement statement = null;
 		ResultSet resultSet = null;
@@ -75,21 +73,27 @@ public class LetterofprotectionDAO {
 		} catch (SQLException e1) {
 			e1.printStackTrace();
 		}
-		List<Letterofprotection> letterofprotection = new ArrayList<Letterofprotection>();
+		List<Faxcover> faxcover = new ArrayList<Faxcover>();
 	    try{
-			resultSet = statement.executeQuery("select * from tbl_letterofprotection");
+			resultSet = statement.executeQuery("select * from tbl_faxdetails");
 			while(resultSet.next()){
-				letterofprotection.add(new Letterofprotection
-						(resultSet.getString("letterid"),
-								resultSet.getString("date"),
-						resultSet.getString("myclient"),
-						resultSet.getString("dateofaccident"),
-						resultSet.getString("dear"),
-			    		resultSet.getString("truly")
+				faxcover.add(new Faxcover
+						(resultSet.getString("faxid"),
+							resultSet.getString("date"),
+						resultSet.getString("tos"),
+						resultSet.getString("faxno"),
+						resultSet.getString("froms"),
+			    		resultSet.getString("reply"),
+			    		resultSet.getString("regarding"),
+						resultSet.getString("pages"),
+				resultSet.getString("msg"),
+				resultSet.getString("claimno"),
+				resultSet.getString("doi")
+	    		
 			    		
 						
 			    		 ));
-				System.out.println("letter"+letterofprotection.get(0).getDate());
+			
 			    	
 			}
 	    }catch(Exception e){
@@ -102,10 +106,10 @@ public class LetterofprotectionDAO {
 	    	releaseStatement(statement);
 	    	releaseConnection(con);	    	
 	    }
-	    return letterofprotection;
+	    return faxcover;
 		
 	}
-	public List<Letterofprotection> getletterofprotection(String letterid){
+	public List<Faxcover> getfaxcover(String faxid){
 		Connection con = null;
 		Statement statement = null;
 		ResultSet resultSet = null;
@@ -115,18 +119,23 @@ public class LetterofprotectionDAO {
 		} catch (SQLException e1) {
 			e1.printStackTrace();
 		}
-		List<Letterofprotection> letterofprotection = new ArrayList<Letterofprotection>();
+		List<Faxcover> faxcover = new ArrayList<Faxcover>();
 	    try{
-			resultSet = statement.executeQuery("select * from tbl_letterofprotection where letterid='"+letterid+"'");
+			resultSet = statement.executeQuery("select * from tbl_faxdetails where faxid='"+faxid+"'");
 			while(resultSet.next()){
-				letterofprotection.add(new Letterofprotection
-						(resultSet.getString("letterid"),
+				faxcover.add(new Faxcover
+						(resultSet.getString("faxid"),
 								resultSet.getString("date"),
-						resultSet.getString("myclient"),
-						resultSet.getString("dateofaccident"),
-						resultSet.getString("dear"),
-			    		resultSet.getString("truly")
-			    		
+						resultSet.getString("tos"),
+						resultSet.getString("faxno"),
+						resultSet.getString("froms"),
+			    		resultSet.getString("reply"),
+			    		resultSet.getString("regarding"),
+						resultSet.getString("pages"),
+				resultSet.getString("msg"),
+				resultSet.getString("claimno"),
+				resultSet.getString("doi")
+	    		
 			    		 ));
 				
 			    	
@@ -141,10 +150,10 @@ public class LetterofprotectionDAO {
 	    	releaseStatement(statement);
 	    	releaseConnection(con);	    	
 	    }
-	    return letterofprotection;
+	    return faxcover;
 		
 	}
-	public int updateletterofprotection(Letterofprotection letterofprotectiondetails,String letterid)
+	public int updatefaxcover(Faxcover faxcoverdetails,String faxid)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -159,15 +168,21 @@ public class LetterofprotectionDAO {
 			e1.printStackTrace();
 		}
 	    try{
-	    	 String cmd="update tbl_letterofprotection set date='"+letterofprotectiondetails.getDate()
+	    	String cmd="update tbl_faxdetails set date='"+faxcoverdetails.getDate()
 	    			
-	    +"',myclient='"+letterofprotectiondetails.getMyclient()
-	    +"',dateofaccident='"+letterofprotectiondetails.getDateofaccident()
-	    +"',dear='"+ letterofprotectiondetails.getDear()
-	    +"',truly='"+ letterofprotectiondetails.getTruly()+"' where letterid='"+letterid+"'";
-	   System.out.println("cmd insert value"+cmd);
-	    statement.executeUpdate(cmd);
-	    }
+	    		    +"',tos='"+faxcoverdetails.getTos()
+	    		    +"',faxno='"+faxcoverdetails.getFaxno()
+	    		    +"',froms='"+faxcoverdetails.getFroms()
+	    		    +"',reply='"+faxcoverdetails.getReply()
+	    		    +"',regarding='"+faxcoverdetails.getRegarding()
+	    		    +"',pages='"+faxcoverdetails.getPages()
+	    		    +"',msg='"+faxcoverdetails.getMsg()
+	    	
+	    		   +"', claimno='"+ faxcoverdetails.getClaimno()
+	    		   +"', doi='"+ faxcoverdetails.getDoi()+"'where faxid='"+faxid+"'";
+	    		   System.out.println("cmd insert value"+cmd);
+	    		    statement.executeUpdate(cmd);
+	    			    }
 	    catch(Exception e){
 	    	System.out.println(e.toString());
 	    	releaseStatement(statement);
@@ -184,7 +199,7 @@ public class LetterofprotectionDAO {
     	else
     		return 0;
 	}
-	public int deleteletterofprotection(String letterid)
+	public int deletefaxcover(String faxid)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -201,7 +216,7 @@ public class LetterofprotectionDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 
-	    	 String cmd="delete from tbl_letterofprotection where letterid='"+letterid+"'";
+	    	 String cmd="delete from tbl_faxdetails where faxid='"+faxid+"'";
 	    	    System.out.println("cmd insert value"+cmd);
 	    	    statement.executeUpdate(cmd);
 	    	    }
