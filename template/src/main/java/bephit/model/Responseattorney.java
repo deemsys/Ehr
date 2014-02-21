@@ -1,18 +1,25 @@
 package bephit.model;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class Responseattorney
 {
 	private String responseid;
+	@NotEmpty
 	private String name;
 	private String address;
 	private String address1;
 	private String address2;
 	private String regarding;
+	@NotEmpty
 	private String patientname;
 	private String dateofaccident;
 	public Responseattorney() {
 		super();
 	}
+	@NotEmpty
 	private String nameofclinic;
+	@NotEmpty
 	private String treatingphysician;
 	public Responseattorney(String responseid, String name, String address,
 			String address1, String address2, String regarding,

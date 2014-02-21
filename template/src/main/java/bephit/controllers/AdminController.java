@@ -20,30 +20,44 @@ import bephit.dao.LetterofprotectionDAO;
 /*import bephit.dao.LettertopatientsDAO;
 import bephit.dao.NoticeassignmentDAO;
 import bephit.dao.PatientattorneyDAO;*/
+import bephit.dao.FaxcoverDAO;
+import bephit.dao.LettertopatientsDAO;
+import bephit.dao.NoticeassignmentDAO;
 import bephit.dao.PerrychiropracticDAO;
 import bephit.dao.RequestfordemandDAO;
+import bephit.dao.ResponseattorneyDAO;
 import bephit.dao.UpdateletterDAO;
+import bephit.dao.WorkschoolDAO;
 import bephit.dao.XrayDAO;
 import bephit.forms.FormbillForm;
 import bephit.forms.HippaPrivacyForm;
 import bephit.forms.LetterofprotectionForm;
 /*import bephit.forms.PatientattorneyForm;*/
+import bephit.forms.FaxcoverForm;
+import bephit.forms.LettertopatientsForm;
 import bephit.forms.NarrativereportForm;
+import bephit.forms.NoticeassignmentForm;
 import bephit.forms.PerrychiropracticForm;
 import bephit.forms.PhysicalexamForm;
 import bephit.forms.RequestfordemandForm;
 import bephit.forms.UpdateletterForm;
+import bephit.forms.WorkschoolForm;
 import bephit.forms.XrayForm;
-import bephit.model.Formbill;
-import bephit.model.Letterofprotection;
-/*import bephit.model.Lettertopatients;
-import bephit.model.Noticeassignment;
-import bephit.model.Patientattorney;*/
 import bephit.model.Perrychiropractic;
 import bephit.model.Requestfordemand;
-/*import bephit.model.Returntoschool;*/
 import bephit.model.Updateletter;
 import bephit.model.Xray;
+import bephit.forms.ResponseattorneyForm;
+import bephit.model.Faxcover;
+import bephit.model.Formbill;
+import bephit.model.Lettertopatients;
+import bephit.model.Letterofprotection;
+import bephit.model.Noticeassignment;
+import bephit.model.Perrychiropractic;
+import bephit.model.Responseattorney;
+import bephit.model.Updateletter;
+import bephit.model.Workschool;
+
 
 @Controller
 public class AdminController
@@ -59,21 +73,6 @@ public class AdminController
 	@Autowired
 	UpdateletterDAO updateletterDAO;
 	
-	
-	
-	/*@Autowired
-	LettertopatientsDAO lettertopatientsDAO;
-	
-	
-	@Autowired
-	  NoticeassignmentDAO noticeassignmentDAO;
-	
-	
-	
-
-	@Autowired
-	  PatientattorneyDAO patientattorneyDAO;*/
-	
 
 	@Autowired
 	FormbillDAO formbillDAO;
@@ -87,6 +86,20 @@ public class AdminController
 	
 	@Autowired
 	 XrayDAO xrayDAO;
+	@Autowired
+	FaxcoverDAO faxcoverDAO;
+	
+	@Autowired
+	  ResponseattorneyDAO responseattorneyDAO;
+	
+	@Autowired
+	LettertopatientsDAO lettertopatientsDAO;
+	
+	
+	@Autowired
+	  NoticeassignmentDAO noticeassignmentDAO;
+	@Autowired
+	  WorkschoolDAO workschoolDAO;
 	
 	
 	@RequestMapping(value="/viewperrychiropractic", method = RequestMethod.GET)
@@ -140,19 +153,7 @@ public class AdminController
 		
 		return "viewrequestfordemand";
 	}
-	
-		
-		
-	
-	@RequestMapping(value="/viewletterofprotection", method = RequestMethod.GET)
-	public String viewletterofprotection(HttpSession session,ModelMap model) {		
-		LetterofprotectionForm letterofprotectionform=new LetterofprotectionForm();
-		letterofprotectionform.setLetterofprotectiondetails(letterofprotectionDAO.getletterofprotection());
-		model.addAttribute("letterofprotectionform",letterofprotectionform);
-		model.addAttribute("menu","xray");
-		
-		return "viewletterofprotection";
-	}
+
 	
 	
 	@RequestMapping(value="/viewxray", method = RequestMethod.GET)
@@ -222,18 +223,6 @@ public class AdminController
 	
 	
 	
-	
-	@RequestMapping(value="/editletterofprotection", method = RequestMethod.GET)
-	public String editletterofprotection(@RequestParam("letterid")String letterid, HttpSession session,ModelMap model) {		
-		LetterofprotectionForm letterofprotectionform=new LetterofprotectionForm();
-		letterofprotectionform.setLetterofprotectiondetails(letterofprotectionDAO.getletterofprotection(letterid));
-		model.addAttribute("letterofprotectionform",letterofprotectionform);
-		model.addAttribute("menu","xray");
-		
-		return "editletterofprotection";
-		
-			
-	}
 	
 	
 	@RequestMapping(value="/editxray", method = RequestMethod.GET)
@@ -309,19 +298,6 @@ public class AdminController
 	}
 	
 	
-	
-	@RequestMapping(value="/deleteletterofprotection", method = RequestMethod.GET)
-	public String deleteletterofprotection(@RequestParam("letterid")String letterid, HttpSession session,ModelMap model) {		
-		
-		letterofprotectionDAO.deleteletterofprotection(letterid);
-		
-		LetterofprotectionForm letterofprotectionform=new LetterofprotectionForm();
-		letterofprotectionform.setLetterofprotectiondetails(letterofprotectionDAO.getletterofprotection());
-		model.addAttribute("letterofprotectionform",letterofprotectionform);
-		
-		model.addAttribute("menu","xray");
-		return "viewletterofprotection";
-	}
 	
 	@RequestMapping(value="/deletexray", method = RequestMethod.GET)
 	public String deletexray(@RequestParam("xrayid")String xrayid, HttpSession session,ModelMap model) {		
@@ -400,13 +376,6 @@ public class AdminController
 	
 	
 	
-		@RequestMapping(value="/lettertopatients", method = RequestMethod.GET)
-		public String lettertopatients(HttpSession session,ModelMap model) {		
-			
-			return "lettertopatients";
-	 
-	
-}
 		
 		
 		@RequestMapping(value="/returntoschool", method = RequestMethod.GET)
@@ -427,24 +396,7 @@ public class AdminController
 			return "pimedpay";
 		}
 		
-	@RequestMapping(value="/updateletter", method = RequestMethod.GET)
-	public String updateletter(HttpSession session,ModelMap model) {		
-		model.addAttribute("menu","perry");
-		return "updateletter";
-	}
 	
-	
-	@RequestMapping(value="/formbill", method = RequestMethod.GET)
-	public String formbill(HttpSession session,ModelMap model) {		
-		model.addAttribute("menu","xray");
-		return "formbill";
-	}
-	
-	@RequestMapping(value="/noticeassignment", method = RequestMethod.GET)
-	public String noticeassignment(HttpSession session,ModelMap model) {		
-		
-		return "noticeassignment";
-	}
 	
 	
 	@RequestMapping(value="/xray", method = RequestMethod.GET)
@@ -526,27 +478,7 @@ public class AdminController
 	
 	
 	
-	
-	@RequestMapping(value="/updateletterofprotection", method = RequestMethod.POST)
 
-	public String update_letterofprotection(HttpServletRequest request,HttpSession session,@ModelAttribute("letterofprotectiondetails")  @Valid Letterofprotection letterofprotectiondetails,BindingResult result,ModelMap model) {
-		//session.setAttribute("perrydetails",perrychiropracticdetails);
-		if(result.hasErrors())
-		{ 
-			model.addAttribute("menu","xray");
-			return "perrychiropractic";
-		}	
-		
-		//System.out.println(perrychiropracticdetails.getAddress()+""+perrychiropracticdetails.getAddress1());
-		letterofprotectionDAO.updateletterofprotection(letterofprotectiondetails,letterofprotectiondetails.getLetterid());
-		LetterofprotectionForm letterofprotectionform=new LetterofprotectionForm();
-		letterofprotectionform.setLetterofprotectiondetails(letterofprotectionDAO.getletterofprotection());
-		model.addAttribute("letterofprotectionform",letterofprotectionform);
-		
-		model.addAttribute("menu","xray");
-		return "viewletterofprotection";
-		 
-	}
 
 	
 	
@@ -658,30 +590,7 @@ public String insert_patientattorney(HttpServletRequest request,HttpSession sess
 
 
 
-@RequestMapping(value="/insertletterofprotection", method = RequestMethod.POST)
 
-public String insert_letterofprotection(HttpServletRequest request,HttpSession session,@ModelAttribute("letterofprotectiondetails")  @Valid Letterofprotection letterofprotectiondetails,BindingResult result,ModelMap model) {
-	//session.setAttribute("perrydetails",perrychiropracticdetails);
-	if(result.hasErrors())
-	{ 
-		LetterofprotectionForm letterofprotectionForm= new LetterofprotectionForm();
-		letterofprotectionForm.setLetterofprotectiondetails(letterofprotectionDAO.getletterofprotection());
-		model.addAttribute("letterofprotectionForm",letterofprotectionForm);
-		model.addAttribute("menu","xray");
-		model.addAttribute("Success","true");
-		return "letterofprotection";
-	}	
-	
-	//System.out.println(perrychiropracticdetails.getAddress()+""+perrychiropracticdetails.getAddress1());
-	letterofprotectionDAO.setletterofprotection(letterofprotectiondetails);
-	LetterofprotectionForm letterofprotectionForm= new LetterofprotectionForm();
-	letterofprotectionForm.setLetterofprotectiondetails(letterofprotectionDAO.getletterofprotection());
-	model.addAttribute("letterofprotectionForm",letterofprotectionForm);
-	/*model.addAttribute("menu", "Accident");*/
-	model.addAttribute("menu","xray");
-	return "viewletterofprotection";
-	 
-}
 
 @RequestMapping(value="/insertrequestfordemand", method = RequestMethod.POST)
 
@@ -752,30 +661,7 @@ public String insert_xray(HttpServletRequest request,HttpSession session,@ModelA
 
 
 
-@RequestMapping(value="/insertformbill", method = RequestMethod.POST)
 
-public String insert_formbill(HttpServletRequest request,HttpSession session,@ModelAttribute("formbilldetails")  @Valid Formbill formbilldetails,BindingResult result,ModelMap model) {
-	//session.setAttribute("perrydetails",perrychiropracticdetails);
-	if(result.hasErrors())
-	{ 
-		FormbillForm formbillForm= new FormbillForm();
-		formbillForm.setFormbilldetails(formbillDAO.getformbill());
-		model.addAttribute("formbillForm",formbillForm);
-		model.addAttribute("Success","true");
-		model.addAttribute("menu","xray");
-		return "formbill";
-	}	
-	
-	//System.out.println(perrychiropracticdetails.getAddress()+""+perrychiropracticdetails.getAddress1());
-	FormbillForm formbillForm= new FormbillForm();
-	formbillForm.setFormbilldetails(formbillDAO.getformbill());
-	model.addAttribute("formbillForm",formbillForm);
-	/*model.addAttribute("menu", "Accident");*/
-	model.addAttribute("menu","xray");
-	formbillDAO.setformbill(formbilldetails);
-	return "formbill";
-	 
-}
 
 
 
@@ -807,10 +693,238 @@ public String insert_updateletter(HttpServletRequest request,HttpSession session
 }
 
 
-/*
-@RequestMapping(value="/insertlettertopatient", method = RequestMethod.POST)
 
-public String insert_lettertopatient(HttpServletRequest request,HttpSession session,@ModelAttribute("lettertopatientsdetails")  @Valid Lettertopatients lettertopatientsdetails,BindingResult result,ModelMap model)
+
+@RequestMapping(value="/viewfaxcover", method = RequestMethod.GET)
+public String viewfaxcover(HttpSession session,ModelMap model) {		
+	FaxcoverForm faxcoverform=new FaxcoverForm();
+	faxcoverform.setFaxcoverdetails(faxcoverDAO.getfaxcover());
+	model.addAttribute("faxcoverform",faxcoverform);
+	
+	
+	return "viewfaxcover";
+}
+@RequestMapping(value="/lettertopatients", method = RequestMethod.GET)
+public String lettertopatients(HttpSession session,ModelMap model) {		
+	
+	return "lettertopatients";
+
+
+}
+@RequestMapping(value="/responseattorney", method = RequestMethod.GET)
+public String responseattorney(HttpSession session,ModelMap model) {		
+	
+	return "responseattorney";
+}
+@RequestMapping(value="/faxcover", method = RequestMethod.GET)
+public String faxcover(HttpSession session,ModelMap model) {		
+	
+	return "faxcover";
+}
+@RequestMapping(value="/workschool", method = RequestMethod.GET)
+public String workschool(HttpSession session,ModelMap model) {		
+	
+	return "workschool";
+
+
+}
+
+@RequestMapping(value="/noticeassignmentlist", method = RequestMethod.GET)
+public String noticelist(HttpSession session,@RequestParam("noticeid") String noticeid,ModelMap model) {		
+	NoticeassignmentForm noticeassignmentform=new NoticeassignmentForm();
+	noticeassignmentform.setNoticeassignmentdetails(noticeassignmentDAO.getnoticeassignment(noticeid));
+	model.addAttribute("noticeassignmentform",noticeassignmentform);
+	return "viewnoticelist";
+}
+@RequestMapping(value="/faxcoverlist", method = RequestMethod.GET)
+public String faxlist(HttpSession session,@RequestParam("faxid") String faxid,ModelMap model) {		
+	FaxcoverForm faxcoverform=new FaxcoverForm();
+	faxcoverform.setFaxcoverdetails(faxcoverDAO.getfaxcover(faxid));
+	model.addAttribute("faxcoverform",faxcoverform);
+	return "viewfaxlist";
+}
+
+@RequestMapping(value="/lettertopatientlist", method = RequestMethod.GET)
+public String letterlist(HttpSession session,@RequestParam("letterid") String letterid,ModelMap model) {		
+	LettertopatientsForm lettertopatientsform=new LettertopatientsForm();
+	lettertopatientsform.setLettertopatientsdetails(lettertopatientsDAO.getlettertopatients(letterid));
+	model.addAttribute("lettertopatientsform",lettertopatientsform);
+		
+	return "lettertopatientslist";
+}
+@RequestMapping(value="/letterofprotectionlist", method = RequestMethod.GET)
+public String letterofprotectionlist(HttpSession session,@RequestParam("letterid") String letterid,ModelMap model) {		
+	LetterofprotectionForm letterofprotectionform=new LetterofprotectionForm();
+	letterofprotectionform.setLetterofprotectiondetails(letterofprotectionDAO.getletterofprotection(letterid));
+	model.addAttribute("letterofprotectionform",letterofprotectionform);			
+	return "viewprotectionlist";
+}
+@RequestMapping(value="/viewresponselist", method = RequestMethod.GET)
+public String viewresponselist(HttpSession session,@RequestParam("responseid") String responseid,ModelMap model) {		
+	ResponseattorneyForm responseattorneyform=new ResponseattorneyForm();
+	responseattorneyform.setResponseattorneydetail(responseattorneyDAO.getresponseattorney(responseid));
+			model.addAttribute("responseattorneyform",responseattorneyform);
+			return "viewresponselist";
+}
+@RequestMapping(value="/viewletterofprotection", method = RequestMethod.GET)
+public String viewletterofprotection(HttpSession session,ModelMap model) {		
+	LetterofprotectionForm letterofprotectionform=new LetterofprotectionForm();
+	letterofprotectionform.setLetterofprotectiondetails(letterofprotectionDAO.getletterofprotection());
+	model.addAttribute("letterofprotectionform",letterofprotectionform);
+	System.out.println("asdasd");
+	
+	return "viewletterofprotection";
+}
+
+
+@RequestMapping(value="/viewlettertopatients", method = RequestMethod.GET)
+public String viewlettertopatients(HttpSession session,ModelMap model) {		
+	LettertopatientsForm lettertopatientsform=new LettertopatientsForm();
+	lettertopatientsform.setLettertopatientsdetails(lettertopatientsDAO.getlettertopatients());
+	model.addAttribute("lettertopatientsform",lettertopatientsform);
+		
+	return "viewlettertopatients";
+}
+
+@RequestMapping(value="/viewresponseattorney", method = RequestMethod.GET)
+public String viewresponseattorney(HttpSession session,ModelMap model) {		
+ResponseattorneyForm responseattorneyform=new ResponseattorneyForm();
+responseattorneyform.setResponseattorneydetail(responseattorneyDAO.getresponseattorney());
+	model.addAttribute("responseattorneyform",responseattorneyform);
+	return "viewresponseattorney";
+}
+@RequestMapping(value="/viewnoticeassignment", method = RequestMethod.GET)
+public String viewnoticeassignment(HttpSession session,ModelMap model) {		
+	NoticeassignmentForm noticeassignmentform=new NoticeassignmentForm();
+	noticeassignmentform.setNoticeassignmentdetails(noticeassignmentDAO.getnoticeassignment());
+	model.addAttribute("noticeassignmentform",noticeassignmentform);
+	
+	
+	return "viewnoticeassignment";
+}
+
+@RequestMapping(value="/editletterofprotection", method = RequestMethod.GET)
+public String editletterofprotection(@RequestParam("letterid")String letterid, HttpSession session,ModelMap model) {		
+	LetterofprotectionForm letterofprotectionform=new LetterofprotectionForm();
+	letterofprotectionform.setLetterofprotectiondetails(letterofprotectionDAO.getletterofprotection());
+	model.addAttribute("letterofprotectionform",letterofprotectionform);
+	
+	
+	return "editletterofprotection";
+}
+
+@RequestMapping(value="/editfaxcover", method = RequestMethod.GET)
+public String editfaxcover(@RequestParam("faxid")String faxid, HttpSession session,ModelMap model) {		
+	FaxcoverForm faxcoverform=new FaxcoverForm();
+	faxcoverform.setFaxcoverdetails(faxcoverDAO.getfaxcover(faxid));
+	model.addAttribute("faxcoverform",faxcoverform);
+	
+	
+	return "editfaxcover";
+}
+@RequestMapping(value="/editlettertopatients", method = RequestMethod.GET)
+public String editlettertopatients(@RequestParam("letterid")String letterid, HttpSession session,ModelMap model) {		
+	LettertopatientsForm lettertopatientsform=new LettertopatientsForm();
+	lettertopatientsform.setLettertopatientsdetails(lettertopatientsDAO.getlettertopatients(letterid));
+	model.addAttribute("lettertopatientsform",lettertopatientsform);
+		
+	return "editlettertopatients";
+}
+@RequestMapping(value="/editnoticeassignment", method = RequestMethod.GET)
+public String editnoticeassignment(@RequestParam("noticeid")String noticeid, HttpSession session,ModelMap model) {		
+	NoticeassignmentForm noticeassignmentform=new NoticeassignmentForm();
+	noticeassignmentform.setNoticeassignmentdetails(noticeassignmentDAO.getnoticeassignment(noticeid));
+	model.addAttribute("noticeassignmentform",noticeassignmentform);
+		
+	return "editnoticeassignment";
+}
+
+@RequestMapping(value="/editresponseattorney", method = RequestMethod.GET)
+public String editresponseattorney(@RequestParam("responseid")String responseid, HttpSession session,ModelMap model) {		
+	ResponseattorneyForm responseattorneyform=new ResponseattorneyForm();
+	responseattorneyform.setResponseattorneydetail(responseattorneyDAO.getresponseattorney(responseid));
+			model.addAttribute("responseattorneyform",responseattorneyform);
+			return "editresponseattorney";
+}
+@RequestMapping(value="/updateletter", method = RequestMethod.GET)
+public String updateletter(HttpSession session,ModelMap model) {		
+
+return "updateletter";
+}
+
+
+@RequestMapping(value="/formbill", method = RequestMethod.GET)
+public String formbill(HttpSession session,ModelMap model) {		
+
+return "formbill";
+}
+
+@RequestMapping(value="/noticeassignment", method = RequestMethod.GET)
+public String noticeassignment(HttpSession session,ModelMap model) {		
+
+return "noticeassignment";
+}
+@RequestMapping(value="/deletenoticeassignment", method = RequestMethod.GET)
+public String deleteletterofprotection(@RequestParam("noticeid")String noticeid, HttpSession session,ModelMap model) {		
+	
+	noticeassignmentDAO.deletenoticeassignment(noticeid);
+	NoticeassignmentForm noticeassignmentform=new NoticeassignmentForm();
+	noticeassignmentform.setNoticeassignmentdetails(noticeassignmentDAO.getnoticeassignment());
+	model.addAttribute("noticeassignmentform",noticeassignmentform);
+		
+	return "viewnoticeassignment";
+	
+	
+}
+@RequestMapping(value="/deleteletterofprotection", method = RequestMethod.GET)
+public String deletenoticeassignment(@RequestParam("letterid")String letterid, HttpSession session,ModelMap model) {		
+	
+	letterofprotectionDAO.deleteletterofprotection(letterid);
+	LetterofprotectionForm letterofprotectionform=new LetterofprotectionForm();
+	letterofprotectionform.setLetterofprotectiondetails(letterofprotectionDAO.getletterofprotection());
+	model.addAttribute("letterofprotectionform",letterofprotectionform);
+	
+	
+	return "viewletterofprotection";
+}	
+	
+@RequestMapping(value="/deletelettertopatients", method = RequestMethod.GET)
+public String deletelettertopatients(@RequestParam("letterid")String letterid, HttpSession session,ModelMap model) {		
+	
+	lettertopatientsDAO.deletelettertopatients(letterid);
+	LettertopatientsForm lettertopatientsform=new LettertopatientsForm();
+	lettertopatientsform.setLettertopatientsdetails(lettertopatientsDAO.getlettertopatients());
+	model.addAttribute("lettertopatientsform",lettertopatientsform);
+	
+	
+	return "viewlettertopatients";
+	
+	
+}
+@RequestMapping(value="/deleteresponseattorney", method = RequestMethod.GET)
+public String deleteresponseattorney(@RequestParam("responseid")String responseid, HttpSession session,ModelMap model) {		
+responseattorneyDAO.deleteresponseattorney(responseid);
+	ResponseattorneyForm responseattorneyform=new ResponseattorneyForm();
+	responseattorneyform.setResponseattorneydetail(responseattorneyDAO.getresponseattorney());
+			model.addAttribute("responseattorneyform",responseattorneyform);
+			return "viewresponseattorney";
+	
+	
+}
+@RequestMapping(value="/deletefaxcover", method = RequestMethod.GET)
+public String deletefaxcover(@RequestParam("faxid")String faxid, HttpSession session,ModelMap model) {		
+faxcoverDAO.deletefaxcover(faxid);
+FaxcoverForm faxcoverform=new FaxcoverForm();
+faxcoverform.setFaxcoverdetails(faxcoverDAO.getfaxcover());
+model.addAttribute("faxcoverform",faxcoverform);
+return "viewfaxcover";
+	
+	
+}
+
+@RequestMapping(value="/insertformbill", method = RequestMethod.POST)
+
+public String insert_formbill(HttpServletRequest request,HttpSession session,@ModelAttribute("formbilldetails")  @Valid Formbill formbilldetails,BindingResult result,ModelMap model)
 {
 	//session.setAttribute("perrydetails",perrychiropracticdetails);
 	if(result.hasErrors())
@@ -820,31 +934,261 @@ public String insert_lettertopatient(HttpServletRequest request,HttpSession sess
 	}	
 	
 	//System.out.println(perrychiropracticdetails.getAddress()+""+perrychiropracticdetails.getAddress1());
-	lettertopatientsDAO.setlettertopatients(lettertopatientsdetails);
-	return "lettertopatients";
+	formbillDAO.setformbill(formbilldetails);
+	return "formbill";
 	 
-}*/
+}
+
+@RequestMapping(value="/insertlettertopatient", method = RequestMethod.POST)
+
+public String insert_lettertopatient(HttpServletRequest request,HttpSession session,@ModelAttribute("lettertopatientsdetails")  @Valid Lettertopatients lettertopatientsdetails,BindingResult result,ModelMap model)
+{
+	if(result.hasErrors())
+	{
+		LettertopatientsForm lettertopatientsform= new LettertopatientsForm();
+		lettertopatientsform.setLettertopatientsdetails(lettertopatientsDAO.getlettertopatients());
+		model.addAttribute("lettertopatientsform",lettertopatientsform);
+		model.addAttribute("Success","true");
+		model.addAttribute("menu", "work");
+		return "lettertopatients";
+	}
+
+	//System.out.println(perrychiropracticdetails.getAddress()+""+perrychiropracticdetails.getAddress1());
+	lettertopatientsDAO.setlettertopatients(lettertopatientsdetails);
+	LettertopatientsForm lettertopatientsform=new LettertopatientsForm();
+	lettertopatientsform.setLettertopatientsdetails(lettertopatientsDAO.getlettertopatients());
+	model.addAttribute("lettertopatientsform",lettertopatientsform);
+		
+	return "viewlettertopatients";
+	
+	 
+}
 
 
-/*@RequestMapping(value="/insertnoticeofassignment", method = RequestMethod.POST)
+@RequestMapping(value="/insertnoticeofassignment", method = RequestMethod.POST)
 
 public String insert_noticeofassignment(HttpServletRequest request,HttpSession session,@ModelAttribute("noticeassignmentdetails")  @Valid Noticeassignment noticeassignmentdetails,BindingResult result,ModelMap model)
 {
-	//session.setAttribute("perrydetails",perrychiropracticdetails);
 	if(result.hasErrors())
-	{ 
-		model.addAttribute("menu","initial");
+	{
+		NoticeassignmentForm noticeassignmentform= new NoticeassignmentForm();
+		noticeassignmentform.setNoticeassignmentdetails(noticeassignmentDAO.getnoticeassignment());
+		model.addAttribute("noticeassignmentform",noticeassignmentform);
+		model.addAttribute("Success","true");
+		model.addAttribute("menu", "work");
 		return "noticeassignment";
-	}	
+	}
+
 	
 	//System.out.println(perrychiropracticdetails.getAddress()+""+perrychiropracticdetails.getAddress1());
 	noticeassignmentDAO.setnoticeassignment(noticeassignmentdetails);
-	return "noticeassignment";
+	NoticeassignmentForm noticeassignmentform=new NoticeassignmentForm();
+	noticeassignmentform.setNoticeassignmentdetails(noticeassignmentDAO.getnoticeassignment());
+	model.addAttribute("noticeassignmentform",noticeassignmentform);
+	return "viewnoticeassignment";
 	 
 }
-*/
 
+@RequestMapping(value="/insertletterofprotection", method = RequestMethod.POST)
 
+public String insert_letterofprotection(HttpServletRequest request,HttpSession session,@ModelAttribute("letterofprotectiondetails")  @Valid Letterofprotection letterofprotectiondetails,BindingResult result,ModelMap model)
+{
+	if(result.hasErrors())
+	{
+		LetterofprotectionForm letterofprotectionform= new LetterofprotectionForm();
+		letterofprotectionform.setLetterofprotectiondetails(letterofprotectionDAO.getletterofprotection());
+		model.addAttribute("letterofprotectionform",letterofprotectionform);
+		model.addAttribute("Success","true");
+		model.addAttribute("menu", "work");
+		return "letterofprotection";
+	}
+
+	//System.out.println(perrychiropracticdetails.getAddress()+""+perrychiropracticdetails.getAddress1());
+	letterofprotectionDAO.setletterofprotection(letterofprotectiondetails);
+	
+	LetterofprotectionForm letterofprotectionform=new LetterofprotectionForm();
+	letterofprotectionform.setLetterofprotectiondetails(letterofprotectionDAO.getletterofprotection());
+	model.addAttribute("letterofprotectionform",letterofprotectionform);
+		return "viewletterofprotection"; 
+}
+@RequestMapping(value="/insertfaxcover", method = RequestMethod.POST)
+
+public String insert_faxcover(HttpServletRequest request,HttpSession session,@ModelAttribute("faxcoverdetails")  @Valid Faxcover faxcoverdetails,BindingResult result,ModelMap model)
+{
+	if(result.hasErrors())
+	{
+		FaxcoverForm faxcoverform= new FaxcoverForm();
+		faxcoverform.setFaxcoverdetails(faxcoverDAO.getfaxcover());
+		model.addAttribute("faxcoverform",faxcoverform);
+		model.addAttribute("Success","true");
+		model.addAttribute("menu", "work");
+		return "faxcover";
+	}
+
+	//System.out.println(perrychiropracticdetails.getAddress()+""+perrychiropracticdetails.getAddress1());
+	faxcoverDAO.setfaxcover(faxcoverdetails);
+	FaxcoverForm faxcoverform=new FaxcoverForm();
+	faxcoverform.setFaxcoverdetails(faxcoverDAO.getfaxcover());
+	model.addAttribute("faxcoverform",faxcoverform);
+	
+	
+	return "viewfaxcover";
+}
+
+@RequestMapping(value="/insertresponseattorney", method = RequestMethod.POST)
+
+public String insertresponseattorney(HttpServletRequest request,HttpSession session,@ModelAttribute("responseattorneydetail")  @Valid Responseattorney responseattorneydetail,BindingResult result,ModelMap model) {
+	if(result.hasErrors())
+	{
+		ResponseattorneyForm responseattorneyform= new ResponseattorneyForm();
+		responseattorneyform.setResponseattorneydetail(responseattorneyDAO.getresponseattorney());
+		model.addAttribute("noticeassignmentform",responseattorneyform);
+		model.addAttribute("Success","true");
+		model.addAttribute("menu", "work");
+		return "responseattorney";
+	}
+
+	//System.out.println(perrychiropracticdetails.getAddress()+""+perrychiropracticdetails.getAddress1());
+	responseattorneyDAO.setresponseattorney(responseattorneydetail);
+	ResponseattorneyForm responseattorneyform=new ResponseattorneyForm();
+	responseattorneyform.setResponseattorneydetail(responseattorneyDAO.getresponseattorney());
+	model.addAttribute("responseattorneyform",responseattorneyform);
+	return "viewresponseattorney";
+	 
+}
+@RequestMapping(value="/updateletterofprotection", method = RequestMethod.POST)
+
+public String update_letterofprotection(HttpServletRequest request,HttpSession session,@ModelAttribute("letterofprotectiondetails")  @Valid Letterofprotection letterofprotectiondetails,BindingResult result,ModelMap model) {
+	if(result.hasErrors())
+	{
+		LetterofprotectionForm letterofprotectionform= new LetterofprotectionForm();
+		letterofprotectionform.setLetterofprotectiondetails(letterofprotectionDAO.getletterofprotection());
+		model.addAttribute("letterofprotectionform",letterofprotectionform);
+		model.addAttribute("Success","true");
+		model.addAttribute("menu", "work");
+		return "letterofprotection";
+	}
+
+	//System.out.println(letterofprotectiondetails.getAddress()+""+letterofprotectiondetails.getAddress1());
+	letterofprotectionDAO.updateletterofprotection(letterofprotectiondetails,letterofprotectiondetails.getLetterid());
+	LetterofprotectionForm letterofprotectionform=new LetterofprotectionForm();
+	letterofprotectionform.setLetterofprotectiondetails(letterofprotectionDAO.getletterofprotection());
+	model.addAttribute("letterofprotectionform",letterofprotectionform);
+	return "viewletterofprotection";
+	 
+}
+
+@RequestMapping(value="/updatefaxcover", method = RequestMethod.POST)
+
+public String update_faxcover(HttpServletRequest request,HttpSession session,@ModelAttribute("faxcoverdetails")  @Valid Faxcover faxcoverdetails,BindingResult result,ModelMap model) {
+	if(result.hasErrors())
+	{
+		FaxcoverForm faxcoverform= new FaxcoverForm();
+		faxcoverform.setFaxcoverdetails(faxcoverDAO.getfaxcover());
+		model.addAttribute("faxcoverform",faxcoverform);
+		model.addAttribute("Success","true");
+		model.addAttribute("menu", "work");
+		return "faxcover";
+	}
+
+	//System.out.println(letterofprotectiondetails.getAddress()+""+letterofprotectiondetails.getAddress1());
+	faxcoverDAO.updatefaxcover(faxcoverdetails,faxcoverdetails.getFaxid());
+	FaxcoverForm faxcoverform=new FaxcoverForm();
+	faxcoverform.setFaxcoverdetails(faxcoverDAO.getfaxcover());
+	model.addAttribute("faxcoverform",faxcoverform);
+	return "viewfaxcover";
+}
+@RequestMapping(value="/updatelettertopatients", method = RequestMethod.POST)
+
+public String update_lettertopatients(HttpServletRequest request,HttpSession session,@ModelAttribute("lettertopatientsdetails")  @Valid Lettertopatients lettertopatientsdetails,BindingResult result,ModelMap model) {
+	if(result.hasErrors())
+	{
+		LettertopatientsForm lettertopatientsform= new LettertopatientsForm();
+		lettertopatientsform.setLettertopatientsdetails(lettertopatientsDAO.getlettertopatients());
+		model.addAttribute("lettertopatientsform",lettertopatientsform);
+		model.addAttribute("Success","true");
+		model.addAttribute("menu", "work");
+		return "lettertopatients";
+	}
+
+	//System.out.println(letterofprotectiondetails.getAddress()+""+letterofprotectiondetails.getAddress1());
+	System.out.println(lettertopatientsdetails.getLetterid());
+	lettertopatientsDAO.updatelettertopatients(lettertopatientsdetails,lettertopatientsdetails.getLetterid());
+	LettertopatientsForm lettertopatientsform=new LettertopatientsForm();
+	lettertopatientsform.setLettertopatientsdetails(lettertopatientsDAO.getlettertopatients());
+	model.addAttribute("lettertopatientsform",lettertopatientsform);
+	
+	
+	return "viewlettertopatients";
+
+}
+
+@RequestMapping(value="/updateresponseattorney", method = RequestMethod.POST)
+
+public String updateresponseattorney(HttpServletRequest request,HttpSession session,@ModelAttribute("responseattorneydetail")  @Valid Responseattorney responseattorneydetail,BindingResult result,ModelMap model) {
+	if(result.hasErrors())
+	{
+		ResponseattorneyForm responseattorneyform= new ResponseattorneyForm();
+		responseattorneyform.setResponseattorneydetail(responseattorneyDAO.getresponseattorney());
+		model.addAttribute("noticeassignmentform",responseattorneyform);
+		model.addAttribute("Success","true");
+		model.addAttribute("menu", "work");
+		return "responseattorney";
+	}
+
+	responseattorneyDAO.updateresponseattorney(responseattorneydetail,responseattorneydetail.getResponseid());
+	ResponseattorneyForm responseattorneyform=new ResponseattorneyForm();
+	responseattorneyform.setResponseattorneydetail(responseattorneyDAO.getresponseattorney());
+	model.addAttribute("responseattorneyform",responseattorneyform);
+	return "viewresponseattorney";
+
+}
+@RequestMapping(value="/updatenoticeassignment", method = RequestMethod.POST)
+
+public String updatenoticeassignment(HttpServletRequest request,HttpSession session,@ModelAttribute("noticeassignmentdetails")  @Valid Noticeassignment noticeassignmentdetails,BindingResult result,ModelMap model) {
+	if(result.hasErrors())
+	{
+		NoticeassignmentForm noticeassignmentform= new NoticeassignmentForm();
+		noticeassignmentform.setNoticeassignmentdetails(noticeassignmentDAO.getnoticeassignment());
+		model.addAttribute("noticeassignmentform",noticeassignmentform);
+		model.addAttribute("Success","true");
+		model.addAttribute("menu", "work");
+		return "noticeassignment";
+	}
+
+	//System.out.println(letterofprotectiondetails.getAddress()+""+letterofprotectiondetails.getAddress1());
+	System.out.println(noticeassignmentdetails.getNoticeid());
+	noticeassignmentDAO.updatenoticeassignment(noticeassignmentdetails,noticeassignmentdetails.getNoticeid());
+	
+	NoticeassignmentForm noticeassignmentform=new NoticeassignmentForm();
+	noticeassignmentform.setNoticeassignmentdetails(noticeassignmentDAO.getnoticeassignment());
+	model.addAttribute("noticeassignmentform",noticeassignmentform);
+	
+	return "viewnoticeassignment";
+
+}
+
+@RequestMapping(value="/updateworkschool", method = RequestMethod.POST)
+
+public String updateworkschool(HttpServletRequest request,HttpSession session,@ModelAttribute("Workschool")  @Valid Workschool workschooldetails,BindingResult result,ModelMap model) {
+	//session.setAttribute("perrydetails",letterofprotectiondetails);
+	if(result.hasErrors())
+	{
+		WorkschoolForm workschoolform= new WorkschoolForm();
+		workschoolform.setWorkschooldetails(workschoolDAO.getworkschool());
+		model.addAttribute("workschoolform",workschoolform);
+		model.addAttribute("Success","true");
+		model.addAttribute("menu", "work");
+		return "updateworkschool";
+	}
+	//System.out.println(letterofprotectiondetails.getAddress()+""+letterofprotectiondetails.getAddress1());
+	workschoolDAO.updateworkschool(workschooldetails,workschooldetails.getWorkid());
+	WorkschoolForm workschoolform=new WorkschoolForm();
+	workschoolform.setWorkschooldetails(workschoolDAO.getworkschool());
+	model.addAttribute("workschoolform",workschoolform);	
+	return "viewworkschool";
+
+}
 
 
 

@@ -1,4 +1,6 @@
 package bephit.model;
+
+import org.hibernate.validator.constraints.NotEmpty;
  public class Letterofprotection
  {
 	 public Letterofprotection(String letterid, String date, String myclient,
@@ -11,11 +13,14 @@ package bephit.model;
 		this.dear = dear;
 		this.truly = truly;
 	}
-	 private String letterid;
+		 private String letterid;
+	
 	 private String date;
+	 @NotEmpty
 	 private String myclient;
 	 private String dateofaccident;
 	 private String dear;
+	 @NotEmpty
 	 private String truly;
 	public Letterofprotection() {
 		super();

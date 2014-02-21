@@ -1,7 +1,11 @@
 package bephit.model;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class Workschool
 {
 	private String workid;
+	@NotEmpty
 	private String date;
 	private String letter;
 	private String beexcused;
@@ -22,6 +26,7 @@ public class Workschool
 	private String light;
 	private String froms;
 	private String tos;
+	@NotEmpty
 	private String returns;
 	public Workschool() {
 		super();

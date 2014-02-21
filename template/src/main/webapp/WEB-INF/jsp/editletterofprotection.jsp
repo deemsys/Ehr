@@ -3,10 +3,12 @@
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
-<link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
-<script src="resources/js/jquery.min.js"></script>
+
+ <link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
+  <link rel="stylesheet" href="/resources/css/style.css" />
+ <script src="resources/js/jquery.min.js"></script> 
  <script src="resources/js/jquery-ui.js"></script>
- <script src="resources/js/jquery-1.9.1.js"></script>
+ <script src="resources/js/jquey-1.9.1.js"></script>
  <STYLE type="text/css">
   P#mypar {font-style:calibri;
   line-height:18px;}
@@ -16,7 +18,9 @@
  $(function() {
            $( "#datepicker" ).datepicker();
          });
- 
+ $(function() {
+     $( "#datepicker1" ).datepicker();
+   });
 </script>
 </head>
  <body>
@@ -73,12 +77,12 @@
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25"  width="180"><span class="err">*</span>IN RE:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My Client:</td>
-               <td ><input type="text" class="input_txtbx1" name="myclient" value="${letterofprotectiondetails.myclient }" id="datepicker" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+               <td ><input type="text" class="input_txtbx1" name="myclient" value="${letterofprotectiondetails.myclient }" id="datepicker" /><span class="err"><form:errors path="Letterofprotection.myclient"></form:errors></td>
              
               </tr>
               <tr>
               <td height="25"  width="180"><span class="err"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date Of Accident:</td>
-               <td ><input type="text" class="input_txtbx1" name="dateofaccident" value="${letterofprotectiondetails.dateofaccident }" id="datepicker" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+               <td ><input type="text" class="input_txtbx1" name="dateofaccident" value="${letterofprotectiondetails.dateofaccident }" id="datepicker1" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
              
               </tr>
              </table><br><br><br><br>
@@ -113,7 +117,7 @@
              <tr><td width="450"></td>
              <td ><p><h1> <b>Very truly yours,</b></h1><p></td></tr>
              <tr><td width="450"></td>
-            <td ><input type="text" class="input_txtbx1" name="truly" value="${letterofprotectiondetails.truly }" id="datepicker" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td></tr>
+            <td ><input type="text" class="input_txtbx1" name="truly" value="${letterofprotectiondetails.truly }" id="datepicker" /><span class="err"><form:errors path="letterofprotection.truly"></form:errors></td></tr>
             <tr><td width="450"></td><td ><p><h1> <b>	Attorney for above client</b></h1><p></td></tr>
              </table>
               <table>

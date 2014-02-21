@@ -1,9 +1,13 @@
 package bephit.model;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class Faxcover
 {
 	private String faxid;
 	private String date;
 	private String tos;
+	@NotEmpty
 	private String faxno;
 	private String froms;
 	private String reply;
@@ -29,6 +33,7 @@ public class Faxcover
 		this.doi = doi;
 	}
 	private String msg;
+	@NotEmpty
 	private String claimno;
 	private String doi;
 	public String getFaxid() {

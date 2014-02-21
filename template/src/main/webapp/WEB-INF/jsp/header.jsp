@@ -974,6 +974,16 @@ color:#fff;
 									<span>Narrative Report</span>
 								</a>
 							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='fax'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu34">
+									<span>Fax Cover</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='returntoschool'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu35">
+									<span>Return to school</span>
+								</a>
+							</li>
 							</c:if>  
 						</ul><div class="clear">
 						<script type="text/javascript">
@@ -1267,9 +1277,28 @@ color:#fff;
 							      <li><a href="viewxray">View Xray</a></li>
 							      <li><a href="formbill">Form Bill</a></li>
 							      <li><a href="viewformbill">View Form Bill</a></li>
+							      <li><a href="pimedpay">PI med pay Warning letter</a></li>
+							      <li><a href="viewpimedpay">View PI med pay Warning letter</a></li>
 							     <li><a href="letterofprotection">Letter of Protection</a></li>
-							      <li><a href="viewletterofprotection">View Xray</a></li>
+							      <li><a href="viewletterofprotection">View Letter of Protection</a></li>
 							     
+							     </ul>
+							     <ul id="ddsubmenu34" class="ddsubmenustyle">
+							      <li><a href="faxcover">Faxcover</a></li>
+							      <li><a href="viewfaxcover">View Fax cover</a></li>
+							      <li><a href="lettertopatients">Letter to Patients</a></li>
+							      <li><a href="viewlettertopatients">View Letter to Patients</a></li>
+							     <li><a href="noticeassignment">Notice Assignments</a></li>
+							      <li><a href="viewnoticeassignment">View Notice Assignments</a></li>	
+							      <li><a href="requestfordemand">Request for Demand</a></li>
+							      <li><a href="viewrequestfordemand">View Request for Demand</a></li>	
+							       <li><a href="responseattorney">Response Attorney</a></li>
+							      <li><a href="viewresponseattorney">View Request for Demand</a></li>				             						     
+					             			             						     
+					             </ul>
+					              <ul id="ddsubmenu35" class="ddsubmenustyle">
+							      <li><a href="returntoschool">Return to School</a></li>
+							      <li><a href="viewreturntoschool">View Return to School</a></li>
 							     </ul>
 							     </li>
 				         </ul>

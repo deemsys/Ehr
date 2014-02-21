@@ -3,10 +3,12 @@
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
-<link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
-<script src="resources/js/jquery.min.js"></script>
+
+ <link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
+  <link rel="stylesheet" href="/resources/css/style.css" />
+ <script src="resources/js/jquery.min.js"></script> 
  <script src="resources/js/jquery-ui.js"></script>
- <script src="resources/js/jquery-1.9.1.js"></script>
+ <script src="resources/js/jquey-1.9.1.js"></script>
  <STYLE type="text/css">
   P#mypar {font-style:calibri;
   line-height:18px;}
@@ -16,7 +18,9 @@
  $(function() {
            $( "#datepicker" ).datepicker();
          });
- 
+ $(function() {
+           $( "#datepicker1" ).datepicker();
+         });
 </script>
 </head>
  <body>
@@ -71,7 +75,7 @@
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err">*</span>FAX#:</td>
-              <td ><input type="text" class="input_txtbx1" name="faxno" id="datepicker" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="faxno" id="datepicker" /><span class="err"><form:errors path="Faxcover.faxno"></form:errors></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -105,10 +109,10 @@
               <td height="25" width="120"><span class="err">*</span>Message:</td>
               <td ><input type="text" class="input_txtbx1" name="msg" id="datepicker" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
             <td ><span class="err">*</span>Claim No:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-              <td ><input type="text" class="input_txtbx1" name="claimno" id="datepicker" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="claimno" id="datepicker" /><span class="err"><form:errors path="Faxcover.claimno"></form:errors></td>
              <tr>
               <td height="25" width="120"><span class="err">*</span>DOI</td>
-              <td ><input type="text" class="input_txtbx1" name="doi" id="datepicker" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="doi" id="datepicker1" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
              </tr>
               </tr>
               

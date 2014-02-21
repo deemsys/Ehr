@@ -170,9 +170,31 @@
  <bean id="LetterofprotectionDAO" class="bephit.dao.LetterofprotectionDAO">
            <property name="dataSource" ref="dataSource" />
    </bean>
-
-
   <bean id="RequestfordemandDAO" class="bephit.dao.RequestfordemandDAO">
+           <property name="dataSource" ref="dataSource" />
+   </bean>
+   <bean id="LettertopatientsDAO" class="bephit.dao.LettertopatientsDAO">
+           <property name="dataSource" ref="dataSource" />
+   </bean>
+    <bean id="FaxcoverDAO" class="bephit.dao.FaxcoverDAO">
+           <property name="dataSource" ref="dataSource" />
+   </bean>
+    <bean id="PimedpayDAO" class="bephit.dao.PimedpayDAO">
+           <property name="dataSource" ref="dataSource" />
+   </bean>
+   <bean id="WorkschoolDAO" class="bephit.dao.WorkschoolDAO">
+           <property name="dataSource" ref="dataSource" />
+   </bean>
+   <bean id="ReturntoschoolDAO" class="bephit.dao.ReturntoschoolDAO">
+           <property name="dataSource" ref="dataSource" />
+   </bean>
+   <bean id="Patientattorney1DAO" class="bephit.dao.Patientattorney1DAO">
+           <property name="dataSource" ref="dataSource" />
+   </bean>
+   <bean id="ResponseattorneyDAO" class="bephit.dao.ResponseattorneyDAO">
+           <property name="dataSource" ref="dataSource" />
+   </bean>
+   <bean id="NoticeassignmentDAO" class="bephit.dao.NoticeassignmentDAO">
            <property name="dataSource" ref="dataSource" />
    </bean>
 </beans>

@@ -99,7 +99,7 @@
        		 </td>
        		 </tr>
        		 <tr><td>
-       		 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;         Attached you will find itemized charges for your care. To avoid legal action, please submit payment. To avoid legal action, please submit payment in full to Chiropractic Therapy Center. Your total bill to be paid to Chiropractic Therapy Center is <input type="text" class="input_txtbx1" name="letter" id="letter" />.<span class="err"><%-- <form:errors path="lettertopatient.letter"></form:errors> --%> </span>
+       		 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;         Attached you will find itemized charges for your care. To avoid legal action, please submit payment. To avoid legal action, please submit payment in full to Chiropractic Therapy Center. Your total bill to be paid to Chiropractic Therapy Center is <input type="text" class="input_txtbx1" name="letter" id="letter" />.<span class="err"><form:errors path="Lettertopatients.letter"></form:errors> </span>
        		 </p>
        		 </td>
        		 </tr>

@@ -3,10 +3,12 @@
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
-<link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
-<script src="resources/js/jquery.min.js"></script>
+
+ <link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
+  <link rel="stylesheet" href="/resources/css/style.css" />
+ <script src="resources/js/jquery.min.js"></script> 
  <script src="resources/js/jquery-ui.js"></script>
- <script src="resources/js/jquery-1.9.1.js"></script>
+ <script src="resources/js/jquey-1.9.1.js"></script>
  <STYLE type="text/css">
   P#mypar {font-style:calibri;
   line-height:18px;}
@@ -63,9 +65,9 @@
              <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
               <td height="20" width="180"><span class="err">*</span>Name Of Insurance Company:</td>
-              <td ><input type="text" class="input_txtbx1" name="nameofins" id="name" /><span class="err"><form:errors path="noticeofassignment.name"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="nameofins" id="name" /><span class="err"><form:errors path="Noticeassignment.nameofins"></form:errors></td>
               <td height="40" width="110" ><span class="err">&nbsp;&nbsp;*</span>Name Of Attorney:</td>
-              <td >&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="nameofattorney" id="name" /><span class="err"><form:errors path="noticeofassignment.nameofattorney"></form:errors></span></td>
+              <td >&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="nameofattorney" id="name" /><span class="err"><form:errors path="Noticeassignment.nameofattorney"></form:errors></span></td>
               </tr>
               </table>
                 <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -96,7 +98,7 @@
           </tr> 
           <tr>
             <td height="40" width="180"><span class="err">*</span>PatientName:</td>
-              <td ><input type="text" class="input_txtbx1" name="patientname" id="patientname" /><span class="err"><form:errors path="noticeofassignment.patientname"></form:errors></span></td>                      
+              <td ><input type="text" class="input_txtbx1" name="patientname" id="patientname" /><span class="err"><form:errors path="Noticeassignment.patientname"></form:errors></span></td>                      
           </tr> 
           <tr>
             <td height="30" width="180"><span class="err">*</span>Date Of Accident:</td>
@@ -104,7 +106,7 @@
           </tr> 
           <tr>
             <td height="20" width="180"><span class="err">*</span>Today'sDate:</td>
-              <td ><input type="text" class="input_txtbx1" name="todaysdate" id="todaysdate" /><span class="err"><form:errors path="noticeofassignment.todaysdate"></form:errors></span></td>                      
+              <td ><input type="text" class="input_txtbx1" name="todaysdate" id="datepicker" /><span class="err"><form:errors path="noticeofassignment.todaysdate"></form:errors></span></td>                      
           </tr> <br>  
             </table>
             
@@ -176,7 +178,7 @@ do not receive a response, we will act in reliance that you will comply with it'
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
        		  <td valign="right" align="right" class="input_txt"><span class="err">*</span>Treating Physician
-              <input type="text" class="input_txtbx1" name="treatingphysician" id="treatingphysician" /><span class="err"><form:errors path="responseattorney.treatingphysician"></form:errors></td>
+              <input type="text" class="input_txtbx1" name="treatingphysician" id="treatingphysician" /><span class="err"><form:errors path="Noticeassignment.treatingphysician"></form:errors></td>
               </tr><br>
               </table>
               <table><tr> <td><input type="submit" class="submit_btn" value="Save"></td>

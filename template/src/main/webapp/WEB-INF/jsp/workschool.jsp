@@ -3,10 +3,12 @@
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
-<link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
-<script src="resources/js/jquery.min.js"></script>
+
+ <link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
+  <link rel="stylesheet" href="/resources/css/style.css" />
+ <script src="resources/js/jquery.min.js"></script> 
  <script src="resources/js/jquery-ui.js"></script>
- <script src="resources/js/jquery-1.9.1.js"></script>
+ <script src="resources/js/jquey-1.9.1.js"></script>
  <STYLE type="text/css">
   P#mypar {font-style:calibri;
   line-height:18px;}
@@ -16,7 +18,15 @@
  $(function() {
            $( "#datepicker" ).datepicker();
          });
- 
+ $(function() {
+     $( "#datepicker1" ).datepicker();
+   });
+ $(function() {
+     $( "#datepicker2" ).datepicker();
+   });
+ $(function() {
+     $( "#datepicker3" ).datepicker();
+   });
 </script>
 </head>
  <body>
@@ -55,20 +65,20 @@
              <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err">*</span>Date:</td>
-              <td ><input type="text" class="input_txtbx1" name="date" id="datepicker" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="date" id="datepicker" /><span class="err"><form:errors path="Workschool.date"></form:errors></span></td>
               </tr>
               </table><br>
               <table>
               <tr>
               <td>
-              This is to certify that&nbsp;&nbsp;&nbsp; <input type="text" class="input_txtbx1" name="letter" id="datepicker" /><form:errors path="Hardshipagreement.date"></form:errors> is under my care.  In order to avoid aggravation of his/her condition, I recommend that he/she...
+              This is to certify that&nbsp;&nbsp;&nbsp; <input type="text" class="input_txtbx1" name="letter" id="letter" /><form:errors path="Workschool.letter"></form:errors> is under my care.  In order to avoid aggravation of his/her condition, I recommend that he/she...
 
               
               </td>
               </tr>
               </table><br><br>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
-        	  <tr><td width="60"><input type="text" class="input_txtbx1" name="beexcused" id="datepicker" style="width: 126px; "/><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+        	  <tr><td width="60"><input type="text" class="input_txtbx1" name="beexcused" id="beexcused" style="width: 126px; "/><span class="err"><form:errors path="Workschool.beexcused"></form:errors></td>
         	  <td width="150" >
         	  <b>
         	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Be Excused From:
@@ -82,7 +92,7 @@
         	  </tr>
        		  </table><br>
        		   <table cellpadding="0" cellspacing="0" border="0" width="100%">
-        	  <tr><td width="60"><input type="text" class="input_txtbx1" name="beconfined" id="datepicker" style="width: 126px; "/><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+        	  <tr><td width="60"><input type="text" class="input_txtbx1" name="beconfined" id="beconfined" style="width: 126px; "/><span class="err"><form:errors path="Workschool.beconfined"></form:errors></td>
         	  <td width="150">
         	  <b>
         	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Be Confined To:
@@ -108,7 +118,7 @@
        		  </table>
        		  
        		   <table cellpadding="0" cellspacing="0" border="0" width="100%">
-        	  <tr height="30"><td width="60"><input type="text" class="input_txtbx1" name="lifting" id="datepicker" style="width: 126px; "/><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+        	  <tr height="30"><td width="60"><input type="text" class="input_txtbx1" name="lifting" id="lifting" style="width: 126px; "/><span class="err"><form:errors path="Workschool.lifting"></form:errors></td>
         	  <td width="250">
         	  <b>
         	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Maximum lifting capability:
@@ -125,7 +135,7 @@
         	  </tr>
        		  </table>
        		  <table cellpadding="0" cellspacing="0" border="0" width="100%">
-        	  <tr height="30"><td width="60"><input type="text" class="input_txtbx1" name="pushing" id="datepicker" style="width: 126px; "/><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+        	  <tr height="30"><td width="60"><input type="text" class="input_txtbx1" name="pushing" id="pushing" style="width: 126px; "/><span class="err"><form:errors path="Workschool.pushing"></form:errors></td>
         	  <td width="250">
         	  <b>
         	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Low force pushing/pulling:  
@@ -141,7 +151,7 @@
         	  </tr>
        		  </table>
        		   <table cellpadding="0" cellspacing="0" border="0" width="100%">
-        	  <tr height="30"><td width="60"><input type="text" class="input_txtbx1" name="drive" id="datepicker" style="width: 126px; "/><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+        	  <tr height="30"><td width="60"><input type="text" class="input_txtbx1" name="drive" id="drive" style="width: 126px; "/><span class="err"><form:errors path="Workschool.drive"></form:errors></td>
         	  <td>
         	  <b>
         	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Unable to drive long distances (MAX ONE HOUR)  
@@ -149,7 +159,7 @@
         	  </td>
         	  </tr></table>
         	  <table cellpadding="0" cellspacing="0" border="0" width="100%">
-        	  <tr height="30"><td width="60"><input type="text" class="input_txtbx1" name="sitting" id="datepicker" style="width: 126px; "/><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+        	  <tr height="30"><td width="60"><input type="text" class="input_txtbx1" name="sitting" id="sitting" style="width: 126px; "/><span class="err"><form:errors path="Workschool.sitting"></form:errors></td>
         	  <td width="250">
         	  <b>
         	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sitting excessive periods of time:   
@@ -165,7 +175,7 @@
         	  </tr>
        		  </table>
        		   <table cellpadding="0" cellspacing="0" border="0" width="100%">
-        	  <tr height="30"><td width="60"><input type="text" class="input_txtbx1" name="standing" id="datepicker" style="width: 126px; "/><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+        	  <tr height="30"><td width="60"><input type="text" class="input_txtbx1" name="standing" id="standing" style="width: 126px; "/><span class="err"><form:errors path="Workschool.standing"></form:errors></td>
         	  <td width="250">
         	  <b>
         	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Standing excessive periods of time:   
@@ -181,7 +191,7 @@
         	  </tr>
        		  </table>
        		   <table cellpadding="0" cellspacing="0" border="0" width="100%">
-        	  <tr height="30"><td width="60"><input type="text" class="input_txtbx1" name="bend" id="datepicker" style="width: 126px; "/><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+        	  <tr height="30"><td width="60"><input type="text" class="input_txtbx1" name="bend" id="bend" style="width: 126px; "/><span class="err"><form:errors path="Workschool.bend"></form:errors></td>
         	  <td>
         	  <b>
         	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  No repetitive bending
@@ -189,7 +199,7 @@
         	  </td>
         	  </tr></table>
         	  <table cellpadding="0" cellspacing="0" border="0" width="100%">
-        	  <tr height="30"><td width="60"><input type="text" class="input_txtbx1" name="entry" id="datepicker" style="width: 126px; "/><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+        	  <tr height="30"><td width="60"><input type="text" class="input_txtbx1" name="entry" id="entry" style="width: 126px; "/><span class="err"><form:errors path="Workschool.entry"></form:errors></td>
         	  <td >
         	  <b>
          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	 Use caution while entering/exiting vehicles
@@ -197,7 +207,7 @@
         	  </td>
         	  </tr></table>
         	   <table cellpadding="0" cellspacing="0" border="0" width="100%">
-        	  <tr height="30"><td width="60"><input type="text" class="input_txtbx1" name="light" id="datepicker" style="width: 126px; "/><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+        	  <tr height="30"><td width="60"><input type="text" class="input_txtbx1" name="light" id="light" style="width: 126px; "/><span class="err"><form:errors path="Workschool.light"></form:errors></td>
         	  <td >
         	  <b>
         	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Light recreation only
@@ -207,21 +217,21 @@
         	   <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err">*</span>From(Date):</td>
-              <td ><input type="text" class="input_txtbx1" name="froms" id="datepicker" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="froms" id="datepicker1" /><span class="err"><form:errors path="Workschool.froms"></form:errors></td>
               <td height="25" width="120"><span class="err">*</span>To(Date):</td>
-              <td ><input type="text" class="input_txtbx1" name="tos" id="datepicker" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="tos" id="datepicker2" /><span class="err"><form:errors path="Workschool.tos"></form:errors></td>
               </tr>
               </table><br>
              <table cellpadding="0" cellspacing="0" border="0" width="100%">
-              <tr> <td ><input type="text" class="input_txtbx1" name="returns" id="datepicker" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <tr> <td ><input type="text" class="input_txtbx1" name="returns" id="returns" /><span class="err"><form:errors path="Workschool.returns"></form:errors></td>
         	  <td ><span class="err">*</span>Return to Regular Duty/School/P.E. on: (Date) </td>
-        	  <td ><input type="text" class="input_txtbx1" name="returndate" id="datepicker" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+        	  <td ><input type="text" class="input_txtbx1" name="returndate" id="datepicker3" /><span class="err"><form:errors path="Workschool.returndate"></form:errors></td>
         	  </tr></table><br>
         	
         	  <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err">*</span>Diagnosis:</td>
-              <td ><input type="text" class="input_txtbx1" name="Diagnosis" id="datepicker" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="Diagnosis" id="diagnosis" /><span class="err"><form:errors path="Workschool.diagnosis"></form:errors></td>
               </tr>
               </table><br>
         	  <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -240,7 +250,7 @@ Yours in Health,</b>
  <td align="right"><b>Dr. Darrin A. Pordash</b></td>
  </tr>
  </table>
-  <table>
+ <table>
               <tr>
               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
               <td><input type="submit" class="submit_btn" value="Save"></td>
