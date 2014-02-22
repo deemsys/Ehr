@@ -14,7 +14,7 @@ public class Formbill
 	@NotEmpty
 	private String address2;
 	@NotEmpty
-	private String name;
+	private String name;	
 	@NotEmpty
 	private String address3;
 	@NotEmpty
@@ -25,7 +25,9 @@ public class Formbill
 	private String address5;
 	@NotEmpty
 	private String address6;
+	@NotEmpty
 	private String medicalfee;
+	@NotEmpty
 	private String amount;
 	
 	public Formbill() {

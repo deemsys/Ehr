@@ -22,7 +22,7 @@
       		<tr>
         		<td valign="top" align="left">
 			        <div class="headings altheading">
-			          <h2>VIEW LETTER OF PROTECTION</h2>
+			          <h2>VIEW RETURN TO SCHOOL</h2>
 			        </div>
 			        <div class="contentbox">
 			      <!--   <form action="findPatients" method="GET">  --> 
@@ -31,28 +31,28 @@
 				     <tr class="title">
 								
 								<td valign="top" align="left" width="10%">ID</td>
-         						<td valign="top" align="left" width="10%">Clinic Name</td>					         	
-					         	<td valign="top" align="left" width="10%">Date of accident</td>
+         						<td valign="top" align="left" width="10%">Patient Name</td>					         	
+					         	<td valign="top" align="left" width="10%">Date</td>
 							<td valign="top" align="left" width="10%">Action</td>
           			</tr>
 							<!-- getting addAttibute value -->
-						<c:if test="${fn:length(letterofprotectionform.letterofprotectiondetails) gt 0}">
-        				 <c:forEach items="${letterofprotectionform.letterofprotectiondetails}" var="letterofprotectiondetails" varStatus="status">
+						<c:if test="${fn:length(returntoschoolform.returntoschooldetails) gt 0}">
+        				 <c:forEach items="${returntoschoolform.returntoschooldetails}" var="returntoschooldetails" varStatus="status">
         				       				<tr class="row1">
-        				       				<td valign="top" align="left" width="10%">${letterofprotectiondetails.letterid}</td>
-								            <td valign="top" align="left"  width="10%"><%-- <a href="hipexamlist?hipexamno=${letterofprotectiondetails.hipexamno}"> --%>${letterofprotectiondetails.clinicname}</td>
+        				       				<td valign="top" align="left" width="10%">${returntoschooldetails.schoolid}</td>
+								            <td valign="top" align="left"  width="10%"><%-- <a href="hipexamlist?hipexamno=${perrychiropracticdetails.hipexamno}"> --%>${returntoschooldetails.name}</td>
 											
-											<td valign="top" align="left" width="10%">${letterofprotectiondetails.dateofaccident}</td>
+											<td valign="top" align="left" width="10%">${returntoschooldetails.date}</td>
 											
 											<td valign="top" align="left" width="10%">
-											<a href="#" title="" ><img src="resources/images/icons/icon_edit.png" alt="Edit" /></a> <a href="<c:out value="editletterofprotection?letterid=${letterofprotectiondetails.letterid}"/>"  style="padding-right:10px; ">Edit</a>
-											<a href="#" title=""><img src="resources/images/icons/icon_delete.png" alt="Delete" /></a><a href=" <c:out value="deleteperrychiropractic?perryid=${letterofprotectiondetails.letterid}"/>" onclick="return confirmation() ">Remove</a>
+											<a href="#" title="" ><img src="resources/images/icons/icon_edit.png" alt="Edit" /></a> <a href="<c:out value="editreturntoschool?schoolid=${returntoschooldetails.schoolid}"/>"  style="padding-right:10px; ">Edit</a>
+											<a href="#" title=""><img src="resources/images/icons/icon_delete.png" alt="Delete" /></a><a href=" <c:out value="deletereturntoschool?schoolid=${returntoschooldetails.schoolid}"/>" onclick="return confirmation() ">Remove</a>
 											</td>
 										
 								</tr>
 							    	</c:forEach>
 							    </c:if>	
-							    <c:if test="${fn:length(letterofprotectionform.letterofprotectiondetails) == 0}">	
+							    <c:if test="${fn:length(returntoschoolform.returntoschooldetails) == 0}">	
 							    	<tr class="row1">
 							    	<td colspan="7" width="100%"><center><b></b></center></td>
 							    	</tr>

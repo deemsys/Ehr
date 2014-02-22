@@ -3,10 +3,12 @@
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
-<link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
-<script src="resources/js/jquery.min.js"></script>
+
+ <link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
+  <link rel="stylesheet" href="/resources/css/style.css" />
+ <script src="resources/js/jquery.min.js"></script> 
  <script src="resources/js/jquery-ui.js"></script>
- <script src="resources/js/jquery-1.9.1.js"></script>
+ <script src="resources/js/jquey-1.9.1.js"></script>
  <STYLE type="text/css">
   P#mypar {font-style:calibri;
   line-height:18px;}
@@ -14,9 +16,23 @@
   </STYLE>
  <script>
  $(function() {
-           $( "#datepicker" ).datepicker();
+           $( "#datepicker1" ).datepicker();
          });
- 
+ $(function() {
+           $( "#datepicker2" ).datepicker();
+         });
+ $(function() {
+           $( "#datepicker3" ).datepicker();
+         });
+$(function() {
+           $( "#datepicker4" ).datepicker();
+         });
+         
+        $(function() {
+           $( "#datepicker5" ).datepicker();
+         });
+
+
 </script>
 </head>
  <body>
@@ -45,7 +61,7 @@
         (440) 934-3099  FAX (440) 93403107</h4></p>	</td></tr></table>
         ___________________________________________________________________________________________________________________
           <div class="contentbox"><table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table" style="width: 583px; "><tr><td>
-        Date: <input type="text" class="input_txtbx1" name="date" id="date"><span class="err"><form:errors path="Perrychiropractic.insurance"></form:errors></span></td></tr></table>
+        Date: <input type="text" class="input_txtbx1" name="date" id="datepicker1"><span class="err"><form:errors path="Returntoschool.date"></form:errors></span></td></tr></table>
 </div>
         
         <div class="contentbox"> <table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table" style="width: 583px; "><tr><td>
@@ -69,21 +85,21 @@ This is to certify that
   <p><b>With the following restrictions:</b></p></td></tr></table>
   
   <div class="contentbox"> <table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table" style="width: 583px; "><tr><td>
-             <tr><td> <input type="text" class="input_txtbx1" name="capability" id="capability">
+             <tr><td> <select name="capability"><option value="10lbs">10lbs</option><option value="20lbs">20lbs</option><option value="30lbs">30lbs</option><option value="40lbs">40lbs</option><option value="50lbs">50lbs</option></select>
             Maximum lifting capability: 10 lbs.  20 lbs.  30 lbs. 40 lbs.  50 lbs.</td></tr>
-                         <tr><td> <input type="text" class="input_txtbx1" name="force" id="force">
+                         <tr><td> <select name="force"><option value="10lbs">10lbs</option><option value="20lbs">20lbs</option><option value="30lbs">30lbs</option><option value="40lbs">40lbs</option><option value="50lbs">50lbs</option></select>
              Low force pushing/pulling   10 lbs.  20 lbs.  30 lbs. 40 lbs.  50 lbs.
               </td></tr>
               
               <tr><td>
               <input type="text" class="input_txtbx1" name="distance" id="distance">
            Unable to drive long distances (one hour maximum)</td></tr>
-                         <tr><td> <input type="text" class="input_txtbx1" name="sittime" id="sittime">
+                         <tr><td> <select name="sittime"><option value="">1hrs</option><option value="">2hrs</option><option value="">3hrs</option><option value="">4hrs</option><option value="">5hrs</option></select>
              Sitting excessive periods of time:      1 hr.  2hrs.  3 hrs.  4hrs.  5hrs.
               </td></tr>
               
               <tr><td>
-              <input type="text" class="input_txtbx1" name="standtime" id="standtime">
+              <select name="standtime"><option value="">1hrs</option><option value="">2hrs</option><option value="">3hrs</option><option value="">4hrs</option><option value="">50lbs</option></select>
             Standing excessive periods of time:   1 hr.  2hrs.  3 hrs.  4hrs.  5hrs.</td></tr>
                          <tr><td> <input type="text" class="input_txtbx1" name="repetitive" id="repetitive">
              No repetitive bending
@@ -99,14 +115,13 @@ This is to certify that
               </td></tr></table>
       
          <div class="contentbox"><table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table" style="width: 583px; "><tr><td>
-        From: (date) <input type="text" class="input_txtbx1" name="fromdate" id="fromdate">to (date) <input type="text" class="input_txtbx1" name="todate" id="todate"><span class="err"><form:errors path="Perrychiropractic.insurance"></form:errors></span></td></tr></table>
+        From: (date) <input type="text" class="input_txtbx1" name="fromdate" id="datepicker2">to (date) <input type="text" class="input_txtbx1" name="todate" id="datepicker3"><span class="err"><form:errors path="Returntoschool.fromdate"></form:errors></span></td></tr></table>
         </div>
         
         <div class="contentbox"><table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table" style="width: 633px; "><tr><td>
-        <input type="text" class="input_txtbx1" name="returnto" id="returnto">Return to Return Duty/School/P.E. on (date)<input type="text" class="input_txtbx1" name="ondate" id="ondate"><span class="err"><form:errors path="Perrychiropractic.insurance"></form:errors></span></td></tr></table>
+        <input type="text" class="input_txtbx1" name="returnto" id="datepicker4">Return to Return Duty/School/P.E. on (date)<input type="text" class="input_txtbx1" name="ondate" id="datepicker5"><span class="err"><form:errors path="Returntoschool.ondate"></form:errors></span></td></tr></table>
         </div>
-    
-     <div class="contentbox"><table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table" style="width: 583px; "><tr><td>
+    <div class="contentbox"><table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table" style="width: 583px; "><tr><td>
        Diagnosis <input type="text" class="input_txtbx1" name="diagnosis" id="diagnosis"></td></tr></table>
         </div>
         
@@ -115,7 +130,8 @@ This is to certify that
 </td></tr>
 <tr><td>
 Yours in health,
-</tr></td><br> <tr><td>
+</tr></td><br>
+ <tr><td><tr><td><input type="text" class="input_txtbx1" name="dr" id="dr">
 Dr. Darrin A. Pordash</tr></td><br> 
 </td></tr></table>
         </div>

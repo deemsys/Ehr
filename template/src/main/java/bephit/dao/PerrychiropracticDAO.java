@@ -45,7 +45,7 @@ public class PerrychiropracticDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 
-	    	 String cmd="INSERT INTO perrychiropractic (insurance,address,address1,reg,nameofperson,dateofaccident,subject,sign) VALUES ('"+perrychiropracticdetails.getInsurance()+"','"+perrychiropracticdetails.getAddress()+"','"+perrychiropracticdetails.getAddress1()+"','"+perrychiropracticdetails.getReg()+"','"+perrychiropracticdetails.getNameofperson()+"','"+perrychiropracticdetails.getDateofaccident()+"','"+perrychiropracticdetails.getSubject()+"','"+perrychiropracticdetails.getSign()+"')";
+	    	 String cmd="INSERT INTO perrychiropractic (insurance,address,address1,reg,nameofperson,dateofaccident,subject) VALUES ('"+perrychiropracticdetails.getInsurance()+"','"+perrychiropracticdetails.getAddress()+"','"+perrychiropracticdetails.getAddress1()+"','"+perrychiropracticdetails.getReg()+"','"+perrychiropracticdetails.getNameofperson()+"','"+perrychiropracticdetails.getDateofaccident()+"','"+perrychiropracticdetails.getSubject()+"')";
 	    	    System.out.println("cmd insert value"+cmd);
 	    	    statement.executeUpdate(cmd);
 	    	    }
@@ -126,7 +126,7 @@ public class PerrychiropracticDAO {
 						resultSet.getString("reg"),
 			    		resultSet.getString("nameofperson"),
 			    		resultSet.getString("DateofAccident"),
-						resultSet.getString("subject"),resultSet.getString("sign")
+						resultSet.getString("subject")
 			    		 ));
 			    	
 			}
@@ -165,7 +165,7 @@ public class PerrychiropracticDAO {
 						resultSet.getString("reg"),
 			    		resultSet.getString("nameofperson"),
 			    		resultSet.getString("DateofAccident"),
-						resultSet.getString("subject"),resultSet.getString("sign")
+						resultSet.getString("subject")
 			    		 ));
 				System.out.println("Name::::::::::::::::::"+perrychiropractic.get(0).getNameofperson());
 			    	
@@ -205,7 +205,7 @@ public class PerrychiropracticDAO {
 	    +"',reg='"+ perrychiropractic.getReg()
 	    +"',nameofperson='"+ perrychiropractic.getNameofperson()
 	    +"',DateOfAccident='"+perrychiropractic.getDateofaccident()
-	    +"',subject='"+perrychiropractic.getSubject()+"',sign='"+perrychiropractic.getSign()+"' where perryid='"+perryid+"'";
+	    +"',subject='"+perrychiropractic.getSubject()+"' where perryid='"+perryid+"'";
 	   
 	        
 	    

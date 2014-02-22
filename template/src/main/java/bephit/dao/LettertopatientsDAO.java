@@ -12,8 +12,8 @@ import java.util.Date;
 import java.util.List;
 import javax.sql.DataSource;
 
-import bephit.model.Letterofprotection;
-import bephit.model.Lettertopatients;;
+import bephit.model.Lettertopatients;
+import bephit.model.Perrychiropractic;
 
 
 
@@ -44,7 +44,7 @@ public class LettertopatientsDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 
-	    	 String cmd="INSERT INTO tbl_lettertopatient (letter) VALUES ('"+lettertopatientsdetails.getLetter()+"')";
+	    	 String cmd="INSERT INTO lettertopatients (letter) VALUES ('"+lettertopatientsdetails.getLetter()+"')";
 	    	    System.out.println("cmd insert value"+cmd);
 	    	    statement.executeUpdate(cmd);
 	    	    }
@@ -65,153 +65,12 @@ public class LettertopatientsDAO {
 	        		return 0;
 	    	}
 	    	
-	public List<Lettertopatients> getlettertopatients(){
-		Connection con = null;
-		Statement statement = null;
-		ResultSet resultSet = null;
-		try {
-			con = dataSource.getConnection();
-			statement = con.createStatement();
-		} catch (SQLException e1) {
-			e1.printStackTrace();
-		}
-		List<Lettertopatients> lettertopatients = new ArrayList<Lettertopatients>();
-	    try{
-			resultSet = statement.executeQuery("select * from tbl_lettertopatient");
-			while(resultSet.next()){
-				lettertopatients.add(new Lettertopatients
-						(resultSet.getString("letterid"),
-								resultSet.getString("letter")
-						
-			    		
-						
-			    		 ));
-			
-			    	
-			}
-	    }catch(Exception e){
-	    	System.out.println(e.toString());
-	    	releaseResultSet(resultSet);
-	    	releaseStatement(statement);
-	    	releaseConnection(con);
-	    }finally{
-	    	releaseResultSet(resultSet);
-	    	releaseStatement(statement);
-	    	releaseConnection(con);	    	
-	    }
-	    return lettertopatients;
-		
-	}
-	public List<Lettertopatients> getlettertopatients(String letterid){
-		Connection con = null;
-		Statement statement = null;
-		ResultSet resultSet = null;
-		try {
-			con = dataSource.getConnection();
-			statement = con.createStatement();
-		} catch (SQLException e1) {
-			e1.printStackTrace();
-		}
-		List<Lettertopatients> lettertopatients = new ArrayList<Lettertopatients>();
-	    try{
-			resultSet = statement.executeQuery("select * from tbl_lettertopatient where letterid='"+letterid+"'");
-			while(resultSet.next()){
-				lettertopatients.add(new Lettertopatients
-						(resultSet.getString("letterid"),
-						resultSet.getString("letter")	    		
-			    		 ));
-				
-			    	
-			}
-	    }catch(Exception e){
-	    	System.out.println(e.toString());
-	    	releaseResultSet(resultSet);
-	    	releaseStatement(statement);
-	    	releaseConnection(con);
-	    }finally{
-	    	releaseResultSet(resultSet);
-	    	releaseStatement(statement);
-	    	releaseConnection(con);	    	
-	    }
-	    return lettertopatients;
-		
-	}
-	
-	public int updatelettertopatients(Lettertopatients lettertopatientsdetails,String letterid)
-	{
-		Connection con = null;
-		Statement statement = null;
-		ResultSet resultSet = null;
-		int flag=0;
-		try {
-			con = dataSource.getConnection();
-			statement = con.createStatement();
-		} catch (SQLException e1) {
-			
-			
-			e1.printStackTrace();
-		}
-	    try{
-	    	 String cmd="update tbl_lettertopatient set letter='"+ lettertopatientsdetails.getLetter()+"' where letterid='"+letterid+"'";	    			
 
-	    
-	   System.out.println("cmd insert value"+cmd);
-	    statement.executeUpdate(cmd);
-	    }
-	    catch(Exception e){
-	    	System.out.println(e.toString());
-	    	releaseStatement(statement);
-	    	releaseConnection(con);
-	    	flag=0;
-	    	//return 0;
-	    }finally{
-	     	releaseStatement(statement);
-	    	releaseConnection(con);	    
-	    	
-	    }
-	    if(flag==1)
-    		return 1;
-    	else
-    		return 0;
-	}
 	
-	public int deletelettertopatients(String letterid)
-	{
-		Connection con = null;
-		Statement statement = null;
-		ResultSet resultSet = null;
-		int flag=0;
-		try {
-			con = dataSource.getConnection();
-			statement = con.createStatement();
-		} catch (SQLException e1) {
-			e1.printStackTrace();
-		}
-		
-	    try{
-	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-	    	 Date date = new Date();
-	    	 
-	    	 String cmd="delete from tbl_lettertopatient where letterid='"+letterid+"'";
-	    	    System.out.println("cmd insert value"+cmd);
-	    	    statement.executeUpdate(cmd);
-	    	    }
-	    	    catch(Exception e){
-	    	    	System.out.println(e.toString());
-	    	    	releaseStatement(statement);
-	    	    	releaseConnection(con);
-	    	    	flag=0;
-	    	    	//return 0;
-	    	    }finally{
-	    	     	releaseStatement(statement);
-	    	    	releaseConnection(con);	    
-	    	    	
-	    	    }
-	    	    if(flag==1)
-	        		return 1;
-	        	else
-	        		return 0;
-	    	}
+	
+	
+	
+	
 	public void releaseConnection(Connection con){
 		try{if(con != null)
 			con.close();
@@ -227,6 +86,10 @@ public class LettertopatientsDAO {
 			stmt.close();
 	}catch(Exception e){}
 	}
+
+
+
+	
 	
 	}
 	

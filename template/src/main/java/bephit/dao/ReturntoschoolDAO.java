@@ -10,7 +10,7 @@ import java.util.Date;
 import java.util.List;
 import javax.sql.DataSource;
 import bephit.forms.ReturntoschoolForm;
-import bephit.model.Perrychiropractic;
+//import bephit.model.Perrychiropractic;
 //import bephit.model.HippaPrivacy;
 import bephit.model.Returntoschool;
 //import bephit.model.Symptom;
@@ -44,7 +44,7 @@ public class ReturntoschoolDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 
-	    	 String cmd="INSERT INTO returntoschool1 (date,name,from,to,capability,force,distance,sittime,standtime,repetitive,cause, recreate,fromdate,todate,returnto,ondate,diagnosis) VALUES ('"+returntoschooldetails.getDate()+"','"+returntoschooldetails.getName()+"','"+returntoschooldetails.getFrom()+"','"+returntoschooldetails.getTo()+"','"+returntoschooldetails.getCapability()+"','"+returntoschooldetails.getForce()+"','"+returntoschooldetails.getDistance()+"','"+returntoschooldetails.getSittime()+"','"+returntoschooldetails.getStandtime()+"','"+returntoschooldetails.getRepetitive()+"','"+returntoschooldetails.getCause()+"','"+returntoschooldetails.getRecreate()+"','"+returntoschooldetails.getFromdate()+"','"+returntoschooldetails.getTodate()+"','"+returntoschooldetails.getReturnto()+"','"+returntoschooldetails.getOndate()+"','"+returntoschooldetails.getDiagnosis()+"')";
+	    	 String cmd="INSERT INTO returntoschool1 (date,name,from,to,capability,force,distance,sittime,standtime,repetitive,cause, recreate,fromdate,todate,returnto,ondate,diagnosis,dr) VALUES ('"+returntoschooldetails.getDate()+"','"+returntoschooldetails.getName()+"','"+returntoschooldetails.getFrom()+"','"+returntoschooldetails.getTo()+"','"+returntoschooldetails.getCapability()+"','"+returntoschooldetails.getForce()+"','"+returntoschooldetails.getDistance()+"','"+returntoschooldetails.getSittime()+"','"+returntoschooldetails.getStandtime()+"','"+returntoschooldetails.getRepetitive()+"','"+returntoschooldetails.getCause()+"','"+returntoschooldetails.getRecreate()+"','"+returntoschooldetails.getFromdate()+"','"+returntoschooldetails.getTodate()+"','"+returntoschooldetails.getReturnto()+"','"+returntoschooldetails.getOndate()+"','"+returntoschooldetails.getDiagnosis()+"','"+returntoschooldetails.getDr()+"')";
 	    	    System.out.println("cmd insert value"+cmd);
 	    	    statement.executeUpdate(cmd);
 	    	    }
@@ -143,7 +143,8 @@ public class ReturntoschoolDAO {
 			    		resultSet.getString("todate"),
 						resultSet.getString("returnto"),
 						resultSet.getString("ondate"),
-						resultSet.getString("diagnosis")
+						resultSet.getString("diagnosis"),
+						resultSet.getString("dr")
 			    		 ));
 			    	
 			}
@@ -194,7 +195,8 @@ public class ReturntoschoolDAO {
 			    		resultSet.getString("todate"),
 						resultSet.getString("returnto"),
 						resultSet.getString("ondate"),
-						resultSet.getString("diagnosis")
+						resultSet.getString("diagnosis"),
+						resultSet.getString("dr")
 			    		 ));
 				System.out.println("Name::::::::::::::::::"+returntoschool.get(0).getName());
 			    	
@@ -248,7 +250,7 @@ public class ReturntoschoolDAO {
 	    +"',returnto='"+returntoschool.getReturnto()
 	    +"',ondate='"+returntoschool.getOndate()
 	    
-	    +"',diagnosis='"+returntoschool.getDiagnosis()+"' where schoolid='"+schoolid+"'";
+	    +"',diagnosis='"+returntoschool.getDiagnosis()+"',dr='"+returntoschool.getDr()+"' where schoolid='"+schoolid+"'";
 	   
 	            
 	      

@@ -5,10 +5,15 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Patientattorney
 {
 	private String patientid;
+	@NotEmpty
 	private String name;
+	@NotEmpty
 	private String address;
+	@NotEmpty
 	private String patientname;
+	@NotEmpty
 	private String date;	
+	@NotEmpty
 	private String dearsir;
 			public Patientattorney() {
 		super();

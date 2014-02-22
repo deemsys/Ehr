@@ -3,10 +3,12 @@
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
-<link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
-<script src="resources/js/jquery.min.js"></script>
+
+ <link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
+  <link rel="stylesheet" href="/resources/css/style.css" />
+ <script src="resources/js/jquery.min.js"></script> 
  <script src="resources/js/jquery-ui.js"></script>
- <script src="resources/js/jquery-1.9.1.js"></script>
+ <script src="resources/js/jquey-1.9.1.js"></script>
  <STYLE type="text/css">
   P#mypar {font-style:calibri;
   line-height:18px;}
@@ -14,9 +16,11 @@
   </STYLE>
  <script>
  $(function() {
-           $( "#datepicker" ).datepicker();
+           $( "#datepicker1" ).datepicker();
          });
- 
+ $(function() {
+           $( "#datepicker2" ).datepicker();
+         });
 </script>
 </head>
  <body>
@@ -50,14 +54,14 @@
         <p ><h3><center><i>X-RAY RELEASE FORM</i></h3></p>	</td></tr></table>
        <div class="contentbox">    
       <table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table" style="width: 583px; "><tr><td>  	  
-       <p style="line-height:26px">I <input type="text" class="input_txtbx1" name="name" id="name"> do hereby agree to return X-rays that I have borrowed from the Chiropractic Therapy Center, I understand that I have   fourteen (14) days to do so.  I fully agree that in the event that I do not return      X-rays, I will be billed $50.00. </p> 	  
+       I <input type="text" class="input_txtbx1" name="name" id="name"> do hereby agree to return X-rays that I have borrowed from the Chiropractic Therapy Center, I understand that I have   fourteen (14) days to do so.  I fully agree that in the event that I do not return      X-rays, I will be billed $50.00.  	  
        </td></tr></table></div>
        <br>
         	   <div class="contentbox">
 <table align="center" cellpadding="0" cellspacing="0" border="0"   width="70%"  ">
               <tr>
-              <td style="width: 212px; "><span class="err">*</span>Date Borrowed </td>
-              <td><input type="text" class="input_txtbx1" name="date" id="date"><span class="err"><form:errors path="Xray.date"></form:errors></span></td>
+              <td style="width: 212px; "><span class="err"></span>Date Borrowed </td>
+              <td><input type="text" class="input_txtbx1" name="date" id="datepicker1"><span class="err"><form:errors path="Perrychiropractic.insurance"></form:errors></span></td>
               </tr>
               </table><br>
 </div>
@@ -66,8 +70,8 @@
  <div class="contentbox">
 <table align="center" cellpadding="0" cellspacing="0" border="0"   width="70%"  ">
               <tr>
-              <td style="width: 212px; "><span class="err">*</span>Date Due </td>
-              <td><input type="text" class="input_txtbx1" name="date1" id="date1"><span class="err"><form:errors path="Xray.date1"></form:errors></span></td>
+              <td style="width: 212px; "><span class="err"></span>Date Due </td>
+              <td><input type="text" class="input_txtbx1" name="date1" id="datepicker2"><span class="err"><form:errors path="Perrychiropractic.insurance"></form:errors></span></td>
               </tr>
               </table></div>
          <br>     
@@ -75,11 +79,12 @@
 <table align="center"   cellpadding="0" cellspacing="0" border="0"   width="100%"  ">
               <tr>
               
-              <td><span class="err">*</span>Signature &nbsp;&nbsp;<input type="text" class="input_txtbx1" name="sign" id="sign"><span class="err"><form:errors path="Xray.sign"></form:errors></span></td>
-              <td><span class="err">*</span>Date &nbsp;&nbsp;<input type="text" class="input_txtbx1" name="date2" id="date2"><span class="err"><form:errors path="Xray.date2"></form:errors></span></td>
+              <td><input type="text" class="input_txtbx1" name="sign" id="sign"><span class="err"><form:errors path="Xray.sign"></form:errors></span></td>
+              <td><input type="text" class="input_txtbx1" name="date2" id="date2"><span class="err"><form:errors path="Perrychiropractic.insurance"></form:errors></span></td>
               
               
               </tr>
+              <tr><td> Signature</td><td>&nbsp;Date</td></tr>
               </table>              
               </div>
               

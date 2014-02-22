@@ -3,10 +3,12 @@
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
-<link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
-<script src="resources/js/jquery.min.js"></script>
+
+ <link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
+  <link rel="stylesheet" href="/resources/css/style.css" />
+ <script src="resources/js/jquery.min.js"></script> 
  <script src="resources/js/jquery-ui.js"></script>
- <script src="resources/js/jquery-1.9.1.js"></script>
+ <script src="resources/js/jquey-1.9.1.js"></script>
  <STYLE type="text/css">
   P#mypar {font-style:calibri;
   line-height:18px;}
@@ -14,7 +16,10 @@
   </STYLE>
  <script>
  $(function() {
-           $( "#datepicker" ).datepicker();
+           $( "#datepicker1" ).datepicker();
+         });
+ $(function() {
+           $( "#datepicker2" ).datepicker();
          });
  
 </script>
@@ -57,7 +62,7 @@
 <table align="center" cellpadding="0" cellspacing="0" border="0"   width="70%"  ">
               <tr>
               <td style="width: 212px; "><span class="err"></span>Date Borrowed </td>
-              <td><input type="text" class="input_txtbx1" name="date" id="date"  value="${xraydetails.date }"    ><span class="err"><form:errors path="Perrychiropractic.insurance"></form:errors></span></td>
+              <td><input type="text" class="input_txtbx1" name="date" id="datepicker1"  value="${xraydetails.date }"    ><span class="err"><form:errors path="Perrychiropractic.insurance"></form:errors></span></td>
               </tr>
               </table><br>
 </div>
@@ -67,7 +72,7 @@
 <table align="center" cellpadding="0" cellspacing="0" border="0"   width="70%"  ">
               <tr>
               <td style="width: 212px; "><span class="err"></span>Date Due </td>
-              <td><input type="text" class="input_txtbx1" value="${xraydetails.date1 }"  name="date1" id="date1"><span class="err"><form:errors path="Perrychiropractic.insurance"></form:errors></span></td>
+              <td><input type="text" class="input_txtbx1" value="${xraydetails.date1 }"  name="date1" id="datepicker2"><span class="err"><form:errors path="Perrychiropractic.insurance"></form:errors></span></td>
               </tr>
               </table></div>
          <br>     

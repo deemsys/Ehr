@@ -3,10 +3,12 @@
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
-<link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
-<script src="resources/js/jquery.min.js"></script>
+
+ <link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
+  <link rel="stylesheet" href="/resources/css/style.css" />
+ <script src="resources/js/jquery.min.js"></script> 
  <script src="resources/js/jquery-ui.js"></script>
- <script src="resources/js/jquery-1.9.1.js"></script>
+ <script src="resources/js/jquey-1.9.1.js"></script>
  <STYLE type="text/css">
   P#mypar {font-style:calibri;
   line-height:18px;}
@@ -23,7 +25,7 @@
 <div id="right_content" >
 <form action="insertformbill" method="POST">
 
-<table cellpadding="0" cellspacing="0" border="0"  width="78%" class="margin_table">
+<table cellpadding="0" cellspacing="0" border="0"  width="70%" class="margin_table">
        <tr>
         <td valign="top" align="left" style="padding:5px 0 10px 0;">&nbsp;
 		<div class="status success" style="display: none;">
@@ -41,18 +43,16 @@
         	
         	<div>
 	             
- <table cellpadding="0" cellspacing="0" border="0" width="78%" class="margin_table" style="width: 583px; "><tr><td>
-	            
-	            <div class="headings altheading">
-	            <center><h2>Certified Mail</h2></center>
-	            </div>
+ <table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table" style="width: 583px; "><tr><td>
 	            <div class="contentbox">
+	            
+				 <p align="left"><h2><center>Certified Mail</h2></p> <br>
 				  <p align="left"><h2><center>Return Receipt Requested</h2></p> <br>
 				  
 				  <table align="center" cellpadding="0" cellspacing="0" border="0"   width="70%"  ">
               <tr>
-              <td style="width: 212px; "><span class="err">*</span> Date: </td>
-              <td><input type="text" class="input_txtbx1" name="date" id="date"><span class="err"><form:errors path="Formbill.date"></form:errors></span></td>
+              <td style="width: 212px; "><span class="err"></span> Date: </td>
+              <td><input type="text" class="input_txtbx1" name="date" id="datepicker"><span class="err"><form:errors path="Formbill.date"></form:errors></span></td>
               </tr>
               </table>
               <br>
@@ -62,14 +62,14 @@
 				 
               <table align="center" cellpadding="0" cellspacing="0" border="0"   width="70%"  ">
               <tr>
-              <td style="width: 212px; "><span class="err">*</span> Insurance Company </td>
+              <td style="width: 212px; "><span class="err"></span> Insurance Company </td>
               <td><input type="text" class="input_txtbx1" name="insurance" id="insurance"><span class="err"><form:errors path="Formbill.insurance"></form:errors></span></td>
               </tr>
               </table>
               <br>
               <table align="center" cellpadding="0" cellspacing="0" border="0"   width="70%"  ">
               <tr>
-              <td style="width: 212px; "><span class="err">*</span>Address  </td>
+              <td style="width: 212px; "><span class="err"></span>Address  </td>
               <td><input type="text" class="input_txtbx1" name="address1" id="address1"><span class="err"><form:errors path="Formbill.address1"></form:errors></span></td>
               </tr>
               </table>
@@ -84,7 +84,7 @@
               <br>  
               	<table align="center" cellpadding="0" cellspacing="0" border="0"   width="70%"  ">
               <tr>
-              <td style="width: 212px; "><span class="err">*</span> Name of Attorney </td>
+              <td style="width: 212px; "><span class="err"></span> Name of Attorney </td>
               <td><input type="text" class="input_txtbx1" name="name" id="name"><span class="err"><form:errors path="Formbill.name"></form:errors></span></td>
               </tr>
               </table>
@@ -92,7 +92,7 @@
                
               	<table align="center" cellpadding="0" cellspacing="0" border="0"   width="70%"  ">
               <tr>
-              <td style="width: 212px; "><span class="err">*</span>Address   </td>
+              <td style="width: 212px; "><span class="err"></span>Address   </td>
               <td><input type="text" class="input_txtbx1" name="address3" id="address3"><span class="err"><form:errors path="Formbill.address3"></form:errors></span></td>
               </tr>
               </table>
@@ -108,7 +108,7 @@
               	  
 					<table align="center" cellpadding="0" cellspacing="0" border="0"   width="70%"  ">
               <tr>
-              <td style="width: 212px; "><span class="err">*</span>Patients Name  </td>
+              <td style="width: 212px; "><span class="err"></span>Patients Name  </td>
               <td><input type="text" class="input_txtbx1" name="patientsname" id="patientsname"><span class="err"><form:errors path="Formbill.patientsname"></form:errors></span></td>
               </tr>
               </table>
@@ -116,7 +116,7 @@
 				  
 				 		<table align="center" cellpadding="0" cellspacing="0" border="0"   width="70%"  ">
               <tr>
-              <td style="width: 212px; "><span class="err">*</span>Address </td>
+              <td style="width: 212px; "><span class="err"></span>Address </td>
               <td><input type="text" class="input_txtbx1" name="address5" id="address5"><span class="err"><form:errors path="Formbill.address5"></form:errors></span></td>
               </tr>
               </table>
@@ -130,7 +130,7 @@
               <br>        
 				  
 			<p align="left">Re:&nbsp;&nbsp;&nbsp;	Notice of Final Outstanding Amount Owed;</p>
-	<p align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Medical Fees of $<input type="text" class="input_txtbx1" name="medicalfee" id="medicalfee"></p>
+	<p align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Medical Fees of $<input type="text" class="input_txtbx1" name="medicalfee" id="medicalfee"><span class="err"><form:errors path="Formbill.medicalfee"></form:errors></span></p>
 	
 <br>
 
@@ -143,12 +143,18 @@
 	</p>
 	
 <br>	
-	<div align="right">
-          <p><B style="font-size:13px">Very truly yours,</B></p>
-          <p><input type="text" name="sign" size="30" ><span class="err"><form:errors path="Formbill.sign"></form:errors></span></p>
-          <p>Perry Chiropractic and Therapy Center of Canton, Inc.</p>
-          <p>Dr. Charles T. Yang DC, DABFP</p>
-          </div>						  
+	<p >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Very truly yours,
+	</p>
+	
+<br>
+<p >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Perry Chiropractic & Therapy Center of Canton, Inc
+	</p>
+	
+<br>
+<p >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dr. Charles T. Yang D.C.
+	</p>
+	
+<br>						  
 				  
 	<table align="center" cellpadding="0" cellspacing="0" border="0" width="70%">
               <tr>

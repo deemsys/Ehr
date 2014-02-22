@@ -5,15 +5,25 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Requestfordemand
 {
 	private String requestid;
+	@NotEmpty
 	private String other1;
+	@NotEmpty
 	private String other2;
+	@NotEmpty
 	private String other3;
+	@NotEmpty
 	private String other4;	
+	@NotEmpty
 	private String copymedpay;
+	@NotEmpty
 	private String copyform;
+	@NotEmpty
 	private String copyassign;
+	@NotEmpty
 	private String  greencard;
+	@NotEmpty
 	private String defaultattorney;
+	@NotEmpty
 	private String clinicrep;
 	public Requestfordemand() {
 		super();

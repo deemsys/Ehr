@@ -66,13 +66,13 @@
      <tr><td><input type="checkbox" class="input_ckbx1" name="date" id="date"></td><td>	If treatment is completed in addition to the document below we attach a copy of our itemized charges and a copy of the patient intake information form.<br><br>
      </td></tr>
      
-     <tr><td><input type="checkbox" class="input_ckbx1" name="date" id="date"></td><td>Other: (Describe)<input type="hidden" name="requestid" value="${requestfordemanddetails.requestid }"><input type="text" class="input_txtbx1" value="${requestfordemanddetails.other1}" name="other1" id="other1" style="width: 483px; "><br><br>
+     <tr><td><input type="checkbox" class="input_ckbx1" name="date" id="date"></td><td>Other: (Describe)<input type="hidden" name="requestid" value="${requestfordemanddetails.requestid }"><input type="text" class="input_txtbx1" value="${requestfordemanddetails.other1}" name="other1" id="other1" style="width: 483px; "><span class="err"><form:errors path="Requestfordemand.other1"></form:errors></span><br><br>
      </td></tr>
-      <tr><td></td><td><input type="text" class="input_txtbx1" value="${requestfordemanddetails.other2}"  name="other2" id="other2" style="width: 593px; "><br><br>
+      <tr><td></td><td><input type="text" class="input_txtbx1" value="${requestfordemanddetails.other2}"  name="other2" id="other2" style="width: 593px; "><span class="err"><form:errors path="Requestfordemand.other2"></form:errors></span><br><br>
      </td></tr>
-      <tr><td></td><td><input type="text" class="input_txtbx1" name="other3" value="${requestfordemanddetails.other3}"  id="other3" style="width: 593px; "><br><br>
+      <tr><td></td><td><input type="text" class="input_txtbx1" name="other3" value="${requestfordemanddetails.other3}"  id="other3" style="width: 593px; "><span class="err"><form:errors path="Requestfordemand.other3"></form:errors></span><br><br>
      </td></tr>
-      <tr><td></td><td><input type="text" class="input_txtbx1" value="${requestfordemanddetails.other4}"  name="other4" id="other4" style="width: 593px; "><br><br>
+      <tr><td></td><td><input type="text" class="input_txtbx1" value="${requestfordemanddetails.other4}"  name="other4" id="other4" style="width: 593px; "><span class="err"><form:errors path="Requestfordemand.other4"></form:errors></span><br><br>
      </td></tr>
      
          
@@ -86,26 +86,26 @@
      
      <table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table" style="width: 683px; "> 
     
-     <tr><td><input type="inputtype" class="input_ckbx1" value="${requestfordemanddetails.copymedpay}" name="copymedpay" id="copymedpay"></td><td>Copy of Med Pay and At Fault Form Cover Letter
+     <tr><td><input type="inputtype" class="input_ckbx1" value="${requestfordemanddetails.copymedpay}" name="copymedpay" id="copymedpay"><span class="err"><form:errors path="Requestfordemand.copymedpay"></form:errors></span></td><td>Copy of Med Pay and At Fault Form Cover Letter
      <br><br></td></tr>
      
-     <tr><td><input type="inputtype" class="input_ckbx1" value="${requestfordemanddetails.copyform}" name="copyform" id="copyform"><br></td><td>Copy of Form Cover Letter sent to the Attorney
+     <tr><td><input type="inputtype" class="input_ckbx1" value="${requestfordemanddetails.copyform}" name="copyform" id="copyform"><span class="err"><form:errors path="Requestfordemand.copyform"></form:errors></span><br></td><td>Copy of Form Cover Letter sent to the Attorney
      <br><br></td></tr>
      
-      <tr><td><input type="inputtype" class="input_ckbx1" value="${requestfordemanddetails.copyassign}" name="copyassign" id="copyassign"></td><td>Copy of Assignment
+      <tr><td><input type="inputtype" class="input_ckbx1" value="${requestfordemanddetails.copyassign}" name="copyassign" id="copyassign"><span class="err"><form:errors path="Requestfordemand.copyassign"></form:errors></span></td><td>Copy of Assignment
      <br><br></td></tr>
      
-      <tr><td><input type="inputtype" class="input_ckbx1" value="${requestfordemanddetails.greencard}" name="greencard" id="greencard"></td><td>Front and back of Certified Mail: “Green Card”
+      <tr><td><input type="inputtype" class="input_ckbx1" value="${requestfordemanddetails.greencard}" name="greencard" id="greencard"><span class="err"><form:errors path="Requestfordemand.greencard"></form:errors></span></td><td>Front and back of Certified Mail: “Green Card”
      <br><br></td></tr>
      
-      <tr><td><input type="inputtype" class="input_ckbx1" value="${requestfordemanddetails.defaultattorney}" name="defaultattorney" id="default"></td><td>Any correspondence from the defaulting Adjuster or Defaulting Attorney
+      <tr><td><input type="inputtype" class="input_ckbx1" value="${requestfordemanddetails.defaultattorney}" name="defaultattorney" id="default"><span class="err"><form:errors path="Requestfordemand.defaultattorney"></form:errors></span></td><td>Any correspondence from the defaulting Adjuster or Defaulting Attorney
     <br><br> </td></tr>
      
      </table>
      
      <table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table" style="width: 683px; "> 
     
-     <tr><td style="width: 400px; "></td><td align="right" ><input type="inputtype" class="input_ckbx1" value="${requestfordemanddetails.clinicrep}" name="clinicrep" id="clinicrep" style="width: 250px; "></td></tr>
+     <tr><td style="width: 400px; "></td><td align="right" ><input type="inputtype" class="input_ckbx1" value="${requestfordemanddetails.clinicrep}" name="clinicrep" id="clinicrep" style="width: 250px; "><span class="err"><form:errors path="Requestfordemand.clinicrep"></form:errors></span></td></tr>
      
 <tr><td style="width: 400px; "></td><td align="right" >Clinic Representative</td></tr>
      

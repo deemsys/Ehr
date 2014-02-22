@@ -3,10 +3,12 @@
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
-<link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
-<script src="resources/js/jquery.min.js"></script>
+
+ <link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
+  <link rel="stylesheet" href="/resources/css/style.css" />
+ <script src="resources/js/jquery.min.js"></script> 
  <script src="resources/js/jquery-ui.js"></script>
- <script src="resources/js/jquery-1.9.1.js"></script>
+ <script src="resources/js/jquey-1.9.1.js"></script>
  <STYLE type="text/css">
   P#mypar {font-style:calibri;
   line-height:18px;}
@@ -21,7 +23,7 @@
 </head>
  <body>
 <div id="right_content" >
-<form action="insertperrychiropractic" method="POST">
+<form action="insertpatientattorney" method="POST">
 
 <table cellpadding="0" cellspacing="0" border="0"  width="70%" class="margin_table">
        <tr>
@@ -57,7 +59,7 @@
 	             <table align="center" cellpadding="0" cellspacing="0" border="0"   width="70%"  ">
               <tr>
               <td style="width: 212px; "><span class="err"></span> Name of Patient's Attorney</td>
-              <td><input type="text" class="input_txtbx1" name="name" id="name"><span class="err"><form:errors path="Perrychiropractic.insurance"></form:errors></span></td>
+              <td><input type="text" class="input_txtbx1" name="name" id="name"><span class="err"><form:errors path="Patientattorney.name"></form:errors></span></td>
               </tr>
               </table>
               <br>
@@ -66,7 +68,7 @@
 	              <table align="center" cellpadding="0" cellspacing="0" border="0"   width="70%"  ">
               <tr>
               <td style="width: 212px; "><span class="err"></span>Address </td>
-              <td><input type="text" class="input_txtbx1" name="address" id="address"><span class="err"><form:errors path="Perrychiropractic.insurance"></form:errors></span></td>
+              <td><input type="text" class="input_txtbx1" name="address" id="address"><span class="err"><form:errors path="Patientattorney.address"></form:errors></span></td>
               </tr>
               </table>
               <br></td></tr>
@@ -74,7 +76,7 @@
                <table align="center" cellpadding="0" cellspacing="0" border="0"   width="70%"  ">
               <tr>
               <td style="width: 212px; "><span class="err"></span>Patient's Name </td>
-              <td><input type="text" class="input_txtbx1" name="patientname" id="patientname"><span class="err"><form:errors path="Perrychiropractic.insurance"></form:errors></span></td>
+              <td><input type="text" class="input_txtbx1" name="patientname" id="patientname"><span class="err"><form:errors path="Patientattorney.patientname"></form:errors></span></td>
               </tr>
               </table>
               <br></td></tr>
@@ -83,7 +85,7 @@
                <table align="center" cellpadding="0" cellspacing="0" border="0"   width="70%"  ">
               <tr>
               <td style="width: 212px; "><span class="err"></span>Date of Accident </td>
-              <td><input type="text" class="input_txtbx1" name="date" id="date"><span class="err"><form:errors path="Perrychiropractic.insurance"></form:errors></span></td>
+              <td><input type="text" class="input_txtbx1" name="date" id="datepicker"><span class="err"><form:errors path="Patientattorney.date"></form:errors></span></td>
               </tr>
               </table>
               <br></td></tr>            
@@ -202,8 +204,24 @@
               <tr><td></td></tr><tr><td><p align="right">Name of Clinic<br>Treating Physician</p></td></tr>
               
               
+              
+              
               </tr></td>
         	</table>
+        	 
+        	 <table align="center" cellpadding="0" cellspacing="0" border="0" width="70%">
+              <tr>
+              <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+              <td><input type="submit" class="submit_btn" value="Save"></td>
+              <td>&nbsp;&nbsp;</td>
+              <td><input type="reset" class="submit_btn" value="Cancel"></td>
+              <td>&nbsp;&nbsp;</td>
+        	  </tr>
+        	  </table>
+        	 
+        	 
+        	 
+        	 
         	  </div>
         	  
         	  

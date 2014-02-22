@@ -3,10 +3,12 @@
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
-<link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
-<script src="resources/js/jquery.min.js"></script>
+
+ <link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
+  <link rel="stylesheet" href="/resources/css/style.css" />
+ <script src="resources/js/jquery.min.js"></script> 
  <script src="resources/js/jquery-ui.js"></script>
- <script src="resources/js/jquery-1.9.1.js"></script>
+ <script src="resources/js/jquey-1.9.1.js"></script>
  <STYLE type="text/css">
   P#mypar {font-style:calibri;
   line-height:18px;}
@@ -56,21 +58,21 @@
               <table align="center" cellpadding="0" cellspacing="0" border="0"   width="70%"  ">
               <tr>
               <td style="width: 212px; "><span class="err"></span>Name of Insurance Company: </td>
-              <td><input type="text" class="input_txtbx1" name="insurance" id="insurance"><span class="err"><form:errors path="Perrychiropractic.insurance"></form:errors></span></td>
+              <td><input type="text" class="input_txtbx1" name="insurance" id="insurance"><span class="err"><form:errors path="Pimedpay.insurance"></form:errors></span></td>
               </tr>
               </table>
               <br>
                <table align="center" cellpadding="0" cellspacing="0" border="0" width="70%" style="width: 639px; ">
               <tr>
               <td style="width: 212px; "><span class="err"></span>Address </td>
-              <td><input type="text" class="input_txtbx1" name="address" id="Address"><span class="err"><form:errors path="Perrychiropractic.insurance"></form:errors></span></td>
+              <td><input type="text" class="input_txtbx1" name="address" id="Address"><span class="err"><form:errors path="Pimedpay.address"></form:errors></span></td>
               </tr>
               </table>
               <br>
                <table align="center" cellpadding="0" cellspacing="0" border="0" width="70%" style="width: 639px; ">
               <tr>
               <td style="width: 212px; "><span class="err"></span>Regarding: </td>
-              <td><input type="text" class="input_txtbx1" name="reg" ><span class="err"><form:errors path="Perrychiropractic.insurance"></form:errors></span></td>
+              <td><input type="text" class="input_txtbx1" name="reg" ><span class="err"><form:errors path="Pimedpay.reg"></form:errors></span></td>
               </tr>
               </table>
               <br>
@@ -78,14 +80,14 @@
                <table align="center" cellpadding="0" cellspacing="0" border="0" width="70%" style="width: 639px; ">
               <tr>
               <td style="width: 212px; "><span class="err"></span>Patient's Name/ Name of Person Entitled To Coverage</td>
-              <td><input type="text" class="input_txtbx1" name="nameofperson" id="nameofperson"><span class="err"><form:errors path="Perrychiropractic.insurance"></form:errors></span></td>
+              <td><input type="text" class="input_txtbx1" name="nameofperson" id="nameofperson"><span class="err"><form:errors path="Pimedpay.nameofperson"></form:errors></span></td>
               </tr>
               </table>
               <br>
                <table align="center" cellpadding="0" cellspacing="0" border="0" width="70%">
               <tr>
               <td style="width: 212px; "><span class="err"></span>Date of Accident: </td>
-              <td><input type="text" class="input_txtbx1" name="dateofaccident" id="dateofaccident"><span class="err"><form:errors path="Perrychiropractic.insurance"></form:errors></span></td>
+              <td><input type="text" class="input_txtbx1" name="dateofaccident" id="datepicker"><span class="err"><form:errors path="Pimedpay.dateofaccident"></form:errors></span></td>
               </tr>
               </table>
               <br>

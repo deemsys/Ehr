@@ -6,13 +6,10 @@ public class Xray
 {
 	private String xrayid;
 	private String name;
-	@NotEmpty
 	private String date;
-	@NotEmpty
 	private String date1;
 	@NotEmpty
 	private String sign;
-	@NotEmpty
 	private String date2;
 	
 

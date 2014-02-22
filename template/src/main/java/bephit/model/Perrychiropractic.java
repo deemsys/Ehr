@@ -9,6 +9,7 @@ public class Perrychiropractic
 	private String insurance;
 	@NotEmpty
 	private String address;
+	@NotEmpty
 	private String address1;
 	@NotEmpty
 	private String reg;	
@@ -16,8 +17,8 @@ public class Perrychiropractic
 	private String nameofperson;
 	@NotEmpty
 	private String dateofaccident;
+	@NotEmpty
 	private String subject;
-	private String sign;
 	
 	public Perrychiropractic() {
 		super();
@@ -70,16 +71,9 @@ public class Perrychiropractic
 	public void setSubject(String subject) {
 		this.subject = subject;
 	}
-	
-	public String getSign() {
-		return sign;
-	}
-	public void setSign(String sign) {
-		this.sign = sign;
-	}
 	public Perrychiropractic(String perryid, String insurance, String address,
 			String address1, String reg, String nameofperson,
-			String dateofaccident, String subject,String sign) {
+			String dateofaccident, String subject) {
 		super();
 		this.perryid = perryid;
 		this.insurance = insurance;
@@ -89,7 +83,6 @@ public class Perrychiropractic
 		this.nameofperson = nameofperson;
 		this.dateofaccident = dateofaccident;
 		this.subject = subject;
-		this.sign=sign;
 	}
 	
 	

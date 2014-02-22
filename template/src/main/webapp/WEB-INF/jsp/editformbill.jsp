@@ -3,10 +3,12 @@
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
-<link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
-<script src="resources/js/jquery.min.js"></script>
+
+ <link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
+  <link rel="stylesheet" href="/resources/css/style.css" />
+ <script src="resources/js/jquery.min.js"></script> 
  <script src="resources/js/jquery-ui.js"></script>
- <script src="resources/js/jquery-1.9.1.js"></script>
+ <script src="resources/js/jquey-1.9.1.js"></script>
  <STYLE type="text/css">
   P#mypar {font-style:calibri;
   line-height:18px;}
@@ -50,7 +52,7 @@
 				  <table align="center" cellpadding="0" cellspacing="0" border="0"   width="70%"  ">
               <tr>
               <td style="width: 212px; "><span class="err"></span> Date: </td>
-              <td><input type="hidden" name="formid" value=" ${formbilldetails.formid}"><input type="text" value="${formbilldetails.date }"  class="input_txtbx1" name="date" id="date"><span class="err"><form:errors path="Perrychiropractic.insurance"></form:errors></span></td>
+              <td><input type="hidden" name="formid" value=" ${formbilldetails.formid}"><input type="text" value="${formbilldetails.date }"  class="input_txtbx1" name="date" id="datepicker"><span class="err"><form:errors path="Formbill.date"></form:errors></span></td>
               </tr>
               </table>
               <br>
@@ -61,14 +63,14 @@
               <table align="center" cellpadding="0" cellspacing="0" border="0"   width="70%"  ">
               <tr>
               <td style="width: 212px; "><span class="err"></span> Insurance Company </td>
-              <td><input type="text" value="${formbilldetails.insurance }"  class="input_txtbx1" name="insurance" id="insurance"><span class="err"><form:errors path="Perrychiropractic.insurance"></form:errors></span></td>
+              <td><input type="text" value="${formbilldetails.insurance }"  class="input_txtbx1" name="insurance" id="insurance"><span class="err"><form:errors path="Formbill.insurance"></form:errors></span></td>
               </tr>
               </table>
               <br>
               <table align="center" cellpadding="0" cellspacing="0" border="0"   width="70%"  ">
               <tr>
               <td style="width: 212px; "><span class="err"></span>Address  </td>
-              <td><input type="text"  value="${formbilldetails.address1 }" class="input_txtbx1" name="address1" id="address1"><span class="err"><form:errors path="Perrychiropractic.insurance"></form:errors></span></td>
+              <td><input type="text"  value="${formbilldetails.address1 }" class="input_txtbx1" name="address1" id="address1"><span class="err"><form:errors path="Formbill.address1"></form:errors></span></td>
               </tr>
               </table>
               <br>
@@ -76,14 +78,14 @@
 				<table align="center" cellpadding="0" cellspacing="0" border="0"   width="70%"  ">
               <tr>
               <td style="width: 212px; "><span class="err"></span>  </td>
-              <td><input type="text" value="${formbilldetails.address2 }"  class="input_txtbx1" name="address2" id="address2"><span class="err"><form:errors path="Perrychiropractic.insurance"></form:errors></span></td>
+              <td><input type="text" value="${formbilldetails.address2 }"  class="input_txtbx1" name="address2" id="address2"><span class="err"><form:errors path="Formbill.address2"></form:errors></span></td>
               </tr>
               </table>
               <br>  
               	<table align="center" cellpadding="0" cellspacing="0" border="0"   width="70%"  ">
               <tr>
               <td style="width: 212px; "><span class="err"></span> Name of Attorney </td>
-              <td><input type="text"  value="${formbilldetails.name}" class="input_txtbx1" name="name" id="name"><span class="err"><form:errors path="Perrychiropractic.insurance"></form:errors></span></td>
+              <td><input type="text"  value="${formbilldetails.name}" class="input_txtbx1" name="name" id="name"><span class="err"><form:errors path="Formbill.name"></form:errors></span></td>
               </tr>
               </table>
               <br> 
@@ -91,7 +93,7 @@
               	<table align="center" cellpadding="0" cellspacing="0" border="0"   width="70%"  ">
               <tr>
               <td style="width: 212px; "><span class="err"></span>Address   </td>
-              <td><input type="text"  value="${formbilldetails.address3 }"  class="input_txtbx1" name="address3" id="address3"><span class="err"><form:errors path="Perrychiropractic.insurance"></form:errors></span></td>
+              <td><input type="text"  value="${formbilldetails.address3 }"  class="input_txtbx1" name="address3" id="address3"><span class="err"><form:errors path="Formbill.address3"></form:errors></span></td>
               </tr>
               </table>
               <br> 
@@ -99,7 +101,7 @@
 					<table align="center" cellpadding="0" cellspacing="0" border="0"   width="70%"  ">
               <tr>
               <td style="width: 212px; "><span class="err"></span>  </td>
-              <td><input type="text"  value="${formbilldetails.address4 }" class="input_txtbx1" name="address4" id="address4"><span class="err"><form:errors path="Perrychiropractic.insurance"></form:errors></span></td>
+              <td><input type="text"  value="${formbilldetails.address4 }" class="input_txtbx1" name="address4" id="address4"><span class="err"><form:errors path="Formbill.address4"></form:errors></span></td>
               </tr>
               </table>
               <br>  
@@ -107,7 +109,7 @@
 					<table align="center" cellpadding="0" cellspacing="0" border="0"   width="70%"  ">
               <tr>
               <td style="width: 212px; "><span class="err"></span>Patients Name  </td>
-              <td><input type="text"  value="${formbilldetails.patientsname }" class="input_txtbx1" name="patientsname" id="patientsname"><span class="err"><form:errors path="Perrychiropractic.insurance"></form:errors></span></td>
+              <td><input type="text"  value="${formbilldetails.patientsname }" class="input_txtbx1" name="patientsname" id="patientsname"><span class="err"><form:errors path="Formbill.patientsname"></form:errors></span></td>
               </tr>
               </table>
               <br>    
@@ -115,20 +117,20 @@
 				 		<table align="center" cellpadding="0" cellspacing="0" border="0"   width="70%"  ">
               <tr>
               <td style="width: 212px; "><span class="err"></span>Address </td>
-              <td><input type="text"  value="${formbilldetails.address5}" class="input_txtbx1" name="address5" id="address5"><span class="err"><form:errors path="Perrychiropractic.insurance"></form:errors></span></td>
+              <td><input type="text"  value="${formbilldetails.address5}" class="input_txtbx1" name="address5" id="address5"><span class="err"><form:errors path="Formbill.address5"></form:errors></span></td>
               </tr>
               </table>
               <br> 
                		<table align="center" cellpadding="0" cellspacing="0" border="0"   width="70%"  ">
               <tr>
               <td style="width: 212px; "><span class="err"></span></td>
-              <td><input type="text"  value="${formbilldetails.address6 }" class="input_txtbx1" name="address6" id="address6"><span class="err"><form:errors path="Perrychiropractic.insurance"></form:errors></span></td>
+              <td><input type="text"  value="${formbilldetails.address6 }" class="input_txtbx1" name="address6" id="address6"><span class="err"><form:errors path="Formbill.address6"></form:errors></span></td>
               </tr>
               </table>
               <br>        
 				  
 			<p align="left">Re:&nbsp;&nbsp;&nbsp;	Notice of Final Outstanding Amount Owed;</p>
-	<p align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Medical Fees of $<input type="text" value="${formbilldetails.medicalfee }"  class="input_txtbx1" name="medicalfee" id="medicalfee"></p>
+	<p align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Medical Fees of $<input type="text" value="${formbilldetails.medicalfee }"  class="input_txtbx1" name="medicalfee" id="medicalfee"><span class="err"><form:errors path="Formbill.medicalfee"></form:errors></span></p>
 	
 <br>
 

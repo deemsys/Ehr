@@ -193,8 +193,9 @@
    </bean>
    <bean id="ResponseattorneyDAO" class="bephit.dao.ResponseattorneyDAO">
            <property name="dataSource" ref="dataSource" />
-   </bean>
+   </bean>   
    <bean id="NoticeassignmentDAO" class="bephit.dao.NoticeassignmentDAO">
            <property name="dataSource" ref="dataSource" />
-   </bean>
+   </bean>  
+   
 </beans>

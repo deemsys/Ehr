@@ -1299,6 +1299,9 @@ color:#fff;
 					              <ul id="ddsubmenu35" class="ddsubmenustyle">
 							      <li><a href="returntoschool">Return to School</a></li>
 							      <li><a href="viewreturntoschool">View Return to School</a></li>
+							     <li><a href="workschool">Work School</a></li>
+							      <li><a href="viewworkschool">View Work School</a></li>
+							     
 							     </ul>
 							     </li>
 				         </ul>

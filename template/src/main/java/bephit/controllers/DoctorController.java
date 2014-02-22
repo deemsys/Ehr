@@ -188,8 +188,53 @@ public class DoctorController {
 	model.addAttribute("wristexamform",wristexamform);
 	//System.out.println(shoulderexamform.getShoulderexamdetails().get(0).getPname());
 	model.addAttribute("menu", "sign");
-	return "viewwristexam";
+	 model.addAttribute("noofrows",wristexamform.getWristexamdetails().size());       
+	    wristexamform.setWristexamdetails(wristexamDAO.getlimitedwristexam(1));  
+	    model.addAttribute("noofpages",(int) Math.ceil(wristexamDAO.getnoofwristexam() * 1.0 / 5));	 
+	        model.addAttribute("button","viewall");
+	        model.addAttribute("success","false");
+	        model.addAttribute("currentpage",1);
+		
+		
+		return "viewwristexam";
+
+	}	
+	
+	@RequestMapping(value="/viewwristexam_page", method=RequestMethod.GET)
+	public String viewwristexam_page(HttpServletRequest request,@RequestParam("page") int page,ModelMap model) {	
+		
+		WristExamForm wristexamform = new WristExamForm();
+		wristexamform.setWristexamdetails(wristexamDAO.getlimitedwristexam(page));
+		
+	   	model.addAttribute("noofpages",(int) Math.ceil(wristexamDAO.getnoofwristexam() * 1.0 / 5));
+	   	model.addAttribute("wristexamform",wristexamform);	
+	   	model.addAttribute("noofrows",wristexamform.getWristexamdetails().size());   
+     model.addAttribute("currentpage",page);
+     model.addAttribute("menu","sign");
+     model.addAttribute("button","viewall");
+		return "viewwristexam";
+		
+	}	
+	
+	@RequestMapping(value={"/", "/viewallwristexam"}, method = RequestMethod.GET)
+	public String viewallwristexam(HttpServletRequest request,ModelMap model, Principal principal ) {
+		
+		WristExamForm wristexamform = new WristExamForm();
+		wristexamform.setWristexamdetails(wristexamDAO.getwristexamallDetails());
+		
+		  model.addAttribute("wristexamform", wristexamform);	
+		model.addAttribute("noofrows",wristexamform.getWristexamdetails().size());    
+    
+     model.addAttribute("menu","sign");
+     model.addAttribute("button","close");
+	      
+	        model.addAttribute("menu","sign");
+	        model.addAttribute("success","false");
+	        model.addAttribute("button","close");
+			return "viewwristexam";
+
 	}
+
 	
 	@RequestMapping(value="/deletewristexam", method = RequestMethod.GET)
 	public String deletewristexam(@RequestParam("wristexamno") String wristexamno,ModelMap model) {	
@@ -275,7 +320,51 @@ public class DoctorController {
 	model.addAttribute("shoulderexamform",shoulderexamform);
 	//System.out.println(shoulderexamform.getShoulderexamdetails().get(0).getPname());
 	model.addAttribute("menu", "sign");
-	return "viewshoulderexam";
+	 model.addAttribute("noofrows",shoulderexamform.getShoulderexamdetails().size());       
+	    shoulderexamform.setShoulderexamdetails(shoulderexamDAO.getlimitedshoulderexam(1));  
+	    model.addAttribute("noofpages",(int) Math.ceil(shoulderexamDAO.getnoofshoulderexam() * 1.0 / 5));	 
+	        model.addAttribute("button","viewall");
+	        model.addAttribute("success","false");
+	        model.addAttribute("currentpage",1);
+		
+		
+		return "viewshoulderexam";
+
+	}	
+	
+	@RequestMapping(value="/viewshoulderexam_page", method=RequestMethod.GET)
+	public String viewshoulderexam_page(HttpServletRequest request,@RequestParam("page") int page,ModelMap model) {	
+		
+		ShoulderExamForm shoulderexamform = new ShoulderExamForm();
+		shoulderexamform.setShoulderexamdetails(shoulderexamDAO.getlimitedshoulderexam(page));
+		
+	   	model.addAttribute("noofpages",(int) Math.ceil(shoulderexamDAO.getnoofshoulderexam() * 1.0 / 5));
+	   	model.addAttribute("shoulderexamform",shoulderexamform);	
+	   	model.addAttribute("noofrows",shoulderexamform.getShoulderexamdetails().size());   
+  model.addAttribute("currentpage",page);
+  model.addAttribute("menu","sign");
+  model.addAttribute("button","viewall");
+		return "viewshoulderexam";
+		
+	}	
+	
+	@RequestMapping(value={"/", "/viewallshoulderexam"}, method = RequestMethod.GET)
+	public String viewallshoulderexam(HttpServletRequest request,ModelMap model, Principal principal ) {
+		
+		ShoulderExamForm shoulderexamform = new ShoulderExamForm();
+		shoulderexamform.setShoulderexamdetails(shoulderexamDAO.getshoulderexamallDetails());
+		
+		model.addAttribute("shoulderexamform",shoulderexamform);	
+		model.addAttribute("noofrows",shoulderexamform.getShoulderexamdetails().size());    
+ 
+  model.addAttribute("menu","sign");
+  model.addAttribute("button","close");
+	      
+	        model.addAttribute("menu","sign");
+	        model.addAttribute("success","false");
+	        model.addAttribute("button","close");
+			return "viewshoulderexam";
+
 	}
 	
 	@RequestMapping(value="/shoulderexamlist", method = RequestMethod.GET)	
@@ -327,7 +416,51 @@ public class DoctorController {
 	System.out.println(hipexamform.getHipexamdetails().get(0).getPname());
 	model.addAttribute("hipexamform",hipexamform);
 	model.addAttribute("menu", "sign");
-	return "viewhipexamdetails";
+	 model.addAttribute("noofrows",hipexamform.getHipexamdetails().size());       
+	    hipexamform.setHipexamdetails(hipexamDAO.getlimitedhipexam(1));  
+	    model.addAttribute("noofpages",(int) Math.ceil(hipexamDAO.getnoofhipexam() * 1.0 / 5));	 
+	        model.addAttribute("button","viewall");
+	        model.addAttribute("success","false");
+	        model.addAttribute("currentpage",1);
+		
+		
+		return "viewhipexam";
+
+	}	
+	
+	@RequestMapping(value="/viewhipexam_page", method=RequestMethod.GET)
+	public String viewhipexam_page(HttpServletRequest request,@RequestParam("page") int page,ModelMap model) {	
+		
+		HipExamForm hipexamform = new HipExamForm();
+		hipexamform.setHipexamdetails(hipexamDAO.getlimitedhipexam(page));
+		
+	   	model.addAttribute("noofpages",(int) Math.ceil(hipexamDAO.getnoofhipexam() * 1.0 / 5));
+	   	model.addAttribute("hipexamform",hipexamform);	
+	   	model.addAttribute("noofrows",hipexamform.getHipexamdetails().size());   
+model.addAttribute("currentpage",page);
+model.addAttribute("menu","sign");
+model.addAttribute("button","viewall");
+		return "viewhipexam";
+		
+	}	
+	
+	@RequestMapping(value={"/", "/viewallhipexam"}, method = RequestMethod.GET)
+	public String viewallhipexam(HttpServletRequest request,ModelMap model, Principal principal ) {
+		
+		HipExamForm hipexamform = new HipExamForm();
+		hipexamform.setHipexamdetails(hipexamDAO.gethipexamallDetails());
+		
+		model.addAttribute("hipexamform",hipexamform);	
+		model.addAttribute("noofrows",hipexamform.getHipexamdetails().size());    
+
+model.addAttribute("menu","sign");
+model.addAttribute("button","close");
+	      
+	        model.addAttribute("menu","sign");
+	        model.addAttribute("success","false");
+	        model.addAttribute("button","close");
+			return "viewhipexam";
+
 	}
 	
 	@RequestMapping(value="/viewfootexam", method = RequestMethod.GET)
@@ -337,7 +470,51 @@ public class DoctorController {
 	System.out.println(footexamform.getFootexamdetails().get(0).getPname());
 	model.addAttribute("footexamform",footexamform);
 	model.addAttribute("menu", "sign");
-	return "viewfootexam";
+	 model.addAttribute("noofrows",footexamform.getFootexamdetails().size());       
+	    footexamform.setFootexamdetails(footexamDAO.getlimitedfootexam(1));  
+	    model.addAttribute("noofpages",(int) Math.ceil(footexamDAO.getnooffootexam() * 1.0 / 5));	 
+	        model.addAttribute("button","viewall");
+	        model.addAttribute("success","false");
+	        model.addAttribute("currentpage",1);
+		
+		
+		return "viewfootexam";
+
+	}	
+	
+	@RequestMapping(value="/viewfootexam_page", method=RequestMethod.GET)
+	public String viewfootexam_page(HttpServletRequest request,@RequestParam("page") int page,ModelMap model) {	
+		
+		FootExamForm footexamform = new FootExamForm();
+		footexamform.setFootexamdetails(footexamDAO.getlimitedfootexam(page));
+		
+	   	model.addAttribute("noofpages",(int) Math.ceil(footexamDAO.getnooffootexam() * 1.0 / 5));
+	   	model.addAttribute("footexamform",footexamform);	
+	   	model.addAttribute("noofrows",footexamform.getFootexamdetails().size());   
+model.addAttribute("currentpage",page);
+model.addAttribute("menu","sign");
+model.addAttribute("button","viewall");
+		return "viewfootexam";
+		
+	}	
+	
+	@RequestMapping(value={"/", "/viewallfootexam"}, method = RequestMethod.GET)
+	public String viewallfootexam(HttpServletRequest request,ModelMap model, Principal principal ) {
+		
+		FootExamForm footexamform = new FootExamForm();
+		footexamform.setFootexamdetails(footexamDAO.getfootexamDetails());
+		
+		model.addAttribute("footexamform",footexamform);	
+		model.addAttribute("noofrows",footexamform.getFootexamdetails().size());    
+
+model.addAttribute("menu","sign");
+model.addAttribute("button","close");
+	      
+	        model.addAttribute("menu","sign");
+	        model.addAttribute("success","false");
+	        model.addAttribute("button","close");
+			return "viewfootexam";
+
 	}
 	
 	@RequestMapping(value="/deletehipexam", method = RequestMethod.GET)
@@ -531,8 +708,52 @@ if(result.hasErrors())
 		  
 		  	model.addAttribute("lumbopelvicexamForm", lumbopelvicexamForm);
 		  	model.addAttribute("menu", "sign");
-		return "viewlumbopelvicexam";
-	}
+			 model.addAttribute("noofrows",lumbopelvicexamForm.getLumbopelvicexam().size());       
+			    lumbopelvicexamForm.setLumbopelvicexam(lumboDAO.getlimitedlumbopelvicexam(1));  
+			    model.addAttribute("noofpages",(int) Math.ceil(lumboDAO.getnooflumbopelvicexam() * 1.0 / 5));	 
+			        model.addAttribute("button","viewall");
+			        model.addAttribute("success","false");
+			        model.addAttribute("currentpage",1);
+				
+				
+				return "viewlumbopelvicexam";
+
+			}	
+			
+			@RequestMapping(value="/viewlumbopelvicexam_page", method=RequestMethod.GET)
+			public String viewlumbopelvicexam_page(HttpServletRequest request,@RequestParam("page") int page,ModelMap model) {	
+				
+				LumbopelvicexamForm lumbopelvicexamForm = new LumbopelvicexamForm();
+				lumbopelvicexamForm.setLumbopelvicexam(lumboDAO.getlimitedlumbopelvicexam(page));
+				
+			   	model.addAttribute("noofpages",(int) Math.ceil(lumboDAO.getnooflumbopelvicexam() * 1.0 / 5));
+			   	model.addAttribute("lumbopelvicexamForm", lumbopelvicexamForm);	
+			   	model.addAttribute("noofrows",lumbopelvicexamForm.getLumbopelvicexam().size());   
+		model.addAttribute("currentpage",page);
+		model.addAttribute("menu","sign");
+		model.addAttribute("button","viewall");
+				return "viewlumbopelvicexam";
+				
+			}	
+			
+			@RequestMapping(value={"/", "/viewalllumbopelvicexam"}, method = RequestMethod.GET)
+			public String viewalllumbopelvicexam(HttpServletRequest request,ModelMap model, Principal principal ) {
+				
+				LumbopelvicexamForm lumbopelvicexamForm = new LumbopelvicexamForm();
+				lumbopelvicexamForm.setLumbopelvicexam(lumboDAO.getLumbopelvicexam());
+				
+				model.addAttribute("lumbopelvicexamForm",lumbopelvicexamForm);	
+				model.addAttribute("noofrows",lumbopelvicexamForm.getLumbopelvicexam().size());    
+
+		model.addAttribute("menu","sign");
+		model.addAttribute("button","close");
+			      
+			        model.addAttribute("menu","sign");
+			        model.addAttribute("success","false");
+			        model.addAttribute("button","close");
+					return "viewlumbopelvicexam";
+
+			}
 	@RequestMapping(value="/lumbopelvicexamlist", method=RequestMethod.GET)
 	public String lumbopelvicexamlist(HttpServletRequest request,@RequestParam("lumbopelvicexamid") String lumbopelvicexamid,ModelMap model,Lumbopelvicexam lumbopelvicexam)
 	{
@@ -639,8 +860,53 @@ if(result.hasErrors())
 		  
 		  	model.addAttribute("kneeexamForm", kneeexamForm);
 		  	model.addAttribute("menu", "sign");
-		return "viewkneeexam";
-	}
+		  	model.addAttribute("noofrows",kneeexamForm.getKneeexam().size());       
+		    kneeexamForm.setKneeexam(kneeDAO.getlimitedkneeexam(1));  
+		    model.addAttribute("noofpages",(int) Math.ceil(kneeDAO.getnoofkneeexam() * 1.0 / 5));	 
+		        model.addAttribute("button","viewall");
+		        model.addAttribute("success","false");
+		        model.addAttribute("currentpage",1);
+			
+			
+			return "viewkneeexam";
+
+		}	
+		
+		@RequestMapping(value="/viewkneeexam_page", method=RequestMethod.GET)
+		public String viewkneeexam_page(HttpServletRequest request,@RequestParam("page") int page,ModelMap model) {	
+			
+			KneeexamForm kneeexamForm = new KneeexamForm();
+			kneeexamForm.setKneeexam(kneeDAO.getlimitedkneeexam(page));
+			
+		   	model.addAttribute("noofpages",(int) Math.ceil(kneeDAO.getnoofkneeexam() * 1.0 / 5));
+		   	model.addAttribute("kneeexamForm", kneeexamForm);	
+		   	model.addAttribute("noofrows",kneeexamForm.getKneeexam().size());   
+	model.addAttribute("currentpage",page);
+	model.addAttribute("menu","sign");
+	model.addAttribute("button","viewall");
+			return "viewkneeexam";
+			
+		}	
+		
+		@RequestMapping(value={"/", "/viewallkneeexam"}, method = RequestMethod.GET)
+		public String viewallkneeexam(HttpServletRequest request,ModelMap model, Principal principal ) {
+			
+			KneeexamForm kneeexamForm = new KneeexamForm();
+			kneeexamForm.setKneeexam(kneeDAO.getKneeexam());
+			
+			model.addAttribute("kneeexamForm",kneeexamForm);	
+			model.addAttribute("noofrows",kneeexamForm.getKneeexam().size());    
+
+	model.addAttribute("menu","sign");
+	model.addAttribute("button","close");
+		      
+		        model.addAttribute("menu","sign");
+		        model.addAttribute("success","false");
+		        model.addAttribute("button","close");
+				return "viewkneeexam";
+
+		}
+
 	@RequestMapping(value="/kneeexamlist", method=RequestMethod.GET)
 	public String kneeexamlist(HttpServletRequest request,@RequestParam("kneeexamid") String kneeexamid,ModelMap model,Kneeexam kneeexam)
 	{
@@ -746,8 +1012,53 @@ if(result.hasErrors())
 		  
 		  	model.addAttribute("cervicalexamForm", cervicalexamForm);
 		  	model.addAttribute("menu", "sign");
-		return "viewcervicalexam";
-	}
+		  	model.addAttribute("noofrows",cervicalexamForm.getCervicalexam().size());       
+		    cervicalexamForm.setCervicalexam(cervicalDAO.getlimitedcervicalexam(1));  
+		    model.addAttribute("noofpages",(int) Math.ceil(cervicalDAO.getnoofcervicalexam() * 1.0 / 5));	 
+		        model.addAttribute("button","viewall");
+		        model.addAttribute("success","false");
+		        model.addAttribute("currentpage",1);
+			
+			
+			return "viewcervicalexam";
+
+		}	
+		
+		@RequestMapping(value="/viewcervicalexam_page", method=RequestMethod.GET)
+		public String viewcervicalexam_page(HttpServletRequest request,@RequestParam("page") int page,ModelMap model) {	
+			
+			CervicalexamForm cervicalexamForm = new CervicalexamForm();
+			cervicalexamForm.setCervicalexam(cervicalDAO.getlimitedcervicalexam(page));
+			
+		   	model.addAttribute("noofpages",(int) Math.ceil(cervicalDAO.getnoofcervicalexam() * 1.0 / 5));
+		   	model.addAttribute("cervicalexamForm", cervicalexamForm);	
+		   	model.addAttribute("noofrows",cervicalexamForm.getCervicalexam().size());   
+	model.addAttribute("currentpage",page);
+	model.addAttribute("menu","sign");
+	model.addAttribute("button","viewall");
+			return "viewcervicalexam";
+			
+		}	
+		
+		@RequestMapping(value={"/", "/viewallcervicalexam"}, method = RequestMethod.GET)
+		public String viewallcervicalexam(HttpServletRequest request,ModelMap model, Principal principal ) {
+			
+			CervicalexamForm cervicalexamForm = new CervicalexamForm();
+			cervicalexamForm.setCervicalexam(cervicalDAO.getCervicalexam());
+			
+			model.addAttribute("cervicalexamForm",cervicalexamForm);	
+			model.addAttribute("noofrows",cervicalexamForm.getCervicalexam().size());    
+
+	model.addAttribute("menu","sign");
+	model.addAttribute("button","close");
+		      
+		        model.addAttribute("menu","sign");
+		        model.addAttribute("success","false");
+		        model.addAttribute("button","close");
+				return "viewcervicalexam";
+
+		}
+
 	
 	@RequestMapping(value="/cervicalexamlist", method=RequestMethod.GET)
 	public String cervicalexamlist(HttpServletRequest request,@RequestParam("cervicalexamid") String cervicalexamid,ModelMap model,Cervicalexam cervicalexam)
@@ -854,8 +1165,53 @@ if(result.hasErrors())
 		  
 		  	model.addAttribute("elbowexamForm", elbowexamForm);
 		  	model.addAttribute("menu", "sign");
-		return "viewelbowexam";
-	}
+		  	model.addAttribute("noofrows",elbowexamForm.getElbowexam().size());       
+		    elbowexamForm.setElbowexam(elbowDAO.getlimitedelbowexam(1));  
+		    model.addAttribute("noofpages",(int) Math.ceil(elbowDAO.getnoofelbowexam() * 1.0 / 5));	 
+		        model.addAttribute("button","viewall");
+		        model.addAttribute("success","false");
+		        model.addAttribute("currentpage",1);
+			
+			
+			return "viewelbowexam";
+
+		}	
+		
+		@RequestMapping(value="/viewelbowexam_page", method=RequestMethod.GET)
+		public String viewelbowexam_page(HttpServletRequest request,@RequestParam("page") int page,ModelMap model) {	
+			
+			ElbowexamForm elbowexamForm = new ElbowexamForm();
+			elbowexamForm.setElbowexam(elbowDAO.getlimitedelbowexam(page));
+			
+		   	model.addAttribute("noofpages",(int) Math.ceil(elbowDAO.getnoofelbowexam() * 1.0 / 5));
+		   	model.addAttribute("elbowexamForm", elbowexamForm);	
+		   	model.addAttribute("noofrows",elbowexamForm.getElbowexam().size());   
+	model.addAttribute("currentpage",page);
+	model.addAttribute("menu","sign");
+	model.addAttribute("button","viewall");
+			return "viewelbowexam";
+			
+		}	
+		
+		@RequestMapping(value={"/", "/viewallelbowexam"}, method = RequestMethod.GET)
+		public String viewallelbowexam(HttpServletRequest request,ModelMap model, Principal principal ) {
+			
+			ElbowexamForm elbowexamForm = new ElbowexamForm();
+			elbowexamForm.setElbowexam(elbowDAO.getElbowexam());
+			
+			model.addAttribute("elbowexamForm",elbowexamForm);	
+			model.addAttribute("noofrows",elbowexamForm.getElbowexam().size());    
+
+	model.addAttribute("menu","sign");
+	model.addAttribute("button","close");
+		      
+		        model.addAttribute("menu","sign");
+		        model.addAttribute("success","false");
+		        model.addAttribute("button","close");
+				return "viewelbowexam";
+
+		}
+
 	@RequestMapping(value="/elbowexamlist", method=RequestMethod.GET)
 	public String elbowexamlist(HttpServletRequest request,@RequestParam("elbowexamid") String elbowexamid,ModelMap model,Elbowexam elbowexam)
 	{
@@ -959,8 +1315,53 @@ if(result.hasErrors())
 		  
 		  	model.addAttribute("thoracicexamForm", thoracicexamForm);
 		  	model.addAttribute("menu", "sign");
-		return "viewthoracicexam";
-	}
+		  	model.addAttribute("noofrows",thoracicexamForm.getThoracicexam().size());       
+		    thoracicexamForm.setThoracicexam(thoracicDAO.getlimitedthoracicexam(1));  
+		    model.addAttribute("noofpages",(int) Math.ceil(thoracicDAO.getnoofthoracicexam() * 1.0 / 5));	 
+		        model.addAttribute("button","viewall");
+		        model.addAttribute("success","false");
+		        model.addAttribute("currentpage",1);
+			
+			
+			return "viewthoracicexam";
+
+		}	
+		
+		@RequestMapping(value="/viewthoracicexam_page", method=RequestMethod.GET)
+		public String viewthoracicexam_page(HttpServletRequest request,@RequestParam("page") int page,ModelMap model) {	
+			
+			ThoracicexamForm thoracicexamForm = new ThoracicexamForm();
+			thoracicexamForm.setThoracicexam(thoracicDAO.getlimitedthoracicexam(page));
+			
+		   	model.addAttribute("noofpages",(int) Math.ceil(thoracicDAO.getnoofthoracicexam() * 1.0 / 5));
+		   	model.addAttribute("thoracicexamForm", thoracicexamForm);	
+		   	model.addAttribute("noofrows",thoracicexamForm.getThoracicexam().size());   
+	model.addAttribute("currentpage",page);
+	model.addAttribute("menu","sign");
+	model.addAttribute("button","viewall");
+			return "viewthoracicexam";
+			
+		}	
+		
+		@RequestMapping(value={"/", "/viewallthoracicexam"}, method = RequestMethod.GET)
+		public String viewallthoracicexam(HttpServletRequest request,ModelMap model, Principal principal ) {
+			
+			ThoracicexamForm thoracicexamForm = new ThoracicexamForm();
+			thoracicexamForm.setThoracicexam(thoracicDAO.getThoracicexam());
+			
+			model.addAttribute("thoracicexamForm",thoracicexamForm);	
+			model.addAttribute("noofrows",thoracicexamForm.getThoracicexam().size());    
+
+	model.addAttribute("menu","sign");
+	model.addAttribute("button","close");
+		      
+		        model.addAttribute("menu","sign");
+		        model.addAttribute("success","false");
+		        model.addAttribute("button","close");
+				return "viewthoracicexam";
+
+		}
+
 	@RequestMapping(value="/editthoracicexam", method=RequestMethod.GET)
 	public String editthoracicexam(HttpServletRequest request,@RequestParam("thoracicexamid") String thoracicexamid,ModelMap model,Thoracicexam thoracicexam) 
 	{
@@ -1074,8 +1475,54 @@ if(result.hasErrors())
 		  
 		  	model.addAttribute("dcfeeslipForm", dcfeeslipForm);
 		  	model.addAttribute("menu","dcfee");
-		return "viewdcfeeslip";
-	}
+		  	model.addAttribute("noofrows",dcfeeslipForm.getDcfeeslip().size());       
+		    dcfeeslipForm.setDcfeeslip(feeslipDAO.getlimiteddcfeeslip(1));  
+		    model.addAttribute("noofpages",(int) Math.ceil(feeslipDAO.getnoofdcfeeslip() * 1.0 / 5));	 
+		        model.addAttribute("button","viewall");
+		        model.addAttribute("success","false");
+		        model.addAttribute("currentpage",1);
+			
+			
+			return "viewdcfeeslip";
+
+		}	
+		
+		@RequestMapping(value="/viewdcfeeslip_page", method=RequestMethod.GET)
+		public String viewdcfeeslip_page(HttpServletRequest request,@RequestParam("page") int page,ModelMap model) {	
+			
+			DcfeeslipForm dcfeeslipForm = new DcfeeslipForm();
+			dcfeeslipForm.setDcfeeslip(feeslipDAO.getlimiteddcfeeslip(page));
+			
+		   	model.addAttribute("noofpages",(int) Math.ceil(feeslipDAO.getnoofdcfeeslip() * 1.0 / 5));
+		   	model.addAttribute("dcfeeslipForm", dcfeeslipForm);	
+		   	model.addAttribute("noofrows",dcfeeslipForm.getDcfeeslip().size());   
+	model.addAttribute("currentpage",page);
+	model.addAttribute("menu","sign");
+	model.addAttribute("button","viewall");
+			return "viewdcfeeslip";
+			
+		}	
+		
+		@RequestMapping(value={"/", "/viewalldcfeeslip"}, method = RequestMethod.GET)
+		public String viewalldcfeeslip(HttpServletRequest request,ModelMap model, Principal principal ) {
+			
+			DcfeeslipForm dcfeeslipForm = new DcfeeslipForm();
+			dcfeeslipForm.setDcfeeslip(feeslipDAO.getDcfeeslip());
+			
+			model.addAttribute("dcfeeslipForm",dcfeeslipForm);	
+			model.addAttribute("noofrows",dcfeeslipForm.getDcfeeslip().size());    
+
+	model.addAttribute("menu","sign");
+	model.addAttribute("button","close");
+		      
+		        model.addAttribute("menu","sign");
+		        model.addAttribute("success","false");
+		        model.addAttribute("button","close");
+				return "viewdcfeeslip";
+
+		}
+
+
 	
 	@RequestMapping(value="/dcfeesliplist", method=RequestMethod.GET)
 	public String dcfeesliplist(HttpServletRequest request,@RequestParam("dcfeeid") String dcfeeid,ModelMap model,Dcfeeslip dcfeeslip)
@@ -1182,8 +1629,54 @@ if(result.hasErrors())
 		  
 		  	model.addAttribute("lowbackForm", lowbackForm);
 		  	model.addAttribute("menu","wristindex");
-		return "viewlowback";
-	}
+		  	model.addAttribute("noofrows",lowbackForm.getLowback().size());       
+		    lowbackForm.setLowback(lowDAO.getlimitedlowback(1));  
+		    model.addAttribute("noofpages",(int) Math.ceil(lowDAO.getnooflowback() * 1.0 / 5));	 
+		        model.addAttribute("button","viewall");
+		        model.addAttribute("success","false");
+		        model.addAttribute("currentpage",1);
+			
+			
+			return "viewlowback";
+
+		}	
+		
+		@RequestMapping(value="/viewlowback_page", method=RequestMethod.GET)
+		public String viewlowback_page(HttpServletRequest request,@RequestParam("page") int page,ModelMap model) {	
+			
+			LowbackForm lowbackForm = new LowbackForm();
+			lowbackForm.setLowback(lowDAO.getlimitedlowback(page));
+			
+		   	model.addAttribute("noofpages",(int) Math.ceil(lowDAO.getnooflowback() * 1.0 / 5));
+		   	model.addAttribute("lowbackForm", lowbackForm);	
+		   	model.addAttribute("noofrows",lowbackForm.getLowback().size());   
+	model.addAttribute("currentpage",page);
+	model.addAttribute("menu","sign");
+	model.addAttribute("button","viewall");
+			return "viewlowback";
+			
+		}	
+		
+		@RequestMapping(value={"/", "/viewalllowback"}, method = RequestMethod.GET)
+		public String viewalllowback(HttpServletRequest request,ModelMap model, Principal principal ) {
+			
+			LowbackForm lowbackForm = new LowbackForm();
+			lowbackForm.setLowback(lowDAO.getLowback());
+			
+			model.addAttribute("lowbackForm",lowbackForm);	
+			model.addAttribute("noofrows",lowbackForm.getLowback().size());    
+
+	model.addAttribute("menu","sign");
+	model.addAttribute("button","close");
+		      
+		        model.addAttribute("menu","sign");
+		        model.addAttribute("success","false");
+		        model.addAttribute("button","close");
+				return "viewlowback";
+
+		}
+
+
 	@RequestMapping(value="/lowbacklist", method=RequestMethod.GET)
 	public String lowbacklist(HttpServletRequest request,@RequestParam("lowbackno") String lowbackno,ModelMap model,Lowback lowback)
 	{
@@ -1290,8 +1783,54 @@ if(result.hasErrors())
 		  
 		  model.addAttribute("dutiesduressForm",dutiesduressForm);	
 		  model.addAttribute("menu","duties");
-		return "viewduties";
-	}
+		  model.addAttribute("noofrows",dutiesduressForm.getDutiesunderduressdetails().size());       
+		    dutiesduressForm.setDutiesunderduressdetails(dutiesDAO.getlimitedduties(1));  
+		    model.addAttribute("noofpages",(int) Math.ceil(dutiesDAO.getnoofduties() * 1.0 / 5));	 
+		        model.addAttribute("button","viewall");
+		        model.addAttribute("success","false");
+		        model.addAttribute("currentpage",1);
+			
+			
+			return "viewduties";
+
+		}	
+		
+		@RequestMapping(value="/viewduties_page", method=RequestMethod.GET)
+		public String viewduties_page(HttpServletRequest request,@RequestParam("page") int page,ModelMap model) {	
+			
+			DutiesduressForm dutiesduressForm = new DutiesduressForm();
+			dutiesduressForm.setDutiesunderduressdetails(dutiesDAO.getlimitedduties(page));
+			
+		   	model.addAttribute("noofpages",(int) Math.ceil(dutiesDAO.getnoofduties() * 1.0 / 5));
+		   	model.addAttribute("dutiesduressForm", dutiesduressForm);	
+		   	model.addAttribute("noofrows",dutiesduressForm.getDutiesunderduressdetails().size());   
+	model.addAttribute("currentpage",page);
+	model.addAttribute("menu","sign");
+	model.addAttribute("button","viewall");
+			return "viewduties";
+			
+		}	
+		
+		@RequestMapping(value={"/", "/viewallduties"}, method = RequestMethod.GET)
+		public String viewallduties(HttpServletRequest request,ModelMap model, Principal principal ) {
+			
+			DutiesduressForm dutiesduressForm = new DutiesduressForm();
+			dutiesduressForm.setDutiesunderduressdetails(dutiesDAO.getDuties());
+			
+			model.addAttribute("dutiesduressForm",dutiesduressForm);	
+			model.addAttribute("noofrows",dutiesduressForm.getDutiesunderduressdetails().size());    
+
+	model.addAttribute("menu","sign");
+	model.addAttribute("button","close");
+		      
+		        model.addAttribute("menu","sign");
+		        model.addAttribute("success","false");
+		        model.addAttribute("button","close");
+				return "viewduties";
+
+		}
+
+
 	
 	@RequestMapping(value="/dutiesunderduresslist", method=RequestMethod.GET)
 	public String dutiesunderduresslist(HttpServletRequest request,@RequestParam("dutiesno") String dutiesno,ModelMap model,Dutiesunderduress dutiesunderduress)
@@ -1390,8 +1929,54 @@ if(result.hasErrors())
 		  
 		  model.addAttribute("footquestionnarieForm",footquestionnarieForm);	
 		  model.addAttribute("menu", "hipknee");
-		return "viewfootquestionnarie";
-	}
+		  model.addAttribute("noofrows",footquestionnarieForm.getFootquestionnariedetails().size());       
+		    footquestionnarieForm.setFootquestionnariedetails(footDAO.getlimitedfootquestionnarie(1));  
+		    model.addAttribute("noofpages",(int) Math.ceil(footDAO.getnooffootquestionnarie() * 1.0 / 5));	 
+		        model.addAttribute("button","viewall");
+		        model.addAttribute("success","false");
+		        model.addAttribute("currentpage",1);
+			
+			
+			return "viewfootquestionnarie";
+
+		}	
+		
+		@RequestMapping(value="/viewfootquestionnarie_page", method=RequestMethod.GET)
+		public String viewfootquestionnarie_page(HttpServletRequest request,@RequestParam("page") int page,ModelMap model) {	
+			
+			FootquestionnarieForm footquestionnarieForm = new FootquestionnarieForm();
+			footquestionnarieForm.setFootquestionnariedetails(footDAO.getlimitedfootquestionnarie(page));
+			
+		   	model.addAttribute("noofpages",(int) Math.ceil(footDAO.getnooffootquestionnarie() * 1.0 / 5));
+		   	model.addAttribute("footquestionnarieForm", footquestionnarieForm);	
+		   	model.addAttribute("noofrows",footquestionnarieForm.getFootquestionnariedetails().size());   
+	model.addAttribute("currentpage",page);
+	model.addAttribute("menu","sign");
+	model.addAttribute("button","viewall");
+			return "viewfootquestionnarie";
+			
+		}	
+		
+		@RequestMapping(value={"/", "/viewallfootquestionnarie"}, method = RequestMethod.GET)
+		public String viewallfootquestionnarie(HttpServletRequest request,ModelMap model, Principal principal ) {
+			
+			FootquestionnarieForm footquestionnarieForm = new FootquestionnarieForm();
+			footquestionnarieForm.setFootquestionnariedetails(footDAO.getFootquestionnarie());
+			
+			model.addAttribute("footquestionnarieForm",footquestionnarieForm);	
+			model.addAttribute("noofrows",footquestionnarieForm.getFootquestionnariedetails().size());    
+
+	model.addAttribute("menu","sign");
+	model.addAttribute("button","close");
+		      
+		        model.addAttribute("menu","sign");
+		        model.addAttribute("success","false");
+		        model.addAttribute("button","close");
+				return "viewfootquestionnarie";
+
+		}
+
+
 	@RequestMapping(value="/footquestionnarielist", method=RequestMethod.GET)
 	public String footquestionnarielist(HttpServletRequest request,@RequestParam("footquestionno") String footquestionno,ModelMap model,Footquestionnarie footquestionnarie)
 	{
@@ -1495,9 +2080,54 @@ if(result.hasErrors())
 		  shoulderpainscoreForm.setShoulderpainscore(shoulderDAO.getShoulderpainscore());
 		  
 		  model.addAttribute("shoulderpainscoreForm",shoulderpainscoreForm);	
-		  
-		return "viewshoulderpainscore";
-	}
+		  model.addAttribute("noofrows",shoulderpainscoreForm.getShoulderpainscore().size());       
+		    shoulderpainscoreForm.setShoulderpainscore(shoulderDAO.getlimitedshoulderpainscore(1));  
+		    model.addAttribute("noofpages",(int) Math.ceil(shoulderDAO.getnoofshoulderpainscore() * 1.0 / 5));	 
+		        model.addAttribute("button","viewall");
+		        model.addAttribute("success","false");
+		        model.addAttribute("currentpage",1);
+			
+			
+			return "viewshoulderpainscore";
+
+		}	
+		
+		@RequestMapping(value="/viewshoulderpainscore_page", method=RequestMethod.GET)
+		public String viewshoulderpainscore_page(HttpServletRequest request,@RequestParam("page") int page,ModelMap model) {	
+			
+			ShoulderpainscoreForm shoulderpainscoreForm = new ShoulderpainscoreForm();
+			shoulderpainscoreForm.setShoulderpainscore(shoulderDAO.getlimitedshoulderpainscore(page));
+			
+		   	model.addAttribute("noofpages",(int) Math.ceil(shoulderDAO.getnoofshoulderpainscore() * 1.0 / 5));
+		   	model.addAttribute("shoulderpainscoreForm", shoulderpainscoreForm);	
+		   	model.addAttribute("noofrows",shoulderpainscoreForm.getShoulderpainscore().size());   
+	model.addAttribute("currentpage",page);
+	model.addAttribute("menu","sign");
+	model.addAttribute("button","viewall");
+			return "viewshoulderpainscore";
+			
+		}	
+		
+		@RequestMapping(value={"/", "/viewallshoulderpainscore"}, method = RequestMethod.GET)
+		public String viewallshoulderpainscore(HttpServletRequest request,ModelMap model, Principal principal ) {
+			
+			ShoulderpainscoreForm shoulderpainscoreForm = new ShoulderpainscoreForm();
+			shoulderpainscoreForm.setShoulderpainscore(shoulderDAO.getShoulderpainscore());
+			
+			model.addAttribute("shoulderpainscoreForm",shoulderpainscoreForm);	
+			model.addAttribute("noofrows",shoulderpainscoreForm.getShoulderpainscore().size());    
+
+	model.addAttribute("menu","sign");
+	model.addAttribute("button","close");
+		      
+		        model.addAttribute("menu","sign");
+		        model.addAttribute("success","false");
+		        model.addAttribute("button","close");
+				return "viewshoulderpainscore";
+
+		}
+
+
 	@RequestMapping(value="/shoulderpainscorelist", method=RequestMethod.GET)
 	public String shoulderpainscorelist(HttpServletRequest request,@RequestParam("shoulderpainno") String shoulderpainno,ModelMap model,Shoulderpainscore shoulderpainscore)
 	{
