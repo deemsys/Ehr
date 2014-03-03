@@ -187,7 +187,7 @@ $(function() {
             </br>
             <p>This questionairre has been designed to give the doctor information as to how your neck pain has affected your ability to manage in everyday life.Please answer every section and mark in each section only the ONE box which applies to you.We realize you may consider that two of the statements in any one section relate to you,but please just mark the box which most closely describes your problem.</p>
            <table>
-           <tr ><td width="300"><b>Section 1-Pain intensity</b></td><td width="300"><b>Section 6-Work</b></td></tr>
+           <tr ><td width="500"><b>Section 1-Pain intensity</b></td><td width="500"><b>Section 6-Work</b></td></tr>
            <tr><td><input type="radio" class="painintensity" id="painintensity" name="painintensity" onclick="doAjaxPost()" value="0">&nbsp;&nbsp;I have no pain in my wrist/hand</td>
            <td><input type="radio" name="work" class="work" id="work" value="0" onclick="doAjaxPost()">&nbsp;&nbsp;I can do as much work as I want to without symptoms</td>
            </tr>

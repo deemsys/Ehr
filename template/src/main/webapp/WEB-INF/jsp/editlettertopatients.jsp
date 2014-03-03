@@ -8,7 +8,7 @@
  <script src="resources/js/jquery-ui.js"></script>
  <script src="resources/js/jquery-1.9.1.js"></script>
  <STYLE type="text/css">
-  P#mypar {font-style:calibri;
+ /* P#mypar {font-style:calibri; */
   line-height:18px;}
   
   </STYLE>

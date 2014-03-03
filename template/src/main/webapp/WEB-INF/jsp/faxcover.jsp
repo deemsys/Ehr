@@ -141,12 +141,14 @@
        		 </td></tr>
        		 </table>
        		  
-        	  <table><tr> <td><input type="submit" class="submit_btn" value="Save"></td>
+        	  
+            <div>
+            <p align="justify">	*The information contained in this transmission is privileged and confidential.  It is intended only for the use of the individual or entity named above.  If the reader of this message is not the intended recipient, you are hereby notified that any dissemination, distribution, or copy of this communication is prohibited.  If you have received this communication in error, please notify me immediately. </p>	
+            </div>
+            
+            <table><tr> <td><input type="submit" class="submit_btn" value="Save"></td>
                <td><a href="responseattorney"style="color:white" class="submit_btn">Cancel</a></td>
               </tr></table>
-            <div>
-            	The information contained in this transmission is privileged and confidential.  It is intended only for the use of the individual or entity named above.  If the reader of this message is not the intended recipient, you are hereby notified that any dissemination, distribution, or copy of this communication is prohibited.  If you have received this communication in error, please notify me immediately. 	
-            </div>
               </div>
         	  </div>
         	  </td>

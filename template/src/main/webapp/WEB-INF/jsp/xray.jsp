@@ -20,11 +20,16 @@
          });
  $(function() {
            $( "#datepicker2" ).datepicker();
+          
+         });
+         $(function() {
+           $( "#datepicker3" ).datepicker();
+          
          });
 </script>
 </head>
  <body>
- <div id="right_content" >
+
 <form action="insertxray" method="POST">
  <table cellpadding="0" cellspacing="0" border="0"  width="70%" class="margin_table">
        <tr>
@@ -57,36 +62,36 @@
        I <input type="text" class="input_txtbx1" name="name" id="name"> do hereby agree to return X-rays that I have borrowed from the Chiropractic Therapy Center, I understand that I have   fourteen (14) days to do so.  I fully agree that in the event that I do not return      X-rays, I will be billed $50.00.  	  
        </td></tr></table></div>
        <br>
-        	   <div class="contentbox">
+        	   
 <table align="center" cellpadding="0" cellspacing="0" border="0"   width="70%"  ">
               <tr>
               <td style="width: 212px; "><span class="err"></span>Date Borrowed </td>
               <td><input type="text" class="input_txtbx1" name="date" id="datepicker1"><span class="err"><form:errors path="Perrychiropractic.insurance"></form:errors></span></td>
               </tr>
               </table><br>
-</div>
 
 
- <div class="contentbox">
+
+ 
 <table align="center" cellpadding="0" cellspacing="0" border="0"   width="70%"  ">
               <tr>
               <td style="width: 212px; "><span class="err"></span>Date Due </td>
               <td><input type="text" class="input_txtbx1" name="date1" id="datepicker2"><span class="err"><form:errors path="Perrychiropractic.insurance"></form:errors></span></td>
               </tr>
-              </table></div>
+              </table>
          <br>     
- <div class="contentbox">             
+             
 <table align="center"   cellpadding="0" cellspacing="0" border="0"   width="100%"  ">
               <tr>
               
               <td><input type="text" class="input_txtbx1" name="sign" id="sign"><span class="err"><form:errors path="Xray.sign"></form:errors></span></td>
-              <td><input type="text" class="input_txtbx1" name="date2" id="date2"><span class="err"><form:errors path="Perrychiropractic.insurance"></form:errors></span></td>
+              <td><input type="text" class="input_txtbx1" name="date2" id="datepicker3"><span class="err"><form:errors path="Perrychiropractic.insurance"></form:errors></span></td>
               
               
               </tr>
               <tr><td> Signature</td><td>&nbsp;Date</td></tr>
               </table>              
-              </div>
+             
               
               
               
@@ -108,7 +113,7 @@
  
  </form>
  
- </div>
+
  </body>
         	  </html>
         	 

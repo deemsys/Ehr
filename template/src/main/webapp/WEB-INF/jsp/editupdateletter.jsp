@@ -31,44 +31,25 @@
 <form action="updateupdateletter" method="POST">
 <table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table">
  <tr> <td>
- <table cellpadding="0" cellspacing="0" border="0"  width="70%" class="margin_table">
-       <tr>
-        <td valign="top" align="left" style="padding:5px 0 10px 0;">&nbsp;
-		<div class="status success" style="display: none;">
-            <p class="closestatus"><a title="Close" href="">x</a></p>
-            <p><img alt="Success" src="images/icons/icon_success.png"><span>Success!</span>.</p>
-          </div>
-      </tr> 
-      <tr>
-        
-        	  </tr>
-        	  </table>
- 
- 
- 
- <table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table">
- <tr>
- <td valign="top" align="left" style="padding:5px 0 10px 0;">&nbsp;
-		<div class="status success" style="display: none;">
-            <p class="closestatus"><a title="Close" href="">x</a></p>
-            <p><img alt="Success" src="images/icons/icon_success.png"><span>Success!</span>.</p>
-          </div>
-      </tr> 
-      <tr>
-        
-        	  </tr>
-        	  </table>
 
-<table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table">
- <tr>
         <td valign="top" align="left" style="padding:5px 0 10px 0;">&nbsp;
 		<div class="status success" style="display: none;">
             <p class="closestatus"><a title="Close" href="">x</a></p>
             <p><img alt="Success" src="images/icons/icon_success.png"><span>Success!</span>.</p>
           </div>
-      </tr>  </table>
+      </tr> 
       
-      <div>
+        	  </table>
+ 
+ 
+ 
+ 
+
+    
+      <table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table">
+ <tr>
+ <td>
+ <div class="contentbox">
       
       <c:set value="${updateletterform.updateletterdetails[0]}" var="updateletterdetails"> </c:set>
  <table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table">

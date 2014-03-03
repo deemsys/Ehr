@@ -278,31 +278,17 @@
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
   				<tr>
     				<td align="left" valign="top" width="50%" style="padding-right:25px;">
-                        
-                        <table cellpadding="0" cellspacing="0" border="0" width="100%">
-                        
-                
-      
-				              <tr class="row2">
-				         	<td><span class="err">*</span>Please Describe Your Symptoms Briefly:</td>
-				         	<td>${patientDetails.symptoms}</td>
-				         	<td>Pain Scale:</td>
-				         	<td>${patientDetails.painscale}</td>
-				         	</tr>
-				         	<tr class="row1">
+                       <span class="err">*</span>Please Describe Your Symptoms Briefly: 
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%">                      
+               <c:forEach items="${symptom}" var="symptom" varStatus="status">
+      		              <tr class="row1">
 				         	<td></td>
-				         	<td>${patientDetails.symptom1}</td>
-				         	<td>Pain Scale1:</td>
-				         	<td>${patientDetails.painscale1}</td>
 				         	
-				        </tr>
-				        <tr class="row2">
-				        	<td></td>
-				        	<td>${patientDetails.symptom2}</td>
-				         	<td>Pain Scale2:</td>
-				         	<td>${patientDetails.painscale2}</td>
-				         
-				        </tr>
+				         	<td><c:out value="${symptom}"></c:out></td>
+				         	
+				         	</tr>
+				         	</c:forEach>
+				         	
 				        
 				       <tr class="row1">
 				         	<td><span class="err">*</span>Are These Symptoms Due to an Accident?</td>

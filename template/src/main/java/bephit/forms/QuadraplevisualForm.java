@@ -6,14 +6,15 @@ import bephit.model.Quadraplevisual;
 
 
 public class QuadraplevisualForm {
-	private List<Quadraplevisual> quadraplevisual;
+	private List<Quadraplevisual> quadraplevisualdetails;
 
-	public List<Quadraplevisual> getQuadraplevisual() {
-		return quadraplevisual;
+	public List<Quadraplevisual> getQuadraplevisualdetails() {
+		return quadraplevisualdetails;
 	}
 
-	public void setQuadraplevisual(List<Quadraplevisual> quadraplevisual) {
-		this.quadraplevisual = quadraplevisual;
+	public void setQuadraplevisualdetails(
+			List<Quadraplevisual> quadraplevisualdetails) {
+		this.quadraplevisualdetails = quadraplevisualdetails;
 	}
 
 	

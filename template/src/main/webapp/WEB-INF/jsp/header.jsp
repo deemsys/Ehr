@@ -296,12 +296,7 @@ color:#fff;
 						<c:choose>
 						<c:when test="${menu=='search'}">
 						<ul class="menu">
-						     <li>
-				            	<a href="viewpatient" class="<c:choose>
-				            	<c:when test="${menu=='patientInfo'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu1">
-				            		<span>View Patient Details</span>
-				            	</a> </li>
-				            	
+						     
 				            	</ul>
 				            
 				           
@@ -310,15 +305,12 @@ color:#fff;
 					</c:when>
 					<c:otherwise>
 						<c:if test="${role==0}">
-							  <%-- <li>
-								<a href="welcome" class="<c:choose><c:when test="${menu=='dashboard'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>">
-									<span>Dashboard</span>
-								</a>
-							 </li> --%> 
-				            	<ul class="menu">
+						<c:choose>
+				            <c:when test="${patientno=='0'}"> 
+				            <ul class="menu">
 				            <li>
-				            	<a href="#" class="<c:choose>
-				            	<c:when test="${menu=='patientInfo'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu5">
+				            	<a href="viewpatient" class="<c:choose>
+				            	<c:when test="${menu=='patientInfo'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>">
 				            		<span>Patient Information</span>
 				            	</a>
 				            </li>
@@ -328,26 +320,13 @@ color:#fff;
 				            		<span Style="color:white">Accident</span>
 				            	</a>
 				            </li>
-				            <%-- <li>
-				            	<a href="hardshipagreement" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" >
-				            		<span><img src="<c:url value="/resources/images/icon_06.png" />" alt="" style="padding:5px 5px 0 0;" />Hardship Agreement</span>
-				            	</a>
-				            </li> --%>
+				            
 				            <li> 
 				            	<a href="#" class="<c:choose><c:when test="${menu=='health'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu4">
 				            		<span>Health Insurance</span>
 				            	</a>
 				            </li> 
-				           <%--  <li> 
-				            	<a href="staffchecklist" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>">
-				            		<span><img src="<c:url value="/resources/images/icon_07.png" />" alt="" style="padding:5px 5px 0 0;" />Staff checklist</span>
-				            	</a>
-				            </li> --%>
-				            <%--  <li>
-				            	<a href="Assignment" class="<c:choose><c:when test="${true}">select</c:when><c:otherwise></c:otherwise></c:choose>" >
-				            		<span><img src="<c:url value="/resources/images/icon_03.png" />" alt="" style="padding:5px 5px 0 0;" />Assignment of Benefits</span>
-				            	</a>
-				            </li> --%>
+				         
 				            <li>
 				            	<a href="#" class="<c:choose><c:when test="${menu=='consent'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu2">
 				            		<span>Consent To Treat</span>
@@ -358,6 +337,42 @@ color:#fff;
 									<span>Authorization Forms</span>
 								</a>
 							</li>
+							</c:when>
+							<c:otherwise>
+							 <ul class="menu">
+							<li>
+				            	<a href="#" class="<c:choose>
+				            	<c:when test="${menu=='patientInfo'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu5">
+				            		<span>Patient Information</span>
+				            	</a>
+				            </li>
+				           <li>
+				            	<a href="#" class="<c:choose>
+				            	<c:when test="${menu=='Accident'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu1">
+				            		<span Style="color:white">Accident</span>
+				            	</a>
+				            </li>
+				            
+				            <li> 
+				            	<a href="#" class="<c:choose><c:when test="${menu=='health'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu4">
+				            		<span>Health Insurance</span>
+				            	</a>
+				            </li> 
+				         
+				            <li>
+				            	<a href="#" class="<c:choose><c:when test="${menu=='consent'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu2">
+				            		<span>Consent To Treat</span>
+				            	</a>
+				            </li>
+				            <li>
+								<a href="#" class="<c:choose><c:when test="${menu=='authorization'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu3">
+									<span>Authorization Forms</span>
+								</a>
+							</li>							
+							
+							
+							</c:otherwise>
+							</c:choose>
 							</c:if>
 							<c:if test="${role==1}">
 							
@@ -420,11 +435,11 @@ color:#fff;
 									<span>Symptom</span>
 								</a>
 							</li>
-							<li>
+							<%-- <li>
 								<a href="#" class="<c:choose><c:when test="${menu=='therapy'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu24">
 									<span>Manual Therapy Treatment</span>
 								</a>
-							</li>
+							</li> --%>
 							
 							<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='wristindex'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu25">
@@ -503,11 +518,11 @@ color:#fff;
 									<span>Symptom</span>
 								</a>
 							</li>
-							<li>
+							<%-- <li>
 								<a href="#" class="<c:choose><c:when test="${menu=='therapy'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu24">
 									<span>Manual Therapy Treatment</span>
 								</a>
-							</li>
+							</li> --%>
 							
 							<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='wristindex'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu25">
@@ -585,11 +600,11 @@ color:#fff;
 									<span>Symptom</span>
 								</a>
 							</li>
-							<li>
+							<%-- <li>
 								<a href="#" class="<c:choose><c:when test="${menu=='therapy'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu24">
 									<span>Manual Therapy Treatment</span>
 								</a>
-							</li>
+							</li> --%>
 							
 							<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='wristindex'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu25">
@@ -667,11 +682,11 @@ color:#fff;
 									<span>Symptom</span>
 								</a>
 							</li>
-							<li>
+							<%-- <li>
 								<a href="#" class="<c:choose><c:when test="${menu=='therapy'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu24">
 									<span>Manual Therapy Treatment</span>
 								</a>
-							</li>
+							</li> --%>
 							
 							<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='wristindex'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu25">
@@ -733,11 +748,11 @@ color:#fff;
 									<span>Symptom</span>
 								</a>
 							</li>
-							<li>
+							<%-- <li>
 								<a href="#" class="<c:choose><c:when test="${menu=='therapy'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu24">
 									<span>Manual Therapy Treatment</span>
 								</a>
-							</li>
+							</li> --%>
 							
 							<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='wristindex'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu25">
@@ -800,11 +815,11 @@ color:#fff;
 									<span>Symptom</span>
 								</a>
 							</li>
-							<li>
+							<%-- <li>
 								<a href="#" class="<c:choose><c:when test="${menu=='therapy'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu24">
 									<span>Manual Therapy Treatment</span>
 								</a>
-							</li>
+							</li> --%>
 							
 							<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='wristindex'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu25">
@@ -864,11 +879,11 @@ color:#fff;
 									<span>Symptom</span>
 								</a>
 							</li>
-							<li>
+							<%-- <li>
 								<a href="#" class="<c:choose><c:when test="${menu=='therapy'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu24">
 									<span>Manual Therapy Treatment</span>
 								</a>
-							</li>
+							</li> --%>
 							
 							<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='wristindex'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu25">
@@ -917,11 +932,11 @@ color:#fff;
 									<span>Symptom</span>
 								</a>
 							</li>
-							<li>
+							<%-- <li>
 								<a href="#" class="<c:choose><c:when test="${menu=='therapy'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu24">
 									<span>Manual Therapy Treatment</span>
 								</a>
-							</li>
+							</li> --%>
 							<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='wristindex'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu25">
 									<span>Wrist/Hand Disability Index</span>

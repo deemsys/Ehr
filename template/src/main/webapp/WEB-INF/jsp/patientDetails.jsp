@@ -19,12 +19,12 @@
 function addMultichoice(divName)
 {
 var xx=document.getElementsByName('symptom[]').length;
-alert("no......"+xx);
+//alert("no......"+xx);
 var $sid = xx+1;
 
 	
 	var newdiv = document.createElement('div');
-	newdiv.innerHTML = '<table width="85%" border="0" cellspacing="0" cellpadding="0" align="right" id="newtbl'+$im+'"><tr class="row1"><td valign="middle" align="right" class="input_txt" width="30%"></td><td valign="top" align="left" class="input_txt" width="70%"><textarea  name="symptom[]" placeholder="Specify your Symptoms" rows="3" cols="25" onBlur="symptompopup('+$sid+')" id="symptom'+$sid+'"></textarea></td></tr><tr class="row1"><td align="right" valign="top">&nbsp;</td><td align="left" valign="top"><a javascript:void(0);" onclick="removechoice('+$im+')" style="text-decoration:none;"><input type="submit" class="submit_btn" value="CANCEL" /></a></td></tr></table>';
+	newdiv.innerHTML = '<table width="85%" border="0" cellspacing="0" cellpadding="0" align="right" id="newtbl'+$im+'"><tr class="row1"><td valign="middle" align="right" class="input_txt" width="35%"></td><td valign="top" align="left" class="input_txt" width="90%"><textarea  name="symptom[]" placeholder="Specify your Symptoms" rows="3" cols="25" onBlur="symptompopup('+$sid+')" id="symptom'+$sid+'"></textarea></td></tr><tr class="row1"><td align="right" valign="top">&nbsp;</td><td align="left" valign="top"><a javascript:void(0);" onclick="removechoice('+$im+')" style="text-decoration:none;"><input type="submit" class="submit_btn" value="CANCEL" /></a></td></tr></table>';
     document.getElementById(divName).appendChild(newdiv); 
 
 	$im++;
@@ -65,7 +65,11 @@ var $sid = xx+1;
 			      alert('Error: ' + e);  
 			    }  
 			  });  */ 
-			 window.open("quadraplevisual",'popUpWindow','resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes'); 
+			 var patientid=document.getElementById("totalpoint").value;
+			// alert(patientid);
+			 var url="quadraplevisual?patient_id="+patientid;
+			//  alert(url);
+			 window.open(url,'popUpWindow','resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes'); 
 			}
 	}	
  </script>
@@ -73,7 +77,7 @@ var $sid = xx+1;
  <script type="text/javascript">
 
  function newpopup() {
-	var val=document.getElementById("message[]");
+	var val=document.getElementById("symptom");
 	
 	if(val.value =="")
 		{
@@ -97,7 +101,14 @@ var $sid = xx+1;
 		    }  
 		  });    
 		*/
-		 popupWindow1 = window.open("quadraplevisual",'popUpWindow','resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes'); 
+		 var patientid=document.getElementById("totalpoint").value;
+			 alert(patientid);
+			 var url="quadraplevisual?patient_id="+patientid;
+			  alert(url);
+			 window.open(url,'popUpWindow','resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes'); 
+		
+		
+		// popupWindow1 = window.open("quadraplevisual",'popUpWindow','resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes'); 
 		} 
 	}
  
@@ -510,6 +521,7 @@ $(function(){
                         <tr class="row1">
 				                 <div id="info"> <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name :</td>
 				                  <td valign="top" align="left" class="input_txt">
+				                  <input type="hidden" value="${totalpatient}" id="totalpoint">
 				                  	<input type="text" class="input_txtbx1" name="Name" id="name" value="${pname}" /><br><span class="err"><form:errors path="PatientDetails.name"></form:errors></span>
 				                  </td>
 				                </tr>
@@ -759,11 +771,12 @@ $(function(){
     				<td align="left" valign="top" width="50%" style="padding-right:25px;">
                         
                         <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                       <span class="err">*</span>Please Describess Your Symptoms Briefly:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<textarea rows="3" cols="25" placeholder="Specify your Symptoms" name="symptom[]" id="symptom" onBlur="newpopup()"></textarea>&nbsp;&nbsp;&nbsp; <br><span class="err"><form:errors path="PatientDetails.symptoms"></form:errors></span>
                         <tr>
                       </div> 
-                      <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Please Describe Your Symptoms Briefly:</td>
+                      <td valign="middle" align="left" class="input_txt"></td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<textarea rows="3" cols="25" placeholder="Specify your Symptoms" name="symptom[]" id="symptom" onBlur="newpopup()"></textarea>&nbsp;&nbsp;&nbsp; <br><span class="err"><form:errors path="PatientDetails.symptoms"></form:errors></span>
+				                  
 				                  	</td>
 				                  	<td>
 				                  	<!-- <label for="amount"><b>Pain Scale:</b></label>
@@ -771,7 +784,7 @@ $(function(){
 				                  	<div id="slider"></div> -->
 				                  </td>
 				                </tr>
-		 <div id="multichoice"></div>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <div id="multichoice"></div>
    <tr>
    <td width="510"></td><td><a href="javascript:void(0);" onclick="addMultichoice('multichoice');" style="text-decoration:none;" ><input type="button" value="Add one more Symptom" class="submit_btn2" name=""/></a></td>
                                  <!-- <td valign="middle" align="left" class="input_txt"></td>
@@ -1711,7 +1724,7 @@ $(function(){
 				                  	
 				                  	</table>
 				                  	</c:otherwise>
-				                  	</c:choose>
+				                  	</c:choose> --%>
 				                  	</div>
 				                  	
 				                  	</div>

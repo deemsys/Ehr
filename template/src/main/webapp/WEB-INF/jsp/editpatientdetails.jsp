@@ -10,6 +10,34 @@
   <link rel="stylesheet" href="/resources/css/style.css" />
   <script src="resources/js/jquery.min.js"></script>
   <script src="resources/js/jquery-ui.js"></script>
+<script type="text/javascript">
+
+ var $im=0;
+ var flagm=0;
+function addMultichoice(divName)
+{
+var xx=document.getElementsByName('symptom[]').length;
+//alert("no......"+xx);
+var $sid = xx+1;
+
+	
+	var newdiv = document.createElement('div');
+	newdiv.innerHTML = '<table width="85%" border="0" cellspacing="0" cellpadding="0" align="right" id="newtbl'+$im+'"><tr class="row1"><td valign="middle" align="right" class="input_txt" width="35%"></td><td valign="top" align="left" class="input_txt" width="70%"><textarea  name="symptom[]" placeholder="Specify your Symptoms" rows="3" cols="25" onBlur="newpopup()" id="symptom"></textarea></td></tr><tr class="row1"><td align="right" valign="top">&nbsp;</td><td align="left" valign="top"><a javascript:void(0);" onclick="removechoice('+$im+')" style="text-decoration:none;"><input type="submit" class="submit_btn" value="CANCEL" /></a></td></tr></table>';
+    document.getElementById(divName).appendChild(newdiv); 
+
+	$im++;
+	flagm++;
+	}
+	 function removechoice(id)
+	{
+		var id='newtbl'+id;
+		var child = document.getElementById(id);
+		var parentDiv = child.parentNode;
+		parentDiv.removeChild(child);
+
+	}
+</script>
+
 <script>
   $(function() {
 	  $("#datepicker3").datepicker({changeMonth: true,changeYear: true,showOn: "button",
@@ -55,6 +83,43 @@
 	  });
 	  </script>
 	  <script type="text/javascript">
+	  function newpopup() {
+	var val=document.getElementById("symptom");
+	
+	if(val.value =="")
+		{
+		alert("please enter the pain name in the field symptom");
+		}
+	else
+		{
+		/* var symptoms = $('#symptoms').val(); */
+		  
+		  
+		 /*  $.ajax({  
+		    type: "POST",  
+		    url: "/EhrApp/patientDetails_ajax",  
+		    data: "symptoms=" + symptoms  ,  
+		    success: function(response){  
+		    	
+		      
+		    },  
+		    error: function(e){  
+		      alert('Error: ' + e);  
+		    }  
+		  });    
+		*/
+		 var patientid=document.getElementById("patientid").value;
+			 //alert(patientid);
+			 var url="quadraplevisual?patient_id="+patientid;
+			  //alert(url);
+			 window.open(url,'popUpWindow','resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes'); 
+			} 
+	}
+ 
+ </script> 
+	  
+	  
+	  <script>
     var currentTab = 0;
     $(function () {
         $("#tabs").tabs({
@@ -128,7 +193,7 @@
     											<table cellpadding="0" cellspacing="0" border="0" width="100%">
                        								 <tr class="row1">
                         	 							<td><span class="err">*</span>Name :</td>
-                        	 							<input type="hidden" class="input_txtbx1" id="inp_id" value="${patientDetails.patient_id}" name="patient_id" />
+                        	 							<input type="hidden" class="input_txtbx1" id="patientid" value="${patientDetails.patient_id}" name="patient_id" />
                                  						<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.name }" name="name" /></br><span class="err"><form:errors path="PatientDetails.Name"></form:errors></span></td>
                       								  </tr>
                         <tr class="row2">
@@ -321,24 +386,45 @@
                         
                         <table cellpadding="0" cellspacing="0" border="0" width="100%">
                         
-                
-      
+         <tr height="10"></tr>       
+      <tr ><td align="right" ></td><td align="right"><a  style="text-decoration:underline;color:green;"  href="<c:out value="viewquadraplevisual?patient_id=${patientDetails.patient_id}"/>"  >View Quadruple Visual Analogue Scale</a></td><td ></td></tr>
 				              <tr>
 				         	 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Please Describe Your Symptoms Briefly:</td>
 				          		<td class="input_txt">
-				          			<textarea rows="3" cols="25" name="symptoms" > ${patientDetails.symptoms}</textarea>&nbsp;&nbsp;&nbsp;
+				          		 
+                 <c:forEach items="${symptom}" var="symptom" varStatus="status">
+                  <tr>
+                  <td valign="middle" align="right" class="input_txt" width="30%"></td>
+                 
+                  <td valign="top" align="left" class="input_txt" width="70%">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                  <textarea  name="symptom[]" rows="3" cols="25" >${symptom}</textarea>
+                 
+                </td> </tr><tr height="10"></tr></c:forEach>
+				        </td><td></td></tr></table>  
+				        <div id="multichoice"></div>		
+				          		<table>
+				          		<tr>
+				          		
+ 
+   <td width="510"></td><td><a href="javascript:void(0);" onclick="addMultichoice('multichoice');" style="text-decoration:none;" ><input type="button" value="Add one more Symptom" class="submit_btn2" name=""/></a></td>
+        
+				          		
+				          		
+				          		
 				          		</td>
-				          			<td><label for="amount"><b>Pain Scale:</b></label>
+				          			<%--<td><label for="amount"><b>Pain Scale:</b></label>
 				          			<input type="text" class="input_txtbx1" id="amount"  value="${patientDetails.painscale}" name="painscale" /></br><span class="err"><form:errors path="PatientDetails.Painscale"></form:errors></span>
 				          				<div id="slider"></div>
-				                 	 </td>
+				                 	 </td> --%>
+				                
 				                </tr>
 				                
 				                
 				                <tr>
 				         	
 				          		<td ></td>
-				          		<td>
+				          		<%-- <td>
 				          			<textarea rows="3" cols="25" name="symptom1" > ${patientDetails.symptom1}</textarea>&nbsp;&nbsp;&nbsp; </td>
 				          			<td><label for="amount"><b>Pain Scale:</b></label>
 				          			
@@ -354,13 +440,13 @@
 				          			<td><label for="amount"><b>Pain Scale:</b></label>
 				          			<input type="text" class="input_txtbx1" id="amount2"  name="painscale2" /></br><span class="err"><form:errors path="PatientDetails.Painscale2"></form:errors></span>
 				          				<div id="slider2"></div>
-				                  </td>
+				                  </td>--%>
 				                </tr>
 				                 <tr class="row2">
                         <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Are These Symptoms Due to an Accident?</td>
 				                 <td>	<input type="radio" name="symptom_Accident" value="yes" class="input_txt" checked="true"<c:if test="${patientDetails.symptom_Accident=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
 				                 	<input type="radio" name="symptom_Accident" value="No" class="input_txt"<c:if test="${patientDetails.symptom_Accident=='No'}"><c:out value="checked=checked"/></c:if>>No
-				                 	</td>
+				                 	</td> 
 				                  	<td></td>
 				        </tr> 
 				       
@@ -654,6 +740,7 @@
 					</body>
 					</html>
 					
+<%--
 <script> 
 
 
@@ -715,7 +802,7 @@ $(document).ready(function(){
 
 	});
 
-  </script>
+  </script> --%>
   <script type="text/javascript">
   
 function Checklight(){

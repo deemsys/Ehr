@@ -28,47 +28,29 @@
   </script>
  </head>
 <body>
-<div id="right_content">
+
 
 <form action="insertupdateletter" method="POST">
 <table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table">
  <tr> <td>
- <table cellpadding="0" cellspacing="0" border="0"  width="70%" class="margin_table">
-       <tr>
+ 
         <td valign="top" align="left" style="padding:5px 0 10px 0;">&nbsp;
 		<div class="status success" style="display: none;">
             <p class="closestatus"><a title="Close" href="">x</a></p>
             <p><img alt="Success" src="images/icons/icon_success.png"><span>Success!</span>.</p>
           </div>
       </tr> 
-      <tr>
-        
-        	  </tr>
+      
         	  </table>
  
  
  
- <table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table">
- <tr>
- <td valign="top" align="left" style="padding:5px 0 10px 0;">&nbsp;
-		<div class="status success" style="display: none;">
-            <p class="closestatus"><a title="Close" href="">x</a></p>
-            <p><img alt="Success" src="images/icons/icon_success.png"><span>Success!</span>.</p>
-          </div>
-      </tr> 
-      <tr>
-        
-        	  </tr>
-        	  </table>
+
 
 <table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table">
  <tr>
-        <td valign="top" align="left" style="padding:5px 0 10px 0;">&nbsp;
-		<div class="status success" style="display: none;">
-            <p class="closestatus"><a title="Close" href="">x</a></p>
-            <p><img alt="Success" src="images/icons/icon_success.png"><span>Success!</span>.</p>
-          </div>
-      </tr>  </table>
+ <td>
+ <div class="contentbox">
       
       
  <table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table">
@@ -140,15 +122,13 @@
 
 
 
-   
-   
+   </div>
+  </td> 
 </tr>
 </table>
 
 
-</td>
-</tr>
-</table>
+
 
 
 
@@ -158,7 +138,7 @@
 
 </form>
 
-</div>
+
 </body>
 </html>
 

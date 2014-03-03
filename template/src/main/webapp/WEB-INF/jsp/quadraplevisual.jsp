@@ -109,7 +109,7 @@
 	            
 	             <table>
 	             <tr height="30">
-	             <td width="100">Name</td><td width="400"><input type="text" name="name"></td>
+	             <td width="100">Name</td><td width="400"><input type="hidden" name="patient_id" value="${patientid}"><input type="text" name="name"></td>
 	             <td width="100">Number</td><td width="400"><input type="text" name="number"></td>
 	             <td width="100">Date</td><td width="400"><input type="text"  name="date" id="datepicker" /></td>
 	             </tr>

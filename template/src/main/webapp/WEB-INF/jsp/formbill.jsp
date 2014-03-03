@@ -3,23 +3,66 @@
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
-
+<script src="resources/js/jquey-1.9.1.js"></script>
+<script src="resources/js/jquery.min.js"></script> 
+ <script src="resources/js/jquery-ui.js"></script>
+ 
  <link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
   <link rel="stylesheet" href="/resources/css/style.css" />
- <script src="resources/js/jquery.min.js"></script> 
- <script src="resources/js/jquery-ui.js"></script>
- <script src="resources/js/jquey-1.9.1.js"></script>
+ 
+ <script>
+  $(window).load(function(){
+$("#medicalfee").keyup(function() {
+	 $("#number").html(''); 
+	/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
+	var intRegex = /^\d+$/;
+	if(intRegex.test($(this).val())||$(this).val()=='') 
+	{
+		var $in = $(this).val();		 
+	}
+	else if($(this).val()!='')
+		{
+		
+		$("#number").html('Kindly enter a number!!!!');
+		}
+}).keydown(function() {
+    oldValue = $(this).val();
+})
+});
+</script>
+<script>
+  $(window).load(function(){
+$("#amount").keyup(function() {
+	 $("#number1").html(''); 
+	/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
+	var intRegex = /^\d+$/;
+	if(intRegex.test($(this).val())||$(this).val()=='') 
+	{
+		var $in = $(this).val();		 
+	}
+	else if($(this).val()!='')
+		{
+		
+		$("#number1").html('Kindly enter a number!!!!');
+		}
+}).keydown(function() {
+    oldValue = $(this).val();
+})
+});
+</script>
+<script>
+$(function() {
+           $( "#datepicker" ).datepicker();
+         });
+ 
+</script>
+
  <STYLE type="text/css">
   P#mypar {font-style:calibri;
   line-height:18px;}
   
   </STYLE>
- <script>
- $(function() {
-           $( "#datepicker" ).datepicker();
-         });
- 
-</script>
+
 </head>
  <body>
 <div id="right_content" >
@@ -130,11 +173,17 @@
               <br>        
 				  
 			<p align="left">Re:&nbsp;&nbsp;&nbsp;	Notice of Final Outstanding Amount Owed;</p>
-	<p align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Medical Fees of $<input type="text" class="input_txtbx1" name="medicalfee" id="medicalfee"><span class="err"><form:errors path="Formbill.medicalfee"></form:errors></span></p>
+	<p align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Medical Fees of $<input type="text" class="input_txtbx1" name="medicalfee" id="medicalfee">
+	<span class="err"><form:errors path="Formbill.medicalfee"></form:errors></span>
+				  <span class="err"><div id="number"></span></div></p>
 	
 <br>
 
-		<p align="center">Notice is made of final outstanding amounts owed for medical fees rendered by the above of $<input type="text" class="input_txtbx1" name="amount" id="amount">.  This notice is not an attempt at this time to collect a debt directly from the patient.
+		<p align="center">Notice is made of final outstanding amounts owed for medical fees rendered by the above of $<input type="text" class="input_txtbx1" name="amount" id="amount">
+		<span class="err"><form:errors path="Formbill.amount"></form:errors></span>
+				  <span class="err"><div id="number1"></span></div></p>
+		
+		  This notice is not an attempt at this time to collect a debt directly from the patient.
 	</p>
 	
 <br>		  
@@ -143,15 +192,13 @@
 	</p>
 	
 <br>	
-	<p >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Very truly yours,
+	<p align="right">Very truly yours,
 	</p>
 	
-<br>
-<p >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Perry Chiropractic & Therapy Center of Canton, Inc
+<p align="right">Perry Chiropractic & Therapy Center of Canton, Inc
 	</p>
-	
-<br>
-<p >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dr. Charles T. Yang D.C.
+
+<p align="right">&Dr. Charles T. Yang D.C.
 	</p>
 	
 <br>						  

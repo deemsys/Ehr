@@ -7,10 +7,13 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 public class Quadraplevisual
 {
+	
 	private String quadrapleno;
+	private String patient_id;
 	private String name;
 	private String number;
 	private String date;
+	private String painname;
 	private String painscale;
 	private String painscale1;
 	private String painscale2;
@@ -21,21 +24,28 @@ public class Quadraplevisual
 	{
 
 	}
-
-	public Quadraplevisual(String quadrapleno, String name, String number,
-			String date, String painscale, String painscale1,
-			String painscale2, String painscale3, String awakehours) {
+	
+	
+	
+	public Quadraplevisual(String quadrapleno, String patient_id, String name,
+			String number, String date, String painname, String painscale,
+			String painscale1, String painscale2, String painscale3,
+			String awakehours) {
 		super();
 		this.quadrapleno = quadrapleno;
+		this.patient_id = patient_id;
 		this.name = name;
 		this.number = number;
 		this.date = date;
+		this.painname = painname;
 		this.painscale = painscale;
 		this.painscale1 = painscale1;
 		this.painscale2 = painscale2;
 		this.painscale3 = painscale3;
 		this.awakehours = awakehours;
 	}
+
+
 
 	public String getQuadrapleno() {
 		return quadrapleno;
@@ -44,7 +54,12 @@ public class Quadraplevisual
 	public void setQuadrapleno(String quadrapleno) {
 		this.quadrapleno = quadrapleno;
 	}
-
+	public String getPatient_id() {
+		return patient_id;
+	}
+	public void setPatient_id(String patient_id) {
+		this.patient_id = patient_id;
+	}
 	public String getName() {
 		return name;
 	}
@@ -71,7 +86,19 @@ public class Quadraplevisual
 
 	public String getPainscale() {
 		return painscale;
+	}	
+
+	public String getPainname() {
+		return painname;
 	}
+
+
+
+	public void setPainname(String painname) {
+		this.painname = painname;
+	}
+
+
 
 	public void setPainscale(String painscale) {
 		this.painscale = painscale;

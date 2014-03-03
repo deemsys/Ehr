@@ -56,18 +56,18 @@
         							
 							    <c:if test="${fn:length(patientDetailsForm.patientDetails) == 0}">	
 							    	<tr class="row1">
-							    	<td colspan="7" width="100%"><center><b>No Participants Found!!!</b></center></td>
+							    	<td colspan="7" width="100%"><center><b>No Patients Found.Please Add Patient Details!!!</b></center></td>
 							    	</tr>
 							    	</c:if>
 					<tr><td colspan="6">  
-	<div class="extrabottom">
+<%-- 	<div class="extrabottom">
               <ul class="pagination">
          
               <c:if test="${currentpage!=1&&currentpage!=null}">
              <li class="page_unselect"><a href="viewpatient_page?page=${currentpage - 1}" >Prev</a></li> 
                </c:if>
               
-             <%-- <c:forEach var="count" begin="1" end="${noofrows}">  --%>
+             <c:forEach var="count" begin="1" end="${noofrows}"> 
                <c:forEach begin="1" end="${noofpages}" var="i">
                 <c:choose>
                     <c:when test="${currentpage eq i}">
@@ -95,7 +95,7 @@
               </tr>
 						
         					
-						</table>
+						</table> --%>
 					</div>
 				</td>
 			</tr>
