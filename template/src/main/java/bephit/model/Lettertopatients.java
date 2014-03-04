@@ -12,6 +12,7 @@ public class Lettertopatients
 	private String adjuster;
 	private String date1;
 	private String date2;
+	@NotEmpty
 	private String letter;
 	private String sign;
 	public Lettertopatients() {
