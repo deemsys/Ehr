@@ -1001,7 +1001,7 @@ public String insert_formbill(HttpServletRequest request,HttpSession session,@Mo
 
 @RequestMapping(value="/insertlettertopatient", method = RequestMethod.POST)
 
-public String insert_lettertopatient(HttpServletRequest request,HttpSession session,@ModelAttribute("lettertopatientsdetails")  @Valid Lettertopatients lettertopatientsdetails,BindingResult result,ModelMap model)
+public String insert_lettertopatient(HttpServletRequest request,HttpSession session,@ModelAttribute("Lettertopatients")  @Valid Lettertopatients lettertopatientsdetails,BindingResult result,ModelMap model)
 {
 	if(result.hasErrors())
 	{
