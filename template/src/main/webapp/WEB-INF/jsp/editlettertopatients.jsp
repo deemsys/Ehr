@@ -3,12 +3,14 @@
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
-<link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
-<script src="resources/js/jquery.min.js"></script>
+
+ <link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
+  <link rel="stylesheet" href="/resources/css/style.css" />
+ <script src="resources/js/jquery.min.js"></script> 
  <script src="resources/js/jquery-ui.js"></script>
- <script src="resources/js/jquery-1.9.1.js"></script>
+ <script src="resources/js/jquey-1.9.1.js"></script>
  <STYLE type="text/css">
- /* P#mypar {font-style:calibri; */
+  P#mypar {font-style:calibri;
   line-height:18px;}
   
   </STYLE>
@@ -16,14 +18,21 @@
  $(function() {
            $( "#datepicker" ).datepicker();
          });
+ $(function() {
+     $( "#datepicker1" ).datepicker();
+   });
+ $(function() {
+     $( "#datepicker2" ).datepicker();
+   });
+ 
  
 </script>
 </head>
  <body>
 <div id="right_content">
 <form action="updatelettertopatients" method="POST">
- <c:set value="${lettertopatientsform.lettertopatientsdetails[0]}" var="lettertopatientsdetails"> </c:set>
-<table cellpadding="0" cellspacing="0" border="0" height="100" width="70%" class="margin_table">
+<c:set value="${lettertopatientsform.lettertopatientsdetails[0]}" var="lettertopatientsdetails"> </c:set>
+<table cellpadding="0" cellspacing="0" border="0" width="60%" class="margin_table">
        <tr>
         <td valign="top" align="left" style="padding:5px 0 10px 0;">&nbsp;
 		<div class="status success" style="display: none;">
@@ -55,29 +64,36 @@
               <tr ><td width="260"></td>
               <td ><b>Phone (440) 934-3099 Fax (440) 934-3107 </b></td>
               </tr>
-              </table>
-              <table cellpadding="0" cellspacing="0" border="0" width="100%">
-              <tr >
-              <td height="20" width="200"><span class="err"> 	</span><b>RE:</b>&nbsp;&nbsp;Medical Bill</td>
-              
+              </table><br><br>
+                <table cellpadding="0" cellspacing="0" border="0" width="100%">
+              <tr>
+              <td height="25" width="120"><span class="err">*</span>RE:</td>
+              <td ><input type="hidden" name="letterid" id="letterid" value="${lettertopatientsdetails.letterid }" /><input type="text" class="input_txtbx1" name="re" value="${lettertopatientsdetails.re }" id="re" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>
-              <table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td height="20" width="200"><span class="err"></span><b>SSN:</b> 298-70-2433</td>
-              </tr></table>
-               
-              <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            
+                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="20" width="200"><span class="err"></span><b>CLAIM:</b>&nbsp;&nbsp;35W899112</td>
+              <td height="25" width="120"><span class="err">*</span>SSN:</td>
+              <td ><input type="text" class="input_txtbx1" name="ssn" id="ssn" value="${lettertopatientsdetails.ssn }"/><span class="err"><form:errors path="Workschool.date"></form:errors></span></td>
               </tr>
               </table>
-              <table cellpadding="0" cellspacing="0" border="0" width="100%">
+               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="20" width="200"><span class="err"></span><b>DOI:</b>&nbsp;&nbsp; 05-26-02</td>
+              <td height="25" width="120"><span class="err">*</span>CLAIM:</td>
+              <td ><input type="text" class="input_txtbx1" name="claim" id="claim" value="${lettertopatientsdetails.claim }" /><span class="err"><form:errors path="Workschool.date"></form:errors></span></td>
               </tr>
               </table>
-              <table cellpadding="0" cellspacing="0" border="0" width="100%">
+               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="20" width="200"><span class="err"></span><b>ADJUSTER:</b>&nbsp;&nbsp; Kathy Porcella</td>
+              <td height="25" width="120"><span class="err">*</span>DOI:</td>
+              <td ><input type="text" class="input_txtbx1" name="doi" id="datepicker" value="${lettertopatientsdetails.doi }" /><span class="err"><form:errors path="Workschool.date"></form:errors></span></td>
+              </tr>
+              </table>
+               <table cellpadding="0" cellspacing="0" border="0" width="100%">
+              <tr>
+              <td height="25" width="120"><span class="err">*</span>ADJUSTER:</td>
+              <td ><input type="text" class="input_txtbx1" name="adjuster" id="adjuster" value="${lettertopatientsdetails.adjuster }" /><span class="err"><form:errors path="Workschool.date"></form:errors></span></td>
               </tr>
               </table>
               
@@ -88,10 +104,10 @@
        		
        		 <table>
        		 <tr>
-       		 <td><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;On June 26, 2002 you received a check for compensation, sent to you by State Farm Insurance, your check included medical payment from the at fault insurance company which was to be paid to our office upon receipt.  </p>
+       		 <td><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;On <input type="text" class="input_txtbx1" name="date1" id="datepicker1" value="${lettertopatientsdetails.date1 }" /><form:errors path="Workschool.returndate"></form:errors> you received a check for compensation, sent to you by State Farm Insurance, your check included medical payment from the at fault insurance company which was to be paid to our office upon receipt.  </p>
        		 </td></tr>
        		 <tr><td>
-       		 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Condition of your treatment based upon the signed lien, dictate that upon payments received from the insurance company, which includes a portion for medical compensation, shall be paid in full to Chiropractic Therapy Center for services rendered. Violation of the signed lien will constitute insurance fraud. Criminal charges and a civil lawsuit will be filed if payment is not received within 3 days. July 29th, 2002.  </p>
+       		 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Condition of your treatment based upon the signed lien, dictate that upon payments received from the insurance company, which includes a portion for medical compensation, shall be paid in full to Chiropractic Therapy Center for services rendered. Violation of the signed lien will constitute insurance fraud. Criminal charges and a civil lawsuit will be filed if payment is not received within 3 days. <input type="text" class="input_txtbx1" name="date2" id="datepicker2" value="${lettertopatientsdetails.date2 }"  /><span class="err"><form:errors path="Workschool.returndate"></form:errors></td>  </p>
        		 </td>
        		 </tr>
        		 <tr><td>
@@ -99,7 +115,7 @@
        		 </td>
        		 </tr>
        		 <tr><td>
-       		 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;         Attached you will find itemized charges for your care. To avoid legal action, please submit payment. To avoid legal action, please submit payment in full to Chiropractic Therapy Center. Your total bill to be paid to Chiropractic Therapy Center is <input type="hidden" name="letterid" value="${lettertopatientsdetails.letterid }"/><input type="text" class="input_txtbx1" name="letter" value="${lettertopatientsdetails.letter }" id="letter" />.<span class="err"><%-- <form:errors path="lettertopatient.letter"></form:errors> --%> </span>
+       		 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;         Attached you will find itemized charges for your care. To avoid legal action, please submit payment. To avoid legal action, please submit payment in full to Chiropractic Therapy Center. Your total bill to be paid to Chiropractic Therapy Center is <input type="text" class="input_txtbx1" name="letter" id="letter" value="${lettertopatientsdetails.letter }" />.<span class="err"><form:errors path="Lettertopatients.letter"></form:errors> </span>
        		 </p>
        		 </td>
        		 </tr>
@@ -109,19 +125,28 @@
        		 </table>
         	 
               
-             <table>   <tr>   <td width="700"></td> 
+             <table>   <tr>   <td width="600"></td> 
              <td>
-              <p align="right"><b>Sincerly,</b></p></td>
-              <br>
-              <br>
-              <p align="right"><b>Darrin A. Pordash D.C.</b></p></td>
-             </tr> </table> 
-               <table><tr> <td><input type="submit" class="submit_btn" value="Save"></td>
-               <td><a href="responseattorney"style="color:white" class="submit_btn">Cancel</a></td>
-              </tr></table>
+              <b>Sincerly,</b></td>
               
-              </div>
+              <tr> <td width="600"></td> <td>
+              <b>Darrin A. Pordash D.C.</b></td></tr>
+              <tr> <td width="600"></td>  <td><input type="text" class="input_txtbx1" name="sign" id="sign" value="${lettertopatientsdetails.sign }"/>.<span class="err"><form:errors path="lettertopatientsdetails.letter"></form:errors> </span>
+       		</td></tr>
+       		 </table>
+       		<table>
+              <tr>
+              <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+              <td><input type="submit" class="submit_btn" value="Save"></td>
+              <td>&nbsp;&nbsp;</td>
+              <td><a href="hardshiplist" style="color:white" class="submit_btn">Cancel</a></td>
+              <td>&nbsp;&nbsp;</td>
+        	  </tr>
+        	  </table>
+        	 
         	  </div>
+        	  </div>
+        	
         	  </td>
         	  </tr>
         	  </table>

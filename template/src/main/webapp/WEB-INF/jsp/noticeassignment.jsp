@@ -41,7 +41,7 @@
 	            </div>
 	            <div class="contentbox">
 	             <table cellpadding="0" cellspacing="0" border="0" width="100%">
-              <tr ><td width="260"></td>
+              <tr ><td width="370"></td>
               <td ><b>Dr. Darrin A. Pordash, D.C.</b></td>
               </tr>
               <tr ><td width="260"></td>
@@ -66,6 +66,7 @@
               <tr >
               <td height="20" width="180"><span class="err">*</span>Name Of Insurance Company:</td>
               <td ><input type="text" class="input_txtbx1" name="nameofins" id="name" /><span class="err"><form:errors path="Noticeassignment.nameofins"></form:errors></td>
+              <td height="15" width="240">
               <td height="40" width="110" ><span class="err">&nbsp;&nbsp;*</span>Name Of Attorney:</td>
               <td >&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="nameofattorney" id="name" /><span class="err"><form:errors path="Noticeassignment.nameofattorney"></form:errors></span></td>
               </tr>
@@ -156,16 +157,16 @@ Upon completion of treatment, all exam sheets, doctor's notes, x-ray reports, an
        		 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Please advise us in writing by <input type="text" class="input_txtbx1" name="letter1" id="letter1" /><form:errors path="noticeofassignment.letter1"></form:errors> if you will not honor our Assignment. If we 
 do not receive a response, we will act in reliance that you will comply with it's instructions.
        		 </p></td></tr></table>
-             <table>   <tr > <br>  <td width="400"></td> 
+             <table>   <tr > <br>  <td width="700"></td> 
              <td>
               <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sincerly,</b></td><br>
               </tr>
             <tr >
             <td ></td>
             <td>
-           <p> <b>
+            <b>
                Dr. Darrin A. Pordash, D.C., B.A.C. 
-            </b></p>
+            </b>
             </td></tr>
              <tr >
             <td ></td>

@@ -70,7 +70,7 @@
               <td ><input type="text" class="input_txtbx1" name="date" id="datepicker" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>
-               <br><br><br>
+               <br>
             
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
@@ -83,7 +83,7 @@
                <td ><input type="text" class="input_txtbx1" name="dateofaccident" id="datepicker1" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
              
               </tr>
-             </table><br><br><br><br>
+             </table><br><br>	
               
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>

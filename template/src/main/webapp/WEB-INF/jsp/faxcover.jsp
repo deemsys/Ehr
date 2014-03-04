@@ -68,31 +68,31 @@
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="120"><span class="err">*</span>TO:</td>
+              <td height="25" width="120"><span class="err">*</span>To:</td>
               <td ><input type="text" class="input_txtbx1" name="tos" id="datepicker" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="120"><span class="err">*</span>FAX#:</td>
+              <td height="25" width="120"><span class="err">*</span>Fax#:</td>
               <td ><input type="text" class="input_txtbx1" name="faxno" id="datepicker" /><span class="err"><form:errors path="Faxcover.faxno"></form:errors></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="120"><span class="err">*</span>FROM:</td>
+              <td height="25" width="120"><span class="err">*</span>From:</td>
               <td ><input type="text" class="input_txtbx1" name="froms" id="datepicker" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="120"><span class="err">*</span>FAX:</td>
+              <td height="25" width="120"><span class="err">*</span>Fax:</td>
               <td> (330) 477-3037	</td>
        	</tr></table><br><br>
      <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr><td width="120">
-     	<input type="radio" name="reply" value="URGENT" class="input_txt" checked="true">URGENT&nbsp;&nbsp;&nbsp;<input type="radio" name="reply" value="FOR REVIEW" class="input_txt">FOR REVIEW&nbsp;&nbsp;&nbsp;
-     	<input type="radio" name="reply" value="PLEASE COMMENT" class="input_txt" checked="true">PLEASE COMMENT&nbsp;&nbsp;&nbsp;<input type="radio" name="reply" value="PLEASE REPLY" class="input_txt">PLEASE REPLY&nbsp;&nbsp;&nbsp;
+     	<input type="radio" name="reply" value="URGENT" class="input_txt" checked="true">Urgent&nbsp;&nbsp;&nbsp;<input type="radio" name="reply" value="FOR REVIEW" class="input_txt">For Review&nbsp;&nbsp;
+     	<input type="radio" name="reply" value="PLEASE COMMENT" class="input_txt" checked="true">Please Comment&nbsp;&nbsp;<input type="radio" name="reply" value="PLEASE REPLY" class="input_txt">Please Reply&nbsp;&nbsp;
      	</td>
      	</tr>
      	</table><br><br>
@@ -118,21 +118,17 @@
               
               </table><br><br>
        	<table>
+       	<tr>
+       	<td>
+       	<p>
+       	<h2>
+     If we donot hear from you within 7 business days, We will assume you will honour our assignment.</h2></p>
+  <p><h2>If you have any questions or concerns,please feel free to contact.</h2> </p>	
+
+
+       </td>
        	
-       		 <tr>
-       		 <td><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	IF WE DO NOT HEAR FROM YOU WITHIN 7 BUSINESS DAYS, WE WILL ASSUME	
-
-	YOU WILL HONOR OUR ASSIGNMENT.
-  </p>
-       		 </td></tr>
-       		 <tr><td>
-       		 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IF YOU HAVE ANY QUESTIONS OR CONCERNS, PLEASE FEEL FREE TO CONTACT	
-
-	ME AT YOUR EARLIEST CONVENIENCE.
-  </p>
-       		 </td>
-       		 </tr>
+       	</tr>
        		
        		 <tr><td>
        		 <p align="right"><b>

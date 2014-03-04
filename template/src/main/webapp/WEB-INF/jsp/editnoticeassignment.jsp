@@ -41,7 +41,7 @@
 	            </div>
 	            <div class="contentbox">
 	             <table cellpadding="0" cellspacing="0" border="0" width="100%">
-              <tr ><td width="260"></td>
+              <tr ><td width="370"></td>
               <td ><b>Dr. Darrin A. Pordash, D.C.</b></td>
               </tr>
               <tr ><td width="260"></td>
@@ -66,6 +66,7 @@
               <tr >
               <td height="20" width="180"><span class="err">*</span>Name Of Insurance Company:</td>
               <td ><input type="hidden" name="noticeid" value="${noticeassignmentdetails.noticeid }"><input type="text" class="input_txtbx1" name="nameofins" value="${noticeassignmentdetails.nameofins }" id="name" /><span class="err"><form:errors path="Noticeassignment.nameofins"></form:errors></td>
+              <td height="15" width="240">
               <td height="40" width="110" ><span class="err">&nbsp;&nbsp;*</span>Name Of Attorney:</td>
               <td >&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="nameofattorney" value="${noticeassignmentdetails.nameofattorney }" id="name" /><span class="err"><form:errors path="Noticeassignment.nameofattorney"></form:errors></span></td>
               </tr>
