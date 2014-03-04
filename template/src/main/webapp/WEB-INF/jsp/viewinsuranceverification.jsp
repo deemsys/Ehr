@@ -22,7 +22,7 @@
 <div id="right_content">
 <form action="insuranceverification" method="POST">
 
-<table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table">
+<table cellpadding="0" cellspacing="0" border="0" width="70%" class="margin_table">
        <tr>
         <td valign="top" align="left" style="padding:5px 0 10px 0;">&nbsp;
 		<div class="status success" style="display: none;">
@@ -59,9 +59,9 @@
               </tr>
               <br>
               <tr class="row1">
-              <td>Amount of deductible</td>
+              <td width="300">Amount of deductible</td>
               <td>${Insuranceverification.amount_deduct}</td>
-              <td>Amount of deductible met</td>
+              <td width="300">Amount of deductible met</td>
               <td>${Insuranceverification.amount_deduct_met}</td>
               <td></td>
               <td></td>
@@ -89,7 +89,7 @@
               <td>${Insuranceverification.xray_cover}</td>
               <td>At what%?</td>
               <td>${Insuranceverification.atwhat}</td>
-              <td>Subject to deductible</td>
+              <td width="300">Subject to deductible</td>
               <td>${Insuranceverification.subject_deduct}</td>
               </tr>
               <!-- </table>
@@ -124,9 +124,21 @@
               </tr>
               <tr class="row1">
               <td>Therapies covered</td>
-              <td> ${Insuranceverification.cm}&nbsp;&nbsp;&nbsp;&nbsp;
-              ${Insuranceverification.pt}&nbsp;&nbsp;&nbsp;&nbsp;
-                ${Insuranceverification.ov}&nbsp;&nbsp;&nbsp;&nbsp;
+              <td> <c:choose>
+	            <c:when test="${Insuranceverification.cm=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${Insuranceverification.cm}</c:otherwise>
+	          
+	            </c:choose>&nbsp;&nbsp;&nbsp;&nbsp;
+              <c:choose>
+	            <c:when test="${Insuranceverification.pt=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${Insuranceverification.pt}</c:otherwise>
+	          
+	            </c:choose>&nbsp;&nbsp;&nbsp;&nbsp;
+               <c:choose>
+	            <c:when test="${Insuranceverification.ov=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${Insuranceverification.ov}</c:otherwise>
+	          
+	            </c:choose> &nbsp;&nbsp;&nbsp;&nbsp;
               </td>
               <td></td>
               <td></td>

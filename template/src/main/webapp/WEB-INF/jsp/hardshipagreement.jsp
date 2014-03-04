@@ -124,10 +124,9 @@
               <table>
               <tr>
               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-              <td><input type="submit" class="submit_btn" value="Save"></td>
-              <td>&nbsp;&nbsp;</td>
-              <td><a href="hardshiplist" style="color:white" class="submit_btn"></a></td>
-              <td>&nbsp;&nbsp;</td>
+              <td><input type="submit" class="submit_btn" value="Save">&nbsp;&nbsp;
+				</td>
+              <td valign="top" align="center"><a href="hardshiplist" class="submit_btn" style="color: white">Cancel</a></td>
         	  </tr>
         	  </table>
         	  </div>

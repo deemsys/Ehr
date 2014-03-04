@@ -466,54 +466,203 @@
 				                 
 				                 
 				         <tr class="row1">
-				         	<td>${patientDetails.anemia}</td>
-				         	<td>${patientDetails.muscular}</td>
-				         	<td>${patientDetails.rheumatic}</td>
-				         	<td>${patientDetails.allergies}</td>
-				         	<td>${patientDetails.cancer}</td>
-				         	<td>${patientDetails.polio1}</td>
+				         
+				         	<td>
+				         	<c:choose>
+	            <c:when test="${patientDetails.anemia=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${patientDetails.anemia}</c:otherwise>
+	          
+	            </c:choose>
+				         	</td>
+				         	<td>
+				         	<c:choose>
+	            <c:when test="${patientDetails.muscular=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${patientDetails.muscular}</c:otherwise>
+	          
+	            </c:choose>
+				         	</td>
+				         	<td><c:choose>
+	            <c:when test="${patientDetails.rheumatic=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${patientDetails.rheumatic}</c:otherwise>
+	          
+	            </c:choose></td>
+				         	<td><c:choose>
+	            <c:when test="${patientDetails.allergies=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${patientDetails.allergies}</c:otherwise>
+	          
+	            </c:choose></td>
+				         	<td><c:choose>
+	            <c:when test="${patientDetails.cancer=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${patientDetails.cancer}</c:otherwise>
+	          
+	            </c:choose></td>
+				         	<td><c:choose>
+	            <c:when test="${patientDetails.polio1=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${patientDetails.polio1}</c:otherwise>
+	          
+	            </c:choose></td>
 				         
 				        </tr>
 				         <tr class="row1">
-				         <td>${patientDetails.multiple}</td>
-				         	<td>${patientDetails.scarlet}</td>
-				         	<td>${patientDetails.HIV}</td>
-				         	<td>${patientDetails.sinus}</td>
-				         	<td>${patientDetails.asthma}</td>
-				         	<td>${patientDetails.german}</td>
+				         <td><c:choose>
+	            <c:when test="${patientDetails.multiple=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise>${patientDetails.multiple}</c:otherwise>
+	          
+	            </c:choose></td>
+				         	<td><c:choose>
+	            <c:when test="${patientDetails.scarlet=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise>${patientDetails.scarlet}</c:otherwise>
+	          
+	            </c:choose></td>
+				         	<td><c:choose>
+	            <c:when test="${patientDetails.HIV=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${patientDetails.HIV}}</c:otherwise>
+	          
+	            </c:choose></td>
+				         	<td><c:choose>
+	            <c:when test="${patientDetails.sinus=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${patientDetails.sinus}</c:otherwise>
+	          
+	            </c:choose></td>
+				         	<td><c:choose>
+	            <c:when test="${patientDetails.asthma=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${patientDetails.asthma}</c:otherwise>
+	          
+	            </c:choose></td>
+				         	<td><c:choose>
+	            <c:when test="${patientDetails.german=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${patientDetails.german}</c:otherwise>
+	          
+	            </c:choose></td>
 				        </tr>
 				         <tr class="row1">
-				         	<td>${patientDetails.nervousness}</td>
-				         	<td>${patientDetails.numbness}</td>
-				         	<td>${patientDetails.convulsions}</td>
-				         	<td>${patientDetails.epilepsy}</td>
-				         	<td>${patientDetails.concussion}</td>
-				         	<td>${patientDetails.dizziness}</td>
+				         	<td><c:choose>
+	            <c:when test="${patientDetails.nervousness=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${patientDetails.nervousness}</c:otherwise>
+	          
+	            </c:choose></td>
+				         	<td><c:choose>
+	            <c:when test="${patientDetails.numbness=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise>${patientDetails.numbness}</c:otherwise>
+	          
+	            </c:choose></td>
+				         	<td><c:choose>
+	            <c:when test="${patientDetails.convulsions=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${patientDetails.convulsions}</c:otherwise>
+	          
+	            </c:choose></td>
+				         	<td><c:choose>
+	            <c:when test="${patientDetails.epilepsy=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${patientDetails.epilepsy}</c:otherwise>
+	          
+	            </c:choose></td>
+				         	<td><c:choose>
+	            <c:when test="${patientDetails.concussion=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${patientDetails.concussion}</c:otherwise>
+	          
+	            </c:choose></td>
+				         	<td><c:choose>
+	            <c:when test="${patientDetails.dizziness=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise>${patientDetails.dizziness}</c:otherwise>
+	          
+	            </c:choose></td>
 				        </tr>
 				         <tr class="row1">
-				         <td>${patientDetails.neuritis}</td>
-				         	<td>${patientDetails.rheumatism}</td>
-				         	<td>${patientDetails.diabetes}</td>
-				         	<td>${patientDetails.arthritis}</td>
-				         	<td>${patientDetails.venereal}</td>
-				         	<td>${patientDetails.backaches}</td>
+				         <td><c:choose>
+	            <c:when test="${patientDetails.neuritis=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${patientDetails.neuritis}</c:otherwise>
+	          
+	            </c:choose></td>
+				         	<td><c:choose>
+	            <c:when test="${patientDetails.rheumatism=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${patientDetails.rheumatism}</c:otherwise>
+	          
+	            </c:choose></td>
+				         	<td><c:choose>
+	            <c:when test="${patientDetails.diabetes=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise>${patientDetails.diabetes}</c:otherwise>
+	          
+	            </c:choose></td>
+				         	<td><c:choose>
+	            <c:when test="${patientDetails.arthritis=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${patientDetails.arthritis}</c:otherwise>
+	          
+	            </c:choose></td>
+				         	<td><c:choose>
+	            <c:when test="${patientDetails.venereal=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${patientDetails.venereal}</c:otherwise>
+	          
+	            </c:choose></td>
+				         	<td><c:choose>
+	            <c:when test="${patientDetails.backaches=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${patientDetails.backaches}</c:otherwise>
+	          
+	            </c:choose></td>
 				        </tr>
 				         <tr class="row1">
-				         <td>${patientDetails.tuberculosis}</td>
-				         	<td>${patientDetails.liver}</td>
-				         	<td>${patientDetails.kidney}</td>
-				         	<td>${patientDetails.thyroid}</td>
-				         	<td>${patientDetails.alchoholism}</td>
-				         	<td>${patientDetails.hepatitis}</td>
+				         <td><c:choose>
+	            <c:when test="${patientDetails.tuberculosis=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${patientDetails.tuberculosis}</c:otherwise>
+	          
+	            </c:choose></td>
+				         	<td><c:choose>
+	            <c:when test="${patientDetails.liver=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${patientDetails.liver}</c:otherwise>
+	          
+	            </c:choose></td>
+				         	<td><c:choose>
+	            <c:when test="${patientDetails.kidney=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${patientDetails.kidney}</c:otherwise>
+	          
+	            </c:choose></td>
+				         	<td><c:choose>
+	            <c:when test="${patientDetails.thyroid=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise>${patientDetails.thyroid}</c:otherwise>
+	          
+	            </c:choose></td>
+				         	<td><c:choose>
+	            <c:when test="${patientDetails.alchoholism=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${patientDetails.alchoholism}</c:otherwise>
+	          
+	            </c:choose></td>
+				         	<td><c:choose>
+	            <c:when test="${patientDetails.hepatitis=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${patientDetails.hepatitis}</c:otherwise>
+	          
+	            </c:choose></td>
 				        </tr>
 				        
 				         <tr class="row1">
-				         	<td>${patientDetails.mental}</td>
-				         	<td>${patientDetails.high}</td>
-				         	<td>${patientDetails.digestive}</td>
-				         	<td>${patientDetails.heart}</td>
-				         	<td>${patientDetails.other}</td>
-				         	<td>${patientDetails.ifother}</td>
+				         	<td><c:choose>
+	            <c:when test="${patientDetails.mental=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${patientDetails.mental}</c:otherwise>
+	          
+	            </c:choose></td>
+				         	<td><c:choose>
+	            <c:when test="${patientDetails.high=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${patientDetails.high}</c:otherwise>
+	          
+	            </c:choose></td>
+				         	<td><c:choose>
+	            <c:when test="${patientDetails.digestive=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${patientDetails.digestive}</c:otherwise>
+	          
+	            </c:choose></td>
+				         	<td><c:choose>
+	            <c:when test="${patientDetails.heart=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise>${patientDetails.heart}</c:otherwise>
+	          
+	            </c:choose></td>
+				         	<td><c:choose>
+	            <c:when test="${patientDetails.other=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${patientDetails.other}</c:otherwise>
+	          
+	            </c:choose></td>
+				         	<td><c:choose>
+	            <c:when test="${patientDetails.ifother=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise>${patientDetails.ifother}</c:otherwise>
+	          
+	            </c:choose></td>
 				        </tr>
 				        </table>
 				        

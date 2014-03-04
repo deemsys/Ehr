@@ -43,25 +43,53 @@
 	            <table cellpadding="0" cellspacing="0" border="0" width="100%">
 	             <c:set value="${StaffchecklistForm.staffchecklist[0]}" var="Staffchecklist"> </c:set>
 	            <tr class="row1">
-	            <td>${Staffchecklist.patinfo}</td>
+	            <td><c:choose>
+	            <c:when test="${Staffchecklist.patinfo=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${Staffchecklist.patinfo}</c:otherwise>
+	          
+	            </c:choose></td>
 	            </tr>
 	            <tr class="row1">
-	            <td>${Staffchecklist.screening}</td>
+	            <td><c:choose>
+	            <c:when test="${Staffchecklist.screening=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${Staffchecklist.screening}</c:otherwise>
+	          
+	            </c:choose></td>
 	            </tr>
 	            <tr class="row1">
-	            <td>${Staffchecklist.aob}
+	            <td><c:choose>
+	            <c:when test="${Staffchecklist.aob=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${Staffchecklist.aob}</c:otherwise>
+	          
+	            </c:choose>
 	            </tr>
 	            <tr class="row1">
-	            <td>${Staffchecklist.history}</td>
+	            <td><c:choose>
+	            <c:when test="${Staffchecklist.history=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${Staffchecklist.history}</c:otherwise>
+	          
+	            </c:choose></td>
 	            </tr>
 	            <tr class="row1">
-	            <td>${Staffchecklist.xray_sheet}</td>
+	            <td><c:choose>
+	            <c:when test="${Staffchecklist.xray_sheet=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${Staffchecklist.xray_sheet}</c:otherwise>
+	          
+	            </c:choose></td>
 	            </tr>
 	            <tr class="row1">
-	            <td>${Staffchecklist.consent}</td>
+	            <td><c:choose>
+	            <c:when test="${Staffchecklist.consent=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${Staffchecklist.consent}</c:otherwise>
+	          
+	            </c:choose></td>
 	            </tr>
 	            <tr class="row1">
-	            <td>${Staffchecklist.report}
+	            <td><c:choose>
+	            <c:when test="${Staffchecklist.report=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${Staffchecklist.report}</c:otherwise>
+	          
+	            </c:choose>
 	            </tr>
 	            </table>
 	            <br>

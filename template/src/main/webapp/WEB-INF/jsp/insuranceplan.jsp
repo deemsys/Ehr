@@ -108,22 +108,22 @@
         <input type="checkbox" name="no_objection" value="no_objection">No Objection
         </tr>
         <tr>
-        <td>By</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;By&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="agentname" id="agentname" placeholder="Authorized Company Representative"/> <span class="err"><form:errors path="Insuranceplan.agentname"></form:errors>  </td>
         </tr> 
          <tr class="row1">
-        <td><input type="text" class="input_txtbx1" name="agentname" id="agentname" placeholder="Authorized Company Representative"/> <span class="err"><form:errors path="Insuranceplan.agentname"></form:errors>  </td>
+       
         <td></td>
         <td></td>
         </tr>
         <tr class="row1">
-        <td width="100%">Please eMail this back to&nbsp;&nbsp;
+        <td width="100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Please eMail this back to&nbsp;&nbsp;
         <input type="text" class="input_txtbx1" name="fax" id="fax" placeholder="Clinic's EMail Id"/><span class="err"> <form:errors path="Insuranceplan.fax"></form:errors> </td>
         <td width="100%"></td>
         <td></td>
         </tr>
         <tr >
         <td></td>
-        <td align="center ">Sincerely,</td>
+        <td align="center ">&nbsp;Sincerely,</td>
         </tr>
         <tr class="row1">
         <td></td>

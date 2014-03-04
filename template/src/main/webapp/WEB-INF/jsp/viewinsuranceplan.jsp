@@ -74,22 +74,22 @@
         <input type="checkbox" name="no_objection" value="no_objection">No Objection
         </tr>
         <tr>
-        <td>By</td>
+        
         </tr>
         <tr class="row1">
-        <td>${Insuranceplan.agentname}</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;By&nbsp;&nbsp;&nbsp;&nbsp;${Insuranceplan.agentname}</td>
         <td></td>
         <td></td>
         </tr>
         <tr class="row1">
-        <td>Please fax this back to&nbsp;&nbsp;
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Please fax this back to&nbsp;&nbsp;
         ${Insuranceplan.fax}</td>
         <td></td>
         <td></td>
         </tr>
         <tr >
         <td></td>
-        <td align="center ">Sincerely,</td>
+        <td align="center ">&nbsp;Sincerely,</td>
         </tr>
         <tr class="row1">
         <td></td>

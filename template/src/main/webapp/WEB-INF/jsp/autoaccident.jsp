@@ -600,7 +600,7 @@ $(function() {
 				  
 				  <table cellpadding="0" cellspacing="0" border="0" width="100%"> 
 				  <tr class="row2">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Were you wearing glasses at the time of accident&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				  <td width="790" valign="middle" align="left" class="input_txt"><span class="err">*</span>Were you wearing glasses at the time of accident&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="wearing_glasses" value="yes" class="input_txt" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="wearing_glasses" value="no" class="input_txt" >No&nbsp;&nbsp;&nbsp;
 			      </td>
@@ -673,7 +673,7 @@ $(function() {
 	            <div class="contentbox">
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
 				 <tr class="row1">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Was anyone cited</td>
+				  <td width="490"valign="middle" align="left" class="input_txt"><span class="err">*</span>Was anyone cited</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="was_anyone_cited" value="yes" class="input_txt" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="was_anyone_cited" value="no" class="input_txt" >No&nbsp;&nbsp;&nbsp;
 			      </td>
@@ -690,6 +690,7 @@ $(function() {
 				  <tr class="row1">
                 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>After accident,I had the following</td>
 				 <td valign="top" align="left" class="input_txt">
+				 
 				 <input type="checkbox" name="headache" value="headache">Headache&nbsp;&nbsp;&nbsp;&nbsp; 
 				 <input type="checkbox" name="dizziness" value="dizziness">Dizziness&nbsp;&nbsp;&nbsp;&nbsp;
 				 <input type="checkbox" name="nausea" value="nausea">Nausea&nbsp;&nbsp;&nbsp;&nbsp;
@@ -1285,8 +1286,8 @@ $(function() {
 				  
 				  <table cellpadding="0" cellspacing="0" border="0" width="100%"> 
 				  <tr class="row2">
-				  <td valign="middle" width="615" align="left" class="input_txt"><span class="err">*</span>Were you wearing glasses at the time of accident&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-				  <td valign="top" align="left" class="input_txt">
+				  <td  width="700"valign="middle" width="" align="left" class="input_txt" style="width: 598px; "><span class="err">*</span>Were you wearing glasses at the time of accident&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				  <td width="615"valign="top" align="left" class="input_txt">
 				  <input type="radio" name="wearing_glasses" value="yes" class="input_txt" <c:if test="${auto.wearing_glasses=='yes'}"><c:out value="Checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="wearing_glasses" value="no" class="input_txt" <c:if test="${auto.wearing_glasses=='no'}"><c:out value="Checked"/></c:if>>No&nbsp;&nbsp;&nbsp;<span class="err"><form:errors path="Autoaccident.wearing_glasses"></form:errors></span>
 			      </td>

@@ -167,7 +167,7 @@
 <div id="right_content">
 <form action="insuranceverification" method="POST">
 
-<table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table">
+<table cellpadding="0" cellspacing="0" border="0" width="70%" class="margin_table">
        <tr>
         <td valign="top" align="left" style="padding:5px 0 10px 0;">&nbsp;
 		<div class="status success" style="display: none;">
@@ -207,11 +207,11 @@
               </tr>
               <br>
               <tr class="row1">
-              <td><span class="err">*</span>Amount of deductible</td>
-              <td><input type="text" class="input_txtbx1" name="amount_deduct" id="amountdeduct" /><br><span class="err"><form:errors path="Insuranceverification.amount_deduct"></form:errors></span>
+              <td width="300"><span class="err">*</span>Amount of deductible</td>
+              <td ><input type="text" class="input_txtbx1" name="amount_deduct" id="amountdeduct" /><br><span class="err"><form:errors path="Insuranceverification.amount_deduct"></form:errors></span>
               <span class="err" id="amountdeducterror"></span>
               </td>
-              <td><span class="err">*</span>Amount of deductible met</td>
+              <td width="300"><span class="err">*</span>Amount of deductible met</td>
               <td><input type="text" class="input_txtbx1" name="amount_deduct_met" id="amountdeductmet" /><br><span class="err"><form:errors path="Insuranceverification.amount_deduct_met"></form:errors></span>
               <span class="err" id="amountdeductmeterror"></span>
               </td>
@@ -245,7 +245,7 @@
               <td><input type="text" class="input_txtbx1" name="atwhat" id="atwhat1" /><br><span class="err"><form:errors path="Insuranceverification.atwhat"></form:errors></span>
               <span class="err" id="atwhat1error"></span>
               </td>
-              <td><span class="err">*</span>Subject to deductible</td>
+              <td width="300"><span class="err">*</span>Subject to deductible</td>
               <td><input type="text" class="input_txtbx1" name="subject_deduct" id="subjectdeduct" /><br><span class="err"><form:errors path="Insuranceverification.subject_deduct"></form:errors></span>
               <span class="err" id="subjectdeducterror"></span>
               </td>

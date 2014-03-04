@@ -52,12 +52,10 @@
   				<tr>
     				<td align="left" valign="top" width="100%" style="padding-right:25px;">
                         
-                        <table cellpadding="0" cellspacing="0" border="0" width="50%">
+                        <table cellpadding="0" cellspacing="0" border="0" width="70%">
                         <tr>
                         <div align="justify">
-				                <p id="mypar">&nbsp;This agreement made this the: <input type="text" class="input_txtbx1" id="inp_id" name="day" /><span class="err"><form:errors path="Assignment.day"></form:errors></span>
-				                  	  
-				                  	day of <input type="text" class="input_txtbx1" id="inp_id" name="month" /><span class="err"><form:errors path="Assignment.month"></form:errors></span>
+				                <p id="mypar">&nbsp;This agreement made this the:<input type="text" class="input_txtbx1" id="inp_id" name="day" /><span class="err"><form:errors path="Assignment.day"></form:errors></span> day of <input type="text" class="input_txtbx1" id="inp_id" name="month" /><span class="err"><form:errors path="Assignment.month"></form:errors></span>
 				                  	2013 between <input type="text" class="input_txtbx1" id="inp_id" name="year" /><span class="err"><form:errors path="Assignment.year"></form:errors></span>
 				                  	(claimant) and Perry Chiropractic and Therapy Center constitutes an irrevocable and binding agreement between the parties as follows:
 Claimant was involved in an accident on or about the <input type="text" class="input_txtbx1" id="inp_id" name="day1" /><span class="err"><form:errors path="Assignment.day1"></form:errors></span>
@@ -85,12 +83,12 @@ and exclusively in the name of Perry Chiropractic and Therapy Center, such sums 
                        <p id="mypar"><b>*NOTE TO ALL PAYERS HEREUNDER, FAILURE TO FOLLOW THE EXPRESS WRITTEN INSTRUCTION OF THE CLAIMANT HEREUNDER MAY RESULT IN A BREACH OF THIS AGREEMENT. A BREACH OF THIS AGREEMENT BY THE CLAIMANT HEREUNDER BY AND THROUGH YOUR ACTIONS IS AN INTENTIONAL INTERFERENCE WITH THIS CONTRACT AND PCTC WILL PURSUE ANY PAYER FOR THAT INTERFERENCE.</b></p>
                        
                        </tr>
-                       <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>PatientName: </td>
+                       <tr width="500"class="row1">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Name: </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="patientname" /><br><span class="err"><form:errors path="Assignment.patientname"></form:errors>
 				                  	</tr>
-				                  	<tr class="row1">
+				                  	<tr width="500" class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Signature:  </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="patientsign" /><span class="err"><form:errors path="Assignment.patientsign"></form:errors>

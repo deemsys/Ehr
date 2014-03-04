@@ -99,7 +99,7 @@ $(function() {
   				<td align="left" valign="top" width="50%" style="padding-right:25px;">
   				<table cellpadding="0" cellspacing="0" border="0" width="100%">
                  <tr class="row1">
-                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>What is the claim number of your accident</td>
+                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Wh<br>at is the claim number of your accident</td>
 				  <td valign="top" align="left" class="input_txt">${autoaccident.claimnumber}</td>
 
 				  </tr>
@@ -420,7 +420,7 @@ $(function() {
 				  
 				  <table cellpadding="0" cellspacing="0" border="0" width="100%"> 
 				  <tr class="row2">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Were you wearing glasses at the time of accident&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				  <td width="590"valign="middle" align="left" class="input_txt"><span class="err">*</span>Were you wearing glasses at the time of accident&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				  <td valign="top" align="left" class="input_txt">${autoaccident.wearing_glasses}
 			      </td>
 				  </tr>
@@ -498,13 +498,18 @@ $(function() {
 				  <tr class="row1">
                 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>After accident,I had the following</td>
 				 <td valign="top" align="left" class="input_txt">
-				 ${autoaccident.headache} 
-				 ${autoaccident.dizziness}
-				 ${autoaccident.nausea}
-				 ${autoaccident.confusion}
-				 ${autoaccident.disorientation}
-				 ${autoaccident.neckpain}
-				 ${autoaccident.otherpain}
+				  <c:if test="${autoaccident.headache!='null'}"><c:out value="${autoaccident.headache}"></c:out></c:if>
+				  <c:if test="${autoaccident.dizziness!='null'}"><c:out value="${autoaccident.dizziness}"></c:out></c:if>
+	          
+				<c:if test="${autoaccident.nausea!='null'}"><c:out value="${autoaccident.nausea}"></c:out></c:if>
+				<c:if test="${autoaccident.confusion!='null'}"><c:out value="${autoaccident.confusion}"></c:out></c:if>
+				<c:if test="${autoaccident.disorientation!='null'}"><c:out value="${autoaccident.disorientation}"></c:out></c:if>
+	            <c:if test="${autoaccident.neckpain!='null'}"><c:out value="${autoaccident.neckpain}"></c:out></c:if>
+				<c:if test="${autoaccident.otherpain!='null'}"><c:out value="${autoaccident.otherpain}"></c:out></c:if>
+				 
+				
+				 
+				
 				 </td>
 				 </tr>
 				 <tr class="row2">

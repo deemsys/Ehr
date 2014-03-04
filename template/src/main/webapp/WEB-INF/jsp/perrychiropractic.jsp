@@ -46,16 +46,16 @@
  <table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table" style="width: 583px; "><tr><td>
 	            <div class="contentbox">
 	            
-				 <p align="left"><h2><center>PERRY CHIROPRACTIC & THERAPY CENTER OF CANTON, INC.</h2></p> <br><p align="center"> Charles T. Yang, DC, DABFP<br>4933 West Tuscarawas Street <br>Canton, Ohio 44708<br>(330) 477-3036 Phone<br>(330) 477-3037 Fax </center></p>
+				 <p align="left"><h2><center>PERRY CHIROPRACTIC & THERAPY CENTER OF CANTON, INC.</h2></p> <br><p align="center"> Dr.Charles T. Yang, DC, DABFP<br>4933 West Tuscarawas Street <br>Canton, Ohio 44708<br>Phone:(330) 477-3036 <br>Fax:(330) 477-3037  </center></p>
 				<h4 align="center">Form Cover Letter For Insurance Company, Copy To Attorney</h4> 
 				<div align="right"><p ><h4 ><u>SENT BY CERTIFIED MAIL</u><br>
-				PLEASE READ:  THIS IS NOTICE TO YOU OF<br> 
-				
-				INSURANCE COVERAGE  FOR AN EXISTING  
-				LOSS <br><br>
-				PLEASE OPEN CLAIM IN ACCORD WITH <br>
-				BELOW.<br><br>
-				COPY TO PATIENT'S ATTORNEY.</h4></div>
+				PLEASE READ:THIS IS NOTICE TO YOU OF&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>AN ATTACHED ASSIGNMENT OF&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+				&nbsp;&nbsp;&nbsp;&nbsp;INSURANCE COVERAGE  FOR AN EXISTING LOSS <br>
+				<br>
+				PLEASE OPEN CLAIM IN ACCORD WITH&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</br> 
+				BELOW&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
+				COPY TO PATIENT'S ATTORNEY.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h4></div>
+              <br>
               <table align="center" cellpadding="0" cellspacing="0" border="0"   width="70%"  ">
               <tr>
               <td style="width: 212px; "><span class="err">*</span>Name of Insurance Company: </td>

@@ -43,7 +43,7 @@
                         <tr>
                         <div align="justify">
 				                <p id="mypar">&nbsp;I, <input type="text" class="input_txtbx1" id="inp_id" name="name" /><span class="err"><form:errors path="MedicalRecords.name"></form:errors></span>
-				                &nbsp;&nbsp;give my permission to release Medical Information, Records, X-ray Reports, or the following &nbsp;&nbsp;<input type="text" class="input_txtbx1" id="inp_id" name="medicalinformation" /><span class="err"><form:errors path="MedicalRecords.medicalinformation"></form:errors></span> &nbsp;&nbsp;to Lorain Injury Center, <br>Dr. Darrin Pordash D.C.<br>
+				                &nbsp;&nbsp;give my permission to release Medical Information, Records, X-ray Reports, or the following &nbsp;&nbsp;&nbsp;<br><input type="text" class="input_txtbx1" id="inp_id" name="medicalinformation" /><span class="err"><form:errors path="MedicalRecords.medicalinformation"></form:errors></span> &nbsp;&nbsp;to Lorain Injury Center, <br>Dr. Darrin Pordash D.C.<br>
 				                5190 Deroit Rd.<br>
                                 Sheffield Village, Ohio 44035<br>
                                 Fax 440-934-3107  </p>
@@ -64,7 +64,7 @@
                         <tr>
                         <div align="justify">
 				                <p id="mypar">&nbsp;I, <input type="text" class="input_txtbx1" id="inp_id" name="name" value="${medical.name}"/><span class="err"><form:errors path="MedicalRecords.name"></form:errors></span>
-				                &nbsp;&nbsp;give my permission to release Medical Information, Records, X-ray Reports, or the following &nbsp;&nbsp;<input type="text" class="input_txtbx1" id="inp_id" name="medicalinformation" value="${medical.medicalinformation}"/><span class="err"><form:errors path="MedicalRecords.medicalinformation"></form:errors></span> &nbsp;&nbsp;to Lorain Injury Center, <br>Dr. Darrin Pordash D.C.<br>
+				                &nbsp;&nbsp;give my permission to release Medical Information, Records, X-ray Reports, or the following <br><input type="text" class="input_txtbx1" id="inp_id" name="medicalinformation" value="${medical.medicalinformation}"/><span class="err"><form:errors path="MedicalRecords.medicalinformation"></form:errors></span> &nbsp;&nbsp;to Lorain Injury Center, <br>Dr. Darrin Pordash D.C.<br>
 				                5190 Deroit Rd.<br>
                                 Sheffield Village, Ohio 44035<br>
                                 Fax 440-934-3107  </p>
@@ -81,9 +81,8 @@
 				                  	<tr>
 				  <td valign="top" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				<td valign="top" align="center"><br><input type="submit" class="submit_btn" value="Save"></td>
-				<td>&nbsp;&nbsp;</td>
-				<td valign="top" align="center"><br><a href="medicalrecordslist" style="color:white" class="submit_btn"></a></td>
-				<td>&nbsp;&nbsp;</td>
+				<td>&nbsp;&nbsp;<a href="medicalrecordslist" class="submit_btn" style="color: white">Cancel</a><br><br><br></td>
+				
 				<!--  <td valign="top" align="center"><br><input type="button" class="submit_btn" value="view" onclick="window.location.href='medicalrecordslist'"></td> -->
 				  </tr>
 				                  	</div>
