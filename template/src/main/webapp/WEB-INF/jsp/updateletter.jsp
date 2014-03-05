@@ -32,14 +32,12 @@
 
 <form action="insertupdateletter" method="POST">
 <table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table">
- <tr> <td>
- 
-        <td valign="top" align="left" style="padding:5px 0 10px 0;">&nbsp;
+ <tr> <td valign="top" align="left" style="padding:5px 0 10px 0;">&nbsp;
 		<div class="status success" style="display: none;">
             <p class="closestatus"><a title="Close" href="">x</a></p>
             <p><img alt="Success" src="images/icons/icon_success.png"><span>Success!</span>.</p>
           </div>
-      </tr> 
+      </td></tr> 
       
         	  </table>
  
@@ -115,7 +113,7 @@
               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
               <td><input type="submit" class="submit_btn" value="Save"></td>
               <td>&nbsp;&nbsp;</td>
-              <td><input type="reset" class="submit_btn" value="Cancel"></td>
+             <td><a href="viewupdateletter" style="color:white" class="submit_btn">Cancel</a></td>
               <td>&nbsp;&nbsp;</td>
         	  </tr>
         	  </table>

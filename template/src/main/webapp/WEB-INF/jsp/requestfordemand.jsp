@@ -77,7 +77,7 @@
      </table>
       <table cellpadding="0" cellspacing="0" border="0" width="100%">
       <tr height="30"><td style="width: 148px; "><input type="checkbox" class="input_ckbx1" name="c6" id="c6">&nbsp;&nbsp;&nbsp;Other:&nbsp;&nbsp;(Describe)&nbsp;&nbsp;&nbsp;
-     <td> <textarea rows="" cols="" style="height: 75px; width: 348px"></textarea></td>
+     <td> <textarea rows="" cols="" name="txtare" style="height: 75px; width: 348px"></textarea></td>
      </td>
    </tr>
        </table> <br><br>    
@@ -103,13 +103,14 @@
        <td  valign="right" align="right" >
        
        <input type="textbox" class="input_ckbx1" name="clinicrep" id="clinicrep"><span class="err"><form:errors path="Requestfordemand.clinicrep"></form:errors></span></td></tr>
-       <tr><td></td><td align="right" >Clinic Representative</td></tr>      
+       <tr><td></td><td align="right" >Clinic Representative</td></tr>
+       <br>      
          <table>
               <tr>
               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
               <td><input type="submit" class="submit_btn" value="Save"></td>
               <td>&nbsp;&nbsp;</td>
-              <td><input type="reset" class="submit_btn" value="Cancel"></td>
+              <td><a href="viewrequestfordemand" style="color:white" class="submit_btn">Cancel</a></td>
               <td>&nbsp;&nbsp;</td>
         	  </tr>
         	  </table>
