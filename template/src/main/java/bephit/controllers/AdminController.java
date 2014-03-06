@@ -616,7 +616,7 @@ public class AdminController
 
 	@RequestMapping(value="/insertreturntoschool", method = RequestMethod.POST)
 
-	public String insert_returntoschool(HttpServletRequest request,HttpSession session,@ModelAttribute("Returntoschool")  @Valid Returntoschool returntoschooldetails,BindingResult result,ModelMap model) {
+	public String insert_returntoschool(HttpServletRequest request,HttpSession session,@ModelAttribute("returntoschool")  @Valid Returntoschool returntoschooldetails,BindingResult result,ModelMap model) {
 	//session.setAttribute("perrydetails",perrychiropracticdetails);
 		if(result.hasErrors())
 		{
@@ -819,6 +819,23 @@ public String viewresponselist(HttpSession session,@RequestParam("responseid") S
 			model.addAttribute("responseattorneyform",responseattorneyform);
 			return "viewresponselist";
 }
+
+@RequestMapping(value="/requestfordemandlist", method = RequestMethod.GET)
+public String requestfordemandlist(HttpSession session,@RequestParam("requestid") String requestid,ModelMap model) {		
+	RequestfordemandForm requestfordemandform=new RequestfordemandForm();
+	requestfordemandform.setRequestfordemanddetails(requestfordemandDAO.getrequestfordemand(requestid));
+	model.addAttribute("requestfordemandform",requestfordemandform);			
+	return "requestfordemandlist";
+}
+
+@RequestMapping(value="/updateletterlist", method = RequestMethod.GET)
+public String updateletterlist(HttpSession session,@RequestParam("updateid") String updateid,ModelMap model) {		
+	UpdateletterForm updateletterform=new UpdateletterForm();
+	updateletterform.setUpdateletterdetails(updateletterDAO.getupdateletter(updateid));
+	model.addAttribute("updateletterform",updateletterform);			
+	return "updateletterlist";
+}
+
 @RequestMapping(value="/viewletterofprotection", method = RequestMethod.GET)
 public String viewletterofprotection(HttpSession session,ModelMap model) {		
 	LetterofprotectionForm letterofprotectionform=new LetterofprotectionForm();
