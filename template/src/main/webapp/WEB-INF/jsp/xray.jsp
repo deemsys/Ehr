@@ -16,22 +16,21 @@
   </STYLE>
  <script>
  $(function() {
+           $( "#datepicker" ).datepicker();
+         });
+  $(function() {
            $( "#datepicker1" ).datepicker();
          });
- $(function() {
-           $( "#datepicker2" ).datepicker();
-          
-         });
-         $(function() {
-           $( "#datepicker3" ).datepicker();
-          
-         });
+  $(function() {
+      $( "#datepicker2" ).datepicker();
+    });
 </script>
 </head>
  <body>
-
+<div id="right_content">
 <form action="insertxray" method="POST">
- <table cellpadding="0" cellspacing="0" border="0"  width="70%" class="margin_table">
+
+<table cellpadding="0" cellspacing="0" border="0" width="60%" class="margin_table">
        <tr>
         <td valign="top" align="left" style="padding:5px 0 10px 0;">&nbsp;
 		<div class="status success" style="display: none;">
@@ -40,82 +39,81 @@
           </div>
       </tr> 
       <tr>
-        
-        	  </tr>
-        	  </table>
- <div>
-	             
- <table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table" style="width: 583px; "><tr><td>
+        <td valign="top" align="center">
+        	<div>
+	            <div class="headings altheading">
+	             <h2>CHIROPRACTIC THERAPY CENTER</h2> 
+	            </div>
 	            <div class="contentbox">
-	           <table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table" style="width: 583px; "><tr><td>   	  
-        <p ><h2><center>CHIROPRACTIC THERAPY CENTER</h2></p>
-        <p ><h4><center>Dr. Darrin A. Pordash, D.C.<br>5190 Detroit Road<br>
-       The Sheffield Village Plaza<br>
-        Sheffield Village, OH 44035<br>
-      Tax Identification Number 34-1931730<br>
-        Phone (440) 934-3099 Fax (440) 934-3107</h4></p>	</td></tr></table>
-        
-         <table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table" style="width: 583px; "><tr><td>
-        <p ><h3><center><i>X-RAY RELEASE FORM</i></h3></p>	</td></tr></table>
-       <div class="contentbox">    
-      <table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table" style="width: 583px; "><tr><td>  	  
-       I <input type="text" class="input_txtbx1" name="name" id="name"> do hereby agree to return X-rays that I have borrowed from the Chiropractic Therapy Center, I understand that I have   fourteen (14) days to do so.  I fully agree that in the event that I do not return      X-rays, I will be billed $50.00.  	  
-       </td></tr></table></div>
-       <br>
-        	   
-<table align="center" cellpadding="0" cellspacing="0" border="0"   width="70%"  ">
-              <tr>
-              <td style="width: 212px; "><span class="err"></span>Date Borrowed </td>
-              <td><input type="text" class="input_txtbx1" name="date" id="datepicker1"><span class="err"><form:errors path="Perrychiropractic.insurance"></form:errors></span></td>
+	                
+            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+              <tr ><td width="260"></td>
+              <td ><b>Dr. Darrin A. Pordash, D.C.</b></td>
               </tr>
-              </table><br>
-
-
-
+              <tr ><td width="260"></td>
+              <td ><b>5190 Detroit Road </b></td>
+              </tr>
+               <tr ><td width="260"></td>
+              <td ><b>The Sheffield Village Plaza</b></td>
+              </tr>
+              <tr ><td width="260"></td>
+              <td ><b>Sheffield Village, OH 44035</b></td>
+              </tr>
+             
+              <tr ><td width="260"></td>
+              <td ><b>Tax Identification Number 34-1931730  </b></td></tr>
+               <tr ><td width="260"></td>
+              <td ><b>Phone (440) 934-3099 Fax (440) 934-3107</b></td></tr>
+             </table><br><br>
+             <table cellpadding="0" cellspacing="0" border="0" width="100%">
+              <tr> <td align="center"><u>  <h2>X-Ray Release Form</h2></u> </td>
+              </tr>
+ </table><br>
+ <table cellpadding="0" cellspacing="0" border="0" width="100%">
+ <tr><td>
+ I <input type="text" class="input_txtbx1" name="name" id="name"> do hereby agree to return X-rays that I have borrowed from the Chiropractic Therapy Center, I understand that I have fourteen (14) days to do so.I fully agree that in the event that I do not return X-rays, I will be billed $50.00.  	  
+       </td></tr></table><br><br>
  
-<table align="center" cellpadding="0" cellspacing="0" border="0"   width="70%"  ">
+              <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td style="width: 212px; "><span class="err"></span>Date Due </td>
-              <td><input type="text" class="input_txtbx1" name="date1" id="datepicker2"><span class="err"><form:errors path="Perrychiropractic.insurance"></form:errors></span></td>
+              <td height="25" width="100"><span class="err">*</span>Date Borrowed</td>
+              <td ><input type="text" class="input_txtbx1" name="date" id="datepicker" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>
-         <br>     
-             
-<table align="center"   cellpadding="0" cellspacing="0" border="0"   width="100%"  ">
+               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              
-              <td><input type="text" class="input_txtbx1" name="sign" id="sign"><span class="err"><form:errors path="Xray.sign"></form:errors></span></td>
-              <td><input type="text" class="input_txtbx1" name="date2" id="datepicker3"><span class="err"><form:errors path="Perrychiropractic.insurance"></form:errors></span></td>
-              
+              <td height="25" width="100"><span class="err">*</span>Date Due</td>
+              <td ><input type="text" class="input_txtbx1" name="date1" id="datepicker1" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              </tr>
+              </table><br><br>
+             <table cellpadding="0" cellspacing="0" border="0" width="100%">
+              <tr>
+              <td height="25" width="100"><span class="err">*</span>Date </td>
+              <td width="70"><input type="text" class="input_txtbx1" name="date2" id="datepicker2" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Signature:</td>
+             <td width="50"> <input type="text" class="input_txtbx1" name="sign" id="" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
               
               </tr>
-              <tr><td> Signature</td><td>&nbsp;Date</td></tr>
-              </table>              
-             
+              </table><br><br>
               
-              
-              
- <table align="center" cellpadding="0" cellspacing="0" border="0" width="70%">
+              <table>
               <tr>
               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
               <td><input type="submit" class="submit_btn" value="Save"></td>
               <td>&nbsp;&nbsp;</td>
-              <td><input type="reset" class="submit_btn" value="Cancel"></td>
+              <td><a href="viewxray" style="color:white" class="submit_btn">Cancel</a></td>
               <td>&nbsp;&nbsp;</td>
         	  </tr>
         	  </table>
- 
- 
- </div>
- </table>
- </div>
- 
- 
- </form>
- 
-
- </body>
-        	  </html>
         	 
- 
- 
+        	  </div>
+        	  </div>
+        	
+        	  </td>
+        	  </tr>
+        	  </table>
+        	  </form>
+        	  </div>
+        	  </body>
+        	  </html>
+        	  <jsp:include page="footer.jsp"></jsp:include>

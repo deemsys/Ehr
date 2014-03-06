@@ -39,7 +39,7 @@
 						<c:if test="${fn:length(updateletterform.updateletterdetails) gt 0}">
         				 <c:forEach items="${updateletterform.updateletterdetails}" var="updateletterdetails" varStatus="status">
         				       				<tr class="row1">
-        				       				<td valign="top" align="left" width="10%">${updateletterdetails.updateid}</td>
+        				       				<td valign="top" align="left" width="10%"><a href="updateletterlist?updateid=${updateletterdetails.updateid}">${updateletterdetails.updateid}</td>
 								            <td valign="top" align="left"  width="10%"><%-- <a href="hipexamlist?hipexamno=${updateletterdetails.hipexamno}"> --%>${updateletterdetails.toattorney1}</td>
 											
 											<td valign="top" align="left" width="10%">${updateletterdetails.injury}</td>

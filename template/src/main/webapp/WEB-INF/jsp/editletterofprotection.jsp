@@ -124,9 +124,9 @@
 				<table align="center" cellpadding="0" cellspacing="0" border="0" width="70%">
               <tr>
               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-              <td><input type="submit" class="submit_btn" value="Save"></td>
+              <td><input type="submit" class="submit_btn" value="update"></td>
               <td>&nbsp;&nbsp;</td>
-              <td><input type="reset" class="submit_btn" value="Cancel"></td>
+                 <td><a href="viewletterofprotection" style="color:white" class="submit_btn">Cancel</a></td>
               <td>&nbsp;&nbsp;</td>
         	  </tr>
         	  </table>

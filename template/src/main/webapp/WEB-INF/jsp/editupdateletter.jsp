@@ -1,19 +1,11 @@
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<jsp:include page="header.jsp"></jsp:include>
-<html>
-<head>
+<html><head>
 
  <link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
   <link rel="stylesheet" href="/resources/css/style.css" />
  <script src="resources/js/jquery.min.js"></script> 
  <script src="resources/js/jquery-ui.js"></script>
  <script src="resources/js/jquey-1.9.1.js"></script>
- <STYLE type="text/css">
-   P#mypar {font-style:calibri;
-   line-height:18px;}
-   
-   </STYLE>
+ <STYLE type="text/css"></STYLE>
   <script>
  $(function() {
 	    $( "#datepicker1" ).datepicker();

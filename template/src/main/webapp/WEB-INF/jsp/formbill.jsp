@@ -178,7 +178,7 @@
 	
 <br>				</td></tr></table>
        		   <table><tr> <td><input type="submit" class="submit_btn" value="Save"></td>
-               <td><a href="responseattorney"style="color:white" class="submit_btn">Cancel</a></td>
+               <td><a href="viewformbill"style="color:white" class="submit_btn">Cancel</a></td>
               </tr></table>
               </div>
         	  </div>
