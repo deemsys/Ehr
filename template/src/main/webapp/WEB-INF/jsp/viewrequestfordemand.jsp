@@ -40,7 +40,7 @@
         				 <c:forEach items="${requestfordemandform.requestfordemanddetails}" var="requestfordemanddetails" varStatus="status">
         				       				<tr class="row1">
         				       				<td valign="top" align="left" width="10%"><a href="requestfordemandlist?requestid=${requestfordemanddetails.requestid}">${requestfordemanddetails.requestid}</td>
-								            <td valign="top" align="left"  width="10%"><%-- <a href="hipexamlist?hipexamno=${requestfordemanddetails.hipexamno}"> --%>${requestfordemanddetails.c1}</td>
+								            <td valign="top" align="left"  width="10%"><%-- <a href="hipexamlist?hipexamno=${requestfordemanddetails.hipexamno}"> --%>${requestfordemanddetails.faultinsurer}</td>
 											
 											<td valign="top" align="left" width="10%">${requestfordemanddetails.clinicrep}</td>
 											

@@ -104,7 +104,7 @@ $(function() {
  <table align="right">
 <tr>
 <td><input type="submit" class="submit_btn" value="Update"></td>
-<td><input type="reset" class="submit_btn" value="Cancel"></td>
+<td><a href="viewcopyofrequest"style="color:white" class="submit_btn">Cancel</a></td>
 </tr>
 </table>
 </div>

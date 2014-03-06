@@ -1427,7 +1427,7 @@ I hope you find this narrative report and discussion helpful in resolving the cu
  <table align="right">
 <tr>
 <td><input type="submit" class="submit_btn" value="Save"></td>
-<td><input type="reset" class="submit_btn" value="Cancel"></td>
+<td><a href="viewnarrativereport"style="color:white" class="submit_btn">Cancel</a></td>
 </tr>
 </table>
 	            </div>

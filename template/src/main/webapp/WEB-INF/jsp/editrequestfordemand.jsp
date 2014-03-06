@@ -69,18 +69,18 @@
         	  <p><b>Check every box that applies:</b></p>
               </table>
                 <table cellpadding="0" cellspacing="0" border="0" width="100%">
-        	  <tr height="30"><td><input type="hidden" name="requestid" value="${requestfordemanddetails.requestid }"><input type="checkbox" class="input_ckbx1" value="${requestfordemanddetails.c1}" name="c1" id="c1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The At-Fault Insurer has already paid the attorney and/or patient full settlement and has failed to comply with the Assignment.
+        	  <tr height="30"><td><input type="hidden" name="requestid" value="${requestfordemanddetails.requestid }"><input type="checkbox" class="input_ckbx1" value="${requestfordemanddetails.faultinsurer}" name="faultinsurer" id="faultinsurer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The At-Fault Insurer has already paid the attorney and/or patient full settlement and has failed to comply with the Assignment.
      </td></tr>
-     <tr height="30"><td><input type="checkbox" class="input_ckbx1" value="${requestfordemanddetails.c2}" name="c2" id="c2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The At-Fault Insurer or The Med Pay Insurer has stated orally or in writing to us that it will not comply with the Assignment.
+     <tr height="30"><td><input type="checkbox" class="input_ckbx1" value="${requestfordemanddetails.medpayinsurer}" name="medpayinsurer" id="medpayinsurer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The At-Fault Insurer or The Med Pay Insurer has stated orally or in writing to us that it will not comply with the Assignment.
      </td></tr>
-     <tr height="30"><td><input type="checkbox" class="input_ckbx1" value="${requestfordemanddetails.c3}" name="c3" id="c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Med Pay Insurer has already paid benefits to the patient and/or the attorney.  </td></tr>
-        <tr height="30"><td><input type="checkbox" class="input_ckbx1" value="${requestfordemanddetails.c4}" name="c4" id="c4">	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our patient filed bankruptcy.  In addition to the document below, we are faxing every letter or document, which references the bankruptcy filing.
+     <tr height="30"><td><input type="checkbox" class="input_ckbx1" value="${requestfordemanddetails.paidbenefits}" name="paidbenefits" id="paidbenefits">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Med Pay Insurer has already paid benefits to the patient and/or the attorney.  </td></tr>
+        <tr height="30"><td><input type="checkbox" class="input_ckbx1" value="${requestfordemanddetails.bankrupt}" name="bankrupt" id="bankrupt">	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our patient filed bankruptcy.  In addition to the document below, we are faxing every letter or document, which references the bankruptcy filing.
      </td></tr> 
-     <tr height="30"><td><input type="checkbox" class="input_ckbx1" value="${requestfordemanddetails.c5}" name="c5" id="c5">&nbsp;&nbsp;&nbsp;	If treatment is completed in addition to the document below we attach a copy of our itemized charges and a copy of the patient intake information form.
+     <tr height="30"><td><input type="checkbox" class="input_ckbx1" value="${requestfordemanddetails.treatment}" name="treatment" id="treatment">&nbsp;&nbsp;&nbsp;	If treatment is completed in addition to the document below we attach a copy of our itemized charges and a copy of the patient intake information form.
      </td></tr>  
      </table>
       <table cellpadding="0" cellspacing="0" border="0" width="100%">
-      <tr height="30"><td style="width: 148px; "><input type="checkbox" class="input_ckbx1" value="${requestfordemanddetails.c6}" name="c6" id="c6">&nbsp;&nbsp;&nbsp;Other:&nbsp;&nbsp;(Describe)&nbsp;&nbsp;&nbsp;
+      <tr height="30"><td style="width: 148px; "><input type="checkbox" class="input_ckbx1" value="${requestfordemanddetails.other}" name="other" id="other">&nbsp;&nbsp;&nbsp;Other:&nbsp;&nbsp;(Describe)&nbsp;&nbsp;&nbsp;
      <td> <textarea rows="" cols="" name="txtare"  value="${requestfordemanddetails.txtare}" style="height: 75px; width: 348px"></textarea></td>
      </td>
    </tr>

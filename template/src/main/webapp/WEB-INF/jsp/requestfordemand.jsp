@@ -65,18 +65,17 @@
         	  <p><b>Check every box that applies:</b></p>
               </table>
                 <table cellpadding="0" cellspacing="0" border="0" width="100%">
-        	  <tr height="30"><td><input type="checkbox" class="input_ckbx1" name="c1" id="c1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The At-Fault Insurer has already paid the attorney and/or patient full settlement and has failed to comply with the Assignment.
+        	  <tr height="30"><td><input type="checkbox" class="input_ckbx1" name="faultinsurer" value="faultinsurer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The At-Fault Insurer has already paid the attorney and/or patient full settlement and has failed to comply with the Assignment.    </td></tr>
+     <tr height="30"><td><input type="checkbox" class="input_ckbx1"  name="medpayinsurer" value="medpayinsurer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The At-Fault Insurer or The Med Pay Insurer has stated orally or in writing to us that it will not comply with the Assignment.
      </td></tr>
-     <tr height="30"><td><input type="checkbox" class="input_ckbx1" name="c2" id="c2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The At-Fault Insurer or The Med Pay Insurer has stated orally or in writing to us that it will not comply with the Assignment.
-     </td></tr>
-     <tr height="30"><td><input type="checkbox" class="input_ckbx1" name="c3" id="c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Med Pay Insurer has already paid benefits to the patient and/or the attorney.  </td></tr>
-        <tr height="30"><td><input type="checkbox" class="input_ckbx1" name="c4" id="c4">	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our patient filed bankruptcy.  In addition to the document below, we are faxing every letter or document, which references the bankruptcy filing.
+     <tr height="30"><td><input type="checkbox" class="input_ckbx1"  name="paidbenefits" value="paidbenefits">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Med Pay Insurer has already paid benefits to the patient and/or the attorney.  </td></tr>
+        <tr height="30"><td><input type="checkbox" class="input_ckbx1" name="bankrupt"  value="bankrupt">	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our patient filed bankruptcy.  In addition to the document below, we are faxing every letter or document, which references the bankruptcy filing.
      </td></tr> 
-     <tr height="30"><td><input type="checkbox" class="input_ckbx1" name="c5" id="c5">&nbsp;&nbsp;&nbsp;	If treatment is completed in addition to the document below we attach a copy of our itemized charges and a copy of the patient intake information form.
+     <tr height="30"><td><input type="checkbox" class="input_ckbx1"  name="treatment"value="treatment">&nbsp;&nbsp;&nbsp;	If treatment is completed in addition to the document below we attach a copy of our itemized charges and a copy of the patient intake information form.
      </td></tr>  
      </table>
       <table cellpadding="0" cellspacing="0" border="0" width="100%">
-      <tr height="30"><td style="width: 148px; "><input type="checkbox" class="input_ckbx1" name="c6" id="c6">&nbsp;&nbsp;&nbsp;Other:&nbsp;&nbsp;(Describe)&nbsp;&nbsp;&nbsp;
+      <tr height="30"><td style="width: 148px; "><input type="checkbox" class="input_ckbx1"  name="other" value="other">&nbsp;&nbsp;&nbsp;Other:&nbsp;&nbsp;(Describe)&nbsp;&nbsp;&nbsp;
      <td> <textarea rows="" cols="" name="txtare" style="height: 75px; width: 348px"></textarea></td>
      </td>
    </tr>
@@ -93,7 +92,7 @@
      </td></tr>
      <tr height="25"><td><input type="inputtype" class="input_ckbx1" name="copyassign" id="copyassign"><span class="err"><form:errors path="Requestfordemand.copyassign"></form:errors></span></td><td>Copy of Assignment
      </td></tr>
-     <tr height="25"><td><input type="inputtype" class="input_ckbx1" name="greencard" id="greencard"><span class="err"><form:errors path="Requestfordemand.greencard"></form:errors></span></td><td>Front and back of Certified Mail: "Green Card"ù
+     <tr height="25"><td><input type="inputtype" class="input_ckbx1" name="greencard" id="greencard"><span class="err"><form:errors path="Requestfordemand.greencard"></form:errors></span></td><td>Front and back of Certified Mail: "Green Card"¬ù
      </td></tr>
      <tr height="25"><td><input type="inputtype" class="input_ckbx1" name="defaultattorney" id="default"><span class="err"><form:errors path="Requestfordemand.defaultattorney"></form:errors></span></td><td>Any correspondence from the defaulting Adjuster or Defaulting Attorney
      </td></tr>
@@ -103,7 +102,7 @@
        <td  valign="right" align="right" >
        
        <input type="textbox" class="input_ckbx1" name="clinicrep" id="clinicrep"><span class="err"><form:errors path="Requestfordemand.clinicrep"></form:errors></span></td></tr>
-       <tr><td></td><td align="right" >Clinic Representative</td></tr>
+       <tr><td></td><td align="right" >Clinic Representative</td></tr></table>
        <br>      
          <table>
               <tr>

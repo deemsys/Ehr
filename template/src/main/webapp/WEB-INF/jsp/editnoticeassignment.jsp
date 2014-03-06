@@ -182,8 +182,8 @@ do not receive a response, we will act in reliance that you will comply with it'
               <input type="text" class="input_txtbx1" name="treatingphysician" value="${noticeassignmentdetails.treatingphysician }" id="treatingphysician" /><span class="err"><form:errors path="Noticeassignment.treatingphysician"></form:errors></td>
               </tr><br>
               </table>
-              <table><tr> <td><input type="submit" class="submit_btn" value="Save"></td>
-               <td><a href="responseattorney"style="color:white" class="submit_btn">Cancel</a></td>
+              <table><tr> <td><input type="submit" class="submit_btn" value="update"></td>
+               <td><a href="viewnoticeassignment"style="color:white" class="submit_btn">Cancel</a></td>
               </tr></table>
               </div>
         	  </div>

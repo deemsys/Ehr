@@ -3,23 +3,27 @@
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
-<link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
-<script src="resources/js/jquery.min.js"></script>
+
+ <link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
+  <link rel="stylesheet" href="/resources/css/style.css" />
+ <script src="resources/js/jquery.min.js"></script> 
  <script src="resources/js/jquery-ui.js"></script>
- <script src="resources/js/jquery-1.9.1.js"></script>
+ <script src="resources/js/jquey-1.9.1.js"></script>
  <STYLE type="text/css">
   P#mypar {font-style:calibri;
   line-height:18px;}
   
   </STYLE>
- <script type="text/javascript">
-$(function() {
-    $( "#datepicker" ).datepicker();
-  });
-$(function() {
-    $( "#datepicker1" ).datepicker();
-  });
-</script>
+ <script>
+  $(function() {
+	    $( "#datepicker1" ).datepicker();
+	  });
+	  
+	$(function() {
+	    $( "#datepicker2" ).datepicker();
+	  });  
+	  
+ </script>
 </head>
  <body>
 <div id="right_content">
@@ -79,7 +83,7 @@ In Regards to :
               <td width="50%"><span class="err"></span>Date of Injury:
 
               </td>
-              <td width="50%"><input type="text" class="input_txtbx1" name="injury" id="datepicker"></td>
+              <td width="50%"><input type="text" class="input_txtbx1" id="datepicker1" name="injury"/><span class="err"><form:errors path="Updateletter.injury"></form:errors></span></td>
               </tr>
               </table>
               <br>
@@ -87,7 +91,7 @@ In Regards to :
               <tr>
               <td width="50%"><span class="err"></span>Todays date:    
               </td>
-              <td width="50%"><input type="text" class="input_txtbx1" name="todaydate" id="datepicker1" /></td>
+              <td width="50%"><input type="text" class="input_txtbx1" id="datepicker2" name="todaydate"/><span class="err"><form:errors path="Updateletter.todaydate"></form:errors></span></td>
               </tr>
               </table>
               <br>
