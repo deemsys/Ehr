@@ -46,7 +46,7 @@ public class RequestfordemandDAO{
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 
-	    	 String cmd="INSERT INTO requestfordemand (other1,other2,other3,other4,copymedpay,copyform,copyassign,greencard,defaultattorney,clinicrep) VALUES ('"+requestfordemanddetails.getOther1()+"','"+requestfordemanddetails.getOther2()+"','"+requestfordemanddetails.getOther3()+"','"+requestfordemanddetails.getOther4()+"','"+requestfordemanddetails.getCopymedpay()+"','"+requestfordemanddetails.getCopyform()+"','"+requestfordemanddetails.getCopyassign()+"','"+requestfordemanddetails.getGreencard()+"','"+requestfordemanddetails.getDefaultattorney()+"','"+requestfordemanddetails.getClinicrep()+"')";
+	    	 String cmd="INSERT INTO requestfordemand (faultinsurer,medpayinsurer,paidbenefits,bankrupt,treatment,other,txtare,copymedpay,copyform,copyassign,greencard,defaultattorney,clinicrep) VALUES ('"+requestfordemanddetails.getFaultinsurer()+"','"+requestfordemanddetails.getMedpayinsurer()+"','"+requestfordemanddetails.getPaidbenefits()+"','"+requestfordemanddetails.getBankrupt()+"','"+requestfordemanddetails.getTreatment()+"','"+requestfordemanddetails.getOther()+"','"+requestfordemanddetails.getTxtare()+"','"+requestfordemanddetails.getCopymedpay()+"','"+requestfordemanddetails.getCopyform()+"','"+requestfordemanddetails.getCopyassign()+"','"+requestfordemanddetails.getGreencard()+"','"+requestfordemanddetails.getDefaultattorney()+"','"+requestfordemanddetails.getClinicrep()+"')";
 	    	    System.out.println("cmd insert value"+cmd);
 	    	    statement.executeUpdate(cmd);
 	    	    }
@@ -123,10 +123,13 @@ public class RequestfordemandDAO{
 			while(resultSet.next()){
 				requestfordemand.add(new Requestfordemand
 						(resultSet.getString("requestid"),
-								resultSet.getString("other1"),
-								resultSet.getString("other2"),
-								resultSet.getString("other3"),
-								resultSet.getString("other4"),
+								resultSet.getString("faultinsurer"),
+								resultSet.getString("medpayinsurer"),
+								resultSet.getString("paidbenefits"),
+								resultSet.getString("bankrupt"),
+								resultSet.getString("treatment"),
+								resultSet.getString("other"),
+								resultSet.getString("txtare"),
 						resultSet.getString("copymedpay"),
 						resultSet.getString("copyform"),
 						resultSet.getString("copyassign"),
@@ -166,10 +169,13 @@ public class RequestfordemandDAO{
 			while(resultSet.next()){
 				requestfordemand.add(new Requestfordemand
 						(resultSet.getString("requestid"),
-								resultSet.getString("other1"),
-								resultSet.getString("other2"),
-								resultSet.getString("other3"),
-								resultSet.getString("other4"),
+								resultSet.getString("faultinsurer"),
+								resultSet.getString("medpayinsurer"),
+								resultSet.getString("paidbenefits"),
+								resultSet.getString("bankrupt"),
+								resultSet.getString("treatment"),
+								resultSet.getString("other"),
+								resultSet.getString("txtare"),
 						resultSet.getString("copymedpay"),
 						resultSet.getString("copyform"),
 						resultSet.getString("copyassign"),
@@ -177,7 +183,7 @@ public class RequestfordemandDAO{
 			    		resultSet.getString("defaultattorney"),
 						resultSet.getString("clinicrep")
 			    		 ));
-				System.out.println("Name::::::::::::::::::"+requestfordemand.get(0).getOther1());
+				System.out.println("Name::::::::::::::::::"+requestfordemand.get(0).getFaultinsurer());
 			    	
 			}
 	    }catch(Exception e){
@@ -210,11 +216,14 @@ public class RequestfordemandDAO{
 			e1.printStackTrace();
 		}
 	    try{
-	    	 String cmd="update requestfordemand set other1='"+requestfordemand.getOther1()
+	    	 String cmd="update requestfordemand set faultinsurer='"+requestfordemand.getFaultinsurer()
 	    			
-	    +"',other2='"+requestfordemand.getOther2()
-	    +"',other3='"+requestfordemand.getOther3()
-	    +"',other4='"+ requestfordemand.getOther4()
+	    +"',medpayinsurer='"+requestfordemand.getMedpayinsurer()
+	    +"',paidbenefits='"+requestfordemand.getPaidbenefits()
+	    +"',bankrupt='"+ requestfordemand.getBankrupt()
+	    +"',treatment='"+ requestfordemand.getTreatment()
+	    +"',other='"+ requestfordemand.getOther()
+	    +"',txtare='"+ requestfordemand.getTxtare()
 	    +"',copymedpay='"+ requestfordemand.getCopymedpay()
 	    +"',copyform='"+requestfordemand.getCopyform()
 	    +"',copyassign='"+requestfordemand.getCopyassign()+"',greencard='"+requestfordemand.getGreencard()+"',defaultattorney='"+requestfordemand.getDefaultattorney()+"',clinicrep='"+requestfordemand.getClinicrep()+"' where requestid='"+requestid+"'";
