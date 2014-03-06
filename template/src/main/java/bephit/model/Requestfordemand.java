@@ -6,13 +6,19 @@ public class Requestfordemand
 {
 	private String requestid;
 	@NotEmpty
-	private String other1;
+	private String faultinsurer;
 	@NotEmpty
-	private String other2;
+	private String medpayinsurer;
 	@NotEmpty
-	private String other3;
+	private String paidbenefits;
 	@NotEmpty
-	private String other4;	
+	private String bankrupt;
+	@NotEmpty
+	private String treatment;
+	@NotEmpty
+	private String other;
+	@NotEmpty
+	private String txtare;
 	@NotEmpty
 	private String copymedpay;
 	@NotEmpty
@@ -34,29 +40,47 @@ public class Requestfordemand
 	public void setRequestid(String requestid) {
 		this.requestid = requestid;
 	}
-	public String getOther1() {
-		return other1;
+	public String getFaultinsurer() {
+		return faultinsurer;
 	}
-	public void setOther1(String other1) {
-		this.other1 = other1;
+	public void setFaultinsurer(String faultinsurer) {
+		this.faultinsurer = faultinsurer;
 	}
-	public String getOther2() {
-		return other2;
+	public String getMedpayinsurer() {
+		return medpayinsurer;
 	}
-	public void setOther2(String other2) {
-		this.other2 = other2;
+	public void setMedpayinsurer(String medpayinsurer) {
+		this.medpayinsurer = medpayinsurer;
 	}
-	public String getOther3() {
-		return other3;
+	public String getPaidbenefits() {
+		return paidbenefits;
 	}
-	public void setOther3(String other3) {
-		this.other3 = other3;
+	public void setPaidbenefits(String paidbenefits) {
+		this.paidbenefits = paidbenefits;
 	}
-	public String getOther4() {
-		return other4;
+	public String getBankrupt() {
+		return bankrupt;
 	}
-	public void setOther4(String other4) {
-		this.other4 = other4;
+	public void setBankrupt(String bankrupt) {
+		this.bankrupt = bankrupt;
+	}
+	public String getTreatment() {
+		return treatment;
+	}
+	public void setTreatment(String treatment) {
+		this.treatment = treatment;
+	}
+	public String getOther() {
+		return other;
+	}
+	public void setOther(String other) {
+		this.other = other;
+	}
+	public String getTxtare() {
+		return txtare;
+	}
+	public void setTxtare(String txtare) {
+		this.txtare = txtare;
 	}
 	public String getCopymedpay() {
 		return copymedpay;
@@ -94,16 +118,20 @@ public class Requestfordemand
 	public void setClinicrep(String clinicrep) {
 		this.clinicrep = clinicrep;
 	}
-	public Requestfordemand(String requestid, String other1, String other2,
-			String other3, String other4, String copymedpay, String copyform,
-			String copyassign, String greencard, String defaultattorney,
-			String clinicrep) {
+	public Requestfordemand(String requestid, String faultinsurer,
+			String medpayinsurer, String paidbenefits, String bankrupt,
+			String treatment, String other, String txtare, String copymedpay,
+			String copyform, String copyassign, String greencard,
+			String defaultattorney, String clinicrep) {
 		super();
 		this.requestid = requestid;
-		this.other1 = other1;
-		this.other2 = other2;
-		this.other3 = other3;
-		this.other4 = other4;
+		this.faultinsurer = faultinsurer;
+		this.medpayinsurer = medpayinsurer;
+		this.paidbenefits = paidbenefits;
+		this.bankrupt = bankrupt;
+		this.treatment = treatment;
+		this.other = other;
+		this.txtare = txtare;
 		this.copymedpay = copymedpay;
 		this.copyform = copyform;
 		this.copyassign = copyassign;
@@ -113,4 +141,12 @@ public class Requestfordemand
 	}
 	
 	
+	
+	
+	
+	
+	
 }
+
+
+
