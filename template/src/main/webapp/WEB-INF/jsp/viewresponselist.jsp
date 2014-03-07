@@ -48,12 +48,7 @@
               <td height="20" width="120"><span class="err">*</span>Address:</td>
               <td ><c:out value="${responseattorneydetail.address}"/></td>
               </tr>
-              <tr>
-              <td height="20" width="120"></td>
-              <td><c:out value="${responseattorneydetail.address1}"/></td></tr>
-            
-              <tr>  <td height="30" width="120"></td><td><c:out value="${responseattorneydetail.address2}"/></td></tr>
-             <tr>
+             
               <td height="30" width="120"><span class="err">*</span>Regarding:</td>
               <td ><c:out value="${responseattorneydetail.regarding}"/></td>
               </tr>

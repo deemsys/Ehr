@@ -41,7 +41,7 @@
 	            </div>
 	            <div class="contentbox">
 	             <table cellpadding="0" cellspacing="0" border="0" width="100%">
-              <tr ><td width="370"></td>
+              <tr ><td width="260"></td>
               <td ><b>Dr. Darrin A. Pordash, D.C.</b></td>
               </tr>
               <tr ><td width="260"></td>
@@ -64,9 +64,9 @@
               </td></tr></table>
              <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
-              <td height="20" width="180"><span class="err">*</span>Name Of Insurance Company:</td>
+              <td height="20" width="180"><span class="err">*</span>Name Of Insurance Company:</td>.
+              
               <td ><input type="hidden" name="noticeid" value="${noticeassignmentdetails.noticeid }"><input type="text" class="input_txtbx1" name="nameofins" value="${noticeassignmentdetails.nameofins }" id="name" /><span class="err"><form:errors path="Noticeassignment.nameofins"></form:errors></td>
-              <td height="15" width="240">
               <td height="40" width="110" ><span class="err">&nbsp;&nbsp;*</span>Name Of Attorney:</td>
               <td >&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="nameofattorney" value="${noticeassignmentdetails.nameofattorney }" id="name" /><span class="err"><form:errors path="Noticeassignment.nameofattorney"></form:errors></span></td>
               </tr>
@@ -74,24 +74,11 @@
                 <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td  width="180"><span class="err">*</span>Address</td>
-              <td  height="20" ><input type="text" class="input_txtbx1" name="address1" value="${noticeassignmentdetails.address1 }" id="address" /><span class="err"><form:errors path="noticeofassignment.address"></form:errors>
-            </td>   <td height="10" width="106" ><span class="err">*</span>Address:</td>
-              <td height="15" width="140"><input type="text" class="input_txtbx1" name="address4" value="${noticeassignmentdetails.address4 }" id="address4" /><span class="err"><form:errors path="noticeofassignment.address4"></form:errors></span></td>
+              <td  ><textarea rows="" cols="" name="address1" style="width: 175px; height: 64px" >${noticeassignmentdetails.address1 }</textarea></textarea>
+            </td>  <td height="40" width="90" style="width: 138px; "><span class="err"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Address:</td>
+              <td ><textarea rows="" cols="" name="address2" style="width: 175px; height: 64px">${noticeassignmentdetails.address2 }</textarea></td>
               </tr>
-              <tr><td height="10" width="180"></td>
-              <td height="20">
-            
-             <input type="text" class="input_txtbx1" name="address2" value="${noticeassignmentdetails.address2 }" id="address2" /><span class="err"><form:errors path="noticeofassignment.address1"></form:errors></span>
-              </td> 
-               <td height="10" width="106" ><span class="err"></span></td>
-               <td height="15" width="190"><input type="text" class="input_txtbx1" name="address5" value= "${noticeassignmentdetails.address5 }" id="address5" /><span class="err"><form:errors path="noticeofassignment.address5"></form:errors></span></td>
-               </tr>
-              <tr><td   width="180"></td>
-              <td height="20">
-              <input type="text" class="input_txtbx1" name="address3" value= "${noticeassignmentdetails.address3 }" id="address3" /><span class="err"><form:errors path="noticeofassignment.address5"></form:errors>
-              </span></td> <td height="10" width="106" ><span class="err"></span></td>
-               <td height="15" width="190"><input type="text" class="input_txtbx1" name="address6" value="${noticeassignmentdetails.address6 }" id="address6" /><span class="err"><form:errors path="noticeofassignment.address6"></form:errors></span></td>
-               </tr></table>
+              </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td  width="180"><span class="err">*</span>Regarding:</td>
@@ -182,8 +169,8 @@ do not receive a response, we will act in reliance that you will comply with it'
               <input type="text" class="input_txtbx1" name="treatingphysician" value="${noticeassignmentdetails.treatingphysician }" id="treatingphysician" /><span class="err"><form:errors path="Noticeassignment.treatingphysician"></form:errors></td>
               </tr><br>
               </table>
-              <table><tr> <td><input type="submit" class="submit_btn" value="update"></td>
-               <td><a href="viewnoticeassignment"style="color:white" class="submit_btn">Cancel</a></td>
+              <table><tr> <td><input type="submit" class="submit_btn" value="Save"></td>
+               <td><a href="responseattorney"style="color:white" class="submit_btn">Cancel</a></td>
               </tr></table>
               </div>
         	  </div>

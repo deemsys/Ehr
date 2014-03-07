@@ -74,22 +74,9 @@
               <td  width="180"><span class="err">*</span>Address</td>
               <td  height="20" ><c:out value="${noticeassignmentdetails.address1}"/>
             </td>   <td height="10" width="106" ><span class="err">*</span>Address:</td>
-              <td height="15" width="140"><c:out value="${noticeassignmentdetails.address4}"/>
+              <td height="15" width="140"><c:out value="${noticeassignmentdetails.address2}"/>
               </tr>
-              <tr><td height="10" width="180"></td>
-              <td height="20">
-            
-             <c:out value="${noticeassignmentdetails.address2}"/>
-              </td> 
-               <td height="10" width="106" ><span class="err"></span></td>
-               <td height="15" width="190"><c:out value="${noticeassignmentdetails.address5}"/></td>
-               </tr>
-              <tr><td   width="180"></td>
-              <td height="20">
-             <c:out value="${noticeassignmentdetails.address3}"/>
-              </span></td> <td height="10" width="106" ><span class="err"></span></td>
-               <td height="15" width="190"><c:out value="${noticeassignmentdetails.address6}"/></td>
-               </tr></table>
+             </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td  width="180"><span class="err">*</span>Regarding:</td>

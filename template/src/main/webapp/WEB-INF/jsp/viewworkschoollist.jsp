@@ -168,7 +168,7 @@
         	  </td>
         	  </tr></table>
         	  <table cellpadding="0" cellspacing="0" border="0" width="100%">
-        	  <tr height="30"><td width="60"><input type="text" class="input_txtbx1" name="entry" id="datepicker" style="width: 126px; "/><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+        	  <tr height="30"><td width="60"><c:out value="${workschooldetails.entry}"/><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
         	  <td >
         	  <b>
          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	 Use caution while entering/exiting vehicles
@@ -186,9 +186,9 @@
         	   <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err">*</span>From(Date):</td>
-              <td ><c:out value="${workschooldetails.from}"/></td>
+              <td ><c:out value="${workschooldetails.froms}"/></td>
               <td height="25" width="120"><span class="err">*</span>To(Date):</td>
-              <td ><c:out value="${workschooldetails.to}"/></td>
+              <td ><c:out value="${workschooldetails.tos}"/></td>
               </tr>
               </table><br>
              <table cellpadding="0" cellspacing="0" border="0" width="100%">

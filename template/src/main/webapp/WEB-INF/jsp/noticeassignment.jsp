@@ -3,12 +3,10 @@
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
-
- <link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
-  <link rel="stylesheet" href="/resources/css/style.css" />
- <script src="resources/js/jquery.min.js"></script> 
+<link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
+<script src="resources/js/jquery.min.js"></script>
  <script src="resources/js/jquery-ui.js"></script>
- <script src="resources/js/jquey-1.9.1.js"></script>
+ <script src="resources/js/jquery-1.9.1.js"></script>
  <STYLE type="text/css">
   P#mypar {font-style:calibri;
   line-height:18px;}
@@ -41,7 +39,7 @@
 	            </div>
 	            <div class="contentbox">
 	             <table cellpadding="0" cellspacing="0" border="0" width="100%">
-              <tr ><td width="370"></td>
+              <tr ><td width="260"></td>
               <td ><b>Dr. Darrin A. Pordash, D.C.</b></td>
               </tr>
               <tr ><td width="260"></td>
@@ -65,41 +63,28 @@
              <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
               <td height="20" width="180"><span class="err">*</span>Name Of Insurance Company:</td>
-              <td ><input type="text" class="input_txtbx1" name="nameofins" id="name" /><span class="err"><form:errors path="Noticeassignment.nameofins"></form:errors></td>
-              <td height="15" width="240">
+              <td ><input type="text" class="input_txtbx1" name="nameofins" id="name" /><span class="err"><form:errors path="noticeofassignment.name"></form:errors></td>
               <td height="40" width="110" ><span class="err">&nbsp;&nbsp;*</span>Name Of Attorney:</td>
-              <td >&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="nameofattorney" id="name" /><span class="err"><form:errors path="Noticeassignment.nameofattorney"></form:errors></span></td>
+              <td >&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="nameofattorney" id="name" /><span class="err"><form:errors path="noticeofassignment.nameofattorney"></form:errors></span></td>
               </tr>
               </table>
                 <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td  width="180"><span class="err">*</span>Address</td>
-              <td  height="20" ><input type="text" class="input_txtbx1" name="address1" id="address" /><span class="err"><form:errors path="noticeofassignment.address"></form:errors>
-            </td>   <td height="10" width="106" ><span class="err">*</span>Address:</td>
-              <td height="15" width="140"><input type="text" class="input_txtbx1" name="address4" id="address4" /><span class="err"><form:errors path="noticeofassignment.address4"></form:errors></span></td>
+              <td  ><textarea rows="" cols="" name="address1" style="width: 159px; height: 64px"></textarea>
+            </td>  <td height="40" width="90" style="width: 138px; "><span class="err"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Address:</td>
+              <td ><textarea rows="" cols="" name="address2" style="width: 175px; height: 64px"></textarea></td>
               </tr>
-              <tr><td height="10" width="180"></td>
-              <td height="20">
-            
-             <input type="text" class="input_txtbx1" name="address2" id="address2" /><span class="err"><form:errors path="noticeofassignment.address1"></form:errors></span>
-              </td> 
-               <td height="10" width="106" ><span class="err"></span></td>
-               <td height="15" width="190"><input type="text" class="input_txtbx1" name="address5" id="address5" /><span class="err"><form:errors path="noticeofassignment.address5"></form:errors></span></td>
-               </tr>
-              <tr><td   width="180"></td>
-              <td height="20">
-              <input type="text" class="input_txtbx1" name="address3" id="address3" /><span class="err"><form:errors path="noticeofassignment.address5"></form:errors>
-              </span></td> <td height="10" width="106" ><span class="err"></span></td>
-               <td height="15" width="190"><input type="text" class="input_txtbx1" name="address6" id="address6" /><span class="err"><form:errors path="noticeofassignment.address6"></form:errors></span></td>
-               </tr></table>
+              </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
+              
               <td  width="180"><span class="err">*</span>Regarding:</td>
               <td ><input type="text" class="input_txtbx1" name="regarding" id="regarding" /><span class="err"><form:errors path="noticeofassignment.regarding"></form:errors></span></td>                   
           </tr> 
           <tr>
             <td height="40" width="180"><span class="err">*</span>PatientName:</td>
-              <td ><input type="text" class="input_txtbx1" name="patientname" id="patientname" /><span class="err"><form:errors path="Noticeassignment.patientname"></form:errors></span></td>                      
+              <td ><input type="text" class="input_txtbx1" name="patientname" id="patientname" /><span class="err"><form:errors path="noticeofassignment.patientname"></form:errors></span></td>                      
           </tr> 
           <tr>
             <td height="30" width="180"><span class="err">*</span>Date Of Accident:</td>
@@ -107,7 +92,7 @@
           </tr> 
           <tr>
             <td height="20" width="180"><span class="err">*</span>Today'sDate:</td>
-              <td ><input type="text" class="input_txtbx1" name="todaysdate" id="datepicker" /><span class="err"><form:errors path="noticeofassignment.todaysdate"></form:errors></span></td>                      
+              <td ><input type="text" class="input_txtbx1" name="todaysdate" id="todaysdate" /><span class="err"><form:errors path="noticeofassignment.todaysdate"></form:errors></span></td>                      
           </tr> <br>  
             </table>
             
@@ -157,16 +142,16 @@ Upon completion of treatment, all exam sheets, doctor's notes, x-ray reports, an
        		 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Please advise us in writing by <input type="text" class="input_txtbx1" name="letter1" id="letter1" /><form:errors path="noticeofassignment.letter1"></form:errors> if you will not honor our Assignment. If we 
 do not receive a response, we will act in reliance that you will comply with it's instructions.
        		 </p></td></tr></table>
-             <table>   <tr > <br>  <td width="700"></td> 
+             <table>   <tr > <br>  <td width="400"></td> 
              <td>
               <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sincerly,</b></td><br>
               </tr>
             <tr >
             <td ></td>
             <td>
-            <b>
+           <p> <b>
                Dr. Darrin A. Pordash, D.C., B.A.C. 
-            </b>
+            </b></p>
             </td></tr>
              <tr >
             <td ></td>
@@ -179,11 +164,11 @@ do not receive a response, we will act in reliance that you will comply with it'
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
        		  <td valign="right" align="right" class="input_txt"><span class="err">*</span>Treating Physician
-              <input type="text" class="input_txtbx1" name="treatingphysician" id="treatingphysician" /><span class="err"><form:errors path="Noticeassignment.treatingphysician"></form:errors></td>
+              <input type="text" class="input_txtbx1" name="treatingphysician" id="treatingphysician" /><span class="err"><form:errors path="responseattorney.treatingphysician"></form:errors></td>
               </tr><br>
               </table>
               <table><tr> <td><input type="submit" class="submit_btn" value="Save"></td>
-               <td><a href="viewnoticeassignment"style="color:white" class="submit_btn">Cancel</a></td>
+               <td><a href="responseattorney"style="color:white" class="submit_btn">Cancel</a></td>
               </tr></table>
               </div>
         	  </div>
