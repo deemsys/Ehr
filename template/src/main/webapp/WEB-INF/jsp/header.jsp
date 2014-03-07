@@ -996,7 +996,7 @@ color:#fff;
 							</li>
 							<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='returntoschool'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu35">
-									<span>Return to school</span>
+									<span>Work School</span>
 								</a>
 							</li>
 							</c:if>  
@@ -1274,6 +1274,8 @@ color:#fff;
 						<ul id="ddsubmenu30" class="ddsubmenustyle">
 							      <li><a href="perrychiropractic" >Form Cover Letter</a></li>
 							      <li><a href="viewperrychiropractic">View Form Cover Letter</a></li>
+							      <li><a href="patientattorney" >Form Cover Letter For Patient's Attorney</a></li>
+							      <li><a href="viewpatientattorney">View Form Cover Letter For Patient's Attorney</a></li>
 							     <li><a href="updateletter" >Update Letter</a></li>
 							      <li><a href="viewupdateletter">View Update Letter</a></li>
 							     <li><a href="copyofrequest" >Requesting Fee Reduction</a></li>
@@ -1312,9 +1314,7 @@ color:#fff;
 					             			             						     
 					             </ul>
 					              <ul id="ddsubmenu35" class="ddsubmenustyle">
-							      <li><a href="returntoschool">Return to School</a></li>
-							      <li><a href="viewreturntoschool">View Return to School</a></li>
-							     <li><a href="workschool">Work School</a></li>
+							       <li><a href="workschool">Work School</a></li>
 							      <li><a href="viewworkschool">View Work School</a></li>
 							     
 							     </ul>

@@ -132,7 +132,7 @@
             
              <table>
              <tr><td><br><br><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	        <input type="text" class="input_txtbx1" name="dearsir" id="dearsir"> has sought and received medical treatment from this clinic.  Our patient made an assignment over to us of med pay proceeds to which we are entitled to receive from your company. You have received notice of this assignment by certified mail.
+	        <input type="text" class="input_txtbx1" name="subject" id="dearsir"> has sought and received medical treatment from this clinic.  Our patient made an assignment over to us of med pay proceeds to which we are entitled to receive from your company. You have received notice of this assignment by certified mail.
              
              </p>
              </td></tr>

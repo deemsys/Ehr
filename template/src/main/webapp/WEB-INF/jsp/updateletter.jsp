@@ -73,7 +73,7 @@
               <td width="50%"><span class="err"></span>
 In Regards to : 
               </td>
-              <td width="50%"><input type="text" class="input_txtbx1" name=" reg" id=" reg" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td width="50%"><input type="text" class="input_txtbx1" name="reg" id="reg" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>
               <br>
