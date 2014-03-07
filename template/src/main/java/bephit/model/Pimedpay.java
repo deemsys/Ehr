@@ -5,16 +5,22 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Pimedpay
 {
 	private String medpayid;
+	
 	@NotEmpty
 	private String insurance;
+	
 	@NotEmpty
 	private String address;
+	
 	@NotEmpty
-	private String reg;	
+	private String reg;
+	
 	@NotEmpty
 	private String nameofperson;
+	
 	@NotEmpty
 	private String dateofaccident;
+	
 	@NotEmpty
 	private String subject;
 	
