@@ -16,18 +16,18 @@
   </STYLE>
  <script>
  $(function() {
-           $( "#datepicker1" ).datepicker();
+           $( "#datepicker" ).datepicker();
          });
  $(function() {
-     $( "#datepicker2" ).datepicker();
+     $( "#datepicker1" ).datepicker();
    });
 </script>
 </head>
  <body>
-<div id="right_content" >
-<form action="updateletterofprotection" method="POST">
+<div id="right_content">
+<form action="insertletterofprotection" method="POST">
 
-<table cellpadding="0" cellspacing="0" border="0"  width="70%" class="margin_table">
+<table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table">
        <tr>
         <td valign="top" align="left" style="padding:5px 0 10px 0;">&nbsp;
 		<div class="status success" style="display: none;">
@@ -36,108 +36,106 @@
           </div>
       </tr> 
       <tr>
-        
-        	  </tr>
-        	  </table>
-        	  
-        	
-        	
-        	
+        <td valign="top" align="center">
         	<div>
-	              <c:set value="${letterofprotectionform.letterofprotectiondetails[0]}" var="letterofprotectiondetails"> </c:set>
-	             
- <table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table" style="width: 683px; "><tr><td>
+        	<c:set value="${letterofprotectionform.letterofprotectiondetails[0]}" var="letterofprotectiondetails"> </c:set>
+	            <div class="headings altheading">
+	             <h2>Letter Of Protection-Drafted For Patient's Attorney</h2> 
+	            </div>
 	            <div class="contentbox">
-	            
-				 <p align="left"><h2><center>I.-g.    Letter Of Protection-Drafted For Patient's Attorney</h2></center></p><br>
-				 
-		<table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table" style="width: 683px; "><tr><td>	</td><td align="right"><input type="hidden" name="letterid" value="${letterofprotectiondetails.letterid }">Date:&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="date"  value="${letterofprotectiondetails.date}"  id="datepicker1"><span class="err"><form:errors path="Letterofprotection.date"></form:errors></span>	 
-				 
-			</td></tr></table><br>
-			
-	
-		<table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table" style="width: 683px; "><tr><td><input type="text" class="input_txtbx1" name="dc" value="${letterofprotectiondetails.dc}" id="dc">, D. C.<span class="err"><form:errors path="Letterofprotection.dc"></form:errors></span>	 
-				 
-			</td></tr></table><br><br>
-			
-			<table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table" style="width: 683px; ">
-			<tr><td width="10%">Clinic Name</td><td><input type="text" class="input_txtbx1" name="clinicname" value="${letterofprotectiondetails.clinicname}" id="clinicname"><span class="err"><form:errors path="Letterofprotection.clinicname"></form:errors></span>	 
-			</td></tr>
-			</table>	<br><br>
-				
-				 
-			<table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table" style="width: 683px; ">
-			
-			<tr><td width="10%">Address</td><td><input type="text" class="input_txtbx1" name="address1" value="${letterofprotectiondetails.address1}" id="address1"><span class="err"><form:errors path="Letterofprotection.address1"></form:errors></span>	 
-				 </td></tr>
-			</table><br>
-			
-			
-			<table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table" style="width: 683px; ">
-						<tr><td width="10%"></td><td><input type="text" class="input_txtbx1" name="address2" value="${letterofprotectiondetails.address2}" id="address2"><span class="err"><form:errors path="Letterofprotection.address2"></form:errors></span>	 
-				 
-			</td></tr>
-			</table>		 
-			
-				 <br><br>
-				 <table align="center"  cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table" style="width: 683px; ">
-			
-			<tr><td align="center">In Re:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My Client -</td><td><input type="text" class="input_txtbx1" value="${letterofprotectiondetails.myclient}" name="myclient" id="myclient">	<form:errors path="Letterofprotection.myclient"></form:errors>	 </td></tr>
-			</table>
-				 <br><br>
-				  <table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table" style="width: 683px; ">
-			
-			<tr><td align="center" >Date of Accident -</td><td><input type="text" class="input_txtbx1" name="dateofaccident" value="${letterofprotectiondetails.dateofaccident}" id="datepicker2">	<form:errors path="Letterofprotection.dateofaccident"></form:errors>	 </td></tr>
-			</table>
-				 <br><br>
-		 <table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table" style="width: 683px; ">
-			
-			<tr><td>Dear Dr.</td><td width="90%"><input type="text" class="input_txtbx1" name="dearsir" value="${letterofprotectiondetails.dearsir}" id="dearsir">	<form:errors path="Letterofprotection.dearsir"></form:errors> 
-				 </td></tr>
-			</table>
-				 <br><br>
-				<table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table" style="width: 683px; ">
-			
-			<tr><td><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;It is my understanding that my above-named client has an outstanding balance with your above clinic for treatment rendered as a result of this accident.
-				</p></td></tr></table>
-				<br><br>
-				
-					<table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table" style="width: 683px; ">
-			
-			<tr><td><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Please let this letter serve as my professional representation that I will pay your clinic's outstanding treatment fee out of and only to the extent of any settlement of judgment proceeds, after deduction of our firm's fees and costs advanced.
-				</p></td></tr></table>
-				<br><br>
-				 
-			<table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table" style="width: 683px; ">
-			
-			<tr><td><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If my client objects to any such payment over to your clinic, in whole or in part, I will hold any disputed amount in our firm's trust account until resolution.	
-				</p></td></tr></table>
-				<br><br>
-				
-			<p align="center">	Very truly yours,</p>
-			
-			<table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table" style="width: 683px; "><tr><td>	</td><td align="right"><input type="text" class="input_txtbx1" name="esq" value="${letterofprotectiondetails.esq}" id="esq">, Esq.<br><br>Attorney for above client <span class="err"><form:errors path="Letterofprotection.esq"></form:errors></span>
-				 
-			</td></tr></table>	
-				
-				
-				<table align="center" cellpadding="0" cellspacing="0" border="0" width="70%">
+	                
+            
+          
+ 
+              <table cellpadding="0" cellspacing="0" border="0" width="100%">
+              <tr><td width="375"></td>
+              <td><span class="err">*</span>Date</td>
+              <td ><input type="hidden" name="letterid" value="${letterofprotectiondetails.letterid }"><input type="text" class="input_txtbx1" name="date" value="${letterofprotectiondetails.date }" id="datepicker" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              </tr>
+              </table>
+               <br><br><br>
+            
+              <table cellpadding="0" cellspacing="0" border="0" width="100%">
+              <tr>
+              <td height="25"  width="160"><span class="err">*</span>D.C:</td>
+               <td ><input type="text" class="input_txtbx1" name="dc" value="${letterofprotectiondetails.dc}" id="dcr" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+             
+              </tr>
+              <tr>
+              <td height="25" width="160"><span class="err"></span>Clinic Name:</td>
+               <td ><input type="text" class="input_txtbx1" name="clinicname" value="${letterofprotectiondetails.clinicname}" id="clinicname" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+             
+              </tr>
+             </table>
+              <table cellpadding="0" cellspacing="0" border="0" width="100%">
+              <tr>
+              <td height="25" width="160"><span class="err"></span>Address:</td>
+              <td><textarea rows="" cols="" name="address1"  value="${letterofprotectiondetails.address1}"  style="width: 170px; height: 62px"></textarea>
+            </td></tr>
+              </table>
+             
+            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+              <tr>
+              <td height="25"  width="160"><span class="err">*</span>IN RE:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My Client:</td>
+               <td ><input type="text" class="input_txtbx1" name="myclient" value="${letterofprotectiondetails.myclient}" id="datepicker" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+             
+              </tr>
+              <tr>
+              <td height="25"  width="160"><span class="err"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date Of Accident:</td>
+               <td ><input type="text" class="input_txtbx1" name="dateofaccident" value="${letterofprotectiondetails.dateofaccident}"  id="datepicker1" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+             
+              </tr>
+             </table><br><br>
+             <table cellpadding="0" cellspacing="0" border="0" width="100%">
+              <tr>
+              <td  width="70"><span class="err"></span>Dear Dr</td>
+              <td  height="20" ><input type="text" class="input_txtbx1" name="dearsir" value="${letterofprotectiondetails.dearsir}"  id="dearsir" /><span class="err"><form:errors path="noticeofassignment.address"></form:errors>
+           </span></td></tr>	
+             </table>
+             <table>
+             <tr><td><br><br><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	It is my understanding that my above-named client has an outstanding balance with your above clinic for treatment rendered as a result of this accident.
+             
+             </p>
+             </td></tr>
+             <tr>
+             <td>
+             <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Please let this letter serve as my professional representation that I will pay your clinic's outstanding treatment fee out of and only to the extent of any settlement of judgment proceeds, after deduction of our firm's fees and costs advanced.  
+             
+             </p>
+             </td>
+             </tr>
+             <tr>
+             <td>
+             <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If my client objects to any such payment over to your clinic, in whole or in part, I will hold any disputed amount in our firm's trust account until resolution. </p>
+             </td>
+             </tr>
+             </table>
+             <table>
+             <tr><td width="450"></td>
+             <td ><p><h1> <b>Very truly yours,</b></h1><p></td></tr>
+             <tr><td width="450"></td>
+            <td ><input type="text" class="input_txtbx1" name="esq" value="${letterofprotectiondetails.esq}"    id="esq" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td></tr>
+            <tr><td width="450"></td><td ><p><h1> <b>	Attorney for above client</b></h1><p></td></tr>
+             </table>
+              <table>
               <tr>
               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
               <td><input type="submit" class="submit_btn" value="update"></td>
               <td>&nbsp;&nbsp;</td>
-                 <td><a href="viewletterofprotection" style="color:white" class="submit_btn">Cancel</a></td>
+              <td><a href="insertletterofprotection" style="color:white" class="submit_btn">Cancel</a></td>
               <td>&nbsp;&nbsp;</td>
         	  </tr>
         	  </table>
-				
-				 </div>
-				 </td>
-				 </tr>
-				 </table>
-				 </div>
-				 </form>
-				 </div>
-				 </body>
-				 </html>
-				 
+        	 
+        	  </div>
+        	  </div>
+        	
+        	  </td>
+        	  </tr>
+        	  </table>
+        	  </form>
+        	  </div>
+        	  </body>
+        	  </html>
+        	  <jsp:include page="footer.jsp"></jsp:include>
