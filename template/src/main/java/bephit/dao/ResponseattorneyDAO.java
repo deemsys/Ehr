@@ -44,7 +44,7 @@ public class ResponseattorneyDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 
-	    	 String cmd="INSERT INTO `tbl_responseattorney` (`name`,`address`,`address1`,`address2`,`regarding`,`patientname`,`dateofaccident`,`nameofclinic`,`treatingphysician`) VALUES ('"+responseattorneydetails.getName()+"','"+responseattorneydetails.getAddress()+"','"+responseattorneydetails.getAddress1()+"','"+responseattorneydetails.getAddress2()+"','"+responseattorneydetails.getRegarding()+"','"+responseattorneydetails.getPatientname()+"','"+responseattorneydetails.getDateofaccident()+"','"+responseattorneydetails.getNameofclinic()+"','"+responseattorneydetails.getTreatingphysician()+"')";
+	    	 String cmd="INSERT INTO `tbl_responseattorney` (`name`,`address`,`regarding`,`patientname`,`dateofaccident`,`nameofclinic`,`treatingphysician`) VALUES ('"+responseattorneydetails.getName()+"','"+responseattorneydetails.getAddress()+"','"+responseattorneydetails.getRegarding()+"','"+responseattorneydetails.getPatientname()+"','"+responseattorneydetails.getDateofaccident()+"','"+responseattorneydetails.getNameofclinic()+"','"+responseattorneydetails.getTreatingphysician()+"')";
 	    	 System.out.println(cmd);
 	    	 statement.execute(cmd);
 			flag=1;
@@ -84,8 +84,7 @@ public class ResponseattorneyDAO {
 						(resultSet.getString("responseid"),
 								resultSet.getString("name"),
 						resultSet.getString("address"),
-						resultSet.getString("address1"),
-						resultSet.getString("address2"),
+			
 			    		resultSet.getString("regarding"),
 			    		resultSet.getString("patientname"),
 			    		resultSet.getString("dateofaccident"),
@@ -126,8 +125,7 @@ public class ResponseattorneyDAO {
 						(resultSet.getString("responseid"),
 								resultSet.getString("name"),
 						resultSet.getString("address"),
-						resultSet.getString("address1"),
-						resultSet.getString("address2"),
+					
 			    		resultSet.getString("regarding"),
 			    		resultSet.getString("patientname"),
 			    		resultSet.getString("dateofaccident"),
@@ -167,8 +165,7 @@ public class ResponseattorneyDAO {
 	    	 String cmd="update tbl_responseattorney set name='"+responseattorneydetail.getName()
 	    			
 	    +"',address='"+responseattorneydetail.getAddress()
-	    +"',address1='"+responseattorneydetail.getAddress1()
-	    +"',address2='"+responseattorneydetail.getAddress2()
+	   
 	    +"',regarding='"+responseattorneydetail.getRegarding()
 	    +"',patientname='"+responseattorneydetail.getPatientname()	
 	    +"',dateofaccident='"+responseattorneydetail.getDateofaccident()

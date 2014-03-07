@@ -158,7 +158,7 @@ public class AdminController
 		PimedpayForm pimedpayform=new PimedpayForm();
 		pimedpayform.setPimedpaydetails(pimedpayDAO.getpimedpay());
 		model.addAttribute("pimedpayform",pimedpayform);
-		
+		model.addAttribute("menu","xray");
 		
 		return "viewpimedpay";
 	}
@@ -229,7 +229,7 @@ public class AdminController
 		PimedpayForm pimedpayForm=new PimedpayForm();
 		pimedpayForm.setPimedpaydetails(pimedpayDAO.getpimedpay(medpayid));
 		model.addAttribute("pimedpayform",pimedpayForm);
-		
+		model.addAttribute("menu","xray");
 		
 		return "editpimedpay";
 		
@@ -258,7 +258,8 @@ public class AdminController
 	}	
 	@RequestMapping(value="/deleteperrychiropractic", method = RequestMethod.GET)
 	public String deleteperrychiropractic(@RequestParam("perryid")String perryid, HttpSession session,ModelMap model) {		
-		
+	
+		model.addAttribute("success","true");
 		perrychiropracticDAO.deleteperrychiropractic(perryid);		
 		PerrychiropracticForm perrychiropracticform=new PerrychiropracticForm();
 		perrychiropracticform.setPerrychiropracticdetails(perrychiropracticDAO.getperrychiropractic());
@@ -271,7 +272,7 @@ public class AdminController
 	public String deletereturntoschool(@RequestParam("schoolid")String schoolid, HttpSession session,ModelMap model) {		
 		
 		returntoschoolDAO.deletereturntoschool(schoolid);
-		
+		model.addAttribute("success","true");
 		ReturntoschoolForm returntoschoolform=new ReturntoschoolForm();
 		returntoschoolform.setReturntoschooldetails(returntoschoolDAO.getreturntoschool());
 		model.addAttribute("returntoschoolform",returntoschoolform);
@@ -284,12 +285,12 @@ public class AdminController
 	public String deletepimedpay(@RequestParam("medpayid")String medpayid, HttpSession session,ModelMap model) {		
 		
 		pimedpayDAO.deletepimedpay(medpayid);
-		
+		model.addAttribute("success","true");
 		PimedpayForm pimedpayform=new PimedpayForm();
 		pimedpayform.setPimedpaydetails(pimedpayDAO.getpimedpay());
 		model.addAttribute("pimedpayform",pimedpayform);
-		
-		
+		model.addAttribute("menu","xray");	
+		model.addAttribute("success","true");
 		return "viewpimedpay";
 	}
 
@@ -302,15 +303,16 @@ public class AdminController
 		UpdateletterForm updateletterform=new UpdateletterForm();
 		updateletterform.setUpdateletterdetails(updateletterDAO.getupdateletter());
 		model.addAttribute("updateletterform",updateletterform);
-		
-		model.addAttribute("menu","xray");
+		model.addAttribute("success","true");
+		model.addAttribute("menu","perry");
 		return "viewupdateletter";
 	}
 	
 	
 	@RequestMapping(value="/deleterequestfordemand", method = RequestMethod.GET)
 	public String deleterequestfordemand(@RequestParam("requestid")String requestid, HttpSession session,ModelMap model) {		
-		
+		model.addAttribute("menu", "fax");
+		model.addAttribute("success","true");
 		requestfordemandDAO.deleterequestfordemand(requestid);		
 		RequestfordemandForm requestfordemandform=new RequestfordemandForm();
 		requestfordemandform.setRequestfordemanddetails(requestfordemandDAO.getrequestfordemand());
@@ -320,7 +322,7 @@ public class AdminController
 	
 	@RequestMapping(value="/deletexray", method = RequestMethod.GET)
 	public String deletexray(@RequestParam("xrayid")String xrayid, HttpSession session,ModelMap model) {	
-		
+		model.addAttribute("success","true");
 		xrayDAO.deletexray(xrayid);		
 		XrayForm xrayForm=new XrayForm();
 		xrayForm.setxraydetails(xrayDAO.getxray());
@@ -330,7 +332,7 @@ public class AdminController
 	}
 	@RequestMapping(value="/deleteformbill", method = RequestMethod.GET)
 	public String deleteformbill(@RequestParam("formid")String formid, HttpSession session,ModelMap model) {		
-		
+		model.addAttribute("success","true");
 		formbillDAO.deleteformbill(formid);		
 		FormbillForm formbillForm=new FormbillForm();
 		formbillForm.setFormbilldetails(formbillDAO.getformbill(formid));
@@ -365,13 +367,13 @@ public class AdminController
 	 
 		@RequestMapping(value="/requestfordemand", method = RequestMethod.GET)
 		public String requestfordemand(HttpSession session,ModelMap model) {		
-			
+			model.addAttribute("menu","fax");
 			return "requestfordemand";
 		}	
 		
 		@RequestMapping(value="/pimedpay", method = RequestMethod.GET)
 		public String pimedpay(HttpSession session,ModelMap model) {		
-			
+			model.addAttribute("menu","xray");
 			return "pimedpay";
 		}
 		
@@ -389,13 +391,13 @@ public class AdminController
 
 	public String update_perrychiropractic(HttpServletRequest request,HttpSession session,@ModelAttribute("Perrychiropractic")  @Valid Perrychiropractic perrychiropracticdetails,BindingResult result,ModelMap model) {
 		//session.setAttribute("perrydetails",perrychiropracticdetails);
+		model.addAttribute("menu","perry");
 		if(result.hasErrors())
 		{
 			PerrychiropracticForm perrychiropracticform = new PerrychiropracticForm();
 			perrychiropracticform.setPerrychiropracticdetails(perrychiropracticDAO.getperrychiropractic());
 			model.addAttribute("perrychiropracticform", perrychiropracticform);
-			model.addAttribute("Success","true");
-			model.addAttribute("menu", "notes");
+			
 			return "perrychiropractic";
 		}	
 		
@@ -404,6 +406,7 @@ public class AdminController
 		PerrychiropracticForm perrychiropracticform=new PerrychiropracticForm();
 		perrychiropracticform.setPerrychiropracticdetails(perrychiropracticDAO.getperrychiropractic());
 		model.addAttribute("perrychiropracticform",perrychiropracticform);
+		model.addAttribute("success","true");
 		
 		
 		return "viewperrychiropractic";
@@ -418,7 +421,7 @@ public class AdminController
 			ReturntoschoolForm returntoschoolform = new ReturntoschoolForm();
 			returntoschoolform.setReturntoschooldetails(returntoschoolDAO.getreturntoschool());
 			model.addAttribute("returntoschoolform", returntoschoolform);
-			model.addAttribute("Success","true");
+			model.addAttribute("success","true");
 			model.addAttribute("menu", "notes");
 			return "returntoschool";
 		}
@@ -445,8 +448,8 @@ public class AdminController
 			PimedpayForm pimedpayform = new PimedpayForm();
 			pimedpayform.setPimedpaydetails(pimedpayDAO.getpimedpay());
 			model.addAttribute("pimedpayform", pimedpayform);
-			model.addAttribute("Success","true");
-			model.addAttribute("menu", "notes");
+		
+			
 			return "pimedpay";
 		}		
 		
@@ -455,8 +458,8 @@ public class AdminController
 		PimedpayForm pimedpayform=new PimedpayForm();
 		pimedpayform.setPimedpaydetails(pimedpayDAO.getpimedpay());
 		model.addAttribute("pimedpayform",pimedpayform);
-		
-		
+		model.addAttribute("success","true");
+		model.addAttribute("menu","xray");
 		return "viewpimedpay";
 		 
 	}
@@ -476,8 +479,8 @@ public class AdminController
 			UpdateletterForm updateletterform = new UpdateletterForm();
 			updateletterform.setUpdateletterdetails(updateletterDAO.getupdateletter());
 			model.addAttribute("updateletterform", updateletterform);
-			model.addAttribute("Success","true");
-			model.addAttribute("menu", "notes");
+			
+			
 			return "updateletter";
 		}	
 		
@@ -485,6 +488,8 @@ public class AdminController
 		updateletterDAO.updateupdateletter(updateletterdetails,updateletterdetails.getUpdateid());
 		UpdateletterForm updateletterform=new UpdateletterForm();
 		updateletterform.setUpdateletterdetails(updateletterDAO.getupdateletter());
+		model.addAttribute("success","true");
+		model.addAttribute("menu","perry");
 		model.addAttribute("updateletterform",updateletterform);
 		
 		
@@ -496,13 +501,13 @@ public class AdminController
 
 	public String update_requestfordemand(HttpServletRequest request,HttpSession session,@ModelAttribute("Requestfordemand")  @Valid Requestfordemand requestfordemanddetails,BindingResult result,ModelMap model) {
 		//session.setAttribute("perrydetails",perrychiropracticdetails);
+		model.addAttribute("menu", "fax");
 		if(result.hasErrors())
 		{
 			RequestfordemandForm requestfordemandform = new RequestfordemandForm();
 			requestfordemandform.setRequestfordemanddetails(requestfordemandDAO.getrequestfordemand());
 			model.addAttribute("requestfordemandform", requestfordemandform);
-			model.addAttribute("Success","true");
-			model.addAttribute("menu", "notes");
+			
 			return "requestfordemand";
 		}	
 			
@@ -512,7 +517,7 @@ public class AdminController
 		RequestfordemandForm requestfordemandform=new RequestfordemandForm();
 		requestfordemandform.setRequestfordemanddetails(requestfordemandDAO.getrequestfordemand());
 		model.addAttribute("requestfordemandform",requestfordemandform);
-		
+		model.addAttribute("success","true");
 		
 		return "viewrequestfordemand";
 		 
@@ -522,6 +527,7 @@ public class AdminController
 
 	public String update_xray(HttpServletRequest request,HttpSession session,@ModelAttribute("xraydetails")  @Valid Xray xraydetails,BindingResult result,ModelMap model) {
 		//session.setAttribute("perrydetails",perrychiropracticdetails);
+		model.addAttribute("menu","xray");
 		if(result.hasErrors())
 		{ 
 			model.addAttribute("menu","initial");
@@ -533,7 +539,8 @@ public class AdminController
 		XrayForm xrayform=new XrayForm();
 		xrayform.setxraydetails(xrayDAO.getxray());
 		model.addAttribute("xrayform",xrayform);
-		
+		model.addAttribute("success","true");
+		model.addAttribute("menu","xray");
 		
 		return "viewxray";
 		 
@@ -547,7 +554,7 @@ public class AdminController
 			PatientattorneyForm patientattorneyform = new PatientattorneyForm();
 			patientattorneyform.setPatientattorneydetails(patientattorneyDAO.getpatientattorney());
 			model.addAttribute("patientattorneyform", patientattorneyform);
-			model.addAttribute("Success","true");
+			model.addAttribute("success","true");
 			model.addAttribute("menu", "notes");
 			return "patientattorney";
 		}
@@ -558,7 +565,7 @@ public class AdminController
 		PatientattorneyForm patientattorneyform=new PatientattorneyForm();
 		patientattorneyform.setPatientattorneydetails(patientattorneyDAO.getpatientattorney());
 		model.addAttribute("patientattorneyform",patientattorneyform);
-		
+		model.addAttribute("success","true");
 		
 		return "viewpatientattorney";
 		 
@@ -569,13 +576,14 @@ public class AdminController
 
 	public String update_formbill(HttpServletRequest request,HttpSession session,@ModelAttribute("Formbill")  @Valid Formbill formbilldetails,BindingResult result,ModelMap model) {
 		//session.setAttribute("perrydetails",perrychiropracticdetails);
+		model.addAttribute("menu", "xray");
 		if(result.hasErrors())
 		{
 			FormbillForm formbillform = new FormbillForm();
 			formbillform.setFormbilldetails(formbillDAO.getformbill());
 			model.addAttribute("formbillform", formbillform);
-			model.addAttribute("Success","true");
-			model.addAttribute("menu", "notes");
+			
+		
 			return "formbill";
 		}	
 		
@@ -584,8 +592,7 @@ public class AdminController
 		FormbillForm formbillForm=new FormbillForm();
 		formbillForm.setFormbilldetails(formbillDAO.getformbill());
 		model.addAttribute("formbillform",formbillForm);
-		
-		
+		model.addAttribute("success","true");		
 		return "viewformbill";
 		 
 	}
@@ -593,16 +600,15 @@ public class AdminController
 
 		
 	@RequestMapping(value="/insertperrychiropractic", method = RequestMethod.POST)
-
 	public String insert_perrychiropractic(HttpServletRequest request,HttpSession session,@ModelAttribute("Perrychiropractic")  @Valid Perrychiropractic perrychiropracticdetails,BindingResult result,ModelMap model) {
 		//session.setAttribute("perrydetails",perrychiropracticdetails);
+		model.addAttribute("menu","perry");
 		if(result.hasErrors())
 		{
 			PerrychiropracticForm perrychiropracticform = new PerrychiropracticForm();
 			perrychiropracticform.setPerrychiropracticdetails(perrychiropracticDAO.getperrychiropractic());
 			model.addAttribute("perrychiropracticform", perrychiropracticform);
-			model.addAttribute("Success","true");
-			model.addAttribute("menu", "notes");
+		
 			return "perrychiropractic";
 		}
 		//System.out.println(perrychiropracticdetails.getAddress()+""+perrychiropracticdetails.getAddress1());
@@ -610,22 +616,20 @@ public class AdminController
 		PerrychiropracticForm perrychiropracticform=new PerrychiropracticForm();
 		perrychiropracticform.setPerrychiropracticdetails(perrychiropracticDAO.getperrychiropractic());
 		model.addAttribute("perrychiropracticform",perrychiropracticform);
+		model.addAttribute("success","true");
 		return "viewperrychiropractic";
 		 
 	}
 
 	@RequestMapping(value="/insertreturntoschool", method = RequestMethod.POST)
-
 	public String insert_returntoschool(HttpServletRequest request,HttpSession session,@ModelAttribute("returntoschool")  @Valid Returntoschool returntoschooldetails,BindingResult result,ModelMap model) {
 	//session.setAttribute("perrydetails",perrychiropracticdetails);
 		if(result.hasErrors())
 		{
 			ReturntoschoolForm returntoschoolform = new ReturntoschoolForm();
 			returntoschoolform.setReturntoschooldetails(returntoschoolDAO.getreturntoschool());
-			model.addAttribute("returntoschoolform", returntoschoolform);
-			model.addAttribute("Success","true");
-			model.addAttribute("menu", "notes");
-			return "returntoschool";
+			model.addAttribute("returntoschoolform", returntoschoolform);			
+		    return "returntoschool";
 		}
 
 	//System.out.println(perrychiropracticdetails.getAddress()+""+perrychiropracticdetails.getAddress1());
@@ -633,6 +637,7 @@ public class AdminController
 	ReturntoschoolForm returntoschoolform=new ReturntoschoolForm();
 	returntoschoolform.setReturntoschooldetails(returntoschoolDAO.getreturntoschool());
 	model.addAttribute("returntoschoolform",returntoschoolform);
+	model.addAttribute("success","true");
 	return "viewreturntoschool";
 	 
 	}
@@ -641,13 +646,12 @@ public class AdminController
 
 	public String insert_requestfordemand(HttpServletRequest request,HttpSession session,@ModelAttribute("Requestfordemand")  @Valid Requestfordemand requestfordemanddetails,BindingResult result,ModelMap model) {
 		//session.setAttribute("perrydetails",perrychiropracticdetails);
+		model.addAttribute("menu","fax");
 		if(result.hasErrors())
 		{
 			RequestfordemandForm requestfordemandform = new RequestfordemandForm();
 			requestfordemandform.setRequestfordemanddetails(requestfordemandDAO.getrequestfordemand());
-			model.addAttribute("requestfordemandform", requestfordemandform);
-			model.addAttribute("Success","true");
-			model.addAttribute("menu", "notes");
+			model.addAttribute("requestfordemandform", requestfordemandform);						
 			return "requestfordemand";
 		}	
 		
@@ -656,6 +660,7 @@ public class AdminController
 		RequestfordemandForm requestfordemandform=new RequestfordemandForm();
 		requestfordemandform.setRequestfordemanddetails(requestfordemandDAO.getrequestfordemand());
 		model.addAttribute("requestfordemandform",requestfordemandform);
+		model.addAttribute("success","true");
 		return "viewrequestfordemand";
 		 
 	}
@@ -669,14 +674,16 @@ public class AdminController
 			XrayForm xrayform = new XrayForm();
 			xrayform.setxraydetails(xrayDAO.getxray());
 			model.addAttribute("xrayform", xrayform);
-			model.addAttribute("Success","true");
-			model.addAttribute("menu", "notes");
+			
+			
 			return "xray";
 		}
 		
 		xrayDAO.setxray(xraydetails);
 		XrayForm xrayform=new XrayForm();
 		xrayform.setxraydetails(xrayDAO.getxray());
+		model.addAttribute("success","true");
+		model.addAttribute("menu", "xray");
 		model.addAttribute("xrayform",xrayform);
 		return "viewxray";
 		 
@@ -687,11 +694,10 @@ public class AdminController
 		//session.setAttribute("perrydetails",perrychiropracticdetails);
 		if(result.hasErrors())
 		{
+			System.out.println("yes");
 			PimedpayForm pimedpayform = new PimedpayForm();
 			pimedpayform.setPimedpaydetails(pimedpayDAO.getpimedpay());
 			model.addAttribute("pimedpayform", pimedpayform);
-			model.addAttribute("Success","true");
-			model.addAttribute("menu", "notes");
 			return "pimedpay";
 		}	
 		
@@ -699,6 +705,8 @@ public class AdminController
 		PimedpayForm pimedpayform=new PimedpayForm();
 		pimedpayform.setPimedpaydetails(pimedpayDAO.getpimedpay());
 		model.addAttribute("pimedpayform",pimedpayform);
+		model.addAttribute("success","true");
+		model.addAttribute("menu","xray");
 		return "viewpimedpay";
 		 
 	}
@@ -712,8 +720,7 @@ public class AdminController
 			PatientattorneyForm patientattorneyform = new PatientattorneyForm();
 			patientattorneyform.setPatientattorneydetails(patientattorneyDAO.getpatientattorney());
 			model.addAttribute("patientattorneyform", patientattorneyform);
-			model.addAttribute("Success","true");
-			model.addAttribute("menu", "notes");
+			
 			return "patientattorney";
 		}
 		
@@ -722,6 +729,8 @@ public class AdminController
 		PatientattorneyForm patientattorneyform=new PatientattorneyForm();
 		patientattorneyform.setPatientattorneydetails(patientattorneyDAO.getpatientattorney());
 		model.addAttribute("patientattorneyform",patientattorneyform);
+		model.addAttribute("success","true");
+		model.addAttribute("menu", "notes");
 		return "viewpatientattorney";
 		 
 	}
@@ -730,14 +739,15 @@ public class AdminController
 
 	public String insert_updateletter(HttpServletRequest request,HttpSession session,@ModelAttribute("Updateletter")  @Valid Updateletter updateletterdetails,BindingResult result,ModelMap model)
 	{
+	System.out.println(request.getParameter("reg"));
 		//session.setAttribute("perrydetails",perrychiropracticdetails);
 		if(result.hasErrors())
 		{
 			UpdateletterForm updateletterform = new UpdateletterForm();
 			updateletterform.setUpdateletterdetails(updateletterDAO.getupdateletter());
 			model.addAttribute("updateletterform", updateletterform);
-			model.addAttribute("Success","true");
-			model.addAttribute("menu", "notes");
+			
+			model.addAttribute("menu","perry");
 			return "updateletter";
 		}	
 		
@@ -746,12 +756,15 @@ public class AdminController
 		UpdateletterForm updateletterform=new UpdateletterForm();
 		updateletterform.setUpdateletterdetails(updateletterDAO.getupdateletter());
 		model.addAttribute("updateletterform",updateletterform);
+		model.addAttribute("menu","perry");
+		model.addAttribute("success","true");
 		return "viewupdateletter";
 		 
 	}
 
 @RequestMapping(value="/viewfaxcover", method = RequestMethod.GET)
-public String viewfaxcover(HttpSession session,ModelMap model) {		
+public String viewfaxcover(HttpSession session,ModelMap model) {
+	model.addAttribute("menu","fax");
 	FaxcoverForm faxcoverform=new FaxcoverForm();
 	faxcoverform.setFaxcoverdetails(faxcoverDAO.getfaxcover());
 	model.addAttribute("faxcoverform",faxcoverform);	
@@ -759,24 +772,24 @@ public String viewfaxcover(HttpSession session,ModelMap model) {
 }
 @RequestMapping(value="/lettertopatients", method = RequestMethod.GET)
 public String lettertopatients(HttpSession session,ModelMap model) {
-	
+	model.addAttribute("menu","fax");
 	return "lettertopatients";
 
 
 }
 @RequestMapping(value="/responseattorney", method = RequestMethod.GET)
 public String responseattorney(HttpSession session,ModelMap model) {		
-	
+	model.addAttribute("menu","fax");
 	return "responseattorney";
 }
 @RequestMapping(value="/faxcover", method = RequestMethod.GET)
 public String faxcover(HttpSession session,ModelMap model) {		
-	
+	model.addAttribute("menu","fax");
 	return "faxcover";
 }
 @RequestMapping(value="/workschool", method = RequestMethod.GET)
 public String workschool(HttpSession session,ModelMap model) {		
-	
+	model.addAttribute("menu","returntoschool");
 	return "workschool";
 
 
@@ -841,7 +854,7 @@ public String viewletterofprotection(HttpSession session,ModelMap model) {
 	LetterofprotectionForm letterofprotectionform=new LetterofprotectionForm();
 	letterofprotectionform.setLetterofprotectiondetails(letterofprotectionDAO.getletterofprotection());
 	model.addAttribute("letterofprotectionform",letterofprotectionform);
-	System.out.println("asdasd");
+	model.addAttribute("menu","xray");	
 	
 	return "viewletterofprotection";
 }
@@ -852,7 +865,7 @@ public String viewlettertopatients(HttpSession session,ModelMap model) {
 	LettertopatientsForm lettertopatientsform=new LettertopatientsForm();
 	lettertopatientsform.setLettertopatientsdetails(lettertopatientsDAO.getlettertopatients());
 	model.addAttribute("lettertopatientsform",lettertopatientsform);
-		
+	model.addAttribute("menu","fax");	
 	return "viewlettertopatients";
 }
 
@@ -864,7 +877,8 @@ responseattorneyform.setResponseattorneydetail(responseattorneyDAO.getresponseat
 	return "viewresponseattorney";
 }
 @RequestMapping(value="/viewnoticeassignment", method = RequestMethod.GET)
-public String viewnoticeassignment(HttpSession session,ModelMap model) {		
+public String viewnoticeassignment(HttpSession session,ModelMap model) {	
+	model.addAttribute("menu","fax");
 	NoticeassignmentForm noticeassignmentform=new NoticeassignmentForm();
 	noticeassignmentform.setNoticeassignmentdetails(noticeassignmentDAO.getnoticeassignment());
 	model.addAttribute("noticeassignmentform",noticeassignmentform);
@@ -888,17 +902,18 @@ public String editletterofprotection(@RequestParam("letterid")String letterid, H
 	LetterofprotectionForm letterofprotectionform=new LetterofprotectionForm();
 	letterofprotectionform.setLetterofprotectiondetails(letterofprotectionDAO.getletterofprotection());
 	model.addAttribute("letterofprotectionform",letterofprotectionform);
-	
+	model.addAttribute("menu","xray");	
 	
 	return "editletterofprotection";
 }
 
 @RequestMapping(value="/editfaxcover", method = RequestMethod.GET)
 public String editfaxcover(@RequestParam("faxid")String faxid, HttpSession session,ModelMap model) {		
+	model.addAttribute("menu","fax");
 	FaxcoverForm faxcoverform=new FaxcoverForm();
 	faxcoverform.setFaxcoverdetails(faxcoverDAO.getfaxcover(faxid));
 	model.addAttribute("faxcoverform",faxcoverform);
-	
+	//model.addAttribute("success","true");
 	
 	return "editfaxcover";
 }
@@ -907,7 +922,7 @@ public String editlettertopatients(@RequestParam("letterid")String letterid, Htt
 	LettertopatientsForm lettertopatientsform=new LettertopatientsForm();
 	lettertopatientsform.setLettertopatientsdetails(lettertopatientsDAO.getlettertopatients(letterid));
 	model.addAttribute("lettertopatientsform",lettertopatientsform);
-		
+	model.addAttribute("menu","fax");	
 	return "editlettertopatients";
 }
 @RequestMapping(value="/editnoticeassignment", method = RequestMethod.GET)
@@ -915,12 +930,13 @@ public String editnoticeassignment(@RequestParam("noticeid")String noticeid, Htt
 	NoticeassignmentForm noticeassignmentform=new NoticeassignmentForm();
 	noticeassignmentform.setNoticeassignmentdetails(noticeassignmentDAO.getnoticeassignment(noticeid));
 	model.addAttribute("noticeassignmentform",noticeassignmentform);
-		
+	model.addAttribute("menu","fax");	
 	return "editnoticeassignment";
 }
 
 @RequestMapping(value="/editresponseattorney", method = RequestMethod.GET)
 public String editresponseattorney(@RequestParam("responseid")String responseid, HttpSession session,ModelMap model) {		
+	model.addAttribute("menu","fax");
 	ResponseattorneyForm responseattorneyform=new ResponseattorneyForm();
 	responseattorneyform.setResponseattorneydetail(responseattorneyDAO.getresponseattorney(responseid));
 			model.addAttribute("responseattorneyform",responseattorneyform);
@@ -928,47 +944,49 @@ public String editresponseattorney(@RequestParam("responseid")String responseid,
 }
 @RequestMapping(value="/updateletter", method = RequestMethod.GET)
 public String updateletter(HttpSession session,ModelMap model) {		
-
+	model.addAttribute("menu","perry");
 return "updateletter";
 }
 
 
 @RequestMapping(value="/formbill", method = RequestMethod.GET)
 public String formbill(HttpSession session,ModelMap model) {		
-
+	model.addAttribute("menu","xray");
 return "formbill";
 }
 
 @RequestMapping(value="/noticeassignment", method = RequestMethod.GET)
 public String noticeassignment(HttpSession session,ModelMap model) {		
-
+model.addAttribute("menu","fax");
 return "noticeassignment";
 }
 @RequestMapping(value="/deletenoticeassignment", method = RequestMethod.GET)
 public String deleteletterofprotection(@RequestParam("noticeid")String noticeid, HttpSession session,ModelMap model) {		
-	
+	model.addAttribute("menu","fax");
 	noticeassignmentDAO.deletenoticeassignment(noticeid);
 	NoticeassignmentForm noticeassignmentform=new NoticeassignmentForm();
 	noticeassignmentform.setNoticeassignmentdetails(noticeassignmentDAO.getnoticeassignment());
 	model.addAttribute("noticeassignmentform",noticeassignmentform);
-		
+	model.addAttribute("success","true");	
 	return "viewnoticeassignment";
 	
 	
 }
 @RequestMapping(value="/deleteletterofprotection", method = RequestMethod.GET)
 public String deletenoticeassignment(@RequestParam("letterid")String letterid, HttpSession session,ModelMap model) {		
-	
+	model.addAttribute("success","true");
 	letterofprotectionDAO.deleteletterofprotection(letterid);
 	LetterofprotectionForm letterofprotectionform=new LetterofprotectionForm();
 	letterofprotectionform.setLetterofprotectiondetails(letterofprotectionDAO.getletterofprotection());
-	model.addAttribute("letterofprotectionform",letterofprotectionform);	
+	model.addAttribute("letterofprotectionform",letterofprotectionform);
+	model.addAttribute("menu","xray");	
 	return "viewletterofprotection";
 }	
 	
 @RequestMapping(value="/deletelettertopatients", method = RequestMethod.GET)
 public String deletelettertopatients(@RequestParam("letterid")String letterid, HttpSession session,ModelMap model) {		
-	
+	model.addAttribute("success","true");
+	model.addAttribute("menu","fax");
 	lettertopatientsDAO.deletelettertopatients(letterid);
 	LettertopatientsForm lettertopatientsform=new LettertopatientsForm();
 	lettertopatientsform.setLettertopatientsdetails(lettertopatientsDAO.getlettertopatients());
@@ -977,14 +995,18 @@ public String deletelettertopatients(@RequestParam("letterid")String letterid, H
 }
 @RequestMapping(value="/deleteresponseattorney", method = RequestMethod.GET)
 public String deleteresponseattorney(@RequestParam("responseid")String responseid, HttpSession session,ModelMap model) {		
-responseattorneyDAO.deleteresponseattorney(responseid);
+	model.addAttribute("menu","fax");
+	model.addAttribute("success","true");
+	responseattorneyDAO.deleteresponseattorney(responseid);
 	ResponseattorneyForm responseattorneyform=new ResponseattorneyForm();
 	responseattorneyform.setResponseattorneydetail(responseattorneyDAO.getresponseattorney());
 			model.addAttribute("responseattorneyform",responseattorneyform);
 			return "viewresponseattorney";	
 }
 @RequestMapping(value="/deletefaxcover", method = RequestMethod.GET)
-public String deletefaxcover(@RequestParam("faxid")String faxid, HttpSession session,ModelMap model) {		
+public String deletefaxcover(@RequestParam("faxid")String faxid, HttpSession session,ModelMap model) {
+	model.addAttribute("menu","fax");
+	model.addAttribute("success","true");
 faxcoverDAO.deletefaxcover(faxid);
 FaxcoverForm faxcoverform=new FaxcoverForm();
 faxcoverform.setFaxcoverdetails(faxcoverDAO.getfaxcover());
@@ -992,6 +1014,66 @@ model.addAttribute("faxcoverform",faxcoverform);
 return "viewfaxcover";
 	
 }
+@RequestMapping(value="/insertworkschool", method = RequestMethod.POST)
+
+public String insert_workschool(HttpServletRequest request,HttpSession session,@ModelAttribute("Workschool")  @Valid Workschool workschooldetails,BindingResult result,ModelMap model)
+{
+	model.addAttribute("menu","returntoschool");
+	//session.setAttribute("perrydetails",perrychiropracticdetails);
+	if(result.hasErrors())
+	{
+		WorkschoolForm workschoolform= new WorkschoolForm();
+		workschoolform.setWorkschooldetails(workschoolDAO.getworkschool());
+		model.addAttribute("workschoolform",workschoolform);		
+		return "workschool";
+	}
+	//System.out.println(perrychiropracticdetails.getAddress()+""+perrychiropracticdetails.getAddress1());
+	workschoolDAO.setworkschool(workschooldetails);
+	WorkschoolForm workschoolform=new WorkschoolForm();
+	workschoolform.setWorkschooldetails(workschoolDAO.getworkschool());
+	model.addAttribute("success","true");
+	return "viewworkschool";
+}
+
+@RequestMapping(value="/deleteworkschool", method = RequestMethod.GET)
+	public String deleteworkschool(@RequestParam("workid")String workid, HttpSession session,ModelMap model) {		
+	model.addAttribute("success","true");
+	model.addAttribute("menu","returntoschool");
+		workschoolDAO.deleteworkschool(workid);
+		WorkschoolForm workschoolform=new WorkschoolForm();
+		workschoolform.setWorkschooldetails(workschoolDAO.getworkschool());
+		model.addAttribute("workschoolform",workschoolform);	
+		return "viewworkschool";
+	}
+
+@RequestMapping(value="/viewworklist", method = RequestMethod.GET)
+public String worklist(HttpSession session,@RequestParam("workid") String workid,ModelMap model) {		
+	WorkschoolForm workschoolform=new WorkschoolForm();
+	workschoolform.setWorkschooldetails(workschoolDAO.getworkschool(workid));
+	model.addAttribute("workschoolform",workschoolform);	
+	return "viewworkschoollist";
+}
+
+
+
+@RequestMapping(value="/editworkschool", method = RequestMethod.GET)
+public String editworkschool(@RequestParam("workid")String workid, HttpSession session,ModelMap model) {		
+	model.addAttribute("menu","returntoschool");
+	WorkschoolForm workschoolform=new WorkschoolForm();
+	workschoolform.setWorkschooldetails(workschoolDAO.getworkschool(workid));
+	model.addAttribute("workschoolform",workschoolform);	
+	return "editworkschool";
+
+}
+@RequestMapping(value="/viewworkschool", method = RequestMethod.GET)
+	public String viewworkschool(HttpSession session,ModelMap model) {		
+	model.addAttribute("menu","returntoschool");
+		WorkschoolForm workschoolform=new WorkschoolForm();
+		workschoolform.setWorkschooldetails(workschoolDAO.getworkschool());
+		model.addAttribute("workschoolform",workschoolform);	
+		return "viewworkschool";
+	}
+
 
 @RequestMapping(value="/insertformbill", method = RequestMethod.POST)
 
@@ -1002,8 +1084,8 @@ public String insert_formbill(HttpServletRequest request,HttpSession session,@Mo
 		FormbillForm formbillform = new FormbillForm();
 		formbillform.setFormbilldetails(formbillDAO.getformbill());
 		model.addAttribute("formbillform", formbillform);
-		model.addAttribute("Success","true");
-		model.addAttribute("menu", "notes");
+		
+		
 		return "formbill";
 	}
 	
@@ -1012,6 +1094,8 @@ public String insert_formbill(HttpServletRequest request,HttpSession session,@Mo
 	FormbillForm formbillform=new FormbillForm();
 	formbillform.setFormbilldetails(formbillDAO.getformbill());
 	model.addAttribute("formbillform",formbillform);
+	model.addAttribute("menu","xray");
+	model.addAttribute("success","true");
 	return "viewformbill";
 }
 
@@ -1020,13 +1104,13 @@ public String insert_formbill(HttpServletRequest request,HttpSession session,@Mo
 
 public String insert_lettertopatient(HttpServletRequest request,HttpSession session,@ModelAttribute("Lettertopatients")  @Valid Lettertopatients lettertopatientsdetails,BindingResult result,ModelMap model)
 {
+	model.addAttribute("menu","fax");
 	if(result.hasErrors())
 	{
 		LettertopatientsForm lettertopatientsform= new LettertopatientsForm();
 		lettertopatientsform.setLettertopatientsdetails(lettertopatientsDAO.getlettertopatients());
-		model.addAttribute("lettertopatientsform",lettertopatientsform);
-		model.addAttribute("Success","true");
-		model.addAttribute("menu", "work");
+		model.addAttribute("lettertopatientsform",lettertopatientsform);	
+		
 		return "lettertopatients";
 	}
 
@@ -1035,7 +1119,8 @@ public String insert_lettertopatient(HttpServletRequest request,HttpSession sess
 	LettertopatientsForm lettertopatientsform=new LettertopatientsForm();
 	lettertopatientsform.setLettertopatientsdetails(lettertopatientsDAO.getlettertopatients());
 	model.addAttribute("lettertopatientsform",lettertopatientsform);
-		
+			
+	model.addAttribute("success","true");
 	return "viewlettertopatients";
 	
 	 
@@ -1051,8 +1136,7 @@ public String insert_noticeofassignment(HttpServletRequest request,HttpSession s
 		NoticeassignmentForm noticeassignmentform= new NoticeassignmentForm();
 		noticeassignmentform.setNoticeassignmentdetails(noticeassignmentDAO.getnoticeassignment());
 		model.addAttribute("noticeassignmentform",noticeassignmentform);
-		model.addAttribute("Success","true");
-		model.addAttribute("menu", "work");
+		
 		return "noticeassignment";
 	}
 
@@ -1062,6 +1146,8 @@ public String insert_noticeofassignment(HttpServletRequest request,HttpSession s
 	NoticeassignmentForm noticeassignmentform=new NoticeassignmentForm();
 	noticeassignmentform.setNoticeassignmentdetails(noticeassignmentDAO.getnoticeassignment());
 	model.addAttribute("noticeassignmentform",noticeassignmentform);
+	model.addAttribute("success","true");
+	model.addAttribute("menu", "fax");
 	return "viewnoticeassignment";
 	 
 }
@@ -1075,8 +1161,7 @@ public String insert_letterofprotection(HttpServletRequest request,HttpSession s
 		LetterofprotectionForm letterofprotectionform = new LetterofprotectionForm();
 		letterofprotectionform.setLetterofprotectiondetails(letterofprotectionDAO.getletterofprotection());
 		model.addAttribute("letterofprotectionform", letterofprotectionform);
-		model.addAttribute("Success","true");
-		model.addAttribute("menu", "notes");
+				
 		return "letterofprotection";
 	}
 	//System.out.println(perrychiropracticdetails.getAddress()+""+perrychiropracticdetails.getAddress1());
@@ -1084,6 +1169,8 @@ public String insert_letterofprotection(HttpServletRequest request,HttpSession s
 	LetterofprotectionForm letterofprotectionform=new LetterofprotectionForm();
 	letterofprotectionform.setLetterofprotectiondetails(letterofprotectionDAO.getletterofprotection());
 	model.addAttribute("letterofprotectionform",letterofprotectionform);
+	model.addAttribute("success","true");
+	model.addAttribute("menu","xray");
 	return "viewletterofprotection";
 	 
 	}
@@ -1096,9 +1183,8 @@ public String insert_faxcover(HttpServletRequest request,HttpSession session,@Mo
 	{
 		FaxcoverForm faxcoverform= new FaxcoverForm();
 		faxcoverform.setFaxcoverdetails(faxcoverDAO.getfaxcover());
-		model.addAttribute("faxcoverform",faxcoverform);
-		model.addAttribute("Success","true");
-		model.addAttribute("menu", "work");
+		model.addAttribute("faxcoverform",faxcoverform);		
+		model.addAttribute("menu","fax");
 		return "faxcover";
 	}
 
@@ -1107,7 +1193,8 @@ public String insert_faxcover(HttpServletRequest request,HttpSession session,@Mo
 	FaxcoverForm faxcoverform=new FaxcoverForm();
 	faxcoverform.setFaxcoverdetails(faxcoverDAO.getfaxcover());
 	model.addAttribute("faxcoverform",faxcoverform);
-	
+	model.addAttribute("menu","fax");
+	model.addAttribute("success","true");
 	
 	return "viewfaxcover";
 }
@@ -1120,8 +1207,7 @@ public String insertresponseattorney(HttpServletRequest request,HttpSession sess
 		ResponseattorneyForm responseattorneyform= new ResponseattorneyForm();
 		responseattorneyform.setResponseattorneydetail(responseattorneyDAO.getresponseattorney());
 		model.addAttribute("noticeassignmentform",responseattorneyform);
-		model.addAttribute("Success","true");
-		model.addAttribute("menu", "work");
+		
 		return "responseattorney";
 	}
 
@@ -1130,6 +1216,8 @@ public String insertresponseattorney(HttpServletRequest request,HttpSession sess
 	ResponseattorneyForm responseattorneyform=new ResponseattorneyForm();
 	responseattorneyform.setResponseattorneydetail(responseattorneyDAO.getresponseattorney());
 	model.addAttribute("responseattorneyform",responseattorneyform);
+	model.addAttribute("success","true");
+	model.addAttribute("menu", "fax");
 	return "viewresponseattorney";
 	 
 }
@@ -1141,8 +1229,7 @@ public String update_letterofprotection(HttpServletRequest request,HttpSession s
 		LetterofprotectionForm letterofprotectionform= new LetterofprotectionForm();
 		letterofprotectionform.setLetterofprotectiondetails(letterofprotectionDAO.getletterofprotection());
 		model.addAttribute("letterofprotectionform",letterofprotectionform);
-		model.addAttribute("Success","true");
-		model.addAttribute("menu", "work");
+		model.addAttribute("menu","xray");
 		return "letterofprotection";
 	}
 
@@ -1151,6 +1238,8 @@ public String update_letterofprotection(HttpServletRequest request,HttpSession s
 	LetterofprotectionForm letterofprotectionform=new LetterofprotectionForm();
 	letterofprotectionform.setLetterofprotectiondetails(letterofprotectionDAO.getletterofprotection());
 	model.addAttribute("letterofprotectionform",letterofprotectionform);
+	model.addAttribute("menu","xray");
+	model.addAttribute("success","true");
 	return "viewletterofprotection";
 	 
 }
@@ -1158,33 +1247,32 @@ public String update_letterofprotection(HttpServletRequest request,HttpSession s
 @RequestMapping(value="/updatefaxcover", method = RequestMethod.POST)
 
 public String update_faxcover(HttpServletRequest request,HttpSession session,@ModelAttribute("faxcoverdetails")  @Valid Faxcover faxcoverdetails,BindingResult result,ModelMap model) {
+	
 	if(result.hasErrors())
 	{
 		FaxcoverForm faxcoverform= new FaxcoverForm();
 		faxcoverform.setFaxcoverdetails(faxcoverDAO.getfaxcover());
-		model.addAttribute("faxcoverform",faxcoverform);
-		model.addAttribute("Success","true");
-		model.addAttribute("menu", "work");
+		model.addAttribute("faxcoverform",faxcoverform);	
+		model.addAttribute("menu","fax");
 		return "faxcover";
 	}
-
 	//System.out.println(letterofprotectiondetails.getAddress()+""+letterofprotectiondetails.getAddress1());
 	faxcoverDAO.updatefaxcover(faxcoverdetails,faxcoverdetails.getFaxid());
 	FaxcoverForm faxcoverform=new FaxcoverForm();
 	faxcoverform.setFaxcoverdetails(faxcoverDAO.getfaxcover());
 	model.addAttribute("faxcoverform",faxcoverform);
+	model.addAttribute("menu","fax");
+	model.addAttribute("success","true");
 	return "viewfaxcover";
 }
 @RequestMapping(value="/updatelettertopatients", method = RequestMethod.POST)
-
 public String update_lettertopatients(HttpServletRequest request,HttpSession session,@ModelAttribute("lettertopatientsdetails")  @Valid Lettertopatients lettertopatientsdetails,BindingResult result,ModelMap model) {
+	model.addAttribute("menu","fax");
 	if(result.hasErrors())
 	{
 		LettertopatientsForm lettertopatientsform= new LettertopatientsForm();
 		lettertopatientsform.setLettertopatientsdetails(lettertopatientsDAO.getlettertopatients());
 		model.addAttribute("lettertopatientsform",lettertopatientsform);
-		model.addAttribute("Success","true");
-		model.addAttribute("menu", "work");
 		return "lettertopatients";
 	}
 
@@ -1194,7 +1282,7 @@ public String update_lettertopatients(HttpServletRequest request,HttpSession ses
 	LettertopatientsForm lettertopatientsform=new LettertopatientsForm();
 	lettertopatientsform.setLettertopatientsdetails(lettertopatientsDAO.getlettertopatients());
 	model.addAttribute("lettertopatientsform",lettertopatientsform);
-	
+	model.addAttribute("success","true");
 	
 	return "viewlettertopatients";
 
@@ -1203,13 +1291,15 @@ public String update_lettertopatients(HttpServletRequest request,HttpSession ses
 @RequestMapping(value="/updateresponseattorney", method = RequestMethod.POST)
 
 public String updateresponseattorney(HttpServletRequest request,HttpSession session,@ModelAttribute("responseattorneydetail")  @Valid Responseattorney responseattorneydetail,BindingResult result,ModelMap model) {
+	model.addAttribute("menu","fax");
+	
 	if(result.hasErrors())
 	{
 		ResponseattorneyForm responseattorneyform= new ResponseattorneyForm();
 		responseattorneyform.setResponseattorneydetail(responseattorneyDAO.getresponseattorney());
 		model.addAttribute("noticeassignmentform",responseattorneyform);
-		model.addAttribute("Success","true");
-		model.addAttribute("menu", "work");
+		
+		
 		return "responseattorney";
 	}
 
@@ -1217,19 +1307,21 @@ public String updateresponseattorney(HttpServletRequest request,HttpSession sess
 	ResponseattorneyForm responseattorneyform=new ResponseattorneyForm();
 	responseattorneyform.setResponseattorneydetail(responseattorneyDAO.getresponseattorney());
 	model.addAttribute("responseattorneyform",responseattorneyform);
+	model.addAttribute("success","true");
 	return "viewresponseattorney";
 
 }
 @RequestMapping(value="/updatenoticeassignment", method = RequestMethod.POST)
 
 public String updatenoticeassignment(HttpServletRequest request,HttpSession session,@ModelAttribute("noticeassignmentdetails")  @Valid Noticeassignment noticeassignmentdetails,BindingResult result,ModelMap model) {
+	model.addAttribute("menu","fax");
 	if(result.hasErrors())
 	{
 		NoticeassignmentForm noticeassignmentform= new NoticeassignmentForm();
 		noticeassignmentform.setNoticeassignmentdetails(noticeassignmentDAO.getnoticeassignment());
 		model.addAttribute("noticeassignmentform",noticeassignmentform);
-		model.addAttribute("Success","true");
-		model.addAttribute("menu", "work");
+		
+	
 		return "noticeassignment";
 	}
 
@@ -1238,7 +1330,8 @@ public String updatenoticeassignment(HttpServletRequest request,HttpSession sess
 	noticeassignmentDAO.updatenoticeassignment(noticeassignmentdetails,noticeassignmentdetails.getNoticeid());	
 	NoticeassignmentForm noticeassignmentform=new NoticeassignmentForm();
 	noticeassignmentform.setNoticeassignmentdetails(noticeassignmentDAO.getnoticeassignment());
-	model.addAttribute("noticeassignmentform",noticeassignmentform);	
+	model.addAttribute("noticeassignmentform",noticeassignmentform);
+	model.addAttribute("success","true");
 	return "viewnoticeassignment";
 
 }
@@ -1246,13 +1339,13 @@ public String updatenoticeassignment(HttpServletRequest request,HttpSession sess
 @RequestMapping(value="/updateworkschool", method = RequestMethod.POST)
 public String updateworkschool(HttpServletRequest request,HttpSession session,@ModelAttribute("Workschool")  @Valid Workschool workschooldetails,BindingResult result,ModelMap model) {
 	//session.setAttribute("perrydetails",letterofprotectiondetails);
+	model.addAttribute("menu","returntoschool");
 	if(result.hasErrors())
 	{
 		WorkschoolForm workschoolform= new WorkschoolForm();
 		workschoolform.setWorkschooldetails(workschoolDAO.getworkschool());
 		model.addAttribute("workschoolform",workschoolform);
-		model.addAttribute("Success","true");
-		model.addAttribute("menu", "work");
+		
 		return "updateworkschool";
 	}
 	//System.out.println(letterofprotectiondetails.getAddress()+""+letterofprotectiondetails.getAddress1());
@@ -1260,6 +1353,8 @@ public String updateworkschool(HttpServletRequest request,HttpSession session,@M
 	WorkschoolForm workschoolform=new WorkschoolForm();
 	workschoolform.setWorkschooldetails(workschoolDAO.getworkschool());
 	model.addAttribute("workschoolform",workschoolform);	
+	model.addAttribute("success","true");
+	
 	return "viewworkschool";
 
 }

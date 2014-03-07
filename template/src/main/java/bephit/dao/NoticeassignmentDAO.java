@@ -44,7 +44,7 @@ public class NoticeassignmentDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 
-	    	 String cmd="INSERT INTO noticeassignment (nameofins,nameofattorney,address1,address2,address3,address4,address5,address6,regarding,patientname,dateofaccident,todaysdate,letter,letter1,treatingphysician) VALUES ('"+noticeassignmentdetails.getNameofins()+"','"+noticeassignmentdetails.getNameofattorney()+"','"+noticeassignmentdetails.getAddress1()+"','"+noticeassignmentdetails.getAddress2()+"','"+noticeassignmentdetails.getAddress3()+"','"+noticeassignmentdetails.getAddress4()+"','"+noticeassignmentdetails.getAddress5()+"','"+noticeassignmentdetails.getAddress6()+"','"+noticeassignmentdetails.getRegarding()+"','"+noticeassignmentdetails.getPatientname()+"','"+noticeassignmentdetails.getDateofaccident()+"','"+noticeassignmentdetails.getTodaysdate()+"','"+noticeassignmentdetails.getLetter()+"','"+noticeassignmentdetails.getLetter1()+"','"+noticeassignmentdetails.getTreatingphysician()+"')";
+	    	 String cmd="INSERT INTO noticeassignment (nameofins,nameofattorney,address1,address2,regarding,patientname,dateofaccident,todaysdate,letter,letter1,treatingphysician) VALUES ('"+noticeassignmentdetails.getNameofins()+"','"+noticeassignmentdetails.getNameofattorney()+"','"+noticeassignmentdetails.getAddress1()+"','"+noticeassignmentdetails.getAddress2()+"','"+noticeassignmentdetails.getRegarding()+"','"+noticeassignmentdetails.getPatientname()+"','"+noticeassignmentdetails.getDateofaccident()+"','"+noticeassignmentdetails.getTodaysdate()+"','"+noticeassignmentdetails.getLetter()+"','"+noticeassignmentdetails.getLetter1()+"','"+noticeassignmentdetails.getTreatingphysician()+"')";
 	    	    System.out.println("cmd insert value"+cmd);
 	    	    statement.executeUpdate(cmd);
 	    	    }
@@ -87,10 +87,7 @@ public class NoticeassignmentDAO {
 								resultSet.getString("nameofattorney"),
 								resultSet.getString("address1"),
 								resultSet.getString("address2"),
-								resultSet.getString("address3"),
-								resultSet.getString("address4"),
-								resultSet.getString("address5"),
-								resultSet.getString("address6"),
+								
 								resultSet.getString("regarding"),
 								resultSet.getString("patientname"),
 								resultSet.getString("dateofaccident"),
@@ -140,10 +137,7 @@ public class NoticeassignmentDAO {
 								resultSet.getString("nameofattorney"),
 								resultSet.getString("address1"),
 								resultSet.getString("address2"),
-								resultSet.getString("address3"),
-								resultSet.getString("address4"),
-								resultSet.getString("address5"),
-								resultSet.getString("address6"),
+								
 								resultSet.getString("regarding"),
 								resultSet.getString("patientname"),
 								resultSet.getString("dateofaccident"),
@@ -192,10 +186,7 @@ public class NoticeassignmentDAO {
     +"',nameofattorney='"+noticeassignmentdetails.getNameofattorney()
     +"',address1='"+noticeassignmentdetails.getAddress1()
     +"',address2='"+noticeassignmentdetails.getAddress2()
-    +"',address3='"+noticeassignmentdetails.getAddress3()
-    +"',address4='"+noticeassignmentdetails.getAddress4()
-    +"',address5='"+noticeassignmentdetails.getAddress5()
-    +"',address6='"+noticeassignmentdetails.getAddress6()
+   
     
     +"',regarding='"+ noticeassignmentdetails.getRegarding()
     +"',patientname='"+ noticeassignmentdetails.getPatientname()

@@ -1,22 +1,25 @@
 package bephit.model;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class Noticeassignment
 {
+	
 	private String noticeid;
+	@NotEmpty
 	private String nameofins;
+	@NotEmpty
 	private String nameofattorney;
 	private String address1;
 	private String address2;
-	private String address3;
-	private String address4;
-	private String address5;
-	private String address6;
 	private String regarding;
+	@NotEmpty
 	private String patientname;	
 	private String dateofaccident;
 	private String todaysdate;
 	private String letter;
 	private String letter1;
+	@NotEmpty
 	private String treatingphysician;
 	public String getNoticeid() {
 		return noticeid;
@@ -48,30 +51,7 @@ public class Noticeassignment
 	public void setAddress2(String address2) {
 		this.address2 = address2;
 	}
-	public String getAddress3() {
-		return address3;
-	}
-	public void setAddress3(String address3) {
-		this.address3 = address3;
-	}
-	public String getAddress4() {
-		return address4;
-	}
-	public void setAddress4(String address4) {
-		this.address4 = address4;
-	}
-	public String getAddress5() {
-		return address5;
-	}
-	public void setAddress5(String address5) {
-		this.address5 = address5;
-	}
-	public String getAddress6() {
-		return address6;
-	}
-	public void setAddress6(String address6) {
-		this.address6 = address6;
-	}
+	
 	public String getRegarding() {
 		return regarding;
 	}
@@ -116,7 +96,6 @@ public class Noticeassignment
 	}
 	public Noticeassignment(String noticeid, String nameofins,
 			String nameofattorney, String address1, String address2,
-			String address3, String address4, String address5, String address6,
 			String regarding, String patientname, String dateofaccident,
 			String todaysdate, String letter, String letter1,
 			String treatingphysician) {
@@ -126,10 +105,6 @@ public class Noticeassignment
 		this.nameofattorney = nameofattorney;
 		this.address1 = address1;
 		this.address2 = address2;
-		this.address3 = address3;
-		this.address4 = address4;
-		this.address5 = address5;
-		this.address6 = address6;
 		this.regarding = regarding;
 		this.patientname = patientname;
 		this.dateofaccident = dateofaccident;
