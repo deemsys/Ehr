@@ -49,7 +49,7 @@ public class LetterofprotectionDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 
-	    	 String cmd="INSERT INTO letterofprotection (date,dc,clinicname,address1,address2,myclient,dateofaccident,dearsir,esq) VALUES ('"+letterofprotectiondetails.getDate()+"','"+letterofprotectiondetails.getDc()+"','"+letterofprotectiondetails.getClinicname()+"','"+letterofprotectiondetails.getAddress1()+"','"+letterofprotectiondetails.getAddress2()+"','"+letterofprotectiondetails.getMyclient()+"','"+letterofprotectiondetails.getDateofaccident()+"','"+letterofprotectiondetails.getDearsir()+"','"+letterofprotectiondetails.getEsq()+"')";
+	    	 String cmd="INSERT INTO letterofprotection (date,dc,clinicname,address1,myclient,dateofaccident,dearsir,esq) VALUES ('"+letterofprotectiondetails.getDate()+"','"+letterofprotectiondetails.getDc()+"','"+letterofprotectiondetails.getClinicname()+"','"+letterofprotectiondetails.getAddress1()+"','"+letterofprotectiondetails.getMyclient()+"','"+letterofprotectiondetails.getDateofaccident()+"','"+letterofprotectiondetails.getDearsir()+"','"+letterofprotectiondetails.getEsq()+"')";
 	    	    System.out.println("cmd insert value"+cmd);
 	    	    statement.executeUpdate(cmd);
 	    	    }
@@ -132,7 +132,6 @@ public class LetterofprotectionDAO {
 						resultSet.getString("dc"),
 						resultSet.getString("clinicname"),
 						resultSet.getString("address1"),
-			    		resultSet.getString("address2"),
 			    		resultSet.getString("myclient"),
 						resultSet.getString("dateofaccident"),
 						resultSet.getString("dearsir"),
@@ -174,7 +173,6 @@ public class LetterofprotectionDAO {
 						resultSet.getString("dc"),
 						resultSet.getString("clinicname"),
 						resultSet.getString("address1"),
-			    		resultSet.getString("address2"),
 			    		resultSet.getString("myclient"),
 						resultSet.getString("dateofaccident"),
 						resultSet.getString("dearsir"),
@@ -218,7 +216,6 @@ public class LetterofprotectionDAO {
 	    +"',dc='"+letterofprotection.getDc()
 	    +"',clinicname='"+letterofprotection.getClinicname()
 	    +"',address1='"+ letterofprotection.getAddress1()
-	    +"',address2='"+ letterofprotection.getAddress2()
 	    +"',myclient='"+letterofprotection.getMyclient()
 	    +"',dateofaccident='"+letterofprotection.getDateofaccident()+"',dearsir='"+letterofprotection.getDearsir()
 	    +"',esq='"+letterofprotection.getEsq()+"' where letterid='"+letterid+"'";
