@@ -87,6 +87,86 @@ function Checksymptom(val){
 	   element.style.display='none';
 	}
 </script>
+ <script>
+ function validate()
+	{
+	var a=document.getElementById('gender').value;
+	
+	if(a=='He')
+	{
+	gendernew
+	document.getElementById('gender1').value='He';
+	document.getElementById('gender2').value='He';
+	document.getElementById('gender3').value='He';
+	document.getElementById('gender4').value='His';
+	document.getElementById('gender5').value='He';
+	document.getElementById('gender6').value='His';
+	document.getElementById('gender7').value='He';
+	document.getElementById('gendernew').value='His';
+	document.getElementById('gender8').value='His';
+	document.getElementById('gender10').value='His';
+	document.getElementById('gender12').value='He';
+	document.getElementById('gender21').value='His';
+	document.getElementById('gender14').value='She';
+	document.getElementById('gender22').value='He';
+	document.getElementById('gender23').value='Her';
+	document.getElementById('gender26').value='He';
+	document.getElementById('gender27').value='His';
+	document.getElementById('gender29').value='His';
+	document.getElementById('gender34').value='He';
+	document.getElementById('gender62').value='He';
+	document.getElementById('gender62').value='He';
+document.getElementById('gender67').value='He';
+document.getElementById('gender64').value='His';
+document.getElementById('gender68').value='His';
+document.getElementById('gender69').value='His';
+document.getElementById('gender72').value='His';
+document.getElementById('gender73').value='His';
+document.getElementById('gender74').value='he';
+document.getElementById('gender71').value='His';
+document.getElementById('gender32').value='Male';
+
+
+	}
+	
+else
+{
+document.getElementById('gender1').value='She';
+document.getElementById('gender2').value='She';
+document.getElementById('gender3').value='She';
+document.getElementById('gender4').value='Her';
+document.getElementById('gender5').value='She';
+document.getElementById('gender6').value='Her';
+document.getElementById('gender7').value='She';
+document.getElementById('gendernew').value='Her';
+document.getElementById('gender8').value='Her';
+document.getElementById('gender10').value='Her';
+document.getElementById('gender12').value='She';
+document.getElementById('gender21').value='Her';
+document.getElementById('gender14').value='She';
+document.getElementById('gender22').value='She';
+document.getElementById('gender23').value='Her';
+document.getElementById('gender27').value='Her';
+document.getElementById('gender26').value='She';
+document.getElementById('gender29').value='Her';
+document.getElementById('gender34').value='She';
+document.getElementById('gender62').value='She';
+document.getElementById('gender62').value='She';
+document.getElementById('gender67').value='She';
+document.getElementById('gender64').value='Her';
+document.getElementById('gender68').value='Her';
+document.getElementById('gender69').value='Her';
+document.getElementById('gender72').value='Her';
+document.getElementById('gender73').value='Her';
+document.getElementById('gender74').value='She';
+document.getElementById('gender71').value='Her';
+document.getElementById('gender32').value='Female';
+}
+
+}
+
+ </script>
+
 </head>
  
  <body>
@@ -113,7 +193,10 @@ function Checksymptom(val){
 	            <center> 5190 Detroit Road </center><br/>
 	            <center> Sheffield Village, OH 44035 </center><br/>
 	            <center> (440) 934-3099     Fax (440) 934-3107 </center><br/>
-	            <center> <B style="font-size:18px">Narrative Report</B> </center><br/>
+	           <div class="headings altheading">
+	            <center> <b><h2>Narrative Report</h2> </center></b>
+	            </div>
+
           <table cellpadding="0" cellspacing="0" border="0" width="70%" align="center">
           <tr height="30">
           <td><span class="err">*</span>Report Date: </td>
@@ -132,14 +215,14 @@ function Checksymptom(val){
           <td><input type="text" name="dateoffirstvisit" id="datepicker" size="40"><span class="err"><form:errors path="Narrativereport.dateoffirstvisit"></form:errors></span></td>
           </tr>
           </table>
-          <table width="85">
+          <table cellpadding="0" cellspacing="0" border="0" width="70%" align="center">
           <tr height="30">
-          <td width="40">TO  </td>
+          <td width="220">TO </td>
           <td><input type="text" name="towhom"  size="40"></td>
           </tr>
           </table>
           <br/>
-          <div><p style="line-height:1.5"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At your request and with permission from my patient, <input type="text" name="patientname" size="40">, I am writing the following narrative report concerning the injuries <select  name="gender" id="gender">
+          <div><p style="line-height:1.5"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At your request and with permission from my patient, <input type="text" name="patientname" size="40">, I am writing the following narrative report concerning the injuries <select  name="gender" id="gender" onchange="validate()">
 					<option selected="selected" value="He" >He</option>
 					<option value="She">She</option>
 					</select> sustained as the result of an automobile accident on <input type="text" name="accident" id="datepicker2"></p>
@@ -283,7 +366,7 @@ function Checksymptom(val){
 					</select>.
 					</p>
 					<p><B style="font-size:14px">Physical Exam</B></p>
-					<p>&nbsp;&nbsp;<B style="font-size:13px">Physical Inspection</B></p>
+					<p>&nbsp;&nbsp;<B style="font-size:13px"><u>Physical Inspection</u></B></p>
 					<p style="line-height:26px">Examination revealed a <input type="text" name="age"> year old, <input type="text" name="age1">, <input type="text" name="lb">lb. <select  name="gender31" id="gender31">
 					<option selected="selected" value="White" >White</option>
 					<option value="Black">Black</option> </select><select  name="gender32" id="gender32">

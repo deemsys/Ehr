@@ -39,7 +39,7 @@
 						<c:if test="${fn:length(xrayform.xraydetails) gt 0}">
         				 <c:forEach items="${xrayform.xraydetails}" var="xraydetails" varStatus="status">
         				       				<tr class="row1">
-        				       				<td valign="top" align="left" width="10%">${xraydetails.xrayid}</td>
+        				       				<td valign="top" align="left" width="10%"><a href="xraylist?xrayid=${xraydetails.xrayid}"> ${xraydetails.xrayid}</td>
 								            <td valign="top" align="left"  width="10%"><%-- <a href="hipexamlist?hipexamno=${perrychiropracticdetails.hipexamno}"> --%>${xraydetails.name}</td>
 											
 											<td valign="top" align="left" width="10%">${xraydetails.date}</td>

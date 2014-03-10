@@ -39,7 +39,7 @@
 						<c:if test="${fn:length(formbillform.formbilldetails) gt 0}">
         				 <c:forEach items="${formbillform.formbilldetails}" var="formbilldetails" varStatus="status">
         				       				<tr class="row1">
-        				       				<td valign="top" align="left" width="10%">${formbilldetails.formid}</td>
+        				       				<td valign="top" align="left" width="10%"> <a href="formbilllist?formid=${formbilldetails.formid}"> ${formbilldetails.formid}</td>
 								            <td valign="top" align="left"  width="10%"><%-- <a href="hipexamlist?hipexamno=${.hipexamno}"> --%>${formbilldetails.name}</td>
 											
 											<td valign="top" align="left" width="10%">${formbilldetails.date}</td>

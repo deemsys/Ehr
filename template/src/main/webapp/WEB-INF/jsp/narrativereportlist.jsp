@@ -112,7 +112,10 @@ function Checksymptom(val){
 	            <center> 5190 Detroit Road </center><br/>
 	            <center> Sheffield Village, OH 44035 </center><br/>
 	            <center> (440) 934-3099     Fax (440) 934-3107 </center><br/>
-	            <center> <B style="font-size:18px">Narrative Report</B> </center><br/>
+	           <div class="headings altheading">
+	            <center> <b><h2>Narrative Report</h2> </center></b>
+	            </div>
+
           <table cellpadding="0" cellspacing="0" border="0" width="70%" align="center">
           <tr height="30">
           <td><span class="err">*</span>Report Date: </td>
@@ -131,12 +134,13 @@ function Checksymptom(val){
           <td>${narrativereport.dateoffirstvisit}</td>
           </tr>
           </table>
-          <table width="85">
+          <table cellpadding="0" cellspacing="0" border="0" width="70%" align="center">
           <tr height="30">
-          <td width="40">TO  </td>
+          <td width="220">TO </td>
           <td>${narrativereport.towhom}</td>
           </tr>
           </table>
+         
           <br/>
           <div><p style="line-height:1.5"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At your request and with permission from my patient,${narrativereport.patientname} , I am writing the following narrative report concerning the injuries ${narrativereport.gender} sustained as the result of an automobile accident on ${narrativereport.accident}</p>
                <p><B style="font-size:14px">History</B></p>
@@ -149,7 +153,7 @@ function Checksymptom(val){
 					  ,  ${narrativereport.gendernew2},${narrativereport.gendernew3}  and ${narrativereport.gender25}. ${narrativereport.gender26}   further stated that ${narrativereport.gender27} condition ${narrativereport.gender28} getting any better and that it affected ${narrativereport.gender29} daily living activites, such as ${narrativereport.gender30}.
 					</p>
 					<p><B style="font-size:14px">Physical Exam</B></p>
-					<p>&nbsp;&nbsp;<B style="font-size:13px">Physical Inspection</B></p>
+					<p>&nbsp;&nbsp;<B style="font-size:13px"><u>Physical Inspection</B></u></p>
 					<p style="line-height:26px">Examination revealed a ${narrativereport.age} year old, ${narrativereport.age1},${narrativereport.lb} lb. ${narrativereport.gender31}${narrativereport.gender32} with ${narrativereport.gender33} musculature.${narrativereport.gender34}  presented under ${narrativereport.gendernew4} distress,${narrativereport.gender35}  gait and ${narrativereport.gender36} posture.  Visceral pathologies revealed ${narrativereport.gender37}. Visual inspection demonstrated a ${narrativereport.gender38}${narrativereport.gender39}.</p>
 					<p><B style="font-size:14px">Digital Palpation</B></p>
 					<p style="line-height:26px">Palpation of the ${narrativereport.gendernew5}spine revealed paraspinal pain, spasm, edema and trigger points. There was ${narrativereport.tenderness}  tenderness on the ${narrativereport.gender40} and vertebral fixations. Tonicity of the ${narrativereport.gendernew6}on the ${narrativereport.gender41} was evident. Also noted was ,${narrativereport.noted}.   </p>

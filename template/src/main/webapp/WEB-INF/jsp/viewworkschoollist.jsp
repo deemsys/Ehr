@@ -75,6 +75,7 @@
         	  </b>
         	  </td>
         	  <td>
+        	  
         	<td>${workschooldetails.excused}</td>
         	  </td>
         	  </tr>
@@ -87,7 +88,7 @@
         	  </b>
         	  </td>
         	  <td>
-        	<td>${workschooldetails.confined}</td>
+        	<td><c:if test="${workschooldetails.confined!='null'}"><c:out value="${workschooldetails.confined}"></c:out></c:if></td>
         	   
         	  </td>
         	  </tr>
@@ -112,7 +113,12 @@
         	  </b>
         	  </td>
         	  <td>
-        	<td>${workschooldetails.lift}</td>
+        	<td><c:choose>
+	            <c:when test="${workschooldetails.lift=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${workschooldetails.lift}</c:otherwise>
+	          
+	            </c:choose>
+        	</td>
         	   
         	  </td>
         	  </tr>
@@ -125,7 +131,7 @@
         	  </b>
         	  </td>
         	
-        	<td>${workschooldetails.push}</td>
+        	<td><c:if test="${workschooldetails.push!='null'}"><c:out value="${workschooldetails.push}"></c:out></c:if></td>
         	  </tr>
        		  </table>
        		   <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -143,7 +149,7 @@
         	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sitting excessive periods of time:   
         	  </b>
         	  </td>
-        	<td>${workschooldetails.sit}</td>
+        	<td><c:if test="${workschooldetails.sit!='null'}"><c:out value="${workschooldetails.sit}"></c:out></c:if></td>
         	 
         	  
 				         	
@@ -156,7 +162,7 @@
         	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Standing excessive periods of time:   
         	  </b>
         	  </td>
-        <td>	 ${workschooldetails.stand}</td>
+        <td>	<c:if test="${workschooldetails.stand!='null'}"><c:out value="${workschooldetails.stand}"></c:out></c:if> </td>
         	  </tr>
        		  </table>
        		   <table cellpadding="0" cellspacing="0" border="0" width="100%">

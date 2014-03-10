@@ -39,7 +39,7 @@
 						<c:if test="${fn:length(letterofprotectionform.letterofprotectiondetails) gt 0}">
         				 <c:forEach items="${letterofprotectionform.letterofprotectiondetails}" var="letterofprotectiondetails" varStatus="status">
         				       				<tr class="row1">
-        				       				<td valign="top" align="left" width="10%">${letterofprotectiondetails.letterid}</td>
+        				       				<td valign="top" align="left" width="10%"><a href="letterofprotectionlist?letterid=${letterofprotectiondetails.letterid}"> ${letterofprotectiondetails.letterid}</td>
 								            <td valign="top" align="left"  width="10%"><%-- <a href="hipexamlist?hipexamno=${letterofprotectiondetails.hipexamno}"> --%>${letterofprotectiondetails.clinicname}</td>
 											
 											<td valign="top" align="left" width="10%">${letterofprotectiondetails.dateofaccident}</td>
