@@ -21,7 +21,7 @@
 </head>
  <body>
 <div id="right_content">
-<form action="insertworkschool" method="POST">
+<form action="viewworklist" method="POST">
 <c:forEach items="${workschoolform.workschooldetails}" var="workschooldetails" varStatus="status">
 <table cellpadding="0" cellspacing="0" border="0" height="100" width="60%" class="margin_table">
        <tr>

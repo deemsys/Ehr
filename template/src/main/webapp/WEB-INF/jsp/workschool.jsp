@@ -33,7 +33,7 @@
 <div id="right_content">
 <form action="insertworkschool" method="POST">
 
-<table cellpadding="0" cellspacing="0" border="0" height="100" width="60%" class="margin_table">
+<table cellpadding="0" cellspacing="0" border="0" height="100" width="80%" class="margin_table">
        <tr>
         <td valign="top" align="left" style="padding:5px 0 10px 0;">&nbsp;
 		<div class="status success" style="display: none;">
@@ -85,8 +85,8 @@
         	  </b>
         	  </td>
         	  <td>
-        	&nbsp;&nbsp;&nbsp;&nbsp;  <input type="radio" name="excused" value="work">WORK&nbsp;&nbsp;&nbsp;
-        	   <input type="radio" name="excused" value="school">SCHOOL&nbsp;&nbsp;&nbsp;	
+        	&nbsp;&nbsp;&nbsp;&nbsp;  <input type="radio" name="excused" value="work">Work&nbsp;&nbsp;&nbsp;
+        	   <input type="radio" name="excused" value="school">School&nbsp;&nbsp;&nbsp;	
         	    <input type="radio" name="excused" value="P.E">P.E&nbsp;&nbsp;&nbsp;
         	  </td>
         	  </tr>
@@ -99,8 +99,8 @@
         	  </b>
         	  </td>
         	  <td>
-        	&nbsp;&nbsp;&nbsp;&nbsp;  <input type="radio" name="confined" value="lightduty">LIGHT DUTY&nbsp;&nbsp;&nbsp;
-        	   <input type="radio" name="confined" value="modifiedduty">MODIFIED DUTY&nbsp;&nbsp;&nbsp;	
+        	&nbsp;&nbsp;&nbsp;&nbsp;  <input type="radio" name="confined" value="lightduty">Light Duty&nbsp;&nbsp;&nbsp;
+        	   <input type="radio" name="confined" value="modifiedduty">Modified Duty&nbsp;&nbsp;&nbsp;	
         	   
         	  </td>
         	  </tr>
@@ -125,11 +125,11 @@
         	  </b>
         	  </td>
         	  <td>
-        	  <input type="radio" name="lift" value="10lbs">10LBS&nbsp;&nbsp;&nbsp;
-        	  <input type="radio" name="lift" value="20lbs">20LBS&nbsp;&nbsp;&nbsp;
-        	   <input type="radio" name="lift" value="30lbs">30LBS&nbsp;&nbsp;&nbsp;
-        	   <input type="radio" name="lift" value="40lbs">40LBS&nbsp;&nbsp;&nbsp;
-        	   <input type="radio" name="lift" value="50lbs">50LBS&nbsp;&nbsp;&nbsp;
+        	  <input type="radio" name="lift" value="10lbs">10Lbs&nbsp;&nbsp;&nbsp;
+        	  <input type="radio" name="lift" value="20lbs">20Lbs&nbsp;&nbsp;&nbsp;
+        	   <input type="radio" name="lift" value="30lbs">30Lbs&nbsp;&nbsp;&nbsp;
+        	   <input type="radio" name="lift" value="40lbs">40Lbs&nbsp;&nbsp;&nbsp;
+        	   <input type="radio" name="lift" value="50lbs">50Lbs&nbsp;&nbsp;&nbsp;
         	   
         	  </td>
         	  </tr>
@@ -142,11 +142,11 @@
         	  </b>
         	  </td>
         	  <td>
-        	  <input type="radio" name="push" value="10lbs">10LBS&nbsp;&nbsp;&nbsp;
-        	  <input type="radio" name="push" value="20lbs">20LBS&nbsp;&nbsp;&nbsp;
-        	   <input type="radio" name="push" value="30lbs">30LBS&nbsp;&nbsp;&nbsp;
-        	   <input type="radio" name="push" value="40lbs">40LBS&nbsp;&nbsp;&nbsp;
-        	   <input type="radio" name="push" value="50lbs">50LBS&nbsp;&nbsp;&nbsp;
+        	  <input type="radio" name="push" value="10lbs">10Lbs&nbsp;&nbsp;&nbsp;
+        	  <input type="radio" name="push" value="20lbs">20Lbs&nbsp;&nbsp;&nbsp;
+        	   <input type="radio" name="push" value="30lbs">30Lbs&nbsp;&nbsp;&nbsp;
+        	   <input type="radio" name="push" value="40lbs">40Lbs&nbsp;&nbsp;&nbsp;
+        	   <input type="radio" name="push" value="50lbs">50Lbs&nbsp;&nbsp;&nbsp;
         	   </td>
         	  </tr>
        		  </table>
@@ -166,11 +166,11 @@
         	  </b>
         	  </td>
         	  <td>
-        	  <input type="radio" name="sit" value="1hrs">1HRS&nbsp;&nbsp;&nbsp;
-        	  <input type="radio" name="sit" value="2hrs">2HRSS&nbsp;&nbsp;&nbsp;
-        	   <input type="radio" name="sit" value="3hrs">3HRSS&nbsp;&nbsp;&nbsp;
-        	   <input type="radio" name="sit" value="4hrs">4HRS&nbsp;&nbsp;&nbsp;
-        	   <input type="radio" name="sit" value="5hrs">5HRS&nbsp;&nbsp;&nbsp;
+        	  <input type="radio" name="sit" value="1hrs">1Hrs&nbsp;&nbsp;&nbsp;
+        	  <input type="radio" name="sit" value="2hrs">2Hrs&nbsp;&nbsp;&nbsp;
+        	   <input type="radio" name="sit" value="3hrs">3Hrs&nbsp;&nbsp;&nbsp;
+        	   <input type="radio" name="sit" value="4hrs">4Hrs&nbsp;&nbsp;&nbsp;
+        	   <input type="radio" name="sit" value="5hrs">5Hrs&nbsp;&nbsp;&nbsp;
         	   </td>
         	  </tr>
        		  </table>
@@ -182,11 +182,11 @@
         	  </b>
         	  </td>
         	  <td>
-        	  <input type="radio" name="stand" value="1hrs">1HRS&nbsp;&nbsp;&nbsp;
-        	  <input type="radio" name="stand" value="2hrs">2HRSS&nbsp;&nbsp;&nbsp;
-        	   <input type="radio" name="stand" value="3hrs">3HRSS&nbsp;&nbsp;&nbsp;
-        	   <input type="radio" name="stand" value="4hrs">4HRS&nbsp;&nbsp;&nbsp;
-        	   <input type="radio" name="stand" value="5hrs">5HRS&nbsp;&nbsp;&nbsp;
+        	  <input type="radio" name="stand" value="1hrs">1Hrs&nbsp;&nbsp;&nbsp;
+        	  <input type="radio" name="stand" value="2hrs">2Hrs&nbsp;&nbsp;&nbsp;
+        	   <input type="radio" name="stand" value="3hrs">3Hrs&nbsp;&nbsp;&nbsp;
+        	   <input type="radio" name="stand" value="4hrs">4Hrs&nbsp;&nbsp;&nbsp;
+        	   <input type="radio" name="stand" value="5hrs">5Hrs&nbsp;&nbsp;&nbsp;
         	   </td>
         	  </tr>
        		  </table>
@@ -223,9 +223,8 @@
               </tr>
               </table><br>
              <table cellpadding="0" cellspacing="0" border="0" width="100%">
-              <tr> <td ><input type="text" class="input_txtbx1" name="returns" id="returns" /><span class="err"><form:errors path="Workschool.returns"></form:errors></td>
-        	  <td ><span class="err">*</span>Return to Regular Duty/School/P.E. on: (Date) </td>
-        	  <td ><input type="text" class="input_txtbx1" name="returndate" id="datepicker3" /><span class="err"><form:errors path="Workschool.returndate"></form:errors></td>
+              <tr><td width="85"></td> <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="returns" id="returns" style="width: 111px; "/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return to Regular Duty/School/P.E. on: 
+        	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" class="input_txtbx1" name="returndate" id="datepicker3" style="width: 113px; "/><span class="err"><form:errors path="Workschool.returndate"></form:errors>
         	  </tr></table><br>
         	
         	  <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -250,19 +249,11 @@ Yours in Health,</b>
  <td align="right"><b>Dr. Darrin A. Pordash</b></td>
  </tr>
  </table>
- <table>
-              <tr>
-              <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-              <td><input type="submit" class="submit_btn" value="Save"></td>
-              <td>&nbsp;&nbsp;</td>
-              <td><a href="hardshiplist" style="color:white" class="submit_btn">Cancel</a></td>
-              <td>&nbsp;&nbsp;</td>
-        	  </tr>
-        	  </table>
-        	 
+<table><tr> <td><input type="submit" class="submit_btn" value="Save"></td>
+               <td><a href="responseattorney"style="color:white" class="submit_btn">Cancel</a></td>
+              </tr></table>
+              </div>
         	  </div>
-        	  </div>
-        	
         	  </td>
         	  </tr>
         	  </table>
