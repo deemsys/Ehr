@@ -14,8 +14,6 @@ public class Letterofprotection
 	@NotEmpty
 	private String address1;	
 	@NotEmpty
-	private String address2;
-	@NotEmpty
 	private String myclient;
 	@NotEmpty
 	private String dateofaccident;
@@ -68,14 +66,6 @@ public class Letterofprotection
 		this.address1 = address1;
 	}
 
-	public String getAddress2() {
-		return address2;
-	}
-
-	public void setAddress2(String address2) {
-		this.address2 = address2;
-	}
-
 	public String getMyclient() {
 		return myclient;
 	}
@@ -109,22 +99,19 @@ public class Letterofprotection
 	}
 
 	public Letterofprotection(String letterid, String date, String dc,
-			String clinicname, String address1, String address2,
-			String myclient, String dateofaccident, String dearsir, String esq) {
+			String clinicname, String address1, String myclient,
+			String dateofaccident, String dearsir, String esq) {
 		super();
 		this.letterid = letterid;
 		this.date = date;
 		this.dc = dc;
 		this.clinicname = clinicname;
 		this.address1 = address1;
-		this.address2 = address2;
 		this.myclient = myclient;
 		this.dateofaccident = dateofaccident;
 		this.dearsir = dearsir;
 		this.esq = esq;
 	}
-	
-
 
 
 }
