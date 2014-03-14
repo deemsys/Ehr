@@ -46,7 +46,7 @@ public class Patientattorney1DAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 
-	    	 String cmd="INSERT INTO patientattorney (name,address,patientname,date,dearsir) VALUES ('"+patientattorneydetails.getName()+"','"+patientattorneydetails.getAddress()+"','"+patientattorneydetails.getPatientname()+"','"+patientattorneydetails.getDate()+"','"+patientattorneydetails.getDearsir()+"')";
+	    	 String cmd="INSERT INTO patientattorney (name,address,reg,patientname,date,dearsir,nameofclinic,treat) VALUES ('"+patientattorneydetails.getName()+"','"+patientattorneydetails.getAddress()+"','"+patientattorneydetails.getReg()+"','"+patientattorneydetails.getPatientname()+"','"+patientattorneydetails.getDate()+"','"+patientattorneydetails.getDearsir()+"','"+patientattorneydetails.getNameofclinic()+"','"+patientattorneydetails.getTreat()+"')";
 	    	    System.out.println("cmd insert value"+cmd);
 	    	    statement.executeUpdate(cmd);
 	    	    }
@@ -87,9 +87,12 @@ public class Patientattorney1DAO {
 						(resultSet.getString("patientid"),
 								resultSet.getString("name"),
 						resultSet.getString("address"),
+						resultSet.getString("reg"),
 						resultSet.getString("patientname"),
 						resultSet.getString("date"),
-			    		resultSet.getString("dearsir")
+			    		resultSet.getString("dearsir"),
+			    		resultSet.getString("nameofclinic"),
+			    		resultSet.getString("treat")
 			    		 ));
 			    	
 			}
@@ -126,9 +129,12 @@ public class Patientattorney1DAO {
 						(resultSet.getString("patientid"),
 								resultSet.getString("name"),
 						resultSet.getString("address"),
+						resultSet.getString("reg"),
 						resultSet.getString("patientname"),
 						resultSet.getString("date"),
-			    		resultSet.getString("dearsir")
+			    		resultSet.getString("dearsir"),
+			    		resultSet.getString("nameofclinic"),
+			    		resultSet.getString("treat")
 			    		 ));
 				System.out.println("Name::::::::::::::::::"+patientattorney.get(0).getName());
 			    	
@@ -167,9 +173,12 @@ public class Patientattorney1DAO {
 	    	 String cmd="update patientattorney set name='"+patientattorney.getName()
 	    			
 	    +"',address='"+patientattorney.getAddress()
-	    +"',address1='"+patientattorney.getPatientname()
-	    +"',reg='"+ patientattorney.getDate()
-	    +"',nameofperson='"+ patientattorney.getDearsir()
+	    +"',reg='"+patientattorney.getReg()
+	    +"',patientname='"+ patientattorney.getPatientname()
+	    +"',date='"+ patientattorney.getDate()
+	    +"',dearsir='"+ patientattorney.getDearsir()
+	    +"',nameofclinic='"+ patientattorney.getNameofclinic()
+	    +"',treat='"+ patientattorney.getTreat()
 	    +"' where patientid='"+patientid+"'";
 	          	           
 		  		 
