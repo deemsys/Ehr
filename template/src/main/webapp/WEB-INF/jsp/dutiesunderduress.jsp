@@ -41,6 +41,87 @@ $(function() {
     $( "#tabs" ).tabs();
   });
   </script>
+  <script >
+function yesnoCheck() {
+    if (document.getElementById('yesCheck').checked) {
+        document.getElementById('Increased pain').style.visibility = 'hidden';
+        document.getElementById('ip1').style.visibility = 'hidden';
+        document.getElementById('rm1').style.visibility = 'hidden';
+         document.getElementById('w1').style.visibility = 'hidden';
+          document.getElementById('mva1').style.visibility = 'hidden';
+          document.getElementById('o1').style.visibility = 'hidden';
+        document.getElementById('restrictedmovement1').style.visibility = 'hidden';
+        document.getElementById('Weekness').style.visibility = 'hidden';
+	document.getElementById('sincemva1').style.visibility = 'hidden';
+document.getElementById('ongoing1').style.visibility = 'hidden';
+}
+else if(document.getElementById('yesCheck1').checked) {
+document.getElementById('incresedpain2').style.visibility = 'hidden';
+document.getElementById('restrictedmovement2').style.visibility = 'hidden';
+document.getElementById('weekness2').style.visibility = 'hidden';
+document.getElementById('sincemva2').style.visibility = 'hidden';
+document.getElementById('ongoing2').style.visibility = 'hidden';
+}
+else if(document.getElementById('yesCheck2').checked) {
+document.getElementById('incresedpain3').style.visibility = 'hidden';
+document.getElementById('restrictedmovement3').style.visibility = 'hidden';
+document.getElementById('weekness3').style.visibility = 'hidden';
+document.getElementById('sincemva3').style.visibility = 'hidden';
+document.getElementById('ongoing3').style.visibility = 'hidden';
+}
+else if(document.getElementById('yesCheck3').checked) {
+document.getElementById('incresedpain4').style.visibility = 'hidden';
+document.getElementById('restrictedmovement4').style.visibility = 'hidden';
+document.getElementById('weekness4').style.visibility = 'hidden';
+document.getElementById('sincemva4').style.visibility = 'hidden';
+document.getElementById('ongoing4').style.visibility = 'hidden';
+}
+else if(document.getElementById('yesCheck4').checked) {
+document.getElementById('incresedpain5').style.visibility = 'hidden';
+document.getElementById('restrictedmovement5').style.visibility = 'hidden';
+document.getElementById('weekness5').style.visibility = 'hidden';
+document.getElementById('sincemva5').style.visibility = 'hidden';
+document.getElementById('ongoing5').style.visibility = 'hidden';
+}
+    
+    else 
+{
+document.getElementById('Increased pain').style.visibility = 'visible';
+ document.getElementById('ip1').style.visibility = 'visible';
+document.getElementById('restrictedmovement1').style.visibility = 'visible';
+document.getElementById('rm1').style.visibility = 'visible';
+ document.getElementById('Weekness').style.visibility = 'visible';
+ document.getElementById('w1').style.visibility = 'visible';
+document.getElementById('sincemva1').style.visibility = 'visible';
+document.getElementById('mva1').style.visibility = 'visible';
+document.getElementById('ongoing1').style.visibility = 'visible';
+document.getElementById('o1').style.visibility = 'visible';
+document.getElementById('incresedpain2').style.visibility = 'visible';
+document.getElementById('restrictedmovement2').style.visibility = 'visible';
+document.getElementById('weekness2').style.visibility = 'visible';
+document.getElementById('sincemva2').style.visibility = 'visible';
+document.getElementById('ongoing2').style.visibility = 'visible';
+document.getElementById('incresedpain3').style.visibility = 'visible';
+document.getElementById('restrictedmovement3').style.visibility = 'visible';
+document.getElementById('weekness3').style.visibility = 'visible';
+document.getElementById('sincemva3').style.visibility = 'visible';
+document.getElementById('ongoing3').style.visibility = 'visible';
+
+document.getElementById('incresedpain4').style.visibility = 'visible';
+document.getElementById('restrictedmovement4').style.visibility = 'visible';
+document.getElementById('weekness4').style.visibility = 'visible';
+document.getElementById('sincemva4').style.visibility = 'visible';
+document.getElementById('ongoing4').style.visibility = 'visible';
+
+document.getElementById('incresedpain5').style.visibility = 'visible';
+document.getElementById('restrictedmovement5').style.visibility = 'visible';
+document.getElementById('weekness5').style.visibility = 'visible';
+document.getElementById('sincemva5').style.visibility = 'visible';
+document.getElementById('ongoing5').style.visibility = 'visible';
+
+}
+}
+  </script>
 </head>
  <body>
  <br><br>
@@ -50,7 +131,7 @@ $(function() {
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
 <tr>
 <td valign="top" align="left">
- <div>
+ <div  >
 	            <div class="headings altheading">
 	            <center> <h2>Duties Under Duress Summary</h2> </center><br/>
 	            
@@ -85,34 +166,37 @@ $(function() {
  <td><B style="font-size:14px">Duration</B></td>
  </tr>
  <tr class="row1">  
- <td><input type="checkbox" name="lifting1" value="Lifting"> </td>
+ <td><input type="checkbox" name="lifting1" value="Lifting" onclick="javascript:yesnoCheck();"id="yesCheck"> </td>
+ 
  <td>Lifting</td> 
- <td><input type="checkbox" name="incresedpain1" value="Increased pain">&nbsp;Increased Pain &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement1" value="Restricted Movement">&nbsp;Restricted Movement &nbsp;&nbsp; <input type="checkbox" name="weekness1" value="Weekness">&nbsp;Weekness</td>
- <td><input type="checkbox" name="sincemva1" value="Since MVA">&nbsp;Since MVA &nbsp;&nbsp;<input type="checkbox" name="ongoing1" value="Ongoing">&nbsp;Ongoing</td>
+ <td><input type="checkbox" name="incresedpain1" value="Increased pain" id="Increased pain">&nbsp;
+ <span id="ip1">Increased Pain </span>&nbsp;&nbsp;<input type="checkbox" name="restrictedmovement1" id="restrictedmovement1"value="Restricted Movement">&nbsp;<span id="rm1">Restricted Movement </span> &nbsp;&nbsp; <input type="checkbox" name="weekness1" value="Weekness" id="Weekness">&nbsp;
+<span id="w1">Weekness</span></td>
+ <td><input type="checkbox" name="sincemva1" value="Since MVA" id="sincemva1">&nbsp;<span id="mva1">Since MVA</span> &nbsp;&nbsp;<input type="checkbox" name="ongoing2" value="Ongoing" id="ongoing1">&nbsp;<span id="o1">Ongoing</span></td>
  </tr>
  <tr class="row1">  
- <td><input type="checkbox" name="bending1" value="Bending"> </td>
+ <td><input type="checkbox" name="bending1" value="Bending" onclick="javascript:yesnoCheck();"id="yesCheck1"> </td>
  <td>Bending</td> 
- <td><input type="checkbox" name="incresedpain2" value="Increased pain">&nbsp;Increased Pain &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement2" value="Restricted Movement">&nbsp;Restricted Movement &nbsp;&nbsp; <input type="checkbox" name="weekness2" value="Weekness">&nbsp;Weekness</td>
- <td><input type="checkbox" name="sincemva2" value="Since MVA">&nbsp;Since MVA &nbsp;&nbsp;<input type="checkbox" name="ongoing2" value="Ongoing">&nbsp;Ongoing</td>
+ <td><input type="checkbox" name="incresedpain2" value="Increased pain" id="incresedpain2">&nbsp;Increased Pain &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement2" value="Restricted Movement" id="restrictedmovement2">&nbsp;Restricted Movement &nbsp;&nbsp; <input type="checkbox" name="weekness2" value="Weekness" id="weekness2">&nbsp;Weekness</td>
+ <td><input type="checkbox" name="sincemva2" value="Since MVA" id="sincemva2" >&nbsp;Since MVA &nbsp;&nbsp;<input type="checkbox" name="ongoing2" value="Ongoing" id="ongoing2">&nbsp;Ongoing</td>
  </tr>
  <tr class="row1">  
- <td><input type="checkbox" name="sitting1" value="Sitting"> </td>
+ <td><input type="checkbox" name="sitting1" value="Sitting" onclick="javascript:yesnoCheck();"id="yesCheck2"> </td>
  <td>Sitting</td> 
- <td><input type="checkbox" name="incresedpain3" value="Increased pain">&nbsp;Increased Pain &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement3" value="Restricted Movement">&nbsp;Restricted Movement &nbsp;&nbsp; <input type="checkbox" name="weekness3" value="Weekness">&nbsp;Weekness</td>
- <td><input type="checkbox" name="sincemva3" value="Since MVA">&nbsp;Since MVA &nbsp;&nbsp;<input type="checkbox" name="ongoing3" value="Ongoing">&nbsp;Ongoing</td>
+ <td><input type="checkbox" name="incresedpain3" value="Increased pain" id="incresedpain3">&nbsp;Increased Pain &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement3" value="Restricted Movement" id="restrictedmovement3">&nbsp;Restricted Movement &nbsp;&nbsp; <input type="checkbox" name="weekness3" value="Weekness" id="weekness3">&nbsp;Weekness</td>
+ <td><input type="checkbox" name="sincemva3" value="Since MVA" id="sincemva3">&nbsp;Since MVA &nbsp;&nbsp;<input type="checkbox" name="ongoing3" value="Ongoing" id="ongoing3">&nbsp;Ongoing</td>
  </tr>
  <tr class="row1">  
- <td><input type="checkbox" name="walking1" value="Walking"> </td>
+ <td><input type="checkbox" name="walking1" value="Walking" onclick="javascript:yesnoCheck();"id="yesCheck3"> </td>
  <td>Walking</td> 
- <td><input type="checkbox" name="incresedpain4" value="Increased pain">&nbsp;Increased Pain &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement4" value="Restricted Movement">&nbsp;Restricted Movement &nbsp;&nbsp; <input type="checkbox" name="weekness4" value="Weekness">&nbsp;Weekness</td>
- <td><input type="checkbox" name="sincemva4" value="Since MVA">&nbsp;Since MVA &nbsp;&nbsp; <input type="checkbox" name="ongoing4" value="Ongoing">&nbsp;Ongoing</td>
+ <td><input type="checkbox" name="incresedpain4" value="Increased pain" id="incresedpain4">&nbsp;Increased Pain &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement4" value="Restricted Movement" id="restrictedmovement4">&nbsp;Restricted Movement &nbsp;&nbsp; <input type="checkbox" name="weekness4" value="Weekness" id="weekness4">&nbsp;Weekness</td>
+ <td><input type="checkbox" name="sincemva4" value="Since MVA" id="sincemva4">&nbsp;Since MVA &nbsp;&nbsp; <input type="checkbox" name="ongoing4" value="Ongoing" id="ongoing4">&nbsp;Ongoing</td>
  </tr>
  <tr class="row1">  
- <td><input type="checkbox" name="computerduties1" value="Computerduties"> </td>
+ <td><input type="checkbox" name="computerduties1" value="Computerduties" onclick="javascript:yesnoCheck();"id="yesCheck4"> </td>
  <td>Bending</td> 
- <td><input type="checkbox" name="incresedpain5" value="Increased pain">&nbsp;Increased Pain &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement5" value="Restricted Movement">&nbsp;Restricted Movement &nbsp;&nbsp; <input type="checkbox" name="weekness5" value="Fatigue">&nbsp;Fatigue</td>
- <td><input type="checkbox" name="sincemva5" value="Since MVA">&nbsp;Since MVA &nbsp;&nbsp;<input type="checkbox" name="ongoing5" value="Ongoing">&nbsp;Ongoing</td>
+ <td><input type="checkbox" name="incresedpain5" value="Increased pain" id="incresedpain5">&nbsp;Increased Pain &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement5" value="Restricted Movement" id="restrictedmovement5">&nbsp;Restricted Movement &nbsp;&nbsp; <input type="checkbox" name="weekness5" value="Fatigue" id="weekness5">&nbsp;Fatigue</td>
+ <td><input type="checkbox" name="sincemva5" value="Since MVA" id="sincemva5">&nbsp;Since MVA &nbsp;&nbsp;<input type="checkbox" name="ongoing5" value="Ongoing" id="ongoing5">&nbsp;Ongoing</td>
  </tr>
  <tr class="row1">  
  <td>Other</td>

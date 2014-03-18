@@ -83,46 +83,211 @@ $(function() {
  <td><B style="font-size:14px">Duration</B></td>
  </tr>
  <tr class="row1">  
- <td>${dutiesunderduressdetails.lifting1} </td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.lifting1=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.lifting1}</c:otherwise>
+	          
+	            </c:choose> </td>
  <td>Lifting</td> 
- <td>${dutiesunderduressdetails.incresedpain1}&nbsp;Increased Pain &nbsp;&nbsp;${dutiesunderduressdetails.restrictedmovement1}&nbsp; &nbsp;&nbsp; ${dutiesunderduressdetails.weekness1}&nbsp;</td>
- <td>${dutiesunderduressdetails.sincemva1}&nbsp; &nbsp;&nbsp;${dutiesunderduressdetails.ongoing1}&nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.incresedpain1=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.incresedpain1}</c:otherwise>
+	          
+	            </c:choose>&nbsp;Increased Pain &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.restrictedmovement1=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.restrictedmovement1}</c:otherwise>
+	          
+	            </c:choose>&nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.weekness1=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.weekness1}</c:otherwise>
+	          
+	            </c:choose> &nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.sincemva1=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.sincemva1}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.ongoing1=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.ongoing1}</c:otherwise>
+	          
+	            </c:choose>&nbsp;</td>
  </tr>
  <tr class="row1">  
- <td>${dutiesunderduressdetails.bending1} </td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.bending1=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.bending1}</c:otherwise>
+	          
+	            </c:choose>  </td>
  <td>Bending</td> 
- <td>${dutiesunderduressdetails.incresedpain2}&nbsp; &nbsp;&nbsp;${dutiesunderduressdetails.restrictedmovement2}&nbsp; &nbsp;&nbsp;${dutiesunderduressdetails.weekness2} &nbsp;</td>
- <td>${dutiesunderduressdetails.sincemva2}&nbsp; &nbsp;&nbsp;${dutiesunderduressdetails.ongoing2}&nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.incresedpain2=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.incresedpain2}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.restrictedmovement2=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.restrictedmovement2}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.weekness2=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.weekness2}</c:otherwise>
+	          
+	            </c:choose>  &nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.sincemva2=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.sincemva2}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.ongoing2=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.ongoing2}</c:otherwise>
+	          
+	            </c:choose> &nbsp;</td>
  </tr>
  <tr class="row1">  
- <td>${dutiesunderduressdetails.sitting1} </td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.sitting1=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.sitting1}</c:otherwise>
+	          
+	            </c:choose>  </td>
  <td>Sitting</td> 
- <td>${dutiesunderduressdetails.incresedpain3}&nbsp;&nbsp;&nbsp;${dutiesunderduressdetails.restrictedmovement3}&nbsp; &nbsp;&nbsp; ${dutiesunderduressdetails.weekness3}&nbsp;</td>
- <td>${dutiesunderduressdetails.sincemva3}&nbsp; &nbsp;&nbsp;${dutiesunderduressdetails.ongoing3}&nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.incresedpain3=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.incresedpain3}</c:otherwise>
+	          
+	            </c:choose> &nbsp;&nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.restrictedmovement3=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.restrictedmovement3}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp; <c:choose>
+	            <c:when test="${dutiesunderduressdetails.weekness3=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.weekness3}</c:otherwise>
+	          
+	            </c:choose>&nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.sincemva3=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.sincemva3}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.ongoing3=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.ongoing3}</c:otherwise>
+	          
+	            </c:choose> &nbsp;</td>
  </tr>
  <tr class="row1">  
- <td>${dutiesunderduressdetails.walking1} </td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.walking1=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.walking1}</c:otherwise>
+	          
+	            </c:choose>  </td>
  <td>Walking</td> 
- <td>${dutiesunderduressdetails.incresedpain4}&nbsp; &nbsp;&nbsp;${dutiesunderduressdetails.restrictedmovement4}&nbsp; &nbsp;&nbsp; ${dutiesunderduressdetails.weekness4}&nbsp;</td>
- <td>${dutiesunderduressdetails.sincemva4}&nbsp;&nbsp;&nbsp; ${dutiesunderduressdetails.ongoing1}&nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.incresedpain4=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.incresedpain4}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.restrictedmovement4=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.restrictedmovement4}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.weekness4=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.weekness4}</c:otherwise>
+	          
+	            </c:choose> &nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.sincemva4=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.sincemva4}</c:otherwise>
+	          
+	            </c:choose> &nbsp;&nbsp;&nbsp; <c:choose>
+	            <c:when test="${dutiesunderduressdetails.ongoing1=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.ongoing1}</c:otherwise>
+	          
+	            </c:choose> &nbsp;</td>
  </tr>
  <tr class="row1">  
- <td>${dutiesunderduressdetails.computerduties1} </td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.computerduties1=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.computerduties1}</c:otherwise>
+	          
+	            </c:choose> </td>
  <td>Bending</td> 
- <td>${dutiesunderduressdetails.incresedpain5}&nbsp; &nbsp;&nbsp;${dutiesunderduressdetails.restrictedmovement5}&nbsp; &nbsp;&nbsp; ${dutiesunderduressdetails.weekness5}&nbsp;</td>
- <td><input type="checkbox" name="sincemva5" value="Since MVA">&nbsp;Since MVA &nbsp;&nbsp;&nbsp;Ongoing</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.incresedpain5=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.incresedpain5}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.restrictedmovement5=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.restrictedmovement5}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp; <c:choose>
+	            <c:when test="${dutiesunderduressdetails.weekness5=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.weekness5}</c:otherwise>
+	          
+	            </c:choose> &nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.sincemva5=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.sincemva5}</c:otherwise>
+	          
+	            </c:choose>&nbsp; &nbsp;&nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.ongoing5=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.ongoing5}</c:otherwise>
+	          
+	            </c:choose> &nbsp;</td>
  </tr>
  <tr class="row1">  
  <td>Other</td>
- <td>${dutiesunderduressdetails.other1}</td> 
- <td>${dutiesunderduressdetails.incresedpain6}&nbsp; &nbsp;&nbsp;&nbsp;${dutiesunderduressdetails.restrictedmovement6} &nbsp;&nbsp; &nbsp;${dutiesunderduressdetails.weekness6}</td>
- <td>${dutiesunderduressdetails.sincemva6}&nbsp; &nbsp;&nbsp;${dutiesunderduressdetails.ongoing6}&nbsp;</td>
+ <td>
+	           ${dutiesunderduressdetails.other1}</td>
+	          
+	           
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.incresedpain6=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.incresedpain6}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.restrictedmovement6=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.restrictedmovement6}</c:otherwise>
+	          
+	            </c:choose> &nbsp;&nbsp; &nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.weekness6=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.weekness6}</c:otherwise>
+	          
+	            </c:choose></td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.sincemva6=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.sincemva6}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.ongoing6=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.ongoing6}</c:otherwise>
+	          
+	            </c:choose> &nbsp;</td>
  </tr>
  <tr class="row1">  
  <td>Other</td>
- <td>${dutiesunderduressdetails.other2}</td> 
- <td>${dutiesunderduressdetails.incresedpain7}&nbsp; &nbsp;&nbsp;${dutiesunderduressdetails.restrictedmovement7}&nbsp; &nbsp;&nbsp; ${dutiesunderduressdetails.weekness7}&nbsp;</td>
- <td>${dutiesunderduressdetails.sincemva7}&nbsp; &nbsp;&nbsp;${dutiesunderduressdetails.ongoing7}&nbsp;</td>
+ <td>${dutiesunderduressdetails.other2}
+	          
+	            </td> 
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.incresedpain7=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.incresedpain7}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.restrictedmovement7=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.restrictedmovement7}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.weekness7=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.weekness7}</c:otherwise>
+	          
+	            </c:choose>  &nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.sincemva7=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.sincemva7}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.ongoing7=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.ongoing7}</c:otherwise>
+	          
+	            </c:choose> &nbsp;</td>
  </tr>
  <tr class="row2"> 
  <td><B style="font-size:14px">N/A</B></td>
@@ -131,59 +296,267 @@ $(function() {
  <td><B style="font-size:14px">Duration</B></td>
  </tr>
  <tr class="row1">  
- <td>${dutiesunderduressdetails.lifting2} </td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.lifting2=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.lifting2}</c:otherwise>
+	          
+	            </c:choose>  </td>
  <td>Lifting</td> 
- <td>${dutiesunderduressdetails.incresedpain8}&nbsp; &nbsp;&nbsp;${dutiesunderduressdetails.restrictedmovement8}&nbsp; &nbsp;&nbsp; ${dutiesunderduressdetails.weekness8}&nbsp;</td>
- <td>${dutiesunderduressdetails.sincemva8}&nbsp;&nbsp;&nbsp;${dutiesunderduressdetails.ongoing8}&nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.incresedpain8=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.incresedpain8}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.restrictedmovement8=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.restrictedmovement8}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp; <c:choose>
+	            <c:when test="${dutiesunderduressdetails.weekness8=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.weekness8}</c:otherwise>
+	          
+	            </c:choose> &nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.sincemva8=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.sincemva8}</c:otherwise>
+	          
+	            </c:choose> &nbsp;&nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.ongoing8=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.ongoing8}</c:otherwise>
+	          
+	            </c:choose>&nbsp;</td>
  </tr>
  <tr class="row1">  
- <td>${dutiesunderduressdetails.bending2} </td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.bending2=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.bending2}</c:otherwise>
+	          
+	            </c:choose>  </td>
  <td>Bending</td> 
- <td>${dutiesunderduressdetails.incresedpain9}&nbsp; &nbsp;&nbsp;${dutiesunderduressdetails.restrictedmovement9}&nbsp; &nbsp;&nbsp; ${dutiesunderduressdetails.weekness9}&nbsp;</td>
- <td>${dutiesunderduressdetails.sincemva9}&nbsp; &nbsp;&nbsp;${dutiesunderduressdetails.ongoing9}&nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.incresedpain9=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.incresedpain9}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.restrictedmovement9=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.restrictedmovement9}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp; <c:choose>
+	            <c:when test="${dutiesunderduressdetails.weekness9=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.weekness9}</c:otherwise>
+	          
+	            </c:choose> &nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.sincemva9=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.sincemva9}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.ongoing9=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.ongoing9}</c:otherwise>
+	          
+	            </c:choose> &nbsp;</td>
  </tr>
  <tr class="row1">  
- <td>${dutiesunderduressdetails.sitting2} </td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.sitting2=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.sitting2}</c:otherwise>
+	          
+	            </c:choose>  </td>
  <td>Sitting</td> 
- <td>${dutiesunderduressdetails.incresedpain10}&nbsp; &nbsp;&nbsp;${dutiesunderduressdetails.restrictedmovement10}&nbsp; &nbsp;&nbsp; ${dutiesunderduressdetails.weekness10}&nbsp;</td>
- <td>${dutiesunderduressdetails.sincemva10}&nbsp; &nbsp;&nbsp;${dutiesunderduressdetails.ongoing10}&nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.incresedpain10=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.incresedpain10}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.restrictedmovement10=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.restrictedmovement10}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.weekness10=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.weekness10}</c:otherwise>
+	          
+	            </c:choose> &nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.sincemva10=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.sincemva10}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.ongoing10=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.ongoing10}</c:otherwise>
+	          
+	            </c:choose> &nbsp;</td>
  </tr>
  <tr class="row1">  
- <td>${dutiesunderduressdetails.walking2} </td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.walking2=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.walking2}</c:otherwise>
+	          
+	            </c:choose>  </td>
  <td>Walking</td> 
- <td>${dutiesunderduressdetails.incresedpain11}&nbsp; &nbsp;&nbsp;${dutiesunderduressdetails.restrictedmovement11}&nbsp; &nbsp;&nbsp; ${dutiesunderduressdetails.weekness11}&nbsp;</td>
- <td>${dutiesunderduressdetails.sincemva11}&nbsp; &nbsp;&nbsp; ${dutiesunderduressdetails.ongoing11}&nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.incresedpain11=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.incresedpain11}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.restrictedmovement11=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.restrictedmovement11}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp; <c:choose>
+	            <c:when test="${dutiesunderduressdetails.weekness11=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.weekness11}</c:otherwise>
+	          
+	            </c:choose> &nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.sincemva11=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.sincemva11}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.ongoing11=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.ongoing11}</c:otherwise>
+	          
+	            </c:choose>  &nbsp;</td>
  </tr>
  <tr class="row1">  
- <td>${dutiesunderduressdetails.computerduties2} </td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.computerduties2=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.computerduties2}</c:otherwise>
+	          
+	            </c:choose> </td>
  <td>Computerduties</td> 
- <td>${dutiesunderduressdetails.incresedpain12}&nbsp; &nbsp;&nbsp;${dutiesunderduressdetails.restrictedmovement12}&nbsp; &nbsp;&nbsp;${dutiesunderduressdetails.weekness12} &nbsp;</td>
- <td>${dutiesunderduressdetails.sincemva12}&nbsp;Since MVA &nbsp;&nbsp;${dutiesunderduressdetails.ongoing12}&nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.incresedpain12=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.incresedpain12}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.restrictedmovement12=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.restrictedmovement12}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.weekness12=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.weekness12}</c:otherwise>
+	          
+	            </c:choose>  &nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.sincemva12=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.sincemva12}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.ongoing12=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.ongoing12}</c:otherwise>
+	          
+	            </c:choose>&nbsp;</td>
  </tr>
  <tr class="row1">  
- <td>${dutiesunderduressdetails.studying} </td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.studying=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.studying}</c:otherwise>
+	          
+	            </c:choose>  </td>
  <td>Studying</td> 
- <td>${dutiesunderduressdetails.incresedpainstudy}&nbsp; &nbsp;&nbsp;${dutiesunderduressdetails.restrictedmovementstudy}&nbsp; &nbsp;&nbsp;${dutiesunderduressdetails.weeknessstudy} &nbsp;</td>
- <td>${dutiesunderduressdetails.sincemvastudy}&nbsp; &nbsp;&nbsp;${dutiesunderduressdetails.ongoingstudy}&nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.incresedpainstudy=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.incresedpainstudy}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.restrictedmovementstudy=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.restrictedmovementstudy}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.weeknessstudy=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.weeknessstudy}</c:otherwise>
+	          
+	            </c:choose>  &nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.sincemvastudy=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.sincemvastudy}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.ongoingstudy=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.ongoingstudy}</c:otherwise>
+	          
+	            </c:choose>&nbsp;</td>
  </tr>
  <tr class="row1">  
- <td>${dutiesunderduressdetails.concentrating} </td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.concentrating=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.concentrating}</c:otherwise>
+	          
+	            </c:choose>  </td>
  <td>Concentrating</td> 
- <td>${dutiesunderduressdetails.incresedpainconcentrate}&nbsp; &nbsp;&nbsp;${dutiesunderduressdetails.restrictedmovementconcentrate}&nbsp; &nbsp;&nbsp; ${dutiesunderduressdetails.weeknessconcentrate}&nbsp;</td>
- <td>${dutiesunderduressdetails.sincemvaconcentrate}&nbsp; &nbsp;&nbsp;${dutiesunderduressdetails.ongoingconcentrate}</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.incresedpainconcentrate=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.incresedpainconcentrate}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.restrictedmovementconcentrate=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.restrictedmovementconcentrate}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp; <c:choose>
+	            <c:when test="${dutiesunderduressdetails.weeknessconcentrate=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.weeknessconcentrate}</c:otherwise>
+	          
+	            </c:choose> &nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.sincemvaconcentrate=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.sincemvaconcentrate}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.ongoingconcentrate=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.ongoingconcentrate}</c:otherwise>
+	          
+	            </c:choose> </td>
  </tr>
  
  <tr class="row1">  
  <td>Other</td>
  <td>${dutiesunderduressdetails.other3}</td> 
- <td>${dutiesunderduressdetails.incresedpain13}&nbsp; &nbsp;&nbsp;${dutiesunderduressdetails.restrictedmovement13}&nbsp; &nbsp;&nbsp;${dutiesunderduressdetails.weekness13}&nbsp;</td>
- <td>${dutiesunderduressdetails.sincemva13}&nbsp; &nbsp;&nbsp;${dutiesunderduressdetails.ongoing13}&nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.incresedpain13=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.incresedpain13}</c:otherwise>
+	          
+	            </c:choose>&nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.restrictedmovement13=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.restrictedmovement13}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.weekness13=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.weekness13}</c:otherwise>
+	          
+	            </c:choose>&nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.sincemva13=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.sincemva13}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.ongoing13=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.ongoing13}</c:otherwise>
+	          
+	            </c:choose> &nbsp;</td>
  </tr>
  <tr class="row1">  
  <td>Other</td>
  <td>${dutiesunderduressdetails.other4}</td> 
- <td>${dutiesunderduressdetails.incresedpain14}&nbsp; &nbsp;&nbsp;${dutiesunderduressdetails.restrictedmovement14}&nbsp; &nbsp;&nbsp; ${dutiesunderduressdetails.weekness14}&nbsp;</td>
- <td>${dutiesunderduressdetails.sincemva14}&nbsp;Since MVA &nbsp;&nbsp;${dutiesunderduressdetails.ongoing14}&nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.incresedpain14=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.incresedpain14}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.restrictedmovement14=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.restrictedmovement14}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp; <c:choose>
+	            <c:when test="${dutiesunderduressdetails.weekness14=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.weekness14}</c:otherwise>
+	          
+	            </c:choose> &nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.sincemva14=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.sincemva14}</c:otherwise>
+	          
+	            </c:choose> &nbsp;&nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.ongoing14=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.ongoing14}</c:otherwise>
+	          
+	            </c:choose> &nbsp;</td>
  </tr>
  
  <tr class="row2"> 
@@ -193,40 +566,176 @@ $(function() {
  <td><B style="font-size:14px">Duration</B></td>
  </tr>
  <tr class="row1">  
- <td>${dutiesunderduressdetails.vacumming} </td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.vacumming=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.vacumming}</c:otherwise>
+	          
+	            </c:choose>  </td>
  <td>Vacumming</td> 
- <td>${dutiesunderduressdetails.incresedpain15}&nbsp; &nbsp;&nbsp;${dutiesunderduressdetails.restrictedmovement15}&nbsp; &nbsp;&nbsp; ${dutiesunderduressdetails.weekness15}&nbsp;</td>
- <td>${dutiesunderduressdetails.sincemva15}&nbsp; &nbsp;&nbsp;${dutiesunderduressdetails.ongoing15}&nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.incresedpain15=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.incresedpain15}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.restrictedmovement15=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.restrictedmovement15}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp; <c:choose>
+	            <c:when test="${dutiesunderduressdetails.weekness15=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.weekness15}</c:otherwise>
+	          
+	            </c:choose> &nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.sincemva15=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.sincemva15}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.ongoing15=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.ongoing15}</c:otherwise>
+	          
+	            </c:choose> &nbsp;</td>
  </tr>
  <tr class="row1">  
- <td>${dutiesunderduressdetails.takingcareofkids}</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.takingcareofkids=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.takingcareofkids}</c:otherwise>
+	          
+	            </c:choose> </td>
  <td>Taking Care Of Kids</td> 
- <td>${dutiesunderduressdetails.incresedpain16}&nbsp; &nbsp;&nbsp;${dutiesunderduressdetails.restrictedmovement16}&nbsp; &nbsp;&nbsp; ${dutiesunderduressdetails.weekness16}&nbsp;</td>
- <td>${dutiesunderduressdetails.sincemva16}&nbsp; &nbsp;&nbsp;${dutiesunderduressdetails.ongoing16}&nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.incresedpain16=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.incresedpain16}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.restrictedmovement16=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.restrictedmovement16}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp; <c:choose>
+	            <c:when test="${dutiesunderduressdetails.weekness16=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.weekness16}</c:otherwise>
+	          
+	            </c:choose> &nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.sincemva16=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.sincemva16}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.ongoing16=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.ongoing16}</c:otherwise>
+	          
+	            </c:choose> &nbsp;</td>
  </tr>
  <tr class="row1">  
- <td>${dutiesunderduressdetails.cleaning} </td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.cleaning=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.cleaning}</c:otherwise>
+	          
+	            </c:choose>  </td>
  <td>Cleaning</td> 
- <td>${dutiesunderduressdetails.incresedpain17}&nbsp; &nbsp;&nbsp;${dutiesunderduressdetails.restrictedmovement17}&nbsp; &nbsp;&nbsp; ${dutiesunderduressdetails.weekness17}&nbsp;</td>
- <td>${dutiesunderduressdetails.sincemva17}&nbsp;&nbsp;&nbsp;${dutiesunderduressdetails.ongoing17}&nbsp;/td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.incresedpain17=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.incresedpain17}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.restrictedmovement17=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.restrictedmovement17}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.weekness17=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.weekness17}</c:otherwise>
+	          
+	            </c:choose>  &nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.sincemva17=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.sincemva17}</c:otherwise>
+	          
+	            </c:choose> &nbsp;&nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.ongoing17=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.ongoing17}</c:otherwise>
+	          
+	            </c:choose> &nbsp;</td>
  </tr>
  <tr class="row1">  
- <td>${dutiesunderduressdetails.preparingmeals} </td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.preparingmeals=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.preparingmeals}</c:otherwise>
+	          
+	            </c:choose>  </td>
  <td>Preparing Meals</td> 
- <td>${dutiesunderduressdetails.incresedpain18}&nbsp; &nbsp;&nbsp;${dutiesunderduressdetails.restrictedmovement18}&nbsp; &nbsp;&nbsp; ${dutiesunderduressdetails.weekness18}&nbsp;</td>
- <td>${dutiesunderduressdetails.sincemva18}&nbsp; &nbsp;&nbsp; ${dutiesunderduressdetails.ongoing18}&nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.incresedpain18=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.incresedpain18}</c:otherwise>
+	          
+	            </c:choose>&nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.restrictedmovement18=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.restrictedmovement18}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp; <c:choose>
+	            <c:when test="${dutiesunderduressdetails.weekness18=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.weekness18}</c:otherwise>
+	          
+	            </c:choose> &nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.sincemva18=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.sincemva18}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.ongoing18=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.ongoing18}</c:otherwise>
+	          
+	            </c:choose>  &nbsp;</td>
  </tr>
  <tr class="row1">  
  <td>Other</td>
  <td>${dutiesunderduressdetails.other5}</td> 
- <td>${dutiesunderduressdetails.incresedpain20} &nbsp;&nbsp;${dutiesunderduressdetails.restrictedmovement20}&nbsp; &nbsp;&nbsp; ${dutiesunderduressdetails.weekness20}&nbsp;</td>
- <td>${dutiesunderduressdetails.sincemva20}&nbsp; &nbsp;&nbsp;${dutiesunderduressdetails.ongoing20}&nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.incresedpain20=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.incresedpain20}</c:otherwise>
+	          
+	            </c:choose> &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.restrictedmovement20=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.restrictedmovement20}</c:otherwise>
+	          
+	            </c:choose>&nbsp; &nbsp;&nbsp; <c:choose>
+	            <c:when test="${dutiesunderduressdetails.weekness20=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.weekness20}</c:otherwise>
+	          
+	            </c:choose> &nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.sincemva20=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.sincemva20}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.ongoing20=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.ongoing20}</c:otherwise>
+	          
+	            </c:choose> &nbsp;</td>
  </tr>
  <tr class="row1">  
  <td>Other</td>
  <td>${dutiesunderduressdetails.other6}</td> 
- <td>${dutiesunderduressdetails.incresedpain21}&nbsp; &nbsp;&nbsp;${dutiesunderduressdetails.restrictedmovement21}&nbsp;&nbsp;&nbsp; ${dutiesunderduressdetails.weekness21}&nbsp;</td>
- <td>${dutiesunderduressdetails.sincemva21}&nbsp; &nbsp;&nbsp;${dutiesunderduressdetails.ongoing21}&nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.incresedpain21=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.incresedpain21}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.restrictedmovement21=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.restrictedmovement21}</c:otherwise>
+	          
+	            </c:choose> &nbsp;&nbsp;&nbsp; <c:choose>
+	            <c:when test="${dutiesunderduressdetails.weekness21=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.weekness21}</c:otherwise>
+	          
+	            </c:choose> &nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.sincemva21=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.sincemva21}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.ongoing21=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.ongoing21}</c:otherwise>
+	          
+	            </c:choose> &nbsp;</td>
  </tr>
  <tr class="row2"> 
  <td><B style="font-size:14px">N/A</B></td>
@@ -235,40 +744,176 @@ $(function() {
  <td><B style="font-size:14px">Duration</B></td>
  </tr>
  <tr class="row1">  
- <td>${dutiesunderduressdetails.yardwork} </td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.yardwork=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.yardwork}</c:otherwise>
+	          
+	            </c:choose> </td>
  <td>Yard Work</td> 
- <td>${dutiesunderduressdetails.incresedpain22}&nbsp; &nbsp;&nbsp;${dutiesunderduressdetails.restrictedmovement22}&nbsp;&nbsp;&nbsp; ${dutiesunderduressdetails.weekness22}&nbsp;</td>
- <td>${dutiesunderduressdetails.sincemva22}&nbsp; &nbsp;&nbsp;${dutiesunderduressdetails.ongoing22}&nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.incresedpain22=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.incresedpain22}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.restrictedmovement22=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.restrictedmovement22}</c:otherwise>
+	          
+	            </c:choose> &nbsp;&nbsp;&nbsp; <c:choose>
+	            <c:when test="${dutiesunderduressdetails.weekness22=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.weekness22}</c:otherwise>
+	          
+	            </c:choose> &nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.sincemva22=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.sincemva22}</c:otherwise>
+	          
+	            </c:choose>&nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.ongoing22=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.ongoing22}</c:otherwise>
+	          
+	            </c:choose> &nbsp;</td>
  </tr>
  <tr class="row1">  
- <td>${dutiesunderduressdetails.transportation} </td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.transportation=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.transportation}</c:otherwise>
+	          
+	            </c:choose>  </td>
  <td>Transportation</td> 
- <td>${dutiesunderduressdetails.incresedpain23}&nbsp; &nbsp;&nbsp;${dutiesunderduressdetails.restrictedmovement23}&nbsp; &nbsp;&nbsp;${dutiesunderduressdetails.weekness23} &nbsp;</td>
- <td>${dutiesunderduressdetails.sincemva23}&nbsp; &nbsp;&nbsp;${dutiesunderduressdetails.ongoing23}</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.incresedpain23=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.incresedpain23}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.restrictedmovement23=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.restrictedmovement23}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.weekness23=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.weekness23}</c:otherwise>
+	          
+	            </c:choose> &nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.sincemva23=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.sincemva23}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.ongoing23=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.ongoing23}</c:otherwise>
+	          
+	            </c:choose> </td>
  </tr>
  <tr class="row1">  
- <td>${dutiesunderduressdetails.shopping} </td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.shopping=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.shopping}</c:otherwise>
+	          
+	            </c:choose> </td>
  <td>Shopping</td> 
- <td>${dutiesunderduressdetails.incresedpain24}&nbsp;&nbsp;&nbsp;${dutiesunderduressdetails.restrictedmovement24}&nbsp; &nbsp;&nbsp;${dutiesunderduressdetails.weekness24} &nbsp;</td>
- <td>${dutiesunderduressdetails.sincemva24}&nbsp; &nbsp;&nbsp;${dutiesunderduressdetails.ongoing24}&nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.incresedpain24=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.incresedpain24}</c:otherwise>
+	          
+	            </c:choose> &nbsp;&nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.restrictedmovement24=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.restrictedmovement24}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.weekness24=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.weekness24}</c:otherwise>
+	          
+	            </c:choose>  &nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.sincemva24=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.sincemva24}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.ongoing24=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.ongoing24}</c:otherwise>
+	          
+	            </c:choose> &nbsp;</td>
  </tr>
  <tr class="row1">  
- <td>${dutiesunderduressdetails.takingouttrash} </td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.takingouttrash=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.takingouttrash}</c:otherwise>
+	          
+	            </c:choose>  </td>
  <td>Taking Out Trash</td> 
- <td>${dutiesunderduressdetails.incresedpain25}&nbsp; &nbsp;&nbsp;${dutiesunderduressdetails.restrictedmovement25}&nbsp; &nbsp;&nbsp; ${dutiesunderduressdetails.weekness25}&nbsp;</td>
- <td>${dutiesunderduressdetails.sincemva25}&nbsp;&nbsp;&nbsp; ${dutiesunderduressdetails.ongoing25}&nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.incresedpain25=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.incresedpain25}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.restrictedmovement25=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.restrictedmovement25}</c:otherwise>
+	          
+	            </c:choose>&nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.weekness25=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.weekness25}</c:otherwise>
+	          
+	            </c:choose>  &nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.sincemva25=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.sincemva25}</c:otherwise>
+	          
+	            </c:choose> &nbsp;&nbsp;&nbsp; <c:choose>
+	            <c:when test="${dutiesunderduressdetails.ongoing25=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.ongoing25}</c:otherwise>
+	          
+	            </c:choose>&nbsp;</td>
  </tr>
  <tr class="row1">  
  <td>Other</td>
  <td>${dutiesunderduressdetails.other7}</td> 
- <td>${dutiesunderduressdetails.incresedpain27}&nbsp; &nbsp;&nbsp;${dutiesunderduressdetails.restrictedmovement27}&nbsp; &nbsp;&nbsp; ${dutiesunderduressdetails.weekness27}&nbsp;</td>
- <td>${dutiesunderduressdetails.sincemva27}&nbsp; &nbsp;&nbsp;${dutiesunderduressdetails.ongoing27}&nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.incresedpain27=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.incresedpain27}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.restrictedmovement27=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.restrictedmovement27}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp; <c:choose>
+	            <c:when test="${dutiesunderduressdetails.weekness27=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.weekness27}</c:otherwise>
+	          
+	            </c:choose> &nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.sincemva27=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.sincemva27}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.ongoing27=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.ongoing27}</c:otherwise>
+	          
+	            </c:choose> &nbsp;</td>
  </tr>
  <tr class="row1">  
  <td>Other</td>
  <td>${dutiesunderduressdetails.other8}</td> 
- <td>${dutiesunderduressdetails.incresedpain28}&nbsp;&nbsp;&nbsp;${dutiesunderduressdetails.restrictedmovement28}&nbsp;&nbsp;&nbsp; ${dutiesunderduressdetails.weekness28}&nbsp;</td>
- <td>${dutiesunderduressdetails.sincemva28}&nbsp; &nbsp;&nbsp;${dutiesunderduressdetails.ongoing28}&nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.incresedpain28=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.incresedpain28}</c:otherwise>
+	          
+	            </c:choose> &nbsp;&nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.restrictedmovement28=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.restrictedmovement28}</c:otherwise>
+	          
+	            </c:choose>&nbsp;&nbsp;&nbsp; <c:choose>
+	            <c:when test="${dutiesunderduressdetails.weekness28=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.weekness28}</c:otherwise>
+	          
+	            </c:choose> &nbsp;</td>
+ <td><c:choose>
+	            <c:when test="${dutiesunderduressdetails.sincemva28=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.sincemva28}</c:otherwise>
+	          
+	            </c:choose> &nbsp; &nbsp;&nbsp;<c:choose>
+	            <c:when test="${dutiesunderduressdetails.ongoing28=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.ongoing28}</c:otherwise>
+	          
+	            </c:choose> &nbsp;</td>
  </tr>
  </table>
  </c:forEach>

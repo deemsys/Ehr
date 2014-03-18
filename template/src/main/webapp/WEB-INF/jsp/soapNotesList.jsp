@@ -34,49 +34,173 @@
 </tr>
 <tr class="row1">
 <td>Chief Complaint:</td>
-<td> ${soapnotes.headache}</td>
-<td> ${soapnotes.neckpain}</td>
-<td> ${soapnotes.rightshoulderpain}</td>
-<td> ${soapnotes.leftshoulderpain}</td>
-<td> ${soapnotes.chestpain}</td>
-<td> ${soapnotes.rightarmpain}</td>
-<td> ${soapnotes.leftarmpain}</td>
+<td>  <c:choose>
+	            <c:when test="${soapnotes.headache=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${soapnotes.headache}</c:otherwise>
+	          
+	            </c:choose></td>
+<td> <c:choose>
+	            <c:when test="${soapnotes.neckpain=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${soapnotes.neckpain}</c:otherwise>
+	          
+	            </c:choose></td>
+<td> <c:choose>
+	            <c:when test="${soapnotes.rightshoulderpain=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${soapnotes.rightshoulderpain}</c:otherwise>
+	          
+	            </c:choose></td>
+<td><c:choose>
+	            <c:when test="${soapnotes.leftshoulderpain=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${soapnotes.leftshoulderpain}</c:otherwise>
+	          
+	            </c:choose></td>
+<td> <c:choose>
+	            <c:when test="${soapnotes.chestpain=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${soapnotes.chestpain}</c:otherwise>
+	          
+	            </c:choose></td>
+<td> <c:choose>
+	            <c:when test="${soapnotes.rightarmpain=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${soapnotes.rightarmpain}</c:otherwise>
+	          
+	            </c:choose></td>
+<td><c:choose>
+	            <c:when test="${soapnotes.leftarmpain=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${soapnotes.leftarmpain}</c:otherwise>
+	          
+	            </c:choose> </td>
 </tr>
 <tr class="row1">
 <td></td>
-<td> ${soapnotes.rightelbowpain}</td>
-<td> ${soapnotes.leftelbowpain}</td>
-<td> ${soapnotes.rightwristpain}</td>
-<td> ${soapnotes.leftwristpain}</td>
-<td> ${soapnotes.righthandpain}</td>
-<td> ${soapnotes.lefthandpain}</td>
-<td> ${soapnotes.mbp}</td>
+<td> <c:choose>
+	            <c:when test="${soapnotes.rightelbowpain=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${soapnotes.rightelbowpain}</c:otherwise>
+	          
+	            </c:choose></td>
+<td><c:choose>
+	            <c:when test="${soapnotes.leftelbowpain=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${soapnotes.leftelbowpain}</c:otherwise>
+	          
+	            </c:choose></td>
+<td><c:choose>
+	            <c:when test="${soapnotes.rightwristpain=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${soapnotes.rightwristpain}</c:otherwise>
+	          
+	            </c:choose> </td>
+<td> <c:choose>
+	            <c:when test="${soapnotes.leftwristpain=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${soapnotes.leftwristpain}</c:otherwise>
+	          
+	            </c:choose></td>
+<td> <c:choose>
+	            <c:when test="${soapnotes.righthandpain=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${soapnotes.righthandpain}</c:otherwise>
+	          
+	            </c:choose></td>
+<td> <c:choose>
+	            <c:when test="${soapnotes.lefthandpain=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${soapnotes.lefthandpain}</c:otherwise>
+	          
+	            </c:choose></td>
+<td> <c:choose>
+	            <c:when test="${soapnotes.mbp=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${soapnotes.mbp}</c:otherwise>
+	          
+	            </c:choose></td>
 </tr>
 <tr class="row1">
 <td></td>
-<td> ${soapnotes.rightribpain}</td>
-<td> ${soapnotes.leftribpain}</td>
-<td> ${soapnotes.lbp}</td>
-<td> ${soapnotes.rightsipain}</td>
-<td> ${soapnotes.leftsipain}</td>
-<td> ${soapnotes.righthippain}</td>
-<td> ${soapnotes.lefthippain}</td>
+<td> <c:choose>
+	            <c:when test="${soapnotes.rightribpain=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${soapnotes.rightribpain}</c:otherwise>
+	          
+	            </c:choose></td>
+<td> <c:choose>
+	            <c:when test="${soapnotes.leftribpain=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${soapnotes.leftribpain}</c:otherwise>
+	          
+	            </c:choose></td>
+<td> <c:choose>
+	            <c:when test="${soapnotes.lbp=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${soapnotes.lbp}</c:otherwise>
+	          
+	            </c:choose></td>
+<td> <c:choose>
+	            <c:when test="${soapnotes.rightsipain=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${soapnotes.rightsipain}</c:otherwise>
+	          
+	            </c:choose></td>
+<td> <c:choose>
+	            <c:when test="${soapnotes.leftsipain=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${soapnotes.leftsipain}</c:otherwise>
+	          
+	            </c:choose></td>
+<td> <c:choose>
+	            <c:when test="${soapnotes.righthippain=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${soapnotes.righthippain}</c:otherwise>
+	          
+	            </c:choose></td>
+<td> <c:choose>
+	            <c:when test="${soapnotes.lefthippain=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${soapnotes.lefthippain}</c:otherwise>
+	          
+	            </c:choose></td>
 </tr>
 <tr class="row1">
 <td></td>
-<td> ${soapnotes.rightgluteulpain}</td>
-<td> ${soapnotes.leftgluteulpain}</td>
-<td> ${soapnotes.rightlegpain}</td>
-<td> ${soapnotes.leftlegpain}</td>
-<td> ${soapnotes.rightkneepain}</td>
-<td> ${soapnotes.leftkneepain}</td>
-<td> ${soapnotes.rightanklepain}</td>
+<td> <c:choose>
+	            <c:when test="${soapnotes.rightgluteulpain=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${soapnotes.rightgluteulpain}</c:otherwise>
+	          
+	            </c:choose></td>
+<td> <c:choose>
+	            <c:when test="${soapnotes.leftgluteulpain=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${soapnotes.leftgluteulpain}</c:otherwise>
+	          
+	            </c:choose></td>
+<td> <c:choose>
+	            <c:when test="${soapnotes.rightlegpain=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${soapnotes.rightlegpain}</c:otherwise>
+	          
+	            </c:choose></td>
+<td> <c:choose>
+	            <c:when test="${soapnotes.leftlegpain=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${soapnotes.leftlegpain}</c:otherwise>
+	          
+	            </c:choose></td>
+<td> <c:choose>
+	            <c:when test="${soapnotes.rightkneepain=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${soapnotes.rightkneepain}</c:otherwise>
+	          
+	            </c:choose></td>
+<td> <c:choose>
+	            <c:when test="${soapnotes.leftkneepain=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${soapnotes.leftkneepain}</c:otherwise>
+	          
+	            </c:choose></td>
+<td> <c:choose>
+	            <c:when test="${soapnotes.rightanklepain=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${soapnotes.rightanklepain}</c:otherwise>
+	          
+	            </c:choose></td>
 </tr>
 <tr class="row1">
 <td></td>
-<td> ${soapnotes.leftanklepain}</td>
-<td> ${soapnotes.rightfootpain}</td>
-<td> ${soapnotes.leftfootpain}</td>
+<td> <c:choose>
+	            <c:when test="${soapnotes.leftanklepain=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${soapnotes.leftanklepain}</c:otherwise>
+	          
+	            </c:choose></td>
+<td> <c:choose>
+	            <c:when test="${soapnotes.rightfootpain=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${soapnotes.rightfootpain}</c:otherwise>
+	          
+	            </c:choose></td>
+<td> <c:choose>
+	            <c:when test="${soapnotes.leftfootpain=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${soapnotes.leftfootpain}</c:otherwise>
+	          
+	            </c:choose></td>
 </tr>
 </table>
 <table cellpadding="0" cellspacing="0" border="1" width="98%">
