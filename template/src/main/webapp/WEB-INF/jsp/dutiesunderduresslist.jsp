@@ -90,8 +90,8 @@ $(function() {
 	            </c:choose> </td>
  <td>Lifting</td> 
  <td><c:choose>
-	            <c:when test="${dutiesunderduressdetails.incresedpain1=='null'}"><c:out value=""></c:out></c:when>
-	            <c:otherwise> ${dutiesunderduressdetails.incresedpain1}</c:otherwise>
+	            <c:when test="${dutiesunderduressdetails.incresedpain=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${dutiesunderduressdetails.incresedpain}</c:otherwise>
 	          
 	            </c:choose>&nbsp;Increased Pain &nbsp;&nbsp;<c:choose>
 	            <c:when test="${dutiesunderduressdetails.restrictedmovement1=='null'}"><c:out value=""></c:out></c:when>

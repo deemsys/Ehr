@@ -44,7 +44,8 @@ $(function() {
   <script >
 function yesnoCheck() {
     if (document.getElementById('yesCheck').checked) {
-        document.getElementById('Increased pain').style.visibility = 'hidden';
+        document.getElementById('incresedpain1').style.visibility = 'hidden';
+        document.getElementById('l1').style.visibility = 'hidden';
         document.getElementById('ip1').style.visibility = 'hidden';
         document.getElementById('rm1').style.visibility = 'hidden';
          document.getElementById('w1').style.visibility = 'hidden';
@@ -55,38 +56,10 @@ function yesnoCheck() {
 	document.getElementById('sincemva1').style.visibility = 'hidden';
 document.getElementById('ongoing1').style.visibility = 'hidden';
 }
-else if(document.getElementById('yesCheck1').checked) {
-document.getElementById('incresedpain2').style.visibility = 'hidden';
-document.getElementById('restrictedmovement2').style.visibility = 'hidden';
-document.getElementById('weekness2').style.visibility = 'hidden';
-document.getElementById('sincemva2').style.visibility = 'hidden';
-document.getElementById('ongoing2').style.visibility = 'hidden';
-}
-else if(document.getElementById('yesCheck2').checked) {
-document.getElementById('incresedpain3').style.visibility = 'hidden';
-document.getElementById('restrictedmovement3').style.visibility = 'hidden';
-document.getElementById('weekness3').style.visibility = 'hidden';
-document.getElementById('sincemva3').style.visibility = 'hidden';
-document.getElementById('ongoing3').style.visibility = 'hidden';
-}
-else if(document.getElementById('yesCheck3').checked) {
-document.getElementById('incresedpain4').style.visibility = 'hidden';
-document.getElementById('restrictedmovement4').style.visibility = 'hidden';
-document.getElementById('weekness4').style.visibility = 'hidden';
-document.getElementById('sincemva4').style.visibility = 'hidden';
-document.getElementById('ongoing4').style.visibility = 'hidden';
-}
-else if(document.getElementById('yesCheck4').checked) {
-document.getElementById('incresedpain5').style.visibility = 'hidden';
-document.getElementById('restrictedmovement5').style.visibility = 'hidden';
-document.getElementById('weekness5').style.visibility = 'hidden';
-document.getElementById('sincemva5').style.visibility = 'hidden';
-document.getElementById('ongoing5').style.visibility = 'hidden';
-}
-    
-    else 
+else 
 {
-document.getElementById('Increased pain').style.visibility = 'visible';
+document.getElementById('l1').style.visibility = 'visible';
+document.getElementById('incresedpain1').style.visibility = 'visible';
  document.getElementById('ip1').style.visibility = 'visible';
 document.getElementById('restrictedmovement1').style.visibility = 'visible';
 document.getElementById('rm1').style.visibility = 'visible';
@@ -96,22 +69,515 @@ document.getElementById('sincemva1').style.visibility = 'visible';
 document.getElementById('mva1').style.visibility = 'visible';
 document.getElementById('ongoing1').style.visibility = 'visible';
 document.getElementById('o1').style.visibility = 'visible';
-document.getElementById('incresedpain2').style.visibility = 'visible';
-document.getElementById('restrictedmovement2').style.visibility = 'visible';
-document.getElementById('weekness2').style.visibility = 'visible';
-document.getElementById('sincemva2').style.visibility = 'visible';
-document.getElementById('ongoing2').style.visibility = 'visible';
+}
+
+}
+
+
+function yesnoCheck2(){
+
+if(document.getElementById('yesCheck2').checked) {
+document.getElementById('s1').style.visibility = 'hidden';
+document.getElementById('incresedpain3').style.visibility = 'hidden';
+document.getElementById('restrictedmovement3').style.visibility = 'hidden';
+document.getElementById('weekness3').style.visibility = 'hidden';
+document.getElementById('sincemva3').style.visibility = 'hidden';
+document.getElementById('ongoing3').style.visibility = 'hidden';
+document.getElementById('ip3').style.visibility = 'hidden';
+        document.getElementById('rm3').style.visibility = 'hidden';
+         document.getElementById('w3').style.visibility = 'hidden';
+          document.getElementById('mva3').style.visibility = 'hidden';
+          document.getElementById('o3').style.visibility = 'hidden';
+}
+else
+{
+    document.getElementById('s1').style.visibility = 'visible';
 document.getElementById('incresedpain3').style.visibility = 'visible';
 document.getElementById('restrictedmovement3').style.visibility = 'visible';
 document.getElementById('weekness3').style.visibility = 'visible';
 document.getElementById('sincemva3').style.visibility = 'visible';
 document.getElementById('ongoing3').style.visibility = 'visible';
+document.getElementById('ip3').style.visibility = 'visible';
+document.getElementById('rm3').style.visibility = 'visible';
+         document.getElementById('w3').style.visibility = 'visible';
+          document.getElementById('mva3').style.visibility = 'visible';
+          document.getElementById('o3').style.visibility = 'visible';
+}
+}
 
-document.getElementById('incresedpain4').style.visibility = 'visible';
-document.getElementById('restrictedmovement4').style.visibility = 'visible';
-document.getElementById('weekness4').style.visibility = 'visible';
-document.getElementById('sincemva4').style.visibility = 'visible';
-document.getElementById('ongoing4').style.visibility = 'visible';
+
+function yesnoCheck5() {
+    if (document.getElementById('yesCheck5').checked) {
+        document.getElementById('incresedpain8').style.visibility = 'hidden';
+        document.getElementById('l2').style.visibility = 'hidden';
+        document.getElementById('ip8').style.visibility = 'hidden';
+        document.getElementById('rm8').style.visibility = 'hidden';
+         document.getElementById('w8').style.visibility = 'hidden';
+          document.getElementById('mva8').style.visibility = 'hidden';
+          document.getElementById('o8').style.visibility = 'hidden';
+        document.getElementById('restrictedmovement8').style.visibility = 'hidden';
+        document.getElementById('weekness8').style.visibility = 'hidden';
+	document.getElementById('sincemva8').style.visibility = 'hidden';
+document.getElementById('ongoing8').style.visibility = 'hidden';
+}
+else 
+{
+document.getElementById('l2').style.visibility = 'visible';
+document.getElementById('incresedpain8').style.visibility = 'visible';
+ document.getElementById('ip8').style.visibility = 'visible';
+document.getElementById('restrictedmovement8').style.visibility = 'visible';
+document.getElementById('rm8').style.visibility = 'visible';
+ document.getElementById('weekness8').style.visibility = 'visible';
+ document.getElementById('w8').style.visibility = 'visible';
+document.getElementById('sincemva8').style.visibility = 'visible';
+document.getElementById('mva8').style.visibility = 'visible';
+document.getElementById('ongoing8').style.visibility = 'visible';
+document.getElementById('o8').style.visibility = 'visible';
+}
+
+}
+function yesnoCheck6() {
+    if (document.getElementById('yesCheck6').checked) {
+        document.getElementById('incresedpain9').style.visibility = 'hidden';
+        document.getElementById('be2').style.visibility = 'hidden';
+        document.getElementById('ip9').style.visibility = 'hidden';
+        document.getElementById('rm9').style.visibility = 'hidden';
+         document.getElementById('w9').style.visibility = 'hidden';
+          document.getElementById('mva9').style.visibility = 'hidden';
+          document.getElementById('o9').style.visibility = 'hidden';
+        document.getElementById('restrictedmovement9').style.visibility = 'hidden';
+        document.getElementById('weekness9').style.visibility = 'hidden';
+	document.getElementById('sincemva9').style.visibility = 'hidden';
+document.getElementById('ongoing9').style.visibility = 'hidden';
+}
+else 
+{
+document.getElementById('be2').style.visibility = 'visible';
+document.getElementById('incresedpain9').style.visibility = 'visible';
+ document.getElementById('ip9').style.visibility = 'visible';
+document.getElementById('restrictedmovement9').style.visibility = 'visible';
+document.getElementById('rm9').style.visibility = 'visible';
+ document.getElementById('weekness9').style.visibility = 'visible';
+ document.getElementById('w9').style.visibility = 'visible';
+document.getElementById('sincemva9').style.visibility = 'visible';
+document.getElementById('mva9').style.visibility = 'visible';
+document.getElementById('ongoing9').style.visibility = 'visible';
+document.getElementById('o9').style.visibility = 'visible';
+}
+
+}
+function yesnoCheck7() {
+    if (document.getElementById('yesCheck7').checked) {
+        document.getElementById('incresedpain10').style.visibility = 'hidden';
+        document.getElementById('s2').style.visibility = 'hidden';
+        document.getElementById('ip10').style.visibility = 'hidden';
+        document.getElementById('rm10').style.visibility = 'hidden';
+         document.getElementById('w10').style.visibility = 'hidden';
+          document.getElementById('mva10').style.visibility = 'hidden';
+          document.getElementById('o10').style.visibility = 'hidden';
+        document.getElementById('restrictedmovement10').style.visibility = 'hidden';
+        document.getElementById('weekness10').style.visibility = 'hidden';
+	document.getElementById('sincemva10').style.visibility = 'hidden';
+document.getElementById('ongoing10').style.visibility = 'hidden';
+}
+else 
+{
+document.getElementById('s2').style.visibility = 'visible';
+document.getElementById('incresedpain10').style.visibility = 'visible';
+ document.getElementById('ip10').style.visibility = 'visible';
+document.getElementById('restrictedmovement10').style.visibility = 'visible';
+document.getElementById('rm10').style.visibility = 'visible';
+ document.getElementById('weekness10').style.visibility = 'visible';
+ document.getElementById('w10').style.visibility = 'visible';
+document.getElementById('sincemva10').style.visibility = 'visible';
+document.getElementById('mva10').style.visibility = 'visible';
+document.getElementById('ongoing10').style.visibility = 'visible';
+document.getElementById('o10').style.visibility = 'visible';
+}
+
+}
+function yesnoCheck8() {
+    if (document.getElementById('yesCheck8').checked) {
+        document.getElementById('incresedpain11').style.visibility = 'hidden';
+        document.getElementById('wa11').style.visibility = 'hidden';
+        document.getElementById('ip11').style.visibility = 'hidden';
+        document.getElementById('rm11').style.visibility = 'hidden';
+         document.getElementById('w11').style.visibility = 'hidden';
+          document.getElementById('mva11').style.visibility = 'hidden';
+          document.getElementById('o11').style.visibility = 'hidden';
+        document.getElementById('restrictedmovement11').style.visibility = 'hidden';
+        document.getElementById('weekness11').style.visibility = 'hidden';
+	document.getElementById('sincemva11').style.visibility = 'hidden';
+document.getElementById('ongoing11').style.visibility = 'hidden';
+}
+else 
+{
+document.getElementById('wa11').style.visibility = 'visible';
+document.getElementById('incresedpain11').style.visibility = 'visible';
+ document.getElementById('ip11').style.visibility = 'visible';
+document.getElementById('restrictedmovement11').style.visibility = 'visible';
+document.getElementById('rm11').style.visibility = 'visible';
+ document.getElementById('weekness11').style.visibility = 'visible';
+ document.getElementById('w11').style.visibility = 'visible';
+document.getElementById('sincemva11').style.visibility = 'visible';
+document.getElementById('mva11').style.visibility = 'visible';
+document.getElementById('ongoing11').style.visibility = 'visible';
+document.getElementById('o11').style.visibility = 'visible';
+}
+
+}
+function yesnoCheck9() {
+    if (document.getElementById('yesCheck9').checked) {
+        document.getElementById('incresedpain12').style.visibility = 'hidden';
+        document.getElementById('ca12').style.visibility = 'hidden';
+        document.getElementById('ip12').style.visibility = 'hidden';
+        document.getElementById('rm12').style.visibility = 'hidden';
+         document.getElementById('w12').style.visibility = 'hidden';
+          document.getElementById('mva12').style.visibility = 'hidden';
+          document.getElementById('o12').style.visibility = 'hidden';
+        document.getElementById('restrictedmovement12').style.visibility = 'hidden';
+        document.getElementById('weekness12').style.visibility = 'hidden';
+	document.getElementById('sincemva12').style.visibility = 'hidden';
+document.getElementById('ongoing12').style.visibility = 'hidden';
+}
+else 
+{
+document.getElementById('ca12').style.visibility = 'visible';
+document.getElementById('incresedpain12').style.visibility = 'visible';
+ document.getElementById('ip12').style.visibility = 'visible';
+document.getElementById('restrictedmovement12').style.visibility = 'visible';
+document.getElementById('rm12').style.visibility = 'visible';
+ document.getElementById('weekness12').style.visibility = 'visible';
+ document.getElementById('w12').style.visibility = 'visible';
+document.getElementById('sincemva12').style.visibility = 'visible';
+document.getElementById('mva12').style.visibility = 'visible';
+document.getElementById('ongoing12').style.visibility = 'visible';
+document.getElementById('o12').style.visibility = 'visible';
+}
+
+}
+function yesnoCheck10() {
+    if (document.getElementById('yesCheck10').checked) {
+        document.getElementById('incresedpainstudy').style.visibility = 'hidden';
+        document.getElementById('st13').style.visibility = 'hidden';
+        document.getElementById('ip13').style.visibility = 'hidden';
+        document.getElementById('rm13').style.visibility = 'hidden';
+         document.getElementById('w13').style.visibility = 'hidden';
+          document.getElementById('mva13').style.visibility = 'hidden';
+          document.getElementById('o13').style.visibility = 'hidden';
+        document.getElementById('restrictedmovementstudy').style.visibility = 'hidden';
+        document.getElementById('weeknessstudy').style.visibility = 'hidden';
+	document.getElementById('sincemvastudy').style.visibility = 'hidden';
+document.getElementById('ongoingstudy').style.visibility = 'hidden';
+}
+else 
+{
+document.getElementById('st13').style.visibility = 'visible';
+document.getElementById('incresedpainstudy').style.visibility = 'visible';
+ document.getElementById('ip13').style.visibility = 'visible';
+document.getElementById('restrictedmovementstudy').style.visibility = 'visible';
+document.getElementById('rm13').style.visibility = 'visible';
+ document.getElementById('weeknessstudy').style.visibility = 'visible';
+ document.getElementById('w13').style.visibility = 'visible';
+document.getElementById('sincemvastudy').style.visibility = 'visible';
+document.getElementById('mva13').style.visibility = 'visible';
+document.getElementById('ongoingstudy').style.visibility = 'visible';
+document.getElementById('o13').style.visibility = 'visible';
+}
+
+}
+function yesnoCheck11() {
+    if (document.getElementById('yesCheck11').checked) {
+        document.getElementById('incresedpainconcentrate').style.visibility = 'hidden';
+        document.getElementById('co14').style.visibility = 'hidden';
+        document.getElementById('ip14').style.visibility = 'hidden';
+        document.getElementById('rm14').style.visibility = 'hidden';
+         document.getElementById('w14').style.visibility = 'hidden';
+          document.getElementById('mva14').style.visibility = 'hidden';
+          document.getElementById('o14').style.visibility = 'hidden';
+        document.getElementById('restrictedmovementconcentrate').style.visibility = 'hidden';
+        document.getElementById('weeknessconcentrate').style.visibility = 'hidden';
+	document.getElementById('sincemvaconcentrate').style.visibility = 'hidden';
+document.getElementById('ongoingconcentrate').style.visibility = 'hidden';
+}
+else 
+{
+document.getElementById('co14').style.visibility = 'visible';
+document.getElementById('incresedpainconcentrate').style.visibility = 'visible';
+ document.getElementById('ip14').style.visibility = 'visible';
+document.getElementById('restrictedmovementconcentrate').style.visibility = 'visible';
+document.getElementById('rm14').style.visibility = 'visible';
+ document.getElementById('weeknessconcentrate').style.visibility = 'visible';
+ document.getElementById('w14').style.visibility = 'visible';
+document.getElementById('sincemvaconcentrate').style.visibility = 'visible';
+document.getElementById('mva14').style.visibility = 'visible';
+document.getElementById('ongoingconcentrate').style.visibility = 'visible';
+document.getElementById('o14').style.visibility = 'visible';
+}
+
+}
+function yesnoCheck12() {
+    if (document.getElementById('yesCheck12').checked) {
+        document.getElementById('incresedpain15').style.visibility = 'hidden';
+        document.getElementById('va15').style.visibility = 'hidden';
+        document.getElementById('ip15').style.visibility = 'hidden';
+        document.getElementById('rm15').style.visibility = 'hidden';
+         document.getElementById('w15').style.visibility = 'hidden';
+          document.getElementById('mva15').style.visibility = 'hidden';
+          document.getElementById('o15').style.visibility = 'hidden';
+        document.getElementById('restrictedmovement15').style.visibility = 'hidden';
+        document.getElementById('weekness15').style.visibility = 'hidden';
+	document.getElementById('sincemva15').style.visibility = 'hidden';
+document.getElementById('ongoing15').style.visibility = 'hidden';
+}
+else 
+{
+document.getElementById('va15').style.visibility = 'visible';
+document.getElementById('incresedpain15').style.visibility = 'visible';
+ document.getElementById('ip15').style.visibility = 'visible';
+document.getElementById('restrictedmovement15').style.visibility = 'visible';
+document.getElementById('rm15').style.visibility = 'visible';
+ document.getElementById('weekness15').style.visibility = 'visible';
+ document.getElementById('w15').style.visibility = 'visible';
+document.getElementById('sincemva15').style.visibility = 'visible';
+document.getElementById('mva15').style.visibility = 'visible';
+document.getElementById('ongoing15').style.visibility = 'visible';
+document.getElementById('o15').style.visibility = 'visible';
+}
+
+}
+function yesnoCheck13() {
+    if (document.getElementById('yesCheck13').checked) {
+        document.getElementById('incresedpain16').style.visibility = 'hidden';
+        document.getElementById('tc16').style.visibility = 'hidden';
+        document.getElementById('ip16').style.visibility = 'hidden';
+        document.getElementById('rm16').style.visibility = 'hidden';
+         document.getElementById('w16').style.visibility = 'hidden';
+          document.getElementById('mva16').style.visibility = 'hidden';
+          document.getElementById('o16').style.visibility = 'hidden';
+        document.getElementById('restrictedmovement16').style.visibility = 'hidden';
+        document.getElementById('weekness16').style.visibility = 'hidden';
+	document.getElementById('sincemva16').style.visibility = 'hidden';
+document.getElementById('ongoing16').style.visibility = 'hidden';
+}
+else 
+{
+document.getElementById('tc16').style.visibility = 'visible';
+document.getElementById('incresedpain16').style.visibility = 'visible';
+ document.getElementById('ip16').style.visibility = 'visible';
+document.getElementById('restrictedmovement16').style.visibility = 'visible';
+document.getElementById('rm16').style.visibility = 'visible';
+ document.getElementById('weekness16').style.visibility = 'visible';
+ document.getElementById('w16').style.visibility = 'visible';
+document.getElementById('sincemva16').style.visibility = 'visible';
+document.getElementById('mva16').style.visibility = 'visible';
+document.getElementById('ongoing16').style.visibility = 'visible';
+document.getElementById('o16').style.visibility = 'visible';
+}
+
+}
+function yesnoCheck14() {
+    if (document.getElementById('yesCheck14').checked) {
+        document.getElementById('incresedpain17').style.visibility = 'hidden';
+        document.getElementById('cl17').style.visibility = 'hidden';
+        document.getElementById('ip17').style.visibility = 'hidden';
+        document.getElementById('rm17').style.visibility = 'hidden';
+         document.getElementById('w17').style.visibility = 'hidden';
+          document.getElementById('mva17').style.visibility = 'hidden';
+          document.getElementById('o17').style.visibility = 'hidden';
+        document.getElementById('restrictedmovement17').style.visibility = 'hidden';
+        document.getElementById('weekness17').style.visibility = 'hidden';
+	document.getElementById('sincemva17').style.visibility = 'hidden';
+document.getElementById('ongoing17').style.visibility = 'hidden';
+}
+else 
+{
+document.getElementById('cl17').style.visibility = 'visible';
+document.getElementById('incresedpain17').style.visibility = 'visible';
+ document.getElementById('ip17').style.visibility = 'visible';
+document.getElementById('restrictedmovement17').style.visibility = 'visible';
+document.getElementById('rm17').style.visibility = 'visible';
+ document.getElementById('weekness17').style.visibility = 'visible';
+ document.getElementById('w17').style.visibility = 'visible';
+document.getElementById('sincemva17').style.visibility = 'visible';
+document.getElementById('mva17').style.visibility = 'visible';
+document.getElementById('ongoing17').style.visibility = 'visible';
+document.getElementById('o17').style.visibility = 'visible';
+}
+
+}
+function yesnoCheck15() {
+    if (document.getElementById('yesCheck15').checked) {
+        document.getElementById('incresedpain18').style.visibility = 'hidden';
+        document.getElementById('pm18').style.visibility = 'hidden';
+        document.getElementById('ip18').style.visibility = 'hidden';
+        document.getElementById('rm18').style.visibility = 'hidden';
+         document.getElementById('w18').style.visibility = 'hidden';
+          document.getElementById('mva18').style.visibility = 'hidden';
+          document.getElementById('o18').style.visibility = 'hidden';
+        document.getElementById('restrictedmovement18').style.visibility = 'hidden';
+        document.getElementById('weekness18').style.visibility = 'hidden';
+	document.getElementById('sincemva18').style.visibility = 'hidden';
+document.getElementById('ongoing18').style.visibility = 'hidden';
+}
+else 
+{
+document.getElementById('pm18').style.visibility = 'visible';
+document.getElementById('incresedpain18').style.visibility = 'visible';
+ document.getElementById('ip18').style.visibility = 'visible';
+document.getElementById('restrictedmovement18').style.visibility = 'visible';
+document.getElementById('rm18').style.visibility = 'visible';
+ document.getElementById('weekness18').style.visibility = 'visible';
+ document.getElementById('w18').style.visibility = 'visible';
+document.getElementById('sincemva18').style.visibility = 'visible';
+document.getElementById('mva18').style.visibility = 'visible';
+document.getElementById('ongoing18').style.visibility = 'visible';
+document.getElementById('o18').style.visibility = 'visible';
+}
+
+}
+
+function yesnoCheck16() {
+    if (document.getElementById('yesCheck16').checked) {
+        document.getElementById('incresedpain22').style.visibility = 'hidden';
+        document.getElementById('yw22').style.visibility = 'hidden';
+        document.getElementById('ip22').style.visibility = 'hidden';
+        document.getElementById('rm22').style.visibility = 'hidden';
+         document.getElementById('w22').style.visibility = 'hidden';
+          document.getElementById('mva22').style.visibility = 'hidden';
+          document.getElementById('o22').style.visibility = 'hidden';
+        document.getElementById('restrictedmovement22').style.visibility = 'hidden';
+        document.getElementById('weekness22').style.visibility = 'hidden';
+	document.getElementById('sincemva22').style.visibility = 'hidden';
+document.getElementById('ongoing22').style.visibility = 'hidden';
+}
+else 
+{
+document.getElementById('yw22').style.visibility = 'visible';
+document.getElementById('incresedpain22').style.visibility = 'visible';
+ document.getElementById('ip22').style.visibility = 'visible';
+document.getElementById('restrictedmovement22').style.visibility = 'visible';
+document.getElementById('rm22').style.visibility = 'visible';
+ document.getElementById('weekness22').style.visibility = 'visible';
+ document.getElementById('w22').style.visibility = 'visible';
+document.getElementById('sincemva22').style.visibility = 'visible';
+document.getElementById('mva22').style.visibility = 'visible';
+document.getElementById('ongoing22').style.visibility = 'visible';
+document.getElementById('o22').style.visibility = 'visible';
+}
+
+}
+function yesnoCheck17() {
+    if (document.getElementById('yesCheck17').checked) {
+        document.getElementById('incresedpain23').style.visibility = 'hidden';
+        document.getElementById('tr23').style.visibility = 'hidden';
+        document.getElementById('ip23').style.visibility = 'hidden';
+        document.getElementById('rm23').style.visibility = 'hidden';
+         document.getElementById('w23').style.visibility = 'hidden';
+          document.getElementById('mva23').style.visibility = 'hidden';
+          document.getElementById('o23').style.visibility = 'hidden';
+        document.getElementById('restrictedmovement23').style.visibility = 'hidden';
+        document.getElementById('weekness23').style.visibility = 'hidden';
+	document.getElementById('sincemva23').style.visibility = 'hidden';
+document.getElementById('ongoing23').style.visibility = 'hidden';
+}
+else 
+{
+document.getElementById('tr23').style.visibility = 'visible';
+document.getElementById('incresedpain23').style.visibility = 'visible';
+ document.getElementById('ip23').style.visibility = 'visible';
+document.getElementById('restrictedmovement23').style.visibility = 'visible';
+document.getElementById('rm23').style.visibility = 'visible';
+ document.getElementById('weekness23').style.visibility = 'visible';
+ document.getElementById('w23').style.visibility = 'visible';
+document.getElementById('sincemva23').style.visibility = 'visible';
+document.getElementById('mva23').style.visibility = 'visible';
+document.getElementById('ongoing23').style.visibility = 'visible';
+document.getElementById('o23').style.visibility = 'visible';
+}
+
+}
+
+function yesnoCheck19() {
+    if (document.getElementById('yesCheck19').checked) {
+        document.getElementById('incresedpain25').style.visibility = 'hidden';
+        document.getElementById('to25').style.visibility = 'hidden';
+        document.getElementById('ip25').style.visibility = 'hidden';
+        document.getElementById('rm25').style.visibility = 'hidden';
+         document.getElementById('w25').style.visibility = 'hidden';
+          document.getElementById('mva25').style.visibility = 'hidden';
+          document.getElementById('o25').style.visibility = 'hidden';
+        document.getElementById('restrictedmovement25').style.visibility = 'hidden';
+        document.getElementById('weekness25').style.visibility = 'hidden';
+	document.getElementById('sincemva25').style.visibility = 'hidden';
+document.getElementById('ongoing25').style.visibility = 'hidden';
+}
+else 
+{
+document.getElementById('to25').style.visibility = 'visible';
+document.getElementById('incresedpain25').style.visibility = 'visible';
+ document.getElementById('ip25').style.visibility = 'visible';
+document.getElementById('restrictedmovement25').style.visibility = 'visible';
+document.getElementById('rm25').style.visibility = 'visible';
+ document.getElementById('weekness25').style.visibility = 'visible';
+ document.getElementById('w25').style.visibility = 'visible';
+document.getElementById('sincemva25').style.visibility = 'visible';
+document.getElementById('mva25').style.visibility = 'visible';
+document.getElementById('ongoing25').style.visibility = 'visible';
+document.getElementById('o25').style.visibility = 'visible';
+}
+
+}
+function yesnoCheck18() {
+    if (document.getElementById('yesCheck18').checked) {
+        document.getElementById('incresedpain24').style.visibility = 'hidden';
+        document.getElementById('sh24').style.visibility = 'hidden';
+        document.getElementById('ip24').style.visibility = 'hidden';
+        document.getElementById('rm24').style.visibility = 'hidden';
+         document.getElementById('w24').style.visibility = 'hidden';
+          document.getElementById('mva24').style.visibility = 'hidden';
+          document.getElementById('o24').style.visibility = 'hidden';
+        document.getElementById('restrictedmovement24').style.visibility = 'hidden';
+        document.getElementById('weekness24').style.visibility = 'hidden';
+	document.getElementById('sincemva24').style.visibility = 'hidden';
+document.getElementById('ongoing24').style.visibility = 'hidden';
+}
+else 
+{
+document.getElementById('sh24').style.visibility = 'visible';
+document.getElementById('incresedpain24').style.visibility = 'visible';
+ document.getElementById('ip24').style.visibility = 'visible';
+document.getElementById('restrictedmovement24').style.visibility = 'visible';
+document.getElementById('rm24').style.visibility = 'visible';
+ document.getElementById('weekness24').style.visibility = 'visible';
+ document.getElementById('w24').style.visibility = 'visible';
+document.getElementById('sincemva24').style.visibility = 'visible';
+document.getElementById('mva24').style.visibility = 'visible';
+document.getElementById('ongoing24').style.visibility = 'visible';
+document.getElementById('o24').style.visibility = 'visible';
+}
+
+}
+function yesnoCheck4() {
+    if (document.getElementById('yesCheck4').checked) {
+document.getElementById('incresedpain5').style.visibility = 'hidden';
+document.getElementById('restrictedmovement5').style.visibility = 'hidden';
+document.getElementById('weekness5').style.visibility = 'hidden';
+document.getElementById('sincemva5').style.visibility = 'hidden';
+document.getElementById('ongoing5').style.visibility = 'hidden';
+
+       
+        document.getElementById('be1').style.visibility = 'hidden';
+        document.getElementById('ip5').style.visibility = 'hidden';
+        document.getElementById('rm5').style.visibility = 'hidden';
+         document.getElementById('w5').style.visibility = 'hidden';
+          document.getElementById('mva5').style.visibility = 'hidden';
+          document.getElementById('o5').style.visibility = 'hidden';
+        
+}
+else 
+{
+
 
 document.getElementById('incresedpain5').style.visibility = 'visible';
 document.getElementById('restrictedmovement5').style.visibility = 'visible';
@@ -119,8 +585,81 @@ document.getElementById('weekness5').style.visibility = 'visible';
 document.getElementById('sincemva5').style.visibility = 'visible';
 document.getElementById('ongoing5').style.visibility = 'visible';
 
+document.getElementById('be1').style.visibility = 'visible';
+ document.getElementById('ip5').style.visibility = 'visible';
+document.getElementById('mva5').style.visibility = 'visible';
+document.getElementById('rm5').style.visibility = 'visible';
+ document.getElementById('w5').style.visibility = 'visible';
+document.getElementById('o5').style.visibility = 'visible';
+}
+
+}
+function yesnoCheck3() {
+    if (document.getElementById('yesCheck3').checked) {
+document.getElementById('incresedpain4').style.visibility = 'hidden';
+document.getElementById('restrictedmovement4').style.visibility = 'hidden';
+document.getElementById('weekness4').style.visibility = 'hidden';
+document.getElementById('sincemva4').style.visibility = 'hidden';
+document.getElementById('ongoing4').style.visibility = 'hidden';
+      
+        document.getElementById('wa1').style.visibility = 'hidden';
+        document.getElementById('ip4').style.visibility = 'hidden';
+        document.getElementById('rm4').style.visibility = 'hidden';
+         document.getElementById('w4').style.visibility = 'hidden';
+          document.getElementById('mva4').style.visibility = 'hidden';
+          document.getElementById('o4').style.visibility = 'hidden';
+        
+}
+else 
+{
+
+document.getElementById('incresedpain4').style.visibility = 'visible';
+document.getElementById('restrictedmovement4').style.visibility = 'visible';
+document.getElementById('weekness4').style.visibility = 'visible';
+document.getElementById('sincemva4').style.visibility = 'visible';
+document.getElementById('ongoing4').style.visibility = 'visible';
+
+document.getElementById('wa1').style.visibility = 'visible';
+ document.getElementById('ip4').style.visibility = 'visible';
+document.getElementById('rm4').style.visibility = 'visible';
+ document.getElementById('w4').style.visibility = 'visible';
+document.getElementById('mva4').style.visibility = 'visible';
+document.getElementById('o4').style.visibility = 'visible';
+}
+
+}
+
+function yesnoCheck1(){
+if(document.getElementById('yesCheck1').checked) {
+document.getElementById('b1').style.visibility = 'hidden';
+document.getElementById('incresedpain2').style.visibility = 'hidden';
+document.getElementById('restrictedmovement2').style.visibility = 'hidden';
+document.getElementById('weekness2').style.visibility = 'hidden';
+document.getElementById('sincemva2').style.visibility = 'hidden';
+document.getElementById('ongoing2').style.visibility = 'hidden';
+document.getElementById('ip2').style.visibility = 'hidden';
+        document.getElementById('rm2').style.visibility = 'hidden';
+         document.getElementById('w2').style.visibility = 'hidden';
+          document.getElementById('mva2').style.visibility = 'hidden';
+          document.getElementById('o2').style.visibility = 'hidden';
+}
+else
+{
+  document.getElementById('b1').style.visibility = 'visible';  
+document.getElementById('incresedpain2').style.visibility = 'visible';
+document.getElementById('restrictedmovement2').style.visibility = 'visible';
+document.getElementById('weekness2').style.visibility = 'visible';
+document.getElementById('sincemva2').style.visibility = 'visible';
+document.getElementById('ongoing2').style.visibility = 'visible';
+document.getElementById('ip2').style.visibility = 'visible';
+document.getElementById('rm2').style.visibility = 'visible';
+         document.getElementById('w2').style.visibility = 'visible';
+          document.getElementById('mva2').style.visibility = 'visible';
+          document.getElementById('o2').style.visibility = 'visible';
 }
 }
+
+
   </script>
 </head>
  <body>
@@ -168,35 +707,41 @@ document.getElementById('ongoing5').style.visibility = 'visible';
  <tr class="row1">  
  <td><input type="checkbox" name="lifting1" value="Lifting" onclick="javascript:yesnoCheck();"id="yesCheck"> </td>
  
- <td>Lifting</td> 
- <td><input type="checkbox" name="incresedpain1" value="Increased pain" id="Increased pain">&nbsp;
+ <td><span id="l1">Lifting </span></td> 
+ <td><input type="checkbox" name="incresedpain1" value="Increased pain" id="incresedpain1">&nbsp;
  <span id="ip1">Increased Pain </span>&nbsp;&nbsp;<input type="checkbox" name="restrictedmovement1" id="restrictedmovement1"value="Restricted Movement">&nbsp;<span id="rm1">Restricted Movement </span> &nbsp;&nbsp; <input type="checkbox" name="weekness1" value="Weekness" id="Weekness">&nbsp;
 <span id="w1">Weekness</span></td>
  <td><input type="checkbox" name="sincemva1" value="Since MVA" id="sincemva1">&nbsp;<span id="mva1">Since MVA</span> &nbsp;&nbsp;<input type="checkbox" name="ongoing2" value="Ongoing" id="ongoing1">&nbsp;<span id="o1">Ongoing</span></td>
  </tr>
  <tr class="row1">  
- <td><input type="checkbox" name="bending1" value="Bending" onclick="javascript:yesnoCheck();"id="yesCheck1"> </td>
- <td>Bending</td> 
- <td><input type="checkbox" name="incresedpain2" value="Increased pain" id="incresedpain2">&nbsp;Increased Pain &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement2" value="Restricted Movement" id="restrictedmovement2">&nbsp;Restricted Movement &nbsp;&nbsp; <input type="checkbox" name="weekness2" value="Weekness" id="weekness2">&nbsp;Weekness</td>
- <td><input type="checkbox" name="sincemva2" value="Since MVA" id="sincemva2" >&nbsp;Since MVA &nbsp;&nbsp;<input type="checkbox" name="ongoing2" value="Ongoing" id="ongoing2">&nbsp;Ongoing</td>
+ <td><input type="checkbox" name="bending1" value="Bending" onclick="javascript:yesnoCheck1();"id="yesCheck1"> </td>
+ <td><span id="b1">Bending</span></td> 
+ <td><input type="checkbox" name="incresedpain2" value="Increased pain" id="incresedpain2">&nbsp;<span id="ip2">Increased Pain </span> &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement2" value="Restricted Movement" id="restrictedmovement2">&nbsp;<span id="rm2">Restricted Movement </span> &nbsp;&nbsp; <input type="checkbox" name="weekness2" value="Weekness" id="weekness2">&nbsp;<span id="w2">Weekness </span></td>
+ <td><input type="checkbox" name="sincemva2" value="Since MVA" id="sincemva2" >&nbsp;<span id="mva2">Since MVA </span> &nbsp;&nbsp;<input type="checkbox" name="ongoing2" value="Ongoing" id="ongoing2">&nbsp;<span id="o2">Ongoing </span></td>
  </tr>
  <tr class="row1">  
- <td><input type="checkbox" name="sitting1" value="Sitting" onclick="javascript:yesnoCheck();"id="yesCheck2"> </td>
- <td>Sitting</td> 
- <td><input type="checkbox" name="incresedpain3" value="Increased pain" id="incresedpain3">&nbsp;Increased Pain &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement3" value="Restricted Movement" id="restrictedmovement3">&nbsp;Restricted Movement &nbsp;&nbsp; <input type="checkbox" name="weekness3" value="Weekness" id="weekness3">&nbsp;Weekness</td>
- <td><input type="checkbox" name="sincemva3" value="Since MVA" id="sincemva3">&nbsp;Since MVA &nbsp;&nbsp;<input type="checkbox" name="ongoing3" value="Ongoing" id="ongoing3">&nbsp;Ongoing</td>
+ <td><input type="checkbox" name="sitting1" value="Sitting" onclick="javascript:yesnoCheck2();"id="yesCheck2"> </td>
+ <td><span id="s1">Sitting </span></td> 
+ <td><input type="checkbox" name="incresedpain3" value="Increased pain" id="incresedpain3">&nbsp;<span id="ip3">Increased Pain </span> &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement3" value="Restricted Movement" id="restrictedmovement3">&nbsp;<span id="rm3">Restricted Movement </span> &nbsp;&nbsp; <input type="checkbox" name="weekness3" value="Weekness" id="weekness3">&nbsp;<span id="w3">Weekness </span></td>
+ <td><input type="checkbox" name="sincemva3" value="Since MVA" id="sincemva3">&nbsp;<span id="mva3">Since MVA </span> &nbsp;&nbsp;<input type="checkbox" name="ongoing3" value="Ongoing" id="ongoing3">&nbsp;<span id="o3">Ongoing  </span></td>
  </tr>
  <tr class="row1">  
- <td><input type="checkbox" name="walking1" value="Walking" onclick="javascript:yesnoCheck();"id="yesCheck3"> </td>
- <td>Walking</td> 
- <td><input type="checkbox" name="incresedpain4" value="Increased pain" id="incresedpain4">&nbsp;Increased Pain &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement4" value="Restricted Movement" id="restrictedmovement4">&nbsp;Restricted Movement &nbsp;&nbsp; <input type="checkbox" name="weekness4" value="Weekness" id="weekness4">&nbsp;Weekness</td>
- <td><input type="checkbox" name="sincemva4" value="Since MVA" id="sincemva4">&nbsp;Since MVA &nbsp;&nbsp; <input type="checkbox" name="ongoing4" value="Ongoing" id="ongoing4">&nbsp;Ongoing</td>
+ <td><input type="checkbox" name="walking1" value="Walking" onclick="javascript:yesnoCheck3();"id="yesCheck3"> </td>
+ <td><span id="wa1">Walking </span></td> 
+ <td><input type="checkbox" name="incresedpain4" value="Increased pain" id="incresedpain4">&nbsp;<span id="ip4">Increased Pain </span>&nbsp;&nbsp;<input type="checkbox" name="restrictedmovement4" value="Restricted Movement" id="restrictedmovement4">&nbsp;<span id="rm4">Restricted Movement</span> &nbsp;&nbsp; <input type="checkbox" name="weekness4" value="Weekness" id="weekness4">&nbsp;<span id="w4">Weekness </span></td>
+ <td><input type="checkbox" name="sincemva4" value="Since MVA" id="sincemva4">&nbsp;<span id="mva4">Since MVA  </span>&nbsp;&nbsp; <input type="checkbox" name="ongoing4" value="Ongoing" id="ongoing4">&nbsp;<span id="o4">Ongoing </span></td>
  </tr>
  <tr class="row1">  
- <td><input type="checkbox" name="computerduties1" value="Computerduties" onclick="javascript:yesnoCheck();"id="yesCheck4"> </td>
- <td>Bending</td> 
- <td><input type="checkbox" name="incresedpain5" value="Increased pain" id="incresedpain5">&nbsp;Increased Pain &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement5" value="Restricted Movement" id="restrictedmovement5">&nbsp;Restricted Movement &nbsp;&nbsp; <input type="checkbox" name="weekness5" value="Fatigue" id="weekness5">&nbsp;Fatigue</td>
- <td><input type="checkbox" name="sincemva5" value="Since MVA" id="sincemva5">&nbsp;Since MVA &nbsp;&nbsp;<input type="checkbox" name="ongoing5" value="Ongoing" id="ongoing5">&nbsp;Ongoing</td>
+ <td><input type="checkbox" name="computerduties1" value="Computerduties" onclick="javascript:yesnoCheck4();"id="yesCheck4"> </td>
+ <td>
+<span id="be1">Bending </span></td> 
+ <td><input type="checkbox" name="incresedpain5" value="Increased pain" id="incresedpain5">&nbsp;
+<span id="ip5">Increased Pain </span>&nbsp;&nbsp;<input type="checkbox" name="restrictedmovement5" value="Restricted Movement" id="restrictedmovement5">&nbsp;
+<span id="rm5">Restricted Movement </span> &nbsp;&nbsp; <input type="checkbox" name="weekness5" value="Fatigue" id="weekness5">&nbsp;
+<span id="w5">Fatigue </span></td>
+ <td><input type="checkbox" name="sincemva5" value="Since MVA" id="sincemva5">&nbsp;
+<span id="mva5">Since MVA </span> &nbsp;&nbsp;<input type="checkbox" name="ongoing5" value="Ongoing" id="ongoing5">&nbsp;
+<span id="o5">Ongoing </span></td>
  </tr>
  <tr class="row1">  
  <td>Other</td>
@@ -217,46 +762,84 @@ document.getElementById('ongoing5').style.visibility = 'visible';
  <td><B style="font-size:14px">Duration</B></td>
  </tr>
  <tr class="row1">  
- <td><input type="checkbox" name="lifting2" value="Lifting"> </td>
- <td>Lifting</td> 
- <td><input type="checkbox" name="incresedpain8" value="Increased pain">&nbsp;Increased Pain &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement8" value="Restricted Movement">&nbsp;Restricted Movement &nbsp;&nbsp; <input type="checkbox" name="weekness8" value="Weekness">&nbsp;Weekness</td>
- <td><input type="checkbox" name="sincemva8" value="Since MVA">&nbsp;Since MVA &nbsp;&nbsp;<input type="checkbox" name="ongoing8" value="Ongoing">&nbsp;Ongoing</td>
+ <td><input type="checkbox" name="lifting2" value="Lifting" onclick="javascript:yesnoCheck5();"id="yesCheck5"> </td>
+ <td>
+<span id="l2">Lifting </span></td> 
+ <td><input type="checkbox" name="incresedpain8" value="Increased pain" id="incresedpain8">&nbsp;
+<span id="ip8">Increased Pain </span> &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement8" value="Restricted Movement" id="restrictedmovement8">&nbsp;
+<span id="rm8">Restricted Movement </span> &nbsp;&nbsp; <input type="checkbox" name="weekness8" value="Weekness" id="weekness8">&nbsp;
+<span id="w8">Weekness </span></td>
+ <td><input type="checkbox" name="sincemva8" value="Since MVA" id="sincemva8">&nbsp;
+<span id="mva8">Since MVA </span> &nbsp;&nbsp;<input type="checkbox" name="ongoing8" value="Ongoing" id="ongoing8">&nbsp;
+<span id="o8">Ongoing </span></td>
  </tr>
  <tr class="row1">  
- <td><input type="checkbox" name="bending2" value="Bending"> </td>
- <td>Bending</td> 
- <td><input type="checkbox" name="incresedpain9" value="Increased pain">&nbsp;Increased Pain &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement9" value="Restricted Movement">&nbsp;Restricted Movement &nbsp;&nbsp; <input type="checkbox" name="weekness9" value="Weekness">&nbsp;Weekness</td>
- <td><input type="checkbox" name="sincemva9" value="Since MVA">&nbsp;Since MVA &nbsp;&nbsp;<input type="checkbox" name="ongoing9" value="Ongoing">&nbsp;Ongoing</td>
+ <td><input type="checkbox" name="bending2" value="Bending" onclick="javascript:yesnoCheck6();"id="yesCheck6"> </td>
+ <td>
+<span id="be2">Bending </span>
+
+ </td> 
+ <td><input type="checkbox" name="incresedpain9" value="Increased pain" id="incresedpain9">&nbsp;
+<span id="ip9">Increased Pain </span>
+
+ &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement9" value="Restricted Movement" id="restrictedmovement9">&nbsp;
+<span id="rm9">Restricted Movement </span>
+
+  &nbsp;&nbsp; <input type="checkbox" name="weekness9" value="Weekness" id="weekness9">&nbsp;
+<span id="w9"> Weekness</span>
+
+  </td>
+ <td><input type="checkbox" name="sincemva9" value="Since MVA" id="sincemva9">&nbsp;
+<span id="mva9"> Since MVA </span>
+
+ &nbsp;&nbsp;<input type="checkbox" name="ongoing9" value="Ongoing" id="ongoing9">&nbsp;
+<span id="o9">Ongoing </span>
+
+ </td>
  </tr>
  <tr class="row1">  
- <td><input type="checkbox" name="sitting2" value="Sitting"> </td>
- <td>Sitting</td> 
- <td><input type="checkbox" name="incresedpain10" value="Increased pain">&nbsp;Increased Pain &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement10" value="Restricted Movement">&nbsp;Restricted Movement &nbsp;&nbsp; <input type="checkbox" name="weekness10" value="Weekness">&nbsp;Weekness</td>
- <td><input type="checkbox" name="sincemva10" value="Since MVA">&nbsp;Since MVA &nbsp;&nbsp;<input type="checkbox" name="ongoing10" value="Ongoing">&nbsp;Ongoing</td>
+ <td><input type="checkbox" name="sitting2" value="Sitting" onclick="javascript:yesnoCheck7();"id="yesCheck7"> </td>
+ <td>
+
+<span id="s2">Sitting </span></td> 
+ <td><input type="checkbox" name="incresedpain10" value="Increased pain" id="incresedpain10">&nbsp;
+
+<span id="ip10">Increased Pain </span> &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement10" value="Restricted Movement" id="restrictedmovement10">&nbsp;
+
+<span id="rm10">Restricted Movement </span> &nbsp;&nbsp; <input type="checkbox" name="weekness10" value="Weekness" id="weekness10">&nbsp;
+
+<span id="w10">Weekness </span></td>
+ <td><input type="checkbox" name="sincemva10" value="Since MVA" id="sincemva10">&nbsp;
+
+<span id="mva10">Since MVA </span> &nbsp;&nbsp;<input type="checkbox" name="ongoing10" value="Ongoing" id="ongoing10">&nbsp;
+
+<span id="o10">Ongoing </span></td>
  </tr>
  <tr class="row1">  
- <td><input type="checkbox" name="walking2" value="Walking"> </td>
- <td>Walking</td> 
- <td><input type="checkbox" name="incresedpain11" value="Increased pain">&nbsp;Increased Pain &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement11" value="Restricted Movement">&nbsp;Restricted Movement &nbsp;&nbsp; <input type="checkbox" name="weekness11" value="Weekness">&nbsp;Weekness</td>
- <td><input type="checkbox" name="sincemva11" value="Since MVA">&nbsp;Since MVA &nbsp;&nbsp; <input type="checkbox" name="ongoing11" value="Ongoing">&nbsp;Ongoing</td>
+ <td><input type="checkbox" name="walking2" value="Walking" onclick="javascript:yesnoCheck8();"id="yesCheck8"> </td>
+ <td><span id="wa11">Walking </span></td> 
+ <td><input type="checkbox" name="incresedpain11" value="Increased pain" id="incresedpain11">&nbsp;<span id="ip11">Increased Pain </span> &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement11" value="Restricted Movement" id="restrictedmovement11">&nbsp;<span id="rm11">Restricted Movement</span> &nbsp;&nbsp; <input type="checkbox" name="weekness11" value="Weekness" id="weekness11">&nbsp;<span id="w11">Weekness </span></td>
+ <td><input type="checkbox" name="sincemva11" value="Since MVA" id="sincemva11">&nbsp;<span id="mva11">Since MVA </span> &nbsp;&nbsp; <input type="checkbox" name="ongoing11" value="Ongoing" id="ongoing11">&nbsp;<span id="o11">Ongoing </span></td>
  </tr>
  <tr class="row1">  
- <td><input type="checkbox" name="computerduties2" value="Computerduties"> </td>
- <td>Computerduties</td> 
- <td><input type="checkbox" name="incresedpain12" value="Increased pain">&nbsp;Increased Pain &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement12" value="Restricted Movement">&nbsp;Restricted Movement &nbsp;&nbsp; <input type="checkbox" name="weekness12" value="Fatigue">&nbsp;Fatigue</td>
- <td><input type="checkbox" name="sincemva12" value="Since MVA">&nbsp;Since MVA &nbsp;&nbsp;<input type="checkbox" name="ongoing12" value="Ongoing">&nbsp;Ongoing</td>
+ <td><input type="checkbox" name="computerduties2" value="Computerduties" onclick="javascript:yesnoCheck9();"id="yesCheck9"> </td>
+ <td><span id="ca12">Computerduties </span></td> 
+ <td><input type="checkbox" name="incresedpain12" value="Increased pain" id="incresedpain12">&nbsp;<span id="ip12">Increased Pain </span> &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement12" value="Restricted Movement" id="restrictedmovement12">&nbsp;<span id="rm12">Restricted Movement</span> &nbsp;&nbsp; <input type="checkbox" name="weekness12" value="Fatigue" id="weekness12">&nbsp;<span id="w12">Fatigue </span></td>
+ <td><input type="checkbox" name="sincemva12" value="Since MVA" id="sincemva12">&nbsp;<span id="mva12">Since MVA </span> &nbsp;&nbsp;<input type="checkbox" name="ongoing12" value="Ongoing" id="ongoing12">&nbsp;<span id="o12">Ongoing </span></td>
  </tr>
  <tr class="row1">  
- <td><input type="checkbox" name="studying" value="Studying"> </td>
- <td>Studying</td> 
- <td><input type="checkbox" name="incresedpainstudy" value="Increased pain">&nbsp;Increased Pain &nbsp;&nbsp;<input type="checkbox" name="restrictedmovementstudy" value="Restricted Movement">&nbsp;Restricted Movement &nbsp;&nbsp; <input type="checkbox" name="weeknessstudy" value="Fatigue">&nbsp;Fatigue</td>
- <td><input type="checkbox" name="sincemvastudy" value="Since MVA">&nbsp;Since MVA &nbsp;&nbsp;<input type="checkbox" name="ongoingstudy" value="Ongoing">&nbsp;Ongoing</td>
+ <td><input type="checkbox" name="studying" value="Studying" onclick="javascript:yesnoCheck10();"id="yesCheck10"> </td>
+ <td><span id="st13">Studying </span></td> 
+ <td><input type="checkbox" name="incresedpainstudy" value="Increased pain" id="incresedpainstudy">&nbsp;<span id="ip13">Increased Pain </span> &nbsp;&nbsp;<input type="checkbox" name="restrictedmovementstudy" value="Restricted Movement" id="restrictedmovementstudy">&nbsp;<span id="rm13">Restricted Movement</span> &nbsp;&nbsp; <input type="checkbox" name="weeknessstudy" value="Fatigue" id="weeknessstudy">&nbsp;<span id="w13">Fatigue</span></td>
+ <td><input type="checkbox" name="sincemvastudy" value="Since MVA" id="sincemvastudy">&nbsp;<span id="mva13">Since MVA </span> &nbsp;&nbsp;<input type="checkbox" name="ongoingstudy" value="Ongoing" id="ongoingstudy">&nbsp;<span id="o13">Ongoing </span></td>
  </tr>
  <tr class="row1">  
- <td><input type="checkbox" name="concentrating" value="Concentrating"> </td>
- <td>Concentrating</td> 
- <td><input type="checkbox" name="incresedpainconcentrate" value="Increased pain">&nbsp;Increased Pain &nbsp;&nbsp;<input type="checkbox" name="restrictedmovementconcentrate" value="Restricted Movement">&nbsp;Restricted Movement &nbsp;&nbsp; <input type="checkbox" name="weeknessconcentrate" value="Fatigue">&nbsp;Fatigue</td>
- <td><input type="checkbox" name="sincemvaconcentrate" value="Since MVA">&nbsp;Since MVA &nbsp;&nbsp;<input type="checkbox" name="ongoingconcentrate" value="Ongoing">&nbsp;Ongoing</td>
+ <td><input type="checkbox" name="concentrating" value="Concentrating" onclick="javascript:yesnoCheck11();"id="yesCheck11"> </td>
+ <td><span id="co14">Concentrating </span></td> 
+ <td><input type="checkbox" name="incresedpainconcentrate" value="Increased pain" id="incresedpainconcentrate">&nbsp;<span id="ip14">Increased Pain </span> &nbsp;&nbsp;<input type="checkbox" name="restrictedmovementconcentrate" value="Restricted Movement" id="restrictedmovementconcentrate">&nbsp;<span id="rm14">Restricted Movement</span> &nbsp;&nbsp; <input type="checkbox" name="weeknessconcentrate" value="Fatigue" id="weeknessconcentrate">&nbsp;<span id="w14">Fatigue</span></td>
+ <td><input type="checkbox" name="sincemvaconcentrate" value="Since MVA" id="sincemvaconcentrate">&nbsp;<span id="o14">Ongoing </span>
+ &nbsp;&nbsp;<input type="checkbox" name="ongoingconcentrate" value="Ongoing" id="ongoingconcentrate">&nbsp;<span id="mva14">Since MVA </span>
+ </td>
  </tr>
  
  <tr class="row1">  
@@ -279,28 +862,28 @@ document.getElementById('ongoing5').style.visibility = 'visible';
  <td><B style="font-size:14px">Duration</B></td>
  </tr>
  <tr class="row1">  
- <td><input type="checkbox" name="vacumming" value="Vacumming"> </td>
- <td>Vacumming</td> 
- <td><input type="checkbox" name="incresedpain15" value="Increased pain">&nbsp;Increased Pain &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement15" value="Restricted Movement">&nbsp;Restricted Movement &nbsp;&nbsp; <input type="checkbox" name="weekness15" value="Fatigue">&nbsp;Fatigue</td>
- <td><input type="checkbox" name="sincemva15" value="Since MVA">&nbsp;Since MVA &nbsp;&nbsp;<input type="checkbox" name="ongoing15" value="Ongoing">&nbsp;Ongoing</td>
+ <td><input type="checkbox" name="vacumming" value="Vacumming" onclick="javascript:yesnoCheck12();"id="yesCheck12"> </td>
+ <td><span id="va15">Vacumming </span></td> 
+ <td><input type="checkbox" name="incresedpain15" value="Increased pain" id="incresedpain15">&nbsp;<span id="ip15">Increased Pain </span> &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement15" value="Restricted Movement" id="restrictedmovement15">&nbsp;<span id="rm15">Restricted Movement</span> &nbsp;&nbsp; <input type="checkbox" name="weekness15" value="Fatigue" id="weekness15">&nbsp;<span id="w15">Fatigue</span></td>
+ <td><input type="checkbox" name="sincemva15" value="Since MVA" id="sincemva15">&nbsp;<span id="mva15">Since MVA </span> &nbsp;&nbsp;<input type="checkbox" name="ongoing15" value="Ongoing" id="ongoing15">&nbsp;<span id="o15">Ongoing </span></td>
  </tr>
  <tr class="row1">  
- <td><input type="checkbox" name="takingcareofkids" value="Taking Care of Kids"> </td>
- <td>Taking Care Of Kids</td> 
- <td><input type="checkbox" name="incresedpain16" value="Increased pain/Anxiety">&nbsp;Increased Pain/Anxiety &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement16" value="Restricted Movement">&nbsp;Restricted Movement &nbsp;&nbsp; <input type="checkbox" name="weekness16" value="Fatigue">&nbsp;Fatigue</td>
- <td><input type="checkbox" name="sincemva16" value="Since MVA">&nbsp;Since MVA &nbsp;&nbsp;<input type="checkbox" name="ongoing16" value="Ongoing">&nbsp;Ongoing</td>
+ <td><input type="checkbox" name="takingcareofkids" value="Taking Care of Kids" onclick="javascript:yesnoCheck13();"id="yesCheck13"> </td>
+ <td><span id="tc16">Taking Care Of Kids </span></td> 
+ <td><input type="checkbox" name="incresedpain16" value="Increased pain/Anxiety" id="incresedpain16">&nbsp;<span id="ip16">Increased Pain/Anxiety  </span>&nbsp;&nbsp;<input type="checkbox" name="restrictedmovement16" value="Restricted Movement" id="restrictedmovement16">&nbsp;<span id="rm16">Restricted Movement</span> &nbsp;&nbsp; <input type="checkbox" name="weekness16" value="Fatigue" id="weekness16">&nbsp;<span id="w16">Fatigue</span></td>
+ <td><input type="checkbox" name="sincemva16" value="Since MVA" id="sincemva16">&nbsp;<span id="mva16">Since MVA </span> &nbsp;&nbsp;<input type="checkbox" name="ongoing16" value="Ongoing" id="ongoing16">&nbsp;<span id="o16">Ongoing </span></td>
  </tr>
  <tr class="row1">  
- <td><input type="checkbox" name="cleaning" value="Cleaning"> </td>
- <td>Cleaning</td> 
- <td><input type="checkbox" name="incresedpain17" value="Increased pain">&nbsp;Increased Pain &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement17" value="Restricted Movement">&nbsp;Restricted Movement &nbsp;&nbsp; <input type="checkbox" name="weekness17" value="Fatigue">&nbsp;Fatigue</td>
- <td><input type="checkbox" name="sincemva17" value="Since MVA">&nbsp;Since MVA &nbsp;&nbsp;<input type="checkbox" name="ongoing17" value="Ongoing">&nbsp;Ongoing</td>
+ <td><input type="checkbox" name="cleaning" value="Cleaning" onclick="javascript:yesnoCheck14();"id="yesCheck14"> </td>
+ <td><span id="cl17">Cleaning</span></td> 
+ <td><input type="checkbox" name="incresedpain17" value="Increased pain" id="incresedpain17">&nbsp;<span id="ip17">Increased Pain </span> &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement17" value="Restricted Movement" id="restrictedmovement17">&nbsp;<span id="rm17">Restricted Movement</span> &nbsp;&nbsp; <input type="checkbox" name="weekness17" value="Fatigue" id="weekness17">&nbsp;<span id="w17">Fatigue</span></td>
+ <td><input type="checkbox" name="sincemva17" value="Since MVA" id="sincemva17">&nbsp;<span id="mva17">Since MVA </span> &nbsp;&nbsp;<input type="checkbox" name="ongoing17" value="Ongoing" id="ongoing17">&nbsp;<span id="o17">Ongoing </span></td>
  </tr>
  <tr class="row1">  
- <td><input type="checkbox" name="preparingmeals" value="Preparing Meals"> </td>
- <td>Preparing Meals</td> 
- <td><input type="checkbox" name="incresedpain18" value="Increased pain">&nbsp;Increased Pain &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement18" value="Restricted Movement">&nbsp;Restricted Movement &nbsp;&nbsp; <input type="checkbox" name="weekness18" value="Fatigue">&nbsp;Fatigue</td>
- <td><input type="checkbox" name="sincemva18" value="Since MVA">&nbsp;Since MVA &nbsp;&nbsp; <input type="checkbox" name="ongoing18" value="Ongoing">&nbsp;Ongoing</td>
+ <td><input type="checkbox" name="preparingmeals" value="Preparing Meals" onclick="javascript:yesnoCheck15();"id="yesCheck15"> </td>
+ <td><span id="pm18">Preparing Meals</span></td> 
+ <td><input type="checkbox" name="incresedpain18" value="Increased pain" id="incresedpain18">&nbsp;<span id="ip18">Increased Pain </span> &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement18" value="Restricted Movement" id="restrictedmovement18">&nbsp;<span id="rm18">Restricted Movement</span> &nbsp;&nbsp; <input type="checkbox" name="weekness18" value="Fatigue" id="weekness18">&nbsp;<span id="w18">Fatigue</span></td>
+ <td><input type="checkbox" name="sincemva18" value="Since MVA" id="sincemva18">&nbsp;<span id="mva18">Since MVA </span> &nbsp;&nbsp; <input type="checkbox" name="ongoing18" value="Ongoing" id="ongoing18">&nbsp;<span id="o18">Ongoing </span></td>
  </tr>
  <tr class="row1">  
  <td>Other</td>
@@ -321,28 +904,28 @@ document.getElementById('ongoing5').style.visibility = 'visible';
  <td><B style="font-size:14px">Duration</B></td>
  </tr>
  <tr class="row1">  
- <td><input type="checkbox" name="yardwork" value="Yard Work"> </td>
- <td>Yard Work</td> 
- <td><input type="checkbox" name="incresedpain22" value="Increased pain">&nbsp;Increased Pain &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement22" value="Restricted Movement">&nbsp;Restricted Movement &nbsp;&nbsp; <input type="checkbox" name="weekness22" value="Fatigue">&nbsp;Fatigue</td>
- <td><input type="checkbox" name="sincemva22" value="Since MVA">&nbsp;Since MVA &nbsp;&nbsp;<input type="checkbox" name="ongoing22" value="Ongoing">&nbsp;Ongoing</td>
+ <td><input type="checkbox" name="yardwork" value="Yard Work" onclick="javascript:yesnoCheck16();"id="yesCheck16"> </td>
+ <td><span id="yw22">Yard Work</span></td> 
+ <td><input type="checkbox" name="incresedpain22" value="Increased pain" id="incresedpain22">&nbsp;<span id="ip22">Increased Pain </span>&nbsp;&nbsp;<input type="checkbox" name="restrictedmovement22" value="Restricted Movement" id="restrictedmovement22">&nbsp;<span id="rm22">Restricted Movement</span> &nbsp;&nbsp; <input type="checkbox" name="weekness22" value="Fatigue" id="weekness22">&nbsp;<span id="w22">Fatigue</span></td>
+ <td><input type="checkbox" name="sincemva22" value="Since MVA" id="sincemva22">&nbsp;<span id="mva22">Since MVA </span>&nbsp;&nbsp;<input type="checkbox" name="ongoing22" value="Ongoing" id="ongoing22">&nbsp;<span id="o22">Ongoing </span></td>
  </tr>
  <tr class="row1">  
- <td><input type="checkbox" name="transportation" value="Transportation"> </td>
- <td>Transportation</td> 
- <td><input type="checkbox" name="incresedpain23" value="Increased pain/Anxiety">&nbsp;Increased Pain/Anxiety &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement23" value="Restricted Movement">&nbsp;Restricted Movement &nbsp;&nbsp; <input type="checkbox" name="weekness23" value="Fatigue">&nbsp;Fatigue</td>
- <td><input type="checkbox" name="sincemva23" value="Since MVA">&nbsp;Since MVA &nbsp;&nbsp;<input type="checkbox" name="ongoing23" value="Ongoing">&nbsp;Ongoing</td>
+ <td><input type="checkbox" name="transportation" value="Transportation" onclick="javascript:yesnoCheck17();"id="yesCheck17"> </td>
+ <td><span id="tr23">Transportation</span></td> 
+ <td><input type="checkbox" name="incresedpain23" value="Increased pain/Anxiety" id="incresedpain23">&nbsp;<span id="ip23">Increased Pain/Anxiety </span> &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement23" value="Restricted Movement" id="restrictedmovement23">&nbsp;<span id="rm23">Restricted Movement</span> &nbsp;&nbsp; <input type="checkbox" name="weekness23" value="Fatigue" id="weekness23">&nbsp;<span id="w23">Fatigue</span></td>
+ <td><input type="checkbox" name="sincemva23" value="Since MVA" id="sincemva23">&nbsp;<span id="mva23">Since MVA </span> &nbsp;&nbsp;<input type="checkbox" name="ongoing23" value="Ongoing" id="ongoing23">&nbsp;<span id="o23">Ongoing </span></td>
  </tr>
  <tr class="row1">  
- <td><input type="checkbox" name="shopping" value="Shopping"> </td>
- <td>Shopping</td> 
- <td><input type="checkbox" name="incresedpain24" value="Increased pain/Anxiety">&nbsp;Increased Pain/Anxiety &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement24" value="Restricted Movement">&nbsp;Restricted Movement &nbsp;&nbsp; <input type="checkbox" name="weekness24" value="Fatigue">&nbsp;Fatigue</td>
- <td><input type="checkbox" name="sincemva24" value="Since MVA">&nbsp;Since MVA &nbsp;&nbsp;<input type="checkbox" name="ongoing24" value="Ongoing">&nbsp;Ongoing</td>
+ <td><input type="checkbox" name="shopping" value="Shopping" onclick="javascript:yesnoCheck18();"id="yesCheck18"> </td>
+ <td><span id="sh24">Shopping</span></td> 
+ <td><input type="checkbox" name="incresedpain24" value="Increased pain/Anxiety" id="incresedpain24">&nbsp;<span id="ip24">Increased Pain/Anxiety </span> &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement24" value="Restricted Movement" id="restrictedmovement24">&nbsp;<span id="rm24">Restricted Movement</span> &nbsp;&nbsp; <input type="checkbox" name="weekness24" value="Fatigue" id="weekness24">&nbsp;<span id="w24">Fatigue</span></td>
+ <td><input type="checkbox" name="sincemva24" value="Since MVA" id="sincemva24">&nbsp;<span id="mva24">Since MVA </span> &nbsp;&nbsp;<input type="checkbox" name="ongoing24" value="Ongoing" id="ongoing24">&nbsp;<span id="o24">Ongoing </span></td>
  </tr>
  <tr class="row1">  
- <td><input type="checkbox" name="takingouttrash" value="Taking Out Trash"> </td>
- <td>Taking Out Trash</td> 
- <td><input type="checkbox" name="incresedpain25" value="Increased pain">&nbsp;Increased Pain &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement25" value="Restricted Movement">&nbsp;Restricted Movement &nbsp;&nbsp; <input type="checkbox" name="weekness25" value="Weekness">&nbsp;Weekness</td>
- <td><input type="checkbox" name="sincemva25" value="Since MVA">&nbsp;Since MVA &nbsp;&nbsp; <input type="checkbox" name="ongoing25" value="Ongoing">&nbsp;Ongoing</td>
+ <td><input type="checkbox" name="takingouttrash" value="Taking Out Trash" onclick="javascript:yesnoCheck19();"id="yesCheck19"> </td>
+ <td><span id="to25">Taking Out Trash</span></td> 
+ <td><input type="checkbox" name="incresedpain25" value="Increased pain" id="incresedpain25">&nbsp;<span id="ip25">Increased Pain </span> &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement25" value="Restricted Movement" id="restrictedmovement25">&nbsp;<span id="rm25">Resshicted Movement</span> &nbsp;&nbsp; <input type="checkbox" name="weekness25" value="Weekness" id="weekness25">&nbsp;<span id="w25">Weekness </span></td>
+ <td><input type="checkbox" name="sincemva25" value="Since MVA" id="sincemva25">&nbsp;<span id="mva25">Since MVA </span> &nbsp;&nbsp; <input type="checkbox" name="ongoing25" value="Ongoing" id="ongoing25">&nbsp;<span id="o25">Ongoing </span></td>
  </tr>
  <tr class="row1">  
  <td>Other</td>
