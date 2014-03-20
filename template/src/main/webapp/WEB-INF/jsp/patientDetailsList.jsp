@@ -203,6 +203,13 @@
 				         	<td><span class="err">*</span>WorkPhone:</td>
 				         	<td>${patientDetails.workphone}</td>
 				        </tr>
+				        
+				        <tr class="row2">
+				         	<td><span class="err">*</span>Zipcode</td>
+				         	<td>${patientDetails.zip}</td>
+				        </tr>
+				        
+				        
 				         <tr class="row1">
 				         	<td><span class="err">*</span>EmployerCity:</td>
 				         	<td>${patientDetails.employerCity}</td>
@@ -347,6 +354,56 @@
 				         	<td></td>
 				         	<td></td>
 				        </tr>
+				        <tr class="row2">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>What is your Dominant Hand </td>
+				                  <td valign="top" align="left" class="input_txt">${patientDetails.retain}
+				                  	</td>
+				                <td></td>
+				                </tr>
+				                
+				                <tr class="row2">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>Would you like us to send your records to your family Physician  </td>
+				                  <td valign="top" align="left" class="input_txt">${patientDetails.record}
+				                  	</td>
+				                <td></td>
+				                </tr>
+				                <tr class="row1">
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err"></span>What is your Physician's Name </td>
+				                  	<td valign="top" align="left" class="input_txt">${patientDetails.phyname}</td>
+				                  	<td></td>
+				                    </tr>
+				                
+				                <tr class="row1">
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err"></span>What is your Physician's Phone </td>
+				                  	<td valign="top" align="left" class="input_txt">${patientDetails.phyphone}</td>
+				                  	<td></td>
+				                    </tr>
+				                    
+				                     <tr class="row1">
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err"></span>	What body parts were x-rayed </td>
+				                  	<td valign="top" align="left" class="input_txt">${patientDetails.xray}</td>
+				                  	<td></td>
+				                    </tr>
+				                    
+				                     <tr class="row1">
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err"></span>what treatment was given </td>
+				                  	<td valign="top" align="left" class="input_txt">${patientDetails.treat}</td>
+				                  	<td></td>
+				                    </tr>
+						
+						
+						
+						
+						
+						
+						
+				        
+				        
+				        
+				        
+				        
+				        
+				        
 				         <tr class="row2">
 				         	<td><span class="err">*</span>Name Of Attorney:</td>
 				         	<td>${patientDetails.nameOfAttorney}</td>

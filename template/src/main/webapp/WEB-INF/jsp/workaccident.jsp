@@ -152,7 +152,7 @@ $(function() {
 				  </td>
 				  </tr>
 				  <tr class="row2">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Has there been a time loss or absenteeism caused from job injury</td>
+				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Has there been a time loss or absentee caused from job injury</td>
 				  <td valign="top" align="left" class="input_txt"><input type="radio" name="time_loss" value="yes" class="input_txt" checked="true" onclick="time('show1')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="time_loss" value="No" class="input_txt" onclick="time('hide1')">No&nbsp;&nbsp;&nbsp;
 				  <textarea rows='3' cols='35' id="absenteeism" name="absenteeism" placeholder="If yes, explain(include dates)"></textarea>
 				  </td>

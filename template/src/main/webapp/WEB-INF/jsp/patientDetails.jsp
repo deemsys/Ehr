@@ -435,6 +435,15 @@ $(function(){
 		buttonImage: "resources/images/calendar.gif",
 		buttonImageOnly: true,dateFormat: 'yy-mm-dd' });
 	
+	$("#datepicker5").datepicker({changeMonth: true, changeYear: true,showOn: "button",
+		buttonImage: "resources/images/calendar.gif",
+		buttonImageOnly: true,dateFormat: 'yy-mm-dd' });
+	
+	
+	$("#datepicker6").datepicker({changeMonth: true, changeYear: true,showOn: "button",
+		buttonImage: "resources/images/calendar.gif",
+		buttonImageOnly: true,dateFormat: 'yy-mm-dd' });
+	
 	
 	$("#datepicker1").datepicker({ changeMonth: true,changeYear: true,showOn: "button",
 		buttonImage: "resources/images/calendar.gif",
@@ -525,6 +534,13 @@ $(function(){
 				                  	<input type="text" class="input_txtbx1" name="Name" id="name" value="${pname}" /><br><span class="err"><form:errors path="PatientDetails.name"></form:errors></span>
 				                  </td>
 				                </tr>
+				                
+				               
+				                
+				                
+				                
+				                
+				                
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Date:</td>
 				                  <td valign="top" align="left" class="input_txt">
@@ -659,6 +675,19 @@ $(function(){
 <span class="err" id="workphoneerror"></span>
 				                  </td>
 				                </tr>
+				                <tr class="row2">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>ZipCode:</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="zipcode2" name="zip" /><br><span class="err" id="zipcodeerror1"><form:errors path="PatientDetails.zipCode"></form:errors></span>
+	
+	<span class="err" ></span>            
+				                  </td>
+				                </tr> 
+				                
+				                
+				                
+				                
+				                
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>EmployerCity:</td>
 				                  <td valign="top" align="left" class="input_txt">
@@ -849,7 +878,7 @@ $(function(){
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Medical Treatment for this Condition: &nbsp;&nbsp;&nbsp;&nbsp;When:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="when1" /> <br><span class="err"><form:errors path="patientDetails.when1"></form:errors></span></td>
+				                  	<input type="text" class="input_txtbx1" id="datepicker5" name="when1" /> <br><span class="err"><form:errors path="patientDetails.when1"></form:errors></span></td>
 				                  	<td></td>
 				                  	</tr>
 				                  	<tr class="row1">
@@ -863,6 +892,43 @@ $(function(){
 				                  	<input type="radio" name="Attorney_accident" value="yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Attorney_accident" value="No" class="input_txt">No</td>
 				                <td></td>
 				                </tr>
+				                 <tr class="row2">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>What is your Dominant Hand </td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="radio" name="retain" value="R" class="input_txt" checked="true">R&nbsp;&nbsp;&nbsp;<input type="radio" name="retain" value="L" class="input_txt">L</td>
+				                <td></td>
+				                </tr>
+				                
+				                <tr class="row2">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>Would you like us to send your records to your family Physician  </td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="radio" name="record" value="yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="record" value="No" class="input_txt">No</td>
+				                <td></td>
+				                </tr>
+				                <tr class="row1">
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err"></span>What is your Physician's Name </td>
+				                  	<td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="phyname"/><br><span class="err"><form:errors path="patientDetails.where1"></form:errors></span>
+				                    </tr>
+				                
+				                <tr class="row1">
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err"></span>What is your Physician's Phone </td>
+				                  	<td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="phyphone"/><br><span class="err"><form:errors path="patientDetails.where1"></form:errors></span>
+				                    </tr>
+				                    
+				                     <tr class="row1">
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err"></span>	What body parts were x-rayed </td>
+				                  	<td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="xray"/><br><span class="err"><form:errors path="patientDetails.where1"></form:errors></span>
+				                    </tr>
+				                    
+				                     <tr class="row1">
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err"></span>what treatment was given </td>
+				                  	<td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="treat"/><br><span class="err"><form:errors path="patientDetails.where1"></form:errors></span>
+				                    </tr>
+				                    
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name Of Attorney:</td>
 				                  <td valign="top" align="left" class="input_txt">
@@ -952,7 +1018,7 @@ $(function(){
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>When:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Prev_When" /><br><span class="err"><form:errors path="PatientDetails.prev_When"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="datepicker6" name="Prev_When" /><br><span class="err"><form:errors path="PatientDetails.prev_When"></form:errors></span>
 				                  	<td></td>
 				                  	</tr>   
 				                  	</table>

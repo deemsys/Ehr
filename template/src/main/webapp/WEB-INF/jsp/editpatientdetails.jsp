@@ -302,7 +302,19 @@ var $sid = xx+1;
 						 		<tr class="row2">
                         			<td><span class="err">*</span>WorkPhone:</td>
                         			<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.workphone}" name="workphone" /></br><span class="err"><form:errors path="PatientDetails.Workphone"></form:errors></span></td>
-								</tr>                        
+								</tr>  
+								
+								 <tr class="row2">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>ZipCode:</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="zipcode2" name="zip" value="${patientDetails.zip}"/><br><span class="err" id="zipcodeerror1"><form:errors path="PatientDetails.zipCode"></form:errors></span>
+	
+	<span class="err" ></span>            
+				                  </td>
+				                </tr> 
+								
+								
+								                      
 			    				<tr class="row1">
                         			<td><span class="err">*</span>EmployerCity:</td>
                         			<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.employerCity}" name="employerCity" /></br><span class="err"><form:errors path="PatientDetails.EmployerCity"></form:errors></span></td>
@@ -492,6 +504,49 @@ var $sid = xx+1;
 				                  	<input type="radio" name="attorney_accident" value="No" class="input_txt"<c:if test="${patientDetails.attorney_accident=='No'}"><c:out value="checked=checked"/></c:if>>No
 									<td></td>
 						</tr>   
+						 <tr class="row2">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>What is your Dominant Hand </td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="radio" name="retain" value="R" class="input_txt" <c:if test="${patientDetails.retain=='R'}"><c:out value="checked=checked"/></c:if>>R&nbsp;&nbsp;&nbsp;<input type="radio" name="retain" value="L" class="input_txt" <c:if test="${patientDetails.retain=='L'}"><c:out value="checked=checked"/></c:if>>L</td>
+				                <td></td>
+				                </tr>
+				                
+				                <tr class="row2">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>Would you like us to send your records to your family Physician  </td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="radio" name="record" value="yes" class="input_txt" <c:if test="${patientDetails.record=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="record" value="No" class="input_txt" <c:if test="${patientDetails.record=='No'}"><c:out value="checked=checked"/></c:if>>No</td>
+				                <td></td>
+				                </tr>
+				                <tr class="row1">
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err"></span>What is your Physician's Name </td>
+				                  	<td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="phyname" value="${patientDetails.phyname}"/><br><span class="err"><form:errors path="patientDetails.where1"></form:errors></span>
+				                    </tr>
+				                
+				                <tr class="row1">
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err"></span>What is your Physician's Phone </td>
+				                  	<td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="phyphone" value="${patientDetails.phyphone}"/><br><span class="err"><form:errors path="patientDetails.where1"></form:errors></span>
+				                    </tr>
+				                    
+				                     <tr class="row1">
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err"></span>	What body parts were x-rayed </td>
+				                  	<td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="xray"  value="${patientDetails.xray}"/><br><span class="err"><form:errors path="patientDetails.where1"></form:errors></span>
+				                    </tr>
+				                    
+				                     <tr class="row1">
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err"></span>what treatment was given </td>
+				                  	<td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="treat" value="${patientDetails.treat}"/><br><span class="err"><form:errors path="patientDetails.where1"></form:errors></span>
+				                    </tr>
+						
+						
+						
+						
+						
+						
+						
 						 <tr class="row1">
                         <td><span class="err">*</span>Name Of Attorney:</td>
                         <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.nameOfAttorney}" name="nameOfAttorney" /></br><span class="err"><form:errors path="PatientDetails.NameOfAttorney"></form:errors></span></td>
