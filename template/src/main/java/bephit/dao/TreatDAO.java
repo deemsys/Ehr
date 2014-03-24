@@ -1,5 +1,6 @@
 package bephit.dao;
 
+import java.security.Principal;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -22,7 +23,7 @@ public class TreatDAO {
 		this.dataSource = dataSource;
 	}
 	
-	public int setTreatDetails(Treatform treatdetails)
+	public int setTreatDetails(Treatform treatdetails,Principal principal)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -39,7 +40,7 @@ public class TreatDAO {
 	    try{
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
-	    	 String cmd="INSERT INTO `treat_details`(`patientsname`,`patientssign`,`todaydate`,`witness`) VALUES ('"+treatdetails.getPatientsname()+"','"+treatdetails.getPatientssign()+"','"+treatdetails.getTodaydate()+"','"+treatdetails.getWitness()+"')";
+	    	 String cmd="INSERT INTO `treat_details`(username,`patientsname`,`patientssign`,`todaydate`,`witness`) VALUES ('"+principal.getName()+"','"+treatdetails.getPatientsname()+"','"+treatdetails.getPatientssign()+"','"+treatdetails.getTodaydate()+"','"+treatdetails.getWitness()+"')";
 	    	 System.out.println(cmd);
 	    	 statement.execute(cmd);
 		     flag=1;
@@ -64,7 +65,40 @@ public class TreatDAO {
 	    
 	}
 	
-	
+	public List<Treatform> getUsernameTreatDetails(Principal principal){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<Treatform> treat = new ArrayList<Treatform>();
+	    try{
+			resultSet = statement.executeQuery("select * from Treat_Details where username='"+principal.getName()+"'");
+			while(resultSet.next()){
+				treat.add(new Treatform(resultSet.getString("treat_no"),resultSet.getString("patientsname"),
+			    		resultSet.getString("patientssign"),
+			    		resultSet.getString("todaydate"),
+			    		resultSet.getString("witness")));
+			    	
+			}
+			System.out.println(treat);
+	    }catch(Exception e){
+	    	System.out.println(e.toString());
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    }finally{
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);	    	
+	    }
+	    return treat;
+		
+	}
 	public List<Treatform> getTreatDetails(String treat_no){
 		Connection con = null;
 		Statement statement = null;
@@ -185,7 +219,7 @@ public class TreatDAO {
 	    
 	}
 	
-	public int deletetreatform(String treat_no){
+	public int deletetreatform(Principal principal){
 		Connection con = null;
 		Statement statement = null;
 		ResultSet resultSet = null;
@@ -197,15 +231,15 @@ public class TreatDAO {
 			e1.printStackTrace();
 		}
 		try{
-			DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+			/*DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 String cmd_getpat_pname="select patientsname from treat_details where treat_no='"+treat_no+"'";
 	    	 String Desc="Delete report ";
 	    	 resultSet=statement.executeQuery(cmd_getpat_pname);
 				
 				if(resultSet.next())
-					Desc=Desc+resultSet.getString(1);
-				statement.execute("delete from treat_details where treat_no='"+treat_no+"'");
+					Desc=Desc+resultSet.getString(1);*/
+				statement.execute("delete from treat_details where username='"+principal.getName()+"'");
 				
 				flag=1;
 				

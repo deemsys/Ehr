@@ -1,5 +1,6 @@
 package bephit.dao;
 
+import java.security.Principal;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -27,7 +28,7 @@ public class HardshipagreementDAO {
 	
 	
 	
-	public int setHardshipagreement(Hardshipagreement hardshipagreement)
+	public int setHardshipagreement(Hardshipagreement hardshipagreement,Principal principal)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -44,7 +45,7 @@ public class HardshipagreementDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 
-	    	 String cmd="INSERT INTO `tbl_hardshipagreement` (`date`,`print_pat_name`,`pat_sign`,`witness_sign`) VALUES ('"+hardshipagreement.getDate()+"','"+hardshipagreement.getPrint_pat_name()+"','"+hardshipagreement.getPat_sign()+"','"+hardshipagreement.getWitness_sign()+"')";
+	    	 String cmd="INSERT INTO `tbl_hardshipagreement` (username,`date`,`print_pat_name`,`pat_sign`,`witness_sign`) VALUES ('"+principal.getName()+"','"+hardshipagreement.getDate()+"','"+hardshipagreement.getPrint_pat_name()+"','"+hardshipagreement.getPat_sign()+"','"+hardshipagreement.getWitness_sign()+"')";
 	    	 System.out.println(cmd);
 	    	 statement.execute(cmd);
 			flag=1;
@@ -84,6 +85,42 @@ public List<Hardshipagreement> getHardshipagreement(){
 	List<Hardshipagreement> Hardshipagreement = new ArrayList<Hardshipagreement>();
     try{
 		resultSet = statement.executeQuery("select * from tbl_hardshipagreement " );
+		while(resultSet.next()){
+			Hardshipagreement.add(new Hardshipagreement(resultSet.getString("agreement_no"),resultSet.getString("date"),
+		    		resultSet.getString("print_pat_name"),
+		    		resultSet.getString("pat_sign"),
+		    		resultSet.getString("witness_sign")));
+		    		
+		    		
+		}
+		System.out.println(Hardshipagreement);
+    }catch(Exception e){
+    	System.out.println(e.toString());
+    	releaseResultSet(resultSet);
+    	releaseStatement(statement);
+    	releaseConnection(con);
+    }finally{
+    	releaseResultSet(resultSet);
+    	releaseStatement(statement);
+    	releaseConnection(con);	    	
+    }
+    return Hardshipagreement;
+	
+}
+public List<Hardshipagreement> getUsernameHardshipagreement(Principal principal){
+	Connection con = null;
+	Statement statement = null;
+	ResultSet resultSet = null;
+	try {
+		con = dataSource.getConnection();
+		statement = con.createStatement();
+	} catch (SQLException e1) {
+		e1.printStackTrace();
+	}
+	
+	List<Hardshipagreement> Hardshipagreement = new ArrayList<Hardshipagreement>();
+    try{
+		resultSet = statement.executeQuery("select * from tbl_hardshipagreement where username='"+principal.getName()+"'" );
 		while(resultSet.next()){
 			Hardshipagreement.add(new Hardshipagreement(resultSet.getString("agreement_no"),resultSet.getString("date"),
 		    		resultSet.getString("print_pat_name"),
@@ -186,6 +223,40 @@ public int updatehardship(Hardshipagreement hardshipagreement,String agreement_n
     
 }
 
+public int deletehardship(Principal principal){
+	Connection con = null;
+	Statement statement = null;
+	ResultSet resultSet = null;
+	int flag=0;
+	try {
+		con = dataSource.getConnection();
+		statement = con.createStatement();
+	} catch (SQLException e1) {
+		e1.printStackTrace();
+	}
+	try{		
+				
+			statement.execute("delete from tbl_hardshipagreement where username='"+principal.getName()+"'");
+			
+			flag=1;
+			
+	    }catch(Exception e){
+	    	System.out.println(e.toString());
+	    	flag=0;
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    }finally{
+	    	
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);	    	
+	    }
+	   		if(flag==1)
+	   			return 1;
+	   		else
+	   			return 0;
+	}
 public int deletehardship(String agreement_no){
 	Connection con = null;
 	Statement statement = null;

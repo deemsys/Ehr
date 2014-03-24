@@ -1,5 +1,6 @@
 package bephit.dao;
 
+import java.security.Principal;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -22,7 +23,7 @@ public class TreatMinorDAO {
 		this.dataSource = dataSource;
 	}
 	
-	public int setMinorDetails(TreatMinor minordetails)
+	public int setMinorDetails(TreatMinor minordetails,Principal principal)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -39,7 +40,7 @@ public class TreatMinorDAO {
 	    try{
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
-	    	 String cmd="INSERT INTO `Minor_Details`(`guardian`,`age`,`Drname`,`signed`,`pdate`,`pwitness`) VALUES ('"+minordetails.getGuardian()+"','"+minordetails.getAge()+"','"+minordetails.getDrname()+"','"+minordetails.getSigned()+"','"+minordetails.getPdate()+"','"+minordetails.getPwitness()+"')";
+	    	 String cmd="INSERT INTO `Minor_Details`(username,`guardian`,`age`,`Drname`,`signed`,`pdate`,`pwitness`) VALUES ('"+principal.getName()+"','"+minordetails.getGuardian()+"','"+minordetails.getAge()+"','"+minordetails.getDrname()+"','"+minordetails.getSigned()+"','"+minordetails.getPdate()+"','"+minordetails.getPwitness()+"')";
 	    	 System.out.println(cmd);
 	    	 statement.execute(cmd);
 		     flag=1;
@@ -98,6 +99,39 @@ public class TreatMinorDAO {
 		
 	}
 	
+	public List<TreatMinor> getusernameMinorDetails(Principal principal){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<TreatMinor> minor = new ArrayList<TreatMinor>();
+	    try{
+			resultSet = statement.executeQuery("select * from Minor_Details where username='"+principal.getName()+"'");
+			while(resultSet.next()){
+				minor.add(new TreatMinor(resultSet.getString("minor_no"),resultSet.getString("guardian"),resultSet.getString("age"),resultSet.getString("drname"),resultSet.getString("signed"),
+			    		resultSet.getString("pdate"),
+			    		resultSet.getString("pwitness")));
+
+			    System.out.println(minor);	
+			}
+	    }catch(Exception e){
+	    	System.out.println(e.toString());
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    }finally{
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);	    	
+	    }
+	    return minor;
+		
+	}	
 	public List<TreatMinor> getMinorDetails(String minor_no){
 		Connection con = null;
 		Statement statement = null;
@@ -201,6 +235,40 @@ public class TreatMinorDAO {
 				if(resultSet.next())
 					Desc=Desc+resultSet.getString(1);
 				statement.execute("delete from minor_details where minor_no='"+minor_no+"'");
+				
+				flag=1;
+				
+		    }catch(Exception e){
+		    	System.out.println(e.toString());
+		    	flag=0;
+		    	releaseResultSet(resultSet);
+		    	releaseStatement(statement);
+		    	releaseConnection(con);
+		    }finally{
+		    	
+		    	releaseResultSet(resultSet);
+		    	releaseStatement(statement);
+		    	releaseConnection(con);	    	
+		    }
+		   		if(flag==1)
+		   			return 1;
+		   		else
+		   			return 0;
+		}
+	public int deletetreat(Principal principal){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		int flag=0;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		try{
+			
+				statement.execute("delete from minor_details where username='"+principal.getName()+"'");
 				
 				flag=1;
 				

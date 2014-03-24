@@ -1,5 +1,6 @@
 package bephit.dao;
 
+import java.security.Principal;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -23,7 +24,7 @@ public class AssignmentDAO {
 		this.dataSource = dataSource;
 	}
 	
-	public int setAssignmentDetails(Assignment assignmentdetails)
+	public int setAssignmentDetails(Assignment assignmentdetails,Principal principal)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -40,7 +41,7 @@ public class AssignmentDAO {
 	    try{
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
-	    	 String cmd="INSERT INTO `Assignment_Details`(`day`,`month`,`year`,`day1`,`month1`,`patientname`,`patientsign`,`patientdate`,`parentname`,`parentsign`,`parentdate`,`representative`,`representativedate`) VALUES ('"+assignmentdetails.getDay()+"','"+assignmentdetails.getMonth()+"','"+assignmentdetails.getYear()+"','"+assignmentdetails.getDay1()+"','"+assignmentdetails.getMonth1()+"','"+assignmentdetails.getPatientname()+"','"+assignmentdetails.getPatientsign()+"','"+assignmentdetails.getPatientdate()+"','"+assignmentdetails.getParentname()+"','"+assignmentdetails.getParentsign()+"','"+assignmentdetails.getParentdate()+"','"+assignmentdetails.getRepresentative()+"','"+assignmentdetails.getRepresentativedate()+"')";
+	    	 String cmd="INSERT INTO `Assignment_Details`(username,`day`,`month`,`year`,`day1`,`month1`,`patientname`,`patientsign`,`patientdate`,`parentname`,`parentsign`,`parentdate`,`representative`,`representativedate`) VALUES ('"+principal.getName()+"','"+assignmentdetails.getDay()+"','"+assignmentdetails.getMonth()+"','"+assignmentdetails.getYear()+"','"+assignmentdetails.getDay1()+"','"+assignmentdetails.getMonth1()+"','"+assignmentdetails.getPatientname()+"','"+assignmentdetails.getPatientsign()+"','"+assignmentdetails.getPatientdate()+"','"+assignmentdetails.getParentname()+"','"+assignmentdetails.getParentsign()+"','"+assignmentdetails.getParentdate()+"','"+assignmentdetails.getRepresentative()+"','"+assignmentdetails.getRepresentativedate()+"')";
 	    	 System.out.println(cmd);
 	    	 statement.execute(cmd);
 		     flag=1;
@@ -111,6 +112,51 @@ public class AssignmentDAO {
 	}
 	
 
+	public List<Assignment> getUsernameAssignment(Principal principal){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<Assignment> assignment = new ArrayList<Assignment>();
+	    try{
+			String cmd="select * from Assignment_Details where username='"+principal.getName()+"'";
+			
+			resultSet = statement.executeQuery(cmd);
+			while(resultSet.next()){
+				assignment.add(new Assignment(resultSet.getString("assignment_no"),resultSet.getString("day"),
+			    		resultSet.getString("month"),
+			    		resultSet.getString("year"),
+			    		resultSet.getString("day1"),
+			    		resultSet.getString("month1"),
+			    		resultSet.getString("patientname"),
+			    		resultSet.getString("patientsign"),
+			    		resultSet.getString("Patientdate"),
+			    		resultSet.getString("parentname"),
+			    		resultSet.getString("parentsign"),
+			    		resultSet.getString("parentdate"),
+			    		resultSet.getString("representative"),
+			    		resultSet.getString("representativedate")
+			    	
+			    	    ));
+			    	
+			}
+	    }catch(Exception e){
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    }finally{
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);	    	
+	    }
+	    return assignment;
+		
+	}
 	public List<Assignment> getAssignment(String assignment_no){
 		Connection con = null;
 		Statement statement = null;
@@ -218,6 +264,40 @@ public class AssignmentDAO {
 				if(resultSet.next())
 					Desc=Desc+resultSet.getString(1);
 				statement.execute("delete from assignment_details where assignment_no='"+assignment_no+"'");
+				
+				flag=1;
+				
+		    }catch(Exception e){
+		    	System.out.println(e.toString());
+		    	flag=0;
+		    	releaseResultSet(resultSet);
+		    	releaseStatement(statement);
+		    	releaseConnection(con);
+		    }finally{
+		    	
+		    	releaseResultSet(resultSet);
+		    	releaseStatement(statement);
+		    	releaseConnection(con);	    	
+		    }
+		   		if(flag==1)
+		   			return 1;
+		   		else
+		   			return 0;
+		}
+	public int deleteassignment(Principal principal){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		int flag=0;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		try{
+			
+				statement.execute("delete from assignment_details where username='"+principal.getName()+"'");
 				
 				flag=1;
 				

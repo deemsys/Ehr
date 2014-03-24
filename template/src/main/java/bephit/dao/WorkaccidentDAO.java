@@ -1,5 +1,6 @@
 package bephit.dao;
 
+import java.security.Principal;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -27,7 +28,7 @@ public class WorkaccidentDAO {
 	
 	
 	
-	public int setWorkaccident(Workaccident workaccident)
+	public int setWorkaccident(Workaccident workaccident,Principal principal)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -44,7 +45,7 @@ public class WorkaccidentDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 //System.out.println(dateFormat.format(date));
-	    	 String cmd="INSERT INTO `tbl_workaccident` (`job_classification`,`doyou_pos`,`doyou`,`pick`,`carry`,`injury_occur`,`saw_accident`,`title`,`present_job`,`time_loss`,`absenteeism`,`type_of_light`,`lighting`,`pick_lift`,`how_much`,`how_often`,`where_to_where`,`lift_from`,`liftin_orout`,`workpos`,`push_pull`,`jobpp`,`work_area`,`warea`,`levers`,`overhead`,`no_of_employees`,`like_job`,`pre_employment`,`return_job`,`changes_in_job`) VALUES ('"+workaccident.getJob_classification()+"','"+workaccident.getDoyou_pos()+"','"+workaccident.getDoyou()+"','"+workaccident.getPick()+"','"+workaccident.getCarry()+"','"+workaccident.getInjury_occur()+"','"+workaccident.getSaw_accident()+"','"+workaccident.getTitle()+"','"+workaccident.getPresent_job()+"','"+workaccident.getTime_loss()+"','"+workaccident.getAbsenteeism()+"','"+workaccident.getType_of_light()+"','"+workaccident.getLighting()+"','"+workaccident.getPick_lift()+"','"+workaccident.getHow_much()+"','"+workaccident.getHow_often()+"','"+workaccident.getWhere_to_where()+"','"+workaccident.getLift_from()+"','"+workaccident.getLiftin_orout()+"','"+workaccident.getWorkpos()+"','"+workaccident.getPush_pull()+"','"+workaccident.getJobpp()+"','"+workaccident.getWork_area()+"','"+workaccident.getWarea()+"','"+workaccident.getLevers()+"','"+workaccident.getOverhead()+"','"+workaccident.getNo_of_employees()+"','"+workaccident.getLike_job()+"','"+workaccident.getPre_employment()+"','"+workaccident.getReturn_job()+"','"+workaccident.getChanges_in_job()+"')";
+	    	 String cmd="INSERT INTO `tbl_workaccident` (username,`job_classification`,`doyou_pos`,`doyou`,`pick`,`carry`,`injury_occur`,`saw_accident`,`title`,`present_job`,`time_loss`,`absenteeism`,`type_of_light`,`lighting`,`pick_lift`,`how_much`,`how_often`,`where_to_where`,`lift_from`,`liftin_orout`,`workpos`,`push_pull`,`jobpp`,`work_area`,`warea`,`levers`,`overhead`,`no_of_employees`,`like_job`,`pre_employment`,`return_job`,`changes_in_job`) VALUES ('"+principal.getName()+"','"+workaccident.getJob_classification()+"','"+workaccident.getDoyou_pos()+"','"+workaccident.getDoyou()+"','"+workaccident.getPick()+"','"+workaccident.getCarry()+"','"+workaccident.getInjury_occur()+"','"+workaccident.getSaw_accident()+"','"+workaccident.getTitle()+"','"+workaccident.getPresent_job()+"','"+workaccident.getTime_loss()+"','"+workaccident.getAbsenteeism()+"','"+workaccident.getType_of_light()+"','"+workaccident.getLighting()+"','"+workaccident.getPick_lift()+"','"+workaccident.getHow_much()+"','"+workaccident.getHow_often()+"','"+workaccident.getWhere_to_where()+"','"+workaccident.getLift_from()+"','"+workaccident.getLiftin_orout()+"','"+workaccident.getWorkpos()+"','"+workaccident.getPush_pull()+"','"+workaccident.getJobpp()+"','"+workaccident.getWork_area()+"','"+workaccident.getWarea()+"','"+workaccident.getLevers()+"','"+workaccident.getOverhead()+"','"+workaccident.getNo_of_employees()+"','"+workaccident.getLike_job()+"','"+workaccident.getPre_employment()+"','"+workaccident.getReturn_job()+"','"+workaccident.getChanges_in_job()+"')";
 	    	 System.out.println(cmd);
 	    	 statement.execute(cmd);
 	    	
@@ -83,6 +84,67 @@ public List<Workaccident> getWorkaccident(){
 	List<Workaccident> Workaccident = new ArrayList<Workaccident>();
     try{
 		resultSet = statement.executeQuery("select * from tbl_workaccident");
+		while(resultSet.next()){
+			Workaccident.add(new Workaccident(resultSet.getString("patient_no"),resultSet.getString("job_classification"),
+					resultSet.getString("doyou_pos"),
+					resultSet.getString("doyou"),
+					resultSet.getString("pick"),
+					resultSet.getString("carry"),
+					resultSet.getString("injury_occur"),
+					resultSet.getString("saw_accident"),
+					resultSet.getString("title"),
+					resultSet.getString("present_job"),
+					resultSet.getString("time_loss"),
+					resultSet.getString("absenteeism"),
+					resultSet.getString("type_of_light"),
+					resultSet.getString("lighting"),
+					resultSet.getString("pick_lift"),
+					resultSet.getString("how_much"),
+					resultSet.getString("how_often"),
+					resultSet.getString("where_to_where"),
+					resultSet.getString("lift_from"),
+					resultSet.getString("liftin_orout"),
+					resultSet.getString("workpos"),
+					resultSet.getString("push_pull"),
+					resultSet.getString("jobpp"),
+					resultSet.getString("work_area"),
+					resultSet.getString("warea"),
+					resultSet.getString("levers"),
+					resultSet.getString("overhead"),
+					resultSet.getString("no_of_employees"),
+					resultSet.getString("like_job"),
+					resultSet.getString("pre_employment"),
+					resultSet.getString("return_job"),
+					resultSet.getString("changes_in_job")));
+		}
+    }catch(Exception e){
+    	releaseResultSet(resultSet);
+    	releaseStatement(statement);
+    	releaseConnection(con);
+    }finally{
+    	releaseResultSet(resultSet);
+    	releaseStatement(statement);
+    	releaseConnection(con);	    	
+    }
+    return Workaccident;
+	
+}
+public List<Workaccident> getUsernameWorkaccident(Principal principal){
+	Connection con = null;
+	Statement statement = null;
+	ResultSet resultSet = null;
+	try {
+		con = dataSource.getConnection();
+		statement = con.createStatement();
+	} catch (SQLException e1) {
+		e1.printStackTrace();
+	}
+	
+	List<Workaccident> Workaccident = new ArrayList<Workaccident>();
+    try{
+    	String cmd = "select * from tbl_workaccident where username='"+principal.getName()+"'";
+		resultSet = statement.executeQuery(cmd);
+		System.out.println(cmd);
 		while(resultSet.next()){
 			Workaccident.add(new Workaccident(resultSet.getString("patient_no"),resultSet.getString("job_classification"),
 					resultSet.getString("doyou_pos"),
@@ -227,7 +289,7 @@ public int updateWorkAccident(Workaccident workAcc,String patient_no,String admi
      		return 0;
  	    
 }
-public int deleteWorkAccident(String patient_no,String admin){
+public int deleteWorkAccident(Principal principal){
 	Connection con = null;
 	Statement statement = null;
 	ResultSet resultSet = null;
@@ -239,15 +301,15 @@ public int deleteWorkAccident(String patient_no,String admin){
 		e1.printStackTrace();
 	}
 	try{
-		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		/*DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
     	 Date date = new Date();
     	 String cmd_getjob_classification="select job_classification from tbl_workaccident where patient_no='"+patient_no+"'";
     	 String Desc="Delete workAcc ";
     	 resultSet=statement.executeQuery(cmd_getjob_classification);
 			
 			if(resultSet.next())
-				Desc=Desc+resultSet.getString(1);
-			statement.execute("delete from tbl_workaccident where patient_no='"+patient_no+"'");
+				Desc=Desc+resultSet.getString(1);*/
+			statement.execute("delete from tbl_workaccident where username='"+principal.getName()+"'");
 			
 			flag=1;
 			

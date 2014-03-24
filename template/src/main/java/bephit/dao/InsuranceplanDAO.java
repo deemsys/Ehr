@@ -1,5 +1,6 @@
 package bephit.dao;
 
+import java.security.Principal;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -27,7 +28,7 @@ public class InsuranceplanDAO {
 	
 	
 	
-	public int setInsuranceplan(Insuranceplan insuranceplan)
+	public int setInsuranceplan(Insuranceplan insuranceplan,Principal principal)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -44,7 +45,7 @@ public class InsuranceplanDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 //System.out.println(dateFormat.format(date));
-	    	 String cmd="INSERT INTO `tbl_insuranceplan` (`insure_comp`,`addr`,`pat_name`,`accident_date`,`enrollee`,`no_objection`,`agentname`,`fax`,`name_of_clinic`,`pat`,`authorized`) VALUES ('"+insuranceplan.getInsure_comp()+"','"+insuranceplan.getAddr()+"','"+insuranceplan.getPat_name()+"','"+insuranceplan.getAccident_date()+"','"+insuranceplan.getEnrollee()+"','"+insuranceplan.getNo_objection()+"','"+insuranceplan.getAgentname()+"','"+insuranceplan.getFax()+"','"+insuranceplan.getName_of_clinic()+"','"+insuranceplan.getPat()+"','"+insuranceplan.getAuthorized()+"')";
+	    	 String cmd="INSERT INTO `tbl_insuranceplan` (username,`insure_comp`,`addr`,`pat_name`,`accident_date`,`enrollee`,`no_objection`,`agentname`,`fax`,`name_of_clinic`,`pat`,`authorized`) VALUES ('"+principal.getName()+"','"+insuranceplan.getInsure_comp()+"','"+insuranceplan.getAddr()+"','"+insuranceplan.getPat_name()+"','"+insuranceplan.getAccident_date()+"','"+insuranceplan.getEnrollee()+"','"+insuranceplan.getNo_objection()+"','"+insuranceplan.getAgentname()+"','"+insuranceplan.getFax()+"','"+insuranceplan.getName_of_clinic()+"','"+insuranceplan.getPat()+"','"+insuranceplan.getAuthorized()+"')";
 	    	 System.out.println(cmd);
 	    	 statement.execute(cmd);
 			flag=1;
@@ -67,7 +68,47 @@ public class InsuranceplanDAO {
 	    
 	}
 	
-	
+	public List<Insuranceplan> getInsuranceplanUsername(Principal principal){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		
+		List<Insuranceplan> Insuranceplan = new ArrayList<Insuranceplan>();
+	    try{
+			resultSet = statement.executeQuery("select * from tbl_insuranceplan where username='"+principal.getName()+"'");
+			while(resultSet.next()){
+				Insuranceplan.add(new Insuranceplan(resultSet.getString("no"),resultSet.getString("insure_comp"),
+			    		resultSet.getString("addr"),
+			    		resultSet.getString("pat_name"),
+			    		resultSet.getString("accident_date"),
+			    		resultSet.getString("enrollee"),
+			    		resultSet.getString("no_objection"),
+			    		resultSet.getString("agentname"),
+			    		resultSet.getString("fax"),
+			    		resultSet.getString("name_of_clinic"),
+			    		resultSet.getString("pat"),
+			    		resultSet.getString("authorized")));
+			    		
+			}
+	    }catch(Exception e){
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    }finally{
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);	    	
+	    }
+	    return Insuranceplan;
+		
+	}
+
 	
 public List<Insuranceplan> getInsuranceplan(){
 	Connection con = null;
@@ -202,7 +243,7 @@ public int updateinsuranceplan(Insuranceplan insuranceplan,String no,String admi
     
 }
 
-public int deleteinsuranceplan(String no){
+public int deleteinsuranceplan(Principal principal){
 	Connection con = null;
 	Statement statement = null;
 	ResultSet resultSet = null;
@@ -216,13 +257,13 @@ public int deleteinsuranceplan(String no){
 	try{
 		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
     	 Date date = new Date();
-    	 String cmd_getpatient_pname="select pat_name from tbl_insuranceplan where no='"+no+"'";
+    	/* String cmd_getpatient_pname="select pat_name from tbl_insuranceplan where username='"+principal.get+"'";
     	 String Desc="Delete report ";
     	 resultSet=statement.executeQuery(cmd_getpatient_pname);
 			
 			if(resultSet.next())
-				Desc=Desc+resultSet.getString(1);
-			statement.execute("delete from tbl_insuranceplan where no='"+no+"'");
+				Desc=Desc+resultSet.getString(1);*/
+			statement.execute("delete from tbl_insuranceplan where username='"+principal.getName()+"'");
 			
 			flag=1;
 			

@@ -1,4 +1,4 @@
-package bephit.dao;
+/*package bephit.dao;
 
 
 import java.sql.Connection;
@@ -260,4 +260,4 @@ public class PatientattorneyDAO {
 	
 	
 
-	    	
+	    	*/

@@ -1,5 +1,6 @@
 package bephit.dao;
 
+import java.security.Principal;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -22,7 +23,7 @@ public class MedicalDAO {
 		this.dataSource = dataSource;
 	}
 	
-	public int setMedicalDetails(MedicalRecords medicaldetails)
+	public int setMedicalDetails(MedicalRecords medicaldetails,Principal principal)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -39,7 +40,7 @@ public class MedicalDAO {
 	    try{
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
-	    	 String cmd="INSERT INTO `Medical_Details`(`name`,`medicalinformation`,`patientsignature`) VALUES ('"+medicaldetails.getName()+"','"+medicaldetails.getMedicalinformation()+"','"+medicaldetails.getPatientsignature()+"')";
+	    	 String cmd="INSERT INTO `Medical_Details`(username,`name`,`medicalinformation`,`patientsignature`) VALUES ('"+principal.getName()+"','"+medicaldetails.getName()+"','"+medicaldetails.getMedicalinformation()+"','"+medicaldetails.getPatientsignature()+"')";
 	    	 System.out.println(cmd);
 	    	 statement.execute(cmd);
 		     flag=1;
@@ -63,7 +64,38 @@ public class MedicalDAO {
     		return 0;
 	    
 	}
-
+	public List<MedicalRecords> getUsernameMedicalDetails(Principal principal){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<MedicalRecords> medical = new ArrayList<MedicalRecords>();
+	    try{
+			resultSet = statement.executeQuery("select * from Medical_Details where username='"+principal.getName()+"'");
+			while(resultSet.next()){
+				medical.add(new MedicalRecords(resultSet.getString("medical_no"),resultSet.getString("name"),
+						resultSet.getString("medicalinformation"),
+						resultSet.getString("patientsignature")
+			    		 ));
+			    	
+			}
+	    }catch(Exception e){
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    }finally{
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);	    	
+	    }
+	    return medical;
+		
+	}
 	public List<MedicalRecords> getMedicalDetails(){
 		Connection con = null;
 		Statement statement = null;
@@ -174,6 +206,40 @@ public class MedicalDAO {
 	}
 	
 	
+	public int deletemedicalrecords(Principal principal){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		int flag=0;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		try{
+			
+				statement.execute("delete from medical_details where username='"+principal.getName()+"'");
+				
+				flag=1;
+				
+		    }catch(Exception e){
+		    	System.out.println(e.toString());
+		    	flag=0;
+		    	releaseResultSet(resultSet);
+		    	releaseStatement(statement);
+		    	releaseConnection(con);
+		    }finally{
+		    	
+		    	releaseResultSet(resultSet);
+		    	releaseStatement(statement);
+		    	releaseConnection(con);	    	
+		    }
+		   		if(flag==1)
+		   			return 1;
+		   		else
+		   			return 0;
+		}
 	public int deletemedicalrecords(String medical_no){
 		Connection con = null;
 		Statement statement = null;

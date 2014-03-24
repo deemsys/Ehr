@@ -1,5 +1,6 @@
 package bephit.dao;
 
+import java.security.Principal;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -23,7 +24,7 @@ public class HippaDAO {
 		this.dataSource = dataSource;
 	}
 	
-	public int setPrivacyDetails(HippaPrivacy privacydetails)
+	public int setPrivacyDetails(HippaPrivacy privacydetails,Principal principal)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -40,7 +41,7 @@ public class HippaDAO {
 	    try{
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
-	    	 String cmd="INSERT INTO `hippa_privacy`(`date`,`printpname`,`printpdate`,`legalguardian`,`staffwitness`) VALUES ('"+privacydetails.getDate()+"','"+privacydetails.getPrintpname()+"','"+privacydetails.getPrintpdate()+"','"+privacydetails.getLegalguardian()+"','"+privacydetails.getStaffwitness()+"')";
+	    	 String cmd="INSERT INTO `hippa_privacy`(username,`date`,`printpname`,`printpdate`,`legalguardian`,`staffwitness`) VALUES ('"+principal.getName()+"','"+privacydetails.getDate()+"','"+privacydetails.getPrintpname()+"','"+privacydetails.getPrintpdate()+"','"+privacydetails.getLegalguardian()+"','"+privacydetails.getStaffwitness()+"')";
 	    	 System.out.println(cmd);
 	    	 statement.execute(cmd);
 		     flag=1;
@@ -139,6 +140,46 @@ public class HippaDAO {
 		
 
 	    }
+	public List<HippaPrivacy> getusernameHippa(Principal principal){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<HippaPrivacy> privacy = new ArrayList<HippaPrivacy>();
+	    try{
+	    	String cmd="select * from hippa_privacy where username='"+principal.getName()+"'";
+	    	
+			resultSet = statement.executeQuery(cmd);
+	    	while(resultSet.next())
+	    	{
+	    		privacy.add( new HippaPrivacy(resultSet.getString("hippa_no"),resultSet.getString("date"),
+						resultSet.getString("printpname"),
+						resultSet.getString("printpdate"),
+						resultSet.getString("legalguardian"),
+			    		resultSet.getString("staffwitness")));
+			}
+	    }catch(Exception e)
+	    {
+	    	System.out.println(e.toString());
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    }finally{
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);	    	
+	    }
+	    return privacy;
+		
+
+	    }
+
+	
 	public int updatehippaprivacy(HippaPrivacy privacydetails,String hippa_no,String admin)
 	{
 		Connection con = null;
@@ -200,6 +241,40 @@ public class HippaDAO {
 				if(resultSet.next())
 					Desc=Desc+resultSet.getString(1);
 				statement.execute("delete from hippa_privacy where hippa_no='"+hippa_no+"'");
+				
+				flag=1;
+				
+		    }catch(Exception e){
+		    	System.out.println(e.toString());
+		    	flag=0;
+		    	releaseResultSet(resultSet);
+		    	releaseStatement(statement);
+		    	releaseConnection(con);
+		    }finally{
+		    	
+		    	releaseResultSet(resultSet);
+		    	releaseStatement(statement);
+		    	releaseConnection(con);	    	
+		    }
+		   		if(flag==1)
+		   			return 1;
+		   		else
+		   			return 0;
+		}
+	public int deletehippa(Principal principal){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		int flag=0;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		try{
+			
+				statement.execute("delete from hippa_privacy where username='"+principal.getName()+"'");
 				
 				flag=1;
 				
