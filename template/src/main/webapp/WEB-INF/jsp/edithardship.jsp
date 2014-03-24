@@ -13,7 +13,7 @@
   </STYLE>
  <script>
  $(function() {
-           $( "#datepicker" ).datepicker();
+           $("#datepicker").datepicker();
          });
  
 </script>
@@ -83,7 +83,7 @@
               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
               <td><input type="submit" class="submit_btn" value="Update"></td>
               <td>&nbsp;&nbsp;</td>
-              <td><input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='hardshiplist'"></td>
+              <td><input type="button" class="submit_btn" value="Delete" onclick="window.location.href='deletehardshipagreement'"></td>
               
         	  </tr>
         	  </table>

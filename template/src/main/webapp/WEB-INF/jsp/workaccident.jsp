@@ -330,7 +330,7 @@ $(function() {
  
              		<!--  <td valign="top" align="center"><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewworkaccident'"></td> -->
 				  
-                  <td valign="top" align="center"><input type="reset" class="submit_btn" value="Cancel" onclick="window.location.href='work'"></td></td>
+                  <td valign="top" align="center"><!-- <input type="reset" class="submit_btn" value="Cancel" onclick="window.location.href='work'"> --></td></td>
 <tr>
 </table>
 	</td>
@@ -552,7 +552,7 @@ $(function() {
 
                   	<td>&nbsp;&nbsp;</td>							
 				           
-                  <td valign="top" align="center"><input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='viewworkaccident'"></td></td>
+                  <td valign="top" align="center"><!-- <input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='viewworkaccident'"> --></td></td>
                   
 				  </tr>
 				  </table>
@@ -659,7 +659,7 @@ $(function() {
                    <td>&nbsp;&nbsp;</td>
                    <td valign="top" align="right"><input type="submit" class="submit_btn" value="Save" name="insert"></td>
                   	<td>&nbsp;&nbsp;</td>
-                  <td valign="top" align="center"><input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='viewworkaccident'"></td>
+                  <td valign="top" align="center"><!-- <input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='viewworkaccident'"> --></td>
                 </tr>
                 </table>
 	</td>

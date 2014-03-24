@@ -130,7 +130,7 @@ and exclusively in the name of Perry Chiropractic and Therapy Center, such sums 
               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
               <td><input type="submit" class="submit_btn" value="Update"></td>
               <td>&nbsp;&nbsp;</td>
-              <td><input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='assignmentlist'"></td>
+              <td><input type="button" class="submit_btn" value="Delete" onclick="window.location.href='deleteassignment'"></td>
               
         	  </tr>
         	  </table>

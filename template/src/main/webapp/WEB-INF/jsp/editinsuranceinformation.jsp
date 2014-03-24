@@ -15,7 +15,7 @@
   </STYLE>
  <script>
  $(window).load(function(){
-	  alert("yes");
+	
 	  $("#policy").keyup(function() {
 			
 			 $("#policyerror").html(''); 
@@ -202,7 +202,7 @@ $("#groupno").keyup(function() {
      	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> 
         <td><br><input type="submit" class="submit_btn" value="Update"></td>
         <td>&nbsp;&nbsp;</td>
-        <td><br><input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='insuranceinfolist'"></td>
+        <td><br><a href="deleteinsuranceinformation" class="submit_btn" style="text-decoration: none;color:white">Delete</a></td>
         </tr>
         </table>
         </div>

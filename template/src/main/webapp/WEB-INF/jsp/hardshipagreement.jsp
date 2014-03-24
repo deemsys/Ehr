@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
 <script src="resources/js/jquery.min.js"></script>
  <script src="resources/js/jquery-ui.js"></script>
- <script src="resources/js/jquery-1.9.1.js"></script>
+
  <STYLE type="text/css">
   P#mypar {font-style:calibri;
   line-height:18px;}
@@ -14,7 +14,7 @@
   </STYLE>
  <script>
  $(function() {
-           $( "#datepicker" ).datepicker();
+           $("#datepicker").datepicker();
          });
  
 </script>
@@ -43,7 +43,7 @@
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td><span class="err">*</span>Date</td>
-              <td ><input type="text" class="input_txtbx1" name="date" id="datepicker" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td ><input type="text" id="datepicker" class="input_txtbx1" name="date"/><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>
               <br>
@@ -126,7 +126,7 @@
               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
               <td><input type="submit" class="submit_btn" value="Save">&nbsp;&nbsp;
 				</td>
-              <td valign="top" align="center"><a href="hardshiplist" class="submit_btn" style="color: white">Cancel</a></td>
+              <td valign="top" align="center"><!-- <a href="hardshiplist" class="submit_btn" style="color: white">Cancel</a> --></td>
         	  </tr>
         	  </table>
         	  </div>

@@ -247,7 +247,7 @@ $(function() {
 				  <tr>
 				  <td><br><input type="button" id="btnNext" class="submit_btn" value="Next"/><br></td>
 				  <td>&nbsp;&nbsp;</td>
-				  <td><br><input type="button"  class="submit_btn" value="Cancel" onclick="window.location.href='viewautoaccident'"/><br></td>
+				  <td><br><!-- <input type="button"  class="submit_btn" value="Cancel" onclick="window.location.href='viewautoaccident'"/> --><br></td>
 				  </tr>
 				  </table>
 				  </td>
@@ -445,7 +445,7 @@ $(function() {
 				  	<td>&nbsp;&nbsp;</td>
 				  <td><br><input type="button" id="btnNext" class="submit_btn" value="Next"/><br></td>
 				  <td>&nbsp;&nbsp;</td>
-				  <td><br><input type="button"  class="submit_btn" value="Cancel" onclick="window.location.href='viewautoaccident'"/><br></td>
+				  <td><br><!-- <input type="button"  class="submit_btn" value="Cancel" onclick="window.location.href='viewautoaccident'"/> --><br></td>
 				  </tr>
 				  </table>
 				  
@@ -613,7 +613,7 @@ $(function() {
 				  	<td>&nbsp;&nbsp;</td>
 				  <td><br><input type="button" id="btnNext" class="submit_btn" value="Next"/><br></td>
 				  <td>&nbsp;&nbsp;</td>
-				  <td><br><input type="button"  class="submit_btn" value="Cancel" onclick="window.location.href='viewautoaccident'"/><br></td>
+				  <td><br><!-- <input type="button"  class="submit_btn" value="Cancel" onclick="window.location.href='viewautoaccident'"/> --><br></td>
 				  </tr>
 				  </table>
 				 </td>
@@ -765,7 +765,7 @@ $(function() {
 				  <br><tr>
 				 <td><br><input type="button" id="btnPrevious" class="submit_btn" value="Previous" style = "display:none" />&nbsp;</td>
                 <td><input type="submit" class="submit_btn" value="Update"></td>
-                <td><input type="reset" class="submit_btn" value="Cancel" onclick="window.location.href='viewautoaccident'"></td>				 
+                <td><a href="deleteautoaccident" class="submit_btn" style="text-decoration: none;color:white">Delete</a><!-- <input type="reset" class="submit_btn" value="Cancel" onclick="window.location.href='viewautoaccident'"> --></td>				 
 				</table> 
 				  
 				     </div>

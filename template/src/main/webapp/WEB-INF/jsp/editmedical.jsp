@@ -61,7 +61,7 @@
 				
 				<td valign="top" align="center"><br><input type="submit" class="submit_btn" value="Update"></td>
 				<td>&nbsp;&nbsp;</td>
-				 <td><br><input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='medicalrecordslist'"></td>
+				 <td><br><input type="button" class="submit_btn" value="Delete" onclick="window.location.href='deletemedicalrecordsdetails'"></td>
 				 
 				  </tr>
 				                  	</div>

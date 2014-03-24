@@ -298,7 +298,7 @@ window.onload(){
 
                   	<td>&nbsp;&nbsp;</td>							
 				           
-                  <td valign="top" align="center"><input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='viewworkaccident'"></td></td>
+                  <td valign="top" align="center"><!-- <input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='viewworkaccident'"> --></td></td>
                   
 				  </tr>
 				  </table>
@@ -408,7 +408,7 @@ window.onload(){
                    <td>&nbsp;&nbsp;</td>
                    <td valign="top" align="right"><input type="submit" class="submit_btn" value="Update" name="insert"></td>
                   	<td>&nbsp;&nbsp;</td>
-                  <td valign="top" align="center"><input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='viewworkaccident'"></td>
+                  <td valign="top" align="center"><a href="deleteworkaccident" class="submit_btn" style="text-decoration: none;color:white">Delete</a><!-- <input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='viewworkaccident'"> --></td>
                 </tr>
                 </table>
                 </td>

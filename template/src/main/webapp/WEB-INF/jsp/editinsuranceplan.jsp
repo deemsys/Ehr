@@ -15,7 +15,6 @@
   </STYLE>
  <script>
  $(window).load(function(){
-	  alert("yes");
 	  $("#enrollee").keyup(function() {
 			
 			 $("#enrolleeerror").html(''); 
@@ -141,7 +140,7 @@
      	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> 
         <td><br><input type="submit" class="submit_btn" value="Update"></td>
         <td>&nbsp;&nbsp;</td>
-        <td><br><input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='insuranceplanlist'"></td>
+        <td><br><a href="deleteinsuranceplan" class="submit_btn" style="text-decoration: none;color:white">Delete</a></td>
         </tr>
         </table>
         </div>

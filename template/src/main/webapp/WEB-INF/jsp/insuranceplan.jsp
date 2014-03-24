@@ -214,9 +214,9 @@
         <table>
         <tr>
      	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> 
-        <td><br><input type="submit" class="submit_btn" value="Save"></td>
+        <td align="center"><br><input type="submit" class="submit_btn" value="Save"></td>
         <td>&nbsp;&nbsp;</td>
-        <td><br><a href="insuranceplanlist"  class="submit_btn" style="color:white">Cancel</a></td>
+        <td><br><!-- <a href="insuranceplanlist"  class="submit_btn" style="color:white">Cancel</a> --></td>
         <td>&nbsp;&nbsp;</td>
        <!--  <td><br><input type="button" class="submit_btn" value="View" onclick="window.location.href='insuranceplanlist'"></td> -->
         </tr>

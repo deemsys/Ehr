@@ -95,7 +95,7 @@
                         <tr>
 				  <td valign="top" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				                <td valign="top" align="center"><br><input type="submit" class="submit_btn" value="Save"></td>
-				                <td>&nbsp;&nbsp;<a href="screeninglist" class="submit_btn" style="color: white">Cancel</a></td>
+				                <td>&nbsp;&nbsp;<!-- <a href="screeninglist" class="submit_btn" style="color: white">Cancel</a> --></td>
 				 <!-- <td valign="top" align="center"><br><input type="button" class="submit_btn" value="View" onclick="window.location.href='screeninglist'"></td> -->
 				  </tr>
                         </table>

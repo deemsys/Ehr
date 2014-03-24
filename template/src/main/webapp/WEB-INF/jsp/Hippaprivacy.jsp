@@ -172,7 +172,7 @@
 				  <td valign="top" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				                <td valign="top" align="center"><br><input type="submit" class="submit_btn" value="Save"></td>
 				                <td>&nbsp;&nbsp;</td>
-				    <td valign="top" align="center"><br><a href="hippalist" class="submit_btn" style="color:white" >Cancel</td>
+				    <td valign="top" align="center"><br><!-- <a href="hippalist" class="submit_btn" style="color:white" >Cancel --></td>
 				    <td>&nbsp;&nbsp;</td>
 				     <!-- <td valign="top" align="center"><br><input type="button" class="submit_btn" value="view" onclick="window.location.href='hippalist'"></td> -->
 				  </tr>

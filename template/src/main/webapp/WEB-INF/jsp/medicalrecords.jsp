@@ -81,7 +81,7 @@
 				                  	<tr>
 				  <td valign="top" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				<td valign="top" align="center"><br><input type="submit" class="submit_btn" value="Save"></td>
-				<td>&nbsp;&nbsp;<a href="medicalrecordslist" class="submit_btn" style="color: white">Cancel</a><br><br><br></td>
+				<td>&nbsp;&nbsp;<!-- <a href="medicalrecordslist" class="submit_btn" style="color: white">Cancel</a> --><br><br><br></td>
 				
 				<!--  <td valign="top" align="center"><br><input type="button" class="submit_btn" value="view" onclick="window.location.href='medicalrecordslist'"></td> -->
 				  </tr>

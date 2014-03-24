@@ -1007,9 +1007,9 @@ color:#fff;
 
 						<ul id="ddsubmenu1" class="ddsubmenustyle">
 							<li><a href="autoaccident">Auto Accident</a></li>
-							<li><a href="viewautoaccident">View Auto Accident</a></li>
+							<!-- <li><a href="viewautoaccident">View Auto Accident</a></li> -->
 							<li><a href="workaccident">Work Accident</a></li>
-							<li><a href="viewworkaccident"> View Work Accident</a></li>
+							<!-- <li><a href="viewworkaccident"> View Work Accident</a></li> -->
 							<!-- <li><a href="viewauto">View Autoaccident</a></li> -->
 							<!-- <li><a href="broadcast">Send Stream</a></li>
             				<li><a href="viewreports">Report</a></li>  -->
@@ -1058,7 +1058,7 @@ color:#fff;
 						<ul id="ddsubmenu2" class="ddsubmenustyle">
 
 							<li><a href="treatform">Authorization And Consent To Treat</a></li>
-						<li><a href="treatformlist">View Authorization And Consent To Treat</a></li>
+						<!-- <li><a href="treatformlist">View Authorization And Consent To Treat</a></li> -->
 						<c:if test="${age <18}">						
 				        <li id="consent"><a href="treatminor">Consent To Treat A minor</a></li>
 				         <li><a href="viewtreatminor">View Consent To Treat minor</a></li>
@@ -1127,15 +1127,15 @@ color:#fff;
 						</ul>
  -->						<ul id="ddsubmenu3" class="ddsubmenustyle">
 							<li><a href="hardshipagreement">Hardship Agreement</a></li>
-							<li><a href="hardshiplist">View Hardship Agreement</a></li>
+							<!-- <li><a href="hardshiplist">View Hardship Agreement</a></li> -->
 							<li><a href="screeningAuthz">Screening Disclosure</a></li> 
-							<li><a href="screeninglist">View Screening Disclosure</a></li>       
+						<!-- 	<li><a href="screeninglist">View Screening Disclosure</a></li>        -->
 				            <li><a href="medicalrecords">Release Of Records</a></li>
-				            <li><a href="medicalrecordslist">View Release Of Records</a></li>
+				          <!--   <li><a href="medicalrecordslist">View Release Of Records</a></li> -->
 				            <li><a href="Assignment">Assignment Of Benefits</a></li>
-				            <li><a href="assignmentlist">View Assignment Of Benefits</a></li>
+				          <!--   <li><a href="assignmentlist">View Assignment Of Benefits</a></li> -->
 				            <li><a href="Hippaprivacy">Hippa Privacy</a></li>
-				            <li><a href="hippalist">View Hippa Privacy</a></li>
+				          <!--   <li><a href="hippalist">View Hippa Privacy</a></li> -->
 				         </ul>
 						<!-- <ul id="ddsubmenu4" class="ddsubmenustyle">
 							<li><a href="textmsgsettings">Text Message API settings</a></li>
@@ -1159,9 +1159,9 @@ color:#fff;
 
 							<ul id="ddsubmenu4" class="ddsubmenustyle">
 							<li><a href="insuranceplan">Insurance Waiver</a></li>
-							<li><a href="insuranceplanlist">View Insurance Waiver</a></li>
+						<!-- 	<li><a href="insuranceplanlist">View Insurance Waiver</a></li> -->
 							<li><a href="insuranceinformation">Health Insurance Information</a></li>
-							<li><a href="insuranceinfolist">View Health Insurance Information</a></li>
+							<!-- <li><a href="insuranceinfolist">View Health Insurance Information</a></li> -->
 							<!-- <li><a href="insuranceverification">Health Insurance Verification</a></li> -->
 						</ul>
 						<script>

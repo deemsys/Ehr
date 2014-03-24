@@ -288,14 +288,14 @@ $("#groupno").keyup(function() {
         </table>
         </c:otherwise>
         </c:choose>
-        <table>
+        <table width="100%">
        <tr>
-	    <td valign="top" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td valign="top" align="center"><br><input type="submit" class="submit_btn" value="Save"></td>
-        <td>&nbsp;&nbsp;</td>
-        <td valign="top" align="center"><br><a href="insuranceinfolist" class="submit_btn" style="color: white">Cancel</a></td>
+	    <td valign="top" align="right" width="500"><br><input type="submit" class="submit_btn" value="Save"></td>
+       <td width="500"></td>
+       <!--  <td>&nbsp;&nbsp;</td>
+        <td valign="top" align="center"><br><a href="insuranceinfolist" class="submit_btn" style="color: white">Cancel</a> </td>
 	    <td>&nbsp;&nbsp;</td>
-	    <!-- <td valign="top" align="center"><br><input type="button" class="submit_btn" value="View" onclick="window.location.href='insuranceinfolist'"></td> -->
+	    --> <!-- <td valign="top" align="center"><br><input type="button" class="submit_btn" value="View" onclick="window.location.href='insuranceinfolist'"></td> -->
 	    </tr>
         </table>
         </div>

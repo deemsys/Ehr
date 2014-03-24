@@ -11,6 +11,42 @@
   <script src="resources/js/jquery.min.js"></script>
   <script src="resources/js/jquery-ui.js"></script>
 <script type="text/javascript">
+				var $im = 1;
+				var flagm = 1;
+				function addMultichoice(divName) {
+					var xx = document.getElementsByName('message[]').length;
+					var $in = xx + 1;
+					var $m=$in-1;
+
+					var newdiv = document.createElement('div');
+
+					newdiv.innerHTML = '<table width="100%" border="0" cellspacing="0" cellpadding="0" id="newtbl'
+							+ $im
+							+ '"><tr class="row2"><td valign="middle" align="right" class="input_txt" width="30%">Message '
+							+ $in
+							+ ' :</td><td valign="top" align="left" class="input_txt" width="70%"><textarea class="input_txtarea" value="hello" name="message['+$m+']" rows="5" cols="" id="inp_id5" ></textarea></td></tr><tr class="row1"><td align="right" valign="top">&nbsp;</td><td align="left" valign="top"><a javascript:void(0);" onclick="removechoice('
+							+ $im
+							+ ')" style="text-decoration:none;"><input type="submit" class="submit_btn" value="CANCEL"  /></a></td></tr></table>';
+							
+							alert(newdiv.innerHTML);
+					document.getElementById(divName).appendChild(newdiv);
+					$im++;
+					flagm++;
+
+				}
+				function removechoice(id) {
+					id = 'newtbl' + id;
+					var child = document.getElementById(id)
+					var parentDiv = child.parentNode;
+					parentDiv.removeChild(child);
+
+				}
+			</script>
+
+
+
+<!-- 
+<script type="text/javascript">
 
  var $im=0;
  var flagm=0;
@@ -21,8 +57,10 @@ var xx=document.getElementsByName('symptom[]').length;
 var $sid = xx+1;
 
 	
-	var newdiv = document.createElement('div');
-	newdiv.innerHTML = '<table width="85%" border="0" cellspacing="0" cellpadding="0" align="right" id="newtbl'+$im+'"><tr class="row1"><td valign="middle" align="right" class="input_txt" width="35%"></td><td valign="top" align="left" class="input_txt" width="70%"><textarea  name="symptom[]" placeholder="Specify your Symptoms" rows="3" cols="25" onBlur="newpopup()" id="symptom"></textarea></td></tr><tr class="row1"><td align="right" valign="top">&nbsp;</td><td align="left" valign="top"><a javascript:void(0);" onclick="removechoice('+$im+')" style="text-decoration:none;"><input type="submit" class="submit_btn" value="CANCEL" /></a></td></tr></table>';
+	var newdiv = document.createElement('div');	
+
+	
+	newdiv.innerHTML = '<table width="100%" border="0" cellspacing="0" cellpadding="0" align="right" id="newtbl'+$im+'"><tr class="row1"><td valign="middle" align="right" class="input_txt" width="35%"></td><td valign="top" align="left" class="input_txt" width="70%"><textarea name="symptom[]" placeholder="Specify your Symptoms" rows="3" cols="25" ></textarea></td></tr><tr class="row1"><td align="right" valign="top">&nbsp;</td><td align="left" valign="top"><a javascript:void(0);" onclick="removechoice('+$im+')" style="text-decoration:none;"><input type="submit" class="submit_btn" value="CANCEL" /></a></td></tr></table>';
     document.getElementById(divName).appendChild(newdiv); 
 
 	$im++;
@@ -37,7 +75,7 @@ var $sid = xx+1;
 
 	}
 </script>
-
+ -->
 <script>
   $(function() {
 	  $("#datepicker3").datepicker({changeMonth: true,changeYear: true,showOn: "button",
@@ -410,11 +448,11 @@ var $sid = xx+1;
                  
                   <td valign="top" align="left" class="input_txt" width="70%">
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                  <textarea  name="symptom[]" rows="3" cols="25" >${symptom}</textarea>
-                 
-                </td> </tr><tr height="10"></tr></c:forEach>
+                 <textarea  rows="3" cols="25" name="message[]" >${symptom}</textarea>
+               
+                </td> </tr><tr height="10"></tr>  </c:forEach>
 				        </td><td></td></tr></table>  
-				        <div id="multichoice"></div>		
+				      		
 				          		<table>
 				          		<tr>
 				          		
@@ -422,7 +460,7 @@ var $sid = xx+1;
    <td width="510"></td><td><a href="javascript:void(0);" onclick="addMultichoice('multichoice');" style="text-decoration:none;" ><input type="button" value="Add one more Symptom" class="submit_btn2" name=""/></a></td>
         
 				          		
-				          		
+				          		<div id="multichoice"></div> 
 				          		
 				          		</td>
 				          			<%--<td><label for="amount"><b>Pain Scale:</b></label>
