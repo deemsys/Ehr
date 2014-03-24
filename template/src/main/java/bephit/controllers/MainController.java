@@ -728,6 +728,14 @@ public class MainController {
 			{			
 		   model.addAttribute("patientno","0");
 		}
+		if(autoDAO.getusernameAuto(principal).size()>0)
+		{
+		AutoaccidentForm autoaccidentForm = new AutoaccidentForm();	       
+        autoaccidentForm.setAutoaccident(autoDAO.getusernameAuto(principal));	
+		model.addAttribute("autoaccidentForm", autoaccidentForm);
+		model.addAttribute("menu", "Accident");
+		return "editautoaccident";
+		}
 		session.removeAttribute("auto");
 		 model.addAttribute("menu", "Accident");
 		return "autoaccident";
@@ -754,7 +762,7 @@ public class MainController {
 		}
 		
 		
-    	int a=autoDAO.setAutoaccident(autoaccident);
+    	int a=autoDAO.setAutoaccident(autoaccident,principal);
 		AutoaccidentForm autoaccidentForm= new AutoaccidentForm();
 		autoaccidentForm.setAutoaccident(autoDAO.getAutoaccident());
 		model.addAttribute("autoaccidentForm",autoaccidentForm);
@@ -921,14 +929,14 @@ public class MainController {
 	
 
 	@RequestMapping(value="/deleteautoaccident", method=RequestMethod.GET)
-	public String removeautoaccident(@RequestParam("patient_number") String patient_number,ModelMap model, Principal principal) {
+	public String removeautoaccident(ModelMap model, Principal principal) {
 	
 
 		if(patientDAO.getUsername(principal).size()>0)
 			{			
 		   model.addAttribute("patientno","0");
 		}
-		int status=autoDAO.deleteautoaccident(patient_number, principal.getName());
+		int status=autoDAO.deleteautoaccident(principal);
 		
 		if(status==1)
 		{
@@ -941,7 +949,7 @@ public class MainController {
         model.addAttribute("menu", "Accident");
 		}
 		
-		return "viewautoaccident";
+		return "autoaccident";
 	}
 	@RequestMapping(value="/radiologicreport", method=RequestMethod.GET)
 	public String radiologicreport(HttpServletRequest request,HttpSession session,ModelMap model) {
@@ -1144,6 +1152,14 @@ public class MainController {
 			{			
 		   model.addAttribute("patientno","0");
 		}
+		if(workDAO.getUsernameWorkaccident(principal).size()>0)
+		{
+		WorkaccidentForm workaccidentForm = new WorkaccidentForm();	       
+       	workaccidentForm.setWorkaccident(workDAO.getUsernameWorkaccident(principal));
+		model.addAttribute("workaccidentForm",workaccidentForm);
+		model.addAttribute("menu", "Accident");
+		return "editworkaccident";
+		}
 		model.addAttribute("menu", "Accident");
 		return "workaccident";
 	}
@@ -1173,7 +1189,7 @@ public class MainController {
 		}
 		model.put("Workaccident", workaccident);
 		model.addAttribute("workaccidentForm",workaccident);
-    	int b =workDAO.setWorkaccident(workaccident);
+    	int b =workDAO.setWorkaccident(workaccident,principal);
 		WorkaccidentForm workaccidentForm= new WorkaccidentForm();
 		workaccidentForm.setWorkaccident(workDAO.getWorkaccident());
 		model.addAttribute("workaccidentForm",workaccidentForm);
@@ -1326,14 +1342,14 @@ public class MainController {
 		
 	}
 	@RequestMapping(value="/deleteworkaccident", method=RequestMethod.GET)
-	public String removeWorkAccident(@RequestParam("patient_no") String patient_no,ModelMap model, Principal principal) {
+	public String removeWorkAccident(ModelMap model, Principal principal) {
 	
 
 		if(patientDAO.getUsername(principal).size()>0)
 			{			
 		   model.addAttribute("patientno","0");
 		}
-		int status = workDAO.deleteWorkAccident(patient_no, principal.getName());
+		int status = workDAO.deleteWorkAccident(principal);
 		if(status==1)
 		{
         model.addAttribute("success","true");
@@ -1343,18 +1359,27 @@ public class MainController {
 		model.addAttribute("menu", "Accident");
 		}
 		
-		return "viewworkaccident";
+		return "workaccident";
 	}
 	
 	@RequestMapping(value="/insuranceinformation", method = RequestMethod.GET)
 	public String insuranceinformation(Principal principal,HttpSession session,ModelMap model) {
-
+		model.addAttribute("menu", "health");
 		if(patientDAO.getUsername(principal).size()>0)
 			{			
 		   model.addAttribute("patientno","0");
 		}
-		session.removeAttribute("info");
-		model.addAttribute("menu", "health");
+		System.out.println(""+infoDAO.getusernameInsuranceinformation(principal)+""+infoDAO.getusernameInsuranceinformation(principal).size());
+		if(infoDAO.getusernameInsuranceinformation(principal).size()>0)
+		{
+			System.out.println("database1234");
+			InsuranceinformationForm insuranceinformationForm= new InsuranceinformationForm();
+	    	insuranceinformationForm.setInsuranceinformation(infoDAO.getusernameInsuranceinformation(principal));
+			model.addAttribute("InsuranceinformationForm",insuranceinformationForm);
+			//model.addAttribute("menu", "health");
+		return "editinsuranceinformation";
+		}
+		session.removeAttribute("info");		
 		return "insuranceinformation";
  
 	}
@@ -1372,7 +1397,7 @@ public class MainController {
 			InsuranceinformationForm insuranceinformationForm= new InsuranceinformationForm();
 	    	insuranceinformationForm.setInsuranceinformation(infoDAO.getInsuranceinformation());
 			model.addAttribute("InsuranceinformationForm",insuranceinformationForm);
-			model.addAttribute("Success","true");
+			
 			model.addAttribute("menu", "health");
 
 			return "insuranceinformation";
@@ -1386,7 +1411,7 @@ public class MainController {
 		}
 		model.put("Insuranceinformation", insuranceinformation);
 		model.addAttribute("InsuranceinformationForm",insuranceinformation);
-    	int a =infoDAO.setInsuranceinformation(insuranceinformation);
+    	int a =infoDAO.setInsuranceinformation(insuranceinformation,principal);
     	InsuranceinformationForm insuranceinformationForm= new InsuranceinformationForm();
     	insuranceinformationForm.setInsuranceinformation(infoDAO.getInsuranceinformation());
 		model.addAttribute("InsuranceinformationForm",insuranceinformationForm);
@@ -1447,14 +1472,21 @@ public class MainController {
 	@RequestMapping(value="/insuranceplan", method = RequestMethod.GET)
 	public String insuranceplan(HttpSession session,ModelMap model,Principal principal) {
 		
-
+		session.removeAttribute("waiver");
+		model.addAttribute("menu", "health");
 		if(patientDAO.getUsername(principal).size()>0)
 			{			
 		   model.addAttribute("patientno","0");
 		}
-		session.removeAttribute("waiver");
-		model.addAttribute("menu", "health");
+		if(planDAO.getInsuranceplanUsername(principal).size()>0)
+		{		
+			InsuranceplanForm insuranceplanForm= new InsuranceplanForm();
+	    	insuranceplanForm.setInsuranceplan(planDAO.getInsuranceplanUsername(principal));
+			model.addAttribute("insuranceplanform",insuranceplanForm);
+			return "editinsuranceplan";
+		}
 		return "insuranceplan";
+		
  
 	}
 	
@@ -1483,7 +1515,7 @@ public class MainController {
 			{			
 		   model.addAttribute("patientno","0");
 		}
-    	int a =planDAO.setInsuranceplan(insuranceplan);
+    	int a =planDAO.setInsuranceplan(insuranceplan,principal);
     	InsuranceplanForm insuranceplanForm= new InsuranceplanForm();
     	insuranceplanForm.setInsuranceplan(planDAO.getInsuranceplan());
 		model.addAttribute("insuranceplanform",insuranceplanForm);
@@ -1495,12 +1527,19 @@ public class MainController {
 	public String hardshipagreement(HttpSession session,ModelMap model,Principal principal) {
 		
 		session.removeAttribute("hard");
-
+		 model.addAttribute("menu", "authorization");
 		if(patientDAO.getUsername(principal).size()>0)
 			{			
 		   model.addAttribute("patientno","0");
 		}
-		model.addAttribute("menu", "authorization");
+		if(hardDAO.getUsernameHardshipagreement(principal).size()>0)
+		{
+			HardshipagreementForm hardshipagreementForm= new HardshipagreementForm();
+	    	hardshipagreementForm.setHardshipagreement(hardDAO.getUsernameHardshipagreement(principal));
+			model.addAttribute("hardshipagreementform",hardshipagreementForm);
+			
+			return "edithardship";
+		}		
 		return "hardshipagreement";
  
 	}
@@ -1527,7 +1566,7 @@ public class MainController {
 		}
 
 
-    	int a =hardDAO.setHardshipagreement(Hardshipagreement);
+    	int a =hardDAO.setHardshipagreement(Hardshipagreement,principal);
     	HardshipagreementForm hardshipagreementForm= new HardshipagreementForm();
     	hardshipagreementForm.setHardshipagreement(hardDAO.getHardshipagreement());
 		model.addAttribute("hardshipagreementform",hardshipagreementForm);
@@ -1759,7 +1798,7 @@ public class MainController {
 	@RequestMapping(value="/treatform",method=RequestMethod.GET)
 	public String treatform(HttpSession session, ModelMap model,Principal principal)
 	{
-		
+		model.addAttribute("menu", "consent");
 		
 		session.removeAttribute("consent");
 
@@ -1767,17 +1806,34 @@ public class MainController {
 			{			
 		   model.addAttribute("patientno","0");
 		}
+		if(treatDAO.getUsernameTreatDetails(principal).size()>0)
+		{
+		TreatForm treatform= new TreatForm();
+		treatform.setTreatform(treatDAO.getUsernameTreatDetails(principal));
+		model.addAttribute("treatform",treatform);
 		model.addAttribute("menu", "consent");
+        return "edittreatform";
+		}
+		
+		
+		
 		return "treatform";
 	}
 	@RequestMapping(value="/treatminor",method=RequestMethod.GET)
 	public String treatminor(HttpSession session,ModelMap model,Principal principal)
 	{
 		session.removeAttribute("minor");
-
+		model.addAttribute("menu", "consent");
 		if(patientDAO.getUsername(principal).size()>0)
 			{			
 		   model.addAttribute("patientno","0");
+		}
+		if(minorDAO.getusernameMinorDetails(principal).size()>0)
+		{
+		TreatMinorDetailsForm treatminordetailsForm= new TreatMinorDetailsForm();
+		treatminordetailsForm.setMinorDetails(minorDAO.getusernameMinorDetails(principal));
+		model.addAttribute("treatminordetailsform",treatminordetailsForm);		
+		return "edittreatminor";
 		}
 		model.addAttribute("menu", "consent");
 		return "treatminor";
@@ -1788,12 +1844,19 @@ public class MainController {
 	public String medicalrecords(HttpSession session,ModelMap model,Principal principal)
 	{
 		session.removeAttribute("medical");
-
+		model.addAttribute("menu", "authorization");
 		if(patientDAO.getUsername(principal).size()>0)
 			{			
 		   model.addAttribute("patientno","0");
 		}
-		model.addAttribute("menu", "authorization");
+		if(medicalDAO.getUsernameMedicalDetails(principal).size()>0)
+		{
+		MedicalRecordsForm medicalrecordsform= new MedicalRecordsForm();
+		medicalrecordsform.setMedicalDetails(medicalDAO.getUsernameMedicalDetails(principal));
+		model.addAttribute("MedicalRecordsForm",medicalrecordsform);
+		return "editmedical";
+		}
+		
 		return "medicalrecords";
 	}
 	
@@ -1819,7 +1882,7 @@ public class MainController {
 			}
 		
 		model.addAttribute("MedicalRecordsForm",medicaldetails);
-		int a=medicalDAO.setMedicalDetails(medicaldetails);
+		int a=medicalDAO.setMedicalDetails(medicaldetails,principal);
         MedicalRecordsForm medicalrecordsform= new MedicalRecordsForm();
 		medicalrecordsform.setMedicalDetails(medicalDAO.getMedicalDetails());
 		model.addAttribute("MedicalRecordsForm",medicalrecordsform);
@@ -1962,6 +2025,31 @@ public class MainController {
 	        return "medicalrecordslist";
 		
 	}
+	@RequestMapping(value="/deletemedicalrecordsdetails", method=RequestMethod.GET)
+	public String deletemedicalrecords(ModelMap model, Principal principal) {
+	
+		 model.addAttribute("menu", "authorization");
+		if(patientDAO.getUsername(principal).size()>0)
+			{			
+		   model.addAttribute("patientno","0");
+		}
+		int status=medicalDAO.deletemedicalrecords(principal);
+		
+		/*if(status==1)
+		{
+        model.addAttribute("success","true");
+		//ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
+		MedicalRecordsForm medicalrecordsForm = new MedicalRecordsForm();
+		//participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
+		medicalrecordsForm.setMedicalDetails(medicalDAO.getMedicalDetails());
+        model.addAttribute("MedicalRecordsForm", medicalrecordsForm);
+        model.addAttribute("menu", "authorization");
+      
+		}*/
+		
+		return "medicalrecords";
+	}
+	
 	@RequestMapping(value="/deletemedicalrecords", method=RequestMethod.GET)
 	public String removemedicalrecords(@RequestParam("medical_no") String medical_no,ModelMap model, Principal principal) {
 	
@@ -1987,7 +2075,6 @@ public class MainController {
 		return "medicalrecordslist";
 	}
 	
-	
 	@RequestMapping(value="/screeningAuthz",method=RequestMethod.GET)
 	public String screeningAuthz(Principal principal,HttpSession session,ModelMap model)
 	{
@@ -1995,6 +2082,14 @@ public class MainController {
 		if(patientDAO.getUsername(principal).size()>0)
 			{			
 		   model.addAttribute("patientno","0");
+		}
+		if(screenDAO.getusernameScreening(principal).size()>0)
+		{
+		ScreeningAuthzForm screeningauthzForm= new ScreeningAuthzForm();
+    	screeningauthzForm.setScreeningDetails(screenDAO.getusernameScreening(principal));
+		model.addAttribute("ScreeningAuthzForm",screeningauthzForm);
+		model.addAttribute("menu", "authorization");
+		return "editscreeningauthz";
 		}
 		session.removeAttribute("screen");
 		model.addAttribute("menu", "authorization");
@@ -2023,7 +2118,7 @@ public class MainController {
 		
 		//Add function
 		model.addAttribute("ScreeningAuthzForm",screeningdetails);
-		int a=screenDAO.setScreeningDetails(screeningdetails);
+		int a=screenDAO.setScreeningDetails(screeningdetails,principal);
         ScreeningAuthzForm screeningauthzform= new ScreeningAuthzForm();
 		screeningauthzform.setScreeningDetails(screenDAO.getScreeningDetails());
 		model.addAttribute("ScreeningAuthzForm",screeningauthzform);
@@ -2122,6 +2217,7 @@ public class MainController {
 			{			
 		   model.addAttribute("patientno","0");
 		}
+		
 		ScreeningAuthzForm screeningauthzForm= new ScreeningAuthzForm();
     	screeningauthzForm.setScreeningDetails(screenDAO.getScreeningDetails());
 		model.addAttribute("ScreeningAuthzForm",screeningauthzForm);
@@ -2163,6 +2259,18 @@ public class MainController {
 	        return "viewscreeningauthz";
 		
 	}
+	@RequestMapping(value="/deletescreenauthz", method=RequestMethod.GET)
+	public String removescreenauthz(ModelMap model, Principal principal) {
+	
+		if(patientDAO.getUsername(principal).size()>0)
+		{			
+	   model.addAttribute("patientno","0");
+	}
+		int status=screenDAO.deletescreeningauthz(principal);	
+		
+		
+		return "screeningAuthz";
+	}
 	@RequestMapping(value="/deletescreeningauthz", method=RequestMethod.GET)
 	public String removescreeningauthz(@RequestParam("screen_no") String screen_no,ModelMap model, Principal principal) {
 	
@@ -2171,7 +2279,7 @@ public class MainController {
 	   model.addAttribute("patientno","0");
 	}
 		int status=screenDAO.deletescreeningauthz(screen_no);
-		
+		model.addAttribute("menu", "authorization");
 		if(status==1)
 		{
         model.addAttribute("success","true");
@@ -2180,7 +2288,7 @@ public class MainController {
 		//participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
 		screeningauthzForm.setScreeningDetails(screenDAO.getScreeningDetails());
         model.addAttribute("ScreeningAuthzForm", screeningauthzForm);
-        model.addAttribute("menu", "authorization");
+        
 		}
 		
 		return "screeningAuthz";
@@ -2200,6 +2308,15 @@ public class MainController {
 		   model.addAttribute("patientno","0");
 		}
 			model.addAttribute("menu", "authorization");
+			if(assignmentDAO.getUsernameAssignment(principal).size()>0)
+			{
+			AssignmentDetailsForm assignmentdetailsform= new AssignmentDetailsForm();
+	    	assignmentdetailsform.setAssignmentDetails(assignmentDAO.getUsernameAssignment(principal));
+			model.addAttribute("AssignmentDetailsForm",assignmentdetailsform);
+			model.addAttribute("menu", "authorization");
+			return "editassignment";	
+			}
+			
 			return "Assignment";
 		}
 			
@@ -2224,7 +2341,7 @@ public class MainController {
 			}
 				
 		model.addAttribute("AssignmentDetailsForm",assignmentdetails);
-		int a=assignmentDAO.setAssignmentDetails(assignmentdetails);
+		int a=assignmentDAO.setAssignmentDetails(assignmentdetails,principal);
          AssignmentDetailsForm assignmentdetailsform= new AssignmentDetailsForm();
 		assignmentdetailsform.setAssignmentDetails(assignmentDAO.getAssignmentDetails());
 		model.addAttribute("AssignmentDetailsForm",assignmentdetailsform);
@@ -2385,6 +2502,18 @@ public class MainController {
 		
 		return "assignmentlist";
 	}
+	@RequestMapping(value="/deleteassignment", method=RequestMethod.GET)
+	public String removeassignment(ModelMap model, Principal principal) {
+		if(patientDAO.getUsername(principal).size()>0)
+		{			
+	   model.addAttribute("patientno","0");
+	}
+		int status=assignmentDAO.deleteassignment(principal);
+		 model.addAttribute("menu", "authorization");
+		
+		
+		return "Assignment";
+	}
 	
 	@RequestMapping(value="/Hippaprivacy",method=RequestMethod.GET)
 	public String Hippaprivacy(HttpSession session,ModelMap model,Principal principal)
@@ -2393,6 +2522,14 @@ public class MainController {
 		{			
 	   model.addAttribute("patientno","0");
 	}
+		if(hippaDAO.getusernameHippa(principal).size()>0)
+		{
+		HippaPrivacyForm hippaprivacyform= new HippaPrivacyForm();
+    	hippaprivacyform.setPrivacyDetails(hippaDAO.getusernameHippa(principal));
+		model.addAttribute("HippaPrivacyForm",hippaprivacyform);
+		model.addAttribute("menu", "authorization");
+		return "edithippaprivacy";
+		}		
 		session.removeAttribute("hippa");
 		model.addAttribute("menu", "authorization");
 		return "Hippaprivacy";
@@ -2419,7 +2556,7 @@ public class MainController {
 
 		
 		model.addAttribute("HippaPrivacyForm",privacydetails);
-		int a=hippaDAO.setPrivacyDetails(privacydetails);
+		int a=hippaDAO.setPrivacyDetails(privacydetails,principal);
 		HippaPrivacyForm hippaprivacyform= new HippaPrivacyForm();
 		hippaprivacyform.setPrivacyDetails(hippaDAO.getPrivacyDetails());
 		model.addAttribute("HippaPrivacyForm",hippaprivacyform);
@@ -2552,6 +2689,20 @@ public class MainController {
 	        return "hippalist";
 		
 	}
+	@RequestMapping(value="/deletehippaprivacydetails", method=RequestMethod.GET)
+	public String removehippa(HttpSession session,ModelMap model, Principal principal) {	
+		session.removeAttribute("hippa");
+		if(patientDAO.getUsername(principal).size()>0)
+		{			
+	   model.addAttribute("patientno","0");
+	}	
+	hippaDAO.deletehippa(principal);		
+
+	       model.addAttribute("success","true");
+	       model.addAttribute("menu", "authorization");
+	        return "Hippaprivacy";
+		
+	}
 	@RequestMapping(value="/deletehippaprivacy", method=RequestMethod.GET)
 	public String removehippa(@RequestParam("hippa_no") String hippa_no,ModelMap model, Principal principal) {	
 		if(patientDAO.getUsername(principal).size()>0)
@@ -2592,7 +2743,7 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 		}
 		
 		model.addAttribute("TreatForm",treatdetails);
-		int a=treatDAO.setTreatDetails(treatdetails);
+		int a=treatDAO.setTreatDetails(treatdetails,principal);
          TreatForm treatform= new TreatForm();
 		treatform.setTreatform(treatDAO.getTreatDetails());
 		model.addAttribute("treatform",treatform);
@@ -2624,7 +2775,7 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 		}
 			
 		model.addAttribute("TreatMinorDetailsForm",minordetails);
-		int a=minorDAO.setMinorDetails(minordetails);
+		int a=minorDAO.setMinorDetails(minordetails,principal);
          TreatMinorDetailsForm treatminordetailsform= new TreatMinorDetailsForm();
 		treatminordetailsform.setMinorDetails(minorDAO.getMinorDetails());
 		model.addAttribute("TreatMinorDetailsForm",treatminordetailsform);
@@ -2683,25 +2834,29 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 	}
 		
 		String type= request.getParameter("Type_Of_Accident");
-		System.out.println("type of accident="+type);
-		
-		/*if(result.hasErrors())
-			{
-			
+		System.out.println("type of accident="+type);		
+		String[] Symptoms = new String[1000];
+	   System.out.println("hiiii");
+		Symptoms = request.getParameterValues("symptom[]");
+	    
+	    for(int i=0;i>=1;i++)
+	    {
+	    	System.out.println("symptom..."+Symptoms[i]);
+	    }
+	   // System.out.println("symptom..."+Symptoms[1]);	      
+		if(result.hasErrors())
+			{			
 				PatientDetailsForm patientdetailsform = new PatientDetailsForm();
 				patientdetailsform.setPatientDetails(patientDAO.getPatientDetails());
 				model.addAttribute("patientDetailsForm",patientdetailsform);
 				model.addAttribute("Success","true");
 				model.addAttribute("menu", "patientInfo");
 				return "patientDetails";
-			}*/
-		 String[] Symptoms = new String[1000];
-	      Symptoms = request.getParameterValues("symptom[]");
-	        System.out.println("symptom..."+Symptoms);
+			}
+		
 	        System.out.println("hi");
 	        patientDAO.setPatientDetails(patientDetails,Symptoms,principal);
-	        
-			PatientDetailsForm patientdetailsform = new PatientDetailsForm();
+	        PatientDetailsForm patientdetailsform = new PatientDetailsForm();
 			patientdetailsform.setPatientDetails(patientDAO.getPatientDetails());
 			model.addAttribute("patientno","0");
 			String age=patientDAO.getAge();
@@ -2853,11 +3008,19 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 	public String updatePatientDetails(HttpServletRequest request,@ModelAttribute("PatientDetails") @Valid PatientDetails patient,
 			BindingResult result,ModelMap model,Principal principal)
 	{
+		String[] Symptoms = new String[1000];
+	      Symptoms = request.getParameterValues("message[]");
 		if(patientDAO.getUsername(principal).size()>0)
 		{			
 	   model.addAttribute("patientno","0");
 	}
 		
+	     
+	      for(int i=0;i<Symptoms.length;i++)
+	      {
+	        System.out.println("symptom..."+Symptoms[i]+"next"+Symptoms.length);
+	      }
+	     
 		model.addAttribute("patientno","0");
 		/*if (result.hasErrors())
 		{
@@ -2870,10 +3033,7 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 			    model.addAttribute("menu", "patientInfo");
 		        return "editpatientdetails";
 		}*/
-		String[] Symptoms = new String[1000];
-	      Symptoms = request.getParameterValues("symptom[]");
-	        System.out.println("symptom..."+Symptoms);
-	     
+		System.out.println("hello");
 
 
 		
@@ -3083,6 +3243,7 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 		{			
 	   model.addAttribute("patientno","0");
 	}
+		
 		InsuranceplanForm insuranceplanForm= new InsuranceplanForm();
     	insuranceplanForm.setInsuranceplan(planDAO.getInsuranceplan());
 		model.addAttribute("insuranceplanform",insuranceplanForm);
@@ -3205,13 +3366,13 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 	}
 
 	@RequestMapping(value="/deleteinsuranceplan", method=RequestMethod.GET)
-	public String removeInsuranceplan(@RequestParam("no") String no,ModelMap model, Principal principal) {
+	public String removeInsuranceplan(ModelMap model, Principal principal) {
 	
 		if(patientDAO.getUsername(principal).size()>0)
 		{			
 	   model.addAttribute("patientno","0");
 	}
-		int status=planDAO.deleteinsuranceplan(no);
+		int status=planDAO.deleteinsuranceplan(principal);
 		
 		if(status==1)
 		{
@@ -3224,7 +3385,7 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
         model.addAttribute("menu", "health");
 		}
 		
-		return "insuranceplanlist";
+		return "insuranceplan";
 	}
 	
 	@RequestMapping(value="/insuranceverifylist", method = RequestMethod.GET)
@@ -3412,13 +3573,14 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 	
 
 	@RequestMapping(value="/deletetreatform", method=RequestMethod.GET)
-	public String removetreatform(@RequestParam("treat_no") String treat_no,ModelMap model, Principal principal) {
+	public String removetreatform(/*@RequestParam("treat_no") String treat_no,*/ModelMap model, Principal principal) {
 	
+		model.addAttribute("menu", "consent");
 		if(patientDAO.getUsername(principal).size()>0)
 		{			
 	   model.addAttribute("patientno","0");
 	}
-		int status=treatDAO.deletetreatform(treat_no);
+		int status=treatDAO.deletetreatform(principal);
 		
 		if(status==1)
 		{
@@ -3426,10 +3588,10 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
         TreatForm treatform= new TreatForm();
 		treatform.setTreatform(treatDAO.getTreatDetails());
 		model.addAttribute("treatform",treatform);
-		 model.addAttribute("menu", "consent");
+		 
 		}
 		
-		return "treatformlist";
+		return "treatform";
 	}
 	
 	@RequestMapping(value="/treatminorlist", method = RequestMethod.GET)
@@ -3577,6 +3739,16 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 		}
 		return "treatminorlist";
 	}
+	@RequestMapping(value="/deleteminor", method=RequestMethod.GET)
+	public String deletetreatminor(ModelMap model, Principal principal) {
+	
+		if(patientDAO.getUsername(principal).size()>0)
+		{			
+	   model.addAttribute("patientno","0");
+	}
+		int status=minorDAO.deletetreat(principal);	
+		return "treatminor";
+	}
 	
 	
 	
@@ -3647,6 +3819,23 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 		return "hardshiplist";
 	}
 	
+	@RequestMapping(value="/deletehardshipagreement", method=RequestMethod.GET)
+	public String removehardship(ModelMap model, Principal principal) {
+	
+		if(patientDAO.getUsername(principal).size()>0)
+		{			
+	   model.addAttribute("patientno","0");
+	}
+		int status=hardDAO.deletehardship(principal);
+		
+		if(status==1)
+		{
+        model.addAttribute("success","true");
+		//ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
+        	}
+		 model.addAttribute("menu", "authorization");
+		return "hardshipagreement";
+	}
 	
 	@RequestMapping(value="/editinsuranceinformation", method = RequestMethod.GET)
 	public String editinsuranceinformation(Principal principal,HttpServletRequest request,@RequestParam("number") String number,ModelMap model,Insuranceinformation insuranceinformation) {
@@ -3684,13 +3873,13 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 	}
 	
 	@RequestMapping(value="/deleteinsuranceinformation", method=RequestMethod.GET)
-	public String removeinsuranceinformation(@RequestParam("number") String number,ModelMap model, Principal principal) {
+	public String removeinsuranceinformation(ModelMap model, Principal principal) {
 	
 		if(patientDAO.getUsername(principal).size()>0)
 		{			
 	   model.addAttribute("patientno","0");
 	}
-		int status=infoDAO.deleteinsuranceinformation(number);
+		int status=infoDAO.deleteinsuranceinformation(principal);
 		
 		if(status==1)
 		{
@@ -3701,7 +3890,7 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 		model.addAttribute("InsuranceinformationForm",insuranceinformationForm);
 		 model.addAttribute("menu", "health");
 		}
-	return "insuranceinfolist";
+	return "insuranceinformation";
 	}
 	
 	@RequestMapping(value="/editinsuranceverification", method = RequestMethod.GET)
