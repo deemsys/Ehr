@@ -14,30 +14,38 @@
  <script src="resources/js/jquery-ui.js"></script>
  <script src="resources/js/jquey-1.9.1.js"></script>
  <script type="text/javascript">
- var $im=0;
- var flagm=0;
-function addMultichoice(divName)
-{
-var xx=document.getElementsByName('symptom[]').length;
-//alert("no......"+xx);
-var $sid = xx+1;
+				var $im = 1;
+				var flagm = 1;
+				function addMultichoice(divName) {
+					var xx = document.getElementsByName('symptom[]').length;
+					var $in = xx + 1;
 
-	
-	var newdiv = document.createElement('div');
-	newdiv.innerHTML = '<table width="85%" border="0" cellspacing="0" cellpadding="0" align="right" id="newtbl'+$im+'"><tr class="row1"><td valign="middle" align="right" class="input_txt" width="35%"></td><td valign="top" align="left" class="input_txt" width="90%"><textarea  name="symptom[]" placeholder="Specify your Symptoms" rows="3" cols="25" onBlur="symptompopup('+$sid+')" id="symptom'+$sid+'"></textarea></td></tr><tr class="row1"><td align="right" valign="top">&nbsp;</td><td align="left" valign="top"><a javascript:void(0);" onclick="removechoice('+$im+')" style="text-decoration:none;"><input type="submit" class="submit_btn" value="CANCEL" /></a></td></tr></table>';
-    document.getElementById(divName).appendChild(newdiv); 
+					var newdiv = document.createElement('div');
 
-	$im++;
-	flagm++;
-	}
-	 function removechoice(id)
-	{
-		var id='newtbl'+id;
-		var child = document.getElementById(id);
-		var parentDiv = child.parentNode;
-		parentDiv.removeChild(child);
+					newdiv.innerHTML = '<table width="100%" border="0" cellspacing="0" cellpadding="0" id="newtbl'
+							+ $im
+							+ '"><tr class="row2"><td valign="middle" align="right" class="input_txt" width="30%">Message '
+							+ $in
+							+ ' :</td><td valign="top" align="left" class="input_txt" width="70%"><textarea class="input_txtarea" name="symptom[]" rows="5" cols="" id="inp_id5" ></textarea></td></tr><tr class="row1"><td align="right" valign="top">&nbsp;</td><td align="left" valign="top"><a javascript:void(0);" onclick="removechoice('
+							+ $im
+							+ ')" style="text-decoration:none;"><input type="submit" class="submit_btn" value="CANCEL"  /></a></td></tr></table>';
+					document.getElementById(divName).appendChild(newdiv);
+					$im++;
+					flagm++;
 
-	}
+				}
+				function removechoice(id) {
+					id = 'newtbl' + id;
+					var child = document.getElementById(id)
+					var parentDiv = child.parentNode;
+					parentDiv.removeChild(child);
+
+				}
+			</script>
+ 
+ 
+ 
+ <script type="text/javascript">
      
 	function symptompopup(id1)
 	{
@@ -554,7 +562,7 @@ $(function(){
 				                  </td>
 				                </tr>
                                   <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>City:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>City1234:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="City" /><br><span class="err"><form:errors path="PatientDetails.city"></form:errors></span>
 				                  </td>
@@ -576,7 +584,7 @@ $(function(){
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Home phone:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="homephone" name="Homephone" /><br><span class="err"><form:errors path="PatientDetails.homephone"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="homephone" maxlength="10" name="Homephone" /><br><span class="err"><form:errors path="PatientDetails.homephone"></form:errors></span>
 				                  <br>
 				                 <span class="err" id="homephoneerror"></span>
 				                  </td>
@@ -591,7 +599,7 @@ $(function(){
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>MobileNumber:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="mobilenumber" name="mobileNumber" /><br><span class="err"><form:errors path="PatientDetails.mobileNumber"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" maxlength="10"  id="mobilenumber" name="mobileNumber" /><br><span class="err"><form:errors path="PatientDetails.mobileNumber"></form:errors></span>
 				                 <br>
 				                 <span class="err" id="mobilenumbererror"></span>
 				                  </td>
@@ -670,7 +678,7 @@ $(function(){
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>WorkPhone:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="workphone" name="Workphone" /><br><span class="err"><form:errors path="PatientDetails.Workphone"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="workphone" name="Workphone" maxlength="10" /><br><span class="err"><form:errors path="PatientDetails.Workphone"></form:errors></span>
 <br>
 <span class="err" id="workphoneerror"></span>
 				                  </td>
@@ -678,7 +686,7 @@ $(function(){
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>ZipCode:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="zipcode2" name="zip" /><br><span class="err" id="zipcodeerror1"><form:errors path="PatientDetails.zipCode"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="zipcode2" name="zip" maxlength="5" /><br><span class="err" id="zipcodeerror1"><form:errors path="PatientDetails.zipCode"></form:errors></span>
 	
 	<span class="err" ></span>            
 				                  </td>
@@ -705,7 +713,7 @@ $(function(){
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>ZipCode:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="zipcode" name="Ezip" /><br><span class="err"><form:errors path="PatientDetails.Ezip"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="zipcode" name="Ezip" maxlength="5"/><br><span class="err"><form:errors path="PatientDetails.Ezip"></form:errors></span>
 				                  	<br><span class="err" id="zipcodeerror"></span>
 				                  </td>
 				                </tr>
@@ -737,7 +745,7 @@ $(function(){
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Spouse's Workphone:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="spouseworkphone" name="Spousesph" /><br><span class="err"><form:errors path="PatientDetails.spousesph"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="spouseworkphone" name="Spousesph" maxlength="10"/><br><span class="err"><form:errors path="PatientDetails.spousesph"></form:errors></span>
 				                  	<br><span class="err" id="spouseworkphoneerror"></span>
 				                  </td>
 				                </tr>
@@ -751,7 +759,7 @@ $(function(){
 				                 <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Phone of Nearest Friend/ Relative Not Living With You:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="ph2" name="Phone_friend" /><br><span class="err"><form:errors path="PatientDetails.phone_friend"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="ph2" name="Phone_friend" maxlength="10"/><br><span class="err"><form:errors path="PatientDetails.phone_friend"></form:errors></span>
 				                 <br><br>
 				                  	<span class="err" id="ph2error"></span>
 				                  </td>
@@ -800,7 +808,7 @@ $(function(){
     				<td align="left" valign="top" width="50%" style="padding-right:25px;">
                         
                         <table cellpadding="0" cellspacing="0" border="0" width="100%">
-                       <span class="err">*</span>Please Describess Your Symptoms Briefly:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<textarea rows="3" cols="25" placeholder="Specify your Symptoms" name="symptom[]" id="symptom" onBlur="newpopup()"></textarea>&nbsp;&nbsp;&nbsp; <br><span class="err"><form:errors path="PatientDetails.symptoms"></form:errors></span>
+                       <span class="err">*</span>Please Describess Your Symptoms Briefly:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<textarea rows="3" cols="25" placeholder="Specify your Symptoms" name="symptom[]" id="symptom" onBlur="newpopup()"></textarea>&nbsp;&nbsp;&nbsp; <br><span class="err"></span>
                         <tr>
                       </div> 
                       <td valign="middle" align="left" class="input_txt"></td>
@@ -914,7 +922,7 @@ $(function(){
 				                <tr class="row1">
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err"></span>What is your Physician's Phone </td>
 				                  	<td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="phyphone"/><br><span class="err"><form:errors path="patientDetails.where1"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="phyphone" maxlength="10"/><br><span class="err"><form:errors path="patientDetails.where1"></form:errors></span>
 				                    </tr>
 				                    
 				                     <tr class="row1">
@@ -932,7 +940,7 @@ $(function(){
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name Of Attorney:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="NameOfAttorney" /><br><span class="err"><form:errors path="PatientDetails.mameOfAttorney"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="NameOfAttorney" /><br><span class="err"><form:errors path="PatientDetails.NameOfAttorney"></form:errors></span>
 				                  
 				                </tr>
 				                <tr class="row2">
@@ -940,7 +948,7 @@ $(function(){
 				                  <td valign="top" align="left" class="input_txt">
 				                 <%--  	<form>
 															<input type="submit">
-														</form> --%><input type="text" class="input_txtbx1" id="phonenumber" name="Phone_Number" /><br><span class="err"><form:errors path="PatientDetails.phone_Number"></form:errors></span>
+														</form> --%><input type="text" maxlength="10" class="input_txtbx1" id="phonenumber" name="Phone_Number" /><br><span class="err"><form:errors path="PatientDetails.phone_Number"></form:errors></span>
 				                  	<br>
 				                  	<span class="err" id="phonenumbererror"></span>
 				                  
@@ -962,7 +970,7 @@ $(function(){
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Insurance Company Phone:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="phno" name="Insurance_phone" /><br><span class="err"><form:errors path="PatientDetails.insurance_phone"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="phno" name="Insurance_phone" maxlength="10"/><br><span class="err"><form:errors path="PatientDetails.insurance_phone"></form:errors></span>
 				                  	<br>
 				                  	<span class="err" id="phnoerror"></span>
 				                  
@@ -977,7 +985,7 @@ $(function(){
 				               <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>phone of your auto insurance:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="phauto" name="Phone_auto" /><br><span class="err"><form:errors path="PatientDetails.phone_auto"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="phauto" name="Phone_auto" maxlength="10" /><br><span class="err"><form:errors path="PatientDetails.phone_auto"></form:errors></span>
 				                  	<br>
 				                  	<span class="err" id="phautoerror"></span>
 				                  	 </td>
@@ -1001,7 +1009,7 @@ $(function(){
 				            <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Phone of your Health Insurance:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="phhealth" name="Health_phone" /><br><span class="err"><form:errors path="PatientDetails.health_phone"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" maxlength="10" id="phhealth" name="Health_phone" /><br><span class="err"><form:errors path="PatientDetails.health_phone"></form:errors></span>
 				                  	<br>
 				                  	<span class="err" id="phhealtherror"></span>
 				                  	</td>
@@ -1449,7 +1457,7 @@ $(function(){
                         <tr>
                         <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Please Describe Your Symptoms Briefly:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<textarea rows="3" cols="25" placeholder="Specify your Symptoms" name="symptom[]" id="symptom" onBlur="newpopup()"></textarea>&nbsp;&nbsp;&nbsp; <br><span class="err"><form:errors path="PatientDetails.Symptoms"></form:errors></span>
+				                  	<textarea rows="3" cols="25" placeholder="Specify your Symptoms" name="symptom12[]" id="symptom" onBlur="newpopup()"></textarea>&nbsp;&nbsp;&nbsp; <br><span class="err"><form:errors path="PatientDetails.Symptoms"></form:errors></span>
 				                  	</td>
 				                  	<td>
 				                  	<!-- <label for="amount"><b>Pain Scale:</b></label>
@@ -1790,7 +1798,7 @@ $(function(){
 				                  	
 				                  	</table>
 				                  	</c:otherwise>
-				                  	</c:choose> --%>
+				                  	</c:choose>
 				                  	</div>
 				                  	
 				                  	</div>
