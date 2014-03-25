@@ -31,7 +31,7 @@ private String Homephone;
 
 private String Emailid;
 @NotEmpty
-@Pattern(regexp="(^$|[0-9]{10})",message="Not a valid Mobile number")
+@Pattern(regexp="(^$|[0-9]{13})",message="Not a valid Mobile number")
 private String MobileNumber;
 @NotEmpty
 private String DateOfBirth;
@@ -75,6 +75,7 @@ private String Spousesph;
 @NotEmpty
 private String Name_friend;
 @NotEmpty
+@Pattern(regexp="(^$|[0-9-]{13})",message="Not a valid Mobile number")
 private String Phone_friend;
 
 private String Chiropratic_care;
@@ -98,6 +99,7 @@ private String record;
 @NotEmpty
 private String phyname;
 @NotEmpty
+@Pattern(regexp="(^$|[0-9-]{13})",message="Not a valid Mobile number")
 private String phyphone;
 @NotEmpty
 private String xray;
@@ -107,7 +109,7 @@ private String treat;
 private String NameOfAttorney;
 @NotEmpty
 
-@Pattern(regexp="(^$|[0-9]{10})",message="Not a valid Mobile number")
+@Pattern(regexp="(^$|[0-9]{13})",message="Not a valid Mobile number")
 private String Phone_Number;
 @NotEmpty
 
@@ -120,7 +122,7 @@ private String Insurance_phone;
 @NotEmpty
 private String Name_auto;
 @NotEmpty
-@Pattern(regexp="(^$|[0-9]{10})",message="Not a valid Mobile number")
+@Pattern(regexp="(^$|[0-9]{13})",message="Not a valid Mobile number")
 private String Phone_auto;
 
 @NotEmpty

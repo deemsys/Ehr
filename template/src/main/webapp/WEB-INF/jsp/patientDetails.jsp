@@ -187,8 +187,9 @@ $("#mobilenumber").keyup(function() {
 	
 	 $("#mobilenumbererror").html(''); 
 	/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
-	var intRegex = /^\d+$/;
-	if(intRegex.test($(this).val())||$(this).val()=='') 
+	//var intRegex = /^\d+$/;
+	var a= /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/;
+	if(a.test($(this).val())||$(this).val()=='') 
 	{
 		var $in = $(this).val();		 
 	}
@@ -244,7 +245,7 @@ $("#spouseworkphone").keyup(function() {
 	/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
 	//var intRegex = /^\d+$/;
 	var a= /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/;
-	if(intRegex.test($(this).val())||$(this).val()=='') 
+	if(a.test($(this).val())||$(this).val()=='') 
 	{
 		var $in = $(this).val();		 
 	}
@@ -260,12 +261,13 @@ $("#ph2").keyup(function() {
 	
 	 $("#ph2error").html(''); 
 	/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
-	var intRegex = /^\d+$/;
-	if(intRegex.test($(this).val())||$(this).val()=='') 
+	//var intRegex = /^\d+$/;
+	var a= /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/;
+	if(a.test($(this).val())||$(this).val()=='') 
 	{
 		var $in = $(this).val();		 
 	}
-	else if($(this).val()!='')
+	else if($(a).val()!='')
 		{
 		
 		$("#ph2error").html('Kindly enter a number!!!!');
@@ -277,8 +279,10 @@ $("#phonenumber").keyup(function() {
 	
 	 $("#phonenumbererror").html(''); 
 	/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
-	var intRegex = /^\d+$/;
-	if(intRegex.test($(this).val())||$(this).val()=='') 
+	//var intRegex = /^\d+$/;
+	
+var a= /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/;
+	if(a.test($(this).val())||$(this).val()=='') 
 	{
 		var $in = $(this).val();		 
 	}
@@ -312,8 +316,9 @@ $("#phauto").keyup(function() {
 	
 	 $("#phautoerror").html(''); 
 	/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
-	var intRegex = /^\d+$/;
-	if(intRegex.test($(this).val())||$(this).val()=='') 
+	//var intRegex = /^\d+$/;
+	var a= /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/;
+	if(a.test($(this).val())||$(this).val()=='') 
 	{
 		var $in = $(this).val();		 
 	}
@@ -548,6 +553,61 @@ document.getElementById("spouseworkphone").value=phone;
 
 });
 </script>
+<script>
+i=0;
+$(document).ready(function(){
+  $("#mobilenumber").keypress(function(){
+var phone=document.getElementById("mobilenumber").value;
+phone = phone.replace(/(\d{3})(\d{3})(\d+)/, '($1)$2-$3');
+document.getElementById("mobilenumber").value=phone;
+ });  
+
+});
+</script>
+<script>
+i=0;
+$(document).ready(function(){
+  $("#ph2").keypress(function(){
+var phone=document.getElementById("ph2").value;
+phone = phone.replace(/(\d{3})(\d{3})(\d+)/, '($1)$2-$3');
+document.getElementById("ph2").value=phone;
+ });  
+
+});
+</script>
+<script>
+i=0;
+$(document).ready(function(){
+  $("#phonenumber").keypress(function(){
+var phone=document.getElementById("phonenumber").value;
+phone = phone.replace(/(\d{3})(\d{3})(\d+)/, '($1)$2-$3');
+document.getElementById("phonenumber").value=phone;
+ });  
+
+});
+</script>
+<script>
+i=0;
+$(document).ready(function(){
+  $("#inp_id").keypress(function(){
+var phone=document.getElementById("inp_id").value;
+phone = phone.replace(/(\d{3})(\d{3})(\d+)/, '($1)$2-$3');
+document.getElementById("inp_id").value=phone;
+ });  
+
+});
+</script>
+<script>
+i=0;
+$(document).ready(function(){
+  $("#phauto").keypress(function(){
+var phone=document.getElementById("phauto").value;
+phone = phone.replace(/(\d{3})(\d{3})(\d+)/, '($1)$2-$3');
+document.getElementById("phauto").value=phone;
+ });  
+
+});
+</script>
 	</head>
 	<body>
 	 
@@ -646,7 +706,7 @@ document.getElementById("spouseworkphone").value=phone;
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>MobileNumber:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" maxlength="10"  id="mobilenumber" name="mobileNumber" /><br><span class="err"><form:errors path="PatientDetails.mobileNumber"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" maxlength="13"  id="mobilenumber" name="mobileNumber" /><br><span class="err"><form:errors path="PatientDetails.mobileNumber"></form:errors></span>
 				                 <br>
 				                 <span class="err" id="mobilenumbererror"></span>
 				                  </td>
@@ -806,7 +866,7 @@ document.getElementById("spouseworkphone").value=phone;
 				                 <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Phone of Nearest Friend/ Relative Not Living With You:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="ph2" name="Phone_friend" maxlength="10"/><br><span class="err"><form:errors path="PatientDetails.phone_friend"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="ph2" name="Phone_friend"  maxlength="13"/><br><span class="err"><form:errors path="PatientDetails.phone_friend"></form:errors></span>
 				                 <br><br>
 				                  	<span class="err" id="ph2error"></span>
 				                  </td>
@@ -969,7 +1029,7 @@ document.getElementById("spouseworkphone").value=phone;
 				                <tr class="row1">
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err"></span>What is your Physician's Phone </td>
 				                  	<td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="phyphone" maxlength="10"/><br><span class="err"><form:errors path="patientDetails.where1"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="phyphone" maxlength="13"/><br><span class="err"><form:errors path="patientDetails.where1"></form:errors></span>
 				                    </tr>
 				                    
 				                     <tr class="row1">
@@ -995,7 +1055,7 @@ document.getElementById("spouseworkphone").value=phone;
 				                  <td valign="top" align="left" class="input_txt">
 				                 <%--  	<form>
 															<input type="submit">
-														</form> --%><input type="text" maxlength="10" class="input_txtbx1" id="phonenumber" name="Phone_Number" /><br><span class="err"><form:errors path="PatientDetails.phone_Number"></form:errors></span>
+														</form> --%><input type="text" maxlength="13" class="input_txtbx1" id="phonenumber" name="Phone_Number" /><br><span class="err"><form:errors path="PatientDetails.phone_Number"></form:errors></span>
 				                  	<br>
 				                  	<span class="err" id="phonenumbererror"></span>
 				                  
@@ -1032,7 +1092,7 @@ document.getElementById("spouseworkphone").value=phone;
 				               <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>phone of your auto insurance:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="phauto" name="Phone_auto" maxlength="10" /><br><span class="err"><form:errors path="PatientDetails.phone_auto"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="phauto" name="Phone_auto" maxlength="13" /><br><span class="err"><form:errors path="PatientDetails.phone_auto"></form:errors></span>
 				                  	<br>
 				                  	<span class="err" id="phautoerror"></span>
 				                  	 </td>
