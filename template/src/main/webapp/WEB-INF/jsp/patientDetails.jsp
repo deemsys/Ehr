@@ -130,15 +130,16 @@
 			
 			 $("#workphoneerror").html(''); 
 			/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
-			var intRegex = /^\d+$/;
-			if(intRegex.test($(this).val())||$(this).val()=='') 
+			//var intRegex = /^\d+$/;
+			var a= /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/;
+			if(a.test($(this).val())||$(this).val()=='') 
 			{
 				var $in = $(this).val();		 
 			}
 			else if($(this).val()!='')
 				{
 				
-				$("#workphoneerror").html('Kindly enter a number!!!!');
+				$("#workphoneerror").html('Kindly enter a number this format (222)234-1234');
 				}
 		}).keydown(function() {
 		    oldValue = $(this).val();
@@ -167,8 +168,9 @@ $("#homephone").keyup(function() {
 	
 	 $("#homephoneerror").html(''); 
 	/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
-	var intRegex = /^\d+$/;
-	if(intRegex.test($(this).val())||$(this).val()=='') 
+	//var intRegex = /^\d+$/;
+	var a= /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/;
+	if(a.test($(this).val())||$(this).val()=='') 
 	{
 		var $in = $(this).val();		 
 	}
@@ -203,15 +205,16 @@ $("#socialsecuritynumber").keyup(function() {
 	
 	 $("#socialsecuritynumbererror").html(''); 
 	/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
-	var intRegex = /^\d+$/;
-	if(intRegex.test($(this).val())||$(this).val()=='') 
+	var a= /^[0-9]{3}[-\s\.]{0,1}[0-9]{2}[-\s\.]{0,1}[0-9]{4}$/;
+	//var intRegex = /^\d+$/;
+	if(a.test($(this).val())||$(this).val()=='') 
 	{
 		var $in = $(this).val();		 
 	}
 	else if($(this).val()!='')
 		{
 		
-		$("#socialsecuritynumbererror").html('Kindly enter a number!!!!');
+		$("#socialsecuritynumbererror").html('Kindly enter a number this format like 234-60-5678');
 		}
 }).keydown(function() {
    oldValue = $(this).val();
@@ -239,7 +242,8 @@ $("#spouseworkphone").keyup(function() {
 	
 	 $("#spouseworkphoneerror").html(''); 
 	/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
-	var intRegex = /^\d+$/;
+	//var intRegex = /^\d+$/;
+	var a= /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/;
 	if(intRegex.test($(this).val())||$(this).val()=='') 
 	{
 		var $in = $(this).val();		 
@@ -492,7 +496,17 @@ $(function(){
    
   
 </script>
+<script>
+i=0;
+$(document).ready(function(){
+  $("#socialsecuritynumber").keypress(function(){
+var phone=document.getElementById("socialsecuritynumber").value;
+phone = phone.replace(/(\d{3})(\d{2})(\d+)/,'$1-$2-$3');
+document.getElementById("socialsecuritynumber").value=phone;
+ });  
 
+});
+</script>
 	  <style>
 	  /* force a height so the tabs don't jump as content height changes */
 	  #tabs .tabs-spacer { float: left; height: 200px; }
@@ -501,6 +515,39 @@ $(function(){
 	  .tabs-bottom .ui-tabs-nav li.ui-tabs-active { margin-top: -1px; padding-top: 1px; }
 	  </style>
 	  
+	  <script>
+i=0;
+$(document).ready(function(){
+  $("#homephone").keypress(function(){
+var phone=document.getElementById("homephone").value;
+phone = phone.replace(/(\d{3})(\d{3})(\d+)/, '($1)$2-$3');
+document.getElementById("homephone").value=phone;
+ });  
+
+});
+</script>
+<script>
+i=0;
+$(document).ready(function(){
+  $("#workphone").keypress(function(){
+var phone=document.getElementById("workphone").value;
+phone = phone.replace(/(\d{3})(\d{3})(\d+)/, '($1)$2-$3');
+document.getElementById("workphone").value=phone;
+ });  
+
+});
+</script>
+<script>
+i=0;
+$(document).ready(function(){
+  $("#spouseworkphone").keypress(function(){
+var phone=document.getElementById("spouseworkphone").value;
+phone = phone.replace(/(\d{3})(\d{3})(\d+)/, '($1)$2-$3');
+document.getElementById("spouseworkphone").value=phone;
+ });  
+
+});
+</script>
 	</head>
 	<body>
 	 
@@ -584,7 +631,7 @@ $(function(){
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Home phone:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="homephone" maxlength="10" name="Homephone" /><br><span class="err"><form:errors path="PatientDetails.homephone"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="homephone" maxlength="13" name="Homephone"  /><br><span class="err"><form:errors path="PatientDetails.homephone"></form:errors></span>
 				                  <br>
 				                 <span class="err" id="homephoneerror"></span>
 				                  </td>
@@ -613,7 +660,7 @@ $(function(){
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Social Security Number:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="socialsecuritynumber" name="SocialSecurityNumber" /><br><span class="err"><form:errors path="PatientDetails.socialSecurityNumber"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="socialsecuritynumber" name="SocialSecurityNumber" maxlength="11" /><br><span class="err"><form:errors path="PatientDetails.socialSecurityNumber"></form:errors></span>
 				                <br>
 				                <span class="err" id="socialsecuritynumbererror"></span>
  </td>
@@ -678,7 +725,7 @@ $(function(){
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>WorkPhone:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="workphone" name="Workphone" maxlength="10" /><br><span class="err"><form:errors path="PatientDetails.Workphone"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="workphone" name="Workphone" maxlength="13" /><br><span class="err"><form:errors path="PatientDetails.Workphone"></form:errors></span>
 <br>
 <span class="err" id="workphoneerror"></span>
 				                  </td>
@@ -745,7 +792,7 @@ $(function(){
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Spouse's Workphone:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="spouseworkphone" name="Spousesph" maxlength="10"/><br><span class="err"><form:errors path="PatientDetails.spousesph"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="spouseworkphone" name="Spousesph" maxlength="13"/><br><span class="err"><form:errors path="PatientDetails.spousesph"></form:errors></span>
 				                  	<br><span class="err" id="spouseworkphoneerror"></span>
 				                  </td>
 				                </tr>

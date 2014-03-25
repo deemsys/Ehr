@@ -24,7 +24,7 @@ private String State;
 @Pattern(regexp="(^$|[0-9]{6})",message="Not a valid Zip Code")
 private String ZipCode;
 @NotEmpty
-@Pattern(regexp="(^$|[0-9-]{10})",message="Not a valid Mobile number")
+@Pattern(regexp="(^$|[0-9-]{13})",message="Not a valid Mobile number")
 private String Homephone;
 @NotEmpty
 @Pattern(regexp="^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$",message="Please Enetr a valid mail id")
@@ -36,7 +36,7 @@ private String MobileNumber;
 @NotEmpty
 private String DateOfBirth;
 @NotEmpty
-@Pattern(regexp="(^$|[0-9]{12})",message="Not a valid Social Security number")
+@Pattern(regexp="(^$|[0-9]{11})",message="Not a valid Social Security number")
 private String SocialSecurityNumber;
 private String Gender;
 
@@ -54,6 +54,7 @@ private String EmployerAddress;
 /*
 @Pattern(regexp="(^$|[0-9]{10})",message="Not a valid Mobile number")*/
 @NotEmpty
+@Pattern(regexp="(^$|[0-9-]{13})",message="Not a valid Mobile number")
 private String Workphone;
 @NotEmpty
 private String zip;
@@ -69,6 +70,7 @@ private String SpousesName;
 @NotEmpty
 private String SpousesEmp;
 @NotEmpty
+@Pattern(regexp="(^$|[0-9-]{13})",message="Not a valid Mobile number")
 private String Spousesph;
 @NotEmpty
 private String Name_friend;
