@@ -221,12 +221,12 @@ return 0;
     		 }
 			 
 	    	 String patient_id="";
-    		 String cmd2="SELECT patient_id as patient_id from patient_details WHERE emailid='"+emailid+"' and Name='"+patientname+"'";
+    		 String cmd2="SELECT Patient_id from patient_details WHERE emailid='"+emailid+"' and Name='"+patientname+"'";
     		 resultSet1=statement.executeQuery(cmd2);
     		 System.out.println(cmd2);
     		 while(resultSet1.next())
     		 {              
-    			patient_id=resultSet1.getString("patient_id"); 
+    			patient_id=resultSet1.getString("Patient_id"); 
     		 }
     		 String cmd3="update tbl_doctorsearch SET patient_id='"+patient_id+"' WHERE emailid='"+emailid+"' and patientname='"+patientname+"'";
     		 statement.execute(cmd3);
@@ -263,12 +263,12 @@ return 0;
 		}
 		try{
 			 
-    		 String cmd2="SELECT Patient_id as patient_id from patient_details WHERE emailid='"+emailid+"' and Name='"+name+"'";
+    		 String cmd2="SELECT Patient_id from patient_details WHERE emailid='"+emailid+"' and Name='"+name+"'";
     		 resultSet=statement.executeQuery(cmd2);
     		 System.out.println(cmd2);
     		 while(resultSet.next())
     		 {              
-    			patient_id=resultSet.getString("patient_id"); 
+    			patient_id=resultSet.getString("Patient_id"); 
     		 }   		
     		System.out.print(patient_id);
     		 

@@ -22,7 +22,35 @@ public class PatientDAO {
 	public void setDataSource(DataSource dataSource) {
 		this.dataSource = dataSource;
 	}
-	
+	public int sample(String[] Symptoms)
+	{
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		int flag=0;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			
+			
+			e1.printStackTrace();
+		}
+	    try{
+	    for(String symptom:Symptoms)
+	    {
+		String cmd_mess="insert into sample(symptom) values('"+symptom+"')";
+		System.out.println(cmd_mess);
+		statement.executeUpdate("insert into sample(symptom) values('"+symptom+"')");
+	    }	    
+	    
+	    }
+	    catch(Exception e)
+	    {
+	    System.out.println("sample"+e.toString());	
+	    }
+	    return 0;
+	    }
 	public int setPatientDetails(PatientDetails patientdetails,String[] Symptoms,Principal principal)
 	{
 		Connection con = null;

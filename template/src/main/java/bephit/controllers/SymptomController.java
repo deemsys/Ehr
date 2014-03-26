@@ -44,6 +44,9 @@ public class SymptomController {
 	
 	@Autowired
 	SymptomDAO symptomdao;
+	
+	@Autowired
+	PatientDAO patientDAO;
 
 	@Autowired
 	HipquestionnaireDAO hipquestionnairedao;
@@ -56,7 +59,63 @@ public class SymptomController {
 
 	@Autowired
 	NeckindexDAO neckdao;
+	@RequestMapping(value = "/samplefile", method = RequestMethod.GET)
+	public String sampleviewsymptom(ModelMap model) {
+			
+		String[] Symptoms = new String[1000];
+	     
+		return "NewFile";
 
+	}	
+	@RequestMapping(value="/samplepatientDetails", method = RequestMethod.POST)
+	public String insert_samplepatientdetails(HttpServletRequest request,HttpSession session,@ModelAttribute("PatientDetails")  @Valid PatientDetails patientDetails,BindingResult result,ModelMap model,Principal principal) {
+		//session.setAttribute("first",patientDetails);
+			/*String type= request.getParameter("Type_Of_Accident");
+		System.out.println("type of accident="+type);		*/
+		String[] Symptoms = new String[1000];
+	    System.out.println("hiiii");
+		Symptoms = request.getParameterValues("symptom[]");
+	    
+	    for(int i=0;i>=1;i++)
+	    {
+	    	System.out.println("symptom..."+Symptoms[i]);
+	    }
+	    patientDAO.sample(Symptoms);
+	   // System.out.println("symptom..."+Symptoms[1]);	      
+		
+	        /*System.out.println("hi");
+	        patientDAO.setPatientDetails(patientDetails,Symptoms,principal);
+	        PatientDetailsForm patientdetailsform = new PatientDetailsForm();
+			patientdetailsform.setPatientDetails(patientDAO.getPatientDetails());
+			model.addAttribute("patientno","0");
+			String age=patientDAO.getAge();
+		    System.out.println("controller age"+age);
+		    int major=Integer.parseInt(age);
+		    String major=""+age;
+		    request.setAttribute("major",age);
+		    model.addAttribute("age",age);
+			model.addAttribute("patientDetailsForm",patientdetailsform);
+			model.addAttribute("menu", "patientInfo");
+			session.removeAttribute("patient");
+			if(type.equals("other"))
+			{
+				return "patientDetails";
+			} 
+			else
+			{
+			return  type;
+			}
+*/	       
+	       // 
+	    return "NewFile";
+
+		}
+
+	
+	
+	
+	
+	
 	@RequestMapping(value = "/viewsymptom", method = RequestMethod.GET)
 	public String viewsymptom(ModelMap model) {
 		SymptomForm symptomform = new SymptomForm();

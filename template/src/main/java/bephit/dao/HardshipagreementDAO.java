@@ -28,7 +28,7 @@ public class HardshipagreementDAO {
 	
 	
 	
-	public int setHardshipagreement(Hardshipagreement hardshipagreement,Principal principal)
+	public int setHardshipagreement(Hardshipagreement hardshipagreement,String username)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -43,9 +43,10 @@ public class HardshipagreementDAO {
 		
 	    try{
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+	    
 	    	 Date date = new Date();
 	    	 
-	    	 String cmd="INSERT INTO `tbl_hardshipagreement` (username,`date`,`print_pat_name`,`pat_sign`,`witness_sign`) VALUES ('"+principal.getName()+"','"+hardshipagreement.getDate()+"','"+hardshipagreement.getPrint_pat_name()+"','"+hardshipagreement.getPat_sign()+"','"+hardshipagreement.getWitness_sign()+"')";
+	    	 String cmd="INSERT INTO `tbl_hardshipagreement` (username,`date`,`print_pat_name`,`pat_sign`,`witness_sign`) VALUES ('"+username+"','"+hardshipagreement.getDate()+"','"+hardshipagreement.getPrint_pat_name()+"','"+hardshipagreement.getPat_sign()+"','"+hardshipagreement.getWitness_sign()+"')";
 	    	 System.out.println(cmd);
 	    	 statement.execute(cmd);
 			flag=1;

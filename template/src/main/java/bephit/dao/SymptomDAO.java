@@ -179,7 +179,22 @@ public class SymptomDAO
 	    +"',stabtop3='"+ symptomdetails.getStabtop3()
 	     +"',stabpath4='"+symptomdetails.getStabpath4()
 	    +"',stableft4='"+ symptomdetails.getStableft4()
-	    +"',stabtop4='"+ symptomdetails.getStabtop4()+"' where symptomno='"+symptomno+"'";
+	    +"',stabtop4='"+ symptomdetails.getStabtop4()
+	    +"',stabpath5='"+symptomdetails.getStabpath5()
+	    +"',stableft5='"+ symptomdetails.getStableft5()
+	    +"',stabtop5='"+ symptomdetails.getStabtop5()
+	     +"',stabpath6='"+symptomdetails.getStabpath6()
+	    +"',stableft6='"+ symptomdetails.getStableft6()
+	    +"',stabtop6='"+ symptomdetails.getStabtop6()
+	     +"',stabpath7='"+symptomdetails.getStabpath7()
+	    +"',stableft7='"+ symptomdetails.getStableft7()
+	    +"',stabtop7='"+ symptomdetails.getStabtop7()
+	     +"',stabpath8='"+symptomdetails.getStabpath8()
+	    +"',stableft8='"+ symptomdetails.getStableft8()
+	    +"',stabtop8='"+ symptomdetails.getStabtop8()
+	     +"',stabpath9='"+symptomdetails.getStabpath9()
+	    +"',stableft9='"+ symptomdetails.getStableft9()
+	    +"',stabtop9='"+ symptomdetails.getStabtop9()+"' where symptomno='"+symptomno+"'";
 	   
 	        
 	    
