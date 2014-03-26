@@ -295,7 +295,42 @@ color:#fff;
 					
 						<c:choose>
 						<c:when test="${menu=='search'}">
+						
 						<ul class="menu">
+						 <li>
+				            	<a href="viewpatientdetails" class="<c:choose>
+				            	<c:when test="${menu=='search'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>">
+				            		<span>Patient Information</span>
+				            	</a>
+				            </li>
+						 <li>
+				            	<a href="doctorsearch" class="<c:choose>
+				            	<c:when test="${menu=='doctorsearch'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>">
+				            		<span>Doctor Search</span>
+				            	</a>
+				            </li>
+						     
+				            	</ul>
+				            
+				           
+				          
+				         
+					</c:when>
+					<c:when test="${menu=='doctorsearch'}">
+						
+						<ul class="menu">
+						 <li>
+				            	<a href="viewpatientdetails" class="<c:choose>
+				            	<c:when test="${menu=='search'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>">
+				            		<span>Patient Information</span>
+				            	</a>
+				            </li>
+						 <li>
+				            	<a href="doctorsearch" class="<c:choose>
+				            	<c:when test="${menu=='doctorsearch'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>">
+				            		<span>Doctor Search</span>
+				            	</a>
+				            </li>
 						     
 				            	</ul>
 				            
@@ -969,6 +1004,11 @@ color:#fff;
 							</c:if>
 							<c:if test="${role==2}">
 								<ul class="menu">
+								<li>
+								<a href="viewallpatientdetails" class="<c:choose><c:when test="${menu=='adminpatient'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="">
+									<span>Patient Details</span>
+								</a>
+							</li>
 							<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='admin'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu7">
 									<span>Admin Forms</span>

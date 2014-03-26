@@ -166,7 +166,7 @@
 <div id="right_content">
 <form action="updateinsuranceverification" method="POST">
 
-<table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table">
+<table cellpadding="0" cellspacing="0" border="0" width="70%" class="margin_table">
        <tr>
         <td valign="top" align="left" style="padding:5px 0 10px 0;">&nbsp;
 		<div class="status success" style="display: none;">
@@ -184,7 +184,7 @@
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
                <c:set value="${InsuranceverificationForm.insuranceverification[0]}" var="Insuranceverification"> </c:set>
               <tr class="row1">
-              <u><h6>Benefits and Limitation (staff completes)</h6></u>
+              <u><h6>Benefits and Limitation's (staff completes)</h6></u>
               </tr>
               <br>
               <input type="hidden" class="input_txtbx1" id="inp_id" value="${Insuranceverification.form_no}" name="form_no" />
@@ -247,7 +247,8 @@
               <span class="err" id="atwhat1error"></span>
               </td>
               <td><span class="err">*</span>Subject to deductible</td>
-              <td><input type="text" class="input_txtbx1" name="subject_deduct" id="subjectdeduct" value="${Insuranceverification.subject_deduct}"/><span class="err"><form:errors path="Insuranceverification.subject_deduct"></form:errors>
+              <td><input type="radio" name="subject_deduct" id="subjectdeduct" value="Yes" <c:if test="${Insuranceverification.subject_deduct=='Yes'}"><c:out value="checked=checked"/></c:if> />Yes&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="subject_deduct" value="No" id="subjectdeduct" <c:if test="${Insuranceverification.subject_deduct=='No'}"><c:out value="checked=checked"/></c:if> />No
+<%-- <input type="text" class="input_txtbx1" name="subject_deduct" id="subjectdeduct" value="${Insuranceverification.subject_deduct}"/> --%><span class="err"><form:errors path="Insuranceverification.subject_deduct"></form:errors>
               <span class="err" id="subjectdeducterror"></span>
               </td>
               </tr>

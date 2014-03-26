@@ -101,62 +101,206 @@ $(function() {
   <script>
  $(window).load(function(){
 var oldValue = "";
+if(document.getElementById("achesleft").value!=0 && document.getElementById("achestop").value!=0) 
+{
 $("#draggable").offset({ left:  document.getElementById("achesleft").value, top:  document.getElementById("achestop").value})
+}
+if(document.getElementById("achesleft1").value!=0 && document.getElementById("achestop1").value!=0) 
+{
 $("#draggable1").offset({ left:  document.getElementById("achesleft1").value, top:  document.getElementById("achestop1").value})
+}
+if(document.getElementById("achesleft2").value!=0 && document.getElementById("achestop2").value!=0) 
+{
 $("#draggable2").offset({ left:  document.getElementById("achesleft2").value, top:  document.getElementById("achestop2").value})
+}
+if(document.getElementById("achesleft3").value!=0 && document.getElementById("achestop3").value!=0) 
+{
 $("#draggable3").offset({ left:  document.getElementById("achesleft3").value, top:  document.getElementById("achestop3").value})
+}
+if(document.getElementById("achesleft4").value!=0 && document.getElementById("achestop4").value!=0) 
+{
 $("#draggable4").offset({ left:  document.getElementById("achesleft4").value, top:  document.getElementById("achestop4").value})
+}
+if(document.getElementById("achesleft5").value!=0 && document.getElementById("achestop5").value!=0) 
+{
 $("#draggable5").offset({ left:  document.getElementById("achesleft5").value, top:  document.getElementById("achestop5").value})
+}
+if(document.getElementById("achesleft6").value!=0 && document.getElementById("achestop6").value!=0) 
+{
 $("#draggable6").offset({ left:  document.getElementById("achesleft6").value, top:  document.getElementById("achestop6").value})
+}
+if(document.getElementById("achesleft7").value!=0 && document.getElementById("achestop7").value!=0) 
+{
 $("#draggable7").offset({ left:  document.getElementById("achesleft7").value, top:  document.getElementById("achestop7").value})
+}
+if(document.getElementById("achesleft8").value!=0 && document.getElementById("achestop8").value!=0) 
+{
 $("#draggable8").offset({ left:  document.getElementById("achesleft8").value, top:  document.getElementById("achestop8").value})
+}
+if(document.getElementById("achesleft9").value!=0 && document.getElementById("achestop9").value!=0) 
+{
 $("#draggable9").offset({ left:  document.getElementById("achesleft9").value, top:  document.getElementById("achestop9").value})
-
+}
+if(document.getElementById("numbleft").value!=0 && document.getElementById("numbtop").value!=0)
+{
 $("#numbness").offset({ left:  document.getElementById("numbleft").value, top:  document.getElementById("numbtop").value})
+}
+if(document.getElementById("numbleft1").value!=0 && document.getElementById("numbtop1").value!=0)
+{
 $("#numbness1").offset({ left:  document.getElementById("numbleft1").value, top:  document.getElementById("numbtop1").value})
+}
+if(document.getElementById("numbleft2").value!=0 && document.getElementById("numbtop2").value!=0)
+{
 $("#numbness2").offset({ left:  document.getElementById("numbleft2").value, top:  document.getElementById("numbtop2").value})
+}
+if(document.getElementById("numbleft3").value!=0 && document.getElementById("numbtop3").value!=0)
+{
 $("#numbness3").offset({ left:  document.getElementById("numbleft3").value, top:  document.getElementById("numbtop3").value})
+}
+if(document.getElementById("numbleft4").value!=0 && document.getElementById("numbtop4").value!=0)
+{
 $("#numbness4").offset({ left:  document.getElementById("numbleft4").value, top:  document.getElementById("numbtop4").value})
+}
+if(document.getElementById("numbleft5").value!=0 && document.getElementById("numbtop5").value!=0)
+{
 $("#numbness5").offset({ left:  document.getElementById("numbleft5").value, top:  document.getElementById("numbtop5").value})
+}
+if(document.getElementById("numbleft6").value!=0 && document.getElementById("numbtop6").value!=0)
+{
 $("#numbness6").offset({ left:  document.getElementById("numbleft6").value, top:  document.getElementById("numbtop6").value})
+}
+if(document.getElementById("numbleft7").value!=0 && document.getElementById("numbtop7").value!=0)
+{
 $("#numbness7").offset({ left:  document.getElementById("numbleft7").value, top:  document.getElementById("numbtop7").value})
+}
+if(document.getElementById("numbleft8").value!=0 && document.getElementById("numbtop8").value!=0)
+{
 $("#numbness8").offset({ left:  document.getElementById("numbleft8").value, top:  document.getElementById("numbtop8").value})
+}
+if(document.getElementById("numbleft9").value!=0 && document.getElementById("numbtop9").value!=0)
+{
 $("#numbness9").offset({ left:  document.getElementById("numbleft9").value, top:  document.getElementById("numbtop9").value})
-
+}
+if(document.getElementById("pinleft").value!=0 && document.getElementById("pintop").value!=0)
+{
 $("#pins").offset({ left:  document.getElementById("pinleft").value, top:  document.getElementById("pintop").value})
+}
+if(document.getElementById("pinleft1").value!=0 && document.getElementById("pintop1").value!=0)
+{
 $("#pins1").offset({ left:  document.getElementById("pinleft1").value, top:  document.getElementById("pintop1").value})
+}
+if(document.getElementById("pinleft2").value!=0 && document.getElementById("pintop2").value!=0)
+{
 $("#pins2").offset({ left:  document.getElementById("pinleft2").value, top:  document.getElementById("pintop2").value})
+}
+if(document.getElementById("pinleft3").value!=0 && document.getElementById("pintop3").value!=0)
+{
 $("#pins3").offset({ left:  document.getElementById("pinleft3").value, top:  document.getElementById("pintop3").value})
+}
+if(document.getElementById("pinleft4").value!=0 && document.getElementById("pintop4").value!=0)
+{
 $("#pins4").offset({ left:  document.getElementById("pinleft4").value, top:  document.getElementById("pintop4").value})
+}
+if(document.getElementById("pinleft5").value!=0 && document.getElementById("pintop5").value!=0)
+{
 $("#pins5").offset({ left:  document.getElementById("pinleft5").value, top:  document.getElementById("pintop5").value})
+}
+if(document.getElementById("pinleft6").value!=0 && document.getElementById("pintop6").value!=0)
+{
 $("#pins6").offset({ left:  document.getElementById("pinleft6").value, top:  document.getElementById("pintop6").value})
+}
+if(document.getElementById("pinleft7").value!=0 && document.getElementById("pintop7").value!=0)
+{
 $("#pins7").offset({ left:  document.getElementById("pinleft7").value, top:  document.getElementById("pintop7").value})
+}
+if(document.getElementById("pinleft8").value!=0 && document.getElementById("pintop8").value!=0)
+{
 $("#pins8").offset({ left:  document.getElementById("pinleft8").value, top:  document.getElementById("pintop8").value})
+}
+if(document.getElementById("pinleft9").value!=0 && document.getElementById("pintop9").value!=0)
+{
 $("#pins9").offset({ left:  document.getElementById("pinleft9").value, top:  document.getElementById("pintop9").value})
-
-
+}
+if(document.getElementById("burnleft").value!=0 && document.getElementById("burntop").value!=0)
+{
 $("#burn").offset({ left:  document.getElementById("burnleft").value, top:  document.getElementById("burntop").value})
+}
+if(document.getElementById("burnleft1").value!=0 && document.getElementById("burntop1").value!=0)
+{
 $("#burn1").offset({ left:  document.getElementById("burnleft1").value, top:  document.getElementById("burntop1").value})
+}
+if(document.getElementById("burnleft2").value!=0 && document.getElementById("burntop2").value!=0)
+{
 $("#burn2").offset({ left:  document.getElementById("burnleft2").value, top:  document.getElementById("burntop2").value})
+}
+if(document.getElementById("burnleft3").value!=0 && document.getElementById("burntop3").value!=0)
+{
 $("#burn3").offset({ left:  document.getElementById("burnleft3").value, top:  document.getElementById("burntop3").value})
+}
+if(document.getElementById("burnleft4").value!=0 && document.getElementById("burntop4").value!=0)
+{
 $("#burn4").offset({ left:  document.getElementById("burnleft4").value, top:  document.getElementById("burntop4").value})
+}
+if(document.getElementById("burnleft5").value!=0 && document.getElementById("burntop5").value!=0)
+{
 $("#burn5").offset({ left:  document.getElementById("burnleft5").value, top:  document.getElementById("burntop5").value})
+}
+if(document.getElementById("burnleft6").value!=0 && document.getElementById("burntop6").value!=0)
+{
 $("#burn6").offset({ left:  document.getElementById("burnleft6").value, top:  document.getElementById("burntop6").value})
+}
+if(document.getElementById("burnleft7").value!=0 && document.getElementById("burntop7").value!=0)
+{
 $("#burn7").offset({ left:  document.getElementById("burnleft7").value, top:  document.getElementById("burntop7").value})
+}
+if(document.getElementById("burnleft8").value!=0 && document.getElementById("burntop8").value!=0)
+{
 $("#burn8").offset({ left:  document.getElementById("burnleft8").value, top:  document.getElementById("burntop8").value})
+}
+if(document.getElementById("burnleft9").value!=0 && document.getElementById("burntop9").value!=0)
+{
 $("#burn9").offset({ left:  document.getElementById("burnleft9").value, top:  document.getElementById("burntop9").value})
-
+}
+if(document.getElementById("stableft").value!=0 && document.getElementById("stabtop").value!=0)
+{
 $("#stabbing").offset({ left:  document.getElementById("stableft").value, top:  document.getElementById("stabtop").value})
+}
+if(document.getElementById("stableft1").value!=0 && document.getElementById("stabtop1").value!=0)
+{
 $("#stabbing1").offset({ left:  document.getElementById("stableft1").value, top:  document.getElementById("stabtop1").value})
+}
+if(document.getElementById("stableft2").value!=0 && document.getElementById("stabtop2").value!=0)
+{
 $("#stabbing2").offset({ left:  document.getElementById("stableft2").value, top:  document.getElementById("stabtop2").value})
+}
+if(document.getElementById("stableft3").value!=0 && document.getElementById("stabtop3").value!=0)
+{
 $("#stabbing3").offset({ left:  document.getElementById("stableft3").value, top:  document.getElementById("stabtop3").value})
+}
+if(document.getElementById("stableft4").value!=0 && document.getElementById("stabtop4").value!=0)
+{
 $("#stabbing4").offset({ left:  document.getElementById("stableft4").value, top:  document.getElementById("stabtop4").value})
+}
+if(document.getElementById("stableft5").value!=0 && document.getElementById("stabtop5").value!=0)
+{
 $("#stabbing5").offset({ left:  document.getElementById("stableft5").value, top:  document.getElementById("stabtop5").value})
+}
+if(document.getElementById("stableft6").value!=0 && document.getElementById("stabtop6").value!=0)
+{
 $("#stabbing6").offset({ left:  document.getElementById("stableft6").value, top:  document.getElementById("stabtop6").value})
+}
+if(document.getElementById("stableft7").value!=0 && document.getElementById("stabtop7").value!=0)
+{
 $("#stabbing7").offset({ left:  document.getElementById("stableft7").value, top:  document.getElementById("stabtop7").value})
+}
+if(document.getElementById("stableft8").value!=0 && document.getElementById("stabtop8").value!=0)
+{
 $("#stabbing8").offset({ left:  document.getElementById("stableft8").value, top:  document.getElementById("stabtop8").value})
+}
+if(document.getElementById("stableft9").value!=0 && document.getElementById("stabtop9").value!=0)
+{
 $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:  document.getElementById("stabtop9").value})
-
+}
 
     });
 
@@ -1175,74 +1319,74 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
 <div id="draggable" class="ui-widget-content">
 <img id="1"  src="resources/images/aches.jpg" width="10px" height="10px" >
  <input type="hidden" name="achepath" value="resources/images/aches.jpg">
-<input type="hidden" name="acheleft" id="achesleft" value="108" >
-<input type="hidden" name="achetop" id="achestop" value="296">
+<input type="hidden" name="acheleft" id="achesleft" value="0" >
+<input type="hidden" name="achetop" id="achestop" value="0">
 </div>
 </td>
 <td >
 <div id="draggable1" class="ui-widget-content">
  <img id="1"  src="resources/images/aches.jpg" width="10px" height="10px" >
   <input type="hidden" name="achepath1" value="resources/images/aches.jpg">
-<input type="hidden" name="acheleft1" id="achesleft1" value="122" >
-<input type="hidden" name="achetop1" id="achestop1" value="296" >  
+<input type="hidden" name="acheleft1" id="achesleft1" value="0" >
+<input type="hidden" name="achetop1" id="achestop1" value="0" >  
 </div></td>
 <td >
 <div id="draggable2" class="ui-widget-content">
  <img alt=""   src="resources/images/aches.jpg" width="10px" height="10px" > 
  <input type="hidden" name="achepath2" value="resources/images/aches.jpg">
- <input type="hidden" name="acheleft2" id="achesleft2" value="136" >
-<input type="hidden" name="achetop2" id="achestop2" value="296" >
+ <input type="hidden" name="acheleft2" id="achesleft2" value="0" >
+<input type="hidden" name="achetop2" id="achestop2" value="0" >
 </div></td>
 <td>
 <div id="draggable3" class="ui-widget-content" >
  <img alt=""  src="resources/images/aches.jpg" width="10px" height="10px" > 
  <input type="hidden" name="achepath3" value="resources/images/aches.jpg">
-<input type="hidden" name="acheleft3" id="achesleft3" value="151">
-<input type="hidden" name="achetop3" id="achestop3" value="296" >
+<input type="hidden" name="acheleft3" id="achesleft3" value="0">
+<input type="hidden" name="achetop3" id="achestop3" value="0" >
 </div></td>
 <td>
 <div id="draggable4" class="ui-widget-content"  >
  <img alt=""  src="resources/images/aches.jpg" width="10px" height="10px" > 
 <input type="hidden" name="achepath4" value="resources/images/aches.jpg">
-<input type="hidden" name="acheleft4" id="achesleft4" value="163" >
-<input type="hidden" name="achetop4" id="achestop4" value="296"> 
+<input type="hidden" name="acheleft4" id="achesleft4" value="0" >
+<input type="hidden" name="achetop4" id="achestop4" value="0"> 
 </div></td>
 
  <td>
  <div id="draggable5" >
 <img  alt=""  class="ui-widget-content" src="resources/images/aches.jpg" width="10px" height="10px" > 
 <input type="hidden" name="achepath5" value="resources/images/aches.jpg">
-<input type="hidden" name="acheleft5" id="achesleft5" value="177" >
-<input type="hidden" name="achetop5" id="achestop5" value="296">
+<input type="hidden" name="acheleft5" id="achesleft5" value="0" >
+<input type="hidden" name="achetop5" id="achestop5" value="0">
 </div></td>
 <td >
 <div id="draggable6" >
 <img  class="ui-widget-content" src="resources/images/aches.jpg" width="10px" height="10px" > 
 <input type="hidden" name="achepath6" value="resources/images/aches.jpg">
-<input type="hidden" name="acheleft6" id="achesleft6" value="192" >
-<input type="hidden" name="achetop6" id="achestop6" value="296">
+<input type="hidden" name="acheleft6" id="achesleft6" value="0" >
+<input type="hidden" name="achetop6" id="achestop6" value="0">
 </div>
 </td>
 <td >
 <div id="draggable7" >
  <img alt=""  class="ui-widget-content" src="resources/images/aches.jpg" width="10px" height="10px" > 
  <input type="hidden" name="achepath7" value="resources/images/aches.jpg">
-<input type="hidden" name="acheleft7" id="achesleft7" value="207" >
-<input type="hidden" name="achetop7" id="achestop7" value="296" >
+<input type="hidden" name="acheleft7" id="achesleft7" value="0" >
+<input type="hidden" name="achetop7" id="achestop7" value="0" >
 </div></td>
 <td >
 <div id="draggable8" >
  <img alt="" class="ui-widget-content" src="resources/images/aches.jpg" width="10px" height="10px" >  
  <input type="hidden" name="achepath8" value="resources/images/aches.jpg">
-<input type="hidden" name="acheleft8" id="achesleft8" value="221">
-<input type="hidden" name="achetop8" id="achestop8" value="296" >
+<input type="hidden" name="acheleft8" id="achesleft8" value="0">
+<input type="hidden" name="achetop8" id="achestop8" value="0" >
 </div></td>
 <td >
 <div id="draggable9" class="ui-widget-content">
  <img alt=""  src="resources/images/aches.jpg" width="10px" height="10px" > 
  <input type="hidden" name="achepath9" value="resources/images/aches.jpg">
-<input type="hidden" name="acheleft9" id="achesleft9" value="234" >
-<input type="hidden" name="achetop9" id="achestop9" value="296"> 
+<input type="hidden" name="acheleft9" id="achesleft9" value="0" >
+<input type="hidden" name="achetop9" id="achestop9" value="0"> 
 </div></td>
 
  
@@ -1253,62 +1397,62 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
 <td><div id="numbness" class="ui-widget-content">
  <img alt="" src="resources/images/numb.png" width="10px" height="10px" > 
  <input type="hidden" name="numbpath" value="resources/images/numb.png">
-<input type="hidden" name="numbleft" id="numbleft" value="374" >
-<input type="hidden" name="numbtop" id="numbtop" value="296" > 
+<input type="hidden" name="numbleft" id="numbleft" value="0" >
+<input type="hidden" name="numbtop" id="numbtop" value="0" > 
 </div></td>
 <td><div id="numbness1" class="ui-widget-content">
  <img alt="" src="resources/images/numb.png" width="10px" height="10px" >  
  <input type="hidden" name="numbpath1" value="resources/images/numb.png">
-<input type="hidden" name="numbleft1" id="numbleft1" value="388">
-<input type="hidden" name="numbtop1" id="numbtop1" value="296"> 
+<input type="hidden" name="numbleft1" id="numbleft1" value="0">
+<input type="hidden" name="numbtop1" id="numbtop1" value="0"> 
 </div></td>
 <td><div id="numbness2" class="ui-widget-content">
  <img alt="" src="resources/images/numb.png" width="10px" height="10px" > 
  <input type="hidden" name="numbpath2" value="resources/images/numb.png">
-<input type="hidden" name="numbleft2" id="numbleft2" value="402">
-<input type="hidden" name="numbtop2" id="numbtop2" value="296">  
+<input type="hidden" name="numbleft2" id="numbleft2" value="0">
+<input type="hidden" name="numbtop2" id="numbtop2" value="0">  
 </div></td>
 <td><div id="numbness3" class="ui-widget-content">
  <img alt="" src="resources/images/numb.png" width="10px" height="10px" >  
  <input type="hidden" name="numbpath3" id="numbpath3" value="resources/images/numb.png">
-<input type="hidden" name="numbleft3" id="numbleft3" value="416">
-<input type="hidden" name="numbtop3" id="numbtop3" value="296"> 
+<input type="hidden" name="numbleft3" id="numbleft3" value="0">
+<input type="hidden" name="numbtop3" id="numbtop3" value="0"> 
 </div></td>
 <td><div id="numbness4" class="ui-widget-content">
  <img alt="" src="resources/images/numb.png" width="10px" height="10px" >  
  <input type="hidden" name="numbpath4" id="numbpath4" value="resources/images/numb.png">
-<input type="hidden" name="numbleft4" id="numbleft4" value="430">
-<input type="hidden" name="numbtop4" id="numbtop4" value="296" > 
+<input type="hidden" name="numbleft4" id="numbleft4" value="0">
+<input type="hidden" name="numbtop4" id="numbtop4" value="0" > 
 </div></td>
 <td ><div id="numbness5">
  <img alt=""  class="ui-widget-content" src="resources/images/numb.png" width="10px" height="10px">  
  <input type="hidden" name="numbpath5" id="numbpath5" value="resources/images/numb.png">
-<input type="hidden" name="numbleft5" id="numbleft5" value="445">
-<input type="hidden" name="numbtop5" id="numbtop5" value="296" > 
+<input type="hidden" name="numbleft5" id="numbleft5" value="0">
+<input type="hidden" name="numbtop5" id="numbtop5" value="0" > 
 </div></td>
 <td ><div id="numbness6"  >
  <img alt="" class="ui-widget-content" src="resources/images/numb.png" width="10" height="10" >  
  <input type="hidden" name="numbpath6" id="numbpath6" value="resources/images/numb.png">
-<input type="hidden" name="numbleft6" id="numbleft6" value="458">
-<input type="hidden" name="numbtop6" id="numbtop6" value="296" > 
+<input type="hidden" name="numbleft6" id="numbleft6" value="0">
+<input type="hidden" name="numbtop6" id="numbtop6" value="0" > 
 </div></td>
 <td width="10"><div id="numbness7" >
  <img alt="" class="ui-widget-content" src="resources/images/numb.png" width="10px" height="10px" >  
  <input type="hidden" name="numbpath7" id="numbpath7" value="resources/images/numb.png">
-<input type="hidden" name="numbleft7" id="numbleft7" value="472">
-<input type="hidden" name="numbtop7" id="numbtop7" value="296" > 
+<input type="hidden" name="numbleft7" id="numbleft7" value="0">
+<input type="hidden" name="numbtop7" id="numbtop7" value="0" > 
 </div></td>
 <td width="10"><div id="numbness8" >
  <img alt="" class="ui-widget-content" src="resources/images/numb.png" width="10px" height="10px" >  
  <input type="hidden" name="numbpath8" id="numbpath8" value="resources/images/numb.png">
-<input type="hidden" name="numbleft8" id="numbleft8" value="486">
-<input type="hidden" name="numbtop8" id="numbtop8" value="296" > 
+<input type="hidden" name="numbleft8" id="numbleft8" value="0">
+<input type="hidden" name="numbtop8" id="numbtop8" value="0" > 
 </div></td>
 <td width="10"><div id="numbness9"  >
  <img alt="" class="ui-widget-content" src="resources/images/numb.png" width="10px" height="10px" >  
  <input type="hidden" name="numbpath9" id="numbpath9" value="resources/images/numb.png">
-<input type="hidden" name="numbleft9" id="numbleft9" value="499">
-<input type="hidden" name="numbtop9" id="numbtop9" value="296" > 
+<input type="hidden" name="numbleft9" id="numbleft9" value="0">
+<input type="hidden" name="numbtop9" id="numbtop9" value="0" > 
 </div></td>
 
 
@@ -1317,64 +1461,64 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
 <td ><div id="pins" class="ui-widget-content">
  <img alt="" src="resources/images/pin.png" width="10px" height="10px" > 
  <input type="hidden" name="pinpath" id="pinpath" value="resources/images/pin.png">
-<input type="hidden" name="pinleft" id="pinleft" value="645">
-<input type="hidden" name="pintop" id="pintop" value="296" >  
+<input type="hidden" name="pinleft" id="pinleft" value="0">
+<input type="hidden" name="pintop" id="pintop" value="0" >  
 </div></td>
 <td><div id="pins1" class="ui-widget-content">
  <img alt="" src="resources/images/pin.png" width="10px" height="10px" >
    <input type="hidden" name="pinpath1" id="pinpath1" value="resources/images/pin.png">
-<input type="hidden" name="pinleft1" id="pinleft1" value="659">
-<input type="hidden" name="pintop1" id="pintop1" value="296" > 
+<input type="hidden" name="pinleft1" id="pinleft1" value="0">
+<input type="hidden" name="pintop1" id="pintop1" value="0" > 
  
 </div></td>
 <td><div id="pins2" class="ui-widget-content">
  <img alt="" src="resources/images/pin.png" width="10px" height="10px" >
   <input type="hidden" name="pinpath2" id="pinpath2" value="resources/images/pin.png">
-<input type="hidden" name="pinleft2" id="pinleft2" value="673">
-<input type="hidden" name="pintop2" id="pintop2" value="296" >   
+<input type="hidden" name="pinleft2" id="pinleft2" value="0">
+<input type="hidden" name="pintop2" id="pintop2" value="0" >   
 </div></td>
 <td><div id="pins3" class="ui-widget-content">
  <img alt="" src="resources/images/pin.png" width="10px" height="10px" >  
  <input type="hidden" name="pinpath3" id="pinpath3" value="resources/images/pin.png">
-<input type="hidden" name="pinleft3" id="pinleft3" value="686">
-<input type="hidden" name="pintop3" id="pintop3" value="296"> 
+<input type="hidden" name="pinleft3" id="pinleft3" value="0">
+<input type="hidden" name="pintop3" id="pintop3" value="0"> 
 </div></td>
 <td><div id="pins4" class="ui-widget-content">
  <img alt="" src="resources/images/pin.png" width="10px" height="10px" > 
   <input type="hidden" name="pinpath4" id="pinpath4" value="resources/images/pin.png">
-<input type="hidden" name="pinleft4" id="pinleft4" value="701">
-<input type="hidden" name="pintop4" id="pintop4" value="296">  
+<input type="hidden" name="pinleft4" id="pinleft4" value="0">
+<input type="hidden" name="pintop4" id="pintop4" value="0">  
 </div></td>
 <td width="10"><div id="pins5"  >
  <img alt="" class="ui-widget-content" src="resources/images/pin.png" width="10px" height="10px" > 
  <input type="hidden" name="pinpath5" id="pinpath5" value="resources/images/pin.png">
-<input type="hidden" name="pinleft5" id="pinleft5" value="716">
-<input type="hidden" name="pintop5" id="pintop5" value="296" >  
+<input type="hidden" name="pinleft5" id="pinleft5" value="0">
+<input type="hidden" name="pintop5" id="pintop5" value="0" >  
 </div></td>
 <td width="10"><div id="pins6" >
  <img alt=""  class="ui-widget-content" src="resources/images/pin.png" width="10px" height="10px" >
    <input type="hidden" name="pinpath6" id="pinpath6" value="resources/images/pin.png">
-<input type="hidden" name="pinleft6" id="pinleft6" value="729">
-<input type="hidden" name="pintop6" id="pintop6" value="296" > 
+<input type="hidden" name="pinleft6" id="pinleft6" value="0">
+<input type="hidden" name="pintop6" id="pintop6" value="0" > 
  
 </div></td>
 <td width="10"><div id="pins7" >
  <img alt="" class="ui-widget-content" src="resources/images/pin.png" width="10px" height="10px" >
   <input type="hidden" name="pinpath7" id="pinpath7" value="resources/images/pin.png">
-<input type="hidden" name="pinleft7" id="pinleft7" value="743">
-<input type="hidden" name="pintop7" id="pintop7" value="296" >   
+<input type="hidden" name="pinleft7" id="pinleft7" value="0">
+<input type="hidden" name="pintop7" id="pintop7" value="0" >   
 </div></td>
 <td width="10"><div id="pins8"  >
  <img alt="" src="resources/images/pin.png" class="ui-widget-content" width="10px" height="10px" >  
  <input type="hidden" name="pinpath8" id="pinpath8" value="resources/images/pin.png">
-<input type="hidden" name="pinleft8" id="pinleft8" value="757">
-<input type="hidden" name="pintop8" id="pintop8" value="296"> 
+<input type="hidden" name="pinleft8" id="pinleft8" value="0">
+<input type="hidden" name="pintop8" id="pintop8" value="0"> 
 </div></td>
 <td width="10"><div id="pins9"  >
  <img alt="" src="resources/images/pin.png" class="ui-widget-content" width="10px" height="10px" > 
   <input type="hidden" name="pinpath9" id="pinpath9" value="resources/images/pin.png">
-<input type="hidden" name="pinleft9" id="pinleft9" value="771">
-<input type="hidden" name="pintop9" id="pintop9" value="296">  
+<input type="hidden" name="pinleft9" id="pinleft9" value="0">
+<input type="hidden" name="pintop9" id="pintop9" value="0">  
 </div></td>
 
 <td width="70"></td>
@@ -1382,62 +1526,62 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
 <td><div id="burn" class="ui-widget-content">
  <img alt="" src="resources/images/burn.png" width="10px" height="10px" > 
   <input type="hidden" name="burnpath" id="burnpath" value="resources/images/burn.png">
-<input type="hidden" name="burnleft" id="burnleft" value="909">
-<input type="hidden" name="burntop" id="burntop" value="296">  
+<input type="hidden" name="burnleft" id="burnleft" value="0">
+<input type="hidden" name="burntop" id="burntop" value="0">  
 </div></td>
 <td><div id="burn1" class="ui-widget-content">
  <img alt="" src="resources/images/burn.png" width="10px" height="10px" >  
  <input type="hidden" name="burnpath1" id="burnpath1" value="resources/images/burn.png">
-<input type="hidden" name="burnleft1" id="burnleft1" value="923">
-<input type="hidden" name="burntop1" id="burntop1" value="296"> 
+<input type="hidden" name="burnleft1" id="burnleft1" value="0">
+<input type="hidden" name="burntop1" id="burntop1" value="0"> 
 </div></td>
 <td><div id="burn2" class="ui-widget-content">
  <img alt="" src="resources/images/burn.png" width="10px" height="10px" >  
  <input type="hidden" name="burnpath2" id="burnpath2" value="resources/images/burn.png">
-<input type="hidden" name="burnleft2" id="burnleft2" value="936" >
-<input type="hidden" name="burntop2" id="burntop2" value="296">
+<input type="hidden" name="burnleft2" id="burnleft2" value="0" >
+<input type="hidden" name="burntop2" id="burntop2" value="0">
 </div></td>
 <td><div id="burn3" class="ui-widget-content">
  <img alt="" src="resources/images/burn.png" width="10px" height="10px" > 
  <input type="hidden" name="burnpath3" id="burnpath3" value="resources/images/burn.png">
-<input type="hidden" name="burnleft3" id="burnleft3" value="951">
-<input type="hidden" name="burntop3" id="burntop3" value="296"> 
+<input type="hidden" name="burnleft3" id="burnleft3" value="0">
+<input type="hidden" name="burntop3" id="burntop3" value="0"> 
 </div></td>
 <td><div id="burn4" class="ui-widget-content">
  <img alt="" src="resources/images/burn.png" width="10px" height="10px" >
  <input type="hidden" name="burnpath4" id="burnpath4" value="resources/images/burn.png">
-<input type="hidden" name="burnleft4" id="burnleft4" value="965">
-<input type="hidden" name="burntop4" id="burntop4" value="296" >  
+<input type="hidden" name="burnleft4" id="burnleft4" value="0">
+<input type="hidden" name="burntop4" id="burntop4" value="0" >  
 </div></td>
 <td width="10"><div id="burn5">
  <img alt="" src="resources/images/burn.png" class="ui-widget-content" width="10px" height="10px" > 
   <input type="hidden" name="burnpath5" id="burnpath5" value="resources/images/burn.png">
-<input type="hidden" name="burnleft5" id="burnleft5" value="979">
-<input type="hidden" name="burntop5" id="burntop5" value="296">  
+<input type="hidden" name="burnleft5" id="burnleft5" value="0">
+<input type="hidden" name="burntop5" id="burntop5" value="0">  
 </div></td>
 <td width="10"><div id="burn6" >
  <img alt="" src="resources/images/burn.png"  class="ui-widget-content" width="10px" height="10px" >  
  <input type="hidden" name="burnpath6" id="burnpath6" value="resources/images/burn.png">
-<input type="hidden" name="burnleft6" id="burnleft6" value="992">
-<input type="hidden" name="burntop6" id="burntop6" value="296"> 
+<input type="hidden" name="burnleft6" id="burnleft6" value="0">
+<input type="hidden" name="burntop6" id="burntop6" value="0"> 
 </div></td>
 <td width="10"><div id="burn7"  >
  <img alt="" src="resources/images/burn.png" class="ui-widget-content" width="10px" height="10px" >  
  <input type="hidden" name="burnpath7" id="burnpath7" value="resources/images/burn.png">
-<input type="hidden" name="burnleft7" id="burnleft7" value="1006" >
-<input type="hidden" name="burntop7" id="burntop7" value="296">
+<input type="hidden" name="burnleft7" id="burnleft7" value="0" >
+<input type="hidden" name="burntop7" id="burntop7" value="0">
 </div></td>
 <td width="10"><div id="burn8"  >
  <img alt="" src="resources/images/burn.png" class="ui-widget-content" width="10px" height="10px" > 
  <input type="hidden" name="burnpath8" id="burnpath8" value="resources/images/burn.png">
-<input type="hidden" name="burnleft8" id="burnleft8" value="1020">
-<input type="hidden" name="burntop8" id="burntop8" value="296"> 
+<input type="hidden" name="burnleft8" id="burnleft8" value="0">
+<input type="hidden" name="burntop8" id="burntop8" value="0"> 
 </div></td>
 <td width="10"><div id="burn9"  >
  <img alt="" src="resources/images/burn.png" class="ui-widget-content" width="10px" height="10px" >
  <input type="hidden" name="burnpath9" id="burnpath9" value="resources/images/burn.png">
-<input type="hidden" name="burnleft9" id="burnleft9" value="1034">
-<input type="hidden" name="burntop9" id="burntop9" value="296" >  
+<input type="hidden" name="burnleft9" id="burnleft9" value="0">
+<input type="hidden" name="burntop9" id="burntop9" value="0" >  
 </div></td>
 
 <td width="80"></td>
@@ -1445,64 +1589,64 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
 <td><div id="stabbing" class="ui-widget-content">
  <img alt="" src="resources/images/stabbing.png" width="10px" height="10px" >  
  <input type="hidden" name="stabpath" id="stabpath" value="resources/images/stabbing.png">
-<input type="hidden" name="stableft" id="stableft" value="1182" >
-<input type="hidden" name="stabtop" id="stabtop" value="296">  
+<input type="hidden" name="stableft" id="stableft" value="0" >
+<input type="hidden" name="stabtop" id="stabtop" value="0">  
 </div></td>
 <td><div id="stabbing1" class="ui-widget-content">
  <img alt="" src="resources/images/stabbing.png" width="10px" height="10px" >
  <input type="hidden" name="stabpath1" id="stabpath1" value="resources/images/stabbing.png">
-<input type="hidden" name="stableft1" id="stableft1" value="1196">
-<input type="hidden" name="stabtop1" id="stabtop1" value="296">  
+<input type="hidden" name="stableft1" id="stableft1" value="0">
+<input type="hidden" name="stabtop1" id="stabtop1" value="0">  
 </div></td>
 <td><div id="stabbing2" class="ui-widget-content">
  <img alt="" src="resources/images/stabbing.png" width="10px" height="10px" > 
  <input type="hidden" name="stabpath2" id="stabpath2" value="resources/images/stabbing.png">
-<input type="hidden" name="stableft2" id="stableft2" value="1209" >
-<input type="hidden" name="stabtop2" id="stabtop2" value="296">   
+<input type="hidden" name="stableft2" id="stableft2" value="0" >
+<input type="hidden" name="stabtop2" id="stabtop2" value="0">   
  
 </div></td>
 <td><div id="stabbing3" class="ui-widget-content">
  <img alt="" src="resources/images/stabbing.png" width="10px" height="10px" > 
  <input type="hidden" name="stabpath3" id="stabpath3" value="resources/images/stabbing.png">
-<input type="hidden" name="stableft3" id="stableft3" value="1223">
-<input type="hidden" name="stabtop3" id="stabtop3" value="296">   
+<input type="hidden" name="stableft3" id="stableft3" value="0">
+<input type="hidden" name="stabtop3" id="stabtop3" value="0">   
 </div></td>
 <td><div id="stabbing4" class="ui-widget-content">
  <img alt="" src="resources/images/stabbing.png" width="10px" height="10px" >  
  <input type="hidden" name="stabpath4" id="stabpath4" value="resources/images/stabbing.png">
-<input type="hidden" name="stableft4" id="stableft4" value="1237">
-<input type="hidden" name="stabtop4" id="stabtop4" value="296">  
+<input type="hidden" name="stableft4" id="stableft4" value="0">
+<input type="hidden" name="stabtop4" id="stabtop4" value="0">  
 </div></td>  
 <td width="10"><div id="stabbing5" >
  <img alt="" src="resources/images/stabbing.png"  class="ui-widget-content" width="10px" height="10px" >  
  <input type="hidden" name="stabpath5" id="stabpath5" value="resources/images/stabbing.png">
-<input type="hidden" name="stableft5" id="stableft5" value="1250" >
-<input type="hidden" name="stabtop5" id="stabtop5" value="296">  
+<input type="hidden" name="stableft5" id="stableft5" value="0" >
+<input type="hidden" name="stabtop5" id="stabtop5" value="0">  
 </div></td>
 <td width="10"><div id="stabbing6" >
  <img alt="" src="resources/images/stabbing.png"  class="ui-widget-content" width="10px" height="10px" >
  <input type="hidden" name="stabpath6" id="stabpath6" value="resources/images/stabbing.png">
-<input type="hidden" name="stableft6" id="stableft6" value="1265">
-<input type="hidden" name="stabtop6" id="stabtop6" value="296">  
+<input type="hidden" name="stableft6" id="stableft6" value="0">
+<input type="hidden" name="stabtop6" id="stabtop6" value="0">  
 </div></td>
 <td width="10"><div id="stabbing7" >
  <img alt="" src="resources/images/stabbing.png"  class="ui-widget-content" width="10px" height="10px" > 
  <input type="hidden" name="stabpath7" id="stabpath7" value="resources/images/stabbing.png">
-<input type="hidden" name="stableft7" id="stableft7" value="1280" >
-<input type="hidden" name="stabtop7" id="stabtop7" value="296">   
+<input type="hidden" name="stableft7" id="stableft7" value="0" >
+<input type="hidden" name="stabtop7" id="stabtop7" value="0">   
  
 </div></td>
 <td width="10"><div id="stabbing8" class="ui-widget-content" >
  <img alt="" src="resources/images/stabbing.png" width="10px" height="10px" > 
  <input type="hidden" name="stabpath8" id="stabpath8" value="resources/images/stabbing.png">
-<input type="hidden" name="stableft8" id="stableft8" value="1293">
-<input type="hidden" name="stabtop8" id="stabtop8" value="296">   
+<input type="hidden" name="stableft8" id="stableft8" value="0">
+<input type="hidden" name="stabtop8" id="stabtop8" value="0">   
 </div></td>
 <td width="10"><div id="stabbing9" class="ui-widget-content" >
  <img alt="" src="resources/images/stabbing.png" width="10px" height="10px" >  
  <input type="hidden" name="stabpath9" id="stabpath9" value="resources/images/stabbing.png">
-<input type="hidden" name="stableft9" id="stableft9" value="1307">
-<input type="hidden" name="stabtop9" id="stabtop9" value="296">  
+<input type="hidden" name="stableft9" id="stableft9" value="0">
+<input type="hidden" name="stabtop9" id="stabtop9" value="0">  
 </div></td> 
    
           

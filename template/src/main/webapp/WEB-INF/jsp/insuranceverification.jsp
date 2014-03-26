@@ -186,7 +186,7 @@
 <c:when test="${empty veri}">
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr class="row1">
-              <u><h6>Benefits and Limitation (staff completes)</h6></u>
+              <u><h6>Benefits and Limitation's (staff completes)</h6></u>
               </tr>
               <br>
               <tr><p>Hi, I'm calling to verify chiropractic benefits for<span class="err">*</span> Mr./ Mrs.<input type="text" class="input_txtbx1" name="verify_name" id="verify_name" /><span class="err"><form:errors path="Insuranceverification.verify_name"></form:errors></p></tr>
@@ -246,7 +246,7 @@
               <span class="err" id="atwhat1error"></span>
               </td>
               <td width="300"><span class="err">*</span>Subject to deductible</td>
-              <td><input type="text" class="input_txtbx1" name="subject_deduct" id="subjectdeduct" /><br><span class="err"><form:errors path="Insuranceverification.subject_deduct"></form:errors></span>
+              <td><input type="radio" name="subject_deduct" id="subjectdeduct" value="Yes" />Yes&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="subject_deduct" id="subjectdeduct" value="No" />No<br><span class="err"><form:errors path="Insuranceverification.subject_deduct"></form:errors></span>
               <span class="err" id="subjectdeducterror"></span>
               </td>
               </tr>
@@ -316,7 +316,7 @@
               <c:otherwise>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr class="row1">
-              <u><h6>Benefits and Limitation (staff completes)</h6></u>
+              <u><h6>Benefits and Limitation's (staff completes)</h6></u>
               </tr>
               <br>
               <tr><p>Hi, I'm calling to verify chiropractic benefits for <span class="err">*</span> Mr./ Mrs.<input type="text" class="input_txtbx1" name="verify_name" id="verify_name" value="${veri.verify_name}"/><span class="err"><form:errors path="Insuranceverification.verify_name"></form:errors></p></tr>
@@ -375,8 +375,13 @@
               <span class="err" id="atwhat1error"></span>
               </td>
               <td><span class="err">*</span>Subject to deductible</td>
-              <td><input type="text" class="input_txtbx1" name="subject_deduct" id="subjectdeduct" value="${veri.subject_deduct}"/><br><span class="err"><form:errors path="Insuranceverification.subject_deduct"></form:errors></span>
-              <span class="err" id="subjectdeduct"></span>
+              <td>
+              <input type="radio" name="subject_deduct" id="subjectdeduct" value="Yes" <c:if test="${veri.subject_deduct=='Yes'}"><c:out value="checked=checked"/></c:if> />Yes&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="subject_deduct" value="No" id="subjectdeduct" <c:if test="${veri.subject_deduct=='No'}"><c:out value="checked=checked"/></c:if> />No
+              
+              
+              
+             <%-- <input type="text" class="input_txtbx1" name="subject_deduct" id="subjectdeduct" value="${veri.subject_deduct}"/> --%><br><span class="err"><form:errors path="Insuranceverification.subject_deduct"></form:errors></span>
+               <span class="err" id="subjectdeduct"></span>
               </td>
               </tr>
               <!-- </table>

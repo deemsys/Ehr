@@ -105,66 +105,208 @@ $(function() {
     
     $(window).load(function(){
 var oldValue = "";
+if(document.getElementById("achesleft").value!=0 && document.getElementById("achestop").value!=0) 
+{
 $("#draggable").offset({ left:  document.getElementById("achesleft").value, top:  document.getElementById("achestop").value})
+}
+if(document.getElementById("achesleft1").value!=0 && document.getElementById("achestop1").value!=0) 
+{
 $("#draggable1").offset({ left:  document.getElementById("achesleft1").value, top:  document.getElementById("achestop1").value})
+}
+if(document.getElementById("achesleft2").value!=0 && document.getElementById("achestop2").value!=0) 
+{
 $("#draggable2").offset({ left:  document.getElementById("achesleft2").value, top:  document.getElementById("achestop2").value})
+}
+if(document.getElementById("achesleft3").value!=0 && document.getElementById("achestop3").value!=0) 
+{
 $("#draggable3").offset({ left:  document.getElementById("achesleft3").value, top:  document.getElementById("achestop3").value})
+}
+if(document.getElementById("achesleft4").value!=0 && document.getElementById("achestop4").value!=0) 
+{
 $("#draggable4").offset({ left:  document.getElementById("achesleft4").value, top:  document.getElementById("achestop4").value})
+}
+if(document.getElementById("achesleft5").value!=0 && document.getElementById("achestop5").value!=0) 
+{
 $("#draggable5").offset({ left:  document.getElementById("achesleft5").value, top:  document.getElementById("achestop5").value})
+}
+if(document.getElementById("achesleft6").value!=0 && document.getElementById("achestop6").value!=0) 
+{
 $("#draggable6").offset({ left:  document.getElementById("achesleft6").value, top:  document.getElementById("achestop6").value})
+}
+if(document.getElementById("achesleft7").value!=0 && document.getElementById("achestop7").value!=0) 
+{
 $("#draggable7").offset({ left:  document.getElementById("achesleft7").value, top:  document.getElementById("achestop7").value})
+}
+if(document.getElementById("achesleft8").value!=0 && document.getElementById("achestop8").value!=0) 
+{
 $("#draggable8").offset({ left:  document.getElementById("achesleft8").value, top:  document.getElementById("achestop8").value})
+}
+if(document.getElementById("achesleft9").value!=0 && document.getElementById("achestop9").value!=0) 
+{
 $("#draggable9").offset({ left:  document.getElementById("achesleft9").value, top:  document.getElementById("achestop9").value})
-
+}
+if(document.getElementById("numbleft").value!=0 && document.getElementById("numbtop").value!=0)
+{
 $("#numbness").offset({ left:  document.getElementById("numbleft").value, top:  document.getElementById("numbtop").value})
+}
+if(document.getElementById("numbleft1").value!=0 && document.getElementById("numbtop1").value!=0)
+{
 $("#numbness1").offset({ left:  document.getElementById("numbleft1").value, top:  document.getElementById("numbtop1").value})
+}
+if(document.getElementById("numbleft2").value!=0 && document.getElementById("numbtop2").value!=0)
+{
 $("#numbness2").offset({ left:  document.getElementById("numbleft2").value, top:  document.getElementById("numbtop2").value})
+}
+if(document.getElementById("numbleft3").value!=0 && document.getElementById("numbtop3").value!=0)
+{
 $("#numbness3").offset({ left:  document.getElementById("numbleft3").value, top:  document.getElementById("numbtop3").value})
+}
+if(document.getElementById("numbleft4").value!=0 && document.getElementById("numbtop4").value!=0)
+{
 $("#numbness4").offset({ left:  document.getElementById("numbleft4").value, top:  document.getElementById("numbtop4").value})
+}
+if(document.getElementById("numbleft5").value!=0 && document.getElementById("numbtop5").value!=0)
+{
 $("#numbness5").offset({ left:  document.getElementById("numbleft5").value, top:  document.getElementById("numbtop5").value})
+}
+if(document.getElementById("numbleft6").value!=0 && document.getElementById("numbtop6").value!=0)
+{
 $("#numbness6").offset({ left:  document.getElementById("numbleft6").value, top:  document.getElementById("numbtop6").value})
+}
+if(document.getElementById("numbleft7").value!=0 && document.getElementById("numbtop7").value!=0)
+{
 $("#numbness7").offset({ left:  document.getElementById("numbleft7").value, top:  document.getElementById("numbtop7").value})
+}
+if(document.getElementById("numbleft8").value!=0 && document.getElementById("numbtop8").value!=0)
+{
 $("#numbness8").offset({ left:  document.getElementById("numbleft8").value, top:  document.getElementById("numbtop8").value})
+}
+if(document.getElementById("numbleft9").value!=0 && document.getElementById("numbtop9").value!=0)
+{
 $("#numbness9").offset({ left:  document.getElementById("numbleft9").value, top:  document.getElementById("numbtop9").value})
-
+}
+if(document.getElementById("pinleft").value!=0 && document.getElementById("pintop").value!=0)
+{
 $("#pins").offset({ left:  document.getElementById("pinleft").value, top:  document.getElementById("pintop").value})
+}
+if(document.getElementById("pinleft1").value!=0 && document.getElementById("pintop1").value!=0)
+{
 $("#pins1").offset({ left:  document.getElementById("pinleft1").value, top:  document.getElementById("pintop1").value})
+}
+if(document.getElementById("pinleft2").value!=0 && document.getElementById("pintop2").value!=0)
+{
 $("#pins2").offset({ left:  document.getElementById("pinleft2").value, top:  document.getElementById("pintop2").value})
+}
+if(document.getElementById("pinleft3").value!=0 && document.getElementById("pintop3").value!=0)
+{
 $("#pins3").offset({ left:  document.getElementById("pinleft3").value, top:  document.getElementById("pintop3").value})
+}
+if(document.getElementById("pinleft4").value!=0 && document.getElementById("pintop4").value!=0)
+{
 $("#pins4").offset({ left:  document.getElementById("pinleft4").value, top:  document.getElementById("pintop4").value})
+}
+if(document.getElementById("pinleft5").value!=0 && document.getElementById("pintop5").value!=0)
+{
 $("#pins5").offset({ left:  document.getElementById("pinleft5").value, top:  document.getElementById("pintop5").value})
+}
+if(document.getElementById("pinleft6").value!=0 && document.getElementById("pintop6").value!=0)
+{
 $("#pins6").offset({ left:  document.getElementById("pinleft6").value, top:  document.getElementById("pintop6").value})
+}
+if(document.getElementById("pinleft7").value!=0 && document.getElementById("pintop7").value!=0)
+{
 $("#pins7").offset({ left:  document.getElementById("pinleft7").value, top:  document.getElementById("pintop7").value})
+}
+if(document.getElementById("pinleft8").value!=0 && document.getElementById("pintop8").value!=0)
+{
 $("#pins8").offset({ left:  document.getElementById("pinleft8").value, top:  document.getElementById("pintop8").value})
+}
+if(document.getElementById("pinleft9").value!=0 && document.getElementById("pintop9").value!=0)
+{
 $("#pins9").offset({ left:  document.getElementById("pinleft9").value, top:  document.getElementById("pintop9").value})
-
-
+}
+if(document.getElementById("burnleft").value!=0 && document.getElementById("burntop").value!=0)
+{
 $("#burn").offset({ left:  document.getElementById("burnleft").value, top:  document.getElementById("burntop").value})
+}
+if(document.getElementById("burnleft1").value!=0 && document.getElementById("burntop1").value!=0)
+{
 $("#burn1").offset({ left:  document.getElementById("burnleft1").value, top:  document.getElementById("burntop1").value})
+}
+if(document.getElementById("burnleft2").value!=0 && document.getElementById("burntop2").value!=0)
+{
 $("#burn2").offset({ left:  document.getElementById("burnleft2").value, top:  document.getElementById("burntop2").value})
+}
+if(document.getElementById("burnleft3").value!=0 && document.getElementById("burntop3").value!=0)
+{
 $("#burn3").offset({ left:  document.getElementById("burnleft3").value, top:  document.getElementById("burntop3").value})
+}
+if(document.getElementById("burnleft4").value!=0 && document.getElementById("burntop4").value!=0)
+{
 $("#burn4").offset({ left:  document.getElementById("burnleft4").value, top:  document.getElementById("burntop4").value})
+}
+if(document.getElementById("burnleft5").value!=0 && document.getElementById("burntop5").value!=0)
+{
 $("#burn5").offset({ left:  document.getElementById("burnleft5").value, top:  document.getElementById("burntop5").value})
+}
+if(document.getElementById("burnleft6").value!=0 && document.getElementById("burntop6").value!=0)
+{
 $("#burn6").offset({ left:  document.getElementById("burnleft6").value, top:  document.getElementById("burntop6").value})
+}
+if(document.getElementById("burnleft7").value!=0 && document.getElementById("burntop7").value!=0)
+{
 $("#burn7").offset({ left:  document.getElementById("burnleft7").value, top:  document.getElementById("burntop7").value})
+}
+if(document.getElementById("burnleft8").value!=0 && document.getElementById("burntop8").value!=0)
+{
 $("#burn8").offset({ left:  document.getElementById("burnleft8").value, top:  document.getElementById("burntop8").value})
+}
+if(document.getElementById("burnleft9").value!=0 && document.getElementById("burntop9").value!=0)
+{
 $("#burn9").offset({ left:  document.getElementById("burnleft9").value, top:  document.getElementById("burntop9").value})
-
+}
+if(document.getElementById("stableft").value!=0 && document.getElementById("stabtop").value!=0)
+{
 $("#stabbing").offset({ left:  document.getElementById("stableft").value, top:  document.getElementById("stabtop").value})
+}
+if(document.getElementById("stableft1").value!=0 && document.getElementById("stabtop1").value!=0)
+{
 $("#stabbing1").offset({ left:  document.getElementById("stableft1").value, top:  document.getElementById("stabtop1").value})
+}
+if(document.getElementById("stableft2").value!=0 && document.getElementById("stabtop2").value!=0)
+{
 $("#stabbing2").offset({ left:  document.getElementById("stableft2").value, top:  document.getElementById("stabtop2").value})
+}
+if(document.getElementById("stableft3").value!=0 && document.getElementById("stabtop3").value!=0)
+{
 $("#stabbing3").offset({ left:  document.getElementById("stableft3").value, top:  document.getElementById("stabtop3").value})
+}
+if(document.getElementById("stableft4").value!=0 && document.getElementById("stabtop4").value!=0)
+{
 $("#stabbing4").offset({ left:  document.getElementById("stableft4").value, top:  document.getElementById("stabtop4").value})
+}
+if(document.getElementById("stableft5").value!=0 && document.getElementById("stabtop5").value!=0)
+{
 $("#stabbing5").offset({ left:  document.getElementById("stableft5").value, top:  document.getElementById("stabtop5").value})
+}
+if(document.getElementById("stableft6").value!=0 && document.getElementById("stabtop6").value!=0)
+{
 $("#stabbing6").offset({ left:  document.getElementById("stableft6").value, top:  document.getElementById("stabtop6").value})
+}
+if(document.getElementById("stableft7").value!=0 && document.getElementById("stabtop7").value!=0)
+{
 $("#stabbing7").offset({ left:  document.getElementById("stableft7").value, top:  document.getElementById("stabtop7").value})
+}
+if(document.getElementById("stableft8").value!=0 && document.getElementById("stabtop8").value!=0)
+{
 $("#stabbing8").offset({ left:  document.getElementById("stableft8").value, top:  document.getElementById("stabtop8").value})
+}
+if(document.getElementById("stableft9").value!=0 && document.getElementById("stabtop9").value!=0)
+{
 $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:  document.getElementById("stabtop9").value})
+}
 
-
-    });
-
-    
+    });   
     
     $('#draggable').draggable(
     	    {
