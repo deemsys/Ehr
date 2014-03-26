@@ -183,6 +183,7 @@ $("#homephone").keyup(function() {
    oldValue = $(this).val();
 })
 
+
 $("#mobilenumber").keyup(function() {
 	
 	 $("#mobilenumbererror").html(''); 
@@ -215,7 +216,7 @@ $("#socialsecuritynumber").keyup(function() {
 	else if($(this).val()!='')
 		{
 		
-		$("#socialsecuritynumbererror").html('Kindly enter a number this format like 234-60-5678');
+		$("#socialsecuritynumbererror").html('Kindly enter a number ');
 		}
 }).keydown(function() {
    oldValue = $(this).val();
@@ -298,8 +299,9 @@ $("#phno").keyup(function() {
 	
 	 $("#phnoerror").html(''); 
 	/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
-	var intRegex = /^\d+$/;
-	if(intRegex.test($(this).val())||$(this).val()=='') 
+	//var intRegex = /^\d+$/;
+	var a= /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/;
+	if(a.test($(this).val())||$(this).val()=='') 
 	{
 		var $in = $(this).val();		 
 	}
@@ -353,8 +355,9 @@ $("#phhealth").keyup(function() {
 	
 	 $("#phhealtherror").html(''); 
 	/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
-	var intRegex = /^\d+$/;
-	if(intRegex.test($(this).val())||$(this).val()=='') 
+//	var intRegex = /^\d+$/;
+	var a= /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/;
+	if(a.test($(this).val())||$(this).val()=='') 
 	{
 		var $in = $(this).val();		 
 	}
@@ -604,6 +607,39 @@ $(document).ready(function(){
 var phone=document.getElementById("phauto").value;
 phone = phone.replace(/(\d{3})(\d{3})(\d+)/, '($1)$2-$3');
 document.getElementById("phauto").value=phone;
+ });  
+
+});
+</script>
+<script>
+i=0;
+$(document).ready(function(){
+  $("#phhealth").keypress(function(){
+var phone=document.getElementById("phhealth").value;
+phone = phone.replace(/(\d{3})(\d{3})(\d+)/, '($1)$2-$3');
+document.getElementById("phhealth").value=phone;
+ });  
+
+});
+</script>
+<script>
+i=0;
+$(document).ready(function(){
+  $("#phno").keypress(function(){
+var phone=document.getElementById("phno").value;
+phone = phone.replace(/(\d{3})(\d{3})(\d+)/, '($1)$2-$3');
+document.getElementById("phno").value=phone;
+ });  
+
+});
+</script>
+<script>
+i=0;
+$(document).ready(function(){
+  $("#inp_id").keypress(function(){
+var phone=document.getElementById("inp_id").value;
+phone = phone.replace(/(\d{3})(\d{3})(\d+)/, '($1)$2-$3');
+document.getElementById("inp_id").value=phone;
  });  
 
 });
@@ -1030,6 +1066,7 @@ document.getElementById("phauto").value=phone;
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err"></span>What is your Physician's Phone </td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="phyphone" maxlength="13"/><br><span class="err"><form:errors path="patientDetails.where1"></form:errors></span>
+				                   <span class="err" id="phynumbererror"></span>
 				                    </tr>
 				                    
 				                     <tr class="row1">
@@ -1077,7 +1114,7 @@ document.getElementById("phauto").value=phone;
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Insurance Company Phone:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="phno" name="Insurance_phone" maxlength="10"/><br><span class="err"><form:errors path="PatientDetails.insurance_phone"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="phno" name="Insurance_phone" maxlength="13"/><br><span class="err"><form:errors path="PatientDetails.insurance_phone"></form:errors></span>
 				                  	<br>
 				                  	<span class="err" id="phnoerror"></span>
 				                  
@@ -1116,7 +1153,7 @@ document.getElementById("phauto").value=phone;
 				            <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Phone of your Health Insurance:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" maxlength="10" id="phhealth" name="Health_phone" /><br><span class="err"><form:errors path="PatientDetails.health_phone"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" maxlength="13" id="phhealth" name="Health_phone" /><br><span class="err"><form:errors path="PatientDetails.health_phone"></form:errors></span>
 				                  	<br>
 				                  	<span class="err" id="phhealtherror"></span>
 				                  	</td>

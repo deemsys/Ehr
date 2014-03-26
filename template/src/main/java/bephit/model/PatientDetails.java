@@ -118,6 +118,7 @@ private String Fault_accident;
 
 private String Insurance;
 @NotEmpty
+@Pattern(regexp="(^$|[0-9]{13})",message="Not a valid Mobile number")
 private String Insurance_phone;
 @NotEmpty
 private String Name_auto;
@@ -130,7 +131,7 @@ private String Policy;
 @NotEmpty
 private String Name_health;
 @NotEmpty
-@Pattern(regexp="(^$|[0-9]{10})",message="Not a valid Mobile number")
+@Pattern(regexp="(^$|[0-9]{13})",message="Not a valid Mobile number")
 private String Health_phone;
 
 private String Prev_accident;
