@@ -1,5 +1,7 @@
 package bephit.model;
 
+import javax.validation.constraints.Pattern;
+
 import org.hibernate.validator.constraints.NotEmpty;
 
 public class Hipquestionnaire
@@ -26,6 +28,8 @@ public class Hipquestionnaire
 	@NotEmpty
 	private String date;
 	private String birthdate;
+	@NotEmpty
+	@Pattern(regexp="(^$|[0-9]{11})",message="Not a valid Social Security number")
 	private String security;
 	public String getHipquestionno() {
 		return hipquestionno;

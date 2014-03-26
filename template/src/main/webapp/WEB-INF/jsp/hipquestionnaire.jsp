@@ -99,8 +99,9 @@ var element=document.getElementById('shortlegright');
 $("#security").keyup(function() {
 	 $("#number").html(''); 
 	/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
-	var intRegex = /^\d+$/;
-	if(intRegex.test($(this).val())||$(this).val()=='') 
+	//var intRegex = /^\d+$/;
+	var a= /^[0-9]{3}[-\s\.]{0,1}[0-9]{2}[-\s\.]{0,1}[0-9]{4}$/;
+	if(a.test($(this).val())||$(this).val()=='') 
 	{
 		var $in = $(this).val();		 
 	}
@@ -112,6 +113,17 @@ $("#security").keyup(function() {
 }).keydown(function() {
     oldValue = $(this).val();
 })
+});
+</script>
+<script>
+i=0;
+$(document).ready(function(){
+  $("#security").keypress(function(){
+var phone=document.getElementById("security").value;
+phone = phone.replace(/(\d{3})(\d{2})(\d+)/,'$1-$2-$3');
+document.getElementById("security").value=phone;
+ });  
+
 });
 </script>
 <script type="text/javascript">
@@ -366,7 +378,7 @@ $(function() {
 	    Your Birth Date  <input type="date"  name="birthdate">
 	    <br><br>
 	    <table>
-	    <td>Your Social Security Number </td><td><input type="text" name="security" id="security"></td><td><span class="err"> <div id="number"></span></td></div></table>
+	    <td>Your Social Security Number </td><td><input type="text" name="security" id="security" maxlength="11"></td><td><span class="err"> <div id="number"></span></td></div></table>
 	    </c:when>
 	    <c:otherwise>
 	    <P style="font-size: 15px"><b>Please answer the following questions for the hip/knee being treated or followed up.If it is BOTH hips/knees,please answer the questions for your worse side.All questions are about how you have felt,on average,during the past week,If you are being treated for an injury that happened less than one week ago,please answer for the period since your injury.</b></P>
