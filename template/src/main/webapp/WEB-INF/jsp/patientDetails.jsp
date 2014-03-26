@@ -4,7 +4,7 @@
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
-
+<form method="POST" action="patientDetails">
  
  
  <link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
@@ -13,38 +13,7 @@
  <script src="resources/js/jquery.min.js"></script> 
  <script src="resources/js/jquery-ui.js"></script>
  <script src="resources/js/jquey-1.9.1.js"></script>
- <script type="text/javascript">
-				var $im = 1;
-				var flagm = 1;
-				function addMultichoice(divName) {
-					var xx = document.getElementsByName('symptom[]').length;
-					var $in = xx + 1;
-
-					var newdiv = document.createElement('div');
-
-					newdiv.innerHTML = '<table width="100%" border="0" cellspacing="0" cellpadding="0" id="newtbl'
-							+ $im
-							+ '"><tr class="row2"><td valign="middle" align="right" class="input_txt" width="30%">Message '
-							+ $in
-							+ ' :</td><td valign="top" align="left" class="input_txt" width="70%"><textarea class="input_txtarea" name="symptom[]" rows="5" cols="" id="inp_id5" ></textarea></td></tr><tr class="row1"><td align="right" valign="top">&nbsp;</td><td align="left" valign="top"><a javascript:void(0);" onclick="removechoice('
-							+ $im
-							+ ')" style="text-decoration:none;"><input type="submit" class="submit_btn" value="CANCEL"  /></a></td></tr></table>';
-					document.getElementById(divName).appendChild(newdiv);
-					$im++;
-					flagm++;
-
-				}
-				function removechoice(id) {
-					id = 'newtbl' + id;
-					var child = document.getElementById(id)
-					var parentDiv = child.parentNode;
-					parentDiv.removeChild(child);
-
-				}
-			</script>
- 
- 
- 
+  
  <script type="text/javascript">
      
 	function symptompopup(id1)
@@ -656,7 +625,38 @@ document.getElementById("inp_id").value=phone;
 	  <div class="tabs-spacer"></div>
 	  <div id="tabs-1">
 <div id="right_content">
-<form method="POST" action="patientDetails">
+
+  <script type="text/javascript">
+				var $im = 1;
+				var flagm = 1;
+				function addMultichoice(divName) {
+					var xx = document.getElementsByName('symptom[]').length;
+					var $in = xx + 1;
+
+					var newdiv = document.createElement('div');
+
+					newdiv.innerHTML = '<table width="100%" border="0" cellspacing="0" cellpadding="0" id="newtbl'
+							+ $im
+							+ '"><tr height="10"></tr><tr>'
+							/* + $in */
+							+ '<td valign="top" align="left" class="input_txt" width="70%"><textarea  name="symptom[]" rows="3" cols="25" placeholder="Specify your Symptoms"></textarea></td></tr><tr><td align="left" valign="top"><a javascript:void(0);" onclick="removechoice('
+							+ $im
+							+ ')" style="text-decoration:none;"><input type="submit" class="submit_btn" value="CANCEL"  /></a></td></tr><tr height="10"></tr></table>';
+					document.getElementById(divName).appendChild(newdiv);
+					$im++;
+					flagm++;
+
+				}
+				function removechoice(id) {
+					id = 'newtbl' + id;
+					var child = document.getElementById(id)
+					var parentDiv = child.parentNode;
+					parentDiv.removeChild(child);
+
+				}
+			</script>
+
+
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
 
       <tr>
@@ -799,7 +799,7 @@ document.getElementById("inp_id").value=phone;
 							<div id="employee" >
 							<table cellpadding="0" cellspacing="0" border="0" width="100%">
 							<tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Employer Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>Employer Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="EmployerName" /><br><span class="err"><form:errors path="PatientDetails.EmployerName"></form:errors></span>
 
@@ -807,19 +807,19 @@ document.getElementById("inp_id").value=phone;
 				                </tr>
 				                
 				                <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Occupation:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>Occupation:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Occupation" /><br><span class="err"><form:errors path="PatientDetails.Occupation"></form:errors></span>
 				                  </td>
 				                </tr>
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Employer Address:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>Employer Address:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="EmployerAddress" /><br><span class="err"><form:errors path="PatientDetails.EmployerAddress"></form:errors></span>
 				                  </td>
 				                </tr>
 				                <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>WorkPhone:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>WorkPhone:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="workphone" name="Workphone" maxlength="13" /><br><span class="err"><form:errors path="PatientDetails.Workphone"></form:errors></span>
 <br>
@@ -827,7 +827,7 @@ document.getElementById("inp_id").value=phone;
 				                  </td>
 				                </tr>
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>ZipCode:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>ZipCode:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="zipcode2" name="zip" maxlength="5" /><br><span class="err" id="zipcodeerror1"><form:errors path="PatientDetails.zipCode"></form:errors></span>
 	
@@ -840,21 +840,21 @@ document.getElementById("inp_id").value=phone;
 				                
 				                
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>EmployerCity:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>EmployerCity:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="EmployerCity" /><br><span class="err"><form:errors path="PatientDetails.EmployerCity"></form:errors></span>
 
 				                  </td>
 				                </tr>
 				                <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>State:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>State:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Estate" /><br><span class="err"><form:errors path="PatientDetails.Estate"></form:errors></span>
 				                  	
 				                  </td>
 				                </tr>
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>ZipCode:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>ZipCode:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="zipcode" name="Ezip" maxlength="5"/><br><span class="err"><form:errors path="PatientDetails.Ezip"></form:errors></span>
 				                  	<br><span class="err" id="zipcodeerror"></span>
@@ -946,17 +946,24 @@ document.getElementById("inp_id").value=phone;
 	            </div>
 	            </div>
           <div class="contentbox">
+        
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
   				<tr>
     				<td align="left" valign="top" width="50%" style="padding-right:25px;">
                         
                         <table cellpadding="0" cellspacing="0" border="0" width="100%">
-                       <span class="err">*</span>Please Describess Your Symptoms Briefly:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<textarea rows="3" cols="25" placeholder="Specify your Symptoms" name="symptom[]" id="symptom" onBlur="newpopup()"></textarea>&nbsp;&nbsp;&nbsp; <br><span class="err"></span>
+                       <span class="err">*</span>Please Describes Your Symptoms Briefly:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      
+                      &nbsp;&nbsp;&nbsp; <br><span class="err"></span>
                         <tr>
                       </div> 
                       <td valign="middle" align="left" class="input_txt"></td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  
+				                   <textarea rows="3" cols="25" placeholder="Specify your Symptoms" name="symptom[]" id="symptom" onBlur="newpopup()"></textarea>
+				                <p></p>
+				                 <div id="multichoice"></div>
+				                   <a href="javascript:void(0);" onclick="addMultichoice('multichoice');" style="text-decoration:none;" ><input type="button" value="Add one more Symptom" class="submit_btn2" name=""/></a>
+
 				                  	</td>
 				                  	<td>
 				                  	<!-- <label for="amount"><b>Pain Scale:</b></label>
@@ -964,9 +971,9 @@ document.getElementById("inp_id").value=phone;
 				                  	<div id="slider"></div> -->
 				                  </td>
 				                </tr>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <div id="multichoice"></div>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
    <tr>
-   <td width="510"></td><td><a href="javascript:void(0);" onclick="addMultichoice('multichoice');" style="text-decoration:none;" ><input type="button" value="Add one more Symptom" class="submit_btn2" name=""/></a></td>
+   <td width="510"></td><td></td>
                                  <!-- <td valign="middle" align="left" class="input_txt"></td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<textarea rows="3" cols="25" placeholder="Specify your Symptoms" name="Symptom1" id="symptom1" onBlur="symptom1popup()"></textarea>&nbsp;&nbsp;&nbsp; 
@@ -1459,7 +1466,7 @@ document.getElementById("inp_id").value=phone;
 							<div id="employee" >
 							<table cellpadding="0" cellspacing="0" border="0" width="100%">
 							<tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt" width="380"><span class="err">*</span>Employer Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				                  <td valign="middle" align="left" class="input_txt" width="380"><span class="err"></span>Employer Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="EmployerName" value="${first.employerName}"/>
 
@@ -1467,40 +1474,40 @@ document.getElementById("inp_id").value=phone;
 				                </tr>
 				                
 				                <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Occupation:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>Occupation:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Occupation" value="${first.occupation}"/>
 				                  </td>
 				                </tr>
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Employer Address:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>Employer Address:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="EmployerAddress" value="${first.employerAddress }"/>
 				                  </td>
 				                </tr>
 				                <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>WorkPhone:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>WorkPhone:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Workphone" value="${first.workphone}"/>
 
 				                  </td>
 				                </tr>
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt" ><span class="err">*</span>EmployerCity:</td>
+				                  <td valign="middle" align="left" class="input_txt" ><span class="err"></span>EmployerCity:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="EmployerCity" value="${first.employerCity}"/>
 
 				                  </td>
 				                </tr>
 				                <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>State:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>State:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Estate" value="${first.estate}"/>
 				                  	
 				                  </td>
 				                </tr>
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>ZipCode:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>ZipCode:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id"zipcode" name="Ezip" value="${first.ezip}"/>
 				                  	<br>
@@ -1601,7 +1608,7 @@ document.getElementById("inp_id").value=phone;
                         <tr>
                         <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Please Describe Your Symptoms Briefly:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<textarea rows="3" cols="25" placeholder="Specify your Symptoms" name="symptom12[]" id="symptom" onBlur="newpopup()"></textarea>&nbsp;&nbsp;&nbsp; <br><span class="err"><form:errors path="PatientDetails.Symptoms"></form:errors></span>
+				                  	<textarea rows="3" cols="25" placeholder="Specify your Symptoms" name="symptom[]" id="symptom" onBlur="newpopup()"></textarea>&nbsp;&nbsp;&nbsp; <br><span class="err"><%-- <form:errors path="PatientDetails.Symptoms"></form:errors> --%></span>
 				                  	</td>
 				                  	<td>
 				                  	<!-- <label for="amount"><b>Pain Scale:</b></label>
