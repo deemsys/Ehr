@@ -140,7 +140,7 @@ $(function() {
 </tr>
 <tr class="row1">
 <td></td>
-<td><input type="checkbox" name="leftanklepain" value="Right Rib Pain" >Right Rib Pain</td>
+<td><input type="checkbox" name="leftanklepain" value="Right Rib Pain" >Left Ankle Pain</td>
 <td><input type="checkbox" name="rightfootpain" value="right Foot Pain" >right Foot Pain</td>
 <td><input type="checkbox" name="leftfootpain" value="Left Foot Pain" >Left Foot Pain</td>
 </tr>
@@ -166,7 +166,29 @@ $(function() {
  <tr>
  <td>&nbsp;&nbsp;
  <input type="text" name="date1" id="datepicker1"></td>
- <td></td>
+ <td>
+ <br/>
+&nbsp &nbsp Improved: <select name="improved" id="improved" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+					<option selected="selected" value="10%" >10%</option>
+					<option value="25%">25%</option>
+					<option value="50%">50%</option>
+					<option value="75%">75%</option>
+					<option value="85%">85%</option>
+					<option value="95%">95%</option>
+					</select>
+					<br/><br/><br/>
+&nbsp &nbsp Worsened: <select name="worsened" id="worsened" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+					<option selected="selected" value="10%" >10%</option>
+					<option value="25%">25%</option>
+					<option value="50%">50%</option>
+					<option value="75%">75%</option>
+					<option value="85%">85%</option>
+					<option value="95">95%</option>
+
+					</select><br/><br/><br/>
+					</td>
+ 
+ 
  <td>
 <label for="amount"><b>Pain Scale:</b></label>
 	 <input type="text" id="amount" style="border:0; color:#f6931f; font-weight:bold;" name="painscale" />&nbsp;&nbsp;&nbsp;
@@ -199,7 +221,7 @@ $(function() {
 					<option value="nmr">NMR</option>
 					<option value="tp">TP</option>
 					<option value="us">US</option>
-					<option value="lontophoresis">Lontophoresis</option>
+					<option value="Iontophoresis  ">Iontophoresis  </option>
 					<option value="traction">Traction</option>
 					<option value="mri">MRI</option>
 					<option value="lab">LAB</option>
@@ -245,10 +267,10 @@ $(function() {
  <td>
  &nbsp &nbsp <select name="fixation1" id="fixation1" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixations" >Fixations</option>
-					<option value="Tendernesstopalpation">Tendernesstopalpation</option>
+					<option value="Tenderness topalpation">Tenderness topalpation</option>
 					<option value="spasm">Spasm</option>
 					<option value="Trigger pts">Trigger pts.</option>
-					<option value="Hypertonocity">Hypertonocity</option>
+					<option value="Hypertonicity">Hypertonicity</option>
 					<option value="Edema">Edema</option>
 					<option value="Decreased ROM">Decreased ROM</option>
 					<option value="Short Leg R/L Temp.Change">Short leg R/L Temp.Change</option>
@@ -278,7 +300,7 @@ $(function() {
 					<option value="nmr">NMR</option>
 					<option value="TP">TP</option>
 					<option value="US">US</option>
-					<option value="Lontophoresis">Lontophoresis</option>
+					<option value="Iontophoresis  ">Iontophoresis  </option>
 					<option value="Traction">Traction</option>
 					<option value="Nutrition">Nutrition</option>
 					<option value="Off Work">Off Work</option>
@@ -323,10 +345,10 @@ $(function() {
 
   &nbsp &nbsp <select name="fixation2" id="fixation2" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixations" >Fixations</option>
-					<option value="Tendernesstopalpation">Tendernesstopalpation</option>
+					<option value="Tenderness topalpation">Tenderness topalpation</option>
 					<option value="Spasm">Spasm</option>
 					<option value="Trigger pts">Trigger pts.</option>
-					<option value="Hypertonocity">Hypertonocity</option>
+					<option value="Hypertonicity">Hypertonicity</option>
 					<option value="Edema">Edema</option>
 					<option value="Decreased ROM">Decreased ROM</option>
 					<option value="Shortleg">Short leg R/L Temp.Change</option>
@@ -352,7 +374,7 @@ $(function() {
 					<option value="NMR">NMR</option>
 					<option value="TP">TP</option>
 					<option value="US">US</option>
-					<option value="Lontophoresis">Lontophoresis</option>
+					<option value="Iontophoresis  ">Iontophoresis  </option>
 					<option value="Traction">Traction</option>
 					<option value="Nutrition">Nutrition</option>
 					<option value="Off Work">Off Work</option>
@@ -391,10 +413,10 @@ $(function() {
  <td>
   &nbsp &nbsp<select name="fixation3" id="fixation3" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixations" >Fixations</option>
-					<option value="Tendernesstopalpation">Tendernesstopalpation</option>
+					<option value="Tenderness topalpation">Tenderness topalpation</option>
 					<option value="Spasm">Spasm</option>
 					<option value="Trigger">Trigger pts.</option>
-					<option value="Hypertonocity">Hypertonocity</option>
+					<option value="Hypertonicity">Hypertonicity</option>
 					<option value="Edema">Edema</option>
 					<option value="Decreased ROM">Decreased ROM</option>
 					<option value="Shortleg">Short leg R/L Temp.Change</option>
@@ -419,7 +441,7 @@ $(function() {
 					<option value="NMR">NMR</option>
 					<option value="TP">TP</option>
 					<option value="US">US</option>
-					<option value="Lontophoresis">Lontophoresis</option>
+					<option value="Iontophoresis  ">Iontophoresis  </option>
 					<option value="Traction">Traction</option>
 					<option value="Nutrition">Nutrition</option>
 					<option value="offwork">Off Work</option>
@@ -457,10 +479,10 @@ $(function() {
 					</select><br/><br/><br/></td>
  <td>&nbsp &nbsp <select name="fixation4" id="fixation4" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixation" >Fixations</option>
-					<option value="Tendernesstopalpation">Tendernesstopalpation</option>
+					<option value="Tenderness topalpation">Tenderness topalpation</option>
 					<option value="Spasm">Spasm</option>
 					<option value="Trigger pts">Trigger pts.</option>
-					<option value="Hypertonocity">Hypertonocity</option>
+					<option value="Hypertonicity">Hypertonicity</option>
 					<option value="Edema">Edema</option>
 					<option value="Decreased">Decreased ROM</option>
 					<option value="Short leg R/L Temp.Change">Short leg R/L Temp.Change</option>
@@ -486,7 +508,7 @@ $(function() {
 					<option value="nmr">NMR</option>
 					<option value="tp">TP</option>
 					<option value="us">US</option>
-					<option value="lontophoresis">Lontophoresis</option>
+					<option value="Iontophoresis  ">Iontophoresis  </option>
 					<option value="traction">Traction</option>
 					<option value="nutrition">Nutrition</option>
 					<option value="offwork">Off Work</option>
@@ -524,10 +546,10 @@ $(function() {
  <td>
   &nbsp &nbsp<select name="fixation5" id="fixation5" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="fixation" >Fixations</option>
-					<option value="tendernesstopalpation">Tendernesstopalpation</option>
+					<option value="Tenderness topalpation">Tenderness topalpation</option>
 					<option value="spasm">Spasm</option>
 					<option value="trigger pts">Trigger pts.</option>
-					<option value="hypertonocity">Hypertonocity</option>
+					<option value="hypertonicity">Hypertonicity</option>
 					<option value="edema">Edema</option>
 					<option value="decreased ROM">Decreased ROM</option>
 					<option value="shortleg">Short leg R/L Temp.Change</option>
@@ -552,7 +574,7 @@ $(function() {
 					<option value="nmr">NMR</option>
 					<option value="tp">TP</option>
 					<option value="us">US</option>
-					<option value="lontophoresis">Lontophoresis</option>
+					<option value="Iontophoresis  ">Iontophoresis  </option>
 					<option value="traction">Traction</option>
 					<option value="nutrition">Nutrition</option>
 					<option value="offwork">Off Work</option>
@@ -589,10 +611,10 @@ $(function() {
 					</select><br/><br/><br/></td>
  <td>&nbsp &nbsp <select name="fixation6" id="fixation6" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="fixation" >Fixations</option>
-					<option value="tendernesstopalpation">Tendernesstopalpation</option>
+					<option value="Tenderness topalpation">Tenderness topalpation</option>
 					<option value="spasm">Spasm</option>
 					<option value="trigger">Trigger pts.</option>
-					<option value="hypertonocity">Hypertonocity</option>
+					<option value="hypertonicity">Hypertonicity</option>
 					<option value="edema">Edema</option>
 					<option value="decreased ROM">Decreased ROM</option>
 					<option value="shortleg">Short leg R/L Temp.Change</option>
@@ -617,7 +639,7 @@ $(function() {
 					<option value="nmr">NMR</option>
 					<option value="tp">TP</option>
 					<option value="us">US</option>
-					<option value="lontophoresis">Lontophoresis</option>
+					<option value="Iontophoresis  ">Iontophoresis  </option>
 					<option value="traction">Traction</option>
 					<option value="nutrition">Nutrition</option>
 					<option value="offwork">Off Work</option>
@@ -654,10 +676,10 @@ $(function() {
 					</select><br/><br/><br/></td>
  <td> &nbsp &nbsp<select name="fixation7" id="fixation7" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="fixations" >Fixations</option>
-					<option value="tendernesstopalpation">Tendernesstopalpation</option>
+					<option value="Tenderness topalpation">Tenderness topalpation</option>
 					<option value="spasm">Spasm</option>
 					<option value="trigger pts">Trigger pts.</option>
-					<option value="hypertonocity">Hypertonocity</option>
+					<option value="hypertonicity">Hypertonicity</option>
 					<option value="edema">Edema</option>
 					<option value="decreased ROM">Decreased ROM</option>
 					<option value="shortleg">Short leg R/L Temp.Change</option>
@@ -682,7 +704,7 @@ $(function() {
 					<option value="nmr">NMR</option>
 					<option value="tp">TP</option>
 					<option value="us">US</option>
-					<option value="lontophoresis">Lontophoresis</option>
+					<option value="Iontophoresis  ">Iontophoresis  </option>
 					<option value="traction">Traction</option>
 					<option value="nutrition">Nutrition</option>
 					<option value="offwork">Off Work</option>
@@ -719,10 +741,10 @@ $(function() {
 					</select><br/><br/><br/></td>
  <td> &nbsp &nbsp<select name="fixation8" id="fixation8" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="fixation" >Fixations</option>
-					<option value="tendernesstopalpation">Tendernesstopalpation</option>
+					<option value="Tenderness topalpation">Tenderness topalpation</option>
 					<option value="spasm">Spasm</option>
 					<option value="trigger">Trigger pts.</option>
-					<option value="hypertonocity">Hypertonocity</option>
+					<option value="hypertonicity">Hypertonicity</option>
 					<option value="edema">Edema</option>
 					<option value="decreased">Decreased ROM</option>
 					<option value="shortleg">Short leg R/L Temp.Change</option>
@@ -747,7 +769,7 @@ $(function() {
 					<option value="nmr">NMR</option>
 					<option value="tp">TP</option>
 					<option value="us">US</option>
-					<option value="lontophoresis">Lontophoresis</option>
+					<option value="Iontophoresis  ">Iontophoresis  </option>
 					<option value="traction">Traction</option>
 					<option value="nutrition">Nutrition</option>
 					<option value="offwork">Off Work</option>
@@ -899,7 +921,7 @@ $(function() {
 					<option value="nmr" <c:if test="${soap.e1e2=='nmr'}"><c:out value="selected"/></c:if>>NMR</option>
 					<option value="tp" <c:if test="${soap.e1e2=='tp'}"><c:out value="selected"/></c:if>>TP</option>
 					<option value="us" <c:if test="${soap.e1e2=='us'}"><c:out value="selected"/></c:if>>US</option>
-					<option value="lontophoresis" <c:if test="${soap.e1e2=='lontophoresis'}"><c:out value="selected"/></c:if>>Lontophoresis</option>
+					<option value="Iontophoresis  " <c:if test="${soap.e1e2=='Iontophoresis  '}"><c:out value="selected"/></c:if>>Iontophoresis  </option>
 					<option value="traction" <c:if test="${soap.e1e2=='traction'}"><c:out value="selected"/></c:if>>Traction</option>
 					<option value="mri" <c:if test="${soap.e1e2=='mri'}"><c:out value="selected"/></c:if>>MRI</option>
 					<option value="lab" <c:if test="${soap.e1e2=='lab'}"><c:out value="selected"/></c:if>>LAB</option>
@@ -942,10 +964,10 @@ $(function() {
  <td>
  &nbsp &nbsp <select name="fixation1" id="fixation1" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixation" <c:if test="${soap.fixation1=='fixation'}"><c:out value="selected"/></c:if>>Fixations</option>
-					<option value="Tendernesstopalpation" <c:if test="${soap.fixation1=='tendernesstopalpation'}"><c:out value="selected"/></c:if>>Tendernesstopalpation</option>
+					<option value="Tenderness topalpation" <c:if test="${soap.fixation1=='Tenderness topalpation'}"><c:out value="selected"/></c:if>>Tenderness topalpation</option>
 					<option value="spasm" <c:if test="${soap.fixation1=='spasm'}"><c:out value="selected"/></c:if>>Spasm</option>
 					<option value="trigger" <c:if test="${soap.fixation1=='trigger'}"><c:out value="selected"/></c:if>>Trigger pts.</option>
-					<option value="hypertonocity" <c:if test="${soap.fixation1=='hypertonocity'}"><c:out value="selected"/></c:if>>Hypertonocity</option>
+					<option value="hypertonicity" <c:if test="${soap.fixation1=='hypertonicity'}"><c:out value="selected"/></c:if>>Hypertonicity</option>
 					<option value="edema" <c:if test="${soap.fixation1=='edema'}"><c:out value="selected"/></c:if>>Edema</option>
 					<option value="Decreased ROM" <c:if test="${soap.fixation1=='decreased ROM'}"><c:out value="selected"/></c:if>>Decreased ROM</option>
 					<option value="shortleg" <c:if test="${soap.fixation1=='shortleg'}"><c:out value="selected"/></c:if>>Short leg R/L Temp.Change</option>
@@ -975,7 +997,7 @@ $(function() {
 					<option value="nmr" <c:if test="${soap.scsm1=='nmr'}"><c:out value="selected"/></c:if>>NMR</option>
 					<option value="tp" <c:if test="${soap.scsm1=='tp'}"><c:out value="selected"/></c:if>>TP</option>
 					<option value="us" <c:if test="${soap.scsm1=='us'}"><c:out value="selected"/></c:if>>US</option>
-					<option value="lontophoresis" <c:if test="${soap.scsm1=='lontophoresis'}"><c:out value="selected"/></c:if>>Lontophoresis</option>
+					<option value="Iontophoresis  " <c:if test="${soap.scsm1=='Iontophoresis  '}"><c:out value="selected"/></c:if>>Iontophoresis  </option>
 					<option value="traction" <c:if test="${soap.scsm1=='traction'}"><c:out value="selected"/></c:if>>Traction</option>
 					<option value="nutrition" <c:if test="${soap.scsm1=='nutrition'}"><c:out value="selected"/></c:if>>Nutrition</option>
 					<option value="offwork" <c:if test="${soap.scsm1=='offwork'}"><c:out value="selected"/></c:if>>Off Work</option>
@@ -1017,10 +1039,10 @@ $(function() {
 
   &nbsp &nbsp <select name="fixation2" id="fixation2" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixation" <c:if test="${soap.fixation2=='Fixation'}"><c:out value="selected"/></c:if>>Fixations</option>
-					<option value="Tendernesstopalpation" <c:if test="${soap.fixation2=='Tendernesstopalpation'}"><c:out value="selected"/></c:if>>Tendernesstopalpation</option>
+					<option value="Tenderness topalpation" <c:if test="${soap.fixation2=='Tenderness topalpation'}"><c:out value="selected"/></c:if>>Tenderness topalpation</option>
 					<option value="spasm" <c:if test="${soap.fixation2=='spasm'}"><c:out value="selected"/></c:if>>Spasm</option>
 					<option value="trigger" <c:if test="${soap.fixation2=='trigger'}"><c:out value="selected"/></c:if>>Trigger pts.</option>
-					<option value="hypertonocity" <c:if test="${soap.fixation2=='hypertonocity'}"><c:out value="selected"/></c:if>>Hypertonocity</option>
+					<option value="hypertonicity" <c:if test="${soap.fixation2=='hypertonicity'}"><c:out value="selected"/></c:if>>Hypertonicity</option>
 					<option value="edema" <c:if test="${soap.fixation2=='edema'}"><c:out value="selected"/></c:if>>Edema</option>
 					<option value="Decreased ROM" <c:if test="${soap.fixation2=='decreased ROM'}"><c:out value="selected"/></c:if>>Decreased ROM</option>
 					<option value="shortleg" <c:if test="${soap.fixation2=='shortleg'}"><c:out value="selected"/></c:if>>Short leg R/L Temp.Change</option>
@@ -1047,7 +1069,7 @@ $(function() {
 					<option value="nmr" <c:if test="${soap.scsm2=='nmr'}"><c:out value="selected"/></c:if>>NMR</option>
 					<option value="tp" <c:if test="${soap.scsm2=='tp'}"><c:out value="selected"/></c:if>>TP</option>
 					<option value="us" <c:if test="${soap.scsm2=='us'}"><c:out value="selected"/></c:if>>US</option>
-					<option value="lontophoresis" <c:if test="${soap.scsm2=='lontophoresis'}"><c:out value="selected"/></c:if>>Lontophoresis</option>
+					<option value="Iontophoresis  " <c:if test="${soap.scsm2=='Iontophoresis  '}"><c:out value="selected"/></c:if>>Iontophoresis  </option>
 					<option value="traction" <c:if test="${soap.scsm2=='traction'}"><c:out value="selected"/></c:if>>Traction</option>
 					<option value="nutrition" <c:if test="${soap.scsm2=='nutrition'}"><c:out value="selected"/></c:if>>Nutrition</option>
 					<option value="offwork" <c:if test="${soap.scsm2=='offwork'}"><c:out value="selected"/></c:if>>Off Work</option>
@@ -1088,10 +1110,10 @@ $(function() {
   &nbsp &nbsp<select name="fixation3" id="fixation3" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixation" <c:if test="${soap.fixation3=='Fixation'}"><c:out value="selected"/></c:if>
 					>Fixations</option>
-					<option value="Tendernesstopalpation" <c:if test="${soap.fixation3=='Tendernesstopalpation'}"><c:out value="selected"/></c:if>>Tendernesstopalpation</option>
+					<option value="Tenderness topalpation" <c:if test="${soap.fixation3=='Tenderness topalpation'}"><c:out value="selected"/></c:if>>Tenderness topalpation</option>
 					<option value="spasm" <c:if test="${soap.fixation3=='spasm'}"><c:out value="selected"/></c:if>>Spasm</option>
 					<option value="trigger" <c:if test="${soap.fixation3=='trigger'}"><c:out value="selected"/></c:if>>Trigger pts.</option>
-					<option value="hypertonocity" <c:if test="${soap.fixation3=='hypertonocity'}"><c:out value="selected"/></c:if>>Hypertonocity</option>
+					<option value="hypertonicity" <c:if test="${soap.fixation3=='hypertonicity'}"><c:out value="selected"/></c:if>>Hypertonicity</option>
 					<option value="edema" <c:if test="${soap.fixation3=='edema'}"><c:out value="selected"/></c:if>>Edema</option>
 					<option value="Decreased ROM" <c:if test="${soap.fixation3=='decreased ROM'}"><c:out value="selected"/></c:if>>Decreased ROM</option>
 					<option value="shortleg" <c:if test="${soap.fixation3=='shortleg'}"><c:out value="selected"/></c:if>>Short leg R/L Temp.Change</option>
@@ -1118,7 +1140,7 @@ $(function() {
 					<option value="nmr" <c:if test="${soap.scsm3=='nmr'}"><c:out value="selected"/></c:if>>NMR</option>
 					<option value="tp" <c:if test="${soap.scsm3=='tp'}"><c:out value="selected"/></c:if>>TP</option>
 					<option value="us" <c:if test="${soap.scsm3=='us'}"><c:out value="selected"/></c:if>>US</option>
-					<option value="lontophoresis" <c:if test="${soap.scsm3=='lontophoresis'}"><c:out value="selected"/></c:if>>Lontophoresis</option>
+					<option value="Iontophoresis  " <c:if test="${soap.scsm3=='Iontophoresis  '}"><c:out value="selected"/></c:if>>Iontophoresis  </option>
 					<option value="traction" <c:if test="${soap.scsm3=='traction'}"><c:out value="selected"/></c:if>>Traction</option>
 					<option value="nutrition" <c:if test="${soap.scsm3=='nutrition'}"><c:out value="selected"/></c:if>>Nutrition</option>
 					<option value="offwork" <c:if test="${soap.scsm3=='offwork'}"><c:out value="selected"/></c:if>>Off Work</option>
@@ -1157,10 +1179,10 @@ $(function() {
 					</select></td>
  <td>&nbsp &nbsp <select name="fixation4" id="fixation4" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixation" <c:if test="${soap.fixation4=='Fixation'}"><c:out value="selected"/></c:if>>Fixations</option>
-					<option value="Tendernesstopalpation" <c:if test="${soap.fixation4=='Tendernesstopalpation'}"><c:out value="selected"/></c:if>>Tendernesstopalpation</option>
+					<option value="Tenderness topalpation" <c:if test="${soap.fixation4=='Tenderness topalpation'}"><c:out value="selected"/></c:if>>Tenderness topalpation</option>
 					<option value="spasm" <c:if test="${soap.fixation4=='spasm'}"><c:out value="selected"/></c:if>>Spasm</option>
 					<option value="trigger" <c:if test="${soap.fixation4=='trigger'}"><c:out value="selected"/></c:if>>Trigger pts.</option>
-					<option value="hypertonocity" <c:if test="${soap.fixation4=='hypertonocity'}"><c:out value="selected"/></c:if>>Hypertonocity</option>
+					<option value="hypertonicity" <c:if test="${soap.fixation4=='hypertonicity'}"><c:out value="selected"/></c:if>>Hypertonicity</option>
 					<option value="edema" <c:if test="${soap.fixation4=='edema'}"><c:out value="selected"/></c:if>>Edema</option>
 					<option value="Decreased ROM" <c:if test="${soap.fixation4=='decreased ROM'}"><c:out value="selected"/></c:if>>Decreased ROM</option>
 					<option value="shortleg" <c:if test="${soap.fixation4=='shortleg'}"><c:out value="selected"/></c:if>>Short leg R/L Temp.Change</option>
@@ -1187,7 +1209,7 @@ $(function() {
 					<option value="nmr" <c:if test="${soap.scsm4=='nmr'}"><c:out value="selected"/></c:if>>NMR</option>
 					<option value="tp" <c:if test="${soap.scsm4=='tp'}"><c:out value="selected"/></c:if>>TP</option>
 					<option value="us" <c:if test="${soap.scsm4=='us'}"><c:out value="selected"/></c:if>>US</option>
-					<option value="lontophoresis" <c:if test="${soap.scsm4=='lontophoresis'}"><c:out value="selected"/></c:if>>Lontophoresis</option>
+					<option value="Iontophoresis  " <c:if test="${soap.scsm4=='Iontophoresis  '}"><c:out value="selected"/></c:if>>Iontophoresis  </option>
 					<option value="traction" <c:if test="${soap.scsm4=='traction'}"><c:out value="selected"/></c:if>>Traction</option>
 					<option value="nutrition" <c:if test="${soap.scsm4=='nutrition'}"><c:out value="selected"/></c:if>>Nutrition</option>
 					<option value="offwork" <c:if test="${soap.scsm4=='offwork'}"><c:out value="selected"/></c:if>>Off Work</option>
@@ -1226,10 +1248,10 @@ $(function() {
  <td>
   &nbsp &nbsp<select name="fixation5" id="fixation5" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixation" <c:if test="${soap.fixation5=='Fixation'}"><c:out value="selected"/></c:if>>Fixations</option>
-					<option value="Tendernesstopalpation" <c:if test="${soap.fixation5=='Tendernesstopalpation'}"><c:out value="selected"/></c:if>>Tendernesstopalpation</option>
+					<option value="Tenderness topalpation" <c:if test="${soap.fixation5=='Tenderness topalpation'}"><c:out value="selected"/></c:if>>Tenderness topalpation</option>
 					<option value="spasm" <c:if test="${soap.fixation5=='spasm'}"><c:out value="selected"/></c:if>>Spasm</option>
 					<option value="trigger" <c:if test="${soap.fixation5=='trigger'}"><c:out value="selected"/></c:if>>Trigger pts.</option>
-					<option value="hypertonocity" <c:if test="${soap.fixation5=='hypertonocity'}"><c:out value="selected"/></c:if>>Hypertonocity</option>
+					<option value="hypertonicity" <c:if test="${soap.fixation5=='hypertonicity'}"><c:out value="selected"/></c:if>>Hypertonicity</option>
 					<option value="edema" <c:if test="${soap.fixation5=='edema'}"><c:out value="selected"/></c:if>>Edema</option>
 					<option value="Decreased ROM" <c:if test="${soap.fixation5=='decreased ROM'}"><c:out value="selected"/></c:if>>Decreased ROM</option>
 					<option value="shortleg" <c:if test="${soap.fixation5=='shortleg'}"><c:out value="selected"/></c:if>>Short leg R/L Temp.Change</option>
@@ -1254,7 +1276,7 @@ $(function() {
 					<option value="nmr" <c:if test="${soap.scsm5=='nmr'}"><c:out value="selected"/></c:if>>NMR</option>
 					<option value="tp" <c:if test="${soap.scsm5=='tp'}"><c:out value="selected"/></c:if>>TP</option>
 					<option value="us" <c:if test="${soap.scsm5=='us'}"><c:out value="selected"/></c:if>>US</option>
-					<option value="lontophoresis" <c:if test="${soap.scsm5=='lontophoresis'}"><c:out value="selected"/></c:if>>Lontophoresis</option>
+					<option value="Iontophoresis  " <c:if test="${soap.scsm5=='Iontophoresis  '}"><c:out value="selected"/></c:if>>Iontophoresis  </option>
 					<option value="traction" <c:if test="${soap.scsm5=='traction'}"><c:out value="selected"/></c:if>>Traction</option>
 					<option value="nutrition" <c:if test="${soap.scsm5=='nutrition'}"><c:out value="selected"/></c:if>>Nutrition</option>
 					<option value="offwork" <c:if test="${soap.scsm5=='offwork'}"><c:out value="selected"/></c:if>>Off Work</option>
@@ -1292,10 +1314,10 @@ $(function() {
 					</select></td>
  <td>&nbsp &nbsp <select name="fixation6" id="fixation6" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixation" <c:if test="${soap.fixation6=='Fixation'}"><c:out value="selected"/></c:if>>Fixations</option>
-					<option value="Tendernesstopalpation" <c:if test="${soap.fixation6=='Tendernesstopalpation'}"><c:out value="selected"/></c:if>>Tendernesstopalpation</option>
+					<option value="Tenderness topalpation" <c:if test="${soap.fixation6=='Tenderness topalpation'}"><c:out value="selected"/></c:if>>Tenderness topalpation</option>
 					<option value="spasm" <c:if test="${soap.fixation6=='spasm'}"><c:out value="selected"/></c:if>>Spasm</option>
 					<option value="trigger" <c:if test="${soap.fixation6=='trigger'}"><c:out value="selected"/></c:if>>Trigger pts.</option>
-					<option value="hypertonocity" <c:if test="${soap.fixation6=='hypertonocity'}"><c:out value="selected"/></c:if>>Hypertonocity</option>
+					<option value="hypertonicity" <c:if test="${soap.fixation6=='hypertonicity'}"><c:out value="selected"/></c:if>>Hypertonicity</option>
 					<option value="edema" <c:if test="${soap.fixation6=='edema'}"><c:out value="selected"/></c:if>>Edema</option>
 					<option value="Decreased ROM" <c:if test="${soap.fixation6=='decreased ROM'}"><c:out value="selected"/></c:if>>Decreased ROM</option>
 					<option value="shortleg" <c:if test="${soap.fixation6=='shortleg'}"><c:out value="selected"/></c:if>>Short leg R/L Temp.Change</option>
@@ -1321,7 +1343,7 @@ $(function() {
 					<option value="nmr" <c:if test="${soap.scsm6=='nmr'}"><c:out value="selected"/></c:if>>NMR</option>
 					<option value="tp" <c:if test="${soap.scsm6=='tp'}"><c:out value="selected"/></c:if>>TP</option>
 					<option value="us" <c:if test="${soap.scsm6=='us'}"><c:out value="selected"/></c:if>>US</option>
-					<option value="lontophoresis" <c:if test="${soap.scsm6=='lontophoresis'}"><c:out value="selected"/></c:if>>Lontophoresis</option>
+					<option value="Iontophoresis  " <c:if test="${soap.scsm6=='Iontophoresis  '}"><c:out value="selected"/></c:if>>Iontophoresis  </option>
 					<option value="traction" <c:if test="${soap.scsm6=='traction'}"><c:out value="selected"/></c:if>>Traction</option>
 					<option value="nutrition" <c:if test="${soap.scsm6=='nutrition'}"><c:out value="selected"/></c:if>>Nutrition</option>
 					<option value="offwork" <c:if test="${soap.scsm6=='offwork'}"><c:out value="selected"/></c:if>>Off Work</option>
@@ -1359,10 +1381,10 @@ $(function() {
 					</select></td>
  <td> &nbsp &nbsp<select name="fixation7" id="fixation7" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixation" <c:if test="${soap.fixation7=='Fixation'}"><c:out value="selected"/></c:if>>Fixations</option>
-					<option value="Tendernesstopalpation" <c:if test="${soap.fixation7=='Tendernesstopalpation'}"><c:out value="selected"/></c:if>>Tendernesstopalpation</option>
+					<option value="Tenderness topalpation" <c:if test="${soap.fixation7=='Tenderness topalpation'}"><c:out value="selected"/></c:if>>Tenderness topalpation</option>
 					<option value="spasm" <c:if test="${soap.fixation7=='spasm'}"><c:out value="selected"/></c:if>>Spasm</option>
 					<option value="trigger" <c:if test="${soap.fixation7=='trigger'}"><c:out value="selected"/></c:if>>Trigger pts.</option>
-					<option value="hypertonocity" <c:if test="${soap.fixation7=='hypertonocity'}"><c:out value="selected"/></c:if>>Hypertonocity</option>
+					<option value="hypertonicity" <c:if test="${soap.fixation7=='hypertonicity'}"><c:out value="selected"/></c:if>>Hypertonicity</option>
 					<option value="edema" <c:if test="${soap.fixation7=='edema'}"><c:out value="selected"/></c:if>>Edema</option>
 					<option value="Decreased ROM" <c:if test="${soap.fixation7=='decreased ROM'}"><c:out value="selected"/></c:if>>Decreased ROM</option>
 					<option value="shortleg" <c:if test="${soap.fixation7=='shortleg'}"><c:out value="selected"/></c:if>>Short leg R/L Temp.Change</option>
@@ -1388,7 +1410,7 @@ $(function() {
 					<option value="nmr" <c:if test="${soap.scsm7=='nmr'}"><c:out value="selected"/></c:if>>NMR</option>
 					<option value="tp" <c:if test="${soap.scsm7=='tp'}"><c:out value="selected"/></c:if>>TP</option>
 					<option value="us" <c:if test="${soap.scsm7=='us'}"><c:out value="selected"/></c:if>>US</option>
-					<option value="lontophoresis" <c:if test="${soap.scsm7=='lontophoresis'}"><c:out value="selected"/></c:if>>Lontophoresis</option>
+					<option value="Iontophoresis  " <c:if test="${soap.scsm7=='Iontophoresis  '}"><c:out value="selected"/></c:if>>Iontophoresis  </option>
 					<option value="traction" <c:if test="${soap.scsm7=='traction'}"><c:out value="selected"/></c:if>>Traction</option>
 					<option value="nutrition" <c:if test="${soap.scsm7=='nutrition'}"><c:out value="selected"/></c:if>>Nutrition</option>
 					<option value="offwork" <c:if test="${soap.scsm7=='offwork'}"><c:out value="selected"/></c:if>>Off Work</option>
@@ -1425,10 +1447,10 @@ $(function() {
 					</select></td>
  <td> &nbsp &nbsp<select name="fixation8" id="fixation8" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixation" <c:if test="${soap.fixation8=='Fixation'}"><c:out value="selected"/></c:if>>Fixations</option>
-					<option value="Tendernesstopalpation" <c:if test="${soap.fixation8=='Tendernesstopalpation'}"><c:out value="selected"/></c:if>>Tendernesstopalpation</option>
+					<option value="Tenderness topalpation" <c:if test="${soap.fixation8=='Tenderness topalpation'}"><c:out value="selected"/></c:if>>Tenderness topalpation</option>
 					<option value="spasm" <c:if test="${soap.fixation8=='spasm'}"><c:out value="selected"/></c:if>>Spasm</option>
 					<option value="trigger" <c:if test="${soap.fixation8=='trigger'}"><c:out value="selected"/></c:if>>Trigger pts.</option>
-					<option value="hypertonocity" <c:if test="${soap.fixation8=='hypertonocity'}"><c:out value="selected"/></c:if>>Hypertonocity</option>
+					<option value="hypertonicity" <c:if test="${soap.fixation8=='hypertonicity'}"><c:out value="selected"/></c:if>>Hypertonicity</option>
 					<option value="edema" <c:if test="${soap.fixation8=='edema'}"><c:out value="selected"/></c:if>>Edema</option>
 					<option value="Decreased ROM" <c:if test="${soap.fixation8=='decreased ROM'}"><c:out value="selected"/></c:if>>Decreased ROM</option>
 					<option value="shortleg" <c:if test="${soap.fixation8=='shortleg'}"><c:out value="selected"/></c:if>>Short leg R/L Temp.Change</option>
@@ -1453,7 +1475,7 @@ $(function() {
 					<option value="nmr" <c:if test="${soap.scsm8=='nmr'}"><c:out value="selected"/></c:if>>NMR</option>
 					<option value="tp" <c:if test="${soap.scsm8=='tp'}"><c:out value="selected"/></c:if>>TP</option>
 					<option value="us" <c:if test="${soap.scsm8=='us'}"><c:out value="selected"/></c:if>>US</option>
-					<option value="lontophoresis" <c:if test="${soap.scsm8=='lontophoresis'}"><c:out value="selected"/></c:if>>Lontophoresis</option>
+					<option value="Iontophoresis  " <c:if test="${soap.scsm8=='Iontophoresis  '}"><c:out value="selected"/></c:if>>Iontophoresis  </option>
 					<option value="traction" <c:if test="${soap.scsm8=='traction'}"><c:out value="selected"/></c:if>>Traction</option>
 					<option value="nutrition" <c:if test="${soap.scsm8=='nutrition'}"><c:out value="selected"/></c:if>>Nutrition</option>
 					<option value="offwork" <c:if test="${soap.scsm8=='offwork'}"><c:out value="selected"/></c:if>>Off Work</option>

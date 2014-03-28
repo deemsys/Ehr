@@ -101,7 +101,7 @@ $(function() {
 				                  		<select name="views1" class="input_cmbbx1">
 						                    <option selected="selected" value="A-P lower" >A-P lower</option>
 											<option value="APOM">APOM</option>
-											<option value="L lateral">L lateral</option>
+											
 											<option value="RLF">RLF</option>
 											<option value="LLF">LLF</option>
 											<option value="RPO">RPO</option>
@@ -115,7 +115,7 @@ $(function() {
 				                  </tr> 
 				                   	 <tr class="row2">
 				             
-				                 <td class="input_txt" align="left"> <input type="checkbox" value="positive for" name="positive_for"  onclick="this.form.positive1.style.visibility = this.checked? 'visible' : 'hidden'"/> Positive for
+				                 <td class="input_txt" align="left"> Positive for recent fracture, dislocation or gross Osteopathology<input type="text"  class="input_txtbx1"  name="positive_for"  /> 
 				                 		<input type="text" class="input_txtbx1" style="visibility:hidden" id="positive1" name="positive_text1" />
 				                 </td>
 				                 <td class="input_txt"><input type="checkbox" name="break_1" value="Break in Georges" onclick="this.form.break1.style.visibility = this.checked? 'visible' : 'hidden'"/> Break in Georges line at 
@@ -306,7 +306,7 @@ $(function() {
 				                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Views:
 				                  		<select name="views2" class="input_cmbbx1">
 											<option selected="selected" value="A-P" >A-P</option>
-											<option value="lateral">L lateral</option>
+								
 											<option value="rlf">RLF</option>
 											<option value="llf">LLF</option>
 											<option value="rpo">RPO</option>
@@ -438,7 +438,7 @@ $(function() {
 				                <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Views:
 				                  		<select name="views3" class="input_cmbbx1">
 											<option selected="selected" value="A-P" >A-P</option>
-											<option value="L lateral">L lateral</option>
+											
 											<option value="RPO">RPO</option>
 											<option value="LPO">LPO</option>
 											<option value="RLF">RLF</option>
@@ -603,7 +603,8 @@ $(function() {
 				               		 <input type="text" class="input_txtbx1" id="inp_id" name="views4" />
 				               		 </td>
 				               		 <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="normal_4" value="Normal"> Normal</td>
-				                     <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="positivefor_4" value="Positive for"> Positive for</td>   
+				               		
+				                     <td valign="top" align="left" class="input_txt">  Positive for recent fracture, dislocation or gross Osteopathology <input type="text" name="positivefor_4" ></td>   
 				                 </tr>
 				          </table>
 				           <table cellpadding="0" cellspacing="0" border="0">

@@ -39,6 +39,8 @@ public class SoapNotes {
 	private String rightfootpain;
 	private String leftfootpain;
 	private String date1;
+	private String improved;
+	private String worsened;
 	private String painscale;
 	private String diagnosis1;
 	private String diagnosis2;
@@ -100,129 +102,6 @@ public class SoapNotes {
 	
 	public SoapNotes(){
 	}
-
-	public SoapNotes(String patient_id,String soapid, String pname, String headache,
-			String neckpain, String rightshoulderpain, String leftshoulderpain,
-			String chestpain, String rightarmpain, String leftarmpain,
-			String rightelbowpain, String leftelbowpain, String rightwristpain,
-			String leftwristpain, String righthandpain, String lefthandpain,
-			String mbp, String rightribpain, String leftribpain, String lbp,
-			String rightsipain, String leftsipain, String righthippain,
-			String lefthippain, String rightgluteulpain,
-			String leftgluteulpain, String rightlegpain, String leftlegpain,
-			String rightkneepain, String leftkneepain, String rightanklepain,
-			String leftanklepain, String rightfootpain, String leftfootpain,
-			String date1,String painscale, String diagnosis1, String diagnosis2,
-			String diagnosis3, String diagnosis4, String e1e2, String offwork1,
-			String reeval1, String date2, String improved1, String worsened1,
-			String fixation1, String notimproved1, String scsm1, String date3,
-			String improved2, String worsened2, String fixation2,
-			String notimproved2, String scsm2, String date4, String improved3,
-			String worsened3, String fixation3, String notimproved3,
-			String scsm3, String date5, String improved4, String worsened4,
-			String fixation4, String notimproved4, String scsm4, String date6,
-			String improved5, String worsened5, String fixation5,
-			String notimproved5, String scsm5, String date7, String improved6,
-			String worsened6, String fixation6, String notimproved6,
-			String scsm6, String date8, String improved7, String worsened7,
-			String fixation7, String notimproved7, String scsm7, String date9,
-			String improved8, String worsened8, String fixation8,
-			String notimproved8, String scsm8, String sign) {
-		super();
-		this.patient_id=patient_id;
-		this.soapid = soapid;
-		this.pname = pname;
-		this.headache = headache;
-		this.neckpain = neckpain;
-		this.rightshoulderpain = rightshoulderpain;
-		this.leftshoulderpain = leftshoulderpain;
-		this.chestpain = chestpain;
-		this.rightarmpain = rightarmpain;
-		this.leftarmpain = leftarmpain;
-		this.rightelbowpain = rightelbowpain;
-		this.leftelbowpain = leftelbowpain;
-		this.rightwristpain = rightwristpain;
-		this.leftwristpain = leftwristpain;
-		this.righthandpain = righthandpain;
-		this.lefthandpain = lefthandpain;
-		this.mbp = mbp;
-		this.rightribpain = rightribpain;
-		this.leftribpain = leftribpain;
-		this.lbp = lbp;
-		this.rightsipain = rightsipain;
-		this.leftsipain = leftsipain;
-		this.righthippain = righthippain;
-		this.lefthippain = lefthippain;
-		this.rightgluteulpain = rightgluteulpain;
-		this.leftgluteulpain = leftgluteulpain;
-		this.rightlegpain = rightlegpain;
-		this.leftlegpain = leftlegpain;
-		this.rightkneepain = rightkneepain;
-		this.leftkneepain = leftkneepain;
-		this.rightanklepain = rightanklepain;
-		this.leftanklepain = leftanklepain;
-		this.rightfootpain = rightfootpain;
-		this.leftfootpain = leftfootpain;
-		this.date1 = date1;
-		this.painscale=painscale;
-		this.diagnosis1 = diagnosis1;
-		this.diagnosis2 = diagnosis2;
-		this.diagnosis3 = diagnosis3;
-		this.diagnosis4 = diagnosis4;
-		this.e1e2 = e1e2;
-		this.offwork1 = offwork1;
-		this.reeval1 = reeval1;
-		this.date2 = date2;
-		this.improved1 = improved1;
-		this.worsened1 = worsened1;
-		this.fixation1 = fixation1;
-		this.notimproved1 = notimproved1;
-		this.scsm1 = scsm1;
-		this.date3 = date3;
-		this.improved2 = improved2;
-		this.worsened2 = worsened2;
-		this.fixation2 = fixation2;
-		this.notimproved2 = notimproved2;
-		this.scsm2 = scsm2;
-		this.date4 = date4;
-		this.improved3 = improved3;
-		this.worsened3 = worsened3;
-		this.fixation3 = fixation3;
-		this.notimproved3 = notimproved3;
-		this.scsm3 = scsm3;
-		this.date5 = date5;
-		this.improved4 = improved4;
-		this.worsened4 = worsened4;
-		this.fixation4 = fixation4;
-		this.notimproved4 = notimproved4;
-		this.scsm4 = scsm4;
-		this.date6 = date6;
-		this.improved5 = improved5;
-		this.worsened5 = worsened5;
-		this.fixation5 = fixation5;
-		this.notimproved5 = notimproved5;
-		this.scsm5 = scsm5;
-		this.date7 = date7;
-		this.improved6 = improved6;
-		this.worsened6 = worsened6;
-		this.fixation6 = fixation6;
-		this.notimproved6 = notimproved6;
-		this.scsm6 = scsm6;
-		this.date8 = date8;
-		this.improved7 = improved7;
-		this.worsened7 = worsened7;
-		this.fixation7 = fixation7;
-		this.notimproved7 = notimproved7;
-		this.scsm7 = scsm7;
-		this.date9 = date9;
-		this.improved8 = improved8;
-		this.worsened8 = worsened8;
-		this.fixation8 = fixation8;
-		this.notimproved8 = notimproved8;
-		this.scsm8 = scsm8;
-		this.sign = sign;
-	}
-
 
 	public String getPatient_id() {
 		return patient_id;
@@ -502,6 +381,22 @@ public class SoapNotes {
 
 	public void setDate1(String date1) {
 		this.date1 = date1;
+	}
+
+	public String getImproved() {
+		return improved;
+	}
+
+	public void setImproved(String improved) {
+		this.improved = improved;
+	}
+
+	public String getWorsened() {
+		return worsened;
+	}
+
+	public void setWorsened(String worsened) {
+		this.worsened = worsened;
 	}
 
 	public String getPainscale() {
@@ -959,5 +854,131 @@ public class SoapNotes {
 	public void setSign(String sign) {
 		this.sign = sign;
 	}
-		
-}
+
+	public SoapNotes(String patient_id, String soapid, String pname,
+			String headache, String neckpain, String rightshoulderpain,
+			String leftshoulderpain, String chestpain, String rightarmpain,
+			String leftarmpain, String rightelbowpain, String leftelbowpain,
+			String rightwristpain, String leftwristpain, String righthandpain,
+			String lefthandpain, String mbp, String rightribpain,
+			String leftribpain, String lbp, String rightsipain,
+			String leftsipain, String righthippain, String lefthippain,
+			String rightgluteulpain, String leftgluteulpain,
+			String rightlegpain, String leftlegpain, String rightkneepain,
+			String leftkneepain, String rightanklepain, String leftanklepain,
+			String rightfootpain, String leftfootpain, String date1,
+			String improved, String worsened, String painscale,
+			String diagnosis1, String diagnosis2, String diagnosis3,
+			String diagnosis4, String e1e2, String offwork1, String reeval1,
+			String date2, String improved1, String worsened1, String fixation1,
+			String notimproved1, String scsm1, String date3, String improved2,
+			String worsened2, String fixation2, String notimproved2,
+			String scsm2, String date4, String improved3, String worsened3,
+			String fixation3, String notimproved3, String scsm3, String date5,
+			String improved4, String worsened4, String fixation4,
+			String notimproved4, String scsm4, String date6, String improved5,
+			String worsened5, String fixation5, String notimproved5,
+			String scsm5, String date7, String improved6, String worsened6,
+			String fixation6, String notimproved6, String scsm6, String date8,
+			String improved7, String worsened7, String fixation7,
+			String notimproved7, String scsm7, String date9, String improved8,
+			String worsened8, String fixation8, String notimproved8,
+			String scsm8, String sign) {
+		super();
+		this.patient_id = patient_id;
+		this.soapid = soapid;
+		this.pname = pname;
+		this.headache = headache;
+		this.neckpain = neckpain;
+		this.rightshoulderpain = rightshoulderpain;
+		this.leftshoulderpain = leftshoulderpain;
+		this.chestpain = chestpain;
+		this.rightarmpain = rightarmpain;
+		this.leftarmpain = leftarmpain;
+		this.rightelbowpain = rightelbowpain;
+		this.leftelbowpain = leftelbowpain;
+		this.rightwristpain = rightwristpain;
+		this.leftwristpain = leftwristpain;
+		this.righthandpain = righthandpain;
+		this.lefthandpain = lefthandpain;
+		this.mbp = mbp;
+		this.rightribpain = rightribpain;
+		this.leftribpain = leftribpain;
+		this.lbp = lbp;
+		this.rightsipain = rightsipain;
+		this.leftsipain = leftsipain;
+		this.righthippain = righthippain;
+		this.lefthippain = lefthippain;
+		this.rightgluteulpain = rightgluteulpain;
+		this.leftgluteulpain = leftgluteulpain;
+		this.rightlegpain = rightlegpain;
+		this.leftlegpain = leftlegpain;
+		this.rightkneepain = rightkneepain;
+		this.leftkneepain = leftkneepain;
+		this.rightanklepain = rightanklepain;
+		this.leftanklepain = leftanklepain;
+		this.rightfootpain = rightfootpain;
+		this.leftfootpain = leftfootpain;
+		this.date1 = date1;
+		this.improved = improved;
+		this.worsened = worsened;
+		this.painscale = painscale;
+		this.diagnosis1 = diagnosis1;
+		this.diagnosis2 = diagnosis2;
+		this.diagnosis3 = diagnosis3;
+		this.diagnosis4 = diagnosis4;
+		this.e1e2 = e1e2;
+		this.offwork1 = offwork1;
+		this.reeval1 = reeval1;
+		this.date2 = date2;
+		this.improved1 = improved1;
+		this.worsened1 = worsened1;
+		this.fixation1 = fixation1;
+		this.notimproved1 = notimproved1;
+		this.scsm1 = scsm1;
+		this.date3 = date3;
+		this.improved2 = improved2;
+		this.worsened2 = worsened2;
+		this.fixation2 = fixation2;
+		this.notimproved2 = notimproved2;
+		this.scsm2 = scsm2;
+		this.date4 = date4;
+		this.improved3 = improved3;
+		this.worsened3 = worsened3;
+		this.fixation3 = fixation3;
+		this.notimproved3 = notimproved3;
+		this.scsm3 = scsm3;
+		this.date5 = date5;
+		this.improved4 = improved4;
+		this.worsened4 = worsened4;
+		this.fixation4 = fixation4;
+		this.notimproved4 = notimproved4;
+		this.scsm4 = scsm4;
+		this.date6 = date6;
+		this.improved5 = improved5;
+		this.worsened5 = worsened5;
+		this.fixation5 = fixation5;
+		this.notimproved5 = notimproved5;
+		this.scsm5 = scsm5;
+		this.date7 = date7;
+		this.improved6 = improved6;
+		this.worsened6 = worsened6;
+		this.fixation6 = fixation6;
+		this.notimproved6 = notimproved6;
+		this.scsm6 = scsm6;
+		this.date8 = date8;
+		this.improved7 = improved7;
+		this.worsened7 = worsened7;
+		this.fixation7 = fixation7;
+		this.notimproved7 = notimproved7;
+		this.scsm7 = scsm7;
+		this.date9 = date9;
+		this.improved8 = improved8;
+		this.worsened8 = worsened8;
+		this.fixation8 = fixation8;
+		this.notimproved8 = notimproved8;
+		this.scsm8 = scsm8;
+		this.sign = sign;
+	}
+
+	}
