@@ -62,8 +62,8 @@ $(function() {
           <td><input type="text" name="regarding" size="40"></td>
           </tr>
           <tr height="30">
-          <td>Date of Accident: </td>
-          <td><input type="text" name="dateofaccident" id="datepicker" size="40"></td>
+          <td><span class="err">*</span>Date of Accident: </td>
+          <td><input type="text" name="dateofaccident" id="datepicker" size="40"><span class="err"><form:errors path="Copyofrequest.dateofaccident"></form:errors></span></td>
           </tr>
           <tr height="30">
           <td><span class="err">*</span>Claim Number: </td>
@@ -98,7 +98,7 @@ $(function() {
           </div>
           <div align="right">
           <p><B style="font-size:13px">Very truly yours,</B></p>
-          <p><input type="text" name="sign" size="30"><span class="err"><form:errors path="Copyofrequest.sign"></form:errors></span></p>
+          <p><span class="err">*</span><input type="text" name="sign" size="30"><span class="err"><form:errors path="Copyofrequest.sign"></form:errors></span></p>
           <p>Perry Chiropractic and Therapy Center of Canton, Inc.</p>
           <p>Dr. Charles T. Yang DC, DABFP</p>
           </div>
@@ -145,8 +145,8 @@ $(function() {
           <td><input type="text" name="regarding" size="40" value="${copy.regarding }"></td>
           </tr>
           <tr height="30">
-          <td>Date of Accident: </td>
-          <td><input type="text" name="dateofaccident" id="datepicker" size="40" value="${copy.dateofaccident}"></td>
+          <td><span class="err">*</span>Date of Accident: </td>
+          <td><input type="text" name="dateofaccident" id="datepicker" size="40" value="${copy.dateofaccident}"><span class="err"><form:errors path="Copyofrequest.dateofaccident"></form:errors></span></td>
           </tr>
           <tr height="30">
           <td><span class="err">*</span>Claim Number: </td>
@@ -181,7 +181,7 @@ $(function() {
           </div>
           <div align="right">
           <p><B style="font-size:13px">Very truly yours,</B></p>
-          <p><input type="text" name="sign" size="30" value="${copy.sign}"><span class="err"><form:errors path="Copyofrequest.sign"></form:errors></span></p>
+          <p><span class="err">*</span><input type="text" name="sign" size="30" value="${copy.sign}"><span class="err"><form:errors path="Copyofrequest.sign"></form:errors></span></p>
           <p>Perry Chiropractic and Therapy Center of Canton, Inc.</p>
           <p>Dr. Charles T. Yang DC, DABFP</p>
           </div>

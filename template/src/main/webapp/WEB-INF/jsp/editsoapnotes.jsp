@@ -114,8 +114,8 @@ $(function() {
 </tr>
 <tr class="row1">
 <td></td>
-<td><input type="checkbox" name="rightgluteulpain" value="Right Gluteul Pain" <c:if test="${soapnotes.rightgluteulpain=='Right Gluteul Pain'}"><c:out value="checked=checked"/></c:if>>Right Gluteul Pain</td>
-<td><input type="checkbox" name="leftgluteulpain" value="Left Gluteul Pain" <c:if test="${soapnotes.leftgluteulpain=='Left Gluteul Pain'}"><c:out value="checked=checked"/></c:if>>Left Gluteul Pain</td>
+<td><input type="checkbox" name="rightgluteulpain" value="Right Gluteul Pain" <c:if test="${soapnotes.rightgluteulpain=='Right Gluteul Pain'}"><c:out value="checked=checked"/></c:if>>Right Gluteal Pain</td>
+<td><input type="checkbox" name="leftgluteulpain" value="Left Gluteul Pain" <c:if test="${soapnotes.leftgluteulpain=='Left Gluteul Pain'}"><c:out value="checked=checked"/></c:if>>Left Gluteal Pain</td>
 <td><input type="checkbox" name="rightlegpain" value="Right Leg Pain" <c:if test="${soapnotes.rightlegpain=='Right Leg Pain'}"><c:out value="checked=checked"/></c:if>>Right Leg Pain</td>
 <td><input type="checkbox" name="leftlegpain" value="Left Leg Pain" <c:if test="${soapnotes.leftlegpain=='Left Leg Pain'}"><c:out value="checked=checked"/></c:if>>Left Leg Pain</td>
 <td><input type="checkbox" name="rightkneepain" value="Right Knee Pain" <c:if test="${soapnotes.rightkneepain=='Right Knee Pain'}"><c:out value="checked=checked"/></c:if>>Right Knee Pain</td>

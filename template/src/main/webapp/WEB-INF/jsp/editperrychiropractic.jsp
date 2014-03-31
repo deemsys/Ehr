@@ -25,7 +25,7 @@
 </head>
  <body>
 <div id="right_content">
-<form action="insertperrychiropractic" method="POST">
+<form action="updateperrychiropractic" method="POST">
 
 <table cellpadding="0" cellspacing="0" border="0" height="100" width="60%" class="margin_table">
        <tr>
@@ -109,31 +109,26 @@ Canton, Ohio 44708
               <br>
               		<table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="50%"><span class="err"></span>Name of Insurance Company:</td>
+              <td height="25" width="50%"><span class="err">*</span>Name of Insurance Company:</td>
               <td ><input type="hidden" name="perryid" value="${perrychiropracticdetails.perryid }"><input type="text" class="input_txtbx1" name="insurance"  value="${perrychiropracticdetails.insurance}" id="insurance" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="50%"><span class="err"></span>Address:</td>
-              <td ><input type="text" class="input_txtbx1" name="address" value="${perrychiropracticdetails.address}"  id="address" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td height="25" width="50%"><span class="err">*</span>Address:</td>
+              <td ><textarea rows="" cols="" name="address" id="address" style="width: 162px; height: 62px">${perrychiropracticdetails.address}</textarea><span class="err"><form:errors path="perrychiropracticdetails.address"></form:errors></td>
               </tr>
               </table>
-               <table cellpadding="0" cellspacing="0" border="0" width="100%">
-              <tr>
-              <td height="25" width="50%"><span class="err"></span></td>
-              <td ><input type="text" class="input_txtbx1" name="address1"  value="${perrychiropracticdetails.address1}"   id="address1" /><span class="err"><form:errors path="Faxcover.faxno"></form:errors></td>
-              </tr>
-              </table>
+              
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="50%"><span class="err"></span>Regarding:</td>
+              <td height="25" width="50%"><span class="err">*</span>Regarding:</td>
               <td ><input type="text" class="input_txtbx1" name="reg"  value="${perrychiropracticdetails.reg}"  id="reg" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="50%"><span class="err"></span>Patient's Name/ Name of Person Entitled To Coverage: </td>
+              <td height="25" width="50%"><span class="err">*</span>Patient's Name/ Name of Person Entitled To Coverage: </td>
               <td ><input type="text" class="input_txtbx1" name="nameofperson" value="${perrychiropracticdetails.nameofperson}"   id="nameofperson" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>

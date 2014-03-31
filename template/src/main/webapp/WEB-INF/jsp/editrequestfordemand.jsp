@@ -69,7 +69,7 @@
         	  <p><b>Check every box that applies:</b></p>
               </table>
                 <table cellpadding="0" cellspacing="0" border="0" width="100%">
-        	  <tr height="30"><td><input type="hidden" name="requestid" value="${requestfordemanddetails.requestid }"><input type="checkbox" class="input_ckbx1" value="${requestfordemanddetails.faultinsurer}" name="faultinsurer" id="faultinsurer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The At-Fault Insurer has already paid the attorney and/or patient full settlement and has failed to comply with the Assignment.
+        	  <tr height="30"><td><input type="hidden" name="requestid" value="${requestfordemanddetails.requestid }"><input type="checkbox" class="input_ckbx1" value="faultinsurer" name="faultinsurer" id="faultinsurer" <c:if test="${Requestfordemand.faultinsurer=='faultinsurer'}"><c:out value="Checked"/></c:if>/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The At-Fault Insurer has already paid the attorney and/or patient full settlement and has failed to comply with the Assignment.
      </td></tr>
      <tr height="30"><td><input type="checkbox" class="input_ckbx1" value="${requestfordemanddetails.medpayinsurer}" name="medpayinsurer" id="medpayinsurer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The At-Fault Insurer or The Med Pay Insurer has stated orally or in writing to us that it will not comply with the Assignment.
      </td></tr>
@@ -91,15 +91,15 @@
        <p><b>We attach the following:</b></p>
        </td>
        </tr>
-       <tr height="25"><td><input type="inputtype" class="input_ckbx1" value="${requestfordemanddetails.copymedpay}" name="copymedpay" id="copymedpay"><span class="err"><form:errors path="Requestfordemand.copymedpay"></form:errors></span></td><td>Copy of Med Pay and At Fault Form Cover Letter
+       <tr height="25"><td><input type="inputtype" class="input_ckbx1" value="${requestfordemanddetails.copymedpay}" name="copymedpay" id="copymedpay"><span class="err"><form:errors path="Requestfordemand.copymedpay"></form:errors></span></td><td><span class="err">*</span>Copy of Med Pay and At Fault Form Cover Letter
      </td></tr>
-      <tr height="25"><td><input type="inputtype"class="input_ckbx1" value="${requestfordemanddetails.copyform}" name="copyform" id="copyform"><span class="err"><form:errors path="Requestfordemand.copyform"></form:errors></span></td><td>Copy of Form Cover Letter sent to the Attorney
+      <tr height="25"><td><input type="inputtype"class="input_ckbx1" value="${requestfordemanddetails.copyform}" name="copyform" id="copyform"><span class="err"><form:errors path="Requestfordemand.copyform"></form:errors></span></td><td><span class="err">*</span>Copy of Form Cover Letter sent to the Attorney
      </td></tr>
-     <tr height="25"><td><input type="inputtype" class="input_ckbx1" value="${requestfordemanddetails.copyassign}" name="copyassign" id="copyassign"><span class="err"><form:errors path="Requestfordemand.copyassign"></form:errors></span></td><td>Copy of Assignment
+     <tr height="25"><td><input type="inputtype" class="input_ckbx1" value="${requestfordemanddetails.copyassign}" name="copyassign" id="copyassign"><span class="err"><form:errors path="Requestfordemand.copyassign"></form:errors></span></td><td><span class="err">*</span>Copy of Assignment
      </td></tr>
-     <tr height="25"><td><input type="inputtype" class="input_ckbx1" value="${requestfordemanddetails.greencard}" name="greencard" id="greencard"><span class="err"><form:errors path="Requestfordemand.greencard"></form:errors></span></td><td>Front and back of Certified Mail: "Green Card"ù
+     <tr height="25"><td><input type="inputtype" class="input_ckbx1" value="${requestfordemanddetails.greencard}" name="greencard" id="greencard"><span class="err"><form:errors path="Requestfordemand.greencard"></form:errors></span></td><td><span class="err">*</span>Front and back of Certified Mail: "Green Card"ù
      </td></tr>
-     <tr height="25"><td><input type="inputtype" class="input_ckbx1" value="${requestfordemanddetails.defaultattorney}" name="defaultattorney" id="default"><span class="err"><form:errors path="Requestfordemand.defaultattorney"></form:errors></span></td><td>Any correspondence from the defaulting Adjuster or Defaulting Attorney
+     <tr height="25"><td><input type="inputtype" class="input_ckbx1" value="${requestfordemanddetails.defaultattorney}" name="defaultattorney" id="default"><span class="err"><form:errors path="Requestfordemand.defaultattorney"></form:errors></span></td><td><span class="err">*</span>Any correspondence from the defaulting Adjuster or Defaulting Attorney
      </td></tr>
        </table> <br>     
        <table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table" ><tr height="35">
@@ -107,7 +107,7 @@
        <td  valign="right" align="right" >
        
        <input type="textbox" class="input_ckbx1" value="${requestfordemanddetails.clinicrep}" name="clinicrep" id="clinicrep"><span class="err"><form:errors path="Requestfordemand.clinicrep"></form:errors></span></td></tr>
-       <tr><td></td><td align="right" >Clinic Representative</td></tr>      
+       <tr><td></td><td align="right" ><span class="err">*</span>Clinic Representative</td></tr>      
          <table>
               <tr>
               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>

@@ -43,27 +43,31 @@
 	            <div class="headings altheading">
 	             <h2 align="center">UPDATE  LETTER</h2> 
 	            </div>
+	            
+	            
+	 <c:choose>
+<c:when test="${empty update}">
 	            <div class="contentbox">
 	           
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td width="50%"><span class="err"></span>To Attorney:</td>
-              <td width="50%"><input type="text" class="input_txtbx1" name="toattorney1" id="toattorney1" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td width="50%"><span class="err">*</span>To Attorney:</td>
+              <td width="50%"><input type="text" class="input_txtbx1" name="toattorney1" id="toattorney1" /><span class="err"><form:errors path="Updateletter.toattorney1"></form:errors></td>
               </tr>
               </table>
               <br>
                
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td width="50%"><span class="err"></span></td>
-              <td  width="50%"><input type="text" class="input_txtbx1" name="toattorney2" id="toattorney2" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td width="50%"><span class="err">*</span></td>
+              <td  width="50%"><input type="text" class="input_txtbx1" name="toattorney2" id="toattorney2" /><span class="err"><form:errors path="Updateletter.toattorney2"></form:errors></td>
               </tr>
               </table>
               <br>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td width="50%"><span class="err"></span></td>
-              <td width="50%"><input type="text" class="input_txtbx1" name="toattorney3" id="toattorney3" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td width="50%"><span class="err">*</span></td>
+              <td width="50%"><input type="text" class="input_txtbx1" name="toattorney3" id="toattorney3" /><span class="err"><form:errors path="Updateletter.toattorney3"></form:errors></td>
               </tr>
               </table>
               <br>
@@ -73,7 +77,7 @@
               <td width="50%"><span class="err"></span>
 In Regards to : 
               </td>
-              <td width="50%"><input type="text" class="input_txtbx1" name="reg" id="reg" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td width="50%"><input type="text" class="input_txtbx1" name="reg" id="reg" /><span class="err"><form:errors path="Updateletter.reg"></form:errors></td>
               </tr>
               </table>
               <br>
@@ -89,7 +93,7 @@ In Regards to :
               <br>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td width="50%"><span class="err"></span>Todays date:    
+              <td width="50%"><span class="err">*</span>Todays date:    
               </td>
               <td width="50%"><input type="text" class="input_txtbx1" id="datepicker2" name="todaydate"/><span class="err"><form:errors path="Updateletter.todaydate"></form:errors></span></td>
               </tr>
@@ -105,7 +109,73 @@ In Regards to :
               </tr>
               </table>
               <br>
+              </c:when>
+              <c:otherwise>
+               <div class="contentbox">
+	           
+              <table cellpadding="0" cellspacing="0" border="0" width="100%">
+              <tr>
+              <td width="50%"><span class="err">*</span>To Attorney:</td>
+              <td width="50%"><input type="hidden" name="updateid" value="${update.updateid }"><input type="text" class="input_txtbx1" name="toattorney1" id="toattorney1"  value="${update.toattorney1}" /><span class="err"><form:errors path="Updateletter.toattorney1"></form:errors></td>
+              </tr>
+              </table>
+              <br>
+               
+               <table cellpadding="0" cellspacing="0" border="0" width="100%">
+              <tr>
+              <td width="50%"><span class="err">*</span></td>
+              <td  width="50%"><input type="text" class="input_txtbx1" name="toattorney2" id="toattorney2"  value="${update.toattorney2}" /><span class="err"><form:errors path="Updateletter.toattorney2"></form:errors></td>
+              </tr>
+              </table>
+              <br>
+               <table cellpadding="0" cellspacing="0" border="0" width="100%">
+              <tr>
+              <td width="50%"><span class="err">*</span></td>
+              <td width="50%"><input type="text" class="input_txtbx1" name="toattorney3" id="toattorney3"  value="${update.toattorney3}" /><span class="err"><form:errors path="Updateletter.toattorney3"></form:errors></td>
+              </tr>
+              </table>
+              <br>
               
+              <table cellpadding="0" cellspacing="0" border="0" width="100%">
+              <tr>
+              <td width="50%"><span class="err"></span>
+In Regards to : 
+              </td>
+              <td width="50%"><input type="text" class="input_txtbx1" name=" reg" id=" reg"  value="${update.reg}"/><span class="err"><form:errors path="Updateletter.reg"></form:errors></td>
+              </tr>
+              </table>
+              <br>
+              
+               <table cellpadding="0" cellspacing="0" border="0" width="100%">
+              <tr>
+              <td width="50%"><span class="err"></span>Date of Injury:
+
+              </td>
+              <td width="50%"><input type="text" class="input_txtbx1" name="injury" id="datepicker" value="${update.injury}"></td>
+              </tr>
+              </table>
+              <br>
+               <table cellpadding="0" cellspacing="0" border="0" width="100%">
+              <tr>
+              <td width="50%"><span class="err">*</span>Todays date:    
+              </td>
+              <td width="50%"><input type="text" class="input_txtbx1" name="todaydate" id="datepicker1" value="${update.todaydate}"/><span class="err"><form:errors path="Updateletter.todaydate"></form:errors></span></td>
+              </tr>
+              </table>
+              <br>
+             
+       		  <table cellpadding="0" cellspacing="0" border="0" width="100%">
+       		  <tr>
+        	  <p id="mypar">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In order to update our records, we are asking that you provide an update on the status 
+        	  on  the following account.</p>
+              <p id="mypar">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Please fax back to us at (440) 934-3099</p>
+              <p id="mypar">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Thank-you</p>
+              </tr>
+              </table>
+              <br>
+              
+              </c:otherwise>
+              </c:choose>
               <table>
               <tr>
               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>

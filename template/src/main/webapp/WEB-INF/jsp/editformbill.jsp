@@ -28,7 +28,7 @@
 </head>
  <body>
 <div id="right_content">
-<form action="insertformbill" method="POST">
+<form action="updateformbill" method="POST">
 
 <table cellpadding="0" cellspacing="0" border="0" width="60%" class="margin_table">
        <tr>
@@ -57,65 +57,50 @@
               </table><br>
                 <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr ><td width="400"></td>
-              <td height="25" width="50"><span class="err"></span>Date:</td>
+              <td height="25" width="50"><span class="err">*</span>Date:</td>
               <td ><input type="hidden" name="formid" value="${formbilldetails.formid }"><input type="text" class="input_txtbx1" name="date" id="datepicker"  value="${formbilldetails.date }" /><span class="err"><form:errors path="Workschool.date"></form:errors></span></td>
               </tr>
               </table><br>
             
                 <table align="center" cellpadding="0" cellspacing="0" border="0"   width="100%"  ">
               <tr >
-             <td height="25" width="120"><span class="err"></span>Insurance Company:</td>
+             <td height="25" width="120"><span class="err">*</span>Insurance Company:</td>
               <td ><input type="text" class="input_txtbx1" name="insurance" id="insurance" value="${formbilldetails.insurance }" /><span class="err"><form:errors path="Formbill.insurance"></form:errors></span></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err"></span>Address:</td>
-              <td ><input type="text" class="input_txtbx1" name="address1" id="address1" value="${formbilldetails.address1}"/><span class="err"><form:errors path="Formbill.address1"></form:errors></span></td>
+              <td ><textarea rows="" cols="" name="address1" id="address1" style="width: 162px; height: 62px">${formbilldetails.address1}</textarea><span class="err"><form:errors path="Formbill.address1"></form:errors></span></td>
              </tr>
               </table>
-              <table cellpadding="0" cellspacing="0" border="0" width="100%">
-              <tr>
-              <td height="25" width="120"><span class="err"></span></td>
-              <td ><input type="text" class="input_txtbx1" name="address2" id="address2" value="${formbilldetails.address2}"/><span class="err"><form:errors path="Formbill.address2"></form:errors></span></td>
-             </tr>
-              </table>
+              
                <table align="center" cellpadding="0" cellspacing="0" border="0"   width="100%"  ">
               <tr ><br>
-             <td height="25" width="120"><span class="err"></span>Name Of Attorney:</td>
+             <td height="25" width="120"><span class="err">*</span>Name Of Attorney:</td>
               <td ><input type="text" class="input_txtbx1" name="name" id="name" value="${formbilldetails.name}"/><span class="err"><form:errors path="Formbill.name"></form:errors></span></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err"></span>Address:</td>
-              <td ><input type="text" class="input_txtbx1" name="address3" id="address3" value="${formbilldetails.address3}"/><span class="err"><form:errors path="Formbill.address3"></form:errors></span></td>
+              <td ><textarea rows="" cols="" name="address3" id="address3" style="width: 162px; height: 62px">${formbilldetails.address3}</textarea><span class="err"><form:errors path="Formbill.address3"></form:errors></span></td>
              </tr>
               </table>
-              <table cellpadding="0" cellspacing="0" border="0" width="100%">
-              <tr>
-              <td height="25" width="120"><span class="err"></span></td>
-              <td ><input type="text" class="input_txtbx1" name="address4" id="address4" value="${formbilldetails.address4}"/><span class="err"><form:errors path="Formbill.address4"></form:errors></span></td>
-             </tr>
-              </table><br>
+            
                 <table align="center" cellpadding="0" cellspacing="0" border="0"   width="100%"  ">
               <tr >
-             <td height="25" width="120"><span class="err"></span>Patient Name</td>
+             <td height="25" width="120"><span class="err">*</span>Patient Name</td>
               <td ><input type="text" class="input_txtbx1" name="patientsname" id="patientsname" value="${formbilldetails.patientsname}"/><span class="err"><form:errors path="Formbill.patientsname"></form:errors></span></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err"></span>Address:</td>
-              <td ><input type="text" class="input_txtbx1" name="address5" id="address5" value="${formbilldetails.address5}"/><span class="err"><form:errors path="Formbill.address5"></form:errors></span></td>
+              <td ><textarea rows="" cols="" name="address5" id="address5" style="width: 162px; height: 62px">${formbilldetails.address5}</textarea><span class="err"><form:errors path="Formbill.address5"></form:errors></span></td>
              </tr>
               </table>
-              <table cellpadding="0" cellspacing="0" border="0" width="100%">
-              <tr>
-              <td height="25" width="120"><span class="err"></span></td>
-              <td ><input type="text" class="input_txtbx1" name="address6" id="address6" value="${formbilldetails.address6}"/><span class="err"><form:errors path="Formbill.address6"></form:errors></span></td>
-             </tr>
-              </table>
+            
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
         	  <tr><td><p align="left" id="mypar"><b><h4>RE:</b>&nbsp;&nbsp;&nbsp;&nbsp; Notice of Final Outstanding Amount Owed;Medical Fees of $ <input type="text" class="input_txtbx1" name="medicalfee" id="medicalfee" value="${formbilldetails.medicalfee}">
 	<span class="err"><form:errors path="Formbill.medicalfee"></form:errors></span>

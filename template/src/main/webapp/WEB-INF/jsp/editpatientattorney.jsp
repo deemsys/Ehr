@@ -25,7 +25,7 @@
 </head>
  <body>
 <div id="right_content">
-<form action="insertpatientattorney" method="POST">
+<form action="updatepatientattorney" method="POST">
 
 <table cellpadding="0" cellspacing="0" border="0" height="100" width="70%" class="margin_table">
        <tr>
@@ -63,14 +63,14 @@
               </table><br><br>
        		<table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="120"><span class="err"></span>Name of Patient's Attorney</td>
+              <td height="25" width="120"><span class="err">*</span>Name of Patient's Attorney</td>
               <td ><input type="hidden" name="patientid" value="${patientattorneydetails.patientid }"><input type="text" class="input_txtbx1" name="name" value="${patientattorneydetails.name }"  id="name"><span class="err"><form:errors path="Patientattorney.name"></form:errors></span></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="120"><span class="err"></span>Address</td>
-              <td ><input type="text" class="input_txtbx1" name="address" value="${patientattorneydetails.address}"  id="address"><span class="err"><form:errors path="Patientattorney.address"></form:errors></span></td>
+              <td height="25" width="120"><span class="err">*</span>Address</td>
+              <td ><textarea rows="" cols="" name="address" id="address"style="width: 162px; height: 62px">${patientattorneydetails.address }</textarea><span class="err"><form:errors path="Patientattorney.address"></form:errors></span></td>
               </tr>
               </table>
               
@@ -86,13 +86,13 @@
               
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="120"><span class="err"></span>Patient's name</td>
+              <td height="25" width="120"><span class="err">*</span>Patient's name</td>
               <td ><input type="text" class="input_txtbx1" name="patientname" value="${patientattorneydetails.patientname}"    id="patientname"><span class="err"><form:errors path="Patientattorney.patientname"></form:errors></span></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="120"><span class="err"></span>Date of Accident</td>
+              <td height="25" width="120"><span class="err">*</span>Date of Accident</td>
               <td ><input type="text" class="input_txtbx1" name="date" value="${patientattorneydetails.date}"  id="datepicker"><span class="err"><form:errors path="Patientattorney.date"></form:errors></span></td>
               </tr>
               </table>
@@ -236,11 +236,11 @@ Opinion 2007-7 provides the following further ethical directions:
              <table cellpadding="0" cellspacing="0" border="0" width="100%">
              
               <tr ><td width="70%"></td><td><input type="text" class="input_txtbx1" name="nameofclinic"  value="${patientattorneydetails.nameofclinic}"    id="nameofclinic"></td></tr>
-              <tr><td></td><td>Name of Clinic</td>
+              <tr><td></td><td><span class="err">*</span>Name of Clinic</td>
               </tr>
               
                <tr ><td width="70%"></td><td><input type="text" class="input_txtbx1" name="treat"  value="${patientattorneydetails.treat}"  id="treat"></td></tr>
-              <tr><td ></td><td>Treating Physician</td>
+              <tr><td ></td><td><span class="err">*</span>Treating Physician</td>
               </tr>
               
               
@@ -250,7 +250,7 @@ Opinion 2007-7 provides the following further ethical directions:
           
             <br>
             <br>
-            <table><tr> <td><input type="submit" class="submit_btn" value="Save"></td>
+            <table><tr> <td><input type="submit" class="submit_btn" value="Update"></td>
                <td><a href="insertpatientattorney"style="color:white" class="submit_btn">Cancel</a></td>
               </tr></table>
               </div>

@@ -47,13 +47,13 @@
               <td ><input type="hidden" name="responseid" value="${responseattorneydetail.responseid }"><input type="text" class="input_txtbx1" name="name" value="${responseattorneydetail.name }" id="name" /><span class="err"><form:errors path="Responseattorney.name"></form:errors></td>
               </tr>
               <tr>
-              <td height="20" width="120"><span class="err">*</span>Address:</td>
+              <td height="20" width="120"><span class="err"></span>Address:</td>
               <td><textarea rows="" cols="" name="address" style="width: 162px; height: 62px" >${responseattorneydetail.address }</textarea>
             </td></tr>
               </tr>
              
               <tr>
-              <td height="30" width="120"><span class="err">*</span>Regarding:</td>
+              <td height="30" width="120"><span class="err"></span>Regarding:</td>
               <td ><input type="text" class="input_txtbx1" name="regarding" value="${responseattorneydetail.regarding }" id="regarding" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
                 <tr>
@@ -83,7 +83,7 @@
               <br>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
        		  <tr >
-       		  <td valign="right" align="right" class="input_txt"><span class="err">*</span>Sincerly,</td>
+       		  <td valign="right" align="right" class="input_txt"><span class="err"></span>Sincerly,</td>
               </tr>
               </table>
               <br>

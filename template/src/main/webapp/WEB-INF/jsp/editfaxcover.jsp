@@ -75,7 +75,7 @@
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="120"><span class="err">*</span>FAX#:</td>
+              <td height="25" width="120">FAX#:</td>
               <td ><input type="text" class="input_txtbx1" name="faxno" value="${faxcoverdetails.faxno }" id="datepicker" /><span class="err"><form:errors path="Faxcover.faxno"></form:errors></td>
               </tr>
               </table>
@@ -99,9 +99,9 @@
      	</table><br><br>
      	<table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="120"><span class="err">*</span>RE:</td>
+              <td height="25" width="120">RE:</td>
               <td ><input type="text" class="input_txtbx1" name="regarding" value="${faxcoverdetails.regarding }" id="datepicker" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
-              <td ><span class="err">*</span>Number Of Pages Sent:</td>
+              <td >Number Of Pages Sent:</td>
               <td ><input type="text" class="input_txtbx1" name="pages" value="${faxcoverdetails.pages }" id="datepicker" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>

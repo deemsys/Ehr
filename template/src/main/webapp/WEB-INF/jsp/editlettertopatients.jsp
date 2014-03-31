@@ -92,7 +92,7 @@
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="120"><span class="err">*</span>ADJUSTER:</td>
+              <td height="25" width="120">ADJUSTER:</td>
               <td ><input type="text" class="input_txtbx1" name="adjuster" id="adjuster" value="${lettertopatientsdetails.adjuster }" /><span class="err"><form:errors path="Workschool.date"></form:errors></span></td>
               </tr>
               </table>
@@ -131,7 +131,7 @@
               
               <tr> <td width="600"></td> <td>
               <b>Darrin A. Pordash D.C.</b></td></tr>
-              <tr> <td width="600"></td>  <td><input type="text" class="input_txtbx1" name="sign" id="sign" value="${lettertopatientsdetails.sign }"/>.<span class="err"><form:errors path="lettertopatientsdetails.letter"></form:errors> </span>
+              <tr> <td width="600"></td>  <td><span class="err">*</span><input type="text" class="input_txtbx1" name="sign" id="sign" value="${lettertopatientsdetails.sign }"/>.<span class="err"><form:errors path="lettertopatientsdetails.letter"></form:errors> </span>
        		</td></tr>
        		 </table>
        		<table>

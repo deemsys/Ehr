@@ -39,6 +39,9 @@
 	            <div class="headings altheading">
 	             <h2>Form Letter - Response to Attorney</h2>
 	        </div>
+	           
+	             <c:choose>
+<c:when test="${empty response}">
 	            <div class="contentbox">
 	            <p align="right"><b> SENT BY CERTIFIED MAIL</b></p>
 	           <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -47,12 +50,12 @@
               <td ><input type="text" class="input_txtbx1" name="name" id="name" /><span class="err"><form:errors path="Responseattorney.name"></form:errors></td>
               </tr>
               <tr>
-              <td height="20" width="120"><span class="err">*</span>Address:</td>
+              <td height="20" width="120"><span class="err"></span>Address:</td>
               <td><textarea rows="" cols="" name="address" style="width: 162px; height: 62px"></textarea>
             </td></tr>
              
              <tr>
-              <td height="30" width="120"><span class="err">*</span>Regarding:</td>
+              <td height="30" width="120"><span class="err"></span>Regarding:</td>
               <td ><input type="text" class="input_txtbx1" name="regarding" id="regarding" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
                 <tr>
@@ -61,7 +64,70 @@
               </tr>
                 <tr>
               <td height="30" width="120"><span class="err">*</span>Date Of Accident:</td>
-              <td ><input type="text" class="input_txtbx1" name="dateofaccident" id="datepicker" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="dateofaccident" id="datepicker" /><span class="err"><form:errors path="Responseattorney.dateofaccident"></form:errors></td>
+              </tr>
+              </table>
+              
+              
+              <br>
+              <table cellpadding="0" cellspacing="0" border="0" width="100%">
+        	  <tr><br><p id="mypar">Dear Sir/Madam:</p></tr>
+       		  </table>
+       		  <table cellpadding="0" cellspacing="0" border="0" width="100%">
+       		  <tr>
+        	  <p id="mypar">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We have previously provided you with a Treatment Fee Agreement and Instructions to Attorney signed by our patient and a detailed cover letter which explained the legal basis for it. You have communicated to us that we are required to bill our patient's health insurance.  </p>
+              <p id="mypar">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We are not required to bill our patient's health insurance.  R.C. 1751.60 does not apply to a medical provider who is not under contract with a patient's health care insurer.  We do not have a provider agreement with our patient's health care insurer.  </p>
+              <p id="mypar">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You have stated that Ohio Revised Code Chapter 3902 contains sections that still would require us to bill our patient's health care insurer, despite the fact that we have no provider agreement with that insurer.  R.C. §3902.13 does provide for an order of benefits, including a patient's health insurance coverage, for those types of insurance that are covered by Chapter 3902.  We have used the Treatment Fee Agreement and Instructions to Attorney to secure eventual payment from the proceeds of the alleged tortfeasor's motor vehicle liability insurer and an assignment of our patient's right to payment from the patient's motor vehicle liability insurer.  Motor vehicle insurance is regulated under Chapter 3937, and it is not regulated by or included in Chapter 3902.  Chapter 3902 regulates "life insurance and annuities, credit life insurance and credit disability insurance, and sickness and accident insurance, and subscriber policies or certificates of health insuring corporations".  Sickness and accident insurance is regulated under Chapter 3923, and Chapter 3923 specifically excludes motor vehicle liability insurance.</p>
+              <p id="mypar">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After receiving advice from our own legal counsel, we are satisfied that there is no statutory, regulatory, or case law authority for the position that we are required to bill our patient's health insurance, where we have no provider agreement with that heath insurer. </p>
+               <p id="mypar">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Please provide a reference to any specific legal authority which you believe demonstrates otherwise, and we will be happy to review it.</p>
+              </tr>
+              </table>
+              <br>
+              <table cellpadding="0" cellspacing="0" border="0" width="100%">
+       		  <tr >
+       		  <td valign="right" align="right" class="input_txt"><span class="err">*</span>Sincerly,</td>
+              </tr>
+              </table>
+              <br>
+              <table cellpadding="0" cellspacing="0" border="0" width="100%">
+              <tr >
+       		  <td valign="right" align="right" class="input_txt"><span class="err">*</span>Name of Clinic:
+              <input type="text" class="input_txtbx1" name="nameofclinic" id="nameofclinic" /><span class="err"><form:errors path="Responseattorney.nameofclinic"></form:errors></span></td>
+              </tr>
+              </table>
+              <br>
+               <table cellpadding="0" cellspacing="0" border="0" width="100%">
+              <tr >
+       		  <td valign="right" align="right" class="input_txt"><span class="err">*</span>Treating Physician:
+              <input type="text" class="input_txtbx1" name="treatingphysician" id="treatingphysician" /><span class="err"><form:errors path="Responseattorney.treatingphysician"></form:errors></span></td>
+              </tr>
+              </table>
+              </c:when>
+              <c:otherwise>
+              <div class="contentbox">
+	            <p align="right"><b> SENT BY CERTIFIED MAIL</b></p>
+	           <table cellpadding="0" cellspacing="0" border="0" width="100%">
+              <tr>
+              <td height="50" width="120"><span class="err">*</span>Name Of Attorney:</td>
+              <td ><input type="hidden" name="responseid" value="${response.responseid }"><input type="text" class="input_txtbx1" name="name" value="${response.name }" id="name" /><span class="err"><form:errors path="Responseattorney.name"></form:errors></td>
+              </tr>
+              <tr>
+              <td height="20" width="120"><span class="err"></span>Address:</td>
+              <td><textarea rows="" cols="" name="address" style="width: 162px; height: 62px" >${response.address }</textarea>
+            </td></tr>
+              </tr>
+             
+              <tr>
+              <td height="30" width="120"><span class="err"></span>Regarding:</td>
+              <td ><input type="text" class="input_txtbx1" name="regarding" value="${response.regarding }" id="regarding" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              </tr>
+                <tr>
+              <td height="30" width="120"><span class="err">*</span>Patients's Name:</td>
+              <td ><input type="text" class="input_txtbx1" name="patientname" value="${response.patientname }" id="patientname" /><span class="err"><form:errors path="Responseattorney.patientname"></form:errors></td>
+              </tr>
+                <tr>
+              <td height="30" width="120"><span class="err">*</span>Date Of Accident:</td>
+              <td ><input type="text" class="input_txtbx1" name="dateofaccident" value="${response.dateofaccident }" id="datepicker" /><span class="err"><form:errors path="Responseattorney.dateofaccident"></form:errors></td>
               </tr>
               </table>
               
@@ -89,17 +155,19 @@
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
        		  <td valign="right" align="right" class="input_txt"><span class="err">*</span>Name of Clinic:
-              <input type="text" class="input_txtbx1" name="nameofclinic" id="nameofclinic" /><span class="err"><form:errors path="Responseattorney.nameofclinic"></form:errors></span></td>
+              <input type="text" class="input_txtbx1" name="nameofclinic" value="${response.nameofclinic }" id="nameofclinic" /><span class="err"><form:errors path="Responseattorney.nameofclinic"></form:errors></span></td>
               </tr>
               </table>
               <br>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
        		  <td valign="right" align="right" class="input_txt"><span class="err">*</span>Treating Physician:
-              <input type="text" class="input_txtbx1" name="treatingphysician" id="treatingphysician" /><span class="err"><form:errors path="Responseattorney.treatingphysician"></form:errors></span></td>
+              <input type="text" class="input_txtbx1" name="treatingphysician" value="${response.treatingphysician }" id="treatingphysician" /><span class="err"><form:errors path="Responseattorney.treatingphysician"></form:errors></span></td>
               </tr>
               </table>
               
+              </c:otherwise>
+              </c:choose>
               <br>
               <table>
               <tr>

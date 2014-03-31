@@ -25,7 +25,7 @@
 </head>
  <body>
 <div id="right_content">
-<form action="insertletterofprotection" method="POST">
+<form action="updateletterofprotection" method="POST">
 
 <table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table">
        <tr>
@@ -62,7 +62,7 @@
              
               </tr>
               <tr>
-              <td height="25" width="160"><span class="err"></span>Clinic Name:</td>
+              <td height="25" width="160"><span class="err">*</span>Clinic Name:</td>
                <td ><input type="text" class="input_txtbx1" name="clinicname" value="${letterofprotectiondetails.clinicname}" id="clinicname" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
              
               </tr>
@@ -70,7 +70,7 @@
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="160"><span class="err"></span>Address:</td>
-              <td><textarea rows="" cols="" name="address1"  value="${letterofprotectiondetails.address1}"  style="width: 170px; height: 62px"></textarea>
+              <td><textarea rows="" cols="" name="address1" id="address1" style="width: 162px; height: 62px">${letterofprotectiondetails.address1}</textarea>
             </td></tr>
               </table>
              
@@ -81,7 +81,7 @@
              
               </tr>
               <tr>
-              <td height="25"  width="160"><span class="err"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date Of Accident:</td>
+              <td height="25"  width="160"><span class="err">*</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date Of Accident:</td>
                <td ><input type="text" class="input_txtbx1" name="dateofaccident" value="${letterofprotectiondetails.dateofaccident}"  id="datepicker1" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
              
               </tr>
@@ -115,7 +115,7 @@
              <tr><td width="450"></td>
              <td ><p><h1> <b>Very truly yours,</b></h1><p></td></tr>
              <tr><td width="450"></td>
-            <td ><input type="text" class="input_txtbx1" name="esq" value="${letterofprotectiondetails.esq}"    id="esq" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td></tr>
+            <td ><span class="err">*</span><input type="text" class="input_txtbx1" name="esq" value="${letterofprotectiondetails.esq}"    id="esq" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td></tr>
             <tr><td width="450"></td><td ><p><h1> <b>	Attorney for above client</b></h1><p></td></tr>
              </table>
               <table>

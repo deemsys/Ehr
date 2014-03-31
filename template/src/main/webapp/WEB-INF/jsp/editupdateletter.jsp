@@ -23,7 +23,7 @@ $(function() {
 </head>
  <body>
 <div id="right_content">
-<form action="insertupdateletter" method="POST">
+<form action="updateupdateletter" method="POST">
 
 <table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table">
        <tr>
@@ -44,7 +44,7 @@ $(function() {
 	           
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td width="50%"><span class="err"></span>To Attorney:</td>
+              <td width="50%"><span class="err">*</span>To Attorney:</td>
               <td width="50%"><input type="hidden" name="updateid" value="${updateletterdetails.updateid }"><input type="text" class="input_txtbx1" name="toattorney1" id="toattorney1"  value="${updateletterdetails.toattorney1}" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>
@@ -86,7 +86,7 @@ In Regards to :
               <br>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td width="50%"><span class="err"></span>Todays date:    
+              <td width="50%"><span class="err">*</span>Todays date:    
               </td>
               <td width="50%"><input type="text" class="input_txtbx1" name="todaydate" id="datepicker1" value="${updateletterdetails.todaydate}"/></td>
               </tr>

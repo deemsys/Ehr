@@ -131,8 +131,8 @@ $(function() {
 </tr>
 <tr class="row1">
 <td></td>
-<td><input type="checkbox" name="rightgluteulpain" value="Right Gluteul Pain" >Right Gluteul Pain</td>
-<td><input type="checkbox" name="leftgluteulpain" value="Left Gluteul Pain" >Left Gluteul Pain</td>
+<td><input type="checkbox" name="rightgluteulpain" value="Right Gluteal Pain" >Right Gluteal Pain</td>
+<td><input type="checkbox" name="leftgluteulpain" value="Left Gluteal Pain" >Left Gluteal Pain</td>
 <td><input type="checkbox" name="rightlegpain" value="Right Leg Pain" >Right Leg Pain</td>
 <td><input type="checkbox" name="leftlegpain" value="Left Leg Pain" >Left Leg Pain</td>
 <td><input type="checkbox" name="rightkneepain" value="Right Knee Pain" >Right Knee Pain</td>

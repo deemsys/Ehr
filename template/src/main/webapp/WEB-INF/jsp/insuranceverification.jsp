@@ -20,8 +20,9 @@
 			
 			 $("#faxerror").html(''); 
 			/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
-			var intRegex = /^\d+$/;
-			if(intRegex.test($(this).val())||$(this).val()=='') 
+			/*var intRegex = /^\d+$/;*/
+			var a= /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/;
+			if(a.test($(this).val())||$(this).val()=='') 
 			{
 				var $in = $(this).val();		 
 			}
@@ -162,6 +163,20 @@
          });
  
 </script>
+
+<script>
+i=0;
+$(document).ready(function(){
+  $("#fax").keypress(function(){
+var phone=document.getElementById("fax").value;
+phone = phone.replace(/(\d{3})(\d{3})(\d+)/, '($1)$2-$3');
+document.getElementById("fax").value=phone;
+ });  
+
+});
+</script>
+
+
 </head>
  <body>
 <div id="right_content">
@@ -196,7 +211,7 @@
               <td><span class="err">*</span>Date</td>
               <td><input type="text" class="input_txtbx1" name="date" id="datepicker" /><br><span class="err"><form:errors path="Insuranceverification.date"></form:errors></td>
               <td><span class="err">*</span>Fax#</td>
-              <td><input type="text" class="input_txtbx1" name="fax" id="fax" /><br><span class="err"><form:errors path="Insuranceverification.fax"></form:errors></span>
+              <td><input type="text" class="input_txtbx1" name="fax" id="fax" maxlength=13 /><br><span class="err"><form:errors path="Insuranceverification.fax"></form:errors></span>
               <span class="err" id="faxerror"></span>
               </td>
               </tr>

@@ -25,7 +25,7 @@
 </head>
  <body>
 <div id="right_content">
-<form action="insertpimedpay" method="POST">
+<form action="updatepimedpay" method="POST">
 
 <table cellpadding="0" cellspacing="0" border="0" width="70%" class="margin_table">
        <tr>
@@ -98,8 +98,8 @@
               
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="180"><span class="err"></span>Address </td>
-              <td><input type="text" class="input_txtbx1" name="address" value="${pimedpaydetails.address }"  id="Address"><span class="err"><form:errors path="Pimedpay.address"></form:errors></span></td>
+              <td height="25" width="180"><span class="err">*</span>Address </td>
+              <td><textarea rows="" cols="" name="address" id="address"style="width: 162px; height: 62px">${pimedpaydetails.address }</textarea><span class="err"><form:errors path="Pimedpay.address"></form:errors></span></td>
               </tr>
               </table>
               <br>
@@ -112,14 +112,14 @@
           
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="180"><span class="err"></span>Patient's Name</td>
+              <td height="25" width="180"><span class="err">*</span>Patient's Name</td>
               <td><input type="text" class="input_txtbx1" name="nameofperson" value="${pimedpaydetails.nameofperson }"  id="nameofperson"><span class="err"><form:errors path="Pimedpay.nameofperson"></form:errors></span></td>
               </tr>
               </table>
               <br>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="180"><span class="err"></span>Date of Accident: </td>
+              <td height="25" width="180"><span class="err">*</span>Date of Accident: </td>
               <td><input type="text" class="input_txtbx1" name="dateofaccident" value="${pimedpaydetails.dateofaccident }"  id="datepicker"><span class="err"><form:errors path="Pimedpay.dateofaccident"></form:errors></span></td>
               </tr>
               </table><br><br>
@@ -132,7 +132,7 @@
              </table>
             
              <table>
-             <tr><td><br><br><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             <tr><td><br><br><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="err">*</span>
 	        <input type="text" class="input_txtbx1" name="subject" value="${pimedpaydetails.subject }" id="dearsir"> has sought and received medical treatment from this clinic.  Our patient made an assignment over to us of med pay proceeds to which we are entitled to receive from your company. You have received notice of this assignment by certified mail.
              
              </p>
