@@ -51,7 +51,7 @@ public class RequestfordemandDAO{
 	    	    statement.executeUpdate(cmd);
 	    	    }
 	    	    catch(Exception e){
-	    	    	System.out.println(e.toString());
+	    	    	System.out.println("insert request for demand"+e.toString());
 	    	    	releaseStatement(statement);
 	    	    	releaseConnection(con);
 	    	    	flag=0;

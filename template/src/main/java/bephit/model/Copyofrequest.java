@@ -11,11 +11,12 @@ public class Copyofrequest{
 	@NotEmpty
 	private String address;
 	private String regarding;
+	@NotEmpty
 	private String dateofaccident;
 	@NotEmpty
 	private String claimnumber;
 	private String todaydate;
-	@NotEmpty
+	
 	private String dear;
 	@NotEmpty
 	private String sign;

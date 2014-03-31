@@ -3,13 +3,18 @@ package bephit.model;
 import org.hibernate.validator.constraints.NotEmpty;
 
 public class Xray
-{
+{   
+	
 	private String xrayid;
+	@NotEmpty
 	private String name;
+	
 	private String date;
+	
 	private String date1;
 	@NotEmpty
 	private String sign;
+	@NotEmpty
 	private String date2;
 	
 

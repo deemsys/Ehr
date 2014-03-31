@@ -46,7 +46,7 @@ public class FormbillDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 
-	    	 String cmd="INSERT INTO formbill (date,insurance,address1,address2,name,address3,address4,patientsname,address5,address6,medicalfee,amount) VALUES ('"+formbilldetails.getDate()+"','"+formbilldetails.getInsurance()+"','"+formbilldetails.getAddress1()+"','"+formbilldetails.getAddress2()+"','"+formbilldetails.getName()+"','"+formbilldetails.getAddress3()+"','"+formbilldetails.getAddress4()+"','"+formbilldetails.getPatientsname()+"','"+formbilldetails.getAddress5()+"','"+formbilldetails.getAddress6()+"','"+formbilldetails.getMedicalfee()+"','"+formbilldetails.getAmount()+"')";
+	    	 String cmd="INSERT INTO formbill (date,insurance,address1,name,address3,patientsname,address5,medicalfee,amount) VALUES ('"+formbilldetails.getDate()+"','"+formbilldetails.getInsurance()+"','"+formbilldetails.getAddress1()+"','"+formbilldetails.getName()+"','"+formbilldetails.getAddress3()+"','"+formbilldetails.getPatientsname()+"','"+formbilldetails.getAddress5()+"','"+formbilldetails.getMedicalfee()+"','"+formbilldetails.getAmount()+"')";
 	    	    System.out.println("cmd insert value"+cmd);
 	    	    statement.executeUpdate(cmd);
 	    	    }
@@ -86,13 +86,13 @@ public class FormbillDAO {
 						resultSet.getString("date"),
 						resultSet.getString("insurance"),
 						resultSet.getString("address1"),
-						resultSet.getString("address2"),
+						
 			    		resultSet.getString("name"),
 			    		resultSet.getString("address3"),
-						resultSet.getString("address4"),
+						
 						resultSet.getString("patientsname"),
 						resultSet.getString("address5"),
-						resultSet.getString("address6"),
+						
 						resultSet.getString("medicalfee"),
 						resultSet.getString("amount")));
 			    		 
@@ -136,13 +136,13 @@ public class FormbillDAO {
 								resultSet.getString("date"),
 						resultSet.getString("insurance"),
 						resultSet.getString("address1"),
-						resultSet.getString("address2"),
+						
 			    		resultSet.getString("name"),
 			    		resultSet.getString("address3"),
-						resultSet.getString("address4"),
+						
 						resultSet.getString("patientsname"),
 						resultSet.getString("address5"),
-						resultSet.getString("address6"),
+						
 						resultSet.getString("medicalfee"),
 						resultSet.getString("amount")));
 				System.out.println("Name::::::::::::::::::"+formbill.get(0).getName());
@@ -187,13 +187,13 @@ public class FormbillDAO {
 	    	 String cmd="update formbill set date='"+formbill.getDate()+"', insurance='"+formbill.getInsurance()
 	    			
 	    +"',address1='"+formbill.getAddress1()
-	    +"',address2='"+formbill.getAddress2()
+	    
 	    +"',name='"+ formbill.getName()
 	    +"',address3='"+ formbill.getAddress3()
-	    +"',address4='"+formbill.getAddress4()
+	    
 	    +"',patientsname='"+formbill.getPatientsname()
 	    +"',address5='"+formbill.getAddress5()
-	    +"',address6='"+formbill.getAddress6()
+	    
 	    +"',medicalfee='"+formbill.getMedicalfee()
 	   
 	    +"',amount='"+formbill.getAmount()+"' where formid='"+formid+"'";

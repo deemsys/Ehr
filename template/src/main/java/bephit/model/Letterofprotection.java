@@ -11,13 +11,13 @@ public class Letterofprotection
 	private String dc;
 	@NotEmpty
 	private String clinicname;
-	@NotEmpty
+	
 	private String address1;	
-	@NotEmpty
+	
 	private String myclient;
 	@NotEmpty
 	private String dateofaccident;
-	@NotEmpty
+	
 	private String dearsir;
 	@NotEmpty
 	private String esq;

@@ -12,7 +12,7 @@ public class Pimedpay
 	@NotEmpty
 	private String address;
 	
-	@NotEmpty
+	
 	private String reg;
 	
 	@NotEmpty

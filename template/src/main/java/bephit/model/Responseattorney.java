@@ -11,6 +11,7 @@ public class Responseattorney
 	private String regarding;
 	@NotEmpty
 	private String patientname;
+	@NotEmpty
 	private String dateofaccident;
 	public Responseattorney() {
 		super();

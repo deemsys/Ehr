@@ -1,41 +1,34 @@
 package bephit.model;
 
+import javax.validation.constraints.Pattern;
+
 import org.hibernate.validator.constraints.NotEmpty;
 
 public class Faxcover
 {
 	private String faxid;
-	private String date;
-	private String tos;
 	@NotEmpty
+	private String date;
+	@NotEmpty
+	private String tos;
+	
+	@Pattern(regexp="(^$|[0-9-()]{11})",message="Not a valid Social Security number")
+
 	private String faxno;
+	@NotEmpty
 	private String froms;
 	private String reply;
 	private String regarding;
 	private String pages;
-	public Faxcover() {
-		super();
-	}
-	public Faxcover(String faxid, String date, String tos, String faxno,
-			String froms, String reply, String regarding, String pages,
-			String msg, String claimno, String doi) {
-		super();
-		this.faxid = faxid;
-		this.date = date;
-		this.tos = tos;
-		this.faxno = faxno;
-		this.froms = froms;
-		this.reply = reply;
-		this.regarding = regarding;
-		this.pages = pages;
-		this.msg = msg;
-		this.claimno = claimno;
-		this.doi = doi;
-	}
+	@NotEmpty
 	private String msg;
 	@NotEmpty
 	private String claimno;
+	@NotEmpty
 	private String doi;
+	public Faxcover() {
+		super();
+	}
 	public String getFaxid() {
 		return faxid;
 	}
@@ -102,4 +95,21 @@ public class Faxcover
 	public void setDoi(String doi) {
 		this.doi = doi;
 	}
+	public Faxcover(String faxid, String date, String tos, String faxno,
+			String froms, String reply, String regarding, String pages,
+			String msg, String claimno, String doi) {
+		super();
+		this.faxid = faxid;
+		this.date = date;
+		this.tos = tos;
+		this.faxno = faxno;
+		this.froms = froms;
+		this.reply = reply;
+		this.regarding = regarding;
+		this.pages = pages;
+		this.msg = msg;
+		this.claimno = claimno;
+		this.doi = doi;
+	}
+	
 }

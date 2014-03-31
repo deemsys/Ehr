@@ -11,9 +11,9 @@ public class Updateletter
 	private String toattorney2;
 	@NotEmpty
 	private String toattorney3;
-	@NotEmpty
+	
 	private String reg;	
-	@NotEmpty
+	
 	private String injury;
 	@NotEmpty
 	private String todaydate;

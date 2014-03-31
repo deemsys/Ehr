@@ -9,25 +9,22 @@ public class Formbill
 	private String date;
 	@NotEmpty
 	private String insurance;
-	@NotEmpty
+	
 	private String address1;
-	@NotEmpty
-	private String address2;
+	
 	@NotEmpty
 	private String name;	
-	@NotEmpty
+	
 	private String address3;
-	@NotEmpty
-	private String address4;
+	
 	@NotEmpty
 	private String patientsname;
-	@NotEmpty
+	
 	private String address5;
-	@NotEmpty
-	private String address6;
-	@NotEmpty
+	
+	
 	private String medicalfee;
-	@NotEmpty
+	
 	private String amount;
 	
 	public Formbill() {
@@ -66,14 +63,6 @@ public class Formbill
 		this.address1 = address1;
 	}
 
-	public String getAddress2() {
-		return address2;
-	}
-
-	public void setAddress2(String address2) {
-		this.address2 = address2;
-	}
-
 	public String getName() {
 		return name;
 	}
@@ -90,14 +79,6 @@ public class Formbill
 		this.address3 = address3;
 	}
 
-	public String getAddress4() {
-		return address4;
-	}
-
-	public void setAddress4(String address4) {
-		this.address4 = address4;
-	}
-
 	public String getPatientsname() {
 		return patientsname;
 	}
@@ -112,14 +93,6 @@ public class Formbill
 
 	public void setAddress5(String address5) {
 		this.address5 = address5;
-	}
-
-	public String getAddress6() {
-		return address6;
-	}
-
-	public void setAddress6(String address6) {
-		this.address6 = address6;
 	}
 
 	public String getMedicalfee() {
@@ -139,24 +112,22 @@ public class Formbill
 	}
 
 	public Formbill(String formid, String date, String insurance,
-			String address1, String address2, String name, String address3,
-			String address4, String patientsname, String address5,
-			String address6, String medicalfee, String amount) {
+			String address1, String name, String address3, String patientsname,
+			String address5, String medicalfee, String amount) {
 		super();
 		this.formid = formid;
 		this.date = date;
 		this.insurance = insurance;
 		this.address1 = address1;
-		this.address2 = address2;
 		this.name = name;
 		this.address3 = address3;
-		this.address4 = address4;
 		this.patientsname = patientsname;
 		this.address5 = address5;
-		this.address6 = address6;
 		this.medicalfee = medicalfee;
 		this.amount = amount;
 	}
+
+	
 	
 	
 }

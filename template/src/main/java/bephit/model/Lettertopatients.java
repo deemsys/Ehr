@@ -5,15 +5,20 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Lettertopatients
 {
 	private String letterid;
+	@NotEmpty
 	private String re;
+	@NotEmpty
 	private String ssn;
+	@NotEmpty
 	private String claim;
+	@NotEmpty
 	private String doi;
 	private String adjuster;
 	private String date1;
 	private String date2;
-	@NotEmpty
+	
 	private String letter;
+	@NotEmpty
 	private String sign;
 	public Lettertopatients() {
 		super();

@@ -5,19 +5,19 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Requestfordemand
 {
 	private String requestid;
-	@NotEmpty
+	
 	private String faultinsurer;
-	@NotEmpty
+	
 	private String medpayinsurer;
-	@NotEmpty
+	
 	private String paidbenefits;
-	@NotEmpty
+	
 	private String bankrupt;
-	@NotEmpty
+	
 	private String treatment;
-	@NotEmpty
+	
 	private String other;
-	@NotEmpty
+	
 	private String txtare;
 	@NotEmpty
 	private String copymedpay;

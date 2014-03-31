@@ -9,15 +9,15 @@ public class Perrychiropractic
 	private String insurance;
 	@NotEmpty
 	private String address;
-	@NotEmpty
+	
 	private String address1;
 	@NotEmpty
 	private String reg;	
 	@NotEmpty
 	private String nameofperson;
-	@NotEmpty
+	
 	private String dateofaccident;
-	@NotEmpty
+	
 	private String subject;
 	
 	public Perrychiropractic() {

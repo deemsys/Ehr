@@ -7,7 +7,9 @@ public class Workschool
 	private String workid;
 	@NotEmpty
 	private String date;
+	@NotEmpty
 	private String letter;
+	
 	private String beexcused;
 	private String excused;
 	private String beconfined;
@@ -24,9 +26,11 @@ public class Workschool
 	private String bend;
 	private String entry;
 	private String light;
-	private String froms;
-	private String tos;
 	@NotEmpty
+	private String froms;
+	@NotEmpty
+	private String tos;
+	
 	private String returns;
 	public Workschool() {
 		super();
