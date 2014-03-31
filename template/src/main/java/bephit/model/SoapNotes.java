@@ -47,6 +47,7 @@ public class SoapNotes {
 	private String diagnosis3;
 	private String diagnosis4;
 	private String e1e2;
+	private String xray;
 	private String offwork1;
 	private String reeval1;
 	private String date2;
@@ -445,6 +446,14 @@ public class SoapNotes {
 
 	public void setE1e2(String e1e2) {
 		this.e1e2 = e1e2;
+	}
+
+	public String getXray() {
+		return xray;
+	}
+
+	public void setXray(String xray) {
+		this.xray = xray;
 	}
 
 	public String getOffwork1() {
@@ -869,21 +878,21 @@ public class SoapNotes {
 			String rightfootpain, String leftfootpain, String date1,
 			String improved, String worsened, String painscale,
 			String diagnosis1, String diagnosis2, String diagnosis3,
-			String diagnosis4, String e1e2, String offwork1, String reeval1,
-			String date2, String improved1, String worsened1, String fixation1,
-			String notimproved1, String scsm1, String date3, String improved2,
-			String worsened2, String fixation2, String notimproved2,
-			String scsm2, String date4, String improved3, String worsened3,
-			String fixation3, String notimproved3, String scsm3, String date5,
-			String improved4, String worsened4, String fixation4,
-			String notimproved4, String scsm4, String date6, String improved5,
-			String worsened5, String fixation5, String notimproved5,
-			String scsm5, String date7, String improved6, String worsened6,
-			String fixation6, String notimproved6, String scsm6, String date8,
-			String improved7, String worsened7, String fixation7,
-			String notimproved7, String scsm7, String date9, String improved8,
-			String worsened8, String fixation8, String notimproved8,
-			String scsm8, String sign) {
+			String diagnosis4, String e1e2, String xray, String offwork1,
+			String reeval1, String date2, String improved1, String worsened1,
+			String fixation1, String notimproved1, String scsm1, String date3,
+			String improved2, String worsened2, String fixation2,
+			String notimproved2, String scsm2, String date4, String improved3,
+			String worsened3, String fixation3, String notimproved3,
+			String scsm3, String date5, String improved4, String worsened4,
+			String fixation4, String notimproved4, String scsm4, String date6,
+			String improved5, String worsened5, String fixation5,
+			String notimproved5, String scsm5, String date7, String improved6,
+			String worsened6, String fixation6, String notimproved6,
+			String scsm6, String date8, String improved7, String worsened7,
+			String fixation7, String notimproved7, String scsm7, String date9,
+			String improved8, String worsened8, String fixation8,
+			String notimproved8, String scsm8, String sign) {
 		super();
 		this.patient_id = patient_id;
 		this.soapid = soapid;
@@ -928,6 +937,7 @@ public class SoapNotes {
 		this.diagnosis3 = diagnosis3;
 		this.diagnosis4 = diagnosis4;
 		this.e1e2 = e1e2;
+		this.xray = xray;
 		this.offwork1 = offwork1;
 		this.reeval1 = reeval1;
 		this.date2 = date2;

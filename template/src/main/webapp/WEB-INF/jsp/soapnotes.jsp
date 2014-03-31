@@ -67,6 +67,7 @@ $(function() {
   });
 
 </script>
+
 </head>
  <body>
 <br>
@@ -88,7 +89,7 @@ $(function() {
 	            
 	            </div>
 	            
-	            <input type="hidden" value="${patient}" name="patient_id" />
+	            <input type="text" value="${patient}" name="patient_id" />
 	    <div class="contentbox">
           <table cellpadding="0" cellspacing="0" border="0" width="98%">
            
@@ -202,7 +203,7 @@ $(function() {
 &nbsp &nbsp 4&nbsp &nbsp &nbsp<input type="text" name="diagnosis4"><br/><br/>
  </td>
  <td>
- &nbsp &nbsp E1/E2 X-Rays: <select name="e1e2" id="e1e2" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+ &nbsp &nbsp E1/E2 X-Rays: <select name="e1e2" id="e1e2" class="input_cmbbx1" onchange="if (this.value=='ExtremitiesX-Rays'){this.form['xray'].style.visibility='visible'}else {this.form['xray'].style.visibility='hidden'};">
 					<option selected="selected" value="2" >2</option>
 					<option value="3">3</option>
 					<option value="4">4</option>
@@ -213,6 +214,12 @@ $(function() {
 					<option value="9">9</option>
 					<option value="10">10</option>
 					<option value="11">11</option>
+					<option value="one spot x-ray">one spot x-ray</option>
+					<option value="2 to 7 C/S X-Rays">2 to 7 C/S X-Rays</option>
+					<option value="2 to 6 T/S X-Rays">2 to 6 T/S X-Rays</option>
+					<option value="2-6 L/S X-Rays">2-6 L/S X-Rays</option>
+					<option value="2 Chest X-Rays">2 Chest X-Rays</option>
+					<option value="ExtremitiesX-Rays">ExtremitiesX-Rays</option>
 					<option value="scsm">SCSM</option>
 					<option value="ems">EMS</option>
 					<option value="mass">MASS</option>
@@ -229,14 +236,16 @@ $(function() {
 					<option value="rehab">Rehab</option>
 					<option value="stretchexer">Stretch exer</option>
 					<option value="offwork">Off Work</option>
-					<option value="backtowork">Back To Work 5 4 3 2x/wk</option>
+					<option value="backtowork">Back To Work </option>
 					<option value="strengthexcer">Strength excer</option>
 					<option value="lifestyle">Lifestyle modifications</option>
 					<option value="reeval">Re Eval.in </option>
-				  </select>
+				  </select>&nbsp;&nbsp;<input type="text" name="xray" id="xray" style="visibility:hidden;"/>
 				  
 				  <input type="text" name="offwork1" id="offwork1" style='display:none'>
 				  <input type="text" name="reeval1" id="reeval1" style='display:none'>
+				  
+				
 				  </td>
  </tr>
  <tr>
@@ -282,7 +291,9 @@ $(function() {
 
  &nbsp &nbsp<select name="notimproved1" id="notimproved1" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="notimproved" >Not Improved</option>
-					<option value="Progress Slow Due to exacerbation">Progress Slow Due to exacerbation of CC</option>
+					<option value="Progressinging Slow ">Progressing Slow</option>
+					<option value="Exacerbation of CC">Exacerbation of CC</option>
+					<option value="Flare-ups">Flare-ups</option>
 					<option value="Mildly imp">Mildly imp.</option>
 					<option value="Moderatly imp">Moderatly imp.</option>
 					<option value="Plateu">Plateu</option>
@@ -306,7 +317,7 @@ $(function() {
 					<option value="Off Work">Off Work</option>
 					<option value="Light Duty">Light Duty</option>
 					<option value="ROM">ROM</option>					
-					<option value="Back To Work 5 4 3 2x/wk">Back To Work 5 4 3 2x/wk</option>
+					<option value="Back To Work ">Back To Work </option>
 					<option value="Strength excer">Strength excer</option>
 					<option value="ROF">ROF</option>
 					<option value="Re Exam">Re Exam</option>
@@ -358,7 +369,9 @@ $(function() {
 					</select></td>
  <td>&nbsp &nbsp<select name="notimproved2" id="notimproved2" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Not Improved" >Not Improved</option>
-					<option value="Progress Slow Due to exacerbation">Progress Slow Due to exacerbation of CC</option>
+					<option value="Progressinging Slow ">Progressing Slow</option>
+					<option value="Exacerbation of CC">Exacerbation of CC</option>
+					<option value="Flare-ups">Flare-ups</option>
 					<option value="Mildly imp">Mildly imp</option>
 					<option value="Moderatly imp">Moderatly imp</option>
 					<option value="Plateu">Plateu</option>
@@ -380,7 +393,7 @@ $(function() {
 					<option value="Off Work">Off Work</option>
 					<option value="Light Duty">Light Duty</option>
 					<option value="ROM">ROM</option>					
-					<option value="Back To Work 5 4 3 2x/wk">Back To Work 5 4 3 2x/wk</option>
+					<option value="Back To Work ">Back To Work </option>
 					<option value="Strength excer">Strength excer</option>
 					<option value="ROF">ROF</option>
 					<option value="Re Exam">Re Exam </option>
@@ -425,7 +438,9 @@ $(function() {
 					</select></td>
  <td>&nbsp &nbsp<select name="notimproved3" id="notimproved3" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Not Improved" >Not Improved</option>
-					<option value="Progress Slow Due to exacerbation">Progress Slow Due to exacerbation of CC</option>
+					<option value="Progressinging Slow ">Progressing Slow</option>
+					<option value="Exacerbation of CC">Exacerbation of CC</option>
+					<option value="Flare-ups">Flare-ups</option>
 					<option value="Mildly imp">Mildly imp</option>
 					<option value="Moderatly imp">Moderatly imp</option>
 					<option value="Plateu">Plateu</option>
@@ -447,7 +462,7 @@ $(function() {
 					<option value="offwork">Off Work</option>
 					<option value="Lightduty">Light Duty</option>
 					<option value="Rom">ROM</option>					
-					<option value="Back To Work 5 4 3 2x/wk">Back To Work 5 4 3 2x/wk</option>
+					<option value="Back To Work ">Back To Work </option>
 					<option value="strength excer">Strength excer</option>
 					<option value="ROF">ROF</option>
 					<option value="Re Exam">Re Exam </option>
@@ -491,7 +506,9 @@ $(function() {
 					</select></td>
  <td>&nbsp &nbsp<select name="notimproved4" id="notimproved4" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="not improved" >Not Improved</option>
-					<option value="progressslow">Progress Slow Due to exacerbation of CC</option>
+					<option value="Progressinging Slow ">Progressing Slow</option>
+					<option value="Exacerbation of CC">Exacerbation of CC</option>
+					<option value="Flare-ups">Flare-ups</option>
 					<option value="mildly imp">Mildly imp.</option>
 					<option value="moderatly imp">Moderatly imp.</option>
 					<option value="plateu">Plateu</option>
@@ -514,7 +531,7 @@ $(function() {
 					<option value="offwork">Off Work</option>
 					<option value="lightduty">Light Duty</option>
 					<option value="rom">ROM</option>					
-					<option value="backtowork">Back To Work 5 4 3 2x/wk</option>
+					<option value="backtowork">Back To Work </option>
 					<option value="strengthexcer">Strength excer</option>
 					<option value="rof">ROF</option>
 					<option value="reexam">Re Exam </option>
@@ -558,7 +575,9 @@ $(function() {
 					</select></td>
 <td>&nbsp &nbsp <select name="notimproved5" id="notimproved5" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="notimproved" >Not Improved</option>
-					<option value="progressslow">Progress Slow Due to exacerbation of CC</option>
+					<option value="Progressinging Slow ">Progressing Slow</option>
+					<option value="Exacerbation of CC">Exacerbation of CC</option>
+					<option value="Flare-ups">Flare-ups</option>
 					<option value="mildly imp">Mildly imp.</option>
 					<option value="moderatly imp">Moderatly imp.</option>
 					<option value="plateu">Plateu</option>
@@ -580,7 +599,7 @@ $(function() {
 					<option value="offwork">Off Work</option>
 					<option value="lightduty">Light Duty</option>
 					<option value="rom">ROM</option>					
-					<option value="backtowork">Back To Work 5 4 3 2x/wk</option>
+					<option value="backtowork">Back To Work </option>
 					<option value="strengthexcer">Strength excer</option>
 					<option value="rof">ROF</option>
 					<option value="reexam">Re Exam </option>
@@ -623,7 +642,9 @@ $(function() {
 					</select></td>
 <td> &nbsp &nbsp<select name="notimproved6" id="notimproved6" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="notimproved" >Not Improved</option>
-					<option value="progressslow">Progress Slow Due to exacerbation of CC</option>
+					<option value="Progressinging Slow ">Progressing Slow</option>
+					<option value="Exacerbation of CC">Exacerbation of CC</option>
+					<option value="Flare-ups">Flare-ups</option>
 					<option value="mildly imp">Mildly imp.</option>
 					<option value="moderatly imp">Moderatly imp.</option>
 					<option value="plateu">Plateu</option>
@@ -645,7 +666,7 @@ $(function() {
 					<option value="offwork">Off Work</option>
 					<option value="lightduty">Light Duty</option>
 					<option value="rom">ROM</option>					
-					<option value="backtowork">Back To Work 5 4 3 2x/wk</option>
+					<option value="backtowork">Back To Work </option>
 					<option value="strengthexcer">Strength excer</option>
 					<option value="rof">ROF</option>
 					<option value="reexam">Re Exam </option>
@@ -688,7 +709,9 @@ $(function() {
 					</select></td>
  <td>&nbsp &nbsp<select name="notimproved7" id="notimproved7" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="notimproved" >Not Improved</option>
-					<option value="progressslow">Progress Slow Due to exacerbation of CC</option>
+				<option value="Progressinging Slow ">Progressing Slow</option>
+					<option value="Exacerbation of CC">Exacerbation of CC</option>
+					<option value="Flare-ups">Flare-ups</option>
 					<option value="mildly imp">Mildly imp.</option>
 					<option value="moderatly imp">Moderatly imp.</option>
 					<option value="plateu">Plateu</option>
@@ -710,7 +733,7 @@ $(function() {
 					<option value="offwork">Off Work</option>
 					<option value="lightduty">Light Duty</option>
 					<option value="rom">ROM</option>					
-					<option value="backtowork">Back To Work 5 4 3 2x/wk</option>
+					<option value="backtowork">Back To Work </option>
 					<option value="strengthexcer">Strength excer</option>
 					<option value="rof">ROF</option>
 					<option value="reexam">Re Exam </option>
@@ -753,7 +776,9 @@ $(function() {
 					</select></td>
  <td>&nbsp &nbsp<select name="notimproved8" id="notimproved8" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="notimproved" >Not Improved</option>
-					<option value="progressslow">Progress Slow Due to exacerbation of CC</option>
+					<option value="Progressinging Slow ">Progressing Slow</option>
+					<option value="Exacerbation of CC">Exacerbation of CC</option>
+					<option value="Flare-ups">Flare-ups</option>
 					<option value="mildly imp">Mildly imp.</option>
 					<option value="moderatly imp">Moderatly imp.</option>
 					<option value="plateu">Plateu</option>
@@ -775,7 +800,7 @@ $(function() {
 					<option value="offwork">Off Work</option>
 					<option value="lightduty">Light Duty</option>
 					<option value="rom">ROM</option>					
-					<option value="backtowork">Back To Work 5 4 3 2x/wk</option>
+					<option value="backtowork">Back To Work </option>
 					<option value="strengthexcer">Strength excer</option>
 					<option value="rof">ROF</option>
 					<option value="reexam">Re Exam </option>
@@ -810,7 +835,7 @@ $(function() {
     				<td align="left" valign="top" width="50%" style="padding-right:25px;">
     					<br>
 <table align="right">
-<input type="hidden" value="${soap.patient_id }" name="patient_id" />
+<input type="text" value="${soap.patient_id }" name="patient_id" />
               <input type="hidden" class="input_txtbx1" id="inp_id" value="${soap.soapid}" name="soapid" />
 
     <tr class="row1">
@@ -929,7 +954,7 @@ $(function() {
 					<option value="rehab" <c:if test="${soap.e1e2=='rehab'}"><c:out value="selected"/></c:if>>Rehab</option>
 					<option value="stretchexer" <c:if test="${soap.e1e2=='stretchexer'}"><c:out value="selected"/></c:if>>Stretch exer</option>
 					<option value="offwork" <c:if test="${soap.e1e2=='offwork'}"><c:out value="selected"/></c:if>>Off Work</option>
-					<option value="backtowork" <c:if test="${soap.e1e2=='backtowork'}"><c:out value="selected"/></c:if>>Back To Work 5 4 3 2x/wk</option>
+					<option value="backtowork" <c:if test="${soap.e1e2=='backtowork'}"><c:out value="selected"/></c:if>>Back To Work </option>
 					<option value="strengthexcer" <c:if test="${soap.e1e2=='strengthexcer'}"><c:out value="selected"/></c:if>>Strength excer</option>
 					<option value="lifestyle" <c:if test="${soap.e1e2=='lifestyle'}"><c:out value="selected"/></c:if>>Lifestyle modifications</option>
 					<option value="reeval" <c:if test="${soap.e1e2=='reeval'}"><c:out value="selected"/></c:if>>Re Eval.in </option>
@@ -979,7 +1004,7 @@ $(function() {
 
  &nbsp &nbsp<select name="notimproved1" id="notimproved1" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="notimproved" <c:if test="${soap.notimproved1=='notimproved'}"><c:out value="selected"/></c:if>>Not Improved</option>
-					<option value="progressslow" <c:if test="${soap.notimproved1=='progressslow'}"><c:out value="selected"/></c:if>>Progress Slow Due to exacerbation of CC</option>
+					<option value="Progressingslow" <c:if test="${soap.notimproved1=='Progressingslow'}"><c:out value="selected"/></c:if>>Progressing Slow Due to exacerbation of CC</option>
 					<option value="mildly" <c:if test="${soap.notimproved1=='mildly'}"><c:out value="selected"/></c:if>>Mildly imp.</option>
 					<option value="moderatly" <c:if test="${soap.notimproved1=='moderatly'}"><c:out value="selected"/></c:if>>Moderatly imp.</option>
 					<option value="plateu" <c:if test="${soap.notimproved1=='plateu'}"><c:out value="selected"/></c:if>>Plateu</option>
@@ -1003,7 +1028,7 @@ $(function() {
 					<option value="offwork" <c:if test="${soap.scsm1=='offwork'}"><c:out value="selected"/></c:if>>Off Work</option>
 					<option value="lightduty" <c:if test="${soap.scsm1=='lightduty'}"><c:out value="selected"/></c:if>>Light Duty</option>
 					<option value="rom" <c:if test="${soap.scsm1=='rom'}"><c:out value="selected"/></c:if>>ROM</option>					
-					<option value="backtowork" <c:if test="${soap.scsm1=='backtowork'}"><c:out value="selected"/></c:if>>Back To Work 5 4 3 2x/wk</option>
+					<option value="backtowork" <c:if test="${soap.scsm1=='backtowork'}"><c:out value="selected"/></c:if>>Back To Work </option>
 					<option value="strengthexcer" <c:if test="${soap.scsm1=='strengthexer'}"><c:out value="selected"/></c:if>>Strength excer</option>
 					<option value="rof" <c:if test="${soap.scsm1=='rof'}"><c:out value="selected"/></c:if>>ROF</option>
 					<option value="reexam" <c:if test="${soap.scsm1=='reexam'}"><c:out value="selected"/></c:if>>Re Exam </option>
@@ -1053,7 +1078,7 @@ $(function() {
 					</select></td>
  <td>&nbsp &nbsp<select name="notimproved2" id="notimproved2" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="notimproved" <c:if test="${soap.notimproved2=='notimproved'}"><c:out value="selected"/></c:if>>Not Improved</option>
-					<option value="progressslow" <c:if test="${soap.notimproved2=='progressslow'}"><c:out value="selected"/></c:if>>Progress Slow Due to exacerbation of CC</option>
+					<option value="Progressingslow" <c:if test="${soap.notimproved2=='Progressingslow'}"><c:out value="selected"/></c:if>>Progressing Slow Due to exacerbation of CC</option>
 					<option value="mildly" <c:if test="${soap.notimproved2=='mildly'}"><c:out value="selected"/></c:if>>Mildly imp.</option>
 					<option value="moderatly" <c:if test="${soap.notimproved2=='moderatly'}"><c:out value="selected"/></c:if>>Moderatly imp.</option>
 					<option value="plateu" <c:if test="${soap.notimproved2=='plateu'}"><c:out value="selected"/></c:if>>Plateu</option>
@@ -1075,7 +1100,7 @@ $(function() {
 					<option value="offwork" <c:if test="${soap.scsm2=='offwork'}"><c:out value="selected"/></c:if>>Off Work</option>
 					<option value="lightduty" <c:if test="${soap.scsm2=='lightduty'}"><c:out value="selected"/></c:if>>Light Duty</option>
 					<option value="rom" <c:if test="${soap.scsm2=='rom'}"><c:out value="selected"/></c:if>>ROM</option>					
-					<option value="backtowork" <c:if test="${soap.scsm2=='backtowork'}"><c:out value="selected"/></c:if>>Back To Work 5 4 3 2x/wk</option>
+					<option value="backtowork" <c:if test="${soap.scsm2=='backtowork'}"><c:out value="selected"/></c:if>>Back To Work </option>
 					<option value="strengthexcer" <c:if test="${soap.scsm2=='strengthexer'}"><c:out value="selected"/></c:if>>Strength excer</option>
 					<option value="rof" <c:if test="${soap.scsm2=='rof'}"><c:out value="selected"/></c:if>>ROF</option>
 					<option value="reexam" <c:if test="${soap.scsm2=='reexam'}"><c:out value="selected"/></c:if>>Re Exam </option>
@@ -1123,7 +1148,7 @@ $(function() {
 					</select></td>
  <td>&nbsp &nbsp<select name="notimproved3" id="notimproved3" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="notimproved" <c:if test="${soap.notimproved3=='notimproved'}"><c:out value="selected"/></c:if>>Not Improved</option>
-					<option value="progressslow" <c:if test="${soap.notimproved3=='progressslow'}"><c:out value="selected"/></c:if>>Progress Slow Due to exacerbation of CC</option>
+					<option value="Progressingslow" <c:if test="${soap.notimproved3=='Progressingslow'}"><c:out value="selected"/></c:if>>Progressing Slow Due to exacerbation of CC</option>
 					<option value="mildly" <c:if test="${soap.notimproved3=='mildly'}"><c:out value="selected"/></c:if>>Mildly imp.</option>
 					<option value="moderatly" <c:if test="${soap.notimproved3=='moderatly'}"><c:out value="selected"/></c:if>>Moderatly imp.</option>
 					<option value="plateu" <c:if test="${soap.notimproved3=='plateu'}"><c:out value="selected"/></c:if>>Plateu</option>
@@ -1146,7 +1171,7 @@ $(function() {
 					<option value="offwork" <c:if test="${soap.scsm3=='offwork'}"><c:out value="selected"/></c:if>>Off Work</option>
 					<option value="lightduty" <c:if test="${soap.scsm3=='lightduty'}"><c:out value="selected"/></c:if>>Light Duty</option>
 					<option value="rom" <c:if test="${soap.scsm3=='rom'}"><c:out value="selected"/></c:if>>ROM</option>					
-					<option value="backtowork" <c:if test="${soap.scsm3=='backtowork'}"><c:out value="selected"/></c:if>>Back To Work 5 4 3 2x/wk</option>
+					<option value="backtowork" <c:if test="${soap.scsm3=='backtowork'}"><c:out value="selected"/></c:if>>Back To Work </option>
 					<option value="strengthexcer" <c:if test="${soap.scsm3=='strengthexer'}"><c:out value="selected"/></c:if>>Strength excer</option>
 					<option value="rof" <c:if test="${soap.scsm3=='rof'}"><c:out value="selected"/></c:if>>ROF</option>
 					<option value="reexam" <c:if test="${soap.scsm3=='reexam'}"><c:out value="selected"/></c:if>>Re Exam </option>
@@ -1192,7 +1217,7 @@ $(function() {
 					</select></td>
  <td>&nbsp &nbsp<select name="notimproved4" id="notimproved4" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="notimproved" <c:if test="${soap.notimproved4=='notimproved'}"><c:out value="selected"/></c:if>>Not Improved</option>
-					<option value="progressslow" <c:if test="${soap.notimproved4=='progressslow'}"><c:out value="selected"/></c:if>>Progress Slow Due to exacerbation of CC</option>
+					<option value="Progressingslow" <c:if test="${soap.notimproved4=='Progressingslow'}"><c:out value="selected"/></c:if>>Progressing Slow Due to exacerbation of CC</option>
 					<option value="mildly" <c:if test="${soap.notimproved4=='mildly'}"><c:out value="selected"/></c:if>>Mildly imp.</option>
 					<option value="moderatly" <c:if test="${soap.notimproved4=='moderatly'}"><c:out value="selected"/></c:if>>Moderatly imp.</option>
 					<option value="plateu" <c:if test="${soap.notimproved4=='plateu'}"><c:out value="selected"/></c:if>>Plateu</option>
@@ -1215,7 +1240,7 @@ $(function() {
 					<option value="offwork" <c:if test="${soap.scsm4=='offwork'}"><c:out value="selected"/></c:if>>Off Work</option>
 					<option value="lightduty" <c:if test="${soap.scsm4=='lightduty'}"><c:out value="selected"/></c:if>>Light Duty</option>
 					<option value="rom" <c:if test="${soap.scsm4=='rom'}"><c:out value="selected"/></c:if>>ROM</option>					
-					<option value="backtowork" <c:if test="${soap.scsm4=='backtowork'}"><c:out value="selected"/></c:if>>Back To Work 5 4 3 2x/wk</option>
+					<option value="backtowork" <c:if test="${soap.scsm4=='backtowork'}"><c:out value="selected"/></c:if>>Back To Work </option>
 					<option value="strengthexcer" <c:if test="${soap.scsm4=='strengthexer'}"><c:out value="selected"/></c:if>>Strength excer</option>
 					<option value="rof" <c:if test="${soap.scsm4=='rof'}"><c:out value="selected"/></c:if>>ROF</option>
 					<option value="reexam" <c:if test="${soap.scsm4=='reexam'}"><c:out value="selected"/></c:if>>Re Exam </option>
@@ -1260,7 +1285,7 @@ $(function() {
 		</select></td>
 <td>&nbsp &nbsp <select name="notimproved5" id="notimproved5" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="notimproved" <c:if test="${soap.notimproved5=='notimproved'}"><c:out value="selected"/></c:if>>Not Improved</option>
-					<option value="progressslow" <c:if test="${soap.notimproved5=='progressslow'}"><c:out value="selected"/></c:if>>Progress Slow Due to exacerbation of CC</option>
+					<option value="Progressingslow" <c:if test="${soap.notimproved5=='Progressingslow'}"><c:out value="selected"/></c:if>>Progressing Slow Due to exacerbation of CC</option>
 					<option value="mildly" <c:if test="${soap.notimproved5=='mildly'}"><c:out value="selected"/></c:if>>Mildly imp.</option>
 					<option value="moderatly" <c:if test="${soap.notimproved5=='moderatly'}"><c:out value="selected"/></c:if>>Moderatly imp.</option>
 					<option value="plateu" <c:if test="${soap.notimproved5=='plateu'}"><c:out value="selected"/></c:if>>Plateu</option>
@@ -1282,7 +1307,7 @@ $(function() {
 					<option value="offwork" <c:if test="${soap.scsm5=='offwork'}"><c:out value="selected"/></c:if>>Off Work</option>
 					<option value="lightduty" <c:if test="${soap.scsm5=='lightduty'}"><c:out value="selected"/></c:if>>Light Duty</option>
 					<option value="rom" <c:if test="${soap.scsm5=='rom'}"><c:out value="selected"/></c:if>>ROM</option>					
-					<option value="backtowork" <c:if test="${soap.scsm5=='backtowork'}"><c:out value="selected"/></c:if>>Back To Work 5 4 3 2x/wk</option>
+					<option value="backtowork" <c:if test="${soap.scsm5=='backtowork'}"><c:out value="selected"/></c:if>>Back To Work </option>
 					<option value="strengthexcer" <c:if test="${soap.scsm5=='strengthexer'}"><c:out value="selected"/></c:if>>Strength excer</option>
 					<option value="rof" <c:if test="${soap.scsm5=='rof'}"><c:out value="selected"/></c:if>>ROF</option>
 					<option value="reexam" <c:if test="${soap.scsm5=='reexam'}"><c:out value="selected"/></c:if>>Re Exam </option>
@@ -1326,7 +1351,7 @@ $(function() {
 	</select></td>
 <td> &nbsp &nbsp<select name="notimproved6" id="notimproved6" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="notimproved" <c:if test="${soap.notimproved6=='notimproved'}"><c:out value="selected"/></c:if>>Not Improved</option>
-					<option value="progressslow" <c:if test="${soap.notimproved6=='progressslow'}"><c:out value="selected"/></c:if>>Progress Slow Due to exacerbation of CC</option>
+					<option value="Progressingslow" <c:if test="${soap.notimproved6=='Progressingslow'}"><c:out value="selected"/></c:if>>Progressing Slow Due to exacerbation of CC</option>
 					<option value="mildly" <c:if test="${soap.notimproved6=='mildly'}"><c:out value="selected"/></c:if>>Mildly imp.</option>
 					<option value="moderatly" <c:if test="${soap.notimproved6=='moderatly'}"><c:out value="selected"/></c:if>>Moderatly imp.</option>
 					<option value="plateu" <c:if test="${soap.notimproved6=='plateu'}"><c:out value="selected"/></c:if>>Plateu</option>
@@ -1349,7 +1374,7 @@ $(function() {
 					<option value="offwork" <c:if test="${soap.scsm6=='offwork'}"><c:out value="selected"/></c:if>>Off Work</option>
 					<option value="lightduty" <c:if test="${soap.scsm6=='lightduty'}"><c:out value="selected"/></c:if>>Light Duty</option>
 					<option value="rom" <c:if test="${soap.scsm6=='rom'}"><c:out value="selected"/></c:if>>ROM</option>					
-					<option value="backtowork" <c:if test="${soap.scsm6=='backtowork'}"><c:out value="selected"/></c:if>>Back To Work 5 4 3 2x/wk</option>
+					<option value="backtowork" <c:if test="${soap.scsm6=='backtowork'}"><c:out value="selected"/></c:if>>Back To Work </option>
 					<option value="strengthexcer" <c:if test="${soap.scsm6=='strengthexer'}"><c:out value="selected"/></c:if>>Strength excer</option>
 					<option value="rof" <c:if test="${soap.scsm6=='rof'}"><c:out value="selected"/></c:if>>ROF</option>
 					<option value="reexam" <c:if test="${soap.scsm6=='reexam'}"><c:out value="selected"/></c:if>>Re Exam </option>
@@ -1394,7 +1419,7 @@ $(function() {
 					</select></td>
  <td>&nbsp &nbsp<select name="notimproved7" id="notimproved7" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="notimproved" <c:if test="${soap.notimproved7=='notimproved'}"><c:out value="selected"/></c:if>>Not Improved</option>
-					<option value="progressslow" <c:if test="${soap.notimproved7=='progressslow'}"><c:out value="selected"/></c:if>>Progress Slow Due to exacerbation of CC</option>
+					<option value="Progressingslow" <c:if test="${soap.notimproved7=='Progressingslow'}"><c:out value="selected"/></c:if>>Progressing Slow Due to exacerbation of CC</option>
 					<option value="mildly" <c:if test="${soap.notimproved7=='mildly'}"><c:out value="selected"/></c:if>>Mildly imp.</option>
 					<option value="moderatly" <c:if test="${soap.notimproved7=='moderatly'}"><c:out value="selected"/></c:if>>Moderatly imp.</option>
 					<option value="plateu" <c:if test="${soap.notimproved7=='plateu'}"><c:out value="selected"/></c:if>>Plateu</option>
@@ -1416,7 +1441,7 @@ $(function() {
 					<option value="offwork" <c:if test="${soap.scsm7=='offwork'}"><c:out value="selected"/></c:if>>Off Work</option>
 					<option value="lightduty" <c:if test="${soap.scsm7=='lightduty'}"><c:out value="selected"/></c:if>>Light Duty</option>
 					<option value="rom" <c:if test="${soap.scsm7=='rom'}"><c:out value="selected"/></c:if>>ROM</option>					
-					<option value="backtowork" <c:if test="${soap.scsm7=='backtowork'}"><c:out value="selected"/></c:if>>Back To Work 5 4 3 2x/wk</option>
+					<option value="backtowork" <c:if test="${soap.scsm7=='backtowork'}"><c:out value="selected"/></c:if>>Back To Work </option>
 					<option value="strengthexcer" <c:if test="${soap.scsm7=='strengthexer'}"><c:out value="selected"/></c:if>>Strength excer</option>
 					<option value="rof" <c:if test="${soap.scsm7=='rof'}"><c:out value="selected"/></c:if>>ROF</option>
 					<option value="reexam" <c:if test="${soap.scsm7=='reexam'}"><c:out value="selected"/></c:if>>Re Exam </option>
@@ -1459,7 +1484,7 @@ $(function() {
 	</select></td>
  <td>&nbsp &nbsp<select name="notimproved8" id="notimproved8" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="notimproved" <c:if test="${soap.notimproved8=='notimproved'}"><c:out value="selected"/></c:if>>Not Improved</option>
-					<option value="progressslow" <c:if test="${soap.notimproved8=='progressslow'}"><c:out value="selected"/></c:if>>Progress Slow Due to exacerbation of CC</option>
+					<option value="Progressingslow" <c:if test="${soap.notimproved8=='Progressingslow'}"><c:out value="selected"/></c:if>>Progressing Slow Due to exacerbation of CC</option>
 					<option value="mildly" <c:if test="${soap.notimproved8=='mildly'}"><c:out value="selected"/></c:if>>Mildly imp.</option>
 					<option value="moderatly" <c:if test="${soap.notimproved8=='moderatly'}"><c:out value="selected"/></c:if>>Moderatly imp.</option>
 					<option value="plateu" <c:if test="${soap.notimproved8=='plateu'}"><c:out value="selected"/></c:if>>Plateu</option>
@@ -1481,7 +1506,7 @@ $(function() {
 					<option value="offwork" <c:if test="${soap.scsm8=='offwork'}"><c:out value="selected"/></c:if>>Off Work</option>
 					<option value="lightduty" <c:if test="${soap.scsm8=='lightduty'}"><c:out value="selected"/></c:if>>Light Duty</option>
 					<option value="rom" <c:if test="${soap.scsm8=='rom'}"><c:out value="selected"/></c:if>>ROM</option>					
-					<option value="backtowork" <c:if test="${soap.scsm8=='backtowork'}"><c:out value="selected"/></c:if>>Back To Work 5 4 3 2x/wk</option>
+					<option value="backtowork" <c:if test="${soap.scsm8=='backtowork'}"><c:out value="selected"/></c:if>>Back To Work </option>
 					<option value="strengthexcer" <c:if test="${soap.scsm8=='strengthexer'}"><c:out value="selected"/></c:if>>Strength excer</option>
 					<option value="rof" <c:if test="${soap.scsm8=='rof'}"><c:out value="selected"/></c:if>>ROF</option>
 					<option value="reexam" <c:if test="${soap.scsm8=='reexam'}"><c:out value="selected"/></c:if>>Re Exam </option>
