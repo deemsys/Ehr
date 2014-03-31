@@ -372,6 +372,16 @@ color:#fff;
 									<span>Authorization Forms</span>
 								</a>
 							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='hipknee'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu26">
+									<span>Disability Index</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='symptom'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu23">
+									<span>PAIN DIAGRAM</span>
+								</a>
+							</li>
 							</c:when>
 							<c:otherwise>
 							 <ul class="menu">
@@ -404,8 +414,16 @@ color:#fff;
 									<span>Authorization Forms</span>
 								</a>
 							</li>							
-							
-							
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='hipknee'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu26">
+									<span>Disability Index</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='symptom'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu23">
+									<span>PAIN DIAGRAM</span>
+								</a>
+							</li>
 							</c:otherwise>
 							</c:choose>
 							</c:if>
@@ -465,11 +483,7 @@ color:#fff;
 									<span>Initial Exam & Re Exam</span>
 								</a>
 							</li> --%>
-							<li>
-								<a href="#" class="<c:choose><c:when test="${menu=='symptom'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu23">
-									<span>Symptom</span>
-								</a>
-							</li>
+							
 							<%-- <li>
 								<a href="#" class="<c:choose><c:when test="${menu=='therapy'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu24">
 									<span>Manual Therapy Treatment</span>
@@ -483,16 +497,8 @@ color:#fff;
 							</li>
 
 
-							<li>
-								<a href="#" class="<c:choose><c:when test="${menu=='hipknee'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu26">
-									<span>Hip And Knee Questionnarie</span>
-								</a>
-							</li>
-							<li>
-								<a href="#" class="<c:choose><c:when test="${menu=='dcfee'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu27">
-									<span>Dc Fee Slip</span>
-								</a>
-							</li>
+							
+							
 							<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='duties'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu29">
 									<span>Duties Under Duress Summary </span>
@@ -548,11 +554,11 @@ color:#fff;
 									<span>Initial Exam & Re Exam</span>
 								</a>
 							</li> --%>
-							<li>
+							<%-- <li>
 								<a href="#" class="<c:choose><c:when test="${menu=='symptom'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu23">
 									<span>Symptom</span>
 								</a>
-							</li>
+							</li> --%>
 							<%-- <li>
 								<a href="#" class="<c:choose><c:when test="${menu=='therapy'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu24">
 									<span>Manual Therapy Treatment</span>
@@ -566,16 +572,16 @@ color:#fff;
 							</li>
 
 
-							<li>
+							<%-- <li>
 								<a href="#" class="<c:choose><c:when test="${menu=='hipknee'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu26">
 									<span>Hip And Knee Questionnarie</span>
 								</a>
-							</li>
-							<li>
+							</li> --%>
+						<%-- 	<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='dcfee'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu27">
 									<span>Dc Fee Slip</span>
 								</a>
-							</li>
+							</li> --%>
 							<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='duties'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu29">
 									<span>Duties Under Duress Summary </span>
@@ -630,11 +636,11 @@ color:#fff;
 									<span>Initial Exam & Re Exam</span>
 								</a>
 							</li> --%>
-							<li>
+							<%-- <li>
 								<a href="#" class="<c:choose><c:when test="${menu=='symptom'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu23">
 									<span>Symptom</span>
 								</a>
-							</li>
+							</li> --%>
 							<%-- <li>
 								<a href="#" class="<c:choose><c:when test="${menu=='therapy'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu24">
 									<span>Manual Therapy Treatment</span>
@@ -648,16 +654,16 @@ color:#fff;
 							</li>
 
 
-							<li>
+							<%-- <li>
 								<a href="#" class="<c:choose><c:when test="${menu=='hipknee'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu26">
 									<span>Hip And Knee Questionnarie</span>
 								</a>
-							</li>
-							<li>
+							</li> --%>
+							<%-- <li>
 								<a href="#" class="<c:choose><c:when test="${menu=='dcfee'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu27">
 									<span>Dc Fee Slip</span>
 								</a>
-							</li>
+							</li> --%>
 							<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='duties'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu29">
 									<span>Duties Under Duress Summary </span>
@@ -712,11 +718,11 @@ color:#fff;
 									<span>Initial Exam & Re Exam</span>
 								</a>
 							</li> --%>
-							<li>
+							<%-- <li>
 								<a href="#" class="<c:choose><c:when test="${menu=='symptom'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu23">
 									<span>Symptom</span>
 								</a>
-							</li>
+							</li> --%>
 							<%-- <li>
 								<a href="#" class="<c:choose><c:when test="${menu=='therapy'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu24">
 									<span>Manual Therapy Treatment</span>
@@ -730,16 +736,16 @@ color:#fff;
 							</li>
 
 
-							<li>
+							<%-- <li>
 								<a href="#" class="<c:choose><c:when test="${menu=='hipknee'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu26">
 									<span>Hip And Knee Questionnarie</span>
 								</a>
-							</li>
-							<li>
+							</li> --%>
+							<%-- <li>
 								<a href="#" class="<c:choose><c:when test="${menu=='dcfee'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu27">
 									<span>Dc Fee Slip</span>
 								</a>
-							</li>
+							</li> --%>
 							<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='duties'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu29">
 									<span>Duties Under Duress Summary </span>
@@ -778,11 +784,11 @@ color:#fff;
 									<span>Initial Exam & Re Exam</span>
 								</a>
 							</li> --%>
-							<li>
+							<%-- <li>
 								<a href="#" class="<c:choose><c:when test="${menu=='symptom'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu23">
 									<span>Symptom</span>
 								</a>
-							</li>
+							</li> --%>
 							<%-- <li>
 								<a href="#" class="<c:choose><c:when test="${menu=='therapy'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu24">
 									<span>Manual Therapy Treatment</span>
@@ -796,16 +802,16 @@ color:#fff;
 							</li>
 
 
-							<li>
+						<%-- 	<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='hipknee'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu26">
 									<span>Hip And Knee Questionnarie</span>
 								</a>
-							</li>
-							<li>
+							</li> --%>
+							<%-- <li>
 								<a href="#" class="<c:choose><c:when test="${menu=='dcfee'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu27">
 									<span>Dc Fee Slip</span>
 								</a>
-							</li>
+							</li> --%>
 							<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='duties'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu29">
 									<span>Duties Under Duress Summary </span>
@@ -845,11 +851,11 @@ color:#fff;
 									<span>Initial Exam & Re Exam</span>
 								</a>
 							</li> --%>
-							<li>
+							<%-- <li>
 								<a href="#" class="<c:choose><c:when test="${menu=='symptom'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu23">
 									<span>Symptom</span>
 								</a>
-							</li>
+							</li> --%>
 							<%-- <li>
 								<a href="#" class="<c:choose><c:when test="${menu=='therapy'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu24">
 									<span>Manual Therapy Treatment</span>
@@ -863,16 +869,12 @@ color:#fff;
 							</li>
 
 
-							<li>
+							<%-- <li>
 								<a href="#" class="<c:choose><c:when test="${menu=='hipknee'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu26">
 									<span>Hip And Knee Questionnarie</span>
 								</a>
-							</li>
-							<li>
-								<a href="#" class="<c:choose><c:when test="${menu=='dcfee'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu27">
-									<span>Dc Fee Slip</span>
-								</a>
-							</li>
+							</li> --%>
+							
 							<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='duties'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu29">
 									<span>Duties Under Duress Summary </span>
@@ -909,11 +911,11 @@ color:#fff;
 									<span>Initial Exam & Re Exam</span>
 								</a>
 							</li> --%>
-							<li>
+						<%-- 	<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='symptom'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu23">
 									<span>Symptom</span>
 								</a>
-							</li>
+							</li> --%>
 							<%-- <li>
 								<a href="#" class="<c:choose><c:when test="${menu=='therapy'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu24">
 									<span>Manual Therapy Treatment</span>
@@ -927,16 +929,11 @@ color:#fff;
 							</li>
 
 
-							<li>
+						<%-- 	<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='hipknee'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu26">
 									<span>Hip And Knee Questionnarie</span>
 								</a>
-							</li>
-							<li>
-								<a href="#" class="<c:choose><c:when test="${menu=='dcfee'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu27">
-									<span>Dc Fee Slip</span>
-								</a>
-							</li>
+							</li> --%>
 							<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='duties'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu29">
 									<span>Duties Under Duress Summary </span>
@@ -962,11 +959,11 @@ color:#fff;
 									<span>Initial Exam & Re Exam</span>
 								</a>
 							</li> --%>
-							<li>
+							<%-- <li>
 								<a href="#" class="<c:choose><c:when test="${menu=='symptom'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu23">
 									<span>Symptom</span>
 								</a>
-							</li>
+							</li> --%>
 							<%-- <li>
 								<a href="#" class="<c:choose><c:when test="${menu=='therapy'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu24">
 									<span>Manual Therapy Treatment</span>
@@ -977,17 +974,12 @@ color:#fff;
 									<span>Wrist/Hand Disability Index</span>
 								</a>
 							</li>
-							<li>
+						<%-- 	<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='hipknee'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu26">
 									<span>Hip And Knee Questionnarie</span>
 								</a>
-							</li>
-							<li>
-								<a href="#" class="<c:choose><c:when test="${menu=='dcfee'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu27">
-									<span>Dc Fee Slip</span>
-								</a>
-							</li>
-							
+							</li> --%>
+														
 							<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='duties'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu29">
 									<span>Duties Under Duress Summary </span>
@@ -1037,6 +1029,11 @@ color:#fff;
 							<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='returntoschool'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu35">
 									<span>Work School</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="<c:choose><c:when test="${menu=='dcfee'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu27">
+									<span>Dc Fee Slip</span>
 								</a>
 							</li>
 							</c:if>  
@@ -1269,8 +1266,8 @@ color:#fff;
 							     </li>
 				         </ul>
 				         --> <ul id="ddsubmenu23" class="ddsubmenustyle">
-							      <li><a href="symptom" >Symptom</a></li>
-							      <li><a href="viewsymptom">View Symptom</a></li>
+							      <li><a href="symptom" >Pain Diagram</a></li>
+							      <!-- <li><a href="viewsymptom">View Symptom</a></li> -->
 							     </ul>
 							     </li>
 				         </ul>
@@ -1293,12 +1290,9 @@ color:#fff;
 							     </li>
 				         </ul>
 				         <ul id="ddsubmenu26" class="ddsubmenustyle">
-							      <li><a href="hipquestionnaire" >Hip And Knee Questionnarie</a></li>
-							      <li><a href="viewhipquestionnaire">View Hip And Knee Questionnarie</a></li>
-							      <li><a href="footquestionnarie" >Foot And Ankle Questionnarie</a></li>
-							      <li><a href="viewfootquestionnarie">View Foot And Ankle Questionnarie</a></li>
-							     
-							     </ul>
+							      <li><a href="hipquestionnaire" >Hip And Knee Questionnarie</a></li>							      
+							      <li><a href="footquestionnarie" >Foot And Ankle Questionnarie</a></li>			  
+					    </ul>
 							     </li>
 				         </ul>
 				          <ul id="ddsubmenu27" class="ddsubmenustyle">

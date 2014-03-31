@@ -102,6 +102,8 @@ import bephit.dao.*;
 public class DoctorController {
 
 	@Autowired  
+	PatientDAO patientDAO;
+	@Autowired  
 	HipexamDAO hipexamDAO;
 	@Autowired
 	LumbopelvicexamDAO lumboDAO;
@@ -1886,18 +1888,36 @@ if(result.hasErrors())
 		return "viewduties";
 	}
 	@RequestMapping(value="/footquestionnarie", method = RequestMethod.GET)
-	public String viewingfootquestionnarie(HttpSession session, ModelMap model) {
+	public String viewingfootquestionnarie(HttpSession session, ModelMap model,Principal principal) {
 		
 		session.removeAttribute("fquestionnarie");
+		if(patientDAO.getUsername(principal).size()>0)
+		{			
+	   model.addAttribute("patientno","0");
+	}
+		
 		model.addAttribute("menu","hipknee");
+		String username=principal.getName();
+		if(footDAO.getusernameFoot(username).size()>0)
+		{
+		FootquestionnarieForm footquestionnarieForm = new FootquestionnarieForm();       
+        footquestionnarieForm.setFootquestionnariedetails(footDAO.getusernameFoot(username));
+        model.addAttribute("footquestionnarieForm",footquestionnarieForm);	        
+		return "editfootquestionnarie";
+		}
+		
 		return "footquestionnarie";
  
 	}
 	
 	@RequestMapping(value="/footquestionnarie", method = RequestMethod.POST)
-	public String insert_footquestionnarie(HttpServletRequest request,HttpSession session,@ModelAttribute("Footquestionnarie")  @Valid Footquestionnarie footquestionnarie,BindingResult result,ModelMap model) {
+	public String insert_footquestionnarie(Principal principal,HttpServletRequest request,HttpSession session,@ModelAttribute("Footquestionnarie")  @Valid Footquestionnarie footquestionnarie,BindingResult result,ModelMap model) {
 		
-        session.setAttribute("fquestionnarie", footquestionnarie);
+		if(patientDAO.getUsername(principal).size()>0)
+		{			
+	   model.addAttribute("patientno","0");
+	}
+		session.setAttribute("fquestionnarie", footquestionnarie);
 		if(result.hasErrors())
 		{
 		
@@ -1908,11 +1928,12 @@ if(result.hasErrors())
 			model.addAttribute("menu", "hipknee");
 			return "footquestionnarie";
 		}
+		String username=principal.getName();
 		model.put("Footquestionnarie", footquestionnarie);
 		model.addAttribute("footquestionnarieForm",footquestionnarie);
-    	int a=footDAO.setFootquestionnarie(footquestionnarie);
+    	int a=footDAO.setFootquestionnarie(footquestionnarie,username);
 		FootquestionnarieForm footquestionnarieForm= new FootquestionnarieForm();
-		footquestionnarieForm.setFootquestionnariedetails(footDAO.getFootquestionnarie());
+		footquestionnarieForm.setFootquestionnariedetails(footDAO.getusernameFoot(username));
 		model.addAttribute("footquestionnarieForm",footquestionnarieForm);
 		return "viewfootquestionnarie";
  
@@ -2001,29 +2022,37 @@ if(result.hasErrors())
 	public String updatefootquestionnarie(HttpServletRequest request,ModelMap model,@ModelAttribute("Footquestionnarie") @Valid Footquestionnarie footquestionnarie,
 			BindingResult result,Principal principal)
 	{
-		
+		String username=principal.getName();
 		if (result.hasErrors())
 		{
 			FootquestionnarieForm footquestionnarieForm = new FootquestionnarieForm();
 	     
-	       footquestionnarieForm.setFootquestionnariedetails(footDAO.getFoot(footquestionnarie.getFootquestionno()));
+	       footquestionnarieForm.setFootquestionnariedetails(footDAO.getFoot(username));
 	      
 	        model.addAttribute("footquestionnarieForm", footquestionnarieForm);
 	        model.addAttribute("menu", "hipknee");    
 		        return "editfootquestionnarie";
 		}
-		int status = footDAO.updatefootquestionnarie(footquestionnarie,footquestionnarie.getFootquestionno(), principal.getName());
-		System.out.println(status);
-		
-		FootquestionnarieForm footquestionnarieForm = new FootquestionnarieForm();
-        
-       footquestionnarieForm.setFootquestionnariedetails(footDAO.getFootquestionnarie());
-       
-        model.addAttribute("footquestionnarieForm", footquestionnarieForm);
-	        return "viewfootquestionnarie";
+	   int status = footDAO.updatefootquestionnarie(footquestionnarie,footquestionnarie.getFootquestionno(), principal.getName());
+	   System.out.println(status);	
+	   FootquestionnarieForm footquestionnarieForm = new FootquestionnarieForm();        
+       footquestionnarieForm.setFootquestionnariedetails(footDAO.getusernameFoot(username));       
+       model.addAttribute("footquestionnarieForm", footquestionnarieForm);
+	   return "viewfootquestionnarie";
 		
 	}
 	
+	@RequestMapping(value="/deletefootquestionnariedetials", method=RequestMethod.GET)
+	public String removedelete(ModelMap model, Principal principal) {	
+		if(patientDAO.getUsername(principal).size()>0)
+		{			
+	   model.addAttribute("patientno","0");
+	}
+		String username=principal.getName();
+		int status=footDAO.deletefootdetails(username);
+		model.addAttribute("menu","hipknee");
+		return "footquestionnarie";
+	}
 	@RequestMapping(value="/deletefootquestionnarie", method=RequestMethod.GET)
 	public String removedelete(@RequestParam("footquestionno") String footquestionno,ModelMap model, Principal principal) {
 	

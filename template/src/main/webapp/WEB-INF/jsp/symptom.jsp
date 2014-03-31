@@ -101,10 +101,12 @@ $(function() {
   <script>
  $(window).load(function(){
 var oldValue = "";
+ $("#snaptarget").offset({left:479,top:286})
+/* $("#bodyfront").offset({left:108,top:330}) */
 if(document.getElementById("achesleft").value!=0 && document.getElementById("achestop").value!=0) 
 {
 $("#draggable").offset({ left:  document.getElementById("achesleft").value, top:  document.getElementById("achestop").value})
-}
+} 
 if(document.getElementById("achesleft1").value!=0 && document.getElementById("achestop1").value!=0) 
 {
 $("#draggable1").offset({ left:  document.getElementById("achesleft1").value, top:  document.getElementById("achestop1").value})
@@ -302,6 +304,7 @@ if(document.getElementById("stableft9").value!=0 && document.getElementById("sta
 $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:  document.getElementById("stabtop9").value})
 }
 
+
     });
 
  
@@ -329,9 +332,10 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
     	             */
     	             $('#position').text('x: ' + xPos);
     	            $('#position1').text('y: ' + yPos); 
-    	       }, revert: 'invalid'
+    	       },stack: "#draggable",revert: 'invalid'
     	    });   		
- 
+    	   /*  $( "#bodyfront" ).draggable({ stack: "#bodyfront" }); */
+ /* $( "#snaptarget" ).draggable({ stack: "#snaptarget" }); */
     $('#draggable1').draggable(
     	    {
     	        drag: function(){
@@ -1129,11 +1133,13 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
     	        },
     	         revert: 'invalid'
     	    }); 
-    /* drop: function( event, ui ) {
+    	 
+    	  
+    	   /* drop: function( event, ui ) {
     	
     } */
     
-    $( "#droppable" ).droppable({
+    $( "#snaptarget" ).droppable({
      
       drop: function( event, ui ) {
     	
@@ -1150,7 +1156,7 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
        
       }
     });
-     $( "#bodyfront" ).droppable({
+    /*  $( "#bodyfront" ).droppable({
       
       drop: function( event, ui ) { 
     	 
@@ -1194,7 +1200,7 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
     	           
        
       }
-    });
+    }); */
     $( "#bodyback" ).droppable({
      
    	 
@@ -1291,12 +1297,13 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
 	     
 <form action="insertsymptom" method="POST">  
 	      <div id="right_content">
+	
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
 <tr>
 <td valign="top" align="left">
  <div>
 	            <div class="headings altheading">
-	            <center> <h2>SYMPTOM DIAGRAM</h2></center><br/>
+	            <center> <h2>PAIN DIAGRAM</h2></center><br/>
 	            
 	            </div>
 	           
@@ -1304,7 +1311,7 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
 	     <div class="contentbox">
 	      <c:choose>
 		 <c:when test="${empty symptoms}">
-	  
+	 
           <table cellpadding="0" cellspacing="0" border="0" width="98%" height="20" >
           <tr><td width="100"><span class="err">*</span>Name</td><td width="300"><input type="text" name="pname"><span class="err"><form:errors path="symptom.pname"></form:errors></td>
 <td  width="100">Number</td><td width="100"><input type="text" name="number"></td>
@@ -1312,6 +1319,17 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
 </tr></table>
 </br>
 <p>Please be sure to fill this form out extremely accurately.Mark the area(s) on your body where you feel the described sensation(s).Use the appropriate symbol(s).Mark areas of radiating pain, and include all affected areas.You may draw on the face as well.</p>
+ 
+
+ <!-- <!-- <div class="ui-widget-content">
+    <p> <img id="snaptarget" alt="" src="resources/images/bodyfront.png">.SDAMDPSADSANDKSND.dragmesnaptargetimagewhose z-indexes are controlled automatically..</p>
+  </div> --> 
+
+  <div style="width: 320;height:300;border-bottom-color: red;;border-color: black;" class="ui-widget-content"  id="snaptarget"><table width="98%"><tr><td align="right">
+    <img  alt="" src="resources/images/bodyfront.png"> </td><td align="left" valign="top" width="55"><img   alt="" src="resources/images/face.png" >
+ </td><td align="left">
+    <img   alt="" src="resources/images/bodyback.png"> </td></tr> </table> </div>
+ 
  <table border="0"><tr>
  <td width="100">
  <b>Aches:</b></td>
@@ -1656,13 +1674,9 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
           
           
           
-           </tr></table>
-           </br>
+           </tr></table>           </br>
            
-         <table width="98%"><tr><td align="right">
-    <img id= "bodyfront" alt="" src="resources/images/bodyfront.png"> </td><td align="left" valign="top" width="55"><img  id= "droppable" alt="" src="resources/images/face.png" >
- </td><td align="left">
-    <img  id= "bodyback" alt="" src="resources/images/bodyback.png"> </td></tr> </table> 
+         
     
  </br>
 </br>
@@ -1857,6 +1871,11 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
 </tr></table>
 </br>
 <p>Please be sure to fill this form out extremely accurately.Mark the area(s) on your body where you feel the described sensation(s).Use the appropriate symbol(s).Mark areas of radiating pain, and include all affected areas.You may draw on the face as well.</p>
+ <div style="width: 320;height:300;border-bottom-color: red;;border-color: black;" class="ui-widget-content"  id="snaptarget"><table width="98%"><tr><td align="right">
+    <img  alt="" src="resources/images/bodyfront.png"> </td><td align="left" valign="top" width="55"><img   alt="" src="resources/images/face.png" >
+ </td><td align="left">
+    <img   alt="" src="resources/images/bodyback.png"> </td></tr> </table> </div>
+ 
  <table><tr><td width="100"><b>Aches:</b></td><td>
 <div id="draggable" >
 <img id="1" class="ui-widget-content" src="${symptoms.achepath}" width="10px" height="10px" > 
@@ -2197,11 +2216,11 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
  
  
          </br>
-         <table width="98%"><tr><td align="right">
-    <img id= "bodyfront" alt="" src="resources/images/bodyfront.png"> </td><td align="left" valign="top" width="55"><img  id= "droppable" alt="" src="resources/images/face.png" >
+        <!--  <table width="98%"><tr><td align="right">
+    <img alt="" src="resources/images/bodyfront.png"> </td><td align="left" valign="top" width="55"><img   alt="" src="resources/images/face.png" >
  </td><td align="left">
-    <img  id= "bodyback" alt="" src="resources/images/bodyback.png"> </td></tr> </table>
-    
+    <img   alt="" src="resources/images/bodyback.png"> </td></tr> </table>
+     -->
     
     
     

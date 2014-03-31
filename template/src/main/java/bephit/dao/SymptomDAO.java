@@ -224,7 +224,7 @@ public class SymptomDAO
     		return 0;
 	}
 	
-	public int insertsymptomimage(Symptom symptom)
+	public int insertsymptomimage(Symptom symptom,String username)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -234,8 +234,9 @@ public class SymptomDAO
 			con = dataSource.getConnection();
 			statement = con.createStatement();
 			String d;
-			d=("insert into symptom(pname,number,date,achepath,acheleft,achetop,achepath1,acheleft1,achetop1,achepath2,acheleft2,achetop2,achepath3,acheleft3,achetop3,achepath4,acheleft4,achetop4,achepath5,acheleft5,achetop5,achepath6,acheleft6,achetop6,achepath7,acheleft7,achetop7,achepath8,acheleft8,achetop8,achepath9,acheleft9,achetop9,numbpath,numbleft,numbtop,numbpath1,numbleft1,numbtop1,numbpath2,numbleft2,numbtop2,numbpath3,numbleft3,numbtop3,numbpath4,numbleft4,numbtop4,numbpath5,numbleft5,numbtop5,numbpath6,numbleft6,numbtop6,numbpath7,numbleft7,numbtop7,numbpath8,numbleft8,numbtop8,numbpath9,numbleft9,numbtop9,pinpath,pinleft,pintop,pinpath1,pinleft1,pintop1,pinpath2,pinleft2,pintop2,pinpath3,pinleft3,pintop3,pinpath4,pinleft4,pintop4,pinpath5,pinleft5,pintop5,pinpath6,pinleft6,pintop6,pinpath7,pinleft7,pintop7,pinpath8,pinleft8,pintop8,pinpath9,pinleft9,pintop9,burnpath,burnleft,burntop,burnpath1,burnleft1,burntop1,burnpath2,burnleft2,burntop2,burnpath3,burnleft3,burntop3,burnpath4,burnleft4,burntop4,burnpath5,burnleft5,burntop5,burnpath6,burnleft6,burntop6,burnpath7,burnleft7,burntop7,burnpath8,burnleft8,burntop8,burnpath9,burnleft9,burntop9,stabpath,stableft,stabtop,stabpath1,stableft1,stabtop1,stabpath2,stableft2,stabtop2,stabpath3,stableft3,stabtop3,stabpath4,stableft4,stabtop4,stabpath5,stableft5,stabtop5,stabpath6,stableft6,stabtop6,stabpath7,stableft7,stabtop7,stabpath8,stableft8,stabtop8,stabpath9,stableft9,stabtop9)values('"
-					+symptom.getPname()
+			d=("insert into symptom(username,pname,number,date,achepath,acheleft,achetop,achepath1,acheleft1,achetop1,achepath2,acheleft2,achetop2,achepath3,acheleft3,achetop3,achepath4,acheleft4,achetop4,achepath5,acheleft5,achetop5,achepath6,acheleft6,achetop6,achepath7,acheleft7,achetop7,achepath8,acheleft8,achetop8,achepath9,acheleft9,achetop9,numbpath,numbleft,numbtop,numbpath1,numbleft1,numbtop1,numbpath2,numbleft2,numbtop2,numbpath3,numbleft3,numbtop3,numbpath4,numbleft4,numbtop4,numbpath5,numbleft5,numbtop5,numbpath6,numbleft6,numbtop6,numbpath7,numbleft7,numbtop7,numbpath8,numbleft8,numbtop8,numbpath9,numbleft9,numbtop9,pinpath,pinleft,pintop,pinpath1,pinleft1,pintop1,pinpath2,pinleft2,pintop2,pinpath3,pinleft3,pintop3,pinpath4,pinleft4,pintop4,pinpath5,pinleft5,pintop5,pinpath6,pinleft6,pintop6,pinpath7,pinleft7,pintop7,pinpath8,pinleft8,pintop8,pinpath9,pinleft9,pintop9,burnpath,burnleft,burntop,burnpath1,burnleft1,burntop1,burnpath2,burnleft2,burntop2,burnpath3,burnleft3,burntop3,burnpath4,burnleft4,burntop4,burnpath5,burnleft5,burntop5,burnpath6,burnleft6,burntop6,burnpath7,burnleft7,burntop7,burnpath8,burnleft8,burntop8,burnpath9,burnleft9,burntop9,stabpath,stableft,stabtop,stabpath1,stableft1,stabtop1,stabpath2,stableft2,stabtop2,stabpath3,stableft3,stabtop3,stabpath4,stableft4,stabtop4,stabpath5,stableft5,stabtop5,stabpath6,stableft6,stabtop6,stabpath7,stableft7,stabtop7,stabpath8,stableft8,stabtop8,stabpath9,stableft9,stabtop9)values('"
+					+username
+					+"','" +symptom.getPname()
 					+"','" +symptom.getNumber()
 					+"','" +symptom.getDate()
 					+"','"+symptom.getAchepath()
@@ -637,6 +638,225 @@ public class SymptomDAO
     	
   
 		return 0;
+	}
+	public int deletesymptom(String username)
+	{
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		int flag=0;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		
+	    try{
+	    	System.out.print("database");
+			statement.executeUpdate("delete from symptom where username='"+username+"'");
+	        System.out.println("deleted");
+	        flag=1;
+	}catch(Exception e){
+    	releaseResultSet(resultSet);
+    	releaseStatement(statement);
+    	releaseConnection(con);
+    	flag=0;
+    }finally{
+    	releaseResultSet(resultSet);
+    	releaseStatement(statement);
+    	releaseConnection(con);	    	
+    }
+    if(flag==1)
+    {
+    	return 1;
+    }
+    	
+  
+		return 0;
+	}
+	public List<Symptom> getusernamesymptomDetails(String admin){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<Symptom> symptom = new ArrayList<Symptom>();
+	    try{
+	    	System.out.print("database");
+			resultSet = statement.executeQuery("select * from symptom where username='"+admin+"'");
+			while(resultSet.next()){
+				symptom.add(new Symptom(resultSet.getString("symptomno"),
+						resultSet.getString("pname"),
+						resultSet.getString("number"),
+						resultSet.getString("date"),
+						resultSet.getString("achepath"),
+						resultSet.getString("acheleft"),
+						resultSet.getString("achetop"),
+						resultSet.getString("achepath1"),
+						resultSet.getString("acheleft1"),
+						resultSet.getString("achetop1"),
+						resultSet.getString("achepath2"),
+						resultSet.getString("acheleft2"),
+						resultSet.getString("achetop2"),
+						resultSet.getString("achepath3"),
+						resultSet.getString("acheleft3"),
+						resultSet.getString("achetop3"),
+						resultSet.getString("achepath4"),
+						resultSet.getString("acheleft4"),
+						resultSet.getString("achetop4"),
+						resultSet.getString("achepath5"),
+						resultSet.getString("acheleft5"),
+						resultSet.getString("achetop5"),
+						resultSet.getString("achepath6"),
+						resultSet.getString("acheleft6"),
+						resultSet.getString("achetop6"),
+						resultSet.getString("achepath7"),
+						resultSet.getString("acheleft7"),
+						resultSet.getString("achetop7"),
+						resultSet.getString("achepath8"),
+						resultSet.getString("acheleft8"),
+						resultSet.getString("achetop8"),
+						resultSet.getString("achepath9"),
+						resultSet.getString("acheleft9"),
+						resultSet.getString("achetop9"),						
+						resultSet.getString("numbpath"),
+						resultSet.getString("numbleft"),
+						resultSet.getString("numbtop"),
+						resultSet.getString("numbpath1"),
+						resultSet.getString("numbleft1"),
+						resultSet.getString("numbtop1"),
+						resultSet.getString("numbpath2"),
+						resultSet.getString("numbleft2"),
+						resultSet.getString("numbtop2"),
+						resultSet.getString("numbpath3"),
+						resultSet.getString("numbleft3"),
+						resultSet.getString("numbtop3"),
+						resultSet.getString("numbpath4"),
+						resultSet.getString("numbleft4"),
+						resultSet.getString("numbtop4"),
+						resultSet.getString("numbpath5"),
+						resultSet.getString("numbleft5"),
+						resultSet.getString("numbtop5"),
+						resultSet.getString("numbpath6"),
+						resultSet.getString("numbleft6"),
+						resultSet.getString("numbtop6"),
+						resultSet.getString("numbpath7"),
+						resultSet.getString("numbleft7"),
+						resultSet.getString("numbtop7"),
+						resultSet.getString("numbpath8"),
+						resultSet.getString("numbleft8"),
+						resultSet.getString("numbtop8"),
+						resultSet.getString("numbpath9"),
+						resultSet.getString("numbleft9"),
+						resultSet.getString("numbtop9"),
+						resultSet.getString("pinpath"),
+						resultSet.getString("pinleft"),
+						resultSet.getString("pintop"),
+						resultSet.getString("pinpath1"),
+						resultSet.getString("pinleft1"),
+						resultSet.getString("pintop1"),
+						resultSet.getString("pinpath2"),
+						resultSet.getString("pinleft2"),
+						resultSet.getString("pintop2"),
+						resultSet.getString("pinpath3"),
+						resultSet.getString("pinleft3"),
+						resultSet.getString("pintop3"),
+						resultSet.getString("pinpath4"),
+						resultSet.getString("pinleft4"),
+						resultSet.getString("pintop4"),
+						resultSet.getString("pinpath5"),
+						resultSet.getString("pinleft5"),
+						resultSet.getString("pintop5"),
+						resultSet.getString("pinpath6"),
+						resultSet.getString("pinleft6"),
+						resultSet.getString("pintop6"),
+						resultSet.getString("pinpath7"),
+						resultSet.getString("pinleft7"),
+						resultSet.getString("pintop7"),
+						resultSet.getString("pinpath8"),
+						resultSet.getString("pinleft8"),
+						resultSet.getString("pintop8"),
+						resultSet.getString("pinpath9"),
+						resultSet.getString("pinleft9"),
+						resultSet.getString("pintop9"),
+						resultSet.getString("burnpath"),
+						resultSet.getString("burnleft"),
+						resultSet.getString("burntop"),
+						resultSet.getString("burnpath1"),
+						resultSet.getString("burnleft1"),
+						resultSet.getString("burntop1"),
+						resultSet.getString("burnpath2"),
+						resultSet.getString("burnleft2"),
+						resultSet.getString("burntop2"),
+						resultSet.getString("burnpath3"),
+						resultSet.getString("burnleft3"),
+						resultSet.getString("burntop3"),
+						resultSet.getString("burnpath4"),
+						resultSet.getString("burnleft4"),
+						resultSet.getString("burntop4"),
+						resultSet.getString("burnpath5"),
+						resultSet.getString("burnleft5"),
+						resultSet.getString("burntop5"),
+						resultSet.getString("burnpath6"),
+						resultSet.getString("burnleft6"),
+						resultSet.getString("burntop6"),
+						resultSet.getString("burnpath7"),
+						resultSet.getString("burnleft7"),
+						resultSet.getString("burntop7"),
+						resultSet.getString("burnpath8"),
+						resultSet.getString("burnleft8"),
+						resultSet.getString("burntop8"),
+						resultSet.getString("burnpath9"),
+						resultSet.getString("burnleft9"),
+						resultSet.getString("burntop9"),
+						
+						resultSet.getString("stabpath"),
+						resultSet.getString("stableft"),
+						resultSet.getString("stabtop"),
+						resultSet.getString("stabpath1"),
+						resultSet.getString("stableft1"),
+						resultSet.getString("stabtop1"),
+						resultSet.getString("stabpath2"),
+						resultSet.getString("stableft2"),
+						resultSet.getString("stabtop2"),
+						resultSet.getString("stabpath3"),
+						resultSet.getString("stableft3"),
+						resultSet.getString("stabtop3"),
+						resultSet.getString("stabpath4"),
+						resultSet.getString("stableft4"),
+						resultSet.getString("stabtop4"),
+						resultSet.getString("stabpath5"),
+						resultSet.getString("stableft5"),
+						resultSet.getString("stabtop5"),
+						resultSet.getString("stabpath6"),
+						resultSet.getString("stableft6"),
+						resultSet.getString("stabtop6"),
+						resultSet.getString("stabpath7"),
+						resultSet.getString("stableft7"),
+						resultSet.getString("stabtop7"),
+						resultSet.getString("stabpath8"),
+						resultSet.getString("stableft8"),
+						resultSet.getString("stabtop8"),
+						resultSet.getString("stabpath9"),
+						resultSet.getString("stableft9"),
+						resultSet.getString("stabtop9")						));
+			}
+	    }catch(Exception e){
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    }finally{
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);	    	
+	    }
+	    return symptom;
+		
 	}
 	public List<Symptom> getsymptomDetails(String symptomexamno){
 		Connection con = null;

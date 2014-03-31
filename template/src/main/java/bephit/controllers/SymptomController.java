@@ -117,9 +117,10 @@ public class SymptomController {
 	
 	
 	@RequestMapping(value = "/viewsymptom", method = RequestMethod.GET)
-	public String viewsymptom(ModelMap model) {
+	public String viewsymptom(ModelMap model,Principal principal) {
+		String username=principal.getName();
 		SymptomForm symptomform = new SymptomForm();
-		symptomform.setSymptomdetails(symptomdao.getsymptomDetails());
+		symptomform.setSymptomdetails(symptomdao.getusernamesymptomDetails(username));
 		model.addAttribute("symptomform", symptomform);
 		model.addAttribute("menu", "symptom");
 		model.addAttribute("noofrows",symptomform.getSymptomdetails().size());       
@@ -182,9 +183,8 @@ public class SymptomController {
 	}
 
 	@RequestMapping(value = "/editsymptom", method = RequestMethod.GET)
-	public String editsymptom(
-			@RequestParam(value = "symptomno") String symptomno, ModelMap model) {
-		System.out.println("sym" + symptomno);
+	public String editsymptom(@RequestParam(value = "symptomno") String symptomno, ModelMap model) {
+		
 		SymptomForm symptomform = new SymptomForm();
 		symptomform.setSymptomdetails(symptomdao.getsymptomDetails(symptomno));
 		model.addAttribute("symptomform", symptomform);
@@ -202,6 +202,21 @@ public class SymptomController {
 		model.addAttribute("symptomform", symptomform);
 		model.addAttribute("menu", "symptom");
 		return "viewsymptom";
+	}
+	@RequestMapping(value = "/deletesymptomdetails", method = RequestMethod.GET)
+	public String deletesymptom(ModelMap model,Principal principal) {
+		if(patientDAO.getUsername(principal).size()>0)
+		{			
+	   model.addAttribute("patientno","0");
+	}
+		String username=principal.getName();
+		symptomdao.deletesymptom(username);
+		/*SymptomForm symptomform = new SymptomForm();
+		symptomform.setSymptomdetails(symptomdao.getsymptomDetails(username));
+		model.addAttribute("symptomform", symptomform);*/
+		
+		model.addAttribute("menu", "symptom");
+		return "symptom";
 	}
 
 	@RequestMapping (value="/manual", method = RequestMethod.GET)
@@ -305,10 +320,21 @@ public class SymptomController {
 		return "manualtherapylist";
 	}
 	@RequestMapping(value = "/symptom", method = RequestMethod.GET)
-	public String exam(HttpSession session, ModelMap model) {
+	public String exam(HttpSession session, ModelMap model,Principal principal) {
 		session.removeAttribute("symptoms");
+		if(patientDAO.getUsername(principal).size()>0)
+		{			
+	   model.addAttribute("patientno","0");
+	}
 		model.addAttribute("menu", "symptom");
-
+		String admin=principal.getName();
+          if(symptomdao.getusernamesymptomDetails(admin).size()>0)
+          {
+        	SymptomForm symptomform = new SymptomForm();
+      		symptomform.setSymptomdetails(symptomdao.getusernamesymptomDetails(admin));
+      		model.addAttribute("symptomform", symptomform);      		
+      		return "editsymptom"; 
+          }
 		return "symptom";
 	}
 
@@ -326,26 +352,46 @@ public class SymptomController {
 
 
 	@RequestMapping(value = "/hipquestionnaire", method = RequestMethod.GET)
-	public String hipquestionnaireindex(HttpSession session,ModelMap model) {
+	public String hipquestionnaireindex(HttpSession session,ModelMap model,Principal principal) {
 		session.removeAttribute("hipquestionnairedetails");
+
+		if(patientDAO.getUsername(principal).size()>0)
+			{			
+		   model.addAttribute("patientno","0");
+		}
 		model.addAttribute("menu", "hipknee");
 
+		String username=principal.getName();
+		if(hipquestionnairedao.getusernamehipquestionnairedetails(username).size()>0)
+		{
+		HipquestionnaireForm hipquestionnaireform = new HipquestionnaireForm();
+		hipquestionnaireform.setHipquestionnairedetails(hipquestionnairedao.getusernamehipquestionnairedetails(username));
+		model.addAttribute("hipquestionnaireform", hipquestionnaireform);		
+		return "edithipquestionnaire";
+		}
+		
 		return "hipquestionnaire";
 	}
 
 	@RequestMapping (value="/inserthipquestionnaire", method = RequestMethod.POST)
-	public String exams(HttpSession session,HttpServletRequest request,ModelMap model,@ModelAttribute("hipquestionnaire") @Valid Hipquestionnaire hipquestionnaire,BindingResult result) throws IOException
+	public String exams(Principal principal,HttpSession session,HttpServletRequest request,ModelMap model,@ModelAttribute("hipquestionnaire") @Valid Hipquestionnaire hipquestionnaire,BindingResult result) throws IOException
 	{
 		session.setAttribute("hipquestionnairedetails",hipquestionnaire);
+
+		if(patientDAO.getUsername(principal).size()>0)
+			{			
+		   model.addAttribute("patientno","0");
+		}
 		if(result.hasErrors())
 		{
 			model.addAttribute("menu","hipknee");
 			return "hipquestionnaire";
 		}
-    hipquestionnairedao.inserthipquestionnaire(hipquestionnaire);
+		String username=principal.getName();
+    hipquestionnairedao.inserthipquestionnaire(hipquestionnaire,username);
 	model.addAttribute("success", true);
 	HipquestionnaireForm hipquestionnaireform=new HipquestionnaireForm();
-	hipquestionnaireform.setHipquestionnairedetails(hipquestionnairedao.gethipquestionnairedetails());
+	hipquestionnaireform.setHipquestionnairedetails(hipquestionnairedao.getusernamehipquestionnairedetails(username));
 	model.addAttribute("hipquestionnaireform", hipquestionnaireform);
 
 		return "viewhipquestionnaire";
@@ -353,19 +399,24 @@ public class SymptomController {
 
 
 	@RequestMapping(value = "/updatehipquestionnaire", method = RequestMethod.POST)
-	public String updatehipquestionnaire(HttpServletRequest request,ModelMap model,@ModelAttribute("hipquestionnaire") @Valid Hipquestionnaire hipquestionnaire,BindingResult result) throws IOException {
+	public String updatehipquestionnaire(Principal principal,HttpServletRequest request,ModelMap model,@ModelAttribute("hipquestionnaire") @Valid Hipquestionnaire hipquestionnaire,BindingResult result) throws IOException {
 
+		if(patientDAO.getUsername(principal).size()>0)
+			{			
+		   model.addAttribute("patientno","0");
+		}
+		String username=principal.getName();
 		if(result.hasErrors())
 		{
 			HipquestionnaireForm hipquestionnaireform = new HipquestionnaireForm();
-			hipquestionnaireform.setHipquestionnairedetails(hipquestionnairedao.gethipquestionnairedetails(hipquestionnaire.getHipquestionno()));
+			hipquestionnaireform.setHipquestionnairedetails(hipquestionnairedao.getusernamehipquestionnairedetails(username));
 			model.addAttribute("hipquestionnaireform", hipquestionnaireform);
 			return "edithipquestionnaire";
 		}
 		hipquestionnairedao.updatequestionnaire(hipquestionnaire,hipquestionnaire.getHipquestionno());
 		model.addAttribute("success", true);
 		HipquestionnaireForm hipquestionnaireform = new HipquestionnaireForm();
-		hipquestionnaireform.setHipquestionnairedetails(hipquestionnairedao.gethipquestionnairedetails());
+		hipquestionnaireform.setHipquestionnairedetails(hipquestionnairedao.getusernamehipquestionnairedetails(username));
 		model.addAttribute("hipquestionnaireform", hipquestionnaireform);
 
 		return "viewhipquestionnaire";
@@ -433,11 +484,9 @@ public class SymptomController {
 			Hipquestionnaire hipquestionnaire) throws IOException {
 		session.removeAttribute("hipquestionnairedetails");
 		HipquestionnaireForm hipquestionnaireform = new HipquestionnaireForm();
-		hipquestionnaireform.setHipquestionnairedetails(hipquestionnairedao
-				.gethipquestionnairedetails(hipquestionno));
+		hipquestionnaireform.setHipquestionnairedetails(hipquestionnairedao.gethipquestionnairedetails(hipquestionno));
 		model.addAttribute("hipquestionnaireform", hipquestionnaireform);
-		System.out.print(hipquestionnaireform.getHipquestionnairedetails()
-				.get(0).getStiff());
+		
 		model.addAttribute("menu", "hipknee");
 		return "edithipquestionnaire";
 	}
@@ -458,6 +507,23 @@ public class SymptomController {
 		return "hipquestionnairelist";
 	}
 
+	@RequestMapping(value = "/deletehipquestionnairedetails", method = RequestMethod.GET)
+	public String deletehipquestionnairedetails(HttpServletRequest request, ModelMap model,
+			Hipquestionnaire hipquestionnaire,Principal principal) throws IOException {
+
+		if(patientDAO.getUsername(principal).size()>0)
+			{			
+		   model.addAttribute("patientno","0");
+		}
+		String username=principal.getName();
+		hipquestionnairedao.deletequestionnairedetails(username);
+		model.addAttribute("menu", "hipknee");
+		// System.out.print(hipquestionnaireform.getHipquestionnairedetails().get(0).getStiff());
+		return "hipquestionnaire";
+	}
+	
+	
+	
 	@RequestMapping(value = "/deletehipquestionnaire", method = RequestMethod.GET)
 	public String deletehipquestionnaire(
 			@RequestParam("hipquestionno") String hipquestionno,
@@ -711,13 +777,15 @@ public class SymptomController {
 	
 	
 	@RequestMapping(value = "/updatesymptom", method = RequestMethod.POST)
-	public String updatesymptom(HttpServletRequest request, ModelMap model,
-			@ModelAttribute("symptom") @Valid Symptom symptom,
-			BindingResult result) throws IOException {
+	public String updatesymptom(HttpServletRequest request, ModelMap model,@ModelAttribute("symptom") @Valid Symptom symptom,BindingResult result,Principal principal) throws IOException {
+		String username=principal.getName();
+		if(patientDAO.getUsername(principal).size()>0)
+		{			
+	   model.addAttribute("patientno","0");
+	}
 		if (result.hasErrors()) {
 			SymptomForm symptomform = new SymptomForm();
-			symptomform.setSymptomdetails(symptomdao.getsymptomDetails(symptom
-					.getSymptomno()));
+			symptomform.setSymptomdetails(symptomdao.getusernamesymptomDetails(username));
 			model.addAttribute("symptomform", symptomform);
 			model.addAttribute("menu", "symptom");
 			return "editsymptom";
@@ -726,7 +794,7 @@ public class SymptomController {
 		System.out.println("path" + symptom.getAchepath());
 		symptomdao.updatesymptomexam(symptom, symptom.getSymptomno());
 		SymptomForm symptomform = new SymptomForm();
-		symptomform.setSymptomdetails(symptomdao.getsymptomDetails());
+		symptomform.setSymptomdetails(symptomdao.getusernamesymptomDetails(username));
 		model.addAttribute("symptomform", symptomform);
 		model.addAttribute("success", true);
 		return "viewsymptom";
@@ -735,9 +803,12 @@ public class SymptomController {
 	@RequestMapping(value = "/insertsymptom", method = RequestMethod.POST)
 	public String exams(HttpSession session, HttpServletRequest request,
 			ModelMap model, @ModelAttribute("symptom") @Valid Symptom symptom,
-			BindingResult result) throws IOException {
+			BindingResult result,Principal principal) throws IOException {
 		session.setAttribute("symptoms", symptom);
-
+		if(patientDAO.getUsername(principal).size()>0)
+		{			
+	   model.addAttribute("patientno","0");
+	}
 		System.out.println(symptom.getAcheleft());
 		if (result.hasErrors()) {
 			SymptomForm symptomform = new SymptomForm();
@@ -746,12 +817,12 @@ public class SymptomController {
 			model.addAttribute("menu", "symptom");
 			return "symptom";
 		}
-
+        String username=principal.getName();
 		System.out.println("no errors");
-		symptomdao.insertsymptomimage(symptom);
+		symptomdao.insertsymptomimage(symptom,username);
 		model.addAttribute("success", true);
 		SymptomForm symptomform = new SymptomForm();
-		symptomform.setSymptomdetails(symptomdao.getsymptomDetails());
+		symptomform.setSymptomdetails(symptomdao.getusernamesymptomDetails(username));
 		model.addAttribute("symptomform", symptomform);
 		return "viewsymptom";
 	}

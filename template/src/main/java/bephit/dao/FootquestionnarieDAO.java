@@ -22,7 +22,7 @@ public class FootquestionnarieDAO {
 		this.dataSource = dataSource;
 	}
 	
-	public int setFootquestionnarie(Footquestionnarie footquestionnarie)
+	public int setFootquestionnarie(Footquestionnarie footquestionnarie,String username)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -37,14 +37,15 @@ public class FootquestionnarieDAO {
 		//List<ParticipantsDetails> participants = new ArrayList<ParticipantsDetails>();
 	    try{
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-	    	 Date date = new Date();	    	 
-	    	 String cmd="INSERT INTO `tbl_footquestionnarie`(`stiff`,`swollen`,`unevensurface`,`flatsurface`,`updownstairs`,`lyinginbed`,`sternous`,`moderateactivity`,`lightactivity`,`best`,`trouble`,`socks`,`heavywork`,`jogging`,`walking`,`stand`,`fewminutes`,`difficulty`,`women`,`dress`,`shoes`,`orthopedic`,`allversion`,`foot`,`ankle`,`date`,`birthdate`,`security`)VALUES ('"+footquestionnarie.getStiff()+"','"+footquestionnarie.getSwollen()+"','"+footquestionnarie.getUnevensurface()+"','"+footquestionnarie.getFlatsurface()+"','"+footquestionnarie.getUpdownstairs()+"','"+footquestionnarie.getLyinginbed()+"','"+footquestionnarie.getSternous()+"','"+footquestionnarie.getModerateactivity()+"','"+footquestionnarie.getLightactivity()+"','"+footquestionnarie.getBest()+"','"+footquestionnarie.getTrouble()+"','"+footquestionnarie.getSocks()+"','"+footquestionnarie.getHeavywork()+"','"+footquestionnarie.getJogging()+"','"+footquestionnarie.getWalking()+"','"+footquestionnarie.getStand()+"','"+footquestionnarie.getFewminutes()+"','"+footquestionnarie.getDifficulty()+"','"+footquestionnarie.getWomen()+"','"+footquestionnarie.getDress()+"','"+footquestionnarie.getShoes()+"','"+footquestionnarie.getOrthopedic()+"','"+footquestionnarie.getAllversion()+"','"+footquestionnarie.getFoot()+"','"+footquestionnarie.getAnkle()+"','"+footquestionnarie.getDate()+"','"+footquestionnarie.getBirthdate()+"','"+footquestionnarie.getSecurity()+"')";
+	    	 Date date = new Date();
+	    	 System.out.println("INSERT INTO `tbl_footquestionnarie`(username,`stiff`,`swollen`,`unevensurface`,`flatsurface`,`updownstairs`,`lyinginbed`,`sternous`,`moderateactivity`,`lightactivity`,`best`,`trouble`,`socks`,`heavywork`,`jogging`,`walking`,`stand`,`fewminutes`,`difficulty`,`women`,`dress`,`shoes`,`orthopedic`,`allversion`,`foot`,`ankle`,`date`,`birthdate`,`security`)VALUES ('"+username+"','"+footquestionnarie.getStiff()+"','"+footquestionnarie.getSwollen()+"','"+footquestionnarie.getUnevensurface()+"','"+footquestionnarie.getFlatsurface()+"','"+footquestionnarie.getUpdownstairs()+"','"+footquestionnarie.getLyinginbed()+"','"+footquestionnarie.getSternous()+"','"+footquestionnarie.getModerateactivity()+"','"+footquestionnarie.getLightactivity()+"','"+footquestionnarie.getBest()+"','"+footquestionnarie.getTrouble()+"','"+footquestionnarie.getSocks()+"','"+footquestionnarie.getHeavywork()+"','"+footquestionnarie.getJogging()+"','"+footquestionnarie.getWalking()+"','"+footquestionnarie.getStand()+"','"+footquestionnarie.getFewminutes()+"','"+footquestionnarie.getDifficulty()+"','"+footquestionnarie.getWomen()+"','"+footquestionnarie.getDress()+"','"+footquestionnarie.getShoes()+"','"+footquestionnarie.getOrthopedic()+"','"+footquestionnarie.getAllversion()+"','"+footquestionnarie.getFoot()+"','"+footquestionnarie.getAnkle()+"','"+footquestionnarie.getDate()+"','"+footquestionnarie.getBirthdate()+"','"+footquestionnarie.getSecurity()+"')");
+	    	 String cmd="INSERT INTO `tbl_footquestionnarie`(username,`stiff`,`swollen`,`unevensurface`,`flatsurface`,`updownstairs`,`lyinginbed`,`sternous`,`moderateactivity`,`lightactivity`,`best`,`trouble`,`socks`,`heavywork`,`jogging`,`walking`,`stand`,`fewminutes`,`difficulty`,`women`,`dress`,`shoes`,`orthopedic`,`allversion`,`foot`,`ankle`,`date`,`birthdate`,`security`)VALUES ('"+username+"','"+footquestionnarie.getStiff()+"','"+footquestionnarie.getSwollen()+"','"+footquestionnarie.getUnevensurface()+"','"+footquestionnarie.getFlatsurface()+"','"+footquestionnarie.getUpdownstairs()+"','"+footquestionnarie.getLyinginbed()+"','"+footquestionnarie.getSternous()+"','"+footquestionnarie.getModerateactivity()+"','"+footquestionnarie.getLightactivity()+"','"+footquestionnarie.getBest()+"','"+footquestionnarie.getTrouble()+"','"+footquestionnarie.getSocks()+"','"+footquestionnarie.getHeavywork()+"','"+footquestionnarie.getJogging()+"','"+footquestionnarie.getWalking()+"','"+footquestionnarie.getStand()+"','"+footquestionnarie.getFewminutes()+"','"+footquestionnarie.getDifficulty()+"','"+footquestionnarie.getWomen()+"','"+footquestionnarie.getDress()+"','"+footquestionnarie.getShoes()+"','"+footquestionnarie.getOrthopedic()+"','"+footquestionnarie.getAllversion()+"','"+footquestionnarie.getFoot()+"','"+footquestionnarie.getAnkle()+"','"+footquestionnarie.getDate()+"','"+footquestionnarie.getBirthdate()+"','"+footquestionnarie.getSecurity()+"')";
 	    	 System.out.println(cmd);
 	    	 statement.execute(cmd);
 	    	 flag=1;
 	 }
 	    catch(Exception e){
-	    	System.out.println(e.toString());
+	    	System.out.println("error"+e.toString());
 	    	releaseStatement(statement);
 	    	releaseConnection(con);
 	    	flag=0;
@@ -93,6 +94,35 @@ public List<Footquestionnarie> getFootquestionnarie(){
     return footquestionnarie;
 }
 
+public List<Footquestionnarie> getusernameFoot(String username){
+	Connection con = null;
+	Statement statement = null;
+	ResultSet resultSet = null;
+	try {
+		con = dataSource.getConnection();
+		statement = con.createStatement();
+	} catch (SQLException e1) {
+		e1.printStackTrace();
+	}
+	
+	List<Footquestionnarie> footquestionnarie = new ArrayList<Footquestionnarie>();
+    try{
+		resultSet = statement.executeQuery("select * from tbl_footquestionnarie WHERE username='"+username+"'");
+		System.out.println(resultSet.toString());
+		while(resultSet.next()){
+			footquestionnarie.add( new Footquestionnarie(resultSet.getString("footquestionno"), resultSet.getString("stiff"), resultSet.getString("swollen"), resultSet.getString("unevensurface"), resultSet.getString("flatsurface"), resultSet.getString("updownstairs"), resultSet.getString("lyinginbed"), resultSet.getString("sternous"), resultSet.getString("moderateactivity"), resultSet.getString("lightactivity"), resultSet.getString("best"), resultSet.getString("trouble"), resultSet.getString("socks"), resultSet.getString("heavywork"), resultSet.getString("jogging"), resultSet.getString("walking"), resultSet.getString("stand"), resultSet.getString("fewminutes"), resultSet.getString("difficulty"), resultSet.getString("women"), resultSet.getString("dress"), resultSet.getString("shoes"), resultSet.getString("orthopedic"), resultSet.getString("allversion"), resultSet.getString("foot"), resultSet.getString("ankle"), resultSet.getString("date"), resultSet.getString("birthdate"), resultSet.getString("security")));
+			}
+    }catch(Exception e){
+    	releaseResultSet(resultSet);
+    	releaseStatement(statement);
+    	releaseConnection(con);
+    }finally{
+    	releaseResultSet(resultSet);
+    	releaseStatement(statement);
+    	releaseConnection(con);	    	
+    }
+    return footquestionnarie;
+}
 public List<Footquestionnarie> getFoot(String footquestionno){
 	Connection con = null;
 	Statement statement = null;
@@ -187,6 +217,39 @@ public int deletefoot(String footquestionno){
 			statement.execute("delete from tbl_footquestionnarie where footquestionno='"+footquestionno+"'");
 			
 			flag=1;
+			
+	    }catch(Exception e){
+	    	System.out.println(e.toString());
+	    	flag=0;
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    }finally{
+	    	
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);	    	
+	    }
+	   		if(flag==1)
+	   			return 1;
+	   		else
+	   			return 0;
+	}
+public int deletefootdetails(String username){
+	Connection con = null;
+	Statement statement = null;
+	ResultSet resultSet = null;
+	int flag=0;
+	try {
+		con = dataSource.getConnection();
+		statement = con.createStatement();
+	} catch (SQLException e1) {
+		e1.printStackTrace();
+	}
+	try{
+		
+			statement.execute("delete from tbl_footquestionnarie where username='"+username+"'");
+			
 			
 	    }catch(Exception e){
 	    	System.out.println(e.toString());

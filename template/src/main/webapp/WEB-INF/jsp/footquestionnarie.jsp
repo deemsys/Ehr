@@ -560,7 +560,7 @@ document.getElementById("security").value=phone;
 	    Your Birth Date  <input type="date"  name="birthdate" value="${fquestionnarie.birthdate }">
 	    <br><br>
 	    <table>
-	  <tr><td> Your Social Security Number</td> <td> <input type="text" name="security"  value="${fquestionnarie.security}"></td><td><span class="err"> <div id="number"></span></td></div></tr></table>
+	  <tr><td> Your Social Security Number</td> <td> <input type="text" name="security" id="security" value="${fquestionnarie.security}"></td><td><span class="err"><form:errors path="Footquestionnarie.security"></form:errors></span> <div id="number"></span></td></div></tr></table>
 	  
 	    
 	    <br>

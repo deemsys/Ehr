@@ -66,7 +66,7 @@
 							    </c:if>	
 							    <c:if test="${fn:length(symptomform.symptomdetails) == 0}">	
 							    	<tr class="row1">
-							    	<td colspan="7" width="100%"><center><b>No Participants Found!!!</b></center></td>
+							    	<td colspan="7" width="100%"><center><b>No Patients Found!!!</b></center></td>
 							    	</tr>
 							    	</c:if>
 							    						    						    						    	<tr><td colspan="6">  

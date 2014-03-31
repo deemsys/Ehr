@@ -1076,6 +1076,7 @@ return "viewfaxcover";
 	
 }
 
+@RequestMapping(value="/insertworkschool", method = RequestMethod.POST)
 public String insert_workschool(HttpServletRequest request,HttpSession session,@ModelAttribute("Workschool")  @Valid Workschool workschooldetails,BindingResult result,ModelMap model)
 {
 	model.addAttribute("menu","returntoschool");

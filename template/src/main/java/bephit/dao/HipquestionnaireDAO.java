@@ -19,7 +19,7 @@ public class HipquestionnaireDAO
 	public void setDataSource(DataSource dataSource) {
 		this.dataSource = dataSource;
 	}
-	public int inserthipquestionnaire(Hipquestionnaire hipquestionnairedetails)
+	public int inserthipquestionnaire(Hipquestionnaire hipquestionnairedetails,String username)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -34,8 +34,9 @@ public class HipquestionnaireDAO
 			e1.printStackTrace();
 		}
 	    try{
-	    	String d="insert into hipquestionnaire(stiff,swollen,flatrighthip,flatlefthip,flatrightknee,flatleftknee,stairsrighthip,stairslefthip,stairsrightknee,stairsleftknee,bedrighthip,bedlefthip,bedrightknee,bedleftknee,best,socks,date,birthdate,security)values('"
-	    			+hipquestionnairedetails.getStiff()
+	    	String d="insert into hipquestionnaire(username,stiff,swollen,flatrighthip,flatlefthip,flatrightknee,flatleftknee,stairsrighthip,stairslefthip,stairsrightknee,stairsleftknee,bedrighthip,bedlefthip,bedrightknee,bedleftknee,best,socks,date,birthdate,security)values('"
+	    			+username
+	    			+"','"+hipquestionnairedetails.getStiff()
 					+"','"+hipquestionnairedetails.getSwollen()
 					+"','"+hipquestionnairedetails.getFlatrighthip()
 					+"','"+hipquestionnairedetails.getFlatlefthip()
@@ -55,7 +56,7 @@ public class HipquestionnaireDAO
 					+"','"+hipquestionnairedetails.getBirthdate()
 					+"','"+hipquestionnairedetails.getSecurity()
 					+"')";
-	    			System.out.print(d);
+	    			System.out.print("output"+d);
 	    			statement.executeUpdate(d);
 	    			
 	    }
@@ -178,6 +179,61 @@ public class HipquestionnaireDAO
 	    return hipquestionnairedetails;
 		
 	}
+public List<Hipquestionnaire> getusernamehipquestionnairedetails(String username){
+		
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<Hipquestionnaire> hipquestionnairedetails = new ArrayList<Hipquestionnaire>();
+	    try{
+			resultSet = statement.executeQuery("select * from hipquestionnaire where username='"+username+"'");
+			while(resultSet.next()){
+				hipquestionnairedetails.add(new Hipquestionnaire(
+						 resultSet.getString("hipquestionno"),
+							resultSet.getString("stiff"),
+							resultSet.getString("swollen"),
+							resultSet.getString("flatrighthip"),
+							resultSet.getString("flatlefthip"),
+							resultSet.getString("flatrightknee"),
+							resultSet.getString("flatleftknee"),							
+							resultSet.getString("stairsrighthip"),
+							resultSet.getString("stairslefthip"),
+							resultSet.getString("stairsrightknee"),
+							resultSet.getString("stairsleftknee"),							
+							resultSet.getString("bedrighthip"),
+							resultSet.getString("bedlefthip"),
+							resultSet.getString("bedrightknee"),
+							resultSet.getString("bedleftknee"),							
+							resultSet.getString("best"),
+							resultSet.getString("socks"),
+							resultSet.getString("date"),
+							resultSet.getString("birthdate"),
+							resultSet.getString("security")
+			    	    ));
+			    	
+			}
+	    }catch(Exception e){
+	    	System.out.println(e);
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    }finally{
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);	    	
+	    }
+	    return hipquestionnairedetails;
+		
+	}
+	
+	
+	
 	public int updatequestionnaire(Hipquestionnaire hipquestionnairedetails,String questionnaireno)
 	{
 		Connection con = null;
@@ -251,6 +307,36 @@ public class HipquestionnaireDAO
 		}
 		try{		
 		statement.executeUpdate("delete from hipquestionnaire where hipquestionno='"+questionnaireno+"'");				
+	      }catch(Exception e){
+		    	System.out.println(e.toString());
+		    	flag=0;
+		    	releaseResultSet(resultSet);
+		    	releaseStatement(statement);
+		    	releaseConnection(con);
+		    }finally{
+		    	
+		    	releaseResultSet(resultSet);
+		    	releaseStatement(statement);
+		    	releaseConnection(con);	    	
+		    }
+		   		if(flag==1)
+		   			return 1;
+		   		else
+		   			return 0;
+		}
+	public int deletequestionnairedetails(String username){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		int flag=0;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		try{		
+		statement.executeUpdate("delete from hipquestionnaire where username='"+username+"'");				
 	      }catch(Exception e){
 		    	System.out.println(e.toString());
 		    	flag=0;

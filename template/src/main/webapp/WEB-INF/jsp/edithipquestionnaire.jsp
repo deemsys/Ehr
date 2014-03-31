@@ -3,6 +3,23 @@
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
+<link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
+ <link rel="stylesheet" href="/resources/css/style.css" />
+ <script src="resources/js/jquery.min.js"></script> 
+ <script src="resources/js/jquery-ui.js"></script>
+ <script src="resources/js/jquey-1.9.1.js"></script>
+<script>
+i=0;
+$(document).ready(function(){
+  $("#security").keypress(function(){
+var phone=document.getElementById("security").value;
+phone = phone.replace(/(\d{3})(\d{2})(\d+)/,'$1-$2-$3');
+document.getElementById("security").value=phone;
+ });  
+
+});
+</script>
+
 <script type="text/javascript">
 function softtissuevalidate()
 {
@@ -340,15 +357,15 @@ $(function() {
 	       </p>
 	    Your Birth Date  <input type="date"  value="${hipquestionnairedetails.birthdate}" name="birthdate">
 	    <br><br>
-	    Your Social Security Number <input type="text" name="security"  value="${hipquestionnairedetails.security}">
-	    
+	    Your Social Security Number <input type="text" name="security" id="security" maxlength="11" value="${hipquestionnairedetails.security}">
+	    <div id="number">
 	    <br>
 	    <br>
 	    <br>
 	    <table width="100%" height="150"><tr><Td></Td></tr></table>
 	    <table align="right"><tr><td  >
 	    
-	     <input class="submit_btn" type="submit" value="Update" ></td><td><a href="viewhipquestionnaire" style="color: white" class="submit_btn">Cancel</a>
+	     <input class="submit_btn" type="submit" value="Update" ></td><td><a href="deletehipquestionnairedetails" style="color: white" class="submit_btn" onclick="return confirmation() ">Delete</a>
 	    </td></tr></table>
 	    
 	    </div></div>
@@ -361,7 +378,18 @@ $(function() {
          </div>
          
          
-         
+         <script type="text/javascript">
+	function confirmation() 
+	{
+	var answer = confirm("Are you Sure You Want to Delete Participant ?")
+	if (answer){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+	</script>
        
 	
 			                 

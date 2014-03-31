@@ -626,22 +626,53 @@ document.getElementById("inp_id").value=phone;
 	  <div id="tabs-1">
 <div id="right_content">
 
+<script type="text/javascript">
+function validate(){
+	alert("hi");
+	var length=document.getElementsByName("symptom[]").length;
+	var fld = document.getElementById("symptom").value;
+	alert(fld);
+	var fld2=document.getElementById("symptom1").value;
+	if(fld1==fld2)
+		{
+		alert("Please Enter different symptom");
+		}
+	alert(fld);
+	
+	var values = [];
+	values.push(fld);
+	alert(values);
+	alert(fld.options.length);
+	for (var i = 0; i < fld.options.length; i++) {
+	  if (fld.options[i].selected) {
+	    values.push(fld.options[i].value);
+	  }
+	}
+}
+
+
+
+</script>
   <script type="text/javascript">
 				var $im = 1;
 				var flagm = 1;
 				function addMultichoice(divName) {
+					
+					
 					var xx = document.getElementsByName('symptom[]').length;
+					
 					var $in = xx + 1;
-
+                   
 					var newdiv = document.createElement('div');
 
 					newdiv.innerHTML = '<table width="100%" border="0" cellspacing="0" cellpadding="0" id="newtbl'
 							+ $im
 							+ '"><tr height="10"></tr><tr>'
 							/* + $in */
-							+ '<td valign="top" align="left" class="input_txt" width="70%"><textarea  name="symptom[]" rows="3" cols="25" placeholder="Specify your Symptoms"></textarea></td></tr><tr><td align="left" valign="top"><a javascript:void(0);" onclick="removechoice('
+							+ '<td valign="top" align="left" class="input_txt" width="70%"><textarea  name="symptom[]" id="symptom" rows="3" cols="25" placeholder="Specify your Symptoms"></textarea></td></tr><tr><td align="left" valign="top"><a javascript:void(0);" onclick="removechoice('
 							+ $im
 							+ ')" style="text-decoration:none;"><input type="submit" class="submit_btn" value="CANCEL"  /></a></td></tr><tr height="10"></tr></table>';
+					
 					document.getElementById(divName).appendChild(newdiv);
 					$im++;
 					flagm++;
@@ -705,7 +736,7 @@ document.getElementById("inp_id").value=phone;
 				                  </td>
 				                </tr>
                                   <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>City1234:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>City:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="City" /><br><span class="err"><form:errors path="PatientDetails.city"></form:errors></span>
 				                  </td>
@@ -916,7 +947,7 @@ document.getElementById("inp_id").value=phone;
 				               <table align="right">
 				               <tr>
 				  
-                     <td><br><input type="button" id="btnNext" class="submit_btn" value="Next"/><br></td>
+                     <td><br><input type="button" id="btnNext" class="submit_btn"  value="Next"/><br></td>
                   </tr>
 				               </table>
               
@@ -966,6 +997,7 @@ document.getElementById("inp_id").value=phone;
 
 				                  	</td>
 				                  	<td>
+				                  	<a onclick="newpopup()">Quadruple Visual Analogue Scale</a>
 				                  	<!-- <label for="amount"><b>Pain Scale:</b></label>
 				                  	<input type="text" id="amount" name="Painscale"/>&nbsp;&nbsp;&nbsp;
 				                  	<div id="slider"></div> -->
@@ -1186,9 +1218,9 @@ document.getElementById("inp_id").value=phone;
 				                  	 <tr>
 				  <td><br><input type="button" id="btnPrevious" class="submit_btn" value="Previous" style = "display:none" />&nbsp;</td>
                   <td>&nbsp;&nbsp;</td>
-                  <td><br><input type="button" id="btnNext" class="submit_btn" value="Next"/><br></td>
+                  <td><br><input type="button" class="submit_btn" value="Next" onclick="validate('this.value')"/><br></td>
                   </tr>
-				                  	</table>
+				                  	</table><!-- id="btnNext"  -->
                
                 </td>
                 </tr>
@@ -1608,8 +1640,8 @@ document.getElementById("inp_id").value=phone;
                         <tr>
                         <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Please Describe Your Symptoms Briefly:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<textarea rows="3" cols="25" placeholder="Specify your Symptoms" name="symptom[]" id="symptom" onBlur="newpopup()"></textarea>&nbsp;&nbsp;&nbsp; <br><span class="err"><%-- <form:errors path="PatientDetails.Symptoms"></form:errors> --%></span>
-				                  	</td>
+				                  	<textarea rows="3" cols="25" placeholder="Specify your Symptoms" name="symptom[]" id="symptom"></textarea>&nbsp;&nbsp;&nbsp; <br><span class="err"><%-- <form:errors path="PatientDetails.Symptoms"></form:errors> --%></span>
+				                  	</td><td><a onclick="newpopup()">Quadruple Visual Analogue Scale</a></td>
 				                  	<td>
 				                  	<!-- <label for="amount"><b>Pain Scale:</b></label>
 				                  	<input type="text" id="amount" name="Painscale"/>&nbsp;&nbsp;&nbsp;

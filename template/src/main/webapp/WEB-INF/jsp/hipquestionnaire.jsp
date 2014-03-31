@@ -507,7 +507,7 @@ $(function() {
 	     Your Birth Date <input type="date"  value="${hipquestionnairedetails.birthdate}" name="birthdate">
 	    <br><br>
 	  <table>
-	  <tr><td> Your Social Security Number</td> <td> <input type="text" name="security"  value="${hipquestionnairedetails.security}"></td><td><span class="err"> <div id="number"></span></td></div></tr></table>
+	  <tr><td> Your Social Security Number</td> <td> <input type="text" name="security" id="security" maxlength="11"  value="${hipquestionnairedetails.security}"></td><td><span class="err"> <div id="number"></span></td></div></tr></table>
 	    
 	
 	    </c:otherwise>

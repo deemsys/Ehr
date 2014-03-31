@@ -104,6 +104,7 @@ $(function() {
     //$( "#draggable" ).draggable({ revert: "not valid" });
     
     $(window).load(function(){
+    	 $("#snaptarget").offset({left:479,top:286})    	
 var oldValue = "";
 if(document.getElementById("achesleft").value!=0 && document.getElementById("achestop").value!=0) 
 {
@@ -305,7 +306,7 @@ if(document.getElementById("stableft9").value!=0 && document.getElementById("sta
 {
 $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:  document.getElementById("stabtop9").value})
 }
-
+$("#bodyfront").offset({left:108,top:330})
     });   
     
     $('#draggable').draggable(
@@ -319,7 +320,7 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
     	             $('#position').text('x: ' + xPos);
     	            $('#position1').text('y: ' + yPos); 
     	            
-    	       }, revert: 'invalid'
+    	       },stack: "#draggable",revert: 'invalid'
     	    });   
     
  
@@ -333,7 +334,7 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
     	            document.getElementById("achestop1").value=yPos;    
     	            $('#position').text('x: ' + xPos);
     	            $('#position1').text('y: ' + yPos); 
-    	        }, revert: 'invalid'
+    	        },stack: "#draggable1", revert: 'invalid'
     	    });
     	
     //$( "#draggable1" ).draggable();
@@ -953,9 +954,9 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
     	        },
     	         revert: 'invalid'
     	    }); 
-   
+    
     	    
-    	     $( "#droppable" ).droppable({
+    	     $( "#snaptarget" ).droppable({
      
       drop: function( event, ui ) {       
       var $check=document.getElementById("burntop4").value;
@@ -1151,6 +1152,13 @@ w=0;
 </tr></table>
 </br>
 <p>Please be sure to fill this form out extremely accurately.Mark the area(s) on your body where you feel the described sensation(s).Use the appropriate symbol(s).Mark areas of radiating pain, and include all affected areas.You may draw on the face as well.</p>
+
+ <div style="width: 320;height:300;border-bottom-color: red;;border-color: black;" class="ui-widget-content"  id="snaptarget"><table width="98%"><tr><td align="right">
+    <img  alt="" src="resources/images/bodyfront.png"> </td><td align="left" valign="top" width="55"><img   alt="" src="resources/images/face.png" >
+ </td><td align="left">
+    <img   alt="" src="resources/images/bodyback.png"> </td></tr> </table> </div>
+ 
+ 
  <table><tr><td width="100"><b>Aches:</b></td><td>
 <div id="draggable" >
 <img id="1" class="ui-widget-content" src="${symptomdetails.achepath}" width="10px" height="10px" > 
@@ -1485,19 +1493,30 @@ w=0;
           
            </tr></table>
            </br>
-         <table width="98%"><tr><td align="right">
+         <!-- <table width="98%"><tr><td align="right">
     <img id= "bodyfront" alt="" src="resources/images/bodyfront.png"> </td><td align="left" valign="top" width="55"><img  id= "droppable" alt="" src="resources/images/face.png" >
  </td><td align="left">
     <img  id= "bodyback" alt="" src="resources/images/bodyback.png"> </td></tr> </table>
+ --></br>
 </br>
-</br>
-<table width="100" align="right"><tr ><td  ><input  type="submit" value="Update" class="submit_btn"></td><td  ><a href="viewsymptom" style="color: white" class="submit_btn">Cancel</a></td></tr>
+<table width="100" align="right"><tr ><td  ><input  type="submit" value="Update" class="submit_btn"></td><td  ><a href="deletesymptomdetails" style="color: white" class="submit_btn" onclick="return confirmation()">Delete</a></td></tr>
 </table>
 </form>
 <!-- <div id="position"></div><div id="position1"></div> -->
  
      
-         	
+        <script type="text/javascript">
+	function confirmation() 
+	{
+	var answer = confirm("Are you Sure You Want to Delete Participant ?")
+	if (answer){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+	</script> 	
 	
 	
 	  </form>

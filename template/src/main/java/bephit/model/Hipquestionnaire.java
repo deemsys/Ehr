@@ -29,7 +29,7 @@ public class Hipquestionnaire
 	private String date;
 	private String birthdate;
 	@NotEmpty
-	@Pattern(regexp="(^$|[0-9]{11})",message="Not a valid Social Security number")
+	@Pattern(regexp="(^$|[0-9-]{11})",message="Not a valid Social Security number")
 	private String security;
 	public String getHipquestionno() {
 		return hipquestionno;
