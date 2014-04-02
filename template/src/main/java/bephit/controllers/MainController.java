@@ -91,6 +91,7 @@ import bephit.forms.TreatForm;
 import bephit.forms.TreatMinorDetailsForm;
 import bephit.forms.WorkaccidentForm;
 import bephit.model.*;
+
 import java.util.*;
  
  
@@ -205,7 +206,20 @@ public class MainController {
 		}
 		else if(role==2)
 		{ 
-			return "staffchecklist";
+			PatientDetailsForm patientdetailsform = new PatientDetailsForm();			
+			patientdetailsform.setPatientDetails(patientDAO.getPatientDetails());
+	        model.addAttribute("patientDetailsForm", patientdetailsform);	     
+	      model.addAttribute("menu","adminpatient");
+	        System.out.println("Patient");
+	        model.addAttribute("noofrows",patientdetailsform.getPatientDetails().size());       
+		    patientdetailsform.setPatientDetails(patientDAO.getlimitedpatientdetails(1));
+	        model.addAttribute("noofpages",(int) Math.ceil(patientDAO.getnoofpatientdetails() * 1.0 / 5));	 
+		    model.addAttribute("button","viewall");
+		    model.addAttribute("success","false");
+		    model.addAttribute("currentpage",1);
+			
+			
+			return "viewallpatientdetails";
 		}
 		else
 			model.addAttribute("menu","search");
@@ -1594,6 +1608,35 @@ public class MainController {
 		
 		return "hardshiplist";
 	}
+	@RequestMapping(value="/checklistsearch", method = RequestMethod.GET)
+	public String checklistsearch(HttpSession session,ModelMap model) {			
+		model.addAttribute("menu", "admin");
+		return "checklistsearch";
+}	
+	
+	
+
+	@RequestMapping(value="/checklistsearch", method = RequestMethod.POST)
+	public String getchecklistsearchdetails(HttpServletRequest request,PatientDetails patientDetails,HttpSession session,@ModelAttribute("Narrativereport")  @Valid Narrativereport narrativereport,BindingResult result,ModelMap model) {
+		String username=request.getParameter("username");		
+		model.addAttribute("menu","admin");	
+		
+		if(patientDAO.getUsername(username).size()==0)
+		{
+			model.addAttribute("nsearch","error");
+			return "checklistsearch";
+		}
+		if(screenDAO.getusernameScreening(username).size()>0)
+		{
+		model.addAttribute("username",patientDAO.getUsername(username).get(0).getUsername());
+		model.addAttribute("screen",true);	
+		}
+		
+		
+	    return "staffchecklist";
+ 
+	}
+	
 	
 	@RequestMapping(value="/staffchecklist", method = RequestMethod.GET)
 	public String staffchecklist(HttpSession session,ModelMap model) {
@@ -1759,6 +1802,9 @@ public class MainController {
 	@RequestMapping(value="/signup", method = RequestMethod.POST)
 	public String insert_signup(HttpSession session,@ModelAttribute("Signup")  @Valid Signup signup,BindingResult result,ModelMap model) {
 		session.setAttribute("signup",signup);
+		String pusername=signup.getUsername();
+		int username=docDAO.usernamevalidation(pusername);
+		
 		if(result.hasErrors())
 		{
 			SignupForm signupForm= new SignupForm();
@@ -1766,7 +1812,19 @@ public class MainController {
 			model.addAttribute("SignupForm",signupForm);
 			model.addAttribute("Success","true");
 			model.addAttribute("menu","sign");
+			if(username==1)
+			{
+				model.addAttribute("username","exist");
+				System.out.println("username exist");
+				
+			}
 			return "signup";
+		}
+		if(username==1)
+		{
+			model.addAttribute("username","exist");
+			System.out.println("username exist");
+			return "login";
 		}
 		model.addAttribute("menu","sign");		
     	int h =signDAO.setSignup(signup);
@@ -1792,6 +1850,11 @@ public class MainController {
 	@RequestMapping(value="/doctorsignup", method = RequestMethod.POST)
 	public String insert_doctorsignup(HttpSession session,@ModelAttribute("Doctorsignup")  @Valid Doctorsignup doctorsignup,BindingResult result,ModelMap model) {
 		session.setAttribute("doctorsignup",doctorsignup);
+		String dusername=doctorsignup.getDoctorusername();
+		int username=docDAO.usernamevalidation(dusername);
+		System.out.println("count"+username);
+		model.addAttribute("menu","sign");
+		
 		if(result.hasErrors())
 		{
 			DoctorsignupForm doctorsignupForm= new DoctorsignupForm();
@@ -1799,9 +1862,21 @@ public class MainController {
 			model.addAttribute("DoctorsignupForm",doctorsignupForm);
 			model.addAttribute("Success","true");
 			model.addAttribute("menu","sign");
+			if(username==1)
+			{
+				model.addAttribute("username","exist");
+				System.out.println("username exist");
+				
+			}
 			return "doctorsignup";
 		}
-		
+		if(username>0)
+		{
+			model.addAttribute("username","exist");
+			System.out.println("username exist123455");
+			return "doctorsignup";
+			
+		}
 		
     	int h =docDAO.setDoctorsignup(doctorsignup);
     	DoctorsignupForm doctorsignupForm= new DoctorsignupForm();
@@ -2096,15 +2171,15 @@ public class MainController {
 	@RequestMapping(value="/screeningAuthz",method=RequestMethod.GET)
 	public String screeningAuthz(Principal principal,HttpSession session,ModelMap model)
 	{
-
+String username=principal.getName();
 		if(patientDAO.getUsername(principal).size()>0)
 			{			
 		   model.addAttribute("patientno","0");
 		}
-		if(screenDAO.getusernameScreening(principal).size()>0)
+		if(screenDAO.getusernameScreening(username).size()>0)
 		{
 		ScreeningAuthzForm screeningauthzForm= new ScreeningAuthzForm();
-    	screeningauthzForm.setScreeningDetails(screenDAO.getusernameScreening(principal));
+    	screeningauthzForm.setScreeningDetails(screenDAO.getusernameScreening(username));
 		model.addAttribute("ScreeningAuthzForm",screeningauthzForm);
 		model.addAttribute("menu", "authorization");
 		return "editscreeningauthz";
@@ -2229,17 +2304,17 @@ public class MainController {
  
 	}
 	@RequestMapping(value="/editscreeningauthz", method = RequestMethod.GET)
-	public String editscreeningauthz(HttpServletRequest request,ModelMap model,Principal principal) {
+	public String editscreeningauthz(@RequestParam("username") String username,HttpServletRequest request,ModelMap model,Principal principal) {
 
-		if(patientDAO.getUsername(principal).size()>0)
+		if(patientDAO.getUsername(username).size()>0)
 			{			
 		   model.addAttribute("patientno","0");
 		}
 		
 		ScreeningAuthzForm screeningauthzForm= new ScreeningAuthzForm();
-    	screeningauthzForm.setScreeningDetails(screenDAO.getScreeningDetails());
+    	screeningauthzForm.setScreeningDetails(screenDAO.getusernameScreening(username));
 		model.addAttribute("ScreeningAuthzForm",screeningauthzForm);
-		model.addAttribute("menu", "authorization");
+		model.addAttribute("menu", "checklist");
 		return "editscreeningauthz";
 	}
 	

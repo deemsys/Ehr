@@ -27,6 +27,12 @@ public class NarrativeController
 	@Autowired  
 	NarrativereportDAO narrativeDAO;
 	
+	@Autowired
+	PhysicalexamDAO physicalexamDAO;
+	
+	@Autowired 
+	PatientDAO patientDAO;
+	
 	@RequestMapping(value="/narrativereport", method = RequestMethod.GET)
 	public String viewingnarrativereport(HttpSession session,ModelMap model) {		
 		session.removeAttribute("narrative");
@@ -35,6 +41,37 @@ public class NarrativeController
  
 	
 }
+	@RequestMapping(value="/narrativesearch", method = RequestMethod.GET)
+	public String narrativesearch(HttpSession session,ModelMap model) {		
+		session.removeAttribute("narrative");
+		model.addAttribute("menu","narrative");
+		return "narrativesearch";
+}	
+
+	
+	@RequestMapping(value="/narrativesearch", method = RequestMethod.POST)
+	public String getnarrativesearchdetails(HttpServletRequest request,PatientDetails patientDetails,HttpSession session,@ModelAttribute("Narrativereport")  @Valid Narrativereport narrativereport,BindingResult result,ModelMap model) {
+		String username=request.getParameter("username");		
+		model.addAttribute("menu","narrative");	
+		
+		PatientDetailsForm patientDetailsForm=new PatientDetailsForm();
+		patientDetailsForm.setPatientDetails(patientDAO.getUsername(username));
+		if(patientDAO.getUsername(username).size()==0)
+		{
+			model.addAttribute("nsearch","error");
+			return "narrativesearch";
+		}
+		System.out.println("patientid"+patientDetailsForm.getPatientDetails().get(0).getPatient_id());
+		
+		String patientid=patientDetailsForm.getPatientDetails().get(0).getPatient_id();
+		PhysicalexamForm physicalexamForm=new PhysicalexamForm();
+		physicalexamForm.setPhysicalexam(physicalexamDAO.getPhysicalpatient_id(patientid));
+		model.addAttribute("physicalexamform",physicalexamForm);
+		model.addAttribute("patientdetailsform",patientDetailsForm);
+		return "narrativereport";
+ 
+	}
+	
 	
 	@RequestMapping(value="/narrativereport", method = RequestMethod.POST)
 	public String insert_narrativereport(HttpSession session,@ModelAttribute("Narrativereport")  @Valid Narrativereport narrativereport,BindingResult result,ModelMap model) {
