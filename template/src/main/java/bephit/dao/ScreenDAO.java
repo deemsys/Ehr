@@ -97,7 +97,7 @@ public class ScreenDAO {
 	    return screen;
 		
 	}
-	public List<screeningAuthz> getusernameScreening(Principal principal){
+	public List<screeningAuthz> getusernameScreening(String username){
 		Connection con = null;
 		Statement statement = null;
 		ResultSet resultSet = null;
@@ -109,7 +109,7 @@ public class ScreenDAO {
 		}
 		List<screeningAuthz> screen = new ArrayList<screeningAuthz>();
 	    try{
-			resultSet = statement.executeQuery("select * from Screening_Details where username='"+principal.getName()+"'");
+			resultSet = statement.executeQuery("select * from Screening_Details where username='"+username+"'");
 			while(resultSet.next()){
 				screen.add(new screeningAuthz(resultSet.getString("screen_no"),resultSet.getString("date"),
 			    		resultSet.getString("name")
