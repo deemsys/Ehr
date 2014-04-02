@@ -12,6 +12,8 @@ private String Patient_id;
 @NotEmpty
 private String Name;
 
+private String username;
+
 @NotEmpty
 private String Date;
 @NotEmpty
@@ -208,6 +210,13 @@ public String getName() {
 }
 public void setName(String name) {
 	Name = name;
+}
+
+public String getUsername() {
+	return username;
+}
+public void setUsername(String username) {
+	this.username = username;
 }
 public String getDate() {
 	return Date;
@@ -827,9 +836,9 @@ public String getPatient() {
 public void setPatient(String patient) {
 	Patient = patient;
 }
-public PatientDetails(String patient_id, String name, String date,
-		String streetAddress, String city, String state, String zipCode,
-		String homephone, String emailid, String mobileNumber,
+public PatientDetails(String patient_id, String name, String username,
+		String date, String streetAddress, String city, String state,
+		String zipCode, String homephone, String emailid, String mobileNumber,
 		String dateOfBirth, String socialSecurityNumber, String gender,
 		String maritalStatus, String areyou, String student,
 		String employerName, String occupation, String employerAddress,
@@ -860,6 +869,7 @@ public PatientDetails(String patient_id, String name, String date,
 	super();
 	Patient_id = patient_id;
 	Name = name;
+	this.username = username;
 	Date = date;
 	StreetAddress = streetAddress;
 	City = city;
@@ -964,5 +974,6 @@ public PatientDetails(String patient_id, String name, String date,
 	Dr = dr;
 	Patient = patient;
 }
+
 
 }
