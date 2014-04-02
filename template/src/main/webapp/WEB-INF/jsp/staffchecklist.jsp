@@ -67,34 +67,77 @@
 	            <c:choose>
 				<c:when test="${empty staff}">
 	            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+	            
+	             <c:if test="${screen==true}">
 	            <tr class="row1">
 	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="patinfo" value="confidential Patient Information"/></td>
 	            <td valign="top" align="left" class="input_txt">Confidential Patient Information</td>
 	            </tr>
-	            <tr class="row1">
-	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="screening" value="Screening Disclosure/referral"/></td>
+	            </c:if>
+	            <script type=text/javascript>
+function patientvalidate(){
+if (remember.checked == 1){
+          alert("checked") ;
+}else{
+alert("You didn't check it! Let me check it for you.")
+}
+}
+</script>
+	            
+	            <c:if test="${screen==true}">
+	            <tr class="row1" >
+	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" onclick="screenvalidate()" id="screen" name="screening" value="Screening Disclosure/referral"/></td>
 	            <td valign="top" align="left" class="input_txt">Screening Disclosure/referral</td>
-	            </tr>
+	            </tr></c:if>
+	            <input type="hidden" id="username" value="${username}">
+	             <script type=text/javascript>
+	            
+	             
+function screenvalidate(){
+	var screen=document.getElementById("screen").value;
+	 if(document.getElementById("screen").checked)
+     { 
+		var sample="editscreeningauthz?username="+document.getElementById("username").value;
+		 alert("sample"+sample);
+     popupWindow = window.open(sample,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+     		}}
+</script>
+<c:out value="${username}"></c:out>
+	            
+	            <c:if test="${assignment==true}">
 	            <tr class="row1">
 	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="aob" value="Assignment of Benefits/Lien"/></td>
 	            <td valign="top" align="left" class="input_txt">Assignment of Benefits/Lien</td>
 	            </tr>
+	            </c:if>
+	            
+	            <c:if test="${history==true}">
 	            <tr class="row1">
 	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="history" value="History/Exam Sheet"/></td>
 	            <td valign="top" align="left" class="input_txt">History/Exam Sheet</td>
 	            </tr>
+	            </c:if>
+	            
+	            <c:if test="${soap==true}">
 	            <tr class="row1">
 	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="xray_sheet" value="SOAP Note/X-ray Sheet"/></td>
 	            <td valign="top" align="left" class="input_txt">SOAP Note/X-ray Sheet</td>
 	            </tr>
+	            </c:if>
+	            
+	            <c:if test="${minor==true}">
 	            <tr class="row1">
 	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="consent" value="Consent to treat Form/Minor"/></td>
 	            <td valign="top" align="left" class="input_txt">Consent to Treat Form/Minor</td>
 	            </tr>
+	            </c:if>
+	            
+	            <c:if test="${accident==true}">
 	            <tr class="row1">
 	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="report" value="Accident Report"/></td>
 	            <td valign="top" align="left" class="input_txt">Accident Report </td>
 	            </tr>
+	            </c:if>
 	            </table>
 	            <br>
 	            

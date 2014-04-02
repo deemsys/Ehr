@@ -18,7 +18,7 @@
   </script>
 </head>
    <body>
-<div id="right_content">
+
 <form action="updatescreeningauthz" method="POST">
 
 <table cellpadding="0" cellspacing="0" border="0" width="55%" class="margin_table">

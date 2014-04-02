@@ -196,15 +196,16 @@ document.getElementById('gender32').value='Female';
 	           <div class="headings altheading">
 	            <center> <b><h2>Narrative Report</h2> </center></b>
 	            </div>
-
+<c:set value="${patientdetailsform.patientDetails[0]}" var="patientDetails"></c:set>
+<c:set value="${physicalexamform.physicalexam[0]}" var="physicalexam"/>
           <table cellpadding="0" cellspacing="0" border="0" width="70%" align="center">
           <tr height="30">
           <td><span class="err">*</span>Report Date: </td>
           <td><input type="text" name="reportdate" size="40" id="datepicker11"><span class="err"><form:errors path="Narrativereport.reportdate"></form:errors></span></td>
           </tr>   
           <tr height="30">
-          <td><span class="err">*</span>Patient: </td>
-          <td><input type="text" name="patient" size="40"><span class="err"><form:errors path="Narrativereport.patient"></form:errors></span></td>
+          <td><span class="err">*</span>Patientname: </td>
+          <td><input type="text" name="patient" size="40" value="${patientDetails.name}"><span class="err"><form:errors path=""></form:errors></span></td>
           </tr>
           <tr height="30">
           <td><span class="err">*</span>Date of Injury: </td>
@@ -258,7 +259,7 @@ document.getElementById('gender32').value='Female';
 					<option selected="selected" value="Mr" >Mr</option>
 					<option value="Mrs">Ms</option>
 					<option value="Ms">Miss</option>
-					</select>.<input type="text" name="name2">body was <input type="text" name="body"> . <select  name="gender10" id="gender10">
+					</select>.<input type="text" name="name2" value="${patientDetails.name}">body was <input type="text" name="body"> . <select  name="gender10" id="gender10">
 					<option selected="selected" value="His" >His</option>
 					<option value="Her">Her</option>
 					</select> <input type="text" name="slammed">slammed into the <input type="text" name="slammed1">. Symptoms of <input type="text" name="symptom">, directly related to the accident, appeared <input type="text" name="appeared"> after the incident.  The victim did (not )drive to the emergency room after the wreck. </p>
@@ -267,7 +268,7 @@ document.getElementById('gender32').value='Female';
 					<option selected="selected" value="Mr" >Mr</option>
 					<option value="Mrs">Ms</option>
 					<option value="Ms">Miss</option>
-					</select><input type="text" name="name3">stated that there were no residual effects from that accident and <select  name="gender12" id="gender12">
+					</select><input type="text" name="name3" value="${patientDetails.name}">stated that there were no residual effects from that accident and <select  name="gender12" id="gender12">
 					<option selected="selected" value="He" >He</option>
 					<option value="She">She</option>
 					</select> was in good health prior to the current accident.  Past medical history revealed <input type="text" name="pastmedicalhistory">.  There <select  name="gender13" id="gender13">
@@ -292,7 +293,7 @@ document.getElementById('gender32').value='Female';
 					<option selected="selected" value="Mr" >Mr</option>
 					<option value="Mrs">Ms</option>
 					<option value="Ms">Miss</option>
-					</select> <input type="text" name="name4"> presented to this clinic on <input type="text" name="clinicdate" id="datepicker7">with complaints of <select  name="gender19" id="gender19">
+					</select> <input type="text" name="name4" value="${patientDetails.name}"> presented to this clinic on <input type="text" name="clinicdate" id="datepicker7">with complaints of <select  name="gender19" id="gender19">
 					<option selected="selected" value="Headache" >Headache</option>
 					<option value="Neck pain">Neck pain</option>
 					<option value="Mid Back Pain">Mid Back Pain</option>
@@ -467,7 +468,7 @@ document.getElementById('gender32').value='Female';
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Flexion</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;60</td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="painres1"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text" value="${physicalexam.flexpain}" name="painres1"></td>
 					<td width="200">&nbsp;&nbsp;<input type="text" name="tonicity1"></td>
 					<td width="200"></td>
 					<td width="200"></td>
@@ -475,7 +476,7 @@ document.getElementById('gender32').value='Female';
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Extension</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;75</td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="painres2"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text" name="painres2" value="${physicalexam.extpain}"></td>
 					<td width="200">&nbsp;&nbsp;<input type="text" name="tonicity2"></td>
 					<td width="200"></td>
 					<td width="200"></td>
@@ -483,7 +484,7 @@ document.getElementById('gender32').value='Female';
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Right Lateral Flexion</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;45</td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="painres3"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text" name="painres3" value="${physicalexam.rlfpain}"></td>
 					<td width="200">&nbsp;&nbsp;<input type="text" name="tonicity3"></td>
 					<td width="200"></td>
 					<td width="200"></td>
@@ -491,7 +492,7 @@ document.getElementById('gender32').value='Female';
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Left lateral Flexion</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;45</td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="painres4"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text" name="painres4" value="${physicalexam.llfpain}"></td>
 					<td width="200">&nbsp;&nbsp;<input type="text" name="tonicity4"></td>
 					<td width="200"></td>
 					<td width="200"></td>
@@ -499,7 +500,7 @@ document.getElementById('gender32').value='Female';
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Right Rotation</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;80</td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="painres5"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text" name="painres5" value="${physicalexam.rrpain}"></td>
 					<td width="200">&nbsp;&nbsp;<input type="text" name="tonicity5"></td>
 					<td width="200"></td>
 					<td width="200"></td>
@@ -507,7 +508,7 @@ document.getElementById('gender32').value='Female';
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Left Rotation</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;80</td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="painres6"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text" name="painres6" value="${physicalexam.lrpain}"></td>
 					<td width="200">&nbsp;&nbsp;<input type="text" name="tonicity6"></td>
 					<td width="200"></td>
 					<td width="200"></td>
@@ -782,7 +783,7 @@ Injuries of this nature and magnitude respond well to a treatment program consis
 					<option selected="selected" value="Mr">Mr</option>
 					<option value="Mrs">Mrs</option>
 					<option value="Ms">Ms</option>
-					</select> <input type="text" name="pname">on <input type="text" name="date9" id="datepicker9">and during that period of time, records indicate <select  name="gender62" id="gender62" onchange='Checksymptom(this.value);'>
+					</select> <input type="text" name="pname" value="${patientDetails.name}">on <input type="text" name="date9" id="datepicker9">and during that period of time, records indicate <select  name="gender62" id="gender62" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="He">He</option>
 					<option value="She">She</option>
 					</select> experienced steady improvement.
@@ -792,7 +793,7 @@ Injuries of this nature and magnitude respond well to a treatment program consis
 					<option selected="selected" value="Mr">Mr</option>
 					<option value="Mrs">Mrs</option>
 					<option value="Ms">Ms</option>
-					</select> <input type="text" name="pname1"> condition reached maximum medical improvement on <input type="text" name="datenew" id="datepicker10"> and was therefore released from care.   <select  name="gender64" id="gender64" onchange='Checksymptom(this.value);'>
+					</select> <input type="text" name="pname1" value="${patientDetails.name}"> condition reached maximum medical improvement on <input type="text" name="datenew" id="datepicker10"> and was therefore released from care.   <select  name="gender64" id="gender64" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="His">His</option>
 					<option value="Her">Her</option>
 					</select> prognosis is considered  <select  name="gender65" id="gender65" onchange='Checksymptom(this.value);'>
@@ -812,7 +813,7 @@ Injuries of this nature and magnitude respond well to a treatment program consis
 					<option selected="selected" value="Mr">Mr</option>
 					<option value="Mrs">Mrs</option>
 					<option value="Ms">Ms</option>
-					</select><input type="text" name="pname2"> may have occasional exacerbations.  This is due to fact that fibrotic repair of once injured tissues leaves it permanently weaker, less elastic and more sensitive to the normal stresses of daily activities.  There is no need to place limitations on <select  name="gender71" id="gender71" onchange='Checksymptom(this.value);'>
+					</select><input type="text" name="pname2" value="${patientDetails.name}"> may have occasional exacerbations.  This is due to fact that fibrotic repair of once injured tissues leaves it permanently weaker, less elastic and more sensitive to the normal stresses of daily activities.  There is no need to place limitations on <select  name="gender71" id="gender71" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="His">His</option>
 					<option value="Her">Her</option>
 					</select> activities at this time.  Yet, it is possible that any activity that causes stress upon the once injured ligaments and muscles of <select  name="gender72" id="gender72" onchange='Checksymptom(this.value);'>
@@ -830,7 +831,7 @@ I hope you find this narrative report and discussion helpful in resolving the cu
 					<option selected="selected" value="Mr">Mr</option>
 					<option value="Mrs">Mrs</option>
 					<option value="Ms">Ms</option>
-					</select><input type="text" name="pname3"> condition.  If you have any questions, please feel free to contact me.
+					</select><input type="text" name="pname3" value="${patientDetails.name}"> condition.  If you have any questions, please feel free to contact me.
 	            </p>
 	            <div align="right">
           <p><B style="font-size:13px">Sincerely,</B></p>

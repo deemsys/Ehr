@@ -292,6 +292,14 @@ color:#fff;
 		$rec=$obj->records[0]['previlages'];
 		$previ=explode(",",$rec);
 	<AJDF:output>/php</AJDF:output>	 Suresh-->
+					<c:choose>
+					<c:when test="${menu=='checklist'}">
+					<ul class="menu">
+					</c:when>			
+					<c:otherwise>
+					
+					
+					
 					
 						<c:choose>
 						<c:when test="${menu=='search'}">
@@ -1134,7 +1142,7 @@ color:#fff;
 <ul id="ddsubmenu7" class="ddsubmenustyle">
 
 							
-				            <li><a href="staffchecklist">Staff checklist</a></li>
+				            <li><a href="checklistsearch">Staff checklist</a></li>
 				            <li><a href="staffdetails">View Staff checklist</a></li>
 				            <li><a href="insuranceverification">Insurance verification</a></li>
 				             <li><a href="insuranceverifylist">View Insurance verification</a></li>
@@ -1320,7 +1328,7 @@ color:#fff;
 							      <li><a href="viewshoulderpainscore">View Shoulder Pain Score</a></li>
 							     </ul>
 							     <ul id="ddsubmenu32" class="ddsubmenustyle">
-							      <li><a href="narrativereport">Narrativereport</a></li>
+							      <li><a href="narrativesearch">Narrativereport</a></li>
 							      <li><a href="viewnarrativereport">View Narrativereport</a></li>
 							     </ul>
 							      <ul id="ddsubmenu33" class="ddsubmenustyle">
@@ -1365,6 +1373,9 @@ color:#fff;
 		</c:choose>
 		</c:otherwise>
 		</c:choose>
+		
+					</c:otherwise>					
+					</c:choose>
 </div>
 </div>
 </body>
