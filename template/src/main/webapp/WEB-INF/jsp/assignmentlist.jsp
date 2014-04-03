@@ -60,14 +60,14 @@
 							    	</tr>
 							    	</c:if>
 		<tr><td colspan="6">  
-	<div class="extrabottom">
+	<%-- <div class="extrabottom">
               <ul class="pagination">
          
               <c:if test="${currentpage!=1&&currentpage!=null}">
              <li class="page_unselect"><a href="assignmentlist_page?page=${currentpage - 1}" >Prev</a></li> 
                </c:if>
               
-             <%-- <c:forEach var="count" begin="1" end="${noofrows}">  --%>
+             <c:forEach var="count" begin="1" end="${noofrows}"> 
                <c:forEach begin="1" end="${noofpages}" var="i">
                 <c:choose>
                     <c:when test="${currentpage eq i}">
@@ -91,7 +91,7 @@
               </c:choose>
 
               </ul>
-              </div>
+              </div> --%>
               </td>
               </tr>
 

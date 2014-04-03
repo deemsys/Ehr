@@ -76,6 +76,18 @@ window.onload(){
   .tabs-bottom .ui-tabs-nav li { top: auto; bottom: 0; margin: 0 .2em 1px 0; border-bottom: auto; border-top: 0; }
   .tabs-bottom .ui-tabs-nav li.ui-tabs-active { margin-top: -1px; padding-top: 1px; }
   </style>
+  <script type="text/javascript">
+  function confirmation() 
+	{
+	var answer = confirm("Are you Sure You Want to Delete Participant ?")
+	if (answer){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+  </script>
 </head>
 <body>
 <div id="tabs" class="tabs-bottom" >
@@ -408,7 +420,7 @@ window.onload(){
                    <td>&nbsp;&nbsp;</td>
                    <td valign="top" align="right"><input type="submit" class="submit_btn" value="Update" name="insert"></td>
                   	<td>&nbsp;&nbsp;</td>
-                  <td valign="top" align="center"><a href="deleteworkaccident" class="submit_btn" style="text-decoration: none;color:white">Delete</a><!-- <input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='viewworkaccident'"> --></td>
+                  <td valign="top" align="center"><a href="deleteworkaccident" class="submit_btn" style="text-decoration: none;color:white" onclick="return confirmation() ">Delete</a><!-- <input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='viewworkaccident'"> --></td>
                 </tr>
                 </table>
                 </td>

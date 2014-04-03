@@ -3,10 +3,12 @@
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
-<link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
-<script src="resources/js/jquery.min.js"></script>
+
+ <link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
+  <link rel="stylesheet" href="/resources/css/style.css" />
+ <script src="resources/js/jquery.min.js"></script> 
  <script src="resources/js/jquery-ui.js"></script>
- <script src="resources/js/jquery-1.9.1.js"></script>
+ <script src="resources/js/jquey-1.9.1.js"></script>
  <STYLE type="text/css">
   P#mypar {font-style:calibri;
   line-height:18px;}
@@ -14,9 +16,71 @@
   </STYLE>
  <script>
  $(function() {
-           $( "#datepicker" ).datepicker();
+           $( "#datepicker1" ).datepicker();
          });
- 
+  $(function() {
+           $( "#datepicker2" ).datepicker();
+         });
+</script>
+<script type="text/javascript">
+    function msg()
+    {
+    if (document .getElementById("name").value=="")
+    {
+    alert ("please enter ur name");
+    return false ;
+    }
+     var name=/^[a-zA-Z]*$/;
+        
+        if(document.getElementById("name").value.match(name)==null)
+        {
+            alert("Enter ur name only in letters");    
+            return false;
+        }
+         if (document .getElementById("name1").value=="")
+    {
+    alert ("please enter ur name");
+    return false ;
+    }
+     var name=/^[a-zA-Z]*$/;
+        
+        if(document.getElementById("name1").value.match(name)==null)
+        {
+            alert("Enter ur name only in letters");    
+            return false;
+        }
+             if (document .getElementById ("addr").value=="")
+    {
+     alert ("please enter ur Address");
+    return false ;
+    }
+     var addr1 = /^[a-zA-Z0-9]*$/;
+        
+        if(document.getElementById("addr").value.match(addr1)==null)
+        {
+            alert("Enter ur Address u can using in leters and numbers");
+            return false;
+        }
+             if (document .getElementById ("regarding").value=="")
+    {
+     alert ("please enter ur patientname");
+    return false ;
+    }
+        
+         if (document .getElementById("patientname").value=="")
+    {
+    alert ("please enter ur patientname");
+    return false ;
+    }
+    
+     var name=/^[a-zA-Z]*$/;
+        
+        if(document.getElementById("patientname").value.match(name)==null)
+        {
+            alert("Enter ur name only in letters");    
+            return false;
+        }
+}
 </script>
 </head>
  <body>
@@ -65,13 +129,13 @@
               <td height="20" width="180"><span class="err">*</span>Name Of Insurance Company:</td>
               <td ><input type="text" class="input_txtbx1" name="nameofins" id="name" /><span class="err"><form:errors path="noticeofassignment.name"></form:errors></td>
               <td height="40" width="110" ><span class="err">&nbsp;&nbsp;*</span>Name Of Attorney:</td>
-              <td >&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="nameofattorney" id="name" /><span class="err"><form:errors path="noticeofassignment.nameofattorney"></form:errors></span></td>
+              <td >&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="nameofattorney" id="name1" /><span class="err"><form:errors path="noticeofassignment.nameofattorney"></form:errors></span></td>
               </tr>
               </table>
                 <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td  width="180"><span class="err">*</span>Address</td>
-              <td  ><textarea rows="" cols="" name="address1" style="width: 159px; height: 64px"></textarea>
+              <td  ><textarea rows="" cols="" name="address1" style="width: 159px; height: 64px" id="addr"></textarea>
             </td>  <td height="40" width="90" style="width: 138px; "><span class="err"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Address:</td>
               <td ><textarea rows="" cols="" name="address2" style="width: 175px; height: 64px"></textarea></td>
               </tr>
@@ -88,11 +152,11 @@
           </tr> 
           <tr>
             <td height="30" width="180"><span class="err">*</span>Date Of Accident:</td>
-              <td ><input type="text" class="input_txtbx1" name="dateofaccident" id="dateofaccident" /><span class="err"><form:errors path="noticeofassignment.dateofaccident"></form:errors></span></td>                      
+              <td ><input type="text" class="input_txtbx1" name="dateofaccident" id="datepicker1" /><span class="err"><form:errors path="noticeofassignment.dateofaccident"></form:errors></span></td>                      
           </tr> 
           <tr>
             <td height="20" width="180"><span class="err">*</span>Today'sDate:</td>
-              <td ><input type="text" class="input_txtbx1" name="todaysdate" id="todaysdate" /><span class="err"><form:errors path="noticeofassignment.todaysdate"></form:errors></span></td>                      
+              <td ><input type="text" class="input_txtbx1" name="todaysdate" id="datepicker2" /><span class="err"><form:errors path="noticeofassignment.todaysdate"></form:errors></span></td>                      
           </tr> <br>  
             </table>
             
@@ -167,7 +231,7 @@ do not receive a response, we will act in reliance that you will comply with it'
               <input type="text" class="input_txtbx1" name="treatingphysician" id="treatingphysician" /><span class="err"><form:errors path="responseattorney.treatingphysician"></form:errors></td>
               </tr><br>
               </table>
-              <table><tr> <td><input type="submit" class="submit_btn" value="Save"></td>
+              <table><tr> <td><input type="submit" class="submit_btn" value="Save" OnClick ="return msg();"></td>
                <td><a href="responseattorney"style="color:white" class="submit_btn">Cancel</a></td>
               </tr></table>
               </div>

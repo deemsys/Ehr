@@ -37,8 +37,9 @@
 			
 			 $("#phoneerror").html(''); 
 			/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
-			var intRegex = /^\d+$/;
-			if(intRegex.test($(this).val())||$(this).val()=='') 
+			//var intRegex = /^\d+$/;
+			var a= /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/;
+			if(a.test($(this).val())||$(this).val()=='') 
 			{
 				var $in = $(this).val();		 
 			}
@@ -71,8 +72,9 @@ $("#groupno").keyup(function() {
 			
 			 $("#supphoneerror").html(''); 
 			/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
-			var intRegex = /^\d+$/;
-			if(intRegex.test($(this).val())||$(this).val()=='') 
+			//var intRegex = /^\d+$/;
+			var a= /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/;
+			if(a.test($(this).val())||$(this).val()=='') 
 			{
 				var $in = $(this).val();		 
 			}
@@ -88,6 +90,7 @@ $("#groupno").keyup(function() {
  
  
 </script>
+
 <script>
  $(function() {
 
@@ -110,6 +113,28 @@ $("#groupno").keyup(function() {
 	        $("#datepicker").datepicker( "option", "minDate", minValue );
 	    })
    });
+</script>
+ <script>
+i=0;
+$(document).ready(function(){
+  $("#supphone").keypress(function(){
+var phone=document.getElementById("supphone").value;
+phone = phone.replace(/(\d{3})(\d{3})(\d+)/, '($1)$2-$3');
+document.getElementById("supphone").value=phone;
+ });  
+
+});
+</script>
+ <script>
+i=0;
+$(document).ready(function(){
+  $("#phone").keypress(function(){
+var phone=document.getElementById("phone").value;
+phone = phone.replace(/(\d{3})(\d{3})(\d+)/, '($1)$2-$3');
+document.getElementById("phone").value=phone;
+ });  
+
+});
 </script>
 </head>
  <body>
@@ -158,7 +183,7 @@ $("#groupno").keyup(function() {
               <td><span class="err">*</span>Insurance Company</td>
               <td> <input type="text" class="input_txtbx1" name="insurance_company" id="insurance_company" /><br><span class="err"><form:errors path="Insuranceinformation.insurance_company"></form:errors></td>
               <td><span class="err">*</span>Phone#</td>
-              <td><input type="text" class="input_txtbx1" name="phone" id="phone" /><br><span class="err"><form:errors path="Insuranceinformation.phone"></form:errors>
+              <td><input type="text" class="input_txtbx1" name="phone" id="phone" maxlength="13" /><br><span class="err"><form:errors path="Insuranceinformation.phone"></form:errors>
               <br><span class="err" id="phoneerror"></span>
               </td>
               </tr>
@@ -176,7 +201,7 @@ $("#groupno").keyup(function() {
               <td><span class="err">*</span>Supplemental Insurance Company</td>
               <td> <input type="text" class="input_txtbx1" name="supplemental_company" id="supplemental_company" /><br><span class="err"><form:errors path="Insuranceinformation.supplemental_company"></form:errors></td>
               <td><span class="err">*</span>Phone#</td>
-              <td> <input type="text" class="input_txtbx1" name="sup_phone" id="supphone" /><br><span class="err"><form:errors path="Insuranceinformation.sup_phone"></form:errors>
+              <td> <input type="text" class="input_txtbx1" name="sup_phone" id="supphone" maxlength="13" /><br><span class="err"><form:errors path="Insuranceinformation.sup_phone"></form:errors>
               <br>
               <span class="err" id="supphoneerror"></span>
               </td>

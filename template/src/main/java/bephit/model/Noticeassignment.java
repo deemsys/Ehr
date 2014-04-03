@@ -1,5 +1,6 @@
 package bephit.model;
 
+//import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
 
 public class Noticeassignment
@@ -10,14 +11,21 @@ public class Noticeassignment
 	private String nameofins;
 	@NotEmpty
 	private String nameofattorney;
+	@NotEmpty
 	private String address1;
+	@NotEmpty
 	private String address2;
+	@NotEmpty
 	private String regarding;
 	@NotEmpty
 	private String patientname;	
+	@NotEmpty
 	private String dateofaccident;
+	@NotEmpty
 	private String todaysdate;
+	@NotEmpty
 	private String letter;
+	@NotEmpty
 	private String letter1;
 	@NotEmpty
 	private String treatingphysician;

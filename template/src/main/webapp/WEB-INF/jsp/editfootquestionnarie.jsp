@@ -155,7 +155,18 @@ $(function() {
  
 </script>
    
-  
+  <script type="text/javascript">
+  function confirmation() 
+	{
+	var answer = confirm("Are you Sure You Want to Delete Participant ?")
+	if (answer){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+  </script>
 
 </head>
 <body>
@@ -340,7 +351,7 @@ $(function() {
 	    <td>
 	    
 	     <input class="submit_btn" type="submit" value="Update" ></td>
-	     <td><input class="submit_btn" type="reset" value="Cancel" >
+	     <td><input class="submit_btn" type="reset" value="Delete" onclick="return confirmation() " >
 	    </td></tr></table>
 	    
 	    </div></div>

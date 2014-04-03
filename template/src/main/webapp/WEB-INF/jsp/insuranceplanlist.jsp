@@ -63,14 +63,14 @@
 							    	</c:if>
 							    	
 							    	<tr><td colspan="6">  
-	<div class="extrabottom">
+	<%-- <div class="extrabottom">
               <ul class="pagination">
          
               <c:if test="${currentpage!=1&&currentpage!=null}">
              <li class="page_unselect"><a href="insuranceplanlist_page?page=${currentpage - 1}" >Prev</a></li> 
                </c:if>
               
-             <%-- <c:forEach var="count" begin="1" end="${noofrows}">  --%>
+             <c:forEach var="count" begin="1" end="${noofrows}"> 
                <c:forEach begin="1" end="${noofpages}" var="i">
                 <c:choose>
                     <c:when test="${currentpage eq i}">
@@ -91,7 +91,7 @@
                 <c:otherwise>
                   <li class="page"><a href="insuranceplanlist" class="paging_select">Back</a></li>
               </c:otherwise>
-              </c:choose>
+              </c:choose> --%>
 							 </table>
 							 </form>
 							 </div>

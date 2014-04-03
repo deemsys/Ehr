@@ -12,7 +12,7 @@
         <tr>
         <td valign="top" align="left" style="padding:5px 0 10px 0;">&nbsp;
             <div id="success_statusbar" class="status success">
-            <p class="closestatus"><a title="Close" href="hardshiplist">x</a></p>
+            <p class="closestatus"><a title="Close" href="viewtreatform">x</a></p>
             <p><img alt="Success" src="resources/images/icons/icon_success.png"><span>Success!</span>.</p>
           </div>
       </tr>
@@ -61,14 +61,14 @@
 							    	</c:if>
 							    	
 							    	<tr><td colspan="6">  
-	<div class="extrabottom">
+	<%-- <div class="extrabottom">
               <ul class="pagination">
          
               <c:if test="${currentpage!=1&&currentpage!=null}">
              <li class="page_unselect"><a href="hardshiplist_page?page=${currentpage - 1}" >Prev</a></li> 
                </c:if>
               
-             <%-- <c:forEach var="count" begin="1" end="${noofrows}">  --%>
+             <c:forEach var="count" begin="1" end="${noofrows}"> 
                <c:forEach begin="1" end="${noofpages}" var="i">
                 <c:choose>
                     <c:when test="${currentpage eq i}">
@@ -91,7 +91,7 @@
               </c:otherwise>
               </c:choose>
               </ul>
-              </div>
+              </div> --%>
               </td>
               </tr>
 							 </table>

@@ -820,19 +820,19 @@ public class MainController {
 		   model.addAttribute("patientno","0");
 		}
 		  AutoaccidentForm autoaccidentForm = new AutoaccidentForm();
-		
-		  autoaccidentForm.setAutoaccident(autoDAO.getAutoaccident());
+	
+		  autoaccidentForm.setAutoaccident(autoDAO.getusernameAuto(principal));
 	
 		  	model.addAttribute("autoaccidentForm", autoaccidentForm);
 		  	model.addAttribute("menu", "Accident");
 	        System.out.println("Patient");
-	        model.addAttribute("noofrows",autoaccidentForm.getAutoaccident().size());       
+	       /* model.addAttribute("noofrows",autoaccidentForm.getAutoaccident().size());       
 		    autoaccidentForm.setAutoaccident(autoDAO.getlimitedautoaccident(1));
 	        model.addAttribute("noofpages",(int) Math.ceil(autoDAO.getnoofautoaccident() * 1.0 / 5));	 
 		        model.addAttribute("button","viewall");
 		        model.addAttribute("success","false");
 		        model.addAttribute("currentpage",1);
-			
+			*/
 			
 			return "viewautoaccident";
 	 
@@ -947,7 +947,7 @@ public class MainController {
 		
 		AutoaccidentForm autoaccidentForm = new AutoaccidentForm();
         
-       autoaccidentForm.setAutoaccident(autoDAO.getAutoaccident());
+       autoaccidentForm.setAutoaccident(autoDAO.getusernameAuto(principal));
 
    	if(patientDAO.getUsername(principal).size()>0)
    		{			
@@ -977,7 +977,7 @@ public class MainController {
 		//ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
 		AutoaccidentForm autoaccidentForm = new AutoaccidentForm();
 		//participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
-		autoaccidentForm.setAutoaccident(autoDAO.getAutoaccident());
+		autoaccidentForm.setAutoaccident(autoDAO.getusernameAuto(principal));
         model.addAttribute("autoaccidentForm", autoaccidentForm);
         model.addAttribute("menu", "Accident");
 		}
@@ -1236,10 +1236,10 @@ public class MainController {
 	public String viewWorkAccident(HttpServletRequest request,ModelMap model, Principal principal) {
 		    model.addAttribute("success","false");		 
 			WorkaccidentForm workaccidentForm = new WorkaccidentForm();
-			workaccidentForm.setWorkaccident(workDAO.getWorkaccident());
+			workaccidentForm.setWorkaccident(workDAO.getUsernameWorkaccident(principal));
 			model.addAttribute("workaccidentForm", workaccidentForm);
 			model.addAttribute("menu", "Accident");
-			 model.addAttribute("noofrows",workaccidentForm.getWorkaccident().size());       
+			/* model.addAttribute("noofrows",workaccidentForm.getWorkaccident().size());       
 			    workaccidentForm.setWorkaccident(workDAO.getlimitedworkaccident(1));
 		        model.addAttribute("noofpages",(int) Math.ceil(workDAO.getnoofworkaccident() * 1.0 / 5));	 
 			        model.addAttribute("button","viewall");
@@ -1250,7 +1250,7 @@ public class MainController {
 			    	if(patientDAO.getUsername(principal).size()>0)
 			    		{			
 			    	   model.addAttribute("patientno","0");
-			    	}
+			    	}*/
 				return "viewworkaccident";
 		 
 			}	
@@ -1285,7 +1285,7 @@ public class MainController {
 				   model.addAttribute("patientno","0");
 				}
 				WorkaccidentForm workaccidentForm = new WorkaccidentForm();
-				workaccidentForm.setWorkaccident(workDAO.getWorkaccident());
+				workaccidentForm.setWorkaccident(workDAO.getUsernameWorkaccident(principal));
 				
 				model.addAttribute("workaccidentForm", workaccidentForm);	
 				model.addAttribute("noofrows",workaccidentForm.getWorkaccident().size());    
@@ -1351,7 +1351,7 @@ public class MainController {
 		//	RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
 			WorkaccidentForm workaccidentForm = new WorkaccidentForm();
 	     // radiologicReportForm.setRadiologicReport(radioDAO.getRadiologicReport(report.getPid()));
-	      workaccidentForm.setWorkaccident(workDAO.getWorkaccident(workAccident.getPatient_no()));
+	      workaccidentForm.setWorkaccident(workDAO.getUsernameWorkaccident(principal));
 	        model.addAttribute("workaccidentForm", workaccidentForm);
 	        model.addAttribute("menu", "Accident"); 
 	        System.out.println("has error");
@@ -1387,7 +1387,7 @@ public class MainController {
 		{
         model.addAttribute("success","true");
         WorkaccidentForm workaccidentForm= new WorkaccidentForm();
-		workaccidentForm.setWorkaccident(workDAO.getWorkaccident());
+		workaccidentForm.setWorkaccident(workDAO.getUsernameWorkaccident(principal));
 		model.addAttribute("workaccidentForm",workaccidentForm);
 		model.addAttribute("menu", "Accident");
 		}
@@ -2110,7 +2110,7 @@ public class MainController {
 		
 		MedicalRecordsForm medicalrecordForm = new MedicalRecordsForm();
         
-        medicalrecordForm.setMedicalDetails(medicalDAO.getMedicalDetails());
+        medicalrecordForm.setMedicalDetails(medicalDAO.getUsernameMedicalDetails(principal));
        
         model.addAttribute("MedicalRecordsForm", medicalrecordForm);
         model.addAttribute("menu", "authorization");
@@ -2566,7 +2566,7 @@ String username=principal.getName();
 		
 		AssignmentDetailsForm assignmentdetailsform = new AssignmentDetailsForm();
         
-        assignmentdetailsform.setAssignmentDetails(assignmentDAO.getAssignmentDetails());
+        assignmentdetailsform.setAssignmentDetails(assignmentDAO.getUsernameAssignment(principal));
        
         model.addAttribute("AssignmentDetailsForm", assignmentdetailsform);
 	       model.addAttribute("success","true");
@@ -2774,7 +2774,7 @@ String username=principal.getName();
 		
 		HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
         
-        hippaprivacyform.setPrivacyDetails(hippaDAO.getPrivacyDetails());
+        hippaprivacyform.setPrivacyDetails(hippaDAO.getusernameHippa(principal));
        
         model.addAttribute("HippaPrivacyForm", hippaprivacyform);
 	       model.addAttribute("success","true");
@@ -3482,18 +3482,19 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 	}
 		
 	@RequestMapping(value="/viewinsuranceinformation", method = RequestMethod.GET)
-	public String viewinsuranceinformation(Principal principal,HttpServletRequest request,@RequestParam("number") String number,ModelMap model,Insuranceinformation insuranceinformation){
+	public String viewinsuranceinformation(HttpServletRequest request,ModelMap model,Insuranceinformation insuranceinformation,Principal principal){
 		if(patientDAO.getUsername(principal).size()>0)
 		{			
 	   model.addAttribute("patientno","0");
 	}
 		InsuranceinformationForm insuranceinformationForm= new InsuranceinformationForm();
-    	insuranceinformationForm.setInsuranceinformation(infoDAO.getInsuranceinformation(number));
+    	insuranceinformationForm.setInsuranceinformation(infoDAO.getusernameInsuranceinformation(principal));
 		model.addAttribute("InsuranceinformationForm",insuranceinformationForm);
 		model.addAttribute("menu", "health");
 		return "viewinsuranceinformation";
  
 	}
+	
 	@RequestMapping(value="/insuranceplanlist", method = RequestMethod.GET)
 	public String insuranceplanlist(Principal principal,HttpServletRequest request,ModelMap model) {
 		
@@ -3569,7 +3570,7 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 	   model.addAttribute("patientno","0");
 	}
 		InsuranceplanForm insuranceplanForm= new InsuranceplanForm();
-    	insuranceplanForm.setInsuranceplan(planDAO.getInsurance(no));
+    	insuranceplanForm.setInsuranceplan(planDAO.getInsuranceplanUsername(principal));
 		model.addAttribute("insuranceplanform",insuranceplanForm);
 		model.addAttribute("menu", "health");
 		return "viewinsuranceplan";
@@ -3638,7 +3639,7 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 		//ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
 		InsuranceplanForm insuranceplanForm = new InsuranceplanForm();
 		//participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
-		insuranceplanForm.setInsuranceplan(planDAO.getInsuranceplan());
+		insuranceplanForm.setInsuranceplan(planDAO.getInsuranceplanUsername(principal));
         model.addAttribute("insuranceplanform", insuranceplanForm);
         model.addAttribute("menu", "health");
 		}
@@ -3785,7 +3786,7 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 	   model.addAttribute("patientno","0");
 	}
 		TreatForm treatform= new TreatForm();
-		treatform.setTreatform(treatDAO.getTreatDetails(treat_no));
+		treatform.setTreatform(treatDAO.getUsernameTreatDetails(principal));
 		System.out.println(treatform);
 		model.addAttribute("treatform",treatform);
 		 model.addAttribute("menu", "consent");
@@ -3821,7 +3822,7 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 		int status = treatDAO.updatetreatform(treatdetails, treatdetails.getTreat_no());
 		System.out.println(status);
 		 TreatForm treatform= new TreatForm();
-			treatform.setTreatform(treatDAO.getTreatDetails());
+			treatform.setTreatform(treatDAO.getUsernameTreatDetails(principal));
 			model.addAttribute("treatform",treatform);
 	       model.addAttribute("success","true");
 	       model.addAttribute("menu", "consent");
@@ -4018,7 +4019,7 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 	   model.addAttribute("patientno","0");
 	}
 		HardshipagreementForm hardshipagreementForm= new HardshipagreementForm();
-    	hardshipagreementForm.setHardshipagreement(hardDAO.getHardshipagreement());
+    	hardshipagreementForm.setHardshipagreement(hardDAO.getUsernameHardshipagreement(principal));
 		model.addAttribute("hardshipagreementform",hardshipagreementForm);
 		 model.addAttribute("menu", "authorization");
 		return "edithardship";
@@ -4048,7 +4049,7 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 		int status = hardDAO.updatehardship(Hardshipagreement, Hardshipagreement.getAgreement_no(), principal.getName());
 		System.out.println(status);
 		HardshipagreementForm hardshipagreementForm= new HardshipagreementForm();
-    	hardshipagreementForm.setHardshipagreement(hardDAO.getHardshipagreement());
+    	hardshipagreementForm.setHardshipagreement(hardDAO.getUsernameHardshipagreement(principal));
 		model.addAttribute("hardshipagreementform",hardshipagreementForm);
 	       model.addAttribute("success","true");
 	       model.addAttribute("menu", "authorization");
@@ -4122,7 +4123,7 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 		int status = infoDAO.updateinsuranceinformation(insuranceinformation, insuranceinformation.getNumber());
 		System.out.println(status);
 		InsuranceinformationForm insuranceinformationForm= new InsuranceinformationForm();
-    	insuranceinformationForm.setInsuranceinformation(infoDAO.getInsuranceinformation());
+    	insuranceinformationForm.setInsuranceinformation(infoDAO.getusernameInsuranceinformation(principal));
 		model.addAttribute("InsuranceinformationForm",insuranceinformationForm);   
 		model.addAttribute("success","true");
 		 model.addAttribute("menu", "health");
@@ -4144,7 +4145,7 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
         model.addAttribute("success","true");
 		
         InsuranceinformationForm insuranceinformationForm= new InsuranceinformationForm();
-    	insuranceinformationForm.setInsuranceinformation(infoDAO.getInsuranceinformation());
+    	insuranceinformationForm.setInsuranceinformation(infoDAO.getusernameInsuranceinformation(principal));
 		model.addAttribute("InsuranceinformationForm",insuranceinformationForm);
 		 model.addAttribute("menu", "health");
 		}

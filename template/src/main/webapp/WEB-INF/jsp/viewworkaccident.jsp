@@ -55,14 +55,14 @@
 							    	</tr>
 							    	</c:if>
 							    	<tr><td colspan="6">  
-	<div class="extrabottom">
+	<%-- <div class="extrabottom">
               <ul class="pagination">
          
               <c:if test="${currentpage!=1&&currentpage!=null}">
              <li class="page_unselect"><a href="viewworkaccident_page?page=${currentpage - 1}" >Prev</a></li> 
                </c:if>
               
-             <%-- <c:forEach var="count" begin="1" end="${noofrows}">  --%>
+             <c:forEach var="count" begin="1" end="${noofrows}"> 
                <c:forEach begin="1" end="${noofpages}" var="i">
                 <c:choose>
                     <c:when test="${currentpage eq i}">
@@ -84,7 +84,7 @@
                   <li class="page"><a href="viewworkaccident" class="paging_select">Back</a></li>
               </c:otherwise>
               </c:choose>
-        				       				 </table>
+        				       				--%> </table> 
         				       				</form>
         				       				</div>
         				       				</td>

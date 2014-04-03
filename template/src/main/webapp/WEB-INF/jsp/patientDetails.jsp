@@ -108,7 +108,7 @@
 			else if($(this).val()!='')
 				{
 				
-				$("#workphoneerror").html('Kindly enter a number this format (222)234-1234');
+				$("#workphoneerror").html('Kindly enter a number ');
 				}
 		}).keydown(function() {
 		    oldValue = $(this).val();
@@ -319,6 +319,23 @@ $("#policy").keyup(function() {
 }).keydown(function() {
     oldValue = $(this).val();
 })
+$("#phyphone").keyup(function() {
+	
+	 $("#phyphone").html(''); 
+	/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
+	var intRegex = /^\d+$/;
+	if(intRegex.test($(this).val())||$(this).val()=='') 
+	{
+		var $in = $(this).val();		 
+	}
+	else if($(this).val()!='')
+		{
+		
+		$("#phyphone").html('Kindly enter a number!!!!');
+		}
+}).keydown(function() {
+    oldValue = $(this).val();
+})
 
 $("#phhealth").keyup(function() {
 	
@@ -340,6 +357,7 @@ $("#phhealth").keyup(function() {
 })
 });
 </script>
+
 
   <script>
 
@@ -415,6 +433,9 @@ $("#phhealth").keyup(function() {
 	});
 });
  */
+
+
+
 $(function(){
 	$("#datepicker3").datepicker({changeMonth: true,changeYear: true,showOn: "button",
 		buttonImage: "resources/images/calendar.gif",
@@ -499,6 +520,17 @@ $(document).ready(function(){
 var phone=document.getElementById("homephone").value;
 phone = phone.replace(/(\d{3})(\d{3})(\d+)/, '($1)$2-$3');
 document.getElementById("homephone").value=phone;
+ });  
+
+});
+</script>
+ <script>
+i=0;
+$(document).ready(function(){
+  $("phyphone").keypress(function(){
+var phone=document.getElementById("phyphone").value;
+phone = phone.replace(/(\d{3})(\d{3})(\d+)/, '($1)$2-$3');
+document.getElementById("phyphone").value=phone;
  });  
 
 });
@@ -1083,39 +1115,39 @@ function validate(){
 				                <td></td>
 				                </tr>
 				                 <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>What is your Dominant Hand </td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>What is your Dominant Hand </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="radio" name="retain" value="R" class="input_txt" checked="true">R&nbsp;&nbsp;&nbsp;<input type="radio" name="retain" value="L" class="input_txt">L</td>
 				                <td></td>
 				                </tr>
 				                
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>Would you like us to send your records to your family Physician  </td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Would you like us to send your records to your family Physician  </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="radio" name="record" value="yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="record" value="No" class="input_txt">No</td>
 				                <td></td>
 				                </tr>
 				                <tr class="row1">
-				                  	<td valign="middle" align="left" class="input_txt"><span class="err"></span>What is your Physician's Name </td>
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>What is your Physician's Name </td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="phyname"/><br><span class="err"><form:errors path="patientDetails.where1"></form:errors></span>
 				                    </tr>
 				                
 				                <tr class="row1">
-				                  	<td valign="middle" align="left" class="input_txt"><span class="err"></span>What is your Physician's Phone </td>
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>What is your Physician's Phone </td>
 				                  	<td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="phyphone" maxlength="13"/><br><span class="err"><form:errors path="patientDetails.where1"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="phyphone" name="phyphone" maxlength="13"/><br><span class="err"><form:errors path="patientDetails.where1"></form:errors></span>
 				                   <span class="err" id="phynumbererror"></span>
 				                    </tr>
 				                    
 				                     <tr class="row1">
-				                  	<td valign="middle" align="left" class="input_txt"><span class="err"></span>	What body parts were x-rayed </td>
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>	What body parts were x-rayed </td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="xray"/><br><span class="err"><form:errors path="patientDetails.where1"></form:errors></span>
 				                    </tr>
 				                    
 				                     <tr class="row1">
-				                  	<td valign="middle" align="left" class="input_txt"><span class="err"></span>what treatment was given </td>
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>what treatment was given </td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="treat"/><br><span class="err"><form:errors path="patientDetails.where1"></form:errors></span>
 				                    </tr>

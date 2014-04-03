@@ -56,6 +56,18 @@ $(function() {
         }
     });
 </script>
+<script type="text/javascript">
+  function confirmation() 
+	{
+	var answer = confirm("Are you Sure You Want to Delete Participant ?")
+	if (answer){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+  </script>
 <style>
   /* force a height so the tabs don't jump as content height changes */
   #tabs .tabs-spacer { float: left; height: 200px; }
@@ -765,7 +777,7 @@ $(function() {
 				  <br><tr>
 				 <td><br><input type="button" id="btnPrevious" class="submit_btn" value="Previous" style = "display:none" />&nbsp;</td>
                 <td><input type="submit" class="submit_btn" value="Update"></td>
-                <td><a href="deleteautoaccident" class="submit_btn" style="text-decoration: none;color:white">Delete</a><!-- <input type="reset" class="submit_btn" value="Cancel" onclick="window.location.href='viewautoaccident'"> --></td>				 
+                <td><a href="deleteautoaccident" class="submit_btn" style="text-decoration: none;color:white" onclick="return confirmation() ">Delete</a><!-- <input type="reset" class="submit_btn" value="Cancel" onclick="window.location.href='viewautoaccident'"> --></td>				 
 				</table> 
 				  
 				     </div>
