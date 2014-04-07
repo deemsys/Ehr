@@ -59,14 +59,14 @@
                
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td width="50%"><span class="err">*</span></td>
+              <td width="50%"></td>
               <td  width="50%"><input type="text" class="input_txtbx1" name="toattorney2" id="toattorney2" /><span class="err"><form:errors path="Updateletter.toattorney2"></form:errors></td>
               </tr>
               </table>
               <br>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td width="50%"><span class="err">*</span></td>
+              <td width="50%"></td>
               <td width="50%"><input type="text" class="input_txtbx1" name="toattorney3" id="toattorney3" /><span class="err"><form:errors path="Updateletter.toattorney3"></form:errors></td>
               </tr>
               </table>

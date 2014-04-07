@@ -77,13 +77,13 @@
  
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="100"><span class="err">*</span>Date Borrowed</td>
+              <td height="25" width="100"><span class="err"></span>Date Borrowed</td>
               <td ><input type="text" class="input_txtbx1" name="date" id="datepicker"  value="${xraydetails.date}"/><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="100"><span class="err">*</span>Date Due</td>
+              <td height="25" width="100"><span class="err"></span>Date Due</td>
               <td ><input type="text" class="input_txtbx1" name="date1" id="datepicker1"  value="${xraydetails.date1}"/><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table><br><br>

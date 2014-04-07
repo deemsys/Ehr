@@ -230,7 +230,7 @@
         	
         	  <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="120"><span class="err">*</span>Diagnosis:</td>
+              <td height="25" width="120"><span class="err"></span>Diagnosis:</td>
               <td ><input type="text" class="input_txtbx1" name="Diagnosis" value="${workschooldetails.diagnosis }" id="datepicker" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table><br>

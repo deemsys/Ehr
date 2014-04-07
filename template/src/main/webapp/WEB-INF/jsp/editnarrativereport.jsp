@@ -88,18 +88,28 @@ function Checksymptom(val){
 	}
 </script>
 </head>
- 
+ <style>
+  /* force a height so the tabs don't jump as content height changes */
+  #tabs .tabs-spacer { float: left; height: 200px; }
+  .tabs-bottom .ui-tabs-nav { clear: left; padding: 0 .2em .2em .2em; }
+  .tabs-bottom .ui-tabs-nav li { top: auto; bottom: 0; margin: 0 .2em 1px 0; border-bottom: auto; border-top: 0; }
+  .tabs-bottom .ui-tabs-nav li.ui-tabs-active { margin-top: -1px; padding-top: 1px; }
+  </style>
  <body>
- <div id="tabs">
+ 
+ 
+ <div id="tabs" class="tabs-bottom" >
        <ul>
           <li><a href="#tabs-1">1</a></li>
           <li><a href="#tabs-2">2</a></li>  
            <li><a href="#tabs-3">3</a></li>        
        </ul>
-       <form action="updatenarrativereport" method="POST">
-  <div id="tabs-1">                       
- <div id="right_content">
-
+      
+   <div class="tabs-spacer"></div>
+  <div id="tabs-1">  
+                       
+   <div id="right_content"> 
+ <form action="updatenarrativereport" method="POST">
 <table cellpadding="0" cellspacing="0" border="0" width="80%" class="margin_table">
 <c:set value="${narrativereportForm.narrativereport[0]}" var="narrativereport"/>
 <tr>

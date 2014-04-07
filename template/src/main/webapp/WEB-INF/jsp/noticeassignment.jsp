@@ -22,7 +22,7 @@
            $( "#datepicker2" ).datepicker();
          });
 </script>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
     function msg()
     {
     if (document .getElementById("name").value=="")
@@ -81,7 +81,7 @@
             return false;
         }
 }
-</script>
+</script> -->
 </head>
  <body>
 <div id="right_content">
@@ -124,12 +124,14 @@
               <td width="90"></td><br>
               <td><p><b>PLEASE READ:THIS IS NOTICE TO YOU OF AN ASSIGNMENT</b></p>
               </td></tr></table>
+                <c:choose>
+<c:when test="${empty peri}">
              <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
               <td height="20" width="180"><span class="err">*</span>Name Of Insurance Company:</td>
-              <td ><input type="text" class="input_txtbx1" name="nameofins" id="name" /><span class="err"><form:errors path="noticeofassignment.name"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="nameofins" id="name" /><span class="err"><form:errors path="noticeerror.nameofins"></form:errors></td>
               <td height="40" width="110" ><span class="err">&nbsp;&nbsp;*</span>Name Of Attorney:</td>
-              <td >&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="nameofattorney" id="name1" /><span class="err"><form:errors path="noticeofassignment.nameofattorney"></form:errors></span></td>
+              <td >&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="nameofattorney" id="name1" /><span class="err"><form:errors path="noticeerror.nameofattorney"></form:errors></span></td>
               </tr>
               </table>
                 <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -148,15 +150,15 @@
           </tr> 
           <tr>
             <td height="40" width="180"><span class="err">*</span>PatientName:</td>
-              <td ><input type="text" class="input_txtbx1" name="patientname" id="patientname" /><span class="err"><form:errors path="noticeofassignment.patientname"></form:errors></span></td>                      
+              <td ><input type="text" class="input_txtbx1" name="patientname" id="patientname" /><span class="err"><form:errors path="noticeerror.patientname"></form:errors></span></td>                      
           </tr> 
           <tr>
             <td height="30" width="180"><span class="err">*</span>Date Of Accident:</td>
-              <td ><input type="text" class="input_txtbx1" name="dateofaccident" id="datepicker1" /><span class="err"><form:errors path="noticeofassignment.dateofaccident"></form:errors></span></td>                      
+              <td ><input type="text" class="input_txtbx1" name="dateofaccident" id="datepicker1" /><span class="err"><form:errors path="noticeerror.dateofaccident"></form:errors></span></td>                      
           </tr> 
           <tr>
             <td height="20" width="180"><span class="err">*</span>Today'sDate:</td>
-              <td ><input type="text" class="input_txtbx1" name="todaysdate" id="datepicker2" /><span class="err"><form:errors path="noticeofassignment.todaysdate"></form:errors></span></td>                      
+              <td ><input type="text" class="input_txtbx1" name="todaysdate" id="datepicker2" /><span class="err"><form:errors path="noticeerror.todaysdate"></form:errors></span></td>                      
           </tr> <br>  
             </table>
             
@@ -228,9 +230,16 @@ do not receive a response, we will act in reliance that you will comply with it'
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
        		  <td valign="right" align="right" class="input_txt"><span class="err">*</span>Treating Physician
-              <input type="text" class="input_txtbx1" name="treatingphysician" id="treatingphysician" /><span class="err"><form:errors path="responseattorney.treatingphysician"></form:errors></td>
+              <input type="text" class="input_txtbx1" name="treatingphysician" id="treatingphysician" /><span class="err"><form:errors path="noticeerror.treatingphysician"></form:errors></td>
               </tr><br>
               </table>
+              </c:when><c:otherwise>
+              
+              
+              
+              
+              
+              </c:otherwise></c:choose>
               <table><tr> <td><input type="submit" class="submit_btn" value="Save" OnClick ="return msg();"></td>
                <td><a href="responseattorney"style="color:white" class="submit_btn">Cancel</a></td>
               </tr></table>

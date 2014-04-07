@@ -64,57 +64,201 @@
 	             <h2>Auto/Personal Injury Patient Checklist<h2> 
 	            </div>
 	            <div class="contentbox">
-	            <c:choose>
-				<c:when test="${empty staff}">
+	               <script type=text/javascript>        
+	                           
+	            function patientvalidate(){		
+	         		var sample="editusernamepatientdetails?username="+document.getElementById("username").value;
+	         		 //alert("sample"+sample);
+	              popupWindow = window.open(sample,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+	              		}         
+function screenvalidate(){		
+		var sample="editscreeningauthz?username="+document.getElementById("username").value;
+		// alert("sample"+sample);
+     popupWindow = window.open(sample,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+     		}
+     		
+function autovalidate(){
+	 
+		var sample="editusernameautoaccident?username="+document.getElementById("username").value;
+		//alert("sample"+sample);
+     popupWindow = window.open(sample,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+     		}
+function workvalidate(){
+	
+	
+		var url="editusernameworkaccident?username="+document.getElementById("username").value;
+		//alert("sample"+url);
+    popupWindow = window.open(url,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+    		}
+function waivervalidate(){
+
+		var url="editusernameinsuranceplan?username="+document.getElementById("username").value;
+		//alert("sample"+url);
+   popupWindow = window.open(url,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+   		}
+  
+function healthvalidate(){
+
+	var url="editusernameinsuranceinformation?username="+document.getElementById("username").value;
+	//alert("sample"+url);
+popupWindow = window.open(url,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		}
+		
+function treatvalidate(){
+
+	var url="editusernametreatform?username="+document.getElementById("username").value;
+	//alert("sample"+url);
+popupWindow = window.open(url,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		}
+function minorvalidate(){
+
+	var url="editusernametreatminor?username="+document.getElementById("username").value;
+	//alert("sample"+url);
+popupWindow = window.open(url,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		}
+function hardshipvalidate(){
+
+	var url="editusernamehardship?username="+document.getElementById("username").value;
+	//alert("sample"+url);
+popupWindow = window.open(url,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		}
+function medicalvalidate(){
+
+	var url="editusernamemedical?username="+document.getElementById("username").value;
+	//alert("sample"+url);
+popupWindow = window.open(url,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		}
+function assignmentvalidate(){
+
+	var url="editusernameassignment?username="+document.getElementById("username").value;
+	//alert("sample"+url);
+popupWindow = window.open(url,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		}
+function hippavalidate(){
+
+	var url="editusernamehippa?username="+document.getElementById("username").value;
+	//alert("sample"+url);
+popupWindow = window.open(url,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		}
+function hipquestionvalidate(){
+
+	var url="editusernamehipquestionnaire?username="+document.getElementById("username").value;
+	//alert("sample"+url);
+popupWindow = window.open(url,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		}
+function footquestionvalidate(){
+
+	var url="editusernamefootquestionnarie?username="+document.getElementById("username").value;
+	//alert("sample"+url);
+popupWindow = window.open(url,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		}
+function symptomvalidate(){
+
+	var url="editusernamesymptom?username="+document.getElementById("username").value;
+	//alert("sample"+url);
+popupWindow = window.open(url,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		}
+</script>
 	            <table cellpadding="0" cellspacing="0" border="0" width="100%">
 	            
-	             <c:if test="${screen==true}">
+	           
+	            
+	           
+	            <input type="hidden" id="username" value="${username}" name="username">
+	          
+
+  <c:if test="${patient==true}">
 	            <tr class="row1">
-	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="patinfo" value="confidential Patient Information"/></td>
-	            <td valign="top" align="left" class="input_txt">Confidential Patient Information</td>
+	            <td valign="middle" align="left" class="input_txt"><a onclick="patientvalidate()" style="text-decoration: none;cursor: pointer;">Confidential Patient Information</a>
+	            </td>
 	            </tr>
 	            </c:if>
-	            <script type=text/javascript>
-function patientvalidate(){
-if (remember.checked == 1){
-          alert("checked") ;
-}else{
-alert("You didn't check it! Let me check it for you.")
-}
-}
-</script>
+
 	            
-	            <c:if test="${screen==true}">
-	            <tr class="row1" >
-	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" onclick="screenvalidate()" id="screen" name="screening" value="Screening Disclosure/referral"/></td>
-	            <td valign="top" align="left" class="input_txt">Screening Disclosure/referral</td>
-	            </tr></c:if>
-	            <input type="hidden" id="username" value="${username}">
-	             <script type=text/javascript>
+	             <c:if test="${autoaccident==true}">
+	            <tr class="row1">
+	            <td valign="middle" align="left" class="input_txt"><a onclick="autovalidate()" style="text-decoration: none;cursor: pointer;">Auto Accident</a></td>
+	          <!--   <td valign="top" align="left" class="input_txt">Auto Accident</td> -->
+	            </tr>
+	            </c:if>
 	            
-	             
-function screenvalidate(){
-	var screen=document.getElementById("screen").value;
-	 if(document.getElementById("screen").checked)
-     { 
-		var sample="editscreeningauthz?username="+document.getElementById("username").value;
-		 alert("sample"+sample);
-     popupWindow = window.open(sample,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
-     		}}
-</script>
-<c:out value="${username}"></c:out>
+	             <c:if test="${workaccident==true}">
+	            <tr class="row1">
+	            <td valign="middle" align="left" class="input_txt"><a onclick="workvalidate()" style="text-decoration: none;cursor: pointer;">Work Accident</a></td>
+	        
+	            </tr>
+	            </c:if>
 	            
+	             <c:if test="${waiver==true}">
+	            <tr class="row1">
+	            <td valign="middle" align="left" class="input_txt"><a onclick="waivervalidate()" style="text-decoration: none;cursor: pointer;">Insurance waiver</a> </td>
+	           
+	            </tr>
+	            </c:if>
+	            
+	             <c:if test="${health==true}">
+	            <tr class="row1">
+	            <td valign="middle" align="left" class="input_txt"><a onclick="healthvalidate()" style="text-decoration: none;cursor: pointer;">Health Insurance Information</a></td>
+	           
+	            </tr>
+	            </c:if>
+	            
+	            <c:if test="${treat==true}">
+	            <tr class="row1">
+	            <td valign="middle" align="left" class="input_txt"><a onclick="treatvalidate()" style="text-decoration: none;cursor: pointer;">Authorization And Consent To Treat</a></td>
+	            <td valign="top" align="left" class="input_txt"></td>
+	            </tr>
+	            </c:if>
+	             <c:if test="${minor==true}">
+	            <tr class="row1">
+	            <td valign="middle" align="left" class="input_txt"><a onclick="minorvalidate()" style="text-decoration: none;cursor: pointer;">Consent to Treat Form/Minor</a></td>
+	           
+	            </tr>
+	            </c:if>
+	             <c:if test="${hardship==true}">
+	            <tr class="row1">
+	            <td valign="middle" align="left" class="input_txt"><a onclick="hardshipvalidate()" style="text-decoration: none;cursor: pointer;">Hardship Agreement</a></td>
+	            
+	            </tr>
+	            </c:if>
+	             <tr class="row1">
+	            <td valign="middle" align="left" class="input_txt"><a onclick="screenvalidate()" style="text-decoration: none;cursor: pointer;">Screening Disclosure/referral</a></td>
+	             </tr>
+	             <c:if test="${medical==true}">
+	            <tr class="row1">
+	            <td valign="middle" align="left" class="input_txt"><a onclick="medicalvalidate()" style="text-decoration: none;cursor: pointer;">Release Of Records</a></td>
+	            </tr>
+	            </c:if>
+	           
 	            <c:if test="${assignment==true}">
 	            <tr class="row1">
-	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="aob" value="Assignment of Benefits/Lien"/></td>
-	            <td valign="top" align="left" class="input_txt">Assignment of Benefits/Lien</td>
+	           
+	            <td valign="top" align="left" class="input_txt"><a onclick="assignmentvalidate()" style="text-decoration: none;cursor: pointer;">Assignment Of Benefits</a></td>
 	            </tr>
 	            </c:if>
-	            
-	            <c:if test="${history==true}">
+	              <c:if test="${hippa==true}">
 	            <tr class="row1">
-	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="history" value="History/Exam Sheet"/></td>
-	            <td valign="top" align="left" class="input_txt">History/Exam Sheet</td>
+	            <td valign="middle" align="left" class="input_txt"><a onclick="hippavalidate()" style="text-decoration: none;cursor: pointer;">Hippa Privacy</a></td>
+	           
+	            </tr>
+	            </c:if>
+	             <c:if test="${hipquestion==true}">
+	            <tr class="row1">
+	            <td valign="middle" align="left" class="input_txt"><a onclick="hipquestionvalidate()" style="text-decoration: none;cursor: pointer;">Hip And Knee Questionnaire</a></td>
+	          
+	            </tr>
+	            </c:if>
+	             <c:if test="${footquestion==true}">
+	            <tr class="row1">
+	            <td valign="middle" align="left" class="input_txt"><a onclick="footquestionvalidate()" style="text-decoration: none;cursor: pointer;">Foot And Ankle Questionnaire</a></td>
+	            
+	            </tr>
+	            </c:if>           
+	            
+	            <c:if test="${symptom==true}">
+	            <tr class="row1">
+	            
+	            <td valign="top" align="left" class="input_txt"><a onclick="symptomvalidate()" style="text-decoration: none;cursor: pointer;">Pain Diagram</a></td>
 	            </tr>
 	            </c:if>
 	            
@@ -125,20 +269,13 @@ function screenvalidate(){
 	            </tr>
 	            </c:if>
 	            
-	            <c:if test="${minor==true}">
-	            <tr class="row1">
-	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="consent" value="Consent to treat Form/Minor"/></td>
-	            <td valign="top" align="left" class="input_txt">Consent to Treat Form/Minor</td>
-	            </tr>
-	            </c:if>
+	          
 	            
-	            <c:if test="${accident==true}">
-	            <tr class="row1">
-	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="report" value="Accident Report"/></td>
-	            <td valign="top" align="left" class="input_txt">Accident Report </td>
-	            </tr>
-	            </c:if>
+	           
 	            </table>
+	           
+	            <c:choose>
+				<c:when test="${empty staff}">
 	            <br>
 	            
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -205,35 +342,102 @@ function screenvalidate(){
 			  </c:when>
 			  <c:otherwise>
 			   <table cellpadding="0" cellspacing="0" border="0" width="100%">
+	           
+ <%--  <c:if test="${patient==true}">
 	            <tr class="row1">
-	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="patinfo" value="Confidential Patient Information"/></td>
-	            <td valign="top" align="left" class="input_txt">Confidential Patient Information</td>
+	            <td valign="middle" align="left" class="input_txt"><a onclick="patientvalidate()" style="text-decoration: none;cursor: pointer;">Confidential Patient Information</a>
+	            </td>
 	            </tr>
+	            </c:if>
+
+	            
+	             <c:if test="${autoaccident==true}">
 	            <tr class="row1">
-	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="screening" value="Screening Disclosure/referral"/></td>
-	            <td valign="top" align="left" class="input_txt">Screening Disclosure/referral</td>
+	            <td valign="middle" align="left" class="input_txt"><a onclick="autovalidate()" style="text-decoration: none;cursor: pointer;">Auto Accident</a></td>
+	          <!--   <td valign="top" align="left" class="input_txt">Auto Accident</td> -->
 	            </tr>
+	            </c:if>
+	            
+	             <c:if test="${workaccident==true}">
 	            <tr class="row1">
-	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="aob" value="Assignment of Benefits/Lien"/></td>
-	            <td valign="top" align="left" class="input_txt">Assignment of Benefits/Lien</td>
+	            <td valign="middle" align="left" class="input_txt"><a onclick="workvalidate()" style="text-decoration: none;cursor: pointer;">Work Accident</a></td>
+	        
 	            </tr>
+	            </c:if>
+	            
+	             <c:if test="${waiver==true}">
 	            <tr class="row1">
-	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="history" value="History/Exam Sheet"/></td>
-	            <td valign="top" align="left" class="input_txt">History/Exam Sheet</td>
+	            <td valign="middle" align="left" class="input_txt"><a onclick="waivervalidate()" style="text-decoration: none;cursor: pointer;">Insurance waiver</a> </td>
+	           
 	            </tr>
+	            </c:if>
+	            
+	             <c:if test="${health==true}">
 	            <tr class="row1">
-	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="xray_sheet" value="SOAP Note/X-ray_sheet"/></td>
-	            <td valign="top" align="left" class="input_txt">SOAP Note/X-ray Sheet</td>
+	            <td valign="middle" align="left" class="input_txt"><a onclick="healthvalidate()" style="text-decoration: none;cursor: pointer;">Health Insurance Information</a></td>
+	           
 	            </tr>
+	            </c:if>
+	            
+	            <c:if test="${treat==true}">
 	            <tr class="row1">
-	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="consent" value="Consent to treat Form/Minor"/></td>
-	            <td valign="top" align="left" class="input_txt">Consent to Treat Form/Minor</td>
+	            <td valign="middle" align="left" class="input_txt"><a onclick="treatvalidate()" style="text-decoration: none;cursor: pointer;">Authorization And Consent To Treat</a></td>
+	            <td valign="top" align="left" class="input_txt"></td>
 	            </tr>
+	            </c:if>
+	             <c:if test="${minor==true}">
 	            <tr class="row1">
-	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="report" value="Accident Report"/></td>
-	            <td valign="top" align="left" class="input_txt">Accident Report </td>
+	            <td valign="middle" align="left" class="input_txt"><a onclick="minorvalidate()" style="text-decoration: none;cursor: pointer;">Consent to Treat Form/Minor</a></td>
+	           
 	            </tr>
-	            </table>
+	            </c:if>
+	             <c:if test="${hardship==true}">
+	            <tr class="row1">
+	            <td valign="middle" align="left" class="input_txt"><a onclick="hardshipvalidate()" style="text-decoration: none;cursor: pointer;">Hardship Agreement</a></td>
+	            
+	            </tr>
+	            </c:if>
+	             <tr class="row1">
+	            <td valign="middle" align="left" class="input_txt"><a onclick="screenvalidate()" style="text-decoration: none;cursor: pointer;">Screening Disclosure/referral</a></td>
+	             </tr>
+	             <c:if test="${medical==true}">
+	            <tr class="row1">
+	            <td valign="middle" align="left" class="input_txt"><a onclick="medicalvalidate()" style="text-decoration: none;cursor: pointer;">Release Of Records</a></td>
+	            </tr>
+	            </c:if>
+	           
+	            <c:if test="${assignment==true}">
+	            <tr class="row1">
+	           
+	            <td valign="top" align="left" class="input_txt"><a onclick="assignmentvalidate()" style="text-decoration: none;cursor: pointer;">Assignment Of Benefits</a></td>
+	            </tr>
+	            </c:if>
+	              <c:if test="${hippa==true}">
+	            <tr class="row1">
+	            <td valign="middle" align="left" class="input_txt"><a onclick="hippavalidate()" style="text-decoration: none;cursor: pointer;">Hippa Privacy</a></td>
+	           
+	            </tr>
+	            </c:if>
+	             <c:if test="${hipquestion==true}">
+	            <tr class="row1">
+	            <td valign="middle" align="left" class="input_txt"><a onclick="hipquestionvalidate()" style="text-decoration: none;cursor: pointer;">Hip And Knee Questionnaire</a></td>
+	          
+	            </tr>
+	            </c:if>
+	             <c:if test="${footquestion==true}">
+	            <tr class="row1">
+	            <td valign="middle" align="left" class="input_txt"><a onclick="footquestionvalidate()" style="text-decoration: none;cursor: pointer;">Foot And Ankle Questionnaire</a></td>
+	            
+	            </tr>
+	            </c:if>           
+	            
+	            <c:if test="${symptom==true}">
+	            <tr class="row1">
+	            
+	            <td valign="top" align="left" class="input_txt"><a onclick="symptomvalidate()" style="text-decoration: none;cursor: pointer;">Pain Diagram</a></td>
+	            </tr>
+	            </c:if>
+	            </table> --%>
 	            <br>
 	            
               <table cellpadding="0" cellspacing="0" border="0" width="100%">

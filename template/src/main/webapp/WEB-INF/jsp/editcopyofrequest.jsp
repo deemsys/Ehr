@@ -30,7 +30,7 @@ $(function() {
  
  <body>
  <form action="updatecopyofrequest" method="POST"> 
- <div id="right_content">
+
 
 <table cellpadding="0" cellspacing="0" border="0" width="80%" class="margin_table">
 <c:set value="${copyofrequestform.copyofrequest[0]}" var="copyofrequest"/>
