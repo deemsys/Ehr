@@ -2018,6 +2018,16 @@ if(result.hasErrors())
 		 
 		return "editfootquestionnarie";
 	}
+	@RequestMapping(value="/editusernamefootquestionnarie", method=RequestMethod.GET)
+	public String editusernamefootquestionnarie(HttpServletRequest request,@RequestParam("username") String username,ModelMap model,Footquestionnarie footquestionnarie) 
+	{
+		/*String lumbopelvicexam=request.getParameter("lumbopelvicexam");*/
+		FootquestionnarieForm footquestionnarieForm = new FootquestionnarieForm();       
+        footquestionnarieForm.setFootquestionnariedetails(footDAO.getusernameFoot(username));
+        model.addAttribute("footquestionnarieForm",footquestionnarieForm);
+		model.addAttribute("menu","checklist"); 
+		return "editfootquestionnarie";
+	}
 	@RequestMapping(value="/updatefootquestionnarie", method=RequestMethod.POST)
 	public String updatefootquestionnarie(HttpServletRequest request,ModelMap model,@ModelAttribute("Footquestionnarie") @Valid Footquestionnarie footquestionnarie,
 			BindingResult result,Principal principal)

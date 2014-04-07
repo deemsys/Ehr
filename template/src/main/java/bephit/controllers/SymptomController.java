@@ -192,6 +192,16 @@ public class SymptomController {
 		return "editsymptom";
 	}
 
+
+	@RequestMapping(value = "/editusernamesymptom", method = RequestMethod.GET)
+	public String editusernamesymptom(@RequestParam(value = "username") String username, ModelMap model) {
+		
+		SymptomForm symptomform = new SymptomForm();
+		symptomform.setSymptomdetails(symptomdao.getusernamesymptomDetails(username));
+		model.addAttribute("symptomform", symptomform);
+		model.addAttribute("menu", "checklist");
+		return "editsymptom";
+	}
 	@RequestMapping(value = "/deletesymptom", method = RequestMethod.GET)
 	public String deletesymptom(
 			@RequestParam(value = "symptomno") String symptomno, ModelMap model) {
@@ -477,6 +487,17 @@ public class SymptomController {
 	        model.addAttribute("button","close");
 	        return "viewhipquestionnaire";
 
+	}
+	@RequestMapping(value = "/editusernamehipquestionnaire", method = RequestMethod.GET)
+	public String editusernamehipquestionnaire(HttpSession session,@RequestParam("username") String username,HttpServletRequest request, ModelMap model,
+			Hipquestionnaire hipquestionnaire) throws IOException {
+		session.removeAttribute("hipquestionnairedetails");
+		HipquestionnaireForm hipquestionnaireform = new HipquestionnaireForm();
+		hipquestionnaireform.setHipquestionnairedetails(hipquestionnairedao.getusernamehipquestionnairedetails(username));
+		model.addAttribute("hipquestionnaireform", hipquestionnaireform);
+		
+		model.addAttribute("menu", "checklist");
+		return "edithipquestionnaire";
 	}
 
 	@RequestMapping(value = "/edithipquestionnaire", method = RequestMethod.GET)
