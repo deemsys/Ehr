@@ -12,14 +12,31 @@
  
 	
 	<script>
-	
+	$(function(){
+    var $select = $(".1-100");
+    for (i=1;i<=100;i++){
+        $select.append($('<option></option>').val(i).html(i))
+    }
+});
+
+	$(function(){
+    var $select = $(".40-250");
+    for (i=40;i<=250;i++){
+        $select.append($('<option></option>').val(i).html(i))
+    }
+});
 	$(function() {
 		$( "#tabs" ).tabs({
 			event: "mouseover"
 		});
 	});
-
+	
   </script>
+ 
+  - 
+   
+  
+  
   <script>
   $(function(){
       $("#datepicker").datepicker({ dateFormat: 'yy-mm-dd' }).bind("change",function(){
@@ -29,6 +46,12 @@
           $("#datepicker").datepicker( "option", "minDate", minValue );
       })
   });
+$(function(){
+    var $select = $(".1-500");
+    for (i=1;i<=500;i++){
+        $select.append($('<option></option>').val(i).html(i))
+    }
+});
 
   </script>
   </head>
@@ -71,7 +94,7 @@
 				                  </td>
 				                </tr>
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>ID :</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Email :</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="id" /><span class="err"><form:errors path="Physicalexam.id"></form:errors>
 				                  </td>
@@ -83,33 +106,216 @@
 				                  </td>
 				                </tr>
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Vitals-Age:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Age:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="age" /><span class="err"><form:errors path="Physicalexam.age"></form:errors>
+				                  <select name="age" class="1-100" id="inp_id"></select>
+				                  <span class="err"></span><form:errors path="Physicalexam.age"></form:errors>
 				                  </td>
 				                </tr>
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Sex:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="sex" /><span class="err"><form:errors path="Physicalexam.sex"></form:errors>
+				                  	
+				                   <select name="sex" class="input_cmbbx1" id="inp_id">
+						                   
+											<option value="Male">Male</option>
+											<option value="Female">Female</option>
+											
+				                   		</select><span class="err"><form:errors path="Physicalexam.sex"></form:errors>
 				                  </td>
 				                </tr>
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Height:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="height" /><span class="err"><form:errors path="Physicalexam.height"></form:errors>
+				                  	
+				                  <select name="height" class="input_cmbbx1" id="inp_id">
+						                    
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
+											<option value="6">6</option>
+											<option value="7">7</option>
+											<option value="8">8</option>
+											<option value="9">9</option>
+											<option value="10">10</option>
+											
+											
+				                   		</select><span class="err"><form:errors path="Physicalexam.height"></form:errors>
+				                   		 <select name="height1" class="input_cmbbx1" id="feetid">
+				                   		 <option selected="selected" value="5.0" >5.0</option>
+				                   		 <option value="5.1">5.1</option>
+<option value="5.2">5.2</option>
+<option value="5.3">5.3</option>
+<option value="5.4">5.4</option>
+<option value="5.5">5.5</option>
+<option value="5.6">5.6</option>
+<option value="5.7">5.7</option>
+<option value="5.8">5.8</option>
+<option value="5.9">5.9</option>
+<option value="6.0">6.0</option>
+<option value="6.1">6.1</option>
+<option value="6.2">6.2</option>
+<option value="6.3">6.3</option>
+<option value="6.4">6.4</option>
+<option value="6.5">6.5</option>
+<option value="6.6">6.6</option>
+<option value="6.7">6.7</option>
+<option value="6.8">6.8</option>
+<option value="6.9">6.9</option>
+<option value="7.0">7.0</option>
+<option value="7.1">7.1</option>
+<option value="7.2">7.2</option>
+<option value="7.3">7.3</option>
+<option value="7.4">7.4</option>
+<option value="7.5">7.5</option>
+<option value="7.6">7.6</option>
+<option value="7.7">7.7</option>
+<option value="7.8">7.8</option>
+<option value="7.9">7.9</option>
+<option value="8.0">8.0</option>
+<option value="8.1">8.1</option>
+<option value="8.2">8.2</option>
+<option value="8.3">8.3</option>
+<option value="8.4">8.4</option>
+<option value="8.5">8.5</option>
+<option value="8.6">8.6</option>
+<option value="8.7">8.7</option>
+<option value="8.8">8.8</option>
+<option value="8.9">8.9</option>
+<option value="9.0">9.0</option>
+<option value="9.1">9.1</option>
+<option value="9.2">9.2</option>
+<option value="9.3">9.3</option>
+<option value="9.4">9.4</option>
+<option value="9.5">9.5</option>
+<option value="9.6">9.6</option>
+<option value="9.7">9.7</option>
+<option value="9.8">9.8</option>
+<option value="9.9">9.9</option>
+<option value="10.0">10.0</option>
+<option value="10.1">10.1</option>
+<option value="10.2">10.2</option>
+<option value="10.3">10.3</option>
+<option value="10.4">10.4</option>
+<option value="10.5">10.5</option>
+<option value="10.6">10.6</option>
+<option value="10.7">10.7</option>
+<option value="10.8">10.8</option>
+<option value="10.9">10.9</option>
+<option value="11.0">11.0</option>
+<option value="11.1">11.1</option>
+<option value="11.2">11.2</option>
+<option value="11.3">11.3</option>
+<option value="11.4">11.4</option>
+<option value="11.5">11.5</option>
+				                   		  </select>
 				                  </td>
 				                </tr>
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Weight:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="weight" /><span class="err"><form:errors path="Physicalexam.weight"></form:errors>
+				                  	<select name="weight" class="1-500" id="inp_id"></select>
+				                 <span class="err"><form:errors path="Physicalexam.weight"></form:errors>
 				                  </td>
 				                </tr>
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Temp:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="temp" /><span class="err"><form:errors path="Physicalexam.temp"></form:errors>
+				                  <select name="temp" class="input_cmbbx1" id="tempid">
+				                  <option selected="selected" value="95.0" >95.0</option>
+				                  <option value="95.1">95.1</option>
+<option value="95.2">95.2</option>
+<option value="95.3">95.3</option>
+<option value="95.4">95.4</option>
+<option value="95.5">95.5</option>
+<option value="95.6">95.6</option>
+<option value="95.7">95.7</option>
+<option value="95.8">95.8</option>
+<option value="95.9">95.9</option>
+<option value="96.0">96.0</option>
+<option value="96.1">96.1</option>
+<option value="96.2">96.2</option>
+<option value="96.3">96.3</option>
+<option value="96.4">96.4</option>
+<option value="96.5">96.5</option>
+<option value="96.6">96.6</option>
+<option value="96.7">96.7</option>
+<option value="96.8">96.8</option>
+<option value="96.9">96.9</option>
+<option value="97.0">97.0</option>
+<option value="97.1">97.1</option>
+<option value="97.2">97.2</option>
+<option value="97.3">97.3</option>
+<option value="97.4">97.4</option>
+<option value="97.5">97.5</option>
+<option value="97.6">97.6</option>
+<option value="97.7">97.7</option>
+<option value="97.8">97.8</option>
+<option value="97.9">97.9</option>
+<option value="98.0">98.0</option>
+<option value="98.1">98.1</option>
+<option value="98.2">98.2</option>
+<option value="98.3">98.3</option>
+<option value="98.4">98.4</option>
+<option value="98.5">98.5</option>
+<option value="98.6">98.6</option>
+<option value="98.7">98.7</option>
+<option value="98.8">98.8</option>
+<option value="98.9">98.9</option>
+<option value="99.0">99.0</option>
+<option value="99.1">99.1</option>
+<option value="99.2">99.2</option>
+<option value="99.3">99.3</option>
+<option value="99.4">99.4</option>
+<option value="99.5">99.5</option>
+<option value="99.6">99.6</option>
+<option value="99.7">99.7</option>
+<option value="99.8">99.8</option>
+<option value="99.9">99.9</option>
+<option value="100.0">100.0</option>
+<option value="100.1">100.1</option>
+<option value="100.2">100.2</option>
+<option value="100.3">100.3</option>
+<option value="100.4">100.4</option>
+<option value="100.5">100.5</option>
+<option value="100.6">100.6</option>
+<option value="100.7">100.7</option>
+<option value="100.8">100.8</option>
+<option value="100.9">100.9</option>
+<option value="101.0">101.0</option>
+<option value="101.1">101.1</option>
+<option value="101.2">101.2</option>
+<option value="101.3">101.3</option>
+<option value="101.4">101.4</option>
+<option value="101.5">101.5</option>
+<option value="101.6">101.6</option>
+<option value="101.7">101.7</option>
+<option value="101.8">101.8</option>
+<option value="101.9">101.9</option>
+<option value="102.0">102.0</option>
+<option value="102.1">102.1</option>
+<option value="102.2">102.2</option>
+<option value="102.3">102.3</option>
+<option value="102.4">102.4</option>
+<option value="102.5">102.5</option>
+<option value="102.6">102.6</option>
+<option value="102.7">102.7</option>
+<option value="102.8">102.8</option>
+<option value="102.9">102.9</option>
+<option value="103.0">103.0</option>
+<option value="103.1">103.1</option>
+<option value="103.2">103.2</option>
+<option value="103.3">103.3</option>
+<option value="103.4">103.4</option>
+<option value="103.5">103.5</option>
+<option value="103.6">103.6</option>
+<option value="103.7">103.7</option>
+<option value="103.8">103.8</option>
+<option value="103.9">103.9</option>
+				                  </select>
+				                  <span class="err"><form:errors path="Physicalexam.temp"></form:errors>
 				                  </td>
 				                </tr>
 				                <tr class="row1">
@@ -124,7 +330,9 @@
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Pulse:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="pulse" /><span class="err"><form:errors path="Physicalexam.pulse"></form:errors>
+				                  	<select name="pulse" class="40-250" id="inp_id"></select>
+				                 <span class="err"><form:errors path="Physicalexam.pulse"></form:errors>
+				                  
 				                  </td>
 				                </tr>
 				                <tr class="row1">
@@ -138,7 +346,7 @@
 				                   		</select>
 				                   	</td> </tr>  
 				                   	 <tr class="row2">
-				                 	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Weight:</td>
+				                 	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Nourishment</td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  		<select name="weight1" class="input_cmbbx1">
 						                    <option selected="selected" value="un" >UN</option>
@@ -166,7 +374,8 @@
 				                 <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Visceral Pathologies:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="path" value="Normal" class="input_txt" checked="true">Normal&nbsp;&nbsp;&nbsp;<input type="radio" name="path" value="Abnormal" class="input_txt">Abnormal&nbsp;&nbsp;&nbsp;</td>
+				                  	<input type="radio" name="path" value="Normal" class="input_txt" checked="true">Normal&nbsp;&nbsp;&nbsp;<input type="radio" name="path" value="Abnormal" class="input_txt">Abnormal&nbsp;&nbsp;&nbsp;<input type="text" class="input_txtbx1" id="pathid" name="path" /></td>
+				               
 				                </tr>
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Posture:</td>
@@ -278,14 +487,20 @@
 				                  <td>Paraspinal:</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="paraspain" value="Pain">Pain</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="parasspasm" value="Spasm">Spasm</td>
-				                  <td class="input_txt" align="left"> <input type="checkbox" name="parasedema" value="Edema">Edema</td>
-				                   <td class="input_txt" align="left"> <input type="checkbox" name="parastriggerpoint" value="TriggerPoint">TriggerPoint</td>
+				                  <td class="input_txt" align="left"> <span id="edema">Edema </span><input type="text" name="parasedema" >
+				                   <td class="input_txt" align="left"><span id="TriggerPoint">TriggerPoint </span> <input type="text" name="parastriggerpoint" ></td>
 				                  </tr>
 				                  <tr class="row1">
-				                  <td>Trapezius/SCM:</td>
+				                  <td>Trapezius</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="trapeziusrl" value="R-L">R-L</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="trapeziustono" value="Tonocity">Tonicity</td>
 				                  <td class="input_txt" align="left"> <input type="checkbox" name="trapeziusnormal" value="Normal">Normal</td>
+				                  </tr>
+				                  <tr class="row1">
+				                  <td>SCM:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="scm" value="R-L">R-L</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="scmtono" value="Tonocity">Tonicity</td>
+				                  <td class="input_txt" align="left"> <input type="checkbox" name="scmnormal" value="Normal">Normal</td>
 				                  </tr>
 				                  <tr class="row1">
 				                  <td>Vertebrae:</td>
@@ -296,6 +511,10 @@
 				               <table border="0">
 				               <tr class="row1">
 				               <td><b>RANGE OF MOTION:(Include Degrees)</b></td>
+				               
+				                  </tr>
+				               <tr class="row1">
+				               
 				               <td valign="top" align="left" class="input_txt">Normal ROM </td>
 				                  <td class="input_txt">Pain</td>
 				                  <td class="input_txt">Spasm</td>
@@ -303,46 +522,46 @@
 				                  </tr>
 				                 
 				                  <tr class="row1">
-				                  <td>FLEX 60:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="flexnormal" /></td>
+				                  <td>FLEX 60</td>
+				                  
 				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="flexpain" /></td>
 				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="flexspasm" /></td>
 				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="flexstiff" /></td>
 				                  </tr>
 				                  <tr class="row1">
-				                  <td>EXT 75:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="extnormal" /></td>
+				                  <td>EXT 75</td>
+				                  
 				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="extpain" /></td>
 				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="extspasm" /></td>
 				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="extstiff" /></td>
 				                 
 				                  </tr>
 				                   <tr class="row1">
-				                   <td>RLF 45:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="rlfnormal" /></td>
+				                   <td>RLF 45</td>
+				                  
 				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="rlfpain" /></td>
 				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="rlfspasm" /></td>
 				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="rlfstiff" /></td>
 				                 
 				                  </tr>
 				                   <tr class="row1">
-				                   <td>LLF 45:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="llfnormal" /></td>
+				                   <td>LLF 45</td>
+				                  
 				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="llfpain" /></td>
 				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="llfspasm" /></td>
 				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="llfstiff" /></td>
 				                 
 				                  </tr>
 				                   <tr class="row1">
-				                   <td>RR 80:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="rrnormal" /></td>
+				                   <td>RR 80</td>
+				                  
 				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="rrpain" /></td>
 				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="rrspasm" /></td>
 				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="rrstiff" /></td>
 				                  </tr>
 				                <tr class="row1">
-				                   <td>LR 80:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="lrnormal" /></td>
+				                   <td>LR 80</td>
+				                 
 				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="lrpain" /></td>
 				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lrspasm" /></td>
 				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lrstiff" /></td>
@@ -600,7 +819,20 @@
 				                   		</select></td>
 				                   		
 				                  </tr>
-				                 
+				                 <tr class="row1">
+				               <td><b>Visual Disturbance:</b></td>
+				               <td><b>Present:</td>
+				               <td><select name="presentvisual">
+						                    <option selected="selected" value="R" >R</option>
+											<option value="L">L</option>
+											
+											
+				                   		</select></td>
+				                   		<td>*If present, perform eye exam & auscultate carotid arteries</td>
+				                   		<td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="presentrl" /></td>
+
+				                   		
+				                  </tr>
 				              </table>
 				              </td>
 				              </tr>
@@ -611,8 +843,7 @@
 				              </table>
 				              </div>
 				              </div>
-				              
-				              
+				             
 				                <div id="tabs-2">
 				                 
 				                 <div id="right_content">
@@ -665,8 +896,8 @@
 				                  </tr>
 				                   <tr class="row1">
 				                   <td>Chest Measure:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="chestmeasurein" value="Inhale">Inhale</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="chestmeasureex" value="Exhale">Exhale</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="text" name="chestmeasurein" ></td>
+				                 
 				                  
 				                  </tr>
 				                  <tr class="row1">
@@ -705,6 +936,8 @@
 				                   <table border="0">
 				               <tr class="row1">
 				               <td><b>RANGE OF MOTION:(Include Degrees)</b></td>
+				               </tr>
+				                  <tr class="row1">
 				               <td valign="top" align="left" class="input_txt">Normal ROM </td>
 				                  <td class="input_txt">Pain</td>
 				                  <td class="input_txt">Spasm</td>
@@ -712,46 +945,46 @@
 				                  </tr>
 				                 
 				                  <tr class="row1">
-				                  <td>FLEX 40:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="thoracicnormal" /></td>
+				                  <td>FLEX 40</td>
+				                  
 				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="thoracicpain" /></td>
 				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="thoracicspasm" /></td>
 				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="thoracicstiff" /></td>
 				                  </tr>
 				                  <tr class="row1">
-				                  <td>EXT 30:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="thoextnormal" /></td>
+				                  <td>EXT 30</td>
+				                  
 				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="thoextpain" /></td>
 				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="thoextspasm" /></td>
 				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="thoextstiff" /></td>
 				                 
 				                  </tr>
 				                   <tr class="row1">
-				                   <td>RLF 30:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="thorlfnormal" /></td>
+				                   <td>RLF 30</td>
+				                  
 				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="thorlfpain" /></td>
 				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="thorlfspasm" /></td>
 				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="thorlfstiff" /></td>
 				                 
 				                  </tr>
 				                   <tr class="row1">
-				                   <td>LLF 30:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="thollfnormal" /></td>
+				                   <td>LLF 30</td>
+				                  
 				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="thollfpain" /></td>
 				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="thollfspasm" /></td>
 				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="thollfstiff" /></td>
 				                 
 				                  </tr>
 				                   <tr class="row1">
-				                   <td>RR 40:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="thorrnormal" /></td>
+				                   <td>RR 40</td>
+				                  
 				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="thorrpain" /></td>
 				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="thorrspasm" /></td>
 				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="thorrstiff" /></td>
 				                  </tr>
 				                <tr class="row1">
-				                   <td>LR 40:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="tholrnormal" /></td>
+				                   <td>LR 40</td>
+				                 
 				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="tholrpain" /></td>
 				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="tholrspasm" /></td>
 				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="tholrstiff" /></td>
@@ -812,6 +1045,13 @@
 				                    <td><input type="checkbox" name="positiverlq" value="RLQ">RLQ</td>
 				                    <td><input type="checkbox" name="positivellq" value="LLQ">LLQ</td>
 				                   </tr>
+				                   <tr class="row1">
+				               
+				                   		<td>*If presentis a smoker and has difficulty breathing, perform cardio-respiratory exam</td>
+				                   		<td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="patientsmoker" /></td>
+
+				                   		
+				                  </tr>
 				                   </table>
 				                 </div>
 				                 </td>
@@ -910,6 +1150,13 @@
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="abdomenpulse" value="Pulsations">Pulsations</td>
 				                  <td class="input_txt" align="left"> <input type="checkbox" name="abdomenascites" value="Ascites">Ascites</td>
 				                  </tr>
+				                  <tr class="row1">
+				              
+				                   		<td>*If positive tests, perform Abdominal Exam</td>
+				                   		
+
+				                   		
+				                  </tr>
 				                  </table>
 				                   <table border="0">
 				               <tr class="row1">
@@ -921,52 +1168,110 @@
 				                  </tr>
 				                 
 				                  <tr class="row1">
-				                  <td>FLEX 80:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="lumflexnormal" /></td>
+				                  <td>FLEX 80</td>
+				                  
 				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="lumflexpain" /></td>
 				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lumflexspasm" /></td>
 				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lumflexstiff" /></td>
 				                  </tr>
 				                  <tr class="row1">
-				                  <td>EXT 30:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="lumextnormal" /></td>
+				                  <td>EXT 30</td>
+				                 
 				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="lumextpain" /></td>
 				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lumextspasm" /></td>
 				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lumextstiff" /></td>
 				                 
 				                  </tr>
 				                   <tr class="row1">
-				                   <td>RLF 25:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="lumrlfnormal" /></td>
+				                   <td>RLF 25</td>
+				                  
 				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="lumrlfpain" /></td>
 				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lumrlfspasm" /></td>
 				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lumrlfstiff" /></td>
 				                 
 				                  </tr>
 				                   <tr class="row1">
-				                   <td>LLF 25:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="lumllfnormal" /></td>
+				                   <td>LLF 25</td>
+				                  
 				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="lumllfpain" /></td>
 				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lumllfspasm" /></td>
 				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lumllfstiff" /></td>
 				                 
 				                  </tr>
 				                   <tr class="row1">
-				                   <td>RR 30:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="lumrrnormal" /></td>
+				                   <td>RR 30</td>
+				                
 				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="lumrrpain" /></td>
 				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lumrrspasm" /></td>
 				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lumrrstiff" /></td>
 				                  </tr>
 				                <tr class="row1">
-				                   <td>LR 30:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="lumlrnormal" /></td>
+				                   <td>LR 30</td>
+				                  
 				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="lumlrpain" /></td>
 				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lumlrspasm" /></td>
 				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lumlrstiff" /></td>
 				                  </tr>
 				                </table>
 				                 <table border="0">
+				               <tr class="row1">
+				               <td><b>NEURO-EXAM:</b></td>
+				               <td><b>DERMATOMES:</td>
+				                  </tr>
+				               <tr class="row1">
+				                  <td><b>Sensation:</td>
+				                  <td valign="top" align="left" class="input_txt"><b>Normal</td>
+				                 <td class="input_txt" align="left"><b>Abnormal Sensation</td>
+				                  
+				                 
+				                  </tr>
+				                <tr class="row1">
+				                   <td>L-1:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="lu1" /></td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="luright" value="Right">Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="luleft" value="Left">Left</td>
+				                  </tr>
+				                   <tr class="row1">
+				                   <td>L-2:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="lu2" /></td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="luright" value="Right">Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="luleft" value="Left">Left</td>
+				                  </tr>
+				                   <tr class="row1">
+				                   <td>L-3:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="lu3" /></td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="luright" value="Right">Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="luleft" value="Left">Left</td>
+				                  </tr>
+				                   <tr class="row1">
+				                   <td>L-4:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="lu4" /></td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="luright" value="Right">Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="luleft" value="Left">Left</td>
+				                  </tr>
+				                   <tr class="row1">
+				                   <td>L-5:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="lu5" /></td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="luright" value="Right">Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="luleft" value="Left">Left</td>
+				                  </tr>
+				                 <tr class="row1">
+				                   <td>S-1:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="lu6" /></td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="luright" value="Right">Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="luleft" value="Left">Left</td>
+				                  </tr>
+				                   <tr class="row1">
+				                   <td>S-2:</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="lu7" /></td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="luright" value="Right">Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="luleft" value="Left">Left</td>
+				                  </tr>
+				                  </table>
+				                  
+				                 
+				                 <table border="0">
+				                 
 				               <tr class="row1">
 				               <td><b>NEURO-EXAM:</b></td>
 				               <td><b>MYOTOMES:</td>
