@@ -108,6 +108,42 @@ public List<Hardshipagreement> getHardshipagreement(){
     return Hardshipagreement;
 	
 }
+public List<Hardshipagreement> getUsernameHardshipagreement(String username){
+	Connection con = null;
+	Statement statement = null;
+	ResultSet resultSet = null;
+	try {
+		con = dataSource.getConnection();
+		statement = con.createStatement();
+	} catch (SQLException e1) {
+		e1.printStackTrace();
+	}
+	
+	List<Hardshipagreement> Hardshipagreement = new ArrayList<Hardshipagreement>();
+    try{
+		resultSet = statement.executeQuery("select * from tbl_hardshipagreement where username='"+username+"'" );
+		while(resultSet.next()){
+			Hardshipagreement.add(new Hardshipagreement(resultSet.getString("agreement_no"),resultSet.getString("date"),
+		    		resultSet.getString("print_pat_name"),
+		    		resultSet.getString("pat_sign"),
+		    		resultSet.getString("witness_sign")));
+		    		
+		    		
+		}
+		System.out.println(Hardshipagreement);
+    }catch(Exception e){
+    	System.out.println(e.toString());
+    	releaseResultSet(resultSet);
+    	releaseStatement(statement);
+    	releaseConnection(con);
+    }finally{
+    	releaseResultSet(resultSet);
+    	releaseStatement(statement);
+    	releaseConnection(con);	    	
+    }
+    return Hardshipagreement;
+	
+}
 public List<Hardshipagreement> getUsernameHardshipagreement(Principal principal){
 	Connection con = null;
 	Statement statement = null;

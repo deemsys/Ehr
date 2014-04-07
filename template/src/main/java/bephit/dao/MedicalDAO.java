@@ -64,6 +64,38 @@ public class MedicalDAO {
     		return 0;
 	    
 	}
+	public List<MedicalRecords> getUsernameMedicalDetails(String username){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<MedicalRecords> medical = new ArrayList<MedicalRecords>();
+	    try{
+			resultSet = statement.executeQuery("select * from Medical_Details where username='"+username+"'");
+			while(resultSet.next()){
+				medical.add(new MedicalRecords(resultSet.getString("medical_no"),resultSet.getString("name"),
+						resultSet.getString("medicalinformation"),
+						resultSet.getString("patientsignature")
+			    		 ));
+			    	
+			}
+	    }catch(Exception e){
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    }finally{
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);	    	
+	    }
+	    return medical;
+		
+	}
 	public List<MedicalRecords> getUsernameMedicalDetails(Principal principal){
 		Connection con = null;
 		Statement statement = null;

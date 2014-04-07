@@ -67,7 +67,47 @@ public class InsuranceplanDAO {
     		return 0;
 	    
 	}
-	
+	public List<Insuranceplan> getInsuranceplanUsername(String username){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		
+		List<Insuranceplan> Insuranceplan = new ArrayList<Insuranceplan>();
+	    try{
+			resultSet = statement.executeQuery("select * from tbl_insuranceplan where username='"+username+"'");
+			while(resultSet.next()){
+				Insuranceplan.add(new Insuranceplan(resultSet.getString("no"),resultSet.getString("insure_comp"),
+			    		resultSet.getString("addr"),
+			    		resultSet.getString("pat_name"),
+			    		resultSet.getString("accident_date"),
+			    		resultSet.getString("enrollee"),
+			    		resultSet.getString("no_objection"),
+			    		resultSet.getString("agentname"),
+			    		resultSet.getString("fax"),
+			    		resultSet.getString("name_of_clinic"),
+			    		resultSet.getString("pat"),
+			    		resultSet.getString("authorized")));
+			    		
+			}
+	    }catch(Exception e){
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    }finally{
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);	    	
+	    }
+	    return Insuranceplan;
+		
+	}
+
 	public List<Insuranceplan> getInsuranceplanUsername(Principal principal){
 		Connection con = null;
 		Statement statement = null;

@@ -65,6 +65,40 @@ public class TreatDAO {
 	    
 	}
 	
+	public List<Treatform> getUsernameTreatDetails(String username){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<Treatform> treat = new ArrayList<Treatform>();
+	    try{
+			resultSet = statement.executeQuery("select * from Treat_Details where username='"+username+"'");
+			while(resultSet.next()){
+				treat.add(new Treatform(resultSet.getString("treat_no"),resultSet.getString("patientsname"),
+			    		resultSet.getString("patientssign"),
+			    		resultSet.getString("todaydate"),
+			    		resultSet.getString("witness")));
+			    	
+			}
+			System.out.println(treat);
+	    }catch(Exception e){
+	    	System.out.println(e.toString());
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    }finally{
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);	    	
+	    }
+	    return treat;
+		
+	}
 	public List<Treatform> getUsernameTreatDetails(Principal principal){
 		Connection con = null;
 		Statement statement = null;

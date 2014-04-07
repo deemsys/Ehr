@@ -140,6 +140,44 @@ public class HippaDAO {
 		
 
 	    }
+	public List<HippaPrivacy> getusernameHippa(String username){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<HippaPrivacy> privacy = new ArrayList<HippaPrivacy>();
+	    try{
+	    	String cmd="select * from hippa_privacy where username='"+username+"'";
+	    	
+			resultSet = statement.executeQuery(cmd);
+	    	while(resultSet.next())
+	    	{
+	    		privacy.add( new HippaPrivacy(resultSet.getString("hippa_no"),resultSet.getString("date"),
+						resultSet.getString("printpname"),
+						resultSet.getString("printpdate"),
+						resultSet.getString("legalguardian"),
+			    		resultSet.getString("staffwitness")));
+			}
+	    }catch(Exception e)
+	    {
+	    	System.out.println(e.toString());
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    }finally{
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);	    	
+	    }
+	    return privacy;
+		
+
+	    }
 	public List<HippaPrivacy> getusernameHippa(Principal principal){
 		Connection con = null;
 		Statement statement = null;
@@ -178,6 +216,7 @@ public class HippaDAO {
 		
 
 	    }
+
 
 	
 	public int updatehippaprivacy(HippaPrivacy privacydetails,String hippa_no,String admin)

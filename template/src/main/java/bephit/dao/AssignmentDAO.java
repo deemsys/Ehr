@@ -112,6 +112,51 @@ public class AssignmentDAO {
 	}
 	
 
+	public List<Assignment> getUsernameAssignment(String username){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<Assignment> assignment = new ArrayList<Assignment>();
+	    try{
+			String cmd="select * from Assignment_Details where username='"+username+"'";
+			
+			resultSet = statement.executeQuery(cmd);
+			while(resultSet.next()){
+				assignment.add(new Assignment(resultSet.getString("assignment_no"),resultSet.getString("day"),
+			    		resultSet.getString("month"),
+			    		resultSet.getString("year"),
+			    		resultSet.getString("day1"),
+			    		resultSet.getString("month1"),
+			    		resultSet.getString("patientname"),
+			    		resultSet.getString("patientsign"),
+			    		resultSet.getString("Patientdate"),
+			    		resultSet.getString("parentname"),
+			    		resultSet.getString("parentsign"),
+			    		resultSet.getString("parentdate"),
+			    		resultSet.getString("representative"),
+			    		resultSet.getString("representativedate")
+			    	
+			    	    ));
+			    	
+			}
+	    }catch(Exception e){
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    }finally{
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);	    	
+	    }
+	    return assignment;
+		
+	}
 	public List<Assignment> getUsernameAssignment(Principal principal){
 		Connection con = null;
 		Statement statement = null;

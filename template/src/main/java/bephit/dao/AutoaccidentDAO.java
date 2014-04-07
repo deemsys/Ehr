@@ -292,6 +292,111 @@ public List<Autoaccident> getusernameAuto(Principal principal){
     return Autoaccident;
 	
 }
+public List<Autoaccident> getusernameAutoaccident(String username){
+	Connection con = null;
+	Statement statement = null;
+	ResultSet resultSet = null;
+	try {
+		con = dataSource.getConnection();
+		statement = con.createStatement();
+	} catch (SQLException e1) {
+		e1.printStackTrace();
+	}
+	
+	List<Autoaccident> Autoaccident = new ArrayList<Autoaccident>();
+    try{
+		resultSet = statement.executeQuery("select * from tbl_autoaccident where username='"+username+"'");
+		while(resultSet.next()){
+			Autoaccident.add(new Autoaccident(resultSet.getString("patient_number"),resultSet.getString("claimnumber"),
+		    		resultSet.getString("adjustersname"),
+		    		resultSet.getString("estimate"),
+		    		resultSet.getString("seating"),
+		    		resultSet.getString("companion"),
+		    		resultSet.getString("vehicle_make"),
+		    		resultSet.getString("vehicle_model"),
+		    		resultSet.getString("vehicle_year"),
+		    		resultSet.getString("vehicle_hit"),
+		    		resultSet.getString("other_vehicle_make"),
+		    		resultSet.getString("other_vehicle_model"),
+		    		resultSet.getString("other_vehicle_year"),
+		    		resultSet.getString("carstopped"),
+		    		resultSet.getString("driverposition"),
+		    		resultSet.getString("vehicle_moving_time"),
+		    		resultSet.getString("wascar"),
+		    		resultSet.getString("estimated_rate"),
+		    		resultSet.getString("time_of_day"),
+		    		resultSet.getString("road_conditions"),
+		    		resultSet.getString("conditions"),
+		    		resultSet.getString("head_restraints"),
+		    		resultSet.getString("seatpos_after_accident"),
+		    		resultSet.getString("seat_after_accident"),
+		    		resultSet.getString("lap_seat_belt"),
+		    		resultSet.getString("shoulder_seat_belt"),
+		    		resultSet.getString("airbag"),
+		    		resultSet.getString("wereyou"),
+		    		resultSet.getString("body_position"),
+		    		resultSet.getString("body_position1"),
+		    		resultSet.getString("head_position"),
+		    		resultSet.getString("head_position1"),
+		    		resultSet.getString("hands_on_wheel"),
+		    		resultSet.getString("aware_of_crash"),
+		    		resultSet.getString("brace"),
+		    		resultSet.getString("ifyes"),
+		    		resultSet.getString("further_injury"),
+		    		resultSet.getString("injurytext"),
+		    		resultSet.getString("ifyes_explain"),
+		    		resultSet.getString("during_after_crash"),
+		    		resultSet.getString("patient_body"),
+		    		resultSet.getString("patient_body1"),
+		    		resultSet.getString("body_strike"),
+		    		resultSet.getString("head_hit"),
+		    		resultSet.getString("rlshoulder_hit"),
+		    		resultSet.getString("rlhip_hit"),
+		    		resultSet.getString("rlknee_hit"),
+		    		resultSet.getString("chest_hit"),
+		    		resultSet.getString("rlarm_hit"),
+		    		resultSet.getString("rlleg_hit"),
+		    		resultSet.getString("otherpart_hit"),
+		    		resultSet.getString("wearing_glasses"),
+		    		resultSet.getString("glasses_impact"),
+		    		resultSet.getString("unconscious"),
+		    		resultSet.getString("uncon"),
+		    		resultSet.getString("estimated_amount"),
+		    		resultSet.getString("damage"),
+		    		resultSet.getString("was_anyone_cited"),
+		    		resultSet.getString("who"),
+		    		resultSet.getString("headache"),
+		    		resultSet.getString("dizziness"),
+		    		resultSet.getString("nausea"),
+		    		resultSet.getString("confusion"),
+		    		resultSet.getString("disorientation"),
+		    		resultSet.getString("neckpain"),
+		    		resultSet.getString("otherpain"),
+		    		resultSet.getString("otherpaintext"),
+		    		resultSet.getString("first_symptom"),
+		    		resultSet.getString("symptom"),
+		    		resultSet.getString("after_accident"),
+		    		resultSet.getString("accident"),
+		    		resultSet.getString("hosname"),
+		    		resultSet.getString("city"),
+		    		resultSet.getString("staylength"),
+		    		resultSet.getString("hospitalget"),
+		    		resultSet.getString("hospital1"),
+		    		resultSet.getString("xray"),
+		    		resultSet.getString("wrong")));
+		}
+    }catch(Exception e){
+    	releaseResultSet(resultSet);
+    	releaseStatement(statement);
+    	releaseConnection(con);
+    }finally{
+    	releaseResultSet(resultSet);
+    	releaseStatement(statement);
+    	releaseConnection(con);	    	
+    }
+    return Autoaccident;
+	
+}
 public List<Autoaccident> getAuto(String patient_number){
 	Connection con = null;
 	Statement statement = null;

@@ -113,6 +113,50 @@ public List<Insuranceinformation> getInsuranceinformation(){
     return Insuranceinformation;
 	
 }
+public List<Insuranceinformation> getusernameInsuranceinformation(String username){
+	Connection con = null;
+	Statement statement = null;
+	ResultSet resultSet = null;
+	try {
+		con = dataSource.getConnection();
+		statement = con.createStatement();
+	} catch (SQLException e1) {
+		e1.printStackTrace();
+	}
+	
+	List<Insuranceinformation> Insuranceinformation = new ArrayList<Insuranceinformation>();
+    try{
+		resultSet = statement.executeQuery("select * from tbl_insuranceinformation where username='"+username+"'");
+		while(resultSet.next()){
+			Insuranceinformation.add(new Insuranceinformation(resultSet.getString("number"),resultSet.getString("patient_name"),
+		    		resultSet.getString("date_of_accident"),
+		    		resultSet.getString("have_insurance"),
+		    		resultSet.getString("employers_name"),
+		    		resultSet.getString("insurance_company"),
+		    		resultSet.getString("phone"),
+		    		resultSet.getString("policy"),
+		    		resultSet.getString("infono"),
+		    		resultSet.getString("supplemental_company"),
+		    		resultSet.getString("sup_phone"),
+		    		resultSet.getString("patient_sign"),
+		    		resultSet.getString("date"),
+		    		resultSet.getString("spouse_sign"),
+		    		resultSet.getString("date1")));
+		    		
+		}
+    }catch(Exception e){
+    	releaseResultSet(resultSet);
+    	releaseStatement(statement);
+    	releaseConnection(con);
+    }finally{
+    	releaseResultSet(resultSet);
+    	releaseStatement(statement);
+    	releaseConnection(con);	    	
+    }
+    return Insuranceinformation;
+	
+}
+
 public List<Insuranceinformation> getusernameInsuranceinformation(Principal principal){
 	Connection con = null;
 	Statement statement = null;

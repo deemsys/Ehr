@@ -99,6 +99,39 @@ public class TreatMinorDAO {
 		
 	}
 	
+	public List<TreatMinor> getusernameMinorDetails(String username){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<TreatMinor> minor = new ArrayList<TreatMinor>();
+	    try{
+			resultSet = statement.executeQuery("select * from Minor_Details where username='"+username+"'");
+			while(resultSet.next()){
+				minor.add(new TreatMinor(resultSet.getString("minor_no"),resultSet.getString("guardian"),resultSet.getString("age"),resultSet.getString("drname"),resultSet.getString("signed"),
+			    		resultSet.getString("pdate"),
+			    		resultSet.getString("pwitness")));
+
+			    System.out.println(minor);	
+			}
+	    }catch(Exception e){
+	    	System.out.println(e.toString());
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    }finally{
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);	    	
+	    }
+	    return minor;
+		
+	}	
 	public List<TreatMinor> getusernameMinorDetails(Principal principal){
 		Connection con = null;
 		Statement statement = null;
