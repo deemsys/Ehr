@@ -7,7 +7,7 @@ public class Perrychiropractic
 	private String perryid;
 	@NotEmpty
 	private String insurance;
-	@NotEmpty
+	
 	private String address;
 	
 	private String address1;
@@ -17,7 +17,7 @@ public class Perrychiropractic
 	private String nameofperson;
 	
 	private String dateofaccident;
-	
+	@NotEmpty
 	private String subject;
 	
 	public Perrychiropractic() {

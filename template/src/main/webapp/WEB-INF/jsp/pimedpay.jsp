@@ -99,7 +99,7 @@
               
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="180"><span class="err">*</span>Address </td>
+              <td height="25" width="180"><span class="err"></span>Address </td>
               <td><textarea rows="" cols="" name="address" id="address"style="width: 162px; height: 62px"></textarea><span class="err"><form:errors path="Pimedpay.address"></form:errors></span></td>
               </tr>
               </table>
@@ -249,7 +249,7 @@
               
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="180"><span class="err">*</span>Address </td>
+              <td height="25" width="180"><span class="err"></span>Address </td>
               <td><textarea rows="" cols="" name="address" id="address"style="width: 162px; height: 62px">${medpay.address }</textarea><span class="err"><form:errors path="Pimedpay.address"></form:errors></span></td>
               </tr>
               </table>

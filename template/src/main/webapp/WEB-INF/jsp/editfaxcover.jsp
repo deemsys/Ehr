@@ -87,7 +87,7 @@
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="120"><span class="err">*</span>FAX:</td>
+              <td height="25" width="120"><span class="err"></span>FAX:</td>
               <td> (330) 477-3037	</td>
        	</tr></table><br><br>
      <table cellpadding="0" cellspacing="0" border="0" width="100%">

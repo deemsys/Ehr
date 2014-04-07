@@ -9,7 +9,7 @@ public class Pimedpay
 	@NotEmpty
 	private String insurance;
 	
-	@NotEmpty
+	
 	private String address;
 	
 	

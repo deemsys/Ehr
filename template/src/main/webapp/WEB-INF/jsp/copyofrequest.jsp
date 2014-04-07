@@ -54,7 +54,7 @@ $(function() {
           <td><input type="text" name="patient" size="40"><span class="err"><form:errors path="Copyofrequest.patient"></form:errors></span></td>
           </tr>   
           <tr height="30">
-          <td><span class="err">*</span>Address: </td>
+          <td><span class="err"></span>Address: </td>
           <td><textarea rows="4" cols="43" name="address"></textarea><span class="err"><form:errors path="Copyofrequest.address"></form:errors></span></td>
           </tr>
           <tr height="30">
@@ -77,7 +77,7 @@ $(function() {
           <table width="85">
           <tr height="30">
           <td width="40">Dear  </td>
-          <td><input type="text" name="dear"  size="40"></td>
+          <td><span class="err">*</span><input type="text" name="dear"  size="40"><span class="err"><form:errors path="Copyofrequest.dear"></form:errors></span></td>
           </tr>
           </table>
           <br/>
@@ -137,7 +137,7 @@ $(function() {
           <td><input type="text" name="patient" size="40" value="${copy.patient}"><span class="err"><form:errors path="Copyofrequest.patient"></form:errors></span></td>
           </tr>   
           <tr height="30">
-          <td><span class="err">*</span>Address: </td>
+          <td><span class="err"></span>Address: </td>
           <td><textarea rows="4" cols="43" name="address">${copy.address}</textarea><span class="err"><form:errors path="Copyofrequest.address"></form:errors></span></td>
           </tr>
           <tr height="30">
@@ -160,7 +160,7 @@ $(function() {
           <table width="85">
           <tr height="30">
           <td width="40">Dear  </td>
-          <td><input type="text" name="dear"  size="40" value="${copy.dear}"></td>
+          <td><span class="err">*</span><input type="text" name="dear"  size="40" value="${copy.dear}"><span class="err"><form:errors path="Copyofrequest.dear"></form:errors></span></td>
           </tr>
           </table>
           <br/>

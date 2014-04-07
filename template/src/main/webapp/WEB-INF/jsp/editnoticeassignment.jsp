@@ -73,15 +73,15 @@
               </table>
                 <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td  width="180"><span class="err">*</span>Address</td>
-              <td  ><textarea rows="" cols="" name="address1" style="width: 175px; height: 64px" >${noticeassignmentdetails.address1 }</textarea></textarea>
+              <td  width="180"><span class="err"></span>Address</td>
+              <td  ><textarea rows="" cols="" name="address1" style="width: 175px; height: 64px" >${noticeassignmentdetails.address1 }</textarea>
             </td>  <td height="40" width="90" style="width: 138px; "><span class="err"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Address:</td>
               <td ><textarea rows="" cols="" name="address2" style="width: 175px; height: 64px">${noticeassignmentdetails.address2 }</textarea></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td  width="180"><span class="err">*</span>Regarding:</td>
+              <td  width="180"><span class="err"></span>Regarding:</td>
               <td ><input type="text" class="input_txtbx1" name="regarding" value="${noticeassignmentdetails.regarding }" id="regarding" /><span class="err"><form:errors path="noticeofassignment.regarding"></form:errors></span></td>                   
           </tr> 
           <tr>
@@ -89,11 +89,11 @@
               <td ><input type="text" class="input_txtbx1" name="patientname"value= "${noticeassignmentdetails.patientname }" id="patientname" /><span class="err"><form:errors path="Noticeassignment.patientname"></form:errors></span></td>                      
           </tr> 
           <tr>
-            <td height="30" width="180"><span class="err">*</span>Date Of Accident:</td>
+            <td height="30" width="180">Date Of Accident:</td>
               <td ><input type="text" class="input_txtbx1" name="dateofaccident" value= "${noticeassignmentdetails.dateofaccident }" id="dateofaccident" /><span class="err"><form:errors path="noticeofassignment.dateofaccident"></form:errors></span></td>                      
           </tr> 
           <tr>
-            <td height="20" width="180"><span class="err">*</span>Today'sDate:</td>
+            <td height="20" width="180">Today'sDate:</td>
               <td ><input type="text" class="input_txtbx1" name="todaysdate"value="${noticeassignmentdetails.todaysdate }" id="datepicker" /><span class="err"><form:errors path="noticeofassignment.todaysdate"></form:errors></span></td>                      
           </tr> <br>  
             </table>
@@ -104,7 +104,7 @@
        		
        		<table>
        		 <tr>
-       		 <td><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="letter" value="${noticeassignmentdetails.letter }" id="letter" /><form:errors path="noticeofassignment.letter"></form:errors>has sought medical treatment from this clinic.  This patient has been injured to an
+       		 <td><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="err">*</span><input type="text" class="input_txtbx1" name="letter" value="${noticeassignmentdetails.letter }" id="letter" /><form:errors path="noticeofassignment.letter"></form:errors>has sought medical treatment from this clinic.  This patient has been injured to an
 extent where the patient has determined that they cannot afford to pay for treatment on a fee for service basis.
 We would definitely prefer to simply render the required treatment on a fee for service basis. However, because
  fees for service presents a hardship to this patient, we have agreed to postpone payment for treatment pursuant to the attached agreement assignment.

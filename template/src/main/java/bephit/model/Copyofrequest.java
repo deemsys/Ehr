@@ -8,7 +8,7 @@ public class Copyofrequest{
 	private String copyofrequestno;
 	@NotEmpty
 	private String patient;
-	@NotEmpty
+	
 	private String address;
 	private String regarding;
 	@NotEmpty
@@ -16,7 +16,7 @@ public class Copyofrequest{
 	@NotEmpty
 	private String claimnumber;
 	private String todaydate;
-	
+	@NotEmpty
 	private String dear;
 	@NotEmpty
 	private String sign;

@@ -53,7 +53,7 @@ $(function() {
           <td><input type="text" name="patient" size="40" value="${copyofrequest.patient}"><span class="err"><form:errors path="Copyofrequest.patient"></form:errors></span></td>
           </tr>   
           <tr height="30">
-          <td><span class="err">*</span>Address: </td>
+          <td><span class="err"></span>Address: </td>
           <td><textarea rows="4" cols="43" name="address">${copyofrequest.address}</textarea><span class="err"><form:errors path="Copyofrequest.address"></form:errors></span></td>
           </tr>
           <tr height="30">
@@ -61,7 +61,7 @@ $(function() {
           <td><input type="text" name="regarding" size="40" value="${copyofrequest.regarding }"></td>
           </tr>
           <tr height="30">
-          <td>Date of Accident: </td>
+          <td><span class="err">*</span>Date of Accident: </td>
           <td><input type="text" name="dateofaccident" id="datepicker" size="40" value="${copyofrequest.dateofaccident}"></td>
           </tr>
           <tr height="30">
@@ -76,7 +76,7 @@ $(function() {
           <table width="85">
           <tr height="30">
           <td width="40">Dear  </td>
-          <td><input type="text" name="dear"  size="40" value="${copyofrequest.dear}"></td>
+          <td><span class="err">*</span><input type="text" name="dear"  size="40" value="${copyofrequest.dear}"></td>
           </tr>
           </table>
           <br/>
@@ -97,7 +97,7 @@ $(function() {
           </div>
           <div align="right">
           <p><B style="font-size:13px">Very truly yours,</B></p>
-          <p><input type="text" name="sign" size="30" value="${copyofrequest.sign}"><span class="err"><form:errors path="Copyofrequest.sign"></form:errors></span></p>
+          <p><span class="err">*</span><input type="text" name="sign" size="30" value="${copyofrequest.sign}"><span class="err"><form:errors path="Copyofrequest.sign"></form:errors></span></p>
           <p>Perry Chiropractic and Therapy Center of Canton, Inc.</p>
           <p>Dr. Charles T. Yang DC, DABFP</p>
           </div>

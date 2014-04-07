@@ -73,7 +73,7 @@
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="120"><span class="err">*</span>Address</td>
+              <td height="25" width="120"><span class="err"></span>Address</td>
               <td ><textarea rows="" cols="" name="address" id="address"style="width: 162px; height: 62px"></textarea><span class="err"><form:errors path="Patientattorney.address"></form:errors></span></td>
               </tr>
               </table>
@@ -112,7 +112,7 @@
      
 Dear Madam or Sir:
 </h3></p>
-  <p><input type="text" class="input_txtbx1" name="dearsir" id="dearsir">has sought medical treatment from this clinic.  This patient (your client) has been injured to an extent where the patient has determined that they cannot afford to pay for treatment on a fee for service basis.  We would definitely prefer to simply render the required treatment on a fee for service basis.  However, because fees for service presents a hardship to this patient, we have agreed to postpone payment for treatment, but in direct reliance on the continuing commitment the patient has made to us in the attached Treatment Fee Agreement and Instructions to Attorney. </p>	
+  <p><span class="err">*</span><input type="text" class="input_txtbx1" name="dearsir" id="dearsir"><span class="err"><form:errors path="Patientattorney.dearsir"></form:errors></span>has sought medical treatment from this clinic.  This patient (your client) has been injured to an extent where the patient has determined that they cannot afford to pay for treatment on a fee for service basis.  We would definitely prefer to simply render the required treatment on a fee for service basis.  However, because fees for service presents a hardship to this patient, we have agreed to postpone payment for treatment, but in direct reliance on the continuing commitment the patient has made to us in the attached Treatment Fee Agreement and Instructions to Attorney. </p>	
 
 
        </td>
@@ -278,7 +278,7 @@ Opinion 2007-7 provides the following further ethical directions:
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="120"><span class="err">*</span>Address</td>
+              <td height="25" width="120"><span class="err"></span>Address</td>
               <td ><textarea rows="" cols="" name="address" id="address"style="width: 162px; height: 62px">${patient.address }</textarea><span class="err"><form:errors path="Patientattorney.address"></form:errors></span></td>
               </tr>
               </table>
@@ -317,7 +317,7 @@ Opinion 2007-7 provides the following further ethical directions:
      
 Dear Madam or Sir:
 </h3></p>
-  <p><input type="text" class="input_txtbx1" name="dearsir" value="${patient.dearsir}"  id="dearsir">has sought medical treatment from this clinic.  This patient (your client) has been injured to an extent where the patient has determined that they cannot afford to pay for treatment on a fee for service basis.  We would definitely prefer to simply render the required treatment on a fee for service basis.  However, because fees for service presents a hardship to this patient, we have agreed to postpone payment for treatment, but in direct reliance on the continuing commitment the patient has made to us in the attached Treatment Fee Agreement and Instructions to Attorney. </p>	
+  <p><span class="err">*</span><input type="text" class="input_txtbx1" name="dearsir" value="${patient.dearsir}"  id="dearsir"><span class="err"><form:errors path="Patientattorney.dearsir"></form:errors></span>has sought medical treatment from this clinic.  This patient (your client) has been injured to an extent where the patient has determined that they cannot afford to pay for treatment on a fee for service basis.  We would definitely prefer to simply render the required treatment on a fee for service basis.  However, because fees for service presents a hardship to this patient, we have agreed to postpone payment for treatment, but in direct reliance on the continuing commitment the patient has made to us in the attached Treatment Fee Agreement and Instructions to Attorney. </p>	
 
 
        </td>

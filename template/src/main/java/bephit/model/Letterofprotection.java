@@ -17,7 +17,7 @@ public class Letterofprotection
 	private String myclient;
 	@NotEmpty
 	private String dateofaccident;
-	
+	@NotEmpty
 	private String dearsir;
 	@NotEmpty
 	private String esq;

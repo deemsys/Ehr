@@ -7,7 +7,7 @@ public class Patientattorney
 	private String patientid;
 	@NotEmpty
 	private String name;
-	@NotEmpty
+	
 	private String address;
 	
 	private String reg;
@@ -15,7 +15,7 @@ public class Patientattorney
 	private String patientname;
 	@NotEmpty
 	private String date;	
-	
+	@NotEmpty
 	private String dearsir;
 	@NotEmpty
 	private String nameofclinic;

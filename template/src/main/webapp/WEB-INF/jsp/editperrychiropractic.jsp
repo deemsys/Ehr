@@ -115,7 +115,7 @@ Canton, Ohio 44708
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="50%"><span class="err">*</span>Address:</td>
+              <td height="25" width="50%"><span class="err"></span>Address:</td>
               <td ><textarea rows="" cols="" name="address" id="address" style="width: 162px; height: 62px">${perrychiropracticdetails.address}</textarea><span class="err"><form:errors path="perrychiropracticdetails.address"></form:errors></td>
               </tr>
               </table>
@@ -153,7 +153,7 @@ Canton, Ohio 44708
      </p>
      <br>
      
-  <p><input type="text" class="input_txtbx1" name="subject" value="${perrychiropracticdetails.subject}"   id="subject" />has sought medical treatment from this clinic.  This patient has been injured to an extent where the patient has determined that they cannot afford to pay for treatment on a fee for service basis.  We would definitely prefer to simply render the required treatment on a fee for service basis.  However, because fees for service presents a hardship to this patient, we have agreed to postpone payment for treatment pursuant to the attached medical proceeds assignment. </p>	
+  <p><span class="err">*</span><input type="text" class="input_txtbx1" name="subject" value="${perrychiropracticdetails.subject}"   id="subject" />has sought medical treatment from this clinic.  This patient has been injured to an extent where the patient has determined that they cannot afford to pay for treatment on a fee for service basis.  We would definitely prefer to simply render the required treatment on a fee for service basis.  However, because fees for service presents a hardship to this patient, we have agreed to postpone payment for treatment pursuant to the attached medical proceeds assignment. </p>	
  <br>
      
 

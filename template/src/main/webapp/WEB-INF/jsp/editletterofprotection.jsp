@@ -76,7 +76,7 @@
              
             <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25"  width="160"><span class="err">*</span>IN RE:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My Client:</td>
+              <td height="25"  width="160"><span class="err"></span>IN RE:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My Client:</td>
                <td ><input type="text" class="input_txtbx1" name="myclient" value="${letterofprotectiondetails.myclient}" id="datepicker" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
              
               </tr>
@@ -88,7 +88,7 @@
              </table><br><br>
              <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td  width="70"><span class="err"></span>Dear Dr</td>
+              <td  width="70"><span class="err">*</span>Dear Dr</td>
               <td  height="20" ><input type="text" class="input_txtbx1" name="dearsir" value="${letterofprotectiondetails.dearsir}"  id="dearsir" /><span class="err"><form:errors path="noticeofassignment.address"></form:errors>
            </span></td></tr>	
              </table>

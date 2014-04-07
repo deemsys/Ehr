@@ -71,7 +71,7 @@
               <table>
               <tr>
               <td>
-              This is to certify that&nbsp;&nbsp;&nbsp; <input type="text" class="input_txtbx1" name="letter" value="${workschooldetails.letter }"  id="datepicker" /><form:errors path="Workschool.date"></form:errors> is under my care.  In order to avoid aggravation of his/her condition, I recommend that he/she...
+              This is to certify that&nbsp;&nbsp;&nbsp;<span class="err">*</span> <input type="text" class="input_txtbx1" name="letter" value="${workschooldetails.letter }"  id="datepicker" /><form:errors path="Workschool.date"></form:errors> is under my care.  In order to avoid aggravation of his/her condition, I recommend that he/she...
 
               
               </td>

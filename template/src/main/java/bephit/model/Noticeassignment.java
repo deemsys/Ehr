@@ -19,11 +19,11 @@ public class Noticeassignment
 	private String regarding;
 	@NotEmpty
 	private String patientname;	
-	@NotEmpty
-	private String dateofaccident;
-	@NotEmpty
-	private String todaysdate;
 	
+	private String dateofaccident;
+	
+	private String todaysdate;
+	@NotEmpty
 	private String letter;
 	
 	private String letter1;
