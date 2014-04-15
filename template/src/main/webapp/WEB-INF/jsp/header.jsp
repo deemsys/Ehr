@@ -1145,7 +1145,7 @@ color:#fff;
 				            <li><a href="checklistsearch">Staff checklist</a></li>
 				            <!-- <li><a href="staffdetails">View Staff checklist</a></li> -->
 				            <li><a href="insuranceverification">Insurance verification</a></li>
-				             <li><a href="insuranceverifylist">View Insurance verification</a></li>
+				            
 				            </ul>
 
 							

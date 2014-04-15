@@ -1747,12 +1747,12 @@ if(result.hasErrors())
 	@RequestMapping(value="/dutiesunderduress", method = RequestMethod.GET)
 	public String viewingdutiesunderduress(HttpSession session, ModelMap model) {
 		session.removeAttribute("duties");
-		model.addAttribute("menu","duties");
+		model.addAttribute("menu","sign");
 		return "dutiesunderduress";
  
 	}
 	@RequestMapping(value="/dutiesunderduress", method = RequestMethod.POST)
-	public String insert_duties(HttpServletRequest request,HttpSession session,@ModelAttribute("Dutiesunderduress")  @Valid Dutiesunderduress dutiesunderduress,BindingResult result,ModelMap model) {
+	public String insert_duties(Principal principal,HttpServletRequest request,HttpSession session,@ModelAttribute("Dutiesunderduress")  @Valid Dutiesunderduress dutiesunderduress,BindingResult result,ModelMap model) {
 		session.setAttribute("duties", dutiesunderduress);
  
 		if(result.hasErrors())
@@ -1767,11 +1767,12 @@ if(result.hasErrors())
 		}
 		model.put("Dutiesunderduress", dutiesunderduress);
 		model.addAttribute("dutiesunderduressForm",dutiesunderduress);
-    	int a=dutiesDAO.setDuties(dutiesunderduress);
-		DutiesduressForm dutiesduressForm= new DutiesduressForm();
+    	int a=dutiesDAO.setDuties(dutiesunderduress,principal);
+	    model.addAttribute("duties","1");
+    	DutiesduressForm dutiesduressForm= new DutiesduressForm();
 		dutiesduressForm.setDutiesunderduressdetails(dutiesDAO.getDuties());
 		model.addAttribute("dutiesduressForm",dutiesduressForm);
-		return "viewduties";
+		return "dutiesunderduress";
  
 	
 	}

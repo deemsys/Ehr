@@ -510,6 +510,7 @@ var $sid = xx+1;
 				                  		<td>	<select name="type_Of_Accident" id="typeofaccident" class="input_cmbbx1" onchange='Checklight();'>
 						                  <option value="autoaccident" <c:if test="${patientDetails.type_Of_Accident=='autoaccident'}"><c:out value="selected"/></c:if>>Auto</option>
 						                  <option value="workaccident" <c:if test="${patientDetails.type_Of_Accident=='workaccident'}"><c:out value="selected"/></c:if>>Work</option>
+						                  <option value="mobileaccident" <c:if test="${patientDetails.type_Of_Accident=='mobileaccident'}"><c:out value="selected"/></c:if>>Mobile</option>
 						                  <option value="otheraccident"  <c:if test="${patientDetails.type_Of_Accident=='otheraccident'}"><c:out value="selected"/></c:if>>Other</option>
 						                    </select>
 						                    </td>

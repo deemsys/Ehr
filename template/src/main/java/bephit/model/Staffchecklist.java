@@ -8,20 +8,7 @@ public class Staffchecklist{
 	
 	private String form_no;
 	
-	
-	private String patinfo;
-	
-	private String screening;
-
-	private String aob;
-	
-	private String history;
-	
-	private String xray_sheet;
-	
-	private String consent;
-
-	private String report;
+	private String patientusername;
 
 	@NotEmpty
 	private String pat_name;
@@ -53,42 +40,6 @@ public class Staffchecklist{
 public Staffchecklist(){
 }
 
-public Staffchecklist(String form_no,String patinfo,
-		String screening,
-		String aob,
-		String history,
-		String xray_sheet,
-		String consent,
-		String report,
-		String pat_name,
-		String insure,
-		String damage_amount,
-		String fault_insure,
-		String med_pay,
-		String other_attorney,
-		String protect_received,
-		String bill,
-		String re_date){
-	this.form_no=form_no;
-	this.patinfo=patinfo;
-	this.screening=screening;
-	this.aob=aob;
-	this.history=history;
-	this.xray_sheet=xray_sheet;
-	this.consent=consent;
-	this.report=report;
-	this.pat_name=pat_name;
-	this.insure=insure;
-	this.damage_amount=damage_amount;
-	this.fault_insure=fault_insure;
-	this.med_pay=med_pay;
-	this.other_attorney=other_attorney;
-	this.protect_received=protect_received;
-	this.bill=bill;
-	this.re_date=re_date;
-}
-
-
 public String getForm_no() {
 	return form_no;
 }
@@ -96,59 +47,13 @@ public String getForm_no() {
 public void setForm_no(String form_no) {
 	this.form_no = form_no;
 }
-public String getPatinfo() {
-	return patinfo;
-}
-public void setPatinfo(String patinfo) {
-	this.patinfo = patinfo;
+
+public String getPatientusername() {
+	return patientusername;
 }
 
-public String getScreening() {
-	return screening;
-}
-
-public void setScreening(String screening) {
-	this.screening = screening;
-}
-
-public String getAob() {
-	return aob;
-}
-
-public void setAob(String aob) {
-	this.aob = aob;
-}
-
-public String getHistory() {
-	return history;
-}
-
-public void setHistory(String history) {
-	this.history = history;
-}
-
-public String getXray_sheet() {
-	return xray_sheet;
-}
-
-public void setXray_sheet(String xray_sheet) {
-	this.xray_sheet = xray_sheet;
-}
-
-public String getConsent() {
-	return consent;
-}
-
-public void setConsent(String consent) {
-	this.consent = consent;
-}
-
-public String getReport() {
-	return report;
-}
-
-public void setReport(String report) {
-	this.report = report;
+public void setPatientusername(String patientusername) {
+	this.patientusername = patientusername;
 }
 
 public String getPat_name() {
@@ -222,6 +127,25 @@ public String getRe_date() {
 public void setRe_date(String re_date) {
 	this.re_date = re_date;
 }
+
+public Staffchecklist(String form_no, String patientusername, String pat_name,
+		String insure, String damage_amount, String fault_insure,
+		String med_pay, String other_attorney, String protect_received,
+		String bill, String re_date) {
+	super();
+	this.form_no = form_no;
+	this.patientusername = patientusername;
+	this.pat_name = pat_name;
+	this.insure = insure;
+	this.damage_amount = damage_amount;
+	this.fault_insure = fault_insure;
+	this.med_pay = med_pay;
+	this.other_attorney = other_attorney;
+	this.protect_received = protect_received;
+	this.bill = bill;
+	this.re_date = re_date;
+}
+
 
 }
 

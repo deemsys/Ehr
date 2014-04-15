@@ -89,7 +89,7 @@ $(function() {
 	            
 	            </div>
 	            
-	            <input type="text" value="${patient}" name="patient_id" />
+	            <input type="hidden" value="${patientid}" name="patient_id" />
 	    <div class="contentbox">
           <table cellpadding="0" cellspacing="0" border="0" width="98%">
            

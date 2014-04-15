@@ -197,6 +197,7 @@ document.getElementById("fax").value=phone;
 	             <h2>Health Insurance Verification</h2> 
 	            </div>
 	            <div class="contentbox">
+	            <input type="text" name="pusername"/>
 	            <c:choose>
 <c:when test="${empty veri}">
               <table cellpadding="0" cellspacing="0" border="0" width="100%">

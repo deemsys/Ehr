@@ -1077,9 +1077,10 @@ function validate(){
 						                   
 
 											<option value="workaccident" id="work">Work</option>
+											<option value="mobileaccident" id="work">Mobile</option>
 											<option value="other" id="other">Other</option>
 				                   		</select>
-				                   <input type="text" name="accident" id="accident" style='display:none' />
+				        		                   <input type="text" name="accident" id="accident" style='display:none' />
 				                   	</td>
 				                   	
 				                </tr>  
@@ -1715,6 +1716,7 @@ function validate(){
 				                  		<select name="Type_Of_Accident" class="input_cmbbx1" onchange='Checklight(this.value)';>
 						                    <option selected="selected" value="autoaccident" >Auto</option>
 											<option value="workaccident">Work</option>
+											<option value="mobileaccident">Mobile</option>
 											<option value="other">Other</option>
 				                   		</select>
 				                   <input type="text" name="accident" id="accident" style='display:none'/>
@@ -2091,6 +2093,10 @@ function Checklight(val){
  var type = type1.options[type1.selectedIndex].value;
  /* document.location.href = "/header.jsp?value=type"; */
  
+ if(val=='mobileaccident')
+	 {
+ popupWindow = window.open("dutiesunderduress" ,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+	 }
  if(val=='other')
  			{
    				element.style.display='block';

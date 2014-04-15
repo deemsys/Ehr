@@ -46,7 +46,7 @@ public class StaffchecklistDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 //System.out.println(dateFormat.format(date));
-	    	 String cmd="INSERT INTO `tbl_staffchecklist` (`patinfo`,`screening`,`aob`,`history`,`xray_sheet`,`consent`,`report`,`pat_name`,`insure`,`damage_amount`,`fault_insure`,`med_pay`,`other_attorney`,`protect_received`,`bill`,`re_date`) VALUES ('"+staffchecklist.getPatinfo()+"','"+staffchecklist.getScreening()+"','"+staffchecklist.getAob()+"','"+staffchecklist.getHistory()+"','"+staffchecklist.getXray_sheet()+"','"+staffchecklist.getConsent()+"','"+staffchecklist.getReport()+"','"+staffchecklist.getPat_name()+"','"+staffchecklist.getInsure()+"','"+staffchecklist.getDamage_amount()+"','"+staffchecklist.getFault_insure()+"','"+staffchecklist.getMed_pay()+"','"+staffchecklist.getOther_attorney()+"','"+staffchecklist.getProtect_received()+"','"+staffchecklist.getBill()+"','"+staffchecklist.getRe_date()+"')";
+	    	 String cmd="INSERT INTO `tbl_staffchecklist` (`patientusername`,`pat_name`,`insure`,`damage_amount`,`fault_insure`,`med_pay`,`other_attorney`,`protect_received`,`bill`,`re_date`) VALUES ('"+staffchecklist.getPatientusername()+"','"+staffchecklist.getPat_name()+"','"+staffchecklist.getInsure()+"','"+staffchecklist.getDamage_amount()+"','"+staffchecklist.getFault_insure()+"','"+staffchecklist.getMed_pay()+"','"+staffchecklist.getOther_attorney()+"','"+staffchecklist.getProtect_received()+"','"+staffchecklist.getBill()+"','"+staffchecklist.getRe_date()+"')";
 	    	 System.out.println(cmd);
 	    	 statement.execute(cmd);
 			flag=1;
@@ -85,13 +85,50 @@ public List<Staffchecklist> getStaffchecklist(){
     try{
 		resultSet = statement.executeQuery("select * from tbl_staffchecklist");
 		while(resultSet.next()){
-			Staffchecklist.add(new Staffchecklist(resultSet.getString("form_no"),resultSet.getString("patinfo"),
-		    		resultSet.getString("screening"),
-		    		resultSet.getString("aob"),
-		    		resultSet.getString("history"),
-		    		resultSet.getString("xray_sheet"),
-		    		resultSet.getString("consent"),
-		    		resultSet.getString("report"),
+			Staffchecklist.add(new Staffchecklist(resultSet.getString("form_no"),resultSet.getString("patientusername"),		    		
+		    		resultSet.getString("pat_name"),
+		    		resultSet.getString("insure"),
+		    		resultSet.getString("damage_amount"),
+		    		resultSet.getString("fault_insure"),
+		    		resultSet.getString("med_pay"),
+		    		resultSet.getString("other_attorney"),
+		    		resultSet.getString("protect_received"),
+		    		resultSet.getString("bill"),
+		    		resultSet.getString("re_date")));
+		    		
+		    		
+		}
+		System.out.println(Staffchecklist);
+    }catch(Exception e){
+    	System.out.println(e.toString());
+    	releaseResultSet(resultSet);
+    	releaseStatement(statement);
+    	releaseConnection(con);
+    }finally{
+    	releaseResultSet(resultSet);
+    	releaseStatement(statement);
+    	releaseConnection(con);	    	
+    }
+    return Staffchecklist;
+	
+}
+public List<Staffchecklist> getStaffusername(String username){
+	Connection con = null;
+	Statement statement = null;
+	ResultSet resultSet = null;
+	try {
+		con = dataSource.getConnection();
+		statement = con.createStatement();
+	} catch (SQLException e1) {
+		e1.printStackTrace();
+	}
+	
+	List<Staffchecklist> Staffchecklist = new ArrayList<Staffchecklist>();
+    try{
+		resultSet = statement.executeQuery("select * from tbl_staffchecklist where patientusername='"+username+"'");
+		while(resultSet.next()){
+			Staffchecklist.add(new Staffchecklist(resultSet.getString("form_no"),
+					resultSet.getString("patientusername"),		    		
 		    		resultSet.getString("pat_name"),
 		    		resultSet.getString("insure"),
 		    		resultSet.getString("damage_amount"),
@@ -133,13 +170,8 @@ public List<Staffchecklist> getStaff(String form_no){
     try{
 		resultSet = statement.executeQuery("select * from tbl_staffchecklist where form_no='"+form_no+"'");
 		while(resultSet.next()){
-			Staffchecklist.add(new Staffchecklist(resultSet.getString("form_no"),resultSet.getString("patinfo"),
-		    		resultSet.getString("screening"),
-		    		resultSet.getString("aob"),
-		    		resultSet.getString("history"),
-		    		resultSet.getString("xray_sheet"),
-		    		resultSet.getString("consent"),
-		    		resultSet.getString("report"),
+			Staffchecklist.add(new Staffchecklist(resultSet.getString("form_no"),
+					resultSet.getString("patientusername"),		    		
 		    		resultSet.getString("pat_name"),
 		    		resultSet.getString("insure"),
 		    		resultSet.getString("damage_amount"),
@@ -167,6 +199,8 @@ public List<Staffchecklist> getStaff(String form_no){
 	
 }
 
+
+
 public int updatestaffchecklist(Staffchecklist staffchecklist,String form_no,String admin)
 {
 	Connection con = null;
@@ -183,7 +217,7 @@ public int updatestaffchecklist(Staffchecklist staffchecklist,String form_no,Str
     	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
     	 Date date = new Date();
     	 //System.out.println(dateFormat.format(date));
-    	String cmd="UPDATE tbl_staffchecklist SET patinfo='"+staffchecklist.getPatinfo()+"',screening='"+staffchecklist.getScreening()+"',aob='"+staffchecklist.getAob()+"',history='"+staffchecklist.getHistory()+"',xray_sheet='"+staffchecklist.getXray_sheet()+"',consent='"+staffchecklist.getConsent()+"',report='"+staffchecklist.getReport()+"',pat_name='"+staffchecklist.getPat_name()+"',insure='"+staffchecklist.getInsure()+"',damage_amount='"+staffchecklist.getDamage_amount()+"',fault_insure='"+staffchecklist.getFault_insure()+"',med_pay='"+staffchecklist.getMed_pay()+"',other_attorney='"+staffchecklist.getOther_attorney()+"',protect_received='"+staffchecklist.getProtect_received()+"',bill='"+staffchecklist.getBill()+"',re_date='"+staffchecklist.getRe_date()+"' WHERE form_no='"+form_no+"';";
+    	String cmd="UPDATE tbl_staffchecklist SET pat_name='"+staffchecklist.getPat_name()+"',insure='"+staffchecklist.getInsure()+"',damage_amount='"+staffchecklist.getDamage_amount()+"',fault_insure='"+staffchecklist.getFault_insure()+"',med_pay='"+staffchecklist.getMed_pay()+"',other_attorney='"+staffchecklist.getOther_attorney()+"',protect_received='"+staffchecklist.getProtect_received()+"',bill='"+staffchecklist.getBill()+"',re_date='"+staffchecklist.getRe_date()+"' WHERE form_no='"+form_no+"';";
     	String Desc="Update staffchecklist "+staffchecklist.getPat_name();
     	
     	
@@ -279,13 +313,8 @@ public List<Staffchecklist> getlimitedstaffchecklist(int page) {
 
 		resultSet = statement.executeQuery(cmd);
 		while (resultSet.next()) {
-			Staffchecklist.add(new Staffchecklist(resultSet.getString("form_no"),resultSet.getString("patinfo"),
-		    		resultSet.getString("screening"),
-		    		resultSet.getString("aob"),
-		    		resultSet.getString("history"),
-		    		resultSet.getString("xray_sheet"),
-		    		resultSet.getString("consent"),
-		    		resultSet.getString("report"),
+			Staffchecklist.add(new Staffchecklist(resultSet.getString("form_no"),
+					resultSet.getString("patientusername"),		    		
 		    		resultSet.getString("pat_name"),
 		    		resultSet.getString("insure"),
 		    		resultSet.getString("damage_amount"),

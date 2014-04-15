@@ -405,7 +405,7 @@ public class MainController {
 		           {
 		        	   session.removeAttribute("visit");
 		        	   System.out.print("patientsis"+patientid);
-		        	   model.addAttribute("patient",patientid);
+		        	   model.addAttribute("patientid",patientid);
 		        	   SoapnotesForm soapnotesForm = new SoapnotesForm();       
 		    	        soapnotesForm.setSoapnotes(soapDAO.getSoapid(patientid));
 		    	        model.addAttribute("soapnotesForm", soapnotesForm);	
@@ -1512,8 +1512,31 @@ public class MainController {
 		}
 		session.removeAttribute("veri");
 		model.addAttribute("menu", "admin");
-		return "insuranceverification";
+		return "insuranceverificationsearch";
  
+	}
+	
+	
+	@RequestMapping(value="/insurancesearch", method = RequestMethod.POST)
+	public String insurance_search(HttpServletRequest request,Principal principal,HttpSession session,ModelMap model) {
+		
+	String username=request.getParameter("username");
+	if(patientDAO.getUsername(username).size()==0)
+	{
+		model.addAttribute("nsearch",true);
+		return "insuranceverificationsearch";
+	}
+	if(patientDAO.getUsername(username).size()>0)
+	{
+		InsuranceverificationForm insuranceverificationForm= new InsuranceverificationForm();
+    	insuranceverificationForm.setInsuranceverification(veriDAO.checkusername(username));
+		model.addAttribute("InsuranceverificationForm",insuranceverificationForm);
+		 model.addAttribute("menu", "admin");
+		return "editinsuranceverification";	
+	}
+		
+		
+		return "insuranceverification";
 	}
 	
 	@RequestMapping(value="/insuranceverification", method = RequestMethod.POST)
@@ -1548,7 +1571,7 @@ public class MainController {
 		//System.out.println(autoaccident.getAdjustersname());
 	    
 		
-		return "insuranceverifylist";
+		return "insuranceverificationsearch";
 	}
 	@RequestMapping(value="/insuranceplan", method = RequestMethod.GET)
 	public String insuranceplan(HttpSession session,ModelMap model,Principal principal) {
@@ -1666,9 +1689,8 @@ public class MainController {
 
 	@RequestMapping(value="/checklistsearch", method = RequestMethod.POST)
 	public String getchecklistsearchdetails(HttpServletRequest request,PatientDetails patientDetails,HttpSession session,@ModelAttribute("Narrativereport")  @Valid Narrativereport narrativereport,BindingResult result,ModelMap model) {
-		String username=request.getParameter("username");		
-		model.addAttribute("menu","admin");	
-		
+		String username=request.getParameter("username");
+		session.removeAttribute("staff");		
 		if(patientDAO.getUsername(username).size()==0)
 		{
 			
@@ -1677,7 +1699,10 @@ public class MainController {
 		}
 		if(patientDAO.getUsername(username).size()>0)
 		{
+			
 			model.addAttribute("username",patientDAO.getUsername(username).get(0).getUsername());
+			System.out.println("patientname"+patientDAO.getUsername(username).get(0).getName());
+			model.addAttribute("patientname",patientDAO.getUsername(username).get(0).getName());
 			model.addAttribute("patient",true);
 		
 		}
@@ -1752,8 +1777,14 @@ public class MainController {
 			model.addAttribute("username",patientDAO.getUsername(username).get(0).getUsername());
 			model.addAttribute("symptom",true);		
 		}
-		
-		
+		if(staffDAO.getStaffusername(username).size()>0)
+		{
+		StaffchecklistForm staffchecklistForm= new StaffchecklistForm();
+    	staffchecklistForm.setStaffchecklist(staffDAO.getStaffusername(username));
+		model.addAttribute("StaffchecklistForm",staffchecklistForm);
+		model.addAttribute("menu", "admin");
+		return "editstaffchecklist";
+		}
 	    return "staffchecklist";
  
 	}
@@ -1769,9 +1800,10 @@ public class MainController {
 	
 	@RequestMapping(value="/staffchecklist", method = RequestMethod.POST)
 	public String insert_staffchecklist(HttpServletRequest request,HttpSession session,@ModelAttribute("Staffchecklist")  @Valid Staffchecklist staffchecklist,BindingResult result,ModelMap model) {
+		session.removeAttribute("staff");	
 		session.setAttribute("staff",staffchecklist);
-		String username=request.getParameter("username");
-		System.out.println(username);
+		String username=request.getParameter("patientusername");
+		System.out.println("patientusername-----------"+username);
 		if(result.hasErrors())
 		{
 			if(patientDAO.getUsername(username).size()==0)
@@ -1946,10 +1978,10 @@ public class MainController {
 	}
 
 	@RequestMapping(value="/editstaffchecklist", method = RequestMethod.GET)
-	public String editstaffchecklist(HttpServletRequest request,ModelMap model) {
+	public String editstaffchecklist(@RequestParam("form_no")String form_no,HttpServletRequest request,ModelMap model) {
 		
 		StaffchecklistForm staffchecklistForm= new StaffchecklistForm();
-    	staffchecklistForm.setStaffchecklist(staffDAO.getStaffchecklist());
+    	staffchecklistForm.setStaffchecklist(staffDAO.getStaff(form_no));
 		model.addAttribute("StaffchecklistForm",staffchecklistForm);
 		model.addAttribute("menu", "admin");
 		return "editstaffchecklist";
@@ -4539,7 +4571,7 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 		model.addAttribute("InsuranceverificationForm",insuranceverificationForm);    
 		model.addAttribute("success","true");
 		model.addAttribute("menu", "admin");
-	        return "insuranceverifylist";
+	    return "insuranceverificationsearch";
 		
 	}
 	

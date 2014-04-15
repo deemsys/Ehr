@@ -51,7 +51,7 @@ $(function() {
     				<td>
     				<table cellpadding="0" cellspacing="0" border="0" width="100%">
 	                            <tr class="row1">
-				                  <td><input type="hidden" name="patient_id" value="${patientid}"><span class="err">*</span>Patient Name:</td>
+				                  <td><input type="text" name="patient_id" value="${patientid}"><span class="err">*</span>Patient Name:</td>
 				                  <td><input type="text" class="input_txtbx1" id="pname" name="pname" /><br/><span class="err"><form:errors path="RadiologicReport.pname"></form:errors></td>
 				                  <td><span class="err">*</span>Date:</td>
 				                  <td><input type="text" class="input_txtbx1" id="datepicker" name="date" /><br/><span class="err"><form:errors path="RadiologicReport.date"></form:errors></td>

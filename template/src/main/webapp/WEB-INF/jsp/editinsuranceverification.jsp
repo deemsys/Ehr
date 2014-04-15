@@ -323,7 +323,7 @@
      	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> 
         <td><br><input type="submit" class="submit_btn" value="Update"></td>
         <td>&nbsp;&nbsp;</td>
-        <td><br><a href="insuranceverifylist" class="submit_btn" style="color:white">Cancel</a></td>
+        <td><br><a href="insuranceverification" class="submit_btn" style="color:white">Cancel</a></td>
         </tr>
         </table>
 	    </div>

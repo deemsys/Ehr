@@ -48,7 +48,7 @@
  <body>
 <div id="right_content">
 <form action="staffchecklist" method="POST">
-
+<c:set value="${patientdetailsform.patientDetails[0]}" var="patientDetails"></c:set>
 <table cellpadding="0" cellspacing="0" border="0" width="55%" class="margin_table">
        <tr>
         <td valign="top" align="left" style="padding:5px 0 10px 0;">&nbsp;
@@ -164,7 +164,7 @@ popupWindow = window.open(url,"popUpWindow" ,'width=1500,height=700,resizable=ye
 	           
 	            
 	           
-	            <input type="hidden" id="username" value="${username}" name="username">
+	           
 	          
 
   <c:if test="${patient==true}">
@@ -273,7 +273,7 @@ popupWindow = window.open(url,"popUpWindow" ,'width=1500,height=700,resizable=ye
 	            
 	           
 	            </table>
-	           
+	            <input type="hidden" id="username" value="${username}" name="patientusername">
 	            <c:choose>
 				<c:when test="${empty staff}">
 	            <br>
@@ -282,7 +282,7 @@ popupWindow = window.open(url,"popUpWindow" ,'width=1500,height=700,resizable=ye
               <tr class="row1">
               <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Name</td>
 			  <td valign="top" align="left" class="input_txt">
-		      <input type="text" class="input_txtbx1" id="inp_id" name="pat_name" /><span class="err"><form:errors path="Staffchecklist.pat_name"></form:errors>
+		      <input type="text" class="input_txtbx1" id="inp_id" name="pat_name"  value="${patientname}"/><span class="err"><form:errors path="Staffchecklist.pat_name"></form:errors>
 		      </td>
 			  </tr>
 			  <!-- </table>

@@ -13,7 +13,102 @@
   line-height:18px;}
   
   </STYLE>
- <script>
+  	               <script type=text/javascript>        
+	                           
+	            function patientvalidate(){		
+	         		var sample="editusernamepatientdetails?username="+document.getElementById("username").value;
+	         		 //alert("sample"+sample);
+	              popupWindow = window.open(sample,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+	              		}         
+function screenvalidate(){		
+		var sample="editscreeningauthz?username="+document.getElementById("username").value;
+		// alert("sample"+sample);
+     popupWindow = window.open(sample,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+     		}
+     		
+function autovalidate(){
+	 
+		var sample="editusernameautoaccident?username="+document.getElementById("username").value;
+		//alert("sample"+sample);
+     popupWindow = window.open(sample,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+     		}
+function workvalidate(){
+	
+	
+		var url="editusernameworkaccident?username="+document.getElementById("username").value;
+		//alert("sample"+url);
+    popupWindow = window.open(url,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+    		}
+function waivervalidate(){
+
+		var url="editusernameinsuranceplan?username="+document.getElementById("username").value;
+		//alert("sample"+url);
+   popupWindow = window.open(url,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+   		}
+  
+function healthvalidate(){
+
+	var url="editusernameinsuranceinformation?username="+document.getElementById("username").value;
+	//alert("sample"+url);
+popupWindow = window.open(url,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		}
+		
+function treatvalidate(){
+
+	var url="editusernametreatform?username="+document.getElementById("username").value;
+	//alert("sample"+url);
+popupWindow = window.open(url,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		}
+function minorvalidate(){
+
+	var url="editusernametreatminor?username="+document.getElementById("username").value;
+	//alert("sample"+url);
+popupWindow = window.open(url,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		}
+function hardshipvalidate(){
+
+	var url="editusernamehardship?username="+document.getElementById("username").value;
+	//alert("sample"+url);
+popupWindow = window.open(url,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		}
+function medicalvalidate(){
+
+	var url="editusernamemedical?username="+document.getElementById("username").value;
+	//alert("sample"+url);
+popupWindow = window.open(url,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		}
+function assignmentvalidate(){
+
+	var url="editusernameassignment?username="+document.getElementById("username").value;
+	//alert("sample"+url);
+popupWindow = window.open(url,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		}
+function hippavalidate(){
+
+	var url="editusernamehippa?username="+document.getElementById("username").value;
+	//alert("sample"+url);
+popupWindow = window.open(url,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		}
+function hipquestionvalidate(){
+
+	var url="editusernamehipquestionnaire?username="+document.getElementById("username").value;
+	//alert("sample"+url);
+popupWindow = window.open(url,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		}
+function footquestionvalidate(){
+
+	var url="editusernamefootquestionnarie?username="+document.getElementById("username").value;
+	//alert("sample"+url);
+popupWindow = window.open(url,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		}
+function symptomvalidate(){
+
+	var url="editusernamesymptom?username="+document.getElementById("username").value;
+	//alert("sample"+url);
+popupWindow = window.open(url,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		}
+</script>
+  <script>
  $(window).load(function(){
 		
 	  $("#damageamt").keyup(function() {
@@ -69,7 +164,105 @@
 	            <tr class="row1">
 	            <input type="hidden" class="input_txtbx1" id="inp_id" value="${Staffchecklist.form_no}" name="form_no" />
     
-	            <td><input type="checkbox" name="patinfo" value="Confidential Patient Information" <c:if test="${Staffchecklist.patinfo=='Confidential Patient Information'}"><c:out value="Checked"/></c:if>/>Confidential Patient Information</td>
+    <input type="hidden" name="patientusername" value="${Staffchecklist.patientusername}" id="username">
+  <c:if test="${patient==true}">
+	            <tr class="row1">
+	            <td valign="middle" align="left" class="input_txt"><a onclick="patientvalidate()" style="text-decoration: none;cursor: pointer;">Confidential Patient Information</a>
+	            </td>
+	            </tr>
+	            </c:if>
+
+	            
+	             <c:if test="${autoaccident==true}">
+	            <tr class="row1">
+	            <td valign="middle" align="left" class="input_txt"><a onclick="autovalidate()" style="text-decoration: none;cursor: pointer;">Auto Accident</a></td>
+	          <!--   <td valign="top" align="left" class="input_txt">Auto Accident</td> -->
+	            </tr>
+	            </c:if>
+	            
+	             <c:if test="${workaccident==true}">
+	            <tr class="row1">
+	            <td valign="middle" align="left" class="input_txt"><a onclick="workvalidate()" style="text-decoration: none;cursor: pointer;">Work Accident</a></td>
+	        
+	            </tr>
+	            </c:if>
+	            
+	             <c:if test="${waiver==true}">
+	            <tr class="row1">
+	            <td valign="middle" align="left" class="input_txt"><a onclick="waivervalidate()" style="text-decoration: none;cursor: pointer;">Insurance waiver</a> </td>
+	           
+	            </tr>
+	            </c:if>
+	            
+	             <c:if test="${health==true}">
+	            <tr class="row1">
+	            <td valign="middle" align="left" class="input_txt"><a onclick="healthvalidate()" style="text-decoration: none;cursor: pointer;">Health Insurance Information</a></td>
+	           
+	            </tr>
+	            </c:if>
+	            
+	            <c:if test="${treat==true}">
+	            <tr class="row1">
+	            <td valign="middle" align="left" class="input_txt"><a onclick="treatvalidate()" style="text-decoration: none;cursor: pointer;">Authorization And Consent To Treat</a></td>
+	            <td valign="top" align="left" class="input_txt"></td>
+	            </tr>
+	            </c:if>
+	             <c:if test="${minor==true}">
+	            <tr class="row1">
+	            <td valign="middle" align="left" class="input_txt"><a onclick="minorvalidate()" style="text-decoration: none;cursor: pointer;">Consent to Treat Form/Minor</a></td>
+	           
+	            </tr>
+	            </c:if>
+	             <c:if test="${hardship==true}">
+	            <tr class="row1">
+	            <td valign="middle" align="left" class="input_txt"><a onclick="hardshipvalidate()" style="text-decoration: none;cursor: pointer;">Hardship Agreement</a></td>
+	            
+	            </tr>
+	            </c:if>
+	             <tr class="row1">
+	            <td valign="middle" align="left" class="input_txt"><a onclick="screenvalidate()" style="text-decoration: none;cursor: pointer;">Screening Disclosure/referral</a></td>
+	             </tr>
+	             <c:if test="${medical==true}">
+	            <tr class="row1">
+	            <td valign="middle" align="left" class="input_txt"><a onclick="medicalvalidate()" style="text-decoration: none;cursor: pointer;">Release Of Records</a></td>
+	            </tr>
+	            </c:if>
+	           
+	            <c:if test="${assignment==true}">
+	            <tr class="row1">
+	           
+	            <td valign="top" align="left" class="input_txt"><a onclick="assignmentvalidate()" style="text-decoration: none;cursor: pointer;">Assignment Of Benefits</a></td>
+	            </tr>
+	            </c:if>
+	              <c:if test="${hippa==true}">
+	            <tr class="row1">
+	            <td valign="middle" align="left" class="input_txt"><a onclick="hippavalidate()" style="text-decoration: none;cursor: pointer;">Hippa Privacy</a></td>
+	           
+	            </tr>
+	            </c:if>
+	             <c:if test="${hipquestion==true}">
+	            <tr class="row1">
+	            <td valign="middle" align="left" class="input_txt"><a onclick="hipquestionvalidate()" style="text-decoration: none;cursor: pointer;">Hip And Knee Questionnaire</a></td>
+	          
+	            </tr>
+	            </c:if>
+	             <c:if test="${footquestion==true}">
+	            <tr class="row1">
+	            <td valign="middle" align="left" class="input_txt"><a onclick="footquestionvalidate()" style="text-decoration: none;cursor: pointer;">Foot And Ankle Questionnaire</a></td>
+	            
+	            </tr>
+	            </c:if>           
+	            
+	            <c:if test="${symptom==true}">
+	            <tr class="row1">
+	            
+	            <td valign="top" align="left" class="input_txt"><a onclick="symptomvalidate()" style="text-decoration: none;cursor: pointer;">Pain Diagram</a></td>
+	            </tr>
+	            </c:if>
+    
+    
+    
+	            <%-- <td><input type="checkbox" name="patinfo" value="Confidential Patient Information" <c:if test="${Staffchecklist.patinfo=='Confidential Patient Information'}"><c:out value="Checked"/></c:if>/>Confidential Patient Information</td>
 	            </tr>
 	            <tr class="row1">
 	            <td><input type="checkbox" name="screening" value="Screening Disclosure/referral" <c:if test="${Staffchecklist.screening=='Screening Disclosure/referral'}"><c:out value="Checked"/></c:if>/>
@@ -95,7 +288,7 @@
 	            <td valign="middle" align="left" class="input_txt"><input type="checkbox" name="report" value="Accident Report" <c:if test="${Staffchecklist.report=='Accident Report'}"><c:out value="Checked"/></c:if>/>
 	            Accident Report </td>
 	            </tr>
-	            </table>
+	             --%></table>
 	            <br>
 	            
               <table cellpadding="0" cellspacing="0" border="0" width="100%">

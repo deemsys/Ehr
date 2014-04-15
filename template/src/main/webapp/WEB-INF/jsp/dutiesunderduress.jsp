@@ -13,7 +13,17 @@
   P#mypar {font-style:calibri;
   line-height:18px;}
    </STYLE>
-   
+   <c:if test="${duties==1}">
+ <script>
+ window.close();
+ </script>
+</c:if>
+<script>
+ function myclose()
+ {
+	 window.close();
+ }
+ </script>
    <script type="text/javascript">
 function Checksymptom(val){
  var element=document.getElementById('other1');
@@ -943,7 +953,7 @@ document.getElementById('rm2').style.visibility = 'visible';
  <table align="right">
 <tr>
 <td><input type="submit" class="submit_btn" value="Save"></td>
-<td><input type="reset" class="submit_btn" value="Cancel"></td>
+<td><input type="reset" class="submit_btn" value="Cancel" onclick="myclose()"></td>
 </tr>
 </table>
  </div>
@@ -1177,7 +1187,7 @@ document.getElementById('rm2').style.visibility = 'visible';
  <table align="right">
 <tr>
 <td><input type="submit" class="submit_btn" value="Save"></td>
-<td><input type="reset" class="submit_btn" value="Cancel"></td>
+<td><input type="reset" class="submit_btn" value="Cancel" onclick="myclose()"></td>
 </tr>
 </table>
 </div>
