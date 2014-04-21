@@ -832,7 +832,7 @@ $(function(){
 											
 											
 				                   		</select></td>
-				                   		<td>*If present, perform eye exam & auscultate carotid arteries</td>
+				                   		<td><span class="err">*</span>If present, perform eye exam & auscultate carotid arteries</td>
 				                   		<td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="presentrl" /></td>
 
 				                   		
@@ -1051,7 +1051,7 @@ $(function(){
 				                   </tr>
 				                   <tr class="row1">
 				               
-				                   		<td>*If presentis a smoker and has difficulty breathing, perform cardio-respiratory exam</td>
+				                   		<td><span class="err">*</span>If present is a smoker and has difficulty breathing, perform cardio-respiratory exam</td>
 				                   		<td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="patientsmoker" /></td>
 
 				                   		
