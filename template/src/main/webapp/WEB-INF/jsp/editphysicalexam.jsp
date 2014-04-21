@@ -4,15 +4,30 @@
 <html>
 <head>
  <link rel="stylesheet" href="resources/css/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="/resources/css/style.css" />
+  
+
   <script src="resources/js/tabs-1.9.1.js"></script>
   <script src="resources/js/tabs-ui.js"></script>
-	</head>
+	
 	<script>
-  $(function() {
-    $( "#tabs" ).tabs();
-  });
+ $(function() {
+		$( "#tabs" ).tabs({
+			event: "mouseover"
+		});
+	});
+	
   </script>
+  <script type="text/javascript">
+function toggle3(value){
+	/* alert(value); */
+	var e = document.getElementById('positive');
+if(value=='show3')
+ e.style.display="block";
+else
+ e.style.display="none";
+}
+</script>	
+  </head>
 	<body>
 	<form method="POST" action="updatephysicalexam">
 <br>
@@ -1649,14 +1664,5 @@
 				                   		
 				                
 				                  
-<script type="text/javascript">
-function toggle3(value){
-	/* alert(value); */
-	var e = document.getElementById('positive');
-if(value=='show3')
- e.style.display="block";
-else
- e.style.display="none";
-}
-</script>				              
+			              
  <jsp:include page="footer.jsp"></jsp:include>

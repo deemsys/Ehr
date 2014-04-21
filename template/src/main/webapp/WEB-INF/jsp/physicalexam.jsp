@@ -32,12 +32,10 @@
 	});
 	
   </script>
- 
-  - 
-   
-  
-  
-  <script>
+
+
+
+<script>
   $(function(){
       $("#datepicker").datepicker({ dateFormat: 'yy-mm-dd' }).bind("change",function(){
           var minValue = $(this).val();
