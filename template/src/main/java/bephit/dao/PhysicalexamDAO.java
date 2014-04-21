@@ -1,3 +1,4 @@
+
 package bephit.dao;
 
 import java.sql.Connection;
@@ -43,7 +44,7 @@ public class PhysicalexamDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 //System.out.println(dateFormat.format(date));
-	    	 String cmd="INSERT INTO tbl_physicalexam (patient_id,sign,name,id,date,age,sex,height,weight,temp,bp,pulse,appearance,weight1,gait,head,path,posture,romber,exam,abnormal,headtiltright,headtiltleft,headtiltnormal,rotationright,rotationleft,rotationnormal,tmjright,tmjleft,tmjnormal,highright,highleft,highnormal,lordhyper,lordhypo,lordnormal,lymphedema,lymphnormal,paraspain,parasspasm,parasedema,parastriggerpoint,trapeziusrl,trapeziustono,trapeziusnormal,vertebraefix,vertebraenofix,flexnormal,flexpain,flexspasm,flexstiff,extnormal,extpain,extspasm,extstiff,rlfnormal,rlfpain,rlfspasm,rlfstiff,llfnormal,llfpain,llfspasm,llfstiff,rrnormal,rrpain,rrspasm,rrstiff,lrnormal,lrpain,lrspasm,lrstiff,c5,c5right,c5left,c6,c6right,c6left,c7,c7right,c7left,c8,c8right,c8left,t1,t1right,t1left,other,otherright,otherleft,deltoidright,deltoidleft,wristright,wristleft,wristflexright,wristflexleft,fingerflexright,fingerflexleft,fingeraddright,fingeraddleft,wristextright,wristextleft,bicepright,bicepleft,bracioradright,bracioradleft,tricepright,tricepleft,highshoulderright,highshoulderleft,highshouldernormal,curvatureright,curvatureleft,curvaturenormal,wingingright,wingingleft,wingingnormal,ribhumpright,ribhumpleft,ribhumpnormal,chestmeasurein,chestmeasureex,kyphosishyper,kyphosishypo,kyphosisnormal,parapain,paraspasm,paraedema,paratriggerpoint,ribspost,ribsnor,vertefix,vertenofix,thoracicnormal,thoracicpain,thoracicspasm,thoracicstiff,thoextnormal,thoextpain,thoextspasm,thoextstiff,thorlfnormal,thorlfpain,thorlfspasm,thorlfstiff,thollfnormal,thollfpain,thollfspasm,thollfstiff,thorrnormal,thorrpain,thorrspasm,thorrstiff,tholrnormal,tholrpain,tholrspasm,tholrstiff,thot1,thot1right,thot1left,thot4,thot4right,thot4left,thot10,thot10right,thot10left,thoother,thootherright,thootherleft,myotomes,positiveruq,positiveluq,positiverlq,positivellq,highcrestright,highcrestleft,highcrestnormal,highpsisright,highpsisleft,highpsisnormal,curveright,curveleft,curvenormal,lordosishyper,lordosishypo,lordosisnormal,paraspinalpain,paraspinalspasm,paraspinaledema,paraspinaltp,quadrl,quadtono,quadnor,hamstringrl,hamstringtono,hamstringnor,verfix,vernofix,abdomentender,abdomenpulse,abdomenascites,lumflexnormal,lumflexpain,lumflexspasm,lumflexstiff,lumextnormal,lumextpain,lumextspasm,lumextstiff,lumrlfnormal,lumrlfpain,lumrlfspasm,lumrlfstiff,lumllfnormal,lumllfpain,lumllfspasm,lumllfstiff,lumrrnormal,lumrrpain,lumrrspasm,lumrrstiff,lumlrnormal,lumlrpain,lumlrspasm,lumlrstiff,hipflexright,hipflexleft,legextright,legextleft,dorsiflexright,dorsiflexleft,digitflexright,digitflexleft,heelright,heelleft,toeright,toeleft,patellarright,patellarleft,achillesright,achillesleft,babinskiright,babinskileft) VALUES ('"+physicalexam.getPatient_id()+"','"+physicalexam.getSign()+"','"+physicalexam.getName()+"','"+physicalexam.getId()+"','"+physicalexam.getDate()+"','"+physicalexam.getAge()+"','"+physicalexam.getSex()+"','"+physicalexam.getHeight()+"','"+physicalexam.getWeight()+"','"+physicalexam.getTemp()+"','"+physicalexam.getBp()+"','"+physicalexam.getPulse()+"','"+physicalexam.getAppearance()+"','"+physicalexam.getWeight1()+"','"+physicalexam.getGait()+"','"+physicalexam.getHead()+"','"+physicalexam.getPath()+"','"+physicalexam.getPosture()+"','"+physicalexam.getRomber()+"','"+physicalexam.getExam()+"','"+physicalexam.getAbnormal()+"','"+physicalexam.getHeadtiltright()+"','"+physicalexam.getHeadtiltleft()+"','"+physicalexam.getHeadtiltnormal()+"','"+physicalexam.getRotationright()+"','"+physicalexam.getRotationleft()+"','"+physicalexam.getRotationnormal()+"','"+physicalexam.getTmjright()+"','"+physicalexam.getTmjleft()+"','"+physicalexam.getTmjnormal()+"','"+physicalexam.getHighright()+"','"+physicalexam.getHighleft()+"','"+physicalexam.getHighnormal()+"','"+physicalexam.getLordhyper()+"','"+physicalexam.getLordhypo()+"','"+physicalexam.getLordnormal()+"','"+physicalexam.getLymphedema()+"','"+physicalexam.getLymphnormal()+"','"+physicalexam.getParaspain()+"','"+physicalexam.getParasspasm()+"','"+physicalexam.getParasedema()+"','"+physicalexam.getParastriggerpoint()+"','"+physicalexam.getTrapeziusrl()+"','"+physicalexam.getTrapeziustono()+"','"+physicalexam.getTrapeziusnormal()+"','"+physicalexam.getVertebraefix()+"','"+physicalexam.getVertebraenofix()+"','"+physicalexam.getFlexnormal()+"','"+physicalexam.getFlexpain()+"','"+physicalexam.getFlexspasm()+"','"+physicalexam.getFlexstiff()+"','"+physicalexam.getExtnormal()+"','"+physicalexam.getExtpain()+"','"+physicalexam.getExtspasm()+"','"+physicalexam.getExtstiff()+"','"+physicalexam.getRlfnormal()+"','"+physicalexam.getRlfpain()+"','"+physicalexam.getRlfspasm()+"','"+physicalexam.getRlfstiff()+"','"+physicalexam.getLlfnormal()+"','"+physicalexam.getLlfpain()+"','"+physicalexam.getLlfspasm()+"','"+physicalexam.getLlfstiff()+"','"+physicalexam.getRrnormal()+"','"+physicalexam.getRrpain()+"','"+physicalexam.getRrspasm()+"','"+physicalexam.getRrstiff()+"','"+physicalexam.getLrnormal()+"','"+physicalexam.getLrpain()+"','"+physicalexam.getLrspasm()+"','"+physicalexam.getLrstiff()+"','"+physicalexam.getC5()+"','"+physicalexam.getC5right()+"','"+physicalexam.getC5left()+"','"+physicalexam.getC6()+"','"+physicalexam.getC6right()+"','"+physicalexam.getC6left()+"','"+physicalexam.getC7()+"','"+physicalexam.getC7right()+"','"+physicalexam.getC7left()+"','"+physicalexam.getC8()+"','"+physicalexam.getC8right()+"','"+physicalexam.getC8left()+"','"+physicalexam.getT1()+"','"+physicalexam.getT1right()+"','"+physicalexam.getT1left()+"','"+physicalexam.getOther()+"','"+physicalexam.getOtherright()+"','"+physicalexam.getOtherleft()+"','"+physicalexam.getDeltoidright()+"','"+physicalexam.getDeltoidleft()+"','"+physicalexam.getWristright()+"','"+physicalexam.getWristleft()+"','"+physicalexam.getWristflexright()+"','"+physicalexam.getWristflexleft()+"','"+physicalexam.getFingerflexright()+"','"+physicalexam.getFingerflexleft()+"','"+physicalexam.getFingeraddright()+"','"+physicalexam.getFingeraddleft()+"','"+physicalexam.getWristextright()+"','"+physicalexam.getWristextleft()+"','"+physicalexam.getBicepright()+"','"+physicalexam.getBicepleft()+"','"+physicalexam.getBracioradright()+"','"+physicalexam.getBracioradleft()+"','"+physicalexam.getTricepright()+"','"+physicalexam.getTricepleft()+"','"+physicalexam.getHighshoulderright()+"','"+physicalexam.getHighshoulderleft()+"','"+physicalexam.getHighshouldernormal()+"','"+physicalexam.getCurvatureright()+"','"+physicalexam.getCurvatureleft()+"','"+physicalexam.getCurvaturenormal()+"','"+physicalexam.getWingingright()+"','"+physicalexam.getWingingleft()+"','"+physicalexam.getWingingnormal()+"','"+physicalexam.getRibhumpright()+"','"+physicalexam.getRibhumpleft()+"','"+physicalexam.getRibhumpnormal()+"','"+physicalexam.getChestmeasurein()+"','"+physicalexam.getChestmeasureex()+"','"+physicalexam.getKyphosishyper()+"','"+physicalexam.getKyphosishypo()+"','"+physicalexam.getKyphosisnormal()+"','"+physicalexam.getParapain()+"','"+physicalexam.getParaspasm()+"','"+physicalexam.getParaedema()+"','"+physicalexam.getParatriggerpoint()+"','"+physicalexam.getRibspost()+"','"+physicalexam.getRibsnor()+"','"+physicalexam.getVertefix()+"','"+physicalexam.getVertenofix()+"','"+physicalexam.getThoracicnormal()+"','"+physicalexam.getThoracicpain()+"','"+physicalexam.getThoracicspasm()+"','"+physicalexam.getThoracicstiff()+"','"+physicalexam.getThoextnormal()+"','"+physicalexam.getThoextpain()+"','"+physicalexam.getThoextspasm()+"','"+physicalexam.getThoextstiff()+"','"+physicalexam.getThorlfnormal()+"','"+physicalexam.getThorlfpain()+"','"+physicalexam.getThorlfspasm()+"','"+physicalexam.getThorlfstiff()+"','"+physicalexam.getThollfnormal()+"','"+physicalexam.getThollfpain()+"','"+physicalexam.getThollfspasm()+"','"+physicalexam.getThollfstiff()+"','"+physicalexam.getThorrnormal()+"','"+physicalexam.getThorrpain()+"','"+physicalexam.getThorrspasm()+"','"+physicalexam.getThorrstiff()+"','"+physicalexam.getTholrnormal()+"','"+physicalexam.getTholrpain()+"','"+physicalexam.getTholrspasm()+"','"+physicalexam.getTholrstiff()+"','"+physicalexam.getThot1()+"','"+physicalexam.getThot1right()+"','"+physicalexam.getThot1left()+"','"+physicalexam.getThot4()+"','"+physicalexam.getThot4right()+"','"+physicalexam.getThot4left()+"','"+physicalexam.getThot10()+"','"+physicalexam.getThot10right()+"','"+physicalexam.getThot10left()+"','"+physicalexam.getThoother()+"','"+physicalexam.getThootherright()+"','"+physicalexam.getThootherleft()+"','"+physicalexam.getMyotomes()+"','"+physicalexam.getPositiveruq()+"','"+physicalexam.getPositiveluq()+"','"+physicalexam.getPositiverlq()+"','"+physicalexam.getPositivellq()+"','"+physicalexam.getHighcrestright()+"','"+physicalexam.getHighcrestleft()+"','"+physicalexam.getHighcrestnormal()+"','"+physicalexam.getHighpsisright()+"','"+physicalexam.getHighpsisleft()+"','"+physicalexam.getHighpsisnormal()+"','"+physicalexam.getCurveright()+"','"+physicalexam.getCurveleft()+"','"+physicalexam.getCurvaturenormal()+"','"+physicalexam.getLordosishyper()+"','"+physicalexam.getLordosishypo()+"','"+physicalexam.getLordosisnormal()+"','"+physicalexam.getParaspinalpain()+"','"+physicalexam.getParaspinalspasm()+"','"+physicalexam.getParaspinaledema()+"','"+physicalexam.getParaspinaltp()+"','"+physicalexam.getQuadrl()+"','"+physicalexam.getQuadtono()+"','"+physicalexam.getQuadnor()+"','"+physicalexam.getHamstringrl()+"','"+physicalexam.getHamstringtono()+"','"+physicalexam.getHamstringnor()+"','"+physicalexam.getVerfix()+"','"+physicalexam.getVernofix()+"','"+physicalexam.getAbdomentender()+"','"+physicalexam.getAbdomenpulse()+"','"+physicalexam.getAbdomenascites()+"','"+physicalexam.getLumflexnormal()+"','"+physicalexam.getLumflexpain()+"','"+physicalexam.getLumflexspasm()+"','"+physicalexam.getLumflexstiff()+"','"+physicalexam.getLumextnormal()+"','"+physicalexam.getLumextpain()+"','"+physicalexam.getLumextspasm()+"','"+physicalexam.getLumextstiff()+"','"+physicalexam.getLumrlfnormal()+"','"+physicalexam.getLumrlfpain()+"','"+physicalexam.getLumrlfspasm()+"','"+physicalexam.getLumrlfstiff()+"','"+physicalexam.getLumllfnormal()+"','"+physicalexam.getLumllfpain()+"','"+physicalexam.getLumllfspasm()+"','"+physicalexam.getLumllfstiff()+"','"+physicalexam.getLumrrnormal()+"','"+physicalexam.getLumrrpain()+"','"+physicalexam.getLumrrspasm()+"','"+physicalexam.getLumrrstiff()+"','"+physicalexam.getLumlrnormal()+"','"+physicalexam.getLumlrpain()+"','"+physicalexam.getLumlrspasm()+"','"+physicalexam.getLumlrstiff()+"','"+physicalexam.getHipflexright()+"','"+physicalexam.getHipflexleft()+"','"+physicalexam.getLegextright()+"','"+physicalexam.getLegextleft()+"','"+physicalexam.getDorsiflexright()+"','"+physicalexam.getDorsiflexleft()+"','"+physicalexam.getDigitflexright()+"','"+physicalexam.getDigitflexleft()+"','"+physicalexam.getHeelright()+"','"+physicalexam.getHeelleft()+"','"+physicalexam.getToeright()+"','"+physicalexam.getToeleft()+"','"+physicalexam.getPatellarright()+"','"+physicalexam.getPatellarleft()+"','"+physicalexam.getAchillesright()+"','"+physicalexam.getAchillesleft()+"','"+physicalexam.getBabinskiright()+"','"+physicalexam.getBabinskileft()+"')";
+	    	 String cmd="INSERT INTO tbl_physicalexam (patient_id,sign,name,id,date,age,sex,height,height1,weight,temp,bp,pulse,appearance,weight1,gait,head,path,path1,posture,romber,exam,abnormal,headtiltright,headtiltleft,headtiltnormal,rotationright,rotationleft,rotationnormal,tmjright,tmjleft,tmjnormal,highright,highleft,highnormal,lordhyper,lordhypo,lordnormal,lymphedema,lymphnormal,paraspain,parasspasm,parasedema,parastriggerpoint,trapeziusrl,trapeziustono,trapeziusnormal,scmrl,scmtono,scmnormal,vertebraefix,vertebraenofix,flexpain,flexspasm,flexstiff,extpain,extspasm,extstiff,rlfpain,rlfspasm,rlfstiff,llfpain,llfspasm,llfstiff,rrpain,rrspasm,rrstiff,lrpain,lrspasm,lrstiff,c5,c5right,c5left,c6,c6right,c6left,c7,c7right,c7left,c8,c8right,c8left,t1,t1right,t1left,other,otherright,otherleft,deltoidright,deltoidleft,wristright,wristleft,wristflexright,wristflexleft,fingerflexright,fingerflexleft,fingeraddright,fingeraddleft,wristextright,wristextleft,bicepright,bicepleft,bracioradright,bracioradleft,tricepright,tricepleft,presentvisual,presentrl,highshoulderright,highshoulderleft,highshouldernormal,curvatureright,curvatureleft,curvaturenormal,wingingright,wingingleft,wingingnormal,ribhumpright,ribhumpleft,ribhumpnormal,chestmeasurein,kyphosishyper,kyphosishypo,kyphosisnormal,parapain,paraspasm,paraedema,paratriggerpoint,ribspost,ribsnor,vertefix,vertenofix,thoracicpain,thoracicspasm,thoracicstiff,thoextpain,thoextspasm,thoextstiff,thorlfpain,thorlfspasm,thorlfstiff,thollfpain,thollfspasm,thollfstiff,thorrpain,thorrspasm,thorrstiff,tholrpain,tholrspasm,tholrstiff,thot1,thot1right,thot1left,thot4,thot4right,thot4left,thot10,thot10right,thot10left,thoother,thootherright,thootherleft,myotomes,positiveruq,positiveluq,positiverlq,positivellq,patientsmoker,highcrestright,highcrestleft,highcrestnormal,highpsisright,highpsisleft,highpsisnormal,curveright,curveleft,curvenormal,lordosishyper,lordosishypo,lordosisnormal,paraspinalpain,paraspinalspasm,paraspinaledema,paraspinaltp,quadrl,quadtono,quadnor,hamstringrl,hamstringtono,hamstringnor,verfix,vernofix,abdomentender,abdomenpulse,abdomenascites,lumflexpain,lumflexspasm,lumflexstiff,lumextpain,lumextspasm,lumextstiff,lumrlfpain,lumrlfspasm,lumrlfstiff,lumllfpain,lumllfspasm,lumllfstiff,lumrrpain,lumrrspasm,lumrrstiff,lumlrpain,lumlrspasm,lumlrstiff,lu1,lu1right,lu1left,lu2,lu2right,lu2left,lu3,lu3right,lu3left,lu4,lu4right,lu4left,lu5,lu5right,lu5left,lu6,lu6right,lu6left,lu7,lu7right,lu7left,hipflexright,hipflexleft,legextright,legextleft,dorsiflexright,dorsiflexleft,digitflexright,digitflexleft,heelright,heelleft,toeright,toeleft,patellarright,patellarleft,achillesright,achillesleft,babinskiright,babinskileft) VALUES ('"+physicalexam.getPatient_id()+"','"+physicalexam.getSign()+"','"+physicalexam.getName()+"','"+physicalexam.getId()+"','"+physicalexam.getDate()+"','"+physicalexam.getAge()+"','"+physicalexam.getSex()+"','"+physicalexam.getHeight()+"','"+physicalexam.getHeight1()+"','"+physicalexam.getWeight()+"','"+physicalexam.getTemp()+"','"+physicalexam.getBp()+"','"+physicalexam.getPulse()+"','"+physicalexam.getAppearance()+"','"+physicalexam.getWeight1()+"','"+physicalexam.getGait()+"','"+physicalexam.getHead()+"','"+physicalexam.getPath()+"','"+physicalexam.getPath1()+"','"+physicalexam.getPosture()+"','"+physicalexam.getRomber()+"','"+physicalexam.getExam()+"','"+physicalexam.getAbnormal()+"','"+physicalexam.getHeadtiltright()+"','"+physicalexam.getHeadtiltleft()+"','"+physicalexam.getHeadtiltnormal()+"','"+physicalexam.getRotationright()+"','"+physicalexam.getRotationleft()+"','"+physicalexam.getRotationnormal()+"','"+physicalexam.getTmjright()+"','"+physicalexam.getTmjleft()+"','"+physicalexam.getTmjnormal()+"','"+physicalexam.getHighright()+"','"+physicalexam.getHighleft()+"','"+physicalexam.getHighnormal()+"','"+physicalexam.getLordhyper()+"','"+physicalexam.getLordhypo()+"','"+physicalexam.getLordnormal()+"','"+physicalexam.getLymphedema()+"','"+physicalexam.getLymphnormal()+"','"+physicalexam.getParaspain()+"','"+physicalexam.getParasspasm()+"','"+physicalexam.getParasedema()+"','"+physicalexam.getParastriggerpoint()+"','"+physicalexam.getTrapeziusrl()+"','"+physicalexam.getTrapeziustono()+"','"+physicalexam.getTrapeziusnormal()+"','"+physicalexam.getTrapeziusrl()+"','"+physicalexam.getTrapeziustono()+"','"+physicalexam.getTrapeziusnormal()+"','"+physicalexam.getVertebraefix()+"','"+physicalexam.getVertebraenofix()+"','"+physicalexam.getFlexpain()+"','"+physicalexam.getFlexspasm()+"','"+physicalexam.getFlexstiff()+"','"+physicalexam.getExtpain()+"','"+physicalexam.getExtspasm()+"','"+physicalexam.getExtstiff()+"','"+physicalexam.getRlfpain()+"','"+physicalexam.getRlfspasm()+"','"+physicalexam.getRlfstiff()+"','"+physicalexam.getLlfpain()+"','"+physicalexam.getLlfspasm()+"','"+physicalexam.getLlfstiff()+"','"+physicalexam.getRrpain()+"','"+physicalexam.getRrspasm()+"','"+physicalexam.getRrstiff()+"','"+physicalexam.getLrpain()+"','"+physicalexam.getLrspasm()+"','"+physicalexam.getLrstiff()+"','"+physicalexam.getC5()+"','"+physicalexam.getC5right()+"','"+physicalexam.getC5left()+"','"+physicalexam.getC6()+"','"+physicalexam.getC6right()+"','"+physicalexam.getC6left()+"','"+physicalexam.getC7()+"','"+physicalexam.getC7right()+"','"+physicalexam.getC7left()+"','"+physicalexam.getC8()+"','"+physicalexam.getC8right()+"','"+physicalexam.getC8left()+"','"+physicalexam.getT1()+"','"+physicalexam.getT1right()+"','"+physicalexam.getT1left()+"','"+physicalexam.getOther()+"','"+physicalexam.getOtherright()+"','"+physicalexam.getOtherleft()+"','"+physicalexam.getDeltoidright()+"','"+physicalexam.getDeltoidleft()+"','"+physicalexam.getWristright()+"','"+physicalexam.getWristleft()+"','"+physicalexam.getWristflexright()+"','"+physicalexam.getWristflexleft()+"','"+physicalexam.getFingerflexright()+"','"+physicalexam.getFingerflexleft()+"','"+physicalexam.getFingeraddright()+"','"+physicalexam.getFingeraddleft()+"','"+physicalexam.getWristextright()+"','"+physicalexam.getWristextleft()+"','"+physicalexam.getBicepright()+"','"+physicalexam.getBicepleft()+"','"+physicalexam.getBracioradright()+"','"+physicalexam.getBracioradleft()+"','"+physicalexam.getTricepright()+"','"+physicalexam.getTricepleft()+"','"+physicalexam.getpresentvisual()+"','"+physicalexam.getPresentrl()+"','"+physicalexam.getHighshoulderright()+"','"+physicalexam.getHighshoulderleft()+"','"+physicalexam.getHighshouldernormal()+"','"+physicalexam.getCurvatureright()+"','"+physicalexam.getCurvatureleft()+"','"+physicalexam.getCurvaturenormal()+"','"+physicalexam.getWingingright()+"','"+physicalexam.getWingingleft()+"','"+physicalexam.getWingingnormal()+"','"+physicalexam.getRibhumpright()+"','"+physicalexam.getRibhumpleft()+"','"+physicalexam.getRibhumpnormal()+"','"+physicalexam.getChestmeasurein()+"','"+physicalexam.getKyphosishyper()+"','"+physicalexam.getKyphosishypo()+"','"+physicalexam.getKyphosisnormal()+"','"+physicalexam.getParapain()+"','"+physicalexam.getParaspasm()+"','"+physicalexam.getParaedema()+"','"+physicalexam.getParatriggerpoint()+"','"+physicalexam.getRibspost()+"','"+physicalexam.getRibsnor()+"','"+physicalexam.getVertefix()+"','"+physicalexam.getVertenofix()+"','"+physicalexam.getThoracicpain()+"','"+physicalexam.getThoracicspasm()+"','"+physicalexam.getThoracicstiff()+"','"+physicalexam.getThoextpain()+"','"+physicalexam.getThoextspasm()+"','"+physicalexam.getThoextstiff()+"','"+physicalexam.getThorlfpain()+"','"+physicalexam.getThorlfspasm()+"','"+physicalexam.getThorlfstiff()+"','"+physicalexam.getThollfpain()+"','"+physicalexam.getThollfspasm()+"','"+physicalexam.getThollfstiff()+"','"+physicalexam.getThorrpain()+"','"+physicalexam.getThorrspasm()+"','"+physicalexam.getThorrstiff()+"','"+physicalexam.getTholrpain()+"','"+physicalexam.getTholrspasm()+"','"+physicalexam.getTholrstiff()+"','"+physicalexam.getThot1()+"','"+physicalexam.getThot1right()+"','"+physicalexam.getThot1left()+"','"+physicalexam.getThot4()+"','"+physicalexam.getThot4right()+"','"+physicalexam.getThot4left()+"','"+physicalexam.getThot10()+"','"+physicalexam.getThot10right()+"','"+physicalexam.getThot10left()+"','"+physicalexam.getThoother()+"','"+physicalexam.getThootherright()+"','"+physicalexam.getThootherleft()+"','"+physicalexam.getMyotomes()+"','"+physicalexam.getPositiveruq()+"','"+physicalexam.getPositiveluq()+"','"+physicalexam.getPositiverlq()+"','"+physicalexam.getPositivellq()+"','"+physicalexam.getPatientsmoker()+"','"+physicalexam.getHighcrestright()+"','"+physicalexam.getHighcrestleft()+"','"+physicalexam.getHighcrestnormal()+"','"+physicalexam.getHighpsisright()+"','"+physicalexam.getHighpsisleft()+"','"+physicalexam.getHighpsisnormal()+"','"+physicalexam.getCurveright()+"','"+physicalexam.getCurveleft()+"','"+physicalexam.getCurvaturenormal()+"','"+physicalexam.getLordosishyper()+"','"+physicalexam.getLordosishypo()+"','"+physicalexam.getLordosisnormal()+"','"+physicalexam.getParaspinalpain()+"','"+physicalexam.getParaspinalspasm()+"','"+physicalexam.getParaspinaledema()+"','"+physicalexam.getParaspinaltp()+"','"+physicalexam.getQuadrl()+"','"+physicalexam.getQuadtono()+"','"+physicalexam.getQuadnor()+"','"+physicalexam.getHamstringrl()+"','"+physicalexam.getHamstringtono()+"','"+physicalexam.getHamstringnor()+"','"+physicalexam.getVerfix()+"','"+physicalexam.getVernofix()+"','"+physicalexam.getAbdomentender()+"','"+physicalexam.getAbdomenpulse()+"','"+physicalexam.getAbdomenascites()+"','"+physicalexam.getLumflexpain()+"','"+physicalexam.getLumflexspasm()+"','"+physicalexam.getLumflexstiff()+"','"+physicalexam.getLumextpain()+"','"+physicalexam.getLumextspasm()+"','"+physicalexam.getLumextstiff()+"','"+physicalexam.getLumrlfpain()+"','"+physicalexam.getLumrlfspasm()+"','"+physicalexam.getLumrlfstiff()+"','"+physicalexam.getLumllfpain()+"','"+physicalexam.getLumllfspasm()+"','"+physicalexam.getLumllfstiff()+"','"+physicalexam.getLumrrpain()+"','"+physicalexam.getLumrrspasm()+"','"+physicalexam.getLumrrstiff()+"','"+physicalexam.getLumlrpain()+"','"+physicalexam.getLumlrspasm()+"','"+physicalexam.getLumlrstiff()+"','"+physicalexam.getLu1()+"','"+physicalexam.getLu1right()+"','"+physicalexam.getLu1left()+"','"+physicalexam.getLu2()+"','"+physicalexam.getLu2right()+"','"+physicalexam.getLu2left()+"','"+physicalexam.getLu3()+"','"+physicalexam.getLu3right()+"','"+physicalexam.getLu3left()+"','"+physicalexam.getLu4()+"','"+physicalexam.getLu4right()+"','"+physicalexam.getLu4left()+"','"+physicalexam.getLu5()+"','"+physicalexam.getLu5right()+"','"+physicalexam.getLu5left()+"','"+physicalexam.getLu6()+"','"+physicalexam.getLu6right()+"','"+physicalexam.getLu6left()+"','"+physicalexam.getLu7()+"','"+physicalexam.getLu7right()+"','"+physicalexam.getLu7left()+"','"+physicalexam.getHipflexright()+"','"+physicalexam.getHipflexleft()+"','"+physicalexam.getLegextright()+"','"+physicalexam.getLegextleft()+"','"+physicalexam.getDorsiflexright()+"','"+physicalexam.getDorsiflexleft()+"','"+physicalexam.getDigitflexright()+"','"+physicalexam.getDigitflexleft()+"','"+physicalexam.getHeelright()+"','"+physicalexam.getHeelleft()+"','"+physicalexam.getToeright()+"','"+physicalexam.getToeleft()+"','"+physicalexam.getPatellarright()+"','"+physicalexam.getPatellarleft()+"','"+physicalexam.getAchillesright()+"','"+physicalexam.getAchillesleft()+"','"+physicalexam.getBabinskiright()+"','"+physicalexam.getBabinskileft()+"')";
 	    	 
 	    /*	 String cmd="insert into tbl_physicalexam(sign,name,id,date,age,sex) values('"+physicalexam.getSign()+"','"+physicalexam.getName()+"','"+physicalexam.getId()+"','"+physicalexam.getDate()+"','"+physicalexam.getSex()+"')";
 	    */	 System.out.println(cmd+""+physicalexam.getPatient_id());
@@ -102,6 +103,7 @@ public List<Physicalexam> getPhysicalexam(){
 		    		resultSet.getString("age"),
 		    		resultSet.getString("sex"),
 		    		resultSet.getString("height"),
+		    		resultSet.getString("height1"),
 		    		resultSet.getString("weight"),
 		    		resultSet.getString("temp"),
 		    		resultSet.getString("bp"),
@@ -111,6 +113,7 @@ public List<Physicalexam> getPhysicalexam(){
 		    		resultSet.getString("gait"),
 		    		resultSet.getString("head"),
 		    		resultSet.getString("path"),
+		    		resultSet.getString("path1"),
 		    		resultSet.getString("posture"),
 		    		resultSet.getString("romber"),
 		    		resultSet.getString("exam"),
@@ -141,27 +144,30 @@ public List<Physicalexam> getPhysicalexam(){
 		    		resultSet.getString("trapeziusnormal"),
 		    		resultSet.getString("vertebraefix"),
 		    		resultSet.getString("vertebraenofix"),
-		    		resultSet.getString("flexnormal"),
+		    		resultSet.getString("scmrl"),
+		    		resultSet.getString("scmtono"),
+		    		resultSet.getString("scmnormal"),
+		    		
 		    		resultSet.getString("flexpain"),
 		    		resultSet.getString("flexspasm"),
 		    		resultSet.getString("flexstiff"),
-		    		resultSet.getString("extnormal"),
+		    		
 		    		resultSet.getString("extpain"),
 		    		resultSet.getString("extspasm"),
 		    		resultSet.getString("extstiff"),
-		    		resultSet.getString("rlfnormal"),
+		    		
 		    		resultSet.getString("rlfpain"),
 		    		resultSet.getString("rlfspasm"),
 		    		resultSet.getString("rlfstiff"),
-		    		resultSet.getString("llfnormal"),
+		    		
 		    		resultSet.getString("llfpain"),
 		    		resultSet.getString("llfspasm"),
 		    		resultSet.getString("llfstiff"),
-		    		resultSet.getString("rrnormal"),
+		    		
 		    		resultSet.getString("rrpain"),
 		    		resultSet.getString("rrspasm"),
 		    		resultSet.getString("rrstiff"),
-		    		resultSet.getString("lrnormal"),
+		    		
 		    		resultSet.getString("lrpain"),
 		    		resultSet.getString("lrspasm"),
 		    		resultSet.getString("lrstiff"),
@@ -205,6 +211,9 @@ public List<Physicalexam> getPhysicalexam(){
 		    		resultSet.getString("bracioradleft"),
 		    		resultSet.getString("tricepright"),
 		    		resultSet.getString("tricepleft"),
+		    		resultSet.getString("presentvisual"),
+		    		resultSet.getString("presentrl"),
+		    		
 		    		resultSet.getString("highshoulderright"),
 		    		resultSet.getString("highshoulderleft"),
 		    		resultSet.getString("highshouldernormal"),
@@ -218,7 +227,7 @@ public List<Physicalexam> getPhysicalexam(){
 		    		resultSet.getString("ribhumpleft"),
 		    		resultSet.getString("ribhumpnormal"),
 		    		resultSet.getString("chestmeasurein"),
-		    		resultSet.getString("chestmeasureex"),
+		    		
 		    		resultSet.getString("kyphosishyper"),
 		    		resultSet.getString("kyphosishypo"),
 		    		resultSet.getString("kyphosisnormal"),
@@ -230,27 +239,27 @@ public List<Physicalexam> getPhysicalexam(){
 		    		resultSet.getString("ribsnor"),
 		    		resultSet.getString("vertefix"),
 		    		resultSet.getString("vertenofix"),
-		    		resultSet.getString("thoracicnormal"),
+		    		
 		    		resultSet.getString("thoracicpain"),
 		    		resultSet.getString("thoracicspasm"),
 		    		resultSet.getString("thoracicstiff"),
-		    		resultSet.getString("thoextnormal"),
+		    		
 		    		resultSet.getString("thoextpain"),
 		    		resultSet.getString("thoextspasm"),
 		    		resultSet.getString("thoextstiff"),
-		    		resultSet.getString("thorlfnormal"),
+		    		
 		    		resultSet.getString("thorlfpain"),
 		    		resultSet.getString("thorlfspasm"),
 		    		resultSet.getString("thorlfstiff"),
-		    		resultSet.getString("thollfnormal"),
+		    		
 		    		resultSet.getString("thollfpain"),
 		    		resultSet.getString("thollfspasm"),
 		    		resultSet.getString("thollfstiff"),
-		    		resultSet.getString("thorrnormal"),
+		    		
 		    		resultSet.getString("thorrpain"),
 		    		resultSet.getString("thorrspasm"),
 		    		resultSet.getString("thorrstiff"),
-		    		resultSet.getString("tholrnormal"),
+		    		
 		    		resultSet.getString("tholrpain"),
 		    		resultSet.getString("tholrspasm"),
 		    		resultSet.getString("tholrstiff"),
@@ -273,6 +282,8 @@ public List<Physicalexam> getPhysicalexam(){
 		    		resultSet.getString("positiveluq"),
 		    		resultSet.getString("positiverlq"),
 		    		resultSet.getString("positivellq"),
+		    		resultSet.getString("patientsmoker"),
+		    		
 		    		resultSet.getString("highcrestright"),
 		    		resultSet.getString("highcrestleft"),
 		    		resultSet.getString("highcrestnormal"),
@@ -300,30 +311,58 @@ public List<Physicalexam> getPhysicalexam(){
 		    		resultSet.getString("abdomentender"),
 		    		resultSet.getString("abdomenpulse"),
 		    		resultSet.getString("abdomenascites"),
-		    		resultSet.getString("lumflexnormal"),
+		    		
 		    		resultSet.getString("lumflexpain"),
 		    		resultSet.getString("lumflexspasm"),
 		    		resultSet.getString("lumflexstiff"),
-		    		resultSet.getString("lumextnormal"),
+		    		
 		    		resultSet.getString("lumextpain"),
 		    		resultSet.getString("lumextspasm"),
 		    		resultSet.getString("lumextstiff"),
-		    		resultSet.getString("lumrlfnormal"),
+		    		
 		    		resultSet.getString("lumrlfpain"),
 		    		resultSet.getString("lumrlfspasm"),
 		    		resultSet.getString("lumrlfstiff"),
-		    		resultSet.getString("lumllfnormal"),
+		    		
 		    		resultSet.getString("lumllfpain"),
 		    		resultSet.getString("lumllfspasm"),
 		    		resultSet.getString("lumllfstiff"),
-		    		resultSet.getString("lumrrnormal"),
+		    		
 		    		resultSet.getString("lumrrpain"),
 		    		resultSet.getString("lumrrspasm"),
 		    		resultSet.getString("lumrrstiff"),
-		    		resultSet.getString("lumlrnormal"),
+		    		
 		    		resultSet.getString("lumlrpain"),
 		    		resultSet.getString("lumlrspasm"),
 		    		resultSet.getString("lumlrstiff"),
+		    		resultSet.getString("lu1"),
+		    		resultSet.getString("lu1right"),
+		    		resultSet.getString("lu1left"),
+		    		resultSet.getString("lu2"),
+		    		resultSet.getString("lu2right"),
+		    		resultSet.getString("lu2left"),
+		    		resultSet.getString("lu3"),
+		    		resultSet.getString("lu3right"),
+		    		resultSet.getString("lu3left"),
+		    		resultSet.getString("lu4"),
+		    		resultSet.getString("lu4right"),
+		    		resultSet.getString("lu4left"),
+		    		resultSet.getString("lu5"),
+		    		resultSet.getString("lu5right"),
+		    		resultSet.getString("lu5left"),
+		    		resultSet.getString("lu6"),
+		    		resultSet.getString("lu6right"),
+		    		resultSet.getString("lu6left"),
+		    		resultSet.getString("lu7"),
+		    		resultSet.getString("lu7right"),
+		    		resultSet.getString("lu7left"),
+		    		
+		    		
+		    		
+		    		
+		    		
+		    		
+		    		
 		    		resultSet.getString("hipflexright"),
 		    		resultSet.getString("hipflexleft"),
 		    		resultSet.getString("legextright"),
@@ -382,6 +421,7 @@ public List<Physicalexam> getPhysical(String physical_id){
 		    		resultSet.getString("age"),
 		    		resultSet.getString("sex"),
 		    		resultSet.getString("height"),
+		    		resultSet.getString("height1"),
 		    		resultSet.getString("weight"),
 		    		resultSet.getString("temp"),
 		    		resultSet.getString("bp"),
@@ -391,6 +431,7 @@ public List<Physicalexam> getPhysical(String physical_id){
 		    		resultSet.getString("gait"),
 		    		resultSet.getString("head"),
 		    		resultSet.getString("path"),
+		    		resultSet.getString("path1"),
 		    		resultSet.getString("posture"),
 		    		resultSet.getString("romber"),
 		    		resultSet.getString("exam"),
@@ -421,27 +462,30 @@ public List<Physicalexam> getPhysical(String physical_id){
 		    		resultSet.getString("trapeziusnormal"),
 		    		resultSet.getString("vertebraefix"),
 		    		resultSet.getString("vertebraenofix"),
-		    		resultSet.getString("flexnormal"),
+		    		resultSet.getString("scmrl"),
+		    		resultSet.getString("scmtono"),
+		    		resultSet.getString("scmnormal"),
+		    		
 		    		resultSet.getString("flexpain"),
 		    		resultSet.getString("flexspasm"),
 		    		resultSet.getString("flexstiff"),
-		    		resultSet.getString("extnormal"),
+		    		
 		    		resultSet.getString("extpain"),
 		    		resultSet.getString("extspasm"),
 		    		resultSet.getString("extstiff"),
-		    		resultSet.getString("rlfnormal"),
+		    		
 		    		resultSet.getString("rlfpain"),
 		    		resultSet.getString("rlfspasm"),
 		    		resultSet.getString("rlfstiff"),
-		    		resultSet.getString("llfnormal"),
+		    		
 		    		resultSet.getString("llfpain"),
 		    		resultSet.getString("llfspasm"),
 		    		resultSet.getString("llfstiff"),
-		    		resultSet.getString("rrnormal"),
+		    		
 		    		resultSet.getString("rrpain"),
 		    		resultSet.getString("rrspasm"),
 		    		resultSet.getString("rrstiff"),
-		    		resultSet.getString("lrnormal"),
+		    		
 		    		resultSet.getString("lrpain"),
 		    		resultSet.getString("lrspasm"),
 		    		resultSet.getString("lrstiff"),
@@ -485,6 +529,9 @@ public List<Physicalexam> getPhysical(String physical_id){
 		    		resultSet.getString("bracioradleft"),
 		    		resultSet.getString("tricepright"),
 		    		resultSet.getString("tricepleft"),
+		    		resultSet.getString("presentvisual"),
+		    		resultSet.getString("presentrl"),
+		    		
 		    		resultSet.getString("highshoulderright"),
 		    		resultSet.getString("highshoulderleft"),
 		    		resultSet.getString("highshouldernormal"),
@@ -498,7 +545,7 @@ public List<Physicalexam> getPhysical(String physical_id){
 		    		resultSet.getString("ribhumpleft"),
 		    		resultSet.getString("ribhumpnormal"),
 		    		resultSet.getString("chestmeasurein"),
-		    		resultSet.getString("chestmeasureex"),
+		    		
 		    		resultSet.getString("kyphosishyper"),
 		    		resultSet.getString("kyphosishypo"),
 		    		resultSet.getString("kyphosisnormal"),
@@ -510,27 +557,27 @@ public List<Physicalexam> getPhysical(String physical_id){
 		    		resultSet.getString("ribsnor"),
 		    		resultSet.getString("vertefix"),
 		    		resultSet.getString("vertenofix"),
-		    		resultSet.getString("thoracicnormal"),
+		    		
 		    		resultSet.getString("thoracicpain"),
 		    		resultSet.getString("thoracicspasm"),
 		    		resultSet.getString("thoracicstiff"),
-		    		resultSet.getString("thoextnormal"),
+		    		
 		    		resultSet.getString("thoextpain"),
 		    		resultSet.getString("thoextspasm"),
 		    		resultSet.getString("thoextstiff"),
-		    		resultSet.getString("thorlfnormal"),
+		    		
 		    		resultSet.getString("thorlfpain"),
 		    		resultSet.getString("thorlfspasm"),
 		    		resultSet.getString("thorlfstiff"),
-		    		resultSet.getString("thollfnormal"),
+		    		
 		    		resultSet.getString("thollfpain"),
 		    		resultSet.getString("thollfspasm"),
 		    		resultSet.getString("thollfstiff"),
-		    		resultSet.getString("thorrnormal"),
+		    		
 		    		resultSet.getString("thorrpain"),
 		    		resultSet.getString("thorrspasm"),
 		    		resultSet.getString("thorrstiff"),
-		    		resultSet.getString("tholrnormal"),
+		    		
 		    		resultSet.getString("tholrpain"),
 		    		resultSet.getString("tholrspasm"),
 		    		resultSet.getString("tholrstiff"),
@@ -553,6 +600,8 @@ public List<Physicalexam> getPhysical(String physical_id){
 		    		resultSet.getString("positiveluq"),
 		    		resultSet.getString("positiverlq"),
 		    		resultSet.getString("positivellq"),
+		    		resultSet.getString("patientsmoker"),
+		    		
 		    		resultSet.getString("highcrestright"),
 		    		resultSet.getString("highcrestleft"),
 		    		resultSet.getString("highcrestnormal"),
@@ -580,30 +629,58 @@ public List<Physicalexam> getPhysical(String physical_id){
 		    		resultSet.getString("abdomentender"),
 		    		resultSet.getString("abdomenpulse"),
 		    		resultSet.getString("abdomenascites"),
-		    		resultSet.getString("lumflexnormal"),
+		    		
 		    		resultSet.getString("lumflexpain"),
 		    		resultSet.getString("lumflexspasm"),
 		    		resultSet.getString("lumflexstiff"),
-		    		resultSet.getString("lumextnormal"),
+		    		
 		    		resultSet.getString("lumextpain"),
 		    		resultSet.getString("lumextspasm"),
 		    		resultSet.getString("lumextstiff"),
-		    		resultSet.getString("lumrlfnormal"),
+		    		
 		    		resultSet.getString("lumrlfpain"),
 		    		resultSet.getString("lumrlfspasm"),
 		    		resultSet.getString("lumrlfstiff"),
-		    		resultSet.getString("lumllfnormal"),
+		    		
 		    		resultSet.getString("lumllfpain"),
 		    		resultSet.getString("lumllfspasm"),
 		    		resultSet.getString("lumllfstiff"),
-		    		resultSet.getString("lumrrnormal"),
+		    		
 		    		resultSet.getString("lumrrpain"),
 		    		resultSet.getString("lumrrspasm"),
 		    		resultSet.getString("lumrrstiff"),
-		    		resultSet.getString("lumlrnormal"),
+		    		
 		    		resultSet.getString("lumlrpain"),
 		    		resultSet.getString("lumlrspasm"),
 		    		resultSet.getString("lumlrstiff"),
+		    		resultSet.getString("lu1"),
+		    		resultSet.getString("lu1right"),
+		    		resultSet.getString("lu1left"),
+		    		resultSet.getString("lu2"),
+		    		resultSet.getString("lu2right"),
+		    		resultSet.getString("lu2left"),
+		    		resultSet.getString("lu3"),
+		    		resultSet.getString("lu3right"),
+		    		resultSet.getString("lu3left"),
+		    		resultSet.getString("lu4"),
+		    		resultSet.getString("lu4right"),
+		    		resultSet.getString("lu4left"),
+		    		resultSet.getString("lu5"),
+		    		resultSet.getString("lu5right"),
+		    		resultSet.getString("lu5left"),
+		    		resultSet.getString("lu6"),
+		    		resultSet.getString("lu6right"),
+		    		resultSet.getString("lu6left"),
+		    		resultSet.getString("lu7"),
+		    		resultSet.getString("lu7right"),
+		    		resultSet.getString("lu7left"),
+		    		
+		    		
+		    		
+		    		
+		    		
+		    		
+		    		
 		    		resultSet.getString("hipflexright"),
 		    		resultSet.getString("hipflexleft"),
 		    		resultSet.getString("legextright"),
@@ -662,6 +739,7 @@ public List<Physicalexam> getPhysicalpatient_id(String patientid){
 		    		resultSet.getString("age"),
 		    		resultSet.getString("sex"),
 		    		resultSet.getString("height"),
+		    		resultSet.getString("height1"),
 		    		resultSet.getString("weight"),
 		    		resultSet.getString("temp"),
 		    		resultSet.getString("bp"),
@@ -671,6 +749,7 @@ public List<Physicalexam> getPhysicalpatient_id(String patientid){
 		    		resultSet.getString("gait"),
 		    		resultSet.getString("head"),
 		    		resultSet.getString("path"),
+		    		resultSet.getString("path1"),
 		    		resultSet.getString("posture"),
 		    		resultSet.getString("romber"),
 		    		resultSet.getString("exam"),
@@ -701,27 +780,30 @@ public List<Physicalexam> getPhysicalpatient_id(String patientid){
 		    		resultSet.getString("trapeziusnormal"),
 		    		resultSet.getString("vertebraefix"),
 		    		resultSet.getString("vertebraenofix"),
-		    		resultSet.getString("flexnormal"),
+		    		resultSet.getString("scmrl"),
+		    		resultSet.getString("scmtono"),
+		    		resultSet.getString("scmnormal"),
+		    		
 		    		resultSet.getString("flexpain"),
 		    		resultSet.getString("flexspasm"),
 		    		resultSet.getString("flexstiff"),
-		    		resultSet.getString("extnormal"),
+		    		
 		    		resultSet.getString("extpain"),
 		    		resultSet.getString("extspasm"),
 		    		resultSet.getString("extstiff"),
-		    		resultSet.getString("rlfnormal"),
+		    		
 		    		resultSet.getString("rlfpain"),
 		    		resultSet.getString("rlfspasm"),
 		    		resultSet.getString("rlfstiff"),
-		    		resultSet.getString("llfnormal"),
+		    		
 		    		resultSet.getString("llfpain"),
 		    		resultSet.getString("llfspasm"),
 		    		resultSet.getString("llfstiff"),
-		    		resultSet.getString("rrnormal"),
+		    		
 		    		resultSet.getString("rrpain"),
 		    		resultSet.getString("rrspasm"),
 		    		resultSet.getString("rrstiff"),
-		    		resultSet.getString("lrnormal"),
+		    		
 		    		resultSet.getString("lrpain"),
 		    		resultSet.getString("lrspasm"),
 		    		resultSet.getString("lrstiff"),
@@ -765,6 +847,9 @@ public List<Physicalexam> getPhysicalpatient_id(String patientid){
 		    		resultSet.getString("bracioradleft"),
 		    		resultSet.getString("tricepright"),
 		    		resultSet.getString("tricepleft"),
+		    		resultSet.getString("presentvisual"),
+		    		resultSet.getString("presentrl"),
+		    		
 		    		resultSet.getString("highshoulderright"),
 		    		resultSet.getString("highshoulderleft"),
 		    		resultSet.getString("highshouldernormal"),
@@ -778,7 +863,7 @@ public List<Physicalexam> getPhysicalpatient_id(String patientid){
 		    		resultSet.getString("ribhumpleft"),
 		    		resultSet.getString("ribhumpnormal"),
 		    		resultSet.getString("chestmeasurein"),
-		    		resultSet.getString("chestmeasureex"),
+		    		
 		    		resultSet.getString("kyphosishyper"),
 		    		resultSet.getString("kyphosishypo"),
 		    		resultSet.getString("kyphosisnormal"),
@@ -790,27 +875,27 @@ public List<Physicalexam> getPhysicalpatient_id(String patientid){
 		    		resultSet.getString("ribsnor"),
 		    		resultSet.getString("vertefix"),
 		    		resultSet.getString("vertenofix"),
-		    		resultSet.getString("thoracicnormal"),
+		    		
 		    		resultSet.getString("thoracicpain"),
 		    		resultSet.getString("thoracicspasm"),
 		    		resultSet.getString("thoracicstiff"),
-		    		resultSet.getString("thoextnormal"),
+		    		
 		    		resultSet.getString("thoextpain"),
 		    		resultSet.getString("thoextspasm"),
 		    		resultSet.getString("thoextstiff"),
-		    		resultSet.getString("thorlfnormal"),
+		    		
 		    		resultSet.getString("thorlfpain"),
 		    		resultSet.getString("thorlfspasm"),
 		    		resultSet.getString("thorlfstiff"),
-		    		resultSet.getString("thollfnormal"),
+		    		
 		    		resultSet.getString("thollfpain"),
 		    		resultSet.getString("thollfspasm"),
 		    		resultSet.getString("thollfstiff"),
-		    		resultSet.getString("thorrnormal"),
+		    		
 		    		resultSet.getString("thorrpain"),
 		    		resultSet.getString("thorrspasm"),
 		    		resultSet.getString("thorrstiff"),
-		    		resultSet.getString("tholrnormal"),
+		    		
 		    		resultSet.getString("tholrpain"),
 		    		resultSet.getString("tholrspasm"),
 		    		resultSet.getString("tholrstiff"),
@@ -833,6 +918,8 @@ public List<Physicalexam> getPhysicalpatient_id(String patientid){
 		    		resultSet.getString("positiveluq"),
 		    		resultSet.getString("positiverlq"),
 		    		resultSet.getString("positivellq"),
+		    		resultSet.getString("patientsmoker"),
+		    		
 		    		resultSet.getString("highcrestright"),
 		    		resultSet.getString("highcrestleft"),
 		    		resultSet.getString("highcrestnormal"),
@@ -860,30 +947,58 @@ public List<Physicalexam> getPhysicalpatient_id(String patientid){
 		    		resultSet.getString("abdomentender"),
 		    		resultSet.getString("abdomenpulse"),
 		    		resultSet.getString("abdomenascites"),
-		    		resultSet.getString("lumflexnormal"),
+		    		
 		    		resultSet.getString("lumflexpain"),
 		    		resultSet.getString("lumflexspasm"),
 		    		resultSet.getString("lumflexstiff"),
-		    		resultSet.getString("lumextnormal"),
+		    		
 		    		resultSet.getString("lumextpain"),
 		    		resultSet.getString("lumextspasm"),
 		    		resultSet.getString("lumextstiff"),
-		    		resultSet.getString("lumrlfnormal"),
+		    		
 		    		resultSet.getString("lumrlfpain"),
 		    		resultSet.getString("lumrlfspasm"),
 		    		resultSet.getString("lumrlfstiff"),
-		    		resultSet.getString("lumllfnormal"),
+		    		
 		    		resultSet.getString("lumllfpain"),
 		    		resultSet.getString("lumllfspasm"),
 		    		resultSet.getString("lumllfstiff"),
-		    		resultSet.getString("lumrrnormal"),
+		    		
 		    		resultSet.getString("lumrrpain"),
 		    		resultSet.getString("lumrrspasm"),
 		    		resultSet.getString("lumrrstiff"),
-		    		resultSet.getString("lumlrnormal"),
+		    		
 		    		resultSet.getString("lumlrpain"),
 		    		resultSet.getString("lumlrspasm"),
 		    		resultSet.getString("lumlrstiff"),
+		    		resultSet.getString("lu1"),
+		    		resultSet.getString("lu1right"),
+		    		resultSet.getString("lu1left"),
+		    		resultSet.getString("lu2"),
+		    		resultSet.getString("lu2right"),
+		    		resultSet.getString("lu2left"),
+		    		resultSet.getString("lu3"),
+		    		resultSet.getString("lu3right"),
+		    		resultSet.getString("lu3left"),
+		    		resultSet.getString("lu4"),
+		    		resultSet.getString("lu4right"),
+		    		resultSet.getString("lu4left"),
+		    		resultSet.getString("lu5"),
+		    		resultSet.getString("lu5right"),
+		    		resultSet.getString("lu5left"),
+		    		resultSet.getString("lu6"),
+		    		resultSet.getString("lu6right"),
+		    		resultSet.getString("lu6left"),
+		    		resultSet.getString("lu7"),
+		    		resultSet.getString("lu7right"),
+		    		resultSet.getString("lu7left"),
+		    		
+		    		
+		    		
+		    		
+		    		
+		    		
+		    		
 		    		resultSet.getString("hipflexright"),
 		    		resultSet.getString("hipflexleft"),
 		    		resultSet.getString("legextright"),
@@ -932,7 +1047,7 @@ public int updatephysicalexam(Physicalexam physicalexam,String physical_id,Strin
     	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
     	 Date date = new Date();
     	 //System.out.println(dateFormat.format(date));
-    	String cmd="UPDATE tbl_physicalexam SET sign='"+physicalexam.getSign()+"',name='"+physicalexam.getName()+"',id='"+physicalexam.getId()+"',date='"+physicalexam.getDate()+"',age='"+physicalexam.getAge()+"',sex='"+physicalexam.getSex()+"',height='"+physicalexam.getHeight()+"',weight='"+physicalexam.getWeight()+"',temp='"+physicalexam.getTemp()+"',bp='"+physicalexam.getBp()+"',pulse='"+physicalexam.getPulse()+"',appearance='"+physicalexam.getAppearance()+"',weight1='"+physicalexam.getWeight1()+"',gait='"+physicalexam.getGait()+"',head='"+physicalexam.getHead()+"',posture='"+physicalexam.getPosture()+"',romber='"+physicalexam.getRomber()+"',exam='"+physicalexam.getExam()+"',abnormal='"+physicalexam.getAbnormal()+"',headtiltright='"+physicalexam.getHeadtiltright()+"',headtiltleft='"+physicalexam.getHeadtiltleft()+"',headtiltnormal='"+physicalexam.getHeadtiltnormal()+"',rotationright='"+physicalexam.getRotationright()+"',rotationleft='"+physicalexam.getRotationleft()+"',rotationnormal='"+physicalexam.getRotationnormal()+"',tmjright='"+physicalexam.getTmjright()+"',tmjleft='"+physicalexam.getTmjleft()+"',tmjnormal='"+physicalexam.getTmjnormal()+"',highright='"+physicalexam.getHighright()+"',highleft='"+physicalexam.getHighleft()+"',highnormal='"+physicalexam.getHighnormal()+"',lordhyper='"+physicalexam.getLordhyper()+"',lordhypo='"+physicalexam.getLordhypo()+"',lordnormal='"+physicalexam.getLordnormal()+"',lymphedema='"+physicalexam.getLymphedema()+"',lymphnormal='"+physicalexam.getLymphnormal()+"',paraspain='"+physicalexam.getParaspain()+"',parasspasm='"+physicalexam.getParasspasm()+"',parasedema='"+physicalexam.getParasedema()+"',parastriggerpoint='"+physicalexam.getParastriggerpoint()+"',trapeziusrl='"+physicalexam.getTrapeziusrl()+"',trapeziustono='"+physicalexam.getTrapeziustono()+"',trapeziusnormal='"+physicalexam.getTrapeziusnormal()+"',vertebraefix='"+physicalexam.getVertebraefix()+"',vertebraenofix='"+physicalexam.getVertebraenofix()+"',flexnormal='"+physicalexam.getFlexnormal()+"',flexpain='"+physicalexam.getFlexpain()+"',flexspasm='"+physicalexam.getFlexspasm()+"',flexstiff='"+physicalexam.getFlexstiff()+"',extnormal='"+physicalexam.getExtnormal()+"',extpain='"+physicalexam.getExtpain()+"',extspasm='"+physicalexam.getExtspasm()+"',extstiff='"+physicalexam.getExtstiff()+"',rlfnormal='"+physicalexam.getRlfnormal()+"',rlfpain='"+physicalexam.getRlfpain()+"',rlfspasm='"+physicalexam.getRlfspasm()+"',rlfstiff='"+physicalexam.getRlfstiff()+"',llfnormal='"+physicalexam.getLlfnormal()+"',llfpain='"+physicalexam.getLlfpain()+"',llfspasm='"+physicalexam.getLlfspasm()+"',llfstiff='"+physicalexam.getLlfstiff()+"',rrnormal='"+physicalexam.getRrnormal()+"',rrpain='"+physicalexam.getRrpain()+"',rrspasm='"+physicalexam.getRrspasm()+"',rrstiff='"+physicalexam.getRrstiff()+"',lrnormal='"+physicalexam.getLrnormal()+"',lrpain='"+physicalexam.getLrpain()+"',lrspasm='"+physicalexam.getLrspasm()+"',lrstiff='"+physicalexam.getLrstiff()+"',c5='"+physicalexam.getC5()+"',c5right='"+physicalexam.getC5right()+"',c5left='"+physicalexam.getC5left()+"',c6='"+physicalexam.getC6()+"',c6right='"+physicalexam.getC6right()+"',c6left='"+physicalexam.getC6left()+"',c7='"+physicalexam.getC7()+"',c7right='"+physicalexam.getC7right()+"',c7left='"+physicalexam.getC7left()+"',c8='"+physicalexam.getC8()+"',c8right='"+physicalexam.getC8right()+"',c8left='"+physicalexam.getC8left()+"',t1='"+physicalexam.getT1()+"',t1right='"+physicalexam.getT1right()+"',t1left='"+physicalexam.getT1left()+"',deltoidright='"+physicalexam.getDeltoidright()+"',deltoidleft='"+physicalexam.getDeltoidleft()+"',wristright='"+physicalexam.getWristright()+"',wristleft='"+physicalexam.getWristleft()+"',wristflexright='"+physicalexam.getWristflexright()+"',wristflexleft='"+physicalexam.getWristflexleft()+"',fingerflexright='"+physicalexam.getFingerflexright()+"',fingerflexleft='"+physicalexam.getFingerflexleft()+"',fingeraddright='"+physicalexam.getFingeraddright()+"',fingeraddleft='"+physicalexam.getFingeraddleft()+"',wristextright='"+physicalexam.getWristextright()+"',wristextleft='"+physicalexam.getWristextleft()+"',bicepright='"+physicalexam.getBicepright()+"',bicepleft='"+physicalexam.getBicepleft()+"',bracioradright='"+physicalexam.getBracioradright()+"',bracioradleft='"+physicalexam.getBracioradleft()+"',tricepright='"+physicalexam.getTricepright()+"',tricepleft='"+physicalexam.getTricepleft()+"',highshoulderright='"+physicalexam.getHighshoulderright()+"',highshoulderleft='"+physicalexam.getHighshoulderleft()+"',highshouldernormal='"+physicalexam.getHighshouldernormal()+"',curvatureright='"+physicalexam.getCurvatureright()+"',curvatureleft='"+physicalexam.getCurvatureleft()+"',curvaturenormal='"+physicalexam.getCurvaturenormal()+"',wingingright='"+physicalexam.getWingingright()+"',wingingleft='"+physicalexam.getWingingleft()+"',wingingnormal='"+physicalexam.getWingingnormal()+"',ribhumpright='"+physicalexam.getRibhumpright()+"',ribhumpleft='"+physicalexam.getRibhumpleft()+"',ribhumpnormal='"+physicalexam.getRibhumpnormal()+"',chestmeasurein='"+physicalexam.getChestmeasurein()+"',chestmeasureex='"+physicalexam.getChestmeasureex()+"',kyphosishyper='"+physicalexam.getKyphosishyper()+"',kyphosishypo='"+physicalexam.getKyphosishypo()+"',kyphosisnormal='"+physicalexam.getKyphosisnormal()+"',parapain='"+physicalexam.getParapain()+"',paraspasm='"+physicalexam.getParaspasm()+"',paraedema='"+physicalexam.getParaedema()+"',paratriggerpoint='"+physicalexam.getParatriggerpoint()+"',ribspost='"+physicalexam.getRibspost()+"',ribsnor='"+physicalexam.getRibsnor()+"',vertefix='"+physicalexam.getVertefix()+"',vertenofix='"+physicalexam.getVertenofix()+"',thoracicnormal='"+physicalexam.getThoracicnormal()+"',thoracicpain='"+physicalexam.getThoracicpain()+"',thoracicspasm='"+physicalexam.getThoracicspasm()+"',thoracicstiff='"+physicalexam.getThoracicstiff()+"',thoextnormal='"+physicalexam.getThoextnormal()+"',thoextpain='"+physicalexam.getThoextpain()+"',thoextspasm='"+physicalexam.getThoextspasm()+"',thoextstiff='"+physicalexam.getThoextstiff()+"',thorlfnormal='"+physicalexam.getThorlfnormal()+"',thorlfpain='"+physicalexam.getThorlfpain()+"',thorlfspasm='"+physicalexam.getThorlfspasm()+"',thorlfstiff='"+physicalexam.getThorlfstiff()+"',thollfnormal='"+physicalexam.getThollfnormal()+"',thollfpain='"+physicalexam.getThollfpain()+"',thollfspasm='"+physicalexam.getThollfspasm()+"',thollfstiff='"+physicalexam.getThollfstiff()+"',thorrnormal='"+physicalexam.getThorrnormal()+"',thorrpain='"+physicalexam.getThorrpain()+"',thorrspasm='"+physicalexam.getThorrspasm()+"',thorrstiff='"+physicalexam.getThorrstiff()+"',tholrnormal='"+physicalexam.getTholrnormal()+"',tholrpain='"+physicalexam.getTholrpain()+"',tholrspasm='"+physicalexam.getTholrspasm()+"',tholrstiff='"+physicalexam.getTholrstiff()+"',thot1='"+physicalexam.getThot1()+"',thot1right='"+physicalexam.getThot1right()+"',thot1left='"+physicalexam.getThot1left()+"',thot4='"+physicalexam.getThot4()+"',thot4right='"+physicalexam.getThot4right()+"',thot4left='"+physicalexam.getThot4left()+"',thot10='"+physicalexam.getThot10()+"',thot10right='"+physicalexam.getThot10right()+"',thot10left='"+physicalexam.getThot10left()+"',thoother='"+physicalexam.getThoother()+"',thootherright='"+physicalexam.getThootherright()+"',thootherleft='"+physicalexam.getThootherleft()+"',myotomes='"+physicalexam.getMyotomes()+"',positiveruq='"+physicalexam.getPositiveruq()+"',positiveluq='"+physicalexam.getPositiveluq()+"',positiverlq='"+physicalexam.getPositiverlq()+"',positivellq='"+physicalexam.getPositivellq()+"',highcrestright='"+physicalexam.getHighcrestright()+"',highcrestleft='"+physicalexam.getHighcrestleft()+"',highcrestnormal='"+physicalexam.getHighcrestnormal()+"',highpsisright='"+physicalexam.getHighpsisright()+"',highpsisleft='"+physicalexam.getHighpsisleft()+"',highpsisnormal='"+physicalexam.getHighpsisnormal()+"',curveright='"+physicalexam.getCurveright()+"',curveleft='"+physicalexam.getCurveleft()+"',curvenormal='"+physicalexam.getCurvenormal()+"',lordosishyper='"+physicalexam.getLordosishyper()+"',lordosishypo='"+physicalexam.getLordosishypo()+"',lordosisnormal='"+physicalexam.getLordosisnormal()+"',paraspinalpain='"+physicalexam.getParaspinalpain()+"',paraspinalspasm='"+physicalexam.getParaspinalspasm()+"',paraspinaledema='"+physicalexam.getParaspinaledema()+"',paraspinaltp='"+physicalexam.getParaspinaltp()+"',quadrl='"+physicalexam.getQuadrl()+"',quadtono='"+physicalexam.getQuadtono()+"',quadnor='"+physicalexam.getQuadnor()+"',hamstringrl='"+physicalexam.getHamstringrl()+"',hamstringtono='"+physicalexam.getHamstringtono()+"',hamstringnor='"+physicalexam.getHamstringnor()+"',verfix='"+physicalexam.getVerfix()+"',vernofix='"+physicalexam.getVernofix()+"',abdomentender='"+physicalexam.getAbdomentender()+"',abdomenpulse='"+physicalexam.getAbdomenpulse()+"',abdomenascites='"+physicalexam.getAbdomenascites()+"',lumflexnormal='"+physicalexam.getLumflexnormal()+"',lumflexpain='"+physicalexam.getLumflexpain()+"',lumflexspasm='"+physicalexam.getLumflexspasm()+"',lumflexstiff='"+physicalexam.getLumflexstiff()+"',lumextnormal='"+physicalexam.getLumextnormal()+"',lumextpain='"+physicalexam.getLumextpain()+"',lumextspasm='"+physicalexam.getLumextspasm()+"',lumextstiff='"+physicalexam.getLumextstiff()+"',lumrlfnormal='"+physicalexam.getLumrlfnormal()+"',lumrlfpain='"+physicalexam.getLumrlfpain()+"',lumrlfspasm='"+physicalexam.getLumrlfspasm()+"',lumrlfstiff='"+physicalexam.getLumrlfstiff()+"',lumllfnormal='"+physicalexam.getLumllfnormal()+"',lumllfpain='"+physicalexam.getLumllfpain()+"',lumllfspasm='"+physicalexam.getLumllfspasm()+"',lumllfstiff='"+physicalexam.getLumllfstiff()+"',lumrrnormal='"+physicalexam.getLumrrnormal()+"',lumrrpain='"+physicalexam.getLumrrpain()+"',lumrrspasm='"+physicalexam.getLumrrspasm()+"',lumrrstiff='"+physicalexam.getLumrrstiff()+"',lumlrnormal='"+physicalexam.getLumlrnormal()+"',lumlrpain='"+physicalexam.getLumlrpain()+"',lumlrspasm='"+physicalexam.getLumlrspasm()+"',lumlrstiff='"+physicalexam.getLumlrstiff()+"',hipflexright='"+physicalexam.getHipflexright()+"',hipflexleft='"+physicalexam.getHipflexleft()+"',legextright='"+physicalexam.getLegextright()+"',legextleft='"+physicalexam.getLegextleft()+"',dorsiflexright='"+physicalexam.getDorsiflexright()+"',dorsiflexleft='"+physicalexam.getDorsiflexleft()+"',digitflexright='"+physicalexam.getDigitflexright()+"',digitflexleft='"+physicalexam.getDigitflexleft()+"',heelright='"+physicalexam.getHeelright()+"',heelleft='"+physicalexam.getHeelleft()+"',toeright='"+physicalexam.getToeright()+"',toeleft='"+physicalexam.getToeleft()+"',patellarright='"+physicalexam.getPatellarright()+"',patellarleft='"+physicalexam.getPatellarleft()+"',achillesright='"+physicalexam.getAchillesright()+"',achillesleft='"+physicalexam.getAchillesleft()+"',babinskiright='"+physicalexam.getBabinskiright()+"',babinskileft='"+physicalexam.getBabinskileft()+"' WHERE physical_id='"+physical_id+"';";
+    	String cmd="UPDATE tbl_physicalexam SET sign='"+physicalexam.getSign()+"','"+physicalexam.getName()+"','"+physicalexam.getId()+"','"+physicalexam.getDate()+"','"+physicalexam.getAge()+"','"+physicalexam.getSex()+"','"+physicalexam.getHeight()+"','"+physicalexam.getHeight1()+"','"+physicalexam.getWeight()+"','"+physicalexam.getTemp()+"','"+physicalexam.getBp()+"','"+physicalexam.getPulse()+"','"+physicalexam.getAppearance()+"','"+physicalexam.getWeight1()+"','"+physicalexam.getGait()+"','"+physicalexam.getHead()+"','"+physicalexam.getPath()+"','"+physicalexam.getPath1()+"','"+physicalexam.getPosture()+"','"+physicalexam.getRomber()+"','"+physicalexam.getExam()+"','"+physicalexam.getAbnormal()+"','"+physicalexam.getHeadtiltright()+"','"+physicalexam.getHeadtiltleft()+"','"+physicalexam.getHeadtiltnormal()+"','"+physicalexam.getRotationright()+"','"+physicalexam.getRotationleft()+"','"+physicalexam.getRotationnormal()+"','"+physicalexam.getTmjright()+"','"+physicalexam.getTmjleft()+"','"+physicalexam.getTmjnormal()+"','"+physicalexam.getHighright()+"','"+physicalexam.getHighleft()+"','"+physicalexam.getHighnormal()+"','"+physicalexam.getLordhyper()+"','"+physicalexam.getLordhypo()+"','"+physicalexam.getLordnormal()+"','"+physicalexam.getLymphedema()+"','"+physicalexam.getLymphnormal()+"','"+physicalexam.getParaspain()+"','"+physicalexam.getParasspasm()+"','"+physicalexam.getParasedema()+"','"+physicalexam.getParastriggerpoint()+"','"+physicalexam.getTrapeziusrl()+"','"+physicalexam.getTrapeziustono()+"','"+physicalexam.getTrapeziusnormal()+"','"+physicalexam.getTrapeziusrl()+"','"+physicalexam.getTrapeziustono()+"','"+physicalexam.getTrapeziusnormal()+"','"+physicalexam.getVertebraefix()+"','"+physicalexam.getVertebraenofix()+"','"+physicalexam.getFlexpain()+"','"+physicalexam.getFlexspasm()+"','"+physicalexam.getFlexstiff()+"','"+physicalexam.getExtpain()+"','"+physicalexam.getExtspasm()+"','"+physicalexam.getExtstiff()+"','"+physicalexam.getRlfpain()+"','"+physicalexam.getRlfspasm()+"','"+physicalexam.getRlfstiff()+"','"+physicalexam.getLlfpain()+"','"+physicalexam.getLlfspasm()+"','"+physicalexam.getLlfstiff()+"','"+physicalexam.getRrpain()+"','"+physicalexam.getRrspasm()+"','"+physicalexam.getRrstiff()+"','"+physicalexam.getLrpain()+"','"+physicalexam.getLrspasm()+"','"+physicalexam.getLrstiff()+"','"+physicalexam.getC5()+"','"+physicalexam.getC5right()+"','"+physicalexam.getC5left()+"','"+physicalexam.getC6()+"','"+physicalexam.getC6right()+"','"+physicalexam.getC6left()+"','"+physicalexam.getC7()+"','"+physicalexam.getC7right()+"','"+physicalexam.getC7left()+"','"+physicalexam.getC8()+"','"+physicalexam.getC8right()+"','"+physicalexam.getC8left()+"','"+physicalexam.getT1()+"','"+physicalexam.getT1right()+"','"+physicalexam.getT1left()+"','"+physicalexam.getOther()+"','"+physicalexam.getOtherright()+"','"+physicalexam.getOtherleft()+"','"+physicalexam.getDeltoidright()+"','"+physicalexam.getDeltoidleft()+"','"+physicalexam.getWristright()+"','"+physicalexam.getWristleft()+"','"+physicalexam.getWristflexright()+"','"+physicalexam.getWristflexleft()+"','"+physicalexam.getFingerflexright()+"','"+physicalexam.getFingerflexleft()+"','"+physicalexam.getFingeraddright()+"','"+physicalexam.getFingeraddleft()+"','"+physicalexam.getWristextright()+"','"+physicalexam.getWristextleft()+"','"+physicalexam.getBicepright()+"','"+physicalexam.getBicepleft()+"','"+physicalexam.getBracioradright()+"','"+physicalexam.getBracioradleft()+"','"+physicalexam.getTricepright()+"','"+physicalexam.getTricepleft()+"','"+physicalexam.getpresentvisual()+"','"+physicalexam.getPresentrl()+"','"+physicalexam.getHighshoulderright()+"','"+physicalexam.getHighshoulderleft()+"','"+physicalexam.getHighshouldernormal()+"','"+physicalexam.getCurvatureright()+"','"+physicalexam.getCurvatureleft()+"','"+physicalexam.getCurvaturenormal()+"','"+physicalexam.getWingingright()+"','"+physicalexam.getWingingleft()+"','"+physicalexam.getWingingnormal()+"','"+physicalexam.getRibhumpright()+"','"+physicalexam.getRibhumpleft()+"','"+physicalexam.getRibhumpnormal()+"','"+physicalexam.getChestmeasurein()+"','"+physicalexam.getKyphosishyper()+"','"+physicalexam.getKyphosishypo()+"','"+physicalexam.getKyphosisnormal()+"','"+physicalexam.getParapain()+"','"+physicalexam.getParaspasm()+"','"+physicalexam.getParaedema()+"','"+physicalexam.getParatriggerpoint()+"','"+physicalexam.getRibspost()+"','"+physicalexam.getRibsnor()+"','"+physicalexam.getVertefix()+"','"+physicalexam.getVertenofix()+"','"+physicalexam.getThoracicpain()+"','"+physicalexam.getThoracicspasm()+"','"+physicalexam.getThoracicstiff()+"','"+physicalexam.getThoextpain()+"','"+physicalexam.getThoextspasm()+"','"+physicalexam.getThoextstiff()+"','"+physicalexam.getThorlfpain()+"','"+physicalexam.getThorlfspasm()+"','"+physicalexam.getThorlfstiff()+"','"+physicalexam.getThollfpain()+"','"+physicalexam.getThollfspasm()+"','"+physicalexam.getThollfstiff()+"','"+physicalexam.getThorrpain()+"','"+physicalexam.getThorrspasm()+"','"+physicalexam.getThorrstiff()+"','"+physicalexam.getTholrpain()+"','"+physicalexam.getTholrspasm()+"','"+physicalexam.getTholrstiff()+"','"+physicalexam.getThot1()+"','"+physicalexam.getThot1right()+"','"+physicalexam.getThot1left()+"','"+physicalexam.getThot4()+"','"+physicalexam.getThot4right()+"','"+physicalexam.getThot4left()+"','"+physicalexam.getThot10()+"','"+physicalexam.getThot10right()+"','"+physicalexam.getThot10left()+"','"+physicalexam.getThoother()+"','"+physicalexam.getThootherright()+"','"+physicalexam.getThootherleft()+"','"+physicalexam.getMyotomes()+"','"+physicalexam.getPositiveruq()+"','"+physicalexam.getPositiveluq()+"','"+physicalexam.getPositiverlq()+"','"+physicalexam.getPositivellq()+"','"+physicalexam.getPatientsmoker()+"','"+physicalexam.getHighcrestright()+"','"+physicalexam.getHighcrestleft()+"','"+physicalexam.getHighcrestnormal()+"','"+physicalexam.getHighpsisright()+"','"+physicalexam.getHighpsisleft()+"','"+physicalexam.getHighpsisnormal()+"','"+physicalexam.getCurveright()+"','"+physicalexam.getCurveleft()+"','"+physicalexam.getCurvaturenormal()+"','"+physicalexam.getLordosishyper()+"','"+physicalexam.getLordosishypo()+"','"+physicalexam.getLordosisnormal()+"','"+physicalexam.getParaspinalpain()+"','"+physicalexam.getParaspinalspasm()+"','"+physicalexam.getParaspinaledema()+"','"+physicalexam.getParaspinaltp()+"','"+physicalexam.getQuadrl()+"','"+physicalexam.getQuadtono()+"','"+physicalexam.getQuadnor()+"','"+physicalexam.getHamstringrl()+"','"+physicalexam.getHamstringtono()+"','"+physicalexam.getHamstringnor()+"','"+physicalexam.getVerfix()+"','"+physicalexam.getVernofix()+"','"+physicalexam.getAbdomentender()+"','"+physicalexam.getAbdomenpulse()+"','"+physicalexam.getAbdomenascites()+"','"+physicalexam.getLumflexpain()+"','"+physicalexam.getLumflexspasm()+"','"+physicalexam.getLumflexstiff()+"','"+physicalexam.getLumextpain()+"','"+physicalexam.getLumextspasm()+"','"+physicalexam.getLumextstiff()+"','"+physicalexam.getLumrlfpain()+"','"+physicalexam.getLumrlfspasm()+"','"+physicalexam.getLumrlfstiff()+"','"+physicalexam.getLumllfpain()+"','"+physicalexam.getLumllfspasm()+"','"+physicalexam.getLumllfstiff()+"','"+physicalexam.getLumrrpain()+"','"+physicalexam.getLumrrspasm()+"','"+physicalexam.getLumrrstiff()+"','"+physicalexam.getLumlrpain()+"','"+physicalexam.getLumlrspasm()+"','"+physicalexam.getLumlrstiff()+"','"+physicalexam.getLu1()+"','"+physicalexam.getLu1right()+"','"+physicalexam.getLu1left()+"','"+physicalexam.getLu2()+"','"+physicalexam.getLu2right()+"','"+physicalexam.getLu2left()+"','"+physicalexam.getLu3()+"','"+physicalexam.getLu3right()+"','"+physicalexam.getLu3left()+"','"+physicalexam.getLu4()+"','"+physicalexam.getLu4right()+"','"+physicalexam.getLu4left()+"','"+physicalexam.getLu5()+"','"+physicalexam.getLu5right()+"','"+physicalexam.getLu5left()+"','"+physicalexam.getLu6()+"','"+physicalexam.getLu6right()+"','"+physicalexam.getLu6left()+"','"+physicalexam.getLu7()+"','"+physicalexam.getLu7right()+"','"+physicalexam.getLu7left()+"','"+physicalexam.getHipflexright()+"','"+physicalexam.getHipflexleft()+"','"+physicalexam.getLegextright()+"','"+physicalexam.getLegextleft()+"','"+physicalexam.getDorsiflexright()+"','"+physicalexam.getDorsiflexleft()+"','"+physicalexam.getDigitflexright()+"','"+physicalexam.getDigitflexleft()+"','"+physicalexam.getHeelright()+"','"+physicalexam.getHeelleft()+"','"+physicalexam.getToeright()+"','"+physicalexam.getToeleft()+"','"+physicalexam.getPatellarright()+"','"+physicalexam.getPatellarleft()+"','"+physicalexam.getAchillesright()+"','"+physicalexam.getAchillesleft()+"','"+physicalexam.getBabinskiright()+"','"+physicalexam.getBabinskileft()+"' WHERE physical_id='"+physical_id+"';";
     			
     			String Desc="Update physicalexam "+physicalexam.getName();
     	System.out.println(cmd);
@@ -1031,6 +1146,7 @@ public List<Physicalexam> getlimitedphysicalexam(int page) {
 		    		resultSet.getString("age"),
 		    		resultSet.getString("sex"),
 		    		resultSet.getString("height"),
+		    		resultSet.getString("height1"),
 		    		resultSet.getString("weight"),
 		    		resultSet.getString("temp"),
 		    		resultSet.getString("bp"),
@@ -1040,6 +1156,7 @@ public List<Physicalexam> getlimitedphysicalexam(int page) {
 		    		resultSet.getString("gait"),
 		    		resultSet.getString("head"),
 		    		resultSet.getString("path"),
+		    		resultSet.getString("path1"),
 		    		resultSet.getString("posture"),
 		    		resultSet.getString("romber"),
 		    		resultSet.getString("exam"),
@@ -1070,27 +1187,30 @@ public List<Physicalexam> getlimitedphysicalexam(int page) {
 		    		resultSet.getString("trapeziusnormal"),
 		    		resultSet.getString("vertebraefix"),
 		    		resultSet.getString("vertebraenofix"),
-		    		resultSet.getString("flexnormal"),
+		    		resultSet.getString("scmrl"),
+		    		resultSet.getString("scmtono"),
+		    		resultSet.getString("scmnormal"),
+		    		
 		    		resultSet.getString("flexpain"),
 		    		resultSet.getString("flexspasm"),
 		    		resultSet.getString("flexstiff"),
-		    		resultSet.getString("extnormal"),
+		    		
 		    		resultSet.getString("extpain"),
 		    		resultSet.getString("extspasm"),
 		    		resultSet.getString("extstiff"),
-		    		resultSet.getString("rlfnormal"),
+		    		
 		    		resultSet.getString("rlfpain"),
 		    		resultSet.getString("rlfspasm"),
 		    		resultSet.getString("rlfstiff"),
-		    		resultSet.getString("llfnormal"),
+		    		
 		    		resultSet.getString("llfpain"),
 		    		resultSet.getString("llfspasm"),
 		    		resultSet.getString("llfstiff"),
-		    		resultSet.getString("rrnormal"),
+		    		
 		    		resultSet.getString("rrpain"),
 		    		resultSet.getString("rrspasm"),
 		    		resultSet.getString("rrstiff"),
-		    		resultSet.getString("lrnormal"),
+		    		
 		    		resultSet.getString("lrpain"),
 		    		resultSet.getString("lrspasm"),
 		    		resultSet.getString("lrstiff"),
@@ -1134,6 +1254,9 @@ public List<Physicalexam> getlimitedphysicalexam(int page) {
 		    		resultSet.getString("bracioradleft"),
 		    		resultSet.getString("tricepright"),
 		    		resultSet.getString("tricepleft"),
+		    		resultSet.getString("presentvisual"),
+		    		resultSet.getString("presentrl"),
+		    		
 		    		resultSet.getString("highshoulderright"),
 		    		resultSet.getString("highshoulderleft"),
 		    		resultSet.getString("highshouldernormal"),
@@ -1147,7 +1270,7 @@ public List<Physicalexam> getlimitedphysicalexam(int page) {
 		    		resultSet.getString("ribhumpleft"),
 		    		resultSet.getString("ribhumpnormal"),
 		    		resultSet.getString("chestmeasurein"),
-		    		resultSet.getString("chestmeasureex"),
+		    		
 		    		resultSet.getString("kyphosishyper"),
 		    		resultSet.getString("kyphosishypo"),
 		    		resultSet.getString("kyphosisnormal"),
@@ -1159,27 +1282,27 @@ public List<Physicalexam> getlimitedphysicalexam(int page) {
 		    		resultSet.getString("ribsnor"),
 		    		resultSet.getString("vertefix"),
 		    		resultSet.getString("vertenofix"),
-		    		resultSet.getString("thoracicnormal"),
+		    		
 		    		resultSet.getString("thoracicpain"),
 		    		resultSet.getString("thoracicspasm"),
 		    		resultSet.getString("thoracicstiff"),
-		    		resultSet.getString("thoextnormal"),
+		    		
 		    		resultSet.getString("thoextpain"),
 		    		resultSet.getString("thoextspasm"),
 		    		resultSet.getString("thoextstiff"),
-		    		resultSet.getString("thorlfnormal"),
+		    		
 		    		resultSet.getString("thorlfpain"),
 		    		resultSet.getString("thorlfspasm"),
 		    		resultSet.getString("thorlfstiff"),
-		    		resultSet.getString("thollfnormal"),
+		    		
 		    		resultSet.getString("thollfpain"),
 		    		resultSet.getString("thollfspasm"),
 		    		resultSet.getString("thollfstiff"),
-		    		resultSet.getString("thorrnormal"),
+		    		
 		    		resultSet.getString("thorrpain"),
 		    		resultSet.getString("thorrspasm"),
 		    		resultSet.getString("thorrstiff"),
-		    		resultSet.getString("tholrnormal"),
+		    		
 		    		resultSet.getString("tholrpain"),
 		    		resultSet.getString("tholrspasm"),
 		    		resultSet.getString("tholrstiff"),
@@ -1202,6 +1325,8 @@ public List<Physicalexam> getlimitedphysicalexam(int page) {
 		    		resultSet.getString("positiveluq"),
 		    		resultSet.getString("positiverlq"),
 		    		resultSet.getString("positivellq"),
+		    		resultSet.getString("patientsmoker"),
+		    		
 		    		resultSet.getString("highcrestright"),
 		    		resultSet.getString("highcrestleft"),
 		    		resultSet.getString("highcrestnormal"),
@@ -1229,30 +1354,58 @@ public List<Physicalexam> getlimitedphysicalexam(int page) {
 		    		resultSet.getString("abdomentender"),
 		    		resultSet.getString("abdomenpulse"),
 		    		resultSet.getString("abdomenascites"),
-		    		resultSet.getString("lumflexnormal"),
+		    		
 		    		resultSet.getString("lumflexpain"),
 		    		resultSet.getString("lumflexspasm"),
 		    		resultSet.getString("lumflexstiff"),
-		    		resultSet.getString("lumextnormal"),
+		    		
 		    		resultSet.getString("lumextpain"),
 		    		resultSet.getString("lumextspasm"),
 		    		resultSet.getString("lumextstiff"),
-		    		resultSet.getString("lumrlfnormal"),
+		    		
 		    		resultSet.getString("lumrlfpain"),
 		    		resultSet.getString("lumrlfspasm"),
 		    		resultSet.getString("lumrlfstiff"),
-		    		resultSet.getString("lumllfnormal"),
+		    		
 		    		resultSet.getString("lumllfpain"),
 		    		resultSet.getString("lumllfspasm"),
 		    		resultSet.getString("lumllfstiff"),
-		    		resultSet.getString("lumrrnormal"),
+		    		
 		    		resultSet.getString("lumrrpain"),
 		    		resultSet.getString("lumrrspasm"),
 		    		resultSet.getString("lumrrstiff"),
-		    		resultSet.getString("lumlrnormal"),
+		    		
 		    		resultSet.getString("lumlrpain"),
 		    		resultSet.getString("lumlrspasm"),
 		    		resultSet.getString("lumlrstiff"),
+		    		resultSet.getString("lu1"),
+		    		resultSet.getString("lu1right"),
+		    		resultSet.getString("lu1left"),
+		    		resultSet.getString("lu2"),
+		    		resultSet.getString("lu2right"),
+		    		resultSet.getString("lu2left"),
+		    		resultSet.getString("lu3"),
+		    		resultSet.getString("lu3right"),
+		    		resultSet.getString("lu3left"),
+		    		resultSet.getString("lu4"),
+		    		resultSet.getString("lu4right"),
+		    		resultSet.getString("lu4left"),
+		    		resultSet.getString("lu5"),
+		    		resultSet.getString("lu5right"),
+		    		resultSet.getString("lu5left"),
+		    		resultSet.getString("lu6"),
+		    		resultSet.getString("lu6right"),
+		    		resultSet.getString("lu6left"),
+		    		resultSet.getString("lu7"),
+		    		resultSet.getString("lu7right"),
+		    		resultSet.getString("lu7left"),
+		    		
+		    		
+		    		
+		    		
+		    		
+		    		
+		    		
 		    		resultSet.getString("hipflexright"),
 		    		resultSet.getString("hipflexleft"),
 		    		resultSet.getString("legextright"),
