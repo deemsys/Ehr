@@ -253,7 +253,7 @@
 				  <tr>
 				  <td><br><input type="button" id="btnNext" class="submit_btn" value="Next"/><br></td>
 				  <td>&nbsp;&nbsp;</td>
-				  <td><br><input type="button"  class="submit_btn" value="Cancel" onclick="window.location.href='viewpatient'"/><br></td>
+				  <td><br><!-- <input type="button"  class="submit_btn" value="Cancel" onclick="window.location.href='viewpatient'"/> --><br></td>
 				  </tr>
 				  </table>
 				                  </td>
@@ -485,7 +485,7 @@
 				  	<td>&nbsp;&nbsp;</td>
 				  <td><br><input type="button" id="btnNext" class="submit_btn" value="Next"/><br></td>
 				  <td>&nbsp;&nbsp;</td>
-				  <td><br><input type="button"  class="submit_btn" value="Cancel" onclick="window.location.href='viewpatient'"/><br></td>
+				  <td><br><!-- <input type="button"  class="submit_btn" value="Cancel" onclick="window.location.href='viewpatient'"/> --><br></td>
 				  </tr>
 				  </table>
 				</td>
@@ -772,7 +772,7 @@
 				  <tr>
 				  <td><input type="button" id="btnPrevious" class="submit_btn" value="Previous"  /></td>
 				  	<td>&nbsp;&nbsp;</td>
-				  <td><br><input type="button"  class="submit_btn" value="Cancel" onclick="window.location.href='viewpatient'"/><br></td>
+				  <td><br><!-- <input type="button"  class="submit_btn" value="Cancel" onclick="window.location.href='viewpatient'"/> --><br></td>
 				  </tr>
 				  </table>
 				      </td>

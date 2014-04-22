@@ -251,7 +251,7 @@ Opinion 2007-7 provides the following further ethical directions:
             <br>
             <br>
             <table><tr> <td><input type="submit" class="submit_btn" value="Update"></td>
-               <td><a href="insertpatientattorney"style="color:white" class="submit_btn">Cancel</a></td>
+               <td><a href="viewallpatientdetails"style="color:white" class="submit_btn">Cancel</a></td>
               </tr></table>
               </div>
         	  </div>

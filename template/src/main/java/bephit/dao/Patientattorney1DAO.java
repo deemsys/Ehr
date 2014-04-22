@@ -29,7 +29,7 @@ public class Patientattorney1DAO {
 	
 		
 	
-	public int setpatientattorney(Patientattorney patientattorneydetails)
+	public int setpatientattorney(Patientattorney patientattorneydetails,String username)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -43,10 +43,11 @@ public class Patientattorney1DAO {
 		}
 		
 	    try{
-	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+	    	 
+	    	DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 
-	    	 String cmd="INSERT INTO patientattorney (name,address,reg,patientname,date,dearsir,nameofclinic,treat) VALUES ('"+patientattorneydetails.getName()+"','"+patientattorneydetails.getAddress()+"','"+patientattorneydetails.getReg()+"','"+patientattorneydetails.getPatientname()+"','"+patientattorneydetails.getDate()+"','"+patientattorneydetails.getDearsir()+"','"+patientattorneydetails.getNameofclinic()+"','"+patientattorneydetails.getTreat()+"')";
+	    	 String cmd="INSERT INTO patientattorney (username,name,address,reg,patientname,date,dearsir,nameofclinic,treat) VALUES ('"+username+"','"+patientattorneydetails.getName()+"','"+patientattorneydetails.getAddress()+"','"+patientattorneydetails.getReg()+"','"+patientattorneydetails.getPatientname()+"','"+patientattorneydetails.getDate()+"','"+patientattorneydetails.getDearsir()+"','"+patientattorneydetails.getNameofclinic()+"','"+patientattorneydetails.getTreat()+"')";
 	    	    System.out.println("cmd insert value"+cmd);
 	    	    statement.executeUpdate(cmd);
 	    	    }
@@ -124,6 +125,48 @@ public class Patientattorney1DAO {
 		List<Patientattorney> patientattorney = new ArrayList<Patientattorney>();
 	    try{
 			resultSet = statement.executeQuery("select * from patientattorney where patientid='"+patientid+"'");
+			while(resultSet.next()){
+				patientattorney.add(new Patientattorney
+						(resultSet.getString("patientid"),
+								resultSet.getString("name"),
+						resultSet.getString("address"),
+						resultSet.getString("reg"),
+						resultSet.getString("patientname"),
+						resultSet.getString("date"),
+			    		resultSet.getString("dearsir"),
+			    		resultSet.getString("nameofclinic"),
+			    		resultSet.getString("treat")
+			    		 ));
+				System.out.println("Name::::::::::::::::::"+patientattorney.get(0).getName());
+			    	
+			}
+	    }catch(Exception e){
+	    	System.out.println(e.toString());
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    }finally{
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);	    	
+	    }
+	    return patientattorney;
+		
+	}
+	
+	public List<Patientattorney> getusernamepatientattorney(String username){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<Patientattorney> patientattorney = new ArrayList<Patientattorney>();
+	    try{
+			resultSet = statement.executeQuery("select * from patientattorney where username='"+username+"'");
 			while(resultSet.next()){
 				patientattorney.add(new Patientattorney
 						(resultSet.getString("patientid"),

@@ -76,7 +76,40 @@ public class SignupDAO {
 	    
 	}
 
-	
+	public List<Signup> getPatientusername(String username){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		
+		List<Signup> Signup = new ArrayList<Signup>();
+	    try{
+			resultSet = statement.executeQuery("select * from tbl_signup where username='"+username+"'");
+			while(resultSet.next()){
+				Signup.add(new Signup(resultSet.getString("username"),
+			    		resultSet.getString("password"),
+			    		resultSet.getString("confirm"),
+			    		resultSet.getString("email")));
+			    		
+			    		
+			}
+	    }catch(Exception e){
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    }finally{
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);	    	
+	    }
+	    return Signup;
+		
+	}
 public List<Signup> getSignup(){
 	Connection con = null;
 	Statement statement = null;

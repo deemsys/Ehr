@@ -2,8 +2,40 @@
 <jsp:include page="header.jsp"></jsp:include>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
+ <link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
+  <link rel="stylesheet" href="/resources/css/style.css" />
+ <script src="resources/js/jquery.min.js"></script> 
+ <script src="resources/js/jquery-ui.js"></script>
+ <script src="resources/js/jquey-1.9.1.js"></script>
+
 <div id="right_content">
-	
+	<script type="text/javascript">
+function doAjaxPost() {  
+	  // get the form values  
+	  var name = $('#adjuster').val();
+	 /*   var education = $('#education').val();	 */   
+	  $.ajax({  
+	    type: "POST",  
+	    url: "/bcresearchapp/AddUser.htm",  
+	    data: "adjuster=" + name,  
+	    success: function(response){  
+	      // we have the response  
+	      $('#info').html(response);
+	      /*     $('#education').val(''); */
+	    },  
+	    error: function(e){  
+	      alert('Error: ' + e);  
+	    }  
+	  });  
+	}  
+</script>
+    	 <script>
+ $(function() {
+           $( "#datepicker" ).datepicker();
+         });
+ 
+</script>
+    	
     	<table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
       		
 			<tr>
@@ -25,6 +57,15 @@
 			        </div>
 			        <div class="contentbox">
 			      <!--   <form action="findPatients" method="GET">  --> 
+			      
+			    <form action="findpatient" method="GET">
+			  <table><tr><td>Last Name:</td><td><input type="text" name="lastname" value="${lastname}"></td>
+			  <td>Attorney:</td><td><input type="text" name="NameOfAttorney" value="${attorney}"></td>
+			  <td>Type of Accident:</td><td><input type="text" name="accident" value="${accident}"></td>
+			  <td>Date of Accident</td><td><input type="text" name="dateofaccident" id="datepicker" value="${dateofaccident}"></td>
+			  <td width="300"></td><td><input type="submit" value="Find" class="submit_btn"></td></tr></table>    
+			      
+			      </form>
 			      <form action="patientDetails" method="POST"> 
 						<table cellpadding="0" cellspacing="0" border="0" width="100%">
 				     <tr class="title">
@@ -38,7 +79,7 @@
         					<c:if test="${fn:length(patientDetailsForm.patientDetails) gt 0}">
         				  <c:forEach items="${patientDetailsForm.patientDetails}" var="patientDetails" varStatus="status">
         				       	<tr class="row1">
-							      	 <td valign="top" align="left"  width="10%"> <a href="patientDetailsList?patient_id=${patientDetails.patient_id}">${patientDetails.name}</a></td>
+							      	 <td valign="top" align="left"  width="10%"> <a href="patientdoctorDetailsList?patient_id=${patientDetails.patient_id}">${patientDetails.name}</a></td>
 											
 										 	<td valign="top" align="left" width="15%">${patientDetails.mobileNumber}</td>
 											<td valign="top" align="left" width="10%">${patientDetails.city}</td>
@@ -56,7 +97,7 @@
         							
 							    <c:if test="${fn:length(patientDetailsForm.patientDetails) == 0}">	
 							    	<tr class="row1">
-							    	<td colspan="7" width="100%"><center><b>No Patients Found.Please Add Patient Details!!!</b></center></td>
+							    	<td colspan="7" width="100%"><center><b>No Patients Found.</b></center></td>
 							    	</tr>
 							    	</c:if>
 					<tr><td colspan="6">  

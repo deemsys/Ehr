@@ -28,7 +28,7 @@ public class PerrychiropracticDAO {
 	
 		
 	
-	public int setperrychiropractic(Perrychiropractic perrychiropracticdetails)
+	public int setperrychiropractic(Perrychiropractic perrychiropracticdetails,String username)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -45,7 +45,7 @@ public class PerrychiropracticDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 
-	    	 String cmd="INSERT INTO perrychiropractic (insurance,address,address1,reg,nameofperson,dateofaccident,subject) VALUES ('"+perrychiropracticdetails.getInsurance()+"','"+perrychiropracticdetails.getAddress()+"','"+perrychiropracticdetails.getAddress1()+"','"+perrychiropracticdetails.getReg()+"','"+perrychiropracticdetails.getNameofperson()+"','"+perrychiropracticdetails.getDateofaccident()+"','"+perrychiropracticdetails.getSubject()+"')";
+	    	 String cmd="INSERT INTO perrychiropractic (username,insurance,address,address1,reg,nameofperson,dateofaccident,subject) VALUES ('"+username+"','"+perrychiropracticdetails.getInsurance()+"','"+perrychiropracticdetails.getAddress()+"','"+perrychiropracticdetails.getAddress1()+"','"+perrychiropracticdetails.getReg()+"','"+perrychiropracticdetails.getNameofperson()+"','"+perrychiropracticdetails.getDateofaccident()+"','"+perrychiropracticdetails.getSubject()+"')";
 	    	    System.out.println("cmd insert value"+cmd);
 	    	    statement.executeUpdate(cmd);
 	    	    }
@@ -156,6 +156,46 @@ public class PerrychiropracticDAO {
 		List<Perrychiropractic> perrychiropractic = new ArrayList<Perrychiropractic>();
 	    try{
 			resultSet = statement.executeQuery("select * from perrychiropractic where perryid='"+perryid+"'");
+			while(resultSet.next()){
+				perrychiropractic.add(new Perrychiropractic
+						(resultSet.getString("perryid"),
+								resultSet.getString("insurance"),
+						resultSet.getString("address"),
+						resultSet.getString("address1"),
+						resultSet.getString("reg"),
+			    		resultSet.getString("nameofperson"),
+			    		resultSet.getString("DateofAccident"),
+						resultSet.getString("subject")
+			    		 ));
+				System.out.println("Name::::::::::::::::::"+perrychiropractic.get(0).getNameofperson());
+			    	
+			}
+	    }catch(Exception e){
+	    	System.out.println(e.toString());
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    }finally{
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);	    	
+	    }
+	    return perrychiropractic;
+		
+	}
+	public List<Perrychiropractic> getusernameperrychiropractic(String username){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<Perrychiropractic> perrychiropractic = new ArrayList<Perrychiropractic>();
+	    try{
+			resultSet = statement.executeQuery("select * from perrychiropractic where username='"+username+"'");
 			while(resultSet.next()){
 				perrychiropractic.add(new Perrychiropractic
 						(resultSet.getString("perryid"),

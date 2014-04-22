@@ -415,7 +415,7 @@ $(function() {
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="further_injury" value="yes" class="input_txt" id="furthercheck" onclick="toggle2();" <c:if test="${autoaccident.further_injury=='yes'}"><c:out value="Checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="further_injury" value="no" class="input_txt" onclick="toggle2();" <c:if test="${autoaccident.further_injury=='no'}"><c:out value="Checked"/></c:if>>No&nbsp;&nbsp;&nbsp;<span class="err"><form:errors path="Autoaccident.further_injury"></form:errors></span>
-				  <textarea rows='3' cols='35' id="injury"  style='display:none' placeholder="Please explain" name="injurytext">${autoaccident.injurytext}<span class="err"><form:errors path="Autoaccident.injurytext"></form:errors></span></textarea>
+				  <textarea rows='3' cols='35' id="injury"  style='display:none' placeholder="Please explain" name="injurytext">${autoaccident.injurytext}</textarea><span class="err"><form:errors path="Autoaccident.injurytext"></form:errors></span>
 				  </td>
 				  </tr>
 				  <!--  <tr class="row2">

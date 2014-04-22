@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import bephit.dao.FormbillDAO;
@@ -23,12 +24,14 @@ import bephit.dao.FaxcoverDAO;
 import bephit.dao.LettertopatientsDAO;
 
 import bephit.dao.NoticeassignmentDAO;
+import bephit.dao.PatientDAO;
 import bephit.dao.Patientattorney1DAO;
 import bephit.dao.PerrychiropracticDAO;
 import bephit.dao.PimedpayDAO;
 import bephit.dao.RequestfordemandDAO;
 import bephit.dao.ResponseattorneyDAO;
 import bephit.dao.ReturntoschoolDAO;
+import bephit.dao.SignupDAO;
 import bephit.dao.UpdateletterDAO;
 import bephit.dao.WorkschoolDAO;
 import bephit.dao.XrayDAO;
@@ -60,6 +63,7 @@ import bephit.model.Formbill;
 import bephit.model.Lettertopatients;
 import bephit.model.Letterofprotection;
 
+import bephit.model.Dcfeeslip;
 import bephit.model.Noticeassignment;
 import bephit.model.Patientattorney;
 import bephit.model.Perrychiropractic;
@@ -74,6 +78,12 @@ import bephit.model.Workschool;
 
 public class AdminController {
 
+	@Autowired
+	SignupDAO signupDAO;
+	
+	@Autowired
+	PatientDAO patientDAO;
+	
 	@Autowired
 	NoticeassignmentDAO noticeassignmentDAO;
 	
@@ -115,6 +125,55 @@ public class AdminController {
 	@Autowired
 	ReturntoschoolDAO returntoschoolDAO;
 
+
+	@RequestMapping(value="/patientattorney_ajax",method=RequestMethod.POST)
+	public @ResponseBody String patientattorney(@ModelAttribute(value="username")Patientattorney patientattorney, BindingResult result,ModelMap model ) {
+		String returnText="";
+		String patientname="";
+		System.out.println("username"+patientattorney.getUsername());
+		if(signupDAO.getPatientusername(patientattorney.getUsername()).size()==0)
+		{
+			return "error";
+		}		
+	if(patientattorneyDAO.getusernamepatientattorney(patientattorney.getUsername()).size()>0)
+	{
+		patientname=patientattorneyDAO.getusernamepatientattorney(patientattorney.getUsername()).get(0).getPatientname();
+		System.out.println("pname"+patientname);
+		
+		model.addAttribute("edit","1");
+		return "edit"+patientname+"|"+patientattorney.getUsername();
+		/*PatientattorneyForm patientattorneyForm = new PatientattorneyForm();
+		patientattorneyForm.setPatientattorneydetails(patientattorneyDAO.getusernamepatientattorney(patientattorney.getUsername()));
+		model.addAttribute("patientattorneyform", patientattorneyForm);
+		model.addAttribute("menu", "perry");
+		return "editpatientattorney";*/
+	}
+	if(patientDAO.getUsername(patientattorney.getUsername()).size()>0)
+	{
+		patientname=patientDAO.getUsername(patientattorney.getUsername()).get(0).getName();
+	}	
+		
+		/*System.out.println("initialemlimited"+dcfeeslip.getInitialemlimited());
+	
+		
+			int ans=feeslipDAO.setAns(dcfeeslip);
+			System.out.println("ans"+ans);
+			returnText=Integer.toString(ans);*/
+				returnText=patientname+"|"+patientattorney.getUsername();
+				return returnText;
+				
+	}
+	@RequestMapping(value = "/editpatientattorneydetails", method = RequestMethod.GET)
+	public String editpatientattorneydetails(@RequestParam("username") String username, HttpSession session,ModelMap model) {
+		PatientattorneyForm patientattorneyForm = new PatientattorneyForm();
+		patientattorneyForm.setPatientattorneydetails(patientattorneyDAO.getusernamepatientattorney(username));
+		model.addAttribute("patientattorneyform", patientattorneyForm);
+		model.addAttribute("menu", "perry");
+		return "editpatientattorney";
+
+	}
+	
+	
 	@RequestMapping(value = "/viewperrychiropractic", method = RequestMethod.GET)
 	public String viewperrychiropractic(HttpSession session, ModelMap model) {
 		PerrychiropracticForm perrychiropracticform = new PerrychiropracticForm();
@@ -297,6 +356,8 @@ public class AdminController {
 		return "editpatientattorney";
 
 	}
+	
+	
 
 	@RequestMapping(value = "/editformbill", method = RequestMethod.GET)
 	public String editformbill(@RequestParam("formid") String formid,HttpSession session, ModelMap model) {
@@ -655,7 +716,7 @@ NoticeassignmentForm noticeassignmentform = new NoticeassignmentForm();
 		patientattorneyform.setPatientattorneydetails(patientattorneyDAO.getpatientattorney());
 		model.addAttribute("patientattorneyform",patientattorneyform);
 		model.addAttribute("success","true");
-		return "viewpatientattorney";
+		return "patientattorney";
 
 	}
 
@@ -698,8 +759,10 @@ NoticeassignmentForm noticeassignmentform = new NoticeassignmentForm();
 	public String insert_perrychiropractic(HttpServletRequest request,HttpSession session,@ModelAttribute("Perrychiropractic")  @Valid Perrychiropractic perrychiropracticdetails,BindingResult result,ModelMap model) {
 		session.setAttribute("peri",perrychiropracticdetails);
 		model.addAttribute("menu","peri");
+		String username=request.getParameter("username");
 		if(result.hasErrors())
 		{
+			model.addAttribute("username",username);
 			model.addAttribute("menu", "perry");
 			PerrychiropracticForm perrychiropracticform = new PerrychiropracticForm();
 			perrychiropracticform.setPerrychiropracticdetails(perrychiropracticDAO.getperrychiropractic());
@@ -708,12 +771,12 @@ NoticeassignmentForm noticeassignmentform = new NoticeassignmentForm();
 			return "perrychiropractic";
 		}
 		// System.out.println(perrychiropracticdetails.getAddress()+""+perrychiropracticdetails.getAddress1());
-		perrychiropracticDAO.setperrychiropractic(perrychiropracticdetails);
+		perrychiropracticDAO.setperrychiropractic(perrychiropracticdetails,username);
 		PerrychiropracticForm perrychiropracticform = new PerrychiropracticForm();
 		perrychiropracticform.setPerrychiropracticdetails(perrychiropracticDAO.getperrychiropractic());
 		model.addAttribute("perrychiropracticform", perrychiropracticform);
 		model.addAttribute("success","true");
-		return "viewperrychiropractic";
+		return "perrychiropracticsearch";
 
 	}
 
@@ -887,6 +950,9 @@ NoticeassignmentForm noticeassignmentform = new NoticeassignmentForm();
 	@RequestMapping(value = "/insertpatientattorney", method = RequestMethod.POST)
 	public String insert_patientattorney(HttpServletRequest request,HttpSession session,@ModelAttribute("Patientattorney") @Valid Patientattorney patientattorneydetails,
 			BindingResult result, ModelMap model) {
+		String username=request.getParameter("user");
+		System.out.println("username"+username+"user"+request.getParameter("username"));
+		model.addAttribute("username",username);
 		session.setAttribute("patient",patientattorneydetails);
 		model.addAttribute("menu", "perry");
 		if (result.hasErrors()) {
@@ -899,13 +965,13 @@ NoticeassignmentForm noticeassignmentform = new NoticeassignmentForm();
 			return "patientattorney";
 		}
 
-		patientattorneyDAO.setpatientattorney(patientattorneydetails);
+		/*patientattorneyDAO.setpatientattorney(patientattorneydetails,username);
 		PatientattorneyForm patientattorneyform = new PatientattorneyForm();
 		patientattorneyform.setPatientattorneydetails(patientattorneyDAO.getpatientattorney());
 		model.addAttribute("patientattorneyform", patientattorneyform);
-		model.addAttribute("success","true");
+		model.addAttribute("success","true");*/
 		
-		return "viewpatientattorney";
+		return "patientattorney";
 
 	}
 

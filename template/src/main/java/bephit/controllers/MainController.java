@@ -102,7 +102,7 @@ import java.util.*;
  
 @Controller
 
-@SessionAttributes({"physical","radio","waiver","info","injury","consent","minor","hard","screen","medical","assignment","hippa","staff","veri","first","role","signup","doctorsignup","patientid","soap","auto","visit","work"})
+@SessionAttributes({"physical","radio","waiver","info","injury","consent","minor","hard","screen","medical","assignment","hippa","staff","veri","first","role","signup","doctorsignup","patientid","soap","auto","visit","work","lastname","attorney","accident","dateofaccident"})
 
 public class MainController {
 	
@@ -196,7 +196,10 @@ public class MainController {
  
 	@RequestMapping(value={"/", "/welcome"}, method = RequestMethod.GET)
 	public String printWelcome(HttpSession session,HttpServletRequest request,ModelMap model, Principal principal ) {
-		
+		session.removeAttribute("lastname");		
+		session.removeAttribute("attorney");
+		session.removeAttribute("accident");
+		session.removeAttribute("dateofaccident");
 		 int role=mainDAO.getrole();
 	       System.out.println("Role:"+role);
         model.addAttribute("menu","patientDetails");
@@ -2064,7 +2067,7 @@ public class MainController {
 		{
 			model.addAttribute("username","exist");
 			System.out.println("username exist");
-			return "login";
+			return "signup";
 		}
 		model.addAttribute("menu","sign");		
     	int h =signDAO.setSignup(signup);
@@ -3325,11 +3328,17 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 		
 	}	
 	@RequestMapping(value="/viewpatientdetails", method=RequestMethod.GET)
-	public String viewpatientdetails(HttpServletRequest request,ModelMap model, Principal principal) {
+	public String viewpatientdetails(HttpSession session,HttpServletRequest request,ModelMap model, Principal principal) {
+		session.removeAttribute("lastname");		
+		session.removeAttribute("attorney");
+		session.removeAttribute("accident");
+		session.removeAttribute("dateofaccident");	
+		
 		if(patientDAO.getUsername(principal).size()>0)
 		{			
 	   model.addAttribute("patientno","0");
 	}
+		
 		PatientDetailsForm patientdetailsform = new PatientDetailsForm();
 		//patientdetailsform.setPatientDetails(patientDAO.getUsername(principal));
 		patientdetailsform.setPatientDetails(patientDAO.getPatientDetails());
@@ -3344,6 +3353,36 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 	        model.addAttribute("success","false");
 	        model.addAttribute("currentpage",1);
 		
+		
+		return "viewpatientdetails";
+ 
+	}	
+
+	@RequestMapping(value="/findpatient", method=RequestMethod.GET)
+	public String findpatientdetails(HttpSession session,@RequestParam("NameOfAttorney")String NameOfAttorney,@RequestParam("lastname")String lastname,@RequestParam("accident")String accident,@RequestParam("dateofaccident")String dateofaccident, HttpServletRequest request,ModelMap model, Principal principal) {
+		if(patientDAO.getUsername(principal).size()>0)
+		{			
+	   model.addAttribute("patientno","0");
+	}
+		session.setAttribute("lastname",lastname);
+		session.setAttribute("attorney",NameOfAttorney);
+		session.setAttribute("accident",accident);
+		session.setAttribute("dateofaccident",dateofaccident);
+		
+		PatientDetailsForm patientdetailsform = new PatientDetailsForm();
+		//patientdetailsform.setPatientDetails(patientDAO.getUsername(principal));
+		patientdetailsform.setPatientDetails(patientDAO.getPatientAttorneyDetails(NameOfAttorney,lastname,accident,dateofaccident));
+        model.addAttribute("patientDetailsForm", patientdetailsform);
+       // System.out.println("patient="+patientdetailsform.getPatientDetails().size());
+        model.addAttribute("menu", "search");
+        System.out.println("Patient");
+       /* model.addAttribute("noofrows",patientdetailsform.getPatientDetails().size());       
+	    patientdetailsform.setPatientDetails(patientDAO.getlimitedpatientdetails(1));
+        model.addAttribute("noofpages",(int) Math.ceil(patientDAO.getnoofpatientdetails() * 1.0 / 5));	 
+	        model.addAttribute("button","viewall");
+	        model.addAttribute("success","false");
+	        model.addAttribute("currentpage",1);
+		*/
 		
 		return "viewpatientdetails";
  
@@ -3439,6 +3478,34 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 		
 		return "patientDetailsList";
 	}
+	@RequestMapping(value="/patientdoctorDetailsList", method=RequestMethod.GET)
+	public String patientdoctorDetailsList(Principal principal,HttpServletRequest request,@RequestParam("patient_id") String patient_id,ModelMap model,PatientDetails patient)
+	{
+		
+
+		if(patientDAO.getUsername(principal).size()>0)
+			{			
+		   model.addAttribute("patientno","0");
+		}
+		//ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
+		model.addAttribute("patientno","0");
+		PatientDetailsForm patientdetailsform = new PatientDetailsForm();
+        //participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants(participants_id));
+		patientdetailsform.setPatientDetails(patientDAO.viewPatientDetails(patient_id));
+		
+		//model.addAttribute("participantsDetailsForm", participantsDetailsForm);
+		model.addAttribute("patientDetailsForm", patientdetailsform);
+		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
+		model.addAttribute("menu", "search");
+		List<String> symptom=new ArrayList<String>();
+		symptom=patientDAO.getsymptomdetails(patient_id);
+		System.out.println(symptom);
+		model.addAttribute("symptom",symptom);
+		
+		
+		return "patientDetailsList";
+	}
+	
 	@RequestMapping(value="/editpatientdetails", method=RequestMethod.GET)
 	public String editPatientDetails(HttpServletRequest request,@RequestParam("patient_id") String patient_id,ModelMap model,PatientDetails patient,Principal principal)
 	{

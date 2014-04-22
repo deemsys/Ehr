@@ -1314,8 +1314,8 @@ color:#fff;
 							      <li><a href="viewduties">View Duties Under Duress Summary</a></li>
 							     </ul>
 						<ul id="ddsubmenu30" class="ddsubmenustyle">
-							      <li><a href="perrychiropractic" >Form Cover Letter</a></li>
-							      <li><a href="viewperrychiropractic">View Form Cover Letter</a></li>
+							      <li><a href="perrychiropracticsearch" >Form Cover Letter</a></li>
+							    <!--   <li><a href="viewperrychiropractic">View Form Cover Letter</a></li> -->
 							      <li><a href="patientattorney" >Form Cover Letter For Patient's Attorney</a></li>
 							      <li><a href="viewpatientattorney">View Form Cover Letter For Patient's Attorney</a></li>
 							     <li><a href="updateletter" >Update Letter</a></li>

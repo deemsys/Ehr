@@ -43,6 +43,7 @@
 	            </div>
 
 	            <div class="contentbox">
+	            <input type="text" name="username" value="${username}">
 	            	                      <c:choose>
 <c:when test="${empty peri}">
 	             <table cellpadding="0" cellspacing="0" border="0" width="100%">
