@@ -29,7 +29,7 @@ public class XrayDAO {
 	
 		
 	
-	public int setxray(Xray xraydetails)
+	public int setxray(Xray xraydetails,String username)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -46,7 +46,7 @@ public class XrayDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 
-	    	 String cmd="INSERT INTO xray (name,date,date1,sign,date2) VALUES ('"+xraydetails.getName()+"','"+xraydetails.getDate()+"','"+xraydetails.getDate1()+"','"+xraydetails.getSign()+"','"+xraydetails.getDate2()+"')";
+	    	 String cmd="INSERT INTO xray (username,name,date,date1,sign,date2) VALUES ('"+username+"','"+xraydetails.getName()+"','"+xraydetails.getDate()+"','"+xraydetails.getDate1()+"','"+xraydetails.getSign()+"','"+xraydetails.getDate2()+"')";
 	    	    System.out.println("cmd insert value"+cmd);
 	    	    statement.executeUpdate(cmd);
 	    	    }
@@ -81,7 +81,7 @@ public class XrayDAO {
 		}
 		List<Xray> xray = new ArrayList<Xray>();
 	    try{
-			resultSet = statement.executeQuery("select * from xray");
+			resultSet = statement.executeQuery("select * from xray ");
 			while(resultSet.next()){
 				xray.add(new Xray
 						(resultSet.getString("xrayid"),
@@ -149,6 +149,45 @@ public class XrayDAO {
 	}
 	
 	
+	public List<Xray> getusernamexray(String username){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<Xray> xray = new ArrayList<Xray>();
+	    try{
+			resultSet = statement.executeQuery("select * from xray where username='"+username+"'");
+			while(resultSet.next()){
+				xray.add(new Xray
+						(resultSet.getString("xrayid"),
+								resultSet.getString("name"),
+						resultSet.getString("date"),
+						resultSet.getString("date1"),
+						resultSet.getString("sign"),
+			    		resultSet.getString("date2")
+			    		 ));
+				System.out.println("Name::::::::::::::::::"+xray.get(0).getName());
+			    	
+			}
+	    }catch(Exception e){
+	    	System.out.println("e"+e);
+	    	System.out.println(e.toString());
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    }finally{
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);	    	
+	    }
+	    return xray;
+		
+	}
 	
 	public int updatexray(Xray xray,String xrayid)
 	{

@@ -336,14 +336,7 @@ public class AdminController {
 		return "editrequestfordemand";
 	}
 
-	@RequestMapping(value = "/editxray", method = RequestMethod.GET)
-	public String editxray(@RequestParam("xrayid") String xrayid,HttpSession session, ModelMap model) {
-		XrayForm xrayForm = new XrayForm();
-		xrayForm.setxraydetails(xrayDAO.getxray(xrayid));
-		model.addAttribute("xrayform", xrayForm);
-		model.addAttribute("menu", "xray");
-		return "editxray";
-	}
+	
 
 	@RequestMapping(value = "/editpimedpay", method = RequestMethod.GET)
 	public String editpimedpay(@RequestParam("medpayid") String medpayid,HttpSession session, ModelMap model) {
@@ -437,16 +430,7 @@ public class AdminController {
 
 	
 	
-	@RequestMapping(value="/deletexray", method = RequestMethod.GET)
-	public String deletexray(@RequestParam("xrayid")String xrayid, HttpSession session,ModelMap model) {	
-		model.addAttribute("success","true");
-		xrayDAO.deletexray(xrayid);		
-		XrayForm xrayForm=new XrayForm();
-		xrayForm.setxraydetails(xrayDAO.getxray());
-		model.addAttribute("xrayForm", xrayForm);
-		//model.addAttribute("menu", "xray");
-		return "viewxray";
-	}
+	
 
 
 	@RequestMapping(value="/deleteformbill", method = RequestMethod.GET)
@@ -688,24 +672,7 @@ NoticeassignmentForm noticeassignmentform = new NoticeassignmentForm();
 
 	}
 
-	@RequestMapping(value = "/updatexray", method = RequestMethod.POST)
-	public String update_xray(HttpServletRequest request, HttpSession session,@ModelAttribute("xraydetails") @Valid Xray xraydetails,BindingResult result, ModelMap model) {
-		// session.setAttribute("perrydetails",perrychiropracticdetails);
-		if (result.hasErrors()) {
-			model.addAttribute("menu", "initial");
-			return "xray";
-		}
-
-		//System.out.println(perrychiropracticdetails.getAddress()+""+perrychiropracticdetails.getAddress1());
-		xrayDAO.updatexray(xraydetails,xraydetails.getXrayid());
-		XrayForm xrayform=new XrayForm();
-		xrayform.setxraydetails(xrayDAO.getxray());
-		model.addAttribute("xrayform", xrayform);
-		
-		return "viewxray";
-
-	}
-
+	
 	@RequestMapping(value = "/updatepatientattorney", method = RequestMethod.POST)
 	public String update_patientattorney(HttpServletRequest request,HttpSession session,@ModelAttribute("Patientattorney") @Valid Patientattorney patientattorneydetails,BindingResult result, ModelMap model) {
 		// session.setAttribute("perrydetails",perrychiropracticdetails);
@@ -906,30 +873,7 @@ NoticeassignmentForm noticeassignmentform = new NoticeassignmentForm();
 
 	}
 
-	@RequestMapping(value = "/insertxray", method = RequestMethod.POST)
-	public String insert_xray(HttpServletRequest request, HttpSession session,
-			@ModelAttribute("Xray") @Valid Xray xraydetails,
-			BindingResult result, ModelMap model) {
-		 session.setAttribute("xray",xraydetails);
-		if (result.hasErrors()) {
-			XrayForm xrayform = new XrayForm();
-			xrayform.setxraydetails(xrayDAO.getxray());
-			model.addAttribute("xrayform", xrayform);
-			model.addAttribute("Success", "true");
-			model.addAttribute("menu", "xray");
-						
-
-			return "xray";
-		}
-
-		xrayDAO.setxray(xraydetails);
-		XrayForm xrayform = new XrayForm();
-		xrayform.setxraydetails(xrayDAO.getxray());
-		model.addAttribute("xrayform", xrayform);
-		return "viewxray";
-
-	}
-
+	
 	@RequestMapping(value = "/insertpimedpay", method = RequestMethod.POST)
 	public String insert_pimedpay(HttpServletRequest request,
 			HttpSession session,
