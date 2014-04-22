@@ -173,6 +173,15 @@ public class AdminController {
 
 	}
 	
+	@RequestMapping(value = "/deletepatientattorney", method = RequestMethod.GET)
+	public String deletepatientattorneydetails(@RequestParam("patientid") String patientid, HttpSession session,ModelMap model) {
+		patientattorneyDAO.deletepatientattorney(patientid);		
+		model.addAttribute("menu", "perry");
+		model.addAttribute("success", "true");
+		return "patientattorney";
+
+	}
+	
 	
 	@RequestMapping(value = "/viewperrychiropractic", method = RequestMethod.GET)
 	public String viewperrychiropractic(HttpSession session, ModelMap model) {
@@ -959,18 +968,18 @@ NoticeassignmentForm noticeassignmentform = new NoticeassignmentForm();
 			PatientattorneyForm patientattorneyform = new PatientattorneyForm();
 			patientattorneyform.setPatientattorneydetails(patientattorneyDAO.getpatientattorney());
 			model.addAttribute("patientattorneyform", patientattorneyform);
-			model.addAttribute("Success", "true");
+			
 		
 
 			return "patientattorney";
 		}
 
-		/*patientattorneyDAO.setpatientattorney(patientattorneydetails,username);
-		PatientattorneyForm patientattorneyform = new PatientattorneyForm();
+		patientattorneyDAO.setpatientattorney(patientattorneydetails,username);
+		/*PatientattorneyForm patientattorneyform = new PatientattorneyForm();
 		patientattorneyform.setPatientattorneydetails(patientattorneyDAO.getpatientattorney());
 		model.addAttribute("patientattorneyform", patientattorneyform);
 		model.addAttribute("success","true");*/
-		
+		model.addAttribute("success", "true");
 		return "patientattorney";
 
 	}

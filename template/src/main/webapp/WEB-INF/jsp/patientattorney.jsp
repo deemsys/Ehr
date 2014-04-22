@@ -124,8 +124,8 @@ function doAjaxPost() {
 		    	  {
 		    	 var cal=response.indexOf("|");
 		    	 var calculate=cal+1;
-			     alert(response.indexOf("|"));
-			   alert(response.substring(0,cal));
+			    // alert(response.indexOf("|"));
+			   //alert(response.substring(0,cal));
 			   document.getElementById("patientname").value=response.substring(0,cal);
 			   
 		    	 document.getElementById("user").value=response.substring(calculate,response.length);
@@ -159,9 +159,14 @@ function doAjaxPost() {
 </script>
 <div class='popup'>
 <div class='cnt223'>
-<br><br><br>
+<br><br>
+<c:if test="${success==true}">
+<table width="400"><tr><td align="center">Success!!!</td></tr></table>
+
+</c:if>
+<br>
  <table cellpadding="0" cellspacing="0" border="0" width="100%">
-	            <tr >
+ <tr >
 	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">*</span>Please enter a Patient User Name</td>
 				 <td width="20"></td> <td valign="top" align="left" class="input_txt" width="200">
 				   <input type="text" class="input_txtbx1" id="username" name="username" /><br/>
@@ -224,7 +229,7 @@ function openWindow(h, w, url) {
 
 }
 </script>
-<input type="text" name="user" id="user" value="${username}">
+<input type="hidden" name="user" id="user" value="${username}">
 <c:choose>
 <c:when test="${empty patient}">
 	            <div class="contentbox">
@@ -651,6 +656,7 @@ Opinion 2007-7 provides the following further ethical directions:
             <br>
           
             <table><tr> <td><input type="submit" class="submit_btn" value="Save"></td>
+           
                <td><a href="viewallpatientdetails"style="color:white" class="submit_btn">Cancel</a></td>
               </tr></table>
               </div>

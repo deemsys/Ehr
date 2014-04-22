@@ -247,10 +247,22 @@ Opinion 2007-7 provides the following further ethical directions:
               </table>
        		  
         	  </div>
-          
+          <script type="text/javascript">
+	function confirmation() 
+	{
+	var answer = confirm("Are you Sure You Want to Delete Participant ?")
+	if (answer){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+	</script>
             <br>
             <br>
             <table><tr> <td><input type="submit" class="submit_btn" value="Update"></td>
+               <td><a href="deletepatientattorney?patientid=${patientattorneydetails.patientid}"style="color:white" class="submit_btn" onclick="return confirmation() ">Delete</a></td>
                <td><a href="viewallpatientdetails"style="color:white" class="submit_btn">Cancel</a></td>
               </tr></table>
               </div>
