@@ -163,6 +163,44 @@ public class AdminController {
 				return returnText;
 				
 	}
+	
+	@RequestMapping(value="/updateletter_ajax",method=RequestMethod.POST)
+	public @ResponseBody String updateletter(@ModelAttribute(value="username")Updateletter updateletter, BindingResult result,ModelMap model ) {
+		String returnText="";
+		String patientname="";
+		System.out.println("username"+updateletter.getUsername());
+		if(signupDAO.getPatientusername(updateletter.getUsername()).size()==0)
+		{
+			return "error";
+		}		
+	if(updateletterDAO.getusernameupdateletter(updateletter.getUsername()).size()>0)
+	{
+		/*patientname=patientattorneyDAO.getusernamepatientattorney(updateletter.getUsername()).get(0).getPatientname();
+		System.out.println("pname"+patientname);
+		*/
+		model.addAttribute("edit","1");
+		return "edit"+patientname+"|"+updateletter.getUsername();
+		/*PatientattorneyForm patientattorneyForm = new PatientattorneyForm();
+		patientattorneyForm.setPatientattorneydetails(patientattorneyDAO.getusernamepatientattorney(patientattorney.getUsername()));
+		model.addAttribute("patientattorneyform", patientattorneyForm);
+		model.addAttribute("menu", "perry");
+		return "editpatientattorney";*/
+	}
+	/*if(patientDAO.getUsername(patientattorney.getUsername()).size()>0)
+	{
+		patientname=patientDAO.getUsername(patientattorney.getUsername()).get(0).getName();
+	}	
+	*/	
+		/*System.out.println("initialemlimited"+dcfeeslip.getInitialemlimited());
+	
+		
+			int ans=feeslipDAO.setAns(dcfeeslip);
+			System.out.println("ans"+ans);
+			returnText=Integer.toString(ans);*/
+				returnText=patientname+"|"+updateletter.getUsername();
+				return returnText;
+				
+	}
 	@RequestMapping(value = "/editpatientattorneydetails", method = RequestMethod.GET)
 	public String editpatientattorneydetails(@RequestParam("username") String username, HttpSession session,ModelMap model) {
 		PatientattorneyForm patientattorneyForm = new PatientattorneyForm();
@@ -327,7 +365,15 @@ public class AdminController {
 		return "editupdateletter";
 
 	}
+	@RequestMapping(value = "/editupdateletterdetails", method = RequestMethod.GET)
+	public String editupdateletterdetails(@RequestParam("username") String username,HttpSession session, ModelMap model) {
+		UpdateletterForm updateletterform = new UpdateletterForm();
+		updateletterform.setUpdateletterdetails(updateletterDAO.getusernameupdateletter(username));
+		model.addAttribute("updateletterform", updateletterform);
+		//model.addAttribute("menu", "perry");
+		return "editupdateletter";
 
+	}
 	@RequestMapping(value = "/editrequestfordemand", method = RequestMethod.GET)
 	public String editrequestfordemand(@RequestParam("requestid") String requestid, HttpSession session,ModelMap model) {
 		RequestfordemandForm requestfordemandform = new RequestfordemandForm();
@@ -412,10 +458,11 @@ public class AdminController {
 	public String deleteupdateletter(@RequestParam("updateid") String updateid,HttpSession session, ModelMap model) {
 		model.addAttribute("menu", "perry");
 		updateletterDAO.deleteupdateletter(updateid);
-		UpdateletterForm updateletterform = new UpdateletterForm();
+		/*UpdateletterForm updateletterform = new UpdateletterForm();
 		updateletterform.setUpdateletterdetails(updateletterDAO.getupdateletter());
-		model.addAttribute("updateletterform", updateletterform);
-		return "viewupdateletter";
+		model.addAttribute("updateletterform", updateletterform);*/
+		model.addAttribute("success",true);
+		return "updateletter";
 	}
 
 		
@@ -633,7 +680,7 @@ NoticeassignmentForm noticeassignmentform = new NoticeassignmentForm();
 			UpdateletterForm updateletterform = new UpdateletterForm();
 			updateletterform.setUpdateletterdetails(updateletterDAO.getupdateletter());
 			model.addAttribute("updateletterform", updateletterform);
-			return "updateletter";
+			return "editupdateletter";
 
 		}
 
@@ -645,7 +692,7 @@ NoticeassignmentForm noticeassignmentform = new NoticeassignmentForm();
 		model.addAttribute("success","true");
 		//model.addAttribute("menu","perry");
 		model.addAttribute("updateletterform",updateletterform);
-		return "viewupdateletter";
+		return "updateletter";
 
 	}
 
@@ -776,12 +823,12 @@ NoticeassignmentForm noticeassignmentform = new NoticeassignmentForm();
 			
 		}
 		// System.out.println(perrychiropracticdetails.getAddress()+""+perrychiropracticdetails.getAddress1());
-		faxcoverDAO.setfaxcover(faxcoverdetails);
+		faxcoverDAO.setfaxcover(faxcoverdetails,request.getParameter("user"));
 		FaxcoverForm faxcoverform = new FaxcoverForm();
 		faxcoverform.setFaxcoverdetails(faxcoverDAO.getfaxcover());
 		model.addAttribute("faxcoverform", faxcoverform);
 		model.addAttribute("success","true");
-		return "viewfaxcover";
+		return "faxcover";
 
 	}
 
@@ -937,6 +984,7 @@ NoticeassignmentForm noticeassignmentform = new NoticeassignmentForm();
 			BindingResult result, ModelMap model) {
 		 session.setAttribute("update",updateletterdetails);
 		 model.addAttribute("menu", "perry");
+		 String username=request.getParameter("user");
 		if(result.hasErrors())
 		{
 
@@ -949,25 +997,17 @@ NoticeassignmentForm noticeassignmentform = new NoticeassignmentForm();
 		}
 
 		// System.out.println(perrychiropracticdetails.getAddress()+""+perrychiropracticdetails.getAddress1());
-		updateletterDAO.setupdateletter(updateletterdetails);
+		updateletterDAO.setupdateletter(updateletterdetails,username);
 		UpdateletterForm updateletterform = new UpdateletterForm();
 		updateletterform.setUpdateletterdetails(updateletterDAO.getupdateletter());
 		model.addAttribute("updateletterform", updateletterform);
 		model.addAttribute("menu","perry");
 		model.addAttribute("success","true");
-		return "viewupdateletter";
+		return "updateletter";
 
 	}
 
 
-	@RequestMapping(value = "/viewfaxcover", method = RequestMethod.GET)
-	public String viewfaxcover(HttpSession session, ModelMap model) {
-		FaxcoverForm faxcoverform = new FaxcoverForm();
-		faxcoverform.setFaxcoverdetails(faxcoverDAO.getfaxcover());
-		model.addAttribute("faxcoverform", faxcoverform);
-		model.addAttribute("menu","fax");
-		return "viewfaxcover";
-	}
 	
 	//@RequestMapping(value = "/viewworkschool", method = RequestMethod.GET)
 	//public String viewworkschool(HttpSession session, ModelMap model) {
@@ -992,12 +1032,12 @@ public String responseattorney(HttpSession session,ModelMap model) {
 	model.addAttribute("menu","fax");
 	return "responseattorney";
 }
-@RequestMapping(value="/faxcover", method = RequestMethod.GET)
+/*@RequestMapping(value="/faxcover", method = RequestMethod.GET)
 public String faxcover(HttpSession session,ModelMap model) {
 	session.removeAttribute("fax");
 	model.addAttribute("menu","fax");
 	return "faxcover";
-}
+}*/
 @RequestMapping(value="/workschool", method = RequestMethod.GET)
 public String workschool(HttpSession session,ModelMap model) {	
 	session.removeAttribute("work");
@@ -1130,7 +1170,7 @@ public String editletterofprotection(@RequestParam("letterid")String letterid, H
 }
 
 	
-
+/*
 	@RequestMapping(value = "/faxcoverlist", method = RequestMethod.GET)
 	public String faxlist(HttpSession session,
 			@RequestParam("faxid") String faxid, ModelMap model) {
@@ -1139,7 +1179,7 @@ public String editletterofprotection(@RequestParam("letterid")String letterid, H
 		model.addAttribute("faxcoverform", faxcoverform);
 		return "viewfaxlist";
 	}
-
+*/
 	@RequestMapping(value = "/lettertopatientlist", method = RequestMethod.GET)
 	public String letterlist(HttpSession session,
 			@RequestParam("letterid") String letterid, ModelMap model) {
@@ -1215,17 +1255,7 @@ public String deleteresponseattorney(@RequestParam("responseid")String responsei
 			model.addAttribute("responseattorneyform",responseattorneyform);
 			return "viewresponseattorney";	
 }
-@RequestMapping(value="/deletefaxcover", method = RequestMethod.GET)
-public String deletefaxcover(@RequestParam("faxid")String faxid, HttpSession session,ModelMap model) {
-	model.addAttribute("menu","fax");
-	model.addAttribute("success","true");
-faxcoverDAO.deletefaxcover(faxid);
-FaxcoverForm faxcoverform=new FaxcoverForm();
-faxcoverform.setFaxcoverdetails(faxcoverDAO.getfaxcover());
-model.addAttribute("faxcoverform",faxcoverform);
-return "viewfaxcover";
-	
-}
+
 
 @RequestMapping(value="/insertworkschool", method = RequestMethod.POST)
 public String insert_workschool(HttpServletRequest request,HttpSession session,@ModelAttribute("Workschool")  @Valid Workschool workschooldetails,BindingResult result,ModelMap model)
@@ -1315,16 +1345,7 @@ public String insert_formbill(HttpServletRequest request,HttpSession session,@Mo
 	return "viewformbill";
 }
 
-	@RequestMapping(value = "/editfaxcover", method = RequestMethod.GET)
-	public String editfaxcover(@RequestParam("faxid") String faxid,	HttpSession session, ModelMap model) {
-		FaxcoverForm faxcoverform = new FaxcoverForm();
-		faxcoverform.setFaxcoverdetails(faxcoverDAO.getfaxcover(faxid));
-		model.addAttribute("faxcoverform", faxcoverform);
-
-		return "editfaxcover";
-
-	}
-
+	
 
 
 	
@@ -1389,7 +1410,7 @@ public String insert_formbill(HttpServletRequest request,HttpSession session,@Mo
 			model.addAttribute("menu", "work");
 			return "noticeassignment";
 		}
-		noticeassignmentDAO.setnoticeassignment(noticeassignmentdetails);
+		noticeassignmentDAO.setnoticeassignment(noticeassignmentdetails,request.getParameter("user"));
 		NoticeassignmentForm noticeassignmentform = new NoticeassignmentForm();
 		noticeassignmentform.setNoticeassignmentdetails(noticeassignmentDAO.getnoticeassignment());
 		model.addAttribute("noticeassignmentform", noticeassignmentform);
@@ -1464,28 +1485,7 @@ public String insert_formbill(HttpServletRequest request,HttpSession session,@Mo
 
 	}
 
-	@RequestMapping(value = "/updatefaxcover", method = RequestMethod.POST)
-	public String update_faxcover(HttpServletRequest request,
-			HttpSession session,
-			@ModelAttribute("faxcoverdetails") @Valid Faxcover faxcoverdetails,
-			BindingResult result, ModelMap model) {
-		if (result.hasErrors()) {
-			FaxcoverForm faxcoverform = new FaxcoverForm();
-			faxcoverform.setFaxcoverdetails(faxcoverDAO.getfaxcover());
-			model.addAttribute("faxcoverform", faxcoverform);
-			model.addAttribute("Success", "true");
-			model.addAttribute("menu", "work");
-			return "faxcover";
-		}
-
-		// System.out.println(letterofprotectiondetails.getAddress()+""+letterofprotectiondetails.getAddress1());
-		faxcoverDAO.updatefaxcover(faxcoverdetails, faxcoverdetails.getFaxid());
-		FaxcoverForm faxcoverform = new FaxcoverForm();
-		faxcoverform.setFaxcoverdetails(faxcoverDAO.getfaxcover());
-		model.addAttribute("faxcoverform", faxcoverform);
-		return "viewfaxcover";
-	}
-
+	
 	@RequestMapping(value = "/updatelettertopatients", method = RequestMethod.POST)
 	public String update_lettertopatients(
 			HttpServletRequest request,
