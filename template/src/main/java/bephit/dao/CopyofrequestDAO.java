@@ -23,7 +23,7 @@ public class CopyofrequestDAO {
 		this.dataSource = dataSource;
 	}
 	
-	public int insertcopy(Copyofrequest copyofrequest)
+	public int insertcopy(Copyofrequest copyofrequest,String username)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -39,7 +39,7 @@ public class CopyofrequestDAO {
 	    try{
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();	    	 
-	    	 String cmd="INSERT INTO `tbl_copyofrequest`(`patient`,`address`,`regarding`,`dateofaccident`,`claimnumber`,`todaydate`,`dear`,`sign`)VALUES ('"+copyofrequest.getPatient()+"','"+copyofrequest.getAddress()+"','"+copyofrequest.getRegarding()+"','"+copyofrequest.getDateofaccident()+"','"+copyofrequest.getClaimnumber()+"','"+copyofrequest.getTodaydate()+"','"+copyofrequest.getDear()+"','"+copyofrequest.getSign()+"')";
+	    	 String cmd="INSERT INTO `tbl_copyofrequest`(username,`patient`,`address`,`regarding`,`dateofaccident`,`claimnumber`,`todaydate`,`dear`,`sign`)VALUES ('"+username+"','"+copyofrequest.getPatient()+"','"+copyofrequest.getAddress()+"','"+copyofrequest.getRegarding()+"','"+copyofrequest.getDateofaccident()+"','"+copyofrequest.getClaimnumber()+"','"+copyofrequest.getTodaydate()+"','"+copyofrequest.getDear()+"','"+copyofrequest.getSign()+"')";
 	    	 System.out.println(cmd);
 	    	 statement.execute(cmd);
 	    	 flag=1;
@@ -91,6 +91,37 @@ public class CopyofrequestDAO {
 	    }
 	    return copyofrequest;
 	}
+	
+	public List<Copyofrequest> getusernamecopyrequest(String username){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		
+		List<Copyofrequest> copyofrequest = new ArrayList<Copyofrequest>();
+	    try{
+			resultSet = statement.executeQuery("select * from tbl_copyofrequest where username='"+username+"'");
+			/*System.out.println(resultSet.toString());*/
+			while(resultSet.next()){
+				copyofrequest.add( new Copyofrequest(resultSet.getString("copyofrequestno"),resultSet.getString("patient"), resultSet.getString("address"), resultSet.getString("regarding"), resultSet.getString("dateofaccident"), resultSet.getString("claimnumber"), resultSet.getString("todaydate"), resultSet.getString("dear"), resultSet.getString("sign")));
+				}
+	    }catch(Exception e){
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    }finally{
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);	    	
+	    }
+	    return copyofrequest;
+	}
+	
 	public List<Copyofrequest> viewallcopyrequest(String copyofrequestno){
 		Connection con = null;
 		Statement statement = null;

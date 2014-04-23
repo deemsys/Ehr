@@ -23,6 +23,18 @@
    });
 
 </script>
+<script type="text/javascript">
+	function confirmation() 
+	{
+	var answer = confirm("Are you Sure You Want to Delete Participant ?")
+	if (answer){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+	</script>
 </head>
  <body>
 <div id="right_content">
@@ -61,6 +73,7 @@
               <td ><b>(330) 477-3037 Fax  </b></td>
               </tr>
               </table><br><br>
+            
        		<table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err">*</span>Today's Date:</td>
@@ -147,7 +160,10 @@
             </div>
             
             <table><tr> <td><input type="submit" class="submit_btn" value="update"></td>
-               <td><a href="viewfaxcover"style="color:white" class="submit_btn">Cancel</a></td>
+           
+               <td><a href="viewallpatientdetails"style="color:white" class="submit_btn">Cancel</a></td>
+               <td><a href="deletefaxcover?username=${faxcover.username}"style="color:white" class="submit_btn" onclick="return confirmation()" >Delete</a></td> 
+               
               </tr></table>
               </div>
         	  </div>

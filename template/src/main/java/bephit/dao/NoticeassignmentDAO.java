@@ -14,6 +14,7 @@ import javax.sql.DataSource;
 
 import bephit.model.Lettertopatients;
 import bephit.model.Noticeassignment;
+import bephit.model.Patientattorney;
 
 
 
@@ -27,7 +28,7 @@ public class NoticeassignmentDAO {
 	
 		
 	
-	public int setnoticeassignment(Noticeassignment noticeassignmentdetails)
+	public int setnoticeassignment(Noticeassignment noticeassignmentdetails,String username)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -44,7 +45,7 @@ public class NoticeassignmentDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 
-	    	 String cmd="INSERT INTO noticeassignment (nameofins,nameofattorney,address1,address2,regarding,patientname,dateofaccident,todaysdate,letter,letter1,treatingphysician) VALUES ('"+noticeassignmentdetails.getNameofins()+"','"+noticeassignmentdetails.getNameofattorney()+"','"+noticeassignmentdetails.getAddress1()+"','"+noticeassignmentdetails.getAddress2()+"','"+noticeassignmentdetails.getRegarding()+"','"+noticeassignmentdetails.getPatientname()+"','"+noticeassignmentdetails.getDateofaccident()+"','"+noticeassignmentdetails.getTodaysdate()+"','"+noticeassignmentdetails.getLetter()+"','"+noticeassignmentdetails.getLetter1()+"','"+noticeassignmentdetails.getTreatingphysician()+"')";
+	    	 String cmd="INSERT INTO noticeassignment (username,nameofins,nameofattorney,address1,address2,regarding,patientname,dateofaccident,todaysdate,letter,letter1,treatingphysician) VALUES ('"+username+"','"+noticeassignmentdetails.getNameofins()+"','"+noticeassignmentdetails.getNameofattorney()+"','"+noticeassignmentdetails.getAddress1()+"','"+noticeassignmentdetails.getAddress2()+"','"+noticeassignmentdetails.getRegarding()+"','"+noticeassignmentdetails.getPatientname()+"','"+noticeassignmentdetails.getDateofaccident()+"','"+noticeassignmentdetails.getTodaysdate()+"','"+noticeassignmentdetails.getLetter()+"','"+noticeassignmentdetails.getLetter1()+"','"+noticeassignmentdetails.getTreatingphysician()+"')";
 	    	    System.out.println("cmd insert value"+cmd);
 	    	    statement.executeUpdate(cmd);
 	    	    }
@@ -151,6 +152,55 @@ public class NoticeassignmentDAO {
 			
 				
 				
+			    	
+			}
+	    }catch(Exception e){
+	    	System.out.println(e.toString());
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    }finally{
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);	    	
+	    }
+	    return noticeassignment;
+		
+	}
+	public List<Noticeassignment> getusernamenoticeassignment(String username){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<Noticeassignment> noticeassignment = new ArrayList<Noticeassignment>();
+	    try{
+			resultSet = statement.executeQuery("select * from noticeassignment where username='"+username+"'");
+			while(resultSet.next()){
+				noticeassignment.add(new Noticeassignment
+						(resultSet.getString("noticeid"),
+								resultSet.getString("nameofins"),
+								resultSet.getString("nameofattorney"),
+								resultSet.getString("address1"),
+								resultSet.getString("address2"),
+								
+								resultSet.getString("regarding"),
+								resultSet.getString("patientname"),
+								resultSet.getString("dateofaccident"),
+								resultSet.getString("todaysdate"),
+								resultSet.getString("letter"),
+								resultSet.getString("letter1"),
+								resultSet.getString("treatingphysician")
+			    		
+						
+			    		 ));
+			
+				
+			//	System.out.println("Name::::::::::::::::::"+noticeassignment.get(0).getName());
 			    	
 			}
 	    }catch(Exception e){

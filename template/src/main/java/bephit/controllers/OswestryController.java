@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import bephit.dao.*;
@@ -28,6 +29,15 @@ import bephit.forms.*;
 @SessionAttributes({"oswestrydisability","copy","currentpatientid"})
 public class OswestryController
 {
+	@Autowired
+	SignupDAO signupDAO;
+	
+	@Autowired
+	PatientDAO patientDAO;
+	
+	@Autowired
+	UpdateletterDAO updateletterDAO;
+	
 	@Autowired 
 	OswestryDAO oswestrydao;
 	
@@ -262,11 +272,89 @@ public class OswestryController
 		model.addAttribute("menu", "perry");
 		return "copyofrequest";
 	}
+	
+	@RequestMapping(value="/copyofrequest_ajax",method=RequestMethod.POST)
+	public @ResponseBody String copyofrequest_ajax(@ModelAttribute(value="username")Copyofrequest copyofrequest, BindingResult result,ModelMap model ) {
+		String returnText="";
+		String patientname="";
+	
+		if(signupDAO.getPatientusername(copyofrequest.getUsername()).size()==0)
+		{
+			return "error";
+		}		
+	if(copydao.getusernamecopyrequest(copyofrequest.getUsername()).size()>0)
+	{
+		//patientname=copydao.getusernamecopyrequest(copyofrequest.getUsername()).get(0).getPatientname();
+		//System.out.println("pname"+patientname);
+		
+		model.addAttribute("edit","1");
+		return "edit"+patientname+"|"+copyofrequest.getUsername();
+		/*PatientattorneyForm patientattorneyForm = new PatientattorneyForm();
+		patientattorneyForm.setPatientattorneydetails(patientattorneyDAO.getusernamepatientattorney(patientattorney.getUsername()));
+		model.addAttribute("patientattorneyform", patientattorneyForm);
+		model.addAttribute("menu", "perry");
+		return "editpatientattorney";*/
+	}
+	if(patientDAO.getUsername(copyofrequest.getUsername()).size()>0)
+	{
+		patientname=patientDAO.getUsername(copyofrequest.getUsername()).get(0).getName();
+	}	
+		
+		/*System.out.println("initialemlimited"+dcfeeslip.getInitialemlimited());
+	
+		
+			int ans=feeslipDAO.setAns(dcfeeslip);
+			System.out.println("ans"+ans);
+			returnText=Integer.toString(ans);*/
+				returnText=patientname+"|"+copyofrequest.getUsername();
+				return returnText;
+				
+	}
+	
+	/*@RequestMapping(value="/copyofrequest_ajax",method=RequestMethod.POST)
+	public @ResponseBody String copyofrequest'(@ModelAttribute(value="username")Updateletter updateletter, BindingResult result,ModelMap model ) {
+		String returnText="";
+		String patientname="";
+		System.out.println("username"+updateletter.getUsername());
+		if(signupDAO.getPatientusername(updateletter.getUsername()).size()==0)
+		{
+			return "error";
+		}		
+	if(updateletterDAO.getusernameupdateletter(updateletter.getUsername()).size()>0)
+	{
+		patientname=patientattorneyDAO.getusernamepatientattorney(updateletter.getUsername()).get(0).getPatientname();
+		System.out.println("pname"+patientname);
+		
+		model.addAttribute("edit","1");
+		return "edit"+patientname+"|"+updateletter.getUsername();
+		PatientattorneyForm patientattorneyForm = new PatientattorneyForm();
+		patientattorneyForm.setPatientattorneydetails(patientattorneyDAO.getusernamepatientattorney(patientattorney.getUsername()));
+		model.addAttribute("patientattorneyform", patientattorneyForm);
+		model.addAttribute("menu", "perry");
+		return "editpatientattorney";
+	}
+	if(patientDAO.getUsername(patientattorney.getUsername()).size()>0)
+	{
+		patientname=patientDAO.getUsername(patientattorney.getUsername()).get(0).getName();
+	}	
+		
+		System.out.println("initialemlimited"+dcfeeslip.getInitialemlimited());
+	
+		
+			int ans=feeslipDAO.setAns(dcfeeslip);
+			System.out.println("ans"+ans);
+			returnText=Integer.toString(ans);
+				returnText=patientname+"|"+updateletter.getUsername();
+				return returnText;
+				
+	}*/
+	
 	@RequestMapping (value="/copyofrequest", method = RequestMethod.POST)
 
 	public String insertcopyofreuest(HttpSession session,HttpServletRequest request,ModelMap model,@ModelAttribute("Copyofrequest") @Valid Copyofrequest copyofrequest,BindingResult result) throws IOException
 
 	{
+		String username=request.getParameter("user");
 		session.setAttribute("copy", copyofrequest);
 		if(result.hasErrors())
 		{
@@ -277,12 +365,13 @@ public class OswestryController
 			model.addAttribute("menu", "perry");
 			return "copyofrequest";
 		}
-		copydao.insertcopy(copyofrequest);
+		copydao.insertcopy(copyofrequest,username);
 		CopyofrequestForm copyofrequestform=new CopyofrequestForm();
 		copyofrequestform.setCopyofrequest(copydao.viewcopyrequest());
 		model.addAttribute("copyofrequestform", copyofrequestform);
 		model.addAttribute("menu", "perry");
-		return "viewcopyofrequest";
+		model.addAttribute("success",true);
+		return "copyofrequest";
 	}
 	
 	@RequestMapping (value="/viewcopyofrequest", method = RequestMethod.GET)
@@ -352,6 +441,16 @@ public class OswestryController
 		 model.addAttribute("menu", "perry");
 		return "copyofrequestlist";
 	}
+	@RequestMapping (value="/editcopyofrequestdetails", method = RequestMethod.GET)
+	public String editcopyofrequestdetails(@RequestParam("username") String username,HttpServletRequest request,ModelMap model,Copyofrequest copyofrequest) throws IOException
+	{
+		
+		CopyofrequestForm copyofrequestform=new CopyofrequestForm();
+		copyofrequestform.setCopyofrequest(copydao.getusernamecopyrequest(username));
+		model.addAttribute("copyofrequestform", copyofrequestform);
+		 model.addAttribute("menu", "perry");
+		return "editcopyofrequest";
+	}
 	
 	@RequestMapping (value="/editcopyofrequest", method = RequestMethod.GET)
 	public String editcopyofrequest(@RequestParam("copyofrequestno") String copyofrequestno,HttpServletRequest request,ModelMap model,Copyofrequest copyofrequest) throws IOException
@@ -379,12 +478,12 @@ public class OswestryController
 	}
 
 		int status = copydao.updatecopyofrequest(copyofrequest, copyofrequest.getCopyofrequestno(), principal.getName());
-		CopyofrequestForm copyofrequestform=new CopyofrequestForm();
+		/*CopyofrequestForm copyofrequestform=new CopyofrequestForm();
 		copyofrequestform.setCopyofrequest(copydao.viewcopyrequest());
-		model.addAttribute("copyofrequestform", copyofrequestform);
+		model.addAttribute("copyofrequestform", copyofrequestform);*/
 		model.addAttribute("success", true);
 		 model.addAttribute("menu", "perry");
-		return "viewcopyofrequest";
+		return "copyofrequest";
 	}
 	
 	@RequestMapping (value="/deletecopyofrequest", method = RequestMethod.GET)
@@ -392,11 +491,11 @@ public class OswestryController
 	{
 		
 		copydao.deletecopyofrequest(copyofrequestno);
-		CopyofrequestForm copyofrequestform=new CopyofrequestForm();
+		/*CopyofrequestForm copyofrequestform=new CopyofrequestForm();
 		copyofrequestform.setCopyofrequest(copydao.viewcopyrequest());
-		model.addAttribute("copyofrequestform", copyofrequestform);
+		model.addAttribute("copyofrequestform", copyofrequestform);*/
 		model.addAttribute("success",true);
-		model.addAttribute("menu","wristindex");
-		return "viewcopyofrequest";
+		//model.addAttribute("menu","wristindex");
+		return "copyofrequest";
 	}
 }

@@ -48,7 +48,7 @@ $(function() {
 	            <center> <B style="font-size:18px">Requesting Fee Reduction from Attorney/Adjuster</B> </center><br/>
           <table cellpadding="0" cellspacing="0" border="0" width="70%" align="center">
           <tr height="30">
-          <input type="hidden" class="input_txtbx1" id="inp_id" value="${copyofrequest.copyofrequestno}" name="copyofrequest" />
+          <input type="hidden" class="input_txtbx1" id="inp_id" value="${copyofrequest.copyofrequestno}" name="copyofrequestno" />
           <td><span class="err">*</span>Patients Attorney or Insurance Adjuster: </td>
           <td><input type="text" name="patient" size="40" value="${copyofrequest.patient}"><span class="err"><form:errors path="Copyofrequest.patient"></form:errors></span></td>
           </tr>   
@@ -104,9 +104,23 @@ $(function() {
  <table align="right">
 <tr>
 <td><input type="submit" class="submit_btn" value="Update"></td>
-<td><a href="viewcopyofrequest"style="color:white" class="submit_btn">Cancel</a></td>
+<td><a href="deletecopyofrequest?copyofrequestno=${copyofrequest.copyofrequestno}" style="color:white" class="submit_btn" onclick="return confirmation()">Delete</a></td>
+<td><a href="viewallpatientdetails"style="color:white" class="submit_btn">Cancel</a></td>
 </tr>
 </table>
+<script language="javascript">
+
+function confirmation() {
+	var answer = confirm("Are you Sure You Want to Delete  Patient Copy of Request ?");
+	if (answer){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+
+</script>
 </div>
 </div>
 </td>

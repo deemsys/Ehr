@@ -24,7 +24,7 @@ public class FaxcoverDAO {
 		this.dataSource = dataSource;
 	}
 	
-	public int setfaxcover(Faxcover faxcoverdetails)
+	public int setfaxcover(Faxcover faxcoverdetails,String username)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -41,7 +41,7 @@ public class FaxcoverDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 
-	    	 String cmd="INSERT INTO `tbl_faxdetails` (`date`,`tos`,`faxno`,`froms`,`reply`,`regarding`,`pages`,`msg`,`claimno`,`doi`) VALUES ('"+faxcoverdetails.getDate()+"','"+faxcoverdetails.getTos()+"','"+faxcoverdetails.getFaxno()+"','"+faxcoverdetails.getFroms()+"','"+faxcoverdetails.getReply()+"','"+faxcoverdetails.getRegarding()+"','"+faxcoverdetails.getPages()+"','"+faxcoverdetails.getMsg()+"','"+faxcoverdetails.getClaimno()+"','"+faxcoverdetails.getDoi()+"')";
+	    	 String cmd="INSERT INTO tbl_faxdetails (username,`date`,`tos`,`faxno`,`froms`,`reply`,`regarding`,`pages`,`msg`,`claimno`,`doi`) VALUES ('"+username+"','"+faxcoverdetails.getDate()+"','"+faxcoverdetails.getTos()+"','"+faxcoverdetails.getFaxno()+"','"+faxcoverdetails.getFroms()+"','"+faxcoverdetails.getReply()+"','"+faxcoverdetails.getRegarding()+"','"+faxcoverdetails.getPages()+"','"+faxcoverdetails.getMsg()+"','"+faxcoverdetails.getClaimno()+"','"+faxcoverdetails.getDoi()+"')";
 	    	 System.out.println(cmd);
 	    	 statement.execute(cmd);
 			flag=1;
@@ -138,6 +138,50 @@ public class FaxcoverDAO {
 	    		
 			    		 ));
 				
+			    	
+			}
+	    }catch(Exception e){
+	    	System.out.println(e.toString());
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    }finally{
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);	    	
+	    }
+	    return faxcover;
+		
+	}
+	public List<Faxcover> getusernamefaxcover(String username){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<Faxcover> faxcover = new ArrayList<Faxcover>();
+	    try{
+			resultSet = statement.executeQuery("select * from tbl_faxdetails where username='"+username+"'");
+			while(resultSet.next()){
+				faxcover.add(new Faxcover
+						(resultSet.getString("faxid"),
+								resultSet.getString("date"),
+						resultSet.getString("tos"),
+						resultSet.getString("faxno"),
+						resultSet.getString("froms"),
+			    		resultSet.getString("reply"),
+			    		resultSet.getString("regarding"),
+						resultSet.getString("pages"),
+				resultSet.getString("msg"),
+				resultSet.getString("claimno"),
+				resultSet.getString("doi")
+	    		
+			    		 ));
+			//	System.out.println("Name::::::::::::::::::"+faxcover.get(0).getName());
 			    	
 			}
 	    }catch(Exception e){

@@ -27,7 +27,7 @@ public class UpdateletterDAO {
 	
 		
 	
-	public int setupdateletter(Updateletter updateletterdetails)
+	public int setupdateletter(Updateletter updateletterdetails,String username)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -44,7 +44,7 @@ public class UpdateletterDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 
-	    	 String cmd="INSERT INTO updateletter (toattorney1,toattorney2,toattorney3,reg,injury,todaydate) VALUES ('"+updateletterdetails.getToattorney1()+"','"+updateletterdetails.getToattorney2()+"','"+updateletterdetails.getToattorney3()+"','"+updateletterdetails.getReg()+"','"+updateletterdetails.getInjury()+"','"+updateletterdetails.getTodaydate()+"')";
+	    	 String cmd="INSERT INTO updateletter (username,toattorney1,toattorney2,toattorney3,reg,injury,todaydate) VALUES ('"+username+"','"+updateletterdetails.getToattorney1()+"','"+updateletterdetails.getToattorney2()+"','"+updateletterdetails.getToattorney3()+"','"+updateletterdetails.getReg()+"','"+updateletterdetails.getInjury()+"','"+updateletterdetails.getTodaydate()+"')";
 	    	    System.out.println("cmd insert value"+cmd);
 	    	    statement.executeUpdate(cmd);
 	    	    }
@@ -170,6 +170,45 @@ public class UpdateletterDAO {
 					    		resultSet.getString("todaydate")
 			    		 ));
 				System.out.println("Name::::::::::::::::::"+updateletter.get(0).getToattorney1());
+			    	
+			}
+	    }catch(Exception e){
+	    	System.out.println(e.toString());
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    }finally{
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);	    	
+	    }
+	    return updateletter;
+		
+	}
+	public List<Updateletter> getusernameupdateletter(String username){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<Updateletter> updateletter = new ArrayList<Updateletter>();
+	    try{
+			resultSet = statement.executeQuery("select * from updateletter where username='"+username+"'");
+			while(resultSet.next()){
+				updateletter.add(new Updateletter
+						(resultSet.getString("updateid"),
+								resultSet.getString("toattorney1"),
+								resultSet.getString("toattorney2"),
+								resultSet.getString("toattorney3"),
+								resultSet.getString("reg"),
+					    		resultSet.getString("injury"),
+					    		resultSet.getString("todaydate")
+			    		 ));
+				//System.out.println("Name::::::::::::::::::"+updateletter.get(0).getToattorney1());
 			    	
 			}
 	    }catch(Exception e){

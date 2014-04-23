@@ -1314,14 +1314,14 @@ color:#fff;
 							      <li><a href="viewduties">View Duties Under Duress Summary</a></li>
 							     </ul>
 						<ul id="ddsubmenu30" class="ddsubmenustyle">
-							      <li><a href="perrychiropracticsearch" >Form Cover Letter</a></li>
+							      <li><a href="perrychiropractic" >Form Cover Letter</a></li>
 							    <!--   <li><a href="viewperrychiropractic">View Form Cover Letter</a></li> -->
 							      <li><a href="patientattorney" >Form Cover Letter For Patient's Attorney</a></li>
-							      <li><a href="viewpatientattorney">View Form Cover Letter For Patient's Attorney</a></li>
-							     <li><a href="updateletter" >Update Letter</a></li>
-							      <li><a href="viewupdateletter">View Update Letter</a></li>
+							    <!--  <li><a href="viewpatientattorney">View Form Cover Letter For Patient's Attorney</a></li> -->
+							     <li><a href="updateletter" >Update Letter</a></li><!-- 
+							      <li><a href="viewupdateletter">View Update Letter</a></li> -->
 							     <li><a href="copyofrequest" >Requesting Fee Reduction</a></li>
-							     <li><a href="viewcopyofrequest" >View Requesting Fee Reduction</a></li>
+							    <!--  <li><a href="viewcopyofrequest" >View Requesting Fee Reduction</a></li> -->
 							     </ul>
 							     <ul id="ddsubmenu31" class="ddsubmenustyle">
 							      <li><a href="shoulderpainscore">Shoulder Pain Score</a></li>

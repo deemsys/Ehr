@@ -7,6 +7,9 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Faxcover
 {
 	private String faxid;
+	
+	private String username;
+	
 	@NotEmpty
 	private String date;
 	@NotEmpty
@@ -34,6 +37,13 @@ public class Faxcover
 	}
 	public void setFaxid(String faxid) {
 		this.faxid = faxid;
+	}
+	
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	public String getDate() {
 		return date;

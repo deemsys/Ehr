@@ -7,6 +7,9 @@ public class Noticeassignment
 {
 	
 	private String noticeid;
+	
+	private String username; 
+	
 	@NotEmpty
 	private String nameofins;
 	@NotEmpty
@@ -34,6 +37,14 @@ public class Noticeassignment
 	}
 	public void setNoticeid(String noticeid) {
 		this.noticeid = noticeid;
+	}
+	
+	
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	public String getNameofins() {
 		return nameofins;

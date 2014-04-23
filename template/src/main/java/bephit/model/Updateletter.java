@@ -5,6 +5,9 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Updateletter
 {
 	private String updateid;
+	
+	private String username;  
+	
 	@NotEmpty
 	private String toattorney1;
 	@NotEmpty
@@ -28,6 +31,14 @@ public class Updateletter
 
 	public void setUpdateid(String updateid) {
 		this.updateid = updateid;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getToattorney1() {
