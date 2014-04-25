@@ -46,7 +46,7 @@
 											
 											<td valign="top" align="left" width="10%">
 											<a href="#" title="" ><img src="resources/images/icons/icon_edit.png" alt="Edit" /></a> <a href="<c:out value="editperrychiropractic?perryid=${perrychiropracticdetails.perryid}"/>"  style="padding-right:10px; ">Edit</a>
-											<a href="#" title=""><img src="resources/images/icons/icon_delete.png" alt="Delete" /></a><a href=" <c:out value="deleteperrychiropractic?perryid=${perrychiropracticdetails.perryid}"/>" onclick="return confirmation() ">Remove</a>
+											<a href="#" title=""><img src="resources/images/icons/icon_delete.png" alt="Delete" /></a><a href=" <c:out value="deleteperrychiropractic?perryid=${perrychiropracticdetails.perryid}"/>" onclick="return confirmation()">Remove</a>
 											</td>
 										
 								</tr>

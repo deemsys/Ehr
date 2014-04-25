@@ -29,7 +29,7 @@ public class InsuranceverificationDAO {
 	
 	
 	
-	public int setInsuranceverification(Insuranceverification insuranceverification)
+	public int setInsuranceverification(Insuranceverification insuranceverification,String username)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -46,7 +46,7 @@ public class InsuranceverificationDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 //System.out.println(dateFormat.format(date));
-	    	 String cmd="INSERT INTO `tbl_insuranceverification` (pusername,`verify_name`,`spoke_with`,`date`,`fax`,`amount_deduct`,`amount_deduct_met`,`max_visit`,`is_chiropractic`,`at_what`,`xray_cover`,`atwhat`,`subject_deduct`,`benefits_honored`,`network_benefits`,`deductible`,`covered`,`cm`,`pt`,`ov`,`xray_deduct`,`doctors_assign`,`mail_claims`) VALUES ('"+insuranceverification.getPusername()+"','"+insuranceverification.getVerify_name()+"','"+insuranceverification.getSpoke_with()+"','"+insuranceverification.getDate()+"','"+insuranceverification.getFax()+"','"+insuranceverification.getAmount_deduct()+"','"+insuranceverification.getAmount_deduct_met()+"','"+insuranceverification.getMax_visit()+"','"+insuranceverification.getIs_chiropractic()+"','"+insuranceverification.getAt_what()+"','"+insuranceverification.getXray_cover()+"','"+insuranceverification.getAtwhat()+"','"+insuranceverification.getSubject_deduct()+"','"+insuranceverification.getBenefits_honored()+"','"+insuranceverification.getNetwork_benefits()+"','"+insuranceverification.getDeductible()+"','"+insuranceverification.getCovered()+"','"+insuranceverification.getCm()+"','"+insuranceverification.getPt()+"','"+insuranceverification.getOv()+"','"+insuranceverification.getXray_deduct()+"','"+insuranceverification.getDoctors_assign()+"','"+insuranceverification.getMail_claims()+"')";
+	    	 String cmd="INSERT INTO `tbl_insuranceverification` (pusername,`verify_name`,`spoke_with`,`date`,`fax`,`amount_deduct`,`amount_deduct_met`,`max_visit`,`is_chiropractic`,`at_what`,`xray_cover`,`atwhat`,`subject_deduct`,`benefits_honored`,`network_benefits`,`deductible`,`covered`,`cm`,`pt`,`ov`,`xray_deduct`,`doctors_assign`,`mail_claims`) VALUES ('"+username+"','"+insuranceverification.getVerify_name()+"','"+insuranceverification.getSpoke_with()+"','"+insuranceverification.getDate()+"','"+insuranceverification.getFax()+"','"+insuranceverification.getAmount_deduct()+"','"+insuranceverification.getAmount_deduct_met()+"','"+insuranceverification.getMax_visit()+"','"+insuranceverification.getIs_chiropractic()+"','"+insuranceverification.getAt_what()+"','"+insuranceverification.getXray_cover()+"','"+insuranceverification.getAtwhat()+"','"+insuranceverification.getSubject_deduct()+"','"+insuranceverification.getBenefits_honored()+"','"+insuranceverification.getNetwork_benefits()+"','"+insuranceverification.getDeductible()+"','"+insuranceverification.getCovered()+"','"+insuranceverification.getCm()+"','"+insuranceverification.getPt()+"','"+insuranceverification.getOv()+"','"+insuranceverification.getXray_deduct()+"','"+insuranceverification.getDoctors_assign()+"','"+insuranceverification.getMail_claims()+"')";
 	    	 System.out.println(cmd);
 	    	 statement.execute(cmd);
 			flag=1;
@@ -166,6 +166,7 @@ public List<Insuranceverification> checkusername(String username){
 		    		
 		}
     }catch(Exception e){
+    	System.out.println(e.toString());
     	releaseResultSet(resultSet);
     	releaseStatement(statement);
     	releaseConnection(con);

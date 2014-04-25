@@ -109,6 +109,9 @@ public class MainController {
 	RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
 	
 	@Autowired  
+	SignupDAO signupDAO;
+	
+	@Autowired  
 	MainDAO mainDAO;
 	
 	@Autowired  
@@ -1471,6 +1474,7 @@ public class MainController {
 	@RequestMapping(value="/insuranceinformation", method = RequestMethod.POST)
 	public String insert_insuranceinformation(Principal principal,HttpSession session,@ModelAttribute("Insuranceinformation")  @Valid Insuranceinformation insuranceinformation,BindingResult result,ModelMap model) {
 		session.setAttribute("info",insuranceinformation);
+		
 		if(result.hasErrors())
 		{
 
@@ -1515,8 +1519,32 @@ public class MainController {
 		}
 		session.removeAttribute("veri");
 		model.addAttribute("menu", "admin");
-		return "insuranceverificationsearch";
+		return "insuranceverification";
  
+	}
+	@RequestMapping(value="/insuranceverification_ajax",method=RequestMethod.POST)
+	public @ResponseBody String insuranceverification_ajax(@ModelAttribute(value="username")Insuranceverification insuranceverification, BindingResult result,ModelMap model ) {
+		String returnText="";
+		String patientname="";
+		System.out.println("usernmae"+insuranceverification.getPusername());
+		if(signupDAO.getPatientusername(insuranceverification.getPusername()).size()==0)
+		{
+			return "error";
+		}		
+	if(veriDAO.checkusername(insuranceverification.getPusername()).size()>0)
+	{
+		//patientname=veriDAO.checkusername(insuranceverification.getPusername()).get(0).get;
+		System.out.println("pname"+patientname);
+		
+		model.addAttribute("edit","1");
+		return "edit"+patientname+"|"+insuranceverification.getPusername();		
+	}
+	if(patientDAO.getUsername(insuranceverification.getPusername()).size()>0)
+	{
+		patientname=patientDAO.getUsername(insuranceverification.getPusername()).get(0).getName();
+	}		
+	returnText=patientname+"|"+insuranceverification.getPusername();
+	return returnText;				
 	}
 	
 	
@@ -1543,8 +1571,9 @@ public class MainController {
 	}
 	
 	@RequestMapping(value="/insuranceverification", method = RequestMethod.POST)
-	public String insert_insuranceverification(Principal principal,HttpSession session,@ModelAttribute("Insuranceverification")  @Valid Insuranceverification insuranceverification,BindingResult result,ModelMap model) {
+	public String insert_insuranceverification(HttpServletRequest request,Principal principal,HttpSession session,@ModelAttribute("Insuranceverification")  @Valid Insuranceverification insuranceverification,BindingResult result,ModelMap model) {
 		session.setAttribute("veri",insuranceverification);
+		
 		if(result.hasErrors())
 		{
 
@@ -1564,9 +1593,8 @@ public class MainController {
 		if(patientDAO.getUsername(principal).size()>0)
 			{			
 		   model.addAttribute("patientno","0");
-		}
-		
-    	int a =veriDAO.setInsuranceverification(insuranceverification);
+		}		
+    	int a =veriDAO.setInsuranceverification(insuranceverification,request.getParameter("user"));
     	InsuranceverificationForm insuranceverificationForm= new InsuranceverificationForm();
     	insuranceverificationForm.setInsuranceverification(veriDAO.getInsuranceverification());
 		model.addAttribute("InsuranceverificationForm",insuranceverificationForm);
@@ -1574,7 +1602,7 @@ public class MainController {
 		//System.out.println(autoaccident.getAdjustersname());
 	    
 		
-		return "insuranceverificationsearch";
+		return "insuranceverification";
 	}
 	@RequestMapping(value="/insuranceplan", method = RequestMethod.GET)
 	public String insuranceplan(HttpSession session,ModelMap model,Principal principal) {
@@ -4618,6 +4646,15 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 		 model.addAttribute("menu", "admin");
 		return "editinsuranceverification";
 	}
+	@RequestMapping(value="/editinsuranceverificationdetails", method = RequestMethod.GET)
+	public String editinsuranceverificationdetails(@RequestParam("username") String username,HttpServletRequest request,ModelMap model) {
+		
+		InsuranceverificationForm insuranceverificationForm= new InsuranceverificationForm();
+    	insuranceverificationForm.setInsuranceverification(veriDAO.checkusername(username));
+		model.addAttribute("InsuranceverificationForm",insuranceverificationForm);
+		 model.addAttribute("menu", "admin");
+		return "editinsuranceverification";
+	}
 	@RequestMapping(value="/updateinsuranceverification", method=RequestMethod.POST)
 	public String updateinsuranceverification(HttpServletRequest request,@ModelAttribute("Insuranceverification") @Valid Insuranceverification insuranceverification,
 			BindingResult result,ModelMap model,Principal principal)
@@ -4638,7 +4675,7 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 		model.addAttribute("InsuranceverificationForm",insuranceverificationForm);    
 		model.addAttribute("success","true");
 		model.addAttribute("menu", "admin");
-	    return "insuranceverificationsearch";
+	    return "insuranceverification";
 		
 	}
 	
@@ -4650,14 +4687,10 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 		
 		if(status==1)
 		{
-        model.addAttribute("success","true");
-		
-        InsuranceverificationForm insuranceverificationForm= new InsuranceverificationForm();
-    	insuranceverificationForm.setInsuranceverification(veriDAO.getInsuranceverification());
-		model.addAttribute("InsuranceverificationForm",insuranceverificationForm);  
-		 model.addAttribute("menu", "admin");
+        model.addAttribute("success","true");		  
+		model.addAttribute("menu", "admin");
 		}
-		return "insuranceverifylist";
+		return "insuranceverification";
 	}
 	
 

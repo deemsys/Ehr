@@ -17,7 +17,7 @@ public class Insuranceverification{
 	@NotEmpty
 	private String date;
 	@NotEmpty
-	@Pattern(regexp="(^$|[0-9]{13})",message="Not a valid Fax No(kindly enter a 13 digit FAX number)")
+	@Pattern(regexp="(^$|[0-9-()]{13})",message="Not a valid Fax No(kindly enter a 13 digit FAX number)")
 	private String fax;
 	@NotEmpty
 	

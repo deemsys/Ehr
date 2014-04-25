@@ -110,7 +110,7 @@ In Regards to :
 				</td>
 				<td><a href="deleteupdateletter?updateid=${updateletterdetails.updateid }" style="color:white" class="submit_btn" onclick="return confirmation() ">Delete</a></td>
 				<td>&nbsp;&nbsp;</td>
-              <td><a href="viewupdateletter" style="color:white" class="submit_btn">Cancel</a></td>
+              <td><a href="viewallpatientdetails" style="color:white" class="submit_btn">Cancel</a></td>
               <td>&nbsp;&nbsp;</td>
         	  </tr>
         	  </table>

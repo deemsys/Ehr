@@ -5,6 +5,9 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Perrychiropractic
 {
 	private String perryid;
+	
+	private String username;
+	
 	@NotEmpty
 	private String insurance;
 	
@@ -20,6 +23,7 @@ public class Perrychiropractic
 	@NotEmpty
 	private String subject;
 	
+	
 	public Perrychiropractic() {
 		super();
 	}
@@ -28,6 +32,12 @@ public class Perrychiropractic
 	}
 	public void setPerryid(String perryid) {
 		this.perryid = perryid;
+	}	
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	public String getInsurance() {
 		return insurance;

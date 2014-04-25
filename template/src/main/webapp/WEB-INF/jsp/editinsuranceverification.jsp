@@ -322,10 +322,21 @@
         <tr>
      	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> 
         <td><br><input type="submit" class="submit_btn" value="Update"></td>
-        <td>&nbsp;&nbsp;</td>
-        <td><br><a href="insuranceverification" class="submit_btn" style="color:white">Cancel</a></td>
+        <td>&nbsp;</td><td><br><a href="deleteinsuranceverification?form_no=${Insuranceverification.form_no}" class="submit_btn" style="color:white" onclick="return confirmation()">Delete</a></td><td>&nbsp;</td>
+        <td><br><a href="viewallpatientdetails" class="submit_btn" style="color:white">Cancel</a></td>
         </tr>
         </table>
+          <script language="javascript">
+        function confirmation() {
+	var answer = confirm("Are you Sure You Want to Delete  Patient insuranceplan ?")
+	if (answer){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+        </script>
 	    </div>
 	    </div>
 	    </td>

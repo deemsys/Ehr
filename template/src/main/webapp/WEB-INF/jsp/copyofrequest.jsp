@@ -208,7 +208,7 @@ $(function() {
  
  <body>
  <form action="copyofrequest" method="POST"> 
- <input type="text" class="input_txtbx1" id="user" name="user" />
+ <input type="hidden" class="input_txtbx1" id="user" name="user" />
  <c:choose>
     					<c:when test="${empty copy}">
                        

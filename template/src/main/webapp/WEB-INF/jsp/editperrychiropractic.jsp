@@ -258,8 +258,21 @@ However, a different recent Ohio Supreme Court case confirms the validity of the
            
             
             <table><tr> <td><input type="submit" class="submit_btn" value="update"></td>
-               <td><a href="viewperrychiropractic"style="color:white" class="submit_btn">Cancel</a></td>
+             <td><a href="deleteperrychiropractic?perryid=${perrychiropracticdetails.perryid}" style="color:white" class="submit_btn" onclick="return confirmation()">Delete</a></td>
+               <td><a href="viewallpatientdetails"style="color:white" class="submit_btn">Cancel</a></td>
               </tr></table>
+              <script type="text/javascript">
+	function confirmation() 
+	{
+	var answer = confirm("Are you Sure You Want to Delete Participant ?")
+	if (answer){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+	</script>
               </div>
         	  </div>
         	  </td>
