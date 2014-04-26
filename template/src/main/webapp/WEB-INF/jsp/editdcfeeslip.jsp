@@ -1139,13 +1139,28 @@ charges."</b></td>
  <tr class="row1">
   <td>Reschedule: M T W Th F S for</td>
  <td width="200">1wk &nbsp; 2wks &nbsp; 3wks &nbsp; 4wks</td><td width="200"><input type="text" name="week" value="${dcfeeslip.week}"> Weeks</td> 
- <td width="200"><input type="text" name="month" value="${dcfeeslip.months}"> Months </td> 
+ <td width="200"><input type="text" name="months" value="${dcfeeslip.months}"> Months </td> 
  </tr>
   </table>
+  
+<script language="javascript">
+
+function confirmation() {
+	var answer = confirm("Are you Sure You Want to Delete  Patient from Fee Slip ?");
+	if (answer){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+
+</script>
  <table align="right">
 <tr>
 <td><input type="submit" class="submit_btn" value="Update"></td>
-<td><input type="reset" class="submit_btn" value="Cancel"></td>
+  <td><a href="deletedcfeeslip?dcfeeid=${dcfeeslip.dcfeeid}" style="color:white" class="submit_btn" onclick="return confirmation() ">Delete</a></td>
+ <td><a href="viewallpatientdetails" style="color:white" class="submit_btn">Cancel</a></td>
 </tr>
 </table>
 </div>

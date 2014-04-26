@@ -1305,7 +1305,7 @@ color:#fff;
 				         </ul>
 				          <ul id="ddsubmenu27" class="ddsubmenustyle">
 							      <li><a href="dcfeeslip" >Dc Fee Slip</a></li>
-							      <li><a href="viewdcfeeslip">View Dc Fee Slip</a></li>
+							   <!--    <li><a href="viewdcfeeslip">View Dc Fee Slip</a></li> -->
 							     </ul>
 							     </li>
 				         </ul>
@@ -1357,7 +1357,7 @@ color:#fff;
 					             </ul>
 					              <ul id="ddsubmenu35" class="ddsubmenustyle">
 							       <li><a href="workschool">Work School</a></li>
-							      <li><a href="viewworkschool">View Work School</a></li>
+							    <!--   <li><a href="viewworkschool">View Work School</a></li> -->
 							     
 							     </ul>
 							     </li>

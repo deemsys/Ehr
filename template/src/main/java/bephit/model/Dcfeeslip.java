@@ -6,6 +6,8 @@ public class Dcfeeslip {
 	
 	private String dcfeeid;
 	
+	private String username;
+	
 	@NotEmpty
 	private String pid;
 	
@@ -326,6 +328,14 @@ public class Dcfeeslip {
 
 	public void setPid(String pid) {
 		this.pid = pid;
+	}	
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getDate() {

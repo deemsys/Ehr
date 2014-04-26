@@ -150,6 +150,30 @@ public class AdminController {
 	returnText=patientname+"|"+patientattorney.getUsername();
 	return returnText;				
 	}
+	@RequestMapping(value="/workschool_ajax",method=RequestMethod.POST)
+	public @ResponseBody String workschool_ajax(@ModelAttribute(value="username")Workschool workschool, BindingResult result,ModelMap model ) {
+		String returnText="";
+		String patientname="";
+		System.out.println("username"+workschool.getUsername());
+		if(signupDAO.getPatientusername(workschool.getUsername()).size()==0)
+		{
+			return "error";
+		}		
+	if(workschoolDAO.getusernameworkschool(workschool.getUsername()).size()>0)
+	{
+		//patientname=workschoolDAO.getusernameworkschool(workschool.getUsername()).get(0).getPatientname();
+		System.out.println("pname"+patientname);
+		
+		model.addAttribute("edit","1");
+		return "edit"+patientname+"|"+workschool.getUsername();		
+	}
+	if(patientDAO.getUsername(workschool.getUsername()).size()>0)
+	{
+		patientname=patientDAO.getUsername(workschool.getUsername()).get(0).getName();
+	}		
+	returnText=patientname+"|"+workschool.getUsername();
+	return returnText;				
+	}
 	
 	@RequestMapping(value="/updateletter_ajax",method=RequestMethod.POST)
 	public @ResponseBody String updateletter(@ModelAttribute(value="username")Updateletter updateletter, BindingResult result,ModelMap model ) {
@@ -1305,12 +1329,12 @@ public String insert_workschool(HttpServletRequest request,HttpSession session,@
 		return "workschool";
 	}
 	//System.out.println(perrychiropracticdetails.getAddress()+""+perrychiropracticdetails.getAddress1());
-	workschoolDAO.setworkschool(workschooldetails);
+	workschoolDAO.setworkschool(workschooldetails,request.getParameter("user"));
 	WorkschoolForm workschoolform=new WorkschoolForm();
 	workschoolform.setWorkschooldetails(workschoolDAO.getworkschool());
-	//model.addAttribute("success","true");
+	model.addAttribute("success","true");
 	 model.addAttribute("menu","work");
-	return "viewworkschool";
+	return "workschool";
 }
 
 @RequestMapping(value="/deleteworkschool", method = RequestMethod.GET)
@@ -1321,7 +1345,7 @@ public String insert_workschool(HttpServletRequest request,HttpSession session,@
 		WorkschoolForm workschoolform=new WorkschoolForm();
 		workschoolform.setWorkschooldetails(workschoolDAO.getworkschool());
 		model.addAttribute("workschoolform",workschoolform);	
-		return "viewworkschool";
+		return "workschool";
 	}
 
 @RequestMapping(value="/viewworklist", method = RequestMethod.GET)
@@ -1339,6 +1363,15 @@ public String editworkschool(@RequestParam("workid")String workid, HttpSession s
 	model.addAttribute("menu","returntoschool");
 	WorkschoolForm workschoolform=new WorkschoolForm();
 	workschoolform.setWorkschooldetails(workschoolDAO.getworkschool(workid));
+	model.addAttribute("workschoolform",workschoolform);	
+	return "editworkschool";
+
+}
+@RequestMapping(value="/editworkschooldetails", method = RequestMethod.GET)
+public String editworkschooldetails(@RequestParam("username")String username, HttpSession session,ModelMap model) {		
+	model.addAttribute("menu","returntoschool");
+	WorkschoolForm workschoolform=new WorkschoolForm();
+	workschoolform.setWorkschooldetails(workschoolDAO.getusernameworkschool(username));
 	model.addAttribute("workschoolform",workschoolform);	
 	return "editworkschool";
 
@@ -1592,9 +1625,10 @@ public String insert_formbill(HttpServletRequest request,HttpSession session,@Mo
 		workschoolDAO.updateworkschool(workschooldetails,
 				workschooldetails.getWorkid());
 		WorkschoolForm workschoolform = new WorkschoolForm();
+		model.addAttribute("success", "true");
 		workschoolform.setWorkschooldetails(workschoolDAO.getworkschool());
 		model.addAttribute("workschoolform", workschoolform);
-		return "viewworkschool";
+		return "workschool";
 
 	}
 

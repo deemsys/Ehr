@@ -65,7 +65,7 @@
              <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err">*</span>Date:</td>
-              <td ><input type="hidden" name="workid" value="${workschooldetails.workid }"><input type="text" class="input_txtbx1" name="date"  value="${workschooldetails.date }"  id="datepicker" /><span class="err"><form:errors path="Workschool.date"></form:errors></td>
+              <td ><input type="hidden" name="workid" value="${workschooldetails.workid}"><input type="text" class="input_txtbx1" name="date"  value="${workschooldetails.date }"  id="datepicker" /><span class="err"><form:errors path="Workschool.date"></form:errors></td>
               </tr>
               </table><br>
               <table>
@@ -254,12 +254,25 @@ Yours in Health,</b>
               <tr>
               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
               <td><input type="submit" class="submit_btn" value="Save"></td>
-              <td>&nbsp;&nbsp;</td>
-              <td><a href="hardshiplist" style="color:white" class="submit_btn">Cancel</a></td>
+              <td>&nbsp;</td>
+              <td><a href="deleteworkschool?workid=${workschooldetails.workid}" style="color:white" class="submit_btn" onclick="return confirmation() ">Delete</a></td>
+              <td>&nbsp;</td>
+              <td><a href="viewallpatientdetails" style="color:white" class="submit_btn">Cancel</a></td>
               <td>&nbsp;&nbsp;</td>
         	  </tr>
         	  </table>
-        	 
+        	 <script type="text/javascript">
+	function confirmation() 
+	{
+	var answer = confirm("Are you Sure You Want to Delete Participant ?")
+	if (answer){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+	</script>
         	  </div>
         	  </div>
         	

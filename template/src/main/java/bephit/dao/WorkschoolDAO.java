@@ -27,7 +27,7 @@ public class WorkschoolDAO {
 	
 	
 	
-	public int setworkschool(Workschool workschooldetails)
+	public int setworkschool(Workschool workschooldetails,String username)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -44,7 +44,7 @@ public class WorkschoolDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 
-	    	 String cmd="INSERT INTO `tbl_workschool` (`date`,`letter`,`beexcused`,`excused`,`beconfined`,`confined`,`lifting`,`lift`,`pushing`,`push`,`drive`,`sitting`,`sit`,`standing`,`stand`,`bend`,`entry`,`light`,`froms`,`tos`,`returns`,`returndate`,`diagnosis`) VALUES ('"+workschooldetails.getDate()+"','"+workschooldetails.getLetter()+"','"+workschooldetails.getBeexcused()+"','"+workschooldetails.getExcused()+"','"+workschooldetails.getBeconfined()+"','"+workschooldetails.getConfined()+"','"+workschooldetails.getLifting()+"','"+workschooldetails.getLift()+"','"+workschooldetails.getPushing()+"','"+workschooldetails.getPush()+"','"+workschooldetails.getDrive()+"','"+workschooldetails.getSitting()+"','"+workschooldetails.getSit()+"','"+workschooldetails.getStanding()+"','"+workschooldetails.getStand()+"','"+workschooldetails.getBend()+"','"+workschooldetails.getEntry()+"','"+workschooldetails.getLight()+"','"+workschooldetails.getFroms()+"','"+workschooldetails.getTos()+"','"+workschooldetails.getReturns()+"','"+workschooldetails.getReturndate()+"','"+workschooldetails.getDiagnosis()+"')";
+	    	 String cmd="INSERT INTO `tbl_workschool` (username,`date`,`letter`,`beexcused`,`excused`,`beconfined`,`confined`,`lifting`,`lift`,`pushing`,`push`,`drive`,`sitting`,`sit`,`standing`,`stand`,`bend`,`entry`,`light`,`froms`,`tos`,`returns`,`returndate`,`diagnosis`) VALUES ('"+username+"','"+workschooldetails.getDate()+"','"+workschooldetails.getLetter()+"','"+workschooldetails.getBeexcused()+"','"+workschooldetails.getExcused()+"','"+workschooldetails.getBeconfined()+"','"+workschooldetails.getConfined()+"','"+workschooldetails.getLifting()+"','"+workschooldetails.getLift()+"','"+workschooldetails.getPushing()+"','"+workschooldetails.getPush()+"','"+workschooldetails.getDrive()+"','"+workschooldetails.getSitting()+"','"+workschooldetails.getSit()+"','"+workschooldetails.getStanding()+"','"+workschooldetails.getStand()+"','"+workschooldetails.getBend()+"','"+workschooldetails.getEntry()+"','"+workschooldetails.getLight()+"','"+workschooldetails.getFroms()+"','"+workschooldetails.getTos()+"','"+workschooldetails.getReturns()+"','"+workschooldetails.getReturndate()+"','"+workschooldetails.getDiagnosis()+"')";
 	    	 System.out.println(cmd);
 	    	 statement.execute(cmd);
 			flag=1;
@@ -139,6 +139,66 @@ public class WorkschoolDAO {
 		List<Workschool> workschool = new ArrayList<Workschool>();
 	    try{
 			resultSet = statement.executeQuery("select * from tbl_workschool where workid='"+workid+"'");
+			while(resultSet.next()){
+				workschool.add(new Workschool
+						(resultSet.getString("workid"),
+								resultSet.getString("date"),
+						resultSet.getString("letter"),
+						resultSet.getString("beexcused"),
+						resultSet.getString("excused"),
+			    		resultSet.getString("beconfined"),
+			    		resultSet.getString("confined"),
+			    		resultSet.getString("lifting"),
+								resultSet.getString("lift"),
+						resultSet.getString("pushing"),
+						resultSet.getString("push"),
+						resultSet.getString("drive"),
+			    		resultSet.getString("sitting"),
+			    		resultSet.getString("sit"),
+								resultSet.getString("standing"),
+						resultSet.getString("stand"),
+						resultSet.getString("bend"),
+						resultSet.getString("entry"),
+			    		resultSet.getString("light"),
+			    		resultSet.getString("froms"),
+								resultSet.getString("tos"),
+						resultSet.getString("returns"),
+						resultSet.getString("returndate"),
+						resultSet.getString("diagnosis")
+			    		
+			    		
+						
+			    		 ));
+			
+				
+			    	
+			}
+	    }catch(Exception e){
+	    	System.out.println(e.toString());
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    }finally{
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);	    	
+	    }
+	    return workschool;
+		
+	}
+	public List<Workschool> getusernameworkschool(String username){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<Workschool> workschool = new ArrayList<Workschool>();
+	    try{
+			resultSet = statement.executeQuery("select * from tbl_workschool where username='"+username+"'");
 			while(resultSet.next()){
 				workschool.add(new Workschool
 						(resultSet.getString("workid"),

@@ -1426,69 +1426,8 @@ if(result.hasErrors())
 		}
 		return "viewthoracicexam";
 	}
-	@RequestMapping(value="/dcfeeslip", method = RequestMethod.GET)
-	public String viewdcfeeslip(HttpSession session, ModelMap model) {
-		session.removeAttribute("dcfee");
-		model.addAttribute("menu","dcfee");
-		return "dcfeeslip";
- 
-	}
-	@RequestMapping(value="/dcfeeslip_ajax",method=RequestMethod.POST)
-	public @ResponseBody String addUser(@ModelAttribute(value="dcfeeslip") Dcfeeslip dcfeeslip, BindingResult result,ModelMap model ) {
-		String returnText="";
-		System.out.println("initialemlimited"+dcfeeslip.getInitialemlimited());
 	
-		
-			int ans=feeslipDAO.setAns(dcfeeslip);
-			System.out.println("ans"+ans);
-			returnText=Integer.toString(ans);
-				returnText="<input type=text value='"+returnText+"'>";
-				return returnText;
-				
-	}
-	@RequestMapping(value="/dcfeeslip", method = RequestMethod.POST)
-	public String insert_dcfeeslip(HttpServletRequest request,HttpSession session,ModelMap model,@ModelAttribute("dcfeeslipdetail")  @Valid Dcfeeslip dcfeeslip,BindingResult result) {
-		session.setAttribute("dcfee", dcfeeslip);
-		if(result.hasErrors())
-		{
-		
-			DcfeeslipForm dcfeeslipForm = new DcfeeslipForm();
-		    dcfeeslipForm.setDcfeeslip(feeslipDAO.getDcfeeslip());
-			model.addAttribute("dcfeeslipForm",dcfeeslipForm);
-			model.addAttribute("Success","true");
-			model.addAttribute("menu", "dcfee");
-			return "dcfeeslip";
-		}
-
-		int b=feeslipDAO.setDcfeeslip(dcfeeslip);
-		DcfeeslipForm dcfeeslipForm= new DcfeeslipForm();
-		dcfeeslipForm.setDcfeeslip(feeslipDAO.getDcfeeslip());
-		model.addAttribute("dcfeeslipForm",dcfeeslipForm);
-		return "viewdcfeeslip";
- }
-
-	@RequestMapping(value="/viewdcfeeslip", method=RequestMethod.GET)
-	public String viewdcfeeslip(HttpServletRequest request,ModelMap model, Principal principal) {
-		 model.addAttribute("success","false");
-		
-		  DcfeeslipForm dcfeeslipForm = new DcfeeslipForm();
-		 
-		  dcfeeslipForm.setDcfeeslip(feeslipDAO.getDcfeeslip());
-		  
-		  	model.addAttribute("dcfeeslipForm", dcfeeslipForm);
-		  	model.addAttribute("menu","dcfee");
-		  	model.addAttribute("noofrows",dcfeeslipForm.getDcfeeslip().size());       
-		    dcfeeslipForm.setDcfeeslip(feeslipDAO.getlimiteddcfeeslip(1));  
-		    model.addAttribute("noofpages",(int) Math.ceil(feeslipDAO.getnoofdcfeeslip() * 1.0 / 5));	 
-		        model.addAttribute("button","viewall");
-		        model.addAttribute("success","false");
-		        model.addAttribute("currentpage",1);
-			
-			
-			return "viewdcfeeslip";
-
-		}	
-		
+	
 		@RequestMapping(value="/viewdcfeeslip_page", method=RequestMethod.GET)
 		public String viewdcfeeslip_page(HttpServletRequest request,@RequestParam("page") int page,ModelMap model) {	
 			
@@ -1538,57 +1477,7 @@ if(result.hasErrors())
 		return "dcfeesliplist";
 	}
 	
-	@RequestMapping(value="/editdcfeeslip", method=RequestMethod.GET)
-	public String editdcfeeslip(HttpServletRequest request,@RequestParam("dcfeeid") String dcfeeid,ModelMap model,Dcfeeslip dcfeeslip) 
-	{
-		/*String lumbopelvicexam=request.getParameter("lumbopelvicexam");*/
-		DcfeeslipForm dcfeeslipForm = new DcfeeslipForm();       
-        dcfeeslipForm.setDcfeeslip(feeslipDAO.getDcfee(dcfeeid));
-        model.addAttribute("dcfeeslipForm",dcfeeslipForm);
-        model.addAttribute("menu","dcfee"); 
-		return "editdcfeeslip";
-	}
-	@RequestMapping(value="/updatedcfeeslip", method=RequestMethod.POST)
-	public String updatedcfeeslip(HttpServletRequest request,ModelMap model,@ModelAttribute("dcfeeslip") @Valid Dcfeeslip dcfeeslip,
-			BindingResult result,Principal principal)
-	{
-		if (result.hasErrors())
-		{
-			DcfeeslipForm dcfeeslipForm = new DcfeeslipForm();
-	     
-	       dcfeeslipForm.setDcfeeslip(feeslipDAO.getDcfee(dcfeeslip.getDcfeeid()));
-	      
-	        model.addAttribute("dcfeeslipForm", dcfeeslipForm);
-	        model.addAttribute("menu", "dcfee");    
-		        return "editdcfeeslip";
-		}
-		int status = feeslipDAO.updatedcfeeslip(dcfeeslip, dcfeeslip.getDcfeeid(), principal.getName());
-		System.out.println(status);
-		
-		DcfeeslipForm dcfeeslipForm = new DcfeeslipForm();
-        
-       dcfeeslipForm.setDcfeeslip(feeslipDAO.getDcfeeslip());
-       
-        model.addAttribute("dcfeeslipForm", dcfeeslipForm);
-	        return "viewdcfeeslip";
-		
-	}
 	
-	@RequestMapping(value="/deletedcfeeslip", method=RequestMethod.GET)
-	public String removedcfeeslip(@RequestParam("dcfeeid") String dcfeeid,ModelMap model, Principal principal) {
-	
-		int status=feeslipDAO.deletedcfeeslip(dcfeeid);
-		
-		if(status==1)
-		{
-        model.addAttribute("success","true");
-		
-        DcfeeslipForm dcfeeslipForm= new DcfeeslipForm();
-        dcfeeslipForm.setDcfeeslip(feeslipDAO.getDcfeeslip());
-		model.addAttribute("dcfeeslipForm",dcfeeslipForm);  
-		}
-		return "viewdcfeeslip";
-	}
 	@RequestMapping(value="/lowbackdisability", method = RequestMethod.GET)
 	public String viewinglowbackdisability(HttpSession session, ModelMap model) {
 		session.removeAttribute("low");

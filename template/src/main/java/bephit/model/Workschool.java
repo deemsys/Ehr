@@ -5,6 +5,9 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Workschool
 {
 	private String workid;
+	
+	private String username;
+	
 	@NotEmpty
 	private String date;
 	@NotEmpty
@@ -73,6 +76,12 @@ public class Workschool
 	}
 	public void setWorkid(String workid) {
 		this.workid = workid;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	public String getDate() {
 		return date;
