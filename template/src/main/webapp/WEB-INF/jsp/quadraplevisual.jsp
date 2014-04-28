@@ -109,7 +109,7 @@
 	            
 	             <table>
 	             <tr height="30">
-	             <td width="100">Name</td><td width="400"><input type="hidden" name="patient_id" value="${patientid}"><input type="text" name="name"></td>
+	             <td width="100">Name</td><td width="400"><input type="hidden" name="patient_id" value="${patientid}"><input type="text" name="symptom" value="${symptom}"><input type="text" name="name"></td>
 	             <td width="100">Number</td><td width="400"><input type="text" name="number"></td>
 	             <td width="100">Date</td><td width="400"><input type="text"  name="date" id="datepicker" /></td>
 	             </tr>
@@ -121,7 +121,14 @@
 	             </table>
 	             <table>
 	             <tr height="30">
-	             <td>Pain Name : <input type="text" name="painname" value="${injury}"></td>
+	             <td>Pain Name : <input type="text" name="painnameas" > <select name="painname">
+	             <option value="Wrist/Hand">Wrist/Hand</option>
+	              <option value="Low Back">Low Back</option>
+	              <option value="Neck/Mid Back">Neck/Mid Back</option>
+	              <option value="Oswestry">Oswestry</option>
+	              <option value="Shoulder">Shoulder</option>
+	               <option value="Other">Other</option>
+	             </select>  </td>
 	             </tr>
 	             <tr height="30">
 	             <td><b>1) What is your pain RIGHT NOW?</b></td>

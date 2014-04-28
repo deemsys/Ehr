@@ -193,12 +193,13 @@ public class OswestryController
 	}
 	
 	@RequestMapping (value="/quadraplevisual", method = RequestMethod.GET)
-	public String quadraplevisual(@RequestParam("patient_id") String patient_id,HttpSession session,ModelMap model)
+	public String quadraplevisual(@RequestParam("patient_id") String patient_id,@RequestParam("symptom") String symptom,HttpSession session,ModelMap model)
 	{
 		model.addAttribute("menu","sign");
 	System.out.println("patient"+patient_id);	
 	session.setAttribute("currentpatientid", patient_id);
 	model.addAttribute("patientid",patient_id);
+	model.addAttribute("symptom",symptom);
 		
 		return "quadraplevisual";
 	}
@@ -228,10 +229,10 @@ public class OswestryController
 	
 	
 	@RequestMapping (value="/quadraplevisual", method = RequestMethod.POST)
-	public String insertquadraplevisual(HttpSession session,HttpServletRequest request,ModelMap model,@ModelAttribute("quadraplevisual") @Valid Quadraplevisual quadraplevisual,BindingResult result) throws IOException
+	public String insertquadraplevisual(Principal principal,HttpSession session,HttpServletRequest request,ModelMap model,@ModelAttribute("quadraplevisual") @Valid Quadraplevisual quadraplevisual,BindingResult result) throws IOException
 
 	{
-		quadrapledao.setQuadraplevisual(quadraplevisual);
+		quadrapledao.setQuadraplevisual(quadraplevisual,principal);
 		QuadraplevisualForm quadraplevisualform=new QuadraplevisualForm();
 		quadraplevisualform.setQuadraplevisualdetails(quadrapledao.getQuadraplevisual());
 		model.addAttribute("QuadraplevisualForm", quadraplevisualform);

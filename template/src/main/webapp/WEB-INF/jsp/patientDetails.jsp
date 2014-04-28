@@ -1,11 +1,12 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
 <form method="POST" action="patientDetails">
- 
+ <input type="text" name="symptom_ajax" id="symptom_ajax">
  
  <link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
   <link rel="stylesheet" href="/resources/css/style.css" />
@@ -13,6 +14,51 @@
  <script src="resources/js/jquery.min.js"></script> 
  <script src="resources/js/jquery-ui.js"></script>
  <script src="resources/js/jquey-1.9.1.js"></script>
+  
+  <script type="text/javascript">
+function checkAjaxPost() {  
+	var val=document.getElementById("type_of_accident").value;
+	var element=document.getElementById('accident');
+	alert("hi"+val);
+	if(val=='autoaccident')
+	 {	 
+		
+	var username = $('#username').val();
+	alert(username);
+	
+	 $.ajax({  
+		    type: "POST",  
+		    url: "/EhrApp/duties_ajax",  
+		    data: "username=" + username,
+		    success: function(response){  
+		    	alert(response); 
+		    	if(response=="")
+		    		{
+		    		popupWindow = window.open("dutiesunderduress" ,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		    		}
+		    	else
+		    		{
+		    		var url="editdutiesdetails?username="+document.getElementById("username").value;
+		    		popupWindow = window.open(url,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		    		}
+		    
+	
+		    },  
+		    error: function(e){  
+		      alert('Error: ' + e);  
+		    }  
+		  });  
+		}  
+
+	 if(val=='other')
+		{
+			element.style.display='block';
+			element.focus(); 
+		}
+		 else  
+			  element.style.display='none';
+}
+</script>
   
  <script type="text/javascript">
      
@@ -42,10 +88,8 @@
 			      alert('Error: ' + e);  
 			    }  
 			  });  */ 
-			 var patientid=document.getElementById("totalpoint").value;
-			// alert(patientid);
-			 var url="quadraplevisual?patient_id="+patientid;
-			//  alert(url);
+			 var patientid=document.getElementById("totalpoint").value;			
+			 var url="quadraplevisual?patient_id="+patientid;			
 			 window.open(url,'popUpWindow','resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes'); 
 			}
 	}	
@@ -690,26 +734,55 @@ function validate(){
 				var flagm = 1;
 				function addMultichoice(divName) {
 					
-					
+				//("sdf"+document.getElementById("symptom[0]").value);
 					var xx = document.getElementsByName('symptom[]').length;
+					alert("symptom"+document.getElementById("symptom1").value);		
 					
 					var $in = xx + 1;
-                   
+					var $id=$in-1;
+					var symptomid="symptom"+$id;
+					if(document.getElementById(symptomid).value=="")
+						{
+						alert("The Symptom cannot be blank");
+						}
+					else
+						{
+					if($in==11)
+						{
+						var cancel="cancel"+$id;
+						//document.getElementById(symptomid).style.display="none";
+						document.getElementById(cancel).style.display="none";
+						document.getElementById("morebutton").style.display="none";
+						}
+					else
+						{
+					
+					alert($id);
+					
+					alert(symptomid);
+                 alert("sd"+$in+document.getElementById(symptomid).value);
+                 
 					var newdiv = document.createElement('div');
 
 					newdiv.innerHTML = '<table width="100%" border="0" cellspacing="0" cellpadding="0" id="newtbl'
 							+ $im
-							+ '"><tr height="10"></tr><tr>'
+							+ '"><tr height="10"><span id="sample'+$in+'"></tr><tr>'
 							/* + $in */
-							+ '<td valign="top" align="left" class="input_txt" width="70%"><textarea  name="symptom[]" id="symptom" rows="3" cols="25" placeholder="Specify your Symptoms"></textarea></td></tr><tr><td align="left" valign="top"><a javascript:void(0);" onclick="removechoice('
+							+ '<td valign="top" align="left" class="input_txt" width="70%"><textarea  name="symptom[]" id="symptom'+$in+'" rows="3" cols="25" placeholder="Specify your Symptoms" onblur="check(this)"></textarea></td></tr><tr><td align="left" valign="top"><a javascript:void(0);" onclick="removechoice('
 							+ $im
-							+ ')" style="text-decoration:none;"><input type="submit" class="submit_btn" value="CANCEL"  /></a></td></tr><tr height="10"></tr></table>';
+							+ ')" style="text-decoration:none;"><input type="submit" class="submit_btn" id="cancel'+$in+'" value="CANCEL"  /></a></td></tr><tr height="10"></tr></table>';
 					
 					document.getElementById(divName).appendChild(newdiv);
 					$im++;
 					flagm++;
+					var cancel="cancel"+$id;
+					//document.getElementById(symptomid).style.display="none";
+					document.getElementById(cancel).style.display="none";
+					var span="sample"+$id;
+					//document.getElementById(span).innerHTML=document.getElementById(symptomid).value;
+						}
 
-				}
+				}}
 				function removechoice(id) {
 					id = 'newtbl' + id;
 					var child = document.getElementById(id)
@@ -719,7 +792,238 @@ function validate(){
 				}
 			</script>
 
+<script>
+function ajax()
+{
+	symptom=document.getElementById("symptom_ajax").value;
+	 $.ajax({  
+		    type: "POST",  
+		    url: "/EhrApp/check_symptom_ajax",  
+		    data: "symptom_ajax=" +symptom,
+		    success: function(response){  
+		    	alert(response); 
+		    	var patientid=document.getElementById("totalpoint").value;			
+				 var url="quadraplevisual?patient_id="+patientid+"&&symptom="+document.getElementById("symptom_ajax").value;			
+				 
+			
+		    	if(response=="")
+		    		{
+		    		 window.open(url,'popUpWindow','resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes');
+		    		}
+		    	else
+		    		{
+		    		var url="editquadraplevisual?quadrupleno="+response;
+		    		popupWindow = window.open(url,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		    		}
+		    
+	
+		    },  
+		    error: function(e){  
+		      alert('Error: ' + e);  
+		    }  
+		  });
 
+	
+	}
+
+
+function check(id)
+{
+	document.getElementById("symptom_ajax").value=id.value;
+	alert("hi"+id.value);
+	if(id.value=="")
+		{
+		alert("The Symptom cannot be blank");
+		}
+	else
+		{
+	var xx = document.getElementsByName('symptom[]').length;
+	
+	if(xx==1)
+	{
+		
+		ajax();
+		
+		
+		
+	
+	}
+	if(xx==2)
+		{
+		if(document.getElementById("symptom1").value==document.getElementById("symptom2").value)
+			{
+			alert("The Symptom already exist.Please check it.");
+			}
+		else
+			{
+			ajax();
+			}
+		}
+	if(xx==3)
+	{
+	if(document.getElementById("symptom1").value==document.getElementById("symptom2").value || document.getElementById("symptom1").value==document.getElementById("symptom3").value || document.getElementById("symptom3").value==document.getElementById("symptom2").value)
+		{
+		alert("The Symptom already exist.Please check it.");
+		}
+	else
+		{
+		ajax();
+		}
+	}
+	if(xx==4)
+	{
+	if(document.getElementById("symptom1").value==document.getElementById("symptom2").value || document.getElementById("symptom1").value==document.getElementById("symptom3").value || document.getElementById("symptom3").value==document.getElementById("symptom2").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom4").value	|| document.getElementById("symptom4").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom4").value)
+	
+		{
+		alert("The Symptom already exist.Please check it.");
+		}
+	else
+	{
+	ajax();
+	}
+	}
+		
+	if(xx==5)
+	{
+	if(document.getElementById("symptom1").value==document.getElementById("symptom2").value || document.getElementById("symptom1").value==document.getElementById("symptom3").value || document.getElementById("symptom3").value==document.getElementById("symptom2").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom4").value	|| document.getElementById("symptom4").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom4").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom5").value	|| document.getElementById("symptom5").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom5").value
+	|| document.getElementById("symptom4").value==document.getElementById("symptom5").value)
+	
+		{
+		alert("The Symptom already exist.Please check it.");
+		}
+	else
+	{
+	ajax();
+	}
+	}
+		
+	if(xx==6)
+	{
+	if(document.getElementById("symptom1").value==document.getElementById("symptom2").value || document.getElementById("symptom1").value==document.getElementById("symptom3").value || document.getElementById("symptom3").value==document.getElementById("symptom2").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom4").value	|| document.getElementById("symptom4").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom4").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom5").value	|| document.getElementById("symptom5").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom5").value
+	|| document.getElementById("symptom4").value==document.getElementById("symptom5").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom6").value	|| document.getElementById("symptom6").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom6").value
+	|| document.getElementById("symptom4").value==document.getElementById("symptom6").value || document.getElementById("symptom5").value==document.getElementById("symptom6").value)
+	{
+		alert("The Symptom already exist.Please check it.");
+		}
+	else
+	{
+	ajax();
+	}
+	}
+	
+	if(xx==7)
+	{
+	if(document.getElementById("symptom1").value==document.getElementById("symptom2").value || document.getElementById("symptom1").value==document.getElementById("symptom3").value || document.getElementById("symptom3").value==document.getElementById("symptom2").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom4").value	|| document.getElementById("symptom4").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom4").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom5").value	|| document.getElementById("symptom5").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom5").value
+	|| document.getElementById("symptom4").value==document.getElementById("symptom5").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom6").value	|| document.getElementById("symptom6").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom6").value
+	|| document.getElementById("symptom4").value==document.getElementById("symptom6").value || document.getElementById("symptom5").value==document.getElementById("symptom6").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom7").value	|| document.getElementById("symptom7").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom7").value
+	|| document.getElementById("symptom4").value==document.getElementById("symptom7").value || document.getElementById("symptom5").value==document.getElementById("symptom7").value || document.getElementById("symptom6").value==document.getElementById("symptom7").value
+	)
+	{
+		alert("The Symptom already exist.Please check it.");
+		}
+	else
+	{
+	ajax();
+	}
+	}
+	if(xx==8)
+	{
+	if(document.getElementById("symptom1").value==document.getElementById("symptom2").value || document.getElementById("symptom1").value==document.getElementById("symptom3").value || document.getElementById("symptom3").value==document.getElementById("symptom2").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom4").value	|| document.getElementById("symptom4").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom4").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom5").value	|| document.getElementById("symptom5").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom5").value
+	|| document.getElementById("symptom4").value==document.getElementById("symptom5").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom6").value	|| document.getElementById("symptom6").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom6").value
+	|| document.getElementById("symptom4").value==document.getElementById("symptom6").value || document.getElementById("symptom5").value==document.getElementById("symptom6").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom7").value	|| document.getElementById("symptom7").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom7").value
+	|| document.getElementById("symptom4").value==document.getElementById("symptom7").value || document.getElementById("symptom5").value==document.getElementById("symptom7").value || document.getElementById("symptom6").value==document.getElementById("symptom7").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom8").value	|| document.getElementById("symptom8").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom8").value
+	|| document.getElementById("symptom4").value==document.getElementById("symptom8").value || document.getElementById("symptom5").value==document.getElementById("symptom8").value || document.getElementById("symptom6").value==document.getElementById("symptom8").value
+	|| document.getElementById("symptom7").value==document.getElementById("symptom8").value
+	)
+	{
+		alert("The Symptom already exist.Please check it.");
+		}
+	else
+	{
+	ajax();
+	}
+	}
+	if(xx==9)
+	{
+	if(document.getElementById("symptom1").value==document.getElementById("symptom2").value || document.getElementById("symptom1").value==document.getElementById("symptom3").value || document.getElementById("symptom3").value==document.getElementById("symptom2").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom4").value	|| document.getElementById("symptom4").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom4").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom5").value	|| document.getElementById("symptom5").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom5").value
+	|| document.getElementById("symptom4").value==document.getElementById("symptom5").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom6").value	|| document.getElementById("symptom6").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom6").value
+	|| document.getElementById("symptom4").value==document.getElementById("symptom6").value || document.getElementById("symptom5").value==document.getElementById("symptom6").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom7").value	|| document.getElementById("symptom7").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom7").value
+	|| document.getElementById("symptom4").value==document.getElementById("symptom7").value || document.getElementById("symptom5").value==document.getElementById("symptom7").value || document.getElementById("symptom6").value==document.getElementById("symptom7").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom8").value	|| document.getElementById("symptom8").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom8").value
+	|| document.getElementById("symptom4").value==document.getElementById("symptom8").value || document.getElementById("symptom5").value==document.getElementById("symptom8").value || document.getElementById("symptom6").value==document.getElementById("symptom8").value
+	|| document.getElementById("symptom7").value==document.getElementById("symptom8").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom9").value	|| document.getElementById("symptom9").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom9").value
+	|| document.getElementById("symptom4").value==document.getElementById("symptom9").value || document.getElementById("symptom5").value==document.getElementById("symptom9").value || document.getElementById("symptom6").value==document.getElementById("symptom9").value
+	|| document.getElementById("symptom7").value==document.getElementById("symptom9").value || document.getElementById("symptom8").value==document.getElementById("symptom9").value
+	)
+	{
+		alert("The Symptom already exist.Please check it.");
+		}
+	else
+	{
+	ajax();
+	}
+	}
+	
+	if(xx==10)
+	{
+	if(document.getElementById("symptom1").value==document.getElementById("symptom2").value || document.getElementById("symptom1").value==document.getElementById("symptom3").value || document.getElementById("symptom3").value==document.getElementById("symptom2").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom4").value	|| document.getElementById("symptom4").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom4").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom5").value	|| document.getElementById("symptom5").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom5").value
+	|| document.getElementById("symptom4").value==document.getElementById("symptom5").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom6").value	|| document.getElementById("symptom6").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom6").value
+	|| document.getElementById("symptom4").value==document.getElementById("symptom6").value || document.getElementById("symptom5").value==document.getElementById("symptom6").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom7").value	|| document.getElementById("symptom7").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom7").value
+	|| document.getElementById("symptom4").value==document.getElementById("symptom7").value || document.getElementById("symptom5").value==document.getElementById("symptom7").value || document.getElementById("symptom6").value==document.getElementById("symptom7").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom8").value	|| document.getElementById("symptom8").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom8").value
+	|| document.getElementById("symptom4").value==document.getElementById("symptom8").value || document.getElementById("symptom5").value==document.getElementById("symptom8").value || document.getElementById("symptom6").value==document.getElementById("symptom8").value
+	|| document.getElementById("symptom7").value==document.getElementById("symptom8").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom9").value	|| document.getElementById("symptom9").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom9").value
+	|| document.getElementById("symptom4").value==document.getElementById("symptom9").value || document.getElementById("symptom5").value==document.getElementById("symptom9").value || document.getElementById("symptom6").value==document.getElementById("symptom9").value
+	|| document.getElementById("symptom7").value==document.getElementById("symptom9").value || document.getElementById("symptom8").value==document.getElementById("symptom9").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom10").value	|| document.getElementById("symptom10").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom10").value
+	|| document.getElementById("symptom4").value==document.getElementById("symptom10").value || document.getElementById("symptom5").value==document.getElementById("symptom10").value || document.getElementById("symptom6").value==document.getElementById("symptom10").value
+	|| document.getElementById("symptom7").value==document.getElementById("symptom10").value || document.getElementById("symptom8").value==document.getElementById("symptom10").value || document.getElementById("symptom8").value==document.getElementById("symptom10").value
+	
+	
+	)
+	{
+		alert("The Symptom already exist.Please check it.");
+		}
+	else
+	{
+	ajax();
+	}
+	}
+	
+	
+		}
+	/* alert("check"+ document.getElementById("symptom2").value);
+	
+	alert("jhsa"+document.getElementById(val).value));
+	alert("asdasd"+val); */
+	}
+
+</script>
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
 
       <tr>
@@ -730,12 +1034,12 @@ function validate(){
 	       </div>     </div>
 	       
 <div class="contentbox">
-
-
+<input type="text" value="<sec:authentication property="principal.username" />" id="username" name="username">
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
   				<tr>
     				<td align="left" valign="top" width="50%" style="padding-right:25px;">
     					<!-- <h2 class="quck-txt">Patient Details</h2> -->
+    					<span id="cancel1"></span>
     					<c:choose>
     					<c:when test="${empty first}">
                         <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -1013,7 +1317,22 @@ function validate(){
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
   				<tr>
     				<td align="left" valign="top" width="50%" style="padding-right:25px;">
-                        
+                     <!--    
+                      <table><tr><td></td><td><textarea rows="5" cols="10" name="sym1" id="sym1"></textarea> <input type="button" value="Add One More Symptom" onclick="check('symptom1')">
+             <script type="text/javascript">
+                     function hi()
+                     {
+                    	alert("hi");
+                    	 document.getElementById("sym2").style.display="block"; 
+                     }
+                      
+                      
+                      </script>           
+                       </td></tr>
+                       <td></td><td  id="row1" ><textarea rows="5" cols="10" name="sym2" id="sym2" style="display:none "></textarea><input type="button" onclick="sym2()"></td>
+                       <Td><input type="button" value="symptom" onclick=""></Td>
+                       </table> -->
+                    
                         <table cellpadding="0" cellspacing="0" border="0" width="100%">
                        <span class="err">*</span>Please Describes Your Symptoms Briefly:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       
@@ -1022,10 +1341,10 @@ function validate(){
                       </div> 
                       <td valign="middle" align="left" class="input_txt"></td>
 				                  <td valign="top" align="left" class="input_txt">
-				                   <textarea rows="3" cols="25" placeholder="Specify your Symptoms" name="symptom[]" id="symptom" onBlur="newpopup()"></textarea>
+				                   <textarea rows="3" cols="25" placeholder="Specify your Symptoms" name="symptom[]" id="symptom1" onBlur="check(this)"></textarea>
 				                <p></p>
 				                 <div id="multichoice"></div>
-				                   <a href="javascript:void(0);" onclick="addMultichoice('multichoice');" style="text-decoration:none;" ><input type="button" value="Add one more Symptom" class="submit_btn2" name=""/></a>
+				                   <a href="javascript:void(0);" onclick="addMultichoice('multichoice');" style="text-decoration:none;" ><input type="button" value="Add one more Symptom" class="submit_btn2" id="morebutton" name=""/></a>
 
 				                  	</td>
 				                  	<td>
@@ -1070,14 +1389,13 @@ function validate(){
 				                <tr class="row1">
 				                 	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Type Of Accident:</td>
 				                  	<td valign="top" align="left" class="input_txt">
-				                  		<select name="Type_Of_Accident" class="input_cmbbx1" id="type_of_accident"onclick='Checklight(this.value)';>
+				                  		<select name="Type_Of_Accident" class="input_cmbbx1" id="type_of_accident" onchange="checkAjaxPost()"  onclick='Checklight(this.value)';>
 
-						                    <option selected="selected" value="autoaccident" id="auto" >Auto</option>
+						                        <option selected="selected" value="" >--Select--</option>
+						                    <option value="autoaccident" >Auto</option>				                   
 
-						                   
-
-											<option value="workaccident" id="work">Work</option>
-											<option value="mobileaccident" id="work">Mobile</option>
+											<option value="workaccident" >Work</option>
+											
 											<option value="other" id="other">Other</option>
 				                   		</select>
 				        		                   <input type="text" name="accident" id="accident" style='display:none' />
@@ -1714,9 +2032,9 @@ function validate(){
 				                 	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Type Of Accident:</td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  		<select name="Type_Of_Accident" class="input_cmbbx1" onchange='Checklight(this.value)';>
-						                    <option selected="selected" value="autoaccident" >Auto</option>
-											<option value="workaccident">Work</option>
-											<option value="mobileaccident">Mobile</option>
+						                  <option selected="selected" value="" >--Select--</option>
+						                    <option  value="autoaccident" >Auto</option>
+											<option value="workaccident">Work</option>											
 											<option value="other">Other</option>
 				                   		</select>
 				                   <input type="text" name="accident" id="accident" style='display:none'/>
@@ -2085,7 +2403,7 @@ function validate(){
 	});
   </script>
    
-  <script type="text/javascript">
+  <!-- <script type="text/javascript">
   
 function Checklight(val){
  var element=document.getElementById('accident');
@@ -2093,7 +2411,7 @@ function Checklight(val){
  var type = type1.options[type1.selectedIndex].value;
  /* document.location.href = "/header.jsp?value=type"; */
  
- if(val=='mobileaccident')
+ if(val=='autoaccident')
 	 {
  popupWindow = window.open("dutiesunderduress" ,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
 	 }
@@ -2106,7 +2424,7 @@ function Checklight(val){
  				  element.style.display='none';
 
 } 
-</script>
+</script> -->
 
  <script type="text/javascript">
 function toggle3(value){

@@ -1661,7 +1661,7 @@ if(result.hasErrors())
     	DutiesduressForm dutiesduressForm= new DutiesduressForm();
 		dutiesduressForm.setDutiesunderduressdetails(dutiesDAO.getDuties());
 		model.addAttribute("dutiesduressForm",dutiesduressForm);
-		return "dutiesunderduress";
+		return "viewduties";
  
 	
 	}
@@ -1746,6 +1746,16 @@ if(result.hasErrors())
         model.addAttribute("menu","duties"); 
 		return "editduties";
 	}
+	@RequestMapping(value="/editdutiesdetails", method=RequestMethod.GET)
+	public String editduties_ajax(HttpServletRequest request,@RequestParam("username") String username,ModelMap model,Dutiesunderduress dutiesunderduress) 
+	{
+		/*String lumbopelvicexam=request.getParameter("lumbopelvicexam");*/
+		DutiesduressForm dutiesduressForm = new DutiesduressForm();       
+        dutiesduressForm.setDutiesunderduressdetails(dutiesDAO.getusernameDutiesunderduress(username));
+        model.addAttribute("dutiesduressForm",dutiesduressForm);
+        model.addAttribute("menu","duties"); 
+		return "editduties";
+	}
 	@RequestMapping(value="/updateduties", method=RequestMethod.POST)
 	public String updateduties(HttpServletRequest request,@ModelAttribute("Dutiesunderduress") @Valid Dutiesunderduress dutiesunderduress,
 			BindingResult result,ModelMap model,Principal principal)
@@ -1757,6 +1767,7 @@ if(result.hasErrors())
         
        dutiesduressForm.setDutiesunderduressdetails(dutiesDAO.getDuties());
        model.addAttribute("menu","duties");
+       model.addAttribute("duties","1");
         model.addAttribute("dutiesduressForm", dutiesduressForm);
 	        return "viewduties";
 		
@@ -1766,8 +1777,8 @@ if(result.hasErrors())
 	public String removeduties(@RequestParam("dutiesno") String dutiesno,ModelMap model, Principal principal) {
 	
 		int status=dutiesDAO.deletedutiesunderduress(dutiesno);
-		
-		if(status==1)
+		  model.addAttribute("duties","1");
+	if(status==1)
 		{
         model.addAttribute("success","true");
 		

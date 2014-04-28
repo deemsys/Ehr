@@ -272,9 +272,24 @@ $(function() {
  <td><input type="checkbox" name="sincemva28" value="Since MVA" <c:if test="${dutiesunderduressdetails.sincemva28=='Since MVA'}"><c:out value="Checked"/></c:if>>&nbsp;Since MVA &nbsp;&nbsp;<input type="checkbox" name="ongoing28" value="Ongoing" <c:if test="${dutiesunderduressdetails.ongoing28=='Ongoing'}"><c:out value="Checked"/></c:if>>&nbsp;Ongoing</td>
  </tr>
  </table>
+ <script language="javascript">
+
+function confirmation() {
+	var answer = confirm("Are you Sure You Want to Delete  Patient from dutiesunderduress?");
+	if (answer){
+		return true;
+	}
+	else{
+		return false;
+	}
+}</script>
+
  <table align="right">
 <tr>
 <td><input type="submit" class="submit_btn" value="Update"></td>
+
+<td><a href="deleteduties?dutiesno=${dutiesunderduressdetails.dutiesno}" style="color:white" class="submit_btn" onclick="return confirmation() ">Delete</a></td>
+
 <td><input type="reset" class="submit_btn" value="Cancel"></td>
 </tr>
 </table>

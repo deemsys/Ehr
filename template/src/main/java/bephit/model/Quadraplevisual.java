@@ -10,6 +10,8 @@ public class Quadraplevisual
 	
 	private String quadrapleno;
 	private String patient_id;
+	private String username;
+	private String symptom;
 	private String name;
 	private String number;
 	private String date;
@@ -24,28 +26,6 @@ public class Quadraplevisual
 	{
 
 	}
-	
-	
-	
-	public Quadraplevisual(String quadrapleno, String patient_id, String name,
-			String number, String date, String painname, String painscale,
-			String painscale1, String painscale2, String painscale3,
-			String awakehours) {
-		super();
-		this.quadrapleno = quadrapleno;
-		this.patient_id = patient_id;
-		this.name = name;
-		this.number = number;
-		this.date = date;
-		this.painname = painname;
-		this.painscale = painscale;
-		this.painscale1 = painscale1;
-		this.painscale2 = painscale2;
-		this.painscale3 = painscale3;
-		this.awakehours = awakehours;
-	}
-
-
 
 	public String getQuadrapleno() {
 		return quadrapleno;
@@ -54,12 +34,31 @@ public class Quadraplevisual
 	public void setQuadrapleno(String quadrapleno) {
 		this.quadrapleno = quadrapleno;
 	}
+
 	public String getPatient_id() {
 		return patient_id;
 	}
+
 	public void setPatient_id(String patient_id) {
 		this.patient_id = patient_id;
 	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getSymptom() {
+		return symptom;
+	}
+
+	public void setSymptom(String symptom) {
+		this.symptom = symptom;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -84,21 +83,17 @@ public class Quadraplevisual
 		this.date = date;
 	}
 
-	public String getPainscale() {
-		return painscale;
-	}	
-
 	public String getPainname() {
 		return painname;
 	}
-
-
 
 	public void setPainname(String painname) {
 		this.painname = painname;
 	}
 
-
+	public String getPainscale() {
+		return painscale;
+	}
 
 	public void setPainscale(String painscale) {
 		this.painscale = painscale;
@@ -135,8 +130,30 @@ public class Quadraplevisual
 	public void setAwakehours(String awakehours) {
 		this.awakehours = awakehours;
 	}
-	
 
+	public Quadraplevisual(String quadrapleno, String patient_id,
+			String username, String symptom, String name, String number,
+			String date, String painname, String painscale, String painscale1,
+			String painscale2, String painscale3, String awakehours) {
+		super();
+		this.quadrapleno = quadrapleno;
+		this.patient_id = patient_id;
+		this.username = username;
+		this.symptom = symptom;
+		this.name = name;
+		this.number = number;
+		this.date = date;
+		this.painname = painname;
+		this.painscale = painscale;
+		this.painscale1 = painscale1;
+		this.painscale2 = painscale2;
+		this.painscale3 = painscale3;
+		this.awakehours = awakehours;
+	}
+
+	
+	
+	
 
 	
 }

@@ -33,6 +33,7 @@ import bephit.dao.DoctorsignupDAO;
 /*import bephit.dao.DoctorsignupDAO;*/
 //import bephit.dao.DoctorsignupDAO;
 import bephit.dao.DoctorsearchDAO;
+import bephit.dao.DutiesunderDAO;
 import bephit.dao.FootexamDAO;
 import bephit.dao.FootquestionnarieDAO;
 import bephit.dao.HamiltonchiropracticDAO;
@@ -45,6 +46,7 @@ import bephit.dao.InsuranceverificationDAO;
 import bephit.dao.MainDAO;
 import bephit.dao.MedicalDAO;
 import bephit.dao.MoretestDAO;
+import bephit.dao.QuadraplevisualDAO;
 import bephit.dao.SymptomDAO;
 
 import bephit.dao.PatientDAO;
@@ -107,6 +109,9 @@ import java.util.*;
 public class MainController {
 	
 	RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
+	
+	@Autowired
+	DutiesunderDAO dutiesunderDAO;
 	
 	@Autowired  
 	SignupDAO signupDAO;
@@ -193,6 +198,9 @@ public class MainController {
 	
 	@Autowired
 	SoapnotesDAO soapDAO;
+	
+	@Autowired
+	QuadraplevisualDAO quadraplevisualDAO;
 	
 	
 	static int id;
@@ -3237,7 +3245,29 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 				
 	}*/
 	
-	
+	@RequestMapping(value="/duties_ajax",method=RequestMethod.POST)
+	public @ResponseBody String duties_ajax(@ModelAttribute("username") String username,PatientDetails patientDetails)
+	{
+		System.out.println("username..."+patientDetails.getUsername());
+		if(dutiesunderDAO.getusernameDutiesunderduress(patientDetails.getUsername()).size()>0)
+		{
+			return "edit";
+		}
+		
+		return "";
+	}
+	@RequestMapping(value="/check_symptom_ajax",method=RequestMethod.POST)
+	public @ResponseBody String check_symptom_ajax(Principal principal,@ModelAttribute("symptom_ajax") String symptom,PatientDetails patientDetails)
+	{
+		System.out.println("symptom..."+patientDetails.getSymptom_ajax());
+	if(quadraplevisualDAO.checkusernameQuadraple(patientDetails.getSymptom_ajax(), principal).size()>0)
+	{
+		return quadraplevisualDAO.checkusernameQuadraple(patientDetails.getSymptom_ajax(), principal).get(0).getQuadrapleno();
+	}
+		
+		
+		return "";
+	}
 	@RequestMapping(value="/patientDetails", method = RequestMethod.POST)
 	public String insert_patientdetails(HttpServletRequest request,HttpSession session,@ModelAttribute("PatientDetails")  @Valid PatientDetails patientDetails,BindingResult result,ModelMap model,Principal principal) {
 		session.setAttribute("first",patientDetails);
@@ -3260,7 +3290,7 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 	    	System.out.println("symptomsdsd..."+Symptoms);
 	    }
 	   // System.out.println("symptom..."+Symptoms[1]);	      
-		if(result.hasErrors())
+		/*if(result.hasErrors())
 			{			
 				PatientDetailsForm patientdetailsform = new PatientDetailsForm();
 				patientdetailsform.setPatientDetails(patientDAO.getPatientDetails());
@@ -3268,7 +3298,7 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 				model.addAttribute("Success","true");
 				model.addAttribute("menu", "patientInfo");
 				return "patientDetails";
-			}	       
+			}	*/       
 	        patientDAO.setPatientDetails(patientDetails,Symptoms,principal);
 	        PatientDetailsForm patientdetailsform = new PatientDetailsForm();
 			patientdetailsform.setPatientDetails(patientDAO.getPatientDetails());
@@ -3282,9 +3312,14 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 			model.addAttribute("patientDetailsForm",patientdetailsform);
 			model.addAttribute("menu", "patientInfo");
 			/*session.removeAttribute("patient");*/
+			
+			if(type.equals(""))
+			{
+				return "viewpatient";	
+			}
 			if(type.equals("other"))
 			{
-				return "patientDetails";
+				return "viewpatient";
 			} 
 			else
 			{

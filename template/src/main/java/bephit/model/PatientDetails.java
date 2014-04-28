@@ -12,6 +12,8 @@ private String Patient_id;
 @NotEmpty
 private String Name;
 
+private String symptom_ajax;
+
 private String username;
 
 @NotEmpty
@@ -23,22 +25,22 @@ private String City;
 @NotEmpty
 private String State;
 @NotEmpty
-@Pattern(regexp="(^$|[0-9]{6})",message="Not a valid Zip Code")
+@Pattern(regexp="(^$|[0-9]{5})",message="Not a valid Zip Code")
 private String ZipCode;
 @NotEmpty
-@Pattern(regexp="(^$|[0-9-]{13})",message="Not a valid Mobile number")
+@Pattern(regexp="(^$|[0-9-()]{13})",message="Not a valid Mobile number")
 private String Homephone;
 @NotEmpty
 @Pattern(regexp="^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$",message="Please Enetr a valid mail id")
 
 private String Emailid;
 @NotEmpty
-@Pattern(regexp="(^$|[0-9]{13})",message="Not a valid Mobile number")
+@Pattern(regexp="(^$|[0-9-()]{13})",message="Not a valid Mobile number")
 private String MobileNumber;
 @NotEmpty
 private String DateOfBirth;
 @NotEmpty
-@Pattern(regexp="(^$|[0-9]{11})",message="Not a valid Social Security number")
+@Pattern(regexp="(^$|[0-9-]{11})",message="Not a valid Social Security number")
 private String SocialSecurityNumber;
 private String Gender;
 
@@ -56,7 +58,7 @@ private String EmployerAddress;
 /*
 @Pattern(regexp="(^$|[0-9]{10})",message="Not a valid Mobile number")*/
 @NotEmpty
-@Pattern(regexp="(^$|[0-9-]{13})",message="Not a valid Mobile number")
+@Pattern(regexp="(^$|[0-9-()]{13})",message="Not a valid Mobile number")
 private String Workphone;
 @NotEmpty
 private String zip;
@@ -72,7 +74,7 @@ private String SpousesName;
 @NotEmpty
 private String SpousesEmp;
 @NotEmpty
-@Pattern(regexp="(^$|[0-9-]{13})",message="Not a valid Mobile number")
+@Pattern(regexp="(^$|[0-9-()]{13})",message="Not a valid Mobile number")
 private String Spousesph;
 @NotEmpty
 private String Name_friend;
@@ -101,7 +103,7 @@ private String record;
 @NotEmpty
 private String phyname;
 @NotEmpty
-@Pattern(regexp="(^$|[0-9-]{13})",message="Not a valid Mobile number")
+@Pattern(regexp="(^$|[0-9-()]{13})",message="Not a valid Mobile number")
 private String phyphone;
 @NotEmpty
 private String xray;
@@ -111,7 +113,7 @@ private String treat;
 private String NameOfAttorney;
 @NotEmpty
 
-@Pattern(regexp="(^$|[0-9]{13})",message="Not a valid Mobile number")
+@Pattern(regexp="(^$|[0-9-()]{13})",message="Not a valid Mobile number")
 private String Phone_Number;
 @NotEmpty
 
@@ -120,12 +122,12 @@ private String Fault_accident;
 
 private String Insurance;
 @NotEmpty
-@Pattern(regexp="(^$|[0-9]{13})",message="Not a valid Mobile number")
+@Pattern(regexp="(^$|[0-9-()]{13})",message="Not a valid Mobile number")
 private String Insurance_phone;
 @NotEmpty
 private String Name_auto;
 @NotEmpty
-@Pattern(regexp="(^$|[0-9]{13})",message="Not a valid Mobile number")
+@Pattern(regexp="(^$|[0-9-()]{13})",message="Not a valid Mobile number")
 private String Phone_auto;
 
 @NotEmpty
@@ -133,7 +135,7 @@ private String Policy;
 @NotEmpty
 private String Name_health;
 @NotEmpty
-@Pattern(regexp="(^$|[0-9]{13})",message="Not a valid Mobile number")
+@Pattern(regexp="(^$|[0-9-()]{13})",message="Not a valid Mobile number")
 private String Health_phone;
 
 private String Prev_accident;
@@ -211,7 +213,12 @@ public String getName() {
 public void setName(String name) {
 	Name = name;
 }
-
+public String getSymptom_ajax() {
+	return symptom_ajax;
+}
+public void setSymptom_ajax(String symptom_ajax) {
+	this.symptom_ajax = symptom_ajax;
+}
 public String getUsername() {
 	return username;
 }
