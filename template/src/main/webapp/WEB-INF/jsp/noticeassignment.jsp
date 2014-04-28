@@ -126,7 +126,7 @@ function doAjaxPost() {
 		    	 var calculate=cal+1;
 			     alert(response.indexOf("|"));
 			   alert(response.substring(0,cal));
-			   document.getElementById("patientname").value=response.substring(0,cal);
+			   //document.getElementById("patientname").value=response.substring(0,cal);
 			   
 		    	 document.getElementById("user").value=response.substring(calculate,response.length);
 		    	
@@ -314,7 +314,7 @@ if(document.getElementById("nameofins").value=="")
               <td ><input type="text" class="input_txtbx1" name="todaysdate" id="datepicker2" /><span class="err"><form:errors path="noticeerror.todaysdate"></form:errors></span></td>                      
           </tr> <br>  
             </table>
-            <input type="text" name="user" id="user">
+            <input type="text" name="user" id="user"  style="visibility:hidden">
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
         	  <tr><td hight="20" width="250"><br><br><p align="left" id="mypar"><b><h4>Dear Madam/Sir:</h4></b></p></td></tr>
        		  </table>

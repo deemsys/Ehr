@@ -6,6 +6,8 @@ public class Requestfordemand
 {
 	private String requestid;
 	
+	private String username; 
+	
 	private String faultinsurer;
 	
 	private String medpayinsurer;
@@ -39,6 +41,14 @@ public class Requestfordemand
 	}
 	public void setRequestid(String requestid) {
 		this.requestid = requestid;
+	}
+	
+	
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	public String getFaultinsurer() {
 		return faultinsurer;

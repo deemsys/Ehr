@@ -6,6 +6,7 @@ public class Lettertopatients
 {
 	private String letterid;
 	@NotEmpty
+	private String username;
 	private String re;
 	@NotEmpty
 	private String ssn;
@@ -43,6 +44,13 @@ public class Lettertopatients
 	}
 	public void setLetterid(String letterid) {
 		this.letterid = letterid;
+	}
+	
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	public String getRe() {
 		return re;

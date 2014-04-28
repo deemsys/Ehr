@@ -27,6 +27,18 @@
  
  
 </script>
+<script type="text/javascript">
+	function confirmation() 
+	{
+	var answer = confirm("Are you Sure You Want to Delete Participant ?")
+	if (answer){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+	</script>
 </head>
  <body>
 <div id="right_content">
@@ -134,15 +146,14 @@
               <tr> <td width="600"></td>  <td><span class="err">*</span><input type="text" class="input_txtbx1" name="sign" id="sign" value="${lettertopatientsdetails.sign }"/>.<span class="err"><form:errors path="lettertopatientsdetails.letter"></form:errors> </span>
        		</td></tr>
        		 </table>
-       		<table>
-              <tr>
-              <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-              <td><input type="submit" class="submit_btn" value="update"></td>
-              <td>&nbsp;&nbsp;</td>
-           <td><a href="viewlettertopatients"style="color:white" class="submit_btn">Cancel</a></td>
-              <td>&nbsp;&nbsp;</td>
-        	  </tr>
-        	  </table>
+       		
+        	 
+        	   <table><tr> <td><input type="submit" class="submit_btn" value="update"></td>
+           
+               
+               <td><a href="deletelettertopatients?username=${lettertopatients.username}"style="color:white" class="submit_btn" onclick="return confirmation()" >Delete</a></td> 
+               <td><a href="viewallpatientdetails"style="color:white" class="submit_btn">Cancel</a></td>
+              </tr></table>
         	 
         	  </div>
         	  </div>

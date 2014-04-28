@@ -156,6 +156,17 @@ public class noticeassignmentajax {
 				return returnText;
 				
 	}
+	@RequestMapping(value = "/editnoticeassignmentdetails", method = RequestMethod.GET)
+	public String editnoticeassignment(@RequestParam("username") String username, HttpSession session,ModelMap model) {
+		//noticeassignmentDAO.setnoticeassignment(noticeassignmentdetails);
+		NoticeassignmentForm noticeassignmentform = new NoticeassignmentForm();
+		noticeassignmentform.setNoticeassignmentdetails(noticeassignmentDAO.getnoticeassignment(username));
+		model.addAttribute("noticeassignmentform", noticeassignmentform);
+		model.addAttribute("Success", "true");
+		model.addAttribute("menu", "work");
+		return "editnoticeassignment";
+
+	}
 	
 	/*@RequestMapping(value = "/viewnoticeassignment", method = RequestMethod.GET)
 	public String viewnoticeassignment(HttpSession session, ModelMap model) {

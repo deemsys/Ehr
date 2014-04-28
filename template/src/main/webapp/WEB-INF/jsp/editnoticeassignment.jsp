@@ -9,6 +9,20 @@
  <script src="resources/js/jquery.min.js"></script> 
  <script src="resources/js/jquery-ui.js"></script>
  <script src="resources/js/jquey-1.9.1.js"></script>
+ 
+
+<script type="text/javascript">
+	function confirmation() 
+	{
+	var answer = confirm("Are you Sure You Want to Delete Participant ?")
+	if (answer){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+	</script>
  <STYLE type="text/css">
   P#mypar {font-style:calibri;
   line-height:18px;}
@@ -169,8 +183,12 @@ do not receive a response, we will act in reliance that you will comply with it'
               <input type="text" class="input_txtbx1" name="treatingphysician" value="${noticeassignmentdetails.treatingphysician }" id="treatingphysician" /><span class="err"><form:errors path="Noticeassignment.treatingphysician"></form:errors></td>
               </tr><br>
               </table>
-              <table><tr> <td><input type="submit" class="submit_btn" value="Save"></td>
-               <td><a href="responseattorney"style="color:white" class="submit_btn">Cancel</a></td>
+              
+               <table><tr> <td><input type="submit" class="submit_btn" value="update"></td>
+           
+               <td><a href="viewallpatientdetails"style="color:white" class="submit_btn">Cancel</a></td>
+               <td><a href="deletefaxcover?username=${faxcover.username}"style="color:white" class="submit_btn" onclick="return confirmation()" >Delete</a></td> 
+               
               </tr></table>
               </div>
         	  </div>

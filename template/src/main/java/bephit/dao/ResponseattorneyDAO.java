@@ -11,6 +11,7 @@ import java.util.Date;
 import java.util.List;
 import javax.sql.DataSource;
 
+import bephit.model.Faxcover;
 import bephit.model.Letterofprotection;
 import bephit.model.Responseattorney;
  
@@ -27,7 +28,7 @@ public class ResponseattorneyDAO {
 	
 	
 	
-	public int setresponseattorney(Responseattorney responseattorneydetails)
+	public int setresponseattorney(Responseattorney responseattorneydetails,String username)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -44,7 +45,7 @@ public class ResponseattorneyDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 
-	    	 String cmd="INSERT INTO `tbl_responseattorney` (`name`,`address`,`regarding`,`patientname`,`dateofaccident`,`nameofclinic`,`treatingphysician`) VALUES ('"+responseattorneydetails.getName()+"','"+responseattorneydetails.getAddress()+"','"+responseattorneydetails.getRegarding()+"','"+responseattorneydetails.getPatientname()+"','"+responseattorneydetails.getDateofaccident()+"','"+responseattorneydetails.getNameofclinic()+"','"+responseattorneydetails.getTreatingphysician()+"')";
+	    	 String cmd="INSERT INTO `tbl_responseattorney` (username,`name`,`address`,`regarding`,`patientname`,`dateofaccident`,`nameofclinic`,`treatingphysician`) VALUES ('"+username+"','"+responseattorneydetails.getName()+"','"+responseattorneydetails.getAddress()+"','"+responseattorneydetails.getRegarding()+"','"+responseattorneydetails.getPatientname()+"','"+responseattorneydetails.getDateofaccident()+"','"+responseattorneydetails.getNameofclinic()+"','"+responseattorneydetails.getTreatingphysician()+"')";
 	    	 System.out.println(cmd);
 	    	 statement.execute(cmd);
 			flag=1;
@@ -107,7 +108,7 @@ public class ResponseattorneyDAO {
 	    return responseattorney;
 		
 	}
-	public List<Responseattorney> getresponseattorney(String responseid){
+	public List<Responseattorney> getresponseattorney(String username){
 		Connection con = null;
 		Statement statement = null;
 		ResultSet resultSet = null;
@@ -119,7 +120,7 @@ public class ResponseattorneyDAO {
 		}
 		List<Responseattorney> responseattorney = new ArrayList<Responseattorney>();
 	    try{
-			resultSet = statement.executeQuery("select * from tbl_responseattorney where responseid='"+responseid+"'");
+			resultSet = statement.executeQuery("select * from tbl_responseattorney where username='"+username+"'");
 			while(resultSet.next()){
 				responseattorney.add(new Responseattorney
 						(resultSet.getString("responseid"),
@@ -148,7 +149,51 @@ public class ResponseattorneyDAO {
 	    return responseattorney;
 		
 	}
-	public int updateresponseattorney(Responseattorney responseattorneydetail,String responseid)	{
+	public List<Responseattorney> getusernameresponseattorney(String username){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<Responseattorney> responseattorney = new ArrayList<Responseattorney>();
+	    try{
+	    	resultSet = statement.executeQuery("select * from tbl_responseattorney where username='"+username+"'");
+			while(resultSet.next()){
+				responseattorney.add(new Responseattorney
+						(resultSet.getString("responseid"),
+								resultSet.getString("name"),
+						resultSet.getString("address"),
+					
+			    		resultSet.getString("regarding"),
+			    		resultSet.getString("patientname"),
+			    		resultSet.getString("dateofaccident"),
+			    		resultSet.getString("nameofclinic"),
+			    		resultSet.getString("treatingphysician")
+			    		 ));
+				
+			//	System.out.println("Name::::::::::::::::::"+faxcover.get(0).getName());
+			    	
+			}
+	    }catch(Exception e){
+	    	System.out.println(e.toString());
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    }finally{
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);	    	
+	    }
+	    return responseattorney;
+		
+	}
+	
+	
+	public int updateresponseattorney(Responseattorney responseattorneydetail,String username)	{
 		Connection con = null;
 		Statement statement = null;
 		ResultSet resultSet = null;
@@ -170,7 +215,7 @@ public class ResponseattorneyDAO {
 	    +"',patientname='"+responseattorneydetail.getPatientname()	
 	    +"',dateofaccident='"+responseattorneydetail.getDateofaccident()
 	    +"',nameofclinic='"+ responseattorneydetail.getNameofclinic()
-	    +"',treatingphysician='"+ responseattorneydetail.getTreatingphysician()+"' where responseid='"+responseid+"'";
+	    +"',treatingphysician='"+ responseattorneydetail.getTreatingphysician()+"' where username='"+username+"'";
 	   System.out.println("cmd insert value"+cmd);
 	    statement.executeUpdate(cmd);
 	    }
@@ -190,7 +235,7 @@ public class ResponseattorneyDAO {
     	else
     		return 0;
 	}
-	public int deleteresponseattorney(String responseid)
+	public int deleteresponseattorney(String username)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -207,7 +252,7 @@ public class ResponseattorneyDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 
-	    	 String cmd="delete from tbl_responseattorney where responseid='"+responseid+"'";
+	    	 String cmd="delete from tbl_responseattorney where username='"+username+"'";
 	    	    System.out.println("cmd insert value"+cmd);
 	    	    statement.executeUpdate(cmd);
 	    	    }

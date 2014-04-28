@@ -18,6 +18,19 @@
          });
  
 </script>
+</script>
+<script type="text/javascript">
+	function confirmation() 
+	{
+	var answer = confirm("Are you Sure You Want to Delete Participant ?")
+	if (answer){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+	</script>
 </head>
  <body>
 <div id="right_content">
@@ -108,15 +121,13 @@
        
        <input type="textbox" class="input_ckbx1" value="${requestfordemanddetails.clinicrep}" name="clinicrep" id="clinicrep"><span class="err"><form:errors path="Requestfordemand.clinicrep"></form:errors></span></td></tr>
        <tr><td></td><td align="right" ><span class="err">*</span>Clinic Representative</td></tr>      
-         <table>
-              <tr>
-              <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-              <td><input type="submit" class="submit_btn" value="update"></td>
-              <td>&nbsp;&nbsp;</td>
-             <td><a href="viewrequestfordemand" style="color:white" class="submit_btn">Cancel</a></td>
-              <td>&nbsp;&nbsp;</td>
-        	  </tr>
-        	  </table>
+         
+        	   <table><tr> <td><input type="submit" class="submit_btn" value="update"></td>
+           
+               
+               <td><a href="deleterequestfordemand?username=${requestfordemand.username}"style="color:white" class="submit_btn" onclick="return confirmation()" >Delete</a></td> 
+               <td><a href="viewallpatientdetails"style="color:white" class="submit_btn">Cancel</a></td>
+              </tr></table>
         	  </div>
         	  </div>
         	  </td>

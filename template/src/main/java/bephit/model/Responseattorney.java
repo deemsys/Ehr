@@ -6,6 +6,7 @@ public class Responseattorney
 {
 	private String responseid;
 	@NotEmpty
+	private String username;
 	private String name;
 	private String address;
 	private String regarding;
@@ -40,6 +41,13 @@ public class Responseattorney
 	}
 	public void setResponseid(String responseid) {
 		this.responseid = responseid;
+	}
+	
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	public String getName() {
 		return name;

@@ -12,6 +12,7 @@ import java.util.Date;
 import java.util.List;
 import javax.sql.DataSource;
 import bephit.forms.RequestfordemandForm;
+import bephit.model.Faxcover;
 import bephit.model.HippaPrivacy;
 import bephit.model.Perrychiropractic;
 import bephit.model.Requestfordemand;
@@ -29,7 +30,7 @@ public class RequestfordemandDAO{
 	
 		
 	
-	public int setrequestfordemand(Requestfordemand requestfordemanddetails)
+	public int setrequestfordemand(Requestfordemand requestfordemanddetails,String username)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -46,7 +47,7 @@ public class RequestfordemandDAO{
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 
-	    	 String cmd="INSERT INTO requestfordemand (faultinsurer,medpayinsurer,paidbenefits,bankrupt,treatment,other,txtare,copymedpay,copyform,copyassign,greencard,defaultattorney,clinicrep) VALUES ('"+requestfordemanddetails.getFaultinsurer()+"','"+requestfordemanddetails.getMedpayinsurer()+"','"+requestfordemanddetails.getPaidbenefits()+"','"+requestfordemanddetails.getBankrupt()+"','"+requestfordemanddetails.getTreatment()+"','"+requestfordemanddetails.getOther()+"','"+requestfordemanddetails.getTxtare()+"','"+requestfordemanddetails.getCopymedpay()+"','"+requestfordemanddetails.getCopyform()+"','"+requestfordemanddetails.getCopyassign()+"','"+requestfordemanddetails.getGreencard()+"','"+requestfordemanddetails.getDefaultattorney()+"','"+requestfordemanddetails.getClinicrep()+"')";
+	    	 String cmd="INSERT INTO requestfordemand (username,faultinsurer,medpayinsurer,paidbenefits,bankrupt,treatment,other,txtare,copymedpay,copyform,copyassign,greencard,defaultattorney,clinicrep) VALUES ('"+username+"','"+requestfordemanddetails.getFaultinsurer()+"','"+requestfordemanddetails.getMedpayinsurer()+"','"+requestfordemanddetails.getPaidbenefits()+"','"+requestfordemanddetails.getBankrupt()+"','"+requestfordemanddetails.getTreatment()+"','"+requestfordemanddetails.getOther()+"','"+requestfordemanddetails.getTxtare()+"','"+requestfordemanddetails.getCopymedpay()+"','"+requestfordemanddetails.getCopyform()+"','"+requestfordemanddetails.getCopyassign()+"','"+requestfordemanddetails.getGreencard()+"','"+requestfordemanddetails.getDefaultattorney()+"','"+requestfordemanddetails.getClinicrep()+"')";
 	    	    System.out.println("cmd insert value"+cmd);
 	    	    statement.executeUpdate(cmd);
 	    	    }
@@ -68,7 +69,7 @@ public class RequestfordemandDAO{
 	    	}
 	    	
 	
-	public int deleterequestfordemand(String requestid)
+	public int deleterequestfordemand(String username)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -85,7 +86,7 @@ public class RequestfordemandDAO{
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 
-	    	 String cmd="delete from requestfordemand where requestid='"+requestid+"'";
+	    	 String cmd="delete from requestfordemand where username='"+username+"'";
 	    	    System.out.println("cmd insert value"+cmd);
 	    	    statement.executeUpdate(cmd);
 	    	    }
@@ -152,8 +153,7 @@ public class RequestfordemandDAO{
 		
 	}
 
-	
-	public List<Requestfordemand> getrequestfordemand(String requestid){
+	public List<Requestfordemand> getusernamerequestfordemand(String username){
 		Connection con = null;
 		Statement statement = null;
 		ResultSet resultSet = null;
@@ -165,7 +165,56 @@ public class RequestfordemandDAO{
 		}
 		List<Requestfordemand> requestfordemand = new ArrayList<Requestfordemand>();
 	    try{
-			resultSet = statement.executeQuery("select * from requestfordemand where requestid='"+requestid+"'");
+	    	resultSet = statement.executeQuery("select * from requestfordemand");
+			while(resultSet.next()){
+				requestfordemand.add(new Requestfordemand
+						(resultSet.getString("requestid"),
+								resultSet.getString("faultinsurer"),
+								resultSet.getString("medpayinsurer"),
+								resultSet.getString("paidbenefits"),
+								resultSet.getString("bankrupt"),
+								resultSet.getString("treatment"),
+								resultSet.getString("other"),
+								resultSet.getString("txtare"),
+						resultSet.getString("copymedpay"),
+						resultSet.getString("copyform"),
+						resultSet.getString("copyassign"),
+			    		resultSet.getString("greencard"),
+			    		resultSet.getString("defaultattorney"),
+						resultSet.getString("clinicrep")
+			    		 ));
+			//	System.out.println("Name::::::::::::::::::"+faxcover.get(0).getName());
+			    	
+			}
+	    }catch(Exception e){
+	    	System.out.println(e.toString());
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    }finally{
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);	    	
+	    }
+	    return requestfordemand;
+		
+	}
+	
+	
+	
+	public List<Requestfordemand> getrequestfordemand(String username){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<Requestfordemand> requestfordemand = new ArrayList<Requestfordemand>();
+	    try{
+			resultSet = statement.executeQuery("select * from requestfordemand where username='"+username+"'");
 			while(resultSet.next()){
 				requestfordemand.add(new Requestfordemand
 						(resultSet.getString("requestid"),
@@ -201,7 +250,7 @@ public class RequestfordemandDAO{
 	}
 	
 	
-	public int updaterequestfordemand(Requestfordemand requestfordemand,String requestid)
+	public int updaterequestfordemand(Requestfordemand requestfordemand,String username)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -226,7 +275,7 @@ public class RequestfordemandDAO{
 	    +"',txtare='"+ requestfordemand.getTxtare()
 	    +"',copymedpay='"+ requestfordemand.getCopymedpay()
 	    +"',copyform='"+requestfordemand.getCopyform()
-	    +"',copyassign='"+requestfordemand.getCopyassign()+"',greencard='"+requestfordemand.getGreencard()+"',defaultattorney='"+requestfordemand.getDefaultattorney()+"',clinicrep='"+requestfordemand.getClinicrep()+"' where requestid='"+requestid+"'";
+	    +"',copyassign='"+requestfordemand.getCopyassign()+"',greencard='"+requestfordemand.getGreencard()+"',defaultattorney='"+requestfordemand.getDefaultattorney()+"',clinicrep='"+requestfordemand.getClinicrep()+"' where requestid='"+username+"'";
 	   
 	        
 	    

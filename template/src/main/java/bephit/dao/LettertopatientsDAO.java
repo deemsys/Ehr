@@ -12,6 +12,7 @@ import java.util.Date;
 import java.util.List;
 import javax.sql.DataSource;
 
+import bephit.model.Faxcover;
 import bephit.model.Letterofprotection;
 import bephit.model.Lettertopatients;;
 
@@ -27,7 +28,7 @@ public class LettertopatientsDAO {
 	
 		
 	
-	public int setlettertopatients(Lettertopatients lettertopatientsdetails)
+	public int setlettertopatients(Lettertopatients lettertopatientsdetails,String username)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -44,7 +45,7 @@ public class LettertopatientsDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 
-	    	 String cmd="INSERT INTO tbl_lettertopatient (re,ssn,claim,doi,adjuster,date1,date2,letter,sign) VALUES ('"+lettertopatientsdetails.getRe()+"','"+lettertopatientsdetails.getSsn()+"','"+lettertopatientsdetails.getClaim()+"','"+lettertopatientsdetails.getDoi()+"','"+lettertopatientsdetails.getAdjuster()+"','"+lettertopatientsdetails.getDate1()+"','"+lettertopatientsdetails.getDate2()+"','"+lettertopatientsdetails.getLetter()+"','"+lettertopatientsdetails.getSign()+"')";
+	    	 String cmd="INSERT INTO tbl_lettertopatient (username,re,ssn,claim,doi,adjuster,date1,date2,letter,sign) VALUES ('"+username+"','"+lettertopatientsdetails.getRe()+"','"+lettertopatientsdetails.getSsn()+"','"+lettertopatientsdetails.getClaim()+"','"+lettertopatientsdetails.getDoi()+"','"+lettertopatientsdetails.getAdjuster()+"','"+lettertopatientsdetails.getDate1()+"','"+lettertopatientsdetails.getDate2()+"','"+lettertopatientsdetails.getLetter()+"','"+lettertopatientsdetails.getSign()+"')";
 	    	    System.out.println("cmd insert value"+cmd);
 	    	    statement.executeUpdate(cmd);
 	    	    }
@@ -149,8 +150,50 @@ public class LettertopatientsDAO {
 	    return lettertopatients;
 		
 	}
-	
-	public int updatelettertopatients(Lettertopatients lettertopatientsdetails,String letterid)
+	public List<Lettertopatients> getusernamelettertopatients(String username){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<Lettertopatients> lettertopatients = new ArrayList<Lettertopatients>();
+	    try{
+	    	resultSet = statement.executeQuery("select * from tbl_lettertopatient where username='"+username+"'");
+			while(resultSet.next()){
+				lettertopatients.add(new Lettertopatients
+						(resultSet.getString("letterid"),
+								resultSet.getString("re"),
+								resultSet.getString("ssn"),
+								resultSet.getString("claim"),
+								resultSet.getString("doi"),
+								resultSet.getString("adjuster"),
+								resultSet.getString("date1"),
+								resultSet.getString("date2"),
+								resultSet.getString("letter"),
+								resultSet.getString("sign")
+					    		 ));
+					
+			//	System.out.println("Name::::::::::::::::::"+faxcover.get(0).getName());
+			    	
+			}
+	    }catch(Exception e){
+	    	System.out.println(e.toString());
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    }finally{
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);	    	
+	    }
+	    return lettertopatients;
+		
+	}
+	public int updatelettertopatients(Lettertopatients lettertopatientsdetails,String username)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -174,7 +217,7 @@ public class LettertopatientsDAO {
 	    			    +"',date1='"+ lettertopatientsdetails.getDate1()
 	    			    +"',date2='"+ lettertopatientsdetails.getDate2()
 	    			    +"',letter='"+ lettertopatientsdetails.getLetter()
-	    			    +"',sign='"+ lettertopatientsdetails.getSign()+"' where letterid='"+letterid+"'";			
+	    			    +"',sign='"+ lettertopatientsdetails.getSign()+"' where username='"+username+"'";			
 
 	    
 	   System.out.println("cmd insert value"+cmd);
@@ -197,7 +240,7 @@ public class LettertopatientsDAO {
     		return 0;
 	}
 	
-	public int deletelettertopatients(String letterid)
+	public int deletelettertopatients(String username)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -214,7 +257,7 @@ public class LettertopatientsDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 
-	    	 String cmd="delete from tbl_lettertopatient where letterid='"+letterid+"'";
+	    	 String cmd="delete from tbl_lettertopatient where username='"+username+"'";
 	    	    System.out.println("cmd insert value"+cmd);
 	    	    statement.executeUpdate(cmd);
 	    	    }
