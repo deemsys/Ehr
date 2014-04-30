@@ -32,7 +32,7 @@ public class LetterofprotectionDAO {
 	
 		
 	
-	public int setletterofprotection(Letterofprotection letterofprotectiondetails)
+	public int setletterofprotection(Letterofprotection letterofprotectiondetails,String username)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -49,7 +49,7 @@ public class LetterofprotectionDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 
-	    	 String cmd="INSERT INTO letterofprotection (date,dc,clinicname,address1,myclient,dateofaccident,dearsir,esq) VALUES ('"+letterofprotectiondetails.getDate()+"','"+letterofprotectiondetails.getDc()+"','"+letterofprotectiondetails.getClinicname()+"','"+letterofprotectiondetails.getAddress1()+"','"+letterofprotectiondetails.getMyclient()+"','"+letterofprotectiondetails.getDateofaccident()+"','"+letterofprotectiondetails.getDearsir()+"','"+letterofprotectiondetails.getEsq()+"')";
+	    	 String cmd="INSERT INTO letterofprotection (username,date,dc,clinicname,address1,myclient,dateofaccident,dearsir,esq) VALUES ('"+username+"','"+letterofprotectiondetails.getDate()+"','"+letterofprotectiondetails.getDc()+"','"+letterofprotectiondetails.getClinicname()+"','"+letterofprotectiondetails.getAddress1()+"','"+letterofprotectiondetails.getMyclient()+"','"+letterofprotectiondetails.getDateofaccident()+"','"+letterofprotectiondetails.getDearsir()+"','"+letterofprotectiondetails.getEsq()+"')";
 	    	    System.out.println("cmd insert value"+cmd);
 	    	    statement.executeUpdate(cmd);
 	    	    }
@@ -195,6 +195,49 @@ public class LetterofprotectionDAO {
 		
 	}
 	
+	
+	
+	public List<Letterofprotection> getusernameletterofprotection(String username){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<Letterofprotection> letterofprotection = new ArrayList<Letterofprotection>();
+	    try{
+			resultSet = statement.executeQuery("select * from letterofprotection where username='"+username+"'");
+			while(resultSet.next()){
+				letterofprotection.add(new Letterofprotection
+						(resultSet.getString("letterid"),
+								resultSet.getString("date"),
+						resultSet.getString("dc"),
+						resultSet.getString("clinicname"),
+						resultSet.getString("address1"),
+			    		resultSet.getString("myclient"),
+						resultSet.getString("dateofaccident"),
+						resultSet.getString("dearsir"),
+						resultSet.getString("esq")
+			    		 ));
+				System.out.println("Name::::::::::::::::::"+letterofprotection.get(0).getClinicname());
+			    	
+			}
+	    }catch(Exception e){
+	    	System.out.println(e.toString());
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    }finally{
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);	    	
+	    }
+	    return letterofprotection;
+		
+	}
 	
 	public int updateletterofprotection(Letterofprotection letterofprotection,String letterid)
 	{

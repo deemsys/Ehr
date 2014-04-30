@@ -22,6 +22,18 @@
            $( "#datepicker1" ).datepicker();
          });
 </script>
+<script type="text/javascript">
+	function confirmation() 
+	{
+	var answer = confirm("Are you Sure You Want to Delete Participant ?")
+	if (answer){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+	</script>
 </head>
  <body>
 <div id="right_content">
@@ -195,7 +207,8 @@
               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
               <td><input type="submit" class="submit_btn" value="update"></td>
               <td>&nbsp;&nbsp;</td>
-             <td><a href="viewpimedpay" style="color:white" class="submit_btn">Cancel</a></td>
+              <td><a href="deletepimedpay?medpayid=${pimedpaydetails.medpayid}"style="color:white" class="submit_btn" onclick="return confirmation()" >Delete</a></td>
+             <td><a href="viewallpatientdetails" style="color:white" class="submit_btn">Cancel</a></td>
               <td>&nbsp;&nbsp;</td>
         	  </tr>
         	  </table>

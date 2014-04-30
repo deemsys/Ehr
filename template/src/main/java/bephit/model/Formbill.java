@@ -5,7 +5,8 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Formbill
 {
 	private String formid;
-	@NotEmpty
+	
+	private String username;
 	private String date;
 	@NotEmpty
 	private String insurance;
@@ -38,7 +39,13 @@ public class Formbill
 	public void setFormid(String formid) {
 		this.formid = formid;
 	}
+	public String getUsername() {
+		return username;
+	}
 
+	public void setUsername(String username) {
+		this.username = username;
+	}
 	public String getDate() {
 		return date;
 	}

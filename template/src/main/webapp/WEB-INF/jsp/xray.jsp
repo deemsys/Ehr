@@ -198,6 +198,7 @@ function doAjaxPost() {
       $( "#datepicker2" ).datepicker();
     });
 </script>
+
 </head>
  <body>
 <div id="right_content">

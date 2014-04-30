@@ -5,7 +5,9 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Letterofprotection
 {
 	private String letterid;
-	@NotEmpty	
+	private String username;
+	
+
 	private String date;
 	@NotEmpty
 	private String dc;
@@ -33,6 +35,16 @@ public class Letterofprotection
 	public void setLetterid(String letterid) {
 		this.letterid = letterid;
 	}
+    
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
 
 	public String getDate() {
 		return date;

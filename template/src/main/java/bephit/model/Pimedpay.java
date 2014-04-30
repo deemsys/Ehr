@@ -5,7 +5,9 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Pimedpay
 {
 	private String medpayid;
+	private String username;
 	
+
 	@NotEmpty
 	private String insurance;
 	
@@ -35,7 +37,14 @@ public class Pimedpay
 	public void setMedpayid(String medpayid) {
 		this.medpayid = medpayid;
 	}
+    
+	public String getUsername() {
+		return username;
+	}
 
+	public void setUsername(String username) {
+		this.username = username;
+	}
 	public String getInsurance() {
 		return insurance;
 	}

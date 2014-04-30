@@ -29,7 +29,7 @@ public class FormbillDAO {
 	
 		
 	
-	public int setformbill(Formbill formbilldetails)
+	public int setformbill(Formbill formbilldetails,String username)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -46,7 +46,7 @@ public class FormbillDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 
-	    	 String cmd="INSERT INTO formbill (date,insurance,address1,name,address3,patientsname,address5,medicalfee,amount) VALUES ('"+formbilldetails.getDate()+"','"+formbilldetails.getInsurance()+"','"+formbilldetails.getAddress1()+"','"+formbilldetails.getName()+"','"+formbilldetails.getAddress3()+"','"+formbilldetails.getPatientsname()+"','"+formbilldetails.getAddress5()+"','"+formbilldetails.getMedicalfee()+"','"+formbilldetails.getAmount()+"')";
+	    	 String cmd="INSERT INTO formbill (username,date,insurance,address1,name,address3,patientsname,address5,medicalfee,amount) VALUES ('"+username+"','"+formbilldetails.getDate()+"','"+formbilldetails.getInsurance()+"','"+formbilldetails.getAddress1()+"','"+formbilldetails.getName()+"','"+formbilldetails.getAddress3()+"','"+formbilldetails.getPatientsname()+"','"+formbilldetails.getAddress5()+"','"+formbilldetails.getMedicalfee()+"','"+formbilldetails.getAmount()+"')";
 	    	    System.out.println("cmd insert value"+cmd);
 	    	    statement.executeUpdate(cmd);
 	    	    }
@@ -164,9 +164,49 @@ public class FormbillDAO {
 	
 	
 	
-	
-	
-	
+	public List<Formbill> getusernameformbill(String username){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<Formbill> formbill = new ArrayList<Formbill>();
+	    try{
+			resultSet = statement.executeQuery("select * from formbill where username='"+username+"'");
+			while(resultSet.next()){
+				formbill.add(new Formbill(resultSet.getString("formid"),
+								resultSet.getString("date"),
+						resultSet.getString("insurance"),
+						resultSet.getString("address1"),
+						
+			    		resultSet.getString("name"),
+			    		resultSet.getString("address3"),
+						
+						resultSet.getString("patientsname"),
+						resultSet.getString("address5"),
+						
+						resultSet.getString("medicalfee"),
+						resultSet.getString("amount")));
+				System.out.println("Name::::::::::::::::::"+formbill.get(0).getName());
+			    	
+			}
+	    }catch(Exception e){
+	    	System.out.println(e.toString());
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    }finally{
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);	    	
+	    }
+	    return formbill;
+		
+	}
 	
 	
 	public int updateformbill(Formbill formbill,String formid)

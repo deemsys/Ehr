@@ -28,7 +28,7 @@ public class PimedpayDAO {
 	
 		
 	
-	public int setpimedpay(Pimedpay pimedpaydetails)
+	public int setpimedpay(Pimedpay pimedpaydetails,String username)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -45,7 +45,7 @@ public class PimedpayDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 
-	    	 String cmd="INSERT INTO pimedpay (insurance,address,reg,nameofperson,dateofaccident,subject) VALUES ('"+pimedpaydetails.getInsurance()+"','"+pimedpaydetails.getAddress()+"','"+pimedpaydetails.getReg()+"','"+pimedpaydetails.getNameofperson()+"','"+pimedpaydetails.getDateofaccident()+"','"+pimedpaydetails.getSubject()+"')";
+	    	 String cmd="INSERT INTO pimedpay (username,insurance,address,reg,nameofperson,dateofaccident,subject) VALUES ('"+username+"','"+pimedpaydetails.getInsurance()+"','"+pimedpaydetails.getAddress()+"','"+pimedpaydetails.getReg()+"','"+pimedpaydetails.getNameofperson()+"','"+pimedpaydetails.getDateofaccident()+"','"+pimedpaydetails.getSubject()+"')";
 	    	    System.out.println("cmd insert value"+cmd);
 	    	    statement.executeUpdate(cmd);
 	    	    }
@@ -181,6 +181,47 @@ public class PimedpayDAO {
 	    return pimedpay;
 		
 	}
+	
+	public List<Pimedpay> getusernamepimedpay(String username){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<Pimedpay> pimedpay = new ArrayList<Pimedpay>();
+	    try{
+			resultSet = statement.executeQuery("select * from pimedpay where username='"+username+"'");
+			while(resultSet.next()){
+				pimedpay.add(new Pimedpay
+						(resultSet.getString("medpayid"),
+								resultSet.getString("insurance"),
+						resultSet.getString("address"),
+						resultSet.getString("reg"),
+			    		resultSet.getString("nameofperson"),
+			    		resultSet.getString("DateofAccident"),
+						resultSet.getString("subject")
+			    		 ));
+				System.out.println("Name::::::::::::::::::"+pimedpay.get(0).getNameofperson());
+			    	
+			}
+	    }catch(Exception e){
+	    	System.out.println(e.toString());
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    }finally{
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);	    	
+	    }
+	    return pimedpay;
+		
+	}
+	
 	public int updatepimedpay(Pimedpay pimedpay,String medpayid)
 	{
 		Connection con = null;
