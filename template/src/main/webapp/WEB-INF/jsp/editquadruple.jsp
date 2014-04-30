@@ -16,6 +16,122 @@
   
   </STYLE>
   
+   <script>
+  function doajax()
+{  
+	
+	  document.getElementById("editurl").style.display="none";
+	  var symptom=document.getElementById("symptom").value;
+	var painname=document.getElementById("painname").value;
+	if(painname=="Other")
+		{
+		document.getElementById("otherpainname").style.display="table-row";
+		}
+	else
+		{
+		document.getElementById("otherpainname").style.display="none";
+		}
+	 $.ajax({  
+		    type: "POST",  
+		    url: "/EhrApp/quad_ajax",  
+		    data: "symptom=" +symptom+"&painname="+painname,
+		    success: function(response){  
+		    	
+		    	
+		    	if(document.getElementById("painname").value=="Wrist/Hand")
+		    		{
+				 var url="wristdisabilityindex?symptom="+document.getElementById("symptom").value;			
+		    		
+				 if(response=="")
+		    		{
+		    		 window.open(url,'mywindow','resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes');
+		    		}
+		    	else
+		    		{
+		    		var url="editwristindexdetails?symptom="+document.getElementById("symptom").value;
+		    		document.getElementById("editurl").style.display="table-row";
+		    		popupWindow = window.open(url,"mywindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		    		
+		    		}
+		    		}
+		    	
+		    	if(document.getElementById("painname").value=="Low Back")
+	    		{
+			 var url="lowbackdisability?symptom="+document.getElementById("symptom").value;			
+	    		
+			 if(response=="")
+	    		{
+	    		 window.open(url,'mywindow','resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes');
+	    		}
+	    	else
+	    		{
+	    		var url="editlowbackdetails?symptom="+document.getElementById("symptom").value;
+	    		document.getElementById("editurl").style.display="table-row";
+	    		popupWindow = window.open(url,"mywindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+	    		}
+	    		}
+			
+		    	
+		    	if(document.getElementById("painname").value=="Neck/Mid Back")
+	    		{
+			 var url="neckindex?symptom="+document.getElementById("symptom").value;			
+	    		
+			 if(response=="")
+	    		{
+	    		 window.open(url,'mywindow','resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes');
+	    		}
+	    	else
+	    		{
+	    		var url="editneckindexdetails?symptom="+document.getElementById("symptom").value;
+	    		document.getElementById("editurl").style.display="table-row";
+	    		popupWindow = window.open(url,"mywindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+	    		}
+	    		}
+		    	
+		    	if(document.getElementById("painname").value=="Oswestry")
+	    		{
+			 var url="oswestryindex?symptom="+document.getElementById("symptom").value;			
+	    		
+			 if(response=="")
+	    		{
+	    		 window.open(url,'mywindow','resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes');
+	    		}
+	    	else
+	    		{
+	    		var url="editoswestrydetails?symptom="+document.getElementById("symptom").value;
+	    		document.getElementById("editurl").style.display="table-row";
+	    		popupWindow = window.open(url,"mywindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+	    		}
+	    		}
+		    	
+		    	
+		    	if(document.getElementById("painname").value=="Shoulder")
+	    		{
+			 var url="shoulderpainscore?symptom="+document.getElementById("symptom").value;			
+	    		
+			 if(response=="")
+	    		{
+	    		 window.open(url,'mywindow','resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes');
+	    		}
+	    	else
+	    		{
+	    		var url="editshoulderdetails?symptom="+document.getElementById("symptom").value;
+	    		document.getElementById("editurl").style.display="table-row";
+	    		popupWindow = window.open(url,"mywindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+	    		}
+	    		}
+		    
+		    
+	
+		    },  
+		    error: function(e){  
+		      alert('Error: ' + e);  
+		    }  
+		  });
+
+	
+	}
+  </script>
  <script>
  function myclose()
  {
@@ -81,16 +197,28 @@
 	  });
 
  </script>
+ 
  </head>
- <body>
+ <body onload="validation()">
 <div id="right_content">
 <form action="updatequadraplevisual" method="POST">
-<c:if test="${quadruple==1}">
- <script>
- window.close();
- </script>
-</c:if>
 
+<script>
+$(function() {
+	doajax();
+	
+	 var painname=document.getElementById("painname").value;
+		if(painname=="Other")
+			{
+			document.getElementById("otherpainname").style.display="table-row";
+			}
+		else
+			{
+			document.getElementById("otherpainname").style.display="none";
+			}
+		
+});
+ </script>
 <table cellpadding="0" cellspacing="0" border="0" width="80%" class="margin_table">
        <tr>
         <td valign="top" align="left" style="padding:5px 0 10px 0;">&nbsp;
@@ -110,7 +238,7 @@
 	            <c:set value="${quadraplevisualform.quadraplevisualdetails[0]}" var="quadraplevisualdetails"></c:set>
 	             <table>
 	             <tr height="30">
-	             <td width="100">Name</td><td width="400"><input type="hidden" name="quadrapleno" value="${quadraplevisualdetails.quadrapleno}"><input type="hidden" name="patient_id" value="${quadraplevisualdetails.patient_id}"><input type="text" name="name" value="${quadraplevisualdetails.name}"></td>
+	             <td width="100">Name</td><td width="400"><input type="hidden" id="symptom" name="symptom" value="${quadraplevisualdetails.symptom}"><input type="hidden" name="quadrapleno" value="${quadraplevisualdetails.quadrapleno}"><input type="text" name="name" value="${quadraplevisualdetails.name}"></td>
 	             <td width="100">Number</td><td width="400"><input type="text" name="number"  value="${quadraplevisualdetails.number}"></td>
 	             <td width="100">Date</td><td width="400"><input type="text"  name="date" id="datepicker" value="${quadraplevisualdetails.date}"  /></td>
 	             </tr>
@@ -121,9 +249,21 @@
 	             </tr>
 	             </table>
 	             <table>
-	             <tr height="30">
-	             <td>Pain Name : <input type="text" name="painname" value="${quadraplevisualdetails.painname}"></td>
-	             </tr>
+	             <tr height="10"><c:out value=""></c:out>
+	             <td>Pain Name : <select name="painname" id="painname" onchange="doajax()">
+	             <option value="">--Select--</option>
+	             <option  value="Wrist/Hand" <c:if test="${quadraplevisualdetails.painname=='Wrist/Hand'}"><c:out value="selected"></c:out></c:if>>Wrist/Hand</option>
+	              <option value="Low Back" <c:if test="${quadraplevisualdetails.painname=='Low Back'}"><c:out value="selected"></c:out></c:if>>Low Back</option>
+	              <option value="Neck/Mid Back"<c:if test="${quadraplevisualdetails.painname=='Neck/Mid Back'}"><c:out value="selected"></c:out></c:if>>Neck/Mid Back</option>
+	              <option value="Oswestry"<c:if test="${quadraplevisualdetails.painname=='Oswestry'}"><c:out value="selected"></c:out></c:if>>Oswestry</option>
+	              <option value="Shoulder"<c:if test="${quadraplevisualdetails.painname=='Shoulder'}"><c:out value="selected"></c:out></c:if>>Shoulder</option>
+	               <option value="Other"<c:if test="${quadraplevisualdetails.painname=='Other'}"><c:out value="selected"></c:out></c:if>>Other</option>
+	               
+	             </select><input type="text" name="otherpainname" id="otherpainname" value="${quadraplevisualdetails.otherpainname }" style="display: none">
+	           </td><td><a href="#" id="editurl" onclick="doajax()" style="display: none">Edit</a></td>
+	           </td> </tr></table>
+	             <table>
+	            
 	             <tr height="30">
 	             <td><b>1) What is your pain RIGHT NOW?</b></td>
 	             </tr>
@@ -167,7 +307,8 @@
 	            <table align="right">
 <tr>
 <td><input type="submit" class="submit_btn" value="Save"></td>
-<td><a style="color:white"  href="<c:out value="editpatientdetails?patient_id=${quadraplevisualdetails.patient_id}" />" class="submit_btn"  onclick="myclose()">Cancel</a></td>
+<td><a href="deletequadraplevisual?quadrupleno=${quadraplevisualdetails.quadrapleno}" style="color:white" class="submit_btn">Delete</a></td>
+<td><a style="color:white" class="submit_btn"  onclick="myclose()">Cancel</a></td>
 </tr>
 </table>
 	            </div>

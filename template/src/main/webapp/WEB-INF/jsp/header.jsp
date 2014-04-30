@@ -1329,30 +1329,30 @@ color:#fff;
 							     </ul>
 							     <ul id="ddsubmenu32" class="ddsubmenustyle">
 							      <li><a href="narrativesearch">Narrativereport</a></li>
-							      <li><a href="viewnarrativereport">View Narrativereport</a></li>
+							   <!--    <li><a href="viewnarrativereport">View Narrativereport</a></li> -->
 							     </ul>
 							      <ul id="ddsubmenu33" class="ddsubmenustyle">
 							      <li><a href="xray">Xray</a></li>
-							      <li><a href="viewxray">View Xray</a></li>
+							   <!--    <li><a href="viewxray">View Xray</a></li> -->
 							      <li><a href="formbill">Form Bill</a></li>
-							      <li><a href="viewformbill">View Form Bill</a></li>
+							    <!--   <li><a href="viewformbill">View Form Bill</a></li> -->
 							      <li><a href="pimedpay">PI med pay Warning letter</a></li>
-							      <li><a href="viewpimedpay">View PI med pay Warning letter</a></li>
+							  <!--     <li><a href="viewpimedpay">View PI med pay Warning letter</a></li> -->
 							     <li><a href="letterofprotection">Letter of Protection</a></li>
-							      <li><a href="viewletterofprotection">View Letter of Protection</a></li>
+							    <!--   <li><a href="viewletterofprotection">View Letter of Protection</a></li> -->
 							     
 							     </ul>
 							     <ul id="ddsubmenu34" class="ddsubmenustyle">
 							      <li><a href="faxcover">Faxcover</a></li>
-							      <li><a href="viewfaxcover">View Fax cover</a></li>
+							<!--       <li><a href="viewfaxcover">View Fax cover</a></li> -->
 							      <li><a href="lettertopatients">Letter to Patients</a></li>
-							      <li><a href="viewlettertopatients">View Letter to Patients</a></li>
+							<!--       <li><a href="viewlettertopatients">View Letter to Patients</a></li> -->
 							     <li><a href="noticeassignment">Notice Assignments</a></li>
-							      <li><a href="viewnoticeassignment">View Notice Assignments</a></li>	
+							   <!--    <li><a href="viewnoticeassignment">View Notice Assignments</a></li>	 -->
 							      <li><a href="requestfordemand">Request for Demand</a></li>
-							      <li><a href="viewrequestfordemand">View Request for Demand</a></li>	
+							   <!--    <li><a href="viewrequestfordemand">View Request for Demand</a></li>	 -->
 							       <li><a href="responseattorney">Response Attorney</a></li>
-							      <li><a href="viewresponseattorney">View Request for Demand</a></li>				             						     
+							    <!--   <li><a href="viewresponseattorney">View Request for Demand</a></li>	 -->			             						     
 					             			             						     
 					             </ul>
 					              <ul id="ddsubmenu35" class="ddsubmenustyle">

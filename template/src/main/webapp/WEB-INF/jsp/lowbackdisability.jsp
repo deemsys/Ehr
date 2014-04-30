@@ -146,6 +146,7 @@ $(function() {
 	            
 	            </div>
 	    <div class="contentbox">
+	    <input type="hidden" name="symptom" id="symptom" value="${symptom}">
 	     <c:choose>
             <c:when test="${empty low}">
           <table cellpadding="0" cellspacing="0" border="0" width="98%">

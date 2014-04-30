@@ -6,6 +6,11 @@
 <br><br>
 <div id="right_content">
 	
+    <c:if test="${quadruple==1}">
+ <script>
+ window.close();
+ </script>
+</c:if>
     	<table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
       		
 			<tr>

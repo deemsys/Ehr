@@ -296,7 +296,7 @@ $(function() {
            <table><tr><td><a  onclick="return doAjaxPost()" style="text-decoration: underline; cursor:pointer;color: brown" ><b>Disability of patient score</b></td></tr>
            
            </table>
-           <table style="display: none" id="page"><tr><td width="10"><input type="hidden"  size="5" name="score"  value="${wristindexdetails.score}" id="score"><div id="score1"></div></td><td width="10"> &nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;50&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;&nbsp;&nbsp;&nbsp;<input type="hidden"  size="5" name="total"  value="${wristindexdetails.total}" id="total"></td><td><div id="total1"></div></td><td  width="50">%</td>
+           <table style="display: none" id="page"><tr><td width="10"><input type="hidden"  size="5" name="score"  value="${wristindexdetails.score}" id="score"><div id="score1"></div></td><td width="10"> &nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;50&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;&nbsp;&nbsp;&nbsp;<input type="hidden"  size="5" name="total"  value="${wristindexdetails.total}" id="total"></td><td><div id="total1">${wristindexdetails.total}</div></td><td  width="50">%</td>
           <td><input type="button" value="Calculate" onclick="return percentage()" class="submit_btn"> </td>
            </tr>          
                      

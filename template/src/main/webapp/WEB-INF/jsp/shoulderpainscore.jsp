@@ -1,10 +1,10 @@
+
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
-
- <link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
+<link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
   <link rel="stylesheet" href="/resources/css/style.css" />
  <script src="resources/js/jquery.min.js"></script> 
  <script src="resources/js/jquery-ui.js"></script>
@@ -51,6 +51,9 @@ $("#number1").keyup(function() {
 	  $(function() {
 		    $( "#datepicker" ).datepicker();
 		  });
+	  $(function() {
+		    $( "#datepicker1" ).datepicker();
+		  });
 	  </script>
 
    <script type="text/javascript">
@@ -88,6 +91,7 @@ $(function() {
           <li><a href="#tabs-1">1</a></li>
           <li><a href="#tabs-2">2</a></li>          
        </ul>
+       <input type="text" name="symptom" id="symptom" value="${symptom}">
        <c:choose>
             <c:when test="${empty shoulderpain}">  
    <div id="tabs-1"> 
@@ -172,7 +176,7 @@ $(function() {
 	    <div class="contentbox">
  <table cellpadding="0" cellspacing="0" border="0" width="98%"> 
  <tr class="row1">
-<td>Date:</td><td><input type="text"  id="datepicker" name="date1" /></td>
+<td>Date:</td><td><input type="text"  id="datepicker1" name="date1" /></td>
 <td width="200">
 <td>Scores total:</td><td><input type="text"  id="total" name="total"/>&nbsp;;&nbsp;[100]&nbsp;&nbsp;</td><td>[48]F:</td><td><input type="text"  id="f" name="f"/>&nbsp;&nbsp;</td>
 </tr>

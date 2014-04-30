@@ -6,7 +6,7 @@
 <html>
 <head>
 <form method="POST" action="patientDetails">
- <input type="text" name="symptom_ajax" id="symptom_ajax">
+ <input type="hidden" name="symptom_ajax" id="symptom_ajax">
  
  <link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
   <link rel="stylesheet" href="/resources/css/style.css" />
@@ -19,19 +19,19 @@
 function checkAjaxPost() {  
 	var val=document.getElementById("type_of_accident").value;
 	var element=document.getElementById('accident');
-	alert("hi"+val);
+
 	if(val=='autoaccident')
 	 {	 
 		
 	var username = $('#username').val();
-	alert(username);
+
 	
 	 $.ajax({  
 		    type: "POST",  
 		    url: "/EhrApp/duties_ajax",  
 		    data: "username=" + username,
 		    success: function(response){  
-		    	alert(response); 
+		    
 		    	if(response=="")
 		    		{
 		    		popupWindow = window.open("dutiesunderduress" ,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
@@ -802,10 +802,10 @@ function ajax()
 		    data: "symptom_ajax=" +symptom,
 		    success: function(response){  
 		    	alert(response); 
-		    	var patientid=document.getElementById("totalpoint").value;			
-				 var url="quadraplevisual?patient_id="+patientid+"&&symptom="+document.getElementById("symptom_ajax").value;			
+		    	//var patientid=document.getElementById("totalpoint").value;			
+				 var url="quadraplevisual?symptom="+document.getElementById("symptom_ajax").value;			
 				 
-			
+			alert("_");
 		    	if(response=="")
 		    		{
 		    		 window.open(url,'popUpWindow','resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes');
@@ -1348,7 +1348,7 @@ function check(id)
 
 				                  	</td>
 				                  	<td>
-				                  	<a onclick="newpopup()">Quadruple Visual Analogue Scale</a>
+				                  	
 				                  	<!-- <label for="amount"><b>Pain Scale:</b></label>
 				                  	<input type="text" id="amount" name="Painscale"/>&nbsp;&nbsp;&nbsp;
 				                  	<div id="slider"></div> -->
@@ -2072,6 +2072,44 @@ function check(id)
 				                  	<input type="radio" name="Attorney_accident" value="yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Attorney_accident" value="No" class="input_txt">No</td>
 				                <td></td>
 				                </tr>
+				                 <tr class="row2">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>What is your Dominant Hand </td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="radio" name="retain" value="R" class="input_txt" checked="true">R&nbsp;&nbsp;&nbsp;<input type="radio" name="retain" value="L" class="input_txt">L</td>
+				                <td></td>
+				                </tr>
+				                
+				                <tr class="row2">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Would you like us to send your records to your family Physician  </td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="radio" name="record" value="yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="record" value="No" class="input_txt">No</td>
+				                <td></td>
+				                </tr>
+				                <tr class="row1">
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>What is your Physician's Name </td>
+				                  	<td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="phyname" value="${first.phyname}"/><br><span class="err"><form:errors path="patientDetails.where1"></form:errors></span>
+				                    </tr>
+				                
+				                <tr class="row1">
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>What is your Physician's Phone </td>
+				                  	<td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="phyphone" name="phyphone" value="${first.phyphone}" maxlength="13"/><br><span class="err"><form:errors path="patientDetails.where1"></form:errors></span>
+				                   <span class="err" id="phynumbererror"></span>
+				                    </tr>
+				                    
+				                     <tr class="row1">
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>	What body parts were x-rayed </td>
+				                  	<td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="xray" value="${first.xray}"/><br><span class="err"><form:errors path="patientDetails.where1"></form:errors></span>
+				                    </tr>
+				                    
+				                     <tr class="row1">
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>what treatment was given </td>
+				                  	<td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="treat" value="${first.treat}"/><br><span class="err"><form:errors path="patientDetails.where1"></form:errors></span>
+				                    </tr>
+				                
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name Of Attorney:</td>
 				                  <td valign="top" align="left" class="input_txt">

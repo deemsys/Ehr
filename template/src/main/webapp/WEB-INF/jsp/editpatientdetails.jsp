@@ -7,11 +7,308 @@
 <html>
 <head>
 <form action="updatepatientdetails" method="post" name="update" id="update">
+ <input type="hidden" name="symptom_ajax" id="symptom_ajax">
  <link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
   <link rel="stylesheet" href="/resources/css/style.css" />
   <script src="resources/js/jquery.min.js"></script>
   <script src="resources/js/jquery-ui.js"></script>
-<script type="text/javascript">
+  <script>
+function ajax()
+{
+	symptom=document.getElementById("symptom_ajax").value;
+	 $.ajax({  
+		    type: "POST",  
+		    url: "/EhrApp/check_symptom_ajax",  
+		    data: "symptom_ajax=" +symptom,
+		    success: function(response){  
+		    	alert(response); 
+		    			
+				 var url="quadraplevisual?symptom="+document.getElementById("symptom_ajax").value;			
+				 
+			
+		    	if(response=="")
+		    		{
+		    		 window.open(url,'popUpWindow','resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes');
+		    		}
+		    	else
+		    		{
+		    		var url="editquadraplevisual?quadrupleno="+response;
+		    		popupWindow = window.open(url,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		    		}
+		    
+	
+		    },  
+		    error: function(e){  
+		      alert('Error: ' + e);  
+		    }  
+		  });
+
+	
+	}
+
+
+function check(id)
+{
+	document.getElementById("symptom_ajax").value=id.value;
+	alert("hi"+id.value);
+	if(id.value=="")
+		{
+		alert("The Symptom cannot be blank");
+		}
+	else
+		{
+	var xx = document.getElementsByName('symptom[]').length;
+	
+	if(xx==1)
+	{
+		
+		ajax();
+		
+		
+		
+	
+	}
+	if(xx==2)
+		{
+		if(document.getElementById("symptom1").value==document.getElementById("symptom2").value)
+			{
+			alert("The Symptom already exist.Please check it.");
+			}
+		else
+			{
+			ajax();
+			}
+		}
+	if(xx==3)
+	{
+	if(document.getElementById("symptom1").value==document.getElementById("symptom2").value || document.getElementById("symptom1").value==document.getElementById("symptom3").value || document.getElementById("symptom3").value==document.getElementById("symptom2").value)
+		{
+		alert("The Symptom already exist.Please check it.");
+		}
+	else
+		{
+		ajax();
+		}
+	}
+	if(xx==4)
+	{
+	if(document.getElementById("symptom1").value==document.getElementById("symptom2").value || document.getElementById("symptom1").value==document.getElementById("symptom3").value || document.getElementById("symptom3").value==document.getElementById("symptom2").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom4").value	|| document.getElementById("symptom4").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom4").value)
+	
+		{
+		alert("The Symptom already exist.Please check it.");
+		}
+	else
+	{
+	ajax();
+	}
+	}
+		
+	if(xx==5)
+	{
+	if(document.getElementById("symptom1").value==document.getElementById("symptom2").value || document.getElementById("symptom1").value==document.getElementById("symptom3").value || document.getElementById("symptom3").value==document.getElementById("symptom2").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom4").value	|| document.getElementById("symptom4").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom4").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom5").value	|| document.getElementById("symptom5").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom5").value
+	|| document.getElementById("symptom4").value==document.getElementById("symptom5").value)
+	
+		{
+		alert("The Symptom already exist.Please check it.");
+		}
+	else
+	{
+	ajax();
+	}
+	}
+		
+	if(xx==6)
+	{
+	if(document.getElementById("symptom1").value==document.getElementById("symptom2").value || document.getElementById("symptom1").value==document.getElementById("symptom3").value || document.getElementById("symptom3").value==document.getElementById("symptom2").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom4").value	|| document.getElementById("symptom4").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom4").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom5").value	|| document.getElementById("symptom5").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom5").value
+	|| document.getElementById("symptom4").value==document.getElementById("symptom5").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom6").value	|| document.getElementById("symptom6").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom6").value
+	|| document.getElementById("symptom4").value==document.getElementById("symptom6").value || document.getElementById("symptom5").value==document.getElementById("symptom6").value)
+	{
+		alert("The Symptom already exist.Please check it.");
+		}
+	else
+	{
+	ajax();
+	}
+	}
+	
+	if(xx==7)
+	{
+	if(document.getElementById("symptom1").value==document.getElementById("symptom2").value || document.getElementById("symptom1").value==document.getElementById("symptom3").value || document.getElementById("symptom3").value==document.getElementById("symptom2").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom4").value	|| document.getElementById("symptom4").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom4").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom5").value	|| document.getElementById("symptom5").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom5").value
+	|| document.getElementById("symptom4").value==document.getElementById("symptom5").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom6").value	|| document.getElementById("symptom6").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom6").value
+	|| document.getElementById("symptom4").value==document.getElementById("symptom6").value || document.getElementById("symptom5").value==document.getElementById("symptom6").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom7").value	|| document.getElementById("symptom7").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom7").value
+	|| document.getElementById("symptom4").value==document.getElementById("symptom7").value || document.getElementById("symptom5").value==document.getElementById("symptom7").value || document.getElementById("symptom6").value==document.getElementById("symptom7").value
+	)
+	{
+		alert("The Symptom already exist.Please check it.");
+		}
+	else
+	{
+	ajax();
+	}
+	}
+	if(xx==8)
+	{
+	if(document.getElementById("symptom1").value==document.getElementById("symptom2").value || document.getElementById("symptom1").value==document.getElementById("symptom3").value || document.getElementById("symptom3").value==document.getElementById("symptom2").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom4").value	|| document.getElementById("symptom4").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom4").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom5").value	|| document.getElementById("symptom5").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom5").value
+	|| document.getElementById("symptom4").value==document.getElementById("symptom5").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom6").value	|| document.getElementById("symptom6").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom6").value
+	|| document.getElementById("symptom4").value==document.getElementById("symptom6").value || document.getElementById("symptom5").value==document.getElementById("symptom6").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom7").value	|| document.getElementById("symptom7").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom7").value
+	|| document.getElementById("symptom4").value==document.getElementById("symptom7").value || document.getElementById("symptom5").value==document.getElementById("symptom7").value || document.getElementById("symptom6").value==document.getElementById("symptom7").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom8").value	|| document.getElementById("symptom8").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom8").value
+	|| document.getElementById("symptom4").value==document.getElementById("symptom8").value || document.getElementById("symptom5").value==document.getElementById("symptom8").value || document.getElementById("symptom6").value==document.getElementById("symptom8").value
+	|| document.getElementById("symptom7").value==document.getElementById("symptom8").value
+	)
+	{
+		alert("The Symptom already exist.Please check it.");
+		}
+	else
+	{
+	ajax();
+	}
+	}
+	if(xx==9)
+	{
+	if(document.getElementById("symptom1").value==document.getElementById("symptom2").value || document.getElementById("symptom1").value==document.getElementById("symptom3").value || document.getElementById("symptom3").value==document.getElementById("symptom2").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom4").value	|| document.getElementById("symptom4").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom4").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom5").value	|| document.getElementById("symptom5").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom5").value
+	|| document.getElementById("symptom4").value==document.getElementById("symptom5").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom6").value	|| document.getElementById("symptom6").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom6").value
+	|| document.getElementById("symptom4").value==document.getElementById("symptom6").value || document.getElementById("symptom5").value==document.getElementById("symptom6").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom7").value	|| document.getElementById("symptom7").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom7").value
+	|| document.getElementById("symptom4").value==document.getElementById("symptom7").value || document.getElementById("symptom5").value==document.getElementById("symptom7").value || document.getElementById("symptom6").value==document.getElementById("symptom7").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom8").value	|| document.getElementById("symptom8").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom8").value
+	|| document.getElementById("symptom4").value==document.getElementById("symptom8").value || document.getElementById("symptom5").value==document.getElementById("symptom8").value || document.getElementById("symptom6").value==document.getElementById("symptom8").value
+	|| document.getElementById("symptom7").value==document.getElementById("symptom8").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom9").value	|| document.getElementById("symptom9").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom9").value
+	|| document.getElementById("symptom4").value==document.getElementById("symptom9").value || document.getElementById("symptom5").value==document.getElementById("symptom9").value || document.getElementById("symptom6").value==document.getElementById("symptom9").value
+	|| document.getElementById("symptom7").value==document.getElementById("symptom9").value || document.getElementById("symptom8").value==document.getElementById("symptom9").value
+	)
+	{
+		alert("The Symptom already exist.Please check it.");
+		}
+	else
+	{
+	ajax();
+	}
+	}
+	
+	if(xx==10)
+	{
+	if(document.getElementById("symptom1").value==document.getElementById("symptom2").value || document.getElementById("symptom1").value==document.getElementById("symptom3").value || document.getElementById("symptom3").value==document.getElementById("symptom2").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom4").value	|| document.getElementById("symptom4").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom4").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom5").value	|| document.getElementById("symptom5").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom5").value
+	|| document.getElementById("symptom4").value==document.getElementById("symptom5").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom6").value	|| document.getElementById("symptom6").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom6").value
+	|| document.getElementById("symptom4").value==document.getElementById("symptom6").value || document.getElementById("symptom5").value==document.getElementById("symptom6").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom7").value	|| document.getElementById("symptom7").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom7").value
+	|| document.getElementById("symptom4").value==document.getElementById("symptom7").value || document.getElementById("symptom5").value==document.getElementById("symptom7").value || document.getElementById("symptom6").value==document.getElementById("symptom7").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom8").value	|| document.getElementById("symptom8").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom8").value
+	|| document.getElementById("symptom4").value==document.getElementById("symptom8").value || document.getElementById("symptom5").value==document.getElementById("symptom8").value || document.getElementById("symptom6").value==document.getElementById("symptom8").value
+	|| document.getElementById("symptom7").value==document.getElementById("symptom8").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom9").value	|| document.getElementById("symptom9").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom9").value
+	|| document.getElementById("symptom4").value==document.getElementById("symptom9").value || document.getElementById("symptom5").value==document.getElementById("symptom9").value || document.getElementById("symptom6").value==document.getElementById("symptom9").value
+	|| document.getElementById("symptom7").value==document.getElementById("symptom9").value || document.getElementById("symptom8").value==document.getElementById("symptom9").value
+	|| document.getElementById("symptom1").value==document.getElementById("symptom10").value	|| document.getElementById("symptom10").value==document.getElementById("symptom2").value	|| document.getElementById("symptom3").value==document.getElementById("symptom10").value
+	|| document.getElementById("symptom4").value==document.getElementById("symptom10").value || document.getElementById("symptom5").value==document.getElementById("symptom10").value || document.getElementById("symptom6").value==document.getElementById("symptom10").value
+	|| document.getElementById("symptom7").value==document.getElementById("symptom10").value || document.getElementById("symptom8").value==document.getElementById("symptom10").value || document.getElementById("symptom8").value==document.getElementById("symptom10").value
+	
+	
+	)
+	{
+		alert("The Symptom already exist.Please check it.");
+		}
+	else
+	{
+	ajax();
+	}
+	}
+	
+	
+		}
+	/* alert("check"+ document.getElementById("symptom2").value);
+	
+	alert("jhsa"+document.getElementById(val).value));
+	alert("asdasd"+val); */
+	}
+
+</script>
+  <script type="text/javascript">
+				var $im = 1;
+				var flagm = 1;
+				function addMultichoice(divName) {
+				alert("hi");	
+				//("sdf"+document.getElementById("symptom[0]").value);
+					var xx = document.getElementsByName('symptom[]').length;
+					//alert("symptom"+document.getElementById("symptom1").value);		
+					alert("hello");
+					var $in = xx + 1;
+					var $id=$in-1;
+					var symptomid="symptom"+$id;
+					alert();
+					alert(document.getElementById(symptomid).value);
+					if(document.getElementById(symptomid).value=="")
+						{
+						alert("The Symptom cannot be blank");
+						}
+					else
+						{
+					if($in==11)
+						{
+						var cancel="cancel"+$id;
+						//document.getElementById(symptomid).style.display="none";
+						document.getElementById(cancel).style.display="none";
+						document.getElementById("morebutton").style.display="none";
+						}
+					else
+						{
+					
+					alert($id);
+					
+					alert(symptomid);
+                 alert("sd"+$in+document.getElementById(symptomid).value);
+                 
+					var newdiv = document.createElement('div');
+
+					newdiv.innerHTML = '<table width="100%" border="0" cellspacing="0" cellpadding="0" id="newtbl'
+							+ $im
+							+ '"><tr height="10"><span id="sample'+$in+'"></tr><tr>'
+							/* + $in */
+							+ '<td valign="top" align="left" class="input_txt" width="90%"><textarea  name="symptom[]" id="symptom'+$in+'" rows="3" cols="25" placeholder="Specify your Symptoms" onblur="check(this)"></textarea></td></tr><tr><td align="left" valign="top"><a javascript:void(0);" onclick="removechoice('
+							+ $im
+							+ ')" style="text-decoration:none;"><input type="submit" class="submit_btn" id="cancel'+$in+'" value="CANCEL"  /></a></td></tr><tr height="10"></tr></table>';
+					
+					document.getElementById(divName).appendChild(newdiv);
+					$im++;
+					flagm++;
+					var cancel="cancel"+$id;
+					//document.getElementById(symptomid).style.display="none";
+					document.getElementById(cancel).style.display="none";
+					var span="sample"+$id;
+					//document.getElementById(span).innerHTML=document.getElementById(symptomid).value;
+						}
+
+				}}
+				function removechoice(id) {
+					id = 'newtbl' + id;
+					var child = document.getElementById(id)
+					var parentDiv = child.parentNode;
+					parentDiv.removeChild(child);
+
+				}
+			</script>
+<!-- <script type="text/javascript">
 				var $im = 1;
 				var flagm = 1;
 				function addMultichoice(divName) {
@@ -41,7 +338,7 @@
 					parentDiv.removeChild(child);
 
 				}
-			</script>
+			</script> -->
 
 
 
@@ -231,7 +528,7 @@ var $sid = xx+1;
     											<table cellpadding="0" cellspacing="0" border="0" width="100%">
                        								 <tr class="row1">
                         	 							<td><span class="err">*</span>Name :</td>
-                        	 							<input type="hidden" class="input_txtbx1" id="patientid" value="${patientDetails.patient_id}" name="patient_id" />
+                        	 							<%-- <input type="hidden" class="input_txtbx1" id="patientid" value="${patientDetails.patient_id}" name="patient_id" /> --%>
                                  						<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.name }" name="name" /></br><span class="err"><form:errors path="PatientDetails.Name"></form:errors></span></td>
                       								  </tr>
                         <tr class="row2">
@@ -437,19 +734,20 @@ var $sid = xx+1;
                         <table cellpadding="0" cellspacing="0" border="0" width="100%">
                         
          <tr height="10"></tr>       
-      <tr ><td align="right" ></td><td align="right"><a  style="text-decoration:underline;color:green;"  href="<c:out value="viewquadraplevisual?patient_id=${patientDetails.patient_id}"/>"  >View Quadruple Visual Analogue Scale</a></td><td ></td></tr>
+      <tr ><td align="right" ></td><td align="right"><%-- <a  style="text-decoration:underline;color:green;"  href="<c:out value="viewquadraplevisual?patient_id=${patientDetails.patient_id}"/>"  >View Quadruple Visual Analogue Scale</a> --%></td><td ></td></tr>
 				              <tr>
 				         	 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Please Describe Your Symptoms Briefly:</td>
 				          		<td class="input_txt">
 				          		 
-                 
+                 <%int i=1;%>
                  <c:forEach items="${symptom}" var="symptom" varStatus="status">
+                 
                   <tr>
-                  <td valign="middle" align="right" class="input_txt" width="30%"></td>
+                  <td valign="middle" align="right" class="input_txt" width="29%"></td>
                  
                   <td valign="top" align="left" class="input_txt" width="70%">
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                 <textarea  rows="3" cols="25" name="message[]" >${symptom}</textarea>
+                 <textarea  rows="3" cols="25" name="symptom[]" id="symptom<%=i%><%i++;%>" onBlur="check(this)">${symptom}</textarea>
                
                 </td> </tr><tr height="10"></tr>  </c:forEach>
                         </td><td>

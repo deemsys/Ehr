@@ -11,7 +11,11 @@
  <script src="resources/js/jquery.min.js"></script> 
  <script src="resources/js/jquery-ui.js"></script>
  <script src="resources/js/jquey-1.9.1.js"></script>
- 
+ <c:if test="${quadruple==1}">
+ <script>
+ window.close();
+ </script>
+</c:if>
  
  <script type="text/javascript">
  function doAjaxPost() {
@@ -171,7 +175,8 @@ $(function() {
 	             WRIST/HAND DISABILITY INDEX </h2></center><br/>
 	            
 	            </div>
-	           
+	  <input type="hidden" name="symptom" id="symptom" value="${symptom}">   
+	  <input type="text" name="username" id="username">      
 	    
 	     <div class="contentbox">
 	     <c:choose>

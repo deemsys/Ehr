@@ -220,6 +220,7 @@ $(function() {
 	            
 	            </div>
 	            <div class="contentbox"> 
+	            <input type="hidden" name="symptom" id="symptom" value="${symptom}">
 	            <c:choose>
 	            <c:when test="${empty oswestrydisability}">
 	      <p><b>PLEASE READ:Could you please complete this questionnaire.It is designed to give us information as to how your back(or leg) trouble has affected your ability to manage in everyday life.

@@ -15,7 +15,116 @@
   line-height:18px;}
   
   </STYLE>
-  
+  <script>
+  function doajax()
+{
+	
+	var symptom=document.getElementById("symptom").value;
+	var painname=document.getElementById("painname").value;
+	//alert(painname);
+	if(painname=='Other')
+		{
+		document.getElementById("otherpainname").style.display="table-row";
+		}
+	else
+		{
+		document.getElementById("otherpainname").style.display="none";
+		}
+	 $.ajax({  
+		    type: "POST",  
+		    url: "/EhrApp/quad_ajax",  
+		    data: "symptom=" +symptom+"&painname="+painname,
+		    success: function(response){  
+		    	
+		    	
+		    	if(document.getElementById("painname").value=="Wrist/Hand")
+		    		{
+				 var url="wristdisabilityindex?symptom="+document.getElementById("symptom").value;			
+		    		
+				 if(response=="")
+		    		{
+		    		 window.open(url,'mywindow','resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes');
+		    		}
+		    	else
+		    		{
+		    		var url="editwristindexdetails?symptom="+document.getElementById("symptom").value;
+		    		popupWindow = window.open(url,"mywindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		    		}
+		    		}
+		    	
+		    	if(document.getElementById("painname").value=="Low Back")
+	    		{
+			 var url="lowbackdisability?symptom="+document.getElementById("symptom").value;			
+	    		
+			 if(response=="")
+	    		{
+	    		 window.open(url,'mywindow','resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes');
+	    		}
+	    	else
+	    		{
+	    		var url="editlowbackdetails?symptom="+document.getElementById("symptom").value;
+	    		popupWindow = window.open(url,"mywindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+	    		}
+	    		}
+			
+		    	
+		    	if(document.getElementById("painname").value=="Neck/Mid Back")
+	    		{
+			 var url="neckindex?symptom="+document.getElementById("symptom").value;			
+	    		
+			 if(response=="")
+	    		{
+	    		 window.open(url,'mywindow','resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes');
+	    		}
+	    	else
+	    		{
+	    		var url="editneckindexdetails?symptom="+document.getElementById("symptom").value;
+	    		popupWindow = window.open(url,"mywindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+	    		}
+	    		}
+		    	
+		    	if(document.getElementById("painname").value=="Oswestry")
+	    		{
+			 var url="oswestryindex?symptom="+document.getElementById("symptom").value;			
+	    		
+			 if(response=="")
+	    		{
+	    		 window.open(url,'mywindow','resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes');
+	    		}
+	    	else
+	    		{
+	    		var url="editoswestrydetails?symptom="+document.getElementById("symptom").value;
+	    		popupWindow = window.open(url,"mywindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+	    		}
+	    		}
+		    	
+		    	
+		    	if(document.getElementById("painname").value=="Shoulder")
+	    		{
+			 var url="shoulderpainscore?symptom="+document.getElementById("symptom").value;			
+	    		
+			 if(response=="")
+	    		{
+	    		 window.open(url,'mywindow','resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes');
+	    		}
+	    	else
+	    		{
+	    		var url="editshoulderdetails?symptom="+document.getElementById("symptom").value;
+	    		popupWindow = window.open(url,"mywindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+	    		}
+	    		}
+		    
+		    
+	
+		    },  
+		    error: function(e){  
+		      alert('Error: ' + e);  
+		    }  
+		  });
+
+	
+	}
+  </script>
  <script>
  function myclose()
  {
@@ -109,7 +218,7 @@
 	            
 	             <table>
 	             <tr height="30">
-	             <td width="100">Name</td><td width="400"><input type="hidden" name="patient_id" value="${patientid}"><input type="text" name="symptom" value="${symptom}"><input type="text" name="name"></td>
+	             <td width="100">Name</td><td width="400"><input type="hidden" name="patient_id" value="${patientid}"><input type="hidden" name="symptom" id="symptom" value="${symptom}"><input type="text" name="name"></td>
 	             <td width="100">Number</td><td width="400"><input type="text" name="number"></td>
 	             <td width="100">Date</td><td width="400"><input type="text"  name="date" id="datepicker" /></td>
 	             </tr>
@@ -121,14 +230,15 @@
 	             </table>
 	             <table>
 	             <tr height="30">
-	             <td>Pain Name : <input type="text" name="painnameas" > <select name="painname">
+	             <td>Pain Name : <select name="painname" id="painname" onchange="doajax()">
+	             <option value="">--Select--</option>
 	             <option value="Wrist/Hand">Wrist/Hand</option>
 	              <option value="Low Back">Low Back</option>
 	              <option value="Neck/Mid Back">Neck/Mid Back</option>
 	              <option value="Oswestry">Oswestry</option>
 	              <option value="Shoulder">Shoulder</option>
 	               <option value="Other">Other</option>
-	             </select>  </td>
+	             </select> <input type="text" name="otherpainname" id="otherpainname" style="display: none"> </td>
 	             </tr>
 	             <tr height="30">
 	             <td><b>1) What is your pain RIGHT NOW?</b></td>
@@ -173,7 +283,7 @@
 	            <table align="right">
 <tr>
 <td><input type="submit" class="submit_btn" value="Save"></td>
-<td><input type="reset" class="submit_btn" value="Cancel" onclick="myclose()"></td>
+<td><input type="reset" class="submit_btn" value="Cancel"   onclick="myclose()"></td>
 </tr>
 </table>
 	            </div>
