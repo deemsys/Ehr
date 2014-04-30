@@ -1,4 +1,5 @@
 package bephit.dao;
+import java.security.Principal;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -20,7 +21,7 @@ public class NeckindexDAO
 		public void setDataSource(DataSource dataSource) {
 			this.dataSource = dataSource;
 		}
-		public int insertneckindex(Neckindex neckindexdetails)
+		public int insertneckindex(Neckindex neckindexdetails,Principal principal)
 		{
 			Connection con = null;
 			Statement statement = null;
@@ -35,8 +36,10 @@ public class NeckindexDAO
 				e1.printStackTrace();
 			}
 		    try{
-		    	String d="insert into neckindex(name,date,painintensity,work,personal,driving,lifting,sleeping,reading,recreation,headache,concentration,score,status)values('"
-		    			+neckindexdetails.getName()
+		    	String d="insert into neckindex(symptom,username,name,date,painintensity,work,personal,driving,lifting,sleeping,reading,recreation,headache,concentration,score,status)values('"
+		    			+neckindexdetails.getSymptom()
+		    			+"','"+principal.getName()
+		    			+"','"+neckindexdetails.getName()
 		    			+"','"+neckindexdetails.getDate()
 						+"','"+neckindexdetails.getPainintensity()
 						+"','"+neckindexdetails.getWork()
@@ -130,6 +133,51 @@ public class NeckindexDAO
 			List<Neckindex> neckindex = new ArrayList<Neckindex>();
 		    try{
 				resultSet = statement.executeQuery("select * from neckindex where neckindexno='"+neckindexno+"'");
+				while(resultSet.next()){
+					neckindex.add(new Neckindex(
+							resultSet.getString("neckindexno"),	
+							resultSet.getString("name"),							
+							resultSet.getString("date"),													
+							resultSet.getString("painintensity"),
+							resultSet.getString("work"),
+							resultSet.getString("personal"),
+							resultSet.getString("driving"),
+							resultSet.getString("lifting"),
+							resultSet.getString("sleeping"),
+							resultSet.getString("reading"),
+							resultSet.getString("recreation"),
+							resultSet.getString("headache"),
+							resultSet.getString("concentration"),							
+							resultSet.getString("score"),
+							resultSet.getString("status")
+				    	    ));
+				    	
+				}
+		    }catch(Exception e){
+		    	releaseResultSet(resultSet);
+		    	releaseStatement(statement);
+		    	releaseConnection(con);
+		    }finally{
+		    	releaseResultSet(resultSet);
+		    	releaseStatement(statement);
+		    	releaseConnection(con);	    	
+		    }
+		    return neckindex;
+			
+		}
+		public List<Neckindex> getsymptomneckindexDetails(String symptom,Principal principal){
+			Connection con = null;
+			Statement statement = null;
+			ResultSet resultSet = null;
+			try {
+				con = dataSource.getConnection();
+				statement = con.createStatement();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+			List<Neckindex> neckindex = new ArrayList<Neckindex>();
+		    try{
+				resultSet = statement.executeQuery("select * from neckindex where symptom='"+symptom+"' and username='"+principal.getName()+"'");
 				while(resultSet.next()){
 					neckindex.add(new Neckindex(
 							resultSet.getString("neckindexno"),	

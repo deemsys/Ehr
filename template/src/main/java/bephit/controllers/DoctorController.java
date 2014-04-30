@@ -1478,38 +1478,7 @@ if(result.hasErrors())
 	}
 	
 	
-	@RequestMapping(value="/lowbackdisability", method = RequestMethod.GET)
-	public String viewinglowbackdisability(HttpSession session, ModelMap model) {
-		session.removeAttribute("low");
-		model.addAttribute("menu","wristindex");
-		return "lowbackdisability";
- 
-	}
 	
-	@RequestMapping(value="/lowbackdisability", method = RequestMethod.POST)
-	public String insert_lowback(HttpServletRequest request,HttpSession session,@ModelAttribute("Lowback")  @Valid Lowback lowback,BindingResult result,ModelMap model) {
-		session.setAttribute("low",lowback );
- 
-		if(result.hasErrors())
-		{
-		
-			LowbackForm lowbackForm = new LowbackForm();
-			lowbackForm.setLowback(lowDAO.getLowback());
-			model.addAttribute("lowbackForm",lowbackForm);
-			model.addAttribute("Success","true");
-			model.addAttribute("menu", "initial");
-			return "lowbackdisability";
-		}
-		model.put("Lowback", lowback);
-		model.addAttribute("lowbackForm",lowback);
-    	int a=lowDAO.setLowback(lowback);
-		LowbackForm lowbackForm= new LowbackForm();
-		lowbackForm.setLowback(lowDAO.getLowback());
-		model.addAttribute("lowbackForm",lowbackForm);
-		return "viewlowback";
- 
-	
-	}
 	@RequestMapping(value="/viewlowback", method=RequestMethod.GET)
 	public String viewlowback(HttpServletRequest request,ModelMap model, Principal principal) {
 		 model.addAttribute("success","false");
@@ -1596,12 +1565,13 @@ if(result.hasErrors())
 	{
 		if (result.hasErrors())
 		{
+			
 			LowbackForm lowbackForm = new LowbackForm();
 	     
 	       lowbackForm.setLowback(lowDAO.getLow(lowback.getLowbackno()));
 	      
 	        model.addAttribute("lowbackForm", lowbackForm);
-	        model.addAttribute("menu", "wristindex");    
+	        model.addAttribute("menu", "sign");    
 		        return "editlowback";
 		}
 		
@@ -1613,6 +1583,7 @@ if(result.hasErrors())
        lowbackForm.setLowback(lowDAO.getLowback());
        
         model.addAttribute("lowbackForm", lowbackForm);
+        model.addAttribute("quadruple","1");
 	        return "viewlowback";
 		
 	}
@@ -1981,15 +1952,17 @@ if(result.hasErrors())
 	}
 	
 	@RequestMapping(value="/shoulderpainscore", method = RequestMethod.GET)
-	public String viewingshoulderpainscore(HttpSession session, ModelMap model) {
+	public String viewingshoulderpainscore(@RequestParam("symptom") String symptom,HttpSession session, ModelMap model) {
 		
 		session.removeAttribute("shoulderpain");
+		model.addAttribute("symptom",symptom);
 		return "shoulderpainscore";
  
 	}
 	@RequestMapping(value="/shoulderpainscore", method = RequestMethod.POST)
-	public String insert_shoulderpainscore(HttpServletRequest request,HttpSession session,@ModelAttribute("Shoulderpainscore")  @Valid Shoulderpainscore shoulderpainscore,BindingResult result,ModelMap model) {
+	public String insert_shoulderpainscore(Principal principal,HttpServletRequest request,HttpSession session,@ModelAttribute("Shoulderpainscore")  @Valid Shoulderpainscore shoulderpainscore,BindingResult result,ModelMap model) {
 		session.setAttribute("shoulderpain", shoulderpainscore);
+		model.addAttribute("menu","sign");
 		if(result.hasErrors())
 		{
 		
@@ -2003,11 +1976,12 @@ if(result.hasErrors())
  
 	    model.put("Shoulderpainscore", shoulderpainscore);
 		model.addAttribute("shoulderpainscoreForm",shoulderpainscore);
-    	int a=shoulderDAO.setShoulderpain(shoulderpainscore);
+    	int a=shoulderDAO.setShoulderpain(shoulderpainscore,principal);
     	ShoulderpainscoreForm shoulderpainscoreForm= new ShoulderpainscoreForm();
     	shoulderpainscoreForm.setShoulderpainscore(shoulderDAO.getShoulderpainscore());
 		model.addAttribute("shoulderpainscoreForm",shoulderpainscoreForm);
-		return "shoulderpainscore";
+		model.addAttribute("quadruple","1");
+		return "viewshoulderpainscore";
  
 	
 	}
@@ -2093,14 +2067,12 @@ if(result.hasErrors())
 			BindingResult result,ModelMap model,Principal principal)
 	{
 		int status = shoulderDAO.updateshoulderpainscore(shoulderpainscore,shoulderpainscore.getShoulderpainno(), principal.getName());
-		System.out.println(status);
-		
-		ShoulderpainscoreForm shoulderpainscoreForm = new ShoulderpainscoreForm();
-        
-       shoulderpainscoreForm.setShoulderpainscore(shoulderDAO.getShoulderpainscore());
-       
+		System.out.println(status);		
+		ShoulderpainscoreForm shoulderpainscoreForm = new ShoulderpainscoreForm();        
+        shoulderpainscoreForm.setShoulderpainscore(shoulderDAO.getShoulderpainscore());       
         model.addAttribute("shoulderpainscoreForm", shoulderpainscoreForm);
-	        return "viewshoulderpainscore";
+        model.addAttribute("quadruple","1");
+	    return "viewshoulderpainscore";
 		
 	}
 	

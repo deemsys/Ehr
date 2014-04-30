@@ -6,6 +6,9 @@ public class Wristindex
 {
 	private String wristindexno;
 	
+	private String symptom; 
+	
+	private String username;
 	@NotEmpty
 	private String name;
 	
@@ -29,6 +32,19 @@ public class Wristindex
 	}
 	public void setWristindexno(String wristindexno) {
 		this.wristindexno = wristindexno;
+	}
+	
+	public String getSymptom() {
+		return symptom;
+	}
+	public void setSymptom(String symptom) {
+		this.symptom = symptom;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	public String getName() {
 		return name;

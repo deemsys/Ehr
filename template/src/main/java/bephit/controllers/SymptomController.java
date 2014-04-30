@@ -351,14 +351,6 @@ public class SymptomController {
 	
 
 
-	@RequestMapping(value = "/wristdisabilityindex", method = RequestMethod.GET)
-	public String wristdisabilityindex(HttpSession session,ModelMap model) {
-		session.removeAttribute("wristdisability");
-		model.addAttribute("menu", "wristindex");
-
-		return "wristindex";
-	}
-
 
 
 	@RequestMapping(value = "/hipquestionnaire", method = RequestMethod.GET)
@@ -562,15 +554,7 @@ public class SymptomController {
 	}
 
 
-	@RequestMapping(value = "/neckindex", method = RequestMethod.GET)
-	public String neckindex(HttpSession session,ModelMap model) {
-		session.removeAttribute("neckdisability");
-		model.addAttribute("menu", "wristindex");
-
-		model.addAttribute("success", true);
-		return "neckindex";
-	}
-
+	
 	@RequestMapping(value = "/viewwristindex", method = RequestMethod.GET)
 	public String viewwristindex(ModelMap model) {
 		WristindexForm wristindexform = new WristindexForm();
@@ -773,6 +757,7 @@ public class SymptomController {
 	wristindexform.setWristindexdetails(wristdao.getwristindexDetails());
 	model.addAttribute("wristindexform", wristindexform);
 	model.addAttribute("success", true);
+	model.addAttribute("quadruple","1");
 	return "viewwristindex";
 	}
 	
@@ -793,6 +778,7 @@ public class SymptomController {
 	neckindexform.setneckindexdetails(neckdao.getneckindexDetails());
 	model.addAttribute("neckindexform", neckindexform);
 	model.addAttribute("success", true);
+	model.addAttribute("quadruple","1");
 	return "viewneckindex";
 	}
 	
@@ -865,7 +851,7 @@ public class SymptomController {
 	}
 
 	@RequestMapping(value = "/insertwristindex", method = RequestMethod.POST)
-	public String insertwristindex(HttpSession session,	HttpServletRequest request,	ModelMap model,	@ModelAttribute("wristindexdetails") @Valid Wristindex wristindexdetails,
+	public String insertwristindex(Principal principal,HttpSession session,	HttpServletRequest request,	ModelMap model,	@ModelAttribute("wristindexdetails") @Valid Wristindex wristindexdetails,
 			BindingResult result) throws IOException {
 		session.setAttribute("wristdisability",wristindexdetails);
 		if(result.hasErrors())
@@ -874,17 +860,18 @@ public class SymptomController {
 			return "wristindex";
 		}
 
-		wristdao.insertwristindex(wristindexdetails);
+		wristdao.insertwristindex(wristindexdetails,principal);
 		WristindexForm wristindexform = new WristindexForm();
 		wristindexform.setWristindexdetails(wristdao.getwristindexDetails());
 		model.addAttribute("wristindexform", wristindexform);
 		model.addAttribute("success", true);
+		model.addAttribute("quadruple","1");
 		return "viewwristindex";
 	}
 
 	@RequestMapping(value = "/insertneckindex", method = RequestMethod.POST)
 	public String insertneckindex(HttpSession session,HttpServletRequest request,ModelMap model,@ModelAttribute("neckindex") @Valid Neckindex neckindexdetails,
-			BindingResult result) throws IOException {
+			BindingResult result,Principal principal) throws IOException {
 	
 		session.setAttribute("neckdisability",neckindexdetails);
 		if(result.hasErrors())
@@ -892,11 +879,12 @@ public class SymptomController {
 		model.addAttribute("menu","wristindex");
 		return "neckindex";
 		}
-		neckdao.insertneckindex(neckindexdetails);
+		neckdao.insertneckindex(neckindexdetails,principal);
 		NeckindexForm neckindexform = new NeckindexForm();
 		neckindexform.setneckindexdetails(neckdao.getneckindexDetails());
 		model.addAttribute("neckindexform", neckindexform);
 		model.addAttribute("success", true);
+		model.addAttribute("quadruple","1");
 		return "viewneckindex";
 	}
 

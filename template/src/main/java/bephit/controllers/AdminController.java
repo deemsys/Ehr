@@ -397,15 +397,7 @@ public class AdminController {
 
 	
 
-	@RequestMapping(value = "/editpimedpay", method = RequestMethod.GET)
-	public String editpimedpay(@RequestParam("medpayid") String medpayid,HttpSession session, ModelMap model) {
-		PimedpayForm pimedpayForm = new PimedpayForm();
-		pimedpayForm.setPimedpaydetails(pimedpayDAO.getpimedpay(medpayid));
-		model.addAttribute("pimedpayform",pimedpayForm);
-		//model.addAttribute("menu","xray");
-		return "editpimedpay";
 
-	}
 
 	@RequestMapping(value = "/editpatientattorney", method = RequestMethod.GET)
 	public String editpatientattorney(
@@ -415,21 +407,8 @@ public class AdminController {
 		model.addAttribute("patientattorneyform", patientattorneyForm);
 		model.addAttribute("menu", "perry");
 		return "editpatientattorney";
-
-	}
 	
-	
-
-	@RequestMapping(value = "/editformbill", method = RequestMethod.GET)
-	public String editformbill(@RequestParam("formid") String formid,HttpSession session, ModelMap model) {
-		FormbillForm formbillForm = new FormbillForm();
-		formbillForm.setFormbilldetails(formbillDAO.getformbill(formid));
-		model.addAttribute("formbillform", formbillForm);
-		model.addAttribute("menu", "xray");
-		return "editformbill";
 	}
-
-
 			
 	
 	@RequestMapping(value="/deleteperrychiropractic", method = RequestMethod.GET)
@@ -455,18 +434,7 @@ public class AdminController {
 		return "viewreturntoschool";
 	}
 
-	@RequestMapping(value = "/deletepimedpay", method = RequestMethod.GET)
-	public String deletepimedpay(@RequestParam("medpayid") String medpayid,	HttpSession session, ModelMap model) {
-		pimedpayDAO.deletepimedpay(medpayid);
-		PimedpayForm pimedpayform = new PimedpayForm();
-		model.addAttribute("success","true");
-	 	pimedpayform.setPimedpaydetails(pimedpayDAO.getpimedpay());
-	 	model.addAttribute("pimedpayform", pimedpayform);
-		//model.addAttribute("menu","xray");	
-		model.addAttribute("success","true");
-		return "viewpimedpay";
-	}
-
+	
 	@RequestMapping(value = "/deleteupdateletter", method = RequestMethod.GET)
 	public String deleteupdateletter(@RequestParam("updateid") String updateid,HttpSession session, ModelMap model) {
 		model.addAttribute("menu", "perry");
@@ -477,17 +445,7 @@ public class AdminController {
 		model.addAttribute("success",true);
 		return "updateletter";
 	}
-	@RequestMapping(value="/deleteformbill", method = RequestMethod.GET)
-	public String deleteformbill(@RequestParam("formid")String formid, HttpSession session,ModelMap model) {		
-		model.addAttribute("success","true");
-		formbillDAO.deleteformbill(formid);		
-		FormbillForm formbillForm=new FormbillForm();
-		formbillForm.setFormbilldetails(formbillDAO.getformbill(formid));
-		model.addAttribute("formbillform", formbillForm);
-		model.addAttribute("menu", "xray");
-		return "viewformbill";
-	}
-
+	
 	@RequestMapping(value = "/perrychiropractic", method = RequestMethod.GET)
 	public String perrychiropractic(HttpSession session, ModelMap model) {
 		session.removeAttribute("peri");
@@ -681,25 +639,7 @@ NoticeassignmentForm noticeassignmentform = new NoticeassignmentForm();
 
 	}
 
-	@RequestMapping(value = "/updatepimedpay", method = RequestMethod.POST)
-	public String update_pimedpay(HttpServletRequest request,HttpSession session,@ModelAttribute("Pimedpay") @Valid Pimedpay pimedpaydetails,BindingResult result, ModelMap model) {
-		// session.setAttribute("perrydetails",perrychiropracticdetails);
-		if (result.hasErrors()) {
-			PimedpayForm pimedpayform = new PimedpayForm();
-			pimedpayform.setPimedpaydetails(pimedpayDAO.getpimedpay());
-			model.addAttribute("pimedpayform", pimedpayform);
-			return "pimedpay";
-		}
-
-		// System.out.println(perrychiropracticdetails.getAddress()+""+perrychiropracticdetails.getAddress1());
-		pimedpayDAO.updatepimedpay(pimedpaydetails,pimedpaydetails.getMedpayid());
-		PimedpayForm pimedpayform = new PimedpayForm();
-		pimedpayform.setPimedpaydetails(pimedpayDAO.getpimedpay());
-		model.addAttribute("pimedpayform",pimedpayform);
-		return "viewpimedpay";
-
-	}
-
+	
 	@RequestMapping(value = "/updateupdateletter", method = RequestMethod.POST)
 	public String update_updateletter(HttpServletRequest request,HttpSession session,@ModelAttribute("Updateletter") @Valid Updateletter updateletterdetails,BindingResult result, ModelMap model) {
 		// session.setAttribute("perrydetails",perrychiropracticdetails);
@@ -749,37 +689,7 @@ NoticeassignmentForm noticeassignmentform = new NoticeassignmentForm();
 	}
 
 
-	@RequestMapping(value = "/updateformbill", method = RequestMethod.POST)
-	public String update_formbill(HttpServletRequest request,
-			HttpSession session,
-			@ModelAttribute("Formbill") @Valid Formbill formbilldetails,
-			BindingResult result, ModelMap model) {
-		// session.setAttribute("perrydetails",perrychiropracticdetails);
-		model.addAttribute("menu", "xray");
-		if (result.hasErrors()) {
-
 	
-	
-			FormbillForm formbillform = new FormbillForm();
-			formbillform.setFormbilldetails(formbillDAO.getformbill());
-			model.addAttribute("formbillform", formbillform);
-
-			
-		
-
-			return "formbill";
-		}
-
-		// System.out.println(perrychiropracticdetails.getAddress()+""+perrychiropracticdetails.getAddress1());
-		formbillDAO.updateformbill(formbilldetails, formbilldetails.getFormid());
-		FormbillForm formbillForm = new FormbillForm();
-		formbillForm.setFormbilldetails(formbillDAO.getformbill());
-		model.addAttribute("formbillform",formbillForm);
-		model.addAttribute("success","true");		
- 		return "viewformbill";
-
-	}
-
 
 	
 		
@@ -926,31 +836,7 @@ NoticeassignmentForm noticeassignmentform = new NoticeassignmentForm();
 	}
 
 	
-	@RequestMapping(value = "/insertpimedpay", method = RequestMethod.POST)
-	public String insert_pimedpay(HttpServletRequest request,
-			HttpSession session,
-			@ModelAttribute("Pimedpay") @Valid Pimedpay pimedpaydetails,
-			BindingResult result, ModelMap model) {
-		 session.setAttribute("medpay",pimedpaydetails);
-		if (result.hasErrors()) {
-			System.out.println("yes");
-			PimedpayForm pimedpayform = new PimedpayForm();
-			pimedpayform.setPimedpaydetails(pimedpayDAO.getpimedpay());
-			model.addAttribute("pimedpayform", pimedpayform);
-			model.addAttribute("Success", "true");
-			model.addAttribute("menu", "medpay");
-			return "pimedpay";
-		}
-
-		pimedpayDAO.setpimedpay(pimedpaydetails);
-		PimedpayForm pimedpayform = new PimedpayForm();
-		pimedpayform.setPimedpaydetails(pimedpayDAO.getpimedpay());
-		model.addAttribute("pimedpayform", pimedpayform);
-		model.addAttribute("success","true");
-		model.addAttribute("menu","xray");
-		return "viewpimedpay";
-
-	}
+	
 
 	@RequestMapping(value = "/insertpatientattorney", method = RequestMethod.POST)
 	public String insert_patientattorney(HttpServletRequest request,HttpSession session,@ModelAttribute("Patientattorney") @Valid Patientattorney patientattorneydetails,
@@ -1148,17 +1034,7 @@ public String viewlettertopatients(HttpSession session,ModelMap model) {
 	return "viewlettertopatients";
 }
 
-@RequestMapping(value="/editletterofprotection", method = RequestMethod.GET)
-public String editletterofprotection(@RequestParam("letterid")String letterid, HttpSession session,ModelMap model) {		
-	LetterofprotectionForm letterofprotectionform=new LetterofprotectionForm();
-	letterofprotectionform.setLetterofprotectiondetails(letterofprotectionDAO.getletterofprotection(letterid));
-	model.addAttribute("letterofprotectionform",letterofprotectionform);
-	model.addAttribute("menu","xray");	
-	
-	return "editletterofprotection";
-}
 
-	
 /*
 	@RequestMapping(value = "/faxcoverlist", method = RequestMethod.GET)
 	public String faxlist(HttpSession session,
@@ -1191,19 +1067,6 @@ public String editletterofprotection(@RequestParam("letterid")String letterid, H
 		return "workschoolform";
 	
 }
-	
-
-@RequestMapping(value="/deleteletterofprotection", method = RequestMethod.GET)
-public String deleteletterofprotection(@RequestParam("letterid")String letterid, HttpSession session,ModelMap model) {		
-	model.addAttribute("success","true");
-	letterofprotectionDAO.deleteletterofprotection(letterid);
-	LetterofprotectionForm letterofprotectionform=new LetterofprotectionForm();
-	letterofprotectionform.setLetterofprotectiondetails(letterofprotectionDAO.getletterofprotection());
-	model.addAttribute("letterofprotectionform",letterofprotectionform);
-	model.addAttribute("menu","xray");	
-	return "viewletterofprotection";
-}	
-	
 
 @RequestMapping(value="/insertworkschool", method = RequestMethod.POST)
 public String insert_workschool(HttpServletRequest request,HttpSession session,@ModelAttribute("Workschool")  @Valid Workschool workschooldetails,BindingResult result,ModelMap model)
@@ -1277,33 +1140,6 @@ public String editworkschooldetails(@RequestParam("username")String username, Ht
 	}
 
 
-@RequestMapping(value="/insertformbill", method = RequestMethod.POST)
-public String insert_formbill(HttpServletRequest request,HttpSession session,@ModelAttribute("Formbill")  @Valid Formbill formbilldetails,BindingResult result,ModelMap model) {
-	session.setAttribute("form",formbilldetails);
-	if(result.hasErrors())
-	{
-		FormbillForm formbillform = new FormbillForm();
-		formbillform.setFormbilldetails(formbillDAO.getformbill());
-		model.addAttribute("formbillform", formbillform);
-		model.addAttribute("menu","form");
-		
-		return "formbill";
-
-	}
-
-	
-	//System.out.println(perrychiropracticdetails.getAddress()+""+perrychiropracticdetails.getAddress1());
-	formbillDAO.setformbill(formbilldetails);
-	FormbillForm formbillform=new FormbillForm();
-	formbillform.setFormbilldetails(formbillDAO.getformbill());
-	model.addAttribute("formbillform",formbillform);
-	model.addAttribute("menu","xray");
-	model.addAttribute("success","true");
-	return "viewformbill";
-}
-
-	
-
 
 	
 
@@ -1376,34 +1212,7 @@ public String insert_formbill(HttpServletRequest request,HttpSession session,@Mo
 		return "viewnoticeassignment";
 	}
 
-	
-	@RequestMapping(value = "/insertletterofprotection", method = RequestMethod.POST)
-	public String insert_letterofprotection(
-			HttpServletRequest request,
-			HttpSession session,
-			@ModelAttribute("Letterofprotection") @Valid Letterofprotection letterofprotectiondetails,
-			BindingResult result, ModelMap model) {
-		 session.setAttribute("letter",letterofprotectiondetails);
-		if (result.hasErrors()) {
-			LetterofprotectionForm letterofprotectionform = new LetterofprotectionForm();
-			letterofprotectionform
-					.setLetterofprotectiondetails(letterofprotectionDAO
-							.getletterofprotection());
-			model.addAttribute("letterofprotectionform", letterofprotectionform);
-			model.addAttribute("Success", "true");
-			model.addAttribute("menu", "letter");
-			return "letterofprotection";
-		}
-		// System.out.println(perrychiropracticdetails.getAddress()+""+perrychiropracticdetails.getAddress1());
-		letterofprotectionDAO.setletterofprotection(letterofprotectiondetails);
-		LetterofprotectionForm letterofprotectionform = new LetterofprotectionForm();
-		letterofprotectionform
-				.setLetterofprotectiondetails(letterofprotectionDAO
-						.getletterofprotection());
-		model.addAttribute("letterofprotectionform", letterofprotectionform);
-		return "viewletterofprotection";
 
-	}
 
 	
 		
@@ -1411,37 +1220,6 @@ public String insert_formbill(HttpServletRequest request,HttpSession session,@Mo
 
 	
 
-	@RequestMapping(value = "/updateletterofprotection", method = RequestMethod.POST)
-	public String update_letterofprotection(
-			HttpServletRequest request,
-			HttpSession session,
-			@ModelAttribute("letterofprotectiondetails") @Valid Letterofprotection letterofprotectiondetails,
-			BindingResult result, ModelMap model) {
-		if (result.hasErrors()) {
-			LetterofprotectionForm letterofprotectionform = new LetterofprotectionForm();
-			letterofprotectionform
-					.setLetterofprotectiondetails(letterofprotectionDAO
-							.getletterofprotection());
-			model.addAttribute("letterofprotectionform", letterofprotectionform);
-			model.addAttribute("Success", "true");
-			model.addAttribute("menu", "work");
-			return "letterofprotection";
-		}
-
-	
-
-		// System.out.println(letterofprotectiondetails.getAddress()+""+letterofprotectiondetails.getAddress1());
-		letterofprotectionDAO.updateletterofprotection(
-				letterofprotectiondetails,
-				letterofprotectiondetails.getLetterid());
-		LetterofprotectionForm letterofprotectionform = new LetterofprotectionForm();
-		letterofprotectionform
-				.setLetterofprotectiondetails(letterofprotectionDAO.getletterofprotection());
-		model.addAttribute("letterofprotectionform", letterofprotectionform);
-		return "viewletterofprotection";
-
-	}	
-		
 
 	@RequestMapping(value = "/updateworkschool", method = RequestMethod.POST)
 	public String updateworkschool(HttpServletRequest request,HttpSession session,@ModelAttribute("Workschool") @Valid Workschool workschooldetails,

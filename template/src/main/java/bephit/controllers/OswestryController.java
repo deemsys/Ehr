@@ -48,15 +48,16 @@ public class OswestryController
 	CopyofrequestDAO copydao;
 	
 	@RequestMapping (value="/oswestryindex", method = RequestMethod.GET)
-	public String oswestryindex(HttpSession session,ModelMap model)
+	public String oswestryindex(@RequestParam("symptom") String symptom,HttpSession session,ModelMap model)
 	{
 		session.removeAttribute("oswestrydisability");
 		model.addAttribute("menu","wristindex");
+		model.addAttribute("symptom",symptom);
 		return "oswestryindex";
 	}
 	@RequestMapping (value="/insertoswestryindex", method = RequestMethod.POST)
 
-	public String insertoswestryindex(HttpSession session,HttpServletRequest request,ModelMap model,@ModelAttribute("oswestrydetails") @Valid Oswestry oswestryindexdetails,BindingResult result) throws IOException
+	public String insertoswestryindex(HttpSession session,HttpServletRequest request,ModelMap model,@ModelAttribute("oswestrydetails") @Valid Oswestry oswestryindexdetails,BindingResult result,Principal principal) throws IOException
 
 	{
 
@@ -67,11 +68,12 @@ public class OswestryController
 			return "oswestryindex";
 		}
 
-		oswestrydao.insertoswestryindex(oswestryindexdetails);
+		oswestrydao.insertoswestryindex(oswestryindexdetails,principal);
 		OswestryForm oswestryindexform=new OswestryForm();
 		oswestryindexform.setOswestrydetails(oswestrydao.getoswestryindexDetails());
 		model.addAttribute("oswestryform", oswestryindexform);
 		model.addAttribute("success", true);
+		model.addAttribute("quadruple","1");
 		return "viewoswestryindex";
 	}
 	@RequestMapping (value="/viewoswestryindex", method = RequestMethod.GET)
@@ -183,88 +185,16 @@ public class OswestryController
 		oswestryindexform.setOswestrydetails(oswestrydao.getoswestryindexDetails());
 		model.addAttribute("oswestryform", oswestryindexform);
 		model.addAttribute("success", true);
+		model.addAttribute("quadruple","1");
 		return "viewoswestryindex";
 	}
-	@RequestMapping (value="/quadraplevisualscale", method = RequestMethod.GET)
-	public String quadraplevisual(HttpSession session,ModelMap model)
-	{
-		model.addAttribute("menu","sign");	
-		return "quadraplevisual";
-	}
 	
-	@RequestMapping (value="/quadraplevisual", method = RequestMethod.GET)
-	public String quadraplevisual(@RequestParam("patient_id") String patient_id,@RequestParam("symptom") String symptom,HttpSession session,ModelMap model)
-	{
-		model.addAttribute("menu","sign");
-	System.out.println("patient"+patient_id);	
-	session.setAttribute("currentpatientid", patient_id);
-	model.addAttribute("patientid",patient_id);
-	model.addAttribute("symptom",symptom);
+	
+	
+
+	
+	
 		
-		return "quadraplevisual";
-	}
-	
-	@RequestMapping (value="/viewquadraplevisual", method = RequestMethod.GET)
-	public String viewquadraplevisual(@RequestParam("patient_id")String patient_id,HttpSession session,ModelMap model)
-	{
-		model.addAttribute("menu","sign");
-		QuadraplevisualForm quadraplevisualform=new QuadraplevisualForm();
-		quadraplevisualform.setQuadraplevisualdetails(quadrapledao.getQuadraplepatientid(patient_id));
-		model.addAttribute("quadraplevisualform", quadraplevisualform);
-	return "viewquadruple";
-	}
-	
-	@RequestMapping (value="/editquadraplevisual", method = RequestMethod.GET)
-	public String editquadraplevisual(@RequestParam("quadrupleno")String quadrupleno,HttpSession session,ModelMap model)
-	{
-		model.addAttribute("menu","sign");
-		System.out.println(quadrupleno);
-		QuadraplevisualForm quadraplevisualform=new QuadraplevisualForm();
-		quadraplevisualform.setQuadraplevisualdetails(quadrapledao.getQuadrapledetails(quadrupleno));
-		model.addAttribute("quadraplevisualform", quadraplevisualform);
-	return "editquadruple";
-	}
-	
-
-	
-	
-	@RequestMapping (value="/quadraplevisual", method = RequestMethod.POST)
-	public String insertquadraplevisual(Principal principal,HttpSession session,HttpServletRequest request,ModelMap model,@ModelAttribute("quadraplevisual") @Valid Quadraplevisual quadraplevisual,BindingResult result) throws IOException
-
-	{
-		quadrapledao.setQuadraplevisual(quadraplevisual,principal);
-		QuadraplevisualForm quadraplevisualform=new QuadraplevisualForm();
-		quadraplevisualform.setQuadraplevisualdetails(quadrapledao.getQuadraplevisual());
-		model.addAttribute("QuadraplevisualForm", quadraplevisualform);
-		model.addAttribute("success", true);
-		model.addAttribute("quadruple",1);
-		
-		return "quadraplevisual";
-	}
-	
-	@RequestMapping (value="/updatequadraplevisual", method = RequestMethod.POST)
-	public String updatequadraplevisual(HttpSession session,HttpServletRequest request,ModelMap model,@ModelAttribute("quadraplevisual") @Valid Quadraplevisual quadraplevisual,BindingResult result) throws IOException
-
-	{
-		quadrapledao.updatequadruple(quadraplevisual);
-		QuadraplevisualForm quadraplevisualform=new QuadraplevisualForm();
-		quadraplevisualform.setQuadraplevisualdetails(quadrapledao.getQuadraplepatientid(quadraplevisual.getPatient_id()));
-		model.addAttribute("quadraplevisualform", quadraplevisualform);
-	return "viewquadruple";
-	}
-	
-	@RequestMapping (value="/deletequadraplevisual", method = RequestMethod.GET)
-	public String deletequadraplevisual(@RequestParam("quadrupleno") String quadrapleno,@RequestParam("patient_id") String patient_id,HttpSession session,HttpServletRequest request,ModelMap model,@ModelAttribute("quadraplevisual") @Valid Quadraplevisual quadraplevisual,BindingResult result) throws IOException
-
-	{
-		quadrapledao.deletequadruple(quadrapleno);
-		QuadraplevisualForm quadraplevisualform=new QuadraplevisualForm();
-		quadraplevisualform.setQuadraplevisualdetails(quadrapledao.getQuadraplepatientid(patient_id));
-		model.addAttribute("quadraplevisualform", quadraplevisualform);
-	return "viewquadruple";
-	}
-	
-	
 	
 	@RequestMapping (value="/copyofrequest", method = RequestMethod.GET)
 	public String copyofrequest(HttpSession session,ModelMap model)

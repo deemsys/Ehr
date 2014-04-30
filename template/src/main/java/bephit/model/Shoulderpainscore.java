@@ -7,6 +7,9 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Shoulderpainscore
 {
 private String shoulderpainno;
+
+private String symptom;
+
 @NotEmpty
 private String pname;
 @NotEmpty
@@ -116,6 +119,13 @@ public String getShoulderpainno() {
 }
 public void setShoulderpainno(String shoulderpainno) {
 	this.shoulderpainno = shoulderpainno;
+}
+
+public String getSymptom() {
+	return symptom;
+}
+public void setSymptom(String symptom) {
+	this.symptom = symptom;
 }
 public String getPname() {
 	return pname;

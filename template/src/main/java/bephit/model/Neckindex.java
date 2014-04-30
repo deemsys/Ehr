@@ -6,6 +6,8 @@ public class Neckindex
 {
 	private String neckindexno;	
 	
+	private String symptom;
+	
 	@NotEmpty
 	private String name;
 	
@@ -23,8 +25,14 @@ public class Neckindex
 	private String headache;
 	private String concentration;	
 	private String score;
-	private String status;
+	private String status;	
 	
+	public String getSymptom() {
+		return symptom;
+	}
+	public void setSymptom(String symptom) {
+		this.symptom = symptom;
+	}
 	public String getName() {
 		return name;
 	}

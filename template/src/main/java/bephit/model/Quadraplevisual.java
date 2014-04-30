@@ -8,14 +8,14 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Quadraplevisual
 {
 	
-	private String quadrapleno;
-	private String patient_id;
+	private String quadrapleno;	
 	private String username;
 	private String symptom;
 	private String name;
 	private String number;
 	private String date;
 	private String painname;
+	private String otherpainname;
 	private String painscale;
 	private String painscale1;
 	private String painscale2;
@@ -35,13 +35,6 @@ public class Quadraplevisual
 		this.quadrapleno = quadrapleno;
 	}
 
-	public String getPatient_id() {
-		return patient_id;
-	}
-
-	public void setPatient_id(String patient_id) {
-		this.patient_id = patient_id;
-	}
 
 	public String getUsername() {
 		return username;
@@ -91,6 +84,14 @@ public class Quadraplevisual
 		this.painname = painname;
 	}
 
+	public String getOtherpainname() {
+		return otherpainname;
+	}
+
+	public void setOtherpainname(String otherpainname) {
+		this.otherpainname = otherpainname;
+	}
+
 	public String getPainscale() {
 		return painscale;
 	}
@@ -131,19 +132,19 @@ public class Quadraplevisual
 		this.awakehours = awakehours;
 	}
 
-	public Quadraplevisual(String quadrapleno, String patient_id,
-			String username, String symptom, String name, String number,
-			String date, String painname, String painscale, String painscale1,
+	public Quadraplevisual(String quadrapleno, String username, String symptom,
+			String name, String number, String date, String painname,
+			String otherpainname, String painscale, String painscale1,
 			String painscale2, String painscale3, String awakehours) {
 		super();
 		this.quadrapleno = quadrapleno;
-		this.patient_id = patient_id;
 		this.username = username;
 		this.symptom = symptom;
 		this.name = name;
 		this.number = number;
 		this.date = date;
 		this.painname = painname;
+		this.otherpainname = otherpainname;
 		this.painscale = painscale;
 		this.painscale1 = painscale1;
 		this.painscale2 = painscale2;
@@ -151,6 +152,7 @@ public class Quadraplevisual
 		this.awakehours = awakehours;
 	}
 
+	
 	
 	
 	

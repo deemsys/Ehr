@@ -3290,7 +3290,7 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 	    	System.out.println("symptomsdsd..."+Symptoms);
 	    }
 	   // System.out.println("symptom..."+Symptoms[1]);	      
-		/*if(result.hasErrors())
+		if(result.hasErrors())
 			{			
 				PatientDetailsForm patientdetailsform = new PatientDetailsForm();
 				patientdetailsform.setPatientDetails(patientDAO.getPatientDetails());
@@ -3298,7 +3298,7 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 				model.addAttribute("Success","true");
 				model.addAttribute("menu", "patientInfo");
 				return "patientDetails";
-			}	*/       
+			}	      
 	        patientDAO.setPatientDetails(patientDetails,Symptoms,principal);
 	        PatientDetailsForm patientdetailsform = new PatientDetailsForm();
 			patientdetailsform.setPatientDetails(patientDAO.getPatientDetails());

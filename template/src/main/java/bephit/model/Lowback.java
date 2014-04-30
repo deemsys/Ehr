@@ -5,6 +5,9 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Lowback
 {
 	private String lowbackno;
+	
+	private String symptom;
+	
 	@NotEmpty
 	private String pname;
 	@NotEmpty
@@ -54,6 +57,15 @@ public class Lowback
 		this.adl = adl;
 		this.adl2 = adl2;
 		this.comment = comment;
+	}
+	
+
+	public String getSymptom() {
+		return symptom;
+	}
+
+	public void setSymptom(String symptom) {
+		this.symptom = symptom;
 	}
 
 	public String getLowbackno() {

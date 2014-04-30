@@ -1,4 +1,5 @@
 package bephit.dao;
+import java.security.Principal;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -20,7 +21,7 @@ public class OswestryDAO
 		public void setDataSource(DataSource dataSource) {
 			this.dataSource = dataSource;
 		}
-		public int insertoswestryindex(Oswestry oswestryindexdetails)
+		public int insertoswestryindex(Oswestry oswestryindexdetails,Principal principal)
 		{
 			Connection con = null;
 			Statement statement = null;
@@ -35,8 +36,10 @@ public class OswestryDAO
 				e1.printStackTrace();
 			}
 		    try{
-		    	String d="insert into oswestryindex(painintensity,standing,personal,sleeping,lifting,life,walking,social,sitting,traveling,comments,name,date,scores,painscale,painscale1,job,joboptional,work,worka,workb,workc,sport,sportoptional,instrument,instrumenta,instrumentb,instrumentc)values('"
-		    			+oswestryindexdetails.getPainintensity()			
+		    	String d="insert into oswestryindex(symptom,username,painintensity,standing,personal,sleeping,lifting,life,walking,social,sitting,traveling,comments,name,date,scores,painscale,painscale1,job,joboptional,work,worka,workb,workc,sport,sportoptional,instrument,instrumenta,instrumentb,instrumentc)values('"
+		    			+oswestryindexdetails.getSymptom()			
+		    		    +"','"+principal.getName()
+		    			+"','"+oswestryindexdetails.getPainintensity()			
 		    		    +"','"+oswestryindexdetails.getStanding()
 						+"','"+oswestryindexdetails.getPersonal()
 						+"','"+oswestryindexdetails.getSleeping()						
@@ -157,6 +160,65 @@ public class OswestryDAO
 			List<Oswestry> oswestryindex = new ArrayList<Oswestry>();
 		    try{
 				resultSet = statement.executeQuery("select * from oswestryindex where oswestryno='"+oswestryindexno+"'");
+				while(resultSet.next()){
+					oswestryindex.add(new Oswestry(
+							resultSet.getString("oswestryno"),
+							resultSet.getString("painintensity"),
+							resultSet.getString("standing"),
+							resultSet.getString("personal"),
+							resultSet.getString("sleeping"),
+							resultSet.getString("lifting"),
+							resultSet.getString("life"),
+							resultSet.getString("walking"),
+							resultSet.getString("social"),
+							resultSet.getString("sitting"),
+							resultSet.getString("traveling"),
+							resultSet.getString("comments"),
+							resultSet.getString("name"),
+							resultSet.getString("date"),
+							resultSet.getString("scores"),
+							resultSet.getString("painscale"),
+							resultSet.getString("painscale1"),
+							resultSet.getString("job"),
+							resultSet.getString("joboptional"),
+							resultSet.getString("work"),
+							resultSet.getString("worka"),
+							resultSet.getString("workb"),
+							resultSet.getString("workc"),
+							resultSet.getString("sport"),
+							resultSet.getString("sportoptional"),
+							resultSet.getString("instrument"),
+							resultSet.getString("instrumenta"),
+							resultSet.getString("instrumentb"),
+							resultSet.getString("instrumentc")));
+				    			    	
+				}
+		    }catch(Exception e){
+		    	releaseResultSet(resultSet);
+		    	releaseStatement(statement);
+		    	releaseConnection(con);
+		    }finally{
+		    	releaseResultSet(resultSet);
+		    	releaseStatement(statement);
+		    	releaseConnection(con);	    	
+		    }
+		    return oswestryindex;
+			
+		}
+		
+		public List<Oswestry> getsymptomoswestryindexDetails(String symptom,Principal principal){
+			Connection con = null;
+			Statement statement = null;
+			ResultSet resultSet = null;
+			try {
+				con = dataSource.getConnection();
+				statement = con.createStatement();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+			List<Oswestry> oswestryindex = new ArrayList<Oswestry>();
+		    try{
+				resultSet = statement.executeQuery("select * from oswestryindex where symptom='"+symptom+"' and username='"+principal.getName()+"'");
 				while(resultSet.next()){
 					oswestryindex.add(new Oswestry(
 							resultSet.getString("oswestryno"),

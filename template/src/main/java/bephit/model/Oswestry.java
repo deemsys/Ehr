@@ -5,6 +5,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Oswestry
 {
 	private String oswestryno;
+	private String symptom;
 	private String painintensity;
 	private String standing;
 	private String personal;
@@ -42,6 +43,13 @@ public class Oswestry
 	}
 	public void setOswestryno(String oswestryno) {
 		this.oswestryno = oswestryno;
+	}
+	
+	public String getSymptom() {
+		return symptom;
+	}
+	public void setSymptom(String symptom) {
+		this.symptom = symptom;
 	}
 	public String getPainintensity() {
 		return painintensity;
