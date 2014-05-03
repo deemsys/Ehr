@@ -60,8 +60,8 @@ public class Physicalexam {
 	      @NotEmpty
 	      String path;
 	      
-	      @NotEmpty
-	      String path1;
+	     /* @NotEmpty
+	      String path1;*/
 	      
 	      @NotEmpty
 	      String posture;
@@ -96,11 +96,13 @@ public class Physicalexam {
 	      String parasedema;
 	      String parastriggerpoint;
 	      String trapeziusrl;
-	      String trapeziustono;
-	      String trapeziusnormal;
-	      String scmrl;
-	      String scmtono;
-	      String scmnormal;
+	      String trapeziusrl1;
+	      
+	     /* String trapeziustono;
+	      String trapeziusnormal;*/
+	      String scm;
+	      String scm1;
+	    
 	      String vertebraefix;
 	      String vertebraenofix;
 	      
@@ -156,8 +158,8 @@ public class Physicalexam {
 	      String fingerflexleft;
 	      String fingeraddright;
 	      String fingeraddleft;
-	      String wristextright;
-	      String wristextleft;
+	     /* String wristextright;
+	      String wristextleft;*/
 	      String bicepright;
 	      String bicepleft;
 	      String bracioradright;
@@ -166,6 +168,8 @@ public class Physicalexam {
 	      String tricepleft;
 	      String presentvisual;
 	      String presentrl;
+	      
+	      
 	      String highshoulderright;
 	      String highshoulderleft;
 	      String highshouldernormal;
@@ -236,6 +240,13 @@ public class Physicalexam {
 	      String positiverlq;
 	      String positivellq;
 	      
+	      
+	      String myotomes1;
+	      String negativeruq;
+	      String negativeluq;
+	      String negativerlq;
+	      String negativellq;
+	      
 	      String patientsmoker;
 	      
 	      
@@ -255,12 +266,17 @@ public class Physicalexam {
 	      String paraspinalspasm;
 	      String paraspinaledema;
 	      String paraspinaltp;
+	      
 	      String quadrl;
-	      String quadtono;
-	      String quadnor;
+	      String quadrl1;
+	      
+	      /*String quadtono;
+	      String quadnor;*/
 	      String hamstringrl;
-	      String hamstringtono;
-	      String hamstringnor;
+	      String hamstringrl1;
+	      
+	      /*String hamstringtono;
+	      String hamstringnor;*/
 	      String verfix;
 	      String vernofix;
 	      String abdomentender;
@@ -329,8 +345,14 @@ public class Physicalexam {
 	      String patellarleft;
 	      String achillesright;
 	      String achillesleft;
+	      
 	      String babinskiright;
 	      String babinskileft;
+
+	      /*String babinskipositive;
+	      String babinskinegative;
+	      String babinskiright;
+	      String babinskileft;*/
 	
 	public Physicalexam(){
 	
@@ -486,14 +508,6 @@ public class Physicalexam {
 
 	public void setPath(String path) {
 		this.path = path;
-	}
-
-	public String getPath1() {
-		return path1;
-	}
-
-	public void setPath1(String path1) {
-		this.path1 = path1;
 	}
 
 	public String getPosture() {
@@ -704,44 +718,28 @@ public class Physicalexam {
 		this.trapeziusrl = trapeziusrl;
 	}
 
-	public String getTrapeziustono() {
-		return trapeziustono;
+	public String getTrapeziusrl1() {
+		return trapeziusrl1;
 	}
 
-	public void setTrapeziustono(String trapeziustono) {
-		this.trapeziustono = trapeziustono;
+	public void setTrapeziusrl1(String trapeziusrl1) {
+		this.trapeziusrl1 = trapeziusrl1;
 	}
 
-	public String getTrapeziusnormal() {
-		return trapeziusnormal;
+	public String getScm() {
+		return scm;
 	}
 
-	public void setTrapeziusnormal(String trapeziusnormal) {
-		this.trapeziusnormal = trapeziusnormal;
+	public void setScm(String scm) {
+		this.scm = scm;
 	}
 
-	public String getScmrl() {
-		return scmrl;
+	public String getScm1() {
+		return scm1;
 	}
 
-	public void setScmrl(String scmrl) {
-		this.scmrl = scmrl;
-	}
-
-	public String getScmtono() {
-		return scmtono;
-	}
-
-	public void setScmtono(String scmtono) {
-		this.scmtono = scmtono;
-	}
-
-	public String getScmnormal() {
-		return scmnormal;
-	}
-
-	public void setScmnormal(String scmnormal) {
-		this.scmnormal = scmnormal;
+	public void setScm1(String scm1) {
+		this.scm1 = scm1;
 	}
 
 	public String getVertebraefix() {
@@ -1128,22 +1126,6 @@ public class Physicalexam {
 		this.fingeraddleft = fingeraddleft;
 	}
 
-	public String getWristextright() {
-		return wristextright;
-	}
-
-	public void setWristextright(String wristextright) {
-		this.wristextright = wristextright;
-	}
-
-	public String getWristextleft() {
-		return wristextleft;
-	}
-
-	public void setWristextleft(String wristextleft) {
-		this.wristextleft = wristextleft;
-	}
-
 	public String getBicepright() {
 		return bicepright;
 	}
@@ -1192,11 +1174,11 @@ public class Physicalexam {
 		this.tricepleft = tricepleft;
 	}
 
-	public String getpresentvisual() {
+	public String getPresentvisual() {
 		return presentvisual;
 	}
 
-	public void setpresentvisual(String presentvisual) {
+	public void setPresentvisual(String presentvisual) {
 		this.presentvisual = presentvisual;
 	}
 
@@ -1680,6 +1662,46 @@ public class Physicalexam {
 		this.positivellq = positivellq;
 	}
 
+	public String getMyotomes1() {
+		return myotomes1;
+	}
+
+	public void setMyotomes1(String myotomes1) {
+		this.myotomes1 = myotomes1;
+	}
+
+	public String getNegativeruq() {
+		return negativeruq;
+	}
+
+	public void setNegativeruq(String negativeruq) {
+		this.negativeruq = negativeruq;
+	}
+
+	public String getNegativeluq() {
+		return negativeluq;
+	}
+
+	public void setNegativeluq(String negativeluq) {
+		this.negativeluq = negativeluq;
+	}
+
+	public String getNegativerlq() {
+		return negativerlq;
+	}
+
+	public void setNegativerlq(String negativerlq) {
+		this.negativerlq = negativerlq;
+	}
+
+	public String getNegativellq() {
+		return negativellq;
+	}
+
+	public void setNegativellq(String negativellq) {
+		this.negativellq = negativellq;
+	}
+
 	public String getPatientsmoker() {
 		return patientsmoker;
 	}
@@ -1824,20 +1846,12 @@ public class Physicalexam {
 		this.quadrl = quadrl;
 	}
 
-	public String getQuadtono() {
-		return quadtono;
+	public String getQuadrl1() {
+		return quadrl1;
 	}
 
-	public void setQuadtono(String quadtono) {
-		this.quadtono = quadtono;
-	}
-
-	public String getQuadnor() {
-		return quadnor;
-	}
-
-	public void setQuadnor(String quadnor) {
-		this.quadnor = quadnor;
+	public void setQuadrl1(String quadrl1) {
+		this.quadrl1 = quadrl1;
 	}
 
 	public String getHamstringrl() {
@@ -1848,20 +1862,12 @@ public class Physicalexam {
 		this.hamstringrl = hamstringrl;
 	}
 
-	public String getHamstringtono() {
-		return hamstringtono;
+	public String getHamstringrl1() {
+		return hamstringrl1;
 	}
 
-	public void setHamstringtono(String hamstringtono) {
-		this.hamstringtono = hamstringtono;
-	}
-
-	public String getHamstringnor() {
-		return hamstringnor;
-	}
-
-	public void setHamstringnor(String hamstringnor) {
-		this.hamstringnor = hamstringnor;
+	public void setHamstringrl1(String hamstringrl1) {
+		this.hamstringrl1 = hamstringrl1;
 	}
 
 	public String getVerfix() {
@@ -2364,81 +2370,81 @@ public class Physicalexam {
 			String name, String id, String date, String age, String sex,
 			String height, String height1, String weight, String temp,
 			String bp, String pulse, String appearance, String weight1,
-			String gait, String head, String path, String path1,
-			String posture, String romber, String exam, String abnormal,
-			String headtiltright, String headtiltleft, String headtiltnormal,
-			String rotationright, String rotationleft, String rotationnormal,
-			String tmjright, String tmjleft, String tmjnormal,
-			String highright, String highleft, String highnormal,
-			String lordhyper, String lordhypo, String lordnormal,
-			String lymphedema, String lymphnormal, String paraspain,
-			String parasspasm, String parasedema, String parastriggerpoint,
-			String trapeziusrl, String trapeziustono, String trapeziusnormal,
-			String scmrl, String scmtono, String scmnormal,
-			String vertebraefix, String vertebraenofix, String flexpain,
-			String flexspasm, String flexstiff, String extpain,
-			String extspasm, String extstiff, String rlfpain, String rlfspasm,
-			String rlfstiff, String llfpain, String llfspasm, String llfstiff,
-			String rrpain, String rrspasm, String rrstiff, String lrpain,
-			String lrspasm, String lrstiff, String c5, String c5right,
-			String c5left, String c6, String c6right, String c6left, String c7,
-			String c7right, String c7left, String c8, String c8right,
-			String c8left, String t1, String t1right, String t1left,
-			String other, String otherright, String otherleft,
-			String deltoidright, String deltoidleft, String wristright,
-			String wristleft, String wristflexright, String wristflexleft,
-			String fingerflexright, String fingerflexleft,
-			String fingeraddright, String fingeraddleft, String wristextright,
-			String wristextleft, String bicepright, String bicepleft,
-			String bracioradright, String bracioradleft, String tricepright,
-			String tricepleft, String presentvisual, String presentrl,
-			String highshoulderright, String highshoulderleft,
-			String highshouldernormal, String curvatureright,
-			String curvatureleft, String curvaturenormal, String wingingright,
-			String wingingleft, String wingingnormal, String ribhumpright,
-			String ribhumpleft, String ribhumpnormal, String chestmeasurein,
-			String kyphosishyper, String kyphosishypo, String kyphosisnormal,
-			String parapain, String paraspasm, String paraedema,
-			String paratriggerpoint, String ribspost, String ribsnor,
-			String vertefix, String vertenofix, String thoracicpain,
-			String thoracicspasm, String thoracicstiff, String thoextpain,
-			String thoextspasm, String thoextstiff, String thorlfpain,
-			String thorlfspasm, String thorlfstiff, String thollfpain,
-			String thollfspasm, String thollfstiff, String thorrpain,
-			String thorrspasm, String thorrstiff, String tholrpain,
-			String tholrspasm, String tholrstiff, String thot1,
-			String thot1right, String thot1left, String thot4,
-			String thot4right, String thot4left, String thot10,
-			String thot10right, String thot10left, String thoother,
-			String thootherright, String thootherleft, String myotomes,
-			String positiveruq, String positiveluq, String positiverlq,
-			String positivellq, String patientsmoker, String highcrestright,
-			String highcrestleft, String highcrestnormal, String highpsisright,
-			String highpsisleft, String highpsisnormal, String curveright,
-			String curveleft, String curvenormal, String lordosishyper,
-			String lordosishypo, String lordosisnormal, String paraspinalpain,
+			String gait, String head, String path, String posture,
+			String romber, String exam, String abnormal, String headtiltright,
+			String headtiltleft, String headtiltnormal, String rotationright,
+			String rotationleft, String rotationnormal, String tmjright,
+			String tmjleft, String tmjnormal, String highright,
+			String highleft, String highnormal, String lordhyper,
+			String lordhypo, String lordnormal, String lymphedema,
+			String lymphnormal, String paraspain, String parasspasm,
+			String parasedema, String parastriggerpoint, String trapeziusrl,
+			String trapeziusrl1, String scm, String scm1, String vertebraefix,
+			String vertebraenofix, String flexpain, String flexspasm,
+			String flexstiff, String extpain, String extspasm, String extstiff,
+			String rlfpain, String rlfspasm, String rlfstiff, String llfpain,
+			String llfspasm, String llfstiff, String rrpain, String rrspasm,
+			String rrstiff, String lrpain, String lrspasm, String lrstiff,
+			String c5, String c5right, String c5left, String c6,
+			String c6right, String c6left, String c7, String c7right,
+			String c7left, String c8, String c8right, String c8left, String t1,
+			String t1right, String t1left, String other, String otherright,
+			String otherleft, String deltoidright, String deltoidleft,
+			String wristright, String wristleft, String wristflexright,
+			String wristflexleft, String fingerflexright,
+			String fingerflexleft, String fingeraddright, String fingeraddleft,
+			String bicepright, String bicepleft, String bracioradright,
+			String bracioradleft, String tricepright, String tricepleft,
+			String presentvisual, String presentrl, String highshoulderright,
+			String highshoulderleft, String highshouldernormal,
+			String curvatureright, String curvatureleft,
+			String curvaturenormal, String wingingright, String wingingleft,
+			String wingingnormal, String ribhumpright, String ribhumpleft,
+			String ribhumpnormal, String chestmeasurein, String kyphosishyper,
+			String kyphosishypo, String kyphosisnormal, String parapain,
+			String paraspasm, String paraedema, String paratriggerpoint,
+			String ribspost, String ribsnor, String vertefix,
+			String vertenofix, String thoracicpain, String thoracicspasm,
+			String thoracicstiff, String thoextpain, String thoextspasm,
+			String thoextstiff, String thorlfpain, String thorlfspasm,
+			String thorlfstiff, String thollfpain, String thollfspasm,
+			String thollfstiff, String thorrpain, String thorrspasm,
+			String thorrstiff, String tholrpain, String tholrspasm,
+			String tholrstiff, String thot1, String thot1right,
+			String thot1left, String thot4, String thot4right,
+			String thot4left, String thot10, String thot10right,
+			String thot10left, String thoother, String thootherright,
+			String thootherleft, String myotomes, String positiveruq,
+			String positiveluq, String positiverlq, String positivellq,
+			String myotomes1, String negativeruq, String negativeluq,
+			String negativerlq, String negativellq, String patientsmoker,
+			String highcrestright, String highcrestleft,
+			String highcrestnormal, String highpsisright, String highpsisleft,
+			String highpsisnormal, String curveright, String curveleft,
+			String curvenormal, String lordosishyper, String lordosishypo,
+			String lordosisnormal, String paraspinalpain,
 			String paraspinalspasm, String paraspinaledema,
-			String paraspinaltp, String quadrl, String quadtono,
-			String quadnor, String hamstringrl, String hamstringtono,
-			String hamstringnor, String verfix, String vernofix,
-			String abdomentender, String abdomenpulse, String abdomenascites,
-			String lumflexpain, String lumflexspasm, String lumflexstiff,
-			String lumextpain, String lumextspasm, String lumextstiff,
-			String lumrlfpain, String lumrlfspasm, String lumrlfstiff,
-			String lumllfpain, String lumllfspasm, String lumllfstiff,
-			String lumrrpain, String lumrrspasm, String lumrrstiff,
-			String lumlrpain, String lumlrspasm, String lumlrstiff, String lu1,
-			String lu1right, String lu1left, String lu2, String lu2right,
-			String lu2left, String lu3, String lu3right, String lu3left,
-			String lu4, String lu4right, String lu4left, String lu5,
-			String lu5right, String lu5left, String lu6, String lu6right,
-			String lu6left, String lu7, String lu7right, String lu7left,
-			String hipflexright, String hipflexleft, String legextright,
-			String legextleft, String dorsiflexright, String dorsiflexleft,
-			String digitflexright, String digitflexleft, String heelright,
-			String heelleft, String toeright, String toeleft,
-			String patellarright, String patellarleft, String achillesright,
-			String achillesleft, String babinskiright, String babinskileft) {
+			String paraspinaltp, String quadrl, String quadrl1,
+			String hamstringrl, String hamstringrl1, String verfix,
+			String vernofix, String abdomentender, String abdomenpulse,
+			String abdomenascites, String lumflexpain, String lumflexspasm,
+			String lumflexstiff, String lumextpain, String lumextspasm,
+			String lumextstiff, String lumrlfpain, String lumrlfspasm,
+			String lumrlfstiff, String lumllfpain, String lumllfspasm,
+			String lumllfstiff, String lumrrpain, String lumrrspasm,
+			String lumrrstiff, String lumlrpain, String lumlrspasm,
+			String lumlrstiff, String lu1, String lu1right, String lu1left,
+			String lu2, String lu2right, String lu2left, String lu3,
+			String lu3right, String lu3left, String lu4, String lu4right,
+			String lu4left, String lu5, String lu5right, String lu5left,
+			String lu6, String lu6right, String lu6left, String lu7,
+			String lu7right, String lu7left, String hipflexright,
+			String hipflexleft, String legextright, String legextleft,
+			String dorsiflexright, String dorsiflexleft, String digitflexright,
+			String digitflexleft, String heelright, String heelleft,
+			String toeright, String toeleft, String patellarright,
+			String patellarleft, String achillesright, String achillesleft,
+			String babinskiright, String babinskileft) {
 		super();
 		this.physical_id = physical_id;
 		this.patient_id = patient_id;
@@ -2459,7 +2465,6 @@ public class Physicalexam {
 		this.gait = gait;
 		this.head = head;
 		this.path = path;
-		this.path1 = path1;
 		this.posture = posture;
 		this.romber = romber;
 		this.exam = exam;
@@ -2486,11 +2491,9 @@ public class Physicalexam {
 		this.parasedema = parasedema;
 		this.parastriggerpoint = parastriggerpoint;
 		this.trapeziusrl = trapeziusrl;
-		this.trapeziustono = trapeziustono;
-		this.trapeziusnormal = trapeziusnormal;
-		this.scmrl = scmrl;
-		this.scmtono = scmtono;
-		this.scmnormal = scmnormal;
+		this.trapeziusrl1 = trapeziusrl1;
+		this.scm = scm;
+		this.scm1 = scm1;
 		this.vertebraefix = vertebraefix;
 		this.vertebraenofix = vertebraenofix;
 		this.flexpain = flexpain;
@@ -2539,8 +2542,6 @@ public class Physicalexam {
 		this.fingerflexleft = fingerflexleft;
 		this.fingeraddright = fingeraddright;
 		this.fingeraddleft = fingeraddleft;
-		this.wristextright = wristextright;
-		this.wristextleft = wristextleft;
 		this.bicepright = bicepright;
 		this.bicepleft = bicepleft;
 		this.bracioradright = bracioradright;
@@ -2608,6 +2609,11 @@ public class Physicalexam {
 		this.positiveluq = positiveluq;
 		this.positiverlq = positiverlq;
 		this.positivellq = positivellq;
+		this.myotomes1 = myotomes1;
+		this.negativeruq = negativeruq;
+		this.negativeluq = negativeluq;
+		this.negativerlq = negativerlq;
+		this.negativellq = negativellq;
 		this.patientsmoker = patientsmoker;
 		this.highcrestright = highcrestright;
 		this.highcrestleft = highcrestleft;
@@ -2626,11 +2632,9 @@ public class Physicalexam {
 		this.paraspinaledema = paraspinaledema;
 		this.paraspinaltp = paraspinaltp;
 		this.quadrl = quadrl;
-		this.quadtono = quadtono;
-		this.quadnor = quadnor;
+		this.quadrl1 = quadrl1;
 		this.hamstringrl = hamstringrl;
-		this.hamstringtono = hamstringtono;
-		this.hamstringnor = hamstringnor;
+		this.hamstringrl1 = hamstringrl1;
 		this.verfix = verfix;
 		this.vernofix = vernofix;
 		this.abdomentender = abdomentender;
@@ -2694,6 +2698,8 @@ public class Physicalexam {
 		this.babinskiright = babinskiright;
 		this.babinskileft = babinskileft;
 	}
+
+	
 	
 	
 
