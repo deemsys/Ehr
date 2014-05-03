@@ -14,6 +14,45 @@
   line-height:18px;}
    </STYLE>
    </head>
+   <script>
+$(function() {
+    $( "#slider" ).slider({
+      value:1,
+      min: 0,
+      max: 10,
+      step: 1,
+      slide: function( event, ui ) {
+        $( "#amount" ).val(+ ui.value );
+      }
+    });
+    $( "#amount" ).val(+ $( "#slider" ).slider( "value" ) );
+  });
+
+$(function() {
+    $( "#slider1" ).slider({
+      value:1,
+      min: 0,
+      max: 10,
+      step: 1,
+      slide: function( event, ui ) {
+        $( "#amount1" ).val(+ ui.value );
+      }
+    });
+    $( "#amount1" ).val(+ $( "#slider1" ).slider( "value" ) );
+  });
+$(function() {
+    $( "#slider2" ).slider({
+      value:1,
+      min: 0,
+      max: 10,
+      step: 1,
+      slide: function( event, ui ) {
+        $( "#amount2" ).val(+ ui.value );
+      }
+    });
+    $( "#amount2" ).val(+ $( "#slider2" ).slider( "value" ) );
+  });
+</script>
  <script type="text/javascript">
 function Checksymptom(val){
  var element=document.getElementById('offwork1');
@@ -75,7 +114,7 @@ $(function() {
 <table align="right">
     <tr class="row1">
        <td><h2><span class="err">*</span>patient:</h2></td>
-             <input type="hidden" value="${soapnotes.patient_id }" name="patient_id" />
+             <input type="text" value="${username}" name="username" />
               <input type="hidden" class="input_txtbx1" id="inp_id" value="${soapnotes.soapid}" name="soapid" />
               <td><input type="text" class="input_txtbx1" name="pname" value="${soapnotes.pname}" /><span class="err"><form:errors path="SoapNotes.pname"></form:errors></span></td>
              </tr>
@@ -89,8 +128,65 @@ $(function() {
 <td><input type="checkbox" name="rightshoulderpain" value="Right Shoulder pain" <c:if test="${soapnotes.rightshoulderpain=='Right Shoulder pain'}"><c:out value="checked=checked"/></c:if>>Right Shoulder pain</td>
 <td><input type="checkbox" name="leftshoulderpain" value="Left Shoulder Pain" <c:if test="${soapnotes.leftshoulderpain=='Left Shoulder Pain'}"><c:out value="checked=checked"/></c:if>>Left Shoulder Pain</td>
 <td><input type="checkbox" name="chestpain" value="Chest Pain" <c:if test="${soapnotes.chestpain=='Chest Pain'}"><c:out value="checked=checked"/></c:if>>Chest Pain</td>
-<td><input type="checkbox" name="rightarmpain" value="Right Arm Pain" <c:if test="${soapnotes.rightarmpain=='Right Arm Pain'}"><c:out value="checked=checked"/></c:if>>Right Arm Pain</td>
-<td><input type="checkbox" name="leftarmpain" value="Left Arm Pain" <c:if test="${soapnotes.leftarmpain=='Left Arm Pain'}"><c:out value="checked=checked"/></c:if>>Left Arm Pain</td>
+<td><input type="checkbox" name="rightarmpain" id="rightarmpain" onclick="rightcheck()" value="Right Arm Pain" <c:if test="${soapnotes.rightarmpain=='Right Arm Pain'}"><c:out value="checked=checked"/></c:if>>Right Arm Pain
+<script>
+function rightcheck()
+{
+alert("sdfsdf");
+if(document.getElementById("rightarmpain").checked)
+	{
+	document.getElementById("rightproxi").style.display="table-row";
+	}
+else
+	{
+	document.getElementById("rightproxi").style.display="none";
+	}
+	if(document.getElementById("leftarmpain").checked)
+{
+document.getElementById("leftproxi").style.display="table-row";
+}
+else
+{
+document.getElementById("leftproxi").style.display="none";
+}
+if(document.getElementById("rightrib").checked)
+{
+document.getElementById("amount1").style.display="table-row";
+document.getElementById("slider1").style.display="block";
+document.getElementById("label").style.display="table-row";
+
+}
+else
+{
+	document.getElementById("amount1").style.display="none";
+	document.getElementById("slider1").style.display="none";
+	document.getElementById("label").style.display="none";
+}
+if(document.getElementById("leftrib").checked)
+{
+document.getElementById("amount2").style.display="table-row";
+document.getElementById("slider2").style.display="block";
+document.getElementById("label1").style.display="table-row";
+
+}
+else
+{
+	document.getElementById("amount2").style.display="none";
+	document.getElementById("slider2").style.display="none";
+	document.getElementById("label1").style.display="none";
+}
+
+}
+</script><br>
+<select name="rightproxi" id="rightproxi" style="display:none"><option>proximal</option><option>distal portion</option></select>
+
+
+</td>
+<td><input type="checkbox" id="leftarmpain" name="leftarmpain" value="Left Arm Pain"  onclick="rightcheck()" <c:if test="${soapnotes.leftarmpain=='Left Arm Pain'}"><c:out value="checked=checked"/></c:if>>Left Arm Pain
+<br>
+<select name="leftproxi" id="leftproxi" style="display:none"><option>proximal</option><option>distal portion</option></select>
+
+</td>
 </tr>
 <tr class="row1">
 <td></td>
@@ -104,8 +200,19 @@ $(function() {
 </tr>
 <tr class="row1">
 <td></td>
-<td><input type="checkbox" name="rightribpain" value="Right Rib Pain" <c:if test="${soapnotes.rightribpain=='Right Rib Pain'}"><c:out value="checked=checked"/></c:if>>Right Rib Pain</td>
-<td><input type="checkbox" name="leftribpain" value="Left Rib Pain" <c:if test="${soapnotes.leftribpain=='Left Rib Pain'}"><c:out value="checked=checked"/></c:if>>Left Rib Pain</td>
+<td><input type="checkbox" name="rightribpain" value="Right Rib Pain"  id="rightrib" onclick="rightcheck()" <c:if test="${soapnotes.rightribpain=='Right Rib Pain'}"><c:out value="checked=checked"/></c:if>>Right Rib Pain
+<label for="amount1" style="width: 50;display:none;" id="label"><b>Pain Scale:</b></label>
+	 <input type="text" id="amount1" style="border:0;display:none; width: 50;color:#f6931f; font-weight:bold;" name="painscale1"/>&nbsp;&nbsp;&nbsp;
+ <div id="slider1" style="width: 100; display:none"></div>
+
+
+</td>
+<td><input type="checkbox" name="leftribpain" value="Left Rib Pain" id="leftrib" onclick="rightcheck()" <c:if test="${soapnotes.leftribpain=='Left Rib Pain'}"><c:out value="checked=checked"/></c:if>>Left Rib Pain
+ <label for="amount2" style="width: 50;display:none;" id="label1"><b>Pain Scale:</b></label>
+	 <input type="text" id="amount2" style="border:0;display:none; width: 50;color:#f6931f; font-weight:bold;" name="painscale2" />&nbsp;&nbsp;&nbsp;
+ <div id="slider2" style="width: 100; display:none;"> 
+
+</td>
 <td><input type="checkbox" name="lbp" value="LBP" <c:if test="${soapnotes.lbp=='LBP'}"><c:out value="checked=checked"/></c:if>>LBP</td>
 <td><input type="checkbox" name="rightsipain" value="Right SI Pain" <c:if test="${soapnotes.rightsipain=='Right SI Pain'}"><c:out value="checked=checked"/></c:if>>Right SI Pain</td>
 <td><input type="checkbox" name="leftsipain" value="Left SI Pain" <c:if test="${soapnotes.leftsipain=='Left SI Pain'}"><c:out value="checked=checked"/></c:if>>Left SI Pain</td>
@@ -135,52 +242,89 @@ $(function() {
 </table>
  <table cellpadding="0" cellspacing="0" border="1" width="98%">
  <tr>
-  <td>
+  <td width="200">
 <bold><center> Date </center> </bold>
   </td>
- <td>
+ <td width="250">
 <bold><center> S</center></bold>
  </td>
- <td>
+ <td width="250">
  <bold><center>O</center></bold>
  </td>
- <td>
+ <td width="250">
  <bold><center>A</center></bold>
  </td>
- <td>
+ <td width="250">
  <bold><center>P</center></bold>
  </td>
  </tr>
  <tr>
- <td>&nbsp;&nbsp;<input type="text" id="datepicker1" class="input_txtbx1"  name="date1" value="${soapnotes.date1}"></td>
- <td>&nbsp &nbsp Improved: <select name="improved" id="improved" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+ <td><br><br>&nbsp;&nbsp;<input type="text" id="datepicker1" class="input_txtbx1"  name="date1" value="${soapnotes.date1}"></td>
+ <td> <br/>
+&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved" value="${soapnotes.improved}">&nbsp;%<%-- <select name="improved" id="improved" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" <c:if test="${soapnotes.improved=='10%'}"><c:out value="selected"/></c:if>>10%</option>
 					<option value="25%" <c:if test="${soapnotes.improved=='25%'}"><c:out value="selected"/></c:if>>25%</option>
 					<option value="50%" <c:if test="${soapnotes.improved=='50%'}"><c:out value="selected"/></c:if>>50%</option>
 					<option value="75%" <c:if test="${soapnotes.improved=='75%'}"><c:out value="selected"/></c:if>>75%</option>
 					<option value="85%" <c:if test="${soapnotes.improved=='85%'}"><c:out value="selected"/></c:if>>85%</option>
 					<option value="95%" <c:if test="${soapnotes.improved=='95%'}"><c:out value="selected"/></c:if>>95%</option>
-					</select><br/><br/><br/>
-&nbsp &nbsp Worsened: <select name="worsened" id="worsened" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="10%" <c:if test="${soapnotes.worsened=='10%'}"><c:out value="selected"/></c:if>>10%</option>
+					</select> --%>
+<br><br>
+&nbsp; Worsened:&nbsp;&nbsp;<input type="text"  name="worsened" value="${soapnotes.worsened}">&nbsp;%
+					<%-- <option selected="selected" value="10%" <c:if test="${soapnotes.worsened=='10%'}"><c:out value="selected"/></c:if>>10%</option>
 					<option value="25%" <c:if test="${soapnotes.worsened=='25%'}"><c:out value="selected"/></c:if>>25%</option>
 					<option value="50%" <c:if test="${soapnotes.worsened=='50%'}"><c:out value="selected"/></c:if>>50%</option>
 					<option value="75%" <c:if test="${soapnotes.worsened=='75%'}"><c:out value="selected"/></c:if>>75%</option>
 					<option value="85%" <c:if test="${soapnotes.worsened=='85%'}"><c:out value="selected"/></c:if>>85%</option>
 					<option value="95" <c:if test="${soapnotes.worsened=='95%'}"><c:out value="selected"/></c:if>>95%</option>
 
-					</select><br/><br/><br/></td>
- <td></td>
+					</select> --%><br/><br/><br/></td>
+ <td>
+ <label for="amount"><b>Pain Scale:</b></label>
+	 <input type="text" id="amount" value="${soapnotes.painscale}" style="border:0; color:#f6931f; font-weight:bold;" name="painscale" />&nbsp;&nbsp;&nbsp;
+ <div id="slider"></div>
+ 
+ 
+ </td>
+<script type="text/javascript">
+				var $im = 1;
+				var flagm = 1;
+				function addMultichoice(divName) {
+					var xx = document.getElementsByName('diagnosis[]').length;
+					var $in = xx + 1;
+					var $m=$in-1;
+
+					var newdiv = document.createElement('div'); 
+
+					newdiv.innerHTML = '<table width="100%" border="0" cellspacing="0" cellpadding="0" id="newtbl'
+							+ $im
+							+ '"><tr>'
+							+ '<td valign="top" align="left" class="input_txt" width="70%">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text"  name="diagnosis[]"/></td></tr><tr class="row1"><td align="left" valign="top"><a javascript:void(0);" onclick="removechoice('
+							+ $im
+							+ ')" style="text-decoration:none;"><input type="submit" class="submit_btn" value="CANCEL"  /></a></td></tr></table>';
+							
+							alert(newdiv.innerHTML);
+					document.getElementById(divName).appendChild(newdiv);
+					$im++;
+					flagm++;
+
+				}
+				function removechoice(id) {
+					id = 'newtbl' + id;
+					var child = document.getElementById(id)
+					var parentDiv = child.parentNode;
+					parentDiv.removeChild(child);
+
+				}
+			</script>
  <td>
  
- &nbsp &nbsp Diagonosis:<br/>
-&nbsp &nbsp 1&nbsp &nbsp &nbsp<input class="input_txtbx1" id="inp_id" type="text" name="diagnosis1" value="${soapnotes.diagnosis1}"><br/><br/>
-&nbsp &nbsp 2&nbsp &nbsp &nbsp<input class="input_txtbx1" id="inp_id" type="text" name="diagnosis2" value="${soapnotes.diagnosis2}"><br/><br/>
-&nbsp &nbsp 3&nbsp &nbsp &nbsp<input class="input_txtbx1" id="inp_id" type="text" name="diagnosis3" value="${soapnotes.diagnosis3}"><br/><br/>
-&nbsp &nbsp 4&nbsp &nbsp &nbsp<input class="input_txtbx1" id="inp_id" type="text" name="diagnosis4" value="${soapnotes.diagnosis4}"><br/><br/>
+ &nbsp &nbsp Diagonosis:<br/><br>&nbsp;<c:forEach items="${diagnosis}" var="diagnosis">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="diagnosis[]" type="text" value="${diagnosis}"><br><br></c:forEach>
+ <div id="multichoice"></div><a href="javascript:void(0);" onclick="addMultichoice('multichoice');" style="text-decoration:none;" ><input type="button" value="Add one more diagnosis" class="submit_btn2" name=""/></a>
+
  </td>
  <td>
- &nbsp &nbsp E1/E2 X-Rays: <select name="e1e2" id="e1e2" class="input_cmbbx1" "if (this.value=='ExtremitiesX-Rays'){this.form['xray'].style.visibility='visible'}else {this.form['xray'].style.visibility='hidden'};">
+ <select name="e1e2" id="e1e2" class="input_cmbbx1" "if (this.value=='ExtremitiesX-Rays'){this.form['xray'].style.visibility='visible'}else {this.form['xray'].style.visibility='hidden'};">
 					<option selected="selected" value="2" <c:if test="${soapnotes.e1e2=='2'}"><c:out value="selected"/></c:if>>2</option>
 					<option value="3" <c:if test="${soapnotes.e1e2=='3'}"><c:out value="selected"/></c:if>>3</option>
 					<option value="4" <c:if test="${soapnotes.e1e2=='4'}"><c:out value="selected"/></c:if>>4</option>
@@ -191,12 +335,20 @@ $(function() {
 					<option value="9" <c:if test="${soapnotes.e1e2=='9'}"><c:out value="selected"/></c:if>>9</option>
 					<option value="10" <c:if test="${soapnotes.e1e2=='10'}"><c:out value="selected"/></c:if>>10</option>
 					<option value="11" <c:if test="${soapnotes.e1e2=='11'}"><c:out value="selected"/></c:if>>11</option>
+					<option value="Re-exam" <c:if test="${soapnotes.e1e2=='Re-exam'}"><c:out value="selected"/></c:if>>Re-exam</option>
+					
 					<option value="one spot x-ray"><c:if test="${soapnotes.e1e2=='one spot x-ray'}"><c:out value="selected"/></c:if>one spot x-ray</option>
 					<option value="2 to 7 C/S X-Rays"><c:if test="${soapnotes.e1e2=='2 to 7 C/S X-Rays'}"><c:out value="selected"/></c:if>2 to 7 C/S X-Rays</option>
 					<option value="2 to 6 T/S X-Rays"><c:if test="${soapnotes.e1e2=='2 to 6 T/S X-Rays'}"><c:out value="selected"/></c:if>2 to 6 T/S X-Rays</option>
 					<option value="2-6 L/S X-Rays"><c:if test="${soapnotes.e1e2=='2-6 L/S X-Rays'}"><c:out value="selected"/></c:if>2-6 L/S X-Rays</option>
 					<option value="2 Chest X-Rays"><c:if test="${soapnotes.e1e2=='2 Chest X-Rays'}"><c:out value="selected"/></c:if>2 Chest X-Rays</option>
 					<option value="ExtremitiesX-Rays"><c:if test="${soapnotes.e1e2=='ExtremitiesX-Rays'}"><c:out value="selected"/></c:if>ExtremitiesX-Rays</option>
+					<option value="SCSM 1-2 region" <c:if test="${soapnotes.e1e2=='SCSM 1-2 region'}"><c:out value="selected"/></c:if>>SCSM 1-2 region</option>
+					<option value="SCSM 3-4 regions" <c:if test="${soapnotes.e1e2=='SCSM 3-4 regions'}"><c:out value="selected"/></c:if>>SCSM 3-4 regions</option>
+					<option value="5 regions" <c:if test="${soapnotes.e1e2=='5 regions'}"><c:out value="selected"/></c:if>>5 regions</option>
+					<option value="extraspinal 1 or more regions" <c:if test="${soapnotes.e1e2=='extraspinal 1 or more regions'}"><c:out value="selected"/></c:if>>extraspinal 1 or more regions</option>
+					<option value="MR" <c:if test="${soapnotes.e1e2=='MR'}"><c:out value="selected"/></c:if>>MR</option>
+					<option value="Home Exercises" <c:if test="${soapnotes.e1e2=='Home Exercises'}"><c:out value="selected"/></c:if>>Home Exercises</option>
 					<option value="scsm" <c:if test="${soapnotes.e1e2=='scsm'}"><c:out value="selected"/></c:if>>SCSM</option>
 					<option value="ems" <c:if test="${soapnotes.e1e2=='ems'}"><c:out value="selected"/></c:if>>EMS</option>
 					<option value="mass" <c:if test="${soapnotes.e1e2=='mass'}"><c:out value="selected"/></c:if>>MASS</option>
@@ -224,10 +376,15 @@ $(function() {
 				  </td>
  </tr>
  <tr>
- <td>&nbsp;&nbsp;<input type="text" id="datepicker"  name="date2" value="${soapnotes.date2}"></td>
+ <td>&nbsp;&nbsp;<input type="text" id="datepicker" class="input_txtbx1"  name="date2" value="${soapnotes.date2}"></td>
  <td>
  <br/>
-&nbsp &nbsp Improved: <select name="improved1" id="improved1" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved1" value="${soapnotes.improved1}">&nbsp;%
+
+<br><br>
+&nbsp; Worsened:&nbsp;&nbsp;<input type="text"  name="worsened1" value="${soapnotes.worsened1}">&nbsp;%
+<br/><br/><br/>
+<%-- &nbsp &nbsp Improved: <select name="improved1" id="improved1" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" <c:if test="${soapnotes.improved1=='10%'}"><c:out value="selected"/></c:if>>10%</option>
 					<option value="25%" <c:if test="${soapnotes.improved1=='25%'}"><c:out value="selected"/></c:if>>25%</option>
 					<option value="50%" <c:if test="${soapnotes.improved1=='50%'}"><c:out value="selected"/></c:if>>50%</option>
@@ -243,18 +400,19 @@ $(function() {
 					<option value="85%" <c:if test="${soapnotes.worsened1=='85%'}"><c:out value="selected"/></c:if>>85%</option>
 					<option value="95" <c:if test="${soapnotes.worsened1=='95%'}"><c:out value="selected"/></c:if>>95%</option>
 
-					</select><br/><br/><br/></td>
+					</select><br/><br/><br/> --%></td>
 
  <td>
  &nbsp &nbsp <select name="fixation1" id="fixation1" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixation" <c:if test="${soapnotes.fixation1=='fixation'}"><c:out value="selected"/></c:if>>Fixations</option>
-					<option value="Tenderness topalpation" <c:if test="${soapnotes.fixation1=='Tenderness topalpation'}"><c:out value="selected"/></c:if>>Tenderness topalpation</option>
+					<option value="Tenderness to palpation" <c:if test="${soapnotes.fixation1=='Tenderness to palpation'}"><c:out value="selected"/></c:if>>Tenderness to palpation</option>
 					<option value="spasm" <c:if test="${soapnotes.fixation1=='spasm'}"><c:out value="selected"/></c:if>>Spasm</option>
 					<option value="trigger" <c:if test="${soapnotes.fixation1=='trigger'}"><c:out value="selected"/></c:if>>Trigger pts.</option>
 					<option value="Hypertonicity" <c:if test="${soapnotes.fixation1=='Hypertonicity'}"><c:out value="selected"/></c:if>>Hypertonicity</option>
 					<option value="edema" <c:if test="${soapnotes.fixation1=='edema'}"><c:out value="selected"/></c:if>>Edema</option>
 					<option value="Decreased ROM" <c:if test="${soapnotes.fixation1=='decreased ROM'}"><c:out value="selected"/></c:if>>Decreased ROM</option>
-					<option value="shortleg" <c:if test="${soapnotes.fixation1=='shortleg'}"><c:out value="selected"/></c:if>>Short leg R/L Temp.Change</option>
+					<option value="Short Leg Right Temp.Change" <c:if test="${soapnotes.fixation1=='Short Leg Right Temp.Change'}"><c:out value="selected"/></c:if>>Short leg Right Temp.Change</option>
+					<option value="Short Leg Left Temp.Change" <c:if test="${soapnotes.fixation1=='Short Leg Left Temp.Change'}"><c:out value="selected"/></c:if>>Short leg Left Temp.Change</option>
 					<option value="atrophy" <c:if test="${soapnotes.fixation1=='atrophy'}"><c:out value="selected"/></c:if>>Atrophy</option>
 					<option value="decr strength" <c:if test="${soapnotes.fixation1=='decr strength'}"><c:out value="selected"/></c:if>>Decr Strength</option>
 
@@ -263,8 +421,8 @@ $(function() {
 
  &nbsp &nbsp<select name="notimproved1" id="notimproved1" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="notimproved" <c:if test="${soapnotes.notimproved1=='notimproved'}"><c:out value="selected"/></c:if>>Not Improved</option>
-					<option value="Progressinging Slow " <c:if test="${soapnotes.notimproved1=='Progressinging Slow '}"><c:out value="selected"/></c:if>>Progressing Slow</option>
-					<option value="Exacerbation of CC" <c:if test="${soapnotes.notimproved1=='Exacerbation of CC'}"><c:out value="selected"/></c:if>>Exacerbation of CC</option>
+					<option value="Progressing Slow" <c:if test="${soapnotes.notimproved1=='Progressing Slow'}"><c:out value="selected"/></c:if>>Progressing Slow</option>
+					<option value="Exacerbation of C.C." <c:if test="${soapnotes.notimproved1=='Exacerbation of C.C.'}"><c:out value="selected"/></c:if>>Exacerbation of CC</option>
 					<option value="Flare-ups" <c:if test="${soapnotes.notimproved1=='Flare-ups '}"><c:out value="selected"/></c:if>>Flare-ups</option>
 					<option value="mildly" <c:if test="${soapnotes.notimproved1=='mildly'}"><c:out value="selected"/></c:if>>Mildly imp.</option>
 					<option value="moderatly" <c:if test="${soapnotes.notimproved1=='moderatly'}"><c:out value="selected"/></c:if>>Moderatly imp.</option>
@@ -302,37 +460,24 @@ $(function() {
  <tr>
  <td>&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="date3" id="datepicker2" value="${soapnotes.date3}"></td>
  <td>
-<br/>&nbsp &nbspImproved: <select name="improved2" id="improved2" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="10%" <c:if test="${soapnotes.improved2=='10%'}"><c:out value="selected"/></c:if>>10%</option>
-					<option value="25%" <c:if test="${soapnotes.improved2=='25%'}"><c:out value="selected"/></c:if>>25%</option>
-					<option value="50%" <c:if test="${soapnotes.improved2=='50%'}"><c:out value="selected"/></c:if>>50%</option>
-					<option value="75%" <c:if test="${soapnotes.improved2=='75%'}"><c:out value="selected"/></c:if>>75%</option>
-					<option value="85%" <c:if test="${soapnotes.improved2=='85%'}"><c:out value="selected"/></c:if>>85%</option>
-					<option value="95%" <c:if test="${soapnotes.improved2=='95%'}"><c:out value="selected"/></c:if>>95%</option>
-<br/><br/><br/>
+<br/>
+&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved2" value="${soapnotes.improved2}">&nbsp;%
 
-
-&nbsp &nbsp Worsened: <select name="worsened2" id="worsened2" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="10%" <c:if test="${soapnotes.worsened2=='10%'}"><c:out value="selected"/></c:if>>10%</option>
-					<option value="25%" <c:if test="${soapnotes.worsened2=='25%'}"><c:out value="selected"/></c:if>>25%</option>
-					<option value="50%" <c:if test="${soapnotes.worsened2=='50%'}"><c:out value="selected"/></c:if>>50%</option>
-					<option value="75%" <c:if test="${soapnotes.worsened2=='75%'}"><c:out value="selected"/></c:if>>75%</option>
-					<option value="85%" <c:if test="${soapnotes.worsened2=='85%'}"><c:out value="selected"/></c:if>>85%</option>
-					<option value="95" <c:if test="${soapnotes.worsened2=='95%'}"><c:out value="selected"/></c:if>>95%</option>
-
-
-					</select></td>
+<br><br>
+&nbsp; Worsened:&nbsp;&nbsp;<input type="text"  name="worsened2" value="${soapnotes.worsened2}">&nbsp;%
+<br/><br/><br/></td>
  <td>
 
   &nbsp &nbsp <select name="fixation2" id="fixation2" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixation" <c:if test="${soapnotes.fixation2=='Fixation'}"><c:out value="selected"/></c:if>>Fixations</option>
-					<option value="Tenderness topalpation" <c:if test="${soapnotes.fixation2=='Tenderness topalpation'}"><c:out value="selected"/></c:if>>Tenderness topalpation</option>
+					<option value="Tenderness to palpation" <c:if test="${soapnotes.fixation2=='Tenderness to palpation'}"><c:out value="selected"/></c:if>>Tenderness to palpation</option>
 					<option value="spasm" <c:if test="${soapnotes.fixation2=='spasm'}"><c:out value="selected"/></c:if>>Spasm</option>
 					<option value="trigger" <c:if test="${soapnotes.fixation2=='trigger'}"><c:out value="selected"/></c:if>>Trigger pts.</option>
 					<option value="Hypertonicity" <c:if test="${soapnotes.fixation2=='Hypertonicity'}"><c:out value="selected"/></c:if>>Hypertonicity</option>
 					<option value="edema" <c:if test="${soapnotes.fixation2=='edema'}"><c:out value="selected"/></c:if>>Edema</option>
 					<option value="Decreased ROM" <c:if test="${soapnotes.fixation2=='decreased ROM'}"><c:out value="selected"/></c:if>>Decreased ROM</option>
-					<option value="shortleg" <c:if test="${soapnotes.fixation2=='shortleg'}"><c:out value="selected"/></c:if>>Short leg R/L Temp.Change</option>
+					<option value="Short Leg Right Temp.Change" <c:if test="${soapnotes.fixation2=='Short Leg Right Temp.Change'}"><c:out value="selected"/></c:if>>Short Leg Right Temp.Change</option>
+					<option value="Short Leg Left Temp.Change" <c:if test="${soapnotes.fixation2=='Short Leg Left Temp.Change'}"><c:out value="selected"/></c:if>>Short Leg Left Temp.Change</option>
 					<option value="atrophy" <c:if test="${soapnotes.fixation2=='atrophy'}"><c:out value="selected"/></c:if>>Atrophy</option>
 					<option value="decr strength" <c:if test="${soapnotes.fixation2=='decr strength'}"><c:out value="selected"/></c:if>>Decr Strength</option>
 
@@ -340,8 +485,8 @@ $(function() {
 					</select></td>
  <td>&nbsp &nbsp<select name="notimproved2" id="notimproved2" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="notimproved" <c:if test="${soapnotes.notimproved2=='notimproved'}"><c:out value="selected"/></c:if>>Not Improved</option>
-					<option value="Progressinging Slow " <c:if test="${soapnotes.notimproved1=='Progressinging Slow '}"><c:out value="selected"/></c:if>>Progressing Slow</option>
-					<option value="Exacerbation of CC" <c:if test="${soapnotes.notimproved1=='Exacerbation of CC'}"><c:out value="selected"/></c:if>>Exacerbation of CC</option>
+					<option value="Progressing Slow" <c:if test="${soapnotes.notimproved1=='Progressing Slow'}"><c:out value="selected"/></c:if>>Progressing Slow</option>
+					<option value="Exacerbation of C.C." <c:if test="${soapnotes.notimproved1=='Exacerbation of C.C.'}"><c:out value="selected"/></c:if>>Exacerbation of C.C.</option>
 					<option value="Flare-ups" <c:if test="${soapnotes.notimproved1=='Flare-ups '}"><c:out value="selected"/></c:if>>Flare-ups</option>
 					<option value="mildly" <c:if test="${soapnotes.notimproved2=='mildly'}"><c:out value="selected"/></c:if>>Mildly imp.</option>
 					<option value="moderatly" <c:if test="${soapnotes.notimproved2=='moderatly'}"><c:out value="selected"/></c:if>>Moderatly imp.</option>
@@ -378,42 +523,32 @@ $(function() {
  <tr>
  <td>&nbsp;&nbsp;<input type="text" class="input_txtbx1" id="datepicker3" name="date4" value="${soapnotes.date4}"></td>
  <td>
- <br/>&nbsp &nbspImproved: <select name="improved3" id="improved3" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="10%" <c:if test="${soapnotes.improved1=='10%'}"><c:out value="selected"/></c:if>>10%</option>
-					<option value="25%" <c:if test="${soapnotes.improved1=='25%'}"><c:out value="selected"/></c:if> >25%</option>
-					<option value="50%" <c:if test="${soapnotes.improved1=='50%'}"><c:out value="selected"/></c:if>>50%</option>
-					<option value="75%" <c:if test="${soapnotes.improved1=='75%'}"><c:out value="selected"/></c:if>>75%</option>
-					<option value="85%" <c:if test="${soapnotes.improved1=='85%'}"><c:out value="selected"/></c:if>>85%</option>
-					<option value="95%" <c:if test="${soapnotes.improved1=='95%'}"><c:out value="selected"/></c:if>>95%</option>
-</select><br/><br/><br/>
-&nbsp &nbsp Worsened: <select name="worsened3" id="worsened3" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="10%" <c:if test="${soapnotes.worsened3=='10%'}"><c:out value="selected"/></c:if>>10%</option>
-					<option value="25%" <c:if test="${soapnotes.worsened3=='25%'}"><c:out value="selected"/></c:if>>25%</option>
-					<option value="50%" <c:if test="${soapnotes.worsened3=='50%'}"><c:out value="selected"/></c:if>>50%</option>
-					<option value="75%" <c:if test="${soapnotes.worsened3=='75%'}"><c:out value="selected"/></c:if>>75%</option>
-					<option value="85%" <c:if test="${soapnotes.worsened3=='85%'}"><c:out value="selected"/></c:if>>85%</option>
-					<option value="95" <c:if test="${soapnotes.worsened3=='95%'}"><c:out value="selected"/></c:if>>95%</option>
+ <br/>
+&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved3" value="${soapnotes.improved3}">&nbsp;%
 
-					</select></td>
+<br><br>
+&nbsp; Worsened:&nbsp;&nbsp;<input type="text"  name="worsened3" value="${soapnotes.worsened3}">&nbsp;%
+<br/><br/><br/></td>
  <td>
   &nbsp &nbsp<select name="fixation3" id="fixation3" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixation" <c:if test="${soapnotes.fixation3=='Fixation'}"><c:out value="selected"/></c:if>
 					>Fixations</option>
-					<option value="Tenderness topalpation" <c:if test="${soapnotes.fixation3=='Tenderness topalpation'}"><c:out value="selected"/></c:if>>Tenderness topalpation</option>
+					<option value="Tenderness to palpation" <c:if test="${soapnotes.fixation3==' to palpation'}"><c:out value="selected"/></c:if>>Tenderness to palpation</option>
 					<option value="spasm" <c:if test="${soapnotes.fixation3=='spasm'}"><c:out value="selected"/></c:if>>Spasm</option>
 					<option value="trigger" <c:if test="${soapnotes.fixation3=='trigger'}"><c:out value="selected"/></c:if>>Trigger pts.</option>
 					<option value="Hypertonicity" <c:if test="${soapnotes.fixation3=='Hypertonicity'}"><c:out value="selected"/></c:if>>Hypertonicity</option>
 					<option value="edema" <c:if test="${soapnotes.fixation3=='edema'}"><c:out value="selected"/></c:if>>Edema</option>
 					<option value="Decreased ROM" <c:if test="${soapnotes.fixation3=='decreased ROM'}"><c:out value="selected"/></c:if>>Decreased ROM</option>
-					<option value="shortleg" <c:if test="${soapnotes.fixation3=='shortleg'}"><c:out value="selected"/></c:if>>Short leg R/L Temp.Change</option>
-					<option value="atrophy" <c:if test="${soapnotes.fixation3=='atrophy'}"><c:out value="selected"/></c:if>>Atrophy</option>
+					<option value="Short Leg Right Temp.Change" <c:if test="${soapnotes.fixation3=='Short Leg Right Temp.Change'}"><c:out value="selected"/></c:if>>Short Leg Right Temp.Change</option>
+					<option value="Short Leg Left Temp.Change" <c:if test="${soapnotes.fixation3=='Short Leg Left Temp.Change'}"><c:out value="selected"/></c:if>>Short Leg Left Temp.Change</option>
+						<option value="atrophy" <c:if test="${soapnotes.fixation3=='atrophy'}"><c:out value="selected"/></c:if>>Atrophy</option>
 					<option value="decr strength" <c:if test="${soapnotes.fixation3=='decr strength'}"><c:out value="selected"/></c:if>>Decr Strength</option>
 
 					</select></td>
  <td>&nbsp &nbsp<select name="notimproved3" id="notimproved3" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="notimproved" <c:if test="${soapnotes.notimproved3=='notimproved'}"><c:out value="selected"/></c:if>>Not Improved</option>
-				<option value="Progressinging Slow " <c:if test="${soapnotes.notimproved1=='Progressinging Slow '}"><c:out value="selected"/></c:if>>Progressing Slow</option>
-					<option value="Exacerbation of CC" <c:if test="${soapnotes.notimproved1=='Exacerbation of CC'}"><c:out value="selected"/></c:if>>Exacerbation of CC</option>
+				<option value="Progressing Slow" <c:if test="${soapnotes.notimproved1=='Progressing Slow'}"><c:out value="selected"/></c:if>>Progressing Slow</option>
+					<option value="Exacerbation of C.C." <c:if test="${soapnotes.notimproved1=='Exacerbation of C.C.'}"><c:out value="selected"/></c:if>>Exacerbation of CC</option>
 					<option value="Flare-ups" <c:if test="${soapnotes.notimproved1=='Flare-ups '}"><c:out value="selected"/></c:if>>Flare-ups</option>
 					<option value="mildly" <c:if test="${soapnotes.notimproved3=='mildly'}"><c:out value="selected"/></c:if>>Mildly imp.</option>
 					<option value="moderatly" <c:if test="${soapnotes.notimproved3=='moderatly'}"><c:out value="selected"/></c:if>>Moderatly imp.</option>
@@ -450,41 +585,31 @@ $(function() {
  <tr>
  <td>&nbsp;&nbsp;<input type="text" id="datepicker4" class="input_txtbx1" name="date5"  value="${soapnotes.date5}"></td>
  <td>
- <br/>&nbsp &nbsp Improved: <select name="improved4" id="improved4" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="10%" <c:if test="${soapnotes.improved4=='10%'}"><c:out value="selected"/></c:if>>10%</option>
-					<option value="25%" <c:if test="${soapnotes.improved4=='25%'}"><c:out value="selected"/></c:if>>25%</option>
-					<option value="50%" <c:if test="${soapnotes.improved4=='50%'}"><c:out value="selected"/></c:if>>50%</option>
-					<option value="75%" <c:if test="${soapnotes.improved4=='75%'}"><c:out value="selected"/></c:if>>75%</option>
-					<option value="85%" <c:if test="${soapnotes.improved4=='85%'}"><c:out value="selected"/></c:if>>85%</option>
-					<option value="95%" <c:if test="${soapnotes.improved4=='95%'}"><c:out value="selected"/></c:if>>95%</option>
+ <br/>
+&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved4" value="${soapnotes.improved4}">&nbsp;%
 
-					</select><br/><br/><br/>
-&nbsp &nbsp Worsened: <select name="worsened4" id="worsened4" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="10%" <c:if test="${soapnotes.worsened4=='10%'}"><c:out value="selected"/></c:if>>10%</option>
-					<option value="25%" <c:if test="${soapnotes.worsened4=='25%'}"><c:out value="selected"/></c:if>>25%</option>
-					<option value="50%" <c:if test="${soapnotes.worsened4=='50%'}"><c:out value="selected"/></c:if>>50%</option>
-					<option value="75%" <c:if test="${soapnotes.worsened4=='75%'}"><c:out value="selected"/></c:if>>75%</option>
-					<option value="85%" <c:if test="${soapnotes.worsened4=='85%'}"><c:out value="selected"/></c:if>>85%</option>
-					<option value="95" <c:if test="${soapnotes.worsened4=='95%'}"><c:out value="selected"/></c:if>>95%</option>
-
-					</select></td>
+<br><br>
+&nbsp; Worsened:&nbsp;&nbsp;<input type="text"  name="worsened4" value="${soapnotes.worsened4}">&nbsp;%
+<br/><br/><br/></td>
  <td>&nbsp &nbsp <select name="fixation4" id="fixation4" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixation" <c:if test="${soapnotes.fixation4=='Fixation'}"><c:out value="selected"/></c:if>>Fixations</option>
-					<option value="Tenderness topalpation" <c:if test="${soapnotes.fixation4=='Tenderness topalpation'}"><c:out value="selected"/></c:if>>Tenderness topalpation</option>
+					<option value="Tenderness to palpation" <c:if test="${soapnotes.fixation4=='Tenderness to palpation'}"><c:out value="selected"/></c:if>>Tenderness to palpation</option>
 					<option value="spasm" <c:if test="${soapnotes.fixation4=='spasm'}"><c:out value="selected"/></c:if>>Spasm</option>
 					<option value="trigger" <c:if test="${soapnotes.fixation4=='trigger'}"><c:out value="selected"/></c:if>>Trigger pts.</option>
 					<option value="Hypertonicity" <c:if test="${soapnotes.fixation4=='Hypertonicity'}"><c:out value="selected"/></c:if>>Hypertonicity</option>
 					<option value="edema" <c:if test="${soapnotes.fixation4=='edema'}"><c:out value="selected"/></c:if>>Edema</option>
 					<option value="Decreased ROM" <c:if test="${soapnotes.fixation4=='decreased ROM'}"><c:out value="selected"/></c:if>>Decreased ROM</option>
-					<option value="shortleg" <c:if test="${soapnotes.fixation4=='shortleg'}"><c:out value="selected"/></c:if>>Short leg R/L Temp.Change</option>
+					<option value="Short Leg Right Temp.Change" <c:if test="${soapnotes.fixation4=='Short Leg Right Temp.Change'}"><c:out value="selected"/></c:if>>Short leg Right Temp.Change</option>
+					<option value="Short Leg Left Temp.Change" <c:if test="${soapnotes.fixation4=='Short Leg Left Temp.Change'}"><c:out value="selected"/></c:if>>Short leg Left Temp.Change</option>
+				
 					<option value="atrophy" <c:if test="${soapnotes.fixation4=='atrophy'}"><c:out value="selected"/></c:if>>Atrophy</option>
 					<option value="decr strength" <c:if test="${soapnotes.fixation4=='decr strength'}"><c:out value="selected"/></c:if>>Decr Strength</option>
 
 					</select></td>
  <td>&nbsp &nbsp<select name="notimproved4" id="notimproved4" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="notimproved" <c:if test="${soapnotes.notimproved4=='notimproved'}"><c:out value="selected"/></c:if>>Not Improved</option>
-					<option value="Progressinging Slow " <c:if test="${soapnotes.notimproved1=='Progressinging Slow '}"><c:out value="selected"/></c:if>>Progressing Slow</option>
-					<option value="Exacerbation of CC" <c:if test="${soapnotes.notimproved1=='Exacerbation of CC'}"><c:out value="selected"/></c:if>>Exacerbation of CC</option>
+					<option value="Progressing Slow" <c:if test="${soapnotes.notimproved1=='Progressing Slow'}"><c:out value="selected"/></c:if>>Progressing Slow</option>
+					<option value="Exacerbation of C.C." <c:if test="${soapnotes.notimproved1=='Exacerbation of C.C.'}"><c:out value="selected"/></c:if>>Exacerbation of C.C.</option>
 					<option value="Flare-ups" <c:if test="${soapnotes.notimproved1=='Flare-ups '}"><c:out value="selected"/></c:if>>Flare-ups</option>
 					<option value="mildly" <c:if test="${soapnotes.notimproved4=='mildly'}"><c:out value="selected"/></c:if>>Mildly imp.</option>
 					<option value="moderatly" <c:if test="${soapnotes.notimproved4=='moderatly'}"><c:out value="selected"/></c:if>>Moderatly imp.</option>
@@ -520,41 +645,31 @@ $(function() {
  <tr>
  <td>&nbsp;&nbsp;<input type="text"  class="input_txtbx1" id="datepicker5" name="date6"  value="${soapnotes.date6}"></td>
  <td>
- <br/>&nbsp &nbspImproved: <select name="improved5" id="improved5" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="10%" <c:if test="${soapnotes.improved5=='10%'}"><c:out value="selected"/></c:if>>10%</option>
-					<option value="25%" <c:if test="${soapnotes.improved5=='25%'}"><c:out value="selected"/></c:if>>25%</option>
-					<option value="50%" <c:if test="${soapnotes.improved5=='50%'}"><c:out value="selected"/></c:if>>50%</option>
-					<option value="75%" <c:if test="${soapnotes.improved5=='75%'}"><c:out value="selected"/></c:if>>75%</option>
-					<option value="85%" <c:if test="${soapnotes.improved5=='85%'}"><c:out value="selected"/></c:if>>85%</option>
-					<option value="95%" <c:if test="${soapnotes.improved5=='95%'}"><c:out value="selected"/></c:if>>95%</option>
+ <br/>
+&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved5" value="${soapnotes.improved5}">&nbsp;%
 
-					</select><br/><br/><br/>
-&nbsp &nbsp Worsened: <select name="worsened5" id="worsened5" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="10%" <c:if test="${soapnotes.worsened5=='10%'}"><c:out value="selected"/></c:if>>10%</option>
-					<option value="25%" <c:if test="${soapnotes.worsened5=='25%'}"><c:out value="selected"/></c:if>>25%</option>
-					<option value="50%" <c:if test="${soapnotes.worsened5=='50%'}"><c:out value="selected"/></c:if>>50%</option>
-					<option value="75%" <c:if test="${soapnotes.worsened5=='75%'}"><c:out value="selected"/></c:if>>75%</option>
-					<option value="85%" <c:if test="${soapnotes.worsened5=='85%'}"><c:out value="selected"/></c:if>>85%</option>
-					<option value="95" <c:if test="${soapnotes.worsened5=='95%'}"><c:out value="selected"/></c:if>>95%</option>
-
-					</select></td>
+<br><br>
+&nbsp; Worsened:&nbsp;&nbsp;<input type="text"  name="worsened5" value="${soapnotes.worsened5}">&nbsp;%
+<br/><br/><br/></td>
  <td>
   &nbsp &nbsp<select name="fixation5" id="fixation5" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixation" <c:if test="${soapnotes.fixation5=='Fixation'}"><c:out value="selected"/></c:if>>Fixations</option>
-					<option value="Tenderness topalpation" <c:if test="${soapnotes.fixation5=='Tenderness topalpation'}"><c:out value="selected"/></c:if>>Tenderness topalpation</option>
+					<option value="Tenderness to palpation" <c:if test="${soapnotes.fixation5=='Tenderness to palpation'}"><c:out value="selected"/></c:if>>Tenderness to palpation</option>
 					<option value="spasm" <c:if test="${soapnotes.fixation5=='spasm'}"><c:out value="selected"/></c:if>>Spasm</option>
 					<option value="trigger" <c:if test="${soapnotes.fixation5=='trigger'}"><c:out value="selected"/></c:if>>Trigger pts.</option>
 					<option value="Hypertonicity" <c:if test="${soapnotes.fixation5=='Hypertonicity'}"><c:out value="selected"/></c:if>>Hypertonicity</option>
 					<option value="edema" <c:if test="${soapnotes.fixation5=='edema'}"><c:out value="selected"/></c:if>>Edema</option>
 					<option value="Decreased ROM" <c:if test="${soapnotes.fixation5=='decreased ROM'}"><c:out value="selected"/></c:if>>Decreased ROM</option>
-					<option value="shortleg" <c:if test="${soapnotes.fixation5=='shortleg'}"><c:out value="selected"/></c:if>>Short leg R/L Temp.Change</option>
+						<option value="Short Leg Right Temp.Change" <c:if test="${soapnotes.fixation5=='Short Leg Right Temp.Change'}"><c:out value="selected"/></c:if>>Short leg Right Temp.Change</option>
+					<option value="Short Leg Left Temp.Change" <c:if test="${soapnotes.fixation5=='Short Leg Left Temp.Change'}"><c:out value="selected"/></c:if>>Short leg Left Temp.Change</option>
+				
 					<option value="atrophy" <c:if test="${soapnotes.fixation5=='atrophy'}"><c:out value="selected"/></c:if>>Atrophy</option>
 					<option value="decr strength" <c:if test="${soapnotes.fixation5=='decr strength'}"><c:out value="selected"/></c:if>>Decr Strength</option>
 		</select></td>
 <td>&nbsp &nbsp <select name="notimproved5" id="notimproved5" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="notimproved" <c:if test="${soapnotes.notimproved5=='notimproved'}"><c:out value="selected"/></c:if>>Not Improved</option>
-					<option value="Progressinging Slow " <c:if test="${soapnotes.notimproved1=='Progressinging Slow '}"><c:out value="selected"/></c:if>>Progressing Slow</option>
-					<option value="Exacerbation of CC" <c:if test="${soapnotes.notimproved1=='Exacerbation of CC'}"><c:out value="selected"/></c:if>>Exacerbation of CC</option>
+					<option value="Progressing Slow" <c:if test="${soapnotes.notimproved1=='Progressing Slow'}"><c:out value="selected"/></c:if>>Progressing Slow</option>
+					<option value="Exacerbation of C.C." <c:if test="${soapnotes.notimproved1=='Exacerbation of C.C.'}"><c:out value="selected"/></c:if>>Exacerbation of C.C.</option>
 					<option value="Flare-ups" <c:if test="${soapnotes.notimproved1=='Flare-ups '}"><c:out value="selected"/></c:if>>Flare-ups</option>
 					<option value="mildly" <c:if test="${soapnotes.notimproved5=='mildly'}"><c:out value="selected"/></c:if>>Mildly imp.</option>
 					<option value="moderatly" <c:if test="${soapnotes.notimproved5=='moderatly'}"><c:out value="selected"/></c:if>>Moderatly imp.</option>
@@ -589,40 +704,30 @@ $(function() {
  <tr>
  <td>&nbsp;&nbsp;<input type="text" id="datepicker6" name="date7" class="input_txtbx1" value="${soapnotes.date7}"></td>
  <td>
- <br/>&nbsp &nbspImproved: <select name="improved6" id="improved6" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="10%" <c:if test="${soapnotes.improved6=='10%'}"><c:out value="selected"/></c:if>>10%</option>
-					<option value="25%" <c:if test="${soapnotes.improved6=='25%'}"><c:out value="selected"/></c:if> >25%</option>
-					<option value="50%" <c:if test="${soapnotes.improved6=='50%'}"><c:out value="selected"/></c:if>>50%</option>
-					<option value="75%" <c:if test="${soapnotes.improved6=='75%'}"><c:out value="selected"/></c:if>>75%</option>
-					<option value="85%" <c:if test="${soapnotes.improved6=='85%'}"><c:out value="selected"/></c:if>>85%</option>
-					<option value="95%" <c:if test="${soapnotes.improved6=='95%'}"><c:out value="selected"/></c:if>>95%</option>
+<br/>
+&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved6" value="${soapnotes.improved6}">&nbsp;%
 
-					</select><br/><br/><br/>
-&nbsp &nbsp  Worsened: <select name="worsened6" id="worsened6" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="10%" <c:if test="${soapnotes.worsened6=='10%'}"><c:out value="selected"/></c:if>>10%</option>
-					<option value="25%" <c:if test="${soapnotes.worsened6=='25%'}"><c:out value="selected"/></c:if>>25%</option>
-					<option value="50%" <c:if test="${soapnotes.worsened6=='50%'}"><c:out value="selected"/></c:if>>50%</option>
-					<option value="75%" <c:if test="${soapnotes.worsened6=='75%'}"><c:out value="selected"/></c:if>>75%</option>
-					<option value="85%" <c:if test="${soapnotes.worsened6=='85%'}"><c:out value="selected"/></c:if>>85%</option>
-					<option value="95" <c:if test="${soapnotes.worsened6=='95%'}"><c:out value="selected"/></c:if>>95%</option>
-
-					</select></td>
+<br><br>
+&nbsp; Worsened:&nbsp;&nbsp;<input type="text"  name="worsened6" value="${soapnotes.worsened6}">&nbsp;%
+<br/><br/><br/></td>
  <td>&nbsp &nbsp <select name="fixation6" id="fixation6" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixation" <c:if test="${soapnotes.fixation6=='Fixation'}"><c:out value="selected"/></c:if>>Fixations</option>
-					<option value="Tenderness topalpation" <c:if test="${soapnotes.fixation6=='Tenderness topalpation'}"><c:out value="selected"/></c:if>>Tenderness topalpation</option>
+					<option value="Tenderness to palpation" <c:if test="${soapnotes.fixation6=='Tenderness to palpation'}"><c:out value="selected"/></c:if>>Tenderness to palpation</option>
 					<option value="spasm" <c:if test="${soapnotes.fixation6=='spasm'}"><c:out value="selected"/></c:if>>Spasm</option>
 					<option value="trigger" <c:if test="${soapnotes.fixation6=='trigger'}"><c:out value="selected"/></c:if>>Trigger pts.</option>
 					<option value="Hypertonicity" <c:if test="${soapnotes.fixation6=='Hypertonicity'}"><c:out value="selected"/></c:if>>Hypertonicity</option>
 					<option value="edema" <c:if test="${soapnotes.fixation6=='edema'}"><c:out value="selected"/></c:if>>Edema</option>
 					<option value="Decreased ROM" <c:if test="${soapnotes.fixation6=='decreased ROM'}"><c:out value="selected"/></c:if>>Decreased ROM</option>
-					<option value="shortleg" <c:if test="${soapnotes.fixation6=='shortleg'}"><c:out value="selected"/></c:if>>Short leg R/L Temp.Change</option>
+					<option value="Short Leg Right Temp.Change" <c:if test="${soapnotes.fixation6=='Short Leg Right Temp.Change'}"><c:out value="selected"/></c:if>>Short leg Right Temp.Change</option>
+					<option value="Short Leg Left Temp.Change" <c:if test="${soapnotes.fixation6=='Short Leg Left Temp.Change'}"><c:out value="selected"/></c:if>>Short leg Left Temp.Change</option>
+				
 					<option value="atrophy" <c:if test="${soapnotes.fixation6=='atrophy'}"><c:out value="selected"/></c:if>>Atrophy</option>
 					<option value="decr strength" <c:if test="${soapnotes.fixation6=='decr strength'}"><c:out value="selected"/></c:if>>Decr Strength</option>
 	</select></td>
 <td> &nbsp &nbsp<select name="notimproved6" id="notimproved6" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="notimproved" <c:if test="${soapnotes.notimproved6=='notimproved'}"><c:out value="selected"/></c:if>>Not Improved</option>
-					<option value="Progressinging Slow " <c:if test="${soapnotes.notimproved1=='Progressinging Slow '}"><c:out value="selected"/></c:if>>Progressing Slow</option>
-					<option value="Exacerbation of CC" <c:if test="${soapnotes.notimproved1=='Exacerbation of CC'}"><c:out value="selected"/></c:if>>Exacerbation of CC</option>
+					<option value="Progressing Slow" <c:if test="${soapnotes.notimproved1=='Progressing Slow'}"><c:out value="selected"/></c:if>>Progressing Slow</option>
+					<option value="Exacerbation of C.C." <c:if test="${soapnotes.notimproved1=='Exacerbation of C.C.'}"><c:out value="selected"/></c:if>>Exacerbation of C.C.</option>
 					<option value="Flare-ups" <c:if test="${soapnotes.notimproved1=='Flare-ups '}"><c:out value="selected"/></c:if>>Flare-ups</option>
 					<option value="mildly" <c:if test="${soapnotes.notimproved6=='mildly'}"><c:out value="selected"/></c:if>>Mildly imp.</option>
 					<option value="moderatly" <c:if test="${soapnotes.notimproved6=='moderatly'}"><c:out value="selected"/></c:if>>Moderatly imp.</option>
@@ -658,41 +763,31 @@ $(function() {
  <tr>
  <td>&nbsp;&nbsp;<input type="text" id="datepicker7" class="input_txtbx1"  name="date8" value="${soapnotes.date8}"></td>
  <td>
- <br/>&nbsp &nbspImproved: <select name="improved7" id="improved7" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="10%" <c:if test="${soapnotes.improved7=='10%'}"><c:out value="selected"/></c:if>>10%</option>
-					<option value="25%" <c:if test="${soapnotes.improved7=='25%'}"><c:out value="selected"/></c:if>>25%</option>
-					<option value="50%" <c:if test="${soapnotes.improved7=='50%'}"><c:out value="selected"/></c:if>>50%</option>
-					<option value="75%" <c:if test="${soapnotes.improved7=='75%'}"><c:out value="selected"/></c:if>>75%</option>
-					<option value="85%" <c:if test="${soapnotes.improved7=='85%'}"><c:out value="selected"/></c:if>>85%</option>
-					<option value="95%" <c:if test="${soapnotes.improved7=='95%'}"><c:out value="selected"/></c:if>>95%</option>
+ <br/>
+&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved7" value="${soapnotes.improved7}">&nbsp;%
 
-					</select><br/><br/><br/>
-&nbsp &nbsp Worsened: <select name="worsened7" id="worsened7" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="10%" <c:if test="${soapnotes.worsened7=='10%'}"><c:out value="selected"/></c:if>>10%</option>
-					<option value="25%" <c:if test="${soapnotes.worsened7=='25%'}"><c:out value="selected"/></c:if>>25%</option>
-					<option value="50%" <c:if test="${soapnotes.worsened7=='50%'}"><c:out value="selected"/></c:if>>50%</option>
-					<option value="75%" <c:if test="${soapnotes.worsened7=='75%'}"><c:out value="selected"/></c:if>>75%</option>
-					<option value="85%" <c:if test="${soapnotes.worsened7=='85%'}"><c:out value="selected"/></c:if>>85%</option>
-					<option value="95" <c:if test="${soapnotes.worsened7=='95%'}"><c:out value="selected"/></c:if>>95%</option>
-
-					</select></td>
+<br><br>
+&nbsp; Worsened:&nbsp;&nbsp;<input type="text"  name="worsened7" value="${soapnotes.worsened7}">&nbsp;%
+<br/><br/><br/></td>
  <td> &nbsp &nbsp<select name="fixation7" id="fixation7" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixation" <c:if test="${soapnotes.fixation7=='Fixation'}"><c:out value="selected"/></c:if>>Fixations</option>
-					<option value="Tenderness topalpation" <c:if test="${soapnotes.fixation7=='Tenderness topalpation'}"><c:out value="selected"/></c:if>>Tenderness topalpation</option>
+					<option value="Tenderness to palpation" <c:if test="${soapnotes.fixation7=='Tenderness to palpation'}"><c:out value="selected"/></c:if>>Tenderness to palpation</option>
 					<option value="spasm" <c:if test="${soapnotes.fixation7=='spasm'}"><c:out value="selected"/></c:if>>Spasm</option>
 					<option value="trigger" <c:if test="${soapnotes.fixation7=='trigger'}"><c:out value="selected"/></c:if>>Trigger pts.</option>
 					<option value="Hypertonicity" <c:if test="${soapnotes.fixation7=='Hypertonicity'}"><c:out value="selected"/></c:if>>Hypertonicity</option>
 					<option value="edema" <c:if test="${soapnotes.fixation7=='edema'}"><c:out value="selected"/></c:if>>Edema</option>
 					<option value="Decreased ROM" <c:if test="${soapnotes.fixation7=='decreased ROM'}"><c:out value="selected"/></c:if>>Decreased ROM</option>
-					<option value="shortleg" <c:if test="${soapnotes.fixation7=='shortleg'}"><c:out value="selected"/></c:if>>Short leg R/L Temp.Change</option>
+					<option value="Short Leg Right Temp.Change" <c:if test="${soapnotes.fixation7=='Short Leg Right Temp.Change'}"><c:out value="selected"/></c:if>>Short leg Right Temp.Change</option>
+					<option value="Short Leg Left Temp.Change" <c:if test="${soapnotes.fixation7=='Short Leg Left Temp.Change'}"><c:out value="selected"/></c:if>>Short leg Left Temp.Change</option>
+				
 					<option value="atrophy" <c:if test="${soapnotes.fixation7=='atrophy'}"><c:out value="selected"/></c:if>>Atrophy</option>
 					<option value="decr strength" <c:if test="${soapnotes.fixation7=='decr strength'}"><c:out value="selected"/></c:if>>Decr Strength</option>
 
 					</select></td>
  <td>&nbsp &nbsp<select name="notimproved7" id="notimproved7" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="notimproved" <c:if test="${soapnotes.notimproved7=='notimproved'}"><c:out value="selected"/></c:if>>Not Improved</option>
-					<option value="Progressinging Slow " <c:if test="${soapnotes.notimproved1=='Progressinging Slow '}"><c:out value="selected"/></c:if>>Progressing Slow</option>
-					<option value="Exacerbation of CC" <c:if test="${soapnotes.notimproved1=='Exacerbation of CC'}"><c:out value="selected"/></c:if>>Exacerbation of CC</option>
+					<option value="Progressing Slow" <c:if test="${soapnotes.notimproved1=='Progressing Slow'}"><c:out value="selected"/></c:if>>Progressing Slow</option>
+					<option value="Exacerbation of C.C." <c:if test="${soapnotes.notimproved1=='Exacerbation of C.C.'}"><c:out value="selected"/></c:if>>Exacerbation of C.C.</option>
 					<option value="Flare-ups" <c:if test="${soapnotes.notimproved1=='Flare-ups '}"><c:out value="selected"/></c:if>>Flare-ups</option>
 					<option value="mildly" <c:if test="${soapnotes.notimproved7=='mildly'}"><c:out value="selected"/></c:if>>Mildly imp.</option>
 					<option value="moderatly" <c:if test="${soapnotes.notimproved7=='moderatly'}"><c:out value="selected"/></c:if>>Moderatly imp.</option>
@@ -727,39 +822,30 @@ $(function() {
  <tr>
  <td>&nbsp;&nbsp;<input type="text" id="datepicker8" class="input_txtbx1" name="date9" value="${soapnotes.date9}"></td>
  <td>
- <br/>&nbsp &nbsp Improved: <select name="improved8" id="improved8" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="10%" <c:if test="${soapnotes.improved8=='10%'}"><c:out value="selected"/></c:if>>10%</option>
-					<option value="25%" <c:if test="${soapnotes.improved8=='25%'}"><c:out value="selected"/></c:if> >25%</option>
-					<option value="50%" <c:if test="${soapnotes.improved8=='50%'}"><c:out value="selected"/></c:if>>50%</option>
-					<option value="75%" <c:if test="${soapnotes.improved8=='75%'}"><c:out value="selected"/></c:if>>75%</option>
-					<option value="85%" <c:if test="${soapnotes.improved8=='85%'}"><c:out value="selected"/></c:if>>85%</option>
-					<option value="95%" <c:if test="${soapnotes.improved8=='95%'}"><c:out value="selected"/></c:if>>95%</option>
+<br/>
+&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved8" value="${soapnotes.improved8}">&nbsp;%
 
-					</select><br/><br/><br/>
-&nbsp &nbsp Worsened: <select name="worsened8" id="worsened8" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="10%" <c:if test="${soapnotes.worsened8=='10%'}"><c:out value="selected"/></c:if>>10%</option>
-					<option value="25%" <c:if test="${soapnotes.worsened8=='25%'}"><c:out value="selected"/></c:if>>25%</option>
-					<option value="50%" <c:if test="${soapnotes.worsened8=='50%'}"><c:out value="selected"/></c:if>>50%</option>
-					<option value="75%" <c:if test="${soapnotes.worsened8=='75%'}"><c:out value="selected"/></c:if>>75%</option>
-					<option value="85%" <c:if test="${soapnotes.worsened8=='85%'}"><c:out value="selected"/></c:if>>85%</option>
-					<option value="95" <c:if test="${soapnotes.worsened8=='95%'}"><c:out value="selected"/></c:if>>95%</option>
-					</select></td>
+<br><br>
+&nbsp; Worsened:&nbsp;&nbsp;<input type="text"  name="worsened8" value="${soapnotes.worsened8}">&nbsp;%
+<br/><br/><br/></td>
  <td> &nbsp &nbsp<select name="fixation8" id="fixation8" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixation" <c:if test="${soapnotes.fixation8=='Fixation'}"><c:out value="selected"/></c:if>>Fixations</option>
-					<option value="Tenderness topalpation" <c:if test="${soapnotes.fixation8=='Tenderness topalpation'}"><c:out value="selected"/></c:if>>Tenderness topalpation</option>
+					<option value="Tenderness to palpation" <c:if test="${soapnotes.fixation8=='Tenderness to palpation'}"><c:out value="selected"/></c:if>>Tenderness to palpation</option>
 					<option value="spasm" <c:if test="${soapnotes.fixation8=='spasm'}"><c:out value="selected"/></c:if>>Spasm</option>
 					<option value="trigger" <c:if test="${soapnotes.fixation8=='trigger'}"><c:out value="selected"/></c:if>>Trigger pts.</option>
 					<option value="Hypertonicity" <c:if test="${soapnotes.fixation8=='Hypertonicity'}"><c:out value="selected"/></c:if>>Hypertonicity</option>
 					<option value="edema" <c:if test="${soapnotes.fixation8=='edema'}"><c:out value="selected"/></c:if>>Edema</option>
 					<option value="Decreased ROM" <c:if test="${soapnotes.fixation8=='decreased ROM'}"><c:out value="selected"/></c:if>>Decreased ROM</option>
-					<option value="shortleg" <c:if test="${soapnotes.fixation8=='shortleg'}"><c:out value="selected"/></c:if>>Short leg R/L Temp.Change</option>
+					<option value="Short Leg Right Temp.Change" <c:if test="${soapnotes.fixation8=='Short Leg Right Temp.Change'}"><c:out value="selected"/></c:if>>Short leg Right Temp.Change</option>
+					<option value="Short Leg Left Temp.Change" <c:if test="${soapnotes.fixation8=='Short Leg Left Temp.Change'}"><c:out value="selected"/></c:if>>Short leg Left Temp.Change</option>
+				
 					<option value="atrophy" <c:if test="${soapnotes.fixation8=='atrophy'}"><c:out value="selected"/></c:if>>Atrophy</option>
 					<option value="decr strength" <c:if test="${soapnotes.fixation8=='decr strength'}"><c:out value="selected"/></c:if>>Decr Strength</option>
 	</select></td>
  <td>&nbsp &nbsp<select name="notimproved8" id="notimproved8" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="notimproved" <c:if test="${soapnotes.notimproved8=='notimproved'}"><c:out value="selected"/></c:if>>Not Improved</option>
-					<option value="Progressinging Slow " <c:if test="${soapnotes.notimproved1=='Progressinging Slow '}"><c:out value="selected"/></c:if>>Progressing Slow</option>
-					<option value="Exacerbation of CC" <c:if test="${soapnotes.notimproved1=='Exacerbation of CC'}"><c:out value="selected"/></c:if>>Exacerbation of CC</option>
+					<option value="Progressing Slow" <c:if test="${soapnotes.notimproved1=='Progressing Slow'}"><c:out value="selected"/></c:if>>Progressing Slow</option>
+					<option value="Exacerbation of C.C." <c:if test="${soapnotes.notimproved1=='Exacerbation of C.C.'}"><c:out value="selected"/></c:if>>Exacerbation of CC</option>
 					<option value="Flare-ups" <c:if test="${soapnotes.notimproved1=='Flare-ups '}"><c:out value="selected"/></c:if>>Flare-ups</option>
 					<option value="mildly" <c:if test="${soapnotes.notimproved8=='mildly'}"><c:out value="selected"/></c:if>>Mildly imp.</option>
 					<option value="moderatly" <c:if test="${soapnotes.notimproved8=='moderatly'}"><c:out value="selected"/></c:if>>Moderatly imp.</option>

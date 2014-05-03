@@ -66,6 +66,30 @@ $(function() {
     $( "#amount" ).val(+ $( "#slider" ).slider( "value" ) );
   });
 
+$(function() {
+    $( "#slider1" ).slider({
+      value:1,
+      min: 0,
+      max: 10,
+      step: 1,
+      slide: function( event, ui ) {
+        $( "#amount1" ).val(+ ui.value );
+      }
+    });
+    $( "#amount1" ).val(+ $( "#slider1" ).slider( "value" ) );
+  });
+$(function() {
+    $( "#slider2" ).slider({
+      value:1,
+      min: 0,
+      max: 10,
+      step: 1,
+      slide: function( event, ui ) {
+        $( "#amount2" ).val(+ ui.value );
+      }
+    });
+    $( "#amount2" ).val(+ $( "#slider2" ).slider( "value" ) );
+  });
 </script>
 
 </head>
@@ -89,7 +113,7 @@ $(function() {
 	            
 	            </div>
 	            
-	            <input type="hidden" value="${patientid}" name="patient_id" />
+	            <input type="text" value="${username}" name="username" />
 	    <div class="contentbox">
           <table cellpadding="0" cellspacing="0" border="0" width="98%">
            
@@ -100,17 +124,69 @@ $(function() {
 <td><h2><span class="err">*</span>patient</h2></td><td><input type="text" name="pname"><span class="err"><form:errors path="SoapNotes.pname"></form:errors></span></td>
 </tr>
 <tr class="row1">
-<td>Chief Complaint:</td>
-<td><input type="checkbox" name="headache" value="Headache" >Headache</td>
-<td><input type="checkbox" name="neckpain" value="Neck pain" >Neck Pain</td>
-<td><input type="checkbox" name="rightshoulderpain" value="Right Shoulder pain" >Right Shoulder pain</td>
-<td><input type="checkbox" name="leftshoulderpain" value="Left Shoulder Pain" >Left Shoulder Pain</td>
-<td><input type="checkbox" name="chestpain" value="Chest Pain" >Chest Pain</td>
-<td><input type="checkbox" name="rightarmpain" value="Right Arm Pain" >Right Arm Pain</td>
-<td><input type="checkbox" name="leftarmpain" value="Left Arm Pain" >Left Arm Pain</td>
+<td height="20">Chief Complaint:</td>
+<td valign="top"><input type="checkbox" name="headache" value="Headache" >Headache</td>
+<td valign="top"><input type="checkbox" name="neckpain" value="Neck pain" >Neck Pain</td>
+<td valign="top"><input type="checkbox" name="rightshoulderpain" value="Right Shoulder pain" >Right Shoulder pain</td>
+<td valign="top"><input type="checkbox" name="leftshoulderpain" value="Left Shoulder Pain" >Left Shoulder Pain</td>
+<td valign="top"><input type="checkbox" name="chestpain" value="Chest Pain" >Chest Pain</td>
+<td valign="top"><input type="checkbox" name="rightarmpain" value="Right Arm Pain" onclick="rightcheck()" id="rightarmpain" >Right Arm Pain<br>
+<script>
+function rightcheck()
+{
+if(document.getElementById("rightarmpain").checked)
+	{
+	document.getElementById("rightproxi").style.display="table-row";
+	}
+else
+	{
+	document.getElementById("rightproxi").style.display="none";
+	}
+if(document.getElementById("rightrib").checked)
+{
+document.getElementById("amount1").style.display="table-row";
+document.getElementById("slider1").style.display="block";
+document.getElementById("label").style.display="table-row";
+
+}
+else
+{
+	document.getElementById("amount1").style.display="none";
+	document.getElementById("slider1").style.display="none";
+	document.getElementById("label").style.display="none";
+}
+if(document.getElementById("leftrib").checked)
+{
+document.getElementById("amount2").style.display="table-row";
+document.getElementById("slider2").style.display="block";
+document.getElementById("label1").style.display="table-row";
+
+}
+else
+{
+	document.getElementById("amount2").style.display="none";
+	document.getElementById("slider2").style.display="none";
+	document.getElementById("label1").style.display="none";
+}
+if(document.getElementById("leftarmpain").checked)
+{
+document.getElementById("leftproxi").style.display="table-row";
+}
+else
+{
+document.getElementById("leftproxi").style.display="none";
+}
+}
+</script>
+<select name="rightproxi" id="rightproxi" style="display:none"><option>proximal</option><option>distal portion</option></select>
+</td>
+<td><input type="checkbox" name="leftarmpain" id="leftarmpain" value="Left Arm Pain" onclick="rightcheck()">Left Arm Pain<br>
+<select name="leftproxi" id="leftproxi" style="display:none"><option>proximal</option><option>distal portion</option></select>
+
+</td>
 </tr>
 <tr class="row1">
-<td></td>
+<td height="20"></td>
 <td><input type="checkbox" name="rightelbowpain" value="Right Elbow Pain" >Right Elbow Pain</td>
 <td><input type="checkbox" name="leftelbowpain" value="Left Elbow Pain" >Left Elbow Pain</td>
 <td><input type="checkbox" name="rightwristpain" value="Right Wrist pain" >Right Wrist pain</td>
@@ -120,9 +196,19 @@ $(function() {
 <td><input type="checkbox" name="mbp" value="MBP" >MBP</td>
 </tr>
 <tr class="row1">
-<td></td>
-<td><input type="checkbox" name="rightribpain" value="Right Rib Pain" >Right Rib Pain</td>
-<td><input type="checkbox" name="leftribpain" value="Left Rib Pain" >Left Rib Pain</td>
+<td ></td>
+<td><input type="checkbox" name="rightribpain" value="Right Rib Pain" id="rightrib" onclick="rightcheck()">Right Rib Pain
+
+<label for="amount1" style="width: 50;display:none;" id="label"><b>Pain Scale:</b></label>
+	 <input type="text" id="amount1" style="border:0;display:none; width: 50;color:#f6931f; font-weight:bold;" name="painscale1"/>&nbsp;&nbsp;&nbsp;
+ <div id="slider1" style="width: 100; display:none"></div>
+
+</td>
+<td><input type="checkbox" name="leftribpain" value="Left Rib Pain" id="leftrib" onclick="rightcheck()">Left Rib Pain
+ <label for="amount2" style="width: 50;display:none;" id="label1"><b>Pain Scale:</b></label>
+	 <input type="text" id="amount2" style="border:0;display:none; width: 50;color:#f6931f; font-weight:bold;" name="painscale2" />&nbsp;&nbsp;&nbsp;
+ <div id="slider2" style="width: 100; display:none;"> 
+</td>
 <td><input type="checkbox" name="lbp" value="LBP" >LBP</td>
 <td><input type="checkbox" name="rightsipain" value="Right SI Pain" >Right SI Pain</td>
 <td><input type="checkbox" name="leftsipain" value="Left SI Pain" >Left SI Pain</td>
@@ -130,7 +216,7 @@ $(function() {
 <td><input type="checkbox" name="lefthippain" value="Left Hip Pain" >Left Hip Pain</td>
 </tr>
 <tr class="row1">
-<td></td>
+<td height="20"></td>
 <td><input type="checkbox" name="rightgluteulpain" value="Right Gluteal Pain" >Right Gluteal Pain</td>
 <td><input type="checkbox" name="leftgluteulpain" value="Left Gluteal Pain" >Left Gluteal Pain</td>
 <td><input type="checkbox" name="rightlegpain" value="Right Leg Pain" >Right Leg Pain</td>
@@ -140,7 +226,7 @@ $(function() {
 <td><input type="checkbox" name="rightanklepain" value="Right Ankle Pain" >Right Ankle Pain</td>
 </tr>
 <tr class="row1">
-<td></td>
+<td height="20"></td>
 <td><input type="checkbox" name="leftanklepain" value="Right Rib Pain" >Left Ankle Pain</td>
 <td><input type="checkbox" name="rightfootpain" value="right Foot Pain" >right Foot Pain</td>
 <td><input type="checkbox" name="leftfootpain" value="Left Foot Pain" >Left Foot Pain</td>
@@ -169,16 +255,16 @@ $(function() {
  <input type="text" name="date1" id="datepicker1"></td>
  <td>
  <br/>
-&nbsp &nbsp Improved: <select name="improved" id="improved" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved" >&nbsp;%  <!--  <select  id="improved" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
 					<option value="25%">25%</option>
 					<option value="50%">50%</option>
 					<option value="75%">75%</option>
 					<option value="85%">85%</option>
 					<option value="95%">95%</option>
-					</select>
+					</select> -->
 					<br/><br/><br/>
-&nbsp &nbsp Worsened: <select name="worsened" id="worsened" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+&nbsp; &nbsp; Worsened:&nbsp;&nbsp;<input type="text"  name="worsened">&nbsp;% <!-- <select name="worsened" id="worsened" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
 					<option value="25%">25%</option>
 					<option value="50%">50%</option>
@@ -186,7 +272,7 @@ $(function() {
 					<option value="85%">85%</option>
 					<option value="95">95%</option>
 
-					</select><br/><br/><br/>
+					</select> --><br/><br/><br/>
 					</td>
  
  
@@ -195,15 +281,46 @@ $(function() {
 	 <input type="text" id="amount" style="border:0; color:#f6931f; font-weight:bold;" name="painscale" />&nbsp;&nbsp;&nbsp;
  <div id="slider"></div></td>
  <td>
- 
+ <script type="text/javascript">
+				var $im = 1;
+				var flagm = 1;
+				function addMultichoice(divName) {
+					var xx = document.getElementsByName('diagnosis[]').length;
+					var $in = xx + 1;
+					var $m=$in-1;
+
+					var newdiv = document.createElement('div'); 
+
+					newdiv.innerHTML = '<table width="100%" border="0" cellspacing="0" cellpadding="0" id="newtbl'
+							+ $im
+							+ '"><tr>'
+							+ '<td valign="top" align="left" class="input_txt" width="70%">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text"  name="diagnosis[]"/></td></tr><tr class="row1"><td align="left" valign="top"><a javascript:void(0);" onclick="removechoice('
+							+ $im
+							+ ')" style="text-decoration:none;"><input type="submit" class="submit_btn" value="CANCEL"  /></a></td></tr></table>';
+							
+							alert(newdiv.innerHTML);
+					document.getElementById(divName).appendChild(newdiv);
+					$im++;
+					flagm++;
+
+				}
+				function removechoice(id) {
+					id = 'newtbl' + id;
+					var child = document.getElementById(id)
+					var parentDiv = child.parentNode;
+					parentDiv.removeChild(child);
+
+				}
+			</script>
  &nbsp &nbspDiagonosis:<br/>
-&nbsp &nbsp 1&nbsp &nbsp &nbsp<input type="text" name="diagnosis1"><br/><br/>
-&nbsp &nbsp 2&nbsp &nbsp &nbsp<input type="text" name="diagnosis2"><br/><br/>
+&nbsp;&nbsp;&nbsp;<input type="text" name="diagnosis[]"><br/><br/>
+<!-- &nbsp &nbsp 2&nbsp &nbsp &nbsp<input type="text" name="diagnosis2"><br/><br/>
 &nbsp &nbsp 3&nbsp &nbsp &nbsp<input type="text" name="diagnosis3"><br/><br/>
-&nbsp &nbsp 4&nbsp &nbsp &nbsp<input type="text" name="diagnosis4"><br/><br/>
+&nbsp &nbsp 4&nbsp &nbsp &nbsp<input type="text" name="diagnosis4"><br/><br/> -->
+<div id="multichoice"></div><a href="javascript:void(0);" onclick="addMultichoice('multichoice');" style="text-decoration:none;" ><input type="button" value="Add one more diagnosis" class="submit_btn2" name=""/></a>
  </td>
  <td>
- &nbsp &nbsp E1/E2 X-Rays: <select name="e1e2" id="e1e2" class="input_cmbbx1" onchange="if (this.value=='ExtremitiesX-Rays'){this.form['xray'].style.visibility='visible'}else {this.form['xray'].style.visibility='hidden'};">
+ &nbsp &nbsp <select name="e1e2" id="e1e2" class="input_cmbbx1" onchange="if (this.value=='ExtremitiesX-Rays'){this.form['xray'].style.visibility='visible'}else {this.form['xray'].style.visibility='hidden'};">
 					<option selected="selected" value="2" >2</option>
 					<option value="3">3</option>
 					<option value="4">4</option>
@@ -214,12 +331,19 @@ $(function() {
 					<option value="9">9</option>
 					<option value="10">10</option>
 					<option value="11">11</option>
+					<option value="Re-exam">Re-exam</option>
 					<option value="one spot x-ray">one spot x-ray</option>
 					<option value="2 to 7 C/S X-Rays">2 to 7 C/S X-Rays</option>
 					<option value="2 to 6 T/S X-Rays">2 to 6 T/S X-Rays</option>
 					<option value="2-6 L/S X-Rays">2-6 L/S X-Rays</option>
 					<option value="2 Chest X-Rays">2 Chest X-Rays</option>
 					<option value="ExtremitiesX-Rays">ExtremitiesX-Rays</option>
+					<option value="SCSM 1-2 region">SCSM 1-2 region</option>
+					<option value="SCSM 3-4 regions">SCSM 3-4 regions</option>
+					<option value="5 regions">5 regions</option>
+					<option value="extraspinal 1 or more regions">extraspinal 1 or more regions</option>
+					<option value="MR">MR</option>
+					<option value="Home Exercises">Home Exercises</option>					
 					<option value="scsm">SCSM</option>
 					<option value="ems">EMS</option>
 					<option value="mass">MASS</option>
@@ -253,16 +377,16 @@ $(function() {
  <input type="text" name="date2" id="datepicker"></td>
  <td>
  <br/>
-&nbsp &nbsp Improved: <select name="improved1" id="improved1" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+&nbsp; &nbsp; Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved1">&nbsp;%<!-- <select name="improved1" id="improved1" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
 					<option value="25%">25%</option>
 					<option value="50%">50%</option>
 					<option value="75%">75%</option>
 					<option value="85%">85%</option>
 					<option value="95%">95%</option>
-					</select>
+					</select> -->
 					<br/><br/><br/>
-&nbsp &nbsp Worsened: <select name="worsened1" id="worsened1" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+&nbsp; &nbsp; Worsened:&nbsp;&nbsp;<input type="text" name="worsened1">&nbsp;% <!-- <select name="worsened1" id="worsened1" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
 					<option value="25%">25%</option>
 					<option value="50%">50%</option>
@@ -270,19 +394,20 @@ $(function() {
 					<option value="85%">85%</option>
 					<option value="95">95%</option>
 
-					</select><br/><br/><br/>
+					</select> --><br/><br/><br/>
 					</td>
 
  <td>
  &nbsp &nbsp <select name="fixation1" id="fixation1" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixations" >Fixations</option>
-					<option value="Tenderness topalpation">Tenderness topalpation</option>
+					<option value="Tenderness to palpation">Tenderness to palpation</option>
 					<option value="spasm">Spasm</option>
 					<option value="Trigger pts">Trigger pts.</option>
 					<option value="Hypertonicity">Hypertonicity</option>
 					<option value="Edema">Edema</option>
 					<option value="Decreased ROM">Decreased ROM</option>
-					<option value="Short Leg R/L Temp.Change">Short leg R/L Temp.Change</option>
+					<option value="Short Leg Right Temp.Change">Short leg Right Temp.Change</option>
+					<option value="Short Leg Left Temp.Change">Short leg Left Temp.Change</option>
 					<option value="Atrophy">Atrophy</option>
 					<option value="Decr strength">Decr Strength</option>
 
@@ -291,8 +416,8 @@ $(function() {
 
  &nbsp &nbsp<select name="notimproved1" id="notimproved1" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="notimproved" >Not Improved</option>
-					<option value="Progressinging Slow ">Progressing Slow</option>
-					<option value="Exacerbation of CC">Exacerbation of CC</option>
+					<option value="Progressinging Slow">Progressing Slow</option>
+					<option value="Exacerbation of C.C.">Exacerbation of C.C.</option>
 					<option value="Flare-ups">Flare-ups</option>
 					<option value="Mildly imp">Mildly imp.</option>
 					<option value="Moderatly imp">Moderatly imp.</option>
@@ -332,7 +457,7 @@ $(function() {
  <td>
 
  
- <br/>&nbsp &nbspImproved: <select name="improved2" id="improved2" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+ <br/>&nbsp; &nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="improved2">&nbsp;%<!-- <select name="improved2" id="improved2" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
 					<option value="25%">25%</option>
 					<option value="50%">50%</option>
@@ -340,10 +465,10 @@ $(function() {
 					<option value="85%">85%</option>
 					<option value="95%">95%</option>
 
-					</select><br/><br/><br/>
+					</select> --><br/><br/><br/>
 
 
-&nbsp &nbsp Worsened: <select name="worsened2" id="worsened2" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+&nbsp;&nbsp; Worsened:&nbsp;&nbsp;<input type="text" name="worsened2">&nbsp;% <!-- <select name="worsened2" id="worsened2" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
 					<option value="25%">25%</option>
 					<option value="50%">50%</option>
@@ -351,26 +476,27 @@ $(function() {
 					<option value="85%">85%</option>
 					<option value="95%">95%</option>
 
-					</select><br/><br/><br/></td>
+					</select> --><br/><br/><br/></td>
  <td>
 
   &nbsp &nbsp <select name="fixation2" id="fixation2" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixations" >Fixations</option>
-					<option value="Tenderness topalpation">Tenderness topalpation</option>
+					<option value="Tenderness to palpation">Tenderness to palpation</option>
 					<option value="Spasm">Spasm</option>
 					<option value="Trigger pts">Trigger pts.</option>
 					<option value="Hypertonicity">Hypertonicity</option>
 					<option value="Edema">Edema</option>
 					<option value="Decreased ROM">Decreased ROM</option>
-					<option value="Shortleg">Short leg R/L Temp.Change</option>
-					<option value="Atrophy">Atrophy</option>
+					<option value="Short Leg Right Temp.Change">Short leg Right Temp.Change</option>
+					<option value="Short Leg Left Temp.Change">Short leg Left Temp.Change</option>
+			        <option value="Atrophy">Atrophy</option>
 					<option value="Decr Strength">Decr Strength</option>
 
 					</select></td>
  <td>&nbsp &nbsp<select name="notimproved2" id="notimproved2" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Not Improved" >Not Improved</option>
 					<option value="Progressinging Slow ">Progressing Slow</option>
-					<option value="Exacerbation of CC">Exacerbation of CC</option>
+					<option value="Exacerbation of C.C.">Exacerbation of C.C.</option>
 					<option value="Flare-ups">Flare-ups</option>
 					<option value="Mildly imp">Mildly imp</option>
 					<option value="Moderatly imp">Moderatly imp</option>
@@ -407,39 +533,40 @@ $(function() {
  <td>&nbsp;&nbsp;
  <input type="text" name="date4" id="datepicker3"></td>
  <td>
- <br/>&nbsp &nbspImproved: <select name="improved3" id="improved3" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+ <br/>&nbsp;&nbsp;Improved: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved3">&nbsp;%<!-- <select name="improved3" id="improved3" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
 					<option value="25%">25%</option>
 					<option value="50%">50%</option>
 					<option value="75%">75%</option>
 					<option value="85%">85%</option>
 					<option value="95%">95%</option>
-					</select><br/><br/><br/>
-&nbsp &nbsp Worsened: <select name="worsened3" id="worsened3" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+					</select> --><br/><br/><br/>
+&nbsp;&nbsp; Worsened: &nbsp;&nbsp;<input type="text" name="worsened3">&nbsp;%<!-- <select name="worsened3" id="worsened3" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
 					<option value="25%">25%</option>
 					<option value="50%">50%</option>
 					<option value="75%">75%</option>
 					<option value="85%">85%</option>
 					<option value="95%">95%</option>
-					</select><br/><br/><br/></td>
+					</select> --><br/><br/><br/></td>
  <td>
   &nbsp &nbsp<select name="fixation3" id="fixation3" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixations" >Fixations</option>
-					<option value="Tenderness topalpation">Tenderness topalpation</option>
+					<option value="Tenderness to palpation">Tenderness to palpation</option>
 					<option value="Spasm">Spasm</option>
 					<option value="Trigger">Trigger pts.</option>
 					<option value="Hypertonicity">Hypertonicity</option>
 					<option value="Edema">Edema</option>
 					<option value="Decreased ROM">Decreased ROM</option>
-					<option value="Shortleg">Short leg R/L Temp.Change</option>
-					<option value="Atrophy">Atrophy</option>
+					<option value="Short Leg Right Temp.Change">Short leg Right Temp.Change</option>
+					<option value="Short Leg Left Temp.Change">Short leg Left Temp.Change</option>
+				<option value="Atrophy">Atrophy</option>
 					<option value="Decr Strength">Decr Strength</option>
 					</select></td>
  <td>&nbsp &nbsp<select name="notimproved3" id="notimproved3" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Not Improved" >Not Improved</option>
-					<option value="Progressinging Slow ">Progressing Slow</option>
-					<option value="Exacerbation of CC">Exacerbation of CC</option>
+					<option value="Progressinging Slow">Progressing Slow</option>
+					<option value="Exacerbation of C.C.">Exacerbation of C.C.</option>
 					<option value="Flare-ups">Flare-ups</option>
 					<option value="Mildly imp">Mildly imp</option>
 					<option value="Moderatly imp">Moderatly imp</option>
@@ -476,38 +603,39 @@ $(function() {
  <td>&nbsp;&nbsp;
  <input type="text" name="date5" id="datepicker4"></td>
  <td>
- <br/>&nbsp &nbspImproved: <select name="improved4" id="improved4" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+ <br/>&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved4">&nbsp;%<!-- <select name="improved4" id="improved4" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
 					<option value="25%">25%</option>
 					<option value="50%">50%</option>
 					<option value="75%">75%</option>
 					<option value="85%">85%</option>
 					<option value="95%">95%</option>
-					</select><br/><br/><br/>
-&nbsp &nbspWorsened: <select name="worsened4" id="worsened4" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+					</select> --><br/><br/><br/>
+&nbsp;&nbsp;Worsened:&nbsp;&nbsp;<input type="text" name="worsened4">&nbsp;% <!-- <select name="worsened4" id="worsened4" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
 					<option value="25%">25%</option>
 					<option value="50%">50%</option>
 					<option value="75%">75%</option>
 					<option value="85%">85%</option>
 					<option value="95%">95%</option>
-					</select><br/><br/><br/></td>
+					</select> --><br/><br/><br/></td>
  <td>&nbsp &nbsp <select name="fixation4" id="fixation4" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixation" >Fixations</option>
-					<option value="Tenderness topalpation">Tenderness topalpation</option>
+					<option value="Tenderness to palpation">Tenderness to palpation</option>
 					<option value="Spasm">Spasm</option>
 					<option value="Trigger pts">Trigger pts.</option>
 					<option value="Hypertonicity">Hypertonicity</option>
 					<option value="Edema">Edema</option>
 					<option value="Decreased">Decreased ROM</option>
-					<option value="Short leg R/L Temp.Change">Short leg R/L Temp.Change</option>
+					<option value="Short Leg Right Temp.Change">Short leg Right Temp.Change</option>
+					<option value="Short Leg Left Temp.Change">Short leg Left Temp.Change</option>
 					<option value="Atrophy">Atrophy</option>
 					<option value="Decr Strength">Decr Strength</option>
 					</select></td>
  <td>&nbsp &nbsp<select name="notimproved4" id="notimproved4" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="not improved" >Not Improved</option>
-					<option value="Progressinging Slow ">Progressing Slow</option>
-					<option value="Exacerbation of CC">Exacerbation of CC</option>
+					<option value="Progressinging Slow">Progressing Slow</option>
+					<option value="Exacerbation of C.C.">Exacerbation of C.C.</option>
 					<option value="Flare-ups">Flare-ups</option>
 					<option value="mildly imp">Mildly imp.</option>
 					<option value="moderatly imp">Moderatly imp.</option>
@@ -544,39 +672,41 @@ $(function() {
  <td>&nbsp;&nbsp;
  <input type="text" name="date6" id="datepicker5"></td>
  <td>
- <br/>&nbsp &nbspImproved: <select name="improved5" id="improved5" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+ <br/>&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved5">&nbsp;% <!-- <select name="improved5" id="improved5" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
 					<option value="25%">25%</option>
 					<option value="50%">50%</option>
 					<option value="75%">75%</option>
 					<option value="85%">85%</option>
 					<option value=95%">95%</option>
-					</select><br/><br/><br/>
-&nbsp &nbsp Worsened: <select name="worsened5" id="worsened5" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+					</select> --><br/><br/><br/>
+&nbsp;&nbsp; Worsened:&nbsp;&nbsp;<input type="text" name="worsened5">&nbsp;% <!-- <select name="worsened5" id="worsened5" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
 					<option value="25%">25%</option>
 					<option value="50%">50%</option>
 					<option value="75%">75%</option>
 					<option value="85%">85%</option>
 					<option value="95%">95%</option>
-					</select><br/><br/><br/></td>
+					</select> --><br/><br/><br/></td>
  <td>
   &nbsp &nbsp<select name="fixation5" id="fixation5" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="fixation" >Fixations</option>
-					<option value="Tenderness topalpation">Tenderness topalpation</option>
+					<option value="Tenderness to palpation">Tenderness to palpation</option>
 					<option value="spasm">Spasm</option>
 					<option value="trigger pts">Trigger pts.</option>
 					<option value="hypertonicity">Hypertonicity</option>
 					<option value="edema">Edema</option>
 					<option value="decreased ROM">Decreased ROM</option>
-					<option value="shortleg">Short leg R/L Temp.Change</option>
+					<option value="Short Leg Right Temp.Change">Short leg Right Temp.Change</option>
+					<option value="Short Leg Left Temp.Change">Short leg Left Temp.Change</option>
+				
 					<option value="atrophy">Atrophy</option>
 					<option value="decr strength">Decr Strength</option>
 					</select></td>
 <td>&nbsp &nbsp <select name="notimproved5" id="notimproved5" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="notimproved" >Not Improved</option>
-					<option value="Progressinging Slow ">Progressing Slow</option>
-					<option value="Exacerbation of CC">Exacerbation of CC</option>
+					<option value="Progressinging Slow">Progressing Slow</option>
+					<option value="Exacerbation of C.C.">Exacerbation of C.C</option>
 					<option value="Flare-ups">Flare-ups</option>
 					<option value="mildly imp">Mildly imp.</option>
 					<option value="moderatly imp">Moderatly imp.</option>
@@ -612,38 +742,40 @@ $(function() {
  <td>&nbsp;&nbsp;
  <input type="text" name="date7" id="datepicker6"></td>
  <td>
- <br/>&nbsp &nbspImproved: <select name="improved6" id="improved6" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+ <br/>&nbsp; &nbsp;Improved:&nbsp;&nbsp;&nbsp;<input type="text" name="improved6">&nbsp;% <!-- <select name="improved6" id="improved6" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
 					<option value="25%">25%</option>
 					<option value="50%">50%</option>
 					<option value="75%">75%</option>
 					<option value="85%">85%</option>
 					<option value="95%">95%</option>
-					</select><br/><br/><br/>
-&nbsp &nbsp Worsened: <select name="worsened6" id="worsened6" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+					</select> --><br/><br/><br/>
+&nbsp; &nbsp; Worsened:&nbsp;&nbsp;<input type="text" name="worsened6">&nbsp;% <!-- <select name="worsened6" id="worsened6" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
 					<option value="25%">25%</option>
 					<option value="50%">50%</option>
 					<option value="75%">75%</option>
 					<option value="85%">85%</option>
 					<option value="95%">95%</option>
-					</select><br/><br/><br/></td>
+					</select> --><br/><br/><br/></td>
  <td>&nbsp &nbsp <select name="fixation6" id="fixation6" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="fixation" >Fixations</option>
-					<option value="Tenderness topalpation">Tenderness topalpation</option>
+					<option value="Tenderness to palpation">Tenderness to palpation</option>
 					<option value="spasm">Spasm</option>
 					<option value="trigger">Trigger pts.</option>
 					<option value="hypertonicity">Hypertonicity</option>
 					<option value="edema">Edema</option>
 					<option value="decreased ROM">Decreased ROM</option>
-					<option value="shortleg">Short leg R/L Temp.Change</option>
+					<option value="Short Leg Right Temp.Change">Short leg Right Temp.Change</option>
+					<option value="Short Leg Left Temp.Change">Short leg Left Temp.Change</option>
+				
 					<option value="atrophy">Atrophy</option>
 					<option value="decr">Decr Strength</option>
 					</select></td>
 <td> &nbsp &nbsp<select name="notimproved6" id="notimproved6" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="notimproved" >Not Improved</option>
-					<option value="Progressinging Slow ">Progressing Slow</option>
-					<option value="Exacerbation of CC">Exacerbation of CC</option>
+					<option value="Progressinging Slow">Progressing Slow</option>
+					<option value="Exacerbation of C.C.">Exacerbation of C.C.</option>
 					<option value="Flare-ups">Flare-ups</option>
 					<option value="mildly imp">Mildly imp.</option>
 					<option value="moderatly imp">Moderatly imp.</option>
@@ -679,38 +811,40 @@ $(function() {
  <td>&nbsp;&nbsp;
  <input type="text" name="date8" id="datepicker7"></td>
  <td>
- <br/>&nbsp &nbspImproved: <select name="improved7" id="improved7" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+ <br/>&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;<input type="text" name="improved7">&nbsp;%<!-- <select name="improved7" id="improved7" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
 					<option value="25%">25%</option>
 					<option value="50%">50%</option>
 					<option value="75%">75%</option>
 					<option value="85%">85%</option>
 					<option value="95%">95%</option>
-					</select><br/><br/><br/>
-&nbsp &nbsp Worsened: <select name="worsened7" id="worsened7" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+					</select> --><br/><br/><br/>
+&nbsp;&nbsp;Worsened:&nbsp;&nbsp;<input type="text" name="worsened7">&nbsp;%<!-- <select name="worsened7" id="worsened7" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
 					<option value="25%">25%</option>
 					<option value="50%">50%</option>
 					<option value="75%">75%</option>
 					<option value="85%">85%</option>
 					<option value="95%">95%</option>
-					</select><br/><br/><br/></td>
+					</select> --><br/><br/><br/></td>
  <td> &nbsp &nbsp<select name="fixation7" id="fixation7" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="fixations" >Fixations</option>
-					<option value="Tenderness topalpation">Tenderness topalpation</option>
+					<option value="Tenderness to palpation">Tenderness to palpation</option>
 					<option value="spasm">Spasm</option>
 					<option value="trigger pts">Trigger pts.</option>
 					<option value="hypertonicity">Hypertonicity</option>
 					<option value="edema">Edema</option>
 					<option value="decreased ROM">Decreased ROM</option>
-					<option value="shortleg">Short leg R/L Temp.Change</option>
+					<option value="Short Leg Right Temp.Change">Short leg Right Temp.Change</option>
+					<option value="Short Leg Left Temp.Change">Short leg Left Temp.Change</option>
+				
 					<option value="atrophy">Atrophy</option>
 					<option value="decr strength">Decr Strength</option>
 					</select></td>
  <td>&nbsp &nbsp<select name="notimproved7" id="notimproved7" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="notimproved" >Not Improved</option>
-				<option value="Progressinging Slow ">Progressing Slow</option>
-					<option value="Exacerbation of CC">Exacerbation of CC</option>
+				<option value="Progressinging Slow">Progressing Slow</option>
+					<option value="Exacerbation of C.C.">Exacerbation of C.C.</option>
 					<option value="Flare-ups">Flare-ups</option>
 					<option value="mildly imp">Mildly imp.</option>
 					<option value="moderatly imp">Moderatly imp.</option>
@@ -746,38 +880,40 @@ $(function() {
  <td>&nbsp;&nbsp;
  <input type="text" name="date9" id="datepicker8"></td>
  <td>
- <br/>&nbsp &nbspImproved: <select name="improved8" id="improved8" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+ <br/>&nbsp; &nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved8">&nbsp;%<!-- <select name="improved8" id="improved8" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
 					<option value="25%">25%</option>
 					<option value="50%">50%</option>
 					<option value="75%">75%</option>
 					<option value="85%">85%</option>
 					<option value="95%">95%</option>
-					</select><br/><br/><br/>
-&nbsp &nbspWorsened: <select name="worsened8" id="worsened8" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+					</select> --><br/><br/><br/>
+&nbsp; &nbsp;Worsened:&nbsp;&nbsp;<input type="text" name="worsened8">&nbsp;%<!--  <select name="worsened8" id="worsened8" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
 					<option value="25%">25%</option>
 					<option value="50%">50%</option>
 					<option value="75%">75%</option>
 					<option value="85%">85%</option>
 					<option value="95%">95%</option>
-					</select><br/><br/><br/></td>
+					</select> --><br/><br/><br/></td>
  <td> &nbsp &nbsp<select name="fixation8" id="fixation8" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="fixation" >Fixations</option>
-					<option value="Tenderness topalpation">Tenderness topalpation</option>
+					<option value="Tenderness to palpation">Tenderness to palpation</option>
 					<option value="spasm">Spasm</option>
 					<option value="trigger">Trigger pts.</option>
 					<option value="hypertonicity">Hypertonicity</option>
 					<option value="edema">Edema</option>
 					<option value="decreased">Decreased ROM</option>
-					<option value="shortleg">Short leg R/L Temp.Change</option>
+					<option value="Short Leg Right Temp.Change">Short leg Right Temp.Change</option>
+					<option value="Short Leg Left Temp.Change">Short leg Left Temp.Change</option>
+				
 					<option value="atrophy">Atrophy</option>
 					<option value="decr strength">Decr Strength</option>
 					</select></td>
  <td>&nbsp &nbsp<select name="notimproved8" id="notimproved8" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="notimproved" >Not Improved</option>
-					<option value="Progressinging Slow ">Progressing Slow</option>
-					<option value="Exacerbation of CC">Exacerbation of CC</option>
+					<option value="Progressinging Slow">Progressing Slow</option>
+					<option value="Exacerbation of C.C.">Exacerbation of C.C.</option>
 					<option value="Flare-ups">Flare-ups</option>
 					<option value="mildly imp">Mildly imp.</option>
 					<option value="moderatly imp">Moderatly imp.</option>
@@ -867,7 +1003,7 @@ $(function() {
 </tr>
 <tr class="row1">
 <td></td>
-<td><input type="checkbox" name="rightribpain" value="Right Rib Pain" <c:if test="${soap.rightribpain=='Right Rib Pain'}"><c:out value="checked=checked"/></c:if>>Right Rib Pain</td>
+<td><input type="checkbox" name="rightribpain" value="Right Rib Pain" <c:if test="${soap.rightribpain=='Right Rib Pain'}"><c:out value="checked=checked"/></c:if>>Right Rib Pain </td>
 <td><input type="checkbox" name="leftribpain" value="Left Rib Pain" <c:if test="${soap.leftribpain=='Left Rib Pain'}"><c:out value="checked=checked"/></c:if>>Left Rib Pain</td>
 <td><input type="checkbox" name="lbp" value="LBP" <c:if test="${soap.lbp=='LBP'}"><c:out value="checked=checked"/></c:if>>LBP</td>
 <td><input type="checkbox" name="rightsipain" value="Right SI Pain" <c:if test="${soap.rightsipain=='Right SI Pain'}"><c:out value="checked=checked"/></c:if>>Right SI Pain</td>
@@ -989,7 +1125,7 @@ $(function() {
  <td>
  &nbsp &nbsp <select name="fixation1" id="fixation1" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixation" <c:if test="${soap.fixation1=='fixation'}"><c:out value="selected"/></c:if>>Fixations</option>
-					<option value="Tenderness topalpation" <c:if test="${soap.fixation1=='Tenderness topalpation'}"><c:out value="selected"/></c:if>>Tenderness topalpation</option>
+					<option value="Tenderness to palpation" <c:if test="${soap.fixation1=='Tenderness to palpation'}"><c:out value="selected"/></c:if>>Tenderness to palpation</option>
 					<option value="spasm" <c:if test="${soap.fixation1=='spasm'}"><c:out value="selected"/></c:if>>Spasm</option>
 					<option value="trigger" <c:if test="${soap.fixation1=='trigger'}"><c:out value="selected"/></c:if>>Trigger pts.</option>
 					<option value="hypertonicity" <c:if test="${soap.fixation1=='hypertonicity'}"><c:out value="selected"/></c:if>>Hypertonicity</option>
@@ -1064,7 +1200,7 @@ $(function() {
 
   &nbsp &nbsp <select name="fixation2" id="fixation2" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixation" <c:if test="${soap.fixation2=='Fixation'}"><c:out value="selected"/></c:if>>Fixations</option>
-					<option value="Tenderness topalpation" <c:if test="${soap.fixation2=='Tenderness topalpation'}"><c:out value="selected"/></c:if>>Tenderness topalpation</option>
+					<option value="Tenderness to palpation" <c:if test="${soap.fixation2=='Tenderness to palpation'}"><c:out value="selected"/></c:if>>Tenderness to palpation</option>
 					<option value="spasm" <c:if test="${soap.fixation2=='spasm'}"><c:out value="selected"/></c:if>>Spasm</option>
 					<option value="trigger" <c:if test="${soap.fixation2=='trigger'}"><c:out value="selected"/></c:if>>Trigger pts.</option>
 					<option value="hypertonicity" <c:if test="${soap.fixation2=='hypertonicity'}"><c:out value="selected"/></c:if>>Hypertonicity</option>
@@ -1135,7 +1271,7 @@ $(function() {
   &nbsp &nbsp<select name="fixation3" id="fixation3" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixation" <c:if test="${soap.fixation3=='Fixation'}"><c:out value="selected"/></c:if>
 					>Fixations</option>
-					<option value="Tenderness topalpation" <c:if test="${soap.fixation3=='Tenderness topalpation'}"><c:out value="selected"/></c:if>>Tenderness topalpation</option>
+					<option value="Tenderness to palpation" <c:if test="${soap.fixation3=='Tenderness to palpation'}"><c:out value="selected"/></c:if>>Tenderness to palpation</option>
 					<option value="spasm" <c:if test="${soap.fixation3=='spasm'}"><c:out value="selected"/></c:if>>Spasm</option>
 					<option value="trigger" <c:if test="${soap.fixation3=='trigger'}"><c:out value="selected"/></c:if>>Trigger pts.</option>
 					<option value="hypertonicity" <c:if test="${soap.fixation3=='hypertonicity'}"><c:out value="selected"/></c:if>>Hypertonicity</option>
@@ -1204,7 +1340,7 @@ $(function() {
 					</select></td>
  <td>&nbsp &nbsp <select name="fixation4" id="fixation4" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixation" <c:if test="${soap.fixation4=='Fixation'}"><c:out value="selected"/></c:if>>Fixations</option>
-					<option value="Tenderness topalpation" <c:if test="${soap.fixation4=='Tenderness topalpation'}"><c:out value="selected"/></c:if>>Tenderness topalpation</option>
+					<option value="Tenderness to palpation" <c:if test="${soap.fixation4=='Tenderness to palpation'}"><c:out value="selected"/></c:if>>Tenderness to palpation</option>
 					<option value="spasm" <c:if test="${soap.fixation4=='spasm'}"><c:out value="selected"/></c:if>>Spasm</option>
 					<option value="trigger" <c:if test="${soap.fixation4=='trigger'}"><c:out value="selected"/></c:if>>Trigger pts.</option>
 					<option value="hypertonicity" <c:if test="${soap.fixation4=='hypertonicity'}"><c:out value="selected"/></c:if>>Hypertonicity</option>
@@ -1273,7 +1409,7 @@ $(function() {
  <td>
   &nbsp &nbsp<select name="fixation5" id="fixation5" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixation" <c:if test="${soap.fixation5=='Fixation'}"><c:out value="selected"/></c:if>>Fixations</option>
-					<option value="Tenderness topalpation" <c:if test="${soap.fixation5=='Tenderness topalpation'}"><c:out value="selected"/></c:if>>Tenderness topalpation</option>
+					<option value="Tenderness to palpation" <c:if test="${soap.fixation5=='Tenderness to palpation'}"><c:out value="selected"/></c:if>>Tenderness to palpation</option>
 					<option value="spasm" <c:if test="${soap.fixation5=='spasm'}"><c:out value="selected"/></c:if>>Spasm</option>
 					<option value="trigger" <c:if test="${soap.fixation5=='trigger'}"><c:out value="selected"/></c:if>>Trigger pts.</option>
 					<option value="hypertonicity" <c:if test="${soap.fixation5=='hypertonicity'}"><c:out value="selected"/></c:if>>Hypertonicity</option>
@@ -1339,7 +1475,7 @@ $(function() {
 					</select></td>
  <td>&nbsp &nbsp <select name="fixation6" id="fixation6" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixation" <c:if test="${soap.fixation6=='Fixation'}"><c:out value="selected"/></c:if>>Fixations</option>
-					<option value="Tenderness topalpation" <c:if test="${soap.fixation6=='Tenderness topalpation'}"><c:out value="selected"/></c:if>>Tenderness topalpation</option>
+					<option value="Tenderness to palpation" <c:if test="${soap.fixation6=='Tenderness to palpation'}"><c:out value="selected"/></c:if>>Tenderness to palpation</option>
 					<option value="spasm" <c:if test="${soap.fixation6=='spasm'}"><c:out value="selected"/></c:if>>Spasm</option>
 					<option value="trigger" <c:if test="${soap.fixation6=='trigger'}"><c:out value="selected"/></c:if>>Trigger pts.</option>
 					<option value="hypertonicity" <c:if test="${soap.fixation6=='hypertonicity'}"><c:out value="selected"/></c:if>>Hypertonicity</option>
@@ -1406,7 +1542,7 @@ $(function() {
 					</select></td>
  <td> &nbsp &nbsp<select name="fixation7" id="fixation7" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixation" <c:if test="${soap.fixation7=='Fixation'}"><c:out value="selected"/></c:if>>Fixations</option>
-					<option value="Tenderness topalpation" <c:if test="${soap.fixation7=='Tenderness topalpation'}"><c:out value="selected"/></c:if>>Tenderness topalpation</option>
+					<option value="Tenderness to palpation" <c:if test="${soap.fixation7=='Tenderness to palpation'}"><c:out value="selected"/></c:if>>Tenderness to palpation</option>
 					<option value="spasm" <c:if test="${soap.fixation7=='spasm'}"><c:out value="selected"/></c:if>>Spasm</option>
 					<option value="trigger" <c:if test="${soap.fixation7=='trigger'}"><c:out value="selected"/></c:if>>Trigger pts.</option>
 					<option value="hypertonicity" <c:if test="${soap.fixation7=='hypertonicity'}"><c:out value="selected"/></c:if>>Hypertonicity</option>
@@ -1472,7 +1608,7 @@ $(function() {
 					</select></td>
  <td> &nbsp &nbsp<select name="fixation8" id="fixation8" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixation" <c:if test="${soap.fixation8=='Fixation'}"><c:out value="selected"/></c:if>>Fixations</option>
-					<option value="Tenderness topalpation" <c:if test="${soap.fixation8=='Tenderness topalpation'}"><c:out value="selected"/></c:if>>Tenderness topalpation</option>
+					<option value="Tenderness to palpation" <c:if test="${soap.fixation8=='Tenderness to palpation'}"><c:out value="selected"/></c:if>>Tenderness to palpation</option>
 					<option value="spasm" <c:if test="${soap.fixation8=='spasm'}"><c:out value="selected"/></c:if>>Spasm</option>
 					<option value="trigger" <c:if test="${soap.fixation8=='trigger'}"><c:out value="selected"/></c:if>>Trigger pts.</option>
 					<option value="hypertonicity" <c:if test="${soap.fixation8=='hypertonicity'}"><c:out value="selected"/></c:if>>Hypertonicity</option>

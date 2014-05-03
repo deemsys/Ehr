@@ -497,7 +497,7 @@ color:#fff;
 									<span>Manual Therapy Treatment</span>
 								</a>
 							</li> --%>
-							
+							<%-- 
 							<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='wristindex'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu25">
 									<span>Wrist/Hand Disability Index</span>
@@ -517,7 +517,7 @@ color:#fff;
 									<span>Shoulder Pain Score </span>
 								</a>
 							</li>
-							
+							 --%>
 </c:when>
 <c:when test="${visit=='1'}">
 	<ul class="menu2" width="1000">
@@ -573,11 +573,11 @@ color:#fff;
 								</a>
 							</li> --%>
 							
-							<li>
+						<%-- 	<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='wristindex'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu25">
 									<span>Wrist/Hand Disability Index</span>
 								</a>
-							</li>
+							</li> --%>
 
 
 							<%-- <li>
@@ -590,11 +590,11 @@ color:#fff;
 									<span>Dc Fee Slip</span>
 								</a>
 							</li> --%>
-							<li>
+							<%-- <li>
 								<a href="#" class="<c:choose><c:when test="${menu=='duties'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu29">
 									<span>Duties Under Duress Summary </span>
 								</a>
-							</li>
+							</li> --%>
 <li>
 								<a href="#" class="<c:choose><c:when test="${menu=='shoulder'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu31">
 									<span>Shoulder Pain Score </span>
@@ -654,13 +654,13 @@ color:#fff;
 									<span>Manual Therapy Treatment</span>
 								</a>
 							</li> --%>
-							
+						<%-- 	
 							<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='wristindex'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu25">
 									<span>Wrist/Hand Disability Index</span>
 								</a>
 							</li>
-
+ --%>
 
 							<%-- <li>
 								<a href="#" class="<c:choose><c:when test="${menu=='hipknee'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu26">
@@ -672,11 +672,11 @@ color:#fff;
 									<span>Dc Fee Slip</span>
 								</a>
 							</li> --%>
-							<li>
+						<%-- 	<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='duties'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu29">
 									<span>Duties Under Duress Summary </span>
 								</a>
-							</li>
+							</li> --%>
 <li>
 								<a href="#" class="<c:choose><c:when test="${menu=='shoulder'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu31">
 									<span>Shoulder Pain Score </span>
@@ -737,11 +737,11 @@ color:#fff;
 								</a>
 							</li> --%>
 							
-							<li>
+							<%-- <li>
 								<a href="#" class="<c:choose><c:when test="${menu=='wristindex'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu25">
 									<span>Wrist/Hand Disability Index</span>
 								</a>
-							</li>
+							</li> --%>
 
 
 							<%-- <li>
@@ -754,16 +754,16 @@ color:#fff;
 									<span>Dc Fee Slip</span>
 								</a>
 							</li> --%>
-							<li>
+						<%-- 	<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='duties'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu29">
 									<span>Duties Under Duress Summary </span>
 								</a>
-							</li>
-							<li>
+							</li> --%>
+							<%-- <li>
 								<a href="#" class="<c:choose><c:when test="${menu=='shoulder'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu31">
 									<span>Shoulder Pain Score </span>
 								</a>
-							</li>
+							</li> --%>
 </ul>
 							
 </c:when>
@@ -803,12 +803,12 @@ color:#fff;
 								</a>
 							</li> --%>
 							
-							<li>
+						<%-- 	<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='wristindex'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu25">
 									<span>Wrist/Hand Disability Index</span>
 								</a>
 							</li>
-
+ --%>
 
 						<%-- 	<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='hipknee'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu26">
@@ -820,7 +820,7 @@ color:#fff;
 									<span>Dc Fee Slip</span>
 								</a>
 							</li> --%>
-							<li>
+							<%-- <li>
 								<a href="#" class="<c:choose><c:when test="${menu=='duties'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu29">
 									<span>Duties Under Duress Summary </span>
 								</a>
@@ -830,7 +830,7 @@ color:#fff;
 									<span>Shoulder Pain Score </span>
 								</a>
 							</li>
-
+ --%>
 </ul>							
 </c:when>
 
@@ -870,11 +870,11 @@ color:#fff;
 								</a>
 							</li> --%>
 							
-							<li>
+						<%-- 	<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='wristindex'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu25">
 									<span>Wrist/Hand Disability Index</span>
 								</a>
-							</li>
+							</li> --%>
 
 
 							<%-- <li>
@@ -883,7 +883,7 @@ color:#fff;
 								</a>
 							</li> --%>
 							
-							<li>
+							<%-- <li>
 								<a href="#" class="<c:choose><c:when test="${menu=='duties'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu29">
 									<span>Duties Under Duress Summary </span>
 								</a>
@@ -893,7 +893,7 @@ color:#fff;
 									<span>Shoulder Pain Score </span>
 								</a>
 							</li>
-
+ --%>
 	</ul>						
 </c:when>
 
@@ -930,11 +930,11 @@ color:#fff;
 								</a>
 							</li> --%>
 							
-							<li>
+						<%-- 	<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='wristindex'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu25">
 									<span>Wrist/Hand Disability Index</span>
 								</a>
-							</li>
+							</li> --%>
 
 
 						<%-- 	<li>
@@ -942,7 +942,7 @@ color:#fff;
 									<span>Hip And Knee Questionnarie</span>
 								</a>
 							</li> --%>
-							<li>
+						<%-- 	<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='duties'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu29">
 									<span>Duties Under Duress Summary </span>
 								</a>
@@ -951,13 +951,13 @@ color:#fff;
 								<a href="#" class="<c:choose><c:when test="${menu=='shoulder'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu31">
 									<span>Shoulder Pain Score </span>
 								</a>
-							</li>
+							</li> --%>
 		</ul>					
 </c:when>
 
   <c:otherwise>
   	<ul class="menu">
-        <li><a href="<c:out value="editsoapnotes?soapid=${soapnotesid}"/>" class="<c:choose><c:when test="${menu=='notes'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>">
+        <li><a href="<c:out value="editsoapnotes?soapid=${username}"/>" class="<c:choose><c:when test="${menu=='notes'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>">
 									<span>Soap Notes</span>
 								</a>
 								
@@ -977,18 +977,18 @@ color:#fff;
 									<span>Manual Therapy Treatment</span>
 								</a>
 							</li> --%>
-							<li>
+						<%-- 	<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='wristindex'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu25">
 									<span>Wrist/Hand Disability Index</span>
 								</a>
-							</li>
+							</li> --%>
 						<%-- 	<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='hipknee'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu26">
 									<span>Hip And Knee Questionnarie</span>
 								</a>
 							</li> --%>
 														
-							<li>
+						<%-- 	<li>
 								<a href="#" class="<c:choose><c:when test="${menu=='duties'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu29">
 									<span>Duties Under Duress Summary </span>
 								</a>
@@ -997,7 +997,7 @@ color:#fff;
 								<a href="#" class="<c:choose><c:when test="${menu=='shoulder'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>" rel="ddsubmenu31">
 									<span>Shoulder Pain Score </span>
 								</a>
-							</li>
+							</li> --%>
 							</c:otherwise>
 							</c:choose>
 					
