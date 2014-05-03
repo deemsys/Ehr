@@ -372,7 +372,7 @@ $(function(){
 				                 <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Visceral Pathologies:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="path" value="Normal" class="input_txt" checked="true">Normal&nbsp;&nbsp;&nbsp;<input type="radio" name="path" value="Abnormal" class="input_txt">Abnormal&nbsp;&nbsp;&nbsp;</td>
+				                  	<input type="text" name="path"  class="input_txt" ></td>
 				               
 				                </tr>
 				                <tr class="row2">
@@ -490,15 +490,52 @@ $(function(){
 				                  </tr>
 				                  <tr class="row1">
 				                  <td>Trapezius</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="trapeziusrl" value="R-L">R-L</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="trapeziustono" value="Tonocity">Tonicity</td>
-				                  <td class="input_txt" align="left"> <input type="checkbox" name="trapeziusnormal" value="Normal">Normal</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	
+				                   <select name="trapeziusrl" class="input_cmbbx1" id="inp_id">
+						                    <option selected="selected" value="Right" >Right</option>
+						                   
+											<option value="Tonicity">Tonicity</option>
+											<option value="Normal">Normal</option>
+											
+				                   		</select><span class="err"><form:errors path="Physicalexam.trapeziusrl"></form:errors>
+				                  </td>
+				                  
+				                 	<td valign="top" align="left" class="input_txt">
+				                  	
+				                   <select name="trapeziusrl1" class="input_cmbbx1" id="inp_id">
+						                    <option selected="selected" value="Left" >Left</option>
+						                   
+											<option value="Tonicity">Tonicity</option>
+											<option value="Normal">Normal</option>
+											
+				                   		</select><span class="err"><form:errors path="Physicalexam.trapeziusrl1"></form:errors>
+				                  </td>	                
 				                  </tr>
 				                  <tr class="row1">
 				                  <td>SCM:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="scm" value="R-L">R-L</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="scmtono" value="Tonocity">Tonicity</td>
-				                  <td class="input_txt" align="left"> <input type="checkbox" name="scmnormal" value="Normal">Normal</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	
+				                   <select name="scm" class="input_cmbbx1" id="inp_id">
+						                    <option selected="selected" value="Right" >Right</option>
+						                   
+											<option value="Tonicity">Tonicity</option>
+											<option value="Normal">Normal</option>
+											
+				                   		</select><span class="err"><form:errors path="Physicalexam.trapeziusrl"></form:errors>
+				                  </td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	
+				                   <select name="scm1" class="input_cmbbx1" id="inp_id">
+						                    <option selected="selected" value="Left" >Left</option>
+						                   
+											<option value="Tonicity">Tonicity</option>
+											<option value="Normal">Normal</option>
+											
+				                   		</select><span class="err"><form:errors path="Physicalexam.trapeziusrl"></form:errors>
+				                  </td>
+				                  
+				                 
 				                  </tr>
 				                  <tr class="row1">
 				                  <td>Vertebrae:</td>
@@ -580,37 +617,43 @@ $(function(){
 				                  </tr>
 				                <tr class="row1">
 				                   <td>C-5:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="c5" /></td>
+				                   <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="c5" ></td>
+				                   			                  
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="c5right" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="c5left" value="Left">Left</td>
 				                  </tr>
 				                <tr class="row1">
 				                   <td>C-6:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="c6" /></td>
+				                   <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="c6" ></td>
+				                  
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="c6right" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="c6left" value="Left">Left</td>
 				                  </tr>
 				                  <tr class="row1">
 				                   <td>C-7:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="c7" /></td>
+				                   <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="c7" ></td>
+				                  
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="c7right" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="c7left" value="Left">Left</td>
 				                  </tr>
 				                  <tr class="row1">
 				                   <td>C-8:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="c8" /></td>
+				                   <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="c8" ></td>
+				                 
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="c8right" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="c8left" value="Left">Left</td>
 				                  </tr>
 				                  <tr class="row1">
 				                   <td>T-1:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="t1" /></td>
+				                   <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="t1" ></td>
+				                  
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="t1right" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="t1left" value="Left">Left</td>
 				                  </tr>
 				                  <tr class="row1">
 				                   <td>Other:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="other" /></td>
+				                   <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="other" ></td>
+				                  
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="otherright" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="otherleft" value="Left">Left</td>
 				                  </tr>
@@ -726,26 +769,7 @@ $(function(){
 				                   		</select></td>
 				                   		
 				                  </tr>
-				                  <tr class="row1">
-				                 <td>(Wrist Ext.) C-6	</td>
-				                 <td><select name="wristextright">
-						                    <option selected="selected" value="0" >0</option>
-											<option value="1">1</option>
-											<option value="2">2</option>
-											<option value="3">3</option>
-											<option value="4">4</option>
-											<option value="5">5</option>
-				                   		</select></td>
-				                   		<td><select name="wristextleft">
-						                    <option selected="selected" value="0" >0</option>
-											<option value="1">1</option>
-											<option value="2">2</option>
-											<option value="3">3</option>
-											<option value="4">4</option>
-											<option value="5">5</option>
-				                   		</select></td>
-				                   		
-				                  </tr>
+				                 
 				                 </table>
 				                  <table border="0">
 				               <tr class="row1">
@@ -821,10 +845,13 @@ $(function(){
 				               <td><b>Visual Disturbance:</b></td>
 				               <td>Present:</td>
 				               <td><select name="presentvisual">
-				               <option value="R" <c:if test="${physical.presentvisual=='R'}">
+				               <option selected="selected" value="R" >R</option>
+											<option value="L">L</option>
+											
+				              <%--  <option value="R" <c:if test="${physical.presentvisual=='R'}">
 <c:out value="selected"/></c:if>>R</option>
      <option value="L" <c:if test="${physical.presentvisual=='L'}">
-<c:out value="selected"/></c:if>>L</option>
+<c:out value="selected"/></c:if>>L</option> --%>
 						                    
 											
 											
@@ -922,7 +949,7 @@ $(function(){
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="parapain" value="Pain">Pain</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="paraspasm" value="Spasm">Spasm</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="paraedema" value="Edema">Edema</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="paratriggerpoint" value="TriggerPoint">TriggerPoint</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="paratriggerpoint" value="Trigger Points">Trigger Points</td>
 				                  </tr> 
 				                  <tr class="row1">
 				                  <td>Ribs:</td>
@@ -1006,25 +1033,29 @@ $(function(){
 				                  </tr>
 				                <tr class="row1">
 				                   <td>T-1:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="thot1" /></td>
+				                   <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="thot1" ></td>
+				                                    
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot1right" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot1left" value="Left">Left</td>
 				                  </tr>
 				                <tr class="row1">
 				                   <td>T-4:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="thot4" /></td>
+				                   <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="thot4" ></td>
+				                 
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot4right" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot4left" value="Left">Left</td>
 				                  </tr>
 				                  <tr class="row1">
 				                   <td>T-10:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="thot10" /></td>
+				                   <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="thot10" ></td>
+				                  
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot10right" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot10left" value="Left">Left</td>
 				                  </tr>
 				                  <tr class="row1">
 				                   <td>Other:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="thoother" /></td>
+				                   <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="thoother" ></td>
+				                  
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="thootherright" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="thootherleft" value="Left">Left</td>
 				                  </tr>
@@ -1036,18 +1067,25 @@ $(function(){
 				                  </tr>
 				                  <tr class="row1">
 				                   <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="myotomes" value="Positive Beevors" class="input_txt" checked="true" onclick="toggle3('show3')">Positive Beevor's&nbsp;&nbsp;&nbsp;<input type="radio" name="myotomes" value="Negative Beevors" class="input_txt"  onclick="toggle3('hide3')">Negative Beevor's</td>
-				                  </tr>
-				                  </table>
-				                  <div id="positive">
-				                   <table border="0">
-				                   <tr class="row1">
+				                  	<input type="radio" name="myotomes" value="Positive Beevors" class="input_txt" checked="true" onclick="toggle3('show3')">Positive Beevor's</td>
 				                    <td><input type="checkbox" name="positiveruq" value="RUQ">RUQ</td>
 				                    <td><input type="checkbox" name="positiveluq" value="LUQ">LUQ</td>
 				                    <td><input type="checkbox" name="positiverlq" value="RLQ">RLQ</td>
 				                    <td><input type="checkbox" name="positivellq" value="LLQ">LLQ</td>
-				                   </tr>
-				                   <tr class="row1">
+				                  </tr>
+				                  <tr class="row1">
+				                   <td valign="top" align="left" class="input_txt">
+				                   <input type="radio" name="myotomes1" value="Negative Beevors" class="input_txt"  onclick="toggle3('hide3')">Negative Beevor's</td>
+				                    
+				                    <td><input type="checkbox" name="negativeruq" value="RUQ">RUQ</td>
+				                    <td><input type="checkbox" name="negativeluq" value="LUQ">LUQ</td>
+				                    <td><input type="checkbox" name="negativerlq" value="RLQ">RLQ</td>
+				                    <td><input type="checkbox" name="negativellq" value="LLQ">LLQ</td>
+				                 </tr>
+				                  </table>
+				                 
+				                   <table border="0">
+				                     <tr class="row1">
 				               
 				                   		<td><span class="err">*</span>If present is a smoker and has difficulty breathing, perform cardio-respiratory exam</td>
 				                   		<td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="patientsmoker" /></td>
@@ -1055,7 +1093,7 @@ $(function(){
 				                   		
 				                  </tr>
 				                   </table>
-				                 </div>
+				                
 				                 </td>
 				                 </tr>
 				                 </table>
@@ -1131,15 +1169,52 @@ $(function(){
 				                  </tr> 
 				                   <tr class="row1">
 				                  <td>Quadratus Lumborum:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="quadrl" value="R-L">R-L</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="quadtono" value="Tonicity">Tonicity</td>
-				                  <td class="input_txt" align="left"> <input type="checkbox" name="quadnor" value="Normal">Normal</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	
+				                   <select name="quadrl" class="input_cmbbx1" id="inp_id">
+						                    <option selected="selected" value="Right" >Right</option>
+						                   
+											<option value="Tonicity">Tonicity</option>
+											<option value="Normal">Normal</option>
+											
+				                   		</select><span class="err"><form:errors path="Physicalexam.quadrl"></form:errors>
+				                  </td>
+				                  
+				                 	<td valign="top" align="left" class="input_txt">
+				                  	
+				                   <select name="quadrl1" class="input_cmbbx1" id="inp_id">
+						                    <option selected="selected" value="Left" >Left</option>
+						                   
+											<option value="Tonicity">Tonicity</option>
+											<option value="Normal">Normal</option>
+											
+				                   		</select><span class="err"><form:errors path="Physicalexam.quadrl"></form:errors>
+				                  
 				                  </tr>
 				                  <tr class="row1">
 				                  <td>Hamstring:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="hamstringrl" value="R-L">R-L</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="hamstringtono" value="Tonicity">Tonicity</td>
-				                  <td class="input_txt" align="left"> <input type="checkbox" name="hamstringnor" value="Normal">Normal</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	
+				                   <select name="hamstringrl" class="input_cmbbx1" id="inp_id">
+						                    <option selected="selected" value="Right" >Right</option>
+						                   
+											<option value="Tonicity">Tonicity</option>
+											<option value="Normal">Normal</option>
+											
+				                   		</select><span class="err"><form:errors path="Physicalexam.hamstringrl"></form:errors>
+				                  </td>
+				                  
+				                 	<td valign="top" align="left" class="input_txt">
+				                  	
+				                   <select name="hamstringrl1" class="input_cmbbx1" id="inp_id">
+						                    <option selected="selected" value="Left" >Left</option>
+						                   
+											<option value="Tonicity">Tonicity</option>
+											<option value="Normal">Normal</option>
+											
+				                   		</select><span class="err"><form:errors path="Physicalexam.hamstringrl1"></form:errors>
+				                  
+				                 
 				                  </tr>
 				                  <tr class="row1">
 				                  <td>Vertebrae:</td>
@@ -1232,43 +1307,57 @@ $(function(){
 				                  </tr>
 				                <tr class="row1">
 				                   <td>L-1:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="lu1" /></td>
+				                   <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="lu1" ></td>
+				                   
+				                  
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="lu1right" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="lu1left" value="Left">Left</td>
 				                  </tr>
 				                   <tr class="row1">
 				                   <td>L-2:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="lu2" /></td>
+				                   <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="lu2" ></td>
+				                   
+				                  
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="lu2right" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="lu2left" value="Left">Left</td>
 				                  </tr>
 				                   <tr class="row1">
 				                   <td>L-3:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="lu3" /></td>
+				                   <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="lu3" ></td>
+				                   
+				                  
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="lu3right" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="lu3left" value="Left">Left</td>
 				                  </tr>
 				                   <tr class="row1">
 				                   <td>L-4:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="lu4" /></td>
+				                   <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="lu4" ></td>
+				                  
+				                  
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="lu4right" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="lu4left" value="Left">Left</td>
 				                  </tr>
 				                   <tr class="row1">
 				                   <td>L-5:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="lu5" /></td>
+				                   <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="lu5" ></td>
+				                  
+				                  
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="lu5right" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="lu5left" value="Left">Left</td>
 				                  </tr>
 				                 <tr class="row1">
 				                   <td>S-1:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="lu6" /></td>
+				                   <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="lu6" ></td>
+				                  
+				                  
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="lu6right" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="lu6left" value="Left">Left</td>
 				                  </tr>
 				                   <tr class="row1">
 				                   <td>S-2:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="lu7" /></td>
+				                   <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="lu7" ></td>
+				                   
+				                  
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="lu7right" value="Right">Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="lu7left" value="Left">Left</td>
 				                  </tr>
@@ -1430,11 +1519,24 @@ $(function(){
 				                  </tr>
 				                   <tr class="row1">
 				                  <td>Babinski(UMNL)</td>
-				                  <td valign="top" align="left" class="input_txt"><input type="radio" name="babinskiright" value="Positive" class="input_txt" checked="true" >Positive&nbsp;&nbsp;&nbsp;<input type="radio" name="babinskiright" value="Negative" class="input_txt" >Negative&nbsp;&nbsp;&nbsp;</td>
+				                  
+				                 <td valign="top" align="left" class="input_txt"><input type="radio" name="babinskiright" value="Positive" class="input_txt" checked="true" >Positive&nbsp;&nbsp;&nbsp;<input type="radio" name="babinskiright" value="Negative" class="input_txt" >Negative&nbsp;&nbsp;&nbsp;</td>
 				                  <td valign="top" align="left" class="input_txt"><input type="radio" name="babinskileft" value="Positive" class="input_txt" checked="true" >Positive&nbsp;&nbsp;&nbsp;<input type="radio" name="babinskileft" value="Negative" class="input_txt" >Negative&nbsp;&nbsp;&nbsp;</td>
+				                  
+				                  <!-- <td valign="top" align="left" class="input_txt"><input type="radio" name="babinskipositive" value="Positive" class="input_txt" checked="true" >Positive&nbsp;&nbsp;&nbsp;<input type="radio" name="babinskinegative" value="Negative" class="input_txt" >Negative&nbsp;&nbsp;&nbsp;</td>
+				                  <td valign="top" align="left" class="input_txt"><input type="radio" name="babinskiright" value="Positive" class="input_txt" checked="true" >Positive&nbsp;&nbsp;&nbsp;<input type="radio" name="babinskileft" value="Negative" class="input_txt" >Negative&nbsp;&nbsp;&nbsp;</td> -->
 				                  </tr>
 				                  
-				                  </table>
+				                 <!--  </table>
+				                   <table border="0">
+				                     <tr class="row1">
+				               
+				                   		<td><span class="err">*</span>If present, perform eye exam & auscultate carotid arteries</td>
+				                   		<td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="performeye" /></td>
+
+				                   		
+				                  </tr>
+				                   </table> -->
 				                  <table align="right">
 				                  <tr>
 				                   <td><input type="submit" class="submit_btn" value="Save"></td>
@@ -1463,14 +1565,17 @@ $(function(){
         	<div class="headings altheading">
 	              <h2 align="center"> Physical exam<br></b></h2>
 	       </div></div> 
-	       <div class="contentbox">
+	       
+	        <div class="contentbox">
 	        <table cellpadding="0" cellspacing="0" border="0" width="100%">
   				<tr>
     				<td align="left" valign="top" width="50%" style="padding-right:25px;">
+    					<!-- <h2 class="quck-txt">Patient Details</h2> -->
+    					<c:set value="${physicalexamForm.physicalexam[0]}" var="physicalexam"/>
                         <table cellpadding="0" cellspacing="0" border="0" width="100%">
 	                            <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Physician Signature :</td>
-				                  <input type="hidden" class="input_txtbx1" id="inp_id" value="${physical.physical_id}" name="physical_id" />
+				                  <input type="hidden" class="input_txtbx1" id="inp_id" value="${physicalexam.physical_id}" name="physical_id" />
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="sign" value="${physical.sign}" /><span class="err"><form:errors path="Physicalexam.sign"></form:errors></span>
 				                  </td>
@@ -1949,11 +2054,10 @@ $(function(){
 				                 <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Visceral Pathologies:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="path" value="Normal" class="input_txt"  <c:if test="${physical.path=='Normal'}"><c:out value="checked=checked"/></c:if>>Normal&nbsp;&nbsp;&nbsp;
-				                  	<input type="radio" name="path" value="Abnormal" class="input_txt"  <c:if test="${physical.path=='Abnormal'}"><c:out value="checked=checked"/></c:if>>Abnormal&nbsp;&nbsp;&nbsp;<span class="err"><form:errors path="Physicalexam.path"></form:errors></span></td>
-				                 <td valign="top" align="left" class="input_txt">
-				                  	<span class="err"><form:errors path="Physicalexam.path1"></form:errors></span>
-				                  </td>
+				                  <input type="text" class="input_txt"  name="path" value="${physical.path}"/>
+				                  	
+				                  	<span class="err"><form:errors path="Physicalexam.path"></form:errors></span></td>
+				                 
 				                </tr>
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Posture:</td>
@@ -1976,7 +2080,7 @@ $(function(){
 				               <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Abnormal Findings:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="abnormal" value=${physical.abnormal } /><span class="err"><form:errors path="Physicalexam.abnormal"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="abnormal" value="${physical.abnormal}" /><span class="err"><form:errors path="Physicalexam.abnormal"></form:errors></span>
 				                  </td>
 				                </tr>
 				               
@@ -2078,17 +2182,49 @@ $(function(){
 				                  
 				                  </tr>
 				                  <tr class="row1">
-				                  <td>Trapezius/SCM:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="trapeziusrl" value="R-L" <c:if test="${physical.trapeziusrl=='R-L'}"><c:out value="checked=checked"/></c:if>>R-L</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="trapeziustono" value="Tonocity" <c:if test="${physical.trapeziustono=='Tonocity'}"><c:out value="checked=checked"/></c:if>>Tonicity</td>
-				                  <td class="input_txt" align="left"> <input type="checkbox" name="trapeziusnormal" value="Normal" <c:if test="${physical.trapeziusnormal=='Normal'}"><c:out value="checked=checked"/></c:if>>Normal</td>
+				                  <td>Trapezius</td>
+				                  
+				                  <td valign="top" align="left" class="input_txt">
+				                  <select name="trapeziusrl" class="input_cmbbx1">
+				                  <option value="Right" <c:if test="${physical.trapeziusrl=='Right'}"><c:out value="selected"/></c:if>>Right</option>
+				                  		<option value="Tonicity" <c:if test="${physical.trapeziusrl=='Tonicity'}"><c:out value="selected"/></c:if>>Tonicity</option>
+				                  		<option value="Normal" <c:if test="${physical.trapeziusrl=='Normal'}"><c:out value="selected"/></c:if>>Normal</option>
+				                  		
+				                  		
+				                   		</select>
+				                  </td>
+				                 <td valign="top" align="left" class="input_txt">
+				                  <select name="trapeziusrl1" class="input_cmbbx1">
+				                  <option value="Left" <c:if test="${physical.trapeziusrl1=='Left'}"><c:out value="selected"/></c:if>>Left</option>
+				                  		<option value="Tonicity" <c:if test="${physical.trapeziusrl1=='Tonicity'}"><c:out value="selected"/></c:if>>Tonicity</option>
+				                  		<option value="Normal" <c:if test="${physical.trapeziusrl1=='Normal'}"><c:out value="selected"/></c:if>>Normal</option>
+				                  		
+				                  		
+				                   		</select>
+				                  </td>
 				                  </tr>
 				                  
 				                  <tr class="row1">
 				                  <td>SCM:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="scm" value="R-L" <c:if test="${physical.trapeziusrl=='R-L'}"><c:out value="checked=checked"/></c:if>>R-L</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="scmtono" value="Tonocity" <c:if test="${physical.trapeziustono=='Tonocity'}"><c:out value="checked=checked"/></c:if>>Tonicity</td>
-				                  <td class="input_txt" align="left"> <input type="checkbox" name="scmnormal" value="Normal" <c:if test="${physical.trapeziusnormal=='Normal'}"><c:out value="checked=checked"/></c:if>>Normal</td>
+				                   <td valign="top" align="left" class="input_txt">
+				                  <select name="scm" class="input_cmbbx1">
+				                  <option value="Right" <c:if test="${physical.scm=='Right'}"><c:out value="selected"/></c:if>>Right</option>
+				                  		<option value="Tonicity" <c:if test="${physical.scm=='Tonicity'}"><c:out value="selected"/></c:if>>Tonicity</option>
+				                  		<option value="Normal" <c:if test="${physical.scm=='Normal'}"><c:out value="selected"/></c:if>>Normal</option>
+				                  		
+				                  		
+				                   		</select>
+				                  </td>
+				                 <td valign="top" align="left" class="input_txt">
+				                  <select name="scm1" class="input_cmbbx1">
+				                  <option value="Left" <c:if test="${physical.scm1=='Left'}"><c:out value="selected"/></c:if>>Left</option>
+				                  		<option value="Tonicity" <c:if test="${physical.scm1=='Tonicity'}"><c:out value="selected"/></c:if>>Tonicity</option>
+				                  		<option value="Normal" <c:if test="${physical.scm1=='Normal'}"><c:out value="selected"/></c:if>>Normal</option>
+				                  		
+				                  		
+				                   		</select>
+				                  </td>
+				                 
 				                  </tr>
 				                  <tr class="row1">
 				                  <td>Vertebrae:</td>
@@ -2171,37 +2307,38 @@ $(function(){
 				                  </tr>
 				                <tr class="row1">
 				                   <td>C-5:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="c5" value="${physical.c5 }"/></td>
+				                   <td class="input_txt" align="left"> <input type="checkbox" name="c5"  <c:if test="${physical.c5==''}"><c:out value="checked=checked"/></c:if>></td>
+				                  
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="c5right" value="Right" <c:if test="${physical.c5right=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="c5left" value="Left" <c:if test="${physical.c5left=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
 				                  </tr>
 				                <tr class="row1">
 				                   <td>C-6:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="c6" value="${physical.c6 }"/></td>
+				                   <td class="input_txt" align="left"> <input type="checkbox" name="c6"  <c:if test="${physical.c6==''}"><c:out value="checked=checked"/></c:if>></td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="c6right" value="Right" <c:if test="${physical.c6right=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="c6left" value="Left" <c:if test="${physical.c6left=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
 				                  </tr>
 				                  <tr class="row1">
 				                   <td>C-7:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="c7" value="${physical.c7 }"/></td>
+				                   <td class="input_txt" align="left"> <input type="checkbox" name="c7"  <c:if test="${physical.c7==''}"><c:out value="checked=checked"/></c:if>></td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="c7right" value="Right" <c:if test="${physical.c7right=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="c7left" value="Left" <c:if test="${physical.c7left=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
 				                  </tr>
 				                  <tr class="row1">
 				                   <td>C-8:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="c8" value="${physical.c8 }"/></td>
+				                  <td class="input_txt" align="left"> <input type="checkbox" name="c8"  <c:if test="${physical.c8==''}"><c:out value="checked=checked"/></c:if>></td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="c8right" value="Right" <c:if test="${physical.c8right=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="c8left" value="Left" <c:if test="${physical.c8left=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
 				                  </tr>
 				                  <tr class="row1">
 				                   <td>T-1:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="t1" value="${physical.t1 }"/></td>
+				                   <td class="input_txt" align="left"> <input type="checkbox" name="t1"  <c:if test="${physical.t1==''}"><c:out value="checked=checked"/></c:if>></td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="t1right" value="Right"<c:if test="${physical.t1right=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="t1left" value="Left"<c:if test="${physical.t1left=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
 				                  </tr>
 				                  <tr class="row1">
 				                   <td>Other:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="other" value="${physical.other }"/></td>
+				                   <td class="input_txt" align="left"> <input type="checkbox" name="other"  <c:if test="${physical.other==''}"><c:out value="checked=checked"/></c:if>></td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="otherright" value="Right" <c:if test="${physical.otherright=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="otherleft" value="Left" <c:if test="${physical.otherleft=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
 				                  </tr>
@@ -2318,7 +2455,7 @@ $(function(){
 				                   		</select></td>
 				                   		
 				                  </tr>
-				                  <tr class="row1">
+				                  <%-- <tr class="row1">
 				                 <td>(Wrist Ext.) C-6	</td>
 				                 <td><select name="wristextright">
 						                   <option value="0" <c:if test="${physical.wristextright=='0'}"><c:out value="selected"/></c:if>>0</option>
@@ -2337,7 +2474,7 @@ $(function(){
 						                <option value="5" <c:if test="${physical.wristextleft=='5'}"><c:out value="selected"/></c:if>>5</option>
 				                   		</select></td>
 				                   		
-				                  </tr>
+				                  </tr> --%>
 				                 </table>
 				                  <table border="0">
 				               <tr class="row1">
@@ -2419,9 +2556,10 @@ $(function(){
 				               <td><b>Visual Disturbance:</b></td>
 				               <td>Present:</td>
 				               <td><select name="presentvisual">
-						                    <option value="R" <c:if test="${physical.tricepleft=='R'}"><c:out value="selected"/></c:if>>R</option>
-				                  		<option value="L" <c:if test="${physical.tricepleft=='L'}"><c:out value="selected"/></c:if>>L</option>
-				                  		
+						                    <option value="R" <c:if test="${physical.presentvisual=='R'}">
+<c:out value="selected"/></c:if>>R</option>
+     <option value="L" <c:if test="${physical.presentvisual=='L'}">
+<c:out value="selected"/></c:if>>L</option>
 						                
 											
 				                   		</select></td>
@@ -2604,25 +2742,27 @@ $(function(){
 				                  </tr>
 				                <tr class="row1">
 				                   <td>T-1:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="thot1" value="${physical.thot1 }"/></td>
+				                  
+				                  <td class="input_txt" align="left"> <input type="checkbox" name="thot1"<c:if test="${physical.thot1==''}"><c:out value="checked=checked"/></c:if>></td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot1right" value="Right"<c:if test="${physical.thot1right=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot1left" value="Left"<c:if test="${physical.thot1left=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
 				                  </tr>
 				                <tr class="row1">
 				                   <td>T-4:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="thot4" value="${physical.thot4 }"/></td>
+				                   <td class="input_txt" align="left"> <input type="checkbox" name="thot4"<c:if test="${physical.thot4==''}"><c:out value="checked=checked"/></c:if>></td>
+				                  
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot4right" value="Right"<c:if test="${physical.thot4right=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot4left" value="Left"<c:if test="${physical.thot4left=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
 				                  </tr>
 				                  <tr class="row1">
 				                   <td>T-10:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="thot10" value="${physical.thot10 }"/></td>
+				                  <td class="input_txt" align="left"> <input type="checkbox" name="thot10"<c:if test="${physical.thot10==''}"><c:out value="checked=checked"/></c:if>></td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot10right" value="Right"<c:if test="${physical.thot10right=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="thot10left" value="Left"<c:if test="${physical.thot10left=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
 				                  </tr>
 				                  <tr class="row1">
 				                   <td>Other:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="thoother" value="${physical.thoother }"/></td>
+				                  <td class="input_txt" align="left"> <input type="checkbox" name="thoother"<c:if test="${physical.thoother==''}"><c:out value="checked=checked"/></c:if>></td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="thootherright" value="Right" <c:if test="${physical.thootherright=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="thootherleft" value="Left" <c:if test="${physical.thootherleft=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
 				                  </tr>
@@ -2634,19 +2774,30 @@ $(function(){
 				                  </tr>
 				                  <tr class="row1">
 				                   <td valign="top" align="left" class="input_txt">
-				                  	
-				                  	<input type="radio" name="myotomes" value="Positive Beevors" class="input_txt"  onclick="toggle('show3')" <c:if test="${physical.myotomes=='Positive Beevors'}"><c:out value="checked=checked"/></c:if>>Positive Beevor's&nbsp;&nbsp;&nbsp;
-				                  	<input type="radio" name="myotomes" value="Negative Beevors" class="input_txt"  onclick="toggle('hide3')" <c:if test="${physical.myotomes=='Negative Beevors'}"><c:out value="checked=checked"/></c:if>>Negative Beevor's&nbsp;&nbsp;&nbsp;</td>
-				                  </tr>
-				                  </table>
-				                  <div id="positive">
-				                   <table border="0">
-				                   <tr class="row1">
+				                  	<tr class="row1">
+				                   <td valign="top" align="left" class="input_txt">
+				                  	<input type="radio" name="myotomes" value="Positive Beevors" class="input_txt"  onclick="toggle3('show3')"<c:if test="${physical.myotomes=='Positive Beevors'}"><c:out value="checked=checked"/></c:if>>Positive Beevor's</td>
 				                    <td><input type="checkbox" name="positiveruq" value="RUQ" <c:if test="${physical.positiveruq=='RUQ'}"><c:out value="checked=checked"/></c:if>>RUQ</td>
 				                    <td><input type="checkbox" name="positiveluq" value="LUQ" <c:if test="${physical.positiveluq=='LUQ'}"><c:out value="checked=checked"/></c:if>>LUQ</td>
 				                    <td><input type="checkbox" name="positiverlq" value="RLQ" <c:if test="${physical.positiverlq=='RLQ'}"><c:out value="checked=checked"/></c:if>>RLQ</td>
 				                    <td><input type="checkbox" name="positivellq" value="LLQ" <c:if test="${physical.positivellq=='LLQ'}"><c:out value="checked=checked"/></c:if>>LLQ</td>
-				                   </tr>
+				                  </tr>
+				                  <tr class="row1">
+				                   <td valign="top" align="left" class="input_txt">
+				                   <input type="radio" name="myotomes1" value="Negative Beevors" class="input_txt"  onclick="toggle3('hide3')">Negative Beevor's</td>
+				                    
+				                    <td><input type="checkbox" name="negativeruq" value="RUQ" <c:if test="${physical.negativeruq=='RUQ'}"><c:out value="checked=checked"/></c:if>>RUQ</td>
+				                    <td><input type="checkbox" name="negativeluq" value="LUQ" <c:if test="${physical.negativeluq=='LUQ'}"><c:out value="checked=checked"/></c:if>>LUQ</td>
+				                    <td><input type="checkbox" name="negativerlq" value="RLQ" <c:if test="${physical.negativerlq=='RLQ'}"><c:out value="checked=checked"/></c:if>>RLQ</td>
+				                    <td><input type="checkbox" name="negativellq" value="LLQ" <c:if test="${physical.negativellq=='LLQ'}"><c:out value="checked=checked"/></c:if>>LLQ</td>
+				                 </tr>
+				                  
+				                  	
+				                 
+				                  </table>
+				                  
+				                   <table border="0">
+				                   
 				                   <tr class="row1">
 				               
 				                   		<td>*If present is a smoker and has difficulty breathing, perform cardio-respiratory exam</td>
@@ -2656,7 +2807,7 @@ $(function(){
 				                  </tr>
 				                   
 				                   </table>
-				                 </div>
+				                
 				                 </td>
 				                 </tr>
 				                 </table>
@@ -2732,15 +2883,48 @@ $(function(){
 				                  </tr> 
 				                   <tr class="row1">
 				                  <td>Quadratus Lumborum:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="quadrl" value="R-L"<c:if test="${physical.quadrl=='R-L'}"><c:out value="checked=checked"/></c:if>>R-L</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="quadtono" value="Tonicity"<c:if test="${physical.quadtono=='Tonocity'}"><c:out value="checked=checked"/></c:if>>Tonicity</td>
-				                  <td class="input_txt" align="left"> <input type="checkbox" name="quadnor" value="Normal"<c:if test="${physical.quadnor=='Normal'}"><c:out value="checked=checked"/></c:if>>Normal</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  <select name="quadrl" class="input_cmbbx1">
+				                  <option value="Right" <c:if test="${physical.quadrl=='Right'}"><c:out value="selected"/></c:if>>Right</option>
+				                  		<option value="Tonicity" <c:if test="${physical.quadrl=='Tonicity'}"><c:out value="selected"/></c:if>>Tonicity</option>
+				                  		<option value="Normal" <c:if test="${physical.quadrl=='Normal'}"><c:out value="selected"/></c:if>>Normal</option>
+				                  		
+				                  		
+				                   		</select>
+				                  </td>
+				                 <td valign="top" align="left" class="input_txt">
+				                  <select name="quadrl1" class="input_cmbbx1">
+				                  <option value="Left" <c:if test="${physical.quadrl1=='Left'}"><c:out value="selected"/></c:if>>Left</option>
+				                  		<option value="Tonicity" <c:if test="${physical.quadrl1=='Tonicity'}"><c:out value="selected"/></c:if>>Tonicity</option>
+				                  		<option value="Normal" <c:if test="${physical.quadrl1=='Normal'}"><c:out value="selected"/></c:if>>Normal</option>
+				                  		
+				                  		
+				                   		</select>
+				                  </td>
 				                  </tr>
+				                  
+				                  
+				                 
 				                  <tr class="row1">
 				                  <td>Hamstring:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="hamstringrl" value="R-L"<c:if test="${physical.hamstringrl=='R-L'}"><c:out value="checked=checked"/></c:if>>R-L</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="hamstringtono" value="Tonicity"<c:if test="${physical.hamstringtono=='Tonocity'}"><c:out value="checked=checked"/></c:if>>Tonicity</td>
-				                  <td class="input_txt" align="left"> <input type="checkbox" name="hamstringnor" value="Normal"<c:if test="${physical.hamstringnor=='Normal'}"><c:out value="checked=checked"/></c:if>>Normal</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  <select name="hamstringrl" class="input_cmbbx1">
+				                  <option value="Right" <c:if test="${physical.hamstringrl=='Right'}"><c:out value="selected"/></c:if>>Right</option>
+				                  		<option value="Tonicity" <c:if test="${physical.hamstringrl=='Tonicity'}"><c:out value="selected"/></c:if>>Tonicity</option>
+				                  		<option value="Normal" <c:if test="${physical.hamstringrl=='Normal'}"><c:out value="selected"/></c:if>>Normal</option>
+				                  		
+				                  		
+				                   		</select>
+				                  </td>
+				                 <td valign="top" align="left" class="input_txt">
+				                  <select name="hamstringrl1" class="input_cmbbx1">
+				                  <option value="Left" <c:if test="${physical.hamstringrl1=='Left'}"><c:out value="selected"/></c:if>>Left</option>
+				                  		<option value="Tonicity" <c:if test="${physical.hamstringrl1=='Tonicity'}"><c:out value="selected"/></c:if>>Tonicity</option>
+				                  		<option value="Normal" <c:if test="${physical.hamstringrl1=='Normal'}"><c:out value="selected"/></c:if>>Normal</option>
+				                  		
+				                  		
+				                   		</select>
+				                  </td>
 				                  </tr>
 				                  <tr class="row1">
 				                  <td>Vertebrae:</td>
@@ -2825,49 +3009,49 @@ $(function(){
 				                  </tr>
 				                <tr class="row1">
 				                   <td>L-1:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="lu1" value="${physical.lu1}"/></td>
+				                  <td class="input_txt" align="left"><input type="checkbox" name="lu1" <c:if test="${physical.lu1==''}"><c:out value="checked=checked"/></c:if>></td>
 				                  <td class="input_txt" align="left"><input type="checkbox" name="lu1right" value="Right" <c:if test="${physical.lu1right=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
 				                  <td class="input_txt" align="left"><input type="checkbox" name="lu1left" value="Left" <c:if test="${physical.lu1left=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
 				                 
 				                  </tr>
 				                   <tr class="row1">
 				                   <td>L-2:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="lu2" value="${physical.lu2}" /></td>
+				                 <td class="input_txt" align="left"><input type="checkbox" name="lu2" <c:if test="${physical.lu2==''}"><c:out value="checked=checked"/></c:if>></td>
 				                  <td class="input_txt" align="left"><input type="checkbox" name="lu2right" value="Right" <c:if test="${physical.lu2right=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
 				                  <td class="input_txt" align="left"><input type="checkbox" name="lu2left" value="Left" <c:if test="${physical.lu2left=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
 				                 
 				                  </tr>
 				                   <tr class="row1">
 				                   <td>L-3:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="lu3" value="${physical.lu3}"/></td>
+				                  <td class="input_txt" align="left"><input type="checkbox" name="lu3" <c:if test="${physical.lu3==''}"><c:out value="checked=checked"/></c:if>></td>
 				                  <td class="input_txt" align="left"><input type="checkbox" name="lu3right" value="Right" <c:if test="${physical.lu3right=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
 				                  <td class="input_txt" align="left"><input type="checkbox" name="lu3left" value="Left" <c:if test="${physical.lu3left=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
 				                 
 				                 </tr>
 				                   <tr class="row1">
 				                   <td>L-4:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="lu4" value="${physical.lu4}" /></td>
+				                 <td class="input_txt" align="left"><input type="checkbox" name="lu4" <c:if test="${physical.lu4==''}"><c:out value="checked=checked"/></c:if>></td>
 				                 <td class="input_txt" align="left"><input type="checkbox" name="lu4right" value="Right" <c:if test="${physical.lu4right=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
 				                  <td class="input_txt" align="left"><input type="checkbox" name="lu4left" value="Left" <c:if test="${physical.lu4left=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
 				                 
 				                  </tr>
 				                   <tr class="row1">
 				                   <td>L-5:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="lu5" value="${physical.lu5}"/></td>
+				                 <td class="input_txt" align="left"><input type="checkbox" name="lu5" <c:if test="${physical.lu5==''}"><c:out value="checked=checked"/></c:if>></td>
 				                  <td class="input_txt" align="left"><input type="checkbox" name="lu5right" value="Right" <c:if test="${physical.lu5right=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
 				                  <td class="input_txt" align="left"><input type="checkbox" name="lu5left" value="Left" <c:if test="${physical.lu5left=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
 				                 
 				                  </tr>
 				                 <tr class="row1">
 				                   <td>S-1:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="lu6" value="${physical.lu6}"/></td>
+				                  <td class="input_txt" align="left"><input type="checkbox" name="lu6" <c:if test="${physical.lu6==''}"><c:out value="checked=checked"/></c:if>></td>
 				                  <td class="input_txt" align="left"><input type="checkbox" name="lu6right" value="Right" <c:if test="${physical.lu6right=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
 				                  <td class="input_txt" align="left"><input type="checkbox" name="lu6left" value="Left" <c:if test="${physical.lu6left=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
 				                 
 				                  </tr>
 				                   <tr class="row1">
 				                   <td>S-2:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="lu7" value="${physical.lu7}" /></td>
+				                  <td class="input_txt" align="left"><input type="checkbox" name="lu7" <c:if test="${physical.lu7==''}"><c:out value="checked=checked"/></c:if>></td>
 				                  <td class="input_txt" align="left"><input type="checkbox" name="lu7right" value="Right" <c:if test="${physical.lu7right=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
 				                  <td class="input_txt" align="left"><input type="checkbox" name="lu7left" value="Left" <c:if test="${physical.lu7left=='Left'}"><c:out value="checked=checked"/></c:if>>Left</td>
 				                 
@@ -3053,12 +3237,14 @@ $(function(){
 				                  </table>
 				                  <table align="right">
 				                  <tr>
-				                   <td><input type="submit" class="submit_btn" value="save" ></td>
+				                    <td><input type="submit" class="submit_btn" value="Update" ></td>
 				                   <td>&nbsp;&nbsp;</td>
 				                    
 				                    <td><input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='viewphysicalexam'" ></td>
+				                 
 				                  </tr>
 				                  </table>
+				                 
 				                  </td>
 				                  </tr>
 				                  </table>
