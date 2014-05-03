@@ -38,9 +38,10 @@ else
         <td valign="top" align="left">
         	<div> 
         	<div class="headings altheading">
-	              <h2 align="center" >Editing Physical exam<br></b></h2>
+	              <h2 align="center"> Physical exam<br></b></h2>
 	       </div></div> 
-	      <div class="contentbox">
+	       
+	        <div class="contentbox">
 	        <table cellpadding="0" cellspacing="0" border="0" width="100%">
   				<tr>
     				<td align="left" valign="top" width="50%" style="padding-right:25px;">
@@ -657,19 +658,20 @@ else
 				                  </tr>
 				                  <tr class="row1">
 				                  <td>Trapezius</td>
-				                  
+				                  <td>Right>
 				                  <td valign="top" align="left" class="input_txt">
 				                  <select name="trapeziusrl" class="input_cmbbx1">
-				                  <option value="Right" <c:if test="${physical.trapeziusrl=='Right'}"><c:out value="selected"/></c:if>>Right</option>
+				                 <%--  <option value="Right" <c:if test="${physical.trapeziusrl=='Right'}"><c:out value="selected"/></c:if>>Right</option> --%>
 				                  		<option value="Tonicity" <c:if test="${physical.trapeziusrl=='Tonicity'}"><c:out value="selected"/></c:if>>Tonicity</option>
 				                  		<option value="Normal" <c:if test="${physical.trapeziusrl=='Normal'}"><c:out value="selected"/></c:if>>Normal</option>
 				                  		
 				                  		
 				                   		</select>
 				                  </td>
+				                  <td> Left</td>
 				                 <td valign="top" align="left" class="input_txt">
 				                  <select name="trapeziusrl1" class="input_cmbbx1">
-				                  <option value="Left" <c:if test="${physical.trapeziusrl1=='Left'}"><c:out value="selected"/></c:if>>Left</option>
+				                <%--   <option value="Left" <c:if test="${physical.trapeziusrl1=='Left'}"><c:out value="selected"/></c:if>>Left</option> --%>
 				                  		<option value="Tonicity" <c:if test="${physical.trapeziusrl1=='Tonicity'}"><c:out value="selected"/></c:if>>Tonicity</option>
 				                  		<option value="Normal" <c:if test="${physical.trapeziusrl1=='Normal'}"><c:out value="selected"/></c:if>>Normal</option>
 				                  		
@@ -680,18 +682,20 @@ else
 				                  
 				                  <tr class="row1">
 				                  <td>SCM:</td>
+				                  <td>Right</td>
 				                   <td valign="top" align="left" class="input_txt">
 				                  <select name="scm" class="input_cmbbx1">
-				                  <option value="Right" <c:if test="${physical.scm=='Right'}"><c:out value="selected"/></c:if>>Right</option>
+				                 <%--  <option value="Right" <c:if test="${physical.scm=='Right'}"><c:out value="selected"/></c:if>>Right</option> --%>
 				                  		<option value="Tonicity" <c:if test="${physical.scm=='Tonicity'}"><c:out value="selected"/></c:if>>Tonicity</option>
 				                  		<option value="Normal" <c:if test="${physical.scm=='Normal'}"><c:out value="selected"/></c:if>>Normal</option>
 				                  		
 				                  		
 				                   		</select>
 				                  </td>
+				                  <td>Left</td>
 				                 <td valign="top" align="left" class="input_txt">
 				                  <select name="scm1" class="input_cmbbx1">
-				                  <option value="Left" <c:if test="${physical.scm1=='Left'}"><c:out value="selected"/></c:if>>Left</option>
+				                 <%--  <option value="Left" <c:if test="${physical.scm1=='Left'}"><c:out value="selected"/></c:if>>Left</option> --%>
 				                  		<option value="Tonicity" <c:if test="${physical.scm1=='Tonicity'}"><c:out value="selected"/></c:if>>Tonicity</option>
 				                  		<option value="Normal" <c:if test="${physical.scm1=='Normal'}"><c:out value="selected"/></c:if>>Normal</option>
 				                  		
@@ -1357,18 +1361,20 @@ else
 				                  </tr> 
 				                   <tr class="row1">
 				                  <td>Quadratus Lumborum:</td>
+				                  <td>Right</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  <select name="quadrl" class="input_cmbbx1">
-				                  <option value="Right" <c:if test="${physical.quadrl=='Right'}"><c:out value="selected"/></c:if>>Right</option>
+				                 <%--  <option value="Right" <c:if test="${physical.quadrl=='Right'}"><c:out value="selected"/></c:if>>Right</option> --%>
 				                  		<option value="Tonicity" <c:if test="${physical.quadrl=='Tonicity'}"><c:out value="selected"/></c:if>>Tonicity</option>
 				                  		<option value="Normal" <c:if test="${physical.quadrl=='Normal'}"><c:out value="selected"/></c:if>>Normal</option>
 				                  		
 				                  		
 				                   		</select>
 				                  </td>
+				                  <td>Left</td>
 				                 <td valign="top" align="left" class="input_txt">
 				                  <select name="quadrl1" class="input_cmbbx1">
-				                  <option value="Left" <c:if test="${physical.quadrl1=='Left'}"><c:out value="selected"/></c:if>>Left</option>
+				                  <%-- <option value="Left" <c:if test="${physical.quadrl1=='Left'}"><c:out value="selected"/></c:if>>Left</option> --%>
 				                  		<option value="Tonicity" <c:if test="${physical.quadrl1=='Tonicity'}"><c:out value="selected"/></c:if>>Tonicity</option>
 				                  		<option value="Normal" <c:if test="${physical.quadrl1=='Normal'}"><c:out value="selected"/></c:if>>Normal</option>
 				                  		
@@ -1381,18 +1387,20 @@ else
 				                 
 				                  <tr class="row1">
 				                  <td>Hamstring:</td>
+				                  <td>Right</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  <select name="hamstringrl" class="input_cmbbx1">
-				                  <option value="Right" <c:if test="${physical.hamstringrl=='Right'}"><c:out value="selected"/></c:if>>Right</option>
+				                 <%--  <option value="Right" <c:if test="${physical.hamstringrl=='Right'}"><c:out value="selected"/></c:if>>Right</option> --%>
 				                  		<option value="Tonicity" <c:if test="${physical.hamstringrl=='Tonicity'}"><c:out value="selected"/></c:if>>Tonicity</option>
 				                  		<option value="Normal" <c:if test="${physical.hamstringrl=='Normal'}"><c:out value="selected"/></c:if>>Normal</option>
 				                  		
 				                  		
 				                   		</select>
 				                  </td>
+				                  <td>Left</td>
 				                 <td valign="top" align="left" class="input_txt">
 				                  <select name="hamstringrl1" class="input_cmbbx1">
-				                  <option value="Left" <c:if test="${physical.hamstringrl1=='Left'}"><c:out value="selected"/></c:if>>Left</option>
+				                 <%--  <option value="Left" <c:if test="${physical.hamstringrl1=='Left'}"><c:out value="selected"/></c:if>>Left</option> --%>
 				                  		<option value="Tonicity" <c:if test="${physical.hamstringrl1=='Tonicity'}"><c:out value="selected"/></c:if>>Tonicity</option>
 				                  		<option value="Normal" <c:if test="${physical.hamstringrl1=='Normal'}"><c:out value="selected"/></c:if>>Normal</option>
 				                  		
@@ -1733,7 +1741,6 @@ else
 				                  </form>
 				                  </body>
 				                  </html>
-				                  
 				                  					                  
 				                  
 				                  
