@@ -127,8 +127,8 @@ function doAjaxPost() {
 		    	  {
 		    	 var cal=response.indexOf("|");
 		    	 var calculate=cal+1;
-			     alert(response.indexOf("|"));
-			   alert(response.substring(0,cal));
+			    /*  alert(response.indexOf("|"));
+			   alert(response.substring(0,cal)); */
 			 //  document.getElementById("patientname").value=response.substring(0,cal);
 			   
 		    	 document.getElementById("user").value=response.substring(calculate,response.length);
