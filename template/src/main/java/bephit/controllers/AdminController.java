@@ -245,15 +245,6 @@ public class AdminController {
 	
 	
 	
-	@RequestMapping(value = "/viewnoticeassignment", method = RequestMethod.GET)
-	public String viewnoticeassignment(HttpSession session, ModelMap model) {
-		NoticeassignmentForm noticeassignmentform = new NoticeassignmentForm();
-		noticeassignmentform.setNoticeassignmentdetails(noticeassignmentDAO.getnoticeassignment());
-		model.addAttribute("noticeassignmentform", noticeassignmentform);
-		model.addAttribute("Success", "true");
-		//model.addAttribute("menu", "work");
-		return "viewnoticeassignment";
-	}
 	
 	
 	
@@ -333,17 +324,6 @@ public class AdminController {
 
 	}
 	
-	@RequestMapping(value = "/editnoticeassignment", method = RequestMethod.GET)
-	public String editnoticeassignment(@RequestParam("noticeid") String noticeid, HttpSession session,ModelMap model) {
-		//noticeassignmentDAO.setnoticeassignment(noticeassignmentdetails);
-		NoticeassignmentForm noticeassignmentform = new NoticeassignmentForm();
-		noticeassignmentform.setNoticeassignmentdetails(noticeassignmentDAO.getnoticeassignment(noticeid));
-		model.addAttribute("noticeassignmentform", noticeassignmentform);
-		model.addAttribute("Success", "true");
-		model.addAttribute("menu", "work");
-		return "editnoticeassignment";
-
-	}
 	
 	
 	
@@ -490,11 +470,7 @@ public class AdminController {
 	}
 	
 	
-	@RequestMapping(value = "/noticeassignment", method = RequestMethod.GET)
-	public String noticeassignment(HttpSession session, ModelMap model) {
-		session.removeAttribute("notice");
-			return "noticeassignment";
-	}
+	
 	
 	
 
@@ -577,34 +553,7 @@ public class AdminController {
 
 	
 
-	@RequestMapping(value = "/updatenoticeassignment", method = RequestMethod.POST)
-	public String update_noticeassignment(HttpServletRequest request,HttpSession session,@ModelAttribute("Noticeassignment")  @Valid Noticeassignment noticeassignmentdetails,BindingResult result,ModelMap model) {
-		//session.setAttribute("perrydetails",perrychiropracticdetails);
-		//model.addAttribute("menu","perry");
-		if(result.hasErrors())
-		{
-NoticeassignmentForm noticeassignmentform = new NoticeassignmentForm();
-			noticeassignmentform.setNoticeassignmentdetails(noticeassignmentDAO.getnoticeassignment());
-			model.addAttribute("noticeassignmentform", noticeassignmentform);
-			model.addAttribute("Success", "true");
-			model.addAttribute("menu", "work");
-			return "noticeassignment";
 
-		}
-
-			
-		//System.out.println(perrychiropracticdetails.getAddress()+""+perrychiropracticdetails.getAddress1());
-		noticeassignmentDAO.updatenoticeassignment(noticeassignmentdetails,noticeassignmentdetails.getNoticeid());
-		NoticeassignmentForm noticeassignmentform = new NoticeassignmentForm();
-		noticeassignmentform.setNoticeassignmentdetails(noticeassignmentDAO.getnoticeassignment());
-		model.addAttribute("noticeassignmentform", noticeassignmentform);
-		model.addAttribute("success","true");
-		
-		return "viewnoticeassignment";
-
-	}
-
-	
 	
 	
 	
@@ -1209,7 +1158,7 @@ public String editworkschooldetails(@RequestParam("username")String username, Ht
 		model.addAttribute("noticeassignmentform", noticeassignmentform);
 		model.addAttribute("Success", "true");
 		model.addAttribute("menu", "work");
-		return "viewnoticeassignment";
+		return "noticeassignment";
 	}
 
 

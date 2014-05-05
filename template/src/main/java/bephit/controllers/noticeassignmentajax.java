@@ -156,7 +156,18 @@ public class noticeassignmentajax {
 				return returnText;
 				
 	}
-	@RequestMapping(value = "/editnoticeassignmentdetails", method = RequestMethod.GET)
+	
+	
+	@RequestMapping(value = "/viewnoticeassignment", method = RequestMethod.GET)
+	public String viewnoticeassignment(HttpSession session, ModelMap model) {
+		NoticeassignmentForm noticeassignmentform = new NoticeassignmentForm();
+		noticeassignmentform.setNoticeassignmentdetails(noticeassignmentDAO.getnoticeassignment());
+		model.addAttribute("noticeassignmentform", noticeassignmentform);
+		model.addAttribute("Success", "true");
+		//model.addAttribute("menu", "work");
+		return "viewnoticeassignment";
+	}
+	@RequestMapping(value = "/editnoticeassignment", method = RequestMethod.GET)
 	public String editnoticeassignment(@RequestParam("username") String username, HttpSession session,ModelMap model) {
 		//noticeassignmentDAO.setnoticeassignment(noticeassignmentdetails);
 		NoticeassignmentForm noticeassignmentform = new NoticeassignmentForm();
@@ -168,26 +179,6 @@ public class noticeassignmentajax {
 
 	}
 	
-	/*@RequestMapping(value = "/viewnoticeassignment", method = RequestMethod.GET)
-	public String viewnoticeassignment(HttpSession session, ModelMap model) {
-		NoticeassignmentForm noticeassignmentform = new NoticeassignmentForm();
-		noticeassignmentform.setNoticeassignmentdetails(noticeassignmentDAO.getnoticeassignment());
-		model.addAttribute("noticeassignmentform", noticeassignmentform);
-		model.addAttribute("Success", "true");
-		//model.addAttribute("menu", "work");
-		return "viewnoticeassignment";
-	}
-	@RequestMapping(value = "/editnoticeassignmentdetails", method = RequestMethod.GET)
-	public String editnoticeassignment(@RequestParam("username") String username, HttpSession session,ModelMap model) {
-		//noticeassignmentDAO.setnoticeassignment(noticeassignmentdetails);
-		NoticeassignmentForm noticeassignmentform = new NoticeassignmentForm();
-		noticeassignmentform.setNoticeassignmentdetails(noticeassignmentDAO.getnoticeassignment(username));
-		model.addAttribute("noticeassignmentform", noticeassignmentform);
-		model.addAttribute("Success", "true");
-		model.addAttribute("menu", "work");
-		return "editnoticeassignment";
-
-	}
 	@RequestMapping(value = "/noticeassignment", method = RequestMethod.GET)
 	public String noticeassignment(HttpSession session, ModelMap model) {
 		session.removeAttribute("notice");
@@ -216,9 +207,9 @@ NoticeassignmentForm noticeassignmentform = new NoticeassignmentForm();
 		model.addAttribute("noticeassignmentform", noticeassignmentform);
 		model.addAttribute("success","true");
 		
-		return "viewnoticeassignment";
+		return "noticeassignment";
 
-	}*/
+	}
 	
 
 

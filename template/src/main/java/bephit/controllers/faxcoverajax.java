@@ -215,14 +215,14 @@ public class faxcoverajax {
 
 	}
 	@RequestMapping(value="/deletefaxcover", method = RequestMethod.GET)
-	public String deletefaxcover(@RequestParam("username")String username, HttpSession session,ModelMap model) {
+	public String deletefaxcover(@RequestParam("faxid")String faxid, HttpSession session,ModelMap model) {
 		model.addAttribute("menu","fax");
 		model.addAttribute("success","true");
-	faxcoverDAO.deletefaxcover(username);
+	faxcoverDAO.deletefaxcover(faxid);
 	FaxcoverForm faxcoverform=new FaxcoverForm();
 	faxcoverform.setFaxcoverdetails(faxcoverDAO.getfaxcover());
 	model.addAttribute("faxcoverform",faxcoverform);
-	return "viewfaxcover";
+	return "faxcover";
 		
 	}
 

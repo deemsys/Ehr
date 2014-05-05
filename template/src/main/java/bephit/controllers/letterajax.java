@@ -169,14 +169,14 @@ public class letterajax {
 		return "editlettertopatients";
 	}
 	@RequestMapping(value="/deletelettertopatients", method = RequestMethod.GET)
-	public String deletelettertopatients(@RequestParam("username")String username, HttpSession session,ModelMap model) {		
+	public String deletelettertopatients(@RequestParam("letterid")String letterid, HttpSession session,ModelMap model) {		
 		model.addAttribute("success","true");
 		model.addAttribute("menu","fax");
-		lettertopatientsDAO.deletelettertopatients(username);
+		lettertopatientsDAO.deletelettertopatients(letterid);
 		LettertopatientsForm lettertopatientsform=new LettertopatientsForm();
 		lettertopatientsform.setLettertopatientsdetails(lettertopatientsDAO.getlettertopatients());
 		model.addAttribute("lettertopatientsform",lettertopatientsform);	
-		return "viewlettertopatients";	
+		return "lettertopatients";	
 	}
 	
 	@RequestMapping(value = "/updatelettertopatients", method = RequestMethod.POST)

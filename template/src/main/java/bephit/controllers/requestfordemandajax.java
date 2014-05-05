@@ -162,8 +162,8 @@ public class requestfordemandajax {
 	}
 	
 	@RequestMapping(value="/deleterequestfordemand", method = RequestMethod.GET)
-	public String deleterequestfordemand(@RequestParam("username")String username, HttpSession session,ModelMap model) {		
-		requestfordemandDAO.deleterequestfordemand(username);		
+	public String deleterequestfordemand(@RequestParam("requestid")String requestid, HttpSession session,ModelMap model) {		
+		requestfordemandDAO.deleterequestfordemand(requestid);		
 		RequestfordemandForm requestfordemandform=new RequestfordemandForm();
 		requestfordemandform.setRequestfordemanddetails(requestfordemandDAO.getrequestfordemand());
 		model.addAttribute("requestfordemandform",requestfordemandform);		
