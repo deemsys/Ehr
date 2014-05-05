@@ -24,6 +24,47 @@
 	  });  
 	  
  </script>
+ <script>
+
+	function checkSubmit()
+	{
+		document.getElementById("toattorney1error").innerHTML=" ";
+		
+		if(document.getElementById("toattorney1").value=="")
+		{
+		document.getElementById("toattorney1error").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		document.getElementById("toattorney2error").innerHTML="";
+	if(document.getElementById("toattorney2").value=="")
+		{
+		document.getElementById("toattorney2error").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+	
+	document.getElementById("toattorney3error").innerHTML="";
+	if(document.getElementById("toattorney3").value=="")
+	{
+	document.getElementById("toattorney3error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	
+	document.getElementById("datepicker2error").innerHTML="";
+	if(document.getElementById("datepicker2").value=="")
+	{
+	document.getElementById("datepicker2error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	
+	}
+
+	</script>
 </head>
  <body>
  <style type="text/css">
@@ -228,7 +269,7 @@ function doAjaxPost() {
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td width="50%"><span class="err">*</span>To Attorney:</td>
-              <td width="50%"><input type="text" class="input_txtbx1" name="toattorney1" id="toattorney1" /><span class="err"><form:errors path="Updateletter.toattorney1"></form:errors></td>
+              <td width="50%"><input type="text" class="input_txtbx1" name="toattorney1" id="toattorney1" /><span class="err" id="toattorney1error"><form:errors path="Updateletter.toattorney1"></form:errors></td>
               </tr>
               </table>
               <br>
@@ -236,14 +277,14 @@ function doAjaxPost() {
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td width="50%"><span class="err"></span></td>
-              <td  width="50%"><input type="text" class="input_txtbx1" name="toattorney2" id="toattorney2" /><span class="err"><form:errors path="Updateletter.toattorney2"></form:errors></td>
+              <td  width="50%"><input type="text" class="input_txtbx1" name="toattorney2" id="toattorney2" /><span class="err" id="toattorney2error"><form:errors path="Updateletter.toattorney2"></form:errors></td>
               </tr>
               </table>
               <br>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td width="50%"><span class="err"></span></td>
-              <td width="50%"><input type="text" class="input_txtbx1" name="toattorney3" id="toattorney3" /><span class="err"><form:errors path="Updateletter.toattorney3"></form:errors></td>
+              <td width="50%"><input type="text" class="input_txtbx1" name="toattorney3" id="toattorney3" /><span class="err" id="toattorney3error"><form:errors path="Updateletter.toattorney3"></form:errors></td>
               </tr>
               </table>
               <br>
@@ -271,7 +312,7 @@ In Regards to :
               <tr>
               <td width="50%"><span class="err">*</span>Todays date:    
               </td>
-              <td width="50%"><input type="text" class="input_txtbx1" id="datepicker2" name="todaydate"/><span class="err"><form:errors path="Updateletter.todaydate"></form:errors></span></td>
+              <td width="50%"><input type="text" class="input_txtbx1" id="datepicker2" name="todaydate"/><span class="err" id="datepicker2error"><form:errors path="Updateletter.todaydate"></form:errors></span></td>
               </tr>
               </table>
               <br>
@@ -292,7 +333,7 @@ In Regards to :
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td width="50%"><span class="err">*</span>To Attorney:</td>
-              <td width="50%"><input type="hidden" name="updateid" value="${update.updateid }"><input type="text" class="input_txtbx1" name="toattorney1" id="toattorney1"  value="${update.toattorney1}" /><span class="err"><form:errors path="Updateletter.toattorney1"></form:errors></td>
+              <td width="50%"><input type="hidden" name="updateid" value="${update.updateid }"><input type="text" class="input_txtbx1" name="toattorney1" id="toattorney1"  value="${update.toattorney1}" /><span class="err" id="toattorney1error"><form:errors path="Updateletter.toattorney1"></form:errors></td>
               </tr>
               </table>
               <br>
@@ -300,14 +341,14 @@ In Regards to :
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td width="50%"><span class="err">*</span></td>
-              <td  width="50%"><input type="text" class="input_txtbx1" name="toattorney2" id="toattorney2"  value="${update.toattorney2}" /><span class="err"><form:errors path="Updateletter.toattorney2"></form:errors></td>
+              <td  width="50%"><input type="text" class="input_txtbx1" name="toattorney2" id="toattorney2"  value="${update.toattorney2}" /><span class="err" id="toattorney2error"><form:errors path="Updateletter.toattorney2"></form:errors></td>
               </tr>
               </table>
               <br>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td width="50%"><span class="err">*</span></td>
-              <td width="50%"><input type="text" class="input_txtbx1" name="toattorney3" id="toattorney3"  value="${update.toattorney3}" /><span class="err"><form:errors path="Updateletter.toattorney3"></form:errors></td>
+              <td width="50%"><input type="text" class="input_txtbx1" name="toattorney3" id="toattorney3"  value="${update.toattorney3}" /><span class="err" id="toattorney3error"><form:errors path="Updateletter.toattorney3"></form:errors></td>
               </tr>
               </table>
               <br>
@@ -335,7 +376,7 @@ In Regards to :
               <tr>
               <td width="50%"><span class="err">*</span>Todays date:    
               </td>
-              <td width="50%"><input type="text" class="input_txtbx1" name="todaydate" id="datepicker1" value="${update.todaydate}"/><span class="err"><form:errors path="Updateletter.todaydate"></form:errors></span></td>
+              <td width="50%"><input type="text" class="input_txtbx1" name="todaydate" id="datepicker2" value="${update.todaydate}"/><span class="err" id="datepicker2error"><form:errors path="Updateletter.todaydate"></form:errors></span></td>
               </tr>
               </table>
               <br>
@@ -355,7 +396,7 @@ In Regards to :
               <table>
               <tr>
               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-              <td><input type="submit" class="submit_btn" value="Save">
+              <td><input type="submit" class="submit_btn" value="Save" onclick="return checkSubmit('this');">
 				</td>
 				<td>&nbsp;&nbsp;</td>
               <td><a href="viewupdateletter" style="color:white" class="submit_btn">Cancel</a></td>

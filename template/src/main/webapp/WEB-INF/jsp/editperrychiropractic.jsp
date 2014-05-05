@@ -22,6 +22,47 @@
            $( "#datepicker1" ).datepicker();
          });
 </script>
+<script>
+
+	function checkSubmit()
+	{
+		document.getElementById("insuranceerror").innerHTML=" ";
+		
+		if(document.getElementById("insurance").value=="")
+		{
+		document.getElementById("insurancererror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		document.getElementById("regerror").innerHTML="";
+	if(document.getElementById("reg").value=="")
+		{
+		document.getElementById("regerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+	
+	document.getElementById("nameofpersonerror").innerHTML="";
+	if(document.getElementById("nameofperson").value=="")
+	{
+	document.getElementById("nameofpersonerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	
+	document.getElementById("subjecterror").innerHTML="";
+	if(document.getElementById("subject").value=="")
+	{
+	document.getElementById("subjecterror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	
+	}
+
+	</script>
 </head>
  <body>
 <div id="right_content">
@@ -110,7 +151,7 @@ Canton, Ohio 44708
               		<table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="50%"><span class="err">*</span>Name of Insurance Company:</td>
-              <td ><input type="hidden" name="perryid" value="${perrychiropracticdetails.perryid }"><input type="text" class="input_txtbx1" name="insurance"  value="${perrychiropracticdetails.insurance}" id="insurance" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td ><input type="hidden" name="perryid" value="${perrychiropracticdetails.perryid }"><input type="text" class="input_txtbx1" name="insurance"  value="${perrychiropracticdetails.insurance}" id="insurance" /><span class="err" id="insuranceerror"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -123,13 +164,13 @@ Canton, Ohio 44708
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="50%"><span class="err">*</span>Regarding:</td>
-              <td ><input type="text" class="input_txtbx1" name="reg"  value="${perrychiropracticdetails.reg}"  id="reg" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="reg"  value="${perrychiropracticdetails.reg}"  id="reg" /><span class="err" id="regerror"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="50%"><span class="err">*</span>Patient's Name/ Name of Person Entitled To Coverage: </td>
-              <td ><input type="text" class="input_txtbx1" name="nameofperson" value="${perrychiropracticdetails.nameofperson}"   id="nameofperson" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="nameofperson" value="${perrychiropracticdetails.nameofperson}"   id="nameofperson" /><span class="err" id="nameofpersonerror"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -153,7 +194,7 @@ Canton, Ohio 44708
      </p>
      <br>
      
-  <p><span class="err">*</span><input type="text" class="input_txtbx1" name="subject" value="${perrychiropracticdetails.subject}"   id="subject" />has sought medical treatment from this clinic.  This patient has been injured to an extent where the patient has determined that they cannot afford to pay for treatment on a fee for service basis.  We would definitely prefer to simply render the required treatment on a fee for service basis.  However, because fees for service presents a hardship to this patient, we have agreed to postpone payment for treatment pursuant to the attached medical proceeds assignment. </p>	
+  <p><span class="err" id="subjecterror">*</span><input type="text" class="input_txtbx1" name="subject" value="${perrychiropracticdetails.subject}"   id="subject" />has sought medical treatment from this clinic.  This patient has been injured to an extent where the patient has determined that they cannot afford to pay for treatment on a fee for service basis.  We would definitely prefer to simply render the required treatment on a fee for service basis.  However, because fees for service presents a hardship to this patient, we have agreed to postpone payment for treatment pursuant to the attached medical proceeds assignment. </p>	
  <br>
      
 
@@ -257,7 +298,7 @@ However, a different recent Ohio Supreme Court case confirms the validity of the
            
            
             
-            <table><tr> <td><input type="submit" class="submit_btn" value="update"></td>
+            <table><tr> <td><input type="submit" class="submit_btn" value="update" onclick="return checkSubmit('this');"></td>
              <td><a href="deleteperrychiropractic?perryid=${perrychiropracticdetails.perryid}" style="color:white" class="submit_btn" onclick="return confirmation()">Delete</a></td>
                <td><a href="viewallpatientdetails"style="color:white" class="submit_btn">Cancel</a></td>
               </tr></table>

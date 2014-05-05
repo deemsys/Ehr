@@ -20,6 +20,47 @@ $(function() {
     $( "#datepicker1" ).datepicker();
   });
 </script>
+ <script>
+
+	function checkSubmit()
+	{
+		document.getElementById("toattorney1error").innerHTML=" ";
+		
+		if(document.getElementById("toattorney1").value=="")
+		{
+		document.getElementById("toattorney1error").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		document.getElementById("toattorney2error").innerHTML="";
+	if(document.getElementById("toattorney2").value=="")
+		{
+		document.getElementById("toattorney2error").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+	
+	document.getElementById("toattorney3error").innerHTML="";
+	if(document.getElementById("toattorney3").value=="")
+	{
+	document.getElementById("toattorney3error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	
+	document.getElementById("datepicker2error").innerHTML="";
+	if(document.getElementById("datepicker2").value=="")
+	{
+	document.getElementById("datepicker2error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	
+	}
+
+	</script>
 </head>
  <body>
 <div id="right_content">
@@ -45,7 +86,7 @@ $(function() {
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td width="50%"><span class="err">*</span>To Attorney:</td>
-              <td width="50%"><input type="hidden" name="updateid" value="${updateletterdetails.updateid }"><input type="text" class="input_txtbx1" name="toattorney1" id="toattorney1"  value="${updateletterdetails.toattorney1}" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td width="50%"><input type="hidden" name="updateid" value="${updateletterdetails.updateid }"><input type="text" class="input_txtbx1" name="toattorney1" id="toattorney1"  value="${updateletterdetails.toattorney1}" /><span class="err" id="toattorney1error"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>
               <br>
@@ -53,14 +94,14 @@ $(function() {
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td width="50%"><span class="err"></span></td>
-              <td  width="50%"><input type="text" class="input_txtbx1" name="toattorney2" id="toattorney2"  value="${updateletterdetails.toattorney2}" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td  width="50%"><input type="text" class="input_txtbx1" name="toattorney2" id="toattorney2"  value="${updateletterdetails.toattorney2}" /><span class="err" id="toattorney2error"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>
               <br>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td width="50%"><span class="err"></span></td>
-              <td width="50%"><input type="text" class="input_txtbx1" name="toattorney3" id="toattorney3"  value="${updateletterdetails.toattorney2}" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td width="50%"><input type="text" class="input_txtbx1" name="toattorney3" id="toattorney3"  value="${updateletterdetails.toattorney2}" /><span class="err" id="toattorney3error"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>
               <br>
@@ -86,9 +127,9 @@ In Regards to :
               <br>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td width="50%"><span class="err">*</span>Todays date:    
+              <td width="50%"><span class="err" id="datepicker2error">*</span>Todays date:    
               </td>
-              <td width="50%"><input type="text" class="input_txtbx1" name="todaydate" id="datepicker1" value="${updateletterdetails.todaydate}"/></td>
+              <td width="50%"><input type="text" class="input_txtbx1" name="todaydate" id="datepicker2" value="${updateletterdetails.todaydate}"/></td>
               </tr>
               </table>
               <br>
@@ -106,7 +147,7 @@ In Regards to :
               <table>
               <tr>
               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-              <td><input type="submit" class="submit_btn" value="update">
+              <td><input type="submit" class="submit_btn" value="update" onclick="return checkSubmit('this');">
 				</td>
 				<td><a href="deleteupdateletter?updateid=${updateletterdetails.updateid }" style="color:white" class="submit_btn" onclick="return confirmation() ">Delete</a></td>
 				<td>&nbsp;&nbsp;</td>
