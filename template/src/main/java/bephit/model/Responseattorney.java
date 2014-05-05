@@ -5,7 +5,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Responseattorney
 {
 	private String responseid;
-	@NotEmpty
+	
 	private String username;
 	private String name;
 	private String address;

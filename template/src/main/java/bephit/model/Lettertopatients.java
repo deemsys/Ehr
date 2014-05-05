@@ -5,7 +5,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Lettertopatients
 {
 	private String letterid;
-	@NotEmpty
+	
 	private String username;
 	private String re;
 	@NotEmpty
