@@ -204,6 +204,54 @@ $(function() {
     $( "#tabs" ).tabs();
   });
   </script>
+   <script>
+
+	function checkSubmit()
+	{
+		document.getElementById("patienterror").innerHTML=" ";
+		
+		if(document.getElementById("patient").value=="")
+		{
+		document.getElementById("patienterror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		document.getElementById("datepickererror").innerHTML="";
+	if(document.getElementById("datepicker").value=="")
+		{
+		document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+	
+	document.getElementById("claimnumbererror").innerHTML="";
+	if(document.getElementById("claimnumber").value=="")
+	{
+	document.getElementById("claimnumbererror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	
+	document.getElementById("dearerror").innerHTML="";
+	if(document.getElementById("dear").value=="")
+	{
+	document.getElementById("dearerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("signerror").innerHTML="";
+	if(document.getElementById("sign").value=="")
+	{
+	document.getElementById("signerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	
+	}
+
+	</script>
 </head>
  
  <body>
@@ -230,7 +278,7 @@ $(function() {
           <table cellpadding="0" cellspacing="0" border="0" width="70%" align="center">
           <tr height="30">
           <td><span class="err">*</span>Patients Attorney or Insurance Adjuster: </td>
-          <td><input type="text" name="patient" size="40"><span class="err"><form:errors path="Copyofrequest.patient"></form:errors></span></td>
+          <td><input type="text" name="patient" size="40" id="patient"><span class="err" id="patienterror"><form:errors path="Copyofrequest.patient"></form:errors></span></td>
           </tr>   
           <tr height="30">
           <td><span class="err"></span>Address: </td>
@@ -242,11 +290,11 @@ $(function() {
           </tr>
           <tr height="30">
           <td><span class="err">*</span>Date of Accident: </td>
-          <td><input type="text" name="dateofaccident" id="datepicker" size="40"><span class="err"><form:errors path="Copyofrequest.dateofaccident"></form:errors></span></td>
+          <td><input type="text" name="dateofaccident" id="datepicker" size="40"><span class="err" id="datepickererror"><form:errors path="Copyofrequest.dateofaccident"></form:errors></span></td>
           </tr>
           <tr height="30">
           <td><span class="err">*</span>Claim Number: </td>
-          <td><input type="text" name="claimnumber"  size="40"><span class="err"><form:errors path="Copyofrequest.claimnumber"></form:errors></span></td>
+          <td><input type="text" name="claimnumber"  size="40" id="claimnumber"><span class="err" id="claimnumbererror"><form:errors path="Copyofrequest.claimnumber"></form:errors></span></td>
           </tr>
           <tr height="30">
           <td>Today's Date:  </td>
@@ -256,7 +304,7 @@ $(function() {
           <table width="85">
           <tr height="30">
           <td width="40">Dear  </td>
-          <td><span class="err">*</span><input type="text" name="dear"  size="40"><span class="err"><form:errors path="Copyofrequest.dear"></form:errors></span></td>
+          <td><span class="err">*</span><input type="text" name="dear"  size="40" id="dear"><span class="err" id="dearerror"><form:errors path="Copyofrequest.dear"></form:errors></span></td>
           </tr>
           </table>
           <br/>
@@ -277,13 +325,13 @@ $(function() {
           </div>
           <div align="right">
           <p><B style="font-size:13px">Very truly yours,</B></p>
-          <p><span class="err">*</span><input type="text" name="sign" size="30"><span class="err"><form:errors path="Copyofrequest.sign"></form:errors></span></p>
+          <p><span class="err">*</span><input type="text" name="sign" size="30" id="sign"><span class="err" id="signerror"><form:errors path="Copyofrequest.sign"></form:errors></span></p>
           <p>Perry Chiropractic and Therapy Center of Canton, Inc.</p>
           <p>Dr. Charles T. Yang DC, DABFP</p>
           </div>
  <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="Save"></td>
+<td><input type="submit" class="submit_btn" value="Save" onclick="return checkSubmit('this');"></td>
 <td><a href="viewallpatientdetails"style="color:white" class="submit_btn">Cancel</a></td>
 </tr>
 </table>
@@ -313,7 +361,7 @@ $(function() {
           <table cellpadding="0" cellspacing="0" border="0" width="70%" align="center">
           <tr height="30">
           <td><span class="err">*</span>Patients Attorney or Insurance Adjuster: </td>
-          <td><input type="text" name="patient" size="40" value="${copy.patient}"><span class="err"><form:errors path="Copyofrequest.patient"></form:errors></span></td>
+          <td><input type="text" name="patient" size="40" value="${copy.patient}" id="patient"><span class="err" id="patienterror"><form:errors path="Copyofrequest.patient"></form:errors></span></td>
           </tr>   
           <tr height="30">
           <td><span class="err"></span>Address: </td>
@@ -325,11 +373,11 @@ $(function() {
           </tr>
           <tr height="30">
           <td><span class="err">*</span>Date of Accident: </td>
-          <td><input type="text" name="dateofaccident" id="datepicker" size="40" value="${copy.dateofaccident}"><span class="err"><form:errors path="Copyofrequest.dateofaccident"></form:errors></span></td>
+          <td><input type="text" name="dateofaccident" id="datepicker" size="40" value="${copy.dateofaccident}"><span class="err" id="datepickererror"><form:errors path="Copyofrequest.dateofaccident"></form:errors></span></td>
           </tr>
           <tr height="30">
           <td><span class="err">*</span>Claim Number: </td>
-          <td><input type="text" name="claimnumber"  size="40" value="${copy.claimnumber }"><span class="err"><form:errors path="Copyofrequest.claimnumber"></form:errors></span></td>
+          <td><input type="text" name="claimnumber"  size="40" value="${copy.claimnumber }" id="claimnumber"><span class="err" id="claimnumbererror"><form:errors path="Copyofrequest.claimnumber"></form:errors></span></td>
           </tr>
           <tr height="30">
           <td>Today's Date:  </td>
@@ -339,7 +387,7 @@ $(function() {
           <table width="85">
           <tr height="30">
           <td width="40">Dear  </td>
-          <td><span class="err">*</span><input type="text" name="dear"  size="40" value="${copy.dear}"><span class="err"><form:errors path="Copyofrequest.dear"></form:errors></span></td>
+          <td><span class="err">*</span><input type="text" name="dear"  id="dear"size="40" value="${copy.dear}"><span class="err" id="dearerror"><form:errors path="Copyofrequest.dear"></form:errors></span></td>
           </tr>
           </table>
           <br/>
@@ -360,13 +408,13 @@ $(function() {
           </div>
           <div align="right">
           <p><B style="font-size:13px">Very truly yours,</B></p>
-          <p><span class="err">*</span><input type="text" name="sign" size="30" value="${copy.sign}"><span class="err"><form:errors path="Copyofrequest.sign"></form:errors></span></p>
+          <p><span class="err">*</span><input type="text" name="sign" size="30" value="${copy.sign}" id="sign"><span class="err" id="signerror"><form:errors path="Copyofrequest.sign"></form:errors></span></p>
           <p>Perry Chiropractic and Therapy Center of Canton, Inc.</p>
           <p>Dr. Charles T. Yang DC, DABFP</p>
           </div>
  <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="Save"></td>
+<td><input type="submit" class="submit_btn" value="Save" onclick="return checkSubmit('this');"></td>
 <td><a href="viewcopyofrequest"style="color:white" class="submit_btn">Cancel</a></td>
 </tr>
 </table>

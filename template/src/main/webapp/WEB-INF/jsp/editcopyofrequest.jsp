@@ -26,6 +26,54 @@ $(function() {
     $( "#tabs" ).tabs();
   });
   </script>
+     <script>
+
+	function checkSubmit()
+	{
+		document.getElementById("patienterror").innerHTML=" ";
+		
+		if(document.getElementById("patient").value=="")
+		{
+		document.getElementById("patienterror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		document.getElementById("datepickererror").innerHTML="";
+	if(document.getElementById("datepicker").value=="")
+		{
+		document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+	
+	document.getElementById("claimnumbererror").innerHTML="";
+	if(document.getElementById("claimnumber").value=="")
+	{
+	document.getElementById("claimnumbererror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	
+	document.getElementById("dearerror").innerHTML="";
+	if(document.getElementById("dear").value=="")
+	{
+	document.getElementById("dearerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("signerror").innerHTML="";
+	if(document.getElementById("sign").value=="")
+	{
+	document.getElementById("signerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	
+	}
+
+	</script>
 </head>
  
  <body>
@@ -50,7 +98,7 @@ $(function() {
           <tr height="30">
           <input type="hidden" class="input_txtbx1" id="inp_id" value="${copyofrequest.copyofrequestno}" name="copyofrequestno" />
           <td><span class="err">*</span>Patients Attorney or Insurance Adjuster: </td>
-          <td><input type="text" name="patient" size="40" value="${copyofrequest.patient}"><span class="err"><form:errors path="Copyofrequest.patient"></form:errors></span></td>
+          <td><input type="text" name="patient" size="40" value="${copyofrequest.patient}" id="patient"><span class="err" id="patienterror"><form:errors path="Copyofrequest.patient"></form:errors></span></td>
           </tr>   
           <tr height="30">
           <td><span class="err"></span>Address: </td>
@@ -61,12 +109,12 @@ $(function() {
           <td><input type="text" name="regarding" size="40" value="${copyofrequest.regarding }"></td>
           </tr>
           <tr height="30">
-          <td><span class="err">*</span>Date of Accident: </td>
+          <td><span class="err" id="datepickererror">*</span>Date of Accident: </td>
           <td><input type="text" name="dateofaccident" id="datepicker" size="40" value="${copyofrequest.dateofaccident}"></td>
           </tr>
           <tr height="30">
           <td><span class="err">*</span>Claim Number: </td>
-          <td><input type="text" name="claimnumber"  size="40" value="${copyofrequest.claimnumber }"><span class="err"><form:errors path="Copyofrequest.claimnumber"></form:errors></span></td>
+          <td><input type="text" name="claimnumber"  size="40" value="${copyofrequest.claimnumber }" id="claimnumber"><span class="err" id="claimnumbererror"><form:errors path="Copyofrequest.claimnumber"></form:errors></span></td>
           </tr>
           <tr height="30">
           <td>Today's Date:  </td>
@@ -76,7 +124,7 @@ $(function() {
           <table width="85">
           <tr height="30">
           <td width="40">Dear  </td>
-          <td><span class="err">*</span><input type="text" name="dear"  size="40" value="${copyofrequest.dear}"></td>
+          <td><span class="err" id="dearerror">*</span><input type="text" name="dear"  size="40" value="${copyofrequest.dear}" id="dear"></td>
           </tr>
           </table>
           <br/>
@@ -97,13 +145,13 @@ $(function() {
           </div>
           <div align="right">
           <p><B style="font-size:13px">Very truly yours,</B></p>
-          <p><span class="err">*</span><input type="text" name="sign" size="30" value="${copyofrequest.sign}"><span class="err"><form:errors path="Copyofrequest.sign"></form:errors></span></p>
+          <p><span class="err">*</span><input type="text" name="sign" size="30" value="${copyofrequest.sign}" id="sign"><span class="err" id="signerror"><form:errors path="Copyofrequest.sign"></form:errors></span></p>
           <p>Perry Chiropractic and Therapy Center of Canton, Inc.</p>
           <p>Dr. Charles T. Yang DC, DABFP</p>
           </div>
  <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="Update"></td>
+<td><input type="submit" class="submit_btn" value="Update" onclick="return checkSubmit('this');"></td>
 <td><a href="deletecopyofrequest?copyofrequestno=${copyofrequest.copyofrequestno}" style="color:white" class="submit_btn" onclick="return confirmation()">Delete</a></td>
 <td><a href="viewallpatientdetails"style="color:white" class="submit_btn">Cancel</a></td>
 </tr>
