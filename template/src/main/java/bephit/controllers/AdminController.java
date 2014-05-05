@@ -780,7 +780,7 @@ public class AdminController {
 		requestfordemandform.setRequestfordemanddetails(requestfordemandDAO.getrequestfordemand());
 		model.addAttribute("requestfordemandform", requestfordemandform);
 		model.addAttribute("success","true");
-		return "viewrequestfordemand";
+		return "requestfordemand";
 
 	}
 
@@ -1136,7 +1136,7 @@ public String editworkschooldetails(@RequestParam("username")String username, Ht
 		lettertopatientsform.setLettertopatientsdetails(lettertopatientsDAO
 				.getlettertopatients());
 		model.addAttribute("lettertopatientsform", lettertopatientsform);
-       return "viewlettertopatients";
+       return "lettertopatients";
 	 
 }
 
