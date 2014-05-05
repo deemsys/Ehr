@@ -32,6 +32,44 @@
 	}
 }
 	</script>
+	<script>
+function valid()
+{
+	document.getElementById("nameerror").innerHTML="";
+if(document.getElementById("name").value=="")
+        {
+	document.getElementById("nameerror").innerHTML="Required Field Should not be Empty";
+            
+            return false;
+        }
+document.getElementById("patientnameerror").innerHTML="";
+      if(document.getElementById("patientname").value=="")
+        {
+    	  document.getElementById("patientnameerror").innerHTML="Required Field Should not be Empty";
+            return false;
+        }  
+        
+      document.getElementById("datepickererror").innerHTML="";
+        if(document.getElementById("datepicker").value=="")
+        {
+        	 document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+            return false;
+        }  
+        document.getElementById("nameofclinicerror").innerHTML="";
+        if(document.getElementById("nameofclinic").value=="")
+        {
+        	 document.getElementById("nameofclinicerror").innerHTML="Required Field Should not be Empty";
+            return false;
+        }  
+        document.getElementById("treatingphysicianerror").innerHTML="";
+        if(document.getElementById("treatingphysician").value=="")
+        {
+        	 document.getElementById("treatingphysicianerror").innerHTML="Required Field Should not be Empty";
+            return false;
+        }   
+        }
+
+</script>
 </head>
  <body>
 <div id="right_content">
@@ -56,7 +94,7 @@
 	           <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="50" width="120"><span class="err">*</span>Name Of Attorney:</td>
-              <td ><input type="hidden" name="responseid" value="${responseattorneydetail.responseid }"><input type="text" class="input_txtbx1" name="name" value="${responseattorneydetail.name }" id="name" /><span class="err"><form:errors path="Responseattorney.name"></form:errors></td>
+              <td ><input type="hidden" name="responseid" value="${responseattorneydetail.responseid }"><input type="text" class="input_txtbx1" name="name" value="${responseattorneydetail.name }" id="name" /><span class="err" id="nameerror"><form:errors path="Responseattorney.name"></form:errors></td>
               </tr>
               <tr>
               <td height="20" width="120"><span class="err"></span>Address:</td>
@@ -70,11 +108,11 @@
               </tr>
                 <tr>
               <td height="30" width="120"><span class="err">*</span>Patients's Name:</td>
-              <td ><input type="text" class="input_txtbx1" name="patientname" value="${responseattorneydetail.patientname }" id="patientname" /><span class="err"><form:errors path="Responseattorney.patientname"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="patientname" value="${responseattorneydetail.patientname }" id="patientname" /><span class="err" id="patientnameerror"><form:errors path="Responseattorney.patientname"></form:errors></td>
               </tr>
                 <tr>
               <td height="30" width="120"><span class="err">*</span>Date Of Accident:</td>
-              <td ><input type="text" class="input_txtbx1" name="dateofaccident" value="${responseattorneydetail.dateofaccident }" id="datepicker" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="dateofaccident" value="${responseattorneydetail.dateofaccident }" id="datepicker" /><span class="err" id="datepickererror"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>
               
@@ -102,32 +140,25 @@
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
        		  <td valign="right" align="right" class="input_txt"><span class="err">*</span>Name of Clinic:
-              <input type="text" class="input_txtbx1" name="nameofclinic" value="${responseattorneydetail.nameofclinic }" id="nameofclinic" /><span class="err"><form:errors path="Responseattorney.nameofclinic"></form:errors></span></td>
+              <input type="text" class="input_txtbx1" name="nameofclinic" value="${responseattorneydetail.nameofclinic }" id="nameofclinic" /><span class="err" id="nameofclinicerror"><form:errors path="Responseattorney.nameofclinic"></form:errors></span></td>
               </tr>
               </table>
               <br>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
        		  <td valign="right" align="right" class="input_txt"><span class="err">*</span>Treating Physician:
-              <input type="text" class="input_txtbx1" name="treatingphysician" value="${responseattorneydetail.treatingphysician }" id="treatingphysician" /><span class="err"><form:errors path="Responseattorney.treatingphysician"></form:errors></span></td>
+              <input type="text" class="input_txtbx1" name="treatingphysician" value="${responseattorneydetail.treatingphysician }" id="treatingphysician" /><span class="err" id="treatingphysicianerror"><form:errors path="Responseattorney.treatingphysician"></form:errors></span></td>
               </tr>
               </table>
               
               <br>
-              <table>
-              <tr>
-              <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-              <td><input type="submit" class="submit_btn" value="Save"></td>
-              <td>&nbsp;&nbsp;</td>
-              <td><input type="reset" class="submit_btn" value="Cancel"></td>
-              <td>&nbsp;&nbsp;</td>
-        	  </tr>
-        	  </table>
-        	  <table><tr> <td><input type="submit" class="submit_btn" value="update"></td>
+             
+        	  <table><tr> <td><input type="submit" class="submit_btn" value="Save" OnClick ="return valid();"></td>
            
-               
-               <td><a href="deleteresponseattorney?username=${faxcover.username}"style="color:white" class="submit_btn" onclick="return confirmation()" >Delete</a></td> 
-               <td><a href="viewallpatientdetails"style="color:white" class="submit_btn">Cancel</a></td>
+                <td><a href="deleteresponseattorney?responseid=${responseattorneydetail.responseid}"style="color:white" class="submit_btn" onclick="return confirmation()" >Delete</a></td>
+                       <td><a href="viewallpatientdetails"style="color:white" class="submit_btn">Cancel</a></td>
+                       
+                      
               </tr></table>
         	  </div>
         	  </div>

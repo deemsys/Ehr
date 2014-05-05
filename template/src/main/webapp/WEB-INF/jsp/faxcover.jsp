@@ -1,4 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <jsp:include page="header.jsp"></jsp:include>
 <html>
@@ -68,7 +69,6 @@ cursor: pointer;
 }
 </style>
 
-
 <script type='text/javascript'>
 $(function(){
 var overlay = $('<div id="overlay"></div>');
@@ -103,34 +103,85 @@ return false;
 	}
 }
 	</script>
-	<script>
+	 <script>
 
-	function valid()
+	function checkSubmit()
 	{
-		var chkdate = document.getElementById("datepicker").value
-	    if(document.getElementById("datepicker").value == "")
-	    {
-	        alert("Please enter the Date..!!")
-	        hh.date_slot.focus();
-	        return false;
-	    }
-	  else if(!chkdate.match(/^(0[1-9]|[12][0-9]|3[01])[\- \/.](?:(0[1-9]|1[012])[\- \/.](19|20)[0-9]{2})$/))
-	        {
-	          alert('date format is wrong');
-	          hh.date_slot.focus();
-	        return false;
-	        }
+		document.getElementById("datepickererror").innerHTML=" ";
 		
-		if(document.getElementById("tos").value=="")
-        {
-            alert("Enter TO");
-            return false;
-        }
-		if(document.getElementById("froms").value=="")
-        {
-            alert("Enter From");
-            return false;
-        }
+		if(document.getElementById("datepicker").value=="")
+		{
+		document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		document.getElementById("toserror").innerHTML="";
+	if(document.getElementById("tos").value=="")
+		{
+		document.getElementById("toserror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+	/* if(document.getElementById("faxno").value=="")
+	{
+	document.getElementById("faxerror").innerHTML="Please Enter";
+	
+	return false;
+	} */
+	document.getElementById("fromerror").innerHTML="";
+	if(document.getElementById("froms").value=="")
+	{
+	document.getElementById("fromerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	/* if(document.getElementById("urgent").checked == true){
+		//alert("urgent is checked");
+		document.getElementById("urgenterror").innerHTML="Please check";
+		} else if(document.getElementById("forreview").checked == true){
+		alert("Box 2 is checked");
+		document.getElementById("forreviewerror").innerHTML="Please check";
+		}	 */
+	
+	
+	
+	/* if(document.getElementById("re").value=="")
+	{
+	document.getElementById("reerror").innerHTML="Please Enter";
+	
+	return false;
+	}
+	
+	if(document.getElementById("nos").value=="")
+	{
+	document.getElementById("noserror").innerHTML="Please Enter";
+	
+	return false;
+	} */
+	document.getElementById("msgerror").innerHTML="";
+	if(document.getElementById("msg").value=="")
+	{
+	document.getElementById("msgerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("claimnoerror").innerHTML="";
+	if(document.getElementById("claimno").value=="")
+	{
+	document.getElementById("claimnoerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("datepicker1error").innerHTML="";
+	if(document.getElementById("datepicker1").value=="")
+	{
+	document.getElementById("datepicker1error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	
 	}
 
 	</script>
@@ -290,7 +341,7 @@ document.getElementById("faxno").value=phone;
 </head>
  <body>
 <div id="right_content">
-<form action="insertfaxcover" method="POST">
+<form action="insertfaxcover" method="POST" >
 
 <table cellpadding="0" cellspacing="0" border="0" height="100" width="50%" class="margin_table">
        <tr>
@@ -330,19 +381,19 @@ document.getElementById("faxno").value=phone;
        		<table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err">*</span>Today's Date:</td>
-              <td ><input type="text" class="input_txtbx1" name="date" id="datepicker" onblur= "return valid();"/><span class="err"><form:errors path="Faxcover.date"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="date" id="datepicker" /><span class="err" id="datepickererror"><form:errors path="Faxcover.date"></form:errors></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err">*</span>To:</td>
-              <td ><input type="text" class="input_txtbx1" name="tos" id="tos" onblur= "return valid();"/><span class="err"><form:errors path="Faxcover.tos"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="tos" id="tos" /><span class="err" id="toserror"><form:errors path="Faxcover.tos"></form:errors></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err"></span>Fax#:</td>
-              <td ><input type="text" class="input_txtbx1" name="faxno" id="faxno" maxlength=11/><span class="err"><form:errors path="Faxcover.faxno"></form:errors>
+              <td ><input type="text" class="input_txtbx1" name="faxno" id="faxno" maxlength=11/><span class="err" id="faxerror"><form:errors path="Faxcover.faxno"></form:errors>
               </span><span class="err" id="faxerror"></span>
               </td>
               </tr>
@@ -350,7 +401,7 @@ document.getElementById("faxno").value=phone;
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err">*</span>From:</td>
-              <td ><input type="text" class="input_txtbx1" name="froms" id="froms" onblur= "return valid();"/><span class="err"><form:errors path="Faxcover.froms"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="froms" id="froms" /><span class="err" id="fromerror"><form:errors path="Faxcover.froms"></form:errors></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -358,32 +409,32 @@ document.getElementById("faxno").value=phone;
               <td height="25" width="120"><span class="err"></span>Fax:</td>
               <td> (330) 477-3037	</td>
        	</tr></table><br><br>
-       	<input type="text" name="user" id="user"  style="visibility:hidden">
+       	<input type="text" name="user" id="user" style="visibility:hidden">
      <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr><td width="120">
-     	<input type="radio" name="reply" value="URGENT" class="input_txt" checked="true">Urgent&nbsp;&nbsp;&nbsp;<input type="radio" name="reply" value="FOR REVIEW" class="input_txt">For Review&nbsp;&nbsp;
-     	<input type="radio" name="reply" value="PLEASE COMMENT" class="input_txt" checked="true">Please Comment&nbsp;&nbsp;<input type="radio" name="reply" value="PLEASE REPLY" class="input_txt">Please Reply&nbsp;&nbsp;
+     	<input type="radio" name="reply" value="URGENT" class="input_txt" checked="true" id="urgent">Urgent&nbsp;&nbsp;&nbsp;<span class="err" id="urgenterror"></span><input type="radio" name="reply" value="FOR REVIEW" class="input_txt" id="forreview">For Review&nbsp;&nbsp;
+     	<span class="err" id="forreviewerror"></span><input type="radio" name="reply" value="PLEASE COMMENT" class="input_txt" checked="true">Please Comment&nbsp;&nbsp;<input type="radio" name="reply" value="PLEASE REPLY" class="input_txt">Please Reply&nbsp;&nbsp;
      	</td>
      	</tr>
      	</table><br><br>
      	<table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err"></span>RE:</td>
-              <td ><input type="text" class="input_txtbx1" name="regarding" id="datepicker" /><span class="err"><form:errors path="Faxcover.regarding"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="regarding" id="re" /><span class="err" id="reerror"><form:errors path="Faxcover.regarding"></form:errors></td>
               <td ><span class="err"></span>Number Of Pages Sent:</td>
-              <td ><input type="text" class="input_txtbx1" name="pages" id="datepicker" /><span class="err"><form:errors path="Faxcover.pages"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="pages" id="nos" /><span class="err" id="noserror"><form:errors path="Faxcover.pages"></form:errors></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err">*</span>Message:</td>
-              <td ><input type="text" class="input_txtbx1" name="msg" id="datepicker" /><span class="err"><form:errors path="Faxcover.msg"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="msg" id="msg" /><span class="err" id="msgerror"><form:errors path="Faxcover.msg"></form:errors></td>
             <td ><span class="err">*</span>Claim No:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-              <td ><input type="text" class="input_txtbx1" name="claimno" id="claimno" /><span class="err"><form:errors path="Faxcover.claimno"></form:errors>
+              <td ><input type="text" class="input_txtbx1" name="claimno" id="claimno" /><span class="err" id="claimnoerror"><form:errors path="Faxcover.claimno"></form:errors>
               </span><span class="err" id="number"></span></td>
              <tr>
               <td height="25" width="120"><span class="err">*</span>DOI</td>
-              <td ><input type="text" class="input_txtbx1" name="doi" id="datepicker1" /><span class="err"><form:errors path="Faxcover.doi"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="doi" id="datepicker1" /><span class="err" id="datepicker1error"><form:errors path="Faxcover.doi"></form:errors></td>
              </tr>
               </tr>
               
@@ -522,9 +573,11 @@ document.getElementById("faxno").value=phone;
             </div>
             </c:otherwise>
             </c:choose>
-            <table><tr> <td><input type="submit" class="submit_btn" value="Save"></td>
+            <table><tr> <td><input type="submit" class="submit_btn" id="btn" value="Save" onclick="return checkSubmit('this');"></td>
                <td><a href="viewallpatientdetails"style="color:white" class="submit_btn">Cancel</a></td>
               </tr></table>
+              
+              
               </div>
         	  </div>
         	  </td>

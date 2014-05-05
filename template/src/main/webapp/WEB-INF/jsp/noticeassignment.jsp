@@ -116,7 +116,7 @@ function doAjaxPost() {
 		     else if(response.substring(0,4)=='edit')
 		    	  {
 		    	 var sub1=response.indexOf("|")+1;		    	 
-		    	 var url="editnoticeassignmentdetails?username="+response.substring(sub1,response.length);
+		    	 var url="editnoticeassignment?username="+response.substring(sub1,response.length);
 		    	  window.location.href=url;
 		    	 // $('#info').html(response.substring(4,response.length));
 		    	  }
@@ -193,48 +193,44 @@ function doAjaxPost() {
            $( "#datepicker2" ).datepicker();
          });
 </script>
-<!-- <script>
+<script>
 function valid()
 {
+	document.getElementById("nameofinserror").innerHTML="";
 if(document.getElementById("nameofins").value=="")
         {
-            alert("Enter Name of Insurance");
+	document.getElementById("nameofinserror").innerHTML="Required Field Should not be Empty";
+            
             return false;
         }
+document.getElementById("nameofattorneyerror").innerHTML="";
       if(document.getElementById("nameofattorney").value=="")
         {
-            alert("Enter Name of Attorney");
+    	  document.getElementById("nameofattorneyerror").innerHTML="Required Field Should not be Empty";
             return false;
         }  
         
-       if(document.getElementById("regarding").value=="")
-        {
-            alert("Enter Name of Regarding");
-            return false;
-        } 
+      document.getElementById("patientnameerror").innerHTML="";
         if(document.getElementById("patientname").value=="")
         {
-            alert("Enter Name of Patient");
-            return false;
-        }    
-          if(document.getElementById("datepicker1").value=="")
-        {
-            alert("Enter Date of Accident");
-            return false;
-        }   
-          if(document.getElementById("datepicker2").value=="")
-        {
-            alert("Enter Today Date");
+        	 document.getElementById("patientnameerror").innerHTML="Required Field Should not be Empty";
             return false;
         }  
+        document.getElementById("lettererror").innerHTML="";
+        if(document.getElementById("letter").value=="")
+        {
+        	 document.getElementById("lettererror").innerHTML="Required Field Should not be Empty";
+            return false;
+        }  
+        document.getElementById("treatingphysicianerror").innerHTML="";
         if(document.getElementById("treatingphysician").value=="")
         {
-            alert("Enter Name of Treating Physician");
+        	 document.getElementById("treatingphysicianerror").innerHTML="Required Field Should not be Empty";
             return false;
         }   
         }
 
-</script> -->
+</script>
 </head>
  <body>
 <div id="right_content">
@@ -282,9 +278,9 @@ if(document.getElementById("nameofins").value=="")
              <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
               <td height="20" width="180"><span class="err">*</span>Name Of Insurance Company:</td>
-              <td ><input type="text" class="input_txtbx1" name="nameofins" id="nameofins" /><span class="err"><form:errors path="noticeerror.nameofins"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="nameofins" id="nameofins" /><span class="err" id="nameofinserror"><form:errors path="noticeerror.nameofins"></form:errors></td>
               <td height="40" width="110" ><span class="err">&nbsp;&nbsp;*</span>Name Of Attorney:</td>
-              <td >&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="nameofattorney" id="nameofattorney" /><span class="err"><form:errors path="noticeerror.nameofattorney"></form:errors></span></td>
+              <td >&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="nameofattorney" id="nameofattorney" /><span class="err" id="nameofattorneyerror"><form:errors path="noticeerror.nameofattorney"></form:errors></span></td>
               </tr>
               </table>
                 <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -303,7 +299,7 @@ if(document.getElementById("nameofins").value=="")
           </tr> 
           <tr>
             <td height="40" width="180"><span class="err">*</span>PatientName:</td>
-              <td ><input type="text" class="input_txtbx1" name="patientname" id="patientname" /><span class="err"><form:errors path="noticeerror.patientname"></form:errors></span></td>                      
+              <td ><input type="text" class="input_txtbx1" name="patientname" id="patientname" /><span class="err" id="patientnameerror"><form:errors path="noticeerror.patientname"></form:errors></span></td>                      
           </tr> 
           <tr>
             <td height="30" width="180">Date Of Accident:</td>
@@ -314,14 +310,14 @@ if(document.getElementById("nameofins").value=="")
               <td ><input type="text" class="input_txtbx1" name="todaysdate" id="datepicker2" /><span class="err"><form:errors path="noticeerror.todaysdate"></form:errors></span></td>                      
           </tr> <br>  
             </table>
-            <input type="text" name="user" id="user"  style="visibility:hidden">
+            
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
         	  <tr><td hight="20" width="250"><br><br><p align="left" id="mypar"><b><h4>Dear Madam/Sir:</h4></b></p></td></tr>
        		  </table>
        		
        		<table>
        		 <tr>
-       		 <td><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="err">*</span><input type="text" class="input_txtbx1" name="letter" id="letter" /><span class="err"><form:errors path="noticeerror.letter"></form:errors></span>has sought medical treatment from this clinic.  This patient has been injured to an
+       		 <td><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="err">*</span><input type="text" class="input_txtbx1" name="letter" id="letter" /><span class="err" id="lettererror"><form:errors path="noticeerror.letter"></form:errors></span>has sought medical treatment from this clinic.  This patient has been injured to an
 extent where the patient has determined that they cannot afford to pay for treatment on a fee for service basis.
 We would definitely prefer to simply render the required treatment on a fee for service basis. However, because
  fees for service presents a hardship to this patient, we have agreed to postpone payment for treatment pursuant to the attached agreement assignment.
@@ -493,7 +489,7 @@ do not receive a response, we will act in reliance that you will comply with it'
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
        		  <td valign="right" align="right" class="input_txt"><span class="err">*</span>Treating Physician
-              <input type="text" class="input_txtbx1" name="treatingphysician" value="${notice.treatingphysician }" id="treatingphysician" /><span class="err"><form:errors path="noticeerror.treatingphysician"></form:errors></td>
+              <input type="text" class="input_txtbx1" name="treatingphysician" value="${notice.treatingphysician }" id="treatingphysician" /><span class="err" id="treatingphysicianerror"><form:errors path="noticeerror.treatingphysician"></form:errors></td>
               </tr><br>
               </table>
              
@@ -505,7 +501,7 @@ do not receive a response, we will act in reliance that you will comply with it'
              </c:choose>
               
               
-              
+              <input type="text" name="user" id="user"  style="visibility:hidden">
               
              
               <table><tr> <td><input type="submit" class="submit_btn" value="Save" OnClick ="return valid();"></td>

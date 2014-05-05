@@ -99,7 +99,7 @@ function doAjaxPost() {
 		}
 	
 	 $.ajax({  
-		    type: "POST",   	
+		    type: "POST",  
 		    url: "/EhrApp/responseattorney_ajax",  
 		    data: "username=" + username,
 		    success: function(response){  
@@ -116,7 +116,7 @@ function doAjaxPost() {
 		     else if(response.substring(0,4)=='edit')
 		    	  {
 		    	 var sub1=response.indexOf("|")+1;		    	 
-		    	 var url="editresponseattorneydetails?username="+response.substring(sub1,response.length);
+		    	 var url="editresponseattorney?username="+response.substring(sub1,response.length);
 		    	  window.location.href=url;
 		    	 // $('#info').html(response.substring(4,response.length));
 		    	  }
@@ -124,7 +124,6 @@ function doAjaxPost() {
 		    	  {
 		    	 var cal=response.indexOf("|");
 		    	 var calculate=cal+1;
-		    	 alert(response);
 			     alert(response.indexOf("|"));
 			   alert(response.substring(0,cal));
 			   //document.getElementById("patientname").value=response.substring(0,cal);
@@ -193,10 +192,48 @@ function doAjaxPost() {
          });
  
 </script>
+<script>
+function valid()
+{
+	document.getElementById("nameerror").innerHTML="";
+if(document.getElementById("name").value=="")
+        {
+	document.getElementById("nameerror").innerHTML="Required Field Should not be Empty";
+            
+            return false;
+        }
+document.getElementById("patientnameerror").innerHTML="";
+      if(document.getElementById("patientname").value=="")
+        {
+    	  document.getElementById("patientnameerror").innerHTML="Required Field Should not be Empty";
+            return false;
+        }  
+        
+      document.getElementById("datepickererror").innerHTML="";
+        if(document.getElementById("datepicker").value=="")
+        {
+        	 document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+            return false;
+        }  
+        document.getElementById("nameofclinicerror").innerHTML="";
+        if(document.getElementById("nameofclinic").value=="")
+        {
+        	 document.getElementById("nameofclinicerror").innerHTML="Required Field Should not be Empty";
+            return false;
+        }  
+        document.getElementById("treatingphysicianerror").innerHTML="";
+        if(document.getElementById("treatingphysician").value=="")
+        {
+        	 document.getElementById("treatingphysicianerror").innerHTML="Required Field Should not be Empty";
+            return false;
+        }   
+        }
+
+</script>
 </head>
  <body>
 <div id="right_content">
- <input type="text" name="user" id="user"  style="visibility:hidden">
+ 
 <form action="insertresponseattorney" method="POST">
 
 <table cellpadding="0" cellspacing="0" border="0" width="70%" class="margin_table">
@@ -221,11 +258,11 @@ function doAjaxPost() {
 	           <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="50" width="120"><span class="err">*</span>Name Of Attorney:</td>
-              <td ><input type="text" class="input_txtbx1" name="name" id="name" /><span class="err"><form:errors path="Responseattorney.name"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="name" id="name" /><span class="err" id="nameerror"><form:errors path="Responseattorney.name"></form:errors></td>
               </tr>
               <tr>
               <td height="20" width="120"><span class="err"></span>Address:</td>
-              <td><textarea rows="" cols="" name="address" style="width: 162px; height: 62px"></textarea>
+              <td><textarea rows="" cols="" name="address" style="width: 162px; height: 62px" ></textarea>
             </td></tr>
              
              <tr>
@@ -234,15 +271,15 @@ function doAjaxPost() {
               </tr>
                 <tr>
               <td height="30" width="120"><span class="err">*</span>Patients's Name:</td>
-              <td ><input type="text" class="input_txtbx1" name="patientname" id="patientname" /><span class="err"><form:errors path="Responseattorney.patientname"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="patientname" id="patientname" /><span class="err" id="patientnameerror"><form:errors path="Responseattorney.patientname"></form:errors></td>
               </tr>
                 <tr>
               <td height="30" width="120"><span class="err">*</span>Date Of Accident:</td>
-              <td ><input type="text" class="input_txtbx1" name="dateofaccident" id="datepicker" /><span class="err"><form:errors path="Responseattorney.dateofaccident"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="dateofaccident" id="datepicker" /><span class="err" id="datepickererror"><form:errors path="Responseattorney.dateofaccident"></form:errors></td>
               </tr>
               </table>
               
-              
+              <input type="text" name="user" id="user"  style="visibility:hidden">
               <br>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
         	  <tr><br><p id="mypar">Dear Sir/Madam:</p></tr>
@@ -266,14 +303,14 @@ function doAjaxPost() {
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
        		  <td valign="right" align="right" class="input_txt"><span class="err">*</span>Name of Clinic:
-              <input type="text" class="input_txtbx1" name="nameofclinic" id="nameofclinic" /><span class="err"><form:errors path="Responseattorney.nameofclinic"></form:errors></span></td>
+              <input type="text" class="input_txtbx1" name="nameofclinic" id="nameofclinic" /><span class="err" id="nameofclinicerror"><form:errors path="Responseattorney.nameofclinic"></form:errors></span></td>
               </tr>
               </table>
               <br>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
        		  <td valign="right" align="right" class="input_txt"><span class="err">*</span>Treating Physician:
-              <input type="text" class="input_txtbx1" name="treatingphysician" id="treatingphysician" /><span class="err"><form:errors path="Responseattorney.treatingphysician"></form:errors></span></td>
+              <input type="text" class="input_txtbx1" name="treatingphysician" id="treatingphysician" /><span class="err" id="treatingphysicianerror"><form:errors path="Responseattorney.treatingphysician"></form:errors></span></td>
               </tr>
               </table>
               </c:when>
@@ -283,7 +320,7 @@ function doAjaxPost() {
 	           <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="50" width="120"><span class="err">*</span>Name Of Attorney:</td>
-              <td ><input type="hidden" name="responseid" value="${response.responseid }"><input type="text" class="input_txtbx1" name="name" value="${response.name }" id="name" /><span class="err"><form:errors path="Responseattorney.name"></form:errors></td>
+              <td ><input type="hidden" name="responseid" value="${response.responseid }"><input type="text" class="input_txtbx1" name="name" value="${response.name }" id="name" /><span class="err" id="nameerror"><form:errors path="Responseattorney.name"></form:errors></td>
               </tr>
               <tr>
               <td height="20" width="120"><span class="err"></span>Address:</td>
@@ -297,11 +334,11 @@ function doAjaxPost() {
               </tr>
                 <tr>
               <td height="30" width="120"><span class="err">*</span>Patients's Name:</td>
-              <td ><input type="text" class="input_txtbx1" name="patientname" value="${response.patientname }" id="patientname" /><span class="err"><form:errors path="Responseattorney.patientname"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="patientname" value="${response.patientname }" id="patientname" /><span class="err" id="patientnameerror"><form:errors path="Responseattorney.patientname"></form:errors></td>
               </tr>
                 <tr>
               <td height="30" width="120"><span class="err">*</span>Date Of Accident:</td>
-              <td ><input type="text" class="input_txtbx1" name="dateofaccident" value="${response.dateofaccident }" id="datepicker" /><span class="err"><form:errors path="Responseattorney.dateofaccident"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="dateofaccident" value="${response.dateofaccident }" id="datepicker" /><span class="err" id="datepickererror"><form:errors path="Responseattorney.dateofaccident"></form:errors></td>
               </tr>
               </table>
               
@@ -330,14 +367,14 @@ function doAjaxPost() {
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
        		  <td valign="right" align="right" class="input_txt"><span class="err">*</span>Name of Clinic:
-              <input type="text" class="input_txtbx1" name="nameofclinic" value="${response.nameofclinic }" id="nameofclinic" /><span class="err"><form:errors path="Responseattorney.nameofclinic"></form:errors></span></td>
+              <input type="text" class="input_txtbx1" name="nameofclinic" value="${response.nameofclinic }" id="nameofclinic" /><span class="err" id="nameofclinicerror"><form:errors path="Responseattorney.nameofclinic"></form:errors></span></td>
               </tr>
               </table>
               <br>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
        		  <td valign="right" align="right" class="input_txt"><span class="err">*</span>Treating Physician:
-              <input type="text" class="input_txtbx1" name="treatingphysician" value="${response.treatingphysician }" id="treatingphysician" /><span class="err"><form:errors path="Responseattorney.treatingphysician"></form:errors></span></td>
+              <input type="text" class="input_txtbx1" name="treatingphysician" value="${response.treatingphysician }" id="treatingphysician" /><span class="err" id="treatingphysicianerror"><form:errors path="Responseattorney.treatingphysician"></form:errors></span></td>
               </tr>
               </table>
               
@@ -347,7 +384,7 @@ function doAjaxPost() {
               <table>
               <tr>
               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-              <td><input type="submit" class="submit_btn" value="Save"></td>
+              <td><input type="submit" class="submit_btn" value="Save" OnClick ="return valid();"></td>
               <td>&nbsp;&nbsp;</td>
               <td><input type="reset" class="submit_btn" value="Cancel"></td>
               <td>&nbsp;&nbsp;</td>

@@ -193,6 +193,59 @@ function doAjaxPost() {
          });
  
 </script>
+<script>
+
+	function checkSubmit()
+	{
+		document.getElementById("copymedpayerror").innerHTML=" ";
+		
+		if(document.getElementById("copymedpay").value=="")
+		{
+		document.getElementById("copymedpayerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		document.getElementById("copyformerror").innerHTML="";
+	if(document.getElementById("copyform").value=="")
+		{
+		document.getElementById("copyformerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+	
+	document.getElementById("copyassignerror").innerHTML="";
+	if(document.getElementById("copyassign").value=="")
+	{
+	document.getElementById("copyassignerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("greencarderror").innerHTML="";
+	if(document.getElementById("greencard").value=="")
+	{
+	document.getElementById("greencarderror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("defaultattorneyerror").innerHTML="";
+	if(document.getElementById("defaultattorney").value=="")
+	{
+	document.getElementById("defaultattorneyerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("clinicreperror").innerHTML="";
+	if(document.getElementById("clinicrep").value=="")
+	{
+	document.getElementById("clinicreperror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	
+	}
+
+	</script>
 </head>
  <body>
 <div id="right_content">
@@ -264,15 +317,15 @@ function doAjaxPost() {
        <p><b>We attach the following:</b></p>
        </td>
        </tr>
-       <tr height="25"><td><input type="inputtype" class="input_ckbx1" name="copymedpay" id="copymedpay"><span class="err"><form:errors path="Requestfordemand.copymedpay"></form:errors></span></td><td><span class="err">*</span>Copy of Med Pay and At Fault Form Cover Letter
+       <tr height="25"><td><input type="inputtype" class="input_ckbx1" name="copymedpay" id="copymedpay"><span class="err" id="copymedpayerror"><form:errors path="Requestfordemand.copymedpay"></form:errors></span></td><td><span class="err">*</span>Copy of Med Pay and At Fault Form Cover Letter
      </td></tr>
-      <tr height="25"><td><input type="inputtype"class="input_ckbx1" name="copyform" id="copyform"><span class="err"><form:errors path="Requestfordemand.copyform"></form:errors></span></td><td><span class="err">*</span>Copy of Form Cover Letter sent to the Attorney
+      <tr height="25"><td><input type="inputtype"class="input_ckbx1" name="copyform" id="copyform"><span class="err" id="copyformerror"><form:errors path="Requestfordemand.copyform"></form:errors></span></td><td><span class="err">*</span>Copy of Form Cover Letter sent to the Attorney
      </td></tr>
-     <tr height="25"><td><input type="inputtype" class="input_ckbx1" name="copyassign" id="copyassign"><span class="err"><form:errors path="Requestfordemand.copyassign"></form:errors></span></td><td><span class="err">*</span>Copy of Assignment
+     <tr height="25"><td><input type="inputtype" class="input_ckbx1" name="copyassign" id="copyassign"><span class="err" id="copyassignerror"><form:errors path="Requestfordemand.copyassign"></form:errors></span></td><td><span class="err">*</span>Copy of Assignment
      </td></tr>
-     <tr height="25"><td><input type="inputtype" class="input_ckbx1" name="greencard" id="greencard"><span class="err"><form:errors path="Requestfordemand.greencard"></form:errors></span></td><td><span class="err">*</span>Front and back of Certified Mail: "Green Card"
+     <tr height="25"><td><input type="inputtype" class="input_ckbx1" name="greencard" id="greencard"><span class="err" id="greencarderror"><form:errors path="Requestfordemand.greencard"></form:errors></span></td><td><span class="err">*</span>Front and back of Certified Mail: "Green Card"
      </td></tr>
-     <tr height="25"><td><input type="inputtype" class="input_ckbx1" name="defaultattorney" id="default"><span class="err"><form:errors path="Requestfordemand.defaultattorney"></form:errors></span></td><td><span class="err">*</span>Any correspondence from the defaulting Adjuster or Defaulting Attorney
+     <tr height="25"><td><input type="inputtype" class="input_ckbx1" name="defaultattorney" id="defaultattorney"><span class="err" id="defaultattorneyerror"><form:errors path="Requestfordemand.defaultattorney"></form:errors></span></td><td><span class="err">*</span>Any correspondence from the defaulting Adjuster or Defaulting Attorney
      </td></tr>
        </table> <br>     
        <table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table" ><tr height="35">
@@ -334,23 +387,23 @@ function doAjaxPost() {
        <p><b>We attach the following:</b></p>
        </td>
        </tr>
-       <tr height="25"><td><input type="inputtype" class="input_ckbx1" value="${requestfor.copymedpay}" name="copymedpay" id="copymedpay"><span class="err"><form:errors path="Requestfordemand.copymedpay"></form:errors></span></td><td><span class="err">*</span>Copy of Med Pay and At Fault Form Cover Letter
+       <tr height="25"><td><input type="inputtype" class="input_ckbx1" value="${requestfor.copymedpay}" name="copymedpay" id="copymedpay"><span class="err" id="copymedpayerror"><form:errors path="Requestfordemand.copymedpay"></form:errors></span></td><td><span class="err">*</span>Copy of Med Pay and At Fault Form Cover Letter
      </td></tr>
-      <tr height="25"><td><input type="inputtype"class="input_ckbx1" value="${requestfor.copyform}" name="copyform" id="copyform"><span class="err"><form:errors path="Requestfordemand.copyform"></form:errors></span></td><td><span class="err">*</span>Copy of Form Cover Letter sent to the Attorney
+      <tr height="25"><td><input type="inputtype"class="input_ckbx1" value="${requestfor.copyform}" name="copyform" id="copyform"><span class="err" id="copyformerror"><form:errors path="Requestfordemand.copyform"></form:errors></span></td><td><span class="err">*</span>Copy of Form Cover Letter sent to the Attorney
      </td></tr>
-     <tr height="25"><td><input type="inputtype" class="input_ckbx1" value="${requestfor.copyassign}" name="copyassign" id="copyassign"><span class="err"><form:errors path="Requestfordemand.copyassign"></form:errors></span></td><td><span class="err">*</span>Copy of Assignment
+     <tr height="25"><td><input type="inputtype" class="input_ckbx1" value="${requestfor.copyassign}" name="copyassign" id="copyassign"><span class="err" id="copyassignerror"><form:errors path="Requestfordemand.copyassign"></form:errors></span></td><td><span class="err">*</span>Copy of Assignment
      </td></tr>
-     <tr height="25"><td><input type="inputtype" class="input_ckbx1" value="${requestfor.greencard}" name="greencard" id="greencard"><span class="err"><form:errors path="Requestfordemand.greencard"></form:errors></span></td><td><span class="err">*</span>Front and back of Certified Mail: "Green Card"
+     <tr height="25"><td><input type="inputtype" class="input_ckbx1" value="${requestfor.greencard}" name="greencard" id="greencard"><span class="err" id="greencarderror"><form:errors path="Requestfordemand.greencard"></form:errors></span></td><td><span class="err">*</span>Front and back of Certified Mail: "Green Card"
      </td></tr>
-     <tr height="25"><td><input type="inputtype" class="input_ckbx1" value="${requestfor.defaultattorney}" name="defaultattorney" id="default"><span class="err"><form:errors path="Requestfordemand.defaultattorney"></form:errors></span></td><td><span class="err">*</span>Any correspondence from the defaulting Adjuster or Defaulting Attorney
+     <tr height="25"><td><input type="inputtype" class="input_ckbx1" value="${requestfor.defaultattorney}" name="defaultattorney" id="defaultattorney"><span class="err" id="defaultattorneyerror"><form:errors path="Requestfordemand.defaultattorney"></form:errors></span></td><td><span class="err">*</span>Any correspondence from the defaulting Adjuster or Defaulting Attorney
      </td></tr>
        </table> <br>     
        <table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table" ><tr height="35">
        <td width="30" ></td>
        <td  valign="right" align="right" >
        
-       <input type="textbox" class="input_ckbx1" value="${requestfor.clinicrep}" name="clinicrep" id="clinicrep"><span class="err"><form:errors path="Requestfordemand.clinicrep"></form:errors></span></td></tr>
-       <tr><td></td><td align="right" ><span class="err">*</span>Clinic Representative</td></tr> 
+       <input type="textbox" class="input_ckbx1" value="${requestfor.clinicrep}" name="clinicrep" id="clinicrep"><span class="err" id="clinicreperror"><form:errors path="Requestfordemand.clinicrep"></form:errors></span></td></tr>
+       <tr><td></td><td align="right" ><span class="err" id="clinicreperror">*</span>Clinic Representative</td></tr> 
        
        
        
@@ -361,7 +414,7 @@ function doAjaxPost() {
          <table>
               <tr>
               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-              <td><input type="submit" class="submit_btn" value="Save"></td>
+              <td><input type="submit" class="submit_btn" value="Save" onclick="return checkSubmit('this');"></td>
               <td>&nbsp;&nbsp;</td>
               <td><a href="viewrequestfordemand" style="color:white" class="submit_btn">Cancel</a></td>
               <td>&nbsp;&nbsp;</td>

@@ -39,6 +39,57 @@
 	}
 }
 	</script>
+	<script>
+function checkSubmit()
+	{
+		
+	document.getElementById("reerror").innerHTML="";
+	if(document.getElementById("re").value=="")
+	{
+	document.getElementById("reerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("ssnerror").innerHTML="";
+	if(document.getElementById("ssn").value=="")
+	{
+	document.getElementById("ssnerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	} 
+	document.getElementById("claimerror").innerHTML="";
+	
+	if(document.getElementById("claim").value=="")
+	{
+	document.getElementById("claimerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("claimnoerror").innerHTML="";
+	if(document.getElementById("claimno").value=="")
+	{
+	document.getElementById("claimnoerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("datepickererror").innerHTML="";
+	if(document.getElementById("datepicker").value=="")
+	{
+	document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("signerror").innerHTML="";
+	if(document.getElementById("sign").value=="")
+	{
+	document.getElementById("signerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	}
+
+	</script>
 </head>
  <body>
 <div id="right_content">
@@ -148,11 +199,12 @@
        		 </table>
        		
         	 
-        	   <table><tr> <td><input type="submit" class="submit_btn" value="update"></td>
+        	   <table><tr> <td><input type="submit" class="submit_btn" value="Save" onclick="return checkSubmit('this');"></td>
            
                
-               <td><a href="deletelettertopatients?username=${lettertopatients.username}"style="color:white" class="submit_btn" onclick="return confirmation()" >Delete</a></td> 
+               <td><a href="deletelettertopatients?letterid=${lettertopatientsdetails.letterid}"style="color:white" class="submit_btn" onclick="return confirmation()" >Delete</a></td>
                <td><a href="viewallpatientdetails"style="color:white" class="submit_btn">Cancel</a></td>
+                
               </tr></table>
         	 
         	  </div>

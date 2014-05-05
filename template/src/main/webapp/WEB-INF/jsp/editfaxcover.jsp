@@ -35,6 +35,87 @@
 	}
 }
 	</script>
+	<script>
+	function checkSubmit()
+	{
+		document.getElementById("datepickererror").innerHTML=" ";
+		
+		if(document.getElementById("datepicker").value=="")
+		{
+		document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		document.getElementById("toserror").innerHTML="";
+	if(document.getElementById("tos").value=="")
+		{
+		document.getElementById("toserror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+	/* if(document.getElementById("faxno").value=="")
+	{
+	document.getElementById("faxerror").innerHTML="Please Enter";
+	
+	return false;
+	} */
+	document.getElementById("fromerror").innerHTML="";
+	if(document.getElementById("froms").value=="")
+	{
+	document.getElementById("fromerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	/* if(document.getElementById("urgent").checked == true){
+		//alert("urgent is checked");
+		document.getElementById("urgenterror").innerHTML="Please check";
+		} else if(document.getElementById("forreview").checked == true){
+		alert("Box 2 is checked");
+		document.getElementById("forreviewerror").innerHTML="Please check";
+		}	 */
+	
+	
+	
+	/* if(document.getElementById("re").value=="")
+	{
+	document.getElementById("reerror").innerHTML="Please Enter";
+	
+	return false;
+	}
+	
+	if(document.getElementById("nos").value=="")
+	{
+	document.getElementById("noserror").innerHTML="Please Enter";
+	
+	return false;
+	} */
+	document.getElementById("msgerror").innerHTML="";
+	if(document.getElementById("msg").value=="")
+	{
+	document.getElementById("msgerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("claimnoerror").innerHTML="";
+	if(document.getElementById("claimno").value=="")
+	{
+	document.getElementById("claimnoerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("datepicker1error").innerHTML="";
+	if(document.getElementById("datepicker1").value=="")
+	{
+	document.getElementById("datepicker1error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	
+	}
+
+	</script>
 </head>
  <body>
 <div id="right_content">
@@ -77,19 +158,19 @@
        		<table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err">*</span>Today's Date:</td>
-              <td ><td><input type="hidden" name="faxid" value="${faxcoverdetails.faxid }"><input type="text" class="input_txtbx1" name="date" value="${faxcoverdetails.date }" id="datepicker" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td ><td><input type="hidden" name="faxid" value="${faxcoverdetails.faxid }"><input type="text" class="input_txtbx1" name="date" value="${faxcoverdetails.date }" id="datepicker" /><span class="err" id="datepickererror"><form:errors path="Hardshipagreement.date"></form:errors></td>
              </td> </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err">*</span>TO:</td>
-              <td ><input type="text" class="input_txtbx1" name="tos" value="${faxcoverdetails.tos }" id="datepicker" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="tos" value="${faxcoverdetails.tos }" id="tos" /><span class="err" id="toserror"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120">FAX#:</td>
-              <td ><input type="text" class="input_txtbx1" name="faxno" value="${faxcoverdetails.faxno }" id="datepicker" /><span class="err"><form:errors path="Faxcover.faxno"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="faxno" value="${faxcoverdetails.faxno }" id="faxno" /><span class="err" id="faxerror"><form:errors path="Faxcover.faxno"></form:errors></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -159,11 +240,11 @@
             <p align="justify">	*The information contained in this transmission is privileged and confidential.  It is intended only for the use of the individual or entity named above.  If the reader of this message is not the intended recipient, you are hereby notified that any dissemination, distribution, or copy of this communication is prohibited.  If you have received this communication in error, please notify me immediately. </p>	
             </div>
             
-            <table><tr> <td><input type="submit" class="submit_btn" value="update"></td>
+            <table><tr> <td><input type="submit" class="submit_btn" value="update" onclick="return checkSubmit('this');"></td>
            
-               <td><a href="viewallpatientdetails"style="color:white" class="submit_btn">Cancel</a></td>
-               <td><a href="deletefaxcover?username=${faxcover.username}"style="color:white" class="submit_btn" onclick="return confirmation()" >Delete</a></td> 
-               
+              
+               <td><a href="deletefaxcover?faxid=${faxcoverdetails.faxid}"style="color:white" class="submit_btn" onclick="return confirmation()" >Delete</a></td> 
+                <td><a href="viewallpatientdetails"style="color:white" class="submit_btn">Cancel</a></td>
               </tr></table>
               </div>
         	  </div>

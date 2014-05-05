@@ -34,6 +34,44 @@
          });
  
 </script>
+<script>
+function valid()
+{
+	document.getElementById("nameofinserror").innerHTML="";
+if(document.getElementById("nameofins").value=="")
+        {
+	document.getElementById("nameofinserror").innerHTML="Required Field Should not be Empty";
+            
+            return false;
+        }
+document.getElementById("nameofattorneyerror").innerHTML="";
+      if(document.getElementById("nameofattorney").value=="")
+        {
+    	  document.getElementById("nameofattorneyerror").innerHTML="Required Field Should not be Empty";
+            return false;
+        }  
+        
+      document.getElementById("patientnameerror").innerHTML="";
+        if(document.getElementById("patientname").value=="")
+        {
+        	 document.getElementById("patientnameerror").innerHTML="Required Field Should not be Empty";
+            return false;
+        }  
+        document.getElementById("lettererror").innerHTML="";
+        if(document.getElementById("letter").value=="")
+        {
+        	 document.getElementById("lettererror").innerHTML="Required Field Should not be Empty";
+            return false;
+        }  
+        document.getElementById("treatingphysicianerror").innerHTML="";
+        if(document.getElementById("treatingphysician").value=="")
+        {
+        	 document.getElementById("treatingphysicianerror").innerHTML="Required Field Should not be Empty";
+            return false;
+        }   
+        }
+
+</script>
 </head>
  <body>
 <div id="right_content">
@@ -184,11 +222,11 @@ do not receive a response, we will act in reliance that you will comply with it'
               </tr><br>
               </table>
               
-               <table><tr> <td><input type="submit" class="submit_btn" value="update"></td>
+               <table><tr> <td><input type="submit" class="submit_btn" value="Save"  OnClick ="return valid();"></td>
            
-               <td><a href="viewallpatientdetails"style="color:white" class="submit_btn">Cancel</a></td>
-               <td><a href="deletefaxcover?username=${faxcover.username}"style="color:white" class="submit_btn" onclick="return confirmation()" >Delete</a></td> 
                
+               <td><a href="deletenoticeassignment?noticeid=${noticeassignmentdetails.noticeid}"style="color:white" class="submit_btn" onclick="return confirmation()" >Delete</a></td> 
+               <td><a href="viewallpatientdetails"style="color:white" class="submit_btn">Cancel</a></td>
               </tr></table>
               </div>
         	  </div>
