@@ -69,7 +69,7 @@ public class RequestfordemandDAO{
 	    	}
 	    	
 	
-	public int deleterequestfordemand(String username)
+	public int deleterequestfordemand(String requestid)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -86,7 +86,7 @@ public class RequestfordemandDAO{
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 
-	    	 String cmd="delete from requestfordemand where username='"+username+"'";
+	    	 String cmd="delete from requestfordemand where requestid='"+requestid+"'";
 	    	    System.out.println("cmd insert value"+cmd);
 	    	    statement.executeUpdate(cmd);
 	    	    }
@@ -232,7 +232,7 @@ public class RequestfordemandDAO{
 			    		resultSet.getString("defaultattorney"),
 						resultSet.getString("clinicrep")
 			    		 ));
-				System.out.println("Name::::::::::::::::::"+requestfordemand.get(0).getFaultinsurer());
+			//	System.out.println("Name::::::::::::::::::"+requestfordemand.get(0).getFaultinsurer());
 			    	
 			}
 	    }catch(Exception e){
@@ -250,7 +250,7 @@ public class RequestfordemandDAO{
 	}
 	
 	
-	public int updaterequestfordemand(Requestfordemand requestfordemand,String username)
+	public int updaterequestfordemand(Requestfordemand requestfordemand,String requestid)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -275,7 +275,7 @@ public class RequestfordemandDAO{
 	    +"',txtare='"+ requestfordemand.getTxtare()
 	    +"',copymedpay='"+ requestfordemand.getCopymedpay()
 	    +"',copyform='"+requestfordemand.getCopyform()
-	    +"',copyassign='"+requestfordemand.getCopyassign()+"',greencard='"+requestfordemand.getGreencard()+"',defaultattorney='"+requestfordemand.getDefaultattorney()+"',clinicrep='"+requestfordemand.getClinicrep()+"' where requestid='"+username+"'";
+	    +"',copyassign='"+requestfordemand.getCopyassign()+"',greencard='"+requestfordemand.getGreencard()+"',defaultattorney='"+requestfordemand.getDefaultattorney()+"',clinicrep='"+requestfordemand.getClinicrep()+"' where requestid='"+requestid+"'";
 	   
 	        
 	    

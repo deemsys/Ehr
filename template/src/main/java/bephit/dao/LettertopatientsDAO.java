@@ -193,7 +193,7 @@ public class LettertopatientsDAO {
 	    return lettertopatients;
 		
 	}
-	public int updatelettertopatients(Lettertopatients lettertopatientsdetails,String username)
+	public int updatelettertopatients(Lettertopatients lettertopatientsdetails,String letterid)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -217,7 +217,7 @@ public class LettertopatientsDAO {
 	    			    +"',date1='"+ lettertopatientsdetails.getDate1()
 	    			    +"',date2='"+ lettertopatientsdetails.getDate2()
 	    			    +"',letter='"+ lettertopatientsdetails.getLetter()
-	    			    +"',sign='"+ lettertopatientsdetails.getSign()+"' where username='"+username+"'";			
+	    			    +"',sign='"+ lettertopatientsdetails.getSign()+"' where letterid='"+letterid+"'";			
 
 	    
 	   System.out.println("cmd insert value"+cmd);
@@ -240,7 +240,7 @@ public class LettertopatientsDAO {
     		return 0;
 	}
 	
-	public int deletelettertopatients(String username)
+	public int deletelettertopatients(String letterid)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -257,7 +257,7 @@ public class LettertopatientsDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 
-	    	 String cmd="delete from tbl_lettertopatient where username='"+username+"'";
+	    	 String cmd="delete from tbl_lettertopatient where letterid='"+letterid+"'";
 	    	    System.out.println("cmd insert value"+cmd);
 	    	    statement.executeUpdate(cmd);
 	    	    }
