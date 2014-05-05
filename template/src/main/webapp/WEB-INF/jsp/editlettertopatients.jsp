@@ -65,13 +65,7 @@ function checkSubmit()
 	
 	return false;
 	}
-	document.getElementById("claimnoerror").innerHTML="";
-	if(document.getElementById("claimno").value=="")
-	{
-	document.getElementById("claimnoerror").innerHTML="Required Field Should not be Empty";
 	
-	return false;
-	}
 	document.getElementById("datepickererror").innerHTML="";
 	if(document.getElementById("datepicker").value=="")
 	{
@@ -131,26 +125,26 @@ function checkSubmit()
                 <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err">*</span>RE:</td>
-              <td ><input type="hidden" name="letterid" id="letterid" value="${lettertopatientsdetails.letterid }" /><input type="text" class="input_txtbx1" name="re" value="${lettertopatientsdetails.re }" id="re" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td ><input type="hidden" name="letterid" id="letterid" value="${lettertopatientsdetails.letterid }" /><input type="text" class="input_txtbx1" name="re" value="${lettertopatientsdetails.re }" id="re" /><span class="err" id="reerror"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>
             
                 <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err">*</span>SSN:</td>
-              <td ><input type="text" class="input_txtbx1" name="ssn" id="ssn" value="${lettertopatientsdetails.ssn }"/><span class="err"><form:errors path="Workschool.date"></form:errors></span></td>
+              <td ><input type="text" class="input_txtbx1" name="ssn" id="ssn" value="${lettertopatientsdetails.ssn }"/><span class="err" id="ssnerror"><form:errors path="Workschool.date"></form:errors></span></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err">*</span>CLAIM:</td>
-              <td ><input type="text" class="input_txtbx1" name="claim" id="claim" value="${lettertopatientsdetails.claim }" /><span class="err"><form:errors path="Workschool.date"></form:errors></span></td>
+              <td ><input type="text" class="input_txtbx1" name="claim" id="claim" value="${lettertopatientsdetails.claim }" /><span class="err" id="claimerror"><form:errors path="Workschool.date"></form:errors></span></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err">*</span>DOI:</td>
-              <td ><input type="text" class="input_txtbx1" name="doi" id="datepicker" value="${lettertopatientsdetails.doi }" /><span class="err"><form:errors path="Workschool.date"></form:errors></span></td>
+              <td ><input type="text" class="input_txtbx1" name="doi" id="datepicker" value="${lettertopatientsdetails.doi }" /><span class="err" id="datepickererror"><form:errors path="Workschool.date"></form:errors></span></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -194,7 +188,7 @@ function checkSubmit()
               
               <tr> <td width="600"></td> <td>
               <b>Darrin A. Pordash D.C.</b></td></tr>
-              <tr> <td width="600"></td>  <td><span class="err">*</span><input type="text" class="input_txtbx1" name="sign" id="sign" value="${lettertopatientsdetails.sign }"/>.<span class="err"><form:errors path="lettertopatientsdetails.letter"></form:errors> </span>
+              <tr> <td width="600"></td>  <td><span class="err">*</span><input type="text" class="input_txtbx1" name="sign" id="sign" value="${lettertopatientsdetails.sign }"/>.<span class="err" id="signerror"><form:errors path="lettertopatientsdetails.letter"></form:errors> </span>
        		</td></tr>
        		 </table>
        		
