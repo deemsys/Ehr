@@ -20,7 +20,7 @@ public class DoctorsearchDAO {
 	public void setDataSource(DataSource dataSource) {
 		this.dataSource = dataSource;
 	}
-	public int Checkvalid(String emailid,String patientname)
+	public int Checkvalid(String username)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -39,16 +39,16 @@ public class DoctorsearchDAO {
 	    	
 	    	DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
-	    	String cmd="SELECT emailid,name from patient_details WHERE emailid='"+emailid+"' and name='"+patientname+"'";
+	    	String cmd="SELECT username from patient_details WHERE username='"+username+"'";
 	    	 resultSet=statement.executeQuery(cmd);
 	    	 while (resultSet.next())
 	    	 {
-	    		 emailid=resultSet.getString("emailid");
-	    		 patientname=resultSet.getString("name");
+	    		 username=resultSet.getString("username");
+	    	
 	    		 
 	    	 }
 	    	 String counts="";
-	    	 countSet=statement.executeQuery("SELECT count(emailid) as count from patient_details WHERE emailid='"+emailid+"'");
+	    	 countSet=statement.executeQuery("SELECT count(username) as count from patient_details WHERE username='"+username+"'");
 	    	 while (countSet.next())
 	    	 {
 	    		 counts=countSet.getString("count");	    	
@@ -176,9 +176,9 @@ return 0;
 	    	 System.out.println("id.."+emailid);*/
 	    	
     		 
-	    	 String cmd="INSERT INTO `tbl_doctorsearch`(`emailid`,`patientname`) VALUES ('"+doctorsearch.getEmailid()+"','"+doctorsearch.getPatientname()+"')";
-	    	 System.out.println(cmd);
-	    	 statement.execute(cmd);	    	 
+	    //	 String cmd="INSERT INTO `tbl_doctorsearch`(`emailid`,`patientname`) VALUES ('"+doctorsearch.getEmailid()+"','"+doctorsearch.getPatientname()+"')";
+	    	 //System.out.println(cmd);
+	    	// statement.execute(cmd);	    	 
 	    	
     		 flag=1;
 }
@@ -356,7 +356,7 @@ return 0;
 	    try{
 	    	resultSet = statement.executeQuery("select * from tbl_doctorsearch");
 			while(resultSet.next()){
-				doctorsearch.add(new Doctorsearch(resultSet.getString("emailid"),resultSet.getString("patientname") ));
+		//		doctorsearch.add(new Doctorsearch(resultSet.getString("emailid"),resultSet.getString("patientname") ));
 			    	}
 	    }catch(Exception e){
 	    	releaseResultSet(resultSet);

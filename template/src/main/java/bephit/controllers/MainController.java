@@ -104,7 +104,7 @@ import java.util.*;
  
 @Controller
 
-@SessionAttributes({"physical","radio","waiver","info","injury","consent","minor","hard","screen","medical","assignment","hippa","staff","veri","first","role","signup","doctorsignup","patientid","soap","auto","visit","work","lastname","attorney","accident","dateofaccident"})
+@SessionAttributes({"physical","radio","waiver","info","injury","consent","minor","hard","screen","medical","assignment","hippa","staff","veri","first","role","signup","doctorsignup","patientid","soap","auto","visit","work","lastname","attorney","accident","dateofaccident","username"})
 
 public class MainController {
 	
@@ -291,22 +291,92 @@ public class MainController {
 	}
 	
 	@RequestMapping(value="/doctorsearch", method = RequestMethod.POST)
-	public String insert_doctorsearch(HttpSession session,HttpServletRequest request,@ModelAttribute("Doctorsearch")  @Valid Doctorsearch doctorsearch,BindingResult result,ModelMap model) {
-	if(result.hasErrors())
+	public String insert_doctorsearch(HttpSession session,HttpServletRequest request,ModelMap model) {
+		
+/*	if(result.hasErrors())
 	{
 		model.addAttribute("menu","doctorsearch");
 	
 		return "doctorsearch";
-	}
+	}*/
 		
-	String emailid=request.getParameter("emailid");
-	String patientname=request.getParameter("patientname");
-	int v=doctorDAO.Checkvalid(emailid,patientname);
+	String username=request.getParameter("username");
+	session.setAttribute("username", username);	
+	//String patientname=request.getParameter("patientname");
+	int v=doctorDAO.Checkvalid(username);
 			//id=getpatient_id();
-		model.put("Doctorsearch", doctorsearch);
-		model.addAttribute("DoctorsearchForm",doctorsearch);
-		
+		if(v==0)
+		{
+			model.addAttribute("menu","search");
+			model.addAttribute("Error","true");
+			return "doctorsearch";
+		}
 		if(v>0)
+		{
+			//System.out.println("ahjsdk");
+			if(physicalDAO.getPhysicalpatient_id(username).size()==0 && radioDAO.getRadiologicReport(username).size()==0 && hamiDAO.getHamiltonchiropracticpatientid(username).size()==0)
+			
+			{
+				model.addAttribute("visit","0");
+				 model.addAttribute("menu","phyexam"); 
+				 return "physicalexam";
+			}	
+	    	  
+	    	
+	    	   if(radioDAO.getRadiologicpatient_id(username).size()==0 && hamiDAO.getHamiltonchiropracticpatientid(username).size()==0 )
+	    	   {
+	    		  
+	    		   model.addAttribute("menu","phyexam");
+	    		   session.setAttribute("visit","0");
+	    		   return "hamiltonchiropractic";
+	    	   }
+	    	 
+	    	   
+	    		   if(physicalDAO.getPhysicalpatient_id(username).size()==0)
+	           {
+	    			 
+	    			   model.addAttribute("menu","phyexam");
+	    			   session.setAttribute("visit","1");
+	    		   return "physicalexam";
+	           	
+	           }
+	    	   if(radioDAO.getRadiologicpatient_id(username).size()==0)
+	           { 
+	    		
+	    		   model.addAttribute("menu","report");
+	    		   session.setAttribute("visit","2");
+	    		   return "radiologicreport";
+	           	
+	           }
+	    	   
+	    	   if(hamiDAO.getHamiltonchiropracticpatientid(username).size()==0)
+	           { 
+	    		  
+	    		   model.addAttribute("menu","phyexam");
+	    		   session.setAttribute("visit","1");
+	    		   return "hamiltonchiropractic";
+	           	
+	           }   
+			
+			if(soapDAO.getusernameSoapnotes(username).size()>0)
+			{
+				session.removeAttribute("visit");  
+				SoapnotesForm soapnotesForm = new SoapnotesForm();       
+	    	        soapnotesForm.setSoapnotes(soapDAO.getusernameSoapnotes(username));
+	    	        model.addAttribute("soapnotesForm", soapnotesForm);		
+	    	        model.addAttribute("menu","notes");	
+	    	        List<String> diagnosis=new ArrayList<String>();
+	    	        diagnosis =soapDAO.getdiagnosis(username);
+	    	        model.addAttribute("diagnosis",diagnosis);
+				return "editsoapnotes";
+			}
+			session.removeAttribute("visit"); 
+			session.setAttribute("visit","3");
+			return "soapnotes"; 
+			
+		}
+		
+		/*if(v>0)
 		   {
 		    int b=doctorDAO.CheckDoctorsearch(emailid);
 		    if(b==0)
@@ -327,10 +397,10 @@ public class MainController {
 	        	   request.getSession().setAttribute("patientid",patientid);
 	        	   System.out.println("sessionpatientid"+patientid);
 	        	   model.addAttribute("menu","phyexam");
-	        	   /*model.addAttribute("menu","report");
+	        	   model.addAttribute("menu","report");
 	        	   model.addAttribute("menu","iniexam");
 	        	   model.addAttribute("menu","soapnotes");	       	   
-	    */
+	    
 		           return "physicalexam";		
 		           }
 	     	}
@@ -429,9 +499,9 @@ public class MainController {
 		     
 		    	  
 		       }
-	    }
-		model.addAttribute("menu","search");
-			model.addAttribute("Error","true");
+	    }*/
+		//model.addAttribute("menu","search");
+			//model.addAttribute("Error","true");
 			return "doctorsearch";
 		
 	}
@@ -445,6 +515,13 @@ public class MainController {
   	   model.addAttribute("menu","soapnotes"); */   
   	
 	 //model.addAttribute("menu", "doctor");
+	   
+	 
+	   
+		   if(physicalDAO.getPhysicalpatient_id((String)session.getAttribute("username")).size()>0)
+		   {
+			   return "hamiltonchiropractic";
+		   }
 		return "physicalexam";
  
 	}
@@ -472,7 +549,7 @@ public class MainController {
 		model.addAttribute("menu", "phyexam");	
 	    
 	
-		return "viewphysicalexam";
+		return "hamiltonchiropractic";
  
 	}
 	
@@ -4837,14 +4914,35 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 		@RequestMapping(value="/soapnotes", method = RequestMethod.GET)
 	public String soapnotes(HttpSession session,ModelMap model) {
 			session.removeAttribute("soap");
-			model.addAttribute("menu", "notes");
+			String username=(String) session.getAttribute("username");
+			if(soapDAO.getusernameSoapnotes(username).size()>0)
+			{
+				SoapnotesForm soapnotesForm = new SoapnotesForm();       
+		        soapnotesForm.setSoapnotes(soapDAO.getusernameSoapnotes(username));
+		        model.addAttribute("soapnotesForm", soapnotesForm);		
+				/*soapnotesForm.setSoapnotes(soapDAO.getSoapid());*/
+				model.addAttribute("soapnotesForm", soapnotesForm);
+				model.addAttribute("menu", "soapnotes");
+				 List<String> diagnosis=new ArrayList<String>();
+			     diagnosis =soapDAO.getdiagnosis(username);
+			        model.addAttribute("diagnosis",diagnosis);
+			        return "editsoapnotes";
+			}
+			System.out.println("usernamesdf"+session.getAttribute("username"));
+		/*	if(soapDAO.getusernameSoapnotes(username));
+			{
+				
+			}*/
+			model.addAttribute("menu", "soapnotes");
 			
 	      return "soapnotes";
 	}
 	
 	@RequestMapping(value="/soapnotes", method = RequestMethod.POST)
 	public String insert_soapnotes(HttpServletRequest request,HttpSession session,@ModelAttribute("SoapNotes")  @Valid SoapNotes soapnotes,BindingResult result,ModelMap model) {
+		
 		session.setAttribute("soap", soapnotes);
+		
 		if(result.hasErrors())
 		{
 			SoapnotesForm soapnotesForm = new SoapnotesForm();
@@ -4854,6 +4952,9 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 			model.addAttribute("menu", "notes");
 			return "soapnotes";
 		}
+	
+		String[] diagnosis=request.getParameterValues("diagnosis[]");
+		soapDAO.diagnosis(diagnosis,request.getParameter("username"));
 		model.put("SoapNotes", soapnotes);
 		model.addAttribute("soapnotesForm",soapnotes);
     	int a=soapDAO.setSoapnotes(soapnotes);
@@ -4883,15 +4984,16 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 	@RequestMapping(value="/editsoapnotes", method=RequestMethod.GET)
 	public String editsoapnotes(HttpSession session,HttpServletRequest request,@RequestParam("soapid") String soapid,ModelMap model,SoapNotes soap)
 	{
-		System.out.println("soapid"+soapid);
-		String soapnotes=request.getParameter("soapnotes");
+		
 		SoapnotesForm soapnotesForm = new SoapnotesForm();       
-        soapnotesForm.setSoapnotes(soapDAO.getSoapid(soapid));
+        soapnotesForm.setSoapnotes(soapDAO.getusernameSoapnotes(soapid));
         model.addAttribute("soapnotesForm", soapnotesForm);		
 		/*soapnotesForm.setSoapnotes(soapDAO.getSoapid());*/
 		model.addAttribute("soapnotesForm", soapnotesForm);
 		model.addAttribute("menu", "notes");
-        
+		 List<String> diagnosis=new ArrayList<String>();
+	        diagnosis =soapDAO.getdiagnosis(soapid);
+	        model.addAttribute("diagnosis",diagnosis);
         return "editsoapnotes";
         }
 	
@@ -4899,7 +5001,9 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 	public String updatesoapnotes(HttpServletRequest request,@ModelAttribute("soapnotes") @Valid SoapNotes soapnotes,
 			BindingResult result,ModelMap model,Principal principal)
 	{
-		soapnotes.getPatient_id();
+	
+		
+		//soapnotes.getUsername();
 		if (result.hasErrors())
 		{
 			SoapnotesForm soapnotesForm = new SoapnotesForm();
@@ -4911,8 +5015,11 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 	        
 		        return "editsoapnotes";
 		}
+		String[] diagnosis=request.getParameterValues("diagnosis[]");
+		soapDAO.deletediagnosis(diagnosis,request.getParameter("username"));
+		soapDAO.diagnosis(diagnosis,request.getParameter("username"));
 		System.out.println("soapid"+soapnotes.getSoapid());
-		int status = soapDAO.updatesoapnotes(soapnotes, soapnotes.getPatient_id(), principal.getName());
+		int status = soapDAO.updatesoapnotes(soapnotes, soapnotes.getUsername(), principal.getName());
 		System.out.println(status);
 		
 		SoapnotesForm soapnotesForm = new SoapnotesForm();

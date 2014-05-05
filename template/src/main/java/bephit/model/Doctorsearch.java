@@ -6,10 +6,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 public class Doctorsearch
 {   
-	@NotEmpty
-	private String emailid;
-	@NotEmpty
-	private String patientname;
+	private String username;
      
   
 public Doctorsearch()
@@ -17,27 +14,16 @@ public Doctorsearch()
 	
 }
 
-public Doctorsearch(String emailid,String patientname) {
-	super();
-	this.emailid=emailid;
-	this.patientname = patientname;
+
+public String getUsername() {
+	return username;
 }
 
-public String getEmailid() {
-	return emailid;
+
+public void setUsername(String username) {
+	this.username = username;
 }
 
-public void setEmailid(String emailid) {
-	this.emailid = emailid;
-}
-
-public String getPatientname() {
-	return patientname;
-}
-
-public void setPatientname(String patientname) {
-	this.patientname = patientname;
-}
 
 
 

@@ -132,7 +132,7 @@ $(function() {
 <script>
 function rightcheck()
 {
-alert("sdfsdf");
+
 if(document.getElementById("rightarmpain").checked)
 	{
 	document.getElementById("rightproxi").style.display="table-row";

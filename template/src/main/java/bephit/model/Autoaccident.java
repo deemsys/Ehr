@@ -49,8 +49,7 @@ public class Autoaccident {
 	private String ifyes;
 	private String further_injury;
 	private String injurytext;
-	private String ifyes_explain;
-	private String during_after_crash;
+	
 	private String patient_body;
 	private String patient_body1;
 	private String body_strike;
@@ -135,8 +134,7 @@ public Autoaccident(String patient_number,String claimnumber,
         String ifyes,
         String further_injury,
         String injurytext,
-        String ifyes_explain,
-        String during_after_crash,
+       
         String patient_body,
         String patient_body1,
         String body_strike,
@@ -213,8 +211,7 @@ public Autoaccident(String patient_number,String claimnumber,
 	this.ifyes=ifyes;
 	this.further_injury=further_injury;
 	this.injurytext = injurytext;
-	this.ifyes_explain=ifyes_explain;
-	this.during_after_crash=during_after_crash;
+	
 	this.patient_body=patient_body;
 	this.patient_body1=patient_body1;
 	this.body_strike=body_strike;
@@ -549,21 +546,6 @@ public void setInjurytext(String injurytext) {
 	this.injurytext = injurytext;
 }
 
-public String getIfyes_explain() {
-	return ifyes_explain;
-}
-
-public void setIfyes_explain(String ifyes_explain) {
-	this.ifyes_explain = ifyes_explain;
-}
-
-public String getDuring_after_crash() {
-	return during_after_crash;
-}
-
-public void setDuring_after_crash(String during_after_crash) {
-	this.during_after_crash = during_after_crash;
-}
 
 public String getPatient_body() {
 	return patient_body;

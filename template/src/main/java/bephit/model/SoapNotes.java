@@ -3,7 +3,8 @@ package bephit.model;
 import org.hibernate.validator.constraints.NotEmpty;
 
 public class SoapNotes {
-	private String patient_id;
+
+	private String username;
 	private String soapid;
 	@NotEmpty
 	private String pname;
@@ -13,7 +14,9 @@ public class SoapNotes {
 	private String leftshoulderpain;
 	private String chestpain;
 	private String rightarmpain;
+	private String rightproxi;
 	private String leftarmpain;
+	private String leftproxi;
 	private String rightelbowpain;
 	private String leftelbowpain;
 	private String rightwristpain;
@@ -22,7 +25,9 @@ public class SoapNotes {
 	private String lefthandpain;
 	private String mbp;
 	private String rightribpain;
+	private String painscale1;
 	private String leftribpain;
+	private String painscale2;
 	private String lbp;
 	private String rightsipain;
 	private String leftsipain;
@@ -41,11 +46,7 @@ public class SoapNotes {
 	private String date1;
 	private String improved;
 	private String worsened;
-	private String painscale;
-	private String diagnosis1;
-	private String diagnosis2;
-	private String diagnosis3;
-	private String diagnosis4;
+	private String painscale;	
 	private String e1e2;
 	private String xray;
 	private String offwork1;
@@ -104,12 +105,12 @@ public class SoapNotes {
 	public SoapNotes(){
 	}
 
-	public String getPatient_id() {
-		return patient_id;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setPatient_id(String patient_id) {
-		this.patient_id = patient_id;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getSoapid() {
@@ -176,12 +177,28 @@ public class SoapNotes {
 		this.rightarmpain = rightarmpain;
 	}
 
+	public String getRightproxi() {
+		return rightproxi;
+	}
+
+	public void setRightproxi(String rightproxi) {
+		this.rightproxi = rightproxi;
+	}
+
 	public String getLeftarmpain() {
 		return leftarmpain;
 	}
 
 	public void setLeftarmpain(String leftarmpain) {
 		this.leftarmpain = leftarmpain;
+	}
+
+	public String getLeftproxi() {
+		return leftproxi;
+	}
+
+	public void setLeftproxi(String leftproxi) {
+		this.leftproxi = leftproxi;
 	}
 
 	public String getRightelbowpain() {
@@ -248,12 +265,28 @@ public class SoapNotes {
 		this.rightribpain = rightribpain;
 	}
 
+	public String getPainscale1() {
+		return painscale1;
+	}
+
+	public void setPainscale1(String painscale1) {
+		this.painscale1 = painscale1;
+	}
+
 	public String getLeftribpain() {
 		return leftribpain;
 	}
 
 	public void setLeftribpain(String leftribpain) {
 		this.leftribpain = leftribpain;
+	}
+
+	public String getPainscale2() {
+		return painscale2;
+	}
+
+	public void setPainscale2(String painscale2) {
+		this.painscale2 = painscale2;
 	}
 
 	public String getLbp() {
@@ -406,38 +439,6 @@ public class SoapNotes {
 
 	public void setPainscale(String painscale) {
 		this.painscale = painscale;
-	}
-
-	public String getDiagnosis1() {
-		return diagnosis1;
-	}
-
-	public void setDiagnosis1(String diagnosis1) {
-		this.diagnosis1 = diagnosis1;
-	}
-
-	public String getDiagnosis2() {
-		return diagnosis2;
-	}
-
-	public void setDiagnosis2(String diagnosis2) {
-		this.diagnosis2 = diagnosis2;
-	}
-
-	public String getDiagnosis3() {
-		return diagnosis3;
-	}
-
-	public void setDiagnosis3(String diagnosis3) {
-		this.diagnosis3 = diagnosis3;
-	}
-
-	public String getDiagnosis4() {
-		return diagnosis4;
-	}
-
-	public void setDiagnosis4(String diagnosis4) {
-		this.diagnosis4 = diagnosis4;
 	}
 
 	public String getE1e2() {
@@ -864,37 +865,37 @@ public class SoapNotes {
 		this.sign = sign;
 	}
 
-	public SoapNotes(String patient_id, String soapid, String pname,
+	public SoapNotes(String username, String soapid, String pname,
 			String headache, String neckpain, String rightshoulderpain,
 			String leftshoulderpain, String chestpain, String rightarmpain,
-			String leftarmpain, String rightelbowpain, String leftelbowpain,
-			String rightwristpain, String leftwristpain, String righthandpain,
-			String lefthandpain, String mbp, String rightribpain,
-			String leftribpain, String lbp, String rightsipain,
-			String leftsipain, String righthippain, String lefthippain,
-			String rightgluteulpain, String leftgluteulpain,
-			String rightlegpain, String leftlegpain, String rightkneepain,
-			String leftkneepain, String rightanklepain, String leftanklepain,
-			String rightfootpain, String leftfootpain, String date1,
-			String improved, String worsened, String painscale,
-			String diagnosis1, String diagnosis2, String diagnosis3,
-			String diagnosis4, String e1e2, String xray, String offwork1,
-			String reeval1, String date2, String improved1, String worsened1,
-			String fixation1, String notimproved1, String scsm1, String date3,
-			String improved2, String worsened2, String fixation2,
-			String notimproved2, String scsm2, String date4, String improved3,
-			String worsened3, String fixation3, String notimproved3,
-			String scsm3, String date5, String improved4, String worsened4,
-			String fixation4, String notimproved4, String scsm4, String date6,
-			String improved5, String worsened5, String fixation5,
-			String notimproved5, String scsm5, String date7, String improved6,
-			String worsened6, String fixation6, String notimproved6,
-			String scsm6, String date8, String improved7, String worsened7,
-			String fixation7, String notimproved7, String scsm7, String date9,
-			String improved8, String worsened8, String fixation8,
-			String notimproved8, String scsm8, String sign) {
+			String rightproxi, String leftarmpain, String leftproxi,
+			String rightelbowpain, String leftelbowpain, String rightwristpain,
+			String leftwristpain, String righthandpain, String lefthandpain,
+			String mbp, String rightribpain, String painscale1,
+			String leftribpain, String painscale2, String lbp,
+			String rightsipain, String leftsipain, String righthippain,
+			String lefthippain, String rightgluteulpain,
+			String leftgluteulpain, String rightlegpain, String leftlegpain,
+			String rightkneepain, String leftkneepain, String rightanklepain,
+			String leftanklepain, String rightfootpain, String leftfootpain,
+			String date1, String improved, String worsened, String painscale,
+			String e1e2, String xray, String offwork1, String reeval1,
+			String date2, String improved1, String worsened1, String fixation1,
+			String notimproved1, String scsm1, String date3, String improved2,
+			String worsened2, String fixation2, String notimproved2,
+			String scsm2, String date4, String improved3, String worsened3,
+			String fixation3, String notimproved3, String scsm3, String date5,
+			String improved4, String worsened4, String fixation4,
+			String notimproved4, String scsm4, String date6, String improved5,
+			String worsened5, String fixation5, String notimproved5,
+			String scsm5, String date7, String improved6, String worsened6,
+			String fixation6, String notimproved6, String scsm6, String date8,
+			String improved7, String worsened7, String fixation7,
+			String notimproved7, String scsm7, String date9, String improved8,
+			String worsened8, String fixation8, String notimproved8,
+			String scsm8, String sign) {
 		super();
-		this.patient_id = patient_id;
+		this.username = username;
 		this.soapid = soapid;
 		this.pname = pname;
 		this.headache = headache;
@@ -903,7 +904,9 @@ public class SoapNotes {
 		this.leftshoulderpain = leftshoulderpain;
 		this.chestpain = chestpain;
 		this.rightarmpain = rightarmpain;
+		this.rightproxi = rightproxi;
 		this.leftarmpain = leftarmpain;
+		this.leftproxi = leftproxi;
 		this.rightelbowpain = rightelbowpain;
 		this.leftelbowpain = leftelbowpain;
 		this.rightwristpain = rightwristpain;
@@ -912,7 +915,9 @@ public class SoapNotes {
 		this.lefthandpain = lefthandpain;
 		this.mbp = mbp;
 		this.rightribpain = rightribpain;
+		this.painscale1 = painscale1;
 		this.leftribpain = leftribpain;
+		this.painscale2 = painscale2;
 		this.lbp = lbp;
 		this.rightsipain = rightsipain;
 		this.leftsipain = leftsipain;
@@ -932,10 +937,6 @@ public class SoapNotes {
 		this.improved = improved;
 		this.worsened = worsened;
 		this.painscale = painscale;
-		this.diagnosis1 = diagnosis1;
-		this.diagnosis2 = diagnosis2;
-		this.diagnosis3 = diagnosis3;
-		this.diagnosis4 = diagnosis4;
 		this.e1e2 = e1e2;
 		this.xray = xray;
 		this.offwork1 = offwork1;
@@ -989,6 +990,8 @@ public class SoapNotes {
 		this.notimproved8 = notimproved8;
 		this.scsm8 = scsm8;
 		this.sign = sign;
-	}
+	}	
+
+		
 
 	}

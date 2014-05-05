@@ -52,9 +52,30 @@
              <td></td>
              <td></td>
               </tr>
-              <tr class="row1">
+               <tr class="row1">
                <td>I understand you have pain in your:</td>
-                 <td><input type="hidden" name="patient_id" value="${patientid}"><input type="checkbox" name="hacheck" value="HA" >&nbsp HA</td>
+                 <td><input type="hidden" name="patient_id" value="${patientid}"><input type="checkbox" name="lumbopelvic" value="Lumbopelvic" id="lumbo" onclick="lumboPopup()">&nbsp Lumbopelvic</td>
+                 <td><input type="radio" name="ha" value="Right" >&nbsp Right</td>
+                 <td><input type="radio" name="ha" value="Left" >&nbsp Left</td>
+                 <td></td>
+                 </tr>
+                  <tr class="row1">
+               <td></td>
+                 <td><input type="checkbox" name="cervical" value="Cervical" id="cervical" onclick="cervicalPopup()">&nbsp Cervical</td>
+                 <td><input type="radio" name="ha" value="Right" >&nbsp Right</td>
+                 <td><input type="radio" name="ha" value="Left" >&nbsp Left</td>
+                 <td></td>
+                 </tr>
+                     <tr class="row1">
+               <td></td>
+                 <td><input type="checkbox" name="thoracic" value="Thoracic" id="thoracic" onclick="thoracicPopup()">&nbsp Thoracic</td>
+                 <td><input type="radio" name="ha" value="Right" >&nbsp Right</td>
+                 <td><input type="radio" name="ha" value="Left" >&nbsp Left</td>
+                 <td></td>
+                 </tr>
+              <tr class="row1">
+               <td></td>
+                 <td><input type="checkbox" name="hacheck" value="HA" >&nbsp HA</td>
                  <td><input type="radio" name="ha" value="Right" >&nbsp Right</td>
                  <td><input type="radio" name="ha" value="Left" >&nbsp Left</td>
                  <td></td>
@@ -119,33 +140,54 @@
                 <td></td>
                 <script type="text/javascript">
 // Popup window code
+function lumboPopup() {
 
+if(document.getElementById("lumbo").checked)
+{
+popupWindow = window.open("lumbopelvicexam" ,"lumboWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		}
+}
 
+function cervicalPopup() {
+
+	if(document.getElementById("cervical").checked)
+	{
+	popupWindow = window.open("cervicalexam" ,"cervicalpopUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+			}
+	}
+
+function thoracicPopup() {
+
+	if(document.getElementById("thoracic").checked)
+	{
+	popupWindow = window.open("thoracicexam" ,"thoracicpopUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+			}
+	}
 
 function newPopup() {
 
 if(document.getElementById("hipexam").checked)
 {
-popupWindow = window.open("perry" ,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+popupWindow = window.open("perry" ,"hippopUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
 		}
 }
 function anklePopup() {
 if(document.getElementById("ankle").checked)
 {
-popupWindow = window.open("ankle",'popUpWindow','width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+popupWindow = window.open("ankle",'anklepopUpWindow','width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
 		}
 }
 function footPopup() {
 	if(document.getElementById("foot").checked)
 	{
-	popupWindow = window.open("ankle",'popUpWindow','width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+	popupWindow = window.open("ankle",'footpopUpWindow','width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
 			}
 	}
 function shoulderPopup() {
 if(document.getElementById("shoulder").checked)
 {
 
-popupWindow = window.open("shoulderexam",'popUpWindow','width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+popupWindow = window.open("shoulderexam",'shoulderpopUpWindow','width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
 		}
 }
 
@@ -153,7 +195,7 @@ function kneePopup() {
 	if(document.getElementById("knee").checked)
 	{
 
-	popupWindow = window.open("kneeexam",'popUpWindow','width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+	popupWindow = window.open("kneeexam",'kneepopUpWindow','width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
 			}
 	}
 	
@@ -161,7 +203,7 @@ function wristPopup() {
 	if(document.getElementById("wrist").checked)
 	{
 
-	popupWindow = window.open("wristexam",'popUpWindow','width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+	popupWindow = window.open("wristexam",'wristpopUpWindow','width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
 			}
 	}
 	
@@ -169,7 +211,7 @@ function handPopup() {
 	if(document.getElementById("hand").checked)
 	{
 
-	popupWindow = window.open("wristexam",'popUpWindow','width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+	popupWindow = window.open("wristexam",'handpopUpWindow','width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
 			}
 	}
 
@@ -178,7 +220,7 @@ function elbowPopup() {
 	if(document.getElementById("elbow").checked)
 	{
 
-	popupWindow = window.open("elbowexam",'popUpWindow','width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+	popupWindow = window.open("elbowexam",'elbowpopUpWindow','width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
 			}
 	}
 
