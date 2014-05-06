@@ -121,7 +121,7 @@ $(function() {
           <tr class="row1">
 <td></td><td></td>
 <td></td><td></td><td></td><td></td>
-<td><h2><span class="err">*</span>patient</h2></td><td><input type="text" name="pname"><span class="err"><form:errors path="SoapNotes.pname"></form:errors></span></td>
+<td><h2><span class="err">*</span>patient</h2></td><td><input type="text" name="pname" id="pname"><span style="color:red" id="pnameerr"><form:errors path="SoapNotes.pname"></form:errors></span></td>
 </tr>
 <tr class="row1">
 <td height="20">Chief Complaint:</td>
@@ -949,11 +949,30 @@ document.getElementById("leftproxi").style.display="none";
  
 				                   
 <br/><br/>
-<table align="right"><tr><td><span class="err">*</span> Physicians Signature:<input type="text" name="sign"><span class="err"><form:errors path="SoapNotes.sign"></form:errors></span></td></tr></table>
+<table align="right"><tr><td><span class="err">*</span> Physicians Signature:<input type="text" name="sign" id="sign"><span style="color:red" id="signerror"><form:errors path="SoapNotes.sign"></form:errors></span></td></tr></table>
 				                   </table>
-				                   
+	<script>
+	function check()
+	{	
+		document.getElementById("pnameerr").innerHTML="";	
+		
+	if(document.getElementById("pname").value=="")
+		{	
+		document.getElementById("pnameerr").innerHTML="Required Field Should Not Empty";	
+		return false;
+		}
+		document.getElementById("signerror").innerHTML="";	
+	
+	if(document.getElementById("sign").value=="")
+	{	
+	document.getElementById("signerror").innerHTML="Required Field Should Not Empty";	
+	return false;
+	}
+		
+	}	
+	</script>			                   
 				                   <table align="right"> <tr>
-				                   <td><input type="submit" class="submit_btn" value="Save"></td>
+				                   <td><input type="submit" class="submit_btn" value="Save" onclick="return check('this')"></td>
 				                   <!-- <td><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewsoapnotes'"></td> -->
 				                   <td><input type="reset" class="submit_btn" value="Cancel"></td>
 				                   </tr>
@@ -976,7 +995,7 @@ document.getElementById("leftproxi").style.display="none";
 
     <tr class="row1">
        <td><h2><span class="err">*</span>patient:</h2></td>
-                           <td><input type="text" class="input_txtbx1" name="pname" value="${soap.pname}" /><span class="err"><form:errors path="SoapNotes.pname"></form:errors></span></td>
+                           <td><input type="text" class="input_txtbx1" name="pname" value="${soap.pname}" /><span class="err" ><form:errors path="SoapNotes.pname"></form:errors></span></td>
              </tr>
         </table>
         

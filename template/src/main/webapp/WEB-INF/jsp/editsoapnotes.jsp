@@ -91,6 +91,24 @@ $(function() {
     $( "#datepicker8" ).datepicker();
   });
 </script>
+<script>
+	function checkSubmit()
+	{	
+	document.getElementById("pnameerr").innerHTML="";
+	if(document.getElementById("pname").value=="")
+		{	
+		document.getElementById("pnameerr").innerHTML="Required Field Should Not Empty";	
+		return false;
+		}
+		document.getElementById("signerror").innerHTML="";
+		if(document.getElementById("sign").value=="")
+		{	
+		document.getElementById("signerror").innerHTML="Required Field Should Not Empty";	
+		return false;
+		}
+		}
+		
+		</script>
 <body>
 <br><br>
 <form  method="POST" action="updatesoapnotes" name="update" id="update">
@@ -116,7 +134,7 @@ $(function() {
        <td><h2><span class="err">*</span>patient:</h2></td>
              <input type="text" value="${username}" name="username" />
               <input type="hidden" class="input_txtbx1" id="inp_id" value="${soapnotes.soapid}" name="soapid" />
-              <td><input type="text" class="input_txtbx1" name="pname" value="${soapnotes.pname}" /><span class="err"><form:errors path="SoapNotes.pname"></form:errors></span></td>
+              <td><input type="text" class="input_txtbx1" name="pname" id="pname" value="${soapnotes.pname}" /><span class="err" id="pnameerr"><form:errors path="SoapNotes.pname"></form:errors></span></td>
              </tr>
         </table>
         
@@ -878,10 +896,10 @@ else
  </td>
  </tr>
   </table>
-  <table align="right"><tr><td><span class="err">*</span> Physicians Signature:<input type="text" name="sign" class="input_txtbx1" id="inp_id"  value="${soapnotes.sign}"><span class="err"><form:errors path="SoapNotes.sign"></form:errors></span></td></tr></table>
+  <table align="right"><tr><td><span class="err">*</span> Physicians Signature:<input type="text" name="sign" class="input_txtbx1" id="sign"  value="${soapnotes.sign}"><span class="err" id="signerror"><form:errors path="SoapNotes.sign"></form:errors></span></td></tr></table>
 				                   </table>
  <table align="right"> <tr>
-				                   <td><input type="submit" class="submit_btn" value="Update"></td>
+				                   <td><input type="submit" class="submit_btn" value="Update" onclick="return checkSubmit('this');"></td>
 				                   <td><input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='viewsoapnotes'"></td>
 				                   </tr>
 				                   </table>
