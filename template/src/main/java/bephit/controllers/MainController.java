@@ -1611,7 +1611,7 @@ public class MainController {
 	public @ResponseBody String insuranceverification_ajax(@ModelAttribute(value="pusername")Insuranceverification insuranceverification, BindingResult result,ModelMap model ) {
 		String returnText="";
 		String patientname="";
-		System.out.println("usernmae"+insuranceverification.getPusername());
+		System.out.println("username"+insuranceverification.getPusername());
 		if(signupDAO.getPatientusername(insuranceverification.getPusername()).size()==0)
 		{
 			return "error";
