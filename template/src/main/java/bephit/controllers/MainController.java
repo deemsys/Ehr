@@ -1608,7 +1608,7 @@ public class MainController {
  
 	}
 	@RequestMapping(value="/insuranceverification_ajax",method=RequestMethod.POST)
-	public @ResponseBody String insuranceverification_ajax(@ModelAttribute(value="username")Insuranceverification insuranceverification, BindingResult result,ModelMap model ) {
+	public @ResponseBody String insuranceverification_ajax(@ModelAttribute(value="pusername")Insuranceverification insuranceverification, BindingResult result,ModelMap model ) {
 		String returnText="";
 		String patientname="";
 		System.out.println("usernmae"+insuranceverification.getPusername());

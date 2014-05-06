@@ -17,13 +17,14 @@
    <script>
 
 	function checkSubmit()
+
 	{
-		document.getElementById("insuranceerror").innerHTML=" ";
+		
+		//document.getElementById("insuranceerror").innerHTML="";
 		
 		if(document.getElementById("insurance").value=="")
-		{
-		document.getElementById("insurancererror").innerHTML="Required Field Should not be Empty";
-		
+		{		
+		document.getElementById("error").innerHTML="Required Field Should not be Empty";
 		return false;
 		}
 		document.getElementById("regerror").innerHTML="";
@@ -329,7 +330,7 @@ Canton, Ohio 44708
               		<table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="50%"><span class="err">*</span>Name of Insurance Company:</td>
-              <td ><input type="text" class="input_txtbx1" name="insurance" id="insurance" /><span class="err" id="insuranceerror"><form:errors path="Perrychiropractic.insurance"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="insurance" id="insurance" /><span id="error"  style="color: red;font-style:italic;"></span><span class="err" id="insuranceerror"><form:errors path="Perrychiropractic.insurance"></form:errors></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
