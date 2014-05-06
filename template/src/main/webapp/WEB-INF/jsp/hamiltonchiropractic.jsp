@@ -21,14 +21,55 @@
 	    $( "#tabss" ).tabs();
 	  });
   </script>
+  <script>
+  function lumboPopup() {
+
+if(document.getElementById("lumbo").checked)
+{
+popupWindow = window.open("lumbopelvicexam" ,"lumboWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		}
+}
+
+function cervicalPopup() {
+
+	if(document.getElementById("cervical").checked)
+	{
+	popupWindow = window.open("cervicalexam" ,"cervicalpopUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+			}
+	}
+
+function thoracicPopup() {
+
+	if(document.getElementById("thoracic").checked)
+	{
+	popupWindow = window.open("thoracicexam" ,"thoracicpopUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+			}
+	}
+  </script>
+  <script>
+$(function() {
+    $( "#slider" ).slider({
+      value:1,
+      min: 0,
+      max: 10,
+      step: 1,
+      slide: function( event, ui ) {
+        $( "#amount" ).val(+ ui.value );
+      }
+    });
+    $( "#amount" ).val(+ $( "#slider" ).slider( "value" ) );
+  });
+
+</script>
+  
  <body>
  <br>
 <br>
 <div id="tabs">
        <ul>
-          <li><a href="#tabs-1">Pain Assessment</a></li>
+          <li><a href="#tabs-1">History</a></li>
           <li><a href="#tabs-2">Diagnosis/TP/Goals</a></li>
-          <li><a href="#tabs-3">Orthopaedic Tests</a></li>
+          <li><a href="#tabs-3">Orthopedic Tests</a></li>
        </ul>
          
    <div id="tabs-1"> 
@@ -52,8 +93,10 @@
              <td></td>
              <td></td>
               </tr>
+              <tr class="row1">
+               <td>I understand you have pain in your:</td></tr>
                <tr class="row1">
-               <td>I understand you have pain in your:</td>
+                   <td></td>
                  <td><input type="hidden" name="patient_id" value="${patientid}"><input type="checkbox" name="lumbopelvic" value="Lumbopelvic" id="lumbo" onclick="lumboPopup()">&nbsp Lumbopelvic</td>
                  <td><input type="radio" name="ha" value="Right" >&nbsp Right</td>
                  <td><input type="radio" name="ha" value="Left" >&nbsp Left</td>
@@ -73,121 +116,104 @@
                  <td><input type="radio" name="ha" value="Left" >&nbsp Left</td>
                  <td></td>
                  </tr>
-              <tr class="row1">
+                <tr class="row1">
                <td></td>
-                 <td><input type="checkbox" name="hacheck" value="HA" >&nbsp HA</td>
+                 <td><input type="checkbox" name="hacheck" value="hacheck" id="hacheck">&nbsp HA</td>
                  <td><input type="radio" name="ha" value="Right" >&nbsp Right</td>
                  <td><input type="radio" name="ha" value="Left" >&nbsp Left</td>
+                 <td></td>
+                 </tr>
+                 
+                 <td></td>
                  <td></td>
                  </tr>
                 <tr class="row1">
                 <td></td>
                 <td><input type="checkbox" name="neckcheck" value="Neck" >&nbsp Neck</td>
-                 <td><input type="radio" name="neck" value="Right" >&nbsp Right</td>
-                 <td><input type="radio" name="neck" value="Left" >&nbsp Left</td>
+                 <td><input type="checkbox" name="neck" value="Right" >&nbsp Right</td>
+                 <td><input type="checkbox" name="necka" value="Left" >&nbsp Left</td>
                  <td></td>
                  </tr>
                  <tr class="row1">
                 <td></td>
                 <td><input type="checkbox" name="mbcheck" value="MB" >&nbsp MB</td>
-                 <td><input type="radio" name="mb" value="Right" >&nbsp Right</td>
-                 <td><input type="radio" name="mb" value="Left" >&nbsp Left</td>
+                 <td><input type="checkbox" name="mb" value="Right" >&nbsp Right</td>
+                 <td><input type="checkbox" name="mba" value="Left" >&nbsp Left</td>
                  <td></td>
                  </tr>
                  <tr class="row1">
                 <td></td>
                 <td><input type="checkbox" name="ribscheck" value="ribscheck" >&nbsp Ribs</td>
-                 <td><input type="radio" name="ribs" value="ribsr" >&nbsp Right</td>
-                 <td><input type="radio" name="ribs" value="ribsl" >&nbsp Left</td>
+                 <td><input type="checkbox" name="ribs" value="ribsr" >&nbsp Right</td>
+                 <td><input type="checkbox" name="ribsa" value="ribsl" >&nbsp Left</td>
                 <td></td>
                  </tr>
                  <tr class="row1">
                 <td></td>
                 <td><input type="checkbox" name="shouldercheck" value="Shoulder" id="shoulder" onclick="shoulderPopup()">&nbsp Shoulder</td>
-                 <td><input type="radio" name="shoulder" value="Right" >&nbsp Right</td>
-                 <td><input type="radio" name="shoulder" value="Left" >&nbsp Left</td>
+                 <td><input type="checkbox" name="shoulder" value="Right" >&nbsp Right</td>
+                 <td><input type="checkbox" name="shouldera" value="Left" >&nbsp Left</td>
                  <td></td>
                  </tr>
                  <tr class="row1">
                 <td></td>
                 <td><input type="checkbox" name="elbowcheck" value="Elbow" id="elbow" onclick="elbowPopup()">&nbsp Elbow</td>
-                 <td><input type="radio" name="elbow" value="Right" >&nbsp Right</td>
-                 <td><input type="radio" name="elbow" value="Left" >&nbsp Left</td>
+                 <td><input type="checkbox" name="elbow" value="Right" >&nbsp Right</td>
+                 <td><input type="checkbox" name="elbowa" value="Left" >&nbsp Left</td>
                  <td></td>
                  </tr>
                  <tr class="row1">
                 <td></td>
                 <td><input type="checkbox" name="handcheck" value="Hand" id="hand" onclick="handPopup()" >&nbsp Hand</td>
-                 <td><input type="radio" name="hand" value="Right" >&nbsp Right</td>
-                 <td><input type="radio" name="hand" value="Left" >&nbsp Left</td>
+                 <td><input type="checkbox" name="hand" value="Right" >&nbsp Right</td>
+                 <td><input type="checkbox" name="handa" value="Left" >&nbsp Left</td>
                  <td></td>
                  </tr>
                  <tr class="row1">
                 <td></td>
                 <td><input type="checkbox" name="wristcheck" value="Wrist" id="wrist" onclick="wristPopup()">&nbsp Wrist</td>
-                 <td><input type="radio" name="wrist" value="Right" >&nbsp Right</td>
-                 <td><input type="radio" name="wrist" value="Left" >&nbsp Left</td>
+                 <td><input type="checkbox" name="wrist" value="Right" >&nbsp Right</td>
+                 <td><input type="checkbox" name="wrista" value="Left" >&nbsp Left</td>
                  <td></td>
                  </tr>
                  <tr class="row1">
                 <td></td>
                 <td><input type="checkbox" name="lbpcheck" value="Lbp" >&nbsp LBP</td>
-                 <td><input type="radio" name="lbp" value="Right" >&nbsp Right</td>
-                 <td><input type="radio" name="lbp" value="Left" >&nbsp Left</td>
+                 <td><input type="checkbox" name="lbp" value="Right" >&nbsp Right</td>
+                 <td><input type="checkbox" name="lbpa" value="Left" >&nbsp Left</td>
                  <td></td>
                  </tr>
                  <tr class="row1">
                 <td></td>
                 <script type="text/javascript">
 // Popup window code
-function lumboPopup() {
 
-if(document.getElementById("lumbo").checked)
-{
-popupWindow = window.open("lumbopelvicexam" ,"lumboWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
-		}
-}
 
-function cervicalPopup() {
-
-	if(document.getElementById("cervical").checked)
-	{
-	popupWindow = window.open("cervicalexam" ,"cervicalpopUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
-			}
-	}
-
-function thoracicPopup() {
-
-	if(document.getElementById("thoracic").checked)
-	{
-	popupWindow = window.open("thoracicexam" ,"thoracicpopUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
-			}
-	}
 
 function newPopup() {
 
 if(document.getElementById("hipexam").checked)
 {
-popupWindow = window.open("perry" ,"hippopUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+popupWindow = window.open("perry" ,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
 		}
 }
 function anklePopup() {
 if(document.getElementById("ankle").checked)
 {
-popupWindow = window.open("ankle",'anklepopUpWindow','width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+popupWindow = window.open("ankle",'popUpWindow','width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
 		}
 }
 function footPopup() {
 	if(document.getElementById("foot").checked)
 	{
-	popupWindow = window.open("ankle",'footpopUpWindow','width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+	popupWindow = window.open("ankle",'popUpWindow','width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
 			}
 	}
 function shoulderPopup() {
 if(document.getElementById("shoulder").checked)
 {
 
-popupWindow = window.open("shoulderexam",'shoulderpopUpWindow','width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+popupWindow = window.open("shoulderexam",'popUpWindow','width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
 		}
 }
 
@@ -195,7 +221,7 @@ function kneePopup() {
 	if(document.getElementById("knee").checked)
 	{
 
-	popupWindow = window.open("kneeexam",'kneepopUpWindow','width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+	popupWindow = window.open("kneeexam",'popUpWindow','width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
 			}
 	}
 	
@@ -203,7 +229,7 @@ function wristPopup() {
 	if(document.getElementById("wrist").checked)
 	{
 
-	popupWindow = window.open("wristexam",'wristpopUpWindow','width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+	popupWindow = window.open("wristexam",'popUpWindow','width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
 			}
 	}
 	
@@ -211,7 +237,7 @@ function handPopup() {
 	if(document.getElementById("hand").checked)
 	{
 
-	popupWindow = window.open("wristexam",'handpopUpWindow','width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+	popupWindow = window.open("wristexam",'popUpWindow','width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
 			}
 	}
 
@@ -220,7 +246,7 @@ function elbowPopup() {
 	if(document.getElementById("elbow").checked)
 	{
 
-	popupWindow = window.open("elbowexam",'elbowpopUpWindow','width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+	popupWindow = window.open("elbowexam",'popUpWindow','width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
 			}
 	}
 
@@ -236,36 +262,36 @@ function elbowPopup() {
 </script>
 <!-- <a href="JavaScript:newPopup('http://www.quackit.com/html/html_help.cfm');">Open a popup window</a> -->
                 <td><input type="checkbox" name="hipcheck" value="Hip" id="hipexam" onclick="newPopup()">&nbsp Hip</td>
-                 <td><input type="radio" name="hip" value="Right" >&nbsp Right</td>
-                 <td><input type="radio" name="hip" value="Left" >&nbsp Left</td>
+                 <td><input type="checkbox" name="hip" value="Right" >&nbsp Right</td>
+                 <td><input type="checkbox" name="hipa" value="Left" >&nbsp Left</td>
                  <td></td>
                  </tr>
                  <tr class="row1">
                 <td></td>
                 <td><input type="checkbox" name="legcheck" value="Leg" >&nbsp Leg</td>
-                 <td><input type="radio" name="leg" value="Right" >&nbsp Right</td>
-                 <td><input type="radio" name="leg" value="Left" >&nbsp Left</td>
+                 <td><input type="checkbox" name="leg" value="Right" >&nbsp Right</td>
+                 <td><input type="checkbox" name="lega" value="Left" >&nbsp Left</td>
                  <td></td>
                  </tr>
                 <tr class="row1">
                 <td></td>
                 <td><input type="checkbox" name="kneecheck" value="Knee" id="knee" onclick="kneePopup()">&nbsp Knee</td>
-                 <td><input type="radio" name="knee" value="Right" >&nbsp Right</td>
-                 <td><input type="radio" name="knee" value="Left" >&nbsp Left</td>
+                 <td><input type="checkbox" name="knee" value="Right" >&nbsp Right</td>
+                 <td><input type="checkbox" name="kneea" value="Left" >&nbsp Left</td>
                  <td></td>
                  </tr>
                  <tr class="row1">
                 <td></td>
                 <td><input type="checkbox" name="footcheck" value="Foot" id="foot" onclick="footPopup()">&nbsp Foot</td>
-                 <td><input type="radio" name="foot" value="Right" >&nbsp Right</td>
-                 <td><input type="radio" name="foot" value="Left" >&nbsp Left</td>
+                 <td><input type="checkbox" name="foot" value="Right" >&nbsp Right</td>
+                 <td><input type="checkbox" name="foota" value="Left" >&nbsp Left</td>
                  <td></td>
                  </tr>
                  <tr class="row1">
                 <td></td>
                 <td><input type="checkbox" name="anklecheck" value="Ankle" id="ankle" onclick="anklePopup()">&nbsp Ankle</td>
-                 <td><input type="radio" name="ankle" value="Right" >&nbsp Right</td>
-                 <td><input type="radio" name="ankle" value="Left" >&nbsp Left</td>
+                 <td><input type="checkbox" name="ankle" value="Right" >&nbsp Right</td>
+                 <td><input type="checkbox" name="anklea" value="Left" >&nbsp Left</td>
                  <td></td>
                  </tr>
                  <tr class="row1">
@@ -304,8 +330,8 @@ function elbowPopup() {
                  <td><input type="checkbox" name="bending" value="Bending">&nbsp Bending</td>
                  <td><input type="checkbox" name="rest" value="Rest">&nbsp Rest</td>
                  <td><input type="checkbox" name="otherb" value="Other">&nbsp other:
-                 <input type="text" name="othere" class="input_txtbx1" placeholder="If other, specify"></td>
-                 <td></td>
+                 </td>
+                 <td><input type="text" name="othere" class="input_txtbx1" placeholder="If other, specify"></td>
                  </tr>
                   <tr class="row1">
                  <td>What have you done for it?  </td>
@@ -332,13 +358,13 @@ function elbowPopup() {
                  <td><input type="checkbox" name="walking" value="Walking">&nbsp Walking</td>
                 <td><input type="checkbox" name="activity" value="Activity">&nbsp Activity</td>
                 <td><input type="checkbox" name="otherworse" value="Other">&nbsp Other
-                 <input type="text" name="otherfeel" class="input_txtbx1" placeholder="If other, specify"></td>
-                 <td></td>
+                 </td>
+                 <td><input type="text" name="otherfeel" class="input_txtbx1" placeholder="If other, specify"></td>
                  </tr>
                   <tr class="row1">
                  <td>How would you describe the pain?   </td>
                  <td><input type="checkbox" name="sharp" value="Sharp/Shooting">&nbsp Sharp/Shooting</td>
-                 <td><input type="checkbox" name="severe" value="Severe/intolerable">Severe/intolerable</td>
+                 <td><input type="checkbox" name="severe" value="Severe/intolerable">Severe</td>
                  <td><input type="checkbox" name="dull" value="Dull/achy">&nbsp Dull/achy</td>
                  </tr>
                  <tr class="row1">
@@ -359,8 +385,8 @@ function elbowPopup() {
                  <td><input type="checkbox" name="stabbing" value="Stabbing">&nbsp Stabbing  </td>
                 <td><input type="checkbox" name="cramping" value="Cramping">&nbsp Cramping</td>
                 <td><input type="checkbox" name="otherdescribe" value="Other">&nbsp other 
-                 <input type="text" name="otherpain" class="input_txtbx1" placeholder="If other, specify"></td>
-                 <td></td>
+                 </td>
+                 <td><input type="text" name="otherpain" class="input_txtbx1" placeholder="If other, specify"></td>
                  </tr>
                  <tr class="row1">
                  <td>Is it constant or does it come and go?</td>
@@ -386,8 +412,8 @@ function elbowPopup() {
                  <td>Is it worse in the morning or at night?  </td>
                  <td><input type="checkbox" name="am" value="AM">&nbsp AM</td>
                  <td><input type="checkbox" name="pm" value="PM">&nbsp PM</td>
-                 <td><input type="checkbox" name="othertime" value="Other">&nbsp Other<input type="text" name="otherdn" class="input_txtbx1" placeholder="If other, specify"></td>
-                 <td></td>
+                 <td><input type="checkbox" name="othertime" value="Other">&nbsp Other</td>
+                 <td><input type="text" name="otherdn" class="input_txtbx1" placeholder="If other, specify"></td>
                  </tr>
                  <tr class="row1">
                  <td>Is your condition getting worse or better?</td>
@@ -407,7 +433,8 @@ function elbowPopup() {
                 <td><input type="checkbox" name="work" value="Work">&nbsp Work</td>
                  <td><input type="checkbox" name="sleep" value="Sleep">&nbsp Sleep</td>
                  <td><input type="checkbox" name="otherdaily" value="Other">&nbsp Other
-                 <input type="text" name="othercondition" class="input_txtbx1" placeholder="If other, specify"></td>
+                 </td>
+                 <td><input type="text" name="othercondition" class="input_txtbx1" placeholder="If other, specify"></td>
             </table> 
             </div>
             </div>
@@ -450,12 +477,13 @@ function elbowPopup() {
                   <td></td>
              
                  <td><input type="checkbox" name="preinjury" value=" At Pre-injury Status">&nbsp At pre-injury Status
-                  ( <input type="checkbox" name="slight" value="Slightly">&nbsp Slightly
-                   <input type="checkbox" name="moderatly" value="Moderatly">&nbsp Moderatly
-                   <input type="checkbox" name="great" value="Greatly">&nbsp Greatly )</td>
                    
-                   <td></td>
-                   <td></td>
+                   
+                   
+                   
+                   <td><input type="checkbox" name="slight" value="Slightly">&nbsp Slightly</td>
+                   <td><input type="checkbox" name="moderatly" value="Moderatly">&nbsp Moderately</td>
+                   <td><input type="checkbox" name="great" value="Greatly">&nbsp Greatly </td></td>
              </tr>
              <tr class="row1">
                  <td><b>Treatment plan:</b></td>
@@ -476,12 +504,12 @@ function elbowPopup() {
             <td><input type="checkbox" name="neuromuscular" value="Neuromuscular Re-education">&nbsp Neuromuscular Re-education  </td>
             <td><input type="checkbox" name="stretching" value="Stretching">&nbsp Stretching</td>
             <td><input type="checkbox" name="strengthening" value="Strengthening">&nbsp Strengthening</td>
-            <td><input type="checkbox" name="remobilization" value="Remobilization">&nbsp Remobilization  </td>
+            <td><table cellspacing="0" cellpadding="0"><tr><td width="40%"><input type="checkbox" name="remobilization" value="Remobilization"> Remobilization</td><td width="50%"><input type="checkbox" name="improvesubluxations" value="Improve Subluxations">Improve &nbsp;Subluxations</td>  </tr></table></td>
             </tr>
              <tr class="row1">
             <td></td>
             <td><input type="checkbox" name="rehab" value="Rehab">&nbsp Rehab  </td>
-            <td><input type="checkbox" name="modificat" value="Modificat">&nbsp Modificat  </td>
+            <td><input type="checkbox" name="modificat" value="Modificat">&nbsp Modification  </td>
             <td><input type="checkbox" name="care" value="Release from care">&nbsp Release from care   </td>
             <td><input type="checkbox" name="refer" value="Refer">&nbsp Refer  </td>
             </tr>      
@@ -497,7 +525,7 @@ function elbowPopup() {
                 <td></td>
                 <td></td>                   
                 <td><input type="checkbox" name="improveadl" value="Improve ADL">&nbsp Improve ADL    </td>
-                <td><input type="checkbox" name="improvesubluxations" value="Improve Subluxations">&nbsp Improve Subluxations</td>
+                <td></td>
                 <td></td>
              </tr>
               <tr class="row1">
@@ -521,13 +549,13 @@ function elbowPopup() {
             
             <div id="tabss">
        <ul>
-          <li><a href="#tabss-1">CERVICAL</a></li>
-          <li><a href="#tabss-2">THORACIC</a></li>
-          <li><a href="#tabss-3">LUMBAR</a></li>
-           <li><a href="#tabss-4">EXTREMITIES</a></li>
+          <li><a href="#tab-cervical">CERVICAL</a></li>
+          <li><a href="#tab-thoricic">THORACIC</a></li>
+          <li><a href="#tab-lumbar">LUMBAR</a></li>
+           <li><a href="#tab-extremities">EXTREMITIES</a></li>
        </ul>
        
-           <div id="tabss-1">
+           <div id="tab-cervical">
              <div id="right_content">
 
 <table cellpadding="0" cellspacing="0" border="0" width="100%" class="margin_table">
@@ -580,8 +608,8 @@ function elbowPopup() {
 				                  </tr>
 				                  <tr class="row1">
 				                  <td>O'Donoghues</td>	
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="odonor" value="Right">Pain Ad/Pass</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="odonol" value="Left">Pain Ad/Pass</td>
+				                  <td valign="top" align="left" class="input_txt">Right<select width="50%" name="odonor"><option value="activerom">pain on active ROM</option><option value="passiverom">pain on passive ROM</option></select></td>
+				                 <td class="input_txt" align="left">Left <select width="50%" name="odonol"><option value="activerom">pain on active ROM</option><option value="passiverom">pain on passive ROM</option></select></td>
 				                  			                 
 				                  </tr>
 				                  <tr class="row1">
@@ -627,6 +655,12 @@ function elbowPopup() {
 				                  <td class="input_txt"><input type="checkbox" name="rustsignlo" value="Localized">Localized</td>				                 
 				                  </tr>
 				                  </table>
+				                   <table align="right"> <tr>
+				                   <td><input type="submit" class="submit_btn" value="Save"></td>
+				                   <td><input type="reset" class="submit_btn" value="Cancel"></td>
+                                  <td valign="top" align="center"><input type="button" class="submit_btn" value="More Tests" onclick="window.location.href='moretest'"></td></td>
+				                  <!--  <td><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewfirsthamiltonchiropractic'"></td> -->
+				                 </table>
 				                  </td>
 				                  </tr>
 				                  </table>
@@ -638,7 +672,10 @@ function elbowPopup() {
 				                  
 				                  </div>
 				                  </div>
-				                <div id="tabss-2">
+				                <div id="tab-thoricic">
+             
+             
+             
              <div id="right_content">
 
 <table cellpadding="0" cellspacing="0" border="0" width="100%" class="margin_table">
@@ -651,6 +688,8 @@ function elbowPopup() {
                 <tr>
     				<td align="left" valign="top" width="80%" style="padding-right:25px;">
                         		                
+                  
+                  
                   <table border="0" cellpadding="0" cellspacing="0" width="100%">
                          <tr class="row2">
 				               <td width="150"><b>THORACIC:</b></td>	
@@ -664,17 +703,17 @@ function elbowPopup() {
 				                  <tr class="row1">
 				                  <td>Spinal Percuss</td>
 				                  <td>Painlevel</td>
-				                  <td><input type="text" name="spinalpercusst"></td>				                 
+				                  <td></td>				                 
 				                  </tr>
 			                     <tr class="row1">
 				                  <td>Adam's Test</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="adams_testr" value="Hump Remains">Hump Remains</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="adams_testl" value="Hump Dissap">Hump Dissap</td>				                  			                 
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="adams_testl" value="Hump Dissap">Hump Dissapears</td>				                  			                 
 				                  </tr>
          <tr class="row1">
 				                  <td>Sheppal Sign</td>
 				                    <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="sheppal_signr" value="Pain When Bending towards Thoracic Lesison">Pain When Bending towards Thoracic Lesison</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="sheppal_signl" value="Pain When Bending away from Thoracic Leison">Pain When Bending away from Thoracic Leison</td>				                  			                    			                 
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="sheppal_signl" value="Pain When Bending away from Thoracic Leison">Pain When Bending away from Thoracic Lesion</td>				                  			                    			                 
 				                  </tr>
    <tr class="row1">
 				                  <td>Soto Hall</td>
@@ -687,8 +726,37 @@ function elbowPopup() {
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="compression_testl" value="Left">Left</td>
 				                  <td class="input_txt"><input type="checkbox" name="compression_testlo" value="Localized">Localized</td>				                 
 				                  </tr>
-				                  <tr height="300" class="row1"></tr>             
+				                  <tr height="300" class="row1">
+				                  
+				                  
+				                  
+				                  <td>
+				                  
+				                  <table align="right"> <tr>
+				                   <td><input type="submit" class="submit_btn" value="Save"></td>
+				                   <td><input type="reset" class="submit_btn" value="Cancel"></td>
+                                  <td valign="top" align="center"><input type="button" class="submit_btn" value="More Tests" onclick="window.location.href='moretest'"></td>
+				                   <td><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewfirsthamiltonchiropractic'"></td>
+				                 </table>
+				                 
+				                 
+				                 
+				                 </td>
+				                 
+				                 
+				                 
+				                 </tr>             
 				                </table>
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+				                
+				                
 				                  </td>
 				                  </tr>
 				                  </table>
@@ -699,8 +767,8 @@ function elbowPopup() {
 				                  </table>
 				                  
 				                  </div>
-				                  </div>
-				    <div id="tabss-3">
+             			                  </div>
+				    <div id="tab-lumbar">
              <div id="right_content">
 
 <table cellpadding="0" cellspacing="0" border="0" width="100%" class="margin_table">
@@ -729,10 +797,13 @@ function elbowPopup() {
 				               <td width="350"></td>
 				                  </tr>				            
 				                  <tr class="row1">
-				                  <td>Spinal Percuss</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="spinal_percusslr" value="Right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="spinal_percussll" value="Left">Left</td>
-				                 <td width="350"></td>	
+				                  <td>Spinal Percussion</td>
+				                  <td>
+<label for="amount"><b>Pain Scale:</b></label>
+	 <input type="text" id="amount" style="border:0; color:#f6931f; font-weight:bold;" name="painscale" />&nbsp;&nbsp;&nbsp;
+ <div id="slider"></div></td>
+				                 <td class="input_txt" align="left"></td>
+				                 <td></td>	
 				               <td width="350"></td>
 				                  </tr>	
 				                  <tr class="row1">
@@ -758,15 +829,15 @@ function elbowPopup() {
 				                  </tr>	
 				                  <tr class="row1">
 				                  <td>SLR</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="slrr" value="30-45-70">30-45-70     </td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="slrl" value="30-45-70">30-45-70</td>
+				                 <td width="350">Right<select width="50%" name="slrr"><option value="30">30</option><option value="45">45</option><option value="70">70</option></select>&nbsp;&nbsp;</td>
+				                 <td class="input_txt" align="left">Left<select width="50%" name="slrl"><option value="30">30</option><option value="45">45</option><option value="70">70</option></select>&nbsp;&nbsp;</td>
 				                 <td width="350"></td>	
 				               <td width="350"></td>
 				                  </tr>	
 				                  <tr class="row1">
 				                  <td>WLR</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="wlrr" value="30-45-70">30-45-70</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="wlrl" value="30-45-70">30-45-70</td>
+				                  <td width="350">Right<select width="50%" name="wlrr"><option value="30">30</option><option value="45">45</option><option value="70">70</option></select>&nbsp;&nbsp;</td>
+				                 <td class="input_txt" align="left">Left<select width="50%" name="wlrl"><option value="30">30</option><option value="45">45</option><option value="70">70</option></select>&nbsp;&nbsp;</td>
 				                 <td width="350"></td>	
 				               <td width="350"></td>
 				                  </tr>	
@@ -835,14 +906,20 @@ function elbowPopup() {
 				                  </tr>	
 				                  <tr class="row1">
 				                  <td>Allis Sign        	</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="allis_signr" value="Long tibiafemur">Long tibiafemur  </td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="allis_signl" value="Long tibia/femur">Long tibia/femur</td>
-				                 <td width="350"></td>	
-				               <td width="350"></td>
+				                 
+				                 <td width="350">Right<select width="50%" name="allis_signr"><option value="ltibia">Long Tibia</option><option value="femur">Femur</option></select>&nbsp;&nbsp;</td>	
+				               <td width="350">Left<select width="50%" name="allis_signl"><option value="ltibia">Long Tibia</option><option value="femur">Femur</option></select>&nbsp;&nbsp;</td>
 				                  </tr>	
 				                  </table>
 				                  </td>
 				                  </tr>
+				                  <table align="right"> <tr>
+				                   <td><input type="submit" class="submit_btn" value="Save"></td>
+				                   <td><input type="reset" class="submit_btn" value="Cancel"></td>
+                                  <td valign="top" align="center"><input type="button" class="submit_btn" value="More Tests" onclick="window.location.href='moretest'"></td></td>
+				                  <!--  <td><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewfirsthamiltonchiropractic'"></td> -->
+				                 </table>
+				                <!--   
 				                  </table>
 				                  </div>
 				                  </div>
@@ -851,25 +928,30 @@ function elbowPopup() {
 				                  </table>
 				                  
 				                  </div>
+				                  </div> -->
+				                  
+				                  </table>
+				                  </div>
 				                  </div>
 				                  
-				                 <div id="tabss-4">
-             <div id="right_content">
-
-<table cellpadding="0" cellspacing="0" border="0" width="100%" class="margin_table">
+				                  
+				      <div id="tab-extremities">
+             <div id="right_content">              
+				 <table cellpadding="0" cellspacing="0" border="0" width="100%" class="margin_table">
 <tr>
-<td valign="top" align="left">
- <div>
-	            
-          <div class="contentbox">
-              <table cellpadding="0" cellspacing="0" border="0" width="100%">
+<td valign="top" align="left">           
+<div>
+	    <div class="headings altheading">
+	             <h2>EXTREMITIES</h2> 
+	            </div>         
+          <div class="contentbox">	
+           <table cellpadding="0" cellspacing="0" border="0" width="100%">
                 <tr>
     				<td align="left" valign="top" width="80%" style="padding-right:25px;">
-                        		                
-                  <table border="0" cellpadding="0" cellspacing="0" >
+          <table border="0" cellpadding="0" cellspacing="0" >
                          <tr class="row1">
                                <td width="150"></td>
-				               <td width="200"><B style="font-size:14px">EXTREMITIES :</B></td>
+				               
 				               <td width="250"></td>
 				               <td width="150"></td>
 				               <td width="150"></td>				               
@@ -933,8 +1015,8 @@ function elbowPopup() {
 				                  <tr class="row1">
 				                  <td width="150"></td>
 				                  <td>Ligam Instab   </td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="lingaminstabr" value="Right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="lingaminstabl" value="Left">Left</td>
+				                  <td valign="top" align="left" class="input_txt">Right<select width="50%" name="lingaminstabr"><option value="MCL">MCL</option><option value="lcl">LCL</option></select></td>
+				                 <td class="input_txt" align="left"> Left<select width="50%" name="lingaminstabl"><option value="mcl">MCL</option><option value="lcl">LCL</option></select></td>
 				                 
 				                  </tr>
 				                  <tr class="row1">
@@ -988,20 +1070,20 @@ function elbowPopup() {
 				                   <tr class="row1">
 				                   <td width="150"></td>
 				                  <td>Allens</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="allensr" value=" Blood refilling capacity in radial "> Blood refilling capacity in radial </td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="allensl" value="Ulnar artery bilaterally">Ulnar artery bilaterally</td>
+				                  <td valign="top" align="left" class="input_txt">Right  <select width="50%" name="allensr"><option value="slowradial">slow radial refill</option><option value="slowulnar">slow ulnar refill</option></select></td>
+				                 <td class="input_txt" align="left">Left <select width="50%" name="allensl"><option value="slowradial">slow radial refill</option><option value="slowulnar">slow ulnar refill</option></select></td>
 				                 
 				                  </tr>
 				                   <tr class="row1">
 				                   <td width="150"></td>
 				                  <td>Valgus/Varus </td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="valgus_varusr" value="Right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="valgus_varusl" value="Left">Left</td>
-				                 
+				                  <td valign="top" align="left" class="input_txt">Right<select width="50%" name="valgus_varusr"><option value="MCL">MCL</option><option value="lcl">LCL</option></select></td>
+				                 <td class="input_txt" align="left">Left<select width="50%" name="valgus_varusl"><option value="mcl">MCL</option><option value="lcl">LCL</option></select></td>
+				                 <td></td>
 				                  </tr>
 				                  <tr class="row2">
 				                  <td width="150"></td>
-				               <td><b>KNEES</b></td>	
+				               <td><b>Patellar Ballotment</b></td>	
 				               <td></td>
 				               <td width="350"></td>
 				               <td width="350"></td>			               
@@ -1016,22 +1098,22 @@ function elbowPopup() {
 				                   <tr class="row1">
 				                   <td width="150"></td>
 				                  <td>Drawer</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="drawerr" value="Right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="drawerl" value="Left">Left</td>
+				                  <td valign="top" align="left" class="input_txt">Right <select width="50%" name="drawerr"><option value="acl">ACL</option><option value="pcl">PCL</option></select></td>
+				                 <td class="input_txt" align="left"> Left<select width="50%" name="drawerl"><option value="acl">ACL</option><option value="pcl">PCL</option></select></td>
 				                 
 				                  </tr>
 				                   <tr class="row1">
 				                   <td width="150"></td>
 				                  <td>Val/Varus  </td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="val_varusr" value="Right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="val_varusl" value="Left">Left</td>
-				                 
+				                  <td valign="top" align="left" class="input_txt"> Right<select width="50%" name="lingaminstabr"><option value="MCL">MCL</option><option value="lcl">LCL</option></select></td>
+				                 <td class="input_txt" align="left"> Left<select width="50%" name="val_varusl"><option value="mcl">MCL</option><option value="lcl">LCL</option></select></td>
+				                 <td></td>
 				                  </tr>
 				                   <tr class="row1">
 				                   <td width="150"></td>
 				                  <td> Apleys   </td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="apleysr" value="Right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="apleysl" value="Left">Left</td>
+				                  <td valign="top" align="left" class="input_txt"> Right<select width="50%" name="apleysr"><option value="mm">MM</option><option value="lm">LM</option><option value="mcl">MCL</option><option value="lcl">LCL</option></select></td>
+				                 <td class="input_txt" align="left">Left <select width="50%" name="apleysl"><option value="mm">MM</option><option value="lm">LM</option><option value="mcl">MCL</option><option value="lcl">LCL</option></select></td>
 				                 
 				                  </tr>
 				                  <tr class="row2">
@@ -1084,23 +1166,44 @@ function elbowPopup() {
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="claudication_testl" value="Left">Left</td>
 				                 
 				                  </tr>
+				                   
+				                 </td>
+				                 </tr>
+				                 </table>
+          
+          
+          </td>
+          </tr>
+          </table>
+          </div>
+          </div>
+          </td>
+          </tr>
+          
 				                   <table align="right"> <tr>
 				                   <td><input type="submit" class="submit_btn" value="Save"></td>
 				                   <td><input type="reset" class="submit_btn" value="Cancel"></td>
                                   <td valign="top" align="center"><input type="button" class="submit_btn" value="More Tests" onclick="window.location.href='moretest'"></td></td>
 				                  <!--  <td><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewfirsthamiltonchiropractic'"></td> -->
 				                 </table>
-				                 </td>
-				                 </tr>
-				                 </table>
-				                 </div>
-				                 </div>
+          </table>			             
+			</div>
+			</div>            
+				             
+			         
+			     
+				              <!--     <table align="right"> <tr>
+				                   <td><input type="submit" class="submit_btn" value="Save"></td>
+				                   <td><input type="reset" class="submit_btn" value="Cancel"></td>
+                                  <td valign="top" align="center"><input type="button" class="submit_btn" value="More Tests" onclick="window.location.href='moretest'"></td></td>
+				                  <!--  <td><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewfirsthamiltonchiropractic'"></td> -->
+				                 </table>-->
+				                
 				                 </td>
 				                 </tr>
 				                 </table>
 				                 
-				                 </div>
-				                 </div>
+				                 
 				                 </div>
 				                 </div>
 				                 
