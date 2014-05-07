@@ -158,6 +158,7 @@ public class requestfordemandajax {
 		RequestfordemandForm requestfordemandform = new RequestfordemandForm();
 		requestfordemandform.setRequestfordemanddetails(requestfordemandDAO.getrequestfordemand(username));
 		model.addAttribute("requestfordemandform", requestfordemandform);
+		model.addAttribute("menu","fax");
 		return "editrequestfordemand";
 	}
 	
@@ -166,7 +167,8 @@ public class requestfordemandajax {
 		requestfordemandDAO.deleterequestfordemand(requestid);		
 		RequestfordemandForm requestfordemandform=new RequestfordemandForm();
 		requestfordemandform.setRequestfordemanddetails(requestfordemandDAO.getrequestfordemand());
-		model.addAttribute("requestfordemandform",requestfordemandform);		
+		model.addAttribute("requestfordemandform",requestfordemandform);
+		model.addAttribute("menu","fax");
 		return "requestfordemand";
 	}
 	@RequestMapping(value = "/requestfordemand", method = RequestMethod.GET)
@@ -182,7 +184,7 @@ public class requestfordemandajax {
 		RequestfordemandForm requestfordemandform = new RequestfordemandForm();
 			requestfordemandform.setRequestfordemanddetails(requestfordemandDAO.getrequestfordemand());
 			model.addAttribute("requestfordemandform", requestfordemandform);
-
+			model.addAttribute("menu","fax");
 			return "requestfordemand";
 
 		}
@@ -193,7 +195,7 @@ public class requestfordemandajax {
 		requestfordemandform.setRequestfordemanddetails(requestfordemandDAO.getrequestfordemand());
 		model.addAttribute("requestfordemandform",requestfordemandform);
 		model.addAttribute("success","true");
-		
+		model.addAttribute("menu","fax");
 		return "requestfordemand";
 
 	}

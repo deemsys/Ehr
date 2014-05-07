@@ -174,7 +174,7 @@ public class noticeassignmentajax {
 		noticeassignmentform.setNoticeassignmentdetails(noticeassignmentDAO.getnoticeassignment(username));
 		model.addAttribute("noticeassignmentform", noticeassignmentform);
 		model.addAttribute("Success", "true");
-		model.addAttribute("menu", "work");
+		model.addAttribute("menu", "fax");
 		return "editnoticeassignment";
 
 	}
@@ -182,19 +182,20 @@ public class noticeassignmentajax {
 	@RequestMapping(value = "/noticeassignment", method = RequestMethod.GET)
 	public String noticeassignment(HttpSession session, ModelMap model) {
 		session.removeAttribute("notice");
+		model.addAttribute("menu", "fax");
 			return "noticeassignment";
 	}
 	@RequestMapping(value = "/updatenoticeassignment", method = RequestMethod.POST)
 	public String update_noticeassignment(HttpServletRequest request,HttpSession session,@ModelAttribute("Noticeassignment")  @Valid Noticeassignment noticeassignmentdetails,BindingResult result,ModelMap model) {
 		//session.setAttribute("perrydetails",perrychiropracticdetails);
-		//model.addAttribute("menu","perry");
+		model.addAttribute("menu","fax");
 		if(result.hasErrors())
 		{
 NoticeassignmentForm noticeassignmentform = new NoticeassignmentForm();
 			noticeassignmentform.setNoticeassignmentdetails(noticeassignmentDAO.getnoticeassignment());
 			model.addAttribute("noticeassignmentform", noticeassignmentform);
 			model.addAttribute("Success", "true");
-			model.addAttribute("menu", "work");
+			model.addAttribute("menu", "fax");
 			return "noticeassignment";
 
 		}
@@ -206,7 +207,7 @@ NoticeassignmentForm noticeassignmentform = new NoticeassignmentForm();
 		noticeassignmentform.setNoticeassignmentdetails(noticeassignmentDAO.getnoticeassignment());
 		model.addAttribute("noticeassignmentform", noticeassignmentform);
 		model.addAttribute("success","true");
-		
+		model.addAttribute("menu", "fax");
 		return "noticeassignment";
 
 	}

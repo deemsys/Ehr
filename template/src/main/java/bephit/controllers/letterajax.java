@@ -185,13 +185,14 @@ public class letterajax {
 			HttpSession session,
 			@ModelAttribute("lettertopatientsdetails") @Valid Lettertopatients lettertopatientsdetails,
 			BindingResult result, ModelMap model) {
+		model.addAttribute("menu", "fax");
 		if (result.hasErrors()) {
 			LettertopatientsForm lettertopatientsform = new LettertopatientsForm();
 			lettertopatientsform.setLettertopatientsdetails(lettertopatientsDAO
 					.getlettertopatients());
 			model.addAttribute("lettertopatientsform", lettertopatientsform);
 			model.addAttribute("Success", "true");
-			model.addAttribute("menu", "work");
+			model.addAttribute("menu", "fax");
 			return "lettertopatients";
 		}
 
@@ -203,7 +204,7 @@ public class letterajax {
 		lettertopatientsform.setLettertopatientsdetails(lettertopatientsDAO
 				.getlettertopatients());
 		model.addAttribute("lettertopatientsform", lettertopatientsform);
-
+		model.addAttribute("menu", "fax"); 
 
 		return "lettertopatients";
 

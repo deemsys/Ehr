@@ -68,6 +68,7 @@ public class NarrativeController
 		physicalexamForm.setPhysicalexam(physicalexamDAO.getPhysicalpatient_id(patientid));
 		model.addAttribute("physicalexamform",physicalexamForm);
 		model.addAttribute("patientdetailsform",patientDetailsForm);
+		model.addAttribute("menu","narrative");
 		return "narrativereport";
  
 	}

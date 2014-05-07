@@ -165,12 +165,13 @@ public class faxcoverajax {
 			HttpSession session,
 			@ModelAttribute("editfaxcoverdetails") @Valid Faxcover faxcoverdetails,
 			BindingResult result, ModelMap model) {
+		model.addAttribute("menu", "fax");
 		if (result.hasErrors()) {
 			FaxcoverForm faxcoverform = new FaxcoverForm();
 			faxcoverform.setFaxcoverdetails(faxcoverDAO.getfaxcover());
 			model.addAttribute("faxcoverform", faxcoverform);
 			model.addAttribute("success", "true");
-			model.addAttribute("menu", "work");
+			model.addAttribute("menu", "fax");
 			return "faxcover";
 		}
 
@@ -180,6 +181,7 @@ public class faxcoverajax {
 		faxcoverform.setFaxcoverdetails(faxcoverDAO.getfaxcover());
 		model.addAttribute("faxcoverform", faxcoverform);
 		model.addAttribute("success", "true");
+		model.addAttribute("menu", "fax");
 		return "faxcover";
 	}
 	
@@ -210,8 +212,8 @@ public class faxcoverajax {
 		FaxcoverForm faxcoverform = new FaxcoverForm();
 		faxcoverform.setFaxcoverdetails(faxcoverDAO.getusernamefaxcover(username));
 		model.addAttribute("faxcoverform", faxcoverform);
-
-		return "editfaxcover";
+		model.addAttribute("menu", "fax");
+        return "editfaxcover";
 
 	}
 	@RequestMapping(value="/deletefaxcover", method = RequestMethod.GET)

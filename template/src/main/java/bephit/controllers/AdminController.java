@@ -355,7 +355,7 @@ public class AdminController {
 		UpdateletterForm updateletterform = new UpdateletterForm();
 		updateletterform.setUpdateletterdetails(updateletterDAO.getupdateletter(updateid));
 		model.addAttribute("updateletterform", updateletterform);
-		//model.addAttribute("menu", "perry");
+		model.addAttribute("menu", "perry");
 		return "editupdateletter";
 
 	}
@@ -364,7 +364,7 @@ public class AdminController {
 		UpdateletterForm updateletterform = new UpdateletterForm();
 		updateletterform.setUpdateletterdetails(updateletterDAO.getusernameupdateletter(username));
 		model.addAttribute("updateletterform", updateletterform);
-		//model.addAttribute("menu", "perry");
+		model.addAttribute("menu", "perry");
 		return "editupdateletter";
 
 	}
@@ -402,6 +402,7 @@ public class AdminController {
 		model.addAttribute("perrychiropracticform",perrychiropracticform);		
 		//model.addAttribute("menu","xray");
 		session.removeAttribute("peri");
+		model.addAttribute("menu","perry");
 		return "perrychiropractic";
 	}
 
@@ -539,6 +540,7 @@ public class AdminController {
 			session.removeAttribute("peri");
 			
 			//model.addAttribute("menu", "notes");
+			model.addAttribute("menu","perry");
 			return "perrychiropractic";
 
 		}
@@ -550,6 +552,7 @@ public class AdminController {
 		perrychiropracticform.setPerrychiropracticdetails(perrychiropracticDAO.getperrychiropractic());
 		model.addAttribute("perrychiropracticform",perrychiropracticform);
 		model.addAttribute("success","true");
+		model.addAttribute("menu","perry");
 		
 		return "perrychiropractic";
 
@@ -611,7 +614,7 @@ public class AdminController {
 		UpdateletterForm updateletterform=new UpdateletterForm();
 		updateletterform.setUpdateletterdetails(updateletterDAO.getupdateletter());
 		model.addAttribute("success","true");
-		//model.addAttribute("menu","perry");
+		model.addAttribute("menu","perry");
 		model.addAttribute("updateletterform",updateletterform);
 		return "updateletter";
 
@@ -637,6 +640,7 @@ public class AdminController {
 		patientattorneyform.setPatientattorneydetails(patientattorneyDAO.getpatientattorney());
 		model.addAttribute("patientattorneyform",patientattorneyform);
 		model.addAttribute("success","true");
+		model.addAttribute("menu","perry");
 		return "patientattorney";
 
 	}
@@ -649,7 +653,7 @@ public class AdminController {
 	@RequestMapping(value="/insertperrychiropractic", method = RequestMethod.POST)
 	public String insert_perrychiropractic(HttpServletRequest request,HttpSession session,@ModelAttribute("Perrychiropractic")  @Valid Perrychiropractic perrychiropracticdetails,BindingResult result,ModelMap model) {
 		session.setAttribute("peri",perrychiropracticdetails);
-		model.addAttribute("menu","peri");
+		model.addAttribute("menu","perry");
 		String username=request.getParameter("user");
 		if(result.hasErrors())
 		{
@@ -667,6 +671,7 @@ public class AdminController {
 		perrychiropracticform.setPerrychiropracticdetails(perrychiropracticDAO.getperrychiropractic());
 		model.addAttribute("perrychiropracticform", perrychiropracticform);
 		model.addAttribute("success","true");
+		model.addAttribute("menu","perry");
 		session.removeAttribute("peri");
 		return "perrychiropractic";
 
@@ -697,6 +702,7 @@ public class AdminController {
 		faxcoverform.setFaxcoverdetails(faxcoverDAO.getfaxcover());
 		model.addAttribute("faxcoverform", faxcoverform);
 		model.addAttribute("success","true");
+		model.addAttribute("menu","fax");
 		return "faxcover";
 
 	}
@@ -816,6 +822,7 @@ public class AdminController {
 		model.addAttribute("patientattorneyform", patientattorneyform);
 		model.addAttribute("success","true");*/
 		model.addAttribute("success", "true");
+		model.addAttribute("menu","perry");
 		return "patientattorney";
 
 	}
@@ -1025,11 +1032,11 @@ public String viewlettertopatients(HttpSession session,ModelMap model) {
 @RequestMapping(value="/insertworkschool", method = RequestMethod.POST)
 public String insert_workschool(HttpServletRequest request,HttpSession session,@ModelAttribute("Workschool")  @Valid Workschool workschooldetails,BindingResult result,ModelMap model)
 {
-	
+	model.addAttribute("menu","returntoschool");
 	session.setAttribute("work",workschooldetails);
 	if(result.hasErrors())
 	{
-		model.addAttribute("menu","work");
+		model.addAttribute("menu","returntoschool");
 		WorkschoolForm workschoolform= new WorkschoolForm();
 		workschoolform.setWorkschooldetails(workschoolDAO.getworkschool());
 		model.addAttribute("workschoolform",workschoolform);		
@@ -1040,7 +1047,7 @@ public String insert_workschool(HttpServletRequest request,HttpSession session,@
 	WorkschoolForm workschoolform=new WorkschoolForm();
 	workschoolform.setWorkschooldetails(workschoolDAO.getworkschool());
 	model.addAttribute("success","true");
-	 model.addAttribute("menu","work");
+	model.addAttribute("menu","returntoschool");
 	return "workschool";
 }
 
@@ -1184,7 +1191,7 @@ public String editworkschooldetails(@RequestParam("username")String username, Ht
 			workschoolform.setWorkschooldetails(workschoolDAO.getworkschool());
 			model.addAttribute("workschoolform", workschoolform);
 			model.addAttribute("Success", "true");
-			model.addAttribute("menu", "work");
+			model.addAttribute("menu", "returntoschool");
 			return "updateworkschool";
 		}
 		// System.out.println(letterofprotectiondetails.getAddress()+""+letterofprotectiondetails.getAddress1());
@@ -1194,6 +1201,7 @@ public String editworkschooldetails(@RequestParam("username")String username, Ht
 		model.addAttribute("success", "true");
 		workschoolform.setWorkschooldetails(workschoolDAO.getworkschool());
 		model.addAttribute("workschoolform", workschoolform);
+		model.addAttribute("menu", "returntoschool");
 		return "workschool";
 
 	}

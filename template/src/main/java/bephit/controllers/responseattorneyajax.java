@@ -205,7 +205,7 @@ public class responseattorneyajax {
 					.getresponseattorney());
 			model.addAttribute("responseattorneyform", responseattorneyform);
 			model.addAttribute("Success", "true");
-			model.addAttribute("menu", "work");
+			model.addAttribute("menu", "fax");
 			return "responseattorney";
 		}
 
@@ -216,6 +216,7 @@ public class responseattorneyajax {
 		responseattorneyform.setResponseattorneydetail(responseattorneyDAO
 				.getresponseattorney());
 		model.addAttribute("responseattorneyform", responseattorneyform);
+		model.addAttribute("menu","fax");
 		return "viewresponseattorney";
 
 }
