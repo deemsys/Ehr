@@ -32,7 +32,7 @@ $(function() {
   </script>
 <body>
 <form method="POST" action="radiologicreport">
-<input type="text" name="patient_id" value="${username}">
+<input type="hidden" name="patient_id" value="${username}">
 <c:choose>
             <c:when test="${empty radio}">
 

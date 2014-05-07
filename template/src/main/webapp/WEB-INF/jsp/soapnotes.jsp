@@ -113,7 +113,7 @@ $(function() {
 	            
 	            </div>
 	            
-	            <input type="text" value="${username}" name="username" />
+	            <input type="hidden" value="${username}" name="username" />
 	    <div class="contentbox">
           <table cellpadding="0" cellspacing="0" border="0" width="98%">
            

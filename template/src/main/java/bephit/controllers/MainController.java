@@ -720,7 +720,7 @@ public class MainController {
 		//System.out.println(autoaccident.getAdjustersname());
 	    
 		
-		return "viewfirsthamiltonchiropractic";
+		return "radiologicreport";
  
 	}
 		
@@ -1146,8 +1146,24 @@ public class MainController {
 			
 	    	model.addAttribute("radiologicReportForm", radiologicReportForm);
 	    	model.addAttribute("menu", "report");
+	    	String username=radiologicreport.getPatient_id();
+	    	if(soapDAO.getusernameSoapnotes(username).size()>0)
+			{
+				SoapnotesForm soapnotesForm = new SoapnotesForm();       
+		        soapnotesForm.setSoapnotes(soapDAO.getusernameSoapnotes(username));
+		        model.addAttribute("soapnotesForm", soapnotesForm);		
+				/*soapnotesForm.setSoapnotes(soapDAO.getSoapid());*/
+				model.addAttribute("soapnotesForm", soapnotesForm);
+				model.addAttribute("menu", "soapnotes");
+				 List<String> diagnosis=new ArrayList<String>();
+			     diagnosis =soapDAO.getdiagnosis(username);
+			        model.addAttribute("diagnosis",diagnosis);
+			        return "editsoapnotes";
+			}
 	    	
-			return "viewradiologicreport";
+	    	
+	    	
+			return "soapnotes";
 	 
 		}
 	@RequestMapping(value="/findPatients",method=RequestMethod.GET)
@@ -4963,7 +4979,7 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 		model.addAttribute("soapnotesForm",soapnotesForm);
 		model.addAttribute("menu", "notes");
 	
-		return "viewsoapnotes";
+		return "doctorsearch";
  
 	}
 	//@RequestMapping(value="/editsoapnotes", method=RequestMethod.GET)
@@ -5028,9 +5044,9 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
        
         model.addAttribute("soapnotesForm", soapnotesForm);
 	       model.addAttribute("success","true");
-	       model.addAttribute("menu", "notes");
+	   	model.addAttribute("menu","doctorsearch");
 	       //model.addAttribute("visit","1");
-	        return "viewsoapnotes";
+	        return "doctorsearch";
 		
 	}
 	

@@ -132,7 +132,7 @@ $(function() {
 <table align="right">
     <tr class="row1">
        <td><h2><span class="err">*</span>patient:</h2></td>
-             <input type="text" value="${username}" name="username" />
+             <input type="hidden" value="${username}" name="username" />
               <input type="hidden" class="input_txtbx1" id="inp_id" value="${soapnotes.soapid}" name="soapid" />
               <td><input type="text" class="input_txtbx1" name="pname" id="pname" value="${soapnotes.pname}" /><span class="err" id="pnameerr"><form:errors path="SoapNotes.pname"></form:errors></span></td>
              </tr>
