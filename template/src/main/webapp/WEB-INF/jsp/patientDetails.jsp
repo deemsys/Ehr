@@ -689,6 +689,129 @@ document.getElementById("inp_id").value=phone;
 
 });
 </script>
+ <script>
+
+	function checkSubmit()
+	{
+		document.getElementById("nameerror").innerHTML=" ";
+		
+		if(document.getElementById("name").value=="")
+		{
+		document.getElementById("nameerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		document.getElementById("datepickererror").innerHTML="";
+	if(document.getElementById("datepicker").value=="")
+		{
+		document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+	
+	document.getElementById("streetaddresserror").innerHTML="";
+	if(document.getElementById("streetaddress").value=="")
+	{
+	document.getElementById("streetaddresserror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	document.getElementById("Cityerror").innerHTML="";
+	if(document.getElementById("City").value=="")
+	{
+	document.getElementById("Cityerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Stateerror").innerHTML="";
+	if(document.getElementById("State").value=="")
+	{
+	document.getElementById("Stateerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("zipcode1error").innerHTML="";
+	if(document.getElementById("zipcode1").value=="")
+	{
+	document.getElementById("zipcode1error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Emailiderror").innerHTML="";
+	if(document.getElementById("Emailid").value=="")
+	{
+	document.getElementById("Emailiderror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("datepicker1error").innerHTML="";
+	if(document.getElementById("datepicker1").value=="")
+	{
+	document.getElementById("datepicker1error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("SpousesNameerror").innerHTML="";
+	if(document.getElementById("SpousesName").value=="")
+	{
+	document.getElementById("SpousesNameerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("SpousesEmperror").innerHTML="";
+	if(document.getElementById("SpousesEmp").value=="")
+	{
+	document.getElementById("SpousesEmperror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	document.getElementById("Illnesserror").innerHTML="";
+	if(document.getElementById("Illness").value=="")
+	{
+	document.getElementById("Illnesserror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("datepicker3error").innerHTML="";
+	if(document.getElementById("datepicker3").value=="")
+	{
+	document.getElementById("datepicker3error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Medicationserror").innerHTML="";
+	if(document.getElementById("Medications").value=="")
+	{
+	document.getElementById("Medicationserror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("listerror").innerHTML="";
+	if(document.getElementById("list").value=="")
+	{
+	document.getElementById("listerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Drerror").innerHTML="";
+	if(document.getElementById("Dr").value=="")
+	{
+	document.getElementById("Drerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Patienterror").innerHTML="";
+	if(document.getElementById("Patient").value=="")
+	{
+	document.getElementById("Patienterror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	}
+
+	</script>
 	</head>
 	<body>
 	 
@@ -1049,7 +1172,7 @@ function check(id)
 				                 <div id="info"> <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name :</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  <input type="hidden" value="${totalpatient}" id="totalpoint">
-				                  	<input type="text" class="input_txtbx1" name="Name" id="name" value="${pname}" /><br><span class="err"><form:errors path="PatientDetails.name"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" name="Name" id="name" value="${pname}" /><br><span id="name" style="color: red;font-style:italic;" ><form:errors path="PatientDetails.name"></form:errors></span>
 				                  </td>
 				                </tr>
 				                
@@ -1062,31 +1185,31 @@ function check(id)
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Date:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" id="datepicker" class="input_txtbx1" name="Date" value="${patientajax.date}"  }"/><br><span class="err"><form:errors path="PatientDetails.date"></form:errors></span>
+				                  	<input type="text" id="datepicker" class="input_txtbx1" name="Date" value="${patientajax.date}"  }"/><br><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.date"></form:errors></span>
 				                  </td>
 				                </tr>
                                   <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Street address:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="streetaddress" name="StreetAddress" value="${patientajax.StreetAddress }"/><br><span class="err"><form:errors path="PatientDetails.streetAddress"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="streetaddress" name="StreetAddress" value="${patientajax.StreetAddress }"/><br><span id="streetaddresserror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.streetAddress"></form:errors></span>
 				                  </td>
 				                </tr>
                                   <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>City:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="City" /><br><span class="err"><form:errors path="PatientDetails.city"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="City" name="City" /><br><span id="Cityerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.city"></form:errors></span>
 				                  </td>
 				                </tr>
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>State:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="State" /><br><span class="err"><form:errors path="PatientDetails.state"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="State" name="State" /><br><span id="Stateerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.state"></form:errors></span>
 				                  </td>
 				                </tr>
                                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>ZipCode:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="zipcode1" name="ZipCode" /><br><span class="err" id="zipcodeerror1"><form:errors path="PatientDetails.zipCode"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="zipcode1" name="ZipCode" /><br><span  id="zipcode1error" style="color: red;font-style:italic;"><form:errors path="PatientDetails.zipCode"></form:errors></span>
 	
 	<span class="err" ></span>            
 				                  </td>
@@ -1103,7 +1226,7 @@ function check(id)
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>E-mail Id:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Emailid" /><br><span class="err"><form:errors path="PatientDetails.emailid"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="Emailid" name="Emailid" /><br><span id="Emailiderror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.emailid"></form:errors></span>
 				                  </td>
 				                </tr>
 				                <tr class="row1">
@@ -1117,7 +1240,7 @@ function check(id)
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>DateOfBirth:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" id="datepicker1" class="input_txtbx1" name="DateOfBirth"/><br><span class="err"><form:errors path="PatientDetails.dateOfBirth"></form:errors></span>
+				                  	<input type="text" id="datepicker1" class="input_txtbx1" name="DateOfBirth"/><br><span id="datepicker1error" style="color: red;font-style:italic;"><form:errors path="PatientDetails.dateOfBirth"></form:errors></span>
 				                  </td>
 				                </tr>
 				                <tr class="row1">
@@ -1241,14 +1364,14 @@ function check(id)
 				               
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Spouse's or significant others name:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="SpousesName" /><br><span class="err"><form:errors path="PatientDetails.spousesName"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="SpousesName" name="SpousesName" /><br><span id="SpousesNameerror"><form:errors path="PatientDetails.spousesName"></form:errors></span>
 				                  	
 				                  </td>
 				                </tr>
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Spouses Employer:&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="SpousesEmp" /><br><span class="err"><form:errors path="PatientDetails.spousesEmp"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="SpousesEmp" name="SpousesEmp" /><br><span id="SpousesEmperror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.spousesEmp"></form:errors></span>
 				                  	
 				                  </td>
 				                </tr>
@@ -1262,7 +1385,7 @@ function check(id)
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name of Nearest Friend/ Relative Not Living With You:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Name_friend" /><br><span class="err"><form:errors path="PatientDetails.name_friend"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="Name_friend" name="Name_friend" /><br><span id="Name_friend" style="color: red;font-style:italic;"><form:errors path="PatientDetails.name_friend"></form:errors></span>
 				               
 				                  </td>
 				                </tr>
@@ -1283,7 +1406,7 @@ function check(id)
 				               <table align="right">
 				               <tr>
 				  
-                     <td><br><input type="button" id="btnNext" class="submit_btn"  value="Next"/><br></td>
+                     <td><br><input type="button" id="btnNext" class="submit_btn"  value="Next" onclick="return checkSubmit('this');"/><br></td>
                   </tr>
 				               </table>
               
@@ -1341,7 +1464,7 @@ function check(id)
                       </div> 
                       <td valign="middle" align="left" class="input_txt"></td>
 				                  <td valign="top" align="left" class="input_txt">
-				                   <textarea rows="3" cols="25" placeholder="Specify your Symptoms" name="symptom[]" id="symptom1" onBlur="check(this)"></textarea>
+				                   <textarea rows="3" cols="25" placeholder="Specify your Symptoms" name="symptom[]" id="symptom1" onBlur="check(this)" ></textarea><span id="symptom1error" style="color: red;font-style:italic;"></span>
 				                <p></p>
 				                 <div id="multichoice"></div>
 				                   <a href="javascript:void(0);" onclick="addMultichoice('multichoice');" style="text-decoration:none;" ><input type="button" value="Add one more Symptom" class="submit_btn2" id="morebutton" name=""/></a>
@@ -1658,19 +1781,19 @@ function check(id)
 				                  <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Surgeries or Major Illnesses You Have Had: </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Illness" /><br><span class="err"><form:errors path="PatientDetails.illness"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="Illness" name="Illness" /><br><span id="Illnesserror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.illness"></form:errors></span>
 				                  	</tr>   
 				                 
 				                 <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Dates:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="datepicker3" name="Dates" /><br><span class="err"><form:errors path="PatientDetails.dates"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="datepicker3" name="Dates" /><br><span id="datepicker3error" style="color: red;font-style:italic;"><form:errors path="PatientDetails.dates"></form:errors></span>
 				                  	</tr>    		
 				                  	
 				                  	<tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Medications You are Currently Taking and Why:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<textarea rows="3" cols="25" placeholder="Medications" name="Medications"></textarea>&nbsp;&nbsp;&nbsp;<br><span class="err"><form:errors path="PatientDetails.medications"></form:errors></span>
+				                  	<textarea rows="3" cols="25" placeholder="Medications" name="Medications" id="Medications"></textarea>&nbsp;&nbsp;&nbsp;<br><span id="Medicationserror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.medications"></form:errors></span>
 				                  	</tr> 
 				                  	
 				                  	<tr class="row1">
@@ -1690,7 +1813,7 @@ function check(id)
 				  <div id="send_to">
 				  <input type="radio" name="Hazardous" value="yes" class="input_txt" checked="true" onclick="toggle2('show2')">Yes&nbsp;&nbsp;&nbsp;
 				  <label>If yes,Please List: </label><input type="text" id="list" name="Hazardousyes"  /><br/><br/>
-    </div><input type="radio" name="Hazardous" value="No" class="input_txt"onclick="toggle2('hide2')">No
+    </div><span id="listerror" style="color: red;font-style:italic;"></span><input type="radio" name="Hazardous" value="No" class="input_txt"onclick="toggle2('hide2')">No
 			      
 			      </div>
 			      </td>
@@ -1704,12 +1827,12 @@ function check(id)
 				                  	<tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Dr:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Dr" /><br><span class="err"><form:errors path="PatientDetails.dr"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="Dr" name="Dr" /><br><span id="Drerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.dr"></form:errors></span>
 				                  	</tr>  
 				                  	<tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Signature:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Patient" /><br><span class="err"><form:errors path="PatientDetails.patient"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="Patient" name="Patient" /><br><span id="Patienterror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.patient"></form:errors></span>
 				                  	</tr>  
 				                  	<table align="right">
 				  <tr>
@@ -1717,7 +1840,7 @@ function check(id)
                  
  				  <td>&nbsp;&nbsp;</td>
              		 
-                  <td><input type="submit" class="submit_btn" value="Save" ></td>
+                  <td><input type="submit" class="submit_btn" value="Save" onclick="return checkSubmit('this');"></td>
                   <td>&nbsp;&nbsp;</td>
                  <td><a href="viewpatient" class="submit_btn" style="color:white">Cancel</a></td>
 				 

@@ -97,7 +97,7 @@ var element=document.getElementById('shortlegright');
  <script>
   $(window).load(function(){
 $("#security").keyup(function() {
-	 $("#number").html(''); 
+	 $("#securityerror").html(''); 
 	/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
 	//var intRegex = /^\d+$/;
 	var a= /^[0-9]{3}[-\s\.]{0,1}[0-9]{2}[-\s\.]{0,1}[0-9]{4}$/;
@@ -108,7 +108,7 @@ $("#security").keyup(function() {
 	else if($(this).val()!='')
 		{
 		
-		$("#number").html('Kindly enter a number!!!!');
+		$("#securityerror").html('Kindly enter a number!!!!');
 		}
 }).keydown(function() {
     oldValue = $(this).val();
@@ -378,7 +378,7 @@ $(function() {
 	    Your Birth Date  <input type="date"  name="birthdate">
 	    <br><br>
 	    <table>
-	    <td>Your Social Security Number </td><td><input type="text" name="security" id="security" maxlength="11"></td><td><span class="err"> <div id="number"></span></td></div></table>
+	    <td>Your Social Security Number </td><td><input type="text" name="security" id="security" maxlength="11"></td><td><span class="err" id="securityerror"> <div id="number"></span></td></div></table>
 	    </c:when>
 	    <c:otherwise>
 	    <P style="font-size: 15px"><b>Please answer the following questions for the hip/knee being treated or followed up.If it is BOTH hips/knees,please answer the questions for your worse side.All questions are about how you have felt,on average,during the past week,If you are being treated for an injury that happened less than one week ago,please answer for the period since your injury.</b></P>
