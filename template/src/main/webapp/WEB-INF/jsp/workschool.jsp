@@ -289,13 +289,13 @@ function doAjaxPost() {
              <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err">*</span>Date:</td>
-              <td ><input type="text" class="input_txtbx1" name="date" id="datepicker" /><span class="err" id="datepickererror"><form:errors path="Workschool.date"></form:errors></span></td>
+              <td ><input type="text" class="input_txtbx1" name="date" id="datepicker" /><span class="err" id="datepickererror"  style="color: red;font-style:italic;"><form:errors path="Workschool.date"></form:errors></span></td>
               </tr>
               </table><br>
               <table>
               <tr>
               <td><span class="err">*</span>
-              This is to certify that&nbsp;&nbsp;&nbsp; <input type="text" class="input_txtbx1" name="letter" id="letter" /><span class="err" id="lettererror"><form:errors path="Workschool.letter"></form:errors> <br>is under my care.  In order to avoid aggravation of his/her condition, I recommend that he/she...
+              This is to certify that&nbsp;&nbsp;&nbsp; <input type="text" class="input_txtbx1" name="letter" id="letter" /><span class="err" id="lettererror"  style="color: red;font-style:italic;"><form:errors path="Workschool.letter"></form:errors> <br>is under my care.  In order to avoid aggravation of his/her condition, I recommend that he/she...
 
               
               </td>
@@ -441,14 +441,14 @@ function doAjaxPost() {
         	   <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err">*</span>From(Date):</td>
-              <td ><input type="text" class="input_txtbx1" name="froms" id="datepicker1" /><span class="err" id="datepicker1error"><form:errors path="Workschool.froms"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="froms" id="datepicker1" /><span class="err" id="datepicker1error"  style="color: red;font-style:italic;"><form:errors path="Workschool.froms"></form:errors></td>
               <td height="25" width="120"><span class="err">*</span>To(Date):</td>
-              <td ><input type="text" class="input_txtbx1" name="tos" id="datepicker2" /><span class="err" id="datepicker2error"><form:errors path="Workschool.tos"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="tos" id="datepicker2" /><span class="err" id="datepicker2error"  style="color: red;font-style:italic;"><form:errors path="Workschool.tos"></form:errors></td>
               </tr>
               </table><br>
              <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr><td width="85"></td> <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="returns" id="returns" style="width: 111px; "/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return to Regular Duty/School/P.E. on: 
-        	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" class="input_txtbx1" name="returndate" id="datepicker3" style="width: 113px; "/><span class="err" id="datepicker3error"><form:errors path="Workschool.returndate"></form:errors>
+        	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" class="input_txtbx1" name="returndate" id="datepicker3" style="width: 113px; "/><span class="err" id="datepicker3error"  style="color: red;font-style:italic;"><form:errors path="Workschool.returndate"></form:errors>
         	  </tr></table><br>
         	
         	  <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -494,13 +494,13 @@ Yours in Health,</b>
              <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err">*</span>Date:</td>
-              <td ><input type="hidden" name="workid" value="${work.workid }"><input type="text" class="input_txtbx1" name="date"  value="${work.date }"  id="datepicker" /><span class="err" id="datepickererror"><form:errors path="Workschool.date"></form:errors></td>
+              <td ><input type="hidden" name="workid" value="${work.workid }"><input type="text" class="input_txtbx1" name="date"  value="${work.date }"  id="datepicker" /><span class="err" id="datepickererror"  style="color: red;font-style:italic;"><form:errors path="Workschool.date"></form:errors></td>
               </tr>
               </table><br>
               <table>
               <tr>
               <td><span class="err">*</span>
-              This is to certify that&nbsp;&nbsp;&nbsp; <input type="text" class="input_txtbx1" name="letter" value="${work.letter }"  id="letter" /><span class="err" id="lettererror"><form:errors path="Workschool.letter"></form:errors></span> is under my care.  In order to avoid aggravation of his/her condition, I recommend that he/she...
+              This is to certify that&nbsp;&nbsp;&nbsp; <input type="text" class="input_txtbx1" name="letter" value="${work.letter }"  id="letter" /><span class="err" id="lettererror"  style="color: red;font-style:italic;"><form:errors path="Workschool.letter"></form:errors></span> is under my care.  In order to avoid aggravation of his/her condition, I recommend that he/she...
 
               
               </td>
@@ -646,15 +646,15 @@ Yours in Health,</b>
         	   <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err">*</span>From(Date):</td>
-              <td ><input type="text" class="input_txtbx1" name="froms" value="${work.froms }" id="datepicker1" /><span class="err" id="datepicker1error"><form:errors path="Workschool.froms"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="froms" value="${work.froms }" id="datepicker1" /><span class="err" id="datepicker1error"  style="color: red;font-style:italic;"><form:errors path="Workschool.froms"></form:errors></td>
               <td height="25" width="120"><span class="err">*</span>To(Date):</td>
-              <td ><input type="text" class="input_txtbx1" name="tos" value="${work.tos }" id="datepicker2" /><span class="err" id="datepicker2error"><form:errors path="Workschool.tos"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="tos" value="${work.tos }" id="datepicker2" /><span class="err" id="datepicker2error"  style="color: red;font-style:italic;"><form:errors path="Workschool.tos"></form:errors></td>
               </tr>
               </table><br>
              <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr> <td ><input type="text" class="input_txtbx1" name="returns" value="${work.returns }" id="datepicker" /><span class="err"><form:errors path="Workschool.returns"></form:errors></td>
         	  <td >Return to Regular Duty/School/P.E. on: (Date) </td>
-        	  <td ><input type="text" class="input_txtbx1" name="returndate" value="${work.returndate }" id="datepicker3" /><span class="err" id="datepicker3error"><form:errors path="Hardshipagreement.date"></form:errors></td>
+        	  <td ><input type="text" class="input_txtbx1" name="returndate" value="${work.returndate }" id="datepicker3" /><span class="err" id="datepicker3error"  style="color: red;font-style:italic;"><form:errors path="Hardshipagreement.date"></form:errors></td>
         	  </tr></table><br>
         	
         	  <table cellpadding="0" cellspacing="0" border="0" width="100%">

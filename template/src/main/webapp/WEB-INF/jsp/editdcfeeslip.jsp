@@ -319,6 +319,57 @@ else
 }
 
 </script>
+<script>
+
+	function checkSubmit()
+	{
+		document.getElementById("piderror").innerHTML="";
+		if(document.getElementById("pid").value=="")
+		{
+		document.getElementById("piderror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+	
+		document.getElementById("pnameerror").innerHTML="";
+	if(document.getElementById("pname").value=="")
+	{
+	document.getElementById("pnameerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("dr1error").innerHTML="";
+	if(document.getElementById("dr1").value=="")
+	{
+	document.getElementById("dr1error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("datepicker1error").innerHTML="";
+	if(document.getElementById("datepicker1").value=="")
+	{
+	document.getElementById("datepicker1error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("parentsignerror").innerHTML="";
+	if(document.getElementById("parentsign").value=="")
+	{
+	document.getElementById("parentsignerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("doctorsignerror").innerHTML="";
+	if(document.getElementById("doctorsign").value=="")
+	{
+	document.getElementById("doctorsignerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+		}
+
+	</script>
 </head>
  <body>
  <br><br>
@@ -344,16 +395,16 @@ else
           <c:set value="${dcfeeslipForm.dcfeeslip[0]}" var="dcfeeslip"/> 
  <tr class="row1">
  <input type="hidden" name="dcfeeid" id="inp_id" value="${dcfeeslip.dcfeeid}">
-<td width="90"><h2><span class="err">*</span>Patient Id:</h2></td><td><input type="text"  name="pid" size="25" value="${dcfeeslip.pid}"/><span class="err"><form:errors path="dcfeeslipdetail.pid"></form:errors></span></td>
+<td width="90"><h2><span class="err">*</span>Patient Id:</h2></td><td><input type="text"  name="pid" size="25" value="${dcfeeslip.pid}" id="pid"/><span class="err" id="piderror" style="color: red;font-style:italic;" ><form:errors path="dcfeeslipdetail.pid"></form:errors></span></td>
 <td width="800">
-<td><h2><span class="err">*</span>Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${dcfeeslip.date}"/></td><span class="err"><form:errors path="dcfeeslipdetail.date"></form:errors></span>
+<td><h2><span class="err">*</span>Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${dcfeeslip.date}" id="pname"/></td><span class="err" id="pnameerror"  style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.date"></form:errors></span>
 </tr>
 </table>
 <table>
  <tr class="row1">
 <td><h2><span class="err">*</span> Patient Name:</h2></td><td><input type="text"  name="pname" size="25" value="${dcfeeslip.pname}"/><span class="err"><form:errors path="dcfeeslipdetail.pname"></form:errors></span></td>
 <td>
-<td><h2><span class="err">*</span>Treating Physician Name:</h2></td><td><input type="text" name="dr1" size="14" value="${dcfeeslip.dr1}"/><span class="err"><form:errors path="dcfeeslipdetail.dr1"></form:errors></span></td>
+<td><h2><span class="err">*</span>Treating Physician Name:</h2></td><td><input type="text" name="dr1" size="14" value="${dcfeeslip.dr1}" id="dr1"/><span class="err" id="dr1error"  style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.dr1"></form:errors></span></td>
 <td><h2>RPT:</h2></td><td><input type="text" name="rpt" size="14" value="${dcfeeslip.rpt}"/></td>
 <td><h2>PTA:</h2></td><td><input type="text" name="pta" size="14" value="${dcfeeslip.pta}"/></td>
 </tr>
@@ -1115,7 +1166,7 @@ else
 
   <tr class="row1">
   <td></td><td> </td>
- <td width="200"><span class="err">*</span>Date </td><td><input type="text"  id="datepicker" name="date1" value="${dcfeeslip.date1}"/><span class="err"><form:errors path="dcfeeslipdetail.date1"></form:errors></span></td> </td> 
+ <td width="200"><span class="err">*</span>Date </td><td><input type="text"  id="datepicker" name="date1" value="${dcfeeslip.date1}"/><span class="err" id="datepicker1error"  style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.date1"></form:errors></span></td> </td> 
   
  </tr>
  <tr class="row1">
@@ -1127,13 +1178,13 @@ charges."</b></td>
  <tr class="row1">
  <td> </td><td></td>
   <td><span class="err">*</span>Patient/Guardian Signature:</td>
- <td width="200"><input type="text" name="parentsign" value="${dcfeeslip.parentsign}"><span class="err"><form:errors path="dcfeeslipdetail.parentsign"></form:errors></span></td> 
+ <td width="200"><input type="text" name="parentsign" value="${dcfeeslip.parentsign}" id="parentsign"><span class="err" id="parentsignerror"  style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.parentsign"></form:errors></span></td> 
   
  </tr>
   <tr class="row1">
   <td> </td> <td></td>
   <td><span class="err">*</span>Dr. / Tech. Signature(s)</td>
- <td width="200"><input type="text" name="doctorsign" value="${dcfeeslip.doctorsign}"><span class="err"><form:errors path="dcfeeslipdetail.doctorsign"></form:errors></span></td> 
+ <td width="200"><input type="text" name="doctorsign" value="${dcfeeslip.doctorsign}" id="doctorsign"><span class="err" id="doctorsignerror"  style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.doctorsign"></form:errors></span></td> 
  
  </tr>
  <tr class="row1">
@@ -1158,7 +1209,7 @@ function confirmation() {
 </script>
  <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="Update"></td>
+<td><input type="submit" class="submit_btn" value="Update" onclick="return checkSubmit('this');"></td>
   <td><a href="deletedcfeeslip?dcfeeid=${dcfeeslip.dcfeeid}" style="color:white" class="submit_btn" onclick="return confirmation() ">Delete</a></td>
  <td><a href="viewallpatientdetails" style="color:white" class="submit_btn">Cancel</a></td>
 </tr>

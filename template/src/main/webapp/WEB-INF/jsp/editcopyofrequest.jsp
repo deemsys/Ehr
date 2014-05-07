@@ -97,7 +97,7 @@ $(function() {
           <tr height="30">
           <input type="hidden" class="input_txtbx1" id="inp_id" value="${copyofrequest.copyofrequestno}" name="copyofrequestno" />
           <td><span class="err">*</span>Patients Attorney or Insurance Adjuster: </td>
-          <td><input type="text" name="patient" size="40" value="${copyofrequest.patient}" id="patient"><span class="err" id="patienterror"><form:errors path="Copyofrequest.patient"></form:errors></span></td>
+          <td><input type="text" name="patient" size="40" value="${copyofrequest.patient}" id="patient"><span class="err" id="patienterror"  style="color: red;font-style:italic;"><form:errors path="Copyofrequest.patient"></form:errors></span></td>
           </tr>   
           <tr height="30">
           <td><span class="err"></span>Address: </td>
@@ -108,12 +108,12 @@ $(function() {
           <td><input type="text" name="regarding" size="40" value="${copyofrequest.regarding }"></td>
           </tr>
           <tr height="30">
-          <td><span class="err" id="datepickererror">*</span>Date of Accident: </td>
+          <td><span class="err" id="datepickererror"  style="color: red;font-style:italic;">*</span>Date of Accident: </td>
           <td><input type="text" name="dateofaccident" id="datepicker" size="40" value="${copyofrequest.dateofaccident}"></td>
           </tr>
           <tr height="30">
           <td><span class="err">*</span>Claim Number: </td>
-          <td><input type="text" name="claimnumber"  size="40" value="${copyofrequest.claimnumber }" id="claimnumber"><span class="err" id="claimnumbererror"><form:errors path="Copyofrequest.claimnumber"></form:errors></span></td>
+          <td><input type="text" name="claimnumber"  size="40" value="${copyofrequest.claimnumber }" id="claimnumber"><span class="err" id="claimnumbererror"  style="color: red;font-style:italic;"><form:errors path="Copyofrequest.claimnumber"></form:errors></span></td>
           </tr>
           <tr height="30">
           <td>Today's Date:  </td>
@@ -123,7 +123,7 @@ $(function() {
           <table width="85">
           <tr height="30">
           <td width="40">Dear  </td>
-          <td><span class="err" id="dearerror">*</span><input type="text" name="dear"  size="40" value="${copyofrequest.dear}" id="dear"></td>
+          <td><span class="err" id="dearerror"  style="color: red;font-style:italic;">*</span><input type="text" name="dear"  size="40" value="${copyofrequest.dear}" id="dear"></td>
           </tr>
           </table>
           <br/>
@@ -144,7 +144,7 @@ $(function() {
           </div>
           <div align="right">
           <p><B style="font-size:13px">Very truly yours,</B></p>
-          <p><span class="err">*</span><input type="text" name="sign" size="30" value="${copyofrequest.sign}" id="sign"><span class="err" id="signerror"><form:errors path="Copyofrequest.sign"></form:errors></span></p>
+          <p><span class="err">*</span><input type="text" name="sign" size="30" value="${copyofrequest.sign}" id="sign"><span class="err" id="signerror"  style="color: red;font-style:italic;"><form:errors path="Copyofrequest.sign"></form:errors></span></p>
           <p>Perry Chiropractic and Therapy Center of Canton, Inc.</p>
           <p>Dr. Charles T. Yang DC, DABFP</p>
           </div>

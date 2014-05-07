@@ -86,7 +86,7 @@ $(function() {
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td width="50%"><span class="err">*</span>To Attorney:</td>
-              <td width="50%"><input type="hidden" name="updateid" value="${updateletterdetails.updateid }"><input type="text" class="input_txtbx1" name="toattorney1" id="toattorney1"  value="${updateletterdetails.toattorney1}" /><span class="err" id="toattorney1error"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td width="50%"><input type="hidden" name="updateid" value="${updateletterdetails.updateid }"><input type="text" class="input_txtbx1" name="toattorney1" id="toattorney1"  value="${updateletterdetails.toattorney1}" /><span class="err" id="toattorney1error" ><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>
               <br>
@@ -94,14 +94,14 @@ $(function() {
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td width="50%"><span class="err"></span></td>
-              <td  width="50%"><input type="text" class="input_txtbx1" name="toattorney2" id="toattorney2"  value="${updateletterdetails.toattorney2}" /><span class="err" id="toattorney2error"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td  width="50%"><input type="text" class="input_txtbx1" name="toattorney2" id="toattorney2"  value="${updateletterdetails.toattorney2}" /><span class="err" id="toattorney2error"  style="color: red;font-style:italic;"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>
               <br>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td width="50%"><span class="err"></span></td>
-              <td width="50%"><input type="text" class="input_txtbx1" name="toattorney3" id="toattorney3"  value="${updateletterdetails.toattorney2}" /><span class="err" id="toattorney3error"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td width="50%"><input type="text" class="input_txtbx1" name="toattorney3" id="toattorney3"  value="${updateletterdetails.toattorney2}" /><span class="err" id="toattorney3error"  style="color: red;font-style:italic;"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>
               <br>
@@ -127,7 +127,7 @@ In Regards to :
               <br>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td width="50%"><span class="err" id="datepicker2error">*</span>Todays date:    
+              <td width="50%"><span class="err" id="datepicker2error"  style="color: red;font-style:italic;">*</span>Todays date:    
               </td>
               <td width="50%"><input type="text" class="input_txtbx1" name="todaydate" id="datepicker2" value="${updateletterdetails.todaydate}"/></td>
               </tr>

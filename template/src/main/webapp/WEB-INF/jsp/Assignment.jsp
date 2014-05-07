@@ -86,21 +86,23 @@ and exclusively in the name of Perry Chiropractic and Therapy Center, such sums 
                        <tr width="500"class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Name: </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="patientname" /><br><span class="err"><form:errors path="Assignment.patientname"></form:errors>
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="patientname" /><br><span class="err"><form:errors path="Assignment.patientname"></form:errors></td>
+				                  	<td valign="middle" width="50%">Date</td>
+				                  	<td valign="top"><input type="text" class="input_txtbx1" id="datepicker" name="patientdate" /><span class="err"><form:errors path="Assignment.patientdate"></form:errors></span></td>
 				                  	</tr>
 				                  	<tr width="500" class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Signature:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="patientsign" /><span class="err"><form:errors path="Assignment.patientsign"></form:errors>
-				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date:  </td>
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="patientsign" /><span class="err"><form:errors path="Assignment.patientsign"></form:errors></span>
+				                  	<td valign="middle" align="left" class="input_txt">Date</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="datepicker" name="patientdate" /><br><span class="err"><form:errors path="Assignment.patientdate"></form:errors>
+				                  	<input type="text" class="input_txtbx1" id="datepicker" name="parentdate" /><br><span class="err"><form:errors path="Assignment.parentdate"></form:errors></span>
 				                  	</tr> 
 				                  	
 				                  	<tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name of Custodial Parent or Legal Guardian :  </td>
-				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="parentname" /><br><span class="err"><form:errors path="Assignment.parentname"></form:errors>
+				                  <td valign="top" align="left" class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="parentname" /><br><span class="err"><form:errors path="Assignment.parentname"></form:errors>
+				                  </td>
 				                  	</tr> 
 				                  	<tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Parent/Guardian Signature:  </td>
@@ -116,8 +118,8 @@ and exclusively in the name of Perry Chiropractic and Therapy Center, such sums 
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="representative" /><span class="err"><form:errors path="Assignment.representative"></form:errors>
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date:  </td>
-				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="datepicker2" name="representativedate" /><br><span class="err"><form:errors path="Assignment.representativedate"></form:errors>
+				                  <td valign="middle" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="datepicker2" name="representativedate" /><br><span class="err"><form:errors path="Assignment.representativedate"></form:errors></span>
 				                  	</tr>
 				                  	</table>
 				                  	</c:when>

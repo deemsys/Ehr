@@ -307,7 +307,7 @@ return false;
           <table cellpadding="0" cellspacing="0" border="0" width="70%" align="center">
           <tr height="30">
           <td><span class="err">*</span>Patients Attorney or Insurance Adjuster: </td>
-          <td><input type="text" name="patient" size="40" id="patient"><span class="err" id="patienterror"><form:errors path="Copyofrequest.patient"></form:errors></span></td>
+          <td><input type="text" name="patient" size="40" id="patient"><span class="err" id="patienterror"  style="color: red;font-style:italic;" ><form:errors path="Copyofrequest.patient"></form:errors></span></td>
           </tr>   
           <tr height="30">
           <td><span class="err"></span>Address: </td>
@@ -319,11 +319,11 @@ return false;
           </tr>
           <tr height="30">
           <td><span class="err">*</span>Date of Accident: </td>
-          <td><input type="text" name="dateofaccident" id="datepicker" size="40"><span class="err" id="datepickererror"><form:errors path="Copyofrequest.dateofaccident"></form:errors></span></td>
+          <td><input type="text" name="dateofaccident" id="datepicker" size="40"><span class="err" id="datepickererror"  style="color: red;font-style:italic;"><form:errors path="Copyofrequest.dateofaccident"></form:errors></span></td>
           </tr>
           <tr height="30">
           <td><span class="err">*</span>Claim Number: </td>
-          <td><input type="text" name="claimnumber"  size="40" id="claimnumber"><span class="err" id="claimnumbererror"><form:errors path="Copyofrequest.claimnumber"></form:errors></span></td>
+          <td><input type="text" name="claimnumber"  size="40" id="claimnumber"><span class="err" id="claimnumbererror"  style="color: red;font-style:italic;"><form:errors path="Copyofrequest.claimnumber"></form:errors></span></td>
           </tr>
           <tr height="30">
           <td>Today's Date:  </td>
@@ -390,7 +390,7 @@ return false;
           <table cellpadding="0" cellspacing="0" border="0" width="70%" align="center">
           <tr height="30">
           <td><span class="err">*</span>Patients Attorney or Insurance Adjuster: </td>
-          <td><input type="text" name="patient" size="40" value="${copy.patient}" id="patient"><span class="err" id="patienterror"><form:errors path="Copyofrequest.patient"></form:errors></span></td>
+          <td><input type="text" name="patient" size="40" value="${copy.patient}" id="patient"><span class="err" id="patienterror"  style="color: red;font-style:italic;"><form:errors path="Copyofrequest.patient"></form:errors></span></td>
           </tr>   
           <tr height="30">
           <td><span class="err"></span>Address: </td>
@@ -402,11 +402,11 @@ return false;
           </tr>
           <tr height="30">
           <td><span class="err">*</span>Date of Accident: </td>
-          <td><input type="text" name="dateofaccident" id="datepicker" size="40" value="${copy.dateofaccident}"><span class="err" id="datepickererror"><form:errors path="Copyofrequest.dateofaccident"></form:errors></span></td>
+          <td><input type="text" name="dateofaccident" id="datepicker" size="40" value="${copy.dateofaccident}"><span class="err" id="datepickererror"  style="color: red;font-style:italic;"><form:errors path="Copyofrequest.dateofaccident"></form:errors></span></td>
           </tr>
           <tr height="30">
           <td><span class="err">*</span>Claim Number: </td>
-          <td><input type="text" name="claimnumber"  size="40" value="${copy.claimnumber }" id="claimnumber"><span class="err" id="claimnumbererror"><form:errors path="Copyofrequest.claimnumber"></form:errors></span></td>
+          <td><input type="text" name="claimnumber"  size="40" value="${copy.claimnumber }" id="claimnumber"><span class="err" id="claimnumbererror"  style="color: red;font-style:italic;"><form:errors path="Copyofrequest.claimnumber"></form:errors></span></td>
           </tr>
           <tr height="30">
           <td>Today's Date:  </td>

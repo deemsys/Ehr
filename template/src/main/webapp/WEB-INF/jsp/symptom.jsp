@@ -15,9 +15,9 @@
     <script src="js/jquery.ui.mouse.js"></script>
     <script src="js/jquery.ui.draggable.js"></script>
     <script src="js/jquery.ui.droppable.js"></script>
- <script src="resources/js/jquery.min.js"></script> 
- <script src="resources/js/jquery-ui.js"></script>
- <script src="resources/js/jquey-1.9.1.js"></script>
+ <script src="resources/js/jquery.min.js"></script>
+  <script src="resources/js/jquery-ui.js"></script>
+<script src="resources/js/jquey-1.9.1.js"></script>
 <script type="text/javascript">
 $(function() {
     $( "#tabs" ).tabs();
@@ -309,7 +309,53 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
 
  
  
- </script> 
+ </script>
+ <!-- <script>
+ $(window).load(function(){
+	 
+ $("#number").keyup(function() {
+			
+			 $("#numbererror").html(''); 
+			/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
+			var intRegex = /^\d+$/;
+			if(intRegex.test($(this).val())||$(this).val()=='') 
+			{
+				var $in = $(this).val();		 
+			}
+			else if($(this).val()!='')
+				{
+				
+				$("#numbererror").html('Kindly enter a number!!!!');
+				}
+		}).keydown(function() {
+		    oldValue = $(this).val();
+		});
+
+ 
+ </script>  -->
+  <script>
+ $(window).load(function(){
+	 
+	  $("#number").keyup(function() {
+			
+			 $("#numbererror").html(''); 
+			/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
+			var intRegex = /^\d+$/;
+			if(intRegex.test($(this).val())||$(this).val()=='') 
+			{
+				var $in = $(this).val();		 
+			}
+			else if($(this).val()!='')
+				{
+				
+				$("#numbererror").html('Kindly enter a number!!!!');
+				}
+		}).keydown(function() {
+		    oldValue = $(this).val();
+		})
+
+ });
+ </script>
   <script> 
   
   $(function() {
@@ -1314,7 +1360,7 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
 	 
           <table cellpadding="0" cellspacing="0" border="0" width="98%" height="20" >
           <tr><td width="100"><span class="err">*</span>Name</td><td width="300"><input type="text" name="pname"><span class="err"><form:errors path="symptom.pname"></form:errors></td>
-<td  width="100">Number</td><td width="100"><input type="text" name="number"></td>
+<td  width="100">Number</td><td width="100"><input type="text" name="number" id="number"> <span id="numbererror" > </span></td>
 <td  width="100" align="right"><span class="err">*</span>Date </td><td width="300"><input type="text" name="date" id="datepicker"><span class="err"><form:errors path="symptom.date"></form:errors></td>
 </tr></table>
 </br>
