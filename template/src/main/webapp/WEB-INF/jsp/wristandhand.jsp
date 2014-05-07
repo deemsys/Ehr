@@ -188,6 +188,7 @@ $(function() {
 	     <div id="tabs-1">
 	     
 <form action="insertwristexam" method="POST">  
+<input type="hidden" name="username" value="${username}">
 	      <div id="right_content">
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
 <tr>

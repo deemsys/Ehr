@@ -22,6 +22,45 @@
 	  });
   </script>
   <script>
+  function checkAjaxPost() {  
+		var val=document.getElementById("type_of_accident").value;
+		var element=document.getElementById('accident');
+
+		if(val=='autoaccident')
+		 {	 
+			
+		var username = $('#username').val();
+
+		
+		 $.ajax({  
+			    type: "POST",  
+			    url: "/EhrApp/duties_ajax",  
+			    data: "username=" + username,
+			    success: function(response){  
+			    
+			    	if(response=="")
+			    		{
+			    		popupWindow = window.open("dutiesunderduress" ,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+			    		}
+			    	else
+			    		{
+			    		var url="editdutiesdetails?username="+document.getElementById("username").value;
+			    		popupWindow = window.open(url,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+			    		}
+			    
+		
+			    },  
+			    error: function(e){  
+			      alert('Error: ' + e);  
+			    }  
+			  });  
+			}  
+  
+  }
+  
+  </script>
+  
+  <script>
   function lumboPopup() {
 
 if(document.getElementById("lumbo").checked)

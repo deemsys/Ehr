@@ -54,6 +54,7 @@ $(function() {
           <li><a href="#tabs-2">2</a></li>          
        </ul>
 <form action="elbowexam" method="POST" name="elbow">     
+<input type="hidden" name="username" value="${username}">
       <c:choose>
             <c:when test="${empty elbow}">   
    <div id="tabs-1"> 

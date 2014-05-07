@@ -50,6 +50,7 @@ $(function() {
           <li><a href="#tabs-2">2</a></li>          
        </ul>
        <form action="thoracicexam" method="POST" name="thoracic">
+       <input type="hidden" name="username" value="${username}">
          <c:choose>
             <c:when test="${empty thoracic}">
    <div id="tabs-1"> 

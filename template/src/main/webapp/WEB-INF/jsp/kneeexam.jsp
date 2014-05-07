@@ -58,6 +58,7 @@ $(function() {
    <div id="tabs-1"> 
  <div id="right_content">
 <form action="kneeexam" method="POST" name="knee">
+<input type="hidden" name="username" value="${username}">
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
 <tr>
 <td valign="top" align="left">
