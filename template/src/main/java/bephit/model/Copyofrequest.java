@@ -16,7 +16,7 @@ public class Copyofrequest{
 	private String regarding;
 	@NotEmpty
 	private String dateofaccident;
-	@NotEmpty
+	
 	private String claimnumber;
 	private String todaydate;
 	@NotEmpty

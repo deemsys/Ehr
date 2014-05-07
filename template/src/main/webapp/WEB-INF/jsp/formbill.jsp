@@ -124,8 +124,8 @@ function doAjaxPost() {
 		    	  {
 		    	 var cal=response.indexOf("|");
 		    	 var calculate=cal+1;
-			    // alert(response.indexOf("|"));
-			   //alert(response.substring(0,cal));
+			    /* alert(response.indexOf("|"));
+			   alert(response.substring(0,cal));*/
 			   document.getElementById("patientsname").value=response.substring(0,cal);
 			   
 		    	 document.getElementById("user").value=response.substring(calculate,response.length);
@@ -190,6 +190,7 @@ function doAjaxPost() {
   
   </STYLE>
  <script>
+  $(window).load(function(){
  $(function() {
            $( "#datepicker" ).datepicker();
          });
@@ -200,32 +201,63 @@ function doAjaxPost() {
            $( "#datepicker2" ).datepicker();
          });
          
-          $("#amount").keyup(function() {
-			
-			 $("#number").html(''); 
-			/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
-			var intRegex = /^\d+$/;
-			if(intRegex.test($(this).val())||$(this).val()=='') 
-			{
-				var $in = $(this).val();		 
-			}
-			else if($(this).val()!='')
-				{
-				
-				$("#number").html('Kindly enter a number!!!!');
-				}
-		}).keydown(function() {
-		    oldValue = $(this).val();
-		})
+        
          
          
+       
          
-         
-         
-         
-         
-         
+    });      
+           
 </script>
+<script>
+
+	function checkSubmit()
+	{
+		document.getElementById("datepickererror").innerHTML="";
+		if(document.getElementById("datepicker").value=="")
+		{
+		document.getElementById("datepickererror").innerHTML="Required field should not be empty";
+		
+		return false;
+		}
+		document.getElementById("insuranceerror").innerHTML="";
+		if(document.getElementById("insurance").value=="")
+		{
+		document.getElementById("insuranceerror").innerHTML="Required field should not be empty";
+		
+		return false;
+		}
+		document.getElementById("nameerror").innerHTML="";
+		if(document.getElementById("name").value=="")
+		{
+		document.getElementById("nameerror").innerHTML="Required field should not be empty";
+		
+		return false;
+		}
+		document.getElementById("pnameerror").innerHTML="";
+		if(document.getElementById("patientsname").value=="")
+		{
+		document.getElementById("pnameerror").innerHTML="Required field should not be empty";
+		
+		return false;
+		}
+		document.getElementById("amountdeducterror").innerHTML="";
+		if(isNaN(document.getElementById("medicalfee").value))
+		{
+		document.getElementById("amountdeducterror").innerHTML="Invalid character. Please enter numbers only.";
+		return false;
+		}
+		document.getElementById("number").innerHTML="";
+		if(isNaN(document.getElementById("amount").value))
+		{
+		document.getElementById("number").innerHTML="Invalid character. Please enter numbers only.";
+		return false;
+		}
+		
+		
+		}
+		</script>
+		
 </head>
  <body>
 <div id="right_content">
@@ -272,14 +304,14 @@ function openWindow(h, w, url) {
                 <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr ><td width="400"></td>
               <td height="25" width="50"><span class="err">*</span>Date:</td>
-              <td ><input type="text" class="input_txtbx1" name="date" id="datepicker"  /><span class="err"><form:errors path="Formbill.date"></form:errors></span></td>
+              <td ><input type="text" class="input_txtbx1" name="date" id="datepicker"  /><span class="err" id="datepickererror"><form:errors path="Formbill.date"></form:errors></span></td>
               </tr>
               </table><br>
             
                 <table align="center" cellpadding="0" cellspacing="0" border="0"   width="100%"  ">
               <tr >
              <td height="25" width="120"><span class="err">*</span>Insurance Company:</td>
-              <td ><input type="text" class="input_txtbx1" name="insurance" id="insurance"/><span class="err"><form:errors path="Formbill.insurance"></form:errors></span></td>
+              <td ><input type="text" class="input_txtbx1" name="insurance" id="insurance"/><span class="err" id="insuranceerror"><form:errors path="Formbill.insurance"></form:errors></span></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -292,7 +324,7 @@ function openWindow(h, w, url) {
                <table align="center" cellpadding="0" cellspacing="0" border="0"   width="100%"  ">
               <tr ><br>
              <td height="25" width="120"><span class="err">*</span>Name Of Attorney:</td>
-              <td ><input type="text" class="input_txtbx1" name="name" id="name"/><span class="err"><form:errors path="Formbill.name"></form:errors></span></td>
+              <td ><input type="text" class="input_txtbx1" name="name" id="name"/><span class="err" id="nameerror"><form:errors path="Formbill.name"></form:errors></span></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -305,7 +337,7 @@ function openWindow(h, w, url) {
                 <table align="center" cellpadding="0" cellspacing="0" border="0"   width="100%"  ">
               <tr >
              <td height="25" width="120"><span class="err">*</span>Patient Name</td>
-              <td ><input type="text" class="input_txtbx1" name="patientsname" id="patientsname"/><span class="err"><form:errors path="Formbill.patientsname"></form:errors></span></td>
+              <td ><input type="text" class="input_txtbx1" name="patientsname" id="patientsname"/><span class="err" id="pnameerror"><form:errors path="Formbill.patientsname"></form:errors></span></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -318,7 +350,7 @@ function openWindow(h, w, url) {
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
         	  <tr><td><p align="left" id="mypar"><b><h4>RE:</b>&nbsp;&nbsp;&nbsp;&nbsp; Notice of Final Outstanding Amount Owed;Medical Fees of $ <input type="text" class="input_txtbx1" name="medicalfee" id="medicalfee">
 	<span class="err"><form:errors path="Formbill.medicalfee"></form:errors></span>
-				  <span class="err"></span></h4></p></td>
+				  <span class="err" id="amountdeducterror"></span></h4></p></td>
         	  <td>
         	  </td>
         	  </tr>
@@ -326,7 +358,7 @@ function openWindow(h, w, url) {
        		 <table cellpadding="0" cellspacing="0" border="0" width="100%">
         	  <tr><td><p align="left" id="mypar"> <b>Notice is made of final outstanding amounts owed for medical fees rendered by the above of $ <input type="text" class="input_txtbx1" name="amount" id="amount">
 	<span class="err"><form:errors path="Formbill.amount"></form:errors></span>
-				  <span class="err"><div id="number"></span></b></p></td>
+				  <span class="err" id="number"></span></b></p></td>
         	  <td>
         	  </td>
         	  </tr>        	 
@@ -448,7 +480,7 @@ function openWindow(h, w, url) {
 <br>				</td></tr></table>
 </c:otherwise>
 </c:choose>
-       		   <table><tr> <td><input type="submit" class="submit_btn" value="Save"></td>
+       		   <table><tr> <td><input type="submit" class="submit_btn" value="Save" onclick="return checkSubmit('this');"></td>
                <td><a href="viewformbill"style="color:white" class="submit_btn">Cancel</a></td>
               </tr></table>
               </div>

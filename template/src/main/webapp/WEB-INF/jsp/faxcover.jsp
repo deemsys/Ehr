@@ -122,6 +122,13 @@ return false;
 		
 		return false;
 		}
+			document.getElementById("claimnoerror").innerHTML="";
+	if(isNaN(document.getElementById("claimno").value))
+{
+document.getElementById("claimnoerror").innerHTML="Enter Only Numbers";
+return false;
+}
+		
 	/* if(document.getElementById("faxno").value=="")
 	{
 	document.getElementById("faxerror").innerHTML="Please Enter";

@@ -199,7 +199,31 @@ $(function() {
     $( "#datepicker1" ).datepicker();
   });
 </script>
+<!-- <script>
+$(window).load(function(){
+ $(function() {
+
+$("#claimnumber").keyup(function() {
+			
+			 $("#claimnumbererror").html(''); 
+			/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
+			var intRegex = /^\d+$/;
+			if(intRegex.test($(this).val())||$(this).val()=='') 
+			{
+				var $in = $(this).val();		 
+			}
+			else if($(this).val()!='')
+				{
+				
+				$("#claimnumbererror").html('Kindly enter a number!!!!');
+				}
+		}).keydown(function() {
+		    oldValue = $(this).val();
+		})		
+});
+</script> -->
   <script>
+  
   $(function() {
     $( "#tabs" ).tabs();
   });
@@ -231,7 +255,12 @@ $(function() {
 	
 	return false;
 	}
-	
+	document.getElementById("claimnumbererror").innerHTML="";
+	if(isNaN(document.getElementById("claimnumber").value))
+{
+document.getElementById("claimnumbererror").innerHTML="Enter Only Numbers";
+return false;
+}
 	
 	document.getElementById("dearerror").innerHTML="";
 	if(document.getElementById("dear").value=="")

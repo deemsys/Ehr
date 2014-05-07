@@ -54,7 +54,6 @@ $(function() {
 	return false;
 	}
 	
-	
 	document.getElementById("dearerror").innerHTML="";
 	if(document.getElementById("dear").value=="")
 	{

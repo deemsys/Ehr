@@ -320,6 +320,7 @@ public class AdminController {
 		model.addAttribute("perrychiropracticform", perrychiropracticform);
 
 		model.addAttribute("menu", "perry");
+		session.removeAttribute("peri");
 		return "editperrychiropractic";
 
 	}
@@ -400,6 +401,7 @@ public class AdminController {
 		perrychiropracticform.setPerrychiropracticdetails(perrychiropracticDAO.getperrychiropractic());
 		model.addAttribute("perrychiropracticform",perrychiropracticform);		
 		//model.addAttribute("menu","xray");
+		session.removeAttribute("peri");
 		return "perrychiropractic";
 	}
 
@@ -534,6 +536,8 @@ public class AdminController {
 			perrychiropracticform.setPerrychiropracticdetails(perrychiropracticDAO.getperrychiropractic());
 			model.addAttribute("perrychiropracticform", perrychiropracticform);
 			model.addAttribute("Success", "true");
+			session.removeAttribute("peri");
+			
 			//model.addAttribute("menu", "notes");
 			return "perrychiropractic";
 
@@ -663,6 +667,7 @@ public class AdminController {
 		perrychiropracticform.setPerrychiropracticdetails(perrychiropracticDAO.getperrychiropractic());
 		model.addAttribute("perrychiropracticform", perrychiropracticform);
 		model.addAttribute("success","true");
+		session.removeAttribute("peri");
 		return "perrychiropractic";
 
 	}
