@@ -201,19 +201,19 @@ document.getElementById('gender32').value='Female';
           <table cellpadding="0" cellspacing="0" border="0" width="70%" align="center">
           <tr height="30">
           <td><span class="err">*</span>Report Date: </td>
-          <td><input type="text" name="reportdate" size="40" id="datepicker11"><span class="err"><form:errors path="Narrativereport.reportdate"></form:errors></span></td>
+          <td><input type="text" name="reportdate" size="40" id="datepicker11"><span class="err" id="datepicker11error"><form:errors path="Narrativereport.reportdate"></form:errors></span></td>
           </tr>   
           <tr height="30">
           <td><span class="err">*</span>Patientname: </td>
-          <td><input type="text" name="patient" size="40" value="${patientDetails.name}"><span class="err"><form:errors path=""></form:errors></span></td>
+          <td><input type="text" name="patient" size="40" value="${patientDetails.name}" id="patientname"><span class="err" id="patientnameerror"><form:errors path=""></form:errors></span></td>
           </tr>
           <tr height="30">
           <td><span class="err">*</span>Date of Injury: </td>
-          <td><input type="text" name="dateofinjury" size="40" id="datepicker1"><span class="err"><form:errors path="Narrativereport.dateofinjury"></form:errors></span></td>
+          <td><input type="text" name="dateofinjury" size="40" id="datepicker1"><span class="err" id="datepicker1error"><form:errors path="Narrativereport.dateofinjury"></form:errors></span></td>
           </tr>
           <tr height="30">
           <td><span class="err">*</span>Date of first visit: </td>
-          <td><input type="text" name="dateoffirstvisit" id="datepicker" size="40"><span class="err"><form:errors path="Narrativereport.dateoffirstvisit"></form:errors></span></td>
+          <td><input type="text" name="dateoffirstvisit" id="datepicker" size="40"><span class="err" id="datepickererror"><form:errors path="Narrativereport.dateoffirstvisit"></form:errors></span></td>
           </tr>
           </table>
           <table cellpadding="0" cellspacing="0" border="0" width="70%" align="center">
@@ -835,7 +835,7 @@ I hope you find this narrative report and discussion helpful in resolving the cu
 	            </p>
 	            <div align="right">
           <p><B style="font-size:13px">Sincerely,</B></p>
-          <p><input type="text" name="sign" size="30" ><span class="err"><form:errors path="Narrativereport.sign"></form:errors></span></p>
+          <p><input type="text" name="sign" size="30" id="sign" ><span class="err" id="signerror"><form:errors path="Narrativereport.sign"></form:errors></span></p>
           <p>Dr. Darrin A. Pordash</p>
           </div>
  <table align="right">
@@ -871,19 +871,19 @@ I hope you find this narrative report and discussion helpful in resolving the cu
           <table cellpadding="0" cellspacing="0" border="0" width="70%" align="center">
           <tr height="30">
           <td><span class="err">*</span>Report Date: </td>
-          <td><input type="text" name="reportdate" size="40" id="datepicker11" value="${narrative.reportdate }"><span class="err"><form:errors path="Narrativereport.reportdate"></form:errors></span></td>
+          <td><input type="text" name="reportdate" size="40" id="datepicker11" value="${narrative.reportdate }"><span class="err" id="datepicker11error"><form:errors path="Narrativereport.reportdate"></form:errors></span></td>
           </tr>   
           <tr height="30">
           <td><span class="err">*</span>Patient: </td>
-          <td><input type="text" name="patient" size="40" value="${narrative.patient}"><span class="err"><form:errors path="Narrativereport.patient"></form:errors></span></td>
+          <td><input type="text" name="patientname" size="40" value="${narrative.patient}"><span class="err" id="patientnameerror"><form:errors path="Narrativereport.patient"></form:errors></span></td>
           </tr>
           <tr height="30">
           <td><span class="err">*</span>Date of Injury: </td>
-          <td><input type="text" name="dateofinjury" size="40" id="datepicker1" value="${narrative.dateofinjury}"><span class="err"><form:errors path="Narrativereport.dateofinjury"></form:errors></span></td>
+          <td><input type="text" name="dateofinjury" size="40" id="datepicker1" value="${narrative.dateofinjury}"><span class="err" id="datepicker1error"><form:errors path="Narrativereport.dateofinjury"></form:errors></span></td>
           </tr>
           <tr height="30">
           <td><span class="err">*</span>Date of first visit: </td>
-          <td><input type="text" name="dateoffirstvisit" id="datepicker" size="40" value="${narrative.dateoffirstvisit}"><span class="err"><form:errors path="Narrativereport.dateoffirstvisit"></form:errors></span></td>
+          <td><input type="text" name="dateoffirstvisit" id="datepicker" size="40" value="${narrative.dateoffirstvisit}"><span class="err" id="datepickererror"><form:errors path="Narrativereport.dateoffirstvisit"></form:errors></span></td>
           </tr>
           </table>
           <table width="85">
@@ -1505,7 +1505,7 @@ I hope you find this narrative report and discussion helpful in resolving the cu
 	            </p>
 	            <div align="right">
           <p><B style="font-size:13px">Sincerely,</B></p>
-          <p><input type="text" name="sign" size="30" value="${narrative.sign}"><span class="err"><form:errors path="Narrativereport.sign"></form:errors></span></p>
+          <p><input type="text" name="sign" size="30" value="${narrative.sign}" id="sign"><span class="err" id="signerror"><form:errors path="Narrativereport.sign"></form:errors></span></p>
           <p>Dr. Darrin A. Pordash</p>
           </div>
  <table align="right">
