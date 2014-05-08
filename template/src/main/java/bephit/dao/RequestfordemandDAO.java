@@ -165,7 +165,7 @@ public class RequestfordemandDAO{
 		}
 		List<Requestfordemand> requestfordemand = new ArrayList<Requestfordemand>();
 	    try{
-	    	resultSet = statement.executeQuery("select * from requestfordemand");
+	    	resultSet = statement.executeQuery("select * from requestfordemand where username='"+username+"'");
 			while(resultSet.next()){
 				requestfordemand.add(new Requestfordemand
 						(resultSet.getString("requestid"),
@@ -202,7 +202,7 @@ public class RequestfordemandDAO{
 	
 	
 	
-	public List<Requestfordemand> getrequestfordemand(String username){
+	public List<Requestfordemand> getrequestfordemand(String requestid){
 		Connection con = null;
 		Statement statement = null;
 		ResultSet resultSet = null;
@@ -214,7 +214,7 @@ public class RequestfordemandDAO{
 		}
 		List<Requestfordemand> requestfordemand = new ArrayList<Requestfordemand>();
 	    try{
-			resultSet = statement.executeQuery("select * from requestfordemand where username='"+username+"'");
+			resultSet = statement.executeQuery("select * from requestfordemand where requestid='"+requestid+"'");
 			while(resultSet.next()){
 				requestfordemand.add(new Requestfordemand
 						(resultSet.getString("requestid"),
@@ -277,12 +277,7 @@ public class RequestfordemandDAO{
 	    +"',copyform='"+requestfordemand.getCopyform()
 	    +"',copyassign='"+requestfordemand.getCopyassign()+"',greencard='"+requestfordemand.getGreencard()+"',defaultattorney='"+requestfordemand.getDefaultattorney()+"',clinicrep='"+requestfordemand.getClinicrep()+"' where requestid='"+requestid+"'";
 	   
-	        
-	    
-	    
-	   
-	    
-		   	 		 
+	        	 		 
 	    	 		 
 	    	 		 
 	    System.out.println("cmd insert value"+cmd);
