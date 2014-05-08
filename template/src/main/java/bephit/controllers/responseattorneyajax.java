@@ -187,13 +187,14 @@ public class responseattorneyajax {
 	}
 	
 	@RequestMapping(value="/deleteresponseattorney", method = RequestMethod.GET)
-	public String deleteresponseattorney(@RequestParam("username")String username, HttpSession session,ModelMap model) {		
+	public String deleteresponseattorney(@RequestParam("responseid")String responseid, HttpSession session,ModelMap model) {		
 		model.addAttribute("menu","fax");
 		model.addAttribute("success","true");
-		responseattorneyDAO.deleteresponseattorney(username);
+		responseattorneyDAO.deleteresponseattorney(responseid);
 		ResponseattorneyForm responseattorneyform=new ResponseattorneyForm();
 		responseattorneyform.setResponseattorneydetail(responseattorneyDAO.getresponseattorney());
 				model.addAttribute("responseattorneyform",responseattorneyform);
+				model.addAttribute("success", "true");
 				return "responseattorney";	
 	}
 	
@@ -204,7 +205,7 @@ public class responseattorneyajax {
 			responseattorneyform.setResponseattorneydetail(responseattorneyDAO
 					.getresponseattorney());
 			model.addAttribute("responseattorneyform", responseattorneyform);
-			model.addAttribute("Success", "true");
+			model.addAttribute("success", "true");
 			model.addAttribute("menu", "fax");
 			return "responseattorney";
 		}
@@ -216,6 +217,7 @@ public class responseattorneyajax {
 		responseattorneyform.setResponseattorneydetail(responseattorneyDAO
 				.getresponseattorney());
 		model.addAttribute("responseattorneyform", responseattorneyform);
+		model.addAttribute("success", "true");
 		model.addAttribute("menu","fax");
 		return "responseattorney";
 

@@ -723,6 +723,7 @@ public class AdminController {
 			ResponseattorneyForm responseattorneyform=new ResponseattorneyForm();
 			responseattorneyform.setResponseattorneydetail(responseattorneyDAO.getresponseattorney());
 				model.addAttribute("responseattorneyform",responseattorneyform);
+				model.addAttribute("success", "true");
 				return "responseattorney";
 		}
 		// System.out.println(perrychiropracticdetails.getAddress()+""+perrychiropracticdetails.getAddress1());
@@ -730,7 +731,8 @@ public class AdminController {
 		ResponseattorneyForm responseattorneyform=new ResponseattorneyForm();
 		responseattorneyform.setResponseattorneydetail(responseattorneyDAO.getresponseattorney());
 			model.addAttribute("responseattorneyform",responseattorneyform);
-			return "viewresponseattorney";
+			model.addAttribute("success", "true");
+			return "responseattorney";
 
 	}
 	
