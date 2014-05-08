@@ -2,12 +2,12 @@ package bephit.model;
 
 public class Hamiltonchiropractic {
 	private String initialexamid;
-<<<<<<< .mine
+
 	private String patient_id;
-=======
+
 	private String checked;
-	private String patient_id;	
->>>>>>> .r548
+	
+
 	private String hacheck;
 	private String ha;
 	private String haa;
@@ -276,7 +276,7 @@ public class Hamiltonchiropractic {
 		this.initialexamid = initialexamid;
 	}
 
-<<<<<<< .mine
+
 
 	public String getPatient_id() {
 		return patient_id;
@@ -288,7 +288,7 @@ public class Hamiltonchiropractic {
 	}
 
 
-=======
+
 
 	public String getChecked() {
 		return checked;
@@ -300,7 +300,7 @@ public class Hamiltonchiropractic {
 	}
 
 
->>>>>>> .r548
+
 	public String getHacheck() {
 		return hacheck;
 	}
