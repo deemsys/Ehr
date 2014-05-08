@@ -175,7 +175,7 @@
        <input type="textbox" class="input_ckbx1" value="${requestfordemanddetails.clinicrep}" name="clinicrep" id="clinicrep"><span class="err" id="clinicreperror"><form:errors path="Requestfordemand.clinicrep"></form:errors></span></td></tr>
        <tr><td></td><td align="right" ><span class="err">*</span>Clinic Representative</td></tr>      
          
-        	   <table><tr> <td><input type="submit" class="submit_btn" value="Save" onclick="return checkSubmit('this');"></td>
+        	   <table><tr> <td><input type="submit" class="submit_btn" value="Update" onclick="return checkSubmit('this');"></td>
            
                
                <td><a href="deleterequestfordemand?requestid=${requestfordemanddetails.requestid}"style="color:white" class="submit_btn" onclick="return confirmation()" >Delete</a></td> 
