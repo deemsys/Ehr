@@ -310,6 +310,7 @@ public class AdminController {
 		model.addAttribute("perrychiropracticform", perrychiropracticform);
 
 		model.addAttribute("menu", "perry");
+		session.removeAttribute("peri");
 		return "editperrychiropractic";
 
 	}
@@ -403,6 +404,7 @@ public class AdminController {
 		//model.addAttribute("menu","xray");
 		session.removeAttribute("peri");
 		model.addAttribute("menu","perry");
+		session.removeAttribute("peri");
 		return "perrychiropractic";
 	}
 
@@ -541,6 +543,7 @@ public class AdminController {
 			
 			//model.addAttribute("menu", "notes");
 			model.addAttribute("menu","perry");
+			session.removeAttribute("peri");
 			return "perrychiropractic";
 
 		}
