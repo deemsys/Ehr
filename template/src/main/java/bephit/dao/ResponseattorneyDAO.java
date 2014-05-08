@@ -193,7 +193,7 @@ public class ResponseattorneyDAO {
 	}
 	
 	
-	public int updateresponseattorney(Responseattorney responseattorneydetail,String username)	{
+	public int updateresponseattorney(Responseattorney responseattorneydetail,String responseid)	{
 		Connection con = null;
 		Statement statement = null;
 		ResultSet resultSet = null;
@@ -215,7 +215,7 @@ public class ResponseattorneyDAO {
 	    +"',patientname='"+responseattorneydetail.getPatientname()	
 	    +"',dateofaccident='"+responseattorneydetail.getDateofaccident()
 	    +"',nameofclinic='"+ responseattorneydetail.getNameofclinic()
-	    +"',treatingphysician='"+ responseattorneydetail.getTreatingphysician()+"' where username='"+username+"'";
+	    +"',treatingphysician='"+ responseattorneydetail.getTreatingphysician()+"' where responseid='"+responseid+"'";
 	   System.out.println("cmd insert value"+cmd);
 	    statement.executeUpdate(cmd);
 	    }
@@ -235,7 +235,7 @@ public class ResponseattorneyDAO {
     	else
     		return 0;
 	}
-	public int deleteresponseattorney(String username)
+	public int deleteresponseattorney(String responseid)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -252,7 +252,7 @@ public class ResponseattorneyDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 
-	    	 String cmd="delete from tbl_responseattorney where username='"+username+"'";
+	    	 String cmd="delete from tbl_responseattorney where responseid='"+responseid+"'";
 	    	    System.out.println("cmd insert value"+cmd);
 	    	    statement.executeUpdate(cmd);
 	    	    }
