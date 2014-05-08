@@ -1157,7 +1157,7 @@ public String editworkschooldetails(@RequestParam("username")String username, Ht
 			NoticeassignmentForm noticeassignmentform = new NoticeassignmentForm();
 			noticeassignmentform.setNoticeassignmentdetails(noticeassignmentDAO.getnoticeassignment());
 			model.addAttribute("noticeassignmentform", noticeassignmentform);
-			model.addAttribute("Success", "true");
+			model.addAttribute("success", "true");
 			model.addAttribute("menu", "work");
 			return "noticeassignment";
 		}
@@ -1165,7 +1165,7 @@ public String editworkschooldetails(@RequestParam("username")String username, Ht
 		NoticeassignmentForm noticeassignmentform = new NoticeassignmentForm();
 		noticeassignmentform.setNoticeassignmentdetails(noticeassignmentDAO.getnoticeassignment());
 		model.addAttribute("noticeassignmentform", noticeassignmentform);
-		model.addAttribute("Success", "true");
+		model.addAttribute("success", "true");
 		model.addAttribute("menu", "work");
 		return "noticeassignment";
 	}

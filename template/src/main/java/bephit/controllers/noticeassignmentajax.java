@@ -163,7 +163,7 @@ public class noticeassignmentajax {
 		NoticeassignmentForm noticeassignmentform = new NoticeassignmentForm();
 		noticeassignmentform.setNoticeassignmentdetails(noticeassignmentDAO.getnoticeassignment());
 		model.addAttribute("noticeassignmentform", noticeassignmentform);
-		model.addAttribute("Success", "true");
+		model.addAttribute("success", "true");
 		//model.addAttribute("menu", "work");
 		return "viewnoticeassignment";
 	}
@@ -173,7 +173,7 @@ public class noticeassignmentajax {
 		NoticeassignmentForm noticeassignmentform = new NoticeassignmentForm();
 		noticeassignmentform.setNoticeassignmentdetails(noticeassignmentDAO.getnoticeassignment(username));
 		model.addAttribute("noticeassignmentform", noticeassignmentform);
-		model.addAttribute("Success", "true");
+		model.addAttribute("success", "true");
 		model.addAttribute("menu", "fax");
 		return "editnoticeassignment";
 
@@ -194,7 +194,7 @@ public class noticeassignmentajax {
 NoticeassignmentForm noticeassignmentform = new NoticeassignmentForm();
 			noticeassignmentform.setNoticeassignmentdetails(noticeassignmentDAO.getnoticeassignment());
 			model.addAttribute("noticeassignmentform", noticeassignmentform);
-			model.addAttribute("Success", "true");
+			model.addAttribute("success", "true");
 			model.addAttribute("menu", "fax");
 			return "noticeassignment";
 
@@ -206,12 +206,24 @@ NoticeassignmentForm noticeassignmentform = new NoticeassignmentForm();
 		NoticeassignmentForm noticeassignmentform = new NoticeassignmentForm();
 		noticeassignmentform.setNoticeassignmentdetails(noticeassignmentDAO.getnoticeassignment());
 		model.addAttribute("noticeassignmentform", noticeassignmentform);
-		model.addAttribute("success","true");
+		model.addAttribute("success", "true");
 		model.addAttribute("menu", "fax");
 		return "noticeassignment";
 
 	}
 	
+	@RequestMapping(value="/deletenoticeassignment", method = RequestMethod.GET)
+	public String deletenoticeassignment(@RequestParam("noticeid")String noticeid, HttpSession session,ModelMap model) {
+		model.addAttribute("menu","fax");
+		model.addAttribute("success","true");
+		noticeassignmentDAO.deletenoticeassignment(noticeid);
+		NoticeassignmentForm noticeassignmentform = new NoticeassignmentForm();
+		noticeassignmentform.setNoticeassignmentdetails(noticeassignmentDAO.getnoticeassignment());
+		model.addAttribute("noticeassignmentform", noticeassignmentform);
+	model.addAttribute("success", "true");
+	return "faxcover";
+		
+	}
 
 
 	
