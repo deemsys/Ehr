@@ -782,7 +782,7 @@ public class AdminController {
 
 				model.addAttribute("requestfordemandform", requestfordemandform);
 				
-			
+				model.addAttribute("success","true");
 
 				return "requestfordemand";
 			}

@@ -168,6 +168,7 @@ public class requestfordemandajax {
 		RequestfordemandForm requestfordemandform=new RequestfordemandForm();
 		requestfordemandform.setRequestfordemanddetails(requestfordemandDAO.getrequestfordemand());
 		model.addAttribute("requestfordemandform",requestfordemandform);
+		model.addAttribute("success","true");
 		model.addAttribute("menu","fax");
 		return "requestfordemand";
 	}
@@ -184,6 +185,7 @@ public class requestfordemandajax {
 		RequestfordemandForm requestfordemandform = new RequestfordemandForm();
 			requestfordemandform.setRequestfordemanddetails(requestfordemandDAO.getrequestfordemand());
 			model.addAttribute("requestfordemandform", requestfordemandform);
+			model.addAttribute("success","true");
 			model.addAttribute("menu","fax");
 			return "requestfordemand";
 
