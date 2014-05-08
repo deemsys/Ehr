@@ -153,7 +153,7 @@ document.getElementById("patientnameerror").innerHTML="";
               
               <br>
              
-        	  <table><tr> <td><input type="submit" class="submit_btn" value="Save" OnClick ="return valid();"></td>
+        	  <table><tr> <td><input type="submit" class="submit_btn" value="Update" OnClick ="return valid();"></td>
            
                 <td><a href="deleteresponseattorney?responseid=${responseattorneydetail.responseid}"style="color:white" class="submit_btn" onclick="return confirmation()" >Delete</a></td>
                        <td><a href="viewallpatientdetails"style="color:white" class="submit_btn">Cancel</a></td>
