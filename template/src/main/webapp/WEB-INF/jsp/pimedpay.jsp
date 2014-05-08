@@ -124,8 +124,8 @@ function doAjaxPost() {
 		    	  {
 		    	 var cal=response.indexOf("|");
 		    	 var calculate=cal+1;
-			    // alert(response.indexOf("|"));
-			   //alert(response.substring(0,cal));
+			   /*  alert(response.indexOf("|"));
+			   alert(response.substring(0,cal));*/
 			   document.getElementById("nameofperson").value=response.substring(0,cal);
 			   
 		    	 document.getElementById("user").value=response.substring(calculate,response.length);
@@ -197,6 +197,49 @@ function doAjaxPost() {
            $( "#datepicker1" ).datepicker();
          });
 </script>
+<script>
+
+	function checkSubmit()
+	{
+		document.getElementById("inserror").innerHTML="";
+		if(document.getElementById("insurance").value=="")
+		{
+		document.getElementById("inserror").innerHTML="Required field should not be empty";
+		
+		return false;
+		}
+		document.getElementById("nameerror").innerHTML="";
+		
+		if(document.getElementById("nameofperson").value=="")
+		{
+		document.getElementById("nameerror").innerHTML="Required field should not be empty";
+		
+		return false;
+		}
+		document.getElementById("dateerror").innerHTML="";
+		if(document.getElementById("datepicker").value=="")
+		{
+		document.getElementById("dateerror").innerHTML="Required field should not be empty";
+		
+		return false;
+		}
+		document.getElementById("suberror").innerHTML="";
+		
+		if(document.getElementById("dearsir").value=="")
+		{
+		document.getElementById("suberror").innerHTML="Required field should not be empty";
+		
+		return false;
+		}
+		document.getElementById("datepickererror").innerHTML="";
+		if(document.getElementById("datepicker").value=="")
+		{
+		document.getElementById("datepickererror").innerHTML="Required field should not be empty";
+		
+		return false;
+		}
+		}
+		</script>
 </head>
  <body>
 <div id="right_content">
@@ -281,7 +324,7 @@ function openWindow(h, w, url) {
         <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="180"><span class="err">*</span>Name of Insurance Company</td>
-              <td ><input type="text" class="input_txtbx1" name="insurance" id="insurance" /><span class="err"><form:errors path="Pimedpay.insurance"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="insurance" id="insurance" /><span class="err" id="inserror"><form:errors path="Pimedpay.insurance"></form:errors></td>
               </tr>
               </table>
               
@@ -302,14 +345,14 @@ function openWindow(h, w, url) {
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="180"><span class="err">*</span>Patient's Name</td>
-              <td><input type="text" class="input_txtbx1" name="nameofperson" id="nameofperson"><span class="err"><form:errors path="Pimedpay.nameofperson"></form:errors></span></td>
+              <td><input type="text" class="input_txtbx1" name="nameofperson" id="nameofperson"><span class="err" id="nameerror"><form:errors path="Pimedpay.nameofperson"></form:errors></span></td>
               </tr>
               </table>
               <br>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="180"><span class="err">*</span>Date of Accident: </td>
-              <td><input type="text" class="input_txtbx1" name="dateofaccident" id="datepicker"><span class="err"><form:errors path="Pimedpay.dateofaccident"></form:errors></span></td>
+              <td><input type="text" class="input_txtbx1" name="dateofaccident" id="datepicker"><span class="err" id="dateerror"><form:errors path="Pimedpay.dateofaccident"></form:errors></span></td>
               </tr>
               </table><br><br>
               
@@ -322,7 +365,7 @@ function openWindow(h, w, url) {
             
              <table>
              <tr><td><br><br><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	        <span class="err">*</span><input type="text" class="input_txtbx1" name="subject" id="dearsir"><span class="err"><form:errors path="Pimedpay.subject"></form:errors></span> has sought and received medical treatment from this clinic.  Our patient made an assignment over to us of med pay proceeds to which we are entitled to receive from your company. You have received notice of this assignment by certified mail.
+	        <span class="err">*</span><input type="text" class="input_txtbx1" name="subject" id="dearsir"><span class="err" id="suberror"><form:errors path="Pimedpay.subject"></form:errors></span> has sought and received medical treatment from this clinic.  Our patient made an assignment over to us of med pay proceeds to which we are entitled to receive from your company. You have received notice of this assignment by certified mail.
              
              </p>
              </td></tr>
@@ -535,7 +578,7 @@ function openWindow(h, w, url) {
               <table>
               <tr>
               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-              <td><input type="submit" class="submit_btn" value="Save"></td>
+              <td><input type="submit" class="submit_btn" value="Save" onclick="return checkSubmit('this');"></td>
               <td>&nbsp;&nbsp;</td>
              <td><a href="viewpimedpay" style="color:white" class="submit_btn">Cancel</a></td>
               <td>&nbsp;&nbsp;</td>

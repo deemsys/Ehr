@@ -34,6 +34,54 @@
 	}
 }
 	</script>
+	<script>
+
+	function checkSubmit()
+	{
+		document.getElementById("derr").innerHTML="";
+		if(document.getElementById("datepicker").value=="")
+		{
+		document.getElementById("derr").innerHTML="Required field should not be empty";
+		
+		return false;
+		}
+		document.getElementById("dcerr").innerHTML="";
+		if(document.getElementById("dcr").value=="")
+		{
+		document.getElementById("dcerr").innerHTML="Required field should not be empty";
+		
+		return false;
+		}
+		document.getElementById("clerr").innerHTML="";
+		if(document.getElementById("clinicname").value=="")
+		{
+		document.getElementById("clerr").innerHTML="Required field should not be empty";
+		
+		return false;
+		}
+		document.getElementById("daerr").innerHTML="";
+		if(document.getElementById("datepicker1").value=="")
+		{
+		document.getElementById("daerr").innerHTML="Required field should not be empty";
+		
+		return false;
+		}
+		document.getElementById("suberr").innerHTML="";
+		if(document.getElementById("dearsir").value=="")
+		{
+		document.getElementById("suberr").innerHTML="Required field should not be empty";
+		
+		return false;
+		}
+		document.getElementById("esqerr").innerHTML="";
+		if(document.getElementById("esq").value=="")
+		{
+		document.getElementById("esqerr").innerHTML="Required field should not be empty";
+		
+		return false;
+		}
+		}
+		</script>
 
 </head>
  <body>
@@ -63,7 +111,7 @@
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr><td width="375"></td>
               <td><span class="err">*</span>Date</td>
-              <td ><input type="hidden" name="letterid" value="${letterofprotectiondetails.letterid }"><input type="text" class="input_txtbx1" name="date" value="${letterofprotectiondetails.date }" id="datepicker" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td ><input type="hidden" name="letterid" value="${letterofprotectiondetails.letterid }"><input type="text" class="input_txtbx1" name="date" value="${letterofprotectiondetails.date }" id="datepicker" /><span class="err" id="derr"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>
                <br><br><br>
@@ -71,12 +119,12 @@
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25"  width="160"><span class="err">*</span>D.C:</td>
-               <td ><input type="text" class="input_txtbx1" name="dc" value="${letterofprotectiondetails.dc}" id="dcr" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+               <td ><input type="text" class="input_txtbx1" name="dc" value="${letterofprotectiondetails.dc}" id="dcr" /><span class="err" id="dcerr"><form:errors path="Hardshipagreement.date"></form:errors></td>
              
               </tr>
               <tr>
               <td height="25" width="160"><span class="err">*</span>Clinic Name:</td>
-               <td ><input type="text" class="input_txtbx1" name="clinicname" value="${letterofprotectiondetails.clinicname}" id="clinicname" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+               <td ><input type="text" class="input_txtbx1" name="clinicname" value="${letterofprotectiondetails.clinicname}" id="clinicname" /><span class="err" id="clerr"><form:errors path="Hardshipagreement.date"></form:errors></td>
              
               </tr>
              </table>
@@ -95,14 +143,14 @@
               </tr>
               <tr>
               <td height="25"  width="160"><span class="err">*</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date Of Accident:</td>
-               <td ><input type="text" class="input_txtbx1" name="dateofaccident" value="${letterofprotectiondetails.dateofaccident}"  id="datepicker1" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+               <td ><input type="text" class="input_txtbx1" name="dateofaccident" value="${letterofprotectiondetails.dateofaccident}"  id="datepicker1" /><span class="err" id="daerr"><form:errors path="Hardshipagreement.date"></form:errors></td>
              
               </tr>
              </table><br><br>
              <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td  width="70"><span class="err">*</span>Dear Dr</td>
-              <td  height="20" ><input type="text" class="input_txtbx1" name="dearsir" value="${letterofprotectiondetails.dearsir}"  id="dearsir" /><span class="err"><form:errors path="noticeofassignment.address"></form:errors>
+              <td  height="20" ><input type="text" class="input_txtbx1" name="dearsir" value="${letterofprotectiondetails.dearsir}"  id="dearsir" /><span class="err" id="suberr"><form:errors path="noticeofassignment.address"></form:errors>
            </span></td></tr>	
              </table>
              <table>
@@ -128,13 +176,13 @@
              <tr><td width="450"></td>
              <td ><p><h1> <b>Very truly yours,</b></h1><p></td></tr>
              <tr><td width="450"></td>
-            <td ><span class="err">*</span><input type="text" class="input_txtbx1" name="esq" value="${letterofprotectiondetails.esq}"    id="esq" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td></tr>
+            <td ><span class="err">*</span><input type="text" class="input_txtbx1" name="esq" value="${letterofprotectiondetails.esq}"    id="esq" /><span class="err" id="esqerr"><form:errors path="Hardshipagreement.date"></form:errors></td></tr>
             <tr><td width="450"></td><td ><p><h1> <b>	Attorney for above client</b></h1><p></td></tr>
              </table>
               <table>
               <tr>
               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-              <td><input type="submit" class="submit_btn" value="update"></td>
+              <td><input type="submit" class="submit_btn" value="update" onclick="return checkSubmit('this');"></td>
               <td>&nbsp;&nbsp;</td>
               <td><a href="deleteletterofprotection?letterid=${letterofprotectiondetails.letterid }"style="color:white" class="submit_btn" onclick="return confirmation()" >Delete</a></td>
               <td><a href="viewallpatientdetails" style="color:white" class="submit_btn">Cancel</a></td>

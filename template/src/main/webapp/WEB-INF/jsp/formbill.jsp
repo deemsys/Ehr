@@ -209,6 +209,9 @@ function doAjaxPost() {
     });      
            
 </script>
+
+
+
 <script>
 
 	function checkSubmit()
@@ -258,6 +261,7 @@ function doAjaxPost() {
 		}
 		</script>
 		
+
 </head>
  <body>
 <div id="right_content">

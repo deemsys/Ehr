@@ -13,7 +13,8 @@
 	            	<div class="headings altheading">
 	              		<h2>User Activity Logs</h2>
 	            	</div>
-	            	<div class="contentbox">
+	            	<div>
+	            	     	<div class="contentbox">
 						<table cellpadding="0" cellspacing="0" border="0" width="100%">
 							<tr>
 								<td width="30%" align="right"><b>User Name</b></td>

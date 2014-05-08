@@ -45,6 +45,164 @@ $(function() {
     $( "#tabs" ).tabs();
   });
   </script>
+  <script>
+  function checkSubmit()
+  {
+  
+ document.getElementById("flexerr").innerHTML="";
+ if(isNaN(document.getElementById("flexion").value))
+ {
+ document.getElementById("flexerr").innerHTML="Invalid character. Please enter numbers only.";
+ return false;
+ } 
+ document.getElementById("extensionerr").innerHTML="";
+ if(isNaN(document.getElementById("extension").value))
+ {
+ document.getElementById("extensionerr").innerHTML="Invalid character. Please enter numbers only.";
+ return false;
+ } 
+ document.getElementById("internerr").innerHTML="";
+  if(isNaN(document.getElementById("internalrotationl").value))
+ {
+ document.getElementById("internerr").innerHTML="Invalid character. Please enter numbers only.";
+ return false;
+ }
+  document.getElementById("internalerr").innerHTML="";  
+  if(isNaN(document.getElementById("internalrotationr").value))
+ {
+ document.getElementById("internalerr").innerHTML="Invalid character. Please enter numbers only.";
+ return false;
+ }  
+  document.getElementById("externerr").innerHTML="";  
+  if(isNaN(document.getElementById("externalrotationl").value))
+ {
+ document.getElementById("externerr").innerHTML="Invalid character. Please enter numbers only.";
+ return false;
+ }  
+ document.getElementById("externalerr").innerHTML="";  
+  if(isNaN(document.getElementById("externalrotationr").value))
+ {
+ document.getElementById("externalerr").innerHTML="Invalid character. Please enter numbers only.";
+ return false;
+ } 
+  document.getElementById("l15lerr").innerHTML="";
+  if(isNaN(document.getElementById("l15l").value))
+ {
+ document.getElementById("l15lerr").innerHTML="Invalid character. Please enter numbers only.";
+ return false;
+ } 
+ document.getElementById("l15rerr").innerHTML="";
+  if(isNaN(document.getElementById("l15r").value))
+ {
+ document.getElementById("l15rerr").innerHTML="Invalid character. Please enter numbers only.";
+ return false;
+ } 
+ document.getElementById("lerr").innerHTML="";
+  if(isNaN(document.getElementById("l25l").value))
+ {
+ document.getElementById("lerr").innerHTML="Invalid character. Please enter numbers only.";
+ return false;
+ } 
+ 
+ document.getElementById("rerr").innerHTML="";
+  if(isNaN(document.getElementById("l25r").value))
+ {
+ document.getElementById("rerr").innerHTML="Invalid character. Please enter numbers only.";
+ return false;
+ } 
+ document.getElementById("l35lerr").innerHTML="";
+  if(isNaN(document.getElementById("l35l").value))
+ {
+ document.getElementById("l35lerr").innerHTML="Invalid character. Please enter numbers only.";
+ return false;
+ } 
+  document.getElementById("l35rerr").innerHTML="";
+  if(isNaN(document.getElementById("l35r").value))
+ {
+ document.getElementById("l35rerr").innerHTML="Invalid character. Please enter numbers only.";
+ return false;
+ } 
+  document.getElementById("l45lerr").innerHTML="";
+  if(isNaN(document.getElementById("l45l").value))
+ {
+ document.getElementById("l45lerr").innerHTML="Invalid character. Please enter numbers only.";
+ return false;
+ } 
+ document.getElementById("l45rerr").innerHTML="";
+  if(isNaN(document.getElementById("l45r").value))
+ {
+ document.getElementById("l45rerr").innerHTML="Invalid character. Please enter numbers only.";
+ return false;
+ } 
+ document.getElementById("l55lerr").innerHTML="";
+  if(isNaN(document.getElementById("l55l").value))
+ {
+ document.getElementById("l55lerr").innerHTML="Invalid character. Please enter numbers only.";
+ return false;
+ } 
+  document.getElementById("l55rerr").innerHTML="";
+  if(isNaN(document.getElementById("l55r").value))
+ {
+ document.getElementById("l55rerr").innerHTML="Invalid character. Please enter numbers only.";
+ return false;
+ } 
+  document.getElementById("s5lerr").innerHTML="";
+  if(isNaN(document.getElementById("s5l").value))
+ {
+ document.getElementById("s5lerr").innerHTML="Invalid character. Please enter numbers only.";
+ return false;
+  }
+  document.getElementById("s5rerr").innerHTML="";
+  if(isNaN(document.getElementById("s5r").value))
+ {
+ document.getElementById("s5rerr").innerHTML="Invalid character. Please enter numbers only.";
+ return  false;
+  } 
+  document.getElementById("l4l3err").innerHTML="";
+  if(isNaN(document.getElementById("l4l3").value))
+ {
+ document.getElementById("l4l3err").innerHTML="Invalid character. Please enter numbers only.";
+ return false;
+  } 
+  document.getElementById("l4r3err").innerHTML="";
+  if(isNaN(document.getElementById("l4r3").value))
+  {
+  document.getElementById("l4r3err").innerHTML="Invalid character. please enter numbers only";
+  return false;
+  }
+  document.getElementById("l5l3err").innerHTML="";
+  if(isNaN(document.getElementById("l5l3").value))
+  {
+  document.getElementById("l5l3err").innerHTML="Invalid character. please enter numbers only";
+  return false;
+  }
+  document.getElementById("l5r3err").innerHTML="";
+  if(isNaN(document.getElementById("l5r3").value))
+  {
+  document.getElementById("l5r3err").innerHTML="Invalid character. please enter numbers only";
+  return false;
+  }
+   
+   document.getElementById("silerr").innerHTML="";
+   if(isNaN(document.getElementById("sil").value))
+  {
+  document.getElementById("silerr").innerHTML="Invalid character. please enter numbers only";
+  return false;
+  }
+  document.getElementById("sirerr").innerHTML="";
+   if(isNaN(document.getElementById("sir").value))
+  {
+  document.getElementById("sirerr").innerHTML="Invalid character. please enter numbers only";
+  return false;
+  }
+  var IsNumeric=true;
+  alert("hello");
+  IsNumeric=document.getElementById("cmabovel").value;
+  if(IsNumeric.value==false)
+  alert(pls decimals);
+  return false;
+  }     
+  </script>
 </head>
  <body>
  <br><br>
@@ -163,19 +321,19 @@ $(function() {
  <td></td><td><b>Left</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> Right</b></td>
  </tr>
   <tr class="row1">
- <td><b>Flexion:</b> </td><td> (60)</td><td>&nbsp;&nbsp;&nbsp; <input type="text" name="flexion" size="7"></td>  
+ <td><b>Flexion:</b> </td><td> (60)</td><td>&nbsp;&nbsp;&nbsp; <input type="text" name="flexion" id="flexion"  size="7"><span class="err" id="flexerr"></span></td>  
  <td><b>Ant. Drawer (ACL):</b> </td><td><input type="text" name="acll" size="5"> <input type="text" name="aclr" size="5"></td>
  </tr>
   <tr class="row1">
- <td><b>Extension:	</b> </td><td> (25) </td><td> &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="extension" size="7"></td>  
+ <td><b>Extension:	</b> </td><td> (25) </td><td> &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="extension" id="extension" size="7"><span class="err" id="extensionerr"></span></td>  
  <td><b>Post. Drawer (PCL):	</b> </td><td><input type="text" name="pcll" size="5"> <input type="text" name="pclr" size="5"></td>
  </tr>
   <tr class="row1">
- <td><b>Internal Rotation:</b> </td><td> (25)</td><td>L &nbsp;<input type="text" name="internalrotationl" size="7"><br/><br/>R <input type="text" name="internalrotationr" size="7"></td>  
+ <td><b>Internal Rotation:</b> </td><td> (25)</td><td>L &nbsp;<input type="text" name="internalrotationl" id="internalrotationl" size="7"><span class="err" id="internerr"></span><br/><br/>R <input type="text" name="internalrotationr" id="internalrotationr" size="7"><span class="err" id="internalerr"></span></td>  
  <td><b>Lateral (Varus) Stability (LCL):</b> </td><td><input type="text" name="lcll" size="5"> <input type="text" name="lclr" size="5"></td>
  </tr>
   <tr class="row1">
-  <td><b> External Rotation:</b> </td><td> (45)</td><td>L &nbsp;<input type="text" name="externalrotationl" size="7"><br/><br/>R <input type="text" name="externalrotationr" size="7"></td>  
+  <td><b> External Rotation:</b> </td><td> (45)</td><td>L &nbsp;<input type="text" name="externalrotationl" id="externalrotationl" size="7"><span class="err" id="externerr"></span><br/><br/>R <input type="text" name="externalrotationr" id="externalrotationr" size="7"><span class="err" id="externalerr"></span></td>  
  <td><b>Medial (Valgus) Stability (MCL):</b> </td><td><input type="text" name="mcll" size="5"> <input type="text" name="mclr" size="5"></td>
  </tr>
   <tr class="row1">
@@ -189,7 +347,7 @@ $(function() {
  <td><b>Apley's Compress (Meniscus):	</b> </td><td><input type="text" name="apleysl" size="5"> <input type="text" name="apleysr" size="5"></td>
  </tr>
   <tr class="row1">
- <td>Left &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="cmabovel" size="8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="suprapatellarl" size="8"></td><td><input type="text" name="infrapatellarl" size="8"> </td>  
+ <td>Left &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="cmabovel" id="cmabovel" size="8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="suprapatellarl" size="8"></td><td><input type="text" name="infrapatellarl" size="8"> </td>  
  <td><input type="text" name="belowl" size="8"></td>
  <td><b>Apley's Distraction (Cor ligs):		</b> </td><td><input type="text" name="distractionl" size="5"> <input type="text" name="distractionr" size="5"> </td>
  </tr>
@@ -249,7 +407,7 @@ $(function() {
  <td>L1</td>
  <td><input type="text" name="l1l" size="5">&nbsp; &nbsp; &nbsp;<input type="text" name="l1r" size="5">&nbsp;(Inguinal area)</td>
  <td>L1 </td>
- <td> <input type="text" name="l15l" size="5">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l15r" size="5">&nbsp;/5&nbsp;(Iliopsoas)</td>
+ <td> <input type="text" name="l15l" id="l15l" size="5"><span class="err" id="l15lerr"></span>&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l15r" id="l15r" size="5"><span class="err" id="l15rerr"></span>&nbsp;/5&nbsp;(Iliopsoas)</td>
  <td> </td>
  <td>  </td>
  </tr>
@@ -257,7 +415,7 @@ $(function() {
  <td>L2</td>
  <td><input type="text" name="l2l" size="5">&nbsp; &nbsp; &nbsp;<input type="text" name="l2r" size="5">&nbsp;(Ant/med thigh)</td>
  <td>L2 </td>
- <td> <input type="text" name="l25l" size="5">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l25r" size="5">&nbsp;/5&nbsp;(Iliopsoas)</td>
+ <td> <input type="text" name="l25l" id="l25l" size="5"><span class="err" id="lerr"></span>&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l25r" id="l25r" size="5"><span class="err" id="rerr"></span>&nbsp;/5&nbsp;(Iliopsoas)</td>
  <td> </td>
  <td> </td>
  </tr>
@@ -265,7 +423,7 @@ $(function() {
  <td>L3</td>
  <td><input type="text" name="l3l" size="5">&nbsp; &nbsp; &nbsp;<input type="text" name="l3r" size="5">&nbsp;(Medial knee)	</td>
  <td>L3 </td>
- <td> <input type="text" name="l35l" size="5">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l35r" size="5">&nbsp;/5&nbsp;(Iliopsoas)</td>
+ <td> <input type="text" name="l35l" id="l35l" size="5"><span class="err" id="l35lerr"></span>&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l35r" id="l35r" size="5"><span class="err" id="l35rerr"></span>&nbsp;/5&nbsp;(Iliopsoas)</td>
  <td> </td>
  <td> </td>
  </tr>
@@ -273,25 +431,25 @@ $(function() {
  <td>L4</td>
  <td><input type="text" name="l4l" size="5">&nbsp; &nbsp; &nbsp;<input type="text" name="l4r" size="5">&nbsp;(Medial leg)	</td>
  <td>L4 </td>
- <td> <input type="text" name="l45l" size="5">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l45r" size="5">&nbsp;/5&nbsp;(Rectus fem.)</td>
+ <td> <input type="text" name="l45l" id="l45l" size="5"><span class="err" id="l45lerr"></span>&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l45r" id="l45r" size="5"><span class="err" id="l45rerr"></span>&nbsp;/5&nbsp;(Rectus fem.)</td>
  <td> L4</td>
- <td> <input type="text" name="l4l3" size="5">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l4r3" size="5">&nbsp;/5&nbsp;(Patellar)</td>
+ <td> <input type="text" name="l4l3" id="l4l3" size="5"><span class="err" id="l4l3err"></span>&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l4r3" id="l4r3" size="5"><span class="err" id="l4r3err"></span>&nbsp;/5&nbsp;(Patellar)</td>
  </tr>
  <tr class="row1">
  <td>L5</td>
- <td><input type="text" name="l5l" size="5">&nbsp; &nbsp; &nbsp;<input type="text" name="l5r" size="5">&nbsp;(Ant/lat leg)	</td>
+ <td><input type="text" name="l5l" id="l5l" size="5">&nbsp; &nbsp; &nbsp;<input type="text" name="l5r" id="l5r" size="5">&nbsp;(Ant/lat leg)	</td>
  <td>L5 </td>
- <td> <input type="text" name="l55l" size="5">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l55r" size="5">&nbsp;/5&nbsp;  (Glut Med)</td>
+ <td> <input type="text" name="l55l" id="l55l" size="5"><span class="err" id="l55lerr"></span>&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l55r" id="l55r" size="5"><span class="err" id="l55rerr"></span>&nbsp;/5&nbsp;  (Glut Med)</td>
  <td>L5 </td>
- <td><input type="text" name="l5l3" size="5">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l5r3" size="5">&nbsp;/5&nbsp;(Med HS) </td>
+ <td><input type="text" name="l5l3" id="l5l3" size="5"><span class="err" id="l5l3err"></span>&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l5r3" id="l5r3" size="5"><span class="err" id="l5r3err"></span>&nbsp;/5&nbsp;(Med HS) </td>
  </tr>
  <tr class="row1">
  <td>SI</td>
  <td><input type="text" name="sl" size="5">&nbsp; &nbsp; &nbsp;<input type="text" name="sr" size="5">&nbsp;(Big toe/plantar)		</td>
  <td>SI </td>
- <td> <input type="text" name="s5l" size="5">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="s5r" size="5">&nbsp;/5&nbsp; (Glut Max)</td>
+ <td> <input type="text" name="s5l" id="s5l" size="5"><span class="err" id="s5lerr"></span>&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="s5r" id="s5r" size="5"><span class="err" id="s5rerr"></span>&nbsp;/5&nbsp; (Glut Max)</td>
  <td>SI </td>
- <td> <input type="text" name="sil" size="5">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="sir" size="5">&nbsp;/5&nbsp;(Achilles)</td>
+ <td> <input type="text" name="sil" id="sil" size="5"><span class="err" id="silerr"></span>&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="sir" id="sir" size="5"><span class="err" id="sirerr"></span>&nbsp;/5&nbsp;(Achilles)</td>
  </tr>
  <tr class="row1">
  <td></td>
@@ -382,7 +540,7 @@ $(function() {
 </table>
 <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="Save"></td>
+<td><input type="submit" class="submit_btn" value="Save" onclick="return checkSubmit('this');"></td>
 <td><input type="reset" class="submit_btn" value="Cancel" onclick="myclose()"></td>
 <script>
  function myclose()
@@ -597,7 +755,7 @@ $(function() {
  <td>L2</td>
  <td><input type="text" name="l2l" size="5" value="${knee.l2l}">&nbsp; &nbsp; &nbsp;<input type="text" name="l2r" size="5" value="${knee.l2r }">&nbsp;(Ant/med thigh)</td>
  <td>L2 </td>
- <td> <input type="text" name="l25l" size="5" value="${knee.l25l}">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l25r" size="5" value="${knee.l25r}">&nbsp;/5&nbsp;(Iliopsoas)</td>
+ <td> <input type="text" name="l25l" id="l25l" size="5" value="${knee.l25l}"><span class="err" id="lerr"></span>&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l25r" size="5" value="${knee.l25r}">&nbsp;/5&nbsp;(Iliopsoas)</td>
  <td> </td>
  <td> </td>
  </tr>
@@ -722,7 +880,7 @@ $(function() {
 	</table>
 	<table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="Save"></td>
+<td><input type="submit" class="submit_btn" value="Save" onclick="return checkSubmit('this');"></td>
 <td><input type="reset" class="submit_btn" value="Cancel" onclick="myclose()"></td>
 <script>
  function myclose()

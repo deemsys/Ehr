@@ -9,6 +9,7 @@
  <script src="resources/js/jquery.min.js"></script> 
  <script src="resources/js/jquery-ui.js"></script>
  <script src="resources/js/jquey-1.9.1.js"></script>
+ <script src="all-numbers.js"></script>
  <STYLE type="text/css">
   P#mypar {font-style:calibri;
   line-height:18px;}
@@ -281,10 +282,11 @@ return false;
 	}
 
 	</script>
+	
 </head>
  
  <body>
- <form action="copyofrequest" method="POST"> 
+ <form  action="copyofrequest" method="POST"> 
  <input type="hidden" class="input_txtbx1" id="user" name="user" />
  <c:choose>
     					<c:when test="${empty copy}">

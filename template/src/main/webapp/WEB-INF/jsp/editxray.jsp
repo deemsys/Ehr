@@ -37,6 +37,33 @@
 	}
 }
 	</script>
+	<script>
+function checkSubmit()
+	{
+		document.getElementById("nameerror").innerHTML="";
+		if(document.getElementById("name").value=="")
+		{
+		document.getElementById("nameerror").innerHTML="Required field should not be empty";
+		return false;
+		
+		}
+		document.getElementById("datepickererror").innerHTML="";
+		if(document.getElementById("datepicker2").value=="")
+		{
+		document.getElementById("datepickererror").innerHTML="Required field should not be empty";
+		
+		return false;
+		}
+		document.getElementById("signerror").innerHTML="";
+		if(document.getElementById("sign").value=="")
+		{
+		document.getElementById("signerror").innerHTML="Required field should not be empty";
+		
+		return false;
+		}
+		}
+
+</script>
 </head>
  <body>
 <div id="right_content">
@@ -84,7 +111,7 @@
  </table><br>
  <table cellpadding="0" cellspacing="0" border="0" width="100%">
  <tr><td><span class="err">*</span>
- I<input type="hidden" name="xrayid" value="${xraydetails.xrayid }"> <input type="text" class="input_txtbx1" name="name" id="name" value="${xraydetails.name}"> do hereby agree to return X-rays that I have borrowed from the Chiropractic Therapy Center, I understand that I have fourteen (14) days to do so.I fully agree that in the event that I do not return X-rays, I will be billed $50.00.  	  
+ I<input type="hidden" name="xrayid" value="${xraydetails.xrayid }"> <input type="text" class="input_txtbx1" name="name" id="name" value="${xraydetails.name}"> <span class="err" id="nameerror"></span>do hereby agree to return X-rays that I have borrowed from the Chiropractic Therapy Center, I understand that I have fourteen (14) days to do so.I fully agree that in the event that I do not return X-rays, I will be billed $50.00.  	  
        </td></tr></table><br><br>
  
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -102,9 +129,9 @@
              <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="100"><span class="err">*</span>Date </td>
-              <td width="70"><input type="text" class="input_txtbx1" name="date2" id="datepicker2"  value="${xraydetails.date2}"/><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td width="70"><input type="text" class="input_txtbx1" name="date2" id="datepicker2"  value="${xraydetails.date2}"/><span class="err" id="datepickererror"><form:errors path="Hardshipagreement.date"></form:errors></td>
               <td align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="err">*</span>Signature:</td>
-             <td width="50"> <input type="text" class="input_txtbx1" name="sign" id=""  value="${xraydetails.sign}"/><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+             <td width="50"> <input type="text" class="input_txtbx1" name="sign" id="sign"  value="${xraydetails.sign}"/><span class="err" id="signerror"><form:errors path="Hardshipagreement.date"></form:errors></td>
               
               </tr>
               </table><br><br>
@@ -112,7 +139,7 @@
               <table>
               <tr>
               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-              <td><input type="submit" class="submit_btn" value="update"></td>
+              <td><input type="submit" class="submit_btn" value="update" onclick="return checkSubmit('this');"></td>
               <td>&nbsp;&nbsp;</td>
               <td><a href="deletexray?xrayid=${xraydetails.xrayid}"style="color:white" class="submit_btn" onclick="return confirmation()" >Delete</a></td>
               <td><a href="viewallpatientdetails" style="color:white" class="submit_btn">Cancel</a></td>

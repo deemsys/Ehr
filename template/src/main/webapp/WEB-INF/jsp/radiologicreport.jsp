@@ -30,6 +30,32 @@ $(function() {
 	  });
   
   </script>
+  <script>
+  function checkSubmit()
+  {
+  
+  document.getElementById("nameerr").innerHTML="";
+  if(document.getElementById("pname").value="")
+  {
+  document.getElementById("nameerr").innerHTML="Required field should not empty";
+  return false;
+  }
+  
+  document.getElementById("numerr").innerHTML="";
+  if(document.getElementById("id").value="")
+  {
+  document.getElementById("numerr").innerHTML="Required field should not empty";
+  return false;
+  }
+  document.getElementById("numerr").innerHTML="";
+		if(isNaN(document.getElementById("id").value))
+		{
+		document.getElementById("numerr").innerHTML="Enter only Numbers";
+		return false;
+		}
+  }
+  
+  </script>
 <body>
 <form method="POST" action="radiologicreport">
 <input type="hidden" name="patient_id" value="${username}">
@@ -53,11 +79,11 @@ $(function() {
     				<table cellpadding="0" cellspacing="0" border="0" width="100%">
 	                            <tr class="row1">
 				                  <td><span class="err">*</span>Patient Name:</td>
-				                  <td><input type="text" class="input_txtbx1" id="pname" name="pname" /><br/><span class="err"><form:errors path="RadiologicReport.pname"></form:errors></td>
+				                  <td><input type="text" class="input_txtbx1" id="pname" name="pname" /><br/><span class="err" "nameerr"><form:errors path="RadiologicReport.pname"></form:errors></td>
 				                  <td><span class="err">*</span>Date:</td>
 				                  <td><input type="text" class="input_txtbx1" id="datepicker" name="date" /><br/><span class="err"><form:errors path="RadiologicReport.date"></form:errors></td>
 				                  <td><span class="err">*</span>I.D.#:</td>
-				                  <td><input type="text" class="input_txtbx1" id="id" name="id" /><br/><span class="err"><form:errors path="RadiologicReport.id"></form:errors></td>
+				                  <td><input type="text" class="input_txtbx1" id="id" name="id" /><br/><span class="err" id="numerr"><form:errors path="RadiologicReport.id"></form:errors></span></td>
 				                  <td><span class="err">*</span>Date Of Birth</td>
 				                  <td><input type="text" class="input_txtbx1" id="datepicker1" name="dob" /><br/><span class="err"><form:errors path="RadiologicReport.dob"></form:errors></td>
 				                </tr>
@@ -1214,7 +1240,7 @@ $(function() {
 				               	</tr>
 				               	<tr class="row1">
                   								 <td>&nbsp;&nbsp;</td>
-                  								<td><input type="submit" class="submit_btn1" value="Save" name="insert"></td>
+                  								<td><input type="submit" class="submit_btn1" value="Save" name="insert" onclick="return checkSubmit('this');"></td>
                   								
 				                    
 				                    <td><input type="button" class="submit_btn1" value="Cancel" onclick="window.location.href='viewradiologicreport'"></td>
