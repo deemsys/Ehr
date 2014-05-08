@@ -224,6 +224,7 @@ public class faxcoverajax {
 	FaxcoverForm faxcoverform=new FaxcoverForm();
 	faxcoverform.setFaxcoverdetails(faxcoverDAO.getfaxcover());
 	model.addAttribute("faxcoverform",faxcoverform);
+	model.addAttribute("success", "true");
 	return "faxcover";
 		
 	}
