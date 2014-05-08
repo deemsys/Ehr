@@ -193,7 +193,7 @@ function checkSubmit()
        		 </table>
        		
         	 
-        	   <table><tr> <td><input type="submit" class="submit_btn" value="Save" onclick="return checkSubmit('this');"></td>
+        	   <table><tr> <td><input type="submit" class="submit_btn" value="Update" onclick="return checkSubmit('this');"></td>
            
                
                <td><a href="deletelettertopatients?letterid=${lettertopatientsdetails.letterid}"style="color:white" class="submit_btn" onclick="return confirmation()" >Delete</a></td>
