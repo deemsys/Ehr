@@ -217,7 +217,7 @@ public class responseattorneyajax {
 				.getresponseattorney());
 		model.addAttribute("responseattorneyform", responseattorneyform);
 		model.addAttribute("menu","fax");
-		return "viewresponseattorney";
+		return "responseattorney";
 
 }
 
