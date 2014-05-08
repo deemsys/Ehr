@@ -158,6 +158,10 @@ function doAjaxPost() {
 </script>
 <div class='popup'>
 <div class='cnt223'>
+<c:if test="${success==true}">
+<table width="400"><tr><td align="center">Success!!!</td></tr></table>
+
+</c:if>
 <br><br><br>
  <table cellpadding="0" cellspacing="0" border="0" width="100%">
 	            <tr >
@@ -173,10 +177,7 @@ function doAjaxPost() {
 				  </table>
 				  <br><br>
 
-<c:if test="${success==true}">
-<table width="400"><tr><td align="center">Success!!!</td></tr></table>
 
-</c:if>
 
 </div>
 </div>
