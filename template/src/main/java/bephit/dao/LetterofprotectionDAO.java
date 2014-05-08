@@ -178,7 +178,7 @@ public class LetterofprotectionDAO {
 						resultSet.getString("dearsir"),
 						resultSet.getString("esq")
 			    		 ));
-				System.out.println("Name::::::::::::::::::"+letterofprotection.get(0).getClinicname());
+				//System.out.println("Name::::::::::::::::::"+letterofprotection.get(0).getClinicname());
 			    	
 			}
 	    }catch(Exception e){
@@ -222,7 +222,7 @@ public class LetterofprotectionDAO {
 						resultSet.getString("dearsir"),
 						resultSet.getString("esq")
 			    		 ));
-				System.out.println("Name::::::::::::::::::"+letterofprotection.get(0).getClinicname());
+			//	System.out.println("Name::::::::::::::::::"+letterofprotection.get(0).getClinicname());
 			    	
 			}
 	    }catch(Exception e){
