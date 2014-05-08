@@ -115,7 +115,7 @@ function doAjaxPost() {
 		     else if(response.substring(0,4)=='edit')
 		    	  {
 		    	 var sub1=response.indexOf("|")+1;		    	 
-		    	 var url="editrequestdemanddetails?username="+response.substring(sub1,response.length);
+		    	 var url="editrequestdemand?username="+response.substring(sub1,response.length);
 		    	  window.location.href=url;
 		    	 // $('#info').html(response.substring(4,response.length));
 		    	  }
