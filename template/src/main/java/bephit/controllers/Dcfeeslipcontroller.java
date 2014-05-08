@@ -99,8 +99,8 @@ public class Dcfeeslipcontroller
 	       dcfeeslipForm.setDcfeeslip(feeslipDAO.getDcfee(dcfeeslip.getDcfeeid()));
 	      
 	        model.addAttribute("dcfeeslipForm", dcfeeslipForm);
-	        model.addAttribute("menu", "dcfee");    
-		        return "editdcfeeslip";
+	        model.addAttribute("menu", "dcfee"); 
+	     		        return "editdcfeeslip";
 		}
 		int status = feeslipDAO.updatedcfeeslip(dcfeeslip, dcfeeslip.getDcfeeid(), principal.getName());
 		System.out.println(status);
@@ -112,6 +112,8 @@ public class Dcfeeslipcontroller
         model.addAttribute("dcfeeslipForm", dcfeeslipForm);
         model.addAttribute("success",true);
     	model.addAttribute("menu","dcfee");
+    	 
+    	
 	        return "dcfeeslip";
 		
 	}
@@ -127,6 +129,7 @@ public class Dcfeeslipcontroller
 			model.addAttribute("dcfeeslipForm",dcfeeslipForm);
 			model.addAttribute("Success","true");
 			model.addAttribute("menu", "dcfee");
+			 session.removeAttribute("dcfee");
 			return "dcfeeslip";
 		}
 
@@ -137,6 +140,7 @@ public class Dcfeeslipcontroller
 		model.addAttribute("success",true);
 		model.addAttribute("menu","dcfee");
 		session.removeAttribute("dcfee");
+		 session.removeAttribute("dcfee");
 		return "dcfeeslip";
  }
 
@@ -170,7 +174,7 @@ public class Dcfeeslipcontroller
         dcfeeslipForm.setDcfeeslip(feeslipDAO.getDcfee(dcfeeid));
         model.addAttribute("dcfeeslipForm",dcfeeslipForm);
         model.addAttribute("menu","dcfee"); 
-		return "editdcfeeslip";
+       		return "editdcfeeslip";
 	}
 	
 	@RequestMapping(value="/editdcfeeslipdetails", method=RequestMethod.GET)
@@ -180,7 +184,8 @@ public class Dcfeeslipcontroller
 		DcfeeslipForm dcfeeslipForm = new DcfeeslipForm();       
         dcfeeslipForm.setDcfeeslip(feeslipDAO.getusernameDcfee(username,date));
         model.addAttribute("dcfeeslipForm",dcfeeslipForm);
-        model.addAttribute("menu","dcfee"); 
+        model.addAttribute("menu","dcfee");
+        
 		return "editdcfeeslip";
 	}
 	

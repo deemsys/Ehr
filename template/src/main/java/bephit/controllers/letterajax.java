@@ -165,7 +165,8 @@ public class letterajax {
 		LettertopatientsForm lettertopatientsform=new LettertopatientsForm();
 		lettertopatientsform.setLettertopatientsdetails(lettertopatientsDAO.getusernamelettertopatients(username));
 		model.addAttribute("lettertopatientsform",lettertopatientsform);
-		model.addAttribute("menu","fax");	
+		model.addAttribute("menu","fax");
+		session.removeAttribute("letterto");
 		return "editlettertopatients";
 	}
 	@RequestMapping(value="/deletelettertopatients", method = RequestMethod.GET)
@@ -177,6 +178,7 @@ public class letterajax {
 		lettertopatientsform.setLettertopatientsdetails(lettertopatientsDAO.getlettertopatients());
 		model.addAttribute("lettertopatientsform",lettertopatientsform);
 		model.addAttribute("success", "true");
+		session.removeAttribute("letterto");
 		return "lettertopatients";	
 	}
 	
@@ -194,6 +196,7 @@ public class letterajax {
 			model.addAttribute("lettertopatientsform", lettertopatientsform);
 			model.addAttribute("success", "true");
 			model.addAttribute("menu", "fax");
+			session.removeAttribute("letterto");
 			return "lettertopatients";
 		}
 
@@ -207,6 +210,7 @@ public class letterajax {
 		model.addAttribute("lettertopatientsform", lettertopatientsform);
 		model.addAttribute("success", "true");
 		model.addAttribute("menu", "fax"); 
+		session.removeAttribute("letterto");
 
 		return "lettertopatients";
 

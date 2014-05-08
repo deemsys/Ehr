@@ -1687,6 +1687,7 @@ public class MainController {
 			model.addAttribute("InsuranceverificationForm",insuranceverificationForm);
 			model.addAttribute("Success","true");
 			model.addAttribute("menu", "admin");
+			session.removeAttribute("veri");
 			return "insuranceverification";
 		}
 		
@@ -1701,6 +1702,7 @@ public class MainController {
 		model.addAttribute("InsuranceverificationForm",insuranceverificationForm);
 		model.addAttribute("menu", "admin");
 		//System.out.println(autoaccident.getAdjustersname());
+		session.removeAttribute("veri");
 	    
 		
 		return "insuranceverification";
@@ -4772,7 +4774,7 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
     	insuranceverificationForm.setInsuranceverification(veriDAO.getInsuranceverification());
 		model.addAttribute("InsuranceverificationForm",insuranceverificationForm);
 		 model.addAttribute("menu", "admin");
-		return "editinsuranceverification";
+		 return "editinsuranceverification";
 	}
 	@RequestMapping(value="/editinsuranceverificationdetails", method = RequestMethod.GET)
 	public String editinsuranceverificationdetails(@RequestParam("username") String username,HttpServletRequest request,ModelMap model) {
@@ -4781,6 +4783,7 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
     	insuranceverificationForm.setInsuranceverification(veriDAO.checkusername(username));
 		model.addAttribute("InsuranceverificationForm",insuranceverificationForm);
 		 model.addAttribute("menu", "admin");
+		 
 		return "editinsuranceverification";
 	}
 	@RequestMapping(value="/updateinsuranceverification", method=RequestMethod.POST)
@@ -4793,6 +4796,8 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 	    	insuranceverificationForm.setInsuranceverification(veriDAO.getInsuranceverification(insuranceverification.getForm_no()));
 			model.addAttribute("InsuranceverificationForm",insuranceverificationForm);
 			model.addAttribute("menu", "admin");
+			
+			
 			return "editinsuranceverification";
 		}
 		
@@ -4803,6 +4808,7 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 		model.addAttribute("InsuranceverificationForm",insuranceverificationForm);    
 		model.addAttribute("success","true");
 		model.addAttribute("menu", "admin");
+		
 	    return "insuranceverification";
 		
 	}
@@ -4817,6 +4823,7 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 		{
         model.addAttribute("success","true");		  
 		model.addAttribute("menu", "admin");
+		
 		}
 		return "insuranceverification";
 	}

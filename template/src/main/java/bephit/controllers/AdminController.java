@@ -218,6 +218,7 @@ public class AdminController {
 		patientattorneyForm.setPatientattorneydetails(patientattorneyDAO.getusernamepatientattorney(username));
 		model.addAttribute("patientattorneyform", patientattorneyForm);
 		model.addAttribute("menu", "perry");
+		session.removeAttribute("patient");
 		return "editpatientattorney";
 
 	}
@@ -227,6 +228,7 @@ public class AdminController {
 		patientattorneyDAO.deletepatientattorney(patientid);		
 		model.addAttribute("menu", "perry");
 		model.addAttribute("success", "true");
+		session.removeAttribute("patient");
 		return "patientattorney";
 
 	}
@@ -310,8 +312,13 @@ public class AdminController {
 		model.addAttribute("perrychiropracticform", perrychiropracticform);
 
 		model.addAttribute("menu", "perry");
+<<<<<<< .mine
+		session.removeAttribute("peri");
+				return "editperrychiropractic";
+=======
 		session.removeAttribute("peri");
 		return "editperrychiropractic";
+>>>>>>> .r552
 
 	}
 	@RequestMapping(value = "/editperrychiropracticdetails", method = RequestMethod.GET)
@@ -357,6 +364,7 @@ public class AdminController {
 		updateletterform.setUpdateletterdetails(updateletterDAO.getupdateletter(updateid));
 		model.addAttribute("updateletterform", updateletterform);
 		model.addAttribute("menu", "perry");
+		session.removeAttribute("update");
 		return "editupdateletter";
 
 	}
@@ -428,6 +436,7 @@ public class AdminController {
 		updateletterform.setUpdateletterdetails(updateletterDAO.getupdateletter());
 		model.addAttribute("updateletterform", updateletterform);*/
 		model.addAttribute("success",true);
+		session.removeAttribute("update");
 		return "updateletter";
 	}
 	
@@ -556,6 +565,7 @@ public class AdminController {
 		model.addAttribute("perrychiropracticform",perrychiropracticform);
 		model.addAttribute("success","true");
 		model.addAttribute("menu","perry");
+		session.removeAttribute("peri");
 		
 		return "perrychiropractic";
 
@@ -607,6 +617,7 @@ public class AdminController {
 			UpdateletterForm updateletterform = new UpdateletterForm();
 			updateletterform.setUpdateletterdetails(updateletterDAO.getupdateletter());
 			model.addAttribute("updateletterform", updateletterform);
+			session.removeAttribute("update");
 			return "editupdateletter";
 
 		}
@@ -633,6 +644,7 @@ public class AdminController {
 			patientattorneyform.setPatientattorneydetails(patientattorneyDAO
 					.getpatientattorney());
 			model.addAttribute("patientattorneyform", patientattorneyform);
+			session.removeAttribute("patient");
 
 			return "patientattorney";
 		}
@@ -644,6 +656,7 @@ public class AdminController {
 		model.addAttribute("patientattorneyform",patientattorneyform);
 		model.addAttribute("success","true");
 		model.addAttribute("menu","perry");
+		session.removeAttribute("patient");
 		return "patientattorney";
 
 	}
@@ -665,6 +678,7 @@ public class AdminController {
 			PerrychiropracticForm perrychiropracticform = new PerrychiropracticForm();
 			perrychiropracticform.setPerrychiropracticdetails(perrychiropracticDAO.getperrychiropractic());
 			model.addAttribute("perrychiropracticform", perrychiropracticform);
+			session.removeAttribute("peri");
 
 			return "perrychiropractic";
 		}
@@ -675,6 +689,7 @@ public class AdminController {
 		model.addAttribute("perrychiropracticform", perrychiropracticform);
 		model.addAttribute("success","true");
 		model.addAttribute("menu","perry");
+		session.removeAttribute("peri");
 		session.removeAttribute("peri");
 		return "perrychiropractic";
 
@@ -816,6 +831,7 @@ public class AdminController {
 			PatientattorneyForm patientattorneyform = new PatientattorneyForm();
 			patientattorneyform.setPatientattorneydetails(patientattorneyDAO.getpatientattorney());
 			model.addAttribute("patientattorneyform", patientattorneyform);
+			session.removeAttribute("patient");
 			
 		
 
@@ -829,6 +845,7 @@ public class AdminController {
 		model.addAttribute("success","true");*/
 		model.addAttribute("success", "true");
 		model.addAttribute("menu","perry");
+		session.removeAttribute("patient");
 		return "patientattorney";
 
 	}
@@ -850,6 +867,7 @@ public class AdminController {
 			updateletterform.setUpdateletterdetails(updateletterDAO	.getupdateletter());
 			model.addAttribute("menu", "update");
 			model.addAttribute("updateletterform","updateletterform");
+			session.removeAttribute("update");
 
 			return "updateletter";
 		}
@@ -861,6 +879,7 @@ public class AdminController {
 		model.addAttribute("updateletterform", updateletterform);
 		model.addAttribute("menu","perry");
 		model.addAttribute("success","true");
+		session.removeAttribute("update");
 		return "updateletter";
 
 	}
@@ -1045,7 +1064,8 @@ public String insert_workschool(HttpServletRequest request,HttpSession session,@
 		model.addAttribute("menu","returntoschool");
 		WorkschoolForm workschoolform= new WorkschoolForm();
 		workschoolform.setWorkschooldetails(workschoolDAO.getworkschool());
-		model.addAttribute("workschoolform",workschoolform);		
+		model.addAttribute("workschoolform",workschoolform);	
+		 session.removeAttribute("work");
 		return "workschool";
 	}
 	//System.out.println(perrychiropracticdetails.getAddress()+""+perrychiropracticdetails.getAddress1());
@@ -1054,6 +1074,7 @@ public String insert_workschool(HttpServletRequest request,HttpSession session,@
 	workschoolform.setWorkschooldetails(workschoolDAO.getworkschool());
 	model.addAttribute("success","true");
 	model.addAttribute("menu","returntoschool");
+	session.removeAttribute("work");
 	return "workschool";
 }
 
@@ -1064,7 +1085,8 @@ public String insert_workschool(HttpServletRequest request,HttpSession session,@
 		workschoolDAO.deleteworkschool(workid);
 		WorkschoolForm workschoolform=new WorkschoolForm();
 		workschoolform.setWorkschooldetails(workschoolDAO.getworkschool());
-		model.addAttribute("workschoolform",workschoolform);	
+		model.addAttribute("workschoolform",workschoolform);
+		session.removeAttribute("work");
 		return "workschool";
 	}
 
@@ -1083,7 +1105,8 @@ public String editworkschool(@RequestParam("workid")String workid, HttpSession s
 	model.addAttribute("menu","returntoschool");
 	WorkschoolForm workschoolform=new WorkschoolForm();
 	workschoolform.setWorkschooldetails(workschoolDAO.getworkschool(workid));
-	model.addAttribute("workschoolform",workschoolform);	
+	model.addAttribute("workschoolform",workschoolform);
+	session.removeAttribute("work");
 	return "editworkschool";
 
 }
@@ -1194,6 +1217,7 @@ public String editworkschooldetails(@RequestParam("username")String username, Ht
 			model.addAttribute("workschoolform", workschoolform);
 			model.addAttribute("Success", "true");
 			model.addAttribute("menu", "returntoschool");
+			session.removeAttribute("work");
 			return "updateworkschool";
 		}
 		// System.out.println(letterofprotectiondetails.getAddress()+""+letterofprotectiondetails.getAddress1());
@@ -1204,6 +1228,7 @@ public String editworkschooldetails(@RequestParam("username")String username, Ht
 		workschoolform.setWorkschooldetails(workschoolDAO.getworkschool());
 		model.addAttribute("workschoolform", workschoolform);
 		model.addAttribute("menu", "returntoschool");
+		session.removeAttribute("work");
 		return "workschool";
 
 	}

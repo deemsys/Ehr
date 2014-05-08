@@ -159,6 +159,8 @@ public class requestfordemandajax {
 		requestfordemandform.setRequestfordemanddetails(requestfordemandDAO.getusernamerequestfordemand(username));
 		model.addAttribute("requestfordemandform", requestfordemandform);
 		model.addAttribute("menu","fax");
+		session.removeAttribute("requestfor");
+		session.removeAttribute("requestfor");
 		return "editrequestfordemand";
 	}
 	
@@ -170,6 +172,7 @@ public class requestfordemandajax {
 		model.addAttribute("requestfordemandform",requestfordemandform);
 		model.addAttribute("success","true");
 		model.addAttribute("menu","fax");
+		session.removeAttribute("requestfor");
 		return "requestfordemand";
 	}
 	@RequestMapping(value = "/requestfordemand", method = RequestMethod.GET)
@@ -187,6 +190,7 @@ public class requestfordemandajax {
 			model.addAttribute("requestfordemandform", requestfordemandform);
 			model.addAttribute("success","true");
 			model.addAttribute("menu","fax");
+			session.removeAttribute("requestfor");
 			return "requestfordemand";
 
 		}
@@ -198,6 +202,7 @@ public class requestfordemandajax {
 		model.addAttribute("requestfordemandform",requestfordemandform);
 		model.addAttribute("success","true");
 		model.addAttribute("menu","fax");
+		session.removeAttribute("requestfor");
 		return "requestfordemand";
 
 	}

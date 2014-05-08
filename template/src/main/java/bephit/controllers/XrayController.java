@@ -138,6 +138,7 @@ public class XrayController {
 		xrayForm.setxraydetails(xrayDAO.getusernamexray(username));
 		model.addAttribute("xrayform", xrayForm);
 		model.addAttribute("menu", "xray");
+		session.removeAttribute("narrative");
 		return "editxray";
 		
 		
@@ -151,6 +152,7 @@ public class XrayController {
 		pimedpayForm.setPimedpaydetails(pimedpayDAO.getusernamepimedpay(username));
 		model.addAttribute("pimedpayform",pimedpayForm);
 		//model.addAttribute("menu","xray");
+		session.removeAttribute("medpay");
 		return "editpimedpay";
 
 	}
@@ -163,6 +165,7 @@ public class XrayController {
 		model.addAttribute("formbillform", formbillForm);
 		//model.addAttribute("menu", "xray");
 		model.addAttribute("success",true);
+		session.removeAttribute("form");
 		return "editformbill";
 	}
 
@@ -176,6 +179,7 @@ public class XrayController {
 		model.addAttribute("letterofprotectionform",letterofprotectionform);
 		model.addAttribute("menu","xray");	
 		model.addAttribute("success",true);
+		session.removeAttribute("letter");
 		
 		return "editletterofprotection";
 	}
@@ -196,6 +200,7 @@ public class XrayController {
 		xrayform.setxraydetails(xrayDAO.getxray());
 		model.addAttribute("xrayform", xrayform);
 		model.addAttribute("success",true);
+		session.removeAttribute("xray");
 		
 		return "xray";
 
@@ -208,6 +213,7 @@ public class XrayController {
 			PimedpayForm pimedpayform = new PimedpayForm();
 			pimedpayform.setPimedpaydetails(pimedpayDAO.getpimedpay());
 			model.addAttribute("pimedpayform", pimedpayform);
+			session.removeAttribute("medpay");
 			return "pimedpay";
 		}
 
@@ -217,6 +223,7 @@ public class XrayController {
 		pimedpayform.setPimedpaydetails(pimedpayDAO.getpimedpay());
 		model.addAttribute("pimedpayform",pimedpayform);
 		model.addAttribute("success",true);
+		session.removeAttribute("medpay");
 		return "pimedpay";
 
 	}
@@ -235,6 +242,7 @@ public class XrayController {
 			FormbillForm formbillform = new FormbillForm();
 			formbillform.setFormbilldetails(formbillDAO.getformbill());
 			model.addAttribute("formbillform", formbillform);
+			session.removeAttribute("form");
 
 			
 		
@@ -247,7 +255,8 @@ public class XrayController {
 		FormbillForm formbillForm = new FormbillForm();
 		formbillForm.setFormbilldetails(formbillDAO.getformbill());
 		model.addAttribute("formbillform",formbillForm);
-		model.addAttribute("success","true");		
+		model.addAttribute("success","true");
+		session.removeAttribute("form");
  		return "formbill";
 
 	}
@@ -260,6 +269,7 @@ public class XrayController {
 			LetterofprotectionForm letterofprotectionForm = new LetterofprotectionForm();
 			letterofprotectionForm.setLetterofprotectiondetails(letterofprotectionDAO.getletterofprotection());
 			model.addAttribute("letterofprotectionForm", letterofprotectionForm);
+			session.removeAttribute("letter");
 			return "letterofprotection";
 		}
 
@@ -269,6 +279,7 @@ public class XrayController {
 		letterofprotectionForm.setLetterofprotectiondetails(letterofprotectionDAO.getletterofprotection());
 		model.addAttribute("letterofprotectionForm",letterofprotectionForm);
 		model.addAttribute("success",true);
+		session.removeAttribute("letter");
 		return "letterofprotection";
 
 	}
@@ -287,6 +298,7 @@ public class XrayController {
 			model.addAttribute("xrayform", xrayform);
 			model.addAttribute("Success", "true");
 			model.addAttribute("menu", "xray");
+			session.removeAttribute("xray");
 						
 
 			return "xray";
@@ -297,6 +309,7 @@ public class XrayController {
 		xrayform.setxraydetails(xrayDAO.getxray());
 		model.addAttribute("xrayform", xrayform);
 		model.addAttribute("success",true);
+		session.removeAttribute("xray");
 		return "xray";
 
 	}
@@ -312,6 +325,7 @@ public class XrayController {
 		xrayForm.setxraydetails(xrayDAO.getxray());
 		model.addAttribute("xrayForm", xrayForm);
 		model.addAttribute("menu", "xray");
+		session.removeAttribute("xray");
 		return "xray";
 	}
 	
@@ -324,6 +338,7 @@ public class XrayController {
 	 	model.addAttribute("pimedpayform", pimedpayform);
 		//model.addAttribute("menu","xray");	
 		model.addAttribute("success","true");
+		session.removeAttribute("medpay");
 		return "pimedpay";
 	}
 	
@@ -338,6 +353,7 @@ public class XrayController {
 		model.addAttribute("formbillform", formbillForm);
 		model.addAttribute("menu", "xray");
 		model.addAttribute("success","true");
+		session.removeAttribute("form");
 		return "formbill";
 	}
 	
@@ -348,7 +364,8 @@ public class XrayController {
 		LetterofprotectionForm letterofprotectionform=new LetterofprotectionForm();
 		letterofprotectionform.setLetterofprotectiondetails(letterofprotectionDAO.getletterofprotection());
 		model.addAttribute("letterofprotectionform",letterofprotectionform);
-		model.addAttribute("menu","xray");	
+		model.addAttribute("menu","xray");
+		session.removeAttribute("letter");
 		return "letterofprotection";
 	}	
 		
@@ -369,6 +386,7 @@ public class XrayController {
 			model.addAttribute("pimedpayform", pimedpayform);
 			model.addAttribute("Success", "true");
 			model.addAttribute("menu", "medpay");
+			session.removeAttribute("medpay");
 			return "pimedpay";
 		}
 
@@ -378,6 +396,7 @@ public class XrayController {
 		model.addAttribute("pimedpayform", pimedpayform);
 		model.addAttribute("success","true");
 		//model.addAttribute("menu","xray");
+		session.removeAttribute("medpay");
 		return "pimedpay";
 
 	}
@@ -398,6 +417,7 @@ public class XrayController {
 			model.addAttribute("letterofprotectionForm", letterofprotectionForm);
 			model.addAttribute("Success", "true");
 			model.addAttribute("menu", "letter");
+			session.removeAttribute("letter");
 			return "letterofprotection";
 		}
 
@@ -407,6 +427,7 @@ public class XrayController {
 		model.addAttribute("letterofprotectionForm", letterofprotectionForm);
 		model.addAttribute("success","true");
 		//model.addAttribute("menu","xray");
+		session.removeAttribute("letter");
 		return "letterofprotection";
 
 	}
@@ -424,6 +445,7 @@ public class XrayController {
 			formbillform.setFormbilldetails(formbillDAO.getformbill());
 			model.addAttribute("formbillform", formbillform);
 			model.addAttribute("menu","form");
+			session.removeAttribute("form");
 			
 			return "formbill";
 
@@ -437,6 +459,7 @@ public class XrayController {
 		model.addAttribute("formbillform",formbillform);
 		//model.addAttribute("menu","xray");
 		model.addAttribute("success","true");
+		session.removeAttribute("form");
 		return "formbill";
 	}	
 	

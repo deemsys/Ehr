@@ -172,6 +172,8 @@ public class faxcoverajax {
 			model.addAttribute("faxcoverform", faxcoverform);
 			model.addAttribute("success", "true");
 			model.addAttribute("menu", "fax");
+			session.removeAttribute("fax");
+			session.removeAttribute("fax");
 			return "faxcover";
 		}
 
@@ -182,6 +184,7 @@ public class faxcoverajax {
 		model.addAttribute("faxcoverform", faxcoverform);
 		model.addAttribute("success", "true");
 		model.addAttribute("menu", "fax");
+		session.removeAttribute("fax");
 		return "faxcover";
 	}
 	
@@ -213,6 +216,7 @@ public class faxcoverajax {
 		faxcoverform.setFaxcoverdetails(faxcoverDAO.getusernamefaxcover(username));
 		model.addAttribute("faxcoverform", faxcoverform);
 		model.addAttribute("menu", "fax");
+		session.removeAttribute("fax");
         return "editfaxcover";
 
 	}
@@ -225,6 +229,7 @@ public class faxcoverajax {
 	faxcoverform.setFaxcoverdetails(faxcoverDAO.getfaxcover());
 	model.addAttribute("faxcoverform",faxcoverform);
 	model.addAttribute("success", "true");
+	session.removeAttribute("fax");
 	return "faxcover";
 		
 	}

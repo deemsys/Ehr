@@ -189,6 +189,7 @@ public class SymptomController {
 		symptomform.setSymptomdetails(symptomdao.getsymptomDetails(symptomno));
 		model.addAttribute("symptomform", symptomform);
 		model.addAttribute("menu", "symptom");
+		
 		return "editsymptom";
 	}
 
@@ -211,6 +212,7 @@ public class SymptomController {
 		symptomform.setSymptomdetails(symptomdao.getsymptomDetails());
 		model.addAttribute("symptomform", symptomform);
 		model.addAttribute("menu", "symptom");
+		
 		return "viewsymptom";
 	}
 	@RequestMapping(value = "/deletesymptomdetails", method = RequestMethod.GET)
@@ -226,6 +228,7 @@ public class SymptomController {
 		model.addAttribute("symptomform", symptomform);*/
 		
 		model.addAttribute("menu", "symptom");
+		
 		return "symptom";
 	}
 
@@ -795,6 +798,7 @@ public class SymptomController {
 			symptomform.setSymptomdetails(symptomdao.getusernamesymptomDetails(username));
 			model.addAttribute("symptomform", symptomform);
 			model.addAttribute("menu", "symptom");
+			
 			return "editsymptom";
 		}
 
@@ -822,6 +826,7 @@ public class SymptomController {
 			symptomform.setSymptomdetails(symptomdao.getsymptomDetails());
 			model.addAttribute("symptomform", symptomform);
 			model.addAttribute("menu", "symptom");
+			session.removeAttribute("symptoms");
 			return "symptom";
 		}
         String username=principal.getName();
@@ -831,6 +836,7 @@ public class SymptomController {
 		SymptomForm symptomform = new SymptomForm();
 		symptomform.setSymptomdetails(symptomdao.getusernamesymptomDetails(username));
 		model.addAttribute("symptomform", symptomform);
+		session.removeAttribute("symptoms");
 		return "viewsymptom";
 	}
 

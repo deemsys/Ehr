@@ -84,6 +84,7 @@ public class NarrativeController
 			model.addAttribute("narrativereportForm",narrativereportForm);
 			model.addAttribute("menu","narrative");
 			model.addAttribute("Success","true");
+			session.removeAttribute("narrative");
 			return "narrativereport";
 		}
 		
@@ -94,6 +95,7 @@ public class NarrativeController
 		model.addAttribute("narrativereportForm",narrativereportForm);
 		/*model.addAttribute("menu", "Accident");*/
 		model.addAttribute("menu","narrative");
+		session.removeAttribute("narrative");
 	
 		return "viewnarrativereport";
  
@@ -166,6 +168,7 @@ return "narrativereportlist";
 	model.addAttribute("narrativereportForm",narrativereportForm);
 	model.addAttribute("menu","narrative");
 	 /*model.addAttribute("menu","initial");*/
+	
 	return "editnarrativereport";
 	
 	}
@@ -179,6 +182,7 @@ return "narrativereportlist";
 			narrativereportForm.setNarrativereport(narrativeDAO.viewnarrativereportlist(narrativereport.getNarrativeno()));	
 			model.addAttribute("narrativereportForm",narrativereportForm);
 			model.addAttribute("menu","narrative");
+			session.removeAttribute("narrative");
 			return "editnarrativereport";
 			
 		}
@@ -189,6 +193,7 @@ return "narrativereportlist";
 		model.addAttribute("narrativereportForm",narrativereportForm);	
 		model.addAttribute("menu","narrative");
 		model.addAttribute("success", true);
+		session.removeAttribute("narrative");
 		return "viewnarrativereport";
 	}
 	@RequestMapping(value="/deletenarrativereport", method = RequestMethod.GET)
@@ -197,6 +202,7 @@ return "narrativereportlist";
 	NarrativereportForm narrativereportForm=new NarrativereportForm();
 	narrativereportForm.setNarrativereport(narrativeDAO.viewnarrativereport());
 	model.addAttribute("narrativereportForm",narrativereportForm);
+	
 	return "viewnarrativereport";
 	
 	}

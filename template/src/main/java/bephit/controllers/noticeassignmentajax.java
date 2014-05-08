@@ -175,6 +175,7 @@ public class noticeassignmentajax {
 		model.addAttribute("noticeassignmentform", noticeassignmentform);
 		model.addAttribute("success", "true");
 		model.addAttribute("menu", "fax");
+		session.removeAttribute("notice");
 		return "editnoticeassignment";
 
 	}
@@ -183,6 +184,7 @@ public class noticeassignmentajax {
 	public String noticeassignment(HttpSession session, ModelMap model) {
 		session.removeAttribute("notice");
 		model.addAttribute("menu", "fax");
+		session.removeAttribute("notice");
 			return "noticeassignment";
 	}
 	@RequestMapping(value = "/updatenoticeassignment", method = RequestMethod.POST)
@@ -196,6 +198,7 @@ NoticeassignmentForm noticeassignmentform = new NoticeassignmentForm();
 			model.addAttribute("noticeassignmentform", noticeassignmentform);
 			model.addAttribute("success", "true");
 			model.addAttribute("menu", "fax");
+			session.removeAttribute("notice");
 			return "noticeassignment";
 
 		}
@@ -208,6 +211,7 @@ NoticeassignmentForm noticeassignmentform = new NoticeassignmentForm();
 		model.addAttribute("noticeassignmentform", noticeassignmentform);
 		model.addAttribute("success", "true");
 		model.addAttribute("menu", "fax");
+		session.removeAttribute("notice");
 		return "noticeassignment";
 
 	}
@@ -221,6 +225,7 @@ NoticeassignmentForm noticeassignmentform = new NoticeassignmentForm();
 		noticeassignmentform.setNoticeassignmentdetails(noticeassignmentDAO.getnoticeassignment());
 		model.addAttribute("noticeassignmentform", noticeassignmentform);
 	model.addAttribute("success", "true");
+	session.removeAttribute("notice");
 	return "faxcover";
 		
 	}

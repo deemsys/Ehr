@@ -183,6 +183,7 @@ public class responseattorneyajax {
 		ResponseattorneyForm responseattorneyform=new ResponseattorneyForm();
 		responseattorneyform.setResponseattorneydetail(responseattorneyDAO.getresponseattorney(username));
 				model.addAttribute("responseattorneyform",responseattorneyform);
+				session.removeAttribute("response");
 				return "editresponseattorney";
 	}
 	
@@ -195,6 +196,7 @@ public class responseattorneyajax {
 		responseattorneyform.setResponseattorneydetail(responseattorneyDAO.getresponseattorney());
 				model.addAttribute("responseattorneyform",responseattorneyform);
 				model.addAttribute("success", "true");
+				session.removeAttribute("response");
 				return "responseattorney";	
 	}
 	
@@ -207,6 +209,7 @@ public class responseattorneyajax {
 			model.addAttribute("responseattorneyform", responseattorneyform);
 			model.addAttribute("success", "true");
 			model.addAttribute("menu", "fax");
+			session.removeAttribute("response");
 			return "responseattorney";
 		}
 
@@ -219,6 +222,7 @@ public class responseattorneyajax {
 		model.addAttribute("responseattorneyform", responseattorneyform);
 		model.addAttribute("success", "true");
 		model.addAttribute("menu","fax");
+		session.removeAttribute("response");
 		return "responseattorney";
 
 }
