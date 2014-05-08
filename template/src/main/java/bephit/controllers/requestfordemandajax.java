@@ -153,7 +153,7 @@ public class requestfordemandajax {
 		model.addAttribute("requestfordemandform", requestfordemandform);
 		return "viewrequestfordemand";
 	}
-	@RequestMapping(value = "/editrequestdemanddetails", method = RequestMethod.GET)
+	@RequestMapping(value = "/editrequestdemand", method = RequestMethod.GET)
 	public String editrequestfordemand(@RequestParam("username") String username, HttpSession session,ModelMap model) {
 		RequestfordemandForm requestfordemandform = new RequestfordemandForm();
 		requestfordemandform.setRequestfordemanddetails(requestfordemandDAO.getrequestfordemand(username));

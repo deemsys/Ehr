@@ -768,30 +768,31 @@ public class AdminController {
 
 
 	@RequestMapping(value = "/insertrequestfordemand", method = RequestMethod.POST)
-	public String insert_requestfordemand(
-			HttpServletRequest request,
-			HttpSession session,
+	public String insert_requestfordemand(HttpServletRequest request,HttpSession session,
 			@ModelAttribute("Requestfordemand") @Valid Requestfordemand requestfordemanddetails,
 			BindingResult result, ModelMap model) {
-		 session.setAttribute("requestfor",requestfordemanddetails);
-		if (result.hasErrors()) {
-		RequestfordemandForm requestfordemandform = new RequestfordemandForm();
+		String username=request.getParameter("user");
+			System.out.println("username"+username+"user"+request.getParameter("username"));
+			model.addAttribute("username",username);
+			 session.setAttribute("requestfor",requestfordemanddetails);
+			model.addAttribute("menu", "fax");
+			if (result.hasErrors()) {
+				RequestfordemandForm requestfordemandform = new RequestfordemandForm();
+				requestfordemandform.setRequestfordemanddetails(requestfordemandDAO.getrequestfordemand());
+
+				model.addAttribute("requestfordemandform", requestfordemandform);
+				
+			
+
+				return "requestfordemand";
+			}
+			requestfordemandDAO.setrequestfordemand(requestfordemanddetails,request.getParameter("user"));
+			/*RequestfordemandForm requestfordemandform = new RequestfordemandForm();
 			requestfordemandform.setRequestfordemanddetails(requestfordemandDAO.getrequestfordemand());
-
-			model.addAttribute("requestfordemandform", requestfordemandform);
-			model.addAttribute("Success", "true");
-			model.addAttribute("menu", "requestfor");
-            System.out.println("error");
+			model.addAttribute("requestfordemandform", requestfordemandform);*/
+			model.addAttribute("success","true");
+			model.addAttribute("menu","perry");
 			return "requestfordemand";
-		}
-
-		// System.out.println(perrychiropracticdetails.getAddress()+""+perrychiropracticdetails.getAddress1());
-		requestfordemandDAO.setrequestfordemand(requestfordemanddetails,request.getParameter("user"));
-		RequestfordemandForm requestfordemandform = new RequestfordemandForm();
-		requestfordemandform.setRequestfordemanddetails(requestfordemandDAO.getrequestfordemand());
-		model.addAttribute("requestfordemandform", requestfordemandform);
-		model.addAttribute("success","true");
-		return "requestfordemand";
 
 	}
 
