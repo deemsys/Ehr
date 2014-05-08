@@ -162,7 +162,7 @@ public class DoctorController {
 		session.removeAttribute("wristdetails");
 		model.addAttribute("menu", "sign");
 	
-		 return "wristandhand";
+		return "wristandhand";
 	}
 	
 	@RequestMapping(value="/insertwristexam", method = RequestMethod.POST)
@@ -173,7 +173,7 @@ public class DoctorController {
 			model.addAttribute("menu", "sign");
 			return "wristandhand";
 		}
-		int c=wristexamDAO.setwristexam(wristexamdetails);
+		int c=wristexamDAO.setwristexam(wristexamdetails,request.getParameter("username"));
 		System.out.println("c---"+c);
 		WristExamForm wristexamform=new WristExamForm();
 		wristexamform.setWristexamdetails(wristexamDAO.getwristexamallDetails());
@@ -258,6 +258,15 @@ public class DoctorController {
 	
 	}
 	
+	@RequestMapping(value="/editwristexamdetails", method = RequestMethod.GET)
+	public String editwristexamdetails(@RequestParam("username") String username,ModelMap model,HipExam hipexam) {	
+		WristExamForm wristexamform=new WristExamForm();
+		wristexamform.setWristexamdetails(wristexamDAO.getusernamewristexamDetails(username));
+	    model.addAttribute("wristexamform",wristexamform);	
+	    model.addAttribute("menu", "sign");
+	return "editwristexam";
+	
+	}
 	@RequestMapping(value="/updatewristexam", method = RequestMethod.POST)
 	public String updatewristexam(HttpServletRequest request,HttpSession session,@ModelAttribute("wristexamdetails")  @Valid WristExam wristexamdetails,BindingResult result,ModelMap model) {
 		//System.out.print(hipexamdetails.getOutsidereferral());
@@ -276,6 +285,7 @@ public class DoctorController {
 		wristexamform.setWristexamdetails(wristexamDAO.getwristexamallDetails());	
 		model.addAttribute("wristexamform",wristexamform);		
 		model.addAttribute("success", true);
+		model.addAttribute("wrist","1");
 		return "viewwristexam";
 	}
 	
@@ -299,7 +309,7 @@ public class DoctorController {
 			return "shoulderexam";
 		}
 		System.out.print("outsiderefferal"+shoulderexamdetails.getOutsiderefferal());
-		int c=shoulderexamDAO.setshoulderexam(shoulderexamdetails);
+		int c=shoulderexamDAO.setshoulderexam(shoulderexamdetails,request.getParameter("username"));
 		System.out.println("c---"+c);
 		
 		model.addAttribute("shoulder","1");
@@ -311,7 +321,8 @@ public class DoctorController {
 		shoulderexamDAO.deleteshoulderexamdetails(shoulderexamno);
 		ShoulderExamForm shoulderexamform=new ShoulderExamForm();
 		shoulderexamform.setShoulderexamdetails(shoulderexamDAO.getshoulderexamallDetails());	
-	model.addAttribute("shoulderexamform",shoulderexamform);		
+	model.addAttribute("shoulderexamform",shoulderexamform);
+	model.addAttribute("shoulder","1");
 	return "viewshoulderexam";	
 	}
 	
@@ -388,6 +399,15 @@ public class DoctorController {
 	
 	}
 	
+	@RequestMapping(value="/editshoulderexamdetails", method = RequestMethod.GET)
+	public String editshoulderexamdetails(@RequestParam("username") String username,ModelMap model,HipExam hipexam) {	
+	ShoulderExamForm shoulderexamform=new ShoulderExamForm();
+	shoulderexamform.setShoulderexamdetails(shoulderexamDAO.getusernameShoulderexamDetails(username));	
+	model.addAttribute("shoulderexamform",shoulderexamform);
+	 model.addAttribute("menu", "sign");
+	return "editshoulderexam";
+	
+	}
 	@RequestMapping(value="/updateshoulderexam", method = RequestMethod.POST)
 	public String updateshoulderexam(HttpServletRequest request,HttpSession session,@ModelAttribute("shoulderexamdetails")  @Valid ShoulderExam shoulderexamdetails,BindingResult result,ModelMap model) {
 		//System.out.print(hipexamdetails.getOutsidereferral());
@@ -406,6 +426,7 @@ public class DoctorController {
 		shoulderexamform.setShoulderexamdetails(shoulderexamDAO.getshoulderexamallDetails());	
 		model.addAttribute("shoulderexamform",shoulderexamform);		
 		model.addAttribute("success", true);
+		model.addAttribute("shoulder","1");
 		return "viewshoulderexam";
 	}
 
@@ -549,6 +570,17 @@ model.addAttribute("button","close");
 	 model.addAttribute("menu", "sign");
 	return "editfootexam";
 	}
+	
+	@RequestMapping(value="/editfootexamdetails", method = RequestMethod.GET)
+	public String editfootexamdetails(@RequestParam("username") String username,ModelMap model,HipExam hipexam) {	
+	FootExamForm footexamform=new FootExamForm();
+	footexamform.setFootexamdetails(footexamDAO.getusernamefootexamDetails(username));		
+	System.out.println(footexamform.getFootexamdetails().get(0).getPname());
+	model.addAttribute("footexamform",footexamform);
+	 model.addAttribute("menu", "sign");
+	return "editfootexam";
+	}
+	
 	@RequestMapping(value="/footexamlist", method = RequestMethod.GET)
 	public String viewfootexam(@RequestParam("footexamno") String footexamno,ModelMap model,HipExam hipexam) {	
 	FootExamForm footexamform=new FootExamForm();
@@ -574,7 +606,7 @@ model.addAttribute("button","close");
 		footexamform.setFootexamdetails(footexamDAO.getfootexamDetails());
 		model.addAttribute("footexamform",footexamform);
 		model.addAttribute("success", true);
-		
+		model.addAttribute("ankle","1");
 		return "viewfootexam";
 	}
 
@@ -594,13 +626,18 @@ model.addAttribute("button","close");
 	public String hipreexam(@RequestParam("hipexamno") String hipexamno,ModelMap model,HipExam hipexam) {	
 	HipExamForm hipexamform=new HipExamForm();
 	hipexamform.setHipexamdetails(hipexamDAO.gethipexamDetails(hipexamno));
-	System.out.println("yes");
-	System.out.println(hipexamform.getHipexamdetails().get(0).getPname());
 	model.addAttribute("hipexamform",hipexamform);
 	 model.addAttribute("menu", "sign");
 	return "hipreexam";
 	}
-	
+	@RequestMapping(value="/edithipexamdetails", method = RequestMethod.GET)
+	public String edithipexam(@RequestParam("username") String username,ModelMap model,HipExam hipexam) {	
+	HipExamForm hipexamform=new HipExamForm();
+	hipexamform.setHipexamdetails(hipexamDAO.getusernamehipexamDetails(username));
+	model.addAttribute("hipexamform",hipexamform);
+	 model.addAttribute("menu", "sign");
+	return "hipreexam";
+	}
 	
 
 	
@@ -629,10 +666,11 @@ model.addAttribute("button","close");
 		}
 		model.put("Lumbopelvicexam", Lumbopelvicexam);
 		model.addAttribute("LumbopelvicexamForm",Lumbopelvicexam);
-    	int a=lumboDAO.setLumbopelvicexam(Lumbopelvicexam);
+    	int a=lumboDAO.setLumbopelvicexam(Lumbopelvicexam,request.getParameter("username"));
 		LumbopelvicexamForm lumbopelvicexamForm= new LumbopelvicexamForm();
 		lumbopelvicexamForm.setLumbopelvicexam(lumboDAO.getLumbopelvicexam());
 		model.addAttribute("lumbopelvicexamForm",lumbopelvicexamForm);
+		model.addAttribute("lumbo","1");
 		return "viewlumbopelvicexam";
  
 	}
@@ -656,8 +694,7 @@ model.addAttribute("button","close");
 		hipexamform.setHipexamdetails(hipexamDAO.gethipexamallDetails());
 		model.addAttribute("hipexamform",hipexamform);
 		model.addAttribute("success", true);
-		
-		
+		model.addAttribute("hip","1");
 		return "viewhipexamdetails";
 	}
 	@RequestMapping(value="/insertfootexam", method = RequestMethod.POST)
@@ -669,7 +706,7 @@ if(result.hasErrors())
 	model.addAttribute("menu", "sign");
 	return "footexam";
 }
-		int c=footexamDAO.setfootexam(footexamdetails);
+		int c=footexamDAO.setfootexam(footexamdetails,request.getParameter("username"));
 		System.out.println("c---"+c);
 		FootExamForm footexamform=new FootExamForm();
 		footexamform.setFootexamdetails(footexamDAO.getfootexamDetails());		
@@ -690,7 +727,7 @@ if(result.hasErrors())
 		}
 		
 		System.out.print(hipexamdetails.getOutsidereferral());
-		int c=hipexamDAO.sethipexam(hipexamdetails);
+		int c=hipexamDAO.sethipexam(hipexamdetails,request.getParameter("username"));
 		//System.out.println("c---"+c);
 		HipExamForm hipexamform=new HipExamForm();
 		hipexamform.setHipexamdetails(hipexamDAO.gethipexamallDetails());
@@ -779,6 +816,17 @@ if(result.hasErrors())
 		return "editlumbopelvicexam";
 	}
 	
+	@RequestMapping(value="/editlumbopelvicexamdetails", method=RequestMethod.GET)
+	public String editlumbopelvicexamdetails(HttpServletRequest request,@RequestParam("username") String username,ModelMap model,Lumbopelvicexam lumbopelvicexam) 
+	{
+		/*String lumbopelvicexam=request.getParameter("lumbopelvicexam");*/
+		LumbopelvicexamForm lumbopelvicexamForm = new LumbopelvicexamForm();       
+        lumbopelvicexamForm.setLumbopelvicexam(lumboDAO.getusernameLumbopelvic(username));
+        model.addAttribute("lumbopelvicexamForm",lumbopelvicexamForm);
+        model.addAttribute("menu", "sign"); 
+		return "editlumbopelvicexam";
+	}
+	
 
 	@RequestMapping(value="/updatelumbopelvicexam", method=RequestMethod.POST)
 	public String updatelumbopelvicexam(HttpServletRequest request,ModelMap model,@ModelAttribute("lumbopelvicexam") @Valid Lumbopelvicexam lumbopelvicexam,
@@ -803,6 +851,7 @@ if(result.hasErrors())
        lumbopelvicexamForm.setLumbopelvicexam(lumboDAO.getLumbopelvicexam());
        
         model.addAttribute("lumbopelvicexamForm", lumbopelvicexamForm);
+        model.addAttribute("lumbo","1");
 	        return "viewlumbopelvicexam";
 		
 	}
@@ -844,7 +893,7 @@ if(result.hasErrors())
 		}
 		model.put("Kneeexam", Kneeexam);
 		model.addAttribute("KneeexamForm",Kneeexam);
-    	int a=kneeDAO.setKneeexam(Kneeexam);
+    	int a=kneeDAO.setKneeexam(Kneeexam,request.getParameter("username"));
 		KneeexamForm kneeexamForm= new KneeexamForm();
 		kneeexamForm.setKneeexam(kneeDAO.getKneeexam());
 		model.addAttribute("kneeexamForm",kneeexamForm);
@@ -931,6 +980,16 @@ if(result.hasErrors())
 		return "editkneeexam";
 	}
 	
+	@RequestMapping(value="/editkneeexamdetails", method=RequestMethod.GET)
+	public String editkneeexamdetails(HttpServletRequest request,@RequestParam("username") String username,ModelMap model,Kneeexam kneeexam) 
+	{
+		/*String lumbopelvicexam=request.getParameter("lumbopelvicexam");*/
+		KneeexamForm kneeexamForm = new KneeexamForm();       
+        kneeexamForm.setKneeexam(kneeDAO.getusernameKnee(username));
+        model.addAttribute("kneeexamForm",kneeexamForm);
+        model.addAttribute("menu", "sign");
+		return "editkneeexam";
+	}
 
 	@RequestMapping(value="/updatekneeexam", method=RequestMethod.POST)
 	public String updatekneeexam(HttpServletRequest request,ModelMap model,@ModelAttribute("kneeexam") @Valid Kneeexam kneeexam,
@@ -955,6 +1014,7 @@ if(result.hasErrors())
        kneeexamForm.setKneeexam(kneeDAO.getKneeexam());
        
         model.addAttribute("kneeexamForm", kneeexamForm);
+        model.addAttribute("knee","1");
 	        return "viewkneeexam";
 		
 	}
@@ -997,10 +1057,11 @@ if(result.hasErrors())
 		}
 		model.put("Cervicalexam", Cervicalexam);
 		model.addAttribute("CervicalexamForm",Cervicalexam);
-    	int a=cervicalDAO.setCervicalexam(Cervicalexam);
+    	int a=cervicalDAO.setCervicalexam(Cervicalexam,request.getParameter("username"));
 		CervicalexamForm cervicalexamForm= new CervicalexamForm();
 		cervicalexamForm.setCervicalexam(cervicalDAO.getCervicalexam());
 		model.addAttribute("cervicalexamForm",cervicalexamForm);
+		model.addAttribute("cervical","1");
 		return "viewcervicalexam";
  
 	}
@@ -1083,6 +1144,16 @@ if(result.hasErrors())
         model.addAttribute("menu", "sign"); 
 		return "editcervicalexam";
 	}
+	@RequestMapping(value="/editcervicalexamdetails", method=RequestMethod.GET)
+	public String editcervicalexamdetails(HttpServletRequest request,@RequestParam("username") String username,ModelMap model,Cervicalexam cervicalexam) 
+	{
+		/*String lumbopelvicexam=request.getParameter("lumbopelvicexam");*/
+		CervicalexamForm cervicalexamForm = new CervicalexamForm();       
+        cervicalexamForm.setCervicalexam(cervicalDAO.getusernameCervical(username));
+        model.addAttribute("cervicalexamForm",cervicalexamForm);
+        model.addAttribute("menu", "sign"); 
+		return "editcervicalexam";
+	}
 	
 
 	@RequestMapping(value="/updatecervicalexam", method=RequestMethod.POST)
@@ -1108,6 +1179,7 @@ if(result.hasErrors())
        cervicalexamForm.setCervicalexam(cervicalDAO.getCervicalexam());
        
         model.addAttribute("cervicalexamForm", cervicalexamForm);
+        model.addAttribute("cervical","1");
 	        return "viewcervicalexam";
 		
 	}
@@ -1149,7 +1221,7 @@ if(result.hasErrors())
 		}
 		model.put("Elbowexam", elbowexam);
 		model.addAttribute("ElbowexamForm",elbowexam);
-    	int a=elbowDAO.setElbowexam(elbowexam);
+    	int a=elbowDAO.setElbowexam(elbowexam,request.getParameter("username"));
 		ElbowexamForm elbowexamForm= new ElbowexamForm();
 		elbowexamForm.setElbowexam(elbowDAO.getElbowexam());
 		model.addAttribute("elbowexamForm",elbowexamForm);
@@ -1237,6 +1309,17 @@ if(result.hasErrors())
 	}
 	
 
+	@RequestMapping(value="/editelbowdetails", method=RequestMethod.GET)
+	public String editelbowexamdetails(HttpServletRequest request,@RequestParam("username") String username,ModelMap model,Kneeexam kneeexam) 
+	{
+		/*String lumbopelvicexam=request.getParameter("lumbopelvicexam");*/
+		ElbowexamForm elbowexamForm = new ElbowexamForm();       
+        elbowexamForm.setElbowexam(elbowDAO.getusernameElbow(username));
+        model.addAttribute("elbowexamForm",elbowexamForm);
+        model.addAttribute("menu", "sign"); 
+		return "editelbowlist";
+	}
+	
 	@RequestMapping(value="/updateelbowexam", method=RequestMethod.POST)
 	public String updateelbowexam(HttpServletRequest request,ModelMap model,@ModelAttribute("elbowexam") @Valid Elbowexam elbowexam,
 			BindingResult result,Principal principal)
@@ -1252,14 +1335,12 @@ if(result.hasErrors())
 		}
 		/*System.out.println("soapid"+soapnotes.getSoapid());*/
 		int status = elbowDAO.updateelbowexam(elbowexam, elbowexam.getElbowexamid(), principal.getName());
-		System.out.println(status);
-		
-		ElbowexamForm elbowexamForm = new ElbowexamForm();
-        
-       elbowexamForm.setElbowexam(elbowDAO.getElbowexam());
-       
+		System.out.println(status);		
+		ElbowexamForm elbowexamForm = new ElbowexamForm();        
+        elbowexamForm.setElbowexam(elbowDAO.getElbowexam());       
         model.addAttribute("elbowexamForm", elbowexamForm);
-	        return "viewelbowexam";
+        model.addAttribute("elbow","1"); 
+        return "viewelbowexam";
 		
 	}
 	@RequestMapping(value="/deleteelbowexam", method=RequestMethod.GET)
@@ -1300,10 +1381,11 @@ if(result.hasErrors())
 		}
 		model.put("Thoracicexam", thoracicexam);
 		model.addAttribute("ThoracicexamForm",thoracicexam);
-    	int a=thoracicDAO.setThoracicexam(thoracicexam);
+    	int a=thoracicDAO.setThoracicexam(thoracicexam,request.getParameter("username"));
 		ThoracicexamForm thoracicexamForm= new ThoracicexamForm();
 		thoracicexamForm.setThoracicexam(thoracicDAO.getThoracicexam());
 		model.addAttribute("thoracicexamForm",thoracicexamForm);
+		 model.addAttribute("thoracic","1");
 		return "viewthoracicexam";
  
 	}
@@ -1374,6 +1456,16 @@ if(result.hasErrors())
         model.addAttribute("menu", "sign"); 
 		return "editthoracicexam";
 	}
+	@RequestMapping(value="/editthoracicexamdetails", method=RequestMethod.GET)
+	public String editthoracicexamdetails(HttpServletRequest request,@RequestParam("username") String username,ModelMap model,Thoracicexam thoracicexam) 
+	{
+		/*String lumbopelvicexam=request.getParameter("lumbopelvicexam");*/
+		ThoracicexamForm thoracicexamForm = new ThoracicexamForm();       
+        thoracicexamForm.setThoracicexam(thoracicDAO.getusernameThoracic(username));
+        model.addAttribute("thoracicexamForm",thoracicexamForm);
+        model.addAttribute("menu", "sign"); 
+		return "editthoracicexam";
+	}
 	@RequestMapping(value="/thoracicexamlist", method=RequestMethod.GET)
 	public String thoracicexamlist(HttpServletRequest request,@RequestParam("thoracicexamid") String thoracicexamid,ModelMap model,Thoracicexam thoracicexam)
 	{
@@ -1408,6 +1500,7 @@ if(result.hasErrors())
        thoracicexamForm.setThoracicexam(thoracicDAO.getThoracicexam());
        
         model.addAttribute("thoracicexamForm", thoracicexamForm);
+        model.addAttribute("thoracic","1");
 	        return "viewthoracicexam";
 		
 	}
@@ -1717,6 +1810,80 @@ if(result.hasErrors())
         model.addAttribute("menu","duties"); 
 		return "editduties";
 	}
+	@RequestMapping(value="/check_ajax",method=RequestMethod.POST)
+	public @ResponseBody String check_ajax(@ModelAttribute("patient_id") Hamiltonchiropractic hamiltonchiropractic,@ModelAttribute("checked") String checked)
+	{
+		
+		System.out.println("username..."+hamiltonchiropractic.getChecked()+hamiltonchiropractic.getPatient_id());
+		if(hamiltonchiropractic.getChecked().trim().equals("lumbo"))
+		{
+		if(lumboDAO.getusernameLumbopelvic(hamiltonchiropractic.getPatient_id()).size()>0)
+		{
+			return "edit";
+		}
+		}
+		if(hamiltonchiropractic.getChecked().trim().equals("cervical"))
+		{
+		if(cervicalDAO.getusernameCervical(hamiltonchiropractic.getPatient_id()).size()>0)
+		{
+			return "edit";
+		}
+		}
+		if(hamiltonchiropractic.getChecked().trim().equals("thoracic"))
+		{
+		if(thoracicDAO.getusernameThoracic(hamiltonchiropractic.getPatient_id()).size()>0)
+		{
+			return "edit";
+		}
+		}
+		if(hamiltonchiropractic.getChecked().trim().equals("shoulder"))
+		{
+		if(shoulderexamDAO.getusernameShoulderexamDetails(hamiltonchiropractic.getPatient_id()).size()>0)
+		{
+			return "edit";
+		}
+		}
+		if(hamiltonchiropractic.getChecked().trim().equals("elbow"))
+		{
+		if(elbowDAO.getusernameElbow(hamiltonchiropractic.getPatient_id()).size()>0)
+		{
+			return "edit";
+		}
+		}
+		if(hamiltonchiropractic.getChecked().trim().equals("wrist"))
+		{
+		if(wristexamDAO.getusernamewristexamDetails(hamiltonchiropractic.getPatient_id()).size()>0)
+		{
+			return "edit";
+		}
+		}
+		if(hamiltonchiropractic.getChecked().trim().equals("hip"))
+		{
+		if(hipexamDAO.getusernamehipexamDetails(hamiltonchiropractic.getPatient_id()).size()>0)
+		{
+			return "edit";
+		}
+		}
+		if(hamiltonchiropractic.getChecked().trim().equals("knee"))
+		{
+		if(kneeDAO.getusernameKnee(hamiltonchiropractic.getPatient_id()).size()>0)
+		{
+			return "edit";
+		}
+		}
+		if(hamiltonchiropractic.getChecked().trim().equals("foot"))
+		{
+			System.out.println("enter");
+		if(footexamDAO.getusernamefootexamDetails(hamiltonchiropractic.getPatient_id()).size()>0)
+		{
+			System.out.println("entered");
+			return "edit";
+		}
+		}
+		
+		return "";
+	}
+	
 	@RequestMapping(value="/editdutiesdetails", method=RequestMethod.GET)
 	public String editduties_ajax(HttpServletRequest request,@RequestParam("username") String username,ModelMap model,Dutiesunderduress dutiesunderduress) 
 	{

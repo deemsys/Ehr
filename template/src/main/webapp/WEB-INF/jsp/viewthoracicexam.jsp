@@ -7,6 +7,11 @@
 <script src="resources/js/jquery.ui.position.js" type="text/javascript"></script>
 <br><br>
 <div id="right_content">
+<c:if test="${thoracic=='1'}">
+<script>
+window.close();
+</script>
+</c:if>
 	
     	<table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
       		

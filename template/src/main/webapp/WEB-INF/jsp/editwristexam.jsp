@@ -803,8 +803,13 @@ P#mypar {
 									</div>
 
 
-								<table align="right"><tr><td><input type="submit" value="Save" class="submit_btn"></td><td> <a href="viewwristexamdetails" style="color: white" class="submit_btn">Cancel</a></td></tr></table>
-
+								<table align="right"><tr><td><input type="submit" value="Save" class="submit_btn"></td><td> <a href="viewwristexamdetails" style="color: white" class="submit_btn" onclick="myclose()">Cancel</a></td></tr></table>
+<script>
+ function myclose()
+ {
+	 window.close();
+ }
+ </script>
 								</div>
 						</td>
 					</tr>

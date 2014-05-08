@@ -18,7 +18,7 @@ public class WristexamDAO
 	public void setDataSource(DataSource dataSource) {
 		this.dataSource = dataSource;
 	}
-	public int setwristexam(WristExam wristexamdetails)
+	public int setwristexam(WristExam wristexamdetails,String username)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -33,8 +33,9 @@ public class WristexamDAO
 			e1.printStackTrace();
 		}
 	    try{
-	    	 String cmd="INSERT INTO wristexam(pname,date,muscle,swelling,dominanthand,ao,dysfunction,thenareminence,flexorcarpiradialis,commonflexors,hypothenareminence,extensorcarpiradialis,commonextensor,abductorpolliuslongus,abductorpollicisbrevis,extensorpollicisbrevis,note,functional,orthotpedic,flexionleft,flexionright,extensionleft,extensionright,ulnarleft,ulnarright,radialleft,radialright,pronationleft,pronationright,allenleft,allenright,phalenleft,phalenright,reverseleft,reverseright,tenosynovitisleft,tenosynovitisright,tinnelsleft,tinnelsright,ulttleft,ulttright,neurological,latdeltoidleft,latdeltoidright,latarmleft,latarmright,thirdleft,thirdright,medforearmleft,medforearmright,medelbowleft,medelbowright,shdleft,shdright,elbflexleft,elbflexright,elbextleft,elbextright,digitflexionleft,digitflexionright,digitabdleft,digitabdright,bicepsleft,bicepsright,brachioradleft,brachioradright,tricepsleft,tricepsright,typing,driving,other,otherdefict,comments,patientstatus,diagnosis1,diagnosis2,diagnosis3,diagnosis4,diagnosis5,diagnosis6,times,weeks,spinaldecompression,chiropractic,physicaltherapy,bracing,modalities,supplementation,hep,radiographic,mri,scan,conduction,emg,outsiderefferal,dc,others,othervalue,signature)values('"
-	    	 		 +wristexamdetails.getPname()+
+	    	 String cmd="INSERT INTO wristexam(username,pname,date,muscle,swelling,dominanthand,ao,dysfunction,thenareminence,flexorcarpiradialis,commonflexors,hypothenareminence,extensorcarpiradialis,commonextensor,abductorpolliuslongus,abductorpollicisbrevis,extensorpollicisbrevis,note,functional,orthotpedic,flexionleft,flexionright,extensionleft,extensionright,ulnarleft,ulnarright,radialleft,radialright,pronationleft,pronationright,allenleft,allenright,phalenleft,phalenright,reverseleft,reverseright,tenosynovitisleft,tenosynovitisright,tinnelsleft,tinnelsright,ulttleft,ulttright,neurological,latdeltoidleft,latdeltoidright,latarmleft,latarmright,thirdleft,thirdright,medforearmleft,medforearmright,medelbowleft,medelbowright,shdleft,shdright,elbflexleft,elbflexright,elbextleft,elbextright,digitflexionleft,digitflexionright,digitabdleft,digitabdright,bicepsleft,bicepsright,brachioradleft,brachioradright,tricepsleft,tricepsright,typing,driving,other,otherdefict,comments,patientstatus,diagnosis1,diagnosis2,diagnosis3,diagnosis4,diagnosis5,diagnosis6,times,weeks,spinaldecompression,chiropractic,physicaltherapy,bracing,modalities,supplementation,hep,radiographic,mri,scan,conduction,emg,outsiderefferal,dc,others,othervalue,signature)values('"
+	    			 +username+
+	    			 "','"+wristexamdetails.getPname()+
 	    	 		 "','"+wristexamdetails.getDate()	    	 			    	 		
 	    	 		 +"','"+wristexamdetails.getMuscle()
 	    	 		 +"','"+wristexamdetails.getSwelling()
@@ -466,6 +467,140 @@ public class WristexamDAO
 		return 0;
 	}
 	
+	public List<WristExam> getusernamewristexamDetails(String username){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<WristExam> wristexam = new ArrayList<WristExam>();
+	    try{
+	    	System.out.print("database");
+			resultSet = statement.executeQuery("select * from wristexam where username='"+username+"'");
+			while(resultSet.next()){
+				
+				wristexam.add(new WristExam(resultSet.getString("wristexamno"),
+						resultSet.getString("pname"),
+						resultSet.getString("date"),						
+						resultSet.getString("muscle"),
+						resultSet.getString("swelling"),
+						resultSet.getString("dominanthand"),
+						resultSet.getString("ao"),
+						resultSet.getString("dysfunction"),
+						resultSet.getString("thenareminence"),
+						resultSet.getString("flexorcarpiradialis"),
+						resultSet.getString("commonflexors"),
+						resultSet.getString("hypothenareminence"),
+						resultSet.getString("extensorcarpiradialis"),
+						resultSet.getString("commonextensor"),
+						resultSet.getString("abductorpolliuslongus"),
+						resultSet.getString("abductorpollicisbrevis"),
+						resultSet.getString("extensorpollicisbrevis"),
+						resultSet.getString("note"),
+						resultSet.getString("functional"),
+						resultSet.getString("orthotpedic"),
+						resultSet.getString("flexionleft"),
+						resultSet.getString("flexionright"),
+						resultSet.getString("extensionleft"),
+						resultSet.getString("extensionright"),
+						resultSet.getString("ulnarleft"),
+						resultSet.getString("ulnarright"),
+						resultSet.getString("radialleft"),
+						resultSet.getString("radialright"),
+						resultSet.getString("pronationleft"),
+						resultSet.getString("pronationright"),
+						resultSet.getString("allenleft"),
+						resultSet.getString("allenright")
+						,resultSet.getString("phalenleft"),
+						resultSet.getString("phalenright"),
+						resultSet.getString("reverseleft"),
+						resultSet.getString("reverseright"),
+						resultSet.getString("tenosynovitisleft"),
+						resultSet.getString("tenosynovitisright"),
+						resultSet.getString("tinnelsleft"),
+						resultSet.getString("tinnelsright"),
+						resultSet.getString("ulttleft"),
+						resultSet.getString("ulttright"),						
+						resultSet.getString("neurological")
+						,resultSet.getString("latdeltoidleft"),
+						resultSet.getString("latdeltoidright"),
+						resultSet.getString("latarmleft"),
+						resultSet.getString("latarmright"),
+						resultSet.getString("thirdleft"),
+						resultSet.getString("thirdright"),
+						resultSet.getString("medforearmleft"),
+						resultSet.getString("medforearmright"),
+			    	resultSet.getString("medelbowleft"),
+			    	resultSet.getString("medelbowright"),
+			    	resultSet.getString("shdleft"),
+			    	resultSet.getString("shdright"),
+			    	resultSet.getString("elbflexleft"),
+			    	resultSet.getString("elbflexright"),
+			    	resultSet.getString("elbextleft"),
+			    	resultSet.getString("elbextright"),
+			    	resultSet.getString("digitflexionleft"),
+			    	resultSet.getString("digitflexionright"),
+			    	resultSet.getString("digitabdleft"),
+			    	resultSet.getString("digitabdright"),
+			    	resultSet.getString("bicepsleft"),
+			    	resultSet.getString("bicepsright"),
+			    	resultSet.getString("brachioradleft"),
+			    	resultSet.getString("brachioradright"),
+			    	resultSet.getString("tricepsleft"),
+			    	resultSet.getString("tricepsright"),
+			    	resultSet.getString("typing"),
+			    	resultSet.getString("driving"),			    	
+			    	resultSet.getString("other"),
+			    	resultSet.getString("otherdefict"),
+			    	resultSet.getString("comments"),
+			    	resultSet.getString("patientstatus"),
+			    	resultSet.getString("diagnosis1"),
+			    	resultSet.getString("diagnosis2"),
+			    	resultSet.getString("diagnosis3"),
+			    	resultSet.getString("diagnosis4"),
+			    	resultSet.getString("diagnosis5"),
+			    	resultSet.getString("diagnosis6"),
+			    	resultSet.getString("times"),
+			    	resultSet.getString("weeks"),
+			    	resultSet.getString("spinaldecompression"),
+			    	resultSet.getString("chiropractic"),
+			    	resultSet.getString("physicaltherapy"),
+			    	resultSet.getString("bracing"),
+			    	resultSet.getString("modalities"),
+			    	resultSet.getString("supplementation"),
+			    	resultSet.getString("hep"),
+			    	resultSet.getString("radiographic"),
+			    	resultSet.getString("mri"),
+			    	resultSet.getString("scan"),
+			    	resultSet.getString("conduction"),
+			    	resultSet.getString("emg") ,
+			    	resultSet.getString("outsiderefferal"),
+			    	resultSet.getString("dc"),
+			    	resultSet.getString("others"),
+			    	resultSet.getString("othervalue"),
+			    	resultSet.getString("signature")));
+				}
+			}
+				    	    
+			   	
+			
+	    catch(Exception e){
+	    	System.out.println(e.toString());
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    }finally{
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);	    	
+	    }
+	    return wristexam;
+		
+	}
 	public List<WristExam> getwristexamDetails(String wristexamno){
 		Connection con = null;
 		Statement statement = null;
@@ -600,6 +735,7 @@ public class WristexamDAO
 	    return wristexam;
 		
 	}
+	
 	public List<WristExam> getlimitedwristexam(int page) {
 		Connection con = null;
 		Statement statement = null;

@@ -383,7 +383,13 @@ $(function() {
 <table align="right">
 <tr>
 <td><input type="submit" class="submit_btn" value="Save"></td>
-<td><input type="reset" class="submit_btn" value="Cancel"></td>
+<td><input type="reset" class="submit_btn" value="Cancel" onclick="myclose()"></td>
+<script>
+ function myclose()
+ {
+	 window.close();
+ }
+ </script>
 </tr>
 </table>			                  	
 	
@@ -717,7 +723,13 @@ $(function() {
 	<table align="right">
 <tr>
 <td><input type="submit" class="submit_btn" value="Save"></td>
-<td><input type="reset" class="submit_btn" value="Cancel"></td>
+<td><input type="reset" class="submit_btn" value="Cancel" onclick="myclose()"></td>
+<script>
+ function myclose()
+ {
+	 window.close();
+ }
+ </script>
 </tr>
 </table>			                  	
 				                  	

@@ -566,11 +566,16 @@ $(function() {
           </c:otherwise>
           </c:choose> 
          
-      <table align="right"><tr><td><input type="submit" value="Save" class="submit_btn"></td><td> <a href="viewshoulderexamdetails" style="color: white" class="submit_btn">Cancel</a></td></tr></table>
+      <table align="right"><tr><td><input type="submit" value="Save" class="submit_btn"></td><td> <a href="viewshoulderexamdetails" style="color: white" class="submit_btn" onclick="myclose()">Cancel</a></td></tr></table>
          
          </div></td></tr></table></div></div></div>
          
-         
+         <script>
+ function myclose()
+ {
+	 window.close();
+ }
+ </script>
          
        
 	

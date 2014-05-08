@@ -459,10 +459,15 @@ $(function() {
            <div><B style="font-size:14px"><span class="err">*</span>PHYSICIAN SIGNATURE:</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" value="${hipexamdetails.signature }" name="signature"><span class="err"><form:errors path="hipexamdetails.signature"></form:errors></div>
            
          
-         <table align="right"><tr><td><input type="submit" value="Save" class="submit_btn"></td><td> <a href="viewhipexam" style="color: white" class="submit_btn">Cancel</a></td></tr></table>
+         <table align="right"><tr><td><input type="submit" value="Save" class="submit_btn"></td><td> <a href="viewhipexam" style="color: white" onclick="myclose()"   class="submit_btn">Cancel</a></td></tr></table>
          </div></td></tr></table></div></div></div>
          
-         
+         <script>
+ function myclose()
+ {
+	 window.close();
+ }
+ </script>
          
        
 	

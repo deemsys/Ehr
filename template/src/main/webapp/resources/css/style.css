@@ -679,6 +679,9 @@ ul.prev li{margin-right:50px; float:left; margin-bottom:20px;}
 .err {
 font-size:11px; font-style:italic; color:#ff0000;
 }
+.errorfield {
+font-size:20px; font-style:italic; color:#ff0000;
+}
 
 
 .input_txtbx1 {

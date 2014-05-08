@@ -425,11 +425,16 @@ $(function() {
            <div><B style="font-size:14px"><span class="err">*</span>PHYSICIAN SIGNATURE:</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="signature" value="${footexamdetails.signature}"><span class="err"><form:errors path="footexamdetails.signature"></form:errors></div>
            
          
-        <table align="right"><tr><td><input type="submit" value="Save" class="submit_btn"></td><td> <a href="viewfootexam" style="color: white" class="submit_btn">Cancel</a></td></tr></table>
+        <table align="right"><tr><td><input type="submit" value="Save" class="submit_btn"></td><td> <a href="viewfootexam" style="color: white" class="submit_btn" onclick="myclose()">Cancel</a></td></tr></table>
          
          </div></td></tr></table></div></div></div>
          
-         
+         <script>
+ function myclose()
+ {
+	 window.close();
+ }
+ </script>
          
        
 	

@@ -22,7 +22,7 @@ public class HipexamDAO
 		this.dataSource = dataSource;
 	}
 	
-	public int sethipexam(HipExam hipexamdetails)
+	public int sethipexam(HipExam hipexamdetails,String username)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -37,8 +37,8 @@ public class HipexamDAO
 			e1.printStackTrace();
 		}
 	    try{
-	    	 String cmd="INSERT INTO hipexam(pname,date,gait,pelvic,ao,dysfunction,shortlegleft,shortlegleftvalue,shortlegleftother,shortlegright,shortlegrightvalue,shortlegrightother,piriformisleft,gluteusleft,iliopsoasleft,hamstringsleft,note,functional,orthotpedic,flexionleft,flexionright,extensionleft,extensionright,abductionleft,abductionright,adductionleft,adductionright,internalrotationleft,internalrotationright,externalrotationleft,externalrotationright,fabereleft,fabereright,nachlasleft,nachlasright,elysleft,elysright,yeomansleft,yeomansright,obersleft,obersright,hibbsleft,hibbsright,thomasleft,thomasright,neurological,inguinalarealeft,inguinalarearight,antleft,antright,kneeleft,kneeright,medialleft,medialright,latleft,latright,plantarleft,plantarright,iliopsoasfirstleft,iliopsoasfirstright,iliopsoas1left,iliopsoas1right,iliopsoas2left,iliopsoas2right,femleft,femright,medleft,medright,maxleft,maxright,patellarleft,patellarright,hsleft,hsright,achillesleft,achillesright,walking,standing,stairs,other,otherdefict,comments,patientstatus,diagnosis1,diagnosis2,diagnosis3,diagnosis4,diagnosis5,times,weeks,spinaldecompression,chiropractic,physicaltherapy,bracing,modalities,supplementation,hep,radiographic,mri,scan,conduction,emg,outsidereferral,dc,signature)values('"
-	    	 		 +hipexamdetails.getPname()+"','"+hipexamdetails.getDate()+"','"+hipexamdetails.getGait()+"','"+hipexamdetails.getPelvic()+"','"+hipexamdetails.getAo()+"','"+hipexamdetails.getDysfunction()+"','"+hipexamdetails.getShortlegleft()+"','"+hipexamdetails.getShortlegleftvalue()+"','"+
+	    	 String cmd="INSERT INTO hipexam(username,pname,date,gait,pelvic,ao,dysfunction,shortlegleft,shortlegleftvalue,shortlegleftother,shortlegright,shortlegrightvalue,shortlegrightother,piriformisleft,gluteusleft,iliopsoasleft,hamstringsleft,note,functional,orthotpedic,flexionleft,flexionright,extensionleft,extensionright,abductionleft,abductionright,adductionleft,adductionright,internalrotationleft,internalrotationright,externalrotationleft,externalrotationright,fabereleft,fabereright,nachlasleft,nachlasright,elysleft,elysright,yeomansleft,yeomansright,obersleft,obersright,hibbsleft,hibbsright,thomasleft,thomasright,neurological,inguinalarealeft,inguinalarearight,antleft,antright,kneeleft,kneeright,medialleft,medialright,latleft,latright,plantarleft,plantarright,iliopsoasfirstleft,iliopsoasfirstright,iliopsoas1left,iliopsoas1right,iliopsoas2left,iliopsoas2right,femleft,femright,medleft,medright,maxleft,maxright,patellarleft,patellarright,hsleft,hsright,achillesleft,achillesright,walking,standing,stairs,other,otherdefict,comments,patientstatus,diagnosis1,diagnosis2,diagnosis3,diagnosis4,diagnosis5,times,weeks,spinaldecompression,chiropractic,physicaltherapy,bracing,modalities,supplementation,hep,radiographic,mri,scan,conduction,emg,outsidereferral,dc,signature)values('"
+	    			+username+"','"+hipexamdetails.getPname()+"','"+hipexamdetails.getDate()+"','"+hipexamdetails.getGait()+"','"+hipexamdetails.getPelvic()+"','"+hipexamdetails.getAo()+"','"+hipexamdetails.getDysfunction()+"','"+hipexamdetails.getShortlegleft()+"','"+hipexamdetails.getShortlegleftvalue()+"','"+
 	    	 		  hipexamdetails.getShortlegleftother()+"','"+hipexamdetails.getShortlegright()+"','"+hipexamdetails.getShortlegrightvalue()+"','"+hipexamdetails.getShortlegrightother()+"','"+hipexamdetails.getPiriformisleft()+"','"+hipexamdetails.getGluteusleft()+"','"+
 	    	 		 hipexamdetails.getIliopsoasleft()+"','"+hipexamdetails.getHamstringsleft()+"','"+hipexamdetails.getNote()+"','"+hipexamdetails.getFunctional()+"','"+hipexamdetails.getOrthotpedic()+"','"+hipexamdetails.getFlexionleft()+"','"+hipexamdetails.getFlexionright()+"','"+
 	    	 		 hipexamdetails.getExtensionleft()+"','"+hipexamdetails.getExtensionright()+"','"+hipexamdetails.getAbductionleft()+"','"+hipexamdetails.getAbductionright()+"','"+hipexamdetails.getAdductionleft()+"','"+hipexamdetails.getAdductionright()+"','"+hipexamdetails.getInternalrotationleft()+"','"+hipexamdetails.getInternalrotationright()+"','"+hipexamdetails.getExternalrotationleft()+"','"+hipexamdetails.getExternalrotationright()+"','"+hipexamdetails.getFabereleft()+"','"+hipexamdetails.getFabereright()+"','"+
@@ -302,6 +302,56 @@ public class HipexamDAO
 		return 0;
 	}
 	
+	public List<HipExam> getusernamehipexamDetails(String username){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<HipExam> hipexam = new ArrayList<HipExam>();
+	    try{
+	    	System.out.print("database");
+			resultSet = statement.executeQuery("select * from hipexam where username='"+username+"'");
+			while(resultSet.next()){
+				hipexam.add(new HipExam(resultSet.getString("hipexamno"),resultSet.getString("pname"),resultSet.getString("date"),resultSet.getString("gait"),resultSet.getString("pelvic"),resultSet.getString("ao"),resultSet.getString("dysfunction"),resultSet.getString("shortlegleft"),resultSet.getString("shortlegleftvalue"),resultSet.getString("shortlegleftother"),resultSet.getString("shortlegright"),resultSet.getString("shortlegrightvalue"),resultSet.getString("shortlegrightother"),resultSet.getString("piriformisleft"),resultSet.getString("gluteusleft"),resultSet.getString("iliopsoasleft"),resultSet.getString("hamstringsleft"),resultSet.getString("note"),resultSet.getString("functional"),resultSet.getString("orthotpedic"),resultSet.getString("flexionleft"),resultSet.getString("flexionright"),resultSet.getString("extensionleft"),resultSet.getString("extensionright"),resultSet.getString("abductionleft"),resultSet.getString("abductionright"),resultSet.getString("adductionleft"),resultSet.getString("adductionright"),resultSet.getString("internalrotationleft"),resultSet.getString("internalrotationright"),resultSet.getString("externalrotationleft"),resultSet.getString("externalrotationright"),resultSet.getString("fabereleft"),resultSet.getString("fabereright"),
+						resultSet.getString("nachlasleft"),
+						resultSet.getString("nachlasright"),
+						resultSet.getString("elysleft"),
+						resultSet.getString("elysright"),
+						resultSet.getString("yeomansleft"),
+						resultSet.getString("yeomansright"),
+						resultSet.getString("obersleft"),
+						resultSet.getString("obersright"),
+						resultSet.getString("hibbsleft"),
+						resultSet.getString("hibbsright"),
+						resultSet.getString("thomasleft"),
+						resultSet.getString("thomasright"),resultSet.getString("neurological")
+						,resultSet.getString("inguinalarealeft"),
+						resultSet.getString("inguinalarearight"),
+						resultSet.getString("antleft"),
+						resultSet.getString("antright"),resultSet.getString("kneeleft"),
+						resultSet.getString("kneeright"),resultSet.getString("medialleft"),resultSet.getString("medialright"),
+			    	resultSet.getString("latleft"),resultSet.getString("latright"),resultSet.getString("plantarleft"),resultSet.getString("plantarright"),resultSet.getString("iliopsoasfirstleft"),resultSet.getString("iliopsoasfirstright"),resultSet.getString("iliopsoas1left"),resultSet.getString("iliopsoas1right"),resultSet.getString("iliopsoas2left"),resultSet.getString("iliopsoas2right"),resultSet.getString("femleft"),resultSet.getString("femright"),resultSet.getString("medleft"),resultSet.getString("medright"),resultSet.getString("maxleft"),resultSet.getString("maxright"),resultSet.getString("patellarleft"),resultSet.getString("patellarright"),resultSet.getString("hsleft"),resultSet.getString("hsright"),
+			    	resultSet.getString("achillesleft"),resultSet.getString("achillesright"),resultSet.getString("walking"),resultSet.getString("standing"),resultSet.getString("stairs"),resultSet.getString("other"),resultSet.getString("otherdefict"),resultSet.getString("comments"),resultSet.getString("patientstatus"),resultSet.getString("diagnosis1"),resultSet.getString("diagnosis2"),resultSet.getString("diagnosis3"),resultSet.getString("diagnosis4"),resultSet.getString("diagnosis5"),resultSet.getString("times"),resultSet.getString("weeks"),resultSet.getString("spinaldecompression"),resultSet.getString("chiropractic"),resultSet.getString("physicaltherapy"),resultSet.getString("bracing"),resultSet.getString("modalities"),resultSet.getString("supplementation"),resultSet.getString("hep"),resultSet.getString("radiographic"),resultSet.getString("mri"),resultSet.getString("scan"),resultSet.getString("conduction"),resultSet.getString("emg") ,resultSet.getString("outsidereferral"),resultSet.getString("dc"),resultSet.getString("signature")));
+			    	    
+			System.out.println("patientname"+hipexam.get(0).getPname());    	
+			}
+	    }catch(Exception e){
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    }finally{
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);	    	
+	    }
+	    return hipexam;
+		
+	}
 	public List<HipExam> gethipexamDetails(String hipexamno){
 		Connection con = null;
 		Statement statement = null;

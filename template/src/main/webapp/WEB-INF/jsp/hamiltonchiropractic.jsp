@@ -22,44 +22,238 @@
 	  });
   </script>
   <script>
-  function checkAjaxPost() {  
-		var val=document.getElementById("type_of_accident").value;
-		var element=document.getElementById('accident');
+  function checkAjaxPost(source) {  
+	 
+	  document.getElementById("checked").value=document.getElementById(source).value;	 
+	  
+		var val=document.getElementById("username").value;
+		//var element=document.getElementById('accident');
+		var checkedvalue="";
 
-		if(val=='autoaccident')
-		 {	 
+
 			
 		var username = $('#username').val();
+		
+        var checked=$('#checked').val();
+
 
 		
 		 $.ajax({  
 			    type: "POST",  
-			    url: "/EhrApp/duties_ajax",  
-			    data: "username=" + username,
+			    url: "/EhrApp/check_ajax",  
+			    data: "patient_id="+username+"&checked="+checked,
 			    success: function(response){  
 			    
-			    	if(response=="")
+			    	if(document.getElementById("checked").value=='lumbo')
 			    		{
-			    		popupWindow = window.open("dutiesunderduress" ,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+			    	if(document.getElementById("lumbo").checked)
+			    	{
+			    	
+			    		if(response=="")
+			    			{
+			    	popupWindow = window.open("lumbopelvicexam" ,"lumboWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+			    			}
+			    		else
+			    			{
+			    			var url="editlumbopelvicexamdetails?username="+document.getElementById("username").value;
+			    		popupWindow = window.open(url,"lumboWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+			    			}
+			    		
+			    			}
 			    		}
-			    	else
-			    		{
-			    		var url="editdutiesdetails?username="+document.getElementById("username").value;
-			    		popupWindow = window.open(url,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
-			    		}
+			    	
 			    
-		
-			    },  
+			    	if(document.getElementById("checked").value=='cervical')
+		    		{
+		    	if(document.getElementById("cervical").checked)
+		    	{
+		    	
+		    		if(response=="")
+		    			{
+		    			popupWindow = window.open("cervicalexam" ,"cervicalpopUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		    			}
+		    		else
+		    			{
+		    			var url="editcervicalexamdetails?username="+document.getElementById("username").value;
+		    		popupWindow = window.open(url,"cervicalpopUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		    			}
+		    		
+		    			}
+		    		}
+		    	
+			    	if(document.getElementById("checked").value=='thoracic')
+		    		{
+		    	if(document.getElementById("thoracic").checked)
+		    	{
+		    	
+		    		if(response=="")
+		    			{
+		    			popupWindow = window.open("thoracicexam" ,"thoracicpopUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		    			}
+		    		else
+		    			{
+		    			var url="editthoracicexamdetails?username="+document.getElementById("username").value;
+		    		popupWindow = window.open(url,"thoracicpopUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		    			}
+		    		
+		    			}
+		    		}
+			    
+			    	if(document.getElementById("checked").value=='shoulder')
+		    		{
+		    	if(document.getElementById("shoulder").checked)
+		    	{
+		    	
+		    		if(response=="")
+		    			{
+
+		    			popupWindow = window.open("shoulderexam",'shoulderpopUpWindow','width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+
+		    			}
+		    		else
+		    			{
+		    			var url="editshoulderexamdetails?username="+document.getElementById("username").value;
+		    		popupWindow = window.open(url,"shoulderpopUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		    			}
+		    		
+		    			}
+		    		}
+			    	
+
+			    	if(document.getElementById("checked").value=='elbow')
+		    		{
+		    	if(document.getElementById("elbow").checked)
+		    	{
+		    	
+		    		if(response=="")
+		    			{
+
+		    			popupWindow = window.open("elbowexam",'popUpWindow','width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+
+		    			}
+		    		else
+		    			{
+		    			var url="editelbowdetails?username="+document.getElementById("username").value;
+		    		popupWindow = window.open(url,"shoulderpopUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		    			}
+		    		
+		    			}
+		    		}
+			    	
+			    	
+			    	if(document.getElementById("checked").value=='wrist')
+		    		{
+			    		
+		    	if(document.getElementById("hand").checked)
+		    	{
+		    	
+		    		if(response=="")
+		    			{
+		    			window.open("wristexam",'handpopUpWindow','width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		    			}
+		    		else
+		    			{
+		    		var url="editwristexamdetails?username="+document.getElementById("username").value;
+		    		popupWindow = window.open(url,"handpopUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		    			}		    		
+		    			}
+
+		    	if(document.getElementById("wrist").checked)
+		    	{
+		    	
+		    		if(response=="")
+		    			{
+		    			window.open("wristexam",'handpopUpWindow','width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		    			}
+		    		else
+		    			{
+		    		var url="editwristexamdetails?username="+document.getElementById("username").value;
+		    		popupWindow = window.open(url,"handpopUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		    			}		    		
+		    			}}
+			    	
+			    	if(document.getElementById("checked").value=='hip')
+		    		{
+		    	if(document.getElementById("hipexam").checked)
+		    	{
+		    	
+		    		if(response=="")
+		    			{
+
+		    			popupWindow = window.open("perry" ,"hippopUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		    			}
+		    		else
+		    			{
+		    			var url="edithipexamdetails?username="+document.getElementById("username").value;
+		    		popupWindow = window.open(url,"shoulderpopUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		    			}
+		    		
+		    			}
+		    		}
+			    	
+			    	if(document.getElementById("checked").value=='knee')
+		    		{
+		    	if(document.getElementById("knee").checked)
+		    	{
+		    	
+		    		if(response=="")
+		    			{
+
+		    			popupWindow = window.open("kneeexam",'kneepopUpWindow','width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		    			}
+		    		else
+		    			{
+		    			var url="editkneeexamdetails?username="+document.getElementById("username").value;
+		    		popupWindow = window.open(url,"shoulderpopUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		    			}
+		    		
+		    			}
+		    		}
+			    	
+			    	if(document.getElementById("checked").value=='foot')
+		    		{
+		    	if(document.getElementById("foot").checked)
+		    	{
+		    	
+		    		if(response=="")
+		    			{
+		    			popupWindow = window.open("ankle",'popUpWindow','width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')	
+		    	        }
+		    		else
+		    			{
+		    			var url="editfootexamdetails?username="+document.getElementById("username").value;
+		    		popupWindow = window.open(url,"shoulderpopUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		    			}
+		    		
+		    			}
+		    	if(document.getElementById("ankle").checked)
+		    	{
+		    	
+		    		if(response=="")
+		    			{
+		    			popupWindow = window.open("ankle",'popUpWindow','width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')	
+		    	        }
+		    		else
+		    			{
+		    			var url="editfootexamdetails?username="+document.getElementById("username").value;
+		    		popupWindow = window.open(url,"shoulderpopUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		    			}
+		    		
+		    			}
+		    	
+		    		}  	
+			    	
+			   	 },  
 			    error: function(e){  
 			      alert('Error: ' + e);  
 			    }  
 			  });  
-			}  
+			
   
   }
   
   </script>
-  
+ 
   <script>
   function lumboPopup() {
 
@@ -136,21 +330,21 @@ $(function() {
                <td>I understand you have pain in your:</td></tr>
                <tr class="row1">
                    <td></td>
-                 <td><input type="hidden" name="patient_id" value="${patientid}"><input type="checkbox" name="lumbopelvic" value="Lumbopelvic" id="lumbo" onclick="lumboPopup()">&nbsp Lumbopelvic</td>
+                 <td> <input type="hidden" name="checked" id="checked"><input type="hidden" name="patient_id" value="${username}" id="username"><input type="checkbox" name="lumbopelvic" value="lumbo" id="lumbo" onclick="checkAjaxPost('lumbo')">&nbsp Lumbopelvic</td>
                  <td><input type="radio" name="ha" value="Right" >&nbsp Right</td>
                  <td><input type="radio" name="ha" value="Left" >&nbsp Left</td>
                  <td></td>
                  </tr>
                   <tr class="row1">
                <td></td>
-                 <td><input type="checkbox" name="cervical" value="Cervical" id="cervical" onclick="cervicalPopup()">&nbsp Cervical</td>
+                 <td><input type="checkbox" name="cervical" value="cervical" id="cervical" onclick="checkAjaxPost('cervical')">&nbsp Cervical</td>
                  <td><input type="radio" name="ha" value="Right" >&nbsp Right</td>
                  <td><input type="radio" name="ha" value="Left" >&nbsp Left</td>
                  <td></td>
                  </tr>
                      <tr class="row1">
                <td></td>
-                 <td><input type="checkbox" name="thoracic" value="Thoracic" id="thoracic" onclick="thoracicPopup()">&nbsp Thoracic</td>
+                 <td><input type="checkbox" name="thoracic" value="thoracic" id="thoracic" onclick="checkAjaxPost('thoracic')">&nbsp Thoracic</td>
                  <td><input type="radio" name="ha" value="Right" >&nbsp Right</td>
                  <td><input type="radio" name="ha" value="Left" >&nbsp Left</td>
                  <td></td>
@@ -189,28 +383,28 @@ $(function() {
                  </tr>
                  <tr class="row1">
                 <td></td>
-                <td><input type="checkbox" name="shouldercheck" value="Shoulder" id="shoulder" onclick="shoulderPopup()">&nbsp Shoulder</td>
+                <td><input type="checkbox" name="shouldercheck" value="shoulder" id="shoulder" onclick="checkAjaxPost('shoulder')">&nbsp Shoulder</td>
                  <td><input type="checkbox" name="shoulder" value="Right" >&nbsp Right</td>
                  <td><input type="checkbox" name="shouldera" value="Left" >&nbsp Left</td>
                  <td></td>
                  </tr>
                  <tr class="row1">
                 <td></td>
-                <td><input type="checkbox" name="elbowcheck" value="Elbow" id="elbow" onclick="elbowPopup()">&nbsp Elbow</td>
+                <td><input type="checkbox" name="elbowcheck" value="elbow" id="elbow" onclick="checkAjaxPost('elbow')">&nbsp Elbow</td>
                  <td><input type="checkbox" name="elbow" value="Right" >&nbsp Right</td>
                  <td><input type="checkbox" name="elbowa" value="Left" >&nbsp Left</td>
                  <td></td>
                  </tr>
                  <tr class="row1">
                 <td></td>
-                <td><input type="checkbox" name="handcheck" value="Hand" id="hand" onclick="handPopup()" >&nbsp Hand</td>
+                <td><input type="checkbox" name="handcheck" value="wrist" id="hand" onclick="checkAjaxPost('hand')">&nbsp Hand</td>
                  <td><input type="checkbox" name="hand" value="Right" >&nbsp Right</td>
                  <td><input type="checkbox" name="handa" value="Left" >&nbsp Left</td>
                  <td></td>
                  </tr>
                  <tr class="row1">
                 <td></td>
-                <td><input type="checkbox" name="wristcheck" value="Wrist" id="wrist" onclick="wristPopup()">&nbsp Wrist</td>
+                <td><input type="checkbox" name="wristcheck" value="wrist" id="wrist" onclick="checkAjaxPost('wrist')">&nbsp Wrist</td>
                  <td><input type="checkbox" name="wrist" value="Right" >&nbsp Right</td>
                  <td><input type="checkbox" name="wrista" value="Left" >&nbsp Left</td>
                  <td></td>
@@ -300,7 +494,7 @@ function elbowPopup() {
 
 </script>
 <!-- <a href="JavaScript:newPopup('http://www.quackit.com/html/html_help.cfm');">Open a popup window</a> -->
-                <td><input type="checkbox" name="hipcheck" value="Hip" id="hipexam" onclick="newPopup()">&nbsp Hip</td>
+                <td><input type="checkbox" name="hipcheck" value="hip" id="hipexam" onclick="checkAjaxPost('hipexam')">&nbsp Hip</td>
                  <td><input type="checkbox" name="hip" value="Right" >&nbsp Right</td>
                  <td><input type="checkbox" name="hipa" value="Left" >&nbsp Left</td>
                  <td></td>
@@ -314,21 +508,21 @@ function elbowPopup() {
                  </tr>
                 <tr class="row1">
                 <td></td>
-                <td><input type="checkbox" name="kneecheck" value="Knee" id="knee" onclick="kneePopup()">&nbsp Knee</td>
+                <td><input type="checkbox" name="kneecheck" value="knee" id="knee" onclick="checkAjaxPost('knee')">&nbsp Knee</td>
                  <td><input type="checkbox" name="knee" value="Right" >&nbsp Right</td>
                  <td><input type="checkbox" name="kneea" value="Left" >&nbsp Left</td>
                  <td></td>
                  </tr>
                  <tr class="row1">
                 <td></td>
-                <td><input type="checkbox" name="footcheck" value="Foot" id="foot" onclick="footPopup()">&nbsp Foot</td>
+                <td><input type="checkbox" name="footcheck" value="foot" id="foot" onclick="checkAjaxPost('foot')">&nbsp Foot</td>
                  <td><input type="checkbox" name="foot" value="Right" >&nbsp Right</td>
                  <td><input type="checkbox" name="foota" value="Left" >&nbsp Left</td>
                  <td></td>
                  </tr>
                  <tr class="row1">
                 <td></td>
-                <td><input type="checkbox" name="anklecheck" value="Ankle" id="ankle" onclick="anklePopup()">&nbsp Ankle</td>
+                <td><input type="checkbox" name="anklecheck" value="foot" id="ankle" onclick="checkAjaxPost('ankle')">&nbsp Ankle</td>
                  <td><input type="checkbox" name="ankle" value="Right" >&nbsp Right</td>
                  <td><input type="checkbox" name="anklea" value="Left" >&nbsp Left</td>
                  <td></td>
@@ -695,8 +889,8 @@ function elbowPopup() {
 				                  </tr>
 				                  </table>
 				                   <table align="right"> <tr>
-				                   <td><input type="submit" class="submit_btn" value="Save"></td>
-				                   <td><input type="reset" class="submit_btn" value="Cancel"></td>
+				                
+				                
                                   <td valign="top" align="center"><input type="button" class="submit_btn" value="More Tests" onclick="window.location.href='moretest'"></td></td>
 				                  <!--  <td><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewfirsthamiltonchiropractic'"></td> -->
 				                 </table>
@@ -770,13 +964,6 @@ function elbowPopup() {
 				                  
 				                  
 				                  <td>
-				                  
-				                  <table align="right"> <tr>
-				                   <td><input type="submit" class="submit_btn" value="Save"></td>
-				                   <td><input type="reset" class="submit_btn" value="Cancel"></td>
-                                  <td valign="top" align="center"><input type="button" class="submit_btn" value="More Tests" onclick="window.location.href='moretest'"></td>
-				                   <td><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewfirsthamiltonchiropractic'"></td>
-				                 </table>
 				                 
 				                 
 				                 
@@ -799,6 +986,14 @@ function elbowPopup() {
 				                  </td>
 				                  </tr>
 				                  </table>
+				                   
+				                  <table align="right" width="1000"> <tr>
+				                    <td width="1000"></td>
+                                  <td valign="top" align="right"><input type="button" class="submit_btn" value="More Tests" onclick="window.location.href='moretest'"></td>
+				                
+				                  </tr>
+				                 </table>
+				                 
 				                  </div>
 				                  </div>
 				                  </td>
@@ -953,8 +1148,7 @@ function elbowPopup() {
 				                  </td>
 				                  </tr>
 				                  <table align="right"> <tr>
-				                   <td><input type="submit" class="submit_btn" value="Save"></td>
-				                   <td><input type="reset" class="submit_btn" value="Cancel"></td>
+				                  
                                   <td valign="top" align="center"><input type="button" class="submit_btn" value="More Tests" onclick="window.location.href='moretest'"></td></td>
 				                  <!--  <td><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewfirsthamiltonchiropractic'"></td> -->
 				                 </table>
@@ -1236,7 +1430,7 @@ function elbowPopup() {
 				                   <td><input type="reset" class="submit_btn" value="Cancel"></td>
                                   <td valign="top" align="center"><input type="button" class="submit_btn" value="More Tests" onclick="window.location.href='moretest'"></td></td>
 				                  <!--  <td><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewfirsthamiltonchiropractic'"></td> -->
-				                 </table>-->
+				                 </table>
 				                
 				                 </td>
 				                 </tr>

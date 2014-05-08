@@ -18,7 +18,7 @@ public class ShoulderexamDAO
 	public void setDataSource(DataSource dataSource) {
 		this.dataSource = dataSource;
 	}
-	public int setshoulderexam(ShoulderExam shoulderexamdetails)
+	public int setshoulderexam(ShoulderExam shoulderexamdetails,String username)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -33,9 +33,10 @@ public class ShoulderexamDAO
 			e1.printStackTrace();
 		}
 	    try{
-	    	 String cmd="INSERT INTO shoulderexam(pname,date,muscle,swelling,ao,dysfunction,pectoralisminor,supraspinatus,infraspinatus,serratusant,teresminor,teresmajor,rhomboids,trapezius,note,functional,orthotpedic,flexionleft,flexionright,extensionleft,extensionright,abductionleft,abductionright,adductionleft,adductionright,internalrotationleft,internalrotationright,externalrotationleft,externalrotationright,emptycanleft,emptycanright,impingementsignleft,impingementsignright,apleysscratchleft,apleysscratchright,subacrominalpushleft,subacrominalpushright,dawbarnsleft,dawbarnsright,yergasonsleft,yergasonsright,codmansleft,codmansright,apprehensionleft,apprehensionright,neurological,latdeltoidleft,latdeltoidright,latarmleft,latarmright,thirdleft,thirdright,medforearmleft,medforearmright,medelbowleft,medelbowright,shdleft,shdright,elbflexleft,elbflexright,elbextleft,elbextright,digitflexionleft,digitflexionright,digitabdleft,digitabdright,bicepsleft,bicepsright,brachioradleft,brachioradright,tricepsleft,tricepsright,overhead,lifting,other,otherdefict,comments,patientstatus,diagnosis1,diagnosis2,diagnosis3,diagnosis4,diagnosis5,times,weeks,spinaldecompression,chiropractic,physicaltherapy,bracing,modalities,supplementation,hep,radiographic,mri,scan,conduction,emg,outsiderefferal,dc,others,othervalue,signature)values('"
-	    	 		 +shoulderexamdetails.getPname()+
-	    	 		 "','"+shoulderexamdetails.getDate()	    	 			    	 		
+	    	 String cmd="INSERT INTO shoulderexam(username,pname,date,muscle,swelling,ao,dysfunction,pectoralisminor,supraspinatus,infraspinatus,serratusant,teresminor,teresmajor,rhomboids,trapezius,note,functional,orthotpedic,flexionleft,flexionright,extensionleft,extensionright,abductionleft,abductionright,adductionleft,adductionright,internalrotationleft,internalrotationright,externalrotationleft,externalrotationright,emptycanleft,emptycanright,impingementsignleft,impingementsignright,apleysscratchleft,apleysscratchright,subacrominalpushleft,subacrominalpushright,dawbarnsleft,dawbarnsright,yergasonsleft,yergasonsright,codmansleft,codmansright,apprehensionleft,apprehensionright,neurological,latdeltoidleft,latdeltoidright,latarmleft,latarmright,thirdleft,thirdright,medforearmleft,medforearmright,medelbowleft,medelbowright,shdleft,shdright,elbflexleft,elbflexright,elbextleft,elbextright,digitflexionleft,digitflexionright,digitabdleft,digitabdright,bicepsleft,bicepsright,brachioradleft,brachioradright,tricepsleft,tricepsright,overhead,lifting,other,otherdefict,comments,patientstatus,diagnosis1,diagnosis2,diagnosis3,diagnosis4,diagnosis5,times,weeks,spinaldecompression,chiropractic,physicaltherapy,bracing,modalities,supplementation,hep,radiographic,mri,scan,conduction,emg,outsiderefferal,dc,others,othervalue,signature)values('"
+	    			 +username+
+	    			"','"+shoulderexamdetails.getPname()
+	    			+"','"+shoulderexamdetails.getDate()	    	 			    	 		
 	    	 		 +"','"+shoulderexamdetails.getMuscle()
 	    	 		 +"','"+shoulderexamdetails.getSwelling()
 	    	 		 +"','"+shoulderexamdetails.getAo()	    	 		
@@ -612,6 +613,144 @@ public class ShoulderexamDAO
 	    return shoulderexam;
 		
 	}
+	public List<ShoulderExam> getusernameShoulderexamDetails(String username){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<ShoulderExam> shoulderexam = new ArrayList<ShoulderExam>();
+	    try{
+	    	System.out.print("database");
+			resultSet = statement.executeQuery("select * from shoulderexam where username='"+username+"'");
+			while(resultSet.next()){
+				
+					shoulderexam.add(new ShoulderExam(resultSet.getString("shoulderexamno"),
+							resultSet.getString("pname"),
+							resultSet.getString("date"),						
+							resultSet.getString("muscle"),
+							resultSet.getString("swelling"),
+							resultSet.getString("ao"),
+							resultSet.getString("dysfunction"),
+							resultSet.getString("pectoralisminor"),
+							resultSet.getString("supraspinatus"),
+							resultSet.getString("infraspinatus"),
+							resultSet.getString("serratusant"),
+							resultSet.getString("teresminor"),
+							resultSet.getString("teresmajor"),
+							resultSet.getString("rhomboids"),
+							resultSet.getString("trapezius"),
+							resultSet.getString("note"),
+							resultSet.getString("functional"),
+							resultSet.getString("orthotpedic"),
+							resultSet.getString("flexionleft"),
+							resultSet.getString("flexionright"),
+							resultSet.getString("extensionleft"),
+							resultSet.getString("extensionright"),
+							resultSet.getString("abductionleft"),
+							resultSet.getString("abductionright"),
+							resultSet.getString("adductionleft"),
+							resultSet.getString("adductionright"),
+							resultSet.getString("internalrotationleft"),
+							resultSet.getString("internalrotationright"),
+							resultSet.getString("externalrotationleft"),
+							resultSet.getString("externalrotationright")
+							,resultSet.getString("emptycanleft"),
+							resultSet.getString("emptycanright"),
+							resultSet.getString("impingementsignleft"),
+							resultSet.getString("impingementsignright"),
+							resultSet.getString("apleysscratchleft"),
+							resultSet.getString("apleysscratchright"),
+							resultSet.getString("subacrominalpushleft"),
+							resultSet.getString("subacrominalpushright"),
+							resultSet.getString("dawbarnsleft"),
+							resultSet.getString("dawbarnsright"),
+							resultSet.getString("yergasonsleft"),
+							resultSet.getString("yergasonsright"),
+							resultSet.getString("codmansleft"),
+							resultSet.getString("codmansright"),
+							resultSet.getString("apprehensionleft"),
+							resultSet.getString("apprehensionright"),
+							resultSet.getString("neurological")
+							,resultSet.getString("latdeltoidleft"),
+							resultSet.getString("latdeltoidright"),
+							resultSet.getString("latarmleft"),
+							resultSet.getString("latarmright"),
+							resultSet.getString("thirdleft"),
+							resultSet.getString("thirdright"),
+							resultSet.getString("medforearmleft"),
+							resultSet.getString("medforearmright"),
+				    	resultSet.getString("medelbowleft"),
+				    	resultSet.getString("medelbowright"),
+				    	resultSet.getString("shdleft"),
+				    	resultSet.getString("shdright"),
+				    	resultSet.getString("elbflexleft"),
+				    	resultSet.getString("elbflexright"),
+				    	resultSet.getString("elbextleft"),
+				    	resultSet.getString("elbextright"),
+				    	resultSet.getString("digitflexionleft"),
+				    	resultSet.getString("digitflexionright"),
+				    	resultSet.getString("digitabdleft"),
+				    	resultSet.getString("digitabdright"),
+				    	resultSet.getString("bicepsleft"),
+				    	resultSet.getString("bicepsright"),
+				    	resultSet.getString("brachioradleft"),
+				    	resultSet.getString("brachioradright"),
+				    	resultSet.getString("tricepsleft"),
+				    	resultSet.getString("tricepsright"),
+				    	resultSet.getString("overhead"),
+				    	resultSet.getString("lifting"),			    	
+				    	resultSet.getString("other"),
+				    	resultSet.getString("otherdefict"),
+				    	resultSet.getString("comments"),
+				    	resultSet.getString("patientstatus"),
+				    	resultSet.getString("diagnosis1"),
+				    	resultSet.getString("diagnosis2"),
+				    	resultSet.getString("diagnosis3"),
+				    	resultSet.getString("diagnosis4"),
+				    	resultSet.getString("diagnosis5"),
+				    	resultSet.getString("times"),
+				    	resultSet.getString("weeks"),
+				    	resultSet.getString("spinaldecompression"),
+				    	resultSet.getString("chiropractic"),
+				    	resultSet.getString("physicaltherapy"),
+				    	resultSet.getString("bracing"),
+				    	resultSet.getString("modalities"),
+				    	resultSet.getString("supplementation"),
+				    	resultSet.getString("hep"),
+				    	resultSet.getString("radiographic"),
+				    	resultSet.getString("mri"),
+				    	resultSet.getString("scan"),
+				    	resultSet.getString("conduction"),
+				    	resultSet.getString("emg") ,
+				    	resultSet.getString("outsiderefferal"),
+				    	resultSet.getString("dc"),
+				    	resultSet.getString("others"),
+				    	resultSet.getString("othervalue"),
+				    	resultSet.getString("signature"))); 
+				}
+			}
+				    	    
+			   	
+			
+	    catch(Exception e){
+	    	System.out.println(e.toString());
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    }finally{
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);	    	
+	    }
+	    return shoulderexam;
+		
+	}
+	
 	public List<ShoulderExam> getlimitedshoulderexam(int page) {
 		Connection con = null;
 		Statement statement = null;

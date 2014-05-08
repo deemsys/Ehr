@@ -2,6 +2,7 @@ package bephit.model;
 
 public class Hamiltonchiropractic {
 	private String initialexamid;
+	private String checked;
 	private String patient_id;	
 	private String hacheck;
 	private String ha;
@@ -601,6 +602,17 @@ public class Hamiltonchiropractic {
 	public void setInitialexamid(String initialexamid) {
 		this.initialexamid = initialexamid;
 	}
+
+
+	public String getChecked() {
+		return checked;
+	}
+
+
+	public void setChecked(String checked) {
+		this.checked = checked;
+	}
+
 
 	public String getHacheck() {
 		return hacheck;

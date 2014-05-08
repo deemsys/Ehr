@@ -20,7 +20,7 @@ public class FootexamDAO
 	public void setDataSource(DataSource dataSource) {
 		this.dataSource = dataSource;
 	}
-	public int setfootexam(FootExam footexamdetails)
+	public int setfootexam(FootExam footexamdetails,String username)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -35,8 +35,9 @@ public class FootexamDAO
 			e1.printStackTrace();
 		}
 	    try{
-	    	 String cmd="INSERT INTO footexam(pname,date,gait,muscle,swelling,ao,pronation,supination,calcaneus,valgus,forefoot,forefootvalgus,dysfunction,note,functional,orthotpedic,plantarflexionleft,plantarflexionright,dorsiflexionleft,dorsiflexionright,inversionleft,inversionright,eversionleft,eversionright,greattoeextensionleft,greattoeextensionright,greattoeflexionleft,greattoeflexionright,tinelstapleft,tinelstapright,achillestapleft,achillestapright,longleft,longright,thompsonsleft,thompsonsright,drawerleft,drawerright,lateralleft,lateralright,medialstabilityleft,medialstabilityright,neurological,inguinalarealeft,inguinalarearight,antleft,antright,kneeleft,kneeright,medialleft,medialright,latleft,latright,plantarleft,plantarright,iliopsoasfirstleft,iliopsoasfirstright,iliopsoas1left,iliopsoas1right,kneeextensionleft,kneeextensionright,kneeflexionleft,kneeflexionright,dorsiflexionleft1,dorsiflexionright1,pfleft,pfright,patellarleft,patellarright,hsleft,hsright,achillesleft,achillesright,walking,standing,stairs,other,otherdefict,comments,patientstatus,diagnosis1,diagnosis2,diagnosis3,diagnosis4,diagnosis5,times,weeks,spinaldecompression,chiropractic,physicaltherapy,bracing,modalities,supplementation,hep,radiographic,mri,scan,conduction,emg,outsidereferral,dc,others,othervalue,signature)values('"
-	    	 		 +footexamdetails.getPname()+
+	    	 String cmd="INSERT INTO footexam(username,pname,date,gait,muscle,swelling,ao,pronation,supination,calcaneus,valgus,forefoot,forefootvalgus,dysfunction,note,functional,orthotpedic,plantarflexionleft,plantarflexionright,dorsiflexionleft,dorsiflexionright,inversionleft,inversionright,eversionleft,eversionright,greattoeextensionleft,greattoeextensionright,greattoeflexionleft,greattoeflexionright,tinelstapleft,tinelstapright,achillestapleft,achillestapright,longleft,longright,thompsonsleft,thompsonsright,drawerleft,drawerright,lateralleft,lateralright,medialstabilityleft,medialstabilityright,neurological,inguinalarealeft,inguinalarearight,antleft,antright,kneeleft,kneeright,medialleft,medialright,latleft,latright,plantarleft,plantarright,iliopsoasfirstleft,iliopsoasfirstright,iliopsoas1left,iliopsoas1right,kneeextensionleft,kneeextensionright,kneeflexionleft,kneeflexionright,dorsiflexionleft1,dorsiflexionright1,pfleft,pfright,patellarleft,patellarright,hsleft,hsright,achillesleft,achillesright,walking,standing,stairs,other,otherdefict,comments,patientstatus,diagnosis1,diagnosis2,diagnosis3,diagnosis4,diagnosis5,times,weeks,spinaldecompression,chiropractic,physicaltherapy,bracing,modalities,supplementation,hep,radiographic,mri,scan,conduction,emg,outsidereferral,dc,others,othervalue,signature)values('"
+	    			 +username+
+	    			"','" +footexamdetails.getPname()+
 	    	 		 "','"+footexamdetails.getDate()
 	    	 		 +"','"+footexamdetails.getGait()	    	 		
 	    	 		 +"','"+footexamdetails.getMuscle()
@@ -345,6 +346,141 @@ public class FootexamDAO
 	}
 	
 	
+	public List<FootExam> getusernamefootexamDetails(String username){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<FootExam> footexam = new ArrayList<FootExam>();
+	    try{
+	    	System.out.print("database");
+			resultSet = statement.executeQuery("select * from footexam where username='"+username+"'");
+			while(resultSet.next()){
+				footexam.add(new FootExam(resultSet.getString("footexamno"),
+						resultSet.getString("pname"),
+						resultSet.getString("date"),
+						resultSet.getString("gait"),
+						resultSet.getString("muscle"),
+						resultSet.getString("swelling"),
+						resultSet.getString("ao"),
+						resultSet.getString("pronation"),
+						resultSet.getString("supination"),
+						resultSet.getString("calcaneus"),
+						resultSet.getString("valgus"),
+						resultSet.getString("forefoot"),
+						resultSet.getString("forefootvalgus"),
+						resultSet.getString("dysfunction"),
+						resultSet.getString("note"),
+						resultSet.getString("functional"),
+						resultSet.getString("orthotpedic"),
+						resultSet.getString("plantarflexionleft"),
+						resultSet.getString("plantarflexionright"),
+						resultSet.getString("dorsiflexionleft"),
+						resultSet.getString("dorsiflexionright"),
+						resultSet.getString("inversionleft"),
+						resultSet.getString("inversionright"),
+						resultSet.getString("eversionleft"),
+						resultSet.getString("eversionleft"),
+						resultSet.getString("greattoeextensionleft"),
+						resultSet.getString("greattoeextensionright"),
+						resultSet.getString("greattoeflexionleft"),
+						resultSet.getString("greattoeflexionright")
+						,resultSet.getString("tinelstapleft"),
+						resultSet.getString("tinelstapright"),
+						resultSet.getString("achillestapleft"),
+						resultSet.getString("achillestapright"),
+						resultSet.getString("longleft"),
+						resultSet.getString("longright"),
+						resultSet.getString("thompsonsleft"),
+						resultSet.getString("thompsonsright"),
+						resultSet.getString("drawerleft"),
+						resultSet.getString("drawerright"),
+						resultSet.getString("lateralleft"),
+						resultSet.getString("lateralright"),
+						resultSet.getString("medialstabilityleft"),
+						resultSet.getString("medialstabilityright"),resultSet.getString("neurological")
+						,resultSet.getString("inguinalarealeft"),
+						resultSet.getString("inguinalarearight"),
+						resultSet.getString("antleft"),
+						resultSet.getString("antright"),
+						resultSet.getString("kneeleft"),
+						resultSet.getString("kneeright"),
+						resultSet.getString("medialleft"),
+						resultSet.getString("medialright"),
+			    	resultSet.getString("latleft"),
+			    	resultSet.getString("latright"),
+			    	resultSet.getString("plantarleft"),
+			    	resultSet.getString("plantarright"),
+			    	resultSet.getString("iliopsoasfirstleft"),
+			    	resultSet.getString("iliopsoasfirstright"),
+			    	resultSet.getString("iliopsoas1left"),
+			    	resultSet.getString("iliopsoas1right"),
+			    	resultSet.getString("kneeextensionleft"),
+			    	resultSet.getString("kneeextensionright"),
+			    	resultSet.getString("kneeflexionleft"),
+			    	resultSet.getString("kneeflexionright"),
+			    	resultSet.getString("dorsiflexionleft1"),
+			    	resultSet.getString("dorsiflexionright1"),
+			    	resultSet.getString("pfleft"),
+			    	resultSet.getString("pfright"),
+			    	resultSet.getString("patellarleft"),
+			    	resultSet.getString("patellarright"),
+			    	resultSet.getString("hsleft"),
+			    	resultSet.getString("hsright"),
+			    	resultSet.getString("achillesleft"),
+			    	resultSet.getString("achillesright"),
+			    	resultSet.getString("walking"),
+			    	resultSet.getString("standing"),
+			    	resultSet.getString("stairs"),
+			    	resultSet.getString("other"),
+			    	resultSet.getString("otherdefict"),
+			    	resultSet.getString("comments"),
+			    	resultSet.getString("patientstatus"),
+			    	resultSet.getString("diagnosis1"),
+			    	resultSet.getString("diagnosis2"),
+			    	resultSet.getString("diagnosis3"),
+			    	resultSet.getString("diagnosis4"),
+			    	resultSet.getString("diagnosis5"),
+			    	resultSet.getString("times"),
+			    	resultSet.getString("weeks"),
+			    	resultSet.getString("spinaldecompression"),
+			    	resultSet.getString("chiropractic"),
+			    	resultSet.getString("physicaltherapy"),
+			    	resultSet.getString("bracing"),
+			    	resultSet.getString("modalities"),
+			    	resultSet.getString("supplementation"),
+			    	resultSet.getString("hep"),
+			    	resultSet.getString("radiographic"),
+			    	resultSet.getString("mri"),
+			    	resultSet.getString("scan"),
+			    	resultSet.getString("conduction"),
+			    	resultSet.getString("emg") ,
+			    	resultSet.getString("outsidereferral"),
+			    	resultSet.getString("dc"),
+			    	resultSet.getString("others"),
+			    	resultSet.getString("othervalue"),
+			    	resultSet.getString("signature")));
+			    	    
+			System.out.println("patientname"+footexam.get(0).getPname());    	
+			}
+	    }catch(Exception e){
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    }finally{
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);	    	
+	    }
+	    return footexam;
+		
+	}
+
 	public List<FootExam> getfootexamDetails(String footexamno){
 		Connection con = null;
 		Statement statement = null;

@@ -12,9 +12,10 @@
 		<intercept-url pattern="/physicalexam" access="ROLE_DOCTOR" />
 		<form-login login-page="/login" default-target-url="/welcome"
 			authentication-failure-url="/loginfailed" />
+			<session-management invalid-session-url="/login" />
 		<logout logout-success-url="/logout" />
 	</http>
-	
+		
 	 <authentication-manager>
 	   <authentication-provider>
 		<jdbc-user-service data-source-ref="dataSource"
