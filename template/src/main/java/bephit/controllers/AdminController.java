@@ -1126,32 +1126,28 @@ public String editworkschooldetails(@RequestParam("username")String username, Ht
 
 	
 	@RequestMapping(value = "/insertlettertopatient", method = RequestMethod.POST)
-	public String insert_lettertopatient(
-			HttpServletRequest request,
-			HttpSession session,
+	public String insert_lettertopatient(HttpServletRequest request,HttpSession session,
 			@ModelAttribute("Lettertopatients") @Valid Lettertopatients lettertopatientsdetails,
 			BindingResult result, ModelMap model) {
+		String username=request.getParameter("user");
+		System.out.println("username"+username+"user"+request.getParameter("username"));
+		model.addAttribute("username",username);
 		session.setAttribute("letterto",lettertopatientsdetails);
+		model.addAttribute("menu", "fax");
 		if (result.hasErrors()) {
 			LettertopatientsForm lettertopatientsform = new LettertopatientsForm();
-			lettertopatientsform.setLettertopatientsdetails(lettertopatientsDAO
-					.getlettertopatients());
+			lettertopatientsform.setLettertopatientsdetails(lettertopatientsDAO.getlettertopatients());
 			model.addAttribute("lettertopatientsform", lettertopatientsform);
-			model.addAttribute("Success", "true");
-			model.addAttribute("menu", "letterto");
 			return "lettertopatients";
 		}
-
-
-		// System.out.println(perrychiropracticdetails.getAddress()+""+perrychiropracticdetails.getAddress1());
 		lettertopatientsDAO.setlettertopatients(lettertopatientsdetails,request.getParameter("user"));
-		LettertopatientsForm lettertopatientsform = new LettertopatientsForm();
-		lettertopatientsform.setLettertopatientsdetails(lettertopatientsDAO
-				.getlettertopatients());
-		model.addAttribute("lettertopatientsform", lettertopatientsform);
-       return "lettertopatients";
-	 
-}
+		/*LettertopatientsForm lettertopatientsform = new LettertopatientsForm();
+		lettertopatientsform.setLettertopatientsdetails(lettertopatientsDAO.getlettertopatients());*/
+		//model.addAttribute("lettertopatientsform", lettertopatientsform);
+		model.addAttribute("success", "true");
+		model.addAttribute("menu","fax");
+		return "lettertopatients";
+		}
 
 
 	@RequestMapping(value = "/insertnoticeofassignment", method = RequestMethod.POST)
