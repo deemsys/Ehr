@@ -222,7 +222,7 @@ do not receive a response, we will act in reliance that you will comply with it'
               </tr><br>
               </table>
               
-               <table><tr> <td><input type="submit" class="submit_btn" value="Save"  OnClick ="return valid();"></td>
+               <table><tr> <td><input type="submit" class="submit_btn" value="Update"  OnClick ="return valid();"></td>
            
                
                <td><a href="deletenoticeassignment?noticeid=${noticeassignmentdetails.noticeid}"style="color:white" class="submit_btn" onclick="return confirmation()" >Delete</a></td> 
