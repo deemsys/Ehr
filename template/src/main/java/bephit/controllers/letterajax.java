@@ -163,7 +163,7 @@ public class letterajax {
 	@RequestMapping(value="/editlettertopatients", method = RequestMethod.GET)
 	public String editlettertopatients(@RequestParam("username")String username, HttpSession session,ModelMap model) {		
 		LettertopatientsForm lettertopatientsform=new LettertopatientsForm();
-		lettertopatientsform.setLettertopatientsdetails(lettertopatientsDAO.getlettertopatients(username));
+		lettertopatientsform.setLettertopatientsdetails(lettertopatientsDAO.getusernamelettertopatients(username));
 		model.addAttribute("lettertopatientsform",lettertopatientsform);
 		model.addAttribute("menu","fax");	
 		return "editlettertopatients";
