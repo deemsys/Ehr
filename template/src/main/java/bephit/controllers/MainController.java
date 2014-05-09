@@ -1713,7 +1713,10 @@ public class MainController {
 		session.removeAttribute("waiver");
 		model.addAttribute("menu", "health");
 		if(patientDAO.getUsername(principal).size()>0)
-			{			
+			{	
+			String name="";			
+			name=patientDAO.getUsername(principal).get(0).getName();
+			model.addAttribute("name",name);
 		   model.addAttribute("patientno","0");
 		}
 		if(planDAO.getInsuranceplanUsername(principal).size()>0)

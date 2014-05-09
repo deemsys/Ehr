@@ -84,7 +84,7 @@
 		BENEFITS FOR ACCIDENT</p></tr></table>
 		<table cellpadding="0" cellspacing="0" border="0" width="100%">
 		<tr class="row1">
-        <td ><input type="text" class="input_txtbx1" name="pat_name" id="pat_name" placeholder="Patient's Name" /> <span class="err"><form:errors path="Insuranceplan.pat_name"></form:errors></span></td>
+        <td ><input type="text" class="input_txtbx1" name="pat_name" value="${name}" id="pat_name" placeholder="Patient's Name" /> <span class="err"><form:errors path="Insuranceplan.pat_name"></form:errors></span></td>
         </tr>
         <tr class="row1">
         <td ><input type="text" class="input_txtbx1" name="accident_date" id="datepicker" placeholder="Date of Accident" /> <span class="err"><form:errors path="Insuranceplan.accident_date"></form:errors> </span></td>

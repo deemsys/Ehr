@@ -293,6 +293,34 @@ $(function() {
     $( "#amount" ).val(+ $( "#slider" ).slider( "value" ) );
   });
 
+$(function() {
+    $( "#slider1" ).slider({
+      value:1,
+      min: 0,
+      max: 10,
+      step: 1,
+      slide: function( event, ui ) {
+        $( "#amount1" ).val(+ ui.value );
+      }
+    });
+    $( "#amount1" ).val(+ $( "#slider1" ).slider( "value" ) );
+  });
+
+
+
+$(function() {
+    $( "#slider2" ).slider({
+      value:1,
+      min: 0,
+      max: 10,
+      step: 1,
+      slide: function( event, ui ) {
+        $( "#amount2" ).val(+ ui.value );
+      }
+    });
+    $( "#amount2" ).val(+ $( "#slider2" ).slider( "value" ) );
+  });
+
 </script>
   
  <body>
@@ -864,8 +892,11 @@ function elbowPopup() {
 				                  <td class="input_txt"><input type="checkbox" name="valsalvalo" value="Localized">Localized</td>				                 
 				                  </tr>
 				                  <tr class="row1">
-				                  <td>Spinal Percuss</td>
-				                  <td>Painlevel</td>
+				                  <td>Spinal Percussion</td>
+				                   <td>
+<label for="amount1"><b>Pain Scale:</b></label>
+	 <input type="text" id="amount1" style="border:0; color:#f6931f; font-weight:bold;" name="painscale1" />&nbsp;&nbsp;&nbsp;
+ <div id="slider1"></div></td>
 				                  <td><input type="text" name="spinal_percuss"></td>				                 
 				                  </tr>
 				                  <tr class="row1">
@@ -934,8 +965,11 @@ function elbowPopup() {
 				                  </tr>
 				                 
 				                  <tr class="row1">
-				                  <td>Spinal Percuss</td>
-				                  <td>Painlevel</td>
+				                  <td>Spinal Percussion</td>
+				                  <td> 
+<label for="amount2"><b>Pain Scale:</b></label>
+	 <input type="text" id="amount2" style="border:0; color:#f6931f; font-weight:bold;" name="painscale2" />&nbsp;&nbsp;&nbsp;
+ <div id="slider2"></div></td></td>
 				                  <td></td>				                 
 				                  </tr>
 			                     <tr class="row1">
@@ -945,7 +979,7 @@ function elbowPopup() {
 				                  </tr>
          <tr class="row1">
 				                  <td>Sheppal Sign</td>
-				                    <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="sheppal_signr" value="Pain When Bending towards Thoracic Lesison">Pain When Bending towards Thoracic Lesison</td>
+				                    <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="sheppal_signr" value="Pain When Bending towards Thoracic Leison">Pain When Bending towards Thoracic Leison</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="sheppal_signl" value="Pain When Bending away from Thoracic Leison">Pain When Bending away from Thoracic Lesion</td>				                  			                    			                 
 				                  </tr>
    <tr class="row1">
