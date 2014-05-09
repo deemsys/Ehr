@@ -312,13 +312,9 @@ public class AdminController {
 		model.addAttribute("perrychiropracticform", perrychiropracticform);
 
 		model.addAttribute("menu", "perry");
-<<<<<<< .mine
+
 		session.removeAttribute("peri");
 				return "editperrychiropractic";
-=======
-		session.removeAttribute("peri");
-		return "editperrychiropractic";
->>>>>>> .r552
 
 	}
 	@RequestMapping(value = "/editperrychiropracticdetails", method = RequestMethod.GET)
