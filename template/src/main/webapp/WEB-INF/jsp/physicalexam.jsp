@@ -1069,16 +1069,16 @@ $(function(){
 				               <td><b>MYOTOMES:</td>
 				                  </tr>
 				                  <tr class="row1">
-				                   <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="myotomes" value="Positive Beevors" class="input_txt" checked="true" onclick="toggle3('show3')">Positive Beevor's</td>
+				                   <td valign="top" align="left" class="input_txt">Positive Beevors</td>
+				                  	<!-- <input type="radio" name="myotomes" value="Positive Beevors" class="input_txt" checked="true" onclick="toggle3('show3')">Positive Beevor's</td> -->
 				                    <td><input type="checkbox" name="positiveruq" value="RUQ">RUQ</td>
 				                    <td><input type="checkbox" name="positiveluq" value="LUQ">LUQ</td>
 				                    <td><input type="checkbox" name="positiverlq" value="RLQ">RLQ</td>
 				                    <td><input type="checkbox" name="positivellq" value="LLQ">LLQ</td>
 				                  </tr>
 				                  <tr class="row1">
-				                   <td valign="top" align="left" class="input_txt">
-				                   <input type="radio" name="myotomes1" value="Negative Beevors" class="input_txt"  onclick="toggle3('hide3')">Negative Beevor's</td>
+				                   <td valign="top" align="left" class="input_txt">Negative Beevors</td>
+				                  <!--  <input type="radio" name="myotomes1" value="Negative Beevors" class="input_txt"  onclick="toggle3('hide3')">Negative Beevor's</td> -->
 				                    
 				                    <td><input type="checkbox" name="negativeruq" value="RUQ">RUQ</td>
 				                    <td><input type="checkbox" name="negativeluq" value="LUQ">LUQ</td>
@@ -2783,16 +2783,16 @@ $(function(){
 				                  <tr class="row1">
 				                   <td valign="top" align="left" class="input_txt">
 				                  	<tr class="row1">
-				                   <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="myotomes" value="Positive Beevors" class="input_txt"  onclick="toggle3('show3')"<c:if test="${physical.myotomes=='Positive Beevors'}"><c:out value="checked=checked"/></c:if>>Positive Beevor's</td>
+				                   <td valign="top" align="left" class="input_txt">Positive Beevors</td>
+				                  	<%-- <input type="radio" name="myotomes" value="Positive Beevors" class="input_txt"  onclick="toggle3('show3')"<c:if test="${physical.myotomes=='Positive Beevors'}"><c:out value="checked=checked"/></c:if>>Positive Beevor's</td> --%>
 				                    <td><input type="checkbox" name="positiveruq" value="RUQ" <c:if test="${physical.positiveruq=='RUQ'}"><c:out value="checked=checked"/></c:if>>RUQ</td>
 				                    <td><input type="checkbox" name="positiveluq" value="LUQ" <c:if test="${physical.positiveluq=='LUQ'}"><c:out value="checked=checked"/></c:if>>LUQ</td>
 				                    <td><input type="checkbox" name="positiverlq" value="RLQ" <c:if test="${physical.positiverlq=='RLQ'}"><c:out value="checked=checked"/></c:if>>RLQ</td>
 				                    <td><input type="checkbox" name="positivellq" value="LLQ" <c:if test="${physical.positivellq=='LLQ'}"><c:out value="checked=checked"/></c:if>>LLQ</td>
 				                  </tr>
 				                  <tr class="row1">
-				                   <td valign="top" align="left" class="input_txt">
-				                   <input type="radio" name="myotomes1" value="Negative Beevors" class="input_txt"  onclick="toggle3('hide3')">Negative Beevor's</td>
+				                   <td valign="top" align="left" class="input_txt">Negative Beevors</td>
+				                 <!--   <input type="radio" name="myotomes1" value="Negative Beevors" class="input_txt"  onclick="toggle3('hide3')">Negative Beevor's</td> -->
 				                    
 				                    <td><input type="checkbox" name="negativeruq" value="RUQ" <c:if test="${physical.negativeruq=='RUQ'}"><c:out value="checked=checked"/></c:if>>RUQ</td>
 				                    <td><input type="checkbox" name="negativeluq" value="LUQ" <c:if test="${physical.negativeluq=='LUQ'}"><c:out value="checked=checked"/></c:if>>LUQ</td>
