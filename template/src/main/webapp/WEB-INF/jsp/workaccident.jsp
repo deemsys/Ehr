@@ -700,7 +700,7 @@ else
 function Checkpos(val){
  var element=document.getElementById('doyou');
  if(val=='other')
-   element.style.display='block';
+   element.style.display='table-row';
  else  
    element.style.display='none';
 } 
@@ -709,7 +709,7 @@ function Checkpos(val){
 function Checklight(val){
  var element=document.getElementById('lighting');
  if(val=='others')
-   element.style.display='block';
+   element.style.display='table-row';
  else  
    element.style.display='none';
 } 
@@ -744,7 +744,7 @@ else
 function work(val){
  var element=document.getElementById('warea');
  if(val=='Other')
-   element.style.display='block';
+   element.style.display='table-row';
  else  
    element.style.display='none';
 } 

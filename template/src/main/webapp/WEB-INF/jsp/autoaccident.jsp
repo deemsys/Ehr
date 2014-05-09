@@ -728,8 +728,8 @@ $(function() {
 				  </td>
 				  </tr> 
 				  </table>
-				  <div id="accident_hospital">
-				  <table cellpadding="0" cellspacing="0" border="0" width="100%" >
+				  <!-- <div > -->
+				  <table cellpadding="0" cellspacing="0" border="0" width="100%" id="accident_hospital">
 				   <tr class="row2">
                   <td valign="middle" align="left" class="input_txt" >Name of the hospital</td><td width="20"></td><!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
 				  
@@ -782,7 +782,7 @@ $(function() {
 				   
 				  </table>
 				  
-				  </div>
+				 <!--  </div> -->
 				  
 				  </div>
 				  </div>
@@ -1512,7 +1512,7 @@ $(function() {
 function CheckConditions(val){
  var element=document.getElementById('conditions');
  if(val=='other')
-   element.style.display='block';
+   element.style.display='table-row';
  else  
    element.style.display='none';
 } 
@@ -1521,7 +1521,7 @@ function CheckConditions(val){
 function Checkposition(val){
  var element=document.getElementById('body_position1');
  if(val=='others')
-   element.style.display='block';
+   element.style.display='table-row';
  else  
    element.style.display='none';
 } 
@@ -1530,7 +1530,7 @@ function Checkposition(val){
 function CheckHeadposition(val){
  var element=document.getElementById('head_position1');
  if(val=='others')
-   element.style.display='block';
+   element.style.display='table-row';
  else  
    element.style.display='none';
 } 
@@ -1539,7 +1539,7 @@ function CheckHeadposition(val){
 function CheckPatientposition(val){
  var element=document.getElementById('patient_body1');
  if(val=='otherbody')
-   element.style.display='block';
+   element.style.display='table-row';
  else  
    element.style.display='none';
 } 
@@ -1592,7 +1592,7 @@ else
 function Checksymptom(val){
  var element=document.getElementById('symptom');
  if(val=='hours' ||  val=='days')
-   element.style.display='block';
+   element.style.display='table-row';
  else  
    element.style.display='none';
 } 
@@ -1602,7 +1602,7 @@ function Checksymptom(val){
 function Checkhospital(val){
  var element=document.getElementById('hospital1');
  if(val=='other hos')
-   element.style.display='block';
+   element.style.display='table-row';
  else  
    element.style.display='none';
 } 
@@ -1616,12 +1616,12 @@ function Check(val){
 
  if(val=='hospital'){
 
-   element.style.display='block';
+   element.style.display='table-row';
    element1.style.display='none';
  }
  else if(val =='otheracc'){
 	 
-	 element1.style.display='block';
+	 element1.style.display='table-row';
 	 element.style.display='none';
  }
  else {
