@@ -1554,7 +1554,10 @@ public class MainController {
 	public String insuranceinformation(Principal principal,HttpSession session,ModelMap model) {
 		model.addAttribute("menu", "health");
 		if(patientDAO.getUsername(principal).size()>0)
-			{			
+			{		
+			String name="";			
+			name=patientDAO.getUsername(principal).get(0).getName();
+			model.addAttribute("name",name);
 		   model.addAttribute("patientno","0");
 		}
 		System.out.println(""+infoDAO.getusernameInsuranceinformation(principal)+""+infoDAO.getusernameInsuranceinformation(principal).size());
@@ -1582,6 +1585,7 @@ public class MainController {
 			if(patientDAO.getUsername(principal).size()>0)
 				{			
 			   model.addAttribute("patientno","0");
+			   
 			}
 			InsuranceinformationForm insuranceinformationForm= new InsuranceinformationForm();
 	    	insuranceinformationForm.setInsuranceinformation(infoDAO.getInsuranceinformation());
@@ -1770,7 +1774,10 @@ public class MainController {
 		session.removeAttribute("hard");
 		 model.addAttribute("menu", "authorization");
 		if(patientDAO.getUsername(principal).size()>0)
-			{			
+			{	
+			String name="";			
+			name=patientDAO.getUsername(principal).get(0).getName();
+			model.addAttribute("name",name);
 		   model.addAttribute("patientno","0");
 		}
 		if(hardDAO.getUsernameHardshipagreement(principal).size()>0)
@@ -2273,7 +2280,10 @@ public class MainController {
 		session.removeAttribute("consent");
 
 		if(patientDAO.getUsername(principal).size()>0)
-			{			
+			{		
+			String name="";			
+			name=patientDAO.getUsername(principal).get(0).getName();
+			model.addAttribute("name",name);
 		   model.addAttribute("patientno","0");
 		}
 		if(treatDAO.getUsernameTreatDetails(principal).size()>0)
@@ -2565,7 +2575,10 @@ public class MainController {
 	{
 String username=principal.getName();
 		if(patientDAO.getUsername(principal).size()>0)
-			{			
+			{	
+			String name="";			
+			name=patientDAO.getUsername(principal).get(0).getName();
+			model.addAttribute("name",name);
 		   model.addAttribute("patientno","0");
 		}
 		if(screenDAO.getusernameScreening(username).size()>0)
@@ -2789,7 +2802,10 @@ String username=principal.getName();
 		{
 			session.removeAttribute("assignment");
 			if(patientDAO.getUsername(principal).size()>0)
-			{			
+			{	
+				String name="";			
+				name=patientDAO.getUsername(principal).get(0).getName();
+				model.addAttribute("name",name);
 		   model.addAttribute("patientno","0");
 		}
 			model.addAttribute("menu", "authorization");
@@ -3017,7 +3033,10 @@ String username=principal.getName();
 	public String Hippaprivacy(HttpSession session,ModelMap model,Principal principal)
 	{
 		if(patientDAO.getUsername(principal).size()>0)
-		{			
+		{	
+			String name="";			
+			name=patientDAO.getUsername(principal).get(0).getName();
+			model.addAttribute("name",name);
 	   model.addAttribute("patientno","0");
 	}
 		if(hippaDAO.getusernameHippa(principal).size()>0)
