@@ -336,7 +336,10 @@ public class SymptomController {
 	public String exam(HttpSession session, ModelMap model,Principal principal) {
 		session.removeAttribute("symptoms");
 		if(patientDAO.getUsername(principal).size()>0)
-		{			
+		{	
+			String name="";			
+			name=patientDAO.getUsername(principal).get(0).getName();
+			model.addAttribute("name",name);
 	   model.addAttribute("patientno","0");
 	}
 		model.addAttribute("menu", "symptom");
