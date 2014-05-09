@@ -61,7 +61,7 @@
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
        		  <tr >
        		  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Print Patients Name
-              <input type="text" class="input_txtbx1" name="print_pat_name" id="print_pat_name" /><span class="err"><form:errors path="Hardshipagreement.print_pat_name"></form:errors></span></td>
+              <input type="text" class="input_txtbx1" name="print_pat_name" id="print_pat_name" value="${name}"/><span class="err"><form:errors path="Hardshipagreement.print_pat_name"></form:errors></span></td>
               </tr>
               </table>
               <br>

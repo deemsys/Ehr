@@ -165,7 +165,7 @@ document.getElementById("phone").value=phone;
               <br>
               <tr class="row1">
               <td><span class="err">*</span>Patient's Name</td>
-              <td> <input type="text" class="input_txtbx1" name="patient_name" id="patient_name" /><br><span class="err"><form:errors path="Insuranceinformation.patient_name"></form:errors></td>
+              <td> <input type="text" class="input_txtbx1" name="patient_name" id="patient_name" value="${name}" /><br><span class="err"><form:errors path="Insuranceinformation.patient_name"></form:errors></td>
               </tr>
               <tr class="row1">
               <td><span class="err">*</span>Date of Accident/injury</td>

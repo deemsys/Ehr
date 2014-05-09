@@ -80,7 +80,7 @@
                         <tr class="row1">
                         <td valign="middle" align="left" class="input_txt"><span class="err">*</span>PrintPatientname: </td>
 				                   <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="printpname" />
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="printpname" value="${name}"/>
 				                  	<br><span class="err"><form:errors path="HippaPrivacy.printpname"></form:errors>
 				                  	</td>
 				                  	</tr>

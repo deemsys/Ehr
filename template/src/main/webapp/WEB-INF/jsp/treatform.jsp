@@ -60,7 +60,7 @@
                         <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>PatientsName: </td>
 				                  <td valign="top" align="left" class="input_txt" width="200">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="patientsname"/><span class="err"><form:errors path="Treatform.patientsname"></form:errors></span></td>
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="patientsname" value="${name}"/><span class="err"><form:errors path="Treatform.patientsname"></form:errors></span></td>
 				                  	</tr>
                         <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patients Signature: </td>

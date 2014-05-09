@@ -86,7 +86,7 @@ and exclusively in the name of Perry Chiropractic and Therapy Center, such sums 
                        <tr width="500"class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Name: </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="patientname" /><br><span class="err"><form:errors path="Assignment.patientname"></form:errors></td>
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="patientname" value="${name}"/><br><span class="err"><form:errors path="Assignment.patientname"></form:errors></td>
 				                  	<td valign="middle" width="50%">Date</td>
 				                  	<td valign="top"><input type="text" class="input_txtbx1" id="datepicker" name="patientdate" /><span class="err"><form:errors path="Assignment.patientdate"></form:errors></span></td>
 				                  	</tr>
