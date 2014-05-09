@@ -49,6 +49,9 @@ $(function() {
   function checkSubmit()
   {
   
+ 
+   alert("hello new");
+ 
  document.getElementById("flexerr").innerHTML="";
  if(isNaN(document.getElementById("flexion").value))
  {
@@ -195,14 +198,10 @@ $(function() {
   document.getElementById("sirerr").innerHTML="Invalid character. please enter numbers only";
   return false;
   }
-  var IsNumeric=true;
-  alert("hello");
-  IsNumeric=document.getElementById("cmabovel").value;
-  if(IsNumeric.value==false)
-  alert(pls decimals);
-  return false;
+
   }     
   </script>
+  
 </head>
  <body>
  <br><br>
@@ -247,7 +246,7 @@ $(function() {
  <td></td>
  </tr>
  <tr class="row1">
- <td width="200">Gait:</td><td><select style="width:180px" name="gait" id="gait"  onchange='Checksymptom(this.value);'>
+   <td width="200">Gait:</td><td> <select style="width:180px" name="gait" id="gait"  onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="normal" >Normal</option>
 					<option value="antalgic">Antalgic</option>
 					<option value="shuffling">Shuffling</option>
@@ -255,7 +254,7 @@ $(function() {
 					<option value="stagger">Stagger</option>
 					<option value="caneassited">Cane Assisted</option>
 					<option value="wheelchair">Wheel Chair</option>
-					</select></td> 
+					</select> </td> 
  <td></td> 
  <td></td>
  </tr>
@@ -347,7 +346,7 @@ $(function() {
  <td><b>Apley's Compress (Meniscus):	</b> </td><td><input type="text" name="apleysl" size="5"> <input type="text" name="apleysr" size="5"></td>
  </tr>
   <tr class="row1">
- <td>Left &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="cmabovel" id="cmabovel" size="8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="suprapatellarl" size="8"></td><td><input type="text" name="infrapatellarl" size="8"> </td>  
+ <td>Left &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="cmabovel" id="cmabovel" size="8" value="" onclick="return validate('this');">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="suprapatellarl" size="8"></td><td><input type="text" name="infrapatellarl" size="8"> </td>  
  <td><input type="text" name="belowl" size="8"></td>
  <td><b>Apley's Distraction (Cor ligs):		</b> </td><td><input type="text" name="distractionl" size="5"> <input type="text" name="distractionr" size="5"> </td>
  </tr>
@@ -540,14 +539,16 @@ $(function() {
 </table>
 <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="Save" onclick="return checkSubmit('this');"></td>
+<td><input type="submit" class="submit_btn" value="Save" onclick="return checkSubmit('this');" onclick="return check(cmabovel);"></td>
 <td><input type="reset" class="submit_btn" value="Cancel" onclick="myclose()"></td>
+<td></td>
 <script>
  function myclose()
  {
 	 window.close();
  }
  </script>
+ </td>
 </tr>
 </table>			                  	
 	
@@ -880,14 +881,16 @@ $(function() {
 	</table>
 	<table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="Save" onclick="return checkSubmit('this');"></td>
+<td><input type="submit" class="submit_btn" value="Save" onclick="return checkSubmit('this');"  onclick="return check(cmabovel);"></td>
 <td><input type="reset" class="submit_btn" value="Cancel" onclick="myclose()"></td>
+<td></td>
 <script>
  function myclose()
  {
 	 window.close();
  }
  </script>
+ </td>
 </tr>
 </table>			                  	
 				                  	
