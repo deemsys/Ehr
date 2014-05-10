@@ -7,37 +7,37 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Insuranceplan {
 	
 	private String no;
-	@NotEmpty 
+	
 	private String insure_comp;
 	
-	@NotEmpty
+	
 	private String addr;
 	
-	@NotEmpty
+	
 	private String pat_name;
 	
-	@NotEmpty
+	
 	private String accident_date;
 	
-	@NotEmpty
+	
 	private String enrollee;
 	
 	
 	private String no_objection;
 	
-	@NotEmpty
+	
 	private String agentname;
 	
-	@NotEmpty
+	
 	private String fax;
 	
-	@NotEmpty
+	
 	private String name_of_clinic;
 	
-	@NotEmpty
+	
 	private String pat;
 	
-	@NotEmpty
+	
 	private String authorized;
 	
 	
