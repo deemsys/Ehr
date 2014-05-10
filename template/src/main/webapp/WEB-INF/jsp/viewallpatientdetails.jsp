@@ -25,6 +25,15 @@
 			        </div>
 			        <div class="contentbox">
 			      <!--   <form action="findPatients" method="GET">  --> 
+			     <form action="findpatient" method="GET">
+			  <table><tr><td>Last Name:</td><td><input type="text" name="lastname" value="${lastname}"></td>
+			  <td>Attorney:</td><td><input type="text" name="NameOfAttorney" value="${attorney}"></td>
+			  <td>Type of Accident:</td><td><input type="text" name="accident" value="${accident}"></td>
+			  <td>Date of Accident</td><td><input type="text" name="dateofaccident" id="datepicker" value="${dateofaccident}"></td>
+			  <td width="300"></td><td><input type="submit" value="Find" class="submit_btn"></td></tr></table>    
+			      
+			      </form>
+			    
 			      <form action="patientDetails" method="POST"> 
 						<table cellpadding="0" cellspacing="0" border="0" width="100%">
 				     <tr class="title">

@@ -4950,10 +4950,10 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
     	moretestForm.setMoretest(moreDAO.getMoretest());
 		model.addAttribute("Moretest",moretestForm);
 		 model.addAttribute("menu", "doctor");
-		
+			model.addAttribute("menu", "soapnotes");
 		
 
-		return "moretest";
+		return "soapnotes";
  
 	}
 		@RequestMapping(value="/soapnotes", method = RequestMethod.GET)

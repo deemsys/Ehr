@@ -1841,6 +1841,10 @@ public class Physicalexam {
 		}
 		public void setBabinskileft(String babinskileft) {
 			this.babinskileft = babinskileft;
+		}	
+	
+		public Physicalexam() {
+			super();
 		}
 		public Physicalexam(String physical_id, String patient_id, String sign,
 				String name, String id, String date, String age, String sex,

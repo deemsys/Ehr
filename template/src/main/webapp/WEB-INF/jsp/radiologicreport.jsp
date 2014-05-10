@@ -641,7 +641,7 @@ $(function() {
 				   <td>&nbsp;&nbsp;</td>
              		 <!-- <td valign="top" align="center"><br><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewradiologicreport'"></td> -->
 				  <td>&nbsp;&nbsp;</td>
-				    <td valign="top" align="center"><br><input type="reset" class="submit_btn" value="Cancel"></td>
+				    <td valign="top" align="center"><br><a href="doctorsearch" style="color:white;text-decoration: none" class="submit_btn">Cancel</a></td>
 				 			 
 				  </tr>
 				  </table>
@@ -1243,7 +1243,7 @@ $(function() {
                   								<td><input type="submit" class="submit_btn1" value="Save" name="insert" onclick="return checkSubmit('this');"></td>
                   								
 				                    
-				                    <td><input type="button" class="submit_btn1" value="Cancel" onclick="window.location.href='viewradiologicreport'"></td>
+				                    <td><a href="doctorsearch" style="color:white;text-decoration: none" class="submit_btn">Cancel</a></td>
                     
                 </tr>
                 </table>

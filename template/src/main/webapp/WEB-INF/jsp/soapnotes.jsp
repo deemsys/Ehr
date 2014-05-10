@@ -298,7 +298,7 @@ document.getElementById("leftproxi").style.display="none";
 							+ $im
 							+ ')" style="text-decoration:none;"><input type="submit" class="submit_btn" value="CANCEL"  /></a></td></tr></table>';
 							
-							alert(newdiv.innerHTML);
+							//alert(newdiv.innerHTML);
 					document.getElementById(divName).appendChild(newdiv);
 					$im++;
 					flagm++;
@@ -974,7 +974,7 @@ document.getElementById("leftproxi").style.display="none";
 				                   <table align="right"> <tr>
 				                   <td><input type="submit" class="submit_btn" value="Save" onclick="return check('this')"></td>
 				                   <!-- <td><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewsoapnotes'"></td> -->
-				                   <td><input type="reset" class="submit_btn" value="Cancel"></td>
+				                   <td><a href="doctorsearch" style="color:white;text-decoration: none" class="submit_btn">Cancel</a></td>
 				                   </tr>
 				                   </table>
 				                   </c:when>
@@ -1675,7 +1675,7 @@ document.getElementById("leftproxi").style.display="none";
 				                   </table>
  <table align="right"> <tr>
 				                   <td><input type="submit" class="submit_btn" value="Save"></td>
-				                   <td><input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='viewsoapnotes'"></td>
+				                   <td><a href="doctorsearch" style="color:white;text-decoration: none" class="submit_btn">Cancel</a></td>
 				                   </tr>
 				                   </table>
 				                   
