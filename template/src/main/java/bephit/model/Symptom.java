@@ -6,12 +6,12 @@ public class Symptom
 {  
 	private String symptomno; 
 	
-	@NotEmpty
+	
 	private String pname;	
 	
 	private String number;
 	
-	@NotEmpty
+	
 	private String date;
 	
 	private String achepath;	
