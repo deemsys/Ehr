@@ -4957,9 +4957,17 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
  
 	}
 		@RequestMapping(value="/soapnotes", method = RequestMethod.GET)
-	public String soapnotes(HttpSession session,ModelMap model) {
+	public String soapnotes(HttpSession session,ModelMap model,Principal principal) {
 			session.removeAttribute("soap");
 			String username=(String) session.getAttribute("username");
+			if(patientDAO.getUsername(principal).size()>0)
+			{	
+			String name="";			
+			name=patientDAO.getUsername(principal).get(0).getName();
+			model.addAttribute("name",name);
+		   model.addAttribute("patientno","0");
+		
+		}
 			if(soapDAO.getusernameSoapnotes(username).size()>0)
 			{
 				SoapnotesForm soapnotesForm = new SoapnotesForm();       
