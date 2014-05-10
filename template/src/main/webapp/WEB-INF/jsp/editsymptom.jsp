@@ -1128,15 +1128,33 @@ w=0;
 
 	function checkSubmit()
 	{
-		document.getElementById("numbererror").innerHTML="";
-		if(isNaN(document.getElementById("number").value))
-		{
-		document.getElementById("numbererror").innerHTML="Enter Numbers Only.";
-		return false;
-		}
 		
+			/* document.getElementById("pnameerror").innerHTML="";
+			
+			if(isNaN(document.getElementById("pname").value))
+			{
+			document.getElementById("pnameerror").innerHTML="Required";
+			return false;
+			} */
+			
+			
+			document.getElementById("numbererror").innerHTML="";
 		
-		}
+			if(isNaN(document.getElementById("number").value))
+			{
+			document.getElementById("numbererror").innerHTML="Enter Numbers Only";
+			return false;
+			}
+			
+	document.getElementById("datepickererror").innerHTML=" ";
+			
+			if(document.getElementById("datepicker").value=="")
+			{
+			document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty ";
+			
+			return false;
+			}
+			}
 </script>
   
 
@@ -1159,9 +1177,9 @@ w=0;
 	     <div class="contentbox">
 	  <c:set value="${symptomform.symptomdetails[0]}" var="symptomdetails"/>
           <table cellpadding="0" cellspacing="0" border="0" width="100%" height="20">
-          <tr><td width="5%" ><span class="err">*</span>Name</td><td ><input type="hidden" name="symptomno" value="${symptomdetails.symptomno} "><input type="text" name="pname" value="${symptomdetails.pname} "><span class="err"><form:errors path="symptom.pname"></form:errors></td>
+          <tr><td width="5%" ><span class="err">*</span>Name</td><td ><input type="hidden" name="symptomno" value="${symptomdetails.symptomno} "><input type="text" name="pname" id="pname" value="${symptomdetails.pname} "><span id="pnameerror" style="color: red;font-style:italic;"><form:errors path="symptom.pname"></form:errors></td>
 <td  width="5%">Number</td><td ><input type="text" name="number" value="${symptomdetails.number}" id="number"><span id="numbererror" style="color: red;font-style:italic;"></span></td>
-<td width="5%"><span class="err">*</span>Date</td><td ><input type="text" name="date" value="${symptomdetails.date}" id="datepicker"><span class="err"><form:errors path="symptom.date"></form:errors></td>
+<td width="5%"><span class="err">*</span>Date</td><td ><input type="text" name="date" value="${symptomdetails.date}" id="datepicker"><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="symptom.date"></form:errors></td>
 </tr></table>
 </br>
 <table cellpadding="0" cellspacing="0" border="0" width="98%" >
