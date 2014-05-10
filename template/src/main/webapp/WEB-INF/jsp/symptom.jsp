@@ -333,7 +333,7 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
 
  
  </script>  -->
-  <script>
+  <!-- <script>
  $(window).load(function(){
 	 
 	  $("#number").keyup(function() {
@@ -355,7 +355,7 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
 		})
 
  });
- </script>
+ </script> -->
   <script> 
   
   $(function() {
@@ -1332,7 +1332,19 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
 
   </script>
 
+<script>
 
+	function checkSubmit()
+	{document.getElementById("numbererror").innerHTML="";
+		if(isNaN(document.getElementById("number").value))
+		{
+		document.getElementById("numbererror").innerHTML="Enter Numbers Only.";
+		return false;
+		}
+		
+		
+		}
+</script>
    
   
 
@@ -1358,10 +1370,10 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
 	      <c:choose>
 		 <c:when test="${empty symptoms}">
 	 
-          <table cellpadding="0" cellspacing="0" border="0" width="98%" height="20" >
-          <tr><td width="100"><span class="err">*</span>Name</td><td width="300"><input type="text" name="pname" value="${name}"><span class="err"><form:errors path="symptom.pname"></form:errors></td>
-<td  width="100">Number</td><td width="100"><input type="text" name="number" id="number"> <span id="numbererror" > </span></td>
-<td  width="100" align="right"><span class="err">*</span>Date </td><td width="300"><input type="text" name="date" id="datepicker"><span class="err"><form:errors path="symptom.date"></form:errors></td>
+          <table cellpadding="0" cellspacing="0" border="0" width="100%" height="20" >
+          <tr><td width="5%"><span class="err">*</span>Name</td><td width="5%"><input type="text" name="pname" value="${name}"><span class="err"><form:errors path="symptom.pname"></form:errors></td>
+<td  width="5%">Number</td><td width="5%"><input type="text" name="number" id="number"> <span id="numbererror" style="color: red;font-style:italic;" > </span></td>
+<td  width="5%" ><span class="err">*</span>Date </td><td width="5%"><input type="text" name="date" id="datepicker"><span class="err"><form:errors path="symptom.date"></form:errors></td>
 </tr></table>
 </br>
 <p>Please be sure to fill this form out extremely accurately.Mark the area(s) on your body where you feel the described sensation(s).Use the appropriate symbol(s).Mark areas of radiating pain, and include all affected areas.You may draw on the face as well.</p>
@@ -1912,11 +1924,14 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
  --%>   
    <table cellpadding="0" cellspacing="0" border="0" width="98%" >
           <tr><td width="100"><span class="err">*</span>Name</td><td width="300"><input type="hidden" name="symptomno" value="${symptoms.symptomno} "><input type="text" name="pname" value="${symptoms.pname} "><span class="err"><form:errors path="symptom.pname"></form:errors></td>
-<td  width="100">Number</td><td width="100"><input type="text" name="number" value="${symptoms.number}"></td>
+<td  width="100">Number</td><td width="100"><input type="text" name="number" value="${symptoms.number}" id="number"></td><span id="numbererror" style="color: red;font-style:italic;"></span>
 <td width="100" align="right"><span class="err">*</span>Date</td><td width="300"><input type="text" name="date" value="${symptoms.date}" id="datepicker"><span class="err"><form:errors path="symptom.date"></form:errors></td>
 </tr></table>
 </br>
+<table cellpadding="0" cellspacing="0" border="0" width="98%" >
+<tr><td width="100">
 <p>Please be sure to fill this form out extremely accurately.Mark the area(s) on your body where you feel the described sensation(s).Use the appropriate symbol(s).Mark areas of radiating pain, and include all affected areas.You may draw on the face as well.</p>
+</td></tr></table>
  <div style="width: 320;height:300;border-bottom-color: red;;border-color: black;" class="ui-widget-content"  id="snaptarget"><table width="98%"><tr><td align="right">
     <img  alt="" src="resources/images/bodyfront.png"> </td><td align="left" valign="top" width="55"><img   alt="" src="resources/images/face.png" >
  </td><td align="left">
@@ -2275,7 +2290,7 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
     </c:choose>
 </br>
 </br>
-<table width="100" align="right"><tr ><td  ><input  type="submit" value="Save" class="submit_btn"></td><td ><a href="viewsymptom" style="color: white" class="submit_btn">Cancel</a></td></tr>
+<table width="100" align="right"><tr ><td  ><input  type="submit" value="Save" class="submit_btn" onclick="return checkSubmit('this');"></td><td ><a href="viewsymptom" style="color: white" class="submit_btn">Cancel</a></td></tr>
 </table>
 </form>
 <div id="position"></div><div id="position1"></div>
