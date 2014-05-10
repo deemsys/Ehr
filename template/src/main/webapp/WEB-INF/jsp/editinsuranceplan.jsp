@@ -13,7 +13,7 @@
   line-height:18px;}
   
   </STYLE>
- <script>
+ <!-- <script>
  $(window).load(function(){
 	  $("#enrollee").keyup(function() {
 			
@@ -34,7 +34,7 @@
 		})
 
 });
-</script>
+</script> -->
 <script type="text/javascript">
   function confirmation() 
 	{
@@ -58,6 +58,88 @@
        
  
 </script>
+<script>
+
+	function checkSubmit()
+	{
+		document.getElementById("insure_comperror").innerHTML=" ";
+		
+		if(document.getElementById("insure_comp").value=="")
+		{
+		document.getElementById("insure_comperror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		document.getElementById("addrerror").innerHTML="";
+	if(document.getElementById("addr").value=="")
+		{
+		document.getElementById("addrerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+			
+			
+	document.getElementById("datepickererror").innerHTML="";
+	if(document.getElementById("datepicker").value=="")
+	{
+	document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	
+	document.getElementById("enrolleeerror").innerHTML="";
+	if(document.getElementById("enrollee").value=="")
+	{
+	document.getElementById("enrolleeerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("enrolleeerror").innerHTML="";
+	if(isNaN(document.getElementById("enrollee").value))
+	{
+	document.getElementById("enrolleeerror").innerHTML="Enter Only Numbers";
+	return false;
+	}
+	document.getElementById("agentnameerror").innerHTML="";
+	if(document.getElementById("agentname").value=="")
+	{
+	document.getElementById("agentnameerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("faxerror").innerHTML="";
+	if(document.getElementById("fax").value=="")
+	{
+	document.getElementById("faxerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("name_of_clinicerror").innerHTML="";
+	if(document.getElementById("name_of_clinic").value=="")
+	{
+	document.getElementById("name_of_clinicerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("paterror").innerHTML="";
+	if(document.getElementById("pat").value=="")
+	{
+	document.getElementById("paterror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("authorizederror").innerHTML="";
+	if(document.getElementById("authorized").value=="")
+	{
+	document.getElementById("authorizederror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	}
+
+	</script>
 </head>
  <body>
 <div id="right_content">
@@ -77,12 +159,12 @@
                
               <tr class="row1">
               <c:set value="${insuranceplanform.insuranceplan[0]}" var="Insuranceplan"> </c:set>
-              <td width="100%"><input type="text" class="input_txtbx1" name="insure_comp" id="insure_comp" placeholder="Name of Insurance Company" value="${Insuranceplan.insure_comp}" /><%-- <span class="err"><form:errors path="Insuranceplan.insure_comp"></form:errors> --%></td>
+              <td width="100%"><input type="text" class="input_txtbx1" name="insure_comp" id="insure_comp" placeholder="Name of Insurance Company" value="${Insuranceplan.insure_comp}" /> <span id="insure_comperror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.insure_comp"></form:errors> </td>
             	 <input type="hidden" class="input_txtbx1" id="inp_id" value="${Insuranceplan.no}" name="no" />
               </tr>
               <tr class="row1"> 
               <td width="100%">
-              <input type="text" class="input_txtbx1" name="addr" id="addr" placeholder="Address" value="${Insuranceplan.addr}"/><%-- <span class="err"><form:errors path="Insuranceplan.addr"></form:errors> --%></td>
+              <input type="text" class="input_txtbx1" name="addr" id="addr" placeholder="Address" value="${Insuranceplan.addr}"/><span id="addrerror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.addr"></form:errors> </td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -94,11 +176,11 @@
         <td ><input type="text" class="input_txtbx1" name="pat_name" id="pat_name" placeholder="Patient's Name" value="${Insuranceplan.pat_name}"/><%-- <span class="err"><form:errors path="Insuranceplan.pat_name"></form:errors> --%></td>
         </tr>
         <tr class="row1">
-        <td ><input type="text" class="input_txtbx1" name="accident_date" id="datepicker" placeholder="Date of Accident" value="${Insuranceplan.accident_date}"/><%-- <span class="err"><form:errors path="Insuranceplan.accident_date"></form:errors> --%></td>
+        <td ><input type="text" class="input_txtbx1" name="accident_date" id="datepicker" placeholder="Date of Accident" value="${Insuranceplan.accident_date}"/> <span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.accident_date"></form:errors></td>
         </tr>
         <tr class="row1">
-        <td ><input type="text" class="input_txtbx1" name="enrollee" id="enrollee" placeholder="Subscriber/Enrollee No" value="${Insuranceplan.enrollee}" /><%-- <span class="err"><form:errors path="Insuranceplan.enrollee"></form:errors> --%>
-        <br><span class="err" id="enrolleeerror"></span>
+        <td ><input type="text" class="input_txtbx1" name="enrollee" id="enrollee" placeholder="Subscriber/Enrollee No" value="${Insuranceplan.enrollee}" /><span id="enrolleeerror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.enrollee"></form:errors> 
+        <br></span>
         </td>
         </tr>
         </table>
@@ -120,13 +202,13 @@
         <td>By</td>
         </tr> 
          <tr class="row1">
-        <td><input type="text" class="input_txtbx1" name="agentname" id="agentname" placeholder="Authorized Company Representative" value="${Insuranceplan.agentname}"/><%-- <span class="err"><form:errors path="Insuranceplan.by"></form:errors> --%></td>
+        <td><input type="text" class="input_txtbx1" name="agentname" id="agentname" placeholder="Authorized Company Representative" value="${Insuranceplan.agentname}"/><span id="agentnameerror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.by"></form:errors></td>
         <td></td>
         <td></td>
         </tr>
         <tr class="row1">
         <td width="100%">Please fax this back to&nbsp;&nbsp;
-        <input type="text" class="input_txtbx1" name="fax" id="fax" placeholder="Clinic's Fax No" value="${Insuranceplan.fax}"/><br><%-- <span class="err"><form:errors path="Insuranceplan.fax"></form:errors> --%></td>
+        <input type="text" class="input_txtbx1" name="fax" id="fax" placeholder="Clinic's Fax No" value="${Insuranceplan.fax}"/><br><span id="faxerror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.fax"></form:errors> </td>
         <td width="100%"></td>
         <td></td>
         </tr>
@@ -137,12 +219,12 @@
         <tr class="row1">
         <td></td>
         
-        <td align="center"><input type="text" class="input_txtbx1" name="name_of_clinic" id="name_of_clinic" placeholder="Name of clinic" value="${Insuranceplan.name_of_clinic}"/><br><%-- <span class="err"><form:errors path="Insuranceplan.name_of_clinic"></form:errors> --%></td>
+        <td align="center"><input type="text" class="input_txtbx1" name="name_of_clinic" id="name_of_clinic" placeholder="Name of clinic" value="${Insuranceplan.name_of_clinic}"/><br><span id="name_of_clinicerror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.name_of_clinic"></form:errors> </td>
         <td></td>
         </tr>
         <tr class="row1">
-        <td><input type="text" class="input_txtbx1" name="pat" id="pat" placeholder="Patient" value="${Insuranceplan.pat}"/><%-- <span class="err"><form:errors path="Insuranceplan.pat"></form:errors> --%></td>
-        <td align="center"><input type="text" class="input_txtbx1" name="authorized" id="authorized" placeholder="Authorized Clinic Representative" value="${Insuranceplan.authorized}"/><br><%-- <span class="err"><form:errors path="Insuranceplan.authorized"></form:errors> --%></td>
+        <td><input type="text" class="input_txtbx1" name="pat" id="pat" placeholder="Patient" value="${Insuranceplan.pat}"/><span  id="paterror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.pat"></form:errors></td>
+        <td align="center"><input type="text" class="input_txtbx1" name="authorized" id="authorized" placeholder="Authorized Clinic Representative" value="${Insuranceplan.authorized}"/><br> <span  id="authorizederror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.authorized"></form:errors> </td>
         <td></td>
         </tr>
        </table>
@@ -150,7 +232,7 @@
         <table>
         <tr>
      	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> 
-        <td><br><input type="submit" class="submit_btn" value="Update"></td>
+        <td><br><input type="submit" class="submit_btn" value="Update" onclick="return checkSubmit('this');"></td>
         <td>&nbsp;&nbsp;</td>
         <td><br><a href="deleteinsuranceplan" class="submit_btn" style="text-decoration: none;color:white" onclick="return confirmation() ">Delete</a></td>
         </tr>
