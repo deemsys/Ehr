@@ -36,6 +36,7 @@ import bephit.dao.DoctorsearchDAO;
 import bephit.dao.DutiesunderDAO;
 import bephit.dao.FootexamDAO;
 import bephit.dao.FootquestionnarieDAO;
+
 import bephit.dao.HamiltonchiropracticDAO;
 import bephit.dao.HardshipagreementDAO;
 import bephit.dao.HippaDAO;
@@ -71,6 +72,7 @@ import bephit.forms.AutoaccidentForm;
 
 import bephit.forms.DoctorsearchForm;
 import bephit.forms.DoctorsignupForm;
+import bephit.forms.HamiltonForm;
 import bephit.forms.HamiltonchiropracticForm;
 import bephit.forms.HardshipagreementForm;
 import bephit.forms.HippaPrivacyForm;
@@ -201,6 +203,7 @@ public class MainController {
 	
 	@Autowired
 	QuadraplevisualDAO quadraplevisualDAO;
+	
 	
 	
 	static int id;
@@ -699,7 +702,7 @@ public class MainController {
 
 	
 	@RequestMapping(value="/hamiltonchiropractic", method = RequestMethod.POST)
-	public String insert_hamiltonchiropractic(@ModelAttribute("Hamiltonchiropractic")  @Valid Hamiltonchiropractic hamiltonchiropractic,BindingResult result,ModelMap model) {
+	public String insert_hamiltonchiropractic(@ModelAttribute("Hamiltonchiropractic")  @Valid Hamiltonchiropractic hamiltonchiropractic,@ModelAttribute("Hamilton")  @Valid Hamilton hamilton, BindingResult result,ModelMap model) {
 		/*if(result.hasErrors())
 		{
 			HamiltonchiropracticForm hamiltonchiropracticForm= new HamiltonchiropracticForm();
@@ -712,7 +715,7 @@ public class MainController {
 		*/
 		model.put("Hamiltonchiropractic", hamiltonchiropractic);
 		model.addAttribute("hamiltonchiropracticForm",hamiltonchiropractic);
-    	int a=hamiDAO.setHamiltonchiropractic(hamiltonchiropractic);
+    	int a=hamiDAO.setHamiltonchiropractic(hamiltonchiropractic,hamilton);
     	HamiltonchiropracticForm hamiltonchiropracticForm= new HamiltonchiropracticForm();
     	hamiltonchiropracticForm.setHamiltonchiropractic(hamiDAO.getHamiltonchiropractic());
 		model.addAttribute("hamiltonchiropracticForm",hamiltonchiropracticForm);
@@ -723,7 +726,9 @@ public class MainController {
 		return "radiologicreport";
  
 	}
-		
+	
+	
+	
 	@RequestMapping(value="/viewfirsthamiltonchiropractic", method = RequestMethod.GET)
 	public String viewhamiltonchiropractic(HttpServletRequest request,ModelMap model) {
 		
@@ -809,36 +814,39 @@ public class MainController {
 	}
 	
 	
-	@RequestMapping(value="/updatehamiltonchiropractic", method=RequestMethod.POST)
-	public String updatehamiltonchiropractic(HttpServletRequest request,@ModelAttribute("Hamiltonchiropractic") @Valid Hamiltonchiropractic hamiltonchiropractic,
-			BindingResult result,ModelMap model,Principal principal)
-	{
-		/*if (result.hasErrors())
-		{
-			PhysicalexamForm physicalexamForm = new PhysicalexamForm();
+	//@RequestMapping(value="/updatehamiltonchiropractic", method=RequestMethod.POST)
+	//public String updatehamiltonchiropractic(HttpServletRequest request,@ModelAttribute("Hamiltonchiropractic") @Valid Hamiltonchiropractic hamiltonchiropractic,@ModelAttribute("Hamilton") @Valid Hamilton hamilton,
+	//		BindingResult result,ModelMap model,Principal principal)
+	//{
+	//	/*if (result.hasErrors())
+	//	{
+	//		PhysicalexamForm physicalexamForm = new PhysicalexamForm();
 	     
-	      physicalexamForm.setPhysicalexam(physicalDAO.getPhysical(physicalexam.getPhysical_id()));
+	   //   physicalexamForm.setPhysicalexam(physicalDAO.getPhysical(physicalexam.getPhysical_id()));
 	      
-	        model.addAttribute("physicalexamForm", physicalexamForm);
-			     model.addAttribute("menu", "doctor");
-		        return "editphysicalexam";
-		}
-		*/
-		/*System.out.println("physical id"+physicalexam.getPhysical_id());*/
-		int status = hamiDAO.updatehamiltonchiropractic(hamiltonchiropractic, hamiltonchiropractic.getInitialexamid(), principal.getName());
-		System.out.println(status);
+	    //    model.addAttribute("physicalexamForm", physicalexamForm);
+		//	     model.addAttribute("menu", "doctor");
+		 //       return "editphysicalexam";
+		//}
+		//*/
+		///*System.out.println("physical id"+physicalexam.getPhysical_id());*/
+		//int status = hamiDAO.updatehamiltonchiropractic(hamiltonchiropractic, hamiltonchiropractic.getInitialexamid(), principal.getName());
+		//System.out.println(status);
 		
-		HamiltonchiropracticForm hamiltonchiropracticForm = new HamiltonchiropracticForm();
+		//HamiltonchiropracticForm hamiltonchiropracticForm = new HamiltonchiropracticForm();
         
-       hamiltonchiropracticForm.setHamiltonchiropractic(hamiDAO.getHamiltonchiropractic());
+       //hamiltonchiropracticForm.setHamiltonchiropractic(hamiDAO.getHamiltonchiropractic());
        
-        model.addAttribute("hamiltonchiropracticForm", hamiltonchiropracticForm);
-	       model.addAttribute("success","true");
-	       model.addAttribute("menu", "iniexam");
+       // model.addAttribute("hamiltonchiropracticForm", hamiltonchiropracticForm);
+	    //   model.addAttribute("success","true");
+	   ///    model.addAttribute("menu", "iniexam");
 	    
-	        return "viewfirsthamiltonchiropractic";
+	     //   return "viewfirsthamiltonchiropractic";
 		
-	}
+//
+	
+
+//}
 	
 	@RequestMapping(value="/deletehamiltonchiropractic", method=RequestMethod.GET)
 	public String deletehamiltonchiropractic(@RequestParam("initialexamid") String initialexamid,ModelMap model, Principal principal) {
