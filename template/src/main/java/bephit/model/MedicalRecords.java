@@ -5,11 +5,11 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class MedicalRecords
 {   
 	private String medical_no;
-	@NotEmpty
+	
 	private String name;
-	@NotEmpty
+	
 	private String medicalinformation;
-	@NotEmpty
+
 	private String patientsignature;
 
 

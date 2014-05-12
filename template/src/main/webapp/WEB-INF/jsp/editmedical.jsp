@@ -22,6 +22,23 @@
 	}
 }
   </script>
+  <script>
+
+	function checkSubmit()
+	{
+		document.getElementById("patientsignatureerror").innerHTML=" ";
+		
+		if(document.getElementById("patientsignature").value=="")
+		{
+		document.getElementById("patientsignatureerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		
+	
+	}
+
+	</script>
 </head>
 <body>
 <div id="right_content">
@@ -62,7 +79,7 @@
                          <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Signature:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="patientsignature" value="${Medicaldetails.patientsignature}"/><span class="err"><form:errors path="MedicalRecords.patientsignature"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="patientsignature" name="patientsignature" value="${Medicaldetails.patientsignature}"/><span id="patientsignatureerror" style="color: red;font-style:italic;"><form:errors path="MedicalRecords.patientsignature"></form:errors></span>
 				                  	</td>
 				                  	</tr>
 				                  	</table>
@@ -71,7 +88,7 @@
 				                  	<tr>
 				  <td valign="top" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				
-				<td valign="top" align="center"><br><input type="submit" class="submit_btn" value="Update"></td>
+				<td valign="top" align="center"><br><input type="submit" class="submit_btn" value="Update" onclick="return checkSubmit('this');"></td>
 				<td>&nbsp;&nbsp;</td>
 				 <td><a href="deletemedicalrecordsdetails" class="submit_btn" style="text-decoration: none;color:white" onclick="return confirmation() ">Delete</a></td>
 				  </tr>

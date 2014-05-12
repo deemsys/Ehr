@@ -10,6 +10,25 @@
    line-height:18px;}
    
    </STYLE>
+   <script>
+
+	function checkSubmit()
+	{
+		document.getElementById("patientsignatureerror").innerHTML=" ";
+		
+		if(document.getElementById("patientsignature").value=="")
+		{
+		document.getElementById("patientsignatureerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		
+	
+	}
+
+	</script>
+
+   
 </head>
 <body>
 <div id="right_content">
@@ -50,7 +69,7 @@
                          <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Signature:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="patientsignature" /><span class="err"><form:errors path="MedicalRecords.patientsignature"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="patientsignature" name="patientsignature" /><span id="patientsignatureerror" style="color: red;font-style:italic;"><form:errors path="MedicalRecords.patientsignature"></form:errors></span>
 				                  	</td>
 				                  	</tr>
 				                  	</table>
@@ -71,7 +90,7 @@
                          <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Signature:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="patientsignature" value="${medical.patientsignature}"/><span class="err"><form:errors path="MedicalRecords.patientsignature"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="patientsignature" name="patientsignature" value="${medical.patientsignature}"/><span id="patientsignatureerror" style="color: red;font-style:italic;"><form:errors path="MedicalRecords.patientsignature"></form:errors></span>
 				                  	</td>
 				                  	</tr>
 				                  	</table>
@@ -80,7 +99,7 @@
 				                  	<table>
 				                  	<tr>
 				  <td valign="top" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-				<td valign="top" align="center"><br><input type="submit" class="submit_btn" value="Save"></td>
+				<td valign="top" align="center"><br><input type="submit" class="submit_btn" value="Save" onclick="return checkSubmit('this');"></td>
 				<td>&nbsp;&nbsp;<!-- <a href="medicalrecordslist" class="submit_btn" style="color: white">Cancel</a> --><br><br><br></td>
 				
 				<!--  <td valign="top" align="center"><br><input type="button" class="submit_btn" value="view" onclick="window.location.href='medicalrecordslist'"></td> -->
