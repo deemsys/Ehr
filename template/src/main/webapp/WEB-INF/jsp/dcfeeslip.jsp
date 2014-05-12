@@ -563,6 +563,20 @@ else
 		}
 
 	</script>
+	<script>
+
+	function checkSubmit()
+	{
+	document.getElementById("piderror").innerHTML="";
+		if(isNaN(document.getElementById("pid").value))
+		{
+		document.getElementById("piderror").innerHTML="Invalid character. Please enter numbers only.";
+		return false;
+		}
+		
+		
+		}
+</script>
 
 </head>
  <body>
@@ -1042,8 +1056,7 @@ else
  <tr class="row1">
    <td></td>
  <td width="200">95926 </td><td>SSEP: Lower</td> 
- <td><input type="text" name="sseplower" id="sseplower" size="20" value="0"> </td> 
- 
+<!--  --> <td><input type="text" name="sseplower" id="sseplower" size="20" value="0"></td><!--  -->  
  </tr>
  <tr class="row1">
    <td></td>

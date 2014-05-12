@@ -67,6 +67,27 @@
         }
     });
 </script>
+<script>
+ $(window).load(function(){
+ $("#zipcode").keyup(function() {
+			
+			 $("#zipcodeerror").html(''); 
+			/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
+			var intRegex = /^\d+$/;
+			if(intRegex.test($(this).val())||$(this).val()=='') 
+			{
+				var $in = $(this).val();		 
+			}
+			else if($(this).val()!='')
+				{
+				
+				$("#zipcodeerror").html('Kindly enter a number!!!!');
+				}
+		}).keydown(function() {
+		    oldValue = $(this).val();
+		})
+		});
+</script>
 
 	  <style>
 	  /* force a height so the tabs don't jump as content height changes */
@@ -137,11 +158,11 @@
 				        <td>${patientDetails.state}</td>
 				        </tr>
 				         <tr class="row2">
-				        <td><span class="err">*</span>ZipCode:</td>
+				        <td> <input type="text" name="number" id="zipcode" ><span" class="zipcodeerror">*</span >ZipCode:</td>
 				        <td>${patientDetails.zipCode}</td>
 				        </tr>
 				          <tr class="row1">
-				        <td><span class="err">*</span>Home phone:</td>
+				        <td>  <span    ></span>Home phone:</td>
 				        <td>${patientDetails.homephone}</td>
 				        </tr>
 				         <tr class="row2">

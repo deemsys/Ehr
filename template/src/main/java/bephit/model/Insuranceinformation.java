@@ -8,35 +8,30 @@ public class Insuranceinformation {
 	
 	private String number;
 	
-	@NotEmpty
+	
 	private String patient_name;
-	@NotEmpty
 	private String date_of_accident;
-	@NotEmpty
+	
 	private String have_insurance;
-	@NotEmpty
-	private String employers_name;
-	@NotEmpty
+		private String employers_name;
+	
 	private String insurance_company;
-	@NotEmpty
+	
 	@Pattern(regexp="(^$|[0-9-()]{13})",message="Not a valid Phone number")
 	private String phone;
-	@NotEmpty
+	
 	private String policy;
-	@NotEmpty
+	
 	private String infono;
-	@NotEmpty
-	private String supplemental_company;
-	@NotEmpty
-	@Pattern(regexp="(^$|[0-9-()]{13})",message="Not a valid Phone number")
+		private String supplemental_company;
+		@Pattern(regexp="(^$|[0-9-()]{13})",message="Not a valid Phone number")
 	private String sup_phone;
-	@NotEmpty
-	private String patient_sign;
-	@NotEmpty
+		private String patient_sign;
+	
 	private String date;
-	@NotEmpty
+	
 	private String spouse_sign;
-	@NotEmpty
+	
 	private String date1;
 	
 	

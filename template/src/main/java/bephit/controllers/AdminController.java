@@ -316,6 +316,11 @@ public class AdminController {
 		session.removeAttribute("peri");
 				return "editperrychiropractic";
 
+		
+		
+		
+
+
 	}
 	@RequestMapping(value = "/editperrychiropracticdetails", method = RequestMethod.GET)
 	public String editperrychiropracticdetails(@RequestParam("username") String username, HttpSession session,ModelMap model) {

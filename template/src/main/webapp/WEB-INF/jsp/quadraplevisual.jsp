@@ -190,6 +190,25 @@
 	  });
 
  </script>
+ $(window).load(function(){
+ $("#number").keyup(function() {
+			
+			 $("#numbererror").html(''); 
+			/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
+			var intRegex = /^\d+$/;
+			if(intRegex.test($(this).val())||$(this).val()=='') 
+			{
+				var $in = $(this).val();		 
+			}
+			else if($(this).val()!='')
+				{
+				
+				$("#numbererror").html('Kindly enter a number!!!!');
+				}
+		}).keydown(function() {
+		    oldValue = $(this).val();
+		})
+ </script>
  </head>
  <body>
 <div id="right_content">
@@ -219,7 +238,7 @@
 	             <table>
 	             <tr height="30">
 	             <td width="100">Name</td><td width="400"><input type="hidden" name="patient_id" value="${patientid}"><input type="hidden" name="symptom" id="symptom" value="${symptom}"><input type="text" name="name"></td>
-	             <td width="100">Number</td><td width="400"><input type="text" name="number"></td>
+	             <td width="100">Number</td><td width="400"><input type="text" name="number" id="number"  ><span id="numbererror"></span></td>
 	             <td width="100">Date</td><td width="400"><input type="text"  name="date" id="datepicker" /></td>
 	             </tr>
 	             </table>
@@ -282,7 +301,7 @@
 	             </table>
 	            <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="Save"></td>
+<td><input type="submit" class="submit_btn" value="Save" ></td>
 <td><input type="reset" class="submit_btn" value="Cancel"   onclick="myclose()"></td>
 </tr>
 </table>

@@ -1,17 +1,19 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
-<link rel="stylesheet" href="/resources/css/style.css" />
-<link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
- <script src="resources/js/jquery.min.js"></script>
-  <script src="resources/js/jquery-ui.js"></script>
-  <STYLE type="text/css">
-   P#mypar {font-style:calibri;
-   line-height:18px;}
-   
-   </STYLE>
+
+ <link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
+  <link rel="stylesheet" href="/resources/css/style.css" />
+ <script src="resources/js/jquery.min.js"></script> 
+ <script src="resources/js/jquery-ui.js"></script>
+ <script src="resources/js/jquey-1.9.1.js"></script>
+ <STYLE type="text/css">
+  P#mypar {font-style:calibri;
+  line-height:18px;}
+  
+  </STYLE>
   <script>
   $(function() {
 	    $( "#datepicker" ).datepicker();
@@ -21,6 +23,12 @@
 		  });
 	  $(function() {
 		    $( "#datepicker2" ).datepicker();
+		  });
+		   $(function() {
+		    $( "#datepicker5" ).datepicker();
+		  });
+		    $(function() {
+		    $( "#datepicker6" ).datepicker();
 		  });
   
   </script>
@@ -131,9 +139,9 @@ and exclusively in the name of Perry Chiropractic and Therapy Center, such sums 
                         <table cellpadding="0" cellspacing="0" border="0" width="50%">
                         <tr>
                         <div align="justify">
-				                <p id="mypar">&nbsp;This agreement made this the: <input type="text" class="input_txtbx1" id="inp_id" name="day" value="${assignment.day }"/><span class="err"><form:errors path="Assignment.day"></form:errors></span>
+				                <p id="mypar">&nbsp;This agreement made this the: <input type="text" class="input_txtbx1" id="datepicker6" name="day" value="${assignment.day }"/><span class="err"><form:errors path="Assignment.day"></form:errors></span>
 				                  	  
-				                  	day of <input type="text" class="input_txtbx1" id="inp_id" name="month" value="${assignment.month}"/><span class="err"><form:errors path="Assignment.month"></form:errors></span>
+				                  	day of <input type="text" class="input_txtbx1" id="datepicker5" name="month" value="${assignment.month}"/><span class="err"><form:errors path="Assignment.month"></form:errors></span>
 				                  	2013 between <input type="text" class="input_txtbx1" id="inp_id" name="year" value="${assignment.year}"/><span class="err"><form:errors path="Assignment.year"></form:errors></span>
 				                  	(claimant) and Perry Chiropractic and Therapy Center constitutes an irrevocable and binding agreement between the parties as follows:
 Claimant was involved in an accident on or about the <input type="text" class="input_txtbx1" id="inp_id" name="day1" value="${assignment.day1}"/><span class="err"><form:errors path="Assignment.day1"></form:errors></span>

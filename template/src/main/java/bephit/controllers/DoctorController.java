@@ -2079,7 +2079,8 @@ if(result.hasErrors())
 	       footquestionnarieForm.setFootquestionnariedetails(footDAO.getFoot(username));
 	      
 	        model.addAttribute("footquestionnarieForm", footquestionnarieForm);
-	        model.addAttribute("menu", "hipknee");    
+	        model.addAttribute("menu", "hipknee");
+	        
 		        return "editfootquestionnarie";
 		}
 	   int status = footDAO.updatefootquestionnarie(footquestionnarie,footquestionnarie.getFootquestionno(), principal.getName());
@@ -2087,6 +2088,7 @@ if(result.hasErrors())
 	   FootquestionnarieForm footquestionnarieForm = new FootquestionnarieForm();        
        footquestionnarieForm.setFootquestionnariedetails(footDAO.getusernameFoot(username));       
        model.addAttribute("footquestionnarieForm", footquestionnarieForm);
+       
 	   return "viewfootquestionnarie";
 		
 	}

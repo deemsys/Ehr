@@ -126,6 +126,26 @@ $(function() {
         }
     });
 </script>
+<script>
+
+	function checkSubmit()
+	{
+	alert("hello");
+	document.getElementById("vehicleerr").innerHTML="";
+		if(isNaN(document.getElementById("vehicle").value))
+		{
+		document.getElementById("vehicleerr").innerHTML="Invalid character. Please enter numbers only.";
+		return false;
+		}
+		document.getElementById("vehiclerr").innerHTML="";
+		if(isNaN(document.getElementById("vehicl").value))
+		{
+		document.getElementById("vehiclerr").innerHTML="Invalid character. Please enter numbers only.";
+		return false;
+		}
+		
+		}
+</script>
 <style>
   /* force a height so the tabs don't jump as content height changes */
   #tabs .tabs-spacer { float: left; height: 200px; }
@@ -217,7 +237,7 @@ $(function() {
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="smlinput_txtbx1" id="inp_id" name="vehicle_make" style="width:70px" placeholder="    make"/>
 				  <input type="text" class="smlinput_txtbx1" id="inp_id" name="vehicle_model" style="width:70px" placeholder="     model" />
-				  <input type="text" class="smlinput_txtbx1" id="inp_id" name="vehicle_year" style="width:70px"  placeholder="      year"/>
+				  <input type="text" class="smlinput_txtbx1" id="vehicle" name="vehicle_year" style="width:70px"  placeholder="year"/><span class="err" id="vehicleerr"></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
@@ -238,7 +258,7 @@ $(function() {
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="smlinput_txtbx1" id="inp_id" name="other_vehicle_make" style="width:70px" placeholder="    make" />
 				  <input type="text" class="smlinput_txtbx1" id="inp_id" name="other_vehicle_model" style="width:70px" placeholder="     model" />
-				  <input type="text" class="smlinput_txtbx1" id="inp_id" name="other_vehicle_year" style="width:70px" placeholder="      year"/>
+				  <input type="text" class="smlinput_txtbx1" id="vehicl" name="other_vehicle_year" style="width:70px" placeholder="year"/><span class="err" id="vehiclerr"></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
@@ -314,7 +334,7 @@ $(function() {
 				   <table align="right">
 				               <tr>
 				  
-                     <td><br><input type="button" id="btnNext" class="submit_btn" value="Next"/><br></td>
+                     <td><br><input type="button" id="btnNext" class="submit_btn" value="Next" /><br></td>
                   </tr>
 				               </table>
 				  </td>
@@ -1496,7 +1516,7 @@ $(function() {
 				 <td><input type="button" id="btnPrevious" class="submit_btn" value="Previous"  /></td>
 				 <td>&nbsp;&nbsp;</td>
  
-                  <td><input type="submit" class="submit_btn" value="Save"></td>
+                  <td><input type="submit" class="submit_btn" value="Save" onclick ="return checkSubmit('this')";></td>
                   <td>&nbsp;&nbsp;</td>
                   <td><!-- <a href="viewpatient" class="submit_btn" style="color: white">Cancel</a> --></td>
 				</table> 

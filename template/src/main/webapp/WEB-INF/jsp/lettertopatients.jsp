@@ -283,11 +283,27 @@ function checkSubmit()
 	document.getElementById("signerror").innerHTML="Required Field Should not be Empty";
 	
 	return false;
+	
+	
 	}
 	
 	}
 
 	</script>
+	<script>
+
+	function checkSubmit()
+	{
+	document.getElementById("ssnerror").innerHTML="";
+		if(isNaN(document.getElementById("ssn").value))
+		{
+		document.getElementById("ssnerror").innerHTML="Invalid character. Please enter numbers only.";
+		return false;
+		}
+		
+		
+		}
+</script>
 </head>
  <body>
 <div id="right_content">
@@ -331,7 +347,7 @@ function checkSubmit()
                 <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err">*</span>RE:</td>
-              <td ><input type="text" class="input_txtbx1" name="re" id="re" placeholder="Medical bill" /><span class="reerr" id="reerror"><form:errors path="Lettertopatients.re"></form:errors></span></td>
+              <td ><input type="text" class="input_txtbx1" name="re" id="re" placeholder="Medical bill" /><span class="reerr" id="reerror"  style="color: red;font-style:italic;"><form:errors path="Lettertopatients.re"></form:errors></span></td>
               </tr>
               </table>
             

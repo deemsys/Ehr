@@ -55,6 +55,22 @@ $(function() {
         }
     });
 </script>
+<script>
+
+	function check()
+	{
+	 
+	document.getElementById("emperr").innerHTML="";
+		if(isNaN(document.getElementById("emp").value))
+		{
+		document.getElementById("emperr").innerHTML="Invalid character. Please enter numbers only.";
+		return false;
+		}
+		
+		
+		}
+</script>
+
 <style>
   /* force a height so the tabs don't jump as content height changes */
   #tabs .tabs-spacer { float: left; height: 200px; }
@@ -298,7 +314,7 @@ $(function() {
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>How many employees have been injured doing your job</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="no_of_employees" /><span class="err"><form:errors path="Workaccident.no_of_employees"></form:errors>
+				  <input type="text" class="input_txtbx1" id="emp" name="no_of_employees" /><span class="emperr"><form:errors path="Workaccident.no_of_employees"></form:errors></span><span class="err" id="emperr"></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
@@ -326,7 +342,7 @@ $(function() {
 				  <br>
 				   <table align="right"> <tr><td><input type="button" id="btnPrevious" class="submit_btn" value="Previous" style = "display:none" />&nbsp;</td>
 
-<td valign="top" align="center"><input type="submit" class="submit_btn" value="Save"></td>
+<td valign="top" align="center"><input type="submit" class="submit_btn" value="Save" onclick="return check('this');"></td>
  
              		<!--  <td valign="top" align="center"><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewworkaccident'"></td> -->
 				  
@@ -657,7 +673,7 @@ $(function() {
                 <tr>
                  <td valign="top" align="right"><input type="button" id="btnPrevious" class="submit_btn" value="Previous"></td>
                    <td>&nbsp;&nbsp;</td>
-                   <td valign="top" align="right"><input type="submit" class="submit_btn" value="Save" name="insert"></td>
+                   <td valign="top" align="right"><input type="submit" class="submit_btn" value="Save" name="insert" onclick ="return checkSubmit('this');"></td>
                   	<td>&nbsp;&nbsp;</td>
                   <td valign="top" align="center"><!-- <input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='viewworkaccident'"> --></td>
                 </tr>
