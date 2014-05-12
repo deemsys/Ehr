@@ -45,12 +45,12 @@
         <td valign="top" align="left">
         	<div id="search_div">
 	            <div class="headings altheading">
-	             <h2>Checking for a Patient<h2> 
+	             <h2 align="center">Checking for a Patient<h2> 
 	            </div>
 	            <div class="contentbox">
 	           <table cellpadding="0" cellspacing="0" border="0" width="100%">
 	            <tr class="row1">
-	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">*</span>Please enter a Patient User Name</td>
+	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">*</span>Please enter a Patient &nbsp;&nbsp;User Name</td>
 				  <td valign="top" align="left" class="input_txt" width="200">
 				   <input type="text" class="input_txtbx1" id="inp_id" name="username" /><br/><span class="err"><form:errors path="Doctorsearch.emailid"></form:errors></span>
 				  </td>
@@ -61,6 +61,7 @@
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
               <td valign="top" align="center"><input type="submit" class="submit_btn" value="Submit"></td>
+              <td><a href="viewallpatientdetails" class="submit_btn" style="text-decoration: none;color: white">Cancel</a></td>
               </tr>
               </table>
               </div>

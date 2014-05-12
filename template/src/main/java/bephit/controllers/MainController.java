@@ -1834,7 +1834,8 @@ public class MainController {
 	@RequestMapping(value="/checklistsearch", method = RequestMethod.POST)
 	public String getchecklistsearchdetails(HttpServletRequest request,PatientDetails patientDetails,HttpSession session,@ModelAttribute("Narrativereport")  @Valid Narrativereport narrativereport,BindingResult result,ModelMap model) {
 		String username=request.getParameter("username");
-		session.removeAttribute("staff");		
+		session.removeAttribute("staff");	
+		model.addAttribute("menu", "admin");
 		if(patientDAO.getUsername(username).size()==0)
 		{
 			
@@ -1944,6 +1945,7 @@ public class MainController {
 	
 	@RequestMapping(value="/staffchecklist", method = RequestMethod.POST)
 	public String insert_staffchecklist(HttpServletRequest request,HttpSession session,@ModelAttribute("Staffchecklist")  @Valid Staffchecklist staffchecklist,BindingResult result,ModelMap model) {
+		model.addAttribute("menu", "admin");
 		session.removeAttribute("staff");	
 		session.setAttribute("staff",staffchecklist);
 		String username=request.getParameter("patientusername");
@@ -2053,7 +2055,7 @@ public class MainController {
 		//System.out.println(autoaccident.getAdjustersname());
 	    
 		
-		return "staffdetails";
+		return "checklistsearch";
 	}
 	
 	@RequestMapping(value="/staffdetails", method = RequestMethod.GET)
@@ -2136,6 +2138,7 @@ public class MainController {
 	public String updatestaffchecklist(HttpServletRequest request,@ModelAttribute("Staffchecklist") @Valid Staffchecklist staffchecklist,
 			BindingResult result,ModelMap model,Principal principal)
 	{
+		model.addAttribute("menu", "admin");
 		if (result.hasErrors())
 		{
 			StaffchecklistForm staffchecklistForm = new StaffchecklistForm();	        
@@ -2152,25 +2155,14 @@ public class MainController {
         model.addAttribute("StaffchecklistForm", staffchecklistForm);
 	    model.addAttribute("success","true");
 	    model.addAttribute("menu", "admin");
-	    return "staffdetails";		
+	    return "checklistsearch";		
 	}
 	@RequestMapping(value="/deletestaffchecklist", method=RequestMethod.GET)
 	public String removestaffchecklist(@RequestParam("form_no") String form_no,ModelMap model, Principal principal) {
 	
 		int status=staffDAO.deletestaffchecklist(form_no);
-		
-		if(status==1)
-		{
-        model.addAttribute("success","true");
-		//ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
-		StaffchecklistForm staffchecklistForm = new StaffchecklistForm();
-		//participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
-		staffchecklistForm.setStaffchecklist(staffDAO.getStaffchecklist());
-        model.addAttribute("StaffchecklistForm", staffchecklistForm);
-        model.addAttribute("menu", "admin");
-		}
-		
-		return "staffdetails";
+		model.addAttribute("menu", "admin");		
+		return "checklistsearch";
 	}
 	
 	

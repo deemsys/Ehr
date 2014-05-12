@@ -434,8 +434,11 @@ popupWindow = window.open(url,"popUpWindow" ,'width=1500,height=700,resizable=ye
               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
               <td><input type="submit" class="submit_btn" value="Update" onclick="return checkSubmit('this');"
               ></td>
+               <td>&nbsp;&nbsp;</td>
+              <td><a href="deletestaffchecklist?form_no=${Staffchecklist.form_no}" class="submit_btn" style="text-decoration: none;color: white">Delete</a></td>
+              
               <td>&nbsp;&nbsp;</td>
-              <td><input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='staffdetails'"></td>
+              <td><a href="checklistsearch" class="submit_btn" style="text-decoration: none;color: white">Cancel</a></td>
               
         	  </tr>
         	  </table>
