@@ -17,6 +17,37 @@
 	    $( "#datepicker" ).datepicker();
 	  });
   </script>
+  <script>
+
+	function checkSubmit()
+	{
+		document.getElementById("patientssignerror").innerHTML=" ";
+		
+		if(document.getElementById("patientssign").value=="")
+		{
+		document.getElementById("patientssignerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		document.getElementById("datepickererror").innerHTML="";
+	if(document.getElementById("datepicker").value=="")
+		{
+		document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+			
+			
+	document.getElementById("witnesserror").innerHTML="";
+	if(document.getElementById("witness").value=="")
+	{
+	document.getElementById("witnesserror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	}
+
+	</script>
  </head>
 <body>
 <div id="right_content">
@@ -65,17 +96,17 @@
                         <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patients Signature: </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="patientssign"  /><span class="err"><form:errors path="Treatform.patientssign"></form:errors></span></td>
+				                  	<input type="text" class="input_txtbx1" id="patientssign" name="patientssign"  /><span id="patientssignerror" style="color: red;font-style:italic;"><form:errors path="Treatform.patientssign"></form:errors></span></td>
 				                  	</tr>
 				                  	<tr class="row1">
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Todays Date:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="datepicker" name="todaydate" /><span class="err"><form:errors path="Treatform.todaydate"></form:errors></span></td>
+				                  	<input type="text" class="input_txtbx1" id="datepicker" name="todaydate" /><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="Treatform.todaydate"></form:errors></span></td>
                         </tr>
                         <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Witness: </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="witness" /><span class="err"><form:errors path="Treatform.witness"></form:errors></span></td>
+				                  	<input type="text" class="input_txtbx1" id="witness" name="witness" /><span id="witnesserror" style="color: red;font-style:italic;"><form:errors path="Treatform.witness"></form:errors></span></td>
 				                  	</tr>
                         <tr>
                         </table>
@@ -106,18 +137,18 @@
                         <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patients Signature: </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="patientssign"  value="${consent.patientssign}"/><br><span class="err"><form:errors path="Treatform.patientssign"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="patientssign" name="patientssign"  value="${consent.patientssign}"/><br><span id="patientssignerror" style="color: red;font-style:italic;"><form:errors path="Treatform.patientssign"></form:errors></span>
 				                  	</tr>
 				                  	<tr class="row1">
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Todays Date:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="datepicker" name="todaydate" value="${consent.todaydate}"/><br><span class="err"><form:errors path="Treatform.todaydate"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="datepicker" name="todaydate" value="${consent.todaydate}"/><br><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="Treatform.todaydate"></form:errors></span>
                         </td>
                         </tr>
                         <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Witness: </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="witness" value="${consent.witness}"/><br><span class="err"><form:errors path="Treatform.witness"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="witness" name="witness" value="${consent.witness}"/><br><span id="witnesserror" style="color: red;font-style:italic;"><form:errors path="Treatform.witness"></form:errors></span>
 				                  	</tr>
                         <tr>
                         </table>
@@ -125,7 +156,7 @@
                         </c:choose>
                         <table>
 				  <td valign="top" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-				                <td valign="top" align="right"><br><input type="submit" class="submit_btn" value="Save"></td>
+				                <td valign="top" align="right"><br><input type="submit" class="submit_btn" value="Save" onclick="return checkSubmit('this');"></td>
 				               
 				 				 <td valign="top" align="center"><br><!-- <a href="treatformlist" class="submit_btn" style="color: white">Cancel</a> --></td>
 				 				 <td>&nbsp;&nbsp;</td>

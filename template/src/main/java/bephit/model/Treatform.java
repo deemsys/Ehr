@@ -9,18 +9,18 @@ public class Treatform
 	
 	private String treat_no;
 	
-	@NotEmpty
+	
 	
 	private String patientsname;
 	
 	
-	@NotEmpty
+	
 	
 	private String patientssign;
 	
-	@NotEmpty
+	
 	private String todaydate;
-	@NotEmpty
+	
 	
 	private String witness;
 	
