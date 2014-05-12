@@ -143,7 +143,16 @@ $(function() {
         }
     });
 </script>
-
+<script>
+i=0;
+$(document).ready(function(){
+  $("#security").keypress(function(){
+var phone=document.getElementById("security").value;
+phone = phone.replace(/(\d{3})(\d{2})(\d+)/, '$1-$2-$3');
+document.getElementById("security").value=phone;
+ });  
+</script>
+	
  <STYLE type="text/css">
   P#mypar {font-style:calibri;
   line-height:18px;}
@@ -167,7 +176,35 @@ $(function() {
 	}
 }
   </script>
+<script>
 
+	function checkSubmit()
+	{
+		document.getElementById("datepickererror").innerHTML=" ";
+		
+		if(document.getElementById("datepicker").value=="")
+		{
+		document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+/* document.getElementById("securityerror").innerHTML=" ";
+		
+		if(document.getElementById("security").value=="")
+		{
+		document.getElementById("securityerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		} */
+		document.getElementById("securityerror").innerHTML="";
+		if(isNaN(document.getElementById("security").value))
+		{
+		document.getElementById("securityerror").innerHTML="Enter Only Numbers";
+		return false;
+		}
+	}
+
+	</script>
 </head>
 <body>
 <br><br>
@@ -325,7 +362,7 @@ $(function() {
 	             
 	            </div>
           <div class="contentbox">
-	   <span class="err">*</span> Today's Date <input type="text" name="date" id="datepicker" value="${footquestionnariedetails.date }"><span class="err"><form:errors path="Footquestionnarie.date"></form:errors></span>
+	   <span class="err">*</span> Today's Date <input type="text" name="date" id="datepicker" value="${footquestionnariedetails.date }"><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="Footquestionnarie.date"></form:errors></span>
 	    <br>
 	    <br>
 	    
@@ -341,8 +378,8 @@ $(function() {
 	       </p>
 	    Your Birth Date  <input type="date"  name="birthdate" value="${footquestionnariedetails.birthdate }">
 	    <br><br>
-	    Your Social Security Number <input type="text" name="security" value="${footquestionnariedetails.security }">
-	    
+	    Your Social Security Number <input type="text" name="security" maxlength="11" value="${footquestionnariedetails.security }">
+	    <span id="securityerror" style="color: red;font-style:italic;"></span>
 	    <br>
 	    <br>
 	    <br>
@@ -350,9 +387,12 @@ $(function() {
 	    <table align="right"><tr>
 	    <td>
 	    
-	     <input class="submit_btn" type="submit" value="Update" ></td>
-	     <td><input class="submit_btn" type="reset" value="Delete" onclick="return confirmation() " >
-	    </td></tr></table>
+	     <input class="submit_btn" type="submit" value="Update" onclick="return checkSubmit('this');"></td>
+	    <!--  <td><input class="submit_btn" type="reset" value="Delete" onclick="return confirmation() " > -->
+	  <td><a href="deletefootquestionnariedetials" style="color: white" class="submit_btn" onclick="return confirmation() ">Delete</a>
+	    </td>
+	  
+	    </tr></table>
 	    
 	    </div></div>
          

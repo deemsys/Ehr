@@ -33,10 +33,10 @@ public class Footquestionnarie
 	private String allversion;
 	private String foot;
 	private String ankle;
-	@NotEmpty
+	
 	private String date;
 	private String birthdate;
-	@NotEmpty
+	
 	@Pattern(regexp="(^$|[0-9-]{11})",message="Not a valid Social Security number")
 	private String security;
 	public Footquestionnarie() {

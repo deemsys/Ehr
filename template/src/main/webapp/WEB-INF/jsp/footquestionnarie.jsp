@@ -143,7 +143,7 @@ $(function() {
         }
     });
 </script>
-<script>
+<!-- <script>
   $(window).load(function(){
 $("#security").keyup(function() {
 	 $("#number").html(''); 
@@ -163,17 +163,16 @@ $("#security").keyup(function() {
     oldValue = $(this).val();
 })
 });
-</script>
+</script> -->
+
 <script>
 i=0;
 $(document).ready(function(){
   $("#security").keypress(function(){
 var phone=document.getElementById("security").value;
-phone = phone.replace(/(\d{3})(\d{2})(\d+)/,'$1-$2-$3');
+phone = phone.replace(/(\d{3})(\d{2})(\d+)/, '$1-$2-$3');
 document.getElementById("security").value=phone;
  });  
-
-});
 </script>
 	
  <STYLE type="text/css">
@@ -187,7 +186,42 @@ document.getElementById("security").value=phone;
  
 </script>
    
-  
+     
+  <script>
+
+	function checkSubmit()
+	{
+		document.getElementById("datepickererror").innerHTML=" ";
+		
+		if(document.getElementById("datepicker").value=="")
+		{
+		document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+document.getElementById("securityerror").innerHTML=" ";
+		
+		if(document.getElementById("security").value=="")
+		{
+		document.getElementById("securityerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		/* document.getElementById("securityerror").innerHTML="";
+		if(isNaN(document.getElementById("security").value))
+		{
+		document.getElementById("securityerror").innerHTML="Enter Only Numbers";
+		return false;
+		} */
+		document.getElementById("securityerror").innerHTML="";
+		if(isNaN(document.getElementById("security").value))
+		{
+		document.getElementById("securityerror").innerHTML="Enter Only Numbers";
+		return false;
+		}
+	}
+
+	</script>
 
 </head>
 <body>
@@ -354,7 +388,7 @@ document.getElementById("security").value=phone;
 	             
 	            </div>
           <div class="contentbox">
-	    <span class="err">*</span>Today's Date <input type="text" name="date" id="datepicker"><span class="err"><form:errors path="Footquestionnarie.date"></form:errors></span>
+	    <span class="err">*</span>Today's Date <input type="text" name="date" id="datepicker"><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="Footquestionnarie.date"></form:errors></span>
 	    <br>
 	    <br>
 	    
@@ -371,7 +405,7 @@ document.getElementById("security").value=phone;
 	    Your Birth Date  <input type="date"  name="birthdate">
 	    <br><br>
 	    <table>
-	    <td>Your Social Security Number </td><td><input type="text" name="security" id="security" maxlength="11"></td><td><span class="err"> <div id="number"></span></td></div></table>
+	    <td>Your Social Security Number </td><td><input type="text" name="security" id="security" maxlength="11"></td><td><span id="securityerror" style="color: red;font-style:italic;"> <div id="number"></span></td></div></table>
 	    <br>
 	    <br>
 	    <br>
@@ -543,7 +577,7 @@ document.getElementById("security").value=phone;
 	             
 	            </div>
           <div class="contentbox">
-	    <span class="err">*</span>Today's Date <input type="text" name="date" id="datepicker" value="${fquestionnarie.date }"><span class="err"><form:errors path="Footquestionnarie.date"></form:errors></span>
+	    <span class="err">*</span>Today's Date <input type="text" name="date" id="datepicker" value="${fquestionnarie.date }"><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="Footquestionnarie.date"></form:errors></span>
 	    <br>
 	    <br>
 	    
@@ -560,7 +594,7 @@ document.getElementById("security").value=phone;
 	    Your Birth Date  <input type="date"  name="birthdate" value="${fquestionnarie.birthdate }">
 	    <br><br>
 	    <table>
-	  <tr><td> Your Social Security Number</td> <td> <input type="text" name="security" id="security" value="${fquestionnarie.security}"></td><td><span class="err"><form:errors path="Footquestionnarie.security"></form:errors></span> <div id="number"></span></td></div></tr></table>
+	  <tr><td> Your Social Security Number</td> <td> <input type="text" name="security" id="security" value="${fquestionnarie.security}" maxlength="11"></td><td><span class="err"><form:errors path="Footquestionnarie.security"></form:errors></span> <div id="number"></span></td></div></tr></table>
 	  
 	    
 	    <br>
@@ -570,7 +604,7 @@ document.getElementById("security").value=phone;
 	    <table align="right"><tr>
 	    <td>
 	    
-	     <input class="submit_btn" type="submit" value="Save" ></td>
+	     <input class="submit_btn" type="submit" value="Save" onclick="return checkSubmit('this');" ></td>
 	     <td><input class="submit_btn" type="reset" value="Cancel" >
 	    </td></tr></table>
 	     </div>
