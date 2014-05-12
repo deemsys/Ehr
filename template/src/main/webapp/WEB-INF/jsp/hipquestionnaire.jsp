@@ -186,7 +186,22 @@ $(function() {
  
 </script>
    
-  
+  <script>
+
+	function checkSubmit()
+	{
+		document.getElementById("datepickererror").innerHTML=" ";
+		
+		if(document.getElementById("datepicker").value=="")
+		{
+		document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		
+	}
+
+	</script>
 
 </head>
 <body>
@@ -361,7 +376,7 @@ $(function() {
 	             
 	            </div>
           <div class="contentbox">
-	   <span class="err">*</span> Today's Date <input type="text" name="date" id="datepicker"><br><span class="err"><form:errors path="hipquestionnaire.date"></form:errors></span>
+	   <span class="err">*</span> Today's Date <input type="text" name="date" id="datepicker"><br><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="hipquestionnaire.date"></form:errors></span>
 	    <br>
 	    <br>
 	    
@@ -490,7 +505,7 @@ $(function() {
 	             
 	            </div>
           <div class="contentbox">
-	    <span class="err">*</span>Today's Date <input type="text" name="date" id="datepicker" value="${hipquestionnairedetails.date}" ><br><span class="err"><form:errors path="hipquestionnaire.date"></form:errors></span>
+	    <span class="err">*</span>Today's Date <input type="text" name="date" id="datepicker" value="${hipquestionnairedetails.date}" ><br><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="hipquestionnaire.date"></form:errors></span>
 	    <br>
 	    <br>
 	    
@@ -522,7 +537,7 @@ $(function() {
 	    
 	    <table align="right"><tr><td  >
 	    
-	     <input class="submit_btn" type="submit" value="Save" ></td><td>
+	     <input class="submit_btn" type="submit" value="Save" onclick="return checkSubmit('this');"></td><td>
 	     <a href="viewhipquestionnaire" style="color: white" class="submit_btn">Cancel</a>
 	    
 	    </div></div>

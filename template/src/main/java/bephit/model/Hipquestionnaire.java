@@ -25,7 +25,7 @@ public class Hipquestionnaire
 	private String best;
 	private String socks;
 	
-	@NotEmpty
+	
 	private String date;
 	private String birthdate;
 	@NotEmpty
