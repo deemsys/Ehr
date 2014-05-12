@@ -1336,13 +1336,14 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
 
 	function checkSubmit()
 	{
-		/* document.getElementById("pnameerror").innerHTML="";
+document.getElementById("pnameerror").innerHTML=" ";
 		
-		if(isNaN(document.getElementById("pname").value))
+		if(document.getElementById("pname").value=="")
 		{
-		document.getElementById("pnameerror").innerHTML="Required";
+		document.getElementById("pnameerror").innerHTML="Required Field Should not be Empty ";
+		
 		return false;
-		} */
+		}
 		
 		
 		document.getElementById("numbererror").innerHTML="";

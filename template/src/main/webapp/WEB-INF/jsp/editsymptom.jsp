@@ -1128,14 +1128,15 @@ w=0;
 
 	function checkSubmit()
 	{
+		document.getElementById("pnameerror").innerHTML=" ";
 		
-			/* document.getElementById("pnameerror").innerHTML="";
-			
-			if(isNaN(document.getElementById("pname").value))
-			{
-			document.getElementById("pnameerror").innerHTML="Required";
-			return false;
-			} */
+		if(document.getElementById("pname").value=="")
+		{
+		document.getElementById("pnameerror").innerHTML="Required Field Should not be Empty ";
+		
+		return false;
+		}
+		
 			
 			
 			document.getElementById("numbererror").innerHTML="";
