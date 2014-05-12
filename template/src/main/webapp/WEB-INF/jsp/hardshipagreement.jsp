@@ -18,6 +18,38 @@
          });
  
 </script>
+<script>
+
+	function checkSubmit()
+	{
+				
+	document.getElementById("datepickererror").innerHTML="";
+	if(document.getElementById("datepicker").value=="")
+	{
+	document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	
+	document.getElementById("pat_signerror").innerHTML="";
+	if(document.getElementById("pat_sign").value=="")
+	{
+	document.getElementById("pat_signerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("witness_signerror").innerHTML="";
+	if(isNaN(document.getElementById("witness_sign").value))
+	{
+	document.getElementById("witness_signerror").innerHTML="Enter Only Numbers";
+	return false;
+	}
+	
+	
+	}
+
+	</script>
 </head>
  <body>
 <div id="right_content">
@@ -43,7 +75,7 @@
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td><span class="err">*</span>Date</td>
-              <td ><input type="text" id="datepicker" class="input_txtbx1" name="date"/><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td ><input type="text" id="datepicker" class="input_txtbx1" name="date"/><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>
               <br>
@@ -68,14 +100,14 @@
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
        		  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patients Signature&nbsp;&nbsp;&nbsp;
-              <input type="text" class="input_txtbx1" name="pat_sign" id="pat_sign" /><span class="err"><form:errors path="Hardshipagreement.pat_sign"></form:errors></td>
+              <input type="text" class="input_txtbx1" name="pat_sign" id="pat_sign" /><span id="pat_signerror" style="color: red;font-style:italic;"><form:errors path="Hardshipagreement.pat_sign"></form:errors></td>
               </tr>
               </table>
               <br>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
        		  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Witness Signature&nbsp;&nbsp;&nbsp;  
-              <input type="text" class="input_txtbx1" name="witness_sign" id="witness_sign" /><span class="err"><form:errors path="Hardshipagreement.witness_sign"></form:errors></td>
+              <input type="text" class="input_txtbx1" name="witness_sign" id="witness_sign" /><span id="witness_signerror" style="color: red;font-style:italic;"><form:errors path="Hardshipagreement.witness_sign"></form:errors></td>
               </tr>
               </table>
               </c:when>
@@ -83,7 +115,7 @@
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td><span class="err">*</span>Date</td>
-              <td ><input type="text" class="input_txtbx1" name="date" id="datepicker" value="${hard.date}"/><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="date" id="datepicker" value="${hard.date}"/><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>
               <br>
@@ -108,14 +140,14 @@
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
        		  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patients Signature&nbsp;&nbsp;&nbsp;
-              <input type="text" class="input_txtbx1" name="pat_sign" id="pat_sign" value="${hard.pat_sign}"/><span class="err"><form:errors path="Hardshipagreement.pat_sign"></form:errors></td>
+              <input type="text" class="input_txtbx1" name="pat_sign" id="pat_sign" value="${hard.pat_sign}"/><span id="pat_signerror" style="color: red;font-style:italic;"><form:errors path="Hardshipagreement.pat_sign"></form:errors></td>
               </tr>
               </table>
               <br>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
        		  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Witness Signature&nbsp;&nbsp;&nbsp;  
-              <input type="text" class="input_txtbx1" name="witness_sign" id="witness_sign"  value="${hard.witness_sign}"/><span class="err"><form:errors path="Hardshipagreement.witness_sign"></form:errors></td>
+              <input type="text" class="input_txtbx1" name="witness_sign" id="witness_sign"  value="${hard.witness_sign}"/><span id="witness_signerror" style="color: red;font-style:italic;"><form:errors path="Hardshipagreement.witness_sign"></form:errors></td>
               </tr>
               </table>
               </c:otherwise>
@@ -124,7 +156,7 @@
               <table>
               <tr>
               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-              <td><input type="submit" class="submit_btn" value="Save">&nbsp;&nbsp;
+              <td><input type="submit" class="submit_btn" value="Save" onclick="return checkSubmit('this');">&nbsp;&nbsp;
 				</td>
               <td valign="top" align="center"><!-- <a href="hardshiplist" class="submit_btn" style="color: white">Cancel</a> --></td>
         	  </tr>

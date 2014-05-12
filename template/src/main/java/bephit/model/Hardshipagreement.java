@@ -8,18 +8,15 @@ public class Hardshipagreement{
 	
 	private String agreement_no;
 	
-	@NotEmpty
+	
 	private String date;
 	
-	@NotEmpty
 	
 	private String print_pat_name;
 	
-	@NotEmpty
 	
 	private String pat_sign;
 	
-	@NotEmpty
 	
 	private String witness_sign;
 	
