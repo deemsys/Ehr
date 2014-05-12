@@ -480,7 +480,7 @@ $("#phhealth").keyup(function() {
 
 
 
-$(function(){
+/* $(function(){
 	$("#datepicker3").datepicker({changeMonth: true,changeYear: true,showOn: "button",
 		buttonImage: "resources/images/calendar.gif",
 		buttonImageOnly: true,dateFormat: 'yy-mm-dd'});
@@ -512,7 +512,7 @@ $(function(){
         minValue.setDate(minValue.getDate()+1);
         $("#datepicker").datepicker( "option", "minDate", minValue );
     })
-});
+}); */
   
   $(function() {
 	    $( "#tabs" ).tabs();
@@ -812,6 +812,26 @@ document.getElementById("inp_id").value=phone;
 	}
 
 	</script>
+<script>
+  $(function() {
+	    $( "#datepicker" ).datepicker();
+	  });
+  $(function() {
+	    $( "#datepicker1" ).datepicker();
+	  });
+  $(function() {
+	    $( "#datepicker2" ).datepicker();
+	  });
+  $(function() {
+	    $( "#datepicker5" ).datepicker();
+	  });
+  $(function() {
+	    $( "#datepicker6" ).datepicker();
+	  });
+  $(function() {
+	    $( "#datepicker3" ).datepicker();
+	  });
+  </script>
 	</head>
 	<body>
 	 
@@ -2181,7 +2201,7 @@ function check(id)
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Medical Treatment for this Condition: &nbsp;&nbsp;&nbsp;&nbsp;When:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="when1" value="${first.when1}"/> <span class="err"><form:errors path="PatientDetails.when1"></form:errors></span></td>
+				                  	<input type="text" class="input_txtbx1" id="datepicker5" name="when1" value="${first.when1}"/> <span class="err"><form:errors path="PatientDetails.when1"></form:errors></span></td>
 				                  	<td></td>
 				                  	</tr>
 				                  	<tr class="row1">
