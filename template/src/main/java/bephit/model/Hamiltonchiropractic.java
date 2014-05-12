@@ -4,10 +4,16 @@ public class Hamiltonchiropractic {
 	private String initialexamid;
 
 	private String patient_id;
-
-	private String checked;
-	
-
+    
+	private String lumbopelvic;
+	private String lumboright;
+	private String lumboleft;
+	private String cervical;
+	private String cervicalright;
+	private String cervicalleft;
+	private String thoracic;
+	private String thoracicright;
+	private String thoracicleft;
 	private String hacheck;
 	private String ha;
 	private String haa;
@@ -192,7 +198,6 @@ public class Hamiltonchiropractic {
 	private String antalgiar;
 	private String antalgial;
 	private String spinal_percusslr;
-	private String spinal_percussll;
 	private String valsalvalr;
 	private String valsalvall;
 	private String minors_signr;
@@ -252,14 +257,7 @@ public class Hamiltonchiropractic {
 	private String allensr;
 	private String allensl;
 	private String valgus_varusr;
-	private String valgus_varusl;
-	private String pat_ballr;
-	private String pat_balll;
-	private String drawerr;
-	private String drawerl;
-	private String val_varusr;
-	private String val_varusl;
-	private String apleysr;
+	
 	
 	
 	public Hamiltonchiropractic() {
@@ -267,9 +265,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public String getInitialexamid() {
 		return initialexamid;
 	}
+
 
 
 	public void setInitialexamid(String initialexamid) {
@@ -283,20 +283,117 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setPatient_id(String patient_id) {
 		this.patient_id = patient_id;
 	}
 
 
 
-
-	public String getChecked() {
-		return checked;
+	public String getLumbopelvic() {
+		return lumbopelvic;
 	}
 
 
-	public void setChecked(String checked) {
-		this.checked = checked;
+
+	public void setLumbopelvic(String lumbopelvic) {
+		this.lumbopelvic = lumbopelvic;
+	}
+
+
+
+	public String getLumboright() {
+		return lumboright;
+	}
+
+
+
+	public void setLumboright(String lumboright) {
+		this.lumboright = lumboright;
+	}
+
+
+
+	public String getLumboleft() {
+		return lumboleft;
+	}
+
+
+
+	public void setLumboleft(String lumboleft) {
+		this.lumboleft = lumboleft;
+	}
+
+
+
+	public String getCervical() {
+		return cervical;
+	}
+
+
+
+	public void setCervical(String cervical) {
+		this.cervical = cervical;
+	}
+
+
+
+	public String getCervicalright() {
+		return cervicalright;
+	}
+
+
+
+	public void setCervicalright(String cervicalright) {
+		this.cervicalright = cervicalright;
+	}
+
+
+
+	public String getCervicalleft() {
+		return cervicalleft;
+	}
+
+
+
+	public void setCervicalleft(String cervicalleft) {
+		this.cervicalleft = cervicalleft;
+	}
+
+
+
+	public String getThoracic() {
+		return thoracic;
+	}
+
+
+
+	public void setThoracic(String thoracic) {
+		this.thoracic = thoracic;
+	}
+
+
+
+	public String getThoracicright() {
+		return thoracicright;
+	}
+
+
+
+	public void setThoracicright(String thoracicright) {
+		this.thoracicright = thoracicright;
+	}
+
+
+
+	public String getThoracicleft() {
+		return thoracicleft;
+	}
+
+
+
+	public void setThoracicleft(String thoracicleft) {
+		this.thoracicleft = thoracicleft;
 	}
 
 
@@ -306,9 +403,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setHacheck(String hacheck) {
 		this.hacheck = hacheck;
 	}
+
 
 
 	public String getHa() {
@@ -316,9 +415,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setHa(String ha) {
 		this.ha = ha;
 	}
+
 
 
 	public String getHaa() {
@@ -326,9 +427,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setHaa(String haa) {
 		this.haa = haa;
 	}
+
 
 
 	public String getNeckcheck() {
@@ -336,9 +439,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setNeckcheck(String neckcheck) {
 		this.neckcheck = neckcheck;
 	}
+
 
 
 	public String getNeck() {
@@ -346,9 +451,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setNeck(String neck) {
 		this.neck = neck;
 	}
+
 
 
 	public String getNecka() {
@@ -356,9 +463,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setNecka(String necka) {
 		this.necka = necka;
 	}
+
 
 
 	public String getMbcheck() {
@@ -366,9 +475,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setMbcheck(String mbcheck) {
 		this.mbcheck = mbcheck;
 	}
+
 
 
 	public String getMb() {
@@ -376,9 +487,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setMb(String mb) {
 		this.mb = mb;
 	}
+
 
 
 	public String getMba() {
@@ -386,9 +499,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setMba(String mba) {
 		this.mba = mba;
 	}
+
 
 
 	public String getRibscheck() {
@@ -396,9 +511,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setRibscheck(String ribscheck) {
 		this.ribscheck = ribscheck;
 	}
+
 
 
 	public String getRibs() {
@@ -406,9 +523,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setRibs(String ribs) {
 		this.ribs = ribs;
 	}
+
 
 
 	public String getRibsa() {
@@ -416,9 +535,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setRibsa(String ribsa) {
 		this.ribsa = ribsa;
 	}
+
 
 
 	public String getShouldercheck() {
@@ -426,9 +547,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setShouldercheck(String shouldercheck) {
 		this.shouldercheck = shouldercheck;
 	}
+
 
 
 	public String getShoulder() {
@@ -436,9 +559,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setShoulder(String shoulder) {
 		this.shoulder = shoulder;
 	}
+
 
 
 	public String getShouldera() {
@@ -446,9 +571,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setShouldera(String shouldera) {
 		this.shouldera = shouldera;
 	}
+
 
 
 	public String getElbowcheck() {
@@ -456,9 +583,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setElbowcheck(String elbowcheck) {
 		this.elbowcheck = elbowcheck;
 	}
+
 
 
 	public String getElbow() {
@@ -466,9 +595,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setElbow(String elbow) {
 		this.elbow = elbow;
 	}
+
 
 
 	public String getElbowa() {
@@ -476,9 +607,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setElbowa(String elbowa) {
 		this.elbowa = elbowa;
 	}
+
 
 
 	public String getHandcheck() {
@@ -486,9 +619,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setHandcheck(String handcheck) {
 		this.handcheck = handcheck;
 	}
+
 
 
 	public String getHand() {
@@ -496,9 +631,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setHand(String hand) {
 		this.hand = hand;
 	}
+
 
 
 	public String getHanda() {
@@ -506,9 +643,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setHanda(String handa) {
 		this.handa = handa;
 	}
+
 
 
 	public String getWristcheck() {
@@ -516,9 +655,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setWristcheck(String wristcheck) {
 		this.wristcheck = wristcheck;
 	}
+
 
 
 	public String getWrist() {
@@ -526,9 +667,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setWrist(String wrist) {
 		this.wrist = wrist;
 	}
+
 
 
 	public String getWrista() {
@@ -536,9 +679,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setWrista(String wrista) {
 		this.wrista = wrista;
 	}
+
 
 
 	public String getLbpcheck() {
@@ -546,9 +691,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setLbpcheck(String lbpcheck) {
 		this.lbpcheck = lbpcheck;
 	}
+
 
 
 	public String getLbp() {
@@ -556,9 +703,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setLbp(String lbp) {
 		this.lbp = lbp;
 	}
+
 
 
 	public String getLbpa() {
@@ -566,9 +715,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setLbpa(String lbpa) {
 		this.lbpa = lbpa;
 	}
+
 
 
 	public String getHipcheck() {
@@ -576,9 +727,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setHipcheck(String hipcheck) {
 		this.hipcheck = hipcheck;
 	}
+
 
 
 	public String getHip() {
@@ -586,9 +739,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setHip(String hip) {
 		this.hip = hip;
 	}
+
 
 
 	public String getHipa() {
@@ -596,9 +751,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setHipa(String hipa) {
 		this.hipa = hipa;
 	}
+
 
 
 	public String getLegcheck() {
@@ -606,9 +763,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setLegcheck(String legcheck) {
 		this.legcheck = legcheck;
 	}
+
 
 
 	public String getLeg() {
@@ -616,9 +775,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setLeg(String leg) {
 		this.leg = leg;
 	}
+
 
 
 	public String getLega() {
@@ -626,9 +787,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setLega(String lega) {
 		this.lega = lega;
 	}
+
 
 
 	public String getKneecheck() {
@@ -636,9 +799,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setKneecheck(String kneecheck) {
 		this.kneecheck = kneecheck;
 	}
+
 
 
 	public String getKnee() {
@@ -646,9 +811,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setKnee(String knee) {
 		this.knee = knee;
 	}
+
 
 
 	public String getKneea() {
@@ -656,9 +823,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setKneea(String kneea) {
 		this.kneea = kneea;
 	}
+
 
 
 	public String getFootcheck() {
@@ -666,9 +835,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setFootcheck(String footcheck) {
 		this.footcheck = footcheck;
 	}
+
 
 
 	public String getFoot() {
@@ -676,9 +847,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setFoot(String foot) {
 		this.foot = foot;
 	}
+
 
 
 	public String getFoota() {
@@ -686,9 +859,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setFoota(String foota) {
 		this.foota = foota;
 	}
+
 
 
 	public String getAnklecheck() {
@@ -696,9 +871,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setAnklecheck(String anklecheck) {
 		this.anklecheck = anklecheck;
 	}
+
 
 
 	public String getAnkle() {
@@ -706,9 +883,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setAnkle(String ankle) {
 		this.ankle = ankle;
 	}
+
 
 
 	public String getAnklea() {
@@ -716,9 +895,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setAnklea(String anklea) {
 		this.anklea = anklea;
 	}
+
 
 
 	public String getSuddenly() {
@@ -726,9 +907,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setSuddenly(String suddenly) {
 		this.suddenly = suddenly;
 	}
+
 
 
 	public String getGradually() {
@@ -736,9 +919,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setGradually(String gradually) {
 		this.gradually = gradually;
 	}
+
 
 
 	public String getHours() {
@@ -746,9 +931,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setHours(String hours) {
 		this.hours = hours;
 	}
+
 
 
 	public String getDays() {
@@ -756,9 +943,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setDays(String days) {
 		this.days = days;
 	}
+
 
 
 	public String getDate() {
@@ -766,9 +955,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setDate(String date) {
 		this.date = date;
 	}
+
 
 
 	public String getReason() {
@@ -776,9 +967,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setReason(String reason) {
 		this.reason = reason;
 	}
+
 
 
 	public String getAcute() {
@@ -786,9 +979,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setAcute(String acute) {
 		this.acute = acute;
 	}
+
 
 
 	public String getSubacute() {
@@ -796,9 +991,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setSubacute(String subacute) {
 		this.subacute = subacute;
 	}
+
 
 
 	public String getChronic() {
@@ -806,9 +1003,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setChronic(String chronic) {
 		this.chronic = chronic;
 	}
+
 
 
 	public String getLyingdown() {
@@ -816,9 +1015,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setLyingdown(String lyingdown) {
 		this.lyingdown = lyingdown;
 	}
+
 
 
 	public String getSitting() {
@@ -826,9 +1027,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setSitting(String sitting) {
 		this.sitting = sitting;
 	}
+
 
 
 	public String getStanding() {
@@ -836,9 +1039,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setStanding(String standing) {
 		this.standing = standing;
 	}
+
 
 
 	public String getBending() {
@@ -846,9 +1051,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setBending(String bending) {
 		this.bending = bending;
 	}
+
 
 
 	public String getRest() {
@@ -856,9 +1063,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setRest(String rest) {
 		this.rest = rest;
 	}
+
 
 
 	public String getOtherb() {
@@ -866,9 +1075,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setOtherb(String otherb) {
 		this.otherb = otherb;
 	}
+
 
 
 	public String getOthere() {
@@ -876,9 +1087,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setOthere(String othere) {
 		this.othere = othere;
 	}
+
 
 
 	public String getIce() {
@@ -886,9 +1099,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setIce(String ice) {
 		this.ice = ice;
 	}
+
 
 
 	public String getHeat() {
@@ -896,9 +1111,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setHeat(String heat) {
 		this.heat = heat;
 	}
+
 
 
 	public String getMassage() {
@@ -906,9 +1123,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setMassage(String massage) {
 		this.massage = massage;
 	}
+
 
 
 	public String getAspirin() {
@@ -916,9 +1135,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setAspirin(String aspirin) {
 		this.aspirin = aspirin;
 	}
+
 
 
 	public String getOtherdone() {
@@ -926,9 +1147,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setOtherdone(String otherdone) {
 		this.otherdone = otherdone;
 	}
+
 
 
 	public String getOtherit() {
@@ -936,9 +1159,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setOtherit(String otherit) {
 		this.otherit = otherit;
 	}
+
 
 
 	public String getBendingworse() {
@@ -946,9 +1171,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setBendingworse(String bendingworse) {
 		this.bendingworse = bendingworse;
 	}
+
 
 
 	public String getTwisting() {
@@ -956,9 +1183,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setTwisting(String twisting) {
 		this.twisting = twisting;
 	}
+
 
 
 	public String getLifting() {
@@ -966,9 +1195,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setLifting(String lifting) {
 		this.lifting = lifting;
 	}
+
 
 
 	public String getWalking() {
@@ -976,9 +1207,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setWalking(String walking) {
 		this.walking = walking;
 	}
+
 
 
 	public String getActivity() {
@@ -986,9 +1219,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setActivity(String activity) {
 		this.activity = activity;
 	}
+
 
 
 	public String getOtherworse() {
@@ -996,9 +1231,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setOtherworse(String otherworse) {
 		this.otherworse = otherworse;
 	}
+
 
 
 	public String getOtherfeel() {
@@ -1006,9 +1243,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setOtherfeel(String otherfeel) {
 		this.otherfeel = otherfeel;
 	}
+
 
 
 	public String getSharp() {
@@ -1016,9 +1255,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setSharp(String sharp) {
 		this.sharp = sharp;
 	}
+
 
 
 	public String getSevere() {
@@ -1026,9 +1267,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setSevere(String severe) {
 		this.severe = severe;
 	}
+
 
 
 	public String getDull() {
@@ -1036,9 +1279,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setDull(String dull) {
 		this.dull = dull;
 	}
+
 
 
 	public String getBurning() {
@@ -1046,9 +1291,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setBurning(String burning) {
 		this.burning = burning;
 	}
+
 
 
 	public String getNagging() {
@@ -1056,9 +1303,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setNagging(String nagging) {
 		this.nagging = nagging;
 	}
+
 
 
 	public String getThrobbing() {
@@ -1066,9 +1315,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setThrobbing(String throbbing) {
 		this.throbbing = throbbing;
 	}
+
 
 
 	public String getNumb() {
@@ -1076,9 +1327,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setNumb(String numb) {
 		this.numb = numb;
 	}
+
 
 
 	public String getTingling() {
@@ -1086,9 +1339,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setTingling(String tingling) {
 		this.tingling = tingling;
 	}
+
 
 
 	public String getStiff() {
@@ -1096,9 +1351,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setStiff(String stiff) {
 		this.stiff = stiff;
 	}
+
 
 
 	public String getStabbing() {
@@ -1106,9 +1363,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setStabbing(String stabbing) {
 		this.stabbing = stabbing;
 	}
+
 
 
 	public String getCramping() {
@@ -1116,9 +1375,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setCramping(String cramping) {
 		this.cramping = cramping;
 	}
+
 
 
 	public String getOtherdescribe() {
@@ -1126,9 +1387,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setOtherdescribe(String otherdescribe) {
 		this.otherdescribe = otherdescribe;
 	}
+
 
 
 	public String getOtherpain() {
@@ -1136,9 +1399,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setOtherpain(String otherpain) {
 		this.otherpain = otherpain;
 	}
+
 
 
 	public String getConstant() {
@@ -1146,9 +1411,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setConstant(String constant) {
 		this.constant = constant;
 	}
+
 
 
 	public String getIntermittent() {
@@ -1156,9 +1423,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setIntermittent(String intermittent) {
 		this.intermittent = intermittent;
 	}
+
 
 
 	public String getLocal() {
@@ -1166,9 +1435,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setLocal(String local) {
 		this.local = local;
 	}
+
 
 
 	public String getDiffuse() {
@@ -1176,9 +1447,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setDiffuse(String diffuse) {
 		this.diffuse = diffuse;
 	}
+
 
 
 	public String getRadiates() {
@@ -1186,9 +1459,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setRadiates(String radiates) {
 		this.radiates = radiates;
 	}
+
 
 
 	public String getOtherradiates() {
@@ -1196,9 +1471,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setOtherradiates(String otherradiates) {
 		this.otherradiates = otherradiates;
 	}
+
 
 
 	public String getMild() {
@@ -1206,9 +1483,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setMild(String mild) {
 		this.mild = mild;
 	}
+
 
 
 	public String getModerate() {
@@ -1216,9 +1495,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setModerate(String moderate) {
 		this.moderate = moderate;
 	}
+
 
 
 	public String getSeverepain() {
@@ -1226,9 +1507,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setSeverepain(String severepain) {
 		this.severepain = severepain;
 	}
+
 
 
 	public String getCrippling() {
@@ -1236,9 +1519,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setCrippling(String crippling) {
 		this.crippling = crippling;
 	}
+
 
 
 	public String getAm() {
@@ -1246,9 +1531,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setAm(String am) {
 		this.am = am;
 	}
+
 
 
 	public String getPm() {
@@ -1256,9 +1543,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setPm(String pm) {
 		this.pm = pm;
 	}
+
 
 
 	public String getOthertime() {
@@ -1266,9 +1555,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setOthertime(String othertime) {
 		this.othertime = othertime;
 	}
+
 
 
 	public String getOtherdn() {
@@ -1276,9 +1567,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setOtherdn(String otherdn) {
 		this.otherdn = otherdn;
 	}
+
 
 
 	public String getBetter() {
@@ -1286,9 +1579,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setBetter(String better) {
 		this.better = better;
 	}
+
 
 
 	public String getSame() {
@@ -1296,9 +1591,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setSame(String same) {
 		this.same = same;
 	}
+
 
 
 	public String getWorse() {
@@ -1306,9 +1603,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setWorse(String worse) {
 		this.worse = worse;
 	}
+
 
 
 	public String getYes() {
@@ -1316,9 +1615,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setYes(String yes) {
 		this.yes = yes;
 	}
+
 
 
 	public String getNo() {
@@ -1326,9 +1627,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setNo(String no) {
 		this.no = no;
 	}
+
 
 
 	public String getDay() {
@@ -1336,9 +1639,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setDay(String day) {
 		this.day = day;
 	}
+
 
 
 	public String getWork() {
@@ -1346,9 +1651,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setWork(String work) {
 		this.work = work;
 	}
+
 
 
 	public String getSleep() {
@@ -1356,9 +1663,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setSleep(String sleep) {
 		this.sleep = sleep;
 	}
+
 
 
 	public String getOtherdaily() {
@@ -1366,9 +1675,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setOtherdaily(String otherdaily) {
 		this.otherdaily = otherdaily;
 	}
+
 
 
 	public String getOthercondition() {
@@ -1376,9 +1687,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setOthercondition(String othercondition) {
 		this.othercondition = othercondition;
 	}
+
 
 
 	public String getSameass() {
@@ -1386,9 +1699,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setSameass(String sameass) {
 		this.sameass = sameass;
 	}
+
 
 
 	public String getImproved() {
@@ -1396,9 +1711,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setImproved(String improved) {
 		this.improved = improved;
 	}
+
 
 
 	public String getWorseass() {
@@ -1406,9 +1723,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setWorseass(String worseass) {
 		this.worseass = worseass;
 	}
+
 
 
 	public String getPlateau() {
@@ -1416,9 +1735,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setPlateau(String plateau) {
 		this.plateau = plateau;
 	}
+
 
 
 	public String getPreinjury() {
@@ -1426,9 +1747,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setPreinjury(String preinjury) {
 		this.preinjury = preinjury;
 	}
+
 
 
 	public String getSlight() {
@@ -1436,9 +1759,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setSlight(String slight) {
 		this.slight = slight;
 	}
+
 
 
 	public String getModeratly() {
@@ -1446,9 +1771,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setModeratly(String moderatly) {
 		this.moderatly = moderatly;
 	}
+
 
 
 	public String getGreat() {
@@ -1456,9 +1783,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setGreat(String great) {
 		this.great = great;
 	}
+
 
 
 	public String getChiropractic() {
@@ -1466,9 +1795,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setChiropractic(String chiropractic) {
 		this.chiropractic = chiropractic;
 	}
+
 
 
 	public String getEms() {
@@ -1476,9 +1807,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setEms(String ems) {
 		this.ems = ems;
 	}
+
 
 
 	public String getIceplan() {
@@ -1486,9 +1819,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setIceplan(String iceplan) {
 		this.iceplan = iceplan;
 	}
+
 
 
 	public String getHeatplan() {
@@ -1496,9 +1831,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setHeatplan(String heatplan) {
 		this.heatplan = heatplan;
 	}
+
 
 
 	public String getNimmo() {
@@ -1506,9 +1843,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setNimmo(String nimmo) {
 		this.nimmo = nimmo;
 	}
+
 
 
 	public String getUltrasound() {
@@ -1516,9 +1855,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setUltrasound(String ultrasound) {
 		this.ultrasound = ultrasound;
 	}
+
 
 
 	public String getManualtraction() {
@@ -1526,9 +1867,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setManualtraction(String manualtraction) {
 		this.manualtraction = manualtraction;
 	}
+
 
 
 	public String getMassageplan() {
@@ -1536,9 +1879,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setMassageplan(String massageplan) {
 		this.massageplan = massageplan;
 	}
+
 
 
 	public String getNeuromuscular() {
@@ -1546,9 +1891,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setNeuromuscular(String neuromuscular) {
 		this.neuromuscular = neuromuscular;
 	}
+
 
 
 	public String getStretching() {
@@ -1556,9 +1903,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setStretching(String stretching) {
 		this.stretching = stretching;
 	}
+
 
 
 	public String getStrengthening() {
@@ -1566,9 +1915,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setStrengthening(String strengthening) {
 		this.strengthening = strengthening;
 	}
+
 
 
 	public String getRemobilization() {
@@ -1576,9 +1927,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setRemobilization(String remobilization) {
 		this.remobilization = remobilization;
 	}
+
 
 
 	public String getImprovesubluxations() {
@@ -1586,9 +1939,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setImprovesubluxations(String improvesubluxations) {
 		this.improvesubluxations = improvesubluxations;
 	}
+
 
 
 	public String getRehab() {
@@ -1596,9 +1951,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setRehab(String rehab) {
 		this.rehab = rehab;
 	}
+
 
 
 	public String getModificat() {
@@ -1606,9 +1963,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setModificat(String modificat) {
 		this.modificat = modificat;
 	}
+
 
 
 	public String getCare() {
@@ -1616,9 +1975,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setCare(String care) {
 		this.care = care;
 	}
+
 
 
 	public String getRefer() {
@@ -1626,9 +1987,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setRefer(String refer) {
 		this.refer = refer;
 	}
+
 
 
 	public String getDecreasepain() {
@@ -1636,9 +1999,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setDecreasepain(String decreasepain) {
 		this.decreasepain = decreasepain;
 	}
+
 
 
 	public String getDecreasespam() {
@@ -1646,9 +2011,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setDecreasespam(String decreasespam) {
 		this.decreasespam = decreasespam;
 	}
+
 
 
 	public String getIncreaserom() {
@@ -1656,9 +2023,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setIncreaserom(String increaserom) {
 		this.increaserom = increaserom;
 	}
+
 
 
 	public String getImproveadl() {
@@ -1666,9 +2035,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setImproveadl(String improveadl) {
 		this.improveadl = improveadl;
 	}
+
 
 
 	public String getFullactivity() {
@@ -1676,9 +2047,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setFullactivity(String fullactivity) {
 		this.fullactivity = fullactivity;
 	}
+
 
 
 	public String getReturntowork() {
@@ -1686,9 +2059,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setReturntowork(String returntowork) {
 		this.returntowork = returntowork;
 	}
+
 
 
 	public String getRenewsports() {
@@ -1696,9 +2071,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setRenewsports(String renewsports) {
 		this.renewsports = renewsports;
 	}
+
 
 
 	public String getJacksonsr() {
@@ -1706,9 +2083,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setJacksonsr(String jacksonsr) {
 		this.jacksonsr = jacksonsr;
 	}
+
 
 
 	public String getJacksonsl() {
@@ -1716,9 +2095,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setJacksonsl(String jacksonsl) {
 		this.jacksonsl = jacksonsl;
 	}
+
 
 
 	public String getJacksonslo() {
@@ -1726,9 +2107,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setJacksonslo(String jacksonslo) {
 		this.jacksonslo = jacksonslo;
 	}
+
 
 
 	public String getForamin_compr() {
@@ -1736,9 +2119,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setForamin_compr(String foramin_compr) {
 		this.foramin_compr = foramin_compr;
 	}
+
 
 
 	public String getForamin_compl() {
@@ -1746,9 +2131,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setForamin_compl(String foramin_compl) {
 		this.foramin_compl = foramin_compl;
 	}
+
 
 
 	public String getForamin_complo() {
@@ -1756,9 +2143,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setForamin_complo(String foramin_complo) {
 		this.foramin_complo = foramin_complo;
 	}
+
 
 
 	public String getShoulder_deprr() {
@@ -1766,9 +2155,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setShoulder_deprr(String shoulder_deprr) {
 		this.shoulder_deprr = shoulder_deprr;
 	}
+
 
 
 	public String getShoulder_deprl() {
@@ -1776,9 +2167,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setShoulder_deprl(String shoulder_deprl) {
 		this.shoulder_deprl = shoulder_deprl;
 	}
+
 
 
 	public String getShoulder_deprlo() {
@@ -1786,9 +2179,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setShoulder_deprlo(String shoulder_deprlo) {
 		this.shoulder_deprlo = shoulder_deprlo;
 	}
+
 
 
 	public String getGeorgesr() {
@@ -1796,9 +2191,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setGeorgesr(String georgesr) {
 		this.georgesr = georgesr;
 	}
+
 
 
 	public String getGeorgesl() {
@@ -1806,9 +2203,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setGeorgesl(String georgesl) {
 		this.georgesl = georgesl;
 	}
+
 
 
 	public String getGeorgeslo() {
@@ -1816,9 +2215,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setGeorgeslo(String georgeslo) {
 		this.georgeslo = georgeslo;
 	}
+
 
 
 	public String getOdonor() {
@@ -1826,9 +2227,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setOdonor(String odonor) {
 		this.odonor = odonor;
 	}
+
 
 
 	public String getOdonol() {
@@ -1836,9 +2239,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setOdonol(String odonol) {
 		this.odonol = odonol;
 	}
+
 
 
 	public String getBakody_signr() {
@@ -1846,9 +2251,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setBakody_signr(String bakody_signr) {
 		this.bakody_signr = bakody_signr;
 	}
+
 
 
 	public String getBakody_signl() {
@@ -1856,9 +2263,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setBakody_signl(String bakody_signl) {
 		this.bakody_signl = bakody_signl;
 	}
+
 
 
 	public String getBakody_signlo() {
@@ -1866,9 +2275,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setBakody_signlo(String bakody_signlo) {
 		this.bakody_signlo = bakody_signlo;
 	}
+
 
 
 	public String getDistraction_testr() {
@@ -1876,9 +2287,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setDistraction_testr(String distraction_testr) {
 		this.distraction_testr = distraction_testr;
 	}
+
 
 
 	public String getDistraction_testl() {
@@ -1886,9 +2299,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setDistraction_testl(String distraction_testl) {
 		this.distraction_testl = distraction_testl;
 	}
+
 
 
 	public String getValsalvar() {
@@ -1896,9 +2311,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setValsalvar(String valsalvar) {
 		this.valsalvar = valsalvar;
 	}
+
 
 
 	public String getValsalval() {
@@ -1906,9 +2323,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setValsalval(String valsalval) {
 		this.valsalval = valsalval;
 	}
+
 
 
 	public String getValsalvalo() {
@@ -1916,9 +2335,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setValsalvalo(String valsalvalo) {
 		this.valsalvalo = valsalvalo;
 	}
+
 
 
 	public String getSpinal_percuss() {
@@ -1926,9 +2347,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setSpinal_percuss(String spinal_percuss) {
 		this.spinal_percuss = spinal_percuss;
 	}
+
 
 
 	public String getGripdynamomright() {
@@ -1936,9 +2359,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setGripdynamomright(String gripdynamomright) {
 		this.gripdynamomright = gripdynamomright;
 	}
+
 
 
 	public String getGripdynamomleft() {
@@ -1946,9 +2371,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setGripdynamomleft(String gripdynamomleft) {
 		this.gripdynamomleft = gripdynamomleft;
 	}
+
 
 
 	public String getAdsonsr() {
@@ -1956,9 +2383,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setAdsonsr(String adsonsr) {
 		this.adsonsr = adsonsr;
 	}
+
 
 
 	public String getAdsonsl() {
@@ -1966,9 +2395,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setAdsonsl(String adsonsl) {
 		this.adsonsl = adsonsl;
 	}
+
 
 
 	public String getAdsonslo() {
@@ -1976,9 +2407,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setAdsonslo(String adsonslo) {
 		this.adsonslo = adsonslo;
 	}
+
 
 
 	public String getRustsignr() {
@@ -1986,9 +2419,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setRustsignr(String rustsignr) {
 		this.rustsignr = rustsignr;
 	}
+
 
 
 	public String getRustsignl() {
@@ -1996,9 +2431,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setRustsignl(String rustsignl) {
 		this.rustsignl = rustsignl;
 	}
+
 
 
 	public String getRustsignlo() {
@@ -2006,9 +2443,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setRustsignlo(String rustsignlo) {
 		this.rustsignlo = rustsignlo;
 	}
+
 
 
 	public String getSpinal_percusst() {
@@ -2016,9 +2455,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setSpinal_percusst(String spinal_percusst) {
 		this.spinal_percusst = spinal_percusst;
 	}
+
 
 
 	public String getAdams_testr() {
@@ -2026,9 +2467,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setAdams_testr(String adams_testr) {
 		this.adams_testr = adams_testr;
 	}
+
 
 
 	public String getAdams_testl() {
@@ -2036,9 +2479,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setAdams_testl(String adams_testl) {
 		this.adams_testl = adams_testl;
 	}
+
 
 
 	public String getSheppal_signr() {
@@ -2046,9 +2491,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setSheppal_signr(String sheppal_signr) {
 		this.sheppal_signr = sheppal_signr;
 	}
+
 
 
 	public String getSheppal_signl() {
@@ -2056,9 +2503,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setSheppal_signl(String sheppal_signl) {
 		this.sheppal_signl = sheppal_signl;
 	}
+
 
 
 	public String getSoto_hallr() {
@@ -2066,9 +2515,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setSoto_hallr(String soto_hallr) {
 		this.soto_hallr = soto_hallr;
 	}
+
 
 
 	public String getSoto_halll() {
@@ -2076,9 +2527,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setSoto_halll(String soto_halll) {
 		this.soto_halll = soto_halll;
 	}
+
 
 
 	public String getCompression_testr() {
@@ -2086,9 +2539,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setCompression_testr(String compression_testr) {
 		this.compression_testr = compression_testr;
 	}
+
 
 
 	public String getCompression_testl() {
@@ -2096,9 +2551,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setCompression_testl(String compression_testl) {
 		this.compression_testl = compression_testl;
 	}
+
 
 
 	public String getCompression_testlo() {
@@ -2106,9 +2563,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setCompression_testlo(String compression_testlo) {
 		this.compression_testlo = compression_testlo;
 	}
+
 
 
 	public String getAntalgiar() {
@@ -2116,9 +2575,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setAntalgiar(String antalgiar) {
 		this.antalgiar = antalgiar;
 	}
+
 
 
 	public String getAntalgial() {
@@ -2126,9 +2587,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setAntalgial(String antalgial) {
 		this.antalgial = antalgial;
 	}
+
 
 
 	public String getSpinal_percusslr() {
@@ -2136,19 +2599,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setSpinal_percusslr(String spinal_percusslr) {
 		this.spinal_percusslr = spinal_percusslr;
 	}
 
-
-	public String getSpinal_percussll() {
-		return spinal_percussll;
-	}
-
-
-	public void setSpinal_percussll(String spinal_percussll) {
-		this.spinal_percussll = spinal_percussll;
-	}
 
 
 	public String getValsalvalr() {
@@ -2156,9 +2611,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setValsalvalr(String valsalvalr) {
 		this.valsalvalr = valsalvalr;
 	}
+
 
 
 	public String getValsalvall() {
@@ -2166,9 +2623,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setValsalvall(String valsalvall) {
 		this.valsalvall = valsalvall;
 	}
+
 
 
 	public String getMinors_signr() {
@@ -2176,9 +2635,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setMinors_signr(String minors_signr) {
 		this.minors_signr = minors_signr;
 	}
+
 
 
 	public String getMinors_signl() {
@@ -2186,9 +2647,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setMinors_signl(String minors_signl) {
 		this.minors_signl = minors_signl;
 	}
+
 
 
 	public String getBraggards_testr() {
@@ -2196,9 +2659,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setBraggards_testr(String braggards_testr) {
 		this.braggards_testr = braggards_testr;
 	}
+
 
 
 	public String getBraggards_testl() {
@@ -2206,9 +2671,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setBraggards_testl(String braggards_testl) {
 		this.braggards_testl = braggards_testl;
 	}
+
 
 
 	public String getSlrr() {
@@ -2216,9 +2683,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setSlrr(String slrr) {
 		this.slrr = slrr;
 	}
+
 
 
 	public String getSlrl() {
@@ -2226,9 +2695,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setSlrl(String slrl) {
 		this.slrl = slrl;
 	}
+
 
 
 	public String getWlrr() {
@@ -2236,9 +2707,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setWlrr(String wlrr) {
 		this.wlrr = wlrr;
 	}
+
 
 
 	public String getWlrl() {
@@ -2246,9 +2719,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setWlrl(String wlrl) {
 		this.wlrl = wlrl;
 	}
+
 
 
 	public String getHooversr() {
@@ -2256,9 +2731,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setHooversr(String hooversr) {
 		this.hooversr = hooversr;
 	}
+
 
 
 	public String getHooversl() {
@@ -2266,9 +2743,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setHooversl(String hooversl) {
 		this.hooversl = hooversl;
 	}
+
 
 
 	public String getDbl_leg_raiser() {
@@ -2276,9 +2755,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setDbl_leg_raiser(String dbl_leg_raiser) {
 		this.dbl_leg_raiser = dbl_leg_raiser;
 	}
+
 
 
 	public String getDbl_leg_raisel() {
@@ -2286,9 +2767,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setDbl_leg_raisel(String dbl_leg_raisel) {
 		this.dbl_leg_raisel = dbl_leg_raisel;
 	}
+
 
 
 	public String getLong_leg_testr() {
@@ -2296,9 +2779,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setLong_leg_testr(String long_leg_testr) {
 		this.long_leg_testr = long_leg_testr;
 	}
+
 
 
 	public String getLong_leg_testl() {
@@ -2306,9 +2791,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setLong_leg_testl(String long_leg_testl) {
 		this.long_leg_testl = long_leg_testl;
 	}
+
 
 
 	public String getAnvil_testr() {
@@ -2316,9 +2803,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setAnvil_testr(String anvil_testr) {
 		this.anvil_testr = anvil_testr;
 	}
+
 
 
 	public String getAnvil_testl() {
@@ -2326,9 +2815,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setAnvil_testl(String anvil_testl) {
 		this.anvil_testl = anvil_testl;
 	}
+
 
 
 	public String getThomasr() {
@@ -2336,9 +2827,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setThomasr(String thomasr) {
 		this.thomasr = thomasr;
 	}
+
 
 
 	public String getThomasl() {
@@ -2346,9 +2839,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setThomasl(String thomasl) {
 		this.thomasl = thomasl;
 	}
+
 
 
 	public String getMilgrams_testr() {
@@ -2356,9 +2851,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setMilgrams_testr(String milgrams_testr) {
 		this.milgrams_testr = milgrams_testr;
 	}
+
 
 
 	public String getMilgrams_testl() {
@@ -2366,9 +2863,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setMilgrams_testl(String milgrams_testl) {
 		this.milgrams_testl = milgrams_testl;
 	}
+
 
 
 	public String getObersr() {
@@ -2376,9 +2875,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setObersr(String obersr) {
 		this.obersr = obersr;
 	}
+
 
 
 	public String getObersl() {
@@ -2386,9 +2887,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setObersl(String obersl) {
 		this.obersl = obersl;
 	}
+
 
 
 	public String getIlliaccompr() {
@@ -2396,9 +2899,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setIlliaccompr(String illiaccompr) {
 		this.illiaccompr = illiaccompr;
 	}
+
 
 
 	public String getIlliaccompl() {
@@ -2406,9 +2911,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setIlliaccompl(String illiaccompl) {
 		this.illiaccompl = illiaccompl;
 	}
+
 
 
 	public String getYeomansr() {
@@ -2416,9 +2923,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setYeomansr(String yeomansr) {
 		this.yeomansr = yeomansr;
 	}
+
 
 
 	public String getYeomansl() {
@@ -2426,9 +2935,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setYeomansl(String yeomansl) {
 		this.yeomansl = yeomansl;
 	}
+
 
 
 	public String getAllis_signr() {
@@ -2436,9 +2947,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setAllis_signr(String allis_signr) {
 		this.allis_signr = allis_signr;
 	}
+
 
 
 	public String getAllis_signl() {
@@ -2446,9 +2959,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setAllis_signl(String allis_signl) {
 		this.allis_signl = allis_signl;
 	}
+
 
 
 	public String getDugasr() {
@@ -2456,9 +2971,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setDugasr(String dugasr) {
 		this.dugasr = dugasr;
 	}
+
 
 
 	public String getDugasl() {
@@ -2466,9 +2983,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setDugasl(String dugasl) {
 		this.dugasl = dugasl;
 	}
+
 
 
 	public String getSupraspinatusr() {
@@ -2476,9 +2995,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setSupraspinatusr(String supraspinatusr) {
 		this.supraspinatusr = supraspinatusr;
 	}
+
 
 
 	public String getSupraspinatusl() {
@@ -2486,9 +3007,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setSupraspinatusl(String supraspinatusl) {
 		this.supraspinatusl = supraspinatusl;
 	}
+
 
 
 	public String getCodmansr() {
@@ -2496,9 +3019,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setCodmansr(String codmansr) {
 		this.codmansr = codmansr;
 	}
+
 
 
 	public String getCodmansl() {
@@ -2506,9 +3031,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setCodmansl(String codmansl) {
 		this.codmansl = codmansl;
 	}
+
 
 
 	public String getSpeeds_testr() {
@@ -2516,9 +3043,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setSpeeds_testr(String speeds_testr) {
 		this.speeds_testr = speeds_testr;
 	}
+
 
 
 	public String getSpeeds_testl() {
@@ -2526,9 +3055,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setSpeeds_testl(String speeds_testl) {
 		this.speeds_testl = speeds_testl;
 	}
+
 
 
 	public String getYergasonsr() {
@@ -2536,9 +3067,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setYergasonsr(String yergasonsr) {
 		this.yergasonsr = yergasonsr;
 	}
+
 
 
 	public String getYergasonsl() {
@@ -2546,9 +3079,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setYergasonsl(String yergasonsl) {
 		this.yergasonsl = yergasonsl;
 	}
+
 
 
 	public String getTinelser() {
@@ -2556,9 +3091,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setTinelser(String tinelser) {
 		this.tinelser = tinelser;
 	}
+
 
 
 	public String getTinelsel() {
@@ -2566,9 +3103,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setTinelsel(String tinelsel) {
 		this.tinelsel = tinelsel;
 	}
+
 
 
 	public String getLingaminstabr() {
@@ -2576,9 +3115,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setLingaminstabr(String lingaminstabr) {
 		this.lingaminstabr = lingaminstabr;
 	}
+
 
 
 	public String getLingaminstabl() {
@@ -2586,9 +3127,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setLingaminstabl(String lingaminstabl) {
 		this.lingaminstabl = lingaminstabl;
 	}
+
 
 
 	public String getGolfers_elbowr() {
@@ -2596,9 +3139,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setGolfers_elbowr(String golfers_elbowr) {
 		this.golfers_elbowr = golfers_elbowr;
 	}
+
 
 
 	public String getGolfers_elbowl() {
@@ -2606,9 +3151,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setGolfers_elbowl(String golfers_elbowl) {
 		this.golfers_elbowl = golfers_elbowl;
 	}
+
 
 
 	public String getTennis_elbowr() {
@@ -2616,9 +3163,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setTennis_elbowr(String tennis_elbowr) {
 		this.tennis_elbowr = tennis_elbowr;
 	}
+
 
 
 	public String getTennis_elbowl() {
@@ -2626,9 +3175,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setTennis_elbowl(String tennis_elbowl) {
 		this.tennis_elbowl = tennis_elbowl;
 	}
+
 
 
 	public String getTinelsr() {
@@ -2636,9 +3187,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setTinelsr(String tinelsr) {
 		this.tinelsr = tinelsr;
 	}
+
 
 
 	public String getTinelsl() {
@@ -2646,9 +3199,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setTinelsl(String tinelsl) {
 		this.tinelsl = tinelsl;
 	}
+
 
 
 	public String getPhalensr() {
@@ -2656,9 +3211,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setPhalensr(String phalensr) {
 		this.phalensr = phalensr;
 	}
+
 
 
 	public String getPhalensl() {
@@ -2666,9 +3223,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setPhalensl(String phalensl) {
 		this.phalensl = phalensl;
 	}
+
 
 
 	public String getFinkelsteins_testr() {
@@ -2676,9 +3235,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setFinkelsteins_testr(String finkelsteins_testr) {
 		this.finkelsteins_testr = finkelsteins_testr;
 	}
+
 
 
 	public String getFinkelsteins_testl() {
@@ -2686,9 +3247,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setFinkelsteins_testl(String finkelsteins_testl) {
 		this.finkelsteins_testl = finkelsteins_testl;
 	}
+
 
 
 	public String getBraceletr() {
@@ -2696,9 +3259,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setBraceletr(String braceletr) {
 		this.braceletr = braceletr;
 	}
+
 
 
 	public String getBraceletl() {
@@ -2706,9 +3271,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setBraceletl(String braceletl) {
 		this.braceletl = braceletl;
 	}
+
 
 
 	public String getAllensr() {
@@ -2716,9 +3283,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setAllensr(String allensr) {
 		this.allensr = allensr;
 	}
+
 
 
 	public String getAllensl() {
@@ -2726,9 +3295,11 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setAllensl(String allensl) {
 		this.allensl = allensl;
 	}
+
 
 
 	public String getValgus_varusr() {
@@ -2736,92 +3307,17 @@ public class Hamiltonchiropractic {
 	}
 
 
+
 	public void setValgus_varusr(String valgus_varusr) {
 		this.valgus_varusr = valgus_varusr;
 	}
 
 
-	public String getValgus_varusl() {
-		return valgus_varusl;
-	}
-
-
-	public void setValgus_varusl(String valgus_varusl) {
-		this.valgus_varusl = valgus_varusl;
-	}
-
-
-	public String getPat_ballr() {
-		return pat_ballr;
-	}
-
-
-	public void setPat_ballr(String pat_ballr) {
-		this.pat_ballr = pat_ballr;
-	}
-
-
-	public String getPat_balll() {
-		return pat_balll;
-	}
-
-
-	public void setPat_balll(String pat_balll) {
-		this.pat_balll = pat_balll;
-	}
-
-
-	public String getDrawerr() {
-		return drawerr;
-	}
-
-
-	public void setDrawerr(String drawerr) {
-		this.drawerr = drawerr;
-	}
-
-
-	public String getDrawerl() {
-		return drawerl;
-	}
-
-
-	public void setDrawerl(String drawerl) {
-		this.drawerl = drawerl;
-	}
-
-
-	public String getVal_varusr() {
-		return val_varusr;
-	}
-
-
-	public void setVal_varusr(String val_varusr) {
-		this.val_varusr = val_varusr;
-	}
-
-
-	public String getVal_varusl() {
-		return val_varusl;
-	}
-
-
-	public void setVal_varusl(String val_varusl) {
-		this.val_varusl = val_varusl;
-	}
-
-
-	public String getApleysr() {
-		return apleysr;
-	}
-
-
-	public void setApleysr(String apleysr) {
-		this.apleysr = apleysr;
-	}
-
 
 	public Hamiltonchiropractic(String initialexamid, String patient_id,
+			String lumbopelvic, String lumboright, String lumboleft,
+			String cervical, String cervicalright, String cervicalleft,
+			String thoracic, String thoracicright, String thoracicleft,
 			String hacheck, String ha, String haa, String neckcheck,
 			String neck, String necka, String mbcheck, String mb, String mba,
 			String ribscheck, String ribs, String ribsa, String shouldercheck,
@@ -2875,8 +3371,8 @@ public class Hamiltonchiropractic {
 			String soto_hallr, String soto_halll, String compression_testr,
 			String compression_testl, String compression_testlo,
 			String antalgiar, String antalgial, String spinal_percusslr,
-			String spinal_percussll, String valsalvalr, String valsalvall,
-			String minors_signr, String minors_signl, String braggards_testr,
+			String valsalvalr, String valsalvall, String minors_signr,
+			String minors_signl, String braggards_testr,
 			String braggards_testl, String slrr, String slrl, String wlrr,
 			String wlrl, String hooversr, String hooversl,
 			String dbl_leg_raiser, String dbl_leg_raisel,
@@ -2894,13 +3390,19 @@ public class Hamiltonchiropractic {
 			String tennis_elbowl, String tinelsr, String tinelsl,
 			String phalensr, String phalensl, String finkelsteins_testr,
 			String finkelsteins_testl, String braceletr, String braceletl,
-			String allensr, String allensl, String valgus_varusr,
-			String valgus_varusl, String pat_ballr, String pat_balll,
-			String drawerr, String drawerl, String val_varusr,
-			String val_varusl, String apleysr) {
+			String allensr, String allensl, String valgus_varusr) {
 		super();
 		this.initialexamid = initialexamid;
 		this.patient_id = patient_id;
+		this.lumbopelvic = lumbopelvic;
+		this.lumboright = lumboright;
+		this.lumboleft = lumboleft;
+		this.cervical = cervical;
+		this.cervicalright = cervicalright;
+		this.cervicalleft = cervicalleft;
+		this.thoracic = thoracic;
+		this.thoracicright = thoracicright;
+		this.thoracicleft = thoracicleft;
 		this.hacheck = hacheck;
 		this.ha = ha;
 		this.haa = haa;
@@ -3085,7 +3587,6 @@ public class Hamiltonchiropractic {
 		this.antalgiar = antalgiar;
 		this.antalgial = antalgial;
 		this.spinal_percusslr = spinal_percusslr;
-		this.spinal_percussll = spinal_percussll;
 		this.valsalvalr = valsalvalr;
 		this.valsalvall = valsalvall;
 		this.minors_signr = minors_signr;
@@ -3145,16 +3646,10 @@ public class Hamiltonchiropractic {
 		this.allensr = allensr;
 		this.allensl = allensl;
 		this.valgus_varusr = valgus_varusr;
-		this.valgus_varusl = valgus_varusl;
-		this.pat_ballr = pat_ballr;
-		this.pat_balll = pat_balll;
-		this.drawerr = drawerr;
-		this.drawerl = drawerl;
-		this.val_varusr = val_varusr;
-		this.val_varusl = val_varusl;
-		this.apleysr = apleysr;
 	}
 
+
+	
 
 	
 }
