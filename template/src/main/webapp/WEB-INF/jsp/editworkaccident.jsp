@@ -201,21 +201,27 @@ window.onload(){
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.present_job}" name="present_job" /></br><span class="err"><form:errors path="workAcc.present_job"></form:errors></span></td>
 				 </tr>	
-				  <tr class="row2">
+				 <tr class="row2">
+				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Has there been a time loss or absentee caused from job injury</td>
+				  <td valign="top" align="left" class="input_txt" width = "5%"><input type="radio" name="time_loss" value="yes" class="input_txt" id="timelosscheck"  onclick="time();"<c:if test="${workaccident.time_loss=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="time_loss" value="No" class="input_txt" onclick="time();"<c:if test="${workaccident.time_loss=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;
+				  <td><textarea rows='3' cols='35' id="absenteeism" name="absenteeism" placeholder="If yes, explain(include dates)" value="${workaccident.absenteeism}"></textarea></td>
+				  </td>
+				  </tr>
+				 <%--  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Has there been a time loss or absenteeism caused from job injury</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="radio" name="time_loss" value="yes" class="input_txt" id="timelosscheck"  onclick="time();"<c:if test="${workaccident.time_loss=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
-				  <input type="radio" name="time_loss" value="No" class="input_txt" onclick="time();"<c:if test="${workaccident.time_loss=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;
-				   <%-- <input type="text" class="input_txtbx1" id="timeloss1" name="absenteeism" placeholder="If yes, explain(include dates)"  /></br><span class="err"><form:errors path="workAcc.absenteeism"></form:errors></span></td> --%>
-				   <textarea rows='3' cols='35' id="timeloss1" name="absenteeism" placeholder="If yes, explain(include dates)" value="${workaccident.absenteeism}" ></textarea></td>
-				  <td></td>
-						              <td></td>
+				  <td><input type="radio" name="time_loss" value="yes" class="input_txt" id="timelosscheck"  onclick="time();"<c:if test="${workaccident.time_loss=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
+				  <input type="radio" name="time_loss" value="No" class="input_txt" onclick="time();"<c:if test="${workaccident.time_loss=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;</td>
+				   <input type="text" class="input_txtbx1" id="timeloss1" name="absenteeism" placeholder="If yes, explain(include dates)"  /></br><span class="err"><form:errors path="workAcc.absenteeism"></form:errors></span></td>
+				   <td><textarea rows='3' cols='35' id="timeloss1" name="absenteeism" placeholder="If yes, explain(include dates)" value="${workaccident.absenteeism}" ></textarea></td> 
+				  
+						       --%>       <!--  <td></td>
 						              <td></td>
 						              <td></td>
 						               <td></td>
 						              <td></td>
-						              <td></td>
-				  </tr>	
+						              <td></td> -->
+				 <!--  </tr>	 -->
 				   <tr class="row1">
                 						<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Type of lighting in the building</td>
                 						<td valign="top" align="left" class="input_txt">
@@ -266,7 +272,7 @@ window.onload(){
 				  <table cellpadding="0" cellspacing="0" border="0" width="100%">
 				                
 				  				    <tr class="row2">
-                						<td valign="middle" align="left" class="input_txt" width = "44%"><span class="err">*</span>Do you lift from</td>
+                						<td valign="middle" align="left" class="input_txt" width = "37%"><span class="err">*</span>Do you lift from</td>
                 						<td valign="top" align="left" class="input_txt">
 										  <select name="lift_from" class="input_cmbbx1">
 					 						<option value="ground" <c:if test="${workaccident.lift_from=='ground'}"><c:out value="selected"/></c:if>>Ground</option>
