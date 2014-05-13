@@ -1291,8 +1291,8 @@ function elbowPopup() {
 				                  <tr class="row1">
 				                  <td width="150"></td>
 				                  <td>Ligamentous instability</td>
-				                  <td valign="top" align="left" class="input_txt">Right<select width="50%" name="lingaminstabr"><option value="MCL">MCL</option><option value="lcl">LCL</option></select></td>
-				                 <td class="input_txt" align="left"> Left<select width="50%" name="lingaminstabl"><option value="mcl">MCL</option><option value="lcl">LCL</option></select></td>
+				                  <td valign="top" align="left" class="input_txt">Right<select width="50%" name="lingaminstabr"><option value="MCL">MCL</option><option value="LCL">LCL</option></select></td>
+				                 <td class="input_txt" align="left"> Left<select width="50%" name="lingaminstabl"><option value="MCL">MCL</option><option value="LCL">LCL</option></select></td>
 				                 
 				                  </tr>
 				                  <tr class="row1">
@@ -1381,7 +1381,7 @@ function elbowPopup() {
 				                   <tr class="row1">
 				                   <td width="150"></td>
 				                  <td>Val/Varus  </td>
-				                  <td valign="top" align="left" class="input_txt"> Right<select width="50%" name="lingaminstabr"><option value="MCL">MCL</option><option value="lcl">LCL</option></select></td>
+				                  <td valign="top" align="left" class="input_txt"> Right<select width="50%" name="val_varusr"><option value="MCL">MCL</option><option value="lcl">LCL</option></select></td>
 				                 <td class="input_txt" align="left"> Left<select width="50%" name="val_varusl"><option value="mcl">MCL</option><option value="lcl">LCL</option></select></td>
 				                 <td></td>
 				                  </tr>
@@ -1402,44 +1402,44 @@ function elbowPopup() {
 				                   <tr class="row1">
 				                   <td width="150"></td>
 				                    <td>Drawer</td>
-				                  <td valign="top" align="left" class="input_txt">Right <select width="50%" name="drawerar"><option value="acl">ACL</option><option value="pcl">PCL</option></select></td>
-				                 <td class="input_txt" align="left"> Left<select width="50%" name="draweral"><option value="acl">ACL</option><option value="pcl">PCL</option></select></td>
+				                  <td valign="top" align="left" class="input_txt">Right <select width="50%" name="ankdrawr"><option value="acl">ACL</option><option value="pcl">PCL</option></select></td>
+				                 <td class="input_txt" align="left"> Left<select width="50%" name="ankdrawl"><option value="acl">ACL</option><option value="pcl">PCL</option></select></td>
 				              
 				  </tr>
 				                   <tr class="row1">
 				                   <td width="150"></td>
 				                  <td>Thompsons </td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="thompsonsr" value="Right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="thompsonsl" value="Left">Left</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="ankthomr" value="Right">Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="ankthoml" value="Left">Left</td>
 				                 
 				                  </tr>
 				                  <tr class="row1">
 				                  <td width="150"></td>
 				                  <td>Tinels </td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="tinelsar" value="Right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="tinelsal" value="Left">Left</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="anktinelr" value="Right">Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="anktinell" value="anktinell">Left</td>
 				                 
 				                  </tr>
 				                  <tr class="row1">
 				                  <td width="150"></td>
 				                  <td> Strunskys</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="strunskysr" value="Right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="strunskysl" value="Left">Left</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="ankstrunkr" value="Right">Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="ankstrunkl" value="Left">Left</td>
 				                 
 				                  </tr>
 				                 
                         <tr class="row1">
                         <td width="150"></td>
 				                  <td> Homans </td>				                  
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="homansr" value="Right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="homansl" value="Left">Left</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="ankhomanr" value="Right">Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="ankhomanl" value="Left">Left</td>
 				                 
 				                  </tr>
 				                   <tr class="row1">
 				                   <td width="150"></td>
 				                  <td>Claudication Test </td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="claudication_testr" value="Right">Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="claudication_testl" value="Left">Left</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="ankclaudicr" value="Right">Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="ankclaudicl" value="Left">Left</td>
 				                 
 				                  </tr>
 				                   
