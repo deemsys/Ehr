@@ -158,7 +158,7 @@
 				        <td>${patientDetails.state}</td>
 				        </tr>
 				         <tr class="row2">
-				        <td> <input type="text" name="number" id="zipcode" ><span" class="zipcodeerror">*</span >ZipCode:</td>
+				        <td> <input type="hidden" name="number" id="zipcode" ><span" class="zipcodeerror">*</span >ZipCode:</td>
 				        <td>${patientDetails.zipCode}</td>
 				        </tr>
 				          <tr class="row1">

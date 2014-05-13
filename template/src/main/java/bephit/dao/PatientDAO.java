@@ -562,7 +562,7 @@ public class PatientDAO {
 	}
 	
 	
-	public List<PatientDetails> getPatientAttorneyDetails(String attorney,String name,String accident,String dateofaccident){
+	public List<PatientDetails> getPatientAttorneyDetails(String attorney,String name,String accident,String dateofaccident,String insurance){
 		Connection con = null;
 		Statement statement = null;
 		ResultSet resultSet = null;
@@ -574,6 +574,9 @@ public class PatientDAO {
 		}
 		List<PatientDetails> patientDetails = new ArrayList<PatientDetails>();
 	    try{
+	    	System.out.println("hello");
+	    	System.out.println("sadasdasdsd select * from patient_details where Name_health='"+insurance+"'");
+	    	System.out.println("insurance"+insurance);
 	    	if(name!="")
 	    	{
 	    	resultSet = statement.executeQuery("select * from patient_details where Name LIKE '%"+name+"'");
@@ -582,13 +585,20 @@ public class PatientDAO {
 	    	{
 	    		resultSet = statement.executeQuery("select * from patient_details where NameOfAttorney='"+attorney+"'");
 	    	}
-	    	else if(accident!=null)
+	    	else if(accident!="")
 	    	{	    	
 	    	resultSet = statement.executeQuery("select * from patient_details where Type_Of_Accident='"+accident+"'");	
 	    	}
-	    	else if(dateofaccident!=null)
+	    	else if(dateofaccident!="")
 	    	{
 	    	resultSet = statement.executeQuery("select * from patient_details where Date_Of_Accident='"+dateofaccident+"'");
+				}
+	    	
+	    	else if(insurance!="")
+	    	{
+	    		System.out.println("sadasdasdsd select * from patient_details where Name_health='"+insurance+"'");
+	    	resultSet = statement.executeQuery("select * from patient_details where Name_health='"+insurance+"'");
+	    	System.out.println("select * from patient_details where Name_health='"+insurance+"'");
 				}
 	    	while(resultSet.next()){
 				patientDetails.add(new PatientDetails(

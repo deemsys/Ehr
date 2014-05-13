@@ -2,7 +2,8 @@ package bephit.model;
 
 public class Moretest {
 	
-	private String emptycan;
+	private String username;
+	private String emptycan;	
 	private String yergason;
 	private String speed;
 	private String ludington;
@@ -52,6 +53,7 @@ public class Moretest {
 	private String valgus;
 	private String tinel;
 	private String pinchgrip;
+	private String percussion;
 	private String compression;
 	private String longfinger;
 	private String finkelstein;
@@ -171,15 +173,15 @@ public class Moretest {
 			String valsalva, String swallowing, String tinelsign, String cozen,
 			String resistive, String passive, String golfer,
 			String hyperextension, String elbowflexion, String varus,
-			String valgus, String tinel, String pinchgrip, String compression,
-			String longfinger, String finkelstein, String phalen,
-			String tinelp, String froment, String wrinkle, String digital,
-			String bunnel, String murphy, String watson, String valgusst,
-			String varusst, String selectionvi, String kernig, String lateral,
-			String anteriorl, String inspiration, String kernigt,
-			String lateralt, String anteriort, String inspirationt,
-			String valsalvat, String stoop, String hoover, String kernigl,
-			String straight, String bowstring, String sitting,
+			String valgus, String tinel, String pinchgrip, String percussion,
+			String compression, String longfinger, String finkelstein,
+			String phalen, String tinelp, String froment, String wrinkle,
+			String digital, String bunnel, String murphy, String watson,
+			String valgusst, String varusst, String selectionvi, String kernig,
+			String lateral, String anteriorl, String inspiration,
+			String kernigt, String lateralt, String anteriort,
+			String inspirationt, String valsalvat, String stoop, String hoover,
+			String kernigl, String straight, String bowstring, String sitting,
 			String unilateral, String bilateral, String wellstraight,
 			String slump, String thomas, String spring, String trendelenburg,
 			String stork, String sijft, String gillet, String sijst,
@@ -253,6 +255,7 @@ public class Moretest {
 		this.valgus = valgus;
 		this.tinel = tinel;
 		this.pinchgrip = pinchgrip;
+		this.percussion = percussion;
 		this.compression = compression;
 		this.longfinger = longfinger;
 		this.finkelstein = finkelstein;
@@ -356,6 +359,13 @@ public class Moretest {
 		this.swingtest = swingtest;
 		this.kleiger = kleiger;
 		this.tinelsignk = tinelsignk;
+	}
+	
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	public String getEmptycan() {
 		return emptycan;
@@ -656,6 +666,12 @@ public class Moretest {
 	}
 	public void setPinchgrip(String pinchgrip) {
 		this.pinchgrip = pinchgrip;
+	}
+	public String getPercussion() {
+		return percussion;
+	}
+	public void setPercussion(String percussion) {
+		this.percussion = percussion;
 	}
 	public String getCompression() {
 		return compression;
@@ -1044,7 +1060,7 @@ public class Moretest {
 	public String getMedial() {
 		return medial;
 	}
-	public void setMedial(String medical) {
+	public void setMedial(String medial) {
 		this.medial = medial;
 	}
 	public String getBounce() {
@@ -1276,5 +1292,5 @@ public class Moretest {
 		this.tinelsignk = tinelsignk;
 	}
 	
-	
+		
 }

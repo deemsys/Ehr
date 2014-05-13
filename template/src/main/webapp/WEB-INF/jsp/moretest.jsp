@@ -29,7 +29,7 @@
               <td></td>
               </tr>
               <tr class="row1">
-               
+               <input type="hidden" name="username" value="${username}">
                  <td><input type="checkbox" name="emptycan" value="emptycan" >&nbsp Empty Can (Supraspinatus) Test</td>
                  <td><input type="checkbox" name="yergason" value="yergason" >&nbsp Yergason Test </td>
                  <td><input type="checkbox" name="speed" value="speed" >&nbsp Speed's Test </td>
@@ -163,7 +163,7 @@
               <td></td>
               </tr>
               <tr class="row1">
-              <td width="260"><input type="checkbox" name="tap" value="tap" >&nbsp Tap or Percussion Test 
+              <td width="260"><input type="checkbox" name="percussion" value="tap" >&nbsp Tap or Percussion Test 
                 </td>
                  <td width="310"><input type="checkbox" name="compression" value="compression" >&nbsp Compression Test </td>
                  <td width="120"><input type="checkbox" name="longfinger" value="longfinger" >&nbsp Long Finger Flexion Test </td>

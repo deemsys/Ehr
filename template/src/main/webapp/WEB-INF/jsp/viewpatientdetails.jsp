@@ -63,7 +63,8 @@ function doAjaxPost() {
 			  <td>Attorney:</td><td><input type="text" name="NameOfAttorney" value="${attorney}"></td>
 			  <td>Type of Accident:</td><td><input type="text" name="accident" value="${accident}"></td>
 			  <td>Date of Accident</td><td><input type="text" name="dateofaccident" id="datepicker" value="${dateofaccident}"></td>
-			  <td width="300"></td><td><input type="submit" value="Find" class="submit_btn"></td></tr></table>    
+			 <td>Name of Your Health Insurance:</td><td><input type="text" name="insurance" value="${insurance}"></td>
+			  <td width="50"></td><td><input type="submit" value="Find" class="submit_btn"></td></tr></table>    
 			      
 			      </form>
 			      <form action="patientDetails" method="POST"> 
