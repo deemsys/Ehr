@@ -45,7 +45,7 @@ public class NoticeassignmentDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 
-	    	 String cmd="INSERT INTO tbl_noticeassignment1 (username,nameofins,nameofattorney,address1,address2,regarding,patientname,dateofaccident,todaysdate,letter,letter1,treatingphysician) VALUES ('"+username+"','"+noticeassignmentdetails.getNameofins()+"','"+noticeassignmentdetails.getNameofattorney()+"','"+noticeassignmentdetails.getAddress1()+"','"+noticeassignmentdetails.getAddress2()+"','"+noticeassignmentdetails.getRegarding()+"','"+noticeassignmentdetails.getPatientname()+"','"+noticeassignmentdetails.getDateofaccident()+"','"+noticeassignmentdetails.getTodaysdate()+"','"+noticeassignmentdetails.getLetter()+"','"+noticeassignmentdetails.getLetter1()+"','"+noticeassignmentdetails.getTreatingphysician()+"')";
+	    	 String cmd="INSERT INTO tbl_noticeassignment (username,nameofins,nameofattorney,address1,address2,regarding,patientname,dateofaccident,todaysdate,letter,letter1,treatingphysician) VALUES ('"+username+"','"+noticeassignmentdetails.getNameofins()+"','"+noticeassignmentdetails.getNameofattorney()+"','"+noticeassignmentdetails.getAddress1()+"','"+noticeassignmentdetails.getAddress2()+"','"+noticeassignmentdetails.getRegarding()+"','"+noticeassignmentdetails.getPatientname()+"','"+noticeassignmentdetails.getDateofaccident()+"','"+noticeassignmentdetails.getTodaysdate()+"','"+noticeassignmentdetails.getLetter()+"','"+noticeassignmentdetails.getLetter1()+"','"+noticeassignmentdetails.getTreatingphysician()+"')";
 	    	    System.out.println("cmd insert value"+cmd);
 	    	    statement.executeUpdate(cmd);
 	    	    }
@@ -80,7 +80,7 @@ public class NoticeassignmentDAO {
 		}
 		List<Noticeassignment> noticeassignment = new ArrayList<Noticeassignment>();
 	    try{
-			resultSet = statement.executeQuery("select * from tbl_noticeassignment1");
+			resultSet = statement.executeQuery("select * from tbl_noticeassignment");
 			while(resultSet.next()){
 				noticeassignment.add(new Noticeassignment
 						(resultSet.getString("noticeid"),
@@ -130,7 +130,7 @@ public class NoticeassignmentDAO {
 		}
 		List<Noticeassignment> noticeassignment = new ArrayList<Noticeassignment>();
 	    try{
-			resultSet = statement.executeQuery("select * from tbl_noticeassignment1 where username='"+username+"'");
+			resultSet = statement.executeQuery("select * from tbl_noticeassignment where username='"+username+"'");
 			while(resultSet.next()){
 				noticeassignment.add(new Noticeassignment
 						(resultSet.getString("noticeid"),
@@ -179,7 +179,7 @@ public class NoticeassignmentDAO {
 		}
 		List<Noticeassignment> noticeassignment = new ArrayList<Noticeassignment>();
 	    try{
-			resultSet = statement.executeQuery("select * from tbl_noticeassignment1 where username='"+username+"'");
+			resultSet = statement.executeQuery("select * from tbl_noticeassignment where username='"+username+"'");
 			while(resultSet.next()){
 				noticeassignment.add(new Noticeassignment
 						(resultSet.getString("noticeid"),
@@ -282,7 +282,7 @@ public class NoticeassignmentDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 
-	    	 String cmd="delete from tbl_noticeassignment1 where noticeid='"+noticeid+"'";
+	    	 String cmd="delete from tbl_noticeassignment where noticeid='"+noticeid+"'";
 	    	    System.out.println("cmd insert value"+cmd);
 	    	    statement.executeUpdate(cmd);
 	    	    }
