@@ -249,7 +249,7 @@ window.onload(){
 				  <div id="yeschecked"  style='display:none'>
 					<table cellpadding="0" cellspacing="0" border="0" width="100%">
 				            <tr class="row1">
-                  <td valign="middle" align="left" class="input_txt" width = "44%"><span class="err">*</span>If yes, how much</td>
+                  <td valign="middle" align="left" class="input_txt" width = "37%"><span class="err">*</span>If yes, how much</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="input_txtbx1" id="inp_id"  onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.how_much}" name="how_much" /></br><span class="err"><form:errors path="workAcc.how_much"></form:errors></span></td>
 				  </td>
