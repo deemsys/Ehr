@@ -8,21 +8,20 @@ public class HippaPrivacy
 {
 	private String hippa_no;
 	
-	@NotEmpty
+	
 	private String date;
 	
-	@NotEmpty
+	
 	
 	private String printpname;
 	
-	@NotEmpty
+	
 	private String printpdate;
 	
-	@NotEmpty
+
 	
 	private String legalguardian;
 	
-	@NotEmpty
 	
 	private String staffwitness;
 	
