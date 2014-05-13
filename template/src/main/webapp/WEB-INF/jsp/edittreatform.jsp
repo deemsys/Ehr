@@ -33,6 +33,14 @@
 
 	function checkSubmit()
 	{
+document.getElementById("patientsnameerror").innerHTML=" ";
+		
+		if(document.getElementById("patientsname").value=="")
+		{
+		document.getElementById("patientsnameerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
 		document.getElementById("patientssignerror").innerHTML=" ";
 		
 		if(document.getElementById("patientssign").value=="")
@@ -104,7 +112,7 @@
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>PatientsName: </td>
 				                  <input type="hidden" class="input_txtbx1" id="inp_id" value="${Treatdetails.treat_no}" name="treat_no" />
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="patientsname" value="${Treatdetails.patientsname}"/><span class="err"><form:errors path="Treatform.patientsname"></form:errors></span></td>
+				                  	<input type="text" class="input_txtbx1" id="patientsname" name="patientsname" value="${Treatdetails.patientsname}"/><span id="patientsnameerror" style="color: red;font-style:italic;"><form:errors path="Treatform.patientsname"></form:errors></span></td>
 				                  	</tr>
                         <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patients Signature: </td>

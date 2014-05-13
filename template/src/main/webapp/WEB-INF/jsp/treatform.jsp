@@ -21,6 +21,14 @@
 
 	function checkSubmit()
 	{
+document.getElementById("patientsnameerror").innerHTML=" ";
+		
+		if(document.getElementById("patientsname").value=="")
+		{
+		document.getElementById("patientsnameerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
 		document.getElementById("patientssignerror").innerHTML=" ";
 		
 		if(document.getElementById("patientssign").value=="")
@@ -91,7 +99,7 @@
                         <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>PatientsName: </td>
 				                  <td valign="top" align="left" class="input_txt" width="200">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="patientsname" value="${name}"/><span class="err"><form:errors path="Treatform.patientsname"></form:errors></span></td>
+				                  	<input type="text" class="input_txtbx1" id="patientsname" name="patientsname" value="${name}"/><span id="patientsnameerror" style="color: red;font-style:italic;"><form:errors path="Treatform.patientsname"></form:errors></span></td>
 				                  	</tr>
                         <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patients Signature: </td>
@@ -132,7 +140,7 @@
                         <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>PatientsName: </td>
 				                  <td valign="top" align="left" class="input_txt" width="200">
-				                  	<input type="text"   class="input_txtbx1" id="inp_id" name="patientsname" value="${consent.patientsname}"/><br><span class="err"><form:errors path="Treatform.patientsname"></form:errors></span>
+				                  	<input type="text"   class="input_txtbx1" id="patientsname" name="patientsname" value="${consent.patientsname}"/><br><span id="patientsnameerror" style="color: red;font-style:italic;"><form:errors path="Treatform.patientsname"></form:errors></span>
 				                  	</tr>
                         <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patients Signature: </td>
