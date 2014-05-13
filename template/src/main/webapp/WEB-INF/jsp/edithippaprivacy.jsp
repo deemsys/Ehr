@@ -32,6 +32,45 @@
 	}
 }
   </script>
+  <script>
+
+	function checkSubmit()
+	{
+		document.getElementById("printpnameerror").innerHTML=" ";
+		
+		if(document.getElementById("printpname").value=="")
+		{
+		document.getElementById("printpnameerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		document.getElementById("datepicker1error").innerHTML="";
+	if(document.getElementById("datepicker1").value=="")
+		{
+		document.getElementById("datepicker1error").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+			
+			
+	document.getElementById("legalguardianerror").innerHTML="";
+	if(document.getElementById("legalguardian").value=="")
+	{
+	document.getElementById("legalguardianerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	
+	document.getElementById("staffwitnesserror").innerHTML="";
+	if(document.getElementById("staffwitness").value=="")
+	{
+	document.getElementById("staffwitnesserror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	}
+	</script>
 </head>
 <body>
 <div id="right_content">
@@ -94,35 +133,35 @@
                         <td valign="middle" align="left" class="input_txt"><span class="err">*</span>PrintPatientname: </td>
 				                  <input type="hidden" class="input_txtbx1" id="inp_id" value="${privacydetails.hippa_no}" name="hippa_no" />
 				                   <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="printpname" value="${privacydetails.printpname}"/>
-				                  	  <br><span class="err"><form:errors path="HippaPrivacy.printpname"></form:errors>
+				                  	<input type="text" class="input_txtbx1" id="printpname" name="printpname" value="${privacydetails.printpname}"/>
+				                  	  <br><span id="printpnameerror" style="color: red;font-style:italic;"><form:errors path="HippaPrivacy.printpname"></form:errors>
 				                  	</td>
 				                  	</tr>
 				                  	<tr class="row1">
 				                  	 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date: </td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="datepicker1" name="printpdate" value="${privacydetails.printpdate}" />
-				           <br><span class="err"><form:errors path="HippaPrivacy.printpdate"></form:errors>
+				           <br><span id="datepicker1error" style="color: red;font-style:italic;"><form:errors path="HippaPrivacy.printpdate"></form:errors>
 				           </td>
 				         </tr>
 				         <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Signature Of parent or Legal Guardian: </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="legalguardian" value="${privacydetails.legalguardian }"/>
-				                    <br><span class="err"><form:errors path="HippaPrivacy.legalguardian"></form:errors>
+				                  	<input type="text" class="input_txtbx1" id="legalguardian" name="legalguardian" value="${privacydetails.legalguardian }"/>
+				                    <br><span id="legalguardianerror" style="color: red;font-style:italic;"><form:errors path="HippaPrivacy.legalguardian"></form:errors>
 				                  </td>
 				                  	</tr>
 				                  	 <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Staff Witness: </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="staffwitness" value="${privacydetails.staffwitness}"/>
-				                  <br><span class="err"><form:errors path="HippaPrivacy.staffwitness"></form:errors>
+				                  	<input type="text" class="input_txtbx1" id="staffwitness" name="staffwitness" value="${privacydetails.staffwitness}"/>
+				                  <br><span id="staffwitnesserror" style="color: red;font-style:italic;" ><form:errors path="HippaPrivacy.staffwitness"></form:errors>
 				                  </td>	</tr>
 				                  	</table>
 				     <table>
               <tr>
               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-              <td><input type="submit" class="submit_btn" value="Update"></td>
+              <td><input type="submit" class="submit_btn" value="Update" onclick="return checkSubmit('this');"></td>
               <td>&nbsp;&nbsp;</td>
               <td><a href="deletehippaprivacydetails" class="submit_btn" style="text-decoration: none;color:white" onclick="return confirmation() ">Delete</a></td>
         	  </tr>

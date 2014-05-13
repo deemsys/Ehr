@@ -20,6 +20,45 @@
 		    $( "#datepicker1" ).datepicker();
 		  });
 	  </script>
+	  <script>
+
+	function checkSubmit()
+	{
+		document.getElementById("printpnameerror").innerHTML=" ";
+		
+		if(document.getElementById("printpname").value=="")
+		{
+		document.getElementById("printpnameerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		document.getElementById("datepicker1error").innerHTML="";
+	if(document.getElementById("datepicker1").value=="")
+		{
+		document.getElementById("datepicker1error").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+			
+			
+	document.getElementById("legalguardianerror").innerHTML="";
+	if(document.getElementById("legalguardian").value=="")
+	{
+	document.getElementById("legalguardianerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	
+	document.getElementById("staffwitnesserror").innerHTML="";
+	if(document.getElementById("staffwitness").value=="")
+	{
+	document.getElementById("staffwitnesserror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	}
+	</script>
 </head>
 <body>
 <div id="right_content">
@@ -80,25 +119,25 @@
                         <tr class="row1">
                         <td valign="middle" align="left" class="input_txt"><span class="err">*</span>PrintPatientname: </td>
 				                   <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="printpname" value="${name}"/>
-				                  	<br><span class="err"><form:errors path="HippaPrivacy.printpname"></form:errors>
+				                  	<input type="text" class="input_txtbx1" id="printpname" name="printpname" value="${name}"/>
+				                  	<br><span id="printpnameerror" style="color: red;font-style:italic;"><form:errors path="HippaPrivacy.printpname"></form:errors>
 				                  	</td>
 				                  	</tr>
 				                  	<tr class="row1">
 				                  	 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date: </td>
 				                  	<td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="datepicker1" name="printpdate" />
+				                  	<input type="text" class="input_txtbx1" id="datepicker1" name="printpdate" /><span id="datepicker1error" style="color: red;font-style:italic;"></span>
 				         </span></td>
 				         </tr>
 				         <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Signature Of parent or Legal Guardian: </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="legalguardian" />
+				                  	<input type="text" class="input_txtbx1" id="legalguardian" name="legalguardian" /><span id="legalguardianerror" style="color: red;font-style:italic;" ></span>
 				                  	</tr>
 				                  	 <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Staff Witness: </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="staffwitness" />
+				                  	<input type="text" class="input_txtbx1" id="staffwitness" name="staffwitness" /><span id="staffwitnesserror" style="color: red;font-style:italic;"></span>
 				                  	</tr>
 				                  	</table>
 				                  	</c:when>
@@ -141,28 +180,28 @@
                         <tr class="row1">
                         <td valign="middle" align="left" width="200" class="input_txt"><span class="err">*</span>PrintPatientname: </td>
 				                   <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="printpname" value="${hippa.printpname}"/>
-				                  <br><span class="err"><form:errors path="HippaPrivacy.printpname"></form:errors>
+				                  	<input type="text" class="input_txtbx1" id="printpname" name="printpname" value="${hippa.printpname}"/>
+				                  <br><span id="printpnameerror" style="color: red;font-style:italic;"><form:errors path="HippaPrivacy.printpname"></form:errors>
 				                  	</td>
 				                  	</tr>
 				                  	<tr class="row1">
 				                  	 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date: </td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="datepicker1" name="printpdate" value="${hippa.printpdate}"/>
-				        <br><span class="err"><form:errors path="HippaPrivacy.printpdate"></form:errors></td>
+				        <br><span id="datepicker1error" style="color: red;font-style:italic;" ><form:errors path="HippaPrivacy.printpdate"></form:errors></td>
 				         </tr>
 				         <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Signature Of parent or Legal Guardian: </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="legalguardian" value="${hippa.legalguardian}"/>
-				                  	 <br><span class="err"><form:errors path="HippaPrivacy.legalguardian"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="legalguardian" name="legalguardian" value="${hippa.legalguardian}"/>
+				                  	 <br><span id="legalguardianerror" style="color: red;font-style:italic;"><form:errors path="HippaPrivacy.legalguardian"></form:errors></span>
 				                  	
 				                  	</tr>
 				                  	 <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Staff Witness: </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="staffwitness" value="${hippa.staffwitness}"/>	
-				                <br>  <span class="err"><form:errors path="HippaPrivacy.staffwitness"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="staffwitness" name="staffwitness" value="${hippa.staffwitness}"/>	
+				                <br>  <span id="staffwitnesserror" style="color: red;font-style:italic;"><form:errors path="HippaPrivacy.staffwitness"></form:errors></span>
 				                  	</tr>
 				                  	</table>
 				                  	</c:otherwise>
@@ -170,7 +209,7 @@
 				                  	<table>
 				                  	<tr>
 				  <td valign="top" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-				                <td valign="top" align="center"><br><input type="submit" class="submit_btn" value="Save"></td>
+				                <td valign="top" align="center"><br><input type="submit" class="submit_btn" value="Save" onclick="return checkSubmit('this');"></td>
 				                <td>&nbsp;&nbsp;</td>
 				    <td valign="top" align="center"><br><!-- <a href="hippalist" class="submit_btn" style="color:white" >Cancel --></td>
 				    <td>&nbsp;&nbsp;</td>
