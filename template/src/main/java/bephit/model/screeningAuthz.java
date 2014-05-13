@@ -5,10 +5,10 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class screeningAuthz
 {
 	private String screen_no;
-	@NotEmpty
+	
 	private String date;
 	
-	@NotEmpty
+	
 	private String name;
 	
 

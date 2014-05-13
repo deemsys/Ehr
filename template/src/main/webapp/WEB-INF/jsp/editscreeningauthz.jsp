@@ -28,6 +28,28 @@
 	}
 }
   </script>
+   <script>
+
+	function checkSubmit()
+	{
+		document.getElementById("datepickererror").innerHTML=" ";
+		
+		if(document.getElementById("datepicker").value=="")
+		{
+		document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		document.getElementById("nameerror").innerHTML="";
+	if(document.getElementById("name").value=="")
+		{
+		document.getElementById("nameerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+			
+	}
+	</script>
 </head>
    <body>
 
@@ -63,18 +85,18 @@
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date: </td>
 				                  <input type="hidden" class="input_txtbx1" id="inp_id" value="${ScreeningDetails.screen_no}" name="screen_no" />
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="datepicker" name="date" value="${ScreeningDetails.date}"/><br><span class="err"><form:errors path="screeningAuthz.date"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="datepicker" name="date" value="${ScreeningDetails.date}"/><br><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="screeningAuthz.date"></form:errors></span>
 				                  	</tr>
 				                  	<tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="name" value="${ScreeningDetails.name}"/><br><span class="err"><form:errors path="screeningAuthz.name"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="name" name="name" value="${ScreeningDetails.name}"/><br><span id="nameerror" style="color: red;font-style:italic;"><form:errors path="screeningAuthz.name"></form:errors></span>
 				                  	</tr>
 				                  	</table>
 				                  	<table>
               <tr >
               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-              <td ><input type="submit" class="submit_btn" value="Update"></td>
+              <td ><input type="submit" class="submit_btn" value="Update" onclick="return checkSubmit('this');"></td>
               <td>&nbsp;&nbsp;</td>
               <td><a href="deletescreenauthz" class="submit_btn" style="text-decoration: none;color:white" onclick="return confirmation() ">Delete</a></td>
         	  </tr>

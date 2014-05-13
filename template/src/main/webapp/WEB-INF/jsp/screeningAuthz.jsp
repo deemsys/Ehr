@@ -18,6 +18,28 @@
 	    $( "#datepicker" ).datepicker();
 	  });
   </script>
+  <script>
+
+	function checkSubmit()
+	{
+		document.getElementById("datepickererror").innerHTML=" ";
+		
+		if(document.getElementById("datepicker").value=="")
+		{
+		document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		document.getElementById("nameerror").innerHTML="";
+	if(document.getElementById("name").value=="")
+		{
+		document.getElementById("nameerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+			
+	}
+	</script>
 </head>
 <body>
 <div id="right_content">
@@ -58,12 +80,12 @@
                         <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date: </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="datepicker" name="date" /><span class="err"><form:errors path="screeningAuthz.date"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="datepicker" name="date" /><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="screeningAuthz.date"></form:errors></span>
 				                  	</tr>
 				                  	<tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="name" value="${name}"/><span class="err"><form:errors path="screeningAuthz.name"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="name" name="name" value="${name}"/><span id="nameerror" style="color: red;font-style:italic;"><form:errors path="screeningAuthz.name"></form:errors></span>
 				                  	</tr>
 				                  	</table>
 				                  	</c:when>
@@ -81,12 +103,12 @@
                         <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date: </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="datepicker" name="date" value="${screen.date}"/><br><span class="err"><form:errors path="screeningAuthz.date"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="datepicker" name="date" value="${screen.date}"/><br><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="screeningAuthz.date"></form:errors></span>
 				                  	</tr>
 				                  	<tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="name" value="${screen.name}"/><br><span class="err"><form:errors path="screeningAuthz.name"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="name" name="name" value="${screen.name}"/><br><span id="nameerror" style="color: red;font-style:italic;"><form:errors path="screeningAuthz.name"></form:errors></span>
 				                  	</tr>
 				                  	</table>
 				                  	</c:otherwise>
@@ -94,7 +116,7 @@
 				                  	<table>
                         <tr>
 				  <td valign="top" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-				                <td valign="top" align="center"><br><input type="submit" class="submit_btn" value="Save"></td>
+				                <td valign="top" align="center"><br><input type="submit" class="submit_btn" value="Save" onclick="return checkSubmit('this');"></td>
 				                <td>&nbsp;&nbsp;<!-- <a href="screeninglist" class="submit_btn" style="color: white">Cancel</a> --></td>
 				 <!-- <td valign="top" align="center"><br><input type="button" class="submit_btn" value="View" onclick="window.location.href='screeninglist'"></td> -->
 				  </tr>
