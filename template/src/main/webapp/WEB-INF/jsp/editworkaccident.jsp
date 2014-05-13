@@ -206,7 +206,8 @@ window.onload(){
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="time_loss" value="yes" class="input_txt" id="timelosscheck"  onclick="time();"<c:if test="${workaccident.time_loss=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="time_loss" value="No" class="input_txt" onclick="time();"<c:if test="${workaccident.time_loss=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;
-				   <input type="text" class="input_txtbx1" id="timeloss1" name="absenteeism" placeholder="If yes, explain(include dates)" value="${workaccident.absenteeism}"  /></br><span class="err"><form:errors path="workAcc.absenteeism"></form:errors></span></td>
+				   <%-- <input type="text" class="input_txtbx1" id="timeloss1" name="absenteeism" placeholder="If yes, explain(include dates)"  /></br><span class="err"><form:errors path="workAcc.absenteeism"></form:errors></span></td> --%>
+				   <textarea rows='3' cols='35' id="timeloss1" name="absenteeism" placeholder="If yes, explain(include dates)" value="${workaccident.absenteeism}" ></textarea></td>
 				  <td></td>
 						              <td></td>
 						              <td></td>
@@ -242,7 +243,7 @@ window.onload(){
 				  <div id="yeschecked"  style='display:none'>
 					<table cellpadding="0" cellspacing="0" border="0" width="100%">
 				            <tr class="row1">
-                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>If yes, how much&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                  <td valign="middle" align="left" class="input_txt" width = "44%"><span class="err">*</span>If yes, how much</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="input_txtbx1" id="inp_id"  onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.how_much}" name="how_much" /></br><span class="err"><form:errors path="workAcc.how_much"></form:errors></span></td>
 				  </td>
@@ -265,7 +266,7 @@ window.onload(){
 				  <table cellpadding="0" cellspacing="0" border="0" width="100%">
 				                
 				  				    <tr class="row2">
-                						<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Do you lift from&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                						<td valign="middle" align="left" class="input_txt" width = "44%"><span class="err">*</span>Do you lift from</td>
                 						<td valign="top" align="left" class="input_txt">
 										  <select name="lift_from" class="input_cmbbx1">
 					 						<option value="ground" <c:if test="${workaccident.lift_from=='ground'}"><c:out value="selected"/></c:if>>Ground</option>

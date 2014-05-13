@@ -620,7 +620,7 @@ $(function() {
 				  
 				  <table cellpadding="0" cellspacing="0" border="0" width="100%"> 
 				  <tr class="row2">
-				  <td width="790" valign="middle" align="left" class="input_txt"><span class="err">*</span>Were you wearing glasses at the time of accident&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				  <td width="50%" valign="middle" align="left" class="input_txt"><span class="err">*</span>Were you wearing glasses at the time of accident&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="wearing_glasses" value="yes" class="input_txt" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="wearing_glasses" value="no" class="input_txt" >No&nbsp;&nbsp;&nbsp;
 			      </td>
@@ -751,7 +751,7 @@ $(function() {
 				  <!-- <div > -->
 				  <table cellpadding="0" cellspacing="0" border="0" width="100%" id="accident_hospital">
 				   <tr class="row2">
-                  <td valign="middle" align="left" class="input_txt" >Name of the hospital</td><td width="20"></td><!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                  <td valign="middle" align="left" class="input_txt"  width = "20%" >Name of the hospital</td><td width="21%"></td><!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
 				  
 				 
 				  <td><input type="text" align="left" class="input_txtbx1" id="inp_id" name="hosname" /></td>
@@ -1448,8 +1448,7 @@ $(function() {
 				  	
 				  <table cellpadding="0" cellspacing="0" border="1" width="100%">
 				   <tr class="row2">
-                  <td valign="middle" align="left" class="input_txt" width="100" >Name of the hospital</td>
-				  <td  width="40"></td>
+				  <td  width="60%"></td>
 				 <td> <input  align="left" type="text" class="input_txtbx1" id="inp_id" name="hosname" value="${auto.hosname }"/>
 				  
 				  </td><td width="610" ></td><td></td>
