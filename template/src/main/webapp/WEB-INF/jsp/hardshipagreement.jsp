@@ -31,7 +31,13 @@
 	return false;
 	}
 	
+	document.getElementById("print_pat_nameerror").innerHTML="";
+	if(document.getElementById("print_pat_name").value=="")
+	{
+	document.getElementById("print_pat_nameerror").innerHTML="Required Field Should not be Empty";
 	
+	return false;
+	}
 	document.getElementById("pat_signerror").innerHTML="";
 	if(document.getElementById("pat_sign").value=="")
 	{
@@ -93,7 +99,7 @@
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
        		  <tr >
        		  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Print Patients Name
-              <input type="text" class="input_txtbx1" name="print_pat_name" id="print_pat_name" value="${name}"/><span class="err"><form:errors path="Hardshipagreement.print_pat_name"></form:errors></span></td>
+              <input type="text" class="input_txtbx1" name="print_pat_name" id="print_pat_name" value="${name}"/><span id="print_pat_nameerror" style="color: red;font-style:italic;" ><form:errors path="Hardshipagreement.print_pat_name"></form:errors></span></td>
               </tr>
               </table>
               <br>
@@ -133,7 +139,7 @@
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
        		  <tr >
        		  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Print Patients Name
-              <input type="text" class="input_txtbx1" name="print_pat_name" id="print_pat_name" value="${hard.print_pat_name}"/><span class="err"><form:errors path="Hardshipagreement.print_pat_name"></form:errors></span></td>
+              <input type="text" class="input_txtbx1" name="print_pat_name" id="print_pat_name" value="${hard.print_pat_name}"/><span id="print_pat_nameerror" style="color: red;font-style:italic;" ><form:errors path="Hardshipagreement.print_pat_name"></form:errors></span></td>
               </tr>
               </table>
               <br>
