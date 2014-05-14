@@ -72,8 +72,14 @@
 		
 		return false;
 		}
-			
-			
+	document.getElementById("pat_nameerror").innerHTML="";
+	if(document.getElementById("pat_name").value=="")
+		{
+		document.getElementById("pat_nameerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+	
 	document.getElementById("datepickererror").innerHTML="";
 	if(document.getElementById("datepicker").value=="")
 	{
@@ -159,11 +165,11 @@
 	            <c:when test="${empty waiver}">
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr class="row1">
-              <td width="100%"><input type="text" class="input_txtbx1" name="insure_comp" id="insure_comp" placeholder="Name of Insurance Company" /> <span id="insure_comperror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.insure_comp"></form:errors></span> </td>
+              <td width="100%"><span class="err">*</span><input type="text" class="input_txtbx1" name="insure_comp" id="insure_comp" placeholder="Name of Insurance Company" /> <span id="insure_comperror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.insure_comp"></form:errors></span> </td>
               </tr>
               <tr class="row1"> 
               <td width="100%">
-              <input type="text" class="input_txtbx1" name="addr" id="addr" placeholder="Address"/> <span id="addrerror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.addr"></form:errors> </span></td>
+              <span class="err">*</span><input type="text" class="input_txtbx1" name="addr" id="addr" placeholder="Address"/> <span id="addrerror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.addr"></form:errors> </span></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -172,13 +178,13 @@
 		BENEFITS FOR ACCIDENT</p></tr></table>
 		<table cellpadding="0" cellspacing="0" border="0" width="100%">
 		<tr class="row1">
-        <td ><input type="text" class="input_txtbx1" name="pat_name" value="${name}" id="pat_name" placeholder="Patient's Name" /> <span class="err"><form:errors path="Insuranceplan.pat_name"></form:errors></span></td>
+        <td ><span class="err">*</span><input type="text" class="input_txtbx1" name="pat_name" value="${name}" id="pat_name" placeholder="Patient's Name" /> <span id="pat_nameerror" style="color: red;font-style:italic;" ><form:errors path="Insuranceplan.pat_name"></form:errors></span></td>
         </tr>
         <tr class="row1">
-        <td ><input type="text" class="input_txtbx1" name="accident_date" id="datepicker" placeholder="Date of Accident" /> <span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.accident_date"></form:errors> </span></td>
+        <td ><span class="err">*</span><input type="text" class="input_txtbx1" name="accident_date" id="datepicker" placeholder="Date of Accident" /> <span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.accident_date"></form:errors> </span></td>
         </tr>
         <tr class="row1">
-        <td ><input type="text" class="input_txtbx1" name="enrollee" id="enrollee" placeholder="Subscriber/Enrollee No" /> <span id="enrolleeerror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.enrollee"></form:errors> </span>
+        <td ><span class="err">*</span><input type="text" class="input_txtbx1" name="enrollee" id="enrollee" placeholder="Subscriber/Enrollee No" /> <span id="enrolleeerror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.enrollee"></form:errors> </span>
         <br><span class="err" id="enrolleeerror"></span>
         </td>
         </tr>
@@ -196,7 +202,7 @@
         <input type="checkbox" name="no_objection" value="no_objection">No Objection
         </tr>
         <tr>
-        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;By&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="agentname" id="agentname" placeholder="Authorized Company Representative"/> <span id="agentnameerror" style="color: red;font-style:italic;"></span><form:errors path="Insuranceplan.agentname"></form:errors>  </td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="err">*</span>By&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="agentname" id="agentname" placeholder="Authorized Company Representative"/> <span id="agentnameerror" style="color: red;font-style:italic;"></span><form:errors path="Insuranceplan.agentname"></form:errors>  </td>
         </tr> 
          <tr class="row1">
        
@@ -204,7 +210,7 @@
         <td></td>
         </tr>
         <tr class="row1">
-        <td width="100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Please eMail this back to&nbsp;&nbsp;
+        <td width="100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="err">*</span>Please eMail this back to&nbsp;&nbsp;
         <input type="text" class="input_txtbx1" name="fax" id="fax" placeholder="Clinic's EMail Id"/><span id="faxerror" style="color: red;font-style:italic;"> <form:errors path="Insuranceplan.fax"></form:errors> </td>
         <td width="100%"></td>
         <td></td>
@@ -216,12 +222,12 @@
         <tr class="row1">
         <td></td>
         
-        <td align="center"><input type="text" class="input_txtbx1" name="name_of_clinic" id="name_of_clinic" placeholder="Name of clinic"/><br> <span id="name_of_clinicerror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.name_of_clinic"></form:errors> </td>
+        <td align="center"><span class="err">*</span><input type="text" class="input_txtbx1" name="name_of_clinic" id="name_of_clinic" placeholder="Name of clinic"/><br> <span id="name_of_clinicerror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.name_of_clinic"></form:errors> </td>
         <td></td>
         </tr>
         <tr class="row1">
-        <td><input type="text" class="input_txtbx1" name="pat" id="pat" placeholder="Patient"/><span id="paterror" style="color: red;font-style:italic;"> <form:errors path="Insuranceplan.pat"></form:errors></span> </td>
-        <td align="center"><input type="text" class="input_txtbx1" name="authorized" id="authorized" placeholder="Authorized Clinic Representative"/><br> <span id="authorizederror" style="color: red;font-style:italic;"> <form:errors path="Insuranceplan.authorized"></form:errors></span> </td>
+        <td><span class="err">*</span><input type="text" class="input_txtbx1" name="pat" id="pat" placeholder="Patient"/><span id="paterror" style="color: red;font-style:italic;"> <form:errors path="Insuranceplan.pat"></form:errors></span> </td>
+        <td align="center"><span class="err">*</span><input type="text" class="input_txtbx1" name="authorized" id="authorized" placeholder="Authorized Clinic Representative"/><br> <span id="authorizederror" style="color: red;font-style:italic;"> <form:errors path="Insuranceplan.authorized"></form:errors></span> </td>
         <td></td>
         </tr>
        </table>
