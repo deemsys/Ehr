@@ -57,12 +57,12 @@
 	return false;
 	}
 	document.getElementById("witness_signerror").innerHTML="";
-	if(isNaN(document.getElementById("witness_sign").value))
+	if(document.getElementById("witness_sign").value=="")
 	{
-	document.getElementById("witness_signerror").innerHTML="Enter Only Numbers";
+	document.getElementById("witness_signerror").innerHTML="Required Field Should not be Empty";
+	
 	return false;
 	}
-	
 	
 	}
 
@@ -90,7 +90,7 @@
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <c:set value="${hardshipagreementform.hardshipagreement[0]}" var="Hardshipagreement"> </c:set>
               <tr>
-              <td>Date</td>
+              <td><span class="err">*</span>Date</td>
               <input type="hidden" class="input_txtbx1" id="inp_id" value="${Hardshipagreement.agreement_no}" name="agreement_no" />
               <td ><input type="text" class="input_txtbx1" name="date" id="datepicker" value="${Hardshipagreement.date}"/><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
@@ -109,21 +109,21 @@
               <br>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
        		  <tr >
-       		  <td valign="middle" align="left" class="input_txt">Print Patients Name
+       		  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Print Patients Name
               <input type="text" class="input_txtbx1" name="print_pat_name" id="print_pat_name" value="${Hardshipagreement.print_pat_name}" /><span id="print_pat_nameerror" style="color: red;font-style:italic;" ><form:errors path="Hardshipagreement.print_pat_name"></form:errors></span></td>
               </tr>
               </table>
               <br>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
-       		  <td valign="middle" align="left" class="input_txt">Patients Signature&nbsp;&nbsp;&nbsp;
+       		  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patients Signature&nbsp;&nbsp;&nbsp;
               <input type="text" class="input_txtbx1" name="pat_sign" id="pat_sign" value="${Hardshipagreement.pat_sign}"/><span id="pat_signerror" style="color: red;font-style:italic;"><form:errors path="Hardshipagreement.pat_sign"></form:errors></td>
               </tr>
               </table>
               <br>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
-       		  <td valign="middle" align="left" class="input_txt">Witness Signature&nbsp;&nbsp;&nbsp;  
+       		  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Witness Signature&nbsp;&nbsp;&nbsp;  
               <input type="text" class="input_txtbx1" name="witness_sign" id="witness_sign" value="${Hardshipagreement.witness_sign}" /><span id="witness_signerror" style="color: red;font-style:italic;"><form:errors path="Hardshipagreement.witness_sign"></form:errors></td>
               </tr>
               </table>

@@ -46,11 +46,14 @@
 	return false;
 	}
 	document.getElementById("witness_signerror").innerHTML="";
-	if(isNaN(document.getElementById("witness_sign").value))
+	if(document.getElementById("witness_sign").value=="")
 	{
-	document.getElementById("witness_signerror").innerHTML="Enter Only Numbers";
+	document.getElementById("witness_signerror").innerHTML="Required Field Should not be Empty";
+	
 	return false;
 	}
+	
+	
 	
 	
 	}
