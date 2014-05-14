@@ -201,7 +201,7 @@ document.getElementById('gender32').value='Female';
           <table cellpadding="0" cellspacing="0" border="0" width="70%" align="center">
           <tr height="30">
           <td><span class="err">*</span>Report Date: </td>
-          <td><input type="text" name="reportdate" size="40" id="datepicker11"><span class="err" id="datepicker11error"><form:errors path="Narrativereport.reportdate"></form:errors></span></td>
+          <td><input type="text" name="reportdate" size="40" id="datepicker11"><span class="err" id="datepicker11error"><form:errors path=""></form:errors></span></td>
           </tr>   
           <tr height="30">
           <td><span class="err">*</span>Patientname: </td>
@@ -209,11 +209,11 @@ document.getElementById('gender32').value='Female';
           </tr>
           <tr height="30">
           <td><span class="err">*</span>Date of Injury: </td>
-          <td><input type="text" name="dateofinjury" size="40" id="datepicker1"><span class="err" id="datepicker1error"><form:errors path="Narrativereport.dateofinjury"></form:errors></span></td>
+          <td><input type="text" name="dateofinjury" size="40" id="datepicker1"><span class="err" id="datepicker1error"><form:errors path=""></form:errors></span></td>
           </tr>
           <tr height="30">
           <td><span class="err">*</span>Date of first visit: </td>
-          <td><input type="text" name="dateoffirstvisit" id="datepicker" size="40"><span class="err" id="datepickererror"><form:errors path="Narrativereport.dateoffirstvisit"></form:errors></span></td>
+          <td><input type="text" name="dateoffirstvisit" id="datepicker" size="40"><span class="err" id="datepickererror"><form:errors path=""></form:errors></span></td>
           </tr>
           </table>
           <table cellpadding="0" cellspacing="0" border="0" width="70%" align="center">
@@ -835,7 +835,7 @@ I hope you find this narrative report and discussion helpful in resolving the cu
 	            </p>
 	            <div align="right">
           <p><B style="font-size:13px">Sincerely,</B></p>
-          <p><input type="text" name="sign" size="30" id="sign" ><span class="err" id="signerror"><form:errors path="Narrativereport.sign"></form:errors></span></p>
+          <p><input type="text" name="sign" size="30" id="sign" ><span class="err" id="signerror"><form:errors path=""></form:errors></span></p>
           <p>Dr. Darrin A. Pordash</p>
           </div>
  <table align="right">
