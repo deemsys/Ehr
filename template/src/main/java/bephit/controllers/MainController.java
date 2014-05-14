@@ -302,7 +302,11 @@ public class MainController {
 	
 		return "doctorsearch";
 	}*/
-		
+		 if(patientDAO.getUsername((String)session.getAttribute("username")).size()>0)
+		 {
+			 String name=patientDAO.getUsername((String)session.getAttribute("username")).get(0).getName();
+			 model.addAttribute("name",name);
+		 }	
 	String username=request.getParameter("username");
 	session.setAttribute("username", username);	
 	//String patientname=request.getParameter("patientname");
@@ -519,7 +523,11 @@ public class MainController {
   	
 	 //model.addAttribute("menu", "doctor");
 	   
-	 
+	 if(patientDAO.getUsername((String)session.getAttribute("username")).size()>0)
+	 {
+		 String name=patientDAO.getUsername((String)session.getAttribute("username")).get(0).getName();
+		 model.addAttribute("name",name);
+	 }
 	   
 		   if(physicalDAO.getPhysicalpatient_id((String)session.getAttribute("username")).size()>0)
 		   {
@@ -694,7 +702,12 @@ public class MainController {
 		return "viewphysicalexam";
 	}
 	@RequestMapping(value="/hamiltonchiropractic", method = RequestMethod.GET)
-	public String hamiltonchiropractic(ModelMap model) {
+	public String hamiltonchiropractic(ModelMap model,HttpSession session) {
+		if(patientDAO.getUsername((String)session.getAttribute("username")).size()>0)
+		 {
+			 String name=patientDAO.getUsername((String)session.getAttribute("username")).get(0).getName();
+			 model.addAttribute("name",name);
+		 }	
 		 model.addAttribute("iniexam", "doctor");
 		 model.addAttribute("menu", "iniexam");
 	      return "hamiltonchiropractic";
@@ -1120,7 +1133,11 @@ public class MainController {
 	public String radiologicreport(HttpServletRequest request,HttpSession session,ModelMap model) {
 		session.removeAttribute("radio");
 		model.addAttribute("menu", "report");
-		
+		if(patientDAO.getUsername((String)session.getAttribute("username")).size()>0)
+		 {
+			 String name=patientDAO.getUsername((String)session.getAttribute("username")).get(0).getName();
+			 model.addAttribute("name",name);
+		 }	
 		return "radiologicreport";
 	}
 	@RequestMapping(value="/radiologicreport", method = RequestMethod.POST)
@@ -5032,14 +5049,19 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 	public String soapnotes(HttpSession session,ModelMap model,Principal principal) {
 			session.removeAttribute("soap");
 			String username=(String) session.getAttribute("username");
-			if(patientDAO.getUsername(principal).size()>0)
+			if(patientDAO.getUsername((String)session.getAttribute("username")).size()>0)
+			 {
+				 String name=patientDAO.getUsername((String)session.getAttribute("username")).get(0).getName();
+				 model.addAttribute("name",name);
+			 }	
+			/*if(patientDAO.getUsername(principal).size()>0)
 			{	
 			String name="";			
 			name=patientDAO.getUsername(principal).get(0).getName();
 			model.addAttribute("name",name);
 		   model.addAttribute("patientno","0");
 		
-		}
+		}*/
 			if(soapDAO.getusernameSoapnotes(username).size()>0)
 			{
 				SoapnotesForm soapnotesForm = new SoapnotesForm();       
@@ -5247,7 +5269,7 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
       
 		}
 		
-		return "viewsoapnotes";
+		return "soapnotes";
 	}
 
 	}

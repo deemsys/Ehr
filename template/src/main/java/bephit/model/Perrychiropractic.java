@@ -13,7 +13,7 @@ public class Perrychiropractic
 	
 	private String address;
 	
-	private String address1;
+	
 	@NotEmpty
 	private String reg;	
 	@NotEmpty
@@ -51,12 +51,7 @@ public class Perrychiropractic
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public String getAddress1() {
-		return address1;
-	}
-	public void setAddress1(String address1) {
-		this.address1 = address1;
-	}
+	
 	public String getReg() {
 		return reg;
 	}
@@ -82,13 +77,12 @@ public class Perrychiropractic
 		this.subject = subject;
 	}
 	public Perrychiropractic(String perryid, String insurance, String address,
-			String address1, String reg, String nameofperson,
+	 String reg, String nameofperson,
 			String dateofaccident, String subject) {
 		super();
 		this.perryid = perryid;
 		this.insurance = insurance;
-		this.address = address;
-		this.address1 = address1;
+		this.address = address;	
 		this.reg = reg;
 		this.nameofperson = nameofperson;
 		this.dateofaccident = dateofaccident;

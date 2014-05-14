@@ -900,6 +900,7 @@ else
 				                   </table>
  <table align="right"> <tr>
 				                   <td><input type="submit" class="submit_btn" value="Update" onclick="return checkSubmit('this');"></td>
+				                    <td><a href="deletesoapnotes?soapid=${soapnotes.soapid}" style="color:white;text-decoration: none" class="submit_btn">Delete</a></td>
 				                   <td><a href="doctorsearch" style="color:white;text-decoration: none" class="submit_btn">Cancel</a></td>
 				                   </tr>
 				                   </table>

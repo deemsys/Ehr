@@ -88,7 +88,7 @@ $(function(){
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Name :</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="name" /><span class="err"><form:errors path="Physicalexam.name"></form:errors>
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="name" value="${name}"/><span class="err"><form:errors path="Physicalexam.name"></form:errors>
 				                  </td>
 				                </tr>
 				                <tr class="row2">

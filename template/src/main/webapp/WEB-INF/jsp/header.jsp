@@ -314,7 +314,7 @@ color:#fff;
 						 <li>
 				            	<a href="doctorsearch" class="<c:choose>
 				            	<c:when test="${menu=='doctorsearch'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>">
-				            		<span>Doctor Search</span>
+				            		<span>Examination Forms</span>
 				            	</a>
 				            </li>
 						     
@@ -336,7 +336,7 @@ color:#fff;
 						 <li>
 				            	<a href="doctorsearch" class="<c:choose>
 				            	<c:when test="${menu=='doctorsearch'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>">
-				            		<span>Doctor Search</span>
+				            		<span>Examination Forms</span>
 				            	</a>
 				            </li>
 						     

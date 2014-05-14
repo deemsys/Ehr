@@ -949,8 +949,19 @@ document.getElementById("leftproxi").style.display="none";
  
 				                   
 <br/><br/>
-<table align="right"><tr><td><span class="err">*</span> Physicians Signature:<input type="text" name="sign" id="sign"><span style="color:red" id="signerror"><form:errors path="SoapNotes.sign"></form:errors></span></td></tr></table>
+<table align="right"><tr><td><span class="err">*</span> Physicians Signature:<input type="text" name="sign" id="sign"><span style="color:red" id="signerror"><form:errors path="SoapNotes.sign"></form:errors></span></td></tr>
+				                <tr height="10"></tr> 
+				                  <tr>
+				                   <td align="right"><input type="submit" class="submit_btn" value="Save" onclick="return check('this')"></td>
+				                   <!-- <td><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewsoapnotes'"></td> -->
+				                   <td align="left"><a href="doctorsearch" style="color:white;text-decoration: none" class="submit_btn">Cancel</a></td>
+				                   </tr>
 				                   </table>
+				                 
+				                 
+				                   
+				                   
+				                   
 	<script>
 	function check()
 	{	
@@ -971,12 +982,7 @@ document.getElementById("leftproxi").style.display="none";
 		
 	}	
 	</script>			                   
-				                   <table align="right"> <tr>
-				                   <td><input type="submit" class="submit_btn" value="Save" onclick="return check('this')"></td>
-				                   <!-- <td><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewsoapnotes'"></td> -->
-				                   <td><a href="doctorsearch" style="color:white;text-decoration: none" class="submit_btn">Cancel</a></td>
-				                   </tr>
-				                   </table>
+				                  
 				                   </c:when>
 				                   <c:otherwise>
 				                   <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">

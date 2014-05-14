@@ -45,7 +45,7 @@ public class PerrychiropracticDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 
-	    	 String cmd="INSERT INTO perrychiropractic (username,insurance,address,address1,reg,nameofperson,dateofaccident,subject) VALUES ('"+username+"','"+perrychiropracticdetails.getInsurance()+"','"+perrychiropracticdetails.getAddress()+"','"+perrychiropracticdetails.getAddress1()+"','"+perrychiropracticdetails.getReg()+"','"+perrychiropracticdetails.getNameofperson()+"','"+perrychiropracticdetails.getDateofaccident()+"','"+perrychiropracticdetails.getSubject()+"')";
+	    	 String cmd="INSERT INTO perrychiropractic (username,insurance,address,reg,nameofperson,dateofaccident,subject) VALUES ('"+username+"','"+perrychiropracticdetails.getInsurance()+"','"+perrychiropracticdetails.getAddress()+"','"+perrychiropracticdetails.getReg()+"','"+perrychiropracticdetails.getNameofperson()+"','"+perrychiropracticdetails.getDateofaccident()+"','"+perrychiropracticdetails.getSubject()+"')";
 	    	    System.out.println("cmd insert value"+cmd);
 	    	    statement.executeUpdate(cmd);
 	    	    }
@@ -121,8 +121,7 @@ public class PerrychiropracticDAO {
 				perrychiropractic.add(new Perrychiropractic
 						(resultSet.getString("perryid"),
 								resultSet.getString("insurance"),
-						resultSet.getString("address"),
-						resultSet.getString("address1"),
+						resultSet.getString("address"),						
 						resultSet.getString("reg"),
 			    		resultSet.getString("nameofperson"),
 			    		resultSet.getString("DateofAccident"),
@@ -160,8 +159,7 @@ public class PerrychiropracticDAO {
 				perrychiropractic.add(new Perrychiropractic
 						(resultSet.getString("perryid"),
 								resultSet.getString("insurance"),
-						resultSet.getString("address"),
-						resultSet.getString("address1"),
+						resultSet.getString("address"),					
 						resultSet.getString("reg"),
 			    		resultSet.getString("nameofperson"),
 			    		resultSet.getString("DateofAccident"),
@@ -200,8 +198,7 @@ public class PerrychiropracticDAO {
 				perrychiropractic.add(new Perrychiropractic
 						(resultSet.getString("perryid"),
 								resultSet.getString("insurance"),
-						resultSet.getString("address"),
-						resultSet.getString("address1"),
+						resultSet.getString("address"),						
 						resultSet.getString("reg"),
 			    		resultSet.getString("nameofperson"),
 			    		resultSet.getString("DateofAccident"),
@@ -240,8 +237,7 @@ public class PerrychiropracticDAO {
 	    try{
 	    	 String cmd="update perrychiropractic set insurance='"+perrychiropractic.getInsurance()
 	    			
-	    +"',address='"+perrychiropractic.getAddress()
-	    +"',address1='"+perrychiropractic.getAddress1()
+	    +"',address='"+perrychiropractic.getAddress()	  
 	    +"',reg='"+ perrychiropractic.getReg()
 	    +"',nameofperson='"+ perrychiropractic.getNameofperson()
 	    +"',DateOfAccident='"+perrychiropractic.getDateofaccident()

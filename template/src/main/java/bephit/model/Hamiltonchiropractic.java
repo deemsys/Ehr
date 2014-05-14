@@ -4,7 +4,7 @@ public class Hamiltonchiropractic {
 	private String initialexamid;
 
 	private String patient_id;
-    
+    private String checked;
 	private String lumbopelvic;
 	private String lumboright;
 	private String lumboleft;
@@ -262,9 +262,14 @@ public class Hamiltonchiropractic {
 	
 	public Hamiltonchiropractic() {
 		super();
+	}	
+
+	public String getChecked() {
+		return checked;
 	}
-
-
+	public void setChecked(String checked) {
+		this.checked = checked;
+	}
 
 	public String getInitialexamid() {
 		return initialexamid;
