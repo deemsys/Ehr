@@ -45,6 +45,18 @@ $(function() {
     $( "#tabs" ).tabs();
   });
   </script>
+   <script>
+          function isNumberKey(evt)
+          {
+             var charCode = (evt.which) ? evt.which : event.keyCode
+             if (charCode > 31 && (charCode < 48 || charCode > 57))
+                return false;
+
+             return true;
+          }  
+          
+          </script>
+  
 </head>
  <body>
  <br><br>
@@ -138,19 +150,19 @@ $(function() {
  <td></td><td><b>Left</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> Right</b></td>
  </tr>
   <tr class="row1">
- <td><b>Flexion:</b> </td><td> (150)</td><td>&nbsp;L <input type="text" name="flexionl" size="7"><br/><br/>R <input type="text" name="flexionr" size="7"></td>  
+ <td><b>Flexion:</b> </td><td> (150)</td><td>&nbsp;L <input type="text" name="flexionl" size="7" onkeypress="return isNumberKey(event);"><br/><br/>R <input type="text" name="flexionr" size="7" onkeypress="return isNumberKey(event);"></td>  
  <td><b>Golfer's Elbow (MCL):</b> </td><td><input type="text" name="mcll" size="5"> <input type="text" name="mclr" size="5"></td>
  </tr>
   <tr class="row1">
- <td><b>Extension:	</b> </td><td> (o) </td><td> &nbsp;L<input type="text" name="extensionl" size="7"> <br/><br/>R <input type="text" name="extensionr" size="7"></td>  
+ <td><b>Extension:	</b> </td><td> (o) </td><td> &nbsp;L<input type="text" name="extensionl" size="7" onkeypress="return isNumberKey(event);"> <br/><br/>R <input type="text" name="extensionr" size="7" onkeypress="return isNumberKey(event);"></td>  
  <td><b>Tennis Elbow (LCL):	</b> </td><td><input type="text" name="lcll" size="5"> <input type="text" name="lclr" size="5"></td>
  </tr>
   <tr class="row1">
- <td><b>Pronation:	</b> </td><td> (90)</td><td>L &nbsp;<input type="text" name="pronationl" size="7"><br/><br/>R <input type="text" name="pronationr" size="7"></td>  
+ <td><b>Pronation:	</b> </td><td> (90)</td><td>L &nbsp;<input type="text" name="pronationl" size="7" onkeypress="return isNumberKey(event);"><br/><br/>R <input type="text" name="pronationr" size="7" onkeypress="return isNumberKey(event);"></td>  
  <td><b>Varus Stress (LCL):</b> </td><td><input type="text" name="varusl" size="5"> <input type="text" name="varusr" size="5"></td>
  </tr>
   <tr class="row1">
-  <td><b> Supination:</b> </td><td> (90)</td><td>L &nbsp;<input type="text" name="supinationl" size="7"><br/><br/>R <input type="text" name="supinationr" size="7"></td>  
+  <td><b> Supination:</b> </td><td> (90)</td><td>L &nbsp;<input type="text" name="supinationl" size="7" onkeypress="return isNumberKey(event);"><br/><br/>R <input type="text" name="supinationr" size="7" onkeypress="return isNumberKey(event);"></td>  
  <td><b>Valgus Stress (MCL):</b> </td><td><input type="text" name="mcl1l" size="5"> <input type="text" name="mcl1r" size="5"></td>
  </tr>
   <tr class="row1">
@@ -207,43 +219,43 @@ $(function() {
  </tr>
  <tr class="row1">
  <td>C5</td>
- <td><input type="text" name="c5l" size="5">&nbsp; &nbsp; &nbsp;<input type="text" name="c5r" size="5">&nbsp;(Lat deltoid)</td>
+ <td><input type="text" name="c5l" size="5" onkeypress="return isNumberKey(event);">&nbsp; &nbsp; &nbsp;<input type="text" name="c5r" size="5" onkeypress="return isNumberKey(event);">&nbsp;(Lat deltoid)</td>
  <td>C5 </td>
- <td> <input type="text" name="c51l" size="5">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c51r" size="5">&nbsp;/5&nbsp;(Shd ABD)</td>
+ <td> <input type="text" name="c51l" size="5" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c51r" size="5" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp;(Shd ABD)</td>
  <td> C5</td>
- <td> <input type="text" name="c53l" size="5">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c53r" size="5">&nbsp;/5&nbsp;(Biceps)</td>
+ <td> <input type="text" name="c53l" size="5" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c53r" size="5" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp;(Biceps)</td>
  
  </tr>
  <tr class="row1">
  <td>C6</td>
- <td><input type="text" name="c6l" size="5">&nbsp; &nbsp; &nbsp;<input type="text" name="c6r" size="5">&nbsp;(Lat arm/hand)	</td>
+ <td><input type="text" name="c6l" size="5" onkeypress="return isNumberKey(event);">&nbsp; &nbsp; &nbsp;<input type="text" name="c6r" size="5" onkeypress="return isNumberKey(event);">&nbsp;(Lat arm/hand)	</td>
  <td>C6 </td>
- <td> <input type="text" name="c61l" size="5">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c61r" size="5">&nbsp;/5&nbsp;(Elb flex/wrist ext)	</td>
+ <td> <input type="text" name="c61l" size="5" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c61r" size="5" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp;(Elb flex/wrist ext)	</td>
   <td>C6 </td>
- <td><input type="text" name="c63l" size="5">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c63r" size="5">&nbsp;/5&nbsp;(Brachiorad.) </td>
+ <td><input type="text" name="c63l" size="5" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c63r" size="5" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp;(Brachiorad.) </td>
 
  </tr>
  <tr class="row1">
  <td>C7</td>
- <td><input type="text" name="c7l" size="5">&nbsp; &nbsp; &nbsp;<input type="text" name="c7r" size="5">&nbsp;(3rd digit)</td>
+ <td><input type="text" name="c7l" size="5" onkeypress="return isNumberKey(event);">&nbsp; &nbsp; &nbsp;<input type="text" name="c7r" size="5" onkeypress="return isNumberKey(event);">&nbsp;(3rd digit)</td>
  <td>C7 </td>
- <td> <input type="text" name="c71l" size="5">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c71r" size="5">&nbsp;/5&nbsp;(Elb ext/wrist flex)</td>
+ <td> <input type="text" name="c71l" size="5" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c71r" size="5" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp;(Elb ext/wrist flex)</td>
  <td> C7</td>
- <td> <input type="text" name="c73l" size="5">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c73r" size="5">&nbsp;/5&nbsp;(Triceps)</td>
+ <td> <input type="text" name="c73l" size="5" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c73r" size="5" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp;(Triceps)</td>
  </tr>
  <tr class="row1">
  <td>C8</td>
- <td><input type="text" name="c8l" size="5">&nbsp; &nbsp; &nbsp;<input type="text" name="c8r" size="5">&nbsp;(Med forearm/hand)	</td>
+ <td><input type="text" name="c8l" size="5" onkeypress="return isNumberKey(event);">&nbsp; &nbsp; &nbsp;<input type="text" name="c8r" size="5" onkeypress="return isNumberKey(event);">&nbsp;(Med forearm/hand)	</td>
  <td>C8 </td>
- <td> <input type="text" name="c81l" size="5">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c81r" size="5">&nbsp;/5&nbsp;(Digit flexion)</td>
+ <td> <input type="text" name="c81l" size="5" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c81r" size="5" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp;(Digit flexion)</td>
  <td></td>
  <td> </td>
  </tr>
  <tr class="row1">
  <td>T1</td>
- <td><input type="text" name="t1l" size="5">&nbsp; &nbsp; &nbsp;<input type="text" name="t1r" size="5">&nbsp;(Med elbow/arm)	</td>
+ <td><input type="text" name="t1l" size="5" onkeypress="return isNumberKey(event);">&nbsp; &nbsp; &nbsp;<input type="text" name="t1r" size="5" onkeypress="return isNumberKey(event);">&nbsp;(Med elbow/arm)	</td>
  <td>T1 </td>
- <td><input type="text" name="t11l" size="5">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="t11r" size="5">&nbsp;/5&nbsp; (Digit abd/add)</td>
+ <td><input type="text" name="t11l" size="5" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="t11r" size="5" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp; (Digit abd/add)</td>
  <td> </td>
  <td> </td>
  </tr>
