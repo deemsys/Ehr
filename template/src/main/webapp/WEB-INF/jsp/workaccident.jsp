@@ -55,21 +55,7 @@ $(function() {
         }
     });
 </script>
-<script>
 
-	function check()
-	{
-	 
-	document.getElementById("emperr").innerHTML="";
-		if(isNaN(document.getElementById("emp").value))
-		{
-		document.getElementById("emperr").innerHTML="Invalid character. Please enter numbers only.";
-		return false;
-		}
-		
-		
-		}
-</script>
 
 <style>
   /* force a height so the tabs don't jump as content height changes */
@@ -78,6 +64,184 @@ $(function() {
   .tabs-bottom .ui-tabs-nav li { top: auto; bottom: 0; margin: 0 .2em 1px 0; border-bottom: auto; border-top: 0; }
   .tabs-bottom .ui-tabs-nav li.ui-tabs-active { margin-top: -1px; padding-top: 1px; }
   </style>
+  <script>
+
+function checkSubmit()
+{
+	document.getElementById("job_classificationerror").innerHTML=" ";
+	
+	if(document.getElementById("job_classification").value=="")
+	{
+	document.getElementById("job_classificationerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+		
+	/*  document.getElementById("doyou_poserror").innerHTML="";
+		if(document.getElementById("doyou_pos").value==0)
+		{
+
+			document.getElementById("doyou_poserror").innerHTML="Required Field Should not be Empty";
+
+		return false;
+
+		} */
+		document.getElementById("carryerror").innerHTML=""; 
+		if( ( document.getElementById("yes1").checked == false ) && ( document.getElementById("No1").checked == false ) )
+
+		 {
+		 document.getElementById("carryerror").innerHTML="Required Field Should not be Empty";
+		 		
+		 		return false;
+		 		
+		 }
+		
+		document.getElementById("injury_occurerror").innerHTML=" ";
+		
+		if(document.getElementById("injury_occur").value=="")
+		{
+		document.getElementById("injury_occurerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		
+document.getElementById("saw_accidenterror").innerHTML=" ";
+		
+		if(document.getElementById("saw_accident").value=="")
+		{
+		document.getElementById("saw_accidenterror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		
+document.getElementById("titleerror").innerHTML=" ";
+		
+		if(document.getElementById("title").value=="")
+		{
+		document.getElementById("titleerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		
+document.getElementById("present_joberror").innerHTML=" ";
+		
+		if(document.getElementById("present_job").value=="")
+		{
+		document.getElementById("present_joberror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		
+		document.getElementById("time_losserror").innerHTML=""; 
+		if( ( document.getElementById("yes2").checked == false ) && ( document.getElementById("No2").checked == false ) )
+
+		 {
+		 document.getElementById("time_losserror").innerHTML="Required Field Should not be Empty";
+		 		
+		 		return false;
+		 		
+		 }
+		
+		/* document.getElementById("type_of_lighterror").innerHTML="";
+		if(document.getElementById("type_of_light").value==0)
+		{
+
+			document.getElementById("type_of_lighterror").innerHTML="Required Field Should not be Empty";
+
+		return false;
+
+		} */
+		document.getElementById("pick_lifterror").innerHTML=""; 
+		if( ( document.getElementById("yes3").checked == false ) && ( document.getElementById("No3").checked == false ) )
+
+		 {
+		 document.getElementById("pick_lifterror").innerHTML="Required Field Should not be Empty";
+		 		
+		 		return false;
+		 		
+		 }
+document.getElementById("how_mucherror").innerHTML=" ";
+		
+		if(document.getElementById("how_much").value=="")
+		{
+		document.getElementById("how_mucherror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		
+document.getElementById("how_oftenerror").innerHTML=" ";
+		
+		if(document.getElementById("how_often").value=="")
+		{
+		document.getElementById("how_oftenerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+document.getElementById("where_to_whereerror").innerHTML=" ";
+		
+		if(document.getElementById("where_to_where").value=="")
+		{
+		document.getElementById("where_to_whereerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+
+		 /* document.getElementById("lift_fromerror").innerHTML="";
+			if(document.getElementById("lift_from").value==0)
+			{
+
+				document.getElementById("lift_fromerror").innerHTML="Required Field Should not be Empty";
+
+			return false;
+
+			} */
+			document.getElementById("liftin_orouterror").innerHTML=""; 
+			if( ( document.getElementById("yes4").checked == false ) && ( document.getElementById("No4").checked == false ) )
+
+			 {
+			 document.getElementById("liftin_orouterror").innerHTML="Required Field Should not be Empty";
+			 		
+			 		return false;
+			 		
+			 }
+			
+
+			/*  document.getElementById("workposerror").innerHTML="";
+				if(document.getElementById("workpos").value==0)
+				{
+
+					document.getElementById("workposerror").innerHTML="Required Field Should not be Empty";
+
+				return false;
+
+				} */
+				document.getElementById("push_pullerror").innerHTML=""; 
+				if( ( document.getElementById("yes5").checked == false ) && ( document.getElementById("No5").checked == false ) )
+
+				 {
+				 document.getElementById("push_pullerror").innerHTML="Required Field Should not be Empty";
+				 		
+				 		return false;
+				 		
+				 }
+				document.getElementById("emperror").innerHTML=" ";
+				
+				if(document.getElementById("emp").value=="")
+				{
+				document.getElementById("emperror").innerHTML="Required Field Should not be Empty";
+				
+				return false;
+				}
+document.getElementById("changes_in_joberror").innerHTML=" ";
+				
+				if(document.getElementById("changes_in_job").value=="")
+				{
+				document.getElementById("changes_in_joberror").innerHTML="Required Field Should not be Empty";
+				
+				return false;
+				}
+		}
+</script>
 </head>
 <body>
 <div id="tabs" class="tabs-bottom" >
@@ -117,7 +281,7 @@ $(function() {
   				<tr class="row1">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>What is the job classification of your normal job</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="job_classification" /><span class="err"><form:errors path="Workaccident.job_classification"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="job_classification" name="job_classification" /><span id="job_classificationerror" style="color: red;font-style:italic;"><form:errors path="Workaccident.job_classification"></form:errors></span>
 				  </td>
 				  </tr>
 				 <tr class="row2">
@@ -134,60 +298,65 @@ $(function() {
 					<option value="load">Load</option>
 					<option value="other">Other</option>
 					</select>
+					<span id="doyou_poserror" style="color: red;font-style:italic;"></span>
 				   <input type="text" name="doyou" id="doyou" style='display:none'/>
 				  </td>
 				  </tr>
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Do you carry anything or pick anything up</td>
-				  <td valign="top" align="left" class="input_txt"><input type="radio" name="pick" value="yes" class="input_txt" checked="true" onclick="any('show')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="pick" value="No" class="input_txt" onclick="any('hide')">No&nbsp;&nbsp;&nbsp;
+				  <td valign="top" align="left" class="input_txt"><input type="radio" name="pick" value="yes" class="input_txt" id="yes1" onclick="any('show')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="pick" value="No" id="No1" class="input_txt" onclick="any('hide')">No&nbsp;&nbsp;&nbsp;
 				   <input type="text" class="input_txtbx1" id="carry" name="carry" placeholder="If yes, What"/>
+				 <span id="carryerror" style="color: red;font-style:italic;"></span>
 				  </td>
 				  </tr>
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>How did the injury occur?</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="injury_occur" /><span class="err"><form:errors path="Workaccident.injury_occur"></form:errors>
+				  <input type="text" class="input_txtbx1" id="injury_occur" name="injury_occur" /><span id="injury_occurerror" style="color: red;font-style:italic;"><form:errors path="Workaccident.injury_occur"></form:errors>
 				  </td>
 				  </tr>
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Who saw the accident?</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="saw_accident" /><span class="err"><form:errors path="Workaccident.saw_accident"></form:errors>
+				  <input type="text" class="input_txtbx1" id="saw_accident" name="saw_accident" /><span id="saw_accidenterror" style="color: red;font-style:italic;" ><form:errors path="Workaccident.saw_accident"></form:errors>
 				  </td>
 				  </tr>
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Job Title</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="title" /><span class="err"><form:errors path="Workaccident.title"></form:errors>
+				  <input type="text" class="input_txtbx1" id="title" name="title" /><span id="titleerror" style="color: red;font-style:italic;"><form:errors path="Workaccident.title"></form:errors>
 				  </td>
 				  </tr>
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>How long have you been at your present job</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="present_job" /><span class="err"><form:errors path="Workaccident.present_job"></form:errors>
+				  <input type="text" class="input_txtbx1" id="present_job" name="present_job" /><span id="present_joberror" style="color: red;font-style:italic;"><form:errors path="Workaccident.present_job"></form:errors>
 				  </td>
 				  </tr>
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Has there been a time loss or absentee caused from job injury</td>
-				  <td valign="top" align="left" class="input_txt" width = "5%"><input type="radio" name="time_loss" value="yes" class="input_txt" checked="true" onclick="time('show1')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="time_loss" value="No" class="input_txt" onclick="time('hide1')">No&nbsp;&nbsp;&nbsp;
-				  <td><textarea rows='3' cols='35' id="absenteeism" name="absenteeism" placeholder="If yes, explain(include dates)"></textarea></td>
+				  <td valign="top" align="left" class="input_txt" width = "5%"><input type="radio" name="time_loss" value="yes" class="input_txt" id="yes2" onclick="time('show1')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="time_loss" value="No" id="No2" class="input_txt" onclick="time('hide1')">No&nbsp;&nbsp;&nbsp;
+				  <td><textarea rows='3' cols='35' id="absenteeism" name="absenteeism" placeholder="If yes, explain(include dates)"></textarea><span id="time_losserror" style="color: red;font-style:italic;"></span></td>
+				 
 				  </td>
 				  </tr>
 				   <tr class="row1">
                 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Type of lighting in the building</td>
 				 <td valign="top" align="left" class="input_txt">
-				  <select name="type_of_light" class="input_cmbbx1" onchange='Checklight(this.value);'>
+				  <select name="type_of_light" class="input_cmbbx1" onchange='Checklight(this.value);' id="type_of_light">
 					<option selected="selected" value="fluorescent" >Fluorescent</option>
 					<option value="overhead">Overhead</option>
 					<option value="onmachine">On Machine</option>
 					<option value="others">Other</option>
 					</select>
+					<span id="type_of_lighterror" style="color: red;font-style:italic;"></span>
 				   <input type="text" name="lighting" id="lighting" style='display:none'/>
 				  </td>
 				  </tr>
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Do you pick up or lift?</td>
-				  <td valign="top" align="left" class="input_txt"><input type="radio" name="pick_lift" value="yes" class="input_txt" checked="true" onclick="toggle3('show3')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="pick_lift" value="No" class="input_txt" onclick="toggle3('hide3')">No&nbsp;&nbsp;&nbsp;
+				  <td valign="top" align="left" class="input_txt"><input type="radio" name="pick_lift" value="yes" id="yes3" class="input_txt" checked="true" onclick="toggle3('show3')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="pick_lift" value="No" id="No3"class="input_txt" onclick="toggle3('hide3')">No&nbsp;&nbsp;&nbsp;
+				 <span id="pick_lifterror" style="color: red;font-style:italic;"></span>
 				  </td>
 				  </tr>
 				  </table>
@@ -196,19 +365,22 @@ $(function() {
 				  <tr class="row1" >
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>If yes, how muchs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="how_much" />
+				  <input type="text" class="input_txtbx1" id="how_much" name="how_much" />
+				  <span id="how_mucherror" style="color: red;font-style:italic;"></span>
 				  </td>
 				  </tr>
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>How often</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="how_often" />
+				  <input type="text" class="input_txtbx1" id="how_often" name="how_often" />
+				  <span id="how_oftenerror" style="color: red;font-style:italic;"></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>From where to where</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="where_to_where" />
+				  <input type="text" class="input_txtbx1" id="where_to_where" name="where_to_where" />
+				  <span id="where_to_whereerror" style="color: red;font-style:italic;"></span>
 				  </td>
 				  </tr>
 				  </table>
@@ -217,32 +389,36 @@ $(function() {
                   <tr class="row1">
                 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Do you lift from&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				 <td valign="top" align="left" class="input_txt">
-				  <select name="lift_from" class="input_cmbbx1" >
+				  <select name="lift_from" class="input_cmbbx1" id="lift_from">
 					<option selected="selected" value="ground" >Ground</option>
 					<option value="bench">Bench</option>
 					<option value="platform">Platform</option>
 					</select>
+					 <span id="lift_fromerror" style="color: red;font-style:italic;"></span>
 					</td>
 					</tr>
 					<tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Do you lift in or out of a machine?</td>
-				  <td valign="top" align="left" class="input_txt"><input type="radio" name="liftin_orout" value="yes" class="input_txt" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="liftin_orout" value="No" class="input_txt">No&nbsp;&nbsp;&nbsp;
+				  <td valign="top" align="left" class="input_txt"><input type="radio" name="liftin_orout" value="yes" id="yes4"class="input_txt"  >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="liftin_orout" value="No" id="No4"class="input_txt">No&nbsp;&nbsp;&nbsp;
+				 <span id="liftin_orouterror" style="color: red;font-style:italic;"></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
                 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>If working at a machine,do you</td>
 				 <td valign="top" align="left" class="input_txt">
-				  <select name="workpos" class="input_cmbbx1" >
+				  <select name="workpos" class="input_cmbbx1" id="workpos">
 					<option selected="selected" value="sit" >Sit</option>
 					<option value="stand">Stand</option>
 					<option value="kneel">Kneel</option>
 					</select>
+					<span id="workposerror" style="color: red;font-style:italic;"></span>
 					</td>
 					</tr>
 					<tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>In your job, do you push or pull</td>
-				  <td valign="top" align="left" class="input_txt"><input type="radio" name="push_pull" value="yes" class="input_txt" checked="true" onclick="pull('show4')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="push_pull" value="No" class="input_txt" onclick="pull('hide4')">No&nbsp;&nbsp;&nbsp;
+				  <td valign="top" align="left" class="input_txt"><input type="radio" name="push_pull" id="yes5"value="yes" class="input_txt" checked="true" onclick="pull('show4')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="push_pull" id="No5"value="No" class="input_txt" onclick="pull('hide4')">No&nbsp;&nbsp;&nbsp;
 				   <input type="text" class="input_txtbx1" id="jobpp" name="jobpp" placeholder="If yes, give specifics"/>
+				 <span id="push_pullerror" style="color: red;font-style:italic;"></span>
 				  </td>
 				  </tr>
 				  </table>
@@ -314,7 +490,7 @@ $(function() {
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>How many employees have been injured doing your job</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="emp" name="no_of_employees" /><span class="emperr"><form:errors path="Workaccident.no_of_employees"></form:errors></span><span class="err" id="emperr"></span>
+				  <input type="text" class="input_txtbx1" id="emp" name="no_of_employees" /><span id="emperror" style="color: red;font-style:italic;" ><form:errors path="Workaccident.no_of_employees"></form:errors></span><span class="err" id="emperr"></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
@@ -335,14 +511,14 @@ $(function() {
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>What changes would you make in your job</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="changes_in_job" /><span class="err"><form:errors path="Workaccident.changes_in_job"></form:errors>
+				  <input type="text" class="input_txtbx1" id="changes_in_job" name="changes_in_job" /><span id="changes_in_joberror" style="color: red;font-style:italic;" ><form:errors path="Workaccident.changes_in_job"></form:errors>
 				  </td>
 				  </tr>
 				  </table>
 				  <br>
 				   <table align="right"> <tr><td><input type="button" id="btnPrevious" class="submit_btn" value="Previous" style = "display:none" />&nbsp;</td>
 
-<td valign="top" align="center"><input type="submit" class="submit_btn" value="Save" onclick="return check('this');"></td>
+<td valign="top" align="center"><input type="submit" class="submit_btn" value="Save" onclick="return checkSubmit('this');"></td>
  
              		<!--  <td valign="top" align="center"><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewworkaccident'"></td> -->
 				  
@@ -491,8 +667,9 @@ $(function() {
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Do you pick up or lift?</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="radio" name="pick_lift" value="yes" class="input_txt" id="pickcheck1" onclick="toggle3();" <c:if test="${work.pick_lift=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
-				  <input type="radio" name="pick_lift" value="No" class="input_txt"  onclick="toggle3();" <c:if test="${work.pick_lift=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;
+				  <input type="radio" name="pick_lift" value="yes" id="yes3" class="input_txt" id="pickcheck1" onclick="toggle3();" <c:if test="${work.pick_lift=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
+				  <input type="radio" name="pick_lift" value="No" id="No3" class="input_txt"  onclick="toggle3();" <c:if test="${work.pick_lift=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;
+				  <span id="pick_lifterror" style="color: red;font-style:italic;"></span>
 				  </td>
 				  <td></td>   <td></td><td></td><td></td><td></td> <td></td><td></td>
 				  </tr>
@@ -502,20 +679,20 @@ $(function() {
 				            <tr class="row1">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>If yes, how much&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id"  onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${work.how_much}" name="how_much" /></br><span class="err"><form:errors path="Workaccident.how_much"></form:errors></span></td>
+				  <input type="text" class="input_txtbx1" id="how_much"  onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${work.how_much}" name="how_much" /></br><span id="how_mucherror" style="color: red;font-style:italic;"><form:errors path="Workaccident.how_much"></form:errors></span></td>
 				  </td>
 				  </tr>
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>How often</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id"   onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${work.how_often}" name="how_often" /></br><span class="err"><form:errors path="Workaccident.how_often"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="how_often"   onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${work.how_often}" name="how_often" /></br><span id="how_oftenerror" style="color: red;font-style:italic;"><form:errors path="Workaccident.how_often"></form:errors></span>
 				  </td>
 				  <td></td>   <td></td><td></td><td></td><td></td> <td></td><td></td>
 				  </tr>
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>From where to where</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id"   onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${work.where_to_where}" name="where_to_where" /></br><span class="err"><form:errors path="Workaccident.where_to_where"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="where_to_where"   onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${work.where_to_where}" name="where_to_where" /></br><span id="where_to_whereerror" style="color: red;font-style:italic;"><form:errors path="Workaccident.where_to_where"></form:errors></span>
 				  </td>
 				  </tr>
 				  </table>
@@ -525,19 +702,20 @@ $(function() {
 				  				    <tr class="row2">
                 						<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Do you lift from&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                 						<td valign="top" align="left" class="input_txt">
-										  <select name="lift_from" class="input_cmbbx1">
+										  <select name="lift_from" class="input_cmbbx1" id="lift_from">
 					 						<option value="ground" <c:if test="${work.lift_from=='ground'}"><c:out value="selected"/></c:if>>Ground</option>
 						                     <option value="bench" <c:if test="${work.lift_from=='bench'}"><c:out value="selected"/></c:if>>Bench</option>	
 						                     <option value="platform" <c:if test="${work.lift_from=='platform'}"><c:out value="selected"/></c:if>>Platform</option>
 						                   </select>
+						                   <span id="lift_fromerror" style="color: red;font-style:italic;"></span>
 										</td>
 										 <td></td>   <td></td><td></td><td></td><td></td> <td></td><td></td>
 					</tr>
 					<tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Do you lift in or out of a machine?</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="radio" name="liftin_orout" value="yes" class="input_txt" <c:if test="${work.liftin_orout=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
-				  <input type="radio" name="liftin_orout" value="No" class="input_txt"<c:if test="${work.liftin_orout=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;
+				  <input type="radio" name="liftin_orout" value="yes" id="yes5" class="input_txt" <c:if test="${work.liftin_orout=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
+				  <input type="radio" name="liftin_orout" value="No" id="No5" class="input_txt"<c:if test="${work.liftin_orout=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;
 				  </td>
 				  </tr>			
 				   <tr class="row2">

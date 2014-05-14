@@ -5,23 +5,23 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Workaccident {
 	private String patient_no;
 	
-	@NotEmpty
+	
 	private String job_classification;
 	private String doyou_pos;
 	private String doyou;
 	private String pick;
 	private String carry;
 	
-	@NotEmpty
+	
 	private String injury_occur;
 	
-	@NotEmpty
+	
 	private String saw_accident;
 	
-	@NotEmpty
+	
 	private String title;
 	
-	@NotEmpty
+	
 	private String present_job;
 	private String time_loss;
 	private String absenteeism;
@@ -44,13 +44,13 @@ public class Workaccident {
 	private String levers;
 	private String overhead;
 	
-	@NotEmpty
+	
 	private String no_of_employees;
 	private String like_job;
 	private String pre_employment;
 	private String return_job;
 	
-	@NotEmpty
+	
 	private String changes_in_job;
 	
 
