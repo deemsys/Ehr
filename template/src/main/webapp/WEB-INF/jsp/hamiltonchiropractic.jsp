@@ -559,8 +559,8 @@ function elbowPopup() {
                  <td>Did it begin gradually or suddenly?</td>
                  <td><input type="checkbox" name="suddenly" value="Sudden">&nbsp Sudden</td>
                  <td><input type="checkbox" name="gradually" value="Gradual">&nbsp Gradual:</td>
-                 <td> <input type="text" name="hours">Hours Later</td>
-                 <td><input type="text" name="days">Days Later</td>
+                 <td> <input type="text" name="hours" class="input_txtbx1">Hours Later</td>
+                 <td><input type="text" name="days" class="input_txtbx1">Days Later</td>
                  </tr>
                     <script>
  $(function() {
@@ -579,7 +579,7 @@ function elbowPopup() {
                  </tr>
                  <tr class="row1">
                  <td>How did it happen?  </td>
-                 <td><textarea rows="5" cols="25" name="reason"></textarea></td>
+                 <td><textarea rows="5" cols="25" name="reason" class="input_txtarea"></textarea></td>
                  </tr>
                  <tr class="row1">
                  <td>Was this the first episode or is this a chronic injury? </td>
@@ -909,8 +909,8 @@ function elbowPopup() {
 				                  </tr>
 				                  <tr class="row1">
 				                  <td>Grip Dynamom 	</td>
-				                  <td>Right&nbsp;&nbsp;<input type="text" name="gripdynamomright"></td>
-				                  <td>Left&nbsp;&nbsp;<input type="text" name="gripdynamomleft"></td>	
+				                  <td>Right&nbsp;&nbsp;<input type="text" name="gripdynamomright" class="input_txtbx1"></td>
+				                  <td>Left&nbsp;&nbsp;<input type="text" name="gripdynamomleft" class="input_txtbx1"></td>	
 				                  <td></td>
 				                  <td></td>			                 
 				                  </tr>

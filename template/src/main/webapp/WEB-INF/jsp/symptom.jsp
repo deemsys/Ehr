@@ -376,8 +376,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
     	                $("#draggable5").offset({ left:134, top:296})   
     	            	}
     	             */
-    	             $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos); 
+    	           /*   $('#position').text('x: ' + xPos);
+    	            $('#position1').text('y: ' + yPos);  */
     	       },stack: "#draggable",revert: 'invalid'
     	    });   		
     	   /*  $( "#bodyfront" ).draggable({ stack: "#bodyfront" }); */
@@ -396,8 +396,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
 	            	document.getElementById("draggable6").style.display="block";
 	                $("#draggable6").offset({ left:146, top:296})   
 	            	} */
-    	            $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos); 
+    	          /*   $('#position').text('x: ' + xPos);
+    	            $('#position1').text('y: ' + yPos);  */
     	        }, revert: 'invalid'
     	    });
     	
@@ -416,8 +416,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
 	            	document.getElementById("draggable7").style.display="block";
 	                $("#draggable7").offset({ left:158, top:296})   
 	            	} */
-    	            $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos); 
+    	          /*   $('#position').text('x: ' + xPos);
+    	            $('#position1').text('y: ' + yPos);  */
     	        }, revert: 'invalid'
     	    });
     $('#draggable3').draggable(
@@ -434,8 +434,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
 	            	document.getElementById("draggable8").style.display="block";
 	                $("#draggable8").offset({ left:170.5, top:296})   
 	            	} */
-    	            $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos); 
+    	           /*  $('#position').text('x: ' + xPos);
+    	            $('#position1').text('y: ' + yPos);  */
     	        }, revert: 'invalid'
     	    });
     $('#draggable4').draggable(
@@ -452,8 +452,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
 	            	document.getElementById("draggable9").style.display="block";
 	                $("#draggable9").offset({ left:183.5, top:296})   
 	            	} */
-    	            $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos); 
+    	         /*    $('#position').text('x: ' + xPos);
+    	            $('#position1').text('y: ' + yPos);  */
     	        }, revert: 'invalid'
     	    });
     $('#draggable5').draggable(
@@ -470,8 +470,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
 	            	document.getElementById("draggable10").style.display="block";
 	                $("#draggable10").offset({ left:134, top:296})   
 	            	} */
-    	             $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos); 
+    	            /*  $('#position').text('x: ' + xPos);
+    	            $('#position1').text('y: ' + yPos);  */
     	       }, revert: 'invalid'
     	    }); 
     $('#draggable6').draggable(
@@ -488,8 +488,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
 	            	document.getElementById("draggable11").style.display="block";
 	                $("#draggable11").offset({ left:146, top:296})   
 	            	} */
-    	             $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos); 
+    	         /*     $('#position').text('x: ' + xPos);
+    	            $('#position1').text('y: ' + yPos);  */
     	       }, revert: 'invalid'
     	    });   
     $('#draggable7').draggable(
@@ -506,8 +506,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
 	            	document.getElementById("draggable12").style.display="block";
 	                $("#draggable12").offset({ left:158, top:296})   
 	            	} */
-    	             $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos); 
+    	       /*       $('#position').text('x: ' + xPos);
+    	            $('#position1').text('y: ' + yPos);  */
     	       }, revert: 'invalid'
     	    }); 
     $('#draggable8').draggable(
@@ -524,8 +524,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
 	            	document.getElementById("draggable13").style.display="block";
 	                $("#draggable13").offset({ left:170.5, top:296})   
 	            	} */
-    	             $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos); 
+    	         /*     $('#position').text('x: ' + xPos);
+    	            $('#position1').text('y: ' + yPos);  */
     	       }, revert: 'invalid'
     	    }); 
     $('#draggable9').draggable(
@@ -542,8 +542,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
 	            	document.getElementById("draggable14").style.display="block";
 	                $("#draggable14").offset({ left:183.5, top:296})   
 	            	} */
-    	             $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos); 
+    	          /*    $('#position').text('x: ' + xPos);
+    	            $('#position1').text('y: ' + yPos);  */
     	       }, revert: 'invalid'
     	    });   
     
@@ -556,8 +556,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
     	            var yPos = offset.top;
     	            document.getElementById("numbleft").value=xPos;
     	            document.getElementById("numbtop").value=yPos;    
-    	            $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos);  
+    	           /*  $('#position').text('x: ' + xPos);
+    	            $('#position1').text('y: ' + yPos);   */
     	            /* if(document.getElementById("numbness5").style.display!="block")
 	            	{
     	           
@@ -574,8 +574,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
     	            var yPos = offset.top;
     	            document.getElementById("numbleft1").value=xPos;
     	            document.getElementById("numbtop1").value=yPos;    
-    	            $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos); 
+    	        /*     $('#position').text('x: ' + xPos);
+    	            $('#position1').text('y: ' + yPos);  */
     	           /*  if(document.getElementById("numbness6").style.display!="block")
 	            	{
     	            
@@ -592,8 +592,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
     	            var yPos = offset.top;
     	            document.getElementById("numbleft2").value=xPos;
     	            document.getElementById("numbtop2").value=yPos;    
-    	            $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos); 
+    	         /*    $('#position').text('x: ' + xPos);
+    	            $('#position1').text('y: ' + yPos);  */
     	           /*  if(document.getElementById("numbness7").style.display!="block")
 	            	{
     	            
@@ -610,8 +610,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
     	            var yPos = offset.top;
     	            document.getElementById("numbleft3").value=xPos;
     	            document.getElementById("numbtop3").value=yPos;    
-    	            $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos);  
+    	         /*    $('#position').text('x: ' + xPos);
+    	            $('#position1').text('y: ' + yPos);   */
     	           /*  if(document.getElementById("numbness8").style.display!="block")
 	            	{
     	          
@@ -628,8 +628,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
     	            var yPos = offset.top;
     	            document.getElementById("numbleft4").value=xPos;
     	            document.getElementById("numbtop4").value=yPos;    
-    	            $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos);  
+    	        /*     $('#position').text('x: ' + xPos);
+    	            $('#position1').text('y: ' + yPos);   */
     	           /*  if(document.getElementById("numbness9").style.display!="block")
 	            	{
     	        
@@ -646,8 +646,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
     	            var yPos = offset.top;
     	            document.getElementById("numbleft5").value=xPos;
     	            document.getElementById("numbtop5").value=yPos;    
-    	            $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos);  
+    	          /* /*   $('#position').text('x: ' + xPos);
+    	            $('#position1').text('y: ' + yPos);   */ 
     	        }, revert: 'invalid'
     	    });
     $('#numbness6').draggable(
@@ -658,8 +658,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
     	            var yPos = offset.top;
     	            document.getElementById("numbleft6").value=xPos;
     	            document.getElementById("numbtop6").value=yPos;    
-    	            $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos);  
+    	          /*   $('#position').text('x: ' + xPos);
+    	            $('#position1').text('y: ' + yPos);   */
     	        }, revert: 'invalid'
     	    });
     $('#numbness7').draggable(
@@ -670,8 +670,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
     	            var yPos = offset.top;
     	            document.getElementById("numbleft7").value=xPos;
     	            document.getElementById("numbtop7").value=yPos;    
-    	            $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos);  
+    	        /*     $('#position').text('x: ' + xPos);
+    	            $('#position1').text('y: ' + yPos);   */
     	        }, revert: 'invalid'
     	    });
     $('#numbness8').draggable(
@@ -682,8 +682,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
     	            var yPos = offset.top;
     	            document.getElementById("numbleft8").value=xPos;
     	            document.getElementById("numbtop8").value=yPos;    
-    	            $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos);  
+    	            /* $('#position').text('x: ' + xPos);
+    	            $('#position1').text('y: ' + yPos);   */
     	        }, revert: 'invalid'
     	    });
     $('#numbness9').draggable(
@@ -694,8 +694,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
     	            var yPos = offset.top;
     	            document.getElementById("numbleft9").value=xPos;
     	            document.getElementById("numbtop9").value=yPos;    
-    	            $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos);  
+    	        /*     $('#position').text('x: ' + xPos);
+    	            $('#position1').text('y: ' + yPos);   */
     	        }, revert: 'invalid'
     	    });
     
@@ -712,8 +712,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
 	            	document.getElementById("pins5").style.display="block";
 	                $("#pins5").offset({ left:634, top:296})   
 	            	}  */
-    	            $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos);  
+    	          /*   $('#position').text('x: ' + xPos);
+    	            $('#position1').text('y: ' + yPos);   */
     	        }, revert: 'invalid'
     	    });
     $('#pins1').draggable(
@@ -729,8 +729,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
 	            	document.getElementById("pins6").style.display="block";
 	                $("#pins6").offset({ left:649, top:296})   
 	            	}  */
-    	            $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos);  
+    	           /*  $('#position').text('x: ' + xPos);
+    	            $('#position1').text('y: ' + yPos);   */
     	        }, revert: 'invalid'
     	    });
     $('#pins2').draggable(
@@ -746,8 +746,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
 	            	document.getElementById("pins7").style.display="block";
 	                $("#pins7").offset({ left:666, top:296})   
 	            	} */
-    	            $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos);  
+    	         /*    $('#position').text('x: ' + xPos);
+    	            $('#position1').text('y: ' + yPos);   */
     	        }, revert: 'invalid'
     	    });
     $('#pins3').draggable(
@@ -763,8 +763,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
 	            	document.getElementById("pins8").style.display="block";
 	                $("#pins8").offset({ left:682, top:296})   
 	            	} */
-    	            $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos);  
+    	          /*   $('#position').text('x: ' + xPos);
+    	            $('#position1').text('y: ' + yPos);   */
     	        }, revert: 'invalid'
     	    });
     $('#pins4').draggable(
@@ -781,8 +781,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
 	            	document.getElementById("pins9").style.display="block";
 	                $("#pins9").offset({ left:698, top:296})   
 	            	} */
-    	            $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos);  
+    	        /*     $('#position').text('x: ' + xPos);
+    	            $('#position1').text('y: ' + yPos);   */
     	        }, revert: 'invalid'
     	    }); 
    
@@ -794,8 +794,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
     	            var yPos = offset.top;
     	            document.getElementById("pinleft5").value=xPos;
     	            document.getElementById("pintop5").value=yPos;    
-    	            $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos);  
+    	            /* $('#position').text('x: ' + xPos);
+    	            $('#position1').text('y: ' + yPos);   */
     	        }, revert: 'invalid'
     	    });
     $('#pins6').draggable(
@@ -806,8 +806,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
     	            var yPos = offset.top;
     	            document.getElementById("pinleft6").value=xPos;
     	            document.getElementById("pintop6").value=yPos;    
-    	            $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos);  
+    	            /* $('#position').text('x: ' + xPos);
+    	            $('#position1').text('y: ' + yPos);   */
     	        }, revert: 'invalid'
     	    });
     $('#pins7').draggable(
@@ -818,8 +818,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
     	            var yPos = offset.top;
     	            document.getElementById("pinleft7").value=xPos;
     	            document.getElementById("pintop7").value=yPos;    
-    	            $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos);  
+    	          /*   $('#position').text('x: ' + xPos);
+    	            $('#position1').text('y: ' + yPos);   */
     	        }, revert: 'invalid'
     	    });
     $('#pins8').draggable(
@@ -830,8 +830,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
     	            var yPos = offset.top;
     	            document.getElementById("pinleft8").value=xPos;
     	            document.getElementById("pintop8").value=yPos;    
-    	            $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos);  
+    	          /*   $('#position').text('x: ' + xPos);
+    	            $('#position1').text('y: ' + yPos);   */
     	        }, revert: 'invalid'
     	    });
     $('#pins9').draggable(
@@ -842,8 +842,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
     	            var yPos = offset.top;
     	            document.getElementById("pinleft9").value=xPos;
     	            document.getElementById("pintop9").value=yPos;    
-    	            $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos);  
+    	          /*   $('#position').text('x: ' + xPos);
+    	            $('#position1').text('y: ' + yPos);   */
     	        }, revert: 'invalid'
     	    }); 
    
@@ -862,8 +862,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
 	                document.getElementById("burnleft5").value="893";
     	            document.getElementById("burntop5").value="296";
 	            	} */
-    	            $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos);  
+    	           /*  $('#position').text('x: ' + xPos);
+    	            $('#position1').text('y: ' + yPos);   */
     	        }, revert: 'invalid'
     	    }); 
     $('#burn1').draggable(
@@ -874,8 +874,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
     	            var yPos = offset.top;
     	            document.getElementById("burnleft1").value=xPos;
     	            document.getElementById("burntop1").value=yPos;    
-    	            $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos);
+    	          /*    $('#position').text('x: ' + xPos); 
+    	            $('#position1').text('y: ' + yPos); */
     	          /*   if(document.getElementById("burn6").style.display!="block")
 	            	{    	           
 	            	document.getElementById("burn6").style.display="block";
@@ -893,8 +893,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
     	            var yPos = offset.top;
     	            document.getElementById("burnleft2").value=xPos;
     	            document.getElementById("burntop2").value=yPos;    
-    	            $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos); 
+    	         /*    $('#position').text('x: ' + xPos);
+    	            $('#position1').text('y: ' + yPos);  */
     	           /*  if(document.getElementById("burn7").style.display!="block")
 	            	{    	           
 	            	document.getElementById("burn7").style.display="block";
@@ -919,8 +919,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
 	                document.getElementById("burnleft8").value="941";
     	            document.getElementById("burntop8").value="296";
 	            	} */
-    	            $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos);  
+    	          /*   $('#position').text('x: ' + xPos);
+    	            $('#position1').text('y: ' + yPos);   */
     	        }, revert: 'invalid'
     	    }); 
     $('#burn4').draggable(
@@ -939,8 +939,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
     	            document.getElementById("burntop9").value="296";
 	            	}
     	             */
-    	            $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos);
+    	         /*    $('#position').text('x: ' + xPos);
+    	            $('#position1').text('y: ' + yPos); */
     	                   
     	           
     	        },
@@ -958,8 +958,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
     	            var yPos = offset.top;
     	            document.getElementById("burnleft5").value=xPos;
     	            document.getElementById("burntop5").value=yPos;    
-    	            $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos);  
+    	           /*  $('#position').text('x: ' + xPos);
+    	            $('#position1').text('y: ' + yPos);   */
     	        }, revert: 'invalid'
     	    }); 
     $('#burn6').draggable(
@@ -970,8 +970,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
     	            var yPos = offset.top;
     	            document.getElementById("burnleft6").value=xPos;
     	            document.getElementById("burntop6").value=yPos;    
-    	            $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos);  
+    	           /*  $('#position').text('x: ' + xPos);
+    	            $('#position1').text('y: ' + yPos);   */
     	        }, revert: 'invalid'
     	    }); 
     $('#burn7').draggable(
@@ -982,8 +982,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
     	            var yPos = offset.top;
     	            document.getElementById("burnleft7").value=xPos;
     	            document.getElementById("burntop7").value=yPos;    
-    	            $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos);  
+    	         /*    $('#position').text('x: ' + xPos);
+    	            $('#position1').text('y: ' + yPos);   */
     	        }, revert: 'invalid'
     	    }); 
     $('#burn8').draggable(
@@ -994,8 +994,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
     	            var yPos = offset.top;
     	            document.getElementById("burnleft8").value=xPos;
     	            document.getElementById("burntop8").value=yPos;    
-    	            $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos);  
+    	          /*   $('#position').text('x: ' + xPos);
+    	            $('#position1').text('y: ' + yPos);   */
     	        }, revert: 'invalid'
     	    }); 
     $('#burn9').draggable(
@@ -1006,9 +1006,9 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
     	            var yPos = offset.top;
     	            document.getElementById("burnleft9").value=xPos;
     	            document.getElementById("burntop9").value=yPos;    
-    	            $('#position').text('x: ' + xPos);
+    	         /*    $('#position').text('x: ' + xPos);
     	            $('#position1').text('y: ' + yPos);
-    	                   
+    	                    */
     	           
     	        },
     	       
@@ -1026,8 +1026,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
     	            var yPos = offset.top;
     	            document.getElementById("stableft").value=xPos;
     	            document.getElementById("stabtop").value=yPos;    
-    	            $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos);
+    	         /*    $('#position').text('x: ' + xPos);
+    	            $('#position1').text('y: ' + yPos); */
     	            
     	           /*  if(document.getElementById("stabbing5").style.display!="block")
 	            	{    	           
@@ -1046,8 +1046,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
     	            var yPos = offset.top;
     	            document.getElementById("stableft1").value=xPos;
     	            document.getElementById("stabtop1").value=yPos;    
-    	            $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos);
+    	          /*   $('#position').text('x: ' + xPos);
+    	            $('#position1').text('y: ' + yPos); */
     	           /*  if(document.getElementById("stabbing6").style.display!="block")
 	            	{    	           
 	            	document.getElementById("stabbing6").style.display="block";
@@ -1065,8 +1065,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
     	            var yPos = offset.top;
     	            document.getElementById("stableft2").value=xPos;
     	            document.getElementById("stabtop2").value=yPos;    
-    	            $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos);
+    	          /*   $('#position').text('x: ' + xPos);
+    	            $('#position1').text('y: ' + yPos); */
     	           /*  if(document.getElementById("stabbing7").style.display!="block")
 	            	{    	           
 	            	document.getElementById("stabbing7").style.display="block";
@@ -1091,8 +1091,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
 	                document.getElementById("stableft8").value="1208";
     	            document.getElementById("stabtop8").value="296";
 	            	} */
-    	            $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos);  
+    	          /*   $('#position').text('x: ' + xPos);
+    	            $('#position1').text('y: ' + yPos);   */
     	        }, revert: 'invalid'
     	    }); 
     $('#stabbing4').draggable(
@@ -1110,8 +1110,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
 	                document.getElementById("stableft9").value="1224";
     	            document.getElementById("stabtop9").value="296";
 	            	} */
-    	            $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos);  
+    	           /*  $('#position').text('x: ' + xPos);
+    	            $('#position1').text('y: ' + yPos);   */
     	        },
     	         revert: 'invalid'
     	    });
@@ -1125,8 +1125,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
     	            var yPos = offset.top;
     	            document.getElementById("stableft5").value=xPos;
     	            document.getElementById("stabtop5").value=yPos;    
-    	            $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos);  
+    	         /*    $('#position').text('x: ' + xPos);
+    	            $('#position1').text('y: ' + yPos);   */
     	           
     	        }, revert: 'invalid'
     	    }); 
@@ -1138,8 +1138,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
     	            var yPos = offset.top;
     	            document.getElementById("stableft6").value=xPos;
     	            document.getElementById("stabtop6").value=yPos;    
-    	            $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos);  
+    	         /*    $('#position').text('x: ' + xPos);
+    	            $('#position1').text('y: ' + yPos);   */
     	        }, revert: 'invalid'
     	    }); 
     $('#stabbing7').draggable(
@@ -1150,8 +1150,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
     	            var yPos = offset.top;
     	            document.getElementById("stableft7").value=xPos;
     	            document.getElementById("stabtop7").value=yPos;    
-    	            $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos);  
+    	         /*    $('#position').text('x: ' + xPos);
+    	            $('#position1').text('y: ' + yPos);   */
     	        }, revert: 'invalid'
     	    }); 
     $('#stabbing8').draggable(
@@ -1162,8 +1162,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
     	            var yPos = offset.top;
     	            document.getElementById("stableft8").value=xPos;
     	            document.getElementById("stabtop8").value=yPos;    
-    	            $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos);  
+    	            /* $('#position').text('x: ' + xPos);
+    	            $('#position1').text('y: ' + yPos);   */
     	        }, revert: 'invalid'
     	    }); 
     $('#stabbing9').draggable(
@@ -1174,8 +1174,8 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
     	            var yPos = offset.top;
     	            document.getElementById("stableft9").value=xPos;
     	            document.getElementById("stabtop9").value=yPos;    
-    	            $('#position').text('x: ' + xPos);
-    	            $('#position1').text('y: ' + yPos);  
+    	          /*   $('#position').text('x: ' + xPos);
+    	            $('#position1').text('y: ' + yPos);   */
     	        },
     	         revert: 'invalid'
     	    }); 
@@ -2312,7 +2312,8 @@ document.getElementById("datepickererror").innerHTML=" ";
 <table width="100" align="right"><tr ><td  ><input  type="submit" value="Save" class="submit_btn" onclick="return checkSubmit('this');"></td><td ><a href="viewsymptom" style="color: white" class="submit_btn">Cancel</a></td></tr>
 </table>
 </form>
-<div id="position"></div><div id="position1"></div>
+
+<!-- <div id="position"></div><div id="position1"></div> -->
 
  
      

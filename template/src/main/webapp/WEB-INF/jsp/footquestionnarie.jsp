@@ -577,7 +577,7 @@ document.getElementById("securityerror").innerHTML=" ";
 	             
 	            </div>
           <div class="contentbox">
-	    <span class="err">*</span>Today's Date <input type="text" name="date" id="datepicker" value="${fquestionnarie.date }"><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="Footquestionnarie.date"></form:errors></span>
+	    <span class="err">*</span>Today's Date <input type="text" name="date" id="datepicker" class="input_txtbx1" value="${fquestionnarie.date }"><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="Footquestionnarie.date"></form:errors></span>
 	    <br>
 	    <br>
 	    
@@ -591,10 +591,10 @@ document.getElementById("securityerror").innerHTML=" ";
 	    </br>
 	    </br>
 	       </p>
-	    Your Birth Date  <input type="date"  name="birthdate" value="${fquestionnarie.birthdate }">
+	    Your Birth Date  <input type="text"  name="birthdate"  class="input_txtbx1" value="${fquestionnarie.birthdate }">
 	    <br><br>
 	    <table>
-	  <tr><td> Your Social Security Number</td> <td> <input type="text" name="security" id="security" value="${fquestionnarie.security}" maxlength="11"></td><td><span class="err"><form:errors path="Footquestionnarie.security"></form:errors></span> <div id="number"></span></td></div></tr></table>
+	  <tr><td> Your Social Security Number</td> <td> <input type="text" name="security" id="security"  class="input_txtbx1" value="${fquestionnarie.security}" maxlength="11"></td><td><span class="err"><form:errors path="Footquestionnarie.security"></form:errors></span> <div id="number"></span></td></div></tr></table>
 	  
 	    
 	    <br>

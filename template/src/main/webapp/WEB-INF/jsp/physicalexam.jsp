@@ -372,7 +372,7 @@ $(function(){
 				                 <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Visceral Pathologies:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" name="path"  class="input_txt" ></td>
+				                  	<input type="text" name="path" class="input_txtbx1" ></td>
 				               
 				                </tr>
 				                <tr class="row2">
@@ -485,8 +485,8 @@ $(function(){
 				                  <td>Paraspinal:</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="paraspain" value="Pain">Pain</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="parasspasm" value="Spasm">Spasm</td>
-				                  <td class="input_txt" align="left"> <span id="edema">Edema </span><input type="text" name="parasedema" >
-				                   <td class="input_txt" align="left"><span id="TriggerPoint">TriggerPoint </span> <input type="text" name="parastriggerpoint" ></td>
+				                  <td class="input_txt" align="left"> <span id="edema">Edema </span><input type="text" name="parasedema" class="input_txtbx1">
+				                   <td class="input_txt" align="left"><span id="TriggerPoint">TriggerPoint </span> <input type="text" name="parastriggerpoint" class="input_txtbx1"></td>
 				                  </tr>
 				                  <tr class="row1">
 				                  <td>Trapezius</td>
@@ -928,7 +928,7 @@ $(function(){
 				                  </tr>
 				                   <tr class="row1">
 				                   <td>Chest Measure:</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="text" name="chestmeasurein" ></td>
+				                  <td valign="top" align="left" > <input type="text" name="chestmeasurein" class="input_txtbx1"></td>
 				                 
 				                  
 				                  </tr>
@@ -2643,7 +2643,7 @@ $(function(){
 				                  </tr>
 				                   <tr class="row1">
 				                   <td>Chest Measure:</td>
-				                   <td><input type="text" name="chestmeasurein" value="${physical.chestmeasurein}" />
+				                   <td><input type="text" name="chestmeasurein" value="${physical.chestmeasurein}" class="input_txtbx1"/>
 				                 
 				                  </tr>
 				                  <tr class="row1">

@@ -631,7 +631,7 @@ $(function() {
 				               		 </td>
 				               		 <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="normal_4" value="Normal"> Normal</td>
 				               		
-				                     <td valign="top" align="left" class="input_txt">  Positive for recent fracture, dislocation or gross Osteopathology <input type="text" name="positivefor_4" ></td>   
+				                     <td valign="top" align="left" class="input_txt">  Positive for recent fracture, dislocation or gross Osteopathology <input type="text" name="positivefor_4" class="input_txtbx1"></td>   
 				                 </tr>
 				          </table>
 				           <table cellpadding="0" cellspacing="0" border="0">

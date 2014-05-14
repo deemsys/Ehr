@@ -162,6 +162,9 @@ document.getElementById("security").value=phone;
            $( "#datepicker" ).datepicker();
          });
  
+ $(function() {
+     $( "#datepicker1" ).datepicker();
+   });
 </script>
    
   <script type="text/javascript">
@@ -362,7 +365,7 @@ document.getElementById("security").value=phone;
 	             
 	            </div>
           <div class="contentbox">
-	   <span class="err">*</span> Today's Date <input type="text" name="date" id="datepicker" value="${footquestionnariedetails.date }"><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="Footquestionnarie.date"></form:errors></span>
+	   <span class="err">*</span> Today's Date <input type="text" name="date" class="input_txtbx1" id="datepicker" value="${footquestionnariedetails.date }"><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="Footquestionnarie.date"></form:errors></span>
 	    <br>
 	    <br>
 	    
@@ -376,9 +379,9 @@ document.getElementById("security").value=phone;
 	    </br>
 	    </br>
 	       </p>
-	    Your Birth Date  <input type="date"  name="birthdate" value="${footquestionnariedetails.birthdate }">
+	    Your Birth Date  <input type="text" class="input_txtbx1"  name="birthdate" id="datepicker1" value="${footquestionnariedetails.birthdate }">
 	    <br><br>
-	    Your Social Security Number <input type="text" name="security" maxlength="11" value="${footquestionnariedetails.security }">
+	    Your Social Security Number <input type="text" name="security" class="input_txtbx1" maxlength="11" value="${footquestionnariedetails.security }">
 	    <span id="securityerror" style="color: red;font-style:italic;"></span>
 	    <br>
 	    <br>

@@ -253,7 +253,7 @@ function doAjaxPost() {
  <body>
 <div id="right_content">
 <form action="insertworkschool" method="POST">
-<input type="text" id="user" name="user">
+<input type="hidden" id="user" name="user">
 <table cellpadding="0" cellspacing="0" border="0" height="100" width="80%" class="margin_table">
        <tr>
         <td valign="top" align="left" style="padding:5px 0 10px 0;">&nbsp;

@@ -170,6 +170,9 @@ $(function() {
            $( "#datepicker" ).datepicker();
          });
  
+ $(function() {
+     $( "#datepicker1" ).datepicker();
+   });
 </script>
    
   
@@ -356,7 +359,7 @@ $(function() {
 	             
 	            </div>
           <div class="contentbox">
-	    <span class="err">*</span>Today's Date <input type="text" name="date" id="datepicker" value="${hipquestionnairedetails.date}" ><br><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="hipquestionnaire.date"></form:errors></span>
+	    <span class="err">*</span>Today's Date <input type="text" name="date"  class="input_txtbx1" id="datepicker" value="${hipquestionnairedetails.date}" ><br><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="hipquestionnaire.date"></form:errors></span>
 	    <br>
 	    <br>
 	    
@@ -370,9 +373,9 @@ $(function() {
 	    </br>
 	    </br>
 	       </p>
-	    Your Birth Date  <input type="date"  value="${hipquestionnairedetails.birthdate}" name="birthdate">
+	    Your Birth Date  <input type="text"  class="input_txtbx1" id="datepicker1" value="${hipquestionnairedetails.birthdate}" name="birthdate">
 	    <br><br>
-	    Your Social Security Number <input type="text" name="security" id="security" maxlength="11" value="${hipquestionnairedetails.security}">
+	    Your Social Security Number <input type="text" name="security" id="security" maxlength="11" value="${hipquestionnairedetails.security}" class="input_txtbx1">
 	    <div id="number">
 	    <br>
 	    <br>
