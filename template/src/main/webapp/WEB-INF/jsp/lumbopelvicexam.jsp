@@ -61,6 +61,17 @@ $("#flexion").keyup(function() {
 })
 });
 </script>
+<script>
+          function isNumberKey(evt)
+          {
+             var charCode = (evt.which) ? evt.which : event.keyCode
+             if (charCode > 31 && (charCode < 48 || charCode > 57))
+                return false;
+
+             return true;
+          }  
+          
+          </script>
 </head>
  <body>
  <div id="tabs">
@@ -215,34 +226,34 @@ $("#flexion").keyup(function() {
  <td>  </td><td>   <b>Left</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> Right</b></td>
  </tr>
   <tr class="row1">
-<span class="err"><div id="number"></span> <td><b> Flexion:</b> </td><td> (60)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="flexion" id="flexion" size="7"></div></td> 
- <td width="100">T8-9:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t89" size="7"></td><td width="250">T9-10:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t910" size="7"> </td> 
+<span class="err"><div id="number"></span> <td><b> Flexion:</b> </td><td> (60)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="flexion" id="flexion" size="7" onkeypress="return isNumberKey(event);"></div></td> 
+ <td width="100">T8-9:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t89" size="7" onkeypress="return isNumberKey(event);"></td><td width="250">T9-10:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t910" size="7" onkeypress="return isNumberKey(event);"> </td> 
  <td><b>Trendelenburg:</b> </td><td><input type="text" name="trendelburgl" size="5"> <input type="text" name="trendelburgr" size="5"></td>
  </tr>
  
   <tr class="row1">
- <td><b>Extension:	</b> </td><td> (25)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="extension" size="7"></td> 
- <td width="100">T10-11:&nbsp;<input type="text" name="t1011" size="7"></td><td width="50">T11-12:&nbsp;&nbsp;&nbsp;<input type="text" name="t1112" size="7"> </td> 
+ <td><b>Extension:	</b> </td><td> (25)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="extension" size="7" onkeypress="return isNumberKey(event);"></td> 
+ <td width="100">T10-11:&nbsp;<input type="text" name="t1011" size="7" onkeypress="return isNumberKey(event);"></td><td width="50">T11-12:&nbsp;&nbsp;&nbsp;<input type="text" name="t1112" size="7" onkeypress="return isNumberKey(event);"> </td> 
  <td><b>Kemps:	</b> </td><td><input type="text" name="kempsl" size="5"> <input type="text" name="kempsr" size="5"></td>
  </tr>
   <tr class="row1">
- <td><b>Lateral Flexion:</b> </td><td> (25)&nbsp;&nbsp;&nbsp;L <input type="text" name="lflexion" size="7"><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R <input type="text" name="rflexion" size="7"></td> 
- <td width="100">T12-L1:&nbsp;<input type="text" name="t12l1" size="7"></td><td width="50">	L1-2:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<input type="text" name="l12" size="7"> </td> 
+ <td><b>Lateral Flexion:</b> </td><td> (25)&nbsp;&nbsp;&nbsp;L <input type="text" name="lflexion" size="7" onkeypress="return isNumberKey(event);"><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R <input type="text" name="rflexion" size="7" onkeypress="return isNumberKey(event);"></td> 
+ <td width="100">T12-L1:&nbsp;<input type="text" name="t12l1" size="7" onkeypress="return isNumberKey(event);"></td><td width="50">	L1-2:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<input type="text" name="l12" size="7" onkeypress="return isNumberKey(event);"> </td> 
  <td><b>Slump:</b> </td><td><input type="text" name="slumpl" size="5"> <input type="text" name="slumpr" size="5"></td>
  </tr>
   <tr class="row1">
-  <td><b>Rotation:</b> </td><td> (45)&nbsp;&nbsp;&nbsp;L <input type="text" name="lrotation" size="7"><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R <input type="text" name="rrotation" size="7"></td> 
- <td width="100">L2-3:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<input type="text" name="l23" size="7"></td><td width="50">L3-4:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="l34" size="7"> </td> 
+  <td><b>Rotation:</b> </td><td> (45)&nbsp;&nbsp;&nbsp;L <input type="text" name="lrotation" size="7" onkeypress="return isNumberKey(event);"><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R <input type="text" name="rrotation" size="7" onkeypress="return isNumberKey(event);"></td> 
+ <td width="100">L2-3:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<input type="text" name="l23" size="7" onkeypress="return isNumberKey(event);"></td><td width="50">L3-4:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="l34" size="7" onkeypress="return isNumberKey(event);"> </td> 
  <td><b>Straight Leg Raise:</b> </td><td><input type="text" name="straightlegl" size="5"> <input type="text" name="straightlegr" size="5"></td>
  </tr>
   <tr class="row1">
  <td></td><td> </td> 
- <td width="100">L4-5:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="l45" size="7"></td><td width="50">L5-S1:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="l5s1" size="7"> </td> 
+ <td width="100">L4-5:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="l45" size="7" onkeypress="return isNumberKey(event);"></td><td width="50">L5-S1:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="l5s1" size="7" onkeypress="return isNumberKey(event);"> </td> 
  <td><b>Well Leg Raise:	</b> </td><td><input type="text" name="welllegl" size="5"> <input type="text" name="welllegr" size="5"></td>
  </tr>
   <tr class="row1">
  <td> </td><td> </td> 
- <td width="100">L SI: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="lsi" size="7"></td><td width="50">	R SI:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="rsi" size="7"> </td> 
+ <td width="100">L SI: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="lsi" size="7" onkeypress="return isNumberKey(event);"></td><td width="50">	R SI:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="rsi" size="7" onkeypress="return isNumberKey(event);"> </td> 
  <td><b>Nachlas / Yeoman's</b> </td><td><input type="text" name="nachlasl" size="5"> <input type="text" name="nachlasr" size="5"></td>
  </tr>
   <tr class="row1">
@@ -298,7 +309,7 @@ $("#flexion").keyup(function() {
  <td>L1</td>
  <td><input type="text" name="l1l" size="5">&nbsp; &nbsp; &nbsp;<input type="text" name="l1r" size="5">&nbsp;(Inguinal area)</td>
  <td>L1 </td>
- <td> <input type="text" name="l15l" size="5">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l15r" size="5">&nbsp;/5&nbsp;(Iliopsoas)</td>
+ <td> <input type="text" name="l15l" size="5" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l15r" size="5" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp;(Iliopsoas)</td>
  <td> </td>
  <td>  </td>
  </tr>
@@ -306,7 +317,7 @@ $("#flexion").keyup(function() {
  <td>L2</td>
  <td><input type="text" name="l2l" size="5">&nbsp; &nbsp; &nbsp;<input type="text" name="l2r" size="5">&nbsp;(Ant/med thigh)</td>
  <td>L2 </td>
- <td> <input type="text" name="l25l" size="5">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l25r" size="5">&nbsp;/5&nbsp;(Iliopsoas)</td>
+ <td> <input type="text" name="l25l" size="5" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l25r" size="5" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp;(Iliopsoas)</td>
  <td> </td>
  <td> </td>
  </tr>
@@ -314,7 +325,7 @@ $("#flexion").keyup(function() {
  <td>L3</td>
  <td><input type="text" name="l3l" size="5">&nbsp; &nbsp; &nbsp;<input type="text" name="l3r" size="5">&nbsp;(Medial knee)	</td>
  <td>L3 </td>
- <td> <input type="text" name="l35l" size="5">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l35r" size="5">&nbsp;/5&nbsp;(Iliopsoas)</td>
+ <td> <input type="text" name="l35l" size="5" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l35r" size="5" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp;(Iliopsoas)</td>
  <td> </td>
  <td> </td>
  </tr>
@@ -322,25 +333,25 @@ $("#flexion").keyup(function() {
  <td>L4</td>
  <td><input type="text" name="l4l" size="5">&nbsp; &nbsp; &nbsp;<input type="text" name="l4r" size="5">&nbsp;(Medial leg)	</td>
  <td>L4 </td>
- <td> <input type="text" name="l45l" size="5">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l45r" size="5">&nbsp;/5&nbsp;(Rectus fem.)</td>
+ <td> <input type="text" name="l45l" size="5" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l45r" size="5" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp;(Rectus fem.)</td>
  <td> L4</td>
- <td> <input type="text" name="l4l3" size="5">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l4r3" size="5">&nbsp;/5&nbsp;(Patellar)</td>
+ <td> <input type="text" name="l4l3" size="5" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l4r3" size="5" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp;(Patellar)</td>
  </tr>
  <tr class="row1">
  <td>L5</td>
  <td><input type="text" name="l5l" size="5">&nbsp; &nbsp; &nbsp;<input type="text" name="l5r" size="5">&nbsp;(Ant/lat leg)	</td>
  <td>L5 </td>
- <td> <input type="text" name="l55l" size="5">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l55r" size="5">&nbsp;/5&nbsp;  (Glut Med)</td>
+ <td> <input type="text" name="l55l" size="5" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l55r" size="5" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp;  (Glut Med)</td>
  <td>L5 </td>
- <td><input type="text" name="l5l3" size="5">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l5r3" size="5">&nbsp;/5&nbsp;(Med HS) </td>
+ <td><input type="text" name="l5l3" size="5" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l5r3" size="5" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp;(Med HS) </td>
  </tr>
  <tr class="row1">
  <td>SI</td>
  <td><input type="text" name="sl" size="5">&nbsp; &nbsp; &nbsp;<input type="text" name="sr" size="5">&nbsp;(Big toe/plantar)		</td>
  <td>SI </td>
- <td> <input type="text" name="s5l" size="5">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="s5r" size="5">&nbsp;/5&nbsp; (Glut Max)</td>
+ <td> <input type="text" name="s5l" size="5" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="s5r" size="5" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp; (Glut Max)</td>
  <td>SI </td>
- <td> <input type="text" name="sil" size="5">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="sir" size="5">&nbsp;/5&nbsp;(Achilles)</td>
+ <td> <input type="text" name="sil" size="5" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="sir" size="5" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp;(Achilles)</td>
  </tr>
  <tr class="row1">
  <td></td>
