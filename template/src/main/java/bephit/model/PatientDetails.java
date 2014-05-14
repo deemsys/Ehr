@@ -9,38 +9,38 @@ public class PatientDetails
 {
 private String Patient_id;
 
-@NotEmpty
+
 private String Name;
 
 private String symptom_ajax;
 
 private String username;
 
-@NotEmpty
+
 private String Date;
-@NotEmpty
+
 private String StreetAddress;
-@NotEmpty
+
 private String City;
-@NotEmpty
+
 private String State;
-@NotEmpty
-@Pattern(regexp="(^$|[0-9]{5})",message="Not a valid Zip Code")
+
+
 private String ZipCode;
-@NotEmpty
-@Pattern(regexp="(^$|[0-9-()]{13})",message="Not a valid Mobile number")
+
+
 private String Homephone;
-@NotEmpty
-@Pattern(regexp="^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$",message="Please Enetr a valid mail id")
+
+/*@Pattern(regexp="^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$",message="Please Enetr a valid mail id")*/
 
 private String Emailid;
-@NotEmpty
-@Pattern(regexp="(^$|[0-9-()]{13})",message="Not a valid Mobile number")
+
+/*@Pattern(regexp="(^$|[0-9-()]{13})",message="Not a valid Mobile number")*/
 private String MobileNumber;
-@NotEmpty
+
 private String DateOfBirth;
-@NotEmpty
-@Pattern(regexp="(^$|[0-9-]{11})",message="Not a valid Social Security number")
+
+/*@Pattern(regexp="(^$|[0-9-]{11})",message="Not a valid Social Security number")*/
 private String SocialSecurityNumber;
 private String Gender;
 
@@ -58,7 +58,7 @@ private String EmployerAddress;
 /*
 @Pattern(regexp="(^$|[0-9]{10})",message="Not a valid Mobile number")*/
 
-@Pattern(regexp="(^$|[0-9-()]{13})",message="Not a valid Mobile number")
+/*@Pattern(regexp="(^$|[0-9-()]{13})",message="Not a valid Mobile number")*/
 private String Workphone;
 
 private String zip;
@@ -69,17 +69,17 @@ private String EmployerCity;
 private String Estate;
 
 private String Ezip;
-@NotEmpty
+
 private String SpousesName;
-@NotEmpty
+
 private String SpousesEmp;
-@NotEmpty
-@Pattern(regexp="(^$|[0-9-()]{13})",message="Not a valid Mobile number")
+
+/*@Pattern(regexp="(^$|[0-9-()]{13})",message="Not a valid Mobile number")*/
 private String Spousesph;
-@NotEmpty
+
 private String Name_friend;
-@NotEmpty
-@Pattern(regexp="(^$|[0-9-()]{13})",message="Not a valid Mobile number")
+
+/*@Pattern(regexp="(^$|[0-9-()]{13})",message="Not a valid Mobile number")*/
 private String Phone_friend;
 
 private String Chiropratic_care;
@@ -88,58 +88,57 @@ private String Symptom_Accident;
 
 private String Type_Of_Accident;
 private String accident;
-@NotEmpty
+
 private String Date_Of_Accident;
 private String Accident_Reported;
-@NotEmpty
+
 private String when1;
-@NotEmpty
+
 private String where1;
 private String Attorney_accident;
-@NotEmpty
+
 private String retain;
-@NotEmpty
+
 private String record;
-@NotEmpty
+
 private String phyname;
-@NotEmpty
+
 //@Pattern(regexp="(^$|[0-9-()]{13})",message="Not a valid Mobile number")
 private String phyphone;
-@NotEmpty
-private String xray;
-@NotEmpty
-private String treat;
-@NotEmpty
-private String NameOfAttorney;
-@NotEmpty
 
-@Pattern(regexp="(^$|[0-9-()]{13})",message="Not a valid Mobile number")
+private String xray;
+
+private String treat;
+
+private String NameOfAttorney;
+
+
+/*@Pattern(regexp="(^$|[0-9-()]{13})",message="Not a valid Mobile number")*/
 private String Phone_Number;
-@NotEmpty
 
 private String Fault_accident;
-@NotEmpty
+
 
 private String Insurance;
-@NotEmpty
-@Pattern(regexp="(^$|[0-9-()]{13})",message="Not a valid Mobile number")
+
+/*@Pattern(regexp="(^$|[0-9-()]{13})",message="Not a valid Mobile number")*/
 private String Insurance_phone;
-@NotEmpty
+
 private String Name_auto;
-@NotEmpty
-@Pattern(regexp="(^$|[0-9-()]{13})",message="Not a valid Mobile number")
+
+/*@Pattern(regexp="(^$|[0-9-()]{13})",message="Not a valid Mobile number")*/
 private String Phone_auto;
 
-@NotEmpty
+
 private String Policy;
-@NotEmpty
+
 private String Name_health;
-@NotEmpty
-@Pattern(regexp="(^$|[0-9-()]{13})",message="Not a valid Mobile number")
+
+/*@Pattern(regexp="(^$|[0-9-()]{13})",message="Not a valid Mobile number")*/
 private String Health_phone;
 
 private String Prev_accident;
-@NotEmpty
+
 private String Prev_When;
 private String Anemia;
 private String Muscular;
@@ -177,9 +176,9 @@ private String Digestive;
 private String Heart;
 private String Other;
 private String Ifother;
-@NotEmpty
+
 private String Illness;
-@NotEmpty
+
 private String Dates;
 
 private String Medications;
@@ -191,11 +190,11 @@ private String Exercise;
 private String Hazardous;
 private String Hazardousyes;
 private String Female;
-@NotEmpty
+
 private String Dr;
-@NotEmpty
+
 private String Patient;
-@NotEmpty
+
 
 public PatientDetails()
 {
