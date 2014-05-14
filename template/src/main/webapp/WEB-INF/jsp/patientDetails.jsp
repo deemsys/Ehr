@@ -795,6 +795,34 @@ document.getElementById("inp_id").value=phone;
 	
 	return false;
 	}
+	 document.getElementById("Gendererror").innerHTML=""; 
+	if( ( document.getElementById("Male").checked == false ) && ( document.getElementById("Female").checked == false ) && ( document.getElementById("Transgender").checked == false ))
+
+	 {
+	 document.getElementById("Gendererror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+	document.getElementById("MaritalStatuserror").innerHTML=""; 
+	if( ( document.getElementById("Single").checked == false ) && ( document.getElementById("Married").checked == false ) && ( document.getElementById("Divorced").checked == false ))
+
+	 {
+	 document.getElementById("MaritalStatuserror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+	document.getElementById("Areyouerror").innerHTML=""; 
+	if( ( document.getElementById("Student").checked == false ) && ( document.getElementById("Employee").checked == false ) )
+
+	 {
+	 document.getElementById("Areyouerror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+	
 	document.getElementById("SpousesNameerror").innerHTML="";
 	if(document.getElementById("SpousesName").value=="")
 	{
@@ -832,7 +860,15 @@ document.getElementById("inp_id").value=phone;
 	}
 	
 	
-	
+	document.getElementById("Chiropratic_careerror").innerHTML=""; 
+	if( ( document.getElementById("yes1").checked == false ) && ( document.getElementById("No1").checked == false ) )
+
+	 {
+	 document.getElementById("Chiropratic_careerror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
 	
 	
 	
@@ -846,8 +882,16 @@ document.getElementById("inp_id").value=phone;
 	
 	return false;
 	}
-	
-	/* document.getElementById("type_of_accidenterror").innerHTML="";
+	document.getElementById("Symptom_Accidenterror").innerHTML=""; 
+	if( ( document.getElementById("yes").checked == false ) && ( document.getElementById("No").checked == false ) )
+
+	 {
+	 document.getElementById("Symptom_Accidenterror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+ document.getElementById("type_of_accidenterror").innerHTML="";
 	if(document.getElementById("type_of_accident").value==0)
 	{
 
@@ -855,11 +899,7 @@ document.getElementById("inp_id").value=phone;
 
 	return false;
 
-	}else
-	{
-	return true ;
 	}
-	 */
 
 	document.getElementById("datepicker2error").innerHTML="";
 	if(document.getElementById("datepicker2").value=="")
@@ -868,6 +908,15 @@ document.getElementById("inp_id").value=phone;
 	
 	return false;
 	}
+	document.getElementById("Accident_Reportederror").innerHTML=""; 
+	if( ( document.getElementById("yes2").checked == false ) && ( document.getElementById("No2").checked == false ) )
+
+	 {
+	 document.getElementById("Accident_Reportederror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
 	document.getElementById("datepicker5error").innerHTML="";
 	if(document.getElementById("datepicker5").value=="")
 	{
@@ -882,6 +931,33 @@ document.getElementById("inp_id").value=phone;
 	
 	return false;
 	}
+	document.getElementById("Attorney_accidenterror").innerHTML=""; 
+	if( ( document.getElementById("yes5").checked == false ) && ( document.getElementById("No5").checked == false ) )
+
+	 {
+	 document.getElementById("Attorney_accidenterror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+	document.getElementById("retainerror").innerHTML=""; 
+	if( ( document.getElementById("R").checked == false ) && ( document.getElementById("L").checked == false ) )
+
+	 {
+	 document.getElementById("retainerror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+	document.getElementById("recorderror").innerHTML=""; 
+	if( ( document.getElementById("yes6").checked == false ) && ( document.getElementById("No6").checked == false ) )
+
+	 {
+	 document.getElementById("recorderror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
 	document.getElementById("phynameerror").innerHTML="";
 	if(document.getElementById("phyname").value=="")
 	{
@@ -979,6 +1055,15 @@ document.getElementById("inp_id").value=phone;
 	
 	return false;
 	}
+	document.getElementById("Prev_accidenterror").innerHTML=""; 
+	if( ( document.getElementById("yes7").checked == false ) && ( document.getElementById("No7").checked == false ) )
+
+	 {
+	 document.getElementById("Prev_accidenterror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
 	document.getElementById("datepicker6error").innerHTML="";
 	if(document.getElementById("datepicker6").value=="")
 	{
@@ -1009,6 +1094,15 @@ document.getElementById("inp_id").value=phone;
 	
 	return false;
 	}
+	document.getElementById("doyouerror").innerHTML=""; 
+	if( ( document.getElementById("Drink").checked == false ) && ( document.getElementById("Smoke").checked == false ) && ( document.getElementById("Drugs").checked == false )&& ( document.getElementById("Diet").checked == false )&& ( document.getElementById("Exercise").checked == false ))
+
+	 {
+	 document.getElementById("doyouerror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
 	document.getElementById("listerror").innerHTML="";
 	if(document.getElementById("list").value=="")
 	{
@@ -1016,6 +1110,15 @@ document.getElementById("inp_id").value=phone;
 	
 	return false;
 	}
+	document.getElementById("Femaleerror").innerHTML=""; 
+	if( ( document.getElementById("yes9").checked == false ) && ( document.getElementById("No9").checked == false ) )
+
+	 {
+	 document.getElementById("Femaleerror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
 	document.getElementById("Drerror").innerHTML="";
 	if(document.getElementById("Dr").value=="")
 	{
@@ -1495,13 +1598,17 @@ function check(id)
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Gender:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="Gender" value="Male" class="input_txt" checked="true">Male&nbsp;&nbsp;&nbsp;<input type="radio" name="Gender" value="Female" class="input_txt">Female&nbsp;&nbsp;&nbsp;<input type="radio" name="Gender" value="Transgender" class="input_txt">Transgender</td>
+				                  	<input type="radio" name="Gender" value="Male" class="input_txt" id="Male" >Male&nbsp;&nbsp;&nbsp;<input type="radio" name="Gender" value="Female" class="input_txt" id="Female">Female&nbsp;&nbsp;&nbsp;<input type="radio" name="Gender" value="Transgender" id="Transgender" class="input_txt">Transgender
+				                  	<span id="Gendererror" style="color: red;font-style:italic;"></span>
+				                  	</td>
 				                </tr>
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>MaritalStatus:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="MaritalStatus" value="Single" class="input_txt" checked="true">Single&nbsp;&nbsp;&nbsp;<input type="radio" name="MaritalStatus" value="Married" class="input_txt">Married&nbsp;&nbsp;&nbsp;<input type="radio" name="MaritalStatus" value="Divorced" class="input_txt">Divorced</td>
-				                
+				                  	<input type="radio" name="MaritalStatus" value="Single" class="input_txt" id="Single">Single&nbsp;&nbsp;&nbsp;<input type="radio" name="MaritalStatus" value="Married" class="input_txt" id="Married">Married&nbsp;&nbsp;&nbsp;<input type="radio" name="MaritalStatus" value="Divorced" class="input_txt" id="Divorced">Divorced
+				                  	<span id="MaritalStatuserror" style="color: red;font-style:italic;"></span>
+				                  	</td>
+				                	
 				                </tr>
 				                
 				                </table>
@@ -1511,8 +1618,10 @@ function check(id)
 							 
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Are you:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="Areyou" value="Student" class="input_txt"  onchange="toggle3('show3')">Student&nbsp;&nbsp;&nbsp;
-				                  	<input type="radio" name="Areyou" value="Employee" class="input_txt" checked="true" onclick="toggle3('hide3')">Employee</td>
+				                  	<input type="radio" name="Areyou" value="Student" class="input_txt" id="Student" onchange="toggle3('show3')">Student&nbsp;&nbsp;&nbsp;
+				                  	<input type="radio" name="Areyou" value="Employee" class="input_txt" id="Employee" onclick="toggle3('hide3')">Employee
+				                  	<span id="Areyouerror" style="color: red;font-style:italic;"></span>
+				                  	</td>
 				                  
 				                </tr>
 							</table>
@@ -1521,7 +1630,7 @@ function check(id)
 							<tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Student:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="Student" value="FullTime" class="input_txt" checked="true">Full Time&nbsp;&nbsp;&nbsp;<input type="radio" name="Student" value="PartTime" class="input_txt">Part Time</td>
+				                  	<input type="radio" name="Student" value="FullTime" class="input_txt" >Full Time&nbsp;&nbsp;&nbsp;<input type="radio" name="Student" value="PartTime" class="input_txt">Part Time</td>
 				                  
 				                </tr>
 							
@@ -1641,7 +1750,8 @@ function check(id)
 				                 <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Have you ever had chiropractic care? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="Chiropratic_care" value="yes" class="input_txt" checked="true">yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Chiropratic_care" value="No" class="input_txt">No</td>
+				                  	<input type="radio" name="Chiropratic_care" value="yes" class="input_txt" id="yes1">yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Chiropratic_care" value="No" class="input_txt" id="No1">No
+				                  	<span id="Chiropratic_careerror" style="color: red;font-style:italic;"></span></td>
 				                </tr> 
 				               </table>
 				               <table align="right">
@@ -1747,7 +1857,8 @@ function check(id)
                         <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Are These Symptoms Due to an Accident?</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  
-				                  	<input type="radio" name="Symptom_Accident" value="yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Symptom_Accident" value="No" class="input_txt">No</td>
+				                  	<input type="radio" name="Symptom_Accident" value="yes" class="input_txt" id="yes">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Symptom_Accident" value="No" class="input_txt" id="No">No
+				                  	 <span id="Symptom_Accidenterror" style="color: red;font-style:italic;"></span></td>
 				                  	<td></td>
 				                </tr>   
 				                <tr class="row1">
@@ -1776,7 +1887,9 @@ function check(id)
 				               <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Accident Reported:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="Accident_Reported" value="yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Accident_Reported" value="No" class="input_txt">No</td>
+				                  	<input type="radio" name="Accident_Reported" value="yes" class="input_txt" id="yes2">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Accident_Reported" value="No" class="input_txt" id="No2">No
+				                  	<span id="Accident_Reportederror" style="color: red;font-style:italic;"></span>
+				                  	</td>
 				                  
 				                  
 				                </tr>
@@ -1794,20 +1907,26 @@ function check(id)
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Have You Retained an Attorney for this Accident:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="Attorney_accident" value="yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Attorney_accident" value="No" class="input_txt">No</td>
+				                  	<input type="radio" name="Attorney_accident" value="yes" class="input_txt" id="yes5">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Attorney_accident" value="No" class="input_txt" id="No5">No
+				                  	<span id="Attorney_accidenterror" style="color: red;font-style:italic;"></span>
+				                  	</td>
 				                <td></td>
 				                </tr>
 				                 <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>What is your Dominant Hand </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="retain" value="R" class="input_txt" checked="true">R&nbsp;&nbsp;&nbsp;<input type="radio" name="retain" value="L" class="input_txt">L</td>
+				                  	<input type="radio" name="retain" value="R" class="input_txt" id="R">R&nbsp;&nbsp;&nbsp;<input type="radio" name="retain" value="L" class="input_txt" id="L">L
+				               <span id="retainerror" style="color: red;font-style:italic;"></span>
+				                </td>
 				                <td></td>
 				                </tr>
 				                
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Would you like us to send your records to your family Physician  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="record" value="yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="record" value="No" class="input_txt">No</td>
+				                  	<input type="radio" name="record" value="yes" class="input_txt" id="yes6" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="record" value="No" class="input_txt" id="No6">No
+				                  	 <span id="recorderror" style="color: red;font-style:italic;"></span>
+				                  	</td>
 				                <td></td>
 				                </tr>
 				                <tr class="row1">
@@ -1916,7 +2035,9 @@ function check(id)
 				               <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Have You Ever Been Involved in a Previous Auto or Work Accident:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="Prev_accident" value="yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Prev_accident" value="No" class="input_txt">No</td>
+				                  	<input type="radio" name="Prev_accident" value="yes" class="input_txt" id="yes7">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Prev_accident" value="No" class="input_txt" id="No7">No
+				                  	<span id="Prev_accidenterror" style="color: red;font-style:italic;"></span>
+				                  	</td>
 				                  	
 				                 
 				                  <td></td>
@@ -2040,19 +2161,19 @@ function check(id)
 				                  	<tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Do You:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="checkbox" name="Drink" value="Drink">Drink Regularly	&nbsp;&nbsp;&nbsp;&nbsp; 
-				                  	<input type="checkbox" name="Smoke" value="Smoke">Smoke	&nbsp;&nbsp;&nbsp;&nbsp;
-				                  	<input type="checkbox" name="Drugs" value="Drugs">Take Recreational Drugs &nbsp;&nbsp;&nbsp;&nbsp;
-				                  	<input type="checkbox" name="Diet" value="Diet">Eat a Poor Diet &nbsp;&nbsp;&nbsp;&nbsp;
-				                  	<input type="checkbox" name="Exercise" value="Exercise">Exercise Regularly &nbsp;&nbsp;&nbsp;&nbsp;
+				                  	<input type="checkbox" id="Drink" name="Drink" value="Drink">Drink Regularly	&nbsp;&nbsp;&nbsp;&nbsp; 
+				                  	<input type="checkbox" id="Smoke"name="Smoke" value="Smoke">Smoke	&nbsp;&nbsp;&nbsp;&nbsp;
+				                  	<input type="checkbox" id="Drugs"name="Drugs" value="Drugs">Take Recreational Drugs &nbsp;&nbsp;&nbsp;&nbsp;
+				                  	<input type="checkbox" id="Diet"name="Diet" value="Diet">Eat a Poor Diet &nbsp;&nbsp;&nbsp;&nbsp;
+				                  	<input type="checkbox" id="Exercise" name="Exercise" value="Exercise">Exercise Regularly &nbsp;&nbsp;&nbsp;&nbsp;
 				                  	
-				                  	
+				                  	<span id="doyouerror" style="color: red;font-style:italic;"></span>
 				                  	</tr> 
 				                  	<tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Do You Work Around Hazardous Substances:  </td>
 				  <td valign="top" align="left" class="input_txt">
 				  <div id="send_to">
-				  <input type="radio" name="Hazardous" value="yes" class="input_txt" checked="true" onclick="toggle2('show2')">Yes&nbsp;&nbsp;&nbsp;
+				  <input type="radio" name="Hazardous" value="yes" class="input_txt"  onclick="toggle2('show2')">Yes&nbsp;&nbsp;&nbsp;
 				  <label>If yes,Please List: </label><input type="text" id="list" name="Hazardousyes"  /><br/><br/>
     </div><span id="listerror" style="color: red;font-style:italic;"></span><input type="radio" name="Hazardous" value="No" class="input_txt"onclick="toggle2('hide2')">No
 			      
@@ -2062,7 +2183,9 @@ function check(id)
 				  <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Females Only:<br>Are you pregnant:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="Female" value="yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Female" value="No" class="input_txt">No</td>
+				                  	<input type="radio" name="Female" value="yes" class="input_txt" id="yes9">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Female" value="No" class="input_txt" id="No9">No
+				                  	<span id="Femaleerror"style="color: red;font-style:italic;"></span>
+				                  	</td>
 				                
 				                  	</tr>
 				                  	<tr class="row2">
@@ -2179,12 +2302,12 @@ function check(id)
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Gender:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="Gender" value="Male" class="input_txt" checked="true">Male&nbsp;&nbsp;&nbsp;<input type="radio" name="Gender" value="Female" class="input_txt">Female&nbsp;&nbsp;&nbsp;<input type="radio" name="Gender" value="2" class="input_txt">Transgender</td>
+				                  	<input type="radio" name="Gender" value="Male" class="input_txt" >Male&nbsp;&nbsp;&nbsp;<input type="radio" name="Gender" value="Female" class="input_txt">Female&nbsp;&nbsp;&nbsp;<input type="radio" name="Gender" value="2" class="input_txt">Transgender</td>
 				                </tr>
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>MaritalStatus:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="MaritalStatus" value="Single" class="input_txt" checked="true">Single&nbsp;&nbsp;&nbsp;<input type="radio" name="MaritalStatus" value="Married" class="input_txt">Married&nbsp;&nbsp;&nbsp;<input type="radio" name="MaritalStatus" value="Divorced" class="input_txt">Divorced</td>
+				                  	<input type="radio" name="MaritalStatus" value="Single" class="input_txt" >Single&nbsp;&nbsp;&nbsp;<input type="radio" name="MaritalStatus" value="Married" class="input_txt">Married&nbsp;&nbsp;&nbsp;<input type="radio" name="MaritalStatus" value="Divorced" class="input_txt">Divorced</td>
 				                
 				                </tr>
 				                
@@ -2195,7 +2318,7 @@ function check(id)
 							 
 				                  <td valign="middle" align="left" class="input_txt" width="380"><span class="err">*</span>Are you:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="Areyou" value="Student" class="input_txt"  onchange="toggle3('show3')">Student&nbsp;&nbsp;&nbsp;<input type="radio" name="Areyou" value="Employee" class="input_txt" checked="true" onclick="toggle3('hide3')">Employee</td>
+				                  	<input type="radio" name="Areyou" value="Student" class="input_txt"  onchange="toggle3('show3')">Student&nbsp;&nbsp;&nbsp;<input type="radio" name="Areyou" value="Employee" class="input_txt"  onclick="toggle3('hide3')">Employee</td>
 				                  
 				                </tr>
 							</table>
@@ -2204,7 +2327,7 @@ function check(id)
 							<tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt" width="380"><span class="err">*</span>Student:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="Student" value="FullTime" class="input_txt" checked="true">Full Time&nbsp;&nbsp;&nbsp;<input type="radio" name="Student" value="PartTime" class="input_txt">Part Time</td>
+				                  	<input type="radio" name="Student" value="FullTime" class="input_txt" >Full Time&nbsp;&nbsp;&nbsp;<input type="radio" name="Student" value="PartTime" class="input_txt">Part Time</td>
 				                  
 				                </tr>
 							
@@ -2311,7 +2434,7 @@ function check(id)
 				                 <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Have you ever had chiropractic care? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="Chiropratic_care" value="yes" class="input_txt" checked="true">yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Chiropratic_care" value="No" class="input_txt">No</td>
+				                  	<input type="radio" name="Chiropratic_care" value="yes" class="input_txt" >yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Chiropratic_care" value="No" class="input_txt">No</td>
 				                </tr> 
 				               </table>
 				               <table align="right">
@@ -2389,7 +2512,7 @@ function check(id)
                         <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Are These Symptoms Due to an Accident?</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  
-				                  	<input type="radio" name="Symptom_Accident" value="yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Symptom_Accident" value="No" class="input_txt">No</td>
+				                  	<input type="radio" name="Symptom_Accident" value="yes" class="input_txt" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Symptom_Accident" value="No" class="input_txt">No</td>
 				                  	<td></td>
 				                </tr>   
 				                <tr class="row1">
@@ -2415,7 +2538,7 @@ function check(id)
 				               <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Accident Reported:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="Accident_Reported" value="yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Accident_Reported" value="No" class="input_txt">No</td>
+				                  	<input type="radio" name="Accident_Reported" value="yes" class="input_txt" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Accident_Reported" value="No" class="input_txt">No</td>
 				                  
 				                  
 				                </tr>
@@ -2433,20 +2556,20 @@ function check(id)
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Have You Retained an Attorney for this Accident:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="Attorney_accident" value="yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Attorney_accident" value="No" class="input_txt">No</td>
+				                  	<input type="radio" name="Attorney_accident" value="yes" class="input_txt" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Attorney_accident" value="No" class="input_txt">No</td>
 				                <td></td>
 				                </tr>
 				                 <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>What is your Dominant Hand </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="retain" value="R" class="input_txt" checked="true">R&nbsp;&nbsp;&nbsp;<input type="radio" name="retain" value="L" class="input_txt">L</td>
+				                  	<input type="radio" name="retain" value="R" class="input_txt" >R&nbsp;&nbsp;&nbsp;<input type="radio" name="retain" value="L" class="input_txt">L</td>
 				                <td></td>
 				                </tr>
 				                
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Would you like us to send your records to your family Physician  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="record" value="yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="record" value="No" class="input_txt">No</td>
+				                  	<input type="radio" name="record" value="yes" class="input_txt" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="record" value="No" class="input_txt">No</td>
 				                <td></td>
 				                </tr>
 				                <tr class="row1">
@@ -2551,7 +2674,7 @@ function check(id)
 				               <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Have You Ever Been Involved in a Previous Auto or Work Accident:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="Prev_accident" value="yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Prev_accident" value="No" class="input_txt">No</td>
+				                  	<input type="radio" name="Prev_accident" value="yes" class="input_txt" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Prev_accident" value="No" class="input_txt">No</td>
 				                  	
 				                 
 				                  <td></td>
@@ -2687,7 +2810,7 @@ function check(id)
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Do You Work Around Hazardous Substances:  </td>
 				  <td valign="top" align="left" class="input_txt">
 				  <div id="send_to">
-				  <input type="radio" name="Hazardous" value="yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<div id="send_to_one"><label>If yes,Please List: </label><input type="text" id="list" name="Hazardousyes" /><br/><br/>
+				  <input type="radio" name="Hazardous" value="yes" class="input_txt" >Yes&nbsp;&nbsp;&nbsp;<div id="send_to_one"><label>If yes,Please List: </label><input type="text" id="list" name="Hazardousyes" /><br/><br/>
     </div><input type="radio" name="Hazardous" value="No" class="input_txt">No
 			      
 			      </div>
@@ -2696,7 +2819,7 @@ function check(id)
 				  <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Females Only:<br>Are you pregnant:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="Female" value="yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Female" value="No" class="input_txt">No</td>
+				                  	<input type="radio" name="Female" value="yes" class="input_txt" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Female" value="No" class="input_txt">No</td>
 				                
 				                  	</tr>
 				                  	<tr class="row2">

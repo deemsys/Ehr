@@ -499,6 +499,453 @@ var $sid = xx+1;
 	  </style>
 	  <script>
 	  </script>
+	  <script>
+
+	function checkSubmit()
+	{
+		document.getElementById("nameerror").innerHTML=" ";
+		
+		if(document.getElementById("name").value=="")
+		{
+		document.getElementById("nameerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		document.getElementById("datepickererror").innerHTML="";
+	if(document.getElementById("datepicker").value=="")
+		{
+		document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+	
+	document.getElementById("streetaddresserror").innerHTML="";
+	if(document.getElementById("streetaddress").value=="")
+	{
+	document.getElementById("streetaddresserror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	document.getElementById("Cityerror").innerHTML="";
+	if(document.getElementById("City").value=="")
+	{
+	document.getElementById("Cityerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Stateerror").innerHTML="";
+	if(document.getElementById("State").value=="")
+	{
+	document.getElementById("Stateerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("zipcode1error").innerHTML="";
+	if(document.getElementById("zipcode1").value=="")
+	{
+	document.getElementById("zipcode1error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("zipcode1error").innerHTML="";
+	if(isNaN(document.getElementById("zipcode1").value || document.getElementById("zipcode1").value.length != 5 ))
+	{
+	document.getElementById("zipcode1error").innerHTML="Enter Only Numbers";
+	return false;
+	}
+	document.getElementById("homephoneerror").innerHTML="";
+	if(document.getElementById("homephone").value=="")
+	{
+	document.getElementById("homephoneerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	/* document.getElementById("homephoneerror").innerHTML="";
+	if(isNaN(document.getElementById("homephone").value))
+	{
+	document.getElementById("homephoneerror").innerHTML="Enter Only Numbers";
+	return false;
+	} */
+	document.getElementById("Emailiderror").innerHTML="";
+	if(document.getElementById("Emailid").value=="")
+	{
+	document.getElementById("Emailiderror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	var mail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    
+    if(document.getElementById("Emailid").value.match(mail)==null)
+    {
+    	document.getElementById("Emailiderror").innerHTML="Enter ur proper E-Mail";
+    	
+        return false;
+    }
+
+	document.getElementById("mobilenumbererror").innerHTML="";
+	if(document.getElementById("mobilenumber").value=="")
+	{
+	document.getElementById("mobilenumbererror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	document.getElementById("datepicker1error").innerHTML="";
+	if(document.getElementById("datepicker1").value=="")
+	{
+	document.getElementById("datepicker1error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("socialsecuritynumbererror").innerHTML="";
+	if(document.getElementById("socialsecuritynumber").value=="")
+	{
+	document.getElementById("socialsecuritynumbererror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	 document.getElementById("Gendererror").innerHTML=""; 
+	if( ( document.getElementById("Male").checked == false ) && ( document.getElementById("Female").checked == false ) && ( document.getElementById("Transgender").checked == false ))
+
+	 {
+	 document.getElementById("Gendererror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+	document.getElementById("MaritalStatuserror").innerHTML=""; 
+	if( ( document.getElementById("Single").checked == false ) && ( document.getElementById("Married").checked == false ) && ( document.getElementById("Divorced").checked == false ))
+
+	 {
+	 document.getElementById("MaritalStatuserror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+	document.getElementById("Areyouerror").innerHTML=""; 
+	if( ( document.getElementById("Student").checked == false ) && ( document.getElementById("Employee").checked == false ) )
+
+	 {
+	 document.getElementById("Areyouerror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+	
+	document.getElementById("SpousesNameerror").innerHTML="";
+	if(document.getElementById("SpousesName").value=="")
+	{
+	document.getElementById("SpousesNameerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("SpousesEmperror").innerHTML="";
+	if(document.getElementById("SpousesEmp").value=="")
+	{
+	document.getElementById("SpousesEmperror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("spouseworkphoneerror").innerHTML="";
+	if(document.getElementById("spouseworkphone").value=="")
+	{
+	document.getElementById("spouseworkphoneerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Name_frienderror").innerHTML="";
+	if(document.getElementById("Name_friend").value=="")
+	{
+	document.getElementById("Name_frienderror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Phone_frienderror").innerHTML="";
+	if(document.getElementById("Phone_friend").value=="")
+	{
+	document.getElementById("Phone_frienderror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	
+	document.getElementById("Chiropratic_careerror").innerHTML=""; 
+	if( ( document.getElementById("yes1").checked == false ) && ( document.getElementById("No1").checked == false ) )
+
+	 {
+	 document.getElementById("Chiropratic_careerror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+	
+	
+	
+	
+	
+	
+	document.getElementById("symptom1error").innerHTML="";
+	if(document.getElementById("symptom1").value=="")
+	{
+	document.getElementById("symptom1error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Symptom_Accidenterror").innerHTML=""; 
+	if( ( document.getElementById("yes").checked == false ) && ( document.getElementById("No").checked == false ) )
+
+	 {
+	 document.getElementById("Symptom_Accidenterror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+ document.getElementById("type_of_accidenterror").innerHTML="";
+	if(document.getElementById("type_of_accident").value==0)
+	{
+
+		document.getElementById("type_of_accidenterror").innerHTML="Required Field Should not be Empty";
+
+	return false;
+
+	}
+
+	document.getElementById("datepicker2error").innerHTML="";
+	if(document.getElementById("datepicker2").value=="")
+	{
+	document.getElementById("datepicker2error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Accident_Reportederror").innerHTML=""; 
+	if( ( document.getElementById("yes2").checked == false ) && ( document.getElementById("No2").checked == false ) )
+
+	 {
+	 document.getElementById("Accident_Reportederror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+	document.getElementById("datepicker5error").innerHTML="";
+	if(document.getElementById("datepicker5").value=="")
+	{
+	document.getElementById("datepicker5error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("where1error").innerHTML="";
+	if(document.getElementById("where1").value=="")
+	{
+	document.getElementById("where1error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Attorney_accidenterror").innerHTML=""; 
+	if( ( document.getElementById("yes5").checked == false ) && ( document.getElementById("No5").checked == false ) )
+
+	 {
+	 document.getElementById("Attorney_accidenterror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+	document.getElementById("retainerror").innerHTML=""; 
+	if( ( document.getElementById("R").checked == false ) && ( document.getElementById("L").checked == false ) )
+
+	 {
+	 document.getElementById("retainerror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+	document.getElementById("recorderror").innerHTML=""; 
+	if( ( document.getElementById("yes6").checked == false ) && ( document.getElementById("No6").checked == false ) )
+
+	 {
+	 document.getElementById("recorderror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+	document.getElementById("phynameerror").innerHTML="";
+	if(document.getElementById("phyname").value=="")
+	{
+	document.getElementById("phynameerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("phyphoneerror").innerHTML="";
+	if(document.getElementById("phyphone").value=="")
+	{
+	document.getElementById("phyphoneerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("xrayerror").innerHTML="";
+	if(document.getElementById("xray").value=="")
+	{
+	document.getElementById("xrayerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("treaterror").innerHTML="";
+	if(document.getElementById("treat").value=="")
+	{
+	document.getElementById("treaterror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("NameOfAttorneyerror").innerHTML="";
+	if(document.getElementById("NameOfAttorney").value=="")
+	{
+	document.getElementById("NameOfAttorneyerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("phonenumbererror").innerHTML="";
+	if(document.getElementById("phonenumber").value=="")
+	{
+	document.getElementById("phonenumbererror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Fault_accidenterror").innerHTML="";
+	if(document.getElementById("Fault_accident").value=="")
+	{
+	document.getElementById("Fault_accidenterror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Insuranceerror").innerHTML="";
+	if(document.getElementById("Insurance").value=="")
+	{
+	document.getElementById("Insuranceerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Insurance_phoneerror").innerHTML="";
+	if(document.getElementById("Insurance_phone").value=="")
+	{
+	document.getElementById("Insurance_phoneerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Name_autoerror").innerHTML="";
+	if(document.getElementById("Name_auto").value=="")
+	{
+	document.getElementById("Name_autoerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Phone_autoerror").innerHTML="";
+	if(document.getElementById("Phone_auto").value=="")
+	{
+	document.getElementById("Phone_autoerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}document.getElementById("policyerror").innerHTML="";
+	if(document.getElementById("policy").value=="")
+	{
+	document.getElementById("policyerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Name_healtherror").innerHTML="";
+	if(document.getElementById("Name_health").value=="")
+	{
+	document.getElementById("Name_healtherror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("phhealtherror").innerHTML="";
+	if(document.getElementById("phhealth").value=="")
+	{
+	document.getElementById("phhealtherror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Prev_accidenterror").innerHTML=""; 
+	if( ( document.getElementById("yes7").checked == false ) && ( document.getElementById("No7").checked == false ) )
+
+	 {
+	 document.getElementById("Prev_accidenterror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+	document.getElementById("datepicker6error").innerHTML="";
+	if(document.getElementById("datepicker6").value=="")
+	{
+	document.getElementById("datepicker6error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+		
+	
+	document.getElementById("Illnesserror").innerHTML="";
+	if(document.getElementById("Illness").value=="")
+	{
+	document.getElementById("Illnesserror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("datepicker3error").innerHTML="";
+	if(document.getElementById("datepicker3").value=="")
+	{
+	document.getElementById("datepicker3error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Medicationserror").innerHTML="";
+	if(document.getElementById("Medications").value=="")
+	{
+	document.getElementById("Medicationserror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("doyouerror").innerHTML=""; 
+	if( ( document.getElementById("Drink").checked == false ) && ( document.getElementById("Smoke").checked == false ) && ( document.getElementById("Drugs").checked == false )&& ( document.getElementById("Diet").checked == false )&& ( document.getElementById("Exercise").checked == false ))
+
+	 {
+	 document.getElementById("doyouerror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+	document.getElementById("listerror").innerHTML="";
+	if(document.getElementById("list").value=="")
+	{
+	document.getElementById("listerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Femaleerror").innerHTML=""; 
+	if( ( document.getElementById("yes9").checked == false ) && ( document.getElementById("No9").checked == false ) )
+
+	 {
+	 document.getElementById("Femaleerror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+	document.getElementById("Drerror").innerHTML="";
+	if(document.getElementById("Dr").value=="")
+	{
+	document.getElementById("Drerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Patienterror").innerHTML="";
+	if(document.getElementById("Patient").value=="")
+	{
+	document.getElementById("Patienterror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	}
+
+	</script>
 	</head>
 	<body>
 	 
@@ -529,66 +976,69 @@ var $sid = xx+1;
                        								 <tr class="row1">
                         	 							<td><span class="err">*</span>Name :</td>
                         	 							<%-- <input type="hidden" class="input_txtbx1" id="patientid" value="${patientDetails.patient_id}" name="patient_id" /> --%>
-                                 						<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.name }" name="name" /></br><span class="err"><form:errors path="PatientDetails.Name"></form:errors></span></td>
+                                 						<td class="input_txt"><input type="text" class="input_txtbx1" id="name"   value="${patientDetails.name }" name="name" /></br><span id="nameerror" style="color: red;font-style:italic;" ><form:errors path="PatientDetails.Name"></form:errors></span></td>
                       								  </tr>
                         <tr class="row2">
                         	<td><span class="err">*</span>Date:</td>
-                        	 <td class="input_txt"><input type="text" class="input_txtbx1" id="datepicker"   value="${patientDetails.date }" name="date" /></br><span class="err"><form:errors path="PatientDetails.Date"></form:errors></span></td>
+                        	 <td class="input_txt"><input type="text" class="input_txtbx1" id="datepicker"   value="${patientDetails.date }" name="date" /></br><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Date"></form:errors></span></td>
                         </tr> 
                         <tr class="row1">
                         	<td><span class="err">*</span>Street Address:</td>
-							<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.streetAddress }" name="streetAddress" /></br><span class="err"><form:errors path="PatientDetails.StreetAddress"></form:errors></span></td>
+							<td class="input_txt"><input type="text" class="input_txtbx1" id="streetaddress"   value="${patientDetails.streetAddress }" name="streetAddress" /></br><span id="streetaddresserror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.StreetAddress"></form:errors></span></td>
                         </tr> 
                         <tr class="row2">
                         	<td><span class="err">*</span>City:</td>
-                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.city}" name="city" /></br><span class="err"><form:errors path="PatientDetails.City"></form:errors></span></td>
+                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="City"   value="${patientDetails.city}" name="city" /></br><span id="Cityerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.City"></form:errors></span></td>
 						</tr>                        
 						<tr class="row1">
                         	<td><span class="err">*</span>State:</td>
-                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.state }" name="state" /></br><span class="err"><form:errors path="PatientDetails.State"></form:errors></span></td>
+                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="State"   value="${patientDetails.state }" name="state" /></br><span id="Stateerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.State"></form:errors></span></td>
 						</tr>                        
 						<tr class="row2">
                         	<td><span class="err">*</span>ZipCode:</td>
-                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.zipCode}" name="zipCode" /></br><span class="err"><form:errors path="PatientDetails.ZipCode"></form:errors></span></td>
+                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="zipcode1"   value="${patientDetails.zipCode}" name="zipCode" /></br><span id="zipcode1error" style="color: red;font-style:italic;"><form:errors path="PatientDetails.ZipCode"></form:errors></span></td>
 						</tr>                        
 						
 						<tr class="row1">
                         	<td><span class="err">*</span>Home phone:</td>
-                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.homephone}" name="homephone" /></br><span class="err"><form:errors path="PatientDetails.Homephone"></form:errors></span></td>
+                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="homephone"   value="${patientDetails.homephone}" name="homephone" /></br><span id="homephoneerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Homephone"></form:errors></span></td>
 						</tr>                        
 						
 						<tr class="row2">
                         	<td><span class="err">*</span>E-mail Id:</td>
-                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.emailid }" name="emailid" /></br><span class="err"><form:errors path="PatientDetails.Emailid"></form:errors></span></td>
+                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="Emailid"   value="${patientDetails.emailid }" name="emailid" /></br><span id="Emailiderror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Emailid"></form:errors></span></td>
 						</tr>                        
 						
 						<tr class="row1">
                         	<td><span class="err">*</span>MobileNumber:</td>
-                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.mobileNumber}" name="mobileNumber" /></br><span class="err"><form:errors path="PatientDetails.MobileNumber"></form:errors></span></td>
+                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="mobilenumber"   value="${patientDetails.mobileNumber}" name="mobileNumber" /></br><span id="mobilenumbererror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.MobileNumber"></form:errors></span></td>
 						</tr>                        
 						
 						<tr class="row2">
                         	<td><span class="err">*</span>DateOfBirth:</td>
-                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="datepicker1"   value="${patientDetails.dateOfBirth}" name="dateOfBirth" /></br><span class="err"><form:errors path="PatientDetails.DateOfBirth"></form:errors></span></td>
+                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="datepicker1"   value="${patientDetails.dateOfBirth}" name="dateOfBirth" /></br><span id="datepicker1error" style="color: red;font-style:italic;"><form:errors path="PatientDetails.DateOfBirth"></form:errors></span></td>
 						</tr>                        
 						
 						<tr class="row1">
                         	<td><span class="err">*</span>Social Security Number:</td>
-                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.socialSecurityNumber}" name="socialSecurityNumber" /></br><span class="err"><form:errors path="PatientDetails.SocialSecurityNumber"></form:errors></span></td>
+                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="socialsecuritynumber"   value="${patientDetails.socialSecurityNumber}" name="socialSecurityNumber" /></br><span id="socialsecuritynumbererror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.SocialSecurityNumber"></form:errors></span></td>
 						</tr>                        
 						<tr class="row2">
                         	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Gender:</td>
-				         	<td>	<input type="radio" name="gender" value="Male" class="input_txt"  <c:if test="${patientDetails.gender=='Male'}"><c:out value="checked=checked"/></c:if>>Male&nbsp;&nbsp;&nbsp;
-				                  	<input type="radio" name="gender" value="Female" class="input_txt"  <c:if test="${patientDetails.gender=='Female'}"><c:out value="checked=checked"/></c:if>>Female&nbsp;&nbsp;&nbsp;
-				                  	<input type="radio" name="gender" value="Transgender" class="input_txt"  <c:if test="${patientDetails.gender=='Transgender'}"><c:out value="checked=checked"/></c:if>>Transgender&nbsp;&nbsp;&nbsp;
+				         	<td>	<input type="radio" id="Male" name="gender"  value="Male"class="input_txt"  <c:if test="${patientDetails.gender=='Male'}"><c:out value="checked=checked"/></c:if>>Male&nbsp;&nbsp;&nbsp;
+				                  	<input type="radio" id="Female"name="gender" value="Female" class="input_txt"  <c:if test="${patientDetails.gender=='Female'}"><c:out value="checked=checked"/></c:if>>Female&nbsp;&nbsp;&nbsp;
+				                  	<input type="radio" id="Transgender" name="gender" value="Transgender" class="input_txt"  <c:if test="${patientDetails.gender=='Transgender'}"><c:out value="checked=checked"/></c:if>>Transgender&nbsp;&nbsp;&nbsp;
+				          <span id="Gendererror" style="color: red;font-style:italic;"></span>
 				            </td>
 				                  	
 				        </tr>
 				        <tr class="row1">
                         	 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>MaritalStatus:</td>
-				        	 <td>	<input type="radio" name="maritalStatus" value="Single" class="input_txt"  <c:if test="${patientDetails.maritalStatus=='Single'}"><c:out value="checked=checked"/></c:if>>Single&nbsp;&nbsp;&nbsp;
-				                  	<input type="radio" name="maritalStatus" value="Married" class="input_txt"  <c:if test="${patientDetails.maritalStatus=='Married'}"><c:out value="checked=checked"/></c:if>>Married&nbsp;&nbsp;&nbsp;
-				                  	<input type="radio" name="maritalStatus" value="Divorced" class="input_txt"  <c:if test="${patientDetails.maritalStatus=='Divorced'}"><c:out value="checked=checked"/></c:if>>Divorced&nbsp;&nbsp;&nbsp;
+				        	 <td>	<input type="radio" id="Single"name="maritalStatus" value="Single" class="input_txt"  <c:if test="${patientDetails.maritalStatus=='Single'}"><c:out value="checked=checked"/></c:if>>Single&nbsp;&nbsp;&nbsp;
+				                  	<input type="radio" id="Married" name="maritalStatus" value="Married" class="input_txt"  <c:if test="${patientDetails.maritalStatus=='Married'}"><c:out value="checked=checked"/></c:if>>Married&nbsp;&nbsp;&nbsp;
+				          
+				                  	<input type="radio" id="Divorced" name="maritalStatus" value="Divorced" class="input_txt"  <c:if test="${patientDetails.maritalStatus=='Divorced'}"><c:out value="checked=checked"/></c:if>>Divorced&nbsp;&nbsp;&nbsp;
+				         	<span id="MaritalStatuserror" style="color: red;font-style:italic;"></span>
 				         	</td>
 				        </tr>
 				               
@@ -600,6 +1050,7 @@ var $sid = xx+1;
 									<td style="padding-right:100px;" valign="middle" align="left" class="input_txt" ><span class="err">*</span>Are you:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				                 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="areyou" value="Student" id="studentchecked" class="input_txt" onclick="radiocheck();" <c:if test="${patientDetails.areyou=='Student'}"><c:out value="checked=checked"/></c:if>>Student
 				                  	<input type="radio" name="areyou" value="Employee" id="employeechecked" class="input_txt"  onclick="radiocheck();" <c:if test="${patientDetails.areyou=='Employee'}"><c:out value="checked=checked"/></c:if>>&nbsp;Employee
+				                 <span id="Areyouerror" style="color: red;font-style:italic;"></span>
 				                  </td>
 				            	</tr>
 				            	
@@ -670,29 +1121,30 @@ var $sid = xx+1;
 				 			 <tr class="row2">
 				               
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Spouse's or significant others name:</td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.spousesName}" name="spousesName" /></br><span class="err"><form:errors path="PatientDetails.SpousesName"></form:errors></span></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="SpousesName"   value="${patientDetails.spousesName}" name="spousesName" /></br><span id="SpousesNameerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.SpousesName"></form:errors></span></td>
 							</tr>
 							 <tr class="row1">
                         		<td><span class="err">*</span>Spouses Employer:&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                        		<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.spousesEmp}" name="spousesEmp" /></br><span class="err"><form:errors path="PatientDetails.SpousesEmp"></form:errors></span></td>
+                        		<td class="input_txt"><input type="text" class="input_txtbx1" id="SpousesEmp"   value="${patientDetails.spousesEmp}" name="spousesEmp" /></br><span id="SpousesEmperror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.SpousesEmp"></form:errors></span></td>
 							</tr>   	                     
 						
 						    <tr class="row2">
                         		<td><span class="err">*</span>Spouse's Workphone:</td>
-                        		<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.spousesph}" name="spousesph" /></br><span class="err"><form:errors path="PatientDetails.Spousesph"></form:errors></span></td>
+                        		<td class="input_txt"><input type="text" class="input_txtbx1" id="spouseworkphone"   value="${patientDetails.spousesph}" name="spousesph" /></br><span id="spouseworkphoneerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Spousesph"></form:errors></span></td>
 							</tr>                        
 						    <tr class="row1">
                         		<td><span class="err">*</span>Name of Nearest Friend/ Relative Not Living With You:</td>
-                        		<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.name_friend}" name="name_friend" /></br><span class="err"><form:errors path="PatientDetails.Name_friend"></form:errors></span></td>
+                        		<td class="input_txt"><input type="text" class="input_txtbx1" id="Name_friend"   value="${patientDetails.name_friend}" name="name_friend" /></br><span id="Name_frienderror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Name_friend"></form:errors></span></td>
 							</tr>                        
 						 	<tr class="row2">
                         		<td><span class="err">*</span>Phone of Nearest Friend/ Relative Not Living With You:</td>
-                        		<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.phone_friend}" name="phone_friend" /></br><span class="err"><form:errors path="PatientDetails.Phone_friend"></form:errors></span></td>
+                        		<td class="input_txt"><input type="text" class="input_txtbx1" id="Phone_friend"   value="${patientDetails.phone_friend}" name="phone_friend" /></br><span id="Phone_frienderror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Phone_friend"></form:errors></span></td>
 							</tr>                        
 						    <tr class="row1">
                         		<td><span class="err">*</span>Have you ever had chiropractic care? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-				                <td> 	<input type="radio" name="chiropratic_care" value="yes" class="input_txt" <c:if test="${patientDetails.chiropratic_care=='yes'}"><c:out value="checked=checked"/></c:if>>yes&nbsp;&nbsp;&nbsp;
-				                  		<input type="radio" name="chiropratic_care" value="No" class="input_txt"<c:if test="${patientDetails.chiropratic_care=='No'}"><c:out value="checked=checked"/></c:if>>No
+				                <td> 	<input type="radio" name="chiropratic_care" value="yes" id="yes1" class="input_txt" <c:if test="${patientDetails.chiropratic_care=='yes'}"><c:out value="checked=checked"/></c:if>>yes&nbsp;&nbsp;&nbsp;
+				                  		<input type="radio" name="chiropratic_care" value="No" id="No1" class="input_txt"<c:if test="${patientDetails.chiropratic_care=='No'}"><c:out value="checked=checked"/></c:if>>No
+				               	<span id="Chiropratic_careerror" style="color: red;font-style:italic;"></span>
 				                </td>
 						   </tr>                        
 						</table>
@@ -747,7 +1199,7 @@ var $sid = xx+1;
                  
                   <td valign="top" align="left" class="input_txt" width="70%">
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                 <textarea  rows="3" cols="25" name="symptom[]" id="symptom<%=i%><%i++;%>" onBlur="check(this)">${symptom}</textarea>
+                 <textarea  rows="3" cols="25" name="symptom[]" id="symptom1<%=i%><%i++;%>" onBlur="check(this)">${symptom}</textarea><span id="symptom1error" style="color: red;font-style:italic;"></span>
                
                 </td> </tr><tr height="10"></tr>  </c:forEach>
                         </td><td>
@@ -795,8 +1247,9 @@ var $sid = xx+1;
 				                </tr>
 				                 <tr class="row2">
                         <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Are These Symptoms Due to an Accident?</td>
-				                 <td>	<input type="radio" name="symptom_Accident" value="yes" class="input_txt" checked="true"<c:if test="${patientDetails.symptom_Accident=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
-				                 	<input type="radio" name="symptom_Accident" value="No" class="input_txt"<c:if test="${patientDetails.symptom_Accident=='No'}"><c:out value="checked=checked"/></c:if>>No
+				                 <td>	<input type="radio" id="yes" name="symptom_Accident" value="yes" class="input_txt" <c:if test="${patientDetails.symptom_Accident=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
+				                 	<input type="radio" id="No" name="symptom_Accident" value="No" class="input_txt"<c:if test="${patientDetails.symptom_Accident=='No'}"><c:out value="checked=checked"/></c:if>>No
+				                 	<span id="Symptom_Accidenterror" style="color: red;font-style:italic;"></span>
 				                 	</td> 
 				                  	<td></td>
 				        </tr> 
@@ -805,80 +1258,86 @@ var $sid = xx+1;
                 							<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Type Of Accident:</td>
 
 				                  		
-				                  		<td>	<select name="type_Of_Accident" id="typeofaccident" class="input_cmbbx1" onchange='Checklight();'>
+				                  		<td>	<select name="type_Of_Accident" id="type_of_accident" class="input_cmbbx1" onchange='Checklight();'>
 						                  <option value="autoaccident" <c:if test="${patientDetails.type_Of_Accident=='autoaccident'}"><c:out value="selected"/></c:if>>Auto</option>
 						                  <option value="workaccident" <c:if test="${patientDetails.type_Of_Accident=='workaccident'}"><c:out value="selected"/></c:if>>Work</option>
 						                  <option value="mobileaccident" <c:if test="${patientDetails.type_Of_Accident=='mobileaccident'}"><c:out value="selected"/></c:if>>Mobile</option>
 						                  <option value="otheraccident"  <c:if test="${patientDetails.type_Of_Accident=='otheraccident'}"><c:out value="selected"/></c:if>>Other</option>
 						                    </select>
+						                     <span id="type_of_accidenterror" style="color: red;font-style:italic;"></span>
 						                    </td>
 						                   	 <td><input type="text" name="accident" id="accident1" style='display:none' value="${patientDetails.accident}" /></br><span class="err"><form:errors path="PatientDetails.accident"></form:errors></span></td>
 
 						           </tr>  
 						 <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date Of Accident:</td>
-                        <td class="input_txt"><input type="text" class="input_txtbx1" id="datepicker2"   value="${patientDetails.date_Of_Accident}" name="date_Of_Accident" /><span class="err"><form:errors path="PatientDetails.Date_Of_Accident"></form:errors></span></td>
+                        <td class="input_txt"><input type="text" class="input_txtbx1" id="datepicker2"   value="${patientDetails.date_Of_Accident}" name="date_Of_Accident" /><span id="datepicker2error" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Date_Of_Accident"></form:errors></span></td>
 				                 <td></td>                   
 						  </tr>
 						  <tr class="row1">
 						   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Accident Reported:
 						   </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="accident_Reported" value="yes" class="input_txt" <c:if test="${patientDetails.accident_Reported=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
-				                  	<input type="radio" name="accident_Reported" value="No" class="input_txt"<c:if test="${patientDetails.accident_Reported=='No'}"><c:out value="checked=checked"/></c:if>>No
+				                  	<input type="radio" id="yes2" name="accident_Reported" value="yes" class="input_txt" <c:if test="${patientDetails.accident_Reported=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
+				                  	<input type="radio" id="No2" name="accident_Reported" value="No" class="input_txt"<c:if test="${patientDetails.accident_Reported=='No'}"><c:out value="checked=checked"/></c:if>>No
+				    	<span id="Accident_Reportederror" style="color: red;font-style:italic;"></span>           
 				                </td>
 				              </tr>        
 				            
 						 <tr class="row2">
 				          <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Medical Treatment for this Condition: &nbsp;&nbsp;&nbsp;&nbsp;When:</td>
-                        <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.when1}" name="when1" /></br><span class="err"><form:errors path="PatientDetails.when1"></form:errors></span></td>
+                        <td class="input_txt"><input type="text" class="input_txtbx1" id="datepicker5"   value="${patientDetails.when1}" name="when1" /></br><span id="datepicker5error" style="color: red;font-style:italic;"><form:errors path="PatientDetails.when1"></form:errors></span></td>
 						<td></td>
 						</tr>   
 						<tr class="row1">
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Where:</td>
-                        <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.where1}" name="where1" /></br><span class="err"><form:errors path="PatientDetails.where1"></form:errors></span></td>
+                        <td class="input_txt"><input type="text" class="input_txtbx1" id="where1"   value="${patientDetails.where1}" name="where1" /></br><span id="where1error" style="color: red;font-style:italic;"><form:errors path="PatientDetails.where1"></form:errors></span></td>
 				         </tr>
 				          <tr class="row2">
                         <td><span class="err">*</span>Have You Retained an Attorney for this Accident:</td>
-				                  <td>	<input type="radio" name="attorney_accident" value="yes" class="input_txt" <c:if test="${patientDetails.attorney_accident=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
-				                  	<input type="radio" name="attorney_accident" value="No" class="input_txt"<c:if test="${patientDetails.attorney_accident=='No'}"><c:out value="checked=checked"/></c:if>>No
+				                  <td>	<input type="radio" id="yes5" name="attorney_accident" value="yes" class="input_txt" <c:if test="${patientDetails.attorney_accident=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
+				                  	<input type="radio" id="No5" name="attorney_accident" value="No" class="input_txt"<c:if test="${patientDetails.attorney_accident=='No'}"><c:out value="checked=checked"/></c:if>>No
+			<span id="Attorney_accidenterror" style="color: red;font-style:italic;"></span>
 									<td></td>
 						</tr>   
 						 <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>What is your Dominant Hand </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="retain" value="R" class="input_txt" <c:if test="${patientDetails.retain=='R'}"><c:out value="checked=checked"/></c:if>>R&nbsp;&nbsp;&nbsp;<input type="radio" name="retain" value="L" class="input_txt" <c:if test="${patientDetails.retain=='L'}"><c:out value="checked=checked"/></c:if>>L</td>
+				                  	<input type="radio" id="R" name="retain" value="R" class="input_txt" <c:if test="${patientDetails.retain=='R'}"><c:out value="checked=checked"/></c:if>>R&nbsp;&nbsp;&nbsp;<input type="radio" id="L" name="retain" value="L" class="input_txt" <c:if test="${patientDetails.retain=='L'}"><c:out value="checked=checked"/></c:if>>L
+				                <span id="retainerror" style="color: red;font-style:italic;"></span></td>
 				                <td></td>
 				                </tr>
 				                
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>Would you like us to send your records to your family Physician  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="record" value="yes" class="input_txt" <c:if test="${patientDetails.record=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="record" value="No" class="input_txt" <c:if test="${patientDetails.record=='No'}"><c:out value="checked=checked"/></c:if>>No</td>
+				                  	<input type="radio" id="yes6" name="record" value="yes" class="input_txt" <c:if test="${patientDetails.record=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;<input type="radio" id="No6" name="record" value="No" class="input_txt" <c:if test="${patientDetails.record=='No'}"><c:out value="checked=checked"/></c:if>>No
+				                  	 <span id="recorderror" style="color: red;font-style:italic;"></span>
+				                  	</td>
 				                <td></td>
 				                </tr>
 				                <tr class="row1">
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err"></span>What is your Physician's Name </td>
 				                  	<td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="phyname" value="${patientDetails.phyname}"/><br><span class="err"><form:errors path="patientDetails.where1"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="phyname" name="phyname" value="${patientDetails.phyname}"/><br><span id="phynameerror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
 				                    </tr>
 				                
 				                <tr class="row1">
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err"></span>What is your Physician's Phone </td>
 				                  	<td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="phyphone" value="${patientDetails.phyphone}"/><br><span class="err"><form:errors path="patientDetails.where1"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="phyphone" name="phyphone" value="${patientDetails.phyphone}"/><br><span id="phyphoneerror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
 				                    </tr>
 				                    
 				                     <tr class="row1">
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err"></span>	What body parts were x-rayed </td>
 				                  	<td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="xray"  value="${patientDetails.xray}"/><br><span class="err"><form:errors path="patientDetails.where1"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="xray" name="xray"  value="${patientDetails.xray}"/><br><span id="xrayerror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
 				                    </tr>
 				                    
 				                     <tr class="row1">
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err"></span>what treatment was given </td>
 				                  	<td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="treat" value="${patientDetails.treat}"/><br><span class="err"><form:errors path="patientDetails.where1"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="treat" name="treat" value="${patientDetails.treat}"/><br><span id="treaterror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
 				                    </tr>
 						
 						
@@ -889,65 +1348,66 @@ var $sid = xx+1;
 						
 						 <tr class="row1">
                         <td><span class="err">*</span>Name Of Attorney:</td>
-                        <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.nameOfAttorney}" name="nameOfAttorney" /></br><span class="err"><form:errors path="PatientDetails.NameOfAttorney"></form:errors></span></td>
+                        <td class="input_txt"><input type="text" class="input_txtbx1" id="NameOfAttorney"   value="${patientDetails.nameOfAttorney}" name="nameOfAttorney" /></br><span id="NameOfAttorneyerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.NameOfAttorney"></form:errors></span></td>
 						</tr>          	
 				          
 						 <tr class="row2">
                         <td><span class="err">*</span>Attorney Phone:</td>
-                        <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.phone_Number}" name="phone_Number" /></br><span class="err"><form:errors path="PatientDetails.Phone_Number"></form:errors></span></td>
+                        <td class="input_txt"><input type="text" class="input_txtbx1" id="phonenumber"   value="${patientDetails.phone_Number}" name="phone_Number" /></br><span id="phonenumbererror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Phone_Number"></form:errors></span></td>
 						<td></td>
 						</tr> 
 						    <tr class="row1">
                         <td><span class="err">*</span>Name of Person at Fault for the Accident:</td>
-                        <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.fault_accident}" name="fault_accident" /></br><span class="err"><form:errors path="PatientDetails.Fault_accident"></form:errors></span></td>
+                        <td class="input_txt"><input type="text" class="input_txtbx1" id="Fault_accident"   value="${patientDetails.fault_accident}" name="fault_accident" /></br><span id="Fault_accidenterror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Fault_accident"></form:errors></span></td>
 						</tr>  
 						<tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Insurance Company of the at Fault Person:</td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.insurance}" name="insurance" /></br><span class="err"><form:errors path="PatientDetails.Insurance"></form:errors></span></td>     	         
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="Insurance"   value="${patientDetails.insurance}" name="insurance" /></br><span id="Insuranceerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Insurance"></form:errors></span></td>     	         
 				       			<td></td>
 				        </tr>
 				         <tr class="row1">
                         <td><span class="err">*</span>Insurance Company Phone:</td>
-                        <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.insurance_phone}" name="insurance_phone" /></br><span class="err"><form:errors path="PatientDetails.Insurance_phone"></form:errors></span></td>
+                        <td class="input_txt"><input type="text" class="input_txtbx1" id="Insurance_phone"   value="${patientDetails.insurance_phone}" name="insurance_phone" /></br><span id="Insurance_phoneerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Insurance_phone"></form:errors></span></td>
 						</tr>   
 						  <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name of your auto insurance:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="name_auto" value="${patientDetails.name_auto}"/><span class="err"><form:errors path="PatientDetails.Name_auto"></form:errors></span></td>
+				                  	<input type="text" class="input_txtbx1" id="Name_auto" name="name_auto" value="${patientDetails.name_auto}"/><span id="Name_autoerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Name_auto"></form:errors></span></td>
 				                  	<td> </td>
 				                </tr>
 				               <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>phone of your auto insurance:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="phone_auto" value="${patientDetails.phone_auto}"/><span class="err"><form:errors path="PatientDetails.Phone_auto"></form:errors></span></td>
+				                  	<input type="text" class="input_txtbx1" id="Phone_auto" name="phone_auto" value="${patientDetails.phone_auto}"/><span id="Phone_autoerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Phone_auto"></form:errors></span></td>
 				                  	<td> </td>
 				                </tr>                     
 						 <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Policy#:</td>
-				                 <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.policy}" name="policy" /></br><span class="err"><form:errors path="PatientDetails.Policy"></form:errors></span></td>	 
+				                 <td class="input_txt"><input type="text" class="input_txtbx1" id="policy"   value="${patientDetails.policy}" name="policy" /></br><span id="policyerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Policy"></form:errors></span></td>	 
 				        			<td></td>
 				        </tr>
 				         <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name of Your Health Insurance:</td>
-				                   <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.name_health}" name="name_health" /></br><span class="err"><form:errors path="PatientDetails.Name_health"></form:errors></span></td>
+				                   <td class="input_txt"><input type="text" class="input_txtbx1" id="Name_health"   value="${patientDetails.name_health}" name="name_health" /></br><span id="Name_healtherror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Name_health"></form:errors></span></td>
 				         </tr>
 				         <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Phone of your Health Insurance:</td>
-				                   <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.health_phone }" name="health_phone" /></br><span class="err"><form:errors path="PatientDetails.Health_phone"></form:errors></span></td>
+				                   <td class="input_txt"><input type="text" class="input_txtbx1" id="phhealth"   value="${patientDetails.health_phone }" name="health_phone" /></br><span id="phhealtherror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Health_phone"></form:errors></span></td>
 				        			<td></td>
 				         </tr>                  
 				         <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Have You Ever Been Involved in a Previous Auto or Work Accident:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="prev_accident" value="yes" class="input_txt" <c:if test="${patientDetails.prev_accident=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
-				                  	<input type="radio" name="prev_accident" value="No" class="input_txt"<c:if test="${patientDetails.prev_accident=='No'}"><c:out value="checked=checked"/></c:if>>No
+				                  	<input type="radio" id="yes7" name="prev_accident" value="yes" class="input_txt" <c:if test="${patientDetails.prev_accident=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
+				                  	<input type="radio" id="No7" name="prev_accident" value="No" class="input_txt"<c:if test="${patientDetails.prev_accident=='No'}"><c:out value="checked=checked"/></c:if>>No
+				                  <span id="Prev_accidenterror" style="color: red;font-style:italic;"></span>
 				                  	</td>
 				                 
 				                  <td></td>
 				                </tr>
 				          <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>When:</td>
-				                   <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.prev_When }" name="prev_When" /></br><span class="err"><form:errors path="PatientDetails.Prev_When"></form:errors></span></td>       
+				                   <td class="input_txt"><input type="text" class="input_txtbx1" id="datepicker6"   value="${patientDetails.prev_When }" name="prev_When" /></br><span id="datepicker6error" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Prev_When"></form:errors></span></td>       
 									<td></td>
 						</tr>
 						</table>
@@ -1047,17 +1507,17 @@ var $sid = xx+1;
 					</table>
 					 <tr class="row2">
                         <td><span class="err">*</span>Surgeries or Major Illnesses You Have Had: </td>
-                        <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.illness }" name="illness" /></br><span class="err"><form:errors path="PatientDetails.Illness"></form:errors></span></td>
+                        <td class="input_txt"><input type="text" class="input_txtbx1" id="Illness"   value="${patientDetails.illness }" name="illness" /></br><span id="Illnesserror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Illness"></form:errors></span></td>
 					</tr>   
 					  <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Dates:</td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="datepicker3"   value="${patientDetails.dates }" name="dates" /></br><span class="err"><form:errors path="PatientDetails.Dates"></form:errors></span></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="datepicker3"   value="${patientDetails.dates }" name="dates" /></br><span id="datepicker3error" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Dates"></form:errors></span></td>
 				    	</tr>    		
 				                  	
 				                  	<tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Medications You are Currently Taking and Why:</td>
 				                  <td>
-				                  	<textarea rows="3" cols="25" name="medications">${patientDetails.medications}</textarea>  </td>  
+				                  	<textarea rows="3" cols="25" id="Medications" name="medications">${patientDetails.medications} </textarea>  <span id="Medicationserror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.medications"></form:errors></span></td>  
 				                  </tr>
 				      	
 				                  	
@@ -1065,11 +1525,13 @@ var $sid = xx+1;
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Do You:</td>
 				              
 				                  <td valign="top" align="left" class="input_txt">
-				                  <input type="checkbox"  value="Drink" name="drink" <c:if test="${patientDetails.drink=='Drink'}"><c:out value="Checked"/></c:if>   />Drink Regularly	&nbsp;&nbsp;&nbsp;&nbsp;
-				                  <input type="checkbox"  value="Smoke" name="smoke" <c:if test="${patientDetails.smoke=='Smoke'}"><c:out value="Checked"/></c:if>   />Smoke	&nbsp;&nbsp;&nbsp;&nbsp;
-				                  <input type="checkbox"  value="Drugs" name="drugs" <c:if test="${patientDetails.drugs=='Drugs'}"><c:out value="Checked"/></c:if>   />Take Recreational Drugs	&nbsp;&nbsp;&nbsp;&nbsp;
-				                  <input type="checkbox"  value="Diet" name="diet" <c:if test="${patientDetails.diet=='Diet'}"><c:out value="Checked"/></c:if>   />Diet	&nbsp;&nbsp;&nbsp;&nbsp;
-				                    <input type="checkbox"  value="Exercise" name="exercise" <c:if test="${patientDetails.exercise=='Exercise'}"><c:out value="Checked"/></c:if>   />Exercise Regularly	&nbsp;&nbsp;&nbsp;&nbsp;
+				                  <input type="checkbox"  id="Drink" value="Drink" name="drink" <c:if test="${patientDetails.drink=='Drink'}"><c:out value="Checked"/></c:if>   />Drink Regularly	&nbsp;&nbsp;&nbsp;&nbsp;
+				                  <input type="checkbox"  id="Smoke" value="Smoke" name="smoke" <c:if test="${patientDetails.smoke=='Smoke'}"><c:out value="Checked"/></c:if>   />Smoke	&nbsp;&nbsp;&nbsp;&nbsp;
+				                  <input type="checkbox"  id="Drugs" value="Drugs" name="drugs" <c:if test="${patientDetails.drugs=='Drugs'}"><c:out value="Checked"/></c:if>   />Take Recreational Drugs	&nbsp;&nbsp;&nbsp;&nbsp;
+				                  <input type="checkbox" id="Diet" value="Diet" name="diet" <c:if test="${patientDetails.diet=='Diet'}"><c:out value="Checked"/></c:if>   />Diet	&nbsp;&nbsp;&nbsp;&nbsp;
+				                    <input type="checkbox" id="Exercise" value="Exercise" name="exercise" <c:if test="${patientDetails.exercise=='Exercise'}"><c:out value="Checked"/></c:if>   />Exercise Regularly	&nbsp;&nbsp;&nbsp;&nbsp;
+				                 	<span id="doyouerror" style="color: red;font-style:italic;"></span>
+				                 
 				                  </td>
 				                  </tr>
 				                  	
@@ -1089,17 +1551,17 @@ var $sid = xx+1;
 					   <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Females Only:<br>Are you pregnant:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="female" value="yes" class="input_txt" <c:if test="${patientDetails.female=='yes'}"><c:out value="checked=checked"/></c:if>>Yes
-				                  	<input type="radio" name="female" value="No" class="input_txt"<c:if test="${patientDetails.female=='No'}"><c:out value="checked=checked"/></c:if>>No
-				                
+				                  	<input type="radio" id="yes9" name="female" value="yes" class="input_txt" <c:if test="${patientDetails.female=='yes'}"><c:out value="checked=checked"/></c:if>>Yes
+				                  	<input type="radio" id="No9" name="female" value="No" class="input_txt"<c:if test="${patientDetails.female=='No'}"><c:out value="checked=checked"/></c:if>>No
+				            	<span id="Femaleerror"style="color: red;font-style:italic;"></span>    
 				      </tr>
 				      	<tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Dr:</td>
-				                  <td> <input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.dr}" name="dr" /></br><span class="err"><form:errors path="PatientDetails.Dr"></form:errors></span></td>
+				                  <td> <input type="text" class="input_txtbx1" id="Dr"   value="${patientDetails.dr}" name="dr" /></br><span id="Drerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Dr"></form:errors></span></td>
 				       </tr>
 				       <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Signature:</td>
-				                  <td> <input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.patient}" name="patient" /></br><span class="err"><form:errors path="PatientDetails.Patient"></form:errors></span></td>
+				                  <td> <input type="text" class="input_txtbx1" id="Patient"   value="${patientDetails.patient}" name="patient" /></br><span id="Patienterror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Patient"></form:errors></span></td>
 				      </tr>
 				        <table align="right">        
 				         
@@ -1107,7 +1569,7 @@ var $sid = xx+1;
 				  <td><br><input type="button" id="btnPrevious" class="submit_btn" value="Previous"  />&nbsp;</td>
                  
  				  <td>&nbsp;&nbsp;</td>
-             		 <td><input type="submit" class="submit_btn1" value="Update" ></td>
+             		 <td><input type="submit" class="submit_btn1" value="Update" onclick="return checkSubmit('this');"></td>
 				
                   <td>&nbsp;&nbsp;</td>
                   <td><input type="reset" class="submit_btn" value="Cancel" onclick="window.location.href='viewpatient'"></td>
