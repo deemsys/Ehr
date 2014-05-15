@@ -2914,13 +2914,13 @@ ScreeningAuthzForm screeningauthzForm = new ScreeningAuthzForm();
 	   model.addAttribute("patientno","0");
 	}
 		AssignmentDetailsForm assignmentdetailsform= new AssignmentDetailsForm();
-			assignmentdetailsform.setAssignmentDetails(assignmentDAO.getAssignmentDetails());
+			assignmentdetailsform.setAssignmentDetails(assignmentDAO.getUsernameAssignment(principal));
 			model.addAttribute("AssignmentDetailsForm",assignmentdetailsform);
 			model.addAttribute("menu", "authorization");
-			/*model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));*/
+			/*model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
 			model.addAttribute("noofrows",assignmentdetailsform.getAssignmentDetails().size());       
 		    assignmentdetailsform.setAssignmentDetails(assignmentDAO.getlimitedassignment(1));
-	        model.addAttribute("noofpages",(int) Math.ceil(assignmentDAO.getnoofassignment() * 1.0 / 5));	 
+	        model.addAttribute("noofpages",(int) Math.ceil(assignmentDAO.getnoofassignment() * 1.0 / 5));*/	 
 		        model.addAttribute("button","viewall");
 		        model.addAttribute("success","false");
 		        model.addAttribute("currentpage",1);
