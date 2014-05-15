@@ -166,6 +166,57 @@ document.getElementById('gender32').value='Female';
 }
 
  </script>
+<script>
+
+	function checkSubmit()
+	{
+		document.getElementById("datepicker11error").innerHTML=" ";
+		
+		if(document.getElementById("datepicker11").value=="")
+		{
+		document.getElementById("datepicker11error").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+	
+document.getElementById("patientnameerror").innerHTML=" ";
+		
+		if(document.getElementById("patientname").value=="")
+		{
+		document.getElementById("patientnameerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		
+document.getElementById("datepicker1error").innerHTML=" ";
+		
+		if(document.getElementById("datepicker1").value=="")
+		{
+		document.getElementById("datepicker1error").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		
+document.getElementById("datepickererror").innerHTML=" ";
+		
+		if(document.getElementById("datepicker").value=="")
+		{
+		document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		
+document.getElementById("signerror").innerHTML=" ";
+		
+		if(document.getElementById("sign").value=="")
+		{
+		document.getElementById("signerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+	}
+		
+		</script>
 
 </head>
  
@@ -201,19 +252,19 @@ document.getElementById('gender32').value='Female';
           <table cellpadding="0" cellspacing="0" border="0" width="70%" align="center">
           <tr height="30">
           <td><span class="err">*</span>Report Date: </td>
-          <td><input type="text" name="reportdate" size="40" id="datepicker11"><span class="err" id="datepicker11error"><form:errors path=""></form:errors></span></td>
+          <td><input type="text" name="reportdate" size="40" id="datepicker11"><span id="datepicker11error" style="color: red;font-style:italic;" id="datepicker11error"><form:errors path=""></form:errors></span></td>
           </tr>   
           <tr height="30">
           <td><span class="err">*</span>Patientname: </td>
-          <td><input type="text" name="patient" size="40" value="${patientDetails.name}" id="patientname"><span class="err" id="patientnameerror"><form:errors path=""></form:errors></span></td>
+          <td><input type="text" name="patient" size="40" value="${patientDetails.name}" id="patientname"><span id="patientnameerror" style="color: red;font-style:italic;"><form:errors path=""></form:errors></span></td>
           </tr>
           <tr height="30">
           <td><span class="err">*</span>Date of Injury: </td>
-          <td><input type="text" name="dateofinjury" size="40" id="datepicker1"><span class="err" id="datepicker1error"><form:errors path=""></form:errors></span></td>
+          <td><input type="text" name="dateofinjury" size="40" id="datepicker1"><span id="datepicker1error" style="color: red;font-style:italic;"><form:errors path=""></form:errors></span></td>
           </tr>
           <tr height="30">
           <td><span class="err">*</span>Date of first visit: </td>
-          <td><input type="text" name="dateoffirstvisit" id="datepicker" size="40"><span class="err" id="datepickererror"><form:errors path=""></form:errors></span></td>
+          <td><input type="text" name="dateoffirstvisit" id="datepicker" size="40"><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path=""></form:errors></span></td>
           </tr>
           </table>
           <table cellpadding="0" cellspacing="0" border="0" width="70%" align="center">
@@ -835,12 +886,12 @@ I hope you find this narrative report and discussion helpful in resolving the cu
 	            </p>
 	            <div align="right">
           <p><B style="font-size:13px">Sincerely,</B></p>
-          <p><input type="text" name="sign" size="30" id="sign" ><span class="err" id="signerror"><form:errors path=""></form:errors></span></p>
+          <p><input type="text" name="sign" size="30" id="sign" ><span  id="signerror" style="color: red;font-style:italic;"><form:errors path=""></form:errors></span></p>
           <p>Dr. Darrin A. Pordash</p>
           </div>
  <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="Save"></td>
+<td><input type="submit" class="submit_btn" value="Save" onclick="return checkSubmit('this');"></td>
 <td><input type="reset" class="submit_btn" value="Cancel"></td>
 </tr>
 </table>

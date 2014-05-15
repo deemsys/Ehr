@@ -5,13 +5,13 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Narrativereport
 { 
 	private String narrativeno;
-	@NotEmpty
+	
 	private String reportdate;
-	@NotEmpty
+	
 	private String patient;
-	@NotEmpty
+	
 	private String dateofinjury;
-	@NotEmpty
+	
 	private String dateoffirstvisit;
 	private String towhom;
 	private String patientname;
@@ -185,7 +185,7 @@ private String orthopedictest6;
 	private String gender74;
 	private String gender75;
 	private String pname3;
-	@NotEmpty
+	
 	private String sign;
 	
 	public Narrativereport() {

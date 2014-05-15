@@ -87,6 +87,57 @@ function Checksymptom(val){
 	   element.style.display='none';
 	}
 </script>
+<script>
+
+	function checkSubmit()
+	{
+		document.getElementById("datepicker11error").innerHTML=" ";
+		
+		if(document.getElementById("datepicker11").value=="")
+		{
+		document.getElementById("datepicker11error").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+	
+document.getElementById("patientnameerror").innerHTML=" ";
+		
+		if(document.getElementById("patientname").value=="")
+		{
+		document.getElementById("patientnameerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		
+document.getElementById("datepicker1error").innerHTML=" ";
+		
+		if(document.getElementById("datepicker1").value=="")
+		{
+		document.getElementById("datepicker1error").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		
+document.getElementById("datepickererror").innerHTML=" ";
+		
+		if(document.getElementById("datepicker").value=="")
+		{
+		document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		
+document.getElementById("signerror").innerHTML=" ";
+		
+		if(document.getElementById("sign").value=="")
+		{
+		document.getElementById("signerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+	}
+		
+		</script>
 </head>
  <style>
   /* force a height so the tabs don't jump as content height changes */
@@ -127,19 +178,19 @@ function Checksymptom(val){
           <tr height="30">
            <input type="hidden" name="narrativeno" id="inp_id" value="${narrativereport.narrativeno}"/>
           <td><span class="err">*</span>Report Date: </td>
-          <td><input type="text" name="reportdate" size="40" id="datepicker11" value="${narrativereport.reportdate }"><span class="err"><form:errors path="Copyofrequest.patient"></form:errors></span></td>
+          <td><input type="text" name="reportdate" size="40" id="datepicker11" value="${narrativereport.reportdate }"><span id="datepicker11error" style="color: red;font-style:italic;"><form:errors path="Copyofrequest.patient"></form:errors></span></td>
           </tr>   
           <tr height="30">
           <td><span class="err">*</span>Patient: </td>
-          <td><input type="text" name="patient" size="40" value="${narrativereport.patient}"><span class="err"><form:errors path="Copyofrequest.patient"></form:errors></span></td>
+          <td><input type="text" id="patientname" name="patient" size="40" value="${narrativereport.patient}"><span id="patientnameerror" style="color: red;font-style:italic;"><form:errors path="Copyofrequest.patient"></form:errors></span></td>
           </tr>
           <tr height="30">
           <td>Date of Injury: </td>
-          <td><input type="text" name="dateofinjury" size="40" id="datepicker1" value="${narrativereport.dateofinjury}"></td>
+          <td><input type="text" name="dateofinjury" size="40" id="datepicker1" value="${narrativereport.dateofinjury}"><span id="datepicker1error" style="color: red;font-style:italic;"></span></td>
           </tr>
           <tr height="30">
           <td>Date of first visit: </td>
-          <td><input type="text" name="dateoffirstvisit" id="datepicker" size="40" value="${narrativereport.dateoffirstvisit}"></td>
+          <td><input type="text" name="dateoffirstvisit" id="datepicker" size="40" value="${narrativereport.dateoffirstvisit}"><span id="datepickererror" style="color: red;font-style:italic;"></span></td>
           </tr>
           </table>
           <table width="85">
@@ -761,12 +812,12 @@ I hope you find this narrative report and discussion helpful in resolving the cu
 	            </p>
 	            <div align="right">
           <p><B style="font-size:13px">Sincerely,</B></p>
-          <p><input type="text" name="sign" size="30" value="${narrativereport.sign}"><span class="err"><form:errors path="Copyofrequest.sign"></form:errors></span></p>
+          <p><input type="text" name="sign" size="30" value="${narrativereport.sign}"><span id="signerror" style="color: red;font-style:italic;"><form:errors path="Copyofrequest.sign"></form:errors></span></p>
           <p>Dr. Darrin A. Pordash</p>
           </div>
  <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="Update"></td>
+<td><input type="submit" class="submit_btn" value="Update" onclick="return checkSubmit('this');"></td>
 <td><a href="viewnarrativereport"style="color:white" class="submit_btn">Cancel</a></td>
 </tr>
 </table>
