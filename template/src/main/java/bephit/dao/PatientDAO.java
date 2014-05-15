@@ -71,30 +71,42 @@ public class PatientDAO {
 	    	 
 	    	 String patientrecords;
 	    	 int noofRecords=0;
+	    	 int patientcurrentid=0;
 	    	 
-				patientrecords = "SELECT * FROM patient_details ORDER BY  Patient_id DESC LIMIT 1;";
+				patientrecords = "SELECT Patient_id FROM patient_details ORDER BY  Patient_id DESC LIMIT 1;";
 				System.out.println("command"+patientrecords);			
 				resultSet = statement.executeQuery(patientrecords);
 				if (resultSet.next())
-					noofRecords = resultSet.getInt("Patient_id");
-					noofRecords=noofRecords+1;
-					    	 
+				{
+					patientcurrentid = resultSet.getInt("Patient_id");
+					System.out.println("patientcurrentid"+patientcurrentid);
+					patientcurrentid=patientcurrentid+1;
+					System.out.println("patientcurrentidinc"+patientcurrentid);
+				}
+				System.out.println("no of records"+noofRecords);	    	 
 	    	    String cmd_mess="";
 	    	    System.out.println("number.."+Symptoms);
 	    		int count=1;
 	    		for(String symptom :Symptoms)
 	    		{		
 	    		
-	    		 cmd_mess="insert into tbl_symptom(symptom,symptom_count,patient_id) values('"+symptom+"','"+count+"','"+noofRecords+"')";
+	    		 cmd_mess="insert into tbl_symptom(symptom,symptom_count,patient_id) values('"+symptom+"','"+count+"','"+patientcurrentid+"')";
 	    		 count++;
 	    		 statement.execute(cmd_mess);
 	    		 System.out.println(cmd_mess);
 	    		}
+	    		 java.util.Date  ss1=new Date(patientdetails.getDateOfBirth());
+		    	 SimpleDateFormat formatter5=new SimpleDateFormat("yyyy-MM-dd");
+		    	 String formats1 = formatter5.format(ss1);
 
-	    	 String cmd="INSERT INTO patient_details (Name,username,Date,StreetAddress,City,State,ZipCode,Homephone,Emailid,MobileNumber,DateOfBirth,SocialSecurityNumber,Gender,MaritalStatus,Areyou,Student,EmployerName,Occupation,EmployerAddress,Workphone,zip,EmployerCity,Estate,Ezip,SpousesName,SpousesEmp,Spousesph,Name_friend,Phone_friend,Chiropratic_care,Symptom_Accident,Type_Of_Accident,accident,Date_Of_Accident,Accident_Reported,when1,where1,Attorney_accident,retain,record,phyname,phyphone,xray,treat,NameOfAttorney,Phone_Number,Fault_accident,Insurance,Insurance_phone,Name_auto,Phone_auto,Policy,Name_health,Health_phone,Prev_accident,Prev_When,Anemia,Muscular,Rheumatic,Allergies,Cancer,Polio1,Multiple,Scarlet,HIV,Sinus,Asthma,German,Nervousness,Numbness,Convulsions,Epilepsy,Concussion,Dizziness,Neuritis,Rheumatism,Diabetes,Arthritis,Venereal,Backaches,Tuberculosis,Liver,Kidney,Thyroid,Alcoholism,Hepatitis,Mental,High,Digestive,Heart,Other,Ifother,Illness,Dates,Medications,Drink,Smoke,Drugs,Diet,Exercise,Hazardous,Hazardousyes,Female,Dr,Patient) VALUES('"+patientdetails.getName()+"','"+principal.getName()+"','"+patientdetails.getDate()+"','"+patientdetails.getStreetAddress()+"','"+patientdetails.getCity()+"','"+patientdetails.getState()+"','"+patientdetails.getZipCode()+"','"+patientdetails.getHomephone()+"','"+patientdetails.getEmailid()+"','"+patientdetails.getMobileNumber()+"','"+patientdetails.getDateOfBirth()+"','"+patientdetails.getSocialSecurityNumber()+"','"+patientdetails.getGender()+"','"+patientdetails.getMaritalStatus()+"','"+patientdetails.getAreyou()+"','"+patientdetails.getStudent()+"','"+patientdetails.getEmployerName()+"','"+patientdetails.getOccupation()+"','"+patientdetails.getEmployerAddress()+"','"+patientdetails.getWorkphone()+"','"+patientdetails.getZip()+"','"+patientdetails.getEmployerCity()+"','"+patientdetails.getEstate()+"','"+patientdetails.getEzip()+"','"+patientdetails.getSpousesName()+"','"+patientdetails.getSpousesEmp()+"','"+patientdetails.getSpousesph()+"','"+patientdetails.getName_friend()+"','"+patientdetails.getPhone_friend()+"','"+patientdetails.getChiropratic_care()+"','"+patientdetails.getSymptom_Accident()+"','"+patientdetails.getType_Of_Accident()+"','"+patientdetails.getAccident()+"','"+patientdetails.getDate_Of_Accident()+"','"+patientdetails.getAccident_Reported()+"','"+patientdetails.getWhen1()+"','"+patientdetails.getWhere1()+"','"+patientdetails.getAttorney_accident()+"','"+patientdetails.getRetain()+"','"+patientdetails.getRecord()+"','"+patientdetails.getPhyname()+"','"+patientdetails.getPhyphone()+"','"+patientdetails.getXray()+"','"+patientdetails.getTreat()+"','"+patientdetails.getNameOfAttorney()+"','"+patientdetails.getPhone_Number()+"','"+patientdetails.getFault_accident()+"','"+patientdetails.getInsurance()+"','"+patientdetails.getInsurance_phone()+"','"+patientdetails.getName_auto()+"','"+patientdetails.getPhone_auto()+"','"+patientdetails.getPolicy()+"','"+patientdetails.getName_health()+"','"+patientdetails.getHealth_phone()+"','"+patientdetails.getPrev_accident()+"','"+patientdetails.getPrev_When()+"','"+patientdetails.getAnemia()+"','"+patientdetails.getMuscular()+"','"+patientdetails.getRheumatic()+"','"+patientdetails.getAllergies()+"','"+patientdetails.getCancer()+"','"+patientdetails.getPolio1()+"','"+patientdetails.getMultiple()+"','"+patientdetails.getScarlet()+"','"+patientdetails.getHIV()+"','"+patientdetails.getSinus()+"','"+patientdetails.getAsthma()+"','"+patientdetails.getGerman()+"','"+patientdetails.getNervousness()+"','"+patientdetails.getNumbness()+"','"+patientdetails.getConvulsions()+"','"+patientdetails.getEpilepsy()+"','"+patientdetails.getConcussion()+"','"+patientdetails.getDizziness()+"','"+patientdetails.getNeuritis()+"','"+patientdetails.getRheumatism()+"','"+patientdetails.getDiabetes()+"','"+patientdetails.getArthritis()+"','"+patientdetails.getVenereal()+"','"+patientdetails.getBackaches()+"','"+patientdetails.getTuberculosis()+"','"+patientdetails.getLiver()+"','"+patientdetails.getKidney()+"','"+patientdetails.getThyroid()+"','"+patientdetails.getAlchoholism()+"','"+patientdetails.getHepatitis()+"','"+patientdetails.getMental()+"','"+patientdetails.getHigh()+"','"+patientdetails.getDigestive()+"','"+patientdetails.getHeart()+"','"+patientdetails.getOther()+"','"+patientdetails.getIfother()+"','"+patientdetails.getIllness()+"','"+patientdetails.getDates()+"','"+patientdetails.getMedications()+"','"+patientdetails.getDrink()+"','"+patientdetails.getSmoke()+"','"+patientdetails.getDrugs()+"','"+patientdetails.getDiet()+"','"+patientdetails.getExercise()+"','"+patientdetails.getHazardous()+"','"+patientdetails.getHazardousyes()+"','"+patientdetails.getFemale()+"','"+patientdetails.getDr()+"','"+patientdetails.getPatient()+"')";
+		    	 System.out.println("date"+formats1);
+	    	 String cmd="INSERT INTO patient_details (Name,username,Date,StreetAddress,City,State,ZipCode,Homephone,Emailid,MobileNumber,DateOfBirth,SocialSecurityNumber,Gender,MaritalStatus,Areyou,Student,EmployerName,Occupation,EmployerAddress,Workphone,zip,EmployerCity,Estate,Ezip,SpousesName,SpousesEmp,Spousesph,Name_friend,Phone_friend,Chiropratic_care,Symptom_Accident,Type_Of_Accident,accident,Date_Of_Accident,Accident_Reported,when1,where1,Attorney_accident,retain,record,phyname,phyphone,xray,treat,NameOfAttorney,Phone_Number,Fault_accident,Insurance,Insurance_phone,Name_auto,Phone_auto,Policy,Name_health,Health_phone,Prev_accident,Prev_When,Anemia,Muscular,Rheumatic,Allergies,Cancer,Polio1,Multiple,Scarlet,HIV,Sinus,Asthma,German,Nervousness,Numbness,Convulsions,Epilepsy,Concussion,Dizziness,Neuritis,Rheumatism,Diabetes,Arthritis,Venereal,Backaches,Tuberculosis,Liver,Kidney,Thyroid,Alcoholism,Hepatitis,Mental,High,Digestive,Heart,Other,Ifother,Illness,Dates,Medications,Drink,Smoke,Drugs,Diet,Exercise,Hazardous,Hazardousyes,Female,Dr,Patient) VALUES('"+patientdetails.getName()+"','"+principal.getName()+"','"+patientdetails.getDate()+"','"+patientdetails.getStreetAddress()+"','"+patientdetails.getCity()+"','"+patientdetails.getState()+"','"+patientdetails.getZipCode()+"','"+patientdetails.getHomephone()+"','"+patientdetails.getEmailid()+"','"+patientdetails.getMobileNumber()+"','"+formats1+"','"+patientdetails.getSocialSecurityNumber()+"','"+patientdetails.getGender()+"','"+patientdetails.getMaritalStatus()+"','"+patientdetails.getAreyou()+"','"+patientdetails.getStudent()+"','"+patientdetails.getEmployerName()+"','"+patientdetails.getOccupation()+"','"+patientdetails.getEmployerAddress()+"','"+patientdetails.getWorkphone()+"','"+patientdetails.getZip()+"','"+patientdetails.getEmployerCity()+"','"+patientdetails.getEstate()+"','"+patientdetails.getEzip()+"','"+patientdetails.getSpousesName()+"','"+patientdetails.getSpousesEmp()+"','"+patientdetails.getSpousesph()+"','"+patientdetails.getName_friend()+"','"+patientdetails.getPhone_friend()+"','"+patientdetails.getChiropratic_care()+"','"+patientdetails.getSymptom_Accident()+"','"+patientdetails.getType_Of_Accident()+"','"+patientdetails.getAccident()+"','"+patientdetails.getDate_Of_Accident()+"','"+patientdetails.getAccident_Reported()+"','"+patientdetails.getWhen1()+"','"+patientdetails.getWhere1()+"','"+patientdetails.getAttorney_accident()+"','"+patientdetails.getRetain()+"','"+patientdetails.getRecord()+"','"+patientdetails.getPhyname()+"','"+patientdetails.getPhyphone()+"','"+patientdetails.getXray()+"','"+patientdetails.getTreat()+"','"+patientdetails.getNameOfAttorney()+"','"+patientdetails.getPhone_Number()+"','"+patientdetails.getFault_accident()+"','"+patientdetails.getInsurance()+"','"+patientdetails.getInsurance_phone()+"','"+patientdetails.getName_auto()+"','"+patientdetails.getPhone_auto()+"','"+patientdetails.getPolicy()+"','"+patientdetails.getName_health()+"','"+patientdetails.getHealth_phone()+"','"+patientdetails.getPrev_accident()+"','"+patientdetails.getPrev_When()+"','"+patientdetails.getAnemia()+"','"+patientdetails.getMuscular()+"','"+patientdetails.getRheumatic()+"','"+patientdetails.getAllergies()+"','"+patientdetails.getCancer()+"','"+patientdetails.getPolio1()+"','"+patientdetails.getMultiple()+"','"+patientdetails.getScarlet()+"','"+patientdetails.getHIV()+"','"+patientdetails.getSinus()+"','"+patientdetails.getAsthma()+"','"+patientdetails.getGerman()+"','"+patientdetails.getNervousness()+"','"+patientdetails.getNumbness()+"','"+patientdetails.getConvulsions()+"','"+patientdetails.getEpilepsy()+"','"+patientdetails.getConcussion()+"','"+patientdetails.getDizziness()+"','"+patientdetails.getNeuritis()+"','"+patientdetails.getRheumatism()+"','"+patientdetails.getDiabetes()+"','"+patientdetails.getArthritis()+"','"+patientdetails.getVenereal()+"','"+patientdetails.getBackaches()+"','"+patientdetails.getTuberculosis()+"','"+patientdetails.getLiver()+"','"+patientdetails.getKidney()+"','"+patientdetails.getThyroid()+"','"+patientdetails.getAlchoholism()+"','"+patientdetails.getHepatitis()+"','"+patientdetails.getMental()+"','"+patientdetails.getHigh()+"','"+patientdetails.getDigestive()+"','"+patientdetails.getHeart()+"','"+patientdetails.getOther()+"','"+patientdetails.getIfother()+"','"+patientdetails.getIllness()+"','"+patientdetails.getDates()+"','"+patientdetails.getMedications()+"','"+patientdetails.getDrink()+"','"+patientdetails.getSmoke()+"','"+patientdetails.getDrugs()+"','"+patientdetails.getDiet()+"','"+patientdetails.getExercise()+"','"+patientdetails.getHazardous()+"','"+patientdetails.getHazardousyes()+"','"+patientdetails.getFemale()+"','"+patientdetails.getDr()+"','"+patientdetails.getPatient()+"')";
 	    	 System.out.println(cmd);
 	    	 statement.execute(cmd);
+	  
+	    	
 	    	 String cmd1="select patient_id as patient_id,TIMESTAMPDIFF(YEAR,DateOfBirth,CURDATE()) AS age from patient_details ORDER BY patient_id DESC";
+	    System.out.println("agequery"+cmd1);
 	    	 resultSet=statement.executeQuery(cmd1);
 	    	 String age="";
 	    	 String patient_id="";
@@ -105,7 +117,7 @@ public class PatientDAO {
 	    	 }
 	    	 System.out.println("age.."+age);
 	    	
-	    	 String cmd2="INSERT INTO agecalculation (patient_id,DateOfBirth,age) VALUES ('"+patient_id+"','"+patientdetails.getDateOfBirth()+"','"+age+"') ";
+	    	 String cmd2="INSERT INTO agecalculation (patient_id,DateOfBirth,age,username) VALUES ('"+patient_id+"','"+patientdetails.getDateOfBirth()+"','"+age+"','"+principal.getName()+"')";
 	    	 statement.execute(cmd2);
 	    	 System.out.println(cmd2);
 	    	 System.out.println("inserted");
@@ -875,6 +887,40 @@ public class PatientDAO {
 	    return patientDetails;
 		
 	}
+	
+	public String getpatientAge(String username){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		ResultSet patientresultSet = null;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		String age="",patient_id="";
+	    try{
+	    		    	
+			resultSet = statement.executeQuery("select age from agecalculation where username='"+username+"'");
+			while(resultSet.next()){
+				age=resultSet.getString("age");
+				}
+			System.out.println("age"+age);
+	    }catch(Exception e){
+	        System.out.println(e.toString());
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    }finally{
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);	    	
+	    }
+	   
+	    return age;
+		
+	}
 	public String getAge(){
 		Connection con = null;
 		Statement statement = null;
@@ -1111,6 +1157,7 @@ public class PatientDAO {
 	{
 		Connection con = null;
 		Statement statement = null;
+		ResultSet resultSet=null;
 		int flag=0;
 		try {
 			con = dataSource.getConnection();
@@ -1134,12 +1181,33 @@ public class PatientDAO {
 	    	 	    		 statement.execute(cmd_mess);
 	    	 	    		 System.out.println(cmd_mess);
 	    	 	    		} 
+	    	 java.util.Date  ss1=new Date(patient.getDateOfBirth());
+	    	 SimpleDateFormat formatter5=new SimpleDateFormat("yyyy-MM-dd");
+	    	 String formats1 = formatter5.format(ss1);
 	    	 
-	    	 
-	    	String cmd="UPDATE patient_details SET name ='"+patient.getName()+"',date='"+patient.getDate()+"',StreetAddress='"+patient.getStreetAddress()+"',City='"+patient.getCity()+"',State='"+patient.getState()+"',ZipCode='"+patient.getZipCode()+"',Homephone='"+patient.getHomephone()+"',Emailid='"+patient.getEmailid()+"',MobileNumber='"+patient.getMobileNumber()+"',DateOfBirth='"+patient.getDateOfBirth()+"',SocialSecurityNumber='"+patient.getSocialSecurityNumber()+"',Gender='"+patient.getGender()+"',MaritalStatus='"+patient.getMaritalStatus()+"',Areyou='"+patient.getAreyou()+"',Student='"+patient.getStudent()+"',EmployerName='"+patient.getEmployerName()+"',Occupation='"+patient.getOccupation()+"',EmployerAddress='"+patient.getEmployerAddress()+"',Workphone='"+patient.getWorkphone()+"',zip='"+patient.getZip()+"',EmployerCity='"+patient.getEmployerCity()+"',Estate='"+patient.getEstate()+"',Ezip='"+patient.getEzip()+"',SpousesName='"+patient.getSpousesName()+"',SpousesEmp='"+patient.getSpousesEmp()+"',Spousesph='"+patient.getSpousesph()+"',Name_friend='"+patient.getName_friend()+"',Phone_friend='"+patient.getPhone_friend()+"',Chiropratic_care='"+patient.getChiropratic_care()+"',Symptom_Accident='"+patient.getSymptom_Accident()+"',Type_Of_Accident='"+patient.getType_Of_Accident()+"',accident='"+patient.getAccident()+"',Date_Of_Accident='"+patient.getDate_Of_Accident()+"',Accident_Reported='"+patient.getAccident_Reported()+"',when1='"+patient.getWhen1()+"',where1='"+patient.getWhere1()+"',Attorney_accident='"+patient.getAttorney_accident()+"',retain='"+patient.getRetain()+"',record='"+patient.getRecord()+"',phyname='"+patient.getPhyname()+"',phyphone='"+patient.getPhyphone()+"',xray='"+patient.getXray()+"',treat='"+patient.getTreat()+"',NameOfAttorney='"+patient.getNameOfAttorney()+"',Phone_Number='"+patient.getPhone_Number()+"',Fault_accident='"+patient.getFault_accident()+"',Insurance='"+patient.getInsurance()+"',Insurance_phone='"+patient.getInsurance_phone()+"',Name_auto='"+patient.getName_auto()+"',Phone_auto='"+patient.getPhone_auto()+"',Policy='"+patient.getPolicy()+"',Name_health='"+patient.getName_health()+"',Health_phone='"+patient.getHealth_phone()+"',Prev_accident='"+patient.getPrev_accident()+"',Prev_When='"+patient.getPrev_When()+"',Anemia='"+patient.getAnemia()+"',Muscular='"+patient.getMuscular()+"',Rheumatic='"+patient.getRheumatic()+"',Allergies='"+patient.getAllergies()+"',Cancer='"+patient.getCancer()+"',Polio1='"+patient.getPolio1()+"',Multiple='"+patient.getMultiple()+"',Scarlet='"+patient.getScarlet()+"',HIV='"+patient.getHIV()+"',Sinus='"+patient.getSinus()+"',Asthma='"+patient.getAsthma()+"',German='"+patient.getGerman()+"',Nervousness='"+patient.getNervousness()+"',Numbness='"+patient.getNumbness()+"',Convulsions='"+patient.getConvulsions()+"',Epilepsy='"+patient.getEpilepsy()+"',Concussion='"+patient.getConcussion()+"',Dizziness='"+patient.getDizziness()+"',Neuritis='"+patient.getNeuritis()+"',Rheumatism='"+patient.getRheumatism()+"',Diabetes='"+patient.getDiabetes()+"',Arthritis='"+patient.getArthritis()+"',Venereal='"+patient.getVenereal()+"',Backaches='"+patient.getBackaches()+"',Tuberculosis='"+patient.getTuberculosis()+"',Liver='"+patient.getLiver()+"',Kidney='"+patient.getKidney()+"',Thyroid='"+patient.getThyroid()+"',Alcoholism='"+patient.getAlchoholism()+"',Hepatitis='"+patient.getHepatitis()+"',Mental='"+patient.getMental()+"',High='"+patient.getHigh()+"',Digestive='"+patient.getDigestive()+"',Heart='"+patient.getHeart()+"',Other='"+patient.getOther()+"',Ifother='"+patient.getIfother()+"',Illness='"+patient.getIllness()+"',Dates='"+patient.getDates()+"',Medications='"+patient.getMedications()+"',Drink='"+patient.getDrink()+"',Smoke='"+patient.getSmoke()+"',Drugs='"+patient.getDrugs()+"',Diet='"+patient.getDiet()+"',Exercise='"+patient.getExercise()+"',Hazardous='"+patient.getHazardous()+"',Hazardousyes='"+patient.getHazardousyes()+"',Female='"+patient.getFemale()+"',Dr='"+patient.getDr()+"',Patient='"+patient.getPatient()+"' WHERE patient_id='"+patient_id+"';";
-	    	String Desc="Update patient "+patient.getPatient_id();
-	    	System.out.println("updated="+cmd);
+	    	String cmd="UPDATE patient_details SET name ='"+patient.getName()+"',date='"+patient.getDate()+"',StreetAddress='"+patient.getStreetAddress()+"',City='"+patient.getCity()+"',State='"+patient.getState()+"',ZipCode='"+patient.getZipCode()+"',Homephone='"+patient.getHomephone()+"',Emailid='"+patient.getEmailid()+"',MobileNumber='"+patient.getMobileNumber()+"',DateOfBirth='"+formats1+"',SocialSecurityNumber='"+patient.getSocialSecurityNumber()+"',Gender='"+patient.getGender()+"',MaritalStatus='"+patient.getMaritalStatus()+"',Areyou='"+patient.getAreyou()+"',Student='"+patient.getStudent()+"',EmployerName='"+patient.getEmployerName()+"',Occupation='"+patient.getOccupation()+"',EmployerAddress='"+patient.getEmployerAddress()+"',Workphone='"+patient.getWorkphone()+"',zip='"+patient.getZip()+"',EmployerCity='"+patient.getEmployerCity()+"',Estate='"+patient.getEstate()+"',Ezip='"+patient.getEzip()+"',SpousesName='"+patient.getSpousesName()+"',SpousesEmp='"+patient.getSpousesEmp()+"',Spousesph='"+patient.getSpousesph()+"',Name_friend='"+patient.getName_friend()+"',Phone_friend='"+patient.getPhone_friend()+"',Chiropratic_care='"+patient.getChiropratic_care()+"',Symptom_Accident='"+patient.getSymptom_Accident()+"',Type_Of_Accident='"+patient.getType_Of_Accident()+"',accident='"+patient.getAccident()+"',Date_Of_Accident='"+patient.getDate_Of_Accident()+"',Accident_Reported='"+patient.getAccident_Reported()+"',when1='"+patient.getWhen1()+"',where1='"+patient.getWhere1()+"',Attorney_accident='"+patient.getAttorney_accident()+"',retain='"+patient.getRetain()+"',record='"+patient.getRecord()+"',phyname='"+patient.getPhyname()+"',phyphone='"+patient.getPhyphone()+"',xray='"+patient.getXray()+"',treat='"+patient.getTreat()+"',NameOfAttorney='"+patient.getNameOfAttorney()+"',Phone_Number='"+patient.getPhone_Number()+"',Fault_accident='"+patient.getFault_accident()+"',Insurance='"+patient.getInsurance()+"',Insurance_phone='"+patient.getInsurance_phone()+"',Name_auto='"+patient.getName_auto()+"',Phone_auto='"+patient.getPhone_auto()+"',Policy='"+patient.getPolicy()+"',Name_health='"+patient.getName_health()+"',Health_phone='"+patient.getHealth_phone()+"',Prev_accident='"+patient.getPrev_accident()+"',Prev_When='"+patient.getPrev_When()+"',Anemia='"+patient.getAnemia()+"',Muscular='"+patient.getMuscular()+"',Rheumatic='"+patient.getRheumatic()+"',Allergies='"+patient.getAllergies()+"',Cancer='"+patient.getCancer()+"',Polio1='"+patient.getPolio1()+"',Multiple='"+patient.getMultiple()+"',Scarlet='"+patient.getScarlet()+"',HIV='"+patient.getHIV()+"',Sinus='"+patient.getSinus()+"',Asthma='"+patient.getAsthma()+"',German='"+patient.getGerman()+"',Nervousness='"+patient.getNervousness()+"',Numbness='"+patient.getNumbness()+"',Convulsions='"+patient.getConvulsions()+"',Epilepsy='"+patient.getEpilepsy()+"',Concussion='"+patient.getConcussion()+"',Dizziness='"+patient.getDizziness()+"',Neuritis='"+patient.getNeuritis()+"',Rheumatism='"+patient.getRheumatism()+"',Diabetes='"+patient.getDiabetes()+"',Arthritis='"+patient.getArthritis()+"',Venereal='"+patient.getVenereal()+"',Backaches='"+patient.getBackaches()+"',Tuberculosis='"+patient.getTuberculosis()+"',Liver='"+patient.getLiver()+"',Kidney='"+patient.getKidney()+"',Thyroid='"+patient.getThyroid()+"',Alcoholism='"+patient.getAlchoholism()+"',Hepatitis='"+patient.getHepatitis()+"',Mental='"+patient.getMental()+"',High='"+patient.getHigh()+"',Digestive='"+patient.getDigestive()+"',Heart='"+patient.getHeart()+"',Other='"+patient.getOther()+"',Ifother='"+patient.getIfother()+"',Illness='"+patient.getIllness()+"',Dates='"+patient.getDates()+"',Medications='"+patient.getMedications()+"',Drink='"+patient.getDrink()+"',Smoke='"+patient.getSmoke()+"',Drugs='"+patient.getDrugs()+"',Diet='"+patient.getDiet()+"',Exercise='"+patient.getExercise()+"',Hazardous='"+patient.getHazardous()+"',Hazardousyes='"+patient.getHazardousyes()+"',Female='"+patient.getFemale()+"',Dr='"+patient.getDr()+"',Patient='"+patient.getPatient()+"' WHERE patient_id='"+patient_id+"';";
 	    	statement.execute(cmd);
+	    	System.out.println("updated="+cmd);	
+	    	 String cmd1="select patient_id as patient_id,TIMESTAMPDIFF(YEAR,DateOfBirth,CURDATE()) AS age from patient_details where username='"+patient.getUsername()+"'";
+	 	    System.out.println("agequery"+cmd1);
+	 	    	 resultSet=statement.executeQuery(cmd1);
+	 	    	 String age="";
+	 	    	
+	 	    	 if(resultSet.next())
+	 	    	 {
+	 	    		age=resultSet.getString("age");
+	 	    		patient_id=resultSet.getString("patient_id");
+	 	    	 }
+	 	    	 System.out.println("age.."+age);
+	 	    	
+	 	    	 String cmd2="update agecalculation set DateOfBirth='"+formats1+"',age='"+age+"' where username='"+patient.getUsername()+"'";
+	 	    	 statement.execute(cmd2);
+	    	
+	    	
+	    	String Desc="Update patient "+patient.getPatient_id();
+	    
+	    	//statement.executeUpdate("");
+	    	//statement.execute(cmd);
 	    	flag=1;
 	    }
 	    	 catch(Exception e){

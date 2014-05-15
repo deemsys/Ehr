@@ -107,7 +107,7 @@ import java.util.*;
  
 @Controller
 
-@SessionAttributes({"physical","radio","waiver","info","injury","consent","minor","hard","screen","medical","assignment","hippa","staff","veri","first","role","signup","doctorsignup","patientid","soap","auto","visit","work","lastname","attorney","accident","dateofaccident","username","insurance"})
+@SessionAttributes({"physical","radio","waiver","info","injury","consent","minor","hard","screen","medical","assignment","hippa","staff","veri","first","role","signup","doctorsignup","patientid","soap","auto","visit","work","lastname","attorney","accident","dateofaccident","username","insurance","age"})
 
 public class MainController {
 	
@@ -236,6 +236,11 @@ public class MainController {
 			 model.addAttribute("menu", "patientInfo");
 	        model.addAttribute("patientDetailsForm", patientdetailsform);
 		
+	    	String pusername=principal.getName();
+	        String age=patientDAO.getpatientAge(pusername);
+			session.removeAttribute("age");
+			System.out.println("age"+age);
+	        session.setAttribute("age",age);
 	        return "viewpatient";
 		}
 		else if(role==2)
@@ -3440,7 +3445,7 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 		return "";
 	}
 	@RequestMapping(value="/patientDetails", method = RequestMethod.POST)
-	public String insert_patientdetails(HttpServletRequest request,HttpSession session,@ModelAttribute("PatientDetails")  @Valid PatientDetails patientDetails,BindingResult result,ModelMap model,Principal principal) {
+	public String insert_patientdetails(HttpServletRequest request,HttpSession session,PatientDetails patientDetails,ModelMap model,Principal principal) {
 		session.setAttribute("first",patientDetails);
 		if(patientDAO.getUsername(principal).size()>0)
 		{			
@@ -3461,7 +3466,7 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 	    	System.out.println("symptomsdsd..."+Symptoms);
 	    }
 	   // System.out.println("symptom..."+Symptoms[1]);	      
-		if(result.hasErrors())
+		/*if(result.hasErrors())
 			{			
 				PatientDetailsForm patientdetailsform = new PatientDetailsForm();
 				patientdetailsform.setPatientDetails(patientDAO.getPatientDetails());
@@ -3469,7 +3474,7 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 				model.addAttribute("Success","true");
 				model.addAttribute("menu", "patientInfo");
 				return "patientDetails";
-			}	      
+			}	*/      
 	        patientDAO.setPatientDetails(patientDetails,Symptoms,principal);
 	        PatientDetailsForm patientdetailsform = new PatientDetailsForm();
 			patientdetailsform.setPatientDetails(patientDAO.getPatientDetails());
@@ -3480,10 +3485,12 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 		    /*String major=""+age;*/
 		    /*request.setAttribute("major",age);*/
 		    model.addAttribute("age",age);
-			model.addAttribute("patientDetailsForm",patientdetailsform);
+		    session.setAttribute("age",age);
+		//	model.addAttribute("patientDetailsForm",patientdetailsform);
 			model.addAttribute("menu", "patientInfo");
 			/*session.removeAttribute("patient");*/
 			
+		System.out.println(type);
 			if(type.equals(""))
 			{
 				return "viewpatient";	
@@ -3492,13 +3499,13 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 			{
 				return "viewpatient";
 			} 
-			else
-			{
+			
+			
 			return  type;
-			}
+			
 	       
-	       // return "patientDetails";
-
+	      
+			
 		}
 	
 
@@ -3933,11 +3940,10 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 		
 	}
 	@RequestMapping(value="/updatepatientdetails", method=RequestMethod.POST)
-	public String updatePatientDetails(HttpServletRequest request,@ModelAttribute("PatientDetails") @Valid PatientDetails patient,
-			BindingResult result,ModelMap model,Principal principal)
+	public String updatePatientDetails(HttpSession session,HttpServletRequest request,@ModelAttribute("PatientDetails") @Valid PatientDetails patient,ModelMap model,Principal principal)
 	{
 		String[] Symptoms = new String[1000];
-	      Symptoms = request.getParameterValues("message[]");
+	      Symptoms = request.getParameterValues("symptom[]");
 		if(patientDAO.getUsername(principal).size()>0)
 		{			
 	   model.addAttribute("patientno","0");
@@ -3950,7 +3956,7 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 	      }
 	     
 		model.addAttribute("patientno","0");
-		if (result.hasErrors())
+		/*if (result.hasErrors())
 		{
 			System.out.println("haserrors");
 		//	RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
@@ -3960,7 +3966,7 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 	        model.addAttribute("patientDetailsForm", patientDetailsForm);
 			    model.addAttribute("menu", "patientInfo");
 		        return "editpatientdetails";
-		}
+		}*/
 		System.out.println("hello");
 
 
@@ -3968,6 +3974,8 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 		int status = patientDAO.updatePatientDetails(patient, patient.getPatient_id(), principal.getName(),Symptoms);
 		System.out.println(status);
 		
+		String age=patientDAO.getpatientAge(patient.getUsername());
+		session.setAttribute("age",age);
 		PatientDetailsForm patientdetailsform = new PatientDetailsForm();
 		patientdetailsform.setPatientDetails(patientDAO.getUsername(principal));
         model.addAttribute("patientDetailsForm",patientdetailsform);

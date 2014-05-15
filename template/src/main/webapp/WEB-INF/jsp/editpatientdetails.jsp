@@ -975,7 +975,8 @@ var $sid = xx+1;
     											<table cellpadding="0" cellspacing="0" border="0" width="100%">
                        								 <tr class="row1">
                         	 							<td><span class="err">*</span>Name :</td>
-                        	 							<%-- <input type="hidden" class="input_txtbx1" id="patientid" value="${patientDetails.patient_id}" name="patient_id" /> --%>
+                        	 							 <input type="hidden" class="input_txtbx1" id="patientid" value="${patientDetails.patient_id}" name="patient_id" /> 
+                                 					 <input type="text" class="input_txtbx1" id="patientid" value="${patientDetails.username}" name="username" />
                                  						<td class="input_txt"><input type="text" class="input_txtbx1" id="name"   value="${patientDetails.name }" name="name" /></br><span id="nameerror" style="color: red;font-style:italic;" ><form:errors path="PatientDetails.Name"></form:errors></span></td>
                       								  </tr>
                         <tr class="row2">
