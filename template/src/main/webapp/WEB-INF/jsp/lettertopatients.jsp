@@ -239,9 +239,15 @@ $("#ssn").keyup(function() {
  $(function() {
            $( "#datepicker1" ).datepicker();
          });
-         $(function() {
+ $(function() {
            $( "#datepicker2" ).datepicker();
+               
          });
+ $(function() {
+           $( "#datepicker3" ).datepicker();
+         });
+
+
 </script>
 <script>
 function checkSubmit()
@@ -375,7 +381,12 @@ function checkSubmit()
               <td ><input type="text" class="input_txtbx1" name="adjuster" id="adjuster" placeholder="Kathy Porcella" /></td>
               </tr>
               </table>
-              
+              <table cellpadding="0" cellspacing="0" border="0" width="100%">
+              <tr>
+              <td height="25" width="120"><span class="err"></span>Date</td>
+              <td ><input type="text" class="input_txtbx1" name="date" id="datepicker3"/></td>
+              </tr>
+              </table>
              	<input type="text" name="user" id="user"  style="visibility:hidden">
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
         	  <tr><td hight="20" width="250"><br><br><p align="left" id="mypar"><b><h4>Dear Ms Barbara Wilmoth:</h4></b></p></td></tr>
@@ -410,7 +421,7 @@ function checkSubmit()
               
               <tr> <td width="600"></td> <td>
               <b><span class="err">*</span>Darrin A. Pordash D.C.</b></td></tr>
-              <tr> <td width="600"></td>  <td><input type="text" class="input_txtbx1" name="sign" id="sign" /><span class="err" id="signerror"><form:errors path="Lettertopatients.sign"></form:errors> </span>
+              <tr> <td width="600"></td>  <td>
        		 </td></tr>
        		 </table>
        		 </c:when>
@@ -466,7 +477,12 @@ function checkSubmit()
               <td ><input type="text" class="input_txtbx1" name="adjuster" id="adjuster" value="${letterto.adjuster }" /><span class="err"><form:errors path="Workschool.date"></form:errors></span></td>
               </tr>
               </table>
-              
+              <table cellpadding="0" cellspacing="0" border="0" width="100%">
+              <tr>
+              <td height="25" width="120"><span class="err"></span>Date</td>
+              <td ><input type="text" class="input_txtbx1" name="date" id="datepicker3" value="${letterto.date }" /><span class="err"><form:errors path="Workschool.date"></form:errors></span></td>
+              </tr>
+              </table>
              
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
         	  <tr><td hight="20" width="250"><br><br><p align="left" id="mypar"><b><h4>Dear Ms Barbara Wilmoth:</h4></b></p></td></tr>
@@ -501,7 +517,7 @@ function checkSubmit()
               
               <tr> <td width="600"></td> <td>
               <b><span class="err">*</span>Darrin A. Pordash D.C.</b></td></tr>
-              <tr> <td width="600"></td>  <td><input type="text" class="input_txtbx1" name="sign" id="sign" value="${letterto.sign }"/>.<span class="err" id="signerror"><form:errors path="Lettertopatients.sign"></form:errors> </span>
+              <tr> <td width="600"></td>  <td>
        		</td></tr>
        		 </table>
        		 

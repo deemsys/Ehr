@@ -190,7 +190,17 @@ P#mypar {
 		$("#datepicker").datepicker();
 	});
 </script>
+<script>
+          function isNumberKey(evt)
+          {
+             var charCode = (evt.which) ? evt.which : event.keyCode
+             if (charCode > 31 && (charCode < 48 || charCode > 57))
+                return false;
 
+             return true;
+          }  
+          
+          </script>
 
 
 </head>
@@ -390,10 +400,10 @@ P#mypar {
 												<td>Wrist Flexion:</td>
 												<td>80</td>
 												<td><input type="text" size="5"
-													value="${wristexamdetails.flexionleft}" name="flexionleft">&nbsp;&nbsp;&nbsp;&nbsp;<input
+													value="${wristexamdetails.flexionleft}" name="flexionleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input
 													size="5" type="text"
 													value="${wristexamdetails.flexionright}"
-													name="flexionright"></td>
+													name="flexionright" onkeypress="return isNumberKey(event);"></td>
 												<td width="210"></td>
 												<td>Allen's (Vasculature):</td>
 												<td width="160"></td>
@@ -407,10 +417,10 @@ P#mypar {
 												<td>80</td>
 												<td><input size="5" type="text"
 													value="${wristexamdetails.extensionleft}"
-													name="extensionleft">&nbsp;&nbsp;&nbsp;&nbsp;<input
+													name="extensionleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input
 													size="5" type="text"
 													value="${wristexamdetails.extensionright}"
-													name="extensionright"></td>
+													name="extensionright" onkeypress="return isNumberKey(event);"></td>
 												<td width="90"></td>
 												<td>Phalen's (Median N):</td>
 												<td width=""></td>
@@ -423,9 +433,9 @@ P#mypar {
 												<td>Wrist Ulnar Deviation:</td>
 												<td>90</td>
 												<td><input size="5" type="text"
-													value="${wristexamdetails.ulnarleft}" name="ulnarleft">&nbsp;&nbsp;&nbsp;&nbsp;<input
+													value="${wristexamdetails.ulnarleft}" name="ulnarleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input
 													size="5" type="text" value="${wristexamdetails.ulnarright}"
-													name="ulnarright"></td>
+													name="ulnarright" onkeypress="return isNumberKey(event);"></td>
 												<td width="90"></td>
 												<td>Reverse Phalens (Median N):</td>
 												<td width=""></td>
@@ -439,9 +449,9 @@ P#mypar {
 												<td>Wrist Radial Deviation:</td>
 												<td>90</td>
 												<td><input size="5" type="text"
-													value="${wristexamdetails.radialleft}" name="radialleft">&nbsp;&nbsp;&nbsp;&nbsp;<input
+													value="${wristexamdetails.radialleft}" name="radialleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input
 													size="5" type="text"
-													value="${wristexamdetails.radialright}" name="radialright"></td>
+													value="${wristexamdetails.radialright}" name="radialright" onkeypress="return isNumberKey(event);"></td>
 												<td width="90"></td>
 												<td>Finkelstein's (Tenosynovitis):</td>
 												<td ></td>
@@ -458,10 +468,10 @@ P#mypar {
 												<td>180</td>
 												<td><input type="text" size="5"
 													value="${wristexamdetails.pronationleft}"
-													name="pronationleft">&nbsp;&nbsp;&nbsp;&nbsp;<input
+													name="pronationleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input
 													size="5" type="text"
 													value="${wristexamdetails.pronationright}"
-													name="pronationright">
+													name="pronationright" onkeypress="return isNumberKey(event);">
 												<td width="90"></td>
 												<td>Tinnel's:</td>
 												<td ></td>
@@ -547,15 +557,15 @@ P#mypar {
 											<td>C5</td>
 											<td><input size="5" type="text"
 												value="${wristexamdetails.latdeltoidleft}"
-												name="latdeltoidleft">&nbsp;&nbsp;&nbsp;&nbsp;<input
+												name="latdeltoidleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input
 												size="5" type="text"
 												value="${wristexamdetails.latdeltoidright}"
-												name="latdeltoidright">&nbsp;&nbsp;(Lat deltoid)</td>
+												name="latdeltoidright" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;(Lat deltoid)</td>
 											<td>C5</td>
 											<td><input type="text" name="shdleft"
-												value="${wristexamdetails.shdleft}" size="5">/5&nbsp;&nbsp;&nbsp;&nbsp;<input
+												value="${wristexamdetails.shdleft}" size="5" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;&nbsp;&nbsp;<input
 												size="5" type="text" value="${wristexamdetails.shdright}"
-												name="shdright">/5&nbsp;&nbsp;(Shd ABD)</td>
+												name="shdright" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;(Shd ABD)</td>
 											<td>C5</td>
 											<td><input type="text" name="bicepsleft"
 												value="${wristexamdetails.bicepsleft}" size="5">/5&nbsp;&nbsp;&nbsp;&nbsp;<input
@@ -565,14 +575,14 @@ P#mypar {
 										<tr>
 											<td>C6</td>
 											<td><input type="text" name="latarmleft"
-												value="${wristexamdetails.latarmleft}" size="5">&nbsp;&nbsp;&nbsp;&nbsp;<input
+												value="${wristexamdetails.latarmleft}" size="5" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input
 												size="5" type="text" value="${wristexamdetails.latarmright}"
-												name="latarmright">&nbsp;&nbsp;(Lat arm/hand)</td>
+												name="latarmright" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;(Lat arm/hand)</td>
 											<td>C6</td>
 											<td><input type="text" name="elbflexleft"
-												value="${wristexamdetails.elbflexleft}" size="5">/5&nbsp;&nbsp;&nbsp;&nbsp;<input
+												value="${wristexamdetails.elbflexleft}" size="5" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;&nbsp;&nbsp;<input
 												size="5" type="text"
-												value="${wristexamdetails.elbflexright}" name="elbflexright">/5&nbsp;&nbsp;(Elb
+												value="${wristexamdetails.elbflexright}" name="elbflexright" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;(Elb
 												flex/wrist ext)</td>
 											<td>C6</td>
 											<td><input type="text" name="brachioradleft"
@@ -583,15 +593,15 @@ P#mypar {
 										<tr>
 											<td>C7</td>
 											<td><input type="text" size="5"
-												value="${wristexamdetails.thirdleft}" name="thirdleft">&nbsp;&nbsp;&nbsp;&nbsp;<input
+												value="${wristexamdetails.thirdleft}" name="thirdleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input
 												size="5" type="text" value="${wristexamdetails.thirdright}"
-												name="thirdright">&nbsp;&nbsp;(3rd digit)</td>
+												name="thirdright" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;(3rd digit)</td>
 											<td>C7</td>
 											<td><input type="text"
 												value="${wristexamdetails.elbextleft}" name="elbextleft"
-												size="5">/5&nbsp;&nbsp;&nbsp;&nbsp;<input size="5"
+												size="5" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;&nbsp;&nbsp;<input size="5"
 												type="text" value="${wristexamdetails.elbextright}"
-												name="elbextright">/5&nbsp;&nbsp;(Elb ext/wrist
+												name="elbextright" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;(Elb ext/wrist
 												flex)</td>
 											<td>C7</td>
 											<td><input type="text"
@@ -604,32 +614,32 @@ P#mypar {
 											<td>C8</td>
 											<td><input type="text" size="5"
 												value="${wristexamdetails.medforearmleft}"
-												name="medforearmleft">&nbsp;&nbsp;&nbsp;&nbsp;<input
+												name="medforearmleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input
 												type="text" size="5"
 												value="${wristexamdetails.medforearmright}"
-												name="medforearmright">&nbsp;&nbsp;(Med
+												name="medforearmright" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;(Med
 												forearm/hand)</td>
 											<td>C8</td>
 											<td><input type="text" name="digitflexionleft"
-												value="${wristexamdetails.digitflexionleft}" size="5">/5&nbsp;&nbsp;&nbsp;&nbsp;<input
+												value="${wristexamdetails.digitflexionleft}" size="5" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;&nbsp;&nbsp;<input
 												size="5" value="${wristexamdetails.digitflexionright}"
-												type="text" name="digitflexionright">/5&nbsp;&nbsp;(Digit
+												type="text" name="digitflexionright" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;(Digit
 												flexion)</td>
 											<td></td>
 										</tr>
 										<tr>
 											<td>T1</td>
 											<td><input size="5" type="text"
-												value="${wristexamdetails.medelbowleft}" name="medelbowleft">&nbsp;&nbsp;&nbsp;&nbsp;<input
+												value="${wristexamdetails.medelbowleft}" name="medelbowleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input
 												size="5" type="text"
 												value="${wristexamdetails.medelbowright}"
-												name="medelbowright">&nbsp;&nbsp;(Med elbow/arm)</td>
+												name="medelbowright" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;(Med elbow/arm)</td>
 											<td>T1</td>
 											<td><input type="text" name="digitabdleft"
-												value="${wristexamdetails.digitabdleft}" size="5">/5&nbsp;&nbsp;&nbsp;&nbsp;<input
+												value="${wristexamdetails.digitabdleft}" size="5" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;&nbsp;&nbsp;<input
 												size="5" type="text"
 												value="${wristexamdetails.digitabdright}"
-												name="digitabdright">/5&nbsp;&nbsp;(Digit abd/add)</td>
+												name="digitabdright" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;(Digit abd/add)</td>
 											<td>
 											<td>&nbsp;(2+/5 is Normal)</td>
 											</td>

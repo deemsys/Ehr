@@ -106,6 +106,17 @@ $(function() {
     $( "#tabs" ).tabs();
   });
   </script>
+   <script>
+          function isNumberKey(evt)
+          {
+             var charCode = (evt.which) ? evt.which : event.keyCode
+             if (charCode > 31 && (charCode < 48 || charCode > 57))
+                return false;
+
+             return true;
+          }  
+          
+          </script>
 </head>
  <body>
  <br><br>
@@ -213,33 +224,33 @@ $(function() {
  <td>  </td><td>   <b>Left</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> Right</b></td>
  </tr>
   <tr class="row1">
- <td><b>Flexion:</b> </td><td> (20-40)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="flexion" size="7" value="${thoracicexam.flexion}"></td> 
- <td width="100">T1-2:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t12" size="7" value="${thoracicexam.t12}"></td><td width="250">T2-3:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t23" size="7" value="${thoracicexam.t23 }"> </td> 
+ <td><b>Flexion:</b> </td><td> (20-40)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="flexion" size="7" value="${thoracicexam.flexion}" onkeypress="return isNumberKey(event);"></td> 
+ <td width="100">T1-2:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t12" size="7" value="${thoracicexam.t12}" onkeypress="return isNumberKey(event);"></td><td width="250">T2-3:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t23" size="7" value="${thoracicexam.t23 }"> </td> 
  <td><b>Adam's Sign:	</b> </td><td><input type="text" name="adamsignl" size="5" value="${thoracicexam.adamsignl}"> <input type="text" name="adamsignr" size="5" value="${thoracicexam.adamsignr}"></td>
  </tr>
   <tr class="row1">
- <td><b>Extension:	</b> </td><td> (25-45)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="extension" size="7" value="${thoracicexam.extension}"></td> 
- <td width="100">T3-4:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t34" size="7" value="${thoracicexam.t34}"></td><td width="50">T4-5:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t45" size="7" value="${thoracicexam.t45}"> </td> 
+ <td><b>Extension:	</b> </td><td> (25-45)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="extension" size="7" value="${thoracicexam.extension}" onkeypress="return isNumberKey(event);"></td> 
+ <td width="100">T3-4:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t34" size="7" value="${thoracicexam.t34}" onkeypress="return isNumberKey(event);"></td><td width="50">T4-5:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t45" size="7" value="${thoracicexam.t45}"> </td> 
  <td><b>Schepelman's:	</b> </td><td><input type="text" name="schepelmanl" size="5" value="${thoracicexam.schepelmanl}"> <input type="text" name="schepelmanr" size="5" value="${thoracicexam.schepelmanr}"></td>
  </tr>
   <tr class="row1">
- <td><b>Lateral Flexion:</b> </td><td> (20-40)&nbsp;&nbsp;&nbsp;L <input type="text" name="lflexion" size="7" value="${thoracicexam.lflexion}"><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R <input type="text" name="rflexion" size="7" value="${thoracicexam.rflexion}"></td> 
- <td width="100">T5-6:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t56" size="7" value="${thoracicexam.t56}"></td><td width="50">	T6-7:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<input type="text" name="t67" size="7" value="${thoracicexam.t67}"> </td> 
+ <td><b>Lateral Flexion:</b> </td><td> (20-40)&nbsp;&nbsp;&nbsp;L <input type="text" name="lflexion" size="7" value="${thoracicexam.lflexion}" onkeypress="return isNumberKey(event);"><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R <input type="text" name="rflexion" size="7" value="${thoracicexam.rflexion}" onkeypress="return isNumberKey(event);"></td> 
+ <td width="100">T5-6:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t56" size="7" value="${thoracicexam.t56}" onkeypress="return isNumberKey(event);"></td><td width="50">	T6-7:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<input type="text" name="t67" size="7" value="${thoracicexam.t67}"> </td> 
  <td><b>Valsalva:</b> </td><td><input type="text" name="valsalval" size="5" value="${thoracicexam.valsalval}"> <input type="text" name="valsalvar" size="5" value="${thoracicexam.valsalvar}"></td>
  </tr>
   <tr class="row1">
-  <td><b>Rotation:</b> </td><td> (35-50)&nbsp;&nbsp;&nbsp;L <input type="text" name="lrotation" size="7" value="${thoracicexam.lrotation}"><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R <input type="text" name="rrotation" size="7" value="${thoracicexam.rrotation}"></td> 
- <td width="100">T7-8:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<input type="text" name="t78" size="7" value="${thoracicexam.t78}"></td><td width="50">T8-9:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t89" size="7" value="${thoracicexam.t89}"> </td> 
+  <td><b>Rotation:</b> </td><td> (35-50)&nbsp;&nbsp;&nbsp;L <input type="text" name="lrotation" size="7" value="${thoracicexam.lrotation}" onkeypress="return isNumberKey(event);"><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R <input type="text" name="rrotation" size="7" value="${thoracicexam.rrotation}" onkeypress="return isNumberKey(event);"></td> 
+ <td width="100">T7-8:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<input type="text" name="t78" size="7" value="${thoracicexam.t78}" onkeypress="return isNumberKey(event);"></td><td width="50">T8-9:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t89" size="7" value="${thoracicexam.t89}"> </td> 
  <td><b>Dejerine's Triad:</b> </td><td><input type="text" name="dejerinel" size="5" value="${thoracicexam.dejerinel}"> <input type="text" name="dejeriner" size="5" value="${thoracicexam.dejeriner}"></td>
  </tr>
   <tr class="row1">
  <td></td><td> </td> 
- <td width="100">T9-10:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t910" size="7" value="${thoracicexam.t910}"></td><td width="50">T10-11:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t1011" size="7" value="${thoracicexam.t1011}"> </td> 
+ <td width="100">T9-10:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t910" size="7" value="${thoracicexam.t910}" onkeypress="return isNumberKey(event);"></td><td width="50">T10-11:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t1011" size="7" value="${thoracicexam.t1011}"> </td> 
  <td><b>Soto Hall:	</b> </td><td><input type="text" name="sotohalll" size="5" value="${thoracicexam.sotohalll}"> <input type="text" name="sotohallr" size="5" value="${thoracicexam.sotohallr}"></td>
  </tr>
   <tr class="row1">
  <td> </td><td> </td> 
- <td width="100">T11-12: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t1112" size="7" value="${thoracicexam.t1112}"></td><td width="50">	T12-L1:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="t12l1" size="7" value="${thoracicexam.t12l1}"> </td> 
+ <td width="100">T11-12: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t1112" size="7" value="${thoracicexam.t1112}" onkeypress="return isNumberKey(event);"></td><td width="50">	T12-L1:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="t12l1" size="7" value="${thoracicexam.t12l1}"> </td> 
  <td><b>Sternal Compression:</b> </td><td><input type="text" name="sternall" size="5" value="${thoracicexam.sternall}"> <input type="text" name="sternalr" size="5" value="${thoracicexam.sternalr}"></td>
  </tr>
   <tr class="row1">

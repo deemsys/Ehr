@@ -295,7 +295,7 @@ function doAjaxPost() {
               <table>
               <tr>
               <td><span class="err">*</span>
-              This is to certify that&nbsp;&nbsp;&nbsp; <input type="text" class="input_txtbx1" name="letter" id="letter" /><span class="err" id="lettererror"  style="color: red;font-style:italic;"><form:errors path="Workschool.letter"></form:errors> <br>is under my care.  In order to avoid aggravation of his/her condition, I recommend that he/she...
+              This is to certify that&nbsp;&nbsp;&nbsp; <input type="text" class="input_txtbx1" name="letter" id="letter" /><span class="err" id="lettererror"  style="color:black;font-style:italic;"><form:errors path="Workschool.letter"></form:errors> <br>is under my care.  In order to avoid aggravation of his/her condition, I recommend that he/she...
 
               
               </td>
@@ -446,10 +446,13 @@ function doAjaxPost() {
               <td ><input type="text" class="input_txtbx1" name="tos" id="datepicker2" /><span class="err" id="datepicker2error"  style="color: red;font-style:italic;"><form:errors path="Workschool.tos"></form:errors></td>
               </tr>
               </table><br>
-             <table cellpadding="0" cellspacing="0" border="0" width="100%">
-              <tr><td width="85"></td> <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="returns" id="returns" style="width: 111px; "/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return to Regular Duty/School/P.E. on: 
-        	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" class="input_txtbx1" name="returndate" id="datepicker3" style="width: 113px; "/><span class="err" id="datepicker3error"  style="color: red;font-style:italic;"><form:errors path="Workschool.returndate"></form:errors>
+              <table cellpadding="0" cellspacing="0" border="0" width="100%">
+              <tr> <td ><input type="text" class="input_txtbx1" name="returns" id="datepicker" /><span class="err"><form:errors path="Workschool.returns"></form:errors></td>
+        	  <td >Return to Regular<select width="50%" name="regular"><option value="Duty">Duty</option><option value="School">School</option><option value="P.E">P.E</option></select> </td>
+        	  <td >on<input type="text" class="input_txtbx1" name="returndate"  id="datepicker3" /><span class="err" id="datepicker3error"  style="color: red;font-style:italic;"><form:errors path="Hardshipagreement.date"></form:errors></td>
         	  </tr></table><br>
+              
+           
         	
         	  <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
@@ -652,9 +655,9 @@ Yours in Health,</b>
               </tr>
               </table><br>
              <table cellpadding="0" cellspacing="0" border="0" width="100%">
-              <tr> <td ><input type="text" class="input_txtbx1" name="returns" value="${work.returns }" id="datepicker" /><span class="err"><form:errors path="Workschool.returns"></form:errors></td>
-        	  <td >Return to Regular Duty/School/P.E. on: (Date) </td>
-        	  <td ><input type="text" class="input_txtbx1" name="returndate" value="${work.returndate }" id="datepicker3" /><span class="err" id="datepicker3error"  style="color: red;font-style:italic;"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <tr> <td ><input type="text" class="input_txtbx1" name="returns" value="${workschooldetails.returns }" id="datepicker" /><span class="err"><form:errors path="Workschool.returns"></form:errors></td>
+        	  <td >Return to Regular<select width="50%" name="regular"><option value="Duty">Duty</option><option value="School">School</option><option value="P.E">P.E</option></select> </td>
+        	  <td >on<input type="text" class="input_txtbx1" name="returndate" value="${workschooldetails.returndate }" id="datepicker3" /><span class="err" id="datepicker3error"  style="color: red;font-style:italic;"><form:errors path="Hardshipagreement.date"></form:errors></td>
         	  </tr></table><br>
         	
         	  <table cellpadding="0" cellspacing="0" border="0" width="100%">

@@ -381,8 +381,7 @@ do not receive a response, we will act in reliance that you will comply with it'
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
-       		  <td valign="right" align="right" class="input_txt"><span class="err">*</span>Treating Physician
-              <input type="text" class="input_txtbx1" name="treatingphysician" id="treatingphysician" /><span class="err"><form:errors path="noticeerror.treatingphysician"></form:errors></td>
+       		  
               </tr><br>
               </table>
              </c:when>
@@ -491,8 +490,7 @@ do not receive a response, we will act in reliance that you will comply with it'
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
-       		  <td valign="right" align="right" class="input_txt"><span class="err">*</span>Treating Physician
-              <input type="text" class="input_txtbx1" name="treatingphysician" value="${notice.treatingphysician }" id="treatingphysician" /><span class="err" id="treatingphysicianerror"><form:errors path="noticeerror.treatingphysician"></form:errors></td>
+       		
               </tr><br>
               </table>
              

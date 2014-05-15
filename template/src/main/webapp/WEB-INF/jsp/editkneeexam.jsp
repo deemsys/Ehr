@@ -155,7 +155,17 @@ element.style.display='none';
 }
 }
 </script>
-  
+  <script>
+          function isNumberKey(evt)
+          {
+             var charCode = (evt.which) ? evt.which : event.keyCode
+             if (charCode > 31 && (charCode < 48 || charCode > 57))
+                return false;
+
+             return true;
+          }  
+          
+          </script>
 </head>
  <body>
  <br><br>
@@ -202,7 +212,7 @@ element.style.display='none';
  </table>
  <table>
  <tr class="row1">
- <td width="200">Gait:</td><td><select style="width:180px" name="gait" id="gait"  onchange='Checksymptom(this.value);'>
+ <td width="200">Gait:</td><td>  <select style="width:180px" name="gait" id="gait"  onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="normal" <c:if test="${kneeexam.gait=='normal'}"><c:out value="selected"/></c:if> >Normal</option>
 					<option value="antalgic" <c:if test="${kneeexam.gait=='antalgic'}"><c:out value="selected"/></c:if>>Antalgic</option>
 					<option value="shuffling" <c:if test="${kneeexam.gait=='shuffling'}"><c:out value="selected"/></c:if>>Shuffling</option>
@@ -280,19 +290,19 @@ element.style.display='none';
  <td></td><td><b>Left</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> Right</b></td>
  </tr>
   <tr class="row1">
- <td><b>Flexion:</b> </td><td> (60)</td><td>&nbsp;&nbsp;&nbsp; <input type="text" name="flexion" size="7" value="${kneeexam.flexion}"></td>  
+ <td><b>Flexion:</b> </td><td> (60)</td><td>&nbsp;&nbsp;&nbsp; <input type="text" name="flexion" size="7" value="${kneeexam.flexion}"  onkeypress="return isNumberKey(event)"></td>  
  <td><b>Ant. Drawer (ACL):</b> </td><td><input type="text" name="acll" size="5" value="${kneeexam.acll}"> <input type="text" name="aclr" size="5" value="${kneeexam.aclr}"></td>
  </tr>
   <tr class="row1">
- <td><b>Extension:	</b> </td><td> (25) </td><td> &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="extension" size="7" value="${kneeexam.extension}"></td>  
+ <td><b>Extension:	</b> </td><td> (25) </td><td> &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="extension" size="7" value="${kneeexam.extension}"  onkeypress="return isNumberKey(event)"></td>  
  <td><b>Post. Drawer (PCL):	</b> </td><td><input type="text" name="pcll" size="5" value="${kneeexam.pcll}"> <input type="text" name="pclr" size="5" value="${kneeexam.pclr}"></td>
  </tr>
   <tr class="row1">
- <td><b>Internal Rotation:</b> </td><td> (25)</td><td>L &nbsp;<input type="text" name="internalrotationl" size="7" value="${kneeexam.internalrotationl}"><br/><br/>R <input type="text" name="internalrotationr" size="7" value="${kneeexam.internalrotationr}"></td>  
+ <td><b>Internal Rotation:</b> </td><td> (25)</td><td>L &nbsp;<input type="text" name="internalrotationl" size="7" value="${kneeexam.internalrotationl}"  onkeypress="return isNumberKey(event)"><br/><br/>R <input type="text" name="internalrotationr" size="7" value="${kneeexam.internalrotationr}"  onkeypress="return isNumberKey(event)"></td>  
  <td><b>Lateral (Varus) Stability (LCL):</b> </td><td><input type="text" name="lcll" size="5" value="${kneeexam.lcll}"> <input type="text" name="lclr" size="5" value="${kneeexam.lclr}"></td>
  </tr>
   <tr class="row1">
-  <td><b> External Rotation:</b> </td><td> (45)</td><td>L &nbsp;<input type="text" name="externalrotationl" size="7" value="${kneeexam.externalrotationl}"><br/><br/>R <input type="text" name="externalrotationr" size="7" value="${kneeexam.externalrotationr}"></td>  
+  <td><b> External Rotation:</b> </td><td> (45)</td><td>L &nbsp;<input type="text" name="externalrotationl" size="7" value="${kneeexam.externalrotationl}"  onkeypress="return isNumberKey(event)"><br/><br/>R <input type="text" name="externalrotationr" size="7" value="${kneeexam.externalrotationr}"  onkeypress="return isNumberKey(event)"></td>  
  <td><b>Medial (Valgus) Stability (MCL):</b> </td><td><input type="text" name="mcll" size="5" value="${kneeexam.mcll}"> <input type="text" name="mclr" size="5" value="${kneeexam.mclr}"> </td>
  </tr>
   <tr class="row1">
@@ -306,13 +316,13 @@ element.style.display='none';
  <td><b>Apley's Compress (Meniscus):	</b> </td><td><input type="text" name="apleysl" size="5" value="${kneeexam.apleysl}"> <input type="text" name="apleysr" size="5" value="${kneeexam.apleysr}"></td>
  </tr>
   <tr class="row1">
- <td>Left &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="cmabovel" size="8" value="${kneeexam.cmabovel}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="suprapatellarl" size="8" value="${kneeexam.suprapatellarl}"></td><td><input type="text" name="infrapatellarl" size="8" value="${kneeexam.infrapatellarl }"> </td>  
- <td><input type="text" name="belowl" size="8" value="${kneeexam.belowl}"></td>
+ <td>Left &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="cmabovel" size="8" value="${kneeexam.cmabovel}"  onkeypress="return isNumberKey(event)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="suprapatellarl" size="8" value="${kneeexam.suprapatellarl}"  onkeypress="return isNumberKey(event)"></td><td><input type="text" name="infrapatellarl" size="8" value="${kneeexam.infrapatellarl }"  onkeypress="return isNumberKey(event)"> </td>  
+ <td><input type="text" name="belowl" size="8" value="${kneeexam.belowl}"  onkeypress="return isNumberKey(event)"></td>
  <td><b>Apley's Distraction (Cor ligs):		</b> </td><td><input type="text" name="distractionl" size="5" value="${kneeexam.distractionl}"> <input type="text" name="distractionr" size="5" value="${kneeexam.distractionr}"> </td>
  </tr>
  <tr class="row1">
- <td>Right &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="cmabover" size="8" value="${kneeexam.cmabover}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="suprapatellarr" size="8" value="${kneeexam.suprapatellarr}"></td><td><input type="text" name="infrapatellarr" size="8" value="${kneeexam.infrapatellarr}"> </td>  
- <td><input type="text" name="belowr" size="8" value="${kneeexam.belowr}"></td>
+ <td>Right &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="cmabover" size="8" value="${kneeexam.cmabover}"  onkeypress="return isNumberKey(event)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="suprapatellarr" size="8" value="${kneeexam.suprapatellarr}"  onkeypress="return isNumberKey(event)"></td><td><input type="text" name="infrapatellarr" size="8" value="${kneeexam.infrapatellarr}"  onkeypress="return isNumberKey(event)"> </td>  
+ <td><input type="text" name="belowr" size="8" value="${kneeexam.belowr}"  onkeypress="return isNumberKey(event)"></td>
  <td><b>Patellar Grind (CMP):		</b> </td><td><input type="text" name="cmpl" size="5" value="${kneeexam.cmpl}"> <input type="text" name="cmpr" size="5" value="${kneeexam.cmpr}"> </td>
  </tr>
  <tr class="row1">
@@ -365,7 +375,7 @@ element.style.display='none';
  <td>L1</td>
  <td><input type="text" name="l1l" size="5" value="${kneeexam.l1l}">&nbsp; &nbsp; &nbsp;<input type="text" name="l1r" size="5" value="${kneeexam.l1r}">&nbsp;(Inguinal area)</td>
  <td>L1 </td>
- <td> <input type="text" name="l15l" size="5" value="${kneeexam.l15l}">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l15r" size="5" value="${lumbopelvic.l15r}">&nbsp;/5&nbsp;(Iliopsoas)</td>
+ <td> <input type="text" name="l15l" size="5" value="${kneeexam.l15l}"  onkeypress="return isNumberKey(event)">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l15r" size="5" value="${lumbopelvic.l15r}">&nbsp;/5&nbsp;(Iliopsoas)</td>
  <td> </td>
  <td>  </td>
  </tr>
@@ -373,7 +383,7 @@ element.style.display='none';
  <td>L2</td>
  <td><input type="text" name="l2l" size="5" value="${kneeexam.l2l}">&nbsp; &nbsp; &nbsp;<input type="text" name="l2r" size="5" value="${kneeexam.l2r }">&nbsp;(Ant/med thigh)</td>
  <td>L2 </td>
- <td> <input type="text" name="l25l" size="5" value="${kneeexam.l25l}">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l25r" size="5" value="${kneeexam.l25r}">&nbsp;/5&nbsp;(Iliopsoas)</td>
+ <td> <input type="text" name="l25l" size="5" value="${kneeexam.l25l}"  onkeypress="return isNumberKey(event)">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l25r" size="5" value="${kneeexam.l25r}">&nbsp;/5&nbsp;(Iliopsoas)</td>
  <td> </td>
  <td> </td>
  </tr>
@@ -381,7 +391,7 @@ element.style.display='none';
  <td>L3</td>
  <td><input type="text" name="l3l" size="5" value="${kneeexam.l3l}">&nbsp; &nbsp; &nbsp;<input type="text" name="l3r" size="5" value="${kneeexam.l3r}">&nbsp;(Medial knee)	</td>
  <td>L3 </td>
- <td> <input type="text" name="l35l" size="5" value="${kneeexam.l35l}">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l35r" size="5" value="${kneeexam.l35r}">&nbsp;/5&nbsp;(Iliopsoas)</td>
+ <td> <input type="text" name="l35l" size="5" value="${kneeexam.l35l}"  onkeypress="return isNumberKey(event)">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l35r" size="5" value="${kneeexam.l35r}" onkeypress="return isNumberKey(event)">&nbsp;/5&nbsp;(Iliopsoas)</td>
  <td> </td>
  <td> </td>
  </tr>
@@ -389,25 +399,25 @@ element.style.display='none';
  <td>L4</td>
  <td><input type="text" name="l4l" size="5" value="${kneeexam.l4l}">&nbsp; &nbsp; &nbsp;<input type="text" name="l4r" size="5" value="${kneeexam.l4r}">&nbsp;(Medial leg)	</td>
  <td>L4 </td>
- <td> <input type="text" name="l45l" size="5" value="${kneeexam.l45l}">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l45r" size="5" value="${kneeexam.l45r}">&nbsp;/5&nbsp;(Rectus fem.)</td>
+ <td> <input type="text" name="l45l" size="5" value="${kneeexam.l45l}" onkeypress="return isNumberKey(event)">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l45r" size="5" value="${kneeexam.l45r}" onkeypress="return isNumberKey(event)">&nbsp;/5&nbsp;(Rectus fem.)</td>
  <td> L4</td>
- <td> <input type="text" name="l4l3" size="5" value="${kneeexam.l4l3}">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l4r3" size="5" value="${kneeexam.l4r3}">&nbsp;/5&nbsp;(Patellar)</td>
+ <td> <input type="text" name="l4l3" size="5" value="${kneeexam.l4l3}" onkeypress="return isNumberKey(event)">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l4r3" size="5" value="${kneeexam.l4r3}" onkeypress="return isNumberKey(event)">&nbsp;/5&nbsp;(Patellar)</td>
  </tr>
  <tr class="row1">
  <td>L5</td>
  <td><input type="text" name="l5l" size="5" value="${kneeexam.l5l}">&nbsp; &nbsp; &nbsp;<input type="text" name="l5r" size="5" value="${kneeexam.l5r}">&nbsp;(Ant/lat leg)	</td>
  <td>L5 </td>
- <td> <input type="text" name="l55l" size="5" value="${kneeexam.l55l}">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l55r" size="5" value="${kneeexam.l55r}">&nbsp;/5&nbsp;  (Glut Med)</td>
+ <td> <input type="text" name="l55l" size="5" value="${kneeexam.l55l}" onkeypress="return isNumberKey(event)">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l55r" size="5" value="${kneeexam.l55r}" onkeypress="return isNumberKey(event)">&nbsp;/5&nbsp;  (Glut Med)</td>
  <td>L5 </td>
- <td><input type="text" name="l5l3" size="5" value="${kneeexam.l5l3}">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l5r3" size="5" value="${kneeexam.l5r3}">&nbsp;/5&nbsp;(Med HS) </td>
+ <td><input type="text" name="l5l3" size="5" value="${kneeexam.l5l3}" onkeypress="return isNumberKey(event)">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l5r3" size="5" value="${kneeexam.l5r3}" onkeypress="return isNumberKey(event)">&nbsp;/5&nbsp;(Med HS) </td>
  </tr>
  <tr class="row1">
  <td>SI</td>
  <td><input type="text" name="sl" size="5" value="${kneeexam.sl}">&nbsp; &nbsp; &nbsp;<input type="text" name="sr" size="5" value="${kneeexam.sr}">&nbsp;(Big toe/plantar)		</td>
  <td>SI </td>
- <td> <input type="text" name="s5l" size="5" value="${kneeexam.s5l}">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="s5r" size="5" value="${kneeexam.s5r}">&nbsp;/5&nbsp; (Glut Max)</td>
+ <td> <input type="text" name="s5l" size="5" value="${kneeexam.s5l}" onkeypress="return isNumberKey(event)">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="s5r" size="5" value="${kneeexam.s5r}" onkeypress="return isNumberKey(event)">&nbsp;/5&nbsp; (Glut Max)</td>
  <td>SI </td>
- <td> <input type="text" name="sil" size="5" value="${kneeexam.sil}">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="sir" size="5" value="${kneeexam.sir}">&nbsp;/5&nbsp;(Achilles)</td>
+ <td> <input type="text" name="sil" size="5" value="${kneeexam.sil}" onkeypress="return isNumberKey(event)">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="sir" size="5" value="${kneeexam.sir}" onkeypress="return isNumberKey(event)">&nbsp;/5&nbsp;(Achilles)</td>
  </tr>
  <tr class="row1">
  <td></td>

@@ -24,7 +24,9 @@
  $(function() {
      $( "#datepicker2" ).datepicker();
    });
- 
+  $(function() {
+     $( "#datepicker3" ).datepicker();
+   });
  
 </script>
 <script type="text/javascript">
@@ -153,7 +155,12 @@ function checkSubmit()
               <td ><input type="text" class="input_txtbx1" name="adjuster" id="adjuster" value="${lettertopatientsdetails.adjuster }" /><span class="err"><form:errors path="Workschool.date"></form:errors></span></td>
               </tr>
               </table>
-              
+              <table cellpadding="0" cellspacing="0" border="0" width="100%">
+              <tr>
+              <td height="25" width="120">Date</td>
+              <td ><input type="text" class="input_txtbx1" name="date" id="datepicker3" value="${lettertopatientsdetails.date }" /><span class="err"><form:errors path="Workschool.date"></form:errors></span></td>
+              </tr>
+              </table>
              
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
         	  <tr><td hight="20" width="250"><br><br><p align="left" id="mypar"><b><h4>Dear Ms Barbara Wilmoth:</h4></b></p></td></tr>
@@ -188,7 +195,7 @@ function checkSubmit()
               
               <tr> <td width="600"></td> <td>
               <b>Darrin A. Pordash D.C.</b></td></tr>
-              <tr> <td width="600"></td>  <td><span class="err">*</span><input type="text" class="input_txtbx1" name="sign" id="sign" value="${lettertopatientsdetails.sign }"/>.<span class="err" id="signerror"><form:errors path="lettertopatientsdetails.letter"></form:errors> </span>
+              <tr> <td width="600"></td>  <td>
        		</td></tr>
        		 </table>
        		

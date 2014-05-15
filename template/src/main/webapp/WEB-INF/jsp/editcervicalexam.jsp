@@ -106,7 +106,17 @@ element.style.display='none';
 
 }
 </script>
-  
+  <script>
+          function isNumberKey(evt)
+          {
+             var charCode = (evt.which) ? evt.which : event.keyCode
+             if (charCode > 31 && (charCode < 48 || charCode > 57))
+                return false;
+
+             return true;
+          }  
+          
+          </script>
 </head>
  <body>
  <br><br>
@@ -209,28 +219,28 @@ element.style.display='none';
  <td>  </td><td>   <b>Left</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> Right</b></td>
  </tr>
   <tr class="row1">
- <td><b>Flexion:</b> </td><td> (50)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="flexion" size="7" value="${cervicalexam.flexion}"></td> 
- <td width="100">C0-1:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="c01" size="7" value="${cervicalexam.c01}"> &nbsp;&nbsp;C1-2:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="c12" size="7" value="${cervicalexam.c12}"></td><td width="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C2-3: &nbsp;&nbsp;<input type="text" name="c23" size="7" value="${cervicalexam.c23}"> </td> 
+ <td><b>Flexion:</b> </td><td> (50)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="flexion" size="7" value="${cervicalexam.flexion}" onkeypress="return isNumberKey(event);"></td> 
+ <td width="100">C0-1:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="c01" size="7" value="${cervicalexam.c01}" onkeypress="return isNumberKey(event);"> &nbsp;&nbsp;C1-2:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="c12" size="7" value="${cervicalexam.c12}" onkeypress="return isNumberKey(event);"></td><td width="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C2-3: &nbsp;&nbsp;<input type="text" name="c23" size="7" value="${cervicalexam.c23}" onkeypress="return isNumberKey(event);"> </td> 
  <td><b>Hautant's:	</b> </td><td><input type="text" name="hautantl" size="5" value="${cervicalexam.hautantl}"> <input type="text" name="hautantr" size="5" value="${cervicalexam.hautantr}"></td>
  </tr>
   <tr class="row1">
- <td><b>Extension:	</b> </td><td> (60)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="extension" size="7" value="${cervicalexam.extension}"></td> 
- <td width="100">C3-4:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="c34" size="7" value="${cervicalexam.c34}"> &nbsp;&nbsp;C4-5:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="c45" size="7" value="${cervicalexam.c45}"></td><td width="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C5-6: &nbsp;&nbsp;<input type="text" name="c56" size="7" value="${cervicalexam.c56}"> </td> 
+ <td><b>Extension:	</b> </td><td> (60)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="extension" size="7" value="${cervicalexam.extension}" onkeypress="return isNumberKey(event);"></td> 
+ <td width="100">C3-4:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="c34" size="7" value="${cervicalexam.c34}" onkeypress="return isNumberKey(event);"> &nbsp;&nbsp;C4-5:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="c45" size="7" value="${cervicalexam.c45}" onkeypress="return isNumberKey(event);"></td><td width="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C5-6: &nbsp;&nbsp;<input type="text" name="c56" size="7" value="${cervicalexam.c56}" onkeypress="return isNumberKey(event);"> </td> 
  <td><b>Foraminal Comp:	</b> </td><td><input type="text" name="foraminall" size="5" value="${cervicalexam.foraminall}"> <input type="text" name="foraminalr" size="5" value="${cervicalexam.foraminalr}"></td>
  </tr>
   <tr class="row1">
- <td><b>Lateral Flexion:</b> </td><td> (45)&nbsp;&nbsp;&nbsp;L <input type="text" name="lflexion" size="7" value="${cervicalexam.lflexion}"><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R <input type="text" name="rflexion" size="7" value="${cervicalexam.rflexion}"></td> 
- <td width="100">C6-7:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="c67" size="7" value="${cervicalexam.c67}"> &nbsp;&nbsp;C7-T1:  &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="c7t1" size="7" value="${cervicalexam.c7t1}"></td><td width="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T1-2: &nbsp;&nbsp;<input type="text" name="t12" size="7" value="${cervicalexam.t12}"> </td> 
+ <td><b>Lateral Flexion:</b> </td><td> (45)&nbsp;&nbsp;&nbsp;L <input type="text" name="lflexion" size="7" value="${cervicalexam.lflexion}" onkeypress="return isNumberKey(event);"><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R <input type="text" name="rflexion" size="7" value="${cervicalexam.rflexion}" onkeypress="return isNumberKey(event);"></td> 
+ <td width="100">C6-7:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="c67" size="7" value="${cervicalexam.c67}" onkeypress="return isNumberKey(event);"> &nbsp;&nbsp;C7-T1:  &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="c7t1" size="7" value="${cervicalexam.c7t1}" onkeypress="return isNumberKey(event);"></td><td width="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T1-2: &nbsp;&nbsp;<input type="text" name="t12" size="7" value="${cervicalexam.t12}" onkeypress="return isNumberKey(event);"> </td> 
  <td><b>Soto Hall:	</b> </td><td><input type="text" name="sotohalll" size="5" value="${cervicalexam.sotohalll}"> <input type="text" name="sotohallr" size="5" value="${cervicalexam.sotohallr}"></td>
  </tr>
   <tr class="row1">
-  <td><b>Rotation:</b> </td><td> (80)&nbsp;&nbsp;&nbsp;L <input type="text" name="lrotation" size="7" value="${cervicalexam.lrotation}"><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R <input type="text" name="rrotation" size="7" value="${cervicalexam.rrotation}"></td> 
- <td width="100">T2-3:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t23" size="7" value="${cervicalexam.t23}"> &nbsp;&nbsp;T3-4:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t34" size="7" value="${cervicalexam.t34}"></td><td width="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T4-5: &nbsp;&nbsp;<input type="text" name="t45" size="7" value="${cervicalexam.t45}"> </td> 
+  <td><b>Rotation:</b> </td><td> (80)&nbsp;&nbsp;&nbsp;L <input type="text" name="lrotation" size="7" value="${cervicalexam.lrotation}" onkeypress="return isNumberKey(event);"> <br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R <input type="text" name="rrotation" size="7" value="${cervicalexam.rrotation}" onkeypress="return isNumberKey(event);"></td> 
+ <td width="100">T2-3:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t23" size="7" value="${cervicalexam.t23}" onkeypress="return isNumberKey(event);"> &nbsp;&nbsp;T3-4:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t34" size="7" value="${cervicalexam.t34}" onkeypress="return isNumberKey(event);"></td><td width="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T4-5: &nbsp;&nbsp;<input type="text" name="t45" size="7" value="${cervicalexam.t45}"> </td> 
  <td><b>Adson's:</b> </td><td><input type="text" name="adsonsl" size="5" value="${cervicalexam.adsonsl}"> <input type="text" name="adsonsr" size="5" value="${cervicalexam.adsonsr}"></td>
  </tr>
   <tr class="row1">
  <td></td><td> </td> 
-<td width="100">T5-6:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t56" size="7" value="${cervicalexam.t56}"> &nbsp;&nbsp;T6-7:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t67" size="7" value="${cervicalexam.t67}"></td><td width="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T7-8: &nbsp;&nbsp;<input type="text" name="t78" size="7" value="${cervicalexam.t78}"> </td> 
+<td width="100">T5-6:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t56" size="7" value="${cervicalexam.t56}" onkeypress="return isNumberKey(event);"> &nbsp;&nbsp;T6-7:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t67" size="7" value="${cervicalexam.t67}" onkeypress="return isNumberKey(event);"></td><td width="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T7-8: &nbsp;&nbsp;<input type="text" name="t78" size="7" value="${cervicalexam.t78}"> </td> 
  <td><b>ULTT:	</b> </td><td><input type="text" name="ulttl" size="5" value="${cervicalexam.ulttl}"> <input type="text" name="ulttr" size="5" value="${cervicalexam.ulttr}"></td>
  </tr>
   </table>
@@ -277,43 +287,43 @@ element.style.display='none';
  </tr>
  <tr class="row1">
  <td>C5</td>
- <td><input type="text" name="c5l" size="5" value="${cervicalexam.c5l}">&nbsp; &nbsp; &nbsp;<input type="text" name="c5r" size="5"  value="${cervicalexam.c5r}">&nbsp;(Lat deltoid)</td>
+ <td><input type="text" name="c5l" size="5" value="${cervicalexam.c5l}" onkeypress="return isNumberKey(event);">&nbsp; &nbsp; &nbsp;<input type="text" name="c5r" size="5"  value="${cervicalexam.c5r}" onkeypress="return isNumberKey(event);">&nbsp;(Lat deltoid)</td>
  <td>C5 </td>
- <td> <input type="text" name="c51l" size="5"  value="${cervicalexam.c51l}">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c51r" size="5"  value="${cervicalexam.c51r}">&nbsp;/5&nbsp;(Shd ABD)</td>
+ <td> <input type="text" name="c51l" size="5"  value="${cervicalexam.c51l}" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c51r" size="5"  value="${cervicalexam.c51r}" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp;(Shd ABD)</td>
  <td> C5</td>
  <td> <input type="text" name="c53l" size="5" value="${cervicalexam.c53l}">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c53r" size="5" value="${cervicalexam.c53r}">&nbsp;/5&nbsp;(Biceps)</td>
  
  </tr>
  <tr class="row1">
  <td>C6</td>
- <td><input type="text" name="c6l" size="5" value="${cervicalexam.c6l}">&nbsp; &nbsp; &nbsp;<input type="text" name="c6r" size="5" value="${cervicalexam.c6r}">&nbsp;(Lat arm/hand)	</td>
+ <td><input type="text" name="c6l" size="5" value="${cervicalexam.c6l}" onkeypress="return isNumberKey(event);">&nbsp; &nbsp; &nbsp;<input type="text" name="c6r" size="5" value="${cervicalexam.c6r}" onkeypress="return isNumberKey(event);">&nbsp;(Lat arm/hand)	</td>
  <td>C6 </td>
- <td> <input type="text" name="c61l" size="5" value="${cervicalexam.c61l}">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c61r" size="5" value="${cervicalexam.c61r}">&nbsp;/5&nbsp;(Elb flex/wrist ext)	</td>
+ <td> <input type="text" name="c61l" size="5" value="${cervicalexam.c61l}" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c61r" size="5" value="${cervicalexam.c61r}" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp;(Elb flex/wrist ext)	</td>
   <td>C6 </td>
  <td><input type="text" name="c63l" size="5" value="${cervicalexam.c63l}">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c63r" size="5" value="${cervicalexam.c63r}">&nbsp;/5&nbsp;(Brachiorad.) </td>
 
  </tr>
  <tr class="row1">
  <td>C7</td>
- <td><input type="text" name="c7l" size="5" value="${cervicalexam.c7l}">&nbsp; &nbsp; &nbsp;<input type="text" name="c7r" size="5" value="${cervicalexam.c7r}">&nbsp;(3rd digit)</td>
+ <td><input type="text" name="c7l" size="5" value="${cervicalexam.c7l}" onkeypress="return isNumberKey(event);">&nbsp; &nbsp; &nbsp;<input type="text" name="c7r" size="5" value="${cervicalexam.c7r}" onkeypress="return isNumberKey(event);">&nbsp;(3rd digit)</td>
  <td>C7 </td>
- <td> <input type="text" name="c71l" size="5" value="${cervicalexam.c71l}">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c71r" size="5" value="${cervicalexam.c71r}">&nbsp;/5&nbsp;(Elb ext/wrist flex)</td>
+ <td> <input type="text" name="c71l" size="5" value="${cervicalexam.c71l}" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c71r" size="5" value="${cervicalexam.c71r}" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp;(Elb ext/wrist flex)</td>
  <td> C7</td>
  <td> <input type="text" name="c73l" size="5" value="${cervicalexam.c73l}">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c73r" size="5" value="${cervicalexam.c73r}">&nbsp;/5&nbsp;(Triceps)</td>
  </tr>
  <tr class="row1">
  <td>C8</td>
- <td><input type="text" name="c8l" size="5" value="${cervicalexam.c8l}">&nbsp; &nbsp; &nbsp;<input type="text" name="c8r" size="5" value="${cervicalexam.c8r}">&nbsp;(Med forearm/hand)	</td>
+ <td><input type="text" name="c8l" size="5" value="${cervicalexam.c8l}" onkeypress="return isNumberKey(event);">&nbsp; &nbsp; &nbsp;<input type="text" name="c8r" size="5" value="${cervicalexam.c8r}" onkeypress="return isNumberKey(event);">&nbsp;(Med forearm/hand)	</td>
  <td>C8 </td>
- <td> <input type="text" name="c81l" size="5" value="${cervicalexam.c81l}">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c81r" size="5" value="${cervicalexam.c53l}">&nbsp;/5&nbsp;(Digit flexion)</td>
+ <td> <input type="text" name="c81l" size="5" value="${cervicalexam.c81l}" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c81r" size="5" value="${cervicalexam.c53l}" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp;(Digit flexion)</td>
  <td></td>
  <td> </td>
  </tr>
  <tr class="row1">
  <td>T1</td>
- <td><input type="text" name="t1l" size="5" value="${cervicalexam.t1l}">&nbsp; &nbsp; &nbsp;<input type="text" name="t1r" size="5" value="${cervicalexam.t1r}">&nbsp;(Med elbow/arm)	</td>
+ <td><input type="text" name="t1l" size="5" value="${cervicalexam.t1l}" onkeypress="return isNumberKey(event);">&nbsp; &nbsp; &nbsp;<input type="text" name="t1r" size="5" value="${cervicalexam.t1r}" onkeypress="return isNumberKey(event);">&nbsp;(Med elbow/arm)	</td>
  <td>T1 </td>
- <td><input type="text" name="t11l" size="5" value="${cervicalexam.t11l}">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="t11r" size="5" value="${cervicalexam.t11r}">&nbsp;/5&nbsp; (Digit abd/add)</td>
+ <td><input type="text" name="t11l" size="5" value="${cervicalexam.t11l}" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="t11r" size="5" value="${cervicalexam.t11r}" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp; (Digit abd/add)</td>
  <td> </td>
  <td> </td>
  </tr>
