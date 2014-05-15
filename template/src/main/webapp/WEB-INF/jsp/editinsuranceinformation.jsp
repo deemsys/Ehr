@@ -140,11 +140,11 @@ $("#groupno").keyup(function() {
               <tr class="row1">
               <td>Patient's Name</td>
               <input type="hidden" class="input_txtbx1" id="inp_id" value="${Insuranceinformation.number}" name="number" />
-              <td> <input type="text" class="input_txtbx1" name="patient_name" id="patient_name" value="${Insuranceinformation.patient_name}"/><br><span class="err"><form:errors path="Insuranceinformation.patient_name"></form:errors></td>
+              <td> <input type="text" class="input_txtbx1" name="patient_name" id="patient_name" value="${Insuranceinformation.patient_name}"/><br><span class="personerr"  style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.patient_name"></form:errors></td>
               </tr>
               <tr class="row1">
               <td>Date of Accident/injury</td>
-              <td> <input type="text" class="input_txtbx1" name="date_of_accident" id="datepicker" value="${Insuranceinformation.date_of_accident}"/><span class="err"><form:errors path="Insuranceinformation.date_of_accident"></form:errors></td>
+              <td> <input type="text" class="input_txtbx1" name="date_of_accident" id="datepicker" value="${Insuranceinformation.date_of_accident}"/><span class="datepickererr"  style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.date_of_accident"></form:errors></td>
               </tr>
               <tr class="row1">
               <td>Do you have health insurance?</td>
@@ -152,32 +152,32 @@ $("#groupno").keyup(function() {
               </tr>
               <tr class="row1">
               <td>Employer's Name</td>
-              <td> <input type="text" class="input_txtbx1" name="employers_name" id="employers_name" value="${Insuranceinformation.employers_name}"/><span class="err"><form:errors path="Insuranceinformation.employers_name"></form:errors></td>
+              <td> <input type="text" class="input_txtbx1" name="employers_name" id="employers_name" value="${Insuranceinformation.employers_name}"/><span class="emperr"  style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.employers_name"></form:errors></td>
               </tr>
               <tr class="row1">
               <td>Insurance Company</td>
-              <td> <input type="text" class="input_txtbx1" name="insurance_company" id="insurance_company" value="${Insuranceinformation.insurance_company}" /><br><span class="err"><form:errors path="Insuranceinformation.insurance_company"></form:errors></td>
+              <td> <input type="text" class="input_txtbx1" name="insurance_company" id="insurance_company" value="${Insuranceinformation.insurance_company}" /><br><span class="companyerr"><form:errors path="Insuranceinformation.insurance_company"></form:errors></td>
               <td>Phone#</td>
-              <td><input type="text" class="input_txtbx1" name="phone" id="phone" value="${Insuranceinformation.phone}" /><br><span class="err"><form:errors path="Insuranceinformation.phone"></form:errors></span>
+              <td><input type="text" class="input_txtbx1" name="phone" id="phone" value="${Insuranceinformation.phone}" /><br><span class="phoneerr"><form:errors path="Insuranceinformation.phone"></form:errors></span>
               <br><span class="err" id="phoneerror"></span>
               </td>
               </tr>
               <tr class="row1">
               <td>Policy#</td>
-              <td> <input type="text" class="input_txtbx1" name="policy" id="policy" value="${Insuranceinformation.policy}"/><br><span class="err"><form:errors path="Insuranceinformation.policy"></form:errors></span>
+              <td> <input type="text" class="input_txtbx1" name="policy" id="policy" value="${Insuranceinformation.policy}"/><br><span class="policyerr"  style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.policy"></form:errors></span>
               <br><span class="err" id="policyerror"></span>
               
               </td>
               <td>Group#</td>
-              <td><input type="text" class="input_txtbx1" name="infono" id="groupno" value="${Insuranceinformation.infono}"/><br><span class="err"><form:errors path="Insuranceinformation.infono"></form:errors></span>
+              <td><input type="text" class="input_txtbx1" name="infono" id="groupno" value="${Insuranceinformation.infono}"/><br><span class="groupno1err"  style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.infono"></form:errors></span>
               <br><span class="err" id="groupnoerror"></span>
               </td>
               </tr>
               <tr class="row1">
               <td>Supplemental Insurance Company</td>
-              <td> <input type="text" class="input_txtbx1" name="supplemental_company" id="supplemental_company" value="${Insuranceinformation.supplemental_company}"/><br><span class="err"><form:errors path="Insuranceinformation.supplemental_company"></form:errors></td>
+              <td> <input type="text" class="input_txtbx1" name="supplemental_company" id="supplemental_company" value="${Insuranceinformation.supplemental_company}"/><br><span class="supplemental_companyerr"  style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.supplemental_company"></form:errors></td>
               <td>Phone#</td>
-              <td> <input type="text" class="input_txtbx1" name="sup_phone" id="supphone" value="${Insuranceinformation.sup_phone}"/><br><span class="err"><form:errors path="Insuranceinformation.sup_phone"></form:errors></span>
+              <td> <input type="text" class="input_txtbx1" name="sup_phone" id="supphone" value="${Insuranceinformation.sup_phone}"/><br><span class="supphoneerr"  style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.sup_phone"></form:errors></span>
               <br>
               <span class="err" id="supphoneerror"></span>
               </td>
@@ -198,15 +198,15 @@ $("#groupno").keyup(function() {
  		<table cellpadding="0" cellspacing="0" border="0" width="100%">
  		<tr class="row1">
  		<td>Patient Signature</td>
-        <td> <input type="text" class="input_txtbx1" name="patient_sign" id="patient_sign" value=" ${Insuranceinformation.patient_sign}" /><br><span class="err"><form:errors path="Insuranceinformation.patient_sign"></form:errors></td>
+        <td> <input type="text" class="input_txtbx1" name="patient_sign" id="patient_sign" value=" ${Insuranceinformation.patient_sign}" /><br><span class="patient_signerr"  style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.patient_sign"></form:errors></td>
         <td>Date</td>
-        <td> <input type="text" class="input_txtbx1" name="date" id="datepicker1" value="${Insuranceinformation.date}" /><br><span class="err"><form:errors path="Insuranceinformation.date"></form:errors></td>
+        <td> <input type="text" class="input_txtbx1" name="date" id="datepicker1" value="${Insuranceinformation.date}" /><br><span class="datepicker1err" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.date"></form:errors></td>
         </tr>
         <tr class="row1">
  		<td>Spouse or Guardian Signature</td>
-        <td> <input type="text" class="input_txtbx1" name="spouse_sign" id="spouse_sign" value="${Insuranceinformation.spouse_sign}"/><br><span class="err"><form:errors path="Insuranceinformation.spouse_sign"></form:errors></td>
+        <td> <input type="text" class="input_txtbx1" name="spouse_sign" id="spouse_sign" value="${Insuranceinformation.spouse_sign}"/><br><span class="spouse_signerr" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.spouse_sign"></form:errors></td>
         <td>Date</td>
-        <td> <input type="text" class="input_txtbx1" name="date1" id="datepicker2" value="${Insuranceinformation.date1}" /><br><span class="err"><form:errors path="Insuranceinformation.date1"></form:errors></td>
+        <td> <input type="text" class="input_txtbx1" name="date1" id="datepicker2" value="${Insuranceinformation.date1}" /><br><span class="datepicker2err" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.date1"></form:errors></td>
         </tr>
         </table>
        <table>

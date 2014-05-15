@@ -300,7 +300,7 @@ Yours in Health,</b>
   <table>
               <tr>
               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-              <td><input type="submit" class="submit_btn" value="Save" onclick="return checkSubmit('this');"></td>
+              <td><input type="submit" class="submit_btn" value="update" onclick="return checkSubmit('this');"></td>
               <td>&nbsp;</td>
               <td><a href="deleteworkschool?workid=${workschooldetails.workid}" style="color:white" class="submit_btn" onclick="return confirmation() ">Delete</a></td>
               <td>&nbsp;</td>

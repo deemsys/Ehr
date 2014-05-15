@@ -125,7 +125,7 @@ return false;
 			document.getElementById("claimnoerror").innerHTML="";
 	if(isNaN(document.getElementById("claimno").value))
 {
-document.getElementById("claimnoerror").innerHTML="Enter Only Numbers";
+document.getElementById("claimnoerror").innerHTML="invalid characters  enter the numbers only ";
 return false;
 }
 		
