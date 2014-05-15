@@ -299,13 +299,13 @@ function checkSubmit()
               <td><span class="err">*</span>Insurance Company</td>
               <td> <input type="text" class="input_txtbx1" name="insurance_company" id="company" /><br><span id="companyerr" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.insurance_company"></form:errors></td>
               <td><span class="err">*</span>Phone#</td>
-              <td><input type="text" class="input_txtbx1" name="phone" id="phone" maxlength="13" /><br><span id="phoneerr" style="color: red;font-style:italic;""><form:errors path="Insuranceinformation.phone"></form:errors>
+              <td><input type="text" class="input_txtbx1" name="phone" id="phone" maxlength="13" /><br><span id="phoneerr" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.phone"></form:errors>
               <br><span class="err" id="phoneerror"></span>
               </td>
               </tr>
               <tr class="row1">
               <td><span class="err">*</span>Policy #</td>
-              <td> <input type="text" class="input_txtbx1" name="policy" id="policy" /><br><span  id="policyerr" style="color: red;font-style:italic;""></span><form:errors path="Insuranceinformation.policy"></form:errors>
+              <td> <input type="text" class="input_txtbx1" name="policy" id="policy" /><br><span  id="policyerr" style="color: red;font-style:italic;"></span><form:errors path="Insuranceinformation.policy"></form:errors>
               <br><span class="err" id="policyerror"></span>
               </td>
               <td><span class="err">*</span>Group#</td>
