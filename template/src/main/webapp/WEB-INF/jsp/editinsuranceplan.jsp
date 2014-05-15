@@ -47,7 +47,7 @@
 	}
 }
   </script>
-<script>
+<!-- <script>
 
  $(function() {
 	 $("#datepicker").datepicker({ changeMonth: true,changeYear: true,showOn: "button",
@@ -57,7 +57,7 @@
       });
        
  
-</script>
+</script> -->
 <script>
 
 	function checkSubmit()
@@ -147,6 +147,12 @@
 	}
 
 	</script>
+	<script>
+  $(function() {
+	    $( "#datepicker" ).datepicker();
+	  });
+ 
+  </script>
 </head>
  <body>
 <div id="right_content">
