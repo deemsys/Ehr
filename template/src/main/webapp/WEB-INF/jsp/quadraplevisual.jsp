@@ -190,7 +190,7 @@
 	  });
 
  </script>
- $(window).load(function(){
+ <!-- $(window).load(function(){
  $("#number").keyup(function() {
 			
 			 $("#numbererror").html(''); 
@@ -207,7 +207,7 @@
 				}
 		}).keydown(function() {
 		    oldValue = $(this).val();
-		})
+		}) -->
  </script>
  </head>
  <body>

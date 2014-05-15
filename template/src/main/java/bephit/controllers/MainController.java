@@ -3380,10 +3380,10 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 	}*/
 	
 	@RequestMapping(value="/duties_ajax",method=RequestMethod.POST)
-	public @ResponseBody String duties_ajax(@ModelAttribute("username") String username,PatientDetails patientDetails)
+	public @ResponseBody String duties_ajax(@ModelAttribute("user")PatientDetails patientDetails)
 	{
-		System.out.println("username..."+patientDetails.getUsername());
-		if(dutiesunderDAO.getusernameDutiesunderduress(patientDetails.getUsername()).size()>0)
+		System.out.println("username..."+patientDetails.getUser());
+		if(dutiesunderDAO.getusernameDutiesunderduress(patientDetails.getUser()).size()>0)
 		{
 			return "edit";
 		}

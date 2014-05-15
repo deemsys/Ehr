@@ -16,6 +16,7 @@ private String symptom_ajax;
 
 private String username;
 
+private String user;
 
 private String Date;
 
@@ -195,11 +196,6 @@ private String Dr;
 
 private String Patient;
 
-
-public PatientDetails()
-{
-
-}
 public String getPatient_id() {
 	return Patient_id;
 }
@@ -223,6 +219,12 @@ public String getUsername() {
 }
 public void setUsername(String username) {
 	this.username = username;
+}
+public String getUser() {
+	return user;
+}
+public void setUser(String user) {
+	this.user = user;
 }
 public String getDate() {
 	return Date;
@@ -841,6 +843,9 @@ public String getPatient() {
 }
 public void setPatient(String patient) {
 	Patient = patient;
+}
+public PatientDetails() {
+	super();
 }
 public PatientDetails(String patient_id, String name, String username,
 		String date, String streetAddress, String city, String state,

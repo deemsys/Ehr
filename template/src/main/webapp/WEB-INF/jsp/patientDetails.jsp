@@ -23,14 +23,15 @@ function checkAjaxPost() {
 	if(val=='autoaccident')
 	 {	 
 		
-	var username = $('#username').val();
+	var username = $('#pusername').val();
 
-	
+	 
 	 $.ajax({  
 		    type: "POST",  
 		    url: "/EhrApp/duties_ajax",  
-		    data: "username=" + username,
+		    data: "user=" + username,
 		    success: function(response){  
+		
 		    
 		    	if(response=="")
 		    		{
@@ -123,9 +124,9 @@ function checkAjaxPost() {
 		  });    
 		*/
 		 var patientid=document.getElementById("totalpoint").value;
-			 alert(patientid);
+			
 			 var url="quadraplevisual?patient_id="+patientid;
-			  alert(url);
+			 
 			 window.open(url,'popUpWindow','resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes'); 
 		
 		
@@ -444,6 +445,7 @@ $("#phhealth").keyup(function() {
 		  });
 	  
 	    $("#btnNext").live("click", function () {
+	    	
 	        var tabs = $('#tabs').tabs();
 	        var c = $('#tabs').tabs("length");
 	        currentTab = currentTab == (c - 1) ? currentTab : (currentTab + 1);
@@ -1171,21 +1173,21 @@ document.getElementById("inp_id").value=phone;
 
 <script type="text/javascript">
 function validate(){
-	alert("hi");
+	
 	var length=document.getElementsByName("symptom[]").length;
 	var fld = document.getElementById("symptom").value;
-	alert(fld);
+	
 	var fld2=document.getElementById("symptom1").value;
 	if(fld1==fld2)
 		{
 		alert("Please Enter different symptom");
 		}
-	alert(fld);
+	
 	
 	var values = [];
 	values.push(fld);
-	alert(values);
-	alert(fld.options.length);
+	
+	
 	for (var i = 0; i < fld.options.length; i++) {
 	  if (fld.options[i].selected) {
 	    values.push(fld.options[i].value);
@@ -1203,7 +1205,7 @@ function validate(){
 					
 				//("sdf"+document.getElementById("symptom[0]").value);
 					var xx = document.getElementsByName('symptom[]').length;
-					alert("symptom"+document.getElementById("symptom1").value);		
+						
 					
 					var $in = xx + 1;
 					var $id=$in-1;
@@ -1222,14 +1224,9 @@ function validate(){
 						document.getElementById("morebutton").style.display="none";
 						}
 					else
-						{
-					
-					alert($id);
-					
-					alert(symptomid);
-                 alert("sd"+$in+document.getElementById(symptomid).value);
-                 
-					var newdiv = document.createElement('div');
+						{				
+									
+                 	var newdiv = document.createElement('div');
 
 					newdiv.innerHTML = '<table width="100%" border="0" cellspacing="0" cellpadding="0" id="newtbl'
 							+ $im
@@ -1268,11 +1265,11 @@ function ajax()
 		    url: "/EhrApp/check_symptom_ajax",  
 		    data: "symptom_ajax=" +symptom,
 		    success: function(response){  
-		    	alert(response); 
+		    
 		    	//var patientid=document.getElementById("totalpoint").value;			
 				 var url="quadraplevisual?symptom="+document.getElementById("symptom_ajax").value;			
 				 
-			alert("_");
+			
 		    	if(response=="")
 		    		{
 		    		 window.open(url,'popUpWindow','resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes');
@@ -1297,7 +1294,7 @@ function ajax()
 function check(id)
 {
 	document.getElementById("symptom_ajax").value=id.value;
-	alert("hi"+id.value);
+	
 	if(id.value=="")
 		{
 		alert("The Symptom cannot be blank");
@@ -1501,7 +1498,8 @@ function check(id)
 	       </div>     </div>
 	       
 <div class="contentbox">
-<input type="text" value="<sec:authentication property="principal.username" />" id="username" name="username">
+<input type="hidden" value="<sec:authentication property="principal.username" />" id="pusername" name="user">
+<input type="hidden" value="<sec:authentication property="principal.username" />" id="username" name="username">
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
   				<tr>
     				<td align="left" valign="top" width="50%" style="padding-right:25px;">
