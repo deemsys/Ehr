@@ -31,6 +31,13 @@
             <p><img alt="Success" src="images/icons/icon_success.png"><span>Success!</span>.</p>
           </div>
       </tr> 
+ <tr>
+        <td valign="top" align="left" style="padding:5px 0 10px 0;">&nbsp;
+		<div class="status success" style="display: none;">
+            <p class="closestatus"><a title="Close" href="">x</a></p>
+            <p><img alt="Success" src="images/icons/icon_success.png"><span>Success!</span>.</p>
+          </div>
+      </tr> 
 
 
 

@@ -111,6 +111,107 @@ $("#groupno").keyup(function() {
 	}
 }
   </script>
+  <script>
+function checkSubmit()
+{                        
+
+	document.getElementById("personerr").innerHTML="";
+	if(document.getElementById("person").value=="")
+	{
+	document.getElementById("personerr").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("datepickererr").innerHTML="";
+	if(document.getElementById("datepicker").value=="")
+	{
+	document.getElementById("datepickererr").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+		
+	document.getElementById("emperr").innerHTML="";
+	if(document.getElementById("emp").value=="")
+	{
+	document.getElementById("emperr").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+    }
+    document.getElementById("companyerr").innerHTML="";
+	if(document.getElementById("company").value=="")
+	{
+	document.getElementById("companyerr").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+    }
+      document.getElementById("phoneerr").innerHTML="";
+	if(document.getElementById("phone").value=="")
+	{
+	document.getElementById("phoneerr").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+    }
+    
+    document.getElementById("policyerr").innerHTML="";
+	if(document.getElementById("policy").value=="")
+	{
+	document.getElementById("policyerr").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+    }
+     document.getElementById("groupno1err").innerHTML="";
+	if(document.getElementById("groupno1").value=="")
+	{
+	document.getElementById("groupno1err").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+   
+    }
+    document.getElementById("supplemental_companyerr").innerHTML="";
+	if(document.getElementById("supplemental_company").value=="")
+	{
+	document.getElementById("supplemental_companyerr").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+    }
+    document.getElementById("supphoneerr").innerHTML="";
+	if(document.getElementById("supphone").value=="")
+	{
+	document.getElementById("supphoneerr").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+    }
+     document.getElementById("patient_signerr").innerHTML="";
+	if(document.getElementById("patient_sign").value=="")
+	{
+	document.getElementById("patient_signerr").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("datepicker1err").innerHTML="";
+	if(document.getElementById("datepicker1").value=="")
+	{
+	document.getElementById("datepicker1err").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("spouse_signerr").innerHTML="";
+	if(document.getElementById("spouse_sign").value=="")
+	{
+	document.getElementById("spouse_signerr").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("datepicker2err").innerHTML="";
+	if(document.getElementById("datepicker2").value=="")
+	{
+	document.getElementById("datepicker2err").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+}
+</script>
 </head>
  <body>
 <div id="right_content">
@@ -138,12 +239,12 @@ $("#groupno").keyup(function() {
               </tr>
               <br>
               <tr class="row1">
-              <td>Patient's Name</td>
+              <td><span class="err">*</span>Patient's Name</td>
               <input type="hidden" class="input_txtbx1" id="inp_id" value="${Insuranceinformation.number}" name="number" />
-              <td> <input type="text" class="input_txtbx1" name="patient_name" id="patient_name" value="${Insuranceinformation.patient_name}"/><br><span class="personerr"  style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.patient_name"></form:errors></td>
+              <td> <input type="text" class="input_txtbx1" name="patient_name" id="person" value="${Insuranceinformation.patient_name}"/><br><span id="personerr" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.patient_name"></form:errors></td>
               </tr>
               <tr class="row1">
-              <td>Date of Accident/injury</td>
+              <td><span class="err">*</span>Date of Accident/injury</td>
               <td> <input type="text" class="input_txtbx1" name="date_of_accident" id="datepicker" value="${Insuranceinformation.date_of_accident}"/><span class="datepickererr"  style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.date_of_accident"></form:errors></td>
               </tr>
               <tr class="row1">
@@ -151,11 +252,11 @@ $("#groupno").keyup(function() {
               <td><input type="radio" name="have_insurance" value="Yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="have_insurance" value="No" class="input_txt">No</td>
               </tr>
               <tr class="row1">
-              <td>Employer's Name</td>
+              <td><span class="err">*</span>Employer's Name</td>
               <td> <input type="text" class="input_txtbx1" name="employers_name" id="employers_name" value="${Insuranceinformation.employers_name}"/><span class="emperr"  style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.employers_name"></form:errors></td>
               </tr>
               <tr class="row1">
-              <td>Insurance Company</td>
+              <td><span class="err">*</span>Insurance Company</td>
               <td> <input type="text" class="input_txtbx1" name="insurance_company" id="insurance_company" value="${Insuranceinformation.insurance_company}" /><br><span class="companyerr"><form:errors path="Insuranceinformation.insurance_company"></form:errors></td>
               <td>Phone#</td>
               <td><input type="text" class="input_txtbx1" name="phone" id="phone" value="${Insuranceinformation.phone}" /><br><span class="phoneerr"><form:errors path="Insuranceinformation.phone"></form:errors></span>
@@ -163,20 +264,20 @@ $("#groupno").keyup(function() {
               </td>
               </tr>
               <tr class="row1">
-              <td>Policy#</td>
+              <td><span class="err">*</span>Policy#</td>
               <td> <input type="text" class="input_txtbx1" name="policy" id="policy" value="${Insuranceinformation.policy}"/><br><span class="policyerr"  style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.policy"></form:errors></span>
               <br><span class="err" id="policyerror"></span>
               
               </td>
-              <td>Group#</td>
+              <td><span class="err">*</span>Group#</td>
               <td><input type="text" class="input_txtbx1" name="infono" id="groupno" value="${Insuranceinformation.infono}"/><br><span class="groupno1err"  style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.infono"></form:errors></span>
               <br><span class="err" id="groupnoerror"></span>
               </td>
               </tr>
               <tr class="row1">
-              <td>Supplemental Insurance Company</td>
+              <td><span class="err">*</span>Supplemental Insurance Company</td>
               <td> <input type="text" class="input_txtbx1" name="supplemental_company" id="supplemental_company" value="${Insuranceinformation.supplemental_company}"/><br><span class="supplemental_companyerr"  style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.supplemental_company"></form:errors></td>
-              <td>Phone#</td>
+              <td><span class="err">*</span>Phone#</td>
               <td> <input type="text" class="input_txtbx1" name="sup_phone" id="supphone" value="${Insuranceinformation.sup_phone}"/><br><span class="supphoneerr"  style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.sup_phone"></form:errors></span>
               <br>
               <span class="err" id="supphoneerror"></span>
@@ -197,22 +298,22 @@ $("#groupno").keyup(function() {
 	</table>
  		<table cellpadding="0" cellspacing="0" border="0" width="100%">
  		<tr class="row1">
- 		<td>Patient Signature</td>
+ 		<td><span class="err">*</span>Patient Signature</td>
         <td> <input type="text" class="input_txtbx1" name="patient_sign" id="patient_sign" value=" ${Insuranceinformation.patient_sign}" /><br><span class="patient_signerr"  style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.patient_sign"></form:errors></td>
-        <td>Date</td>
+        <td><span class="err">*</span>Date</td>
         <td> <input type="text" class="input_txtbx1" name="date" id="datepicker1" value="${Insuranceinformation.date}" /><br><span class="datepicker1err" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.date"></form:errors></td>
         </tr>
         <tr class="row1">
- 		<td>Spouse or Guardian Signature</td>
+ 		<td><span class="err">*</span>Spouse or Guardian Signature</td>
         <td> <input type="text" class="input_txtbx1" name="spouse_sign" id="spouse_sign" value="${Insuranceinformation.spouse_sign}"/><br><span class="spouse_signerr" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.spouse_sign"></form:errors></td>
-        <td>Date</td>
+        <td><span class="err">*</span>Date</td>
         <td> <input type="text" class="input_txtbx1" name="date1" id="datepicker2" value="${Insuranceinformation.date1}" /><br><span class="datepicker2err" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.date1"></form:errors></td>
         </tr>
         </table>
        <table>
         <tr>
      	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> 
-        <td><br><input type="submit" class="submit_btn" value="Update"></td>
+        <td><br><input type="submit" class="submit_btn" value="Update" onclick="return checkSubmit('this');"></td>
         <td>&nbsp;&nbsp;</td>
         <td><br><a href="deleteinsuranceinformation" class="submit_btn" style="text-decoration: none;color:white" onclick="return confirmation() ">Delete</a></td>
         </tr>
