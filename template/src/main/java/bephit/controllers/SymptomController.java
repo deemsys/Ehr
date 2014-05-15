@@ -123,9 +123,9 @@ public class SymptomController {
 		symptomform.setSymptomdetails(symptomdao.getusernamesymptomDetails(username));
 		model.addAttribute("symptomform", symptomform);
 		model.addAttribute("menu", "symptom");
-		model.addAttribute("noofrows",symptomform.getSymptomdetails().size());       
+		/*model.addAttribute("noofrows",symptomform.getSymptomdetails().size());       
 	    symptomform.setSymptomdetails(symptomdao.getlimitedsymptom(1));
-	    model.addAttribute("noofpages",(int) Math.ceil(symptomdao.getnoofsymptom() * 1.0 / 5));	 
+	    model.addAttribute("noofpages",(int) Math.ceil(symptomdao.getnoofsymptom() * 1.0 / 5));*/	 
 	        model.addAttribute("button","viewall");
 	        model.addAttribute("success","false");
 	        model.addAttribute("currentpage",1);
@@ -432,17 +432,17 @@ public class SymptomController {
 
 	@RequestMapping(value = "/viewhipquestionnaire", method = RequestMethod.GET)
 	public String viewhipquestionnaire(HttpServletRequest request,
-			ModelMap model, Hipquestionnaire hipquestionnaire)
+			ModelMap model, Hipquestionnaire hipquestionnaire,Principal principal)
 			throws IOException {
-
+		String username=principal.getName();
 		HipquestionnaireForm hipquestionnaireform = new HipquestionnaireForm();
 		hipquestionnaireform.setHipquestionnairedetails(hipquestionnairedao
-				.gethipquestionnairedetails());
+				.getusernamehipquestionnairedetails(username));
 		model.addAttribute("hipquestionnaireform", hipquestionnaireform);
 		model.addAttribute("menu", "hipknee");
-		model.addAttribute("noofrows",hipquestionnaireform.getHipquestionnairedetails().size());       
+		/*model.addAttribute("noofrows",hipquestionnaireform.getHipquestionnairedetails().size());       
 	    hipquestionnaireform.setHipquestionnairedetails(hipquestionnairedao.getlimitedhipquestionnaire(1));
-	    model.addAttribute("noofpages",(int) Math.ceil(hipquestionnairedao.getnoofhipquestionnaire() * 1.0 / 5));	 
+	    model.addAttribute("noofpages",(int) Math.ceil(hipquestionnairedao.getnoofhipquestionnaire() * 1.0 / 5));*/	 
 	        model.addAttribute("button","viewall");
 	        model.addAttribute("success","false");
 	        model.addAttribute("currentpage",1);

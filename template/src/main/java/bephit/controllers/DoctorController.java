@@ -1981,17 +1981,17 @@ if(result.hasErrors())
 	
 	@RequestMapping(value="/viewfootquestionnarie", method=RequestMethod.GET)
 	public String viewfootquestionnarie(HttpServletRequest request,ModelMap model, Principal principal) {
-		 model.addAttribute("success","false");
-		
+		// model.addAttribute("success","false");
+		 String username=principal.getName();
 		  FootquestionnarieForm footquestionnarieForm = new FootquestionnarieForm();
 		 
-		  footquestionnarieForm.setFootquestionnariedetails(footDAO.getFootquestionnarie());
+		  footquestionnarieForm.setFootquestionnariedetails(footDAO.getusernameFoot(username));
 		  
 		  model.addAttribute("footquestionnarieForm",footquestionnarieForm);	
 		  model.addAttribute("menu", "hipknee");
-		  model.addAttribute("noofrows",footquestionnarieForm.getFootquestionnariedetails().size());       
+		  /*model.addAttribute("noofrows",footquestionnarieForm.getFootquestionnariedetails().size());       
 		    footquestionnarieForm.setFootquestionnariedetails(footDAO.getlimitedfootquestionnarie(1));  
-		    model.addAttribute("noofpages",(int) Math.ceil(footDAO.getnooffootquestionnarie() * 1.0 / 5));	 
+		    model.addAttribute("noofpages",(int) Math.ceil(footDAO.getnooffootquestionnarie() * 1.0 / 5));*/	 
 		        model.addAttribute("button","viewall");
 		        model.addAttribute("success","false");
 		        model.addAttribute("currentpage",1);
@@ -2085,6 +2085,7 @@ if(result.hasErrors())
 		}
 	   int status = footDAO.updatefootquestionnarie(footquestionnarie,footquestionnarie.getFootquestionno(), principal.getName());
 	   System.out.println(status);	
+	   model.addAttribute("success", true);
 	   FootquestionnarieForm footquestionnarieForm = new FootquestionnarieForm();        
        footquestionnarieForm.setFootquestionnariedetails(footDAO.getusernameFoot(username));       
        model.addAttribute("footquestionnarieForm", footquestionnarieForm);
