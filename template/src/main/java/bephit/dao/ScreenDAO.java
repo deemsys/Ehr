@@ -13,6 +13,7 @@ import java.util.List;
 import javax.sql.DataSource;
 
 import bephit.model.Hardshipagreement;
+import bephit.model.MedicalRecords;
 import bephit.model.SoapNotes;
 import bephit.model.screeningAuthz;
 
@@ -128,7 +129,38 @@ public class ScreenDAO {
 	    return screen;
 		
 	}
-	
+	public List<screeningAuthz> getusernameScreeningdetails(Principal principal){
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<screeningAuthz> screen = new ArrayList<screeningAuthz>();
+	    try{
+	    	resultSet = statement.executeQuery("select * from Screening_Details where username='"+principal.getName()+"'");
+			while(resultSet.next()){
+				screen.add(new screeningAuthz(resultSet.getString("screen_no"),resultSet.getString("date"),
+			    		resultSet.getString("name")
+			    		 ));
+			    	
+			    	
+			}
+	    }catch(Exception e){
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    }finally{
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);	    	
+	    }
+	    return screen;
+		
+	}
 	
 	public List<screeningAuthz> getScreening(String screen_no){
 		Connection con = null;
