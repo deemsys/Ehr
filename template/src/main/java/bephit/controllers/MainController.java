@@ -4889,7 +4889,8 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 		InsuranceinformationForm insuranceinformationForm= new InsuranceinformationForm();
     	insuranceinformationForm.setInsuranceinformation(infoDAO.getusernameInsuranceinformation(principal));
 		model.addAttribute("InsuranceinformationForm",insuranceinformationForm);   
-		model.addAttribute("success","true");
+		  model.addAttribute("success","true");
+		  //model.addAttribute("success","true");
 		 model.addAttribute("menu", "health");
 	        return "insuranceinfolist";
 		
