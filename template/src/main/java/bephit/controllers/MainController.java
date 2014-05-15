@@ -1547,7 +1547,7 @@ public class MainController {
 		System.out.println(status);
 		
 		WorkaccidentForm workaccidentForm = new WorkaccidentForm();
-	      workaccidentForm.setWorkaccident(workDAO.getWorkaccident());
+	      workaccidentForm.setWorkaccident(workDAO.getUsernameWorkaccident(principal));
 	        model.addAttribute("workaccidentForm", workaccidentForm);
 	       model.addAttribute("success","true");
 	       model.addAttribute("menu", "Accident");
