@@ -4179,6 +4179,10 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
     	insuranceinformationForm.setInsuranceinformation(infoDAO.getusernameInsuranceinformation(principal));
 		model.addAttribute("InsuranceinformationForm",insuranceinformationForm);
 		model.addAttribute("menu", "health");
+		  model.addAttribute("button","viewall");
+	        model.addAttribute("success","false");
+	        model.addAttribute("currentpage",1);
+		
 		return "viewinsuranceinformation";
  
 	}
@@ -4583,12 +4587,12 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 	   model.addAttribute("patientno","0");
 	}
 		TreatMinorDetailsForm treatminordetailsForm= new TreatMinorDetailsForm();
-		treatminordetailsForm.setMinorDetails(minorDAO.getMinorDetails());
+		treatminordetailsForm.setMinorDetails(minorDAO.getusernameMinorDetails(principal));
 		model.addAttribute("treatminordetailsform",treatminordetailsForm);
 		 model.addAttribute("menu", "consent");
-			model.addAttribute("noofrows",treatminordetailsForm.getMinorDetails().size());       
+			/*model.addAttribute("noofrows",treatminordetailsForm.getMinorDetails().size());       
 		    treatminordetailsForm.setMinorDetails(minorDAO.getlimitedtreatminor(1));
-	        model.addAttribute("noofpages",(int) Math.ceil(minorDAO.getnoofminordetails() * 1.0 / 5));	 
+	        model.addAttribute("noofpages",(int) Math.ceil(minorDAO.getnoofminordetails() * 1.0 / 5));*/	 
 		        model.addAttribute("button","viewall");
 		        model.addAttribute("success","false");
 		        model.addAttribute("currentpage",1);
@@ -4707,7 +4711,7 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 		int status =minorDAO.updatetreatminor(minordetails, minordetails.getMinor_no());
 		System.out.println(status);
 		TreatMinorDetailsForm treatminordetailsForm= new TreatMinorDetailsForm();
-		treatminordetailsForm.setMinorDetails(minorDAO.getMinorDetails());
+		treatminordetailsForm.setMinorDetails(minorDAO.getusernameMinorDetails(principal));
 		model.addAttribute("treatminordetailsform",treatminordetailsForm);
 	       model.addAttribute("success","true");
 	       model.addAttribute("menu", "consent");
