@@ -91,7 +91,7 @@ $("#groupno").keyup(function() {
  
 </script>
  -->
-<script>
+<!-- <script>
  $(function() {
 
 		$("#datepicker2").datepicker({changeMonth: true, changeYear: true,showOn: "button",
@@ -113,7 +113,7 @@ $("#groupno").keyup(function() {
 	        $("#datepicker").datepicker( "option", "minDate", minValue );
 	    })
    });
-</script>
+</script> -->
  <script>
 i=0;
 $(document).ready(function(){
@@ -239,7 +239,17 @@ function checkSubmit()
 	
 }
 </script>
-
+<script>
+  $(function() {
+	    $( "#datepicker" ).datepicker();
+	  });
+  $(function() {
+	    $( "#datepicker1" ).datepicker();
+	  });
+  $(function() {
+	    $( "#datepicker2" ).datepicker();
+	  });
+  </script>
 </head>
  <body>
 <div id="right_content">
