@@ -76,6 +76,7 @@ import bephit.forms.HamiltonForm;
 import bephit.forms.HamiltonchiropracticForm;
 import bephit.forms.HardshipagreementForm;
 import bephit.forms.HippaPrivacyForm;
+import bephit.forms.HipquestionnaireForm;
 import bephit.forms.InsuranceinformationForm;
 import bephit.forms.InsuranceplanForm;
 import bephit.forms.InsuranceverificationForm;
@@ -2729,7 +2730,7 @@ String username=principal.getName();
 		   model.addAttribute("patientno","0");
 		}
 		ScreeningAuthzForm screeningauthzForm= new ScreeningAuthzForm();
-    	screeningauthzForm.setScreeningDetails(screenDAO.getScreening(screen_no));
+    	screeningauthzForm.setScreeningDetails(screenDAO.getusernameScreeningdetails(principal));
 		model.addAttribute("ScreeningAuthzForm",screeningauthzForm);
 		model.addAttribute("menu", "authorization");
 		return "viewscreeningauthz";
@@ -2760,16 +2761,17 @@ String username=principal.getName();
 			{			
 		   model.addAttribute("patientno","0");
 		}
-		/*if (result.hasErrors())
+		
+		if (result.hasErrors())
 		{
-			InsuranceplanForm insuranceplanForm = new InsuranceplanForm();
+			ScreeningAuthzForm screeningauthzForm = new ScreeningAuthzForm();
 	     //   participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants(participant.getParticipants_id()));
-	      insuranceplanForm.setInsuranceplan(planDAO.getPlan(insuranceplan.getNo()));
+			 screeningauthzForm.setScreeningDetails(screenDAO.getusernameScreeningdetails(principal));
 	      
-	        model.addAttribute("insuranceplanForm", insuranceplanForm);
+	      model.addAttribute("ScreeningAuthzForm", screeningauthzForm);
 			    model.addAttribute("menu", "authorization");
-		        return "editinsuranceplan";
-		}*/
+		        return "editscreeningauthz";
+		}
 		
 		int status = screenDAO.updatescreeningauthz(screeningauthz, screeningauthz.getScreen_no(), principal.getName());
 		System.out.println(status);
@@ -2781,7 +2783,7 @@ String username=principal.getName();
         model.addAttribute("ScreeningAuthzForm", screeningauthzForm);
 	       model.addAttribute("success","true");
 	       model.addAttribute("menu", "authorization");
-	        return "screeningauthzlist";
+	        return "viewscreeningauthz";
 		
 	}
 	@RequestMapping(value="/screeningauthzlist", method = RequestMethod.GET)
@@ -4025,14 +4027,14 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 	   model.addAttribute("patientno","0");
 	}
 		HardshipagreementForm hardshipagreementForm= new HardshipagreementForm();
-    	hardshipagreementForm.setHardshipagreement(hardDAO.getHardshipagreement());
+    	hardshipagreementForm.setHardshipagreement(hardDAO.getUsernameHardshipagreement(principal));
 		model.addAttribute("hardshipagreementform",hardshipagreementForm);
 		model.addAttribute("menu", "authorization");
-		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
+		/*model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
         
 	     model.addAttribute("noofrows",hardshipagreementForm.getHardshipagreement().size());       
 	    hardshipagreementForm.setHardshipagreement(hardDAO.getlimitedhardshipagreement(1));
-       model.addAttribute("noofpages",(int) Math.ceil(hardDAO.getnoofhardshipagreement() * 1.0 / 5));	 
+       model.addAttribute("noofpages",(int) Math.ceil(hardDAO.getnoofhardshipagreement() * 1.0 / 5));*/	 
 	        model.addAttribute("button","viewall");
 	        model.addAttribute("success","false");
 	        model.addAttribute("currentpage",1);
@@ -4426,13 +4428,13 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 	   model.addAttribute("patientno","0");
 	}
 		TreatForm treatform= new TreatForm();
-		treatform.setTreatform(treatDAO.getTreatDetails());
+		treatform.setTreatform(treatDAO.getUsernameTreatDetails(principal));
 		System.out.println(treatform);
 		model.addAttribute("treatform",treatform);
 		 model.addAttribute("menu", "consent");
-		 model.addAttribute("noofrows",treatform.getTreatform().size());       
+		 /*model.addAttribute("noofrows",treatform.getTreatform().size());       
 		    treatform.setTreatform(treatDAO.getlimitedtreatform(1));
-	        model.addAttribute("noofpages",(int) Math.ceil(treatDAO.getnooftreatdetails() * 1.0 / 5));	 
+	        model.addAttribute("noofpages",(int) Math.ceil(treatDAO.getnooftreatdetails() * 1.0 / 5));*/	 
 		        model.addAttribute("button","viewall");
 		        model.addAttribute("success","false");
 		        model.addAttribute("currentpage",1);
@@ -4540,10 +4542,11 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 	}
 		int status = treatDAO.updatetreatform(treatdetails, treatdetails.getTreat_no());
 		System.out.println(status);
-		 TreatForm treatform= new TreatForm();
+		 model.addAttribute("success","true"); 
+		TreatForm treatform= new TreatForm();
 			treatform.setTreatform(treatDAO.getUsernameTreatDetails(principal));
 			model.addAttribute("treatform",treatform);
-	       model.addAttribute("success","true");
+	      
 	       model.addAttribute("menu", "consent");
 	        return "treatformlist";
 		
@@ -4890,7 +4893,7 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
     	insuranceinformationForm.setInsuranceinformation(infoDAO.getusernameInsuranceinformation(principal));
 		model.addAttribute("InsuranceinformationForm",insuranceinformationForm);   
 		  model.addAttribute("success","true");
-		  //model.addAttribute("success","true");
+		 
 		 model.addAttribute("menu", "health");
 	        return "insuranceinfolist";
 		
