@@ -10,44 +10,43 @@ public class Insuranceverification{
 	
 	private String pusername;
 	
-	@NotEmpty
+	
 	private String verify_name;
-	@NotEmpty
+	
 	private String spoke_with;
-	@NotEmpty
+	
 	private String date;
-	@NotEmpty
-	@Pattern(regexp="(^$|[0-9-()]{13})",message="Not a valid Fax No(kindly enter a 13 digit FAX number)")
+	
+	//@Pattern(regexp="(^$|[0-9-()]{13})",message="Not a valid Fax No(kindly enter a 13 digit FAX number)")
 	private String fax;
-	@NotEmpty
+	
 	
 	private String amount_deduct;
-	@NotEmpty
+	
 
 	private String amount_deduct_met;
-	@NotEmpty
+	
 	private String max_visit;
 	
 	private String is_chiropractic;
-	@NotEmpty
+	
 	
 	private String at_what;
 	
 	
 	private String xray_cover;
-	@NotEmpty
+	
 	
 	private String atwhat;
-	@NotEmpty
+	
 	private String subject_deduct;
 	
 	private String benefits_honored;
 	
 	private String network_benefits;
-	@NotEmpty
-	private String deductible;
-	@NotEmpty
 	
+	private String deductible;
+		
 	private String covered;
 	
 	private String cm;
@@ -59,7 +58,7 @@ public class Insuranceverification{
 	private String xray_deduct;
 	
 	private String doctors_assign;
-	@NotEmpty
+	
 	private String mail_claims;
 	
 	public Insuranceverification(){

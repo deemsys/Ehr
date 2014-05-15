@@ -156,7 +156,7 @@ Canton, Ohio 44708
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="50%"><span class="err"></span>Address:</td>
-              <td ><textarea rows="" cols="" name="address" id="address" style="width: 162px; height: 62px">${perrychiropracticdetails.address}</textarea><span class="err"><form:errors path="perrychiropracticdetails.address"></form:errors></td>
+              <td ><textarea rows="" cols="" name="address"  class="input_txtarea" id="address" style="width: 162px; height: 62px">${perrychiropracticdetails.address}</textarea><span class="err"><form:errors path="perrychiropracticdetails.address"></form:errors></td>
               </tr>
               </table>
               

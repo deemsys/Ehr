@@ -123,7 +123,7 @@ popupWindow = window.open(url,"popUpWindow" ,'width=1500,height=700,resizable=ye
 			else if($(this).val()!='')
 				{
 				
-				$("#damageamterror").html('Kindly enter a number!!!!');
+				$("#damageamterror").html('Invalid character.please enter numbers only.!!!!');
 				}
 		}).keydown(function() {
 		    oldValue = $(this).val();

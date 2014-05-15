@@ -13,7 +13,7 @@
   line-height:18px;}
   
   </STYLE>
- <script>
+ <!-- <script>
  $(window).load(function(){
 	  $("#fax").keyup(function() {
 		
@@ -153,7 +153,7 @@
 	})
 });
 
-</script>
+</script> -->
 
 <script>
  $(function() {
@@ -161,6 +161,180 @@
          });
  
 </script>
+<script>	
+		function checkSubmit()
+		{
+			document.getElementById("verify_nameerror").innerHTML=" ";
+			
+			if(document.getElementById("verify_name").value=="")
+			{
+			document.getElementById("verify_nameerror").innerHTML="Required Field Should not be Empty";
+			
+			return false;
+			}
+			document.getElementById("spoke_witherror").innerHTML="";
+		if(document.getElementById("spoke_with").value=="")
+			{
+			document.getElementById("spoke_witherror").innerHTML="Required Field Should not be Empty";
+			
+			return false;
+			}
+				document.getElementById("datepickererror").innerHTML="";
+		if((document.getElementById("datepicker").value==""))
+	{
+	  document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+	return false;
+	}
+			
+		
+		document.getElementById("faxerror").innerHTML="";
+		if(document.getElementById("fax").value=="")
+		{
+		document.getElementById("faxerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		} 
+		 document.getElementById("faxerror").innerHTML="";
+		if(isNaN(document.getElementById("fax").value==""))
+		{
+		document.getElementById("faxerror").innerHTML="Invalid character. Please enter numbers only.";
+		return false;
+		
+		}
+		
+		
+		document.getElementById("amountdeducterror").innerHTML="";
+		if(document.getElementById("amountdeduct").value=="")
+		{
+		document.getElementById("amountdeducterror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+
+         document.getElementById("amountdeducterror").innerHTML="";
+		if(isNaN(document.getElementById("amountdeduct").value))
+		{
+		document.getElementById("amountdeducterror").innerHTML="Invalid character. Please enter numbers only.";
+		return false;
+		
+		}
+				
+		document.getElementById("amountdeductmeterror").innerHTML="";
+		if(document.getElementById("amountdeductmet").value=="")
+		{
+		document.getElementById("amountdeductmeterror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		
+		document.getElementById("amountdeductmeterror").innerHTML="";
+		if(isNaN(document.getElementById("amountdeductmet").value))
+		{
+		document.getElementById("amountdeductmeterror").innerHTML="Invalid character. Please enter numbers only.";
+		return false;
+		
+		}
+		
+		
+		document.getElementById("max_visiterror").innerHTML="";
+		if(document.getElementById("max_visit").value=="")
+		{
+		document.getElementById("max_visiterror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		
+		document.getElementById("max_visiterror").innerHTML="";
+		if(isNaN(document.getElementById("max_visit").value))
+		{
+		document.getElementById("max_visiterror").innerHTML="Invalid character. Please enter numbers only.";
+		return false;
+		}
+		
+		document.getElementById("atwhaterror").innerHTML="";
+		if(document.getElementById("atwhat").value=="")
+		{
+		document.getElementById("atwhaterror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		
+		document.getElementById("atwhaterror").innerHTML="";
+		if(isNaN(document.getElementById("atwhat").value))
+		{
+		document.getElementById("atwhaterror").innerHTML="Invalid character. Please enter numbers only.";
+		return false;
+		}
+		document.getElementById("atwhat1error").innerHTML="";
+		if(document.getElementById("atwhat1").value=="")
+		{
+		document.getElementById("atwhat1error").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		
+		document.getElementById("atwhat1error").innerHTML="";
+		if(isNaN(document.getElementById("atwhat1").value))
+		{
+		document.getElementById("atwhat1error").innerHTML="Invalid character. Please enter numbers only.";
+		return false;
+		}
+		
+		document.getElementById("yeserror").innerHTML="";
+      if( ( document.getElementById("yes").checked == false ) && ( document.getElementById("no").checked == false ) )
+
+{
+document.getElementById("yeserror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+			         document.getElementById("deductibleerr").innerHTML="";
+		if(document.getElementById("deductible").value=="")
+		{
+		document.getElementById("deductibleerr").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		
+		document.getElementById("coverederr").innerHTML="";
+		if(document.getElementById("covered").value=="")
+		{
+		document.getElementById("coverederr").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		document.getElementById("coverederr").innerHTML="";
+		if(isNaN(document.getElementById("covered").value))
+		{
+		document.getElementById("coverederr").innerHTML="Invalid character. Please enter numbers only.";
+		return false;
+		}
+		
+		
+		
+		
+		
+		document.getElementById("mail_claimserror").innerHTML="";
+		if(document.getElementById("mail_claims").value=="")
+		{
+		document.getElementById("mail_claimserror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		var mail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    
+    if(document.getElementById("mail_claims").value.match(mail)=="null")
+    {
+    	document.getElementById("mail_claimserror").innerHTML="Enter ur proper E-Mail";
+    	
+        return false;
+    }
+
+		
+		}
+
+	</script>
+
 </head>
  <body>
 <div id="right_content">
@@ -191,11 +365,21 @@
               <tr><p>Hi, I'm calling to verify chiropractic benefits for<span class="err">*</span> Mr./ Mrs.<input type="text" class="input_txtbx1" name="verify_name" id="verify_name" value="${Insuranceverification.verify_name}"/><span class="err"><form:errors path="Insuranceverification.verify_name"></form:errors></p></tr>
               <tr class="row1">
               <td><span class="err">*</span>Spoke with</td>
-              <td><input type="text" class="input_txtbx1" name="spoke_with" id="spoke_with" value="${Insuranceverification.spoke_with}" /><span class="err"><form:errors path="Insuranceverification.spoke_with"></form:errors></td>
+              <td><input type="text" class="input_txtbx1" name="spoke_with" id="spokewith" value="${Insuranceverification.spoke_with}" /><span id="spokewitherror"   style="color: red;font-style:italic;"></span><form:errors path="Insuranceverification.spoke_with"></form:errors></td>
               <td><span class="err">*</span>Date</td>
-              <td><input type="text" class="input_txtbx1" name="date" id="datepicker" value="${Insuranceverification.date}"/><span class="err"><form:errors path="Insuranceverification.date"></form:errors></td>
+              <td><input type="text" class="input_txtbx1" name="date" id="datepicker" value="${Insuranceverification.date}"/><span id="datepickererror"  style="color: red;font-style:italic;" > </span><form:errors path="Insuranceverification.date"></form:errors></td>
               <td><span class="err">*</span>Fax#</td>
-              <td><input type="text" class="input_txtbx1" name="fax" id="fax" value="${Insuranceverification.fax}"/><span class="err"><form:errors path="Insuranceverification.fax"></form:errors>
+               <script>
+              $(document).ready(function(){
+  $("#fax").keypress(function(){
+var phone=document.getElementById("fax").value;
+phone = phone.replace(/(\d{3})(\d{3})(\d+)/, '($1)$2-$3');
+document.getElementById("fax").value=phone;
+ });  
+
+});
+</script>              
+              <td><input type="text" class="input_txtbx1" name="fax" id="fax" value="${Insuranceverification.fax}"/><span id="faxerror"  style="color: red;font-style:italic;"></span><form:errors path="Insuranceverification.fax"></form:errors>
               <span class="err" id="faxerror"></span>
               </td>
               </tr>
@@ -207,11 +391,11 @@
               <br>
               <tr class="row1">
               <td><span class="err">*</span>Amount of deductible</td>
-              <td><input type="text" class="input_txtbx1" name="amount_deduct" id="amountdeduct" value="${Insuranceverification.amount_deduct}" /><span class="err"><form:errors path="Insuranceverification.amount_deduct"></form:errors>
+              <td><input type="text" class="input_txtbx1" name="amount_deduct" id="amountdeduct" value="${Insuranceverification.amount_deduct}" /><span id="amountdeducterror"  style="color: red;font-style:italic;"><form:errors path="Insuranceverification.amount_deduct"></form:errors>
               <span class="err" id="amountdeducterror"></span>
               </td>
               <td><span class="err">*</span>Amount of deductible met</td>
-              <td><input type="text" class="input_txtbx1" name="amount_deduct_met" id="amountdeductmet" value="${Insuranceverification.amount_deduct_met}"/><span class="err"><form:errors path="Insuranceverification.amount_deduct_met"></form:errors>
+              <td><input type="text" class="input_txtbx1" name="amount_deduct_met" id="amountdeductmet" value="${Insuranceverification.amount_deduct_met}"/><span id="amountdeductmeterror"  style="color: red;font-style:italic;"></span><form:errors path="Insuranceverification.amount_deduct_met"></form:errors>
               <span class="err" id="amountdeductmeterror"></span>
               </td>
               <td></td>
@@ -221,7 +405,7 @@
               <table cellpadding="0" cellspacing="0" border="0" width="100%"> -->
               <tr class="row1"> 
               <td><span class="err">*</span>Maximum visits/year?</td>
-              <td><input type="text" class="input_txtbx1" name="max_visit" id="max_visit" value="${Insuranceverification.max_visit}"/><span class="err"><form:errors path="Insuranceverification.max_visit"></form:errors></td>
+              <td><input type="text" class="input_txtbx1" name="max_visit" id="max_visit" value="${Insuranceverification.max_visit}"/><span id="max_visiterror"  style="color: red;font-style:italic;"></span><form:errors path="Insuranceverification.max_visit"></form:errors></td>
               <td></td>
               <td></td>
               <td></td>
@@ -232,7 +416,7 @@
               <td>	<input type="radio" name="is_chiropractic" value="Yes" class="input_txt"  <c:if test="${Insuranceverification.is_chiropractic=='Yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
 				                  	<input type="radio" name="is_chiropractic" value="No" class="input_txt"  <c:if test="${Insuranceverification.is_chiropractic=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;</td>
               <td><span class="err">*</span>At what%?</td>
-              <td><input type="text" class="input_txtbx1" name="at_what" id="atwhat" value="${Insuranceverification.at_what}" /><span class="err"><form:errors path="Insuranceverification.at_what"></form:errors>
+              <td><input type="text" class="input_txtbx1" name="at_what" id="atwhat" value="${Insuranceverification.at_what}" /><span id="atwhaterror"  style="color: red;font-style:italic;"></span><form:errors path="Insuranceverification.at_what"></form:errors>
               <span class="err" id="atwhaterror"></span>
               </td>
              <td></td>
@@ -243,11 +427,11 @@
               <td>	<input type="radio" name="xray_cover" value="Yes" class="input_txt"  <c:if test="${Insuranceverification.xray_cover=='Yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
 				                  	<input type="radio" name="xray_cover" value="No" class="input_txt"  <c:if test="${Insuranceverification.xray_cover=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;</td>
               <td><span class="err">*</span>At what%?</td>
-              <td><input type="text" class="input_txtbx1" name="atwhat" id="atwhat1" value="${Insuranceverification.atwhat}"/><span class="err"><form:errors path="Insuranceverification.atwhat"></form:errors>
+              <td><input type="text" class="input_txtbx1" name="atwhat" id="atwhat1" value="${Insuranceverification.atwhat}"/><span id="atwhat1error"  style="color: red;font-style:italic;"> </span><form:errors path="Insuranceverification.atwhat"></form:errors>
               <span class="err" id="atwhat1error"></span>
               </td>
               <td><span class="err">*</span>Subject to deductible</td>
-              <td><input type="radio" name="subject_deduct" id="subjectdeduct" value="Yes" <c:if test="${Insuranceverification.subject_deduct=='Yes'}"><c:out value="checked=checked"/></c:if> />Yes&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="subject_deduct" value="No" id="subjectdeduct" <c:if test="${Insuranceverification.subject_deduct=='No'}"><c:out value="checked=checked"/></c:if> />No
+              <td><input type="radio" name="subject_deduct" id="yes" value="Yes" <c:if test="${Insuranceverification.subject_deduct=='Yes'}"><c:out value="checked=checked"/></c:if> />Yes&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="subject_deduct" value="No" id="no" <c:if test="${Insuranceverification.subject_deduct=='No'}"><c:out value="checked=checked"/></c:if> />No
 <%-- <input type="text" class="input_txtbx1" name="subject_deduct" id="subjectdeduct" value="${Insuranceverification.subject_deduct}"/> --%><span class="err"><form:errors path="Insuranceverification.subject_deduct"></form:errors>
               <span class="err" id="subjectdeducterror"></span>
               </td>
@@ -280,11 +464,11 @@
               <table cellpadding="0" cellspacing="0" border="0" width="100%"> -->
               <tr class="row1">
               <td><span class="err">*</span>Deductible</td>
-              <td><input type="text" class="input_txtbx1" name="deductible" id="deductible" value="${Insuranceverification.deductible}"/><span class="err"><form:errors path="Insuranceverification.deductible"></form:errors>
+              <td><input type="text" class="input_txtbx1" name="deductible" id="deductible" value="${Insuranceverification.deductible}"/><span id="deductibleerr"  style="color: red;font-style:italic;"> </span><form:errors path="Insuranceverification.deductible"></form:errors>
               <br><span class="err" id="deductibleerror"></span>
               </td>
               <td><span class="err">*</span>%covered</td>
-              <td><input type="text" class="input_txtbx1" name="covered" id="covered" value="${Insuranceverification.covered}"/><span class="err"><form:errors path="Insuranceverification.covered"></form:errors>
+              <td><input type="text" class="input_txtbx1" name="covered" id="covered" value="${Insuranceverification.covered}"/><span id="coverederr"  style="color: red;font-style:italic;"> </span><form:errors path="Insuranceverification.covered"></form:errors>
               <br><span class="err" id="coverederror"></span>
               </td>
               </tr>
@@ -313,7 +497,7 @@
               </tr>
               <tr class="row1">
               <td><span class="err">*</span>What address do we mail claims to?</td>
-              <td><textarea rows="3" cols="35" name="mail_claims" id="mail_claims">${Insuranceverification.mail_claims}</textarea><span class="err"><form:errors path="Insuranceverification.mail_claims"></form:errors></td>
+              <td><textarea rows="3" cols="35" name="mail_claims"  class="input_txtarea" id="mail_claims">${Insuranceverification.mail_claims}</textarea><span id="mail_claimserror"  style="color: red;font-style:italic;"> </span><form:errors path="Insuranceverification.mail_claims"></form:errors></td>
               <td></td>
 			  <td></td>              
               </tr>

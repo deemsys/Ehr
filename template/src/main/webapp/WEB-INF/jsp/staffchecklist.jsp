@@ -28,7 +28,7 @@
 			else if($(this).val()!='')
 				{
 				
-				$("#damageamterror").html('Kindly enter a number!!!!');
+				$("#damageamterror").html('Invalid character.please enter numbers only.!!!!');
 				}
 		}).keydown(function() {
 		    oldValue = $(this).val();

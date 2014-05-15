@@ -126,9 +126,9 @@ document.getElementById("nameofattorneyerror").innerHTML="";
                 <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td  width="180"><span class="err"></span>Address</td>
-              <td  ><textarea rows="" cols="" name="address1" style="width: 175px; height: 64px" >${noticeassignmentdetails.address1 }</textarea>
+              <td  ><textarea rows="" cols="" name="address1"  class="input_txtarea" style="width: 175px; height: 64px" >${noticeassignmentdetails.address1 }</textarea>
             </td>  <td height="40" width="90" style="width: 138px; "><span class="err"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Address:</td>
-              <td ><textarea rows="" cols="" name="address2" style="width: 175px; height: 64px">${noticeassignmentdetails.address2 }</textarea></td>
+              <td ><textarea rows="" cols="" name="address2"  class="input_txtarea"style="width: 175px; height: 64px">${noticeassignmentdetails.address2 }</textarea></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">

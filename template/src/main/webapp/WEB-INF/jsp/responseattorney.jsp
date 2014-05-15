@@ -265,7 +265,7 @@ document.getElementById("patientnameerror").innerHTML="";
               </tr>
               <tr>
               <td height="20" width="120"><span class="err"></span>Address:</td>
-              <td><textarea rows="" cols="" name="address" style="width: 162px; height: 62px" ></textarea>
+              <td><textarea rows="" cols="" name="address" class="input_txtarea" style="width: 162px; height: 62px" ></textarea>
             </td></tr>
              
              <tr>

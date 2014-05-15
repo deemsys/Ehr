@@ -259,7 +259,7 @@ $("#claimnumber").keyup(function() {
 	document.getElementById("claimnumbererror").innerHTML="";
 	if(isNaN(document.getElementById("claimnumber").value))
 {
-document.getElementById("claimnumbererror").innerHTML="Enter Only Numbers";
+document.getElementById("claimnumbererror").innerHTML="Invalid character.please enter numbers only.";
 return false;
 }
 	
@@ -309,33 +309,33 @@ return false;
           <table cellpadding="0" cellspacing="0" border="0" width="70%" align="center">
           <tr height="30">
           <td><span class="err">*</span>Patients Attorney or Insurance Adjuster: </td>
-          <td><input type="text" name="patient" size="40" id="patient"><span class="err" id="patienterror"  style="color: red;font-style:italic;" ><form:errors path="Copyofrequest.patient"></form:errors></span></td>
+          <td><input type="text"  class="input_txtbx1" name="patient" size="40" id="patient"><span class="err" id="patienterror"  style="color: red;font-style:italic;" ><form:errors path="Copyofrequest.patient"></form:errors></span></td>
           </tr>   
           <tr height="30">
           <td><span class="err"></span>Address: </td>
-          <td><textarea rows="4" cols="43" name="address"></textarea><span class="err"><form:errors path="Copyofrequest.address"></form:errors></span></td>
+          <td><textarea rows="4" cols="43"  class="input_txtarea" name="address"></textarea><span class="err"><form:errors path="Copyofrequest.address"></form:errors></span></td>
           </tr>
           <tr height="30">
           <td>Regarding: </td>
-          <td><input type="text" name="regarding" size="40"></td>
+          <td><input type="text"  class="input_txtbx1" name="regarding" size="40"></td>
           </tr>
           <tr height="30">
           <td><span class="err">*</span>Date of Accident: </td>
-          <td><input type="text" name="dateofaccident" id="datepicker" size="40"><span class="err" id="datepickererror"  style="color: red;font-style:italic;"><form:errors path="Copyofrequest.dateofaccident"></form:errors></span></td>
+          <td><input type="text" class="input_txtbx1" name="dateofaccident" id="datepicker" size="40"><span class="err" id="datepickererror"  style="color: red;font-style:italic;"><form:errors path="Copyofrequest.dateofaccident"></form:errors></span></td>
           </tr>
           <tr height="30">
           <td><span class="err">*</span>Claim Number: </td>
-          <td><input type="text" name="claimnumber"  size="40" id="claimnumber"><span class="err" id="claimnumbererror"  style="color: red;font-style:italic;"><form:errors path="Copyofrequest.claimnumber"></form:errors></span></td>
+          <td><input type="text" class="input_txtbx1" name="claimnumber"  size="40" id="claimnumber"><span class="err" id="claimnumbererror"  style="color: red;font-style:italic;"><form:errors path="Copyofrequest.claimnumber"></form:errors></span></td>
           </tr>
           <tr height="30">
           <td>Today's Date:  </td>
-          <td><input type="text" name="todaydate" id="datepicker1" size="40"></td>
+          <td><input type="text"  class="input_txtbx1" name="todaydate" id="datepicker1" size="40"></td>
           </tr>
           </table>
           <table width="85">
           <tr height="30">
           <td width="40">Dear  </td>
-          <td><span class="err">*</span><input type="text" name="dear"  size="40" id="dear"><span class="err" id="dearerror"><form:errors path="Copyofrequest.dear"></form:errors></span></td>
+          <td><span class="err">*</span><input type="text"  class="input_txtbx1" name="dear"  size="40" id="dear"><span class="err" id="dearerror"><form:errors path="Copyofrequest.dear"></form:errors></span></td>
           </tr>
           </table>
           <br/>
@@ -356,7 +356,7 @@ return false;
           </div>
           <div align="right">
           <p><B style="font-size:13px">Very truly yours,</B></p>
-          <p><span class="err">*</span><input type="text" name="sign" size="30" id="sign"><span class="err" id="signerror"><form:errors path="Copyofrequest.sign"></form:errors></span></p>
+          <p><span class="err">*</span><input type="text" class="input_txtbx1" name="sign" size="30" id="sign"><span class="err" id="signerror"><form:errors path="Copyofrequest.sign"></form:errors></span></p>
           <p>Perry Chiropractic and Therapy Center of Canton, Inc.</p>
           <p>Dr. Charles T. Yang DC, DABFP</p>
           </div>

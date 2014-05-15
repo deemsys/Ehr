@@ -318,10 +318,11 @@ function openWindow(h, w, url) {
               <td ><input type="text" class="input_txtbx1" name="insurance" id="insurance"/><span class="err" id="insuranceerror"><form:errors path="Formbill.insurance"></form:errors></span></td>
               </tr>
               </table>
+              <br>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err"></span>Address:</td>
-              <td ><textarea rows="3" cols="28" name="address1" id="address1"/></textarea><span class="err"><form:errors path="Formbill.address1"></form:errors></span></td>
+              <td ><textarea rows="3" cols="28"  name="address1" class="input_txtarea" id="address1"/></textarea><span class="err"><form:errors path="Formbill.address1"></form:errors></span></td>
              </tr>
               </table>
              
@@ -334,7 +335,7 @@ function openWindow(h, w, url) {
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err"></span>Address:</td>
-              <td ><textarea rows="3" cols="28"  name="address3" id="address3"/></textarea><span class="err"><form:errors path="Formbill.address3"></form:errors></span></td>
+              <td ><textarea rows="3" cols="28" class= "input_txtarea" name="address3" id="address3"/></textarea><span class="err"><form:errors path="Formbill.address3"></form:errors></span></td>
              </tr>
               </table>
               
@@ -347,7 +348,7 @@ function openWindow(h, w, url) {
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err"></span>Address:</td>
-              <td ><textarea rows="3" cols="28"  name="address5" id="address5"/></textarea><span class="err"><form:errors path="Formbill.address5"></form:errors></span></td>
+              <td ><textarea rows="3" cols="28"   class="input_txtarea" name="address5" id="address5"/></textarea><span class="err"><form:errors path="Formbill.address5"></form:errors></span></td>
              </tr>
               </table>
               
