@@ -373,7 +373,7 @@ var $sid = xx+1;
 	}
 </script>
  -->
-<script>
+<!-- <script>
   $(function() {
 	  $("#datepicker3").datepicker({changeMonth: true,changeYear: true,showOn: "button",
 			buttonImage: "resources/images/calendar.gif",
@@ -416,7 +416,7 @@ var $sid = xx+1;
 	    // move the nav to the bottom
 	    $( ".tabs-bottom .ui-tabs-nav" ).appendTo( ".tabs-bottom" );
 	  });
-	  </script>
+	  </script> -->
 	  <script type="text/javascript">
 	  function newpopup() {
 	var val=document.getElementById("symptom");
@@ -913,13 +913,13 @@ var $sid = xx+1;
 	 		return false;
 	 		
 	 }
-	document.getElementById("listerror").innerHTML="";
+	/* document.getElementById("listerror").innerHTML="";
 	if(document.getElementById("list").value=="")
 	{
 	document.getElementById("listerror").innerHTML="Required Field Should not be Empty";
 	
 	return false;
-	}
+	} */
 	document.getElementById("Femaleerror").innerHTML=""; 
 	if( ( document.getElementById("yes9").checked == false ) && ( document.getElementById("No9").checked == false ) )
 
@@ -946,6 +946,26 @@ var $sid = xx+1;
 	}
 
 	</script>
+	<script>
+  $(function() {
+	    $( "#datepicker" ).datepicker();
+	  });
+  $(function() {
+	    $( "#datepicker1" ).datepicker();
+	  });
+  $(function() {
+	    $( "#datepicker2" ).datepicker();
+	  });
+  $(function() {
+	    $( "#datepicker5" ).datepicker();
+	  });
+  $(function() {
+	    $( "#datepicker6" ).datepicker();
+	  });
+  $(function() {
+	    $( "#datepicker3" ).datepicker();
+	  });
+  </script>
 	</head>
 	<body>
 	 

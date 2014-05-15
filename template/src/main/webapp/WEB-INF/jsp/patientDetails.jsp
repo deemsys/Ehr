@@ -570,10 +570,21 @@ document.getElementById("homephone").value=phone;
 
 });
 </script>
- <script>
+<script>
 i=0;
 $(document).ready(function(){
-  $("phyphone").keypress(function(){
+  $("#Phone_friend").keypress(function(){
+var phone=document.getElementById("Phone_friend").value;
+phone = phone.replace(/(\d{3})(\d{3})(\d+)/, '($1)$2-$3');
+document.getElementById("Phone_friend").value=phone;
+ });  
+
+});
+</script>
+<script>
+i=0;
+$(document).ready(function(){
+  $("#phyphone").keypress(function(){
 var phone=document.getElementById("phyphone").value;
 phone = phone.replace(/(\d{3})(\d{3})(\d+)/, '($1)$2-$3');
 document.getElementById("phyphone").value=phone;
@@ -581,6 +592,32 @@ document.getElementById("phyphone").value=phone;
 
 });
 </script>
+
+<script>
+i=0;
+$(document).ready(function(){
+  $("#Insurance_phone").keypress(function(){
+var phone=document.getElementById("Insurance_phone").value;
+phone = phone.replace(/(\d{3})(\d{3})(\d+)/, '($1)$2-$3');
+document.getElementById("Insurance_phone").value=phone;
+ });  
+
+});
+</script>
+
+ <script>
+i=0;
+$(document).ready(function(){
+  $("#Phone_auto").keypress(function(){
+var phone=document.getElementById("Phone_auto").value;
+phone = phone.replace(/(\d{3})(\d{3})(\d+)/, '($1)$2-$3');
+document.getElementById("Phone_auto").value=phone;
+ });  
+
+});
+</script>
+
+ 
 <script>
 i=0;
 $(document).ready(function(){
@@ -1105,13 +1142,13 @@ document.getElementById("inp_id").value=phone;
 	 		return false;
 	 		
 	 }
-	document.getElementById("listerror").innerHTML="";
+	/* document.getElementById("listerror").innerHTML="";
 	if(document.getElementById("list").value=="")
 	{
 	document.getElementById("listerror").innerHTML="Required Field Should not be Empty";
 	
 	return false;
-	}
+	} */
 	document.getElementById("Femaleerror").innerHTML=""; 
 	if( ( document.getElementById("yes9").checked == false ) && ( document.getElementById("No9").checked == false ) )
 
@@ -1551,7 +1588,7 @@ function check(id)
                                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>ZipCode:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="zipcode1" name="ZipCode" /><br><span  id="zipcode1error" style="color: red;font-style:italic;"><form:errors path="PatientDetails.zipCode"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="zipcode1" name="ZipCode" maxlength="5" /><br><span  id="zipcode1error" style="color: red;font-style:italic;"><form:errors path="PatientDetails.zipCode"></form:errors></span>
 	
 	<span class="err" ></span>            
 				                  </td>
@@ -2172,9 +2209,9 @@ function check(id)
 				  <td valign="top" align="left" class="input_txt">
 				  <div id="send_to">
 				  <input type="radio" name="Hazardous" value="yes" class="input_txt"  onclick="toggle2('show2')">Yes&nbsp;&nbsp;&nbsp;
-				  <label>If yes,Please List: </label><input type="text" id="list" name="Hazardousyes"  /><br/><br/>
-    </div><span id="listerror" style="color: red;font-style:italic;"></span><input type="radio" name="Hazardous" value="No" class="input_txt"onclick="toggle2('hide2')">No
-			      
+				 
+    </div><!-- <span id="listerror" style="color: red;font-style:italic;"></span> --><input type="radio" name="Hazardous" value="No" class="input_txt"onclick="toggle2('hide2')">No
+			       <label>If yes,Please List: </label><input type="text" id="list" name="Hazardousyes"  />
 			      </div>
 			      </td>
 				  </tr>
@@ -2808,8 +2845,8 @@ function check(id)
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Do You Work Around Hazardous Substances:  </td>
 				  <td valign="top" align="left" class="input_txt">
 				  <div id="send_to">
-				  <input type="radio" name="Hazardous" value="yes" class="input_txt" >Yes&nbsp;&nbsp;&nbsp;<div id="send_to_one"><label>If yes,Please List: </label><input type="text" id="list" name="Hazardousyes" /><br/><br/>
-    </div><input type="radio" name="Hazardous" value="No" class="input_txt">No
+				  <input type="radio" name="Hazardous" value="yes" class="input_txt" >Yes&nbsp;&nbsp;&nbsp;<div id="send_to_one">
+    </div><input type="radio" name="Hazardous" value="No" class="input_txt">No <label>If yes,Please List: </label><input type="text" id="list" name="Hazardousyes" />
 			      
 			      </div>
 			      </td>
