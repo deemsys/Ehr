@@ -44,7 +44,7 @@ public class WorkschoolDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 
-	    	 String cmd="INSERT INTO `tbl_workschool` (username,`date`,`letter`,`beexcused`,`excused`,`beconfined`,`confined`,`lifting`,`lift`,`pushing`,`push`,`drive`,`sitting`,`sit`,`standing`,`stand`,`bend`,`entry`,`light`,`froms`,`tos`,`returns`,`returndate`,`diagnosis`) VALUES ('"+username+"','"+workschooldetails.getDate()+"','"+workschooldetails.getLetter()+"','"+workschooldetails.getBeexcused()+"','"+workschooldetails.getExcused()+"','"+workschooldetails.getBeconfined()+"','"+workschooldetails.getConfined()+"','"+workschooldetails.getLifting()+"','"+workschooldetails.getLift()+"','"+workschooldetails.getPushing()+"','"+workschooldetails.getPush()+"','"+workschooldetails.getDrive()+"','"+workschooldetails.getSitting()+"','"+workschooldetails.getSit()+"','"+workschooldetails.getStanding()+"','"+workschooldetails.getStand()+"','"+workschooldetails.getBend()+"','"+workschooldetails.getEntry()+"','"+workschooldetails.getLight()+"','"+workschooldetails.getFroms()+"','"+workschooldetails.getTos()+"','"+workschooldetails.getReturns()+"','"+workschooldetails.getReturndate()+"','"+workschooldetails.getDiagnosis()+"')";
+	    	 String cmd="INSERT INTO `tbl_workschool` (username,`date`,`letter`,`beexcused`,`excused`,`beconfined`,`confined`,`lifting`,`lift`,`pushing`,`push`,`drive`,`sitting`,`sit`,`standing`,`stand`,`bend`,`entry`,`light`,`froms`,`tos`,`returns`,`regular`,`returndate`,`diagnosis`) VALUES ('"+username+"','"+workschooldetails.getDate()+"','"+workschooldetails.getLetter()+"','"+workschooldetails.getBeexcused()+"','"+workschooldetails.getExcused()+"','"+workschooldetails.getBeconfined()+"','"+workschooldetails.getConfined()+"','"+workschooldetails.getLifting()+"','"+workschooldetails.getLift()+"','"+workschooldetails.getPushing()+"','"+workschooldetails.getPush()+"','"+workschooldetails.getDrive()+"','"+workschooldetails.getSitting()+"','"+workschooldetails.getSit()+"','"+workschooldetails.getStanding()+"','"+workschooldetails.getStand()+"','"+workschooldetails.getBend()+"','"+workschooldetails.getEntry()+"','"+workschooldetails.getLight()+"','"+workschooldetails.getFroms()+"','"+workschooldetails.getTos()+"','"+workschooldetails.getReturns()+"','"+workschooldetails.getRegular()+"','"+workschooldetails.getReturndate()+"','"+workschooldetails.getDiagnosis()+"')";
 	    	 System.out.println(cmd);
 	    	 statement.execute(cmd);
 			flag=1;
@@ -82,6 +82,7 @@ public class WorkschoolDAO {
 			while(resultSet.next()){
 				workschool.add(new Workschool
 						(resultSet.getString("workid"),
+								resultSet.getString("username"),
 								resultSet.getString("date"),
 						resultSet.getString("letter"),
 						resultSet.getString("beexcused"),
@@ -101,8 +102,9 @@ public class WorkschoolDAO {
 						resultSet.getString("entry"),
 			    		resultSet.getString("light"),
 			    		resultSet.getString("froms"),
-								resultSet.getString("tos"),
+						resultSet.getString("tos"),
 						resultSet.getString("returns"),
+					    resultSet.getString("regular"),
 						resultSet.getString("returndate"),
 						resultSet.getString("diagnosis")
 			    		
@@ -142,6 +144,7 @@ public class WorkschoolDAO {
 			while(resultSet.next()){
 				workschool.add(new Workschool
 						(resultSet.getString("workid"),
+								resultSet.getString("username"),
 								resultSet.getString("date"),
 						resultSet.getString("letter"),
 						resultSet.getString("beexcused"),
@@ -163,6 +166,7 @@ public class WorkschoolDAO {
 			    		resultSet.getString("froms"),
 								resultSet.getString("tos"),
 						resultSet.getString("returns"),
+						resultSet.getString("regular"),
 						resultSet.getString("returndate"),
 						resultSet.getString("diagnosis")
 			    		
@@ -202,6 +206,7 @@ public class WorkschoolDAO {
 			while(resultSet.next()){
 				workschool.add(new Workschool
 						(resultSet.getString("workid"),
+								resultSet.getString("username"),
 								resultSet.getString("date"),
 						resultSet.getString("letter"),
 						resultSet.getString("beexcused"),
@@ -223,6 +228,7 @@ public class WorkschoolDAO {
 			    		resultSet.getString("froms"),
 								resultSet.getString("tos"),
 						resultSet.getString("returns"),
+						resultSet.getString("regular"),
 						resultSet.getString("returndate"),
 						resultSet.getString("diagnosis")
 			    		
@@ -262,7 +268,7 @@ public class WorkschoolDAO {
 		}
 	    try{
 	    	
-	    	 String cmd="UPDATE tbl_workschool SET date='"+workschooldetails.getDate()+"',letter='"+workschooldetails.getLetter()+"',beexcused='"+workschooldetails.getBeexcused() +"',excused='"+ workschooldetails.getExcused()+"',beconfined='"+ workschooldetails.getBeconfined()+"',confined='"+ workschooldetails.getConfined()+"',lifting='"+ workschooldetails.getLifting()+"',lift='"+ workschooldetails.getLift()+"',pushing='"+ workschooldetails.getPushing()+"', push='"+ workschooldetails.getPush()+"',drive='"+ workschooldetails.getDrive()+"',sitting='"+ workschooldetails.getSitting()+"',sit='"+ workschooldetails.getSit()+"',standing='"+ workschooldetails.getStanding()+"',stand='"+ workschooldetails.getStand()+"',bend='"+ workschooldetails.getBend()+"',entry='"+ workschooldetails.getEntry()+"',light='"+ workschooldetails.getLight()+"',froms='"+ workschooldetails.getFroms()+"',tos='"+ workschooldetails.getTos()+"',returns='"+ workschooldetails.getReturns()+"',returndate='"+ workschooldetails.getReturndate()+"',diagnosis='"+ workschooldetails.getDiagnosis()+"' where workid='"+workid+"'";
+	    	 String cmd="UPDATE tbl_workschool SET date='"+workschooldetails.getDate()+"',letter='"+workschooldetails.getLetter()+"',beexcused='"+workschooldetails.getBeexcused() +"',excused='"+ workschooldetails.getExcused()+"',beconfined='"+ workschooldetails.getBeconfined()+"',confined='"+ workschooldetails.getConfined()+"',lifting='"+ workschooldetails.getLifting()+"',lift='"+ workschooldetails.getLift()+"',pushing='"+ workschooldetails.getPushing()+"', push='"+ workschooldetails.getPush()+"',drive='"+ workschooldetails.getDrive()+"',sitting='"+ workschooldetails.getSitting()+"',sit='"+ workschooldetails.getSit()+"',standing='"+ workschooldetails.getStanding()+"',stand='"+ workschooldetails.getStand()+"',bend='"+ workschooldetails.getBend()+"',entry='"+ workschooldetails.getEntry()+"',light='"+ workschooldetails.getLight()+"',froms='"+ workschooldetails.getFroms()+"',tos='"+ workschooldetails.getTos()+"',returns='"+ workschooldetails.getReturns()+"',regular='"+ workschooldetails.getRegular()+"',returndate='"+ workschooldetails.getReturndate()+"',diagnosis='"+ workschooldetails.getDiagnosis()+"' where workid='"+workid+"'";
 	   	   
 	    statement.execute(cmd);
 	    System.out.println("cmd insert value"+cmd);

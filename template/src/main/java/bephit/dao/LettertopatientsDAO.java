@@ -45,7 +45,7 @@ public class LettertopatientsDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 
-	    	 String cmd="INSERT INTO tbl_lettertopatient (username,re,ssn,claim,doi,adjuster,date1,date2,letter,sign) VALUES ('"+username+"','"+lettertopatientsdetails.getRe()+"','"+lettertopatientsdetails.getSsn()+"','"+lettertopatientsdetails.getClaim()+"','"+lettertopatientsdetails.getDoi()+"','"+lettertopatientsdetails.getAdjuster()+"','"+lettertopatientsdetails.getDate1()+"','"+lettertopatientsdetails.getDate2()+"','"+lettertopatientsdetails.getLetter()+"','"+lettertopatientsdetails.getSign()+"')";
+	    	 String cmd="INSERT INTO tbl_lettertopatient (username,re,ssn,claim,doi,adjuster,date,date1,date2,letter) VALUES ('"+username+"','"+lettertopatientsdetails.getRe()+"','"+lettertopatientsdetails.getSsn()+"','"+lettertopatientsdetails.getClaim()+"','"+lettertopatientsdetails.getDoi()+"','"+lettertopatientsdetails.getAdjuster()+"','"+lettertopatientsdetails.getDate()+"','"+lettertopatientsdetails.getDate1()+"','"+lettertopatientsdetails.getDate2()+"','"+lettertopatientsdetails.getLetter()+"')";
 	    	    System.out.println("cmd insert value"+cmd);
 	    	    statement.executeUpdate(cmd);
 	    	    }
@@ -82,15 +82,17 @@ public class LettertopatientsDAO {
 			while(resultSet.next()){
 				lettertopatients.add(new Lettertopatients
 						(resultSet.getString("letterid"),
+						resultSet.getString("username"),		
 						resultSet.getString("re"),
 						resultSet.getString("ssn"),
 						resultSet.getString("claim"),
 						resultSet.getString("doi"),
 						resultSet.getString("adjuster"),
+						resultSet.getString("date"),
 						resultSet.getString("date1"),
 						resultSet.getString("date2"),
-						resultSet.getString("letter"),
-						resultSet.getString("sign")
+						resultSet.getString("letter")
+						
 			    		 ));
 			
 			    	
@@ -124,15 +126,17 @@ public class LettertopatientsDAO {
 			while(resultSet.next()){
 				lettertopatients.add(new Lettertopatients
 						(resultSet.getString("letterid"),
+								resultSet.getString("username"),
 								resultSet.getString("re"),
 								resultSet.getString("ssn"),
 								resultSet.getString("claim"),
 								resultSet.getString("doi"),
 								resultSet.getString("adjuster"),
+								resultSet.getString("date"),
 								resultSet.getString("date1"),
 								resultSet.getString("date2"),
-								resultSet.getString("letter"),
-								resultSet.getString("sign")
+								resultSet.getString("letter")
+								
 					    		 ));
 					
 			    	
@@ -166,15 +170,17 @@ public class LettertopatientsDAO {
 			while(resultSet.next()){
 				lettertopatients.add(new Lettertopatients
 						(resultSet.getString("letterid"),
+								resultSet.getString("username"),
 								resultSet.getString("re"),
 								resultSet.getString("ssn"),
 								resultSet.getString("claim"),
 								resultSet.getString("doi"),
 								resultSet.getString("adjuster"),
+								resultSet.getString("date"),
 								resultSet.getString("date1"),
 								resultSet.getString("date2"),
-								resultSet.getString("letter"),
-								resultSet.getString("sign")
+								resultSet.getString("letter")
+								
 					    		 ));
 					
 			//	System.out.println("Name::::::::::::::::::"+faxcover.get(0).getName());
@@ -214,10 +220,11 @@ public class LettertopatientsDAO {
 	    			    +"',claim='"+lettertopatientsdetails.getClaim()
 	    			    +"',doi='"+ lettertopatientsdetails.getDoi()
 	    			    +"',adjuster='"+ lettertopatientsdetails.getAdjuster()
+	    			    +"',date='"+ lettertopatientsdetails.getDate()
 	    			    +"',date1='"+ lettertopatientsdetails.getDate1()
 	    			    +"',date2='"+ lettertopatientsdetails.getDate2()
 	    			    +"',letter='"+ lettertopatientsdetails.getLetter()
-	    			    +"',sign='"+ lettertopatientsdetails.getSign()+"' where letterid='"+letterid+"'";			
+	    			    +"' where letterid='"+letterid+"'";			
 
 	    
 	   System.out.println("cmd insert value"+cmd);

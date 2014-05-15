@@ -45,7 +45,7 @@ public class NoticeassignmentDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 
-	    	 String cmd="INSERT INTO tbl_noticeassignment (username,nameofins,nameofattorney,address1,address2,regarding,patientname,dateofaccident,todaysdate,letter,letter1,treatingphysician) VALUES ('"+username+"','"+noticeassignmentdetails.getNameofins()+"','"+noticeassignmentdetails.getNameofattorney()+"','"+noticeassignmentdetails.getAddress1()+"','"+noticeassignmentdetails.getAddress2()+"','"+noticeassignmentdetails.getRegarding()+"','"+noticeassignmentdetails.getPatientname()+"','"+noticeassignmentdetails.getDateofaccident()+"','"+noticeassignmentdetails.getTodaysdate()+"','"+noticeassignmentdetails.getLetter()+"','"+noticeassignmentdetails.getLetter1()+"','"+noticeassignmentdetails.getTreatingphysician()+"')";
+	    	 String cmd="INSERT INTO tbl_noticeassignment (username,nameofins,nameofattorney,address1,address2,regarding,patientname,dateofaccident,todaysdate,letter,letter1) VALUES ('"+username+"','"+noticeassignmentdetails.getNameofins()+"','"+noticeassignmentdetails.getNameofattorney()+"','"+noticeassignmentdetails.getAddress1()+"','"+noticeassignmentdetails.getAddress2()+"','"+noticeassignmentdetails.getRegarding()+"','"+noticeassignmentdetails.getPatientname()+"','"+noticeassignmentdetails.getDateofaccident()+"','"+noticeassignmentdetails.getTodaysdate()+"','"+noticeassignmentdetails.getLetter()+"','"+noticeassignmentdetails.getLetter1()+"')";
 	    	    System.out.println("cmd insert value"+cmd);
 	    	    statement.executeUpdate(cmd);
 	    	    }
@@ -84,6 +84,7 @@ public class NoticeassignmentDAO {
 			while(resultSet.next()){
 				noticeassignment.add(new Noticeassignment
 						(resultSet.getString("noticeid"),
+								resultSet.getString("username"),
 								resultSet.getString("nameofins"),
 								resultSet.getString("nameofattorney"),
 								resultSet.getString("address1"),
@@ -94,8 +95,8 @@ public class NoticeassignmentDAO {
 								resultSet.getString("dateofaccident"),
 								resultSet.getString("todaysdate"),
 								resultSet.getString("letter"),
-								resultSet.getString("letter1"),
-								resultSet.getString("treatingphysician")
+								resultSet.getString("letter1")
+								
 			    		
 						
 			    		 ));
@@ -134,6 +135,7 @@ public class NoticeassignmentDAO {
 			while(resultSet.next()){
 				noticeassignment.add(new Noticeassignment
 						(resultSet.getString("noticeid"),
+								resultSet.getString("username"),
 								resultSet.getString("nameofins"),
 								resultSet.getString("nameofattorney"),
 								resultSet.getString("address1"),
@@ -144,8 +146,8 @@ public class NoticeassignmentDAO {
 								resultSet.getString("dateofaccident"),
 								resultSet.getString("todaysdate"),
 								resultSet.getString("letter"),
-								resultSet.getString("letter1"),
-								resultSet.getString("treatingphysician")
+								resultSet.getString("letter1")
+								
 			    		
 						
 			    		 ));
@@ -244,7 +246,7 @@ public class NoticeassignmentDAO {
    +"', todaysdate='"+ noticeassignmentdetails.getTodaysdate()
    +"', letter='"+ noticeassignmentdetails.getLetter()
    +"', letter1='"+ noticeassignmentdetails.getLetter1()
-   +"', treatingphysician='"+ noticeassignmentdetails.getTreatingphysician()+"'where noticeid='"+noticeid+"'";
+   +"'where noticeid='"+noticeid+"'";
    System.out.println("cmd insert value"+cmd);
     statement.executeUpdate(cmd);
 	    }
