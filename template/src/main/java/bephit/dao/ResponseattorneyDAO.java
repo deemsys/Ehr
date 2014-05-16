@@ -45,7 +45,7 @@ public class ResponseattorneyDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 
-	    	 String cmd="INSERT INTO `tbl_responseattorney` (username,`name`,`address`,`regarding`,`patientname`,`dateofaccident`,`nameofclinic`,`treatingphysician`) VALUES ('"+username+"','"+responseattorneydetails.getName()+"','"+responseattorneydetails.getAddress()+"','"+responseattorneydetails.getRegarding()+"','"+responseattorneydetails.getPatientname()+"','"+responseattorneydetails.getDateofaccident()+"','"+responseattorneydetails.getNameofclinic()+"','"+responseattorneydetails.getTreatingphysician()+"')";
+	    	 String cmd="INSERT INTO `tbl_responseattorney` (username,`name`,`address`,`regarding`,`patientname`,`dateofaccident`,`dearname`,`nameofclinic`,`treatingphysician`) VALUES ('"+username+"','"+responseattorneydetails.getName()+"','"+responseattorneydetails.getAddress()+"','"+responseattorneydetails.getRegarding()+"','"+responseattorneydetails.getPatientname()+"','"+responseattorneydetails.getDateofaccident()+"','"+responseattorneydetails.getDearname()+"','"+responseattorneydetails.getNameofclinic()+"','"+responseattorneydetails.getTreatingphysician()+"')";
 	    	 System.out.println(cmd);
 	    	 statement.execute(cmd);
 			flag=1;
@@ -89,6 +89,7 @@ public class ResponseattorneyDAO {
 			    		resultSet.getString("regarding"),
 			    		resultSet.getString("patientname"),
 			    		resultSet.getString("dateofaccident"),
+			    		resultSet.getString("dearname"),
 			    		resultSet.getString("nameofclinic"),
 			    		resultSet.getString("treatingphysician")
 			    		 ));
@@ -130,6 +131,7 @@ public class ResponseattorneyDAO {
 			    		resultSet.getString("regarding"),
 			    		resultSet.getString("patientname"),
 			    		resultSet.getString("dateofaccident"),
+			    		resultSet.getString("dearname"),
 			    		resultSet.getString("nameofclinic"),
 			    		resultSet.getString("treatingphysician")
 			    		 ));
@@ -171,6 +173,7 @@ public class ResponseattorneyDAO {
 			    		resultSet.getString("regarding"),
 			    		resultSet.getString("patientname"),
 			    		resultSet.getString("dateofaccident"),
+			    		resultSet.getString("dearname"),
 			    		resultSet.getString("nameofclinic"),
 			    		resultSet.getString("treatingphysician")
 			    		 ));
@@ -214,6 +217,7 @@ public class ResponseattorneyDAO {
 	    +"',regarding='"+responseattorneydetail.getRegarding()
 	    +"',patientname='"+responseattorneydetail.getPatientname()	
 	    +"',dateofaccident='"+responseattorneydetail.getDateofaccident()
+	    +"',dearname='"+responseattorneydetail.getDearname()
 	    +"',nameofclinic='"+ responseattorneydetail.getNameofclinic()
 	    +"',treatingphysician='"+ responseattorneydetail.getTreatingphysician()+"' where responseid='"+responseid+"'";
 	   System.out.println("cmd insert value"+cmd);
