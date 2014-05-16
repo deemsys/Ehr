@@ -1563,10 +1563,11 @@ var $sid = xx+1;
 				  				 <td valign="top" align="left" class="input_txt">
 				 
 										  <input type="radio" name="hazardous" value="yes" class="input_txt" id="hazardouscheck" onclick="Hazardous();"<c:if test="${patientDetails.hazardous=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
-				 						  <label>If yes,Please List:</label>
-				 						  <input type="text" class="input_txtbx1"   value="${patientDetails.hazardousyes}" name="hazardousyes" id="hazardousyes1" style='display:none'/></br><span class="err"><form:errors path="PatientDetails.Hazardousyes"></form:errors></span>
+				 						 
 										
 										  <input type="radio" name="hazardous" value="No" class="input_txt"  onclick="Hazardous();"<c:if test="${patientDetails.hazardous=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;&nbsp;
+			    				  <label>If yes,Please List:</label>
+				 						  <input type="text" class="input_txtbx1"   value="${patientDetails.hazardousyes}" name="hazardousyes" id="hazardousyes1" style='display:none'/></br><span class="err"><form:errors path="PatientDetails.Hazardousyes"></form:errors></span>
 			    				 </td>
 					  </tr>
 					   <tr class="row1">

@@ -2098,7 +2098,11 @@ if(result.hasErrors())
 	public String removedelete(ModelMap model, Principal principal) {	
 		if(patientDAO.getUsername(principal).size()>0)
 		{			
-	   model.addAttribute("patientno","0");
+
+String name="";			
+			name=patientDAO.getUsername(principal).get(0).getName();
+			model.addAttribute("name",name);
+		   model.addAttribute("patientno","0");
 	}
 		String username=principal.getName();
 		int status=footDAO.deletefootdetails(username);

@@ -2560,6 +2560,10 @@ MedicalRecordsForm medicalrecordForm = new MedicalRecordsForm();
 		 model.addAttribute("menu", "authorization");
 		if(patientDAO.getUsername(principal).size()>0)
 			{			
+
+String name="";			
+			name=patientDAO.getUsername(principal).get(0).getName();
+			model.addAttribute("name",name);
 		   model.addAttribute("patientno","0");
 		}
 		int status=medicalDAO.deletemedicalrecords(principal);
@@ -2834,7 +2838,11 @@ ScreeningAuthzForm screeningauthzForm = new ScreeningAuthzForm();
 	
 		if(patientDAO.getUsername(principal).size()>0)
 		{			
-	   model.addAttribute("patientno","0");
+
+String name="";			
+			name=patientDAO.getUsername(principal).get(0).getName();
+			model.addAttribute("name",name);
+		   model.addAttribute("patientno","0");
 	}
 		int status=screenDAO.deletescreeningauthz(screen_no);
 		model.addAttribute("menu", "authorization");
@@ -3059,7 +3067,11 @@ ScreeningAuthzForm screeningauthzForm = new ScreeningAuthzForm();
 	public String removeassignmentdetails(@RequestParam("assignment_no") String assignment_no,ModelMap model, Principal principal) {
 		if(patientDAO.getUsername(principal).size()>0)
 		{			
-	   model.addAttribute("patientno","0");
+
+String name="";			
+			name=patientDAO.getUsername(principal).get(0).getName();
+			model.addAttribute("name",name);
+		   model.addAttribute("patientno","0");
 	}
 		int status=assignmentDAO.deleteassignment(assignment_no);
 		
@@ -3291,8 +3303,13 @@ ScreeningAuthzForm screeningauthzForm = new ScreeningAuthzForm();
 	public String removehippa(HttpSession session,ModelMap model, Principal principal) {	
 		session.removeAttribute("hippa");
 		if(patientDAO.getUsername(principal).size()>0)
-		{			
-	   model.addAttribute("patientno","0");
+		{	
+			
+
+String name="";			
+			name=patientDAO.getUsername(principal).get(0).getName();
+			model.addAttribute("name",name);
+		   model.addAttribute("patientno","0");
 	}	
 	hippaDAO.deletehippa(principal);		
 
@@ -4346,8 +4363,12 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 	public String removeInsuranceplan(ModelMap model, Principal principal) {
 	
 		if(patientDAO.getUsername(principal).size()>0)
-		{			
-	   model.addAttribute("patientno","0");
+		{		
+			String name="";			
+			name=patientDAO.getUsername(principal).get(0).getName();
+			model.addAttribute("name",name);
+		   model.addAttribute("patientno","0");
+	  
 	}
 		int status=planDAO.deleteinsuranceplan(principal);
 		
@@ -4572,7 +4593,10 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 		model.addAttribute("menu", "consent");
 		if(patientDAO.getUsername(principal).size()>0)
 		{			
-	   model.addAttribute("patientno","0");
+			String name="";			
+			name=patientDAO.getUsername(principal).get(0).getName();
+			model.addAttribute("name",name);
+		   model.addAttribute("patientno","0");
 	}
 		int status=treatDAO.deletetreatform(principal);
 		
@@ -4753,8 +4777,12 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 	public String deletetreatminor(ModelMap model, Principal principal) {
 	
 		if(patientDAO.getUsername(principal).size()>0)
-		{			
-	   model.addAttribute("patientno","0");
+		{	
+
+String name="";			
+			name=patientDAO.getUsername(principal).get(0).getName();
+			model.addAttribute("name",name);
+		   model.addAttribute("patientno","0");
 	}
 		int status=minorDAO.deletetreat(principal);	
 		return "treatminor";
@@ -4848,8 +4876,13 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 	public String removehardship(ModelMap model, Principal principal) {
 	
 		if(patientDAO.getUsername(principal).size()>0)
-		{			
-	   model.addAttribute("patientno","0");
+		{
+
+String name="";			
+			name=patientDAO.getUsername(principal).get(0).getName();
+			model.addAttribute("name",name);
+		   model.addAttribute("patientno","0");
+	  
 	}
 		int status=hardDAO.deletehardship(principal);
 		
@@ -4917,7 +4950,10 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 	
 		if(patientDAO.getUsername(principal).size()>0)
 		{			
-	   model.addAttribute("patientno","0");
+			String name="";			
+			name=patientDAO.getUsername(principal).get(0).getName();
+			model.addAttribute("name",name);
+		   model.addAttribute("patientno","0");
 	}
 		int status=infoDAO.deleteinsuranceinformation(principal);
 		

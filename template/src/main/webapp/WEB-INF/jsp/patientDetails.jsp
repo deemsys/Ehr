@@ -2210,7 +2210,7 @@ function check(id)
 				  <div id="send_to">
 				  <input type="radio" name="Hazardous" value="yes" class="input_txt"  onclick="toggle2('show2')">Yes&nbsp;&nbsp;&nbsp;
 				 
-    </div><!-- <span id="listerror" style="color: red;font-style:italic;"></span> --><input type="radio" name="Hazardous" value="No" class="input_txt"onclick="toggle2('hide2')">No
+    <!-- <span id="listerror" style="color: red;font-style:italic;"></span> --><input type="radio" name="Hazardous" value="No" class="input_txt"onclick="toggle2('hide2')">No
 			       <label>If yes,Please List: </label><input type="text" id="list" name="Hazardousyes"  />
 			      </div>
 			      </td>

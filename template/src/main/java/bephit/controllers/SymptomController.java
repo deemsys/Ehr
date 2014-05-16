@@ -219,7 +219,11 @@ public class SymptomController {
 	public String deletesymptom(ModelMap model,Principal principal) {
 		if(patientDAO.getUsername(principal).size()>0)
 		{			
-	   model.addAttribute("patientno","0");
+
+String name="";			
+			name=patientDAO.getUsername(principal).get(0).getName();
+			model.addAttribute("name",name);
+		   model.addAttribute("patientno","0");
 	}
 		String username=principal.getName();
 		symptomdao.deletesymptom(username);
@@ -532,6 +536,10 @@ public class SymptomController {
 
 		if(patientDAO.getUsername(principal).size()>0)
 			{			
+
+String name="";			
+			name=patientDAO.getUsername(principal).get(0).getName();
+			model.addAttribute("name",name);
 		   model.addAttribute("patientno","0");
 		}
 		String username=principal.getName();
