@@ -148,6 +148,7 @@ public class XrayController {
 
 	@RequestMapping(value = "/editpimedpaydetails", method = RequestMethod.GET)
 	public String editpimedpaydetails(@RequestParam("username") String username,HttpSession session, ModelMap model) {
+		model.addAttribute("menu","xray");
 		PimedpayForm pimedpayForm = new PimedpayForm();
 		pimedpayForm.setPimedpaydetails(pimedpayDAO.getusernamepimedpay(username));
 		model.addAttribute("pimedpayform",pimedpayForm);

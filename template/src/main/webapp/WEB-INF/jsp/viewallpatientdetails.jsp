@@ -115,19 +115,19 @@ function doAjaxPost() {
                       <li class="page"><a class="paging_select"><c:out value="${i}"></c:out></a></li>
                      </c:when>
                     <c:otherwise>
-                        <li class="page_unselect"><a href="viewpatient_page?page=${i}"><c:out value="${i}"></c:out></a></li>
+                        <li class="page_unselect"><a href="viewadminpatient_page?page=${i}"><c:out value="${i}"></c:out></a></li>
                     </c:otherwise>
                 </c:choose>
             </c:forEach>         
             <c:if test="${currentpage!=noofpages}">
-              <li class="page_unselect"><a href="viewpatient_page?page=${currentpage+1}">Next</a></li> 
+              <li class="page_unselect"><a href="viewadminpatient_page?page=${currentpage+1}">Next</a></li> 
                  </c:if>
               <c:choose>
               <c:when test="${button=='viewall'}">
-                  <li class="page"><a href="viewallpatient" class="paging_select">ViewAll</a></li>
+                  <li class="page"><a href="viewadminallpatient" class="paging_select">ViewAll</a></li>
              </c:when>
                 <c:otherwise>
-                  <li class="page"><a href="viewpatientdetails" class="paging_select">Back</a></li>
+                  <li class="page"><a href="viewallpatientdetails" class="paging_select">Back</a></li>
               </c:otherwise>
               </c:choose>
 

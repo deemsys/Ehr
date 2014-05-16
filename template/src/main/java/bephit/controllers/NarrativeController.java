@@ -97,7 +97,7 @@ public class NarrativeController
 		model.addAttribute("menu","narrative");
 		session.removeAttribute("narrative");
 	
-		return "viewnarrativereport";
+		return "narrativesearch";
  
 	}
 	@RequestMapping(value="/viewnarrativereport", method = RequestMethod.GET)	
@@ -194,7 +194,7 @@ return "narrativereportlist";
 		model.addAttribute("menu","narrative");
 		model.addAttribute("success", true);
 		session.removeAttribute("narrative");
-		return "viewnarrativereport";
+		return "narrativesearch";
 	}
 	@RequestMapping(value="/deletenarrativereport", method = RequestMethod.GET)
 	public String deletenarrativereport(@RequestParam("narrativeno") String narrativeno,ModelMap model,Narrativereport narrativereport) {	
@@ -202,8 +202,8 @@ return "narrativereportlist";
 	NarrativereportForm narrativereportForm=new NarrativereportForm();
 	narrativereportForm.setNarrativereport(narrativeDAO.viewnarrativereport());
 	model.addAttribute("narrativereportForm",narrativereportForm);
-	
-	return "viewnarrativereport";
+	model.addAttribute("menu","narrative");
+	return "narrativesearch";
 	
 	}
 }

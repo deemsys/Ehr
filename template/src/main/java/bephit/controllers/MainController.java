@@ -931,7 +931,7 @@ public class MainController {
 		
     	int a=autoDAO.setAutoaccident(autoaccident,principal);
 		AutoaccidentForm autoaccidentForm= new AutoaccidentForm();
-		autoaccidentForm.setAutoaccident(autoDAO.getAutoaccident());
+		autoaccidentForm.setAutoaccident(autoDAO.getusernameAuto(principal));
 		model.addAttribute("autoaccidentForm",autoaccidentForm);
 		model.addAttribute("menu", "Accident");
 
@@ -1395,7 +1395,7 @@ public class MainController {
 		model.addAttribute("workaccidentForm",workaccident);
     	int b =workDAO.setWorkaccident(workaccident,principal);
 		WorkaccidentForm workaccidentForm= new WorkaccidentForm();
-		workaccidentForm.setWorkaccident(workDAO.getWorkaccident());
+		workaccidentForm.setWorkaccident(workDAO.getUsernameWorkaccident(principal));
 		model.addAttribute("workaccidentForm",workaccidentForm);
 		model.addAttribute("menu", "Accident");
 		//System.out.println(autoaccident.getAdjustersname());
@@ -1793,7 +1793,7 @@ public class MainController {
 		}
     	int a =planDAO.setInsuranceplan(insuranceplan,principal);
     	InsuranceplanForm insuranceplanForm= new InsuranceplanForm();
-    	insuranceplanForm.setInsuranceplan(planDAO.getInsuranceplan());
+    	insuranceplanForm.setInsuranceplan(planDAO.getInsuranceplanUsername(principal));
 		model.addAttribute("insuranceplanform",insuranceplanForm);
 		model.addAttribute("menu", "health");
         return "insuranceplanlist";
@@ -1846,9 +1846,10 @@ public class MainController {
         String name=principal.getName();
     	int a =hardDAO.setHardshipagreement(Hardshipagreement,name);
     	HardshipagreementForm hardshipagreementForm= new HardshipagreementForm();
-    	hardshipagreementForm.setHardshipagreement(hardDAO.getHardshipagreement());
+    	hardshipagreementForm.setHardshipagreement(hardDAO.getUsernameHardshipagreement(principal));
 		model.addAttribute("hardshipagreementform",hardshipagreementForm);
-		model.addAttribute("menu", "authorization");
+	     model.addAttribute("success","true");
+	       model.addAttribute("menu", "authorization");
 		//System.out.println(autoaccident.getAdjustersname());
 	    
 		
@@ -2387,7 +2388,7 @@ public class MainController {
 		model.addAttribute("MedicalRecordsForm",medicaldetails);
 		int a=medicalDAO.setMedicalDetails(medicaldetails,principal);
         MedicalRecordsForm medicalrecordsform= new MedicalRecordsForm();
-		medicalrecordsform.setMedicalDetails(medicalDAO.getMedicalDetails());
+		medicalrecordsform.setMedicalDetails(medicalDAO.getUsernameMedicalDetails(principal));
 		model.addAttribute("MedicalRecordsForm",medicalrecordsform);
 		model.addAttribute("menu", "authorization");
 		System.out.println("MedicalRecords");
@@ -2651,7 +2652,7 @@ String username=principal.getName();
 		model.addAttribute("ScreeningAuthzForm",screeningdetails);
 		int a=screenDAO.setScreeningDetails(screeningdetails,principal);
         ScreeningAuthzForm screeningauthzform= new ScreeningAuthzForm();
-		screeningauthzform.setScreeningDetails(screenDAO.getScreeningDetails());
+		screeningauthzform.setScreeningDetails(screenDAO.getusernameScreeningdetails(principal));
 		model.addAttribute("ScreeningAuthzForm",screeningauthzform);
 		model.addAttribute("menu", "authorization");
 		System.out.println("Screening");
@@ -2903,7 +2904,7 @@ ScreeningAuthzForm screeningauthzForm = new ScreeningAuthzForm();
 		model.addAttribute("AssignmentDetailsForm",assignmentdetails);
 		int a=assignmentDAO.setAssignmentDetails(assignmentdetails,principal);
          AssignmentDetailsForm assignmentdetailsform= new AssignmentDetailsForm();
-		assignmentdetailsform.setAssignmentDetails(assignmentDAO.getAssignmentDetails());
+		assignmentdetailsform.setAssignmentDetails(assignmentDAO.getUsernameAssignment(principal));
 		model.addAttribute("AssignmentDetailsForm",assignmentdetailsform);
 		model.addAttribute("menu", "authorization");
 		System.out.println("assignment");
@@ -3134,7 +3135,7 @@ ScreeningAuthzForm screeningauthzForm = new ScreeningAuthzForm();
 		model.addAttribute("HippaPrivacyForm",privacydetails);
 		int a=hippaDAO.setPrivacyDetails(privacydetails,principal);
 		HippaPrivacyForm hippaprivacyform= new HippaPrivacyForm();
-		hippaprivacyform.setPrivacyDetails(hippaDAO.getPrivacyDetails());
+		hippaprivacyform.setPrivacyDetails(hippaDAO.getusernameHippa(principal));
 		model.addAttribute("HippaPrivacyForm",hippaprivacyform);
 		model.addAttribute("menu", "authorization");
 		System.out.println("Hippa");
@@ -3373,12 +3374,11 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 			
 		model.addAttribute("TreatMinorDetailsForm",minordetails);
 		int a=minorDAO.setMinorDetails(minordetails,principal);
-         TreatMinorDetailsForm treatminordetailsform= new TreatMinorDetailsForm();
-		treatminordetailsform.setMinorDetails(minorDAO.getMinorDetails());
-		model.addAttribute("TreatMinorDetailsForm",treatminordetailsform);
-		model.addAttribute("menu", "consent");
-		System.out.println("treatminor");
-	    
+		TreatMinorDetailsForm treatminordetailsForm= new TreatMinorDetailsForm();
+		treatminordetailsForm.setMinorDetails(minorDAO.getusernameMinorDetails(principal));
+		model.addAttribute("treatminordetailsform",treatminordetailsForm);
+	   model.addAttribute("success","true");
+	   model.addAttribute("menu", "consent");
 		return "treatminorlist";
  
 	}
@@ -3794,7 +3794,7 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 	@RequestMapping(value="/patientadminDetailsList", method=RequestMethod.GET)
 	public String patientadminDetailsList(Principal principal,HttpServletRequest request,@RequestParam("patient_id") String patient_id,ModelMap model,PatientDetails patient)
 	{
-		
+		model.addAttribute("menu","adminpatient");
 
 		if(patientDAO.getUsername(principal).size()>0)
 			{			

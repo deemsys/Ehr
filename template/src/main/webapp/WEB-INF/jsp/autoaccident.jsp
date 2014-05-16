@@ -130,7 +130,7 @@ $(function() {
 
 	function checkSubmit()
 	{
-	alert("hello");
+	
 	document.getElementById("vehicleerr").innerHTML="";
 		if(isNaN(document.getElementById("vehicle").value))
 		{

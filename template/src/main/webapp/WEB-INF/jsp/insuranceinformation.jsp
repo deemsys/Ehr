@@ -279,7 +279,7 @@ function checkSubmit()
               <br>
               <tr class="row1">
               <td><span class="err">*</span>Patient's Name</td>
-              <td> <input type="text" class="input_txtbx1" name="patientname" id="person" /><br><span id="personerr" style="color: red;font-style:italic;"></span><form:errors path="Insuranceinformation.patient_name"></form:errors></td>
+              <td> <input type="text" class="input_txtbx1" value="${name}" name="patientname" id="person" /><br><span id="personerr" style="color: red;font-style:italic;"></span><form:errors path="Insuranceinformation.patient_name"></form:errors></td>
               <%-- <td> <input type="text" class="input_txtbx1" name="patient_name" id="person" value="${name}" /><br><span id="personerr"><form:errors path="Insuranceinformation.patient_name"></form:errors></td> --%>
 
               </tr>

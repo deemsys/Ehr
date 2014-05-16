@@ -375,7 +375,7 @@ $(function() {
 	       </p>
 	    Your Birth Date  <input type="text"  class="input_txtbx1" id="datepicker1" value="${hipquestionnairedetails.birthdate}" name="birthdate">
 	    <br><br>
-	    Your Social Security Number <input type="text" name="security" id="security" maxlength="11" value="${hipquestionnairedetails.security}" class="input_txtbx1">
+	   <span class="err">*</span> Your Social Security Number <input type="text" name="security" id="security" maxlength="11" value="${hipquestionnairedetails.security}" class="input_txtbx1">
 	    <div id="number">
 	    <br>
 	    <br>
