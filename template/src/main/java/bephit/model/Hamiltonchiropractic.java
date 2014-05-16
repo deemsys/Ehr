@@ -264,16 +264,7 @@ public class Hamiltonchiropractic {
 		super();
 	}	
 
-	public String getChecked() {
-		return checked;
-	}
-	public void setChecked(String checked) {
-		this.checked = checked;
-	}
 
-	public String getInitialexamid() {
-		return initialexamid;
-	}
 
 
 
@@ -291,6 +282,18 @@ public class Hamiltonchiropractic {
 
 	public void setPatient_id(String patient_id) {
 		this.patient_id = patient_id;
+	}
+
+    
+
+	public String getChecked() {
+		return checked;
+	}
+
+
+
+	public void setChecked(String checked) {
+		this.checked = checked;
 	}
 
 
@@ -3320,42 +3323,43 @@ public class Hamiltonchiropractic {
 
 
 	public Hamiltonchiropractic(String initialexamid, String patient_id,
-			String lumbopelvic, String lumboright, String lumboleft,
-			String cervical, String cervicalright, String cervicalleft,
-			String thoracic, String thoracicright, String thoracicleft,
-			String hacheck, String ha, String haa, String neckcheck,
-			String neck, String necka, String mbcheck, String mb, String mba,
-			String ribscheck, String ribs, String ribsa, String shouldercheck,
-			String shoulder, String shouldera, String elbowcheck, String elbow,
-			String elbowa, String handcheck, String hand, String handa,
-			String wristcheck, String wrist, String wrista, String lbpcheck,
-			String lbp, String lbpa, String hipcheck, String hip, String hipa,
-			String legcheck, String leg, String lega, String kneecheck,
-			String knee, String kneea, String footcheck, String foot,
-			String foota, String anklecheck, String ankle, String anklea,
-			String suddenly, String gradually, String hours, String days,
-			String date, String reason, String acute, String subacute,
-			String chronic, String lyingdown, String sitting, String standing,
-			String bending, String rest, String otherb, String othere,
-			String ice, String heat, String massage, String aspirin,
-			String otherdone, String otherit, String bendingworse,
-			String twisting, String lifting, String walking, String activity,
-			String otherworse, String otherfeel, String sharp, String severe,
-			String dull, String burning, String nagging, String throbbing,
-			String numb, String tingling, String stiff, String stabbing,
-			String cramping, String otherdescribe, String otherpain,
-			String constant, String intermittent, String local, String diffuse,
-			String radiates, String otherradiates, String mild,
-			String moderate, String severepain, String crippling, String am,
-			String pm, String othertime, String otherdn, String better,
-			String same, String worse, String yes, String no, String day,
-			String work, String sleep, String otherdaily,
-			String othercondition, String sameass, String improved,
-			String worseass, String plateau, String preinjury, String slight,
-			String moderatly, String great, String chiropractic, String ems,
-			String iceplan, String heatplan, String nimmo, String ultrasound,
-			String manualtraction, String massageplan, String neuromuscular,
-			String stretching, String strengthening, String remobilization,
+			 String lumbopelvic, String lumboright,
+			String lumboleft, String cervical, String cervicalright,
+			String cervicalleft, String thoracic, String thoracicright,
+			String thoracicleft, String hacheck, String ha, String haa,
+			String neckcheck, String neck, String necka, String mbcheck,
+			String mb, String mba, String ribscheck, String ribs, String ribsa,
+			String shouldercheck, String shoulder, String shouldera,
+			String elbowcheck, String elbow, String elbowa, String handcheck,
+			String hand, String handa, String wristcheck, String wrist,
+			String wrista, String lbpcheck, String lbp, String lbpa,
+			String hipcheck, String hip, String hipa, String legcheck,
+			String leg, String lega, String kneecheck, String knee,
+			String kneea, String footcheck, String foot, String foota,
+			String anklecheck, String ankle, String anklea, String suddenly,
+			String gradually, String hours, String days, String date,
+			String reason, String acute, String subacute, String chronic,
+			String lyingdown, String sitting, String standing, String bending,
+			String rest, String otherb, String othere, String ice, String heat,
+			String massage, String aspirin, String otherdone, String otherit,
+			String bendingworse, String twisting, String lifting,
+			String walking, String activity, String otherworse,
+			String otherfeel, String sharp, String severe, String dull,
+			String burning, String nagging, String throbbing, String numb,
+			String tingling, String stiff, String stabbing, String cramping,
+			String otherdescribe, String otherpain, String constant,
+			String intermittent, String local, String diffuse, String radiates,
+			String otherradiates, String mild, String moderate,
+			String severepain, String crippling, String am, String pm,
+			String othertime, String otherdn, String better, String same,
+			String worse, String yes, String no, String day, String work,
+			String sleep, String otherdaily, String othercondition,
+			String sameass, String improved, String worseass, String plateau,
+			String preinjury, String slight, String moderatly, String great,
+			String chiropractic, String ems, String iceplan, String heatplan,
+			String nimmo, String ultrasound, String manualtraction,
+			String massageplan, String neuromuscular, String stretching,
+			String strengthening, String remobilization,
 			String improvesubluxations, String rehab, String modificat,
 			String care, String refer, String decreasepain,
 			String decreasespam, String increaserom, String improveadl,
@@ -3395,10 +3399,11 @@ public class Hamiltonchiropractic {
 			String tennis_elbowl, String tinelsr, String tinelsl,
 			String phalensr, String phalensl, String finkelsteins_testr,
 			String finkelsteins_testl, String braceletr, String braceletl,
-			String allensr, String allensl, String valgus_varusr) {
+			String allensr, String allensl) {
 		super();
 		this.initialexamid = initialexamid;
 		this.patient_id = patient_id;
+		
 		this.lumbopelvic = lumbopelvic;
 		this.lumboright = lumboright;
 		this.lumboleft = lumboleft;
@@ -3654,6 +3659,8 @@ public class Hamiltonchiropractic {
 	}
 
 
+
+	
 	
 
 	
