@@ -8,17 +8,16 @@ public class TreatMinor
 {
 	private String minor_no;
 	
-	@NotEmpty
 	
 	private String guardian;
-	@NotEmpty
+	
 	
 	private String age;
 	
-	@NotEmpty
+	
 	private String drname;
 	
-	@NotEmpty
+
 	private String signed;
 	
 	@NotEmpty

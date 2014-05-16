@@ -25,10 +25,10 @@
 		    $( "#datepicker2" ).datepicker();
 		  });
 		   $(function() {
-		    $( "#datepicker5" ).datepicker();
+		    $( "#datepicker3" ).datepicker();
 		  });
 		    $(function() {
-		    $( "#datepicker6" ).datepicker();
+		    $( "#datepicker4" ).datepicker();
 		  });
   
   </script>
@@ -166,14 +166,14 @@ and exclusively in the name of Perry Chiropractic and Therapy Center, such sums 
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Name: </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="patientname" name="patientname" value="${name}"/><br><span id="patientnameerror" style="color: red;font-style:italic;"><form:errors path="Assignment.patientname"></form:errors></td>
-				                  	<td valign="middle" width="50%">Date</td>
+				                  	<td valign="middle" width="50%"><span class="err">*</span>Date</td>
 				                  	<td valign="top"><input type="text" class="input_txtbx1" id="datepicker" name="patientdate" /><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="Assignment.patientdate"></form:errors></span></td>
 				                  	</tr>
 				                  	<tr width="500" class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Signature:  </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="patientsign" name="patientsign" /><span id="patientsignerror" style="color: red;font-style:italic;"><form:errors path="Assignment.patientsign"></form:errors></span>
-				                  	<td valign="middle" align="left" class="input_txt">Date</td>
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="datepicker2" name="parentdate" /><br><span id="datepicker2error" style="color: red;font-style:italic;"><form:errors path="Assignment.parentdate"></form:errors></span>
 				                  	</tr> 
@@ -184,19 +184,19 @@ and exclusively in the name of Perry Chiropractic and Therapy Center, such sums 
 				                  </td>
 				                  	</tr> 
 				                  	<tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span id="parentsign1err">*</span>Parent/Guardian Signature:  </td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Parent/Guardian Signature:  </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="parentsign" name="parentsign" /><span id="parentsignerror" style="color: red;font-style:italic;"></span><form:errors path="Assignment.parentsign"></form:errors>
-				                  	<td valign="middle" align="left" class="input_txt"><span >*</span>Date:  </td>
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date:  </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="datepicker3" name="parentdate" /><br><span id="datepicker3error" style="color: red;font-style:italic;"></span><form:errors path="Assignment.parentdate"></form:errors>
 				                  	</tr> 
 				                  	
 				                  	<tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span >*</span>Perry Chiropractic and Therapy Center Representative:  </td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Perry Chiropractic and Therapy Center Representative:  </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="representative" name="representative" /><span id="representativeerror" style="color: red;font-style:italic;"> </span><form:errors path="Assignment.representative"></form:errors>
-				                  	<td valign="middle" align="left" class="input_txt"><span id="datepicker2err">*</span>Date:  </td>
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date:  </td>
 				                  <td valign="middle" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="datepicker4" name="representativedate" /><br><span id="datepicker4error" style="color: red;font-style:italic;"></span>
 				                  	<form:errors path="Assignment.representativedate"></form:errors></span>

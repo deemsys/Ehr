@@ -17,6 +17,31 @@
 	    $( "#datepicker" ).datepicker();
 	  });
   </script>
+  <script>
+
+	function checkSubmit()
+
+
+	
+
+	{
+		document.getElementById("datepickererror").innerHTML=" ";
+		
+		if(document.getElementById("datepicker").value=="")
+		{
+		document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		document.getElementById("pwitnesserror").innerHTML="";
+	if(document.getElementById("pwitness").value=="")
+		{
+		document.getElementById("pwitnesserror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+	}
+			</script>
  </head>
 <body>
 <div id="right_content">
@@ -67,13 +92,13 @@
                         <tr class="row1">
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="datepicker" name="pdate" value="${Minordetails.pdate}"/><span class="err"><form:errors path="TreatMinor.pdate"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="datepicker" name="pdate" value="${Minordetails.pdate}"/><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="TreatMinor.pdate"></form:errors></span>
                         </td>
                         </tr>
                         <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Witness: </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="pwitness" value="${Minordetails.pwitness}"/><span class="err"><form:errors path="TreatMinor.pwitness"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="pwitness" name="pwitness" value="${Minordetails.pwitness}"/><span id="pwitnesserror" style="color: red;font-style:italic;" ><form:errors path="TreatMinor.pwitness"></form:errors></span>
 				                  	</tr>
                         <tr>
                         </table>
@@ -81,7 +106,7 @@
                          <table>
         <tr>
      	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> 
-        <td><br><input type="submit" class="submit_btn" value="Update"></td>
+        <td><br><input type="submit" class="submit_btn" value="Update" onclick="return checkSubmit('this');"></td>
         <td>&nbsp;&nbsp;</td>
         <td><br><input type="button" class="submit_btn" value="Delete" onclick="window.location.href='deleteminor'"></td>
         </tr>

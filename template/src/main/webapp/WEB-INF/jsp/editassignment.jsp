@@ -14,14 +14,21 @@
    </STYLE>
   <script>
   $(function() {
-	    $( "#datepicker" ).datepicker();
+	  $( "#datepicker" ).datepicker();
+  });
+  $(function() {
+	    $( "#datepicker1" ).datepicker();
 	  });
-	  $(function() {
-		    $( "#datepicker1" ).datepicker();
-		  });
-	  $(function() {
-		    $( "#datepicker2" ).datepicker();
-		  });
+  $(function() {
+	    $( "#datepicker2" ).datepicker();
+	  });
+	   $(function() {
+	    $( "#datepicker3" ).datepicker();
+	  });
+	    $(function() {
+	    $( "#datepicker4" ).datepicker();
+	  });
+
   
   </script>
   <script type="text/javascript">
@@ -35,6 +42,77 @@
 		return false;
 	}
 }
+  </script>
+  <script>
+
+function checkSubmit()
+
+{                       
+
+	document.getElementById("patientnameerror").innerHTML="";
+	if(document.getElementById("patientname").value=="")
+	{
+	document.getElementById("patientnameerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("datepickererror").innerHTML="";
+	if(document.getElementById("datepicker").value=="")
+	{
+	document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("patientsignerror").innerHTML="";
+	if(document.getElementById("patientsign").value=="")
+	{
+	document.getElementById("patientsignerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("datepicker2error").innerHTML="";
+	if(document.getElementById("datepicker2").value=="")
+	{
+	document.getElementById("datepicker2error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("parentnameerror").innerHTML="";
+	if(document.getElementById("parentname").value=="")
+	{
+	document.getElementById("parentnameerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	document.getElementById("parentsignerror").innerHTML="";
+	if(document.getElementById("parentsign").value=="")
+	{
+	document.getElementById("parentsignerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("datepicker3error").innerHTML="";
+	if(document.getElementById("datepicker3").value=="")
+	{
+	document.getElementById("datepicker3error").innerHTML="Required Field Should not be Empty";
+	return false;
+	}
+	document.getElementById("representativeerror").innerHTML="";
+	if(document.getElementById("representative").value=="")
+	{
+	document.getElementById("representativeerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("datepicker4error").innerHTML="";
+	if(document.getElementById("datepicker4").value=="")
+	{
+	document.getElementById("datepicker4error").innerHTML="Required Field Should not be Empty";
+	return false;
+	}
+	
+	}
   </script>
 </head>
 <body>
@@ -104,6 +182,8 @@ and exclusively in the name of Perry Chiropractic and Therapy Center, such sums 
 				                  <td valign="top" align="left" class="input_txt">
 				                
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="patientname" value="${assignmentdetails.patientname}"/><br><span class="err"><form:errors path="Assignment.patientname"></form:errors>
+				                  		<td valign="middle" width="50%"><span class="err">*</span>Date</td>
+				                  			<td valign="top"><input type="text" class="input_txtbx1" id="datepicker" name="patientdate" value="${assignmentdetails.patientdate}" /><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="Assignment.patientdate"></form:errors></span></td>
 				                  	</tr>
 				                  	<tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Signature:  </td>
@@ -111,7 +191,7 @@ and exclusively in the name of Perry Chiropractic and Therapy Center, such sums 
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="patientsign" value="${assignmentdetails.patientsign}"/><span class="err"><form:errors path="Assignment.patientsign"></form:errors>
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="datepicker" name="patientdate" value="${assignmentdetails.patientdate}"/><br><span class="err"><form:errors path="Assignment.patientdate"></form:errors>
+				                  	<input type="text" class="input_txtbx1" id="datepicker2" name="patientdate" value="${assignmentdetails.patientdate}"/><br><span class="err"><form:errors path="Assignment.patientdate"></form:errors>
 				                  	</tr> 
 				                  	
 				                  	<tr class="row1">

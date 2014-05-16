@@ -1619,7 +1619,7 @@ public class MainController {
 			   
 			}
 			InsuranceinformationForm insuranceinformationForm= new InsuranceinformationForm();
-	    	insuranceinformationForm.setInsuranceinformation(infoDAO.getInsuranceinformation());
+	    	insuranceinformationForm.setInsuranceinformation(infoDAO.getusernameInsuranceinformation(principal));
 			model.addAttribute("InsuranceinformationForm",insuranceinformationForm);
 			
 			model.addAttribute("menu", "health");
@@ -1637,7 +1637,7 @@ public class MainController {
 		model.addAttribute("InsuranceinformationForm",insuranceinformation);
     	int a =infoDAO.setInsuranceinformation(insuranceinformation,principal);
     	InsuranceinformationForm insuranceinformationForm= new InsuranceinformationForm();
-    	insuranceinformationForm.setInsuranceinformation(infoDAO.getInsuranceinformation());
+    	insuranceinformationForm.setInsuranceinformation(infoDAO.getusernameInsuranceinformation(principal));
 		model.addAttribute("InsuranceinformationForm",insuranceinformationForm);
 		model.addAttribute("menu", "health");
 		//System.out.println(autoaccident.getAdjustersname());
@@ -3067,8 +3067,7 @@ String name="";
 	public String removeassignmentdetails(@RequestParam("assignment_no") String assignment_no,ModelMap model, Principal principal) {
 		if(patientDAO.getUsername(principal).size()>0)
 		{			
-
-String name="";			
+			String name="";			
 			name=patientDAO.getUsername(principal).get(0).getName();
 			model.addAttribute("name",name);
 		   model.addAttribute("patientno","0");
@@ -3091,7 +3090,11 @@ String name="";
 	@RequestMapping(value="/deleteassignment", method=RequestMethod.GET)
 	public String removeassignment(ModelMap model, Principal principal) {
 		if(patientDAO.getUsername(principal).size()>0)
-		{			
+		{		
+			String name="";			
+			name=patientDAO.getUsername(principal).get(0).getName();
+			model.addAttribute("name",name);
+		   model.addAttribute("patientno","0");
 	   model.addAttribute("patientno","0");
 	}
 		int status=assignmentDAO.deleteassignment(principal);

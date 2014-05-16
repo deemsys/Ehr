@@ -17,6 +17,31 @@
 	    $( "#datepicker" ).datepicker();
 	  });
   </script>
+  <script>
+
+	function checkSubmit()
+
+
+	
+
+	{
+		document.getElementById("datepickererror").innerHTML=" ";
+		
+		if(document.getElementById("datepicker").value=="")
+		{
+		document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		document.getElementById("pwitnesserror").innerHTML="";
+	if(document.getElementById("pwitness").value=="")
+		{
+		document.getElementById("pwitnesserror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+	}
+			</script>
  </head>
 <body>
 <div id="right_content">
@@ -66,13 +91,13 @@
                         <tr class="row1">
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="datepicker" name="pdate" /><span class="err"><form:errors path="TreatMinor.pdate"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="datepicker" name="pdate" /><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="TreatMinor.pdate"></form:errors></span>
                         </td>
                         </tr>
                         <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Witness: </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="pwitness" /><span class="err"><form:errors path="TreatMinor.pwitness"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="pwitness" name="pwitness" /><span id="pwitnesserror" style="color: red;font-style:italic;" ><form:errors path="TreatMinor.pwitness"></form:errors></span>
 				                  	</tr>
                         <tr>
                         </table>
@@ -103,13 +128,13 @@
                         <tr class="row1">
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="datepicker" name="pdate" value="${minor.pdate}"/><span class="err"><form:errors path="TreatMinor.pdate"></form:errors></span></td>
+				                  	<input type="text" class="input_txtbx1" id="datepicker" name="pdate" value="${minor.pdate}"/><span id="datepickererror" style="color: red;font-style:italic;" ><form:errors path="TreatMinor.pdate"></form:errors></span></td>
                         </td>
                         </tr>
                         <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Witness: </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="pwitness" value="${minor.pwitness}"/><span class="err"><form:errors path="TreatMinor.pwitness"></form:errors></span></td>
+				                  	<input type="text" class="input_txtbx1" id="pwitness" name="pwitness" value="${minor.pwitness}"/><span id="pwitnesserror" style="color: red;font-style:italic;"><form:errors path="TreatMinor.pwitness"></form:errors></span></td>
 				                  	</tr>
                         <tr>
                         </table>
@@ -117,7 +142,7 @@
                        </c:choose>
                         <table>
 				  <td valign="top" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-				  <td valign="top" align="center"><br><input type="submit" class="submit_btn" value="Save"></td>
+				  <td valign="top" align="center"><br><input type="submit" class="submit_btn" value="Save" onclick="return checkSubmit('this');"></td>
 				  <td>&nbsp;&nbsp;</td>
 				    <td valign="top" align="center"><br><input type="reset" class="submit_btn" value="Reset"></td>
 				    <td>&nbsp;&nbsp;</td>
