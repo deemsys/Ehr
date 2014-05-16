@@ -47,7 +47,7 @@ public class RequestfordemandDAO{
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 
-	    	 String cmd="INSERT INTO requestfordemand (username,faultinsurer,medpayinsurer,paidbenefits,bankrupt,treatment,other,txtare,copymedpay,copyform,copyassign,greencard,defaultattorney,clinicrep) VALUES ('"+username+"','"+requestfordemanddetails.getFaultinsurer()+"','"+requestfordemanddetails.getMedpayinsurer()+"','"+requestfordemanddetails.getPaidbenefits()+"','"+requestfordemanddetails.getBankrupt()+"','"+requestfordemanddetails.getTreatment()+"','"+requestfordemanddetails.getOther()+"','"+requestfordemanddetails.getTxtare()+"','"+requestfordemanddetails.getCopymedpay()+"','"+requestfordemanddetails.getCopyform()+"','"+requestfordemanddetails.getCopyassign()+"','"+requestfordemanddetails.getGreencard()+"','"+requestfordemanddetails.getDefaultattorney()+"','"+requestfordemanddetails.getClinicrep()+"')";
+	    	 String cmd="INSERT INTO requestfordemand (username,tonum,fax,faultinsurer,medpayinsurer,paidbenefits,bankrupt,treatment,other,txtare,pleasesend,copymedpay,copyform,copyassign,greencard,defaultattorney,clinicrep) VALUES ('"+username+"','"+requestfordemanddetails.getTonum()+"','"+requestfordemanddetails.getFax()+"','"+requestfordemanddetails.getFaultinsurer()+"','"+requestfordemanddetails.getMedpayinsurer()+"','"+requestfordemanddetails.getPaidbenefits()+"','"+requestfordemanddetails.getBankrupt()+"','"+requestfordemanddetails.getTreatment()+"','"+requestfordemanddetails.getOther()+"','"+requestfordemanddetails.getTxtare()+"','"+requestfordemanddetails.getPleasesend()+"','"+requestfordemanddetails.getCopymedpay()+"','"+requestfordemanddetails.getCopyform()+"','"+requestfordemanddetails.getCopyassign()+"','"+requestfordemanddetails.getGreencard()+"','"+requestfordemanddetails.getDefaultattorney()+"','"+requestfordemanddetails.getClinicrep()+"')";
 	    	    System.out.println("cmd insert value"+cmd);
 	    	    statement.executeUpdate(cmd);
 	    	    }
@@ -124,6 +124,9 @@ public class RequestfordemandDAO{
 			while(resultSet.next()){
 				requestfordemand.add(new Requestfordemand
 						(resultSet.getString("requestid"),
+								resultSet.getString("username"),
+								resultSet.getString("tonum"),
+								resultSet.getString("fax"),
 								resultSet.getString("faultinsurer"),
 								resultSet.getString("medpayinsurer"),
 								resultSet.getString("paidbenefits"),
@@ -131,6 +134,7 @@ public class RequestfordemandDAO{
 								resultSet.getString("treatment"),
 								resultSet.getString("other"),
 								resultSet.getString("txtare"),
+								resultSet.getString("pleasesend"),
 						resultSet.getString("copymedpay"),
 						resultSet.getString("copyform"),
 						resultSet.getString("copyassign"),
@@ -169,6 +173,9 @@ public class RequestfordemandDAO{
 			while(resultSet.next()){
 				requestfordemand.add(new Requestfordemand
 						(resultSet.getString("requestid"),
+								resultSet.getString("username"),
+								resultSet.getString("tonum"),
+								resultSet.getString("fax"),
 								resultSet.getString("faultinsurer"),
 								resultSet.getString("medpayinsurer"),
 								resultSet.getString("paidbenefits"),
@@ -176,6 +183,7 @@ public class RequestfordemandDAO{
 								resultSet.getString("treatment"),
 								resultSet.getString("other"),
 								resultSet.getString("txtare"),
+								resultSet.getString("pleasesend"),
 						resultSet.getString("copymedpay"),
 						resultSet.getString("copyform"),
 						resultSet.getString("copyassign"),
@@ -218,6 +226,9 @@ public class RequestfordemandDAO{
 			while(resultSet.next()){
 				requestfordemand.add(new Requestfordemand
 						(resultSet.getString("requestid"),
+								resultSet.getString("username"),
+								resultSet.getString("tonum"),
+								resultSet.getString("fax"),
 								resultSet.getString("faultinsurer"),
 								resultSet.getString("medpayinsurer"),
 								resultSet.getString("paidbenefits"),
@@ -225,6 +236,7 @@ public class RequestfordemandDAO{
 								resultSet.getString("treatment"),
 								resultSet.getString("other"),
 								resultSet.getString("txtare"),
+								resultSet.getString("pleasesend"),
 						resultSet.getString("copymedpay"),
 						resultSet.getString("copyform"),
 						resultSet.getString("copyassign"),
@@ -265,7 +277,11 @@ public class RequestfordemandDAO{
 			e1.printStackTrace();
 		}
 	    try{
-	    	 String cmd="update requestfordemand set faultinsurer='"+requestfordemand.getFaultinsurer()
+	    	 String cmd="update requestfordemand set tonum='"+requestfordemand.getTonum()
+	    			
+	    +"',fax='"+requestfordemand.getFax()
+	    			
+	    +"',faultinsurer='"+requestfordemand.getFaultinsurer()
 	    			
 	    +"',medpayinsurer='"+requestfordemand.getMedpayinsurer()
 	    +"',paidbenefits='"+requestfordemand.getPaidbenefits()
@@ -273,6 +289,7 @@ public class RequestfordemandDAO{
 	    +"',treatment='"+ requestfordemand.getTreatment()
 	    +"',other='"+ requestfordemand.getOther()
 	    +"',txtare='"+ requestfordemand.getTxtare()
+	    +"',pleasesend='"+ requestfordemand.getPleasesend()
 	    +"',copymedpay='"+ requestfordemand.getCopymedpay()
 	    +"',copyform='"+requestfordemand.getCopyform()
 	    +"',copyassign='"+requestfordemand.getCopyassign()+"',greencard='"+requestfordemand.getGreencard()+"',defaultattorney='"+requestfordemand.getDefaultattorney()+"',clinicrep='"+requestfordemand.getClinicrep()+"' where requestid='"+requestid+"'";
