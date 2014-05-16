@@ -111,13 +111,13 @@
 	           
 	           <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr height="20">
-             <td width="430"><b>TO:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;John P. Lowry, Esq. </td>
+             <td width="430"><b>TO:</b>&nbsp;&nbsp;&nbsp;&nbsp;<input type="textbox" placeholder="John P. Lowry, Esq." name="tonum" id="tonum" value="${requestfordemanddetails.tonum}"> </td>
              <td><b>FROM:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Perry Chiropractic & Therapy Center	 of Canton, Inc.</td>
             
               </tr>
               
               <tr height="20">
-              <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Fax:</b>  513-421-2764</td>
+              <td><b>Fax:</b>&nbsp;&nbsp;&nbsp;<input type="text" placeholder="513-421-2764" name="fax" id="fax" value="${requestfordemanddetails.fax}"></td>
               <td>
              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4933 West Tuscarawas Street
               </td>
@@ -150,7 +150,19 @@
      <td> <textarea rows="" cols="" name="txtare"  value="${requestfordemanddetails.txtare}" style="height: 75px; width: 348px"></textarea></td>
      </td>
    </tr>
-       </table> <br><br>    
+       </table> <br><br> 
+        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+       <tr height="30">
+       <td><input type="checkbox" name="pleasesend" value="pleasesend"  <c:if test="${requestfordemanddetails.pleasesend=='pleasesend'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;	Please send the appropriate Demand Letter and copy to us.  The cost will be $181.50 plus postage and copy charges at .10/page.</td>
+       
+       
+       </tr>
+       
+       
+       </table>  
+       
+       
+          
        <table>
        <tr>
        <td>

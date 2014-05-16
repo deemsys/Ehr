@@ -272,13 +272,20 @@ function doAjaxPost() {
 	           
 	           <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr height="20">
-             <td width="430"><b>TO:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;John P. Lowry, Esq. </td>
+             <td width="470"><b>TO:</b>&nbsp;&nbsp;&nbsp;&nbsp;<input type="textbox" placeholder="John P. Lowry, Esq." name="tonum" id="tonum"> </td>
              <td><b>FROM:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Perry Chiropractic & Therapy Center	 of Canton, Inc.</td>
             
               </tr>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
               
               <tr height="20">
-              <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Fax:</b>  513-421-2764</td>
+              <td><b>Fax:</b>&nbsp;&nbsp;&nbsp;<input type="text" placeholder="513-421-2764" name="fax" id="fax"></td>
               <td>
              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4933 West Tuscarawas Street
               </td>
@@ -311,7 +318,16 @@ function doAjaxPost() {
      <td> <textarea rows="" cols="" name="txtare" style="height: 75px; width: 348px"></textarea><span class="err"><form:errors path="Requestfordemand.txtare"></form:errors></span></td>
      </td>
    </tr>
-       </table> <br><br>    
+       </table> 
+       <table cellpadding="0" cellspacing="0" border="0" width="100%">
+       <tr height="30">
+       <td><input type="checkbox" name="pleasesend" value="pleasesend">&nbsp;&nbsp;	Please send the appropriate Demand Letter and copy to us.  The cost will be $181.50 plus postage and copy charges at .10/page.</td>
+       
+       
+       </tr>
+       
+       
+       </table>   
        <table>
        <tr>
        <td>
