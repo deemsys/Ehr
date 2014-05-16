@@ -279,7 +279,7 @@ else
  <tr>
  <td><br><br>&nbsp;&nbsp;<input type="text" id="datepicker1" class="input_txtbx1"  name="date1" value="${soapnotes.date1}"></td>
  <td> <br/>
-&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;%<%-- <select name="improved" id="improved" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp; <input type="text"  name="improved" value="${soapnotes.improved}">  &nbsp;%<%-- <select name="improved" id="improved" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" <c:if test="${soapnotes.improved=='10%'}"><c:out value="selected"/></c:if>>10%</option>
 					<option value="25%" <c:if test="${soapnotes.improved=='25%'}"><c:out value="selected"/></c:if>>25%</option>
 					<option value="50%" <c:if test="${soapnotes.improved=='50%'}"><c:out value="selected"/></c:if>>50%</option>

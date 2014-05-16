@@ -521,8 +521,8 @@ color:#fff;
 							
   	<c:otherwise>
   	
-  	<ul class="menu">
-        <li><a href="<c:out value="editsoapnotes?soapid=${soapnotesid}"/>" class="<c:choose><c:when test="${menu=='notes'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>">
+  	
+        <li><a href="<c:out value="editsoapnotes?soapid=${username}"/>" class="<c:choose><c:when test="${menu=='notes'}">select</c:when><c:otherwise>unselect</c:otherwise></c:choose>">
 									<span>Soap Notes</span>
 								</a>
 								

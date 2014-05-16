@@ -312,6 +312,7 @@ public class MainController {
 		 {
 			 String name=patientDAO.getUsername((String)session.getAttribute("username")).get(0).getName();
 			 model.addAttribute("name",name);
+			 
 		 }	
 	String username=request.getParameter("username");
 	session.setAttribute("username", username);	
@@ -385,6 +386,12 @@ public class MainController {
 			}
 			session.removeAttribute("visit"); 
 			session.setAttribute("visit","3");
+			model.addAttribute("menu", "soapnotes");
+			if(patientDAO.getUsername((String)session.getAttribute("username")).size()>0)
+			 {
+				 String name=patientDAO.getUsername((String)session.getAttribute("username")).get(0).getName();
+				 model.addAttribute("name",name);
+			 }	
 			return "soapnotes"; 
 			
 		}
@@ -537,6 +544,31 @@ public class MainController {
 	   
 		   if(physicalDAO.getPhysicalpatient_id((String)session.getAttribute("username")).size()>0)
 		   {
+			   System.out.println(hamiDAO.getHamiltonchiropracticpatientid((String)session.getAttribute("username")).size());
+			  if(hamiDAO.getHamiltonchiropracticpatientid((String)session.getAttribute("username")).size()>0)
+			  {
+				  
+				  if(radioDAO.getRadiologicpatient_id((String)session.getAttribute("username")).size()>0)
+				  {
+				  if(soapDAO.getusernameSoapnotes((String)session.getAttribute("username")).size()>0)
+				  {
+					  SoapnotesForm soapnotesForm = new SoapnotesForm();       
+				        soapnotesForm.setSoapnotes(soapDAO.getusernameSoapnotes((String)session.getAttribute("username")));
+				        model.addAttribute("soapnotesForm", soapnotesForm);		
+						/*soapnotesForm.setSoapnotes(soapDAO.getSoapid());*/
+						model.addAttribute("soapnotesForm", soapnotesForm);
+						model.addAttribute("menu", "notes");
+						 List<String> diagnosis=new ArrayList<String>();
+					        diagnosis =soapDAO.getdiagnosis((String)session.getAttribute("username"));
+					        model.addAttribute("diagnosis",diagnosis);
+					  
+				  return "editsoapnotes";
+				  }
+				  return "soapnotes";
+				  }
+				  return "radiologicreport";
+			  }
+			   
 			   return "hamiltonchiropractic";
 		   }
 		return "physicalexam";
@@ -1139,6 +1171,26 @@ public class MainController {
 	public String radiologicreport(HttpServletRequest request,HttpSession session,ModelMap model) {
 		session.removeAttribute("radio");
 		model.addAttribute("menu", "report");
+		 if(radioDAO.getRadiologicpatient_id((String)session.getAttribute("username")).size()>0)
+		  {
+		  if(soapDAO.getusernameSoapnotes((String)session.getAttribute("username")).size()>0)
+		  {
+			  SoapnotesForm soapnotesForm = new SoapnotesForm();       
+		      soapnotesForm.setSoapnotes(soapDAO.getusernameSoapnotes((String)session.getAttribute("username")));
+		      model.addAttribute("soapnotesForm", soapnotesForm);		
+				/*soapnotesForm.setSoapnotes(soapDAO.getSoapid());*/
+				model.addAttribute("soapnotesForm", soapnotesForm);
+				model.addAttribute("menu", "notes");
+				 List<String> diagnosis=new ArrayList<String>();
+			        diagnosis =soapDAO.getdiagnosis((String)session.getAttribute("username"));
+			        model.addAttribute("diagnosis",diagnosis);
+			  session.removeAttribute("visit");
+			  
+		  return "editsoapnotes";
+		  }
+		  session.setAttribute("visit","3");
+		  return "soapnotes";
+		  }
 		if(patientDAO.getUsername((String)session.getAttribute("username")).size()>0)
 		 {
 			 String name=patientDAO.getUsername((String)session.getAttribute("username")).get(0).getName();
@@ -5202,8 +5254,8 @@ String name="";
     	SoapnotesForm soapnotesForm= new SoapnotesForm();
     	soapnotesForm.setSoapnotes(soapDAO.getSoapnotes());
 		model.addAttribute("soapnotesForm",soapnotesForm);
-		model.addAttribute("menu", "notes");
-	
+		
+		model.addAttribute("menu", "search");
 		return "doctorsearch";
  
 	}
@@ -5231,9 +5283,10 @@ String name="";
         model.addAttribute("soapnotesForm", soapnotesForm);		
 		/*soapnotesForm.setSoapnotes(soapDAO.getSoapid());*/
 		model.addAttribute("soapnotesForm", soapnotesForm);
-		model.addAttribute("menu", "notes");
+	
 		 List<String> diagnosis=new ArrayList<String>();
 	        diagnosis =soapDAO.getdiagnosis(soapid);
+	        model.addAttribute("menu", "notes");
 	        model.addAttribute("diagnosis",diagnosis);
         return "editsoapnotes";
         }
@@ -5257,6 +5310,10 @@ String name="";
 		        return "editsoapnotes";
 		}
 		String[] diagnosis=request.getParameterValues("diagnosis[]");
+		for(String diagnosis1:diagnosis)
+		{
+		System.out.println(diagnosis1);	
+		}
 		soapDAO.deletediagnosis(diagnosis,request.getParameter("username"));
 		soapDAO.diagnosis(diagnosis,request.getParameter("username"));
 		System.out.println("soapid"+soapnotes.getSoapid());
@@ -5349,10 +5406,14 @@ String name="";
 		return "soapNotesList";
 	}
 	@RequestMapping(value="/deletesoapnotes", method=RequestMethod.GET)
-	public String removesoapnotes(@RequestParam("soapid") String soapid,ModelMap model, Principal principal) {
+	public String removesoapnotes(@RequestParam("soapid") String soapid,ModelMap model, Principal principal,HttpSession session) {
 	
 		int status=soapDAO.deletesoapnotes(soapid);
-		
+		if(patientDAO.getUsername((String)session.getAttribute("username")).size()>0)
+		 {
+			 String name=patientDAO.getUsername((String)session.getAttribute("username")).get(0).getName();
+			 model.addAttribute("name",name);
+		 }	
 		if(status==1)
 		{
         model.addAttribute("success","true");

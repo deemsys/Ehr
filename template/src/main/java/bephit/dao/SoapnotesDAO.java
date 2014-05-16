@@ -357,13 +357,14 @@ public int deletesoapnotes(String soapid){
 	try{
 		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
     	 Date date = new Date();
-    	 String cmd_getpatient_pname="select pname from tbl_soapnotes where soapid='"+soapid+"'";
-    	 String Desc="Delete report ";
+    	 String cmd_getpatient_pname="select username from tbl_soapnotes where soapid='"+soapid+"'";
+    	 String username="";
     	 resultSet=statement.executeQuery(cmd_getpatient_pname);
 			
 			if(resultSet.next())
-				Desc=Desc+resultSet.getString(1);
+				username=resultSet.getString("username");
 			statement.execute("delete from tbl_soapnotes where soapid='"+soapid+"'");
+			statement.executeUpdate("delete from soapnotes_diagnosis where username='"+username+"'");
 			
 			flag=1;
 			
@@ -402,6 +403,7 @@ public int deletediagnosis(String[] diagnosis,String username)
     	 Date date = new Date();	
     for (String diag : diagnosis) {
     	statement.executeUpdate("delete from soapnotes_diagnosis where username='"+username+"' and diagnosis='"+diag+"'");
+    	statement.executeUpdate("delete from soapnotes_diagnosis where username='"+username+"'");
     	 String cmd="delete from soapnotes_diagnosis where username='"+username+"' and diagnosis='"+diag+"'";
     	 System.out.println(cmd);
     	 statement.executeUpdate(cmd);

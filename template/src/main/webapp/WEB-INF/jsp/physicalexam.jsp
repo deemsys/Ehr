@@ -58,7 +58,7 @@ $(function(){
 
 <br>
 <br>
-
+	<input type="hidden" name="patient_id" value="${username}">
 	 <c:choose>
             <c:when test="${empty physical}">
 
@@ -82,7 +82,7 @@ $(function(){
 	                            <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Physician Signature :</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="hidden" name="patient_id" value="${patientid}"><input type="text" class="input_txtbx1" id="inp_id" name="sign" /><span class="err"><form:errors path="Physicalexam.sign"></form:errors>
+				                  <input type="text" class="input_txtbx1" id="inp_id" name="sign" /><span class="err"><form:errors path="Physicalexam.sign"></form:errors>
 				                  </td>
 				                </tr>
 				                <tr class="row1">
@@ -1600,7 +1600,7 @@ $(function(){
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date :</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="date" value="${physical.date}" /><span class="err"><form:errors path="Physicalexam.date"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="datepicker" name="date" value="${physical.date}" /><span class="err"><form:errors path="Physicalexam.date"></form:errors></span>
 				                  </td>
 				                </tr>
 				                <tr class="row2">
