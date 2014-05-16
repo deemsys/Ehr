@@ -10,22 +10,22 @@
 <script src="resources/js/jquey-1.9.1.js"></script>
 <script>
 $(window).load(function(){
-$("#claimno").keyup(function() {
+/*  $("#claimno").keyup(function() {
 	 $("#claimnoerror").html(''); 
 	/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
-	var intRegex = /^\d+$/;
-	if(intRegex.test($(this).val())||$(this).val()=='') 
-	{
-		var $in = $(this).val();		 
-	}
-	else if($(this).val()!='')
-		{
+	//var intRegex = /^\d+$/;
+	//if(intRegex.test($(this).val())||$(this).val()=='') 
+	//{
+		//var $in = $(this).val();		 
+//	}
+	//else if($(this).val()!='')
+		//{
 		
-		$("#claimnoerror").html('Kindly enter a number!!!!');
-		}
-}).keydown(function() {
-  oldValue = $(this).val();
-})
+	//	$("#claimnoerror").html('Kindly enter a number!!!!');
+		//}
+//}).keydown(function() {
+  //oldValue = $(this).val();
+//}) */
 $("#speed").keyup(function() {
 	 $("#speederror").html(''); 
 	/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */

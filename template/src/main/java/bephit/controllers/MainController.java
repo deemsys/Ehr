@@ -3350,7 +3350,7 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 		if (result.hasErrors())
 		{
 			TreatForm treatform= new TreatForm();
-			treatform.setTreatform(treatDAO.getTreatDetails());
+			treatform.setTreatform(treatDAO.getUsernameTreatDetails(principal));
 			model.addAttribute("treatform",treatform);
 			model.addAttribute("success","true");
 			model.addAttribute("menu", "consent");
@@ -3360,7 +3360,7 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 		model.addAttribute("TreatForm",treatdetails);
 		int a=treatDAO.setTreatDetails(treatdetails,principal);
          TreatForm treatform= new TreatForm();
-		treatform.setTreatform(treatDAO.getTreatDetails());
+		treatform.setTreatform(treatDAO.getUsernameTreatDetails(principal));
 		model.addAttribute("treatform",treatform);
 		model.addAttribute("menu", "consent");
 
