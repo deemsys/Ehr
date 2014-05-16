@@ -66,7 +66,14 @@ document.getElementById("patientnameerror").innerHTML="";
         {
         	 document.getElementById("treatingphysicianerror").innerHTML="Required Field Should not be Empty";
             return false;
-        }   
+        } 
+         document.getElementById("dearnameerr").innerHTML="";
+        if(document.getElementById("dearname").value=="")
+        {
+        	 document.getElementById("dearnameerr").innerHTML="Required Field Should not be Empty";
+            return false;
+        }
+          
         }
 
 </script>
@@ -118,8 +125,8 @@ document.getElementById("patientnameerror").innerHTML="";
               
               
               <br>
-              <table cellpadding="0" cellspacing="0" border="0" width="100%">
-        	  <tr><br><p id="mypar">Dear Sir/Madam:</p></tr>
+               <table cellpadding="0" cellspacing="0" border="0" width="100%">
+        	  <tr><td><br><p id="mypar"><span class="err">*</span>Dear';:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="dearname" id="dearname" style="width: 178px; " value="${responseattorneydetail.dearname }"><span class="err" id="dearnameerr"></span></p></td></tr>
        		  </table>
        		  <table cellpadding="0" cellspacing="0" border="0" width="100%">
        		  <tr>

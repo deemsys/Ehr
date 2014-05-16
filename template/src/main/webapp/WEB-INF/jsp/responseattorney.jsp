@@ -229,7 +229,14 @@ document.getElementById("patientnameerror").innerHTML="";
         {
         	 document.getElementById("treatingphysicianerror").innerHTML="Required Field Should not be Empty";
             return false;
-        }   
+        }
+        document.getElementById("dearnameerr").innerHTML="";
+        if(document.getElementById("dearname").value=="")
+        {
+        	 document.getElementById("dearnameerr").innerHTML="Required Field Should not be Empty";
+            return false;
+        }
+           
         }
 
 </script>
@@ -261,7 +268,7 @@ document.getElementById("patientnameerror").innerHTML="";
 	           <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="50" width="120"><span class="err">*</span>Name Of Attorney:</td>
-              <td ><input type="text" class="input_txtbx1" name="name" id="name" /><span class="err" id="nameerror"><form:errors path="Responseattorney.name"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="name" id="name"  style="width: 178px; "/><span class="err" id="nameerror"><form:errors path="Responseattorney.name"></form:errors></td>
               </tr>
               <tr>
               <td height="20" width="120"><span class="err"></span>Address:</td>
@@ -270,7 +277,7 @@ document.getElementById("patientnameerror").innerHTML="";
              
              <tr>
               <td height="30" width="120"><span class="err"></span>Regarding:</td>
-              <td ><input type="text" class="input_txtbx1" name="regarding" id="regarding" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="regarding" id="regarding" style="width: 178px; "/><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
                 <tr>
               <td height="30" width="120"><span class="err">*</span>Patients's Name:</td>
@@ -285,7 +292,7 @@ document.getElementById("patientnameerror").innerHTML="";
               <input type="text" name="user" id="user"  style="visibility:hidden">
               <br>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
-        	  <tr><br><p id="mypar">Dear Sir/Madam:</p></tr>
+        	  <tr><td><br><p id="mypar"><span class="err">*</span>Dear';:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="dearname" id="dearname" style="width: 178px; "><span class="err" id="dearnameerr"></span></p></td></tr>
        		  </table>
        		  <table cellpadding="0" cellspacing="0" border="0" width="100%">
        		  <tr>
