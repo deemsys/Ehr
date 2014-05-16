@@ -77,13 +77,13 @@ public class Dcfeeslipcontroller
 	@RequestMapping(value="/dcfeeslip_ajax",method=RequestMethod.POST)
 	public @ResponseBody String addUser(@ModelAttribute(value="dcfeeslip") Dcfeeslip dcfeeslip, BindingResult result,ModelMap model ) {
 		String returnText="";
-		System.out.println("initialemlimited"+dcfeeslip.getInitialemlimited());
+		System.out.println("initialemlimited"+dcfeeslip.getCervical23());
 	
 		
 			int ans=feeslipDAO.setAns(dcfeeslip);
 			System.out.println("ans"+ans);
 			returnText=Integer.toString(ans);
-				returnText="<input type=text value='"+returnText+"'>";
+				returnText="<input type=text id=charges value='"+returnText+"'>";
 				return returnText;
 				
 	}

@@ -212,12 +212,14 @@ var oldValue = "";
 
 $("#less").keyup(function() {   
 		var $less = $(this).val();	
-	    /* alert("less"+$less); */
-		var $charges = $('#charges').val();
-		var $balance=$charges-$less;
-		/* alert("balance"+balance); */
-	document.getElementById("balance").value=$balance;
-
+	     var $charges= $("#charges").val();
+	     var $balance= $charges-$less;
+	     document.getElementById("balance").value=$balance;
+	     
+	   
+		
+	
+		
 }).keydown(function() {
     oldValue = $(this).val();
 })
@@ -299,6 +301,7 @@ function doAjaxPost() {
 	  var teamconference = $('#teamconference').val();
 	  var completespine = $('#completespine').val();
 	  var cervical23 = $('#cervical23').val();
+	  alert(cervical23);
 	  var cervical4 = $('#cervical4').val();
 	  var cervical67 = $('#cervical67').val();
 	  var thoracic4 = $('#thoracic4').val();
@@ -330,9 +333,9 @@ function doAjaxPost() {
 	  $.ajax({  
 	    type: "POST",  
 	    url: "/EhrApp/dcfeeslip_ajax",  
-	    data: "initialemlimited=" + initialemlimited + "&initialexpanded=" + initialexpanded + "&initialdetailed=" + initialdetailed + "&initialemextended=" + initialemextended + "&estpatientltd=" + estpatientltd + "&estpatientexp=" + estpatientexp + "&estpatientdetails=" + estpatientdetails + "&estpatientcomp=" + estpatientcomp + "&consultphys=" + consultphys + "&consultdetail=" + consultdetail + "&consultcomp=" + consultcomp + "&patientexp=" + patientexp + "&patientdetails=" + patientdetails + "&patientcomp=" + patientcomp + "&telephonebrief=" + telephonebrief + "&telephoneintermediate=" + telephoneintermediate + "&telephonecomp=" + telephonecomp + "&tractionmechanical=" + tractionmechanical + "&electricstim=" + electricstim + "&vasopneumatic=" + vasopneumatic + "&paraffin=" + paraffin + "&microwave=" + microwave + "&whirlpool=" + whirlpool + "&diathermy=" + diathermy + "&infrared=" + infrared + "&ultraviolet=" + ultraviolet + "&manualelectricalstim=" + manualelectricalstim + "&iontophoresis=" + iontophoresis + "&contrastbaths=" + contrastbaths + "&ultrasound=" + ultrasound + "&unlisted=" + unlisted + "&therapeutic=" + therapeutic + "&neuromuscular=" + neuromuscular + "&aquatic=" + aquatic + "&gaittraining=" + gaittraining + "&massage=" + massage + "&manualtherapy=" + manualtherapy + "&unlistedother=" + unlistedother + "&grouptherapy=" + grouptherapy + "&orthotics=" + orthotics + "&kinetic=" + kinetic + "&adlselfcare=" + adlselfcare + "&reintegration=" + reintegration + "&acupuncturewo=" + acupuncturewo + "&acupuncturew=" + acupuncturew + "&spine12=" + spine12 + "&spine34=" + spine34 + "&spine5=" + spine5 + "&extremity=" + extremity + "&routine=" + routine + "&muscle=" + muscle + "&musclehand="+musclehand+"&rangeofmotion=" + rangeofmotion + "&rangeofmotionhand=" + rangeofmotionhand + "&ncv=" + ncv + "&ncvw=" +ncvw +" &ncvea=" + ncvea + "&ssepupper=" + ssepupper + "&sseplower=" + sseplower + "&ssephead=" +ssephead+"&hreflex=" + hreflex + "&physicalperformance=" + physicalperformance + "&functionalcapacity=" + functionalcapacity + "&text1=" + text1+"&text2=" + text2 + "&supplies=" + supplies + "&patienteducation=" + patienteducation + "&medicaltestimony=" +medicaltestimony+"&insuranceform=" + insuranceform + "&teamconference=" + teamconference + "&completespine=" + completespine + "cervical23=" + cervical23+"&cervical4=" + cervical4 + "&cervical67=" + cervical67 + "&thoracic4=" + thoracic4+"&thoracic2=" + thoracic2 + "&scoliosis=" + scoliosis + "&lumbosacral=" + lumbosacral+"&lumbosacral4=" + lumbosacral4 + "&pelvis2=" + pelvis2 + "&lumbarcomplete=" + lumbarcomplete+"&elbow2=" + elbow2 + "&wrist2=" + wrist2 + "&hand2=" + hand2+"&knee2=" + knee2 + "&ankle2=" + ankle2 + "&foot2=" + foot2+"&readotherfilms=" + readotherfilms + "&cervicalpillow=" + cervicalpillow + "&lumbarsupport=" + lumbarsupport+"&orthoticcustoml=" + orthoticcustoml + "&orthoticcustomr=" + orthoticcustomr + "&tensunit=" + tensunit+"&coldpack=" + coldpack + "&wristsplint=" + wristsplint + "&heellift=" + heellift+"&exerciseball=" + exerciseball + "&exerciseband=" + exerciseband + "&unlisteditem=" + unlisteditem ,  
+	    data: "initialemlimited=" + initialemlimited + "&initialexpanded=" + initialexpanded + "&initialdetailed=" + initialdetailed + "&initialemextended=" + initialemextended + "&estpatientltd=" + estpatientltd + "&estpatientexp=" + estpatientexp + "&estpatientdetails=" + estpatientdetails + "&estpatientcomp=" + estpatientcomp + "&consultphys=" + consultphys + "&consultdetail=" + consultdetail + "&consultcomp=" + consultcomp + "&patientexp=" + patientexp + "&patientdetails=" + patientdetails + "&patientcomp=" + patientcomp + "&telephonebrief=" + telephonebrief + "&telephoneintermediate=" + telephoneintermediate + "&telephonecomp=" + telephonecomp + "&tractionmechanical=" + tractionmechanical + "&electricstim=" + electricstim + "&vasopneumatic=" + vasopneumatic + "&paraffin=" + paraffin + "&microwave=" + microwave + "&whirlpool=" + whirlpool + "&diathermy=" + diathermy + "&infrared=" + infrared + "&ultraviolet=" + ultraviolet + "&manualelectricalstim=" + manualelectricalstim + "&iontophoresis=" + iontophoresis + "&contrastbaths=" + contrastbaths + "&ultrasound=" + ultrasound + "&unlisted=" + unlisted + "&therapeutic=" + therapeutic + "&neuromuscular=" + neuromuscular + "&aquatic=" + aquatic + "&gaittraining=" + gaittraining + "&massage=" + massage + "&manualtherapy=" + manualtherapy + "&unlistedother=" + unlistedother + "&grouptherapy=" + grouptherapy + "&orthotics=" + orthotics + "&kinetic=" + kinetic + "&adlselfcare=" + adlselfcare + "&reintegration=" + reintegration + "&acupuncturewo=" + acupuncturewo + "&acupuncturew=" + acupuncturew + "&spine12=" + spine12 + "&spine34=" + spine34 + "&spine5=" + spine5 + "&extremity=" + extremity + "&routine=" + routine + "&muscle=" + muscle + "&musclehand="+musclehand+"&rangeofmotion=" + rangeofmotion + "&rangeofmotionhand=" + rangeofmotionhand + "&ncv=" + ncv + "&ncvw=" +ncvw +" &ncvea=" + ncvea + "&ssepupper=" + ssepupper + "&sseplower=" + sseplower + "&ssephead=" +ssephead+"&hreflex=" + hreflex + "&physicalperformance=" + physicalperformance + "&functionalcapacity=" + functionalcapacity + "&text1=" + text1+"&text2=" + text2 + "&supplies=" + supplies + "&patienteducation=" + patienteducation + "&medicaltestimony=" +medicaltestimony+"&insuranceform=" + insuranceform + "&teamconference=" + teamconference + "&completespine=" + completespine + "&cervical23=" + cervical23+"&cervical4=" + cervical4 + "&cervical67=" + cervical67 + "&thoracic4=" + thoracic4+"&thoracic2=" + thoracic2 + "&scoliosis=" + scoliosis + "&lumbosacral=" + lumbosacral+"&lumbosacral4=" + lumbosacral4 + "&pelvis2=" + pelvis2 + "&lumbarcomplete=" + lumbarcomplete+"&elbow2=" + elbow2 + "&wrist2=" + wrist2 + "&hand2=" + hand2+"&knee2=" + knee2 + "&ankle2=" + ankle2 + "&foot2=" + foot2+"&readotherfilms=" + readotherfilms + "&cervicalpillow=" + cervicalpillow + "&lumbarsupport=" + lumbarsupport+"&orthoticcustoml=" + orthoticcustoml + "&orthoticcustomr=" + orthoticcustomr + "&tensunit=" + tensunit+"&coldpack=" + coldpack + "&wristsplint=" + wristsplint + "&heellift=" + heellift+"&exerciseball=" + exerciseball + "&exerciseband=" + exerciseband + "&unlisteditem=" + unlisteditem ,  
 	    success: function(response){  
-	    	alert("Success!!!");
+	    	
 	      // we have the response  
 	       $('#info').html(response);
 	       /*  $('#initialemlimited').val('');
@@ -1333,7 +1336,7 @@ else
  <tr class="row1">
   <td></td>
  <td width="200"> </td><td>Charges: $</td> 
- <td><div id="info"><input type="text" name="charges" id="charges" size="20" placeholder="0"></div> </td> 
+ <td><div id="info"><input type="text" name="charges" id="charges" size="20"></div> </td> 
  <td ><input type="button"  class="submit_btn" value="calculate" onclick="return doAjaxPost()"></td>
  </tr>
  <tr class="row1">
@@ -1350,7 +1353,7 @@ else
  <tr class="row1">
   <td></td>
  <td width="200">Payment:(Circle)</td><td><input type="radio" name="payment" value="Cash" checked="true" onclick="toggle3('hide3')" >Cash &nbsp;&nbsp;&nbsp; <input type="radio" name="payment" value="Check"  onchange="toggle3('show3')" >Check &nbsp;&nbsp; Amt: $  </td>
- <td><input type="text" name="paymentcashcheck" size="20"> </td> 
+ <td><input type="text" name="paymentcashcheck" size="20" > </td> 
  </tr>
  </table>
  <div id="check" style="display:none;">

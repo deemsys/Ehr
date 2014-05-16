@@ -256,7 +256,7 @@ function check(id)
 					var $in = xx + 1;
 					var $id=$in-1;
 					var symptomid="symptom"+$id;
-					alert();
+				
 					alert(document.getElementById(symptomid).value);
 					if(document.getElementById(symptomid).value=="")
 						{
@@ -1220,7 +1220,7 @@ var $sid = xx+1;
                  
                   <td valign="top" align="left" class="input_txt" width="70%">
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                 <textarea  rows="3" cols="25" name="symptom[]" id="symptom1<%=i%><%i++;%>" onBlur="check(this)">${symptom}</textarea><span id="symptom1error" style="color: red;font-style:italic;"></span>
+                 <textarea  rows="3" cols="25" name="symptom[]" id="symptom<%=i%><%i++;%>" onBlur="check(this)">${symptom}</textarea><span id="symptom1error" style="color: red;font-style:italic;"></span>
                
                 </td> </tr><tr height="10"></tr>  </c:forEach>
                         </td><td>

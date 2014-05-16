@@ -3976,6 +3976,7 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 		
 		String age=patientDAO.getpatientAge(patient.getUsername());
 		session.setAttribute("age",age);
+		System.out.println("age....."+age);
 		PatientDetailsForm patientdetailsform = new PatientDetailsForm();
 		patientdetailsform.setPatientDetails(patientDAO.getUsername(principal));
         model.addAttribute("patientDetailsForm",patientdetailsform);
