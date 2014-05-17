@@ -1,7 +1,11 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <jsp:include page="header.jsp"></jsp:include>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-
+<c:if test="${choice=='close'}">
+ <script>
+ window.close();
+ </script>
+</c:if>
 <div id="right_content">
 	
     	<table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">

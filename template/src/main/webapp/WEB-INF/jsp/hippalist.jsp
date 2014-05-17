@@ -5,6 +5,12 @@
 <script src="resources/js/jquery_checkbox.js" type="text/javascript"></script>
 <div id="right_content">
 	
+	<c:if test="${choice=='close'}">
+ <script>
+ window.close();
+ </script>
+</c:if>
+	
     	<table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
       		
 			<tr>

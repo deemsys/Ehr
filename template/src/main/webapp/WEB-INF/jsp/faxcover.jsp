@@ -416,7 +416,7 @@ document.getElementById("faxno").value=phone;
               <td height="25" width="120"><span class="err"></span>Fax:</td>
               <td> (330) 477-3037	</td>
        	</tr></table><br><br>
-       	<input type="text" name="user" id="user" style="visibility:hidden">
+       	<input type="hidden" name="user" id="user">
      <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr><td width="120">
      	<input type="radio" name="reply" value="URGENT" class="input_txt" checked="true" id="urgent">Urgent&nbsp;&nbsp;&nbsp;<span class="err" id="urgenterror"></span><input type="radio" name="reply" value="FOR REVIEW" class="input_txt" id="forreview">For Review&nbsp;&nbsp;

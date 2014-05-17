@@ -5,7 +5,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Narrativereport
 { 
 	private String narrativeno;
-	
+	private String username;
 	private String reportdate;
 	
 	private String patient;
@@ -430,6 +430,15 @@ private String orthopedictest6;
 
 	public void setNarrativeno(String narrativeno) {
 		this.narrativeno = narrativeno;
+	}
+	
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getReportdate() {

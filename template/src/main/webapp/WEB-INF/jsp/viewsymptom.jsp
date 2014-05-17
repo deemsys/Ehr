@@ -3,6 +3,11 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <script type="text/javascript" src="js/ajaxpaging.js"></script>
 <script src="resources/js/jquery_checkbox.js" type="text/javascript"></script>
+<c:if test="${choice=='close'}">
+ <script>
+ window.close();
+ </script>
+</c:if>
 <script type="text/javascript">
 	function confirmation() 
 	{

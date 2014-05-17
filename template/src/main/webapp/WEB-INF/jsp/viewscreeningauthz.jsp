@@ -13,6 +13,11 @@
    line-height:18px;}
    
    </STYLE>
+   <c:if test="${choice=='close'}">
+ <script>
+ window.close();
+ </script>
+</c:if>
   <script>
   $(function() {
 	    $( "#datepicker" ).datepicker();

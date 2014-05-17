@@ -2089,7 +2089,10 @@ if(result.hasErrors())
 	   FootquestionnarieForm footquestionnarieForm = new FootquestionnarieForm();        
        footquestionnarieForm.setFootquestionnariedetails(footDAO.getusernameFoot(username));       
        model.addAttribute("footquestionnarieForm", footquestionnarieForm);
-       
+       if(principal.getName().equals("admin"))
+	    {
+	    	model.addAttribute("choice","close");
+	    }
 	   return "viewfootquestionnarie";
 		
 	}

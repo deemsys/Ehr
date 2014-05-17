@@ -18,94 +18,94 @@
 	            function patientvalidate(){		
 	         		var sample="editusernamepatientdetails?username="+document.getElementById("username").value;
 	         		 //alert("sample"+sample);
-	              popupWindow = window.open(sample,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+	              popupWindow = window.open(sample,"patientpopUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
 	              		}         
 function screenvalidate(){		
 		var sample="editscreeningauthz?username="+document.getElementById("username").value;
 		// alert("sample"+sample);
-     popupWindow = window.open(sample,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+     popupWindow = window.open(sample,"screenpopUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
      		}
      		
 function autovalidate(){
 	 
 		var sample="editusernameautoaccident?username="+document.getElementById("username").value;
 		//alert("sample"+sample);
-     popupWindow = window.open(sample,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+     popupWindow = window.open(sample,"autopopUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
      		}
 function workvalidate(){
 	
 	
 		var url="editusernameworkaccident?username="+document.getElementById("username").value;
 		//alert("sample"+url);
-    popupWindow = window.open(url,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+    popupWindow = window.open(url,"workpopUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
     		}
 function waivervalidate(){
 
 		var url="editusernameinsuranceplan?username="+document.getElementById("username").value;
 		//alert("sample"+url);
-   popupWindow = window.open(url,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+   popupWindow = window.open(url,"waiverpopUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
    		}
   
 function healthvalidate(){
 
 	var url="editusernameinsuranceinformation?username="+document.getElementById("username").value;
 	//alert("sample"+url);
-popupWindow = window.open(url,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+popupWindow = window.open(url,"healthpopUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
 		}
 		
 function treatvalidate(){
 
 	var url="editusernametreatform?username="+document.getElementById("username").value;
 	//alert("sample"+url);
-popupWindow = window.open(url,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+popupWindow = window.open(url,"treatpopUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
 		}
 function minorvalidate(){
 
 	var url="editusernametreatminor?username="+document.getElementById("username").value;
 	//alert("sample"+url);
-popupWindow = window.open(url,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+popupWindow = window.open(url,"minorpopUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
 		}
 function hardshipvalidate(){
 
 	var url="editusernamehardship?username="+document.getElementById("username").value;
 	//alert("sample"+url);
-popupWindow = window.open(url,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+popupWindow = window.open(url,"hardshippopUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
 		}
 function medicalvalidate(){
 
 	var url="editusernamemedical?username="+document.getElementById("username").value;
 	//alert("sample"+url);
-popupWindow = window.open(url,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+popupWindow = window.open(url,"medicalpopUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
 		}
 function assignmentvalidate(){
 
 	var url="editusernameassignment?username="+document.getElementById("username").value;
 	//alert("sample"+url);
-popupWindow = window.open(url,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+popupWindow = window.open(url,"assignmentpopUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
 		}
 function hippavalidate(){
 
 	var url="editusernamehippa?username="+document.getElementById("username").value;
 	//alert("sample"+url);
-popupWindow = window.open(url,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+popupWindow = window.open(url,"hippapopUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
 		}
 function hipquestionvalidate(){
 
 	var url="editusernamehipquestionnaire?username="+document.getElementById("username").value;
 	//alert("sample"+url);
-popupWindow = window.open(url,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+popupWindow = window.open(url,"hipquestionpopUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
 		}
 function footquestionvalidate(){
 
 	var url="editusernamefootquestionnarie?username="+document.getElementById("username").value;
 	//alert("sample"+url);
-popupWindow = window.open(url,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+popupWindow = window.open(url,"footquestionpopUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
 		}
 function symptomvalidate(){
 
 	var url="editusernamesymptom?username="+document.getElementById("username").value;
 	//alert("sample"+url);
-popupWindow = window.open(url,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+popupWindow = window.open(url,"symptompopUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
 		}
 </script>
   <script>

@@ -141,11 +141,11 @@ public class responseattorneyajax {
 		model.addAttribute("menu", "perry");
 		return "editpatientattorney";*/
 	}
-	/*if(patientDAO.getUsername(faxcover.getUsername()).size()>0)
+	if(patientDAO.getUsername(responseattorney.getUsername()).size()>0)
 	{
-		patientname=patientDAO.getUsername(faxcover.getUsername()).get(0).getName();
+		patientname=patientDAO.getUsername(responseattorney.getUsername()).get(0).getName();
 	}	
-	*/	
+	
 		/*System.out.println("initialemlimited"+dcfeeslip.getInitialemlimited());
 	
 		

@@ -131,13 +131,12 @@ public class Noticeassignment
 		this.letter1 = letter1;
 	}
 
-	public Noticeassignment(String noticeid, String username, String nameofins,
+	public Noticeassignment(String noticeid, String nameofins,
 			String nameofattorney, String address1, String address2,
 			String regarding, String patientname, String dateofaccident,
 			String todaysdate, String letter, String letter1) {
 		super();
 		this.noticeid = noticeid;
-		this.username = username;
 		this.nameofins = nameofins;
 		this.nameofattorney = nameofattorney;
 		this.address1 = address1;
@@ -149,6 +148,8 @@ public class Noticeassignment
 		this.letter = letter;
 		this.letter1 = letter1;
 	}
+
+
 	
 	
 }

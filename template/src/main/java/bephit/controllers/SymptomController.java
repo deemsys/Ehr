@@ -431,6 +431,10 @@ String name="";
 		hipquestionnaireform.setHipquestionnairedetails(hipquestionnairedao.getusernamehipquestionnairedetails(username));
 		model.addAttribute("hipquestionnaireform", hipquestionnaireform);
 
+		if(principal.getName().equals("admin"))
+	    {
+	    	model.addAttribute("choice","close");
+	    }
 		return "viewhipquestionnaire";
 	}
 
@@ -819,6 +823,10 @@ String name="";
 		symptomform.setSymptomdetails(symptomdao.getusernamesymptomDetails(username));
 		model.addAttribute("symptomform", symptomform);
 		model.addAttribute("success", true);
+		if(principal.getName().equals("admin"))
+	    {
+	    	model.addAttribute("choice","close");
+	    }
 		return "viewsymptom";
 	}
 

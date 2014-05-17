@@ -760,7 +760,7 @@ Injuries of this nature and magnitude respond well to a treatment program consis
 					<option selected="selected" value="Mr" <c:if test="${narrativereport.gender61=='Mr'}"><c:out value="Selected"/></c:if> >Mr</option>
 					<option value="Mrs" <c:if test="${narrativereport.gender61=='Mrs'}"><c:out value="Selected"/></c:if>>Mrs</option>
 					<option value="Ms" <c:if test="${narrativereport.gender61=='Ms'}"><c:out value="Selected"/></c:if>>Ms</option>
-					</select> <input type="text" name="pname" value="narrativereport.pname">on <input type="text" name="date9" id="datepicker9" value="narrativereport.date9">and during that period of time, records indicate <select  name="gender62" id="gender62" onchange='Checksymptom(this.value);'>
+					</select> <input type="text" name="pname" value="${narrativereport.pname}">on <input type="text" name="date9" id="datepicker9" value="${narrativereport.date9}">and during that period of time, records indicate <select  name="gender62" id="gender62" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="He" <c:if test="${narrativereport.gender62=='He'}"><c:out value="Selected"/></c:if>>He</option>
 					<option value="She" <c:if test="${narrativereport.gender62=='She'}"><c:out value="Selected"/></c:if>>She</option>
 					</select> experienced steady improvement.
@@ -818,7 +818,8 @@ I hope you find this narrative report and discussion helpful in resolving the cu
  <table align="right">
 <tr>
 <td><input type="submit" class="submit_btn" value="Update" onclick="return checkSubmit('this');"></td>
-<td><a href="viewnarrativereport"style="color:white" class="submit_btn">Cancel</a></td>
+<td><a href="deletenarrativereport?narrativeno=${narrativereport.narrativeno}"style="color:white" class="submit_btn">Delete</a></td>
+<td><a href="viewallpatientdetails"style="color:white" class="submit_btn">Cancel</a></td>
 </tr>
 </table>
 	            </div>

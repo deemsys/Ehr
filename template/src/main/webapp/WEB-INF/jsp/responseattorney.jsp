@@ -126,7 +126,7 @@ function doAjaxPost() {
 		    	 var calculate=cal+1;
 			    /*  alert(response.indexOf("|"));
 			   alert(response.substring(0,cal)); */
-			   //document.getElementById("patientname").value=response.substring(0,cal);
+			   document.getElementById("patientname").value=response.substring(0,cal);
 			   
 		    	 document.getElementById("user").value=response.substring(calculate,response.length);
 		    	
@@ -292,7 +292,7 @@ document.getElementById("patientnameerror").innerHTML="";
               <input type="text" name="user" id="user"  style="visibility:hidden">
               <br>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
-        	  <tr><td><br><p id="mypar"><span class="err">*</span>Dear';:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="dearname" id="dearname" style="width: 178px; "><span class="err" id="dearnameerr"></span></p></td></tr>
+        	  <tr><td><br><p id="mypar"><span class="err">*</span>Dear&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="dearname" id="dearname" style="width: 178px; "><span class="err" id="dearnameerr"></span></p></td></tr>
        		  </table>
        		  <table cellpadding="0" cellspacing="0" border="0" width="100%">
        		  <tr>

@@ -83,8 +83,7 @@ public class NoticeassignmentDAO {
 			resultSet = statement.executeQuery("select * from tbl_noticeassignment");
 			while(resultSet.next()){
 				noticeassignment.add(new Noticeassignment
-						(resultSet.getString("noticeid"),
-								resultSet.getString("username"),
+						(resultSet.getString("noticeid"),							
 								resultSet.getString("nameofins"),
 								resultSet.getString("nameofattorney"),
 								resultSet.getString("address1"),
@@ -135,7 +134,7 @@ public class NoticeassignmentDAO {
 			while(resultSet.next()){
 				noticeassignment.add(new Noticeassignment
 						(resultSet.getString("noticeid"),
-								resultSet.getString("username"),
+								
 								resultSet.getString("nameofins"),
 								resultSet.getString("nameofattorney"),
 								resultSet.getString("address1"),
@@ -195,8 +194,8 @@ public class NoticeassignmentDAO {
 								resultSet.getString("dateofaccident"),
 								resultSet.getString("todaysdate"),
 								resultSet.getString("letter"),
-								resultSet.getString("letter1"),
-								resultSet.getString("treatingphysician")
+								resultSet.getString("letter1")
+							
 			    		
 						
 			    		 ));

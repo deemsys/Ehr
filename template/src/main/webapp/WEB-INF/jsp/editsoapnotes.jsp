@@ -333,7 +333,7 @@ else
 							+ $im
 							+ ')" style="text-decoration:none;"><input type="submit" class="submit_btn" value="CANCEL"  /></a></td></tr></table>';
 							
-							alert(newdiv.innerHTML);
+							
 					document.getElementById(divName).appendChild(newdiv);
 					$im++;
 					flagm++;

@@ -597,7 +597,11 @@ public class MainController {
 		model.addAttribute("physicalexamForm",physicalexamForm);
 		model.addAttribute("menu", "phyexam");	
 	    
-	
+		if(patientDAO.getUsername((String)session.getAttribute("username")).size()>0)
+		 {
+			 String name=patientDAO.getUsername((String)session.getAttribute("username")).get(0).getName();
+			 model.addAttribute("name",name);
+		 }	
 		return "hamiltonchiropractic";
  
 	}
@@ -753,7 +757,7 @@ public class MainController {
 
 	
 	@RequestMapping(value="/hamiltonchiropractic", method = RequestMethod.POST)
-	public String insert_hamiltonchiropractic(@ModelAttribute("Hamiltonchiropractic")  @Valid Hamiltonchiropractic hamiltonchiropractic,@ModelAttribute("Hamilton")  @Valid Hamilton hamilton, BindingResult result,ModelMap model) {
+	public String insert_hamiltonchiropractic(HttpSession session,@ModelAttribute("Hamiltonchiropractic")  @Valid Hamiltonchiropractic hamiltonchiropractic,@ModelAttribute("Hamilton")  @Valid Hamilton hamilton, BindingResult result,ModelMap model) {
 		/*if(result.hasErrors())
 		{
 			HamiltonchiropracticForm hamiltonchiropracticForm= new HamiltonchiropracticForm();
@@ -773,7 +777,13 @@ public class MainController {
 		 model.addAttribute("menu", "iniexam");
 		//System.out.println(autoaccident.getAdjustersname());
 	    
-		
+			if(patientDAO.getUsername((String)session.getAttribute("username")).size()>0)
+			 {
+				 String name=patientDAO.getUsername((String)session.getAttribute("username")).get(0).getName();
+				 model.addAttribute("name",name);
+			 }	
+		session.setAttribute("visit","2");
+		model.addAttribute("menu","report");
 		return "radiologicreport";
  
 	}
@@ -1139,6 +1149,10 @@ public class MainController {
         model.addAttribute("autoaccidentForm", autoaccidentForm);
 	       model.addAttribute("success","true");
 	       model.addAttribute("menu", "Accident");
+	       if(principal.getName().equals("admin"))
+		    {
+		    	model.addAttribute("choice","close");
+		    }
 	        return "viewautoaccident";
 		
 	}
@@ -1201,6 +1215,11 @@ public class MainController {
 	@RequestMapping(value="/radiologicreport", method = RequestMethod.POST)
 	public String insert_radiologicreport(HttpServletRequest request,HttpSession session,@ModelAttribute("RadiologicReport")  @Valid RadiologicReport radiologicreport,BindingResult result,ModelMap model) {
 		session.setAttribute("radio",radiologicreport);	
+		if(patientDAO.getUsername((String)session.getAttribute("username")).size()>0)
+		 {
+			 String name=patientDAO.getUsername((String)session.getAttribute("username")).get(0).getName();
+			 model.addAttribute("name",name);
+		 }	
 		if(result.hasErrors())
 			{
 			//	RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
@@ -1240,11 +1259,16 @@ public class MainController {
 				model.addAttribute("menu", "soapnotes");
 				 List<String> diagnosis=new ArrayList<String>();
 			     diagnosis =soapDAO.getdiagnosis(username);
-			        model.addAttribute("diagnosis",diagnosis);
+			    session.removeAttribute("visit");
+			     model.addAttribute("diagnosis",diagnosis);
 			        return "editsoapnotes";
 			}
+	    	if(physicalDAO.getPhysicalpatient_id(username).size()==0)
+	    	{session.setAttribute("visit","1");
+	    		return "physicalexam";
+	    	}
 	    	
-	    	
+	    	session.setAttribute("visit","3");
 	    	
 			return "soapnotes";
 	 
@@ -1609,6 +1633,10 @@ public class MainController {
 	        model.addAttribute("workaccidentForm", workaccidentForm);
 	       model.addAttribute("success","true");
 	       model.addAttribute("menu", "Accident");
+	       if(principal.getName().equals("admin"))
+		    {
+		    	model.addAttribute("choice","close");
+		    }
 	        return "viewworkaccident";
 		
 	}
@@ -2603,6 +2631,10 @@ MedicalRecordsForm medicalrecordForm = new MedicalRecordsForm();
         model.addAttribute("MedicalRecordsForm", medicalrecordForm);
         model.addAttribute("menu", "authorization");
 	       model.addAttribute("success","true");
+	       if(principal.getName().equals("admin"))
+		    {
+		    	model.addAttribute("choice","close");
+		    }
 	        return "medicalrecordslist";
 		
 	}
@@ -2845,7 +2877,12 @@ String username=principal.getName();
         model.addAttribute("ScreeningAuthzForm", screeningauthzForm);
 	       model.addAttribute("success","true");
 	       model.addAttribute("menu", "authorization");
-	        return "viewscreeningauthz";
+
+	       if(principal.getName().equals("admin"))
+	      	    {
+	      	    	model.addAttribute("choice","close");
+	      	    } 
+	       return "viewscreeningauthz";
 		
 	}
 	@RequestMapping(value="/screeningauthzlist", method = RequestMethod.GET)
@@ -3112,6 +3149,11 @@ String name="";
         model.addAttribute("AssignmentDetailsForm", assignmentdetailsform);
 	       model.addAttribute("success","true");
 	       model.addAttribute("menu", "authorization");
+	       if(principal.getName().equals("admin"))
+		    {
+		    	model.addAttribute("choice","close");
+		    }
+	       
 	        return "assignmentlist";
 		
 	}
@@ -3351,6 +3393,10 @@ String name="";
         model.addAttribute("HippaPrivacyForm", hippaprivacyform);
 	       model.addAttribute("success","true");
 	       model.addAttribute("menu", "authorization");
+	       if(principal.getName().equals("admin"))
+		    {
+		    	model.addAttribute("choice","close");
+		    }
 	        return "hippalist";
 		
 	}
@@ -3932,7 +3978,7 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 		patientdetailsform.setPatientDetails(patientDAO.getUsername(username));
         model.addAttribute("patientDetailsForm", patientdetailsform);
       
-        String patient_id=patientdetailsform.getPatientDetails().get(0).getUsername();
+        String patient_id=patientdetailsform.getPatientDetails().get(0).getPatient_id();
         model.addAttribute("menu", "checklist");
         List<String> symptom=new ArrayList<String>();
 		symptom=patientDAO.getsymptomdetails(patient_id);
@@ -4054,7 +4100,11 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
         model.addAttribute("patientDetailsForm",patientdetailsform);
         model.addAttribute("success","true");
         model.addAttribute("menu", "patientInfo");
-	    return "viewpatient";
+	    if(principal.getName().equals("admin"))
+	    {
+	    	model.addAttribute("choice","close");
+	    }
+        return "viewpatient";
 		
 	}
 
@@ -4410,6 +4460,10 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
         model.addAttribute("insuranceplanform", insuranceplanForm);
 	       model.addAttribute("success","true");
 	       model.addAttribute("menu", "health");
+	       if(principal.getName().equals("admin"))
+		    {
+		    	model.addAttribute("choice","close");
+		    }
 	        return "insuranceplanlist";
 		
 	}
@@ -4637,6 +4691,10 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 			model.addAttribute("treatform",treatform);
 	      
 	       model.addAttribute("menu", "consent");
+	       if(principal.getName().equals("admin"))
+		    {
+		    	model.addAttribute("choice","close");
+		    }
 	        return "treatformlist";
 		
 	}
@@ -4803,6 +4861,10 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 		model.addAttribute("treatminordetailsform",treatminordetailsForm);
 	       model.addAttribute("success","true");
 	       model.addAttribute("menu", "consent");
+	       if(principal.getName().equals("admin"))
+		    {
+		    	model.addAttribute("choice","close");
+		    }
 	        return "treatminorlist";
 		
 	}
@@ -4902,6 +4964,11 @@ String name="";
 		model.addAttribute("hardshipagreementform",hardshipagreementForm);
 	       model.addAttribute("success","true");
 	       model.addAttribute("menu", "authorization");
+
+	       if(principal.getName().equals("admin"))
+	      	    {
+	      	    	model.addAttribute("choice","close");
+	      	    }
 	        return "hardshiplist";
 		
 	}
@@ -4996,6 +5063,10 @@ String name="";
 		  model.addAttribute("success","true");
 		 
 		 model.addAttribute("menu", "health");
+		 if(principal.getName().equals("admin"))
+		    {
+		    	model.addAttribute("choice","close");
+		    }
 	        return "insuranceinfolist";
 		
 	}
@@ -5171,6 +5242,7 @@ String name="";
 	
 	@RequestMapping(value="/moretest", method=RequestMethod.GET)
 	public String moretest(ModelMap model) {
+		
 		
 		return "moretest";
 	}

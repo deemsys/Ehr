@@ -107,6 +107,42 @@ public List<Moretest> getMoretest(){
     return moretest;
 	
 }
+
+public List<Moretest> getMoretest(String username){
+	Connection con = null;
+	Statement statement = null;
+	ResultSet resultSet = null;
+	try {
+		con = dataSource.getConnection();
+		statement = con.createStatement();
+	} catch (SQLException e1) {
+		e1.printStackTrace();
+	}
+	
+	List<Moretest> moretest = new ArrayList<Moretest>();
+    try{
+		resultSet = statement.executeQuery("select * from tbl_moretest where username='"+username+"'");
+		while(resultSet.next()){
+			moretest.add( new Moretest(resultSet.getString("emptycan"),resultSet.getString("yergason"), resultSet.getString("speed"),resultSet.getString(" ludington"),resultSet.getString(" droparm"),resultSet.getString(" apley"),resultSet.getString(" crossover"),resultSet.getString(" neerimpingement"),resultSet.getString(" hawkinskennedy"),resultSet.getString(" sternoclavicular"),resultSet.getString(" acjdtest"), resultSet.getString("acjctest"), resultSet.getString("piano"), resultSet.getString("apprehensiona"), resultSet.getString("apprehensionp"), resultSet.getString("slucus"), resultSet.getString("anterior"), resultSet.getString("posterior"), resultSet.getString("jobe"), resultSet.getString("feagin"), resultSet.getString("loadshift"),resultSet.getString("grind"), resultSet.getString("clunk"), resultSet.getString("obrien"), resultSet.getString("brachial"), resultSet.getString("shoulder"), resultSet.getString("adson"), resultSet.getString("allen"),resultSet.getString("roos"), resultSet.getString("military"), resultSet.getString("pectoralis"), resultSet.getString("chvostek"), resultSet.getString("loadingtest"),resultSet.getString("palpation"),resultSet.getString("vertebral"), resultSet.getString("foraminalct"), resultSet.getString("foraminaldt"),resultSet.getString("valsalva"),resultSet.getString("swallowing"),resultSet.getString("tinelsign"),resultSet.getString("cozen"),resultSet.getString("resistive"), resultSet.getString("passive"), resultSet.getString("golfer"),resultSet.getString("hyperextension"),resultSet.getString("elbowflexion"),resultSet.getString("varus"),resultSet.getString("valgus"), resultSet.getString("tinel"), resultSet.getString("pinchgrip"), resultSet.getString("percussion"),resultSet.getString("compression"),resultSet.getString("longfinger"),resultSet.getString("finkelstein"),resultSet.getString("phalen"),resultSet.getString("tinelp"), resultSet.getString("froment"), resultSet.getString("wrinkle"),resultSet.getString("digital"),resultSet.getString("bunnel"),resultSet.getString("murphy"),resultSet.getString("watson"),resultSet.getString("valgusst"),resultSet.getString("varusst"), resultSet.getString("selectionvi"),resultSet.getString("kernig"),resultSet.getString("lateral"),resultSet.getString("anteriorl"),resultSet.getString("inspiration"),resultSet.getString("kernigt"), resultSet.getString("lateralt"),resultSet.getString("anteriort"), resultSet.getString("inspirationt"),resultSet.getString("valsalvat"),resultSet.getString("stoop"),resultSet.getString("hoover"), resultSet.getString("kernigl"),resultSet.getString("straight"), resultSet.getString("bowstring"),resultSet.getString("sitting"),resultSet.getString("unilateral"), resultSet.getString("bilateral"),resultSet.getString("wellstraight"),resultSet.getString("slump"), resultSet.getString("thomas"),resultSet.getString("spring"), resultSet.getString("trendelenburg"),resultSet.getString("stork"),resultSet.getString("sijft"),resultSet.getString("gillet"), resultSet.getString("sijst"), resultSet.getString("squish"),resultSet.getString("yeoman"), resultSet.getString("gaenslen"), resultSet.getString("patrick"), resultSet.getString("longsitting"),resultSet.getString("hipscouring"),resultSet.getString("nelaton"),resultSet.getString("craig"),resultSet.getString("straightc"),resultSet.getString("fabertest"),resultSet.getString("trendelenburgf"),resultSet.getString("ober"),resultSet.getString("piriformis"), resultSet.getString("thomasp"),resultSet.getString("trueleg"),resultSet.getString("apparentleg"),resultSet.getString("ely"),resultSet.getString("tripod"),resultSet.getString("femoral"),resultSet.getString("patella"),resultSet.getString("patellarp"),resultSet.getString("ballotable"),resultSet.getString("sweep"),resultSet.getString("quadriceps"),resultSet.getString("medial"),resultSet.getString("bounce"),resultSet.getString("patellar"), resultSet.getString("renne"),resultSet.getString("noble"),resultSet.getString("hughston"),resultSet.getString("godfrey"),resultSet.getString("posteriorg"),resultSet.getString("reverse"),resultSet.getString("anteriorlt"),resultSet.getString("anteriordt"), resultSet.getString("slocuminternal"),resultSet.getString("slocumexternal"),resultSet.getString("pivot"), resultSet.getString("jerk"),resultSet.getString("posteriordt"),resultSet.getString("hughstonposteromedial"), resultSet.getString("hughstonposterolateral"),resultSet.getString("posteriorlt"),resultSet.getString("externalrotation"), resultSet.getString("valgusstt"),resultSet.getString("varusstt"),resultSet.getString("mcmurray"), resultSet.getString("apleyct"),resultSet.getString("steinmann"),resultSet.getString("rectus"), resultSet.getString("homans"),resultSet.getString("anteriorh"),resultSet.getString("talarinversion"), resultSet.getString("talareversion"),resultSet.getString("thompson"),resultSet.getString("tap"), resultSet.getString("feiss"),resultSet.getString("interdigital"),resultSet.getString("compressiontest"), resultSet.getString("longbone"), resultSet.getString("swingtest"), resultSet.getString("kleiger"), resultSet.getString("tinelsignk")));
+			
+			
+			
+			
+		
+		}
+    }catch(Exception e){
+    	releaseResultSet(resultSet);
+    	releaseStatement(statement);
+    	releaseConnection(con);
+    }finally{
+    	releaseResultSet(resultSet);
+    	releaseStatement(statement);
+    	releaseConnection(con);	    	
+    }
+    return moretest;
+	
+}
+
 public void releaseConnection(Connection con){
 	try{if(con != null)
 		con.close();

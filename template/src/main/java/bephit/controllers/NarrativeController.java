@@ -51,7 +51,8 @@ public class NarrativeController
 	
 	@RequestMapping(value="/narrativesearch", method = RequestMethod.POST)
 	public String getnarrativesearchdetails(HttpServletRequest request,PatientDetails patientDetails,HttpSession session,@ModelAttribute("Narrativereport")  @Valid Narrativereport narrativereport,BindingResult result,ModelMap model) {
-		String username=request.getParameter("username");		
+		String username=request.getParameter("username");	
+		model.addAttribute("username",username);
 		model.addAttribute("menu","narrative");	
 		
 		PatientDetailsForm patientDetailsForm=new PatientDetailsForm();
@@ -63,12 +64,25 @@ public class NarrativeController
 		}
 		System.out.println("patientid"+patientDetailsForm.getPatientDetails().get(0).getPatient_id());
 		
-		String patientid=patientDetailsForm.getPatientDetails().get(0).getPatient_id();
+	if(narrativeDAO.viewusernamenarrativereportlist(username).size()>0)
+	{
+		NarrativereportForm narrativereportForm=new NarrativereportForm();
+		narrativereportForm.setNarrativereport(narrativeDAO.viewusernamenarrativereportlist(username));	
+		model.addAttribute("narrativereportForm",narrativereportForm);
+		model.addAttribute("menu","narrative");
+		 /*model.addAttribute("menu","initial");*/
+		
+		return "editnarrativereport";
+		
+	}
+		
+		String patientid=patientDetailsForm.getPatientDetails().get(0).getUsername();
 		PhysicalexamForm physicalexamForm=new PhysicalexamForm();
 		physicalexamForm.setPhysicalexam(physicalexamDAO.getPhysicalpatient_id(patientid));
 		model.addAttribute("physicalexamform",physicalexamForm);
 		model.addAttribute("patientdetailsform",patientDetailsForm);
 		model.addAttribute("menu","narrative");
+		
 		return "narrativereport";
  
 	}
