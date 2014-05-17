@@ -415,13 +415,13 @@ function checkSubmit()
        		 </table>
         	 
               
-             <table>   <tr>   <td width="600"></td> 
+             <table border="0">   <tr>   <td width="200"></td> 
              <td>
               <p align="right"><b>Sincerly,</b></p></td>
               
-              <tr> <td width="600"></td> <td>
+              <tr> <td width="400"></td> <td>
               <b><span class="err">*</span>Darrin A. Pordash D.C.</b></td></tr>
-              <tr> <td width="600"></td>  <td>
+              <tr> <td width="400"></td>  <td>
        		 </td></tr>
        		 </table>
        		 </c:when>
