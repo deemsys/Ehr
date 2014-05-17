@@ -178,40 +178,40 @@ document.getElementById("signerror").innerHTML=" ";
           <tr height="30">
            <input type="hidden" name="narrativeno" id="inp_id" value="${narrativereport.narrativeno}"/>
           <td><span class="err">*</span>Report Date: </td>
-          <td><input type="text" name="reportdate" size="40" id="datepicker11" value="${narrativereport.reportdate }"><span id="datepicker11error" style="color: red;font-style:italic;"><form:errors path="Copyofrequest.patient"></form:errors></span></td>
+          <td><input type="text"  class="input_txtbx1" name="reportdate" size="40" id="datepicker11" value="${narrativereport.reportdate }"><span id="datepicker11error" style="color: red;font-style:italic;"><form:errors path="Copyofrequest.patient"></form:errors></span></td>
           </tr>   
           <tr height="30">
           <td><span class="err">*</span>Patient: </td>
-          <td><input type="text" id="patientname" name="patient" size="40" value="${narrativereport.patient}"><span id="patientnameerror" style="color: red;font-style:italic;"><form:errors path="Copyofrequest.patient"></form:errors></span></td>
+          <td><input type="text"  class="input_txtbx1" id="patientname" name="patient" size="40" value="${narrativereport.patient}"><span id="patientnameerror" style="color: red;font-style:italic;"><form:errors path="Copyofrequest.patient"></form:errors></span></td>
           </tr>
           <tr height="30">
           <td>Date of Injury: </td>
-          <td><input type="text" name="dateofinjury" size="40" id="datepicker1" value="${narrativereport.dateofinjury}"><span id="datepicker1error" style="color: red;font-style:italic;"></span></td>
+          <td><input type="text"  class="input_txtbx1" name="dateofinjury" size="40" id="datepicker1" value="${narrativereport.dateofinjury}"><span id="datepicker1error" style="color: red;font-style:italic;"></span></td>
           </tr>
           <tr height="30">
           <td>Date of first visit: </td>
-          <td><input type="text" name="dateoffirstvisit" id="datepicker" size="40" value="${narrativereport.dateoffirstvisit}"><span id="datepickererror" style="color: red;font-style:italic;"></span></td>
+          <td><input type="text"  class="input_txtbx1" name="dateoffirstvisit" id="datepicker" size="40" value="${narrativereport.dateoffirstvisit}"><span id="datepickererror" style="color: red;font-style:italic;"></span></td>
           </tr>
           </table>
           <table width="85">
           <tr height="30">
           <td width="40">TO  </td>
-          <td><input type="text" name="towhom"  size="40" value="${narrativereport.towhom}"></td>
+          <td><input type="text"  class="input_txtbx1" name="towhom"  size="40" value="${narrativereport.towhom}"></td>
           </tr>
           </table>
           <br/>
-          <div><p style="line-height:1.5"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At your request and with permission from my patient, <input type="text" name="patientname" size="40" value="${narrativereport.patientname}">, I am writing the following narrative report concerning the injuries <select  name="gender" id="gender">
+          <div><p style="line-height:1.5"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At your request and with permission from my patient, <input type="text"  class="input_txtbx1" name="patientname" size="40" value="${narrativereport.patientname}">, I am writing the following narrative report concerning the injuries <select  name="gender" id="gender">
 					<option selected="selected" value="He" <c:if test="${narrativereport.gender=='He'}"><c:out value="Selected"/></c:if>>He</option>
 					<option value="She" <c:if test="${narrativereprot.gender=='She'}"><c:out value="Selected"/></c:if>>She</option>
-					</select> sustained as the result of an automobile accident on <input type="text" name="accident" id="datepicker2" value="${narrativereport.accident}"></p>
+					</select> sustained as the result of an automobile accident on <input type="text"  class="input_txtbx1" name="accident" id="datepicker2" value="${narrativereport.accident}"></p>
                <p><B style="font-size:14px">History</B></p>
-               <p style="line-height:26px"><input type="text" name="name" value="${narrativereport.name}"> was initially seen for the purpose of consultation and examination on <input type="text" name="dateofconsultation" id="datepicker3" value="${narrativereport.dateofconsultation}">.  <select name="gender1" id="gender1">
+               <p style="line-height:26px"><input type="text" class="input_txtbx1"  name="name" value="${narrativereport.name}"> was initially seen for the purpose of consultation and examination on <input type="text"  class="input_txtbx1" name="dateofconsultation" id="datepicker3" value="${narrativereport.dateofconsultation}">.  <select name="gender1" id="gender1">
 					<option selected="selected" value="He" <c:if test="${narrativereport.gender1=='He'}"><c:out value="Selected"/></c:if> >He</option>
 					<option value="She" <c:if test="${narrativereport.gender1=='She'}"><c:out value="Selected"/></c:if>>She</option>
 					</select> stated that <select  name="gender2" id="gender2">
 					<option selected="selected" value="He" <c:if test="${narrativereport.gender2=='He'}"><c:out value="Selected"/></c:if>>He</option>
 					<option value="She" <c:if test="${narrativereport.gender2=='She'}"><c:out value="Selected"/></c:if>>She</option>
-					</select> was the driver in a motor vehicle accident <input type="text" name="accidentdate" id="datepicker4" value="${narrativereport.accidentdate}">.  <select  name="gender3" id="gender3">
+					</select> was the driver in a motor vehicle accident <input type="text"  class="input_txtbx1" name="accidentdate" id="datepicker4" value="${narrativereport.accidentdate}">.  <select  name="gender3" id="gender3">
 					<option selected="selected" value="He" <c:if test="${narrativereport.gender3=='He'}"><c:out value="Selected"/></c:if>>He</option>
 					<option value="She" <c:if test="${narrativereport.gender3=='She'}"><c:out value="Selected"/></c:if>>She</option>
 					</select> further stated that <select  name="gender4" id="gender4">
@@ -220,7 +220,7 @@ document.getElementById("signerror").innerHTML=" ";
 					</select> GMC Truck was struck from behind by a Ford Aerostar while <select name="gender5" id="gender5">
 					<option selected="selected" value="He" <c:if test="${narrativereport.gender5=='He'}"><c:out value="Selected"/></c:if>>He</option>
 					<option value="She" <c:if test="${narrativereport.gender5=='She'}"><c:out value="Selected"/></c:if>>She</option>
-					</select> was at a dead stop. It was daylight and road conditions were dry at the time of impact. <input type="text" name="name1" value="${narrativereport.name1}"> wearing <select  name="gendernew" id="gendernew">
+					</select> was at a dead stop. It was daylight and road conditions were dry at the time of impact. <input type="text" class="input_txtbx1"  name="name1" value="${narrativereport.name1}"> wearing <select  name="gendernew" id="gendernew">
 					<option selected="selected" value="His" <c:if test="${narrativereport.gendernew=='He'}"><c:out value="Selected"/></c:if>>He</option>
 					<option value="Her" <c:if test="${narrativereport.gendernew=='She'}"><c:out value="Selected"/></c:if>>Her</option>
 					</select> seatbelt with both hands on the wheel and <select  name="gender6" id="gender6">
@@ -236,16 +236,16 @@ document.getElementById("signerror").innerHTML=" ";
 					<option selected="selected" value="Mr" <c:if test="${narrativereport.gender9=='Mr'}"><c:out value="Selected"/></c:if>>Mr</option>
 					<option value="Mrs" <c:if test="${narrativereport.gender9=='Mrs'}"><c:out value="Selected"/></c:if>>Ms</option>
 					<option value="Ms" <c:if test="${narrativereport.gender9=='Ms'}"><c:out value="Selected"/></c:if>>Ms</option>
-					</select>.<input type="text" name="name2" value="${narrativereport.name2}">body was <input type="text" name="body" value="${narrativereport.body}"> . <select  name="gender10" id="gender10">
+					</select>.<input type="text"  class="input_txtbx1" name="name2" value="${narrativereport.name2}">body was <input type="text"  class="input_txtbx1" name="body" value="${narrativereport.body}"> . <select  name="gender10" id="gender10">
 					<option selected="selected" value="His" <c:if test="${narrativereport.gender10=='His'}"><c:out value="Selected"/></c:if> >His</option>
 					<option value="Her" <c:if test="${narrativereport.gender10=='Her'}"><c:out value="Selected"/></c:if>>Her</option>
-					</select> <input type="text" name="slammed" value="${narrativereport.slammed}">slammed into the <input type="text" name="slammed1" value="${narrativereport.slammed1}">. Symptoms of <input type="text" name="symptom" value="${narrativereport.symptom }">, directly related to the accident, appeared <input type="text" name="appeared" value="${narrativereport.appeared }"> after the incident.  The victim did (not )drive to the emergency room after the wreck. </p>
+					</select> <input type="text" name="slammed" value="${narrativereport.slammed}">slammed into the <input type="text"  class="input_txtbx1" name="slammed1" value="${narrativereport.slammed1}">. Symptoms of <input type="text"  class="input_txtbx1" name="symptom" value="${narrativereport.symptom }">, directly related to the accident, appeared <input type="text"  class="input_txtbx1" name="appeared" value="${narrativereport.appeared }"> after the incident.  The victim did (not )drive to the emergency room after the wreck. </p>
                <p><B style="font-size:14px">Past History</B></p>
-               <p style="line-height:26px">Past history revealed (no prior auto accidents, a prior automobile accident which occurred in <input type="text" name="priordate" id="datepicker4" value="${narrativereport.priordate}">. <select  name="gender11" id="gender11">
+               <p style="line-height:26px">Past history revealed (no prior auto accidents, a prior automobile accident which occurred in <input type="text"  class="input_txtbx1" name="priordate" id="datepicker4" value="${narrativereport.priordate}">. <select  name="gender11" id="gender11">
 					<option selected="selected" value="Mr" <c:if test="${narrativereport.gender11=='Mr'}"><c:out value="Selected"/></c:if> >Mr</option>
 					<option value="Mrs" <c:if test="${narrativereport.gender11=='Mrs'}"><c:out value="Selected"/></c:if>>Mrs</option>
 					<option value="Ms" <c:if test="${narrativereport.gender11=='Ms'}"><c:out value="Selected"/></c:if>>Ms</option>
-					</select><input type="text" name="name3" value="${narrativereport.name3}">stated that there were no residual effects from that accident and <select  name="gender12" id="gender12">
+					</select><input type="text" class="input_txtbx1"  name="name3" value="${narrativereport.name3}">stated that there were no residual effects from that accident and <select  name="gender12" id="gender12">
 					<option selected="selected" value="He" <c:if test="${narrativereport.gender12=='He'}"><c:out value="Selected"/></c:if>>He</option>
 					<option value="She" <c:if test="${narrativereport.gender12=='She'}"><c:out value="Selected"/></c:if>>She</option>
 					</select> was in good health prior to the current accident.  Past medical history revealed <input type="text" name="pastmedicalhistory" value="${narrativereport.pastmedicalhistory}">.  There <select  name="gender13" id="gender13">
@@ -270,7 +270,7 @@ document.getElementById("signerror").innerHTML=" ";
 					<option selected="selected" value="Mr" <c:if test="${narrativereport.gender18=='Mr'}"><c:out value="Selected"/></c:if>>Mr</option>
 					<option value="Mrs" <c:if test="${narrativereport.gender18=='Mrs'}"><c:out value="Selected"/></c:if>>Mrs</option>
 					<option value="Ms" <c:if test="${narrativereport.gender18=='Ms'}"><c:out value="Selected"/></c:if>>Ms</option>
-					</select> <input type="text" name="name4" value="${narrativereport.name4}"> presented to this clinic on <input type="text" name="clinicdate" id="datepicker7" value="${narrativereport.clinicdate}">with complaints of <select  name="gender19" id="gender19">
+					</select> <input type="text"  class="input_txtbx1" name="name4" value="${narrativereport.name4}"> presented to this clinic on <input type="text"  class="input_txtbx1" name="clinicdate" id="datepicker7" value="${narrativereport.clinicdate}">with complaints of <select  name="gender19" id="gender19">
 					<option selected="selected" value="Headache" <c:if test="${narrativereport.gender19=='Headache'}"><c:out value="Selected"/></c:if>>Headache</option>
 					<option value="Neck pain" <c:if test="${narrativereport.gender19=='Neck pain'}"><c:out value="Selected"/></c:if>>Neck pain</option>
 					<option value="Mid Back Pain" <c:if test="${narrativereport.gender19=='Mid Back Pain'}"><c:out value="Selected"/></c:if>>Mid Back Pain</option>
@@ -345,7 +345,7 @@ document.getElementById("signerror").innerHTML=" ";
 					</p>
 					<p><B style="font-size:14px">Physical Exam</B></p>
 					<p>&nbsp;&nbsp;<B style="font-size:13px">Physical Inspection</B></p>
-					<p style="line-height:26px">Examination revealed a <input type="text" name="age" value="${narrativereport.age}"> year old, <input type="text" name="age1" value="${narrativereport.age1}">, <input type="text" name="lb" value="${narrativereport.lb}">lb. <select  name="gender31" id="gender31">
+					<p style="line-height:26px">Examination revealed a <input type="text"  class="input_txtbx1" name="age" value="${narrativereport.age}"> year old, <input type="text"  class="input_txtbx1" name="age1" value="${narrativereport.age1}">, <input type="text"  class="input_txtbx1" name="lb" value="${narrativereport.lb}">lb. <select  name="gender31" id="gender31">
 					<option selected="selected" value="White" <c:if test="${narrativereport.gender31=='White'}"><c:out value="Selected"/></c:if>>White</option>
 					<option value="Black" <c:if test="${narrativereport.gender31=='Black'}"><c:out value="Selected"/></c:if>>Black</option> </select><select  name="gender32" id="gender32">
 					<option selected="selected" value="Male" <c:if test="${narrativereport.gender32=='Male'}"><c:out value="Selected"/></c:if>>Male</option>
@@ -393,7 +393,7 @@ document.getElementById("signerror").innerHTML=" ";
 					<option selected="selected" value="Cervical" <c:if test="${narrativereport.gendernew5=='Cervical'}"><c:out value="Selected"/></c:if>>Cervical</option>
 					<option value="Thoracic"<c:if test="${narrativereport.gendernew5=='Thoracic'}"><c:out value="Selected"/></c:if>>Thoracic</option>
 					<option value="Lumbar" <c:if test="${narrativereport.gendernew5=='Lumbar'}"><c:out value="Selected"/></c:if>>Lumbar</option>
-					</select>spine revealed paraspinal pain, spasm, edema and trigger points. There was <input type="text" name="tenderness" value="${narrativereport.tenderness}"> tenderness on the <select  name="gender40" id="gender40">
+					</select>spine revealed paraspinal pain, spasm, edema and trigger points. There was <input type="text"  class="input_txtbx1" name="tenderness" value="${narrativereport.tenderness}"> tenderness on the <select  name="gender40" id="gender40">
 					<option selected="selected" value="L-R" <c:if test="${narrativereport.gender40=='L-R'}"><c:out value="Selected"/></c:if>>L-R</option>
 					<option value="Bilaterally" <c:if test="${narrativereport.gender40=='Bilaterally'}"><c:out value="Selected"/></c:if>>Bilaterally</option>
 					</select> and vertebral fixations. Tonicity of the <select  name="gendernew6" id="gendernew6">
@@ -404,12 +404,12 @@ document.getElementById("signerror").innerHTML=" ";
 					</select>on the <select  name="gender41" id="gender41">
 					<option selected="selected" value="L-R" <c:if test="${narrativereport.gender41=='L-R'}"><c:out value="Selected"/></c:if>>L-R</option>
 					<option value="Bilaterally" <c:if test="${narrativereport.gender41=='Bilaterally'}"><c:out value="Selected"/></c:if>>Bilaterally</option>
-					</select> was evident. Also noted was ,<input type="text" name="noted" value="${narrativereport.noted}">.   </p>
+					</select> was evident. Also noted was ,<input type="text"  class="input_txtbx1" name="noted" value="${narrativereport.noted}">.   </p>
 					<table>
 					<tr>
 					<td width="150">Range Of Motion</td>
 					<td>
-					<input type="text" name="rangeofmotion" value="${narrativereport.rangeofmotion}">
+					<input type="text"  class="input_txtbx1" name="rangeofmotion" value="${narrativereport.rangeofmotion}">
 					</td>
 					</tr>
 					</table>
@@ -445,40 +445,40 @@ document.getElementById("signerror").innerHTML=" ";
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Flexion</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;60</td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="painres1" value="${narrativereport.painres1}"></td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="tonicity1" value="${narrativereport.tonicity1}"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="painres1" value="${narrativereport.painres1}"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity1" value="${narrativereport.tonicity1}"></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Extension</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;75</td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="painres2" value="${narrativereport.painres2}"></td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="tonicity2" value="${narrativereport.tonicity2}" ></td>
+					<td width="200">&nbsp;&nbsp;<input type="text" class="input_txtbx1"  name="painres2" value="${narrativereport.painres2}"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity2" value="${narrativereport.tonicity2}" ></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Right Lateral Flexion</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;45</td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="painres3" value="${narrativereport.painres3}"></td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="tonicity3" value="${narrativereport.tonicity3}"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="painres3" value="${narrativereport.painres3}"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1"  name="tonicity3" value="${narrativereport.tonicity3}"></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Left lateral Flexion</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;45</td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="painres4" value="${narrativereport.painres4}"></td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="tonicity4" value="${narrativereport.tonicity4}"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="painres4" value="${narrativereport.painres4}"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity4" value="${narrativereport.tonicity4}"></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Right Rotation</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;80</td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="painres5" value="${narrativereport.painres5}"></td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="tonicity5" value="${narrativereport.tonicity5}"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text" class="input_txtbx1"  name="painres5" value="${narrativereport.painres5}"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity5" value="${narrativereport.tonicity5}"></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
@@ -501,54 +501,54 @@ document.getElementById("signerror").innerHTML=" ";
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Flexion</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;80</td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="painres7" value="${narrativereport.painres7}"></td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="tonicity7" value="${narrativereport.tonicity7}"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text" class="input_txtbx1"  name="painres7" value="${narrativereport.painres7}"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity7" value="${narrativereport.tonicity7}"></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Extension</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;30</td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="painres8" value="${narrativereport.painres8}"></td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="tonicity8" value="${narrativereport.tonicity8}"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="painres8" value="${narrativereport.painres8}"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity8" value="${narrativereport.tonicity8}"></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Right Lateral Flexion</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;25</td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="painres9" value="${narrativereport.painres9}"></td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="tonicity9" value="${narrativereport.tonicity9}"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="painres9" value="${narrativereport.painres9}"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity9" value="${narrativereport.tonicity9}"></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Left lateral Flexion</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;25</td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="painres10" value="${narrativereport.painres10}"></td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="tonicity10" value="${narrativereport.tonicity10}"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="painres10" value="${narrativereport.painres10}"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity10" value="${narrativereport.tonicity10}"></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Right Rotation</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;30</td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="painres11" value="${narrativereport.painres11}"></td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="tonicity11" value="${narrativereport.tonicity11}"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="painres11" value="${narrativereport.painres11}"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity11" value="${narrativereport.tonicity11}"></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Left Rotation</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;30</td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="painres12" value="${narrativereport.painres12}"></td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="tonicity12" value="${narrativereport.tonicity12}"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="painres12" value="${narrativereport.painres12}"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity12" value="${narrativereport.tonicity12}"></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
 					</table>  
 					<p><B style="font-size:14px"> Neurologic Testing</B></p>
-					<p style="line-height:26px">Neurologic tests were performed for the purpose of assessing dermatomes, myotomes and deep tendon reflexes.  Peripheral sensitivity revealed (sensation to be equal and intact and without incident,abnormal sensation at the <input type="text" name="dermatome" value="${narrativereport.dermatome}"> dermatome level(s) on the L-R) for the <select  name="gender42" id="gender42">
+					<p style="line-height:26px">Neurologic tests were performed for the purpose of assessing dermatomes, myotomes and deep tendon reflexes.  Peripheral sensitivity revealed (sensation to be equal and intact and without incident,abnormal sensation at the <input type="text" class="input_txtbx1"  name="dermatome" value="${narrativereport.dermatome}"> dermatome level(s) on the L-R) for the <select  name="gender42" id="gender42">
 					<option selected="selected" value="Cervical" <c:if test="${narrativereport.gender42=='Cervical'}"><c:out value="Selected"/></c:if>>Cervical</option>
 					<option value="Thoracic" <c:if test="${narrativereport.gender42=='Thoracic'}"><c:out value="Selected"/></c:if>>Thoracic</option>
 					<option value="Lumbar" <c:if test="${narrativereport.gender42=='Lumbar'}"><c:out value="Selected"/></c:if>>Lumbar</option>
@@ -559,7 +559,7 @@ document.getElementById("signerror").innerHTML=" ";
 					</select> musculature  and was found to be <select  name="gender44" id="gender44" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Within normal limits" <c:if test="${narrativereport.gender44=='Within normal limits'}"><c:out value="Selected"/></c:if>>Within Normal Limits</option>
 					<option value="Not Within Normal Limits" <c:if test="${narrativereport.gender39=='Not Within Normal Limits'}"><c:out value="Selected"/></c:if>>Not Within Normal limits</option>
-					</select> <input type="text" name="level1" id="level1" style='display:none' value="${narrativereport.level1}">/5 at the <input type="text" name="level" value="${narrativereport.level}">level .  Pathologic and deep tendon reflexes were tested using the Wexler Scale and were found to be <select  name="gender45" id="gender45" onchange='Checksymptom(this.value);'>
+					</select> <input type="text" name="level1" id="level1" style='display:none' value="${narrativereport.level1}">/5 at the <input type="text"  class="input_txtbx1" name="level" value="${narrativereport.level}">level .  Pathologic and deep tendon reflexes were tested using the Wexler Scale and were found to be <select  name="gender45" id="gender45" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Equal and intact without incident" <c:if test="${narrativereport.gender45=='Equal and intact without incident'}"><c:out value="Selected"/></c:if>>Equal and intact and without incident</option>
 					<option value="Hypo-reflexic" <c:if test="${narrativereport.gender45=='Hypo-reflexic'}"><c:out value="Selected"/></c:if>>Hypo-reflexic</option>
 					<option value="Hyper-reflexic" <c:if test="${narrativereport.gender45=='Hyper-reflexic'}"><c:out value="Selected"/></c:if>>Hyper-reflexic</option>
@@ -577,7 +577,7 @@ document.getElementById("signerror").innerHTML=" ";
 					</tr>
 					<tr height="30">
 					<td width="200"></td>
-					<td width="250"><input type="text" name="orthopedictest1" value="${narrativereport.orthopedictest1}"> </td>
+					<td width="250"><input type="text"  class="input_txtbx1" name="orthopedictest1" value="${narrativereport.orthopedictest1}"> </td>
 					<td width="250"><input type="radio" name="jacksonsr" value="Positive" <c:if test="${narrativereport.jacksonsr=='Positive'}"><c:out value="checked=checked"/></c:if>>Positive &nbsp;&nbsp;<input type="radio" name="jacksonsr" value="Negative" <c:if test="${narrativereport.jacksonsr=='Negative'}"><c:out value="checked=checked"/></c:if>>Negative</td>
 					<td width="250"><input type="radio" name="jacksonsl" value="Positive" <c:if test="${narrativereport.jacksonsl=='Positive'}"><c:out value="checked=checked"/></c:if>>Positive &nbsp;&nbsp;<input type="radio" name="jacksonsl" value="Negative" <c:if test="${narrativereport.jacksonsl=='Negative'}"><c:out value="checked=checked"/></c:if>>Negative</td>
 					<td width="200"></td>
@@ -585,8 +585,8 @@ document.getElementById("signerror").innerHTML=" ";
 					</tr>
 					<tr height="30">
 					<td width="200"></td>
-					<td width="250"><input type="text" name="orthopedictest2" value="${narrativereport.orthopedictest2}"> </td>
-					<td width="250"><input type="radio" name="doublelegraiser" value="Positive" <c:if test="${narrativereport.doublelegraiser=='Positive'}"><c:out value="checked=checked"/></c:if>>Positive &nbsp;&nbsp;<input type="radio" name="doublelegraiser" value="Negative" <c:if test="${narrativereport.doublelegraiser=='Negative'}"><c:out value="checked=checked"/></c:if>>Negative</td>
+					<td width="250"><input type="text"  class="input_txtbx1" name="orthopedictest2" value="${narrativereport.orthopedictest2}"> </td>
+					<td width="250"><input type="radio"  class="input_txtbx1" name="doublelegraiser" value="Positive" <c:if test="${narrativereport.doublelegraiser=='Positive'}"><c:out value="checked=checked"/></c:if>>Positive &nbsp;&nbsp;<input type="radio" name="doublelegraiser" value="Negative" <c:if test="${narrativereport.doublelegraiser=='Negative'}"><c:out value="checked=checked"/></c:if>>Negative</td>
 					<td width="250"><input type="radio" name="doublelegraisel" value="Positive" <c:if test="${narrativereport.doublelegraisel=='Positive'}"><c:out value="checked=checked"/></c:if>>Positive &nbsp;&nbsp;<input type="radio" name="doublelegraisel" value="Negative" <c:if test="${narrativereport.doublelegraisel=='Negative'}"><c:out value="checked=checked"/></c:if>>Negative</td>
 					<td width="200"></td>
 					<td width="200"></td>
@@ -601,7 +601,7 @@ document.getElementById("signerror").innerHTML=" ";
 					</tr>
 					<tr height="30">
 					<td width="200"></td>
-					<td width="250"><input type="text" name="orthopedictest4" value="${narrativereport.orthopedictest4}"> </td>
+					<td width="250"><input type="text"  class="input_txtbx1" name="orthopedictest4" value="${narrativereport.orthopedictest4}"> </td>
 					<td width="250"><input type="radio" name="foraminalr" value="Positive" <c:if test="${narrativereport.foraminalr=='Positive'}"><c:out value="checked=checked"/></c:if>>Positive &nbsp;&nbsp;<input type="radio" name="foraminalr" value="Negative" <c:if test="${narrativereport.foraminalr=='Negative'}"><c:out value="checked=checked"/></c:if>>Negative</td>
 					<td width="250"><input type="radio" name="foraminall" value="Positive" <c:if test="${narrativereport.foraminall=='Positive'}"><c:out value="checked=checked"/></c:if>>Positive &nbsp;&nbsp;<input type="radio" name="foraminall" value="Negative" <c:if test="${narrativereport.foraminall=='Negative'}"><c:out value="checked=checked"/></c:if>>Negative</td>
 					<td width="200"></td>
@@ -609,7 +609,7 @@ document.getElementById("signerror").innerHTML=" ";
 					</tr>
 					<tr height="30">
 					<td width="200"></td>
-					<td width="250"><input type="text" name="orthopedictest5" value="${narrativereport.orthopedictest5}"> </td>
+					<td width="250"><input type="text"  class="input_txtbx1" name="orthopedictest5" value="${narrativereport.orthopedictest5}"> </td>
 					<td width="250"><input type="radio" name="shoulderr" value="Positive" <c:if test="${narrativereport.shoulderr=='Positive'}"><c:out value="checked=checked"/></c:if>>Positive &nbsp;&nbsp;<input type="radio" name="shoulderr" value="Negative" <c:if test="${narrativereport.shoulderr=='Negative'}"><c:out value="checked=checked"/></c:if>>Negative</td>
 					<td width="250"><input type="radio" name="shoulderl" value="Positive" <c:if test="${narrativereport.shoulderl=='Positive'}"><c:out value="checked=checked"/></c:if>>Positive &nbsp;&nbsp;<input type="radio" name="shoulderl" value="Negative" <c:if test="${narrativereport.shoulderl=='Negative'}"><c:out value="checked=checked"/></c:if>>Negative</td>
 					<td width="200"></td>
@@ -617,7 +617,7 @@ document.getElementById("signerror").innerHTML=" ";
 					</tr>
 					<tr height="30">
 					<td width="200"></td>
-					<td width="250"><input type="text" name="orthopedictest6" value="${narrativereport.orthopedictest6}"> </td>
+					<td width="250"><input type="text"  class="input_txtbx1" name="orthopedictest6" value="${narrativereport.orthopedictest6}"> </td>
 					<td width="250"><input type="radio" name="orthopedicr" value="Positive" <c:if test="${narrativereport.orthopedicr=='Positive'}"><c:out value="checked=checked"/></c:if>>Positive &nbsp;&nbsp;<input type="radio" name="orthopedicr" value="Negative" <c:if test="${narrativereport.orthopedicr=='Negative'}"><c:out value="checked=checked"/></c:if>>Negative</td>
 					<td width="250"><input type="radio" name="orthopedicl" value="Positive" <c:if test="${narrativereport.orthopedicl=='Positive'}"><c:out value="checked=checked"/></c:if>>Positive &nbsp;&nbsp;<input type="radio" name="orthopedicl" value="Negative" <c:if test="${narrativereport.orthopedicl=='Negative'}"><c:out value="checked=checked"/></c:if>>Negative</td>
 					<td width="200"></td>
@@ -661,7 +661,7 @@ document.getElementById("signerror").innerHTML=" ";
 					<option selected="selected" value="Negative for recent fracture" <c:if test="${narrativereport.gender51=='Negative for recent fracture'}"><c:out value="Selected"/></c:if>>Negative for recent fracture</option>
 					<option value="Dislocation or gross osteopathology" <c:if test="${narrativereport.gender51=='Dislocation or gross osteopathology'}"><c:out value="Selected"/></c:if>>Dislocation or gross osteopathology</option>
 					<option value="Positive for fracture of the" <c:if test="${narrativereport.gender51=='Positive for fracture of the'}"><c:out value="Selected"/></c:if>>Positive for fracture of the</option>
-					</select><input type="text" name="fracture" id="fracture" style='display:none' placeholder="specify the level" value="${narrativereport.fracture}">.  There was a <select  name="gender52" id="gender52" onchange='Checksymptom(this.value);'>
+					</select><input type="text"  class="input_txtbx1" name="fracture" id="fracture" style='display:none' placeholder="specify the level" value="${narrativereport.fracture}">.  There was a <select  name="gender52" id="gender52" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Cervical" <c:if test="${narrativereport.gender52=='Cervical'}"><c:out value="Selected"/></c:if>>Cervical</option>
 					<option value="Thoracic" <c:if test="${narrativereport.gender52=='Thoracic'}"><c:out value="Selected"/></c:if>>Thoracic</option>
 					<option value="Lumbar" <c:if test="${narrativereport.gender52=='Lumbar'}"><c:out value="Selected"/></c:if>>Lumbar</option>
@@ -671,10 +671,10 @@ document.getElementById("signerror").innerHTML=" ";
 					</select>present due to spastic musculature.Degenerative joint disease of the spine was <select  name="gender54" id="gender54" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Not Present" <c:if test="${narrativereport.gender54=='Not present'}"><c:out value="Selected"/></c:if>>Not Present</option>
 					<option value="Present at the" <c:if test="${narrativereport.gender54=='Present at the'}"><c:out value="Selected"/></c:if>>Present at the</option>
-					</select><input type="text" name="presentlevel" id="presentlevel" style='display:none' placeholder="specify the level" value="${narrativereport.presentlevel}">levels. There were <select  name="gender55" id="gender55" onchange='Checksymptom(this.value);'>
+					</select><input type="text" class="input_txtbx1"  name="presentlevel" id="presentlevel" style='display:none' placeholder="specify the level" value="${narrativereport.presentlevel}">levels. There were <select  name="gender55" id="gender55" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Anterior" <c:if test="${narrativereport.gender55=='Anterior'}"><c:out value="Selected"/></c:if>>Anterior</option>
 					<option value="Posterior" <c:if test="${narrativereport.gender55=='Posterior'}"><c:out value="Selected"/></c:if>>Thoracic</option>
-					</select> vertebral body osteophytes of <input type="text" name="osteophytes" value="${narrativereport.osteophytes}">.  A <select  name="gender56" id="gender56" onchange='Checksymptom(this.value);'>
+					</select> vertebral body osteophytes of <input type="text"  class="input_txtbx1" name="osteophytes" value="${narrativereport.osteophytes}">.  A <select  name="gender56" id="gender56" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Mild" <c:if test="${narrativereport.gender56=='Mild'}"><c:out value="Selected"/></c:if>>Mild</option>
 					<option value="Moderate" <c:if test="${narrativereport.gender56=='Moderate'}"><c:out value="Selected"/></c:if>>Moderate</option>
 					<option value="Severe" <c:if test="${narrativereport.gender56=='Severe'}"><c:out value="Selected"/></c:if>>Severe</option>
@@ -692,7 +692,7 @@ document.getElementById("signerror").innerHTML=" ";
 					<option selected="selected" value="Cervical" <c:if test="${narrativereport.gender60=='Cervical'}"><c:out value="Selected"/></c:if>>Cervical</option>
 					<option value="Thoracic" <c:if test="${narrativereport.gender60=='Thoracic'}"><c:out value="Selected"/></c:if>>Thoracic</option>
 					<option value="Lumbar" <c:if test="${narrativereport.gender60=='Lumbar'}"><c:out value="Selected"/></c:if>>Lumbar</option>
-					</select>spine.  Subluxations were present at <input type="text" name="subluxations" value="${narrativereport.subluxations}">.</p>
+					</select>spine.  Subluxations were present at <input type="text"  class="input_txtbx1" name="subluxations" value="${narrativereport.subluxations}">.</p>
          		</div>
          		</div>
          		</td>
@@ -724,24 +724,24 @@ document.getElementById("signerror").innerHTML=" ";
 					<tr height="30">
 					<td width="200"></td>
 					<td width="250">1</td>
-					<td width="250"><input type="text" name="icd1" value="${narrativereport.icd1}"></td>
-					<td width="250"><input type="text" name="description1" value="${narrativereport.description1}"></td>
+					<td width="250"><input type="text"  class="input_txtbx1" name="icd1" value="${narrativereport.icd1}"></td>
+					<td width="250"><input type="text"  class="input_txtbx1" name="description1" value="${narrativereport.description1}"></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
 					<tr height="30">
 					<td width="200"></td>
 					<td width="250">2</td>
-					<td width="250"><input type="text" name="icd2" value="${narrativereport.icd2}"></td>
-					<td width="250"><input type="text" name="description2" value="${narrativereport.description2 }"></td>
+					<td width="250"><input type="text"  class="input_txtbx1" name="icd2" value="${narrativereport.icd2}"></td>
+					<td width="250"><input type="text"  class="input_txtbx1" name="description2" value="${narrativereport.description2 }"></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
 					<tr height="30">
 					<td width="200"></td>
 					<td width="250">3</td>
-					<td width="250"><input type="text" name="icd3" value="${narrativereport.icd3}"></td>
-					<td width="250"><input type="text" name="description3" value="${narrativereport.description3 }"></td>
+					<td width="250"><input type="text"  class="input_txtbx1" name="icd3" value="${narrativereport.icd3}"></td>
+					<td width="250"><input type="text"  class="input_txtbx1" name="description3" value="${narrativereport.description3 }"></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
@@ -760,7 +760,7 @@ Injuries of this nature and magnitude respond well to a treatment program consis
 					<option selected="selected" value="Mr" <c:if test="${narrativereport.gender61=='Mr'}"><c:out value="Selected"/></c:if> >Mr</option>
 					<option value="Mrs" <c:if test="${narrativereport.gender61=='Mrs'}"><c:out value="Selected"/></c:if>>Mrs</option>
 					<option value="Ms" <c:if test="${narrativereport.gender61=='Ms'}"><c:out value="Selected"/></c:if>>Ms</option>
-					</select> <input type="text" name="pname" value="${narrativereport.pname}">on <input type="text" name="date9" id="datepicker9" value="${narrativereport.date9}">and during that period of time, records indicate <select  name="gender62" id="gender62" onchange='Checksymptom(this.value);'>
+					</select> <input type="text"  class="input_txtbx1" name="pname" value="${narrativereport.pname}">on <input type="text"  class="input_txtbx1" name="date9" id="datepicker9" value="${narrativereport.date9}">and during that period of time, records indicate <select  name="gender62" id="gender62" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="He" <c:if test="${narrativereport.gender62=='He'}"><c:out value="Selected"/></c:if>>He</option>
 					<option value="She" <c:if test="${narrativereport.gender62=='She'}"><c:out value="Selected"/></c:if>>She</option>
 					</select> experienced steady improvement.
@@ -770,13 +770,13 @@ Injuries of this nature and magnitude respond well to a treatment program consis
 					<option selected="selected" value="Mr" <c:if test="${narrativereport.gender63=='Mr'}"><c:out value="Selected"/></c:if>>Mr</option>
 					<option value="Mrs" <c:if test="${narrativereport.gender63=='Mrs'}"><c:out value="Selected"/></c:if>>Mrs</option>
 					<option value="Ms" <c:if test="${narrativereport.gender63=='Ms'}"><c:out value="Selected"/></c:if>>Ms</option>
-					</select> <input type="text" name="pname1" value="${narrativereport.pname1}"> condition reached maximum medical improvement on <input type="text" name="datenew" id="datepicker10" value="${narrativereport.datenew}"> and was therefore released from care.   <select  name="gender64" id="gender64" onchange='Checksymptom(this.value);'>
+					</select> <input type="text"  class="input_txtbx1" name="pname1" value="${narrativereport.pname1}"> condition reached maximum medical improvement on <input type="text"  class="input_txtbx1" name="datenew" id="datepicker10" value="${narrativereport.datenew}"> and was therefore released from care.   <select  name="gender64" id="gender64" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="His" <c:if test="${narrativereport.gender64=='His'}"><c:out value="Selected"/></c:if>>His</option>
 					<option value="Her" <c:if test="${narrativereport.gender64=='Her'}"><c:out value="Selected"/></c:if>>Her</option>
 					</select> prognosis is considered  <select  name="gender65" id="gender65" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Good at this time" <c:if test="${narrativereport.gender65=='Good at this time'}"><c:out value="Selected"/></c:if>>Good at this time</option>
 					<option value="Poor due to" <c:if test="${narrativereport.gender65=='Poor due to'}"><c:out value="Selected"/></c:if>>Poor due to</option>
-					</select> <input type="text" name="poor" id="poor" style='display:none' placeholder="specify the level" value="${narrativereport.poor}">.  <select  name="gender67" id="gender67" onchange='Checksymptom(this.value);'>
+					</select> <input type="text"  class="input_txtbx1" name="poor" id="poor" style='display:none' placeholder="specify the level" value="${narrativereport.poor}">.  <select  name="gender67" id="gender67" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="He" <c:if test="${narrativereport.gender67=='He'}"><c:out value="Selected"/></c:if>>He</option>
 					<option value="She" <c:if test="${narrativereport.gender67=='She'}"><c:out value="Selected"/></c:if>>She</option>
 					</select> is expected to experience mild residual effects, if any, from <select  name="gender68" id="gender68" onchange='Checksymptom(this.value);'>
@@ -790,7 +790,7 @@ Injuries of this nature and magnitude respond well to a treatment program consis
 					<option selected="selected" value="Mr" <c:if test="${narrativereport.gender70=='Mr'}"><c:out value="Selected"/></c:if>>Mr</option>
 					<option value="Mrs" <c:if test="${narrativereport.gender70=='Mrs'}"><c:out value="Selected"/></c:if>>Mrs</option>
 					<option value="Ms" <c:if test="${narrativereport.gender70=='Ms'}"><c:out value="Selected"/></c:if>>Ms</option>
-					</select><input type="text" name="pname2" value="${narrativereport.pname2}"> may have occasional exacerbations.  This is due to fact that fibrotic repair of once injured tissues leaves it permanently weaker, less elastic and more sensitive to the normal stresses of daily activities.  There is no need to place limitations on <select  name="gender71" id="gender71" onchange='Checksymptom(this.value);'>
+					</select><input type="text"  class="input_txtbx1" name="pname2" value="${narrativereport.pname2}"> may have occasional exacerbations.  This is due to fact that fibrotic repair of once injured tissues leaves it permanently weaker, less elastic and more sensitive to the normal stresses of daily activities.  There is no need to place limitations on <select  name="gender71" id="gender71" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="His" <c:if test="${narrativereport.gender71=='His'}"><c:out value="Selected"/></c:if>>His</option>
 					<option value="Her" <c:if test="${narrativereport.gender71=='Her'}"><c:out value="Selected"/></c:if>>Her</option>
 					</select> activities at this time.  Yet, it is possible that any activity that causes stress upon the once injured ligaments and muscles of <select  name="gender72" id="gender72" onchange='Checksymptom(this.value);'>
@@ -808,11 +808,11 @@ I hope you find this narrative report and discussion helpful in resolving the cu
 					<option selected="selected" value="Mr" <c:if test="${narrativereport.gender75=='Mr'}"><c:out value="Selected"/></c:if>>Mr</option>
 					<option value="Mrs" <c:if test="${narrativereport.gender75=='Mrs'}"><c:out value="Selected"/></c:if>>Mrs</option>
 					<option value="Ms" <c:if test="${narrativereport.gender75=='Ms'}"><c:out value="Selected"/></c:if>>Ms</option>
-					</select><input type="text" name="pname3" value="${narrativereport.pname3}"> condition.  If you have any questions, please feel free to contact me.
+					</select><input type="text"  class="input_txtbx1" name="pname3" value="${narrativereport.pname3}"> condition.  If you have any questions, please feel free to contact me.
 	            </p>
 	            <div align="right">
           <p><B style="font-size:13px">Sincerely,</B></p>
-          <p><input type="text" name="sign" size="30" value="${narrativereport.sign}"><span id="signerror" style="color: red;font-style:italic;"><form:errors path="Copyofrequest.sign"></form:errors></span></p>
+          <p><input type="text" class="input_txtbx1"  name="sign" size="30" value="${narrativereport.sign}"><span id="signerror" style="color: red;font-style:italic;"><form:errors path="Copyofrequest.sign"></form:errors></span></p>
           <p>Dr. Darrin A. Pordash</p>
           </div>
  <table align="right">

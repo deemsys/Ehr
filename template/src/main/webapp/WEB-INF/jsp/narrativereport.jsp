@@ -228,7 +228,9 @@ document.getElementById("signerror").innerHTML=" ";
            <li><a href="#tabs-3">3</a></li>        
        </ul>
        <form action="narrativereport" method="POST">
+
        <input type="hidden" name="username" value="${username}">
+
            <c:choose>
     		<c:when test="${empty narrative}">
   <div id="tabs-1">                       
@@ -253,40 +255,40 @@ document.getElementById("signerror").innerHTML=" ";
           <table cellpadding="0" cellspacing="0" border="0" width="70%" align="center">
           <tr height="30">
           <td><span class="err">*</span>Report Date: </td>
-          <td><input type="text" name="reportdate" size="40" id="datepicker11"><span id="datepicker11error" style="color: red;font-style:italic;" id="datepicker11error"><form:errors path=""></form:errors></span></td>
+          <td><input type="text" class="input_txtbx1" name="reportdate" size="40" id="datepicker11"><span id="datepicker11error" style="color: red;font-style:italic;" id="datepicker11error"><form:errors path=""></form:errors></span></td>
           </tr>   
           <tr height="30">
           <td><span class="err">*</span>Patientname: </td>
-          <td><input type="text" name="patient" size="40" value="${patientDetails.name}" id="patientname"><span id="patientnameerror" style="color: red;font-style:italic;"><form:errors path=""></form:errors></span></td>
+          <td><input type="text"  class="input_txtbx1" name="patient" size="40" value="${patientDetails.name}" id="patientname"><span id="patientnameerror" style="color: red;font-style:italic;"><form:errors path=""></form:errors></span></td>
           </tr>
           <tr height="30">
           <td><span class="err">*</span>Date of Injury: </td>
-          <td><input type="text" name="dateofinjury" size="40" id="datepicker1"><span id="datepicker1error" style="color: red;font-style:italic;"><form:errors path=""></form:errors></span></td>
+          <td><input type="text"  class="input_txtbx1" name="dateofinjury" size="40" id="datepicker1"><span id="datepicker1error" style="color: red;font-style:italic;"><form:errors path=""></form:errors></span></td>
           </tr>
           <tr height="30">
           <td><span class="err">*</span>Date of first visit: </td>
-          <td><input type="text" name="dateoffirstvisit" id="datepicker" size="40"><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path=""></form:errors></span></td>
+          <td><input type="text"  class="input_txtbx1" name="dateoffirstvisit" id="datepicker" size="40"><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path=""></form:errors></span></td>
           </tr>
           </table>
           <table cellpadding="0" cellspacing="0" border="0" width="70%" align="center">
           <tr height="30">
           <td width="220">TO </td>
-          <td><input type="text" name="towhom"  size="40"></td>
+          <td><input type="text"  class="input_txtbx1" name="towhom"  size="40"></td>
           </tr>
           </table>
           <br/>
-          <div><p style="line-height:1.5"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At your request and with permission from my patient, <input type="text" name="patientname" size="40">, I am writing the following narrative report concerning the injuries <select  name="gender" id="gender" onchange="validate()">
-					<option selected="selected" value="He" >He</option>
+          <div><p style="line-height:1.5"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At your request and with permission from my patient, <input type="text"  class="input_txtbx1" name="patientname" size="40">, I am writing the following narrative report concerning the injuries <select  name="gender" id="gender" onchange="validate()">
+					<option selected="selected"  class="input_txtbx1" value="He" >He</option>
 					<option value="She">She</option>
-					</select> sustained as the result of an automobile accident on <input type="text" name="accident" id="datepicker2"></p>
+					</select> sustained as the result of an automobile accident on <input type="text"  class="input_txtbx1" name="accident" id="datepicker2"></p>
                <p><B style="font-size:14px">History</B></p>
-               <p style="line-height:26px"><input type="text" name="name"> was initially seen for the purpose of consultation and examination on <input type="text" name="dateofconsultation" id="datepicker3">.  <select name="gender1" id="gender1">
+               <p style="line-height:26px"><input type="text"  class="input_txtbx1" name="name"> was initially seen for the purpose of consultation and examination on <input type="text"  class="input_txtbx1" name="dateofconsultation" id="datepicker3">.  <select name="gender1" id="gender1">
 					<option selected="selected" value="He" >He</option>
 					<option value="She">She</option>
 					</select> stated that <select  name="gender2" id="gender2">
 					<option selected="selected" value="He" >He</option>
 					<option value="She">She</option>
-					</select> was the driver in a motor vehicle accident <input type="text" name="accidentdate" id="datepicker4">.  <select  name="gender3" id="gender3">
+					</select> was the driver in a motor vehicle accident <input type="text"  class="input_txtbx1" name="accidentdate" id="datepicker4">.  <select  name="gender3" id="gender3">
 					<option selected="selected" value="He" >He</option>
 					<option value="She">She</option>
 					</select> further stated that <select  name="gender4" id="gender4">
@@ -295,7 +297,7 @@ document.getElementById("signerror").innerHTML=" ";
 					</select> GMC Truck was struck from behind by a Ford Aerostar while <select name="gender5" id="gender5">
 					<option selected="selected" value="He" >He</option>
 					<option value="She">She</option>
-					</select> was at a dead stop. It was daylight and road conditions were dry at the time of impact. <input type="text" name="name1"> wearing <select  name="gendernew" id="gendernew">
+					</select> was at a dead stop. It was daylight and road conditions were dry at the time of impact. <input type="text"  class="input_txtbx1" name="name1"> wearing <select  name="gendernew" id="gendernew">
 					<option selected="selected" value="His" >He</option>
 					<option value="Her">Her</option>
 					</select> seatbelt with both hands on the wheel and <select  name="gender6" id="gender6">
@@ -311,19 +313,19 @@ document.getElementById("signerror").innerHTML=" ";
 					<option selected="selected" value="Mr" >Mr</option>
 					<option value="Mrs">Ms</option>
 					<option value="Ms">Miss</option>
-					</select>.<input type="text" name="name2" value="${patientDetails.name}">body was <input type="text" name="body"> . <select  name="gender10" id="gender10">
+					</select>.<input type="text" name="name2" value="${patientDetails.name}">body was <input type="text"  class="input_txtbx1" name="body"> . <select  name="gender10" id="gender10">
 					<option selected="selected" value="His" >His</option>
 					<option value="Her">Her</option>
-					</select> <input type="text" name="slammed">slammed into the <input type="text" name="slammed1">. Symptoms of <input type="text" name="symptom">, directly related to the accident, appeared <input type="text" name="appeared"> after the incident.  The victim did (not )drive to the emergency room after the wreck. </p>
+					</select> <input type="text"  class="input_txtbx1" name="slammed">slammed into the <input type="text"  class="input_txtbx1" name="slammed1">. Symptoms of <input type="text"  class="input_txtbx1" name="symptom">, directly related to the accident, appeared <input type="text"  class="input_txtbx1" name="appeared"> after the incident.  The victim did (not )drive to the emergency room after the wreck. </p>
                <p><B style="font-size:14px">Past History</B></p>
-               <p style="line-height:26px">Past history revealed (no prior auto accidents, a prior automobile accident which occurred in <input type="text" name="priordate" id="datepicker4">. <select  name="gender11" id="gender11">
+               <p style="line-height:26px">Past history revealed (no prior auto accidents, a prior automobile accident which occurred in <input type="text"  class="input_txtbx1" name="priordate" id="datepicker4">. <select  name="gender11" id="gender11">
 					<option selected="selected" value="Mr" >Mr</option>
 					<option value="Mrs">Ms</option>
 					<option value="Ms">Miss</option>
-					</select><input type="text" name="name3" value="${patientDetails.name}">stated that there were no residual effects from that accident and <select  name="gender12" id="gender12">
+					</select><input type="text"  class="input_txtbx1" name="name3" value="${patientDetails.name}">stated that there were no residual effects from that accident and <select  name="gender12" id="gender12">
 					<option selected="selected" value="He" >He</option>
 					<option value="She">She</option>
-					</select> was in good health prior to the current accident.  Past medical history revealed <input type="text" name="pastmedicalhistory">.  There <select  name="gender13" id="gender13">
+					</select> was in good health prior to the current accident.  Past medical history revealed <input type="text"  class="input_txtbx1" name="pastmedicalhistory">.  There <select  name="gender13" id="gender13">
 					<option selected="selected" value="Were" >Were</option>
 					<option value="Were no">Were no</option>
 					</select> past surgeries and <select  name="gender14" id="gender14">
@@ -336,7 +338,7 @@ document.getElementById("signerror").innerHTML=" ";
 					<option selected="selected" value="Smoker" >Smoker</option>
 					<option value="Recreational drug user">Recreational drug user</option>
 					</select> who <select  name="gender17" id="gender17">
-					<option selected="selected" value="Exercises on a Regular Basis" >Exercises on a Regular Basis</option>
+					<option selected="selected"  class="input_txtbx1" value="Exercises on a Regular Basis" >Exercises on a Regular Basis</option>
 					<option value="Drinks Alcohol regularly">Drinks alcohol regularly</option>
 					</select>.  Work history was non-contributory.</p>
 					<p><B style="font-size:14px">Present Compliant</B></p>
@@ -345,7 +347,7 @@ document.getElementById("signerror").innerHTML=" ";
 					<option selected="selected" value="Mr" >Mr</option>
 					<option value="Mrs">Ms</option>
 					<option value="Ms">Miss</option>
-					</select> <input type="text" name="name4" value="${patientDetails.name}"> presented to this clinic on <input type="text" name="clinicdate" id="datepicker7">with complaints of <select  name="gender19" id="gender19">
+					</select> <input type="text" name="name4" value="${patientDetails.name}"> presented to this clinic on <input type="text"  class="input_txtbx1" name="clinicdate" id="datepicker7">with complaints of <select  name="gender19" id="gender19">
 					<option selected="selected" value="Headache" >Headache</option>
 					<option value="Neck pain">Neck pain</option>
 					<option value="Mid Back Pain">Mid Back Pain</option>
@@ -366,7 +368,7 @@ document.getElementById("signerror").innerHTML=" ";
 					</select>aggravated  condition while <select  name="gender21" id="gender21">
 					<option selected="selected" value="His" >His</option>
 					<option value="Her">Her</option>
-					</select> <input type="text" name="allieviated">allieviated it.  <select  name="gender22" id="gender22">
+					</select> <input type="text"  class="input_txtbx1" name="allieviated">allieviated it.  <select  name="gender22" id="gender22">
 					<option selected="selected" value="He" >He</option>
 					<option value="She">She</option>
 					</select> described <select  name="gender23" id="gender23">
@@ -420,7 +422,7 @@ document.getElementById("signerror").innerHTML=" ";
 					</p>
 					<p><B style="font-size:14px">Physical Exam</B></p>
 					<p>&nbsp;&nbsp;<B style="font-size:13px"><u>Physical Inspection</u></B></p>
-					<p style="line-height:26px">Examination revealed a <input type="text" name="age"> year old, <input type="text" name="age1">, <input type="text" name="lb">lb. <select  name="gender31" id="gender31">
+					<p style="line-height:26px">Examination revealed a <input type="text"  class="input_txtbx1" name="age"> year old, <input type="text"  class="input_txtbx1" name="age1">, <input type="text" class="input_txtbx1" name="lb">lb. <select  name="gender31" id="gender31">
 					<option selected="selected" value="White" >White</option>
 					<option value="Black">Black</option> </select><select  name="gender32" id="gender32">
 					<option selected="selected" value="Male" >Male</option>
@@ -468,7 +470,7 @@ document.getElementById("signerror").innerHTML=" ";
 					<option selected="selected" value="Cervical">Cervical</option>
 					<option value="Thoracic">Thoracic</option>
 					<option value="Lumbar">Lumbar</option>
-					</select>spine revealed paraspinal pain, spasm, edema and trigger points. There was <input type="text" name="tenderness"> tenderness on the <select  name="gender40" id="gender40">
+					</select>spine revealed paraspinal pain, spasm, edema and trigger points. There was <input type="text"  class="input_txtbx1" name="tenderness"> tenderness on the <select  name="gender40" id="gender40">
 					<option selected="selected" value="L-R">L-R</option>
 					<option value="Bilaterally">Bilaterally</option>
 					</select> and vertebral fixations. Tonicity of the <select  name="gendernew6" id="gendernew6">
@@ -479,12 +481,12 @@ document.getElementById("signerror").innerHTML=" ";
 					</select>on the <select  name="gender41" id="gender41">
 					<option selected="selected" value="L-R">L-R</option>
 					<option value="Bilaterally">Bilaterally</option>
-					</select> was evident. Also noted was ,<input type="text" name="noted">.   </p>
+					</select> was evident. Also noted was ,<input type="text"  class="input_txtbx1" name="noted">.   </p>
 					<table>
 					<tr>
 					<td width="150">Range Of Motion</td>
 					<td>
-					<input type="text" name="rangeofmotion">
+					<input type="text" class="input_txtbx1"  name="rangeofmotion">
 					</td>
 					</tr>
 					</table>
@@ -520,48 +522,48 @@ document.getElementById("signerror").innerHTML=" ";
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Flexion</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;60</td>
-					<td width="200">&nbsp;&nbsp;<input type="text" value="${physicalexam.flexpain}" name="painres1"></td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="tonicity1"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text" class="input_txtbx1"  value="${physicalexam.flexpain}" name="painres1"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity1"></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Extension</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;75</td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="painres2" value="${physicalexam.extpain}"></td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="tonicity2"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="painres2" value="${physicalexam.extpain}"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity2"></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Right Lateral Flexion</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;45</td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="painres3" value="${physicalexam.rlfpain}"></td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="tonicity3"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" ="painres3" value="${physicalexam.rlfpain}"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity3"></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Left lateral Flexion</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;45</td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="painres4" value="${physicalexam.llfpain}"></td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="tonicity4"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" ="painres4" value="${physicalexam.llfpain}"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity4"></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Right Rotation</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;80</td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="painres5" value="${physicalexam.rrpain}"></td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="tonicity5"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="painres5" value="${physicalexam.rrpain}"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text" class="input_txtbx1"  name="tonicity5"></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Left Rotation</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;80</td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="painres6" value="${physicalexam.lrpain}"></td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="tonicity6"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="painres6" value="${physicalexam.lrpain}"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity6"></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
@@ -576,54 +578,54 @@ document.getElementById("signerror").innerHTML=" ";
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Flexion</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;80</td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="painres7"></td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="tonicity7"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text" class="input_txtbx1"  name="painres7"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity7"></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Extension</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;30</td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="painres8"></td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="tonicity8"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="painres8"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity8"></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Right Lateral Flexion</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;25</td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="painres9"></td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="tonicity9"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="painres9"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity9"></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Left lateral Flexion</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;25</td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="painres10"></td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="tonicity10"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1"name="painres10"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity10"></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Right Rotation</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;30</td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="painres11"></td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="tonicity11"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="painres11"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity11"></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Left Rotation</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;30</td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="painres12"></td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="tonicity12"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="painres12"></td> 
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity12"></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
 					</table>  
 					<p><B style="font-size:14px"> Neurologic Testing</B></p>
-					<p style="line-height:26px">Neurologic tests were performed for the purpose of assessing dermatomes, myotomes and deep tendon reflexes.  Peripheral sensitivity revealed (sensation to be equal and intact and without incident,abnormal sensation at the <input type="text" name="dermatome"> dermatome level(s) on the L-R) for the <select  name="gender42" id="gender42">
+					<p style="line-height:26px">Neurologic tests were performed for the purpose of assessing dermatomes, myotomes and deep tendon reflexes.  Peripheral sensitivity revealed (sensation to be equal and intact and without incident,abnormal sensation at the <input type="text" class="input_txtbx1" name="dermatome"> dermatome level(s) on the L-R) for the <select  name="gender42" id="gender42">
 					<option selected="selected" value="Cervical">Cervical</option>
 					<option value="Thoracic">Thoracic</option>
 					<option value="Lumbar">Lumbar</option>
@@ -634,7 +636,7 @@ document.getElementById("signerror").innerHTML=" ";
 					</select> musculature  and was found to be <select  name="gender44" id="gender44" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Within normal limits">Within Normal Limits</option>
 					<option value="Not Within Normal Limits">Not Within Normal limits</option>
-					</select> <input type="text" name="level1" id="level1" style='display:none'>/5 at the <input type="text" name="level">level .  Pathologic and deep tendon reflexes were tested using the Wexler Scale and were found to be <select  name="gender45" id="gender45" onchange='Checksymptom(this.value);'>
+					</select> <input type="text"class="input_txtbx1"  name="level1" id="level1" style='display:none'>/5 at the <input type="text"  class="input_txtbx1" name="level">level .  Pathologic and deep tendon reflexes were tested using the Wexler Scale and were found to be <select  name="gender45" id="gender45" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Equal and intact without incident">Equal and intact and without incident</option>
 					<option value="Hypo-reflexic">Hypo-reflexic</option>
 					<option value="Hyper-reflexic">Hyper-reflexic</option>
@@ -652,7 +654,7 @@ document.getElementById("signerror").innerHTML=" ";
 					</tr>
 					<tr height="30">
 					<td width="200"></td>
-					<td width="250"><input type="text" name="orthopedictest1"> </td>
+					<td width="250"><input type="text"  class="input_txtbx1"name="orthopedictest1"> </td>
 					<td width="250"><input type="radio" name="jacksonsr" value="Positive">Positive &nbsp;&nbsp;<input type="radio" name="jacksonsr" value="Negative">Negative</td>
 					<td width="250"><input type="radio" name="jacksonsl" value="Positive">Positive &nbsp;&nbsp;<input type="radio" name="jacksonsl" value="Negative">Negative</td>
 					<td width="200"></td>
@@ -660,7 +662,7 @@ document.getElementById("signerror").innerHTML=" ";
 					</tr>
 					<tr height="30">
 					<td width="200"></td>
-					<td width="250"><input type="text" name="orthopedictest2"> </td>
+					<td width="250"><input type="text"  class="input_txtbx1" name="orthopedictest2"> </td>
 					<td width="250"><input type="radio" name="doublelegraiser" value="Positive">Positive &nbsp;&nbsp;<input type="radio" name="doublelegraiser" value="Negative">Negative</td>
 					<td width="250"><input type="radio" name="doublelegraisel" value="Positive">Positive &nbsp;&nbsp;<input type="radio" name="doublelegraisel" value="Negative">Negative</td>
 					<td width="200"></td>
@@ -668,15 +670,15 @@ document.getElementById("signerror").innerHTML=" ";
 					</tr>
 					<tr height="30">
 					<td width="200"></td>
-					<td width="250"><input type="text" name="orthopedictest3"> </td>
-					<td width="250"><input type="radio" name="yeomansr" value="Positive">Positive &nbsp;&nbsp;<input type="radio" name="yeomansr" value="Negative">Negative</td>
+					<td width="250"><input type="text"  class="input_txtbx1" name="orthopedictest3"> </td>
+					<td width="250"><input type="radio"  class="input_txtbx1" name="yeomansr" value="Positive">Positive &nbsp;&nbsp;<input type="radio" name="yeomansr" value="Negative">Negative</td>
 					<td width="250"><input type="radio" name="yeomansl" value="Positive">Positive &nbsp;&nbsp;<input type="radio" name="yeomansl" value="Negative">Negative</td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
 					<tr height="30">
 					<td width="200"></td>
-					<td width="250"><input type="text" name="orthopedictest4"> </td>
+					<td width="250"><input type="text"  class="input_txtbx1"name="orthopedictest4"> </td>
 					<td width="250"><input type="radio" name="foraminalr" value="Positive">Positive &nbsp;&nbsp;<input type="radio" name="foraminalr" value="Negative">Negative</td>
 					<td width="250"><input type="radio" name="foraminall" value="Positive">Positive &nbsp;&nbsp;<input type="radio" name="foraminall" value="Negative">Negative</td>
 					<td width="200"></td>
@@ -684,7 +686,7 @@ document.getElementById("signerror").innerHTML=" ";
 					</tr>
 					<tr height="30">
 					<td width="200"></td>
-					<td width="250"><input type="text" name="orthopedictest5"> </td>
+					<td width="250"><input type="text"  class="input_txtbx1" name="orthopedictest5"> </td>
 					<td width="250"><input type="radio" name="shoulderr" value="Positive">Positive &nbsp;&nbsp;<input type="radio" name="shoulderr" value="Negative">Negative</td>
 					<td width="250"><input type="radio" name="shoulderl" value="Positive">Positive &nbsp;&nbsp;<input type="radio" name="shoulderl" value="Negative">Negative</td>
 					<td width="200"></td>
@@ -692,7 +694,7 @@ document.getElementById("signerror").innerHTML=" ";
 					</tr>
 					<tr height="30">
 					<td width="200"></td>
-					<td width="250"><input type="text" name="orthopedictest6"> </td>
+					<td width="250"><input type="text"  class="input_txtbx1" name="orthopedictest6"> </td>
 					<td width="250"><input type="radio" name="orthopedicr" value="Positive">Positive &nbsp;&nbsp;<input type="radio" name="orthopedicr" value="Negative">Negative</td>
 					<td width="250"><input type="radio" name="orthopedicl" value="Positive">Positive &nbsp;&nbsp;<input type="radio" name="orthopedicl" value="Negative">Negative</td>
 					<td width="200"></td>
@@ -746,10 +748,10 @@ document.getElementById("signerror").innerHTML=" ";
 					</select>present due to spastic musculature.Degenerative joint disease of the spine was <select  name="gender54" id="gender54" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Not Present">Not Present</option>
 					<option value="Present at the">Present at the</option>
-					</select><input type="text" name="presentlevel" id="presentlevel" style='display:none' placeholder="specify the level">levels. There were <select  name="gender55" id="gender55" onchange='Checksymptom(this.value);'>
+					</select><input type="text" class="input_txtbx1"  name="presentlevel" id="presentlevel" style='display:none' placeholder="specify the level">levels. There were <select  name="gender55" id="gender55" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Anterior">Anterior</option>
 					<option value="Posterior">Thoracic</option>
-					</select> vertebral body osteophytes of <input type="text" name="osteophytes">.  A <select  name="gender56" id="gender56" onchange='Checksymptom(this.value);'>
+					</select> vertebral body osteophytes of <input type="text" class="input_txtbx1"  name="osteophytes">.  A <select  name="gender56" id="gender56" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Mild">Mild</option>
 					<option value="Moderate">Moderate</option>
 					<option value="Severe">Severe</option>
@@ -767,7 +769,7 @@ document.getElementById("signerror").innerHTML=" ";
 					<option selected="selected" value="Cervical">Cervical</option>
 					<option value="Thoracic">Thoracic</option>
 					<option value="Lumbar">Lumbar</option>
-					</select>spine.  Subluxations were present at <input type="text" name="subluxations">.</p>
+					</select>spine.  Subluxations were present at <input type="text"  class="input_txtbx1" name="subluxations">.</p>
          		</div>
          		</div>
          		</td>
@@ -799,32 +801,32 @@ document.getElementById("signerror").innerHTML=" ";
 					<tr height="30">
 					<td width="200"></td>
 					<td width="250">1</td>
-					<td width="250"><input type="text" name="icd1"></td>
-					<td width="250"><input type="text" name="description1"></td>
+					<td width="250"><input type="text" class="input_txtbx1"  name="icd1"></td>
+					<td width="250"><input type="text"  class="input_txtbx1" name="description1"></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
 					<tr height="30">
 					<td width="200"></td>
 					<td width="250">2</td>
-					<td width="250"><input type="text" name="icd2"></td>
-					<td width="250"><input type="text" name="description2"></td>
+					<td width="250"><input type="text" class="input_txtbx1"  name="icd2"></td>
+					<td width="250"><input type="text"  class="input_txtbx1" name="description2"></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
 					<tr height="30">
 					<td width="200"></td>
 					<td width="250">3</td>
-					<td width="250"><input type="text" name="icd3"></td>
-					<td width="250"><input type="text" name="description3"></td>
+					<td width="250"><input type="text"  class="input_txtbx1" name="icd3"></td>
+					<td width="250"><input type="text"  class="input_txtbx1" name="description3"></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
 					<tr height="30">
 					<td width="200"></td>
 					<td width="250">4</td>
-					<td width="250"><input type="text" name="icd4"></td>
-					<td width="250"><input type="text" name="description4"></td>
+					<td width="250"><input type="text"  class="input_txtbx1" name="icd4"></td>
+					<td width="250"><input type="text"  class="input_txtbx1" name="description4"></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
@@ -835,7 +837,7 @@ Injuries of this nature and magnitude respond well to a treatment program consis
 					<option selected="selected" value="Mr">Mr</option>
 					<option value="Mrs">Mrs</option>
 					<option value="Ms">Ms</option>
-					</select> <input type="text" name="pname" value="${patientDetails.name}">on <input type="text" name="date9" id="datepicker9">and during that period of time, records indicate <select  name="gender62" id="gender62" onchange='Checksymptom(this.value);'>
+					</select> <input type="text" name="pname"  class="input_txtbx1" value="${patientDetails.name}">on <input type="text"    class="input_txtbx1" name="date9" id="datepicker9">and during that period of time, records indicate <select  name="gender62" id="gender62" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="He">He</option>
 					<option value="She">She</option>
 					</select> experienced steady improvement.
@@ -845,13 +847,13 @@ Injuries of this nature and magnitude respond well to a treatment program consis
 					<option selected="selected" value="Mr">Mr</option>
 					<option value="Mrs">Mrs</option>
 					<option value="Ms">Ms</option>
-					</select> <input type="text" name="pname1" value="${patientDetails.name}"> condition reached maximum medical improvement on <input type="text" name="datenew" id="datepicker10"> and was therefore released from care.   <select  name="gender64" id="gender64" onchange='Checksymptom(this.value);'>
+					</select> <input type="text"  class="input_txtbx1" name="pname1" value="${patientDetails.name}"> condition reached maximum medical improvement on <input type="text"  class="input_txtbx1" name="datenew" id="datepicker10"> and was therefore released from care.   <select  name="gender64" id="gender64" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="His">His</option>
 					<option value="Her">Her</option>
 					</select> prognosis is considered  <select  name="gender65" id="gender65" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Good at this time">Good at this time</option>
 					<option value="Poor due to">Poor due to</option>
-					</select> <input type="text" name="poor" id="poor" style='display:none' placeholder="specify the level">.  <select  name="gender67" id="gender67" onchange='Checksymptom(this.value);'>
+					</select> <input type="text"  class="input_txtbx1" name="poor" id="poor" style='display:none' placeholder="specify the level">.  <select  name="gender67" id="gender67" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="He">He</option>
 					<option value="She">She</option>
 					</select> is expected to experience mild residual effects, if any, from <select  name="gender68" id="gender68" onchange='Checksymptom(this.value);'>
@@ -865,7 +867,7 @@ Injuries of this nature and magnitude respond well to a treatment program consis
 					<option selected="selected" value="Mr">Mr</option>
 					<option value="Mrs">Mrs</option>
 					<option value="Ms">Ms</option>
-					</select><input type="text" name="pname2" value="${patientDetails.name}"> may have occasional exacerbations.  This is due to fact that fibrotic repair of once injured tissues leaves it permanently weaker, less elastic and more sensitive to the normal stresses of daily activities.  There is no need to place limitations on <select  name="gender71" id="gender71" onchange='Checksymptom(this.value);'>
+					</select><input type="text"  class="input_txtbx1" name="pname2" value="${patientDetails.name}"> may have occasional exacerbations.  This is due to fact that fibrotic repair of once injured tissues leaves it permanently weaker, less elastic and more sensitive to the normal stresses of daily activities.  There is no need to place limitations on <select  name="gender71" id="gender71" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="His">His</option>
 					<option value="Her">Her</option>
 					</select> activities at this time.  Yet, it is possible that any activity that causes stress upon the once injured ligaments and muscles of <select  name="gender72" id="gender72" onchange='Checksymptom(this.value);'>
@@ -883,11 +885,11 @@ I hope you find this narrative report and discussion helpful in resolving the cu
 					<option selected="selected" value="Mr">Mr</option>
 					<option value="Mrs">Mrs</option>
 					<option value="Ms">Ms</option>
-					</select><input type="text" name="pname3" value="${patientDetails.name}"> condition.  If you have any questions, please feel free to contact me.
+					</select><input type="text"  class="input_txtbx1" name="pname3" value="${patientDetails.name}"> condition.  If you have any questions, please feel free to contact me.
 	            </p>
 	            <div align="right">
           <p><B style="font-size:13px">Sincerely,</B></p>
-          <p><input type="text" name="sign" size="30" id="sign" ><span  id="signerror" style="color: red;font-style:italic;"><form:errors path=""></form:errors></span></p>
+          <p><input type="text" class="input_txtbx1"  name="sign" size="30" id="sign" ><span  id="signerror" style="color: red;font-style:italic;"><form:errors path=""></form:errors></span></p>
           <p>Dr. Darrin A. Pordash</p>
           </div>
  <table align="right">

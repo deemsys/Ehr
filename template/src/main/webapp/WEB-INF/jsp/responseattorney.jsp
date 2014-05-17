@@ -197,7 +197,7 @@ function doAjaxPost() {
 </script>
 <script>
 function valid()
-{
+{   
 	document.getElementById("nameerror").innerHTML="";
 if(document.getElementById("name").value=="")
         {
@@ -218,24 +218,27 @@ document.getElementById("patientnameerror").innerHTML="";
         	 document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
             return false;
         }  
+         document.getElementById("dearnameerr").innerHTML="";
+        if(document.getElementById("dearname").value=="")
+        {
+        	 document.getElementById("dearnameerr").innerHTML="Required Field Should not be Empty";
+            return false;
+        }
         document.getElementById("nameofclinicerror").innerHTML="";
         if(document.getElementById("nameofclinic").value=="")
         {
         	 document.getElementById("nameofclinicerror").innerHTML="Required Field Should not be Empty";
             return false;
         }  
+       
         document.getElementById("treatingphysicianerror").innerHTML="";
         if(document.getElementById("treatingphysician").value=="")
         {
         	 document.getElementById("treatingphysicianerror").innerHTML="Required Field Should not be Empty";
             return false;
         }
-        document.getElementById("dearnameerr").innerHTML="";
-        if(document.getElementById("dearname").value=="")
-        {
-        	 document.getElementById("dearnameerr").innerHTML="Required Field Should not be Empty";
-            return false;
-        }
+     
+       
            
         }
 
