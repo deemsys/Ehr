@@ -7,37 +7,37 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Assignment
 {   private String assignment_no;
 
-	@NotEmpty
+	
 	private String day;
-	@NotEmpty
+	
 	private String month;
-	@NotEmpty
+	
 	private String year;
 	
-	@NotEmpty
+	
 	private String day1;
-	@NotEmpty
+	
 	private String month1;
-	@NotEmpty
+	
 	
 	private String patientname;
-	@NotEmpty
+	
 	
 	private String patientsign;
-	@NotEmpty
+	
 	private String patientdate;
-	@NotEmpty
+	
 	
 	private String parentname;
-	@NotEmpty
+	
 	
 	private String parentsign;
-	@NotEmpty
+	
 	private String parentdate;
-	@NotEmpty
+	
 	
 	private String representative;
-	@NotEmpty
+	
 	private String representativedate;
 	
 	public Assignment()

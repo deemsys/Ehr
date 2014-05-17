@@ -17,10 +17,10 @@
   <script>
   $(function() {
 	    $( "#datepicker" ).datepicker();
-	  });
-	  $(function() {
+	  }); 
+	/*   $(function() {
 		    $( "#datepicker1" ).datepicker();
-		  });
+		  }); */
 	  $(function() {
 		    $( "#datepicker2" ).datepicker();
 		  });
@@ -45,13 +45,13 @@ function checkSubmit()
 	
 	return false;
 	}
-	document.getElementById("datepickererror").innerHTML="";
+	/* document.getElementById("datepickererror").innerHTML="";
 	if(document.getElementById("datepicker").value=="")
 	{
 	document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
 	
 	return false;
-	}
+	} */
 	document.getElementById("patientsignerror").innerHTML="";
 	if(document.getElementById("patientsign").value=="")
 	{
@@ -59,13 +59,13 @@ function checkSubmit()
 	
 	return false;
 	}
-	document.getElementById("datepicker2error").innerHTML="";
+	 document.getElementById("datepicker2error").innerHTML="";
 	if(document.getElementById("datepicker2").value=="")
 	{
 	document.getElementById("datepicker2error").innerHTML="Required Field Should not be Empty";
 	
 	return false;
-	}
+	} 
 	document.getElementById("parentnameerror").innerHTML="";
 	if(document.getElementById("parentname").value=="")
 	{
@@ -86,7 +86,7 @@ function checkSubmit()
 	{
 	document.getElementById("datepicker3error").innerHTML="Required Field Should not be Empty";
 	return false;
-	}
+	} 
 	document.getElementById("representativeerror").innerHTML="";
 	if(document.getElementById("representative").value=="")
 	{
@@ -99,7 +99,7 @@ function checkSubmit()
 	{
 	document.getElementById("datepicker4error").innerHTML="Required Field Should not be Empty";
 	return false;
-	}
+	} 
 	
 	}
   </script>
@@ -166,8 +166,8 @@ and exclusively in the name of Perry Chiropractic and Therapy Center, such sums 
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Name: </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="patientname" name="patientname" value="${name}"/><br><span id="patientnameerror" style="color: red;font-style:italic;"><form:errors path="Assignment.patientname"></form:errors></td>
-				                  	<td valign="middle" width="50%"><span class="err">*</span>Date</td>
-				                  	<td valign="top"><input type="text" class="input_txtbx1" id="datepicker" name="patientdate" /><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="Assignment.patientdate"></form:errors></span></td>
+				                  	<%-- <td valign="middle" width="50%"><span class="err">*</span>Date</td>
+				                  	<td valign="top"><input type="text" class="input_txtbx1" id="datepicker" name="patientdate" /><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="Assignment.patientdate"></form:errors></span></td> --%>
 				                  	</tr>
 				                  	<tr width="500" class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Signature:  </td>
@@ -175,7 +175,7 @@ and exclusively in the name of Perry Chiropractic and Therapy Center, such sums 
 				                  	<input type="text" class="input_txtbx1" id="patientsign" name="patientsign" /><span id="patientsignerror" style="color: red;font-style:italic;"><form:errors path="Assignment.patientsign"></form:errors></span>
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="datepicker2" name="parentdate" /><br><span id="datepicker2error" style="color: red;font-style:italic;"><form:errors path="Assignment.parentdate"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="datepicker2" name="patientdate" /><br><span id="datepicker2error" style="color: red;font-style:italic;"><form:errors path="Assignment.parentdate"></form:errors></span>
 				                  	</tr> 
 				                  	
 				                  	<tr class="row1">
@@ -252,7 +252,7 @@ and exclusively in the name of Perry Chiropractic and Therapy Center, such sums 
 				                  	<input type="text" class="input_txtbx1" id="patientsign" name="patientsign" value="${assignment.patientsign}"/><span id="patientsignerror" style="color: red;font-style:italic;"><form:errors path="Assignment.patientsign"></form:errors>
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="datepicker" name="patientdate" value="${assignment.patientdate}"/><br><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="Assignment.patientdate"></form:errors>
+				                  	<input type="text" class="input_txtbx1" id="datepicker2" name="patientdate" value="${assignment.patientdate}"/><br><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="Assignment.patientdate"></form:errors>
 				                  	</tr> 
 				                  	
 				                  	<tr class="row1">
@@ -266,7 +266,7 @@ and exclusively in the name of Perry Chiropractic and Therapy Center, such sums 
 				                  	<input type="text" class="input_txtbx1" id="parentsign" name="parentsign" value="${assignment.parentsign}"/><span id="parentsignerror" style="color: red;font-style:italic;"><form:errors path="Assignment.parentsign"></form:errors>
 				                  	<td valign="middle" align="left" class="input_txt"><span id="parentdateerr">*</span>Date:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="pdatepicker" name="parentdate" value="${assignment.parentdate}"/><br><span id="pdatepickererr"><form:errors path="Assignment.parentdate"></form:errors>
+				                  	<input type="text" class="input_txtbx1" id="datepicker3" name="parentdate" value="${assignment.parentdate}"/><br><span id="pdatepickererr"><form:errors path="Assignment.parentdate"></form:errors>
 				                  	</tr> 
 				                  	
 				                  	<tr class="row1">
@@ -275,7 +275,7 @@ and exclusively in the name of Perry Chiropractic and Therapy Center, such sums 
 				                  	<input type="text" class="input_txtbx1" id="representative" name="representative" value="${assignment.representative}"/><span id="representativeerr"></span><form:errors path="Assignment.representative"></form:errors>
 				                  	<td valign="middle" align="left" class="input_txt"><span id="representativeerr">*</span>Date:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="representativedate" name="representativedate" value="${assignment.representativedate}"/><br><span id="representativedateerr"> </span><form:errors path="Assignment.representativedate"></form:errors>
+				                  	<input type="text" class="input_txtbx1" id="datepicker4" name="representativedate" value="${assignment.representativedate}"/><br><span id="representativedateerr"> </span><form:errors path="Assignment.representativedate"></form:errors>
 				                  	</tr>
 				                  	</table>
 				                  	</c:otherwise>

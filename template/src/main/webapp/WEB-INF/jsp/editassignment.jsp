@@ -56,13 +56,13 @@ function checkSubmit()
 	
 	return false;
 	}
-	document.getElementById("datepickererror").innerHTML="";
+	/* document.getElementById("datepickererror").innerHTML="";
 	if(document.getElementById("datepicker").value=="")
 	{
 	document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
 	
 	return false;
-	}
+	} */
 	document.getElementById("patientsignerror").innerHTML="";
 	if(document.getElementById("patientsign").value=="")
 	{
@@ -76,7 +76,7 @@ function checkSubmit()
 	document.getElementById("datepicker2error").innerHTML="Required Field Should not be Empty";
 	
 	return false;
-	}
+	} 
 	document.getElementById("parentnameerror").innerHTML="";
 	if(document.getElementById("parentname").value=="")
 	{
@@ -92,7 +92,7 @@ function checkSubmit()
 	
 	return false;
 	}
-	document.getElementById("datepicker3error").innerHTML="";
+document.getElementById("datepicker3error").innerHTML="";
 	if(document.getElementById("datepicker3").value=="")
 	{
 	document.getElementById("datepicker3error").innerHTML="Required Field Should not be Empty";
@@ -105,12 +105,12 @@ function checkSubmit()
 	
 	return false;
 	}
-	document.getElementById("datepicker4error").innerHTML="";
+	 document.getElementById("datepicker4error").innerHTML="";
 	if(document.getElementById("datepicker4").value=="")
 	{
 	document.getElementById("datepicker4error").innerHTML="Required Field Should not be Empty";
 	return false;
-	}
+	} 
 	
 	}
   </script>
@@ -178,49 +178,49 @@ and exclusively in the name of Perry Chiropractic and Therapy Center, such sums 
                        </tr>
                        <tr class="row1">
                        
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>PatientName: </td>
+				                  <td valign="middle" align="left" class="input_txt"><span >*</span>PatientName: </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="patientname" value="${assignmentdetails.patientname}"/><br><span class="err"><form:errors path="Assignment.patientname"></form:errors>
-				                  		<td valign="middle" width="50%"><span class="err">*</span>Date</td>
-				                  			<td valign="top"><input type="text" class="input_txtbx1" id="datepicker" name="patientdate" value="${assignmentdetails.patientdate}" /><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="Assignment.patientdate"></form:errors></span></td>
+				                  	<input type="text" class="input_txtbx1" id="patientname" name="patientname" value="${assignmentdetails.patientname}"/><br><span id="patientnameerror" style="color: red;font-style:italic;"><form:errors path="Assignment.patientname"></form:errors>
+				                  		<%-- <td valign="middle" width="50%"><span class="err">*</span>Date</td>
+				                  			<td valign="top"><input type="text" class="input_txtbx1" id="datepicker" name="patientdate" value="${assignmentdetails.patientdate}" /><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="Assignment.patientdate"></form:errors></span></td> --%>
 				                  	</tr>
 				                  	<tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Signature:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="patientsign" value="${assignmentdetails.patientsign}"/><span class="err"><form:errors path="Assignment.patientsign"></form:errors>
+				                  	<input type="text" class="input_txtbx1" id="patientsign" name="patientsign" value="${assignmentdetails.patientsign}"/><span id="patientsignerror" style="color: red;font-style:italic;"><form:errors path="Assignment.patientsign"></form:errors>
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="datepicker2" name="patientdate" value="${assignmentdetails.patientdate}"/><br><span class="err"><form:errors path="Assignment.patientdate"></form:errors>
+				                  	<input type="text" class="input_txtbx1" id="datepicker2" name="patientdate" value="${assignmentdetails.patientdate}"/><br><span id="datepicker2error" style="color: red;font-style:italic;"><form:errors path="Assignment.patientdate"></form:errors>
 				                  	</tr> 
 				                  	
 				                  	<tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name of Custodial Parent or Legal Guardian :  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="parentname" value="${assignmentdetails.parentname}"/><br><span class="err"><form:errors path="Assignment.parentname"></form:errors>
+				                  	<input type="text" class="input_txtbx1" id="parentname" name="parentname" value="${assignmentdetails.parentname}"/><br><span id="parentnameerror" style="color: red;font-style:italic;"><form:errors path="Assignment.parentname"></form:errors>
 				                  	</tr> 
 				                  	<tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Parent/Guardian Signature:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="parentsign" value="${assignmentdetails.parentsign}"/><span class="err"><form:errors path="Assignment.parentsign"></form:errors>
+				                  	<input type="text" class="input_txtbx1" id="parentsign" name="parentsign" value="${assignmentdetails.parentsign}"/><span id="parentsignerror" style="color: red;font-style:italic;"><form:errors path="Assignment.parentsign"></form:errors>
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="datepicker1" name="parentdate" value="${assignmentdetails.parentdate}"/><br><span class="err"><form:errors path="Assignment.parentdate"></form:errors>
+				                  	<input type="text" class="input_txtbx1" id="datepicker3" name="parentdate" value="${assignmentdetails.parentdate}"/><br><span id="datepicker3error" style="color: red;font-style:italic;"><form:errors path="Assignment.parentdate"></form:errors>
 				                  	</tr> 
 				                  	
 				                  	<tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Perry Chiropractic and Therapy Center Representative:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="representative" value="${assignmentdetails.representative}" /><span class="err"><form:errors path="Assignment.representative"></form:errors>
+				                  	<input type="text" class="input_txtbx1" id="representative" name="representative" value="${assignmentdetails.representative}" /><span id="representativeerror" style="color: red;font-style:italic;"><form:errors path="Assignment.representative"></form:errors>
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="datepicker2" name="representativedate" value="${assignmentdetails.representativedate}"/><br><span class="err"><form:errors path="Assignment.representativedate"></form:errors>
+				                  	<input type="text" class="input_txtbx1" id="datepicker4" name="representativedate" value="${assignmentdetails.representativedate}"/><br><span id="datepicker4error" style="color: red;font-style:italic;"><form:errors path="Assignment.representativedate"></form:errors>
 				                  	</tr>
 				                  	</table>
 				               <table>
               <tr>
               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-              <td><input type="submit" class="submit_btn" value="Update"></td>
+              <td><input type="submit" class="submit_btn" value="Update" onclick ="return checkSubmit('this');"></td>
               <td>&nbsp;&nbsp;</td>
               <td> <a href="deleteassignment" class="submit_btn" style="text-decoration: none;color:white" onclick="return confirmation() ">Delete</a></td>
              
