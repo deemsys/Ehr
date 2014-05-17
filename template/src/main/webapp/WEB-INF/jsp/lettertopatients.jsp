@@ -296,7 +296,7 @@ function checkSubmit()
 	}
 
 	</script>
-	<script>
+	<!-- <script>
 
 	function checkSubmit()
 	{
@@ -309,7 +309,7 @@ function checkSubmit()
 		
 		
 		}
-</script>
+</script> -->
 </head>
  <body>
 <div id="right_content">
