@@ -2844,6 +2844,7 @@ String username=principal.getName();
 		return "viewscreeningauthz";
  
 	}
+	
 	@RequestMapping(value="/editscreeningauthz", method = RequestMethod.GET)
 	public String editscreeningauthz(@RequestParam("username") String username,HttpServletRequest request,ModelMap model,Principal principal) {
 
@@ -2858,7 +2859,21 @@ String username=principal.getName();
 		model.addAttribute("menu", "checklist");
 		return "editscreeningauthz";
 	}
-	
+	@RequestMapping(value="/editscreeningauthzdetails", method = RequestMethod.GET)
+	public String editscreeningauthzdetails(@RequestParam("screen_no") String screen_no,HttpServletRequest request,ModelMap model,Principal principal) {
+
+		if(patientDAO.getUsername(principal).size()>0)
+		{			
+	   model.addAttribute("patientno","0");
+	}
+		ScreeningAuthzForm screeningauthzForm= new ScreeningAuthzForm();
+    	screeningauthzForm.setScreeningDetails(screenDAO.getScreening(screen_no));
+		model.addAttribute("ScreeningAuthzForm",screeningauthzForm);
+		model.addAttribute("menu", "checklist");
+		return "editscreeningauthz";
+ 
+	}
+
 	@RequestMapping(value="/updatescreeningauthz", method=RequestMethod.POST)
 	public String updatescreeningauthz(HttpServletRequest request,@ModelAttribute("screeningAuthz") @Valid screeningAuthz screeningauthz,
 			BindingResult result,ModelMap model,Principal principal)
@@ -2896,7 +2911,7 @@ String username=principal.getName();
 	      	    {
 	      	    	model.addAttribute("choice","close");
 	      	    } 
-	       return "viewscreeningauthz";
+	       return "screeninglist";
 		
 	}
 	@RequestMapping(value="/screeningauthzlist", method = RequestMethod.GET)
