@@ -53,7 +53,7 @@ public class DcfeeslipDAO {
 	    	 flag=1;
 	 }
 	    catch(Exception e){
-	    	System.out.println(e.toString());
+	    	System.out.println("error"+e.toString());
 	    	releaseStatement(statement);
 	    	releaseConnection(con);
 	    	flag=0;

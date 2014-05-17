@@ -48,7 +48,7 @@ public class Dcfeeslipcontroller
 		String returnText="";
 		String patientname="";
 		System.out.println("initialemlimited"+dcfeeslip.getDate());
-	
+		
 		if(signupDAO.getPatientusername(dcfeeslip.getUsername()).size()==0)
 		{
 			return "error";
@@ -83,7 +83,7 @@ public class Dcfeeslipcontroller
 			int ans=feeslipDAO.setAns(dcfeeslip);
 			System.out.println("ans"+ans);
 			returnText=Integer.toString(ans);
-				returnText="<input type=text id=charges value='"+returnText+"'>";
+				returnText="<input type=text class=input_txtbx1 name=charges id=charges value='"+returnText+"'>";
 				return returnText;
 				
 	}
@@ -119,10 +119,12 @@ public class Dcfeeslipcontroller
 	}
 	@RequestMapping(value="/dcfeeslip", method = RequestMethod.POST)
 	public String insert_dcfeeslip(HttpServletRequest request,HttpSession session,ModelMap model,@ModelAttribute("dcfeeslipdetail")  @Valid Dcfeeslip dcfeeslip,BindingResult result) {
+		System.out.println("inseresasasd");
 		session.setAttribute("dcfee", dcfeeslip);
 		model.addAttribute("menu","dcfee");
-		if(result.hasErrors())
+		/*if(result.hasErrors())
 		{
+			System.out.println("error");
 		
 			DcfeeslipForm dcfeeslipForm = new DcfeeslipForm();
 		    dcfeeslipForm.setDcfeeslip(feeslipDAO.getDcfeeslip());
@@ -131,9 +133,10 @@ public class Dcfeeslipcontroller
 			model.addAttribute("menu", "dcfee");
 			 session.removeAttribute("dcfee");
 			return "dcfeeslip";
-		}
+		}*/
 
 		int b=feeslipDAO.setDcfeeslip(dcfeeslip,request.getParameter("user"));
+		System.out.println("inserted");
 		DcfeeslipForm dcfeeslipForm= new DcfeeslipForm();
 		dcfeeslipForm.setDcfeeslip(feeslipDAO.getDcfeeslip());
 		model.addAttribute("dcfeeslipForm",dcfeeslipForm);
@@ -166,16 +169,16 @@ public class Dcfeeslipcontroller
 
 		}	
 		
-	@RequestMapping(value="/editdcfeeslip", method=RequestMethod.GET)
+	/*@RequestMapping(value="/editdcfeeslip", method=RequestMethod.GET)
 	public String editdcfeeslip(HttpServletRequest request,@RequestParam("dcfeeid") String dcfeeid,ModelMap model,Dcfeeslip dcfeeslip) 
 	{
-		/*String lumbopelvicexam=request.getParameter("lumbopelvicexam");*/
+		String lumbopelvicexam=request.getParameter("lumbopelvicexam");
 		DcfeeslipForm dcfeeslipForm = new DcfeeslipForm();       
         dcfeeslipForm.setDcfeeslip(feeslipDAO.getDcfee(dcfeeid));
         model.addAttribute("dcfeeslipForm",dcfeeslipForm);
         model.addAttribute("menu","dcfee"); 
        		return "editdcfeeslip";
-	}
+	}*/
 	
 	@RequestMapping(value="/editdcfeeslipdetails", method=RequestMethod.GET)
 	public String editdcfeeslipetails(HttpServletRequest request,@RequestParam("username") String username,@RequestParam("date") String date,ModelMap model,Dcfeeslip dcfeeslip) 

@@ -8,16 +8,15 @@ public class Dcfeeslip {
 	
 	private String username;
 	
-	@NotEmpty
+	
 	private String pid;
 	
-	@NotEmpty
-	private String date;
+		private String date;
 	
-	@NotEmpty
+	
 	private String pname;
 	
-	@NotEmpty
+	
 	private String dr1;
 	
 	
@@ -136,10 +135,9 @@ public class Dcfeeslip {
 	private String cardsign;
 	@NotEmpty
 	private String date1;
-	@NotEmpty
+	
 	private String parentsign;
-	@NotEmpty
-	private String doctorsign;
+		private String doctorsign;
 	private String week;
 	private String months;
 	
