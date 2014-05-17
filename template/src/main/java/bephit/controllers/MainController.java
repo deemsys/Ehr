@@ -4805,6 +4805,22 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
  
 	}
 
+	@RequestMapping(value="/edittreatminordetails", method = RequestMethod.GET)
+	public String edittreatminordetails(@RequestParam("treat_no") String minorno,HttpServletRequest request,ModelMap model,Principal principal) {
+
+		if(patientDAO.getUsername(principal).size()>0)
+		{			
+	   model.addAttribute("patientno","0");
+	}
+		TreatMinorDetailsForm treatminordetailsForm= new TreatMinorDetailsForm();
+		treatminordetailsForm.setMinorDetails(minorDAO.getMinorDetails(minorno));
+		model.addAttribute("treatminordetailsform",treatminordetailsForm);
+		 model.addAttribute("menu", "consent");
+		return "edittreatminor";
+		
+ 
+	}
+	
 	@RequestMapping(value="/edittreatminor", method = RequestMethod.GET)
 	public String edittreatminor(HttpServletRequest request,ModelMap model,Principal principal) {
 
