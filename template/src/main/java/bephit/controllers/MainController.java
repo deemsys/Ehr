@@ -861,12 +861,15 @@ public class MainController {
 	}
 	
 	@RequestMapping(value="/edithamiltonchiropractic", method=RequestMethod.GET)
-	public String edithamiltonchiropractic(HttpServletRequest request,@RequestParam("initialexamid") String initialexamid,ModelMap model,Hamiltonchiropractic hamiltonchiropractic)
+	public String edithamiltonchiropractic(HttpServletRequest request,@RequestParam("initialexamid") String initialexamid,ModelMap model,Hamiltonchiropractic hamiltonchiropractic,Hamilton hamilton)
 	{
 		
 		HamiltonchiropracticForm hamiltonchiropracticForm = new HamiltonchiropracticForm();
        
         hamiltonchiropracticForm.setHamiltonchiropractic(hamiDAO.getHamiltonchiropractic(initialexamid));
+        
+        HamiltonForm hamiltonForm = new HamiltonForm();
+        hamiltonForm.setHamilton(hamiDAO.getHamilton(initialexamid));
 	
 		model.addAttribute("hamiltonchiropracticForm", hamiltonchiropracticForm);
 		 model.addAttribute("menu", "iniexam");
@@ -875,39 +878,49 @@ public class MainController {
 	}
 	
 	
-	//@RequestMapping(value="/updatehamiltonchiropractic", method=RequestMethod.POST)
-	//public String updatehamiltonchiropractic(HttpServletRequest request,@ModelAttribute("Hamiltonchiropractic") @Valid Hamiltonchiropractic hamiltonchiropractic,@ModelAttribute("Hamilton") @Valid Hamilton hamilton,
-	//		BindingResult result,ModelMap model,Principal principal)
-	//{
-	//	/*if (result.hasErrors())
-	//	{
-	//		PhysicalexamForm physicalexamForm = new PhysicalexamForm();
+	
+	
+	
+	
+	
+	
+	
+	@RequestMapping(value="/updatehamiltonchiropractic", method=RequestMethod.POST)
+    public String updatehamiltonchiropractic(HttpServletRequest request,@ModelAttribute("Hamiltonchiropractic") @Valid Hamiltonchiropractic hamiltonchiropractic,@ModelAttribute("Hamilton") @Valid Hamilton hamilton,
+			BindingResult result,ModelMap model,Principal principal)
+	{
+		if (result.hasErrors())
+		{
+			System.out.println("yes");
+			//PhysicalexamForm physicalexamForm = new PhysicalexamForm();
 	     
-	   //   physicalexamForm.setPhysicalexam(physicalDAO.getPhysical(physicalexam.getPhysical_id()));
+	     // physicalexamForm.setPhysicalexam(physicalDAO.getPhysical(physicalexam.getPhysical_id()));
 	      
-	    //    model.addAttribute("physicalexamForm", physicalexamForm);
-		//	     model.addAttribute("menu", "doctor");
-		 //       return "editphysicalexam";
-		//}
-		//*/
-		///*System.out.println("physical id"+physicalexam.getPhysical_id());*/
-		//int status = hamiDAO.updatehamiltonchiropractic(hamiltonchiropractic, hamiltonchiropractic.getInitialexamid(), principal.getName());
-		//System.out.println(status);
+	       // model.addAttribute("physicalexamForm", physicalexamForm);
+			//     model.addAttribute("menu", "doctor");
+		     //   return "editphysicalexam";
+		}
 		
-		//HamiltonchiropracticForm hamiltonchiropracticForm = new HamiltonchiropracticForm();
+		//System.out.println("physical id"+physicalexam.getPhysical_id());*/
+		int status = hamiDAO.updatehamiltonchiropractic(hamiltonchiropractic,hamiltonchiropractic.getPatient_id());
+	System.out.println(status);
+		
+		HamiltonchiropracticForm hamiltonchiropracticForm = new HamiltonchiropracticForm();
         
-       //hamiltonchiropracticForm.setHamiltonchiropractic(hamiDAO.getHamiltonchiropractic());
+     hamiltonchiropracticForm.setHamiltonchiropractic(hamiDAO.getHamiltonchiropractic());
+     HamiltonForm hamiltonForm = new HamiltonForm();
+     hamiltonForm.setHamilton(hamiDAO.getHamilton(null));
        
-       // model.addAttribute("hamiltonchiropracticForm", hamiltonchiropracticForm);
-	    //   model.addAttribute("success","true");
-	   ///    model.addAttribute("menu", "iniexam");
+      model.addAttribute("hamiltonchiropracticForm", hamiltonchiropracticForm);
+	      model.addAttribute("success","true");
+	      model.addAttribute("menu", "iniexam");
 	    
-	     //   return "viewfirsthamiltonchiropractic";
+	     return "viewfirsthamiltonchiropractic";
 		
-//
+
 	
 
-//}
+}
 	
 	@RequestMapping(value="/deletehamiltonchiropractic", method=RequestMethod.GET)
 	public String deletehamiltonchiropractic(@RequestParam("initialexamid") String initialexamid,ModelMap model, Principal principal) {
