@@ -3,6 +3,8 @@
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
+
+
 <script type="text/javascript">
 function softtissuevalidate()
 {
@@ -148,9 +150,11 @@ i=0;
 $(document).ready(function(){
   $("#security").keypress(function(){
 var phone=document.getElementById("security").value;
-phone = phone.replace(/(\d{3})(\d{2})(\d+)/, '$1-$2-$3');
+phone = phone.replace(/(\d{3})(\d{2})(\d+)/,'$1-$2-$3');
 document.getElementById("security").value=phone;
  });  
+
+});
 </script>
 	
  <STYLE type="text/css">
@@ -381,7 +385,7 @@ document.getElementById("security").value=phone;
 	       </p>
 	    Your Birth Date  <input type="text" class="input_txtbx1"  name="birthdate" id="datepicker1" value="${footquestionnariedetails.birthdate }">
 	    <br><br>
-	    Your Social Security Number <input type="text" name="security" class="input_txtbx1" maxlength="11" value="${footquestionnariedetails.security }">
+	    Your Social Security Number <input type="text" name="security" id="security" class="input_txtbx1" maxlength="11" value="${footquestionnariedetails.security }">
 	    <span id="securityerror" style="color: red;font-style:italic;"></span>
 	    <br>
 	    <br>

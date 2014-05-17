@@ -164,8 +164,18 @@ $("#security").keyup(function() {
 })
 });
 </script> -->
-
 <script>
+i=0;
+$(document).ready(function(){
+  $("#security").keypress(function(){
+var phone=document.getElementById("security").value;
+phone = phone.replace(/(\d{3})(\d{2})(\d+)/,'$1-$2-$3');
+document.getElementById("security").value=phone;
+ });  
+
+});
+</script>
+<!-- <script>
 i=0;
 $(document).ready(function(){
   $("#security").keypress(function(){
@@ -174,7 +184,7 @@ phone = phone.replace(/(\d{3})(\d{2})(\d+)/, '$1-$2-$3');
 document.getElementById("security").value=phone;
  });  
 </script>
-	
+	 -->
  <STYLE type="text/css">
   P#mypar {font-style:calibri;
   line-height:18px;}
