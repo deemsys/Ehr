@@ -91,7 +91,29 @@ $(function() {
     $( "#amount2" ).val(+ $( "#slider2" ).slider( "value" ) );
   });
 </script>
-
+<!-- <script type="text/javascript">
+       function Validate(event) {
+           var regex = new RegExp("^[0-9.]+$");
+           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+           if (!regex.test(key)) {
+             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
+               event.preventDefault();
+               return false;
+           }
+       }       
+    </script> -->
+    <script type="text/javascript">
+       function Validate(event) {
+           var regex = new RegExp("^[0-9.]+$");
+           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+           if (!regex.test(key)) {
+             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
+               event.preventDefault();
+               return false;
+           }
+       }       
+    </script>
+    
 </head>
  <body>
 <br>
@@ -255,7 +277,7 @@ document.getElementById("leftproxi").style.display="none";
  <input type="text" name="date1" id="datepicker1" class="input_txtbx1"></td>
  <td>
  <br/>
-&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved"  class="input_txtbx1">&nbsp;%  <!--  <select  id="improved" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved" onkeypress="return Validate(event)"; class="input_txtbx1">&nbsp; %  <!--  <select  id="improved" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
 					<option value="25%">25%</option>
 					<option value="50%">50%</option>
@@ -264,7 +286,7 @@ document.getElementById("leftproxi").style.display="none";
 					<option value="95%">95%</option>
 					</select> -->
 					<br/><br/><br/>
-&nbsp; &nbsp; Worsened:&nbsp;&nbsp;<input type="text"  name="worsened" class="input_txtbx1">&nbsp;% <!-- <select name="worsened" id="worsened" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+&nbsp; &nbsp; Worsened:&nbsp;&nbsp;<input type="text"  name="worsened" onkeypress="return Validate(event)"; class="input_txtbx1">&nbsp;% <!-- <select name="worsened" id="worsened" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
 					<option value="25%">25%</option>
 					<option value="50%">50%</option>
@@ -272,7 +294,7 @@ document.getElementById("leftproxi").style.display="none";
 					<option value="85%">85%</option>
 					<option value="95">95%</option>
 
-					</select> --><br/><br/><br/>
+					</select> --><br/><br/><br/><!-- <span id="worsened1error" style="color: red;font-style:italic;"></span> -->
 					</td>
  
  
@@ -377,7 +399,7 @@ document.getElementById("leftproxi").style.display="none";
  <input type="text" name="date2" id="datepicker" class="input_txtbx1"></td>
  <td>
  <br/>
-&nbsp; &nbsp; Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved1" class="input_txtbx1">&nbsp;%<!-- <select name="improved1" id="improved1" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+&nbsp; &nbsp; Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved1"onkeypress="return Validate(event)";class="input_txtbx1">&nbsp;%<!-- <select name="improved1" id="improved1" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
 					<option value="25%">25%</option>
 					<option value="50%">50%</option>
@@ -386,7 +408,7 @@ document.getElementById("leftproxi").style.display="none";
 					<option value="95%">95%</option>
 					</select> -->
 					<br/><br/><br/>
-&nbsp; &nbsp; Worsened:&nbsp;&nbsp;<input type="text" name="worsened1" class="input_txtbx1">&nbsp;% <!-- <select name="worsened1" id="worsened1" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+&nbsp; &nbsp; Worsened:&nbsp;&nbsp;<input type="text" name="worsened1" onkeypress="return Validate(event)"; class="input_txtbx1">&nbsp;% <!-- <select name="worsened1" id="worsened1" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
 					<option value="25%">25%</option>
 					<option value="50%">50%</option>
@@ -395,6 +417,7 @@ document.getElementById("leftproxi").style.display="none";
 					<option value="95">95%</option>
 
 					</select> --><br/><br/><br/>
+
 					</td>
 
  <td>
@@ -457,7 +480,7 @@ document.getElementById("leftproxi").style.display="none";
  <td>
 
  
- <br/>&nbsp; &nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="improved2" class="input_txtbx1">&nbsp;%<!-- <select name="improved2" id="improved2" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+ <br/>&nbsp; &nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="improved2" onkeypress="return Validate(event)"; class="input_txtbx1">&nbsp;%<!-- <select name="improved2" id="improved2" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
 					<option value="25%">25%</option>
 					<option value="50%">50%</option>
@@ -468,7 +491,7 @@ document.getElementById("leftproxi").style.display="none";
 					</select> --><br/><br/><br/>
 
 
-&nbsp;&nbsp; Worsened:&nbsp;&nbsp;&nbsp;<input type="text" name="worsened2" class="input_txtbx1">&nbsp;% <!-- <select name="worsened2" id="worsened2" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+&nbsp;&nbsp; Worsened:&nbsp;&nbsp;&nbsp;<input type="text" name="worsened2" onkeypress="return Validate(event)";class="input_txtbx1">&nbsp;% <!-- <select name="worsened2" id="worsened2" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
 					<option value="25%">25%</option>
 					<option value="50%">50%</option>
@@ -476,7 +499,7 @@ document.getElementById("leftproxi").style.display="none";
 					<option value="85%">85%</option>
 					<option value="95%">95%</option>
 
-					</select> --><br/><br/><br/></td>
+					</select> --><br/><br/><br/><span id="worsened3error" style="color: red;font-style:italic;"></span></td>
  <td>
 
   &nbsp &nbsp <select name="fixation2" id="fixation2" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
@@ -533,22 +556,22 @@ document.getElementById("leftproxi").style.display="none";
  <td>&nbsp;&nbsp;
  <input type="text" name="date4" id="datepicker3" class="input_txtbx1"></td>
  <td>
- <br/>&nbsp;&nbsp;Improved: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved3" class="input_txtbx1">&nbsp;%<!-- <select name="improved3" id="improved3" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+ <br/>&nbsp;&nbsp;Improved: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved3" onkeypress="return Validate(event)"; class="input_txtbx1">&nbsp;%<!-- <select name="improved3" id="improved3" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
 					<option value="25%">25%</option>
 					<option value="50%">50%</option>
 					<option value="75%">75%</option>
 					<option value="85%">85%</option>
 					<option value="95%">95%</option>
-					</select> --><br/><br/><br/>
-&nbsp;&nbsp; Worsened: &nbsp;&nbsp;<input type="text" name="worsened3" class="input_txtbx1">&nbsp;%<!-- <select name="worsened3" id="worsened3" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+					</select> --><br/><br/><br/><span id="improved4error" style="color: red;font-style:italic;"></span>
+&nbsp;&nbsp; Worsened: &nbsp;&nbsp;<input type="text" name="worsened3" onkeypress="return Validate(event)"; class="input_txtbx1">&nbsp;%<!-- <select name="worsened3" id="worsened3" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
 					<option value="25%">25%</option>
 					<option value="50%">50%</option>
 					<option value="75%">75%</option>
 					<option value="85%">85%</option>
 					<option value="95%">95%</option>
-					</select> --><br/><br/><br/></td>
+					</select> --><br/><br/><br/><span id="worsened4error" style="color: red;font-style:italic;"></span></td>
  <td>
   &nbsp &nbsp<select name="fixation3" id="fixation3" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixations" >Fixations</option>
@@ -603,22 +626,22 @@ document.getElementById("leftproxi").style.display="none";
  <td>&nbsp;&nbsp;
  <input type="text" name="date5" id="datepicker4" class="input_txtbx1"></td>
  <td>
- <br/>&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved4" class="input_txtbx1">&nbsp;%<!-- <select name="improved4" id="improved4" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+ <br/>&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved4" onkeypress="return Validate(event)";class="input_txtbx1">&nbsp;%<!-- <select name="improved4" id="improved4" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
 					<option value="25%">25%</option>
 					<option value="50%">50%</option>
 					<option value="75%">75%</option>
 					<option value="85%">85%</option>
 					<option value="95%">95%</option>
-					</select> --><br/><br/><br/>
-&nbsp;&nbsp;Worsened:&nbsp;&nbsp;&nbsp;<input type="text" name="worsened4" class="input_txtbx1">&nbsp;% <!-- <select name="worsened4" id="worsened4" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+					</select> --><br/><br/><br/><span id="improved5error" style="color: red;font-style:italic;"></span>
+&nbsp;&nbsp;Worsened:&nbsp;&nbsp;&nbsp;<input type="text" name="worsened4" onkeypress="return Validate(event)";class="input_txtbx1">&nbsp;% <!-- <select name="worsened4" id="worsened4" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
 					<option value="25%">25%</option>
 					<option value="50%">50%</option>
 					<option value="75%">75%</option>
 					<option value="85%">85%</option>
 					<option value="95%">95%</option>
-					</select> --><br/><br/><br/></td>
+					</select> --><br/><br/><br/><span id="worsened5error" style="color: red;font-style:italic;"></span></td>
  <td>&nbsp &nbsp <select name="fixation4" id="fixation4" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixation" >Fixations</option>
 					<option value="Tenderness to palpation">Tenderness to palpation</option>
@@ -672,22 +695,22 @@ document.getElementById("leftproxi").style.display="none";
  <td>&nbsp;&nbsp;
  <input type="text" name="date6" id="datepicker5" class="input_txtbx1"></td>
  <td>
- <br/>&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved5" class="input_txtbx1">&nbsp;% <!-- <select name="improved5" id="improved5" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+ <br/>&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved5" onkeypress="return Validate(event)"; class="input_txtbx1">&nbsp;% <!-- <select name="improved5" id="improved5" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
 					<option value="25%">25%</option>
 					<option value="50%">50%</option>
 					<option value="75%">75%</option>
 					<option value="85%">85%</option>
 					<option value=95%">95%</option>
-					</select> --><br/><br/><br/>
-&nbsp;&nbsp; Worsened:&nbsp;&nbsp;<input type="text" name="worsened5" class="input_txtbx1">&nbsp;% <!-- <select name="worsened5" id="worsened5" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+					</select> --><br/><br/><br/><span id="improved6error" style="color: red;font-style:italic;"></span>
+&nbsp;&nbsp; Worsened:&nbsp;&nbsp;<input type="text" name="worsened5" onkeypress="return Validate(event)";class="input_txtbx1">&nbsp;% <!-- <select name="worsened5" id="worsened5" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
 					<option value="25%">25%</option>
 					<option value="50%">50%</option>
 					<option value="75%">75%</option>
 					<option value="85%">85%</option>
 					<option value="95%">95%</option>
-					</select> --><br/><br/><br/></td>
+					</select> --><br/><br/><br/><span id="worsened6error" style="color: red;font-style:italic;"></span></td>
  <td>
   &nbsp &nbsp<select name="fixation5" id="fixation5" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="fixation" >Fixations</option>
@@ -742,22 +765,22 @@ document.getElementById("leftproxi").style.display="none";
  <td>&nbsp;&nbsp;
  <input type="text" name="date7" id="datepicker6" class="input_txtbx1"></td>
  <td>
- <br/>&nbsp; &nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved6" class="input_txtbx1">&nbsp;% <!-- <select name="improved6" id="improved6" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+ <br/>&nbsp; &nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved6" onkeypress="return Validate(event)"; class="input_txtbx1">&nbsp;% <!-- <select name="improved6" id="improved6" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
 					<option value="25%">25%</option>
 					<option value="50%">50%</option>
 					<option value="75%">75%</option>
 					<option value="85%">85%</option>
 					<option value="95%">95%</option>
-					</select> --><br/><br/><br/>
-&nbsp; &nbsp; Worsened:&nbsp;<input type="text" name="worsened6" class="input_txtbx1">&nbsp;% <!-- <select name="worsened6" id="worsened6" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+					</select> --><br/><br/><br/><span id="improved7error" style="color: red;font-style:italic;"></span>
+&nbsp; &nbsp; Worsened:&nbsp;<input type="text" name="worsened6" onkeypress="return Validate(event)"; class="input_txtbx1">&nbsp;% <!-- <select name="worsened6" id="worsened6" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
 					<option value="25%">25%</option>
 					<option value="50%">50%</option>
 					<option value="75%">75%</option>
 					<option value="85%">85%</option>
 					<option value="95%">95%</option>
-					</select> --><br/><br/><br/></td>
+					</select> --><br/><br/><br/><span id="worsened7error" style="color: red;font-style:italic;"></span></td>
  <td>&nbsp &nbsp <select name="fixation6" id="fixation6" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="fixation" >Fixations</option>
 					<option value="Tenderness to palpation">Tenderness to palpation</option>
@@ -811,22 +834,22 @@ document.getElementById("leftproxi").style.display="none";
  <td>&nbsp;&nbsp;
  <input type="text" name="date8" id="datepicker7" class="input_txtbx1"></td>
  <td>
- <br/>&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved7" class="input_txtbx1">&nbsp;%<!-- <select name="improved7" id="improved7" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+ <br/>&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved7" onkeypress="return Validate(event)";class="input_txtbx1">&nbsp;%<!-- <select name="improved7" id="improved7" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
 					<option value="25%">25%</option>
 					<option value="50%">50%</option>
 					<option value="75%">75%</option>
 					<option value="85%">85%</option>
 					<option value="95%">95%</option>
-					</select> --><br/><br/><br/>
-&nbsp;&nbsp;Worsened:&nbsp;&nbsp;<input type="text" name="worsened7" class="input_txtbx1">&nbsp;%<!-- <select name="worsened7" id="worsened7" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+					</select> --><br/><br/><br/><span id="improved8error" style="color: red;font-style:italic;"></span>
+&nbsp;&nbsp;Worsened:&nbsp;&nbsp;<input type="text" name="worsened7" onkeypress="return Validate(event)";class="input_txtbx1">&nbsp;%<!-- <select name="worsened7" id="worsened7" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
 					<option value="25%">25%</option>
 					<option value="50%">50%</option>
 					<option value="75%">75%</option>
 					<option value="85%">85%</option>
 					<option value="95%">95%</option>
-					</select> --><br/><br/><br/></td>
+					</select> --><br/><br/><br/><span id="worsened8error" style="color: red;font-style:italic;"></span></td>
  <td> &nbsp &nbsp<select name="fixation7" id="fixation7" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="fixations" >Fixations</option>
 					<option value="Tenderness to palpation">Tenderness to palpation</option>
@@ -880,7 +903,7 @@ document.getElementById("leftproxi").style.display="none";
  <td>&nbsp;&nbsp;
  <input type="text" name="date9" id="datepicker8" class="input_txtbx1"></td>
  <td>
- <br/>&nbsp; &nbsp;Improved:&nbsp;&nbsp;&nbsp;<input type="text" name="improved8" class="input_txtbx1">&nbsp;%<!-- <select name="improved8" id="improved8" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+ <br/>&nbsp; &nbsp;Improved:&nbsp;&nbsp;&nbsp;<input type="text" name="improved8" onkeypress="return Validate(event)"; class="input_txtbx1">&nbsp;%<!-- <select name="improved8" id="improved8" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
 					<option value="25%">25%</option>
 					<option value="50%">50%</option>
@@ -888,7 +911,7 @@ document.getElementById("leftproxi").style.display="none";
 					<option value="85%">85%</option>
 					<option value="95%">95%</option>
 					</select> --><br/><br/><br/>
-&nbsp; &nbsp;Worsened:&nbsp;<input type="text" name="worsened8" class="input_txtbx1">&nbsp;%<!--  <select name="worsened8" id="worsened8" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+&nbsp; &nbsp;Worsened:&nbsp;<input type="text" name="worsened8" onkeypress="return Validate(event)";class="input_txtbx1">&nbsp;%<!--  <select name="worsened8" id="worsened8" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
 					<option value="25%">25%</option>
 					<option value="50%">50%</option>
