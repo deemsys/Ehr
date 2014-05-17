@@ -2772,13 +2772,13 @@ String username=principal.getName();
 		}
 		
 		ScreeningAuthzForm screeningauthzForm= new ScreeningAuthzForm();
-    	screeningauthzForm.setScreeningDetails(screenDAO.getScreeningDetails());
+    	screeningauthzForm.setScreeningDetails(screenDAO.getusernameScreeningdetails(principal));
 		model.addAttribute("ScreeningAuthzForm",screeningauthzForm);
 		model.addAttribute("menu", "authorization");
         
-	     model.addAttribute("noofrows",screeningauthzForm.getScreeningDetails().size());       
+	    /* model.addAttribute("noofrows",screeningauthzForm.getScreeningDetails().size());       
 	    screeningauthzForm.setScreeningDetails(screenDAO.getlimitedscreeninglist(1));
-      model.addAttribute("noofpages",(int) Math.ceil(screenDAO.getnoofscreeninglist() * 1.0 / 5));	 
+      model.addAttribute("noofpages",(int) Math.ceil(screenDAO.getnoofscreeninglist() * 1.0 / 5));*/	 
 	        model.addAttribute("button","viewall");
 	        model.addAttribute("success","false");
 	        model.addAttribute("currentpage",1);
@@ -2869,7 +2869,7 @@ String username=principal.getName();
 		ScreeningAuthzForm screeningauthzForm= new ScreeningAuthzForm();
     	screeningauthzForm.setScreeningDetails(screenDAO.getScreening(screen_no));
 		model.addAttribute("ScreeningAuthzForm",screeningauthzForm);
-		model.addAttribute("menu", "checklist");
+		model.addAttribute("menu", "authorization");
 		return "editscreeningauthz";
  
 	}
