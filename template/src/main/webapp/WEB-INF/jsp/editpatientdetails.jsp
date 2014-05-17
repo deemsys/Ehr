@@ -1204,24 +1204,24 @@ var $sid = xx+1;
          <tr height="10"></tr>       
       <tr ><td align="right" ></td><td align="right"><%-- <a  style="text-decoration:underline;color:green;"  href="<c:out value="viewquadraplevisual?patient_id=${patientDetails.patient_id}"/>"  >View Quadruple Visual Analogue Scale</a> --%></td><td ></td></tr>
 				              <tr>
-				         	 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Please Describe Your Symptoms Briefly:</td>
-				          		<td class="input_txt">
+				         	 <td valign="middle" align="left" class="input_txt" width="100"><span class="err">*</span>Please Describe Your Symptoms Briefly:</td>
+				          		<td class="input_txt" align="left">
 				          		 
                  <%int i=1;%>
                  <c:forEach items="${symptom}" var="symptom" varStatus="status">
                  
                   <tr>
-                  <td valign="middle" align="right" class="input_txt" width="29%"></td>
+                  <td valign="middle" align="left" class="input_txt" width="29%"></td>
                  
                   <td valign="top" align="left" class="input_txt" width="70%">
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
                  <textarea  rows="3" cols="25" name="symptom[]" id="symptom<%=i%><%i++;%>" onBlur="check(this)">${symptom}</textarea><span id="symptom1error" style="color: red;font-style:italic;"></span>
                
-                </td> </tr><tr height="10"></tr>  </c:forEach>
+                </td> <td width="700"></td></tr><tr height="10"></tr>  </c:forEach>
                         </td><td>
 				 </td></tr></table>  
 				      		
-				          		<table>
+				          		<table cellspacing="0" cellpadding="0">
 				          		<tr>
 				          		
  
@@ -1261,13 +1261,13 @@ var $sid = xx+1;
 				          				<div id="slider2"></div>
 				                  </td>--%>
 				                </tr>
-				                 <tr class="row2">
+				                 <tr class="row2" >
                         <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Are These Symptoms Due to an Accident:</td>
 				                 <td>	<input type="radio" id="yes" name="symptom_Accident" value="yes" class="input_txt" <c:if test="${patientDetails.symptom_Accident=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
 				                 	<input type="radio" id="No" name="symptom_Accident" value="No" class="input_txt"<c:if test="${patientDetails.symptom_Accident=='No'}"><c:out value="checked=checked"/></c:if>>No
 				                 	<span id="Symptom_Accidenterror" style="color: red;font-style:italic;"></span>
 				                 	</td> 
-				                  	<td></td>
+				                  	<td width="700"></td>
 				        </tr> 
 				       
 				          <tr class="row1">
@@ -1316,7 +1316,7 @@ var $sid = xx+1;
 			<span id="Attorney_accidenterror" style="color: red;font-style:italic;"></span>
 									<td></td>
 						</tr>   
-						 <tr class="row2">
+						 <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>What is your Dominant Hand </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="radio" id="R" name="retain" value="R" class="input_txt" <c:if test="${patientDetails.retain=='R'}"><c:out value="checked=checked"/></c:if>>R&nbsp;&nbsp;&nbsp;<input type="radio" id="L" name="retain" value="L" class="input_txt" <c:if test="${patientDetails.retain=='L'}"><c:out value="checked=checked"/></c:if>>L
@@ -1338,10 +1338,11 @@ var $sid = xx+1;
 				                  	<input type="text" class="input_txtbx1" id="phyname" name="phyname" value="${patientDetails.phyname}"/><br><span id="phynameerror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
 				                    </tr>
 				                
-				                <tr class="row1">
+				                <tr class="row2">
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err"></span>What is your Physician's Phone </td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="phyphone" name="phyphone" value="${patientDetails.phyphone}"/><br><span id="phyphoneerror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
+				                   </td><td width="700"></td>
 				                    </tr>
 				                    
 				                     <tr class="row1">
@@ -1350,10 +1351,11 @@ var $sid = xx+1;
 				                  	<input type="text" class="input_txtbx1" id="xray" name="xray"  value="${patientDetails.xray}"/><br><span id="xrayerror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
 				                    </tr>
 				                    
-				                     <tr class="row1">
+				                     <tr class="row2">
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err"></span>what treatment was given </td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="treat" name="treat" value="${patientDetails.treat}"/><br><span id="treaterror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
+				                  </td><td width="700"></td>
 				                    </tr>
 						
 						
@@ -1463,7 +1465,7 @@ var $sid = xx+1;
                 <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>CheckBox if it applies to you,parents,siblings,children</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                 <table>
+				                 <table cellpadding="0" cellspacing="0">
 				                 <tr class="row1">
 				                 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Anemia" name="anemia" <c:if test="${patientDetails.anemia=='Anemia'}"><c:out value="Checked"/></c:if>   />Anemia</td>
 				                 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Muscular" name="muscular" <c:if test="${patientDetails.muscular=='Muscular'}"><c:out value="Checked"/></c:if>   />Muscular</td>
@@ -1516,7 +1518,7 @@ var $sid = xx+1;
 								 <td valign="top" align="left" class="input_txt">
 								 <input type="checkbox"  value="Other" name="other" id="othercheck"onclick="Other();"<c:if test="${patientDetails.other=='Other'}"><c:out value="Checked"/></c:if>   />Other
 								<input type="text" class="input_txtbx1"   id="other1" style='display:none'  value="${patientDetails.ifother}" name="ifother" /></br><span class="err"><form:errors path="patient.ifother"></form:errors></span></td>
-
+<td width="200"></td>
 								
 					
 					</tr>

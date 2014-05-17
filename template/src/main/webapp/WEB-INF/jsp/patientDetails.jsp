@@ -1947,7 +1947,7 @@ function check(id)
 				                  	</td>
 				                <td></td>
 				                </tr>
-				                 <tr class="row2">
+				                 <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>What is your Dominant Hand </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="radio" name="retain" value="R" class="input_txt" id="R">R&nbsp;&nbsp;&nbsp;<input type="radio" name="retain" value="L" class="input_txt" id="L">L
@@ -1970,7 +1970,7 @@ function check(id)
 				                  	<input type="text" class="input_txtbx1" id="phyname" name="phyname"/><br><span id="phynameerror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
 				                    </tr>
 				                
-				                <tr class="row1">
+				                <tr class="row2">
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>What is your Physician's Phone </td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="phyphone" name="phyphone" maxlength="13"/><br><span id="phyphoneerror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
@@ -1983,7 +1983,7 @@ function check(id)
 				                  	<input type="text" class="input_txtbx1" id="xray" name="xray"/><br><span id="xrayerror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
 				                    </tr>
 				                    
-				                     <tr class="row1">
+				                     <tr class="row2">
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>what treatment was given </td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="treat" name="treat"/><br><span id="treaterror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
