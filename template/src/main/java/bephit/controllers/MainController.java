@@ -2570,7 +2570,21 @@ MedicalRecordsForm medicalrecordForm = new MedicalRecordsForm();
 		return "viewmedicalrecords";
  
 	}
-	
+	@RequestMapping(value="/editmedicaldetails", method = RequestMethod.GET)
+	public String editmedicaldetails(@RequestParam("medical_no") String medical_no,HttpServletRequest request,ModelMap model,Principal principal) {
+
+		if(patientDAO.getUsername(principal).size()>0)
+		{			
+	   model.addAttribute("patientno","0");
+	}
+		MedicalRecordsForm medicalrecordsform= new MedicalRecordsForm();
+		medicalrecordsform.setMedicalDetails(medicalDAO.getMedicalDetails(medical_no));
+		model.addAttribute("MedicalRecordsForm",medicalrecordsform);
+		model.addAttribute("menu", "authorization");
+		return "editmedical";
+		
+ 
+	}
 	@RequestMapping(value="/editmedical", method = RequestMethod.GET)
 	public String editmedical(HttpServletRequest request,ModelMap model,Principal principal) {
 		
@@ -3094,13 +3108,13 @@ String name="";
 	}
 
 	@RequestMapping(value="/editassignment", method = RequestMethod.GET)
-	public String editassignment(HttpServletRequest request,ModelMap model,Principal principal) {
+	public String editassignment(@RequestParam("assignment_no") String assignment_no,HttpServletRequest request,ModelMap model,Principal principal) {
 		if(patientDAO.getUsername(principal).size()>0)
 		{			
 	   model.addAttribute("patientno","0");
 	}
 		AssignmentDetailsForm assignmentdetailsform= new AssignmentDetailsForm();
-    	assignmentdetailsform.setAssignmentDetails(assignmentDAO.getAssignmentDetails());
+    	assignmentdetailsform.setAssignmentDetails(assignmentDAO.getAssignment(assignment_no));
 		model.addAttribute("AssignmentDetailsForm",assignmentdetailsform);
 		model.addAttribute("menu", "authorization");
 		return "editassignment";
