@@ -12,6 +12,18 @@
   line-height:18px;}
   
   </STYLE>
+  <script>
+i=0;
+$(document).ready(function(){
+  $("#fax").keypress(function(){
+var phone=document.getElementById("fax").value;
+phone = phone.replace(/(\d{3})(\d{3})(\d+)/,'$1-$2-$3');
+document.getElementById("fax").value=phone;
+ });  
+
+});
+</script> 
+  
  <script>
  $(function() {
            $( "#datepicker" ).datepicker();
@@ -117,7 +129,7 @@
               </tr>
               
               <tr height="20">
-              <td><b>Fax:</b>&nbsp;&nbsp;&nbsp;<input type="text" placeholder="513-421-2764" name="fax" id="fax" value="${requestfordemanddetails.fax}"></td>
+              <td><b>Fax:</b>&nbsp;&nbsp;&nbsp;<input type="text" placeholder="513-421-2764" name="fax" id="fax" value="${requestfordemanddetails.fax}" maxlength="12"></td>
               <td>
              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4933 West Tuscarawas Street
               </td>

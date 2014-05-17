@@ -66,6 +66,17 @@ width: 34px;
 cursor: pointer;
 }
 </style>
+<script>
+i=0;
+$(document).ready(function(){
+  $("#fax").keypress(function(){
+var phone=document.getElementById("fax").value;
+phone = phone.replace(/(\d{3})(\d{3})(\d+)/,'$1-$2-$3');
+document.getElementById("fax").value=phone;
+ });  
+
+});
+</script>    
 <script type='text/javascript'>
 $(function(){
 var overlay = $('<div id="overlay"></div>');
@@ -247,6 +258,23 @@ function doAjaxPost() {
 	}
 
 	</script>
+	
+          
+        
+                    
+  
+                    
+  <!-- <script>
+i=0;
+$(document).ready(function(){
+  $("#fax").keypress(function(){
+var phone=document.getElementById("fax").value;
+phone = phone.replace(/(\d{3})(\d{3})(\d+)/, '($1)$2-$3');
+document.getElementById("fax").value=phone;
+ });  
+
+});
+</script>     -->                     
 </head>
  <body>
 <div id="right_content">
@@ -285,7 +313,7 @@ function doAjaxPost() {
               <br>
               
               <tr height="20">
-              <td><b>Fax:</b>&nbsp;&nbsp;&nbsp;<input type="text" placeholder="513-421-2764" name="fax" id="fax"></td>
+              <td><b>Fax:</b>&nbsp;&nbsp;&nbsp;<input type="text" placeholder="513-421-2764" name="fax" id="fax" maxlength="12"></td>
               <td>
              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4933 West Tuscarawas Street
               </td>
