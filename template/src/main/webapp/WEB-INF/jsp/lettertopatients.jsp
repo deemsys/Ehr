@@ -356,7 +356,18 @@ function checkSubmit()
               <td ><input type="text" class="input_txtbx1" name="re" id="re" placeholder="Medical bill" /><span class="reerr" id="reerror"  style="color: red;font-style:italic;"><form:errors path="Lettertopatients.re"></form:errors></span></td>
               </tr>
               </table>
-            
+                          <script>
+$(document).ready(function(){
+  $("#ssn").keypress(function(){ 
+
+  
+var phone=document.getElementById("ssn").value;
+phone = phone.replace(/(\d{3})(\d{2})(\d+)/, '$1-$2-$3');
+document.getElementById("ssn").value=phone;
+ });  
+
+});
+</script>
                 <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err">*</span>SSN:</td>
@@ -455,8 +466,9 @@ function checkSubmit()
             
                 <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
+
               <td height="25" width="120"><span class="err">*</span>SSN:</td>
-              <td ><input type="text" class="input_txtbx1" name="ssn" id="ssn" value="${letterto.ssn }"/><span class="err" id="ssnerror"><form:errors path="Lettertopatients.ssn"></form:errors></span></td>
+              <td ><input type="text" class="input_txtbx1" name="ssn" id="ssn" value="${letterto.ssn}"/><span class="err" id="ssnerror"><form:errors path="Lettertopatients.ssn"></form:errors></span></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">

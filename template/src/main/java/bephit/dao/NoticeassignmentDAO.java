@@ -232,7 +232,7 @@ public class NoticeassignmentDAO {
 			e1.printStackTrace();
 		}
 	    try{
-	    	String cmd="update tbl_noticeassignment1 set nameofins='"+noticeassignmentdetails.getNameofins()
+	    	String cmd="update tbl_noticeassignment set nameofins='"+noticeassignmentdetails.getNameofins()
     			
     +"',nameofattorney='"+noticeassignmentdetails.getNameofattorney()
     +"',address1='"+noticeassignmentdetails.getAddress1()

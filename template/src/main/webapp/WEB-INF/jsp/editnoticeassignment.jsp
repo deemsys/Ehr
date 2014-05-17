@@ -32,6 +32,10 @@
  $(function() {
            $( "#datepicker" ).datepicker();
          });
+ $(function() {
+     $( "#dateofaccident" ).datepicker();
+   });
+ 
  
 </script>
 <script>

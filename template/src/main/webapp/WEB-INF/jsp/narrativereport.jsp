@@ -228,7 +228,7 @@ document.getElementById("signerror").innerHTML=" ";
            <li><a href="#tabs-3">3</a></li>        
        </ul>
        <form action="narrativereport" method="POST">
-       <input type="text" name="username" value="${username}">
+       <input type="hidden" name="username" value="${username}">
            <c:choose>
     		<c:when test="${empty narrative}">
   <div id="tabs-1">                       

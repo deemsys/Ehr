@@ -21,7 +21,7 @@ function ajax()
 		    url: "/EhrApp/check_symptom_ajax",  
 		    data: "symptom_ajax=" +symptom,
 		    success: function(response){  
-		    	alert(response); 
+		    	
 		    			
 				 var url="quadraplevisual?symptom="+document.getElementById("symptom_ajax").value;			
 				 
@@ -50,7 +50,7 @@ function ajax()
 function check(id)
 {
 	document.getElementById("symptom_ajax").value=id.value;
-	alert("hi"+id.value);
+	
 	if(id.value=="")
 		{
 		alert("The Symptom cannot be blank");
@@ -248,16 +248,15 @@ function check(id)
 				var $im = 1;
 				var flagm = 1;
 				function addMultichoice(divName) {
-				alert("hi");	
+			
 				//("sdf"+document.getElementById("symptom[0]").value);
 					var xx = document.getElementsByName('symptom[]').length;
 					//alert("symptom"+document.getElementById("symptom1").value);		
-					alert("hello");
+				
 					var $in = xx + 1;
 					var $id=$in-1;
 					var symptomid="symptom"+$id;
 				
-					alert(document.getElementById(symptomid).value);
 					if(document.getElementById(symptomid).value=="")
 						{
 						alert("The Symptom cannot be blank");
@@ -272,12 +271,8 @@ function check(id)
 						document.getElementById("morebutton").style.display="none";
 						}
 					else
-						{
-					
-					alert($id);
-					
-					alert(symptomid);
-                 alert("sd"+$in+document.getElementById(symptomid).value);
+						{			
+				
                  
 					var newdiv = document.createElement('div');
 
@@ -1080,7 +1075,7 @@ var $sid = xx+1;
 				            	<table cellpadding="0" cellspacing="0" border="0" width="100%">
 				            	
 				           			 <tr class="row1">
-							 			<td valign="middle" style="padding-right:150px;" align="left" class="input_txt"><span class="err">*</span>Student:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+							 			<td valign="middle" style="padding-right:150px;" align="left" class="input_txt"><span class="err"></span>Student:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				            		    <td  valign="top" class="input_txt">
 				                  			<input type="radio" name="student" value="FullTime" class="input_txt" <c:if test="${patientDetails.student=='FullTime'}"><c:out value="checked=checked"/></c:if>>Full Time&nbsp;&nbsp;&nbsp;
 				                  			<input type="radio" name="student" value="PartTime" class="input_txt" <c:if test="${patientDetails.student=='PartTime'}"><c:out value="checked=checked"/></c:if>>Part Time
@@ -1162,8 +1157,8 @@ var $sid = xx+1;
                         		<td class="input_txt"><input type="text" class="input_txtbx1" id="Phone_friend"   value="${patientDetails.phone_friend}" name="phone_friend" /></br><span id="Phone_frienderror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Phone_friend"></form:errors></span></td>
 							</tr>                        
 						    <tr class="row1">
-                        		<td><span class="err">*</span>Have you ever had chiropractic care? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-				                <td> 	<input type="radio" name="chiropratic_care" value="yes" id="yes1" class="input_txt" <c:if test="${patientDetails.chiropratic_care=='yes'}"><c:out value="checked=checked"/></c:if>>yes&nbsp;&nbsp;&nbsp;
+                        		<td><span class="err">*</span>Have you ever had chiropractic care: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				                <td> 	<input type="radio" name="chiropratic_care" value="yes" id="yes1" class="input_txt" <c:if test="${patientDetails.chiropratic_care=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
 				                  		<input type="radio" name="chiropratic_care" value="No" id="No1" class="input_txt"<c:if test="${patientDetails.chiropratic_care=='No'}"><c:out value="checked=checked"/></c:if>>No
 				               	<span id="Chiropratic_careerror" style="color: red;font-style:italic;"></span>
 				                </td>
@@ -1267,7 +1262,7 @@ var $sid = xx+1;
 				                  </td>--%>
 				                </tr>
 				                 <tr class="row2">
-                        <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Are These Symptoms Due to an Accident?</td>
+                        <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Are These Symptoms Due to an Accident:</td>
 				                 <td>	<input type="radio" id="yes" name="symptom_Accident" value="yes" class="input_txt" <c:if test="${patientDetails.symptom_Accident=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
 				                 	<input type="radio" id="No" name="symptom_Accident" value="No" class="input_txt"<c:if test="${patientDetails.symptom_Accident=='No'}"><c:out value="checked=checked"/></c:if>>No
 				                 	<span id="Symptom_Accidenterror" style="color: red;font-style:italic;"></span>
