@@ -142,30 +142,12 @@ return false;
 	
 	return false;
 	}
-	
-	/* if(document.getElementById("urgent").checked == true){
-		//alert("urgent is checked");
-		document.getElementById("urgenterror").innerHTML="Please check";
-		} else if(document.getElementById("forreview").checked == true){
-		alert("Box 2 is checked");
-		document.getElementById("forreviewerror").innerHTML="Please check";
-		}	 */
-	
-	
-	
-	/* if(document.getElementById("re").value=="")
-	{
-	document.getElementById("reerror").innerHTML="Please Enter";
-	
-	return false;
-	}
-	
-	if(document.getElementById("nos").value=="")
-	{
-	document.getElementById("noserror").innerHTML="Please Enter";
-	
-	return false;
-	} */
+	document.getElementById("noserror").innerHTML="";
+	if(isNaN(document.getElementById("nos").value))
+{
+document.getElementById("noserror").innerHTML="invalid characters  enter the numbers only ";
+return false;
+}
 	document.getElementById("msgerror").innerHTML="";
 	if(document.getElementById("msg").value=="")
 	{

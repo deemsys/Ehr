@@ -66,7 +66,12 @@
 	
 	return false;
 	}
-	
+	document.getElementById("noserror").innerHTML="";
+	if(isNaN(document.getElementById("nos").value))
+{
+document.getElementById("noserror").innerHTML="invalid characters  enter the numbers only ";
+return false;
+}
 	/* if(document.getElementById("urgent").checked == true){
 		//alert("urgent is checked");
 		document.getElementById("urgenterror").innerHTML="Please check";
@@ -104,6 +109,12 @@
 	
 	return false;
 	}
+	document.getElementById("claimnoerror").innerHTML="";
+	if(isNaN(document.getElementById("claimno").value))
+{
+document.getElementById("claimnoerror").innerHTML="invalid characters  enter the numbers only ";
+return false;
+}
 	document.getElementById("datepicker1error").innerHTML="";
 	if(document.getElementById("datepicker1").value=="")
 	{
@@ -176,7 +187,7 @@
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err">*</span>FROM:</td>
-              <td ><input type="text" class="input_txtbx1" name="froms" value="${faxcoverdetails.froms }" id="datepicker" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="froms" value="${faxcoverdetails.froms }" id="froms" /><span id="fromerror" style="color: red;font-style:italic;"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -196,18 +207,18 @@
               <td height="25" width="120">RE:</td>
               <td ><input type="text" class="input_txtbx1" name="regarding" value="${faxcoverdetails.regarding }" id="datepicker" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
               <td >Number Of Pages Sent:</td>
-              <td ><input type="text" class="input_txtbx1" name="pages" value="${faxcoverdetails.pages }" id="datepicker" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="pages" value="${faxcoverdetails.pages }" id="nos" /><span id="noserror" style="color: red;font-style:italic;"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err">*</span>Message:</td>
-              <td ><input type="text" class="input_txtbx1" name="msg" value="${faxcoverdetails.msg }" id="datepicker" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="msg" value="${faxcoverdetails.msg }" id="msg" /><span id="msgerror" style="color: red;font-style:italic;"></span><form:errors path="Hardshipagreement.date"></form:errors></td>
             <td ><span class="err">*</span>Claim No:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-              <td ><input type="text" class="input_txtbx1" name="claimno"value="${faxcoverdetails.claimno }" id="datepicker" /><span class="err"><form:errors path="Faxcover.claimno"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="claimno" id="claimno"  value="${faxcoverdetails.claimno }" /><span id="claimnoerror" style="color: red;font-style:italic;"><form:errors path="Faxcover.claimno"></form:errors></td>
              <tr>
               <td height="25" width="120"><span class="err">*</span>DOI</td>
-              <td ><input type="text" class="input_txtbx1" name="doi" value="${faxcoverdetails.doi }" id="datepicker1" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="doi" value="${faxcoverdetails.doi }" id="datepicker1" /><span id="datepicker1error" style="color: red;font-style:italic;"><form:errors path="Hardshipagreement.date"></form:errors></td>
              </tr>
               </tr>
               
