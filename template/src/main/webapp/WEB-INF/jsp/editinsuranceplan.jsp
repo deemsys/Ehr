@@ -122,6 +122,14 @@
 	
 	return false;
 	}
+var mail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    
+    if(document.getElementById("fax").value.match(mail)==null)
+    {
+    	document.getElementById("faxerror").innerHTML="Enter your proper E-Mail";
+    	
+        return false;
+    }
 	document.getElementById("name_of_clinicerror").innerHTML="";
 	if(document.getElementById("name_of_clinic").value=="")
 	{
@@ -225,8 +233,8 @@ $(function() {
         <td></td>
         </tr>
         <tr class="row1">
-        <td width="100%">Please fax this back to&nbsp;&nbsp;
-        <span class="err">*</span><input type="text" class="input_txtbx1" name="fax" id="fax" placeholder="Clinic's Fax No" value="${Insuranceplan.fax}"/><br><span id="faxerror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.fax"></form:errors> </td>
+        <td width="100%"><span class="err">*</span>Please eMail this back  to&nbsp;&nbsp;
+        <span class="err">*</span><input type="text" class="input_txtbx1" name="fax" id="fax" placeholder="Clinic's EMail Id" value="${Insuranceplan.fax}"/><br><span id="faxerror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.fax"></form:errors> </td>
         <td width="100%"></td>
         <td></td>
         </tr>
