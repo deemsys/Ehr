@@ -193,7 +193,7 @@ function doAjaxPost() {
   line-height:18px;}
   
   </STYLE>
-  <script>298-70-2433
+ <!--  <script>298-70-2433
 i=0;
 $(document).ready(function(){
   $("#ssn").keypress(function(){
@@ -201,9 +201,9 @@ var phone=document.getElementById("ssn").value;
 phone = phone.replace(/(\d{3})(\d{2})(\d+)/, '$1-$2-$3');
 document.getElementById("phone").value=phone;
  });  
-</script>
+</script> -->
 
-<script>
+<!-- <script>
 
   $(window).load(function(){
 	  
@@ -228,7 +228,7 @@ $("#ssn").keyup(function() {
 })
 
 });
-</script>
+</script> -->
 
 
 

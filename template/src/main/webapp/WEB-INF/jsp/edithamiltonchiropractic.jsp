@@ -1056,7 +1056,8 @@ function elbowPopup() {
 				                   <td width="150"></td>
 				                  <td>Valgus/Varus </td>
 				                  <td valign="top" align="left" class="input_txt">Right<select width="50%" name="valgus_varusr"><option value="MCL" <c:if test="${hamiltonchiropractic.valgus_varusr=='MCL'}"><c:out value="selected"/></c:if>>MCL</option><option value="lcl" <c:if test="${hamiltonchiropractic.valgus_varusr=='lcl'}"><c:out value="selected"/></c:if>>LCL</option></select></td>
-				                 <td class="input_txt" align="left">Left<select width="50%" name="valgus_varusl"><option value="mcl" <c:if test="${hamiltonchiropractic.valgus_varusl=='mcl'}"><c:out value="selected"/></c:if>>MCL</option><option value="lcl" <c:if test="${hamiltonchiropractic.valgus_varusl=='lcl'}"><c:out value="selected"/></c:if>>LCL</option></select></td>
+				                  <c:set value="${hamiltonForm.hamilton[0]}" var="hamilton"/>
+				                 <td class="input_txt" align="left">Left<select width="50%" name="valgus_varusl"><option value="mcl" <c:if test="${hamilton.valgus_varusl=='mcl'}"><c:out value="selected"/></c:if>>MCL</option><option value="lcl" <c:if test="${hamiltonchiropractic.valgus_varusl=='lcl'}"><c:out value="selected"/></c:if>>LCL</option></select></td>
 				                 <td></td>
 				                  </tr>
 				                  <tr class="row2">
@@ -1111,37 +1112,37 @@ function elbowPopup() {
 				                   <tr class="row1">
 				                   <td width="150"></td>
 				                  <td>Thompsons </td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="ankthomr" value="Right" <c:if test="${hamiltonchiropractic.ankthomr=='Right'}"><c:out value="Checked"/></c:if>>Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="ankthoml" value="Left" <c:if test="${hamiltonchiropractic.ankthoml=='Left'}"><c:out value="Checked"/></c:if>>Left</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="ankthomr" value="Right" <c:if test="${hamilton.ankthomr=='Right'}"><c:out value="Checked"/></c:if>>Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="ankthoml" value="Left" <c:if test="${hamilton.ankthoml=='Left'}"><c:out value="Checked"/></c:if>>Left</td>
 				                 
 				                  </tr>
 				                  <tr class="row1">
 				                  <td width="150"></td>
 				                  <td>Tinels </td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="anktinelr" value="Right" <c:if test="${hamiltonchiropractic.anktinelr=='Right'}"><c:out value="Checked"/></c:if>>Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="anktinell" value="Left" <c:if test="${hamiltonchiropractic.anktinell=='Left'}"><c:out value="Checked"/></c:if>>Left</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="anktinelr" value="Right" <c:if test="${hamilton.anktinelr=='Right'}"><c:out value="Checked"/></c:if>>Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="anktinell" value="Left" <c:if test="${hamilton.anktinell=='Left'}"><c:out value="Checked"/></c:if>>Left</td>
 				                 
 				                  </tr>
 				                  <tr class="row1">
 				                  <td width="150"></td>
 				                  <td> Strunskys</td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="ankstrunkr" value="Right" <c:if test="${hamiltonchiropractic.ankstrunkr=='Right'}"><c:out value="Checked"/></c:if>>Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="ankstrunkl" value="Left" <c:if test="${hamiltonchiropractic.ankstrunkl=='Left'}"><c:out value="Checked"/></c:if>>Left</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="ankstrunkr" value="Right" <c:if test="${hamilton.ankstrunkr=='Right'}"><c:out value="Checked"/></c:if>>Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="ankstrunkl" value="Left" <c:if test="${hamilton.ankstrunkl=='Left'}"><c:out value="Checked"/></c:if>>Left</td>
 				                 
 				                  </tr>
 				                 
                         <tr class="row1">
                         <td width="150"></td>
 				                  <td> Homans </td>				                  
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="ankhomanr" value="Right" <c:if test="${hamiltonchiropractic.ankhomanr=='Right'}"><c:out value="Checked"/></c:if>>Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="ankhomanl" value="Left" <c:if test="${hamiltonchiropractic.ankhomanl=='Left'}"><c:out value="Checked"/></c:if>>Left</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="ankhomanr" value="Right" <c:if test="${hamilton.ankhomanr=='Right'}"><c:out value="Checked"/></c:if>>Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="ankhomanl" value="Left" <c:if test="${hamilton.ankhomanl=='Left'}"><c:out value="Checked"/></c:if>>Left</td>
 				                 
 				                  </tr>
 				                   <tr class="row1">
 				                   <td width="150"></td>
 				                  <td>Claudication Test </td>
-				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="ankclaudicr" value="Right" <c:if test="${hamiltonchiropractic.ankclaudicr=='Right'}"><c:out value="Checked"/></c:if>>Right</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="ankclaudicl" value="Left" <c:if test="${hamiltonchiropractic.ankclaudicl=='Left'}"><c:out value="Checked"/></c:if>>Left</td>
+				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="ankclaudicr" value="Right" <c:if test="${hamilton.ankclaudicr=='Right'}"><c:out value="Checked"/></c:if>>Right</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="ankclaudicl" value="Left" <c:if test="${hamilton.ankclaudicl=='Left'}"><c:out value="Checked"/></c:if>>Left</td>
 				                 
 				                  </tr>
 				                   
