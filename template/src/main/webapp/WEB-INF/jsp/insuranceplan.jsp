@@ -116,6 +116,14 @@
 	
 	return false;
 	}
+var mail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    
+    if(document.getElementById("fax").value.match(mail)==null)
+    {
+    	document.getElementById("faxerror").innerHTML="Enter ur proper E-Mail";
+    	
+        return false;
+    }
 	document.getElementById("name_of_clinicerror").innerHTML="";
 	if(document.getElementById("name_of_clinic").value=="")
 	{
