@@ -96,11 +96,11 @@
               </tr>
 							 </table>
 							 </form>
-							 </div>
+							 </div>--%>
 							 </td>
 							 </tr>
 							 </table>
-							 </div> --%>
+							 </div> 
 	<script type="text/javascript">
 	function confirmation() 
 	{
