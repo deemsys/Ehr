@@ -147,18 +147,18 @@ document.getElementById("fax").value=phone;
         	  <p><b>Check every box that applies:</b></p>
               </table>
                 <table cellpadding="0" cellspacing="0" border="0" width="100%">
-        	  <tr height="30"><td><input type="hidden" name="requestid" value="${requestfordemanddetails.requestid }"><input type="checkbox" class="input_ckbx1" value="faultinsurer" name="faultinsurer" id="faultinsurer" <c:if test="${Requestfordemand.faultinsurer=='faultinsurer'}"><c:out value="Checked"/></c:if>/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The At-Fault Insurer has already paid the attorney and/or patient full settlement and has failed to comply with the Assignment.
+        	  <tr height="30"><td><input type="hidden" name="requestid" value="${requestfordemanddetails.requestid }"><input type="checkbox" class="input_ckbx1" value="faultinsurer" name="faultinsurer" id="faultinsurer" <c:if test="${requestfordemanddetails.faultinsurer=='faultinsurer'}"><c:out value="Checked"/></c:if> />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The At-Fault Insurer has already paid the attorney and/or patient full settlement and has failed to comply with the Assignment.
      </td></tr>
-     <tr height="30"><td><input type="checkbox" class="input_ckbx1" value="${requestfordemanddetails.medpayinsurer}" name="medpayinsurer" id="medpayinsurer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The At-Fault Insurer or The Med Pay Insurer has stated orally or in writing to us that it will not comply with the Assignment.
+     <tr height="30"><td><input type="checkbox" class="input_ckbx1" value="medpayinsurer" name="medpayinsurer" id="medpayinsurer" <c:if test="${requestfordemanddetails.medpayinsurer=='medpayinsurer'}"><c:out value="Checked"/></c:if> >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The At-Fault Insurer or The Med Pay Insurer has stated orally or in writing to us that it will not comply with the Assignment.
      </td></tr>
-     <tr height="30"><td><input type="checkbox" class="input_ckbx1" value="${requestfordemanddetails.paidbenefits}" name="paidbenefits" id="paidbenefits">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Med Pay Insurer has already paid benefits to the patient and/or the attorney.  </td></tr>
-        <tr height="30"><td><input type="checkbox" class="input_ckbx1" value="${requestfordemanddetails.bankrupt}" name="bankrupt" id="bankrupt">	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our patient filed bankruptcy.  In addition to the document below, we are faxing every letter or document, which references the bankruptcy filing.
+     <tr height="30"><td><input type="checkbox" class="input_ckbx1" value="paidbenefits" name="paidbenefits" id="paidbenefits" <c:if test="${requestfordemanddetails.paidbenefits=='paidbenefits'}"><c:out value="Checked"/></c:if> >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Med Pay Insurer has already paid benefits to the patient and/or the attorney.  </td></tr>
+        <tr height="30"><td><input type="checkbox" class="input_ckbx1" value="bankrupt" name="bankrupt" id="bankrupt" <c:if test="${requestfordemanddetails.bankrupt=='bankrupt'}"><c:out value="Checked"/></c:if>  >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our patient filed bankruptcy.  In addition to the document below, we are faxing every letter or document, which references the bankruptcy filing.
      </td></tr> 
-     <tr height="30"><td><input type="checkbox" class="input_ckbx1" value="${requestfordemanddetails.treatment}" name="treatment" id="treatment">&nbsp;&nbsp;&nbsp;	If treatment is completed in addition to the document below we attach a copy of our itemized charges and a copy of the patient intake information form.
+     <tr height="30"><td><input type="checkbox" class="input_ckbx1" value="treatment" name="treatment" id="treatment" <c:if test="${requestfordemanddetails.treatment=='treatment'}"><c:out value="Checked"/></c:if>  >&nbsp;&nbsp;&nbsp;	If treatment is completed in addition to the document below we attach a copy of our itemized charges and a copy of the patient intake information form.
      </td></tr>  
      </table>
       <table cellpadding="0" cellspacing="0" border="0" width="100%">
-      <tr height="30"><td style="width: 148px; "><input type="checkbox" class="input_ckbx1" value="${requestfordemanddetails.other}" name="other" id="other">&nbsp;&nbsp;&nbsp;Other:&nbsp;&nbsp;(Describe)&nbsp;&nbsp;&nbsp;
+      <tr height="30"><td style="width: 148px; "><input type="checkbox" class="input_ckbx1" value="other" name="other" id="other" <c:if test="${requestfordemanddetails.other=='other'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;&nbsp;Other:&nbsp;&nbsp;(Describe)&nbsp;&nbsp;&nbsp;
      <td> <textarea rows="" cols="" name="txtare"  value="${requestfordemanddetails.txtare}" style="height: 75px; width: 348px"></textarea></td>
      </td>
    </tr>
