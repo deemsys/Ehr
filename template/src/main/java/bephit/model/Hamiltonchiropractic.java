@@ -264,9 +264,8 @@ public class Hamiltonchiropractic {
 		super();
 	}	
 
-
-
-
+    
+	
 
 	public void setInitialexamid(String initialexamid) {
 		this.initialexamid = initialexamid;

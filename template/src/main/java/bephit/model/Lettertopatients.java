@@ -8,11 +8,11 @@ public class Lettertopatients
 	
 	private String username;
 	private String re;
-	@NotEmpty
+	
 	private String ssn;
-	@NotEmpty
+
 	private String claim;
-	@NotEmpty
+
 	private String doi;
 	private String adjuster;
 	private String date;

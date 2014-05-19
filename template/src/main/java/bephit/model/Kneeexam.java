@@ -4,6 +4,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 public class Kneeexam {
 	private String kneeexamid;
+	private String  username;
 	@NotEmpty
 	private String pname;
 	@NotEmpty
@@ -129,164 +130,20 @@ public class Kneeexam {
 		
 	}
 
-	public Kneeexam(String kneeexamid, String pname, String date, String gait,
-			String pelvicunleveling, String ao, String allsoft,
-			String leglengthl, String leglengthtextl, String leglengthr,
-			String leglengthtextr, String vmo, String quads, String semimemb,
-			String semitend, String gastroc, String soleus, String iliotibband,
-			String bicepsfem, String functionalrangeofmotion,
-			String orthopedic, String flexion, String acll, String aclr,
-			String extension, String pcll, String pclr,
-			String internalrotationl,String internalrotationr, String lcll, String lclr,
-			String externalrotationl,String externalrotationr, String mcll, String mclr,
-			String circumferential, String meniscusl, String meniscusr,
-			String apleysl, String apleysr, String cmabovel,
-			String suprapatellarl, String infrapatellarl, String belowl,
-			String distractionl, String distractionr, String cmabover,
-			String suprapatellarr, String infrapatellarr, String belowr,
-			String cmpl, String cmpr, String patdll, String patdlr,
-			String neurologicaltest, String l1l, String l1r, String l15l,
-			String l15r, String l2l, String l2r, String l25l, String l25r,
-			String l3l, String l3r, String l35l, String l35r, String l4l,
-			String l4r, String l45l, String l45r, String l4l3, String l4r3,
-			String l5l, String l5r, String l55l, String l55r, String l5l3,
-			String l5r3, String sl, String sr, String s5l, String s5r,
-			String sil, String sir, String walking,String standing, String stairs, String otherfunctional,
-			String break_text3, String assessment, String patientstatus,
-			String diagnosis1, String diagnosis2, String diagnosis3,
-			String diagnosis4, String diagnosis5, String diagnosis6,
-			String times, String week, String spinal, String chiropractic,
-			String physical, String orthotics, String modalities,
-			String supplementation, String hep, String radiographic,
-			String mri, String ctscan, String nerve, String emg,
-			String outside, String dc, String otheraddress, String break_text4,
-			String sign) {
-		super();
-		this.kneeexamid = kneeexamid;
-		this.pname = pname;
-		this.date = date;
-		this.gait = gait;
-		this.pelvicunleveling = pelvicunleveling;
-		this.ao = ao;
-		this.allsoft = allsoft;
-		this.leglengthl = leglengthl;
-		this.leglengthtextl = leglengthtextl;
-		this.leglengthr = leglengthr;
-		this.leglengthtextr = leglengthtextr;
-		this.vmo = vmo;
-		this.quads = quads;
-		this.semimemb = semimemb;
-		this.semitend = semitend;
-		this.gastroc = gastroc;
-		this.soleus = soleus;
-		this.iliotibband = iliotibband;
-		this.bicepsfem = bicepsfem;
-		this.functionalrangeofmotion = functionalrangeofmotion;
-		this.orthopedic = orthopedic;
-		this.flexion = flexion;
-		this.acll = acll;
-		this.aclr = aclr;
-		this.extension = extension;
-		this.pcll = pcll;
-		this.pclr = pclr;
-		this.internalrotationl = internalrotationl;
-		this.internalrotationr = internalrotationr;
-		this.lcll = lcll;
-		this.lclr = lclr;
-		this.externalrotationl = externalrotationl;
-		this.externalrotationr = externalrotationr;
-		this.mcll = mcll;
-		this.mclr = mclr;
-		this.circumferential = circumferential;
-		this.meniscusl = meniscusl;
-		this.meniscusr = meniscusr;
-		this.apleysl = apleysl;
-		this.apleysr = apleysr;
-		this.cmabovel = cmabovel;
-		this.suprapatellarl = suprapatellarl;
-		this.infrapatellarl = infrapatellarl;
-		this.belowl = belowl;
-		this.distractionl = distractionl;
-		this.distractionr = distractionr;
-		this.cmabover = cmabover;
-		this.suprapatellarr = suprapatellarr;
-		this.infrapatellarr = infrapatellarr;
-		this.belowr = belowr;
-		this.cmpl = cmpl;
-		this.cmpr = cmpr;
-		this.patdll = patdll;
-		this.patdlr = patdlr;
-		this.neurologicaltest = neurologicaltest;
-		this.l1l = l1l;
-		this.l1r = l1r;
-		this.l15l = l15l;
-		this.l15r = l15r;
-		this.l2l = l2l;
-		this.l2r = l2r;
-		this.l25l = l25l;
-		this.l25r = l25r;
-		this.l3l = l3l;
-		this.l3r = l3r;
-		this.l35l = l35l;
-		this.l35r = l35r;
-		this.l4l = l4l;
-		this.l4r = l4r;
-		this.l45l = l45l;
-		this.l45r = l45r;
-		this.l4l3 = l4l3;
-		this.l4r3 = l4r3;
-		this.l5l = l5l;
-		this.l5r = l5r;
-		this.l55l = l55l;
-		this.l55r = l55r;
-		this.l5l3 = l5l3;
-		this.l5r3 = l5r3;
-		this.sl = sl;
-		this.sr = sr;
-		this.s5l = s5l;
-		this.s5r = s5r;
-		this.sil = sil;
-		this.sir = sir;
-		this.walking = walking;
-		this.standing=standing;
-		this.stairs = stairs;
-		this.otherfunctional = otherfunctional;
-		this.break_text3 = break_text3;
-		this.assessment = assessment;
-		this.patientstatus = patientstatus;
-		this.diagnosis1 = diagnosis1;
-		this.diagnosis2 = diagnosis2;
-		this.diagnosis3 = diagnosis3;
-		this.diagnosis4 = diagnosis4;
-		this.diagnosis5 = diagnosis5;
-		this.diagnosis6 = diagnosis6;
-		this.times = times;
-		this.week = week;
-		this.spinal = spinal;
-		this.chiropractic = chiropractic;
-		this.physical = physical;
-		this.orthotics = orthotics;
-		this.modalities = modalities;
-		this.supplementation = supplementation;
-		this.hep = hep;
-		this.radiographic = radiographic;
-		this.mri = mri;
-		this.ctscan = ctscan;
-		this.nerve = nerve;
-		this.emg = emg;
-		this.outside = outside;
-		this.dc = dc;
-		this.otheraddress = otheraddress;
-		this.break_text4 = break_text4;
-		this.sign = sign;
-	}
-
 	public String getKneeexamid() {
 		return kneeexamid;
 	}
 
 	public void setKneeexamid(String kneeexamid) {
 		this.kneeexamid = kneeexamid;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getPname() {
@@ -496,14 +353,6 @@ public class Kneeexam {
 	public void setPclr(String pclr) {
 		this.pclr = pclr;
 	}
- 
-	public String getInternalrotationl() {
-		return internalrotationl;
-	}
-
-	public void setInternalrotationl(String internalrotationl) {
-		this.internalrotationl = internalrotationl;
-	}
 
 	public String getInternalrotationr() {
 		return internalrotationr;
@@ -513,7 +362,14 @@ public class Kneeexam {
 		this.internalrotationr = internalrotationr;
 	}
 
-	
+	public String getInternalrotationl() {
+		return internalrotationl;
+	}
+
+	public void setInternalrotationl(String internalrotationl) {
+		this.internalrotationl = internalrotationl;
+	}
+
 	public String getLcll() {
 		return lcll;
 	}
@@ -530,7 +386,13 @@ public class Kneeexam {
 		this.lclr = lclr;
 	}
 
-	
+	public String getExternalrotationr() {
+		return externalrotationr;
+	}
+
+	public void setExternalrotationr(String externalrotationr) {
+		this.externalrotationr = externalrotationr;
+	}
 
 	public String getExternalrotationl() {
 		return externalrotationl;
@@ -538,15 +400,6 @@ public class Kneeexam {
 
 	public void setExternalrotationl(String externalrotationl) {
 		this.externalrotationl = externalrotationl;
-	}
-
-	
-	public String getExternalrotationr() {
-		return externalrotationr;
-	}
-
-	public void setExternalrotationr(String externalrotationr) {
-		this.externalrotationr = externalrotationr;
 	}
 
 	public String getMcll() {
@@ -972,7 +825,7 @@ public class Kneeexam {
 	public void setWalking(String walking) {
 		this.walking = walking;
 	}
-    
+
 	public String getStanding() {
 		return standing;
 	}
@@ -1220,5 +1073,160 @@ public class Kneeexam {
 	public void setSign(String sign) {
 		this.sign = sign;
 	}
+
+	public Kneeexam(String kneeexamid, String username, String pname,
+			String date, String gait, String pelvicunleveling, String ao,
+			String allsoft, String leglengthl, String leglengthtextl,
+			String leglengthr, String leglengthtextr, String vmo, String quads,
+			String semimemb, String semitend, String gastroc, String soleus,
+			String iliotibband, String bicepsfem,
+			String functionalrangeofmotion, String orthopedic, String flexion,
+			String acll, String aclr, String extension, String pcll,
+			String pclr, String internalrotationr, String internalrotationl,
+			String lcll, String lclr, String externalrotationr,
+			String externalrotationl, String mcll, String mclr,
+			String circumferential, String meniscusl, String meniscusr,
+			String apleysl, String apleysr, String cmabovel,
+			String suprapatellarl, String infrapatellarl, String belowl,
+			String distractionl, String distractionr, String cmabover,
+			String suprapatellarr, String infrapatellarr, String belowr,
+			String cmpl, String cmpr, String patdll, String patdlr,
+			String neurologicaltest, String l1l, String l1r, String l15l,
+			String l15r, String l2l, String l2r, String l25l, String l25r,
+			String l3l, String l3r, String l35l, String l35r, String l4l,
+			String l4r, String l45l, String l45r, String l4l3, String l4r3,
+			String l5l, String l5r, String l55l, String l55r, String l5l3,
+			String l5r3, String sl, String sr, String s5l, String s5r,
+			String sil, String sir, String walking, String standing,
+			String stairs, String otherfunctional, String break_text3,
+			String assessment, String patientstatus, String diagnosis1,
+			String diagnosis2, String diagnosis3, String diagnosis4,
+			String diagnosis5, String diagnosis6, String times, String week,
+			String spinal, String chiropractic, String physical,
+			String orthotics, String modalities, String supplementation,
+			String hep, String radiographic, String mri, String ctscan,
+			String nerve, String emg, String outside, String dc,
+			String otheraddress, String break_text4, String sign) {
+		super();
+		this.kneeexamid = kneeexamid;
+		this.username = username;
+		this.pname = pname;
+		this.date = date;
+		this.gait = gait;
+		this.pelvicunleveling = pelvicunleveling;
+		this.ao = ao;
+		this.allsoft = allsoft;
+		this.leglengthl = leglengthl;
+		this.leglengthtextl = leglengthtextl;
+		this.leglengthr = leglengthr;
+		this.leglengthtextr = leglengthtextr;
+		this.vmo = vmo;
+		this.quads = quads;
+		this.semimemb = semimemb;
+		this.semitend = semitend;
+		this.gastroc = gastroc;
+		this.soleus = soleus;
+		this.iliotibband = iliotibband;
+		this.bicepsfem = bicepsfem;
+		this.functionalrangeofmotion = functionalrangeofmotion;
+		this.orthopedic = orthopedic;
+		this.flexion = flexion;
+		this.acll = acll;
+		this.aclr = aclr;
+		this.extension = extension;
+		this.pcll = pcll;
+		this.pclr = pclr;
+		this.internalrotationr = internalrotationr;
+		this.internalrotationl = internalrotationl;
+		this.lcll = lcll;
+		this.lclr = lclr;
+		this.externalrotationr = externalrotationr;
+		this.externalrotationl = externalrotationl;
+		this.mcll = mcll;
+		this.mclr = mclr;
+		this.circumferential = circumferential;
+		this.meniscusl = meniscusl;
+		this.meniscusr = meniscusr;
+		this.apleysl = apleysl;
+		this.apleysr = apleysr;
+		this.cmabovel = cmabovel;
+		this.suprapatellarl = suprapatellarl;
+		this.infrapatellarl = infrapatellarl;
+		this.belowl = belowl;
+		this.distractionl = distractionl;
+		this.distractionr = distractionr;
+		this.cmabover = cmabover;
+		this.suprapatellarr = suprapatellarr;
+		this.infrapatellarr = infrapatellarr;
+		this.belowr = belowr;
+		this.cmpl = cmpl;
+		this.cmpr = cmpr;
+		this.patdll = patdll;
+		this.patdlr = patdlr;
+		this.neurologicaltest = neurologicaltest;
+		this.l1l = l1l;
+		this.l1r = l1r;
+		this.l15l = l15l;
+		this.l15r = l15r;
+		this.l2l = l2l;
+		this.l2r = l2r;
+		this.l25l = l25l;
+		this.l25r = l25r;
+		this.l3l = l3l;
+		this.l3r = l3r;
+		this.l35l = l35l;
+		this.l35r = l35r;
+		this.l4l = l4l;
+		this.l4r = l4r;
+		this.l45l = l45l;
+		this.l45r = l45r;
+		this.l4l3 = l4l3;
+		this.l4r3 = l4r3;
+		this.l5l = l5l;
+		this.l5r = l5r;
+		this.l55l = l55l;
+		this.l55r = l55r;
+		this.l5l3 = l5l3;
+		this.l5r3 = l5r3;
+		this.sl = sl;
+		this.sr = sr;
+		this.s5l = s5l;
+		this.s5r = s5r;
+		this.sil = sil;
+		this.sir = sir;
+		this.walking = walking;
+		this.standing = standing;
+		this.stairs = stairs;
+		this.otherfunctional = otherfunctional;
+		this.break_text3 = break_text3;
+		this.assessment = assessment;
+		this.patientstatus = patientstatus;
+		this.diagnosis1 = diagnosis1;
+		this.diagnosis2 = diagnosis2;
+		this.diagnosis3 = diagnosis3;
+		this.diagnosis4 = diagnosis4;
+		this.diagnosis5 = diagnosis5;
+		this.diagnosis6 = diagnosis6;
+		this.times = times;
+		this.week = week;
+		this.spinal = spinal;
+		this.chiropractic = chiropractic;
+		this.physical = physical;
+		this.orthotics = orthotics;
+		this.modalities = modalities;
+		this.supplementation = supplementation;
+		this.hep = hep;
+		this.radiographic = radiographic;
+		this.mri = mri;
+		this.ctscan = ctscan;
+		this.nerve = nerve;
+		this.emg = emg;
+		this.outside = outside;
+		this.dc = dc;
+		this.otheraddress = otheraddress;
+		this.break_text4 = break_text4;
+		this.sign = sign;
+	}
+    
 	
 	}
