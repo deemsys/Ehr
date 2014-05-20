@@ -353,8 +353,8 @@ else
  <div id="multichoice"></div><a href="javascript:void(0);" onclick="addMultichoice('multichoice');" style="text-decoration:none;" ><input type="button" value="Add one more diagnosis" class="submit_btn2" name=""/></a>
 
  </td>
- <td>
- <select name="e1e2" id="e1e2" class="input_cmbbx1" "if (this.value=='ExtremitiesX-Rays'){this.form['xray'].style.visibility='visible'}else {this.form['xray'].style.visibility='hidden'};">
+ <td>&nbsp;&nbsp;
+ <select name="e1e2" width="2%" id="e1e2" class="input_cmbbx1" onchange="if (this.value=='ExtremitiesX-Rays'){this.form['xray'].style.visibility='visible'}else {this.form['xray'].style.visibility='hidden'};"">
 					<option selected="selected" value="2" <c:if test="${soapnotes.e1e2=='2'}"><c:out value="selected"/></c:if>>2</option>
 					<option value="3" <c:if test="${soapnotes.e1e2=='3'}"><c:out value="selected"/></c:if>>3</option>
 					<option value="4" <c:if test="${soapnotes.e1e2=='4'}"><c:out value="selected"/></c:if>>4</option>
@@ -366,13 +366,12 @@ else
 					<option value="10" <c:if test="${soapnotes.e1e2=='10'}"><c:out value="selected"/></c:if>>10</option>
 					<option value="11" <c:if test="${soapnotes.e1e2=='11'}"><c:out value="selected"/></c:if>>11</option>
 					<option value="Re-exam" <c:if test="${soapnotes.e1e2=='Re-exam'}"><c:out value="selected"/></c:if>>Re-exam</option>
-					
 					<option value="one spot x-ray"><c:if test="${soapnotes.e1e2=='one spot x-ray'}"><c:out value="selected"/></c:if>one spot x-ray</option>
 					<option value="2 to 7 C/S X-Rays"><c:if test="${soapnotes.e1e2=='2 to 7 C/S X-Rays'}"><c:out value="selected"/></c:if>2 to 7 C/S X-Rays</option>
 					<option value="2 to 6 T/S X-Rays"><c:if test="${soapnotes.e1e2=='2 to 6 T/S X-Rays'}"><c:out value="selected"/></c:if>2 to 6 T/S X-Rays</option>
 					<option value="2-6 L/S X-Rays"><c:if test="${soapnotes.e1e2=='2-6 L/S X-Rays'}"><c:out value="selected"/></c:if>2-6 L/S X-Rays</option>
 					<option value="2 Chest X-Rays"><c:if test="${soapnotes.e1e2=='2 Chest X-Rays'}"><c:out value="selected"/></c:if>2 Chest X-Rays</option>
-					<option value="ExtremitiesX-Rays"><c:if test="${soapnotes.e1e2=='ExtremitiesX-Rays'}"><c:out value="selected"/></c:if>ExtremitiesX-Rays</option>
+					<option value="ExtremitiesX-Rays" <c:if test="${soapnotes.e1e2=='ExtremitiesX-Rays'}"><c:out value="selected"/></c:if>>ExtremitiesX-Rays</option>
 					<option value="SCSM 1-2 region" <c:if test="${soapnotes.e1e2=='SCSM 1-2 region'}"><c:out value="selected"/></c:if>>SCSM 1-2 region</option>
 					<option value="SCSM 3-4 regions" <c:if test="${soapnotes.e1e2=='SCSM 3-4 regions'}"><c:out value="selected"/></c:if>>SCSM 3-4 regions</option>
 					<option value="5 regions" <c:if test="${soapnotes.e1e2=='5 regions'}"><c:out value="selected"/></c:if>>5 regions</option>
@@ -399,8 +398,7 @@ else
 					<option value="strengthexcer" <c:if test="${soapnotes.e1e2=='strengthexcer'}"><c:out value="selected"/></c:if>>Strength excer</option>
 					<option value="lifestyle" <c:if test="${soapnotes.e1e2=='lifestyle'}"><c:out value="selected"/></c:if>>Lifestyle modifications</option>
 					<option value="reeval" <c:if test="${soapnotes.e1e2=='reeval'}"><c:out value="selected"/></c:if>>Re Eval.in </option>
-				  </select>
-				   <input type="text" name="xray" class="input_txtbx1" id="xray"  value="${soapnotes.xray}" style="visibility:hidden;" >
+				  </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" width="5%"name="xray" class="input_txtbx1" id="xray"  value="${soapnotes.xray}" style="visibility:hidden;" >
 				  <input type="text" name="offwork1" class="input_txtbx1" id="inp_id"  value="${soapnotes.offwork1}" style='display:none' >
 				  <input type="text" name="reeval1" class="input_txtbx1" id="inp_id"  value="${soapnotes.reeval1}" style='display:none'>
 				  </td>
