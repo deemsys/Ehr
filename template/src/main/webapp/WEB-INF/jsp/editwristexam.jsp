@@ -202,6 +202,18 @@ P#mypar {
           
           </script>
 
+ <script>
+          function isNumberKey(evt)
+          {
+             var charCode = (evt.which) ? evt.which : event.keyCode
+             if (charCode > 31 && (charCode < 48 || charCode > 57))
+                return false;
+
+             return true;
+          }  
+          
+          </script> 
+  
 
 </head>
 <body>
@@ -568,9 +580,9 @@ P#mypar {
 												name="shdright" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;(Shd ABD)</td>
 											<td>C5</td>
 											<td><input type="text" name="bicepsleft"
-												value="${wristexamdetails.bicepsleft}" size="5">/5&nbsp;&nbsp;&nbsp;&nbsp;<input
+												value="${wristexamdetails.bicepsleft}" size="5" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;&nbsp;&nbsp;<input
 												type="text" value="${wristexamdetails.bicepsright}"
-												name="bicepsright" size="5">/5&nbsp;&nbsp;(Biceps)</td>
+												name="bicepsright" size="5" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;(Biceps)</td>
 										</tr>
 										<tr>
 											<td>C6</td>
@@ -586,9 +598,9 @@ P#mypar {
 												flex/wrist ext)</td>
 											<td>C6</td>
 											<td><input type="text" name="brachioradleft"
-												value="${wristexamdetails.brachioradleft}" size="5">/5&nbsp;&nbsp;&nbsp;&nbsp;<input
+												value="${wristexamdetails.brachioradleft}" size="5" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;&nbsp;&nbsp;<input
 												type="text" value="${wristexamdetails.brachioradright}"
-												name="brachioradright" size="5">/5&nbsp;&nbsp;(Brachiorad)</td>
+												name="brachioradright" size="5" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;(Brachiorad)</td>
 										</tr>
 										<tr>
 											<td>C7</td>
@@ -606,9 +618,9 @@ P#mypar {
 											<td>C7</td>
 											<td><input type="text"
 												value="${wristexamdetails.tricepsleft}" name="tricepsleft"
-												size="5">/5&nbsp;&nbsp;&nbsp;&nbsp;<input size="5"
+												size="5" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;&nbsp;&nbsp;<input size="5"
 												type="text" value="${wristexamdetails.tricepsright}"
-												name="tricepsright">/5&nbsp;&nbsp;(Triceps)</td>
+												name="tricepsright" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;(Triceps)</td>
 										</tr>
 										<tr>
 											<td>C8</td>
