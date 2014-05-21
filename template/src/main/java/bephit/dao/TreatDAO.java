@@ -77,7 +77,7 @@ public class TreatDAO {
 		}
 		List<Treatform> treat = new ArrayList<Treatform>();
 	    try{
-			resultSet = statement.executeQuery("select * from Treat_Details where username='"+username+"'");
+			resultSet = statement.executeQuery("select * from treat_details where username='"+username+"'");
 			while(resultSet.next()){
 				treat.add(new Treatform(resultSet.getString("treat_no"),resultSet.getString("patientsname"),
 			    		resultSet.getString("patientssign"),
@@ -111,7 +111,7 @@ public class TreatDAO {
 		}
 		List<Treatform> treat = new ArrayList<Treatform>();
 	    try{
-			resultSet = statement.executeQuery("select * from Treat_Details where username='"+principal.getName()+"'");
+			resultSet = statement.executeQuery("select * from treat_details where username='"+principal.getName()+"'");
 			while(resultSet.next()){
 				treat.add(new Treatform(resultSet.getString("treat_no"),resultSet.getString("patientsname"),
 			    		resultSet.getString("patientssign"),
@@ -145,7 +145,7 @@ public class TreatDAO {
 		}
 		List<Treatform> treat = new ArrayList<Treatform>();
 	    try{
-			resultSet = statement.executeQuery("select * from Treat_Details where treat_no='"+treat_no+"'");
+			resultSet = statement.executeQuery("select * from treat_details where treat_no='"+treat_no+"'");
 			while(resultSet.next()){
 				treat.add(new Treatform(resultSet.getString("treat_no"),resultSet.getString("patientsname"),
 			    		resultSet.getString("patientssign"),
@@ -180,7 +180,7 @@ public class TreatDAO {
 		}
 		List<Treatform> treat = new ArrayList<Treatform>();
 	    try{
-			resultSet = statement.executeQuery("select * from Treat_Details order by treat_no DESC");
+			resultSet = statement.executeQuery("select * from treat_details order by treat_no DESC");
 			while(resultSet.next()){
 				treat.add(new Treatform(resultSet.getString("treat_no"),resultSet.getString("patientsname"),
 			    		resultSet.getString("patientssign"),

@@ -40,7 +40,7 @@ public class TreatMinorDAO {
 	    try{
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
-	    	 String cmd="INSERT INTO `Minor_Details`(username,`guardian`,`age`,`Drname`,`signed`,`pdate`,`pwitness`) VALUES ('"+principal.getName()+"','"+minordetails.getGuardian()+"','"+minordetails.getAge()+"','"+minordetails.getDrname()+"','"+minordetails.getSigned()+"','"+minordetails.getPdate()+"','"+minordetails.getPwitness()+"')";
+	    	 String cmd="INSERT INTO `minor_details`(username,`guardian`,`age`,`Drname`,`signed`,`pdate`,`pwitness`) VALUES ('"+principal.getName()+"','"+minordetails.getGuardian()+"','"+minordetails.getAge()+"','"+minordetails.getDrname()+"','"+minordetails.getSigned()+"','"+minordetails.getPdate()+"','"+minordetails.getPwitness()+"')";
 	    	 System.out.println(cmd);
 	    	 statement.execute(cmd);
 		     flag=1;
@@ -78,7 +78,7 @@ public class TreatMinorDAO {
 		}
 		List<TreatMinor> minor = new ArrayList<TreatMinor>();
 	    try{
-			resultSet = statement.executeQuery("select * from Minor_Details ");
+			resultSet = statement.executeQuery("select * from minor_details");
 			while(resultSet.next()){
 				minor.add(new TreatMinor(resultSet.getString("minor_no"),resultSet.getString("guardian"),resultSet.getString("age"),resultSet.getString("drname"),resultSet.getString("signed"),
 			    		resultSet.getString("pdate"),
@@ -111,7 +111,7 @@ public class TreatMinorDAO {
 		}
 		List<TreatMinor> minor = new ArrayList<TreatMinor>();
 	    try{
-			resultSet = statement.executeQuery("select * from Minor_Details where username='"+username+"'");
+			resultSet = statement.executeQuery("select * from minor_details where username='"+username+"'");
 			while(resultSet.next()){
 				minor.add(new TreatMinor(resultSet.getString("minor_no"),resultSet.getString("guardian"),resultSet.getString("age"),resultSet.getString("drname"),resultSet.getString("signed"),
 			    		resultSet.getString("pdate"),
@@ -144,7 +144,7 @@ public class TreatMinorDAO {
 		}
 		List<TreatMinor> minor = new ArrayList<TreatMinor>();
 	    try{
-			resultSet = statement.executeQuery("select * from Minor_Details where username='"+principal.getName()+"'");
+			resultSet = statement.executeQuery("select * from minor_details where username='"+principal.getName()+"'");
 			while(resultSet.next()){
 				minor.add(new TreatMinor(resultSet.getString("minor_no"),resultSet.getString("guardian"),resultSet.getString("age"),resultSet.getString("drname"),resultSet.getString("signed"),
 			    		resultSet.getString("pdate"),
@@ -177,7 +177,7 @@ public class TreatMinorDAO {
 		}
 		List<TreatMinor> minor = new ArrayList<TreatMinor>();
 	    try{
-			resultSet = statement.executeQuery("select * from Minor_Details where minor_no='"+minor_no+"'");
+			resultSet = statement.executeQuery("select * from minor_details where minor_no='"+minor_no+"'");
 			while(resultSet.next()){
 				minor.add(new TreatMinor(resultSet.getString("minor_no"),resultSet.getString("guardian"),resultSet.getString("age"),resultSet.getString("drname"),resultSet.getString("signed"),
 			    		resultSet.getString("pdate"),

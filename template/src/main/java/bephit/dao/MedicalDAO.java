@@ -40,7 +40,7 @@ public class MedicalDAO {
 	    try{
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
-	    	 String cmd="INSERT INTO `Medical_Details`(username,`name`,`medicalinformation`,`patientsignature`) VALUES ('"+principal.getName()+"','"+medicaldetails.getName()+"','"+medicaldetails.getMedicalinformation()+"','"+medicaldetails.getPatientsignature()+"')";
+	    	 String cmd="INSERT INTO `medical_details`(username,`name`,`medicalinformation`,`patientsignature`) VALUES ('"+principal.getName()+"','"+medicaldetails.getName()+"','"+medicaldetails.getMedicalinformation()+"','"+medicaldetails.getPatientsignature()+"')";
 	    	 System.out.println(cmd);
 	    	 statement.execute(cmd);
 		     flag=1;
@@ -76,7 +76,7 @@ public class MedicalDAO {
 		}
 		List<MedicalRecords> medical = new ArrayList<MedicalRecords>();
 	    try{
-			resultSet = statement.executeQuery("select * from Medical_Details where username='"+username+"'");
+			resultSet = statement.executeQuery("select * from medical_details where username='"+username+"'");
 			while(resultSet.next()){
 				medical.add(new MedicalRecords(resultSet.getString("medical_no"),resultSet.getString("name"),
 						resultSet.getString("medicalinformation"),
@@ -108,7 +108,7 @@ public class MedicalDAO {
 		}
 		List<MedicalRecords> medical = new ArrayList<MedicalRecords>();
 	    try{
-			resultSet = statement.executeQuery("select * from Medical_Details where username='"+principal.getName()+"'");
+			resultSet = statement.executeQuery("select * from medical_details where username='"+principal.getName()+"'");
 			while(resultSet.next()){
 				medical.add(new MedicalRecords(resultSet.getString("medical_no"),resultSet.getString("name"),
 						resultSet.getString("medicalinformation"),
@@ -140,7 +140,7 @@ public class MedicalDAO {
 		}
 		List<MedicalRecords> medical = new ArrayList<MedicalRecords>();
 	    try{
-			resultSet = statement.executeQuery("select * from Medical_Details");
+			resultSet = statement.executeQuery("select * from medical_details");
 			while(resultSet.next()){
 				medical.add(new MedicalRecords(resultSet.getString("medical_no"),resultSet.getString("name"),
 						resultSet.getString("medicalinformation"),
@@ -173,7 +173,7 @@ public class MedicalDAO {
 		}
 		List<MedicalRecords> medical = new ArrayList<MedicalRecords>();
 	    try{
-			resultSet = statement.executeQuery("select * from Medical_Details where medical_no='"+medical_no+"'");
+			resultSet = statement.executeQuery("select * from medical_details where medical_no='"+medical_no+"'");
 			while(resultSet.next()){
 				medical.add(new MedicalRecords(resultSet.getString("medical_no"),resultSet.getString("name"),
 						resultSet.getString("medicalinformation"),

@@ -29,6 +29,12 @@
       </tr>
     </c:if>
     </tr></table>
+    <c:if test="${not empty sessionerror}">
+		<script>
+		alert("Session Timedout Please login again.");
+		
+		</script>
+	</c:if>
 
 	<c:if test="${not empty error}">
 		<div class="errorblock">

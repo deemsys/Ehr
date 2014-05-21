@@ -41,7 +41,7 @@ public class AssignmentDAO {
 	    try{
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
-	    	 String cmd="INSERT INTO `Assignment_Details`(username,`day`,`month`,`year`,`day1`,`month1`,`patientname`,`patientsign`,`patientdate`,`parentname`,`parentsign`,`parentdate`,`representative`,`representativedate`) VALUES ('"+principal.getName()+"','"+assignmentdetails.getDay()+"','"+assignmentdetails.getMonth()+"','"+assignmentdetails.getYear()+"','"+assignmentdetails.getDay1()+"','"+assignmentdetails.getMonth1()+"','"+assignmentdetails.getPatientname()+"','"+assignmentdetails.getPatientsign()+"','"+assignmentdetails.getPatientdate()+"','"+assignmentdetails.getParentname()+"','"+assignmentdetails.getParentsign()+"','"+assignmentdetails.getParentdate()+"','"+assignmentdetails.getRepresentative()+"','"+assignmentdetails.getRepresentativedate()+"')";
+	    	 String cmd="INSERT INTO `assignment_details`(username,`day`,`month`,`year`,`day1`,`month1`,`patientname`,`patientsign`,`patientdate`,`parentname`,`parentsign`,`parentdate`,`representative`,`representativedate`) VALUES ('"+principal.getName()+"','"+assignmentdetails.getDay()+"','"+assignmentdetails.getMonth()+"','"+assignmentdetails.getYear()+"','"+assignmentdetails.getDay1()+"','"+assignmentdetails.getMonth1()+"','"+assignmentdetails.getPatientname()+"','"+assignmentdetails.getPatientsign()+"','"+assignmentdetails.getPatientdate()+"','"+assignmentdetails.getParentname()+"','"+assignmentdetails.getParentsign()+"','"+assignmentdetails.getParentdate()+"','"+assignmentdetails.getRepresentative()+"','"+assignmentdetails.getRepresentativedate()+"')";
 	    	 System.out.println(cmd);
 	    	 statement.execute(cmd);
 		     flag=1;
@@ -79,7 +79,7 @@ public class AssignmentDAO {
 		}
 		List<Assignment> assignment = new ArrayList<Assignment>();
 	    try{
-			resultSet = statement.executeQuery("select * from Assignment_Details");
+			resultSet = statement.executeQuery("select * from assignment_details");
 			while(resultSet.next()){
 				assignment.add(new Assignment(resultSet.getString("assignment_no"),resultSet.getString("day"),
 			    		resultSet.getString("month"),
@@ -124,7 +124,7 @@ public class AssignmentDAO {
 		}
 		List<Assignment> assignment = new ArrayList<Assignment>();
 	    try{
-			String cmd="select * from Assignment_Details where username='"+username+"'";
+			String cmd="select * from assignment_details where username='"+username+"'";
 			
 			resultSet = statement.executeQuery(cmd);
 			while(resultSet.next()){
@@ -169,7 +169,7 @@ public class AssignmentDAO {
 		}
 		List<Assignment> assignment = new ArrayList<Assignment>();
 	    try{
-			String cmd="select * from Assignment_Details where username='"+principal.getName()+"'";
+			String cmd="select * from assignment_details where username='"+principal.getName()+"'";
 			
 			resultSet = statement.executeQuery(cmd);
 			while(resultSet.next()){
@@ -214,7 +214,7 @@ public class AssignmentDAO {
 		}
 		List<Assignment> assignment = new ArrayList<Assignment>();
 	    try{
-			String cmd="select * from Assignment_Details where assignment_no='"+assignment_no+"'";
+			String cmd="select * from assignment_details where assignment_no='"+assignment_no+"'";
 			System.out.println(assignment_no);
 			resultSet = statement.executeQuery(cmd);
 			while(resultSet.next()){

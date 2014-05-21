@@ -1192,7 +1192,7 @@ w=0;
  </td><td align="left">
     <img   alt="" src="resources/images/bodyback.png"> </td></tr> </table> </div>
  
- 
+ <br><br>
  <table><tr><td width="100"><b>Aches:</b></td><td>
 <div id="draggable" >
 <img id="1" class="ui-widget-content" src="${symptomdetails.achepath}" width="10px" height="10px" > 

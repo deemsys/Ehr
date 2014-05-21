@@ -79,7 +79,7 @@ public class ScreenDAO {
 		}
 		List<screeningAuthz> screen = new ArrayList<screeningAuthz>();
 	    try{
-			resultSet = statement.executeQuery("select * from Screening_Details");
+			resultSet = statement.executeQuery("select * from screening_details");
 			while(resultSet.next()){
 				screen.add(new screeningAuthz(resultSet.getString("screen_no"),resultSet.getString("date"),
 			    		resultSet.getString("name")
@@ -110,7 +110,7 @@ public class ScreenDAO {
 		}
 		List<screeningAuthz> screen = new ArrayList<screeningAuthz>();
 	    try{
-			resultSet = statement.executeQuery("select * from Screening_Details where username='"+username+"'");
+			resultSet = statement.executeQuery("select * from screening_details where username='"+username+"'");
 			while(resultSet.next()){
 				screen.add(new screeningAuthz(resultSet.getString("screen_no"),resultSet.getString("date"),
 			    		resultSet.getString("name")
@@ -141,7 +141,7 @@ public class ScreenDAO {
 		}
 		List<screeningAuthz> screen = new ArrayList<screeningAuthz>();
 	    try{
-	    	resultSet = statement.executeQuery("select * from Screening_Details where username='"+principal.getName()+"'");
+	    	resultSet = statement.executeQuery("select * from screening_details where username='"+principal.getName()+"'");
 			while(resultSet.next()){
 				screen.add(new screeningAuthz(resultSet.getString("screen_no"),resultSet.getString("date"),
 			    		resultSet.getString("name")
@@ -174,7 +174,7 @@ public class ScreenDAO {
 		}
 		List<screeningAuthz> screen = new ArrayList<screeningAuthz>();
 	    try{
-			resultSet = statement.executeQuery("select * from Screening_Details where screen_no='"+screen_no+"'");
+			resultSet = statement.executeQuery("select * from screening_details where screen_no='"+screen_no+"'");
 			while(resultSet.next()){
 				screen.add(new screeningAuthz(resultSet.getString("screen_no"),resultSet.getString("date"),
 			    		resultSet.getString("name")
@@ -210,7 +210,7 @@ public class ScreenDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 //System.out.println(dateFormat.format(date));
-	    	String cmd="UPDATE Screening_Details SET date='"+screeningauthz.getDate()+"',name='"+screeningauthz.getName()+"' WHERE screen_no='"+screen_no+"';";
+	    	String cmd="UPDATE screening_details SET date='"+screeningauthz.getDate()+"',name='"+screeningauthz.getName()+"' WHERE screen_no='"+screen_no+"';";
 	    			
 	    			String Desc="Update screeningauthz "+screeningauthz.getName();
 	    	System.out.println(cmd);
@@ -249,7 +249,7 @@ public class ScreenDAO {
 		}
 		try{
 			
-				statement.execute("delete from Screening_Details where username='"+principal.getName()+"'");
+				statement.execute("delete from screening_details where username='"+principal.getName()+"'");
 				
 				flag=1;
 				
@@ -284,13 +284,13 @@ public class ScreenDAO {
 		try{
 			DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
-	    	 String cmd_getpatient_name="select name from Screening_Details where screen_no='"+screen_no+"'";
+	    	 String cmd_getpatient_name="select name from screening_details where screen_no='"+screen_no+"'";
 	    	 String Desc="Delete report ";
 	    	 resultSet=statement.executeQuery(cmd_getpatient_name);
 				
 				if(resultSet.next())
 					Desc=Desc+resultSet.getString(1);
-				statement.execute("delete from Screening_Details where screen_no='"+screen_no+"'");
+				statement.execute("delete from screening_details where screen_no='"+screen_no+"'");
 				
 				flag=1;
 				
@@ -332,7 +332,7 @@ public class ScreenDAO {
 			int limit = 5;
 			
 				
-					cmd = "select * from Screening_Details order by name asc limit " + offset + ","+ limit+"" ;
+					cmd = "select * from screening_details order by name asc limit " + offset + ","+ limit+"" ;
 
 			resultSet = statement.executeQuery(cmd);
 			while (resultSet.next()) {
@@ -370,7 +370,7 @@ public class ScreenDAO {
 
 			String cmd;
 			
-					cmd = "select count(*) as noofrecords from Screening_Details";
+					cmd = "select count(*) as noofrecords from screening_details";
 					System.out.println("command"+cmd);			
 			resultSet = statement.executeQuery(cmd);
 			if (resultSet.next())

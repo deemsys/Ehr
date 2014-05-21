@@ -1406,7 +1406,7 @@ document.getElementById("datepickererror").innerHTML=" ";
     <img  alt="" src="resources/images/bodyfront.png"> </td><td align="left" valign="top" width="55"><img   alt="" src="resources/images/face.png" >
  </td><td align="left">
     <img   alt="" src="resources/images/bodyback.png"> </td></tr> </table> </div>
- 
+ <br><br>
  <table border="0"><tr>
  <td width="100">
  <b>Aches:</b></td>

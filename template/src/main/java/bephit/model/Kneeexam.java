@@ -1074,7 +1074,7 @@ public class Kneeexam {
 		this.sign = sign;
 	}
 
-	public Kneeexam(String kneeexamid, String username, String pname,
+	public Kneeexam(String kneeexamid,String pname,
 			String date, String gait, String pelvicunleveling, String ao,
 			String allsoft, String leglengthl, String leglengthtextl,
 			String leglengthr, String leglengthtextr, String vmo, String quads,
@@ -1108,8 +1108,7 @@ public class Kneeexam {
 			String nerve, String emg, String outside, String dc,
 			String otheraddress, String break_text4, String sign) {
 		super();
-		this.kneeexamid = kneeexamid;
-		this.username = username;
+		this.kneeexamid = kneeexamid;		
 		this.pname = pname;
 		this.date = date;
 		this.gait = gait;

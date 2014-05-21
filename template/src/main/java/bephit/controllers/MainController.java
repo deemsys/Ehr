@@ -289,6 +289,12 @@ public class MainController {
 		return "login";
  
 	}
+	@RequestMapping(value="/logintimedout", method = RequestMethod.GET)
+	public String logintimedout(ModelMap model) {
+		model.addAttribute("sessionerror","1");
+		return "login";
+ 
+	}
 	
 	@RequestMapping(value="/doctorsearch", method = RequestMethod.GET)
 	public String searchform(HttpSession session, ModelMap model) {
@@ -5236,7 +5242,8 @@ String name="";
 	}
 	
 	@RequestMapping(value="/logout", method = RequestMethod.GET)
-	public String logout(ModelMap model) {
+	public String logout(HttpSession session,ModelMap model) {
+		session.invalidate();
 		return "login";
  
 	}

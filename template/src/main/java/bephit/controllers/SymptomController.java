@@ -62,9 +62,9 @@ public class SymptomController {
 	@RequestMapping(value = "/samplefile", method = RequestMethod.GET)
 	public String sampleviewsymptom(ModelMap model) {
 			
-		String[] Symptoms = new String[1000];
+	
 	     
-		return "NewFile";
+		return "samplefile";
 
 	}	
 	@RequestMapping(value="/samplepatientDetails", method = RequestMethod.POST)
