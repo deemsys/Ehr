@@ -85,9 +85,9 @@
 		
 		}
 		</script>
-		<script>
+		
 
-	function checkSubmit()
+	<!-- function checkSubmit()
 	{
 		
 		if(document.getElementById("datepicker").value=="")
@@ -116,18 +116,18 @@
 		document.getElementById("amountdeducterror").innerHTML="";
 		if(isNaN(document.getElementById("medicalfee").value))
 		{
-		document.getElementById("amountdeducterror").innerHTML="Enter only Numbers";
+		document.getElementById("amountdeducterror").innerHTML="Invalid character. Please enter numbers only.";
 		return false;
 		}
 		document.getElementById("number").innerHTML="";
 		if(isNaN(document.getElementById("amount").value))
 		{
-		document.getElementById("number").innerHTML="Enter only Numbers";
+		document.getElementById("number").innerHTML="Invalid character. Please enter numbers only.";
 		return false;
 		}
 		
 		}
-		</script>
+		</script> -->
 </head>
  <body>
 <div id="right_content">
@@ -175,7 +175,7 @@
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err"></span>Address:</td>
-              <td ><textarea rows="" cols=""  class="input_txtarea" name="address1" id="address1" style="width: 162px; height: 62px">${formbilldetails.address1}</textarea><span class="err"><form:errors path="Formbill.address1"></form:errors></span></td>
+              <td ><textarea rows="" cols=""  class="input_txtarea" name="address1" id="address1" style="width: 169px; height: 62px">${formbilldetails.address1}</textarea><span class="err"><form:errors path="Formbill.address1"></form:errors></span></td>
              </tr>
               </table>
               
@@ -188,7 +188,7 @@
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err"></span>Address:</td>
-              <td ><textarea rows="" cols="" class="input_txtarea" name="address3" id="address3" style="width: 162px; height: 62px">${formbilldetails.address3}</textarea><span class="err"><form:errors path="Formbill.address3"></form:errors></span></td>
+              <td ><textarea rows="" cols="" class="input_txtarea" name="address3" id="address3" style="width: 169px; height: 62px">${formbilldetails.address3}</textarea><span class="err"><form:errors path="Formbill.address3"></form:errors></span></td>
              </tr>
               </table>
             
@@ -201,7 +201,7 @@
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err"></span>Address:</td>
-              <td ><textarea rows="" cols=""  class="input_txtarea" name="address5" id="address5" style="width: 162px; height: 62px">${formbilldetails.address5}</textarea><span class="err"><form:errors path="Formbill.address5"></form:errors></span></td>
+              <td ><textarea rows="" cols=""  class="input_txtarea" name="address5" id="address5" style="width: 169px; height: 62px">${formbilldetails.address5}</textarea><span class="err"><form:errors path="Formbill.address5"></form:errors></span></td>
              </tr>
               </table>
             

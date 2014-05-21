@@ -131,7 +131,7 @@
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="160"><span class="err"></span>Address:</td>
-              <td><textarea rows="" cols="" name="address1" id="address1" style="width: 162px; height: 62px">${letterofprotectiondetails.address1}</textarea>
+              <td><textarea rows="" cols=""   class="input_txtarea"  name="address1" id="address1" style="width: 162px; height: 62px">${letterofprotectiondetails.address1}</textarea>
             </td></tr>
               </table>
              
@@ -149,8 +149,8 @@
              </table><br><br>
              <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td  width="70"><span class="err">*</span>Dear Dr</td>
-              <td  height="20" ><input type="text" class="input_txtbx1" name="dearsir" value="${letterofprotectiondetails.dearsir}"  id="dearsir" /><span class="err" id="suberr"><form:errors path="noticeofassignment.address"></form:errors>
+              <td  width="62"><span class="err">*</span>Dear Dr</td>
+              <td  height="25" width="160" ><input type="text" class="input_txtbx1" name="dearsir" value="${letterofprotectiondetails.dearsir}"  id="dearsir" /><span class="err" id="suberr"><form:errors path="noticeofassignment.address"></form:errors>
            </span></td></tr>	
              </table>
              <table>

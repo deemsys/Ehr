@@ -204,24 +204,28 @@ return false;
      	</table><br><br>
      	<table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="120">RE:</td>
-              <td ><input type="text" class="input_txtbx1" name="regarding" value="${faxcoverdetails.regarding }" id="datepicker" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
-              <td >Number Of Pages Sent:</td>
-              <td ><input type="text" class="input_txtbx1" name="pages" value="${faxcoverdetails.pages }" id="nos" /><span id="noserror" style="color: red;font-style:italic;"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td  width="20%"><span class="err"></span>RE:</td>
+              <td ><input type="text" class="input_txtbx1" name="regarding" id="re" style="width: 164px; " value="${faxcoverdetails.regarding }"/><span class="err" id="reerror"><form:errors path="Faxcover.regarding"></form:errors></td>
+              <td align="left" style="width: 188px; "><span class="err"></span>Number Of Pages Sent:</td>
+              <td ><input type="text" class="input_txtbx1" name="pages" id="nos" value="${faxcoverdetails.pages }"/><span class="err" id="noserror"><form:errors path="Faxcover.pages"></form:errors></td>
+              </tr>
+              </table>
+               <table cellpadding="0" cellspacing="0" border="0" width="100%">
+              <tr>
+              <td height="25" width="20%"><span class="err">*</span>Message:</td>
+              <td ><input type="text" class="input_txtbx1" name="msg" id="msg" style="width: 164px; " value="${faxcoverdetails.msg }"/><span class="err" id="msgerror"><form:errors path="Faxcover.msg"></form:errors></td>
+            <td align="left"><span class="err">*</span>Claim No:</td>
+              <td style="width: 188px; " align="right"><input type="text" class="input_txtbx1" name="claimno" id="claimno" value="${faxcoverdetails.claimno }"/><span class="err" id="claimnoerror"><form:errors path="Faxcover.claimno"></form:errors>
+              </span><span class="err" id="number"></span></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="120"><span class="err">*</span>Message:</td>
-              <td ><input type="text" class="input_txtbx1" name="msg" value="${faxcoverdetails.msg }" id="msg" /><span id="msgerror" style="color: red;font-style:italic;"></span><form:errors path="Hardshipagreement.date"></form:errors></td>
-            <td ><span class="err">*</span>Claim No:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-              <td ><input type="text" class="input_txtbx1" name="claimno" id="claimno"  value="${faxcoverdetails.claimno }" /><span id="claimnoerror" style="color: red;font-style:italic;"><form:errors path="Faxcover.claimno"></form:errors></td>
-             <tr>
-              <td height="25" width="120"><span class="err">*</span>DOI</td>
-              <td ><input type="text" class="input_txtbx1" name="doi" value="${faxcoverdetails.doi }" id="datepicker1" /><span id="datepicker1error" style="color: red;font-style:italic;"><form:errors path="Hardshipagreement.date"></form:errors></td>
-             </tr>
+              <td height="25" width="20%"><span class="err">*</span> DOI</td>
+              <td height="25" width="45%"><input type="text" class="input_txtbx1" name="doi" id="datepicker1" style="width: 164px; " value="${faxcoverdetails.doi }"/><span class="err" id="datepicker1error"><form:errors path="Faxcover.msg"></form:errors></td>
+            <td align="left"><span class="err"></span></td>
+              <td style="width: 188px; " align="right"></td>
               </tr>
-              
               </table><br><br>
        	<table>
        	

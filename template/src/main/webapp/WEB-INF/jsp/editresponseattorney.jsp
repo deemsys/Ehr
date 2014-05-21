@@ -101,32 +101,32 @@ document.getElementById("patientnameerror").innerHTML="";
 	           <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="50" width="120"><span class="err">*</span>Name Of Attorney:</td>
-              <td ><input type="hidden" name="responseid" value="${responseattorneydetail.responseid }"><input type="text" class="input_txtbx1" name="name" value="${responseattorneydetail.name }" id="name" /><span class="err" id="nameerror"><form:errors path="Responseattorney.name"></form:errors></td>
+              <td ><input type="hidden" name="responseid" value="${responseattorneydetail.responseid }"><input type="text" class="input_txtbx1" name="name" value="${responseattorneydetail.name }" id="name" style="width: 156px; " /><span class="err" id="nameerror"><form:errors path="Responseattorney.name"></form:errors></td>
               </tr>
               <tr>
               <td height="20" width="120"><span class="err"></span>Address:</td>
-              <td><textarea rows="" cols="" name="address"   class="input_txtarea" style="width: 162px; height: 62px" >${responseattorneydetail.address }</textarea>
+              <td><textarea rows="" cols="" name="address"   class="input_txtarea" style="width: 156px; " > ${responseattorneydetail.address }</textarea>
             </td></tr>
               </tr>
              
               <tr>
               <td height="30" width="120"><span class="err"></span>Regarding:</td>
-              <td ><input type="text" class="input_txtbx1" name="regarding" value="${responseattorneydetail.regarding }" id="regarding" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="regarding" value="${responseattorneydetail.regarding }" id="regarding"  style="width: 156px; "/><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
                 <tr>
               <td height="30" width="120"><span class="err">*</span>Patients's Name:</td>
-              <td ><input type="text" class="input_txtbx1" name="patientname" value="${responseattorneydetail.patientname }" id="patientname" /><span class="err" id="patientnameerror"><form:errors path="Responseattorney.patientname"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="patientname" value="${responseattorneydetail.patientname }" id="patientname"  style="width: 156px; "/><span class="err" id="patientnameerror"><form:errors path="Responseattorney.patientname"></form:errors></td>
               </tr>
                 <tr>
               <td height="30" width="120"><span class="err">*</span>Date Of Accident:</td>
-              <td ><input type="text" class="input_txtbx1" name="dateofaccident" value="${responseattorneydetail.dateofaccident }" id="datepicker" /><span class="err" id="datepickererror"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="dateofaccident" value="${responseattorneydetail.dateofaccident }" id="datepicker"  style="width: 156px; "/><span class="err" id="datepickererror"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>
               
               
               <br>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
-        	  <tr><td><br><p id="mypar"><span class="err">*</span>Dear&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="dearname" id="dearname" style="width: 178px; " value="${responseattorneydetail.dearname }"><span class="err" id="dearnameerr"></span></p></td></tr>
+        	  <tr><td height="30" width="120"><br><p id="mypar"><span class="err">*</span>Dear</td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<td><input type="text" class="input_txtbx1" name="dearname" value="${responseattorneydetail.dearname }" id="dearname" style="width: 156px; "><span class="err" id="dearnameerr"></span></p></td></tr>
        		  </table>
        		  <table cellpadding="0" cellspacing="0" border="0" width="100%">
        		  <tr>

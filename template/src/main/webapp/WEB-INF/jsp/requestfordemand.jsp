@@ -300,7 +300,7 @@ document.getElementById("fax").value=phone;
 	           
 	           <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr height="20">
-             <td width="470"><b>TO:</b>&nbsp;&nbsp;&nbsp;&nbsp;<input type="textbox" placeholder="John P. Lowry, Esq." name="tonum" id="tonum"> </td>
+             <td width="470"><b>TO:</b>&nbsp;&nbsp;&nbsp;&nbsp;<input type="textbox"  class="input_txtbx1" placeholder="John P. Lowry, Esq."  name="tonum" id="tonum"> </td>
              <td><b>FROM:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Perry Chiropractic & Therapy Center	 of Canton, Inc.</td>
             
               </tr>
@@ -313,7 +313,7 @@ document.getElementById("fax").value=phone;
               <br>
               
               <tr height="20">
-              <td><b>Fax:</b>&nbsp;&nbsp;&nbsp;<input type="text" placeholder="513-421-2764" name="fax" id="fax" maxlength="12"></td>
+              <td><b>Fax:</b>&nbsp;&nbsp;&nbsp;<input type="text" class="input_txtbx1"  placeholder="513-421-2764" name="fax" id="fax" maxlength="12"></td>
               <td>
              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4933 West Tuscarawas Street
               </td>
@@ -343,7 +343,7 @@ document.getElementById("fax").value=phone;
      </table>
       <table cellpadding="0" cellspacing="0" border="0" width="100%">
       <tr height="30"><td style="width: 148px; "><input type="checkbox" class="input_ckbx1"  name="other" value="other">&nbsp;&nbsp;&nbsp;Other:&nbsp;&nbsp;(Describe)&nbsp;&nbsp;&nbsp;
-     <td> <textarea rows="" cols="" name="txtare" style="height: 75px; width: 348px"></textarea><span class="err"><form:errors path="Requestfordemand.txtare"></form:errors></span></td>
+     <td> <textarea  class ="input_txtarea"  rows="" cols="" name="txtare" style="height: 75px; width: 348px"></textarea><span class="err"><form:errors path="Requestfordemand.txtare"></form:errors></span></td>
      </td>
    </tr>
        </table> 
@@ -362,22 +362,22 @@ document.getElementById("fax").value=phone;
        <p><b>We attach the following:</b></p>
        </td>
        </tr>
-       <tr height="25"><td><input type="inputtype" class="input_ckbx1" name="copymedpay" id="copymedpay"><span class="err" id="copymedpayerror"><form:errors path="Requestfordemand.copymedpay"></form:errors></span></td><td><span class="err">*</span>Copy of Med Pay and At Fault Form Cover Letter
+       <tr height="25"><td><input type="inputtype"  class="input_txtbx1" class="input_ckbx1" name="copymedpay" id="copymedpay"><span class="err" id="copymedpayerror"><form:errors path="Requestfordemand.copymedpay"></form:errors></span></td><td><span class="err">*</span>Copy of Med Pay and At Fault Form Cover Letter
      </td></tr>
-      <tr height="25"><td><input type="inputtype"class="input_ckbx1" name="copyform" id="copyform"><span class="err" id="copyformerror"><form:errors path="Requestfordemand.copyform"></form:errors></span></td><td><span class="err">*</span>Copy of Form Cover Letter sent to the Attorney
+      <tr height="25"><td><input type="inputtype"  class="input_txtbx1" class="input_ckbx1" name="copyform" id="copyform"><span class="err" id="copyformerror"><form:errors path="Requestfordemand.copyform"></form:errors></span></td><td><span class="err">*</span>Copy of Form Cover Letter sent to the Attorney
      </td></tr>
-     <tr height="25"><td><input type="inputtype" class="input_ckbx1" name="copyassign" id="copyassign"><span class="err" id="copyassignerror"><form:errors path="Requestfordemand.copyassign"></form:errors></span></td><td><span class="err">*</span>Copy of Assignment
+     <tr height="25"><td><input type="inputtype"   class="input_txtbx1 class="input_ckbx1" name="copyassign" id="copyassign"><span class="err" id="copyassignerror"><form:errors path="Requestfordemand.copyassign"></form:errors></span></td><td><span class="err">*</span>Copy of Assignment
      </td></tr>
-     <tr height="25"><td><input type="inputtype" class="input_ckbx1" name="greencard" id="greencard"><span class="err" id="greencarderror"><form:errors path="Requestfordemand.greencard"></form:errors></span></td><td><span class="err">*</span>Front and back of Certified Mail: "Green Card"
+     <tr height="25"><td><input type="inputtype"  class="input_txtbx1 class="input_ckbx1" name="greencard" id="greencard"><span class="err" id="greencarderror"><form:errors path="Requestfordemand.greencard"></form:errors></span></td><td><span class="err">*</span>Front and back of Certified Mail: "Green Card"
      </td></tr>
-     <tr height="25"><td><input type="inputtype" class="input_ckbx1" name="defaultattorney" id="defaultattorney"><span class="err" id="defaultattorneyerror"><form:errors path="Requestfordemand.defaultattorney"></form:errors></span></td><td><span class="err">*</span>Any correspondence from the defaulting Adjuster or Defaulting Attorney
+     <tr height="25"><td><input type="inputtype"  class="input_txtbx1 class="input_ckbx1" name="defaultattorney" id="defaultattorney"><span class="err" id="defaultattorneyerror"><form:errors path="Requestfordemand.defaultattorney"></form:errors></span></td><td><span class="err">*</span>Any correspondence from the defaulting Adjuster or Defaulting Attorney
      </td></tr>
        </table> <br>     
        <table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table" ><tr height="35">
        <td width="30" ></td>
        <td  valign="right" align="right" >
        
-       <input type="textbox" class="input_ckbx1" name="clinicrep" id="clinicrep"><span class="err"><form:errors path="Requestfordemand.clinicrep"></form:errors></span></td></tr>
+       <input type="textbox"  class="input_txtbx1 class="input_ckbx1" name="clinicrep" id="clinicrep"><span id="clinicreperror" style="color: red;font-style:italic;"><form:errors path="Requestfordemand.clinicrep"></form:errors></span></td></tr>
        <tr><td></td><td align="right" ><span class="err">*</span>Clinic Representative</td></tr></table>
        <br> 
        </c:when>
@@ -434,20 +434,20 @@ document.getElementById("fax").value=phone;
        </tr>
        <tr height="25"><td><input type="inputtype" class="input_ckbx1" value="${requestfor.copymedpay}" name="copymedpay" id="copymedpay"><span class="err" id="copymedpayerror"><form:errors path="Requestfordemand.copymedpay"></form:errors></span></td><td><span class="err">*</span>Copy of Med Pay and At Fault Form Cover Letter
      </td></tr>
-      <tr height="25"><td><input type="inputtype"class="input_ckbx1" value="${requestfor.copyform}" name="copyform" id="copyform"><span class="err" id="copyformerror"><form:errors path="Requestfordemand.copyform"></form:errors></span></td><td><span class="err">*</span>Copy of Form Cover Letter sent to the Attorney
+      <tr height="25"><td><input type="inputtype"    class="input_ckbx1" value="${requestfor.copyform}" name="copyform" id="copyform"><span class="err" id="copyformerror"><form:errors path="Requestfordemand.copyform"></form:errors></span></td><td><span class="err">*</span>Copy of Form Cover Letter sent to the Attorney
      </td></tr>
-     <tr height="25"><td><input type="inputtype" class="input_ckbx1" value="${requestfor.copyassign}" name="copyassign" id="copyassign"><span class="err" id="copyassignerror"><form:errors path="Requestfordemand.copyassign"></form:errors></span></td><td><span class="err">*</span>Copy of Assignment
+     <tr height="25"><td><input type="inputtype"      class="input_txtbx1" class="input_ckbx1" value="${requestfor.copyassign}" name="copyassign" id="copyassign"><span class="err" id="copyassignerror"><form:errors path="Requestfordemand.copyassign"></form:errors></span></td><td><span class="err">*</span>Copy of Assignment
      </td></tr>
-     <tr height="25"><td><input type="inputtype" class="input_ckbx1" value="${requestfor.greencard}" name="greencard" id="greencard"><span class="err" id="greencarderror"><form:errors path="Requestfordemand.greencard"></form:errors></span></td><td><span class="err">*</span>Front and back of Certified Mail: "Green Card"
+     <tr height="25"><td><input type="inputtype"  class="input_txtbx1" class="input_ckbx1" value="${requestfor.greencard}" name="greencard" id="greencard"><span class="err" id="greencarderror"><form:errors path="Requestfordemand.greencard"></form:errors></span></td><td><span class="err">*</span>Front and back of Certified Mail: "Green Card"
      </td></tr>
-     <tr height="25"><td><input type="inputtype" class="input_ckbx1" value="${requestfor.defaultattorney}" name="defaultattorney" id="defaultattorney"><span class="err" id="defaultattorneyerror"><form:errors path="Requestfordemand.defaultattorney"></form:errors></span></td><td><span class="err">*</span>Any correspondence from the defaulting Adjuster or Defaulting Attorney
+     <tr height="25"><td><input type="inputtype"  class="input_txtbx1" class="input_ckbx1" value="${requestfor.defaultattorney}" name="defaultattorney" id="defaultattorney"><span class="err" id="defaultattorneyerror"><form:errors path="Requestfordemand.defaultattorney"></form:errors></span></td><td><span class="err">*</span>Any correspondence from the defaulting Adjuster or Defaulting Attorney
      </td></tr>
        </table> <br>     
        <table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table" ><tr height="35">
        <td width="30" ></td>
        <td  valign="right" align="right" >
        
-       <input type="textbox" class="input_ckbx1" value="${requestfor.clinicrep}" name="clinicrep" id="clinicrep"><span class="err" id="clinicreperror"><form:errors path="Requestfordemand.clinicrep"></form:errors></span></td></tr>
+       <input type="textbox"  class="input_txtbx1"  value="${requestfor.clinicrep}" name="clinicrep" id="clinicrep"><span class="err" id="clinicreperror" style="color: red;font-style:italic;"><form:errors path="Requestfordemand.clinicrep"></form:errors></span></td></tr>
        <tr><td></td><td align="right" ><span class="err" id="clinicreperror">*</span>Clinic Representative</td></tr> 
        
        

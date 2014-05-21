@@ -282,16 +282,16 @@ document.getElementById("nameofattorneyerror").innerHTML="";
               <tr >
               <td height="20" width="180"><span class="err">*</span>Name Of Insurance Company:</td>
               <td ><input type="text" class="input_txtbx1" name="nameofins" id="nameofins" /><span class="err" id="nameofinserror"><form:errors path="noticeerror.nameofins"></form:errors></td>
-              <td height="40" width="110" ><span class="err">&nbsp;&nbsp;*</span>Name Of Attorney:</td>
-              <td >&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="nameofattorney" id="nameofattorney" /><span class="err" id="nameofattorneyerror"><form:errors path="noticeerror.nameofattorney"></form:errors></span></td>
+              <td height="40" width="118" ><span class="err">&nbsp;&nbsp;*</span>Name Of Attorney:</td>
+              <td >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="nameofattorney" id="nameofattorney" /><span class="err" id="nameofattorneyerror"><form:errors path="noticeerror.nameofattorney"></form:errors></span></td>
               </tr>
               </table>
                 <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td  width="180"><span class="err"></span>Address</td>
-              <td  ><textarea rows="" cols="" name="address1" style="width: 159px; height: 64px" class="input_txtarea" id="addr"></textarea>
-            </td>  <td height="40" width="90" style="width: 138px; "><span class="err"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Address:</td>
-              <td ><textarea rows="" cols="" name="address2"  class="input_txtarea"style="width: 175px; height: 64px"></textarea></td>
+              <td  width="176"><span class="err"></span>Address</td>
+              <td  ><textarea rows="" cols="" name="address1" style="width: 174px; height: 64px" class="input_txtarea" id="addr"></textarea>
+            </td>  <td height="40" width="90" style="width: 136px; "><span class="err"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Address:</td>
+              <td ><textarea rows="" cols="" name="address2"  class="input_txtarea"style="width: 176px; height: 64px"></textarea></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">

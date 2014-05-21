@@ -271,31 +271,31 @@ document.getElementById("patientnameerror").innerHTML="";
 	           <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="50" width="120"><span class="err">*</span>Name Of Attorney:</td>
-              <td ><input type="text" class="input_txtbx1" name="name" id="name"  style="width: 178px; "/><span class="err" id="nameerror"><form:errors path="Responseattorney.name"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="name" id="name"  style="width: 156px; "/><span class="err" id="nameerror"><form:errors path="Responseattorney.name"></form:errors></td>
               </tr>
               <tr>
               <td height="20" width="120"><span class="err"></span>Address:</td>
-              <td><textarea rows="" cols="" name="address" class="input_txtarea" style="width: 162px; height: 62px" ></textarea>
+              <td><textarea rows="" cols="" name="address" class="input_txtarea" style="width: 156px;" ></textarea>
             </td></tr>
              
              <tr>
               <td height="30" width="120"><span class="err"></span>Regarding:</td>
-              <td ><input type="text" class="input_txtbx1" name="regarding" id="regarding" style="width: 178px; "/><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="regarding" id="regarding" style="width: 156px;"/><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
                 <tr>
               <td height="30" width="120"><span class="err">*</span>Patients's Name:</td>
-              <td ><input type="text" class="input_txtbx1" name="patientname" id="patientname" /><span class="err" id="patientnameerror"><form:errors path="Responseattorney.patientname"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="patientname" id="patientname" style="width: 156px; "/><span class="err" id="patientnameerror"><form:errors path="Responseattorney.patientname"></form:errors></td>
               </tr>
                 <tr>
               <td height="30" width="120"><span class="err">*</span>Date Of Accident:</td>
-              <td ><input type="text" class="input_txtbx1" name="dateofaccident" id="datepicker" /><span class="err" id="datepickererror"><form:errors path="Responseattorney.dateofaccident"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="dateofaccident" id="datepicker" style="width: 156px; "/><span class="err" id="datepickererror"><form:errors path="Responseattorney.dateofaccident"></form:errors></td>
               </tr>
               </table>
               
               <input type="text" name="user" id="user"  style="visibility:hidden">
               <br>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
-        	  <tr><td><br><p id="mypar"><span class="err">*</span>Dear&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="dearname" id="dearname" style="width: 178px; "><span class="err" id="dearnameerr"></span></p></td></tr>
+        	  <tr><td height="30" width="120"><br><p id="mypar"><span class="err">*</span>Dear</td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<td><input type="text" class="input_txtbx1" name="dearname" id="dearname" style="width: 156px; "><span class="err" id="dearnameerr"></span></p></td></tr>
        		  </table>
        		  <table cellpadding="0" cellspacing="0" border="0" width="100%">
        		  <tr>

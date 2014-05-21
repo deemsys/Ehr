@@ -305,7 +305,7 @@ function openWindow(h, w, url) {
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="160"><span class="err"></span>Address:</td>
-              <td><textarea rows="4" cols="28" name="address1" style="width: 170px; height: 62px"></textarea><span class="err"><form:errors path="Letterofprotection.address1"></form:errors></span>
+              <td><textarea rows="4" cols="28"  class="input_txtarea" name="address1" style="width: 170px; height: 62px"></textarea><span class="err"><form:errors path="Letterofprotection.address1"></form:errors></span>
             </td></tr>
               </table>
              
@@ -323,8 +323,8 @@ function openWindow(h, w, url) {
              </table><br><br>
              <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td  width="70"><span class="err">*</span>Dear Dr</td>
-              <td  height="20" ><input type="text" class="input_txtbx1" name="dearsir" id="dearsir" /><span class="err" id="suberr"><form:errors path="Letterofprotection.dearsir"></form:errors>
+              <td  width="62"><span class="err">*</span>Dear Dr</td>
+              <td  height="25" width="160" ><input type="text" class="input_txtbx1" name="dearsir" id="dearsir" /><span class="err" id="suberr"><form:errors path="Letterofprotection.dearsir"></form:errors>
            </span></td></tr>	
              </table>
              <table>
