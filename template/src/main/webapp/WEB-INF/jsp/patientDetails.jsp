@@ -1947,7 +1947,40 @@ function check(id)
 				                  	</td>
 				                <td></td>
 				                </tr>
+				                 
+				                <tr class="row1">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name Of Attorney:</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="NameOfAttorney" name="NameOfAttorney" /><br><span id="NameOfAttorneyerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.NameOfAttorney"></form:errors></span>
+				                  
+				                </tr>
+				                <tr class="row2">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Attorney Phone:</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                 <%--  	<form>
+															<input type="submit">
+														</form> --%><input type="text" maxlength="13" class="input_txtbx1" id="phonenumber" name="Phone_Number" /><br><span id="phonenumbererror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.phone_Number"></form:errors></span>
+				                  	<br>
+				                  	<span class="err" id="phonenumbererror"></span>
+				                  
+				                  <td></td>
+				                </tr>
+				                <tr class="row1">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name of Person at Fault for the Accident:</td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="Fault_accident" name="Fault_accident" /><br><span id="Fault_accidenterror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.fault_accident"></form:errors></span></td>
+				                  	<td></td>                                                                                        
+				                 
+				                </tr>
 				                 <tr class="row1">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>mls there a claim open </td>
+				                  <td valign="top" align="left" class="input_txt">
+				 <input type="radio" name="claim_open" value="yes" class="input_txt" id="claim_open" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="claim_open" value="No" class="input_txt" id="claim_open">No
+				                  	<span id="claim_openerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.claim_open"></form:errors></span></td>
+				                  	<td></td>                                                                                        
+				                 
+				                </tr>
+				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>What is your Dominant Hand </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="radio" name="retain" value="R" class="input_txt" id="R">R&nbsp;&nbsp;&nbsp;<input type="radio" name="retain" value="L" class="input_txt" id="L">L
@@ -1994,38 +2027,6 @@ function check(id)
 				                  	<input type="text" class="input_txtbx1" id="treat" name="treat"/><br><span id="treaterror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
 				                    </tr>
 				                    
-				                <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name Of Attorney:</td>
-				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="NameOfAttorney" name="NameOfAttorney" /><br><span id="NameOfAttorneyerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.NameOfAttorney"></form:errors></span>
-				                  
-				                </tr>
-				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Attorney Phone:</td>
-				                  <td valign="top" align="left" class="input_txt">
-				                 <%--  	<form>
-															<input type="submit">
-														</form> --%><input type="text" maxlength="13" class="input_txtbx1" id="phonenumber" name="Phone_Number" /><br><span id="phonenumbererror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.phone_Number"></form:errors></span>
-				                  	<br>
-				                  	<span class="err" id="phonenumbererror"></span>
-				                  
-				                  <td></td>
-				                </tr>
-				                <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name of Person at Fault for the Accident:</td>
-				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="Fault_accident" name="Fault_accident" /><br><span id="Fault_accidenterror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.fault_accident"></form:errors></span></td>
-				                  	<td></td>                                                                                        
-				                 
-				                </tr>
-				                 <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>mls there a claim open </td>
-				                  <td valign="top" align="left" class="input_txt">
-				 <input type="radio" name="claim_open" value="yes" class="input_txt" id="claim_open" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="claim_open" value="No" class="input_txt" id="claim_open">No
-				                  	<span id="claim_openerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.claim_open"></form:errors></span></td>
-				                  	<td></td>                                                                                        
-				                 
-				                </tr>
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Insurance Company of the at Fault Person:</td>
 				                  <td valign="top" align="left" class="input_txt">
