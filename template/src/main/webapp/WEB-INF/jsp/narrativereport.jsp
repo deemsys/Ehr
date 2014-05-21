@@ -217,7 +217,17 @@ document.getElementById("signerror").innerHTML=" ";
 	}
 		
 		</script>
-
+<script type="text/javascript">
+       function Validate(event) {
+           var regex = new RegExp("^[0-9.]+$");
+           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+           if (!regex.test(key)) {
+             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
+               event.preventDefault();
+               return false;
+           }
+       }       
+    </script>
 </head>
  
  <body>
@@ -272,7 +282,7 @@ document.getElementById("signerror").innerHTML=" ";
           </table>
           <table cellpadding="0" cellspacing="0" border="0" width="70%" align="center">
           <tr height="30">
-          <td width="220">TO </td>
+          <td width="35.5%">TO </td>
           <td><input type="text"  class="input_txtbx1" name="towhom"  size="40"></td>
           </tr>
           </table>
@@ -522,48 +532,48 @@ document.getElementById("signerror").innerHTML=" ";
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Flexion</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;60</td>
-					<td width="200">&nbsp;&nbsp;<input type="text" class="input_txtbx1"  value="${physicalexam.flexpain}" name="painres1"></td>
-					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity1"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text" class="input_txtbx1"  value="${physicalexam.flexpain}" name="painres1" onkeypress="return Validate(event)";></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity1" onkeypress="return Validate(event)";></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Extension</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;75</td>
-					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="painres2" value="${physicalexam.extpain}"></td>
-					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity2"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="painres2" value="${physicalexam.extpain}" onkeypress="return Validate(event)";></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity2" onkeypress="return Validate(event)";></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Right Lateral Flexion</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;45</td>
-					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" ="painres3" value="${physicalexam.rlfpain}"></td>
-					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity3"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="painres3" value="${physicalexam.rlfpain}" onkeypress="return Validate(event)";></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity3" onkeypress="return Validate(event)";></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Left lateral Flexion</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;45</td>
-					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" ="painres4" value="${physicalexam.llfpain}"></td>
-					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity4"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="painres4" value="${physicalexam.llfpain}" onkeypress="return Validate(event)";></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity4" onkeypress="return Validate(event)";></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Right Rotation</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;80</td>
-					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="painres5" value="${physicalexam.rrpain}"></td>
-					<td width="200">&nbsp;&nbsp;<input type="text" class="input_txtbx1"  name="tonicity5"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="painres5" value="${physicalexam.rrpain}" onkeypress="return Validate(event)";></td>
+					<td width="200">&nbsp;&nbsp;<input type="text" class="input_txtbx1"  name="tonicity5" onkeypress="return Validate(event)";></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Left Rotation</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;80</td>
-					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="painres6" value="${physicalexam.lrpain}"></td>
-					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity6"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="painres6" value="${physicalexam.lrpain}" onkeypress="return Validate(event)";></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity6" onkeypress="return Validate(event)";></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
@@ -578,48 +588,48 @@ document.getElementById("signerror").innerHTML=" ";
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Flexion</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;80</td>
-					<td width="200">&nbsp;&nbsp;<input type="text" class="input_txtbx1"  name="painres7"></td>
-					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity7"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text" class="input_txtbx1"  name="painres7" onkeypress="return Validate(event)";></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity7" onkeypress="return Validate(event)";></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Extension</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;30</td>
-					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="painres8"></td>
-					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity8"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="painres8" onkeypress="return Validate(event)";></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity8" onkeypress="return Validate(event)";></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Right Lateral Flexion</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;25</td>
-					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="painres9"></td>
-					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity9"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="painres9" onkeypress="return Validate(event)";></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity9" onkeypress="return Validate(event)";></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Left lateral Flexion</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;25</td>
-					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1"name="painres10"></td>
-					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity10"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1"name="painres10" onkeypress="return Validate(event)";></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity10" onkeypress="return Validate(event)";></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Right Rotation</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;30</td>
-					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="painres11"></td>
-					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity11"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="painres11" onkeypress="return Validate(event)";></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity11" onkeypress="return Validate(event)";></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Left Rotation</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;30</td>
-					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="painres12"></td> 
-					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity12"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="painres12" onkeypress="return Validate(event)";></td> 
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity12" onkeypress="return Validate(event)";></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
@@ -671,7 +681,7 @@ document.getElementById("signerror").innerHTML=" ";
 					<tr height="30">
 					<td width="200"></td>
 					<td width="250"><input type="text"  class="input_txtbx1" name="orthopedictest3"> </td>
-					<td width="250"><input type="radio"  class="input_txtbx1" name="yeomansr" value="Positive">Positive &nbsp;&nbsp;<input type="radio" name="yeomansr" value="Negative">Negative</td>
+					<td width="250"><input type="radio"  name="yeomansr" value="Positive">Positive &nbsp;&nbsp;<input type="radio" name="yeomansr" value="Negative">Negative</td>
 					<td width="250"><input type="radio" name="yeomansl" value="Positive">Positive &nbsp;&nbsp;<input type="radio" name="yeomansl" value="Negative">Negative</td>
 					<td width="200"></td>
 					<td width="200"></td>

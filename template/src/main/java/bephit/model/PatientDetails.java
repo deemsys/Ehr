@@ -107,6 +107,7 @@ private String phyname;
 //@Pattern(regexp="(^$|[0-9-()]{13})",message="Not a valid Mobile number")
 private String phyphone;
 
+private String car11;
 private String xray;
 
 private String treat;
@@ -119,6 +120,7 @@ private String Phone_Number;
 
 private String Fault_accident;
 
+private String claim_open;
 
 private String Insurance;
 
@@ -466,6 +468,14 @@ public String getPhyphone() {
 public void setPhyphone(String phyphone) {
 	this.phyphone = phyphone;
 }
+
+
+public String getCar11() {
+	return car11;
+}
+public void setCar11(String car11) {
+	this.car11 = car11;
+}
 public String getXray() {
 	return xray;
 }
@@ -496,6 +506,16 @@ public String getFault_accident() {
 public void setFault_accident(String fault_accident) {
 	Fault_accident = fault_accident;
 }
+
+public String getClaim_open() {
+	return claim_open;
+}
+public void setClaim_open(String claim_open) {
+	this.claim_open = claim_open;
+}
+
+
+
 public String getInsurance() {
 	return Insurance;
 }
@@ -859,8 +879,8 @@ public PatientDetails(String patient_id, String name, String username,
 		String symptom_Accident, String type_Of_Accident, String accident,
 		String date_Of_Accident, String accident_Reported, String when1,
 		String where1, String attorney_accident, String retain, String record,
-		String phyname, String phyphone, String xray, String treat,
-		String nameOfAttorney, String phone_Number, String fault_accident,
+		String phyname, String phyphone, String car11,String xray, String treat,
+		String nameOfAttorney, String phone_Number, String fault_accident,String claim_open,
 		String insurance, String insurance_phone, String name_auto,
 		String phone_auto, String policy, String name_health,
 		String health_phone, String prev_accident, String prev_When,
@@ -921,11 +941,13 @@ public PatientDetails(String patient_id, String name, String username,
 	this.record = record;
 	this.phyname = phyname;
 	this.phyphone = phyphone;
+	this.car11=car11;
 	this.xray = xray;
 	this.treat = treat;
 	NameOfAttorney = nameOfAttorney;
 	Phone_Number = phone_Number;
 	Fault_accident = fault_accident;
+	this.claim_open =claim_open;
 	Insurance = insurance;
 	Insurance_phone = insurance_phone;
 	Name_auto = name_auto;

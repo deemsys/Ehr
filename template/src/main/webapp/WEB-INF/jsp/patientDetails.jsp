@@ -1792,7 +1792,7 @@ function check(id)
 				               <table align="right">
 				               <tr>
 				  
-                     <td><br><input type="button" id="btnNext" class="submit_btn"  value="Next" onclick="return checkSubmit('this');"/><br></td>
+                     <td><br><input type="button" id="btnNext" class="submit_btn"  value="Next" /><br></td>
                   </tr>
 				               </table>
               
@@ -1976,7 +1976,12 @@ function check(id)
 				                  	<input type="text" class="input_txtbx1" id="phyphone" name="phyphone" maxlength="13"/><br><span id="phyphoneerror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
 				                   <span class="err" ></span>
 				                    </tr>
-				                    
+				                     <tr class="row2">
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Damages to your car </td>
+				                  	<td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="car11" name="car11" /><br><span id="car11error" style="color: red;font-style:italic;"> <form:errors path="patientDetails.car11"></form:errors> </span>
+				                   <span class="err" ></span>
+				                    </tr>
 				                     <tr class="row1">
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>	What body parts were x-rayed </td>
 				                  	<td valign="top" align="left" class="input_txt">
@@ -2010,6 +2015,14 @@ function check(id)
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name of Person at Fault for the Accident:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="Fault_accident" name="Fault_accident" /><br><span id="Fault_accidenterror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.fault_accident"></form:errors></span></td>
+				                  	<td></td>                                                                                        
+				                 
+				                </tr>
+				                 <tr class="row1">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>mls there a claim open </td>
+				                  <td valign="top" align="left" class="input_txt">
+				 <input type="radio" name="claim_open" value="yes" class="input_txt" id="claim_open" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="claim_open" value="No" class="input_txt" id="claim_open">No
+				                  	<span id="claim_openerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.claim_open"></form:errors></span></td>
 				                  	<td></td>                                                                                        
 				                 
 				                </tr>
@@ -2619,7 +2632,12 @@ function check(id)
 				                  	<input type="text" class="input_txtbx1" id="phyphone" name="phyphone" value="${first.phyphone}" maxlength="13"/><br><span class="err"><form:errors path="patientDetails.where1"></form:errors></span>
 				                   <span class="err" id="phynumbererror"></span>
 				                    </tr>
-				                    
+				                    <tr class="row2">
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Damages to your car </td>
+				                  	<td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="car11" name="car11" value="${first.car11}" /><br><span id="car11error" style="color: red;font-style:italic;"><form:errors path="patientDetails.car11"></form:errors></span>
+				                   <span class="err" ></span>
+				                    </tr>
 				                     <tr class="row1">
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>	What body parts were x-rayed </td>
 				                  	<td valign="top" align="left" class="input_txt">
@@ -2650,6 +2668,15 @@ function check(id)
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name of Person at Fault for the Accident:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Fault_accident" value="${first.fault_accident}"/><span class="err"><form:errors path="PatientDetails.Fault_accident"></form:errors></span></td>
+				                  	<td></td>                                                                                        
+				                 
+				                </tr>
+				                 <tr class="row1">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>mls there a claim open </td>
+				                  <td valign="top" align="left" class="input_txt">
+				                  
+				 <input type="radio" name="claim_open" value="yes" class="input_txt" id="claim_open" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="claim_open" value="No" class="input_txt" id="claim_open">No
+				                  	<span id="claim_openerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.claim_open"></form:errors></span></td>
 				                  	<td></td>                                                                                        
 				                 
 				                </tr>

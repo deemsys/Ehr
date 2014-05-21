@@ -138,6 +138,17 @@ document.getElementById("signerror").innerHTML=" ";
 	}
 		
 		</script>
+		<script type="text/javascript">
+       function Validate(event) {
+           var regex = new RegExp("^[0-9.]+$");
+           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+           if (!regex.test(key)) {
+             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
+               event.preventDefault();
+               return false;
+           }
+       }       
+    </script>
 </head>
  <style>
   /* force a height so the tabs don't jump as content height changes */
@@ -193,9 +204,9 @@ document.getElementById("signerror").innerHTML=" ";
           <td><input type="text"  class="input_txtbx1" name="dateoffirstvisit" id="datepicker" size="40" value="${narrativereport.dateoffirstvisit}"><span id="datepickererror" style="color: red;font-style:italic;"></span></td>
           </tr>
           </table>
-          <table width="85">
+          <table cellpadding="0" cellspacing="0" border="0" width="70%" align="center">
           <tr height="30">
-          <td width="40">TO  </td>
+          <td width="35%">TO</td>
           <td><input type="text"  class="input_txtbx1" name="towhom"  size="40" value="${narrativereport.towhom}"></td>
           </tr>
           </table>
@@ -445,48 +456,48 @@ document.getElementById("signerror").innerHTML=" ";
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Flexion</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;60</td>
-					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="painres1" value="${narrativereport.painres1}"></td>
-					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity1" value="${narrativereport.tonicity1}"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="painres1" value="${narrativereport.painres1}" onkeypress="return Validate(event)";></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity1" value="${narrativereport.tonicity1}" onkeypress="return Validate(event)";></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Extension</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;75</td>
-					<td width="200">&nbsp;&nbsp;<input type="text" class="input_txtbx1"  name="painres2" value="${narrativereport.painres2}"></td>
-					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity2" value="${narrativereport.tonicity2}" ></td>
+					<td width="200">&nbsp;&nbsp;<input type="text" class="input_txtbx1"  name="painres2" value="${narrativereport.painres2}" onkeypress="return Validate(event)";></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity2" value="${narrativereport.tonicity2}" onkeypress="return Validate(event)";></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Right Lateral Flexion</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;45</td>
-					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="painres3" value="${narrativereport.painres3}"></td>
-					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1"  name="tonicity3" value="${narrativereport.tonicity3}"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="painres3" value="${narrativereport.painres3}"  onkeypress="return Validate(event)";></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1"  name="tonicity3" value="${narrativereport.tonicity3}" onkeypress="return Validate(event)";></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Left lateral Flexion</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;45</td>
-					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="painres4" value="${narrativereport.painres4}"></td>
-					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity4" value="${narrativereport.tonicity4}"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="painres4" value="${narrativereport.painres4}" onkeypress="return Validate(event)";></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity4" value="${narrativereport.tonicity4}" onkeypress="return Validate(event)";></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Right Rotation</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;80</td>
-					<td width="200">&nbsp;&nbsp;<input type="text" class="input_txtbx1"  name="painres5" value="${narrativereport.painres5}"></td>
-					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity5" value="${narrativereport.tonicity5}"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text" class="input_txtbx1"  name="painres5" value="${narrativereport.painres5}" onkeypress="return Validate(event)";></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity5" value="${narrativereport.tonicity5}" onkeypress="return Validate(event)";></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Left Rotation</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;80</td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="painres6" value="${narrativereport.painres6}"></td>
-					<td width="200">&nbsp;&nbsp;<input type="text" name="tonicity6" value="${narrativereport.tonicity6 }"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="painres6" value="${narrativereport.painres6}" onkeypress="return Validate(event)";></td>
+					<td width="200">&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="tonicity6" value="${narrativereport.tonicity6 }" onkeypress="return Validate(event)";></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
@@ -501,48 +512,48 @@ document.getElementById("signerror").innerHTML=" ";
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Flexion</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;80</td>
-					<td width="200">&nbsp;&nbsp;<input type="text" class="input_txtbx1"  name="painres7" value="${narrativereport.painres7}"></td>
-					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity7" value="${narrativereport.tonicity7}"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text" class="input_txtbx1"  name="painres7" value="${narrativereport.painres7}" onkeypress="return Validate(event)";></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity7" value="${narrativereport.tonicity7}" onkeypress="return Validate(event)";></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Extension</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;30</td>
-					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="painres8" value="${narrativereport.painres8}"></td>
-					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity8" value="${narrativereport.tonicity8}"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="painres8" value="${narrativereport.painres8}" onkeypress="return Validate(event)";></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity8" value="${narrativereport.tonicity8}" onkeypress="return Validate(event)";></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Right Lateral Flexion</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;25</td>
-					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="painres9" value="${narrativereport.painres9}"></td>
-					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity9" value="${narrativereport.tonicity9}"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="painres9" value="${narrativereport.painres9}" onkeypress="return Validate(event)";></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity9" value="${narrativereport.tonicity9}" onkeypress="return Validate(event)";></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Left lateral Flexion</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;25</td>
-					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="painres10" value="${narrativereport.painres10}"></td>
-					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity10" value="${narrativereport.tonicity10}"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="painres10" value="${narrativereport.painres10}" onkeypress="return Validate(event)";></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity10" value="${narrativereport.tonicity10}" onkeypress="return Validate(event)";></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Right Rotation</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;30</td>
-					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="painres11" value="${narrativereport.painres11}"></td>
-					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity11" value="${narrativereport.tonicity11}"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="painres11" value="${narrativereport.painres11}" onkeypress="return Validate(event)";></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity11" value="${narrativereport.tonicity11}" onkeypress="return Validate(event)";></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
 					<tr height="30">
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;Left Rotation</td>
 					<td width="200">&nbsp;&nbsp;&nbsp;&nbsp;30</td>
-					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="painres12" value="${narrativereport.painres12}"></td>
-					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity12" value="${narrativereport.tonicity12}"></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="painres12" value="${narrativereport.painres12}" onkeypress="return Validate(event)";></td>
+					<td width="200">&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="tonicity12" value="${narrativereport.tonicity12}" onkeypress="return Validate(event)";></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
@@ -586,14 +597,14 @@ document.getElementById("signerror").innerHTML=" ";
 					<tr height="30">
 					<td width="200"></td>
 					<td width="250"><input type="text"  class="input_txtbx1" name="orthopedictest2" value="${narrativereport.orthopedictest2}"> </td>
-					<td width="250"><input type="radio"  class="input_txtbx1" name="doublelegraiser" value="Positive" <c:if test="${narrativereport.doublelegraiser=='Positive'}"><c:out value="checked=checked"/></c:if>>Positive &nbsp;&nbsp;<input type="radio" name="doublelegraiser" value="Negative" <c:if test="${narrativereport.doublelegraiser=='Negative'}"><c:out value="checked=checked"/></c:if>>Negative</td>
+					<td width="250"><input type="radio"   name="doublelegraiser" value="Positive" <c:if test="${narrativereport.doublelegraiser=='Positive'}"><c:out value="checked=checked"/></c:if>>Positive &nbsp;&nbsp;<input type="radio" name="doublelegraiser" value="Negative" <c:if test="${narrativereport.doublelegraiser=='Negative'}"><c:out value="checked=checked"/></c:if>>Negative</td>
 					<td width="250"><input type="radio" name="doublelegraisel" value="Positive" <c:if test="${narrativereport.doublelegraisel=='Positive'}"><c:out value="checked=checked"/></c:if>>Positive &nbsp;&nbsp;<input type="radio" name="doublelegraisel" value="Negative" <c:if test="${narrativereport.doublelegraisel=='Negative'}"><c:out value="checked=checked"/></c:if>>Negative</td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>
 					<tr height="30">
 					<td width="200"></td>
-					<td width="250"><input type="text" name="orthopedictest3" value="${narrativereport.orthopedictest3}"> </td>
+					<td width="250"><input type="text" class="input_txtbx1" name="orthopedictest3" value="${narrativereport.orthopedictest3}"> </td>
 					<td width="250"><input type="radio" name="yeomansr" value="Positive" <c:if test="${narrativereport.yeomansr=='Positive'}"><c:out value="checked=checked"/></c:if>>Positive &nbsp;&nbsp;<input type="radio" name="yeomansr" value="Negative" <c:if test="${narrativereport.yeomansr=='Negative'}"><c:out value="checked=checked"/></c:if>>Negative</td>
 					<td width="250"><input type="radio" name="yeomansl" value="Positive" <c:if test="${narrativereport.yeomansl=='Positive'}"><c:out value="checked=checked"/></c:if>>Positive &nbsp;&nbsp;<input type="radio" name="yeomansl" value="Negative" <c:if test="${narrativereport.yeomansl=='Negative'}"><c:out value="checked=checked"/></c:if>>Negative</td>
 					<td width="200"></td>
@@ -748,8 +759,8 @@ document.getElementById("signerror").innerHTML=" ";
 					<tr height="30">
 					<td width="200"></td>
 					<td width="250">4</td>
-					<td width="250"><input type="text" name="icd4" value="${narrativereport.icd4}"></td>
-					<td width="250"><input type="text" name="description4" value="${narrativereport.description4}"></td>
+					<td width="250"><input type="text" name="icd4" class="input_txtbx1" value="${narrativereport.icd4}"></td>
+					<td width="250"><input type="text" name="description4" class="input_txtbx1" value="${narrativereport.description4}"></td>
 					<td width="200"></td>
 					<td width="200"></td>
 					</tr>

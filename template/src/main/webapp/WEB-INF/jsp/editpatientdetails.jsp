@@ -1343,15 +1343,22 @@ var $sid = xx+1;
 				                  	<td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="phyphone" name="phyphone" value="${patientDetails.phyphone}"/><br><span id="phyphoneerror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
 				                   </td><td width="700"></td>
+				                   
 				                    </tr>
-				                    
-				                     <tr class="row1">
+				                 <tr class="row1">
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Damages to your car </td>
+				                  	<td valign="top" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="car11" name="car11" value="${patientDetails.car11}"/><br><span id="car11error" style="color: red;font-style:italic;"><form:errors path="patientDetails.car11"></form:errors></span>
+				                     </td><td width="700"></td>
+				                    </tr> 
+				                   
+				                     <tr class="row2">
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err"></span>	What body parts were x-rayed </td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="xray" name="xray"  value="${patientDetails.xray}"/><br><span id="xrayerror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
 				                    </tr>
 				                    
-				                     <tr class="row2">
+				                     <tr class="row1">
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err"></span>what treatment was given </td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="treat" name="treat" value="${patientDetails.treat}"/><br><span id="treaterror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
@@ -1364,20 +1371,29 @@ var $sid = xx+1;
 						
 						
 						
-						 <tr class="row1">
+						 <tr class="row2">
                         <td><span class="err">*</span>Name Of Attorney:</td>
                         <td class="input_txt"><input type="text" class="input_txtbx1" id="NameOfAttorney"   value="${patientDetails.nameOfAttorney}" name="nameOfAttorney" /></br><span id="NameOfAttorneyerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.NameOfAttorney"></form:errors></span></td>
 						</tr>          	
 				          
-						 <tr class="row2">
+						 <tr class="row1">
                         <td><span class="err">*</span>Attorney Phone:</td>
                         <td class="input_txt"><input type="text" class="input_txtbx1" id="phonenumber"   value="${patientDetails.phone_Number}" name="phone_Number" /></br><span id="phonenumbererror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Phone_Number"></form:errors></span></td>
 						<td></td>
 						</tr> 
-						    <tr class="row1">
+						    <tr class="row2">
                         <td><span class="err">*</span>Name of Person at Fault for the Accident:</td>
                         <td class="input_txt"><input type="text" class="input_txtbx1" id="Fault_accident"   value="${patientDetails.fault_accident}" name="fault_accident" /></br><span id="Fault_accidenterror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Fault_accident"></form:errors></span></td>
 						</tr>  
+						<tr class="row1">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>mls there a claim open </td>
+				                  <td valign="top" align="left" class="input_txt">
+				          	<input type="radio" id="claim_open" name="claim_open" value="yes" class="input_txt" <c:if test="${patientDetails.claim_open=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;        
+					<input type="radio" id="No5" name="claim_open" value="No" class="input_txt"<c:if test="${patientDetails.claim_open=='No'}"><c:out value="checked=checked"/></c:if>>No
+				                  	<span id="claim_openerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.claim_open"></form:errors></span></td>
+				                  	<td></td>                                                                                        
+				                 
+				                </tr>
 						<tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Insurance Company of the at Fault Person:</td>
 				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="Insurance"   value="${patientDetails.insurance}" name="insurance" /></br><span id="Insuranceerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Insurance"></form:errors></span></td>     	         
