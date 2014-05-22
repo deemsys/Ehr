@@ -147,50 +147,108 @@
  <script>
 
  $(function() {
-	    $( "#slider" ).slider({
-	      value:document.getElementById("amount").value,
-	      min: 0,
-	      max: 10,
-	      step: 1,
-	      slide: function( event, ui ) {
-	        $( "#amount" ).val(+ ui.value );
-	      }
-	    });
-	    $( "#amount" ).val(+ $( "#slider" ).slider( "value" ) );
-	  });
- $(function() {
-	    $( "#slider1" ).slider({
-	      value:document.getElementById("amount1").value,
-	      min: 0,
-	      max: 10,
-	      step: 1,
-	      slide: function( event, ui ) {
-	        $( "#amount1" ).val(+ ui.value );
-	      }
-	    });
-	    $( "#amount1" ).val(+ $( "#slider1" ).slider( "value" ) );
-	  });
+    $( "#slider" ).slider({
+      value:1,
+      min: 0,
+      max: 10,
+      step: 1,
+      slide: function( event, ui ) {
+        $( "#amount" ).val(+ ui.value );
+         document.getElementById("amounterr").innerHTML="";
+        if(document.getElementById("amount").value==10)
+    {
+    //alert("Severe pain");
+     document.getElementById("amounterr").innerHTML="Severe pain";  
+    }
+    
+     if(document.getElementById("amount").value==0)
+    {
+  // aler("No pain");
+   document.getElementById("amounterr").innerHTML="No pain";
+    }
+      }
+    });
+    $( "#amount" ).val(+ $( "#slider" ).slider( "value" ) );
+     
+        
+  });
+$(function() {
+    $( "#slider1" ).slider({
+      value:0,
+      min: 0,
+       max: 10,
+        step: 1,
+      slide: function( event, ui ) {
+        $( "#amount1" ).val(+ ui.value );
+       
+       
+    document.getElementById("amount1err").innerHTML="";
+     if(document.getElementById("amount1").value==0)
+    {
+ 
+   document.getElementById("amount1err").innerHTML="No pain";
+    }
+   
+     if(document.getElementById("amount1").value==10)
+    {
+    
+    document.getElementById("amount1err").innerHTML="Severe pain";
+    }
+        
+      }
+    });
+    $( "#amount1" ).val(+ $( "#slider1" ).slider( "value" ) );
+
+    
+    
+  });
+
+
 
  $(function() {
-	    $( "#slider2" ).slider({
-	      value:document.getElementById("amount2").value,
-	      min: 0,
-	      max: 10,
-	      step: 1,
-	      slide: function( event, ui ) {
-	        $( "#amount2" ).val(+ ui.value );
-	      }
-	    });
-	    $( "#amount2" ).val(+ $( "#slider2" ).slider( "value" ) );
-	  });
+    $( "#slider2" ).slider({
+      value:1,
+      min: 0,
+      max: 10,
+      step: 1,
+      slide: function( event, ui ) {
+        $( "#amount2" ).val(+ ui.value );
+         document.getElementById("amount2err").innerHTML="";
+         if(document.getElementById("amount2").value==10)
+    {
+   // alert("Severe pain");
+   document.getElementById("amount2err").innerHTML="Severe pain";
+    }
+    
+     if(document.getElementById("amount2").value==0)
+    {
+    //alert("No pain");
+     document.getElementById("amount2err").innerHTML="No pain";
+    }
+      }
+    });
+    $( "#amount2" ).val(+ $( "#slider2" ).slider( "value" ) );
+  });
+
  $(function() {
 	    $( "#slider3" ).slider({
-	      value:document.getElementById("amount3").value,
+	      value:1,
 	      min: 0,
 	      max: 10,
 	      step: 1,
 	      slide: function( event, ui ) {
 	        $( "#amount3" ).val(+ ui.value );
+	        document.getElementById("amount3err").innerHTML="";
+	        if(document.getElementById("amount3").value==0)
+	        {
+	        document.getElementById("amount3err").innerHTML="No Pain";
+	        return false;
+	        }
+	         if(document.getElementById("amount3").value==10)
+	        {
+	        document.getElementById("amount3err").innerHTML="Severe Pain";
+	        return false;
+	        }
 	      }
 	    });
 	    $( "#amount3" ).val(+ $( "#slider3" ).slider( "value" ) );
@@ -269,7 +327,7 @@ $(function() {
 	             </tr>
 	             <tr height="50"> 
 &nbsp;&nbsp;&nbsp;<td><label for="amount">Pain Scale:</label>
-				                  	<input type="text" id="amount" value="${quadraplevisualdetails.painscale}" name="painscale" />&nbsp;&nbsp;&nbsp;
+				                  	<input type="text" id="amount" value="${quadraplevisualdetails.painscale}" name="painscale" /><span id="amounterr"></span>&nbsp;&nbsp;&nbsp;
 				                  	<div id="slider"></div></td>
 				  </tr>
 				  <tr height="30">
@@ -278,7 +336,7 @@ $(function() {
 	             <tr height="50"> 
 	             
 	             <td><label for="amount1">Pain Scale:</label>
-				                  	<input type="text" id="amount1" value="${quadraplevisualdetails.painscale1}" name="painscale1" />&nbsp;&nbsp;&nbsp;
+				                  	<input type="text" id="amount1" value="${quadraplevisualdetails.painscale1}" name="painscale1" /><span id="amount1err"></span>&nbsp;&nbsp;&nbsp;
 				                  	<div id="slider1"></div></td>
 				  </tr>
 				  <tr height="30">
@@ -287,7 +345,7 @@ $(function() {
 	             <tr height="50"> 
 	             
 	             <td><label for="amount2">Pain Scale:</label>
-				                  	<input type="text" id="amount2" name="painscale2" value="${quadraplevisualdetails.painscale2}" />&nbsp;&nbsp;&nbsp;
+				                  	<input type="text" id="amount2" name="painscale2" value="${quadraplevisualdetails.painscale2}" /><span id="amount2err"></span>&nbsp;&nbsp;&nbsp;
 				                  	<div id="slider2"></div></td>
 				  </tr>
 				  <tr height="30">
@@ -296,7 +354,7 @@ $(function() {
 	             <tr height="50"> 
 	             
 	             <td><label for="amount3">Pain Scale:</label>
-				                  	<input type="text" id="amount3" name="painscale3" value="${quadraplevisualdetails.painscale3}" />&nbsp;&nbsp;&nbsp;
+				                  	<input type="text" id="amount3" name="painscale3" value="${quadraplevisualdetails.painscale3}" /><span id="amount3err"></span>&nbsp;&nbsp;&nbsp;
 				                  	<div id="slider3"></div></td>
 				  </tr>
 				  <tr height="30">

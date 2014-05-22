@@ -23,6 +23,19 @@
 		      step: 1,
 		      slide: function( event, ui ) {
 		        $( "#describes" ).val(+ ui.value );
+		        document.getElementById("describeserr").innerHTML="";
+		        if(document.getElementById("describes").value==0)
+		        {
+		        document.getElementById("describeserr").innerHTML="No Pain";
+		        return false;
+		        }
+		        if(document.getElementById("describes").value==100)
+		        {
+		        document.getElementById("describeserr").innerHTML="Severe Pain";
+		        return false;
+		        }
+		         
+		        
 		      }
 		    });
 		    $( "#describes" ).val(+ $( "#slider" ).slider( "value" ) );
@@ -122,12 +135,12 @@ $(function() {
 <tr height="30">
 <td>
 <label for="describes"><b>Pain Scale:</b></label>
-<input type="text" id="describes" name="painscale" value="${shoulderpainscore.painscale}"/>&nbsp;&nbsp;&nbsp;
+<input type="text" id="describes" name="painscale" value="${shoulderpainscore.painscale}"/><span id="describeserr"></span>&nbsp;&nbsp;&nbsp;
 </td>
 </tr>
 <tr height="30">
-<td>
-<div id="slider"></div>
+<td style="width: 874px; ">
+<div id="slider" style="width: 791px; "></div>
 </td>
 </tr>
 </table>

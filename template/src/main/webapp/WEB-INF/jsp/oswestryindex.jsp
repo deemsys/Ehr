@@ -74,6 +74,19 @@ $(function() {
       step: 1,
       slide: function( event, ui ) {
         $( "#amount" ).val(+ ui.value );
+        document.getElementById("amounterr").innerHTML="";
+        if(document.getElementById("amount").value==10)
+    {
+    //alert("Severe pain");
+     document.getElementById("amounterr").innerHTML="Severe pain";  
+    }
+    
+     if(document.getElementById("amount").value==0)
+    {
+  // aler("No pain");
+   document.getElementById("amounterr").innerHTML="No pain";
+    }
+        
       }
     });
     $( "#amount" ).val(+ $( "#slider" ).slider( "value" ) );
@@ -84,6 +97,20 @@ $(function() {
         step: 1,
         slide: function( event, ui ) {
           $( "#amount1" ).val(+ ui.value );
+          document.getElementById("amount1err").innerHTML="";
+     if(document.getElementById("amount1").value==0)
+    {
+ 
+   document.getElementById("amount1err").innerHTML="No pain";
+    }
+   
+     if(document.getElementById("amount1").value==10)
+    {
+    
+    document.getElementById("amount1err").innerHTML="Severe pain";
+    }
+         
+          
         }
       });
       $( "#amount1" ).val(+ $( "#slider1" ).slider( "value" ) );
@@ -356,11 +383,11 @@ $(function() {
           <div class="contentbox">
          <Table><tr><td><span class="err">*</span>Name:</td><td width="250"><input type="text" name="name"><br><span class="err"><form:errors path="oswestrydetails.name"></form:errors></td><Td width="200"></td><td ><span class="err">*</span>Date:</td><td width="250"><input type="date" name="date"><br><span class="err"><form:errors path="oswestrydetails.date"></form:errors></td><td width="200"></td><td>Score:</td><td><input type="hidden" name="scores" id="scores"><div id="score"></div></td></tr></Table>
 	    <table><tr><td valign="bottom"><b>1.What is your pain RIGHT NOW?</b>&nbsp;&nbsp;&nbsp;X</td><td width="10"></td><td valign="bottom">No Pain</td><Td><label for="amount"><b></label>
-	 <input type="text" id="amount"  value="0" style="border:0; color:#f6931f; font-weight:bold;" name="painscale" />&nbsp;&nbsp;&nbsp;
- <div id="slider"></div></td><td valign="bottom"><b>Worst Possible Pain</Td><Td width="20"></Td><td valign="bottom"><b>What is your pain at its worse?</b>&nbsp;&nbsp;&nbsp;O</td><td width="10"></td><td valign="bottom">No Pain</td><Td>
+	 <input type="text" id="amount"  value="0" style="border:0; color:#f6931f; font-weight:bold;" name="painscale" /><span id="amounterr"></span>&nbsp;&nbsp;&nbsp;
+ <div id="slider" style="width: 227px; "></div></td><td valign="bottom"><b>Worst Possible Pain</Td><Td width="20"></Td><td valign="bottom"><b>What is your pain at its worse?</b>&nbsp;&nbsp;&nbsp;O</td><td width="10"></td><td valign="bottom">No Pain</td><Td>
  <label for="amount1"></label>
-	 <input type="text" id="amount1" value="0" style="border:0; color:#f6931f; font-weight:bold;" name="painscale1" />&nbsp;&nbsp;&nbsp;
- <div id="slider1"></div>
+	 <input type="text" id="amount1" value="0" style="border:0; color:#f6931f; font-weight:bold;" name="painscale1" /><span id="amount1err"></span>&nbsp;&nbsp;&nbsp;
+ <div id="slider1" style="width: 227px; "></div>
  
  </Td><td valign="bottom">Worst Possible Pain</td></tr>
 	    <tr></tr>

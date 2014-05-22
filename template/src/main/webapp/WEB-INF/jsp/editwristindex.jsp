@@ -86,6 +86,17 @@ $(function() {
       step: 1,
       slide: function( event, ui ) {
         $( "#amount" ).val(+ ui.value );
+        document.getElementById("amounterr").innerHTML="";
+        if(document.getElementById("amount").value==0)
+        {
+        document.getElementById("amounterr").innerHTML="No Pain";
+        return false;
+        }
+         if(document.getElementById("amount").value==10)
+        {
+        document.getElementById("amounterr").innerHTML="Severe Pain";
+        return false;
+        }
       }
     });
     $( "#amount" ).val(+ $( "#slider" ).slider( "value" ) );
@@ -291,8 +302,8 @@ $(function() {
            <P>Please mark on the line below the pain you have had in the past 24 hours.Use the line as a scale to mark the level of your pain from no pain to the worst</P>
            <table><tr><td>No pain at all</td>
            <td><label for="amount"><b>Pain Scale:</b></label>
-	 <input type="text" id="amount" style="border:0; color:#f6931f; font-weight:bold;" name="painscale" value="${wristindexdetails.painscale}" />&nbsp;&nbsp;&nbsp;
- <div id="slider"></div></td><td>Worst possible pain</td></tr></table>
+	 <input type="text" id="amount" style="border:0; color:#f6931f; font-weight:bold;" name="painscale" value="${wristindexdetails.painscale}" /><span id="amounterr"></span>&nbsp;&nbsp;&nbsp;
+ <div id="slider" style="width: 358px; "></div></td><td>Worst possible pain</td></tr></table>
            <table><tr><td><a  onclick="return doAjaxPost()" style="text-decoration: underline; cursor:pointer;color: brown" ><b>Disability of patient score</b></td></tr>
            
            </table>

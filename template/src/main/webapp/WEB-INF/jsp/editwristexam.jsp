@@ -289,16 +289,16 @@ P#mypar {
 													<c:if test="${wristexamdetails.dominanthand=='right'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;&nbsp;Right</td>
 												<td width="75"></td>
 												<td width="130">A & O:</td>
-												<td><select name="ao"><option
+												<td><select name="ao"><option value="excellent"
 															<c:if test="${wristexamdetails.ao=='excellent'}"></c:if>
 															<c:out value="selected"></c:out>>excellent</option>
-														<option
+														<option value="good"
 															<c:if test="${wristexamdetails.ao=='good'}"></c:if>
 															<c:out value="selected"></c:out>>good</option>
-														<option
+														<option value="fair"
 															<c:if test="${wristexamdetails.ao=='fair'}"></c:if>
 															<c:out value="selected"></c:out>>fair</option>
-														<option
+														<option value="severe"
 															<c:if test="${wristexamdetails.ao=='severe'}"></c:if>
 															<c:out value="selected"></c:out>>severe</option></select></td>
 											</tr>

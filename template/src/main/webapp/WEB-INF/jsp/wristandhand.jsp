@@ -236,7 +236,7 @@ $(function() {
            
            <td width="49"></td>
            <td width="139">Dominant Hand</td><td><input type="radio" value="left" name="dominanthand">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;<input type="radio" value="right" name="dominanthand">&nbsp;&nbsp;&nbsp;Right</td>
-          <td width="75"></td> <td width="130">A & O:</td><td><select name="ao"><option>excellent</option><option> good</option><option> fair</option><option> severe</option></select></td>
+          <td width="75"></td> <td width="130">A & O:</td><td><select name="ao"><option value="excellent">excellent</option><option value="good"> good</option><option value="fair"> fair</option><option value="severe"> severe</option></select></td>
            </tr>  
            </table> 
           <br> 

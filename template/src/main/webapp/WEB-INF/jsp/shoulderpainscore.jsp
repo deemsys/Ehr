@@ -43,6 +43,18 @@ $("#number1").keyup(function() {
 		      step: 1,
 		      slide: function( event, ui ) {
 		        $( "#describes" ).val(+ ui.value );
+		         document.getElementById("describeserr").innerHTML="";
+		        if(document.getElementById("describes").value==0)
+		        {
+		        document.getElementById("describeserr").innerHTML="No Pain";
+		        return false;
+		        }
+		        if(document.getElementById("describes").value==100)
+		        {
+		        document.getElementById("describeserr").innerHTML="Severe Pain";
+		        return false;
+		        }
+		         
 		      }
 		    });
 		    $( "#describes" ).val(+ $( "#slider" ).slider( "value" ) );
@@ -91,7 +103,7 @@ $(function() {
           <li><a href="#tabs-1">1</a></li>
           <li><a href="#tabs-2">2</a></li>          
        </ul>
-       <input type="text" name="symptom" id="symptom" value="${symptom}">
+       <input type="hidden" name="symptom" id="symptom" value="${symptom}"> 
        <c:choose>
             <c:when test="${empty shoulderpain}">  
    <div id="tabs-1"> 
@@ -145,16 +157,17 @@ $(function() {
 <tr height="30">
 <td>
 <label for="describes"><b>Pain Scale:</b></label>
-<input type="text" id="describes" name="painscale" />&nbsp;&nbsp;&nbsp;
+<input type="text" id="describes" name="painscale" /><span id="describeserr"></span>&nbsp;&nbsp;&nbsp;
 </td>
+
 </tr>
 <tr height="30">
-<td>
-<div id="slider"></div>
-</td>
+<td><div id="slider" style="width: 827px; "></div> </td>
 </tr>
 </table>
-<br/>
+<!-- <td>
+<div id="slider"></div>
+</td><br/> -->
 <br/>
  
 </div>
