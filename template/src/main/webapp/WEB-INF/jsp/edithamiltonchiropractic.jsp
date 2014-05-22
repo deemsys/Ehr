@@ -31,13 +31,84 @@ $(function() {
       step: 1,
       slide: function( event, ui ) {
         $( "#amount" ).val(+ ui.value );
+         document.getElementById("amounterr").innerHTML="";
+        if(document.getElementById("amount").value==10)
+    {
+    //alert("Severe pain");
+     document.getElementById("amounterr").innerHTML="Severe pain";  
+    }
+    
+     if(document.getElementById("amount").value==0)
+    {
+  // aler("No pain");
+   document.getElementById("amounterr").innerHTML="No pain";
+    }
       }
     });
     $( "#amount" ).val(+ $( "#slider" ).slider( "value" ) );
+     
+        
+  });
+
+$(function() {
+    $( "#slider1" ).slider({
+      value:0,
+      min: 0,
+       max: 10,
+        step: 1,
+      slide: function( event, ui ) {
+        $( "#amount1" ).val(+ ui.value );
+       
+       
+    document.getElementById("amount1err").innerHTML="";
+     if(document.getElementById("amount1").value==0)
+    {
+ 
+   document.getElementById("amount1err").innerHTML="No pain";
+    }
+   
+     if(document.getElementById("amount1").value==10)
+    {
+    
+    document.getElementById("amount1err").innerHTML="Severe pain";
+    }
+        
+      }
+    });
+    $( "#amount1" ).val(+ $( "#slider1" ).slider( "value" ) );
+
+    
+    
+  });
+
+
+
+$(function() {
+    $( "#slider2" ).slider({
+      value:1,
+      min: 0,
+      max: 10,
+      step: 1,
+      slide: function( event, ui ) {
+        $( "#amount2" ).val(+ ui.value );
+         document.getElementById("amount2err").innerHTML="";
+         if(document.getElementById("amount2").value==10)
+    {
+   // alert("Severe pain");
+   document.getElementById("amount2err").innerHTML="Severe pain";
+    }
+    
+     if(document.getElementById("amount2").value==0)
+    {
+    //alert("No pain");
+     document.getElementById("amount2err").innerHTML="No pain";
+    }
+      }
+    });
+    $( "#amount2" ).val(+ $( "#slider2" ).slider( "value" ) );
   });
 
 </script>
-  
   
   
  <body>
@@ -611,7 +682,10 @@ function elbowPopup() {
 				                  </tr>
 				                  <tr class="row1">
 				                  <td>Spinal Percuss</td>
-				                  <td>Painlevel</td>
+				                  <td>
+<label for="amount1"><b>Pain Scale:</b></label>
+	 <input type="text" id="amount1" style="border:0; color:#f6931f; font-weight:bold; width: 170px" name="spinal_percuss"/><span id="amount1err"></span>&nbsp;&nbsp;&nbsp;
+  <div id="slider1" style="width: 341px; "></div></td>
 				                  <td><input type="text" name="spinal_percuss" value="${hamiltonchiropractic.spinal_percuss }"></td>				                 
 				                  </tr>
 				                  <tr class="row1">
@@ -681,7 +755,10 @@ function elbowPopup() {
 				                 
 				                  <tr class="row1">
 				                  <td>Spinal Percuss</td>
-				                  <td>Painlevel</td>
+				                  				                  <td> 
+<label for="amount2"><b>Pain Scale:</b></label>
+	 <input type="text" id="amount2" style="border:0; color:#f6931f; font-weight:bold;" name="spinal_percusst"/><span id="amount2err"></span>&nbsp;&nbsp;&nbsp;
+ <div id="slider2"></div></td>
 				                  <td></td>				                 
 				                  </tr>
 			                     <tr class="row1">
@@ -779,7 +856,7 @@ function elbowPopup() {
 				                  <td>Spinal Percussion</td>
 				                  <td>
 <label for="amount"><b>Pain Scale:</b></label>
-	 <input type="text" id="amount" style="border:0; color:#f6931f; font-weight:bold;" name="painscale" />&nbsp;&nbsp;&nbsp;
+	 <input type="text" id="amount" style="border:0; color:#f6931f; font-weight:bold;" name="painscale" /><span id="amounterr"></span>&nbsp;&nbsp;&nbsp;
  <div id="slider"></div></td>
 				                 <td class="input_txt" align="left"></td>
 				                 <td></td>	

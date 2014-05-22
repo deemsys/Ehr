@@ -61,6 +61,17 @@ $(function() {
       step: 1,
       slide: function( event, ui ) {
         $( "#amount" ).val(+ ui.value );
+        document.getElementById("amounterr").innerHTML="";
+        if(document.getElementById("amount").value==0)
+        {
+        document.getElementById("amounterr").innerHTML="No Pain";
+        return false;
+        }
+        if(document.getElementById("amount").value==10)
+        {
+        document.getElementById("amounterr").innerHTML="Severe Pain";
+        return false;
+        }
       }
     });
     $( "#amount" ).val(+ $( "#slider" ).slider( "value" ) );
@@ -68,16 +79,38 @@ $(function() {
 
 $(function() {
     $( "#slider1" ).slider({
-      value:1,
+      value:0,
       min: 0,
-      max: 10,
-      step: 1,
+       max: 10,
+        step: 1,
       slide: function( event, ui ) {
         $( "#amount1" ).val(+ ui.value );
+       
+       
+    document.getElementById("amount1err").innerHTML="";
+     if(document.getElementById("amount1").value==0)
+    {
+ 
+   document.getElementById("amount1err").innerHTML="No pain";
+   return false;
+    }
+    document.getElementById("amount1err").innerHTML="";
+     if(document.getElementById("amount1").value==10)
+    {
+    
+    document.getElementById("amount1err").innerHTML="Severe pain";
+    return false;
+    }
+        
       }
     });
     $( "#amount1" ).val(+ $( "#slider1" ).slider( "value" ) );
+
+    
+    
   });
+
+
 $(function() {
     $( "#slider2" ).slider({
       value:1,
@@ -86,10 +119,23 @@ $(function() {
       step: 1,
       slide: function( event, ui ) {
         $( "#amount2" ).val(+ ui.value );
+         document.getElementById("amount2err").innerHTML="";
+         if(document.getElementById("amount2").value==10)
+    {
+   // alert("Severe pain");
+   document.getElementById("amount2err").innerHTML="Severe pain";
+    }
+    
+     if(document.getElementById("amount2").value==0)
+    {
+    //alert("No pain");
+     document.getElementById("amount2err").innerHTML="No pain";
+    }
       }
     });
     $( "#amount2" ).val(+ $( "#slider2" ).slider( "value" ) );
   });
+
 </script>
 <!-- <script type="text/javascript">
        function Validate(event) {
@@ -222,14 +268,14 @@ document.getElementById("leftproxi").style.display="none";
 <td><input type="checkbox" name="rightribpain" value="Right Rib Pain" id="rightrib" onclick="rightcheck()">Right Rib Pain
 
 <label for="amount1" style="width: 50;display:none;" id="label"><b>Pain Scale:</b></label>
-	 <input type="text" id="amount1" style="border:0;display:none; width: 50;color:#f6931f; font-weight:bold;" name="painscale1"/>&nbsp;&nbsp;&nbsp;
- <div id="slider1" style="width: 100; display:none"></div>
+	 <input type="text" id="amount1" style="border:0;display:none; width: 50;color:#f6931f; font-weight:bold;" name="painscale1"/><span id="amount1err"></span>&nbsp;&nbsp;&nbsp;
+ <div id="slider1" style="width: 130; display:none"></div>
 
 </td>
 <td><input type="checkbox" name="leftribpain" value="Left Rib Pain" id="leftrib" onclick="rightcheck()">Left Rib Pain
  <label for="amount2" style="width: 50;display:none;" id="label1"><b>Pain Scale:</b></label>
-	 <input type="text" id="amount2" style="border:0;display:none; width: 50;color:#f6931f; font-weight:bold;" name="painscale2" />&nbsp;&nbsp;&nbsp;
- <div id="slider2" style="width: 100; display:none;"> 
+	 <input type="text" id="amount2" style="border:0;display:none; width: 50;color:#f6931f; font-weight:bold;" name="painscale2" /><span id="amount2err"></span>&nbsp;&nbsp;&nbsp;
+ <div id="slider2" style="width: 130; display:none;"> 
 </td>
 <td><input type="checkbox" name="lbp" value="LBP" >LBP</td>
 <td><input type="checkbox" name="rightsipain" value="Right SI Pain" >Right SI Pain</td>
@@ -300,8 +346,8 @@ document.getElementById("leftproxi").style.display="none";
  
  <td>
 <label for="amount"><b>Pain Scale:</b></label>
-	 <input type="text" id="amount" style="border:0; color:#f6931f; font-weight:bold;" name="painscale" />&nbsp;&nbsp;&nbsp;
- <div id="slider"></div></td>
+	 <input type="text" id="amount" style="border:0; color:#f6931f; font-weight:bold;" name="painscale" /><span id="amounterr"></span>&nbsp;&nbsp;&nbsp;
+ <div id="slider" style="width: 306px; "></div></td>
  <td>
  <script type="text/javascript">
 				var $im = 1;
