@@ -18,6 +18,58 @@ $(function() {
 });
 
   </script>
+   <script>
+  $(function() {
+    $( "#datepicker" ).datepicker();
+  });
+  $(function() {
+	    $( "#datepicker1" ).datepicker();
+	  });
+  
+  </script>
+   <script>
+  function checkSubmit()
+  {
+  
+	  document.getElementById("pnameerror").innerHTML="";
+		if(document.getElementById("pname").value=="")
+		{
+		document.getElementById("pnameerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+  document.getElementById("datepickererror").innerHTML="";
+	if(document.getElementById("datepicker").value=="")
+	{
+	document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	document.getElementById("numerror").innerHTML="";
+	if(document.getElementById("num").value=="")
+	{
+	document.getElementById("numerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("numerror").innerHTML="";
+	if(isNaN(document.getElementById("num").value))
+	{
+	document.getElementById("numerror").innerHTML="Enter Only Numbers";
+	return false;
+	}
+		document.getElementById("datepicker1error").innerHTML="";
+		if(document.getElementById("datepicker1").value=="")
+		{
+		document.getElementById("datepicker1error").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		
+  }
+  
+  </script>
 <body>
 <form action="updateradiologicreport" method="post" name="update" id="update">
 <br>
@@ -39,13 +91,13 @@ $(function() {
                         <tr class="row1">
 	                              <td>Patient Name:</td>
 				                  <input type="hidden" class="input_txtbx1" id="inp_id" value="${radiologicReport.pid}" name="pid" />
-                                 <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" value="${radiologicReport.pname }" name="pname" /></br><span class="err"><form:errors path="report.pname"></form:errors></span></td>
+                                 <td class="input_txt"><input type="text" class="input_txtbx1" id="pname" value="${radiologicReport.pname }" name="pname" /></br><span id="pnameerror" style="color: red;font-style:italic;"><form:errors path="report.pname"></form:errors></span></td>
                                  <td>Date:</td>
-                                 <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${radiologicReport.date }" name="date" /></br><span class="err"><form:errors path="report.date"></form:errors></span></td>
+                                 <td class="input_txt"><input type="text" class="input_txtbx1" id="datepicker" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${radiologicReport.date }" name="date" /></br><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="report.date"></form:errors></span></td>
                                  <td>I.D.#:</td>
-                                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" value="${radiologicReport.id }" name="id" /></br><span class="err"><form:errors path="report.id"></form:errors></span></td>
+                                  <td class="input_txt"><input type="text" class="input_txtbx1" id="num" value="${radiologicReport.id }" name="id" /></br><span id="numerror" style="color: red;font-style:italic;"><form:errors path="report.id"></form:errors></span></td>
                					<td>Date Of Birth</td>
-               					 <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${radiologicReport.dob }" name="dob" /></br><span class="err"><form:errors path="report.dob"></form:errors></span></td>
+               					 <td class="input_txt"><input type="text" class="input_txtbx1" id="datepicker1" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${radiologicReport.dob }" name="dob" /></br><span id="datepicker1error" style="color: red;font-style:italic;"><form:errors path="report.dob"></form:errors></span></td>
                			 </tr>
                			 
                  <tr class="row1">
@@ -606,7 +658,7 @@ $(function() {
 				               	</tr>
 				               	<tr class="row1">
                   								 <td>&nbsp;&nbsp;</td>
-                  								<td><input type="submit" class="submit_btn1" value="Update" name="insert"></td>
+                  								<td><input type="submit" class="submit_btn1" value="Update" name="insert" onclick="return checkSubmit('this');"></td>
                   								
 				                    
 				                    <td><input type="button" class="submit_btn1" value="Cancel" onclick="window.location.href='viewradiologicreport'"></td>
