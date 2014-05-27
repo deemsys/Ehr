@@ -34,25 +34,42 @@ $(function() {
   function checkSubmit()
   {
   
-  document.getElementById("nameerr").innerHTML="";
-  if(document.getElementById("pname").value="")
-  {
-  document.getElementById("nameerr").innerHTML="Required field should not empty";
-  return false;
-  }
-  
-  document.getElementById("numerr").innerHTML="";
-  if(document.getElementById("id").value="")
-  {
-  document.getElementById("numerr").innerHTML="Required field should not empty";
-  return false;
-  }
-  document.getElementById("numerr").innerHTML="";
-		if(isNaN(document.getElementById("id").value))
+	  document.getElementById("pnameerror").innerHTML="";
+		if(document.getElementById("pname").value=="")
 		{
-		document.getElementById("numerr").innerHTML="Enter only Numbers";
+		document.getElementById("pnameerror").innerHTML="Required Field Should not be Empty";
+		
 		return false;
 		}
+  document.getElementById("datepickererror").innerHTML="";
+	if(document.getElementById("datepicker").value=="")
+	{
+	document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	document.getElementById("numerror").innerHTML="";
+	if(document.getElementById("num").value=="")
+	{
+	document.getElementById("numerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("numerror").innerHTML="";
+	if(isNaN(document.getElementById("num").value))
+	{
+	document.getElementById("numerror").innerHTML="Enter Only Numbers";
+	return false;
+	}
+		document.getElementById("datepicker1error").innerHTML="";
+		if(document.getElementById("datepicker1").value=="")
+		{
+		document.getElementById("datepicker1error").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		
   }
   
   </script>
@@ -79,13 +96,13 @@ $(function() {
     				<table cellpadding="0" cellspacing="0" border="0" width="100%">
 	                            <tr class="row1">
 				                  <td><span class="err">*</span>Patient Name:</td>
-				                  <td><input type="text" class="input_txtbx1" id="pname" name="pname" value="${name}"/><br/><span class="err" "nameerr"><form:errors path="RadiologicReport.pname"></form:errors></td>
+				                  <td><input type="text" class="input_txtbx1" id="pname" name="pname" value="${name}"/><br/><span id="pnameerror" style="color: red;font-style:italic;"><form:errors path="RadiologicReport.pname"></form:errors></td>
 				                  <td><span class="err">*</span>Date:</td>
-				                  <td><input type="text" class="input_txtbx1" id="datepicker" name="date" /><br/><span class="err"><form:errors path="RadiologicReport.date"></form:errors></td>
+				                  <td><input type="text" class="input_txtbx1" id="datepicker" name="date" /><br/><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="RadiologicReport.date"></form:errors></td>
 				                  <td><span class="err">*</span>I.D.#:</td>
-				                  <td><input type="text" class="input_txtbx1" id="id" name="id" /><br/><span class="err" id="numerr"><form:errors path="RadiologicReport.id"></form:errors></span></td>
+				                  <td><input type="text" class="input_txtbx1" id="num" name="id" /><br/><span  id="numerror" style="color: red;font-style:italic;"><form:errors path="RadiologicReport.id"></form:errors></span></td>
 				                  <td><span class="err">*</span>Date Of Birth</td>
-				                  <td><input type="text" class="input_txtbx1" id="datepicker1" name="dob" /><br/><span class="err"><form:errors path="RadiologicReport.dob"></form:errors></td>
+				                  <td><input type="text" class="input_txtbx1" id="datepicker1" name="dob" /><br/><span id="datepicker1error" style="color: red;font-style:italic;"><form:errors path="RadiologicReport.dob"></form:errors></td>
 				                </tr>
 				    </table>
 				    
@@ -637,7 +654,7 @@ $(function() {
 				           <table cellpadding="0" cellspacing="0" border="0">
 				           <tr>
 				   <td valign="top" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-				  <td valign="top" align="center"><br><input type="submit" class="submit_btn" value="Save"></td>
+				  <td valign="top" align="center"><br><input type="submit" class="submit_btn" value="Save" onclick="return checkSubmit('this');"></td>
 				   <td>&nbsp;&nbsp;</td>
              		 <!-- <td valign="top" align="center"><br><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewradiologicreport'"></td> -->
 				  <td>&nbsp;&nbsp;</td>
@@ -673,13 +690,13 @@ $(function() {
                         <tr class="row1">
 	                              <td>Patient Name:</td>
 				                  <input type="hidden" class="input_txtbx1" id="inp_id" value="${radio.pid}" name="pid" />
-                                 <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" value="${radio.pname }" name="pname" /></br><span class="err"><form:errors path="RadiologicReport.pname"></form:errors></span></td>
+                                 <td class="input_txt"><input type="text" class="input_txtbx1" id="pname" value="${radio.pname }" name="pname" /></br><span id="pnameerror"><form:errors path="RadiologicReport.pname"></form:errors></span></td>
                                  <td>Date:</td>
-                                 <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${radio.date }" name="date" /></br><span class="err"><form:errors path="RadiologicReport.date"></form:errors></span></td>
+                                 <td class="input_txt"><input type="text" class="input_txtbx1" id="datepicker" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${radio.date }" name="date" /></br><span id="datepickererror"><form:errors path="RadiologicReport.date"></form:errors></span></td>
                                  <td>I.D.#:</td>
-                                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" value="${radio.id }" name="id" /></br><span class="err"><form:errors path="RadiologicReport.id"></form:errors></span></td>
+                                  <td class="input_txt"><input type="text" class="input_txtbx1" id="num" value="${radio.id }" name="id" /></br><span id="numerror"><form:errors path="RadiologicReport.id"></form:errors></span></td>
                					<td>Date Of Birth</td>
-               					 <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${radio.dob }" name="dob" /></br><span class="err"><form:errors path="RadiologicReport.dob"></form:errors></span></td>
+               					 <td class="input_txt"><input type="text" class="input_txtbx1" id="datepicker1" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${radio.dob }" name="dob" /></br><span id="datepicker1error"><form:errors path="RadiologicReport.dob"></form:errors></span></td>
                			 </tr>
                			 
                  <tr class="row1">
