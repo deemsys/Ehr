@@ -1269,12 +1269,59 @@ var $sid = xx+1;
 				                 	</td> 
 				                  	<td width="700"></td>
 				        </tr> 
+				        
+				         <script type="text/javascript">
+function checkAjaxPost() {  
+	var val=document.getElementById("type_of_accident").value;
+	var element=document.getElementById('accident');
+
+	if(val=='autoaccident')
+	 {	 
+		
+	var username = $('#pusername').val();
+
+	 
+	 $.ajax({  
+		    type: "POST",  
+		    url: "/EhrApp/duties_ajax",  
+		    data: "user=" + username,
+		    success: function(response){  
+		
+		    
+		    	if(response=="")
+		    		{
+		    		popupWindow = window.open("dutiesunderduress" ,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		    		}
+		    	else
+		    		{
+		    		var url="editdutiesdetails?username="+document.getElementById("username").value;
+		    		popupWindow = window.open(url,"popUpWindow" ,'width=1500,height=700,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		    		}
+		    
+	
+		    },  
+		    error: function(e){  
+		      alert('Error: ' + e);  
+		    }  
+		  });  
+		}  
+
+	 if(val=='other')
+		{
+			element.style.display='block';
+			element.focus(); 
+		}
+		 else  
+			  element.style.display='none';
+}
+</script>
+  
 				       
 				          <tr class="row1">
                 							<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Type Of Accident:</td>
 
 				                  		
-				                  		<td>	<select name="type_Of_Accident" id="type_of_accident" class="input_cmbbx1" onchange='Checklight();'>
+				                  		<td>	<select name="type_Of_Accident" id="type_of_accident" class="input_cmbbx1" onchange='Checklight();' onclick="checkAjaxPost()">
 						                  <option value="autoaccident" <c:if test="${patientDetails.type_Of_Accident=='autoaccident'}"><c:out value="selected"/></c:if>>Auto</option>
 						                  <option value="workaccident" <c:if test="${patientDetails.type_Of_Accident=='workaccident'}"><c:out value="selected"/></c:if>>Work</option>
 						                  <option value="mobileaccident" <c:if test="${patientDetails.type_Of_Accident=='mobileaccident'}"><c:out value="selected"/></c:if>>Mobile</option>
