@@ -56,8 +56,34 @@ document.getElementById("patientsnameerror").innerHTML=" ";
 	}
 
 	</script>
+	<script>
+  function printPage(id)
+  {
+	
+	        document.getElementById('print').style.visibility = 'hidden';
+	        document.getElementById('saveid').style.visibility = 'hidden';
+	        document.getElementById('cancelid').style.visibility = 'hidden';
+		  
+     var html="<html>";
+     html+= document.getElementById(id).innerHTML;
+
+     html+="</html>";
+
+     var printWin = window.open('','','left=0,top=0,width=1400,height=1000,toolbar=0,scrollbars=0,status  =0');
+     printWin.document.write(html);
+     printWin.document.close();
+     printWin.focus();
+     printWin.print();
+     printWin.close();
+     document.getElementById('print').style.visibility = 'visible';
+     document.getElementById('saveid').style.visibility = 'visible';
+     document.getElementById('cancelid').style.visibility = 'visible';
+	  
+  }
+  </script>
  </head>
 <body>
+		
 <div id="right_content">
 <form action="treatform" method="POST">
 
@@ -72,8 +98,9 @@ document.getElementById("patientsnameerror").innerHTML=" ";
 
       <tr>
       <td valign="top" align="left">
-        	<div>
+        	<div id="block1">
 	            <div class="headings altheading">
+	          <img  src="resources/images/print.png" id="print" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block1');" >
 	              <h2>Authorization and Consent To Treat</h2>
 	            </div>
             <div class="contentbox">
@@ -123,10 +150,10 @@ document.getElementById("patientsnameerror").innerHTML=" ";
                          <table cellpadding="0" cellspacing="0" border="0" width="100%">
   				<tr>
     				<td align="left" valign="top" width="100%" style="padding-right:25px;">
-                        
+                         <div align="justify">
                         <table cellpadding="0" cellspacing="0" border="0" width="60%">
                         <tr>
-                                                <div align="justify">
+                                               
                         
                        <p id="mypar"> The undersigned hereby authorizes Dr. Charles T. Yang and whomever may be designated as assistants at Perry Chiropractic & Therapy Center to administer such examinations, treatment, testing, and/or x-rays as they deem necessary. </p>
  
@@ -159,13 +186,16 @@ document.getElementById("patientsnameerror").innerHTML=" ";
 				                  	<input type="text" class="input_txtbx1" id="witness" name="witness" value="${consent.witness}"/><br><span id="witnesserror" style="color: red;font-style:italic;"><form:errors path="Treatform.witness"></form:errors></span>
 				                  	</tr>
                         <tr>
-                        </table>
-                        </c:otherwise>
+                        </table></div></td></tr></table></c:otherwise>
                         </c:choose>
-                        <table>
+                        
+                        <table><tr>
 				  <td valign="top" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-				                <td valign="top" align="right"><br><input type="submit" class="submit_btn" value="Save" onclick="return checkSubmit('this');"></td>
+				                <td valign="top" align="right"><br><input type="submit" class="submit_btn" value="Save" id="saveid"  onclick="return checkSubmit('this');"></td>
+				                <td><br><a href="viewpatient"style="color:white" class="submit_btn" id="cancelid">Cancel</a></td>
 				               
+				               <!-- <td valign="top" align="right"><br><a href="javascript:void(processPrint());"  >Print</a></td> -->
+				                <!-- <td valign="top" align="center"><br><input type="reset" class="submit_btn" value="Reset"></td> -->
 				 				 <td valign="top" align="center"><br><!-- <a href="treatformlist" class="submit_btn" style="color: white">Cancel</a> --></td>
 				 				 <td>&nbsp;&nbsp;</td>
 				 				 <!-- <td valign="top" align="center"><br><input type="button" class="submit_btn" value="View" onclick="window.location.href='treatformlist'"></td> -->
@@ -181,13 +211,45 @@ document.getElementById("patientsnameerror").innerHTML=" ";
                         </td>
                         </tr>
                         </table>
-                        </div>
-                        </div>
+                       
                         </td>
                         </tr>
                         </table>
                         </form>
                         </div>
+                       <!--  <script language="javascript">
+    var gAutoPrint = true;
+
+    function processPrint(){
+
+    if (document.getElementById != null){
+    var html = '<HTML>\n<HEAD>\n';
+    if (document.getElementsByTagName != null){
+    var headTags = document.getElementsByTagName("head");
+    if (headTags.length > 0) html += headTags[0].innerHTML;
+    }
+
+    html += '\n</HE' + 'AD>\n<BODY>\n';
+    var printReadyElem = document.getElementById("printMe");
+
+    if (printReadyElem != null) html += printReadyElem.innerHTML;
+    else{
+    alert("Error, no contents.");
+    return;
+    }
+
+    html += '\n</BO' + 'DY>\n</HT' + 'ML>';
+    var printWin = window.open("","processPrint");
+    printWin.document.open();
+    printWin.document.write(html);
+    printWin.document.close();
+
+    if (gAutoPrint) printWin.print();
+    } else alert("Browser not supported.");
+
+    }
+</script>
+	 -->
                         </body>
                         </html>
                         

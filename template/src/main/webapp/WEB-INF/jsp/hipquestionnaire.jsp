@@ -206,7 +206,34 @@ $(function() {
 	}
 
 	</script>
+<script>
+  function printPage(id)
+  {
+	
+	        document.getElementById('print').style.visibility = 'hidden';
+	        document.getElementById('print1').style.visibility = 'hidden';
+	        document.getElementById('print2').style.visibility = 'hidden';
+	        document.getElementById('saveid').style.visibility = 'hidden';
+	        document.getElementById('cancelid').style.visibility = 'hidden';
+     var html="<html>";
+     html+= document.getElementById(id).innerHTML;
 
+     html+="</html>";
+
+     var printWin = window.open('','','left=0,top=0,width=1400,height=1000,toolbar=0,scrollbars=0,status  =0');
+     printWin.document.write(html);
+     printWin.document.close();
+     printWin.focus();
+     printWin.print();
+     printWin.close();
+     document.getElementById('print').style.visibility = 'visible';
+     document.getElementById('print1').style.visibility = 'visible';
+     document.getElementById('print2').style.visibility = 'visible';
+     
+     document.getElementById('saveid').style.visibility = 'visible';
+     document.getElementById('cancelid').style.visibility = 'visible';
+  }
+  </script>
 </head>
 <body>
 <br><br>
@@ -223,8 +250,9 @@ $(function() {
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
 <tr>
 <td valign="top" align="left">
- <div>
+ <div id="block1">
 	            <div class="headings altheading">
+	           <img  src="resources/images/print.png" id="print" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block1');" >
 	            <center> <h2>
 	            HIP	AND KNEE QUESTIONNAIRE</h2></center><br/>
 	            
@@ -278,7 +306,12 @@ $(function() {
 	    	    </table>  
 
 
+<!-- <table>
+<tr>
+<td valign="middle" align="left"> <input type="button" class="submit_btn" value=" Print" onclick="window.print();return false;" /></td>
+</tr>
 
+</table> -->
 
 
 
@@ -319,8 +352,9 @@ $(function() {
 <table cellpadding="0" cellspacing="0" border="0" width="100%" class="margin_table">
 <tr>
 <td valign="top" align="left">
- <div>
+<div id="block2">
 	            <div class="headings altheading">
+	           <img  src="resources/images/print.png" id="print1" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block2');" >
 	            <center> <h2>
 	            HIP	AND KNEE QUESTIONNAIRE</h2></center><br/>
 	             
@@ -354,9 +388,21 @@ $(function() {
               </table>
               <br>
               <p><b>&nbsp;7.How difficult was it for you to put on or take off socks/stockings during the past week?</b></p>
-        <table><tr><td width="150"><input type="radio" name="socks" value="Not at all difficult">Not at all difficult</td><td width="150"><input type="radio" name="socks" value="Slightly difficult">Slightly difficult</td><td width="150"><input type="radio" name="socks" value="Moderately difficult">Moderately difficult</td><td width="150"><input type="radio" name="socks" value="Very difficult">Very difficult</td><td width="150"><input type="radio" name="socks" value="Extremely difficult">Extremely difficult</td><td><input type="radio" name="socks" value="Cannot do it all">Cannot do it all</td></tr></table>     
+        <table><tr><td ><input type="radio" name="socks" value="Not at all difficult">Not at all difficult&nbsp;&nbsp;&nbsp;</td><td ><input type="radio" name="socks" value="Slightly difficult">Slightly difficult&nbsp;&nbsp;&nbsp;</td><td ><input type="radio" name="socks" value="Moderately difficult">Moderately difficult&nbsp;&nbsp;&nbsp;</td>
+        </tr></table>
+        <table><tr>
+        <td ><input type="radio" name="socks" value="Very difficult">Very difficult&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td ><input type="radio" name="socks" value="Extremely difficult">Extremely difficult&nbsp;&nbsp;&nbsp;&nbsp;</td><td><input type="radio" name="socks" value="Cannot do it all">Cannot do it all&nbsp;&nbsp;&nbsp;</td></tr></table>     
 	    
-       
+        <br>
+	    <br>
+	    <br>
+    <!--   <table>
+<tr>
+<td valign="top" align="right"> <input type="button" class="submit_btn" value=" Print" onclick="window.print();return false;" /></td>
+</tr>
+
+</table> -->
+  
              
            </br>
            </br>
@@ -373,8 +419,9 @@ $(function() {
 	    <table cellpadding="0" cellspacing="0" border="0" width="100%"  class="margin_table">
 <tr>
 <td valign="top" align="left">
- <div>
+<div id="block3">
 	            <div class="headings altheading">
+	          <img  src="resources/images/print.png" id="print2" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block3');" >
 	            <center> <h2>
 	            HIP	AND KNEE QUESTIONNAIRE</h2></center><br/>
 	             
@@ -541,9 +588,9 @@ $(function() {
 	    
 	    <table align="right"><tr><td  >
 	    
-	     <input class="submit_btn" type="submit" value="Save" onclick="return checkSubmit('this');"></td><td>
-	     <a href="viewhipquestionnaire" style="color: white" class="submit_btn">Cancel</a>
-	    
+	     <input class="submit_btn" type="submit" value="Save" id="saveid" onclick="return checkSubmit('this');"></td>
+	       <td><a href="viewpatient"style="color:white" id="cancelid" class="submit_btn">Cancel</a></td>
+	    <!--  <td > <input type="button"   class="submit_btn" value=" Print" onclick="window.print();return false;" /></td> -->
 	    </div></div>
          
          

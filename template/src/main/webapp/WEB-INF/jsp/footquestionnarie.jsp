@@ -232,7 +232,34 @@ document.getElementById("securityerror").innerHTML=" ";
 	}
 
 	</script>
+<script>
+  function printPage(id)
+  {
+	
+	        document.getElementById('print').style.visibility = 'hidden';
+	        document.getElementById('print1').style.visibility = 'hidden';
+	        document.getElementById('print2').style.visibility = 'hidden';
+		 
+	        document.getElementById('saveid').style.visibility = 'hidden';
+	        document.getElementById('cancelid').style.visibility = 'hidden';
+     var html="<html>";
+     html+= document.getElementById(id).innerHTML;
 
+     html+="</html>";
+
+     var printWin = window.open('','','left=0,top=0,width=1400,height=1000,toolbar=0,scrollbars=0,status  =0');
+     printWin.document.write(html);
+     printWin.document.close();
+     printWin.focus();
+     printWin.print();
+     printWin.close();
+     document.getElementById('print').style.visibility = 'visible';
+     document.getElementById('print1').style.visibility = 'visible';
+     document.getElementById('print2').style.visibility = 'visible';
+     document.getElementById('saveid').style.visibility = 'visible';
+     document.getElementById('cancelid').style.visibility = 'visible';
+  }
+  </script>
 </head>
 <body>
 <br><br>
@@ -252,8 +279,9 @@ document.getElementById("securityerror").innerHTML=" ";
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
 <tr>
 <td valign="top" align="left">
- <div>
+<div id="block1">
 	            <div class="headings altheading">
+	           <img  src="resources/images/print.png" id="print" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block1');" >
 	            <center> <h2>
 	            FOOT AND ANKLE QUESTIONNAIRE</h2></center><br/>
 	            
@@ -326,8 +354,9 @@ document.getElementById("securityerror").innerHTML=" ";
 <table cellpadding="0" cellspacing="0" border="0" width="100%" class="margin_table">
 <tr>
 <td valign="top" align="left">
- <div>
+ <div id="block2">
 	            <div class="headings altheading">
+	           <img  src="resources/images/print.png" id="print1" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block2');" >
 	            <center> <h2>
 	            FOOT AND ANKLE QUESTIONNAIRE</h2></center><br/>
 	             
@@ -337,9 +366,14 @@ document.getElementById("securityerror").innerHTML=" ";
           
               <br>
               <p><b>&nbsp;11.How much trouble did you have with balance during the past week?</b></p>
-              <table><tr><td width="150"><input type="radio" name="trouble" value="No trouble at all">No at all difficult</td><td width="150"><input type="radio" name="trouble" value="A little bit of trouble">A little bit of trouble</td><td width="180"><input type="radio" name="trouble" value="A moderate amount of trouble">A moderate amount of trouble</td><td width="150"><input type="radio" name="trouble" value="Quite a bit of trouble">Quite a bit of trouble</td><td width="150"><input type="radio" name="trouble" value="A great amount of trouble">A great amount of trouble</td>&nbsp;&nbsp;<td><input type="radio" name="trouble" value="I cannot balance on my feet all">I cannot balance on my feet all</td></tr></table>     
+              <table><tr><td ><input type="radio" name="trouble" value="No trouble at all" >No at all difficult&nbsp;&nbsp;&nbsp;</td><td ><input type="radio" name="trouble" value="A little bit of trouble">A little bit of trouble&nbsp;&nbsp;&nbsp;</td><td ><input type="radio" name="trouble" value="A moderate amount of trouble">A moderate amount of trouble&nbsp;&nbsp;&nbsp;</td>
+              <td ><input type="radio" name="trouble" value="Quite a bit of trouble">Quite a bit of trouble&nbsp;&nbsp;&nbsp;</td></tr></table>     
+	          <table><tr><td ><input type="radio" name="trouble" value="A great amount of trouble">A great amount of trouble&nbsp;&nbsp;&nbsp;</td><td><input type="radio" name="trouble" value="I cannot balance on my feet all">I cannot balance on my feet all&nbsp;&nbsp;&nbsp;</td></tr></table>
 	          <p><b>&nbsp;12.How difficult was it for you to put on or take off socks/stockings during the past week?</b></p>
-        <table><tr><td width="150"><input type="radio" name="socks" value="Not at all difficult">Not at all difficult</td><td width="150"><input type="radio" name="socks" value="Slightly difficult">Slightly difficult</td><td width="150"><input type="radio" name="socks" value="Moderately difficult">Moderately difficult</td><td width="150"><input type="radio" name="socks" value="Very difficult">Very difficult</td><td width="150"><input type="radio" name="socks" value="Extremely difficult">Extremely difficult</td><td><input type="radio" name="socks" value="Cannot do it all">Cannot do it all</td></tr></table>     
+        <table><tr><td ><input type="radio" name="socks" value="Not at all difficult">Not at all difficult&nbsp;&nbsp;&nbsp;</td><td ><input type="radio" name="socks" value="Slightly difficult">Slightly difficult&nbsp;&nbsp;&nbsp;</td><td ><input type="radio" name="socks" value="Moderately difficult">Moderately difficult&nbsp;&nbsp;&nbsp;</td><td ><input type="radio" name="socks" value="Very difficult">Very difficult&nbsp;&nbsp;&nbsp;</td></tr></table>     
+	   <table>
+	   <tr><td ><input type="radio" name="socks" value="Extremely difficult">Extremely difficult&nbsp;&nbsp;&nbsp;</td><td><input type="radio" name="socks" value="Cannot do it all">Cannot do it all</td></tr>
+	   </table>
 	    <br>
 	    <p><b>All questions are about how you have on average during the past week.</b></p>
 	    <p>During the past week,please tell us about how painful your foot or ankle was when you were performing the following activities.</p>
@@ -376,9 +410,14 @@ document.getElementById("securityerror").innerHTML=" ";
 	     <tr><td style= "border:1px solid;" ><b>&nbsp;23.All shoes </b></td><td style= "border:1px solid;" align="center"><input type="radio" value="1" name="allversion">&nbsp;1</td><td style= "border:1px solid;" align="center"><input type="radio" value="2" name="allversion">&nbsp;2</td><td style= "border:1px solid;" align="center"><input type="radio" value="3" name="allversion">&nbsp;3</td></tr>
 	     </table>
         <p><b>&nbsp;24.How much did your foot or ankle problem interfere with your normal work ,including work both outside the home and house work?</b></p>
-              <table><tr><td width="150"><input type="radio" name="foot" value="Not at all">Not at all</td><td width="150"><input type="radio" name="foot" value="A little bit">A little bit </td><td width="180"><input type="radio" name="foot" value="Moderately">Moderately </td><td width="150"><input type="radio" name="foot" value="Quite a bit">Quite a bit</td><td width="150"><input type="radio" name="foot" value="Extremely">Extremely</td>&nbsp;&nbsp;<td><input type="radio" name="foot" value="Unable to work due to foot and ankle problems">Unable to work due to foot and ankle problems</td></tr></table>     
+              <table><tr><td ><input type="radio" name="foot" value="Not at all">Not at all&nbsp;&nbsp;&nbsp;</td><td ><input type="radio" name="foot" value="A little bit">A little bit&nbsp;&nbsp;&nbsp; </td><td ><input type="radio" name="foot" value="Moderately">Moderately&nbsp;&nbsp;&nbsp; </td><td ><input type="radio" name="foot" value="Quite a bit">Quite a bit&nbsp;&nbsp;&nbsp;</td></tr></table>     
+	          <table>
+	          <tr><td ><input type="radio" name="foot" value="Extremely">Extremely&nbsp;&nbsp;&nbsp;</td><td><input type="radio" name="foot" value="Unable to work due to foot and ankle problems">Unable to work due to foot and ankle problems</td>
+	          </tr>
+	          </table>
 	          <p><b>&nbsp;25.How much did your foot or ankle problem interfere with your life and your ability to do what you want?</b></p>
-        <table><tr><td width="150"><input type="radio" name="ankle" value="Not at all">Not at all</td><td width="150"><input type="radio" name="ankle" value="A little bit">A little bit </td><td width="180"><input type="radio" name="ankle" value="Moderately">Moderately </td><td width="150"><input type="radio" name="ankle" value="Quite a bit">Quite a bit</td><td width="150"><input type="radio" name="ankle" value="Extremely">Extremely</td>&nbsp;&nbsp;<td><input type="radio" name="ankle" value="Unable to work due to foot and ankle problems">Unable to work due to foot and ankle problems</td></tr></table>     
+        <table><tr><td ><input type="radio" name="ankle" value="Not at all">Not at all&nbsp;&nbsp;&nbsp;</td><td ><input type="radio" name="ankle" value="A little bit">A little bit &nbsp;&nbsp;&nbsp;</td><td ><input type="radio" name="ankle" value="Moderately">Moderately &nbsp;&nbsp;&nbsp;</td><td ><input type="radio" name="ankle" value="Quite a bit">Quite a bit&nbsp;&nbsp;&nbsp;</td></tr></table>     
+	<table><tr><td ><input type="radio" name="ankle" value="Extremely">Extremely&nbsp;&nbsp;&nbsp;</td><td><input type="radio" name="ankle" value="Unable to work due to foot and ankle problems">Unable to work due to foot and ankle problems&nbsp;&nbsp;&nbsp;</td></tr></table>
 	    </div>
 	    </div>
 	    </td>
@@ -391,8 +430,9 @@ document.getElementById("securityerror").innerHTML=" ";
 	    <table cellpadding="0" cellspacing="0" border="0" width="100%"  class="margin_table">
 <tr>
 <td valign="top" align="left">
- <div>
+ <div id="block3">
 	            <div class="headings altheading">
+	          <img  src="resources/images/print.png" id="print2" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block3');" >
 	            <center> <h2>
 	            FOOT AND ANKLE QUESTIONNAIRE</h2></center><br/>
 	             
@@ -422,8 +462,8 @@ document.getElementById("securityerror").innerHTML=" ";
 	    <table width="100%" height="150"><tr><Td></Td></tr></table>
 	    <table align="right"><tr><td >
 	    
-	     <input class="submit_btn" type="submit" value="Save" ></td>
-	     <td><input class="submit_btn" type="reset" value="Cancel" >
+	     <input class="submit_btn" type="submit" value="Save" id="saveid"></td>
+	     <td><input class="submit_btn" type="reset" value="Cancel" id="cancelid">
 	    </td></tr></table>
 	    </div>
 	    </div>
@@ -614,8 +654,8 @@ document.getElementById("securityerror").innerHTML=" ";
 	    <table align="right"><tr>
 	    <td>
 	    
-	     <input class="submit_btn" type="submit" value="Save" onclick="return checkSubmit('this');" ></td>
-	     <td><input class="submit_btn" type="reset" value="Cancel" >
+	     <input class="submit_btn" type="submit" value="Save" id="saveid" onclick="return checkSubmit('this');" ></td>
+	     <td><input class="submit_btn" type="reset" value="Cancel" id="cancelid" >
 	    </td></tr></table>
 	     </div>
 	     </div>

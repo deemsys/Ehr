@@ -146,6 +146,47 @@ $(function() {
 		
 		}
 </script>
+<script>
+  function printPage(id)
+  {
+	
+	        document.getElementById('print').style.visibility = 'hidden';
+	        document.getElementById('print1').style.visibility = 'hidden';
+	        document.getElementById('print2').style.visibility = 'hidden';
+	        document.getElementById('print3').style.visibility = 'hidden';
+	        document.getElementById('btnNext').style.visibility = 'hidden';
+	        document.getElementById('btnNext1').style.visibility = 'hidden';
+	        document.getElementById('btnPrevious').style.visibility = 'hidden';
+	        document.getElementById('btnNext2').style.visibility = 'hidden';
+	        document.getElementById('btnPrevious2').style.visibility = 'hidden';
+	        document.getElementById('btnPrevious3').style.visibility = 'hidden';
+	        document.getElementById('saveid').style.visibility = 'hidden';
+		  
+     var html="<html>";
+     html+= document.getElementById(id).innerHTML;
+
+     html+="</html>";
+
+     var printWin = window.open('','','left=0,top=0,width=1400,height=1000,toolbar=0,scrollbars=0,status  =0');
+     printWin.document.write(html);
+     printWin.document.close();
+     printWin.focus();
+     printWin.print();
+     printWin.close();
+     document.getElementById('print').style.visibility = 'visible';
+          document.getElementById('print1').style.visibility = 'visible';
+     document.getElementById('print2').style.visibility = 'visible';
+     document.getElementById('print3').style.visibility = 'visible';
+     document.getElementById('btnNext').style.visibility = 'visible';
+     document.getElementById('btnPrevious').style.visibility = 'visible';
+     document.getElementById('btnNext1').style.visibility = 'visible';
+     document.getElementById('btnPrevious2').style.visibility = 'visible';
+     document.getElementById('btnNext2').style.visibility = 'visible';
+     document.getElementById('btnPrevious3').style.visibility = 'visible';
+     document.getElementById('saveid').style.visibility = 'visible';
+  }
+  </script>
+
 <style>
   /* force a height so the tabs don't jump as content height changes */
   #tabs .tabs-spacer { float: left; height: 200px; }
@@ -182,8 +223,9 @@ $(function() {
       </tr>
       <tr>
         <td valign="top" align="left">
-        	<div>
+        	<div id="block1">
 	            <div class="headings altheading">
+	         <img  src="resources/images/print.png" id="print" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block1');" >
 	              <h2>Auto Accident</h2>
 	            </div>
 	            <div class="contentbox">
@@ -362,8 +404,9 @@ $(function() {
       </tr>
       <tr>
         <td valign="top" align="left">
-        	<div>
+        	<div id="block2">
 	            <div class="headings altheading">
+	          <img  src="resources/images/print.png" id="print1" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block2');" >
 	              <h2>Auto Accident</h2>
 	            </div>
 	            <div class="contentbox">
@@ -501,7 +544,7 @@ $(function() {
 				                  	 <tr>
 				  <td><br><input type="button" id="btnPrevious" class="submit_btn" value="Previous"  />&nbsp;</td>
                   <td>&nbsp;&nbsp;</td>
-                  <td><br><input type="button" id="btnNext" class="submit_btn" value="Next"/><br></td>
+                  <td><br><input type="button" id="btnNext1" class="submit_btn" value="Next"/><br></td>
                   </tr>
 				                  	</table>
 				  </td>
@@ -526,22 +569,23 @@ $(function() {
       </tr>
       <tr>
         <td valign="top" align="left">
-        	<div>
+        	<div id="block3">
 	            <div class="headings altheading">
+	            <img  src="resources/images/print.png" id="print2" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block3');" >
 	              <h2>Auto Accident</h2>
 	            </div>
 	            <div class="contentbox">
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
   				<tr>
-  				<td align="left" valign="top" width="50%" style="padding-right:25px;">
-  				<table cellpadding="0" cellspacing="0" border="0" width="100%">
+  				<td align="left" valign="top"  >
+  				<table cellpadding="0" cellspacing="0" border="0" width="100%" >
   				<tr class="row1">
-  				<td valign="middle" align="left" class="input_txt"><h6 >During / After crash</h6></td>
+  				<td valign="middle" align="left" class="input_txt" width="590"><h6 >During / After crash</h6></td>
   				<td></td>
   				</tr>
   				<tr class="row2">
                 <td valign="middle" align="left" class="input_txt" width="590"><span class="err">*</span>Patient's body</td>
-				 <td valign="top" align="left" class="input_txt">
+				 <td valign="top" align="left" class="input_txt" width="50%">
 				  <select name="patient_body" class="input_cmbbx1" id="patient_body" onchange='CheckPatientposition(this.value);'>
 					<option selected="selected" value="jolted" >Jolted</option>
 					<option value="thrown_about">Thrown About</option>
@@ -552,7 +596,7 @@ $(function() {
 					<option value="otherbody">Other</option>
 				  </select>
 				  <input type="text" name="patient_body1" id="patient_body1" style='display:none'/>
-				  </td>
+				  </td><td width="55">.</td>
 				  </tr> 
 				   <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Did patient's body strike interior of car</td>
@@ -562,13 +606,13 @@ $(function() {
 				  </table>
 				<div id="hit" style="display:block;">
 				<!-- <div class="contentbox"> -->
-				<table cellpadding="0" cellspacing="0" border="0" width="100%">
+				<table cellpadding="0" cellspacing="0" border="0" width="100%" >
 				  
 				  <tr class="row2">
                   <td valign="middle" align="left" width="590" class="input_txt">My head hit</td>
-				  <td valign="top" align="left" class="input_txt">
+				  <td valign="top" align="left" class="input_txt" width="50%">
 				  <input type="text" class="input_txtbx1" id="inp_id" name="head_hit" />
-				  </td>
+				  </td><td width="55">.</td>
 				  </tr>
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt">My Right Left Shoulder hit</td>
@@ -614,13 +658,13 @@ $(function() {
 				  </tr>
 				  </table>
 				  </div>
-				  </div>
-				  <!-- </td>
-				  </tr> -->
+				 
+				   </td>
+				  </tr> <tr><td>
 				  
-				  <table cellpadding="0" cellspacing="0" border="0" width="100%"> 
+				  <table cellpadding="0" cellspacing="0" border="0" width="100%" > 
 				  <tr class="row2">
-				  <td width="50%" valign="middle" align="left" class="input_txt"><span class="err">*</span>Were you wearing glasses at the time of accident&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				  <td  valign="middle" align="left" class="input_txt"><span class="err">*</span>Were you wearing glasses at the time of accident</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="wearing_glasses" value="yes" class="input_txt" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="wearing_glasses" value="no" class="input_txt" >No&nbsp;&nbsp;&nbsp;
 			      </td>
@@ -635,7 +679,7 @@ $(function() {
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Unconscious</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="unconscious" value="yes" class="input_txt" checked="true" onclick="toggle4('show4')" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="unconscious" value="no" class="input_txt" onclick="toggle4('hide4')" >No&nbsp;&nbsp;&nbsp;
-			      <input type="text" class="input_txtbx1" id="uncon" name="uncon" > (minutes)</input>
+			      <input type="text" class="input_txtbx1" id="uncon" name="uncon" /> (minutes)
 			      </td>
 				  </tr>
 				  <tr class="row1">
@@ -659,9 +703,9 @@ $(function() {
 				 </table>
 				 	<table align="right">
 				                  	 <tr>
-				  <td><br><input type="button" id="btnPrevious" class="submit_btn" value="Previous"  />&nbsp;</td>
+				  <td><br><input type="button" id="btnPrevious2" class="submit_btn" value="Previous"  />&nbsp;</td>
                   <td>&nbsp;&nbsp;</td>
-                  <td><br><input type="button" id="btnNext" class="submit_btn" value="Next"/><br></td>
+                  <td><br><input type="button" id="btnNext2" class="submit_btn" value="Next"/><br></td>
                   </tr>
 				                  	</table>
 				 </td>
@@ -686,15 +730,16 @@ $(function() {
       </tr>
       <tr>
         <td valign="top" align="left">
-        	<div>
+        	<div id="block4">
 	            <div class="headings altheading">
+	            <img  src="resources/images/print.png" id="print3" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block4');" >
 	              <h2>Auto Accident</h2>
 	            </div>
 	            <div class="contentbox">
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
 				 <tr class="row1">
-				  <td width="490"valign="middle" align="left" class="input_txt"><span class="err">*</span>Was anyone cited</td>
-				  <td valign="top" align="left" class="input_txt">
+				  <td  valign="middle" align="left" class="input_txt"><span class="err">*</span>Was anyone cited</td>
+				  <td valign="top" align="left" class="input_txt" width="60%">
 				  <input type="radio" name="was_anyone_cited" value="yes" class="input_txt" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="was_anyone_cited" value="no" class="input_txt" >No&nbsp;&nbsp;&nbsp;
 			      </td>
 				  </tr> 
@@ -709,17 +754,21 @@ $(function() {
 				  </tr> 
 				  <tr class="row1">
                 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>After accident,I had the following</td>
-				 <td valign="top" align="left" class="input_txt">
+				 <td valign="top" align="left" class="input_txt" width="20%">
 				 
 				 <input type="checkbox" name="headache" value="headache">Headache&nbsp;&nbsp;&nbsp;&nbsp; 
 				 <input type="checkbox" name="dizziness" value="dizziness">Dizziness&nbsp;&nbsp;&nbsp;&nbsp;
 				 <input type="checkbox" name="nausea" value="nausea">Nausea&nbsp;&nbsp;&nbsp;&nbsp;
 				 <input type="checkbox" name="confusion" value="confusion">Confusion&nbsp;&nbsp;&nbsp;&nbsp;
-				 <input type="checkbox" name="disorientation" value="disorientation">Disorientation&nbsp;&nbsp;&nbsp;&nbsp;
+				
+				
+				 </td>
+				  <tr class="row1"> <td valign="middle" align="left" class="input_txt"><span class="err"></span></td>
+				 <td valign="top" align="left" class="input_txt" width="20%">
+				  <input type="checkbox" name="disorientation" value="disorientation">Disorientation&nbsp;&nbsp;&nbsp;&nbsp;
 				 <input type="checkbox" name="neckpain" value="neckpain">Neck pain&nbsp;&nbsp;&nbsp;&nbsp;
 				 <input type="checkbox" name="otherpain" value="otherpain" id="otherpaincheck" onclick="this.form.otherplain1.style.visibility = this.checked? 'visible' : 'hidden'">Other&nbsp;&nbsp;&nbsp;&nbsp;
 				 <input type="text" class="input_txtbx1" id="otherplain1" name="otherpaintext" placeholder="If other" style="visibility:hidden"/>
-				 </td>
 				 </tr>
 				 <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Symptoms first appeared</td>
@@ -751,7 +800,7 @@ $(function() {
 				  <!-- <div > -->
 				  <table cellpadding="0" cellspacing="0" border="0" width="100%" id="accident_hospital">
 				   <tr class="row2">
-                  <td valign="middle" align="left" class="input_txt"  width = "20%" >Name of the hospital</td><td width="21%"></td><!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                  <td valign="middle" align="left" class="input_txt"  width = "19.5%" >Name of the hospital</td><td width="21%"></td><!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
 				  
 				 
 				  <td><input type="text" align="left" class="input_txtbx1" id="inp_id" name="hosname" /></td>
@@ -1512,10 +1561,10 @@ $(function() {
 				</c:choose>
 				  <table align="right">
 				  <br><tr>
-				 <td><input type="button" id="btnPrevious" class="submit_btn" value="Previous"  /></td>
+				 <td><input type="button" id="btnPrevious3" class="submit_btn" value="Previous"  /></td>
 				 <td>&nbsp;&nbsp;</td>
  
-                  <td><input type="submit" class="submit_btn" value="Save" onclick ="return checkSubmit('this')";></td>
+                  <td><input type="submit" class="submit_btn" id="saveid" value="Save" onclick ="return checkSubmit('this')";></td>
                   <td>&nbsp;&nbsp;</td>
                   <td><!-- <a href="viewpatient" class="submit_btn" style="color: white">Cancel</a> --></td>
 				</table> 

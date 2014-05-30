@@ -242,6 +242,34 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 				}
 		}
 </script>
+<script>
+  function printPage(id)
+  {
+	
+	        document.getElementById('print').style.visibility = 'hidden';
+	        document.getElementById('print1').style.visibility = 'hidden';
+	        document.getElementById('saveid').style.visibility = 'hidden';
+	        
+	        document.getElementById('btnNext').style.visibility = 'hidden';
+		  
+     var html="<html>";
+     html+= document.getElementById(id).innerHTML;
+
+     html+="</html>";
+
+     var printWin = window.open('','','left=0,top=0,width=1400,height=1000,toolbar=0,scrollbars=0,status  =0');
+     printWin.document.write(html);
+     printWin.document.close();
+     printWin.focus();
+     printWin.print();
+     printWin.close();
+     document.getElementById('print').style.visibility = 'visible';
+     document.getElementById('print1').style.visibility = 'visible';
+     document.getElementById('saveid').style.visibility = 'visible';
+     document.getElementById('btnNext').style.visibility = 'visible';
+    
+  }
+  </script>
 </head>
 <body>
 <div id="tabs" class="tabs-bottom" >
@@ -258,7 +286,7 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 <div id="right_content">
  <form action="workaccident" method="POST"> 
  
-<table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="margin_table">
   <tr>
         <td valign="top" align="left" style="padding:5px 0 10px 0;">&nbsp;
 		<div class="status success" style="display: none;">
@@ -269,8 +297,9 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
       <tr>
       <tr>
         <td valign="top" align="left">
-        	<div>
+        	<div id="block1">
 	            <div class="headings altheading">
+	             <img  src="resources/images/print.png" id="print" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block1');" >
 	              <h2>Work Accident</h2>
 	            </div>
 	            <div class="contentbox">
@@ -278,9 +307,9 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
   				<tr>
   				<td align="left" valign="top" width="50%" style="padding-right:25px;">
   				<table cellpadding="0" cellspacing="0" border="0" width="100%">
-  				<tr class="row1">
-                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>What is the job classification of your normal job</td>
-				  <td valign="top" align="left" class="input_txt">
+  				<tr class="row1" width="30%">
+                  <td valign="middle" align="left" class="input_txt" width="18%"><span class="err">*</span>What is the job classification of your normal job</td>
+				  <td valign="top" align="left" class="input_txt" >
 				  <input type="text" class="input_txtbx1" id="job_classification" name="job_classification" /><span id="job_classificationerror" style="color: red;font-style:italic;"><form:errors path="Workaccident.job_classification"></form:errors></span>
 				  </td>
 				  </tr>
@@ -305,7 +334,7 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Do you carry anything or pick anything up</td>
 				  <td valign="top" align="left" class="input_txt"><input type="radio" name="pick" value="yes" class="input_txt" id="yes1" onclick="any('show')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="pick" value="No" id="No1" class="input_txt" onclick="any('hide')">No&nbsp;&nbsp;&nbsp;
-				   <input type="text" class="input_txtbx1" id="carry" name="carry" placeholder="If yes, What"/>
+				   <input type="hidden" class="input_txtbx1" id="carry" name="carry" placeholder="If yes, What"/>
 				 <span id="carryerror" style="color: red;font-style:italic;"></span>
 				  </td>
 				  </tr>
@@ -335,11 +364,11 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 				  </tr>
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Has there been a time loss or absentee caused from job injury</td>
-				  <td valign="top" align="left" class="input_txt" width = "5%"><input type="radio" name="time_loss" value="yes" class="input_txt" id="yes2" onclick="time('show1')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="time_loss" value="No" id="No2" class="input_txt" onclick="time('hide1')">No&nbsp;&nbsp;&nbsp;
-				  <td><textarea rows='3' cols='35' id="absenteeism" name="absenteeism" placeholder="If yes, explain(include dates)"></textarea><span id="time_losserror" style="color: red;font-style:italic;"></span></td>
-				 
-				  </td>
-				  </tr>
+				  <td valign="top" align="left" class="input_txt" width="20%"><input type="radio" name="time_loss" value="yes" class="input_txt" id="yes2" onclick="time('show1')">Yes
+				  <input type="radio" name="time_loss" value="No"  id="No2" class="input_txt" onclick="time('hide1')">No 
+				  <table><tr><td><textarea  rows='3' cols='35' id="absenteeism" name="absenteeism" placeholder="If yes, explain(include dates)" style="visibility:hidden;"  ></textarea></td></tr></table><span id="time_losserror" style="color: red;font-style:italic;"></span></td>
+				  
+				   </tr>
 				   <tr class="row1">
                 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Type of lighting in the building</td>
 				 <td valign="top" align="left" class="input_txt">
@@ -359,12 +388,10 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 				 <span id="pick_lifterror" style="color: red;font-style:italic;"></span>
 				  </td>
 				  </tr>
-				  </table>
 				 
-				  <table cellpadding="0" id="lift" cellspacing="0"  width="100%">
-				  <tr class="row1" >
-                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>If yes, how muchs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-				  <td valign="top" align="left" class="input_txt">
+				 				  <tr class="row1" >
+                  <td valign="middle" align="left" class="input_txt" ><span class="err">*</span>If yes, how muchs <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --></td>
+				  <td valign="top" align="left" class="input_txt" >
 				  <input type="text" class="input_txtbx1" id="how_much" name="how_much" />
 				  <span id="how_mucherror" style="color: red;font-style:italic;"></span>
 				  </td>
@@ -383,11 +410,11 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 				  <span id="where_to_whereerror" style="color: red;font-style:italic;"></span>
 				  </td>
 				  </tr>
-				  </table>
 				  
-				  <table cellpadding="0" cellspacing="0" border="0" width="100%">
+				  
+				 
                   <tr class="row1">
-                <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Do you lift from&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td valign="middle" align="left" class="input_txt" ><span class="err">*</span>Do you lift from <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --></td>
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="lift_from" class="input_cmbbx1" id="lift_from">
 					<option selected="selected" value="ground" >Ground</option>
@@ -456,8 +483,9 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
       </tr>
       <tr>
         <td valign="top" align="left">
-        	<div>
+        	<div id="block2">
 	            <div class="headings altheading">
+	              <img  src="resources/images/print.png" id="print1" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block2');" >
 	              <h2>Work Accident</h2>
 	            </div>
 	            <div class="contentbox">
@@ -518,7 +546,7 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 				  <br>
 				   <table align="right"> <tr><td><input type="button" id="btnPrevious" class="submit_btn" value="Previous" style = "display:none" />&nbsp;</td>
 
-<td valign="top" align="center"><input type="submit" class="submit_btn" value="Save" onclick="return checkSubmit('this');"></td>
+<td valign="top" align="center"><input type="submit" class="submit_btn" value="Save" id="saveid" onclick="return checkSubmit('this');"></td>
  
              		<!--  <td valign="top" align="center"><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewworkaccident'"></td> -->
 				  
@@ -851,7 +879,7 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
                 <tr>
                  <td valign="top" align="right"><input type="button" id="btnPrevious" class="submit_btn" value="Previous"></td>
                    <td>&nbsp;&nbsp;</td>
-                   <td valign="top" align="right"><input type="submit" class="submit_btn" value="Save" name="insert" onclick ="return checkSubmit('this');"></td>
+                   <td valign="top" align="right"><input type="submit" class="submit_btn" value="Save" id="saveid" name="insert" onclick ="return checkSubmit('this');"></td>
                   	<td>&nbsp;&nbsp;</td>
                   <td valign="top" align="center"><!-- <input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='viewworkaccident'"> --></td>
                 </tr>

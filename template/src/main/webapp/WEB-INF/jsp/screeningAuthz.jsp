@@ -40,6 +40,31 @@
 			
 	}
 	</script>
+	<script>
+  function printPage(id)
+  {
+	
+	        document.getElementById('print').style.visibility = 'hidden';
+	        document.getElementById('saveid').style.visibility = 'hidden';
+	        document.getElementById('cancelid').style.visibility = 'hidden';
+		 
+		  
+     var html="<html>";
+     html+= document.getElementById(id).innerHTML;
+
+     html+="</html>";
+
+     var printWin = window.open('','','left=0,top=0,width=1400,height=1000,toolbar=0,scrollbars=0,status  =0');
+     printWin.document.write(html);
+     printWin.document.close();
+     printWin.focus();
+     printWin.print();
+     printWin.close();
+     document.getElementById('print').style.visibility = 'visible';
+     document.getElementById('saveid').style.visibility = 'visible';
+     document.getElementById('cancelid').style.visibility = 'visible';
+  }
+  </script>
 </head>
 <body>
 <div id="right_content">
@@ -60,8 +85,9 @@
 
       <tr>
       <td valign="top" align="left">
-        	<div>
+        	<div id="block1">
 	            <div class="headings altheading">
+	           <img  src="resources/images/print.png" id="print" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block1');" >
 	              <h2>Screening Disclosure:</h2>
 	            </div>
             <div class="contentbox">
@@ -116,8 +142,11 @@
 				                  	<table>
                         <tr>
 				  <td valign="top" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-				                <td valign="top" align="center"><br><input type="submit" class="submit_btn" value="Save" onclick="return checkSubmit('this');"></td>
-				                <td>&nbsp;&nbsp;<!-- <a href="screeninglist" class="submit_btn" style="color: white">Cancel</a> --></td>
+				                <td valign="top" align="center"><br><input type="submit" class="submit_btn" id="saveid" value="Save" onclick="return checkSubmit('this');"></td>
+				                <td>&nbsp;&nbsp;
+				                 <td><br><a href="viewpatient"style="color:white" id="cancelid"class="submit_btn">Cancel</a></td>
+				                <!--  <td valign="top" align="right"><br> <input type="button"   class="submit_btn" value=" Print" onclick="window.print();return false;" /></td> -->
+				                <!-- <a href="screeninglist" class="submit_btn" style="color: white">Cancel</a> --></td>
 				 <!-- <td valign="top" align="center"><br><input type="button" class="submit_btn" value="View" onclick="window.location.href='screeninglist'"></td> -->
 				  </tr>
                         </table>
