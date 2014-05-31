@@ -456,7 +456,7 @@ $(function() {
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Air bag deployed</td>
 				  <td valign="top" align="left" class="input_txt"><input type="radio" name="airbag" value="0" class="input_txt" checked="true" onclick="toggle('show')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="airbag" value="1" class="input_txt" onclick="toggle('hide')">No&nbsp;&nbsp;&nbsp;
-				  <select name="wereyou" class="input_cmbbx1" id="mytext">
+				<span class="err"><form:errors path="Autoaccident.airbag"></form:errors></span> <select name="wereyou" class="input_cmbbx1" id="mytext">
 				 <option selected="selected" value="struck" >Struck</option>
 				 <option value="notstruck">Not Struck</option>
 				  </select>
@@ -515,10 +515,11 @@ $(function() {
 				   <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Did you brace yourself</td>
 				  <td valign="top" align="left" class="input_txt"><input type="radio" name="brace" value="0" class="input_txt" checked="true" onclick="toggle1('show1')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="brace" value="1" class="input_txt" onclick="toggle1('hide1')">No&nbsp;&nbsp;&nbsp;
-				  <select name="ifyes" class="input_cmbbx1" id="mybrace">
+				 <span class="err"><form:errors path="Autoaccident.brace"></form:errors></span> <select name="ifyes" class="input_cmbbx1" id="mybrace">
 				  <option selected="selected" value="bracearms" >Braced with arms</option>
 				  <option value="bracelegs">Braced with legs</option>
 				  </select>
+<form:errors path="PatientDetails.insurance_phone"></form:errors>
 				  </td>
 				  </tr>
 				 <!--  <tr class="row2">
@@ -683,7 +684,7 @@ $(function() {
 			      </td>
 				  </tr>
 				  <tr class="row1">
-				  <td valign="middle" align="left" class="input_txt">Estimated amount of property damage</td>
+				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Estimated amount of property damage</td>
 				  <td valign="top" align="left" class="input_txt">$
 				  <input type="text" class="input_txtbx1" id="estimateddamage" name="estimated_amount" /><span class="err"><form:errors path="Autoaccident.estimated_amount"></form:errors></span>
 				 <br><span class="err" id="estimateddamageerror"></span>
@@ -756,12 +757,12 @@ $(function() {
                 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>After accident,I had the following</td>
 				 <td valign="top" align="left" class="input_txt" width="20%">
 				 
-				 <input type="checkbox" name="headache" value="headache">Headache&nbsp;&nbsp;&nbsp;&nbsp; 
-				 <input type="checkbox" name="dizziness" value="dizziness">Dizziness&nbsp;&nbsp;&nbsp;&nbsp;
-				 <input type="checkbox" name="nausea" value="nausea">Nausea&nbsp;&nbsp;&nbsp;&nbsp;
-				 <input type="checkbox" name="confusion" value="confusion">Confusion&nbsp;&nbsp;&nbsp;&nbsp;
-				
-				
+				 <input type="checkbox" id="headache" name="headache" value="headache">Headache&nbsp;&nbsp;&nbsp;&nbsp; 
+				 <input type="checkbox" id="dizziness" name="dizziness" value="dizziness">Dizziness&nbsp;&nbsp;&nbsp;&nbsp;
+				 <input type="checkbox" id="nausea"name="nausea" value="nausea">Nausea&nbsp;&nbsp;&nbsp;&nbsp;
+				 <input type="checkbox" id="confusion" name="confusion" value="confusion">Confusion&nbsp;&nbsp;&nbsp;&nbsp;
+				<span id="afteraccidenterror" style="color: red;font-style:italic;"></span>
+				<span class="err"><form:errors path="Autoaccident.after_accident"></form:errors></span>
 				 </td>
 				  <tr class="row1"> <td valign="middle" align="left" class="input_txt"><span class="err"></span></td>
 				 <td valign="top" align="left" class="input_txt" width="20%">
@@ -769,6 +770,7 @@ $(function() {
 				 <input type="checkbox" name="neckpain" value="neckpain">Neck pain&nbsp;&nbsp;&nbsp;&nbsp;
 				 <input type="checkbox" name="otherpain" value="otherpain" id="otherpaincheck" onclick="this.form.otherplain1.style.visibility = this.checked? 'visible' : 'hidden'">Other&nbsp;&nbsp;&nbsp;&nbsp;
 				 <input type="text" class="input_txtbx1" id="otherplain1" name="otherpaintext" placeholder="If other" style="visibility:hidden"/>
+				<span class="err"><form:errors path="Autoaccident.after_accident"></form:errors></span>
 				 </tr>
 				 <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Symptoms first appeared</td>

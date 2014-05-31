@@ -777,8 +777,9 @@ document.getElementById("inp_id").value=phone;
 	
 	return false;
 	}
+	
 	document.getElementById("zipcode1error").innerHTML="";
-	if(isNaN(document.getElementById("zipcode1").value || document.getElementById("zipcode1").value.length != 5 ))
+	if(isNaN(document.getElementById("zipcode1").value))
 	{
 	document.getElementById("zipcode1error").innerHTML="Enter Only Numbers";
 	return false;
@@ -790,12 +791,14 @@ document.getElementById("inp_id").value=phone;
 	
 	return false;
 	}
-	/* document.getElementById("homephoneerror").innerHTML="";
-	if(isNaN(document.getElementById("homephone").value))
-	{
-	document.getElementById("homephoneerror").innerHTML="Enter Only Numbers";
-	return false;
-	} */
+	var phone = /^[0-9-()]{13}$/;
+	 if(document.getElementById("homephone").value.match(phone)==null)
+    {
+    	document.getElementById("homephoneerror").innerHTML="Enter correct homephone number ";
+    	
+        return false;
+    }
+	
 	document.getElementById("Emailiderror").innerHTML="";
 	if(document.getElementById("Emailid").value=="")
 	{
@@ -819,7 +822,13 @@ document.getElementById("inp_id").value=phone;
 	
 	return false;
 	}
-	
+	var phone = /^[0-9-()]{13}$/;
+	 if(document.getElementById("mobilenumber").value.match(phone)==null)
+    {
+    	document.getElementById("mobilenumbererror").innerHTML="Enter correct mobilenumber number";
+    	
+        return false;
+    }
 	document.getElementById("datepicker1error").innerHTML="";
 	if(document.getElementById("datepicker1").value=="")
 	{
@@ -834,6 +843,13 @@ document.getElementById("inp_id").value=phone;
 	
 	return false;
 	}
+	var phone = /^[0-9-]{11}$/;
+	 if(document.getElementById("socialsecuritynumber").value.match(phone)==null)
+    {
+    	document.getElementById("socialsecuritynumbererror").innerHTML="Enter correct socialsecuritynumber";
+    	
+        return false;
+    }
 	 document.getElementById("Gendererror").innerHTML=""; 
 	if( ( document.getElementById("Male").checked == false ) && ( document.getElementById("Female").checked == false ) && ( document.getElementById("Transgender").checked == false ))
 
@@ -861,7 +877,49 @@ document.getElementById("inp_id").value=phone;
 	 		return false;
 	 		
 	 }
+	document.getElementById("workphoneerror").innerHTML="";
+	if(document.getElementById("workphone").value=="")
+	{
+	document.getElementById("workphoneerror").innerHTML="Required Field Should not be Empty";
 	
+	return false;
+	}
+	var phone = /^[0-9-()]{13}$/;
+	 if(document.getElementById("workphone").value.match(phone)==null)
+    {
+    	document.getElementById("workphoneerror").innerHTML="Enter correct workphone number";
+    	
+        return false;
+    }
+    document.getElementById("zipcode2error").innerHTML="";
+	if(document.getElementById("zipcode2").value=="")
+	{
+	document.getElementById("zipcode2error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	document.getElementById("zipcode2error").innerHTML="";
+	if(isNaN(document.getElementById("zipcode2").value))
+	{
+	document.getElementById("zipcode2error").innerHTML="Enter Only Numbers";
+	return false;
+	}
+	
+	 document.getElementById("zipcode3error").innerHTML="";
+	if(document.getElementById("zipcode3").value=="")
+	{
+	document.getElementById("zipcode3error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	document.getElementById("zipcode3error").innerHTML="";
+	if(isNaN(document.getElementById("zipcode3").value))
+	{
+	document.getElementById("zipcode3error").innerHTML="Enter Only Numbers";
+	return false;
+	}
 	document.getElementById("SpousesNameerror").innerHTML="";
 	if(document.getElementById("SpousesName").value=="")
 	{
@@ -883,6 +941,13 @@ document.getElementById("inp_id").value=phone;
 	
 	return false;
 	}
+	var phone = /^[0-9-()]{13}$/;
+	 if(document.getElementById("spouseworkphone").value.match(phone)==null)
+    {
+    	document.getElementById("spouseworkphoneerror").innerHTML="Enter correct spouseworkphone number";
+    	
+        return false;
+    }
 	document.getElementById("Name_frienderror").innerHTML="";
 	if(document.getElementById("Name_friend").value=="")
 	{
@@ -897,7 +962,13 @@ document.getElementById("inp_id").value=phone;
 	
 	return false;
 	}
-	
+	var phone = /^[0-9-()]{13}$/;
+	 if(document.getElementById("Phone_friend").value.match(phone)==null)
+    {
+    	document.getElementById("Phone_frienderror").innerHTML="Enter correct Phonefriend number";
+    	
+        return false;
+    }
 	
 	document.getElementById("Chiropratic_careerror").innerHTML=""; 
 	if( ( document.getElementById("yes1").checked == false ) && ( document.getElementById("No1").checked == false ) )
@@ -1011,6 +1082,13 @@ document.getElementById("inp_id").value=phone;
 	
 	return false;
 	}
+	var phone = /^[0-9-()]{13}$/;
+	 if(document.getElementById("phyphone").value.match(phone)==null)
+    {
+    	document.getElementById("phyphoneerror").innerHTML="Enter correct Phone number";
+    	
+        return false;
+    }
 	document.getElementById("xrayerror").innerHTML="";
 	if(document.getElementById("xray").value=="")
 	{
@@ -1039,6 +1117,13 @@ document.getElementById("inp_id").value=phone;
 	
 	return false;
 	}
+	var phone = /^[0-9-()]{13}$/;
+	 if(document.getElementById("phonenumber").value.match(phone)==null)
+    {
+    	document.getElementById("phonenumbererror").innerHTML="Enter correct Phone number";
+    	
+        return false;
+    }
 	document.getElementById("Fault_accidenterror").innerHTML="";
 	if(document.getElementById("Fault_accident").value=="")
 	{
@@ -1060,6 +1145,13 @@ document.getElementById("inp_id").value=phone;
 	
 	return false;
 	}
+	var phone = /^[0-9-()]{13}$/;
+	 if(document.getElementById("Insurance_phone").value.match(phone)==null)
+    {
+    	document.getElementById("Insurance_phoneerror").innerHTML="Enter correct Phone number";
+    	
+        return false;
+    }
 	document.getElementById("Name_autoerror").innerHTML="";
 	if(document.getElementById("Name_auto").value=="")
 	{
@@ -1073,7 +1165,15 @@ document.getElementById("inp_id").value=phone;
 	document.getElementById("Phone_autoerror").innerHTML="Required Field Should not be Empty";
 	
 	return false;
-	}document.getElementById("policyerror").innerHTML="";
+	}
+	var phone = /^[0-9-()]{13}$/;
+	 if(document.getElementById("Phone_auto").value.match(phone)==null)
+    {
+    	document.getElementById("Phone_autoerror").innerHTML="Enter correct Phone number";
+    	
+        return false;
+    }
+	document.getElementById("policyerror").innerHTML="";
 	if(document.getElementById("policy").value=="")
 	{
 	document.getElementById("policyerror").innerHTML="Required Field Should not be Empty";
@@ -1195,6 +1295,7 @@ document.getElementById("inp_id").value=phone;
 	    $( "#datepicker3" ).datepicker();
 	  });
   </script>
+  
 	</head>
 	<body>
 	 
@@ -1525,14 +1626,52 @@ function check(id)
 	}
 
 </script>
+<script>
+  function printPage(id)
+  {
+	
+	         document.getElementById('print').style.visibility = 'hidden';
+	         document.getElementById('btnNext').style.visibility = 'hidden';
+	         document.getElementById('print1').style.visibility = 'hidden';
+	         document.getElementById('btnNext1').style.visibility = 'hidden';
+	         document.getElementById('btnPrevious').style.visibility = 'hidden';
+	         document.getElementById('print2').style.visibility = 'hidden';
+	         document.getElementById('btnPrevious1').style.visibility = 'hidden';
+	       	        document.getElementById('saveid').style.visibility = 'hidden';
+	        document.getElementById('cancelid').style.visibility = 'hidden'; 
+		  
+     var html="<html>";
+     html+= document.getElementById(id).innerHTML;
+
+     html+="</html>";
+
+     var printWin = window.open('','','left=0,top=0,width=1400,height=1000,toolbar=0,scrollbars=0,status  =0');
+     printWin.document.write(html);
+     printWin.document.close();
+     printWin.focus();
+     printWin.print();
+     printWin.close();
+      document.getElementById('print').style.visibility = 'visible';
+      document.getElementById('btnNext').style.visibility = 'visible';
+      document.getElementById('print1').style.visibility = 'visible';
+      document.getElementById('btnNext1').style.visibility = 'visible';
+      document.getElementById('btnPrevious').style.visibility = 'visible';
+         document.getElementById('print2').style.visibility = 'visible';
+         document.getElementById('btnPrevious1').style.visibility = 'visible';
+   
+     document.getElementById('saveid').style.visibility = 'visible';
+     document.getElementById('cancelid').style.visibility = 'visible'; 
+  }
+  </script>
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
 
       <tr>
         <td valign="top" align="left">
-        	<div> 
+        	<div id="block1">
         	<div class="headings altheading">
+        	<img  src="resources/images/print.png" id="print" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block1');" >
 	              <h2>Patient Information </h2>
-	       </div>     </div>
+	          </div>
 	       
 <div class="contentbox">
 <input type="hidden" value="<sec:authentication property="principal.username" />" id="pusername" name="user">
@@ -1696,7 +1835,7 @@ function check(id)
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>WorkPhone:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="workphone" name="Workphone" maxlength="13" /><br><span class="err"><form:errors path="PatientDetails.Workphone"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="workphone" name="Workphone" maxlength="13" /><br><span id="workphoneerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Workphone"></form:errors></span>
 <br>
 <span class="err" id="workphoneerror"></span>
 				                  </td>
@@ -1704,7 +1843,7 @@ function check(id)
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>ZipCode:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="zipcode2" name="zip" maxlength="5" /><br><span class="err" id="zipcodeerror1"><form:errors path="PatientDetails.zipCode"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="zipcode2" name="zip" maxlength="5" /><br><span style="color: red;font-style:italic;" id="zipcode2error"><form:errors path="PatientDetails.zipCode"></form:errors></span>
 	
 	<span class="err" ></span>            
 				                  </td>
@@ -1731,7 +1870,7 @@ function check(id)
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>ZipCode:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="zipcode" name="Ezip" maxlength="5"/><br><span class="err"><form:errors path="PatientDetails.Ezip"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="zipcode3" name="Ezip" maxlength="5"/><br><span style="color: red;font-style:italic;" id="zipcode3error"><form:errors path="PatientDetails.Ezip"></form:errors></span>
 				                  	<br><span class="err" id="zipcodeerror"></span>
 				                  </td>
 				                </tr>
@@ -1791,7 +1930,7 @@ function check(id)
 				               </table>
 				               <table align="right">
 				               <tr>
-				  
+				   </div> 
                      <td><br><input type="button" id="btnNext" class="submit_btn"  value="Next" /><br></td>
                   </tr>
 				               </table>
@@ -1816,10 +1955,11 @@ function check(id)
         <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
       <tr>
         <td valign="top" align="left">
-        	<div> 
+        	<div id="block2">
         	<div class="headings altheading">
+        <img  src="resources/images/print.png" id="print1" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block2');" >
         	<h2>Present Complaint</h2>
-	            </div>
+	            
 	            </div>
           <div class="contentbox">
         
@@ -2096,14 +2236,14 @@ function check(id)
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="datepicker6" name="Prev_When" /><br><span id="datepicker6error" style="color: red;font-style:italic;"><form:errors path="PatientDetails.prev_When"></form:errors></span>
 				                  	<td></td>
-				                  	</tr>   
+				                  	</tr>  </div> 
 				                  	</table>
 				                  	
 				                  	<table align="right">
 				                  	 <tr>
-				  <td><br><input type="button" id="btnPrevious" class="submit_btn" value="Previous" style = "display:none" />&nbsp;</td>
+				  <td><br><input type="button" id="btnPrevious" class="submit_btn" value="Previous"  style = "display:none" />&nbsp;</td>
                   <td>&nbsp;&nbsp;</td>
-                  <td><br><input type="button" class="submit_btn"  id="btnNext" value="Next" onclick="validate('this.value')"/><br></td>
+                  <td><br><input type="button" class="submit_btn1"  id="btnNext1" value="Next" onclick="validate('this.value')"/><br></td>
                   </tr>
 				                  	</table><!-- id="btnNext"  -->
                
@@ -2123,11 +2263,12 @@ function check(id)
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
       <tr>
         <td valign="top" align="left">
-        	<div> 
+        	<div id="block3">
         	<div class="headings altheading">
+        	<img  src="resources/images/print.png" id="print2" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block3');" >
         	<h2>Medical/Social/Work History</h2>
 	            </div>
-	            </div>
+	           
           <div class="contentbox">
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
   				<tr>
@@ -2141,54 +2282,71 @@ function check(id)
 				                 
 				                 <tr>
 				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Anemia" value="Anemia">Anemia </td>
-				                  	 <td class="input_txt" align="left"><input type="checkbox" name="Muscular" value="Muscular">Muscular Dystrophy </td>
-				                  	 <td class="input_txt" align="left"><input type="checkbox" name="Rheumatic" value="Rheumatic">Rheumatic Fever </td>
-				                  	 <td class="input_txt" align="left"><input type="checkbox" name="Allergies" value="Allergies">Allergies</td>
+				                  	 <td class="input_txt" align="left" style="width: 173px; "><input type="checkbox" name="Muscular" value="Muscular">MuscularDystrophy </td>
+				                  	 <td class="input_txt" align="left" style="width: 129px; "><input type="checkbox" name="Rheumatic" value="Rheumatic">RheumaticFever </td>
+				                  	 
+				                  </tr>
+				                  <tr>
+				                  <td class="input_txt" align="left" style="width: 75px; "><input type="checkbox" name="Allergies" value="Allergies">Allergies</td>
 				                  	 <td class="input_txt" align="left"><input type="checkbox" name="Cancer" value="Cancer">Cancer </td>
 				                   <td class="input_txt" align="left"><input type="checkbox" name="Polio1" value="Polio1">Polio </td>
 				                  </tr>
 				                  <tr>
-				                  	 <td valign="top" align="left" class="input_txt"><input type="checkbox" name="Multiple" value="Multiple">Multiple Sclerosis</td>
+				                  	 <td valign="top" align="left" class="input_txt" style="width: 153px; "><input type="checkbox" name="Multiple" value="Multiple">MultipleSclerosis</td>
 				                  	 <td class="input_txt" align="left"><input type="checkbox" name="Scarlet" value="Scarlet">ScarletFever </td>
                                       <td class="input_txt" align="left"><input type="checkbox" name="HIV" value="HIV">HIV </td>
-				                  	 <td class="input_txt" align="left"><input type="checkbox" name="Sinus" value="Sinus">Sinus Trouble </td>
+
+				                  	            	 </tr>
+				                  	 <tr>
+				                  	  <td class="input_txt" align="left" style="width: 114px; "><input type="checkbox" name="Sinus" value="Sinus">Sinus Trouble </td>
 				                  	 <td class="input_txt" align="left"><input type="checkbox" name="Asthma" value="Asthma">Asthma </td>
-				                  	 <td class="input_txt" align="left"><input type="checkbox" name="German" value="German">German Measles </td>
+				                  	 <td class="input_txt" align="left"><input type="checkbox" name="German" value="German">GermanMeasles </td>
 				                  	 </tr>
 				                  	 <tr>
 				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Nervousness" value="Nervousness">Nervousness </td>
 				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Numbness" value="Numbness">Numbness </td>
 				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Convulsions" value="Convulsions">Convulsions </td>
+				                  	</tr>
+				                  	<tr>
 				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Epilepsy" value="Epilepsy">Epilepsy </td>
-				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Concussion" value="Concussion">Concussion </td>
+				                  	<td valign="top" align="left" class="input_txt" style="width: 101px; "><input type="checkbox" name="Concussion" value="Concussion">Concussion </td>
 				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Dizziness" value="Dizziness">Dizziness </td>
+				                  	
 				                  	</tr>
 				                  	<tr>
 				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Neuritis" value="Neuritis">Neuritis </td>
 				                  	 <td valign="top" align="left" class="input_txt"><input type="checkbox" name="Rheumatism" value="Rheumatism">Rheumatism </td>
 				                  	 <td valign="top" align="left" class="input_txt"><input type="checkbox" name="Diabetes" value="Diabetes">Diabetes</td>
-				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Arthritis" value="Arthritis">Arthritis </td>
-				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Venereal" value="Venereal">Venereal Disease</td>
-				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Backaches" value="Backaches">Backaches </td>
+				                  	
 				                  	</tr>
+				                  	<tr><td valign="top" align="left" class="input_txt"><input type="checkbox" name="Arthritis" value="Arthritis">Arthritis </td>
+				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Venereal" value="Venereal">VenerealDisease</td>
+				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Backaches" value="Backaches">Backaches </td></tr>
 				                  	<tr>
 				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Tuberculosis" value="Tuberculosis">Tuberculosis	</td>    
-				                    <td valign="top" align="left" class="input_txt"><input type="checkbox" name="Liver" value="Liver">Liver Disease </td>
-				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Kidney" value="Kidney">Kidney Disease </td>
-				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Thyroid" value="Thyroid">Thyroid Disease </td>
+				                    <td valign="top" align="left" class="input_txt"><input type="checkbox" name="Liver" value="Liver">LiverDisease </td>
+				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Kidney" value="Kidney">KidneyDisease </td>
+				                  	
+				                  	</tr>
+				                  	<tr>
+				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Thyroid" value="Thyroid">ThyroidDisease </td>
 				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Alcoholism" value="Alcoholism">Alcoholism </td>
 				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Hepatitis" value="Hepatitis">Hepatitis </td>
 				                  	</tr>
 				                  	<tr>
-				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Mental" value="Mental">Mental Illness </td>
-				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="High" value="High">High Blood Pressure</td>
-				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Digestive" value="Digestive">Digestive Disorders </td>
+				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Mental" value="Mental">MentalIllness </td>
+				                  	<td valign="top" align="left" class="input_txt" style="width: 157px; "><input type="checkbox" name="High" value="High">HighBloodPressure</td>
+				                  	<td valign="top" align="left" class="input_txt" style="width: 149px; "><input type="checkbox" name="Digestive" value="Digestive">DigestiveDisorders </td>
+				                  	
+				                  	</tr>
+				                  	<tr>
 				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Heart" value="Heart">Heart trouble	</td>
 				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Other" value="Other"onclick="this.form.ifother.style.visibility = this.checked? 'visible' : 'hidden'"/>other </td>
 				                 <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="ifother" style="visibility:hidden" name="Ifother" placeholder="If other" /></td>
 				                  	</tr>
-				                  	
 				                  	</table> 
+				                  	
+				                  
 				                  <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Surgeries or Major Illnesses You Have Had: </td>
 				                  <td valign="top" align="left" class="input_txt">
@@ -2210,11 +2368,11 @@ function check(id)
 				                  	<tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Do You:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="checkbox" id="Drink" name="Drink" value="Drink">Drink Regularly	&nbsp;&nbsp;&nbsp;&nbsp; 
-				                  	<input type="checkbox" id="Smoke"name="Smoke" value="Smoke">Smoke	&nbsp;&nbsp;&nbsp;&nbsp;
-				                  	<input type="checkbox" id="Drugs"name="Drugs" value="Drugs">Take Recreational Drugs &nbsp;&nbsp;&nbsp;&nbsp;
-				                  	<input type="checkbox" id="Diet"name="Diet" value="Diet">Eat a Poor Diet &nbsp;&nbsp;&nbsp;&nbsp;
-				                  	<input type="checkbox" id="Exercise" name="Exercise" value="Exercise">Exercise Regularly &nbsp;&nbsp;&nbsp;&nbsp;
+				                  	<input type="checkbox" id="Drink" name="Drink" value="Drink">Drink Regularly&nbsp; 
+				                  	<input type="checkbox" id="Smoke"name="Smoke" value="Smoke">Smoke&nbsp;
+				                  	<input type="checkbox" id="Drugs"name="Drugs" value="Drugs">Take Recreational Drugs &nbsp;
+				                  	<input type="checkbox" id="Diet"name="Diet" value="Diet">Eat a Poor Diet &nbsp;&nbsp;&nbsp;
+				                  	<input type="checkbox" id="Exercise" name="Exercise" value="Exercise">Exercise Regularly &nbsp;
 				                  	
 				                  	<span id="doyouerror" style="color: red;font-style:italic;"></span>
 				                  	</tr> 
@@ -2246,16 +2404,16 @@ function check(id)
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Signature:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="Patient" name="Patient" /><br><span id="Patienterror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.patient"></form:errors></span>
-				                  	</tr>  
+				                  	</tr>   </div>
 				                  	<table align="right">
 				  <tr>
-				  <td><br><input type="button" id="btnPrevious" class="submit_btn" value="Previous"  />&nbsp;</td>
+				  <td><br><input type="button" id="btnPrevious1" class="submit_btn" value="Previous" />&nbsp;</td>
                  
  				  <td>&nbsp;&nbsp;</td>
              		 
-                  <td><input type="submit" class="submit_btn" value="Save" onclick="return checkSubmit('this');"></td>
+                  <td><input type="submit" class="submit_btn" value="Save" id="saveid" onclick="return checkSubmit('this');"></td>
                   <td>&nbsp;&nbsp;</td>
-                 <td><a href="viewpatient" class="submit_btn" style="color:white">Cancel</a></td>
+                 <td><a href="viewpatient" class="submit_btn" style="color:white" id="cancelid">Cancel</a></td>
 				 
 			</tr>
 			</table>
@@ -2902,9 +3060,9 @@ function check(id)
  				  <td>&nbsp;&nbsp;</td>
              		
 				 <td>&nbsp;&nbsp;</td>
-                  <td><input type="submit" class="submit_btn" value="Save" ></td>
+                  <td><input type="submit" class="submit_btn" value="Save" id="saveid"></td>
                   <td>&nbsp;&nbsp;</td>
-                  <td><a href="viewpatient" class="submit_btn" style="color:white">Cancel</a></td>
+                  <td><a href="viewpatient" class="submit_btn" style="color:white" id="cancelid">Cancel</a></td>
 				 
 			</tr>
 			</table>
