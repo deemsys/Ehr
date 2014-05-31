@@ -494,7 +494,7 @@ var $sid = xx+1;
 	  </style>
 	  <script>
 	  </script>
-	  <script>
+	 <script>
 
 	function checkSubmit()
 	{
@@ -543,8 +543,9 @@ var $sid = xx+1;
 	
 	return false;
 	}
+	
 	document.getElementById("zipcode1error").innerHTML="";
-	if(isNaN(document.getElementById("zipcode1").value || document.getElementById("zipcode1").value.length != 5 ))
+	if(isNaN(document.getElementById("zipcode1").value))
 	{
 	document.getElementById("zipcode1error").innerHTML="Enter Only Numbers";
 	return false;
@@ -556,12 +557,14 @@ var $sid = xx+1;
 	
 	return false;
 	}
-	/* document.getElementById("homephoneerror").innerHTML="";
-	if(isNaN(document.getElementById("homephone").value))
-	{
-	document.getElementById("homephoneerror").innerHTML="Enter Only Numbers";
-	return false;
-	} */
+	var phone = /^[0-9-()]{13}$/;
+	 if(document.getElementById("homephone").value.match(phone)==null)
+    {
+    	document.getElementById("homephoneerror").innerHTML="Enter correct homephone number ";
+    	
+        return false;
+    }
+	
 	document.getElementById("Emailiderror").innerHTML="";
 	if(document.getElementById("Emailid").value=="")
 	{
@@ -585,7 +588,13 @@ var $sid = xx+1;
 	
 	return false;
 	}
-	
+	var phone = /^[0-9-()]{13}$/;
+	 if(document.getElementById("mobilenumber").value.match(phone)==null)
+    {
+    	document.getElementById("mobilenumbererror").innerHTML="Enter correct mobilenumber number";
+    	
+        return false;
+    }
 	document.getElementById("datepicker1error").innerHTML="";
 	if(document.getElementById("datepicker1").value=="")
 	{
@@ -600,6 +609,13 @@ var $sid = xx+1;
 	
 	return false;
 	}
+	var phone = /^[0-9-]{11}$/;
+	 if(document.getElementById("socialsecuritynumber").value.match(phone)==null)
+    {
+    	document.getElementById("socialsecuritynumbererror").innerHTML="Enter correct socialsecuritynumber";
+    	
+        return false;
+    }
 	 document.getElementById("Gendererror").innerHTML=""; 
 	if( ( document.getElementById("Male").checked == false ) && ( document.getElementById("Female").checked == false ) && ( document.getElementById("Transgender").checked == false ))
 
@@ -627,7 +643,49 @@ var $sid = xx+1;
 	 		return false;
 	 		
 	 }
+	document.getElementById("workphoneerror").innerHTML="";
+	if(document.getElementById("workphone").value=="")
+	{
+	document.getElementById("workphoneerror").innerHTML="Required Field Should not be Empty";
 	
+	return false;
+	}
+	var phone = /^[0-9-()]{13}$/;
+	 if(document.getElementById("workphone").value.match(phone)==null)
+    {
+    	document.getElementById("workphoneerror").innerHTML="Enter correct workphone number";
+    	
+        return false;
+    }
+    document.getElementById("zipcode2error").innerHTML="";
+	if(document.getElementById("zipcode2").value=="")
+	{
+	document.getElementById("zipcode2error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	document.getElementById("zipcode2error").innerHTML="";
+	if(isNaN(document.getElementById("zipcode2").value))
+	{
+	document.getElementById("zipcode2error").innerHTML="Enter Only Numbers";
+	return false;
+	}
+	
+	 document.getElementById("zipcode3error").innerHTML="";
+	if(document.getElementById("zipcode3").value=="")
+	{
+	document.getElementById("zipcode3error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	document.getElementById("zipcode3error").innerHTML="";
+	if(isNaN(document.getElementById("zipcode3").value))
+	{
+	document.getElementById("zipcode3error").innerHTML="Enter Only Numbers";
+	return false;
+	}
 	document.getElementById("SpousesNameerror").innerHTML="";
 	if(document.getElementById("SpousesName").value=="")
 	{
@@ -649,6 +707,13 @@ var $sid = xx+1;
 	
 	return false;
 	}
+	var phone = /^[0-9-()]{13}$/;
+	 if(document.getElementById("spouseworkphone").value.match(phone)==null)
+    {
+    	document.getElementById("spouseworkphoneerror").innerHTML="Enter correct spouseworkphone number";
+    	
+        return false;
+    }
 	document.getElementById("Name_frienderror").innerHTML="";
 	if(document.getElementById("Name_friend").value=="")
 	{
@@ -663,7 +728,13 @@ var $sid = xx+1;
 	
 	return false;
 	}
-	
+	var phone = /^[0-9-()]{13}$/;
+	 if(document.getElementById("Phone_friend").value.match(phone)==null)
+    {
+    	document.getElementById("Phone_frienderror").innerHTML="Enter correct Phonefriend number";
+    	
+        return false;
+    }
 	
 	document.getElementById("Chiropratic_careerror").innerHTML=""; 
 	if( ( document.getElementById("yes1").checked == false ) && ( document.getElementById("No1").checked == false ) )
@@ -777,6 +848,13 @@ var $sid = xx+1;
 	
 	return false;
 	}
+	var phone = /^[0-9-()]{13}$/;
+	 if(document.getElementById("phyphone").value.match(phone)==null)
+    {
+    	document.getElementById("phyphoneerror").innerHTML="Enter correct Phone number";
+    	
+        return false;
+    }
 	document.getElementById("xrayerror").innerHTML="";
 	if(document.getElementById("xray").value=="")
 	{
@@ -805,6 +883,13 @@ var $sid = xx+1;
 	
 	return false;
 	}
+	var phone = /^[0-9-()]{13}$/;
+	 if(document.getElementById("phonenumber").value.match(phone)==null)
+    {
+    	document.getElementById("phonenumbererror").innerHTML="Enter correct Phone number";
+    	
+        return false;
+    }
 	document.getElementById("Fault_accidenterror").innerHTML="";
 	if(document.getElementById("Fault_accident").value=="")
 	{
@@ -826,6 +911,13 @@ var $sid = xx+1;
 	
 	return false;
 	}
+	var phone = /^[0-9-()]{13}$/;
+	 if(document.getElementById("Insurance_phone").value.match(phone)==null)
+    {
+    	document.getElementById("Insurance_phoneerror").innerHTML="Enter correct Phone number";
+    	
+        return false;
+    }
 	document.getElementById("Name_autoerror").innerHTML="";
 	if(document.getElementById("Name_auto").value=="")
 	{
@@ -839,7 +931,15 @@ var $sid = xx+1;
 	document.getElementById("Phone_autoerror").innerHTML="Required Field Should not be Empty";
 	
 	return false;
-	}document.getElementById("policyerror").innerHTML="";
+	}
+	var phone = /^[0-9-()]{13}$/;
+	 if(document.getElementById("Phone_auto").value.match(phone)==null)
+    {
+    	document.getElementById("Phone_autoerror").innerHTML="Enter correct Phone number";
+    	
+        return false;
+    }
+	document.getElementById("policyerror").innerHTML="";
 	if(document.getElementById("policy").value=="")
 	{
 	document.getElementById("policyerror").innerHTML="Required Field Should not be Empty";
@@ -1103,13 +1203,13 @@ var $sid = xx+1;
 								</tr>                        
 						 		<tr class="row2">
                         			<td><span class="err"></span>WorkPhone:</td>
-                        			<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.workphone}" name="workphone" /></br><span class="err"><form:errors path="PatientDetails.Workphone"></form:errors></span></td>
+                        			<td class="input_txt"><input type="text" class="input_txtbx1" id="workphone"   value="${patientDetails.workphone}" name="workphone" /></br><span id="workphoneerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Workphone"></form:errors></span></td>
 								</tr>  
 								
 								 <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>ZipCode:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="zipcode2" name="zip" value="${patientDetails.zip}"/><br><span class="err" id="zipcodeerror1"><form:errors path="PatientDetails.zipCode"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="zipcode1" name="zip" value="${patientDetails.zip}"/><br><span class="err" id="zipcode1error"  style="color: red;font-style:italic;"><form:errors path="PatientDetails.zipCode"></form:errors></span>
 	
 	<span class="err" ></span>            
 				                  </td>
@@ -1127,7 +1227,7 @@ var $sid = xx+1;
 								</tr>
 							    <tr class="row1">
                         			<td><span class="err"></span>ZipCode:</td>
-                        			<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.ezip}" name="ezip" /></br><span class="err"><form:errors path="PatientDetails.Ezip"></form:errors></span></td>
+                        			<td class="input_txt"><input type="text" class="input_txtbx1" id="zipcode3"   value="${patientDetails.ezip}" name="ezip" /></br><span style="color: red;font-style:italic;" id="zipcode3error"><form:errors path="PatientDetails.Ezip"></form:errors></span></td>
 								</tr> 
 								                   
 							</table>
