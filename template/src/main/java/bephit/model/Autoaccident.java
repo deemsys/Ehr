@@ -37,7 +37,9 @@ public class Autoaccident {
 	private String seat_after_accident;
 	private String lap_seat_belt;
 	private String shoulder_seat_belt;
+	@NotEmpty
 	private String airbag;
+	@NotEmpty
 	private String wereyou;
 	private String body_position;
 	private String body_position1;
@@ -45,6 +47,7 @@ public class Autoaccident {
 	private String head_position1;
 	private String hands_on_wheel;
 	private String aware_of_crash;
+	@NotEmpty
 	private String brace;
 	private String ifyes;
 	private String further_injury;
@@ -81,6 +84,7 @@ public class Autoaccident {
 	private String otherpaintext;
 	private String first_symptom;
 	private String symptom;
+	@NotEmpty
 	private String after_accident;
 	private String accident;
 	private String hosname;
