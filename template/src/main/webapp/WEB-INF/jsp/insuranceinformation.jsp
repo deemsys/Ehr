@@ -178,7 +178,13 @@ function checkSubmit()
 	
 	return false;
     }
-    
+	var phone = /^[0-9-()]{13}$/;
+	 if(document.getElementById("phone").value.match(phone)==null)
+   {
+   	document.getElementById("phoneerr").innerHTML="Enter correct Phone number";
+   	
+       return false;
+   }
     document.getElementById("policyerr").innerHTML="";
 	if(document.getElementById("policy").value=="")
 	{
@@ -208,6 +214,13 @@ function checkSubmit()
 	
 	return false;
     }
+	var phone = /^[0-9-()]{13}$/;
+	 if(document.getElementById("supphone").value.match(phone)==null)
+  {
+  	document.getElementById("supphoneerr").innerHTML="Enter correct Phone number";
+  	
+      return false;
+  }
      document.getElementById("patient_signerr").innerHTML="";
 	if(document.getElementById("patient_sign").value=="")
 	{
