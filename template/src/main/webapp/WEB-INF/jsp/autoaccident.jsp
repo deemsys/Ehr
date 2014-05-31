@@ -1566,6 +1566,7 @@ $(function() {
  
                   <td><input type="submit" class="submit_btn" id="saveid" value="Save" onclick ="return checkSubmit('this')";></td>
                   <td>&nbsp;&nbsp;</td>
+                   <td><a href="viewpatient"style="color:white" id="cancelid" class="submit_btn">Cancel</a></td>
                   <td><!-- <a href="viewpatient" class="submit_btn" style="color: white">Cancel</a> --></td>
 				</table> 
 				</form>

@@ -463,8 +463,8 @@ document.getElementById("securityerror").innerHTML=" ";
 	    <table align="right"><tr><td >
 	    
 	     <input class="submit_btn" type="submit" value="Save" id="saveid"></td>
-	     <td><input class="submit_btn" type="reset" value="Cancel" id="cancelid">
-	    </td></tr></table>
+	      <td><a href="viewpatient"style="color:white" id="cancelid" class="submit_btn">Cancel</a></td>
+	    </tr></table>
 	    </div>
 	    </div>
 	    </td>
@@ -655,8 +655,9 @@ document.getElementById("securityerror").innerHTML=" ";
 	    <td>
 	    
 	     <input class="submit_btn" type="submit" value="Save" id="saveid" onclick="return checkSubmit('this');" ></td>
-	     <td><input class="submit_btn" type="reset" value="Cancel" id="cancelid" >
-	    </td></tr></table>
+	     <td><a href="viewpatient"style="color:white" id="cancelid" class="submit_btn">Cancel</a></td>
+	    
+	    </tr></table>
 	     </div>
 	     </div>
 	     </td>

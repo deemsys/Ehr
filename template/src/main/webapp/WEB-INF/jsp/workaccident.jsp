@@ -547,7 +547,7 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 				   <table align="right"> <tr><td><input type="button" id="btnPrevious" class="submit_btn" value="Previous" style = "display:none" />&nbsp;</td>
 
 <td valign="top" align="center"><input type="submit" class="submit_btn" value="Save" id="saveid" onclick="return checkSubmit('this');"></td>
- 
+  <td><a href="viewpatient"style="color:white" id="cancelid" class="submit_btn">Cancel</a></td>
              		<!--  <td valign="top" align="center"><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewworkaccident'"></td> -->
 				  
                   <td valign="top" align="center"><!-- <input type="reset" class="submit_btn" value="Cancel" onclick="window.location.href='work'"> --></td></td>

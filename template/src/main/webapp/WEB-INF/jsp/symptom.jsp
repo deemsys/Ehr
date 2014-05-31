@@ -2334,7 +2334,7 @@ document.getElementById("datepickererror").innerHTML=" ";
     </c:choose>
 </br>
 </br>
-<table width="100" align="right"><tr ><td  ><input  type="submit" value="Save" id="saveid" class="submit_btn" onclick="return checkSubmit('this');"></td><td ><a href="viewsymptom" style="color: white" class="submit_btn" id="cancelid">Cancel</a></td></tr>
+<table width="100" align="right"><tr ><td  ><input  type="submit" value="Save" id="saveid" class="submit_btn" onclick="return checkSubmit('this');"></td><td ><a href="viewpatient" style="color: white" class="submit_btn" id="cancelid">Cancel</a></td></tr>
 </table>
 </form>
 
