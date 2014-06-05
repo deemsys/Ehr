@@ -326,7 +326,31 @@ document.getElementById("faxno").value=phone;
 });
 </script>
 
+<script>
+  function printPage(id)
+  {
+	
+	        document.getElementById('print').style.visibility = 'hidden';
+	        document.getElementById('saveid').style.visibility = 'hidden';
+	        document.getElementById('cancelid').style.visibility = 'hidden';
+		 
+		  
+     var html="<html>";
+     html+= document.getElementById(id).innerHTML;
 
+     html+="</html>";
+
+     var printWin = window.open('','','left=0,top=0,width=1400,height=1000,toolbar=0,scrollbars=0,status  =0');
+     printWin.document.write(html);
+     printWin.document.close();
+     printWin.focus();
+     printWin.print();
+     printWin.close();
+     document.getElementById('print').style.visibility = 'visible';
+     document.getElementById('saveid').style.visibility = 'visible';
+     document.getElementById('cancelid').style.visibility = 'visible';
+  }
+  </script>
 </head>
  <body>
 <div id="right_content">
@@ -342,8 +366,9 @@ document.getElementById("faxno").value=phone;
       </tr> 
       <tr>
         <td valign="top" align="center">
-        	<div>
+        	<div id="block1">
 	            <div class="headings altheading">
+	             <img  src="resources/images/print.png" id="print" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block1');" >
 	             <h2>PERRY CHIROPRACTIC & THERAPY CENTER OF CANTON, INC.</h2> 
 	            </div>
 	              <c:choose>
@@ -410,7 +435,7 @@ document.getElementById("faxno").value=phone;
               <tr>
               <td  width="20%"><span class="err"></span>RE:</td>
               <td ><input type="text" class="input_txtbx1" name="regarding" id="re" style="width: 164px; "/><span class="err" id="reerror"><form:errors path="Faxcover.regarding"></form:errors></td>
-              <td align="left" style="width: 188px; "><span class="err"></span>Number Of Pages Sent:</td>
+              <td align="left" style="width: 159px; "><span class="err"></span>Number Of Pages Sent:</td>
               <td ><input type="text" class="input_txtbx1" name="pages" id="nos" /><span class="err" id="noserror"><form:errors path="Faxcover.pages"></form:errors></td>
               </tr>
               </table>
@@ -419,9 +444,9 @@ document.getElementById("faxno").value=phone;
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="20%"><span class="err">*</span>Message:</td>
-              <td ><input type="text" class="input_txtbx1" name="msg" id="msg" style="width: 164px; "/><span class="err" id="msgerror"><form:errors path="Faxcover.msg"></form:errors></td>
+              <td style="width: 173px; "><input type="text" class="input_txtbx1" name="msg" id="msg" style="width: 164px; "/><span class="err" id="msgerror"><form:errors path="Faxcover.msg"></form:errors></td>
             <td align="left"><span class="err">*</span>Claim No:</td>
-              <td style="width: 188px; " align="right"><input type="text" class="input_txtbx1" name="claimno" id="claimno" /><span class="err" id="claimnoerror"><form:errors path="Faxcover.claimno"></form:errors>
+              <td style="width: 188px; " align="right"><input type="text" class="input_txtbx1" name="claimno" id="claimno" style="width: 166px; "/><span class="err" id="claimnoerror"><form:errors path="Faxcover.claimno"></form:errors>
               </span><span class="err" id="number"></span></td>
               </tr>
               </table>
@@ -437,9 +462,9 @@ document.getElementById("faxno").value=phone;
        	<tr>
        	<td>
        	<p>
-       	<h2>
-     If we donot hear from you within 7 business days, We will assume you will honour our assignment.</h2></p>
-  <p><h2>If you have any questions or concerns,please feel free to contact.</h2> </p>	
+       	<h4>
+     If we donot hear from you within 7 business days, We will assume you will honour our assignment.</h4></p>
+  <p><h4>If you have any questions or concerns,please feel free to contact.</h4> </p>	
 
 
        </td>
@@ -567,8 +592,8 @@ document.getElementById("faxno").value=phone;
             </div>
             </c:otherwise>
             </c:choose>
-            <table><tr> <td><input type="submit" class="submit_btn" id="btn" value="Save" onclick="return checkSubmit('this');"></td>
-               <td><a href="viewallpatientdetails"style="color:white" class="submit_btn">Cancel</a></td>
+            <table><tr> <td><input type="submit" class="submit_btn" id="saveid" value="Save" onclick="return checkSubmit('this');"></td>
+               <td><a href="viewallpatientdetails"style="color:white" id="cancelid" class="submit_btn">Cancel</a></td>
               </tr></table>
               
               
