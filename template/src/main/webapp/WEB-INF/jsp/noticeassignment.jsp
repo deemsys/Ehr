@@ -234,6 +234,31 @@ document.getElementById("nameofattorneyerror").innerHTML="";
         }
 
 </script>
+<script>
+  function printPage(id)
+  {
+	
+	        document.getElementById('print').style.visibility = 'hidden';
+	        document.getElementById('saveid').style.visibility = 'hidden';
+	        document.getElementById('cancelid').style.visibility = 'hidden';
+		 
+		  
+     var html="<html>";
+     html+= document.getElementById(id).innerHTML;
+
+     html+="</html>";
+
+     var printWin = window.open('','','left=0,top=0,width=1400,height=1000,toolbar=0,scrollbars=0,status  =0');
+     printWin.document.write(html);
+     printWin.document.close();
+     printWin.focus();
+     printWin.print();
+     printWin.close();
+     document.getElementById('print').style.visibility = 'visible';
+     document.getElementById('saveid').style.visibility = 'visible';
+     document.getElementById('cancelid').style.visibility = 'visible';
+  }
+  </script>
 </head>
  <body>
 <div id="right_content">
@@ -249,8 +274,9 @@ document.getElementById("nameofattorneyerror").innerHTML="";
       </tr> 
       <tr>
         <td valign="top" align="center">
-        	<div>
+        	<div id="block1">
 	            <div class="headings altheading">
+	              <img  src="resources/images/print.png" id="print" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block1');" >
 	             <h2>CHIROPRACTIC THERAPY CENTER</h2> 
 	            </div>
 	            <div class="contentbox">
@@ -280,42 +306,42 @@ document.getElementById("nameofattorneyerror").innerHTML="";
              <c:when test="${empty notice}">
              <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
-              <td height="20" width="180"><span class="err">*</span>Name Of Insurance Company:</td>
+              <td width="25%" ><span class="err">*</span>Name Of Insurance Company:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
               <td ><input type="text" class="input_txtbx1" name="nameofins" id="nameofins" /><span class="err" id="nameofinserror"><form:errors path="noticeerror.nameofins"></form:errors></td>
-              <td height="40" width="118" ><span class="err">&nbsp;&nbsp;*</span>Name Of Attorney:</td>
-              <td >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="nameofattorney" id="nameofattorney" /><span class="err" id="nameofattorneyerror"><form:errors path="noticeerror.nameofattorney"></form:errors></span></td>
+              <td ><span class="err">*</span>Name Of Attorney:</td>
+              <td ><input type="text" class="input_txtbx1" name="nameofattorney" id="nameofattorney" /><span class="err" id="nameofattorneyerror"><form:errors path="noticeerror.nameofattorney"></form:errors></span></td>
               </tr>
-              </table>
+              </table><br>
                 <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td  width="176"><span class="err"></span>Address</td>
+              <td width="25%" ><span class="err"></span>Address</td>
               <td  ><textarea rows="" cols="" name="address1" style="width: 174px; height: 64px" class="input_txtarea" id="addr"></textarea>
-            </td>  <td height="40" width="90" style="width: 136px; "><span class="err"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Address:</td>
-              <td ><textarea rows="" cols="" name="address2"  class="input_txtarea"style="width: 176px; height: 64px"></textarea></td>
+            </td>  <td  ><span class="err"></span>Address&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <td >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<textarea rows="" cols="" name="address2"  class="input_txtarea"style="width: 176px; height: 64px"></textarea></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               
-              <td  width="180"><span class="err"></span>Regarding:</td>
-              <td ><input type="text" class="input_txtbx1" name="regarding" id="regarding" /><span class="err"><form:errors path="noticeofassignment.regarding"></form:errors></span></td>                   
+              <td ><span class="err"></span>Regarding:</td>
+              <td ><input type="text" class="input_txtbx1" name="regarding" id="regarding" /><span class="err"><form:errors path="noticeofassignment.regarding"></form:errors></span><br></td>                   
           </tr> 
           <tr>
-            <td height="40" width="180"><span class="err">*</span>PatientName:</td>
-              <td ><input type="text" class="input_txtbx1" name="patientname" id="patientname" /><span class="err" id="patientnameerror"><form:errors path="noticeerror.patientname"></form:errors></span></td>                      
+            <td width="25%"><span class="err">*</span>PatientName:</td>
+              <td ><input type="text" class="input_txtbx1" name="patientname" id="patientname" /><span class="err" id="patientnameerror"><form:errors path="noticeerror.patientname"></form:errors></span><br></td>                      
           </tr> 
           <tr>
-            <td height="30" width="180">Date Of Accident:</td>
-              <td ><input type="text" class="input_txtbx1" name="dateofaccident" id="datepicker1" /><span class="err"><form:errors path="noticeerror.dateofaccident"></form:errors></span></td>                      
+            <td width="25%">Date Of Accident:</td>
+              <td ><input type="text" class="input_txtbx1" name="dateofaccident" id="datepicker1" /><span class="err"><form:errors path="noticeerror.dateofaccident"></form:errors></span><br></td>                      
           </tr> 
           <tr>
-            <td height="20" width="180">Today'sDate:</td>
-              <td ><input type="text" class="input_txtbx1" name="todaysdate" id="datepicker2" /><span class="err"><form:errors path="noticeerror.todaysdate"></form:errors></span></td>                      
+            <td width="25%">Today'sDate:</td>
+              <td ><input type="text" class="input_txtbx1" name="todaysdate" id="datepicker2" /><span class="err"><form:errors path="noticeerror.todaysdate"></form:errors></span><br></td>                      
           </tr> <br>  
             </table>
             
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
-        	  <tr><td hight="20" width="250"><br><br><p align="left" id="mypar"><b><h4>Dear Madam/Sir:</h4></b></p></td></tr>
+        	  <tr><td ><br><br><p align="left" id="mypar"><b><h4>Dear Madam/Sir:</h4></b></p></td></tr>
        		  </table>
        		
        		<table>
@@ -505,8 +531,8 @@ do not receive a response, we will act in reliance that you will comply with it'
               <input type="text" name="user" id="user"  style="visibility:hidden">
               
              
-              <table><tr> <td><input type="submit" class="submit_btn" value="Save" OnClick ="return valid();"></td>
-               <td><a href="viewnoticeassignment"style="color:white" class="submit_btn">Cancel</a></td>
+              <table><tr> <td><input type="submit" class="submit_btn" id="saveid" value="Save" OnClick ="return valid();"></td>
+               <td><a href="viewnoticeassignment"style="color:white" id="cancelid" class="submit_btn">Cancel</a></td>
               </tr></table>
               </div>
         	  </div>

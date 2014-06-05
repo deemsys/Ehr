@@ -261,7 +261,31 @@ function doAjaxPost() {
 		}
 		</script>
 		
+<script>
+  function printPage(id)
+  {
+	
+	        document.getElementById('print').style.visibility = 'hidden';
+	        document.getElementById('saveid').style.visibility = 'hidden';
+	        document.getElementById('cancelid').style.visibility = 'hidden';
+		 
+		  
+     var html="<html>";
+     html+= document.getElementById(id).innerHTML;
 
+     html+="</html>";
+
+     var printWin = window.open('','','left=0,top=0,width=1400,height=1000,toolbar=0,scrollbars=0,status  =0');
+     printWin.document.write(html);
+     printWin.document.close();
+     printWin.focus();
+     printWin.print();
+     printWin.close();
+     document.getElementById('print').style.visibility = 'visible';
+     document.getElementById('saveid').style.visibility = 'visible';
+     document.getElementById('cancelid').style.visibility = 'visible';
+  }
+  </script>
 </head>
  <body>
 <div id="right_content">
@@ -277,8 +301,9 @@ function doAjaxPost() {
       </tr> 
       <tr><td width="150"></td>
         <td valign="top" align="center">
-        	<div>
+        	<div id="block1">
 	            <div class="headings altheading">
+	              <img  src="resources/images/print.png" id="print" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block1');" >
 	             <h2>FORM NOTICE OF FINAL  BILL</h2> 
 	            </div>
 	             <form target="popup" action="perrychiropracticsearch" onsubmit="window.open('', this.target,    'width=300,height=300,resizable,scrollbars=yes'); return true;">
@@ -314,40 +339,40 @@ function openWindow(h, w, url) {
             
                 <table align="center" cellpadding="0" cellspacing="0" border="0"   width="100%"  ">
               <tr >
-             <td height="25" width="120"><span class="err">*</span>Insurance Company:</td>
+             <td height="25" width="40%"><span class="err">*</span>Insurance Company:</td>
               <td ><input type="text" class="input_txtbx1" name="insurance" id="insurance"/><span class="err" id="insuranceerror"><form:errors path="Formbill.insurance"></form:errors></span></td>
               </tr>
               </table>
               <br>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="120"><span class="err"></span>Address:</td>
+              <td height="25" width="40%"><span class="err"></span>Address:</td>
               <td ><textarea rows="3" cols="28"  name="address1" class="input_txtarea" id="address1"/></textarea><span class="err"><form:errors path="Formbill.address1"></form:errors></span></td>
              </tr>
               </table>
              
                <table align="center" cellpadding="0" cellspacing="0" border="0"   width="100%"  ">
               <tr ><br>
-             <td height="25" width="120"><span class="err">*</span>Name Of Attorney:</td>
+             <td height="25" width="40%"><span class="err">*</span>Name Of Attorney:</td>
               <td ><input type="text" class="input_txtbx1" name="name" id="name"/><span class="err" id="nameerror"><form:errors path="Formbill.name"></form:errors></span></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="120"><span class="err"></span>Address:</td>
+              <td height="25" width="40%"><span class="err"></span>Address:</td>
               <td ><textarea rows="3" cols="28" class= "input_txtarea" name="address3" id="address3"/></textarea><span class="err"><form:errors path="Formbill.address3"></form:errors></span></td>
              </tr>
               </table>
               
                 <table align="center" cellpadding="0" cellspacing="0" border="0"   width="100%"  ">
               <tr >
-             <td height="25" width="120"><span class="err">*</span>Patient Name</td>
+             <td height="25" width="40%"><span class="err">*</span>Patient Name</td>
               <td ><input type="text" class="input_txtbx1" name="patientsname" id="patientsname"/><span class="err" id="pnameerror"><form:errors path="Formbill.patientsname"></form:errors></span></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="120"><span class="err"></span>Address:</td>
+              <td height="25" width="40%"><span class="err"></span>Address:</td>
               <td ><textarea rows="3" cols="28"   class="input_txtarea" name="address5" id="address5"/></textarea><span class="err"><form:errors path="Formbill.address5"></form:errors></span></td>
              </tr>
               </table>
@@ -485,8 +510,8 @@ function openWindow(h, w, url) {
 <br>				</td></tr></table>
 </c:otherwise>
 </c:choose>
-       		   <table><tr> <td><input type="submit" class="submit_btn" value="Save" onclick="return checkSubmit('this');"></td>
-               <td><a href="viewformbill"style="color:white" class="submit_btn">Cancel</a></td>
+       		   <table><tr> <td><input type="submit" class="submit_btn" value="Save" id="saveid" onclick="return checkSubmit('this');"></td>
+               <td><a href="viewformbill"style="color:white" class="submit_btn" id="cancelid">Cancel</a></td>
               </tr></table>
               </div>
         	  </div>

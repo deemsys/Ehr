@@ -247,6 +247,31 @@ function doAjaxPost() {
 		}
 		}
 		</script>
+		<script>
+  function printPage(id)
+  {
+	
+	        document.getElementById('print').style.visibility = 'hidden';
+	        document.getElementById('saveid').style.visibility = 'hidden';
+	        document.getElementById('cancelid').style.visibility = 'hidden';
+		 
+		  
+     var html="<html>";
+     html+= document.getElementById(id).innerHTML;
+
+     html+="</html>";
+
+     var printWin = window.open('','','left=0,top=0,width=1400,height=1000,toolbar=0,scrollbars=0,status  =0');
+     printWin.document.write(html);
+     printWin.document.close();
+     printWin.focus();
+     printWin.print();
+     printWin.close();
+     document.getElementById('print').style.visibility = 'visible';
+     document.getElementById('saveid').style.visibility = 'visible';
+     document.getElementById('cancelid').style.visibility = 'visible';
+  }
+  </script>
 </head>
  <body>
 <div id="right_content">
@@ -262,8 +287,9 @@ function doAjaxPost() {
       </tr> 
       <tr>
         <td valign="top" align="center">
-        	<div>
+        	<div id="block1">
 	            <div class="headings altheading">
+	          <img  src="resources/images/print.png" id="print" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block1');" >
 	             <h2>Letter Of Protection-Drafted For Patient's Attorney</h2> 
 	            </div>
 	                <form target="popup" action="perrychiropracticsearch" onsubmit="window.open('', this.target,    'width=300,height=300,resizable,scrollbars=yes'); return true;">
@@ -292,39 +318,39 @@ function openWindow(h, w, url) {
             
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25"  width="160"><span class="err">*</span>D.C:</td>
+              <td height="25"  width="40%"><span class="err">*</span>D.C:</td>
                <td ><input type="text" class="input_txtbx1" name="dc" id="dcr" /><span class="err" id="dcerr"><form:errors path="Letterofprotection.dc"></form:errors></td>
              
               </tr>
               <tr>
-              <td height="25" width="160"><span class="err">*</span>Clinic Name:</td>
+              <td height="25" width="40%"><span class="err">*</span>Clinic Name:</td>
                <td ><input type="text" class="input_txtbx1" name="clinicname" id="clinicname" /><span class="err" id="clerr"><form:errors path="Letterofprotection.clinicname"></form:errors></td>
              
               </tr>
              </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="160"><span class="err"></span>Address:</td>
+              <td height="25" width="40%"><span class="err"></span>Address:</td>
               <td><textarea rows="4" cols="28"  class="input_txtarea" name="address1" style="width: 170px; height: 62px"></textarea><span class="err"><form:errors path="Letterofprotection.address1"></form:errors></span>
             </td></tr>
               </table>
              
             <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25"  width="160"><span class="err"></span>IN RE:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My Client:</td>
+              <td height="25"  width="40%"><span class="err"></span>IN RE: My Client:</td>
                <td ><input type="text" class="input_txtbx1" name="myclient" id="myclient" /><span class="err"><form:errors path="Letterofprotection.myclient"></form:errors></td>
              
               </tr>
               <tr>
-              <td height="25"  width="160"><span class="err">*</span>Date of Accident</td>
+              <td height="25"  width="40%"><span class="err">*</span>Date of Accident</td>
                <td ><input type="text" class="input_txtbx1" name="dateofaccident" id="datepicker1" /><span class="err" id="daerr"><form:errors path="Letterofprotection.dateofaccident"></form:errors></td>
              
               </tr>
              </table><br><br>
              <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td  width="62"><span class="err">*</span>Dear Dr</td>
-              <td  height="25" width="160" ><input type="text" class="input_txtbx1" name="dearsir" id="dearsir" /><span class="err" id="suberr"><form:errors path="Letterofprotection.dearsir"></form:errors>
+              <td height="25" width="40%"><span class="err">*</span>Dear Dr</td>
+              <td   ><input type="text" class="input_txtbx1" name="dearsir" id="dearsir" /><span class="err" id="suberr"><form:errors path="Letterofprotection.dearsir"></form:errors>
            </span></td></tr>	
              </table>
              <table>
@@ -348,11 +374,24 @@ function openWindow(h, w, url) {
              </table>
              <table>
              <tr><td width="450"></td>
-             <td ><p><h1> <b>Very truly yours,</b></h1><p></td></tr>
+             <td ><p><h4> <b>Very truly yours,</b></h4><p></td></tr>
              <tr><td width="450"></td>
             <td ><span class="err">*</span><input type="text" class="input_txtbx1" name="esq" id="esq" /><span class="err" id="esqerr"><form:errors path="Letterofprotection.esq"></form:errors></td></tr>
-            <tr><td width="450"></td><td ><p><h1> <b>	Attorney for above client</b></h1><p></td></tr>
+            <tr><td width="450"></td><td ><p><h4> <b>	Attorney for above client</b></h4><p></td></tr>
              </table>
+             
+            <%--  <<%-- table cellpadding="0" cellspacing="0" border="0" width="100%"><tr> 
+       		 <td ><p align="right">Very truly your,   </p></td>
+       		 <td ><span class="err">*</span><input type="text" class="input_txtbx1" name="esq" value="${letter.esq}"    id="esq" /><span class="err"><form:errors path="Letterofprotection.esq"></form:errors></td>
+       		<tr>
+       		<td>
+       		<p align="right">
+       		
+       		  
+       		 <b>	Attorney for above client</b>
+       		    </p></td></tr>     		         		  
+        	  </table> --%> 
+            
              </c:when>
              <c:otherwise>
                <div class="contentbox">
@@ -424,21 +463,30 @@ function openWindow(h, w, url) {
              </td>
              </tr>
              </table>
-             <table>
-             <tr><td width="450"></td>
-             <td ><p><h1> <b>Very truly yours,</b></h1><p></td></tr>
-             <tr><td width="450"></td>
-            <td ><span class="err">*</span><input type="text" class="input_txtbx1" name="esq" value="${letter.esq}"    id="esq" /><span class="err"><form:errors path="Letterofprotection.esq"></form:errors></td></tr>
-            <tr><td width="450"></td><td ><p><h1> <b>	Attorney for above client</b></h1><p></td></tr>
-             </table>
+               <table cellpadding="0" cellspacing="0" border="0" width="100%"><tr> 
+       		 <td ><p align="right"><b>Very truly yours, </b>  </p></td></tr>
+       		 <tr><br>
+       		 <br>
+       		 <br>
+       		 <td ><span class="err">*</span><input type="text" class="input_txtbx1" name="esq" value="${letter.esq}"    id="esq" /><span class="err"><form:errors path="Letterofprotection.esq"></form:errors></td>
+       		</tr>
+       		<tr>
+       		<td>
+       		<p align="right">
+       		
+       		  
+       		 <b>	Attorney for above client</b>
+       		    </p></td></tr>     		         		  
+        	  </table>
+            
              </c:otherwise>
              </c:choose>
               <table>
               <tr>
               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-              <td><input type="submit" class="submit_btn" value="Save" onclick="return checkSubmit('this');"></td>
+              <td><input type="submit" class="submit_btn" value="Save" id="saveid" onclick="return checkSubmit('this');"></td>
               <td>&nbsp;&nbsp;</td>
-              <td><a href="viewletterofprotection" style="color:white" class="submit_btn">Cancel</a></td>
+              <td><a href="viewletterofprotection" style="color:white" class="submit_btn" id="cancelid">Cancel</a></td>
               <td>&nbsp;&nbsp;</td>
         	  </tr>
         	  </table>

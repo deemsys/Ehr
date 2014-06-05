@@ -214,6 +214,31 @@ function doAjaxPost() {
 	
 
 </script>
+<script>
+  function printPage(id)
+  {
+	
+	        document.getElementById('print').style.visibility = 'hidden';
+	        document.getElementById('saveid').style.visibility = 'hidden';
+	        document.getElementById('cancelid').style.visibility = 'hidden';
+		 
+		  
+     var html="<html>";
+     html+= document.getElementById(id).innerHTML;
+
+     html+="</html>";
+
+     var printWin = window.open('','','left=0,top=0,width=1400,height=1000,toolbar=0,scrollbars=0,status  =0');
+     printWin.document.write(html);
+     printWin.document.close();
+     printWin.focus();
+     printWin.print();
+     printWin.close();
+     document.getElementById('print').style.visibility = 'visible';
+     document.getElementById('saveid').style.visibility = 'visible';
+     document.getElementById('cancelid').style.visibility = 'visible';
+  }
+  </script>
 <div class='popup'>
 <div class='cnt223'>
 <br><br>
@@ -254,8 +279,9 @@ function doAjaxPost() {
       </tr> 
       <tr>
         <td valign="top" align="center">
-        	<div>
+        	<div id="block1">
 	            <div class="headings altheading">
+	           <img  src="resources/images/print.png" id="print" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block1');" >
 	             <h2>PERRY CHIROPRACTIC & THERAPY CENTER OF CANTON, INC.</h2> 
 	            </div>
 
@@ -290,27 +316,27 @@ Canton, Ohio 44708
               <tr><p align="center"><b>Form Cover Letter For Insurance Company, Copy To Attorney</b>
               </p>
               </tr>
-               <tr ><td width="70%"></td>
+               <tr ><td width="50%"></td>
               <td ><b>SENT BY CERTIFIED MAIL</b></td>
               </tr>
-              <tr ><td width="70%"></td>
+              <tr ><td width="50%"></td>
               <td ><b>PLEASE READ:  THIS IS NOTICE TO YOU OF</b></td>
               </tr>
-              <tr ><td width="70%"></td>
+              <tr ><td width="50%"></td>
               <td ><b>AN ATTACHED ASSIGNMENT OF </b></td>
               </tr>
-               <tr ><td width="70%"></td>
+               <tr ><td width="50%"></td>
               <td ><b>INSURANCE COVERAGE  FOR AN EXISTING </b></td>
               </tr>
-               <tr ><td width="70%"></td>
+               <tr ><td width="50%"></td>
               <td ><b> LOSS </b></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
-              <tr ><td width="70%"></td>
+              <tr ><td width="50%"></td>
               <td ><b> PLEASE OPEN CLAIM IN ACCORD WITH  </b></td>
               </tr>
-               <tr ><td width="70%"></td>
+               <tr ><td width="50%"></td>
               <td ><b> BELOW.  </b></td>
               </tr>
               </table>
@@ -318,7 +344,7 @@ Canton, Ohio 44708
               <br>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               
-               <tr ><td width="70%"></td>
+               <tr ><td width="50%"></td>
               <td ><b>COPY TO PATIENT'S ATTORNEY.
 
  </b></td>
@@ -696,8 +722,8 @@ However, a different recent Ohio Supreme Court case confirms the validity of the
            
            </c:otherwise>
            </c:choose> 
-            <table><tr> <td><input type="submit" class="submit_btn" value="Save" onclick="return checkSubmit('this');"></td>
-               <td><a href="viewallpatientdetails"style="color:white" class="submit_btn">Cancel</a></td>
+            <table><tr> <td><input type="submit" class="submit_btn" value="Save" id="saveid" onclick="return checkSubmit('this');"></td>
+               <td><a href="viewallpatientdetails"style="color:white" class="submit_btn" id="cancelid">Cancel</a></td>
               </tr></table>
               </div>
         	  </div>

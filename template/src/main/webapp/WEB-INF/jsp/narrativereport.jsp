@@ -228,6 +228,35 @@ document.getElementById("signerror").innerHTML=" ";
            }
        }       
     </script>
+    <script>
+  function printPage(id)
+  {
+	
+	        document.getElementById('print').style.visibility = 'hidden';
+	        document.getElementById('print1').style.visibility = 'hidden';
+	        document.getElementById('print2').style.visibility = 'hidden';
+	        document.getElementById('saveid').style.visibility = 'hidden';
+	        document.getElementById('cancelid').style.visibility = 'hidden';
+		 
+		  
+     var html="<html>";
+     html+= document.getElementById(id).innerHTML;
+
+     html+="</html>";
+
+     var printWin = window.open('','','left=0,top=0,width=1400,height=1000,toolbar=0,scrollbars=0,status  =0');
+     printWin.document.write(html);
+     printWin.document.close();
+     printWin.focus();
+     printWin.print();
+     printWin.close();
+     document.getElementById('print').style.visibility = 'visible';
+     document.getElementById('print1').style.visibility = 'visible';
+     document.getElementById('print2').style.visibility = 'visible';
+     document.getElementById('saveid').style.visibility = 'visible';
+     document.getElementById('cancelid').style.visibility = 'visible';
+  }
+  </script>
 </head>
  
  <body>
@@ -249,8 +278,9 @@ document.getElementById("signerror").innerHTML=" ";
 <table cellpadding="0" cellspacing="0" border="0" width="80%" class="margin_table">
 <tr>
 <td valign="top" align="left">
- <div>
+<div id="block1">
 	            <div class="headings altheading">
+	           <img  src="resources/images/print.png" id="print" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block1');" >
 	            <center> <h2> CHIROPRACTIC THERAPY CENTER</h2> </center><br/>
 	            </div>
 	            <div class="contentbox"><center> Sheffield Village Plaza </center><br/>
@@ -279,13 +309,17 @@ document.getElementById("signerror").innerHTML=" ";
           <td><span class="err">*</span>Date of first visit: </td>
           <td><input type="text"  class="input_txtbx1" name="dateoffirstvisit" id="datepicker" size="40"><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path=""></form:errors></span></td>
           </tr>
+          <tr height="30">
+          <td><span class="err"></span>TO </td>
+          <td><input type="text"  class="input_txtbx1" name="towhom"  size="40"></td>
+          </tr>
           </table>
-          <table cellpadding="0" cellspacing="0" border="0" width="70%" align="center">
+          <!-- <table cellpadding="0" cellspacing="0" border="0" width="70%" align="center">
           <tr height="30">
           <td width="35.5%">TO </td>
           <td><input type="text"  class="input_txtbx1" name="towhom"  size="40"></td>
           </tr>
-          </table>
+          </table> -->
           <br/>
           <div><p style="line-height:1.5"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At your request and with permission from my patient, <input type="text"  class="input_txtbx1" name="patientname" size="40">, I am writing the following narrative report concerning the injuries <select  name="gender" id="gender" onchange="validate()">
 					<option selected="selected"  class="input_txtbx1" value="He" >He</option>
@@ -514,8 +548,9 @@ document.getElementById("signerror").innerHTML=" ";
 <table cellpadding="0" cellspacing="0" border="0" width="80%" class="margin_table">
 <tr>
 <td valign="top" align="left">
- <div>
+ <div id="block2">
 	            <div class="headings altheading">
+	         <img  src="resources/images/print.png" id="print1" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block2');" >
 	            <center> <h2>CHIROPRACTIC THERAPY CENTER</h2> </center><br/>
 	            
 	            </div>
@@ -655,60 +690,60 @@ document.getElementById("signerror").innerHTML=" ";
          		<p>Extensive orthopedic testing was performed and the following tests were found to be positive</p>
          		<table cellpadding="0" cellspacing="0" border="0">
 					<tr class="row2">
-					<td width="200"></td>
-					<td width="250"><B style="font-size:13px">Orthopedic Test</B></td>
+					
+					<td width="50"><B style="font-size:13px">Orthopedic Test</B></td>
 					<td width="250"><B style="font-size:13px">Right side</B></td>
 					<td width="250"><B style="font-size:13px">Left side</B></td>
-					<td width="200"></td>
-					<td width="200"></td>
+					<!-- <td width="200"></td>
+					<td width="200"></td> -->
 					</tr>
 					<tr height="30">
-					<td width="200"></td>
-					<td width="250"><input type="text"  class="input_txtbx1"name="orthopedictest1"> </td>
-					<td width="250"><input type="radio" name="jacksonsr" value="Positive">Positive &nbsp;&nbsp;<input type="radio" name="jacksonsr" value="Negative">Negative</td>
-					<td width="250"><input type="radio" name="jacksonsl" value="Positive">Positive &nbsp;&nbsp;<input type="radio" name="jacksonsl" value="Negative">Negative</td>
-					<td width="200"></td>
-					<td width="200"></td>
+					
+					<td width="20%"><input type="text"  class="input_txtbx1"name="orthopedictest1"> </td>
+					<td width="20%"><input type="radio" name="jacksonsr" value="Positive">Positive &nbsp;&nbsp;<input type="radio" name="jacksonsr" value="Negative">Negative</td>
+					<td width="20%"><input type="radio" name="jacksonsl" value="Positive">Positive &nbsp;&nbsp;<input type="radio" name="jacksonsl" value="Negative">Negative</td>
+					<!-- <td width="100"></td>
+					<td width="100"></td> -->
 					</tr>
 					<tr height="30">
-					<td width="200"></td>
-					<td width="250"><input type="text"  class="input_txtbx1" name="orthopedictest2"> </td>
-					<td width="250"><input type="radio" name="doublelegraiser" value="Positive">Positive &nbsp;&nbsp;<input type="radio" name="doublelegraiser" value="Negative">Negative</td>
-					<td width="250"><input type="radio" name="doublelegraisel" value="Positive">Positive &nbsp;&nbsp;<input type="radio" name="doublelegraisel" value="Negative">Negative</td>
-					<td width="200"></td>
-					<td width="200"></td>
+					
+					<td width="50"><input type="text"  class="input_txtbx1" name="orthopedictest2"> </td>
+					<td width="50"><input type="radio" name="doublelegraiser" value="Positive">Positive &nbsp;&nbsp;<input type="radio" name="doublelegraiser" value="Negative">Negative</td>
+					<td width="50"><input type="radio" name="doublelegraisel" value="Positive">Positive &nbsp;&nbsp;<input type="radio" name="doublelegraisel" value="Negative">Negative</td>
+					<!-- <td width="100"></td>
+					<td width="100"></td> -->
 					</tr>
 					<tr height="30">
-					<td width="200"></td>
-					<td width="250"><input type="text"  class="input_txtbx1" name="orthopedictest3"> </td>
-					<td width="250"><input type="radio"  name="yeomansr" value="Positive">Positive &nbsp;&nbsp;<input type="radio" name="yeomansr" value="Negative">Negative</td>
-					<td width="250"><input type="radio" name="yeomansl" value="Positive">Positive &nbsp;&nbsp;<input type="radio" name="yeomansl" value="Negative">Negative</td>
-					<td width="200"></td>
-					<td width="200"></td>
+					
+					<td width="150"><input type="text"  class="input_txtbx1" name="orthopedictest3"> </td>
+					<td width="150"><input type="radio"  name="yeomansr" value="Positive">Positive &nbsp;&nbsp;<input type="radio" name="yeomansr" value="Negative">Negative</td>
+					<td width="150"><input type="radio" name="yeomansl" value="Positive">Positive &nbsp;&nbsp;<input type="radio" name="yeomansl" value="Negative">Negative</td>
+					<!-- <td width="100"></td>
+					<td width="100"></td> -->
 					</tr>
 					<tr height="30">
-					<td width="200"></td>
-					<td width="250"><input type="text"  class="input_txtbx1"name="orthopedictest4"> </td>
-					<td width="250"><input type="radio" name="foraminalr" value="Positive">Positive &nbsp;&nbsp;<input type="radio" name="foraminalr" value="Negative">Negative</td>
-					<td width="250"><input type="radio" name="foraminall" value="Positive">Positive &nbsp;&nbsp;<input type="radio" name="foraminall" value="Negative">Negative</td>
-					<td width="200"></td>
-					<td width="200"></td>
+					
+					<td width="150"><input type="text"  class="input_txtbx1"name="orthopedictest4"> </td>
+					<td width="150"><input type="radio" name="foraminalr" value="Positive">Positive &nbsp;&nbsp;<input type="radio" name="foraminalr" value="Negative">Negative</td>
+					<td width="150"><input type="radio" name="foraminall" value="Positive">Positive &nbsp;&nbsp;<input type="radio" name="foraminall" value="Negative">Negative</td>
+					<!-- <td width="100"></td>
+					<td width="100"></td> -->
 					</tr>
 					<tr height="30">
-					<td width="200"></td>
-					<td width="250"><input type="text"  class="input_txtbx1" name="orthopedictest5"> </td>
-					<td width="250"><input type="radio" name="shoulderr" value="Positive">Positive &nbsp;&nbsp;<input type="radio" name="shoulderr" value="Negative">Negative</td>
-					<td width="250"><input type="radio" name="shoulderl" value="Positive">Positive &nbsp;&nbsp;<input type="radio" name="shoulderl" value="Negative">Negative</td>
-					<td width="200"></td>
-					<td width="200"></td>
+					
+					<td width="150"><input type="text"  class="input_txtbx1" name="orthopedictest5"> </td>
+					<td width="150"><input type="radio" name="shoulderr" value="Positive">Positive &nbsp;&nbsp;<input type="radio" name="shoulderr" value="Negative">Negative</td>
+					<td width="150"><input type="radio" name="shoulderl" value="Positive">Positive &nbsp;&nbsp;<input type="radio" name="shoulderl" value="Negative">Negative</td>
+					<!-- <td width="100"></td>
+					<td width="100"></td> -->
 					</tr>
 					<tr height="30">
-					<td width="200"></td>
-					<td width="250"><input type="text"  class="input_txtbx1" name="orthopedictest6"> </td>
-					<td width="250"><input type="radio" name="orthopedicr" value="Positive">Positive &nbsp;&nbsp;<input type="radio" name="orthopedicr" value="Negative">Negative</td>
-					<td width="250"><input type="radio" name="orthopedicl" value="Positive">Positive &nbsp;&nbsp;<input type="radio" name="orthopedicl" value="Negative">Negative</td>
-					<td width="200"></td>
-					<td width="200"></td>
+					
+					<td width="150"><input type="text"  class="input_txtbx1" name="orthopedictest6"> </td>
+					<td width="150"><input type="radio" name="orthopedicr" value="Positive">Positive &nbsp;&nbsp;<input type="radio" name="orthopedicr" value="Negative">Negative</td>
+					<td width="150"><input type="radio" name="orthopedicl" value="Positive">Positive &nbsp;&nbsp;<input type="radio" name="orthopedicl" value="Negative">Negative</td>
+					<!-- <td width="100"></td>
+					<td width="100"></td> -->
 					</tr>
 					</table>
 					<p><B style="font-size:14px">RadiologicReport</B></p>
@@ -793,8 +828,9 @@ document.getElementById("signerror").innerHTML=" ";
 <table cellpadding="0" cellspacing="0" border="0" width="80%" class="margin_table">
 <tr>
 <td valign="top" align="left">
- <div>
+<div id="block3">
 	            <div class="headings altheading">
+	           <img  src="resources/images/print.png" id="print2" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block3');" >
 	            <center> <h2> CHIROPRACTIC THERAPY CENTER</h2> </center><br/>
 	            </div>
 	            <div class="contentbox">
@@ -904,8 +940,8 @@ I hope you find this narrative report and discussion helpful in resolving the cu
           </div>
  <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="Save" onclick="return checkSubmit('this');"></td>
-<td><input type="reset" class="submit_btn" value="Cancel"></td>
+<td><input type="submit" class="submit_btn" value="Save" id="saveid" onclick="return checkSubmit('this');"></td>
+<td><input type="reset" class="submit_btn" value="Cancel" id="cancelid"></td>
 </tr>
 </table>
 	            </div>
@@ -1574,8 +1610,8 @@ I hope you find this narrative report and discussion helpful in resolving the cu
           </div>
  <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="Save"></td>
-<td><a href="viewnarrativereport"style="color:white" class="submit_btn">Cancel</a></td>
+<td><input type="submit" class="submit_btn" value="Save" id="saveid"></td>
+<td><a href="viewnarrativereport"style="color:white" class="submit_btn" id="cancelid">Cancel</a></td>
 </tr>
 </table>
 	            </div>

@@ -240,6 +240,31 @@ function doAjaxPost() {
 		}
 		}
 		</script>
+		<script>
+  function printPage(id)
+  {
+	
+	        document.getElementById('print').style.visibility = 'hidden';
+	        document.getElementById('saveid').style.visibility = 'hidden';
+	        document.getElementById('cancelid').style.visibility = 'hidden';
+		 
+		  
+     var html="<html>";
+     html+= document.getElementById(id).innerHTML;
+
+     html+="</html>";
+
+     var printWin = window.open('','','left=0,top=0,width=1400,height=1000,toolbar=0,scrollbars=0,status  =0');
+     printWin.document.write(html);
+     printWin.document.close();
+     printWin.focus();
+     printWin.print();
+     printWin.close();
+     document.getElementById('print').style.visibility = 'visible';
+     document.getElementById('saveid').style.visibility = 'visible';
+     document.getElementById('cancelid').style.visibility = 'visible';
+  }
+  </script>
 </head>
  <body>
 <div id="right_content">
@@ -255,8 +280,9 @@ function doAjaxPost() {
       </tr> 
       <tr>
         <td valign="top" align="center">
-        	<div>
+        	<div id="block1">
 	            <div class="headings altheading">
+	            <img  src="resources/images/print.png" id="print" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block1');" >
 	             <h2>PERRY CHIROPRACTIC & THERAPY CENTER OF CANTON, INC.</h2> 
 	            </div>
 	            
@@ -323,35 +349,35 @@ function openWindow(h, w, url) {
  
         <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="180"><span class="err">*</span>Name of Insurance Company</td>
+              <td height="25" width="40%"><span class="err">*</span>Name of Insurance Company</td>
               <td ><input type="text" class="input_txtbx1" name="insurance" id="insurance" /><span class="err" id="inserror"><form:errors path="Pimedpay.insurance"></form:errors></td>
               </tr>
               </table>
               
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="180"><span class="err"></span>Address </td>
+              <td height="25" width="40%"><span class="err"></span>Address </td>
               <td><textarea rows="" cols="" name="address"  class="input_txtbx1" id="address"style="width: 169px; height: 62px"></textarea><span class="err"><form:errors path="Pimedpay.address"></form:errors></span></td>
               </tr>
               </table>
               <br>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="180"><span class="err"></span>Regarding: </td>
+              <td height="25" width="40%"><span class="err"></span>Regarding: </td>
               <td><input type="text" class="input_txtbx1" name="reg" ></td>
               </tr>
               </table>
           
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="180"><span class="err">*</span>Patient's Name</td>
+              <td height="25" width="40%"><span class="err">*</span>Patient's Name</td>
               <td><input type="text" class="input_txtbx1" name="nameofperson" id="nameofperson"><span class="err" id="nameerror"><form:errors path="Pimedpay.nameofperson"></form:errors></span></td>
               </tr>
               </table>
               <br>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="180"><span class="err">*</span>Date of Accident: </td>
+              <td height="25" width="40%"><span class="err">*</span>Date of Accident: </td>
               <td><input type="text" class="input_txtbx1" name="dateofaccident" id="datepicker"><span class="err" id="dateerror"><form:errors path="Pimedpay.dateofaccident"></form:errors></span></td>
               </tr>
               </table><br><br>
@@ -416,12 +442,23 @@ function openWindow(h, w, url) {
              </td>
              </tr>
              </table>
+             <table cellpadding="0" cellspacing="0" border="0" width="100%">
+       		<tr>
+       		<td><br>	
+	<p align="right"><b>Sincerly,</b>
+	</p>
+	
+<p align="right">Perry Chiropractic & Therapy Center of Canton, Inc
+	</p>
+<br>		</td></tr></table>
+
+<!-- 		
              <table>
-             <tr><td></td>
+             <tr>
              <td ><p><h1> <b>Sincerly,</b></h1><p></td></tr>
            
-            <tr><td width="410"></td><td ><h1><b>Perry Chiropractic & Therapy Center of Canton, Inc.</b></h1></td></tr>
-             </table><br>
+            <tr><td ><h1><b>Perry Chiropractic & Therapy Center of Canton, Inc.</b></h1></td></tr>
+             </table><br> -->
              </c:when>
              <c:otherwise>
               <div class="contentbox">
@@ -578,9 +615,9 @@ function openWindow(h, w, url) {
               <table>
               <tr>
               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-              <td><input type="submit" class="submit_btn" value="Save" onclick="return checkSubmit('this');"></td>
+              <td><input type="submit" class="submit_btn" value="Save" id="saveid" onclick="return checkSubmit('this');"></td>
               <td>&nbsp;&nbsp;</td>
-             <td><a href="viewpimedpay" style="color:white" class="submit_btn">Cancel</a></td>
+             <td><a href="viewpimedpay" style="color:white" class="submit_btn" id="cancelid">Cancel</a></td>
               <td>&nbsp;&nbsp;</td>
         	  </tr>
         	  </table>

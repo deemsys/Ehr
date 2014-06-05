@@ -589,7 +589,35 @@ else
 		
 		}
 </script>
+<script>
+  function printPage(id)
+  {
+	
+	        document.getElementById('print').style.visibility = 'hidden';
+	        document.getElementById('print1').style.visibility = 'hidden';
+	        document.getElementById('print2').style.visibility = 'hidden';
+	        document.getElementById('saveid').style.visibility = 'hidden';
+	        document.getElementById('cancelid').style.visibility = 'hidden';
+		  
+     var html="<html>";
+     html+= document.getElementById(id).innerHTML;
 
+     html+="</html>";
+
+     var printWin = window.open('','','left=0,top=0,width=1400,height=1000,toolbar=0,scrollbars=0,status  =0');
+     printWin.document.write(html);
+     printWin.document.close();
+     printWin.focus();
+     printWin.print();
+     printWin.close();
+     document.getElementById('print').style.visibility = 'visible';
+     document.getElementById('print1').style.visibility = 'visible';
+     document.getElementById('print2').style.visibility = 'visible';
+     document.getElementById('saveid').style.visibility = 'visible';
+     document.getElementById('cancelid').style.visibility = 'visible';
+	  
+  }
+  </script>
 </head>
  <body>
  <div id="tabs">
@@ -609,8 +637,9 @@ else
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
 <tr>
 <td valign="top" align="left">
- <div>
+ <div id="block1">
 	            <div class="headings altheading">
+	           <img  src="resources/images/print.png" id="print" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block1');" >
 	            <center> <h2>DC FEE SLIP</h2> </center><br/>
 	            
 	            </div>
@@ -618,18 +647,18 @@ else
           <table cellpadding="0" cellspacing="0" border="0" width="98%">
            
  <tr class="row1">
-<td width="90"><h2><span class="err">*</span>Patient Id:</h2></td><td><input type="text"  class="input_txtbx1" name="pid" size="25" id="pid"/><span  id="piderror"   style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.pid"></form:errors></span></td>
+<td width="90"><h4><span class="err">*</span>Patient Id:</h4></td><td><input type="text"  class="input_txtbx1" name="pid" size="25" id="pid"/><span  id="piderror"   style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.pid"></form:errors></span></td>
 <td width="800">
-<td><h2><span class="err">*</span>Date:</h2></td><td><input type="text"  class="input_txtbx1" id="datepicker" name="date" /><span class="err" id="datepickererror"><form:errors path="dcfeeslipdetail.date"></form:errors></span></td>
+<td><h4><span class="err">*</span>Date:</h4></td><td><input type="text"  class="input_txtbx1" id="datepicker" name="date" /><span class="err" id="datepickererror"><form:errors path="dcfeeslipdetail.date"></form:errors></span></td>
 </tr>
 </table>
 <table>
  <tr class="row1">
-<td><h2> <span class="err">*</span>Patient Name:</h2></td><td><input type="text" class="input_txtbx1" id="pname" name="pname" size="25" /><span class="err" id="pnameerror"  style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.pname"></form:errors></span></td>
+<td><h4> <span class="err">*</span>Patient Name:</h4></td><td><input type="text" class="input_txtbx1" id="pname" name="pname" size="25" /><span class="err" id="pnameerror"  style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.pname"></form:errors></span></td>
 <td>
-<td><h2><span class="err">*</span>Treating Physician Name:</h2></td><td><input type="text" class="input_txtbx1" name="dr1" size="14" id="dr1"/><span class="err" id="dr1error"  style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.dr1"></form:errors></span></td>
-<td><h2>RPT:</h2></td><td><input type="text"   class="input_txtbx1" name="rpt" size="14"/></td>
-<td><h2>PTA:</h2></td><td><input type="text" class="input_txtbx1" name="pta" size="14"/></td>
+<td><h4><span class="err">*</span>Treating Physician Name:</h4></td><td><input type="text" class="input_txtbx1" name="dr1" size="14" id="dr1"/><span class="err" id="dr1error"  style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.dr1"></form:errors></span></td>
+<td><h4>RPT:</h4></td><td><input type="text"   class="input_txtbx1" name="rpt" size="14"/></td>
+<td><h4>PTA:</h4></td><td><input type="text" class="input_txtbx1" name="pta" size="14"/></td>
 </tr>
 </table>
 <script type="text/javascript">
@@ -894,8 +923,9 @@ else
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
 <tr>
 <td valign="top" align="left">
- <div>
+ <div id="block2">
 	            <div class="headings altheading">
+	             <img  src="resources/images/print.png" id="print1" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block2');" >
 	            <center> <h2>DC FEE SLIP</h2> </center><br/>
 	            
 	            </div>
@@ -1172,8 +1202,9 @@ else
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
 <tr>
 <td valign="top" align="left">
- <div>
+ <div id="block3">
 	            <div class="headings altheading">
+	             <img  src="resources/images/print.png" id="print2" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block3');" >
 	            <center> <h2>DC FEE SLIP</h2> </center><br/>
 	            
 	            </div>
@@ -1400,7 +1431,7 @@ else
 
   <tr class="row1">
   <td></td><td> </td>
- <td width="200"><span class="err">*</span>Date </td><td><input type="text"   class="input_txtbx1" id="datepicker1" name="date1" /><span class="err" id="datepicker1error"  style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.date1"></form:errors></span></td> </td> 
+ <td width="200" style="width: 284px; "><span class="err">*</span>Date </td><td><input type="text"   class="input_txtbx1" id="datepicker1" name="date1" /><span class="err" id="datepicker1error"  style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.date1"></form:errors></span></td> </td> 
   
  </tr>
  <tr class="row1">
@@ -1420,18 +1451,21 @@ charges."</b></td>
   <td><span class="err">*</span>Dr. / Tech. Signature(s)</td>
  <td width="200"><input type="text" class="input_txtbx1"  name="doctorsign"  id="doctorsign"><span class="err" id="doctorsignerror"  style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.doctorsign"></form:errors></span></td> 
  
- </tr>
+ </tr></table>
+ <table>
  <tr class="row1">
-  <td>Reschedule: M T W Th F S for</td>
- <td width="200">1wk &nbsp; 2wks &nbsp; 3wks &nbsp; 4wks</td><td width="200"><input type="text"  class="input_txtbx1" name="week"> Weeks</td> 
- <td width="200"><input type="text"  class="input_txtbx1" name="months"> Months </td> 
+  <td width="40%" style="width: 374px; ">Reschedule: M T W Th F S for</td>
+ <td width="200" style="width: 256px; ">1wk &nbsp; 2wks &nbsp; 3wks &nbsp; 4wks &nbsp;</td><td width="100" style="width: 139px; "><input type="text"  class="input_txtbx1" name="week" style="width: 111px; "> </td> 
+  <td style="width: 57px; "><span class="err"></span>Weeks</td>
+ <td width="100"><input type="text"  class="input_txtbx1" name="months" style="width: 110px; "></td> 
+ <td><span class="err"></span>Months</td>
  </tr>
  </table>
  <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="Save" onclick="return checkSubmit('this');"
+<td><input type="submit" class="submit_btn" value="Save" id="saveid" onclick="return checkSubmit('this');"
 ></td>
-<td><input type="reset" class="submit_btn" value="Cancel"></td>
+<td><input type="reset" class="submit_btn" value="Cancel" id="cancelid"></td>
 </tr>
 </table>
 </div>
@@ -2254,8 +2288,8 @@ charges."</b></td>
   </table>
  <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="Save" onclick="return checkSubmit('this');"></td>
-<td><input type="reset" class="submit_btn" value="Cancel"></td>
+<td><input type="submit" class="submit_btn" value="Save" id="saveid" onclick="return checkSubmit('this');"></td>
+<td><input type="reset" class="submit_btn" value="Cancel" id="cancelid"></td>
 </tr>
 </table>
 </div>

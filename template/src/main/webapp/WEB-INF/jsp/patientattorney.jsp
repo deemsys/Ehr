@@ -253,6 +253,31 @@ function doAjaxPost() {
 	}
 
 	</script>
+	<script>
+  function printPage(id)
+  {
+	
+	        document.getElementById('print').style.visibility = 'hidden';
+	        document.getElementById('saveid').style.visibility = 'hidden';
+	        document.getElementById('cancelid').style.visibility = 'hidden';
+		 
+		  
+     var html="<html>";
+     html+= document.getElementById(id).innerHTML;
+
+     html+="</html>";
+
+     var printWin = window.open('','','left=0,top=0,width=1400,height=1000,toolbar=0,scrollbars=0,status  =0');
+     printWin.document.write(html);
+     printWin.document.close();
+     printWin.focus();
+     printWin.print();
+     printWin.close();
+     document.getElementById('print').style.visibility = 'visible';
+     document.getElementById('saveid').style.visibility = 'visible';
+     document.getElementById('cancelid').style.visibility = 'visible';
+  }
+  </script>
 </head>
  <body>
 <div id="right_content">
@@ -268,8 +293,9 @@ function doAjaxPost() {
       </tr> 
       <tr>
         <td valign="top" align="center">
-        	<div>
+        	<div id="block1">
 	            <div class="headings altheading">
+	            <img  src="resources/images/print.png" id="print" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block1');" >
 	             <h2>Form Cover Letter For Patient's Attorney</h2> 
 	            </div>
 	        
@@ -474,13 +500,11 @@ Opinion 2007-7 provides the following further ethical directions:
              <tr ><td width="70%"></td>
               <td >Sincerely,</td>
               </tr>
-              </table>
-             <br>
-             <br>
-             <br>
+            <br>
+                         <br>
              
              
-             <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            
              
               <tr ><td width="70%"></td><td><input type="text" class="input_txtbx1" name="nameofclinic" id="nameofclinic"><span class="err" id="nameofclinicerror"  style="color: red;font-style:italic;"><form:errors path="Patientattorney.nameofclinic"></form:errors></span></td></tr>
               <tr><td></td><td><span class="err">*</span>Name of Clinic</td>
@@ -679,13 +703,10 @@ Opinion 2007-7 provides the following further ethical directions:
              <tr ><td width="70%"></td>
               <td >Sincerely,</td>
               </tr>
-              </table>
-             <br>
-             <br>
-             <br>
              
-             
-             <table cellpadding="0" cellspacing="0" border="0" width="100%">
+             <br>
+                  
+            
              
               <tr ><td width="70%"></td><td><input type="text" class="input_txtbx1" name="nameofclinic"  value="${patient.nameofclinic}"    id="nameofclinic"><span class="err" id="nameofclinicerror"  style="color: red;font-style:italic;"><form:errors path="Patientattorney.nameofclinic"></form:errors></span></td></tr>
               <tr><td></td><td><span class="err">*</span>Name of Clinic</td>
@@ -710,9 +731,9 @@ Opinion 2007-7 provides the following further ethical directions:
             <br>
             <br>
           
-            <table><tr> <td><input type="submit" class="submit_btn" value="Save" onclick="return checkSubmit('this');"></td>
+            <table><tr> <td><input type="submit" class="submit_btn" value="Save" id="saveid" onclick="return checkSubmit('this');"></td>
            
-               <td><a href="viewallpatientdetails"style="color:white" class="submit_btn">Cancel</a></td>
+               <td><a href="viewallpatientdetails"style="color:white" class="submit_btn" id="cancelid">Cancel</a></td>
               </tr></table>
               </div>
         	  </div>

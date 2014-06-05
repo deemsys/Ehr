@@ -249,6 +249,31 @@ function doAjaxPost() {
 	}
 
 	</script>
+	<script>
+  function printPage(id)
+  {
+	
+	        document.getElementById('print').style.visibility = 'hidden';
+	        document.getElementById('saveid').style.visibility = 'hidden';
+	        document.getElementById('cancelid').style.visibility = 'hidden';
+		 
+		  
+     var html="<html>";
+     html+= document.getElementById(id).innerHTML;
+
+     html+="</html>";
+
+     var printWin = window.open('','','left=0,top=0,width=1400,height=1000,toolbar=0,scrollbars=0,status  =0');
+     printWin.document.write(html);
+     printWin.document.close();
+     printWin.focus();
+     printWin.print();
+     printWin.close();
+     document.getElementById('print').style.visibility = 'visible';
+     document.getElementById('saveid').style.visibility = 'visible';
+     document.getElementById('cancelid').style.visibility = 'visible';
+  }
+  </script>
 </head>
  <body>
 <div id="right_content">
@@ -264,8 +289,9 @@ function doAjaxPost() {
       </tr> 
       <tr>
         <td valign="top" align="center">
-        	<div>
+        	<div id="block1">
 	            <div class="headings altheading">
+	            <img  src="resources/images/print.png" id="print" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block1');" >
 	             <h2>CHIROPRACTIC THERAPY CENTER</h2> 
 	            </div>
 	              
@@ -302,27 +328,27 @@ function doAjaxPost() {
               </tr>
               </table><br><br>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
-        	  <tr><td width="60"><input type="text" class="input_txtbx1" name="beexcused" id="beexcused" style="width: 126px; "/><span class="err"><form:errors path="Workschool.beexcused"></form:errors></td>
-        	  <td width="150" >
+        	  <tr ><td width="60"><input type="text" class="input_txtbx1" name="beexcused" id="beexcused" style="width: 126px; "/><span class="err"><form:errors path="Workschool.beexcused"></form:errors></td>
+        	  <td width="250" style="width: 134px; ">
         	  <b>
-        	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Be Excused From:
+        	 &nbsp;Be Excused From:
         	  </b>
         	  </td>
-        	  <td>
-        	&nbsp;&nbsp;&nbsp;&nbsp;  <input type="radio" name="excused" value="work">Work&nbsp;&nbsp;&nbsp;
+        	  <td style="width: 245px; ">
+        	 <input type="radio" name="excused" value="work">Work&nbsp;&nbsp;&nbsp;
         	   <input type="radio" name="excused" value="school">School&nbsp;&nbsp;&nbsp;	
         	    <input type="radio" name="excused" value="P.E">P.E&nbsp;&nbsp;&nbsp;
         	  </td>
         	  </tr>
        		  </table><br>
        		   <table cellpadding="0" cellspacing="0" border="0" width="100%">
-        	  <tr><td width="60"><input type="text" class="input_txtbx1" name="beconfined" id="beconfined" style="width: 126px; "/><span class="err"><form:errors path="Workschool.beconfined"></form:errors></td>
-        	  <td width="150">
+        	  <tr><td width="60" style="width: 129px; "><input type="text" class="input_txtbx1" name="beconfined" id="beconfined" style="width: 126px; "/><span class="err"><form:errors path="Workschool.beconfined"></form:errors></td>
+        	  <td width="150" style="width: 133px; ">
         	  <b>
-        	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Be Confined To:
+        	<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->  Be Confined To:
         	  </b>
         	  </td>
-        	  <td>
+        	  <td style="width: 255px; ">
         	&nbsp;&nbsp;&nbsp;&nbsp;  <input type="radio" name="confined" value="lightduty">Light Duty&nbsp;&nbsp;&nbsp;
         	   <input type="radio" name="confined" value="modifiedduty">Modified Duty&nbsp;&nbsp;&nbsp;	
         	   
@@ -345,7 +371,7 @@ function doAjaxPost() {
         	  <tr height="30"><td width="60"><input type="text" class="input_txtbx1" name="lifting" id="lifting" style="width: 126px; "/><span class="err"><form:errors path="Workschool.lifting"></form:errors></td>
         	  <td width="250">
         	  <b>
-        	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Maximum lifting capability:
+        	 &nbsp;&nbsp; Maximum lifting capability:
         	  </b>
         	  </td>
         	  <td>
@@ -362,7 +388,7 @@ function doAjaxPost() {
         	  <tr height="30"><td width="60"><input type="text" class="input_txtbx1" name="pushing" id="pushing" style="width: 126px; "/><span class="err"><form:errors path="Workschool.pushing"></form:errors></td>
         	  <td width="250">
         	  <b>
-        	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Low force pushing/pulling:  
+        	 &nbsp;&nbsp;Low force pushing/pulling:  
         	  </b>
         	  </td>
         	  <td>
@@ -378,7 +404,7 @@ function doAjaxPost() {
         	  <tr height="30"><td width="60"><input type="text" class="input_txtbx1" name="drive" id="drive" style="width: 126px; "/><span class="err"><form:errors path="Workschool.drive"></form:errors></td>
         	  <td>
         	  <b>
-        	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Unable to drive long distances (MAX ONE HOUR)  
+        	 &nbsp;&nbsp; Unable to drive long distances (MAX ONE HOUR)  
         	  </b>
         	  </td>
         	  </tr></table>
@@ -386,7 +412,7 @@ function doAjaxPost() {
         	  <tr height="30"><td width="60"><input type="text" class="input_txtbx1" name="sitting" id="sitting" style="width: 126px; "/><span class="err"><form:errors path="Workschool.sitting"></form:errors></td>
         	  <td width="250">
         	  <b>
-        	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sitting excessive periods of time:   
+        	&nbsp;&nbsp; Sitting excessive periods of time:   
         	  </b>
         	  </td>
         	  <td>
@@ -402,7 +428,7 @@ function doAjaxPost() {
         	  <tr height="30"><td width="60"><input type="text" class="input_txtbx1" name="standing" id="standing" style="width: 126px; "/><span class="err"><form:errors path="Workschool.standing"></form:errors></td>
         	  <td width="250">
         	  <b>
-        	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Standing excessive periods of time:   
+        	&nbsp;&nbsp;Standing excessive periods of time:   
         	  </b>
         	  </td>
         	  <td>
@@ -418,7 +444,7 @@ function doAjaxPost() {
         	  <tr height="30"><td width="60"><input type="text" class="input_txtbx1" name="bend" id="bend" style="width: 126px; "/><span class="err"><form:errors path="Workschool.bend"></form:errors></td>
         	  <td>
         	  <b>
-        	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  No repetitive bending
+        	 &nbsp;&nbsp; No repetitive bending
         	  </b>
         	  </td>
         	  </tr></table>
@@ -426,7 +452,7 @@ function doAjaxPost() {
         	  <tr height="30"><td width="60"><input type="text" class="input_txtbx1" name="entry" id="entry" style="width: 126px; "/><span class="err"><form:errors path="Workschool.entry"></form:errors></td>
         	  <td >
         	  <b>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	 Use caution while entering/exiting vehicles
+         &nbsp;&nbsp; Use caution while entering/exiting vehicles
         	  </b>
         	  </td>
         	  </tr></table>
@@ -434,7 +460,7 @@ function doAjaxPost() {
         	  <tr height="30"><td width="60"><input type="text" class="input_txtbx1" name="light" id="light" style="width: 126px; "/><span class="err"><form:errors path="Workschool.light"></form:errors></td>
         	  <td >
         	  <b>
-        	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Light recreation only
+        	 &nbsp;&nbsp; Light recreation only
         	  </b>
         	  </td>
         	  </tr></table><br>
@@ -684,8 +710,8 @@ Yours in Health,</b>
  </table>
  </c:otherwise>
  </c:choose>
-<table><tr> <td><input type="submit" class="submit_btn" value="Save" onclick="return checkSubmit('this');"></td>
-               <td><a href="viewallpatientdetails"style="color:white" class="submit_btn">Cancel</a></td>
+<table><tr> <td><input type="submit" class="submit_btn" value="Save" id="saveid" onclick="return checkSubmit('this');"></td>
+               <td><a href="viewallpatientdetails"style="color:white" class="submit_btn" id="cancelid">Cancel</a></td>
               </tr></table>
               </div>
         	  </div>

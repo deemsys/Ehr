@@ -282,7 +282,31 @@ return false;
 	}
 
 	</script>
+	<script>
+  function printPage(id)
+  {
 	
+	        document.getElementById('print').style.visibility = 'hidden';
+	        document.getElementById('saveid').style.visibility = 'hidden';
+	        document.getElementById('cancelid').style.visibility = 'hidden';
+		 
+		  
+     var html="<html>";
+     html+= document.getElementById(id).innerHTML;
+
+     html+="</html>";
+
+     var printWin = window.open('','','left=0,top=0,width=1400,height=1000,toolbar=0,scrollbars=0,status  =0');
+     printWin.document.write(html);
+     printWin.document.close();
+     printWin.focus();
+     printWin.print();
+     printWin.close();
+     document.getElementById('print').style.visibility = 'visible';
+     document.getElementById('saveid').style.visibility = 'visible';
+     document.getElementById('cancelid').style.visibility = 'visible';
+  }
+  </script>
 </head>
  
  <body>
@@ -296,8 +320,9 @@ return false;
 <table cellpadding="0" cellspacing="0" border="0" width="80%" class="margin_table">
 <tr>
 <td valign="top" align="left">
- <div>
+<div id="block1">
 	            <div class="headings altheading">
+	           <img  src="resources/images/print.png" id="print" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block1');" >
 	            <center> <h2>PERRY CHIROPRACTIC & THERAPY CENTER OF CANTON, INC.</h2> </center><br/>
 	            </div>
 	            <div class="contentbox"><center> Dr. Charles T. Yang, DC, DABFP </center><br/>
@@ -306,7 +331,7 @@ return false;
 	            <center> Phone (330) 477-3036    Fax  (330) 477-3037 </center><br/>
 	            <center> Tax ID#:  26-0101968 </center><br/>
 	            <center> <B style="font-size:18px">Requesting Fee Reduction from Attorney/Adjuster</B> </center><br/>
-          <table cellpadding="0" cellspacing="0" border="0" width="70%" align="center">
+          <table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
           <tr height="30">
           <td><span class="err">*</span>Patients Attorney or Insurance Adjuster: </td>
           <td><input type="text"  class="input_txtbx1" name="patient" size="40" id="patient"><span class="err" id="patienterror"  style="color: red;font-style:italic;" ><form:errors path="Copyofrequest.patient"></form:errors></span></td>
@@ -362,8 +387,8 @@ return false;
           </div>
  <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="Save" onclick="return checkSubmit('this');"></td>
-<td><a href="viewallpatientdetails"style="color:white" class="submit_btn">Cancel</a></td>
+<td><input type="submit" class="submit_btn" value="Save" id="saveid" onclick="return checkSubmit('this');"></td>
+<td><a href="viewallpatientdetails"style="color:white" class="submit_btn" id="cancelid">Cancel</a></td>
 </tr>
 </table>
 </div>
@@ -445,8 +470,8 @@ return false;
           </div>
  <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="Save" onclick="return checkSubmit('this');"></td>
-<td><a href="viewcopyofrequest"style="color:white" class="submit_btn">Cancel</a></td>
+<td><input type="submit" class="submit_btn" value="Save" id="saveid" onclick="return checkSubmit('this');"></td>
+<td><a href="viewcopyofrequest"style="color:white" class="submit_btn" id="cancelid">Cancel</a></td>
 </tr>
 </table>
 </div>

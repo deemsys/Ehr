@@ -159,6 +159,31 @@ $(function() {
            }
        }       
     </script>
+    <script>
+  function printPage(id)
+  {
+	
+	        document.getElementById('print').style.visibility = 'hidden';
+	        document.getElementById('saveid').style.visibility = 'hidden';
+	        document.getElementById('cancelid').style.visibility = 'hidden';
+		  
+     var html="<html>";
+     html+= document.getElementById(id).innerHTML;
+
+     html+="</html>";
+
+     var printWin = window.open('','','left=0,top=0,width=1400,height=1000,toolbar=0,scrollbars=0,status  =0');
+     printWin.document.write(html);
+     printWin.document.close();
+     printWin.focus();
+     printWin.print();
+     printWin.close();
+     document.getElementById('print').style.visibility = 'visible';
+     document.getElementById('saveid').style.visibility = 'visible';
+     document.getElementById('cancelid').style.visibility = 'visible';
+	  
+  }
+  </script>
     
 </head>
  <body>
@@ -175,8 +200,10 @@ $(function() {
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
 <tr>
 <td valign="top" align="left">
- <div>
+ <div id="block1">
 	            <div class="headings altheading">
+	           <img  src="resources/images/print.png" id="print" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block1');" >
+	          
 	            <center> <h2>SOAP NOTES</h2> </center><br/>
 	            
 	            </div>
@@ -195,9 +222,9 @@ $(function() {
 <td height="20">Chief Complaint:</td>
 <td valign="top"><input type="checkbox" name="headache" value="Headache" >Headache</td>
 <td valign="top"><input type="checkbox" name="neckpain" value="Neck pain" >Neck Pain</td>
-<td valign="top"><input type="checkbox" name="rightshoulderpain" value="Right Shoulder pain" >Right Shoulder pain</td>
-<td valign="top"><input type="checkbox" name="leftshoulderpain" value="Left Shoulder Pain" >Left Shoulder Pain</td>
-<td valign="top"><input type="checkbox" name="chestpain" value="Chest Pain" >Chest Pain</td>
+<td valign="top" style="width: 152px; "><input type="checkbox" name="rightshoulderpain" value="Right Shoulder pain" >Right Shoulder pain</td>
+<td valign="top" style="width: 142px; "><input type="checkbox" name="leftshoulderpain" value="Left Shoulder Pain" >Left Shoulder Pain</td>
+<td valign="top" style="width: 98px; "><input type="checkbox" name="chestpain" value="Chest Pain" >Chest Pain</td>
 <td valign="top"><input type="checkbox" name="rightarmpain" value="Right Arm Pain" onclick="rightcheck()" id="rightarmpain" >Right Arm Pain<br>
 <script>
 function rightcheck()
@@ -255,12 +282,12 @@ document.getElementById("leftproxi").style.display="none";
 </tr>
 <tr class="row1">
 <td height="20"></td>
-<td><input type="checkbox" name="rightelbowpain" value="Right Elbow Pain" >Right Elbow Pain</td>
-<td><input type="checkbox" name="leftelbowpain" value="Left Elbow Pain" >Left Elbow Pain</td>
+<td style="width: 132px; "><input type="checkbox" name="rightelbowpain" value="Right Elbow Pain" >Right Elbow Pain</td>
+<td style="width: 131px; "><input type="checkbox" name="leftelbowpain" value="Left Elbow Pain" >Left Elbow Pain</td>
 <td><input type="checkbox" name="rightwristpain" value="Right Wrist pain" >Right Wrist pain</td>
 <td><input type="checkbox" name="leftwristpain" value="Left Wrist Pain" >Left Wrist Pain</td>
-<td><input type="checkbox" name="righthandpain" value="Right Hand Pain" >Right Hand Pain</td>
-<td><input type="checkbox" name="lefthandpain" value="Left Hand Pain" >Left Hand Pain</td>
+<td style="width: 123px; "><input type="checkbox" name="righthandpain" value="Right Hand Pain" >Right Hand Pain</td>
+<td style="width: 125px; "><input type="checkbox" name="lefthandpain" value="Left Hand Pain" >Left Hand Pain</td>
 <td><input type="checkbox" name="mbp" value="MBP" >MBP</td>
 </tr>
 <tr class="row1">
@@ -1021,9 +1048,9 @@ document.getElementById("leftproxi").style.display="none";
 <table align="right"><tr><td><span class="err">*</span> Physicians Signature:<input type="text" name="sign" id="sign" class="input_txtbx1"><span style="color:red" id="signerror"><form:errors path="SoapNotes.sign"></form:errors></span></td></tr>
 				                <tr height="10"></tr> 
 				                  <tr>
-				                   <td align="right"><input type="submit" class="submit_btn" value="Save" onclick="return check('this')"></td>
+				                   <td align="right"><input type="submit" class="submit_btn" value="Save" id="saveid" onclick="return check('this')"></td>
 				                   <!-- <td><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewsoapnotes'"></td> -->
-				                   <td align="left"><a href="doctorsearch" style="color:white;text-decoration: none" class="submit_btn">Cancel</a></td>
+				                   <td align="left"><a href="doctorsearch" style="color:white;text-decoration: none" id="cancelid" class="submit_btn">Cancel</a></td>
 				                   </tr>
 				                   </table>
 				                 
@@ -1749,8 +1776,8 @@ document.getElementById("leftproxi").style.display="none";
   <table align="right"><tr><td> <span class="err">*</span>Physicians Signature:<input type="text" name="sign" class="input_txtbx1" id="inp_id"  value="${soap.sign}"><span class="err"><form:errors path="SoapNotes.sign"></form:errors></span></td></tr></table>
 				                   </table>
  <table align="right"> <tr>
-				                   <td><input type="submit" class="submit_btn" value="Save"></td>
-				                   <td><a href="doctorsearch" style="color:white;text-decoration: none" class="submit_btn">Cancel</a></td>
+				                   <td><input type="submit" class="submit_btn" value="Save" id="saveid"></td>
+				                   <td><a href="doctorsearch" style="color:white;text-decoration: none" id="cancelid" class="submit_btn">Cancel</a></td>
 				                   </tr>
 				                   </table>
 				                   
