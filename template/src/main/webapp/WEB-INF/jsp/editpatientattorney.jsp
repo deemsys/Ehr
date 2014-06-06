@@ -26,6 +26,7 @@
 
 	function checkSubmit()
 	{
+	    //alert("hai");
 		document.getElementById("nameerror").innerHTML=" ";
 		
 		if(document.getElementById("name").value=="")
@@ -76,6 +77,18 @@
 	
 	}
 
+	</script>
+	<script type="text/javascript">
+	function confirmation() 
+	{
+	var answer = confirm("Are you Sure You Want to Delete Participant ?")
+	if (answer){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
 	</script>
 </head>
  <body>
@@ -163,7 +176,7 @@
      
 Dear Madam or Sir:
 </h3></p>
-  <p><span class="err" id="dearsirerror"  style="color: red;font-style:italic;">*</span><input type="text" class="input_txtbx1" name="dearsir" value="${patientattorneydetails.dearsir}"  id="dearsir">has sought medical treatment from this clinic.  This patient (your client) has been injured to an extent where the patient has determined that they cannot afford to pay for treatment on a fee for service basis.  We would definitely prefer to simply render the required treatment on a fee for service basis.  However, because fees for service presents a hardship to this patient, we have agreed to postpone payment for treatment, but in direct reliance on the continuing commitment the patient has made to us in the attached Treatment Fee Agreement and Instructions to Attorney. </p>	
+  <p><span class="err">*</span><input type="text" class="input_txtbx1" name="dearsir" value="${patientattorneydetails.dearsir}"  id="dearsir"><span class="err" id="dearsirerror"  style="color: red;font-style:italic;"></span>has sought medical treatment from this clinic.  This patient (your client) has been injured to an extent where the patient has determined that they cannot afford to pay for treatment on a fee for service basis.  We would definitely prefer to simply render the required treatment on a fee for service basis.  However, because fees for service presents a hardship to this patient, we have agreed to postpone payment for treatment, but in direct reliance on the continuing commitment the patient has made to us in the attached Treatment Fee Agreement and Instructions to Attorney. </p>	
 
 
        </td>
@@ -302,21 +315,10 @@ Opinion 2007-7 provides the following further ethical directions:
               </table>
        		  
         	  </div>
-          <script type="text/javascript">
-	function confirmation() 
-	{
-	var answer = confirm("Are you Sure You Want to Delete Participant ?")
-	if (answer){
-		return true;
-	}
-	else{
-		return false;
-	}
-}
-	</script>
+          
             <br>
             <br>
-            <table><tr> <td><input type="submit" class="submit_btn" value="Update"></td>
+            <table><tr> <td><input type="submit" class="submit_btn" value="Update" onclick="return checkSubmit('this');"></td>
                <td><a href="deletepatientattorney?patientid=${patientattorneydetails.patientid}"style="color:white" class="submit_btn" onclick="return confirmation() ">Delete</a></td>
                <td><a href="viewallpatientdetails"style="color:white" class="submit_btn">Cancel</a></td>
               </tr></table>
