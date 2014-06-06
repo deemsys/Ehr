@@ -334,7 +334,47 @@ document.getElementById("yeserror").innerHTML="Required Field Should not be Empt
 		}
 
 	</script>
-
+<script>
+	function check(e,value){
+    //Check Charater
+        var unicode=e.charCode? e.charCode : e.keyCode;
+        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
+        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
+    }
+    function checkLength(){
+    var fieldVal = document.getElementById('atwhat').value;
+    //Suppose u want 3 number of character
+    if(fieldVal <=100){
+        return true;
+    }
+    else
+    {
+        var str = document.getElementById('atwhat').value;
+        str = str.substring(0, str.length - 1);
+    document.getElementById('atwhat').value = str;
+    }
+     
+    }
+	</script>
+	<script>
+	function checklen()
+	{
+	
+	var field = document.getElementById('atwhat1').value;
+    //Suppose u want 3 number of character
+    if(field <=100){
+        return true;
+    }
+    else
+    {
+        var str = document.getElementById('atwhat1').value;
+        str = str.substring(0, str.length - 1);
+    document.getElementById('atwhat1').value = str;
+    }
+	
+	}
+	
+	</script>
 </head>
  <body>
 <div id="right_content">
@@ -416,7 +456,7 @@ document.getElementById("fax").value=phone;
               <td>	<input type="radio" name="is_chiropractic" value="Yes" class="input_txt"  <c:if test="${Insuranceverification.is_chiropractic=='Yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
 				                  	<input type="radio" name="is_chiropractic" value="No" class="input_txt"  <c:if test="${Insuranceverification.is_chiropractic=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;</td>
               <td><span class="err">*</span>At what%?</td>
-              <td><input type="text" class="input_txtbx1" name="at_what" id="atwhat" value="${Insuranceverification.at_what}" /><span id="atwhaterror"  style="color: red;font-style:italic;"></span><form:errors path="Insuranceverification.at_what"></form:errors>
+              <td><input type="text" class="input_txtbx1" name="at_what" id="atwhat" value="${Insuranceverification.at_what}" onKeyPress="return check(event,value)" onInput="checkLength()" maxlength="5"/><span id="atwhaterror"  style="color: red;font-style:italic;"></span><form:errors path="Insuranceverification.at_what"></form:errors>
               <span class="err" id="atwhaterror"></span>
               </td>
              <td></td>
@@ -427,7 +467,7 @@ document.getElementById("fax").value=phone;
               <td>	<input type="radio" name="xray_cover" value="Yes" class="input_txt"  <c:if test="${Insuranceverification.xray_cover=='Yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
 				                  	<input type="radio" name="xray_cover" value="No" class="input_txt"  <c:if test="${Insuranceverification.xray_cover=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;</td>
               <td><span class="err">*</span>At what%?</td>
-              <td><input type="text" class="input_txtbx1" name="atwhat" id="atwhat1" value="${Insuranceverification.atwhat}"/><span id="atwhat1error"  style="color: red;font-style:italic;"> </span><form:errors path="Insuranceverification.atwhat"></form:errors>
+              <td><input type="text" class="input_txtbx1" name="atwhat" id="atwhat1" value="${Insuranceverification.atwhat}" onKeyPress="return check(event,value)" onInput="checklen()" maxlength="5"/><span id="atwhat1error"  style="color: red;font-style:italic;"> </span><form:errors path="Insuranceverification.atwhat"></form:errors>
               <span class="err" id="atwhat1error"></span>
               </td>
               <td><span class="err">*</span>Subject to deductible</td>
