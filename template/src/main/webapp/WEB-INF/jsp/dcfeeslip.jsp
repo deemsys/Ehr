@@ -99,7 +99,11 @@ function checkAjaxPost() {
 		alert("Please Enter Patient Username");
 		return false;
 		}
-	
+	if(date=="")
+	{
+	alert("Please Enter Patient Bill date")
+	return false;
+	}
 	 $.ajax({  
 		    type: "POST",  
 		    url: "/EhrApp/dcfeeslipdetails_ajax",  
