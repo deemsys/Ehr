@@ -2,6 +2,8 @@ package bephit.model;
 
 //import javax.validation.constraints.Pattern;
 
+import javax.validation.constraints.Pattern;
+
 import org.hibernate.validator.constraints.NotEmpty;
 
 public class Physicalexam {
@@ -17,6 +19,7 @@ public class Physicalexam {
 	      String name;
 	      
 	      @NotEmpty
+	      @Pattern(regexp="^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$",message="Please Enetr a valid mail id")
 	      String id;
 	      
 	      @NotEmpty
@@ -40,6 +43,7 @@ public class Physicalexam {
 	      String temp;
 	      
 	      @NotEmpty
+	      @Pattern(regexp="(^$|[0-9-()])",message="Accepted Only Numbers")
 	      String bp;
 	      
 	      @NotEmpty

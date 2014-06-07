@@ -52,6 +52,82 @@ $(function(){
 });
 
   </script>
+  <script>
+  function printPage(id)
+  {
+	
+	        document.getElementById('print').style.visibility = 'hidden';
+	        document.getElementById('print1').style.visibility = 'hidden';
+	        document.getElementById('print2').style.visibility = 'hidden';
+	        document.getElementById('print3').style.visibility = 'hidden';
+	        document.getElementById('saveid').style.visibility = 'hidden';
+	        document.getElementById('cancelid').style.visibility = 'hidden'; 
+		  
+     var html="<html>";
+     html+= document.getElementById(id).innerHTML;
+
+     html+="</html>";
+
+     var printWin = window.open('','','left=0,top=0,width=1400,height=1000,toolbar=0,scrollbars=0,status  =0');
+     printWin.document.write(html);
+     printWin.document.close();
+     printWin.focus();
+     printWin.print();
+     printWin.close();
+     document.getElementById('print').style.visibility = 'visible';
+     document.getElementById('print1').style.visibility = 'visible';
+     document.getElementById('print2').style.visibility = 'visible';
+     document.getElementById('print2').style.visibility = 'visible';
+     document.getElementById('saveid').style.visibility = 'visible';
+     document.getElementById('cancelid').style.visibility = 'visible'; 
+	  
+  }
+  </script>
+  <script >
+    var gAutoPrint = true;
+
+    function processPrint(){
+ document.getElementById('print').style.visibility = 'hidden';
+  document.getElementById('tab1').style.visibility = 'hidden';
+   document.getElementById('tab2').style.visibility = 'hidden';
+    document.getElementById('tab3').style.visibility = 'hidden';
+     
+      document.getElementById('saveid').style.visibility = 'hidden';
+	        document.getElementById('cancelid').style.visibility = 'hidden';
+      
+    if (document.getElementById != null){
+    var html = '<HTML>\n<HEAD>\n';
+    if (document.getElementsByTagName != null){
+    var headTags = document.getElementsByTagName("head");
+    if (headTags.length > 0) html += headTags[0].innerHTML;
+    }
+
+    html += '\n</HE' + 'AD>\n<BODY>\n';
+    var printReadyElem = document.getElementById("printMe");
+
+    if (printReadyElem != null) html += printReadyElem.innerHTML;
+    else{
+    alert("Error, no contents.");
+    return;
+    }
+
+    html += '\n</BO' + 'DY>\n</HT' + 'ML>';
+    var printWin = window.open("","processPrint");
+    printWin.document.open();
+    printWin.document.write(html);
+    printWin.document.close();
+ document.getElementById('print').style.visibility = 'visible';
+ document.getElementById('tab1').style.visibility = 'visible';
+   document.getElementById('tab2').style.visibility = 'visible';
+    document.getElementById('tab3').style.visibility = 'visible';
+    
+      document.getElementById('saveid').style.visibility = 'visible';
+     document.getElementById('cancelid').style.visibility = 'visible';
+    if (gAutoPrint) printWin.print();
+    } else alert("Browser not supported.");
+
+    }
+</script>
   </head>
 	<body>
 	<form method="POST" action="physicalexam">
@@ -62,15 +138,17 @@ $(function(){
 	 <c:choose>
             <c:when test="${empty physical}">
 
-
+<div id="printMe">
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
 
       <tr>
         <td valign="top" align="left">
-        	<div> 
+        	<div > 
         	<div class="headings altheading">
+	      <img  src="resources/images/print.png" id="print" width = "46px" height = "46px" style="float:right ;" onclick="processPrint();" ></a>
+	            
 	              <h2 align="center" >Chiropractic Therapy Center<br></b></h2>
-	       </div></div> 
+	       </div>
 	       <div class="contentbox">
 	    <%--   <c:choose>
 		 <c:when test="${empty physical}"> --%>
@@ -88,7 +166,7 @@ $(function(){
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Name :</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="name" value="${name}"/><span class="err"><form:errors path="Physicalexam.name"></form:errors>
+				                  	<input type="text" class="input_txtbx1" id="inp_id" name="name" value="${name}" /><span class="err"><form:errors path="Physicalexam.name"></form:errors>
 				                  </td>
 				                </tr>
 				                <tr class="row2">
@@ -401,15 +479,16 @@ $(function(){
 				                </tr>
 	</table>
 	</div>
+	</div> 
 	</td>
 	</tr>
 	</table>
 	
 	<div id="tabs">
        <ul>
-          <li><a href="#tabs-1">CERVICAL SPINE</a></li>
-          <li><a href="#tabs-2">THORACIC SPINE</a></li>
-          <li><a href="#tabs-3">LUMBAR SPINE - SI - HIP</a></li>
+          <li><a href="#tabs-1" id="tab1">CERVICAL SPINE</a></li>
+          <li><a href="#tabs-2" id="tab2">THORACIC SPINE</a></li>
+          <li><a href="#tabs-3" id="tab3">LUMBAR SPINE - SI - HIP</a></li>
        </ul>
          
    <div id="tabs-1">
@@ -419,9 +498,10 @@ $(function(){
         <td valign="top" align="left">
         	<div> 
         	<div class="headings altheading">
+        	 
         	<h2>CERVICAL SPINE</h2>
 	            </div>
-	            </div>
+	           
 	             <div class="contentbox">
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
   				<tr>
@@ -869,13 +949,16 @@ $(function(){
 				              </td>
 				              </tr>
 				              </table>
-				              </div>
+				              </div> </div>
 				              </td>
 				              </tr>
 				              </table>
 				              </div>
 				              </div>
 				             
+				             
+				             
+				              
 				                <div id="tabs-2">
 				                 
 				                 <div id="right_content">
@@ -883,11 +966,13 @@ $(function(){
         <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
       <tr>
         <td valign="top" align="left">
-        	<div> 
+        	<div > 
         	<div class="headings altheading">
+        	 
+        	
         	<h2>THORACIC SPINE</h2>
 	            </div>
-	            </div>
+	            
 	             <div class="contentbox">
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
   				<tr>
@@ -1100,7 +1185,7 @@ $(function(){
 				                 </td>
 				                 </tr>
 				                 </table>
-				                 </div>
+				                 </div></div>
 				                 </td>
 				                 </tr>
 				                 </table>
@@ -1544,10 +1629,10 @@ $(function(){
 				                   </table> -->
 				                  <table align="right">
 				                  <tr>
-				                   <td><input type="submit" class="submit_btn" value="Save"></td>
+				                   <td><input type="submit" class="submit_btn" value="Save" id="saveid"></td>
 				                   <td>&nbsp;&nbsp;</td>
 				                    <td>&nbsp;&nbsp;</td>
-				                    <td><a href="doctorsearch" style="color:white;text-decoration: none" class="submit_btn">Cancel</a></td>
+				                    <td><a href="doctorsearch" style="color:white;text-decoration: none" class="submit_btn" id="cancelid">Cancel</a></td>
 				              </tr>
 				                  </table>
 				                  </td>
@@ -1559,6 +1644,12 @@ $(function(){
 				                  </table>
 				                  </div>
 				                  </div>
+				                  
+				                  
+				                  
+				                  
+				                  </div>
+				                  
 				                  </c:when>
 				                  <c:otherwise>
 

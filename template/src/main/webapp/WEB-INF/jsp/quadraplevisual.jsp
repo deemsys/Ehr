@@ -267,6 +267,31 @@ $(function() {
 		    oldValue = $(this).val();
 		}) -->
  </script>
+ <script>
+  function printPage(id)
+  {
+	
+	        document.getElementById('print').style.visibility = 'hidden';
+	        document.getElementById('saveid').style.visibility = 'hidden';
+	        document.getElementById('cancelid').style.visibility = 'hidden';
+		  
+     var html="<html>";
+     html+= document.getElementById(id).innerHTML;
+
+     html+="</html>";
+
+     var printWin = window.open('','','left=0,top=0,width=1400,height=1000,toolbar=0,scrollbars=0,status  =0');
+     printWin.document.write(html);
+     printWin.document.close();
+     printWin.focus();
+     printWin.print();
+     printWin.close();
+     document.getElementById('print').style.visibility = 'visible';
+     document.getElementById('saveid').style.visibility = 'visible';
+     document.getElementById('cancelid').style.visibility = 'visible';
+	  
+  }
+  </script>
  </head>
  <body>
 <div id="right_content">
@@ -287,8 +312,9 @@ $(function() {
       </tr> 
       <tr>
         <td valign="top" align="left">
-        	<div>
+        	<div id="block1">
 	            <div class="headings altheading">
+	            <img  src="resources/images/print.png" id="print" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block1');" >
 	             <h2> ${symptoms} Quadruple Visual Analogue Scale</h2> 
 	            </div>
 	            <div class="contentbox">
@@ -359,8 +385,8 @@ $(function() {
 	             </table>
 	            <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="Save" ></td>
-<td><input type="reset" class="submit_btn" value="Cancel"   onclick="myclose()"></td>
+<td><input type="submit" class="submit_btn" value="Save" id="saveid" ></td>
+<td><input type="reset" class="submit_btn" value="Cancel"   onclick="myclose()" id="cancelid"></td>
 </tr>
 </table>
 	            </div>

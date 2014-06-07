@@ -95,6 +95,33 @@ $(function() {
     $( "#tabs" ).tabs();
   });
   </script>
+  	<script>
+  function printPage(id)
+  {
+	
+	        document.getElementById('print').style.visibility = 'hidden';
+	        document.getElementById('print1').style.visibility = 'hidden';
+	        document.getElementById('saveid').style.visibility = 'hidden';
+	        document.getElementById('cancelid').style.visibility = 'hidden';
+		  
+     var html="<html>";
+     html+= document.getElementById(id).innerHTML;
+
+     html+="</html>";
+
+     var printWin = window.open('','','left=0,top=0,width=1400,height=1000,toolbar=0,scrollbars=0,status  =0');
+     printWin.document.write(html);
+     printWin.document.close();
+     printWin.focus();
+     printWin.print();
+     printWin.close();
+     document.getElementById('print').style.visibility = 'visible';
+     document.getElementById('print1').style.visibility = 'visible';
+     document.getElementById('saveid').style.visibility = 'visible';
+     document.getElementById('cancelid').style.visibility = 'visible';
+	  
+  }
+  </script>
 </head>
  <body>
  <br><br>
@@ -112,8 +139,9 @@ $(function() {
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
 <tr>
 <td valign="top" align="left">
- <div>
+ <div id="block1">
 	            <div class="headings altheading">
+	              <img  src="resources/images/print.png" id="print" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block1');" >
 	            <center> <h2>SHOULDER PAIN SCORE</h2> </center><br/>
 	            
 	            </div>
@@ -121,9 +149,9 @@ $(function() {
           <table cellpadding="0" cellspacing="0" border="0" width="98%">
            
  <tr class="row1">
-<td><h2><span class="err">*</span>Patient Name:</h2></td><td width="400"><input type="text"  name="pname" /><span class="err"><form:errors path="Shoulderpainscore.pname"></form:errors></span></td>
-<td><h2><span class="err">*</span>Number:</h2></td><td width="400"><input type="text"  name="number" id="number1"/><span class="err"><form:errors path="Shoulderpainscore.number"></form:errors></span><span class="err"> <div id="number"></span></div></td>
-<td><h2><span class="err">*</span>Date:</h2></td><td><input type="text"  id="datepicker" name="date" /><span class="err"><form:errors path="Shoulderpainscore.date"></form:errors></span></td>
+<td style="width: 127px; "><h4><span class="err">*</span>Patient Name:</h4></td><td width="400" style="width: 170px; "><input type="text"  name="pname" /><span class="err"><form:errors path="Shoulderpainscore.pname"></form:errors></span></td>
+<td style="width: 117px; "><h4><span class="err">*</span>Number:</h4></td><td width="400" style="width: 167px; "><input type="text"  name="number" id="number1"/><span class="err"><form:errors path="Shoulderpainscore.number"></form:errors></span><span class="err"> <div id="number"></span></div></td>
+<td style="width: 115px; "><h4><span class="err">*</span>Date:</h4></td><td><input type="text"  id="datepicker" name="date" /><span class="err"><form:errors path="Shoulderpainscore.date"></form:errors></span></td>
 </tr>
 </table>
 <table width="70%" align="center">
@@ -146,7 +174,7 @@ $(function() {
 </table>
 <table width="100%" align="center">
 <tr class="row1">
-<td width="350">Degree of Radiation</td><td width="120"><input type="radio" name="degreeofradiation" value="None">None</td><td width="180"><input type="radio" name="degreeofradiation" value="Till halfway the upper Arm">Till halfway the upper Arm</td><td width="180"><input type="radio" name="degreeofradiation" value="Till the elbow">Till the elbow</td><td width="180"><input type="radio" name="degreeofradiation" value="Past the elbow">Past the elbow</td><td></td>
+<td width="350" style="width: 138px; ">Degree of Radiation</td><td width="120"><input type="radio" name="degreeofradiation" value="None">None</td><td width="180" style="width: 256px; "><input type="radio" name="degreeofradiation" value="Till halfway the upper Arm">Till halfway the upper Arm</td><td width="180"><input type="radio" name="degreeofradiation" value="Till the elbow">Till the elbow</td><td width="180"><input type="radio" name="degreeofradiation" value="Past the elbow">Past the elbow</td><td></td>
 </tr>
 </table>
 <table align="center">
@@ -181,8 +209,9 @@ $(function() {
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
 <tr>
 <td valign="top" align="left">
- <div>
+ <div id="block2">
 	            <div class="headings altheading">
+	            <img  src="resources/images/print.png" id="print1" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block2');" >
 	            <center> <h2>SHOULDER PAIN SCORE</h2> </center><br/>
 	            
 	            </div>
@@ -197,13 +226,12 @@ $(function() {
  <table cellpadding="0" cellspacing="0" border="0" width="68%">
 <tr class="row1">
 <td>Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td><input type="text" id="name123" name="name123" /></td>
-<td width="800">
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Age:&nbsp;&nbsp;</td><td><input type="text"  id="age" name="age"/></td>
+<td style="width: 183px; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Age:&nbsp;&nbsp;</td><td><input type="text"  id="age" name="age"/></td>
 </tr>
 </table>
 <br/>
 <table>
-<tr><td><h2>Instructions:Please circle the correct response</h2></td></tr>
+<tr><td><h4>Instructions:Please circle the correct response</h4></td></tr>
 </table>
 <table cellpadding="0" cellspacing="0" border="0" width="78%">
 <tr class="row1">
@@ -217,7 +245,7 @@ $(function() {
 <td><input type="radio" name="myheadache" value="severe">severe</td>
 </tr>
 <table>
-<tr><td><h2>Instructions:PLEASE READ CAREFULLY:</h2>The purpose of scale is to identify difficulties that you may be experiencing because of your headache.Please check off "YES" ,"SOMETIMES",or "NO" to each item.Answer each item as it pertains to your headache only.</td>
+<tr><td><h4>Instructions:PLEASE READ CAREFULLY:</h4>The purpose of scale is to identify difficulties that you may be experiencing because of your headache.Please check off "YES" ,"SOMETIMES",or "NO" to each item.Answer each item as it pertains to your headache only.</td>
 </tr>
 </table>
 <br/>
@@ -356,8 +384,8 @@ $(function() {
 <br/>
 <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="Save"></td>
-<td><input type="reset" class="submit_btn" value="Cancel"></td>
+<td><input type="submit" class="submit_btn" value="Save" id="saveid"></td>
+<td><input type="reset" class="submit_btn" value="Cancel" id="cancelid"></td>
 </tr>
 </table>
 </table>

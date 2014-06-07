@@ -73,6 +73,96 @@ $(function() {
   }
   
   </script>
+  <script type="text/javascript">
+  function printpage()
+  {
+	
+ document.getElementById('print').style.visibility = 'hidden';
+	      
+		  
+     var html="<html>";
+     html+= document.getElementById(id).innerHTML;
+
+     html+="</html>";
+
+     var printWin = window.open('','','left=0,top=0,width=1400,height=1000,toolbar=0,scrollbars=0,status  =0');
+     printWin.document.write(html);
+     printWin.document.close();
+     printWin.focus();
+     printWin.print();
+     printWin.close();
+     document.getElementById('print').style.visibility = 'visible';
+    
+     }
+  </script>
+  <script>
+  function printPage(id)
+  {
+	
+	        document.getElementById('print').style.visibility = 'hidden';
+	        document.getElementById('print1').style.visibility = 'hidden';
+		  
+     var html="<html>";
+     html+= document.getElementById(id).innerHTML;
+
+     html+="</html>";
+
+     var printWin = window.open('','','left=0,top=0,width=1400,height=1000,toolbar=0,scrollbars=0,status  =0');
+     printWin.document.write(html);
+     printWin.document.close();
+     printWin.focus();
+     printWin.print();
+     printWin.close();
+     document.getElementById('print').style.visibility = 'visible';
+     document.getElementById('print1').style.visibility = 'visible';
+	  
+  }
+  </script>
+  <script >
+    var gAutoPrint = true;
+
+    function processPrint(){
+ document.getElementById('print').style.visibility = 'hidden';
+  document.getElementById('tab1').style.visibility = 'hidden';
+   document.getElementById('tab2').style.visibility = 'hidden';
+    document.getElementById('tab3').style.visibility = 'hidden';
+     document.getElementById('tab4').style.visibility = 'hidden';
+      document.getElementById('saveid').style.visibility = 'hidden';
+	        document.getElementById('cancelid').style.visibility = 'hidden';
+      
+    if (document.getElementById != null){
+    var html = '<HTML>\n<HEAD>\n';
+    if (document.getElementsByTagName != null){
+    var headTags = document.getElementsByTagName("head");
+    if (headTags.length > 0) html += headTags[0].innerHTML;
+    }
+
+    html += '\n</HE' + 'AD>\n<BODY>\n';
+    var printReadyElem = document.getElementById("printMe");
+
+    if (printReadyElem != null) html += printReadyElem.innerHTML;
+    else{
+    alert("Error, no contents.");
+    return;
+    }
+
+    html += '\n</BO' + 'DY>\n</HT' + 'ML>';
+    var printWin = window.open("","processPrint");
+    printWin.document.open();
+    printWin.document.write(html);
+    printWin.document.close();
+ document.getElementById('print').style.visibility = 'visible';
+ document.getElementById('tab1').style.visibility = 'visible';
+   document.getElementById('tab2').style.visibility = 'visible';
+    document.getElementById('tab3').style.visibility = 'visible';
+     document.getElementById('tab4').style.visibility = 'visible';
+      document.getElementById('saveid').style.visibility = 'visible';
+     document.getElementById('cancelid').style.visibility = 'visible';
+    if (gAutoPrint) printWin.print();
+    } else alert("Browser not supported.");
+
+    }
+</script>
 <body>
 <form method="POST" action="radiologicreport">
 <input type="hidden" name="patient_id" value="${username}">
@@ -81,14 +171,20 @@ $(function() {
 
 <br>
 <br>
+<div id="printMe">
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
 
       <tr>
         <td valign="top" align="left">
-        	<div> 
+        	<div > 
         	<div class="headings altheading">
+	       
+<!-- <a href="javascript:void(processPrint());"  id="print">Print</a> -->
+<img  src="resources/images/print.png" id="print" width = "46px" height = "46px" style="float:right ;" onclick="processPrint();" ></a>
+
+	             
 	              <h2 align="center" >Radiologic Report<br></b></h2>
-	       </div></div> 
+	       </div>
 	        <div class="contentbox">
 	        <table cellpadding="0" cellspacing="0" border="0" width="100%">
   				<tr>
@@ -111,16 +207,17 @@ $(function() {
 				    </tr>
 				    </table>
 				    </div>
+				    </div> 
 				    </td>
 				    </tr>
 				    </table>
 				    
 <div id="tabs">
        <ul>
-          <li><a href="#tabs-1">Cervical Spine</a></li>
-          <li><a href="#tabs-2">Thoracic Spine</a></li>
-          <li><a href="#tabs-3">Lumbar Spine</a></li>
-          <li><a href="#tabs-4">Extremities</a></li>
+          <li><a href="#tabs-1" id="tab1">Cervical Spine</a></li>
+          <li><a href="#tabs-2" id="tab2">Thoracic Spine</a></li>
+          <li><a href="#tabs-3" id="tab3">Lumbar Spine</a></li>
+          <li><a href="#tabs-4" id="tab4">Extremities</a></li>
        </ul>
          
    <div id="tabs-1"> 
@@ -128,11 +225,14 @@ $(function() {
 		 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
       <tr>
         <td valign="top" align="left">
-        	<div> 
+        	<div > 
         	<div class="headings altheading">
+        	
+
+        	
         	<h2>CERVICAL SPINE</h2>
 	            </div>
-	            </div>
+	          
 	             <div class="contentbox">
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
   				<tr>
@@ -283,7 +383,7 @@ $(function() {
 											<option value="Severe">Severe</option>
 									</select>		
 									</td> 
-									<td valign="top" align="left" class="input_txt">
+									<td valign="top" align="left" class="input_txt" style="width: 533px; ">
 										<select name="dextro_Levoscoliosis_towering_select1" class="input_cmbbx1">
 				                 	             
 						                    <option selected="selected" value="Dextro" >Dextro</option>
@@ -324,11 +424,15 @@ $(function() {
 				      </tr>
 			 	</table>
 	    	</div>
+	    	  </div>
 	 	</td>
 	</tr>
   </table>
  </div>
  </div>
+ 
+ 
+ 
   <div id="tabs-2">
     <div id="right_content">
 				                
@@ -589,7 +693,7 @@ $(function() {
 									<tr class="row1">
 				                 	 <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="sacralization_3" value="Sacralization"> Sacralization</td>
 				                     <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="lumbarization_3" value="Lumbarization"> Lumbarization</td>    
-				                 	 <td valign="top" align="left" class="input_txt">
+				                 	 <td valign="top" align="left" class="input_txt" style="width: 458px; ">
 										<select name="dextro_Levoscoliosis_towering_select3" class="input_cmbbx1">
 				                 	              
 						                    <option selected="selected" value="Dextro" >Dextro</option>
@@ -654,11 +758,11 @@ $(function() {
 				           <table cellpadding="0" cellspacing="0" border="0">
 				           <tr>
 				   <td valign="top" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-				  <td valign="top" align="center"><br><input type="submit" class="submit_btn" value="Save" onclick="return checkSubmit('this');"></td>
+				  <td valign="top" align="center"><br><input type="submit" class="submit_btn" value="Save" id="saveid" onclick="return checkSubmit('this');"></td>
 				   <td>&nbsp;&nbsp;</td>
              		 <!-- <td valign="top" align="center"><br><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewradiologicreport'"></td> -->
 				  <td>&nbsp;&nbsp;</td>
-				    <td valign="top" align="center"><br><a href="doctorsearch" style="color:white;text-decoration: none" class="submit_btn">Cancel</a></td>
+				    <td valign="top" align="center"><br><a href="doctorsearch" style="color:white;text-decoration: none" id="cancelid" class="submit_btn">Cancel</a></td>
 				 			 
 				  </tr>
 				  </table>
@@ -672,6 +776,9 @@ $(function() {
 				  </div>
 				  </div>
 				  </div>
+				  
+				  
+				 </div>
 				  </c:when>
 				  <c:otherwise>
 				   <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">

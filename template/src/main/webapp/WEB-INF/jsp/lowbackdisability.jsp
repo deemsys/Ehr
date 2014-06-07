@@ -133,6 +133,31 @@ $(function() {
     $( "#tabs" ).tabs();
   });
   </script>
+  <script>
+  function printPage(id)
+  {
+	
+	        document.getElementById('print').style.visibility = 'hidden';
+	        document.getElementById('saveid').style.visibility = 'hidden';
+	        document.getElementById('cancelid').style.visibility = 'hidden';
+		  
+     var html="<html>";
+     html+= document.getElementById(id).innerHTML;
+
+     html+="</html>";
+
+     var printWin = window.open('','','left=0,top=0,width=1400,height=1000,toolbar=0,scrollbars=0,status  =0');
+     printWin.document.write(html);
+     printWin.document.close();
+     printWin.focus();
+     printWin.print();
+     printWin.close();
+     document.getElementById('print').style.visibility = 'visible';
+     document.getElementById('saveid').style.visibility = 'visible';
+     document.getElementById('cancelid').style.visibility = 'visible';
+	  
+  }
+  </script>
 </head>
  <body>
  <br><br>
@@ -140,8 +165,9 @@ $(function() {
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
 <tr>
 <td valign="top" align="left">
- <div>
+ <div id="block1">
 	            <div class="headings altheading">
+	            <img  src="resources/images/print.png" id="print" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block1');" >
 	            <center> <h2>LOW BACK DISABILITY QUESTIONNARIE(REVISED OSWESTRY)</h2> </center><br/>
 	            
 	            </div>
@@ -152,9 +178,9 @@ $(function() {
           <table cellpadding="0" cellspacing="0" border="0" width="98%">
            
  <tr class="row1">
-<td><h2><span class="err">*</span>Patient Name:</h2></td><td><input type="text"  name="pname" /><span class="err"><form:errors path="Lowback.pname"></form:errors></span></td>
-<td width="600">
-<td><h2><span class="err">*</span>Date:</h2></td><td><input type="text"  id="datepicker" name="date" /><span class="err"><form:errors path="Lowback.date"></form:errors></span></td>
+<td><h4><span class="err">*</span>Patient Name:</h4></td><td><input type="text"  name="pname" /><span class="err"><form:errors path="Lowback.pname"></form:errors></span></td>
+<td width="300">
+<td><h4><span class="err">*</span>Date:</h4></td><td><input type="text"  id="datepicker" name="date" /><span class="err"><form:errors path="Lowback.date"></form:errors></span></td>
 </tr>
 </table>
 <br/>
@@ -374,8 +400,8 @@ $(function() {
  </table>
 <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="Save"></td>
-<td><input type="reset" class="submit_btn" value="Cancel"></td>
+<td><input type="submit" class="submit_btn" value="Save" id="saveid"></td>
+<td><input type="reset" class="submit_btn" value="Cancel" id="cancelid"></td>
 </tr>
 </table>
 </c:when>
@@ -609,8 +635,8 @@ $(function() {
  </table>
 <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="Save"></td>
-<td><input type="reset" class="submit_btn" value="Cancel"></td>
+<td><input type="submit" class="submit_btn" value="Save" id="saveid"></td>
+<td><input type="reset" class="submit_btn" value="Cancel" id="cancelid"></td>
 </tr>
 </table>
 </div>
