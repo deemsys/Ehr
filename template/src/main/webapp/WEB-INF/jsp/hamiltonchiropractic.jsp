@@ -404,6 +404,9 @@ $(function() {
       document.getElementById('saveid').style.visibility = 'hidden';
 	        document.getElementById('cancelid').style.visibility = 'hidden';
 	        document.getElementById('moretests').style.visibility = 'hidden';
+	        document.getElementById('moretests1').style.visibility = 'hidden';
+	        document.getElementById('moretests2').style.visibility = 'hidden';
+	        document.getElementById('moretests3').style.visibility = 'hidden';
 	        
     if (document.getElementById != null){
     var html = '<HTML>\n<HEAD>\n';
@@ -434,6 +437,10 @@ $(function() {
       document.getElementById('saveid').style.visibility = 'visible';
      document.getElementById('cancelid').style.visibility = 'visible';
      document.getElementById('moretests').style.visibility = 'visible';
+     document.getElementById('moretests1').style.visibility = 'visible';
+     document.getElementById('moretests2').style.visibility = 'visible';
+     document.getElementById('moretests3').style.visibility = 'visible';
+     
     if (gAutoPrint) printWin.print();
     } else alert("Browser not supported.");
 
@@ -941,8 +948,9 @@ function elbowPopup() {
           <li><a href="#tab-thoricic" id="tab2">THORACIC</a></li>
           <li><a href="#tab-lumbar" id="tab3">LUMBAR</a></li>
            <li><a href="#tab-extremities" id="tab4">EXTREMITIES</a></li>
+           <img  src="resources/images/print.png" id="printnew" width = "46px" height = "46px" style="float:right ;" onclick="processPrint();" ></a>
        </ul>
-       <img  src="resources/images/print.png" id="printnew" width = "46px" height = "46px" style="float:right ;" onclick="processPrint();" ></a>
+       
            <div id="tab-cervical">
              <div id="right_content">
 
@@ -1151,7 +1159,7 @@ function elbowPopup() {
 				                   
 				                  <table align="right" width="1000"> <tr>
 				                    <td width="1000"></td>
-                                  <td valign="top" align="right"><input type="button" class="submit_btn" value="More Tests" onclick="window.location.href='moretest'"></td>
+                                  <td valign="top" align="right"><input type="button" class="submit_btn" id="moretests1" value="More Tests" onclick="window.location.href='moretest'"></td>
 				                
 				                  </tr>
 				                 </table>
@@ -1311,7 +1319,7 @@ function elbowPopup() {
 				                  </tr>
 				                  <table align="right"> <tr>
 				                  
-                                  <td valign="top" align="center"><input type="button" class="submit_btn" value="More Tests" onclick="window.location.href='moretest'"></td></td>
+                                  <td valign="top" align="center"><input type="button" class="submit_btn" value="More Tests" id="moretests2" onclick="window.location.href='moretest'"></td></td>
 				                  <!--  <td><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewfirsthamiltonchiropractic'"></td> -->
 				                 </table>
 				                <!--   
@@ -1578,7 +1586,7 @@ function elbowPopup() {
 				                   <table align="right"> <tr>
 				                   <td><input type="submit" class="submit_btn" value="Save" id="saveid"></td>
 				                   <td><a href="doctorsearch" style="color:white;text-decoration: none" class="submit_btn" id="cancelid">Cancel</a></td>
-                                  <td valign="top" align="center"><input type="button" class="submit_btn" value="More Tests" onclick="window.location.href='moretest'"></td></td>
+                                  <td valign="top" align="center"><input type="button" class="submit_btn" id="moretests3"value="More Tests" onclick="window.location.href='moretest'"></td></td>
 				                  <!--  <td><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewfirsthamiltonchiropractic'"></td> -->
 				                 </table>
           </table>			             
