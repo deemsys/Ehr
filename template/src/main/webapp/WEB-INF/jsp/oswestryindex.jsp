@@ -221,7 +221,34 @@ $(function() {
          });
  
 </script>
-   
+  <script>
+  function printPage(id)
+  {
+	
+	        document.getElementById('print').style.visibility = 'hidden';
+	        document.getElementById('print1').style.visibility = 'hidden';
+	        document.getElementById('saveid').style.visibility = 'hidden';
+	        document.getElementById('cancelid').style.visibility = 'hidden';
+		  
+     var html="<html>";
+     html+= document.getElementById(id).innerHTML;
+
+     html+="</html>";
+
+     var printWin = window.open('','','left=0,top=0,width=1400,height=1000,toolbar=0,scrollbars=0,status  =0');
+     printWin.document.write(html);
+     printWin.document.close();
+     printWin.focus();
+     printWin.print();
+     printWin.close();
+     document.getElementById('print').style.visibility = 'visible';
+     document.getElementById('print1').style.visibility = 'visible';
+     document.getElementById('saveid').style.visibility = 'visible';
+     document.getElementById('cancelid').style.visibility = 'visible';
+	  
+  }
+  </script>
+     
   
 
 </head>
@@ -240,8 +267,9 @@ $(function() {
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
 <tr>
 <td valign="top" align="left">
- <div>
+ <div id="block1">
 	            <div class="headings altheading">
+	            <img  src="resources/images/print.png" id="print" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block1');" >
 	            <center> <h2>
 	            OSWESTRY DISABILITY INDEX 2.0</h2></center><br/>
 	            
@@ -373,27 +401,25 @@ $(function() {
 <table cellpadding="0" cellspacing="0" border="0" width="100%" class="margin_table">
 <tr>
 <td valign="top" align="left">
- <div>
+ <div id="block2">
 	            <div class="headings altheading">
+	            <img  src="resources/images/print.png" id="print1" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block2');" >
 	            <center> <h2>
 	            
 	            OSWESTRY DISABILITY INDEX 2.0</h2></center><br/>
 	             
 	            </div>
           <div class="contentbox">
-         <Table><tr><td><span class="err">*</span>Name:</td><td width="250"><input type="text" name="name"><br><span class="err"><form:errors path="oswestrydetails.name"></form:errors></td><Td width="200"></td><td ><span class="err">*</span>Date:</td><td width="250"><input type="date" name="date"><br><span class="err"><form:errors path="oswestrydetails.date"></form:errors></td><td width="200"></td><td>Score:</td><td><input type="hidden" name="scores" id="scores"><div id="score"></div></td></tr></Table>
-	    <table><tr><td valign="bottom"><b>1.What is your pain RIGHT NOW?</b>&nbsp;&nbsp;&nbsp;X</td><td width="10"></td><td valign="bottom">No Pain</td><Td><label for="amount"><b></label>
-	 <input type="text" id="amount"  value="0" style="border:0; color:#f6931f; font-weight:bold;" name="painscale" /><span id="amounterr"></span>&nbsp;&nbsp;&nbsp;
- <div id="slider" style="width: 227px; "></div></td><td valign="bottom"><b>Worst Possible Pain</Td><Td width="20"></Td><td valign="bottom"><b>What is your pain at its worse?</b>&nbsp;&nbsp;&nbsp;O</td><td width="10"></td><td valign="bottom">No Pain</td><Td>
- <label for="amount1"></label>
+         <Table><tr><td><span class="err">*</span>Name:</td><td width="250"><input type="text" name="name"><br><span class="err"><form:errors path="oswestrydetails.name"></form:errors></td><Td width="200"></td><td ><span class="err">*</span>Date:</td><td width="250"><input type="date" name="date"><br><span class="err"><form:errors path="oswestrydetails.date"></form:errors></td><td>Score:</td><td><input type="hidden" name="scores" id="scores"><div id="score"></div></td></tr></Table>
+         <br>
+         <br>
+	    <table width="100%"><tr><td width="50%"><b>What is your pain RIGHT NOW?</b></td><td><b><p align="left">What is your pain at its Worse?<p></b></td></tr></table>
+	    <br>
+	    <table><tr><td>No Pain</td><td width="200"><label for="amount"><b></label> <input type="text" id="amount"  value="0" style="border:0; color:#f6931f; font-weight:bold; width: 125px" name="painscale" /><span id="amounterr"></span><div id="slider" style="width: 227px; "></div></td><td>Worst Possible Pain</td><td width="250"></td><td>No Pain</td><td><label for="amount1"></label>
 	 <input type="text" id="amount1" value="0" style="border:0; color:#f6931f; font-weight:bold;" name="painscale1" /><span id="amount1err"></span>&nbsp;&nbsp;&nbsp;
- <div id="slider1" style="width: 227px; "></div>
- 
- </Td><td valign="bottom">Worst Possible Pain</td></tr>
-	    <tr></tr>
-	       
+ <div id="slider1" style="width: 227px; "></div></td><td>Worst Possible Pain</td></tr></table>
 	    
-	    </table>
+	    
 	    <br>
 	    <p><B>WORK MODULE(OPTIONAL)</B></p>
 	    <P>The following questions ask about the impact of your arm,shoulder or hand problem on your ability to work(including homemaking if that is your main work role).</P>
@@ -620,7 +646,7 @@ $(function() {
 	     </c:otherwise>
 	     
 	     </c:choose>
-	   <table align="right"><tr><td><input type="submit" value="Save" class="submit_btn"></td><td> <a href="viewoswestryindex" style="color: white" class="submit_btn">Cancel</a></td></tr></table>
+	   <table align="right"><tr><td><input type="submit" value="Save" id="saveid" class="submit_btn"></td><td> <a href="viewoswestryindex" style="color: white" id="cancelid" class="submit_btn">Cancel</a></td></tr></table>
 	    
 	    
 	    
