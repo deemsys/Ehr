@@ -187,6 +187,33 @@ $(function() {
           }  
           
           </script>  
+<script>
+  function printPage(id)
+  {
+	
+	        document.getElementById('print').style.visibility = 'hidden';
+	        document.getElementById('print1').style.visibility = 'hidden';
+	        document.getElementById('saveid').style.visibility = 'hidden';
+	        document.getElementById('cancelid').style.visibility = 'hidden';
+		  
+     var html="<html>";
+     html+= document.getElementById(id).innerHTML;
+
+     html+="</html>";
+
+     var printWin = window.open('','','left=0,top=0,width=1400,height=1000,toolbar=0,scrollbars=0,status  =0');
+     printWin.document.write(html);
+     printWin.document.close();
+     printWin.focus();
+     printWin.print();
+     printWin.close();
+     document.getElementById('print').style.visibility = 'visible';
+     document.getElementById('print1').style.visibility = 'visible';
+     document.getElementById('saveid').style.visibility = 'visible';
+     document.getElementById('cancelid').style.visibility = 'visible';
+	  
+  }
+  </script>
 
 </head>
 <body>
@@ -204,8 +231,9 @@ $(function() {
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
 <tr>
 <td valign="top" align="left">
- <div>
+ <div id="block1">
 	            <div class="headings altheading">
+	            <img  src="resources/images/print.png" id="print" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block1');" >
 	            <center> <h2>ANKLE / FOOT INITIAL EXAM</h2></center><br/>
 	            
 	            </div>
@@ -217,7 +245,7 @@ $(function() {
 	     <br>
 <br>
           <table cellpadding="0" cellspacing="0" border="0" >
-           <tr><td width="130"><span class="err">*</span>Patient Name:</td>
+           <tr><td width="200"><span class="err">*</span>Patient Name:</td>
            <td width="200"><input type="text" name="pname"><br><span class="err"><form:errors path="footexamdetails.signature"></form:errors></td><td width="635"></td>
            <td width="50"><span class="err">*</span>Date:&nbsp;</td> <td><input type="text" name="date" id="datepicker"><br><span class="err"><form:errors path="footexamdetails.signature"></form:errors></td>
            </tr>
@@ -249,9 +277,9 @@ $(function() {
            <td width="129">Pronation:</td><td><input type="radio" value="left" name="pronation">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td> <td width="140"><input type="radio" value="right" name="pronation">&nbsp;&nbsp;&nbsp;Right</td>
                      
            <td width="130">Supination:</td><td><input type="radio" value="left" name="supination">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td>&nbsp;&nbsp;&nbsp;<td width="110"> <input type="radio" value="right" name="supination">&nbsp;&nbsp;&nbsp;Right</td>
-           <td width="35"></td>
-           <td width="120">Calcaneus Varus:</td><td><input type="radio" value="left" name="calcaneus">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp; <input type="radio" value="right" name="calcaneus">&nbsp;&nbsp;&nbsp;Right</td>
-           <td width="73"></td>
+           <td width="35" style="width: 9px; "></td>
+           <td width="120">Calcaneus Varus:</td><td style="width: 145px; "><input type="radio" value="left" name="calcaneus">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp; <input type="radio" value="right" name="calcaneus">&nbsp;&nbsp;&nbsp;Right</td>
+           <td width="73" style="width: 14px; "></td>
            <td width="120">Calcaneus Valgus:</td><td><input type="radio" value="left" name="valgus">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp; <input type="radio" value="right" name="valgus">&nbsp;&nbsp;&nbsp;Right</td>
            </tr>
            <tr height="10"></tr>
@@ -302,7 +330,7 @@ $(function() {
          
          </tr>
          <tr height="10"></tr>
-         <tr><td>Plantar Flexion:		</td><td>50</td><td><input type="text" size="5" name="plantarflexionleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="plantarflexionright" onkeypress="return isNumberKey(event);"></td><td width="210"></td><td>Tinel's Tap:	</td><td width="150"></td><td><input size="5" type="text"  name="tinelstapleft">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="5" name="tinelstapright"></td></tr>
+         <tr><td>Plantar Flexion:		</td><td>50</td><td style="width: 213px; "><input type="text" size="5" name="plantarflexionleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="plantarflexionright" onkeypress="return isNumberKey(event);"></td><td width="210"></td><td>Tinel's Tap:	</td><td width="150"></td><td><input size="5" type="text"  name="tinelstapleft">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="5" name="tinelstapright"></td></tr>
          <tr><td>Dorsiflexion:				</td><td>20</td><td><input size="5" type="text" name="dorsiflexionleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="dorsiflexionright" onkeypress="return isNumberKey(event);"></td><td width="90"></td><td>Achilles Tap:</td><td width="150"></td><td><input type="text"  size="5" name="achillestapleft">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="5"  name="achillestapright"></td></tr>
          <tr><td>Inversion:				</td><td>35</td><td><input size="5" type="text" name="inversionleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input  size="5" type="text" name="inversionright" onkeypress="return isNumberKey(event);"></td><td width="90"></td><td>Long / Transv Arch:</td><td width="150"></td><td><input type="text" size="5"  name="longleft">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text"  name="longright"></td></tr>
          <tr><td>Eversion:					</td><td>15</td><td><input size="5" type="text" name="eversionleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="eversionright" onkeypress="return isNumberKey(event);"></td><td width="90"></td><td>Thompson's:	</td><td width="150"></td><td><input type="text" size="5"  name="thompsonsleft">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text"  name="thompsonsright"></td></tr></tr>
@@ -318,8 +346,9 @@ $(function() {
 <table cellpadding="0" cellspacing="0" border="0" width="100%" class="margin_table">
 <tr>
 <td valign="top" align="left">
- <div>
+ <div id="block2">
 	            <div class="headings altheading">
+	            <img  src="resources/images/print.png" id="print1" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block2');" >
 	            <center> <h2>
 	            ANKLE / FOOT INITIAL EXAM</h2></center><br/>
 	             
@@ -580,7 +609,7 @@ $(function() {
          
          </c:otherwise>
          </c:choose>
-        <table align="right"><tr><td><input type="submit" value="Save" class="submit_btn"></td><td> <a href="viewfootexam" style="color: white" class="submit_btn" onclick="myclose()">Cancel</a></td></tr></table>
+        <table align="right"><tr><td><input type="submit" value="Save" id="saveid" class="submit_btn"></td><td> <a href="viewfootexam" style="color: white" class="submit_btn" id="cancelid" onclick="myclose()">Cancel</a></td></tr></table>
          <script>
  function myclose()
  {
