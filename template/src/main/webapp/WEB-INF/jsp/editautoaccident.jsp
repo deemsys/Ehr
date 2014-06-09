@@ -395,10 +395,10 @@ $(function() {
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="brace" value="yes" class="input_txt" id="bracecheck" onclick="toggle1();"<c:if test="${autoaccident.brace=='yes'}"><c:out value="Checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="brace" value="No" class="input_txt" onclick="toggle1()"<c:if test="${autoaccident.brace=='No'}"><c:out value="Checked"/></c:if>>No&nbsp;&nbsp;&nbsp;<span class="err"><form:errors path="Autoaccident.brace"></form:errors></span>
-				 <span class="err"><form:errors path="Autoaccident.brace"> <select name="ifyes" class="input_cmbbx1" id="mybrace"  style='display:none'>
+				<select name="ifyes" class="input_cmbbx1" id="mybrace"  style='display:none'>
 				  <option  value="bracearms" <c:if test="${autoaccident.ifyes=='bracearms'}"><c:out value="selected"/></c:if>>Braced with arms</option>
 				  <option value="bracelegs" <c:if test="${autoaccident.ifyes=='bracelegs'}"><c:out value="selected"/></c:if>>Braced with legs</option>
-				  </select><span class="err"><form:errors path="Autoaccident.ifyes"></form:errors></span>
+				  </select>
 				  </td>
 				  </tr>
 				 <!--  <tr class="row2">
