@@ -16,6 +16,7 @@ public class Lettertopatients
 	private String doi;
 	private String adjuster;
 	private String date;
+	private String dear;
 	private String date1;
 	private String date2;
 	
@@ -89,6 +90,14 @@ public class Lettertopatients
 		this.date = date;
 	}
 
+	public String getDear() {
+		return dear;
+	}
+
+	public void setDear(String dear) {
+		this.dear = dear;
+	}
+
 	public String getDate1() {
 		return date1;
 	}
@@ -115,7 +124,7 @@ public class Lettertopatients
 
 	public Lettertopatients(String letterid, String username, String re,
 			String ssn, String claim, String doi, String adjuster, String date,
-			String date1, String date2, String letter) {
+			String dear, String date1, String date2, String letter) {
 		super();
 		this.letterid = letterid;
 		this.username = username;
@@ -125,12 +134,12 @@ public class Lettertopatients
 		this.doi = doi;
 		this.adjuster = adjuster;
 		this.date = date;
+		this.dear = dear;
 		this.date1 = date1;
 		this.date2 = date2;
 		this.letter = letter;
 	}
-	
-	
+
 	
 	
 }
