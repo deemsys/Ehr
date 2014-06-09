@@ -186,7 +186,33 @@ $(function() {
           
           </script> 
   
+<script>
+  function printPage(id)
+  {
+	
+	        document.getElementById('print').style.visibility = 'hidden';
+	         document.getElementById('print1').style.visibility = 'hidden';
+	        document.getElementById('saveid').style.visibility = 'hidden';
+	        document.getElementById('cancelid').style.visibility = 'hidden';
+		  
+     var html="<html>";
+     html+= document.getElementById(id).innerHTML;
 
+     html+="</html>";
+
+     var printWin = window.open('','','left=0,top=0,width=1400,height=1000,toolbar=0,scrollbars=0,status  =0');
+     printWin.document.write(html);
+     printWin.document.close();
+     printWin.focus();
+     printWin.print();
+     printWin.close();
+     document.getElementById('print').style.visibility = 'visible';
+      document.getElementById('print1').style.visibility = 'visible';
+     document.getElementById('saveid').style.visibility = 'visible';
+     document.getElementById('cancelid').style.visibility = 'visible';
+	  
+  }
+  </script>
 </head>
 <body>
 <br><br>
@@ -203,8 +229,9 @@ $(function() {
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
 <tr>
 <td valign="top" align="left">
- <div>
+ <div id="block1">
 	            <div class="headings altheading">
+	                <img  src="resources/images/print.png" id="print" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block1');" >
 	            <center> <h2>WRIST AND HAND INITIAL EXAM </h2></center><br/>
 	            
 	            </div>
@@ -229,40 +256,40 @@ $(function() {
            </tr>
 <tr height="10"></tr>
            <tr>
-           <td >Muscle Symmetry:</td><td width="28"></td>
-           <td><input type="text" name="muscle"></td><td width="48"></td>
-             <td width="135">Swelling  / Discoloration:</td>
+           <td style="width: 123px; ">Muscle Symmetry:</td>
+           <td><input type="text" name="muscle"></td>
+             <td width="135" style="width: 159px; ">Swelling  / Discoloration:</td>
              <td width="40"><input type="text" name="swelling"></td>
            
-           <td width="49"></td>
-           <td width="139">Dominant Hand</td><td><input type="radio" value="left" name="dominanthand">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;<input type="radio" value="right" name="dominanthand">&nbsp;&nbsp;&nbsp;Right</td>
-          <td width="75"></td> <td width="130">A & O:</td><td><select name="ao"><option value="excellent">excellent</option><option value="good"> good</option><option value="fair"> fair</option><option value="severe"> severe</option></select></td>
+           
+           <td width="139" style="width: 125px; ">Dominant Hand</td><td style="width: 143px; "><input type="radio" value="left" name="dominanthand">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;<input type="radio" value="right" name="dominanthand">&nbsp;&nbsp;&nbsp;Right</td>
+           <td width="130" style="width: 102px; ">A & O:</td><td><select name="ao"><option value="excellent">excellent</option><option value="good"> good</option><option value="fair"> fair</option><option value="severe"> severe</option></select></td>
            </tr>  
            </table> 
           <br> 
           <table  style="border:10">      
-         <tr><td> <b style="font-size:14px">PALPATION / SOFT TISSUE DYSFUNCTION
+         <tr><td style="width: 371px; "> <b style="font-size:14px">PALPATION / SOFT TISSUE DYSFUNCTION
  </b></td>
-         <td width="40"></td>
-         <td align="left"><input type="checkbox" id="softtissuess" onclick="softtissuevalidate()" name="dysfunction" value="All Soft Tissue Unremarkable">All Soft Tissue Unremarkable</td>
-         <td width="180"></td>
+         
+         <td align="left" style="width: 349px; "><input type="checkbox" id="softtissuess" onclick="softtissuevalidate()" name="dysfunction" value="All Soft Tissue Unremarkable">All Soft Tissue Unremarkable</td>
+         
           </tr>  </table>
            <table>
            <tr>
-           <td width="129">Thenar Eminence:</td><td><input type="radio" value="left" name="thenareminence">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td> <td width="140"><input type="radio" value="right" name="thenareminence">&nbsp;&nbsp;&nbsp;Right</td>
+           <td width="129" style="width: 104px; ">Thenar Eminence:</td><td style="width: 89px; "><input type="radio" value="left" name="thenareminence">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td> <td width="140" style="width: 93px; "><input type="radio" value="right" name="thenareminence">&nbsp;&nbsp;&nbsp;Right</td>
                      
-           <td width="130">Flexor Carpi Radialis:</td><td><input type="radio" value="left" name="flexorcarpiradialis">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td>&nbsp;&nbsp;&nbsp;<td width="110"> <input type="radio" value="right" name="flexorcarpiradialis">&nbsp;&nbsp;&nbsp;Right</td>
-           <td width="35"></td>
-           <td width="120">Common Flexors:</td><td><input type="radio" value="left" name="commonflexors">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp; <input type="radio" value="right" name="commonflexors">&nbsp;&nbsp;&nbsp;Right</td>
-           <td width="73"></td>
-           <td width="120">Hypothenar Eminence:</td><td><input type="radio" value="left" name="hypothenareminence">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp; <input type="radio" value="right" name="hypothenareminence">&nbsp;&nbsp;&nbsp;Right</td>
+           <td width="130" style="width: 141px; ">Flexor Carpi Radialis:</td><td style="width: 76px; "><input type="radio" value="left" name="flexorcarpiradialis">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td>&nbsp;&nbsp;&nbsp;<td width="110" style="width: 75px; "> <input type="radio" value="right" name="flexorcarpiradialis">&nbsp;&nbsp;&nbsp;Right</td>
+           
+           <td width="120">Common Flexors:</td><td style="width: 156px; height: 46px"><input type="radio" value="left" name="commonflexors">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp; <input type="radio" value="right" name="commonflexors">&nbsp;&nbsp;&nbsp;Right</td>
+           
+           <td width="120" style="width: 143px; ">Hypothenar Eminence:</td><td style="width: 174px; "><input type="radio" value="left" name="hypothenareminence">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp; <input type="radio" value="right" name="hypothenareminence">&nbsp;&nbsp;&nbsp;Right</td>
            </tr>
            <tr height="10"></tr>
            <tr>
-           <td width="129">Extensor Carpi Radialis:</td><td><input type="radio" value="left" name="extensorcarpiradialis">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td><td width="110"> <input type="radio" value="right" name="extensorcarpiradialis">&nbsp;&nbsp;&nbsp;Right</td>
-           <td width="130">Common Extensor:	</td><td><input type="radio" value="left" name="commonextensor">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td><td width="110"> <input type="radio" value="right" name="commonextensor">&nbsp;&nbsp;&nbsp;Right</td>
-           <td></td><td>Abductor Pollius Longus:</td><td><input type="radio" value="left" name="abductorpolliuslongus">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp; <input type="radio" value="right" name="abductorpolliuslongus">&nbsp;&nbsp;&nbsp;Right</td>
-           <td></td><td>Abductor Pollicis Brevis:</td><td><input type="radio" value="left" name="abductorpollicisbrevis">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp; <input type="radio" value="right" name="abductorpollicisbrevis">&nbsp;&nbsp;&nbsp;Right</td>
+           <td width="129" style="width: 160px; height: 58px">Extensor Carpi Radialis:</td><td><input type="radio" value="left" name="extensorcarpiradialis">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td><td width="110" style="width: 96px; "> <input type="radio" value="right" name="extensorcarpiradialis">&nbsp;&nbsp;&nbsp;Right</td>
+           <td width="130" style="width: 127px; ">Common Extensor:	</td><td><input type="radio" value="left" name="commonextensor">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td><td width="110"> <input type="radio" value="right" name="commonextensor">&nbsp;&nbsp;&nbsp;Right</td>
+           <td>Abductor Pollius Longus:</td><td><input type="radio" value="left" name="abductorpolliuslongus">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp; <input type="radio" value="right" name="abductorpolliuslongus">&nbsp;&nbsp;&nbsp;Right</td>
+           <td>Abductor Pollicis Brevis:</td><td><input type="radio" value="left" name="abductorpollicisbrevis">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp; <input type="radio" value="right" name="abductorpollicisbrevis">&nbsp;&nbsp;&nbsp;Right</td>
            </tr>
                
            </table>
@@ -271,19 +298,19 @@ $(function() {
                  
 
 <table>	
-	<tr><td width="129">Extensor Pollicis Brevis:</td><td><input type="radio" value="left" name="extensorpollicisbrevis">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td><td width="140"> <input type="radio" value="right" name="extensorpollicisbrevis">&nbsp;&nbsp;&nbsp;Right</td><td  width="130">	Other / Note: </td>
+	<tr><td width="129" style="width: 161px; ">Extensor Pollicis Brevis:</td><td><input type="radio" value="left" name="extensorpollicisbrevis">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td><td width="140" style="width: 113px; "> <input type="radio" value="right" name="extensorpollicisbrevis">&nbsp;&nbsp;&nbsp;Right</td><td  width="130">	Other / Note: </td>
 <td><textarea rows="5" cols="50" name="note" ></textarea></td>	
 	
 	</tr></table>
 	</br>
 	<table  style="border:10">      
          <tr>
-         <td> <b style="font-size:14px">FUNCTIONAL RANGE OF MOTION     </b></td><td width="98"></td>
+         <td style="width: 297px; "> <b style="font-size:14px">FUNCTIONAL RANGE OF MOTION     </b></td>
          <td><input type="checkbox" value="Unremarkable" name="functional" id="functional">Unremarkable
          
          </td>
-         <td width="230"></td>
-         <td> <b style="font-size:14px">ORTHOTPEDIC TESTING    </b></td><td width="160"></td>
+         
+         <td> <b style="font-size:14px">ORTHOTPEDIC TESTING    </b></td>
          <td><input type="checkbox" name="orthotpedic" value="unremarkable">Unremarkable
         
          </td>  </tr></table>
@@ -293,20 +320,20 @@ $(function() {
          <td width="140" valign="top">
          (*  Pain Elicited)	
          </td>   
-         <td width="180" valign="top">Normal </td><td align="center">Actual</br></br>
+         <td width="180" valign="top" style="width: 73px; ">Normal </td><td align="center">Actual</br></br>
           Left&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Right
          </td>
-         <td></td> <td></td><td></td> <td>Left&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Right</td>
+         <td style="width: 80px; "></td> <td style="width: 154px; "></td> <td style="width: 228px; ">Left&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Right</td>
                
          
          </tr>
          <tr height="10"></tr>
-         <tr><td>Wrist Flexion:</td><td>80</td><td><input type="text" size="5" name="flexionleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="flexionright" onkeypress="return isNumberKey(event);"></td><td width="210"></td><td>Allen's (Vasculature):	</td><td width="160"></td><td><input size="5" type="text"  name="allenleft">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="5" name="allenright"></td></tr>
-         <tr><td>Wrist Extension:</td><td>80</td><td><input size="5" type="text" name="extensionleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="extensionright" onkeypress="return isNumberKey(event);"></td><td width="90"></td><td>Phalen's (Median N):</td><td width="150"></td><td><input type="text"  size="5" name="phalenleft">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="5"  name="phalenright"></td></tr>
-         <tr><td>Wrist Ulnar Deviation:</td><td>90</td><td><input size="5" type="text" name="ulnarleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input  size="5" type="text" name="ulnarright" onkeypress="return isNumberKey(event);"></td><td width="90"></td><td>Reverse Phalens (Median N):</td><td width="150"></td><td><input type="text" size="5"  name="reverseleft">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text"  name="reverseright"></td></tr>
-         <tr><td>Wrist Radial Deviation:</td><td>90</td><td><input size="5" type="text" name="radialleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="radialright" onkeypress="return isNumberKey(event);"></td><td width="90"></td><td>Finkelstein's (Tenosynovitis):</td><td width="150"></td><td><input type="text" size="5"  name="tenosynovitisleft">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text"  name="tenosynovitisright"></td></tr></tr>
-         <tr><td>Pronation / Supination	:</td><td>180</td><td><input type="text" size="5" name="pronationleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="pronationright" onkeypress="return isNumberKey(event);"><td width="90"></td><td>Tinnel's:</td><td width="150"></td><td><input type="text" size="5"  name="tinnelsleft">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="5" name="tinnelsright"></td></td></tr>
-         <tr><td></td><td></td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="90"></td><td>ULTT:</td><td width="150"></td><td><input type="text" size="5" name="ulttleft">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text"  name="ulttright"></td></tr>
+         <tr><td style="width: 123px; ">Wrist Flexion:</td><td style="width: 49px; ">80</td><td><input type="text" size="5" name="flexionleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="flexionright" onkeypress="return isNumberKey(event);"></td><td width="210" style="width: 59px; "></td><td>Allen's (Vasculature):	</td><td><input size="5" type="text"  name="allenleft">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="5" name="allenright"></td></tr>
+         <tr><td>Wrist Extension:</td><td>80</td><td><input size="5" type="text" name="extensionleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="extensionright" onkeypress="return isNumberKey(event);"></td><td width="90"></td><td>Phalen's (Median N):</td><td><input type="text"  size="5" name="phalenleft">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="5"  name="phalenright"></td></tr>
+         <tr><td>Wrist Ulnar Deviation:</td><td>90</td><td><input size="5" type="text" name="ulnarleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input  size="5" type="text" name="ulnarright" onkeypress="return isNumberKey(event);"></td><td width="90"></td><td>Reverse Phalens (Median N):</td><td><input type="text" size="5"  name="reverseleft">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text"  name="reverseright"></td></tr>
+         <tr><td>Wrist Radial Deviation:</td><td>90</td><td><input size="5" type="text" name="radialleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="radialright" onkeypress="return isNumberKey(event);"></td><td width="90"></td><td>Finkelstein's (Tenosynovitis):</td><td><input type="text" size="5"  name="tenosynovitisleft">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text"  name="tenosynovitisright"></td></tr></tr>
+         <tr><td>Pronation / Supination	:</td><td>180</td><td><input type="text" size="5" name="pronationleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="pronationright" onkeypress="return isNumberKey(event);"><td width="90"></td><td>Tinnel's:</td><td><input type="text" size="5"  name="tinnelsleft">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="5" name="tinnelsright"></td></tr>
+         <tr><td></td><td></td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="90"></td><td>ULTT:</td><td><input type="text" size="5" name="ulttleft">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text"  name="ulttright"></td></tr>
           
          
          </table>
@@ -318,8 +345,9 @@ $(function() {
 <table cellpadding="0" cellspacing="0" border="0" width="100%" class="margin_table">
 <tr>
 <td valign="top" align="left">
- <div>
+ <div id="block2">
 	            <div class="headings altheading">
+	                <img  src="resources/images/print.png" id="print1" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block2');" >
 	            <center> <h2>
 	            WRIST AND HAND INITIAL EXAM</h2></center><br/>
 	             
@@ -349,7 +377,7 @@ $(function() {
            </table>
            </br>
            <table width="100%">
-           <tr><td width="350"><b style="font-size:14px">FUNCTIONAL DEFICIT:	</b></td><td width="100"><input type="checkbox" name="typing" value="Typing / Writing">Typing / Writing</td><td width="110"><input type="checkbox" name="driving" value="Driving"> Driving</td><td><input type="checkbox" id="other" name="other" value="other"  onclick="visible('this.value')">Other</td><td><input type="text" name="otherdefict" id="otherdefict" style="display:none "></td><td width="300"></td></tr>
+           <tr><td width="350"><b style="font-size:14px">FUNCTIONAL DEFICIT:	</b></td><td width="100" style="width: 272px; "><input type="checkbox" name="typing" value="Typing / Writing">Typing / Writing&nbsp;<input type="checkbox" name="driving" value="Driving"> Driving&nbsp;<input type="checkbox" id="other" name="other" value="other"  onclick="visible('this.value')">Other</td><td style="width: 239px; "><input type="text" name="otherdefict" id="otherdefict" style="display:none "></td></tr>
            
            </table>
            <table>
@@ -667,8 +695,9 @@ $(function() {
 					class="margin_table">
 					<tr>
 						<td valign="top" align="left">
-							<div>
+							<div id="block2">
 								<div class="headings altheading">
+								     <img  src="resources/images/print.png" id="print1" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block2');" >
 									<center>
 										<h2>WRIST AND HAND INITIAL EXAM</h2>
 									</center>
@@ -978,7 +1007,7 @@ $(function() {
            </c:otherwise>
            </c:choose>
          
-         <table align="right"><tr><td><input type="submit" value="Save" class="submit_btn"></td><td> <a href="viewwristexamdetails" onclick="myclose()"  style="color: white" class="submit_btn">Cancel</a></td></tr></table>
+         <table align="right"><tr><td><input type="submit" value="Save" id="saveid" class="submit_btn"></td><td> <a href="viewwristexamdetails" onclick="myclose()"  style="color: white" class="submit_btn" id="cancelid">Cancel</a></td></tr></table>
          
      <script>
  function myclose()
