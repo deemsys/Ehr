@@ -160,7 +160,34 @@ $(function() {
          });
  
 </script>
-   
+  <script>
+  function printPage(id)
+  {
+	
+	        document.getElementById('print').style.visibility = 'hidden';
+	        document.getElementById('print1').style.visibility = 'hidden';
+	        document.getElementById('saveid').style.visibility = 'hidden';
+	        document.getElementById('cancelid').style.visibility = 'hidden';
+		  
+     var html="<html>";
+     html+= document.getElementById(id).innerHTML;
+
+     html+="</html>";
+
+     var printWin = window.open('','','left=0,top=0,width=1400,height=1000,toolbar=0,scrollbars=0,status  =0');
+     printWin.document.write(html);
+     printWin.document.close();
+     printWin.focus();
+     printWin.print();
+     printWin.close();
+     document.getElementById('print').style.visibility = 'visible';
+     document.getElementById('print1').style.visibility = 'visible';
+     document.getElementById('saveid').style.visibility = 'visible';
+     document.getElementById('cancelid').style.visibility = 'visible';
+	  
+  }
+  </script>
+     
   
 
 </head>
@@ -180,8 +207,9 @@ $(function() {
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
 <tr>
 <td valign="top" align="left">
- <div>
+ <div id="block1">
 	            <div class="headings altheading">
+	            <img  src="resources/images/print.png" id="print" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block1');" >
 	            <center> <h2>
 	            HIP	INITIAL EXAM</h2></center><br/>
 	            
@@ -329,8 +357,9 @@ $(function() {
 <table cellpadding="0" cellspacing="0" border="0" width="100%" class="margin_table">
 <tr>
 <td valign="top" align="left">
- <div>
+ <div id="block2">
 	            <div class="headings altheading">
+	            <img  src="resources/images/print.png" id="print1" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block2');" >
 	            <center> <h2>
 	            HIP	INITIAL EXAM</h2></center><br/>
 	             
@@ -612,7 +641,7 @@ $(function() {
           </c:otherwise>
            </c:choose>
            
-         <table align="right"><tr><td><input type="submit" value="Save" class="submit_btn"></td><td> <a href="viewhipexam" style="color: white" class="submit_btn" onclick="myclose()">Cancel</a></td></tr></table>
+         <table align="right"><tr><td><input type="submit" value="Save" id="saveid" class="submit_btn"></td><td> <a href="viewhipexam" style="color: white" class="submit_btn" id="cancelid" onclick="myclose()">Cancel</a></td></tr></table>
          </div></td></tr></table></div></div></div>
          
          <script>
