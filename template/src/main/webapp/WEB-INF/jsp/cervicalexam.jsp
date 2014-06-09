@@ -52,7 +52,33 @@ $(function() {
           }  
           
           </script>
-  
+  <script>
+  function printPage(id)
+  {
+	
+	        document.getElementById('print').style.visibility = 'hidden';
+	        document.getElementById('print1').style.visibility = 'hidden';
+	        document.getElementById('saveid').style.visibility = 'hidden';
+	        document.getElementById('cancelid').style.visibility = 'hidden';
+		  
+     var html="<html>";
+     html+= document.getElementById(id).innerHTML;
+
+     html+="</html>";
+
+     var printWin = window.open('','','left=0,top=0,width=1400,height=1000,toolbar=0,scrollbars=0,status  =0');
+     printWin.document.write(html);
+     printWin.document.close();
+     printWin.focus();
+     printWin.print();
+     printWin.close();
+     document.getElementById('print').style.visibility = 'visible';
+     document.getElementById('print1').style.visibility = 'visible';
+     document.getElementById('saveid').style.visibility = 'visible';
+     document.getElementById('cancelid').style.visibility = 'visible';
+	  
+  }
+  </script>
 </head>
  
  <body>
@@ -72,8 +98,9 @@ $(function() {
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
 <tr>
 <td valign="top" align="left">
- <div>
+ <div id="block1">
 	            <div class="headings altheading">
+	           <img  src="resources/images/print.png" id="print" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block1');" >
 	            <center> <h2>CERVICAL INITIAL EXAM</h2> </center><br/>
 	            
 	            </div>
@@ -81,9 +108,9 @@ $(function() {
           <table cellpadding="0" cellspacing="0" border="0" width="98%">
            
  <tr class="row1">
-<td><h2><span class="err">*</span>Patient Name:</h2></td><td><input type="text"  name="pname" /><span class="err"><form:errors path="Cervicalexam.pname"></form:errors></span></td>
-<td width="600">
-<td><h2><span class="err">*</span>Date:</h2></td><td><input type="text"  id="datepicker" name="date" /><span class="err"><form:errors path="Cervicalexam.date"></form:errors></span></td>
+<td style="width: 354px; "><h4><span class="err">*</span>Patient Name:</h4></td><td style="width: 199px; "><input type="text"  name="pname" /><span class="err"><form:errors path="Cervicalexam.pname"></form:errors></span></td>
+<td width="600" style="width: 303px; ">
+<td><h4><span class="err">*</span>Date:</h4></td><td><input type="text"  id="datepicker" name="date" /><span class="err"><form:errors path="Cervicalexam.date"></form:errors></span></td>
 </tr>
 </table>
 <br/>
@@ -91,9 +118,9 @@ $(function() {
  <table>
  <tr class="row1">
  <td><B style="font-size:14px">OBSERVATION / APPEARANCE / MOOD / ORIENTATION</B></td>
+ <td style="width: 180px; "></td>
  <td></td>
- <td></td>
- <td></td>
+ <td style="width: 152px; "></td>
  <td></td>
  <td></td>
  </tr>
@@ -123,11 +150,11 @@ $(function() {
  <td></td>
  </tr>
   <tr class="row1">
- <td>Sub-Occipital:</td><td width="100"><input type="radio" name="suboccipital" value="Left">Left <input type="radio" name="suboccipital" value="Right">Right</td> 
+ <td>Sub-Occipital:</td><td width="100" style="width: 176px; "><input type="radio" name="suboccipital" value="Left">Left <input type="radio" name="suboccipital" value="Right">Right</td> 
  
  <td>Scalenes:</td><td width="200"><input type="radio" name="scalenes" value="Left">Left  <input type="radio" name="scalenes" value="Right">Right</td> 
  
- <td>Levator Scapulae:</td><td width="100"><input type="radio" name="levator" value="Left">Left <input type="radio" name="levator" value="Right">Right</td>
+ <td style="width: 169px; ">Levator Scapulae:</td><td width="100" style="width: 130px; "><input type="radio" name="levator" value="Left">Left <input type="radio" name="levator" value="Right">Right</td>
  </tr>
  <tr class="row1">
  <td>Teres Minor:</td><td><input type="radio" name="teresminor" value="Left">Left  <input type="radio" name="teresminor" value="Right">Right</td> 
@@ -195,8 +222,9 @@ $(function() {
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
 <tr>
 <td valign="top" align="left">
- <div>
+ <div id="block2">
 	            <div class="headings altheading">
+	            <img  src="resources/images/print.png" id="print1" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block2');" >
 	            <center> <h2>CERVICAL INITIAL EXAM</h2> </center><br/>
 	            
 	            </div>
@@ -204,7 +232,7 @@ $(function() {
          <table cellpadding="0" cellspacing="0" border="0" width="98%">  
          <tr height="20">         
  <tr class="row1">
- <td><B style="font-size:14px">NEUROLOGICAL</B></td><td><input type="checkbox" name="neurologicaltest" value="Neurological Testing Unremarkable">Neurological Testing Unremarkable</td><td><!-- <input type="checkbox" name="exceptn" value="Except">Except --></td>
+ <td><B style="font-size:14px">NEUROLOGICAL</B></td><td style="width: 366px; "><input type="checkbox" name="neurologicaltest" value="Neurological Testing Unremarkable">Neurological Testing Unremarkable</td><td><!-- <input type="checkbox" name="exceptn" value="Except">Except --></td>
  <td></td><td></td><td></td>
  </tr>
  <tr class="row1">
@@ -276,12 +304,12 @@ $(function() {
  </table>
 <table>         
  <tr class="row1">
- <td><B style="font-size:14px">FUNCTIONAL DEFICIT:</B></td><td><input type="checkbox" name="sitting" value="Sitting">Sitting &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<input type="checkbox" name="standing" value="Standing">Standing</td>
- <td width="150"><input type="checkbox" name="driving" value="Driving">Driving</td><td width="150"><input type="checkbox" name="computeruse" value="Computer Use">Computer Use</td>
- <td width="150"><input type="checkbox" name="otherfunctional" value="Other" onclick="this.form.break3.style.visibility = this.checked? 'visible' : 'hidden'">Other&nbsp; </td><td><input type="text"  id="break3" name="break_text3" style="visibility:hidden" /></td>
+ <td style="height: 64px; "><B style="font-size:14px">FUNCTIONAL DEFICIT:</B></td><td style="height: 39px; "><input type="checkbox" name="sitting" value="Sitting">Sitting &nbsp;<input type="checkbox" name="standing" value="Standing">Standing&nbsp;
+<input type="checkbox" name="driving" value="Driving">Driving&nbsp;<input type="checkbox" name="computeruse" value="Computer Use">Computer Use&nbsp;
+ <input type="checkbox" name="otherfunctional" value="Other" onclick="this.form.break3.style.visibility = this.checked? 'visible' : 'hidden'">Other&nbsp; </td><td><input type="text"  id="break3" name="break_text3" style="visibility:hidden" /></td>
  </tr>         
  <tr class="row1">
- <td><B style="font-size:14px">ASSESSMENT / ADDITIONAL COMMENTS:</B></td><td><textarea name="assessment" rows='5' cols='40'></textarea></td><td></td>
+ <td style="width: 400px; "><B style="font-size:14px">ASSESSMENT / ADDITIONAL COMMENTS:</B></td><td><textarea name="assessment" rows='5' cols='40'></textarea></td><td></td>
  <td></td><td></td>
  <td></td>
  </tr>         
@@ -351,8 +379,8 @@ $(function() {
  <table><tr><td><B style="font-size:14px"><span class="err">*</span>PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sign"><span class="err"><form:errors path="Cervicalexam.sign"></form:errors></span></B></td></tr></table>
 <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="Save"></td>
-<td><input type="reset" class="submit_btn" value="Cancel" onclick="myclose()"></td>
+<td><input type="submit" class="submit_btn" value="Save" id="saveid"></td>
+<td><input type="reset" class="submit_btn" value="Cancel" id="cancelid" onclick="myclose()"></td>
 <script>
  function myclose()
  {
@@ -650,8 +678,8 @@ $(function() {
  <table><tr><td><B style="font-size:14px"><span class="err">*</span>PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sign" value="${cervical.sign}"></B></td><span class="err"><form:errors path="Cervicalexam.sign"></form:errors></span></tr></table>
 <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="Save"></td>
-<td><input type="reset" class="submit_btn" value="Cancel" onclick="myclose()"></td>
+<td><input type="submit" class="submit_btn" value="Save" id="saveid"></td>
+<td><input type="reset" class="submit_btn" value="Cancel" id="cancelid" onclick="myclose()"></td>
 <script>
  function myclose()
  {

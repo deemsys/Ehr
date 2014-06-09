@@ -52,7 +52,33 @@ $(function() {
           }  
           
           </script>
-  
+  <script>
+  function printPage(id)
+  {
+	
+	        document.getElementById('print').style.visibility = 'hidden';
+	        document.getElementById('print1').style.visibility = 'hidden';
+	        document.getElementById('saveid').style.visibility = 'hidden';
+	        document.getElementById('cancelid').style.visibility = 'hidden';
+		  
+     var html="<html>";
+     html+= document.getElementById(id).innerHTML;
+
+     html+="</html>";
+
+     var printWin = window.open('','','left=0,top=0,width=1400,height=1000,toolbar=0,scrollbars=0,status  =0');
+     printWin.document.write(html);
+     printWin.document.close();
+     printWin.focus();
+     printWin.print();
+     printWin.close();
+     document.getElementById('print').style.visibility = 'visible';
+     document.getElementById('print1').style.visibility = 'visible';
+     document.getElementById('saveid').style.visibility = 'visible';
+     document.getElementById('cancelid').style.visibility = 'visible';
+	  
+  }
+  </script>
 </head>
  <body>
  <br><br>
@@ -70,8 +96,9 @@ $(function() {
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
 <tr>
 <td valign="top" align="left">
- <div>
+ <div id="block1">
 	            <div class="headings altheading">
+	          <img  src="resources/images/print.png" id="print" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block1');" >
 	            <center> <h2>THORACIC INITIAL EXAM</h2> </center><br/>
 	            
 	            </div>
@@ -79,9 +106,9 @@ $(function() {
           <table cellpadding="0" cellspacing="0" border="0" width="98%">
            
  <tr class="row1">
-<td><h2><span class="err">*</span>Patient Name:</h2></td><td><input type="text"  name="pname" /><span class="err"><form:errors path="Thoracicexam.pname"></form:errors></span></td>
-<td width="600">
-<td><h2><span class="err">*</span>Date:</h2></td><td><input type="text"  id="datepicker" name="date" /><span class="err"><form:errors path="Thoracicexam.date"></form:errors></span></td>
+<td style="width: 261px; "><h4><span class="err">*</span>Patient Name:</h4></td><td style="width: 284px; "><input type="text"  name="pname" /><span class="err"><form:errors path="Thoracicexam.pname"></form:errors></span></td>
+<td width="600" style="width: 257px; ">
+<td><h4><span class="err">*</span>Date:</h4></td><td><input type="text"  id="datepicker" name="date" /><span class="err"><form:errors path="Thoracicexam.date"></form:errors></span></td>
 </tr>
 </table>
 <br/>
@@ -89,11 +116,11 @@ $(function() {
  <table>
  <tr class="row1">
  <td><B style="font-size:14px">OBSERVATION / APPEARANCE / MOOD / ORIENTATION</B></td>
+ <td style="width: 180px; "></td>
+ <td style="width: 198px; "></td>
  <td></td>
- <td></td>
- <td></td>
- <td></td>
- <td></td>
+ <td style="width: 223px; "></td>
+ <td style="width: 120px; "></td>
  </tr>
  <tr class="row1">
  <td width="200">Muscle Symmetry: </td><td><input type="text" name="muscle"></td> 
@@ -103,9 +130,9 @@ $(function() {
  <tr class="row1">
  <td width="200">Asymmetries (High Side Marked):</td>
   <td>Acromion: </td><td><input type="radio" name="acromion" value="Left">Left <input type="radio" name="acromion" value="Right">Right</td> 
- <td>Inferior Pole of Scapula:</td>
- <td><input type="radio" name="inferior" value="Left">Left <input type="radio" name="inferior" value="Right">Right</td> 
- <td></td>
+ <td style="width: 228px; ">Inferior Pole of Scapula:</td>
+ <td style="width: 260px; "><input type="radio" name="inferior" value="Left">Left <input type="radio" name="inferior" value="Right">Right</td> 
+ <td style="width: 147px; "></td>
  </tr>
  <tr class="row1">
  <td width="200"></td>
@@ -116,7 +143,7 @@ $(function() {
  </tr>
  <tr class="row1">
  <td width="200"><B style="font-size:14px">PALPATION / SOFT TISSUE DYSFUNCTION</B></td> 
- <td width="200"><input type="checkbox" name="allsoft" value="All Soft Tissue Unremarkable"> All Soft Tissue Unremarkable</td> 
+ <td width="200" style="width: 220px; "><input type="checkbox" name="allsoft" value="All Soft Tissue Unremarkable"> All Soft Tissue Unremarkable</td> 
  <!-- <td> <input type="checkbox" name="except" value="Except"> Except </td> -->
  <td></td>
  <td></td> 
@@ -208,8 +235,9 @@ $(function() {
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
 <tr>
 <td valign="top" align="left">
- <div>
+ <div id="block2">
 	            <div class="headings altheading">
+	         <img  src="resources/images/print.png" id="print1" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block2');" >
 	            <center> <h2>THORACIC INITIAL EXAM</h2> </center><br/>
 	            
 	            </div>
@@ -320,8 +348,8 @@ $(function() {
  <table><tr><td><B style="font-size:14px"><span class="err">*</span>PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sign"><span class="err"><form:errors path="Thoracicexam.sign"></form:errors></span></B></td></tr></table>
 <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="Save"></td>
-<td><input type="reset" class="submit_btn" value="Cancel" onclick="myclose()"></td>
+<td><input type="submit" class="submit_btn" value="Save" id="saveid"></td>
+<td><input type="reset" class="submit_btn" value="Cancel" id="cancelid" onclick="myclose()"></td>
 <script>
  function myclose()
  {
@@ -591,8 +619,8 @@ $(function() {
  <table><tr><td><B style="font-size:14px"><span class="err">*</span>PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sign" value="${thoracic.sign}"><span class="err"><form:errors path="Thoracicexam.sign"></form:errors></span></B></td></tr></table>
 <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="Save"></td>
-<td><input type="reset" class="submit_btn" value="Cancel" onclick="myclose()"></td>
+<td><input type="submit" class="submit_btn" value="Save" id="saveid"></td>
+<td><input type="reset" class="submit_btn" value="Cancel" id="cancelid" onclick="myclose()"></td>
 <script>
  function myclose()
  {

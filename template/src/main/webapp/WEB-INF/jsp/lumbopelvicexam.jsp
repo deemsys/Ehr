@@ -72,6 +72,33 @@ $("#flexion").keyup(function() {
           }  
           
           </script>
+          <script>
+  function printPage(id)
+  {
+	
+	        document.getElementById('print').style.visibility = 'hidden';
+	        document.getElementById('print1').style.visibility = 'hidden';
+	        document.getElementById('saveid').style.visibility = 'hidden';
+	        document.getElementById('cancelid').style.visibility = 'hidden';
+		  
+     var html="<html>";
+     html+= document.getElementById(id).innerHTML;
+
+     html+="</html>";
+
+     var printWin = window.open('','','left=0,top=0,width=1400,height=1000,toolbar=0,scrollbars=0,status  =0');
+     printWin.document.write(html);
+     printWin.document.close();
+     printWin.focus();
+     printWin.print();
+     printWin.close();
+     document.getElementById('print').style.visibility = 'visible';
+     document.getElementById('print1').style.visibility = 'visible';
+     document.getElementById('saveid').style.visibility = 'visible';
+     document.getElementById('cancelid').style.visibility = 'visible';
+	  
+  }
+  </script>
 </head>
  <body>
  <div id="tabs">
@@ -88,8 +115,9 @@ $("#flexion").keyup(function() {
  <table  width="98%" class="margin_table">
 <tr>
 <td valign="top" align="left">
-       <div>
-       </div>   <div class="headings altheading">
+       <div id="block1">
+       <div class="headings altheading">
+	          <img  src="resources/images/print.png" id="print" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block1');" >
 	            <center> <h2>LUMBOPELVIC INITIAL EXAM</h2> </center><br/>
 	            
 	            </div>
@@ -98,20 +126,20 @@ $("#flexion").keyup(function() {
           <table  cellpadding="0" cellspacing="0" border="0" width="98%">
            
  <tr class="row1">
-<td width="150"><h2><span class="err">*</span>Patient Name:</h2></td><td><input type="text"  name="pname" /><span class="err"><form:errors path="Lumbopelvicexam.pname"></form:errors></span></td>
-<td width="600">
-<td><h2><span class="err">*</span>Date:</h2></td><td><input type="text"  id="datepicker" name="date" /><span class="err"><form:errors path="Lumbopelvicexam.date"></form:errors></span></td>
+<td width="150" style="width: 198px; "><h4><span class="err">*</span>Patient Name:</h4></td><td><input type="text"  name="pname" /><span class="err"><form:errors path="Lumbopelvicexam.pname"></form:errors></span></td>
+<td width="600" style="width: 444px; ">
+<td><h4><span class="err">*</span>Date:</h4></td><td><input type="text"  id="datepicker" name="date" /><span class="err"><form:errors path="Lumbopelvicexam.date"></form:errors></span></td>
 </tr>
 </table>
 <br/>
 <br/>
  <table cellpadding="0" cellspacing="0" border="0">
  <tr class="row1">
- <td width="300"><B style="font-size:14px">OBSERVATION / APPEARANCE / MOOD / ORIENTATION</B></td>
+ <td width="300" style="width: 247px; "><B style="font-size:14px">OBSERVATION / APPEARANCE / MOOD / ORIENTATION</B></td>
  <td></td>
- <td></td>
- <td></td>
- <td></td>
+ <td style="width: 111px; "></td>
+ <td style="width: 110px; "></td>
+ <td style="width: 169px; "></td>
  <td></td>
  </tr>
  <tr class="row1">
@@ -124,7 +152,7 @@ $("#flexion").keyup(function() {
 					<option value="caneassited">Cane Assisted</option>
 					<option value="wheelchair">Wheel Chair</option>
 					</select></td> 
- <td></td> 
+ <td style="width: 144px; "></td> 
  <td></td>
  </tr>
  <tr class="row1">
@@ -140,20 +168,20 @@ $("#flexion").keyup(function() {
 					<option value="severe">Severe</option>
 					</select> </td>
  <td></td>
- <td></td> 
- <td></td>
+ <td style="width: 108px; "></td> 
+ <td style="width: 125px; "></td>
  </tr>
  <tr class="row1">
  <td width="200"><B style="font-size:14px">PALPATION / SOFT TISSUE DYSFUNCTION</B></td> 
  <td width="200"><input type="checkbox" name="allsoft" value="All Soft Tissue Unremarkable"> All Soft Tissue Unremarkable</td> 
  <!-- <td> <input type="checkbox" name="except" value="Except"> Except </td> -->
- <td></td>
+ <td style="width: 150px; "></td>
  <td></td> 
  <td></td>
  <td></td>
  </tr>
   <tr class="row1">
- <td width="200">Leg Length Discrepancy:Short Leg-  </td> 
+ <td width="200" style="width: 241px; ">Leg Length Discrepancy:Short Leg-  </td> 
  <td><input type="checkbox" name="leglengthcheckl" value="left" onclick="this.form.break5.style.visibility = this.checked? 'visible' : 'hidden'">Left
  <select name="leglengthl" id="break5" style="visibility:hidden" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="1/8">1/8</option>
@@ -167,7 +195,7 @@ $("#flexion").keyup(function() {
 					<option value="other">other</option>
 					<input type="text" name="other1" id="other1" style='display:none'>
 					</select></td>
-					<td><input type="checkbox" name="leglengthcheckr" value="right" onclick="this.form.break6.style.visibility = this.checked? 'visible' : 'hidden'">Right
+					<td style="width: 211px; "><input type="checkbox" name="leglengthcheckr" value="right" onclick="this.form.break6.style.visibility = this.checked? 'visible' : 'hidden'">Right
 					<select name="leglengthr" id="break6" style="visibility:hidden" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="1/8">1/8</option>
 					<option value="1/4">1/4</option>
@@ -188,7 +216,7 @@ $("#flexion").keyup(function() {
  <tr class="row1">
  <td>Piriformis:</td><td width="100"><input type="radio" name="piriformis" value="Left">Left <input type="radio" name="piriformis" value="Right">Right</td> 
  
- <td>Quad Lumb:</td><td width="200"><input type="radio" name="quadlumb" value="Left">Left  <input type="radio" name="quadlumb" value="Right">Right</td> 
+ <td style="width: 170px; ">Quad Lumb:</td><td width="200" style="width: 175px; "><input type="radio" name="quadlumb" value="Left">Left  <input type="radio" name="quadlumb" value="Right">Right</td> 
  
  <td>Paraspinals:</td><td width="100"><input type="radio" name="paraspinals" value="Left">Left <input type="radio" name="paraspinals" value="Right">Right</td>
  </tr>
@@ -216,17 +244,17 @@ $("#flexion").keyup(function() {
 
  <table>
  <tr class="row1">
- <td width="350"><B style="font-size:14px">FUNCTIONAL RANGE OF MOTION</B> </td><td width="200"><input type="radio" name="functionalrangeofmotion" value="Unremarkable">Unremarkable</td> 
- <td width="350"><B style="font-size:14px">SUBLUXATION /DYSFUNCTION  </B></td><td width="150"><input type="radio" name="subluxation" value="Unremarkable">Unremarkable</td> 
+ <td width="350" style="width: 265px; "><B style="font-size:14px">FUNCTIONAL RANGE OF MOTION</B> </td><td width="200" style="width: 157px; "><input type="radio" name="functionalrangeofmotion" value="Unremarkable">Unremarkable</td> 
+ <td width="350" style="width: 237px; "><B style="font-size:14px">SUBLUXATION /DYSFUNCTION  </B></td><td width="150" style="width: 186px; "><input type="radio" name="subluxation" value="Unremarkable">Unremarkable</td> 
  <td width="250"><B style="font-size:14px">ORTHOTPEDIC TESTING </B></td><td><input type="radio" name="orthopedic" value="Unremarkable">Unremarkable</td>
  </tr>
   <tr class="row1">
- <td>  </td><td> <b>Normal</b> &nbsp;&nbsp;&nbsp;<b> Actual</b></td> 
+ <td style="width: 219px; ">  </td><td> <b>Normal</b> &nbsp;&nbsp;&nbsp;<b> Actual</b></td> 
  <td></td><td width="250"> </td> 
  <td>  </td><td>   <b>Left</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> Right</b></td>
  </tr>
   <tr class="row1">
-<span class="err"><div id="number"></span> <td><b> Flexion:</b> </td><td> (60)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="flexion" id="flexion" size="7" onkeypress="return isNumberKey(event);"></div></td> 
+<span class="err"><div id="number"></span> <td style="width: 135px; "><b> Flexion:</b> </td><td> (60)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="flexion" id="flexion" size="7" onkeypress="return isNumberKey(event);"></div></td> 
  <td width="100">T8-9:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t89" size="7" onkeypress="return isNumberKey(event);"></td><td width="250">T9-10:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t910" size="7" onkeypress="return isNumberKey(event);"> </td> 
  <td><b>Trendelenburg:</b> </td><td><input type="text" name="trendelburgl" size="5"> <input type="text" name="trendelburgr" size="5"></td>
  </tr>
@@ -238,12 +266,12 @@ $("#flexion").keyup(function() {
  </tr>
   <tr class="row1">
  <td><b>Lateral Flexion:</b> </td><td> (25)&nbsp;&nbsp;&nbsp;L <input type="text" name="lflexion" size="7" onkeypress="return isNumberKey(event);"><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R <input type="text" name="rflexion" size="7" onkeypress="return isNumberKey(event);"></td> 
- <td width="100">T12-L1:&nbsp;<input type="text" name="t12l1" size="7" onkeypress="return isNumberKey(event);"></td><td width="50">	L1-2:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<input type="text" name="l12" size="7" onkeypress="return isNumberKey(event);"> </td> 
+ <td width="100">T12-L1:&nbsp;<input type="text" name="t12l1" size="7" onkeypress="return isNumberKey(event);"></td> 
  <td><b>Slump:</b> </td><td><input type="text" name="slumpl" size="5"> <input type="text" name="slumpr" size="5"></td>
  </tr>
   <tr class="row1">
   <td><b>Rotation:</b> </td><td> (45)&nbsp;&nbsp;&nbsp;L <input type="text" name="lrotation" size="7" onkeypress="return isNumberKey(event);"><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R <input type="text" name="rrotation" size="7" onkeypress="return isNumberKey(event);"></td> 
- <td width="100">L2-3:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<input type="text" name="l23" size="7" onkeypress="return isNumberKey(event);"></td><td width="50">L3-4:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="l34" size="7" onkeypress="return isNumberKey(event);"> </td> 
+ <td width="100">L2-3:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<input type="text" name="l23" size="7" onkeypress="return isNumberKey(event);"></td><td width="50">L3-4:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<td width="50">	L1-2:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<input type="text" name="l12" size="7" onkeypress="return isNumberKey(event);"> </td><input type="text" name="l34" size="7" onkeypress="return isNumberKey(event);"> </td> 
  <td><b>Straight Leg Raise:</b> </td><td><input type="text" name="straightlegl" size="5"> <input type="text" name="straightlegr" size="5"></td>
  </tr>
   <tr class="row1">
@@ -267,7 +295,7 @@ $("#flexion").keyup(function() {
  <td><b>Positive Adam's:	</b> </td><td><input type="text" name="positiveadam" size="15"> </td>
  </tr>
  </table>
- </div>
+ </div></div>
  </td>
  </tr>
  </table>
@@ -278,7 +306,9 @@ $("#flexion").keyup(function() {
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
 <tr>
 <td valign="top" align="left">
+<div id="block2">
 	            <div class="headings altheading">
+	          <img  src="resources/images/print.png" id="print1" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block2');" >
 	            <center> <h2>LUMBOPELVIC INITIAL EXAM</h2> </center><br/>
 	            
 	            </div>
@@ -286,8 +316,8 @@ $("#flexion").keyup(function() {
          <table cellpadding="0" cellspacing="0" border="0" width="98%">  
          <tr height="20">         
  <tr class="row1">
- <td><B style="font-size:14px">NEUROLOGICAL</B></td><td><input type="checkbox" name="neurologicaltest" value="Neurological Testing Unremarkable">Neurological Testing Unremarkable</td><td><!-- <input type="checkbox" name="exceptn" value="Except">Except --></td>
- <td></td><td></td><td></td>
+ <td><B style="font-size:14px">NEUROLOGICAL</B></td><td style="width: 352px; "><input type="checkbox" name="neurologicaltest" value="Neurological Testing Unremarkable">Neurological Testing Unremarkable</td><td><!-- <input type="checkbox" name="exceptn" value="Except">Except --></td>
+ <td style="width: 246px; "></td><td style="width: 55px; "></td><td style="width: 258px; "></td>
  </tr>
  <tr class="row1">
  <td><b>Level</b> </td>
@@ -364,12 +394,12 @@ $("#flexion").keyup(function() {
  </table>
 <table cellpadding="0" cellspacing="0" border="0">         
  <tr class="row1">
- <td><B style="font-size:14px">FUNCTIONAL DEFICIT:</B></td><td><input type="checkbox" name="sitting" value="Sitting to Standing">Sitting to Standing &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" name="lifting" value="Lifting">Lifting	</td>
- <td width="150"><input type="checkbox" name="walking" value="Walking">Walking</td><td width="150"><input type="checkbox" name="stairs" value="Stairs">Stairs</td>
- <td width="150"><input type="checkbox" name="otherfunctional" value="Other" onclick="this.form.break3.style.visibility = this.checked? 'visible' : 'hidden'">Other&nbsp;</td><td> <input type="text" class="input_txtbx1" id="break3" name="break_text3" style="visibility:hidden" /></td>
+ <td style="width: 358px; height: 43px"><B style="font-size:14px">FUNCTIONAL DEFICIT:</B></td><td style="height: 72px; "><input type="checkbox" name="sitting" value="Sitting to Standing">Sitting to Standing &nbsp; <input type="checkbox" name="lifting" value="Lifting">Lifting	
+&nbsp; <input type="checkbox" name="walking" value="Walking">Walking&nbsp;<input type="checkbox" name="stairs" value="Stairs">Stairs
+ &nbsp;<input type="checkbox" name="otherfunctional" value="Other" onclick="this.form.break3.style.visibility = this.checked? 'visible' : 'hidden'">Other&nbsp;</td><td> <input type="text" class="input_txtbx1" id="break3" name="break_text3" style="visibility:hidden" /></td>
  </tr>         
  <tr class="row1">
- <td width="450"><B style="font-size:14px">ASSESSMENT / ADDITIONAL COMMENTS:</B></td><td><textarea name="assessment" rows='5' cols='40'></textarea></td><td></td>
+ <td width="450"><B style="font-size:14px">ASSESSMENT / ADDITIONAL COMMENTS:</B></td><td style="height: 111px; "><textarea name="assessment" rows='5' cols='40' style="height: 66px; "></textarea></td><td></td>
  <td></td><td></td>
  <td></td>
  </tr>         
@@ -435,13 +465,13 @@ $("#flexion").keyup(function() {
  <td width="250"><input type="checkbox" name="otheraddress" value="Other" onclick="this.form.break4.style.visibility = this.checked? 'visible' : 'hidden'">Other<input type="text" class="input_txtbx1" id="break4" name="break_text4" style="visibility:hidden" /></td>
  </tr>
  </tr>
- <br/>
+ <br/></div>
  <table cellpadding="0" cellspacing="0" border="0"><tr><td><B style="font-size:14px"><span class="err">*</span>PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sign"><span class="err"><form:errors path="Lumbopelvicexam.sign"></form:errors></span></B></td></tr></table>
  </table>
  <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="Save"></td>
-<td><input type="reset" class="submit_btn" value="Cancel" onclick="myclose()"></td>
+<td><input type="submit" class="submit_btn" value="Save" id="saveid"></td>
+<td><input type="reset" class="submit_btn" value="Cancel" id="cancelid"onclick="myclose()"></td>
 <script>
  function myclose()
  {
@@ -810,8 +840,8 @@ $("#flexion").keyup(function() {
  <table><tr><td><B style="font-size:14px"><span class="err">*</span>PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sign" value="${lumbopelvic.sign}"><span class="err"><form:errors path="Lumbopelvicexam.sign"></form:errors></span></B></td></tr></table>
 <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="Save"></td>
-<td><input type="reset" class="submit_btn" value="Cancel" onclick="myclose()"></td>
+<td><input type="submit" class="submit_btn" value="Save" id="saveid"></td>
+<td><input type="reset" class="submit_btn" value="Cancel" id="cancelid" onclick="myclose()"></td>
 </tr>
 <script>
  function myclose()

@@ -671,6 +671,31 @@ document.getElementById('rm2').style.visibility = 'visible';
 
 
   </script>
+  <script>
+  function printPage(id)
+  {
+	
+	        document.getElementById('print').style.visibility = 'hidden';
+	        document.getElementById('saveid').style.visibility = 'hidden';
+	        document.getElementById('cancelid').style.visibility = 'hidden';
+		  
+     var html="<html>";
+     html+= document.getElementById(id).innerHTML;
+
+     html+="</html>";
+
+     var printWin = window.open('','','left=0,top=0,width=1400,height=1000,toolbar=0,scrollbars=0,status  =0');
+     printWin.document.write(html);
+     printWin.document.close();
+     printWin.focus();
+     printWin.print();
+     printWin.close();
+     document.getElementById('print').style.visibility = 'visible';
+     document.getElementById('saveid').style.visibility = 'visible';
+     document.getElementById('cancelid').style.visibility = 'visible';
+	  
+  }
+  </script>
 </head>
  <body>
  <br><br>
@@ -680,8 +705,9 @@ document.getElementById('rm2').style.visibility = 'visible';
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
 <tr>
 <td valign="top" align="left">
- <div  >
+ <div id="block1" >
 	            <div class="headings altheading">
+	             <img  src="resources/images/print.png" id="print" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block1');" >
 	            <center> <h2>Duties Under Duress Summary</h2> </center><br/>
 	            
 	            </div>
@@ -689,9 +715,9 @@ document.getElementById('rm2').style.visibility = 'visible';
           <table cellpadding="0" cellspacing="0" border="0" width="98%">
            
  <tr class="row1">
-<td><h2><span class="err">*</span> Patient Name:</h2></td><td><input type="text"  name="pname" /><span class="err"><form:errors path="Dutiesunderduress.pname"></form:errors></span></td>
-<td width="600">
-<td><h2><span class="err">*</span> Date:</h2></td><td><input type="text"  id="datepicker" name="date" /><span class="err"><form:errors path="Dutiesunderduress.date"></form:errors></span></td>
+<td style="width: 172px; "><h4><span class="err">*</span> Patient Name:</h4></td><td style="width: 192px; "><input type="text"  name="pname" /><span class="err"><form:errors path="Dutiesunderduress.pname"></form:errors></span></td>
+<td width="600" style="width: 265px; ">
+<td style="width: 73px; "><h4><span class="err">*</span> Date:</h4></td><td><input type="text"  id="datepicker" name="date" /><span class="err"><form:errors path="Dutiesunderduress.date"></form:errors></span></td>
 </tr>
 </table>
 <br/>
@@ -703,8 +729,8 @@ document.getElementById('rm2').style.visibility = 'visible';
 <br/>
 <table>
 <tr>
-<td width="50%"><h2>Job Description :</h2></td>
- <td> <textarea rows="6" cols="70" name="jobdescription"></textarea></td></tr>
+<td width="50%" style="width: 181px; "><h4>Job Description :</h4></td>
+ <td> <textarea rows="6" cols="70" name="jobdescription" style="width: 477px; "></textarea></td></tr>
 </table>
 <br/>
  <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -718,7 +744,7 @@ document.getElementById('rm2').style.visibility = 'visible';
  <td><input type="checkbox" name="lifting1" value="Lifting" onclick="javascript:yesnoCheck();"id="yesCheck"> </td>
  
  <td><span id="l1">Lifting </span></td> 
- <td><input type="checkbox" name="incresedpain1" value="Increased pain" id="incresedpain1">&nbsp;
+ <td style="width: 469px; "><input type="checkbox" name="incresedpain1" value="Increased pain" id="incresedpain1">&nbsp;
  <span id="ip1">Increased Pain </span>&nbsp;&nbsp;<input type="checkbox" name="restrictedmovement1" id="restrictedmovement1"value="Restricted Movement">&nbsp;<span id="rm1">Restricted Movement </span> &nbsp;&nbsp; <input type="checkbox" name="weekness1" value="Weekness" id="Weekness">&nbsp;
 <span id="w1">Weekness</span></td>
  <td><input type="checkbox" name="sincemva1" value="Since MVA" id="sincemva1">&nbsp;<span id="mva1">Since MVA</span> &nbsp;&nbsp;<input type="checkbox" name="ongoing2" value="Ongoing" id="ongoing1">&nbsp;<span id="o1">Ongoing</span></td>
@@ -733,7 +759,7 @@ document.getElementById('rm2').style.visibility = 'visible';
  <td><input type="checkbox" name="sitting1" value="Sitting" onclick="javascript:yesnoCheck2();"id="yesCheck2"> </td>
  <td><span id="s1">Sitting </span></td> 
  <td><input type="checkbox" name="incresedpain3" value="Increased pain" id="incresedpain3">&nbsp;<span id="ip3">Increased Pain </span> &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement3" value="Restricted Movement" id="restrictedmovement3">&nbsp;<span id="rm3">Restricted Movement </span> &nbsp;&nbsp; <input type="checkbox" name="weekness3" value="Weekness" id="weekness3">&nbsp;<span id="w3">Weekness </span></td>
- <td><input type="checkbox" name="sincemva3" value="Since MVA" id="sincemva3">&nbsp;<span id="mva3">Since MVA </span> &nbsp;&nbsp;<input type="checkbox" name="ongoing3" value="Ongoing" id="ongoing3">&nbsp;<span id="o3">Ongoing  </span></td>
+ <td style="width: 255px; "><input type="checkbox" name="sincemva3" value="Since MVA" id="sincemva3">&nbsp;<span id="mva3">Since MVA </span> &nbsp;&nbsp;<input type="checkbox" name="ongoing3" value="Ongoing" id="ongoing3">&nbsp;<span id="o3">Ongoing  </span></td>
  </tr>
  <tr class="row1">  
  <td><input type="checkbox" name="walking1" value="Walking" onclick="javascript:yesnoCheck3();"id="yesCheck3"> </td>
@@ -952,8 +978,8 @@ document.getElementById('rm2').style.visibility = 'visible';
  </table>
  <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="Save"></td>
-<td><input type="reset" class="submit_btn" value="Cancel" onclick="myclose()"></td>
+<td><input type="submit" class="submit_btn" value="Save" id="saveid"></td>
+<td><input type="reset" class="submit_btn" value="Cancel" id="cancelid" onclick="myclose()"></td>
 </tr>
 </table>
  </div>
