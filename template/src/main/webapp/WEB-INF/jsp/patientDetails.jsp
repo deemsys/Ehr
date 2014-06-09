@@ -728,6 +728,7 @@ document.getElementById("inp_id").value=phone;
 
 });
 </script>
+
  <script>
 
 	function checkSubmit()
@@ -884,13 +885,7 @@ document.getElementById("inp_id").value=phone;
 	
 	return false;
 	} */
-	var phone = /^[0-9-()]{13}$/;
-	 if(document.getElementById("workphone").value.match(phone)==null)
-    {
-    	document.getElementById("workphoneerror").innerHTML="Enter correct workphone number";
-    	
-        return false;
-    }
+	
    /*  document.getElementById("zipcode2error").innerHTML="";
 	if(document.getElementById("zipcode2").value=="")
 	{
@@ -1663,6 +1658,18 @@ function check(id)
      document.getElementById('cancelid').style.visibility = 'visible'; 
   }
   </script>
+  <script type="text/javascript">
+       function validate(event) {
+          
+           var regex = new RegExp("^[0-9]+$");
+           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+           if (!regex.test(key)) {
+             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
+               event.preventDefault();
+               return false;
+           }
+       }       
+    </script>
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
 
       <tr>
@@ -1835,7 +1842,7 @@ function check(id)
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>WorkPhone:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="workphone" name="Workphone" maxlength="13" /><br><span id="workphoneerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Workphone"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="workphone" name="Workphone" maxlength="13" onkeypress="return validate(event)";/><br><span id="workphoneerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Workphone"></form:errors></span>
 <br>
 <span class="err" id="workphoneerror"></span>
 				                  </td>
