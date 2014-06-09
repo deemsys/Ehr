@@ -45,7 +45,7 @@ public class LettertopatientsDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 
-	    	 String cmd="INSERT INTO tbl_lettertopatient (username,re,ssn,claim,doi,adjuster,date,date1,date2,letter) VALUES ('"+username+"','"+lettertopatientsdetails.getRe()+"','"+lettertopatientsdetails.getSsn()+"','"+lettertopatientsdetails.getClaim()+"','"+lettertopatientsdetails.getDoi()+"','"+lettertopatientsdetails.getAdjuster()+"','"+lettertopatientsdetails.getDate()+"','"+lettertopatientsdetails.getDate1()+"','"+lettertopatientsdetails.getDate2()+"','"+lettertopatientsdetails.getLetter()+"')";
+	    	 String cmd="INSERT INTO tbl_lettertopatient (username,re,ssn,claim,doi,adjuster,date,dear,date1,date2,letter) VALUES ('"+username+"','"+lettertopatientsdetails.getRe()+"','"+lettertopatientsdetails.getSsn()+"','"+lettertopatientsdetails.getClaim()+"','"+lettertopatientsdetails.getDoi()+"','"+lettertopatientsdetails.getAdjuster()+"','"+lettertopatientsdetails.getDate()+"','"+lettertopatientsdetails.getDear()+"','"+lettertopatientsdetails.getDate1()+"','"+lettertopatientsdetails.getDate2()+"','"+lettertopatientsdetails.getLetter()+"')";
 	    	    System.out.println("cmd insert value"+cmd);
 	    	    statement.executeUpdate(cmd);
 	    	    }
@@ -89,6 +89,7 @@ public class LettertopatientsDAO {
 						resultSet.getString("doi"),
 						resultSet.getString("adjuster"),
 						resultSet.getString("date"),
+						resultSet.getString("dear"),
 						resultSet.getString("date1"),
 						resultSet.getString("date2"),
 						resultSet.getString("letter")
@@ -133,6 +134,7 @@ public class LettertopatientsDAO {
 								resultSet.getString("doi"),
 								resultSet.getString("adjuster"),
 								resultSet.getString("date"),
+								resultSet.getString("dear"),
 								resultSet.getString("date1"),
 								resultSet.getString("date2"),
 								resultSet.getString("letter")
@@ -177,6 +179,7 @@ public class LettertopatientsDAO {
 								resultSet.getString("doi"),
 								resultSet.getString("adjuster"),
 								resultSet.getString("date"),
+								resultSet.getString("dear"),
 								resultSet.getString("date1"),
 								resultSet.getString("date2"),
 								resultSet.getString("letter")
@@ -221,6 +224,7 @@ public class LettertopatientsDAO {
 	    			    +"',doi='"+ lettertopatientsdetails.getDoi()
 	    			    +"',adjuster='"+ lettertopatientsdetails.getAdjuster()
 	    			    +"',date='"+ lettertopatientsdetails.getDate()
+	    			    +"',dear='"+ lettertopatientsdetails.getDear()
 	    			    +"',date1='"+ lettertopatientsdetails.getDate1()
 	    			    +"',date2='"+ lettertopatientsdetails.getDate2()
 	    			    +"',letter='"+ lettertopatientsdetails.getLetter()
