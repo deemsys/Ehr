@@ -328,7 +328,7 @@ document.getElementById("nameofattorneyerror").innerHTML="";
           </tr> 
           <tr>
             <td width="25%"><span class="err">*</span>PatientName:</td>
-              <td ><input type="text" class="input_txtbx1" name="patientname" id="patientname" value="${name}"/><span class="err" id="patientnameerror"><form:errors path="noticeerror.patientname"></form:errors></span><br></td>                      
+              <td ><input type="text" class="input_txtbx1" name="patientname" id="patientname" value="${username}"/><span class="err" id="patientnameerror"><form:errors path="noticeerror.patientname"></form:errors></span><br></td>                      
           </tr> 
           <tr>
             <td width="25%">Date Of Accident:</td>
