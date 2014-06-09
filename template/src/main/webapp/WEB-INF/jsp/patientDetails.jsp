@@ -877,13 +877,13 @@ document.getElementById("inp_id").value=phone;
 	 		return false;
 	 		
 	 }
-	document.getElementById("workphoneerror").innerHTML="";
+	/* document.getElementById("workphoneerror").innerHTML="";
 	if(document.getElementById("workphone").value=="")
 	{
 	document.getElementById("workphoneerror").innerHTML="Required Field Should not be Empty";
 	
 	return false;
-	}
+	} */
 	var phone = /^[0-9-()]{13}$/;
 	 if(document.getElementById("workphone").value.match(phone)==null)
     {
@@ -891,13 +891,13 @@ document.getElementById("inp_id").value=phone;
     	
         return false;
     }
-    document.getElementById("zipcode2error").innerHTML="";
+   /*  document.getElementById("zipcode2error").innerHTML="";
 	if(document.getElementById("zipcode2").value=="")
 	{
 	document.getElementById("zipcode2error").innerHTML="Required Field Should not be Empty";
 	
 	return false;
-	}
+	} */
 	
 	document.getElementById("zipcode2error").innerHTML="";
 	if(isNaN(document.getElementById("zipcode2").value))
@@ -906,13 +906,13 @@ document.getElementById("inp_id").value=phone;
 	return false;
 	}
 	
-	 document.getElementById("zipcode3error").innerHTML="";
+	/*  document.getElementById("zipcode3error").innerHTML="";
 	if(document.getElementById("zipcode3").value=="")
 	{
 	document.getElementById("zipcode3error").innerHTML="Required Field Should not be Empty";
 	
 	return false;
-	}
+	} */
 	
 	document.getElementById("zipcode3error").innerHTML="";
 	if(isNaN(document.getElementById("zipcode3").value))

@@ -643,13 +643,13 @@ var $sid = xx+1;
 	 		return false;
 	 		
 	 }
-	document.getElementById("workphoneerror").innerHTML="";
+	/* document.getElementById("workphoneerror").innerHTML="";
 	if(document.getElementById("workphone").value=="")
 	{
 	document.getElementById("workphoneerror").innerHTML="Required Field Should not be Empty";
 	
 	return false;
-	}
+	} */
 	var phone = /^[0-9-()]{13}$/;
 	 if(document.getElementById("workphone").value.match(phone)==null)
     {
@@ -657,13 +657,13 @@ var $sid = xx+1;
     	
         return false;
     }
-    document.getElementById("zipcode2error").innerHTML="";
+   /*  document.getElementById("zipcode2error").innerHTML="";
 	if(document.getElementById("zipcode2").value=="")
 	{
 	document.getElementById("zipcode2error").innerHTML="Required Field Should not be Empty";
 	
 	return false;
-	}
+	} */
 	
 	document.getElementById("zipcode2error").innerHTML="";
 	if(isNaN(document.getElementById("zipcode2").value))
@@ -672,13 +672,1105 @@ var $sid = xx+1;
 	return false;
 	}
 	
-	 document.getElementById("zipcode3error").innerHTML="";
+	/*  document.getElementById("zipcode3error").innerHTML="";
 	if(document.getElementById("zipcode3").value=="")
 	{
 	document.getElementById("zipcode3error").innerHTML="Required Field Should not be Empty";
 	
 	return false;
+	} */
+	
+	document.getElementById("zipcode3error").innerHTML="";
+	if(isNaN(document.getElementById("zipcode3").value))
+	{
+	document.getElementById("zipcode3error").innerHTML="Enter Only Numbers";
+	return false;
 	}
+	document.getElementById("SpousesNameerror").innerHTML="";
+	if(document.getElementById("SpousesName").value=="")
+	{
+	document.getElementById("SpousesNameerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("SpousesEmperror").innerHTML="";
+	if(document.getElementById("SpousesEmp").value=="")
+	{
+	document.getElementById("SpousesEmperror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("spouseworkphoneerror").innerHTML="";
+	if(document.getElementById("spouseworkphone").value=="")
+	{
+	document.getElementById("spouseworkphoneerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	var phone = /^[0-9-()]{13}$/;
+	 if(document.getElementById("spouseworkphone").value.match(phone)==null)
+    {
+    	document.getElementById("spouseworkphoneerror").innerHTML="Enter correct spouseworkphone number";
+    	
+        return false;
+    }
+	document.getElementById("Name_frienderror").innerHTML="";
+	if(document.getElementById("Name_friend").value=="")
+	{
+	document.getElementById("Name_frienderror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Phone_frienderror").innerHTML="";
+	if(document.getElementById("Phone_friend").value=="")
+	{
+	document.getElementById("Phone_frienderror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	var phone = /^[0-9-()]{13}$/;
+	 if(document.getElementById("Phone_friend").value.match(phone)==null)
+    {
+    	document.getElementById("Phone_frienderror").innerHTML="Enter correct Phonefriend number";
+    	
+        return false;
+    }
+	
+	document.getElementById("Chiropratic_careerror").innerHTML=""; 
+	if( ( document.getElementById("yes1").checked == false ) && ( document.getElementById("No1").checked == false ) )
+
+	 {
+	 document.getElementById("Chiropratic_careerror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+	
+	
+	
+	
+	
+	
+	document.getElementById("symptom1error").innerHTML="";
+	if(document.getElementById("symptom1").value=="")
+	{
+	document.getElementById("symptom1error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Symptom_Accidenterror").innerHTML=""; 
+	if( ( document.getElementById("yes").checked == false ) && ( document.getElementById("No").checked == false ) )
+
+	 {
+	 document.getElementById("Symptom_Accidenterror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+ document.getElementById("type_of_accidenterror").innerHTML="";
+	if(document.getElementById("type_of_accident").value==0)
+	{
+
+		document.getElementById("type_of_accidenterror").innerHTML="Required Field Should not be Empty";
+
+	return false;
+
+	}
+
+	document.getElementById("datepicker2error").innerHTML="";
+	if(document.getElementById("datepicker2").value=="")
+	{
+	document.getElementById("datepicker2error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Accident_Reportederror").innerHTML=""; 
+	if( ( document.getElementById("yes2").checked == false ) && ( document.getElementById("No2").checked == false ) )
+
+	 {
+	 document.getElementById("Accident_Reportederror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+	document.getElementById("datepicker5error").innerHTML="";
+	if(document.getElementById("datepicker5").value=="")
+	{
+	document.getElementById("datepicker5error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("where1error").innerHTML="";
+	if(document.getElementById("where1").value=="")
+	{
+	document.getElementById("where1error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Attorney_accidenterror").innerHTML=""; 
+	if( ( document.getElementById("yes5").checked == false ) && ( document.getElementById("No5").checked == false ) )
+
+	 {
+	 document.getElementById("Attorney_accidenterror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+	document.getElementById("retainerror").innerHTML=""; 
+	if( ( document.getElementById("R").checked == false ) && ( document.getElementById("L").checked == false ) )
+
+	 {
+	 document.getElementById("retainerror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+	document.getElementById("recorderror").innerHTML=""; 
+	if( ( document.getElementById("yes6").checked == false ) && ( document.getElementById("No6").checked == false ) )
+
+	 {
+	 document.getElementById("recorderror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+	document.getElementById("phynameerror").innerHTML="";
+	if(document.getElementById("phyname").value=="")
+	{
+	document.getElementById("phynameerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("phyphoneerror").innerHTML="";
+	if(document.getElementById("phyphone").value=="")
+	{
+	document.getElementById("phyphoneerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	var phone = /^[0-9-()]{13}$/;
+	 if(document.getElementById("phyphone").value.match(phone)==null)
+    {
+    	document.getElementById("phyphoneerror").innerHTML="Enter correct Phone number";
+    	
+        return false;
+    }
+	document.getElementById("xrayerror").innerHTML="";
+	if(document.getElementById("xray").value=="")
+	{
+	document.getElementById("xrayerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("treaterror").innerHTML="";
+	if(document.getElementById("treat").value=="")
+	{
+	document.getElementById("treaterror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("NameOfAttorneyerror").innerHTML="";
+	if(document.getElementById("NameOfAttorney").value=="")
+	{
+	document.getElementById("NameOfAttorneyerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("phonenumbererror").innerHTML="";
+	if(document.getElementById("phonenumber").value=="")
+	{
+	document.getElementById("phonenumbererror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	var phone = /^[0-9-()]{13}$/;
+	 if(document.getElementById("phonenumber").value.match(phone)==null)
+    {
+    	document.getElementById("phonenumbererror").innerHTML="Enter correct Phone number";
+    	
+        return false;
+    }
+	document.getElementById("Fault_accidenterror").innerHTML="";
+	if(document.getElementById("Fault_accident").value=="")
+	{
+	document.getElementById("Fault_accidenterror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Insuranceerror").innerHTML="";
+	if(document.getElementById("Insurance").value=="")
+	{
+	document.getElementById("Insuranceerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Insurance_phoneerror").innerHTML="";
+	if(document.getElementById("Insurance_phone").value=="")
+	{
+	document.getElementById("Insurance_phoneerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	var phone = /^[0-9-()]{13}$/;
+	 if(document.getElementById("Insurance_phone").value.match(phone)==null)
+    {
+    	document.getElementById("Insurance_phoneerror").innerHTML="Enter correct Phone number";
+    	
+        return false;
+    }
+	document.getElementById("Name_autoerror").innerHTML="";
+	if(document.getElementById("Name_auto").value=="")
+	{
+	document.getElementById("Name_autoerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Phone_autoerror").innerHTML="";
+	if(document.getElementById("Phone_auto").value=="")
+	{
+	document.getElementById("Phone_autoerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	var phone = /^[0-9-()]{13}$/;
+	 if(document.getElementById("Phone_auto").value.match(phone)==null)
+    {
+    	document.getElementById("Phone_autoerror").innerHTML="Enter correct Phone number";
+    	
+        return false;
+    }
+	document.getElementById("policyerror").innerHTML="";
+	if(document.getElementById("policy").value=="")
+	{
+	document.getElementById("policyerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Name_healtherror").innerHTML="";
+	if(document.getElementById("Name_health").value=="")
+	{
+	document.getElementById("Name_healtherror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("phhealtherror").innerHTML="";
+	if(document.getElementById("phhealth").value=="")
+	{
+	document.getElementById("phhealtherror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Prev_accidenterror").innerHTML=""; 
+	if( ( document.getElementById("yes7").checked == false ) && ( document.getElementById("No7").checked == false ) )
+
+	 {
+	 document.getElementById("Prev_accidenterror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+	document.getElementById("datepicker6error").innerHTML="";
+	if(document.getElementById("datepicker6").value=="")
+	{
+	document.getElementById("datepicker6error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+		
+	
+	document.getElementById("Illnesserror").innerHTML="";
+	if(document.getElementById("Illness").value=="")
+	{
+	document.getElementById("Illnesserror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("datepicker3error").innerHTML="";
+	if(document.getElementById("datepicker3").value=="")
+	{
+	document.getElementById("datepicker3error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Medicationserror").innerHTML="";
+	if(document.getElementById("Medications").value=="")
+	{
+	document.getElementById("Medicationserror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("doyouerror").innerHTML=""; 
+	if( ( document.getElementById("Drink").checked == false ) && ( document.getElementById("Smoke").checked == false ) && ( document.getElementById("Drugs").checked == false )&& ( document.getElementById("Diet").checked == false )&& ( document.getElementById("Exercise").checked == false ))
+
+	 {
+	 document.getElementById("doyouerror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+	/* document.getElementById("listerror").innerHTML="";
+	if(document.getElementById("list").value=="")
+	{
+	document.getElementById("listerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	} */
+	document.getElementById("Femaleerror").innerHTML=""; 
+	if( ( document.getElementById("yes9").checked == false ) && ( document.getElementById("No9").checked == false ) )
+
+	 {
+	 document.getElementById("Femaleerror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+	document.getElementById("Drerror").innerHTML="";
+	if(document.getElementById("Dr").value=="")
+	{
+	document.getElementById("Drerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Patienterror").innerHTML="";
+	if(document.getElementById("Patient").value=="")
+	{
+	document.getElementById("Patienterror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	}
+
+	</script> <script>
+
+	function checkSubmit()
+	{
+		document.getElementById("nameerror").innerHTML=" ";
+		
+		if(document.getElementById("name").value=="")
+		{
+		document.getElementById("nameerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		document.getElementById("datepickererror").innerHTML="";
+	if(document.getElementById("datepicker").value=="")
+		{
+		document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+	
+	document.getElementById("streetaddresserror").innerHTML="";
+	if(document.getElementById("streetaddress").value=="")
+	{
+	document.getElementById("streetaddresserror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	document.getElementById("Cityerror").innerHTML="";
+	if(document.getElementById("City").value=="")
+	{
+	document.getElementById("Cityerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Stateerror").innerHTML="";
+	if(document.getElementById("State").value=="")
+	{
+	document.getElementById("Stateerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("zipcode1error").innerHTML="";
+	if(document.getElementById("zipcode1").value=="")
+	{
+	document.getElementById("zipcode1error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	document.getElementById("zipcode1error").innerHTML="";
+	if(isNaN(document.getElementById("zipcode1").value))
+	{
+	document.getElementById("zipcode1error").innerHTML="Enter Only Numbers";
+	return false;
+	}
+	document.getElementById("homephoneerror").innerHTML="";
+	if(document.getElementById("homephone").value=="")
+	{
+	document.getElementById("homephoneerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	var phone = /^[0-9-()]{13}$/;
+	 if(document.getElementById("homephone").value.match(phone)==null)
+    {
+    	document.getElementById("homephoneerror").innerHTML="Enter correct homephone number ";
+    	
+        return false;
+    }
+	
+	document.getElementById("Emailiderror").innerHTML="";
+	if(document.getElementById("Emailid").value=="")
+	{
+	document.getElementById("Emailiderror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	var mail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    
+    if(document.getElementById("Emailid").value.match(mail)==null)
+    {
+    	document.getElementById("Emailiderror").innerHTML="Enter ur proper E-Mail";
+    	
+        return false;
+    }
+
+	document.getElementById("mobilenumbererror").innerHTML="";
+	if(document.getElementById("mobilenumber").value=="")
+	{
+	document.getElementById("mobilenumbererror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	var phone = /^[0-9-()]{13}$/;
+	 if(document.getElementById("mobilenumber").value.match(phone)==null)
+    {
+    	document.getElementById("mobilenumbererror").innerHTML="Enter correct mobilenumber number";
+    	
+        return false;
+    }
+	document.getElementById("datepicker1error").innerHTML="";
+	if(document.getElementById("datepicker1").value=="")
+	{
+	document.getElementById("datepicker1error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("socialsecuritynumbererror").innerHTML="";
+	if(document.getElementById("socialsecuritynumber").value=="")
+	{
+	document.getElementById("socialsecuritynumbererror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	var phone = /^[0-9-]{11}$/;
+	 if(document.getElementById("socialsecuritynumber").value.match(phone)==null)
+    {
+    	document.getElementById("socialsecuritynumbererror").innerHTML="Enter correct socialsecuritynumber";
+    	
+        return false;
+    }
+	 document.getElementById("Gendererror").innerHTML=""; 
+	if( ( document.getElementById("Male").checked == false ) && ( document.getElementById("Female").checked == false ) && ( document.getElementById("Transgender").checked == false ))
+
+	 {
+	 document.getElementById("Gendererror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+	document.getElementById("MaritalStatuserror").innerHTML=""; 
+	if( ( document.getElementById("Single").checked == false ) && ( document.getElementById("Married").checked == false ) && ( document.getElementById("Divorced").checked == false ))
+
+	 {
+	 document.getElementById("MaritalStatuserror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+	document.getElementById("Areyouerror").innerHTML=""; 
+	if( ( document.getElementById("Student").checked == false ) && ( document.getElementById("Employee").checked == false ) )
+
+	 {
+	 document.getElementById("Areyouerror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+	/* document.getElementById("workphoneerror").innerHTML="";
+	if(document.getElementById("workphone").value=="")
+	{
+	document.getElementById("workphoneerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	} */
+	var phone = /^[0-9-()]{13}$/;
+	 if(document.getElementById("workphone").value.match(phone)==null)
+    {
+    	document.getElementById("workphoneerror").innerHTML="Enter correct workphone number";
+    	
+        return false;
+    }
+   /*  document.getElementById("zipcode2error").innerHTML="";
+	if(document.getElementById("zipcode2").value=="")
+	{
+	document.getElementById("zipcode2error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	} */
+	
+	document.getElementById("zipcode2error").innerHTML="";
+	if(isNaN(document.getElementById("zipcode2").value))
+	{
+	document.getElementById("zipcode2error").innerHTML="Enter Only Numbers";
+	return false;
+	}
+	
+	/*  document.getElementById("zipcode3error").innerHTML="";
+	if(document.getElementById("zipcode3").value=="")
+	{
+	document.getElementById("zipcode3error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	} */
+	
+	document.getElementById("zipcode3error").innerHTML="";
+	if(isNaN(document.getElementById("zipcode3").value))
+	{
+	document.getElementById("zipcode3error").innerHTML="Enter Only Numbers";
+	return false;
+	}
+	document.getElementById("SpousesNameerror").innerHTML="";
+	if(document.getElementById("SpousesName").value=="")
+	{
+	document.getElementById("SpousesNameerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("SpousesEmperror").innerHTML="";
+	if(document.getElementById("SpousesEmp").value=="")
+	{
+	document.getElementById("SpousesEmperror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("spouseworkphoneerror").innerHTML="";
+	if(document.getElementById("spouseworkphone").value=="")
+	{
+	document.getElementById("spouseworkphoneerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	var phone = /^[0-9-()]{13}$/;
+	 if(document.getElementById("spouseworkphone").value.match(phone)==null)
+    {
+    	document.getElementById("spouseworkphoneerror").innerHTML="Enter correct spouseworkphone number";
+    	
+        return false;
+    }
+	document.getElementById("Name_frienderror").innerHTML="";
+	if(document.getElementById("Name_friend").value=="")
+	{
+	document.getElementById("Name_frienderror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Phone_frienderror").innerHTML="";
+	if(document.getElementById("Phone_friend").value=="")
+	{
+	document.getElementById("Phone_frienderror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	var phone = /^[0-9-()]{13}$/;
+	 if(document.getElementById("Phone_friend").value.match(phone)==null)
+    {
+    	document.getElementById("Phone_frienderror").innerHTML="Enter correct Phonefriend number";
+    	
+        return false;
+    }
+	
+	document.getElementById("Chiropratic_careerror").innerHTML=""; 
+	if( ( document.getElementById("yes1").checked == false ) && ( document.getElementById("No1").checked == false ) )
+
+	 {
+	 document.getElementById("Chiropratic_careerror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+	
+	
+	
+	
+	
+	
+	document.getElementById("symptom1error").innerHTML="";
+	if(document.getElementById("symptom1").value=="")
+	{
+	document.getElementById("symptom1error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Symptom_Accidenterror").innerHTML=""; 
+	if( ( document.getElementById("yes").checked == false ) && ( document.getElementById("No").checked == false ) )
+
+	 {
+	 document.getElementById("Symptom_Accidenterror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+ document.getElementById("type_of_accidenterror").innerHTML="";
+	if(document.getElementById("type_of_accident").value==0)
+	{
+
+		document.getElementById("type_of_accidenterror").innerHTML="Required Field Should not be Empty";
+
+	return false;
+
+	}
+
+	document.getElementById("datepicker2error").innerHTML="";
+	if(document.getElementById("datepicker2").value=="")
+	{
+	document.getElementById("datepicker2error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Accident_Reportederror").innerHTML=""; 
+	if( ( document.getElementById("yes2").checked == false ) && ( document.getElementById("No2").checked == false ) )
+
+	 {
+	 document.getElementById("Accident_Reportederror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+	document.getElementById("datepicker5error").innerHTML="";
+	if(document.getElementById("datepicker5").value=="")
+	{
+	document.getElementById("datepicker5error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("where1error").innerHTML="";
+	if(document.getElementById("where1").value=="")
+	{
+	document.getElementById("where1error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Attorney_accidenterror").innerHTML=""; 
+	if( ( document.getElementById("yes5").checked == false ) && ( document.getElementById("No5").checked == false ) )
+
+	 {
+	 document.getElementById("Attorney_accidenterror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+	document.getElementById("retainerror").innerHTML=""; 
+	if( ( document.getElementById("R").checked == false ) && ( document.getElementById("L").checked == false ) )
+
+	 {
+	 document.getElementById("retainerror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+	document.getElementById("recorderror").innerHTML=""; 
+	if( ( document.getElementById("yes6").checked == false ) && ( document.getElementById("No6").checked == false ) )
+
+	 {
+	 document.getElementById("recorderror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+	document.getElementById("phynameerror").innerHTML="";
+	if(document.getElementById("phyname").value=="")
+	{
+	document.getElementById("phynameerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("phyphoneerror").innerHTML="";
+	if(document.getElementById("phyphone").value=="")
+	{
+	document.getElementById("phyphoneerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	var phone = /^[0-9-()]{13}$/;
+	 if(document.getElementById("phyphone").value.match(phone)==null)
+    {
+    	document.getElementById("phyphoneerror").innerHTML="Enter correct Phone number";
+    	
+        return false;
+    }
+	document.getElementById("xrayerror").innerHTML="";
+	if(document.getElementById("xray").value=="")
+	{
+	document.getElementById("xrayerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("treaterror").innerHTML="";
+	if(document.getElementById("treat").value=="")
+	{
+	document.getElementById("treaterror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("NameOfAttorneyerror").innerHTML="";
+	if(document.getElementById("NameOfAttorney").value=="")
+	{
+	document.getElementById("NameOfAttorneyerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("phonenumbererror").innerHTML="";
+	if(document.getElementById("phonenumber").value=="")
+	{
+	document.getElementById("phonenumbererror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	var phone = /^[0-9-()]{13}$/;
+	 if(document.getElementById("phonenumber").value.match(phone)==null)
+    {
+    	document.getElementById("phonenumbererror").innerHTML="Enter correct Phone number";
+    	
+        return false;
+    }
+	document.getElementById("Fault_accidenterror").innerHTML="";
+	if(document.getElementById("Fault_accident").value=="")
+	{
+	document.getElementById("Fault_accidenterror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Insuranceerror").innerHTML="";
+	if(document.getElementById("Insurance").value=="")
+	{
+	document.getElementById("Insuranceerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Insurance_phoneerror").innerHTML="";
+	if(document.getElementById("Insurance_phone").value=="")
+	{
+	document.getElementById("Insurance_phoneerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	var phone = /^[0-9-()]{13}$/;
+	 if(document.getElementById("Insurance_phone").value.match(phone)==null)
+    {
+    	document.getElementById("Insurance_phoneerror").innerHTML="Enter correct Phone number";
+    	
+        return false;
+    }
+	document.getElementById("Name_autoerror").innerHTML="";
+	if(document.getElementById("Name_auto").value=="")
+	{
+	document.getElementById("Name_autoerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Phone_autoerror").innerHTML="";
+	if(document.getElementById("Phone_auto").value=="")
+	{
+	document.getElementById("Phone_autoerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	var phone = /^[0-9-()]{13}$/;
+	 if(document.getElementById("Phone_auto").value.match(phone)==null)
+    {
+    	document.getElementById("Phone_autoerror").innerHTML="Enter correct Phone number";
+    	
+        return false;
+    }
+	document.getElementById("policyerror").innerHTML="";
+	if(document.getElementById("policy").value=="")
+	{
+	document.getElementById("policyerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Name_healtherror").innerHTML="";
+	if(document.getElementById("Name_health").value=="")
+	{
+	document.getElementById("Name_healtherror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("phhealtherror").innerHTML="";
+	if(document.getElementById("phhealth").value=="")
+	{
+	document.getElementById("phhealtherror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Prev_accidenterror").innerHTML=""; 
+	if( ( document.getElementById("yes7").checked == false ) && ( document.getElementById("No7").checked == false ) )
+
+	 {
+	 document.getElementById("Prev_accidenterror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+	document.getElementById("datepicker6error").innerHTML="";
+	if(document.getElementById("datepicker6").value=="")
+	{
+	document.getElementById("datepicker6error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+		
+	
+	document.getElementById("Illnesserror").innerHTML="";
+	if(document.getElementById("Illness").value=="")
+	{
+	document.getElementById("Illnesserror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("datepicker3error").innerHTML="";
+	if(document.getElementById("datepicker3").value=="")
+	{
+	document.getElementById("datepicker3error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Medicationserror").innerHTML="";
+	if(document.getElementById("Medications").value=="")
+	{
+	document.getElementById("Medicationserror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("doyouerror").innerHTML=""; 
+	if( ( document.getElementById("Drink").checked == false ) && ( document.getElementById("Smoke").checked == false ) && ( document.getElementById("Drugs").checked == false )&& ( document.getElementById("Diet").checked == false )&& ( document.getElementById("Exercise").checked == false ))
+
+	 {
+	 document.getElementById("doyouerror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+	/* document.getElementById("listerror").innerHTML="";
+	if(document.getElementById("list").value=="")
+	{
+	document.getElementById("listerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	} */
+	document.getElementById("Femaleerror").innerHTML=""; 
+	if( ( document.getElementById("yes9").checked == false ) && ( document.getElementById("No9").checked == false ) )
+
+	 {
+	 document.getElementById("Femaleerror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+	document.getElementById("Drerror").innerHTML="";
+	if(document.getElementById("Dr").value=="")
+	{
+	document.getElementById("Drerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Patienterror").innerHTML="";
+	if(document.getElementById("Patient").value=="")
+	{
+	document.getElementById("Patienterror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	}
+
+	</script> <script>
+
+	function checkSubmit()
+	{
+		document.getElementById("nameerror").innerHTML=" ";
+		
+		if(document.getElementById("name").value=="")
+		{
+		document.getElementById("nameerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		document.getElementById("datepickererror").innerHTML="";
+	if(document.getElementById("datepicker").value=="")
+		{
+		document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+	
+	document.getElementById("streetaddresserror").innerHTML="";
+	if(document.getElementById("streetaddress").value=="")
+	{
+	document.getElementById("streetaddresserror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	document.getElementById("Cityerror").innerHTML="";
+	if(document.getElementById("City").value=="")
+	{
+	document.getElementById("Cityerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Stateerror").innerHTML="";
+	if(document.getElementById("State").value=="")
+	{
+	document.getElementById("Stateerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("zipcode1error").innerHTML="";
+	if(document.getElementById("zipcode1").value=="")
+	{
+	document.getElementById("zipcode1error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	document.getElementById("zipcode1error").innerHTML="";
+	if(isNaN(document.getElementById("zipcode1").value))
+	{
+	document.getElementById("zipcode1error").innerHTML="Enter Only Numbers";
+	return false;
+	}
+	document.getElementById("homephoneerror").innerHTML="";
+	if(document.getElementById("homephone").value=="")
+	{
+	document.getElementById("homephoneerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	var phone = /^[0-9-()]{13}$/;
+	 if(document.getElementById("homephone").value.match(phone)==null)
+    {
+    	document.getElementById("homephoneerror").innerHTML="Enter correct homephone number ";
+    	
+        return false;
+    }
+	
+	document.getElementById("Emailiderror").innerHTML="";
+	if(document.getElementById("Emailid").value=="")
+	{
+	document.getElementById("Emailiderror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	var mail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    
+    if(document.getElementById("Emailid").value.match(mail)==null)
+    {
+    	document.getElementById("Emailiderror").innerHTML="Enter ur proper E-Mail";
+    	
+        return false;
+    }
+
+	document.getElementById("mobilenumbererror").innerHTML="";
+	if(document.getElementById("mobilenumber").value=="")
+	{
+	document.getElementById("mobilenumbererror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	var phone = /^[0-9-()]{13}$/;
+	 if(document.getElementById("mobilenumber").value.match(phone)==null)
+    {
+    	document.getElementById("mobilenumbererror").innerHTML="Enter correct mobilenumber number";
+    	
+        return false;
+    }
+	document.getElementById("datepicker1error").innerHTML="";
+	if(document.getElementById("datepicker1").value=="")
+	{
+	document.getElementById("datepicker1error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("socialsecuritynumbererror").innerHTML="";
+	if(document.getElementById("socialsecuritynumber").value=="")
+	{
+	document.getElementById("socialsecuritynumbererror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	var phone = /^[0-9-]{11}$/;
+	 if(document.getElementById("socialsecuritynumber").value.match(phone)==null)
+    {
+    	document.getElementById("socialsecuritynumbererror").innerHTML="Enter correct socialsecuritynumber";
+    	
+        return false;
+    }
+	 document.getElementById("Gendererror").innerHTML=""; 
+	if( ( document.getElementById("Male").checked == false ) && ( document.getElementById("Female").checked == false ) && ( document.getElementById("Transgender").checked == false ))
+
+	 {
+	 document.getElementById("Gendererror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+	document.getElementById("MaritalStatuserror").innerHTML=""; 
+	if( ( document.getElementById("Single").checked == false ) && ( document.getElementById("Married").checked == false ) && ( document.getElementById("Divorced").checked == false ))
+
+	 {
+	 document.getElementById("MaritalStatuserror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+	document.getElementById("Areyouerror").innerHTML=""; 
+	if( ( document.getElementById("Student").checked == false ) && ( document.getElementById("Employee").checked == false ) )
+
+	 {
+	 document.getElementById("Areyouerror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+	/* document.getElementById("workphoneerror").innerHTML="";
+	if(document.getElementById("workphone").value=="")
+	{
+	document.getElementById("workphoneerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	} */
+	var phone = /^[0-9-()]{13}$/;
+	 if(document.getElementById("workphone").value.match(phone)==null)
+    {
+    	document.getElementById("workphoneerror").innerHTML="Enter correct workphone number";
+    	
+        return false;
+    }
+   /*  document.getElementById("zipcode2error").innerHTML="";
+	if(document.getElementById("zipcode2").value=="")
+	{
+	document.getElementById("zipcode2error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	} */
+	
+	document.getElementById("zipcode2error").innerHTML="";
+	if(isNaN(document.getElementById("zipcode2").value))
+	{
+	document.getElementById("zipcode2error").innerHTML="Enter Only Numbers";
+	return false;
+	}
+	
+	/*  document.getElementById("zipcode3error").innerHTML="";
+	if(document.getElementById("zipcode3").value=="")
+	{
+	document.getElementById("zipcode3error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	} */
 	
 	document.getElementById("zipcode3error").innerHTML="";
 	if(isNaN(document.getElementById("zipcode3").value))
@@ -1042,6 +2134,186 @@ var $sid = xx+1;
 
 	</script>
 	<script>
+i=0;
+$(document).ready(function(){
+  $("#socialsecuritynumber").keypress(function(){
+var phone=document.getElementById("socialsecuritynumber").value;
+phone = phone.replace(/(\d{3})(\d{2})(\d+)/,'$1-$2-$3');
+document.getElementById("socialsecuritynumber").value=phone;
+ });  
+
+});
+</script>
+ <script>
+i=0;
+$(document).ready(function(){
+  $("#homephone").keypress(function(){
+var phone=document.getElementById("homephone").value;
+phone = phone.replace(/(\d{3})(\d{3})(\d+)/, '($1)$2-$3');
+document.getElementById("homephone").value=phone;
+ });  
+
+});
+</script>
+<script>
+i=0;
+$(document).ready(function(){
+  $("#Phone_friend").keypress(function(){
+var phone=document.getElementById("Phone_friend").value;
+phone = phone.replace(/(\d{3})(\d{3})(\d+)/, '($1)$2-$3');
+document.getElementById("Phone_friend").value=phone;
+ });  
+
+});
+</script>
+<script>
+i=0;
+$(document).ready(function(){
+  $("#phyphone").keypress(function(){
+var phone=document.getElementById("phyphone").value;
+phone = phone.replace(/(\d{3})(\d{3})(\d+)/, '($1)$2-$3');
+document.getElementById("phyphone").value=phone;
+ });  
+
+});
+</script>
+
+<script>
+i=0;
+$(document).ready(function(){
+  $("#Insurance_phone").keypress(function(){
+var phone=document.getElementById("Insurance_phone").value;
+phone = phone.replace(/(\d{3})(\d{3})(\d+)/, '($1)$2-$3');
+document.getElementById("Insurance_phone").value=phone;
+ });  
+
+});
+</script>
+
+ <script>
+i=0;
+$(document).ready(function(){
+  $("#Phone_auto").keypress(function(){
+var phone=document.getElementById("Phone_auto").value;
+phone = phone.replace(/(\d{3})(\d{3})(\d+)/, '($1)$2-$3');
+document.getElementById("Phone_auto").value=phone;
+ });  
+
+});
+</script>
+
+ 
+<script>
+i=0;
+$(document).ready(function(){
+  $("#workphone").keypress(function(){
+var phone=document.getElementById("workphone").value;
+phone = phone.replace(/(\d{3})(\d{3})(\d+)/, '($1)$2-$3');
+document.getElementById("workphone").value=phone;
+ });  
+
+});
+</script>
+<script>
+i=0;
+$(document).ready(function(){
+  $("#spouseworkphone").keypress(function(){
+var phone=document.getElementById("spouseworkphone").value;
+phone = phone.replace(/(\d{3})(\d{3})(\d+)/, '($1)$2-$3');
+document.getElementById("spouseworkphone").value=phone;
+ });  
+
+});
+</script>
+<script>
+i=0;
+$(document).ready(function(){
+  $("#mobilenumber").keypress(function(){
+var phone=document.getElementById("mobilenumber").value;
+phone = phone.replace(/(\d{3})(\d{3})(\d+)/, '($1)$2-$3');
+document.getElementById("mobilenumber").value=phone;
+ });  
+
+});
+</script>
+<script>
+i=0;
+$(document).ready(function(){
+  $("#ph2").keypress(function(){
+var phone=document.getElementById("ph2").value;
+phone = phone.replace(/(\d{3})(\d{3})(\d+)/, '($1)$2-$3');
+document.getElementById("ph2").value=phone;
+ });  
+
+});
+</script>
+<script>
+i=0;
+$(document).ready(function(){
+  $("#phonenumber").keypress(function(){
+var phone=document.getElementById("phonenumber").value;
+phone = phone.replace(/(\d{3})(\d{3})(\d+)/, '($1)$2-$3');
+document.getElementById("phonenumber").value=phone;
+ });  
+
+});
+</script>
+<script>
+i=0;
+$(document).ready(function(){
+  $("#inp_id").keypress(function(){
+var phone=document.getElementById("inp_id").value;
+phone = phone.replace(/(\d{3})(\d{3})(\d+)/, '($1)$2-$3');
+document.getElementById("inp_id").value=phone;
+ });  
+
+});
+</script>
+<script>
+i=0;
+$(document).ready(function(){
+  $("#phauto").keypress(function(){
+var phone=document.getElementById("phauto").value;
+phone = phone.replace(/(\d{3})(\d{3})(\d+)/, '($1)$2-$3');
+document.getElementById("phauto").value=phone;
+ });  
+
+});
+</script>
+<script>
+i=0;
+$(document).ready(function(){
+  $("#phhealth").keypress(function(){
+var phone=document.getElementById("phhealth").value;
+phone = phone.replace(/(\d{3})(\d{3})(\d+)/, '($1)$2-$3');
+document.getElementById("phhealth").value=phone;
+ });  
+
+});
+</script>
+<script>
+i=0;
+$(document).ready(function(){
+  $("#phno").keypress(function(){
+var phone=document.getElementById("phno").value;
+phone = phone.replace(/(\d{3})(\d{3})(\d+)/, '($1)$2-$3');
+document.getElementById("phno").value=phone;
+ });  
+
+});
+</script>
+<script>
+i=0;
+$(document).ready(function(){
+  $("#inp_id").keypress(function(){
+var phone=document.getElementById("inp_id").value;
+phone = phone.replace(/(\d{3})(\d{3})(\d+)/, '($1)$2-$3');
+document.getElementById("inp_id").value=phone;
+ });  
+
+});
+</script>
+	<script>
   $(function() {
 	    $( "#datepicker" ).datepicker();
 	  });
@@ -1112,12 +2384,12 @@ var $sid = xx+1;
 						</tr>                        
 						<tr class="row2">
                         	<td><span class="err">*</span>ZipCode:</td>
-                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="zipcode1"   value="${patientDetails.zipCode}" name="zipCode" /></br><span id="zipcode1error" style="color: red;font-style:italic;"><form:errors path="PatientDetails.ZipCode"></form:errors></span></td>
+                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="zipcode1"   value="${patientDetails.zipCode}" maxlength="5"  name="zipCode" /></br><span id="zipcode1error" style="color: red;font-style:italic;"><form:errors path="PatientDetails.ZipCode"></form:errors></span></td>
 						</tr>                        
 						
 						<tr class="row1">
                         	<td><span class="err">*</span>Home phone:</td>
-                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="homephone"   value="${patientDetails.homephone}" name="homephone" /></br><span id="homephoneerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Homephone"></form:errors></span></td>
+                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="homephone" maxlength="13"  value="${patientDetails.homephone}" name="homephone" /></br><span id="homephoneerror" style="color: red;font-style:italic;" maxlength="13"><form:errors path="PatientDetails.Homephone"></form:errors></span></td>
 						</tr>                        
 						
 						<tr class="row2">
@@ -1127,7 +2399,7 @@ var $sid = xx+1;
 						
 						<tr class="row1">
                         	<td><span class="err">*</span>MobileNumber:</td>
-                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="mobilenumber"   value="${patientDetails.mobileNumber}" name="mobileNumber" /></br><span id="mobilenumbererror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.MobileNumber"></form:errors></span></td>
+                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="mobilenumber"  maxlength="13" value="${patientDetails.mobileNumber}" name="mobileNumber" /></br><span id="mobilenumbererror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.MobileNumber"></form:errors></span></td>
 						</tr>                        
 						
 						<tr class="row2">
@@ -1137,7 +2409,7 @@ var $sid = xx+1;
 						
 						<tr class="row1">
                         	<td><span class="err">*</span>Social Security Number:</td>
-                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="socialsecuritynumber"   value="${patientDetails.socialSecurityNumber}" name="socialSecurityNumber" /></br><span id="socialsecuritynumbererror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.SocialSecurityNumber"></form:errors></span></td>
+                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="socialsecuritynumber" maxlength="11"  value="${patientDetails.socialSecurityNumber}" name="socialSecurityNumber" /></br><span id="socialsecuritynumbererror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.SocialSecurityNumber"></form:errors></span></td>
 						</tr>                        
 						<tr class="row2">
                         	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Gender:</td>
@@ -1203,13 +2475,13 @@ var $sid = xx+1;
 								</tr>                        
 						 		<tr class="row2">
                         			<td><span class="err"></span>WorkPhone:</td>
-                        			<td class="input_txt"><input type="text" class="input_txtbx1" id="workphone"   value="${patientDetails.workphone}" name="workphone" /></br><span id="workphoneerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Workphone"></form:errors></span></td>
+                        			<td class="input_txt"><input type="text" class="input_txtbx1" id="workphone"  maxlength="13" value="${patientDetails.workphone}" name="workphone" /></br><span id="workphoneerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Workphone"></form:errors></span></td>
 								</tr>  
 								
 								 <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>ZipCode:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="zipcode1" name="zip" value="${patientDetails.zip}"/><br><span class="err" id="zipcode1error"  style="color: red;font-style:italic;"><form:errors path="PatientDetails.zipCode"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="zipcode1" name="zip" maxlength="5" value="${patientDetails.zip}"/><br><span class="err" id="zipcode1error"  style="color: red;font-style:italic;"><form:errors path="PatientDetails.zipCode"></form:errors></span>
 	
 	<span class="err" ></span>            
 				                  </td>
@@ -1227,7 +2499,7 @@ var $sid = xx+1;
 								</tr>
 							    <tr class="row1">
                         			<td><span class="err"></span>ZipCode:</td>
-                        			<td class="input_txt"><input type="text" class="input_txtbx1" id="zipcode3"   value="${patientDetails.ezip}" name="ezip" /></br><span style="color: red;font-style:italic;" id="zipcode3error"><form:errors path="PatientDetails.Ezip"></form:errors></span></td>
+                        			<td class="input_txt"><input type="text" class="input_txtbx1" id="zipcode3" maxlength="5"  value="${patientDetails.ezip}" name="ezip" /></br><span style="color: red;font-style:italic;" id="zipcode3error"><form:errors path="PatientDetails.Ezip"></form:errors></span></td>
 								</tr> 
 								                   
 							</table>
@@ -1246,7 +2518,7 @@ var $sid = xx+1;
 						
 						    <tr class="row2">
                         		<td><span class="err">*</span>Spouse's Workphone:</td>
-                        		<td class="input_txt"><input type="text" class="input_txtbx1" id="spouseworkphone"   value="${patientDetails.spousesph}" name="spousesph" /></br><span id="spouseworkphoneerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Spousesph"></form:errors></span></td>
+                        		<td class="input_txt"><input type="text" class="input_txtbx1" id="spouseworkphone"  maxlength="13" value="${patientDetails.spousesph}" name="spousesph" /></br><span id="spouseworkphoneerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Spousesph"></form:errors></span></td>
 							</tr>                        
 						    <tr class="row1">
                         		<td><span class="err">*</span>Name of Nearest Friend/ Relative Not Living With You:</td>
@@ -1254,7 +2526,7 @@ var $sid = xx+1;
 							</tr>                        
 						 	<tr class="row2">
                         		<td><span class="err">*</span>Phone of Nearest Friend/ Relative Not Living With You:</td>
-                        		<td class="input_txt"><input type="text" class="input_txtbx1" id="Phone_friend"   value="${patientDetails.phone_friend}" name="phone_friend" /></br><span id="Phone_frienderror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Phone_friend"></form:errors></span></td>
+                        		<td class="input_txt"><input type="text" class="input_txtbx1" id="Phone_friend"  maxlength="13" value="${patientDetails.phone_friend}" name="phone_friend" /></br><span id="Phone_frienderror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Phone_friend"></form:errors></span></td>
 							</tr>                        
 						    <tr class="row1">
                         		<td><span class="err">*</span>Have you ever had chiropractic care: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
@@ -1478,7 +2750,7 @@ function checkAjaxPost() {
 				          
 						 <tr class="row1">
                         <td><span class="err">*</span>Attorney Phone:</td>
-                        <td class="input_txt"><input type="text" class="input_txtbx1" id="phonenumber"   value="${patientDetails.phone_Number}" name="phone_Number" /></br><span id="phonenumbererror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Phone_Number"></form:errors></span></td>
+                        <td class="input_txt"><input type="text" class="input_txtbx1" id="phonenumber" maxlength="13"  value="${patientDetails.phone_Number}" name="phone_Number" /></br><span id="phonenumbererror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Phone_Number"></form:errors></span></td>
 						<td></td>
 						</tr> 
 						    <tr class="row2">
@@ -1519,7 +2791,7 @@ function checkAjaxPost() {
 				                <tr class="row2">
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err"></span>What is your Physician's Phone </td>
 				                  	<td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="phyphone" name="phyphone" value="${patientDetails.phyphone}"/><br><span id="phyphoneerror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="phyphone" name="phyphone" maxlength="13" value="${patientDetails.phyphone}"/><br><span id="phyphoneerror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
 				                   </td><td width="700"></td>
 				                   
 				                    </tr>
@@ -1549,7 +2821,7 @@ function checkAjaxPost() {
 				        </tr>
 				         <tr class="row1">
                         <td><span class="err">*</span>Insurance Company Phone:</td>
-                        <td class="input_txt"><input type="text" class="input_txtbx1" id="Insurance_phone"   value="${patientDetails.insurance_phone}" name="insurance_phone" /></br><span id="Insurance_phoneerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Insurance_phone"></form:errors></span></td>
+                        <td class="input_txt"><input type="text" class="input_txtbx1" id="Insurance_phone"  maxlength="13"  value="${patientDetails.insurance_phone}" name="insurance_phone" /></br><span id="Insurance_phoneerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Insurance_phone"></form:errors></span></td>
 						</tr>   
 						  <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name of your auto insurance:</td>
@@ -1560,7 +2832,7 @@ function checkAjaxPost() {
 				               <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>phone of your auto insurance:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="Phone_auto" name="phone_auto" value="${patientDetails.phone_auto}"/><span id="Phone_autoerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Phone_auto"></form:errors></span></td>
+				                  	<input type="text" class="input_txtbx1" id="Phone_auto" name="phone_auto" maxlength="13" value="${patientDetails.phone_auto}"/><span id="Phone_autoerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Phone_auto"></form:errors></span></td>
 				                  	<td> </td>
 				                </tr>                     
 						 <tr class="row2">
@@ -1574,7 +2846,7 @@ function checkAjaxPost() {
 				         </tr>
 				         <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Phone of your Health Insurance:</td>
-				                   <td class="input_txt"><input type="text" class="input_txtbx1" id="phhealth"   value="${patientDetails.health_phone }" name="health_phone" /></br><span id="phhealtherror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Health_phone"></form:errors></span></td>
+				                   <td class="input_txt"><input type="text" class="input_txtbx1" id="phhealth"  maxlength="13" value="${patientDetails.health_phone }" name="health_phone" /></br><span id="phhealtherror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Health_phone"></form:errors></span></td>
 				        			<td></td>
 				         </tr>                  
 				         <tr class="row1">

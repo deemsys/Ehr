@@ -251,6 +251,7 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 	        document.getElementById('saveid').style.visibility = 'hidden';
 	        
 	        document.getElementById('btnNext').style.visibility = 'hidden';
+	        document.getElementById('cancelid').style.visibility = 'hidden';
 		  
      var html="<html>";
      html+= document.getElementById(id).innerHTML;
@@ -267,6 +268,7 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
      document.getElementById('print1').style.visibility = 'visible';
      document.getElementById('saveid').style.visibility = 'visible';
      document.getElementById('btnNext').style.visibility = 'visible';
+     document.getElementById('cancelid').style.visibility = 'visible';
     
   }
   </script>
