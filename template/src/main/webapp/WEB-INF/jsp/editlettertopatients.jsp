@@ -161,7 +161,12 @@ function checkSubmit()
               <td ><input type="text" class="input_txtbx1" name="date" id="datepicker3" value="${lettertopatientsdetails.date }" /><span class="err"><form:errors path="Workschool.date"></form:errors></span></td>
               </tr>
               </table>
-             
+              <table cellpadding="0" cellspacing="0" border="0" width="100%">
+              <tr>
+              <td height="25" width="120">Dear</td>
+              <td ><input type="text" class="input_txtbx1" name="dear" id="dear" value="${lettertopatientsdetails.dear }" /><span class="err"><form:errors path="Workschool.date"></form:errors></span></td>
+              </tr>
+              </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
         	  <tr><td hight="20" width="250"><br><br><p align="left" id="mypar"><b><h4>Dear Ms Barbara Wilmoth:</h4></b></p></td></tr>
        		  </table>

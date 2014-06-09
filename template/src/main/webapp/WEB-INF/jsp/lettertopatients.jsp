@@ -424,6 +424,12 @@ document.getElementById("ssn").value=phone;
               <td ><input type="text" class="input_txtbx1" name="date" id="datepicker3"/></td>
               </tr>
               </table>
+               <table cellpadding="0" cellspacing="0" border="0" width="100%">
+              <tr>
+              <td height="25" width="120"><span class="err"></span>Dear</td>
+              <td ><input type="text" class="input_txtbx1" name="dear" id="dear"/></td>
+              </tr>
+              </table>
              	<input type="text" name="user" id="user"  style="visibility:hidden">
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
         	  <tr><td hight="20" width="250"><br><br><p align="left" id="mypar"><b><h4>Dear Ms Barbara Wilmoth:</h4></b></p></td></tr>

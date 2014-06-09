@@ -292,6 +292,29 @@ $(function() {
 	  
   }
   </script>
+  <script>
+  
+  function checksub()
+  {
+  
+  document.getElementById("nameerror").innerHTML="";
+  if(document.getElementById("name").value=="")
+  {
+  document.getElementById("nameerror").innerHTML="Required field should not be empty";
+  return false;
+  }
+  document.getElementById("datepickererror").innerHTML="";
+  if(document.getElementById("datepicker").value=="")
+  {
+  document.getElementById("datepickererror").innerHTML="Required field should not be empty";
+  return false;
+  }
+  
+  
+  }
+  
+  
+  </script>
  </head>
  <body>
 <div id="right_content">
@@ -321,9 +344,9 @@ $(function() {
 	            
 	             <table>
 	             <tr height="30">
-	             <td width="100">Name</td><td width="400"><input type="hidden" name="patient_id" value="${patientid}"><input type="hidden" name="symptom" id="symptom" value="${symptom}"><input type="text" name="name"></td>
+	             <td width="100"><span class="err">*</span>Name</td><td width="400"><input type="hidden" name="patient_id" value="${patientid}"><input type="hidden" name="symptom" id="symptom" value="${symptom}"><input type="text" name="name" id="name"><span class="err" id="nameerror"></span></td>
 	             <td width="100">Number</td><td width="400"><input type="text" name="number" id="number"  ><span id="numbererror"></span></td>
-	             <td width="100">Date</td><td width="400"><input type="text"  name="date" id="datepicker" /></td>
+	             <td width="100"><span class="err">*</span>Date</td><td width="400"><input type="text"  name="date" id="datepicker" /><span class="err" id="datepickererror"></span></td>
 	             </tr>
 	             </table>
 	             <table>
@@ -385,7 +408,7 @@ $(function() {
 	             </table>
 	            <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="Save" id="saveid" ></td>
+<td><input type="submit" class="submit_btn" value="Save" id="saveid" onclick="return checksub();"></td>
 <td><input type="reset" class="submit_btn" value="Cancel"   onclick="myclose()" id="cancelid"></td>
 </tr>
 </table>

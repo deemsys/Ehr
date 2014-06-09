@@ -255,7 +255,29 @@ $(function() {
 	  });
 
  </script>
- 
+  <script>
+  
+  function checksub()
+  {
+  
+  document.getElementById("nameerror").innerHTML="";
+  if(document.getElementById("name").value=="")
+  {
+  document.getElementById("nameerror").innerHTML="Required field should not be empty";
+  return false;
+  }
+  document.getElementById("datepickererror").innerHTML="";
+  if(document.getElementById("datepicker").value=="")
+  {
+  document.getElementById("datepickererror").innerHTML="Required field should not be empty";
+  return false;
+  }
+  
+  
+  }
+  
+  
+  </script>
  </head>
  <body onload="validation()">
 <div id="right_content">
@@ -296,9 +318,9 @@ $(function() {
 	            <c:set value="${quadraplevisualform.quadraplevisualdetails[0]}" var="quadraplevisualdetails"></c:set>
 	             <table>
 	             <tr height="30">
-	             <td width="100">Name</td><td width="400"><input type="hidden" id="symptom" name="symptom" value="${quadraplevisualdetails.symptom}"><input type="hidden" name="quadrapleno" value="${quadraplevisualdetails.quadrapleno}"><input type="text" name="name" value="${quadraplevisualdetails.name}"></td>
+	             <td width="100"><span class="err">*</span>Name</td><td width="400"><input type="hidden" id="symptom" name="symptom" value="${quadraplevisualdetails.symptom}"><input type="hidden" name="quadrapleno" value="${quadraplevisualdetails.quadrapleno}"><input type="text" name="name" value="${quadraplevisualdetails.name}" id="name"><span class="err" id="nameerror"></span></td>
 	             <td width="100">Number</td><td width="400"><input type="text" name="number"  value="${quadraplevisualdetails.number}"></td>
-	             <td width="100">Date</td><td width="400"><input type="text"  name="date" id="datepicker" value="${quadraplevisualdetails.date}"  /></td>
+	             <td width="100"><span class="err">*</span>Date</td><td width="400"><input type="text"  name="date" id="datepicker" value="${quadraplevisualdetails.date}"  /><span class="err" id="datepickererror"></span></td>
 	             </tr>
 	             </table>
 	             <table>
@@ -364,7 +386,7 @@ $(function() {
 	             </table>
 	            <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="Save"></td>
+<td><input type="submit" class="submit_btn" value="update" onclick="return checksub();"></td>
 <td><a href="deletequadraplevisual?quadrupleno=${quadraplevisualdetails.quadrapleno}" style="color:white" class="submit_btn">Delete</a></td>
 <td><a style="color:white" class="submit_btn"  onclick="myclose()">Cancel</a></td>
 </tr>
