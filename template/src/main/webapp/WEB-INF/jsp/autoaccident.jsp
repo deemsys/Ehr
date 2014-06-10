@@ -42,22 +42,7 @@ $("#speed").keyup(function() {
 }).keydown(function() {
   oldValue = $(this).val();
 })
-$("#estimateddamage").keyup(function() {
-	 $("#estimateddamageerror").html(''); 
-	/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
-	var intRegex = /^\d+$/;
-	if(intRegex.test($(this).val())||$(this).val()=='') 
-	{
-		var $in = $(this).val();		 
-	}
-	else if($(this).val()!='')
-		{
-		
-		$("#estimateddamageerror").html('Kindly enter a number!!!!');
-		}
-}).keydown(function() {
-  oldValue = $(this).val();
-})
+
 $("#staylength").keyup(function() {
 	 $("#staylengtherror").html(''); 
 	/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
@@ -126,7 +111,7 @@ $(function() {
         }
     });
 </script>
-<script>
+<!-- <script>
 
 	function checkSubmit()
 	{
@@ -145,7 +130,7 @@ $(function() {
 		}
 		
 		}
-</script>
+</script> -->
 <script>
   function printPage(id)
   {
@@ -186,7 +171,30 @@ $(function() {
      document.getElementById('saveid').style.visibility = 'visible';
   }
   </script>
-
+<script type="text/javascript">
+       function validate(event) {
+          
+           var regex = new RegExp("^[0-9]+$");
+           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+           if (!regex.test(key)) {
+             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
+               event.preventDefault();
+               return false;
+           }
+       }       
+    </script>
+   <script type="text/javascript">
+       function validate1(event) {
+          
+           var regex = new RegExp("^[0-9.]+$");
+           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+           if (!regex.test(key)) {
+             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
+               event.preventDefault();
+               return false;
+           }
+       }       
+    </script>
 <style>
   /* force a height so the tabs don't jump as content height changes */
   #tabs .tabs-spacer { float: left; height: 200px; }
@@ -279,7 +287,7 @@ $(function() {
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="smlinput_txtbx1" id="inp_id" name="vehicle_make" style="width:70px" placeholder="    make"/>
 				  <input type="text" class="smlinput_txtbx1" id="inp_id" name="vehicle_model" style="width:70px" placeholder="     model" />
-				  <input type="text" class="smlinput_txtbx1" id="vehicle" name="vehicle_year" style="width:70px"  placeholder="year"/><span class="err" id="vehicleerr"></span>
+				  <input type="text" class="smlinput_txtbx1" id="vehicle" name="vehicle_year" style="width:70px" onkeypress="return validate(event)"; placeholder="year"/><span class="err" id="vehicleerr"></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
@@ -300,7 +308,7 @@ $(function() {
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="smlinput_txtbx1" id="inp_id" name="other_vehicle_make" style="width:70px" placeholder="    make" />
 				  <input type="text" class="smlinput_txtbx1" id="inp_id" name="other_vehicle_model" style="width:70px" placeholder="     model" />
-				  <input type="text" class="smlinput_txtbx1" id="vehicl" name="other_vehicle_year" style="width:70px" placeholder="year"/><span class="err" id="vehiclerr"></span>
+				  <input type="text" class="smlinput_txtbx1" id="vehicl" name="other_vehicle_year" style="width:70px" onkeypress="return validate(event)"; placeholder="year"/><span class="err" id="vehiclerr"></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
@@ -328,7 +336,7 @@ $(function() {
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Estimated rate of speed</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="speed" name="estimated_rate" /><span class="err"><form:errors path="Autoaccident.estimated_rate"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="speed" name="estimated_rate" onkeypress="return validate(event)"; /><span class="err"><form:errors path="Autoaccident.estimated_rate"></form:errors></span>
 			<br>
 			<span class="err" id="speederror"></span>
   </td>
@@ -680,13 +688,13 @@ $(function() {
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Unconscious</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="unconscious" value="yes" class="input_txt" checked="true" onclick="toggle4('show4')" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="unconscious" value="no" class="input_txt" onclick="toggle4('hide4')" >No&nbsp;&nbsp;&nbsp;
-			      <input type="text" class="input_txtbx1" id="uncon" name="uncon" /> (minutes)
+			      <input type="text" class="input_txtbx1" id="uncon" name="uncon" onkeypress="return validate(event)";/> (minutes)
 			      </td>
 				  </tr>
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Estimated amount of property damage</td>
 				  <td valign="top" align="left" class="input_txt">$
-				  <input type="text" class="input_txtbx1" id="estimateddamage" name="estimated_amount" /><span class="err"><form:errors path="Autoaccident.estimated_amount"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="estimateddamage" name="estimated_amount" onkeypress="return validate1(event)";/><span class="err"><form:errors path="Autoaccident.estimated_amount"></form:errors></span>
 				 <br><span class="err" id="estimateddamageerror"></span>
 				  </td>
 				  </tr>
@@ -1375,7 +1383,7 @@ $(function() {
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="unconscious" value="yes" class="input_txt" id="unconcheck"onclick="toggle4();" <c:if test="${auto.unconscious=='yes'}"><c:out value="Checked"/></c:if> >Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="unconscious" value="no" class="input_txt" onclick="toggle4();" <c:if test="${auto.unconscious=='no'}"><c:out value="Checked"/></c:if> >No&nbsp;&nbsp;&nbsp;<span class="err"><form:errors path="Autoaccident.unconscious"></form:errors></span>
-			      <input type="text" class="input_txtbx1" id="uncon" name="uncon" value="${auto.uncon}"  style='display:none'> (minutes)</input><span class="err"><form:errors path="Autoaccident.uncon"></form:errors></span>
+			      <input type="text" class="input_txtbx1" id="uncon" name="uncon" value="${auto.uncon}"  style='display:none' onkeypress="return validate(event)";> (minutes)</input><span class="err"><form:errors path="Autoaccident.uncon"></form:errors></span>
 			      </td>
 				  </tr>
 				  <tr class="row1">
