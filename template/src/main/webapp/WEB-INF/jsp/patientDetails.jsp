@@ -1628,10 +1628,10 @@ function check(id)
 	         document.getElementById('print').style.visibility = 'hidden';
 	         document.getElementById('btnNext').style.visibility = 'hidden';
 	         document.getElementById('print1').style.visibility = 'hidden';
-	         document.getElementById('btnNext1').style.visibility = 'hidden';
-	         document.getElementById('btnPrevious').style.visibility = 'hidden';
+	        // document.getElementsByName('btnNext1').style.visibility = 'hidden';
+	         //document.getElementById('btnPrevious').style.visibility = 'hidden';
 	         document.getElementById('print2').style.visibility = 'hidden';
-	         document.getElementById('btnPrevious1').style.visibility = 'hidden';
+	         //document.getElementById('btnPrevious1').style.visibility = 'hidden';
 	       	        document.getElementById('saveid').style.visibility = 'hidden';
 	        document.getElementById('cancelid').style.visibility = 'hidden'; 
 		  
@@ -1649,10 +1649,10 @@ function check(id)
       document.getElementById('print').style.visibility = 'visible';
       document.getElementById('btnNext').style.visibility = 'visible';
       document.getElementById('print1').style.visibility = 'visible';
-      document.getElementById('btnNext1').style.visibility = 'visible';
-      document.getElementById('btnPrevious').style.visibility = 'visible';
+      //document.getElementsByName('btnNext1').style.visibility = 'visible';
+      //document.getElementById('btnPrevious').style.visibility = 'visible';
          document.getElementById('print2').style.visibility = 'visible';
-         document.getElementById('btnPrevious1').style.visibility = 'visible';
+        //document.getElementsByName('btnPrevious1').style.visibility = 'visible';
    
      document.getElementById('saveid').style.visibility = 'visible';
      document.getElementById('cancelid').style.visibility = 'visible'; 
@@ -2248,9 +2248,9 @@ function check(id)
 				                  	
 				                  	<table align="right">
 				                  	 <tr>
-				  <td><br><input type="button" id="btnPrevious" class="submit_btn" value="Previous"  style = "display:none" />&nbsp;</td>
+				  <td><br><input type="button" id="btnPrevious" class="submit_btn" value="Previous" name="btnPrevious" style = "display:none" />&nbsp;</td>
                   <td>&nbsp;&nbsp;</td>
-                  <td><br><input type="button" class="submit_btn1"  id="btnNext1" value="Next" onclick="validate('this.value')"/><br></td>
+                  <td><br><input type="button" id="btnNext" class="submit_btn" name="btnNext1" value="Next" /><!-- <input type="button" class="submit_btn1"  id="btnNext1" value="Next" onclick="validate('this.value')"/> --><br></td>
                   </tr>
 				                  	</table><!-- id="btnNext"  -->
                
@@ -2414,7 +2414,7 @@ function check(id)
 				                  	</tr>   </div>
 				                  	<table align="right">
 				  <tr>
-				  <td><br><input type="button" id="btnPrevious1" class="submit_btn" value="Previous" />&nbsp;</td>
+				  <td><br><input type="button" id="btnPrevious" class="submit_btn" name="Previous1" value="Previous" />&nbsp;</td>
                  
  				  <td>&nbsp;&nbsp;</td>
              		 
