@@ -194,13 +194,13 @@
 		
 		return false;
 		} 
-		 document.getElementById("faxerror").innerHTML="";
+		/*  document.getElementById("faxerror").innerHTML="";
 		if(isNaN(document.getElementById("fax").value==""))
 		{
 		document.getElementById("faxerror").innerHTML="Invalid character. Please enter numbers only.";
 		return false;
 		
-		}
+		} */
 		
 		
 		document.getElementById("amountdeducterror").innerHTML="";
@@ -211,13 +211,13 @@
 		return false;
 		}
 
-         document.getElementById("amountdeducterror").innerHTML="";
+         /* document.getElementById("amountdeducterror").innerHTML="";
 		if(isNaN(document.getElementById("amountdeduct").value))
 		{
 		document.getElementById("amountdeducterror").innerHTML="Invalid character. Please enter numbers only.";
 		return false;
 		
-		}
+		} */
 				
 		document.getElementById("amountdeductmeterror").innerHTML="";
 		if(document.getElementById("amountdeductmet").value=="")
@@ -227,13 +227,13 @@
 		return false;
 		}
 		
-		document.getElementById("amountdeductmeterror").innerHTML="";
+		/* document.getElementById("amountdeductmeterror").innerHTML="";
 		if(isNaN(document.getElementById("amountdeductmet").value))
 		{
 		document.getElementById("amountdeductmeterror").innerHTML="Invalid character. Please enter numbers only.";
 		return false;
 		
-		}
+		} */
 		
 		
 		document.getElementById("max_visiterror").innerHTML="";
@@ -244,12 +244,12 @@
 		return false;
 		}
 		
-		document.getElementById("max_visiterror").innerHTML="";
+		/* document.getElementById("max_visiterror").innerHTML="";
 		if(isNaN(document.getElementById("max_visit").value))
 		{
 		document.getElementById("max_visiterror").innerHTML="Invalid character. Please enter numbers only.";
 		return false;
-		}
+		} */
 		
 		document.getElementById("atwhaterror").innerHTML="";
 		if(document.getElementById("atwhat").value=="")
@@ -259,12 +259,12 @@
 		return false;
 		}
 		
-		document.getElementById("atwhaterror").innerHTML="";
+		/* document.getElementById("atwhaterror").innerHTML="";
 		if(isNaN(document.getElementById("atwhat").value))
 		{
 		document.getElementById("atwhaterror").innerHTML="Invalid character. Please enter numbers only.";
 		return false;
-		}
+		} */
 		document.getElementById("atwhat1error").innerHTML="";
 		if(document.getElementById("atwhat1").value=="")
 		{
@@ -273,13 +273,13 @@
 		return false;
 		}
 		
-		document.getElementById("atwhat1error").innerHTML="";
+		/* document.getElementById("atwhat1error").innerHTML="";
 		if(isNaN(document.getElementById("atwhat1").value))
 		{
 		document.getElementById("atwhat1error").innerHTML="Invalid character. Please enter numbers only.";
 		return false;
 		}
-		
+		 */
 		document.getElementById("yeserror").innerHTML="";
       if( ( document.getElementById("yes").checked == false ) && ( document.getElementById("no").checked == false ) )
 
@@ -404,6 +404,18 @@ document.getElementById("yeserror").innerHTML="Required Field Should not be Empt
            }
        }       
     </script>
+    <script type="text/javascript">
+       function validate(event) {
+          
+           var regex = new RegExp("^[0-9.]+$");
+           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+           if (!regex.test(key)) {
+             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
+               event.preventDefault();
+               return false;
+           }
+       }       
+    </script>
 </head>
  <body>
 <div id="right_content">
@@ -460,11 +472,11 @@ document.getElementById("fax").value=phone;
               <br>
               <tr class="row1">
               <td><span class="err">*</span>Amount of deductible</td>
-              <td><input type="text" class="input_txtbx1" name="amount_deduct" id="amountdeduct" value="${Insuranceverification.amount_deduct}" /><span id="amountdeducterror"  style="color: red;font-style:italic;"><form:errors path="Insuranceverification.amount_deduct"></form:errors>
+              <td><input type="text" class="input_txtbx1" name="amount_deduct" id="amountdeduct" onkeypress="return validate(event)"; value="${Insuranceverification.amount_deduct}" /><span id="amountdeducterror"  style="color: red;font-style:italic;"><form:errors path="Insuranceverification.amount_deduct"></form:errors>
               <span class="err" id="amountdeducterror"></span>
               </td>
               <td><span class="err">*</span>Amount of deductible met</td>
-              <td><input type="text" class="input_txtbx1" name="amount_deduct_met" id="amountdeductmet" value="${Insuranceverification.amount_deduct_met}"/><span id="amountdeductmeterror"  style="color: red;font-style:italic;"></span><form:errors path="Insuranceverification.amount_deduct_met"></form:errors>
+              <td><input type="text" class="input_txtbx1" name="amount_deduct_met" id="amountdeductmet" onkeypress="return validate(event)"; value="${Insuranceverification.amount_deduct_met}"/><span id="amountdeductmeterror"  style="color: red;font-style:italic;"></span><form:errors path="Insuranceverification.amount_deduct_met"></form:errors>
               <span class="err" id="amountdeductmeterror"></span>
               </td>
               <td></td>
@@ -474,7 +486,7 @@ document.getElementById("fax").value=phone;
               <table cellpadding="0" cellspacing="0" border="0" width="100%"> -->
               <tr class="row1"> 
               <td><span class="err">*</span>Maximum visits/year?</td>
-              <td><input type="text" class="input_txtbx1" name="max_visit" id="max_visit" value="${Insuranceverification.max_visit}"/><span id="max_visiterror"  style="color: red;font-style:italic;"></span><form:errors path="Insuranceverification.max_visit"></form:errors></td>
+              <td><input type="text" class="input_txtbx1" name="max_visit" id="max_visit" onkeypress="return validate(event)"; value="${Insuranceverification.max_visit}"/><span id="max_visiterror"  style="color: red;font-style:italic;"></span><form:errors path="Insuranceverification.max_visit"></form:errors></td>
               <td></td>
               <td></td>
               <td></td>
