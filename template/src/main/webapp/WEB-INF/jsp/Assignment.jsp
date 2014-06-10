@@ -187,7 +187,8 @@ and exclusively in the name of Perry Chiropractic and Therapy Center, such sums 
                        
                        <p id="mypar"><b>*NOTE TO ALL PAYERS HEREUNDER, FAILURE TO FOLLOW THE EXPRESS WRITTEN INSTRUCTION OF THE CLAIMANT HEREUNDER MAY RESULT IN A BREACH OF THIS AGREEMENT. A BREACH OF THIS AGREEMENT BY THE CLAIMANT HEREUNDER BY AND THROUGH YOUR ACTIONS IS AN INTENTIONAL INTERFERENCE WITH THIS CONTRACT AND PCTC WILL PURSUE ANY PAYER FOR THAT INTERFERENCE.</b></p>
                        
-                       </tr>
+                       </tr></table>
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%">
                        <tr width="500"class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Name: </td>
 				                  <td valign="top" align="left" class="input_txt">
@@ -199,7 +200,7 @@ and exclusively in the name of Perry Chiropractic and Therapy Center, such sums 
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Signature:  </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="patientsign" name="patientsign" /><span id="patientsignerror" style="color: red;font-style:italic;"><form:errors path="Assignment.patientsign"></form:errors></span>
-				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date</td>
+				                  	<td valign="middle" align="left" class="input_txt" style="width: 65px; "><span class="err">*</span>Date</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="datepicker2" name="patientdate" /><br><span id="datepicker2error" style="color: red;font-style:italic;"><form:errors path="Assignment.parentdate"></form:errors></span>
 				                  	</tr> 
