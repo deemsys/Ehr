@@ -68,6 +68,30 @@ $(function() {
 	}
 }
   </script>
+  <script type="text/javascript">
+       function validate(event) {
+          
+           var regex = new RegExp("^[0-9]+$");
+           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+           if (!regex.test(key)) {
+             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
+               event.preventDefault();
+               return false;
+           }
+       }       
+    </script>
+   <script type="text/javascript">
+       function validate1(event) {
+          
+           var regex = new RegExp("^[0-9.]+$");
+           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+           if (!regex.test(key)) {
+             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
+               event.preventDefault();
+               return false;
+           }
+       }       
+    </script>
 <style>
   /* force a height so the tabs don't jump as content height changes */
   #tabs .tabs-spacer { float: left; height: 200px; }
@@ -155,7 +179,7 @@ $(function() {
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="smlinput_txtbx1" id="inp_id" name="vehicle_make" style="width:70px" value="${autoaccident.vehicle_make }"/><span class="err"><form:errors path="Autoaccident.vehicle_make"></form:errors></span>
 				  <input type="text" class="smlinput_txtbx1" id="inp_id" name="vehicle_model" style="width:70px" value="${autoaccident.vehicle_model }" /><span class="err"><form:errors path="Autoaccident.vehicle_model"></form:errors></span>
-				  <input type="text" class="smlinput_txtbx1" id="inp_id" name="vehicle_year" style="width:70px"  value="${autoaccident.vehicle_year }"/><span class="err"><form:errors path="Autoaccident.vehicle_year"></form:errors></span>
+				  <input type="text" class="smlinput_txtbx1" id="inp_id" name="vehicle_year" style="width:70px" onkeypress="return validate(event)"; value="${autoaccident.vehicle_year }"/><span class="err"><form:errors path="Autoaccident.vehicle_year"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
@@ -176,7 +200,7 @@ $(function() {
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="smlinput_txtbx1" id="inp_id" name="other_vehicle_make" style="width:70px" value="${autoaccident.other_vehicle_make }" /><span class="err"><form:errors path="Autoaccident.other_vehicle_make"></form:errors></span>
 				  <input type="text" class="smlinput_txtbx1" id="inp_id" name="other_vehicle_model" style="width:70px" value="${autoaccident.other_vehicle_model }" /><span class="err"><form:errors path="Autoaccident.other_vehicle_model"></form:errors></span>
-				  <input type="text" class="smlinput_txtbx1" id="inp_id" name="other_vehicle_year" style="width:70px" value="${autoaccident.other_vehicle_year }"/><span class="err"><form:errors path="Autoaccident.other_vehicle_year"></form:errors></span>
+				  <input type="text" class="smlinput_txtbx1" id="inp_id" name="other_vehicle_year" style="width:70px" onkeypress="return validate(event)"; value="${autoaccident.other_vehicle_year }"/><span class="err"><form:errors path="Autoaccident.other_vehicle_year"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
@@ -210,7 +234,7 @@ $(function() {
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Estimated rate of speed</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="estimated_rate" value="${autoaccident.estimated_rate }"/><span class="err"><form:errors path="Autoaccident.estimated_rate"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="inp_id" name="estimated_rate" onkeypress="return validate(event)"; value="${autoaccident.estimated_rate }"/><span class="err"><form:errors path="Autoaccident.estimated_rate"></form:errors></span>
 				  </td>
 				  </tr>
 				 <tr class="row2">
@@ -598,13 +622,13 @@ $(function() {
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="unconscious" value="yes" class="input_txt" id="unconcheck"onclick="toggle4();" <c:if test="${autoaccident.unconscious=='yes'}"><c:out value="Checked"/></c:if> >Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="unconscious" value="no" class="input_txt" onclick="toggle4();" <c:if test="${autoaccident.unconscious=='no'}"><c:out value="Checked"/></c:if> >No&nbsp;&nbsp;&nbsp;<span class="err"><form:errors path="Autoaccident.unconscious"></form:errors></span>
-			      <input type="text" class="input_txtbx1" id="uncon" name="uncon" value="${autoaccident.uncon }"  style='display:none'> (minutes)<span class="err"><form:errors path="Autoaccident.uncon"></form:errors></span></input>
+			      <input type="text" class="input_txtbx1" id="uncon" name="uncon" onkeypress="return validate(event)"; value="${autoaccident.uncon }"  style='display:none'> (minutes)<span class="err"><form:errors path="Autoaccident.uncon"></form:errors></span></input>
 			      </td>
 				  </tr>
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Estimated amount of property damage</td>
 				  <td valign="top" align="left" class="input_txt">$
-				  <input type="text" class="input_txtbx1" id="inp_id" name="estimated_amount" value="${autoaccident.estimated_amount }"/><span class="err"><form:errors path="Autoaccident.estimated_amount"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="inp_id" name="estimated_amount" onkeypress="return validate1(event)";value="${autoaccident.estimated_amount }"/><span class="err"><form:errors path="Autoaccident.estimated_amount"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row2">
@@ -736,7 +760,7 @@ $(function() {
                   <td valign="middle" align="left" class="input_txt">Length of stay</td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				  <td></td>
 				  <td>
-				  <input type="text" class="input_txtbx1" id="staylength" name="staylength" value="${autoaccident.staylength }"/>
+				  <input type="text" class="input_txtbx1" id="staylength" name="staylength" onkeypress="return validate(event)"; value="${autoaccident.staylength }"/>
 				  <br><span class="err" id="staylengtherror"></span>
 				  </td>
 				  <td></td>

@@ -43,23 +43,7 @@ $("#speed").keyup(function() {
   oldValue = $(this).val();
 })
 
-$("#staylength").keyup(function() {
-	 $("#staylengtherror").html(''); 
-	/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
-	var intRegex = /^\d+$/;
-	if(intRegex.test($(this).val())||$(this).val()=='') 
-	{
-		var $in = $(this).val();		 
-	}
-	else if($(this).val()!='')
-		{
-		
-		$("#staylengtherror").html('Kindly enter a number!!!!');
-		}
-}).keydown(function() {
-  oldValue = $(this).val();
-})
-});
+
 </script>
 
 <script>
@@ -827,7 +811,7 @@ $(function() {
                   <td valign="middle" align="left" class="input_txt">Length of stay</td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				  <td></td>
 				  <td>
-				  <input type="text" class="input_txtbx1" id="staylength" name="staylength" />
+				  <input type="text" class="input_txtbx1" id="staylength" name="staylength" onkeypress="return validate(event)";/>
 				  <br><span class="err" id="staylengtherror"></span>
 				  </td>
 				  <td></td>
