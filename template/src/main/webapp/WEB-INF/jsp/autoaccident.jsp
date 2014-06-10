@@ -126,7 +126,7 @@ $(function() {
 	        document.getElementById('btnNext').style.visibility = 'hidden';
 	        //document.getElementById('btnNext1').style.visibility = 'hidden';
 	        document.getElementById('btnPrevious').style.visibility = 'hidden';
-	        document.getElementById('btnNext2').style.visibility = 'hidden';
+	        //document.getElementById('btnNext2').style.visibility = 'hidden';
 	       // document.getElementById('btnPrevious2').style.visibility = 'hidden';
 	        //document.getElementById('btnPrevious3').style.visibility = 'hidden';
 	        document.getElementById('saveid').style.visibility = 'hidden';
@@ -150,7 +150,7 @@ $(function() {
      document.getElementById('btnPrevious').style.visibility = 'visible';
      //document.getElementById('btnNext1').style.visibility = 'visible';
     // document.getElementById('btnPrevious2').style.visibility = 'visible';
-     document.getElementById('btnNext2').style.visibility = 'visible';
+   //  document.getElementById('btnNext2').style.visibility = 'visible';
      //document.getElementById('btnPrevious3').style.visibility = 'visible';
      document.getElementById('saveid').style.visibility = 'visible';
   }
