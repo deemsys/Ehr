@@ -1628,7 +1628,7 @@ function check(id)
 	         document.getElementById('print').style.visibility = 'hidden';
 	         document.getElementById('btnNext').style.visibility = 'hidden';
 	         document.getElementById('print1').style.visibility = 'hidden';
-	        // document.getElementsByName('btnNext1').style.visibility = 'hidden';
+	       // document.getElementsByName('btnNext1').style.visibility = 'hidden';
 	         document.getElementById('btnPrevious').style.visibility = 'hidden';
 	         document.getElementById('print2').style.visibility = 'hidden';
 	         //document.getElementById('btnPrevious1').style.visibility = 'hidden';
