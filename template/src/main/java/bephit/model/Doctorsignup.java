@@ -3,6 +3,8 @@ package bephit.model;
 import javax.validation.GroupSequence;
 import javax.validation.constraints.Pattern;
 
+import org.aspectj.bridge.Message;
+import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 @GroupSequence({Doctorsignup.class})
 public class Doctorsignup{
@@ -18,6 +20,7 @@ public class Doctorsignup{
 	private String doctorconfirm;
 	
 	@NotEmpty
+	@Email (message="Invalid Email Id")
 	@Pattern(regexp="^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$",message="Please Enter a valid mail id",groups=Doctorsignup.class)
 	private String doctoremail;
 	

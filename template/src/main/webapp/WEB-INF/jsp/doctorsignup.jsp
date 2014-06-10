@@ -46,13 +46,13 @@
 				  <tr class="row1">
 	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Password</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="password" class="input_txtbx1" id="inp_id" name="doctorpassword" /><span class="err"><form:errors path="Doctorsignup.doctorpassword"></form:errors></span>
+				  <input type="password" class="input_txtbx1" id="doctorpassword" name="doctorpassword" /><span class="err"><form:errors path="Doctorsignup.doctorpassword"></form:errors></span>
 				  </td>
 				  </tr>
 				   <tr class="row1">
 	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Confirm Password</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="password" class="input_txtbx1" id="inp_id" name="doctorconfirm" /><span class="err"><form:errors path="Doctorsignup.doctorconfirm"></form:errors></span>
+				  <input type="password" class="input_txtbx1" id="doctorconfirm" name="doctorconfirm" /><span class="err"><form:errors path="Doctorsignup.doctorconfirm"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
@@ -68,19 +68,19 @@
 	            <tr class="row1">
 	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Username</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="doctorusername" value="${doctorsignup.doctorusername}"/></br><span class="err"><form:errors path="Doctorsignup.doctorusername"></form:errors><font color="Red" size="+1"><c:if test="${username=='exist'}"><c:out value="Username Already Exists"></c:out></c:if></font></span>
+				  <input type="text" class="input_txtbx1" id="inp_id" name="doctorusername" value="${doctorsignup.doctorusername}"/></br><span class="err"><form:errors path="Doctorsignup.doctorusername"></form:errors><font color="Red" size="+1"><c:if test="${usernames=='exists'}"><c:out value="Username Already Exists"></c:out></c:if></font></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
 	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Password</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="password" class="input_txtbx1" id="inp_id" name="doctorpassword" value="${doctorsignup.doctorpassword}"/></br><span class="err"><form:errors path="Doctorsignup.doctorpassword"></form:errors></span>
+				  <input type="password" class="input_txtbx1" id="doctorpassword" name="doctorpassword" value="${doctorsignup.doctorpassword}"/></br><span class="err"><form:errors path="Doctorsignup.doctorpassword"></form:errors></span>
 				  </td>
 				  </tr>
 				   <tr class="row1">
 	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Confirm Password</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="password" class="input_txtbx1" id="inp_id" name="doctorconfirm" value="${doctorsignup.doctorconfirm }"/></br><span class="err"><form:errors path="Doctorsignup.doctorconfirm"></form:errors></span>
+				  <input type="password" class="input_txtbx1" id="doctorconfirm" name="doctorconfirm" value="${doctorsignup.doctorconfirm }"/></br><span class="err"><form:errors path="Doctorsignup.doctorconfirm"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
@@ -95,10 +95,21 @@
 				  <br>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
-              <td valign="top" align="center"><input type="submit" class="submit_btn" value="Submit"></td>
+              <td valign="top" align="center"><input type="submit" class="submit_btn" value="Submit" onclick="return checkvalidation('this')"></td>
               <td valign="top" align="center"><input type="button" class="submit_btn1" value="Back to Login" onclick="window.location.href='login'"></td>
         	  </tr>
         	  </table>
+        	  <script>
+        	  function checkvalidation()
+        	  {
+        		  if(document.getElementById("doctorpassword").value!=document.getElementById("doctorconfirm").value)
+        			  {
+        			  alert("Password Must Be Same");
+        			  return false;
+        			  }
+        	  }
+        	  
+        	  </script>
         	  </div>
         	  </div>
         	  </td>

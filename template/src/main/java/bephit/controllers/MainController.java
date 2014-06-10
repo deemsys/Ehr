@@ -2319,17 +2319,17 @@ public class MainController {
 			model.addAttribute("SignupForm",signupForm);
 			model.addAttribute("Success","true");
 			model.addAttribute("menu","sign");
-			if(username==1)
+			if(username>0)
 			{
-				model.addAttribute("username","exist");
+				model.addAttribute("usernames","exist");
 				System.out.println("username exist");
 				
 			}
 			return "signup";
 		}
-		if(username==1)
+		if(username>0)
 		{
-			model.addAttribute("username","exist");
+			model.addAttribute("usernames","exist");
 			System.out.println("username exist");
 			return "signup";
 		}
@@ -2369,18 +2369,19 @@ public class MainController {
 			model.addAttribute("DoctorsignupForm",doctorsignupForm);
 			model.addAttribute("Success","true");
 			model.addAttribute("menu","sign");
-			if(username==1)
+			if(username>0)
 			{
-				model.addAttribute("username","exist");
+				model.addAttribute("usernames","exists");
 				System.out.println("username exist");
-				
+				System.out.println(username);				
 			}
 			return "doctorsignup";
 		}
 		if(username>0)
 		{
-			model.addAttribute("username","exist");
+			model.addAttribute("usernames","exists");
 			System.out.println("username exist123455");
+			System.out.println(username);
 			return "doctorsignup";
 			
 		}

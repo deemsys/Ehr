@@ -1015,6 +1015,16 @@ $("#bodyfront").offset({left:108,top:330})
        
       }
     });
+     $( "#symptomimage" ).droppable({
+         
+         drop: function( event, ui ) {
+       	
+       	  
+         var $check=document.getElementById("burntop4").value;
+        var $check1=document.getElementById("burntop4").value;           	   
+          
+         }
+       });
     $( "#bodyback" ).droppable({
      
       drop: function( event, ui ) {       
@@ -1193,7 +1203,7 @@ w=0;
     <img   alt="" src="resources/images/bodyback.png"> </td></tr> </table> </div>
  
  <br><br>
- <table><tr><td width="100"><b>Aches:</b></td><td>
+ <table id="symptomimage"><tr><td width="100"><b>Aches:</b></td><td>
 <div id="draggable" >
 <img id="1" class="ui-widget-content" src="${symptomdetails.achepath}" width="10px" height="10px" > 
 <input type="hidden" name="achepath" value="resources/images/aches.jpg">

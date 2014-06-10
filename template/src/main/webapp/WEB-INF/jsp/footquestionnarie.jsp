@@ -194,6 +194,9 @@ document.getElementById("security").value=phone;
            $( "#datepicker" ).datepicker();
          });
  
+ $(function() {
+     $( "#datepicker1" ).datepicker();
+   });
 </script>
    
      
@@ -452,7 +455,7 @@ document.getElementById("securityerror").innerHTML=" ";
 	    </br>
 	    </br>
 	       </p>
-	    Your Birth Date  <input type="date"  name="birthdate">
+	    Your Birth Date  <input type="text"  name="birthdate" id="datepicker1">
 	    <br><br>
 	    <table>
 	    <td>Your Social Security Number </td><td><input type="text" name="security" id="security" maxlength="11"></td><td><span id="securityerror" style="color: red;font-style:italic;"> <div id="number"></span></td></div></table>
@@ -641,7 +644,7 @@ document.getElementById("securityerror").innerHTML=" ";
 	    </br>
 	    </br>
 	       </p>
-	    Your Birth Date  <input type="text"  name="birthdate"  class="input_txtbx1" value="${fquestionnarie.birthdate }">
+	    Your Birth Date  <input type="text" id="datepicker1" name="birthdate"  class="input_txtbx1" value="${fquestionnarie.birthdate }">
 	    <br><br>
 	    <table>
 	  <tr><td> Your Social Security Number</td> <td> <input type="text" name="security" id="security"  class="input_txtbx1" value="${fquestionnarie.security}" maxlength="11"></td><td><span class="err"><form:errors path="Footquestionnarie.security"></form:errors></span> <div id="number"></span></td></div></tr></table>

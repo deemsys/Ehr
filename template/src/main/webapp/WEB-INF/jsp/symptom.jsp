@@ -1183,8 +1183,18 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
     	  
     	   /* drop: function( event, ui ) {
     	
-    } */
-    
+    } */    
+   
+    $( "#symptomimage" ).droppable({
+        
+        drop: function( event, ui ) {
+      	
+      	  
+        var $check=document.getElementById("burntop4").value;
+       var $check1=document.getElementById("burntop4").value;           	   
+         
+        }
+      });
     $( "#snaptarget" ).droppable({
      
       drop: function( event, ui ) {
@@ -1432,7 +1442,7 @@ document.getElementById("datepickererror").innerHTML=" ";
  </td><td align="left">
     <img   alt="" src="resources/images/bodyback.png"> </td></tr> </table> </div>
  <br><br>
- <table border="0"><tr>
+ <table border="0" id="symptomimage"><tr>
  <td width="100">
  <b>Aches:</b></td>
  <td >

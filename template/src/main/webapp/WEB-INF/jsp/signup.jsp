@@ -48,13 +48,13 @@
 				  <tr class="row1">
 	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Password</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="password" class="input_txtbx1" id="inp_id" name="password" /><br><span class="err"><form:errors path="Signup.password"></form:errors></span>
+				  <input type="password" class="input_txtbx1" id="password" name="password" /><br><span class="err"><form:errors path="Signup.password"></form:errors></span>
 				  </td>
 				  </tr>
 				   <tr class="row1">
 	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Confirm Password</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="password" class="input_txtbx1" id="inp_id" name="confirm" /><br><span class="err"><form:errors path="Signup.confirm"></form:errors></span>
+				  <input type="password" class="input_txtbx1" id="confirm" name="confirm" /><br><span class="err"><form:errors path="Signup.confirm"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
@@ -70,19 +70,19 @@
 	            <tr class="row1">
 	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Username</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="username" value="${signup.username}"/></br><span class="err"><form:errors path="Signup.username"></form:errors><font color="Red" size="+1"><c:if test="${username=='exist'}"><c:out value="Username Already Exists"></c:out></c:if></font></span>
+				  <input type="text" class="input_txtbx1" id="inp_id" name="username" value="${signup.username}"/></br><span class="err"><form:errors path="Signup.username"></form:errors><font color="Red" size="+1"><c:if test="${usernames=='exist'}"><c:out value="Username Already Exists"></c:out></c:if></font></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
 	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Password</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="password" class="input_txtbx1" id="inp_id" name="password" value="${signup.password}"/></br><span class="err"><form:errors path="Signup.password"></form:errors></span>
+				  <input type="password" class="input_txtbx1" id="password" name="password" value="${signup.password}"/></br><span class="err"><form:errors path="Signup.password"></form:errors></span>
 				  </td>
 				  </tr>
 				   <tr class="row1">
 	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Confirm Password</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="password" class="input_txtbx1" id="inp_id" name="confirm" value="${signup.confirm}"/></br><span class="err"><form:errors path="Signup.confirm"></form:errors></span>
+				  <input type="password" class="input_txtbx1" id="confirm" name="confirm" value="${signup.confirm}"/></br><span class="err"><form:errors path="Signup.confirm"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
@@ -95,9 +95,20 @@
 				  </c:otherwise>
 				  </c:choose>
 				  <br>
+				   <script>
+        	  function checkvalidation()
+        	  {
+        		  if(document.getElementById("password").value!=document.getElementById("confirm").value)
+        			  {
+        			  alert("Password Must Be Same");
+        			  return false;
+        			  }
+        	  }
+        	  
+        	  </script>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
-              <td valign="top" align="center"><input type="submit" class="submit_btn" value="Submit"></td>
+              <td valign="top" align="center"><input type="submit" class="submit_btn" value="Submit" onclick="return checkvalidation('this')"></td>
               <td valign="top" align="center"><input type="button" class="submit_btn1" value="Back to Login" onclick="window.location.href='login'"></td>
         	  </tr>
         	  </table>
