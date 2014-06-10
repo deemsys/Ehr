@@ -288,6 +288,18 @@ function checkSubmit()
      document.getElementById('cancelid').style.visibility = 'visible';
   }
   </script>
+  <script type="text/javascript">
+       function validate(event) {
+          
+           var regex = new RegExp("^[0-9]+$");
+           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+           if (!regex.test(key)) {
+             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
+               event.preventDefault();
+               return false;
+           }
+       }       
+    </script>
 </head>
  <body>
 <div id="right_content">
@@ -344,11 +356,11 @@ function checkSubmit()
               </tr>
               <tr class="row1">
               <td><span class="err">*</span>Policy #</td>
-              <td> <input type="text" class="input_txtbx1" name="policy" id="policy" /><br><span  id="policyerr" style="color: red;font-style:italic;"></span><form:errors path="Insuranceinformation.policy"></form:errors>
+              <td> <input type="text" class="input_txtbx1" name="policy" id="policy" onkeypress="return validate(event)";/><br><span  id="policyerr" style="color: red;font-style:italic;"></span><form:errors path="Insuranceinformation.policy"></form:errors>
               <br><span class="err" id="policyerror"></span>
               </td>
               <td><span class="err">*</span>Group#</td>
-              <td><input type="text" class="input_txtbx1" name="infono" id="groupno1" /><br><span id="groupno1err" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.infono"></form:errors>
+              <td><input type="text" class="input_txtbx1" name="infono" id="groupno1" onkeypress="return validate(event)";/><br><span id="groupno1err" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.infono"></form:errors>
               <br><span class="err" id="groupno1error"></span>
               </td>
               </tr>

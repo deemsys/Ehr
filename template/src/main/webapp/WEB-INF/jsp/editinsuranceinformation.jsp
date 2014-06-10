@@ -111,7 +111,7 @@ $("#groupno").keyup(function() {
 	}
 }
   </script>
-  <script>
+ <script>
 function checkSubmit()
 {                        
 
@@ -151,7 +151,13 @@ function checkSubmit()
 	
 	return false;
     }
-    
+	var phone = /^[0-9-()]{13}$/;
+	 if(document.getElementById("phone").value.match(phone)==null)
+   {
+   	document.getElementById("phoneerr").innerHTML="Enter correct Phone number";
+   	
+       return false;
+   }
     document.getElementById("policyerr").innerHTML="";
 	if(document.getElementById("policy").value=="")
 	{
@@ -181,6 +187,13 @@ function checkSubmit()
 	
 	return false;
     }
+	var phone = /^[0-9-()]{13}$/;
+	 if(document.getElementById("supphone").value.match(phone)==null)
+  {
+  	document.getElementById("supphoneerr").innerHTML="Enter correct Phone number";
+  	
+      return false;
+  }
      document.getElementById("patient_signerr").innerHTML="";
 	if(document.getElementById("patient_sign").value=="")
 	{
@@ -212,6 +225,41 @@ function checkSubmit()
 	
 }
 </script>
+<script type="text/javascript">
+       function validate(event) {
+          
+           var regex = new RegExp("^[0-9]+$");
+           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+           if (!regex.test(key)) {
+             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
+               event.preventDefault();
+               return false;
+           }
+       }       
+    </script>
+    <script>
+i=0;
+$(document).ready(function(){
+  $("#supphone").keypress(function(){
+var phone=document.getElementById("supphone").value;
+phone = phone.replace(/(\d{3})(\d{3})(\d+)/, '($1)$2-$3');
+document.getElementById("supphone").value=phone;
+ });  
+
+});
+</script>
+ <script>
+i=0;
+$(document).ready(function(){
+  $("#phone").keypress(function(){
+var phone=document.getElementById("phone").value;
+phone = phone.replace(/(\d{3})(\d{3})(\d+)/, '($1)$2-$3');
+document.getElementById("phone").value=phone;
+ });  
+
+});
+</script>
+    
 </head>
  <body>
 <div id="right_content">
@@ -259,13 +307,13 @@ function checkSubmit()
               <td><span class="err">*</span>Insurance Company</td>
               <td> <input type="text" class="input_txtbx1" name="insurance_company" id="insurance_company" value="${Insuranceinformation.insurance_company}" /><br><span class="companyerr"><form:errors path="Insuranceinformation.insurance_company"></form:errors></td>
               <td>Phone#</td>
-              <td><input type="text" class="input_txtbx1" name="phone" id="phone" value="${Insuranceinformation.phone}" /><br><span class="phoneerr"><form:errors path="Insuranceinformation.phone"></form:errors></span>
+              <td><input type="text" class="input_txtbx1" name="phone" id="phone"  maxlength="13" value="${Insuranceinformation.phone}" /><br><span class="phoneerr"><form:errors path="Insuranceinformation.phone"></form:errors></span>
               <br><span class="err" id="phoneerror"></span>
               </td>
               </tr>
               <tr class="row1">
               <td><span class="err">*</span>Policy#</td>
-              <td> <input type="text" class="input_txtbx1" name="policy" id="policy" value="${Insuranceinformation.policy}"/><br><span class="policyerr"  style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.policy"></form:errors></span>
+              <td> <input type="text" class="input_txtbx1" name="policy" id="policy" onkeypress="return validate(event)"; value="${Insuranceinformation.policy}"/><br><span class="policyerr"  style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.policy"></form:errors></span>
               <br><span class="err" id="policyerror"></span>
               
               </td>
@@ -278,7 +326,7 @@ function checkSubmit()
               <td><span class="err">*</span>Supplemental Insurance Company</td>
               <td> <input type="text" class="input_txtbx1" name="supplemental_company" id="supplemental_company" value="${Insuranceinformation.supplemental_company}"/><br><span class="supplemental_companyerr"  style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.supplemental_company"></form:errors></td>
               <td><span class="err">*</span>Phone#</td>
-              <td> <input type="text" class="input_txtbx1" name="sup_phone" id="supphone" value="${Insuranceinformation.sup_phone}"/><br><span class="supphoneerr"  style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.sup_phone"></form:errors></span>
+              <td> <input type="text" class="input_txtbx1" name="sup_phone" id="supphone"  maxlength="13"value="${Insuranceinformation.sup_phone}"/><br><span class="supphoneerr"  style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.sup_phone"></form:errors></span>
               <br>
               <span class="err" id="supphoneerror"></span>
               </td>
