@@ -174,38 +174,38 @@ $(function() {
  <td></td><td></td>
  </tr>
  <tr class="row1">
- <td width="250"><B style="font-size:14px">FUNCTIONAL RANGE OF MOTION</B> </td><td width="150"><input type="radio" name="functionalrangeofmotion" value="Unremarkable">Unremarkable</td> 
- <td width="280"><B style="font-size:14px">SUBLUXATION /DYSFUNCTION  </B></td><td><input type="radio" name="subluxation" value="Unremarkable">Unremarkable</td> 
- <td width="180"><B style="font-size:14px">ORTHOTPEDIC TESTING </B></td><td width="150"><input type="radio" name="orthopedic" value="Unremarkable">Unremarkable</td>
+ <td width="250" style="width: 126px; "><B style="font-size:14px">FUNCTIONAL RANGE OF MOTION</B> </td><td width="150" style="width: 121px; "><input type="radio" name="functionalrangeofmotion" value="Unremarkable">Unremarkable</td> 
+ <td width="280" style="width: 395px; "><B style="font-size:14px">SUBLUXATION /DYSFUNCTION  </B></td><td style="width: 82px; "><input type="radio" name="subluxation" value="Unremarkable">Unremarkable</td> 
+ <td width="180" style="width: 106px; "><B style="font-size:14px">ORTHOTPEDIC TESTING </B></td><td width="150" style="width: 464px; "><input type="radio" name="orthopedic" value="Unremarkable">Unremarkable</td>
  </tr>
   <tr class="row1">
- <td>  </td><td> <b>Normal</b> &nbsp;&nbsp;&nbsp;<b> Actual</b></td> 
- <td></td><td width="150"> </td> 
- <td>  </td><td>   <b>Left</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> Right</b></td>
+ <td style="width: 145px; ">  </td><td style="width: 116px; "> <b>Normal</b> &nbsp;&nbsp;&nbsp;<b> Actual</b></td> 
+ <td style="width: 349px; "></td><td width="150" style="width: 67px; "> </td> 
+ <td style="width: 130px; ">  </td><td style="width: 270px; ">   <b>Left</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> Right</b></td>
  </tr>
   <tr class="row1">
- <td><b>Flexion:</b> </td><td> (50)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="flexion" size="7" onkeypress="return isNumberKey(event);"></td> 
- <td width="100">C0-1:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="c01" size="7" onkeypress="return isNumberKey(event);"> &nbsp;&nbsp;C1-2:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="c12" size="7" onkeypress="return isNumberKey(event);"></td><td width="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C2-3: &nbsp;&nbsp;<input type="text" name="c23" size="7" onkeypress="return isNumberKey(event);"> </td> 
+ <td style="width: 98px; "><b>Flexion:</b> </td><td style="width: 129px; "> (50)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="flexion" size="7" onkeypress="return isNumberKey(event);"></td> 
+ <td width="100" style="width: 467px; ">C0-1: <input type="text" name="c01" size="7" onkeypress="return isNumberKey(event);" style="width: 64px; "> C1-2:<input type="text" name="c12" size="7" onkeypress="return isNumberKey(event);" style="width: 64px; "></td><td width="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C2-3: &nbsp;&nbsp;<input type="text" name="c23" size="7" onkeypress="return isNumberKey(event);"> </td> 
  <td><b>Hautant's:	</b> </td><td><input type="text" name="hautantl" size="5"> <input type="text" name="hautantr" size="5"></td>
  </tr>
   <tr class="row1">
  <td><b>Extension:	</b> </td><td> (60)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="extension" size="7" onkeypress="return isNumberKey(event);"></td> 
- <td width="100">C3-4:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="c34" size="7" onkeypress="return isNumberKey(event);"> &nbsp;&nbsp;C4-5:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="c45" size="7" onkeypress="return isNumberKey(event);"></td><td width="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C5-6: &nbsp;&nbsp;<input type="text" name="c56" size="7" onkeypress="return isNumberKey(event);"> </td> 
+ <td width="100">C3-4:<input type="text" name="c34" size="7" onkeypress="return isNumberKey(event);"  style="width: 64px; "> C4-5:<input type="text" name="c45" size="7" onkeypress="return isNumberKey(event);" style="width: 64px; "></td><td width="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C5-6: &nbsp;&nbsp;<input type="text" name="c56" size="7" onkeypress="return isNumberKey(event);"> </td> 
  <td><b>Foraminal Comp:	</b> </td><td><input type="text" name="foraminall" size="5"> <input type="text" name="foraminalr" size="5"></td>
  </tr>
   <tr class="row1">
- <td><b>Lateral Flexion:</b> </td><td> (45)&nbsp;&nbsp;&nbsp;L <input type="text" name="lflexion" size="7" onkeypress="return isNumberKey(event);"><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R <input type="text" name="rflexion" size="7" onkeypress="return isNumberKey(event);"></td> 
- <td width="100">C6-7:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="c67" size="7" onkeypress="return isNumberKey(event);"> &nbsp;&nbsp;C7-T1:  &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="c7t1" size="7" onkeypress="return isNumberKey(event);"></td><td width="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T1-2: &nbsp;&nbsp;<input type="text" name="t12" size="7" onkeypress="return isNumberKey(event);"> </td> 
+ <td><b>Lateral Flexion:</b> </td><td> (45)&nbsp;&nbsp;L&nbsp; <input type="text" name="lflexion" size="7" onkeypress="return isNumberKey(event);"><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R&nbsp; <input type="text" name="rflexion" size="7" onkeypress="return isNumberKey(event);"></td> 
+ <td width="100">C6-7:<input type="text" name="c67" size="7" onkeypress="return isNumberKey(event);"  style="width: 64px; ">C7-T1:<input type="text" name="c7t1" size="7" onkeypress="return isNumberKey(event);" style="width: 64px; "></td><td width="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T1-2: &nbsp;&nbsp;<input type="text" name="t12" size="7" onkeypress="return isNumberKey(event);"> </td> 
  <td><b>Soto Hall:	</b> </td><td><input type="text" name="sotohalll" size="5"> <input type="text" name="sotohallr" size="5"></td>
  </tr>
   <tr class="row1">
-  <td><b>Rotation:</b> </td><td> (80)&nbsp;&nbsp;&nbsp;L <input type="text" name="lrotation" size="7" onkeypress="return isNumberKey(event);"><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R <input type="text" name="rrotation" size="7" onkeypress="return isNumberKey(event);"></td> 
- <td width="100">T2-3:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t23" size="7" onkeypress="return isNumberKey(event);"> &nbsp;&nbsp;T3-4:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t34" size="7" onkeypress="return isNumberKey(event);"></td><td width="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T4-5: &nbsp;&nbsp;<input type="text" name="t45" size="7" onkeypress="return isNumberKey(event);"> </td> 
+  <td><b>Rotation:</b> </td><td> (80)&nbsp;&nbsp;L&nbsp; <input type="text" name="lrotation" size="7" onkeypress="return isNumberKey(event);"><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R&nbsp; <input type="text" name="rrotation" size="7" onkeypress="return isNumberKey(event);"></td> 
+ <td width="100">T2-3:<input type="text" name="t23" size="7" onkeypress="return isNumberKey(event);" style="width: 64px; ">&nbsp;T3-4:<input type="text" name="t34" size="7" onkeypress="return isNumberKey(event);" style="width: 64px; "></td><td width="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T4-5: &nbsp;&nbsp;<input type="text" name="t45" size="7" onkeypress="return isNumberKey(event);"> </td> 
  <td><b>Adson's:</b> </td><td><input type="text" name="adsonsl" size="5"> <input type="text" name="adsonsr" size="5"></td>
  </tr>
   <tr class="row1">
  <td></td><td> </td> 
-<td width="100">T5-6:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t56" size="7" onkeypress="return isNumberKey(event);"> &nbsp;&nbsp;T6-7:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t67" size="7" onkeypress="return isNumberKey(event);"></td><td width="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T7-8: &nbsp;&nbsp;<input type="text" name="t78" size="7" onkeypress="return isNumberKey(event);"> </td> 
+<td width="100">T5-6: <input type="text" name="t56" size="7" onkeypress="return isNumberKey(event);" style="width: 64px; ">&nbsp;T6-7:<input type="text" name="t67" size="7" onkeypress="return isNumberKey(event);" style="width: 64px; "></td><td width="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T7-8: &nbsp;&nbsp;<input type="text" name="t78" size="7" onkeypress="return isNumberKey(event);"> </td> 
  <td><b>ULTT:	</b> </td><td><input type="text" name="ulttl" size="5"> <input type="text" name="ulttr" size="5"></td>
  </tr>
   </table>
