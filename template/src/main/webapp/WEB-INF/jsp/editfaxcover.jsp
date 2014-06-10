@@ -66,12 +66,12 @@
 	
 	return false;
 	}
-	document.getElementById("noserror").innerHTML="";
+	/* document.getElementById("noserror").innerHTML="";
 	if(isNaN(document.getElementById("nos").value))
 {
 document.getElementById("noserror").innerHTML="invalid characters  enter the numbers only ";
 return false;
-}
+} */
 	/* if(document.getElementById("urgent").checked == true){
 		//alert("urgent is checked");
 		document.getElementById("urgenterror").innerHTML="Please check";
@@ -109,12 +109,12 @@ return false;
 	
 	return false;
 	}
-	document.getElementById("claimnoerror").innerHTML="";
+	/* document.getElementById("claimnoerror").innerHTML="";
 	if(isNaN(document.getElementById("claimno").value))
 {
 document.getElementById("claimnoerror").innerHTML="invalid characters  enter the numbers only ";
 return false;
-}
+} */
 	document.getElementById("datepicker1error").innerHTML="";
 	if(document.getElementById("datepicker1").value=="")
 	{
@@ -127,6 +127,30 @@ return false;
 	}
 
 	</script>
+	<script type="text/javascript">
+       function validate(event) {
+          
+           var regex = new RegExp("^[0-9]+$");
+           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+           if (!regex.test(key)) {
+             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
+               event.preventDefault();
+               return false;
+           }
+       }       
+    </script>
+    <script>
+i=0;
+$(document).ready(function(){
+  $("#faxno").keypress(function(){
+var phone=document.getElementById("faxno").value;
+phone = phone.replace(/(\d{3})(\d{3})(\d+)/, '($1)$2-$3');
+document.getElementById("faxno").value=phone;
+ });  
+
+});
+</script>
+    
 </head>
  <body>
 <div id="right_content">
@@ -181,7 +205,7 @@ return false;
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120">FAX#:</td>
-              <td ><input type="text" class="input_txtbx1" name="faxno" value="${faxcoverdetails.faxno }" id="faxno" /><span class="err" id="faxerror"><form:errors path="Faxcover.faxno"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="faxno"  maxlength=13 value="${faxcoverdetails.faxno }" id="faxno" onkeypress="return validate(event)"; /><span class="err" id="faxerror"><form:errors path="Faxcover.faxno"></form:errors></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -207,7 +231,7 @@ return false;
               <td  width="20%"><span class="err"></span>RE:</td>
               <td ><input type="text" class="input_txtbx1" name="regarding" id="re" style="width: 164px; " value="${faxcoverdetails.regarding }"/><span class="err" id="reerror"><form:errors path="Faxcover.regarding"></form:errors></td>
               <td align="left" style="width: 188px; "><span class="err"></span>Number Of Pages Sent:</td>
-              <td ><input type="text" class="input_txtbx1" name="pages" id="nos" value="${faxcoverdetails.pages }"/><span class="err" id="noserror"><form:errors path="Faxcover.pages"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="pages" id="nos" onkeypress="return validate(event)"; value="${faxcoverdetails.pages }"/><span class="err" id="noserror"><form:errors path="Faxcover.pages"></form:errors></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -215,7 +239,7 @@ return false;
               <td height="25" width="20%"><span class="err">*</span>Message:</td>
               <td ><input type="text" class="input_txtbx1" name="msg" id="msg" style="width: 164px; " value="${faxcoverdetails.msg }"/><span class="err" id="msgerror"><form:errors path="Faxcover.msg"></form:errors></td>
             <td align="left"><span class="err">*</span>Claim No:</td>
-              <td style="width: 188px; " align="right"><input type="text" class="input_txtbx1" name="claimno" id="claimno" value="${faxcoverdetails.claimno }"/><span class="err" id="claimnoerror"><form:errors path="Faxcover.claimno"></form:errors>
+              <td style="width: 188px; " align="right"><input type="text" class="input_txtbx1" name="claimno" id="claimno" onkeypress="return validate(event)"; value="${faxcoverdetails.claimno }"/><span class="err" id="claimnoerror"><form:errors path="Faxcover.claimno"></form:errors>
               </span><span class="err" id="number"></span></td>
               </tr>
               </table>
