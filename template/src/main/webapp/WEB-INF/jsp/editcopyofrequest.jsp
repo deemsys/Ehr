@@ -53,12 +53,12 @@ $(function() {
 	
 	return false;
 	}
-	document.getElementById("claimnumbererror").innerHTML="";
+	/* document.getElementById("claimnumbererror").innerHTML="";
 	if(isNaN(document.getElementById("claimnumber").value))
 {
 document.getElementById("claimnumbererror").innerHTML="Invalid character.please enter numbers only.";
 return false;
-}
+} */
 	
 	document.getElementById("dearerror").innerHTML="";
 	if(document.getElementById("dear").value=="")
@@ -79,6 +79,18 @@ return false;
 	}
 
 	</script>
+	<script type="text/javascript">
+       function validate(event) {
+          
+           var regex = new RegExp("^[0-9.]+$");
+           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+           if (!regex.test(key)) {
+             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
+               event.preventDefault();
+               return false;
+           }
+       }       
+    </script>
 </head>
  
  <body>
@@ -119,7 +131,7 @@ return false;
           </tr>
           <tr height="30">
           <td><span class="err">*</span>Claim Number: </td>
-          <td><input type="text" class="input_txtbx1" name="claimnumber"  size="40" value="${copyofrequest.claimnumber }" id="claimnumber"><span class="err" id="claimnumbererror"  style="color: red;font-style:italic;"><form:errors path="Copyofrequest.claimnumber"></form:errors></span></td>
+          <td><input type="text" class="input_txtbx1" name="claimnumber"  size="40" value="${copyofrequest.claimnumber }" id="claimnumber" onkeypress="return validate(event)";><span class="err" id="claimnumbererror"  style="color: red;font-style:italic;"><form:errors path="Copyofrequest.claimnumber"></form:errors></span></td>
           </tr>
           <tr height="30">
           <td>Today's Date:  </td>
