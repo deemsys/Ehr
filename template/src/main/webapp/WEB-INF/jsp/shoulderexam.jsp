@@ -318,15 +318,15 @@ $(function() {
          <td width="140" valign="top">
          (*  Pain Elicited)	
          </td>   
-         <td width="180" valign="top">Normal </td><td align="center">Actual</br></br>
+         <td width="180" valign="top" style="width: 91px; ">Normal </td><td align="" style="width: 310px; ">Actual</br></br>
           Left&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Right
          </td>
-         <td></td> <td></td><td></td> <td>Left&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Right</td>
+         <td style="width: 83px; "></td> <td></td><td style="width: 127px; "></td> <td style="width: 287px; ">Left&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Right</td>
                
          
          </tr>
          <tr height="10"></tr>
-         <tr><td>Flexion:</td><td>180</td><td><input type="text" size="5" name="flexionleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="flexionright" onkeypress="return isNumberKey(event);"></td><td width="210"></td><td>Empty Can:</td><td width="200"></td><td><input size="5" type="text"  name="emptycanleft">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="5" name="emptycanright"></td></tr>
+         <tr><td style="width: 76px; ">Flexion:</td><td style="width: 46px; ">180</td><td><input type="text" size="5" name="flexionleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="flexionright" onkeypress="return isNumberKey(event);"></td><td width="210" style="width: 102px; "></td><td>Empty Can:</td><td width="200"></td><td><input size="5" type="text"  name="emptycanleft">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="5" name="emptycanright"></td></tr>
          <tr><td>Extension:</td><td>50</td><td><input size="5" type="text" name="extensionleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="extensionright" onkeypress="return isNumberKey(event);"></td><td width="90"></td><td>Impingement Sign:</td><td width="150"></td><td><input type="text"  size="5" name="impingementsignleft">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="5"  name="impingementsignright"></td></tr>
          <tr><td>Abduction:</td><td>180</td><td><input size="5" type="text" name="abductionleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input  size="5" type="text" name="abductionright" onkeypress="return isNumberKey(event);"></td><td width="90"></td><td>Apley's Scratch:</td><td width="150"></td><td><input type="text" size="5"  name="apleysscratchleft">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text"  name="apleysscratchright"></td></tr>
          <tr><td>Adduction:</td><td>50</td><td><input size="5" type="text" name="adductionleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="adductionright" onkeypress="return isNumberKey(event);"></td><td width="90"></td><td>Subacrominal Push:</td><td width="150"></td><td><input type="text" size="5"  name="subacrominalpushleft">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text"  name="subacrominalpushright"></td></tr></tr>
@@ -359,9 +359,9 @@ $(function() {
          <td width="246"><input type="checkbox" id=neurologicalunremarkable name="neurological" value="Neurological Testing Unremarkable">Neurological Testing Unremarkable</td>
          
            </tr></table>
-           </br><table id="neurological" ><tr><td width="120"><b>Level</b></td>  <td width="250">  <b> Sensory	</b></td> <td width="100"><b>Level</b></td>  <td   width="250">  <b> Motor / Strength		</b></td> <td width="100"><b>Level</b></td>  <td   width="250">  <b> Reflexes</b> (Muscle Spindles)	</td>  </tr>
+           </br><table id="neurological" ><tr style="width: 1240px; "><td width="120" style="width: 42px; "><b>Level</b></td>  <td width="250" style="width: 344px; ">  <b> Sensory	</b></td> <td width="100" style="width: 46px; "><b>Level</b></td>  <td   width="250" style="width: 300px; ">  <b> Motor / Strength		</b></td> <td width="100" style="width: 49px; "><b>Level</b></td>  <td   width="250">  <b> Reflexes</b> (Muscle Spindles)	</td>  </tr>
            <tr height="10"></tr>
-          <tr> <td width="30"></td><td>Left&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Right</td>  <td width="30"></td><td>Left&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Right</td>  <td width="30"></td><td>Left&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Right</td> </tr>
+          <tr> <td width="30"></td><td>Left&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Right</td>  <td width="30"></td><td>Left&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Right</td>  <td width="30"></td><td style="width: 282px; ">Left&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Right</td> </tr>
           <tr height="10"></tr>
            
            <tr><td>C5</td><td><input size="5" type="text" name="latdeltoidleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="latdeltoidright" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;(Lat deltoid)</td><td>C5</td><td><input type="text" name="shdleft" size="5" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="shdright" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;(Shd ABD)</td><td>C5</td><td><input type="text" name="bicepsleft" size="5" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="bicepsright" size="5" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;(Biceps)</td></tr>

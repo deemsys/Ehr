@@ -274,13 +274,13 @@ $(function() {
            
            <table>
            <tr>
-           <td width="129">Pronation:</td><td><input type="radio" value="left" name="pronation">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td> <td width="140"><input type="radio" value="right" name="pronation">&nbsp;&nbsp;&nbsp;Right</td>
+           <td width="129" style="width: 95px; ">Pronation:</td><td style="width: 95px; "><input type="radio" value="left" name="pronation">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td> <td width="140" style="width: 97px; "><input type="radio" value="right" name="pronation">&nbsp;&nbsp;&nbsp;Right</td>
                      
-           <td width="130">Supination:</td><td><input type="radio" value="left" name="supination">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td>&nbsp;&nbsp;&nbsp;<td width="110"> <input type="radio" value="right" name="supination">&nbsp;&nbsp;&nbsp;Right</td>
-           <td width="35" style="width: 9px; "></td>
-           <td width="120">Calcaneus Varus:</td><td style="width: 145px; "><input type="radio" value="left" name="calcaneus">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp; <input type="radio" value="right" name="calcaneus">&nbsp;&nbsp;&nbsp;Right</td>
-           <td width="73" style="width: 14px; "></td>
-           <td width="120">Calcaneus Valgus:</td><td><input type="radio" value="left" name="valgus">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp; <input type="radio" value="right" name="valgus">&nbsp;&nbsp;&nbsp;Right</td>
+           <td width="130" style="width: 102px; ">Supination:</td><td style="width: 89px; "><input type="radio" value="left" name="supination">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td>&nbsp;&nbsp;&nbsp;<td width="110" style="width: 89px; "> <input type="radio" value="right" name="supination">&nbsp;&nbsp;&nbsp;Right</td>
+           
+           <td width="120">Calcaneus Varus:</td><td style="width: 181px; "><input type="radio" value="left" name="calcaneus">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp; <input type="radio" value="right" name="calcaneus">&nbsp;&nbsp;&nbsp;Right</td>
+           
+           <td width="120">Calcaneus Valgus:</td><td style="width: 196px; "><input type="radio" value="left" name="valgus">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp; <input type="radio" value="right" name="valgus">&nbsp;&nbsp;&nbsp;Right</td>
            </tr>
            <tr height="10"></tr>
            <tr>
@@ -322,15 +322,15 @@ $(function() {
          <td width="140" valign="top">
          (*  Pain Elicited)	
          </td>   
-         <td width="180" valign="top">Normal </td><td align="center">Actual</br></br>
+         <td width="180" valign="top">Normal </td><td align="center" style="width: 269px; ">Actual</br></br>
           Left&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Right
          </td>
-         <td></td> <td></td><td></td> <td>Left&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Right</td>
+         <td></td> <td></td><td style="width: 133px; height: 58px"></td> <td>Left&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Right</td>
                
          
          </tr>
          <tr height="10"></tr>
-         <tr><td>Plantar Flexion:		</td><td>50</td><td style="width: 213px; "><input type="text" size="5" name="plantarflexionleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="plantarflexionright" onkeypress="return isNumberKey(event);"></td><td width="210"></td><td>Tinel's Tap:	</td><td width="150"></td><td><input size="5" type="text"  name="tinelstapleft">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="5" name="tinelstapright"></td></tr>
+         <tr><td>Plantar Flexion:		</td><td>50</td><td style="width: 304px; "><input type="text" size="5" name="plantarflexionleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="plantarflexionright" onkeypress="return isNumberKey(event);"></td><td width="210" style="width: 88px; "></td><td>Tinel's Tap:	</td><td width="70" style="width: 103px; "></td><td style="width: 232px; "><input size="5" type="text"  name="tinelstapleft">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="5" name="tinelstapright"></td></tr>
          <tr><td>Dorsiflexion:				</td><td>20</td><td><input size="5" type="text" name="dorsiflexionleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="dorsiflexionright" onkeypress="return isNumberKey(event);"></td><td width="90"></td><td>Achilles Tap:</td><td width="150"></td><td><input type="text"  size="5" name="achillestapleft">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="5"  name="achillestapright"></td></tr>
          <tr><td>Inversion:				</td><td>35</td><td><input size="5" type="text" name="inversionleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input  size="5" type="text" name="inversionright" onkeypress="return isNumberKey(event);"></td><td width="90"></td><td>Long / Transv Arch:</td><td width="150"></td><td><input type="text" size="5"  name="longleft">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text"  name="longright"></td></tr>
          <tr><td>Eversion:					</td><td>15</td><td><input size="5" type="text" name="eversionleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="eversionright" onkeypress="return isNumberKey(event);"></td><td width="90"></td><td>Thompson's:	</td><td width="150"></td><td><input type="text" size="5"  name="thompsonsleft">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text"  name="thompsonsright"></td></tr></tr>
@@ -366,7 +366,7 @@ $(function() {
            <tr height="10"></tr>
           <tr> <td width="30"></td><td>Left&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Right</td>  <td width="30"></td><td>Left&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Right</td>  <td width="30"></td><td>Left&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Right</td> </tr>
           <tr height="10"></tr>
-           <tr><td>L1</td><td><input type="text"  size="5" name="inguinalarealeft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="inguinalarearight" onkeypress="return isNumberKey(event);">&nbsp;&nbsp; (Inguinal area)</td><td>L1</td><td><input size="5" type="text" name="iliopsoasfirstleft" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;&nbsp;&nbsp;<input type="text"  size="5" name="iliopsoasfirstright" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp; (Iliopsoas)</td><td></td><td></td></tr>
+           <tr><td style="width: 74px; ">L1</td><td style="width: 375px; "><input type="text"  size="5" name="inguinalarealeft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="inguinalarearight" onkeypress="return isNumberKey(event);">&nbsp;&nbsp; (Inguinal area)</td><td>L1</td><td style="width: 311px; "><input size="5" type="text" name="iliopsoasfirstleft" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;&nbsp;&nbsp;<input type="text"  size="5" name="iliopsoasfirstright" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp; (Iliopsoas)</td><td></td><td style="width: 314px; "></td></tr>
            <tr><td>L2</td><td><input size="5" type="text" name="antleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="antright" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;(Ant/med thigh)</td><td>L2</td><td><input type="text" name="iliopsoas1left" size="5" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="iliopsoas1right" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;(Iliopsoas)</td><td></td><td>&nbsp;(2+/5 is Normal)</td></tr>
            <tr><td>L3</td><td><input type="text" name="kneeleft" size="5" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="kneeright" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;(Medial knee)</td><td>L3</td><td><input type="text" name="kneeextensionleft" size="5" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="kneeextensionright" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;(Knee extension)</td><td></td><td>&nbsp; </td></tr>
            <tr><td>L4</td><td><input type="text" size="5" name="medialleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input  size="5"type="text" name="medialright" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;(Medial leg)</td><td>L4</td><td><input type="text" name="kneeflexionleft" size="5" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="kneeflexionright" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;(Knee flexion)</td><td>L4</td><td><input type="text" name="patellarleft" size="5" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="patellarright" size="5" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;Patellar</td></tr>
