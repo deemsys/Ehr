@@ -124,11 +124,11 @@ $(function() {
 	        document.getElementById('print2').style.visibility = 'hidden';
 	        document.getElementById('print3').style.visibility = 'hidden';
 	        document.getElementById('btnNext').style.visibility = 'hidden';
-	        document.getElementById('btnNext1').style.visibility = 'hidden';
+	        //document.getElementById('btnNext1').style.visibility = 'hidden';
 	        document.getElementById('btnPrevious').style.visibility = 'hidden';
 	        document.getElementById('btnNext2').style.visibility = 'hidden';
-	        document.getElementById('btnPrevious2').style.visibility = 'hidden';
-	        document.getElementById('btnPrevious3').style.visibility = 'hidden';
+	       // document.getElementById('btnPrevious2').style.visibility = 'hidden';
+	        //document.getElementById('btnPrevious3').style.visibility = 'hidden';
 	        document.getElementById('saveid').style.visibility = 'hidden';
 		  
      var html="<html>";
@@ -148,10 +148,10 @@ $(function() {
      document.getElementById('print3').style.visibility = 'visible';
      document.getElementById('btnNext').style.visibility = 'visible';
      document.getElementById('btnPrevious').style.visibility = 'visible';
-     document.getElementById('btnNext1').style.visibility = 'visible';
-     document.getElementById('btnPrevious2').style.visibility = 'visible';
+     //document.getElementById('btnNext1').style.visibility = 'visible';
+    // document.getElementById('btnPrevious2').style.visibility = 'visible';
      document.getElementById('btnNext2').style.visibility = 'visible';
-     document.getElementById('btnPrevious3').style.visibility = 'visible';
+     //document.getElementById('btnPrevious3').style.visibility = 'visible';
      document.getElementById('saveid').style.visibility = 'visible';
   }
   </script>
@@ -537,7 +537,7 @@ $(function() {
 				                  	 <tr>
 				  <td><br><input type="button" id="btnPrevious" class="submit_btn" value="Previous"  />&nbsp;</td>
                   <td>&nbsp;&nbsp;</td>
-                  <td><br><input type="button" id="btnNext1" class="submit_btn" value="Next"/><br></td>
+                  <td><br><input type="button" id="btnNext" class="submit_btn" value="Next"/><br></td>
                   </tr>
 				                  	</table>
 				  </td>
@@ -696,9 +696,9 @@ $(function() {
 				 </table>
 				 	<table align="right">
 				                  	 <tr>
-				  <td><br><input type="button" id="btnPrevious2" class="submit_btn" value="Previous"  />&nbsp;</td>
+				  <td><br><input type="button" id="btnPrevious" class="submit_btn" value="Previous"  />&nbsp;</td>
                   <td>&nbsp;&nbsp;</td>
-                  <td><br><input type="button" id="btnNext2" class="submit_btn" value="Next"/><br></td>
+                  <td><br><input type="button" id="btnNext" class="submit_btn" value="Next"/><br></td>
                   </tr>
 				                  	</table>
 				 </td>
@@ -1555,7 +1555,7 @@ $(function() {
 				</c:choose>
 				  <table align="right">
 				  <br><tr>
-				 <td><input type="button" id="btnPrevious3" class="submit_btn" value="Previous"  /></td>
+				 <td><input type="button" id="btnPrevious" class="submit_btn" value="Previous"  /></td>
 				 <td>&nbsp;&nbsp;</td>
  
                   <td><input type="submit" class="submit_btn" id="saveid" value="Save" onclick ="return checkSubmit('this')";></td>
