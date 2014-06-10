@@ -158,7 +158,7 @@ $(function(){
     					<!-- <h2 class="quck-txt">Patient Details</h2> -->
                         <table cellpadding="0" cellspacing="0" border="0" width="100%">
 	                            <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Physician Signature :</td>
+				                  <td valign="middle" align="left" class="input_txt" style="width: 207px; "><span class="err">*</span>Physician Signature :</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  <input type="text" class="input_txtbx1" id="inp_id" name="sign" /><span class="err"><form:errors path="Physicalexam.sign"></form:errors>
 				                  </td>
