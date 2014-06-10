@@ -596,6 +596,35 @@ document.getElementById("yeserror").innerHTML="Required Field Should not be Empt
 	}
 	
 	</script>
+	<script>
+	
+    function checkLength1(){
+    var fieldVal = document.getElementById('covered').value;
+    //Suppose u want 3 number of character
+    if(fieldVal <=100){
+        return true;
+    }
+    else
+    {
+        var str = document.getElementById('covered').value;
+        str = str.substring(0, str.length - 1);
+    document.getElementById('covered').value = str;
+    }
+     
+    }
+	</script>
+	<script type="text/javascript">
+       function validate(event) {
+          
+           var regex = new RegExp("^[0-9.]+$");
+           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+           if (!regex.test(key)) {
+             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
+               event.preventDefault();
+               return false;
+           }
+       }       
+    </script>
 </head>
  <body>
 <div id="right_content">
@@ -642,7 +671,7 @@ document.getElementById("yeserror").innerHTML="Required Field Should not be Empt
 
                       });
                     </script>          
-    <td><input type="text" class="input_txtbx1" name="fax" id="fax" maxlength=13 /><br><span id="faxerror" style="color: red;font-style:italic;"> </span><form:errors path="Insuranceverification.fax"></form:errors>
+    <td><input type="text" class="input_txtbx1" name="fax" id="fax" onkeypress="return validate(event)"; maxlength=13 /><br><span id="faxerror" style="color: red;font-style:italic;"> </span><form:errors path="Insuranceverification.fax"></form:errors>
               <span class="err" id="faxerror"></span>
               </td>
               </tr>
@@ -726,7 +755,7 @@ document.getElementById("yeserror").innerHTML="Required Field Should not be Empt
               <span class="err" id="deductibleerror"></span>
               </td>
               <td><span class="err">*</span>%covered</td>
-              <td><input type="text" class="input_txtbx1" name="covered" id="covered" /><br><span id="coverederr" style="color: red;font-style:italic;"><form:errors path="Insuranceverification.covered"></form:errors></span>
+              <td><input type="text" class="input_txtbx1" name="covered" id="covered" maxlength="5" onKeyPress="return check(event,value)" onInput="checkLength1()"  /><br><span id="coverederr" style="color: red;font-style:italic;"><form:errors path="Insuranceverification.covered"></form:errors></span>
               <span class="err" id="coverederror"></span>
               </td>
               </tr>
