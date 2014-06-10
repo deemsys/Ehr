@@ -1629,7 +1629,7 @@ function check(id)
 	         document.getElementById('btnNext').style.visibility = 'hidden';
 	         document.getElementById('print1').style.visibility = 'hidden';
 	        // document.getElementsByName('btnNext1').style.visibility = 'hidden';
-	         //document.getElementById('btnPrevious').style.visibility = 'hidden';
+	         document.getElementById('btnPrevious').style.visibility = 'hidden';
 	         document.getElementById('print2').style.visibility = 'hidden';
 	         //document.getElementById('btnPrevious1').style.visibility = 'hidden';
 	       	        document.getElementById('saveid').style.visibility = 'hidden';
@@ -1650,7 +1650,7 @@ function check(id)
       document.getElementById('btnNext').style.visibility = 'visible';
       document.getElementById('print1').style.visibility = 'visible';
       //document.getElementsByName('btnNext1').style.visibility = 'visible';
-      //document.getElementById('btnPrevious').style.visibility = 'visible';
+      document.getElementById('btnPrevious').style.visibility = 'visible';
          document.getElementById('print2').style.visibility = 'visible';
         //document.getElementsByName('btnPrevious1').style.visibility = 'visible';
    
@@ -2208,7 +2208,7 @@ function check(id)
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="policy" name="Policy" /><br><span id="policyerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.policy"></form:errors></span>
 				                  <br>
-				                  <span class="err"></</span>
+				                  
 				                  	</td>
 				                 
 				                </tr>
@@ -2248,7 +2248,7 @@ function check(id)
 				                  	
 				                  	<table align="right">
 				                  	 <tr>
-				  <td><br><input type="button" id="btnPrevious" class="submit_btn" value="Previous" name="btnPrevious" style = "display:none" />&nbsp;</td>
+				  <td><br><input type="button" id="btnPrevious" class="submit_btn" value="Previous" name="btnPrevious"  />&nbsp;</td>
                   <td>&nbsp;&nbsp;</td>
                   <td><br><input type="button" id="btnNext" class="submit_btn" name="btnNext1" value="Next" /><!-- <input type="button" class="submit_btn1"  id="btnNext1" value="Next" onclick="validate('this.value')"/> --><br></td>
                   </tr>
