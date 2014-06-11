@@ -202,7 +202,21 @@ $(function() {
 		
 		return false;
 		}
-		
+
+		var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+			if(document.getElementById("datepicker").value.match(datechk)==null)
+		    {
+		    	document.getElementById("datepickererror").innerHTML="Invalid Date Format. Please correct and submit again";
+		    	
+		        return false;
+		    }
+			var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+			if(document.getElementById("datepicker1").value.match(datechk)==null)
+		    {
+		    	document.getElementById("datepicker1error").innerHTML="Invalid Date Format. Please correct and submit again";
+		    	
+		        return false;
+		    }
 	}
 
 	</script>
@@ -441,7 +455,7 @@ $(function() {
 	    </br>
 	    </br>
 	       </p>
-	    Your Birth Date  <input type="text" id="datepicker1" name="birthdate" class="input_txtbx1">
+	    Your Birth Date  <input type="text" id="datepicker1" name="birthdate" class="input_txtbx1"><span id="datepicker1error"  style="color: red;font-style:italic;"></span>
 	    <br><br>
 	    <table>
 	    <td><span class="err">*</span>Your Social Security Number </td><td><input type="text" class="input_txtbx1" name="security" id="security" maxlength="11"></td><td><span class="err" id="securityerror"> <div id="number"></span></td></div></table>
