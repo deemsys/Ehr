@@ -203,15 +203,41 @@ document.getElementById("security").value=phone;
 		
 		return false;
 		} */
-		document.getElementById("securityerror").innerHTML="";
+		var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+		if(document.getElementById("datepicker").value.match(datechk)==null)
+	    {
+	    	document.getElementById("datepickererror").innerHTML="Invalid Date Format. Please correct and submit again";
+	    	
+	        return false;
+	    }
+		var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+		if(document.getElementById("datepicker1").value.match(datechk)==null)
+	    {
+	    	document.getElementById("datepicker1error").innerHTML="Invalid Date Format. Please correct and submit again";
+	    	
+	        return false;
+	    }
+		/* document.getElementById("securityerror").innerHTML="";
 		if(isNaN(document.getElementById("security").value))
 		{
 		document.getElementById("securityerror").innerHTML="Enter Only Numbers";
 		return false;
-		}
+		} */
 	}
 
 	</script>
+	<script type="text/javascript">
+       function validate(event) {
+          
+           var regex = new RegExp("^[0-9]+$");
+           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+           if (!regex.test(key)) {
+             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
+               event.preventDefault();
+               return false;
+           }
+       }       
+    </script>
 </head>
 <body>
 <br><br>
@@ -383,9 +409,9 @@ document.getElementById("security").value=phone;
 	    </br>
 	    </br>
 	       </p>
-	    Your Birth Date  <input type="text" class="input_txtbx1"  name="birthdate" id="datepicker1" value="${footquestionnariedetails.birthdate }">
+	    Your Birth Date  <input type="text" class="input_txtbx1"  name="birthdate" id="datepicker1" value="${footquestionnariedetails.birthdate }"><span id="datepicker1error" style="color: red;font-style:italic;"></span>
 	    <br><br>
-	    Your Social Security Number <input type="text" name="security" id="security" class="input_txtbx1" maxlength="11" value="${footquestionnariedetails.security }">
+	    Your Social Security Number <input type="text" name="security" id="security" class="input_txtbx1" maxlength="11" onkeypress="return validate(event)"; value="${footquestionnariedetails.security }">
 	    <span id="securityerror" style="color: red;font-style:italic;"></span>
 	    <br>
 	    <br>

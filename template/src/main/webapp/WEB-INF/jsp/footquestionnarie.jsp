@@ -200,7 +200,7 @@ document.getElementById("security").value=phone;
 </script>
    
      
-  <script>
+ <script>
 
 	function checkSubmit()
 	{
@@ -212,29 +212,37 @@ document.getElementById("security").value=phone;
 		
 		return false;
 		}
-document.getElementById("securityerror").innerHTML=" ";
+
+		var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+		if(document.getElementById("datepicker").value.match(datechk)==null)
+	    {
+	    	document.getElementById("datepickererror").innerHTML="Invalid Date Format. Please correct and submit again";
+	    	
+	        return false;
+	    }
+		var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+		if(document.getElementById("datepicker1").value.match(datechk)==null)
+	    {
+	    	document.getElementById("datepicker1error").innerHTML="Invalid Date Format. Please correct and submit again";
+	    	
+	        return false;
+	    }
 		
-		if(document.getElementById("security").value=="")
-		{
-		document.getElementById("securityerror").innerHTML="Required Field Should not be Empty";
-		
-		return false;
-		}
-		/* document.getElementById("securityerror").innerHTML="";
-		if(isNaN(document.getElementById("security").value))
-		{
-		document.getElementById("securityerror").innerHTML="Enter Only Numbers";
-		return false;
-		} */
-		document.getElementById("securityerror").innerHTML="";
-		if(isNaN(document.getElementById("security").value))
-		{
-		document.getElementById("securityerror").innerHTML="Enter Only Numbers";
-		return false;
-		}
 	}
 
 	</script>
+	<script type="text/javascript">
+       function validate(event) {
+          
+           var regex = new RegExp("^[0-9]+$");
+           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+           if (!regex.test(key)) {
+             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
+               event.preventDefault();
+               return false;
+           }
+       }       
+    </script>
 <script>
   function printPage(id)
   {
@@ -455,17 +463,17 @@ document.getElementById("securityerror").innerHTML=" ";
 	    </br>
 	    </br>
 	       </p>
-	    Your Birth Date  <input type="text"  name="birthdate" id="datepicker1">
+	    Your Birth Date  <input type="text"  name="birthdate" id="datepicker1"><span id="datepicker1error" style="color: red;font-style:italic;"></span>
 	    <br><br>
 	    <table>
-	    <td>Your Social Security Number </td><td><input type="text" name="security" id="security" maxlength="11"></td><td><span id="securityerror" style="color: red;font-style:italic;"> <div id="number"></span></td></div></table>
+	    <td>Your Social Security Number </td><td><input type="text" name="security" id="security" maxlength="11" onkeypress="return validate(event)";><span id="securityerror" style="color: red;font-style:italic;"> <div id="number"></span></td></div></table>
 	    <br>
 	    <br>
 	    <br>
 	    <table width="100%" height="150"><tr><Td></Td></tr></table>
 	    <table align="right"><tr><td >
 	    
-	     <input class="submit_btn" type="submit" value="Save" id="saveid"></td>
+	     <input class="submit_btn" type="submit" value="Save" id="saveid" onclick="return checkSubmit('this');"></td>
 	      <td><a href="viewpatient"style="color:white" id="cancelid" class="submit_btn">Cancel</a></td>
 	    </tr></table>
 	    </div>
