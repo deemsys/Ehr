@@ -194,10 +194,10 @@
 		
 		return false;
 		} 
-		/*  document.getElementById("faxerror").innerHTML="";
+		 /* document.getElementById("faxerror").innerHTML="";
 		if(isNaN(document.getElementById("fax").value==""))
 		{
-		document.getElementById("faxerror").innerHTML="Invalid character. Please enter numbers only.";
+		document.getElementById("faxerror").innerHTML="Invalid character. Please enter numbers only";
 		return false;
 		
 		} */
@@ -211,7 +211,7 @@
 		return false;
 		}
 
-         /* document.getElementById("amountdeducterror").innerHTML="";
+       /*   document.getElementById("amountdeducterror").innerHTML="";
 		if(isNaN(document.getElementById("amountdeduct").value))
 		{
 		document.getElementById("amountdeducterror").innerHTML="Invalid character. Please enter numbers only.";
@@ -249,8 +249,8 @@
 		{
 		document.getElementById("max_visiterror").innerHTML="Invalid character. Please enter numbers only.";
 		return false;
-		} */
-		
+		}
+		 */
 		document.getElementById("atwhaterror").innerHTML="";
 		if(document.getElementById("atwhat").value=="")
 		{
@@ -278,8 +278,8 @@
 		{
 		document.getElementById("atwhat1error").innerHTML="Invalid character. Please enter numbers only.";
 		return false;
-		}
-		 */
+		} */
+		
 		document.getElementById("yeserror").innerHTML="";
       if( ( document.getElementById("yes").checked == false ) && ( document.getElementById("no").checked == false ) )
 
@@ -303,12 +303,12 @@ document.getElementById("yeserror").innerHTML="Required Field Should not be Empt
 		
 		return false;
 		}
-		document.getElementById("coverederr").innerHTML="";
+		/* document.getElementById("coverederr").innerHTML="";
 		if(isNaN(document.getElementById("covered").value))
 		{
 		document.getElementById("coverederr").innerHTML="Invalid character. Please enter numbers only.";
 		return false;
-		}
+		} */
 		
 		
 		
@@ -323,7 +323,7 @@ document.getElementById("yeserror").innerHTML="Required Field Should not be Empt
 		}
 		var mail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     
-    if(document.getElementById("mail_claims").value.match(mail)=="null")
+    if(document.getElementById("mail_claims").value.match(mail)==null)
     {
     	document.getElementById("mail_claimserror").innerHTML="Enter ur proper E-Mail";
     	
@@ -443,10 +443,10 @@ document.getElementById("yeserror").innerHTML="Required Field Should not be Empt
               </tr>
               <br>
               <input type="hidden" class="input_txtbx1" id="inp_id" value="${Insuranceverification.form_no}" name="form_no" />
-              <tr><p>Hi, I'm calling to verify chiropractic benefits for<span class="err">*</span> Mr./ Mrs.<input type="text" class="input_txtbx1" name="verify_name" id="verify_name" value="${Insuranceverification.verify_name}"/><span class="err"><form:errors path="Insuranceverification.verify_name"></form:errors></p></tr>
+              <tr><p>Hi, I'm calling to verify chiropractic benefits for<span class="err">*</span> Mr./ Mrs.<input type="text" class="input_txtbx1" name="verify_name" id="verify_name" value="${Insuranceverification.verify_name}"/><span id="verify_nameerror"  style="color: red;font-style:italic;"></span><form:errors path="Insuranceverification.verify_name"></form:errors></p></tr>
               <tr class="row1">
               <td><span class="err">*</span>Spoke with</td>
-              <td><input type="text" class="input_txtbx1" name="spoke_with" id="spokewith" value="${Insuranceverification.spoke_with}" /><span id="spokewitherror"   style="color: red;font-style:italic;"></span><form:errors path="Insuranceverification.spoke_with"></form:errors></td>
+              <td><input type="text" class="input_txtbx1" name="spoke_with" id="spoke_with" value="${Insuranceverification.spoke_with}" /><span id="spoke_witherror"   style="color: red;font-style:italic;"></span><form:errors path="Insuranceverification.spoke_with"></form:errors></td>
               <td><span class="err">*</span>Date</td>
               <td><input type="text" class="input_txtbx1" name="date" id="datepicker" value="${Insuranceverification.date}"/><span id="datepickererror"  style="color: red;font-style:italic;" > </span><form:errors path="Insuranceverification.date"></form:errors></td>
               <td><span class="err">*</span>Fax#</td>
@@ -498,7 +498,7 @@ document.getElementById("fax").value=phone;
 				                  	<input type="radio" name="is_chiropractic" value="No" class="input_txt"  <c:if test="${Insuranceverification.is_chiropractic=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;</td>
               <td><span class="err">*</span>At what%?</td>
               <td><input type="text" class="input_txtbx1" name="at_what" id="atwhat" value="${Insuranceverification.at_what}" onKeyPress="return check(event,value)" onInput="checkLength()" maxlength="5"/><span id="atwhaterror"  style="color: red;font-style:italic;"></span><form:errors path="Insuranceverification.at_what"></form:errors>
-              <span class="err" id="atwhaterror"></span>
+             
               </td>
              <td></td>
              <td></td>
@@ -513,7 +513,7 @@ document.getElementById("fax").value=phone;
               </td>
               <td><span class="err">*</span>Subject to deductible</td>
               <td><input type="radio" name="subject_deduct" id="yes" value="Yes" <c:if test="${Insuranceverification.subject_deduct=='Yes'}"><c:out value="checked=checked"/></c:if> />Yes&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="subject_deduct" value="No" id="no" <c:if test="${Insuranceverification.subject_deduct=='No'}"><c:out value="checked=checked"/></c:if> />No
-<%-- <input type="text" class="input_txtbx1" name="subject_deduct" id="subjectdeduct" value="${Insuranceverification.subject_deduct}"/> --%><span class="err"><form:errors path="Insuranceverification.subject_deduct"></form:errors>
+<%-- <input type="text" class="input_txtbx1" name="subject_deduct" id="subjectdeduct" value="${Insuranceverification.subject_deduct}"/> --%><span id="yeserror"  style="color: red;font-style:italic;"  > </span><form:errors path="Insuranceverification.subject_deduct"></form:errors>
               <span class="err" id="subjectdeducterror"></span>
               </td>
               </tr>
@@ -586,7 +586,7 @@ document.getElementById("fax").value=phone;
              <table>
         <tr>
      	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> 
-        <td><br><input type="submit" class="submit_btn" value="Update"></td>
+        <td><br><input type="submit" class="submit_btn" value="Update" onclick="return checkSubmit('this');"></td>
         <td>&nbsp;</td><td><br><a href="deleteinsuranceverification?form_no=${Insuranceverification.form_no}" class="submit_btn" style="color:white" onclick="return confirmation()">Delete</a></td><td>&nbsp;</td>
         <td><br><a href="viewallpatientdetails" class="submit_btn" style="color:white">Cancel</a></td>
         </tr>
