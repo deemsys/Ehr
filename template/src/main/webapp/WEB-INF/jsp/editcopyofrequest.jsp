@@ -45,6 +45,13 @@ $(function() {
 		
 		return false;
 		}
+		 var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+	if(document.getElementById("datepicker").value.match(datechk)==null)
+    {
+    	document.getElementById("datepickererror").innerHTML="Invalid Date Format. Please correct and submit again";
+    	
+        return false;
+    }	
 	
 	document.getElementById("claimnumbererror").innerHTML="";
 	if(document.getElementById("claimnumber").value=="")
@@ -75,7 +82,13 @@ return false;
 	return false;
 	}
 	
-	
+	 var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+	if(document.getElementById("datepicker1").value.match(datechk)==null)
+    {
+    	document.getElementById("datepicker1error").innerHTML="Invalid Date Format. Please correct and submit again";
+    	
+        return false;
+    }	
 	}
 
 	</script>
@@ -127,15 +140,16 @@ return false;
           </tr>
           <tr height="30">
           <td><span class="err" id="datepickererror"  style="color: red;font-style:italic;">*</span>Date of Accident: </td>
-          <td><input type="text"  class="input_txtbx1" name="dateofaccident" id="datepicker" size="40" value="${copyofrequest.dateofaccident}"></td>
+          <td><input type="text"  class="input_txtbx1" name="dateofaccident" id="datepicker" size="40" value="${copyofrequest.dateofaccident}"><span class="err" id="datepickererror"></span></td>
           </tr>
+          <br>
           <tr height="30">
           <td><span class="err">*</span>Claim Number: </td>
           <td><input type="text" class="input_txtbx1" name="claimnumber"  size="40" value="${copyofrequest.claimnumber }" id="claimnumber" onkeypress="return validate(event)";><span class="err" id="claimnumbererror"  style="color: red;font-style:italic;"><form:errors path="Copyofrequest.claimnumber"></form:errors></span></td>
           </tr>
           <tr height="30">
           <td>Today's Date:  </td>
-          <td><input type="text" class="input_txtbx1" name="todaydate" id="datepicker1" size="40" value="${copyofrequest.todaydate }"></td>
+          <td><input type="text" class="input_txtbx1" name="todaydate" id="datepicker1" size="40" value="${copyofrequest.todaydate }"><span class="err" id="datepicker1error"></span></td>
           </tr>
           </table>
           <table width="85">

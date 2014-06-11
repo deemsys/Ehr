@@ -51,7 +51,14 @@
 	
 	return false;
 	}
-	
+	 
+	 var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+	if(document.getElementById("datepicker").value.match(datechk)==null)
+    {
+    	document.getElementById("datepickererror").innerHTML="Invalid Date Format. Please correct and submit again";
+    	
+        return false;
+    }	
 	
 	}
 
@@ -381,7 +388,7 @@ Canton, Ohio 44708
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="50%"><span class="err"></span>Date of Accident: </td>
-              <td ><input type="text" class="input_txtbx1" name="dateofaccident" id="datepicker" /><span class="err"><form:errors path="Perrychiropractic.dateofaccident"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="dateofaccident" id="datepicker" /><span class="err" id="datepickererror"><form:errors path="Perrychiropractic.dateofaccident"></form:errors></td>
               </tr>
               </table>
               

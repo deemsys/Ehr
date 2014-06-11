@@ -60,8 +60,21 @@
 	
 	return false;
 	}
-	
-	
+	 var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+	if(document.getElementById("datepicker2").value.match(datechk)==null)
+    {
+    	document.getElementById("datepicker2error").innerHTML="Invalid Date Format. Please correct and submit again";
+    	
+        return false;
+    }	
+		
+	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+	if(document.getElementById("datepicker1").value.match(datechk)==null)
+    {
+    	document.getElementById("datepicker1error").innerHTML="Invalid Date Format. Please correct and submit again";
+    	
+        return false;
+    }	
 	}
 
 	</script>
@@ -330,7 +343,7 @@ In Regards to :
               <td width="50%"><span class="err"></span>Date of Injury:
 
               </td>
-              <td width="50%"><input type="text" class="input_txtbx1" id="datepicker1" name="injury"/><span class="err"><form:errors path="Updateletter.injury"></form:errors></span></td>
+              <td width="50%"><input type="text" class="input_txtbx1" id="datepicker1" name="injury"/><span class="err" id="datepicker1error"><form:errors path="Updateletter.injury"></form:errors></span></td>
               </tr>
               </table>
               <br>

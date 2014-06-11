@@ -17,7 +17,7 @@ $(function() {
     $( "#datepicker" ).datepicker();
   });
 $(function() {
-    $( "#datepicker1" ).datepicker();
+    $( "#datepicker2" ).datepicker();
   });
 </script>
  <script>
@@ -56,8 +56,21 @@ $(function() {
 	
 	return false;
 	}
-	
-	
+	 var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+	if(document.getElementById("datepicker2").value.match(datechk)==null)
+    {
+    	document.getElementById("datepicker2error").innerHTML="Invalid Date Format. Please correct and submit again";
+    	
+        return false;
+    }	
+		
+	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+	if(document.getElementById("datepicker1").value.match(datechk)==null)
+    {
+    	document.getElementById("datepicker1error").innerHTML="Invalid Date Format. Please correct and submit again";
+    	
+        return false;
+    }	
 	}
 
 	</script>
@@ -121,7 +134,7 @@ In Regards to :
               <td width="50%"><span class="err"></span>Date of Injury:
 
               </td>
-              <td width="50%"><input type="text" class="input_txtbx1" name="injury" id="datepicker" value="${updateletterdetails.injury}"></td>
+              <td width="50%"><input type="text" class="input_txtbx1" name="injury" id="datepicker1" value="${updateletterdetails.injury}"><span class="err" id="datepicker1error"></span></td>
               </tr>
               </table>
               <br>
@@ -129,7 +142,7 @@ In Regards to :
               <tr>
               <td width="50%"><span class="err" id="datepicker2error"  style="color: red;font-style:italic;">*</span>Todays date:    
               </td>
-              <td width="50%"><input type="text" class="input_txtbx1" name="todaydate" id="datepicker2" value="${updateletterdetails.todaydate}"/></td>
+              <td width="50%"><input type="text" class="input_txtbx1" name="todaydate" id="datepicker2" value="${updateletterdetails.todaydate}"/><span class="err" id="datepicker2error"></span></td>
               </tr>
               </table>
               <br>
