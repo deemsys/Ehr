@@ -88,7 +88,13 @@
 	return false;
 	}
 	
-	
+	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+	if(document.getElementById("datepicker").value.match(datechk)==null)
+    {
+    	document.getElementById("datepickererror").innerHTML="Invalid Date Format. Please correct and submit again";
+    	
+        return false;
+    }
 	document.getElementById("enrolleeerror").innerHTML="";
 	if(document.getElementById("enrollee").value=="")
 	{
@@ -149,6 +155,8 @@ var mail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 	}
 
 	</script>
+	
+	
 	<script>
   function printPage(id)
   {
@@ -215,7 +223,7 @@ var mail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
         <td ><span class="err">*</span><input type="text" class="input_txtbx1" name="pat_name" value="${name}" id="pat_name" placeholder="Patient's Name" style="width: 215px; "/> <span id="pat_nameerror" style="color: red;font-style:italic;" ><form:errors path="Insuranceplan.pat_name"></form:errors></span></td>
         </tr>
         <tr class="row1">
-        <td ><span class="err">*</span><input type="text" class="input_txtbx1" name="accident_date" id="datepicker" placeholder="Date of Accident" style="width: 213px; "/> <span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.accident_date"></form:errors> </span></td>
+        <td ><span class="err">*</span><input type="text" class="input_txtbx1" name="accident_date"  id="datepicker" placeholder="Date of Accident" style="width: 213px; "/> <span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.accident_date"></form:errors> </span></td>
         </tr>
         <tr class="row1">
         <td ><span class="err">*</span><input type="text" class="input_txtbx1" name="enrollee" id="enrollee" placeholder="Subscriber/Enrollee No" style="width: 214px; "/> <span id="enrolleeerror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.enrollee"></form:errors> </span>
