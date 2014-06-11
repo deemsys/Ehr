@@ -115,6 +115,102 @@ $(function() {
 		
 		}
 </script> -->
+
+<script>
+  function checksub()
+  {
+ document.getElementById("claimnoerror").innerHTML=""; 
+ if(document.getElementById("claimno").value=="")
+ {
+  document.getElementById("claimnoerror").innerHTML="Required field should not be empty";
+  return false;
+ }
+  document.getElementById("adjustersnameerror").innerHTML=""; 
+ if(document.getElementById("adjustersname").value=="")
+ {
+  document.getElementById("adjustersnameerror").innerHTML="Required field should not be empty";
+  return false;
+ }
+  document.getElementById("companionerror").innerHTML="";
+  if(document.getElementById("companion").value=="")
+ {
+  document.getElementById("companionerror").innerHTML="Required field should not be empty";
+  return false;
+ }
+ document.getElementById("vehicle_makeerror").innerHTML="";
+  if(document.getElementById("vehicle_make").value=="")
+ {
+  document.getElementById("vehicle_makeerror").innerHTML="Required field should not be empty";
+  return false;
+ }
+ document.getElementById("vehicle_modelerror").innerHTML="";
+  if(document.getElementById("vehicle_model").value=="")
+ {
+  document.getElementById("vehicle_modelerror").innerHTML="Required field should not be empty";
+  return false;
+ }
+ document.getElementById("vehicle_yearerror").innerHTML="";
+  if(document.getElementById("vehicle_year").value=="")
+ {
+  document.getElementById("vehicle_yearerror").innerHTML="Required field should not be empty";
+  return false;
+ }
+  document.getElementById("other_vehicle_makeerror").innerHTML="";
+  if(document.getElementById("other_vehicle_make").value=="")
+ {
+  document.getElementById("other_vehicle_makeerror").innerHTML="Required field should not be empty";
+  return false;
+ }
+  document.getElementById("other_vehicle_modelerror").innerHTML="";
+  if(document.getElementById("other_vehicle_model").value=="")
+ {
+  document.getElementById("other_vehicle_modelerror").innerHTML="Required field should not be empty";
+  return false;
+ }
+  document.getElementById("other_vehicle_yearerror").innerHTML="";
+  if(document.getElementById("other_vehicle_year").value=="")
+ {
+  document.getElementById("other_vehicle_yearerror").innerHTML="Required field should not be empty";
+  return false;
+ }
+ /* document.getElementById("yeserror").innerHTML="";
+  if( ( document.getElementById("yes").checked == false ) && ( document.getElementById("no").checked == false ) )
+
+{
+document.getElementById("yeserror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		
+} */
+document.getElementById("speederror").innerHTML="";
+	if(document.getElementById("speed").value=="")
+	{
+	document.getElementById("speederror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("estimateddamageerror").innerHTML="";
+	if(document.getElementById("estimateddamage").value=="")
+	{
+	document.getElementById("estimateddamageerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+document.getElementById("afteraccidenterror").innerHTML=""; 
+	if( ( document.getElementById("headache").checked == false ) && ( document.getElementById("dizziness").checked == false ) && ( document.getElementById("nausea").checked == false )&& ( document.getElementById("confusion").checked == false ))
+
+	 {
+	 document.getElementById("afteraccidenterror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+  
+  
+  }
+  
+  
+  </script>
 <script>
   function printPage(id)
   {
@@ -179,6 +275,7 @@ $(function() {
            }
        }       
     </script>
+   
 <style>
   /* force a height so the tabs don't jump as content height changes */
   #tabs .tabs-spacer { float: left; height: 200px; }
@@ -228,15 +325,15 @@ $(function() {
                  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>What is the claim number of your accident</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="claimno" name="claimnumber" /><span class="err"><form:errors path="Autoaccident.claimnumber"></form:errors></span>
-				  <br><span class="err"r" id="claimnoerror"></span>
+				  <input type="text" class="input_txtbx1" id="claimno" name="claimnumber" /><span id="claimnoerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.claimnumber"></form:errors></span>
+				  <br><span class="err"></span>
 				  </td>
 
 				  </tr>
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Adjuster's name</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="adjustersname" /><span class="err"><form:errors path="Autoaccident.adjustersname"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="adjustersname" name="adjustersname" /><span id="adjustersnameerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.adjustersname"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
@@ -263,15 +360,15 @@ $(function() {
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Was anyone else in the car with you during the accident?who?</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="companion" /><span class="err"><form:errors path="Autoaccident.companion"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="companion" name="companion" /><span id="companionerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.companion"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Description of vehicle you were in</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="smlinput_txtbx1" id="inp_id" name="vehicle_make" style="width:70px" placeholder="    make"/>
-				  <input type="text" class="smlinput_txtbx1" id="inp_id" name="vehicle_model" style="width:70px" placeholder="     model" />
-				  <input type="text" class="smlinput_txtbx1" id="vehicle" name="vehicle_year" style="width:70px" onkeypress="return validate(event)"; placeholder="year"/><span class="err" id="vehicleerr"></span>
+				  <input type="text" class="smlinput_txtbx1" id="vehicle_make" name="vehicle_make" style="width:70px" placeholder="make"/><span id="vehicle_makeerror" style="color: red;font-style:italic;"></span>
+				  <input type="text" class="smlinput_txtbx1" id="vehicle_model" name="vehicle_model" style="width:70px" placeholder="model" /><span id="vehicle_modelerror" style="color: red;font-style:italic;"></span>
+				  <input type="text" class="smlinput_txtbx1" id="vehicle_year" name="vehicle_year" style="width:70px" maxlength="4" onkeypress="return validate(event)"; placeholder="year"/><span  id="vehicle_yearerror" style="color: red;font-style:italic;"></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
@@ -290,9 +387,9 @@ $(function() {
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Description of other vehicle </td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="smlinput_txtbx1" id="inp_id" name="other_vehicle_make" style="width:70px" placeholder="    make" />
-				  <input type="text" class="smlinput_txtbx1" id="inp_id" name="other_vehicle_model" style="width:70px" placeholder="     model" />
-				  <input type="text" class="smlinput_txtbx1" id="vehicl" name="other_vehicle_year" style="width:70px" onkeypress="return validate(event)"; placeholder="year"/><span class="err" id="vehiclerr"></span>
+				  <input type="text" class="smlinput_txtbx1" id="other_vehicle_make" name="other_vehicle_make" style="width:70px" placeholder="    make" /><span id="other_vehicle_makeerror" style="color: red;font-style:italic;"></span>
+				  <input type="text" class="smlinput_txtbx1" id="other_vehicle_model" name="other_vehicle_model" style="width:70px" placeholder="     model" /><span id="other_vehicle_modelerror" style="color: red;font-style:italic;"></span>
+				  <input type="text" class="smlinput_txtbx1" id="other_vehicle_year" maxlength="4" name="other_vehicle_year" style="width:70px" onkeypress="return validate(event)"; placeholder="year"/><span class="err" id="other_vehicle_yearerror" style="color: red;font-style:italic;"></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
@@ -320,7 +417,7 @@ $(function() {
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Estimated rate of speed</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="speed" name="estimated_rate" onkeypress="return validate(event)"; /><span class="err"><form:errors path="Autoaccident.estimated_rate"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="speed" name="estimated_rate" onkeypress="return validate(event)"; /><span id="speederror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.estimated_rate"></form:errors></span>
 			<br>
 			<span class="err" id="speederror"></span>
   </td>
@@ -447,8 +544,8 @@ $(function() {
 				  </tr>
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Air bag deployed</td>
-				  <td valign="top" align="left" class="input_txt"><input type="radio" name="airbag" value="0" class="input_txt" checked="true" onclick="toggle('show')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="airbag" value="1" class="input_txt" onclick="toggle('hide')">No&nbsp;&nbsp;&nbsp;
-				<span class="err"><form:errors path="Autoaccident.airbag"></form:errors></span> <select name="wereyou" class="input_cmbbx1" id="mytext">
+				  <td valign="top" align="left" class="input_txt"><input type="radio" id="yes" name="airbag" value="0" class="input_txt" checked="true" onclick="toggle('show')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" id="no" name="airbag" value="1" class="input_txt" onclick="toggle('hide')">No&nbsp;&nbsp;&nbsp;
+				<span id="yeserror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.airbag"></form:errors></span> <select name="wereyou" class="input_cmbbx1" id="mytext">
 				 <option selected="selected" value="struck" >Struck</option>
 				 <option value="notstruck">Not Struck</option>
 				  </select>
@@ -506,8 +603,8 @@ $(function() {
 				  </tr>
 				   <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Did you brace yourself</td>
-				  <td valign="top" align="left" class="input_txt"><input type="radio" name="brace" value="0" class="input_txt" checked="true" onclick="toggle1('show1')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="brace" value="1" class="input_txt" onclick="toggle1('hide1')">No&nbsp;&nbsp;&nbsp;
-				 <span class="err"><form:errors path="Autoaccident.brace"></form:errors></span> <select name="ifyes" class="input_cmbbx1" id="mybrace">
+				  <td valign="top" align="left" class="input_txt"><input type="radio" id="yes1" name="brace" value="0" class="input_txt" checked="true" onclick="toggle1('show1')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="brace" id="no1" value="1" class="input_txt" onclick="toggle1('hide1')">No&nbsp;&nbsp;&nbsp;
+				 <span id="yes1error" style="color: red;font-style:italic;"><form:errors path="Autoaccident.brace"></form:errors></span> <select name="ifyes" class="input_cmbbx1" id="mybrace">
 				  <option selected="selected" value="bracearms" >Braced with arms</option>
 				  <option value="bracelegs">Braced with legs</option>
 				  </select>
@@ -678,7 +775,7 @@ $(function() {
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Estimated amount of property damage</td>
 				  <td valign="top" align="left" class="input_txt">$
-				  <input type="text" class="input_txtbx1" id="estimateddamage" name="estimated_amount" onkeypress="return validate1(event)";/><span class="err"><form:errors path="Autoaccident.estimated_amount"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="estimateddamage" name="estimated_amount" onkeypress="return validate1(event)";/><span id="estimateddamageerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.estimated_amount"></form:errors></span>
 				 <br><span class="err" id="estimateddamageerror"></span>
 				  </td>
 				  </tr>
@@ -1558,7 +1655,7 @@ $(function() {
 				 <td><input type="button" id="btnPrevious" class="submit_btn" value="Previous"  /></td>
 				 <td>&nbsp;&nbsp;</td>
  
-                  <td><input type="submit" class="submit_btn" id="saveid" value="Save" onclick ="return checkSubmit('this')";></td>
+                  <td><input type="submit" class="submit_btn" id="saveid" value="Save" onclick="return checksub('this');"></td>
                   <td>&nbsp;&nbsp;</td>
                    <td><a href="viewpatient"style="color:white" id="cancelid" class="submit_btn">Cancel</a></td>
                   <td><!-- <a href="viewpatient" class="submit_btn" style="color: white">Cancel</a> --></td>
@@ -1624,7 +1721,20 @@ else
  document.getElementById('mybrace').style.visibility='hidden';
 }
 </script>
+<script>
+function checkSubmit1()
+{
+document.getElementById("afteraccidenterror").innerHTML=""; 
+	if( ( document.getElementById("headache").checked == false ) && ( document.getElementById("dizziness").checked == false ) && ( document.getElementById("nausea").checked == false )&& ( document.getElementById("confusion").checked == false ))
 
+	 {
+	 document.getElementById("afteraccidenterror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+}
+</script>
 <script type="text/javascript">
 function toggle2(value){
 if(value=='show2')
@@ -1691,7 +1801,7 @@ function Check(val){
    element.style.display='none';
  element1.style.display='none';
  }
-} 
+}
 </script>
 
 			

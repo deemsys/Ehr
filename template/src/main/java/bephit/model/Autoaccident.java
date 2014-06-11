@@ -5,15 +5,15 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Autoaccident {
 	private String patient_number;
 	
-	@NotEmpty
+	
 	private String claimnumber;
 	
-	@NotEmpty
+	
 	private String adjustersname;
 	private String estimate;
 	private String seating;
 	
-	@NotEmpty
+	
 	private String companion;
 	private String vehicle_make;
 	private String vehicle_model;
@@ -27,7 +27,7 @@ public class Autoaccident {
 	private String vehicle_moving_time;
 	private String wascar;
 	
-	@NotEmpty
+	
 	private String estimated_rate;
 	private String time_of_day;
 	private String road_conditions;
@@ -37,9 +37,9 @@ public class Autoaccident {
 	private String seat_after_accident;
 	private String lap_seat_belt;
 	private String shoulder_seat_belt;
-	@NotEmpty
+	
 	private String airbag;
-	@NotEmpty
+	
 	private String wereyou;
 	private String body_position;
 	private String body_position1;
@@ -47,7 +47,7 @@ public class Autoaccident {
 	private String head_position1;
 	private String hands_on_wheel;
 	private String aware_of_crash;
-	@NotEmpty
+	
 	private String brace;
 	private String ifyes;
 	private String further_injury;
@@ -69,7 +69,7 @@ public class Autoaccident {
 	private String unconscious;
 	private String uncon;
 	
-	@NotEmpty
+	
 	private String estimated_amount;
 	private String damage;
 	private String was_anyone_cited;
@@ -84,7 +84,7 @@ public class Autoaccident {
 	private String otherpaintext;
 	private String first_symptom;
 	private String symptom;
-	@NotEmpty
+	
 	private String after_accident;
 	private String accident;
 	private String hosname;
