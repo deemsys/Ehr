@@ -94,27 +94,7 @@ var element=document.getElementById('shortlegright');
  }
 }
 </script >
- <script>
-  $(window).load(function(){
-$("#security").keyup(function() {
-	 $("#securityerror").html(''); 
-	/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
-	//var intRegex = /^\d+$/;
-	var a= /^[0-9]{3}[-\s\.]{0,1}[0-9]{2}[-\s\.]{0,1}[0-9]{4}$/;
-	if(a.test($(this).val())||$(this).val()=='') 
-	{
-		var $in = $(this).val();		 
-	}
-	else if($(this).val()!='')
-		{
-		
-		$("#securityerror").html('Kindly enter a number!!!!');
-		}
-}).keydown(function() {
-    oldValue = $(this).val();
-})
-});
-</script>
+ 
 <script>
 i=0;
 $(document).ready(function(){
@@ -217,9 +197,29 @@ $(function() {
 		    	
 		        return false;
 		    }
+		    document.getElementById("securityerror").innerHTML=" ";
+		
+		if(document.getElementById("security").value=="")
+		{
+		document.getElementById("securityerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
 	}
 
 	</script>
+	<script type="text/javascript">
+       function validate(event) {
+          
+           var regex = new RegExp("^[0-9.]+$");
+           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+           if (!regex.test(key)) {
+             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
+               event.preventDefault();
+               return false;
+           }
+       }       
+    </script>
 <script>
   function printPage(id)
   {
@@ -458,7 +458,7 @@ $(function() {
 	    Your Birth Date  <input type="text" id="datepicker1" name="birthdate" class="input_txtbx1"><span id="datepicker1error"  style="color: red;font-style:italic;"></span>
 	    <br><br>
 	    <table>
-	    <td><span class="err">*</span>Your Social Security Number </td><td><input type="text" class="input_txtbx1" name="security" id="security" maxlength="11"></td><td><span class="err" id="securityerror"> <div id="number"></span></td></div></table>
+	    <td><span class="err">*</span>Your Social Security Number </td><td><input type="text" class="input_txtbx1" name="security" id="security"  onkeypress="return validate(event)"; maxlength="11"></td><td><span class="err" id="securityerror"> <div id="number"></span></td></div></table>
 	    </c:when>
 	    <c:otherwise>
 	    <P style="font-size: 15px"><b>Please answer the following questions for the hip/knee being treated or followed up.If it is BOTH hips/knees,please answer the questions for your worse side.All questions are about how you have felt,on average,during the past week,If you are being treated for an injury that happened less than one week ago,please answer for the period since your injury.</b></P>
