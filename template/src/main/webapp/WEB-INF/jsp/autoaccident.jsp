@@ -197,7 +197,11 @@ document.getElementById("speederror").innerHTML="";
 	return false;
 	}
 document.getElementById("afteraccidenterror").innerHTML=""; 
-	if( ( document.getElementById("headache").checked == false ) && ( document.getElementById("dizziness").checked == false ) && ( document.getElementById("nausea").checked == false )&& ( document.getElementById("confusion").checked == false ))
+	if( ( document.getElementById("headache").checked == false ) && ( document.getElementById("dizziness").checked == false ) && ( document.getElementById("nausea").checked == false )&& ( document.getElementById("confusion").checked == false )
+
+&& ( document.getElementById("disorientation").checked == false ) && ( document.getElementById("neckpain").checked == false ) && ( document.getElementById("otherpain").checked == false ) )
+
+
 
 	 {
 	 document.getElementById("afteraccidenterror").innerHTML="Required Field Should not be Empty";
@@ -855,9 +859,9 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				 </td>
 				  <tr class="row1"> <td valign="middle" align="left" class="input_txt"><span class="err"></span></td>
 				 <td valign="top" align="left" class="input_txt" width="20%">
-				  <input type="checkbox" name="disorientation" value="disorientation">Disorientation&nbsp;&nbsp;&nbsp;&nbsp;
-				 <input type="checkbox" name="neckpain" value="neckpain">Neck pain&nbsp;&nbsp;&nbsp;&nbsp;
-				 <input type="checkbox" name="otherpain" value="otherpain" id="otherpaincheck" onclick="this.form.otherplain1.style.visibility = this.checked? 'visible' : 'hidden'">Other&nbsp;&nbsp;&nbsp;&nbsp;
+				  <input type="checkbox" id="disorientation" name="disorientation" value="disorientation">Disorientation&nbsp;&nbsp;&nbsp;&nbsp;
+				 <input type="checkbox" id="neckpain" name="neckpain" value="neckpain">Neck pain&nbsp;&nbsp;&nbsp;&nbsp;
+				 <input type="checkbox" id="otherpain" name="otherpain" value="otherpain" id="otherpaincheck" onclick="this.form.otherplain1.style.visibility = this.checked? 'visible' : 'hidden'">Other&nbsp;&nbsp;&nbsp;&nbsp;
 				 <input type="text" class="input_txtbx1" id="otherplain1" name="otherpaintext" placeholder="If other" style="visibility:hidden"/>
 				<span class="err"><form:errors path="Autoaccident.after_accident"></form:errors></span>
 				 </tr>

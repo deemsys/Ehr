@@ -80,6 +80,105 @@ $(function() {
            }
        }       
     </script>
+   <script>
+  function checksub()
+  {
+ document.getElementById("claimnoerror").innerHTML=""; 
+ if(document.getElementById("claimno").value=="")
+ {
+  document.getElementById("claimnoerror").innerHTML="Required field should not be empty";
+  return false;
+ }
+  document.getElementById("adjustersnameerror").innerHTML=""; 
+ if(document.getElementById("adjustersname").value=="")
+ {
+  document.getElementById("adjustersnameerror").innerHTML="Required field should not be empty";
+  return false;
+ }
+  document.getElementById("companionerror").innerHTML="";
+  if(document.getElementById("companion").value=="")
+ {
+  document.getElementById("companionerror").innerHTML="Required field should not be empty";
+  return false;
+ }
+ document.getElementById("vehicle_makeerror").innerHTML="";
+  if(document.getElementById("vehicle_make").value=="")
+ {
+  document.getElementById("vehicle_makeerror").innerHTML="Required field should not be empty";
+  return false;
+ }
+ document.getElementById("vehicle_modelerror").innerHTML="";
+  if(document.getElementById("vehicle_model").value=="")
+ {
+  document.getElementById("vehicle_modelerror").innerHTML="Required field should not be empty";
+  return false;
+ }
+ document.getElementById("vehicle_yearerror").innerHTML="";
+  if(document.getElementById("vehicle_year").value=="")
+ {
+  document.getElementById("vehicle_yearerror").innerHTML="Required field should not be empty";
+  return false;
+ }
+  document.getElementById("other_vehicle_makeerror").innerHTML="";
+  if(document.getElementById("other_vehicle_make").value=="")
+ {
+  document.getElementById("other_vehicle_makeerror").innerHTML="Required field should not be empty";
+  return false;
+ }
+  document.getElementById("other_vehicle_modelerror").innerHTML="";
+  if(document.getElementById("other_vehicle_model").value=="")
+ {
+  document.getElementById("other_vehicle_modelerror").innerHTML="Required field should not be empty";
+  return false;
+ }
+  document.getElementById("other_vehicle_yearerror").innerHTML="";
+  if(document.getElementById("other_vehicle_year").value=="")
+ {
+  document.getElementById("other_vehicle_yearerror").innerHTML="Required field should not be empty";
+  return false;
+ }
+ /* document.getElementById("yeserror").innerHTML="";
+  if( ( document.getElementById("yes").checked == false ) && ( document.getElementById("no").checked == false ) )
+
+{
+document.getElementById("yeserror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		
+} */
+document.getElementById("speederror").innerHTML="";
+	if(document.getElementById("speed").value=="")
+	{
+	document.getElementById("speederror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("estimateddamageerror").innerHTML="";
+	if(document.getElementById("estimateddamage").value=="")
+	{
+	document.getElementById("estimateddamageerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+document.getElementById("afteraccidenterror").innerHTML=""; 
+	if( ( document.getElementById("headache").checked == false ) && ( document.getElementById("dizziness").checked == false ) && ( document.getElementById("nausea").checked == false )&& ( document.getElementById("confusion").checked == false )
+
+&& ( document.getElementById("disorientation").checked == false ) && ( document.getElementById("neckpain").checked == false ) && ( document.getElementById("otherpain").checked == false ) )
+
+
+
+	 {
+	 document.getElementById("afteraccidenterror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+  
+  
+  }
+  
+  
+  </script>
    <script type="text/javascript">
        function validate1(event) {
           
@@ -138,13 +237,13 @@ $(function() {
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>What is the claim number of your accident</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="hidden" class="input_txtbx1" id="inp_id" value="${autoaccident.patient_number}" name="patient_number" />
-				  <input type="text" class="input_txtbx1" id="inp_id" name="claimnumber" value="${autoaccident.claimnumber }" /><span class="err"><form:errors path="Autoaccident.claimnumber"></form:errors></span></td>
+				  <input type="text" class="input_txtbx1" id="claimno" name="claimnumber" value="${autoaccident.claimnumber }" /><span id="claimnoerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.claimnumber"></form:errors></span></td>
 
 				  </tr>
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Adjuster's name</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="adjustersname" value="${autoaccident.adjustersname }" /><span class="err"><form:errors path="Autoaccident.adjustersname"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="adjustersname" name="adjustersname" value="${autoaccident.adjustersname }" /><span id="adjustersnameerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.adjustersname"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
@@ -171,15 +270,15 @@ $(function() {
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Was anyone else in the car with you during the accident?who?</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="companion" value="${autoaccident.companion }"/><span class="err"><form:errors path="Autoaccident.companion"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="companion" name="companion" value="${autoaccident.companion }"/><span id="companionerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.companion"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Description of vehicle you were in</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="smlinput_txtbx1" id="inp_id" name="vehicle_make" style="width:70px" value="${autoaccident.vehicle_make }"/><span class="err"><form:errors path="Autoaccident.vehicle_make"></form:errors></span>
-				  <input type="text" class="smlinput_txtbx1" id="inp_id" name="vehicle_model" style="width:70px" value="${autoaccident.vehicle_model }" /><span class="err"><form:errors path="Autoaccident.vehicle_model"></form:errors></span>
-				  <input type="text" class="smlinput_txtbx1" id="inp_id" name="vehicle_year" style="width:70px" onkeypress="return validate(event)"; value="${autoaccident.vehicle_year }"/><span class="err"><form:errors path="Autoaccident.vehicle_year"></form:errors></span>
+				  <input type="text" class="smlinput_txtbx1" id="vehicle_make" name="vehicle_make" style="width:70px" value="${autoaccident.vehicle_make }"/><span id="vehicle_makeerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.vehicle_make"></form:errors></span>
+				  <input type="text" class="smlinput_txtbx1" id="vehicle_model" name="vehicle_model" style="width:70px" value="${autoaccident.vehicle_model }" /><span id="vehicle_modelerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.vehicle_model"></form:errors></span>
+				  <input type="text" class="smlinput_txtbx1" id="vehicle_year" maxlength="4" name="vehicle_year" style="width:70px" onkeypress="return validate(event)"; value="${autoaccident.vehicle_year }"/><span id="vehicle_yearerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.vehicle_year"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
@@ -198,9 +297,9 @@ $(function() {
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Description of other vehicle </td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="smlinput_txtbx1" id="inp_id" name="other_vehicle_make" style="width:70px" value="${autoaccident.other_vehicle_make }" /><span class="err"><form:errors path="Autoaccident.other_vehicle_make"></form:errors></span>
-				  <input type="text" class="smlinput_txtbx1" id="inp_id" name="other_vehicle_model" style="width:70px" value="${autoaccident.other_vehicle_model }" /><span class="err"><form:errors path="Autoaccident.other_vehicle_model"></form:errors></span>
-				  <input type="text" class="smlinput_txtbx1" id="inp_id" name="other_vehicle_year" style="width:70px" onkeypress="return validate(event)"; value="${autoaccident.other_vehicle_year }"/><span class="err"><form:errors path="Autoaccident.other_vehicle_year"></form:errors></span>
+				  <input type="text" class="smlinput_txtbx1" id="other_vehicle_make" name="other_vehicle_make" style="width:70px" value="${autoaccident.other_vehicle_make }" /><span id="other_vehicle_makeerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.other_vehicle_make"></form:errors></span>
+				  <input type="text" class="smlinput_txtbx1" id="other_vehicle_model" name="other_vehicle_model" style="width:70px" value="${autoaccident.other_vehicle_model }" /><span id="other_vehicle_modelerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.other_vehicle_model"></form:errors></span>
+				  <input type="text" class="smlinput_txtbx1" id="other_vehicle_year" maxlength="4" name="other_vehicle_year" style="width:70px" onkeypress="return validate(event)"; value="${autoaccident.other_vehicle_year }"/><span id="other_vehicle_yearerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.other_vehicle_year"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
@@ -234,7 +333,7 @@ $(function() {
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Estimated rate of speed</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="estimated_rate" onkeypress="return validate(event)"; value="${autoaccident.estimated_rate }"/><span class="err"><form:errors path="Autoaccident.estimated_rate"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="speed" name="estimated_rate" onkeypress="return validate(event)"; value="${autoaccident.estimated_rate }"/><span id="speederror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.estimated_rate"></form:errors></span>
 				  </td>
 				  </tr>
 				 <tr class="row2">
@@ -628,7 +727,7 @@ $(function() {
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Estimated amount of property damage</td>
 				  <td valign="top" align="left" class="input_txt">$
-				  <input type="text" class="input_txtbx1" id="inp_id" name="estimated_amount" onkeypress="return validate1(event)";value="${autoaccident.estimated_amount }"/><span class="err"><form:errors path="Autoaccident.estimated_amount"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="estimateddamage" name="estimated_amount" value="${autoaccident.estimated_amount }" onkeypress="return validate1(event)";/><span id="estimateddamageerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.estimated_amount"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row2">
@@ -699,18 +798,18 @@ $(function() {
 				  <tr class="row1">
                 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>After accident,I had the following</td>
 				 <td valign="top" align="left" class="input_txt">
-				 <input type="checkbox" name="headache" value="headache" <c:if test="${autoaccident.headache=='headache'}"><c:out value="Checked"/></c:if> >Headache&nbsp;&nbsp;&nbsp;&nbsp; 
-				 <input type="checkbox" name="dizziness" value="dizziness" <c:if test="${autoaccident.dizziness=='dizziness'}"><c:out value="Checked"/></c:if> >Dizziness&nbsp;&nbsp;&nbsp;&nbsp;
-				 <input type="checkbox" name="nausea" value="nausea" <c:if test="${autoaccident.nausea=='nausea'}"><c:out value="Checked"/></c:if> >Nausea&nbsp;&nbsp;&nbsp;&nbsp;
-				 <input type="checkbox" name="confusion" value="confusion" <c:if test="${autoaccident.confusion=='confusion'}"><c:out value="Checked"/></c:if> >Confusion&nbsp;&nbsp;&nbsp;&nbsp;
-				 <input type="checkbox" name="disorientation" value="disorientation" <c:if test="${autoaccident.disorientation=='disorientation'}"><c:out value="Checked"/></c:if> >Disorientation&nbsp;&nbsp;&nbsp;&nbsp;
-				 <input type="checkbox" name="neckpain" value="neckpain" <c:if test="${autoaccident.neckpain=='neckpain'}"><c:out value="Checked"/></c:if> >Neck pain&nbsp;&nbsp;&nbsp;&nbsp;
+				 <input type="checkbox" id="headache" name="headache" value="headache" <c:if test="${autoaccident.headache=='headache'}"><c:out value="Checked"/></c:if> >Headache&nbsp;&nbsp;&nbsp;&nbsp; 
+				 <input type="checkbox" id="dizziness" name="dizziness" value="dizziness" <c:if test="${autoaccident.dizziness=='dizziness'}"><c:out value="Checked"/></c:if> >Dizziness&nbsp;&nbsp;&nbsp;&nbsp;
+				 <input type="checkbox" id="nausea" name="nausea" value="nausea" <c:if test="${autoaccident.nausea=='nausea'}"><c:out value="Checked"/></c:if> >Nausea&nbsp;&nbsp;&nbsp;&nbsp;
+				 <input type="checkbox" id="confusion" name="confusion" value="confusion" <c:if test="${autoaccident.confusion=='confusion'}"><c:out value="Checked"/></c:if> >Confusion&nbsp;&nbsp;&nbsp;&nbsp;
+				 <input type="checkbox" id="disorientation"name="disorientation" value="disorientation" <c:if test="${autoaccident.disorientation=='disorientation'}"><c:out value="Checked"/></c:if> >Disorientation&nbsp;&nbsp;&nbsp;&nbsp;
+				 <input type="checkbox" id="neckpain" name="neckpain" value="neckpain" <c:if test="${autoaccident.neckpain=='neckpain'}"><c:out value="Checked"/></c:if> >Neck pain&nbsp;&nbsp;&nbsp;&nbsp;
 				 
-				 <input type="checkbox" name="otherpain" value="other pain" id="othercheck" onclick="Other();" <c:if test="${autoaccident.otherpain=='other pain'}"><c:out value="Checked"/></c:if> >Other&nbsp;&nbsp;&nbsp;&nbsp;
+				 <input type="checkbox" id="otherpain" name="otherpain" value="other pain" id="othercheck" onclick="Other();" <c:if test="${autoaccident.otherpain=='other pain'}"><c:out value="Checked"/></c:if> >Other&nbsp;&nbsp;&nbsp;&nbsp;
 				 <input type="text" class="input_txtbx1" id="other1" name="otherpaintext"  placeholder="If other" value="${autoaccident.otherpaintext}" style='display:none'/>
 				 
-				 
-				 </td><span class="err"><form:errors path="Autoaccident.after_accident"></form:errors></span>
+				 <span id="afteraccidenterror" style="color: red;font-style:italic;">
+				 </td><form:errors path="Autoaccident.after_accident"></form:errors></span>
 				 </tr>
 				 <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Symptoms first appeared</td>
@@ -851,7 +950,7 @@ $(function() {
 				 <table align="right">
 				  <br><tr>
 				 <td><br><input type="button" id="btnPrevious" class="submit_btn" value="Previous" style = "display:none" />&nbsp;</td>
-                <td><input type="submit" class="submit_btn" value="Update"></td>
+                <td><input type="submit" class="submit_btn" value="Update" onclick="return checksub('this');"></td>
                 <td><a href="deleteautoaccident" class="submit_btn" style="text-decoration: none;color:white" onclick="return confirmation() ">Delete</a><!-- <input type="reset" class="submit_btn" value="Cancel" onclick="window.location.href='viewautoaccident'"> --></td>				 
 				</table> 
 				  
