@@ -53,6 +53,22 @@ $(function(){
 
   </script>
   <script>
+
+	function checkSubmit()
+	{
+		  document.getElementById("datepicker1error").innerHTML="";
+var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+		
+		
+		if (document.getElementById("datepicker1").value !="") {
+		  if (re.test(document.getElementById("datepicker1").value) == false) {
+			  document.getElementById("datepicker1error").innerHTML="Invalid Date Format. Please correct and submit again";
+			  return false;
+		  }
+		}
+	}
+	</script>
+	<script>
   function printPage(id)
   {
 	
@@ -178,7 +194,7 @@ $(function(){
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date :</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="datepicker" name="date" /><span class="err"><form:errors path="Physicalexam.date"></form:errors>
+				                  	<input type="text" class="input_txtbx1" id="datepicker" name="date" /><span class="err" id="datepickererror"><form:errors path="Physicalexam.date"></form:errors>
 				                  </td>
 				                </tr>
 				                <tr class="row2">
@@ -1629,7 +1645,7 @@ $(function(){
 				                   </table> -->
 				                  <table align="right">
 				                  <tr>
-				                   <td><input type="submit" class="submit_btn" value="Save" id="saveid"></td>
+				                   <td><input type="submit" class="submit_btn" value="Save" id="saveid" onclick="return checkSubmit('this');"></td>
 				                   <td>&nbsp;&nbsp;</td>
 				                    <td>&nbsp;&nbsp;</td>
 				                    <td><a href="doctorsearch" style="color:white;text-decoration: none" class="submit_btn" id="cancelid">Cancel</a></td>
