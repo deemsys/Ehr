@@ -179,7 +179,36 @@ $(function() {
  
 </script>
    
-  
+   <script>
+
+	function checkSubmit()
+	{
+document.getElementById("pnameerror").innerHTML=" ";
+		
+		if(document.getElementById("pname").value=="")
+		{
+		document.getElementById("pnameerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		document.getElementById("datepickererror").innerHTML="";
+		
+		if(document.getElementById("datepicker").value=="")
+		{
+		document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		
+		var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+		if(document.getElementById("datepicker").value.match(datechk)==null)
+	    {
+	    	document.getElementById("datepickererror").innerHTML="Invalid Date Format. Please correct and submit again";
+	    	
+	        return false;
+	    }
+	}
+	</script>
 
 </head>
 <body>
@@ -200,8 +229,8 @@ $(function() {
 	    
 	     <div class="contentbox">
          <table> <tr><td width="140"><span class="err">*</span>Name</td>
-           <td><input type="hidden" name="neckindexno" value="${neckindexdetails.neckindexno}"><input type="text" name="name" value="${neckindexdetails.name}"><Br><span class="err"><form:errors path="neckindex.name"></form:errors></td><td width="480"></td><td></td><td width="100"></td>
-           <td >&nbsp;&nbsp;&nbsp;&nbsp;<span class="err">*</span>Date:&nbsp;</td> <td><input type="text" name="date" id="datepicker" value="${neckindexdetails.date}"><Br><span class="err"><form:errors path="neckindex.date"></form:errors></td>
+           <td><input type="hidden" name="neckindexno" value="${neckindexdetails.neckindexno}"><input type="text" id="pname" name="name" value="${neckindexdetails.name}"><Br><span class="err" id="pnameerror"><form:errors path="neckindex.name"></form:errors></td><td width="480"></td><td></td><td width="100"></td>
+           <td >&nbsp;&nbsp;&nbsp;&nbsp;<span class="err">*</span>Date:&nbsp;</td> <td><input type="text" name="date" id="datepicker" value="${neckindexdetails.date}"><Br><span class="err" id="datepickererror"><form:errors path="neckindex.date"></form:errors></td>
            </tr></table>
             <p><b>Please read:</b>This questionairre has been designed to give the Physical Therapist information as to how your wrist/hand pain has affected your ability to manage everyday life.</p>
            <table width="100%" class="margin_table" >
@@ -318,7 +347,7 @@ $(function() {
                      
            </table>  -->
              
-            <table align="right"><tr><td><input type="submit" value="Update" class="submit_btn"></td><td> <a href="viewneckindex" style="color: white" class="submit_btn">Cancel</a></td></tr></table>
+            <table align="right"><tr><td><input type="submit" value="Update" class="submit_btn" onclick="return checkSubmit('this');"></td><td> <a href="viewneckindex" style="color: white" class="submit_btn">Cancel</a></td></tr></table>
     
             
      </div></div>

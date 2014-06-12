@@ -249,8 +249,42 @@ $(function() {
   }
   </script>
      
-  
+   <script>
 
+	function checkSubmit()
+	{
+document.getElementById("pnameerror").innerHTML=" ";
+		
+		if(document.getElementById("pname").value=="")
+		{
+		document.getElementById("pnameerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		document.getElementById("datepickererror").innerHTML="";
+		
+		if(document.getElementById("datepicker").value=="")
+		{
+		document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		
+		var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+		if(document.getElementById("datepicker").value.match(datechk)==null)
+	    {
+	    	document.getElementById("datepickererror").innerHTML="Invalid Date Format. Please correct and submit again";
+	    	
+	        return false;
+	    }
+	}
+	</script>
+<script type="text/javascript">
+$(function() {
+    $( "#datepicker" ).datepicker();
+  });
+
+</script>
 </head>
 <body>
 <br><br>
@@ -410,7 +444,7 @@ $(function() {
 	             
 	            </div>
           <div class="contentbox">
-         <Table><tr><td><span class="err">*</span>Name:</td><td width="250"><input type="text" name="name"><br><span class="err"><form:errors path="oswestrydetails.name"></form:errors></td><Td width="200"></td><td ><span class="err">*</span>Date:</td><td width="250"><input type="date" name="date"><br><span class="err"><form:errors path="oswestrydetails.date"></form:errors></td><td>Score:</td><td><input type="hidden" name="scores" id="scores"><div id="score"></div></td></tr></Table>
+         <Table><tr><td><span class="err">*</span>Name:</td><td width="250"><input type="text" name="name" id="pname"><br><span class="err" id="pnameerror"><form:errors path="oswestrydetails.name"></form:errors></td><Td width="200"></td><td ><span class="err">*</span>Date:</td><td width="250"><input type="text"  id="datepicker" name="date"><br><span class="err" id="datepickererror"><form:errors path="oswestrydetails.date"></form:errors></td><td>Score:</td><td><input type="hidden" name="scores" id="scores"><div id="score"></div></td></tr></Table>
          <br>
          <br>
 	    <table width="100%"><tr><td width="50%"><b>What is your pain RIGHT NOW?</b></td><td><b><p align="left">What is your pain at its Worse?<p></b></td></tr></table>
@@ -646,7 +680,7 @@ $(function() {
 	     </c:otherwise>
 	     
 	     </c:choose>
-	   <table align="right"><tr><td><input type="submit" value="Save" id="saveid" class="submit_btn"></td><td> <a href="viewoswestryindex" style="color: white" id="cancelid" class="submit_btn">Cancel</a></td></tr></table>
+	   <table align="right"><tr><td><input type="submit" value="Save" id="saveid" class="submit_btn" onclick="return checkSubmit('this');"></td><td> <a href="viewoswestryindex" style="color: white" id="cancelid" class="submit_btn">Cancel</a></td></tr></table>
 	    
 	    
 	    
