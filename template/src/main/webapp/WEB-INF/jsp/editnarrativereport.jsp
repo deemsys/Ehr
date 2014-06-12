@@ -99,6 +99,13 @@ function Checksymptom(val){
 		
 		return false;
 		}
+		var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+	if(document.getElementById("datepicker11").value.match(datechk)==null)
+    {
+    	document.getElementById("datepicker11error").innerHTML="Invalid Date Format. Please correct and submit again";
+    	
+        return false;
+    }	
 	
 document.getElementById("patientnameerror").innerHTML=" ";
 		
@@ -117,7 +124,22 @@ document.getElementById("datepicker1error").innerHTML=" ";
 		
 		return false;
 		}
+		var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+	if(document.getElementById("datepicker1").value.match(datechk)==null)
+    {
+    	document.getElementById("datepicker1error").innerHTML="Invalid Date Format. Please correct and submit again";
+    	
+        return false;
+    }	
+    var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		
+		
+		if (document.getElementById("datepicker2").value !="") {
+		  if (re.test(document.getElementById("datepicker2").value) == false) {
+			  document.getElementById("datepicker2error").innerHTML="Invalid Date Format. Please correct and submit again";
+			  return false;
+		  }
+		}	
 document.getElementById("datepickererror").innerHTML=" ";
 		
 		if(document.getElementById("datepicker").value=="")
@@ -126,7 +148,70 @@ document.getElementById("datepickererror").innerHTML=" ";
 		
 		return false;
 		}
+		 var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+	if(document.getElementById("datepicker").value.match(datechk)==null)
+    {
+    	document.getElementById("datepickererror").innerHTML="Invalid Date Format. Please correct and submit again";
+    	
+        return false;
+    }	
+	 var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		
+		
+		if (document.getElementById("datepicker3").value !="") {
+		  if (re.test(document.getElementById("datepicker3").value) == false) {
+			  document.getElementById("datepicker3error").innerHTML="Invalid Date Format. Please correct and submit again";
+			  return false;
+		  }
+		}
+		
+    var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+		
+		
+		if (document.getElementById("datepicker4").value !="") {
+		  if (re.test(document.getElementById("datepicker4").value) == false) {
+			  document.getElementById("datepicker4error").innerHTML="Invalid Date Format. Please correct and submit again";
+			  return false;
+		  }
+		}
+		
+		var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+		
+		
+		if (document.getElementById("datepicker2").value !="") {
+		  if (re.test(document.getElementById("datepicker2").value) == false) {
+			  document.getElementById("datepicker2error").innerHTML="Invalid Date Format. Please correct and submit again";
+			  return false;
+		  }
+		}
+		
+		var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+		
+		
+		if (document.getElementById("datepicker7").value !="") {
+		  if (re.test(document.getElementById("datepicker7").value) == false) {
+			  document.getElementById("datepicker7error").innerHTML="Invalid Date Format. Please correct and submit again";
+			  return false;
+		  }
+		}
+		var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+		
+		
+		if (document.getElementById("datepicker9").value !="") {
+		  if (re.test(document.getElementById("datepicker9").value) == false) {
+			  document.getElementById("datepicker9error").innerHTML="Invalid Date Format. Please correct and submit again";
+			  return false;
+		  }
+		}
+		var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+		
+		
+		if (document.getElementById("datepicker10").value !="") {
+		  if (re.test(document.getElementById("datepicker10").value) == false) {
+			  document.getElementById("datepicker10error").innerHTML="Invalid Date Format. Please correct and submit again";
+			  return false;
+		  }
+		}	
 document.getElementById("signerror").innerHTML=" ";
 		
 		if(document.getElementById("sign").value=="")
@@ -214,15 +299,15 @@ document.getElementById("signerror").innerHTML=" ";
           <div><p style="line-height:1.5"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At your request and with permission from my patient, <input type="text"  class="input_txtbx1" name="patientname" size="40" value="${narrativereport.patientname}">, I am writing the following narrative report concerning the injuries <select  name="gender" id="gender">
 					<option selected="selected" value="He" <c:if test="${narrativereport.gender=='He'}"><c:out value="Selected"/></c:if>>He</option>
 					<option value="She" <c:if test="${narrativereprot.gender=='She'}"><c:out value="Selected"/></c:if>>She</option>
-					</select> sustained as the result of an automobile accident on <input type="text"  class="input_txtbx1" name="accident" id="datepicker2" value="${narrativereport.accident}"></p>
+					</select> sustained as the result of an automobile accident on <input type="text"  class="input_txtbx1" name="accident" id="datepicker2" value="${narrativereport.accident}"><span class="err" id="datepicker2error"></span></p>
                <p><B style="font-size:14px">History</B></p>
-               <p style="line-height:26px"><input type="text" class="input_txtbx1"  name="name" value="${narrativereport.name}"> was initially seen for the purpose of consultation and examination on <input type="text"  class="input_txtbx1" name="dateofconsultation" id="datepicker3" value="${narrativereport.dateofconsultation}">.  <select name="gender1" id="gender1">
+               <p style="line-height:26px"><input type="text" class="input_txtbx1"  name="name" value="${narrativereport.name}"> was initially seen for the purpose of consultation and examination on <input type="text"  class="input_txtbx1" name="dateofconsultation" id="datepicker3" value="${narrativereport.dateofconsultation}"><span class="err" id="datepicker3error"></span>.  <select name="gender1" id="gender1">
 					<option selected="selected" value="He" <c:if test="${narrativereport.gender1=='He'}"><c:out value="Selected"/></c:if> >He</option>
 					<option value="She" <c:if test="${narrativereport.gender1=='She'}"><c:out value="Selected"/></c:if>>She</option>
 					</select> stated that <select  name="gender2" id="gender2">
 					<option selected="selected" value="He" <c:if test="${narrativereport.gender2=='He'}"><c:out value="Selected"/></c:if>>He</option>
 					<option value="She" <c:if test="${narrativereport.gender2=='She'}"><c:out value="Selected"/></c:if>>She</option>
-					</select> was the driver in a motor vehicle accident <input type="text"  class="input_txtbx1" name="accidentdate" id="datepicker4" value="${narrativereport.accidentdate}">.  <select  name="gender3" id="gender3">
+					</select> was the driver in a motor vehicle accident <input type="text"  class="input_txtbx1" name="accidentdate" id="datepicker4" value="${narrativereport.accidentdate}"><span class="err" id="datepicker4error"></span>.  <select  name="gender3" id="gender3">
 					<option selected="selected" value="He" <c:if test="${narrativereport.gender3=='He'}"><c:out value="Selected"/></c:if>>He</option>
 					<option value="She" <c:if test="${narrativereport.gender3=='She'}"><c:out value="Selected"/></c:if>>She</option>
 					</select> further stated that <select  name="gender4" id="gender4">
@@ -281,7 +366,7 @@ document.getElementById("signerror").innerHTML=" ";
 					<option selected="selected" value="Mr" <c:if test="${narrativereport.gender18=='Mr'}"><c:out value="Selected"/></c:if>>Mr</option>
 					<option value="Mrs" <c:if test="${narrativereport.gender18=='Mrs'}"><c:out value="Selected"/></c:if>>Mrs</option>
 					<option value="Ms" <c:if test="${narrativereport.gender18=='Ms'}"><c:out value="Selected"/></c:if>>Ms</option>
-					</select> <input type="text"  class="input_txtbx1" name="name4" value="${narrativereport.name4}"> presented to this clinic on <input type="text"  class="input_txtbx1" name="clinicdate" id="datepicker7" value="${narrativereport.clinicdate}">with complaints of <select  name="gender19" id="gender19">
+					</select> <input type="text"  class="input_txtbx1" name="name4" value="${narrativereport.name4}"> presented to this clinic on <input type="text"  class="input_txtbx1" name="clinicdate" id="datepicker7" value="${narrativereport.clinicdate}"><span class="err" id="datepicker7error"></span>with complaints of <select  name="gender19" id="gender19">
 					<option selected="selected" value="Headache" <c:if test="${narrativereport.gender19=='Headache'}"><c:out value="Selected"/></c:if>>Headache</option>
 					<option value="Neck pain" <c:if test="${narrativereport.gender19=='Neck pain'}"><c:out value="Selected"/></c:if>>Neck pain</option>
 					<option value="Mid Back Pain" <c:if test="${narrativereport.gender19=='Mid Back Pain'}"><c:out value="Selected"/></c:if>>Mid Back Pain</option>
@@ -771,7 +856,7 @@ Injuries of this nature and magnitude respond well to a treatment program consis
 					<option selected="selected" value="Mr" <c:if test="${narrativereport.gender61=='Mr'}"><c:out value="Selected"/></c:if> >Mr</option>
 					<option value="Mrs" <c:if test="${narrativereport.gender61=='Mrs'}"><c:out value="Selected"/></c:if>>Mrs</option>
 					<option value="Ms" <c:if test="${narrativereport.gender61=='Ms'}"><c:out value="Selected"/></c:if>>Ms</option>
-					</select> <input type="text"  class="input_txtbx1" name="pname" value="${narrativereport.pname}">on <input type="text"  class="input_txtbx1" name="date9" id="datepicker9" value="${narrativereport.date9}">and during that period of time, records indicate <select  name="gender62" id="gender62" onchange='Checksymptom(this.value);'>
+					</select> <input type="text"  class="input_txtbx1" name="pname" value="${narrativereport.pname}">on <input type="text"  class="input_txtbx1" name="date9" id="datepicker9" value="${narrativereport.date9}"><span class="err" id="datepicker9error" ></span>and during that period of time, records indicate <select  name="gender62" id="gender62" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="He" <c:if test="${narrativereport.gender62=='He'}"><c:out value="Selected"/></c:if>>He</option>
 					<option value="She" <c:if test="${narrativereport.gender62=='She'}"><c:out value="Selected"/></c:if>>She</option>
 					</select> experienced steady improvement.
@@ -781,7 +866,7 @@ Injuries of this nature and magnitude respond well to a treatment program consis
 					<option selected="selected" value="Mr" <c:if test="${narrativereport.gender63=='Mr'}"><c:out value="Selected"/></c:if>>Mr</option>
 					<option value="Mrs" <c:if test="${narrativereport.gender63=='Mrs'}"><c:out value="Selected"/></c:if>>Mrs</option>
 					<option value="Ms" <c:if test="${narrativereport.gender63=='Ms'}"><c:out value="Selected"/></c:if>>Ms</option>
-					</select> <input type="text"  class="input_txtbx1" name="pname1" value="${narrativereport.pname1}"> condition reached maximum medical improvement on <input type="text"  class="input_txtbx1" name="datenew" id="datepicker10" value="${narrativereport.datenew}"> and was therefore released from care.   <select  name="gender64" id="gender64" onchange='Checksymptom(this.value);'>
+					</select> <input type="text"  class="input_txtbx1" name="pname1" value="${narrativereport.pname1}"> condition reached maximum medical improvement on <input type="text"  class="input_txtbx1" name="datenew" id="datepicker10" value="${narrativereport.datenew}"><span class="err" id="datepicker10error"></span> and was therefore released from care.   <select  name="gender64" id="gender64" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="His" <c:if test="${narrativereport.gender64=='His'}"><c:out value="Selected"/></c:if>>His</option>
 					<option value="Her" <c:if test="${narrativereport.gender64=='Her'}"><c:out value="Selected"/></c:if>>Her</option>
 					</select> prognosis is considered  <select  name="gender65" id="gender65" onchange='Checksymptom(this.value);'>
