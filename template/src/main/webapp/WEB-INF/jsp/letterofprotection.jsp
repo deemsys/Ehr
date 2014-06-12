@@ -210,6 +210,13 @@ function doAjaxPost() {
 		
 		return false;
 		}
+		var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+	if(document.getElementById("datepicker").value.match(datechk)==null)
+    {
+    	document.getElementById("derr").innerHTML="Invalid Date Format. Please correct and submit again";
+    	
+        return false;
+    }	
 		document.getElementById("dcerr").innerHTML="";
 		if(document.getElementById("dcr").value=="")
 		{
@@ -231,6 +238,14 @@ function doAjaxPost() {
 		
 		return false;
 		}
+		var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+	if(document.getElementById("datepicker1").value.match(datechk)==null)
+    {
+    	document.getElementById("daerr").innerHTML="Invalid Date Format. Please correct and submit again";
+    	
+        return false;
+    }	
+		
 		document.getElementById("suberr").innerHTML="";
 		if(document.getElementById("dearsir").value=="")
 		{
