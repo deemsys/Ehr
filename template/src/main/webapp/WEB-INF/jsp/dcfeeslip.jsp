@@ -104,6 +104,13 @@ function checkAjaxPost() {
 	alert("Please Enter Patient Bill date")
 	return false;
 	}
+	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+	if(document.getElementById("date").value.match(datechk)==null)
+    {
+    	document.getElementById("dateerror").innerHTML="Invalid Date Format. Please correct and submit again";
+    	
+        return false;
+    }
 	 $.ajax({  
 		    type: "POST",  
 		    url: "/EhrApp/dcfeeslipdetails_ajax",  
@@ -168,6 +175,8 @@ function checkAjaxPost() {
 		      alert('Error: ' + e);  
 		    }  
 		  });  
+	 
+	 
 		}  
 	
 
@@ -191,7 +200,7 @@ function checkAjaxPost() {
 				   <tr >
 	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">*</span>Bill Payment Date:</td>
 				 <td width="20"></td> <td valign="top" align="left" class="input_txt" width="200">
-				   <input type="text" class="input_txtbx1" id="date" name="date" /><br/>
+				   <input type="text" class="input_txtbx1" id="date" name="date" /><br/><span id="dateerror" style="color: red;font-style:italic;"></span>
 				  </td>
 				  </tr>
 				  <tr height="50"></tr>
@@ -206,6 +215,9 @@ function checkAjaxPost() {
 </div>
 </div>
 
+
+	
+	
   <STYLE type="text/css">
   P#mypar {font-style:calibri;
   line-height:18px;}
@@ -559,7 +571,15 @@ else
 	
 	return false;
 	}
-	
+	document.getElementById("datepickererror").innerHTML="";
+	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+	if(document.getElementById("datepicker").value.match(datechk)==null)
+    {
+    	document.getElementById("datepickererror").innerHTML="Invalid Date Format. Please correct and submit again";
+    	
+        return false;
+    }
+
 	
 	document.getElementById("datepicker1error").innerHTML="";
 	if(document.getElementById("datepicker1").value=="")
@@ -568,6 +588,15 @@ else
 	
 	return false;
 	}
+	document.getElementById("datepicker1error").innerHTML="";
+	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+	if(document.getElementById("datepicker1").value.match(datechk)==null)
+    {
+    	document.getElementById("datepicker1error").innerHTML="Invalid Date Format. Please correct and submit again";
+    	
+        return false;
+    }
+
 	document.getElementById("parentsignerror").innerHTML="";
 	if(document.getElementById("parentsign").value=="")
 	{
