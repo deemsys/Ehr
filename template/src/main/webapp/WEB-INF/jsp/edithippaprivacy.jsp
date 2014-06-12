@@ -76,6 +76,16 @@
 	
 	return false;
 	}
+	
+	var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+	
+	
+	if (document.getElementById("datepicker").value !="") {
+	  if (re.test(document.getElementById("datepicker").value) == false) {
+		  document.getElementById("datepickererror").innerHTML="Invalid Date Format. Please correct and submit again";
+		  return false;
+	  }
+	}
 	}
 	</script>
 </head>
@@ -127,7 +137,7 @@
                         <p id="mypar"><u><b>You may have the right to have your physician amend your protected healthy information.</b></u>If we deny your request for amendment, you have the right to file a statement of disagreement with us and we may prepare a rebuttal to your statement and will provide you with a copy of any such rebuttal.</p>
                         <p id="mypar"><u><b>You have the right to receive an accounting of certain disclosures we have made, if any, of your protected health information.</b></u>We reserve the right to change the terms of this notice and will inform you by mail of any changes.  You then have the right to object or withdraw as provided in this notice.</p>
                         <p id="mypar"><u><b>Complaints</b></u>You may complain to us or to the Secretary of Health and Human Services if you believe your privacy rights have been violated by us.  You may file a complaint with us by notifying our privacy contact of you complaint.<u><b>We will not retaliate against you for filing a complaint.</b></u></p>
-                        <p id="mypar">This notice was publishes and becomes effective on/or before &nbsp;&nbsp;<input type="text" class="input_txtbx1" id="datepicker" name="date" value="${privacydetails.date }" /></p>
+                        <p id="mypar">This notice was publishes and becomes effective on/or before &nbsp;&nbsp;<input type="text" class="input_txtbx1" id="datepicker" name="date" value="${privacydetails.date }" /><span id="datepickererror" style="color: red;font-style:italic;"></span></p>
                         <br>
                         <br>
                         <br>
