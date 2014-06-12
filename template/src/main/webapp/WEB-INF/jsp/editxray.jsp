@@ -54,6 +54,13 @@ function checkSubmit()
 		
 		return false;
 		}
+		var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+	if(document.getElementById("datepicker2").value.match(datechk)==null)
+    {
+    	document.getElementById("datepickererror").innerHTML="Invalid Date Format. Please correct and submit again";
+    	
+        return false;
+    }	
 		document.getElementById("signerror").innerHTML="";
 		if(document.getElementById("sign").value=="")
 		{
@@ -61,6 +68,26 @@ function checkSubmit()
 		
 		return false;
 		}
+		
+		var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+		
+		
+		if (document.getElementById("datepicker").value !="") {
+		  if (re.test(document.getElementById("datepicker").value) == false) {
+			  document.getElementById("dateerror").innerHTML="Invalid Date Format. Please correct and submit again";
+			  return false;
+		  }
+		}
+    var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+		
+		
+		if (document.getElementById("datepicker1").value !="") {
+		  if (re.test(document.getElementById("datepicker1").value) == false) {
+			  document.getElementById("date1error").innerHTML="Invalid Date Format. Please correct and submit again";
+			  return false;
+		  }
+		}
+    	
 		}
 
 </script>
@@ -117,13 +144,13 @@ function checkSubmit()
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="100"><span class="err"></span>Date Borrowed</td>
-              <td ><input type="text" class="input_txtbx1" name="date" id="datepicker"  value="${xraydetails.date}"/><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="date" id="datepicker"  value="${xraydetails.date}"/><span class="err" id="dateerror"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="100"><span class="err"></span>Date Due</td>
-              <td ><input type="text" class="input_txtbx1" name="date1" id="datepicker1"  value="${xraydetails.date1}"/><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="date1" id="datepicker1"  value="${xraydetails.date1}"/><span class="err" id="date1error"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table><br><br>
              <table cellpadding="0" cellspacing="0" border="0" width="100%">
