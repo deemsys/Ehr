@@ -748,6 +748,7 @@ document.getElementById("inp_id").value=phone;
 		
 		return false;
 		}
+		document.getElementById("datepickererror").innerHTML="";
 	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 	if(document.getElementById("datepicker").value.match(datechk)==null)
     {
@@ -843,6 +844,7 @@ document.getElementById("inp_id").value=phone;
 	
 	return false;
 	}
+	document.getElementById("datepicker1error").innerHTML="";
 	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 	if(document.getElementById("datepicker1").value.match(datechk)==null)
     {
@@ -1026,6 +1028,7 @@ document.getElementById("inp_id").value=phone;
 	
 	return false;
 	}
+	document.getElementById("datepicker2error").innerHTML="";
 	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 	if(document.getElementById("datepicker2").value.match(datechk)==null)
     {
@@ -1049,6 +1052,7 @@ document.getElementById("inp_id").value=phone;
 	
 	return false;
 	}
+	document.getElementById("datepicker5error").innerHTML="";
 	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 	if(document.getElementById("datepicker5").value.match(datechk)==null)
     {
@@ -1232,7 +1236,7 @@ document.getElementById("inp_id").value=phone;
 	
 	return false;
 	}
-		
+		document.getElementById("datepicker6error").innerHTML="";
 	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 	if(document.getElementById("datepicker6").value.match(datechk)==null)
     {
@@ -1254,6 +1258,7 @@ document.getElementById("inp_id").value=phone;
 	
 	return false;
 	}
+	document.getElementById("datepicker3error").innerHTML="";
 	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 	if(document.getElementById("datepicker3").value.match(datechk)==null)
     {
