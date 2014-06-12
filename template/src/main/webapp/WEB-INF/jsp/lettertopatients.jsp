@@ -283,6 +283,40 @@ function checkSubmit()
 	
 	return false;
 	}
+	 var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+	if(document.getElementById("datepicker").value.match(datechk)==null)
+    {
+    	document.getElementById("datepickererror").innerHTML="Invalid Date Format. Please correct and submit again";
+    	
+        return false;
+    }	
+    var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+		
+		
+		if (document.getElementById("datepicker3").value !="") {
+		  if (re.test(document.getElementById("datepicker3").value) == false) {
+			  document.getElementById("datepicker3error").innerHTML="Invalid Date Format. Please correct and submit again";
+			  return false;
+		  }
+		}
+		var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+		
+		
+		if (document.getElementById("datepicker1").value !="") {
+		  if (re.test(document.getElementById("datepicker1").value) == false) {
+			  document.getElementById("datepicker1error").innerHTML="Invalid Date Format. Please correct and submit again";
+			  return false;
+		  }
+		}
+		var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+		
+		
+		if (document.getElementById("datepicker2").value !="") {
+		  if (re.test(document.getElementById("datepicker2").value) == false) {
+			  document.getElementById("datepicker2error").innerHTML="Invalid Date Format. Please correct and submit again";
+			  return false;
+		  }
+		}
 	document.getElementById("signerror").innerHTML="";
 	if(document.getElementById("sign").value=="")
 	{
@@ -293,6 +327,9 @@ function checkSubmit()
 	
 	}
 	
+		
+		
+		
 	}
 
 	</script>
@@ -421,7 +458,7 @@ document.getElementById("ssn").value=phone;
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err"></span>Date</td>
-              <td ><input type="text" class="input_txtbx1" name="date" id="datepicker3"/></td>
+              <td ><input type="text" class="input_txtbx1" name="date" id="datepicker3"/><span class="err" id="datepicker3error"></span></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -437,10 +474,10 @@ document.getElementById("ssn").value=phone;
        		
        		 <table>
        		 <tr>
-       		 <td><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;On <input type="text" class="input_txtbx1" name="date1" id="datepicker1" /> you received a check for compensation, sent to you by State Farm Insurance, your check included medical payment from the at fault insurance company which was to be paid to our office upon receipt.  </p>
+       		 <td><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;On <input type="text" class="input_txtbx1" name="date1" id="datepicker1" /><span class="err" id="datepicker1error"></span> you received a check for compensation, sent to you by State Farm Insurance, your check included medical payment from the at fault insurance company which was to be paid to our office upon receipt.  </p>
        		 </td></tr>
        		 <tr><td>
-       		 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Condition of your treatment based upon the signed lien, dictate that upon payments received from the insurance company, which includes a portion for medical compensation, shall be paid in full to Chiropractic Therapy Center for services rendered. Violation of the signed lien will constitute insurance fraud. Criminal charges and a civil lawsuit will be filed if payment is not received within 3 days. <input type="text" class="input_txtbx1" name="date2" id="datepicker2" /></td>  </p>
+       		 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Condition of your treatment based upon the signed lien, dictate that upon payments received from the insurance company, which includes a portion for medical compensation, shall be paid in full to Chiropractic Therapy Center for services rendered. Violation of the signed lien will constitute insurance fraud. Criminal charges and a civil lawsuit will be filed if payment is not received within 3 days. <input type="text" class="input_txtbx1" name="date2" id="datepicker2" /><span class="err" id="datepicker2error"></span></td>  </p>
        		 </td>
        		 </tr>
        		 <tr><td>
