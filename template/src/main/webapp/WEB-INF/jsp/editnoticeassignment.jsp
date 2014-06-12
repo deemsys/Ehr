@@ -30,10 +30,10 @@
   </STYLE>
  <script>
  $(function() {
-           $( "#datepicker" ).datepicker();
+           $( "#datepicker1" ).datepicker();
          });
  $(function() {
-     $( "#dateofaccident" ).datepicker();
+     $( "#datepicker2" ).datepicker();
    });
  
  
@@ -41,6 +41,24 @@
 <script>
 function valid()
 {
+var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+		
+		
+		if (document.getElementById("datepicker1").value !="") {
+		  if (re.test(document.getElementById("datepicker1").value) == false) {
+			  document.getElementById("datepicker1error").innerHTML="Invalid Date Format. Please correct and submit again";
+			  return false;
+		  }
+		} 
+		var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+		
+		
+		if (document.getElementById("datepicker2").value !="") {
+		  if (re.test(document.getElementById("datepicker2").value) == false) {
+			  document.getElementById("datepicker2error").innerHTML="Invalid Date Format. Please correct and submit again";
+			  return false;
+		  }
+		}   
 	document.getElementById("nameofinserror").innerHTML="";
 if(document.getElementById("nameofins").value=="")
         {
@@ -146,11 +164,11 @@ document.getElementById("nameofattorneyerror").innerHTML="";
           </tr> 
           <tr>
             <td height="30" width="180">Date Of Accident:</td>
-              <td ><input type="text" class="input_txtbx1" name="dateofaccident" value= "${noticeassignmentdetails.dateofaccident }" id="dateofaccident" /><span class="err"><form:errors path="noticeofassignment.dateofaccident"></form:errors></span></td>                      
+              <td ><input type="text" class="input_txtbx1" name="dateofaccident" value= "${noticeassignmentdetails.dateofaccident }" id="datepicker1" /><span class="err" id="datepicker1error"><form:errors path="noticeofassignment.dateofaccident"></form:errors></span></td>                      
           </tr> 
           <tr>
             <td height="20" width="180">Today'sDate:</td>
-              <td ><input type="text" class="input_txtbx1" name="todaysdate"value="${noticeassignmentdetails.todaysdate }" id="datepicker" /><span class="err"><form:errors path="noticeofassignment.todaysdate"></form:errors></span></td>                      
+              <td ><input type="text" class="input_txtbx1" name="todaysdate"value="${noticeassignmentdetails.todaysdate }" id="datepicker2" /><span class="err" id="datepicker2error"><form:errors path="noticeofassignment.todaysdate"></form:errors></span></td>                      
           </tr> <br>  
             </table>
             
