@@ -697,7 +697,8 @@ function elbowPopup() {
 </script>
                  <tr class="row1">
                  <td>On what date did your injury occur?  </td>
-                 <td><input type="text" name="date" id="datepicker"  class="input_txtbx1"></td>
+                 <td><input type="text" name="date" id="datepicker"  class="input_txtbx1"><span id="datepickererror" style="color: red;font-style:italic;"></span>
+                 </td>
                  <td></td>
                  <td></td>
                  <td></td>
