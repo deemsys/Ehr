@@ -159,6 +159,9 @@ $(function() {
            }
        }       
     </script>
+    
+
+	
     <script>
   function printPage(id)
   {
@@ -347,7 +350,7 @@ document.getElementById("leftproxi").style.display="none";
  </tr>
  <tr>
  <td>&nbsp;&nbsp;
- <input type="text" name="date1" id="datepicker1" class="input_txtbx1"></td>
+ <input type="text" name="date1" id="datepicker1" class="input_txtbx1"><span id="datepicker1error" style="color: red;font-style:italic;" ></span></td>
  <td>
  <br/>
 &nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved" onkeypress="return Validate(event)"; class="input_txtbx1">&nbsp; %  <!--  <select  id="improved" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
@@ -469,7 +472,7 @@ document.getElementById("leftproxi").style.display="none";
  </tr>
  <tr>
  <td>&nbsp;&nbsp;
- <input type="text" name="date2" id="datepicker" class="input_txtbx1"></td>
+ <input type="text" name="date2" id="datepicker" class="input_txtbx1"><span id="datepickererror" style="color: red;font-style:italic;" ></span></td>
  <td>
  <br/>
 &nbsp; &nbsp; Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved1"onkeypress="return Validate(event)";class="input_txtbx1">&nbsp;%<!-- <select name="improved1" id="improved1" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
@@ -549,7 +552,7 @@ document.getElementById("leftproxi").style.display="none";
  </tr>
  <tr>
  <td>&nbsp;&nbsp;
- <input type="text" name="date3" id="datepicker2" class="input_txtbx1"></td>
+ <input type="text" name="date3" id="datepicker2" class="input_txtbx1"><span id="datepicker2error" style="color: red;font-style:italic;" ></span></td>
  <td>
 
  
@@ -627,7 +630,7 @@ document.getElementById("leftproxi").style.display="none";
  </tr>
  <tr>
  <td>&nbsp;&nbsp;
- <input type="text" name="date4" id="datepicker3" class="input_txtbx1"></td>
+ <input type="text" name="date4" id="datepicker3" class="input_txtbx1"><span id="datepicker3error" style="color: red;font-style:italic;" ></span></td>
  <td>
  <br/>&nbsp;&nbsp;Improved: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved3" onkeypress="return Validate(event)"; class="input_txtbx1">&nbsp;%<!-- <select name="improved3" id="improved3" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
@@ -697,7 +700,7 @@ document.getElementById("leftproxi").style.display="none";
  </tr>
  <tr>
  <td>&nbsp;&nbsp;
- <input type="text" name="date5" id="datepicker4" class="input_txtbx1"></td>
+ <input type="text" name="date5" id="datepicker4" class="input_txtbx1"><span id="datepicker4error" style="color: red;font-style:italic;" ></span></td>
  <td>
  <br/>&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved4" onkeypress="return Validate(event)";class="input_txtbx1">&nbsp;%<!-- <select name="improved4" id="improved4" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
@@ -766,7 +769,7 @@ document.getElementById("leftproxi").style.display="none";
  </tr>
  <tr>
  <td>&nbsp;&nbsp;
- <input type="text" name="date6" id="datepicker5" class="input_txtbx1"></td>
+ <input type="text" name="date6" id="datepicker5" class="input_txtbx1"><span id="datepicker5error" style="color: red;font-style:italic;" ></span></td>
  <td>
  <br/>&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved5" onkeypress="return Validate(event)"; class="input_txtbx1">&nbsp;% <!-- <select name="improved5" id="improved5" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
@@ -836,7 +839,7 @@ document.getElementById("leftproxi").style.display="none";
  </tr>
  <tr>
  <td>&nbsp;&nbsp;
- <input type="text" name="date7" id="datepicker6" class="input_txtbx1"></td>
+ <input type="text" name="date7" id="datepicker6" class="input_txtbx1"><span id="datepicker6error" style="color: red;font-style:italic;" ></span></td>
  <td>
  <br/>&nbsp; &nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved6" onkeypress="return Validate(event)"; class="input_txtbx1">&nbsp;% <!-- <select name="improved6" id="improved6" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
@@ -905,7 +908,7 @@ document.getElementById("leftproxi").style.display="none";
  </tr>
  <tr>
  <td>&nbsp;&nbsp;
- <input type="text" name="date8" id="datepicker7" class="input_txtbx1"></td>
+ <input type="text" name="date8" id="datepicker7" class="input_txtbx1"><span id="datepicker7error" style="color: red;font-style:italic;" ></span></td>
  <td>
  <br/>&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved7" onkeypress="return Validate(event)";class="input_txtbx1">&nbsp;%<!-- <select name="improved7" id="improved7" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
@@ -974,7 +977,7 @@ document.getElementById("leftproxi").style.display="none";
  </tr>
  <tr>
  <td>&nbsp;&nbsp;
- <input type="text" name="date9" id="datepicker8" class="input_txtbx1"></td>
+ <input type="text" name="date9" id="datepicker8" class="input_txtbx1"><span id="datepicker8error" style="color: red;font-style:italic;" ></span></td>
  <td>
  <br/>&nbsp; &nbsp;Improved:&nbsp;&nbsp;&nbsp;<input type="text" name="improved8" onkeypress="return Validate(event)"; class="input_txtbx1">&nbsp;%<!-- <select name="improved8" id="improved8" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
@@ -1075,7 +1078,96 @@ document.getElementById("leftproxi").style.display="none";
 	document.getElementById("signerror").innerHTML="Required Field Should Not Empty";	
 	return false;
 	}
-		
+	document.getElementById("datepicker1error").innerHTML="";
+	var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+			
+			
+			if (document.getElementById("datepicker1").value !="") {
+			  if (re.test(document.getElementById("datepicker1").value) == false) {
+				  document.getElementById("datepicker1error").innerHTML="Invalid Date Format. Please correct and submit again";
+				  return false;
+			  }
+			}
+			document.getElementById("datepicker2error").innerHTML="";
+	var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+			
+			
+			if (document.getElementById("datepicker2").value !="") {
+			  if (re.test(document.getElementById("datepicker2").value) == false) {
+				  document.getElementById("datepicker2error").innerHTML="Invalid Date Format. Please correct and submit again";
+				  return false;
+			  }
+			}
+			document.getElementById("datepickererror").innerHTML="";
+	var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+			
+			
+			if (document.getElementById("datepicker").value !="") {
+			  if (re.test(document.getElementById("datepicker").value) == false) {
+				  document.getElementById("datepickererror").innerHTML="Invalid Date Format. Please correct and submit again";
+				  return false;
+			  }
+			}
+			document.getElementById("datepicker3error").innerHTML="";
+	var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+			
+			
+			if (document.getElementById("datepicker3").value !="") {
+			  if (re.test(document.getElementById("datepicker3").value) == false) {
+				  document.getElementById("datepicker3error").innerHTML="Invalid Date Format. Please correct and submit again";
+				  return false;
+			  }
+			}
+			document.getElementById("datepicker4error").innerHTML="";
+	var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+			
+			
+			if (document.getElementById("datepicker4").value !="") {
+			  if (re.test(document.getElementById("datepicker4").value) == false) {
+				  document.getElementById("datepicker4error").innerHTML="Invalid Date Format. Please correct and submit again";
+				  return false;
+			  }
+			}
+			document.getElementById("datepicker5error").innerHTML="";
+	var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+			
+			
+			if (document.getElementById("datepicker5").value !="") {
+			  if (re.test(document.getElementById("datepicker5").value) == false) {
+				  document.getElementById("datepicker5error").innerHTML="Invalid Date Format. Please correct and submit again";
+				  return false;
+			  }
+			}
+			document.getElementById("datepicker6error").innerHTML="";
+	var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+			
+			
+			if (document.getElementById("datepicker6").value !="") {
+			  if (re.test(document.getElementById("datepicker6").value) == false) {
+				  document.getElementById("datepicker6error").innerHTML="Invalid Date Format. Please correct and submit again";
+				  return false;
+			  }
+			}
+			document.getElementById("datepicker7error").innerHTML="";
+	var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+			
+			
+			if (document.getElementById("datepicker7").value !="") {
+			  if (re.test(document.getElementById("datepicker7").value) == false) {
+				  document.getElementById("datepicker7error").innerHTML="Invalid Date Format. Please correct and submit again";
+				  return false;
+			  }
+			}
+			document.getElementById("datepicker8error").innerHTML="";
+	var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+			
+			
+			if (document.getElementById("datepicker8").value !="") {
+			  if (re.test(document.getElementById("datepicker8").value) == false) {
+				  document.getElementById("datepicker8error").innerHTML="Invalid Date Format. Please correct and submit again";
+				  return false;
+			  }
+			}
 	}	
 	</script>			                   
 				                  
