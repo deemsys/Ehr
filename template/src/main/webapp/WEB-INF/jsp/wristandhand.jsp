@@ -213,6 +213,43 @@ $(function() {
 	  
   }
   </script>
+   <script>
+
+	function checkSubmit()
+	{
+document.getElementById("pnameerror").innerHTML=" ";
+		
+		if(document.getElementById("pname").value=="")
+		{
+		document.getElementById("pnameerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		document.getElementById("datepickererror").innerHTML="";
+	if(document.getElementById("datepicker").value=="")
+		{
+		document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+	document.getElementById("datepickererror").innerHTML="";
+	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+		if(document.getElementById("datepicker").value.match(datechk)==null)
+	    {
+	    	document.getElementById("datepickererror").innerHTML="Invalid Date Format. Please correct and submit again";
+	    	
+	        return false;
+	    }	
+			
+	document.getElementById("signerror").innerHTML="";
+	if(document.getElementById("sign").value=="")
+	{
+	document.getElementById("signerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	}
+	</script>
 </head>
 <body>
 <br><br>
@@ -242,8 +279,8 @@ $(function() {
 <c:when test="${empty wristdetails}">
           <table cellpadding="0" cellspacing="0" border="0" >
            <tr><td width="130"><span class="err">*</span>Patient Name:</td>
-           <td width="200"><input type="text" name="pname"><br><span class="err"><form:errors path="wristexamdetails.pname"></form:errors></td><td width="650"></td>
-           <td width="50"><span class="err">*</span>Date:&nbsp;</td> <td width="200"><input type="text" name="date" id="datepicker"><br><span class="err"><form:errors path="wristexamdetails.date"></form:errors></td>
+           <td width="200"><input type="text" name="pname" id="pname"><br><span class="err" id="pnameerror"><form:errors path="wristexamdetails.pname"></form:errors></td><td width="650"></td>
+           <td width="50"><span class="err">*</span>Date:&nbsp;</td> <td width="200"><input type="text" name="date" id="datepicker"><br><span class="err" id="datepickererror"><form:errors path="wristexamdetails.date"></form:errors></td>
            </tr>
             </table>
             </br>
@@ -414,7 +451,7 @@ $(function() {
                       
            </table>
            </br>
-           <div><B style="font-size:14px"><span class="err">*</span>PHYSICIAN SIGNATURE:</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="signature"><span class="err"><form:errors path="wristexamdetails.signature"></form:errors></div>
+           <div><B style="font-size:14px"><span class="err">*</span>PHYSICIAN SIGNATURE:</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="signature" id="sign"><span class="err" id="signerror"><form:errors path="wristexamdetails.signature"></form:errors></div>
            </c:when>
            <c:otherwise>
            <table cellpadding="0" cellspacing="0" border="0">
@@ -1007,7 +1044,7 @@ $(function() {
            </c:otherwise>
            </c:choose>
          
-         <table align="right"><tr><td><input type="submit" value="Save" id="saveid" class="submit_btn"></td><td> <a href="viewwristexamdetails" onclick="myclose()"  style="color: white" class="submit_btn" id="cancelid">Cancel</a></td></tr></table>
+         <table align="right"><tr><td><input type="submit" value="Save" id="saveid" class="submit_btn" onclick="return checkSubmit('this');"></td><td> <a href="viewwristexamdetails" onclick="myclose()"  style="color: white" class="submit_btn" id="cancelid">Cancel</a></td></tr></table>
          
      <script>
  function myclose()
