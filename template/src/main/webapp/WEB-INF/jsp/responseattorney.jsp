@@ -218,6 +218,13 @@ document.getElementById("patientnameerror").innerHTML="";
         	 document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
             return false;
         }  
+         var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+	if(document.getElementById("datepicker").value.match(datechk)==null)
+    {
+    	document.getElementById("datepickererror").innerHTML="Invalid Date Format. Please correct and submit again";
+    	
+        return false;
+    }	
          document.getElementById("dearnameerr").innerHTML="";
         if(document.getElementById("dearname").value=="")
         {
