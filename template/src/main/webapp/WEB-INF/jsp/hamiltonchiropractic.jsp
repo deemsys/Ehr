@@ -446,6 +446,21 @@ $(function() {
 
     }
 </script>
+<script>
+function checkSubmit()
+	{
+	document.getElementById("datepickererror").innerHTML="";
+var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+		
+		
+		if (document.getElementById("datepicker").value !="") {
+		  if (re.test(document.getElementById("datepicker").value) == false) {
+			  document.getElementById("datepickererror").innerHTML="Invalid Date Format. Please correct and submit again";
+			  return false;
+		  }
+		}
+		}
+</script>
  <body>
  <br>
 <br>
@@ -1585,7 +1600,7 @@ function elbowPopup() {
           </tr>
           
 				                   <table align="right"> <tr>
-				                   <td><input type="submit" class="submit_btn" value="Save" id="saveid"></td>
+				                   <td><input type="submit" class="submit_btn" value="Save" id="saveid" ></td>
 				                   <td><a href="doctorsearch" style="color:white;text-decoration: none" class="submit_btn" id="cancelid">Cancel</a></td>
                                   <td valign="top" align="center"><input type="button" class="submit_btn" id="moretests3"value="More Tests" onclick="window.location.href='moretest'"></td></td>
 				                  <!--  <td><input type="button" class="submit_btn" value="View" onclick="window.location.href='viewfirsthamiltonchiropractic'"></td> -->
