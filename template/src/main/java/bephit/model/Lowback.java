@@ -8,9 +8,9 @@ public class Lowback
 	
 	private String symptom;
 	
-	@NotEmpty
+	
 	private String pname;
-	@NotEmpty
+	
 	private String date;
 	private String tolerate;
 	private String withoutpain;
