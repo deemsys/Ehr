@@ -190,13 +190,7 @@ $(function() {
 		    	
 		        return false;
 		    }
-			var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
-			if(document.getElementById("datepicker1").value.match(datechk)==null)
-		    {
-		    	document.getElementById("datepicker1error").innerHTML="Invalid Date Format. Please correct and submit again";
-		    	
-		        return false;
-		    }
+			
 		    document.getElementById("securityerror").innerHTML=" ";
 		
 		if(document.getElementById("security").value=="")
@@ -205,9 +199,41 @@ $(function() {
 		
 		return false;
 		}
+		var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+		
+		
+		if (document.getElementById("datepicker1").value !="") {
+		  if (re.test(document.getElementById("datepicker1").value) == false) {
+			  document.getElementById("datepicker1error").innerHTML="Invalid Date Format. Please correct and submit again";
+			  return false;
+		  }
+		}
+	
 	}
 
 	</script>
+	<!-- <script>
+	function checkdate(input){
+var validformat=/^\d{2}\/\d{2}\/\d{4}$/; //Basic check for format validity
+var returnval=false;
+if (!validformat.test(input.value))
+alert("Invalid Date Format. Please correct and submit again.");
+else{ //Detailed check for valid date ranges
+var monthfield=input.value.split("/")[0];
+var dayfield=input.value.split("/")[1];
+var yearfield=input.value.split("/")[2];
+var dayobj = new Date(yearfield, monthfield-1, dayfield);
+if ((dayobj.getMonth()+1!=monthfield)||(dayobj.getDate()!=dayfield)||(dayobj.getFullYear()!=yearfield))
+alert("Invalid Day, Month, or Year range detected. Please correct and submit again.");
+else
+returnval=true;
+}
+if (returnval==false) input.select();
+return returnval;
+}
+
+</script> -->
+	
 	<script type="text/javascript">
        function validate(event) {
           

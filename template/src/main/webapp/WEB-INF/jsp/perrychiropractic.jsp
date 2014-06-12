@@ -51,14 +51,14 @@
 	
 	return false;
 	}
-	 
-	 var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
-	if(document.getElementById("datepicker").value.match(datechk)==null)
-    {
-    	document.getElementById("datepickererror").innerHTML="Invalid Date Format. Please correct and submit again";
-    	
-        return false;
-    }	
+	var re = /^[mdy0-9]{2}\/[mdy0-9]{2}\/[mdy0-9]{4}$/;
+		//Allow blank space in field
+		if (document.getElementById("datepicker").value !="") {
+		  if (re.test(document.getElementById("datepicker").value) == false) {
+			  document.getElementById("datepickererror").innerHTML="Invalid Date Format. Please correct and submit again";
+			  return false;
+		  }
+		}
 	
 	}
 
@@ -222,6 +222,29 @@ function doAjaxPost() {
 
 </script>
 <script>
+i=0;
+$(document).ready(function(){
+  $("#datepicker").keypress(function(){
+var phone=document.getElementById("datepicker").value;
+phone = phone.replace(/^([\d]{2})([\d]{2})([\d]{4})$/,"$1/$2/$3"); 
+document.getElementById("datepicker").value=phone;
+ });  
+
+});
+</script>
+<script type="text/javascript">
+       function validate(event) {
+          
+           var regex = new RegExp("^[0-9/\]+$");
+           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+           if (!regex.test(key)) {
+             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
+               event.preventDefault();
+               return false;
+           }
+       }       
+    </script>
+<script>
   function printPage(id)
   {
 	
@@ -246,6 +269,20 @@ function doAjaxPost() {
      document.getElementById('cancelid').style.visibility = 'visible';
   }
   </script>
+  <script>
+  function dtval(d,e) {
+var pK = e ? e.which : window.event.keyCode;
+if (pK == 8) {d.value = substr(0,d.value.length-1); return;}
+var dt = d.value;
+var da = dt.split('/');
+for (var a = 0; a < da.length; a++) {if (da[a] != +da[a]) da[a] = da[a].substr(0,da[a].length-1);}
+if (da[0] > 31) {da[1] = da[0].substr(da[0].length-1,1);da[0] = '0'+da[0].substr(0,da[0].length-1);}
+if (da[1] > 12) {da[2] = da[1].substr(da[1].length-1,1);da[1] = '0'+da[1].substr(0,da[1].length-1);}
+if (da[2] > 9999) da[1] = da[2].substr(0,da[2].length-1);
+dt = da.join('/');
+if (dt.length == 2 || dt.length == 5) dt += '/';
+d.value = dt;
+}</script>
 <div class='popup'>
 <div class='cnt223'>
 <br><br>
@@ -388,7 +425,7 @@ Canton, Ohio 44708
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="50%"><span class="err"></span>Date of Accident: </td>
-              <td ><input type="text" class="input_txtbx1" name="dateofaccident" id="datepicker" /><span class="err" id="datepickererror"><form:errors path="Perrychiropractic.dateofaccident"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="dateofaccident" id="datepicker" maxlength="10" onkeypress="return validate(event)"; /><span class="err" id="datepickererror"><form:errors path="Perrychiropractic.dateofaccident"></form:errors></td>
               </tr>
               </table>
               
