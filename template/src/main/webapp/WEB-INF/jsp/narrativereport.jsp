@@ -178,6 +178,13 @@ document.getElementById('gender32').value='Female';
 		
 		return false;
 		}
+	 var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+	if(document.getElementById("datepicker11").value.match(datechk)==null)
+    {
+    	document.getElementById("datepicker11error").innerHTML="Invalid Date Format. Please correct and submit again";
+    	
+        return false;
+    }	
 	
 document.getElementById("patientnameerror").innerHTML=" ";
 		
@@ -196,7 +203,22 @@ document.getElementById("datepicker1error").innerHTML=" ";
 		
 		return false;
 		}
+		var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+	if(document.getElementById("datepicker1").value.match(datechk)==null)
+    {
+    	document.getElementById("datepicker1error").innerHTML="Invalid Date Format. Please correct and submit again";
+    	
+        return false;
+    }	
+	var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		
+		
+		if (document.getElementById("datepicker2").value !="") {
+		  if (re.test(document.getElementById("datepicker2").value) == false) {
+			  document.getElementById("datepicker2error").innerHTML="Invalid Date Format. Please correct and submit again";
+			  return false;
+		  }
+		}	
 document.getElementById("datepickererror").innerHTML=" ";
 		
 		if(document.getElementById("datepicker").value=="")
@@ -205,7 +227,70 @@ document.getElementById("datepickererror").innerHTML=" ";
 		
 		return false;
 		}
+		 var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+	if(document.getElementById("datepicker").value.match(datechk)==null)
+    {
+    	document.getElementById("datepickererror").innerHTML="Invalid Date Format. Please correct and submit again";
+    	
+        return false;
+    }	
+    var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		
+		
+		if (document.getElementById("datepicker3").value !="") {
+		  if (re.test(document.getElementById("datepicker3").value) == false) {
+			  document.getElementById("datepicker3error").innerHTML="Invalid Date Format. Please correct and submit again";
+			  return false;
+		  }
+		}
+		
+    var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+		
+		
+		if (document.getElementById("datepicker4").value !="") {
+		  if (re.test(document.getElementById("datepicker4").value) == false) {
+			  document.getElementById("datepicker4error").innerHTML="Invalid Date Format. Please correct and submit again";
+			  return false;
+		  }
+		}
+		
+		var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+		
+		
+		if (document.getElementById("datepicker2").value !="") {
+		  if (re.test(document.getElementById("datepicker2").value) == false) {
+			  document.getElementById("datepicker2error").innerHTML="Invalid Date Format. Please correct and submit again";
+			  return false;
+		  }
+		}
+		
+		var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+		
+		
+		if (document.getElementById("datepicker7").value !="") {
+		  if (re.test(document.getElementById("datepicker7").value) == false) {
+			  document.getElementById("datepicker7error").innerHTML="Invalid Date Format. Please correct and submit again";
+			  return false;
+		  }
+		}
+		var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+		
+		
+		if (document.getElementById("datepicker9").value !="") {
+		  if (re.test(document.getElementById("datepicker9").value) == false) {
+			  document.getElementById("datepicker9error").innerHTML="Invalid Date Format. Please correct and submit again";
+			  return false;
+		  }
+		}
+		var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+		
+		
+		if (document.getElementById("datepicker10").value !="") {
+		  if (re.test(document.getElementById("datepicker10").value) == false) {
+			  document.getElementById("datepicker10error").innerHTML="Invalid Date Format. Please correct and submit again";
+			  return false;
+		  }
+		}
 document.getElementById("signerror").innerHTML=" ";
 		
 		if(document.getElementById("sign").value=="")
@@ -324,15 +409,15 @@ document.getElementById("signerror").innerHTML=" ";
           <div><p style="line-height:1.5"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At your request and with permission from my patient, <input type="text"  class="input_txtbx1" name="patientname" size="40">, I am writing the following narrative report concerning the injuries <select  name="gender" id="gender" onchange="validate()">
 					<option selected="selected"  class="input_txtbx1" value="He" >He</option>
 					<option value="She">She</option>
-					</select> sustained as the result of an automobile accident on <input type="text"  class="input_txtbx1" name="accident" id="datepicker2"></p>
+					</select> sustained as the result of an automobile accident on <input type="text"  class="input_txtbx1" name="accident" id="datepicker2"><span class="err" id="datepicker2error"></span></p>
                <p><B style="font-size:14px">History</B></p>
-               <p style="line-height:26px"><input type="text"  class="input_txtbx1" name="name"> was initially seen for the purpose of consultation and examination on <input type="text"  class="input_txtbx1" name="dateofconsultation" id="datepicker3">.  <select name="gender1" id="gender1">
+               <p style="line-height:26px"><input type="text"  class="input_txtbx1" name="name"> was initially seen for the purpose of consultation and examination on <input type="text"  class="input_txtbx1" name="dateofconsultation" id="datepicker3"><span class="err" id="datepicker3error"></span>.  <select name="gender1" id="gender1">
 					<option selected="selected" value="He" >He</option>
 					<option value="She">She</option>
 					</select> stated that <select  name="gender2" id="gender2">
 					<option selected="selected" value="He" >He</option>
 					<option value="She">She</option>
-					</select> was the driver in a motor vehicle accident <input type="text"  class="input_txtbx1" name="accidentdate" id="datepicker4">.  <select  name="gender3" id="gender3">
+					</select> was the driver in a motor vehicle accident <input type="text"  class="input_txtbx1" name="accidentdate" id="datepicker4"><span class="err" id="datepicker4error"></span>.  <select  name="gender3" id="gender3">
 					<option selected="selected" value="He" >He</option>
 					<option value="She">She</option>
 					</select> further stated that <select  name="gender4" id="gender4">
@@ -391,7 +476,7 @@ document.getElementById("signerror").innerHTML=" ";
 					<option selected="selected" value="Mr" >Mr</option>
 					<option value="Mrs">Ms</option>
 					<option value="Ms">Miss</option>
-					</select> <input type="text" name="name4" value="${patientDetails.name}"> presented to this clinic on <input type="text"  class="input_txtbx1" name="clinicdate" id="datepicker7">with complaints of <select  name="gender19" id="gender19">
+					</select> <input type="text" name="name4" value="${patientDetails.name}"> presented to this clinic on <input type="text"  class="input_txtbx1" name="clinicdate" id="datepicker7"><span class="err" id="datepicker7error"></span>with complaints of <select  name="gender19" id="gender19">
 					<option selected="selected" value="Headache" >Headache</option>
 					<option value="Neck pain">Neck pain</option>
 					<option value="Mid Back Pain">Mid Back Pain</option>
@@ -402,7 +487,7 @@ document.getElementById("signerror").innerHTML=" ";
 					<option value="L-R leg Pain">L-R Leg Pain</option>
 					<option value="L-R foot Pain">L-R foot Pain</option>
 					<option value="L-R gluteal pain">L-R gluteal pain</option>
-					</select>due to a motor vehicle accident on <input type="text" name="vehicleaccident" id="datepicker4">.  <select  name="gender20" id="gender20">
+					</select>due to a motor vehicle accident on <input type="text" name="vehicleaccident" id="datepicker4"><span class="err" id="datepicker4error"></span>.  <select  name="gender20" id="gender20">
 					<option selected="selected" value="Activity" >Activity</option>
 					<option value="Bending">Bending</option>
 					<option value="Twisting">Twisting</option>
@@ -883,7 +968,7 @@ Injuries of this nature and magnitude respond well to a treatment program consis
 					<option selected="selected" value="Mr">Mr</option>
 					<option value="Mrs">Mrs</option>
 					<option value="Ms">Ms</option>
-					</select> <input type="text" name="pname"  class="input_txtbx1" value="${patientDetails.name}">on <input type="text"    class="input_txtbx1" name="date9" id="datepicker9">and during that period of time, records indicate <select  name="gender62" id="gender62" onchange='Checksymptom(this.value);'>
+					</select> <input type="text" name="pname"  class="input_txtbx1" value="${patientDetails.name}">on <input type="text"    class="input_txtbx1" name="date9" id="datepicker9"><span class="err" id="datepicker9error" ></span>and during that period of time, records indicate <select  name="gender62" id="gender62" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="He">He</option>
 					<option value="She">She</option>
 					</select> experienced steady improvement.
@@ -893,7 +978,7 @@ Injuries of this nature and magnitude respond well to a treatment program consis
 					<option selected="selected" value="Mr">Mr</option>
 					<option value="Mrs">Mrs</option>
 					<option value="Ms">Ms</option>
-					</select> <input type="text"  class="input_txtbx1" name="pname1" value="${patientDetails.name}"> condition reached maximum medical improvement on <input type="text"  class="input_txtbx1" name="datenew" id="datepicker10"> and was therefore released from care.   <select  name="gender64" id="gender64" onchange='Checksymptom(this.value);'>
+					</select> <input type="text"  class="input_txtbx1" name="pname1" value="${patientDetails.name}"> condition reached maximum medical improvement on <input type="text"  class="input_txtbx1" name="datenew" id="datepicker10"><span class="err" id="datepicker10error"></span> and was therefore released from care.   <select  name="gender64" id="gender64" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="His">His</option>
 					<option value="Her">Her</option>
 					</select> prognosis is considered  <select  name="gender65" id="gender65" onchange='Checksymptom(this.value);'>
