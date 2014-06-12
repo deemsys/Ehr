@@ -249,7 +249,7 @@ document.getElementById("pnameerror").innerHTML=" ";
         <c:set value="${lumbopelvicexamForm.lumbopelvicexam[0]}" var="lumbopelvicexam"/>   
  <tr class="row1">
  <input type="hidden" name="lumbopelvicexamid" id="inp_id" value="${lumbopelvicexam.lumbopelvicexamid}">
-<td><h2><span class="err">*</span>Patient Name:</h2></td><td><input type="text"  name="pname" value="${lumbopelvicexam.pname}"/><span class="err" id="pnameerror"><form:errors path="Lumbopelvicexam.pname"></form:errors></span></td>
+<td><h2><span class="err">*</span>Patient Name:</h2></td><td><input type="text" id="pname" name="pname" value="${lumbopelvicexam.pname}"/><span class="err" id="pnameerror"><form:errors path="Lumbopelvicexam.pname"></form:errors></span></td>
 <td width="600">
 <td><h2><span class="err">*</span>Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${lumbopelvicexam.date}"/><span class="err" id="datepickererror"><form:errors path="Lumbopelvicexam.date"></form:errors></span></td>
 </tr>
