@@ -57,7 +57,7 @@ function checkSubmit()
 		var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 	if(document.getElementById("datepicker2").value.match(datechk)==null)
     {
-    	document.getElementById("datepickererror").innerHTML="Invalid Date Format. Please correct and submit again";
+    	document.getElementById("datepickererror").innerHTML="Invalid Date Format";
     	
         return false;
     }	
@@ -74,7 +74,7 @@ function checkSubmit()
 		
 		if (document.getElementById("datepicker").value !="") {
 		  if (re.test(document.getElementById("datepicker").value) == false) {
-			  document.getElementById("dateerror").innerHTML="Invalid Date Format. Please correct and submit again";
+			  document.getElementById("dateerror").innerHTML="Invalid Date Format";
 			  return false;
 		  }
 		}
@@ -83,7 +83,7 @@ function checkSubmit()
 		
 		if (document.getElementById("datepicker1").value !="") {
 		  if (re.test(document.getElementById("datepicker1").value) == false) {
-			  document.getElementById("date1error").innerHTML="Invalid Date Format. Please correct and submit again";
+			  document.getElementById("date1error").innerHTML="Invalid Date Format";
 			  return false;
 		  }
 		}

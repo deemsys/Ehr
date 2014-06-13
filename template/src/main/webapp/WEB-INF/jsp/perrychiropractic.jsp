@@ -51,6 +51,7 @@
 	
 	return false;
 	}
+	document.getElementById("datepickererror").innerHTML="";
 	var re = /^[mdy0-9]{2}\/[mdy0-9]{2}\/[mdy0-9]{4}$/;
 		//Allow blank space in field
 		if (document.getElementById("datepicker").value !="") {
