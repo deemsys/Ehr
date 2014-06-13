@@ -55,7 +55,7 @@
 		//Allow blank space in field
 		if (document.getElementById("datepicker").value !="") {
 		  if (re.test(document.getElementById("datepicker").value) == false) {
-			  document.getElementById("datepickererror").innerHTML="Invalid Date Format. Please correct and submit again";
+			  document.getElementById("datepickererror").innerHTML="Invalid Date Format";
 			  return false;
 		  }
 		}
