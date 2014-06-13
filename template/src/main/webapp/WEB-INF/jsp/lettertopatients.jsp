@@ -372,6 +372,17 @@ function checkSubmit()
      document.getElementById('cancelid').style.visibility = 'visible';
   }
   </script>
+  <script>
+          function isNumberKey(evt)
+          {
+             var charCode = (evt.which) ? evt.which : event.keyCode
+             if (charCode > 31 && (charCode < 48 || charCode > 57))
+                return false;
+
+             return true;
+          }  
+          
+          </script>
 </head>
  <body>
 <div id="right_content">
@@ -434,7 +445,7 @@ document.getElementById("ssn").value=phone;
                 <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err">*</span>SSN:</td>
-              <td ><input type="text" class="input_txtbx1" name="ssn" id="ssn" placeholder="298-70-2433" maxlength="11" /><span class="err" id="ssnerror"><form:errors path="Lettertopatients.ssn"></form:errors></span></td>
+              <td ><input type="text" class="input_txtbx1" name="ssn" id="ssn" placeholder="298-70-2433" maxlength="11" onkeypress="return isNumberKey(event);"/><span class="err" id="ssnerror"><form:errors path="Lettertopatients.ssn"></form:errors></span></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">

@@ -120,6 +120,29 @@ function checkSubmit()
 	}
 
 	</script>
+	<script>
+          function isNumberKey(evt)
+          {
+             var charCode = (evt.which) ? evt.which : event.keyCode
+             if (charCode > 31 && (charCode < 48 || charCode > 57))
+                return false;
+
+             return true;
+          }  
+          
+          </script>
+          <script>
+$(document).ready(function(){
+  $("#ssn").keypress(function(){ 
+
+  
+var phone=document.getElementById("ssn").value;
+phone = phone.replace(/(\d{3})(\d{2})(\d+)/, '$1-$2-$3');
+document.getElementById("ssn").value=phone;
+ });  
+
+});
+</script>
 </head>
  <body>
 <div id="right_content">
@@ -168,7 +191,7 @@ function checkSubmit()
                 <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err">*</span>SSN:</td>
-              <td ><input type="text" class="input_txtbx1" name="ssn" id="ssn" value="${lettertopatientsdetails.ssn }"/><span class="err" id="ssnerror"><form:errors path="Workschool.date"></form:errors></span></td>
+              <td ><input type="text" class="input_txtbx1" name="ssn" id="ssn" maxlength="11" value="${lettertopatientsdetails.ssn }" onkeypress="return isNumberKey(event);"/><span class="err" id="ssnerror"><form:errors path="Workschool.date"></form:errors></span></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
