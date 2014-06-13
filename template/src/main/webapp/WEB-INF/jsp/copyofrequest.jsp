@@ -260,6 +260,7 @@ $("#claimnumber").keyup(function() {
 		
 		return false;
 		}
+	document.getElementById("datepickererror").innerHTML="";
 		var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 	if(document.getElementById("datepicker").value.match(datechk)==null)
     {
@@ -296,7 +297,7 @@ return false;
 	
 	return false;
 	}
-	 
+	document.getElementById("datepicker1error").innerHTML="";
 	var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		
 		
