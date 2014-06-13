@@ -186,7 +186,7 @@ document.getElementById("datepickererror").innerHTML="";
 		var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 			if(document.getElementById("datepicker").value.match(datechk)==null)
 		    {
-		    	document.getElementById("datepickererror").innerHTML="Invalid Date Format. Please correct and submit again";
+		    	document.getElementById("datepickererror").innerHTML="Invalid Date Format";
 		    	
 		        return false;
 		    }
@@ -205,7 +205,7 @@ document.getElementById("datepickererror").innerHTML="";
 		
 		if (document.getElementById("datepicker1").value !="") {
 		  if (re.test(document.getElementById("datepicker1").value) == false) {
-			  document.getElementById("datepicker1error").innerHTML="Invalid Date Format. Please correct and submit again";
+			  document.getElementById("datepicker1error").innerHTML="Invalid Date Format";
 			  return false;
 		  }
 		}
@@ -218,7 +218,7 @@ document.getElementById("datepickererror").innerHTML="";
 var validformat=/^\d{2}\/\d{2}\/\d{4}$/; //Basic check for format validity
 var returnval=false;
 if (!validformat.test(input.value))
-alert("Invalid Date Format. Please correct and submit again.");
+alert("Invalid Date Format.");
 else{ //Detailed check for valid date ranges
 var monthfield=input.value.split("/")[0];
 var dayfield=input.value.split("/")[1];
