@@ -915,7 +915,7 @@ I hope you find this narrative report and discussion helpful in resolving the cu
 	            </p>
 	            <div align="right">
           <p><B style="font-size:13px">Sincerely,</B></p>
-          <p><input type="text" class="input_txtbx1"  name="sign" size="30" value="${narrativereport.sign}"><span id="signerror" style="color: red;font-style:italic;"><form:errors path="Copyofrequest.sign"></form:errors></span></p>
+          <p> <span class="err">*</span><input type="text" class="input_txtbx1"  name="sign" size="30" value="${narrativereport.sign}"><span id="signerror" style="color: red;font-style:italic;"><form:errors path="Copyofrequest.sign"></form:errors></span></p>
           <p>Dr. Darrin A. Pordash</p>
           </div>
  <table align="right">
