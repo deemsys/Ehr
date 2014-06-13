@@ -13,7 +13,7 @@
   line-height:18px;}
   
   </STYLE>
- <script>
+ <!-- <script>
  $(window).load(function(){
 	
 	  $("#damageamt").keyup(function() {
@@ -34,7 +34,7 @@
 		    oldValue = $(this).val();
 		})
  });
- </script>
+ </script> -->
  <script>
 
 	function checkSubmit()
@@ -125,6 +125,18 @@
 	}
 
 	</script>
+	<script type="text/javascript">
+       function validate(event) {
+          
+           var regex = new RegExp("^[0-9.]+$");
+           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+           if (!regex.test(key)) {
+             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
+               event.preventDefault();
+               return false;
+           }
+       }       
+    </script>
  <script>
  $(function() {
            $( "#datepicker" ).datepicker();
@@ -416,7 +428,7 @@ popupWindow = window.open(url,"symptompopUpWindow" ,'width=1500,height=700,resiz
 			  <tr class="row1">
               <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Damage Amount</td>
 			  <td valign="top" align="left" class="input_txt">
-		      <input type="text" class="input_txtbx1" id="damageamt" name="damage_amount" /><span class="err" id="damageamterror"><form:errors path="Staffchecklist.damage_amount"></form:errors></span>
+		      <input type="text" class="input_txtbx1" id="damageamt" name="damage_amount" onkeypress="return validate(event)";/><span class="err" id="damageamterror"><form:errors path="Staffchecklist.damage_amount"></form:errors></span>
 		     <br>
 		      <span class="err" id="damageamterror"> </span>
 		      </td>
