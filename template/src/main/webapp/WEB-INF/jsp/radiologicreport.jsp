@@ -177,6 +177,18 @@ $(function() {
 
     }
 </script>
+<script type="text/javascript">
+       function validate(event) {
+          
+           var regex = new RegExp("^[0-9]+$");
+           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+           if (!regex.test(key)) {
+             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
+               event.preventDefault();
+               return false;
+           }
+       }       
+    </script>
 <body>
 <form method="POST" action="radiologicreport">
 <input type="hidden" name="patient_id" value="${username}">
@@ -208,9 +220,9 @@ $(function() {
 				                  <td><span class="err">*</span>Patient Name:</td>
 				                  <td><input type="text" class="input_txtbx1" id="pname" name="pname" value="${name}"/><br/><span id="pnameerror" style="color: red;font-style:italic;"><form:errors path="RadiologicReport.pname"></form:errors></td>
 				                  <td><span class="err">*</span>Date:</td>
-				                  <td><input type="text" class="input_txtbx1" id="datepicker" name="date" /><br/><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="RadiologicReport.date"></form:errors></td>
+				                  <td><input type="text" class="input_txtbx1" id="datepicker"  name="date" /><br/><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="RadiologicReport.date"></form:errors></td>
 				                  <td><span class="err">*</span>I.D.#:</td>
-				                  <td><input type="text" class="input_txtbx1" id="num" name="id" /><br/><span  id="numerror" style="color: red;font-style:italic;"><form:errors path="RadiologicReport.id"></form:errors></span></td>
+				                  <td><input type="text" class="input_txtbx1" id="num" name="id" onkeypress="return validate(event)";/><br/><span  id="numerror" style="color: red;font-style:italic;"><form:errors path="RadiologicReport.id"></form:errors></span></td>
 				                  <td><span class="err">*</span>Date Of Birth</td>
 				                  <td><input type="text" class="input_txtbx1" id="datepicker1" name="dob" /><br/><span id="datepicker1error" style="color: red;font-style:italic;"><form:errors path="RadiologicReport.dob"></form:errors></td>
 				                </tr>

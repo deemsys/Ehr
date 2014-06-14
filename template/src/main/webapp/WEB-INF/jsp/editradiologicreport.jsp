@@ -84,6 +84,18 @@ $(function() {
   }
   
   </script>
+  <script type="text/javascript">
+       function validate(event) {
+          
+           var regex = new RegExp("^[0-9.]+$");
+           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+           if (!regex.test(key)) {
+             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
+               event.preventDefault();
+               return false;
+           }
+       }       
+    </script>
 <body>
 <form action="updateradiologicreport" method="post" name="update" id="update">
 <br>
@@ -109,7 +121,7 @@ $(function() {
                                  <td>Date:</td>
                                  <td class="input_txt"><input type="text" class="input_txtbx1" id="datepicker" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${radiologicReport.date }" name="date" /></br><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="report.date"></form:errors></span></td>
                                  <td>I.D.#:</td>
-                                  <td class="input_txt"><input type="text" class="input_txtbx1" id="num" value="${radiologicReport.id }" name="id" /></br><span id="numerror" style="color: red;font-style:italic;"><form:errors path="report.id"></form:errors></span></td>
+                                  <td class="input_txt"><input type="text" class="input_txtbx1" id="num" onkeypress="return validate(event)"; value="${radiologicReport.id }" name="id" /></br><span id="numerror" style="color: red;font-style:italic;"><form:errors path="report.id"></form:errors></span></td>
                					<td>Date Of Birth</td>
                					 <td class="input_txt"><input type="text" class="input_txtbx1" id="datepicker1" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${radiologicReport.dob }" name="dob" /></br><span id="datepicker1error" style="color: red;font-style:italic;"><form:errors path="report.dob"></form:errors></span></td>
                			 </tr>
