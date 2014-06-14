@@ -66,13 +66,75 @@ function Checksymptom(val){
 $(function() {
     $( "#datepicker" ).datepicker();
   });
-
+$(function() {
+    $( "#datepicker1" ).datepicker();
+  });
 </script>
   <script>
   $(function() {
     $( "#tabs" ).tabs();
   });
   </script>
+  <script>
+
+	function checkSubmit()
+	{
+document.getElementById("pnameerror").innerHTML=" ";
+		
+		if(document.getElementById("pname").value=="")
+		{
+		document.getElementById("pnameerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+document.getElementById("number1error").innerHTML=" ";
+		
+		if(document.getElementById("number1").value=="")
+		{
+		document.getElementById("number1error").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		document.getElementById("datepickererror").innerHTML="";
+		
+		if(document.getElementById("datepicker").value=="")
+		{
+		document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		document.getElementById("datepickererror").innerHTML="";
+		var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+		if(document.getElementById("datepicker").value.match(datechk)==null)
+	    {
+	    	document.getElementById("datepickererror").innerHTML="Invalid Date Format";
+	    	
+	        return false;
+	    }
+		document.getElementById("datepicker1error").innerHTML="";
+var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+		
+		
+		if (document.getElementById("datepicker1").value !="") {
+		  if (re.test(document.getElementById("datepicker1").value) == false) {
+			  document.getElementById("datepicker1error").innerHTML="Invalid Date Format";
+			  return false;
+		  }
+		}
+	}
+	</script>
+	<script type="text/javascript">
+       function validate(event) {
+          
+           var regex = new RegExp("^[0-9]+$");
+           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+           if (!regex.test(key)) {
+             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
+               event.preventDefault();
+               return false;
+           }
+       }       
+    </script>
 </head>
  <body>
  <br>
@@ -99,9 +161,9 @@ $(function() {
      <c:set value="${shoulderpainscoreForm.shoulderpainscore[0]}" var="shoulderpainscore"/>      
  <tr class="row1">
  <input type="hidden" value="${shoulderpainscore.shoulderpainno }" name="shoulderpainno" />
-<td><h2><span class="err">*</span>Patient Name:</h2></td><td width="400"><input type="text"  name="pname" value="${shoulderpainscore.pname }"/><span class="err"><form:errors path="Shoulderpainscore.pname"></form:errors></span></td>
-<td><h2><span class="err">*</span>Number:</h2></td><td width="400"><input type="text"  name="number" value="${shoulderpainscore.number}"/><span class="err"><form:errors path="Shoulderpainscore.number"></form:errors></span></td>
-<td><h2><span class="err">*</span>Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${shoulderpainscore.date}"/><span class="err"><form:errors path="Shoulderpainscore.date"></form:errors></span></td>
+<td><h2><span class="err">*</span>Patient Name:</h2></td><td width="400"><input type="text"  name="pname" id="pname" value="${shoulderpainscore.pname }"/><span class="err" id="pnameerror"><form:errors path="Shoulderpainscore.pname"></form:errors></span></td>
+<td><h2><span class="err">*</span>Number:</h2></td><td width="400"><input type="text"  name="number" id="number1" value="${shoulderpainscore.number}"/><span class="err" id="number1error"><form:errors path="Shoulderpainscore.number"></form:errors></span></td>
+<td><h2><span class="err">*</span>Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${shoulderpainscore.date}"/><span class="err" id="datepickererror"><form:errors path="Shoulderpainscore.date"></form:errors></span></td>
 </tr>
 </table>
 <table width="70%" align="center">
@@ -166,16 +228,16 @@ $(function() {
 	    <div class="contentbox">
  <table cellpadding="0" cellspacing="0" border="0" width="98%"> 
  <tr class="row1">
-<td>Date:</td><td><input type="text"  id="datepicker" name="date1" value="${shoulderpainscore.date1 }"/></td>
+<td>Date:</td><td><input type="text"  id="datepicker1" name="date1" value="${shoulderpainscore.date1 }"/><span id="datepicker1error" class="err"></span></td>
 <td width="200">
-<td>Scores total:</td><td><input type="text"  id="total" name="total" value="${shoulderpainscore.total }"/>&nbsp;;&nbsp;[100]&nbsp;&nbsp;</td><td>[48]F:</td><td><input type="text"  id="f" name="f" value="${shoulderpainscore.f }"/>&nbsp;&nbsp;</td>
+<td>Scores total:</td><td><input type="text"  id="total" name="total" onkeypress="return validate(event)"; value="${shoulderpainscore.total }"/>&nbsp;;&nbsp;[100]&nbsp;&nbsp;</td><td>[48]F:</td><td><input type="text"  id="f" name="f" onkeypress="return validate(event)"; value="${shoulderpainscore.f }"/>&nbsp;&nbsp;</td>
 </tr>
 </table>
  <table cellpadding="0" cellspacing="0" border="0" width="98%">
 <tr class="row1">
 <td>Name:</td><td><input type="text" id="name123" name="name123" value="${shoulderpainscore.name123 }"/></td>
 <td width="600">
-<td>Age:</td><td><input type="text"  id="age" name="age" value="${shoulderpainscore.age}"/></td>
+<td>Age:</td><td><input type="text"  id="age" name="age" onkeypress="return validate(event)"; value="${shoulderpainscore.age}"/></td>
 </tr>
 </table>
 <br/>
@@ -333,7 +395,7 @@ $(function() {
 <br/>
 <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="Update"></td>
+<td><input type="submit" class="submit_btn" value="Update" onclick="return checkSubmit('this');"></td>
 <td><input type="reset" class="submit_btn" value="Cancel"></td>
 </tr>
 </table>

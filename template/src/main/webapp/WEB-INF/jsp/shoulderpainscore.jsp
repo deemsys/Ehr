@@ -13,26 +13,7 @@
   P#mypar {font-style:calibri;
   line-height:18px;}
    </STYLE>
-   <script>
-  $(window).load(function(){
-$("#number1").keyup(function() {
-	 $("#number").html(''); 
-	/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
-	var intRegex = /^\d+$/;
-	if(intRegex.test($(this).val())||$(this).val()=='') 
-	{
-		var $in = $(this).val();		 
-	}
-	else if($(this).val()!='')
-		{
-		
-		$("#number").html('Kindly enter a number!!!!');
-		}
-}).keydown(function() {
-    oldValue = $(this).val();
-})
-});
-</script>
+   
     <script>
 
 	  $(function() {
@@ -122,6 +103,66 @@ $(function() {
 	  
   }
   </script>
+  <script>
+
+	function checkSubmit()
+	{
+document.getElementById("pnameerror").innerHTML=" ";
+		
+		if(document.getElementById("pname").value=="")
+		{
+		document.getElementById("pnameerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+document.getElementById("number1error").innerHTML=" ";
+		
+		if(document.getElementById("number1").value=="")
+		{
+		document.getElementById("number1error").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		document.getElementById("datepickererror").innerHTML="";
+		
+		if(document.getElementById("datepicker").value=="")
+		{
+		document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		document.getElementById("datepickererror").innerHTML="";
+		var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+		if(document.getElementById("datepicker").value.match(datechk)==null)
+	    {
+	    	document.getElementById("datepickererror").innerHTML="Invalid Date Format";
+	    	
+	        return false;
+	    }
+		document.getElementById("datepicker1error").innerHTML="";
+var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+		
+		
+		if (document.getElementById("datepicker1").value !="") {
+		  if (re.test(document.getElementById("datepicker1").value) == false) {
+			  document.getElementById("datepicker1error").innerHTML="Invalid Date Format";
+			  return false;
+		  }
+		}
+	}
+	</script>
+	<script type="text/javascript">
+       function validate(event) {
+          
+           var regex = new RegExp("^[0-9]+$");
+           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+           if (!regex.test(key)) {
+             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
+               event.preventDefault();
+               return false;
+           }
+       }       
+    </script>
 </head>
  <body>
  <br><br>
@@ -149,9 +190,9 @@ $(function() {
           <table cellpadding="0" cellspacing="0" border="0" width="98%">
            
  <tr class="row1">
-<td style="width: 127px; "><h4><span class="err">*</span>Patient Name:</h4></td><td width="400" style="width: 170px; "><input type="text"  name="pname" /><span class="err"><form:errors path="Shoulderpainscore.pname"></form:errors></span></td>
-<td style="width: 117px; "><h4><span class="err">*</span>Number:</h4></td><td width="400" style="width: 167px; "><input type="text"  name="number" id="number1"/><span class="err"><form:errors path="Shoulderpainscore.number"></form:errors></span><span class="err"> <div id="number"></span></div></td>
-<td style="width: 115px; "><h4><span class="err">*</span>Date:</h4></td><td><input type="text"  id="datepicker" name="date" /><span class="err"><form:errors path="Shoulderpainscore.date"></form:errors></span></td>
+<td style="width: 127px; "><h4><span class="err">*</span>Patient Name:</h4></td><td width="400" style="width: 170px; "><input type="text"  name="pname" id="pname" /><span class="err" id="pnameerror"><form:errors path="Shoulderpainscore.pname"></form:errors></span></td>
+<td style="width: 117px; "><h4><span class="err">*</span>Number:</h4></td><td width="400" style="width: 167px; "><input type="text"  name="number" id="number1" onkeypress="return validate(event)";/><span class="err" id="number1error"><form:errors path="Shoulderpainscore.number"></form:errors></span><span class="err"> <div id="number"></span></div></td>
+<td style="width: 115px; "><h4><span class="err">*</span>Date:</h4></td><td><input type="text"  id="datepicker" name="date" /><span class="err" id="datepickererror"><form:errors path="Shoulderpainscore.date"></form:errors></span></td>
 </tr>
 </table>
 <table width="70%" align="center">
@@ -218,15 +259,15 @@ $(function() {
 	    <div class="contentbox">
  <table cellpadding="0" cellspacing="0" border="0" width="98%"> 
  <tr class="row1">
-<td>Date:</td><td><input type="text"  id="datepicker1" name="date1" /></td>
+<td>Date:</td><td><input type="text"  id="datepicker1" name="date1" /><span class="err" id="datepicker1error"></span></td>
 <td width="200">
-<td>Scores total:</td><td><input type="text"  id="total" name="total"/>&nbsp;;&nbsp;[100]&nbsp;&nbsp;</td><td>[48]F:</td><td><input type="text"  id="f" name="f"/>&nbsp;&nbsp;</td>
+<td>Scores total:</td><td><input type="text"  id="total" name="total" onkeypress="return validate(event)";/>&nbsp;;&nbsp;[100]&nbsp;&nbsp;</td><td>[48]F:</td><td><input type="text"  id="f" name="f" onkeypress="return validate(event)";/>&nbsp;&nbsp;</td>
 </tr>
 </table>
  <table cellpadding="0" cellspacing="0" border="0" width="68%">
 <tr class="row1">
 <td>Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td><input type="text" id="name123" name="name123" /></td>
-<td style="width: 183px; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Age:&nbsp;&nbsp;</td><td><input type="text"  id="age" name="age"/></td>
+<td style="width: 183px; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Age:&nbsp;&nbsp;</td><td><input type="text"  id="age" name="age" onkeypress="return validate(event)";/></td>
 </tr>
 </table>
 <br/>
@@ -384,7 +425,7 @@ $(function() {
 <br/>
 <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="Save" id="saveid"></td>
+<td><input type="submit" class="submit_btn" value="Save" id="saveid" onclick="return checkSubmit('this');"></td>
 <td><input type="reset" class="submit_btn" value="Cancel" id="cancelid"></td>
 </tr>
 </table>
