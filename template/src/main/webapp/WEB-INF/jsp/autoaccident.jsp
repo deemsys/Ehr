@@ -279,7 +279,18 @@ document.getElementById("afteraccidenterror").innerHTML="";
            }
        }       
     </script>
-   
+   <script type="text/javascript">
+       function validate2(event) {
+          
+           var regex = new RegExp("^[a-zA-Z0-9]+$");
+           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+           if (!regex.test(key)) {
+             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
+               event.preventDefault();
+               return false;
+           }
+       }       
+    </script>
 <style>
   /* force a height so the tabs don't jump as content height changes */
   #tabs .tabs-spacer { float: left; height: 200px; }
@@ -329,7 +340,7 @@ document.getElementById("afteraccidenterror").innerHTML="";
                  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>What is the claim number of your accident</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="claimno" name="claimnumber" /><span id="claimnoerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.claimnumber"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="claimno" name="claimnumber" onkeypress="return validate2(event)"; /><span id="claimnoerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.claimnumber"></form:errors></span>
 				  <br><span class="err"></span>
 				  </td>
 
