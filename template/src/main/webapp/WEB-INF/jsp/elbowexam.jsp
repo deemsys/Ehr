@@ -106,7 +106,7 @@ document.getElementById("pnameerror").innerHTML=" ";
 	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		if(document.getElementById("datepicker").value.match(datechk)==null)
 	    {
-	    	document.getElementById("datepickererror").innerHTML="Invalid Date Format. Please correct and submit again";
+	    	document.getElementById("datepickererror").innerHTML="Invalid Date Format";
 	    	
 	        return false;
 	    }	
@@ -263,32 +263,35 @@ document.getElementById("pnameerror").innerHTML=" ";
          <table cellpadding="0" cellspacing="0" border="0" width="98%">  
          <tr height="20">         
  <tr class="row1">
- <td><B style="font-size:14px">NEUROLOGICAL</B></td><td style="width: 372px; "><input type="checkbox" name="neurologicaltest" value="Neurological Testing Unremarkable">Neurological Testing Unremarkable</td><td><!-- <input type="checkbox" name="exceptn" value="Except">Except --></td>
+ <td style="width: 67px; "><B style="font-size:14px">NEUROLOGICAL</B></td><td style="width: 306px; "><input type="checkbox" name="neurologicaltest" value="Neurological Testing Unremarkable">Neurological Testing Unremarkable</td><td><!-- <input type="checkbox" name="exceptn" value="Except">Except --></td>
  <td></td><td></td><td></td>
  </tr>
  <tr class="row1">
- <td><b>Level</b> </td>
- <td><b> Sensory</b></td>
- <td width="110"><b>Level</b></td>
+ <td style="width: 69px; "><b>Level</b> </td>
+ <td style="width: 265px; "><b> Sensory</b></td>
+ <td width="110" style="width: 46px; "><b>Level</b></td>
  <td> <b>Motor / Strength</b></td>
- <td width="110"><b>Level</b> </td>
- <td> <b>Reflexes(Muscle Spindles)</td> 
+ <td width="110" style="width: 53px; "><b>Level</b> </td>
+ <td style="width: 334px; "> <b>Reflexes(Muscle Spindles)</td> 
  </tr>
  <tr class="row1">
  <td></td>
- <td>Left &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Right</td>
+ <td style="width: 265px; ">Left &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Right</td>
  <td> </td>
  <td> Left &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; Right</td>
  <td> </td>
  <td> Left &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; Right</td>
  </tr>
  <tr class="row1">
- <td>C5</td>
+ <td style="width: 45px; ">C5</td>
  <td><input type="text" name="c5l" size="5" onkeypress="return isNumberKey(event);">&nbsp; &nbsp; &nbsp;<input type="text" name="c5r" size="5" onkeypress="return isNumberKey(event);">&nbsp;(Lat deltoid)</td>
- <td>C5 </td>
- <td> <input type="text" name="c51l" size="5" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c51r" size="5" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp;(Shd ABD)</td>
+ <td style="width: 36px; ">C5 </td>
+ <td align=""> <input type="text" align="left" name="c51l" size="5" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" align="right" name="c51r" size="5" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp;(Shd ABD)</td>
  <td> C5</td>
- <td> <input type="text" name="c53l" size="5" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c53r" size="5" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp;(Biceps)</td>
+ <td
+ 
+ 
+ > <input type="text" name="c53l" size="5" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c53r" size="5" onkeypress="return isNumberKey(event);">&nbsp;/5&nbsp;(Biceps)</td>
  
  </tr>
  <tr class="row1">
