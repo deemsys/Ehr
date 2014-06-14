@@ -451,7 +451,7 @@ else
  <input type="hidden" name="dcfeeid" id="inp_id" value="${dcfeeslip.dcfeeid}">
 <td width="90"><h2><span class="err">*</span>Patient Id:</h2></td><td><input type="text"   class="input_txtbx1"  name="pid" size="25" value="${dcfeeslip.pid}" id="pid" onkeypress="return isNumberKey(event);"/><span class="err" id="piderror" style="color: red;font-style:italic;" ><form:errors path="dcfeeslipdetail.pid"></form:errors></span></td>
 <td width="800">
-<td><h2><span class="err">*</span>Date:</h2></td><td><input type="text"  class="input_txtbx1"  id="datepicker" name="date" value="${dcfeeslip.date}" /></td><span class="err" id="datepickererror"  style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.date"></form:errors></span>
+<td><h2><span class="err">*</span>Date:</h2></td><td><input type="text"  class="input_txtbx1"  id="datepicker" name="date" value="${dcfeeslip.date}" /><span class="err" id="datepickererror"  style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.date"></form:errors></span></td>
 </tr>
 </table>
 <table>
