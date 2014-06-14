@@ -104,10 +104,11 @@ function checkAjaxPost() {
 	alert("Please Enter Patient Bill date")
 	return false;
 	}
+	document.getElementById("dateerror").innerHTML="";
 	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 	if(document.getElementById("date").value.match(datechk)==null)
     {
-    	document.getElementById("dateerror").innerHTML="Invalid Date Format. Please correct and submit again";
+    	document.getElementById("dateerror").innerHTML="Invalid Date Format";
     	
         return false;
     }
@@ -575,7 +576,7 @@ else
 	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 	if(document.getElementById("datepicker").value.match(datechk)==null)
     {
-    	document.getElementById("datepickererror").innerHTML="Invalid Date Format. Please correct and submit again";
+    	document.getElementById("datepickererror").innerHTML="Invalid Date Format";
     	
         return false;
     }
@@ -592,7 +593,7 @@ else
 	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 	if(document.getElementById("datepicker1").value.match(datechk)==null)
     {
-    	document.getElementById("datepicker1error").innerHTML="Invalid Date Format. Please correct and submit again";
+    	document.getElementById("datepicker1error").innerHTML="Invalid Date Format";
     	
         return false;
     }

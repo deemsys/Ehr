@@ -41,21 +41,23 @@
 <script>
 function valid()
 {
+document.getElementById("datepicker1error").innerHTML="";
 var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		
 		
 		if (document.getElementById("datepicker1").value !="") {
 		  if (re.test(document.getElementById("datepicker1").value) == false) {
-			  document.getElementById("datepicker1error").innerHTML="Invalid Date Format. Please correct and submit again";
+			  document.getElementById("datepicker1error").innerHTML="Invalid Date Format";
 			  return false;
 		  }
 		} 
+		document.getElementById("datepicker2error").innerHTML="";
 		var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		
 		
 		if (document.getElementById("datepicker2").value !="") {
 		  if (re.test(document.getElementById("datepicker2").value) == false) {
-			  document.getElementById("datepicker2error").innerHTML="Invalid Date Format. Please correct and submit again";
+			  document.getElementById("datepicker2error").innerHTML="Invalid Date Format";
 			  return false;
 		  }
 		}   
