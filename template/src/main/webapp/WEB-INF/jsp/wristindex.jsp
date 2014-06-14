@@ -168,6 +168,36 @@ $(function() {
          });
  
 </script>
+<script>
+
+	function checkSubmit()
+	{
+document.getElementById("pnameerror").innerHTML=" ";
+		
+		if(document.getElementById("pname").value=="")
+		{
+		document.getElementById("pnameerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		document.getElementById("datepickererror").innerHTML="";
+		
+		if(document.getElementById("datepicker").value=="")
+		{
+		document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		document.getElementById("datepickererror").innerHTML="";
+		var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+		if(document.getElementById("datepicker").value.match(datechk)==null)
+	    {
+	    	document.getElementById("datepickererror").innerHTML="Invalid Date Format";
+	    	
+	        return false;
+	    }
+	}
+	</script>
   <script>
   function printPage(id)
   {
@@ -222,9 +252,9 @@ $(function() {
 	     	     <c:when test="${empty wristdisability}">
           <table cellpadding="0" cellspacing="0" border="0" >
            <tr><td width="140"><span class="err">*</span>Name</td>
-           <td><input type="text" name="name"><br><span class="err"><form:errors path="wristindexdetails.name"></form:errors></td><td width="480"></td><td></td><td width="100"></td>
+           <td><input type="text" name="name" id="pname"><br><span class="err" id="pnameerror"><form:errors path="wristindexdetails.name"></form:errors></td><td width="480"></td><td></td><td width="100"></td>
            <td >&nbsp;&nbsp;&nbsp;&nbsp;<span class="err">*</span>Date:&nbsp;</td> <td><input type="text" name="date" id="datepicker">
-           <br><span class="err"><form:errors path="wristindexdetails.date"></form:errors></td>
+           <br><span class="err" id="datepickererror"><form:errors path="wristindexdetails.date"></form:errors></td>
            </tr>
           
             </table>
@@ -488,7 +518,7 @@ $(function() {
            
            </c:choose>
               
-             <table align="right"><tr><td><input type="submit" value="Save" id="saveid" class="submit_btn"></td><td> <a href="viewwristindex" style="color: white" id="cancelid" class="submit_btn">Cancel</a></td></tr></table>
+             <table align="right"><tr><td><input type="submit" value="Save" id="saveid" class="submit_btn" onclick="return checkSubmit('this');"></td><td> <a href="viewwristindex" style="color: white" id="cancelid" class="submit_btn">Cancel</a></td></tr></table>
     
             
      </div></div>
