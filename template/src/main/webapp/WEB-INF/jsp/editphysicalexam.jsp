@@ -17,6 +17,12 @@
 	});
 	
   </script>
+  <script>
+ $(function() {
+           $( "#datepicker" ).datepicker();
+         });
+ 
+</script>
   <script type="text/javascript">
 function toggle3(value){
 	/* alert(value); */
@@ -27,6 +33,20 @@ else
  e.style.display="none";
 }
 </script>	
+<script>
+
+	function checkSubmit()
+	{
+		 document.getElementById("datepickererror").innerHTML="";
+		 var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+		 	if(document.getElementById("datepicker").value.match(datechk)==null)
+		     {
+		     	document.getElementById("datepickererror").innerHTML="Invalid Date Format. Please correct and submit again";
+		     	
+		         return false;
+		     }
+	}
+	</script>
   </head>
 	<body>
 	<form method="POST" action="updatephysicalexam">
@@ -70,7 +90,7 @@ else
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date :</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="date" value="${physical.date}" /><span class="err"><form:errors path="Physicalexam.date"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="datepicker" name="date" value="${physical.date}" /><span class="err" id="datepickererror"><form:errors path="Physicalexam.date"></form:errors></span>
 				                  </td>
 				                </tr>
 				                <tr class="row2">

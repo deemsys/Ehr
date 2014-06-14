@@ -170,7 +170,7 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		
 		if (document.getElementById("datepicker1").value !="") {
 		  if (re.test(document.getElementById("datepicker1").value) == false) {
-			  document.getElementById("datepicker1error").innerHTML="Invalid Date Format. Please correct and submit again";
+			  document.getElementById("datepicker1error").innerHTML="Invalid Date Format";
 			  return false;
 		  }
 		}
@@ -180,7 +180,7 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		
 		if (document.getElementById("datepicker2").value !="") {
 		  if (re.test(document.getElementById("datepicker2").value) == false) {
-			  document.getElementById("datepicker2error").innerHTML="Invalid Date Format. Please correct and submit again";
+			  document.getElementById("datepicker2error").innerHTML="Invalid Date Format";
 			  return false;
 		  }
 		}
@@ -190,7 +190,7 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		
 		if (document.getElementById("datepicker").value !="") {
 		  if (re.test(document.getElementById("datepicker").value) == false) {
-			  document.getElementById("datepickererror").innerHTML="Invalid Date Format. Please correct and submit again";
+			  document.getElementById("datepickererror").innerHTML="Invalid Date Format";
 			  return false;
 		  }
 		}
@@ -200,7 +200,7 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		
 		if (document.getElementById("datepicker3").value !="") {
 		  if (re.test(document.getElementById("datepicker3").value) == false) {
-			  document.getElementById("datepicker3error").innerHTML="Invalid Date Format. Please correct and submit again";
+			  document.getElementById("datepicker3error").innerHTML="Invalid Date Format";
 			  return false;
 		  }
 		}
@@ -210,7 +210,7 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		
 		if (document.getElementById("datepicker4").value !="") {
 		  if (re.test(document.getElementById("datepicker4").value) == false) {
-			  document.getElementById("datepicker4error").innerHTML="Invalid Date Format. Please correct and submit again";
+			  document.getElementById("datepicker4error").innerHTML="Invalid Date Format";
 			  return false;
 		  }
 		}
@@ -220,7 +220,7 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		
 		if (document.getElementById("datepicker5").value !="") {
 		  if (re.test(document.getElementById("datepicker5").value) == false) {
-			  document.getElementById("datepicker5error").innerHTML="Invalid Date Format. Please correct and submit again";
+			  document.getElementById("datepicker5error").innerHTML="Invalid Date Format";
 			  return false;
 		  }
 		}
@@ -230,7 +230,7 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		
 		if (document.getElementById("datepicker6").value !="") {
 		  if (re.test(document.getElementById("datepicker6").value) == false) {
-			  document.getElementById("datepicker6error").innerHTML="Invalid Date Format. Please correct and submit again";
+			  document.getElementById("datepicker6error").innerHTML="Invalid Date Format";
 			  return false;
 		  }
 		}
@@ -240,7 +240,7 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		
 		if (document.getElementById("datepicker7").value !="") {
 		  if (re.test(document.getElementById("datepicker7").value) == false) {
-			  document.getElementById("datepicker7error").innerHTML="Invalid Date Format. Please correct and submit again";
+			  document.getElementById("datepicker7error").innerHTML="Invalid Date Format";
 			  return false;
 		  }
 		}
@@ -250,7 +250,7 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		
 		if (document.getElementById("datepicker8").value !="") {
 		  if (re.test(document.getElementById("datepicker8").value) == false) {
-			  document.getElementById("datepicker8error").innerHTML="Invalid Date Format. Please correct and submit again";
+			  document.getElementById("datepicker8error").innerHTML="Invalid Date Format";
 			  return false;
 		  }
 		}

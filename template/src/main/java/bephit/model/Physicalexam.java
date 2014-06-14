@@ -43,7 +43,7 @@ public class Physicalexam {
 	      String temp;
 	      
 	      @NotEmpty
-	      @Pattern(regexp="(^$|[0-9-()])",message="Accepted Only Numbers")
+	      
 	      String bp;
 	      
 	      @NotEmpty
