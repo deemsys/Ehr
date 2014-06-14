@@ -546,7 +546,7 @@ else
 		
 		document.getElementById("piderror").innerHTML="";
 		if(isNaN(document.getElementById("pid").value))
-		{		document.getElementById("piderror").innerHTML="Invalid character. Please enter numbers only.";
+		{		document.getElementById("piderror").innerHTML="Invalid character Please enter numbers only.";
 		return false;
 		}
 		
