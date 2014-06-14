@@ -172,6 +172,18 @@ $(function() {
 	    $( "#datepicker2" ).datepicker();
 	  });
   </script>
+  <script type="text/javascript">
+       function validate(event) {
+          
+           var regex = new RegExp("^[0-9]+$");
+           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+           if (!regex.test(key)) {
+             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
+               event.preventDefault();
+               return false;
+           }
+       }       
+    </script>
 </head>
  <body>
 <div id="right_content">
@@ -211,7 +223,7 @@ $(function() {
         <td ><span class="err">*</span><input type="text" class="input_txtbx1" name="accident_date" id="datepicker" placeholder="Date of Accident" value="${Insuranceplan.accident_date}"/> <span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.accident_date"></form:errors></td>
         </tr>
         <tr class="row1">
-        <td ><span class="err">*</span><input type="text" class="input_txtbx1" name="enrollee" id="enrollee" placeholder="Subscriber/Enrollee No" value="${Insuranceplan.enrollee}" /><span id="enrolleeerror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.enrollee"></form:errors> 
+        <td ><span class="err">*</span><input type="text" class="input_txtbx1" name="enrollee" id="enrollee" onkeypress="return validate(event)"; placeholder="Subscriber/Enrollee No" value="${Insuranceplan.enrollee}" /><span id="enrolleeerror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.enrollee"></form:errors> 
         <br></span>
         </td>
         </tr>

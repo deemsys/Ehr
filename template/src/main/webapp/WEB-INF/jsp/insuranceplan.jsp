@@ -102,12 +102,12 @@
 	
 	return false;
 	}
-	document.getElementById("enrolleeerror").innerHTML="";
+	/* document.getElementById("enrolleeerror").innerHTML="";
 	if(isNaN(document.getElementById("enrollee").value))
 	{
 	document.getElementById("enrolleeerror").innerHTML="Enter Only Numbers";
 	return false;
-	}
+	} */
 	document.getElementById("agentnameerror").innerHTML="";
 	if(document.getElementById("agentname").value=="")
 	{
@@ -182,6 +182,18 @@ var mail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 	  
   }
   </script>
+  <script type="text/javascript">
+       function validate(event) {
+          
+           var regex = new RegExp("^[0-9]+$");
+           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+           if (!regex.test(key)) {
+             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
+               event.preventDefault();
+               return false;
+           }
+       }       
+    </script>
 </head>
  <body>
 <div id="right_content">
@@ -226,7 +238,7 @@ var mail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
         <td ><span class="err">*</span><input type="text" class="input_txtbx1" name="accident_date"  id="datepicker" placeholder="Date of Accident" style="width: 213px; "/> <span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.accident_date"></form:errors> </span></td>
         </tr>
         <tr class="row1">
-        <td ><span class="err">*</span><input type="text" class="input_txtbx1" name="enrollee" id="enrollee" placeholder="Subscriber/Enrollee No" style="width: 214px; "/> <span id="enrolleeerror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.enrollee"></form:errors> </span>
+        <td ><span class="err">*</span><input type="text" class="input_txtbx1" name="enrollee" id="enrollee" onkeypress="return validate(event)"; placeholder="Subscriber/Enrollee No" style="width: 214px; "/> <span id="enrolleeerror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.enrollee"></form:errors> </span>
         <br><span class="err" id="enrolleeerror"></span>
         </td>
         </tr>
