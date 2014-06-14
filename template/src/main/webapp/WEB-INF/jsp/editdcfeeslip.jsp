@@ -322,10 +322,10 @@ else
 
 
 
-<script>
+ <script>
 
 	function checkSubmit()
-	{
+	{ 
 		document.getElementById("piderror").innerHTML="";
 		if(document.getElementById("pid").value=="")
 		{
@@ -336,9 +336,10 @@ else
 		
 		document.getElementById("piderror").innerHTML="";
 		if(isNaN(document.getElementById("pid").value))
-		{		document.getElementById("piderror").innerHTML="Invalid character. Please enter numbers only.";
+		{		document.getElementById("piderror").innerHTML="Invalid character Please enter numbers only.";
 		return false;
 		}
+		
 	
 		document.getElementById("pnameerror").innerHTML="";
 	if(document.getElementById("pname").value=="")
@@ -354,7 +355,6 @@ else
 	
 	return false;
 	}
-	
 	document.getElementById("datepickererror").innerHTML="";
 	if(document.getElementById("datepicker").value=="")
 	{
@@ -371,6 +371,7 @@ else
         return false;
     }
 
+	
 	document.getElementById("datepicker1error").innerHTML="";
 	if(document.getElementById("datepicker1").value=="")
 	{
@@ -402,10 +403,16 @@ else
 	return false;
 	}
 	
+		
+
+	
+	
+	
+	
+	
+		
 		}
-
-
-	</script>
+</script>
 	 <script>
           function isNumberKey(evt)
           {
@@ -449,7 +456,7 @@ else
 </table>
 <table>
  <tr class="row1">
-<td><h2><span class="err">*</span> Patient Name:</h2></td><td><input type="text"  class="input_txtbx1"  name="pname" size="25" value="${dcfeeslip.pname}"/><span class="err"><form:errors path="dcfeeslipdetail.pname"></form:errors></span></td>
+<td><h2><span class="err">*</span> Patient Name:</h2></td><td><input type="text"  class="input_txtbx1"  name="pname" id="pname" size="25" value="${dcfeeslip.pname}"/><span class="err" id="pnameerror"><form:errors path="dcfeeslipdetail.pname"></form:errors></span></td>
 <td>
 <td><h2><span class="err">*</span>Treating Physician Name:</h2></td><td><input type="text"  class="input_txtbx1" name="dr1" size="14" value="${dcfeeslip.dr1}" id="dr1"/><span class="err" id="dr1error"  style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.dr1"></form:errors></span></td>
 <td><h2>RPT:</h2></td><td><input type="text"   class="input_txtbx1" name="rpt" size="14" value="${dcfeeslip.rpt}"/></td>
@@ -457,18 +464,7 @@ else
 </tr>
 </table>
 
-<script type="text/javascript">
-       function validate(event) {
-          
-           var regex = new RegExp("^[0-9.]+$");
-           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
-           if (!regex.test(key)) {
-             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
-               event.preventDefault();
-               return false;
-           }
-       }       
-    </script>
+
 
 
 
