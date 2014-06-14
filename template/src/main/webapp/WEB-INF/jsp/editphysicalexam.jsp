@@ -37,16 +37,119 @@ else
 
 	function checkSubmit()
 	{
-		 document.getElementById("datepickererror").innerHTML="";
-		 var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
-		 	if(document.getElementById("datepicker").value.match(datechk)==null)
-		     {
-		     	document.getElementById("datepickererror").innerHTML="Invalid Date Format. Please correct and submit again";
-		     	
-		         return false;
-		     }
+document.getElementById("signerror").innerHTML=" ";
+		
+		if(document.getElementById("sign").value=="")
+		{
+		document.getElementById("signerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+document.getElementById("nameerror").innerHTML=" ";
+		
+		if(document.getElementById("name").value=="")
+		{
+		document.getElementById("nameerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+document.getElementById("emailerror").innerHTML=" ";
+		
+		if(document.getElementById("email").value=="")
+		{
+		document.getElementById("emailerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		document.getElementById("emailerror").innerHTML=" ";
+		var mail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    
+    if(document.getElementById("email").value.match(mail)==null)
+    {
+    	document.getElementById("emailerror").innerHTML="Enter  proper E-Mail";
+    	
+        return false;
+    }
+document.getElementById("datepickererror").innerHTML=" ";
+		
+		if(document.getElementById("datepicker").value=="")
+		{
+		document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+
+		  document.getElementById("datepickererror").innerHTML="";
+var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+	if(document.getElementById("datepicker").value.match(datechk)==null)
+    {
+    	document.getElementById("datepickererror").innerHTML="Invalid Date Format";
+    	
+        return false;
+    }
+	
+document.getElementById("bperror").innerHTML=" ";
+		
+		if(document.getElementById("bp").value=="")
+		{
+		document.getElementById("bperror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		
+document.getElementById("patherror").innerHTML=" ";
+		
+		if(document.getElementById("path").value=="")
+		{
+		document.getElementById("patherror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+
+
+	
+document.getElementById("abnormalerror").innerHTML=" ";
+		
+		if(document.getElementById("abnormal").value=="")
+		{
+		document.getElementById("abnormalerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+
+
+	
+document.getElementById("presentrlerror").innerHTML=" ";
+		
+		if(document.getElementById("presentrl").value=="")
+		{
+		document.getElementById("presentrlerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+document.getElementById("patientsmokererror").innerHTML=" ";
+		
+		if(document.getElementById("patientsmoker").value=="")
+		{
+		document.getElementById("patientsmokererror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+
 	}
 	</script>
+	<script type="text/javascript">
+       function validate(event) {
+          
+           var regex = new RegExp("^[0-9.]+$");
+           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+           if (!regex.test(key)) {
+             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
+               event.preventDefault();
+               return false;
+           }
+       }       
+    </script>
   </head>
 	<body>
 	<form method="POST" action="updatephysicalexam">
@@ -72,19 +175,19 @@ else
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Physician Signature :</td>
 				                  <input type="hidden" class="input_txtbx1" id="inp_id" value="${physicalexam.physical_id}" name="physical_id" />
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="sign" value="${physical.sign}" /><span class="err"><form:errors path="Physicalexam.sign"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="sign" name="sign" value="${physical.sign}" /><span class="err" id="signerror"><form:errors path="Physicalexam.sign"></form:errors></span>
 				                  </td>
 				                </tr>
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Name :</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="name" value="${physical.name}"/><span class="err"><form:errors path="Physicalexam.name"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="name" name="name" value="${physical.name}"/><span class="err" id="nameerror"><form:errors path="Physicalexam.name"></form:errors></span>
 				                  </td>
 				                </tr>
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Email:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="id" value="${physical.id}"/><span class="err"><form:errors path="Physicalexam.id"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="email" name="id" value="${physical.id}"/><span class="err" id="emailerror"><form:errors path="Physicalexam.id"></form:errors></span>
 				                  </td>
 				                </tr>
 				                <tr class="row1">
@@ -491,7 +594,7 @@ else
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>BP:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="bp" value="${physical.bp}"/><span class="err"><form:errors path="Physicalexam.bp"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="bp" name="bp" onkeypress="return validate(event)"; value="${physical.bp}"/><span class="err" id="bperror"><form:errors path="Physicalexam.bp"></form:errors></span>
 				                  </td>
 				                </tr>
 				                </table>
@@ -549,9 +652,9 @@ else
 				                 <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Visceral Pathologies:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  <input type="text" class="input_txt"  name="path" value="${physical.path}"/>
+				                  <input type="text" class="input_txt"  name="path" id="path" value="${physical.path}"/>
 				                  	
-				                  	<span class="err"><form:errors path="Physicalexam.path"></form:errors></span></td>
+				                  	<span class="err" id="patherror"><form:errors path="Physicalexam.path"></form:errors></span></td>
 				                 
 				                </tr>
 				                <tr class="row2">
@@ -575,7 +678,7 @@ else
 				               <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Abnormal Findings:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="abnormal" value="${physical.abnormal}" /><span class="err"><form:errors path="Physicalexam.abnormal"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="abnormal" name="abnormal" value="${physical.abnormal}" /><span class="err" id="abnormalerror"><form:errors path="Physicalexam.abnormal"></form:errors></span>
 				                  </td>
 				                </tr>
 				               
@@ -1063,8 +1166,10 @@ else
 				                   		</select></td>
 				               
 				              
-				                   		<td>*If present, perform eye exam & auscultate carotid arteries</td>
-				                   		<td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="presentrl" value="${physical.presentrl }" /></td>
+				                   		<td><span class="err">*</span>If present, perform eye exam & auscultate carotid arteries</td>
+				                   		<td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="presentrl" name="presentrl" value="${physical.presentrl }" />
+				                   		<span class="err" id="presentrlerror"></span>
+				                   		</td>
 
 				                   		
 				                  </tr>
@@ -1298,8 +1403,10 @@ else
 				                   
 				                   <tr class="row1">
 				               
-				                   		<td>*If present is a smoker and has difficulty breathing, perform cardio-respiratory exam</td>
-				                   		<td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="inp_id" name="patientsmoker" value="${physical.patientsmoker}"/></td>
+				                   		<td><span class="err">*</span>If present is a smoker and has difficulty breathing, perform cardio-respiratory exam</td>
+				                   		<td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="patientsmoker" name="patientsmoker" value="${physical.patientsmoker}"/>
+				                   		<span id="patientsmokererror" class="err"></span>
+				                   		</td>
 
 				                   		
 				                  </tr>
@@ -1739,7 +1846,7 @@ else
 				                  </table>
 				                  <table align="right">
 				                  <tr>
-				                    <td><input type="submit" class="submit_btn" value="Update" ></td>
+				                    <td><input type="submit" class="submit_btn" value="Update" onclick="return checkSubmit('this');"></td>
 				                   <td>&nbsp;&nbsp;</td>
 				                    
 				                    <td><input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='viewphysicalexam'" ></td>
