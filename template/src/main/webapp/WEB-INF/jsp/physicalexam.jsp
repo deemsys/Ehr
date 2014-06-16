@@ -587,7 +587,7 @@ document.getElementById("patientsmokererror").innerHTML=" ";
 				                 <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Visceral Pathologies:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" name="path" class="input_txtbx1" id="path"><span class="err" id="patherror"</td>
+				                  	<input type="text" name="path" class="input_txtbx1" id="path"><span class="err" id="patherror"></span></td>
 				               
 				                </tr>
 				                <tr class="row2">
@@ -1078,7 +1078,8 @@ document.getElementById("patientsmokererror").innerHTML=" ";
 											
 				                   		</select></td>
 				                   		<td><span class="err">*</span>If present, perform eye exam & auscultate carotid arteries</td>
-				                   		<td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="presentrl" name="presentrl" /><span class="err" id="presentrlerror"</td>
+				                   		<td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="presentrl" name="presentrl" />
+				                   		<span class="err" id="presentrlerror"></span></td>
 
 				                   		
 				                  </tr>
