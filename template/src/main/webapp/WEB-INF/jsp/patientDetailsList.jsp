@@ -158,11 +158,11 @@
 				        <td>${patientDetails.state}</td>
 				        </tr>
 				         <tr class="row2">
-				        <td> <input type="hidden" name="number" id="zipcode" ><span" class="zipcodeerror">*</span >ZipCode:</td>
+				        <td> <input type="hidden" name="number" id="zipcode" ><span class="err">*</span >ZipCode:</td>
 				        <td>${patientDetails.zipCode}</td>
 				        </tr>
 				          <tr class="row1">
-				        <td>  <span    ></span>Home phone:</td>
+				        <td>  <span class="err">*</span>Home phone:</td>
 				        <td>${patientDetails.homephone}</td>
 				        </tr>
 				         <tr class="row2">
@@ -209,39 +209,39 @@
 							<c:if test="${patientDetails.areyou =='Employee'}">
 							
 							<tr class="row1">
-							<td><span class="err">*</span>Employer Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+							<td>Employer Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 							<td>${patientDetails.employerName}</td>
 							</tr>
 				          <tr class="row2">
-				         	<td><span class="err">*</span>Occupation:</td>
+				         	<td>Occupation:</td>
 				         	<td>${patientDetails.occupation}</td>
 				        </tr>
 				         <tr class="row1">
-				         	<td><span class="err">*</span>Employer Address:</td>
+				         	<td>Employer Address:</td>
 				         	<td>${patientDetails.employerAddress}</td>
 				        </tr>
 				          <tr class="row2">
-				         	<td><span class="err">*</span>WorkPhone:</td>
+				         	<td>WorkPhone:</td>
 				         	<td>${patientDetails.workphone}</td>
 				        </tr>
 				        
 				        <tr class="row2">
-				         	<td><span class="err">*</span>Zipcode</td>
+				         	<td>Zipcode</td>
 				         	<td>${patientDetails.zip}</td>
 				        </tr>
 				        
 				        
 				         <tr class="row1">
-				         	<td><span class="err">*</span>EmployerCity:</td>
+				         	<td>EmployerCity:</td>
 				         	<td>${patientDetails.employerCity}</td>
 				        </tr>
 				        
 				          <tr class="row2">
-				         	<td><span class="err">*</span>State:</td>
+				         	<td>State:</td>
 				         	<td>${patientDetails.estate}</td>
 				        </tr>
 				         <tr class="row1">
-				         	<td><span class="err">*</span>ZipCode:</td>
+				         	<td>ZipCode:</td>
 				         	<td>${patientDetails.ezip}</td>
 				        </tr>
 				          </c:if>      
