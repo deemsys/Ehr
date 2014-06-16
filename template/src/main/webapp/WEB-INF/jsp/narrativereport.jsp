@@ -87,6 +87,18 @@ function Checksymptom(val){
 	   element.style.display='none';
 	}
 </script>
+<script type="text/javascript" language="javascript">
+function changeSubcat(val)
+{
+  var theTextbox = document.getElementById('theTextbox');
+  if (val == 'Others')
+  {
+    theTextbox.style.display = 'block';
+  } else {
+    theTextbox.style.display = 'none';
+  }
+}
+</script>
  <script>
  function validate()
 	{
@@ -573,18 +585,18 @@ document.getElementById("signerror").innerHTML=" ";
 					<option value="Severe">Severe</option>
 					</select> distress,<select  name="gender35" id="gender35">
 					<option selected="selected" value="Normal">Normal</option>
-					<option value="Antalgic">Antalgic</option>
-					<option value="Staggering">Staggering</option>
-					<option value="Limping">Limping</option>
-					<option value="Swaying">Swaying</option>
+					<option value="Antalgic" <c:if test="${physicalexam.gait=='antalgic'}"><c:out value="Selected"/></c:if>>Antalgic</option>
+					<option value="Staggering" <c:if test="${physicalexam.gait=='stagger'}"><c:out value="Selected"/></c:if>>Staggering</option>
+					<option value="Limping" <c:if test="${physicalexam.gait=='limp'}"><c:out value="Selected"/></c:if>>Limping</option>
+					<option value="Swaying" <c:if test="${physicalexam.gait=='sway'}"><c:out value="Selected"/></c:if>>Swaying</option>
 					</select>  gait and <select  name="gender36" id="gender36">
 					<option selected="selected" value="Poor">Poor</option>
 					<option value="Good">Good</option>
-					</select> posture.  Visceral pathologies revealed <select  name="gender37" id="gender37">
+					</select> posture.  Visceral pathologies revealed <select  name="gender37" id="gender37" onchange="javascript: changeSubcat(this.options[this.selectedIndex].value);">
 					<option selected="selected" value="Normal">Normal</option>
 					<option value="Pathology">Pathology</option>
 					<option value="Others">Others</option>
-					</select>. Visual inspection demonstrated a <select  name="gender38" id="gender38">
+					</select><input type="text" style="display: none;" id="theTextbox" value="${physicalexam.path}">. Visual inspection demonstrated a <select  name="gender38" id="gender38">
 					<option selected="selected" value="Cervical">Cervical</option>
 					<option value="Thoracic">Thoracic</option>
 					<option value="lumbar">Lumbar</option>
