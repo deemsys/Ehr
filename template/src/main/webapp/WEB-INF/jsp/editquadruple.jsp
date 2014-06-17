@@ -168,7 +168,7 @@
     }
       }
     });
-    $( "#amount" ).val(+ $( "#slider" ).slider( "value" ) );
+    $( "quadraplevisualdetails.painscale" ).val(+ $( "#slider" ).slider( "value" ) );
      
         
   });
@@ -197,7 +197,7 @@ $(function() {
         
       }
     });
-    $( "#amount1" ).val(+ $( "#slider1" ).slider( "value" ) );
+    $( "quadraplevisualdetails.painscale1" ).val(+ $( "#slider1" ).slider( "value" ) );
 
     
     
@@ -227,7 +227,7 @@ $(function() {
     }
       }
     });
-    $( "#amount2" ).val(+ $( "#slider2" ).slider( "value" ) );
+    $( "quadraplevisualdetails.painscale2" ).val(+ $( "#slider2" ).slider( "value" ) );
   });
 
  $(function() {
@@ -251,7 +251,7 @@ $(function() {
 	        }
 	      }
 	    });
-	    $( "#amount3" ).val(+ $( "#slider3" ).slider( "value" ) );
+	    $( "quadraplevisualdetails.painscale3" ).val(+ $( "#slider3" ).slider( "value" ) );
 	  });
 
  </script>

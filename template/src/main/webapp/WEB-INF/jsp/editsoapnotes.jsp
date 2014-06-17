@@ -34,9 +34,12 @@ $(function() {
         document.getElementById("amounterr").innerHTML="Severe Pain";
         return false;
         }
+        //var a=document.getElementById("amount").value;
+       // a.show();
       }
     });
-    $( "#amount" ).val(+ $( "#slider" ).slider( "value" ) );
+    $( "#soapnotes.painscale" ).val(+ $( "#slider" ).slider( "value" ) );
+    
   });
 
 $(function() {
@@ -66,7 +69,7 @@ $(function() {
         
       }
     });
-    $( "#amount1" ).val(+ $( "#slider1" ).slider( "value" ) );
+    $( "#soapnotes.painscale1" ).val(+ $( "#slider1" ).slider( "value" ) );
 
     
     
@@ -95,7 +98,7 @@ $(function() {
     }
       }
     });
-    $( "#amount2" ).val(+ $( "#slider2" ).slider( "value" ) );
+    $( "soapnotes.painscale2" ).val(+ $( "#slider2" ).slider( "value" ) );
   });
 
 </script>
@@ -368,14 +371,14 @@ else
 <td></td>
 <td><input type="checkbox" name="rightribpain" value="Right Rib Pain"  id="rightrib" onclick="rightcheck()" <c:if test="${soapnotes.rightribpain=='Right Rib Pain'}"><c:out value="checked=checked"/></c:if>>Right Rib Pain
 <label for="amount1" style="width: 50;display:none;" id="label"><b>Pain Scale:</b></label>
-	 <input type="text" id="amount1" style="border:0;display:none; width: 50;color:#f6931f; font-weight:bold;" name="painscale1"/><span id="amount1err"></span>&nbsp;&nbsp;&nbsp;
+	 <input type="text" id="amount1" style="border:0;display:none; width: 50;color:#f6931f; font-weight:bold;" name="painscale1" value="${soapnotes.painscale1}"/><span id="amount1err"></span>&nbsp;&nbsp;&nbsp;
  <div id="slider1" style="width: 130; display:none"></div>
 
 
 </td>
 <td><input type="checkbox" name="leftribpain" value="Left Rib Pain" id="leftrib" onclick="rightcheck()" <c:if test="${soapnotes.leftribpain=='Left Rib Pain'}"><c:out value="checked=checked"/></c:if>>Left Rib Pain
  <label for="amount2" style="width: 50;display:none;" id="label1"><b>Pain Scale:</b></label>
-	 <input type="text" id="amount2" style="border:0;display:none; width: 50;color:#f6931f; font-weight:bold;" name="painscale2" /><span id="amount2err"></span>&nbsp;&nbsp;&nbsp;
+	 <input type="text" id="amount2" style="border:0;display:none; width: 50;color:#f6931f; font-weight:bold;" name="painscale2" value="${soapnotes.painscale2}"/><span id="amount2err"></span>&nbsp;&nbsp;&nbsp;
  <div id="slider2" style="width: 130; display:none;"> 
 
 </td>
@@ -483,6 +486,17 @@ else
 
 				}
 			</script>
+			<script>
+			function chkex()
+			{
+			if(document.getElementById("").value=="")
+			{
+		
+			}
+			
+			}
+			
+			</script>
  <td>
  
  &nbsp &nbsp Diagonosis:<br/><br>&nbsp;<c:forEach items="${diagnosis}" var="diagnosis">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="diagnosis[]" type="text" value="${diagnosis}"><br><br></c:forEach>
@@ -507,8 +521,8 @@ else
 					<option value="2 to 6 T/S X-Rays"><c:if test="${soapnotes.e1e2=='2 to 6 T/S X-Rays'}"><c:out value="selected"/></c:if>2 to 6 T/S X-Rays</option>
 					<option value="2-6 L/S X-Rays"><c:if test="${soapnotes.e1e2=='2-6 L/S X-Rays'}"><c:out value="selected"/></c:if>2-6 L/S X-Rays</option>
 					<option value="2 Chest X-Rays"><c:if test="${soapnotes.e1e2=='2 Chest X-Rays'}"><c:out value="selected"/></c:if>2 Chest X-Rays</option>
-					<option value="ExtremitiesX-Rays" <c:if test="${soapnotes.e1e2=='ExtremitiesX-Rays'}"><c:out value="selected"/></c:if>>ExtremitiesX-Rays</option>
-					<option value="SCSM 1-2 region" <c:if test="${soapnotes.e1e2=='SCSM 1-2 region'}"><c:out value="selected"/></c:if>>SCSM 1-2 region</option>
+					<option id="extre" value="ExtremitiesX-Rays" onclick="return chkex();" <c:if test="${soapnotes.e1e2=='ExtremitiesX-Rays'}"><c:out value="selected"/></c:if>>ExtremitiesX-Rays</option>
+					<option value="SCSM 1-2 region" <c:if test="${soapnotes.e1e2=='SCSM 1-2 region'}"></c:if>>SCSM 1-2 region</option>
 					<option value="SCSM 3-4 regions" <c:if test="${soapnotes.e1e2=='SCSM 3-4 regions'}"><c:out value="selected"/></c:if>>SCSM 3-4 regions</option>
 					<option value="5 regions" <c:if test="${soapnotes.e1e2=='5 regions'}"><c:out value="selected"/></c:if>>5 regions</option>
 					<option value="extraspinal 1 or more regions" <c:if test="${soapnotes.e1e2=='extraspinal 1 or more regions'}"><c:out value="selected"/></c:if>>extraspinal 1 or more regions</option>
