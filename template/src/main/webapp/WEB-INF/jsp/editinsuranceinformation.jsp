@@ -89,10 +89,11 @@ function checkSubmit()
 	
 	return false;
     }
-	var phone = /^[0-9-()]{13}$/;
+	//var phone = /^[0-9-()]{13}$/;
+	var phone = /^\(?([1-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
 	 if(document.getElementById("phone").value.match(phone)==null)
    {
-   	document.getElementById("phoneerr").innerHTML="Enter correct Phone number";
+   	document.getElementById("phoneerr").innerHTML="Invalid phone number format";
    	
        return false;
    }
@@ -125,10 +126,11 @@ function checkSubmit()
 	
 	return false;
     }
-	var phone = /^[0-9-()]{13}$/;
+	//var phone = /^[0-9-()]{13}$/;
+	var phone = /^\(?([1-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
 	 if(document.getElementById("supphone").value.match(phone)==null)
   {
-  	document.getElementById("supphoneerr").innerHTML="Enter correct Phone number";
+  	document.getElementById("supphoneerr").innerHTML="Invalid phone number format";
   	
       return false;
   }
@@ -260,7 +262,7 @@ document.getElementById("phone").value=phone;
               <td><span class="err">*</span>Insurance Company</td>
               <td> <input type="text" class="input_txtbx1" name="insurance_company" id="company" value="${Insuranceinformation.insurance_company}" /><br><span id="companyerr" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.insurance_company"></form:errors></td>
               <td>Phone#</td>
-              <td><input type="text" class="input_txtbx1" name="phone" id="phone"  maxlength="13" value="${Insuranceinformation.phone}" onkeypress="return validate(event)"; /><br><span id="phoneerr"><form:errors path="Insuranceinformation.phone"></form:errors></span>
+              <td><input type="text" class="input_txtbx1" name="phone" id="phone"  maxlength="13" value="${Insuranceinformation.phone}" onkeypress="return validate(event)"; /><br><span class="err" id="phoneerr"><form:errors path="Insuranceinformation.phone"></form:errors></span>
               <br><span class="err" id="phoneerror"></span>
               </td>
               </tr>

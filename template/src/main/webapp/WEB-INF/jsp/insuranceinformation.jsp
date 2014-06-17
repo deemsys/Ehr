@@ -185,10 +185,11 @@ function checkSubmit()
 	
 	return false;
     }
-	var phone = /^[0-9-()]{13}$/;
+	//var phone = /^[0-9-()]{13}$/;
+	var phone = /^\(?([1-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
 	 if(document.getElementById("phone").value.match(phone)==null)
    {
-   	document.getElementById("phoneerr").innerHTML="Enter correct Phone number";
+   	document.getElementById("phoneerr").innerHTML="Invalid phone number format";
    	
        return false;
    }
@@ -221,10 +222,11 @@ function checkSubmit()
 	
 	return false;
     }
-	var phone = /^[0-9-()]{13}$/;
+	//var phone = /^[0-9-()]{13}$/;
+	var phone = /^\(?([1-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
 	 if(document.getElementById("supphone").value.match(phone)==null)
   {
-  	document.getElementById("supphoneerr").innerHTML="Enter correct Phone number";
+  	document.getElementById("supphoneerr").innerHTML="Invalid phone number format";
   	
       return false;
   }

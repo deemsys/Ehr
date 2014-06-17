@@ -448,7 +448,7 @@ else
  <td>
  <label for="amount"><b>Pain Scale:</b></label>
 	 <input type="text" id="amount" value="${soapnotes.painscale}" style="border:0; color:#f6931f; font-weight:bold;" name="painscale" /><span id="amounterr"></span>&nbsp;&nbsp;&nbsp;
- <div id="slider" style="width: 306px; "></div>
+ <div id="slider" value="${soapnotes.painscale}" style="width: 306px; "></div>
  
  
  </td>

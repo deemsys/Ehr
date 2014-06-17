@@ -92,7 +92,14 @@ document.getElementById("fax").value=phone;
 	return false;
 	}
 	
-	
+	document.getElementById("faxerror").innerHTML="";
+	var phone = /^\(?([1-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+	 if(document.getElementById("fax").value.match(phone)==null)
+    {
+    	document.getElementById("faxerror").innerHTML="Invalid phone number format";
+    	
+        return false;
+    }
 	}
 
 	</script>
@@ -141,7 +148,7 @@ document.getElementById("fax").value=phone;
               </tr>
               
               <tr height="20">
-              <td><b>Fax:</b>&nbsp;&nbsp;&nbsp;<input type="text"  class="input_txtbx1" placeholder="513-421-2764" name="fax" id="fax" value="${requestfordemanddetails.fax}" maxlength="12" onkeypress="return validate(event)";></td>
+              <td><b>Fax:</b>&nbsp;&nbsp;&nbsp;<input type="text"  class="input_txtbx1" placeholder="513-421-2764" name="fax" id="fax" value="${requestfordemanddetails.fax}" maxlength="12" onkeypress="return validate(event)";><span class="err" id="faxerror"></span></td>
               <td>
              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4933 West Tuscarawas Street
               </td>

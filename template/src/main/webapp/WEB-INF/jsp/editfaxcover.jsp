@@ -62,6 +62,14 @@ document.getElementById("datepickererror").innerHTML="";
 		
 		return false;
 		}
+		document.getElementById("faxerror").innerHTML=" ";
+		var phone = /^\(?([1-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/; 
+	 if(document.getElementById("faxno").value.match(phone)==null)
+    {
+    	document.getElementById("faxerror").innerHTML="Invalid phone number format ";
+    	
+        return false;
+    }
 	/* if(document.getElementById("faxno").value=="")
 	{
 	document.getElementById("faxerror").innerHTML="Please Enter";

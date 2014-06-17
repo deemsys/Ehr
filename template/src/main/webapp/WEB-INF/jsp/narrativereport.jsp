@@ -596,7 +596,7 @@ document.getElementById("signerror").innerHTML=" ";
 					<option selected="selected" value="Normal">Normal</option>
 					<option value="Pathology">Pathology</option>
 					<option value="Others">Others</option>
-					</select><input type="text" style="display: none;" id="theTextbox" value="${physicalexam.path}">. Visual inspection demonstrated a <select  name="gender38" id="gender38">
+					</select><input type="text" style="display: none;" id="theTextbox" value="${physicalexam.path}">.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Visual inspection demonstrated a <select  name="gender38" id="gender38">
 					<option selected="selected" value="Cervical">Cervical</option>
 					<option value="Thoracic">Thoracic</option>
 					<option value="lumbar">Lumbar</option>

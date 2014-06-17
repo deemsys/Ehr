@@ -404,7 +404,14 @@ document.getElementById("fax").value=phone;
 		return false;
 		
 		} */
-		
+		var phone = /^\(?([1-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/; 
+	 if(document.getElementById("fax").value.match(phone)==null)
+    {
+    	document.getElementById("faxerror").innerHTML="Invalid phone number format ";
+    	
+        return false;
+    }
+   
 		
 		document.getElementById("amountdeducterror").innerHTML="";
 		if(document.getElementById("amountdeduct").value=="")
