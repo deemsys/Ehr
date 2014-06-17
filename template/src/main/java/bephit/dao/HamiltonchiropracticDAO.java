@@ -76,7 +76,68 @@ public class HamiltonchiropracticDAO {
 	    
 	}
 
+	public String usernamevalidation11(String pusername)
+	{
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		int flag=0;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		
+	    try{
+	    	
+	   System.out.println("delete from tbl_hamiltonchiropractic where patient_id='"+pusername+"'");
+	  
+	   System.out.println("delete from tbl_lumbopelvicexam where username='"+pusername+"'");
+	   System.out.println("delete from tbl_cervicalexam where username='"+pusername+"'");
+	   System.out.println("delete from tbl_thoracicexam where username='"+pusername+"'");
+	   System.out.println("delete from shoulderexam where username='"+pusername+"'");
+	   System.out.println("delete from tbl_elbowexam where username='"+pusername+"'");
+	   System.out.println("delete from wristexam where username='"+pusername+"'");
+	   System.out.println("delete from hipexam where username='"+pusername+"'");
+	   System.out.println("delete from tbl_kneeexam where username='"+pusername+"'");
+	   System.out.println("delete from footexam where username='"+pusername+"'");
+	   
+	   
+	   statement.execute("delete from tbl_hamiltonchiropractic where patient_id='"+pusername+"'");
+	  
+	   statement.execute("delete from tbl_lumbopelvicexam where username='"+pusername+"'");
+	   statement.execute("delete from tbl_cervicalexam where username='"+pusername+"'"); 
+	   statement.execute("delete from tbl_thoracicexam where username='"+pusername+"'"); 
+	   statement.execute("delete from shoulderexam where username='"+pusername+"'"); 
+	   statement.execute("delete from tbl_elbowexam where username='"+pusername+"'"); 
+	   statement.execute("delete from wristexam where username='"+pusername+"'"); 
+	   statement.execute("delete from hipexam where username='"+pusername+"'"); 
+	   statement.execute("delete from tbl_kneeexam where username='"+pusername+"'"); 
+	   statement.execute("delete from footexam where username='"+pusername+"'"); 
+	   
+	    	 			
+	    	 				
+	    	 			
+	    	 				flag=1;
+	    	 				
+	    	 		    }
 	
+	    catch(Exception e){
+	    	System.out.println(e.toString());
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    	flag=0;
+	    	//return 0;
+	    }finally{
+	     	releaseStatement(statement);
+	    	releaseConnection(con);	  
+	    	return "";
+	    	
+	    }
+	   
+	    
+	}
 public List<Hamiltonchiropractic> getHamiltonchiropractic(){
 	
 	Connection con = null;

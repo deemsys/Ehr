@@ -297,8 +297,14 @@ public class MainController {
 	}
 	
 	@RequestMapping(value="/doctorsearch", method = RequestMethod.GET)
-	public String searchform(HttpSession session, ModelMap model) {
-		
+	public String searchform(Principal principal,HttpSession session, ModelMap model) {
+		int username=docDAO.usernamevalidation(principal .getName());
+		if(hamiDAO.getHamiltonchiropracticpatientid((String)session.getAttribute("username")).size()==0)
+		 {
+			hamiDAO.usernamevalidation11(principal .getName());
+			
+			System.out.println("deleted");
+		}
 		model.addAttribute("menu","doctorsearch");
 		
 		return "doctorsearch";
@@ -750,7 +756,17 @@ public class MainController {
 		return "viewphysicalexam";
 	}
 	@RequestMapping(value="/hamiltonchiropractic", method = RequestMethod.GET)
-	public String hamiltonchiropractic(ModelMap model,HttpSession session) {
+	public String hamiltonchiropractic(Principal principal,ModelMap model,HttpSession session) {
+		
+		
+		int username=docDAO.usernamevalidation(principal .getName());
+		if(hamiDAO.getHamiltonchiropracticpatientid((String)session.getAttribute("username")).size()==0)
+		 {
+			
+			hamiDAO.usernamevalidation11(principal.getName());
+			
+			System.out.println("deleted");
+		}
 		if(patientDAO.getUsername((String)session.getAttribute("username")).size()>0)
 		 {
 			 String name=patientDAO.getUsername((String)session.getAttribute("username")).get(0).getName();
@@ -3555,10 +3571,18 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 	public String patientDetails(Principal principal,HttpSession session,ModelMap model)
 	
 	{
+		
 		if(patientDAO.getUsername(principal).size()>0)
 		{			
 	   model.addAttribute("patientno","0");
 	}
+		int username=docDAO.usernamevalidation(principal .getName());
+		if(patientDAO.getUsername(principal).size()==0)
+		{
+			patientDAO.usernamevalidation11(principal .getName());
+			
+			System.out.println("deleted");
+		}
 		session.removeAttribute("first");
 		int patientdetails=patientDAO.getmaxrecords();
 		int totalpatient=patientdetails+1;

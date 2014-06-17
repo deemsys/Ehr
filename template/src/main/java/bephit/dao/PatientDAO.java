@@ -51,6 +51,80 @@ public class PatientDAO {
 	    }
 	    return 0;
 	    }
+	public String usernamevalidation11(String pusername)
+	{
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		int flag=0;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		//List<ParticipantsDetails> participants = new ArrayList<ParticipantsDetails>();
+	    try{
+	   System.out.println("delete from tbl_quadraplevisual where username='"+pusername+"'");
+	   System.out.println("delete from wristindex where username='"+pusername+"'");
+	   System.out.println("delete from tbl_lowback where username='"+pusername+"'");
+	   System.out.println("delete from neckindex where username='"+pusername+"'");
+	   System.out.println("delete from oswestryindex where username='"+pusername+"'");
+	   System.out.println("delete from shoulderexam where username='"+pusername+"'");
+	   System.out.println("delete from tbl_dutiesunderduress where username='"+pusername+"'");
+	   System.out.println("delete from tbl_lumbopelvicexam where username='"+pusername+"'");
+	   
+	  statement.execute("delete from tbl_quadraplevisual where username='"+pusername+"'");
+	    	 				
+	    	 				statement.execute("delete from wristindex where username='"+pusername+"'");
+	    	 				statement.execute("delete from tbl_lowback where username='"+pusername+"'");
+	    	 				statement.execute("delete from neckindex where username='"+pusername+"'");
+	    	 				statement.execute("delete from oswestryindex where username='"+pusername+"'");
+	    	 				statement.execute("delete from shoulderexam where username='"+pusername+"'");
+	    	 				statement.execute("delete from tbl_dutiesunderduress where username='"+pusername+"'");
+	    	 				
+	    	 				statement.execute("delete from tbl_lumbopelvicexam where username='"+pusername+"'");
+	    	 				
+	    	 				System.out.println("deleted id="+pusername);
+	    	 				
+	    	 				/* String patientrecords;
+	    	 		    	 int noofRecords=0;
+	    	 		    	 int patientcurrentid=0;
+	    	 		    	 int id=0;
+	    	 		    	 
+	    	 					patientrecords = "SELECT Patient_id FROM patient_details ORDER BY  Patient_id DESC LIMIT 1;";
+	    	 					System.out.println("command"+patientrecords);			
+	    	 					resultSet = statement.executeQuery(patientrecords);
+	    	 					if (resultSet.next())
+	    	 					{
+	    	 						patientcurrentid = resultSet.getInt("Patient_id");
+	    	 						System.out.println("patientcurrentid"+patientcurrentid);
+	    	 						id=patientcurrentid+1;
+	    	 						System.out.println("patientcurrentidinc"+patientcurrentid);
+	    	 					}
+	    	 					  System.out.println("delete  from tbl_symptom  where patient_id='"+id+"'");
+	    	 					statement.execute("delete  from tbl_symptom  where patient_id='"+id+"'");
+
+	    	 					System.out.println("deleted id="+patientcurrentid);*/
+	    	 				flag=1;
+	    	 				
+	    	 		    }
+	
+	    catch(Exception e){
+	    	System.out.println(e.toString());
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    	flag=0;
+	    	//return 0;
+	    }finally{
+	     	releaseStatement(statement);
+	    	releaseConnection(con);	  
+	    	return "";
+	    	
+	    }
+	   
+	    
+	}
 	public int setPatientDetails(PatientDetails patientdetails,String[] Symptoms,Principal principal)
 	{
 		Connection con = null;
