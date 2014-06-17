@@ -137,7 +137,7 @@ $(function() {
          
       }
     });
-    $( "#amount" ).val(+ $( "#slider" ).slider( "value" ) );
+    $( "oswestrydetails.painscale" ).val(+ $( "#slider" ).slider( "value" ) );
     $( "#slider1" ).slider({
         value:document.getElementById("amount1").value,
         min: 0,
@@ -162,7 +162,7 @@ $(function() {
           
         }
       });
-      $( "#amount1" ).val(+ $( "#slider1" ).slider( "value" ) );
+      $( "oswestrydetails.painscale1" ).val(+ $( "#slider1" ).slider( "value" ) );
   });
 
 </script>

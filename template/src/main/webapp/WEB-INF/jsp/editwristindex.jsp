@@ -99,7 +99,7 @@ $(function() {
         }
       }
     });
-    $( "#amount" ).val(+ $( "#slider" ).slider( "value" ) );
+    $( "wristindexdetails.painscale" ).val(+ $( "#slider" ).slider( "value" ) );
   });
 
 </script>

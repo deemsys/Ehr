@@ -38,7 +38,7 @@
 		        
 		      }
 		    });
-		    $( "#describes" ).val(+ $( "#slider" ).slider( "value" ) );
+		    $( "shoulderpainscore.painscale" ).val(+ $( "#slider" ).slider( "value" ) );
 		  });
 	 
 	  $(function() {
