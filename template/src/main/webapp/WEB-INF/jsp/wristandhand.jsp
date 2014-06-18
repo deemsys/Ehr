@@ -250,6 +250,380 @@ document.getElementById("pnameerror").innerHTML=" ";
 	}
 	}
 	</script>
+	<script type="text/javascript">
+       function validate(event) {
+          
+           var regex = new RegExp("^[0-9.]+$");
+           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+           if (!regex.test(key)) {
+             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
+               event.preventDefault();
+               return false;
+           }
+       }       
+    </script>
+    
+     <script>
+	function check(e,value){
+    //Check Charater
+        var unicode=e.charCode? e.charCode : e.keyCode;
+        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
+        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
+    }
+    function checkLength(){
+    var fieldVal = document.getElementById('shdleft').value;
+    //Suppose u want 3 number of character
+    if(fieldVal >=0 && fieldVal <=5){
+        return true;
+    }
+    else
+    {
+        var str = document.getElementById('shdleft').value;
+        str = str.substring(0, str.length - 1);
+    document.getElementById('shdleft').value = str;
+    }
+     
+    }
+	</script>
+	<script>
+	function check1(e,value){
+    //Check Charater
+        var unicode=e.charCode? e.charCode : e.keyCode;
+        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
+        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
+    }
+    function checkLength1(){
+    var fieldVal = document.getElementById('shdright').value;
+    //Suppose u want 3 number of character
+    if(fieldVal >=0 && fieldVal <=5){
+        return true;
+    }
+    else
+    {
+        var str = document.getElementById('shdright').value;
+        str = str.substring(0, str.length - 1);
+    document.getElementById('shdright').value = str;
+    }
+     
+    }
+	</script>
+	
+	<script>
+	function check2(e,value){
+    //Check Charater
+        var unicode=e.charCode? e.charCode : e.keyCode;
+        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
+        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
+    }
+    function checkLength2(){
+    var fieldVal = document.getElementById('elbflexleft').value;
+    //Suppose u want 3 number of character
+    if(fieldVal >=0 && fieldVal <=5){
+        return true;
+    }
+    else
+    {
+        var str = document.getElementById('elbflexleft').value;
+        str = str.substring(0, str.length - 1);
+    document.getElementById('elbflexleft').value = str;
+    }
+     
+    }
+	</script>
+	<script>
+	function check3(e,value){
+    //Check Charater
+        var unicode=e.charCode? e.charCode : e.keyCode;
+        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
+        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
+    }
+    function checkLength3(){
+    var fieldVal = document.getElementById('elbflexright').value;
+    //Suppose u want 3 number of character
+    if(fieldVal >=0 && fieldVal <=5){
+        return true;
+    }
+    else
+    {
+        var str = document.getElementById('elbflexright').value;
+        str = str.substring(0, str.length - 1);
+    document.getElementById('elbflexright').value = str;
+    }
+     
+    }
+	</script>
+	
+	<script>
+	function check4(e,value){
+    //Check Charater
+        var unicode=e.charCode? e.charCode : e.keyCode;
+        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
+        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
+    }
+    function checkLength4(){
+    var fieldVal = document.getElementById('elbextleft').value;
+    //Suppose u want 3 number of character
+    if(fieldVal >=0 && fieldVal <=5){
+        return true;
+    }
+    else
+    {
+        var str = document.getElementById('elbextleft').value;
+        str = str.substring(0, str.length - 1);
+    document.getElementById('elbextleft').value = str;
+    }
+     
+    }
+	</script>
+	
+	<script>
+	function check5(e,value){
+    //Check Charater
+        var unicode=e.charCode? e.charCode : e.keyCode;
+        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
+        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
+    }
+    function checkLength5(){
+    var fieldVal = document.getElementById('elbextright').value;
+    //Suppose u want 3 number of character
+    if(fieldVal >=0 && fieldVal <=5){
+        return true;
+    }
+    else
+    {
+        var str = document.getElementById('elbextright').value;
+        str = str.substring(0, str.length - 1);
+    document.getElementById('elbextright').value = str;
+    }
+     
+    }
+	</script>
+	
+	<script>
+	function check6(e,value){
+    //Check Charater
+        var unicode=e.charCode? e.charCode : e.keyCode;
+        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
+        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
+    }
+    function checkLength6(){
+    var fieldVal = document.getElementById('digitflexionleft').value;
+    //Suppose u want 3 number of character
+    if(fieldVal >=0 && fieldVal <=5){
+        return true;
+    }
+    else
+    {
+        var str = document.getElementById('digitflexionleft').value;
+        str = str.substring(0, str.length - 1);
+    document.getElementById('digitflexionleft').value = str;
+    }
+     
+    }
+	</script>
+	
+	<script>
+	function check7(e,value){
+    //Check Charater
+        var unicode=e.charCode? e.charCode : e.keyCode;
+        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
+        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
+    }
+    function checkLength7(){
+    var fieldVal = document.getElementById('digitflexionright').value;
+    //Suppose u want 3 number of character
+    if(fieldVal >=0 && fieldVal <=5){
+        return true;
+    }
+    else
+    {
+        var str = document.getElementById('digitflexionright').value;
+        str = str.substring(0, str.length - 1);
+    document.getElementById('digitflexionright').value = str;
+    }
+     
+    }
+	</script>
+	
+	<script>
+	function check8(e,value){
+    //Check Charater
+        var unicode=e.charCode? e.charCode : e.keyCode;
+        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
+        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
+    }
+    function checkLength8(){
+    var fieldVal = document.getElementById('digitabdleft').value;
+    //Suppose u want 3 number of character
+    if(fieldVal >=0 && fieldVal <=5){
+        return true;
+    }
+    else
+    {
+        var str = document.getElementById('digitabdleft').value;
+        str = str.substring(0, str.length - 1);
+    document.getElementById('digitabdleft').value = str;
+    }
+     
+    }
+	</script>
+	<script>
+	function check9(e,value){
+    //Check Charater
+        var unicode=e.charCode? e.charCode : e.keyCode;
+        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
+        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
+    }
+    function checkLength9(){
+    var fieldVal = document.getElementById('digitabdright').value;
+    //Suppose u want 3 number of character
+    if(fieldVal >=0 && fieldVal <=5){
+        return true;
+    }
+    else
+    {
+        var str = document.getElementById('digitabdright').value;
+        str = str.substring(0, str.length - 1);
+    document.getElementById('digitabdright').value = str;
+    }
+     
+    }
+	</script>
+	
+	<script>
+	function check10(e,value){
+    //Check Charater
+        var unicode=e.charCode? e.charCode : e.keyCode;
+        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
+        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
+    }
+    function checkLength10(){
+    var fieldVal = document.getElementById('bicepsleft').value;
+    //Suppose u want 3 number of character
+    if(fieldVal >=0 && fieldVal <=5){
+        return true;
+    }
+    else
+    {
+        var str = document.getElementById('bicepsleft').value;
+        str = str.substring(0, str.length - 1);
+    document.getElementById('bicepsleft').value = str;
+    }
+     
+    }
+	</script>
+	
+	<script>
+	function check11(e,value){
+    //Check Charater
+        var unicode=e.charCode? e.charCode : e.keyCode;
+        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
+        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
+    }
+    function checkLength11(){
+    var fieldVal = document.getElementById('bicepsright').value;
+    //Suppose u want 3 number of character
+    if(fieldVal >=0 && fieldVal <=5){
+        return true;
+    }
+    else
+    {
+        var str = document.getElementById('bicepsright').value;
+        str = str.substring(0, str.length - 1);
+    document.getElementById('bicepsright').value = str;
+    }
+     
+    }
+	</script>
+	
+	<script>
+	function check12(e,value){
+    //Check Charater
+        var unicode=e.charCode? e.charCode : e.keyCode;
+        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
+        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
+    }
+    function checkLength12(){
+    var fieldVal = document.getElementById('brachioradleft').value;
+    //Suppose u want 3 number of character
+    if(fieldVal >=0 && fieldVal <=5){
+        return true;
+    }
+    else
+    {
+        var str = document.getElementById('brachioradleft').value;
+        str = str.substring(0, str.length - 1);
+    document.getElementById('brachioradleft').value = str;
+    }
+     
+    }
+	</script>
+	<script>
+	function check13(e,value){
+    //Check Charater
+        var unicode=e.charCode? e.charCode : e.keyCode;
+        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
+        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
+    }
+    function checkLength13(){
+    var fieldVal = document.getElementById('brachioradright').value;
+    //Suppose u want 3 number of character
+    if(fieldVal >=0 && fieldVal <=5){
+        return true;
+    }
+    else
+    {
+        var str = document.getElementById('brachioradright').value;
+        str = str.substring(0, str.length - 1);
+    document.getElementById('brachioradright').value = str;
+    }
+     
+    }
+	</script>
+	<script>
+	function check14(e,value){
+    //Check Charater
+        var unicode=e.charCode? e.charCode : e.keyCode;
+        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
+        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
+    }
+    function checkLength14(){
+    var fieldVal = document.getElementById('tricepsleft').value;
+    //Suppose u want 3 number of character
+    if(fieldVal >=0 && fieldVal <=5){
+        return true;
+    }
+    else
+    {
+        var str = document.getElementById('tricepsleft').value;
+        str = str.substring(0, str.length - 1);
+    document.getElementById('tricepsleft').value = str;
+    }
+     
+    }
+	</script>
+	<script>
+	function check15(e,value){
+    //Check Charater
+        var unicode=e.charCode? e.charCode : e.keyCode;
+        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
+        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
+    }
+    function checkLength15(){
+    var fieldVal = document.getElementById('tricepsright').value;
+    //Suppose u want 3 number of character
+    if(fieldVal >=0 && fieldVal <=5){
+        return true;
+    }
+    else
+    {
+        var str = document.getElementById('tricepsright').value;
+        str = str.substring(0, str.length - 1);
+    document.getElementById('tricepsright').value = str;
+    }
+     
+    }
+	</script>
 </head>
 <body>
 <br><br>
@@ -365,12 +739,12 @@ document.getElementById("pnameerror").innerHTML=" ";
          
          </tr>
          <tr height="10"></tr>
-         <tr><td style="width: 123px; ">Wrist Flexion:</td><td style="width: 49px; ">80</td><td><input type="text" size="5" name="flexionleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="flexionright" onkeypress="return isNumberKey(event);"></td><td width="210" style="width: 59px; "></td><td>Allen's (Vasculature):	</td><td><input size="5" type="text"  name="allenleft">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="5" name="allenright"></td></tr>
-         <tr><td>Wrist Extension:</td><td>80</td><td><input size="5" type="text" name="extensionleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="extensionright" onkeypress="return isNumberKey(event);"></td><td width="90"></td><td>Phalen's (Median N):</td><td><input type="text"  size="5" name="phalenleft">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="5"  name="phalenright"></td></tr>
-         <tr><td>Wrist Ulnar Deviation:</td><td>90</td><td><input size="5" type="text" name="ulnarleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input  size="5" type="text" name="ulnarright" onkeypress="return isNumberKey(event);"></td><td width="90"></td><td>Reverse Phalens (Median N):</td><td><input type="text" size="5"  name="reverseleft">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text"  name="reverseright"></td></tr>
-         <tr><td>Wrist Radial Deviation:</td><td>90</td><td><input size="5" type="text" name="radialleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="radialright" onkeypress="return isNumberKey(event);"></td><td width="90"></td><td>Finkelstein's (Tenosynovitis):</td><td><input type="text" size="5"  name="tenosynovitisleft">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text"  name="tenosynovitisright"></td></tr></tr>
-         <tr><td>Pronation / Supination	:</td><td>180</td><td><input type="text" size="5" name="pronationleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="pronationright" onkeypress="return isNumberKey(event);"><td width="90"></td><td>Tinnel's:</td><td><input type="text" size="5"  name="tinnelsleft">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="5" name="tinnelsright"></td></tr>
-         <tr><td></td><td></td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="90"></td><td>ULTT:</td><td><input type="text" size="5" name="ulttleft">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text"  name="ulttright"></td></tr>
+         <tr><td style="width: 123px; ">Wrist Flexion:</td><td style="width: 49px; ">80</td><td><input type="text" size="5" name="flexionleft" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="flexionright" onkeypress="return validate(event)"></td><td width="210" style="width: 59px; "></td><td>Allen's (Vasculature):	</td><td><input size="5" type="text"  name="allenleft" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="5" name="allenright" onkeypress="return validate(event)"></td></tr>
+         <tr><td>Wrist Extension:</td><td>80</td><td><input size="5" type="text" name="extensionleft" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="extensionright" onkeypress="return validate(event)"></td><td width="90"></td><td>Phalen's (Median N):</td><td><input type="text"  size="5" name="phalenleft" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="5"  name="phalenright" onkeypress="return validate(event)"></td></tr>
+         <tr><td>Wrist Ulnar Deviation:</td><td>90</td><td><input size="5" type="text" name="ulnarleft" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input  size="5" type="text" name="ulnarright" onkeypress="return validate(event)"></td><td width="90"></td><td>Reverse Phalens (Median N):</td><td><input type="text" size="5"  name="reverseleft" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text"  name="reverseright" onkeypress="return validate(event)"></td></tr>
+         <tr><td>Wrist Radial Deviation:</td><td>90</td><td><input size="5" type="text" name="radialleft" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="radialright" onkeypress="return validate(event)"></td><td width="90"></td><td>Finkelstein's (Tenosynovitis):</td><td><input type="text" size="5"  name="tenosynovitisleft" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text"  name="tenosynovitisright" onkeypress="return validate(event)"></td></tr></tr>
+         <tr><td>Pronation / Supination	:</td><td>180</td><td><input type="text" size="5" name="pronationleft" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="pronationright" onkeypress="return validate(event)"><td width="90"></td><td>Tinnel's:</td><td><input type="text" size="5"  name="tinnelsleft" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="5" name="tinnelsright" onkeypress="return validate(event)"></td></tr>
+         <tr><td></td><td></td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="90"></td><td>ULTT:</td><td><input type="text" size="5" name="ulttleft" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text"  name="ulttright" onkeypress="return validate(event)"></td></tr>
           
          
          </table>
@@ -403,11 +777,11 @@ document.getElementById("pnameerror").innerHTML=" ";
           <tr> <td width="30"></td><td>Left&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Right</td>  <td width="30"></td><td>Left&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Right</td>  <td width="30"></td><td>Left&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Right</td> </tr>
           <tr height="10"></tr>
            
-           <tr><td>C5</td><td><input size="5" type="text" name="latdeltoidleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="latdeltoidright" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;(Lat deltoid)</td><td>C5</td><td><input type="text" name="shdleft" size="5" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="shdright" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;(Shd ABD)</td><td>C5</td><td><input type="text" name="bicepsleft" size="5" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="bicepsright" size="5" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;(Biceps)</td></tr>
-           <tr><td>C6</td><td><input type="text" name="latarmleft" size="5" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="latarmright" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;(Lat arm/hand)</td><td>C6</td><td><input type="text" name="elbflexleft" size="5" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="elbflexright" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;(Elb flex/wrist ext)</td><td>C6</td><td><input type="text" name="brachioradleft" size="5" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="brachioradright"  size="5" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;(Brachiorad)</td></tr>
-           <tr><td>C7</td><td><input type="text" size="5" name="thirdleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input  size="5"type="text" name="thirdright" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;(3rd digit)</td><td>C7</td><td><input type="text" name="elbextleft" size="5" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="elbextright" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;(Elb ext/wrist flex)</td><td>C7</td><td><input type="text" name="tricepsleft" size="5" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="tricepsright" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;(Triceps)</td></tr>
-            <tr><td>C8</td><td><input type="text" size="5" name="medforearmleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="5" name="medforearmright" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;(Med forearm/hand)</td><td>C8</td><td><input type="text" name="digitflexionleft" size="5" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;&nbsp;&nbsp;<input size="5"  type="text" name="digitflexionright" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;(Digit flexion)</td><td></td></tr>
-            <tr><td>T1</td><td><input size="5" type="text" name="medelbowleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="medelbowright" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;(Med elbow/arm)</td><td>T1</td><td><input type="text" name="digitabdleft" size="5" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;&nbsp;&nbsp;<input  size="5"type="text" name="digitabdright" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;(Digit abd/add)	</td><td><td>&nbsp;(2+/5 is Normal)</td></td></tr>
+           <tr><td>C5</td><td><input size="5" type="text" name="latdeltoidleft" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="latdeltoidright" onkeypress="return validate(event)">&nbsp;&nbsp;(Lat deltoid)</td><td>C5</td><td><input type="text" name="shdleft" id="shdleft" size="5" onKeyPress="return check(event,value)" onInput="checkLength()">/5&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="shdright" id="shdright" onKeyPress="return check1(event,value)" onInput="checkLength1()">/5&nbsp;&nbsp;(Shd ABD)</td><td>C5</td><td><input type="text" name="bicepsleft" id="bicepsleft" size="5" onKeyPress="return check10(event,value)" onInput="checkLength10()">/5&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="bicepsright" id="bicepsright" size="5" onKeyPress="return check11(event,value)" onInput="checkLength11()">/5&nbsp;&nbsp;(Biceps)</td></tr>
+           <tr><td>C6</td><td><input type="text" name="latarmleft" size="5" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="latarmright" onkeypress="return validate(event)">&nbsp;&nbsp;(Lat arm/hand)</td><td>C6</td><td><input type="text" name="elbflexleft" id="elbflexleft" size="5" onKeyPress="return check2(event,value)" onInput="checkLength2()">/5&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="elbflexright" id="elbflexright" onKeyPress="return check3(event,value)" onInput="checkLength3()">/5&nbsp;&nbsp;(Elb flex/wrist ext)</td><td>C6</td><td><input type="text" name="brachioradleft" id="brachioradleft" size="5" onKeyPress="return check12(event,value)" onInput="checkLength12()">/5&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="brachioradright" id="brachioradright" size="5" onKeyPress="return check13(event,value)" onInput="checkLength13()">/5&nbsp;&nbsp;(Brachiorad)</td></tr>
+           <tr><td>C7</td><td><input type="text" size="5" name="thirdleft" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input  size="5"type="text" name="thirdright" onkeypress="return validate(event)">&nbsp;&nbsp;(3rd digit)</td><td>C7</td><td><input type="text" name="elbextleft" id="elbextleft" size="5" onKeyPress="return check4(event,value)" onInput="checkLength4()">/5&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="elbextright" id="elbextright" onKeyPress="return check5(event,value)" onInput="checkLength5()">/5&nbsp;&nbsp;(Elb ext/wrist flex)</td><td>C7</td><td><input type="text" name="tricepsleft" id="tricepsleft" size="5" onKeyPress="return check14(event,value)" onInput="checkLength14()">/5&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="tricepsright" id="tricepsright" onKeyPress="return check15(event,value)" onInput="checkLength15()">/5&nbsp;&nbsp;(Triceps)</td></tr>
+            <tr><td>C8</td><td><input type="text" size="5" name="medforearmleft" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="5" name="medforearmright" onkeypress="return validate(event)">&nbsp;&nbsp;(Med forearm/hand)</td><td>C8</td><td><input type="text" name="digitflexionleft" id="digitflexionleft" size="5" onKeyPress="return check6(event,value)" onInput="checkLength6()">/5&nbsp;&nbsp;&nbsp;&nbsp;<input size="5"  type="text" name="digitflexionright" id="digitflexionright" onKeyPress="return check7(event,value)" onInput="checkLength7()">/5&nbsp;&nbsp;(Digit flexion)</td><td></td></tr>
+            <tr><td>T1</td><td><input size="5" type="text" name="medelbowleft" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="medelbowright" onkeypress="return validate(event)">&nbsp;&nbsp;(Med elbow/arm)</td><td>T1</td><td><input type="text" name="digitabdleft" id="digitabdleft" size="5" onKeyPress="return check8(event,value)" onInput="checkLength8()">/5&nbsp;&nbsp;&nbsp;&nbsp;<input  size="5"type="text" name="digitabdright" id="digitabdright" onKeyPress="return check9(event,value)" onInput="checkLength9()">/5&nbsp;&nbsp;(Digit abd/add)	</td><td><td>&nbsp;(2+/5 is Normal)</td></td></tr>
            <tr><td></td><td>(""-"" is Normal)			</td><td></td><td>	(5/5 is Normal)</td><td></td><td></td></tr>
            
            
