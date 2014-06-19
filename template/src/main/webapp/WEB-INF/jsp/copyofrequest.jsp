@@ -345,7 +345,7 @@ return false;
                        
 
 
-<table cellpadding="0" cellspacing="0" border="0" width="80%" class="margin_table">
+<table cellpadding="0" cellspacing="0" border="0" width="60%" class="margin_table">
 <tr>
 <td valign="top" align="left">
 <div id="block1">
@@ -378,7 +378,7 @@ return false;
           </tr>
           <tr height="30">
           <td><span class="err">*</span>Claim Number: </td>
-          <td><input type="text" class="input_txtbx1" name="claimnumber"  size="40" id="claimnumber" onkeypress="return validate(event)";><span class="err" id="claimnumbererror"  style="color: red;font-style:italic;"><form:errors path="Copyofrequest.claimnumber"></form:errors></span></td>
+          <td><input type="text" class="input_txtbx1" name="claimnumber"  size="40" id="claimnumber"><span class="err" id="claimnumbererror"  style="color: red;font-style:italic;"><form:errors path="Copyofrequest.claimnumber"></form:errors></span></td>
           </tr>
           <tr height="30">
           <td>Today's Date:  </td>

@@ -114,7 +114,7 @@ return false;
  <form action="updatecopyofrequest" method="POST"> 
 
 
-<table cellpadding="0" cellspacing="0" border="0" width="80%" class="margin_table">
+<table cellpadding="0" cellspacing="0" border="0" width="60%" class="margin_table">
 <c:set value="${copyofrequestform.copyofrequest[0]}" var="copyofrequest"/>
 <tr>
 <td valign="top" align="left">
@@ -143,13 +143,13 @@ return false;
           <td><input type="text" class="input_txtbx1" name="regarding" size="40" value="${copyofrequest.regarding }"></td>
           </tr>
           <tr height="30">
-          <td><span class="err" id="datepickererror"  style="color: red;font-style:italic;">*</span>Date of Accident: </td>
+          <td><span class="err">*</span>Date of Accident: </td>
           <td><input type="text"  class="input_txtbx1" name="dateofaccident" id="datepicker" size="40" value="${copyofrequest.dateofaccident}"><span class="err" id="datepickererror"></span></td>
           </tr>
           <br>
           <tr height="30">
           <td><span class="err">*</span>Claim Number: </td>
-          <td><input type="text" class="input_txtbx1" name="claimnumber"  size="40" value="${copyofrequest.claimnumber }" id="claimnumber" onkeypress="return validate(event)";><span class="err" id="claimnumbererror"  style="color: red;font-style:italic;"><form:errors path="Copyofrequest.claimnumber"></form:errors></span></td>
+          <td><input type="text" class="input_txtbx1" name="claimnumber"  size="40" value="${copyofrequest.claimnumber }" id="claimnumber"><span class="err" id="claimnumbererror"  style="color: red;font-style:italic;"><form:errors path="Copyofrequest.claimnumber"></form:errors></span></td>
           </tr>
           <tr height="30">
           <td>Today's Date:  </td>

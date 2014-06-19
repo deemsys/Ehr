@@ -3,10 +3,12 @@
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 <head>
-<link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
-<script src="resources/js/jquery.min.js"></script>
+
+ <link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
+  <link rel="stylesheet" href="/resources/css/style.css" />
+ <script src="resources/js/jquery.min.js"></script> 
  <script src="resources/js/jquery-ui.js"></script>
- <script src="resources/js/jquery-1.9.1.js"></script>
+ <script src="resources/js/jquey-1.9.1.js"></script>
  <STYLE type="text/css">
   P#mypar {font-style:calibri;
   line-height:18px;}
@@ -143,7 +145,7 @@ In Regards to :
               <br>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td width="50%"><span class="err" id="datepicker2error"  style="color: red;font-style:italic;">*</span>Todays date:    
+              <td width="50%"><span class="err">*</span>Todays date:    
               </td>
               <td width="50%"><input type="text" class="input_txtbx1" name="todaydate" id="datepicker2" value="${updateletterdetails.todaydate}"/><span class="err" id="datepicker2error"></span></td>
               </tr>
