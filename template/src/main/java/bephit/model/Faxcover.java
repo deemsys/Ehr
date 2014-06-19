@@ -10,24 +10,24 @@ public class Faxcover
 	
 	private String username;
 	
-	@NotEmpty
+	
 	private String date;
-	@NotEmpty
+	
 	private String tos;
 	
-	@Pattern(regexp="(^$|[0-9-()]{11})",message="Not a valid Social Security number")
+	//@Pattern(regexp="(^$|[0-9-()]{11})",message="Not a valid Social Security number")
 
 	private String faxno;
-	@NotEmpty
+	
 	private String froms;
 	private String reply;
 	private String regarding;
 	private String pages;
-	@NotEmpty
+	
 	private String msg;
-	@NotEmpty
+	
 	private String claimno;
-	@NotEmpty
+	
 	private String doi;
 	public Faxcover() {
 		super();
