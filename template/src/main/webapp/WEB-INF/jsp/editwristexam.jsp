@@ -250,7 +250,45 @@ document.getElementById("pnameerror").innerHTML=" ";
 	}
 	}
 	</script>
-
+<script type="text/javascript">
+       function validate(event) {
+          
+           var regex = new RegExp("^[0-9.]+$");
+           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+           if (!regex.test(key)) {
+             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
+               event.preventDefault();
+               return false;
+           }
+       }       
+    </script>
+    
+    <script>
+	function check(id,e,value){
+    //Check Charater
+    	
+        var unicode=e.charCode? e.charCode : e.keyCode;
+        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
+        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
+    }
+    function checkLength(id){
+   
+    var fieldVal = document.getElementById(id).value;
+    //Suppose u want 3 number of character
+    if(fieldVal >=0 && fieldVal <=5){
+        return true;
+    }
+    else
+    {
+        var str = document.getElementById(id).value;
+       
+        str = str.substring(0, str.length - 1);
+    document.getElementById(id).value = str;
+    }
+     
+    }
+	</script>
+    
 </head>
 <body>
 <br><br>
@@ -448,67 +486,67 @@ document.getElementById("pnameerror").innerHTML=" ";
 												<td>Wrist Flexion:</td>
 												<td>80</td>
 												<td><input type="text" size="5"
-													value="${wristexamdetails.flexionleft}" name="flexionleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input
+													value="${wristexamdetails.flexionleft}" name="flexionleft" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input
 													size="5" type="text"
 													value="${wristexamdetails.flexionright}"
-													name="flexionright" onkeypress="return isNumberKey(event);"></td>
+													name="flexionright" onkeypress="return validate(event)"></td>
 												<td width="210"></td>
 												<td>Allen's (Vasculature):</td>
 												<td width="160"></td>
 												<td><input size="5" type="text"
-													value="${wristexamdetails.allenleft}" name="allenleft">&nbsp;&nbsp;&nbsp;&nbsp;<input
+													value="${wristexamdetails.allenleft}" name="allenleft" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input
 													type="text" size="5" value="${wristexamdetails.allenright}"
-													name="allenright"></td>
+													name="allenright" onkeypress="return validate(event)"></td>
 											</tr>
 											<tr>
 												<td>Wrist Extension:</td>
 												<td>80</td>
 												<td><input size="5" type="text"
 													value="${wristexamdetails.extensionleft}"
-													name="extensionleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input
+													name="extensionleft" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input
 													size="5" type="text"
 													value="${wristexamdetails.extensionright}"
-													name="extensionright" onkeypress="return isNumberKey(event);"></td>
+													name="extensionright" onkeypress="return validate(event)"></td>
 												<td width="90"></td>
 												<td>Phalen's (Median N):</td>
 												<td width=""></td>
 												<td><input type="text" size="5"
-													value="${wristexamdetails.phalenleft}" name="phalenleft">&nbsp;&nbsp;&nbsp;&nbsp;<input
+													value="${wristexamdetails.phalenleft}" name="phalenleft" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input
 													type="text" size="5"
-													value="${wristexamdetails.phalenright}" name="phalenright"></td>
+													value="${wristexamdetails.phalenright}" name="phalenright" onkeypress="return validate(event)"></td>
 											</tr>
 											<tr>
 												<td>Wrist Ulnar Deviation:</td>
 												<td>90</td>
 												<td><input size="5" type="text"
-													value="${wristexamdetails.ulnarleft}" name="ulnarleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input
+													value="${wristexamdetails.ulnarleft}" name="ulnarleft" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input
 													size="5" type="text" value="${wristexamdetails.ulnarright}"
-													name="ulnarright" onkeypress="return isNumberKey(event);"></td>
+													name="ulnarright" onkeypress="return validate(event)"></td>
 												<td width="90"></td>
 												<td>Reverse Phalens (Median N):</td>
 												<td width=""></td>
 												<td><input type="text" size="5"
-													value="${wristexamdetails.reverseleft}" name="reverseleft">&nbsp;&nbsp;&nbsp;&nbsp;<input
+													value="${wristexamdetails.reverseleft}" name="reverseleft" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input
 													size="5" type="text"
 													value="${wristexamdetails.reverseright}"
-													name="reverseright"></td>
+													name="reverseright" onkeypress="return validate(event)"></td>
 											</tr>
 											<tr>
 												<td>Wrist Radial Deviation:</td>
 												<td>90</td>
 												<td><input size="5" type="text"
-													value="${wristexamdetails.radialleft}" name="radialleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input
+													value="${wristexamdetails.radialleft}" name="radialleft" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input
 													size="5" type="text"
-													value="${wristexamdetails.radialright}" name="radialright" onkeypress="return isNumberKey(event);"></td>
+													value="${wristexamdetails.radialright}" name="radialright" onkeypress="return validate(event)"></td>
 												<td width="90"></td>
 												<td>Finkelstein's (Tenosynovitis):</td>
 												<td ></td>
 												<td><input type="text" size="5"
 													value="${wristexamdetails.tenosynovitisleft}"
-													name="tenosynovitisleft">&nbsp;&nbsp;&nbsp;&nbsp;<input
+													name="tenosynovitisleft" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input
 													size="5" type="text"
 													value="${wristexamdetails.tenosynovitisright}"
-													name="tenosynovitisright"></td>
+													name="tenosynovitisright" onkeypress="return validate(event)"></td>
 											</tr>
 											</tr>
 											<tr>
@@ -516,18 +554,18 @@ document.getElementById("pnameerror").innerHTML=" ";
 												<td>180</td>
 												<td><input type="text" size="5"
 													value="${wristexamdetails.pronationleft}"
-													name="pronationleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input
+													name="pronationleft" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input
 													size="5" type="text"
 													value="${wristexamdetails.pronationright}"
-													name="pronationright" onkeypress="return isNumberKey(event);">
+													name="pronationright" onkeypress="return validate(event)">
 												<td width="90"></td>
 												<td>Tinnel's:</td>
 												<td ></td>
 												<td><input type="text" size="5"
-													value="${wristexamdetails.tinnelsleft}" name="tinnelsleft">&nbsp;&nbsp;&nbsp;&nbsp;<input
+													value="${wristexamdetails.tinnelsleft}" name="tinnelsleft" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input
 													type="text" size="5"
 													value="${wristexamdetails.tinnelsright}"
-													name="tinnelsright"></td>
+													name="tinnelsright" onkeypress="return validate(event)"></td>
 												</td>
 											</tr>
 											<tr>
@@ -538,9 +576,9 @@ document.getElementById("pnameerror").innerHTML=" ";
 												<td>ULTT:</td>
 												<td ></td>
 												<td><input type="text" size="5"
-													value="${wristexamdetails.ulttleft}" name="ulttleft">&nbsp;&nbsp;&nbsp;&nbsp;<input
+													value="${wristexamdetails.ulttleft}" name="ulttleft" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input
 													size="5" type="text" value="${wristexamdetails.ulttright}"
-													name="ulttright"></td>
+													name="ulttright" onkeypress="return validate(event)"></td>
 											</tr>
 
 
@@ -605,89 +643,89 @@ document.getElementById("pnameerror").innerHTML=" ";
 											<td>C5</td>
 											<td><input size="5" type="text"
 												value="${wristexamdetails.latdeltoidleft}"
-												name="latdeltoidleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input
+												name="latdeltoidleft" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input
 												size="5" type="text"
 												value="${wristexamdetails.latdeltoidright}"
-												name="latdeltoidright" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;(Lat deltoid)</td>
+												name="latdeltoidright" onkeypress="return validate(event)">&nbsp;&nbsp;(Lat deltoid)</td>
 											<td>C5</td>
-											<td><input type="text" name="shdleft"
-												value="${wristexamdetails.shdleft}" size="5" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;&nbsp;&nbsp;<input
+											<td><input type="text" name="shdleft" id="shdleft"
+												value="${wristexamdetails.shdleft}" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">/5&nbsp;&nbsp;&nbsp;&nbsp;<input
 												size="5" type="text" value="${wristexamdetails.shdright}"
-												name="shdright" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;(Shd ABD)</td>
+												name="shdright" id="shdright"onKeyPress="return check(id,event,value)" onInput="checkLength(id)">/5&nbsp;&nbsp;(Shd ABD)</td>
 											<td>C5</td>
-											<td><input type="text" name="bicepsleft"
-												value="${wristexamdetails.bicepsleft}" size="5" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;&nbsp;&nbsp;<input
+											<td><input type="text" name="bicepsleft" id="bicepsleft"
+												value="${wristexamdetails.bicepsleft}" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">/5&nbsp;&nbsp;&nbsp;&nbsp;<input
 												type="text" value="${wristexamdetails.bicepsright}"
-												name="bicepsright" size="5" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;(Biceps)</td>
+												name="bicepsright" id="bicepsright" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">/5&nbsp;&nbsp;(Biceps)</td>
 										</tr>
 										<tr>
 											<td>C6</td>
 											<td><input type="text" name="latarmleft"
-												value="${wristexamdetails.latarmleft}" size="5" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input
+												value="${wristexamdetails.latarmleft}" size="5" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input
 												size="5" type="text" value="${wristexamdetails.latarmright}"
-												name="latarmright" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;(Lat arm/hand)</td>
+												name="latarmright" onkeypress="return validate(event)">&nbsp;&nbsp;(Lat arm/hand)</td>
 											<td>C6</td>
-											<td><input type="text" name="elbflexleft"
-												value="${wristexamdetails.elbflexleft}" size="5" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;&nbsp;&nbsp;<input
+											<td><input type="text" name="elbflexleft" id="elbflexleft"
+												value="${wristexamdetails.elbflexleft}" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">/5&nbsp;&nbsp;&nbsp;&nbsp;<input
 												size="5" type="text"
-												value="${wristexamdetails.elbflexright}" name="elbflexright" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;(Elb
+												value="${wristexamdetails.elbflexright}" name="elbflexright" id="elbflexright" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">/5&nbsp;&nbsp;(Elb
 												flex/wrist ext)</td>
 											<td>C6</td>
-											<td><input type="text" name="brachioradleft"
-												value="${wristexamdetails.brachioradleft}" size="5" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;&nbsp;&nbsp;<input
+											<td><input type="text" name="brachioradleft" id="brachioradleft"
+												value="${wristexamdetails.brachioradleft}" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">/5&nbsp;&nbsp;&nbsp;&nbsp;<input
 												type="text" value="${wristexamdetails.brachioradright}"
-												name="brachioradright" size="5" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;(Brachiorad)</td>
+												name="brachioradright" id="brachioradright" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">/5&nbsp;&nbsp;(Brachiorad)</td>
 										</tr>
 										<tr>
 											<td>C7</td>
 											<td><input type="text" size="5"
-												value="${wristexamdetails.thirdleft}" name="thirdleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input
+												value="${wristexamdetails.thirdleft}" name="thirdleft" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input
 												size="5" type="text" value="${wristexamdetails.thirdright}"
-												name="thirdright" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;(3rd digit)</td>
+												name="thirdright" onkeypress="return validate(event)">&nbsp;&nbsp;(3rd digit)</td>
 											<td>C7</td>
 											<td><input type="text"
-												value="${wristexamdetails.elbextleft}" name="elbextleft"
-												size="5" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;&nbsp;&nbsp;<input size="5"
+												value="${wristexamdetails.elbextleft}" name="elbextleft" id="elbextleft"
+												size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">/5&nbsp;&nbsp;&nbsp;&nbsp;<input size="5"
 												type="text" value="${wristexamdetails.elbextright}"
-												name="elbextright" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;(Elb ext/wrist
+												name="elbextright" id="elbexright" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">/5&nbsp;&nbsp;(Elb ext/wrist
 												flex)</td>
 											<td>C7</td>
 											<td><input type="text"
-												value="${wristexamdetails.tricepsleft}" name="tricepsleft"
-												size="5" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;&nbsp;&nbsp;<input size="5"
+												value="${wristexamdetails.tricepsleft}" name="tricepsleft" id="tricepsleft"
+												size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">/5&nbsp;&nbsp;&nbsp;&nbsp;<input size="5"
 												type="text" value="${wristexamdetails.tricepsright}"
-												name="tricepsright" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;(Triceps)</td>
+												name="tricepsright" id="tricepsright" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">/5&nbsp;&nbsp;(Triceps)</td>
 										</tr>
 										<tr>
 											<td>C8</td>
 											<td><input type="text" size="5"
 												value="${wristexamdetails.medforearmleft}"
-												name="medforearmleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input
+												name="medforearmleft" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input
 												type="text" size="5"
 												value="${wristexamdetails.medforearmright}"
-												name="medforearmright" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;(Med
+												name="medforearmright" onkeypress="return validate(event)">&nbsp;&nbsp;(Med
 												forearm/hand)</td>
 											<td>C8</td>
-											<td><input type="text" name="digitflexionleft"
-												value="${wristexamdetails.digitflexionleft}" size="5" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;&nbsp;&nbsp;<input
+											<td><input type="text" name="digitflexionleft" id="digitflexionleft"
+												value="${wristexamdetails.digitflexionleft}" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">/5&nbsp;&nbsp;&nbsp;&nbsp;<input
 												size="5" value="${wristexamdetails.digitflexionright}"
-												type="text" name="digitflexionright" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;(Digit
+												type="text" name="digitflexionright" id="digitflexionright" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">/5&nbsp;&nbsp;(Digit
 												flexion)</td>
 											<td></td>
 										</tr>
 										<tr>
 											<td>T1</td>
 											<td><input size="5" type="text"
-												value="${wristexamdetails.medelbowleft}" name="medelbowleft" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;&nbsp;&nbsp;<input
+												value="${wristexamdetails.medelbowleft}" name="medelbowleft" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input
 												size="5" type="text"
 												value="${wristexamdetails.medelbowright}"
-												name="medelbowright" onkeypress="return isNumberKey(event);">&nbsp;&nbsp;(Med elbow/arm)</td>
+												name="medelbowright" onkeypress="return validate(event)">&nbsp;&nbsp;(Med elbow/arm)</td>
 											<td>T1</td>
-											<td><input type="text" name="digitabdleft"
-												value="${wristexamdetails.digitabdleft}" size="5" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;&nbsp;&nbsp;<input
+											<td><input type="text" name="digitabdleft" id="digitabdleft"
+												value="${wristexamdetails.digitabdleft}" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">/5&nbsp;&nbsp;&nbsp;&nbsp;<input
 												size="5" type="text"
 												value="${wristexamdetails.digitabdright}"
-												name="digitabdright" onkeypress="return isNumberKey(event);">/5&nbsp;&nbsp;(Digit abd/add)</td>
+												name="digitabdright" id="digitabdright" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">/5&nbsp;&nbsp;(Digit abd/add)</td>
 											<td>
 											<td>&nbsp;(2+/5 is Normal)</td>
 											</td>
