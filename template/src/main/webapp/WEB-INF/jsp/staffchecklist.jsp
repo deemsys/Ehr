@@ -322,7 +322,7 @@ popupWindow = window.open(url,"symptompopUpWindow" ,'width=1500,height=700,resiz
 	            </tr>
 	            </c:if>
 	            
-	             <c:if test="${waiver==true}">
+	             <c:if test="${waiver1==true}">
 	            <tr class="row1">
 	            <td valign="middle" align="left" class="input_txt"><a onclick="waivervalidate()" style="text-decoration: none;cursor: pointer;">Insurance waiver</a> </td>
 	           
@@ -354,9 +354,13 @@ popupWindow = window.open(url,"symptompopUpWindow" ,'width=1500,height=700,resiz
 	            
 	            </tr>
 	            </c:if>
+	            
+	             <c:if test="${screen==true}">
 	             <tr class="row1">
-	            <td valign="middle" align="left" class="input_txt"><a onclick="screenvalidate()" style="text-decoration: none;cursor: pointer;">Screening Disclosure/referral</a></td>
+	            <td valign="middle" align="left" class="input_txt"><a onclick="screenvalidate()" style="text-decoration: none;cursor: pointer;">Screening Disclosures/referral</a></td>
 	             </tr>
+	             </c:if>
+	             
 	             <c:if test="${medical==true}">
 	            <tr class="row1">
 	            <td valign="middle" align="left" class="input_txt"><a onclick="medicalvalidate()" style="text-decoration: none;cursor: pointer;">Release Of Records</a></td>

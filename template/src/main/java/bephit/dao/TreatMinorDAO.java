@@ -288,7 +288,7 @@ public class TreatMinorDAO {
 		   		else
 		   			return 0;
 		}
-	public int deletetreat(Principal principal){
+	public int deletetreat(String username){
 		Connection con = null;
 		Statement statement = null;
 		ResultSet resultSet = null;
@@ -301,7 +301,7 @@ public class TreatMinorDAO {
 		}
 		try{
 			
-				statement.execute("delete from minor_details where username='"+principal.getName()+"'");
+				statement.execute("delete from minor_details where username='"+username+"'");
 				
 				flag=1;
 				

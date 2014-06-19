@@ -292,7 +292,7 @@ public int updateinsuranceinformation(Insuranceinformation insuranceinformation,
 		return 0;
     
 }
-public int deleteinsuranceinformation(Principal principal){
+public int deleteinsuranceinformation(String username){
 	Connection con = null;
 	Statement statement = null;
 	ResultSet resultSet = null;
@@ -312,7 +312,7 @@ public int deleteinsuranceinformation(Principal principal){
 			
 			if(resultSet.next())
 				Desc=Desc+resultSet.getString(1);*/
-			statement.execute("delete from tbl_insuranceinformation where username='"+principal.getName()+"'");
+			statement.execute("delete from tbl_insuranceinformation where username='"+username+"'");
 			
 			flag=1;
 			

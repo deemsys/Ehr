@@ -2098,7 +2098,7 @@ if(result.hasErrors())
 	}
 	
 	@RequestMapping(value="/deletefootquestionnariedetials", method=RequestMethod.GET)
-	public String removedelete(ModelMap model, Principal principal) {	
+	public String removedelete(HttpSession session,ModelMap model, Principal principal) {	
 		if(patientDAO.getUsername(principal).size()>0)
 		{			
 
@@ -2108,6 +2108,16 @@ String name="";
 		   model.addAttribute("patientno","0");
 	}
 		String username=principal.getName();
+		if(principal.getName().equals("admin"))
+		{
+			
+			String username1=(String)session.getAttribute("staffusername");
+			footDAO.deletefootdetails(username1);
+			model.addAttribute("choice","close");
+			return "screeninglist";
+	
+		}	
+
 		int status=footDAO.deletefootdetails(username);
 		model.addAttribute("menu","hipknee");
 		return "footquestionnarie";

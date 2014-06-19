@@ -107,7 +107,7 @@ import java.util.*;
  
 @Controller
 
-@SessionAttributes({"physical","radio","waiver","info","injury","consent","minor","hard","screen","medical","assignment","hippa","staff","veri","first","role","signup","doctorsignup","patientid","soap","auto","visit","work","lastname","attorney","accident","dateofaccident","username","insurance","age"})
+@SessionAttributes({"physical","radio","waiver","info","injury","consent","minor","hard","screen","medical","assignment","hippa","staff","veri","first","role","signup","doctorsignup","patientid","soap","auto","visit","work","lastname","attorney","accident","dateofaccident","username","insurance","age","staffusername"})
 
 public class MainController {
 	
@@ -1194,14 +1194,23 @@ public class MainController {
 	
 
 	@RequestMapping(value="/deleteautoaccident", method=RequestMethod.GET)
-	public String removeautoaccident(ModelMap model, Principal principal) {
+	public String removeautoaccident(HttpSession session,ModelMap model, Principal principal) {
 	
 
 		if(patientDAO.getUsername(principal).size()>0)
 			{			
 		   model.addAttribute("patientno","0");
 		}
-		int status=autoDAO.deleteautoaccident(principal);
+		
+		if(principal.getName().equals("admin"))
+		{
+			String username=(String)session.getAttribute("staffusername");
+			autoDAO.deleteautoaccident(username);
+			model.addAttribute("choice","close");
+			return "viewautoaccident";
+		
+		}
+		int status=autoDAO.deleteautoaccident(principal.getName());
 		
 		if(status==1)
 		{
@@ -1676,14 +1685,22 @@ public class MainController {
 		
 	}
 	@RequestMapping(value="/deleteworkaccident", method=RequestMethod.GET)
-	public String removeWorkAccident(ModelMap model, Principal principal) {
+	public String removeWorkAccident(HttpSession session,ModelMap model, Principal principal) {
 	
 
 		if(patientDAO.getUsername(principal).size()>0)
 			{			
 		   model.addAttribute("patientno","0");
 		}
-		int status = workDAO.deleteWorkAccident(principal);
+		if(principal.getName().equals("admin"))
+	    {
+String username=(String)session.getAttribute("staffusername");
+workDAO.deleteWorkAccident(username);
+model.addAttribute("choice","close");
+return "viewworkaccident";
+	    }
+       	
+		int status = workDAO.deleteWorkAccident(principal.getName());
 		if(status==1)
 		{
         model.addAttribute("success","true");
@@ -1981,6 +1998,7 @@ public class MainController {
 	@RequestMapping(value="/checklistsearch", method = RequestMethod.POST)
 	public String getchecklistsearchdetails(HttpServletRequest request,PatientDetails patientDetails,HttpSession session,@ModelAttribute("Narrativereport")  @Valid Narrativereport narrativereport,BindingResult result,ModelMap model) {
 		String username=request.getParameter("username");
+	session.setAttribute("staffusername",username);
 		session.removeAttribute("staff");	
 		model.addAttribute("menu", "admin");
 		if(patientDAO.getUsername(username).size()==0)
@@ -2000,6 +2018,7 @@ public class MainController {
 		}
 		if(screenDAO.getusernameScreening(username).size()>0)
 		{
+			System.out.println("screensize"+screenDAO.getusernameScreening(username).size());
 		model.addAttribute("username",patientDAO.getUsername(username).get(0).getUsername());
 		model.addAttribute("screen",true);	
 		}
@@ -2016,8 +2035,9 @@ public class MainController {
 		
 		if(planDAO.getInsuranceplanUsername(username).size()>0)
 		{
+			System.out.println("true");
 			model.addAttribute("username",patientDAO.getUsername(username).get(0).getUsername());
-			model.addAttribute("waiver",true);		
+			model.addAttribute("waiver1",true);		
 		}
 		if(infoDAO.getusernameInsuranceinformation(username).size()>0)
 		{
@@ -2130,7 +2150,7 @@ public class MainController {
 			if(planDAO.getInsuranceplanUsername(username).size()>0)
 			{
 				model.addAttribute("username",patientDAO.getUsername(username).get(0).getUsername());
-				model.addAttribute("waiver",true);		
+				model.addAttribute("waiver1",true);		
 			}
 			if(infoDAO.getusernameInsuranceinformation(username).size()>0)
 			{
@@ -2689,7 +2709,7 @@ MedicalRecordsForm medicalrecordForm = new MedicalRecordsForm();
 		
 	}
 	@RequestMapping(value="/deletemedicalrecordsdetails", method=RequestMethod.GET)
-	public String deletemedicalrecords(ModelMap model, Principal principal) {
+	public String deletemedicalrecords(HttpSession session,ModelMap model, Principal principal) {
 	
 		 model.addAttribute("menu", "authorization");
 		if(patientDAO.getUsername(principal).size()>0)
@@ -2700,7 +2720,17 @@ String name="";
 			model.addAttribute("name",name);
 		   model.addAttribute("patientno","0");
 		}
-		int status=medicalDAO.deletemedicalrecords(principal);
+		if(principal.getName().equals("admin"))
+		{
+			
+			String username=(String)session.getAttribute("staffusername");
+			medicalDAO.deletemedicalrecordsdetails(username);
+			model.addAttribute("choice","close");
+			return "screeninglist";
+	
+		}	
+
+		int status=medicalDAO.deletemedicalrecordsdetails(principal.getName());
 		
 		/*if(status==1)
 		{
@@ -2976,15 +3006,32 @@ ScreeningAuthzForm screeningauthzForm = new ScreeningAuthzForm();
 
 	}
 	@RequestMapping(value="/deletescreenauthz", method=RequestMethod.GET)
-	public String removescreenauthz(ModelMap model, Principal principal) {
+	public String removescreenauthz(HttpSession session,ModelMap model, Principal principal) {
 	
+		
 		if(patientDAO.getUsername(principal).size()>0)
 		{			
 	   model.addAttribute("patientno","0");
 	}
-		int status=screenDAO.deletescreeningauthz(principal);	
-		
-		
+		if(principal.getName().equals("admin"))
+		{
+			System.out.println("admin");
+			String username=(String)session.getAttribute("staffusername");
+			screenDAO.deleteusernamescreeningauthz(username);
+			model.addAttribute("choice","close");
+			return "screeninglist";
+	
+		}		
+		screenDAO.deleteusernamescreeningauthz(principal.getName());
+		session.removeAttribute("screen");
+	 
+		if(patientDAO.getUsername(principal).size()>0)
+		{	
+		String name="";			
+		name=patientDAO.getUsername(principal).get(0).getName();
+		model.addAttribute("name",name);
+	   model.addAttribute("patientno","0");
+	}
 		return "screeningAuthz";
 	}
 	@RequestMapping(value="/deletescreeningauthz", method=RequestMethod.GET)
@@ -3247,7 +3294,7 @@ String name="";
 		return "assignmentlist";
 	}
 	@RequestMapping(value="/deleteassignment", method=RequestMethod.GET)
-	public String removeassignment(ModelMap model, Principal principal) {
+	public String removeassignment(ModelMap model, Principal principal,HttpSession session) {
 		if(patientDAO.getUsername(principal).size()>0)
 		{		
 			String name="";			
@@ -3256,7 +3303,17 @@ String name="";
 		   model.addAttribute("patientno","0");
 	   model.addAttribute("patientno","0");
 	}
-		int status=assignmentDAO.deleteassignment(principal);
+		if(principal.getName().equals("admin"))
+		{
+			
+			String username=(String)session.getAttribute("staffusername");
+			assignmentDAO.deleteusernameassignment(username);
+			model.addAttribute("choice","close");
+			return "screeninglist";
+	
+		}	
+
+		int status=assignmentDAO.deleteusernameassignment(principal.getName());
 		 model.addAttribute("menu", "authorization");
 		
 		
@@ -3477,7 +3534,17 @@ String name="";
 			model.addAttribute("name",name);
 		   model.addAttribute("patientno","0");
 	}	
-	hippaDAO.deletehippa(principal);		
+		if(principal.getName().equals("admin"))
+		{
+			
+			String username=(String)session.getAttribute("staffusername");
+			hippaDAO.deletehippa(username);	
+			model.addAttribute("choice","close");
+			return "screeninglist";
+	
+		}	
+
+	hippaDAO.deletehippa(principal.getName());		
 
 	       model.addAttribute("success","true");
 	       model.addAttribute("menu", "authorization");
@@ -3688,6 +3755,14 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 			}
 			if(type.equals("other"))
 			{
+				if(patientDAO.getUsername(principal).size()>0)
+				{			
+			   model.addAttribute("patientno","0");
+			}
+				PatientDetailsForm patientdetailsform1 = new PatientDetailsForm();
+				patientdetailsform1.setPatientDetails(patientDAO.getUsername(principal));			
+		        model.addAttribute("patientDetailsForm", patientdetailsform1);		    
+		        model.addAttribute("menu", "patientInfo");
 				return "viewpatient";
 			} 
 			
@@ -4542,7 +4617,7 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 	}
 
 	@RequestMapping(value="/deleteinsuranceplan", method=RequestMethod.GET)
-	public String removeInsuranceplan(ModelMap model, Principal principal) {
+	public String removeInsuranceplan(HttpSession session,ModelMap model, Principal principal) {
 	
 		if(patientDAO.getUsername(principal).size()>0)
 		{		
@@ -4552,7 +4627,16 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 		   model.addAttribute("patientno","0");
 	  
 	}
-		int status=planDAO.deleteinsuranceplan(principal);
+		if(principal.getName().equals("admin"))
+		{
+			System.out.println("admin");
+			String username=(String)session.getAttribute("staffusername");
+			planDAO.deleteinsuranceplan(username);
+			model.addAttribute("choice","close");
+			return "insuranceplanlist";
+	
+		}	
+		int status=planDAO.deleteinsuranceplan(principal.getName());
 		
 		if(status==1)
 		{
@@ -4774,7 +4858,7 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 	
 
 	@RequestMapping(value="/deletetreatform", method=RequestMethod.GET)
-	public String removetreatform(/*@RequestParam("treat_no") String treat_no,*/ModelMap model, Principal principal) {
+	public String removetreatform(HttpSession session,/*@RequestParam("treat_no") String treat_no,*/ModelMap model, Principal principal) {
 	
 		model.addAttribute("menu", "consent");
 		if(patientDAO.getUsername(principal).size()>0)
@@ -4784,7 +4868,18 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 			model.addAttribute("name",name);
 		   model.addAttribute("patientno","0");
 	}
-		int status=treatDAO.deletetreatform(principal);
+		
+		if(principal.getName().equals("admin"))
+		{
+			
+			String username=(String)session.getAttribute("staffusername");
+			treatDAO.deletetreatform(username);		
+			model.addAttribute("choice","close");
+			return "screeninglist";
+	
+		}	
+		
+		int status=treatDAO.deletetreatform(principal.getName());
 		
 		if(status==1)
 		{
@@ -4980,7 +5075,7 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 		return "treatminorlist";
 	}
 	@RequestMapping(value="/deleteminor", method=RequestMethod.GET)
-	public String deletetreatminor(ModelMap model, Principal principal) {
+	public String deletetreatminor(ModelMap model, Principal principal,HttpSession session) {
 	
 		if(patientDAO.getUsername(principal).size()>0)
 		{	
@@ -4990,7 +5085,18 @@ String name="";
 			model.addAttribute("name",name);
 		   model.addAttribute("patientno","0");
 	}
-		int status=minorDAO.deletetreat(principal);	
+		int status=minorDAO.deletetreat(principal.getName());
+		if(principal.getName().equals("admin"))
+		{
+			
+			String username=(String)session.getAttribute("staffusername");
+			minorDAO.deletetreat(username);
+			model.addAttribute("choice","close");
+			return "screeninglist";
+	
+		}	
+
+		
 		return "treatminor";
 	}
 	
@@ -5084,7 +5190,7 @@ String name="";
 	}
 	
 	@RequestMapping(value="/deletehardshipagreement", method=RequestMethod.GET)
-	public String removehardship(ModelMap model, Principal principal) {
+	public String removehardship(HttpSession session,ModelMap model, Principal principal) {
 	
 		if(patientDAO.getUsername(principal).size()>0)
 		{
@@ -5095,7 +5201,18 @@ String name="";
 		   model.addAttribute("patientno","0");
 	  
 	}
-		int status=hardDAO.deletehardship(principal);
+		
+		if(principal.getName().equals("admin"))
+		{
+			
+			String username=(String)session.getAttribute("staffusername");
+			hardDAO.deletehardshipdetails(username);
+			model.addAttribute("choice","close");
+			return "screeninglist";
+	
+		}	
+
+		int status=hardDAO.deletehardshipdetails(principal.getName());
 		
 		if(status==1)
 		{
@@ -5161,7 +5278,7 @@ String name="";
 	}
 	
 	@RequestMapping(value="/deleteinsuranceinformation", method=RequestMethod.GET)
-	public String removeinsuranceinformation(ModelMap model, Principal principal) {
+	public String removeinsuranceinformation(HttpSession session,ModelMap model, Principal principal) {
 	
 		if(patientDAO.getUsername(principal).size()>0)
 		{			
@@ -5170,7 +5287,17 @@ String name="";
 			model.addAttribute("name",name);
 		   model.addAttribute("patientno","0");
 	}
-		int status=infoDAO.deleteinsuranceinformation(principal);
+		if(principal.getName().equals("admin"))
+		{
+			
+			String username=(String)session.getAttribute("staffusername");
+			infoDAO.deleteinsuranceinformation(username);
+			model.addAttribute("choice","close");
+			return "insuranceinfolist";
+	
+		}	
+		
+		int status=infoDAO.deleteinsuranceinformation(principal.getName());
 		
 		if(status==1)
 		{

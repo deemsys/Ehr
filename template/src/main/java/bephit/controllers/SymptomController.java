@@ -216,7 +216,7 @@ public class SymptomController {
 		return "viewsymptom";
 	}
 	@RequestMapping(value = "/deletesymptomdetails", method = RequestMethod.GET)
-	public String deletesymptom(ModelMap model,Principal principal) {
+	public String deletesymptom(HttpSession session,ModelMap model,Principal principal) {
 		if(patientDAO.getUsername(principal).size()>0)
 		{			
 
@@ -225,8 +225,20 @@ String name="";
 			model.addAttribute("name",name);
 		   model.addAttribute("patientno","0");
 	}
+		if(principal.getName().equals("admin"))
+		{
+			
+			String username1=(String)session.getAttribute("staffusername");
+			symptomdao.deletesymptom(username1);
+			model.addAttribute("choice","close");
+			return "screeninglist";
+	
+		}	
 		String username=principal.getName();
 		symptomdao.deletesymptom(username);
+		
+		
+
 		/*SymptomForm symptomform = new SymptomForm();
 		symptomform.setSymptomdetails(symptomdao.getsymptomDetails(username));
 		model.addAttribute("symptomform", symptomform);*/
@@ -535,7 +547,7 @@ String name="";
 	}
 
 	@RequestMapping(value = "/deletehipquestionnairedetails", method = RequestMethod.GET)
-	public String deletehipquestionnairedetails(HttpServletRequest request, ModelMap model,
+	public String deletehipquestionnairedetails(HttpSession session,HttpServletRequest request, ModelMap model,
 			Hipquestionnaire hipquestionnaire,Principal principal) throws IOException {
 
 		if(patientDAO.getUsername(principal).size()>0)
@@ -547,6 +559,17 @@ String name="";
 		   model.addAttribute("patientno","0");
 		}
 		String username=principal.getName();
+		if(principal.getName().equals("admin"))
+		{
+			
+			String username1=(String)session.getAttribute("staffusername");
+			hipquestionnairedao.deletequestionnairedetails(username1);
+			model.addAttribute("choice","close");
+			return "screeninglist";
+	
+		}	
+
+		
 		hipquestionnairedao.deletequestionnairedetails(username);
 		model.addAttribute("menu", "hipknee");
 		// System.out.print(hipquestionnaireform.getHipquestionnairedetails().get(0).getStiff());

@@ -351,7 +351,7 @@ public int updateWorkAccident(Workaccident workAcc,String patient_no,String admi
      		return 0;
  	    
 }
-public int deleteWorkAccident(Principal principal){
+public int deleteWorkAccident(String username){
 	Connection con = null;
 	Statement statement = null;
 	ResultSet resultSet = null;
@@ -371,7 +371,7 @@ public int deleteWorkAccident(Principal principal){
 			
 			if(resultSet.next())
 				Desc=Desc+resultSet.getString(1);*/
-			statement.execute("delete from tbl_workaccident where username='"+principal.getName()+"'");
+			statement.execute("delete from tbl_workaccident where username='"+username+"'");
 			
 			flag=1;
 			

@@ -329,7 +329,7 @@ public class AssignmentDAO {
 		   		else
 		   			return 0;
 		}
-	public int deleteassignment(Principal principal){
+	public int deleteusernameassignment(String username){
 		Connection con = null;
 		Statement statement = null;
 		ResultSet resultSet = null;
@@ -342,7 +342,7 @@ public class AssignmentDAO {
 		}
 		try{
 			
-				statement.execute("delete from assignment_details where username='"+principal.getName()+"'");
+				statement.execute("delete from assignment_details where username='"+username+"'");
 				
 				flag=1;
 				

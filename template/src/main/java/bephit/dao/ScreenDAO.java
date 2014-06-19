@@ -236,7 +236,7 @@ public class ScreenDAO {
 		
 	}	
 
-	public int deletescreeningauthz(Principal principal){
+	public int deleteusernamescreeningauthz(String username){
 		Connection con = null;
 		Statement statement = null;
 		ResultSet resultSet = null;
@@ -249,7 +249,7 @@ public class ScreenDAO {
 		}
 		try{
 			
-				statement.execute("delete from screening_details where username='"+principal.getName()+"'");
+				statement.execute("delete from screening_details where username='"+username+"'");
 				
 				flag=1;
 				

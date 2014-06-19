@@ -300,7 +300,7 @@ public class HippaDAO {
 		   		else
 		   			return 0;
 		}
-	public int deletehippa(Principal principal){
+	public int deletehippa(String username){
 		Connection con = null;
 		Statement statement = null;
 		ResultSet resultSet = null;
@@ -313,7 +313,7 @@ public class HippaDAO {
 		}
 		try{
 			
-				statement.execute("delete from hippa_privacy where username='"+principal.getName()+"'");
+				statement.execute("delete from hippa_privacy where username='"+username+"'");
 				
 				flag=1;
 				

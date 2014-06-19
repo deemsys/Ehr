@@ -260,7 +260,7 @@ public int updatehardship(Hardshipagreement hardshipagreement,String agreement_n
     
 }
 
-public int deletehardship(Principal principal){
+public int deletehardshipdetails(String username){
 	Connection con = null;
 	Statement statement = null;
 	ResultSet resultSet = null;
@@ -273,7 +273,7 @@ public int deletehardship(Principal principal){
 	}
 	try{		
 				
-			statement.execute("delete from tbl_hardshipagreement where username='"+principal.getName()+"'");
+			statement.execute("delete from tbl_hardshipagreement where username='"+username+"'");
 			
 			flag=1;
 			

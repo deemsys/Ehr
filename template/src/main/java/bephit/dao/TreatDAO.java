@@ -253,7 +253,7 @@ public class TreatDAO {
 	    
 	}
 	
-	public int deletetreatform(Principal principal){
+	public int deletetreatform(String username){
 		Connection con = null;
 		Statement statement = null;
 		ResultSet resultSet = null;
@@ -273,7 +273,7 @@ public class TreatDAO {
 				
 				if(resultSet.next())
 					Desc=Desc+resultSet.getString(1);*/
-				statement.execute("delete from treat_details where username='"+principal.getName()+"'");
+				statement.execute("delete from treat_details where username='"+username+"'");
 				
 				flag=1;
 				

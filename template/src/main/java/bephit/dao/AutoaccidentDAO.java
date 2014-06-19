@@ -537,7 +537,7 @@ public int updateautoaccident(Autoaccident autoaccident,String patient_number,St
 	
 }	
 
-public int deleteautoaccident(/*String patient_number,*/Principal principal){
+public int deleteautoaccident(String username){
 	Connection con = null;
 	Statement statement = null;
 	ResultSet resultSet = null;
@@ -557,7 +557,7 @@ public int deleteautoaccident(/*String patient_number,*/Principal principal){
 			
 			if(resultSet.next())
 				Desc=Desc+resultSet.getString(1);*/
-			statement.execute("delete from tbl_autoaccident where username='"+principal.getName()+"'");
+			statement.execute("delete from tbl_autoaccident where username='"+username+"'");
 			
 			flag=1;
 			

@@ -238,7 +238,7 @@ public class MedicalDAO {
 	}
 	
 	
-	public int deletemedicalrecords(Principal principal){
+	public int deletemedicalrecordsdetails(String username){
 		Connection con = null;
 		Statement statement = null;
 		ResultSet resultSet = null;
@@ -251,7 +251,7 @@ public class MedicalDAO {
 		}
 		try{
 			
-				statement.execute("delete from medical_details where username='"+principal.getName()+"'");
+				statement.execute("delete from medical_details where username='"+username+"'");
 				
 				flag=1;
 				
