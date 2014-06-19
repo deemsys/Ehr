@@ -432,7 +432,7 @@ document.getElementById("pnameerror").innerHTML=" ";
         if (value.indexOf(".") != -1)if( unicode == 46 )return false;
         if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
     }
-    function checkLength5(){
+    function checkLength6(){
     var fieldVal = document.getElementById('kneeextensionright').value;
     //Suppose u want 3 number of character
     if(fieldVal >=0 && fieldVal <=5){
