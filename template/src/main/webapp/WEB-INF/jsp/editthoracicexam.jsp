@@ -117,43 +117,20 @@ $(function() {
           }  
           
           </script>
-           <script>
-
-	function checkSubmit()
-	{
-document.getElementById("pnameerror").innerHTML=" ";
-		
-		if(document.getElementById("pname").value=="")
-		{
-		document.getElementById("pnameerror").innerHTML="Required Field Should not be Empty";
-		
-		return false;
-		}
-		document.getElementById("datepickererror").innerHTML="";
-	if(document.getElementById("datepicker").value=="")
-		{
-		document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
-		
-		return false;
-		}
-	document.getElementById("datepickererror").innerHTML="";
-	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
-		if(document.getElementById("datepicker").value.match(datechk)==null)
-	    {
-	    	document.getElementById("datepickererror").innerHTML="Invalid Date Format";
-	    	
-	        return false;
-	    }	
-			
-	document.getElementById("signerror").innerHTML="";
-	if(document.getElementById("sign").value=="")
-	{
-	document.getElementById("signerror").innerHTML="Required Field Should not be Empty";
-	
-	return false;
-	}
-	}
-	</script>
+          
+          
+          <script type="text/javascript">
+       function validate(event) {
+          
+           var regex = new RegExp("^[0-9.]+$");
+           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+           if (!regex.test(key)) {
+             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
+               event.preventDefault();
+               return false;
+           }
+       }       
+    </script>
 </head>
  <body>
  <br><br>
@@ -179,9 +156,9 @@ document.getElementById("pnameerror").innerHTML=" ";
          <c:set value="${thoracicexamForm.thoracicexam[0]}" var="thoracicexam"/>    
  <tr class="row1">
  <input type="hidden" name="thoracicexamid" id="inp_id" value="${thoracicexam.thoracicexamid}">
-<td><h2><span class="err">*</span>Patient Name:</h2></td><td><input type="text"  name="pname" id="pname" value="${thoracicexam.pname}"/><span class="err" id="pnameerror"><form:errors path="Thoracicexam.pname"></form:errors></span></td>
+<td><h2><span class="err">*</span>Patient Name:</h2></td><td><input type="text"  name="pname" value="${thoracicexam.pname}"/><span class="err"><form:errors path="Thoracicexam.pname"></form:errors></span></td>
 <td width="600">
-<td><h2><span class="err">*</span>Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${thoracicexam.date}"/><span class="err" id="datepickererror"><form:errors path="Thoracicexam.date"></form:errors></span></td>
+<td><h2><span class="err">*</span>Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${thoracicexam.date}"/><span class="err"><form:errors path="Thoracicexam.date"></form:errors></span></td>
 </tr>
 </table>
 <br/>
@@ -261,39 +238,39 @@ document.getElementById("pnameerror").innerHTML=" ";
  <td>  </td><td>   <b>Left</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> Right</b></td>
  </tr>
   <tr class="row1">
- <td><b>Flexion:</b> </td><td> (20-40)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="flexion" size="7" value="${thoracicexam.flexion}" onkeypress="return isNumberKey(event);"></td> 
- <td width="100">T1-2:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t12" size="7" value="${thoracicexam.t12}" onkeypress="return isNumberKey(event);"></td><td width="250">T2-3:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t23" size="7" value="${thoracicexam.t23 }"> </td> 
- <td><b>Adam's Sign:	</b> </td><td><input type="text" name="adamsignl" size="5" value="${thoracicexam.adamsignl}"> <input type="text" name="adamsignr" size="5" value="${thoracicexam.adamsignr}"></td>
+ <td><b>Flexion:</b> </td><td> (20-40)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="flexion" size="7" value="${thoracicexam.flexion}" onkeypress="return validate(event)"></td> 
+ <td width="100">T1-2:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t12" size="7" value="${thoracicexam.t12}" onkeypress="return validate(event)"></td><td width="250">T2-3:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t23" size="7" onkeypress="return validate(event)" value="${thoracicexam.t23 }"> </td> 
+ <td><b>Adam's Sign:	</b> </td><td><input type="text" name="adamsignl" size="5" value="${thoracicexam.adamsignl}" onkeypress="return validate(event)"> <input type="text" name="adamsignr" size="5" value="${thoracicexam.adamsignr}" onkeypress="return validate(event)"></td>
  </tr>
   <tr class="row1">
- <td><b>Extension:	</b> </td><td> (25-45)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="extension" size="7" value="${thoracicexam.extension}" onkeypress="return isNumberKey(event);"></td> 
- <td width="100">T3-4:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t34" size="7" value="${thoracicexam.t34}" onkeypress="return isNumberKey(event);"></td><td width="50">T4-5:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t45" size="7" value="${thoracicexam.t45}"> </td> 
- <td><b>Schepelman's:	</b> </td><td><input type="text" name="schepelmanl" size="5" value="${thoracicexam.schepelmanl}"> <input type="text" name="schepelmanr" size="5" value="${thoracicexam.schepelmanr}"></td>
+ <td><b>Extension:	</b> </td><td> (25-45)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="extension" size="7" value="${thoracicexam.extension}" onkeypress="return validate(event)"></td> 
+ <td width="100">T3-4:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t34" size="7" value="${thoracicexam.t34}" onkeypress="return validate(event)"></td><td width="50">T4-5:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t45" size="7" onkeypress="return validate(event)" value="${thoracicexam.t45}"> </td> 
+ <td><b>Schepelman's:	</b> </td><td><input type="text" name="schepelmanl" size="5" value="${thoracicexam.schepelmanl}" onkeypress="return validate(event)"> <input type="text" name="schepelmanr" size="5" value="${thoracicexam.schepelmanr}" onkeypress="return validate(event)"></td>
  </tr>
   <tr class="row1">
- <td><b>Lateral Flexion:</b> </td><td> (20-40)&nbsp;&nbsp;&nbsp;L <input type="text" name="lflexion" size="7" value="${thoracicexam.lflexion}" onkeypress="return isNumberKey(event);"><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R <input type="text" name="rflexion" size="7" value="${thoracicexam.rflexion}" onkeypress="return isNumberKey(event);"></td> 
- <td width="100">T5-6:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t56" size="7" value="${thoracicexam.t56}" onkeypress="return isNumberKey(event);"></td><td width="50">	T6-7:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<input type="text" name="t67" size="7" value="${thoracicexam.t67}"> </td> 
- <td><b>Valsalva:</b> </td><td><input type="text" name="valsalval" size="5" value="${thoracicexam.valsalval}"> <input type="text" name="valsalvar" size="5" value="${thoracicexam.valsalvar}"></td>
+ <td><b>Lateral Flexion:</b> </td><td> (20-40)&nbsp;&nbsp;&nbsp;L <input type="text" name="lflexion" size="7" value="${thoracicexam.lflexion}" onkeypress="return validate(event)"><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R <input type="text" name="rflexion" size="7" value="${thoracicexam.rflexion}" onkeypress="return validate(event)"></td> 
+ <td width="100">T5-6:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t56" size="7" value="${thoracicexam.t56}" onkeypress="return validate(event)"></td><td width="50">	T6-7:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<input type="text" name="t67" size="7" onkeypress="return validate(event)" value="${thoracicexam.t67}"> </td> 
+ <td><b>Valsalva:</b> </td><td><input type="text" name="valsalval" size="5" value="${thoracicexam.valsalval}" onkeypress="return validate(event)"> <input type="text" name="valsalvar" size="5" value="${thoracicexam.valsalvar}" onkeypress="return validate(event)"></td>
  </tr>
   <tr class="row1">
-  <td><b>Rotation:</b> </td><td> (35-50)&nbsp;&nbsp;&nbsp;L <input type="text" name="lrotation" size="7" value="${thoracicexam.lrotation}" onkeypress="return isNumberKey(event);"><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R <input type="text" name="rrotation" size="7" value="${thoracicexam.rrotation}" onkeypress="return isNumberKey(event);"></td> 
- <td width="100">T7-8:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<input type="text" name="t78" size="7" value="${thoracicexam.t78}" onkeypress="return isNumberKey(event);"></td><td width="50">T8-9:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t89" size="7" value="${thoracicexam.t89}"> </td> 
- <td><b>Dejerine's Triad:</b> </td><td><input type="text" name="dejerinel" size="5" value="${thoracicexam.dejerinel}"> <input type="text" name="dejeriner" size="5" value="${thoracicexam.dejeriner}"></td>
+  <td><b>Rotation:</b> </td><td> (35-50)&nbsp;&nbsp;&nbsp;L <input type="text" name="lrotation" size="7" value="${thoracicexam.lrotation}" onkeypress="return validate(event)"><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R <input type="text" name="rrotation" size="7" value="${thoracicexam.rrotation}" onkeypress="return validate(event)"></td> 
+ <td width="100">T7-8:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<input type="text" name="t78" size="7" value="${thoracicexam.t78}" onkeypress="return validate(event)"></td><td width="50">T8-9:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t89" size="7" onkeypress="return validate(event)" value="${thoracicexam.t89}"> </td> 
+ <td><b>Dejerine's Triad:</b> </td><td><input type="text" name="dejerinel" size="5" value="${thoracicexam.dejerinel}" onkeypress="return validate(event)"> <input type="text" name="dejeriner" size="5" value="${thoracicexam.dejeriner}" onkeypress="return validate(event)"></td>
  </tr>
   <tr class="row1">
  <td></td><td> </td> 
- <td width="100">T9-10:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t910" size="7" value="${thoracicexam.t910}" onkeypress="return isNumberKey(event);"></td><td width="50">T10-11:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t1011" size="7" value="${thoracicexam.t1011}"> </td> 
- <td><b>Soto Hall:	</b> </td><td><input type="text" name="sotohalll" size="5" value="${thoracicexam.sotohalll}"> <input type="text" name="sotohallr" size="5" value="${thoracicexam.sotohallr}"></td>
+ <td width="100">T9-10:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t910" size="7" value="${thoracicexam.t910}" onkeypress="return validate(event)"></td><td width="50">T10-11:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t1011" size="7" onkeypress="return validate(event)" value="${thoracicexam.t1011}"> </td> 
+ <td><b>Soto Hall:	</b> </td><td><input type="text" name="sotohalll" size="5" value="${thoracicexam.sotohalll}" onkeypress="return validate(event)"> <input type="text" name="sotohallr" size="5" value="${thoracicexam.sotohallr}" onkeypress="return validate(event)"></td>
  </tr>
   <tr class="row1">
  <td> </td><td> </td> 
- <td width="100">T11-12: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t1112" size="7" value="${thoracicexam.t1112}" onkeypress="return isNumberKey(event);"></td><td width="50">	T12-L1:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="t12l1" size="7" value="${thoracicexam.t12l1}"> </td> 
- <td><b>Sternal Compression:</b> </td><td><input type="text" name="sternall" size="5" value="${thoracicexam.sternall}"> <input type="text" name="sternalr" size="5" value="${thoracicexam.sternalr}"></td>
+ <td width="100">T11-12: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t1112" size="7" value="${thoracicexam.t1112}" onkeypress="return validate(event)"></td><td width="50">	T12-L1:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="t12l1" size="7" onkeypress="return validate(event)" value="${thoracicexam.t12l1}"> </td> 
+ <td><b>Sternal Compression:</b> </td><td><input type="text" name="sternall" size="5" value="${thoracicexam.sternall}" onkeypress="return validate(event)"> <input type="text" name="sternalr" size="5" value="${thoracicexam.sternalr}" onkeypress="return validate(event)"></td>
  </tr>
   <tr class="row1">
  <td></td><td> </td> 
  <td></td><td> </td> 
- <td><b>Beevor's Sign:	</b> </td><td><input type="text" name="beevorl" size="5" value="${thoracicexam.beevorl}"> <input type="text" name="beevorr" size="5" value="${thoracicexam.beevorr}"> </td>
+ <td><b>Beevor's Sign:	</b> </td><td><input type="text" name="beevorl" size="5" value="${thoracicexam.beevorl}" onkeypress="return validate(event)"> <input type="text" name="beevorr" size="5" value="${thoracicexam.beevorr}" onkeypress="return validate(event)"> </td>
  </tr>
  </table>
  
@@ -417,10 +394,10 @@ document.getElementById("pnameerror").innerHTML=" ";
  <td width="250"><input type="checkbox" id="otheraddress" name="otheraddress" value="Other" onclick="visible(this.value)" <c:if test="${thoracicexam.otheraddress=='Other'}"><c:out value="Checked"/></c:if>>Other<input type="text" class="input_txtbx1" id="break4" name="break_text4" style="display:none" value="${thoracicexam.break_text4}"/></td>
  </tr>
  <br/>
- <table><tr><td><B style="font-size:14px"><span class="err"></span>PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sign" id="sign" value="${thoracicexam.sign}"><span class="err" id="signerror"><form:errors path="Thoracicexam.sign"></form:errors></span></B></td></tr></table>
+ <table><tr><td><B style="font-size:14px"><span class="err"></span>PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sign" value="${thoracicexam.sign}"><span class="err"><form:errors path="Thoracicexam.sign"></form:errors></span></B></td></tr></table>
 <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="Update" onclick="return checkSubmit('this');"></td>
+<td><input type="submit" class="submit_btn" value="Save"></td>
 <td><input type="reset" class="submit_btn" value="Cancel" onclick="myclose()"> </td>
 <script>
  function myclose()
