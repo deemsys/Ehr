@@ -221,12 +221,14 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 			  return false;
 		  }
 		}
-		/* document.getElementById("securityerror").innerHTML="";
-		if(isNaN(document.getElementById("security").value))
+document.getElementById("securityerror").innerHTML=" ";
+		
+		if(document.getElementById("security").value=="")
 		{
-		document.getElementById("securityerror").innerHTML="Enter Only Numbers";
+		document.getElementById("securityerror").innerHTML="Required Field Should not be Empty";
+		
 		return false;
-		} */
+		}
 	}
 
 	</script>
@@ -415,7 +417,7 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 	       </p>
 	    Your Birth Date  <input type="text" class="input_txtbx1"  name="birthdate" id="datepicker1" value="${footquestionnariedetails.birthdate }"><span id="datepicker1error" style="color: red;font-style:italic;"></span>
 	    <br><br>
-	    Your Social Security Number <input type="text" name="security" id="security" class="input_txtbx1" maxlength="11" onkeypress="return validate(event)"; value="${footquestionnariedetails.security }">
+	     <span class="err">*</span>Your Social Security Number <input type="text" name="security" id="security" class="input_txtbx1" maxlength="11" onkeypress="return validate(event)"; value="${footquestionnariedetails.security }">
 	    <span id="securityerror" style="color: red;font-style:italic;"></span>
 	    <br>
 	    <br>

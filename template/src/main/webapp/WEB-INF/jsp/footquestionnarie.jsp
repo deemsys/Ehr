@@ -230,7 +230,14 @@ document.getElementById("datepickererror").innerHTML="";
 			  return false;
 		  }
 		}
+document.getElementById("securityerror").innerHTML=" ";
 		
+		if(document.getElementById("security").value=="")
+		{
+		document.getElementById("securityerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
 	}
 
 	</script>
