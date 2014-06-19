@@ -52,876 +52,6 @@ $(function() {
           }  
           
           </script>
-           <script>
-	function check(e,value){
-    //Check Charater
-        var unicode=e.charCode? e.charCode : e.keyCode;
-        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
-        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
-    }
-    function checkLength(){
-    var fieldVal = document.getElementById('flexion').value;
-    //Suppose u want 3 number of character
-    if(fieldVal <=50){
-        return true;
-    }
-    else
-    {
-        var str = document.getElementById('flexion').value;
-        str = str.substring(0, str.length - 1);
-    document.getElementById('flexion').value = str;
-    }
-     
-    }
-	</script>
-	<script>
-	function check1(e,value){
-    //Check Charater
-        var unicode=e.charCode? e.charCode : e.keyCode;
-        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
-        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
-    }
-    function checkLength1(){
-    var fieldVal = document.getElementById('c01').value;
-    //Suppose u want 3 number of character
-    if(fieldVal <=1){
-        return true;
-    }
-    else
-    {
-        var str = document.getElementById('c01').value;
-        str = str.substring(0, str.length - 1);
-    document.getElementById('c01').value = str;
-    }
-     
-    }
-	</script>
-	<script>
-	function check2(e,value){
-    //Check Charater
-        var unicode=e.charCode? e.charCode : e.keyCode;
-        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
-        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
-    }
-    function checkLength2(){
-    var fieldVal = document.getElementById('c12').value;
-    //Suppose u want 3 number of character
-    if(fieldVal >=1 && fieldVal <=2){
-        return true;
-    }
-    else
-    {
-        var str = document.getElementById('c12').value;
-        str = str.substring(0, str.length - 1);
-    document.getElementById('c12').value = str;
-    }
-     
-    }
-	</script>
-	<script>
-	function check3(e,value){
-    //Check Charater
-        var unicode=e.charCode? e.charCode : e.keyCode;
-        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
-        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
-    }
-    function checkLength3(){
-    var fieldVal = document.getElementById('c23').value;
-    //Suppose u want 3 number of character
-    if(fieldVal >=2 && fieldVal <=3){
-        return true;
-    }
-    else
-    {
-        var str = document.getElementById('c23').value;
-        str = str.substring(0, str.length - 1);
-    document.getElementById('c23').value = str;
-    }
-     
-    }
-	</script>
-	 <script>
-	function check4(e,value){
-    //Check Charater
-        var unicode=e.charCode? e.charCode : e.keyCode;
-        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
-        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
-    }
-    function checkLength4(){
-    var fieldVal = document.getElementById('extension').value;
-    //Suppose u want 3 number of character
-    if(fieldVal <=60){
-        return true;
-    }
-    else
-    {
-        var str = document.getElementById('extension').value;
-        str = str.substring(0, str.length - 1);
-    document.getElementById('extension').value = str;
-    }
-     
-    }
-	</script>
-	<script>
-	function check5(e,value){
-    //Check Charater
-        var unicode=e.charCode? e.charCode : e.keyCode;
-        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
-        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
-    }
-    function checkLength5(){
-    var fieldVal = document.getElementById('c34').value;
-    //Suppose u want 3 number of character
-    if(fieldVal >=3 && fieldVal <=4){
-        return true;
-    }
-    else
-    {
-        var str = document.getElementById('c34').value;
-        str = str.substring(0, str.length - 1);
-    document.getElementById('c34').value = str;
-    }
-     
-    }
-	</script>
-	<script>
-	function check6(e,value){
-    //Check Charater
-        var unicode=e.charCode? e.charCode : e.keyCode;
-        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
-        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
-    }
-    function checkLength6(){
-    var fieldVal = document.getElementById('c45').value;
-    //Suppose u want 3 number of character
-    if(fieldVal >=4 && fieldVal <=5){
-        return true;
-    }
-    else
-    {
-        var str = document.getElementById('c45').value;
-        str = str.substring(0, str.length - 1);
-    document.getElementById('c45').value = str;
-    }
-     
-    }
-	</script>
-	<script>
-	function check7(e,value){
-    //Check Charater
-        var unicode=e.charCode? e.charCode : e.keyCode;
-        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
-        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
-    }
-    function checkLength7(){
-    var fieldVal = document.getElementById('c56').value;
-    //Suppose u want 3 number of character
-    if(fieldVal >=5 && fieldVal <=6){
-        return true;
-    }
-    else
-    {
-        var str = document.getElementById('c56').value;
-        str = str.substring(0, str.length - 1);
-    document.getElementById('c56').value = str;
-    }
-     
-    }
-	</script>
-	
- <script>
-	function check8(e,value){
-    //Check Charater
-        var unicode=e.charCode? e.charCode : e.keyCode;
-        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
-        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
-    }
-    function checkLength8(){
-    var fieldVal = document.getElementById('lflexion').value;
-    //Suppose u want 3 number of character
-    if(fieldVal <=45){
-        return true;
-    }
-    else
-    {
-        var str = document.getElementById('lflexion').value;
-        str = str.substring(0, str.length - 1);
-    document.getElementById('lflexion').value = str;
-    }
-     
-    }
-	</script>
-	<script>
-	function check9(e,value){
-    //Check Charater
-        var unicode=e.charCode? e.charCode : e.keyCode;
-        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
-        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
-    }
-    function checkLength9(){
-    var fieldVal = document.getElementById('rflexion').value;
-    //Suppose u want 3 number of character
-    if(fieldVal <=45){
-        return true;
-    }
-    else
-    {
-        var str = document.getElementById('rflexion').value;
-        str = str.substring(0, str.length - 1);
-    document.getElementById('rflexion').value = str;
-    }
-     
-    }
-	</script>
-	<script>
-	function check10(e,value){
-    //Check Charater
-        var unicode=e.charCode? e.charCode : e.keyCode;
-        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
-        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
-    }
-    function checkLength10(){
-    var fieldVal = document.getElementById('c56').value;
-    //Suppose u want 3 number of character
-    if(fieldVal >=5 && fieldVal <=6){
-        return true;
-    }
-    else
-    {
-        var str = document.getElementById('c56').value;
-        str = str.substring(0, str.length - 1);
-    document.getElementById('c56').value = str;
-    }
-     
-    }
-	</script>
-	<script>
-	function check11(e,value){
-    //Check Charater
-        var unicode=e.charCode? e.charCode : e.keyCode;
-        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
-        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
-    }
-    function checkLength11(){
-    var fieldVal = document.getElementById('c67').value;
-    //Suppose u want 3 number of character
-    if(fieldVal >=6 && fieldVal <=7){
-        return true;
-    }
-    else
-    {
-        var str = document.getElementById('c67').value;
-        str = str.substring(0, str.length - 1);
-    document.getElementById('c67').value = str;
-    }
-     
-    }
-	</script>
-	
-	<script>
-	function check12(e,value){
-    //Check Charater
-        var unicode=e.charCode? e.charCode : e.keyCode;
-        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
-        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
-    }
-    function checkLength12(){
-    var fieldVal = document.getElementById('c711').value;
-    //Suppose u want 3 number of character
-    if(fieldVal >=7 && fieldVal <=11){
-        return true;
-    }
-    else
-    {
-        var str = document.getElementById('c711').value;
-        str = str.substring(0, str.length - 1);
-    document.getElementById('c711').value = str;
-    }
-     
-    }
-	</script>
-	
-	<script>
-	function check13(e,value){
-    //Check Charater
-        var unicode=e.charCode? e.charCode : e.keyCode;
-        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
-        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
-    }
-    function checkLength13(){
-    var fieldVal = document.getElementById('t12').value;
-    //Suppose u want 3 number of character
-    if(fieldVal >=1 && fieldVal <=2){
-        return true;
-    }
-    else
-    {
-        var str = document.getElementById('t12').value;
-        str = str.substring(0, str.length - 1);
-    document.getElementById('t12').value = str;
-    }
-     
-    }
-	</script>
-	
-	<script>
-	function check14(e,value){
-    //Check Charater
-        var unicode=e.charCode? e.charCode : e.keyCode;
-        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
-        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
-    }
-    function checkLength14(){
-    var fieldVal = document.getElementById('lrotation').value;
-    //Suppose u want 3 number of character
-     if(fieldVal <=80){
-        return true;
-    }
-    else
-    {
-        var str = document.getElementById('lrotation').value;
-        str = str.substring(0, str.length - 1);
-    document.getElementById('lrotation').value = str;
-    }
-     
-    }
-	</script>
-	
-	<script>
-	function check15(e,value){
-    //Check Charater
-        var unicode=e.charCode? e.charCode : e.keyCode;
-        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
-        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
-    }
-    function checkLength15(){
-    var fieldVal = document.getElementById('rrotation').value;
-    //Suppose u want 3 number of character
-    if(fieldVal <=80){
-        return true;
-    }
-    else
-    {
-        var str = document.getElementById('rrotation').value;
-        str = str.substring(0, str.length - 1);
-    document.getElementById('rrotation').value = str;
-    }
-     
-    }
-	</script>
-	
-	<script>
-	function check16(e,value){
-    //Check Charater
-        var unicode=e.charCode? e.charCode : e.keyCode;
-        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
-        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
-    }
-    function checkLength16(){
-    var fieldVal = document.getElementById('t23').value;
-    //Suppose u want 3 number of character
-    if(fieldVal >=2 && fieldVal <=3){
-        return true;
-    }
-    else
-    {
-        var str = document.getElementById('t23').value;
-        str = str.substring(0, str.length - 1);
-    document.getElementById('t23').value = str;
-    }
-     
-    }
-	</script>
-	
-	<script>
-	function check17(e,value){
-    //Check Charater
-        var unicode=e.charCode? e.charCode : e.keyCode;
-        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
-        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
-    }
-    function checkLength17(){
-    var fieldVal = document.getElementById('t34').value;
-    //Suppose u want 3 number of character
-    if(fieldVal >=2 && fieldVal <=3){
-        return true;
-    }
-    else
-    {
-        var str = document.getElementById('t34').value;
-        str = str.substring(0, str.length - 1);
-    document.getElementById('t34').value = str;
-    }
-     
-    }
-	</script>
-	<script>
-	function check18(e,value){
-    //Check Charater
-        var unicode=e.charCode? e.charCode : e.keyCode;
-        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
-        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
-    }
-    function checkLength18(){
-    var fieldVal = document.getElementById('t45').value;
-    //Suppose u want 3 number of character
-    if(fieldVal >=4 && fieldVal <=5){
-        return true;
-    }
-    else
-    {
-        var str = document.getElementById('t45').value;
-        str = str.substring(0, str.length - 1);
-    document.getElementById('t45').value = str;
-    }
-     
-    }
-	</script>
-	
-	<script>
-	function check19(e,value){
-    //Check Charater
-        var unicode=e.charCode? e.charCode : e.keyCode;
-        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
-        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
-    }
-    function checkLength19(){
-    var fieldVal = document.getElementById('t56').value;
-    //Suppose u want 3 number of character
-    if(fieldVal >=5 && fieldVal <=6){
-        return true;
-    }
-    else
-    {
-        var str = document.getElementById('t56').value;
-        str = str.substring(0, str.length - 1);
-    document.getElementById('t56').value = str;
-    }
-     
-    }
-	</script>
-	
-	<script>
-	function check20(e,value){
-    //Check Charater
-        var unicode=e.charCode? e.charCode : e.keyCode;
-        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
-        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
-    }
-    function checkLength20(){
-    var fieldVal = document.getElementById('t67').value;
-    //Suppose u want 3 number of character
-    if(fieldVal >=6 && fieldVal <=7){
-        return true;
-    }
-    else
-    {
-        var str = document.getElementById('t67').value;
-        str = str.substring(0, str.length - 1);
-    document.getElementById('t67').value = str;
-    }
-     
-    }
-	</script>
-	
-	<script>
-	function check21(e,value){
-    //Check Charater
-        var unicode=e.charCode? e.charCode : e.keyCode;
-        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
-        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
-    }
-    function checkLength21(){
-    var fieldVal = document.getElementById('t78').value;
-    //Suppose u want 3 number of character
-    if(fieldVal >=7 && fieldVal <=8){
-        return true;
-    }
-    else
-    {
-        var str = document.getElementById('t78').value;
-        str = str.substring(0, str.length - 1);
-    document.getElementById('t78').value = str;
-    }
-     
-    }
-	</script>
-	
-	<script>
-	function check22(e,value){
-    //Check Charater
-        var unicode=e.charCode? e.charCode : e.keyCode;
-        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
-        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
-    }
-    function checkLength22(){
-    var fieldVal = document.getElementById('c51l').value;
-    //Suppose u want 3 number of character
-    if(fieldVal >=0 && fieldVal <=5){
-        return true;
-    }
-    else
-    {
-        var str = document.getElementById('c51l').value;
-        str = str.substring(0, str.length - 1);
-    document.getElementById('c51l').value = str;
-    }
-     
-    }
-	</script>
-	
-	<script>
-	function check23(e,value){
-    //Check Charater
-        var unicode=e.charCode? e.charCode : e.keyCode;
-        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
-        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
-    }
-    function checkLength23(){
-    var fieldVal = document.getElementById('c51r').value;
-    //Suppose u want 3 number of character
-    if(fieldVal >=0 && fieldVal <=5){
-        return true;
-    }
-    else
-    {
-        var str = document.getElementById('c51r').value;
-        str = str.substring(0, str.length - 1);
-    document.getElementById('c51r').value = str;
-    }
-     
-    }
-	</script>
-	
-	<script>
-	function check24(e,value){
-    //Check Charater
-        var unicode=e.charCode? e.charCode : e.keyCode;
-        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
-        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
-    }
-    function checkLength24(){
-    var fieldVal = document.getElementById('c53l').value;
-    //Suppose u want 3 number of character
-    if(fieldVal >=0 && fieldVal <=5){
-        return true;
-    }
-    else
-    {
-        var str = document.getElementById('c53l').value;
-        str = str.substring(0, str.length - 1);
-    document.getElementById('c53l').value = str;
-    }
-     
-    }
-	</script>
-	
-	<script>
-	function check25(e,value){
-    //Check Charater
-        var unicode=e.charCode? e.charCode : e.keyCode;
-        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
-        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
-    }
-    function checkLength25(){
-    var fieldVal = document.getElementById('c53r').value;
-    //Suppose u want 3 number of character
-    if(fieldVal >=0 && fieldVal <=5){
-        return true;
-    }
-    else
-    {
-        var str = document.getElementById('c53r').value;
-        str = str.substring(0, str.length - 1);
-    document.getElementById('c53r').value = str;
-    }
-     
-    }
-	</script>
-	
-	<script>
-	function check26(e,value){
-    //Check Charater
-        var unicode=e.charCode? e.charCode : e.keyCode;
-        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
-        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
-    }
-    function checkLength26(){
-    var fieldVal = document.getElementById('c61l').value;
-    //Suppose u want 3 number of character
-    if(fieldVal >=0 && fieldVal <=5){
-        return true;
-    }
-    else
-    {
-        var str = document.getElementById('c61l').value;
-        str = str.substring(0, str.length - 1);
-    document.getElementById('c61l').value = str;
-    }
-     
-    }
-	</script>
-	
-	<script>
-	function check27(e,value){
-    //Check Charater
-        var unicode=e.charCode? e.charCode : e.keyCode;
-        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
-        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
-    }
-    function checkLength27(){
-    var fieldVal = document.getElementById('c61r').value;
-    //Suppose u want 3 number of character
-    if(fieldVal >=0 && fieldVal <=5){
-        return true;
-    }
-    else
-    {
-        var str = document.getElementById('c61r').value;
-        str = str.substring(0, str.length - 1);
-    document.getElementById('c61r').value = str;
-    }
-     
-    }
-	</script>
-	
-	<script>
-	function check28(e,value){
-    //Check Charater
-        var unicode=e.charCode? e.charCode : e.keyCode;
-        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
-        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
-    }
-    function checkLength28(){
-    var fieldVal = document.getElementById('c71l').value;
-    //Suppose u want 3 number of character
-    if(fieldVal >=0 && fieldVal <=5){
-        return true;
-    }
-    else
-    {
-        var str = document.getElementById('c71l').value;
-        str = str.substring(0, str.length - 1);
-    document.getElementById('c71l').value = str;
-    }
-     
-    }
-	</script>
-	
-	<script>
-	function check29(e,value){
-    //Check Charater
-        var unicode=e.charCode? e.charCode : e.keyCode;
-        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
-        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
-    }
-    function checkLength29(){
-    var fieldVal = document.getElementById('c71r').value;
-    //Suppose u want 3 number of character
-    if(fieldVal >=0 && fieldVal <=5){
-        return true;
-    }
-    else
-    {
-        var str = document.getElementById('c71r').value;
-        str = str.substring(0, str.length - 1);
-    document.getElementById('c71r').value = str;
-    }
-     
-    }
-	</script>
-	
-	<script>
-	function check30(e,value){
-    //Check Charater
-        var unicode=e.charCode? e.charCode : e.keyCode;
-        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
-        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
-    }
-    function checkLength30(){
-    var fieldVal = document.getElementById('c81l').value;
-    //Suppose u want 3 number of character
-    if(fieldVal >=0 && fieldVal <=5){
-        return true;
-    }
-    else
-    {
-        var str = document.getElementById('c81l').value;
-        str = str.substring(0, str.length - 1);
-    document.getElementById('c81l').value = str;
-    }
-     
-    }
-	</script>
-	
-	<script>
-	function check31(e,value){
-    //Check Charater
-        var unicode=e.charCode? e.charCode : e.keyCode;
-        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
-        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
-    }
-    function checkLength31(){
-    var fieldVal = document.getElementById('c81r').value;
-    //Suppose u want 3 number of character
-    if(fieldVal >=0 && fieldVal <=5){
-        return true;
-    }
-    else
-    {
-        var str = document.getElementById('c81r').value;
-        str = str.substring(0, str.length - 1);
-    document.getElementById('c81r').value = str;
-    }
-     
-    }
-	</script>
-	<script>
-	function check32(e,value){
-    //Check Charater
-        var unicode=e.charCode? e.charCode : e.keyCode;
-        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
-        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
-    }
-    function checkLength32(){
-    var fieldVal = document.getElementById('t11l').value;
-    //Suppose u want 3 number of character
-    if(fieldVal >=0 && fieldVal <=5){
-        return true;
-    }
-    else
-    {
-        var str = document.getElementById('t11l').value;
-        str = str.substring(0, str.length - 1);
-    document.getElementById('t11l').value = str;
-    }
-     
-    }
-	</script>
-	<script>
-	function check33(e,value){
-    //Check Charater
-        var unicode=e.charCode? e.charCode : e.keyCode;
-        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
-        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
-    }
-    function checkLength33(){
-    var fieldVal = document.getElementById('t11r').value;
-    //Suppose u want 3 number of character
-    if(fieldVal >=0 && fieldVal <=5){
-        return true;
-    }
-    else
-    {
-        var str = document.getElementById('t11r').value;
-        str = str.substring(0, str.length - 1);
-    document.getElementById('t11r').value = str;
-    }
-     
-    }
-	</script>
-	
-	<script>
-	function check34(e,value){
-    //Check Charater
-        var unicode=e.charCode? e.charCode : e.keyCode;
-        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
-        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
-    }
-    function checkLength34(){
-    var fieldVal = document.getElementById('c63l').value;
-    //Suppose u want 3 number of character
-    if(fieldVal >=0 && fieldVal <=5){
-        return true;
-    }
-    else
-    {
-        var str = document.getElementById('c63l').value;
-        str = str.substring(0, str.length - 1);
-    document.getElementById('c63l').value = str;
-    }
-     
-    }
-	</script>
-	
-	<script>
-	function check35(e,value){
-    //Check Charater
-        var unicode=e.charCode? e.charCode : e.keyCode;
-        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
-        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
-    }
-    function checkLength35(){
-    var fieldVal = document.getElementById('c63r').value;
-    //Suppose u want 3 number of character
-    if(fieldVal >=0 && fieldVal <=5){
-        return true;
-    }
-    else
-    {
-        var str = document.getElementById('c63r').value;
-        str = str.substring(0, str.length - 1);
-    document.getElementById('c63r').value = str;
-    }
-     
-    }
-	</script>
-	<script>
-	function check36(e,value){
-    //Check Charater
-        var unicode=e.charCode? e.charCode : e.keyCode;
-        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
-        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
-    }
-    function checkLength36(){
-    var fieldVal = document.getElementById('c73l').value;
-    //Suppose u want 3 number of character
-    if(fieldVal >=0 && fieldVal <=5){
-        return true;
-    }
-    else
-    {
-        var str = document.getElementById('c73l').value;
-        str = str.substring(0, str.length - 1);
-    document.getElementById('c73l').value = str;
-    }
-     
-    }
-	</script>
-	<script>
-	function check37(e,value){
-    //Check Charater
-        var unicode=e.charCode? e.charCode : e.keyCode;
-        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
-        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
-    }
-    function checkLength37(){
-    var fieldVal = document.getElementById('c73r').value;
-    //Suppose u want 3 number of character
-    if(fieldVal >=0 && fieldVal <=5){
-        return true;
-    }
-    else
-    {
-        var str = document.getElementById('c73r').value;
-        str = str.substring(0, str.length - 1);
-    document.getElementById('c73r').value = str;
-    }
-     
-    }
-	</script>
-          <script type="text/javascript">
-       function validate(event) {
-          
-           var regex = new RegExp("^[0-5.]+$");
-           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
-           if (!regex.test(key)) {
-             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
-               event.preventDefault();
-               return false;
-           }
-       }       
-    </script>
   <script>
   function printPage(id)
   {
@@ -985,6 +115,45 @@ document.getElementById("pnameerror").innerHTML=" ";
 	return false;
 	}
 	}
+	</script>
+	
+	<script type="text/javascript">
+       function validate(event) {
+          
+           var regex = new RegExp("^[0-9.]+$");
+           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+           if (!regex.test(key)) {
+             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
+               event.preventDefault();
+               return false;
+           }
+       }       
+    </script>
+    
+    <script>
+	function check(id,e,value){
+    //Check Charater
+    	
+        var unicode=e.charCode? e.charCode : e.keyCode;
+        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
+        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
+    }
+    function checkLength(id){
+   
+    var fieldVal = document.getElementById(id).value;
+    //Suppose u want 3 number of character
+    if(fieldVal >=0 && fieldVal <=5){
+        return true;
+    }
+    else
+    {
+        var str = document.getElementById(id).value;
+       
+        str = str.substring(0, str.length - 1);
+    document.getElementById(id).value = str;
+    }
+     
+    }
 	</script>
 </head>
  
@@ -1091,29 +260,29 @@ document.getElementById("pnameerror").innerHTML=" ";
  <td style="width: 130px; ">  </td><td style="width: 270px; ">   <b>Left</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> Right</b></td>
  </tr>
   <tr class="row1">
- <td style="width: 98px; "><b>Flexion:</b> </td><td style="width: 129px; "> (50)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="flexion" id="flexion" size="7" onKeyPress="return check(event,value)" onInput="checkLength()" ></td> 
- <td width="100" style="width: 467px; ">C0-1: <input type="text" name="c01"id="c01" size="7" onKeyPress="return check1(event,value)" onInput="checkLength1()" style="width: 64px; "> C1-2:<input type="text" name="c12" id="c12" size="7" onKeyPress="return check2(event,value)" onInput="checkLength2()" style="width: 64px; "></td><td width="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C2-3: &nbsp;&nbsp;<input type="text" name="c23" ID="c23"size="7" onKeyPress="return check3(event,value)" onInput="checkLength3()"> </td> 
- <td><b>Hautant's:	</b> </td><td><input type="text" name="hautantl" size="5" onkeypress="return isNumberKey(event);"> <input type="text" name="hautantr" size="5" onkeypress="return isNumberKey(event);"></td>
+ <td style="width: 98px; "><b>Flexion:</b> </td><td style="width: 129px; "> (50)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="flexion" size="7" onkeypress="return validate(event)"></td> 
+ <td width="100" style="width: 467px; ">C0-1: <input type="text" name="c01" size="7" onkeypress="return validate(event)" style="width: 64px; "> C1-2:<input type="text" name="c12" size="7" onkeypress="return validate(event)" style="width: 64px; "></td><td width="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C2-3: &nbsp;&nbsp;<input type="text" name="c23" size="7" onkeypress="return validate(event)"> </td> 
+ <td><b>Hautant's:	</b> </td><td><input type="text" name="hautantl" size="5" onkeypress="return validate(event)"> <input type="text" name="hautantr" size="5" onkeypress="return validate(event)"></td>
  </tr>
   <tr class="row1">
- <td><b>Extension:	</b> </td><td> (60)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="extension" id="extension" size="7" onKeyPress="return check4(event,value)" onInput="checkLength4()"></td> 
- <td width="100">C3-4:<input type="text" name="c34" id="c34"size="7" onKeyPress="return check5(event,value)" onInput="checkLength5()"  style="width: 64px; "> C4-5:<input type="text" name="c45" id="c45" size="7" onKeyPress="return check6(event,value)" onInput="checkLength6()"style="width: 64px; "></td><td width="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C5-6: &nbsp;&nbsp;<input type="text" name="c56" id="c56" size="7" onKeyPress="return check7(event,value)" onInput="checkLength7()"> </td> 
- <td><b>Foraminal Comp:	</b> </td><td><input type="text" name="foraminall" size="5" onkeypress="return isNumberKey(event);"> <input type="text" name="foraminalr" size="5" onkeypress="return isNumberKey(event);"></td>
+ <td><b>Extension:	</b> </td><td> (60)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="extension" size="7" onkeypress="return validate(event)"></td> 
+ <td width="100">C3-4:<input type="text" name="c34" size="7" onkeypress="return validate(event)"  style="width: 64px; "> C4-5:<input type="text" name="c45" size="7" onkeypress="return validate(event)" style="width: 64px; "></td><td width="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C5-6: &nbsp;&nbsp;<input type="text" name="c56" size="7" onkeypress="return validate(event)"> </td> 
+ <td><b>Foraminal Comp:	</b> </td><td><input type="text" name="foraminall" size="5" onkeypress="return validate(event)"> <input type="text" name="foraminalr" size="5" onkeypress="return validate(event)"></td>
  </tr>
   <tr class="row1">
- <td><b>Lateral Flexion:</b> </td><td> (45)&nbsp;&nbsp;L&nbsp; <input type="text" name="lflexion" size="7" id="lflexion" onKeyPress="return check8(event,value)" onInput="checkLength8()"><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R&nbsp; <input type="text" name="rflexion" id="rflexion" size="7" onKeyPress="return check9(event,value)" onInput="checkLength9()"></td> 
- <td width="100">C6-7:<input type="text" name="c67" size="7" id="c67" onKeyPress="return check11(event,value)" onInput="checkLength11()" style="width: 64px; ">C7-11:<input type="text" name="c7t1" size="7" id="c711" onKeyPress="return check12(event,value)" onInput="checkLength12()" style="width: 64px; "></td><td width="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T1-2: &nbsp;&nbsp;<input type="text" name="t12" id="t12" size="7" onKeyPress="return check13(event,value)" onInput="checkLength13()"> </td> 
- <td><b>Soto Hall:	</b> </td><td><input type="text" name="sotohalll" size="5" onkeypress="return isNumberKey(event);"> <input type="text" name="sotohallr" size="5" onkeypress="return isNumberKey(event);"></td>
+ <td><b>Lateral Flexion:</b> </td><td> (45)&nbsp;&nbsp;L&nbsp; <input type="text" name="lflexion" size="7" onkeypress="return validate(event)"><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R&nbsp; <input type="text" name="rflexion" size="7" onkeypress="return validate(event)"></td> 
+ <td width="100">C6-7:<input type="text" name="c67" size="7" onkeypress="return validate(event)"  style="width: 64px; ">C7-T1:<input type="text" name="c7t1" size="7" onkeypress="return validate(event)" style="width: 64px; "></td><td width="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T1-2: &nbsp;&nbsp;<input type="text" name="t12" size="7" onkeypress="return validate(event)"> </td> 
+ <td><b>Soto Hall:	</b> </td><td><input type="text" name="sotohalll" size="5" onkeypress="return validate(event)"> <input type="text" name="sotohallr" size="5" onkeypress="return validate(event)"></td>
  </tr>
   <tr class="row1">
-  <td><b>Rotation:</b> </td><td> (80)&nbsp;&nbsp;L&nbsp; <input type="text" name="lrotation" id="lrotation" size="7" onKeyPress="return check14(event,value)" onInput="checkLength14()" ><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R&nbsp; <input type="text" name="rrotation" id="rrotation" size="7" onKeyPress="return check15(event,value)" onInput="checkLength15()"></td> 
- <td width="100">T2-3:<input type="text" name="t23" size="7" id="t23" onKeyPress="return check16(event,value)" onInput="checkLength16()"style="width: 64px; ">&nbsp;T3-4:<input type="text" name="t34" id="t34" size="7"onKeyPress="return check17(event,value)" onInput="checkLength17()" style="width: 64px; "></td><td width="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T4-5: &nbsp;&nbsp;<input type="text" name="t45" id="t45" size="7"onKeyPress="return check18(event,value)" onInput="checkLength18()"> </td> 
- <td><b>Adson's:</b> </td><td><input type="text" name="adsonsl" size="5" onkeypress="return isNumberKey(event);"> <input type="text" name="adsonsr" size="5" onkeypress="return isNumberKey(event);"></td>
+  <td><b>Rotation:</b> </td><td> (80)&nbsp;&nbsp;L&nbsp; <input type="text" name="lrotation" size="7" onkeypress="return validate(event)"><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R&nbsp; <input type="text" name="rrotation" size="7" onkeypress="return validate(event)"></td> 
+ <td width="100">T2-3:<input type="text" name="t23" size="7" onkeypress="return validate(event)" style="width: 64px; ">&nbsp;T3-4:<input type="text" name="t34" size="7" onkeypress="return validate(event)" style="width: 64px; "></td><td width="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T4-5: &nbsp;&nbsp;<input type="text" name="t45" size="7" onkeypress="return validate(event)"> </td> 
+ <td><b>Adson's:</b> </td><td><input type="text" name="adsonsl" size="5" onkeypress="return validate(event)"> <input type="text" name="adsonsr" size="5" onkeypress="return validate(event)"></td>
  </tr>
   <tr class="row1">
  <td></td><td> </td> 
-<td width="100">T5-6: <input type="text" name="t56" id="t56"  size="7" onKeyPress="return check19(event,value)" onInput="checkLength19()" style="width: 64px; ">&nbsp;T6-7:<input type="text" name="t67" id="t67" size="7" onKeyPress="return check20(event,value)" onInput="checkLength20()" style="width: 64px; "></td><td width="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T7-8: &nbsp;&nbsp;<input type="text" name="t78" id="t78" size="7" onKeyPress="return check21(event,value)" onInput="checkLength21()"> </td> 
- <td><b>ULTT:	</b> </td><td><input type="text" name="ulttl" size="5" onkeypress="return isNumberKey(event);"> <input type="text" name="ulttr" size="5" onkeypress="return isNumberKey(event);"></td>
+<td width="100">T5-6: <input type="text" name="t56" size="7" onkeypress="return validate(event)" style="width: 64px; ">&nbsp;T6-7:<input type="text" name="t67" size="7" onkeypress="return validate(event)" style="width: 64px; "></td><td width="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T7-8: &nbsp;&nbsp;<input type="text" name="t78" size="7" onkeypress="return validate(event)"> </td> 
+ <td><b>ULTT:	</b> </td><td><input type="text" name="ulttl" size="5" onkeypress="return validate(event)"> <input type="text" name="ulttr" size="5" onkeypress="return validate(event)"></td>
  </tr>
   </table>
  
@@ -1160,43 +329,43 @@ document.getElementById("pnameerror").innerHTML=" ";
  </tr>
  <tr class="row1">
  <td>C5</td>
- <td><input type="text" name="c5l" size="5" onkeypress="return isNumberKey(event);">&nbsp; &nbsp; &nbsp;<input type="text" name="c5r" size="5" onkeypress="return isNumberKey(event);">&nbsp;(Lat deltoid)</td>
+ <td><input type="text" name="c5l" size="5" onkeypress="return validate(event)">&nbsp; &nbsp; &nbsp;<input type="text" name="c5r" size="5" onkeypress="return validate(event)">&nbsp;(Lat deltoid)</td>
  <td>C5 </td>
- <td> <input type="text" name="c51l" id="c51l" size="5"onKeyPress="return check22(event,value)" onInput="checkLength22()">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c51r" id="c51r" size="5" onKeyPress="return check23(event,value)" onInput="checkLength23()">&nbsp;/5&nbsp;(Shd ABD)</td>
+ <td> <input type="text" name="c51l" ID="C51L" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c51r" ID="c51r" size="5"onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp;(Shd ABD)</td>
  <td> C5</td>
- <td> <input type="text" name="c53l" id="c53l" size="5" onKeyPress="return check24(event,value)" onInput="checkLength24()">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c53r" id="c53r" size="5" onKeyPress="return check25(event,value)" onInput="checkLength25()">&nbsp;/5&nbsp;(Biceps)</td>
+ <td> <input type="text" name="c53l" id="c53l" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c53r" id="c53r" size="5"onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp;(Biceps)</td>
  
  </tr>
  <tr class="row1">
  <td>C6</td>
- <td><input type="text" name="c6l" size="5" onkeypress="return isNumberKey(event);">&nbsp; &nbsp; &nbsp;<input type="text" name="c6r" size="5" onkeypress="return isNumberKey(event);">&nbsp;(Lat arm/hand)	</td>
+ <td><input type="text" name="c6l" size="5" onkeypress="return validate(event)">&nbsp; &nbsp; &nbsp;<input type="text" name="c6r" size="5" onkeypress="return validate(event)">&nbsp;(Lat arm/hand)	</td>
  <td>C6 </td>
- <td> <input type="text" name="c61l" id="c61l" size="5" onKeyPress="return check26(event,value)" onInput="checkLength26()">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c61r" id="c61r" size="5" onKeyPress="return check27(event,value)" onInput="checkLength27()">&nbsp;/5&nbsp;(Elb flex/wrist ext)	</td>
+ <td> <input type="text" name="c61l" id="c61l" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c61r" id="c61r"  size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp;(Elb flex/wrist ext)	</td>
   <td>C6 </td>
- <td><input type="text" name="c63l" id="c63l" size="5"onKeyPress="return check34(event,value)" onInput="checkLength34()">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c63r" id="c63r" size="5" onKeyPress="return check35(event,value)" onInput="checkLength35()">&nbsp;/5&nbsp;(Brachiorad.) </td>
+ <td><input type="text" name="c63l" id="c63l" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c63r" id="c63r" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp;(Brachiorad.) </td>
 
  </tr>
  <tr class="row1">
  <td>C7</td>
- <td><input type="text" name="c7l" size="5" onkeypress="return isNumberKey(event);">&nbsp; &nbsp; &nbsp;<input type="text" name="c7r" size="5" onkeypress="return isNumberKey(event);">&nbsp;(3rd digit)</td>
+ <td><input type="text" name="c7l" size="5" onkeypress="return validate(event)">&nbsp; &nbsp; &nbsp;<input type="text" name="c7r" size="5" onkeypress="return validate(event)">&nbsp;(3rd digit)</td>
  <td>C7 </td>
- <td> <input type="text" name="c71l" id="c71l" size="5" onKeyPress="return check28(event,value)" onInput="checkLength28()">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c71r" id="c71r" size="5" onKeyPress="return check29(event,value)" onInput="checkLength29()">&nbsp;/5&nbsp;(Elb ext/wrist flex)</td>
+ <td> <input type="text" name="c71l" id="c71l" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c71r" id="c71r" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp;(Elb ext/wrist flex)</td>
  <td> C7</td>
- <td> <input type="text" name="c73l" id="c73l" size="5" onKeyPress="return check36(event,value)" onInput="checkLength36()">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c73r" id="c73r" size="5" onKeyPress="return check37(event,value)" onInput="checkLength37()">&nbsp;/5&nbsp;(Triceps)</td>
+ <td> <input type="text" name="c73l" id="c73l" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c73r" id="c73r" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp;(Triceps)</td>
  </tr>
  <tr class="row1">
  <td>C8</td>
- <td><input type="text" name="c8l" size="5" onkeypress="return isNumberKey(event);">&nbsp; &nbsp; &nbsp;<input type="text" name="c8r" size="5" onkeypress="return isNumberKey(event);">&nbsp;(Med forearm/hand)	</td>
+ <td><input type="text" name="c8l" size="5" onkeypress="return validate(event)">&nbsp; &nbsp; &nbsp;<input type="text" name="c8r" size="5" onkeypress="return validate(event)">&nbsp;(Med forearm/hand)	</td>
  <td>C8 </td>
- <td> <input type="text" name="c81l" size="5" id="c81l" onKeyPress="return check30(event,value)" onInput="checkLength30()">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c81r" id="c81r" size="5" onKeyPress="return check31(event,value)" onInput="checkLength31()">&nbsp;/5&nbsp;(Digit flexion)</td>
+ <td> <input type="text" name="c81l" id="c81l" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c81r" id="c81r" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp;(Digit flexion)</td>
  <td></td>
  <td> </td>
  </tr>
  <tr class="row1">
  <td>T1</td>
- <td><input type="text" name="t1l" size="5" onkeypress="return isNumberKey(event);">&nbsp; &nbsp; &nbsp;<input type="text" name="t1r" size="5" onkeypress="return isNumberKey(event);">&nbsp;(Med elbow/arm)	</td>
- <td>T1 </td>
- <td><input type="text" name="t11l" id="t11l" size="5" onKeyPress="return check32(event,value)" onInput="checkLength32()">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="t11r" id="t11r" size="5" onKeyPress="return check33(event,value)" onInput="checkLength33()">&nbsp;/5&nbsp; (Digit abd/add)</td>
+ <td><input type="text" name="t1l" size="5" onkeypress="return validate(event)">&nbsp; &nbsp; &nbsp;<input type="text" name="t1r" size="5" onkeypress="return validate(event)">&nbsp;(Med elbow/arm)	</td>
+ <td>T1 </td> 
+ <td><input type="text" name="t11l" id="t11l" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="t11r" id="t11r" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp; (Digit abd/add)</td>
  <td> </td>
  <td> </td>
  </tr>
