@@ -229,6 +229,14 @@ document.getElementById("securityerror").innerHTML=" ";
 		
 		return false;
 		}
+		document.getElementById("securityerror").innerHTML=" ";
+		
+		if(document.getElementById("security").value.length<11)
+		{
+		document.getElementById("securityerror").innerHTML="Invalid social security number format";
+		
+		return false;
+		}
 	}
 
 	</script>
@@ -417,7 +425,7 @@ document.getElementById("securityerror").innerHTML=" ";
 	       </p>
 	    Your Birth Date  <input type="text" class="input_txtbx1"  name="birthdate" id="datepicker1" value="${footquestionnariedetails.birthdate }"><span id="datepicker1error" style="color: red;font-style:italic;"></span>
 	    <br><br>
-	     <span class="err">*</span>Your Social Security Number <input type="text" name="security" id="security" class="input_txtbx1" maxlength="11" onkeypress="return validate(event)"; value="${footquestionnariedetails.security }">
+	     Your Social Security Number<span class="err">*</span> <input type="text" name="security" id="security" class="input_txtbx1" maxlength="11" onkeypress="return validate(event)"; value="${footquestionnariedetails.security }">
 	    <span id="securityerror" style="color: red;font-style:italic;"></span>
 	    <br>
 	    <br>
