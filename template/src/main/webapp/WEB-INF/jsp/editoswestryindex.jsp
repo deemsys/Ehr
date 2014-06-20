@@ -508,7 +508,7 @@ document.getElementById("pnameerror").innerHTML=" ";
 	     <tr><td style= "border:1px solid;">4.Spending your usual amount of time practicing or playing your instrument or sport?</td><td style= "border:1px solid;" align="center"><input type="radio" <c:if test="${oswestrydetails.instrumentc=='1'}"> <c:out value="checked"></c:out></c:if>  name="instrumentc" value="1">&nbsp;1</td><td style= "border:1px solid;" align="center"><input type="radio" <c:if test="${oswestrydetails.instrumentc=='2'}"> <c:out value="checked"></c:out></c:if>  name="instrumentc" value="2">&nbsp;2</td><td style= "border:1px solid;" align="center"><input type="radio"  name="instrumentc" <c:if test="${oswestrydetails.instrumentc=='3'}"> <c:out value="checked"></c:out></c:if> value="3">&nbsp;3</td><td style= "border:1px solid;" align="center"><input type="radio" value="4" <c:if test="${oswestrydetails.instrumentc=='4'}"> <c:out value="checked"></c:out></c:if>  name="instrumentc">&nbsp;4</td><td style= "border:1px solid;" align="center"><input type="radio" <c:if test="${oswestrydetails.instrumentc=='5'}"> <c:out value="checked"></c:out></c:if>  name="instrumentc" value="5">&nbsp;5</td></tr>
 	     </table>
 	     <br>
-	     <table align="right"><tr><td><input type="submit" value="Update" class="submit_btn" onclick="return checkSubmit('this');"></td><td> <a href="viewoswestryindex" style="color: white" class="submit_btn">Cancel</a></td></tr></table>
+	     <table align="right"><tr><td><input type="submit" value="Update" class="submit_btn" onclick="return checkSubmit('this');"></td><td> <a href="viewoswestryindex" style="color: white" class="submit_btn" onclick="window.close()">Cancel</a></td></tr></table>
 	    
 	    
 	    

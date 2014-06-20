@@ -494,7 +494,7 @@ document.getElementById("pnameerror").innerHTML=" ";
            
            </c:otherwise>
            </c:choose>
-            <table align="right"><tr><td><input type="submit" value="Save" id="saveid" class="submit_btn" onclick="return checkSubmit('this');"></td><td> <a href="viewneckindex" style="color: white" id="cancelid" class="submit_btn">Cancel</a></td></tr></table>
+            <table align="right"><tr><td><input type="submit" value="Save" id="saveid" class="submit_btn" onclick="return checkSubmit('this');"></td><td> <a href="viewneckindex" style="color: white" id="cancelid" onclick="window.close()" class="submit_btn">Cancel</a></td></tr></table>
          <!--  <td><input type="button" value="Calculate" onclick="return percentage()" class="submit_btn"> </td> -->
            </tr>          
                      

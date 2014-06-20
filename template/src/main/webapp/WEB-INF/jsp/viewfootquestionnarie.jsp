@@ -51,7 +51,7 @@
 											
 											<td valign="top" align="left" width="10%">
 											<a href="#" title="" ><img src="resources/images/icons/icon_edit.png" alt="Edit" /></a><a href="<c:out value="editfootquestionnarie?footquestionno=${footquestionnariedetails.footquestionno}"/>" style="padding-right:10px; ">Edit</a>
-											<a href="#" title=""><img src="resources/images/icons/icon_delete.png" alt="Delete" /></a><a href=" <c:out value="deletefootquestionnarie?footquestionno=${footquestionnariedetails.footquestionno}"/>" onclick="return confirmation() ">Remove</a>
+											<a href="#" title=""><img src="resources/images/icons/icon_delete.png" alt="Delete" /></a><a href=" <c:out value="deletefootquestionnariedetials?footquestionno=${footquestionnariedetails.footquestionno}"/>" onclick="return confirmation() ">Remove</a>
 											</td>
 										
 								</tr>

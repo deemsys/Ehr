@@ -54,7 +54,7 @@
 											
 											<td valign="top" align="left" width="10%">
 											<a href="#" title="" ><img src="resources/images/icons/icon_edit.png" alt="Edit" /></a><a href="<c:out value="edithippaprivacy?hippa_no=${privacydetails.hippa_no}"/>" style="padding-right:10px;">Edit</a>
-											<a href="#" title=""><img src="resources/images/icons/icon_delete.png" alt="Delete" /></a><a href="<c:out value="deletehippaprivacy?hippa_no=${privacydetails.hippa_no}"/>" onclick="return confirmation()">Remove</a>
+											<a href="#" title=""><img src="resources/images/icons/icon_delete.png" alt="Delete" /></a><a href="<c:out value="deletehippaprivacydetails?hippa_no=${privacydetails.hippa_no}"/>" onclick="return confirmation()">Remove</a>
 											</td>
 										
 								</tr>

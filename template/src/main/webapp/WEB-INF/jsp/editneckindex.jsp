@@ -347,7 +347,7 @@ document.getElementById("pnameerror").innerHTML=" ";
                      
            </table>  -->
              
-            <table align="right"><tr><td><input type="submit" value="Update" class="submit_btn" onclick="return checkSubmit('this');"></td><td> <a href="viewneckindex" style="color: white" class="submit_btn">Cancel</a></td></tr></table>
+            <table align="right"><tr><td><input type="submit" value="Update" class="submit_btn" onclick="return checkSubmit('this');"></td><td> <a href="viewneckindex" style="color: white" class="submit_btn" onclick="window.close()">Cancel</a></td></tr></table>
     
             
      </div></div>

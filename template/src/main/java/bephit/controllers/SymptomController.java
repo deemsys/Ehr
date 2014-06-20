@@ -572,6 +572,10 @@ String name="";
 		
 		hipquestionnairedao.deletequestionnairedetails(username);
 		model.addAttribute("menu", "hipknee");
+		
+		 model.addAttribute("success","true");
+	     
+	       session.removeAttribute("hipknee");
 		// System.out.print(hipquestionnaireform.getHipquestionnairedetails().get(0).getStiff());
 		return "hipquestionnaire";
 	}

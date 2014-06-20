@@ -431,7 +431,7 @@ document.getElementById("pnameerror").innerHTML=" ";
 <table align="right">
 <tr>
 <td><input type="submit" class="submit_btn" value="Save" id="saveid" onclick="return checkSubmit('this');"></td>
-<td><input type="reset" class="submit_btn" value="Cancel" id="cancelid"></td>
+<td><a href="viewlowback" style="color: white" id="cancelid" class="submit_btn" onclick="window.close()">Cancel</a></td>
 </tr>
 </table>
 </c:when>
@@ -666,7 +666,7 @@ document.getElementById("pnameerror").innerHTML=" ";
 <table align="right">
 <tr>
 <td><input type="submit" class="submit_btn" value="Save" id="saveid" onclick="return checkSubmit('this');"></td>
-<td><input type="reset" class="submit_btn" value="Cancel" id="cancelid"></td>
+<td><a href="viewlowback" style="color: white" id="cancelid" class="submit_btn" onclick="window.close()">Cancel</a></td>
 </tr>
 </table>
 </div>

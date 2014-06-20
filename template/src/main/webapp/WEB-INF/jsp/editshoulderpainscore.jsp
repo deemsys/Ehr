@@ -396,7 +396,7 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 <table align="right">
 <tr>
 <td><input type="submit" class="submit_btn" value="Update" onclick="return checkSubmit('this');"></td>
-<td><input type="reset" class="submit_btn" value="Cancel"></td>
+<td><a href="viewshoulderpainscore"  style="color: white" id="cancelid" class="submit_btn" onclick="window.close()">Cancel</a></td>
 </tr>
 </table>
  </table>
