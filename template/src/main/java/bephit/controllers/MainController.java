@@ -5072,7 +5072,7 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 	
 
 	@RequestMapping(value="/deletetreatminor", method=RequestMethod.GET)
-	public String removetreatminor(@RequestParam("minor_no") String minor_no,ModelMap model, Principal principal) {
+	public String removetreatminor(@RequestParam("minor_no") String minor_no,ModelMap model, Principal principal,HttpSession session) {
 	
 		if(patientDAO.getUsername(principal).size()>0)
 		{			
@@ -5088,11 +5088,13 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 		treatminordetailsForm.setMinorDetails(minorDAO.getMinorDetails());
 		model.addAttribute("treatminordetailsform",treatminordetailsForm);
 		 model.addAttribute("menu", "consent");
+		 session.removeAttribute("consent");
 		}
-		return "treatminorlist";
+		 session.removeAttribute("consent");
+		return "treatminor";
 	}
 	@RequestMapping(value="/deleteminor", method=RequestMethod.GET)
-	public String deletetreatminor(ModelMap model, Principal principal,HttpSession session) {
+	public String deletetreatminor(ModelMap model, Principal principal,HttpSession session,@RequestParam("minor_no") String minor_no) {
 	
 		if(patientDAO.getUsername(principal).size()>0)
 		{	
@@ -5102,7 +5104,7 @@ String name="";
 			model.addAttribute("name",name);
 		   model.addAttribute("patientno","0");
 	}
-		int status=minorDAO.deletetreat(principal.getName());
+		
 		if(principal.getName().equals("admin"))
 		{
 			
@@ -5113,6 +5115,10 @@ String name="";
 	
 		}	
 
+		minorDAO.deletetreat(minor_no);
+		 model.addAttribute("success","true");
+	       model.addAttribute("menu", "consent");
+	       session.removeAttribute("consent");
 		
 		return "treatminor";
 	}
