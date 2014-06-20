@@ -188,6 +188,23 @@ $(function() {
 		
 		return false;
 		}
+		
+		document.getElementById("securityerror").innerHTML=" ";
+		
+		if(document.getElementById("security").value=="")
+		{
+		document.getElementById("securityerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		 document.getElementById("securityerror").innerHTML=" ";
+		
+		if(document.getElementById("security").value.length<11)
+		{
+		document.getElementById("securityerror").innerHTML="Invalid social security number format";
+		
+		return false;
+		}
 		document.getElementById("datepickererror").innerHTML="";
 		var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		if(document.getElementById("datepicker").value.match(datechk)==null)
@@ -392,7 +409,7 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 	       </p>
 	    Your Birth Date  <input type="text"  class="input_txtbx1" id="datepicker1" value="${hipquestionnairedetails.birthdate}" name="birthdate"><span id="datepicker1error"  style="color: red;font-style:italic;"></span>
 	    <br><br>
-	   <span class="err">*</span> Your Social Security Number <input type="text" name="security" id="security" maxlength="11" value="${hipquestionnairedetails.security}" class="input_txtbx1">
+	   <span class="err">*</span> Your Social Security Number <input type="text" name="security" id="security" maxlength="11" value="${hipquestionnairedetails.security}" class="input_txtbx1"><span class="err" id="securityerror"></span>
 	    <div id="number">
 	    <br>
 	    <br>

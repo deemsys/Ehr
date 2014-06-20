@@ -430,7 +430,7 @@ else
  <tr>
  <td><br><br>&nbsp;&nbsp;<input type="text" id="datepicker1" class="input_txtbx1"  name="date1" value="${soapnotes.date1}"><span id="datepicker1error" style="color: red;font-style:italic;" ></span></td>
  <td> <br/>
-&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp; <input type="text"  name="improved" onkeypress="return Validate(event)"; value="${soapnotes.improved}">  &nbsp;%<%-- <select name="improved" id="improved" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" class="input_txtbx1"  name="improved" onkeypress="return Validate(event)"; value="${soapnotes.improved}">  &nbsp;%<%-- <select name="improved" id="improved" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" <c:if test="${soapnotes.improved=='10%'}"><c:out value="selected"/></c:if>>10%</option>
 					<option value="25%" <c:if test="${soapnotes.improved=='25%'}"><c:out value="selected"/></c:if>>25%</option>
 					<option value="50%" <c:if test="${soapnotes.improved=='50%'}"><c:out value="selected"/></c:if>>50%</option>
@@ -439,7 +439,7 @@ else
 					<option value="95%" <c:if test="${soapnotes.improved=='95%'}"><c:out value="selected"/></c:if>>95%</option>
 					</select> --%>
 <br><br>
-&nbsp; Worsened:&nbsp;&nbsp;<input type="text"  name="worsened" onkeypress="return Validate(event)"; value="${soapnotes.worsened}">&nbsp;%
+&nbsp; Worsened:&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="worsened" onkeypress="return Validate(event)"; value="${soapnotes.worsened}">&nbsp;%
 					<%-- <option selected="selected" value="10%" <c:if test="${soapnotes.worsened=='10%'}"><c:out value="selected"/></c:if>>10%</option>
 					<option value="25%" <c:if test="${soapnotes.worsened=='25%'}"><c:out value="selected"/></c:if>>25%</option>
 					<option value="50%" <c:if test="${soapnotes.worsened=='50%'}"><c:out value="selected"/></c:if>>50%</option>
@@ -557,10 +557,10 @@ else
  <td>&nbsp;&nbsp;<input type="text" id="datepicker" class="input_txtbx1"  name="date2" value="${soapnotes.date2}"><span id="datepickererror" style="color: red;font-style:italic;" ></span></td>
  <td>
  <br/>
-&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved1" onkeypress="return Validate(event)"; value="${soapnotes.improved1}">&nbsp;%
+&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="improved1" onkeypress="return Validate(event)"; value="${soapnotes.improved1}">&nbsp;%
 
 <br><br>
-&nbsp; Worsened:&nbsp;&nbsp;<input type="text"  name="worsened1" onkeypress="return Validate(event)"; value="${soapnotes.worsened1}">&nbsp;%
+&nbsp; Worsened:&nbsp;&nbsp;<input type="text" class="input_txtbx1"  name="worsened1" onkeypress="return Validate(event)"; value="${soapnotes.worsened1}">&nbsp;%
 <br/><br/><br/>
 <%-- &nbsp &nbsp Improved: <select name="improved1" id="improved1" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" <c:if test="${soapnotes.improved1=='10%'}"><c:out value="selected"/></c:if>>10%</option>
@@ -639,10 +639,10 @@ else
  <td>&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="date3" id="datepicker2" value="${soapnotes.date3}"><span id="datepicker2error" style="color: red;font-style:italic;" ></span></td>
  <td>
 <br/>
-&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved2" onkeypress="return Validate(event)"; value="${soapnotes.improved2}">&nbsp;%
+&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="improved2" onkeypress="return Validate(event)"; value="${soapnotes.improved2}">&nbsp;%
 
 <br><br>
-&nbsp; Worsened:&nbsp;&nbsp;<input type="text"  name="worsened2" onkeypress="return Validate(event)"; value="${soapnotes.worsened2}">&nbsp;%
+&nbsp; Worsened:&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="worsened2" onkeypress="return Validate(event)"; value="${soapnotes.worsened2}">&nbsp;%
 <br/><br/><br/></td>
  <td>
 
@@ -702,10 +702,10 @@ else
  <td>&nbsp;&nbsp;<input type="text" class="input_txtbx1" id="datepicker3" name="date4" value="${soapnotes.date4}"><span id="datepicker3error" style="color: red;font-style:italic;" ></span></td>
  <td>
  <br/>
-&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved3" onkeypress="return Validate(event)"; value="${soapnotes.improved3}">&nbsp;%
+&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="improved3" onkeypress="return Validate(event)"; value="${soapnotes.improved3}">&nbsp;%
 
 <br><br>
-&nbsp; Worsened:&nbsp;&nbsp;<input type="text"  name="worsened3" onkeypress="return Validate(event)"; value="${soapnotes.worsened3}">&nbsp;%
+&nbsp; Worsened:&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="worsened3" onkeypress="return Validate(event)"; value="${soapnotes.worsened3}">&nbsp;%
 <br/><br/><br/></td>
  <td>
   &nbsp &nbsp<select name="fixation3" id="fixation3" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
@@ -764,10 +764,10 @@ else
  <td>&nbsp;&nbsp;<input type="text" id="datepicker4" class="input_txtbx1" name="date5"  value="${soapnotes.date5}"><span id="datepicker4error" style="color: red;font-style:italic;" ></span></td>
  <td>
  <br/>
-&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved4" onkeypress="return Validate(event)"; value="${soapnotes.improved4}">&nbsp;%
+&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="improved4" onkeypress="return Validate(event)"; value="${soapnotes.improved4}">&nbsp;%
 
 <br><br>
-&nbsp; Worsened:&nbsp;&nbsp;<input type="text"  name="worsened4" onkeypress="return Validate(event)"; value="${soapnotes.worsened4}">&nbsp;%
+&nbsp; Worsened:&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="worsened4" onkeypress="return Validate(event)"; value="${soapnotes.worsened4}">&nbsp;%
 <br/><br/><br/></td>
  <td>&nbsp &nbsp <select name="fixation4" id="fixation4" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixation" <c:if test="${soapnotes.fixation4=='Fixation'}"><c:out value="selected"/></c:if>>Fixations</option>
@@ -824,10 +824,10 @@ else
  <td>&nbsp;&nbsp;<input type="text"  class="input_txtbx1" id="datepicker5" name="date6"  value="${soapnotes.date6}"><span id="datepicker5error" style="color: red;font-style:italic;" ></span></td>
  <td>
  <br/>
-&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved5" onkeypress="return Validate(event)"; value="${soapnotes.improved5}">&nbsp;%
+&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="improved5" onkeypress="return Validate(event)"; value="${soapnotes.improved5}">&nbsp;%
 
 <br><br>
-&nbsp; Worsened:&nbsp;&nbsp;<input type="text"  name="worsened5" onkeypress="return Validate(event)"; value="${soapnotes.worsened5}">&nbsp;%
+&nbsp; Worsened:&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="worsened5" onkeypress="return Validate(event)"; value="${soapnotes.worsened5}">&nbsp;%
 <br/><br/><br/></td>
  <td>
   &nbsp &nbsp<select name="fixation5" id="fixation5" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
@@ -883,10 +883,10 @@ else
  <td>&nbsp;&nbsp;<input type="text" id="datepicker6" name="date7" class="input_txtbx1" value="${soapnotes.date7}"><span id="datepicker6error" style="color: red;font-style:italic;" ></span></td>
  <td>
 <br/>
-&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved6" onkeypress="return Validate(event)"; value="${soapnotes.improved6}">&nbsp;%
+&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="improved6" onkeypress="return Validate(event)"; value="${soapnotes.improved6}">&nbsp;%
 
 <br><br>
-&nbsp; Worsened:&nbsp;&nbsp;<input type="text"  name="worsened6" onkeypress="return Validate(event)"; value="${soapnotes.worsened6}">&nbsp;%
+&nbsp; Worsened:&nbsp;&nbsp;<input type="text" class="input_txtbx1"  name="worsened6" onkeypress="return Validate(event)"; value="${soapnotes.worsened6}">&nbsp;%
 <br/><br/><br/></td>
  <td>&nbsp &nbsp <select name="fixation6" id="fixation6" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixation" <c:if test="${soapnotes.fixation6=='Fixation'}"><c:out value="selected"/></c:if>>Fixations</option>
@@ -942,10 +942,10 @@ else
  <td>&nbsp;&nbsp;<input type="text" id="datepicker7" class="input_txtbx1"  name="date8" value="${soapnotes.date8}"><span id="datepicker7error" style="color: red;font-style:italic;" ></span></td>
  <td>
  <br/>
-&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved7" onkeypress="return Validate(event)"; value="${soapnotes.improved7}">&nbsp;%
+&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="improved7" onkeypress="return Validate(event)"; value="${soapnotes.improved7}">&nbsp;%
 
 <br><br>
-&nbsp; Worsened:&nbsp;&nbsp;<input type="text"  name="worsened7" onkeypress="return Validate(event)"; value="${soapnotes.worsened7}">&nbsp;%
+&nbsp; Worsened:&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="worsened7" onkeypress="return Validate(event)"; value="${soapnotes.worsened7}">&nbsp;%
 <br/><br/><br/></td>
  <td> &nbsp &nbsp<select name="fixation7" id="fixation7" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixation" <c:if test="${soapnotes.fixation7=='Fixation'}"><c:out value="selected"/></c:if>>Fixations</option>
@@ -1001,10 +1001,10 @@ else
  <td>&nbsp;&nbsp;<input type="text" id="datepicker8" class="input_txtbx1" name="date9" value="${soapnotes.date9}"><span id="datepicker8error" style="color: red;font-style:italic;" ></span></td>
  <td>
 <br/>
-&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved8" onkeypress="return Validate(event)"; value="${soapnotes.improved8}">&nbsp;%
+&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="improved8" onkeypress="return Validate(event)"; value="${soapnotes.improved8}">&nbsp;%
 
 <br><br>
-&nbsp; Worsened:&nbsp;&nbsp;<input type="text"  name="worsened8" onkeypress="return Validate(event)"; value="${soapnotes.worsened8}">&nbsp;%
+&nbsp; Worsened:&nbsp;&nbsp;<input type="text" class="input_txtbx1"  name="worsened8" onkeypress="return Validate(event)"; value="${soapnotes.worsened8}">&nbsp;%
 <br/><br/><br/></td>
  <td> &nbsp &nbsp<select name="fixation8" id="fixation8" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixation" <c:if test="${soapnotes.fixation8=='Fixation'}"><c:out value="selected"/></c:if>>Fixations</option>

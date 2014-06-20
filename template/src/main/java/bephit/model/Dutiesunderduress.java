@@ -5,9 +5,9 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Dutiesunderduress
 {
 	private String dutiesno;
-	@NotEmpty
+	
 	private String pname;
-	@NotEmpty
+	
 	private String date;
 	private String jobdescription;
 	private String lifting1;
