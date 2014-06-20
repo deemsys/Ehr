@@ -106,7 +106,7 @@
               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
               <td ><input type="submit" class="submit_btn" value="Update" onclick="return checkSubmit('this');"></td>
               <td>&nbsp;&nbsp;</td>
-              <td><a href="deletescreenauthz" class="submit_btn" style="text-decoration: none;color:white" onclick="return confirmation() ">Delete</a></td>
+              <td><a href= "deletescreenauthz?screen_no=${ScreeningDetails.screen_no}"class="submit_btn" style="text-decoration: none;color:white" onclick="return confirmation() ">Delete</a></td>
         	  </tr>
         	  </table>
         	  

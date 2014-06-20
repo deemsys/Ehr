@@ -70,7 +70,7 @@
  {
 	 var percentage=document.getElementById("score").value;
 	 var div=percentage/50;
-	 alert(div);
+	 //alert(div);
 	 document.getElementById("total").value=div;
 	 document.getElementById("total1").innerHTML=div;
  }

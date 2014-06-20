@@ -44,7 +44,7 @@ $(function() {
 	 var section=document.getElementById("section").value;
 	 var div=(score*2)/(section*10);
 	 var adl=div/100;
-	 alert("div"+div);
+	// alert("div"+div);
 	 document.getElementById("adl").value=adl;
 	 document.getElementById("adldiv").innerHTML=adl;
  }
