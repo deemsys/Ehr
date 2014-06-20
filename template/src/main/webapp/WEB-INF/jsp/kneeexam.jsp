@@ -58,7 +58,30 @@ $(function() {
           }  
           
           </script>
- 
+ <script>
+	function check55(id,e,value){
+   
+        var unicode=e.charCode? e.charCode : e.keyCode;
+        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
+        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
+    }
+    function checkLength55(id){
+   
+    var fieldVal = document.getElementById(id).value;
+    
+    if(fieldVal >=0 && fieldVal <=5){
+        return true;
+    }
+    else
+    {
+        var str = document.getElementById(id).value;
+       
+        str = str.substring(0, str.length - 1);
+    document.getElementById(id).value = str;
+    }
+     
+    }
+	</script>
    <script>
   function printPage(id)
   {
@@ -764,7 +787,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  <td>L2</td>
  <td><input type="text" name="l2l" size="5" onkeypress="return validate(event)";>&nbsp; &nbsp; &nbsp;<input type="text" name="l2r" size="5" onkeypress="return validate(event)";>&nbsp;(Ant/med thigh)</td>
  <td>L2 </td>
- <td> <input type="text"  name="l25l" id="l25l" size="5" onKeyPress="return check2(event,value)" onInput="checkLength2()" ><span class="err" id="lerr"></span>&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text"  name="l25r" id="l25r" size="5"onKeyPress="return check3(event,value)" onInput="checkLength3()" ><span class="err" id="rerr"></span>&nbsp;/5&nbsp;(Iliopsoas)</td>
+ <td> <input type="text"  name="l25l" id="l25l" size="5" onKeyPress="return check55(id,event,value)" onInput="checkLength55(id)" ><span class="err" id="lerr"></span>&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text"  name="l25r" id="l25r" size="5"onKeyPress="return check3(event,value)" onInput="checkLength3()" ><span class="err" id="rerr"></span>&nbsp;/5&nbsp;(Iliopsoas)</td>
  <td> </td>
  <td> </td>
  </tr>
