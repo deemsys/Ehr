@@ -59,6 +59,12 @@ function checkSubmit()
 	
 	return false;
 	} 
+	document.getElementById("ssnerror").innerHTML="";
+	if(document.getElementById("ssn").value.length<11)
+	{
+	document.getElementById("ssnerror").innerHTML="Invalid ssn format";
+	return false;
+	}
 	document.getElementById("claimerror").innerHTML="";
 	
 	if(document.getElementById("claim").value=="")
