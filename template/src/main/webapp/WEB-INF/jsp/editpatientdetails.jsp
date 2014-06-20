@@ -550,6 +550,13 @@ var $sid = xx+1;
 	
 	return false;
 	}
+	document.getElementById("zipcode1error").innerHTML="";
+	if(document.getElementById("zipcode1").value.length<5)
+	{
+	document.getElementById("zipcode1error").innerHTML="Invalid zipcode format";
+	return false;
+	
+	}
 	
 	document.getElementById("zipcode1error").innerHTML="";
 	if(isNaN(document.getElementById("zipcode1").value))
@@ -680,7 +687,15 @@ var $sid = xx+1;
 	document.getElementById("zipcode2error").innerHTML="Enter Only Numbers";
 	return false;
 	}
-	
+	document.getElementById("zipcode2error").innerHTML="";
+	if(document.getElementById("zipcode2").value!="")
+	{
+	if(document.getElementById("zipcode2").value.length<5)
+	{
+	document.getElementById("zipcode2error").innerHTML="Invalid zipcode format";
+	return false;
+	}
+	}
 	/*  document.getElementById("zipcode3error").innerHTML="";
 	if(document.getElementById("zipcode3").value=="")
 	{
@@ -694,6 +709,15 @@ var $sid = xx+1;
 	{
 	document.getElementById("zipcode3error").innerHTML="Enter Only Numbers";
 	return false;
+	}
+	document.getElementById("zipcode3error").innerHTML="";
+		if(document.getElementById("zipcode3").value!="")
+		{
+	if(document.getElementById("zipcode3").value.length<5)
+	{
+	document.getElementById("zipcode3error").innerHTML="Invalid zipcode format";
+	return false;
+	}
 	}
 	document.getElementById("SpousesNameerror").innerHTML="";
 	if(document.getElementById("SpousesName").value=="")

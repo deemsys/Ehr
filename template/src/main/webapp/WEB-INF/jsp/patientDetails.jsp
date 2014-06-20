@@ -785,6 +785,13 @@ document.getElementById("inp_id").value=phone;
 	
 	return false;
 	}
+	document.getElementById("zipcode1error").innerHTML="";
+	if(document.getElementById("zipcode1").value.length<5)
+	{
+	document.getElementById("zipcode1error").innerHTML="Invalid zipcode format";
+	return false;
+	
+	}
 	
 	document.getElementById("zipcode1error").innerHTML="";
 	if(isNaN(document.getElementById("zipcode1").value))
@@ -865,10 +872,23 @@ document.getElementById("inp_id").value=phone;
 	var phone = /^[0-9-]{11}$/;
 	 if(document.getElementById("socialsecuritynumber").value.match(phone)==null)
     {
-    	document.getElementById("socialsecuritynumbererror").innerHTML="Enter correct socialsecuritynumber";
+    	document.getElementById("socialsecuritynumbererror").innerHTML="Invalid socialsecuritynumber";
     	
         return false;
     }
+    //document.getElementById("socialsecuritynumbererror").innerHTML="";
+     //if(document.getElementById("socialsecuritynumber").value.length<11)
+   // {
+    	//document.getElementById("socialsecuritynumbererror").innerHTML="Invalid social  security number";
+    	
+       // return false;
+    //}
+    //document.getElementById("socialsecuritynumbererror").innerHTML="";
+	//if(isNaN(document.getElementById("socialsecuritynumber").value))
+	//{
+	//document.getElementById("socialsecuritynumbererror").innerHTML="Invalid social  security number";
+	//return false;
+	//}
 	 document.getElementById("Gendererror").innerHTML=""; 
 	if( ( document.getElementById("Male").checked == false ) && ( document.getElementById("Female").checked == false ) && ( document.getElementById("Transgender").checked == false ))
 
@@ -918,6 +938,15 @@ document.getElementById("inp_id").value=phone;
 	document.getElementById("zipcode2error").innerHTML="Enter Only Numbers";
 	return false;
 	}
+	document.getElementById("zipcode2error").innerHTML="";
+	if(document.getElementById("zipcode2").value!="")
+	{
+	if(document.getElementById("zipcode2").value.length<5)
+	{
+	document.getElementById("zipcode2error").innerHTML="Invalid zipcode format";
+	return false;
+	}
+	}
 	
 	/*  document.getElementById("zipcode3error").innerHTML="";
 	if(document.getElementById("zipcode3").value=="")
@@ -932,6 +961,15 @@ document.getElementById("inp_id").value=phone;
 	{
 	document.getElementById("zipcode3error").innerHTML="Enter Only Numbers";
 	return false;
+	}
+	document.getElementById("zipcode3error").innerHTML="";
+		if(document.getElementById("zipcode3").value!="")
+		{
+	if(document.getElementById("zipcode3").value.length<5)
+	{
+	document.getElementById("zipcode3error").innerHTML="Invalid zipcode format";
+	return false;
+	}
 	}
 	document.getElementById("SpousesNameerror").innerHTML="";
 	if(document.getElementById("SpousesName").value=="")

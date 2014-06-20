@@ -126,7 +126,7 @@ var mail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     
     if(document.getElementById("fax").value.match(mail)==null)
     {
-    	document.getElementById("faxerror").innerHTML="Enter your proper E-Mail";
+    	document.getElementById("faxerror").innerHTML="Invalid email format";
     	
         return false;
     }

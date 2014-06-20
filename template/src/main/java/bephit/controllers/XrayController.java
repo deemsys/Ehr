@@ -337,7 +337,8 @@ public class XrayController {
 		model.addAttribute("success","true");
 	 	pimedpayform.setPimedpaydetails(pimedpayDAO.getpimedpay());
 	 	model.addAttribute("pimedpayform", pimedpayform);
-		//model.addAttribute("menu","xray");	
+		model.addAttribute("menu","xray");
+	 	//model.addAttribute("menu", "perry");
 		model.addAttribute("success","true");
 		session.removeAttribute("medpay");
 		return "pimedpay";
