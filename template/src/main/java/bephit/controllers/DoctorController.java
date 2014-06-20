@@ -2135,7 +2135,7 @@ String name="";
         footquestionnarieForm.setFootquestionnariedetails(footDAO.getFootquestionnarie());
 		model.addAttribute("footquestionnarieForm",footquestionnarieForm);  
 		}
-		return "viewfootquestionnarie";
+		return "footquestionnarie";
 	}
 	
 	@RequestMapping(value="/shoulderpainscore", method = RequestMethod.GET)

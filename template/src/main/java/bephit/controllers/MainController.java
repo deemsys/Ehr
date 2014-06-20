@@ -2755,6 +2755,9 @@ String name="";
 			{			
 		   model.addAttribute("patientno","0");
 		}
+		
+		
+		
 		int status=medicalDAO.deletemedicalrecords(medical_no);
 		
 		if(status==1)
@@ -2769,7 +2772,7 @@ String name="";
       
 		}
 		
-		return "medicalrecordslist";
+		return "medicalrecords";
 	}
 	
 	@RequestMapping(value="/screeningAuthz",method=RequestMethod.GET)

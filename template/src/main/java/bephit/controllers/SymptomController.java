@@ -579,19 +579,48 @@ String name="";
 	
 	
 	@RequestMapping(value = "/deletehipquestionnaire", method = RequestMethod.GET)
-	public String deletehipquestionnaire(
-			@RequestParam("hipquestionno") String hipquestionno,
-			HttpServletRequest request, ModelMap model,
+	public String deletehipquestionnaire(HttpSession session,Principal principal,@RequestParam("hipquestionno") String hipquestionno,HttpServletRequest request, ModelMap model,
 			Hipquestionnaire hipquestionnaire) throws IOException {
-		System.out.println(hipquestionno);
+		
+		if(patientDAO.getUsername(principal).size()>0)
+		{			
+			String name="";			
+			name=patientDAO.getUsername(principal).get(0).getName();
+			model.addAttribute("name",name);
+		   model.addAttribute("patientno","0");
+	}
+		if(principal.getName().equals("admin"))
+		{
+			
+			/*String username=(String)session.getAttribute("staffusername");*/
+			hipquestionnairedao.deletequestionnaire(hipquestionno);
+			model.addAttribute("choice","close");
+			return "viewhipquestionnaire";
+	
+		}	
+		
+		int status=hipquestionnairedao.deletequestionnaire(hipquestionno);
+		
+		if(status==1)
+		{
+        model.addAttribute("success","true");
+		
+        HipquestionnaireForm hipquestionnaireform = new HipquestionnaireForm();
+        hipquestionnaireform.setHipquestionnairedetails(hipquestionnairedao	.gethipquestionnairedetails());
+		model.addAttribute("hipquestionnaireform", hipquestionnaireform);
+		model.addAttribute("success", true);
+		 model.addAttribute("menu", "hipknee");
+		}
+	return "hipquestionnaire";
+		
+		/*System.out.println(hipquestionno);
 		hipquestionnairedao.deletequestionnaire(hipquestionno);
 		HipquestionnaireForm hipquestionnaireform = new HipquestionnaireForm();
-		hipquestionnaireform.setHipquestionnairedetails(hipquestionnairedao
-				.gethipquestionnairedetails());
+		hipquestionnaireform.setHipquestionnairedetails(hipquestionnairedao	.gethipquestionnairedetails());
 		model.addAttribute("hipquestionnaireform", hipquestionnaireform);
 		model.addAttribute("success", true);
 		// System.out.print(hipquestionnaireform.getHipquestionnairedetails().get(0).getStiff());
-		return "viewhipquestionnaire";
+		return "viewhipquestionnaire";*/
 	}
 
 
