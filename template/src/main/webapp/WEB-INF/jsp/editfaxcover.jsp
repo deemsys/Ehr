@@ -136,6 +136,17 @@ document.getElementById("datepicker1error").innerHTML="";
 	return false;
 	}
 	
+	var phone = /^\(?([1-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+	if(document.getElementById("faxno").value!="")
+	{
+	if(phone.test(document.getElementById("faxno").value)== false)
+	{
+	document.getElementById("faxerror").innerHTML="Invalid phone number format";
+	return false;
+	}
+	
+	
+	}
 	
      
 	}

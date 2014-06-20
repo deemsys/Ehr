@@ -696,6 +696,35 @@ document.getElementById('rm2').style.visibility = 'visible';
 	  
   }
   </script>
+  <script>
+  function checksub()
+  {
+  
+  document.getElementById("pnameerr").innerHTML="";
+  if(document.getElementById("pname").value=="")
+  {
+  
+  document.getElementById("pnameerr").innerHTML="Required field should not be empty";
+  return false;
+  }
+  document.getElementById("dateerr").innerHTML="";
+  if(document.getElementById("datepicker").value=="")
+  {
+  
+  document.getElementById("dateerr").innerHTML="Required field should not be empty";
+  return false;
+  }
+  document.getElementById("dateerr").innerHTML="";
+		var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+	if(document.getElementById("datepicker").value.match(datechk)==null)
+    {
+    	document.getElementById("dateerr").innerHTML="Invalid Date Format";
+    	
+        return false;
+    }	
+  }
+  
+  </script>
 </head>
  <body>
  <br><br>
@@ -715,9 +744,9 @@ document.getElementById('rm2').style.visibility = 'visible';
           <table cellpadding="0" cellspacing="0" border="0" width="98%">
            
  <tr class="row1">
-<td style="width: 172px; "><h4><span class="err">*</span> Patient Name:</h4></td><td style="width: 192px; "><input type="text"  name="pname" /><span class="err"><form:errors path="Dutiesunderduress.pname"></form:errors></span></td>
+<td style="width: 172px; "><h4><span class="err">*</span> Patient Name:</h4></td><td style="width: 192px; "><input type="text"  name="pname" id="pname"/><span class="err" id="pnameerr"><form:errors path="Dutiesunderduress.pname"></form:errors></span></td>
 <td width="600" style="width: 265px; ">
-<td style="width: 73px; "><h4><span class="err">*</span> Date:</h4></td><td><input type="text"  id="datepicker" name="date" /><span class="err"><form:errors path="Dutiesunderduress.date"></form:errors></span></td>
+<td style="width: 73px; "><h4><span class="err">*</span> Date:</h4></td><td><input type="text"  id="datepicker" name="date" /><span class="err" id="dateerr"><form:errors path="Dutiesunderduress.date"></form:errors></span></td>
 </tr>
 </table>
 <br/>
@@ -978,7 +1007,7 @@ document.getElementById('rm2').style.visibility = 'visible';
  </table>
  <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="Save" id="saveid"></td>
+<td><input type="submit" class="submit_btn" value="Save" id="saveid" onclick="return checksub();"></td>
 <td><input type="reset" class="submit_btn" value="Cancel" id="cancelid" onclick="myclose()"></td>
 </tr>
 </table>
@@ -1212,7 +1241,7 @@ document.getElementById('rm2').style.visibility = 'visible';
  </table>
  <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="Save"></td>
+<td><input type="submit" class="submit_btn" value="Save" onclick="return checksub();"></td>
 <td><input type="reset" class="submit_btn" value="Cancel" onclick="myclose()"></td>
 </tr>
 </table>

@@ -133,8 +133,8 @@ document.getElementById("datepickererror").innerHTML="";
 		return false;
 		}
 		
-		
-			
+		//document.getElementById("faxerror").innerHTML="";
+	
 		
 	/* if(document.getElementById("faxno").value=="")
 	{
@@ -185,6 +185,17 @@ return false;
 	document.getElementById("claimnoerror").innerHTML="Required Field Should not be Empty";
 	
 	return false;
+	}
+	var phone = /^\(?([1-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+	if(document.getElementById("faxno").value!="")
+	{
+	if(phone.test(document.getElementById("faxno").value)== false)
+	{
+	document.getElementById("faxerror").innerHTML="Invalid phone number format";
+	return false;
+	}
+	
+	
 	}
 	
 	}

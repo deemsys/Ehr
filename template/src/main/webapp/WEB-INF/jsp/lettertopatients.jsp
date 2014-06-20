@@ -270,7 +270,7 @@ function checkSubmit()
 	document.getElementById("ssnerror").innerHTML="";
 	if(document.getElementById("ssn").value.length<11)
 	{
-	document.getElementById("ssnerror").innerHTML="Invalid ssn format";
+	document.getElementById("ssnerror").innerHTML="Invalid social security number format";
 	return false;
 	}
 	document.getElementById("claimerror").innerHTML="";
