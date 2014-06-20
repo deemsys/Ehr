@@ -1057,7 +1057,7 @@ public class PatientDAO {
 		
 	}
 	
-	public List<String> getsymptomdetails(String patient_id){
+	public List<String> getsymptomdetails(String username){
 		Connection con = null;
 		Statement statement = null;
 		ResultSet resultSet = null;
@@ -1072,7 +1072,7 @@ public class PatientDAO {
 		List<String> strlist = new ArrayList<String>();
 	    try{
 	        
-	       cmd="select symptom from tbl_symptom where patient_id='"+patient_id+"'";
+	       cmd="select symptom from tbl_symptom where patient_id='"+username+"'";
 	    
 	System.out.println(cmd);      
 			resultSet=statement.executeQuery(cmd);
@@ -1245,7 +1245,7 @@ public class PatientDAO {
 	    return patientDetails;
 		
 	}
-	public int updatePatientDetails(PatientDetails patient,String patient_id,String admin,String[] Symptoms)
+	public int updatePatientDetails(PatientDetails patient,String patient_id,String admin,String[] Symptoms,String username)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -1268,7 +1268,7 @@ public class PatientDAO {
 	    	 for(String symptom :Symptoms)
 	    	 	    		{	
 	    	 	    		
-	    	 	    		 cmd_mess="insert into tbl_symptom(symptom,symptom_count,patient_id) values('"+symptom+"','"+count+"','"+patient_id+"')";
+	    	 	    		 cmd_mess="insert into tbl_symptom(symptom,symptom_count,patient_id) values('"+symptom+"','"+count+"','"+username+"')";
 	    	 	    		 count++;
 	    	 	    		 statement.execute(cmd_mess);
 	    	 	    		 System.out.println(cmd_mess);

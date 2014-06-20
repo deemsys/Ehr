@@ -2709,7 +2709,7 @@ MedicalRecordsForm medicalrecordForm = new MedicalRecordsForm();
 		
 	}
 	@RequestMapping(value="/deletemedicalrecordsdetails", method=RequestMethod.GET)
-	public String deletemedicalrecords(HttpSession session,ModelMap model, Principal principal) {
+	public String deletemedicalrecords(HttpSession session,ModelMap model, Principal principal,@RequestParam("medical_no") String medical_no) {
 	
 		 model.addAttribute("menu", "authorization");
 		if(patientDAO.getUsername(principal).size()>0)
@@ -2730,25 +2730,20 @@ String name="";
 	
 		}	
 
-		int status=medicalDAO.deletemedicalrecordsdetails(principal.getName());
+		medicalDAO.deletemedicalrecordsdetails(medical_no);
 		
-		/*if(status==1)
-		{
-        model.addAttribute("success","true");
-		//ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
-		MedicalRecordsForm medicalrecordsForm = new MedicalRecordsForm();
-		//participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants());
-		medicalrecordsForm.setMedicalDetails(medicalDAO.getMedicalDetails());
-        model.addAttribute("MedicalRecordsForm", medicalrecordsForm);
+		
+		 model.addAttribute("success","true");
         model.addAttribute("menu", "authorization");
-      
-		}*/
+        session.removeAttribute("authorization");
+        
+     
 		
 		return "medicalrecords";
 	}
 	
 	@RequestMapping(value="/deletemedicalrecords", method=RequestMethod.GET)
-	public String removemedicalrecords(@RequestParam("medical_no") String medical_no,ModelMap model, Principal principal) {
+	public String removemedicalrecords(@RequestParam("medical_no") String medical_no,ModelMap model, Principal principal,HttpSession session) {
 	
 
 		if(patientDAO.getUsername(principal).size()>0)
@@ -2769,7 +2764,9 @@ String name="";
 		medicalrecordsForm.setMedicalDetails(medicalDAO.getMedicalDetails());
         model.addAttribute("MedicalRecordsForm", medicalrecordsForm);
         model.addAttribute("menu", "authorization");
-      
+        session.removeAttribute("authorization");
+        
+     
 		}
 		
 		return "medicalrecords";
@@ -3009,7 +3006,7 @@ ScreeningAuthzForm screeningauthzForm = new ScreeningAuthzForm();
 
 	}
 	@RequestMapping(value="/deletescreenauthz", method=RequestMethod.GET)
-	public String removescreenauthz(HttpSession session,ModelMap model, Principal principal) {
+	public String removescreenauthz(@RequestParam("screen_no") String screen_no,HttpSession session,ModelMap model, Principal principal) {
 	
 		
 		if(patientDAO.getUsername(principal).size()>0)
@@ -3035,10 +3032,17 @@ ScreeningAuthzForm screeningauthzForm = new ScreeningAuthzForm();
 		model.addAttribute("name",name);
 	   model.addAttribute("patientno","0");
 	}
+		screenDAO.deletescreeningauthz(screen_no);
+		
+		 model.addAttribute("success","true");
+	       model.addAttribute("menu", "authorization");
+	       session.removeAttribute("authorization");
+		
+		
 		return "screeningAuthz";
 	}
 	@RequestMapping(value="/deletescreeningauthz", method=RequestMethod.GET)
-	public String removescreeningauthz(@RequestParam("screen_no") String screen_no,ModelMap model, Principal principal) {
+	public String removescreeningauthz(@RequestParam("screen_no") String screen_no,ModelMap model, Principal principal,HttpSession session) {
 	
 		if(patientDAO.getUsername(principal).size()>0)
 		{			
@@ -3048,9 +3052,13 @@ String name="";
 			model.addAttribute("name",name);
 		   model.addAttribute("patientno","0");
 	}
-		int status=screenDAO.deletescreeningauthz(screen_no);
-		model.addAttribute("menu", "authorization");
-		if(status==1)
+		screenDAO.deletescreeningauthz(screen_no);
+		
+		 model.addAttribute("success","true");
+	       model.addAttribute("menu", "authorization");
+	       session.removeAttribute("authorization");
+		
+		/*if(status==1)
 		{
         model.addAttribute("success","true");
 		//ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
@@ -3059,7 +3067,7 @@ String name="";
 		screeningauthzForm.setScreeningDetails(screenDAO.getScreeningDetails());
         model.addAttribute("ScreeningAuthzForm", screeningauthzForm);
         
-		}
+		}*/
 		
 		return "screeningAuthz";
 	}
@@ -3316,9 +3324,11 @@ String name="";
 	
 		}	
 
-		int status=assignmentDAO.deleteusernameassignment(principal.getName());
-		 model.addAttribute("menu", "authorization");
+		assignmentDAO.deleteusernameassignment(principal.getName());
 		
+		 model.addAttribute("success","true");
+	       model.addAttribute("menu", "authorization");
+	       session.removeAttribute("authorization");
 		
 		return "Assignment";
 	}
@@ -3526,7 +3536,7 @@ String name="";
 		
 	}
 	@RequestMapping(value="/deletehippaprivacydetails", method=RequestMethod.GET)
-	public String removehippa(HttpSession session,ModelMap model, Principal principal) {	
+	public String removehippa(HttpSession session,ModelMap model, Principal principal,@RequestParam("hippa_no") String hippa_no) {	
 		session.removeAttribute("hippa");
 		if(patientDAO.getUsername(principal).size()>0)
 		{	
@@ -3546,11 +3556,13 @@ String name="";
 			return "screeninglist";
 	
 		}	
+		hippaDAO.deletehippa(hippa_no);		
 
-	hippaDAO.deletehippa(principal.getName());		
+	//hippaDAO.deletehippa(principal.getName());		
 
 	       model.addAttribute("success","true");
 	       model.addAttribute("menu", "authorization");
+	       session.removeAttribute("authorization");
 	        return "Hippaprivacy";
 		
 	}
@@ -3560,7 +3572,7 @@ String name="";
 		{			
 	   model.addAttribute("patientno","0");
 	}
-		
+
 		int status=hippaDAO.deletehippaprivacy(hippa_no);
 		
 HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
@@ -3570,7 +3582,9 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
         model.addAttribute("HippaPrivacyForm", hippaprivacyform);
 	       model.addAttribute("success","true");
 	       model.addAttribute("menu", "authorization");
-	        return "hippalist";
+	       
+	       //session.removeAttribute("authorization");
+	        return "Hippaprivacy";
 		
 	}
 	

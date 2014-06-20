@@ -2123,7 +2123,7 @@ String name="";
 		return "footquestionnarie";
 	}
 	@RequestMapping(value="/deletefootquestionnarie", method=RequestMethod.GET)
-	public String removedelete(@RequestParam("footquestionno") String footquestionno,ModelMap model, Principal principal) {
+	public String removedelete(@RequestParam("footquestionno") String footquestionno,ModelMap model,HttpSession session, Principal principal) {
 	
 		int status=footDAO.deletefoot(footquestionno);
 		
@@ -2133,8 +2133,10 @@ String name="";
 		
         FootquestionnarieForm footquestionnarieForm= new FootquestionnarieForm();
         footquestionnarieForm.setFootquestionnariedetails(footDAO.getFootquestionnarie());
-		model.addAttribute("footquestionnarieForm",footquestionnarieForm);  
+		model.addAttribute("footquestionnarieForm",footquestionnarieForm); 
+		session.removeAttribute("hipknee");
 		}
+		
 		return "footquestionnarie";
 	}
 	
