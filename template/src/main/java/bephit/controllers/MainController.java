@@ -1719,7 +1719,7 @@ public class MainController {
 	@RequestMapping(value="/deleteworkaccident", method=RequestMethod.GET)
 	public String removeWorkAccident(HttpSession session,ModelMap model, Principal principal) {
 	
-
+		session.removeAttribute("accident");
 		if(patientDAO.getUsername(principal).size()>0)
 			{			
 		   model.addAttribute("patientno","0");
