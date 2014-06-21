@@ -298,10 +298,12 @@ public class MainController {
 	
 	@RequestMapping(value="/doctorsearch", method = RequestMethod.GET)
 	public String searchform(Principal principal,HttpSession session, ModelMap model) {
-		int username=docDAO.usernamevalidation(principal .getName());
+		
+		int username=docDAO.usernamevalidation((String)session.getAttribute("username"));
 		if(hamiDAO.getHamiltonchiropracticpatientid((String)session.getAttribute("username")).size()==0)
 		 {
-			hamiDAO.usernamevalidation11(principal .getName());
+			
+			hamiDAO.usernamevalidation11((String)session.getAttribute("username"));
 			
 			System.out.println("deleted");
 		}
@@ -583,6 +585,15 @@ public class MainController {
 			   
 			   return "hamiltonchiropractic";
 		   }
+		   
+			int username=docDAO.usernamevalidation((String)session.getAttribute("username"));
+			if(hamiDAO.getHamiltonchiropracticpatientid((String)session.getAttribute("username")).size()==0)
+			 {
+				
+				hamiDAO.usernamevalidation11((String)session.getAttribute("username"));
+				
+				System.out.println("deleted");
+			}
 		return "physicalexam";
  
 	}
@@ -614,6 +625,15 @@ public class MainController {
 			 String name=patientDAO.getUsername((String)session.getAttribute("username")).get(0).getName();
 			 model.addAttribute("name",name);
 		 }	
+
+		int username=docDAO.usernamevalidation((String)session.getAttribute("username"));
+		if(hamiDAO.getHamiltonchiropracticpatientid((String)session.getAttribute("username")).size()==0)
+		 {
+			
+			hamiDAO.usernamevalidation11((String)session.getAttribute("username"));
+			
+			System.out.println("deleted");
+		}
 		return "hamiltonchiropractic";
  
 	}
@@ -759,11 +779,11 @@ public class MainController {
 	public String hamiltonchiropractic(Principal principal,ModelMap model,HttpSession session) {
 		
 		
-		int username=docDAO.usernamevalidation(principal .getName());
+		int username=docDAO.usernamevalidation((String)session.getAttribute("username"));
 		if(hamiDAO.getHamiltonchiropracticpatientid((String)session.getAttribute("username")).size()==0)
 		 {
 			
-			hamiDAO.usernamevalidation11(principal.getName());
+			hamiDAO.usernamevalidation11((String)session.getAttribute("username"));
 			
 			System.out.println("deleted");
 		}
@@ -5193,7 +5213,7 @@ String name="";
 	
 
 	@RequestMapping(value="/deletehardship", method=RequestMethod.GET)
-	public String removehardship(@RequestParam("agreement_no") String agreement_no,ModelMap model, Principal principal) {
+	public String removehardship(@RequestParam("agreement_no") String agreement_no,ModelMap model, Principal principal,HttpSession session) {
 	
 		if(patientDAO.getUsername(principal).size()>0)
 		{			
@@ -5209,11 +5229,12 @@ String name="";
     	hardshipagreementForm.setHardshipagreement(hardDAO.getHardshipagreement());
 		model.addAttribute("hardshipagreementform",hardshipagreementForm);		}
 		 model.addAttribute("menu", "authorization");
+		 session.removeAttribute("authorization");
 		return "hardshiplist";
 	}
 	
 	@RequestMapping(value="/deletehardshipagreement", method=RequestMethod.GET)
-	public String removehardship(HttpSession session,ModelMap model, Principal principal) {
+	public String removehardship(@RequestParam("agreement_no") String agreement_no,HttpSession session,ModelMap model, Principal principal) {
 	
 		if(patientDAO.getUsername(principal).size()>0)
 		{
@@ -5231,18 +5252,24 @@ String name="";
 			String username=(String)session.getAttribute("staffusername");
 			hardDAO.deletehardshipdetails(username);
 			model.addAttribute("choice","close");
+			  session.removeAttribute("authorization");
 			return "screeninglist";
 	
 		}	
-
-		int status=hardDAO.deletehardshipdetails(principal.getName());
+		hardDAO.deletehardship(agreement_no);
+		model.addAttribute("menu", "authorization");
 		
-		if(status==1)
+		 model.addAttribute("success","true");
+	     
+	       session.removeAttribute("authorization");
+		/*int status=hardDAO.deletehardshipdetails(principal.getName());*/
+		
+		/*if(status==1)
 		{
         model.addAttribute("success","true");
 		//ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
         	}
-		 model.addAttribute("menu", "authorization");
+		 model.addAttribute("menu", "authorization");*/
 		return "hardshipagreement";
 	}
 	
