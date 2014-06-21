@@ -238,7 +238,7 @@ public class MainController {
 		
 	    	String pusername=principal.getName();
 	        String age=patientDAO.getpatientAge(pusername);
-			session.removeAttribute("age");
+			//session.removeAttribute("age");
 			System.out.println("age"+age);
 	        session.setAttribute("age",age);
 	        return "viewpatient";
@@ -3027,7 +3027,7 @@ ScreeningAuthzForm screeningauthzForm = new ScreeningAuthzForm();
 	}
 	@RequestMapping(value="/deletescreenauthz", method=RequestMethod.GET)
 	public String removescreenauthz(@RequestParam("screen_no") String screen_no,HttpSession session,ModelMap model, Principal principal) {
-	
+		
 		
 		if(patientDAO.getUsername(principal).size()>0)
 		{			
@@ -3067,7 +3067,7 @@ ScreeningAuthzForm screeningauthzForm = new ScreeningAuthzForm();
 		if(patientDAO.getUsername(principal).size()>0)
 		{			
 
-String name="";			
+			String name="";			
 			name=patientDAO.getUsername(principal).get(0).getName();
 			model.addAttribute("name",name);
 		   model.addAttribute("patientno","0");
@@ -3873,10 +3873,10 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 	}	
 	@RequestMapping(value="/viewpatientdetails", method=RequestMethod.GET)
 	public String viewpatientdetails(HttpSession session,HttpServletRequest request,ModelMap model, Principal principal) {
-		session.removeAttribute("lastname");		
-		session.removeAttribute("attorney");
-		session.removeAttribute("accident");
-		session.removeAttribute("dateofaccident");	
+		//session.removeAttribute("lastname");		
+		//session.removeAttribute("attorney");
+		//session.removeAttribute("accident");
+		//session.removeAttribute("dateofaccident");	
 		
 		if(patientDAO.getUsername(principal).size()>0)
 		{			
@@ -3978,7 +3978,7 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 	
 	
 	@RequestMapping(value="/viewallpatientdetails", method=RequestMethod.GET)
-	public String viewallpatientdetails(HttpServletRequest request,ModelMap model, Principal principal) {
+	public String viewallpatientdetails(HttpSession session, HttpServletRequest request,ModelMap model, Principal principal) {
 	/*	if(patientDAO.getUsername(principal).size()>0)
 		{			
 	   model.addAttribute("patientno","0");
@@ -3997,7 +3997,11 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 	        model.addAttribute("success","false");
 	        model.addAttribute("currentpage",1);
 		
-		
+	        session.removeAttribute("lastname");
+			session.removeAttribute("attorney");
+			session.removeAttribute("accident");
+			session.removeAttribute("dateofaccident");
+			session.removeAttribute("insurance");
 		return "viewallpatientdetails";
  
 	}	
@@ -5759,7 +5763,9 @@ String name="";
 		SoapnotesForm soapnotesForm = new SoapnotesForm();
 		soapnotesForm.setSoapnotes(soapDAO.getSoapnotes());
         model.addAttribute("soapnotesForm", soapnotesForm);
-        model.addAttribute("menu", "notes");
+       // model.addAttribute("menu", "notes");
+        model.addAttribute("menu", "soapnotes");
+        session.removeAttribute("soapnotes");
       
 		}
 		
