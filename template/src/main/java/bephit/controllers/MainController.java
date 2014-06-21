@@ -107,7 +107,7 @@ import java.util.*;
  
 @Controller
 
-@SessionAttributes({"physical","radio","waiver","info","injury","consent","minor","hard","screen","medical","assignment","hippa","staff","veri","first","role","signup","doctorsignup","patientid","soap","auto","visit","work","lastname","attorney","accident","dateofaccident","username","insurance","age","staffusername"})
+@SessionAttributes({"physical","authorization","radio","waiver","info","injury","consent","minor","hard","screen","medical","assignment","hippa","staff","veri","first","role","signup","doctorsignup","patientid","soap","auto","visit","work","lastname","attorney","accident","dateofaccident","username","insurance","age","staffusername"})
 
 public class MainController {
 	
@@ -298,7 +298,12 @@ public class MainController {
 	
 	@RequestMapping(value="/doctorsearch", method = RequestMethod.GET)
 	public String searchform(Principal principal,HttpSession session, ModelMap model) {
-		
+		 if(patientDAO.getUsername((String)session.getAttribute("username")).size()>0)
+		 {
+			 String name=patientDAO.getUsername((String)session.getAttribute("username")).get(0).getName();
+			
+			 model.addAttribute("name",name);
+		 }
 		int username=docDAO.usernamevalidation((String)session.getAttribute("username"));
 		if(hamiDAO.getHamiltonchiropracticpatientid((String)session.getAttribute("username")).size()==0)
 		 {
@@ -553,11 +558,18 @@ public class MainController {
 	 if(patientDAO.getUsername((String)session.getAttribute("username")).size()>0)
 	 {
 		 String name=patientDAO.getUsername((String)session.getAttribute("username")).get(0).getName();
+		
 		 model.addAttribute("name",name);
 	 }
 	   
 		   if(physicalDAO.getPhysicalpatient_id((String)session.getAttribute("username")).size()>0)
 		   {
+			   if(patientDAO.getUsername((String)session.getAttribute("username")).size()>0)
+				 {
+					 String name=patientDAO.getUsername((String)session.getAttribute("username")).get(0).getName();
+					
+					 model.addAttribute("name",name);
+				 }
 			   System.out.println(hamiDAO.getHamiltonchiropracticpatientid((String)session.getAttribute("username")).size());
 			  if(hamiDAO.getHamiltonchiropracticpatientid((String)session.getAttribute("username")).size()>0)
 			  {
@@ -3101,6 +3113,8 @@ ScreeningAuthzForm screeningauthzForm = new ScreeningAuthzForm();
 		public String Assignment(HttpSession session,ModelMap model,Principal principal)
 		{
 			session.removeAttribute("assignment");
+			session.removeAttribute("authorization");
+			
 			if(patientDAO.getUsername(principal).size()>0)
 			{	
 				String name="";			
@@ -3326,6 +3340,8 @@ ScreeningAuthzForm screeningauthzForm = new ScreeningAuthzForm();
 	}
 	@RequestMapping(value="/deleteassignment", method=RequestMethod.GET)
 	public String removeassignment(ModelMap model, Principal principal,HttpSession session) {
+		
+		session.removeAttribute("assignment");
 		if(patientDAO.getUsername(principal).size()>0)
 		{		
 			String name="";			
@@ -5097,7 +5113,7 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 
 	@RequestMapping(value="/deletetreatminor", method=RequestMethod.GET)
 	public String removetreatminor(@RequestParam("minor_no") String minor_no,ModelMap model, Principal principal,HttpSession session) {
-	
+		session.removeAttribute("minor");
 		if(patientDAO.getUsername(principal).size()>0)
 		{			
 	   model.addAttribute("patientno","0");
