@@ -119,7 +119,7 @@ document.getElementById("abnormalerror").innerHTML=" ";
 
 
 	
-document.getElementById("presentrlerror").innerHTML=" ";
+/* document.getElementById("presentrlerror").innerHTML=" ";
 		
 		if(document.getElementById("presentrl").value=="")
 		{
@@ -134,7 +134,7 @@ document.getElementById("patientsmokererror").innerHTML=" ";
 		document.getElementById("patientsmokererror").innerHTML="Required Field Should not be Empty";
 		
 		return false;
-		}
+		} */
 
 	}
 	</script>
@@ -1166,7 +1166,7 @@ document.getElementById("patientsmokererror").innerHTML=" ";
 				                   		</select></td>
 				               
 				              
-				                   		<td><span class="err">*</span>If present, perform eye exam & auscultate carotid arteries</td>
+				                   		<td>If present, perform eye exam & auscultate carotid arteries</td>
 				                   		<td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="presentrl" name="presentrl" value="${physical.presentrl }" />
 				                   		<span class="err" id="presentrlerror"></span>
 				                   		</td>
@@ -1403,7 +1403,7 @@ document.getElementById("patientsmokererror").innerHTML=" ";
 				                   
 				                   <tr class="row1">
 				               
-				                   		<td><span class="err">*</span>If present is a smoker and has difficulty breathing, perform cardio-respiratory exam</td>
+				                   		<td>If present is a smoker and has difficulty breathing, perform cardio-respiratory exam</td>
 				                   		<td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="patientsmoker" name="patientsmoker" value="${physical.patientsmoker}"/>
 				                   		<span id="patientsmokererror" class="err"></span>
 				                   		</td>

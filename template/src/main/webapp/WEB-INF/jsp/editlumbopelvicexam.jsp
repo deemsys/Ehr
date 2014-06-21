@@ -244,7 +244,7 @@ element.style.display='none';
 <td valign="top" align="left">
  <div>
 	            <div class="headings altheading">
-	            <center> <h2>LUMBOPELVIC REEXAM11</h2> </center><br/>
+	            <center> <h2>LUMBOPELVIC REEXAM</h2> </center><br/>
 	            
 	            </div>
 	    <div class="contentbox">
@@ -394,7 +394,7 @@ element.style.display='none';
   <tr class="row1">
   <td><b>Rotation:</b> </td><td> (45)&nbsp;&nbsp;&nbsp;L <input type="text" name="lrotation" size="7" value="${lumbopelvic.lrotation}" onkeypress="return validate(event)"><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R <input type="text" name="rrotation" size="7" value="${lumbopelvicexam.rrotation}" onkeypress="return validate(event)"></td> 
  <td width="100">L2-3:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<input type="text" name="l23" size="7" value="${lumbopelvic.l23}" onkeypress="return validate(event)"></td><td width="50">L3-4:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="l34" size="7" value="${lumbopelvicexam.l34}" onkeypress="return validate(event)"> </td> 
- <td><b>Straight Leg Raise:</b> </td><td><input type="text" name="straightlegl" size="5" onkeypress="return validate(event)" value="${lumbopelvicexam.straightlegl}"> <input type="text" name="straightlegr" onkeypress="return validate(event)" size="5" "value="${lumbopelvicexam.straightlegr}"></td>
+ <td><b>Straight Leg Raise:</b> </td><td><input type="text" name="straightlegl" size="5" onkeypress="return validate(event)" value="${lumbopelvicexam.straightlegl}"> <input type="text" name="straightlegr" onkeypress="return validate(event)" size="5" value="${lumbopelvicexam.straightlegr}"></td>
  </tr>
   <tr class="row1">
  <td></td><td> </td> 

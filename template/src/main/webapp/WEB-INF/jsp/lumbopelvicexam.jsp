@@ -342,11 +342,11 @@ document.getElementById("pnameerror").innerHTML=" ";
   <tr class="row1">
  <td><b>Lateral Flexion:</b> </td><td> (25)&nbsp;&nbsp;&nbsp;L <input type="text" name="lflexion" size="7" onkeypress="return validate(event)"><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R <input type="text" name="rflexion" size="7" onkeypress="return validate(event)"></td> 
  <td width="100">T12-L1:&nbsp;<input type="text" name="t12l1" size="7" onkeypress="return validate(event)"></td> 
- <td><b>Slump:</b> </td><td><input type="text" name="slumpl" size="5" onkeypress="return validate(event)"> <input type="text" name="slumpr" size="5" onkeypress="return validate(event)"></td>
+ <td width="50">	L1-2:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<input type="text" name="l12" size="7" onkeypress="return validate(event)"> </td><td><b>Slump:</b> </td><td><input type="text" name="slumpl" size="5" onkeypress="return validate(event)"> <input type="text" name="slumpr" size="5" onkeypress="return validate(event)"></td>
  </tr>
   <tr class="row1">
   <td><b>Rotation:</b> </td><td> (45)&nbsp;&nbsp;&nbsp;L <input type="text" name="lrotation" size="7" onkeypress="return validate(event)"><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R <input type="text" name="rrotation" size="7" onkeypress="return validate(event)"></td> 
- <td width="100">L2-3:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<input type="text" name="l23" size="7" onkeypress="return validate(event)"></td><td width="50">L3-4:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="50">	L1-2:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<input type="text" name="l12" size="7" onkeypress="return validate(event)"> </td><input type="text" name="l34" size="7" onkeypress="return validate(event)"> <td></td> 
+ <td width="100">L2-3:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<input type="text" name="l23" size="7" onkeypress="return validate(event)"></td><td width="50">L3-4:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="l34" size="7"  onkeypress="return validate(event)"></td>  
  <td><b>Straight Leg Raise:</b> </td><td><input type="text" name="straightlegl" size="5" onkeypress="return validate(event)"> <input type="text" name="straightlegr" size="5" onkeypress="return validate(event)"></td>
  </tr>
   <tr class="row1">

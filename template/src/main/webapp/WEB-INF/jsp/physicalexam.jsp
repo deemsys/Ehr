@@ -181,7 +181,7 @@ document.getElementById("emailerror").innerHTML=" ";
     
     if(document.getElementById("email").value.match(mail)==null)
     {
-    	document.getElementById("emailerror").innerHTML="Enter  proper E-Mail";
+    	document.getElementById("emailerror").innerHTML="Invalid Email Format";
     	
         return false;
     }
@@ -234,15 +234,15 @@ document.getElementById("abnormalerror").innerHTML=" ";
 
 
 	
-document.getElementById("presentrlerror").innerHTML=" ";
+/* document.getElementById("presentrlerror").innerHTML=" ";
 		
 		if(document.getElementById("presentrl").value=="")
 		{
 		document.getElementById("presentrlerror").innerHTML="Required Field Should not be Empty";
 		
 		return false;
-		}
-document.getElementById("patientsmokererror").innerHTML=" ";
+		} */
+/* document.getElementById("patientsmokererror").innerHTML=" ";
 		
 		if(document.getElementById("patientsmoker").value=="")
 		{
@@ -250,7 +250,7 @@ document.getElementById("patientsmokererror").innerHTML=" ";
 		
 		return false;
 		}
-
+ */
 	}
 	</script>
 	<script type="text/javascript">
@@ -779,47 +779,47 @@ document.getElementById("patientsmokererror").innerHTML=" ";
 				                  <tr class="row1">
 				                  <td>FLEX 60</td>
 				                  
-				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="flexpain" /></td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="flexspasm" /></td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="flexstiff" /></td>
+				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="flexpain" onkeypress="return validate(event)" /></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="flexspasm" onkeypress="return validate(event)" /></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="flexstiff" onkeypress="return validate(event)"/></td>
 				                  </tr>
 				                  <tr class="row1">
 				                  <td>EXT 75</td>
 				                  
-				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="extpain" /></td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="extspasm" /></td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="extstiff" /></td>
+				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="extpain" onkeypress="return validate(event)"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="extspasm" onkeypress="return validate(event)"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="extstiff" onkeypress="return validate(event)" /></td>
 				                 
 				                  </tr>
 				                   <tr class="row1">
 				                   <td>RLF 45</td>
 				                  
-				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="rlfpain" /></td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="rlfspasm" /></td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="rlfstiff" /></td>
+				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="rlfpain" onkeypress="return validate(event)"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="rlfspasm"  onkeypress="return validate(event)"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="rlfstiff" onkeypress="return validate(event)"/></td>
 				                 
 				                  </tr>
 				                   <tr class="row1">
 				                   <td>LLF 45</td>
 				                  
-				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="llfpain" /></td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="llfspasm" /></td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="llfstiff" /></td>
+				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="llfpain" onkeypress="return validate(event)" /></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="llfspasm" onkeypress="return validate(event)"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="llfstiff" onkeypress="return validate(event)"/></td>
 				                 
 				                  </tr>
 				                   <tr class="row1">
 				                   <td>RR 80</td>
 				                  
-				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="rrpain" /></td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="rrspasm" /></td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="rrstiff" /></td>
+				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="rrpain" onkeypress="return validate(event)" /></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="rrspasm" onkeypress="return validate(event)"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="rrstiff" onkeypress="return validate(event)" /></td>
 				                  </tr>
 				                <tr class="row1">
 				                   <td>LR 80</td>
 				                 
-				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="lrpain" /></td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lrspasm" /></td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lrstiff" /></td>
+				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="lrpain" onkeypress="return validate(event)" /></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lrspasm" onkeypress="return validate(event)"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lrstiff" onkeypress="return validate(event)"/></td>
 				                  </tr>
 				                </table>
 				                
@@ -1077,7 +1077,7 @@ document.getElementById("patientsmokererror").innerHTML=" ";
 											
 											
 				                   		</select></td>
-				                   		<td><span class="err">*</span>If present, perform eye exam & auscultate carotid arteries</td>
+				                   		<td>If present, perform eye exam & auscultate carotid arteries</td>
 				                   		<td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="presentrl" name="presentrl" />
 				                   		<span class="err" id="presentrlerror"></span></td>
 
@@ -1202,47 +1202,47 @@ document.getElementById("patientsmokererror").innerHTML=" ";
 				                  <tr class="row1">
 				                  <td>FLEX 40</td>
 				                  
-				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="thoracicpain" /></td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="thoracicspasm" /></td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="thoracicstiff" /></td>
+				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="thoracicpain" onkeypress="return validate(event)"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="thoracicspasm" onkeypress="return validate(event)"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="thoracicstiff" onkeypress="return validate(event)"/></td>
 				                  </tr>
 				                  <tr class="row1">
 				                  <td>EXT 30</td>
 				                  
-				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="thoextpain" /></td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="thoextspasm" /></td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="thoextstiff" /></td>
+				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="thoextpain" onkeypress="return validate(event)" /></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="thoextspasm" onkeypress="return validate(event)"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="thoextstiff" onkeypress="return validate(event)"/></td>
 				                 
 				                  </tr>
 				                   <tr class="row1">
 				                   <td>RLF 30</td>
 				                  
-				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="thorlfpain" /></td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="thorlfspasm" /></td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="thorlfstiff" /></td>
+				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="thorlfpain" onkeypress="return validate(event)"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="thorlfspasm" onkeypress="return validate(event)"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="thorlfstiff" onkeypress="return validate(event)"/></td>
 				                 
 				                  </tr>
 				                   <tr class="row1">
 				                   <td>LLF 30</td>
 				                  
-				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="thollfpain" /></td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="thollfspasm" /></td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="thollfstiff" /></td>
+				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="thollfpain" onkeypress="return validate(event)" /></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="thollfspasm" onkeypress="return validate(event)" /></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="thollfstiff" onkeypress="return validate(event)"/></td>
 				                 
 				                  </tr>
 				                   <tr class="row1">
 				                   <td>RR 40</td>
 				                  
-				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="thorrpain" /></td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="thorrspasm" /></td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="thorrstiff" /></td>
+				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="thorrpain" onkeypress="return validate(event)" /></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="thorrspasm" onkeypress="return validate(event)"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="thorrstiff" onkeypress="return validate(event)"/></td>
 				                  </tr>
 				                <tr class="row1">
 				                   <td>LR 40</td>
 				                 
-				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="tholrpain" /></td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="tholrspasm" /></td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="tholrstiff" /></td>
+				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="tholrpain" onkeypress="return validate(event)" /></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="tholrspasm" onkeypress="return validate(event)"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="tholrstiff" onkeypress="return validate(event)"/></td>
 				                  </tr>
 				                </table>
 				                 <table border="0">
@@ -1313,7 +1313,7 @@ document.getElementById("patientsmokererror").innerHTML=" ";
 				                   <table border="0">
 				                     <tr class="row1">
 				               
-				                   		<td><span class="err">*</span>If present is a smoker and has difficulty breathing, perform cardio-respiratory exam</td>
+				                   		<td>If present is a smoker and has difficulty breathing, perform cardio-respiratory exam</td>
 				                   		<td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="patientsmoker" name="patientsmoker" />
 				                   		<span class="err" id="patientsmokererror"></span>
 				                   		</td>
@@ -1480,47 +1480,47 @@ document.getElementById("patientsmokererror").innerHTML=" ";
 				                  <tr class="row1">
 				                  <td>FLEX 80</td>
 				                  
-				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="lumflexpain" /></td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lumflexspasm" /></td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lumflexstiff" /></td>
+				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="lumflexpain" onkeypress="return validate(event)"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lumflexspasm" onkeypress="return validate(event)"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lumflexstiff" onkeypress="return validate(event)"/></td>
 				                  </tr>
 				                  <tr class="row1">
 				                  <td>EXT 30</td>
 				                 
-				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="lumextpain" /></td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lumextspasm" /></td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lumextstiff" /></td>
+				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="lumextpain" onkeypress="return validate(event)"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lumextspasm" onkeypress="return validate(event)" /></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lumextstiff" onkeypress="return validate(event)" /></td>
 				                 
 				                  </tr>
 				                   <tr class="row1">
 				                   <td>RLF 25</td>
 				                  
-				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="lumrlfpain" /></td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lumrlfspasm" /></td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lumrlfstiff" /></td>
+				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="lumrlfpain" onkeypress="return validate(event)" /></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lumrlfspasm" onkeypress="return validate(event)"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lumrlfstiff" onkeypress="return validate(event)" /></td>
 				                 
 				                  </tr>
 				                   <tr class="row1">
 				                   <td>LLF 25</td>
 				                  
-				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="lumllfpain" /></td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lumllfspasm" /></td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lumllfstiff" /></td>
+				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="lumllfpain" onkeypress="return validate(event)"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lumllfspasm" onkeypress="return validate(event)" /></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lumllfstiff" onkeypress="return validate(event)" /></td>
 				                 
 				                  </tr>
 				                   <tr class="row1">
 				                   <td>RR 30</td>
 				                
-				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="lumrrpain" /></td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lumrrspasm" /></td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lumrrstiff" /></td>
+				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="lumrrpain" onkeypress="return validate(event)"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lumrrspasm" onkeypress="return validate(event)"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lumrrstiff" onkeypress="return validate(event)"/></td>
 				                  </tr>
 				                <tr class="row1">
 				                   <td>LR 30</td>
 				                  
-				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="lumlrpain" /></td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lumlrspasm" /></td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lumlrstiff" /></td>
+				                 <td class="input_txt" align="left"><input type="text" class="input_txtbx1" id="inp_id" name="lumlrpain" onkeypress="return validate(event)" /></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lumlrspasm" onkeypress="return validate(event)"/></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id" name="lumlrstiff" onkeypress="return validate(event)" /></td>
 				                  </tr>
 				                </table>
 				                 <table border="0">
