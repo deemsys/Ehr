@@ -283,7 +283,14 @@ document.getElementById("pnameerror").innerHTML=" ";
  <td><b>Varus Stress (LCL):</b> </td><td><input type="text" name="varusl" size="5" value="${elbowexam.varusl }" onkeypress="return validate(event)"> <input type="text" name="varusr" size="5" value="${elbowexam.varusr }" onkeypress="return validate(event)"></td>
  </tr>
   <tr class="row1">
-  <td><b> Supination:</b> </td><td> (90)</td><td>L &nbsp;<input type="text" name="suppinationl" size="7" value="${elbowexam.suppinationl }" onkeypress="return validate(event)"><br/><br/>R <input type="text" name="supinationr" size="7" value="${elbowexam.suppinationr }" onkeypress="return validate(event)"></td>  
+  <td><b> Supination:</b> </td><td> (90)</td><td>L &nbsp;<input type="text" name="suppinationl" size="7" <c:choose><c:when test="${elbowexam.suppinationl=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${elbowexam.suppinationl}</c:otherwise>
+	          
+	            </c:choose> value="${elbowexam.suppinationl }" onkeypress="return validate(event)"><br/><br/>R <input type="text" name="supinationr" size="7"  <c:choose>
+	            <c:when test="${elbowexam.suppinationr=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${elbowexam.suppinationr}</c:otherwise>
+	          
+	            </c:choose> value="${elbowexam.suppinationr }" onkeypress="return validate(event)"></td>  
  <td><b>Valgus Stress (MCL):</b> </td><td><input type="text" name="mcl1l" size="5" value="${elbowexam.mcl1l }" onkeypress="return validate(event)"> <input type="text" name="mcl1r" size="5" value="${elbowexam.mcl1r }" onkeypress="return validate(event)"></td>
  </tr>
   <tr class="row1">

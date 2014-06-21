@@ -198,10 +198,13 @@
               <table>
               <tr>
               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-              <td><input type="submit" class="submit_btn" value="Save" id="saveid" onclick="return checkSubmit('this');">&nbsp;&nbsp;</td>
-				<td><a href="viewpatient"style="color:white" id="cancelid" class="submit_btn">Cancel</a></td>
+              <td><input type="submit" class="submit_btn" value="Save" id="saveid" onclick="return checkSubmit('this');"></td>
+              <td>
+              <a href="viewpatient"style="color:white" id="cancelid" class="submit_btn">Cancel</a></td>
+				
+				<!-- <td><a href="viewpatient"style="color:white" id="cancelid" class="submit_btn">Cancel</a></td> -->
 				<!--  <td > <input type="button"   class="submit_btn" value=" Print" onclick="window.print();return false;" /></td> -->
-              <td valign="top" align="center"><!-- <a href="hardshiplist" class="submit_btn" style="color: white">Cancel</a> --></td>
+              
         	  </tr>
         	  </table>
         	  </div>
