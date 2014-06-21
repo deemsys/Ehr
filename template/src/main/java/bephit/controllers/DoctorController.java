@@ -2099,6 +2099,8 @@ if(result.hasErrors())
 	
 	@RequestMapping(value="/deletefootquestionnariedetials", method=RequestMethod.GET)
 	public String removedelete(HttpSession session,ModelMap model, Principal principal) {	
+		
+		session.removeAttribute("fquestionnarie");
 		if(patientDAO.getUsername(principal).size()>0)
 		{			
 
