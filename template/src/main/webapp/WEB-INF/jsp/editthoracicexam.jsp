@@ -223,9 +223,9 @@ $(function() {
  <tr class="row1">
  <td>Other/Notes:<input type="text" name="othernotes" value="${thoracicexam.othernotes}"></td> 
  <td width="150">
- <td></td><td></td>
+ <td></td><td style="width: 203px; "></td>
  <td width="150">
- <td></td><td></td>
+ <td></td>
  </tr>
  <tr class="row1">
  <td width="250"><B style="font-size:14px">FUNCTIONAL RANGE OF MOTION</B> </td><td width="200"><input type="radio" name="functionalrangeofmotion" value="Unremarkable" <c:if test="${thoracicexam.functionalrangeofmotion=='Unremarkable'}"><c:out value="checked=checked"/></c:if>>Unremarkable </td> 
@@ -233,23 +233,23 @@ $(function() {
  <td width="250"><B style="font-size:14px">ORTHOTPEDIC TESTING </B></td><td><input type="radio" name="orthopedic" value="Unremarkable" <c:if test="${thoracicexam.orthopedic=='Unremarkable'}"><c:out value="checked=checked"/></c:if>>Unremarkable</td>
  </tr>
   <tr class="row1">
- <td>  </td><td> <b>Normal</b> &nbsp;&nbsp;&nbsp;<b> Actual</b></td> 
+ <td style="width: 173px; ">  </td><td> <b>Normal</b> &nbsp;&nbsp;&nbsp;<b> Actual</b></td> 
  <td></td><td width="250"> </td> 
- <td>  </td><td>   <b>Left</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> Right</b></td>
+ <td>  </td><td style="width: 180px; ">   <b>Left</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> Right</b></td>
  </tr>
   <tr class="row1">
- <td><b>Flexion:</b> </td><td> (20-40)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="flexion" size="7" value="${thoracicexam.flexion}" onkeypress="return validate(event)"></td> 
- <td width="100">T1-2:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t12" size="7" value="${thoracicexam.t12}" onkeypress="return validate(event)"></td><td width="250">T2-3:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t23" size="7" onkeypress="return validate(event)" value="${thoracicexam.t23 }"> </td> 
- <td><b>Adam's Sign:	</b> </td><td><input type="text" name="adamsignl" size="5" value="${thoracicexam.adamsignl}" onkeypress="return validate(event)"> <input type="text" name="adamsignr" size="5" value="${thoracicexam.adamsignr}" onkeypress="return validate(event)"></td>
+ <td style="width: 111px; "><b>Flexion:</b> </td><td> (20-40)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="flexion" size="7" value="${thoracicexam.flexion}" onkeypress="return validate(event)"></td> 
+ <td width="100">T1-2:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t12" size="7" value="${thoracicexam.t12}" onkeypress="return validate(event)"></td><td width="250" style="width: 165px; ">T2-3:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t23" size="7" onkeypress="return validate(event)" value="${thoracicexam.t23 }"> </td> 
+ <td style="width: 166px; "><b>Adam's Sign:	</b> </td><td><input type="text" name="adamsignl" size="5" value="${thoracicexam.adamsignl}" onkeypress="return validate(event)"> <input type="text" name="adamsignr" size="5" value="${thoracicexam.adamsignr}" onkeypress="return validate(event)"></td>
  </tr>
   <tr class="row1">
  <td><b>Extension:	</b> </td><td> (25-45)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="extension" size="7" value="${thoracicexam.extension}" onkeypress="return validate(event)"></td> 
- <td width="100">T3-4:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t34" size="7" value="${thoracicexam.t34}" onkeypress="return validate(event)"></td><td width="50">T4-5:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t45" size="7" onkeypress="return validate(event)" value="${thoracicexam.t45}"> </td> 
+ <td width="100" style="width: 169px; ">T3-4:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t34" size="7" value="${thoracicexam.t34}" onkeypress="return validate(event)"></td><td width="50">T4-5:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t45" size="7" onkeypress="return validate(event)" value="${thoracicexam.t45}"> </td> 
  <td><b>Schepelman's:	</b> </td><td><input type="text" name="schepelmanl" size="5" value="${thoracicexam.schepelmanl}" onkeypress="return validate(event)"> <input type="text" name="schepelmanr" size="5" value="${thoracicexam.schepelmanr}" onkeypress="return validate(event)"></td>
  </tr>
   <tr class="row1">
- <td><b>Lateral Flexion:</b> </td><td> (20-40)&nbsp;&nbsp;&nbsp;L <input type="text" name="lflexion" size="7" value="${thoracicexam.lflexion}" onkeypress="return validate(event)"><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R <input type="text" name="rflexion" size="7" value="${thoracicexam.rflexion}" onkeypress="return validate(event)"></td> 
- <td width="100">T5-6:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t56" size="7" value="${thoracicexam.t56}" onkeypress="return validate(event)"></td><td width="50">	T6-7:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<input type="text" name="t67" size="7" onkeypress="return validate(event)" value="${thoracicexam.t67}"> </td> 
+ <td style="width: 124px; "><b>Lateral Flexion:</b> </td><td> (20-40)&nbsp;&nbsp;&nbsp;L <input type="text" name="lflexion" size="7" value="${thoracicexam.lflexion}" onkeypress="return validate(event)"><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R <input type="text" name="rflexion" size="7" value="${thoracicexam.rflexion}" onkeypress="return validate(event)"></td> 
+ <td width="100" style="width: 174px; ">T5-6:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t56" size="7" value="${thoracicexam.t56}" onkeypress="return validate(event)"></td><td width="50" style="width: 173px; ">	T6-7:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<input type="text" name="t67" size="7" onkeypress="return validate(event)" value="${thoracicexam.t67}"> </td> 
  <td><b>Valsalva:</b> </td><td><input type="text" name="valsalval" size="5" value="${thoracicexam.valsalval}" onkeypress="return validate(event)"> <input type="text" name="valsalvar" size="5" value="${thoracicexam.valsalvar}" onkeypress="return validate(event)"></td>
  </tr>
   <tr class="row1">
@@ -264,7 +264,7 @@ $(function() {
  </tr>
   <tr class="row1">
  <td> </td><td> </td> 
- <td width="100">T11-12: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t1112" size="7" value="${thoracicexam.t1112}" onkeypress="return validate(event)"></td><td width="50">	T12-L1:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="t12l1" size="7" onkeypress="return validate(event)" value="${thoracicexam.t12l1}"> </td> 
+ <td width="100">T11-12: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t1112" size="7" value="${thoracicexam.t1112}" onkeypress="return validate(event)"></td><td width="50">	T12-L1:&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="t12l1" size="7" onkeypress="return validate(event)" value="${thoracicexam.t12l1}"> </td> 
  <td><b>Sternal Compression:</b> </td><td><input type="text" name="sternall" size="5" value="${thoracicexam.sternall}" onkeypress="return validate(event)"> <input type="text" name="sternalr" size="5" value="${thoracicexam.sternalr}" onkeypress="return validate(event)"></td>
  </tr>
   <tr class="row1">
