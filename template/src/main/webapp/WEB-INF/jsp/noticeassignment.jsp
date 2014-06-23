@@ -126,7 +126,7 @@ function doAjaxPost() {
 		    	 var calculate=cal+1;
 			    /*  alert(response.indexOf("|"));
 			   alert(response.substring(0,cal)); */
-			   //document.getElementById("patientname").value=response.substring(0,cal);
+			   document.getElementById("patientname").value=response.substring(0,cal);
 			   
 		    	 document.getElementById("user").value=response.substring(calculate,response.length);
 		    	
@@ -285,6 +285,7 @@ document.getElementById("nameofattorneyerror").innerHTML="";
  <body>
 <div id="right_content">
 <form action="insertnoticeofassignment" method="POST">
+ <input type="text" name="user" id="user" style="visibility:hidden">
 
 <table cellpadding="0" cellspacing="0" border="0" height="100" width="70%" class="margin_table">
        <tr>
@@ -350,7 +351,7 @@ document.getElementById("nameofattorneyerror").innerHTML="";
           </tr> 
           <tr>
             <td width="25%"><span class="err">*</span>PatientName:</td>
-              <td ><input type="text" class="input_txtbx1" name="patientname" id="patientname" value="${username}"/><span class="err" id="patientnameerror"><form:errors path="noticeerror.patientname"></form:errors></span><br></td>                      
+              <td ><input type="text" class="input_txtbx1" name="patientname" id="patientname" /><span class="err" id="patientnameerror"></span><br></td>                      
           </tr> 
           <tr>
             <td width="25%">Date Of Accident:</td>
@@ -459,7 +460,7 @@ do not receive a response, we will act in reliance that you will comply with it'
           </tr> 
           <tr>
             <td height="40" width="180"><span class="err">*</span>PatientName:</td>
-              <td ><input type="text" class="input_txtbx1" name="patientname"value= "${notice.patientname }" id="patientname" /><span class="err"><form:errors path="noticeerror.patientname"></form:errors></span></td>                      
+              <td ><input type="text" class="input_txtbx1" name="patientname" id="patientname" /><span class="err"><form:errors path="noticeerror.patientname"></form:errors></span></td>                      
           </tr> 
           <tr>
             <td height="30" width="180">Date Of Accident:</td>
@@ -550,7 +551,7 @@ do not receive a response, we will act in reliance that you will comply with it'
              </c:choose>
               
               
-              <input type="text" name="user" id="user"  style="visibility:hidden">
+             
               
              
               <table><tr> <td><input type="submit" class="submit_btn" id="saveid" value="Save" OnClick ="return valid();"></td>
