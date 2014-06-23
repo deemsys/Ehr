@@ -571,13 +571,21 @@ var $sid = xx+1;
 	
 	return false;
 	}
-	var phone = /^[0-9-()]{13}$/;
-	 if(document.getElementById("homephone").value.match(phone)==null)
-    {
-    	document.getElementById("homephoneerror").innerHTML="Enter correct homephone number ";
+	document.getElementById("homephoneerror").innerHTML="";
+    var txt1=document.getElementById("homephone").value;
+   var txt2=txt1.substring(1,4);
+   var txt3=txt1.substring(5,8);
+   // alert(txt2);
+   // alert(txt3);
+   if(txt2==000 && txt3==000)
+   document.getElementById("homephoneerror").innerHTML="Invalid phone number format";
+	//var phone = /^[0-9-()]{13}$/;
+	 //if(document.getElementById("homephone").value.match(phone)==null)
+   // {
+    	//document.getElementById("homephoneerror").innerHTML="Enter correct homephone number ";
     	
-        return false;
-    }
+        //return false;
+    //}
 	
 	document.getElementById("Emailiderror").innerHTML="";
 	if(document.getElementById("Emailid").value=="")
@@ -602,13 +610,21 @@ var $sid = xx+1;
 	
 	return false;
 	}
-	var phone = /^[0-9-()]{13}$/;
-	 if(document.getElementById("mobilenumber").value.match(phone)==null)
-    {
-    	document.getElementById("mobilenumbererror").innerHTML="Enter correct mobilenumber number";
+	document.getElementById("mobilenumbererror").innerHTML="";
+    var txt1=document.getElementById("mobilenumber").value;
+   var txt2=txt1.substring(1,4);
+   var txt3=txt1.substring(5,8);
+   // alert(txt2);
+   // alert(txt3);
+   if(txt2==000 && txt3==000)
+   document.getElementById("mobilenumbererror").innerHTML="Invalid phone number format";
+	//var phone = /^[0-9-()]{13}$/;
+	// if(document.getElementById("mobilenumber").value.match(phone)==null)
+    //{
+    	//document.getElementById("mobilenumbererror").innerHTML="Enter correct mobilenumber number";
     	
-        return false;
-    }
+        //return false;
+    //}
 	document.getElementById("datepicker1error").innerHTML="";
 	if(document.getElementById("datepicker1").value=="")
 	{
@@ -726,6 +742,18 @@ var $sid = xx+1;
 	
 	return false;
 	}
+	 document.getElementById("workphoneerror").innerHTML="";
+  if(document.getElementById("workphone").value!="")
+  {
+   var txt1=document.getElementById("workphone").value;
+   var txt2=txt1.substring(1,4);
+   var txt3=txt1.substring(5,8);
+   // alert(txt2);
+   // alert(txt3);
+   if(txt2==000 && txt3==000)
+   document.getElementById("workphoneerror").innerHTML="Invalid phone number format";
+  return false;
+  }
 	document.getElementById("SpousesEmperror").innerHTML="";
 	if(document.getElementById("SpousesEmp").value=="")
 	{
@@ -740,13 +768,21 @@ var $sid = xx+1;
 	
 	return false;
 	}
-	var phone = /^[0-9-()]{13}$/;
-	 if(document.getElementById("spouseworkphone").value.match(phone)==null)
-    {
-    	document.getElementById("spouseworkphoneerror").innerHTML="Enter correct spouseworkphone number";
+	document.getElementById("spouseworkphoneerror").innerHTML="";
+    var txt1=document.getElementById("spouseworkphone").value;
+   var txt2=txt1.substring(1,4);
+   var txt3=txt1.substring(5,8);
+   // alert(txt2);
+   // alert(txt3);
+   if(txt2==000 && txt3==000)
+   document.getElementById("spouseworkphoneerror").innerHTML="Invalid phone number format";
+	//var phone = /^[0-9-()]{13}$/;
+	// if(document.getElementById("spouseworkphone").value.match(phone)==null)
+    //{
+    	//document.getElementById("spouseworkphoneerror").innerHTML="Enter correct spouseworkphone number";
     	
-        return false;
-    }
+       // return false;
+   // }
 	document.getElementById("Name_frienderror").innerHTML="";
 	if(document.getElementById("Name_friend").value=="")
 	{
@@ -761,13 +797,22 @@ var $sid = xx+1;
 	
 	return false;
 	}
-	var phone = /^[0-9-()]{13}$/;
-	 if(document.getElementById("Phone_friend").value.match(phone)==null)
-    {
-    	document.getElementById("Phone_frienderror").innerHTML="Enter correct Phonefriend number";
+	document.getElementById("Phone_frienderror").innerHTML="";
+    var txt1=document.getElementById("Phone_friend").value;
+   var txt2=txt1.substring(1,4);
+   var txt3=txt1.substring(5,8);
+   // alert(txt2);
+   // alert(txt3);
+   if(txt2==000 && txt3==000)
+   document.getElementById("Phone_frienderror").innerHTML="Invalid phone number format";
+  
+	//var phone = /^[0-9-()]{13}$/;
+	// if(document.getElementById("Phone_friend").value.match(phone)==null)
+    //{
+    	//document.getElementById("Phone_frienderror").innerHTML="Enter correct Phonefriend number";
     	
-        return false;
-    }
+      //  return false;
+    //}
 	
 	document.getElementById("Chiropratic_careerror").innerHTML=""; 
 	if( ( document.getElementById("yes1").checked == false ) && ( document.getElementById("No1").checked == false ) )
@@ -897,13 +942,22 @@ var $sid = xx+1;
 	
 	return false;
 	}
-	var phone = /^[0-9-()]{13}$/;
-	 if(document.getElementById("phyphone").value.match(phone)==null)
-    {
-    	document.getElementById("phyphoneerror").innerHTML="Enter correct Phone number";
+	 document.getElementById("phyphoneerror").innerHTML="";
+    var txt1=document.getElementById("phyphone").value;
+   var txt2=txt1.substring(1,4);
+   var txt3=txt1.substring(5,8);
+   // alert(txt2);
+   // alert(txt3);
+   if(txt2==000 && txt3==000)
+   document.getElementById("phyphoneerror").innerHTML="Invalid phone number format";
+  
+	//var phone = /^[0-9-()]{13}$/;
+	 //if(document.getElementById("phyphone").value.match(phone)==null)
+   // {
+    	//document.getElementById("phyphoneerror").innerHTML="Enter correct Phone number";
     	
-        return false;
-    }
+        //return false;
+   // }
 	document.getElementById("xrayerror").innerHTML="";
 	if(document.getElementById("xray").value=="")
 	{
@@ -932,13 +986,21 @@ var $sid = xx+1;
 	
 	return false;
 	}
-	var phone = /^[0-9-()]{13}$/;
-	 if(document.getElementById("phonenumber").value.match(phone)==null)
-    {
-    	document.getElementById("phonenumbererror").innerHTML="Enter correct Phone number";
+	 document.getElementById("phonenumbererror").innerHTML="";
+    var txt1=document.getElementById("phonenumber").value;
+   var txt2=txt1.substring(1,4);
+   var txt3=txt1.substring(5,8);
+   // alert(txt2);
+   // alert(txt3);
+   if(txt2==000 && txt3==000)
+   document.getElementById("phonenumbererror").innerHTML="Invalid phone number format";
+	//var phone = /^[0-9-()]{13}$/;
+	// if(document.getElementById("phonenumber").value.match(phone)==null)
+    //{
+    	//document.getElementById("phonenumbererror").innerHTML="Enter correct Phone number";
     	
-        return false;
-    }
+        //return false;
+    //}
 	document.getElementById("Fault_accidenterror").innerHTML="";
 	if(document.getElementById("Fault_accident").value=="")
 	{
@@ -981,13 +1043,21 @@ var $sid = xx+1;
 	
 	return false;
 	}
-	var phone = /^[0-9-()]{13}$/;
-	 if(document.getElementById("Phone_auto").value.match(phone)==null)
-    {
-    	document.getElementById("Phone_autoerror").innerHTML="Enter correct Phone number";
+	document.getElementById("Phone_autoerror").innerHTML="";
+    var txt1=document.getElementById("Phone_auto").value;
+   var txt2=txt1.substring(1,4);
+   var txt3=txt1.substring(5,8);
+   // alert(txt2);
+   // alert(txt3);
+   if(txt2==000 && txt3==000)
+   document.getElementById("Phone_autoerror").innerHTML="Invalid phone number format";
+	//var phone = /^[0-9-()]{13}$/;
+	 //if(document.getElementById("Phone_auto").value.match(phone)==null)
+    //{
+    	//document.getElementById("Phone_autoerror").innerHTML="Enter correct Phone number";
     	
-        return false;
-    }
+        //return false;
+   // }
 	document.getElementById("policyerror").innerHTML="";
 	if(document.getElementById("policy").value=="")
 	{
@@ -1009,6 +1079,14 @@ var $sid = xx+1;
 	
 	return false;
 	}
+	document.getElementById("phhealtherror").innerHTML="";
+    var txt1=document.getElementById("phhealth").value;
+   var txt2=txt1.substring(1,4);
+   var txt3=txt1.substring(5,8);
+   // alert(txt2);
+   // alert(txt3);
+   if(txt2==000 && txt3==000)
+   document.getElementById("phhealtherror").innerHTML="Invalid phone number format";
 	document.getElementById("Prev_accidenterror").innerHTML=""; 
 	if( ( document.getElementById("yes7").checked == false ) && ( document.getElementById("No7").checked == false ) )
 
