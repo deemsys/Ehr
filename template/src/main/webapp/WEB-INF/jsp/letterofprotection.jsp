@@ -503,7 +503,7 @@ function openWindow(h, w, url) {
               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
               <td><input type="submit" class="submit_btn" value="Save" id="saveid" onclick="return checkSubmit('this');"></td>
               <td>&nbsp;&nbsp;</td>
-              <td><a href="viewletterofprotection" style="color:white" class="submit_btn" id="cancelid">Cancel</a></td>
+              <td><a href="viewallpatientdetails" style="color:white" class="submit_btn" id="cancelid">Cancel</a></td>
               <td>&nbsp;&nbsp;</td>
         	  </tr>
         	  </table>
