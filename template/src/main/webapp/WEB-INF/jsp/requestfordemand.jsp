@@ -265,16 +265,19 @@ function doAjaxPost() {
 	
 	return false;
 	}
-	var phone = /^\(?([1-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+	//var phone = /^\(?([1-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
 	if(document.getElementById("fax").value!="")
 	{
-	if(phone.test(document.getElementById("fax").value)== false)
-	{
-	document.getElementById("faxerror").innerHTML="Invalid phone number format";
+	
+	document.getElementById("faxerror").innerHTML="";
+    var txt1=document.getElementById("fax").value;
+   var txt2=txt1.substring(1,4);
+   var txt3=txt1.substring(5,8);
+   // alert(txt2);
+   // alert(txt3);
+   if(txt2==000 && txt3==000)
+   document.getElementById("faxerror").innerHTML="Invalid phone number format";
 	return false;
-	}
-	
-	
 	}
 	
 	}
