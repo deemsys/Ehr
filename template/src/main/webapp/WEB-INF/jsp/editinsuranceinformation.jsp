@@ -89,14 +89,22 @@ function checkSubmit()
 	
 	return false;
     }
+    document.getElementById("phoneerr").innerHTML="";
+    var txt1=document.getElementById("phone").value;
+   var txt2=txt1.substring(1,4);
+   var txt3=txt1.substring(5,8);
+   // alert(txt2);
+   // alert(txt3);
+   if(txt2==000 && txt3==000)
+   document.getElementById("phoneerr").innerHTML="Invalid phone number format";
 	//var phone = /^[0-9-()]{13}$/;
-	var phone = /^\(?([1-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-	 if(document.getElementById("phone").value.match(phone)==null)
-   {
-   	document.getElementById("phoneerr").innerHTML="Invalid phone number format";
+	//var phone = /^\(?([1-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+	 //if(document.getElementById("phone").value.match(phone)==null)
+  // {
+   	//document.getElementById("phoneerr").innerHTML="Invalid phone number format";
    	
-       return false;
-   }
+      // return false;
+   //}
     document.getElementById("policyerr").innerHTML="";
 	if(document.getElementById("policy").value=="")
 	{
