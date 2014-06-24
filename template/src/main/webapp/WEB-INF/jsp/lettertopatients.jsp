@@ -297,19 +297,19 @@ function checkSubmit()
     	
         return false;
     }	
-    document.getElementById("datepicker3error").innerHTML="";
+    
     var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		
-		
+		document.getElementById("datepicker3error").innerHTML="";
 		if (document.getElementById("datepicker3").value !="") {
 		  if (re.test(document.getElementById("datepicker3").value) == false) {
 			  document.getElementById("datepicker3error").innerHTML="Invalid Date Format";
 			  return false;
 		  }
 		}
-		document.getElementById("datepicker3error").innerHTML="";
-		var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		
+		var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+		document.getElementById("datepicker1error").innerHTML="";
 		
 		if (document.getElementById("datepicker1").value !="") {
 		  if (re.test(document.getElementById("datepicker1").value) == false) {
