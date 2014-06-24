@@ -897,20 +897,29 @@ document.getElementById("inp_id").value=phone;
 	
 	return false;
 	}
-	var phone = /^[0-9-]{11}$/;
-	 if(document.getElementById("socialsecuritynumber").value.match(phone)==null)
+	document.getElementById("socialsecuritynumbererror").innerHTML="";
+	var txt1=document.getElementById("socialsecuritynumber").value;
+	var txt2=txt1.substring(0,3);
+	if(txt2==000)
+	{
+	document.getElementById("socialsecuritynumbererror").innerHTML="Invalid social security number";
+	return false;
+	}
+	//alert(txt2);
+	//var phone = /^[0-9-]{11}$/;
+	 //if(document.getElementById("socialsecuritynumber").value.match(phone)==null)
+    //{
+    	//document.getElementById("socialsecuritynumbererror").innerHTML="Invalid socialsecuritynumber";
+    	
+        //return false;
+   // }
+    document.getElementById("socialsecuritynumbererror").innerHTML="";
+    if(document.getElementById("socialsecuritynumber").value.length<11)
     {
-    	document.getElementById("socialsecuritynumbererror").innerHTML="Invalid socialsecuritynumber";
+    	document.getElementById("socialsecuritynumbererror").innerHTML="Invalid social  security number";
     	
         return false;
     }
-    //document.getElementById("socialsecuritynumbererror").innerHTML="";
-     //if(document.getElementById("socialsecuritynumber").value.length<11)
-   // {
-    	//document.getElementById("socialsecuritynumbererror").innerHTML="Invalid social  security number";
-    	
-       // return false;
-    //}
     //document.getElementById("socialsecuritynumbererror").innerHTML="";
 	//if(isNaN(document.getElementById("socialsecuritynumber").value))
 	//{
@@ -999,13 +1008,13 @@ document.getElementById("inp_id").value=phone;
 	return false;
 	}
 	}
-	document.getElementById("SpousesNameerror").innerHTML="";
-	if(document.getElementById("SpousesName").value=="")
-	{
-	document.getElementById("SpousesNameerror").innerHTML="Required Field Should not be Empty";
+	//document.getElementById("SpousesNameerror").innerHTML="";
+	//if(document.getElementById("SpousesName").value=="")
+	//{
+	//document.getElementById("SpousesNameerror").innerHTML="Required Field Should not be Empty";
 	
-	return false;
-	}
+	//return false;
+	//}
 	document.getElementById("SpousesEmperror").innerHTML="";
 	if(document.getElementById("SpousesEmp").value=="")
 	{
