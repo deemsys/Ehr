@@ -2757,7 +2757,7 @@ String name="";
 			model.addAttribute("name",name);
 		   model.addAttribute("patientno","0");
 		}
-		if(principal.getName().equals("admin"))
+		/*if(principal.getName().equals("admin"))
 		{
 			
 			String username=(String)session.getAttribute("staffusername");
@@ -2765,7 +2765,7 @@ String name="";
 			model.addAttribute("choice","close");
 			return "screeninglist";
 	
-		}	
+		}	*/
 
 		medicalDAO.deletemedicalrecords(medical_no);
 		
