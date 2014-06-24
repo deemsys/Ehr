@@ -1261,8 +1261,8 @@ public class PatientDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 //System.out.println(dateFormat.format(date));
-	    	 System.out.println("delete from tbl_symptom where patient_id='"+patient_id+"'");
-	    	 statement.executeUpdate("delete from tbl_symptom where patient_id='"+patient_id+"'");
+	    	 System.out.println("delete from tbl_symptom where patient_id='"+patient.getUsername()+"'");
+	    	 statement.executeUpdate("delete from tbl_symptom where patient_id='"+patient.getUsername()+"'");
 	    	String cmd_mess;
 	    	int count=0;
 	    	 for(String symptom :Symptoms)
@@ -1343,13 +1343,18 @@ public class PatientDAO {
 		try{
 			DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
-	    	 String cmd_getpatient_name="select * from patient_details where patient_id='"+patient_id+"'";
-	    	 String Desc="Delete patient ";
+	    	 String cmd_getpatient_name="select username from patient_details where patient_id='"+patient_id+"'";
+	    	
 	    	 resultSet=statement.executeQuery(cmd_getpatient_name);
-				
+	    	 String username1="";
 				if(resultSet.next())
-					Desc=Desc+resultSet.getString(1);
+				{
+					username1=resultSet.getString("username");
+				}
+				System.out.println("username1"+username1);
+				
 				statement.execute("delete from patient_details where patient_id='"+patient_id+"'");
+				statement.execute("delete  from tbl_symptom  where patient_id='"+username1+"'");
 				System.out.println("deleted id="+patient_id);
 				flag=1;
 				

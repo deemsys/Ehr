@@ -2748,7 +2748,8 @@ MedicalRecordsForm medicalrecordForm = new MedicalRecordsForm();
 	@RequestMapping(value="/deletemedicalrecordsdetails", method=RequestMethod.GET)
 	public String deletemedicalrecords(HttpSession session,ModelMap model, Principal principal,@RequestParam("medical_no") String medical_no) {
 	
-		 model.addAttribute("menu", "authorization");
+		System.out.println("medical no"+medical_no);
+		model.addAttribute("menu", "authorization");
 		if(patientDAO.getUsername(principal).size()>0)
 			{			
 
