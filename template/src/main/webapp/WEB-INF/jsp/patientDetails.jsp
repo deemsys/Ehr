@@ -807,15 +807,23 @@ document.getElementById("inp_id").value=phone;
 	return false;
 	}
 	//var phone = /^[0-9-()]{13}$/;
-	var phone = /^\(?([1-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/; 
-	 if(document.getElementById("homephone").value.match(phone)==null)
-    {
-    	document.getElementById("homephoneerror").innerHTML="Invalid phone number format ";
+	//var phone = /^\(?([1-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/; 
+	//if(document.getElementById("homephone").value.match(phone)==null)
+    //{
+    	//document.getElementById("homephoneerror").innerHTML="Invalid phone number format ";
     	
-        return false;
-    }
-   
-	
+        //return false;
+   // }
+  // document.getElementById("homephoneerror").innerHTML="";
+   document.getElementById("homephoneerror").innerHTML="";
+    var txt1=document.getElementById("homephone").value;
+   var txt2=txt1.substring(1,4);
+   var txt3=txt1.substring(5,8);
+   // alert(txt2);
+   // alert(txt3);
+   if(txt2==000 && txt3==000)
+   document.getElementById("homephoneerror").innerHTML="Invalid phone number format";
+  
 	document.getElementById("Emailiderror").innerHTML="";
 	if(document.getElementById("Emailid").value=="")
 	{
@@ -839,14 +847,34 @@ document.getElementById("inp_id").value=phone;
 	
 	return false;
 	}
+	document.getElementById("mobilenumbererror").innerHTML="";
+    var txt1=document.getElementById("mobilenumber").value;
+   var txt2=txt1.substring(1,4);
+   var txt3=txt1.substring(5,8);
+   // alert(txt2);
+   // alert(txt3);
+   if(txt2==000 && txt3==000)
+   document.getElementById("mobilenumbererror").innerHTML="Invalid phone number format";
 	//var phone = /^[0-9-()]{13}$/;
-	var phone = /^\(?([1-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/; 
-	 if(document.getElementById("mobilenumber").value.match(phone)==null)
-    {
-    	document.getElementById("mobilenumbererror").innerHTML="Invalid phone number format";
+	//var phone = /^\(?([1-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/; 
+	 //if(document.getElementById("mobilenumber").value.match(phone)==null)
+   // {
+    //	document.getElementById("mobilenumbererror").innerHTML="Invalid phone number format";
     	
-        return false;
-    }
+       // return false;
+  //  }
+  document.getElementById("workphoneerror").innerHTML="";
+  if(document.getElementById("workphone").value!="")
+  {
+   var txt1=document.getElementById("workphone").value;
+   var txt2=txt1.substring(1,4);
+   var txt3=txt1.substring(5,8);
+   // alert(txt2);
+   // alert(txt3);
+   if(txt2==000 && txt3==000)
+   document.getElementById("workphoneerror").innerHTML="Invalid phone number format";
+  return false;
+  }
 	document.getElementById("datepicker1error").innerHTML="";
 	if(document.getElementById("datepicker1").value=="")
 	{
@@ -992,14 +1020,23 @@ document.getElementById("inp_id").value=phone;
 	
 	return false;
 	}
+	document.getElementById("spouseworkphoneerror").innerHTML="";
+    var txt1=document.getElementById("spouseworkphone").value;
+   var txt2=txt1.substring(1,4);
+   var txt3=txt1.substring(5,8);
+   // alert(txt2);
+   // alert(txt3);
+   if(txt2==000 && txt3==000)
+   document.getElementById("spouseworkphoneerror").innerHTML="Invalid phone number format";
+  
 	//var phone = /^[0-9-()]{13}$/;
-	var phone = /^\(?([1-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/; 
-	 if(document.getElementById("spouseworkphone").value.match(phone)==null)
-    {
-    	document.getElementById("spouseworkphoneerror").innerHTML="Invalid phone number format";
-    	
-        return false;
-    }
+	//var phone = /^\(?([1-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/; 
+	 //if(document.getElementById("spouseworkphone").value.match(phone)==null)
+    //{
+    	//document.getElementById("spouseworkphoneerror").innerHTML="Invalid phone number format";
+    	//
+        //return false;
+   // }
 	document.getElementById("Name_frienderror").innerHTML="";
 	if(document.getElementById("Name_friend").value=="")
 	{
@@ -1014,14 +1051,23 @@ document.getElementById("inp_id").value=phone;
 	
 	return false;
 	}
+	document.getElementById("Phone_frienderror").innerHTML="";
+    var txt1=document.getElementById("Phone_friend").value;
+   var txt2=txt1.substring(1,4);
+   var txt3=txt1.substring(5,8);
+   // alert(txt2);
+   // alert(txt3);
+   if(txt2==000 && txt3==000)
+   document.getElementById("Phone_frienderror").innerHTML="Invalid phone number format";
+  
 	//var phone = /^[0-9-()]{13}$/;
-	var phone = /^\(?([1-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-	 if(document.getElementById("Phone_friend").value.match(phone)==null)
-    {
-    	document.getElementById("Phone_frienderror").innerHTML="Invalid phone number format";
+	//var phone = /^\(?([1-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+	// if(document.getElementById("Phone_friend").value.match(phone)==null)
+    //{
+    	//document.getElementById("Phone_frienderror").innerHTML="Invalid phone number format";
     	
-        return false;
-    }
+       // return false;
+   // }
 	
 	document.getElementById("Chiropratic_careerror").innerHTML=""; 
 	if( ( document.getElementById("yes1").checked == false ) && ( document.getElementById("No1").checked == false ) )
@@ -1160,14 +1206,23 @@ document.getElementById("inp_id").value=phone;
 	
 	return false;
 	}
+	 document.getElementById("phyphoneerror").innerHTML="";
+    var txt1=document.getElementById("phyphone").value;
+   var txt2=txt1.substring(1,4);
+   var txt3=txt1.substring(5,8);
+   // alert(txt2);
+   // alert(txt3);
+   if(txt2==000 && txt3==000)
+   document.getElementById("phyphoneerror").innerHTML="Invalid phone number format";
+  
 	//var phone = /^[0-9-()]{13}$/;
-	var phone = /^\(?([1-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-	 if(document.getElementById("phyphone").value.match(phone)==null)
-    {
-    	document.getElementById("phyphoneerror").innerHTML="Invalid phone number format";
+	//var phone = /^\(?([1-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+	// if(document.getElementById("phyphone").value.match(phone)==null)
+   // {
+    	//document.getElementById("phyphoneerror").innerHTML="Invalid phone number format";
     	
-        return false;
-    }
+        //return false;
+   // }
 	document.getElementById("xrayerror").innerHTML="";
 	if(document.getElementById("xray").value=="")
 	{
@@ -1196,14 +1251,22 @@ document.getElementById("inp_id").value=phone;
 	
 	return false;
 	}
+	 document.getElementById("phonenumbererror").innerHTML="";
+    var txt1=document.getElementById("phonenumber").value;
+   var txt2=txt1.substring(1,4);
+   var txt3=txt1.substring(5,8);
+   // alert(txt2);
+   // alert(txt3);
+   if(txt2==000 && txt3==000)
+   document.getElementById("phonenumbererror").innerHTML="Invalid phone number format";
 	//var phone = /^[0-9-()]{13}$/;
-	var phone = /^\(?([1-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-	 if(document.getElementById("phonenumber").value.match(phone)==null)
-    {
-    	document.getElementById("phonenumbererror").innerHTML="Invalid phone number format";
+	//var phone = /^\(?([1-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+	 //if(document.getElementById("phonenumber").value.match(phone)==null)
+   // {
+    	//document.getElementById("phonenumbererror").innerHTML="Invalid phone number format";
     	
-        return false;
-    }
+        //return false;
+    //}
 	document.getElementById("Fault_accidenterror").innerHTML="";
 	if(document.getElementById("Fault_accident").value=="")
 	{
@@ -1225,14 +1288,22 @@ document.getElementById("inp_id").value=phone;
 	
 	return false;
 	}
+	 document.getElementById("Insurance_phoneerror").innerHTML="";
+    var txt1=document.getElementById("Insurance_phone").value;
+   var txt2=txt1.substring(1,4);
+   var txt3=txt1.substring(5,8);
+   // alert(txt2);
+   // alert(txt3);
+   if(txt2==000 && txt3==000)
+   document.getElementById("Insurance_phoneerror").innerHTML="Invalid phone number format";
 	//var phone = /^[0-9-()]{13}$/;
-	var phone = /^\(?([1-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-	 if(document.getElementById("Insurance_phone").value.match(phone)==null)
-    {
-    	document.getElementById("Insurance_phoneerror").innerHTML="Invalid phone number format";
+	//var phone = /^\(?([1-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+	// if(document.getElementById("Insurance_phone").value.match(phone)==null)
+   // {
+    	//document.getElementById("Insurance_phoneerror").innerHTML="Invalid phone number format";
     	
-        return false;
-    }
+       // return false;
+    //}
 	document.getElementById("Name_autoerror").innerHTML="";
 	if(document.getElementById("Name_auto").value=="")
 	{
@@ -1247,14 +1318,22 @@ document.getElementById("inp_id").value=phone;
 	
 	return false;
 	}
+	document.getElementById("Phone_autoerror").innerHTML="";
+    var txt1=document.getElementById("Phone_auto").value;
+   var txt2=txt1.substring(1,4);
+   var txt3=txt1.substring(5,8);
+   // alert(txt2);
+   // alert(txt3);
+   if(txt2==000 && txt3==000)
+   document.getElementById("Phone_autoerror").innerHTML="Invalid phone number format";
 	//var phone = /^[0-9-()]{13}$/;
-	var phone = /^\(?([1-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-	 if(document.getElementById("Phone_auto").value.match(phone)==null)
-    {
-    	document.getElementById("Phone_autoerror").innerHTML="Invalid phone number format";
+	//var phone = /^\(?([1-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+	// if(document.getElementById("Phone_auto").value.match(phone)==null)
+   // {
+    	//document.getElementById("Phone_autoerror").innerHTML="Invalid phone number format";
     	
-        return false;
-    }
+        //return false;
+   // }
           
      
     
@@ -1279,13 +1358,21 @@ document.getElementById("inp_id").value=phone;
 	
 	return false;
 	}
-	var phone = /^\(?([1-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-	 if(document.getElementById("phhealth").value.match(phone)==null)
-    {
-    	document.getElementById("phhealtherror").innerHTML="Invalid phone number format";
+	 document.getElementById("phhealtherror").innerHTML="";
+    var txt1=document.getElementById("phhealth").value;
+   var txt2=txt1.substring(1,4);
+   var txt3=txt1.substring(5,8);
+   // alert(txt2);
+   // alert(txt3);
+   if(txt2==000 && txt3==000)
+   document.getElementById("phhealtherror").innerHTML="Invalid phone number format";
+	//var phone = /^\(?([1-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+	 //if(document.getElementById("phhealth").value.match(phone)==null)
+    //{
+    	//document.getElementById("phhealtherror").innerHTML="Invalid phone number format";
     	
-        return false;
-    }
+        //return false;
+   // }
          
 	document.getElementById("Prev_accidenterror").innerHTML=""; 
 	if( ( document.getElementById("yes7").checked == false ) && ( document.getElementById("No7").checked == false ) )

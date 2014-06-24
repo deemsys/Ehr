@@ -14,6 +14,7 @@
   line-height:18px;}
    </STYLE>
    </head>
+   
    <script>
 $(function() {
     $( "#slider" ).slider({
@@ -260,24 +261,16 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		}
 		
 		</script>
-		
 		<script>
-		 window.onload = function()
-/* function enableTextbox() */ {
-if (document.getElementById("extre").value == "ExtremitiesX-Rays") {
-document.getElementById("xray").style.visibility = 'visible';
-
-//document.getElementById("xray").disabled = false;
-}
-else  {
-document.getElementById("xray").style.visibility = 'hidden';
-//document.getElementById("xray").disabled = true;
-
-
-}
-}
-</script>
-<body  onload=enableTextbox();>
+		
+		
+		
+		
+		
+		
+		
+		</script>
+<body>
 <br><br>
 <form  method="POST" action="updatesoapnotes" name="update" id="update">
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
@@ -503,17 +496,7 @@ else
 
 				}
 			</script>
-			<script>
-			function chkex()
-			{
-			if(document.getElementById("").value=="")
-			{
-		
-			}
 			
-			}
-			
-			</script>
  <td>
  
  &nbsp &nbsp Diagonosis:<br/><br>&nbsp;<c:forEach items="${diagnosis}" var="diagnosis">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="diagnosis[]" type="text" value="${diagnosis}"><br><br></c:forEach>
@@ -538,7 +521,7 @@ else
 					<option value="2 to 6 T/S X-Rays"><c:if test="${soapnotes.e1e2=='2 to 6 T/S X-Rays'}"><c:out value="selected"/></c:if>2 to 6 T/S X-Rays</option>
 					<option value="2-6 L/S X-Rays"><c:if test="${soapnotes.e1e2=='2-6 L/S X-Rays'}"><c:out value="selected"/></c:if>2-6 L/S X-Rays</option>
 					<option value="2 Chest X-Rays"><c:if test="${soapnotes.e1e2=='2 Chest X-Rays'}"><c:out value="selected"/></c:if>2 Chest X-Rays</option>
-					<option id="extre" value="ExtremitiesX-Rays"  <c:if test="${soapnotes.e1e2=='ExtremitiesX-Rays'}"><c:out value="selected"/></c:if>>ExtremitiesX-Rays</option>
+					<option value="ExtremitiesX-Rays"<c:if test="${soapnotes.e1e2=='ExtremitiesX-Rays'}"><c:out value="selected"/></c:if>>ExtremitiesX-Rays</option>
 					<option value="SCSM 1-2 region" <c:if test="${soapnotes.e1e2=='SCSM 1-2 region'}"></c:if>>SCSM 1-2 region</option>
 					<option value="SCSM 3-4 regions" <c:if test="${soapnotes.e1e2=='SCSM 3-4 regions'}"><c:out value="selected"/></c:if>>SCSM 3-4 regions</option>
 					<option value="5 regions" <c:if test="${soapnotes.e1e2=='5 regions'}"><c:out value="selected"/></c:if>>5 regions</option>
