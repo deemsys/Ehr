@@ -273,6 +273,15 @@ function checkSubmit()
 	document.getElementById("ssnerror").innerHTML="Invalid social security number format";
 	return false;
 	}
+	document.getElementById("ssnerror").innerHTML="";
+	var txt1=document.getElementById("ssn").value;
+	var txt2=txt1.substring(0,3);
+	var txt3=txt1.substring(4,6);
+	if(txt2==000 && txt3==00)
+	{
+	document.getElementById("ssnerror").innerHTML="Invalid social security number format";
+	return false;
+	}
 	document.getElementById("claimerror").innerHTML="";
 	
 	if(document.getElementById("claim").value=="")
