@@ -130,7 +130,7 @@ public class noticeassignmentajax {
 		}		
 	if(noticeassignmentDAO.getusernamenoticeassignment(noticeassignment.getUsername()).size()>0)
 	{
-		//patientname=faxcoverDAO.getusernamefaxcover(faxcover.getUsername()).get(0).getPatientname();
+		patientname=noticeassignmentDAO.getusernamenoticeassignment(noticeassignment.getUsername()).get(0).getPatientname();
 		System.out.println("pname"+patientname);
 		
 		model.addAttribute("edit","1");
@@ -141,11 +141,11 @@ public class noticeassignmentajax {
 		model.addAttribute("menu", "perry");
 		return "editpatientattorney";*/
 	}
-	/*if(patientDAO.getUsername(faxcover.getUsername()).size()>0)
+	if(patientDAO.getUsername(noticeassignment.getUsername()).size()>0)
 	{
-		patientname=patientDAO.getUsername(faxcover.getUsername()).get(0).getName();
+		patientname=patientDAO.getUsername(noticeassignment.getUsername()).get(0).getName();
 	}	
-	*/	
+	
 		/*System.out.println("initialemlimited"+dcfeeslip.getInitialemlimited());
 	
 		
@@ -181,8 +181,13 @@ public class noticeassignmentajax {
 	}
 	
 	@RequestMapping(value = "/noticeassignment", method = RequestMethod.GET)
-	public String noticeassignment(HttpSession session, ModelMap model) {
+	public String noticeassignment(HttpSession session,HttpServletRequest request,ModelMap model) {
 		session.removeAttribute("notice");
+		
+			 String name=request.getParameter("username");
+			
+			 model.addAttribute("name",name);
+		
 		model.addAttribute("menu", "fax");
 		session.removeAttribute("notice");
 			return "noticeassignment";
@@ -226,7 +231,7 @@ NoticeassignmentForm noticeassignmentform = new NoticeassignmentForm();
 		model.addAttribute("noticeassignmentform", noticeassignmentform);
 	model.addAttribute("success", "true");
 	session.removeAttribute("notice");
-	return "faxcover";
+	return "noticeassignment";
 		
 	}
 
