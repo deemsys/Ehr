@@ -4929,6 +4929,7 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 	public String removetreatform(HttpSession session,/*@RequestParam("treat_no") String treat_no,*/ModelMap model, Principal principal) {
 	
 		model.addAttribute("menu", "consent");
+		session.removeAttribute("consent");
 		if(patientDAO.getUsername(principal).size()>0)
 		{			
 			String name="";			
