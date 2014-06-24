@@ -5270,7 +5270,7 @@ String name="";
 	
 	@RequestMapping(value="/deletehardshipagreement", method=RequestMethod.GET)
 	public String removehardship(@RequestParam("agreement_no") String agreement_no,HttpSession session,ModelMap model, Principal principal) {
-	
+		session.removeAttribute("authorization");
 		if(patientDAO.getUsername(principal).size()>0)
 		{
 
