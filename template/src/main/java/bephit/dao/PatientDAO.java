@@ -179,7 +179,7 @@ public class PatientDAO {
 	    	 for(String symptom :Symptoms)
 	    		{		
 	    		
-	    		 cmd_mess="insert into tbl_symptom(symptom,symptom_count,patient_id) values('"+symptom+"','"+count+"','"+patientcurrentid+"')";
+	    		 cmd_mess="insert into tbl_symptom(symptom,symptom_count,patient_id) values('"+symptom+"','"+count+"','"+principal.getName()+"')";
 	    		 count++;
 	    		 statement.execute(cmd_mess);
 	    		 System.out.println(cmd_mess);

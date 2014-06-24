@@ -179,6 +179,41 @@ document.getElementById("afteraccidenterror").innerHTML="";
   
   
   </script>
+  
+  <script>
+		 window.onload = function()
+{
+if (document.getElementById("airbagcheck").checked ==true) {
+document.getElementById("mytext").style.visibility = 'visible';
+
+
+}
+else  {
+document.getElementById("mytext").style.visibility = 'hidden';
+
+
+
+}
+}
+</script>
+
+ <script>
+		 window.onload = function()
+{
+if (document.getElementById("furthercheck").checked ==true) {
+document.getElementById("injury").style.visibility = 'visible';
+
+
+}
+else  {
+document.getElementById("injury").style.visibility = 'hidden';
+
+
+
+}
+}
+</script>
+
    <script type="text/javascript">
        function validate1(event) {
           
@@ -482,6 +517,15 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				  </select><span class="err"><form:errors path="Autoaccident.wereyou"></form:errors></span>
 				 </td>
 				  </tr>
+				  <script>
+				  if (document.getElementById("airbagcheck").checked) {
+				            	
+document.getElementById('mytext').style.display="block";
+
+				            	} else{
+				            	document.getElementById('mytext').style.display="none";
+				            	}
+				           </script> 	
 				  <tr class="row1">
                 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Body position at time of accident</td>
 				 <td valign="top" align="left" class="input_txt">
@@ -536,6 +580,15 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				  </select>
 				  </td>
 				  </tr>
+				  <script>
+				  if (document.getElementById("bracecheck").checked) {
+				            
+				            	document.getElementById('mybrace').style.display="block";
+
+				            	} else {
+				            	document.getElementById('mybrace').style.display="none";
+				            	}
+				  </script>
 				 <!--  <tr class="row2">
                 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>If yes</td>
 				 <td valign="top" align="left" class="input_txt">
@@ -553,6 +606,16 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				  <textarea rows='3' cols='35' id="injury"  style='display:none' placeholder="Please explain" name="injurytext">${autoaccident.injurytext}</textarea><span class="err"><form:errors path="Autoaccident.injurytext"></form:errors></span>
 				  </td>
 				  </tr>
+				  
+				  <script>
+				  if (document.getElementById("furthercheck").checked) {
+				            
+				            	document.getElementById('injury').style.display="block";
+
+				            	} else {
+				            	document.getElementById('injury').style.display="none";
+				            	}
+				  </script>
 				  <!--  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>If yes, please explain</td>
 				  <td valign="top" align="left" class="input_txt">
@@ -654,6 +717,7 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				  <input type="radio" name="body_strike" value="no" id="nochecked" class="input_txt"  onclick="strike();"<c:if test="${autoaccident.body_strike=='no'}"><c:out value="Checked"/></c:if>>No&nbsp;&nbsp;&nbsp;<span class="err"><form:errors path="Autoaccident.body_strike"></form:errors></span>
 				  </td>
 				  </tr>
+				  
 				  </table>
 				<div id="hit" style="display:block;">
 				<!-- <div class="contentbox"> -->
@@ -707,6 +771,15 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				  <input type="text" class="input_txtbx1" id="inp_id" name="otherpart_hit" value="${autoaccident.otherpart_hit }" />
 				  </td>
 				  </tr>
+				  <script>
+				  if (document.getElementById("yeschecked").checked) {
+				            
+				            	document.getElementById('hit').style.display="block";
+
+				            	} else {
+				            	document.getElementById('hit').style.display="none";
+				            	}
+				  </script>
 				  </table>
 				  </div>
 				  </div>
@@ -736,6 +809,15 @@ document.getElementById("afteraccidenterror").innerHTML="";
 			      <input type="text" class="input_txtbx1" id="uncon" name="uncon" onkeypress="return validate(event)"; value="${autoaccident.uncon }"  style='display:none'> (minutes)<span class="err"><form:errors path="Autoaccident.uncon"></form:errors></span></input>
 			      </td>
 				  </tr>
+				  <script>
+				  if (document.getElementById("unconcheck").checked) {
+				            
+				            	document.getElementById('uncon').style.display="block";
+
+				            	} else {
+				            	document.getElementById('uncon').style.display="none";
+				            	}
+				  </script>
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Estimated amount of property damage</td>
 				  <td valign="top" align="left" class="input_txt">$
@@ -1143,6 +1225,8 @@ function Other()
 
 
 </script>
+ 
+				
 <script>
 window.onload = function(){
 

@@ -1228,7 +1228,7 @@ public class MainController {
 	@RequestMapping(value="/deleteautoaccident", method=RequestMethod.GET)
 	public String removeautoaccident(HttpSession session,ModelMap model, Principal principal) {
 	
-
+		session.removeAttribute("Accident");
 		if(patientDAO.getUsername(principal).size()>0)
 			{			
 		   model.addAttribute("patientno","0");
@@ -1253,6 +1253,7 @@ public class MainController {
 		autoaccidentForm.setAutoaccident(autoDAO.getusernameAuto(principal));
         model.addAttribute("autoaccidentForm", autoaccidentForm);
         model.addAttribute("menu", "Accident");
+        session.removeAttribute("Accident");
 		}
 		
 		return "autoaccident";
@@ -1503,7 +1504,7 @@ public class MainController {
 	}
 	@RequestMapping(value="/workaccident", method = RequestMethod.GET)
 	public String workaccident(HttpSession session,ModelMap model,Principal principal) {
-
+		session.removeAttribute("accident");
 		if(patientDAO.getUsername(principal).size()>0)
 			{			
 		   model.addAttribute("patientno","0");
@@ -1523,7 +1524,7 @@ public class MainController {
 	@RequestMapping(value="/workaccident", method = RequestMethod.POST)
 	public String insert_workaccident(Principal principal,HttpSession session,@ModelAttribute("Workaccident")  @Valid Workaccident workaccident,BindingResult result,ModelMap model) {
 		session.setAttribute("work",workaccident);
-		
+		session.removeAttribute("accident");
 		if(result.hasErrors())
 		{
 
@@ -1626,6 +1627,8 @@ public class MainController {
 	@RequestMapping(value="/workAccidentList", method=RequestMethod.GET)
 	public String viewworkaccident(Principal principal,HttpServletRequest request,@RequestParam("patient_no") String patient_no,ModelMap model,Workaccident work)
 	{
+		
+		
 		//ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
 		WorkaccidentForm workaccidentForm = new WorkaccidentForm();
         //participantsDetailsForm.setParticipantsDetails(mainDAO.getParticipants(participants_id));
@@ -1644,9 +1647,9 @@ public class MainController {
 		return "workAccidentList";
 	}
 	@RequestMapping(value="/editworkaccident", method=RequestMethod.GET)
-	public String editWorkAccident(Principal principal,HttpServletRequest request,@RequestParam("patient_no") String patient_no,ModelMap model,Workaccident workAcc)
+	public String editWorkAccident(HttpSession session,Principal principal,HttpServletRequest request,@RequestParam("patient_no") String patient_no,ModelMap model,Workaccident workAcc)
 	{
-		
+		session.removeAttribute("accident");
 
 		if(patientDAO.getUsername(principal).size()>0)
 			{			
@@ -1660,10 +1663,10 @@ public class MainController {
 		return "editworkaccident";
 	}
 	@RequestMapping(value="/editusernameworkaccident", method=RequestMethod.GET)
-	public String editusernameWorkAccident(Principal principal,HttpServletRequest request,@RequestParam("username") String username,ModelMap model,Workaccident workAcc)
+	public String editusernameWorkAccident(HttpSession session,Principal principal,HttpServletRequest request,@RequestParam("username") String username,ModelMap model,Workaccident workAcc)
 	{
 		
-
+		session.removeAttribute("accident");
 		if(patientDAO.getUsername(principal).size()>0)
 			{			
 		   model.addAttribute("patientno","0");
@@ -1676,9 +1679,10 @@ public class MainController {
 	}
 	
 	@RequestMapping(value="/updateworkaccident", method=RequestMethod.POST)
-	public String updateWorkAccident(HttpServletRequest request,@ModelAttribute("workAcc") @Valid Workaccident workAccident,
+	public String updateWorkAccident(HttpSession session,HttpServletRequest request,@ModelAttribute("workAcc") @Valid Workaccident workAccident,
 			BindingResult result,ModelMap model,Principal principal)
 	{
+		session.removeAttribute("accident");
 		if (result.hasErrors())
 		{
 
@@ -1740,8 +1744,9 @@ return "viewworkaccident";
 		workaccidentForm.setWorkaccident(workDAO.getUsernameWorkaccident(principal));
 		model.addAttribute("workaccidentForm",workaccidentForm);
 		model.addAttribute("menu", "Accident");
+		session.removeAttribute("accident");
 		}
-		
+		session.removeAttribute("accident");
 		return "workaccident";
 	}
 	
@@ -2767,7 +2772,7 @@ String name="";
 		
 		 model.addAttribute("success","true");
         model.addAttribute("menu", "authorization");
-        session.removeAttribute("authorization");
+        session.removeAttribute("medical");
         
      
 		
@@ -2785,9 +2790,9 @@ String name="";
 		
 		
 		
-		int status=medicalDAO.deletemedicalrecords(medical_no);
+		medicalDAO.deletemedicalrecords(medical_no);
 		
-		if(status==1)
+		/*if(status==1)
 		{
         model.addAttribute("success","true");
 		//ParticipantsDetailsForm participantsDetailsForm = new ParticipantsDetailsForm();
@@ -2796,11 +2801,14 @@ String name="";
 		medicalrecordsForm.setMedicalDetails(medicalDAO.getMedicalDetails());
         model.addAttribute("MedicalRecordsForm", medicalrecordsForm);
         model.addAttribute("menu", "authorization");
-        session.removeAttribute("authorization");
+        session.removeAttribute("medical");
         
      
-		}
-		
+		}*/
+		 model.addAttribute("success","true");
+	        model.addAttribute("menu", "authorization");
+	        session.removeAttribute("medical");
+	        
 		return "medicalrecords";
 	}
 	
@@ -3573,7 +3581,7 @@ ScreeningAuthzForm screeningauthzForm = new ScreeningAuthzForm();
 	}
 	@RequestMapping(value="/deletehippaprivacydetails", method=RequestMethod.GET)
 	public String removehippa(HttpSession session,ModelMap model, Principal principal,@RequestParam("hippa_no") String hippa_no) {	
-		session.removeAttribute("hippa");
+		
 		if(patientDAO.getUsername(principal).size()>0)
 		{	
 			
@@ -3598,18 +3606,21 @@ String name="";
 
 	       model.addAttribute("success","true");
 	       model.addAttribute("menu", "authorization");
-	       session.removeAttribute("authorization");
+	       session.removeAttribute("hippa");
 	        return "Hippaprivacy";
 		
 	}
 	@RequestMapping(value="/deletehippaprivacy", method=RequestMethod.GET)
-	public String removehippa(@RequestParam("hippa_no") String hippa_no,ModelMap model, Principal principal) {	
+	public String removehippa(@RequestParam("hippa_no") String hippa_no,ModelMap model,HttpSession session, Principal principal) {	
 		if(patientDAO.getUsername(principal).size()>0)
 		{			
-	   model.addAttribute("patientno","0");
+			String name="";			
+			name=patientDAO.getUsername(principal).get(0).getName();
+			model.addAttribute("name",name);
+		   model.addAttribute("patientno","0");
 	}
 
-		int status=hippaDAO.deletehippaprivacy(hippa_no);
+		hippaDAO.deletehippaprivacy(hippa_no);
 		
 HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
         
@@ -3618,7 +3629,7 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
         model.addAttribute("HippaPrivacyForm", hippaprivacyform);
 	       model.addAttribute("success","true");
 	       model.addAttribute("menu", "authorization");
-	       
+	       session.removeAttribute("hippa");
 	       //session.removeAttribute("authorization");
 	        return "Hippaprivacy";
 		
@@ -5234,10 +5245,13 @@ String name="";
 
 	@RequestMapping(value="/deletehardship", method=RequestMethod.GET)
 	public String removehardship(@RequestParam("agreement_no") String agreement_no,ModelMap model, Principal principal,HttpSession session) {
-	
+		session.removeAttribute("hard");
 		if(patientDAO.getUsername(principal).size()>0)
 		{			
-	   model.addAttribute("patientno","0");
+			String name="";			
+			name=patientDAO.getUsername(principal).get(0).getName();
+			model.addAttribute("name",name);
+		   model.addAttribute("patientno","0");
 	}
 		int status=hardDAO.deletehardship(agreement_no);
 		
@@ -5249,8 +5263,8 @@ String name="";
     	hardshipagreementForm.setHardshipagreement(hardDAO.getHardshipagreement());
 		model.addAttribute("hardshipagreementform",hardshipagreementForm);		}
 		 model.addAttribute("menu", "authorization");
-		 session.removeAttribute("authorization");
-		return "hardshiplist";
+		 session.removeAttribute("hard");
+		return "hardshipagreement";
 	}
 	
 	@RequestMapping(value="/deletehardshipagreement", method=RequestMethod.GET)

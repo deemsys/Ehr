@@ -513,14 +513,7 @@ var $sid = xx+1;
 		
 		return false;
 		}
-	document.getElementById("datepickererror").innerHTML="";
-	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
-	if(document.getElementById("datepicker").value.match(datechk)==null)
-    {
-    	document.getElementById("datepickererror").innerHTML="Invalid Date Format";
-    	
-        return false;
-    }
+	
 	document.getElementById("streetaddresserror").innerHTML="";
 	if(document.getElementById("streetaddress").value=="")
 	{
@@ -549,13 +542,6 @@ var $sid = xx+1;
 	document.getElementById("zipcode1error").innerHTML="Required Field Should not be Empty";
 	
 	return false;
-	}
-	document.getElementById("zipcode1error").innerHTML="";
-	if(document.getElementById("zipcode1").value.length<5)
-	{
-	document.getElementById("zipcode1error").innerHTML="Invalid zipcode format";
-	return false;
-	
 	}
 	
 	document.getElementById("zipcode1error").innerHTML="";
@@ -632,14 +618,6 @@ var $sid = xx+1;
 	
 	return false;
 	}
-	document.getElementById("datepicker1error").innerHTML="";
-	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
-	if(document.getElementById("datepicker1").value.match(datechk)==null)
-    {
-    	document.getElementById("datepicker1error").innerHTML="Invalid Date Format";
-    	
-        return false;
-    }
 	document.getElementById("socialsecuritynumbererror").innerHTML="";
 	if(document.getElementById("socialsecuritynumber").value=="")
 	{
@@ -703,15 +681,7 @@ var $sid = xx+1;
 	document.getElementById("zipcode2error").innerHTML="Enter Only Numbers";
 	return false;
 	}
-	document.getElementById("zipcode2error").innerHTML="";
-	if(document.getElementById("zipcode2").value!="")
-	{
-	if(document.getElementById("zipcode2").value.length<5)
-	{
-	document.getElementById("zipcode2error").innerHTML="Invalid zipcode format";
-	return false;
-	}
-	}
+	
 	/*  document.getElementById("zipcode3error").innerHTML="";
 	if(document.getElementById("zipcode3").value=="")
 	{
@@ -725,15 +695,6 @@ var $sid = xx+1;
 	{
 	document.getElementById("zipcode3error").innerHTML="Enter Only Numbers";
 	return false;
-	}
-	document.getElementById("zipcode3error").innerHTML="";
-		if(document.getElementById("zipcode3").value!="")
-		{
-	if(document.getElementById("zipcode3").value.length<5)
-	{
-	document.getElementById("zipcode3error").innerHTML="Invalid zipcode format";
-	return false;
-	}
 	}
 	document.getElementById("SpousesNameerror").innerHTML="";
 	if(document.getElementById("SpousesName").value=="")
@@ -862,14 +823,6 @@ var $sid = xx+1;
 	
 	return false;
 	}
-	document.getElementById("datepicker2error").innerHTML="";
-	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
-	if(document.getElementById("datepicker2").value.match(datechk)==null)
-    {
-    	document.getElementById("datepicker2error").innerHTML="Invalid Date Format";
-    	
-        return false;
-    }
 	document.getElementById("Accident_Reportederror").innerHTML=""; 
 	if( ( document.getElementById("yes2").checked == false ) && ( document.getElementById("No2").checked == false ) )
 
@@ -886,14 +839,6 @@ var $sid = xx+1;
 	
 	return false;
 	}
-	document.getElementById("datepicker5error").innerHTML="";
-	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
-	if(document.getElementById("datepicker5").value.match(datechk)==null)
-    {
-    	document.getElementById("datepicker5error").innerHTML="Invalid Date Format";
-    	
-        return false;
-    }
 	document.getElementById("where1error").innerHTML="";
 	if(document.getElementById("where1").value=="")
 	{
@@ -1103,14 +1048,8 @@ var $sid = xx+1;
 	
 	return false;
 	}
-	document.getElementById("datepicker6error").innerHTML="";
-	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
-	if(document.getElementById("datepicker6").value.match(datechk)==null)
-    {
-    	document.getElementById("datepicker6error").innerHTML="Invalid Date Format";
-    	
-        return false;
-    }
+		
+	
 	document.getElementById("Illnesserror").innerHTML="";
 	if(document.getElementById("Illness").value=="")
 	{
@@ -1125,14 +1064,6 @@ var $sid = xx+1;
 	
 	return false;
 	}
-	document.getElementById("datepicker3error").innerHTML="";
-	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
-	if(document.getElementById("datepicker3").value.match(datechk)==null)
-    {
-    	document.getElementById("datepicker3error").innerHTML="Invalid Date Format";
-    	
-        return false;
-    }
 	document.getElementById("Medicationserror").innerHTML="";
 	if(document.getElementById("Medications").value=="")
 	{
@@ -1510,8 +1441,8 @@ document.getElementById("inp_id").value=phone;
 				           			 <tr class="row1">
 							 			<td valign="middle" style="padding-right:150px;" align="left" class="input_txt"><span class="err"></span>Student:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				            		    <td  valign="top" class="input_txt">
-				                  			<input type="radio" name="student" value="FullTime" class="input_txt" <c:if test="${patientDetails.student=='FullTime'}"><c:out value="checked=checked"/></c:if>>Full Time&nbsp;&nbsp;&nbsp;
-				                  			<input type="radio" name="student" value="PartTime" class="input_txt" <c:if test="${patientDetails.student=='PartTime'}"><c:out value="checked=checked"/></c:if>>Part Time
+				                  			<input type="radio" name="student" value="FullTime" id="fulltime" class="input_txt" <c:if test="${patientDetails.student=='FullTime'}"><c:out value="checked=checked"/></c:if>>Full Time&nbsp;&nbsp;&nbsp;
+				                  			<input type="radio" name="student" value="PartTime" id="parttime" class="input_txt" <c:if test="${patientDetails.student=='PartTime'}"><c:out value="checked=checked"/></c:if>>Part Time
 				             			</td>
 				           			   </tr>
 							
@@ -1524,15 +1455,15 @@ document.getElementById("inp_id").value=phone;
 								
 					            <tr class="row1">
 					                  <td valign="middle" style=" padding-right: 160px;" align="left" class="input_txt"><span class="err"></span>Employer Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp</td>
-					                  <td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.employerName}" name="employerName" /></br><span class="err"><form:errors path="PatientDetails.EmployerName"></form:errors></span></td>
+					                  <td class="input_txt"><input type="text" class="input_txtbx1" id="employerName"   value="${patientDetails.employerName}" name="employerName" /></br><span class="err"><form:errors path="PatientDetails.EmployerName"></form:errors></span></td>
 								</tr> 
 				   			    <tr class="row2">
                         			<td><span class="err"></span>Occupation:</td>
-                        			<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.occupation}" name="occupation" /></br><span class="err"><form:errors path="PatientDetails.Occupation"></form:errors></span></td>
+                        			<td class="input_txt"><input type="text" class="input_txtbx1" id="occupation"   value="${patientDetails.occupation}" name="occupation" /></br><span class="err"><form:errors path="PatientDetails.Occupation"></form:errors></span></td>
 								</tr>                        
 						 		<tr class="row1">
                         			<td><span class="err"></span>Employer Address:</td>
-                        			<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.employerAddress }" name="employerAddress" /></br><span class="err"><form:errors path="PatientDetails.EmployerAddress"></form:errors></span></td>
+                        			<td class="input_txt"><input type="text" class="input_txtbx1" id="employerAddress"   value="${patientDetails.employerAddress }" name="employerAddress" /></br><span class="err"><form:errors path="PatientDetails.EmployerAddress"></form:errors></span></td>
 								</tr>                        
 						 		<tr class="row2">
                         			<td><span class="err"></span>WorkPhone:</td>
@@ -1552,11 +1483,11 @@ document.getElementById("inp_id").value=phone;
 								                      
 			    				<tr class="row1">
                         			<td><span class="err"></span>EmployerCity:</td>
-                        			<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.employerCity}" name="employerCity" /></br><span class="err"><form:errors path="PatientDetails.EmployerCity"></form:errors></span></td>
+                        			<td class="input_txt"><input type="text" class="input_txtbx1" id="employerCity"   value="${patientDetails.employerCity}" name="employerCity" /></br><span class="err"><form:errors path="PatientDetails.EmployerCity"></form:errors></span></td>
 								</tr>                        
 						 		<tr class="row2">
                         			<td><span class="err"></span>State:</td>
-                        			<td class="input_txt"><input type="text" class="input_txtbx1" id="inp_id"   value="${patientDetails.estate}" name="estate" /></br><span class="err"><form:errors path="PatientDetails.Estate"></form:errors></span></td>
+                        			<td class="input_txt"><input type="text" class="input_txtbx1" id="estate"   value="${patientDetails.estate}" name="estate" /></br><span class="err"><form:errors path="PatientDetails.Estate"></form:errors></span></td>
 								</tr>
 							    <tr class="row1">
                         			<td><span class="err"></span>ZipCode:</td>
@@ -1703,6 +1634,20 @@ document.getElementById("inp_id").value=phone;
 				                  	<td width="700"></td>
 				        </tr> 
 				        
+				         <script>
+				            	if (document.getElementById("studentchecked").checked) {
+				            //alert("student value"+document.getElementById("studentchecked").value);
+				            	document.getElementById('studentno1').style.display="block";
+document.getElementById('employee').style.display="none";
+				            	}
+				            	if (document.getElementById("employeechecked").checked) {
+				            	//alert("employee value"+document.getElementById("employeechecked").value);
+				            	//alert("employee.............................");
+document.getElementById('studentno1').style.display="none";
+document.getElementById('employee').style.display="block";
+
+				            	}
+				            	</script>
 				         <script type="text/javascript">
 function checkAjaxPost() {  
 	var val=document.getElementById("type_of_accident").value;
@@ -2266,9 +2211,48 @@ function Hazardous()
 }	
 
 </script>
+<!-- <script language="JavaScript">
+ function onloading()
+ {
+ alert("yes");
+ alert("student value"+document.getElementById("studentchecked").value);
+ 
+ alert("student");
+//if (document.getElementsById("employeechecked").value=="Employee" && document.getElementsById("employeechecked").value=="true") {
+if (document.getElementById("employeechecked").value){
+ alert("employee");
+document.getElementById("employerName").style.visibility = 'visible';
+document.getElementById("occupation").style.visibility = 'visible';
+document.getElementById("employerAddress").style.visibility = 'visible';
+document.getElementById("workphone").style.visibility = 'visible';
+document.getElementById("employerCity").style.visibility = 'visible';
+document.getElementById("estate").style.visibility = 'visible';
+document.getElementById("zipcode3").style.visibility = 'visible';
+document.getElementsById("fulltime").style.visibility = 'hidden';
+document.getElementsById("parttime").style.visibility = 'hidden';
+}
+/* else if (document.getElementsById("studentchecked").value=="Student" && document.getElementsById("studentchecked").value=="true"){ */
+if (document.getElementById("studentchecked").value){
+alert("stu");
+document.getElementById("employerName").style.visibility = 'hidden';
+document.getElementById("occupation").style.visibility = 'hidden';
+document.getElementById("employerAddress").style.visibility = 'hidden';
+document.getElementById("workphone").style.visibility = 'hidden';
+document.getElementById("employerCity").style.visibility = 'hidden';
+document.getElementById("estate").style.visibility = 'hidden';
+document.getElementById("zipcode3").style.visibility = 'hidden';
+document.getElementById("employerName").style.visibility = 'hidden';
+document.getElementById("xray").style.visibility = 'hidden';
+document.getElementsById("parttime").style.visibility = 'visible';
+document.getElementsById("fulltime").style.visibility = 'visible';
+}
+
+}
+</script>  -->
 <script>
 
 window.onload = function(){
+
 	Checklight();Other();radiocheck();Hazardous();
 }
 
