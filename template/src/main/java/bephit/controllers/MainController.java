@@ -2757,7 +2757,7 @@ String name="";
 			model.addAttribute("name",name);
 		   model.addAttribute("patientno","0");
 		}
-		/*if(principal.getName().equals("admin"))
+		if(principal.getName().equals("admin"))
 		{
 			
 			String username=(String)session.getAttribute("staffusername");
@@ -2765,7 +2765,7 @@ String name="";
 			model.addAttribute("choice","close");
 			return "screeninglist";
 	
-		}	*/
+		}	
 
 		medicalDAO.deletemedicalrecords(medical_no);
 		
@@ -4165,7 +4165,7 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 		//RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
       	PatientDetailsForm patientdetailsform = new PatientDetailsForm();
 		List<String> symptom=new ArrayList<String>();
-		symptom=patientDAO.getsymptomdetails(patient_id);
+		symptom=patientDAO.getsymptomdetails(principal.getName());
 		System.out.println(symptom);
 		model.addAttribute("symptom",symptom);
 		
@@ -4194,10 +4194,11 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 		patientdetailsform.setPatientDetails(patientDAO.getUsername(username));
         model.addAttribute("patientDetailsForm", patientdetailsform);
       
-        String patient_id=patientdetailsform.getPatientDetails().get(0).getPatient_id();
+        String username1=patientdetailsform.getPatientDetails().get(0).getUsername();
+        System.out.println("username1....."+username1);
         model.addAttribute("menu", "checklist");
         List<String> symptom=new ArrayList<String>();
-		symptom=patientDAO.getsymptomdetails(patient_id);
+		symptom=patientDAO.getsymptomdetails(username1);
 		System.out.println(symptom);
 		model.addAttribute("symptom",symptom);
 		return "editpatientdetails";
@@ -4929,7 +4930,6 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 	public String removetreatform(HttpSession session,/*@RequestParam("treat_no") String treat_no,*/ModelMap model, Principal principal) {
 	
 		model.addAttribute("menu", "consent");
-		session.removeAttribute("consent");
 		if(patientDAO.getUsername(principal).size()>0)
 		{			
 			String name="";			
@@ -5270,7 +5270,7 @@ String name="";
 	
 	@RequestMapping(value="/deletehardshipagreement", method=RequestMethod.GET)
 	public String removehardship(@RequestParam("agreement_no") String agreement_no,HttpSession session,ModelMap model, Principal principal) {
-		session.removeAttribute("authorization");
+	
 		if(patientDAO.getUsername(principal).size()>0)
 		{
 

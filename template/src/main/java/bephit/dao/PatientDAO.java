@@ -1085,7 +1085,7 @@ public class PatientDAO {
 		
 			
 	    }catch(Exception e){
-	    	System.out.println(e.toString());
+	    	System.out.println("error"+e.toString());
 	    	releaseResultSet(resultSet);
 	    	releaseStatement(statement);
 	    	releaseConnection(con);
@@ -1268,7 +1268,7 @@ public class PatientDAO {
 	    	 for(String symptom :Symptoms)
 	    	 	    		{	
 	    	 	    		
-	    	 	    		 cmd_mess="insert into tbl_symptom(symptom,symptom_count,patient_id) values('"+symptom+"','"+count+"','"+patient_id+"')";
+	    	 	    		 cmd_mess="insert into tbl_symptom(symptom,symptom_count,patient_id) values('"+symptom+"','"+count+"','"+patient.getUsername()+"')";
 	    	 	    		 count++;
 	    	 	    		 statement.execute(cmd_mess);
 	    	 	    		 System.out.println(cmd_mess);
