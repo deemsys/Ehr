@@ -629,7 +629,7 @@ document.getElementById("ssn").value=phone;
        		 </c:otherwise>
        		 </c:choose>
        		   <table><tr> <td><input type="submit" class="submit_btn" value="Save" id="saveid" onclick="return checkSubmit('this');"></td>
-               <td><a href="viewlettertopatients"style="color:white" id="cancelid" class="submit_btn">Cancel</a></td>
+               <td><a href="viewallpatientdetails"style="color:white" id="cancelid" class="submit_btn">Cancel</a></td>
               </tr></table>
               </div>
         	  </div>
