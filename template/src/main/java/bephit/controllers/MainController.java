@@ -2767,7 +2767,7 @@ String name="";
 	
 		}	
 
-		medicalDAO.deletemedicalrecordsdetails(medical_no);
+		medicalDAO.deletemedicalrecords(medical_no);
 		
 		
 		 model.addAttribute("success","true");

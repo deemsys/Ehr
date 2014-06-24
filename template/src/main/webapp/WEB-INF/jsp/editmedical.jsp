@@ -89,7 +89,7 @@
 				  <td valign="top" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				
 				<td valign="top" align="center"><br><input type="submit" class="submit_btn" value="Update" onclick="return checkSubmit('this');">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>			
-				<td> <a href="deletemedicalrecords?medical_no" class="submit_btn" style="text-decoration: none;color:white" onclick="return confirmation() ">Delete</a></td>
+				<td> <a href="deletemedicalrecordsdetails?medical_no" class="submit_btn" style="text-decoration: none;color:white" onclick="return confirmation() ">Delete</a></td>
 				  </tr>
 				                  	</div>
 				                  	
