@@ -41,6 +41,35 @@ $(function() {
     $( "#tabs" ).tabs();
   });
   </script>
+   <script>
+  function checksub()
+  {
+  
+  document.getElementById("pnameerr").innerHTML="";
+  if(document.getElementById("pname").value=="")
+  {
+  
+  document.getElementById("pnameerr").innerHTML="Required field should not be empty";
+  return false;
+  }
+  document.getElementById("dateerr").innerHTML="";
+  if(document.getElementById("datepicker").value=="")
+  {
+  
+  document.getElementById("dateerr").innerHTML="Required field should not be empty";
+  return false;
+  }
+  document.getElementById("dateerr").innerHTML="";
+		var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+	if(document.getElementById("datepicker").value.match(datechk)==null)
+    {
+    	document.getElementById("dateerr").innerHTML="Invalid Date Format";
+    	
+        return false;
+    }	
+  }
+  
+  </script>
 </head>
  <body>
  <br><br>
@@ -58,9 +87,9 @@ $(function() {
           <c:set value="${dutiesduressForm.dutiesunderduressdetails[0]}" var="dutiesunderduressdetails"/> 
  <tr class="row1">
  <input type="hidden" name="dutiesno" id="inp_id" value="${dutiesunderduressdetails.dutiesno}">
-<td><h2><span class="err">*</span>Patient Name:</h2></td><td><input type="text"  name="pname" value="${dutiesunderduressdetails.pname }"/><span class="err"><form:errors path="Dutiesunderduress.pname"></form:errors></span></td>
+<td><h2><span class="err">*</span>Patient Name:</h2></td><td><input type="text"  name="pname" id="pname" value="${dutiesunderduressdetails.pname }"/><span class="err" id="pnameerr"><form:errors path="Dutiesunderduress.pname"></form:errors></span></td>
 <td width="600">
-<td><h2><span class="err">*</span>Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${dutiesunderduressdetails.date }"/><span class="err"><form:errors path="Dutiesunderduress.date"></form:errors></span></td>
+<td><h2><span class="err">*</span>Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${dutiesunderduressdetails.date }"/><span class="err" id="dateerr"><form:errors path="Dutiesunderduress.date"></form:errors></span></td>
 </tr>
 </table>
 <br/>
@@ -286,7 +315,7 @@ function confirmation() {
 
  <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="Update"></td>
+<td><input type="submit" class="submit_btn" value="Update" onclick="return checksub();"></td>
 
 <td><a href="deleteduties?dutiesno=${dutiesunderduressdetails.dutiesno}" style="color:white" class="submit_btn" onclick="return confirmation() ">Delete</a></td>
 
