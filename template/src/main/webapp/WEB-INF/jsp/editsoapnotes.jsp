@@ -262,14 +262,58 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		
 		</script>
 		<script>
+		 window.onload = function()
+/* function enableTextbox() */ {
+if (document.getElementById("e1e2").value == "ExtremitiesX-Rays") {
+document.getElementById("xray").style.visibility = 'visible';
+
+//document.getElementById("xray").disabled = false;
+}
+else  {
+document.getElementById("xray").style.visibility = 'hidden';
+//document.getElementById("xray").disabled = true;
+
+
+}
+}
+</script>
+
+		<script>
+		 window.onload = function()
+/* function enableTextbox() */ {
+if (document.getElementById("e1e2").value == "ExtremitiesX-Rays") {
+document.getElementById("xray").style.visibility = 'visible';
+
+//document.getElementById("xray").disabled = false;
+}
+else  {
+document.getElementById("xray").style.visibility = 'hidden';
+//document.getElementById("xray").disabled = true;
+
+
+}
+if(document.getElementById("rightarmpain").checked)
+		{
+		document.getElementById("rightproxi").style.display='block';
+		
+		}
+		else
+		{
+		document.getElementById("rightproxi").style.display='none';
+		}
 		
 		
+		if(document.getElementById("leftarmpain").checked)
+		{
+		document.getElementById("leftproxi").style.display='block';
 		
-		
-		
-		
-		
-		</script>
+		}
+		else
+		{
+		document.getElementById("leftproxi").style.display='none';
+		}
+}
+</script>
 <body>
 <br><br>
 <form  method="POST" action="updatesoapnotes" name="update" id="update">
@@ -308,6 +352,18 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 <td><input type="checkbox" name="leftshoulderpain" value="Left Shoulder Pain" <c:if test="${soapnotes.leftshoulderpain=='Left Shoulder Pain'}"><c:out value="checked=checked"/></c:if>>Left Shoulder Pain</td>
 <td><input type="checkbox" name="chestpain" value="Chest Pain" <c:if test="${soapnotes.chestpain=='Chest Pain'}"><c:out value="checked=checked"/></c:if>>Chest Pain</td>
 <td><input type="checkbox" name="rightarmpain" id="rightarmpain" onclick="rightcheck()" value="Right Arm Pain" <c:if test="${soapnotes.rightarmpain=='Right Arm Pain'}"><c:out value="checked=checked"/></c:if>>Right Arm Pain
+<script>
+if(document.getElementById("rightarmpain").checked)
+		{
+		document.getElementById("rightproxi").style.display='block';
+		
+		}
+		else
+		{
+		document.getElementById("rightproxi").style.display='none';
+		}
+</script>
+
 <script>
 function rightcheck()
 {
