@@ -1445,6 +1445,20 @@ document.getElementById("inp_id").value=phone;
 				                  			<input type="radio" name="student" value="PartTime" id="parttime" class="input_txt" <c:if test="${patientDetails.student=='PartTime'}"><c:out value="checked=checked"/></c:if>>Part Time
 				             			</td>
 				           			   </tr>
+							 <script>
+				            	if (document.getElementById("studentchecked").checked) {
+				            //alert("student value"+document.getElementById("studentchecked").value);
+				            	document.getElementById('studentno1').style.display="block";
+document.getElementById('employee').style.display="none";
+				            	}
+				            	if (document.getElementById("employeechecked").checked) {
+				            	//alert("employee value"+document.getElementById("employeechecked").value);
+				            	//alert("employee.............................");
+document.getElementById('studentno1').style.display="none";
+document.getElementById('employee').style.display="block";
+
+				            	}
+				            	</script>
 							
 							</table>
 							</div>
