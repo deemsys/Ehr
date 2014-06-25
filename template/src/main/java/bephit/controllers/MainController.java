@@ -4178,6 +4178,7 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
         model.addAttribute("patientDetailsForm", patientdetailsform);
         
         model.addAttribute("menu", "patientInfo");
+        model.addAttribute("cancel","0");
 		return "editpatientdetails";
 	}
 
@@ -4202,6 +4203,7 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 		symptom=patientDAO.getsymptomdetails(username1);
 		System.out.println(symptom);
 		model.addAttribute("symptom",symptom);
+		model.addAttribute("cancel","1");
 		return "editpatientdetails";
 	}
 

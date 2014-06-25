@@ -1552,9 +1552,18 @@ document.getElementById('employee').style.display="block";
 				  
                      <td><br><input type="button" id="btnNext" class="submit_btn" value="Next"/><br></td>
                      <td>&nbsp;&nbsp;</td>
-                     <td><input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='viewpatient'"></td>
+                     <td>
+                     <script>
+				        function close12()
+				        {
+				        	window.close();
+				        } </script> 
+                     <c:if test="${cancel=='1'}">
+                     <input type="button" class="submit_btn" value="Cancel" onclick="close12()">       </c:if>
+                     <c:if test="${cancel=='0'}">
+                     <input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='viewpatient'"></c:if></td>
                   </tr>
-				             
+				      
 				  </table>
 				  </td>
 				  </tr>
@@ -2047,7 +2056,12 @@ function checkAjaxPost() {
              		 <td><input type="submit" class="submit_btn1" value="Update" onclick="return checkSubmit('this');"></td>
 				
                   <td>&nbsp;&nbsp;</td>
-                  <td><input type="reset" class="submit_btn" value="Cancel" onclick="window.location.href='viewpatient'"></td>
+                  <td>
+                <c:if test="${cancel=='1'}">
+                     <input type="button" class="submit_btn" value="Cancel" onclick="close12()">       </c:if>
+                     <c:if test="${cancel=='0'}">
+                     <input type="button" class="submit_btn" value="Cancel" onclick="window.location.href='viewpatient'"></c:if>
+                  </td>
 				 
 			</tr>               	                               
 						
