@@ -513,7 +513,14 @@ var $sid = xx+1;
 		
 		return false;
 		}
-	
+	document.getElementById("datepickererror").innerHTML="";
+	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+	if(document.getElementById("datepicker").value.match(datechk)==null)
+    {
+    	document.getElementById("datepickererror").innerHTML="Invalid Date Format";
+    	
+        return false;
+    }
 	document.getElementById("streetaddresserror").innerHTML="";
 	if(document.getElementById("streetaddress").value=="")
 	{
@@ -542,6 +549,13 @@ var $sid = xx+1;
 	document.getElementById("zipcode1error").innerHTML="Required Field Should not be Empty";
 	
 	return false;
+	}
+	document.getElementById("zipcode1error").innerHTML="";
+	if(document.getElementById("zipcode1").value.length<5)
+	{
+	document.getElementById("zipcode1error").innerHTML="Invalid zipcode format";
+	return false;
+	
 	}
 	
 	document.getElementById("zipcode1error").innerHTML="";
@@ -618,6 +632,7 @@ var $sid = xx+1;
 	
 	return false;
 	}
+	
 	document.getElementById("socialsecuritynumbererror").innerHTML="";
 	if(document.getElementById("socialsecuritynumber").value=="")
 	{
@@ -625,13 +640,13 @@ var $sid = xx+1;
 	
 	return false;
 	}
-	var phone = /^[0-9-]{11}$/;
-	 if(document.getElementById("socialsecuritynumber").value.match(phone)==null)
-    {
-    	document.getElementById("socialsecuritynumbererror").innerHTML="Enter correct socialsecuritynumber";
+	//var phone = /^[0-9-]{11}$/;
+	 //if(document.getElementById("socialsecuritynumber").value.match(phone)==null)
+   // {
+    	//document.getElementById("socialsecuritynumbererror").innerHTML="Enter correct socialsecuritynumber";
     	
-        return false;
-    }
+        //return false;
+   // }
 	 document.getElementById("Gendererror").innerHTML=""; 
 	if( ( document.getElementById("Male").checked == false ) && ( document.getElementById("Female").checked == false ) && ( document.getElementById("Transgender").checked == false ))
 
@@ -650,77 +665,40 @@ var $sid = xx+1;
 	 		return false;
 	 		
 	 }
-	document.getElementById("Areyouerror").innerHTML=""; 
-	if( ( document.getElementById("Student").checked == false ) && ( document.getElementById("Employee").checked == false ) )
-
-	 {
-	 document.getElementById("Areyouerror").innerHTML="Required Field Should not be Empty";
-	 		
-	 		return false;
-	 		
-	 }
-	/* document.getElementById("workphoneerror").innerHTML="";
-	if(document.getElementById("workphone").value=="")
+	document.getElementById("workphoneerror").innerHTML="";
+	if(document.getElementById("workphone").value!="")
 	{
-	document.getElementById("workphoneerror").innerHTML="Required Field Should not be Empty";
 	
-	return false;
-	} */
-	
-   /*  document.getElementById("zipcode2error").innerHTML="";
-	if(document.getElementById("zipcode2").value=="")
-	{
-	document.getElementById("zipcode2error").innerHTML="Required Field Should not be Empty";
-	
-	return false;
-	} */
-	
-	document.getElementById("zipcode2error").innerHTML="";
-	if(isNaN(document.getElementById("zipcode2").value))
-	{
-	document.getElementById("zipcode2error").innerHTML="Enter Only Numbers";
-	return false;
-	}
-	
-	/*  document.getElementById("zipcode3error").innerHTML="";
-	if(document.getElementById("zipcode3").value=="")
-	{
-	document.getElementById("zipcode3error").innerHTML="Required Field Should not be Empty";
-	
-	return false;
-	} */
-	
-	document.getElementById("zipcode3error").innerHTML="";
-	if(isNaN(document.getElementById("zipcode3").value))
-	{
-	document.getElementById("zipcode3error").innerHTML="Enter Only Numbers";
-	return false;
-	}
-	document.getElementById("SpousesNameerror").innerHTML="";
-	if(document.getElementById("SpousesName").value=="")
-	{
-	document.getElementById("SpousesNameerror").innerHTML="Required Field Should not be Empty";
-	
-	return false;
-	}
-	 document.getElementById("workphoneerror").innerHTML="";
-  if(document.getElementById("workphone").value!="")
-  {
-   var txt1=document.getElementById("workphone").value;
+	//document.getElementById("homephoneerror").innerHTML="";
+    var txt1=document.getElementById("workphone").value;
    var txt2=txt1.substring(1,4);
    var txt3=txt1.substring(5,8);
    // alert(txt2);
    // alert(txt3);
-   if(txt2==000 && txt3==000)
+   if(txt2==000 && txt3==000){
    document.getElementById("workphoneerror").innerHTML="Invalid phone number format";
-  return false;
-  }
-	document.getElementById("SpousesEmperror").innerHTML="";
-	if(document.getElementById("SpousesEmp").value=="")
+   return false;
+   }
+	}
+	document.getElementById("zipcode2error").innerHTML="";
+	if(document.getElementById("zipcode2").value!=""){
+	if(document.getElementById("zipcode2").value.length<5)
 	{
-	document.getElementById("SpousesEmperror").innerHTML="Required Field Should not be Empty";
 	
+	document.getElementById("zipcode2error").innerHTML="Invalid zipcode format";
 	return false;
+	}
+	
+	}
+	document.getElementById("zipcode3error").innerHTML="";
+	if(document.getElementById("zipcode3").value!=""){
+	if(document.getElementById("zipcode3").value.length<5)
+	{
+	
+	document.getElementById("zipcode3error").innerHTML="Invalid zipcode format";
+	return false;
+	}
+	
 	}
 	document.getElementById("spouseworkphoneerror").innerHTML="";
 	if(document.getElementById("spouseworkphone").value=="")
@@ -735,20 +713,14 @@ var $sid = xx+1;
    var txt3=txt1.substring(5,8);
    // alert(txt2);
    // alert(txt3);
-   if(txt2==000 && txt3==000)
+   if(txt2==000 && txt3==000){
    document.getElementById("spouseworkphoneerror").innerHTML="Invalid phone number format";
-	//var phone = /^[0-9-()]{13}$/;
-	// if(document.getElementById("spouseworkphone").value.match(phone)==null)
-    //{
-    	//document.getElementById("spouseworkphoneerror").innerHTML="Enter correct spouseworkphone number";
-    	
-       // return false;
-   // }
-	document.getElementById("Name_frienderror").innerHTML="";
-	if(document.getElementById("Name_friend").value=="")
+   return false;
+   }
+   document.getElementById("Name_frienderror").innerHTML="";
+	if(document.getElementById("Name_friend").value="")
 	{
-	document.getElementById("Name_frienderror").innerHTML="Required Field Should not be Empty";
-	
+	document.getElementById("Name_frienderror").innerHTML="Required field should not be empty";
 	return false;
 	}
 	document.getElementById("Phone_frienderror").innerHTML="";
@@ -764,31 +736,17 @@ var $sid = xx+1;
    var txt3=txt1.substring(5,8);
    // alert(txt2);
    // alert(txt3);
-   if(txt2==000 && txt3==000)
+   if(txt2==000 && txt3==000){
    document.getElementById("Phone_frienderror").innerHTML="Invalid phone number format";
-  
-	//var phone = /^[0-9-()]{13}$/;
-	// if(document.getElementById("Phone_friend").value.match(phone)==null)
-    //{
-    	//document.getElementById("Phone_frienderror").innerHTML="Enter correct Phonefriend number";
-    	
-      //  return false;
-    //}
+   return false;
+   }
+   document.getElementById("Phone_frienderror").innerHTML="";
+	if(document.getElementById("Phone_friend").value=="")
+	{
+	document.getElementById("Phone_frienderror").innerHTML="Required Field Should not be Empty";
 	
-	document.getElementById("Chiropratic_careerror").innerHTML=""; 
-	if( ( document.getElementById("yes1").checked == false ) && ( document.getElementById("No1").checked == false ) )
-
-	 {
-	 document.getElementById("Chiropratic_careerror").innerHTML="Required Field Should not be Empty";
-	 		
-	 		return false;
-	 		
-	 }
-	
-	
-	
-	
-	
+	return false;
+	}
 	
 	document.getElementById("symptom1error").innerHTML="";
 	if(document.getElementById("symptom1").value=="")
@@ -823,6 +781,14 @@ var $sid = xx+1;
 	
 	return false;
 	}
+	document.getElementById("datepicker2error").innerHTML="";
+	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+	if(document.getElementById("datepicker2").value.match(datechk)==null)
+    {
+    	document.getElementById("datepicker2error").innerHTML="Invalid Date Format";
+    	
+        return false;
+    }
 	document.getElementById("Accident_Reportederror").innerHTML=""; 
 	if( ( document.getElementById("yes2").checked == false ) && ( document.getElementById("No2").checked == false ) )
 
@@ -839,6 +805,14 @@ var $sid = xx+1;
 	
 	return false;
 	}
+	document.getElementById("datepicker5error").innerHTML="";
+	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+	if(document.getElementById("datepicker5").value.match(datechk)==null)
+    {
+    	document.getElementById("datepicker5error").innerHTML="Invalid Date Format";
+    	
+        return false;
+    }
 	document.getElementById("where1error").innerHTML="";
 	if(document.getElementById("where1").value=="")
 	{
@@ -1048,8 +1022,14 @@ var $sid = xx+1;
 	
 	return false;
 	}
-		
-	
+	document.getElementById("datepicker6error").innerHTML="";
+	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+	if(document.getElementById("datepicker6").value.match(datechk)==null)
+    {
+    	document.getElementById("datepicker6error").innerHTML="Invalid Date Format";
+    	
+        return false;
+    }
 	document.getElementById("Illnesserror").innerHTML="";
 	if(document.getElementById("Illness").value=="")
 	{
@@ -1064,6 +1044,14 @@ var $sid = xx+1;
 	
 	return false;
 	}
+	document.getElementById("datepicker3error").innerHTML="";
+	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+	if(document.getElementById("datepicker3").value.match(datechk)==null)
+    {
+    	document.getElementById("datepicker3error").innerHTML="Invalid Date Format";
+    	
+        return false;
+    }
 	document.getElementById("Medicationserror").innerHTML="";
 	if(document.getElementById("Medications").value=="")
 	{
