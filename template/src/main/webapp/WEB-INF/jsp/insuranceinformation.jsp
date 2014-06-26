@@ -136,7 +136,18 @@ document.getElementById("phone").value=phone;
 
 });
 </script>
-
+<script type="text/javascript">
+       function validate1(event) {
+          
+           var regex = new RegExp("^[0-9]+$");
+           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+           if (!regex.test(key)) {
+             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
+               event.preventDefault();
+               return false;
+           }
+       }       
+    </script>
 
 <script>
 function checkSubmit()
@@ -171,6 +182,15 @@ function checkSubmit()
 	
 	return false;
     }
+	
+	var name=/^[a-zA-Z]*$/;
+    
+    if(document.getElementById("emp").value.match(name)==null)
+    {
+       document.getElementById("emperr").innerHTML="Enter your name only in letters";    
+        return false;
+    }
+	
     document.getElementById("companyerr").innerHTML="";
 	if(document.getElementById("company").value=="")
 	{
@@ -375,7 +395,7 @@ function checkSubmit()
               <br>
               <tr class="row1">
               <td><span class="err">*</span>Patient's Name</td>
-              <td> <input type="text" class="input_txtbx1" value="${name}" name="patient_name" id="person" /><br><span id="personerr" style="color: red;font-style:italic;"></span><form:errors path="Insuranceinformation.patient_name"></form:errors></td>
+              <td style="width: 195px; "> <input type="text" class="input_txtbx1" value="${name}" name="patient_name" id="person" /><br><span id="personerr" style="color: red;font-style:italic;"></span><form:errors path="Insuranceinformation.patient_name"></form:errors></td>
               <%-- <td> <input type="text" class="input_txtbx1" name="patient_name" id="person" value="${name}" /><br><span id="personerr"><form:errors path="Insuranceinformation.patient_name"></form:errors></td> --%>
 
               </tr>
@@ -395,7 +415,7 @@ function checkSubmit()
               <td><span class="err">*</span>Insurance Company</td>
               <td> <input type="text" class="input_txtbx1" name="insurance_company" id="company" /><br><span id="companyerr" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.insurance_company"></form:errors></td>
               <td><span class="err">*</span>Phone#</td>
-              <td><input type="text" class="input_txtbx1" name="phone" id="phone" maxlength="13" /><br><span id="phoneerr" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.phone"></form:errors>
+              <td><input type="text" class="input_txtbx1" name="phone" id="phone" maxlength="13" onkeypress="return validate1(event)"; /><br><span id="phoneerr" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.phone"></form:errors>
               <br><span class="err" id="phoneerror"></span>
               </td>
               </tr>
@@ -413,7 +433,7 @@ function checkSubmit()
               <td><span class="err">*</span>Supplemental Insurance Company</td>
               <td> <input type="text" class="input_txtbx1" name="supplemental_company" id="supplemental_company" /><br><span id="supplemental_companyerr" style="color: red;font-style:italic";><form:errors path="Insuranceinformation.supplemental_company"></form:errors></td>
               <td><span class="err">*</span>Phone#</td>
-              <td> <input type="text" class="input_txtbx1" name="sup_phone" id="supphone" maxlength="13" /><br><span id="supphoneerr" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.sup_phone"></form:errors>
+              <td> <input type="text" class="input_txtbx1" name="sup_phone" id="supphone" maxlength="13" onkeypress="return validate1(event)";/><br><span id="supphoneerr" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.sup_phone"></form:errors>
               <br>
               <span class="err" id="supphoneerror"></span>
               </td>
