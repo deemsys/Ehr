@@ -494,6 +494,31 @@ var $sid = xx+1;
 	  </style>
 	  <script>
 	  </script>
+	  
+	  <script>
+function validatezipcode(){
+    var textInput = document.getElementById("zipcode1").value;
+    textInput = textInput.replace(/[^0-9]/g, "");
+    document.getElementById("zipcode1").value = textInput;
+}
+
+</script>
+<script>
+function validatezipcode1(){
+    var textInput = document.getElementById("zipcode2").value;
+    textInput = textInput.replace(/[^0-9]/g, "");
+    document.getElementById("zipcode2").value = textInput;
+}
+
+</script>
+<script>
+function validatezipcode2(){
+    var textInput = document.getElementById("zipcode3").value;
+    textInput = textInput.replace(/[^0-9]/g, "");
+    document.getElementById("zipcode3").value = textInput;
+}
+
+</script>
 	 <script>
 
 	function checkSubmit()
@@ -506,6 +531,15 @@ var $sid = xx+1;
 		
 		return false;
 		}
+		
+		var name=/^[a-zA-Z]*$/;
+        
+        if(document.getElementById("name").value.match(name)==null)
+        {
+           document.getElementById("nameerror").innerHTML="Enter your username only in letters";    
+            return false;
+        }
+		
 		document.getElementById("datepickererror").innerHTML="";
 	if(document.getElementById("datepicker").value=="")
 		{
@@ -577,15 +611,10 @@ var $sid = xx+1;
    var txt3=txt1.substring(5,8);
    // alert(txt2);
    // alert(txt3);
-   if(txt2==000 && txt3==000)
+   if(txt2==000 && txt3==000){
    document.getElementById("homephoneerror").innerHTML="Invalid phone number format";
-	//var phone = /^[0-9-()]{13}$/;
-	 //if(document.getElementById("homephone").value.match(phone)==null)
-   // {
-    	//document.getElementById("homephoneerror").innerHTML="Enter correct homephone number ";
-    	
-        //return false;
-    //}
+	return false;
+    }
 	
 	document.getElementById("Emailiderror").innerHTML="";
 	if(document.getElementById("Emailid").value=="")
@@ -616,15 +645,10 @@ var $sid = xx+1;
    var txt3=txt1.substring(5,8);
    // alert(txt2);
    // alert(txt3);
-   if(txt2==000 && txt3==000)
+   if(txt2==000 && txt3==000){
    document.getElementById("mobilenumbererror").innerHTML="Invalid phone number format";
-	//var phone = /^[0-9-()]{13}$/;
-	// if(document.getElementById("mobilenumber").value.match(phone)==null)
-    //{
-    	//document.getElementById("mobilenumbererror").innerHTML="Enter correct mobilenumber number";
-    	
-        //return false;
-    //}
+	return false;
+    }
 	document.getElementById("datepicker1error").innerHTML="";
 	if(document.getElementById("datepicker1").value=="")
 	{
@@ -640,6 +664,23 @@ var $sid = xx+1;
 	
 	return false;
 	}
+	
+	document.getElementById("socialsecuritynumbererror").innerHTML="";
+	var txt1=document.getElementById("socialsecuritynumber").value;
+	var txt2=txt1.substring(0,3);
+	if(txt2==000)
+	{
+	document.getElementById("socialsecuritynumbererror").innerHTML="Invalid social security number";
+	return false;
+	}
+	
+	document.getElementById("socialsecuritynumbererror").innerHTML="";
+    if(document.getElementById("socialsecuritynumber").value.length<11)
+    {
+    	document.getElementById("socialsecuritynumbererror").innerHTML="Invalid social  security number";
+    	
+        return false;
+    }
 	//var phone = /^[0-9-]{11}$/;
 	 //if(document.getElementById("socialsecuritynumber").value.match(phone)==null)
    // {
@@ -867,16 +908,11 @@ var $sid = xx+1;
    var txt3=txt1.substring(5,8);
    // alert(txt2);
    // alert(txt3);
-   if(txt2==000 && txt3==000)
+   if(txt2==000 && txt3==000){
    document.getElementById("phyphoneerror").innerHTML="Invalid phone number format";
   
-	//var phone = /^[0-9-()]{13}$/;
-	 //if(document.getElementById("phyphone").value.match(phone)==null)
-   // {
-    	//document.getElementById("phyphoneerror").innerHTML="Enter correct Phone number";
-    	
-        //return false;
-   // }
+	return false;
+    }
 	document.getElementById("xrayerror").innerHTML="";
 	if(document.getElementById("xray").value=="")
 	{
@@ -911,15 +947,10 @@ var $sid = xx+1;
    var txt3=txt1.substring(5,8);
    // alert(txt2);
    // alert(txt3);
-   if(txt2==000 && txt3==000)
+   if(txt2==000 && txt3==000){
    document.getElementById("phonenumbererror").innerHTML="Invalid phone number format";
-	//var phone = /^[0-9-()]{13}$/;
-	// if(document.getElementById("phonenumber").value.match(phone)==null)
-    //{
-    	//document.getElementById("phonenumbererror").innerHTML="Enter correct Phone number";
-    	
-        //return false;
-    //}
+	return false;
+    }
 	document.getElementById("Fault_accidenterror").innerHTML="";
 	if(document.getElementById("Fault_accident").value=="")
 	{
@@ -968,15 +999,10 @@ var $sid = xx+1;
    var txt3=txt1.substring(5,8);
    // alert(txt2);
    // alert(txt3);
-   if(txt2==000 && txt3==000)
+   if(txt2==000 && txt3==000){
    document.getElementById("Phone_autoerror").innerHTML="Invalid phone number format";
-	//var phone = /^[0-9-()]{13}$/;
-	 //if(document.getElementById("Phone_auto").value.match(phone)==null)
-    //{
-    	//document.getElementById("Phone_autoerror").innerHTML="Enter correct Phone number";
-    	
-        //return false;
-   // }
+	return false;
+   }
 	document.getElementById("policyerror").innerHTML="";
 	if(document.getElementById("policy").value=="")
 	{
@@ -1004,8 +1030,10 @@ var $sid = xx+1;
    var txt3=txt1.substring(5,8);
    // alert(txt2);
    // alert(txt3);
-   if(txt2==000 && txt3==000)
+   if(txt2==000 && txt3==000){
    document.getElementById("phhealtherror").innerHTML="Invalid phone number format";
+   return false;
+   }
 	document.getElementById("Prev_accidenterror").innerHTML=""; 
 	if( ( document.getElementById("yes7").checked == false ) && ( document.getElementById("No7").checked == false ) )
 
@@ -1101,6 +1129,7 @@ var $sid = xx+1;
 	}
 
 	</script>
+
 	<script>
 i=0;
 $(document).ready(function(){
@@ -1364,7 +1393,7 @@ document.getElementById("inp_id").value=phone;
 						</tr>                        
 						<tr class="row2">
                         	<td><span class="err">*</span>ZipCode:</td>
-                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="zipcode1"   value="${patientDetails.zipCode}" maxlength="5"  name="zipCode" /></br><span id="zipcode1error" style="color: red;font-style:italic;"><form:errors path="PatientDetails.ZipCode"></form:errors></span></td>
+                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="zipcode1"  onInput="return validatezipcode()"; value="${patientDetails.zipCode}" maxlength="5"  name="zipCode" /></br><span id="zipcode1error" style="color: red;font-style:italic;"><form:errors path="PatientDetails.ZipCode"></form:errors></span></td>
 						</tr>                        
 						
 						<tr class="row1">
@@ -1475,7 +1504,7 @@ document.getElementById('employee').style.display="block";
 								 <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>ZipCode:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="zipcode1" name="zip" maxlength="5" value="${patientDetails.zip}"/><br><span class="err" id="zipcode1error"  style="color: red;font-style:italic;"><form:errors path="PatientDetails.zipCode"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="zipcode2" name="zip" onInput="return validatezipcode1()"; maxlength="5" value="${patientDetails.zip}"/><br><span class="err" id="zipcode2error"  style="color: red;font-style:italic;"><form:errors path="PatientDetails.zipCode"></form:errors></span>
 	
 	<span class="err" ></span>            
 				                  </td>
@@ -1493,7 +1522,7 @@ document.getElementById('employee').style.display="block";
 								</tr>
 							    <tr class="row1">
                         			<td><span class="err"></span>ZipCode:</td>
-                        			<td class="input_txt"><input type="text" class="input_txtbx1" id="zipcode3" maxlength="5"  value="${patientDetails.ezip}" name="ezip" /></br><span style="color: red;font-style:italic;" id="zipcode3error"><form:errors path="PatientDetails.Ezip"></form:errors></span></td>
+                        			<td class="input_txt"><input type="text" class="input_txtbx1" id="zipcode3" onInput="return validatezipcode2()"; maxlength="5"  value="${patientDetails.ezip}" name="ezip" /></br><span style="color: red;font-style:italic;" id="zipcode3error"><form:errors path="PatientDetails.Ezip"></form:errors></span></td>
 								</tr> 
 								                   
 							</table>

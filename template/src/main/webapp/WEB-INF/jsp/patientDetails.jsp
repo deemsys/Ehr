@@ -738,6 +738,22 @@ function validatezipcode(){
 }
 
 </script>
+<script>
+function validatezipcode1(){
+    var textInput = document.getElementById("zipcode2").value;
+    textInput = textInput.replace(/[^0-9]/g, "");
+    document.getElementById("zipcode2").value = textInput;
+}
+
+</script>
+<script>
+function validatezipcode2(){
+    var textInput = document.getElementById("zipcode3").value;
+    textInput = textInput.replace(/[^0-9]/g, "");
+    document.getElementById("zipcode3").value = textInput;
+}
+
+</script>
 
  <script>
 
@@ -974,14 +990,7 @@ function validatezipcode(){
     	
         return false;
     }
-    document.getElementById("socialsecuritynumbererror").innerHTML="";
-		var txt1=document.getElementById("socialsecuritynumber").value;
-		var txt2=txt1.substring(0,3);
-		if(txt2==000)
-		{
-		document.getElementById("socialsecuritynumbererror").innerHTML="Invalid social security number";
-		return false;
-		}
+    
     
     //document.getElementById("socialsecuritynumbererror").innerHTML="";
 	//if(isNaN(document.getElementById("socialsecuritynumber").value))
@@ -2154,7 +2163,7 @@ function check(id)
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>ZipCode:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="zipcode2" onInput="return validatezipcode()"; name="zip" maxlength="5" /><br><span style="color: red;font-style:italic;" id="zipcode2error"><form:errors path="PatientDetails.zipCode"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="zipcode2" onInput="return validatezipcode1()"; name="zip" maxlength="5" /><br><span style="color: red;font-style:italic;" id="zipcode2error"><form:errors path="PatientDetails.zipCode"></form:errors></span>
 	
 	<span class="err" ></span>            
 				                  </td>
@@ -2181,7 +2190,7 @@ function check(id)
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>ZipCode:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="zipcode3"  onInput="return validatezipcode()";name="Ezip" maxlength="5"/><br><span style="color: red;font-style:italic;" id="zipcode3error"><form:errors path="PatientDetails.Ezip"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="zipcode3"  onInput="return validatezipcode2()";name="Ezip" maxlength="5"/><br><span style="color: red;font-style:italic;" id="zipcode3error"><form:errors path="PatientDetails.Ezip"></form:errors></span>
 				                  	<br><span class="err" id="zipcodeerror"></span>
 				                  </td>
 				                </tr>
