@@ -505,13 +505,27 @@ document.getElementById("lighting").style.visibility = 'hidden';
 				<tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>In your job, do you push or pull</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="radio" name="push_pull" value="yes" id="yes5" class="input_txt"  onclick="pull();"<c:if test="${workaccident.push_pull=='yes'}"><c:out value="checked=checked"/></c:if> >Yes&nbsp;&nbsp;&nbsp;
+				  <input type="radio" name="push_pull" value="yes" id="pushcheck"  class="input_txt"  onclick="pull();"<c:if test="${workaccident.push_pull=='yes'}"><c:out value="checked=checked"/></c:if> >Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="push_pull" value="No" id="No5"class="input_txt" onclick="pull();"<c:if test="${workaccident.push_pull=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;
-				   <input type="text" class="input_txtbx1" id="jobpp" name="jobpp" placeholder="If yes, give specifics"  style='display:none' value="${workaccident.jobpp}" name="jobpp" /></br><span class="err"><form:errors path="workAcc.jobpp"></form:errors></span>
+				   <input type="text" class="input_txtbx1" id="jobpp" name="jobpp" placeholder="If yes, give specifics"  value="${workaccident.jobpp}" name="jobpp" /></br><span class="err"><form:errors path="workAcc.jobpp"></form:errors></span>
 				   <span id="push_pullerror" style="color: red;font-style:italic;"></span>
 				  </td>
 				  </tr>						                   
-				  		                     		 
+				  		  <script>
+		 window.onload = function()
+{
+if (document.getElementById("pushcheck").value == "yes") {
+document.getElementById("jobpp").style.visibility = 'visible';
+
+
+}
+else  {
+document.getElementById("jobpp").style.visibility = 'hidden';
+
+
+}
+}
+</script>                    		 
 				  </table>
 				  <br>
 				  <table align="right">
