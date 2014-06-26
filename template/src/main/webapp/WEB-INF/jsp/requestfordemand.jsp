@@ -275,7 +275,7 @@ function doAjaxPost() {
    var txt3=txt1.substring(5,8);
    // alert(txt2);
    // alert(txt3);
-   if(txt2==000 && txt3==000)
+   if(txt2==000 && txt3==000){
    document.getElementById("faxerror").innerHTML="Invalid phone number format";
 	return false;
 	}

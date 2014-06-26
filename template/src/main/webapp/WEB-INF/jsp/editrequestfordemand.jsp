@@ -102,7 +102,7 @@ document.getElementById("fax").value=phone;
    var txt3=txt1.substring(5,8);
    // alert(txt2);
    // alert(txt3);
-   if(txt2==000 && txt3==000)
+   if(txt2==000 && txt3==000){
    document.getElementById("faxerror").innerHTML="Invalid phone number format";
 	return false;
 	}
@@ -184,7 +184,7 @@ document.getElementById("fax").value=phone;
      </table>
       <table cellpadding="0" cellspacing="0" border="0" width="100%">
       <tr height="30"><td style="width: 148px; "><input type="checkbox" class="input_ckbx1" value="other" name="other" id="other" <c:if test="${requestfordemanddetails.other=='other'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;&nbsp;Other:&nbsp;&nbsp;(Describe)&nbsp;&nbsp;&nbsp;
-     <td> <textarea rows="" cols=""  class="input_txtarea"  name="txtare"  value="${requestfordemanddetails.txtare}" style="height: 75px; width: 348px"></textarea></td>
+     <td> <textarea rows="" cols=""  class="input_txtarea"  name="txtare"  style="height: 75px; width: 348px">${requestfordemanddetails.txtare}</textarea></td>
      </td>
    </tr>
        </table> <br><br> 
