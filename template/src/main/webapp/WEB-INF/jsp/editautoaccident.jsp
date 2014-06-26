@@ -119,6 +119,16 @@ $(function() {
   document.getElementById("vehicle_yearerror").innerHTML="Required field should not be empty";
   return false;
  }
+  
+  document.getElementById("vehicle_yearerror").innerHTML="";
+	if(document.getElementById("vehicle_year").value.length<4)
+	{
+	document.getElementById("vehicle_yearerror").innerHTML="Invalid year format";
+	return false;
+	
+	}
+	
+	
   document.getElementById("other_vehicle_makeerror").innerHTML="";
   if(document.getElementById("other_vehicle_make").value=="")
  {
@@ -137,6 +147,13 @@ $(function() {
   document.getElementById("other_vehicle_yearerror").innerHTML="Required field should not be empty";
   return false;
  }
+  document.getElementById("other_vehicle_yearerror").innerHTML="";
+	if(document.getElementById("other_vehicle_year").value.length<4)
+	{
+	document.getElementById("other_vehicle_yearerror").innerHTML="Invalid year format";
+	return false;
+	
+	}
  /* document.getElementById("yeserror").innerHTML="";
   if( ( document.getElementById("yes").checked == false ) && ( document.getElementById("no").checked == false ) )
 
