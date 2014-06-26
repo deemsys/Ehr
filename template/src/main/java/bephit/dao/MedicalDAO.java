@@ -409,4 +409,9 @@ public class MedicalDAO {
 	}catch(Exception e){}
 	}
 
+	public void deleteWorkAccidentdetails(String patientno) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

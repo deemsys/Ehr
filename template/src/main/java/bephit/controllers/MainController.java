@@ -1750,6 +1750,8 @@ return "viewworkaccident";
 		return "workaccident";
 	}
 	
+	
+	
 	@RequestMapping(value="/insuranceinformation", method = RequestMethod.GET)
 	public String insuranceinformation(Principal principal,HttpSession session,ModelMap model) {
 		model.addAttribute("menu", "health");
@@ -4690,7 +4692,7 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 
 	@RequestMapping(value="/deleteinsuranceplan", method=RequestMethod.GET)
 	public String removeInsuranceplan(HttpSession session,ModelMap model, Principal principal) {
-	
+		session.removeAttribute("insurance");
 		if(patientDAO.getUsername(principal).size()>0)
 		{		
 			String name="";			
@@ -4719,6 +4721,8 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 		insuranceplanForm.setInsuranceplan(planDAO.getInsuranceplanUsername(principal));
         model.addAttribute("insuranceplanform", insuranceplanForm);
         model.addAttribute("menu", "health");
+        
+        session.removeAttribute("insurance");
 		}
 		
 		return "insuranceplan";
@@ -4932,6 +4936,7 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 	@RequestMapping(value="/deletetreatform", method=RequestMethod.GET)
 	public String removetreatform(HttpSession session,/*@RequestParam("treat_no") String treat_no,*/ModelMap model, Principal principal) {
 	
+		session.removeAttribute("consent");
 		model.addAttribute("menu", "consent");
 		if(patientDAO.getUsername(principal).size()>0)
 		{			
@@ -5273,7 +5278,8 @@ String name="";
 	
 	@RequestMapping(value="/deletehardshipagreement", method=RequestMethod.GET)
 	public String removehardship(@RequestParam("agreement_no") String agreement_no,HttpSession session,ModelMap model, Principal principal) {
-	
+		System.out.println("agreement no"+agreement_no);
+		session.removeAttribute("hard");
 		if(patientDAO.getUsername(principal).size()>0)
 		{
 
@@ -5290,7 +5296,7 @@ String name="";
 			String username=(String)session.getAttribute("staffusername");
 			hardDAO.deletehardshipdetails(username);
 			model.addAttribute("choice","close");
-			  session.removeAttribute("authorization");
+			  session.removeAttribute("hard");
 			return "screeninglist";
 	
 		}	
@@ -5299,7 +5305,7 @@ String name="";
 		
 		 model.addAttribute("success","true");
 	     
-	       session.removeAttribute("authorization");
+		 session.removeAttribute("hard");
 		/*int status=hardDAO.deletehardshipdetails(principal.getName());*/
 		
 		/*if(status==1)
@@ -5367,7 +5373,7 @@ String name="";
 	
 	@RequestMapping(value="/deleteinsuranceinformation", method=RequestMethod.GET)
 	public String removeinsuranceinformation(HttpSession session,ModelMap model, Principal principal) {
-	
+	session.removeAttribute("insurance");
 		if(patientDAO.getUsername(principal).size()>0)
 		{			
 			String name="";			

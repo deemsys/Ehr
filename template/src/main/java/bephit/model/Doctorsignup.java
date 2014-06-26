@@ -5,15 +5,18 @@ import javax.validation.constraints.Pattern;
 
 import org.aspectj.bridge.Message;
 import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 @GroupSequence({Doctorsignup.class})
 public class Doctorsignup{
 	
 	
 	@NotEmpty
+	@Length(min=4,max=32,message="Username  should between 4 to 32 characters!!!")
 	private String doctorusername;
 	
 	@NotEmpty
+	@Length(min=3,max=32,message="Password  should between 3 to 32 characters!!!")
 	private String doctorpassword;
 	
 	@NotEmpty

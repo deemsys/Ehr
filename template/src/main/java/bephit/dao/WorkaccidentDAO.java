@@ -392,6 +392,8 @@ public int deleteWorkAccident(String username){
 	   		else
 	   			return 0;
 	}
+
+
 public List<Workaccident> getlimitedworkaccident(int page) {
 	Connection con = null;
 	Statement statement = null;
