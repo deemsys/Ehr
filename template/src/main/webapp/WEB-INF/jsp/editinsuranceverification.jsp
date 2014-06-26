@@ -207,23 +207,10 @@
    var txt3=txt1.substring(5,8);
    // alert(txt2);
    // alert(txt3);
-   if(txt2==000 && txt3==000)
+   if(txt2==000 && txt3==000){
    document.getElementById("faxerror").innerHTML="Invalid phone number format";
-		 /* document.getElementById("faxerror").innerHTML="";
-		if(isNaN(document.getElementById("fax").value==""))
-		{
-		document.getElementById("faxerror").innerHTML="Invalid character. Please enter numbers only";
-		return false;
-		
-		} */
-		
-	//	var phone = /^\(?([1-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/; 
-	// if(document.getElementById("fax").value.match(phone)==null)
-    //{
-    	//document.getElementById("faxerror").innerHTML="Invalid phone number format ";
-    	
-       // return false;
-  // }
+   return false;
+   }
 		document.getElementById("amountdeducterror").innerHTML="";
 		if(document.getElementById("amountdeduct").value=="")
 		{
@@ -232,13 +219,7 @@
 		return false;
 		}
 
-       /*   document.getElementById("amountdeducterror").innerHTML="";
-		if(isNaN(document.getElementById("amountdeduct").value))
-		{
-		document.getElementById("amountdeducterror").innerHTML="Invalid character. Please enter numbers only.";
-		return false;
-		
-		} */
+       
 				
 		document.getElementById("amountdeductmeterror").innerHTML="";
 		if(document.getElementById("amountdeductmet").value=="")
@@ -248,13 +229,7 @@
 		return false;
 		}
 		
-		/* document.getElementById("amountdeductmeterror").innerHTML="";
-		if(isNaN(document.getElementById("amountdeductmet").value))
-		{
-		document.getElementById("amountdeductmeterror").innerHTML="Invalid character. Please enter numbers only.";
-		return false;
 		
-		} */
 		
 		
 		document.getElementById("max_visiterror").innerHTML="";
@@ -265,13 +240,7 @@
 		return false;
 		}
 		
-		/* document.getElementById("max_visiterror").innerHTML="";
-		if(isNaN(document.getElementById("max_visit").value))
-		{
-		document.getElementById("max_visiterror").innerHTML="Invalid character. Please enter numbers only.";
-		return false;
-		}
-		 */
+		
 		document.getElementById("atwhaterror").innerHTML="";
 		if(document.getElementById("atwhat").value=="")
 		{
@@ -280,12 +249,7 @@
 		return false;
 		}
 		
-		/* document.getElementById("atwhaterror").innerHTML="";
-		if(isNaN(document.getElementById("atwhat").value))
-		{
-		document.getElementById("atwhaterror").innerHTML="Invalid character. Please enter numbers only.";
-		return false;
-		} */
+		
 		document.getElementById("atwhat1error").innerHTML="";
 		if(document.getElementById("atwhat1").value=="")
 		{
@@ -294,12 +258,6 @@
 		return false;
 		}
 		
-		/* document.getElementById("atwhat1error").innerHTML="";
-		if(isNaN(document.getElementById("atwhat1").value))
-		{
-		document.getElementById("atwhat1error").innerHTML="Invalid character. Please enter numbers only.";
-		return false;
-		} */
 		
 		document.getElementById("yeserror").innerHTML="";
       if( ( document.getElementById("yes").checked == false ) && ( document.getElementById("no").checked == false ) )
@@ -324,12 +282,7 @@ document.getElementById("yeserror").innerHTML="Required Field Should not be Empt
 		
 		return false;
 		}
-		/* document.getElementById("coverederr").innerHTML="";
-		if(isNaN(document.getElementById("covered").value))
-		{
-		document.getElementById("coverederr").innerHTML="Invalid character. Please enter numbers only.";
-		return false;
-		} */
+		
 		
 		
 		
@@ -346,7 +299,7 @@ document.getElementById("yeserror").innerHTML="Required Field Should not be Empt
     
     if(document.getElementById("mail_claims").value.match(mail)==null)
     {
-    	document.getElementById("mail_claimserror").innerHTML="Enter ur proper E-Mail";
+    	document.getElementById("mail_claimserror").innerHTML="Invalid E-Mail Format";
     	
         return false;
     }
@@ -426,9 +379,9 @@ document.getElementById("yeserror").innerHTML="Required Field Should not be Empt
        }       
     </script>
     <script type="text/javascript">
-       function validate(event) {
+       function validate1(event) {
           
-           var regex = new RegExp("^[0-9.]+$");
+           var regex = new RegExp("^[0-9]+$");
            var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
            if (!regex.test(key)) {
              // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
@@ -507,7 +460,7 @@ document.getElementById("fax").value=phone;
               <table cellpadding="0" cellspacing="0" border="0" width="100%"> -->
               <tr class="row1"> 
               <td><span class="err">*</span>Maximum visits/year?</td>
-              <td><input type="text" class="input_txtbx1" name="max_visit" id="max_visit" onkeypress="return validate(event)"; value="${Insuranceverification.max_visit}"/><span id="max_visiterror"  style="color: red;font-style:italic;"></span><form:errors path="Insuranceverification.max_visit"></form:errors></td>
+              <td><input type="text" class="input_txtbx1" name="max_visit" id="max_visit" onkeypress="return validate1(event)"; value="${Insuranceverification.max_visit}"/><span id="max_visiterror"  style="color: red;font-style:italic;"></span><form:errors path="Insuranceverification.max_visit"></form:errors></td>
               <td></td>
               <td></td>
               <td></td>

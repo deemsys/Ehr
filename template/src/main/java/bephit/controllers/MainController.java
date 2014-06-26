@@ -5453,15 +5453,16 @@ String name="";
 	
 
 	@RequestMapping(value="/deleteinsuranceverification", method=RequestMethod.GET)
-	public String removeinsuranceverification(@RequestParam("form_no") String form_no,ModelMap model, Principal principal) {
+	public String removeinsuranceverification(@RequestParam("form_no") String form_no,ModelMap model, Principal principal,HttpSession session) {
 	
+		session.removeAttribute("insurance");
 		int status=veriDAO.deleteinsuranceverification(form_no);
 		
 		if(status==1)
 		{
         model.addAttribute("success","true");		  
 		model.addAttribute("menu", "admin");
-		
+		session.removeAttribute("insurance");
 		}
 		return "insuranceverification";
 	}

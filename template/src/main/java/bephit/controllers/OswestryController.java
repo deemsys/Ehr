@@ -418,14 +418,15 @@ public class OswestryController
 	}
 	
 	@RequestMapping (value="/deletecopyofrequest", method = RequestMethod.GET)
-	public String deletecopyofrequest(@RequestParam("copyofrequestno") String copyofrequestno,HttpServletRequest request,ModelMap model,Copyofrequest copyofrequest) throws IOException
+	public String deletecopyofrequest(@RequestParam("copyofrequestno") String copyofrequestno,HttpSession session,HttpServletRequest request,ModelMap model,Copyofrequest copyofrequest) throws IOException
 	{
-		
+		session.removeAttribute("copy");
 		copydao.deletecopyofrequest(copyofrequestno);
 		/*CopyofrequestForm copyofrequestform=new CopyofrequestForm();
 		copyofrequestform.setCopyofrequest(copydao.viewcopyrequest());
 		model.addAttribute("copyofrequestform", copyofrequestform);*/
 		model.addAttribute("success",true);
+		session.removeAttribute("copy");
 		//model.addAttribute("menu","wristindex");
 		return "copyofrequest";
 	}
