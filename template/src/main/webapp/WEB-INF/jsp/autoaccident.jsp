@@ -291,6 +291,16 @@ document.getElementById("afteraccidenterror").innerHTML="";
            }
        }       
     </script>
+    
+    
+<script>
+function validateusername(){
+    var textInput = document.getElementById("uname").value;
+    textInput = textInput.replace(/[^A-Za-z0-9]/g, "");
+    document.getElementById("uname").value = textInput;
+}
+
+</script>
 <style>
   /* force a height so the tabs don't jump as content height changes */
   #tabs .tabs-spacer { float: left; height: 200px; }
@@ -340,7 +350,7 @@ document.getElementById("afteraccidenterror").innerHTML="";
                  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>What is the claim number of your accident</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="claimno" name="claimnumber" onkeypress="return validate2(event)"; /><span id="claimnoerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.claimnumber"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="claimno" name="claimnumber" onInput="return validateusername()"; /><span id="claimnoerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.claimnumber"></form:errors></span>
 				  <br><span class="err"></span>
 				  </td>
 

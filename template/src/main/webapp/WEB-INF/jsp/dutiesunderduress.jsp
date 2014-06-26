@@ -902,8 +902,8 @@ document.getElementById('rm2').style.visibility = 'visible';
  <td><input type="checkbox" name="concentrating" value="Concentrating" onclick="javascript:yesnoCheck11();"id="yesCheck11"> </td>
  <td><span id="co14">Concentrating </span></td> 
  <td><input type="checkbox" name="incresedpainconcentrate" value="Increased pain" id="incresedpainconcentrate">&nbsp;<span id="ip14">Increased Pain </span> &nbsp;&nbsp;<input type="checkbox" name="restrictedmovementconcentrate" value="Restricted Movement" id="restrictedmovementconcentrate">&nbsp;<span id="rm14">Restricted Movement</span> &nbsp;&nbsp; <input type="checkbox" name="weeknessconcentrate" value="Fatigue" id="weeknessconcentrate">&nbsp;<span id="w14">Fatigue</span></td>
- <td><input type="checkbox" name="sincemvaconcentrate" value="Since MVA" id="sincemvaconcentrate">&nbsp;<span id="o14">Ongoing </span>
- &nbsp;&nbsp;<input type="checkbox" name="ongoingconcentrate" value="Ongoing" id="ongoingconcentrate">&nbsp;<span id="mva14">Since MVA </span>
+ <td><input type="checkbox" name="sincemvaconcentrate" value="Since MVA" id="sincemvaconcentrate">&nbsp;<span id="mva14">Since MVA </span>
+ &nbsp;&nbsp;<input type="checkbox" name="ongoingconcentrate" value="Ongoing" id="ongoingconcentrate">&nbsp;<span id="o14">Ongoing </span>
  </td>
  </tr>
  
@@ -989,7 +989,7 @@ document.getElementById('rm2').style.visibility = 'visible';
  <tr class="row1">  
  <td><input type="checkbox" name="takingouttrash" value="Taking Out Trash" onclick="javascript:yesnoCheck19();"id="yesCheck19"> </td>
  <td><span id="to25">Taking Out Trash</span></td> 
- <td><input type="checkbox" name="incresedpain25" value="Increased pain" id="incresedpain25">&nbsp;<span id="ip25">Increased Pain </span> &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement25" value="Restricted Movement" id="restrictedmovement25">&nbsp;<span id="rm25">Resshicted Movement</span> &nbsp;&nbsp; <input type="checkbox" name="weekness25" value="Weekness" id="weekness25">&nbsp;<span id="w25">Weekness </span></td>
+ <td><input type="checkbox" name="incresedpain25" value="Increased pain" id="incresedpain25">&nbsp;<span id="ip25">Increased Pain </span> &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement25" value="Restricted Movement" id="restrictedmovement25">&nbsp;<span id="rm25">Restricted Movement</span> &nbsp;&nbsp; <input type="checkbox" name="weekness25" value="Weekness" id="weekness25">&nbsp;<span id="w25">Weekness </span></td>
  <td><input type="checkbox" name="sincemva25" value="Since MVA" id="sincemva25">&nbsp;<span id="mva25">Since MVA </span> &nbsp;&nbsp; <input type="checkbox" name="ongoing25" value="Ongoing" id="ongoing25">&nbsp;<span id="o25">Ongoing </span></td>
  </tr>
  <tr class="row1">  

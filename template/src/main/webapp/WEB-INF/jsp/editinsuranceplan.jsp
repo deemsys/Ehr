@@ -252,7 +252,7 @@ $(function() {
         </tr>
         <tr class="row1">
         <td width="100%"><span class="err">*</span>Please eMail this back  to&nbsp;&nbsp;
-        <span class="err">*</span><input type="text" class="input_txtbx1" name="fax" id="fax" placeholder="Clinic's EMail Id" value="${Insuranceplan.fax}"/><br><span id="faxerror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.fax"></form:errors> </td>
+        <span class="err">*</span><input type="text" class="input_txtbx1" name="fax" id="fax" placeholder="Clinic's EMail Id" value="${Insuranceplan.fax}"/><span id="faxerror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.fax"></form:errors> </td>
         <td width="100%"></td>
         <td></td>
         </tr>

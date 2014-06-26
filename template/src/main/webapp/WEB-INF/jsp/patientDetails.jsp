@@ -729,6 +729,16 @@ document.getElementById("inp_id").value=phone;
 });
 </script>
 
+
+<script>
+function validatezipcode(){
+    var textInput = document.getElementById("zipcode1").value;
+    textInput = textInput.replace(/[^0-9]/g, "");
+    document.getElementById("zipcode1").value = textInput;
+}
+
+</script>
+
  <script>
 
 	function checkSubmit()
@@ -741,6 +751,22 @@ document.getElementById("inp_id").value=phone;
 		
 		return false;
 		}
+		
+		var name=/^[a-zA-Z]*$/;
+        
+        if(document.getElementById("name").value.match(name)==null)
+        {
+           document.getElementById("nameerror").innerHTML="Enter your username only in letters";    
+            return false;
+        }
+		
+		document.getElementById("nameerror").innerHTML="";
+	if(document.getElementById("name").value.length<4 || document.getElementById("name").value.length>32 )
+	{
+	document.getElementById("nameerror").innerHTML="Invalid Name Should be >than 4 and less than than 32";
+	return false;
+	
+	}
 		document.getElementById("datepickererror").innerHTML="";
 	if(document.getElementById("datepicker").value=="")
 		{
@@ -806,6 +832,13 @@ document.getElementById("inp_id").value=phone;
 	
 	return false;
 	}
+	document.getElementById("homephoneerror").innerHTML="";
+	if(document.getElementById("homephone").value.length<13)
+	{
+	document.getElementById("homephoneerror").innerHTML="Invalid phone number format";
+	return false;
+	
+	}
 	//var phone = /^[0-9-()]{13}$/;
 	//var phone = /^\(?([1-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/; 
 	//if(document.getElementById("homephone").value.match(phone)==null)
@@ -821,8 +854,10 @@ document.getElementById("inp_id").value=phone;
    var txt3=txt1.substring(5,8);
    // alert(txt2);
    // alert(txt3);
-   if(txt2==000 && txt3==000)
+   if(txt2==000 && txt3==000){
    document.getElementById("homephoneerror").innerHTML="Invalid phone number format";
+   return false;
+   }
   
 	document.getElementById("Emailiderror").innerHTML="";
 	if(document.getElementById("Emailid").value=="")
@@ -847,6 +882,16 @@ document.getElementById("inp_id").value=phone;
 	
 	return false;
 	}
+	
+	document.getElementById("mobilenumbererror").innerHTML="";
+	if(document.getElementById("mobilenumber").value.length<13)
+	{
+	document.getElementById("mobilenumbererror").innerHTML="Invalid phone number format";
+	return false;
+	
+	}
+	
+	
 	document.getElementById("mobilenumbererror").innerHTML="";
     var txt1=document.getElementById("mobilenumber").value;
    var txt2=txt1.substring(1,4);
@@ -854,15 +899,21 @@ document.getElementById("inp_id").value=phone;
    // alert(txt2);
    // alert(txt3);
    if(txt2==000 && txt3==000)
+	   {
    document.getElementById("mobilenumbererror").innerHTML="Invalid phone number format";
-	//var phone = /^[0-9-()]{13}$/;
-	//var phone = /^\(?([1-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/; 
-	 //if(document.getElementById("mobilenumber").value.match(phone)==null)
-   // {
-    //	document.getElementById("mobilenumbererror").innerHTML="Invalid phone number format";
-    	
-       // return false;
-  //  }
+	 return false;
+    }
+   
+   document.getElementById("workphoneerror").innerHTML="";
+   if(document.getElementById("workphone").value!="")
+   {
+	if(document.getElementById("workphone").value.length<13)
+	{
+	document.getElementById("workphoneerror").innerHTML="Invalid phone number format";
+	return false;
+	
+	}
+   }
   document.getElementById("workphoneerror").innerHTML="";
   if(document.getElementById("workphone").value!="")
   {
@@ -897,6 +948,9 @@ document.getElementById("inp_id").value=phone;
 	
 	return false;
 	}
+	
+	
+	
 	document.getElementById("socialsecuritynumbererror").innerHTML="";
 	var txt1=document.getElementById("socialsecuritynumber").value;
 	var txt2=txt1.substring(0,3);
@@ -920,6 +974,15 @@ document.getElementById("inp_id").value=phone;
     	
         return false;
     }
+    document.getElementById("socialsecuritynumbererror").innerHTML="";
+		var txt1=document.getElementById("socialsecuritynumber").value;
+		var txt2=txt1.substring(0,3);
+		if(txt2==000)
+		{
+		document.getElementById("socialsecuritynumbererror").innerHTML="Invalid social security number";
+		return false;
+		}
+    
     //document.getElementById("socialsecuritynumbererror").innerHTML="";
 	//if(isNaN(document.getElementById("socialsecuritynumber").value))
 	//{
@@ -1008,13 +1071,13 @@ document.getElementById("inp_id").value=phone;
 	return false;
 	}
 	}
-	//document.getElementById("SpousesNameerror").innerHTML="";
-	//if(document.getElementById("SpousesName").value=="")
-	//{
-	//document.getElementById("SpousesNameerror").innerHTML="Required Field Should not be Empty";
+	document.getElementById("SpousesNameerror").innerHTML="";
+	if(document.getElementById("SpousesName").value=="")
+	{
+	document.getElementById("SpousesNameerror").innerHTML="Required Field Should not be Empty";
 	
-	//return false;
-	//}
+	return false;
+	}
 	document.getElementById("SpousesEmperror").innerHTML="";
 	if(document.getElementById("SpousesEmp").value=="")
 	{
@@ -1035,17 +1098,18 @@ document.getElementById("inp_id").value=phone;
    var txt3=txt1.substring(5,8);
    // alert(txt2);
    // alert(txt3);
-   if(txt2==000 && txt3==000)
+   if(txt2==000 && txt3==000){
    document.getElementById("spouseworkphoneerror").innerHTML="Invalid phone number format";
-  
-	//var phone = /^[0-9-()]{13}$/;
-	//var phone = /^\(?([1-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/; 
-	 //if(document.getElementById("spouseworkphone").value.match(phone)==null)
-    //{
-    	//document.getElementById("spouseworkphoneerror").innerHTML="Invalid phone number format";
-    	//
-        //return false;
-   // }
+  return false;
+   }
+   
+   document.getElementById("spouseworkphoneerror").innerHTML="";
+	if(document.getElementById("spouseworkphone").value.length<13)
+	{
+	document.getElementById("spouseworkphoneerror").innerHTML="Invalid phone number format";
+	return false;
+	
+	}
 	document.getElementById("Name_frienderror").innerHTML="";
 	if(document.getElementById("Name_friend").value=="")
 	{
@@ -1061,22 +1125,24 @@ document.getElementById("inp_id").value=phone;
 	return false;
 	}
 	document.getElementById("Phone_frienderror").innerHTML="";
+	if(document.getElementById("Phone_friend").value.length<13)
+	{
+	document.getElementById("Phone_frienderror").innerHTML="Invalid phone number format";
+	return false;
+	
+	}
+	document.getElementById("Phone_frienderror").innerHTML="";
     var txt1=document.getElementById("Phone_friend").value;
    var txt2=txt1.substring(1,4);
    var txt3=txt1.substring(5,8);
    // alert(txt2);
    // alert(txt3);
-   if(txt2==000 && txt3==000)
+   if(txt2==000 && txt3==000){
    document.getElementById("Phone_frienderror").innerHTML="Invalid phone number format";
   
-	//var phone = /^[0-9-()]{13}$/;
-	//var phone = /^\(?([1-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-	// if(document.getElementById("Phone_friend").value.match(phone)==null)
-    //{
-    	//document.getElementById("Phone_frienderror").innerHTML="Invalid phone number format";
-    	
-       // return false;
-   // }
+	
+	return false;
+    }
 	
 	document.getElementById("Chiropratic_careerror").innerHTML=""; 
 	if( ( document.getElementById("yes1").checked == false ) && ( document.getElementById("No1").checked == false ) )
@@ -1215,23 +1281,24 @@ document.getElementById("inp_id").value=phone;
 	
 	return false;
 	}
+	document.getElementById("phyphoneerror").innerHTML="";
+	if(document.getElementById("phyphone").value.length<13)
+	{
+	document.getElementById("phyphoneerror").innerHTML="Invalid phone number format";
+	return false;
+	
+	}
 	 document.getElementById("phyphoneerror").innerHTML="";
     var txt1=document.getElementById("phyphone").value;
    var txt2=txt1.substring(1,4);
    var txt3=txt1.substring(5,8);
    // alert(txt2);
    // alert(txt3);
-   if(txt2==000 && txt3==000)
+   if(txt2==000 && txt3==000){
    document.getElementById("phyphoneerror").innerHTML="Invalid phone number format";
   
-	//var phone = /^[0-9-()]{13}$/;
-	//var phone = /^\(?([1-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-	// if(document.getElementById("phyphone").value.match(phone)==null)
-   // {
-    	//document.getElementById("phyphoneerror").innerHTML="Invalid phone number format";
-    	
-        //return false;
-   // }
+	return false;
+    }
 	document.getElementById("xrayerror").innerHTML="";
 	if(document.getElementById("xray").value=="")
 	{
@@ -1260,22 +1327,23 @@ document.getElementById("inp_id").value=phone;
 	
 	return false;
 	}
+	document.getElementById("phonenumbererror").innerHTML="";
+	if(document.getElementById("phonenumber").value.length<13)
+	{
+	document.getElementById("phonenumbererror").innerHTML="Invalid phone number format";
+	return false;
+	
+	}
 	 document.getElementById("phonenumbererror").innerHTML="";
     var txt1=document.getElementById("phonenumber").value;
    var txt2=txt1.substring(1,4);
    var txt3=txt1.substring(5,8);
    // alert(txt2);
    // alert(txt3);
-   if(txt2==000 && txt3==000)
+   if(txt2==000 && txt3==000){
    document.getElementById("phonenumbererror").innerHTML="Invalid phone number format";
-	//var phone = /^[0-9-()]{13}$/;
-	//var phone = /^\(?([1-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-	 //if(document.getElementById("phonenumber").value.match(phone)==null)
-   // {
-    	//document.getElementById("phonenumbererror").innerHTML="Invalid phone number format";
-    	
-        //return false;
-    //}
+	return false;
+    }
 	document.getElementById("Fault_accidenterror").innerHTML="";
 	if(document.getElementById("Fault_accident").value=="")
 	{
@@ -1297,22 +1365,26 @@ document.getElementById("inp_id").value=phone;
 	
 	return false;
 	}
+	
+	document.getElementById("Insurance_phoneerror").innerHTML="";
+	if(document.getElementById("Insurance_phone").value.length<13)
+	{
+	document.getElementById("Insurance_phoneerror").innerHTML="Invalid phone number format";
+	return false;
+	
+	}
+	
+	
 	 document.getElementById("Insurance_phoneerror").innerHTML="";
     var txt1=document.getElementById("Insurance_phone").value;
    var txt2=txt1.substring(1,4);
    var txt3=txt1.substring(5,8);
    // alert(txt2);
    // alert(txt3);
-   if(txt2==000 && txt3==000)
+   if(txt2==000 && txt3==000){
    document.getElementById("Insurance_phoneerror").innerHTML="Invalid phone number format";
-	//var phone = /^[0-9-()]{13}$/;
-	//var phone = /^\(?([1-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-	// if(document.getElementById("Insurance_phone").value.match(phone)==null)
-   // {
-    	//document.getElementById("Insurance_phoneerror").innerHTML="Invalid phone number format";
-    	
-       // return false;
-    //}
+	 return false;
+    }
 	document.getElementById("Name_autoerror").innerHTML="";
 	if(document.getElementById("Name_auto").value=="")
 	{
@@ -1328,21 +1400,22 @@ document.getElementById("inp_id").value=phone;
 	return false;
 	}
 	document.getElementById("Phone_autoerror").innerHTML="";
+	if(document.getElementById("Phone_auto").value.length<13)
+	{
+	document.getElementById("Phone_autoerror").innerHTML="Invalid phone number format";
+	return false;
+	
+	}
+	document.getElementById("Phone_autoerror").innerHTML="";
     var txt1=document.getElementById("Phone_auto").value;
    var txt2=txt1.substring(1,4);
    var txt3=txt1.substring(5,8);
    // alert(txt2);
    // alert(txt3);
-   if(txt2==000 && txt3==000)
+   if(txt2==000 && txt3==000){
    document.getElementById("Phone_autoerror").innerHTML="Invalid phone number format";
-	//var phone = /^[0-9-()]{13}$/;
-	//var phone = /^\(?([1-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-	// if(document.getElementById("Phone_auto").value.match(phone)==null)
-   // {
-    	//document.getElementById("Phone_autoerror").innerHTML="Invalid phone number format";
-    	
-        //return false;
-   // }
+	return false;
+    }
           
      
     
@@ -1367,21 +1440,23 @@ document.getElementById("inp_id").value=phone;
 	
 	return false;
 	}
+	document.getElementById("phhealtherror").innerHTML="";
+	if(document.getElementById("phhealth").value.length<13)
+	{
+	document.getElementById("phhealtherror").innerHTML="Invalid phone number format";
+	return false;
+	
+	}
 	 document.getElementById("phhealtherror").innerHTML="";
     var txt1=document.getElementById("phhealth").value;
    var txt2=txt1.substring(1,4);
    var txt3=txt1.substring(5,8);
    // alert(txt2);
    // alert(txt3);
-   if(txt2==000 && txt3==000)
+   if(txt2==000 && txt3==000){
    document.getElementById("phhealtherror").innerHTML="Invalid phone number format";
-	//var phone = /^\(?([1-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-	 //if(document.getElementById("phhealth").value.match(phone)==null)
-    //{
-    	//document.getElementById("phhealtherror").innerHTML="Invalid phone number format";
-    	
-        //return false;
-   // }
+	return false;
+    }
          
 	document.getElementById("Prev_accidenterror").innerHTML=""; 
 	if( ( document.getElementById("yes7").checked == false ) && ( document.getElementById("No7").checked == false ) )
@@ -1475,6 +1550,26 @@ document.getElementById("inp_id").value=phone;
 	
 	return false;
 	}
+	
+	
+	document.getElementById("claim_openerror").innerHTML=""; 
+	if( ( document.getElementById("claim_open").checked == false ) && ( document.getElementById("claim_open1").checked == false ) )
+
+	 {
+	 document.getElementById("claim_openerror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+	
+	document.getElementById("car11error").innerHTML=""; 
+	if(document.getElementById("car11").value=="")
+	{
+	 document.getElementById("car11error").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
 	}
 
 	</script>
@@ -1906,7 +2001,7 @@ function check(id)
 				                 <div id="info"> <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name :</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  <input type="hidden" value="${totalpatient}" id="totalpoint">
-				                  	<input type="text" class="input_txtbx1" name="Name" id="name" value="${pname}" /><br><span id="nameerror" style="color: red;font-style:italic;" ><form:errors path="PatientDetails.name"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" name="Name" id="name" min="4" maxlength="32" value="${pname}" /><br><span id="nameerror" style="color: red;font-style:italic;" ><form:errors path="PatientDetails.name"></form:errors></span>
 				                  </td>
 				                </tr>
 				                
@@ -1943,7 +2038,7 @@ function check(id)
                                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>ZipCode:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="zipcode1" name="ZipCode" maxlength="5" /><br><span  id="zipcode1error" style="color: red;font-style:italic;"><form:errors path="PatientDetails.zipCode"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="zipcode1" name="ZipCode" onInput="return validatezipcode()"; maxlength="5" /><br><span  id="zipcode1error" style="color: red;font-style:italic;"><form:errors path="PatientDetails.zipCode"></form:errors></span>
 	
 	<span class="err" ></span>            
 				                  </td>
@@ -2059,7 +2154,7 @@ function check(id)
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>ZipCode:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="zipcode2" name="zip" maxlength="5" /><br><span style="color: red;font-style:italic;" id="zipcode2error"><form:errors path="PatientDetails.zipCode"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="zipcode2" onInput="return validatezipcode()"; name="zip" maxlength="5" /><br><span style="color: red;font-style:italic;" id="zipcode2error"><form:errors path="PatientDetails.zipCode"></form:errors></span>
 	
 	<span class="err" ></span>            
 				                  </td>
@@ -2086,7 +2181,7 @@ function check(id)
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>ZipCode:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="zipcode3" name="Ezip" maxlength="5"/><br><span style="color: red;font-style:italic;" id="zipcode3error"><form:errors path="PatientDetails.Ezip"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="zipcode3"  onInput="return validatezipcode()";name="Ezip" maxlength="5"/><br><span style="color: red;font-style:italic;" id="zipcode3error"><form:errors path="PatientDetails.Ezip"></form:errors></span>
 				                  	<br><span class="err" id="zipcodeerror"></span>
 				                  </td>
 				                </tr>
@@ -2331,7 +2426,7 @@ function check(id)
 				                 <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>mls there a claim open </td>
 				                  <td valign="top" align="left" class="input_txt">
-				 <input type="radio" name="claim_open" value="yes" class="input_txt" id="claim_open" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="claim_open" value="No" class="input_txt" id="claim_open">No
+				 <input type="radio" name="claim_open" value="yes" class="input_txt" id="claim_open" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="claim_open" value="No" class="input_txt" id="claim_open1">No
 				                  	<span id="claim_openerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.claim_open"></form:errors></span></td>
 				                  	<td></td>                                                                                        
 				                 
@@ -3101,7 +3196,7 @@ function check(id)
 				            <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Phone of your Health Insurance:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="phhealth" name="Health_phone" value="${first.health_phone}"/><span class="err"><form:errors path="PatientDetails.Health_phone"></form:errors></span></td>
+				                  	<input type="text" class="input_txtbx1" id="phhealth" name="Health_phone" value="${first.health_phone}"/><span class="err" id="phhealtherror"><form:errors path="PatientDetails.Health_phone"></form:errors></span></td>
 				                  <br>
 				                  <span class="err" id="phhealtherror">
 				                  </span>

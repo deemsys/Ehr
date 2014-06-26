@@ -207,6 +207,16 @@ document.getElementById("datepickererror").innerHTML="";
 		
 		return false;
 		}
+		
+		document.getElementById("securityerror").innerHTML="";
+		var txt1=document.getElementById("security").value;
+		var txt2=txt1.substring(0,3);
+		if(txt2==000)
+		{
+		document.getElementById("securityerror").innerHTML="Invalid social security number";
+		return false;
+		}
+		
 		document.getElementById("datepicker1error").innerHTML="";
 		var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		

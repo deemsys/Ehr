@@ -237,6 +237,15 @@ document.getElementById("securityerror").innerHTML=" ";
 		
 		return false;
 		}
+		
+		document.getElementById("securityerror").innerHTML="";
+		var txt1=document.getElementById("security").value;
+		var txt2=txt1.substring(0,3);
+		if(txt2==000)
+		{
+		document.getElementById("securityerror").innerHTML="Invalid social security number";
+		return false;
+		}
 	}
 
 	</script>
