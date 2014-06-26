@@ -112,7 +112,7 @@ document.getElementById("fax").value=phone;
 	<script type="text/javascript">
        function validate(event) {
           
-           var regex = new RegExp("^[0-9.]+$");
+           var regex = new RegExp("^[0-9]+$");
            var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
            if (!regex.test(key)) {
              // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";

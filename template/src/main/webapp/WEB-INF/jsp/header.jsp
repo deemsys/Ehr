@@ -460,7 +460,7 @@ color:#fff;
 	text-transform:uppercase;
 }
 </style> -->
-  <ul class="menu" style="width: 1340">
+  <ul class="menu" style="width: 1640">
 <c:choose><c:when test="${visit==0}">
 
 						<li>

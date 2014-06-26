@@ -331,6 +331,7 @@ public class MainController {
 		 {
 			 String name=patientDAO.getUsername((String)session.getAttribute("username")).get(0).getName();
 			 model.addAttribute("name",name);
+			 System.out.println("name"+name);
 			 
 		 }	
 	String username=request.getParameter("username");
@@ -350,6 +351,12 @@ public class MainController {
 			if(physicalDAO.getPhysicalpatient_id(username).size()==0 && radioDAO.getRadiologicReport(username).size()==0 && hamiDAO.getHamiltonchiropracticpatientid(username).size()==0)
 			
 			{
+				if(patientDAO.getUsername((String)session.getAttribute("username")).size()>0)
+				 {
+					 String name=patientDAO.getUsername((String)session.getAttribute("username")).get(0).getName();
+					
+					 model.addAttribute("name",name);
+				 }
 				model.addAttribute("visit","0");
 				 model.addAttribute("menu","phyexam"); 
 				 return "physicalexam";
@@ -1649,7 +1656,7 @@ public class MainController {
 	@RequestMapping(value="/editworkaccident", method=RequestMethod.GET)
 	public String editWorkAccident(HttpSession session,Principal principal,HttpServletRequest request,@RequestParam("patient_no") String patient_no,ModelMap model,Workaccident workAcc)
 	{
-		session.removeAttribute("accident");
+		session.removeAttribute("work");
 
 		if(patientDAO.getUsername(principal).size()>0)
 			{			
@@ -1723,7 +1730,7 @@ public class MainController {
 	@RequestMapping(value="/deleteworkaccident", method=RequestMethod.GET)
 	public String removeWorkAccident(HttpSession session,ModelMap model, Principal principal) {
 	
-		session.removeAttribute("accident");
+		session.removeAttribute("work");
 		if(patientDAO.getUsername(principal).size()>0)
 			{			
 		   model.addAttribute("patientno","0");
@@ -1744,9 +1751,9 @@ return "viewworkaccident";
 		workaccidentForm.setWorkaccident(workDAO.getUsernameWorkaccident(principal));
 		model.addAttribute("workaccidentForm",workaccidentForm);
 		model.addAttribute("menu", "Accident");
-		session.removeAttribute("accident");
+		
 		}
-		session.removeAttribute("accident");
+		session.removeAttribute("work");
 		return "workaccident";
 	}
 	
@@ -4692,7 +4699,7 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 
 	@RequestMapping(value="/deleteinsuranceplan", method=RequestMethod.GET)
 	public String removeInsuranceplan(HttpSession session,ModelMap model, Principal principal) {
-		session.removeAttribute("insurance");
+		session.removeAttribute("waiver");
 		if(patientDAO.getUsername(principal).size()>0)
 		{		
 			String name="";			
@@ -4722,7 +4729,7 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
         model.addAttribute("insuranceplanform", insuranceplanForm);
         model.addAttribute("menu", "health");
         
-        session.removeAttribute("insurance");
+        session.removeAttribute("waiver");
 		}
 		
 		return "insuranceplan";
