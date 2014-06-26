@@ -841,6 +841,20 @@ function validatezipcode2(){
 	document.getElementById("zipcode1error").innerHTML="Enter Only Numbers";
 	return false;
 	}
+	
+	var txt1=document.getElementById("zipcode1").value;
+   if( txt1==00000){
+   document.getElementById("zipcode1error").innerHTML="Invalid Zipcode format format";
+   return false;
+   }
+  var txt2=txt1.substring(1,3);
+   
+   if(txt2==000){
+   document.getElementById("zipcode1error").innerHTML="Invalid Zipcode format format";
+   return false;
+   }
+   
+   
 	document.getElementById("homephoneerror").innerHTML="";
 	if(document.getElementById("homephone").value=="")
 	{
@@ -1056,7 +1070,17 @@ function validatezipcode2(){
 	return false;
 	}
 	}
-	
+	var txt1=document.getElementById("zipcode2").value;
+   if( txt1==00000){
+   document.getElementById("zipcode2error").innerHTML="Invalid Zipcode format format";
+   return false;
+   }
+  var txt2=txt1.substring(1,3);
+   
+   if(txt2==000){
+   document.getElementById("zipcode2error").innerHTML="Invalid Zipcode format format";
+   return false;
+   }
 	/*  document.getElementById("zipcode3error").innerHTML="";
 	if(document.getElementById("zipcode3").value=="")
 	{
@@ -1080,6 +1104,20 @@ function validatezipcode2(){
 	return false;
 	}
 	}
+	
+	var txt1=document.getElementById("zipcode3").value;
+   if( txt1==00000){
+   document.getElementById("zipcode3error").innerHTML="Invalid Zipcode format format";
+   return false;
+   }
+  var txt2=txt1.substring(1,3);
+   
+   if(txt2==000){
+   document.getElementById("zipcode3error").innerHTML="Invalid Zipcode format format";
+   return false;
+   }
+   
+   
 	document.getElementById("SpousesNameerror").innerHTML="";
 	if(document.getElementById("SpousesName").value=="")
 	{
