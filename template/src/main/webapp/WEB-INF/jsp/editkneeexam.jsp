@@ -509,7 +509,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  <td width="150"><input type="checkbox" name="walking" value="Walking" <c:if test="${kneeexam.walking=='Walking'}"><c:out value="Checked"/></c:if>>Walking &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="standing" value="Standing" <c:if test="${kneeexam.standing=='Standing'}"><c:out value="Checked"/></c:if>>Standing</td>
  <td width="150"><input type="checkbox" name="stairs" value="Stairs" <c:if test="${kneeexam.stairs=='Stairs'}"><c:out value="Checked"/></c:if>>Stairs</td>
  <td width="150"><input type="checkbox" id="otherfunctional" name="otherfunctional" value="Other"  onclick="visible(this.value)" <c:if test="${kneeexam.otherfunctional=='Other'}"><c:out value="Checked"/></c:if> >Other&nbsp;</td>
- <td> <input type="text" id="break3" name="break_text3" style="display:none" value="break_text3"/></td>
+ <td> <input type="text" id="break3" name="break_text3" style="display:none" value="${kneeexam.break_text3}"/></td>
  </tr>         
  <tr class="row1">
  <td><B style="font-size:14px">ASSESSMENT / ADDITIONAL COMMENTS:</B></td><td><textarea name="assessment" rows='5' cols='40'> ${kneeexam.assessment }</textarea></td><td></td>
