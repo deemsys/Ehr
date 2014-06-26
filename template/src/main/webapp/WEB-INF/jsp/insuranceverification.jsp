@@ -403,22 +403,9 @@ document.getElementById("fax").value=phone;
    var txt3=txt1.substring(5,8);
    // alert(txt2);
    // alert(txt3);
-   if(txt2==000 && txt3==000)
+   if(txt2==000 && txt3==000){
    document.getElementById("faxerror").innerHTML="Invalid phone number format";
-		 /* document.getElementById("faxerror").innerHTML="";
-		if(isNaN(document.getElementById("fax").value==""))
-		{
-		document.getElementById("faxerror").innerHTML="Invalid character. Please enter numbers only";
-		return false;
-		
-		} */
-		//var phone = /^\(?([1-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/; 
-	// if(document.getElementById("fax").value.match(phone)==null)
-    //{
-    	//document.getElementById("faxerror").innerHTML="Invalid phone number format ";
-    	
-       // return false;
-    //}
+   }
    
 		
 		document.getElementById("amountdeducterror").innerHTML="";
@@ -543,7 +530,7 @@ document.getElementById("yeserror").innerHTML="Required Field Should not be Empt
     
     if(document.getElementById("mail_claims").value.match(mail)==null)
     {
-    	document.getElementById("mail_claimserror").innerHTML="Enter ur proper E-Mail";
+    	document.getElementById("mail_claimserror").innerHTML="Invalid E-Mail Format";
     	
         return false;
     }
@@ -556,6 +543,19 @@ document.getElementById("yeserror").innerHTML="Required Field Should not be Empt
        function validate(event) {
           
            var regex = new RegExp("^[0-9.]+$");
+           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+           if (!regex.test(key)) {
+             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
+               event.preventDefault();
+               return false;
+           }
+       }       
+    </script>
+    
+    <script type="text/javascript">
+       function validate1(event) {
+          
+           var regex = new RegExp("^[0-9]+$");
            var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
            if (!regex.test(key)) {
              // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
@@ -732,7 +732,7 @@ document.getElementById("yeserror").innerHTML="Required Field Should not be Empt
               <table cellpadding="0" cellspacing="0" border="0" width="100%"> -->
               <tr class="row1"> 
               <td><span class="err">*</span>Maximum visits/year?</td>
-              <td><input type="text" class="input_txtbx1" name="max_visit" id="max_visit" onkeypress="return validate(event)";/><span id="max_visiterror" style="color: red;font-style:italic;"> </span><form:errors path="Insuranceverification.max_visit"></form:errors></td>
+              <td><input type="text" class="input_txtbx1" name="max_visit" id="max_visit" onkeypress="return validate1(event)";/><span id="max_visiterror" style="color: red;font-style:italic;"> </span><form:errors path="Insuranceverification.max_visit"></form:errors></td>
               <td></td>
               <td></td>
               <td></td>

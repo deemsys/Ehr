@@ -924,7 +924,7 @@ else
 function Checkpos(val){
  var element=document.getElementById('doyou');
  if(val=='other')
-   element.style.display='table-row';
+   element.style.display='block';
  else  
    element.style.display='none';
 } 
@@ -933,7 +933,7 @@ function Checkpos(val){
 function Checklight(val){
  var element=document.getElementById('lighting');
  if(val=='others')
-   element.style.display='table-row';
+   element.style.display='block';
  else  
    element.style.display='none';
 } 
@@ -943,7 +943,7 @@ function toggle3(value){
 	/* alert(value); */
 	var e = document.getElementById('lift');
 if(value=='show3')
- e.style.display="table-row";
+ e.style.display="block";
 else
  e.style.display="none";
 }
@@ -968,7 +968,7 @@ else
 function work(val){
  var element=document.getElementById('warea');
  if(val=='Other')
-   element.style.display='table-row';
+   element.style.display='block';
  else  
    element.style.display='none';
 } 

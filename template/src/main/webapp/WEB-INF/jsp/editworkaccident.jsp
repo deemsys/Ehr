@@ -411,11 +411,27 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 						                     <option value="onmachine" <c:if test="${workaccident.type_of_light=='onmachine'}"><c:out value="selected"/></c:if>>On machine</option>
 						                    <option value="others" <c:if test="${workaccident.type_of_light=='others'}"><c:out value="selected"/></c:if>>Others</option> 
 						                    </select>
+						                    
+						                    <script>
+		 window.onload = function()
+{
+if (document.getElementById("type_of_light").value == "others") {
+document.getElementById("lighting").style.visibility = 'visible';
+
+
+}
+else  {
+document.getElementById("lighting").style.visibility = 'hidden';
+
+
+}
+}
+</script>
 						                    <span id="type_of_lighterror" style="color: red;font-style:italic;"></span>
 						                      <%-- <c:if test="${workaccident.type_of_light=='others'}">
 						                     <td> <input type="text" name="lighting" id="lighting" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.lighting}" name="lighting" /></br><span class="err"><form:errors path="workAcc.lighting"></form:errors></span></td>
 						                 		</c:if>  --%>
-						                   <td> <input type="text" name="lighting" id="lighting_div" style='display:none' value="${workaccident.lighting}"  /></br><span class="err"><form:errors path="workAcc.lighting"></form:errors></span></td>  
+						                   <td> <input type="text" name="lighting" id="lighting_div"  value="${workaccident.lighting}"  /></br><span class="err"><form:errors path="workAcc.lighting"></form:errors></span></td>  
 											<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 						             			 </tr>
 				  <tr class="row2">
@@ -546,8 +562,22 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 					<option value="slippery" <c:if test="${workaccident.work_area=='slippery'}"><c:out value="selected"/></c:if>>Slippery</option>
 					 <option value="Other" <c:if test="${workaccident.work_area=='Other'}"><c:out value="selected"/></c:if>>Other</option> 
 					 </select>
-					   <td> <input type="text" name="warea" id="warea" style='display:none'  value="${workaccident.warea}" name="warea" /></br><span class="err"><form:errors path="workAcc.warea"></form:errors></span></td>
-				     
+					   <td> <input type="text" name="warea" id="warea"   value="${workaccident.warea}" name="warea" /></br><span class="err"><form:errors path="workAcc.warea"></form:errors></span></td>
+				      <script>
+		 window.onload = function()
+{
+if (document.getElementById("workcheck").value == "Other") {
+document.getElementById("warea").style.visibility = 'visible';
+
+
+}
+else  {
+document.getElementById("warea").style.visibility = 'hidden';
+
+
+}
+}
+</script>
 				 </tr>
 				   <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Do you use foot or hand levers</td>
