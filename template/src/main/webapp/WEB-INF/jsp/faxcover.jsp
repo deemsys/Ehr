@@ -286,7 +286,6 @@ function doAjaxPost() {
 
 </script>
 
-
 <div class='popup'>
 <div class='cnt223'>
 <c:if test="${success==true}">
@@ -486,9 +485,9 @@ document.getElementById("faxno").value=phone;
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="20%"><span class="err">*</span>Message:</td>
-              <td style="width: 173px; "><input type="text" class="input_txtbx1" name="msg" id="msg" style="width: 164px; "/><span class="err" id="msgerror"><form:errors path="Faxcover.msg"></form:errors></td>
-            <td align="left"><span class="err">*</span>Claim No:</td>
-              <td style="width: 188px; " align="right"><input type="text" class="input_txtbx1" name="claimno" id="claimno"  style="width: 166px; "/><span class="err" id="claimnoerror"><form:errors path="Faxcover.claimno"></form:errors>
+              <td style="width: 215px; "><input type="text" class="input_txtbx1" name="msg" id="msg" style="width: 164px; "/><span class="err" id="msgerror"><form:errors path="Faxcover.msg"></form:errors></td>
+            <td align="left" style="width: 132px; "><span class="err">*</span>Claim Number:</td>
+              <td style="width: 188px; " align="right"><input type="text" class="input_txtbx1" name="claimno" id="claimno" onkeypress="return validate(event)"; style="width: 163px; "/><span class="err" id="claimnoerror"><form:errors path="Faxcover.claimno"></form:errors>
               </span><span class="err" id="number"></span></td>
               </tr>
               </table>
