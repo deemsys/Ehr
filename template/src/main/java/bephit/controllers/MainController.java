@@ -1228,7 +1228,7 @@ public class MainController {
 	@RequestMapping(value="/deleteautoaccident", method=RequestMethod.GET)
 	public String removeautoaccident(HttpSession session,ModelMap model, Principal principal) {
 	
-		session.removeAttribute("Accident");
+		session.removeAttribute("auto");
 		if(patientDAO.getUsername(principal).size()>0)
 			{			
 		   model.addAttribute("patientno","0");
@@ -1253,7 +1253,7 @@ public class MainController {
 		autoaccidentForm.setAutoaccident(autoDAO.getusernameAuto(principal));
         model.addAttribute("autoaccidentForm", autoaccidentForm);
         model.addAttribute("menu", "Accident");
-        session.removeAttribute("Accident");
+        session.removeAttribute("auto");
 		}
 		
 		return "autoaccident";
