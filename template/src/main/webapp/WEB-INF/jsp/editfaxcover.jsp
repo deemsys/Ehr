@@ -62,13 +62,22 @@ document.getElementById("datepickererror").innerHTML="";
 		
 		return false;
 		}
-		
-	/* if(document.getElementById("faxno").value=="")
+			document.getElementById("faxerror").innerHTML="";
+	if(document.getElementById("faxno").value!="")
 	{
-	document.getElementById("faxerror").innerHTML="Please Enter";
 	
+    var txt1=document.getElementById("faxno").value;
+   var txt2=txt1.substring(1,4);
+   var txt3=txt1.substring(5,8);
+   // alert(txt2);
+   // alert(txt3);
+   if(txt2==000 && txt3==000){
+   document.getElementById("faxerror").innerHTML="Invalid phone number format";
 	return false;
-	} */
+	}
+     
+	}
+	
 	document.getElementById("fromerror").innerHTML="";
 	if(document.getElementById("froms").value=="")
 	{
@@ -76,36 +85,7 @@ document.getElementById("datepickererror").innerHTML="";
 	
 	return false;
 	}
-	/* document.getElementById("noserror").innerHTML="";
-	if(isNaN(document.getElementById("nos").value))
-{
-document.getElementById("noserror").innerHTML="invalid characters  enter the numbers only ";
-return false;
-} */
-	/* if(document.getElementById("urgent").checked == true){
-		//alert("urgent is checked");
-		document.getElementById("urgenterror").innerHTML="Please check";
-		} else if(document.getElementById("forreview").checked == true){
-		alert("Box 2 is checked");
-		document.getElementById("forreviewerror").innerHTML="Please check";
-		}	 */
-	
-	
-	
-	/* if(document.getElementById("re").value=="")
-	{
-	document.getElementById("reerror").innerHTML="Please Enter";
-	
-	return false;
-	}
-	
-	if(document.getElementById("nos").value=="")
-	{
-	document.getElementById("noserror").innerHTML="Please Enter";
-	
-	return false;
-	} */
-	document.getElementById("msgerror").innerHTML="";
+		document.getElementById("msgerror").innerHTML="";
 	if(document.getElementById("msg").value=="")
 	{
 	document.getElementById("msgerror").innerHTML="Required Field Should not be Empty";
@@ -135,35 +115,7 @@ document.getElementById("datepicker1error").innerHTML="";
 	
 	return false;
 	}
-	
-	//var phone = /^\(?([1-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-	//if(document.getElementById("faxno").value!="")
-	//{
-	//if(phone.test(document.getElementById("faxno").value)== false)
-	//{
-	//document.getElementById("faxerror").innerHTML="Invalid phone number format";
-	//return false;
-	//}
-	
-	
-	//}
-	document.getElementById("faxerror").innerHTML="";
-	if(document.getElementById("faxno").value!="")
-	{
-	
-    var txt1=document.getElementById("faxno").value;
-   var txt2=txt1.substring(1,4);
-   var txt3=txt1.substring(5,8);
-   // alert(txt2);
-   // alert(txt3);
-   if(txt2==000 && txt3==000)
-   document.getElementById("faxerror").innerHTML="Invalid phone number format";
-	return false;
-	}
-     
-	}
-
-	</script>
+		</script>
 	<script type="text/javascript">
        function validate(event) {
           
@@ -187,7 +139,18 @@ document.getElementById("faxno").value=phone;
 
 });
 </script>
-    
+    <script type="text/javascript">
+       function validate5(event) {
+          
+           var regex = new RegExp("^[0-9]+$");
+           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+           if (!regex.test(key)) {
+             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
+               event.preventDefault();
+               return false;
+           }
+       }       
+    </script>
 </head>
  <body>
 <div id="right_content">
@@ -242,7 +205,7 @@ document.getElementById("faxno").value=phone;
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120">FAX#:</td>
-              <td ><input type="text" class="input_txtbx1" name="faxno"  maxlength=13 value="${faxcoverdetails.faxno }" id="faxno"/><span class="err" id="faxerror"><form:errors path="Faxcover.faxno"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="faxno" onkeypress="return validate5(event)";  maxlength=13 value="${faxcoverdetails.faxno }" id="faxno"/><span class="err" id="faxerror"><form:errors path="Faxcover.faxno"></form:errors></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">

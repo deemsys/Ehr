@@ -186,7 +186,7 @@ return false;
 	
 	return false;
 	}
-	//var phone = /^\(?([1-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+	
 	document.getElementById("faxerror").innerHTML="";
 	if(document.getElementById("faxno").value!="")
 	{
@@ -194,9 +194,7 @@ return false;
     var txt1=document.getElementById("faxno").value;
    var txt2=txt1.substring(1,4);
    var txt3=txt1.substring(5,8);
-   // alert(txt2);
-   // alert(txt3);
-   if(txt2==000 && txt3==000)
+     if(txt2==000 && txt3==000){
    document.getElementById("faxerror").innerHTML="Invalid phone number format";
 	return false;
 	}
