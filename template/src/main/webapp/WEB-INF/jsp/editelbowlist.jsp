@@ -469,7 +469,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  <td width="250"><input type="checkbox" name="emg" value="EMG" <c:if test="${elbowexam.emg=='EMG'}"><c:out value="Checked"/></c:if>>EMG</td>
  <td width="250"><input type="checkbox" name="outside" value="Outside Referral" <c:if test="${elbowexam.outside=='Outside Referral'}"><c:out value="Checked"/></c:if>>Outside Referral </td>
  <td width="250"><input type="checkbox" name="dc" value="D/C" <c:if test="${elbowexam.dc=='D/C'}"><c:out value="Checked"/></c:if>>D/C</td>
- <td width="250"><input type="checkbox" name="otheraddress" name="otheraddress" value="Other" onclick="visible(this.value)"<c:if test="${elbowexam.otheraddress=='Other'}"><c:out value="Checked"/></c:if>>Other<input type="text" class="input_txtbx1" id="break4" name="break_text4" style="display:none" value="${elbowexam.break_text4}"/></td>
+ <td width="250"><input type="checkbox" name="otheraddress" id="otheraddress" value="Other" onclick="visible(this.value)"<c:if test="${elbowexam.otheraddress=='Other'}"><c:out value="Checked"/></c:if>>Other<input type="text" class="input_txtbx1" id="break4" name="break_text4" style="display:none" value="${elbowexam.break_text4}"/></td>
  </tr>
  </tr>
  <br/>
