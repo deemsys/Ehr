@@ -94,7 +94,18 @@
 		}
 		</script>
 		
-
+<script type="text/javascript">
+       function validate(event) {
+          
+           var regex = new RegExp("^[0-9.]+$");
+           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+           if (!regex.test(key)) {
+             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
+               event.preventDefault();
+               return false;
+           }
+       }       
+    </script>
 	<!-- function checkSubmit()
 	{
 		
@@ -214,7 +225,7 @@
               </table>
             
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
-        	  <tr><td><p align="left" id="mypar"><b><h4>RE:</b>&nbsp;&nbsp;&nbsp;&nbsp; Notice of Final Outstanding Amount Owed;Medical Fees of $ <input type="text" class="input_txtbx1" name="medicalfee" id="medicalfee" value="${formbilldetails.medicalfee}">
+        	  <tr><td><p align="left" id="mypar"><b><h4>RE:</b>&nbsp;&nbsp;&nbsp;&nbsp; Notice of Final Outstanding Amount Owed;Medical Fees of $ <input type="text" class="input_txtbx1" onkeypress="return validate(event)"; name="medicalfee" id="medicalfee" value="${formbilldetails.medicalfee}">
 	<span class="err"><form:errors path="Formbill.medicalfee"></form:errors></span>
 				  <span class="err" id="amountdeducterror"></span></h4></p></td>
         	  <td>
@@ -222,7 +233,7 @@
         	  </tr>
        		  </table>
        		 <table cellpadding="0" cellspacing="0" border="0" width="100%">
-        	  <tr><td><p align="left" id="mypar"> <b>Notice is made of final outstanding amounts owed for medical fees rendered by the above of $ <input type="text" class="input_txtbx1" name="amount" id="amount" value="${formbilldetails.amount}">
+        	  <tr><td><p align="left" id="mypar"> <b>Notice is made of final outstanding amounts owed for medical fees rendered by the above of $ <input type="text" class="input_txtbx1" name="amount" id="amount" onkeypress="return validate(event)"; value="${formbilldetails.amount}">
 	<span class="err"><form:errors path="Formbill.amount"></form:errors></span>
 				  <span class="err" id="number"></span></b></p></td>
         	  <td>
