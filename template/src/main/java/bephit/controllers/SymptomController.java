@@ -941,7 +941,14 @@ String name="";
 			return "wristindex";
 		}
 
-		wristdao.insertwristindex(wristindexdetails,principal);
+		 String username=principal.getName();
+    	 if(username.equals("admin"))
+    	 { 
+    	 
+    		 username=(String)session.getAttribute("staffusername");
+    		 System.out.println("susername"+username);
+    	 }
+		wristdao.insertwristindex(wristindexdetails,username);
 		WristindexForm wristindexform = new WristindexForm();
 		wristindexform.setWristindexdetails(wristdao.getwristindexDetails());
 		model.addAttribute("wristindexform", wristindexform);
@@ -960,7 +967,14 @@ String name="";
 		model.addAttribute("menu","wristindex");
 		return "neckindex";
 		}
-		neckdao.insertneckindex(neckindexdetails,principal);
+		 String username=principal.getName();
+    	 if(username.equals("admin"))
+    	 { 
+    	 
+    		 username=(String)session.getAttribute("staffusername");
+    		 System.out.println("susername"+username);
+    	 }
+		neckdao.insertneckindex(neckindexdetails,username);
 		NeckindexForm neckindexform = new NeckindexForm();
 		neckindexform.setneckindexdetails(neckdao.getneckindexDetails());
 		model.addAttribute("neckindexform", neckindexform);

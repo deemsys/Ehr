@@ -21,7 +21,7 @@ public class NeckindexDAO
 		public void setDataSource(DataSource dataSource) {
 			this.dataSource = dataSource;
 		}
-		public int insertneckindex(Neckindex neckindexdetails,Principal principal)
+		public int insertneckindex(Neckindex neckindexdetails,String username)
 		{
 			Connection con = null;
 			Statement statement = null;
@@ -38,7 +38,7 @@ public class NeckindexDAO
 		    try{
 		    	String d="insert into neckindex(symptom,username,name,date,painintensity,work,personal,driving,lifting,sleeping,reading,recreation,headache,concentration,score,status)values('"
 		    			+neckindexdetails.getSymptom()
-		    			+"','"+principal.getName()
+		    			+"','"+username
 		    			+"','"+neckindexdetails.getName()
 		    			+"','"+neckindexdetails.getDate()
 						+"','"+neckindexdetails.getPainintensity()

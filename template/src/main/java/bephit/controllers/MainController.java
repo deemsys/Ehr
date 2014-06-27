@@ -3765,12 +3765,19 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 		return "";
 	}
 	@RequestMapping(value="/check_symptom_ajax",method=RequestMethod.POST)
-	public @ResponseBody String check_symptom_ajax(Principal principal,@ModelAttribute("symptom_ajax") String symptom,PatientDetails patientDetails)
+	public @ResponseBody String check_symptom_ajax(HttpSession session,Principal principal,@ModelAttribute("symptom_ajax") String symptom,PatientDetails patientDetails)
 	{
 		System.out.println("symptom..."+patientDetails.getSymptom_ajax());
-	if(quadraplevisualDAO.checkusernameQuadraple(patientDetails.getSymptom_ajax(), principal).size()>0)
+		 String username=principal.getName();
+    	 if(username.equals("admin"))
+    	 { 
+    	 
+    		 username=(String)session.getAttribute("staffusername");
+    		 System.out.println("susername"+username);
+    	 }
+		if(quadraplevisualDAO.checkusernameQuadraple(patientDetails.getSymptom_ajax(),username).size()>0)
 	{
-		return quadraplevisualDAO.checkusernameQuadraple(patientDetails.getSymptom_ajax(), principal).get(0).getQuadrapleno();
+		return quadraplevisualDAO.checkusernameQuadraple(patientDetails.getSymptom_ajax(), username).get(0).getQuadrapleno();
 	}
 		
 		

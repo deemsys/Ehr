@@ -21,7 +21,7 @@ public class OswestryDAO
 		public void setDataSource(DataSource dataSource) {
 			this.dataSource = dataSource;
 		}
-		public int insertoswestryindex(Oswestry oswestryindexdetails,Principal principal)
+		public int insertoswestryindex(Oswestry oswestryindexdetails,String username)
 		{
 			Connection con = null;
 			Statement statement = null;
@@ -38,7 +38,7 @@ public class OswestryDAO
 		    try{
 		    	String d="insert into oswestryindex(symptom,username,painintensity,standing,personal,sleeping,lifting,life,walking,social,sitting,traveling,comments,name,date,scores,painscale,painscale1,job,joboptional,work,worka,workb,workc,sport,sportoptional,instrument,instrumenta,instrumentb,instrumentc)values('"
 		    			+oswestryindexdetails.getSymptom()			
-		    		    +"','"+principal.getName()
+		    		    +"','"+username
 		    			+"','"+oswestryindexdetails.getPainintensity()			
 		    		    +"','"+oswestryindexdetails.getStanding()
 						+"','"+oswestryindexdetails.getPersonal()

@@ -67,8 +67,14 @@ public class OswestryController
 			model.addAttribute("menu","wristindex");
 			return "oswestryindex";
 		}
-
-		oswestrydao.insertoswestryindex(oswestryindexdetails,principal);
+		 String username=principal.getName();
+    	 if(username.equals("admin"))
+    	 { 
+    	 
+    		 username=(String)session.getAttribute("staffusername");
+    		 System.out.println("susername"+username);
+    	 }
+		oswestrydao.insertoswestryindex(oswestryindexdetails,username);
 		OswestryForm oswestryindexform=new OswestryForm();
 		oswestryindexform.setOswestrydetails(oswestrydao.getoswestryindexDetails());
 		model.addAttribute("oswestryform", oswestryindexform);

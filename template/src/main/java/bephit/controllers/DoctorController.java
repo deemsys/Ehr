@@ -2167,7 +2167,14 @@ String name="";
  
 	    model.put("Shoulderpainscore", shoulderpainscore);
 		model.addAttribute("shoulderpainscoreForm",shoulderpainscore);
-    	int a=shoulderDAO.setShoulderpain(shoulderpainscore,principal);
+		 String username=principal.getName();
+    	 if(username.equals("admin"))
+    	 { 
+    	 
+    		 username=(String)session.getAttribute("staffusername");
+    		 System.out.println("susername"+username);
+    	 }
+		int a=shoulderDAO.setShoulderpain(shoulderpainscore,username);
     	ShoulderpainscoreForm shoulderpainscoreForm= new ShoulderpainscoreForm();
     	shoulderpainscoreForm.setShoulderpainscore(shoulderDAO.getShoulderpainscore());
 		model.addAttribute("shoulderpainscoreForm",shoulderpainscoreForm);

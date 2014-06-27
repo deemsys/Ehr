@@ -28,7 +28,7 @@ public class LowbackDAO {
 		this.dataSource = dataSource;
 	}
 	
-	public int setLowback(Lowback lowback,Principal principal)
+	public int setLowback(Lowback lowback,String username)
 	{
 		Connection con = null;
 		Statement statement = null;
@@ -44,7 +44,7 @@ public class LowbackDAO {
 	    try{
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();	    	 
-	    	 String cmd="INSERT INTO `tbl_lowback`(symptom,username,`pname`,`date`,`tolerate`,`withoutpain`,`withoutcausingpain`,`sleepingwell`,`canlift`,`normal`,`walkingdistance`,`withoutextrapain`,`cansit`,`rapidlybetter`,`score`,`section`,`adl`,`adl2`,`comment`)VALUES ('"+lowback.getSymptom()+"','"+principal.getName()+"','"+lowback.getPname()+"','"+lowback.getDate()+"','"+lowback.getTolerate()+"','"+lowback.getWithoutpain()+"','"+lowback.getWithoutcausingpain()+"','"+lowback.getSleepingwell()+"','"+lowback.getCanlift()+"','"+lowback.getNormal()+"','"+lowback.getWalkingdistance()+"','"+lowback.getWithoutextrapain()+"','"+lowback.getCansit()+"','"+lowback.getRapidlybetter()+"','"+lowback.getScore()+"','"+lowback.getSection()+"','"+lowback.getAdl()+"','"+lowback.getAdl2()+"','"+lowback.getComment()+"')";
+	    	 String cmd="INSERT INTO `tbl_lowback`(symptom,username,`pname`,`date`,`tolerate`,`withoutpain`,`withoutcausingpain`,`sleepingwell`,`canlift`,`normal`,`walkingdistance`,`withoutextrapain`,`cansit`,`rapidlybetter`,`score`,`section`,`adl`,`adl2`,`comment`)VALUES ('"+lowback.getSymptom()+"','"+username+"','"+lowback.getPname()+"','"+lowback.getDate()+"','"+lowback.getTolerate()+"','"+lowback.getWithoutpain()+"','"+lowback.getWithoutcausingpain()+"','"+lowback.getSleepingwell()+"','"+lowback.getCanlift()+"','"+lowback.getNormal()+"','"+lowback.getWalkingdistance()+"','"+lowback.getWithoutextrapain()+"','"+lowback.getCansit()+"','"+lowback.getRapidlybetter()+"','"+lowback.getScore()+"','"+lowback.getSection()+"','"+lowback.getAdl()+"','"+lowback.getAdl2()+"','"+lowback.getComment()+"')";
 	    	 System.out.println(cmd);
 	    	 statement.execute(cmd);
 	    	 flag=1;

@@ -21,7 +21,7 @@ public class WristindexDAO
 		public void setDataSource(DataSource dataSource) {
 			this.dataSource = dataSource;
 		}
-		public int insertwristindex(Wristindex wristindexdetails,Principal principal)
+		public int insertwristindex(Wristindex wristindexdetails,String username)
 		{
 			Connection con = null;
 			Statement statement = null;
@@ -38,7 +38,7 @@ public class WristindexDAO
 		    try{
 		    	String d="insert into wristindex(symptom,username,name,date,painintensity,work,numbness,driving,personal,sleeping,strength,house,writing,recreation,painscale,score,total)values('"
 		    			+wristindexdetails.getSymptom()
-		    			+"','"+principal.getName()
+		    			+"','"+username
 						+"','"+wristindexdetails.getName()
 						+"','"+wristindexdetails.getDate()
 						+"','"+wristindexdetails.getPainintensity()

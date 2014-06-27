@@ -62,8 +62,18 @@ public class QuadrapleController
 	@RequestMapping (value="/quadraplevisual", method = RequestMethod.POST)
 	public String insertquadraplevisual(Principal principal,HttpSession session,HttpServletRequest request,ModelMap model,@ModelAttribute("quadraplevisual") @Valid Quadraplevisual quadraplevisual,BindingResult result) throws IOException
 
-	{model.addAttribute("menu","sign");	
-		quadrapledao.setQuadraplevisual(quadraplevisual,principal);
+	{
+		
+		 String username=principal.getName();
+    	 if(username.equals("admin"))
+    	 { 
+    	 
+    		 username=(String)session.getAttribute("staffusername");
+    		 System.out.println("susername"+username);
+    	 }
+    	 
+		model.addAttribute("menu","sign");	
+		quadrapledao.setQuadraplevisual(quadraplevisual,username);
 		QuadraplevisualForm quadraplevisualform=new QuadraplevisualForm();
 		quadraplevisualform.setQuadraplevisualdetails(quadrapledao.getQuadraplevisual());
 		model.addAttribute("QuadraplevisualForm", quadraplevisualform);
@@ -237,7 +247,14 @@ public class QuadrapleController
 		}
 		model.put("Lowback", lowback);
 		model.addAttribute("lowbackForm",lowback);
-    	int a=lowDAO.setLowback(lowback,principal);
+		 String username=principal.getName();
+    	 if(username.equals("admin"))
+    	 { 
+    	 
+    		 username=(String)session.getAttribute("staffusername");
+    		 System.out.println("susername"+username);
+    	 }
+		int a=lowDAO.setLowback(lowback,username);
 		LowbackForm lowbackForm= new LowbackForm();
 		lowbackForm.setLowback(lowDAO.getLowback());
 		model.addAttribute("lowbackForm",lowbackForm);
