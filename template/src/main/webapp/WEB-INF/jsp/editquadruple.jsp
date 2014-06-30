@@ -284,6 +284,41 @@ $(function() {
   
   
   </script>
+  
+  <script type="text/javascript">
+       function validate(event) {
+          
+           var regex = new RegExp("^[0-9]+$");
+           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+           if (!regex.test(key)) {
+             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
+               event.preventDefault();
+               return false;
+           }
+       }       
+    </script>
+     <script>
+	function check(e,value){
+    //Check Charater
+        var unicode=e.charCode? e.charCode : e.keyCode;
+        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
+        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
+    }
+    function checkLength(){
+    var fieldVal = document.getElementById('awakehours').value;
+    //Suppose u want 3 number of character
+    if(fieldVal <=100){
+        return true;
+    }
+    else
+    {
+        var str = document.getElementById('awakehours').value;
+        str = str.substring(0, str.length - 1);
+    document.getElementById('awakehours').value = str;
+    }
+     
+    }
+	</script>
  </head>
  <body onload="validation()">
 <div id="right_content">
@@ -325,7 +360,7 @@ $(function() {
 	             <table>
 	             <tr height="30">
 	             <td width="100"><span class="err">*</span>Name</td><td width="400"><input type="hidden" id="symptom" name="symptom" value="${quadraplevisualdetails.symptom}"><input type="hidden" name="quadrapleno" value="${quadraplevisualdetails.quadrapleno}"><input type="text" name="name" value="${quadraplevisualdetails.name}" id="name"><span class="err" id="nameerror"></span></td>
-	             <td width="100">Number</td><td width="400"><input type="text" name="number"  value="${quadraplevisualdetails.number}"></td>
+	             <td width="100">Number</td><td width="400"><input type="text" name="number"  onkeypress="return validate(event)"; value="${quadraplevisualdetails.number}"></td>
 	             <td width="100"><span class="err">*</span>Date</td><td width="400"><input type="text"  name="date" id="datepicker" value="${quadraplevisualdetails.date}"  /><span class="err" id="datepickererror"></span></td>
 	             </tr>
 	             </table>
@@ -387,7 +422,7 @@ $(function() {
 				  </tr>
 				  <tr height="30">
 				  <td><b>What percentage of your awake hours is your pain at its worst?</b></td>
-				  <td><input type="text" name="awakehours" value="${quadraplevisualdetails.awakehours}"></td>
+				  <td><input type="text" name="awakehours" onKeyPress="return check(event,value)" onInput="checkLength()" maxlength="5" value="${quadraplevisualdetails.awakehours}"></td>
 				  </tr>
 	             </table>
 	            <table align="right">
