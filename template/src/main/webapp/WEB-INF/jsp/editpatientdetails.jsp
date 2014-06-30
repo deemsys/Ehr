@@ -640,7 +640,7 @@ function validatezipcode2(){
     
     if(document.getElementById("Emailid").value.match(mail)==null)
     {
-    	document.getElementById("Emailiderror").innerHTML="Enter ur proper E-Mail";
+    	document.getElementById("Emailiderror").innerHTML="Invalid E-Mail Format";
     	
         return false;
     }
@@ -744,16 +744,18 @@ function validatezipcode2(){
 	}
 	
 	}
+	document.getElementById("zipcode2error").innerHTML="";
+	
 	if(document.getElementById("zipcode2").value!=""){
 	var txt1=document.getElementById("zipcode2").value;
    if( txt1==00000){
-   document.getElementById("zipcode2error").innerHTML="Invalid Zipcode format format";
+   document.getElementById("zipcode2error").innerHTML="Invalid Zipcode format ";
    return false;
    }
   var txt2=txt1.substring(1,3);
    
    if(txt2==000){
-   document.getElementById("zipcode2error").innerHTML="Invalid Zipcode format format";
+   document.getElementById("zipcode2error").innerHTML="Invalid Zipcode format ";
    return false;
    }
    }
@@ -767,17 +769,18 @@ function validatezipcode2(){
 	}
 	
 	}
+	document.getElementById("zipcode2error").innerHTML="";
 	
 	if(document.getElementById("zipcode3").value!=""){
 	var txt1=document.getElementById("zipcode3").value;
    if( txt1==00000){
-   document.getElementById("zipcode3error").innerHTML="Invalid Zipcode format format";
+   document.getElementById("zipcode3error").innerHTML="Invalid Zipcode format ";
    return false;
    }
   var txt2=txt1.substring(1,3);
    
    if(txt2==000){
-   document.getElementById("zipcode3error").innerHTML="Invalid Zipcode format format";
+   document.getElementById("zipcode3error").innerHTML="Invalid Zipcode format ";
    return false;
    }
    }
