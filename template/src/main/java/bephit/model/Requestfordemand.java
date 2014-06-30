@@ -24,17 +24,17 @@ public class Requestfordemand
 	
 	private String txtare;
 	private String pleasesend;
-	@NotEmpty
+	
 	private String copymedpay;
-	@NotEmpty
+	
 	private String copyform;
-	@NotEmpty
+	
 	private String copyassign;
-	@NotEmpty
+	
 	private String  greencard;
-	@NotEmpty
+	
 	private String defaultattorney;
-	@NotEmpty
+	
 	private String clinicrep;
 	public Requestfordemand() {
 		super();
