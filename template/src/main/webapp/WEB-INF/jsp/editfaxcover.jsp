@@ -35,7 +35,8 @@
 	}
 }
 	</script>
-	<script>
+	 <script>
+
 	function checkSubmit()
 	{
 		document.getElementById("datepickererror").innerHTML=" ";
@@ -46,38 +47,48 @@
 		
 		return false;
 		}
-document.getElementById("datepickererror").innerHTML="";
-		var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
-	if(document.getElementById("datepicker").value.match(datechk)==null)
-    {
+		document.getElementById("datepickererror").innerHTML="";
+		 var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+		if(document.getElementById("datepicker").value.match(datechk)==null)
+    	{
     	document.getElementById("datepickererror").innerHTML="Invalid Date Format";
     	
         return false;
-    }	
+    	}	
+
+  
 
 		document.getElementById("toserror").innerHTML="";
-	if(document.getElementById("tos").value=="")
+		if(document.getElementById("tos").value=="")
 		{
 		document.getElementById("toserror").innerHTML="Required Field Should not be Empty";
 		
 		return false;
 		}
-			document.getElementById("faxerror").innerHTML="";
-	if(document.getElementById("faxno").value!="")
-	{
-	
-    var txt1=document.getElementById("faxno").value;
-   var txt2=txt1.substring(1,4);
-   var txt3=txt1.substring(5,8);
-   // alert(txt2);
-   // alert(txt3);
-   if(txt2==000 && txt3==000){
-   document.getElementById("faxerror").innerHTML="Invalid phone number format";
-	return false;
-	}
-     
-	}
-	
+		
+		document.getElementById("faxnoerror").innerHTML="";
+	   if(document.getElementById("faxno").value!="")
+	   {
+		if(document.getElementById("faxno").value.length<13)
+		{
+		document.getElementById("faxnoerror").innerHTML="Invalid phone number format";
+		return false;
+		
+		}
+	   }
+		document.getElementById("faxnoerror").innerHTML="";
+		if(document.getElementById("faxno").value!="")
+		{
+		
+	    var txt1=document.getElementById("faxno").value;
+	   var txt2=txt1.substring(1,4);
+	   var txt3=txt1.substring(5,8);
+	     if(txt2==000 && txt3==000){
+	   document.getElementById("faxnoerror").innerHTML="Invalid phone number format";
+		return false;
+		}
+		
+		}
 	document.getElementById("fromerror").innerHTML="";
 	if(document.getElementById("froms").value=="")
 	{
@@ -85,29 +96,14 @@ document.getElementById("datepickererror").innerHTML="";
 	
 	return false;
 	}
-		document.getElementById("msgerror").innerHTML="";
+	
+	document.getElementById("msgerror").innerHTML="";
 	if(document.getElementById("msg").value=="")
 	{
 	document.getElementById("msgerror").innerHTML="Required Field Should not be Empty";
 	
 	return false;
 	}
-	document.getElementById("datepicker1error").innerHTML="";
-	if(document.getElementById("datepicker1").value=="")
-	{
-	document.getElementById("datepicker1error").innerHTML="Required Field Should not be Empty";
-	
-	return false;
-	}
-document.getElementById("datepicker1error").innerHTML="";
-	 var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
-	if(document.getElementById("datepicker1").value.match(datechk)==null)
-    {
-    	document.getElementById("datepicker1error").innerHTML="Invalid Date Format";
-    	
-        return false;
-    }	
-      
 	document.getElementById("claimnoerror").innerHTML="";
 	if(document.getElementById("claimno").value=="")
 	{
@@ -115,7 +111,28 @@ document.getElementById("datepicker1error").innerHTML="";
 	
 	return false;
 	}
-		</script>
+	
+	document.getElementById("datepicker1error").innerHTML="";
+	if(document.getElementById("datepicker1").value=="")
+	{
+	document.getElementById("datepicker1error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+  document.getElementById("datepicker1error").innerHTML="";
+	 var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+	if(document.getElementById("datepicker1").value.match(datechk)==null)
+    {
+    	document.getElementById("datepicker1error").innerHTML="Invalid Date Format";
+    	
+        return false;
+    }	
+
+	
+	
+	}
+
+	</script>
 	<script type="text/javascript">
        function validate(event) {
           
@@ -233,13 +250,12 @@ document.getElementById("faxno").value=phone;
               <td align="left" style="width: 188px; "><span class="err"></span>Number Of Pages Sent:</td>
               <td ><input type="text" class="input_txtbx1" name="pages" id="nos" onkeypress="return validate(event)"; value="${faxcoverdetails.pages }"/><span class="err" id="noserror"><form:errors path="Faxcover.pages"></form:errors></td>
               </tr>
-              </table>
-               <table cellpadding="0" cellspacing="0" border="0" width="100%">
+             
               <tr>
-              <td height="25" width="20%" style="width: 68px; "><span class="err">*</span>Message:</td>
-              <td style="width: 236px; "><input type="text" class="input_txtbx1" name="msg" id="msg" style="width: 164px; " value="${faxcoverdetails.msg }"/><span class="err" id="msgerror"><form:errors path="Faxcover.msg"></form:errors></td>
-            <td align="left" style="width: 109px; "><span class="err">*</span>Claim No:</td>
-              <td style="width: 188px; " align="right"><input type="text" class="input_txtbx1" name="claimno" id="claimno"  onkeypress="return validate(event)"; value="${faxcoverdetails.claimno }"/><span class="err" id="claimnoerror"><form:errors path="Faxcover.claimno"></form:errors>
+              <td height="25" width="20%" style="width: 98px; "><span class="err">*</span>Message:</td>
+              <td style="width: 178px; "><input type="text" class="input_txtbx1" name="msg" id="msg" style="width: 164px; " value="${faxcoverdetails.msg }"/><span class="err" id="msgerror"><form:errors path="Faxcover.msg"></form:errors></td>
+            <td align="left" style="width: 147px; "><span class="err">*</span>Claim No:</td>
+              <td ><input type="text" class="input_txtbx1" name="claimno" id="claimno"  onkeypress="return validate(event)"; value="${faxcoverdetails.claimno }"/><span class="err" id="claimnoerror"><form:errors path="Faxcover.claimno"></form:errors>
               </span><span class="err" id="number"></span></td>
               </tr>
               </table>
