@@ -419,7 +419,7 @@ popupWindow = window.open(url,"symptompopUpWindow" ,'width=1500,height=700,resiz
               <tr class="row1">
               <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Name</td>
 			  <td valign="top" align="left" class="input_txt">
-		      <input type="text" class="input_txtbx1" id="pat_name" name="pat_name"  value="${patientname}"/><span class="err" id="pat_name"><form:errors path="Staffchecklist.pat_name"></form:errors>
+		      <input type="text" class="input_txtbx1" id="pat_name" name="pat_name"  value="${patientname}"/><span class="err" id="pat_nameerror"><form:errors path="Staffchecklist.pat_name"></form:errors>
 		      </td>
 			  </tr>
 			  <!-- </table>
