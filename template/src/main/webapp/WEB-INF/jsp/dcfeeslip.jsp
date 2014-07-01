@@ -483,7 +483,13 @@ function doAjaxPost() {
 	  });  
 	}  
 </script>
-
+<script>
+function validatename(){
+    var textInput = document.getElementById("pname").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("pname").value = textInput;
+}
+</script>
    <script type="text/javascript">
 function Checksymptom(val){
  var element=document.getElementById('other1');
@@ -560,6 +566,15 @@ else
 	
 	return false;
 	}
+	document.getElementById("pnameerror").innerHTML="";
+	    if(document.getElementById("pname").value.length<4 || document.getElementById("pname").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("pnameerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
+	
 	document.getElementById("dr1error").innerHTML="";
 	if(document.getElementById("dr1").value=="")
 	{
@@ -701,7 +716,7 @@ else
 </table>
 <table>
  <tr class="row1">
-<td><h4> <span class="err">*</span>Patient Name:</h4></td><td><input type="text" class="input_txtbx1" id="pname" name="pname" size="25" /><span class="err" id="pnameerror"  style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.pname"></form:errors></span></td>
+<td><h4> <span class="err">*</span>Patient Name:</h4></td><td><input type="text" class="input_txtbx1" id="pname" name="pname" size="25" onInput="return validatename()";/><span class="err" id="pnameerror"  style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.pname"></form:errors></span></td>
 <td>
 <td><h4><span class="err">*</span>Treating Physician Name:</h4></td><td><input type="text" class="input_txtbx1" name="dr1" size="14" id="dr1"/><span class="err" id="dr1error"  style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.dr1"></form:errors></span></td>
 <td><h4>RPT:</h4></td><td><input type="text"   class="input_txtbx1" name="rpt" size="14"/></td>

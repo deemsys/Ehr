@@ -320,7 +320,13 @@ else
 
 </script>
 
-
+<script>
+function validatename(){
+    var textInput = document.getElementById("pname").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("pname").value = textInput;
+}
+</script>
 
  <script>
 
@@ -348,6 +354,14 @@ else
 	
 	return false;
 	}
+	document.getElementById("pnameerror").innerHTML="";
+	    if(document.getElementById("pname").value.length<4 || document.getElementById("pname").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("pnameerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
 	document.getElementById("dr1error").innerHTML="";
 	if(document.getElementById("dr1").value=="")
 	{
@@ -465,7 +479,7 @@ function validateusername(){
 </table>
 <table>
  <tr class="row1">
-<td><h2><span class="err">*</span> Patient Name:</h2></td><td><input type="text"  class="input_txtbx1"  name="pname" id="pname" size="25" value="${dcfeeslip.pname}"/><span class="err" id="pnameerror"><form:errors path="dcfeeslipdetail.pname"></form:errors></span></td>
+<td><h2><span class="err">*</span> Patient Name:</h2></td><td><input type="text"  class="input_txtbx1"  name="pname" id="pname" size="25" value="${dcfeeslip.pname}" onInput="return validatename()";/><span class="err" id="pnameerror"><form:errors path="dcfeeslipdetail.pname"></form:errors></span></td>
 <td>
 <td><h2><span class="err">*</span>Treating Physician Name:</h2></td><td><input type="text"  class="input_txtbx1" name="dr1" size="14" value="${dcfeeslip.dr1}" id="dr1"/><span class="err" id="dr1error"  style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.dr1"></form:errors></span></td>
 <td><h2>RPT:</h2></td><td><input type="text"   class="input_txtbx1" name="rpt" size="14" value="${dcfeeslip.rpt}"/></td>
