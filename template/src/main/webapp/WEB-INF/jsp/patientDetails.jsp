@@ -754,6 +754,119 @@ function validatezipcode2(){
 }
 
 </script>
+<script>
+function validatename(){
+    var textInput = document.getElementById("name").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("name").value = textInput;
+}
+</script>
+<script>
+function validatename1(){
+    var textInput = document.getElementById("EmployerName").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("EmployerName").value = textInput;
+}
+</script>
+<script>
+function validatename2(){
+    var textInput = document.getElementById("SpousesName").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("SpousesName").value = textInput;
+}
+</script>
+
+
+<script>
+function validateusername3(){
+    var textInput = document.getElementById("Name_friend").value;
+    textInput = textInput.replace(/[^0-9()-]/g, "");
+    document.getElementById("Name_friend").value = textInput;
+}
+
+</script>
+
+<script>
+function validatename4(){
+    var textInput = document.getElementById("NameOfAttorney").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("NameOfAttorney").value = textInput;
+}
+</script>
+
+
+<script>
+function validatename5(){
+    var textInput = document.getElementById("Fault_accident").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("Fault_accident").value = textInput;
+}
+</script>
+<script>
+function validatename6(){
+    var textInput = document.getElementById("phyname").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("phyname").value = textInput;
+}
+</script>
+
+<script>
+function validatename7(){
+    var textInput = document.getElementById("Insurance").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("Insurance").value = textInput;
+}
+</script>
+
+<script>
+function validatename8(){
+    var textInput = document.getElementById("Name_auto").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("Name_auto").value = textInput;
+}
+</script>
+<script>
+function validateusernamepolicy(){
+    var textInput = document.getElementById("policy").value;
+    textInput = textInput.replace(/[^A-Z0-9]/g, "");
+    document.getElementById("policy").value = textInput;
+}
+
+</script>
+<script>
+function validatename9(){
+    var textInput = document.getElementById("Name_health").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("Name_health").value = textInput;
+}
+</script>
+<script>
+function validatename10(){
+    var textInput = document.getElementById("Dr").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("Dr").value = textInput;
+}
+</script>
+
+<script>
+function validatename11(){
+    var textInput = document.getElementById("Patient").value;
+    textInput = textInput.replace(/[^A-Za-z. ]/g, "");
+    document.getElementById("Patient").value = textInput;
+}
+</script>
+<script type="text/javascript">
+       function validate(event) {
+          
+           var regex = new RegExp("^[0-9]+$");
+           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+           if (!regex.test(key)) {
+             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
+               event.preventDefault();
+               return false;
+           }
+       }       
+    </script>
 
  <script>
 
@@ -768,21 +881,15 @@ function validatezipcode2(){
 		return false;
 		}
 		
-		var name=/^[a-zA-Z]*$/;
-        
-        if(document.getElementById("name").value.match(name)==null)
-        {
-           document.getElementById("nameerror").innerHTML="Enter your username only in letters";    
-            return false;
-        }
-		
 		document.getElementById("nameerror").innerHTML="";
-	if(document.getElementById("name").value.length<4 || document.getElementById("name").value.length>32 )
-	{
-	document.getElementById("nameerror").innerHTML="Invalid Name Should be >than 4 and less than than 32";
-	return false;
-	
-	}
+	    if(document.getElementById("name").value.length<4 || document.getElementById("name").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("nameerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
+		
 		document.getElementById("datepickererror").innerHTML="";
 	if(document.getElementById("datepicker").value=="")
 		{
@@ -830,7 +937,7 @@ function validatezipcode2(){
 	document.getElementById("zipcode1error").innerHTML="";
 	if(document.getElementById("zipcode1").value.length<5)
 	{
-	document.getElementById("zipcode1error").innerHTML="Invalid zipcode format";
+	document.getElementById("zipcode1error").innerHTML="Zipcode format should be 5numbers";
 	return false;
 	
 	}
@@ -1029,6 +1136,19 @@ function validatezipcode2(){
 	 		return false;
 	 		
 	 }
+	
+	document.getElementById("EmployerNameerror").innerHTML="";
+	if(document.getElementById("EmployerName").value!="")
+	{
+    if(document.getElementById("EmployerName").value.length<4 || document.getElementById("EmployerName").value.length>=32)
+    {
+    	
+    	document.getElementById("EmployerNameerror").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
+    }
+	
 	/* document.getElementById("workphoneerror").innerHTML="";
 	if(document.getElementById("workphone").value=="")
 	{
@@ -1115,6 +1235,17 @@ function validatezipcode2(){
 	
 	return false;
 	}
+	
+	document.getElementById("SpousesNameerror").innerHTML="";
+    if(document.getElementById("SpousesName").value.length<4 || document.getElementById("SpousesName").value.length>=32)
+    {
+    	
+    	document.getElementById("SpousesNameerror").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
+
+
 	document.getElementById("SpousesEmperror").innerHTML="";
 	if(document.getElementById("SpousesEmp").value=="")
 	{
@@ -1154,6 +1285,16 @@ function validatezipcode2(){
 	
 	return false;
 	}
+	
+	document.getElementById("Name_frienderror").innerHTML="";
+    if(document.getElementById("Name_friend").value.length<4 || document.getElementById("Name_friend").value.length>=32)
+    {
+    	
+    	document.getElementById("Name_frienderror").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
+
 	document.getElementById("Phone_frienderror").innerHTML="";
 	if(document.getElementById("Phone_friend").value=="")
 	{
@@ -1286,6 +1427,26 @@ function validatezipcode2(){
 	 		return false;
 	 		
 	 }
+	
+	document.getElementById("NameOfAttorneyerror").innerHTML="";
+	if(document.getElementById("NameOfAttorney").value=="")
+	{
+	document.getElementById("NameOfAttorneyerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	document.getElementById("NameOfAttorneyerror").innerHTML="";
+    if(document.getElementById("NameOfAttorney").value.length<4 || document.getElementById("NameOfAttorney").value.length>=32)
+    {
+    	
+    	document.getElementById("NameOfAttorneyerror").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
+
+    
+    
 	 	document.getElementById("retainerror").innerHTML=""; 
 	if( ( document.getElementById("R").checked == false ) && ( document.getElementById("L").checked == false ) )
 
@@ -1295,6 +1456,8 @@ function validatezipcode2(){
 	 		return false;
 	 		
 	 }
+	
+
 	document.getElementById("recorderror").innerHTML=""; 
 	if( ( document.getElementById("yes6").checked == false ) && ( document.getElementById("No6").checked == false ) )
 
@@ -1311,6 +1474,16 @@ function validatezipcode2(){
 	
 	return false;
 	}
+	
+	document.getElementById("phynameerror").innerHTML="";
+    if(document.getElementById("phyname").value.length<4 || document.getElementById("phyname").value.length>=32)
+    {
+    	
+    	document.getElementById("phynameerror").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
+
 	document.getElementById("phyphoneerror").innerHTML="";
 	if(document.getElementById("phyphone").value=="")
 	{
@@ -1350,13 +1523,7 @@ function validatezipcode2(){
 	
 	return false;
 	}
-	document.getElementById("NameOfAttorneyerror").innerHTML="";
-	if(document.getElementById("NameOfAttorney").value=="")
-	{
-	document.getElementById("NameOfAttorneyerror").innerHTML="Required Field Should not be Empty";
 	
-	return false;
-	}
 	document.getElementById("phonenumbererror").innerHTML="";
 	if(document.getElementById("phonenumber").value=="")
 	{
@@ -1388,6 +1555,16 @@ function validatezipcode2(){
 	
 	return false;
 	}
+	document.getElementById("Fault_accidenterror").innerHTML="";
+    if(document.getElementById("Fault_accident").value.length<4 || document.getElementById("Fault_accident").value.length>=32)
+    {
+    	
+    	document.getElementById("Fault_accidenterror").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
+
+
 	document.getElementById("Insuranceerror").innerHTML="";
 	if(document.getElementById("Insurance").value=="")
 	{
@@ -1395,6 +1572,17 @@ function validatezipcode2(){
 	
 	return false;
 	}
+	
+	document.getElementById("Insuranceerror").innerHTML="";
+    if(document.getElementById("Insurance").value.length<4 || document.getElementById("Insurance").value.length>=32)
+    {
+    	
+    	document.getElementById("Insuranceerror").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
+
+
 	document.getElementById("Insurance_phoneerror").innerHTML="";
 	if(document.getElementById("Insurance_phone").value=="")
 	{
@@ -1429,6 +1617,17 @@ function validatezipcode2(){
 	
 	return false;
 	}
+	
+	document.getElementById("Name_autoerror").innerHTML="";
+    if(document.getElementById("Name_auto").value.length<4 || document.getElementById("Name_auto").value.length>=32)
+    {
+    	
+    	document.getElementById("Name_autoerror").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
+
+
 	document.getElementById("Phone_autoerror").innerHTML="";
 	if(document.getElementById("Phone_auto").value=="")
 	{
@@ -1470,6 +1669,17 @@ function validatezipcode2(){
 	
 	return false;
 	}
+	
+	document.getElementById("Name_healtherror").innerHTML="";
+    if(document.getElementById("Name_health").value.length<4 || document.getElementById("Name_health").value.length>=32)
+    {
+    	
+    	document.getElementById("Name_healtherror").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
+
+
 	document.getElementById("phhealtherror").innerHTML="";
 	if(document.getElementById("phhealth").value=="")
 	{
@@ -1580,6 +1790,17 @@ function validatezipcode2(){
 	
 	return false;
 	}
+	
+	document.getElementById("Drerror").innerHTML="";
+    if(document.getElementById("Dr").value.length<4 || document.getElementById("Dr").value.length>=32)
+    {
+    	
+    	document.getElementById("Drerror").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
+
+
 	document.getElementById("Patienterror").innerHTML="";
 	if(document.getElementById("Patient").value=="")
 	{
@@ -2038,7 +2259,7 @@ function check(id)
 				                 <div id="info"> <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name :</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  <input type="hidden" value="${totalpatient}" id="totalpoint">
-				                  	<input type="text" class="input_txtbx1" name="Name" id="name" min="4" maxlength="32" value="${pname}" /><br><span id="nameerror" style="color: red;font-style:italic;" ><form:errors path="PatientDetails.name"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" name="Name" id="name" min="4" onInput="return validatename()"; maxlength="32" value="${pname}" /><br><span id="nameerror" style="color: red;font-style:italic;" ><form:errors path="PatientDetails.name"></form:errors></span>
 				                  </td>
 				                </tr>
 				                
@@ -2083,7 +2304,7 @@ function check(id)
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Home phone:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="homephone" maxlength="13" name="Homephone"  /><br><span id="homephoneerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.homephone"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="homephone" maxlength="13" name="Homephone"  onInput="return validateusername()"; onkeypress="return validate(event)";/><br><span id="homephoneerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.homephone"></form:errors></span>
 				                  <br>
 				                
 				                  </td>
@@ -2098,7 +2319,7 @@ function check(id)
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>MobileNumber:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" maxlength="13"  id="mobilenumber" name="mobileNumber" /><br><span id="mobilenumbererror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.mobileNumber"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" maxlength="13"  id="mobilenumber" name="mobileNumber" onkeypress="return validate(event)";/><br><span id="mobilenumbererror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.mobileNumber"></form:errors></span>
 				                 <br>
 				                 <span ></span>
 				                  </td>
@@ -2112,7 +2333,7 @@ function check(id)
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Social Security Number:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="socialsecuritynumber" name="SocialSecurityNumber" maxlength="11" /><br><span id="socialsecuritynumbererror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.socialSecurityNumber"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="socialsecuritynumber" name="SocialSecurityNumber" maxlength="11" onkeypress="return validate(event)"; /><br><span id="socialsecuritynumbererror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.socialSecurityNumber"></form:errors></span>
 				                <br>
 				                <span class="err" id="socialsecuritynumbererror"></span>
  </td>
@@ -2163,7 +2384,7 @@ function check(id)
 							<tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>Employer Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="EmployerName" /><br><span class="err"><form:errors path="PatientDetails.EmployerName"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="EmployerName" name="EmployerName" onInput="return validatename1()";/><br><span class="err" id="EmployerNameerror"><form:errors path="PatientDetails.EmployerName"></form:errors></span>
 
 				                  </td>
 				                </tr>
@@ -2183,7 +2404,7 @@ function check(id)
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>WorkPhone:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="workphone" name="Workphone" maxlength="13" onkeypress="return validate(event)";/><br><span id="workphoneerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Workphone"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="workphone" name="Workphone"  maxlength="13" onkeypress="return validate(event)";/><br><span id="workphoneerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Workphone"></form:errors></span>
 <br>
 <span class="err" id="workphoneerror"></span>
 				                  </td>
@@ -2236,7 +2457,7 @@ function check(id)
 				               
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Spouse's or significant others name:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="SpousesName" name="SpousesName" /><br><span id="SpousesNameerror" style="color: red;font-style:italic;" ><form:errors path="PatientDetails.spousesName"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="SpousesName" name="SpousesName" onInput="return validatename2()";/><br><span id="SpousesNameerror" style="color: red;font-style:italic;" ><form:errors path="PatientDetails.spousesName"></form:errors></span>
 				                  	
 				                  </td>
 				                </tr>
@@ -2250,21 +2471,21 @@ function check(id)
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Spouse's Workphone:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="spouseworkphone" name="Spousesph" maxlength="13"/><br><span id="spouseworkphoneerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.spousesph"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="spouseworkphone" name="Spousesph" onkeypress="return validate(event)"; maxlength="13"/><br><span id="spouseworkphoneerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.spousesph"></form:errors></span>
 				                  	<br><span class="err" id="spouseworkphoneerror"></span>
 				                  </td>
 				                </tr>
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name of Nearest Friend/ Relative Not Living With You:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="Name_friend" name="Name_friend" /><br><span id="Name_frienderror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.name_friend"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="Name_friend" name="Name_friend" onInput="return validatename3()"; /><br><span id="Name_frienderror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.name_friend"></form:errors></span>
 				               
 				                  </td>
 				                </tr>
 				                 <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Phone of Nearest Friend/ Relative Not Living With You:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="Phone_friend" name="Phone_friend"  maxlength="13"/><br><span id="Phone_frienderror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.phone_friend"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="Phone_friend" name="Phone_friend"  onkeypress="return validate(event)"; maxlength="13"/><br><span id="Phone_frienderror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.phone_friend"></form:errors></span>
 				                 <br><br>
 				                  	<span class="err" ></span>
 				                  </td>
@@ -2439,7 +2660,7 @@ function check(id)
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name Of Attorney:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="NameOfAttorney" name="NameOfAttorney" /><br><span id="NameOfAttorneyerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.NameOfAttorney"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="NameOfAttorney" name="NameOfAttorney" onInput="return validateusername4()"; /><br><span id="NameOfAttorneyerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.NameOfAttorney"></form:errors></span>
 				                  
 				                </tr>
 				                <tr class="row2">
@@ -2447,7 +2668,7 @@ function check(id)
 				                  <td valign="top" align="left" class="input_txt">
 				                 <%--  	<form>
 															<input type="submit">
-														</form> --%><input type="text" maxlength="13" class="input_txtbx1" id="phonenumber" name="Phone_Number" /><br><span id="phonenumbererror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.phone_Number"></form:errors></span>
+														</form> --%><input type="text" maxlength="13" class="input_txtbx1" onkeypress="return validate(event)"; id="phonenumber" name="Phone_Number" /><br><span id="phonenumbererror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.phone_Number"></form:errors></span>
 				                  	<br>
 				                  	<span class="err" id="phonenumbererror"></span>
 				                  
@@ -2456,7 +2677,7 @@ function check(id)
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name of Person at Fault for the Accident:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="Fault_accident" name="Fault_accident" /><br><span id="Fault_accidenterror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.fault_accident"></form:errors></span></td>
+				                  	<input type="text" class="input_txtbx1" id="Fault_accident" name="Fault_accident" onInput="return validateusername5()"; /><br><span id="Fault_accidenterror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.fault_accident"></form:errors></span></td>
 				                  	<td></td>                                                                                        
 				                 
 				                </tr>
@@ -2488,13 +2709,13 @@ function check(id)
 				                <tr class="row1">
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>What is your Physician's Name </td>
 				                  	<td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="phyname" name="phyname"/><br><span id="phynameerror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="phyname" name="phyname"  onInput="return validateusername6()";/><br><span id="phynameerror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
 				                    </tr>
 				                
 				                <tr class="row2">
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>What is your Physician's Phone </td>
 				                  	<td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="phyphone" name="phyphone" maxlength="13"/><br><span id="phyphoneerror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="phyphone" name="phyphone" onkeypress="return validate(event)"; maxlength="13"/><br><span id="phyphoneerror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
 				                   <span class="err" ></span>
 				                    </tr>
 				                     <tr class="row2">
@@ -2518,13 +2739,13 @@ function check(id)
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Insurance Company of the at Fault Person:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="Insurance" name="Insurance" /><br><span id="Insuranceerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.insurance"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="Insurance" name="Insurance" onInput="return validateusername7()"; /><br><span id="Insuranceerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.insurance"></form:errors></span>
 				                  <td></td>
 				                </tr>
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Insurance Company Phone:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="Insurance_phone" name="Insurance_phone" maxlength="13"/><br><span id="Insurance_phoneerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.insurance_phone"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="Insurance_phone" name="Insurance_phone" onkeypress="return validate(event)"; maxlength="13"/><br><span id="Insurance_phoneerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.insurance_phone"></form:errors></span>
 				                  	<br>
 				                  	<span class="err" id="phnoerror"></span>
 				                  
@@ -2533,13 +2754,13 @@ function check(id)
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name of your auto insurance:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="Name_auto" name="Name_auto" /><br><span id="Name_autoerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.name_auto"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="Name_auto" name="Name_auto" onInput="return validateusername8()"; /><br><span id="Name_autoerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.name_auto"></form:errors></span>
 				                  	<td> </td>
 				                </tr>
 				               <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>phone of your auto insurance:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="Phone_auto" name="Phone_auto" maxlength="13" /><br><span id="Phone_autoerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.phone_auto"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="Phone_auto" name="Phone_auto" onkeypress="return validate(event)"; maxlength="13" /><br><span id="Phone_autoerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.phone_auto"></form:errors></span>
 				                  	<br>
 				                  	<span class="err" id="phautoerror"></span>
 				                  	 </td>
@@ -2547,7 +2768,7 @@ function check(id)
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Policy#:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="policy" name="Policy" /><br><span id="policyerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.policy"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="policy" name="Policy" onInput="return validateusernamepolicy()"; /><br><span id="policyerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.policy"></form:errors></span>
 				                  <br>
 				                  
 				                  	</td>
@@ -2556,14 +2777,14 @@ function check(id)
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name of Your Health Insurance:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="Name_health" name="Name_health" /><br><span id="Name_healtherror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.name_health"></form:errors></span></td>
+				                  	<input type="text" class="input_txtbx1" id="Name_health" name="Name_health" onInput="return validateusername9()"; /><br><span id="Name_healtherror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.name_health"></form:errors></span></td>
 				                  	
 				                  <td></td>
 				                </tr>
 				            <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Phone of your Health Insurance:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" maxlength="13" id="phhealth" name="Health_phone" /><br><span id="phhealtherror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.health_phone"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" maxlength="13" id="phhealth" onkeypress="return validate(event)"; name="Health_phone" /><br><span id="phhealtherror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.health_phone"></form:errors></span>
 				                  	<br>
 				                  	<span class="err" ></span>
 				                  	</td>
@@ -2746,12 +2967,12 @@ function check(id)
 				                  	<tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Dr:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="Dr" name="Dr" /><br><span id="Drerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.dr"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="Dr" name="Dr" onInput="return validateusername10()"; /><br><span id="Drerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.dr"></form:errors></span>
 				                  	</tr>  
 				                  	<tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Signature:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="Patient" name="Patient" /><br><span id="Patienterror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.patient"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="Patient" name="Patient" onInput="return validateusername11()"; /><br><span id="Patienterror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.patient"></form:errors></span>
 				                  	</tr>   </div>
 				                  	<table align="right">
 				  <tr>
