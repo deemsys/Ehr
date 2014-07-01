@@ -48,7 +48,14 @@ document.getElementById("usernameerror").innerHTML=" ";
 		
 		return false;
 		}
-		
+		document.getElementById("usernameerror").innerHTML="";
+	    if(document.getElementById("username").value.length<4 || document.getElementById("username").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("usernameerror").innerHTML="Username should be min 4 and max 32";
+	    	
+	        return false;
+	    }
 		
 		/* var uname = /^[A-Za-z0-9_]{4,32}$/;
 		 if(document.getElementById("username").value.match(uname)==null)

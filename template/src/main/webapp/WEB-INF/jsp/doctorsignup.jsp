@@ -17,18 +17,27 @@
 </style>
 <script>
 function validateusername(){
-    var textInput = document.getElementById("username").value;
+    var textInput = document.getElementById("doctorusername").value;
     textInput = textInput.replace(/[^A-Za-z0-9_]/g, "");
-    document.getElementById("username").value = textInput;
+    document.getElementById("doctorusername").value = textInput;
 }
 
 </script>
 
 <script>
 function validateusername1(){
-    var textInput = document.getElementById("password").value;
+    var textInput = document.getElementById("doctorpassword").value;
     textInput = textInput.replace(/[^A-Za-z0-9_@!#$%&*()?]/g, "");
-    document.getElementById("password").value = textInput;
+    document.getElementById("doctorpassword").value = textInput;
+}
+
+</script>
+
+<script>
+function validateusername2(){
+    var textInput = document.getElementById("doctorconfirm").value;
+    textInput = textInput.replace(/[^A-Za-z0-9_@!#$%&*()?]/g, "");
+    document.getElementById("doctorconfirm").value = textInput;
 }
 
 </script>
@@ -46,7 +55,14 @@ document.getElementById("doctorusernameerror").innerHTML=" ";
 		}
 		
 		
-		
+		document.getElementById("doctorusernameerror").innerHTML="";
+	    if(document.getElementById("doctorusername").value.length<4 || document.getElementById("doctorusername").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("doctorusernameerror").innerHTML="Username should be min 4 and max 32";
+	    	
+	        return false;
+	    } 
 document.getElementById("doctorpassworderror").innerHTML=" ";
 		
 		if(document.getElementById("doctorpassword").value=="")
@@ -57,7 +73,14 @@ document.getElementById("doctorpassworderror").innerHTML=" ";
 		}
 		
 		
-        
+		document.getElementById("doctorpassworderror").innerHTML="";
+	    if(document.getElementById("doctorpassword").value.length<3 || document.getElementById("doctorpassword").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("doctorpassworderror").innerHTML="Password should be min 3 and max 32";
+	    	
+	        return false;
+	    }
 document.getElementById("doctorconfirmerror").innerHTML=" ";
 		
 		if(document.getElementById("doctorconfirm").value=="")
@@ -86,7 +109,7 @@ document.getElementById("doctoremailerror").innerHTML=" ";
         
         if(document.getElementById("doctoremail").value.match(mail)==null)
         {
-        	document.getElementById("doctoremailerror").innerHTML="Enter ur proper E-Mail";
+        	document.getElementById("doctoremailerror").innerHTML="Invalid E-Mail Format";
         	
             return false;
         }
@@ -131,7 +154,7 @@ document.getElementById("doctoremailerror").innerHTML=" ";
 				   <tr class="row1">
 	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Confirm Password</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="password" class="input_txtbx1" id="doctorconfirm" name="doctorconfirm" /><span class="err" id="doctorconfirmerror"><form:errors path="Doctorsignup.doctorconfirm"></form:errors></span>
+				  <input type="password" class="input_txtbx1" id="doctorconfirm" name="doctorconfirm" onInput="return validateusername2()";  /><span class="err" id="doctorconfirmerror"><form:errors path="Doctorsignup.doctorconfirm"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
@@ -174,7 +197,7 @@ document.getElementById("doctoremailerror").innerHTML=" ";
 				  <br>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
-              <td valign="top" align="center"><input type="submit" class="submit_btn" value="Submit" onclick="return checkvalidation('this')"></td>
+              <td valign="top" align="center"><input type="submit" class="submit_btn" value="Submit" onclick="return checkSubmit('this');"></td>
               <td valign="top" align="center"><input type="button" class="submit_btn1" value="Back to Login" onclick="window.location.href='login'"></td>
         	  </tr>
         	  </table>
