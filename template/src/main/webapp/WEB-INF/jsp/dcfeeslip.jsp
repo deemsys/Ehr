@@ -182,6 +182,8 @@ function checkAjaxPost() {
 	
 
 </script>
+
+
 <div class='popup'>
 <div class='cnt223'>
 <br><br>
@@ -692,7 +694,7 @@ else
           <table cellpadding="0" cellspacing="0" border="0" width="98%">
            
  <tr class="row1">
-<td width="90"><h4><span class="err">*</span>Patient Id:</h4></td><td><input type="text"  class="input_txtbx1" name="pid" size="25" id="pid" onkeypress="return isNumberKey(event);"/><span  id="piderror"   style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.pid"></form:errors></span></td>
+<td width="90"><h4><span class="err">*</span>Patient Id:</h4></td><td><input type="text"  class="input_txtbx1" onInput="return validateusername()"; name="pid" size="25" id="pid" /><span  id="piderror"   style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.pid"></form:errors></span></td>
 <td width="800">
 <td><h4><span class="err">*</span>Date:</h4></td><td><input type="text"  class="input_txtbx1" id="datepicker" name="date" /><span class="err" id="datepickererror"><form:errors path="dcfeeslipdetail.date"></form:errors></span></td>
 </tr>
@@ -719,7 +721,14 @@ else
        }       
     </script>
 
+<script>
+function validateusername(){
+    var textInput = document.getElementById("pid").value;
+    textInput = textInput.replace(/[^A-Z0-9]/g, "");
+    document.getElementById("pid").value = textInput;
+}
 
+</script>
 <br/>
 <br/>
  <table>
