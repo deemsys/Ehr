@@ -35,6 +35,23 @@
 	}
 }
 	</script>
+	
+	<script>
+function validateusername(){
+    var textInput = document.getElementById("faxno").value;
+    textInput = textInput.replace(/[^0-9()-]/g, "");
+    document.getElementById("faxno").value = textInput;
+}
+
+</script>
+<script>
+function validateusername1(){
+    var textInput = document.getElementById("claimno").value;
+    textInput = textInput.replace(/[^A-Z0-9]/g, "");
+    document.getElementById("claimno").value = textInput;
+}
+
+</script>
 	 <script>
 
 	function checkSubmit()
@@ -222,7 +239,7 @@ document.getElementById("faxno").value=phone;
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120">FAX#:</td>
-              <td ><input type="text" class="input_txtbx1" name="faxno" onkeypress="return validate5(event)";  maxlength=13 value="${faxcoverdetails.faxno }" id="faxno"/><span class="err" id="faxerror"><form:errors path="Faxcover.faxno"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="faxno" onInput="return validateusername()"; onkeypress="return validate5(event)";  maxlength=13 value="${faxcoverdetails.faxno }" id="faxno"/><span class="err" id="faxerror"><form:errors path="Faxcover.faxno"></form:errors></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -248,7 +265,7 @@ document.getElementById("faxno").value=phone;
               <td  width="20%"><span class="err"></span>RE:</td>
               <td ><input type="text" class="input_txtbx1" name="regarding" id="re" style="width: 164px; " value="${faxcoverdetails.regarding }"/><span class="err" id="reerror"><form:errors path="Faxcover.regarding"></form:errors></td>
               <td align="left" style="width: 188px; "><span class="err"></span>Number Of Pages Sent:</td>
-              <td ><input type="text" class="input_txtbx1" name="pages" id="nos" onkeypress="return validate(event)"; value="${faxcoverdetails.pages }"/><span class="err" id="noserror"><form:errors path="Faxcover.pages"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="pages" id="nos" onInput="return validateusername1()"; value="${faxcoverdetails.pages }"/><span class="err" id="noserror"><form:errors path="Faxcover.pages"></form:errors></td>
               </tr>
              
               <tr>
