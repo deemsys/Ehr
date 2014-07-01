@@ -390,6 +390,15 @@ document.getElementById("yeserror").innerHTML="Required Field Should not be Empt
            }
        }       
     </script>
+    
+    <script>
+function validateusername(){
+    var textInput = document.getElementById("fax").value;
+    textInput = textInput.replace(/[^0-9()-]/g, "");
+    document.getElementById("fax").value = textInput;
+}
+
+</script>
 </head>
  <body>
 <div id="right_content">
@@ -434,7 +443,7 @@ document.getElementById("fax").value=phone;
 
 });
 </script>              
-              <td><input type="text" class="input_txtbx1" name="fax" id="fax" maxlength=13 value="${Insuranceverification.fax}" onkeypress="return validate(event)";/><span id="faxerror"  style="color: red;font-style:italic;"></span><form:errors path="Insuranceverification.fax"></form:errors>
+              <td><input type="text" class="input_txtbx1" name="fax" id="fax"  onInput="return validateusername()"; maxlength=13 value="${Insuranceverification.fax}" onkeypress="return validate(event)";/><span id="faxerror"  style="color: red;font-style:italic;"></span><form:errors path="Insuranceverification.fax"></form:errors>
               <span class="err" id="faxerror"></span>
               </td>
               </tr>

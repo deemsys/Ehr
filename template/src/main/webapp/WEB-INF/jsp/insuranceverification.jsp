@@ -162,6 +162,16 @@ function doAjaxPost() {
 	
 
 </script> 
+
+
+<script>
+function validateusername(){
+    var textInput = document.getElementById("fax").value;
+    textInput = textInput.replace(/[^0-9()-]/g, "");
+    document.getElementById("fax").value = textInput;
+}
+
+</script>
 <div class='popup'>
 <div class='cnt223'>
 <br><br>
@@ -405,6 +415,7 @@ document.getElementById("fax").value=phone;
    // alert(txt3);
    if(txt2==000 && txt3==000){
    document.getElementById("faxerror").innerHTML="Invalid phone number format";
+   return false;
    }
    
 		
@@ -706,7 +717,7 @@ document.getElementById("yeserror").innerHTML="Required Field Should not be Empt
 
                       });
                     </script>          
-    <td><input type="text" class="input_txtbx1" name="fax" id="fax" onkeypress="return validate(event)"; maxlength=13 /><br><span id="faxerror" style="color: red;font-style:italic;"> </span><form:errors path="Insuranceverification.fax"></form:errors>
+    <td><input type="text" class="input_txtbx1" name="fax" id="fax" onInput="return validateusername()"; onkeypress="return validate(event)"; maxlength=13 /><br><span id="faxerror" style="color: red;font-style:italic;"> </span><form:errors path="Insuranceverification.fax"></form:errors>
               <span class="err" id="faxerror"></span>
               </td>
               </tr>
