@@ -53,7 +53,39 @@
       }
   }       
 </script>
-  </script>
+ <script>
+function validatename(){
+    var textInput = document.getElementById("person").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("person").value = textInput;
+}
+</script>
+
+<script>
+function validatename1(){
+    var textInput = document.getElementById("emp").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("emp").value = textInput;
+}
+</script>
+
+<script>
+function validateusername(){
+    var textInput = document.getElementById("policy").value;
+    textInput = textInput.replace(/[^A-Z0-9]/g, "");
+    document.getElementById("policy").value = textInput;
+}
+
+</script>
+
+<script>
+function validateusername1(){
+    var textInput = document.getElementById("groupno1").value;
+    textInput = textInput.replace(/[^A-Z0-9]/g, "");
+    document.getElementById("groupno1").value = textInput;
+}
+
+</script>
 <script>
 function checkSubmit()
 {                        
@@ -65,6 +97,15 @@ function checkSubmit()
 	
 	return false;
 	}
+	document.getElementById("personerr").innerHTML="";
+    if(document.getElementById("person").value.length<4 || document.getElementById("person").value.length>=32)
+    {
+    	
+    	document.getElementById("personerr").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
+
 	document.getElementById("datepickererror").innerHTML="";
 	if(document.getElementById("datepicker").value=="")
 	{
@@ -88,15 +129,23 @@ function checkSubmit()
 	return false;
     }
 	
+	document.getElementById("emperr").innerHTML="";
+    if(document.getElementById("emp").value.length<4 || document.getElementById("emp").value.length>=32)
+    {
+    	
+    	document.getElementById("emperr").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
 
-	var name=/^[a-zA-Z]*$/;
+	/* var name=/^[a-zA-Z]*$/;
     
     if(document.getElementById("emp").value.match(name)==null)
     {
        document.getElementById("emperr").innerHTML="Enter your name only in letters";    
         return false;
     }
-    
+     */
     
     document.getElementById("companyerr").innerHTML="";
 	if(document.getElementById("company").value=="")
@@ -283,7 +332,7 @@ document.getElementById("phone").value=phone;
               <tr class="row1">
               <td><span class="err">*</span>Patient's Name</td>
               <input type="hidden" class="input_txtbx1" id="inp_id" value="${Insuranceinformation.number}" name="number" />
-              <td> <input type="text" class="input_txtbx1" name="patient_name" id="person" value="${Insuranceinformation.patient_name}"/><br><span id="personerr" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.patient_name"></form:errors></td>
+              <td> <input type="text" class="input_txtbx1" name="patient_name" id="person" onInput="return validatename()"; value="${Insuranceinformation.patient_name}"/><br><span id="personerr" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.patient_name"></form:errors></td>
               </tr>
               <tr class="row1">
               <td><span class="err">*</span>Date of Accident/injury</td>
@@ -295,7 +344,7 @@ document.getElementById("phone").value=phone;
               </tr>
               <tr class="row1">
               <td><span class="err">*</span>Employer's Name</td>
-              <td> <input type="text" class="input_txtbx1" name="employers_name" id="emp" value="${Insuranceinformation.employers_name}"/><span id="emperr"  style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.employers_name"></form:errors></td>
+              <td> <input type="text" class="input_txtbx1" name="employers_name" id="emp" onInput="return validatename1()"; value="${Insuranceinformation.employers_name}"/><span id="emperr"  style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.employers_name"></form:errors></td>
               </tr>
               <tr class="row1">
               <td><span class="err">*</span>Insurance Company</td>
@@ -307,12 +356,12 @@ document.getElementById("phone").value=phone;
               </tr>
               <tr class="row1">
               <td><span class="err">*</span>Policy#</td>
-              <td> <input type="text" class="input_txtbx1" name="policy" id="policy" onkeypress="return validate(event)"; value="${Insuranceinformation.policy}"/><br><span id="policyerr"  style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.policy"></form:errors></span>
+              <td> <input type="text" class="input_txtbx1" name="policy" id="policy" onInput="return validateusername()"; value="${Insuranceinformation.policy}"/><br><span id="policyerr"  style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.policy"></form:errors></span>
               <br><span class="err" id="policyerror"></span>
               
               </td>
               <td><span class="err">*</span>Group#</td>
-              <td><input type="text" class="input_txtbx1" name="infono" id="groupno1" value="${Insuranceinformation.infono}" onkeypress="return validate(event)";/><br><span id="groupno1err"  style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.infono"></form:errors></span>
+              <td><input type="text" class="input_txtbx1" name="infono" id="groupno1" value="${Insuranceinformation.infono}" onInput="return validateusername1()";/><br><span id="groupno1err"  style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.infono"></form:errors></span>
               <br><span class="err" id="groupnoerror"></span>
               </td>
               </tr>
