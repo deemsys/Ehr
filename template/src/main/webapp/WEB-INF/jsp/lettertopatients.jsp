@@ -249,6 +249,15 @@ $("#ssn").keyup(function() {
 
 
 </script>
+
+<script>
+function validateusername(){
+    var textInput = document.getElementById("claim").value;
+    textInput = textInput.replace(/[^A-Z0-9]/g, "");
+    document.getElementById("claim").value = textInput;
+}
+
+</script>
 <script>
 function checkSubmit()
 	{
@@ -470,7 +479,7 @@ document.getElementById("ssn").value=phone;
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err">*</span>Claim:</td>
-              <td ><input type="text" class="input_txtbx1" name="claim" id="claim" placeholder="35W899112"  /><span class="err" id="claimerror"><form:errors path="Lettertopatients.claim"></form:errors></span></td>
+              <td ><input type="text" class="input_txtbx1" name="claim" id="claim" onInput="return validateusername()"; placeholder="35W899112"  /><span class="err" id="claimerror"><form:errors path="Lettertopatients.claim"></form:errors></span></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">

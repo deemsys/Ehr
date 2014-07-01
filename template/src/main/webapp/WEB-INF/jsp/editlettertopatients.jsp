@@ -41,6 +41,15 @@
 	}
 }
 	</script>
+	
+	<script>
+function validateusername(){
+    var textInput = document.getElementById("claim").value;
+    textInput = textInput.replace(/[^A-Z0-9]/g, "");
+    document.getElementById("claim").value = textInput;
+}
+
+</script>
 	<script>
 function checkSubmit()
 	{
@@ -207,7 +216,7 @@ document.getElementById("ssn").value=phone;
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err">*</span>CLAIM:</td>
-              <td ><input type="text" class="input_txtbx1" name="claim" id="claim" value="${lettertopatientsdetails.claim }" /><span class="err" id="claimerror"><form:errors path="Workschool.date"></form:errors></span></td>
+              <td ><input type="text" class="input_txtbx1" name="claim" id="claim" onInput="return validateusername()"; value="${lettertopatientsdetails.claim }" /><span class="err" id="claimerror"><form:errors path="Workschool.date"></form:errors></span></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
