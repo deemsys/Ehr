@@ -196,6 +196,13 @@ function doAjaxPost() {
  
 </script>
 <script>
+function validatename(){
+    var textInput = document.getElementById("patientname").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("patientname").value = textInput;
+}
+</script>
+<script>
 function valid()
 {   
 	document.getElementById("nameerror").innerHTML="";
@@ -211,6 +218,14 @@ document.getElementById("patientnameerror").innerHTML="";
     	  document.getElementById("patientnameerror").innerHTML="Required Field Should not be Empty";
             return false;
         }  
+        document.getElementById("patientnameerror").innerHTML="";
+	    if(document.getElementById("patientname").value.length<4 || document.getElementById("patientname").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("patientnameerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
         
       document.getElementById("datepickererror").innerHTML="";
         if(document.getElementById("datepicker").value=="")
@@ -318,7 +333,7 @@ document.getElementById("patientnameerror").innerHTML="";
               </tr>
                 <tr>
               <td height="30" width="120"><span class="err">*</span>Patients's Name:</td>
-              <td ><input type="text" class="input_txtbx1" name="patientname" id="patientname" style="width: 156px; "/><span class="err" id="patientnameerror"><form:errors path="Responseattorney.patientname"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="patientname" id="patientname" style="width: 156px; " onInput="return validatename()";/><span class="err" id="patientnameerror"><form:errors path="Responseattorney.patientname"></form:errors></td>
               </tr>
                 <tr>
               <td height="30" width="120"><span class="err">*</span>Date Of Accident:</td>
