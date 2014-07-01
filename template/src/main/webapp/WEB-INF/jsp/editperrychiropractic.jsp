@@ -23,6 +23,13 @@
          });
 </script>
 <script>
+function validatename(){
+    var textInput = document.getElementById("nameofperson").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("nameofperson").value = textInput;
+}
+</script>
+<script>
 
 	function checkSubmit()
 	{
@@ -48,6 +55,15 @@ document.getElementById("error").innerHTML="";
 	
 	return false;
 	}
+	document.getElementById("nameofpersonerror").innerHTML="";
+	    if(document.getElementById("nameofperson").value.length<4 || document.getElementById("nameofperson").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("nameofpersonerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
+	
 	document.getElementById("datepickererror").innerHTML="";
 	var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		
@@ -178,7 +194,7 @@ Canton, Ohio 44708
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="50%"><span class="err">*</span>Patient's Name/ Name of Person Entitled To Coverage: </td>
-              <td ><input type="text" class="input_txtbx1" name="nameofperson" value="${perrychiropracticdetails.nameofperson}"   id="nameofperson" /><span class="err" id="nameofpersonerror"  style="color: red;font-style:italic;"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="nameofperson" value="${perrychiropracticdetails.nameofperson}"   id="nameofperson" onInput="return validatename()";/><span class="err" id="nameofpersonerror"  style="color: red;font-style:italic;"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
