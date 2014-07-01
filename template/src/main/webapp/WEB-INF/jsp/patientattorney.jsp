@@ -344,20 +344,20 @@ function openWindow(h, w, url) {
               </table><br><br>
        		<table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="120"><span class="err">*</span>Name of Patient's Attorney</td>
+              <td height="25" width="120" style="width: 155px; "><span class="err">*</span>Name of Patient's Attorney</td>
               <td ><input type="text" class="input_txtbx1" name="name" id="name"><span class="err" id="nameerror"  style="color: red;font-style:italic;"><form:errors path="Patientattorney.name"></form:errors></span></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="120"><span class="err"></span>Address</td>
+              <td height="25" width="120" style="width: 155px; "><span class="err"></span>Address</td>
               <td ><textarea rows="" cols="" name="address" class="input_txtarea" id="address"style="width: 169px; height: 62px"></textarea><span class="err"><form:errors path="Patientattorney.address"></form:errors></span></td>
               </tr>
               </table>
               
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="120">Regarding</td>
+              <td height="25" width="120" style="width: 155px; ">Regarding</td>
               <td ><input type="text" class="input_txtbx1" name="reg" id="reg"></td>
               </tr>
               </table>       
@@ -367,13 +367,13 @@ function openWindow(h, w, url) {
               
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="120"><span class="err">*</span>Patient's name</td>
+              <td height="25" width="120" style="width: 155px; "><span class="err">*</span>Patient's name</td>
               <td ><input type="text" class="input_txtbx1" name="patientname" id="patientname"><span class="err" id="patientnameerror"  style="color: red;font-style:italic;"><form:errors path="Patientattorney.patientname"></form:errors></span></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="120"><span class="err">*</span>Date of Accident</td>
+              <td height="25" width="120" style="width: 155px; "><span class="err">*</span>Date of Accident</td>
               <td ><input type="text" class="input_txtbx1" name="date" id="datepicker"><span class="err" id="datepickererror"  style="color: red;font-style:italic;"><form:errors path="Patientattorney.date"></form:errors></span></td>
               </tr>
               </table>
