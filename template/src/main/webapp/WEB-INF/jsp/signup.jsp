@@ -94,14 +94,14 @@ document.getElementById("confirmerror").innerHTML=" ";
             return false;
         }
         
-        document.getElementById("confirmerror").innerHTML="";
+     /*    document.getElementById("confirmerror").innerHTML="";
 	    if(document.getElementById("confirm").value.length<3 || document.getElementById("confirm").value.length>=32)
 	    {
 	    	
 	    	document.getElementById("confirmerror").innerHTML="Password should be min 3 and max 32";
 	    	
 	        return false;
-	    }
+	    } */
 document.getElementById("emailerror").innerHTML=" ";
 		
 		if(document.getElementById("email").value=="")
