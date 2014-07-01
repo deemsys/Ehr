@@ -198,6 +198,13 @@ function doAjaxPost() {
          });
 </script>
 <script>
+function validatename(){
+    var textInput = document.getElementById("nameofperson").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("nameofperson").value = textInput;
+}
+</script>
+<script>
 
 	function checkSubmit()
 	{
@@ -216,6 +223,15 @@ function doAjaxPost() {
 		
 		return false;
 		}
+		document.getElementById("nameerror").innerHTML="";
+	    if(document.getElementById("nameofperson").value.length<4 || document.getElementById("nameofperson").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("nameerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
+		
 		document.getElementById("dateerror").innerHTML="";
 		if(document.getElementById("datepicker").value=="")
 		{
@@ -378,7 +394,7 @@ function openWindow(h, w, url) {
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="40%"><span class="err">*</span>Patient's Name</td>
-              <td><input type="text" class="input_txtbx1" name="nameofperson" id="nameofperson"><span class="err" id="nameerror"><form:errors path="Pimedpay.nameofperson"></form:errors></span></td>
+              <td><input type="text" class="input_txtbx1" name="nameofperson" id="nameofperson" onInput="return validatename()";><span class="err" id="nameerror"><form:errors path="Pimedpay.nameofperson"></form:errors></span></td>
               </tr>
               </table>
               <br>
