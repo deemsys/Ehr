@@ -224,7 +224,13 @@ function doAjaxPost() {
            
 </script>
 
-
+<script>
+function validatename(){
+    var textInput = document.getElementById("patientsname").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("patientsname").value = textInput;
+}
+</script>
 
 <script>
 
@@ -266,6 +272,15 @@ function doAjaxPost() {
 		
 		return false;
 		}
+		document.getElementById("pnameerror").innerHTML="";
+	    if(document.getElementById("patientsname").value.length<4 || document.getElementById("patientsname").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("pnameerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
+		
 		document.getElementById("amountdeducterror").innerHTML="";
 		if(isNaN(document.getElementById("medicalfee").value))
 		{
@@ -389,7 +404,7 @@ function openWindow(h, w, url) {
                 <table align="center" cellpadding="0" cellspacing="0" border="0"   width="100%"  ">
               <tr >
              <td height="25" width="40%"><span class="err">*</span>Patient Name</td>
-              <td ><input type="text" class="input_txtbx1" name="patientsname" id="patientsname"/><span class="err" id="pnameerror"><form:errors path="Formbill.patientsname"></form:errors></span></td>
+              <td ><input type="text" class="input_txtbx1" name="patientsname" id="patientsname" onInput="return validatename()";/><span class="err" id="pnameerror"><form:errors path="Formbill.patientsname"></form:errors></span></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
