@@ -19,6 +19,7 @@ public class Signup{
 	private String password;
 	
 	@NotEmpty
+	@Length(min=3,max=32,message="Password  should between 3 to 32 characters!!!")
 	private String confirm;
 	
 	@Email(message="Invalid Email Id")

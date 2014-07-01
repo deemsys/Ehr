@@ -65,7 +65,14 @@ document.getElementById("passworderror").innerHTML=" ";
 		return false;
 		}
 		
-		
+		document.getElementById("passworderror").innerHTML="";
+	    if(document.getElementById("password").value.length<3 || document.getElementById("password").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("passworderror").innerHTML="Password should be min 3 and max 32";
+	    	
+	        return false;
+	    }
        /*  var pass = /^[a-zA-Z0-9]{3,32}$/;
         
         if(document.getElementById("password").value.match(pass)==null)
@@ -86,6 +93,15 @@ document.getElementById("confirmerror").innerHTML=" ";
         	document.getElementById("confirmerror").innerHTML="password Must Be Same";
             return false;
         }
+        
+        document.getElementById("confirmerror").innerHTML="";
+	    if(document.getElementById("confirm").value.length<3 || document.getElementById("confirm").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("confirmerror").innerHTML="Password should be min 3 and max 32";
+	    	
+	        return false;
+	    }
 document.getElementById("emailerror").innerHTML=" ";
 		
 		if(document.getElementById("email").value=="")
