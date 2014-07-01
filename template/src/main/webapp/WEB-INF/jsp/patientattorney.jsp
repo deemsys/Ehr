@@ -199,6 +199,13 @@ function doAjaxPost() {
          });
 </script>
 <script>
+function validatename(){
+    var textInput = document.getElementById("patientname").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("patientname").value = textInput;
+}
+</script>
+<script>
 
 	function checkSubmit()
 	{
@@ -217,6 +224,14 @@ function doAjaxPost() {
 		
 		return false;
 		}
+	document.getElementById("patientnameerror").innerHTML="";
+	    if(document.getElementById("patientname").value.length<4 || document.getElementById("patientname").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("patientnameerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
 	
 	
 	document.getElementById("datepickererror").innerHTML="";
@@ -368,7 +383,7 @@ function openWindow(h, w, url) {
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120" style="width: 155px; "><span class="err">*</span>Patient's name</td>
-              <td ><input type="text" class="input_txtbx1" name="patientname" id="patientname"><span class="err" id="patientnameerror"  style="color: red;font-style:italic;"><form:errors path="Patientattorney.patientname"></form:errors></span></td>
+              <td ><input type="text" class="input_txtbx1" name="patientname" id="patientname" onInput="return validatename()";><span class="err" id="patientnameerror"  style="color: red;font-style:italic;"><form:errors path="Patientattorney.patientname"></form:errors></span></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
