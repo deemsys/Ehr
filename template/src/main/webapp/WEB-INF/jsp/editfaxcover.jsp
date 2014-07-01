@@ -265,14 +265,14 @@ document.getElementById("faxno").value=phone;
               <td  width="20%"><span class="err"></span>RE:</td>
               <td ><input type="text" class="input_txtbx1" name="regarding" id="re" style="width: 164px; " value="${faxcoverdetails.regarding }"/><span class="err" id="reerror"><form:errors path="Faxcover.regarding"></form:errors></td>
               <td align="left" style="width: 188px; "><span class="err"></span>Number Of Pages Sent:</td>
-              <td ><input type="text" class="input_txtbx1" name="pages" id="nos" onInput="return validateusername1()"; value="${faxcoverdetails.pages }"/><span class="err" id="noserror"><form:errors path="Faxcover.pages"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="pages" id="nos" onkeypress="return validate(event)"; value="${faxcoverdetails.pages }"/><span class="err" id="noserror"><form:errors path="Faxcover.pages"></form:errors></td>
               </tr>
              
               <tr>
               <td height="25" width="20%" style="width: 98px; "><span class="err">*</span>Message:</td>
               <td style="width: 178px; "><input type="text" class="input_txtbx1" name="msg" id="msg" style="width: 164px; " value="${faxcoverdetails.msg }"/><span class="err" id="msgerror"><form:errors path="Faxcover.msg"></form:errors></td>
             <td align="left" style="width: 147px; "><span class="err">*</span>Claim No:</td>
-              <td ><input type="text" class="input_txtbx1" name="claimno" id="claimno"  onkeypress="return validate(event)"; value="${faxcoverdetails.claimno }"/><span class="err" id="claimnoerror"><form:errors path="Faxcover.claimno"></form:errors>
+              <td ><input type="text" class="input_txtbx1" name="claimno" id="claimno" onInput="return validateusername1()"; value="${faxcoverdetails.claimno }"/><span class="err" id="claimnoerror"><form:errors path="Faxcover.claimno"></form:errors>
               </span><span class="err" id="number"></span></td>
               </tr>
               </table>
