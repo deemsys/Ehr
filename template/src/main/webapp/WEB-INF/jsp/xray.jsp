@@ -199,6 +199,13 @@ function doAjaxPost() {
     });
 </script>
 <script>
+function validatename(){
+    var textInput = document.getElementById("name").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("name").value = textInput;
+}
+</script>
+<script>
 function checkSubmit()
 	{
 		document.getElementById("nameerror").innerHTML="";
@@ -208,6 +215,15 @@ function checkSubmit()
 		return false;
 				
 		}
+		document.getElementById("nameerror").innerHTML="";
+	    if(document.getElementById("name").value.length<4 || document.getElementById("name").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("nameerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
+
 		
 		
 		document.getElementById("datepickererror").innerHTML="";
@@ -342,7 +358,7 @@ function openWindow(h, w, url) {
  </table><br>
  <table cellpadding="0" cellspacing="0" border="0" width="100%">
  <tr><td>
- <span class="err">*</span>I <input type="text" class="input_txtbx1" name="name" id="name"><span class="err" id="nameerror"><form:errors path="Xray.name"></form:errors></span> do hereby agree to return X-rays that I have borrowed from the Chiropractic Therapy Center, I understand that I have fourteen (14) days to do so.I fully agree that in the event that I do not return X-rays, I will be billed $50.00.  	  
+ <span class="err">*</span>I <input type="text" class="input_txtbx1" name="name" id="name" onInput="return validatename()";><span class="err" id="nameerror"><form:errors path="Xray.name"></form:errors></span> do hereby agree to return X-rays that I have borrowed from the Chiropractic Therapy Center, I understand that I have fourteen (14) days to do so.I fully agree that in the event that I do not return X-rays, I will be billed $50.00.  	  
        </td></tr></table><br><br>
  
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
