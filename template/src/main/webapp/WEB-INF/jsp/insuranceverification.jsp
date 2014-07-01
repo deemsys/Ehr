@@ -378,6 +378,15 @@ document.getElementById("fax").value=phone;
 			
 			return false;
 			}
+			document.getElementById("verify_nameerror").innerHTML="";
+	    if(document.getElementById("verify_name").value.length<4 || document.getElementById("name").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("verify_nameerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
+			
 			document.getElementById("spoke_witherror").innerHTML="";
 		if(document.getElementById("spoke_with").value=="")
 			{
@@ -670,7 +679,13 @@ document.getElementById("yeserror").innerHTML="Required Field Should not be Empt
            }
        }       
     </script>
-    
+    <script>
+function validatename(){
+    var textInput = document.getElementById("verify_name").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("verify_name").value = textInput;
+}
+</script>
 </head>
  <body>
 <div id="right_content">
@@ -700,7 +715,7 @@ document.getElementById("yeserror").innerHTML="Required Field Should not be Empt
               <u><h6>Benefits and Limitation's (staff completes)</h6></u>
               </tr>
               <br>
-              <tr><p>Hi, I'm calling to verify chiropractic benefits for<span class="err">*</span> Mr./ Mrs.<input type="text" class="input_txtbx1" name="verify_name" id="verify_name" /><span id="verify_nameerror" style="color: red;font-style:italic;"><form:errors path="Insuranceverification.verify_name"></form:errors></p></tr>
+              <tr><p>Hi, I'm calling to verify chiropractic benefits for<span class="err">*</span> Mr./ Mrs.<input type="text" class="input_txtbx1" name="verify_name" id="verify_name" onInput="return validatename()";/><span id="verify_nameerror" style="color: red;font-style:italic;"><form:errors path="Insuranceverification.verify_name"></form:errors></p></tr>
               <tr class="row1">
               <td><span class="err">*</span>Spoke with</td>
               <td><input type="text" class="input_txtbx1" name="spoke_with" id="spoke_with" /><br><span  id="spoke_witherror" style="color: red;font-style:italic;"></span><form:errors path="Insuranceverification.spoke_with"></form:errors></td>

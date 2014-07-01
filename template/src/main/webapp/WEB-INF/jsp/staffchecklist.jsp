@@ -47,6 +47,15 @@
 		
 		return false;
 		}
+		document.getElementById("pat_nameerror").innerHTML="";
+	    if(document.getElementById("pat_name").value.length<4 || document.getElementById("pat_name").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("pat_nameerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
+		
 		document.getElementById("insureerror").innerHTML="";
 	if(document.getElementById("insure").value=="")
 		{
@@ -173,7 +182,13 @@
 	  
   }
   </script>
-
+<script>
+function validatename(){
+    var textInput = document.getElementById("pat_name").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("pat_name").value = textInput;
+}
+</script>
 </head>
  <body>
 <div id="right_content">
@@ -419,7 +434,7 @@ popupWindow = window.open(url,"symptompopUpWindow" ,'width=1500,height=700,resiz
               <tr class="row1">
               <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Name</td>
 			  <td valign="top" align="left" class="input_txt">
-		      <input type="text" class="input_txtbx1" id="pat_name" name="pat_name"  value="${patientname}"/><span class="err" id="pat_nameerror"><form:errors path="Staffchecklist.pat_name"></form:errors>
+		      <input type="text" class="input_txtbx1" id="pat_name" name="pat_name"  value="${patientname}" onInput="return validatename()";/><span class="err" id="pat_nameerror"><form:errors path="Staffchecklist.pat_name"></form:errors>
 		      </td>
 			  </tr>
 			  <!-- </table>
