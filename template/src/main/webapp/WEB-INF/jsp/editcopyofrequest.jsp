@@ -26,6 +26,15 @@ $(function() {
     $( "#tabs" ).tabs();
   });
   </script>
+  
+  <script>
+function validateusername(){
+    var textInput = document.getElementById("claimnumber").value;
+    textInput = textInput.replace(/[^A-Z0-9]/g, "");
+    document.getElementById("claimnumber").value = textInput;
+}
+
+</script>
      <script>
 
 	function checkSubmit()
@@ -162,7 +171,7 @@ return false;
           <br>
           <tr height="30">
           <td><span class="err">*</span>Claim Number: </td>
-          <td><input type="text" class="input_txtbx1" name="claimnumber" onkeypress="return validate1(event)"; size="40" value="${copyofrequest.claimnumber }" id="claimnumber"><span class="err" id="claimnumbererror"  style="color: red;font-style:italic;"><form:errors path="Copyofrequest.claimnumber"></form:errors></span></td>
+          <td><input type="text" class="input_txtbx1" name="claimnumber" onInput="return validateusername()";size="40" value="${copyofrequest.claimnumber }" id="claimnumber"><span class="err" id="claimnumbererror"  style="color: red;font-style:italic;"><form:errors path="Copyofrequest.claimnumber"></form:errors></span></td>
           </tr>
           <tr height="30">
           <td>Today's Date:  </td>
