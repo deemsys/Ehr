@@ -68,6 +68,38 @@ width: 34px;
 cursor: pointer;
 }
 </style>
+<script>
+ $(function() {
+	$("#name").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+$(function() {
+	$("#datepicker").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#datepicker1").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#datepicker2").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+	$(function() {
+	$("#sign").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+</script>
 <script type='text/javascript'>
 $(function(){
 var overlay = $('<div id="overlay"></div>');
@@ -199,10 +231,10 @@ function doAjaxPost() {
     });
 </script>
 <script>
-function validatename(){
-    var textInput = document.getElementById("name").value;
+function validatename(id){
+    var textInput = document.getElementById(id).value;
     textInput = textInput.replace(/[^A-Za-z ]/g, "");
-    document.getElementById("name").value = textInput;
+    document.getElementById(id).value = textInput;
 }
 </script>
 <script>
@@ -248,6 +280,14 @@ function checkSubmit()
 		
 		return false;
 		}
+		document.getElementById("signerror").innerHTML="";
+	    if(document.getElementById("sign").value.length<4 || document.getElementById("sign").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("signerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
 		document.getElementById("dateerror").innerHTML="";
 		var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		
@@ -358,7 +398,7 @@ function openWindow(h, w, url) {
  </table><br>
  <table cellpadding="0" cellspacing="0" border="0" width="100%">
  <tr><td>
- <span class="err">*</span>I <input type="text" class="input_txtbx1" name="name" id="name" onInput="return validatename()";><span class="err" id="nameerror"><form:errors path="Xray.name"></form:errors></span> do hereby agree to return X-rays that I have borrowed from the Chiropractic Therapy Center, I understand that I have fourteen (14) days to do so.I fully agree that in the event that I do not return X-rays, I will be billed $50.00.  	  
+ <span class="err">*</span>I <input type="text" class="input_txtbx1" name="name" id="name" onInput="return validatename(id)";><span class="err" id="nameerror"><form:errors path="Xray.name"></form:errors></span> do hereby agree to return X-rays that I have borrowed from the Chiropractic Therapy Center, I understand that I have fourteen (14) days to do so.I fully agree that in the event that I do not return X-rays, I will be billed $50.00.  	  
        </td></tr></table><br><br>
  
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -378,7 +418,7 @@ function openWindow(h, w, url) {
               <td height="25" width="100"><span class="err">*</span>Date </td>
               <td width="70"><input type="text" class="input_txtbx1" name="date2" id="datepicker2" /><span class="err" id="datepickererror"><form:errors path="Xray.date2"></form:errors></td>
               <td align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="err">*</span>Signature:</td>
-             <td width="50"> <input type="text" class="input_txtbx1" name="sign" id="sign" /><span class="err" id="signerror"><form:errors path="Xray.sign"></form:errors></td>
+             <td width="50"> <input type="text" class="input_txtbx1" name="sign" id="sign" onInput="return validatename(id)";/><span class="err" id="signerror"><form:errors path="Xray.sign"></form:errors></td>
               
               </tr>
               </table><br><br>

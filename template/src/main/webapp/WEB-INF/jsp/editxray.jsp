@@ -14,6 +14,45 @@
   line-height:18px;}
   
   </STYLE>
+  <script>
+ $(function() {
+	$("#name").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+$(function() {
+	$("#datepicker").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#datepicker1").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#datepicker2").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+	$(function() {
+	$("#sign").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+</script>
+<script>
+function validatename(id){
+    var textInput = document.getElementById(id).value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById(id).value = textInput;
+}
+</script>
  <script>
  $(function() {
            $( "#datepicker" ).datepicker();
@@ -37,13 +76,13 @@
 	}
 }
 	</script>
-	<script>
+	<!-- <script>
 function validatename(){
     var textInput = document.getElementById("name").value;
     textInput = textInput.replace(/[^A-Za-z ]/g, "");
     document.getElementById("name").value = textInput;
 }
-</script>
+</script> -->
 	<script>
 function checkSubmit()
 	{
@@ -84,6 +123,16 @@ function checkSubmit()
 		
 		return false;
 		}
+		document.getElementById("signerror").innerHTML="";
+	    if(document.getElementById("sign").value.length<4 || document.getElementById("sign").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("signerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
+
+		
 		document.getElementById("dateerror").innerHTML=" ";
 		var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		
@@ -155,7 +204,7 @@ function checkSubmit()
  </table><br>
  <table cellpadding="0" cellspacing="0" border="0" width="100%">
  <tr><td><span class="err">*</span>
- I<input type="hidden" name="xrayid" value="${xraydetails.xrayid }"> <input type="text" class="input_txtbx1" name="name" id="name" value="${xraydetails.name}" onInput="return validatename()";> <span class="err" id="nameerror"></span>do hereby agree to return X-rays that I have borrowed from the Chiropractic Therapy Center, I understand that I have fourteen (14) days to do so.I fully agree that in the event that I do not return X-rays, I will be billed $50.00.  	  
+ I<input type="hidden" name="xrayid" value="${xraydetails.xrayid }"> <input type="text" class="input_txtbx1" name="name" id="name" value="${xraydetails.name}" onInput="return validatename(id)";> <span class="err" id="nameerror"></span>do hereby agree to return X-rays that I have borrowed from the Chiropractic Therapy Center, I understand that I have fourteen (14) days to do so.I fully agree that in the event that I do not return X-rays, I will be billed $50.00.  	  
        </td></tr></table><br><br>
  
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -175,7 +224,7 @@ function checkSubmit()
               <td height="25" width="100"><span class="err">*</span>Date </td>
               <td width="70"><input type="text" class="input_txtbx1" name="date2" id="datepicker2"  value="${xraydetails.date2}"/><span class="err" id="datepickererror"><form:errors path="Hardshipagreement.date"></form:errors></td>
               <td align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="err">*</span>Signature:</td>
-             <td width="50"> <input type="text" class="input_txtbx1" name="sign" id="sign"  value="${xraydetails.sign}"/><span class="err" id="signerror"><form:errors path="Hardshipagreement.date"></form:errors></td>
+             <td width="50"> <input type="text" class="input_txtbx1" name="sign" id="sign"  value="${xraydetails.sign}" onInput="return validatename(id)";/><span class="err" id="signerror"><form:errors path="Hardshipagreement.date"></form:errors></td>
               
               </tr>
               </table><br><br>
