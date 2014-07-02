@@ -67,6 +67,56 @@ width: 34px;
 cursor: pointer;
 }
 </style>
+<script>
+$(function() {
+	$("#name").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+$(function() {
+	$("#address").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#reg").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+$(function() {
+	$("#patientname").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+$(function() {
+	$("#datepicker").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#dearsir").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+$(function() {
+	$("#nameofclinic").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#treat").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+</script>
 <script type='text/javascript'>
 $(function(){
 var overlay = $('<div id="overlay"></div>');
@@ -199,13 +249,13 @@ function doAjaxPost() {
          });
 </script>
 <script>
-function validatename(){
-    var textInput = document.getElementById("patientname").value;
+function validatename(id){
+    var textInput = document.getElementById(id).value;
     textInput = textInput.replace(/[^A-Za-z ]/g, "");
-    document.getElementById("patientname").value = textInput;
+    document.getElementById(id).value = textInput;
 }
 </script>
-<script>
+<!-- <script>
 
 	function checkSubmit()
 	{
@@ -217,6 +267,15 @@ function validatename(){
 		
 		return false;
 		}
+		document.getElementById("nameerror").innerHTML="";
+	    if(document.getElementById("name").value.length<4 || document.getElementById("pat_name").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("nameerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
+	    
 		document.getElementById("patientnameerror").innerHTML="";
 	if(document.getElementById("patientname").value=="")
 		{
@@ -273,6 +332,118 @@ function validatename(){
 	}
 	
 	
+	}
+
+	</script> -->
+	<script>
+
+	function checkSubmit()
+	{
+	    //alert("hai");
+		document.getElementById("nameerror").innerHTML=" ";
+		
+		if(document.getElementById("name").value=="")
+		{
+		document.getElementById("nameerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		document.getElementById("nameerror").innerHTML="";
+	    if(document.getElementById("name").value.length<4 || document.getElementById("name").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("nameerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
+	    document.getElementById("regerror").innerHTML="";
+	    if(document.getElementById("reg").value!="")
+	    {
+	    if(document.getElementById("reg").value.length<4 || document.getElementById("reg").value.length>=32)
+	    {
+	    document.getElementById("regerror").innerHTML="Name should be min 4 and max 32";
+	    return false;
+	    }
+	    }
+		document.getElementById("patientnameerror").innerHTML="";
+	if(document.getElementById("patientname").value=="")
+		{
+		document.getElementById("patientnameerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+	 
+	 document.getElementById("patientnameerror").innerHTML="";
+	    if(document.getElementById("patientname").value.length<4 || document.getElementById("patientname").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("patientnameerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
+	
+	document.getElementById("datepickererror").innerHTML="";
+	if(document.getElementById("datepicker").value=="")
+	{
+	document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("datepickererror").innerHTML="";
+	 var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+	if(document.getElementById("datepicker").value.match(datechk)==null)
+    {
+    	document.getElementById("datepickererror").innerHTML="Invalid Date Format";
+    	
+        return false;
+    }	
+	
+	document.getElementById("dearsirerror").innerHTML="";
+	if(document.getElementById("dearsir").value=="")
+	{
+	document.getElementById("dearsirerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	 document.getElementById("dearsirerror").innerHTML="";
+	    if(document.getElementById("dearsir").value.length<4 || document.getElementById("dearsir").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("dearsirerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
+	document.getElementById("nameofclinicerror").innerHTML="";
+	if(document.getElementById("nameofclinic").value=="")
+	{
+	document.getElementById("nameofclinicerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("nameofclinicerror").innerHTML="";
+	    if(document.getElementById("nameofclinic").value.length<4 || document.getElementById("nameofclinic").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("nameofclinicerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
+	document.getElementById("treaterror").innerHTML="";
+	if(document.getElementById("treat").value=="")
+	{
+	document.getElementById("treaterror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	document.getElementById("treaterror").innerHTML="";
+	    if(document.getElementById("treat").value.length<4 || document.getElementById("treat").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("treaterror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
 	}
 
 	</script>
@@ -360,7 +531,7 @@ function openWindow(h, w, url) {
        		<table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120" style="width: 155px; "><span class="err">*</span>Name of Patient's Attorney</td>
-              <td ><input type="text" class="input_txtbx1" name="name" id="name"><span class="err" id="nameerror"  style="color: red;font-style:italic;"><form:errors path="Patientattorney.name"></form:errors></span></td>
+              <td ><input type="text" class="input_txtbx1" name="name" id="name" onInput="return validatename(id)";><span class="err" id="nameerror"  style="color: red;font-style:italic;"><form:errors path="Patientattorney.name"></form:errors></span></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -373,7 +544,7 @@ function openWindow(h, w, url) {
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120" style="width: 155px; ">Regarding</td>
-              <td ><input type="text" class="input_txtbx1" name="reg" id="reg"></td>
+              <td ><input type="text" class="input_txtbx1" name="reg" id="reg" onInput="return validatename(id)";><span class="err" id="regerror"></span></td>
               </tr>
               </table>       
  
@@ -383,7 +554,7 @@ function openWindow(h, w, url) {
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120" style="width: 155px; "><span class="err">*</span>Patient's name</td>
-              <td ><input type="text" class="input_txtbx1" name="patientname" id="patientname" onInput="return validatename()";><span class="err" id="patientnameerror"  style="color: red;font-style:italic;"><form:errors path="Patientattorney.patientname"></form:errors></span></td>
+              <td ><input type="text" class="input_txtbx1" name="patientname" id="patientname" onInput="return validatename(id)";><span class="err" id="patientnameerror"  style="color: red;font-style:italic;"><form:errors path="Patientattorney.patientname"></form:errors></span></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -404,7 +575,7 @@ function openWindow(h, w, url) {
      
 Dear Madam or Sir:
 </h3></p>
-  <p><span class="err">*</span><input type="text" class="input_txtbx1" name="dearsir" id="dearsir"><span class="err" id="dearsirerror"  style="color: red;font-style:italic;"><form:errors path="Patientattorney.dearsir"></form:errors></span>has sought medical treatment from this clinic.  This patient (your client) has been injured to an extent where the patient has determined that they cannot afford to pay for treatment on a fee for service basis.  We would definitely prefer to simply render the required treatment on a fee for service basis.  However, because fees for service presents a hardship to this patient, we have agreed to postpone payment for treatment, but in direct reliance on the continuing commitment the patient has made to us in the attached Treatment Fee Agreement and Instructions to Attorney. </p>	
+  <p><span class="err">*</span><input type="text" class="input_txtbx1" name="dearsir" id="dearsir" onInput="return validatename(id)";><span class="err" id="dearsirerror"  style="color: red;font-style:italic;"><form:errors path="Patientattorney.dearsir"></form:errors></span>has sought medical treatment from this clinic.  This patient (your client) has been injured to an extent where the patient has determined that they cannot afford to pay for treatment on a fee for service basis.  We would definitely prefer to simply render the required treatment on a fee for service basis.  However, because fees for service presents a hardship to this patient, we have agreed to postpone payment for treatment, but in direct reliance on the continuing commitment the patient has made to us in the attached Treatment Fee Agreement and Instructions to Attorney. </p>	
 
 
        </td>
@@ -529,11 +700,11 @@ Opinion 2007-7 provides the following further ethical directions:
              
             
              
-              <tr ><td width="70%"></td><td><input type="text" class="input_txtbx1" name="nameofclinic" id="nameofclinic"><span class="err" id="nameofclinicerror"  style="color: red;font-style:italic;"><form:errors path="Patientattorney.nameofclinic"></form:errors></span></td></tr>
+              <tr ><td width="70%"></td><td><input type="text" class="input_txtbx1" name="nameofclinic" id="nameofclinic" onInput="return validatename(id)";><span class="err" id="nameofclinicerror"  style="color: red;font-style:italic;"><form:errors path="Patientattorney.nameofclinic"></form:errors></span></td></tr>
               <tr><td></td><td><span class="err">*</span>Name of Clinic</td>
               </tr>
               
-               <tr ><td width="70%"></td><td><input type="text" class="input_txtbx1" name="treat" id="treat"><span class="err" id="treaterror"  style="color: red;font-style:italic;"><form:errors path="Patientattorney.treat"></form:errors></span></td></tr>
+               <tr ><td width="70%"></td><td><input type="text" class="input_txtbx1" name="treat" id="treat" onInput="return validatename(id)";><span class="err" id="treaterror"  style="color: red;font-style:italic;"><form:errors path="Patientattorney.treat"></form:errors></span></td></tr>
               <tr><td ></td><td><span class="err">*</span>Treating Physician</td>
               </tr>
               
