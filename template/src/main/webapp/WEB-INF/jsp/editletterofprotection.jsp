@@ -14,6 +14,64 @@
   line-height:18px;}
   
   </STYLE>
+  <script>
+function validatename(id){
+    var textInput = document.getElementById(id).value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById(id).value = textInput;
+}
+</script>
+<script>
+$(function() {
+	$("#datepicker").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+$(function() {
+	$("#dcr").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+$(function() {
+	$("#clinicname").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+$(function() {
+	$("#address1").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+$(function() {
+	$("#myclient").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+$(function() {
+	$("#datepicker1").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+$(function() {
+	$("#dearsir").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#esq").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+</script>
  <script>
  $(function() {
            $( "#datepicker" ).datepicker();
@@ -60,6 +118,14 @@
 		
 		return false;
 		}
+		document.getElementById("dcerr").innerHTML="";
+	    if(document.getElementById("dcr").value.length<4 || document.getElementById("dcr").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("dcerr").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
 		document.getElementById("clerr").innerHTML="";
 		if(document.getElementById("clinicname").value=="")
 		{
@@ -67,6 +133,25 @@
 		
 		return false;
 		}
+		document.getElementById("clerr").innerHTML="";
+	    if(document.getElementById("clinicname").value.length<4 || document.getElementById("clinicname").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("clerr").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
+	    document.getElementById("myclienterror").innerHTML="";
+		if(document.getElementById("myclient").value!="")
+		{
+		if(document.getElementById("myclient").value.length<4 || document.getElementById("myclient").value.length>=32)
+		    {
+		    	
+		    	document.getElementById("myclienterror").innerHTML="Name should be min 4 and max 32";
+		    	
+		        return false;
+		    }
+		}    
 		document.getElementById("daerr").innerHTML="";
 		if(document.getElementById("datepicker1").value=="")
 		{
@@ -89,6 +174,14 @@
 		
 		return false;
 		}
+		document.getElementById("suberr").innerHTML="";
+	    if(document.getElementById("dearsir").value.length<4 || document.getElementById("dearsir").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("suberr").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
 		document.getElementById("esqerr").innerHTML="";
 		if(document.getElementById("esq").value=="")
 		{
@@ -96,6 +189,14 @@
 		
 		return false;
 		}
+		document.getElementById("esqerr").innerHTML="";
+	    if(document.getElementById("esq").value.length<4 || document.getElementById("esq").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("esqerr").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
 		}
 		</script>
 
@@ -135,12 +236,12 @@
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25"  width="160"><span class="err">*</span>D.C:</td>
-               <td ><input type="text" class="input_txtbx1" name="dc" value="${letterofprotectiondetails.dc}" id="dcr" /><span class="err" id="dcerr"><form:errors path="Hardshipagreement.date"></form:errors></td>
+               <td ><input type="text" class="input_txtbx1" name="dc" value="${letterofprotectiondetails.dc}" id="dcr" onInput="return validatename(id)";/><span class="err" id="dcerr"><form:errors path="Hardshipagreement.date"></form:errors></td>
              
               </tr>
               <tr>
               <td height="25" width="160"><span class="err">*</span>Clinic Name:</td>
-               <td ><input type="text" class="input_txtbx1" name="clinicname" value="${letterofprotectiondetails.clinicname}" id="clinicname" /><span class="err" id="clerr"><form:errors path="Hardshipagreement.date"></form:errors></td>
+               <td ><input type="text" class="input_txtbx1" name="clinicname" value="${letterofprotectiondetails.clinicname}" id="clinicname" onInput="return validatename(id)";/><span class="err" id="clerr"><form:errors path="Hardshipagreement.date"></form:errors></td>
              
               </tr>
              </table>
@@ -154,7 +255,7 @@
             <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25"  width="160"><span class="err"></span>IN RE:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My Client:</td>
-               <td ><input type="text" class="input_txtbx1" name="myclient" value="${letterofprotectiondetails.myclient}" id="datepicker" /><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+               <td ><input type="text" class="input_txtbx1" name="myclient" value="${letterofprotectiondetails.myclient}" id="myclient" onInput="return validatename(id)";/><span class="err" id="myclienterror"><form:errors path="Hardshipagreement.date"></form:errors></td>
              
               </tr>
               <tr>
@@ -166,7 +267,7 @@
              <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td  width="62"><span class="err">*</span>Dear Dr</td>
-              <td  height="25" width="160" ><input type="text" class="input_txtbx1" name="dearsir" value="${letterofprotectiondetails.dearsir}"  id="dearsir" /><span class="err" id="suberr"><form:errors path="noticeofassignment.address"></form:errors>
+              <td  height="25" width="160" ><input type="text" class="input_txtbx1" name="dearsir" value="${letterofprotectiondetails.dearsir}"  id="dearsir" onInput="return validatename(id)";/><span class="err" id="suberr"><form:errors path="noticeofassignment.address"></form:errors>
            </span></td></tr>	
              </table>
              <table>
@@ -192,7 +293,7 @@
              <tr><td width="450"></td>
              <td ><p><h1> <b>Very truly yours,</b></h1><p></td></tr>
              <tr><td width="450"></td>
-            <td ><span class="err">*</span><input type="text" class="input_txtbx1" name="esq" value="${letterofprotectiondetails.esq}"    id="esq" /><span class="err" id="esqerr"><form:errors path="Hardshipagreement.date"></form:errors></td></tr>
+            <td ><span class="err">*</span><input type="text" class="input_txtbx1" name="esq" value="${letterofprotectiondetails.esq}"    id="esq" onInput="return validatename(id)";/><span class="err" id="esqerr"><form:errors path="Hardshipagreement.date"></form:errors></td></tr>
             <tr><td width="450"></td><td ><p><h1> <b>	Attorney for above client</b></h1><p></td></tr>
              </table>
               <table>
