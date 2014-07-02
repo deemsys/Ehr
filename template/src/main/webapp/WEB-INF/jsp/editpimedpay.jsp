@@ -22,6 +22,44 @@
            $( "#datepicker1" ).datepicker();
          });
 </script>
+<script>
+ $(function() {
+	$("#insurance").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+$(function() {
+	$("#address").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#reg").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#nameofperson").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#datepicker").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+$(function() {
+	$("#dearsir").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});		
+</script>
 <script type="text/javascript">
 	function confirmation() 
 	{
@@ -35,10 +73,10 @@
 }
 	</script>
 	<script>
-function validatename(){
-    var textInput = document.getElementById("nameofperson").value;
+function validatename(id){
+    var textInput = document.getElementById(id).value;
     textInput = textInput.replace(/[^A-Za-z ]/g, "");
-    document.getElementById("nameofperson").value = textInput;
+    document.getElementById(id).value = textInput;
 }
 </script>
 	<script>
@@ -52,6 +90,34 @@ function validatename(){
 		
 		return false;
 		}
+		
+		document.getElementById("inserror").innerHTML="";
+	    if(document.getElementById("insurance").value.length<4 || document.getElementById("insurance").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("inserror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
+		/* document.getElementById("inserror").innerHTML="";
+	    if(document.getElementById("insurance").value.length<4 || document.getElementById("insurance").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("inserror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    } */
+	     document.getElementById("regerror").innerHTML="";
+	if(document.getElementById("reg").value!="")
+	{
+	if(document.getElementById("reg").value.length<4 || document.getElementById("reg").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("regerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
+	}    
 		document.getElementById("nameerror").innerHTML="";
 		if(document.getElementById("nameofperson").value=="")
 		{
@@ -89,6 +155,14 @@ function validatename(){
 		
 		return false;
 		}
+		document.getElementById("suberror").innerHTML="";
+	    if(document.getElementById("dearsir").value.length<4 || document.getElementById("dearsir").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("suberror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
 		/* document.getElementById("datepickererror").innerHTML="";
 		if(document.getElementById("datepicker").value=="")
 		{
@@ -168,7 +242,7 @@ function validatename(){
         <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="180"><span class="err">*</span>Name of Insurance Company</td>
-              <td ><input type="hidden" name="medpayid" value="${pimedpaydetails.medpayid }"><input type="text" class="input_txtbx1" name="insurance" value="${pimedpaydetails.insurance }"  id="insurance" /><span class="err" id="inserror"><form:errors path="Pimedpay.insurance"></form:errors></td>
+              <td ><input type="hidden" name="medpayid" value="${pimedpaydetails.medpayid }"><input type="text" class="input_txtbx1" name="insurance" value="${pimedpaydetails.insurance }"  id="insurance" onInput="return validatename(id)";/><span class="err" id="inserror"><form:errors path="Pimedpay.insurance"></form:errors></td>
               </tr>
               </table>
               
@@ -182,14 +256,14 @@ function validatename(){
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="180"><span class="err"></span>Regarding: </td>
-              <td><input type="text" class="input_txtbx1" name="reg" value="${pimedpaydetails.reg }" ><span class="err"><form:errors path="Pimedpay.reg"></form:errors></span></td>
+              <td><input type="text" class="input_txtbx1" name="reg" id="reg" value="${pimedpaydetails.reg }" onInput="return validatename(id)";><span class="err" id="regerror"></span><form:errors path="Pimedpay.reg"></form:errors></td>
               </tr>
               </table>
           
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="180"><span class="err">*</span>Patient's Name</td>
-              <td><input type="text" class="input_txtbx1" name="nameofperson" value="${pimedpaydetails.nameofperson }"  id="nameofperson" onInput="return validatename()";><span class="err" id="nameerror"><form:errors path="Pimedpay.nameofperson"></form:errors></span></td>
+              <td><input type="text" class="input_txtbx1" name="nameofperson" value="${pimedpaydetails.nameofperson }"  id="nameofperson" onInput="return validatename(id)";><span class="err" id="nameerror"><form:errors path="Pimedpay.nameofperson"></form:errors></span></td>
               </tr>
               </table>
               <br>
@@ -209,7 +283,7 @@ function validatename(){
             
              <table>
              <tr><td><br><br><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="err">*</span>
-	        <input type="text" class="input_txtbx1" name="subject" value="${pimedpaydetails.subject }" id="dearsir"><span class="err" id="suberror"></span> has sought and received medical treatment from this clinic.  Our patient made an assignment over to us of med pay proceeds to which we are entitled to receive from your company. You have received notice of this assignment by certified mail.
+	        <input type="text" class="input_txtbx1" name="subject" value="${pimedpaydetails.subject }" id="dearsir" onInput="return validatename(id)";><span class="err" id="suberror"></span> has sought and received medical treatment from this clinic.  Our patient made an assignment over to us of med pay proceeds to which we are entitled to receive from your company. You have received notice of this assignment by certified mail.
              
              </p>
              </td></tr>

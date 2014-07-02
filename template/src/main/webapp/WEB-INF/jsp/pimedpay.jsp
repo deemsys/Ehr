@@ -67,6 +67,53 @@ width: 34px;
 cursor: pointer;
 }
 </style>
+<script>
+function validatename(id){
+    var textInput = document.getElementById(id).value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById(id).value = textInput;
+}
+
+
+</script>
+<script>
+ $(function() {
+	$("#insurance").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+$(function() {
+	$("#address").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#reg").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#nameofperson").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#datepicker").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+$(function() {
+	$("#dearsir").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});		
+</script>
 <script type='text/javascript'>
 $(function(){
 var overlay = $('<div id="overlay"></div>');
@@ -197,13 +244,13 @@ function doAjaxPost() {
            $( "#datepicker1" ).datepicker();
          });
 </script>
-<script>
+<!-- <script>
 function validatename(){
     var textInput = document.getElementById("nameofperson").value;
     textInput = textInput.replace(/[^A-Za-z ]/g, "");
     document.getElementById("nameofperson").value = textInput;
 }
-</script>
+</script> -->
 <script>
 
 	function checkSubmit()
@@ -215,6 +262,25 @@ function validatename(){
 		
 		return false;
 		}
+		document.getElementById("inserror").innerHTML="";
+	    if(document.getElementById("insurance").value.length<4 || document.getElementById("insurance").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("inserror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
+	     document.getElementById("regerror").innerHTML="";
+	if(document.getElementById("reg").value!="")
+	{
+	if(document.getElementById("reg").value.length<4 || document.getElementById("reg").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("regerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
+	}    
 		document.getElementById("nameerror").innerHTML="";
 		
 		if(document.getElementById("nameofperson").value=="")
@@ -254,6 +320,14 @@ function validatename(){
 		
 		return false;
 		}
+		document.getElementById("suberror").innerHTML="";
+	    if(document.getElementById("dearsir").value.length<4 || document.getElementById("dearsir").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("suberror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
 		/* document.getElementById("datepickererror").innerHTML="";
 		if(document.getElementById("datepicker").value=="")
 		{
@@ -373,7 +447,7 @@ function openWindow(h, w, url) {
         <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="40%"><span class="err">*</span>Name of Insurance Company</td>
-              <td ><input type="text" class="input_txtbx1" name="insurance" id="insurance" /><span class="err" id="inserror"><form:errors path="Pimedpay.insurance"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="insurance" id="insurance" onInput="return validatename(id)";/><span class="err" id="inserror"><form:errors path="Pimedpay.insurance"></form:errors></td>
               </tr>
               </table>
               
@@ -387,14 +461,14 @@ function openWindow(h, w, url) {
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="40%"><span class="err"></span>Regarding: </td>
-              <td><input type="text" class="input_txtbx1" name="reg" ></td>
+              <td><input type="text" class="input_txtbx1" name="reg" id="reg" onInput="return validatename(id)";><span class="err" id="regerror"></span></td>
               </tr>
               </table>
           
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="40%"><span class="err">*</span>Patient's Name</td>
-              <td><input type="text" class="input_txtbx1" name="nameofperson" id="nameofperson" onInput="return validatename()";><span class="err" id="nameerror"><form:errors path="Pimedpay.nameofperson"></form:errors></span></td>
+              <td><input type="text" class="input_txtbx1" name="nameofperson" id="nameofperson" onInput="return validatename(id)";><span class="err" id="nameerror"><form:errors path="Pimedpay.nameofperson"></form:errors></span></td>
               </tr>
               </table>
               <br>
@@ -414,7 +488,7 @@ function openWindow(h, w, url) {
             
              <table>
              <tr><td><br><br><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	        <span class="err">*</span><input type="text" class="input_txtbx1" name="subject" id="dearsir"><span class="err" id="suberror"><form:errors path="Pimedpay.subject"></form:errors></span> has sought and received medical treatment from this clinic.  Our patient made an assignment over to us of med pay proceeds to which we are entitled to receive from your company. You have received notice of this assignment by certified mail.
+	        <span class="err">*</span><input type="text" class="input_txtbx1" name="subject" id="dearsir" onInput="return validatename(id)";><span class="err" id="suberror"><form:errors path="Pimedpay.subject"></form:errors></span> has sought and received medical treatment from this clinic.  Our patient made an assignment over to us of med pay proceeds to which we are entitled to receive from your company. You have received notice of this assignment by certified mail.
              
              </p>
              </td></tr>
