@@ -2,6 +2,7 @@ package bephit.model;
 
 import javax.validation.constraints.Pattern;
 
+import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
 public class Insuranceplan {
@@ -19,7 +20,7 @@ public class Insuranceplan {
 	
 	private String accident_date;
 	
-	
+	@Length(min=4,max=32,message="Number should between 4 to 32")
 	private String enrollee;
 	
 	

@@ -54,6 +54,85 @@
  
   </script>
   
+<script>
+  $(function() {
+	$("#insure_comp").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#addr").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#pat_name").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#agentname").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+
+<script>
+  $(function() {
+	$("#fax").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#name_of_clinic").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#authorized").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#pat").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
   <script>
 function validatename(){
     var textInput = document.getElementById("insure_comp").value;
@@ -182,12 +261,23 @@ function validateusername6(){
 	
 	return false;
 	}
+	
+	
 	/* document.getElementById("enrolleeerror").innerHTML="";
 	if(isNaN(document.getElementById("enrollee").value))
 	{
 	document.getElementById("enrolleeerror").innerHTML="Enter Only Numbers";
 	return false;
 	} */
+	
+	document.getElementById("enrolleeerror").innerHTML="";
+    if(document.getElementById("enrollee").value.length<4 || document.getElementById("enrollee").value.length>=18)
+    {
+    	
+    	document.getElementById("enrolleeerror").innerHTML="Number  should be min 4 and max 18";
+    	
+        return false;
+    }
 	document.getElementById("agentnameerror").innerHTML="";
 	if(document.getElementById("agentname").value=="")
 	{
