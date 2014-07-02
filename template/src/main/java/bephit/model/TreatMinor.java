@@ -2,6 +2,7 @@ package bephit.model;
 
 import javax.validation.constraints.Pattern;
 
+import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
 public class TreatMinor
@@ -14,16 +15,16 @@ public class TreatMinor
 	
 	private String age;
 	
-	
+
 	private String drname;
 	
-
+	
 	private String signed;
 	
-	@NotEmpty
+	
 	private String pdate;
 	
-	@NotEmpty
+	
 	private String pwitness;
 
 	public TreatMinor()
