@@ -163,7 +163,20 @@ function validatename1(){
     document.getElementById("emp").value = textInput;
 }
 </script>
-
+<script>
+function validatename55(id){
+    var textInput = document.getElementById(id).value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById(id).value = textInput;
+}
+</script>
+<script>
+function validatename56(id){
+    var textInput = document.getElementById(id).value;
+    textInput = textInput.replace(/[^A-Za-z. ]/g, "");
+    document.getElementById(id).value = textInput;
+}
+</script>
 <script>
 function validateusername(){
     var textInput = document.getElementById("policy").value;
@@ -181,6 +194,70 @@ function validateusername1(){
 }
 
 </script>
+
+
+<script>
+  $(function() {
+	$("#person").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+
+<script>
+  $(function() {
+	$("#emp").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+
+<script>
+  $(function() {
+	$("#company").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#supplemental_company").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#patient_sign").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#spouse_sign").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
 <script>
 function checkSubmit()
 {                        
@@ -248,6 +325,15 @@ function checkSubmit()
 	
 	return false;
     }
+	
+	document.getElementById("companyerr").innerHTML="";
+    if(document.getElementById("company").value.length<4 || document.getElementById("company").value.length>=32)
+    {
+    	
+    	document.getElementById("companyerr").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
       document.getElementById("phoneerr").innerHTML="";
 	if(document.getElementById("phone").value=="")
 	{
@@ -281,6 +367,15 @@ function checkSubmit()
 	
 	return false;
     }
+	
+	document.getElementById("policyerr").innerHTML="";
+    if(document.getElementById("policy").value.length<4 || document.getElementById("policy").value.length>=32)
+    {
+    	
+    	document.getElementById("policyerr").innerHTML=" should be min 4 and max 32";
+    	
+        return false;
+    }
      document.getElementById("groupno1err").innerHTML="";
 	if(document.getElementById("groupno1").value=="")
 	{
@@ -289,12 +384,29 @@ function checkSubmit()
 	return false;
    
     }
+	
+	document.getElementById("groupno1err").innerHTML="";
+    if(document.getElementById("groupno1").value.length<4 || document.getElementById("groupno1").value.length>=32)
+    {
+    	
+    	document.getElementById("groupno1err").innerHTML=" should be min 4 and max 32";
+    	
+        return false;
+    }
     document.getElementById("supplemental_companyerr").innerHTML="";
 	if(document.getElementById("supplemental_company").value=="")
 	{
 	document.getElementById("supplemental_companyerr").innerHTML="Required Field Should not be Empty";
 	
 	return false;
+    }
+	document.getElementById("supplemental_companyerr").innerHTML="";
+    if(document.getElementById("supplemental_company").value.length<4 || document.getElementById("supplemental_company").value.length>=32)
+    {
+    	
+    	document.getElementById("supplemental_companyerr").innerHTML=" should be min 4 and max 32";
+    	
+        return false;
     }
     document.getElementById("supphoneerr").innerHTML="";
 	if(document.getElementById("supphone").value=="")
@@ -328,6 +440,15 @@ function checkSubmit()
 	
 	return false;
 	}
+	
+	/* document.getElementById("patient_signerr").innerHTML="";
+    if(document.getElementById("patient_sign").value.length<4 || document.getElementById("patient_sign").value.length>=32)
+    {
+    	
+    	document.getElementById("patient_signerr").innerHTML=" should be min 4 and max 32";
+    	
+        return false;
+    } */
 	document.getElementById("datepicker1err").innerHTML="";
 	if(document.getElementById("datepicker1").value=="")
 	{
@@ -350,6 +471,15 @@ function checkSubmit()
 	
 	return false;
 	}
+	
+	/* document.getElementById("spouse_signerr").innerHTML="";
+    if(document.getElementById("spouse_sign").value.length<4 || document.getElementById("spouse_sign").value.length>=32)
+    {
+    	
+    	document.getElementById("spouse_signerr").innerHTML=" should be min 4 and max 32";
+    	
+        return false;
+    } */
 	document.getElementById("datepicker2err").innerHTML="";
 	if(document.getElementById("datepicker2").value=="")
 	{
@@ -463,7 +593,7 @@ function checkSubmit()
               </tr>
               <tr class="row1">
               <td><span class="err">*</span>Insurance Company</td>
-              <td> <input type="text" class="input_txtbx1" name="insurance_company" id="company" /><br><span id="companyerr" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.insurance_company"></form:errors></td>
+              <td> <input type="text" class="input_txtbx1" name="insurance_company" id="company" onInput="return validatename55(id)";/><br><span id="companyerr" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.insurance_company"></form:errors></td>
               <td><span class="err">*</span>Phone#</td>
               <td><input type="text" class="input_txtbx1" name="phone" id="phone" maxlength="13" onkeypress="return validate1(event)"; /><br><span id="phoneerr" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.phone"></form:errors>
               <br><span class="err" id="phoneerror"></span>
@@ -481,7 +611,7 @@ function checkSubmit()
               </tr>
               <tr class="row1">
               <td><span class="err">*</span>Supplemental Insurance Company</td>
-              <td> <input type="text" class="input_txtbx1" name="supplemental_company" id="supplemental_company" /><br><span id="supplemental_companyerr" style="color: red;font-style:italic";><form:errors path="Insuranceinformation.supplemental_company"></form:errors></td>
+              <td> <input type="text" class="input_txtbx1" name="supplemental_company" onInput="return validatename55(id)"; id="supplemental_company" /><br><span id="supplemental_companyerr" style="color: red;font-style:italic";><form:errors path="Insuranceinformation.supplemental_company"></form:errors></td>
               <td><span class="err">*</span>Phone#</td>
               <td> <input type="text" class="input_txtbx1" name="sup_phone" id="supphone" maxlength="13" onkeypress="return validate1(event)";/><br><span id="supphoneerr" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.sup_phone"></form:errors>
               <br>
@@ -504,13 +634,13 @@ function checkSubmit()
  		<table cellpadding="0" cellspacing="0" border="0" width="100%">
  		<tr class="row1">
  		<td><span class="err">*</span>Patient Signature</td>
-        <td> <input type="text" class="input_txtbx1" name="patient_sign" id="patient_sign" /><br><span id="patient_signerr" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.patient_sign"></form:errors></td>
+        <td> <input type="text" class="input_txtbx1" name="patient_sign" onInput="return validatename56(id)"; id="patient_sign" /><br><span id="patient_signerr" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.patient_sign"></form:errors></td>
         <td><span class="err">*</span>Date</td>
         <td> <input type="text" class="input_txtbx1" name="date" id="datepicker1" /><br><span id="datepicker1err" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.date"></form:errors></td>
         </tr>
         <tr class="row1">
  		<td><span class="err">*</span>Spouse or Guardian Signature</td>
-        <td> <input type="text" class="input_txtbx1" name="spouse_sign" id="spouse_sign" /><br><span id="spouse_signerr" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.spouse_sign"></form:errors></td>
+        <td> <input type="text" class="input_txtbx1" name="spouse_sign" onInput="return validatename56(id)"; id="spouse_sign" /><br><span id="spouse_signerr" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.spouse_sign"></form:errors></td>
         <td><span class="err">*</span>Date</td>
         <td> <input type="text" class="input_txtbx1" name="date1" id="datepicker2" /><br><span id="datepicker2err" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.date1"></form:errors></td>
         </tr>
