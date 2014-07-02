@@ -10,16 +10,10 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.logging.Logger;
 
-import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
-import org.junit.runner.Request;
-
-import bephit.model.Assignment;
-import bephit.model.Cervicalexam;
-import bephit.model.Quadraplevisual;
+import bephit.model.*;
 
 
 
