@@ -64,6 +64,187 @@ $(function() {
   .tabs-bottom .ui-tabs-nav li { top: auto; bottom: 0; margin: 0 .2em 1px 0; border-bottom: auto; border-top: 0; }
   .tabs-bottom .ui-tabs-nav li.ui-tabs-active { margin-top: -1px; padding-top: 1px; }
   </style>
+  
+  <script>
+  $(function() {
+	$("#job_classification").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+
+<script>
+  $(function() {
+	$("#doyou").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#injury_occur").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#saw_accident").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#title").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#present_job").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#absenteeism").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#lighting").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#how_much").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#how_often").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#where_to_where").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#jobpp").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#warea").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#emp").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#changes_in_job").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+function validatename(id){
+    var textInput = document.getElementById(id).value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById(id).value = textInput;
+}
+</script>
+<script>
+function validatename1(id){
+    var textInput = document.getElementById(id).value;
+    textInput = textInput.replace(/[^A-Za-z0-9_!@#$%^&*()?-+= ]/g, "");
+    document.getElementById(id).value = textInput;
+}
+</script>
+<script type="text/javascript">
+       function validate(event) {
+          
+           var regex = new RegExp("^[0-9]+$");
+           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+           if (!regex.test(key)) {
+             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
+               event.preventDefault();
+               return false;
+           }
+       }       
+    </script>
+    
+    
+
+<script>
+function validateusername(){
+    var textInput = document.getElementById("uname").value;
+    textInput = textInput.replace(/[^A-Za-z0-9 ]/g, "");
+    document.getElementById("uname").value = textInput;
+}
+
+</script>
   <script>
 
 function checkSubmit()
@@ -76,7 +257,14 @@ function checkSubmit()
 	
 	return false;
 	}
-		
+	document.getElementById("job_classificationerror").innerHTML="";
+    if(document.getElementById("job_classification").value.length<4 || document.getElementById("job_classification").value.length>=32)
+    {
+    	
+    	document.getElementById("job_classificationerror").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
 	/*  document.getElementById("doyou_poserror").innerHTML="";
 		if(document.getElementById("doyou_pos").value==0)
 		{
@@ -104,7 +292,14 @@ function checkSubmit()
 		
 		return false;
 		}
-		
+		document.getElementById("injury_occurerror").innerHTML="";
+	    if(document.getElementById("injury_occur").value.length<4 || document.getElementById("injury_occur").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("injury_occurerror").innerHTML="Should be min 4 and max 32";
+	    	
+	        return false;
+	    }
 document.getElementById("saw_accidenterror").innerHTML=" ";
 		
 		if(document.getElementById("saw_accident").value=="")
@@ -113,7 +308,14 @@ document.getElementById("saw_accidenterror").innerHTML=" ";
 		
 		return false;
 		}
-		
+		document.getElementById("saw_accidenterror").innerHTML="";
+	    if(document.getElementById("saw_accident").value.length<4 || document.getElementById("saw_accident").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("saw_accidenterror").innerHTML="Should be min 4 and max 32";
+	    	
+	        return false;
+	    }
 document.getElementById("titleerror").innerHTML=" ";
 		
 		if(document.getElementById("title").value=="")
@@ -122,7 +324,14 @@ document.getElementById("titleerror").innerHTML=" ";
 		
 		return false;
 		}
-		
+		document.getElementById("titleerror").innerHTML="";
+	    if(document.getElementById("title").value.length<4 || document.getElementById("title").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("titleerror").innerHTML="Should be min 4 and max 32";
+	    	
+	        return false;
+	    }
 document.getElementById("present_joberror").innerHTML=" ";
 		
 		if(document.getElementById("present_job").value=="")
@@ -177,6 +386,15 @@ document.getElementById("how_oftenerror").innerHTML=" ";
 		
 		return false;
 		}
+		
+		document.getElementById("how_oftenerror").innerHTML="";
+	    if(document.getElementById("how_often").value.length<4 || document.getElementById("how_often").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("how_oftenerror").innerHTML="Should be min 4 and max 32";
+	    	
+	        return false;
+	    }
 document.getElementById("where_to_whereerror").innerHTML=" ";
 		
 		if(document.getElementById("where_to_where").value=="")
@@ -185,7 +403,14 @@ document.getElementById("where_to_whereerror").innerHTML=" ";
 		
 		return false;
 		}
-
+		document.getElementById("where_to_whereerror").innerHTML="";
+	    if(document.getElementById("where_to_where").value.length<4 || document.getElementById("where_to_where").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("where_to_whereerror").innerHTML="Should be min 4 and max 32";
+	    	
+	        return false;
+	    }
 		 /* document.getElementById("lift_fromerror").innerHTML="";
 			if(document.getElementById("lift_from").value==0)
 			{
@@ -240,6 +465,15 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 				
 				return false;
 				}
+				
+				document.getElementById("changes_in_joberror").innerHTML="";
+			    if(document.getElementById("changes_in_job").value.length<4 || document.getElementById("changes_in_job").value.length>=32)
+			    {
+			    	
+			    	document.getElementById("changes_in_joberror").innerHTML="Should be min 4 and max 32";
+			    	
+			        return false;
+			    }
 		}
 </script>
 <script>
@@ -312,7 +546,7 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
   				<tr class="row1" width="30%">
                   <td valign="middle" align="left" class="input_txt" width="18%"><span class="err">*</span>What is the job classification of your normal job</td>
 				  <td valign="top" align="left" class="input_txt" >
-				  <input type="text" class="input_txtbx1" id="job_classification" name="job_classification" /><span id="job_classificationerror" style="color: red;font-style:italic;"><form:errors path="Workaccident.job_classification"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="job_classification" maxlength="32" onInput="return validatename(id)";name="job_classification" /><span id="job_classificationerror" style="color: red;font-style:italic;"><form:errors path="Workaccident.job_classification"></form:errors></span>
 				  </td>
 				  </tr>
 				 <tr class="row2">
@@ -330,7 +564,7 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 					<option value="other">Other</option>
 					</select>
 					<span id="doyou_poserror" style="color: red;font-style:italic;"></span>
-				   <input type="text" name="doyou" id="doyou" style='display:none'/>
+				   <input type="text" name="doyou" id="doyou" maxlength="32" style='display:none'/>
 				  </td>
 				  </tr>
 				  <tr class="row1">
@@ -343,32 +577,32 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>How did the injury occur?</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="injury_occur" name="injury_occur" /><span id="injury_occurerror" style="color: red;font-style:italic;"><form:errors path="Workaccident.injury_occur"></form:errors>
+				  <input type="text" class="input_txtbx1" id="injury_occur" maxlength="32" name="injury_occur" onInput="return validatename(id)"; /><span id="injury_occurerror" style="color: red;font-style:italic;"><form:errors path="Workaccident.injury_occur"></form:errors>
 				  </td>
 				  </tr>
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Who saw the accident?</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="saw_accident" name="saw_accident" /><span id="saw_accidenterror" style="color: red;font-style:italic;" ><form:errors path="Workaccident.saw_accident"></form:errors>
+				  <input type="text" class="input_txtbx1" id="saw_accident"  maxlength="32" name="saw_accident" onInput="return validatename(id)"; /><span id="saw_accidenterror" style="color: red;font-style:italic;" ><form:errors path="Workaccident.saw_accident"></form:errors>
 				  </td>
 				  </tr>
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Job Title</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="title" name="title" /><span id="titleerror" style="color: red;font-style:italic;"><form:errors path="Workaccident.title"></form:errors>
+				  <input type="text" class="input_txtbx1" id="title" maxlength="32" name="title" onInput="return validatename(id)"; /><span id="titleerror" style="color: red;font-style:italic;"><form:errors path="Workaccident.title"></form:errors>
 				  </td>
 				  </tr>
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>How long have you been at your present job</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="present_job" name="present_job" /><span id="present_joberror" style="color: red;font-style:italic;"><form:errors path="Workaccident.present_job"></form:errors>
+				  <input type="text" class="input_txtbx1" id="present_job"  maxlength="32" name="present_job" onInput="return validateusername()";/><span id="present_joberror" style="color: red;font-style:italic;"><form:errors path="Workaccident.present_job"></form:errors>
 				  </td>
 				  </tr>
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Has there been a time loss or absentee caused from job injury</td>
 				  <td valign="top" align="left" class="input_txt" width="20%"><input type="radio" name="time_loss" value="yes" class="input_txt" id="yes2" onclick="time('show1')">Yes
 				  <input type="radio" name="time_loss" value="No"  id="No2" class="input_txt" onclick="time('hide1')">No 
-				  <table><tr><td><textarea  rows='3' cols='35' id="absenteeism" name="absenteeism" placeholder="If yes, explain(include dates)" style="visibility:hidden;"  ></textarea></td></tr></table><span id="time_losserror" style="color: red;font-style:italic;"></span></td>
+				  <table><tr><td><textarea  rows='3' cols='35' id="absenteeism" name="absenteeism" maxlength="32" onInput="return validatename1(id)"; placeholder="If yes, explain(include dates)" style="visibility:hidden;"  ></textarea></td></tr></table><span id="time_losserror" style="color: red;font-style:italic;"></span></td>
 				  
 				   </tr>
 				   <tr class="row1">
@@ -381,7 +615,7 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 					<option value="others">Other</option>
 					</select>
 					<span id="type_of_lighterror" style="color: red;font-style:italic;"></span>
-				   <input type="text" name="lighting" id="lighting" style='display:none'/>
+				   <input type="text" name="lighting" id="lighting" style='display:none' maxlength="32" onInput="return validatename(id)";/>
 				  </td>
 				  </tr>
 				  <tr class="row2">
@@ -394,21 +628,21 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 				 				  <tr class="row1" >
                   <td valign="middle" align="left" class="input_txt" ><span class="err">*</span>If yes, how muchs <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --></td>
 				  <td valign="top" align="left" class="input_txt" >
-				  <input type="text" class="input_txtbx1" id="how_much" name="how_much" />
+				  <input type="text" class="input_txtbx1" id="how_much" maxlength="32" name="how_much" onkeypress="return validate(event)"; />
 				  <span id="how_mucherror" style="color: red;font-style:italic;"></span>
 				  </td>
 				  </tr>
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>How often</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="how_often" name="how_often" />
+				  <input type="text" class="input_txtbx1" id="how_often" maxlength="32" name="how_often" onInput="return validatename(id)";/>
 				  <span id="how_oftenerror" style="color: red;font-style:italic;"></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>From where to where</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="where_to_where" name="where_to_where" />
+				  <input type="text" class="input_txtbx1" maxlength="32" id="where_to_where" onInput="return validatename(id)";name="where_to_where" />
 				  <span id="where_to_whereerror" style="color: red;font-style:italic;"></span>
 				  </td>
 				  </tr>
@@ -446,7 +680,7 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 					<tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>In your job, do you push or pull</td>
 				  <td valign="top" align="left" class="input_txt"><input type="radio" name="push_pull" id="yes5"value="yes" class="input_txt" checked="true" onclick="pull('show4')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="push_pull" id="No5"value="No" class="input_txt" onclick="pull('hide4')">No&nbsp;&nbsp;&nbsp;
-				   <input type="text" class="input_txtbx1" id="jobpp" name="jobpp" placeholder="If yes, give specifics"/>
+				   <input type="text" class="input_txtbx1" id="jobpp" name="jobpp" maxlength="32" onInput="return validatename(id)";placeholder="If yes, give specifics"/>
 				 <span id="push_pullerror" style="color: red;font-style:italic;"></span>
 				  </td>
 				  </tr>
@@ -504,7 +738,7 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 					<option value="slippery">Slippery</option>
 					<option value="Other">Other</option>
 					</select>
-				   <input type="text" name="warea" id="warea" style='display:none'/>
+				   <input type="text" name="warea" id="warea" maxlength="32" onInput="return validatename(id)"; style='display:none'/>
 				  </td>
 				  </tr>
 				  <tr class="row2">
@@ -520,7 +754,7 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>How many employees have been injured doing your job</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="emp" name="no_of_employees" /><span id="emperror" style="color: red;font-style:italic;" ><form:errors path="Workaccident.no_of_employees"></form:errors></span><span class="err" id="emperr"></span>
+				  <input type="text" class="input_txtbx1" id="emp"onkeypress="return validate(event)"; maxlength="32" name="no_of_employees" /><span id="emperror" style="color: red;font-style:italic;" ><form:errors path="Workaccident.no_of_employees"></form:errors></span><span class="err" id="emperr"></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
@@ -541,7 +775,7 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>What changes would you make in your job</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="changes_in_job" name="changes_in_job" /><span id="changes_in_joberror" style="color: red;font-style:italic;" ><form:errors path="Workaccident.changes_in_job"></form:errors>
+				  <input type="text" class="input_txtbx1" id="changes_in_job" maxlength="32" onInput="return validatename(id)"; name="changes_in_job" /><span id="changes_in_joberror" style="color: red;font-style:italic;" ><form:errors path="Workaccident.changes_in_job"></form:errors>
 				  </td>
 				  </tr>
 				  </table>
