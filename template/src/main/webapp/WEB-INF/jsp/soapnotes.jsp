@@ -149,7 +149,8 @@ $(function() {
        }       
     </script> -->
     <script type="text/javascript">
-       function Validate(event) {
+       function validate(event) {
+    	   
            var regex = new RegExp("^[0-9.]+$");
            var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
            if (!regex.test(key)) {
@@ -242,7 +243,7 @@ $(function() {
           <tr class="row1">
 <td></td><td></td>
 <td></td><td></td><td></td><td></td>
-<td><h2><span class="err">*</span>patient</h2></td><td><input type="text" name="pname" id="pname" value="${name}" class="input_txtbx1"><span style="color:red" id="pnameerr"><form:errors path="SoapNotes.pname"></form:errors></span></td>
+<td><h2><span class="err">*</span>patient</h2></td><td><input type="text" name="pname" id="pname" value="${name}" onkeypress="return validate1(event,id)";  class="input_txtbx1"><span style="color:red" id="pnameerr"><form:errors path="SoapNotes.pname"></form:errors></span></td>
 </tr>
 <tr class="row1">
 <td height="20">Chief Complaint:</td>
@@ -252,6 +253,94 @@ $(function() {
 <td valign="top" style="width: 142px; "><input type="checkbox" name="leftshoulderpain" value="Left Shoulder Pain" >Left Shoulder Pain</td>
 <td valign="top" style="width: 98px; "><input type="checkbox" name="chestpain" value="Chest Pain" >Chest Pain</td>
 <td valign="top"><input type="checkbox" name="rightarmpain" value="Right Arm Pain" onclick="rightcheck()" id="rightarmpain" >Right Arm Pain<br>
+
+<script type="text/javascript">
+       function validate1(event,id) {
+        
+        
+        
+           var regex = new RegExp("^[A-Za-z ]+$");
+           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+           if (!regex.test(key)) {
+             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
+               event.preventDefault();
+               return false;
+           }
+         
+           if(document.getElementById(id).value.substring(0,1)==" ")
+        	{
+        	
+        	   if(id == "pname"){
+        		document.getElementById("pnameerr").innerHTML="Initial space not allowed";
+        	   }
+        	   if(id=="diagonosis")
+        		   {
+        		   document.getElementById("diagnosiserr").innerHTML="Initial space not allowed";
+        		   
+        		   }
+        	   if(id=="sign")
+        		   {
+        		   document.getElementById("signerror").innerHTML="Initial space not allowed";
+        		   }
+        	
+        	   
+        		document.getElementById(id).value == "";
+        		return false;
+        	}
+           else{
+        	   if(id == "pname"){
+        		   document.getElementById("pnameerr").innerHTML="";
+           	   }
+           	   if(id="diagonosis")
+           		   {
+           		document.getElementById("diagnosiserr").innerHTML="";
+           		   
+           		   }
+           	 if(id="sign")
+  		   {
+  		   document.getElementById("signerror").innerHTML="";
+  		   }
+           	
+        	   
+           }
+           
+       } 
+       function validate2(id)
+       {
+    	   var regex = /^[A-Za-z0-9 ]*$/;
+    	   
+    	   if(document.getElementById("e1e2").value == "ExtremitiesX-Rays")
+    		   {
+    	   if(document.getElementById("xray").value == "")
+      	   {
+      	  
+      	   document.getElementById("xrayerror").innerHTML="Required Field should not be blank";
+      	   return false;
+      	   }
+    	   else if(document.getElementById("xray").value.charAt(0) == " ")
+      	   {
+      	  
+      	   document.getElementById("xrayerror").innerHTML="Initial space not allowed";
+      	   return false;
+      	   }
+    	   else if(document.getElementById("xray").value.match(regex))
+    		   {
+    		   document.getElementById("xrayerror").innerHTML="";
+    		   }
+    	   else
+    		   {
+    		   document.getElementById("xrayerror").innerHTML="Required Field should be Alpha-Numeric";
+          	   return false;
+    		   }
+    	   
+    		   }
+    	   else{
+    		   document.getElementById("xrayerror").innerHTML="";
+    	   }
+       }
+       
+    </script>
+
 <script>
 function rightcheck()
 {
@@ -406,6 +495,7 @@ document.getElementById("leftproxi").style.display="none";
 				var $im = 1;
 				var flagm = 1;
 				function addMultichoice(divName) {
+					
 					var xx = document.getElementsByName('diagnosis[]').length;
 					var $in = xx + 1;
 					var $m=$in-1;
@@ -415,7 +505,7 @@ document.getElementById("leftproxi").style.display="none";
 					newdiv.innerHTML = '<table width="100%" border="0" cellspacing="0" cellpadding="0" id="newtbl'
 							+ $im
 							+ '"><tr>'
-							+ '<td valign="top" align="left" class="input_txt" width="70%">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text"  name="diagnosis[]"/></td></tr><tr class="row1"><td align="left" valign="top"><a javascript:void(0);" onclick="removechoice('
+							+ '<td valign="top" align="left" class="input_txt" width="70%">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="diagonosis" onkeypress="return validate1(event,id)";name="diagnosis[]"/></td></tr><tr class="row1"><td align="left" valign="top"><a javascript:void(0);" onclick="removechoice('
 							+ $im
 							+ ')" style="text-decoration:none;"><input type="submit" class="submit_btn" value="CANCEL"  /></a></td></tr></table>';
 							
@@ -434,15 +524,16 @@ document.getElementById("leftproxi").style.display="none";
 				}
 			</script>
  &nbsp &nbspDiagonosis:<br/>
-&nbsp;&nbsp;&nbsp;<input type="text" name="diagnosis[]" class="input_txtbx1"><br/><br/>
+&nbsp;&nbsp;&nbsp;<input type="text" name="diagnosis[]" id="diagonosis"onkeypress="return validate1(event,id)";class="input_txtbx1"><br/><br/>
 <!-- &nbsp &nbsp 2&nbsp &nbsp &nbsp<input type="text" name="diagnosis2"><br/><br/>
 &nbsp &nbsp 3&nbsp &nbsp &nbsp<input type="text" name="diagnosis3"><br/><br/>
 &nbsp &nbsp 4&nbsp &nbsp &nbsp<input type="text" name="diagnosis4"><br/><br/> -->
 <div id="multichoice"></div><a href="javascript:void(0);" onclick="addMultichoice('multichoice');" style="text-decoration:none;" ><input type="button" value="Add one more diagnosis" class="submit_btn2" name=""/></a>
+ <span id="diagnosiserr" style="color:red"></span>
  </td>
  <td>
- &nbsp &nbsp <select name="e1e2" id="e1e2" class="input_cmbbx1" onchange="if (this.value=='ExtremitiesX-Rays'){this.form['xray'].style.visibility='visible'}else {this.form['xray'].style.visibility='hidden'};">
-					<option selected="selected" value="2" >2</option>
+ &nbsp &nbsp <select name="e1e2" id="e1e2" class="input_cmbbx1" onchange="if (this.value=='ExtremitiesX-Rays'){this.form['xray'].style.visibility='visible'}else {this.form['xray'].style.visibility='hidden'};validate2(id);">
+					<option  value="2" >2</option>
 					<option value="3">3</option>
 					<option value="4">4</option>
 					<option value="5">5</option>
@@ -485,8 +576,8 @@ document.getElementById("leftproxi").style.display="none";
 					<option value="strengthexcer">Strength excer</option>
 					<option value="lifestyle">Lifestyle modifications</option>
 					<option value="reeval">Re Eval.in </option>
-				  </select>&nbsp;&nbsp;<input type="text" name="xray" id="xray" style="visibility:hidden;"/>
-				  
+				  </select>&nbsp;&nbsp;<input type="text" name="xray" id="xray" onblur="return validate2(id);"style="visibility:hidden;"/><br>
+				  <span id="xrayerror"style="color:red"></span>
 				  <input type="text" name="offwork1" id="offwork1" style='display:none' class="input_txtbx1">
 				  <input type="text" name="reeval1" id="reeval1" style='display:none' class="input_txtbx1">
 				  
@@ -941,7 +1032,8 @@ document.getElementById("leftproxi").style.display="none";
 					<option value="85%">85%</option>
 					<option value="95%">95%</option>
 					</select> --><br/><br/><br/><span id="improved8error" style="color: red;font-style:italic;"></span>
-&nbsp;&nbsp;Worsened:&nbsp;&nbsp;<input type="text" name="worsened7" id="worsened7" class="input_txtbx1" onkeypress="return validate(event)"; onInput="checkLength(id)">&nbsp;%<!-- <select name="worsened7" id="worsened7" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+&nbsp;&nbsp;Worsened:&nbsp;&nbsp;<input type="text" name="worsened7" id="worsened7" class="input_txtbx1" onkeypress="return 
+(event)"; onInput="checkLength(id)">&nbsp;%<!-- <select name="worsened7" id="worsened7" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
 					<option value="25%">25%</option>
 					<option value="50%">50%</option>
@@ -1071,7 +1163,7 @@ document.getElementById("leftproxi").style.display="none";
  
 				                   
 <br/><br/>
-<table align="right"><tr><td><span class="err">*</span> Physicians Signature:<input type="text" name="sign" id="sign" class="input_txtbx1"><span style="color:red" id="signerror"><form:errors path="SoapNotes.sign"></form:errors></span></td></tr>
+<table align="right"><tr><td><span class="err">*</span> Physicians Signature:<input type="text" name="sign" id="sign" onkeypress="return validate1(event,id)"; class="input_txtbx1"><span style="color:red" id="signerror"><form:errors path="SoapNotes.sign"></form:errors></span></td></tr>
 				                <tr height="10"></tr> 
 				                  <tr>
 				                   <td align="right"><input type="submit" class="submit_btn" value="Save" id="saveid" onclick="return check('this')"></td>
@@ -1094,13 +1186,25 @@ document.getElementById("leftproxi").style.display="none";
 		document.getElementById("pnameerr").innerHTML="Required Field Should Not Empty";	
 		return false;
 		}
+	else if((document.getElementById("pname").value.length < 4) || (document.getElementById("pname").value.length > 45))
+	{
+	document.getElementById("pnameerr").innerHTML="Required Field Should between 4 to 45";	
+	return false;
+	}
 		document.getElementById("signerror").innerHTML="";	
 	
 	if(document.getElementById("sign").value=="")
-	{	
-	document.getElementById("signerror").innerHTML="Required Field Should Not Empty";	
-	return false;
+	{
+		document.getElementById("signerror").innerHTML="Required Field Should Not Empty";	
+		return false;
+		
 	}
+	else if((document.getElementById("sign").value.length < 4) || (document.getElementById("sign").value.length > 45))
+		{
+		document.getElementById("signerror").innerHTML="Required Field Should between 4 to 45";	
+		return false;
+		}
+	
 	document.getElementById("datepicker1error").innerHTML="";
 	var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 			
@@ -1207,7 +1311,7 @@ document.getElementById("leftproxi").style.display="none";
     				<td align="left" valign="top" width="50%" style="padding-right:25px;">
     					<br>
 <table align="right">
-<input type="text" value="${soap.patient_id }" name="patient_id" />
+<%-- <input type="text" value="${soap.patient_id }" name="patient_id" /> --%>
               <input type="hidden" class="input_txtbx1" id="inp_id" value="${soap.soapid}" name="soapid" />
 
     <tr class="row1">

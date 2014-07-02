@@ -162,10 +162,20 @@ $(function() {
 		document.getElementById("pnameerr").innerHTML="Required Field Should Not Empty";	
 		return false;
 		}
+	else if((document.getElementById("pname").value.length < 4) || (document.getElementById("pname").value.length > 45))
+	{
+	document.getElementById("pnameerr").innerHTML="Required Field Should between 4 to 45";	
+	return false;
+	}
 		document.getElementById("signerror").innerHTML="";
 		if(document.getElementById("sign").value=="")
 		{	
 		document.getElementById("signerror").innerHTML="Required Field Should Not Empty";	
+		return false;
+		}
+		else if((document.getElementById("sign").value.length < 4) || (document.getElementById("sign").value.length > 45))
+		{
+		document.getElementById("signerror").innerHTML="Required Field Should between 4 to 45";	
 		return false;
 		}
 		document.getElementById("datepicker1error").innerHTML="";
@@ -364,7 +374,7 @@ if(document.getElementById("rightarmpain").checked)
        <td><h2><span class="err">*</span>patient:</h2></td>
              <input type="hidden" value="${username}" name="username" />
               <input type="hidden" class="input_txtbx1" id="inp_id" value="${soapnotes.soapid}" name="soapid" />
-              <td><input type="text" class="input_txtbx1" name="pname" id="pname" value="${soapnotes.pname}" /><span class="err" id="pnameerr"><form:errors path="SoapNotes.pname"></form:errors></span></td>
+              <td><input type="text" class="input_txtbx1" name="pname" id="pname" onkeypress="return validate1(event,id)"; value="${soapnotes.pname}" /><span class="err" id="pnameerr"><form:errors path="SoapNotes.pname"></form:errors></span></td>
              </tr>
         </table>
         
@@ -388,6 +398,93 @@ if(document.getElementById("rightarmpain").checked)
 		document.getElementById("rightproxi").style.display='none';
 		}
 </script>
+<script type="text/javascript">
+       function validate1(event,id) {
+        
+        
+        
+           var regex = new RegExp("^[A-Za-z ]+$");
+           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+           if (!regex.test(key)) {
+             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
+               event.preventDefault();
+               return false;
+           }
+         
+           if(document.getElementById(id).value.substring(0,1)==" ")
+        	{
+        	
+        	   if(id == "pname"){
+        		document.getElementById("pnameerr").innerHTML="Initial space not allowed";
+        	   }
+        	   if(id=="diagonosis")
+        		   {
+        		   document.getElementById("diagnosiserr").innerHTML="Initial space not allowed";
+        		   
+        		   }
+        	   if(id=="sign")
+        		   {
+        		   document.getElementById("signerror").innerHTML="Initial space not allowed";
+        		   }
+        	
+        	   
+        		document.getElementById(id).value == "";
+        		return false;
+        	}
+           else{
+        	   if(id == "pname"){
+        		   document.getElementById("pnameerr").innerHTML="";
+           	   }
+           	   if(id="diagonosis")
+           		   {
+           		document.getElementById("diagnosiserr").innerHTML="";
+           		   
+           		   }
+           	 if(id="sign")
+  		   {
+  		   document.getElementById("signerror").innerHTML="";
+  		   }
+           	
+        	   
+           }
+           
+       } 
+       function validate2(id)
+       {
+    	   var regex = /^[A-Za-z0-9 ]*$/;
+    	  
+    	   if(document.getElementById("e1e2").value == "ExtremitiesX-Rays")
+    		   {
+    		 
+    	   if(document.getElementById("xray").value == "")
+      	   {
+      	  
+      	   document.getElementById("xrayerror").innerHTML="Required Field should not be blank";
+      	   return false;
+      	   }
+    	   else if(document.getElementById("xray").value.charAt(0) == " ")
+      	   {
+      	  
+      	   document.getElementById("xrayerror").innerHTML="Initial space not allowed";
+      	   return false;
+      	   }
+    	   else if(document.getElementById("xray").value.match(regex))
+    		   {
+    		   document.getElementById("xrayerror").innerHTML="";
+    		   }
+    	   else
+    		   {
+    		   document.getElementById("xrayerror").innerHTML="Required Field should be Alpha-Numeric";
+          	   return false;
+    		   }
+    	   
+    		   }
+    	   else{
+    		   document.getElementById("xrayerror").innerHTML="";
+    	   }
+       }
+       
+    </script>
 
 <script>
 function rightcheck()
@@ -580,12 +677,12 @@ else
 			
  <td>
  
- &nbsp &nbsp Diagonosis:<br/><br>&nbsp;<c:forEach items="${diagnosis}" var="diagnosis">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="diagnosis[]" type="text" value="${diagnosis}"><br><br></c:forEach>
+ &nbsp &nbsp Diagonosis:<br/><br>&nbsp;<c:forEach items="${diagnosis}" var="diagnosis">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="diagnosis[]" id="diagonosis"onkeypress="return validate1(event,id)";type="text" value="${diagnosis}"><br><br></c:forEach>
  <div id="multichoice"></div><a href="javascript:void(0);" onclick="addMultichoice('multichoice');" style="text-decoration:none;" ><input type="button" value="Add one more diagnosis" class="submit_btn2" name=""/></a>
-
+<span id="diagnosiserr" style="color:red"></span>
  </td>
  <td>&nbsp;&nbsp;
- <select name="e1e2" width="2%" id="e1e2" class="input_cmbbx1" onchange="if (this.value=='ExtremitiesX-Rays'){this.form['xray'].style.visibility='visible'}else {this.form['xray'].style.visibility='hidden'};"">
+ <select name="e1e2" width="2%" id="e1e2" class="input_cmbbx1" onchange="if (this.value=='ExtremitiesX-Rays'){this.form['xray'].style.visibility='visible'}else {this.form['xray'].style.visibility='hidden'};validate2(id);">
 					<option selected="selected" value="2" <c:if test="${soapnotes.e1e2=='2'}"><c:out value="selected"/></c:if>>2</option>
 					<option value="3" <c:if test="${soapnotes.e1e2=='3'}"><c:out value="selected"/></c:if>>3</option>
 					<option value="4" <c:if test="${soapnotes.e1e2=='4'}"><c:out value="selected"/></c:if>>4</option>
@@ -629,7 +726,8 @@ else
 					<option value="strengthexcer" <c:if test="${soapnotes.e1e2=='strengthexcer'}"><c:out value="selected"/></c:if>>Strength excer</option>
 					<option value="lifestyle" <c:if test="${soapnotes.e1e2=='lifestyle'}"><c:out value="selected"/></c:if>>Lifestyle modifications</option>
 					<option value="reeval" <c:if test="${soapnotes.e1e2=='reeval'}"><c:out value="selected"/></c:if>>Re Eval.in </option>
-				  </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" width="5%"name="xray" class="input_txtbx1" id="xray"  value="${soapnotes.xray}" style="visibility:hidden;" >
+				  </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" width="5%"name="xray" class="input_txtbx1" id="xray"  onblur="return validate2(id);" value="${soapnotes.xray}" style="visibility:hidden;" >
+				    <span id="xrayerror"style="color:red"></span>
 				  <input type="text" name="offwork1" class="input_txtbx1" id="inp_id"  value="${soapnotes.offwork1}" style='display:none' >
 				  <input type="text" name="reeval1" class="input_txtbx1" id="inp_id"  value="${soapnotes.reeval1}" style='display:none'>
 				  </td>
@@ -1137,7 +1235,7 @@ else
  </td>
  </tr>
   </table>
-  <table align="right"><tr><td><span class="err">*</span> Physicians Signature:<input type="text" name="sign" class="input_txtbx1" id="sign"  value="${soapnotes.sign}"><span class="err" id="signerror"><form:errors path="SoapNotes.sign"></form:errors></span></td></tr></table>
+  <table align="right"><tr><td><span class="err">*</span> Physicians Signature:<input type="text" name="sign" class="input_txtbx1" id="sign" onkeypress="return validate1(event,id)"; value="${soapnotes.sign}"><span class="err" id="signerror"><form:errors path="SoapNotes.sign"></form:errors></span></td></tr></table>
 				                   </table>
  <table align="right"> <tr>
 				                   <td><input type="submit" class="submit_btn" value="Update" onclick="return checkSubmit('this');"></td>
