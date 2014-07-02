@@ -140,6 +140,104 @@ popupWindow = window.open(url,"symptompopUpWindow" ,'width=1500,height=700,resiz
  
 </script>
 <script>
+  $(function() {
+	$("#pat_name").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+  $(function() {
+		$("#insure").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+  $(function() {
+		$("#damageamt").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+  $(function() {
+		$("#fault_insure").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+  $(function() {
+		$("#med_pay").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+  $(function() {
+		$("#other_attorney").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+  $(function() {
+		$("#protect_received").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+  $(function() {
+		$("#datepicker").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+  $(function() {
+		$("#datepicker1").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+</script>
+<script>
+function validatename(){
+    var textInput = document.getElementById("pat_name").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("pat_name").value = textInput;
+}
+</script>
+<script>
+function validatename1(){
+    var textInput = document.getElementById("insure").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("insure").value = textInput;
+}
+</script>
+<script>
+function validatename2(){
+    var textInput = document.getElementById("fault_insure").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("fault_insure").value = textInput;
+}
+</script>
+<script>
+function validatename3(){
+    var textInput = document.getElementById("med_pay").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("med_pay").value = textInput;
+}
+</script>
+<script>
+function validatename4(){
+    var textInput = document.getElementById("other_attorney").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("other_attorney").value = textInput;
+}
+</script>
+<script>
+function validatename5(){
+    var textInput = document.getElementById("protect_received").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("protect_received").value = textInput;
+}
+</script>
+<script>
 
 	function checkSubmit()
 	{
@@ -166,7 +264,14 @@ popupWindow = window.open(url,"symptompopUpWindow" ,'width=1500,height=700,resiz
 		
 		return false;
 		}
-	 
+	 document.getElementById("insureerror").innerHTML="";
+	    if(document.getElementById("insure").value.length<4 || document.getElementById("insure").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("insureerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
 	document.getElementById("damageamterror").innerHTML="";
 	if(document.getElementById("damageamt").value=="")
 	{
@@ -174,7 +279,14 @@ popupWindow = window.open(url,"symptompopUpWindow" ,'width=1500,height=700,resiz
 	
 	return false;
 	}
-	
+	document.getElementById("damageamterror").innerHTML="";
+    if(document.getElementById("damageamt").value.length<4 || document.getElementById("damageamt").value.length>=32)
+    {
+    	
+    	document.getElementById("damageamterror").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
 	
 	document.getElementById("fault_insureerror").innerHTML="";
 	if(document.getElementById("fault_insure").value=="")
@@ -183,6 +295,14 @@ popupWindow = window.open(url,"symptompopUpWindow" ,'width=1500,height=700,resiz
 	
 	return false;
 	}
+	document.getElementById("fault_insureerror").innerHTML="";
+    if(document.getElementById("fault_insure").value.length<4 || document.getElementById("fault_insure").value.length>=32)
+    {
+    	
+    	document.getElementById("fault_insureerror").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
 	document.getElementById("med_payerror").innerHTML="";
 	if(document.getElementById("med_pay").value=="")
 	{
@@ -190,6 +310,14 @@ popupWindow = window.open(url,"symptompopUpWindow" ,'width=1500,height=700,resiz
 	
 	return false;
 	}
+	document.getElementById("med_payerror").innerHTML="";
+    if(document.getElementById("med_pay").value.length<4 || document.getElementById("med_pay").value.length>=32)
+    {
+    	
+    	document.getElementById("med_payerror").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
 	document.getElementById("other_attorneyerror").innerHTML="";
 	if(document.getElementById("other_attorney").value=="")
 	{
@@ -197,7 +325,14 @@ popupWindow = window.open(url,"symptompopUpWindow" ,'width=1500,height=700,resiz
 	
 	return false;
 	}
-	
+	document.getElementById("other_attorneyerror").innerHTML="";
+    if(document.getElementById("other_attorney").value.length<4 || document.getElementById("other_attorney").value.length>=32)
+    {
+    	
+    	document.getElementById("other_attorneyerror").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
 	document.getElementById("protect_receivederror").innerHTML="";
 	if(document.getElementById("protect_received").value=="")
 	{
@@ -205,7 +340,14 @@ popupWindow = window.open(url,"symptompopUpWindow" ,'width=1500,height=700,resiz
 	
 	return false;
 	}
-	
+	document.getElementById("protect_receivederror").innerHTML="";
+    if(document.getElementById("protect_received").value.length<4 || document.getElementById("protect_received").value.length>=32)
+    {
+    	
+    	document.getElementById("protect_receivederror").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
 	document.getElementById("datepickererror").innerHTML="";
 	if(document.getElementById("datepicker").value=="")
 	{
@@ -426,7 +568,7 @@ function validatename(){
 			  <tr class="row1">
               <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Insurance/Attorney</td>
 			  <td valign="top" align="left" class="input_txt">
-		      <input type="text" class="input_txtbx1" id="insure" name="insure" value="${Staffchecklist.insure}"/><span class="err" id="insureerror"><form:errors path="Staffchecklist.insure"></form:errors>
+		      <input type="text" class="input_txtbx1" id="insure" name="insure" value="${Staffchecklist.insure}" onInput="return validatename1()";/><span class="err" id="insureerror"><form:errors path="Staffchecklist.insure"></form:errors>
 		      </td>
 			  </tr>
 			  <tr class="row1">
@@ -439,25 +581,25 @@ function validatename(){
 			  <tr class="row1">
               <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Notice of Assignment to Fault Insurance</td>
 			  <td valign="top" align="left" class="input_txt">
-		      <input type="text" class="input_txtbx1" id="fault_insure" name="fault_insure" value="${Staffchecklist.fault_insure}"/><span class="err" id="fault_insureerror"><form:errors path="Staffchecklist.fault_insure"></form:errors>
+		      <input type="text" class="input_txtbx1" id="fault_insure" name="fault_insure" value="${Staffchecklist.fault_insure}" onInput="return validatename2()";/><span class="err" id="fault_insureerror"><form:errors path="Staffchecklist.fault_insure"></form:errors>
 		      </td>
 			  </tr>
 			  <tr class="row1">
               <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Notice of Assignment to Med Pay</td>
 			  <td valign="top" align="left" class="input_txt">
-		      <input type="text" class="input_txtbx1" id="med_pay" name="med_pay" value="${Staffchecklist.med_pay}"/><span class="err" id="med_payerror"><form:errors path="Staffchecklist.med_pay"></form:errors>
+		      <input type="text" class="input_txtbx1" id="med_pay" name="med_pay" value="${Staffchecklist.med_pay}" onInput="return validatename3()";/><span class="err" id="med_payerror"><form:errors path="Staffchecklist.med_pay"></form:errors>
 		      </td>
 			  </tr>
 			  <tr class="row1">
               <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Notice of Assignment to other Attorney</td>
 			  <td valign="top" align="left" class="input_txt">
-		      <input type="text" class="input_txtbx1" id="other_attorney" name="other_attorney" value="${Staffchecklist.other_attorney}"/><span class="err" id="other_attorneyerror"><form:errors path="Staffchecklist.other_attorney"></form:errors>
+		      <input type="text" class="input_txtbx1" id="other_attorney" name="other_attorney" value="${Staffchecklist.other_attorney}" onInput="return validatename4()";/><span class="err" id="other_attorneyerror"><form:errors path="Staffchecklist.other_attorney"></form:errors>
 		      </td>
 			  </tr>
 			  <tr class="row1">
               <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Attorney Letter of Protection Received</td>
 			  <td valign="top" align="left" class="input_txt">
-		      <input type="text" class="input_txtbx1" id="protect_received" name="protect_received" value="${Staffchecklist.protect_received}"/><span class="err" id="protect_receivederror"><form:errors path="Staffchecklist.protect_received"></form:errors>
+		      <input type="text" class="input_txtbx1" id="protect_received" name="protect_received" value="${Staffchecklist.protect_received}" onInput="return validatename5()";/><span class="err" id="protect_receivederror"><form:errors path="Staffchecklist.protect_received"></form:errors>
 		      </td>
 			  </tr>
 			  <tr class="row1">
