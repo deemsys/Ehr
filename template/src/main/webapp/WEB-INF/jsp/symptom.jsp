@@ -1341,7 +1341,56 @@ $("#stabbing9").offset({ left:  document.getElementById("stableft9").value, top:
   });
 
   </script>
+<script>
+  $(function() {
+	$("#pname").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
 
+</script>
+
+<script>
+  $(function() {
+	$("#pname").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#pname").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+function validatename(){
+    var textInput = document.getElementById("pname").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("pname").value = textInput;
+}
+</script>
+
+<script type="text/javascript">
+       function validate(event) {
+          
+           var regex = new RegExp("^[0-9]+$");
+           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+           if (!regex.test(key)) {
+             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
+               event.preventDefault();
+               return false;
+           }
+       }       
+    </script>
 <script>
 
 	function checkSubmit()
@@ -1355,7 +1404,14 @@ document.getElementById("pnameerror").innerHTML=" ";
 		return false;
 		}
 		
-		
+		document.getElementById("pnameerror").innerHTML="";
+	    if(document.getElementById("pname").value.length<4 || document.getElementById("pname").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("pnameerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
 		document.getElementById("numbererror").innerHTML="";
 	
 		if(isNaN(document.getElementById("number").value))
@@ -1433,8 +1489,8 @@ document.getElementById("datepickererror").innerHTML=" ";
 		 <c:when test="${empty symptoms}">
 	 
           <table cellpadding="0" cellspacing="0" border="0" width="100%" height="20" >
-          <tr><td width="5%"><span class="err">*</span>Name</td><td><input type="text" name="pname" value="${name}" id="pname"><span id="pnameerror" style="color: red;font-style:italic;"><form:errors path="symptom.pname"></form:errors></td>
-<td  width="5%">Number</td><td><input type="text" name="number" id="number"> <span id="numbererror" style="color: red;font-style:italic;" > </span></td>
+          <tr><td width="5%"><span class="err">*</span>Name</td><td><input type="text" name="pname" onInput="return validatename()"; value="${name}" id="pname"><span id="pnameerror" style="color: red;font-style:italic;"><form:errors path="symptom.pname"></form:errors></td>
+<td  width="5%">Number</td><td><input type="text" name="number" onkeypress="return validate(event)"; id="number"> <span id="numbererror" style="color: red;font-style:italic;" > </span></td>
 <td  width="5%" ><span class="err">*</span>Date </td><td ><input type="text" name="date" id="datepicker"><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="symptom.date"></form:errors></td>
 </tr></table>
 </br>
