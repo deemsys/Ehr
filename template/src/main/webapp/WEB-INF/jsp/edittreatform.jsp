@@ -189,7 +189,7 @@ document.getElementById("patientsnameerror").innerHTML=" ";
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>PatientsName: </td>
 				                  <input type="hidden" class="input_txtbx1" id="inp_id" value="${Treatdetails.treat_no}" name="treat_no" />
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="patientsname" onInput="return validatename()"; value="${Treatdetails.patientsname}" name="patientsname"  /><span id="patientsnameerror" style="color: red;font-style:italic;"><form:errors path="Treatform.patientsname"></form:errors></span></td>
+				                  	<input type="text" class="input_txtbx1" id="patientsname" value="${Treatdetails.patientsname}" onInput="return validatename()";  name="patientsname"  /><span id="patientsnameerror" style="color: red;font-style:italic;"><form:errors path="Treatform.patientsname"></form:errors></span></td>
 				                  	</tr>
                         <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patients Signature: </td>
