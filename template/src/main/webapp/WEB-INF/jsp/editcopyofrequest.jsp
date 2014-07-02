@@ -13,6 +13,63 @@
   P#mypar {font-style:calibri;
   line-height:18px;}
    </STYLE>
+   <script>
+function validatename(id){
+    var textInput = document.getElementById(id).value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById(id).value = textInput;
+}
+</script>
+<script>
+$(function() {
+	$("#patient").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+$(function() {
+	$("#regarding").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+$(function() {
+	$("#address").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#datepicker").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#claimnumber").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+$(function() {
+	$("#datepicker1").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#dear").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#sign").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});										
+</script>
 <script type="text/javascript">
 $(function() {
     $( "#datepicker" ).datepicker();
@@ -47,6 +104,25 @@ function validateusername(){
 		
 		return false;
 		}
+		document.getElementById("patienterror").innerHTML="";
+	    if(document.getElementById("patient").value.length<4 || document.getElementById("patient").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("patienterror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
+	 document.getElementById("regardingerror").innerHTML="";
+	if(document.getElementById("regarding").value!="")
+	{
+	if(document.getElementById("regarding").value.length<4 || document.getElementById("regarding").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("regardingerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
+	}       
 		document.getElementById("datepickererror").innerHTML="";
 	if(document.getElementById("datepicker").value=="")
 		{
@@ -70,6 +146,14 @@ function validateusername(){
 	
 	return false;
 	}
+	document.getElementById("claimnumbererror").innerHTML="";
+	    if(document.getElementById("claimnumber").value.length<4 || document.getElementById("claimnumber").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("claimnumbererror").innerHTML="claim number should be min 4 and max 32";
+	    	
+	        return false;
+	    }
 	/* document.getElementById("claimnumbererror").innerHTML="";
 	if(isNaN(document.getElementById("claimnumber").value))
 {
@@ -84,6 +168,14 @@ return false;
 	
 	return false;
 	}
+	document.getElementById("dearerror").innerHTML="";
+	    if(document.getElementById("dear").value.length<4 || document.getElementById("dear").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("dearerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
 	document.getElementById("signerror").innerHTML="";
 	if(document.getElementById("sign").value=="")
 	{
@@ -91,6 +183,14 @@ return false;
 	
 	return false;
 	}
+	document.getElementById("signerror").innerHTML="";
+	    if(document.getElementById("sign").value.length<4 || document.getElementById("sign").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("signerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
 	document.getElementById("datepicker1error").innerHTML="";
 	var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		
@@ -154,15 +254,15 @@ return false;
           <tr height="30">
           <input type="hidden" class="input_txtbx1" id="inp_id" value="${copyofrequest.copyofrequestno}" name="copyofrequestno" />
           <td><span class="err">*</span>Patients Attorney or Insurance Adjuster: </td>
-          <td><input type="text"  class="input_txtbx1" name="patient" size="40" value="${copyofrequest.patient}" id="patient"><span class="err" id="patienterror"  style="color: red;font-style:italic;"><form:errors path="Copyofrequest.patient"></form:errors></span></td>
+          <td><input type="text"  class="input_txtbx1" name="patient" size="40" value="${copyofrequest.patient}" id="patient" onInput="return validatename(id)";><span class="err" id="patienterror"  style="color: red;font-style:italic;"><form:errors path="Copyofrequest.patient"></form:errors></span></td>
           </tr>   
           <tr height="30">
           <td><span class="err"></span>Address: </td>
-          <td><textarea rows="4" cols="43"  class="input_txtarea" name="address">${copyofrequest.address}</textarea><span class="err"><form:errors path="Copyofrequest.address"></form:errors></span></td>
+          <td><textarea rows="4" cols="43"  class="input_txtarea" name="address" id="address">${copyofrequest.address}</textarea><span class="err"><form:errors path="Copyofrequest.address"></form:errors></span></td>
           </tr>
           <tr height="30">
           <td>Regarding: </td>
-          <td><input type="text" class="input_txtbx1" name="regarding" size="40" value="${copyofrequest.regarding }"></td>
+          <td><input type="text" class="input_txtbx1" name="regarding" id="regarding" size="40" value="${copyofrequest.regarding }" onInput="return validatename(id)";><span class="err" id="regardingerror"></span></td>
           </tr>
           <tr height="30">
           <td><span class="err">*</span>Date of Accident: </td>
@@ -181,7 +281,7 @@ return false;
           <table width="85">
           <tr height="30">
           <td width="40">Dear  </td>
-          <td><span class="err" id="dearerror"  style="color: red;font-style:italic;">*</span><input type="text"  class="input_txtbx1" name="dear"  size="40" value="${copyofrequest.dear}" id="dear"></td>
+          <td><span class="err" id="dearerror"  style="color: red;font-style:italic;">*</span><input type="text"  class="input_txtbx1" name="dear"  size="40" value="${copyofrequest.dear}" id="dear" onInput="return validatename(id)";></td>
           </tr>
           </table>
           <br/>
@@ -202,7 +302,7 @@ return false;
           </div>
           <div align="right">
           <p><B style="font-size:13px">Very truly yours,</B></p>
-          <p><span class="err">*</span><input type="text"  class="input_txtbx1" name="sign" size="30" value="${copyofrequest.sign}" id="sign"><span class="err" id="signerror"  style="color: red;font-style:italic;"><form:errors path="Copyofrequest.sign"></form:errors></span></p>
+          <p><span class="err">*</span><input type="text"  class="input_txtbx1" name="sign" size="30" value="${copyofrequest.sign}" id="sign" onInput="return validatename(id)";><span class="err" id="signerror"  style="color: red;font-style:italic;"><form:errors path="Copyofrequest.sign"></form:errors></span></p>
           <p>Perry Chiropractic and Therapy Center of Canton, Inc.</p>
           <p>Dr. Charles T. Yang DC, DABFP</p>
           </div>
