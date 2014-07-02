@@ -14,6 +14,51 @@
   line-height:18px;}
   
   </STYLE>
+  <script>
+function validatename(id){
+    var textInput = document.getElementById(id).value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById(id).value = textInput;
+}
+</script>
+  <script>
+   $(function() {
+	$("#toattorney1").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+	 $(function() {
+	$("#toattorney2").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+	$(function() {
+	$("#toattorney3").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+	$(function() {
+	$("#reg").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+	$(function() {
+	$("#datepicker1").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+	$(function() {
+	$("#datepicker2").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+  </script>
  <script>
   $(function() {
 	    $( "#datepicker1" ).datepicker();
@@ -36,6 +81,14 @@
 		
 		return false;
 		}
+		document.getElementById("toattorney1error").innerHTML="";
+	    if(document.getElementById("toattorney1").value.length<4 || document.getElementById("toattorney1").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("toattorney1error").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
 		document.getElementById("toattorney2error").innerHTML="";
 	if(document.getElementById("toattorney2").value=="")
 		{
@@ -43,7 +96,14 @@
 		
 		return false;
 		}
-	
+	document.getElementById("toattorney2error").innerHTML="";
+	    if(document.getElementById("toattorney2").value.length<4 || document.getElementById("toattorney2").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("toattorney2error").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
 	document.getElementById("toattorney3error").innerHTML="";
 	if(document.getElementById("toattorney3").value=="")
 	{
@@ -51,8 +111,25 @@
 	
 	return false;
 	}
-	
-	
+	document.getElementById("toattorney3error").innerHTML="";
+	    if(document.getElementById("toattorney3").value.length<4 || document.getElementById("toattorney3").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("toattorney3error").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
+	    document.getElementById("regerror").innerHTML="";
+	if(document.getElementById("reg").value!="")
+	{
+	if(document.getElementById("reg").value.length<4 || document.getElementById("reg").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("regerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
+	}
 	document.getElementById("datepicker2error").innerHTML="";
 	if(document.getElementById("datepicker2").value=="")
 	{
@@ -312,7 +389,7 @@ function doAjaxPost() {
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td width="50%"><span class="err">*</span>To Attorney:</td>
-              <td width="50%"><input type="text" class="input_txtbx1" name="toattorney1" id="toattorney1" /><span class="err" id="toattorney1error"  style="color: red;font-style:italic;" style="color: red;font-style:italic;"><form:errors path="Updateletter.toattorney1"></form:errors></td>
+              <td width="50%"><input type="text" class="input_txtbx1" name="toattorney1" id="toattorney1" onInput="return validatename(id)";/><span class="err" id="toattorney1error"  style="color: red;font-style:italic;" style="color: red;font-style:italic;"><form:errors path="Updateletter.toattorney1"></form:errors></td>
               </tr>
               </table>
               <br>
@@ -320,14 +397,14 @@ function doAjaxPost() {
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td width="50%"><span class="err"></span></td>
-              <td  width="50%"><input type="text" class="input_txtbx1" name="toattorney2" id="toattorney2" /><span class="err" id="toattorney2error"  style="color: red;font-style:italic;"><form:errors path="Updateletter.toattorney2"></form:errors></td>
+              <td  width="50%"><input type="text" class="input_txtbx1" name="toattorney2" id="toattorney2" onInput="return validatename(id)";/><span class="err" id="toattorney2error"  style="color: red;font-style:italic;"><form:errors path="Updateletter.toattorney2"></form:errors></td>
               </tr>
               </table>
               <br>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td width="50%"><span class="err"></span></td>
-              <td width="50%"><input type="text" class="input_txtbx1" name="toattorney3" id="toattorney3" /><span class="err" id="toattorney3error"  style="color: red;font-style:italic;"><form:errors path="Updateletter.toattorney3"></form:errors></td>
+              <td width="50%"><input type="text" class="input_txtbx1" name="toattorney3" id="toattorney3" onInput="return validatename(id)";/><span class="err" id="toattorney3error"  style="color: red;font-style:italic;"><form:errors path="Updateletter.toattorney3"></form:errors></td>
               </tr>
               </table>
               <br>
@@ -337,7 +414,7 @@ function doAjaxPost() {
               <td width="50%"><span class="err"></span>
 In Regards to : 
               </td>
-              <td width="50%"><input type="text" class="input_txtbx1" name="reg" id="reg" /><span class="err"><form:errors path="Updateletter.reg"></form:errors></td>
+              <td width="50%"><input type="text" class="input_txtbx1" name="reg" id="reg" onInput="return validatename(id)";/><span class="err" id="regerror"><form:errors path="Updateletter.reg"></form:errors></td>
               </tr>
               </table>
               <br>
