@@ -14,6 +14,44 @@
   line-height:18px;}
   
   </STYLE>
+  <script>
+  $(function() {
+	$("#insurance").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+  $(function() {
+		$("#address").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});	 
+  $(function() {
+		$("#reg").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});	
+  $(function() {
+		$("#nameofperson").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});	
+  $(function() {
+		$("#datepicker").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+  $(function() {
+		$("#subject").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+  </script>
    <script>
 
 	function checkSubmit()
@@ -27,6 +65,14 @@
 		document.getElementById("error").innerHTML="Required Field Should not be Empty";
 		return false;
 		}
+		document.getElementById("error").innerHTML="";
+	    if(document.getElementById("insurance").value.length<4 || document.getElementById("insurance").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("error").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
 		document.getElementById("regerror").innerHTML="";
 	if(document.getElementById("reg").value=="")
 		{
@@ -34,7 +80,14 @@
 		
 		return false;
 		}
-	
+	document.getElementById("regerror").innerHTML="";
+	    if(document.getElementById("reg").value.length<4 || document.getElementById("reg").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("regerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
 	document.getElementById("nameofpersonerror").innerHTML="";
 	if(document.getElementById("nameofperson").value=="")
 	{
@@ -60,6 +113,14 @@
 	
 	return false;
 	}
+	document.getElementById("subjecterror").innerHTML="";
+	    if(document.getElementById("subject").value.length<4 || document.getElementById("subject").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("subjecterror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
 	document.getElementById("datepickererror").innerHTML="";
 	var re = /^[mdy0-9]{2}\/[mdy0-9]{2}\/[mdy0-9]{4}$/;
 		//Allow blank space in field
@@ -80,6 +141,13 @@
  $(function() {
            $( "#datepicker1" ).datepicker();
          });
+</script>
+<script>
+function validatename(id){
+    var textInput = document.getElementById(id).value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById(id).value = textInput;
+}
 </script>
 </head>
  <body>
@@ -242,12 +310,12 @@ document.getElementById("datepicker").value=phone;
 
 });
 </script>
-<script>
-function validatename(){
-    var textInput = document.getElementById("nameofperson").value;
-    textInput = textInput.replace(/[^A-Za-z ]/g, "");
-    document.getElementById("nameofperson").value = textInput;
-}
+//<script>
+//function validatename(){
+   // var textInput = document.getElementById("nameofperson").value;
+    //textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    //document.getElementById("nameofperson").value = textInput;
+//}
 </script>
 <script type="text/javascript">
        function validate(event) {
@@ -416,27 +484,27 @@ Canton, Ohio 44708
               <br>
               		<table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="50%"><span class="err">*</span>Name of Insurance Company:</td>
-              <td ><input type="text" class="input_txtbx1" name="insurance" id="insurance" /><span id="error"  style="color: red;font-style:italic;"></span><span class="err" id="insuranceerror"><form:errors path="Perrychiropractic.insurance"></form:errors></td>
+              <td height="25" width="50%"><span class="err">*</span>Name of Insurance Company1:</td>
+              <td ><input type="text" class="input_txtbx1" name="insurance" id="insurance" onInput="return validatename(id)";/><span id="error"  style="color: red;font-style:italic;"></span><span class="err" id="insuranceerror"><form:errors path="Perrychiropractic.insurance"></form:errors></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="50%"><span class="err"></span>Address:</td>
-              <td ><textarea rows="" cols="" name="address"  class ="input_txtarea" style="width: 162px; height: 62px"></textarea><span class="err"><form:errors path="Perrychiropractic.address"></form:errors></td>
+              <td ><textarea rows="" cols="" name="address"  id="address" class ="input_txtarea" style="width: 162px; height: 62px"></textarea><span class="err"><form:errors path="Perrychiropractic.address"></form:errors></td>
               </tr>
               </table>
               
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="50%"><span class="err">*</span>Regarding:</td>
-              <td ><input type="text" class="input_txtbx1" name="reg" id="reg" /><span class="err" id="regerror"  style="color: red;font-style:italic;" ><form:errors path="Perrychiropractic.reg"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="reg" id="reg" onInput="return validatename(id)";/><span class="err" id="regerror"  style="color: red;font-style:italic;" ><form:errors path="Perrychiropractic.reg"></form:errors></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="50%"><span class="err">*</span>Patient's Name/ Name of Person Entitled To Coverage: </td>
-              <td ><input type="text" class="input_txtbx1" name="nameofperson" id="nameofperson" onInput="return validatename()";/><span class="err" id="nameofpersonerror" style="color: red;font-style:italic;" ><form:errors path="Perrychiropractic.nameofperson"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="nameofperson" id="nameofperson" onInput="return validatename(id)";/><span class="err" id="nameofpersonerror" style="color: red;font-style:italic;" ><form:errors path="Perrychiropractic.nameofperson"></form:errors></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -460,7 +528,7 @@ Canton, Ohio 44708
      </p>
      <br>
      
-  <p><span class="err">*</span><input type="text" class="input_txtbx1" name="subject" id="subject" /><span class="err" id="subjecterror" style="color: red;font-style:italic;"><form:errors path="Perrychiropractic.subject"></form:errors></span>has sought medical treatment from this clinic.  This patient has been injured to an extent where the patient has determined that they cannot afford to pay for treatment on a fee for service basis.  We would definitely prefer to simply render the required treatment on a fee for service basis.  However, because fees for service presents a hardship to this patient, we have agreed to postpone payment for treatment pursuant to the attached medical proceeds assignment. </p>	
+  <p><span class="err">*</span><input type="text" class="input_txtbx1" name="subject" id="subject" onInput="return validatename(id)";/><span class="err" id="subjecterror" style="color: red;font-style:italic;"><form:errors path="Perrychiropractic.subject"></form:errors></span>has sought medical treatment from this clinic.  This patient has been injured to an extent where the patient has determined that they cannot afford to pay for treatment on a fee for service basis.  We would definitely prefer to simply render the required treatment on a fee for service basis.  However, because fees for service presents a hardship to this patient, we have agreed to postpone payment for treatment pursuant to the attached medical proceeds assignment. </p>	
  <br>
      
 
