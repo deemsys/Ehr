@@ -67,6 +67,62 @@ width: 34px;
 cursor: pointer;
 }
 </style>
+<script>
+ $(function() {
+	$("#datepicker").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+ $(function() {
+	$("#insurance").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+ $(function() {
+	$("#address1").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+ $(function() {
+	$("#name").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+	$(function() {
+	$("#address3").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+	$(function() {
+	$("#patientsname").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+	$(function() {
+	$("#address5").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+	$(function() {
+	$("#medicalfee").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#amount").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+</script>
 <script type='text/javascript'>
 $(function(){
 var overlay = $('<div id="overlay"></div>');
@@ -225,10 +281,10 @@ function doAjaxPost() {
 </script>
 
 <script>
-function validatename(){
-    var textInput = document.getElementById("patientsname").value;
+function validatename(id){
+    var textInput = document.getElementById(id).value;
     textInput = textInput.replace(/[^A-Za-z ]/g, "");
-    document.getElementById("patientsname").value = textInput;
+    document.getElementById(id).value = textInput;
 }
 </script>
 
@@ -258,6 +314,14 @@ function validatename(){
 		
 		return false;
 		}
+		document.getElementById("insuranceerror").innerHTML="";
+	    if(document.getElementById("insurance").value.length<4 || document.getElementById("insurance").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("insuranceerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
 		document.getElementById("nameerror").innerHTML="";
 		if(document.getElementById("name").value=="")
 		{
@@ -265,6 +329,14 @@ function validatename(){
 		
 		return false;
 		}
+		document.getElementById("nameerror").innerHTML="";
+	    if(document.getElementById("name").value.length<4 || document.getElementById("name").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("nameerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
 		document.getElementById("pnameerror").innerHTML="";
 		if(document.getElementById("patientsname").value=="")
 		{
@@ -377,7 +449,7 @@ function openWindow(h, w, url) {
                 <table align="center" cellpadding="0" cellspacing="0" border="0"   width="100%"  ">
               <tr >
              <td height="25" width="40%"><span class="err">*</span>Insurance Company:</td>
-              <td ><input type="text" class="input_txtbx1" name="insurance" id="insurance"/><span class="err" id="insuranceerror"><form:errors path="Formbill.insurance"></form:errors></span></td>
+              <td ><input type="text" class="input_txtbx1" name="insurance" id="insurance" onInput="return validatename(id)";/><span class="err" id="insuranceerror"><form:errors path="Formbill.insurance"></form:errors></span></td>
               </tr>
               </table>
               <br>
@@ -391,7 +463,7 @@ function openWindow(h, w, url) {
                <table align="center" cellpadding="0" cellspacing="0" border="0"   width="100%"  ">
               <tr ><br>
              <td height="25" width="40%"><span class="err">*</span>Name Of Attorney:</td>
-              <td ><input type="text" class="input_txtbx1" name="name" id="name"/><span class="err" id="nameerror"><form:errors path="Formbill.name"></form:errors></span></td>
+              <td ><input type="text" class="input_txtbx1" name="name" id="name" onInput="return validatename(id)";/><span class="err" id="nameerror"><form:errors path="Formbill.name"></form:errors></span></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -404,7 +476,7 @@ function openWindow(h, w, url) {
                 <table align="center" cellpadding="0" cellspacing="0" border="0"   width="100%"  ">
               <tr >
              <td height="25" width="40%"><span class="err">*</span>Patient Name</td>
-              <td ><input type="text" class="input_txtbx1" name="patientsname" id="patientsname" onInput="return validatename()";/><span class="err" id="pnameerror"><form:errors path="Formbill.patientsname"></form:errors></span></td>
+              <td ><input type="text" class="input_txtbx1" name="patientsname" id="patientsname" onInput="return validatename(id)";/><span class="err" id="pnameerror"><form:errors path="Formbill.patientsname"></form:errors></span></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
