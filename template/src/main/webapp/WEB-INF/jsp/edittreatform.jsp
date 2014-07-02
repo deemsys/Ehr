@@ -29,6 +29,58 @@
 	}
 }
   </script>
+  
+  <script>
+  $(function() {
+	$("#patientsname").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#patientssign").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#witness").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+function validatename(){
+    var textInput = document.getElementById("patientsname").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("patientsname").value = textInput;
+}
+</script>
+
+<script>
+function validatename1(){
+    var textInput = document.getElementById("patientssign").value;
+    textInput = textInput.replace(/[^A-Za-z. ]/g, "");
+    document.getElementById("patientssign").value = textInput;
+}
+</script>
+
+<script>
+function validatename2(){
+    var textInput = document.getElementById("witness").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("witness").value = textInput;
+}
+</script>
    <script>
 
 	function checkSubmit()
@@ -41,6 +93,15 @@ document.getElementById("patientsnameerror").innerHTML=" ";
 		
 		return false;
 		}
+		
+		document.getElementById("patientsnameerror").innerHTML="";
+	    if(document.getElementById("patientsname").value.length<4 || document.getElementById("patientsname").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("patientsnameerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
 		document.getElementById("patientssignerror").innerHTML=" ";
 		
 		if(document.getElementById("patientssign").value=="")
@@ -72,6 +133,15 @@ document.getElementById("patientsnameerror").innerHTML=" ";
 	
 	return false;
 	}
+	
+	document.getElementById("witnesserror").innerHTML="";
+    if(document.getElementById("witness").value.length<4 || document.getElementById("witness").value.length>=32)
+    {
+    	
+    	document.getElementById("witnesserror").innerHTML="witnesss should be min 4 and max 32";
+    	
+        return false;
+    }
 	}
 
 	</script>
@@ -119,12 +189,12 @@ document.getElementById("patientsnameerror").innerHTML=" ";
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>PatientsName: </td>
 				                  <input type="hidden" class="input_txtbx1" id="inp_id" value="${Treatdetails.treat_no}" name="treat_no" />
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="patientsname" name="patientsname" value="${Treatdetails.patientsname}"/><span id="patientsnameerror" style="color: red;font-style:italic;"><form:errors path="Treatform.patientsname"></form:errors></span></td>
+				                  	<input type="text" class="input_txtbx1" id="patientsname" onInput="return validatename()"; value="${Treatdetails.patientsname}" name="patientsname"  /><span id="patientsnameerror" style="color: red;font-style:italic;"><form:errors path="Treatform.patientsname"></form:errors></span></td>
 				                  	</tr>
                         <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patients Signature: </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="patientssign" name="patientssign" value="${Treatdetails.patientssign}"/><span id="patientssignerror" style="color: red;font-style:italic;"><form:errors path="Treatform.patientssign"></form:errors></span></td>
+				                  	<input type="text" class="input_txtbx1" id="patientssign" name="patientssign" onInput="return validatename1()"; value="${Treatdetails.patientssign}"/><span id="patientssignerror" style="color: red;font-style:italic;"><form:errors path="Treatform.patientssign"></form:errors></span></td>
 				                  	</tr>
 				                  	<tr class="row1">
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Todays Date:  </td>
@@ -134,7 +204,7 @@ document.getElementById("patientsnameerror").innerHTML=" ";
                         <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Witness: </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="witness" name="witness" value="${Treatdetails.witness}"/><span id="witnesserror" style="color: red;font-style:italic;"><form:errors path="Treatform.witness"></form:errors></span></td>
+				                  	<input type="text" class="input_txtbx1" id="witness" onInput="return validatename2()"; name="witness" value="${Treatdetails.witness}"/><span id="witnesserror" style="color: red;font-style:italic;"><form:errors path="Treatform.witness"></form:errors></span></td>
 				                  	</tr>
                         <tr>
                         </table>
