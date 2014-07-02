@@ -255,6 +255,33 @@ $(function() {
 	  });
 
  </script>
+ 
+ <script>
+  $(function() {
+	$("#name").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#otherpainname").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+  <script>
+function validatename(id){
+    var textInput = document.getElementById(id).value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById(id).value = textInput;
+}
+</script>
   <script>
   
   function checksub()
@@ -265,6 +292,15 @@ $(function() {
   {
   document.getElementById("nameerror").innerHTML="Required field should not be empty";
   return false;
+  }
+  
+  document.getElementById("nameerror").innerHTML="";
+  if(document.getElementById("name").value.length<4 || document.getElementById("name").value.length>=32)
+  {
+  	
+  	document.getElementById("nameerror").innerHTML="Name should be min 4 and max 32";
+  	
+      return false;
   }
   document.getElementById("datepickererror").innerHTML="";
   if(document.getElementById("datepicker").value=="")
@@ -279,7 +315,17 @@ $(function() {
   	
       return false;
   }
-  
+	document.getElementById("otherpainnameerror").innerHTML="";
+	if(document.getElementById("otherpainname").value!="")
+	{
+    if(document.getElementById("otherpainname").value.length<4 || document.getElementById("otherpainname").value.length>=32)
+    {
+    	
+    	document.getElementById("otherpainnameerror").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
+    }
   }
   
   
@@ -359,7 +405,7 @@ $(function() {
 	            <c:set value="${quadraplevisualform.quadraplevisualdetails[0]}" var="quadraplevisualdetails"></c:set>
 	             <table>
 	             <tr height="30">
-	             <td width="100"><span class="err">*</span>Name</td><td width="400"><input type="hidden" id="symptom" name="symptom" value="${quadraplevisualdetails.symptom}"><input type="hidden" name="quadrapleno" value="${quadraplevisualdetails.quadrapleno}"><input type="text" name="name" value="${quadraplevisualdetails.name}" id="name"><span class="err" id="nameerror"></span></td>
+	             <td width="100"><span class="err">*</span>Name</td><td width="400"><input type="hidden" id="symptom" name="symptom" value="${quadraplevisualdetails.symptom}"><input type="hidden" name="quadrapleno" value="${quadraplevisualdetails.quadrapleno}"><input type="text" name="name" id="name" onInput="return validatename(id)"; value="${quadraplevisualdetails.name}" ><span class="err" id="nameerror"></span></td>
 	             <td width="100">Number</td><td width="400"><input type="text" name="number"  onkeypress="return validate(event)"; value="${quadraplevisualdetails.number}"></td>
 	             <td width="100"><span class="err">*</span>Date</td><td width="400"><input type="text"  name="date" id="datepicker" value="${quadraplevisualdetails.date}"  /><span class="err" id="datepickererror"></span></td>
 	             </tr>
@@ -380,7 +426,7 @@ $(function() {
 	              <option value="Shoulder"<c:if test="${quadraplevisualdetails.painname=='Shoulder'}"><c:out value="selected"></c:out></c:if>>Shoulder</option>
 	               <option value="Other"<c:if test="${quadraplevisualdetails.painname=='Other'}"><c:out value="selected"></c:out></c:if>>Other</option>
 	               
-	             </select><input type="text" name="otherpainname" id="otherpainname" value="${quadraplevisualdetails.otherpainname }" style="display: none">
+	             </select><input type="text" name="otherpainname" id="otherpainname" onInput="return validatename(id)"; value="${quadraplevisualdetails.otherpainname }" style="display: none"><span class="err" id="otherpainnameerror"></span>
 	           </td><td><a href="#" id="editurl" onclick="doajax()" style="display: none">Edit</a></td>
 	           </td> </tr></table>
 	             <table>

@@ -292,6 +292,32 @@ $(function() {
 	  
   }
   </script>
+ <script>
+  $(function() {
+	$("#name").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#otherpainname").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+  <script>
+function validatename(id){
+    var textInput = document.getElementById(id).value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById(id).value = textInput;
+}
+</script>
   <script>
   
   function checksub()
@@ -303,6 +329,16 @@ $(function() {
   document.getElementById("nameerror").innerHTML="Required field should not be empty";
   return false;
   }
+  
+  document.getElementById("nameerror").innerHTML="";
+  if(document.getElementById("name").value.length<4 || document.getElementById("name").value.length>=32)
+  {
+  	
+  	document.getElementById("nameerror").innerHTML="Name should be min 4 and max 32";
+  	
+      return false;
+  }
+
   document.getElementById("datepickererror").innerHTML="";
   if(document.getElementById("datepicker").value=="")
   {
@@ -316,7 +352,17 @@ $(function() {
   	
       return false;
   }
-  
+	document.getElementById("otherpainnameerror").innerHTML="";
+	if(document.getElementById("otherpainname").value!="")
+	{
+    if(document.getElementById("otherpainname").value.length<4 || document.getElementById("otherpainname").value.length>=32)
+    {
+    	
+    	document.getElementById("otherpainnameerror").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
+    }
   }
   
   
@@ -378,13 +424,13 @@ $(function() {
         	<div id="block1">
 	            <div class="headings altheading">
 	            <img  src="resources/images/print.png" id="print" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block1');" >
-	             <h2> ${symptoms} Quadruple Visual Analogue Scale</h2> 
+	             <h2> ${symptoms} Quadruple Visual Analogue Scale1</h2> 
 	            </div>
 	            <div class="contentbox">
 	            
 	             <table>
 	             <tr height="30">
-	             <td width="100"><span class="err">*</span>Name</td><td width="400"><input type="hidden" name="patient_id" value="${patientid}"><input type="hidden" name="symptom" id="symptom" value="${symptom}"><input type="text" name="name" id="name"><span class="err" id="nameerror"></span></td>
+	             <td width="100"><span class="err">*</span>Name</td><td width="400"><input type="hidden" name="patient_id" value="${patientid}"><input type="hidden" name="symptom" id="symptom" value="${symptom}"><input type="text" name="name" id="name" onInput="return validatename(id)"><span class="err" id="nameerror"></span></td>
 	             <td width="100">Number</td><td width="400"><input type="text" name="number" id="number" onkeypress="return validate(event)"; ><span id="numbererror"></span></td>
 	             <td width="100"><span class="err">*</span>Date</td><td width="400"><input type="text"  name="date" id="datepicker" /><span class="err" id="datepickererror"></span></td>
 	             </tr>
@@ -404,7 +450,7 @@ $(function() {
 	              <option value="Oswestry">Oswestry</option>
 	              <option value="Shoulder">Shoulder</option>
 	               <option value="Other">Other</option>
-	             </select> <input type="text" name="otherpainname" id="otherpainname" style="display: none"> </td>
+	             </select> <input type="text" name="otherpainname" id="otherpainname" style="display: none" onInput="return validatename(id)";><span class="err" id="otherpainnameerror"></span> </td>
 	             </tr>
 	             <tr height="30">
 	             <td><b>1) What is your pain RIGHT NOW?</b></td>
