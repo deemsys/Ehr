@@ -8,21 +8,21 @@ public class Patientattorney
 	
 	private String username;
 	
-	@NotEmpty
+	
 	private String name;
 	
 	private String address;
 	
 	private String reg;
-	@NotEmpty
+	
 	private String patientname;
-	@NotEmpty
+	
 	private String date;	
-	@NotEmpty
+	
 	private String dearsir;
-	@NotEmpty
+	
 	private String nameofclinic;
-	@NotEmpty
+	
 	private String treat;
 	
 			public Patientattorney() {
