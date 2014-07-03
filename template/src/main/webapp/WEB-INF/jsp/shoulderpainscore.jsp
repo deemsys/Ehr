@@ -104,6 +104,24 @@ $(function() {
   }
   </script>
   <script>
+  function checkLength(id){
+   
+    var fieldVal = document.getElementById(id).value;
+    
+    if(fieldVal >=0 && fieldVal <=100){
+        return true;
+    }
+    else
+    {
+        var str = document.getElementById(id).value;
+       
+        str = str.substring(0, str.length - 1);
+    document.getElementById(id).value = str;
+    }
+     
+    }
+	</script>
+  <script>
 
 	function checkSubmit()
 	{
@@ -115,6 +133,16 @@ document.getElementById("pnameerror").innerHTML=" ";
 		
 		return false;
 		}
+		
+		document.getElementById("pnameerror").innerHTML="";
+	    if(document.getElementById("pname").value.length<4 || document.getElementById("pname").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("pnameerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
+
 document.getElementById("number1error").innerHTML=" ";
 		
 		if(document.getElementById("number1").value=="")
@@ -149,6 +177,18 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 			  return false;
 		  }
 		}
+		
+		document.getElementById("name123error").innerHTML="";
+		if(document.getElementById("name123").value!="")
+		{
+	    if(document.getElementById("name123").value.length<4 || document.getElementById("name123").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("name123error").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
+	    }
 	}
 	</script>
 	<script type="text/javascript">
@@ -163,6 +203,36 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
            }
        }       
     </script>
+    
+    <script>
+function validatename(id){
+    var textInput = document.getElementById(id).value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById(id).value = textInput;
+}
+</script>
+
+<script>
+  $(function() {
+	$("#pname").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#name123").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+
 </head>
  <body>
  <br><br>
@@ -190,8 +260,8 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
           <table cellpadding="0" cellspacing="0" border="0" width="98%">
            
  <tr class="row1">
-<td style="width: 127px; "><h4><span class="err">*</span>Patient Name:</h4></td><td width="400" style="width: 170px; "><input type="text"  name="pname" id="pname" /><span class="err" id="pnameerror"><form:errors path="Shoulderpainscore.pname"></form:errors></span></td>
-<td style="width: 117px; "><h4><span class="err">*</span>Number:</h4></td><td width="400" style="width: 167px; "><input type="text"  name="number" id="number1" onkeypress="return validate(event)";/><span class="err" id="number1error"><form:errors path="Shoulderpainscore.number"></form:errors></span><span class="err"> <div id="number"></span></div></td>
+<td style="width: 127px; "><h4><span class="err">*</span>Patient Name:</h4></td><td width="400" style="width: 170px; "><input type="text"  name="pname" id="pname" onInput="return validatename(id)";/><span class="err" id="pnameerror"><form:errors path="Shoulderpainscore.pname"></form:errors></span></td>
+<td style="width: 117px; "><h4><span class="err">*</span>Number:</h4></td><td width="400" style="width: 167px; "><input type="text"  name="number" maxlength="32" id="number1" onkeypress="return validate(event)";/><span class="err" id="number1error"><form:errors path="Shoulderpainscore.number"></form:errors></span><span class="err"> <div id="number"></span></div></td>
 <td style="width: 115px; "><h4><span class="err">*</span>Date:</h4></td><td><input type="text"  id="datepicker" name="date" /><span class="err" id="datepickererror"><form:errors path="Shoulderpainscore.date"></form:errors></span></td>
 </tr>
 </table>
@@ -226,7 +296,7 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 <tr height="30">
 <td>
 <label for="describes"><b>Pain Scale:</b></label>
-<input type="text" id="describes" name="painscale" /><span id="describeserr"></span>&nbsp;&nbsp;&nbsp;
+<input type="text" id="describes" name="painscale" onkeypress="return validate(event)"; onInput="checkLength(id)"/><span id="describeserr"></span>&nbsp;&nbsp;&nbsp;
 </td>
 
 </tr>
@@ -261,13 +331,13 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
  <tr class="row1">
 <td>Date:</td><td><input type="text"  id="datepicker1" name="date1" /><span class="err" id="datepicker1error"></span></td>
 <td width="200">
-<td>Scores total:</td><td><input type="text"  id="total" name="total" onkeypress="return validate(event)";/>&nbsp;;&nbsp;[100]&nbsp;&nbsp;</td><td>[48]F:</td><td><input type="text"  id="f" name="f" onkeypress="return validate(event)";/>&nbsp;&nbsp;</td>
+<td>Scores total:</td><td><input type="text"  id="total" name="total" maxlength="32" onkeypress="return validate(event)";/>&nbsp;;&nbsp;[100]&nbsp;&nbsp;</td><td>[48]F:</td><td><input type="text"  id="f" name="f" maxlength="32" onkeypress="return validate(event)";/>&nbsp;&nbsp;</td>
 </tr>
 </table>
  <table cellpadding="0" cellspacing="0" border="0" width="68%">
 <tr class="row1">
-<td>Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td><input type="text" id="name123" name="name123" /></td>
-<td style="width: 183px; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Age:&nbsp;&nbsp;</td><td><input type="text"  id="age" name="age" onkeypress="return validate(event)";/></td>
+<td>Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td><input type="text" id="name123" name="name123" onInput="return validatename(id)"; /><span id="name123error" style="color: red;font-style:italic;"></span></td>
+<td style="width: 183px; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Age:&nbsp;&nbsp;</td><td><input type="text"  id="age" maxlength="32" name="age" onkeypress="return validate(event)";/></td>
 </tr>
 </table>
 <br/>

@@ -248,7 +248,52 @@ $(function() {
 	  
   }
   </script>
-     
+     <script>
+  $(function() {
+	$("#comments").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#pname").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#job").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#sport").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+function validatename(id){
+    var textInput = document.getElementById(id).value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById(id).value = textInput;
+}
+</script>
    <script>
 
 	function checkSubmit()
@@ -261,6 +306,16 @@ document.getElementById("pnameerror").innerHTML=" ";
 		
 		return false;
 		}
+		
+		document.getElementById("pnameerror").innerHTML="";
+	    if(document.getElementById("pname").value.length<4 || document.getElementById("pname").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("pnameerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
+
 		document.getElementById("datepickererror").innerHTML="";
 		
 		if(document.getElementById("datepicker").value=="")
@@ -276,6 +331,42 @@ document.getElementById("pnameerror").innerHTML=" ";
 	    	document.getElementById("datepickererror").innerHTML="Invalid Date Format";
 	    	
 	        return false;
+	    }
+		
+		document.getElementById("commentserror").innerHTML="";
+		if(document.getElementById("comments").value!="")
+		{
+	    if(document.getElementById("comments").value.length<4 || document.getElementById("comments").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("commentserror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
+	    }
+		
+		document.getElementById("joberror").innerHTML="";
+		if(document.getElementById("job").value!="")
+		{
+	    if(document.getElementById("job").value.length<4 || document.getElementById("job").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("joberror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
+	    }
+		
+		document.getElementById("sporterror").innerHTML="";
+		if(document.getElementById("sport").value!="")
+		{
+	    if(document.getElementById("sport").value.length<4 || document.getElementById("sport").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("sporterror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
 	    }
 	}
 	</script>
@@ -419,7 +510,7 @@ $(function() {
            </tr>
            </table>
            <br>
-           <table><tr><Td valign="top"><b>Comments:</b></Td><td width="20"></td><td><textarea rows="5" cols="150" name="comments"></textarea></td></tr></table>
+           <table><tr><Td valign="top"><b>Comments:</b></Td><td width="20"></td><td><textarea rows="5" cols="150"  id="comments" onInput="return validatename(id)"; name="comments"></textarea><span id="commentserror" style="color: red;font-style:italic;"></span></td></tr></table>
            
           
           
@@ -444,7 +535,7 @@ $(function() {
 	             
 	            </div>
           <div class="contentbox">
-         <Table><tr><td><span class="err">*</span>Name:</td><td width="250"><input type="text" name="name" id="pname"><br><span class="err" id="pnameerror"><form:errors path="oswestrydetails.name"></form:errors></td><Td width="200"></td><td ><span class="err">*</span>Date:</td><td width="250"><input type="text"  id="datepicker" name="date"><br><span class="err" id="datepickererror"><form:errors path="oswestrydetails.date"></form:errors></td><td>Score:</td><td><input type="hidden" name="scores" id="scores"><div id="score"></div></td></tr></Table>
+         <Table><tr><td><span class="err">*</span>Name:</td><td width="250"><input type="text" name="name" id="pname" onInput="return validatename(id)";><br><span class="err" id="pnameerror"><form:errors path="oswestrydetails.name"></form:errors></td><Td width="200"></td><td ><span class="err">*</span>Date:</td><td width="250"><input type="text"  id="datepicker" name="date"><br><span class="err" id="datepickererror"><form:errors path="oswestrydetails.date"></form:errors></td><td>Score:</td><td><input type="hidden" name="scores" id="scores"><div id="score"></div></td></tr></Table>
          <br>
          <br>
 	    <table width="100%"><tr><td width="50%"><b>What is your pain RIGHT NOW?</b></td><td><b><p align="left">What is your pain at its Worse?<p></b></td></tr></table>
@@ -457,7 +548,7 @@ $(function() {
 	    <br>
 	    <p><B>WORK MODULE(OPTIONAL)</B></p>
 	    <P>The following questions ask about the impact of your arm,shoulder or hand problem on your ability to work(including homemaking if that is your main work role).</P>
-	    <p>Please  indicate what your job/work is:<input type="text" name="job"></br></br>
+	    <p>Please  indicate what your job/work is:<input type="text" name="job" id="job" onInput="return validatename(id)";><span id="joberror" style="color: red;font-style:italic;"></span></br></br>
 	    <input type="checkbox" name="joboptional" id="workoptional" onclick="workhidden()" >&nbsp;&nbsp;&nbsp;I do not work(You may skip this section.) <br><br>
 	    <b id="circle">Please circle the number that best describes your physical ability in the past week.</b>
 	     </p>
@@ -474,7 +565,7 @@ $(function() {
 	     <br>
 	     <p><B>SPORTS/PERFORMING ARTS MODULE(OPTIONAL)</B><br></br>
 	     The following questions relate to the impact of your arm,shoulder or hand problem on playing your musical instrument oro sport or both.If you play more than one sport or instrument(or play both),please answer with respect to that activity which is most important to you.</br></br>
-	     Please indicate the sport or instrument which is most important to you:<input type="text" name="sport"><br></br>
+	     Please indicate the sport or instrument which is most important to you:<input type="text" id="sport" onInput="return validatename(id)"; name="sport"><span id="sporterror" style="color: red;font-style:italic;"></span><br></br>
 	     <input type="checkbox" name="sportoptional" id="instrumentoptional" onclick="instrumenthidden()">&nbsp;&nbsp;&nbsp;I do not play a sport or an instrument(You may skip this section.)
 	     <br><br>
 	     <b id="physical">Please circle the number that best describes your physical ability in the past week.</b>

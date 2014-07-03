@@ -75,6 +75,25 @@ $(function() {
     $( "#tabs" ).tabs();
   });
   </script>
+  
+  <script>
+  function checkLength(id){
+   
+    var fieldVal = document.getElementById(id).value;
+    
+    if(fieldVal >=0 && fieldVal <=100){
+        return true;
+    }
+    else
+    {
+        var str = document.getElementById(id).value;
+       
+        str = str.substring(0, str.length - 1);
+    document.getElementById(id).value = str;
+    }
+     
+    }
+	</script>
   <script>
 
 	function checkSubmit()
@@ -87,6 +106,15 @@ document.getElementById("pnameerror").innerHTML=" ";
 		
 		return false;
 		}
+		
+		document.getElementById("pnameerror").innerHTML="";
+	    if(document.getElementById("pname").value.length<4 || document.getElementById("pname").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("pnameerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
 document.getElementById("number1error").innerHTML=" ";
 		
 		if(document.getElementById("number1").value=="")
@@ -121,6 +149,18 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 			  return false;
 		  }
 		}
+		
+		document.getElementById("name123error").innerHTML="";
+		if(document.getElementById("name123").value!="")
+		{
+	    if(document.getElementById("name123").value.length<4 || document.getElementById("name123").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("name123error").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
+	    }
 	}
 	</script>
 	<script type="text/javascript">
@@ -135,6 +175,34 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
            }
        }       
     </script>
+    
+    <script>
+function validatename(id){
+    var textInput = document.getElementById(id).value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById(id).value = textInput;
+}
+</script>
+
+<script>
+  $(function() {
+	$("#pname").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#name123").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
 </head>
  <body>
  <br>
@@ -161,8 +229,8 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
      <c:set value="${shoulderpainscoreForm.shoulderpainscore[0]}" var="shoulderpainscore"/>      
  <tr class="row1">
  <input type="hidden" value="${shoulderpainscore.shoulderpainno }" name="shoulderpainno" />
-<td><h2><span class="err">*</span>Patient Name:</h2></td><td width="400"><input type="text"  name="pname" id="pname" value="${shoulderpainscore.pname }"/><span class="err" id="pnameerror"><form:errors path="Shoulderpainscore.pname"></form:errors></span></td>
-<td><h2><span class="err">*</span>Number:</h2></td><td width="400"><input type="text"  name="number" id="number1" value="${shoulderpainscore.number}"/><span class="err" id="number1error"><form:errors path="Shoulderpainscore.number"></form:errors></span></td>
+<td><h2><span class="err">*</span>Patient Name:</h2></td><td width="400"><input type="text"  name="pname" id="pname"  onInput="return validatename(id)";value="${shoulderpainscore.pname }"/><span class="err" id="pnameerror"><form:errors path="Shoulderpainscore.pname"></form:errors></span></td>
+<td><h2><span class="err">*</span>Number:</h2></td><td width="400"><input type="text"  name="number" id="number1" onkeypress="return validate(event)"; value="${shoulderpainscore.number}"/><span class="err" id="number1error"><form:errors path="Shoulderpainscore.number"></form:errors></span></td>
 <td><h2><span class="err">*</span>Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${shoulderpainscore.date}"/><span class="err" id="datepickererror"><form:errors path="Shoulderpainscore.date"></form:errors></span></td>
 </tr>
 </table>
@@ -197,7 +265,7 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 <tr height="30">
 <td>
 <label for="describes"><b>Pain Scale:</b></label>
-<input type="text" id="describes" name="painscale" value="${shoulderpainscore.painscale}"/><span id="describeserr"></span>&nbsp;&nbsp;&nbsp;
+<input type="text" id="describes" name="painscale" onInput="checkLength(id)" value="${shoulderpainscore.painscale}"/><span id="describeserr"></span>&nbsp;&nbsp;&nbsp;
 </td>
 </tr>
 <tr height="30">
@@ -235,7 +303,7 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 </table>
  <table cellpadding="0" cellspacing="0" border="0" width="98%">
 <tr class="row1">
-<td>Name:</td><td><input type="text" id="name123" name="name123" value="${shoulderpainscore.name123 }"/></td>
+<td>Name:</td><td><input type="text" id="name123" name="name123" value="${shoulderpainscore.name123 }" onInput="return validatename(id)";/><span id="name123error" style="color: red;font-style:italic;"></span></td>
 <td width="600">
 <td>Age:</td><td><input type="text"  id="age" name="age" onkeypress="return validate(event)"; value="${shoulderpainscore.age}"/></td>
 </tr>

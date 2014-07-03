@@ -141,6 +141,24 @@ $(function() {
 	});	
 
 </script>
+
+<script>
+  $(function() {
+	$("#comment").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+function validatename(id){
+    var textInput = document.getElementById(id).value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById(id).value = textInput;
+}
+</script>
+
 <script>
 function validatename(id){
     var textInput = document.getElementById(id).value;
@@ -184,6 +202,18 @@ document.getElementById("pnameerror").innerHTML=" ";
 	    	document.getElementById("datepickererror").innerHTML="Invalid Date Format";
 	    	
 	        return false;
+	    }
+		
+		document.getElementById("commenterror").innerHTML="";
+		if(document.getElementById("comment").value!="")
+		{
+	    if(document.getElementById("comment").value.length<4 || document.getElementById("comment").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("commenterror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
 	    }
 	}
 	</script>
@@ -414,7 +444,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  <tr>
   <td></td>
  <td width="50%">Scoring:Questions are scored on a vertical scale of 0-5.Total scores and multiply by 2 .Divide by number of sections answered multiplied by 10.A score of 22% or more is considered significant activities of daily living disability.<br/><br/>(Score &nbsp;<input type="text" class="score" id="score" name="score" size="7" value="${lowback.score}">*2)&nbsp;/&nbsp;( <input type="text" class="section" id="section" name="section" size="7" value="${lowback.section}">Section *10)&nbsp;&nbsp;=&nbsp;&nbsp;<input type="text" class="adl" id="adl" name="adl" size="9" value="${lowback.adl}">&nbsp;%ADL&nbsp;<input type="text" name="adl2" size="9" value="${lowback.adl2}"><br/><br/><input type="button" value="Calculate" onclick="return percentage()" class="submit_btn"></td>
- <td width="50%">Comments:&nbsp;&nbsp;<textarea rows="6" cols="50" name="comment">${lowback.comment}</textarea></td>
+ <td width="50%">Comments:&nbsp;&nbsp;<textarea rows="6" cols="50" id="comment" onInput="return validatename(id)"; name="comment">${lowback.comment}</textarea> <span class="err" id="commenterror"></span></td>
  </tr>
  </table>
 <table align="right">

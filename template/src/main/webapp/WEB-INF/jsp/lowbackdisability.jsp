@@ -168,6 +168,16 @@ $(function() {
 	});	
 
 </script>
+
+ <script>
+  $(function() {
+	$("#comment").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
 <script>
 function validatename(id){
     var textInput = document.getElementById(id).value;
@@ -212,6 +222,18 @@ document.getElementById("pnameerror").innerHTML=" ";
 	    	document.getElementById("datepickererror").innerHTML="Invalid Date Format";
 	    	
 	        return false;
+	    }
+		
+		document.getElementById("commenterror").innerHTML="";
+		if(document.getElementById("comment").value!="")
+		{
+	    if(document.getElementById("comment").value.length<4 || document.getElementById("comment").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("commenterror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
 	    }
 	}
 	</script>
@@ -453,7 +475,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  </table>
  <table>
  <tr>
- <td width="250" valign="middle">Comments:&nbsp;&nbsp;</td><td><textarea rows="8" cols="150" name="comment"></textarea></td></tr>
+ <td width="250" valign="middle">Comments:&nbsp;&nbsp;</td><td><textarea rows="8" cols="150" id="comment" name="comment" onInput="return validatename(id)";></textarea> <span class="err" id="commenterror"></span></td></tr>
  </table>
 <table align="right">
 <tr>
