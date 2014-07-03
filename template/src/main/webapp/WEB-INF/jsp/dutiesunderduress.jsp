@@ -696,6 +696,106 @@ document.getElementById('rm2').style.visibility = 'visible';
 	  
   }
   </script>
+  
+  <script>
+  $(function() {
+	$("#pname").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+ <script>
+  $(function() {
+	$("#jobdescription").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#other1").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#other2").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#other3").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#other4").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#other5").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#other6").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#other7").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#other8").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+function validatename(id){
+    var textInput = document.getElementById(id).value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById(id).value = textInput;
+}
+</script>
   <script>
   function checksub()
   {
@@ -707,6 +807,17 @@ document.getElementById('rm2').style.visibility = 'visible';
   document.getElementById("pnameerr").innerHTML="Required field should not be empty";
   return false;
   }
+  
+
+  document.getElementById("pnameerr").innerHTML="";
+  	    if(document.getElementById("pname").value.length<4 || document.getElementById("pname").value.length>=32)
+  	    {
+  	    	
+  	    	document.getElementById("pnameerr").innerHTML="Name should be min 4 and max 32";
+  	    	
+  	        return false;
+  	    }
+
   document.getElementById("dateerr").innerHTML="";
   if(document.getElementById("datepicker").value=="")
   {
@@ -722,6 +833,106 @@ document.getElementById('rm2').style.visibility = 'visible';
     	
         return false;
     }	
+	document.getElementById("jobdescriptionerror").innerHTML="";
+	if(document.getElementById("jobdescription").value!="")
+	{
+    if(document.getElementById("jobdescription").value.length<4 || document.getElementById("jobdescription").value.length>=32)
+    {
+    	
+    	document.getElementById("jobdescriptionerror").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
+    }
+	document.getElementById("other1error").innerHTML="";
+	if(document.getElementById("other1").value!="")
+	{
+    if(document.getElementById("other1").value.length<4 || document.getElementById("other1").value.length>=32)
+    {
+    	
+    	document.getElementById("other1error").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
+    }
+	document.getElementById("other2error").innerHTML="";
+	if(document.getElementById("other2").value!="")
+	{
+    if(document.getElementById("other2").value.length<4 || document.getElementById("other2").value.length>=32)
+    {
+    	
+    	document.getElementById("other2error").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
+    }
+	document.getElementById("other3error").innerHTML="";
+	if(document.getElementById("other3").value!="")
+	{
+    if(document.getElementById("other3").value.length<4 || document.getElementById("other3").value.length>=32)
+    {
+    	
+    	document.getElementById("other3error").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
+    }
+	document.getElementById("other4error").innerHTML="";
+	if(document.getElementById("other4").value!="")
+	{
+    if(document.getElementById("other4").value.length<4 || document.getElementById("other4").value.length>=32)
+    {
+    	
+    	document.getElementById("other4error").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
+    }
+	document.getElementById("other5error").innerHTML="";
+	if(document.getElementById("other5").value!="")
+	{
+    if(document.getElementById("other5").value.length<4 || document.getElementById("other5").value.length>=32)
+    {
+    	
+    	document.getElementById("other5error").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
+    }
+	document.getElementById("other6error").innerHTML="";
+	if(document.getElementById("other6").value!="")
+	{
+    if(document.getElementById("other6").value.length<4 || document.getElementById("other6").value.length>=32)
+    {
+    	
+    	document.getElementById("other6error").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
+    }
+	document.getElementById("other7error").innerHTML="";
+	if(document.getElementById("other7").value!="")
+	{
+    if(document.getElementById("other7").value.length<4 || document.getElementById("other7").value.length>=32)
+    {
+    	
+    	document.getElementById("other7error").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
+    }
+	document.getElementById("other8error").innerHTML="";
+	if(document.getElementById("other8").value!="")
+	{
+    if(document.getElementById("other8").value.length<4 || document.getElementById("other8").value.length>=32)
+    {
+    	
+    	document.getElementById("other8error").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
+    }
+	
   }
   
   </script>
@@ -744,7 +955,7 @@ document.getElementById('rm2').style.visibility = 'visible';
           <table cellpadding="0" cellspacing="0" border="0" width="98%">
            
  <tr class="row1">
-<td style="width: 172px; "><h4><span class="err">*</span> Patient Name:</h4></td><td style="width: 192px; "><input type="text"  name="pname" id="pname"/><span class="err" id="pnameerr"><form:errors path="Dutiesunderduress.pname"></form:errors></span></td>
+<td style="width: 172px; "><h4><span class="err">*</span> Patient Name:</h4></td><td style="width: 192px; "><input type="text"  name="pname" id="pname" onInput="return validatename(id)";/><span class="err" id="pnameerr"><form:errors path="Dutiesunderduress.pname"></form:errors></span></td>
 <td width="600" style="width: 265px; ">
 <td style="width: 73px; "><h4><span class="err">*</span> Date:</h4></td><td><input type="text"  id="datepicker" name="date" /><span class="err" id="dateerr"><form:errors path="Dutiesunderduress.date"></form:errors></span></td>
 </tr>
@@ -759,7 +970,7 @@ document.getElementById('rm2').style.visibility = 'visible';
 <table>
 <tr>
 <td width="50%" style="width: 181px; "><h4>Job Description :</h4></td>
- <td> <textarea rows="6" cols="70" name="jobdescription" style="width: 477px; "></textarea></td></tr>
+ <td> <textarea rows="6" cols="70" name="jobdescription" onInput="return validatename(id)"; id="jobdescription" style="width: 477px; "></textarea><span id="jobdescriptionerror" style="color: red;font-style:italic;"></span></td></tr>
 </table>
 <br/>
  <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -810,13 +1021,13 @@ document.getElementById('rm2').style.visibility = 'visible';
  </tr>
  <tr class="row1">  
  <td>Other</td>
- <td><input type="text" name="other1"></td> 
+ <td><input type="text" name="other1" id="other1" onInput="return validatename(id)";><span id="other1error" style="color: red;font-style:italic;"></span></td> 
  <td><input type="checkbox" name="incresedpain6" value="Increased pain">&nbsp;Increased Pain &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement6" value="Restricted Movement">&nbsp;Restricted Movement &nbsp;&nbsp; <input type="checkbox" name="weekness6" value="Weekness">&nbsp;Weekness</td>
  <td><input type="checkbox" name="sincemva6" value="Since MVA">&nbsp;Since MVA &nbsp;&nbsp;<input type="checkbox" name="ongoing6" value="Ongoing">&nbsp;Ongoing</td>
  </tr>
  <tr class="row1">  
  <td>Other</td>
- <td><input type="text" name="other2"></td> 
+ <td><input type="text" name="other2" id="other2" onInput="return validatename(id)";><span id="other2error" style="color: red;font-style:italic;"></span></td> 
  <td><input type="checkbox" name="incresedpain7" value="Increased pain">&nbsp;Increased Pain &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement7" value="Restricted Movement">&nbsp;Restricted Movement &nbsp;&nbsp; <input type="checkbox" name="weekness7" value="Weekness">&nbsp;Weekness</td>
  <td><input type="checkbox" name="sincemva7" value="Since MVA">&nbsp;Since MVA &nbsp;&nbsp;<input type="checkbox" name="ongoing7" value="Ongoing">&nbsp;Ongoing</td>
  </tr>
@@ -909,13 +1120,13 @@ document.getElementById('rm2').style.visibility = 'visible';
  
  <tr class="row1">  
  <td>Other</td>
- <td><input type="text" name="other3"></td> 
+ <td><input type="text" name="other3" id="other3" onInput="return validatename(id)";> <span id="other3error" style="color: red;font-style:italic;"></span></td> 
  <td><input type="checkbox" name="incresedpain13" value="Increased pain">&nbsp;Increased Pain &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement13" value="Restricted Movement">&nbsp;Restricted Movement &nbsp;&nbsp; <input type="checkbox" name="weekness13" value="Weekness">&nbsp;Weekness</td>
  <td><input type="checkbox" name="sincemva13" value="Since MVA">&nbsp;Since MVA &nbsp;&nbsp;<input type="checkbox" name="ongoing13" value="Ongoing">&nbsp;Ongoing</td>
  </tr>
  <tr class="row1">  
  <td>Other</td>
- <td><input type="text" name="other4"></td> 
+ <td><input type="text" name="other4" id="other4" onInput="return validatename(id)";><span id="other4error" style="color: red;font-style:italic;"></span></td> 
  <td><input type="checkbox" name="incresedpain14" value="Increased pain">&nbsp;Increased Pain &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement14" value="Restricted Movement">&nbsp;Restricted Movement &nbsp;&nbsp; <input type="checkbox" name="weekness14" value="Weekness">&nbsp;Weekness</td>
  <td><input type="checkbox" name="sincemva14" value="Since MVA">&nbsp;Since MVA &nbsp;&nbsp;<input type="checkbox" name="ongoing14" value="Ongoing">&nbsp;Ongoing</td>
  </tr>
@@ -952,13 +1163,13 @@ document.getElementById('rm2').style.visibility = 'visible';
  </tr>
  <tr class="row1">  
  <td>Other</td>
- <td><input type="text" name="other5"></td> 
+ <td><input type="text" name="other5" id="other5" onInput="return validatename(id)";><span id="other5error" style="color: red;font-style:italic;"></span></td> 
  <td><input type="checkbox" name="incresedpain20" value="Increased Pain/Anxiety">&nbsp;Increased Pain/Anxiety &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement20" value="Restricted Movement">&nbsp;Restricted Movement &nbsp;&nbsp; <input type="checkbox" name="weekness20" value="Fatigue">&nbsp;Fatigue</td>
  <td><input type="checkbox" name="sincemva20" value="Since MVA">&nbsp;Since MVA &nbsp;&nbsp;<input type="checkbox" name="ongoing20" value="Ongoing">&nbsp;Ongoing</td>
  </tr>
  <tr class="row1">  
  <td>Other</td>
- <td><input type="text" name="other6"></td> 
+ <td><input type="text" name="other6" id="other6" onInput="return validatename(id)";><span id="other6error" style="color: red;font-style:italic;"></span></td> 
  <td><input type="checkbox" name="incresedpain21" value="Increased Pain/Anxiety">&nbsp;Increased Pain/Anxiety &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement21" value="Restricted Movement">&nbsp;Restricted Movement &nbsp;&nbsp; <input type="checkbox" name="weekness21" value="Fatigue">&nbsp;Fatigue</td>
  <td><input type="checkbox" name="sincemva21" value="Since MVA">&nbsp;Since MVA &nbsp;&nbsp;<input type="checkbox" name="ongoing21" value="Ongoing">&nbsp;Ongoing</td>
  </tr>
@@ -994,13 +1205,13 @@ document.getElementById('rm2').style.visibility = 'visible';
  </tr>
  <tr class="row1">  
  <td>Other</td>
- <td><input type="text" name="other7"></td> 
+ <td><input type="text" name="other7" id="other7" onInput="return validatename(id)";> <span id="other7error" style="color: red;font-style:italic;"></span></td> 
  <td><input type="checkbox" name="incresedpain27" value="Increased pain/Anxiety">&nbsp;Increased Pain/Anxiety &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement27" value="Restricted Movement">&nbsp;Restricted Movement &nbsp;&nbsp; <input type="checkbox" name="weekness27" value="Fatigue">&nbsp;Fatigue</td>
  <td><input type="checkbox" name="sincemva27" value="Since MVA">&nbsp;Since MVA &nbsp;&nbsp;<input type="checkbox" name="ongoing27" value="Ongoing">&nbsp;Ongoing</td>
  </tr>
  <tr class="row1">  
  <td>Other</td>
- <td><input type="text" name="other8"></td> 
+ <td><input type="text" name="other8" id="other8" onInput="return validatename(id)";><span id="other8error" style="color: red;font-style:italic;"></span></td> 
  <td><input type="checkbox" name="incresedpain28" value="Increased pain/Anxiety">&nbsp;Increased Pain &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement28" value="Restricted Movement">&nbsp;Restricted Movement &nbsp;&nbsp; <input type="checkbox" name="weekness28" value="Fatigue">&nbsp;Fatigue</td>
  <td><input type="checkbox" name="sincemva28" value="Since MVA">&nbsp;Since MVA &nbsp;&nbsp;<input type="checkbox" name="ongoing28" value="Ongoing">&nbsp;Ongoing</td>
  </tr>
