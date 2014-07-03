@@ -238,7 +238,7 @@ function doAjaxPost() {
 <br><br><br>
  <table cellpadding="0" cellspacing="0" border="0" width="100%">
 	            <tr >
-	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">*</span>Please enter a Patient User Name</td>
+	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">*</span> Please enter  Patient UserName</td>
 				 <td width="20"></td> <td valign="top" align="left" class="input_txt" width="200">
 				   <input type="text" class="input_txtbx1" id="username" name="username" /><br/>
 				  </td>
@@ -322,7 +322,7 @@ $("#ssn").keyup(function() {
 <script>
 function validateusername(){
     var textInput = document.getElementById("claim").value;
-    textInput = textInput.replace(/[^A-Z0-9]/g, "");
+    textInput = textInput.replace(/[^A-Za-z0-9]/g, "");
     document.getElementById("claim").value = textInput;
 }
 
@@ -338,14 +338,27 @@ function checkSubmit()
 	
 	return false;
 	}
-	document.getElementById("reerror").innerHTML="";
+
+	if(document.getElementById("re").value.substring(0,1)==' '){
+		document.getElementById("reerror").innerHTML="Invalid Data!";
+		return false;
+    }
+	if(document.getElementById("re").value!=""){
+	if(document.getElementById("re").value.length<4){
+		document.getElementById("reerror").innerHTML="Data should be min 4 and max 32!";
+		return false;
+	}
+	}
+
+	/* document.getElementById("reerror").innerHTML="";
 	    if(document.getElementById("re").value.length<4 || document.getElementById("re").value.length>=32)
 	    {
 	    	
 	    	document.getElementById("reerror").innerHTML="Name should be min 4 and max 32";
 	    	
 	        return false;
-	    }
+	    } */
+
 	document.getElementById("ssnerror").innerHTML="";
 	if(document.getElementById("ssn").value=="")
 	{
@@ -376,6 +389,39 @@ function checkSubmit()
 	
 	return false;
 	}
+	
+	if(document.getElementById("adjuster").value.substring(0,1)==' '){
+		document.getElementById("aerror").innerHTML="Invalid Data!";
+		return false;
+    }
+	document.getElementById("aerror").innerHTML="";
+	if(document.getElementById("adjuster").value!=""){
+		if(document.getElementById("adjuster").value.length<4){
+			document.getElementById("aerror").innerHTML="Data should be min 4 and max 32!";
+			return false;
+		}
+		}
+	
+	if(document.getElementById("dear").value.substring(0,1)==' '){
+		document.getElementById("derror").innerHTML="Invalid Data!";
+		return false;
+    }
+	
+	document.getElementById("derror").innerHTML="";
+	if(document.getElementById("dear").value!=""){
+		if(document.getElementById("dear").value.length<4){
+			document.getElementById("derror").innerHTML="Data should be min 4 and max 32!";
+			return false;
+		}
+		}
+	
+	document.getElementById("aerror").innerHTML="";
+	if(document.getElementById("letter").value!=""){
+		if(document.getElementById("letter").value.length<4){
+			document.getElementById("daerror").innerHTML="Data should be min 1 and max 10!";
+			return false;
+		}
+		}
 	
 	document.getElementById("datepickererror").innerHTML="";
 	if(document.getElementById("datepicker").value=="")
@@ -456,6 +502,9 @@ function checkSubmit()
 	return false;
 	
 	
+<<<<<<< .mine
+	}
+=======
 	} */
 	 document.getElementById("lettererror").innerHTML="";	
     if(document.getElementById("letter").value!="")
@@ -471,8 +520,7 @@ function checkSubmit()
     
     }  
     
-		
-		
+
 		
 	}
 
@@ -570,8 +618,13 @@ function checkSubmit()
               </table><br><br>
                 <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
+<<<<<<< .mine
+              <td height="25" width="120"><span class="err">*</span> RE:</td>
+              <td ><input type="text" class="input_txtbx1" name="re" onInput="validatere();" min="4" maxlength="32" id="re" placeholder="Medical bill" /><span class="reerr" id="reerror"  style="color: red;font-style:italic;"><form:errors path="Lettertopatients.re"></form:errors></span></td>
+=======
               <td height="25" width="120"><span class="err">*</span>RE:</td>
               <td ><input type="text" class="input_txtbx1" name="re" id="re" placeholder="Medical bill" onInput="return validatename(id)";/><span class="reerr" id="reerror"  style="color: red;font-style:italic;"><form:errors path="Lettertopatients.re"></form:errors></span></td>
+>>>>>>> .r1064
               </tr>
               </table>
                           <script>
@@ -588,38 +641,48 @@ document.getElementById("ssn").value=phone;
 </script>
                 <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="120"><span class="err">*</span>SSN:</td>
+              <td height="25" width="120"><span class="err">*</span> SSN:</td>
               <td ><input type="text" class="input_txtbx1" name="ssn" id="ssn" placeholder="298-70-2433" maxlength="11" onkeypress="return isNumberKey(event);"/><span class="err" id="ssnerror"><form:errors path="Lettertopatients.ssn"></form:errors></span></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="120"><span class="err">*</span>Claim:</td>
-              <td ><input type="text" class="input_txtbx1" name="claim" id="claim" onInput="return validateusername()"; placeholder="35W899112"  /><span class="err" id="claimerror"><form:errors path="Lettertopatients.claim"></form:errors></span></td>
+              <td height="25" width="120"><span class="err">*</span> Claim:</td>
+              <td ><input type="text" class="input_txtbx1" name="claim" id="claim" maxlength="10" onInput="return validateusername()"; placeholder="35W899112"  /><span class="err" id="claimerror"><form:errors path="Lettertopatients.claim"></form:errors></span></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="120"><span class="err">*</span>DOI:</td>
+              <td height="25" width="120"><span class="err">*</span> DOI:</td>
               <td ><input type="text" class="input_txtbx1" name="doi" id="datepicker" placeholder="05-26-02" /><span class="err" id="datepickererror"><form:errors path="Lettertopatients.doi"></form:errors></span></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
+<<<<<<< .mine
+              <td height="25" width="120"><span class="err">&nbsp;</span> Adjuster:</td>
+              <td ><input type="text" class="input_txtbx1" name="adjuster" id="adjuster" min="4" maxlength="32" placeholder="Kathy Porcella" /><span class="err" id="aerror"></span></td>
+=======
               <td height="25" width="120"><span class="err"></span>Adjuster:</td>
               <td ><input type="text" class="input_txtbx1" name="adjuster" id="adjuster" placeholder="Kathy Porcella" onInput="return validatename(id)";/><span class="err" id="adjustererror"></span></td>
+>>>>>>> .r1064
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="120"><span class="err"></span>Date</td>
+              <td height="25" width="120"><span class="err">&nbsp;</span> Date</td>
               <td ><input type="text" class="input_txtbx1" name="date" id="datepicker3"/><span class="err" id="datepicker3error"></span></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
+<<<<<<< .mine
+              <td height="25" width="120"><span class="err">&nbsp;</span> Dear</td>
+              <td ><input type="text" class="input_txtbx1" name="dear" min="4" maxlength="32" id="dear"/><span class="err" id="derror"></span></td>
+=======
               <td height="25" width="120"><span class="err"></span>Dear</td>
               <td ><input type="text" class="input_txtbx1" name="dear" id="dear" onInput="return validatename(id)";/><span class="err" id="dearerror"></span></td>
+>>>>>>> .r1064
               </tr>
               </table>
              	<input type="text" name="user" id="user"  style="visibility:hidden">
@@ -640,7 +703,11 @@ document.getElementById("ssn").value=phone;
        		 </td>
        		 </tr>
        		 <tr><td>
+<<<<<<< .mine
+       		 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;         Attached you will find itemized charges for your care. To avoid legal action, please submit payment. To avoid legal action, please submit payment in full to Chiropractic Therapy Center. Your total bill to be paid to Chiropractic Therapy Center is <input type="text" class="input_txtbx1" onInput="validateamount();" maxlength="10" name="letter" id="letter" /><span class="err" id="aerror"></span>.
+=======
        		 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;         Attached you will find itemized charges for your care. To avoid legal action, please submit payment. To avoid legal action, please submit payment in full to Chiropractic Therapy Center. Your total bill to be paid to Chiropractic Therapy Center is <input type="text" class="input_txtbx1" name="letter" id="letter" onInput="return validatename(id)";/><span class="err" id="lettererror"></span>.
+>>>>>>> .r1064
        		 </p>
        		 </td>
        		 </tr>
@@ -774,4 +841,47 @@ document.getElementById("ssn").value=phone;
         	  </div>
         	  </body>
         	  </html>
+        	  <script>
+        	  function validatere(){
+        		    var textInput = document.getElementById("re").value;
+        		    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+        		    document.getElementById("re").value = textInput;
+        		}
+        	  function validateadjuster(){
+      		    var textInput = document.getElementById("adjuster").value;
+      		    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+      		    document.getElementById("adjuster").value = textInput;
+      		}
+        	  function validatedear(){
+      		    var textInput = document.getElementById("dear").value;
+      		    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+      		    document.getElementById("dear").value = textInput;
+      		}
+        	  function validateamount(){
+        		    var textInput = document.getElementById("letter").value;
+        		    textInput = textInput.replace(/[^0-9]/g, "");
+        		    document.getElementById("letter").value = textInput;
+        		}
+
+        	  </script>
+        	  <script>
+        	  $(function() {
+        			$("#re").on("keypress", function(e) {
+        				if (e.which === 32 && !this.value.length)
+        			        e.preventDefault();
+        			});
+        			});
+        	  $(function() {
+      			$("#adjuster").on("keypress", function(e) {
+      				if (e.which === 32 && !this.value.length)
+      			        e.preventDefault();
+      			});
+      			});
+        	  $(function() {
+        			$("#dear").on("keypress", function(e) {
+        				if (e.which === 32 && !this.value.length)
+        			        e.preventDefault();
+        			});
+        			});
+        	  </script>
         	  <jsp:include page="footer.jsp"></jsp:include>
