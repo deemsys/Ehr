@@ -21,7 +21,122 @@
 	    $( "#tabss" ).tabs();
 	  });
   </script>
+  <script>
+  $(function() {
+		$("#hours").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});	
+  $(function() {
+		$("#days").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});	
+  $(function() {
+		$("#datepicker").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+  $(function() {
+		$("#reason").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+  $(function() {
+		$("#othere").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+  $(function() {
+		$("#otherit").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+  $(function() {
+		$("#otherfeel").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+  $(function() {
+		$("#otherpain").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+  $(function() {
+		$("#otherradiates").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+  $(function() {
+		$("#otherdn").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+  $(function() {
+		$("#datepicker1").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+  $(function() {
+		$("#othercondition").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+  $(function() {
+		$("#gripdynamomright").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+  $(function() {
+		$("#gripdynamomleft").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+  </script>
+  <script>
+  function validatename(id){
+	    var textInput = document.getElementById(id).value;
+	    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+	    document.getElementById(id).value = textInput;
+	}
+  
+  
+  </script>
+<script>
+function validate(event) {
+    
+    var regex = new RegExp("^[0-9.]+$");
+    var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+      // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
+        event.preventDefault();
+        return false;
+    }
+}       
+</script>
+<!-- <script>
+function validatename1(id){
+    var textInput = document.getElementById(id).value;
+    textInput = textInput.replace([0-9]);
+    document.getElementById(id).value = textInput;
+}
 
+
+</script> -->
   <script>
   function checkAjaxPost(source) {  
 	 
@@ -699,8 +814,8 @@ function elbowPopup() {
                  <td>Did it begin gradually or suddenly?</td>
                  <td><input type="checkbox" name="suddenly" value="Sudden">&nbsp Sudden</td>
                  <td><input type="checkbox" name="gradually" value="Gradual">&nbsp Gradual:</td>
-                 <td> <input type="text" name="hours" class="input_txtbx1">Hours Later</td>
-                 <td><input type="text" name="days" class="input_txtbx1">Days Later</td>
+                 <td> <input type="text" name="hours" id="hours" class="input_txtbx1" onkeypress="return validate(event)";>Hours Later</td>
+                 <td><input type="text" name="days" id="days" class="input_txtbx1" onkeypress="return validate(event)";>Days Later</td>
                  </tr>
                     <script>
  $(function() {
@@ -720,7 +835,7 @@ function elbowPopup() {
                  </tr>
                  <tr class="row1">
                  <td>How did it happen?  </td>
-                 <td><textarea rows="5" cols="25" name="reason" class="input_txtarea"></textarea></td>
+                 <td><textarea rows="5" cols="25" name="reason" id="reason" class="input_txtarea" onInput="return validatename(id)";></textarea></td>
                  </tr>
                  <tr class="row1">
                  <td>Was this the first episode or is this a chronic injury? </td>
@@ -741,7 +856,7 @@ function elbowPopup() {
                  <td><input type="checkbox" name="rest" value="Rest">&nbsp Rest</td>
                  <td><input type="checkbox" name="otherb" value="Other">&nbsp other:
                  </td>
-                 <td><input type="text" name="othere" class="input_txtbx1" placeholder="If other, specify"></td>
+                 <td><input type="text" name="othere" id="othere" class="input_txtbx1" placeholder="If other, specify" onInput="return validatename(id)";></td>
                  </tr>
                   <tr class="row1">
                  <td>What have you done for it?  </td>
@@ -753,7 +868,7 @@ function elbowPopup() {
                  <td></td>
                  <td><input type="checkbox" name="aspirin" value="Aspirin">&nbsp Aspirin</td>
                 <td><input type="checkbox" name="otherdone" value="Other">&nbsp other</td>
-                <td><input type="text" name="otherit" class="input_txtbx1"  placeholder="If other, specify"></td>
+                <td><input type="text" name="otherit" id="otherit" class="input_txtbx1"  placeholder="If other, specify" onInput="return validatename(id)";></td>
                  <td></td>
                  <td></td>
                  </tr>
@@ -769,7 +884,7 @@ function elbowPopup() {
                 <td><input type="checkbox" name="activity" value="Activity">&nbsp Activity</td>
                 <td><input type="checkbox" name="otherworse" value="Other">&nbsp Other
                  </td>
-                 <td><input type="text" name="otherfeel" class="input_txtbx1" placeholder="If other, specify"></td>
+                 <td><input type="text" name="otherfeel" id="otherfeel" class="input_txtbx1" placeholder="If other, specify" onInput="return validatename(id)";></td>
                  </tr>
                   <tr class="row1">
                  <td>How would you describe the pain?   </td>
@@ -796,7 +911,7 @@ function elbowPopup() {
                 <td><input type="checkbox" name="cramping" value="Cramping">&nbsp Cramping</td>
                 <td><input type="checkbox" name="otherdescribe" value="Other">&nbsp other 
                  </td>
-                 <td><input type="text" name="otherpain" class="input_txtbx1" placeholder="If other, specify"></td>
+                 <td><input type="text" name="otherpain" id="otherpain" class="input_txtbx1" placeholder="If other, specify" onInput="return validatename(id)";></td>
                  </tr>
                  <tr class="row1">
                  <td>Is it constant or does it come and go?</td>
@@ -808,7 +923,7 @@ function elbowPopup() {
                  <td><input type="checkbox" name="local" value="Local">&nbsp Local</td>
                  <td><input type="checkbox" name="diffuse" value="Diffuse">&nbsp Diffuse</td>
                  <td><input type="checkbox" name="radiates" value="Radiates">&nbsp Radiates to: </td>
-                 <td> <input type="text" name="otherradiates" class="input_txtbx1" placeholder="Specify Radiates"></td>
+                 <td> <input type="text" name="otherradiates" id="otherradiates" class="input_txtbx1" placeholder="Specify Radiates" onInput="return validatename(id)";></td>
                  <td></td>
                  </tr>
                  <tr class="row1">
@@ -823,7 +938,7 @@ function elbowPopup() {
                  <td><input type="checkbox" name="am" value="AM">&nbsp AM</td>
                  <td><input type="checkbox" name="pm" value="PM">&nbsp PM</td>
                  <td><input type="checkbox" name="othertime" value="Other">&nbsp Other</td>
-                 <td><input type="text" name="otherdn" class="input_txtbx1" placeholder="If other, specify"></td>
+                 <td><input type="text" name="otherdn" id="otherdn" class="input_txtbx1" placeholder="If other, specify" onInput="return validatename(id)";></td>
                  </tr>
                  <tr class="row1">
                  <td>Is your condition getting worse or better?</td>
@@ -844,7 +959,7 @@ function elbowPopup() {
                  <td><input type="checkbox" name="sleep" value="Sleep">&nbsp Sleep</td>
                  <td><input type="checkbox" name="otherdaily" value="Other">&nbsp Other
                  </td>
-                 <td><input type="text" name="othercondition" class="input_txtbx1" placeholder="If other, specify"></td>
+                 <td><input type="text" name="othercondition" id="othercondition" class="input_txtbx1" placeholder="If other, specify" onInput="return validatename(id)";></td>
             </table> 
             </div>
             </div>
@@ -1052,8 +1167,8 @@ function elbowPopup() {
 				                  </tr>
 				                  <tr class="row1">
 				                  <td>Grip Dynamom 	</td>
-				                  <td>Right&nbsp;&nbsp;<input type="text" name="gripdynamomright" class="input_txtbx1"></td>
-				                  <td>Left&nbsp;&nbsp;<input type="text" name="gripdynamomleft" class="input_txtbx1"></td>	
+				                  <td>Right&nbsp;&nbsp;<input type="text" name="gripdynamomright" id="gripdynamomright" class="input_txtbx1" onInput="return validatename(id)";></td>
+				                  <td>Left&nbsp;&nbsp;<input type="text" name="gripdynamomleft" id="gripdynamomleft" class="input_txtbx1" onInput="return validatename(id)";></td>	
 				                  <td></td>
 				                  <td></td>			                 
 				                  </tr>
