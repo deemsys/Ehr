@@ -169,6 +169,22 @@ $(function() {
  
 </script>
 <script>
+  $(function() {
+	$("#pname").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+function validatename(id){
+    var textInput = document.getElementById(id).value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById(id).value = textInput;
+}
+</script>
+<script>
 
 	function checkSubmit()
 	{
@@ -180,6 +196,15 @@ document.getElementById("pnameerror").innerHTML=" ";
 		
 		return false;
 		}
+		
+		document.getElementById("pnameerror").innerHTML="";
+	    if(document.getElementById("pname").value.length<4 || document.getElementById("pname").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("pnameerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
 		document.getElementById("datepickererror").innerHTML="";
 		
 		if(document.getElementById("datepicker").value=="")
@@ -252,7 +277,7 @@ document.getElementById("pnameerror").innerHTML=" ";
 	     	     <c:when test="${empty wristdisability}">
           <table cellpadding="0" cellspacing="0" border="0" >
            <tr><td width="140"><span class="err">*</span>Name</td>
-           <td><input type="text" name="name" id="pname"><br><span class="err" id="pnameerror"><form:errors path="wristindexdetails.name"></form:errors></td><td width="480"></td><td></td><td width="100"></td>
+           <td><input type="text" name="name" id="pname" onInput="return validatename(id)";><br><span class="err" id="pnameerror"><form:errors path="wristindexdetails.name"></form:errors></td><td width="480"></td><td></td><td width="100"></td>
            <td >&nbsp;&nbsp;&nbsp;&nbsp;<span class="err">*</span>Date:&nbsp;</td> <td><input type="text" name="date" id="datepicker">
            <br><span class="err" id="datepickererror"><form:errors path="wristindexdetails.date"></form:errors></td>
            </tr>

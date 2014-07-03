@@ -158,6 +158,23 @@ $(function() {
 	  
   }
   </script>
+  
+  <script>
+  $(function() {
+	$("#pname").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+function validatename(id){
+    var textInput = document.getElementById(id).value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById(id).value = textInput;
+}
+</script>
   <script>
 
 	function checkSubmit()
@@ -170,6 +187,16 @@ document.getElementById("pnameerror").innerHTML=" ";
 		
 		return false;
 		}
+		
+
+		document.getElementById("pnameerror").innerHTML="";
+	    if(document.getElementById("pname").value.length<4 || document.getElementById("pname").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("pnameerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
 		document.getElementById("datepickererror").innerHTML="";
 		
 		if(document.getElementById("datepicker").value=="")
@@ -208,9 +235,9 @@ document.getElementById("pnameerror").innerHTML=" ";
           <table cellpadding="0" cellspacing="0" border="0" width="98%">
            
  <tr class="row1">
-<td><h4><span class="err">*</span>Patient Name:</h4></td><td><input type="text"  name="pname" /><span class="err" id="pnameerror"><form:errors path="Lowback.pname"></form:errors></span></td>
+<td><h4><span class="err">*</span>Patient Name:</h4></td><td><input type="text" id="pname" name="pname" onInput="return validatename(id)";/><span class="err" id="pnameerror"><form:errors path="Lowback.pname"></form:errors></span></td>
 <td width="300">
-<td><h4><span class="err">*</span>Date:</h4></td><td><input type="text"  id="datepicker" name="date" id="datepickererror" /><span class="err" ><form:errors path="Lowback.date"></form:errors></span></td>
+<td><h4><span class="err">*</span>Date:</h4></td><td><input type="text"  id="datepicker" name="date" id="datepickererror" /><span class="err" id="datepickererror" ><form:errors path="Lowback.date"></form:errors></span></td>
 </tr>
 </table>
 <br/>

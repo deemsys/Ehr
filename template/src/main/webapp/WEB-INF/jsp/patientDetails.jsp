@@ -685,6 +685,14 @@ document.getElementById("inp_id").value=phone;
 });
 </script>
 <script>
+  $(function() {
+	$("#oname").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+	</script>
+<script>
 i=0;
 $(document).ready(function(){
   $("#phauto").keypress(function(){
@@ -867,14 +875,335 @@ function validatename11(){
            }
        }       
     </script>
+<script>
+  $(function() {
+	$("#name").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
 
+</script>
+
+
+<script>
+  $(function() {
+	$("#streetaddress").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#City").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#State").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#Emailid").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#EmployerName").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#Occupation").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#EmployerAddress").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#EmployerCity").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#Estate").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#SpousesName").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#SpousesEmp").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#Name_friend").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+
+
+
+<script>
+  $(function() {
+	$("#symptom1").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+
+<script>
+  $(function() {
+	$("#accident").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+
+<script>
+  $(function() {
+	$("#where1").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+
+<script>
+  $(function() {
+	$("#NameOfAttorney").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#Fault_accident").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#phyname").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#car11").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#xray").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#treat").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#Insurance").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#Name_auto").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#Illness").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+
+<script>
+  $(function() {
+	$("#Medications").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#list").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#Dr").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#Patient").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#Name_health").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+function validatename55(id){
+    var textInput = document.getElementById(id).value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById(id).value = textInput;
+}
+</script>
+<script>
+function validatename56(id){
+    var textInput = document.getElementById(id).value;
+    textInput = textInput.replace(/[^A-Za-z. ]/g, "");
+    document.getElementById(id).value = textInput;
+}
+</script>
  <script>
 
 	function checkSubmit()
 	{
 		document.getElementById("nameerror").innerHTML=" ";
 		
-		if(document.getElementById("name").value=="")
+		if(document.getElementById("name").value.substring(0,1)==" ")
 		{
 		document.getElementById("nameerror").innerHTML="Required Field Should not be Empty";
 		
@@ -912,6 +1241,15 @@ function validatename11(){
 	
 	return false;
 	}
+	document.getElementById("streetaddresserror").innerHTML="";
+    if(document.getElementById("streetaddress").value.length<4 || document.getElementById("streetaddress").value.length>=32)
+    {
+    	
+    	document.getElementById("streetaddresserror").innerHTML="should be min 4 and max 32";
+    	
+        return false;
+    }
+
 	
 	document.getElementById("Cityerror").innerHTML="";
 	if(document.getElementById("City").value=="")
@@ -920,6 +1258,16 @@ function validatename11(){
 	
 	return false;
 	}
+	
+	document.getElementById("Cityerror").innerHTML="";
+    if(document.getElementById("City").value.length<4 || document.getElementById("City").value.length>=32)
+    {
+    	
+    	document.getElementById("Cityerror").innerHTML="should be min 4 and max 32";
+    	
+        return false;
+    }
+
 	document.getElementById("Stateerror").innerHTML="";
 	if(document.getElementById("State").value=="")
 	{
@@ -927,6 +1275,14 @@ function validatename11(){
 	
 	return false;
 	}
+	document.getElementById("Stateerror").innerHTML="";
+    if(document.getElementById("State").value.length<4 || document.getElementById("State").value.length>=32)
+    {
+    	
+    	document.getElementById("Stateerror").innerHTML="should be min 4 and max 32";
+    	
+        return false;
+    }
 	document.getElementById("zipcode1error").innerHTML="";
 	if(document.getElementById("zipcode1").value=="")
 	{
@@ -1149,6 +1505,50 @@ function validatename11(){
     }
     }
 	
+	document.getElementById("Occupationerror").innerHTML="";
+	if(document.getElementById("Occupation").value!="")
+	{
+    if(document.getElementById("Occupation").value.length<4 || document.getElementById("Occupation").value.length>=32)
+    {
+    	
+    	document.getElementById("Occupationerror").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
+    }
+	document.getElementById("EmployerAddresserror").innerHTML="";
+	if(document.getElementById("EmployerAddress").value!="")
+	{
+    if(document.getElementById("EmployerAddress").value.length<4 || document.getElementById("EmployerAddress").value.length>=32)
+    {
+    	
+    	document.getElementById("EmployerAddresserror").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
+    }
+	document.getElementById("EmployerCityerror").innerHTML="";
+	if(document.getElementById("EmployerCity").value!="")
+	{
+    if(document.getElementById("EmployerCity").value.length<4 || document.getElementById("EmployerCity").value.length>=32)
+    {
+    	
+    	document.getElementById("EmployerCityerror").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
+    }
+	document.getElementById("Estateerror").innerHTML="";
+	if(document.getElementById("Estate").value!="")
+	{
+    if(document.getElementById("Estate").value.length<4 || document.getElementById("Estate").value.length>=32)
+    {
+    	
+    	document.getElementById("Estateerror").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
+    }
 	/* document.getElementById("workphoneerror").innerHTML="";
 	if(document.getElementById("workphone").value=="")
 	{
@@ -1253,6 +1653,15 @@ function validatename11(){
 	
 	return false;
 	}
+	
+	document.getElementById("SpousesEmperror").innerHTML="";
+    if(document.getElementById("SpousesEmp").value.length<4 || document.getElementById("SpousesName").value.length>=32)
+    {
+    	
+    	document.getElementById("SpousesEmperror").innerHTML=" should be min 4 and max 32";
+    	
+        return false;
+    }
 	document.getElementById("spouseworkphoneerror").innerHTML="";
 	if(document.getElementById("spouseworkphone").value=="")
 	{
@@ -1353,6 +1762,15 @@ function validatename11(){
 	
 	return false;
 	}
+	
+	document.getElementById("symptom1error").innerHTML="";
+    if(document.getElementById("symptom1").value.length<4 || document.getElementById("symptom1").value.length>=32)
+    {
+    	
+    	document.getElementById("symptom1error").innerHTML=" should be min 4 and max 32";
+    	
+        return false;
+    }
 	document.getElementById("Symptom_Accidenterror").innerHTML=""; 
 	if( ( document.getElementById("yes").checked == false ) && ( document.getElementById("No").checked == false ) )
 
@@ -1418,6 +1836,15 @@ function validatename11(){
 	
 	return false;
 	}
+	
+	document.getElementById("where1error").innerHTML="";
+    if(document.getElementById("where1").value.length<4 || document.getElementById("where1").value.length>=32)
+    {
+    	
+    	document.getElementById("where1error").innerHTML=" should be min 4 and max 32";
+    	
+        return false;
+    }
 	document.getElementById("Attorney_accidenterror").innerHTML=""; 
 	if( ( document.getElementById("yes5").checked == false ) && ( document.getElementById("No5").checked == false ) )
 
@@ -1516,6 +1943,15 @@ function validatename11(){
 	
 	return false;
 	}
+	
+	document.getElementById("xrayerror").innerHTML="";
+    if(document.getElementById("xray").value.length<4 || document.getElementById("xray").value.length>=32)
+    {
+    	
+    	document.getElementById("xrayerror").innerHTML=" should be min 4 and max 32";
+    	
+        return false;
+    }
 	document.getElementById("treaterror").innerHTML="";
 	if(document.getElementById("treat").value=="")
 	{
@@ -1523,7 +1959,14 @@ function validatename11(){
 	
 	return false;
 	}
-	
+	document.getElementById("treaterror").innerHTML="";
+    if(document.getElementById("treat").value.length<4 || document.getElementById("treat").value.length>=32)
+    {
+    	
+    	document.getElementById("treaterror").innerHTML=" should be min 4 and max 32";
+    	
+        return false;
+    }
 	document.getElementById("phonenumbererror").innerHTML="";
 	if(document.getElementById("phonenumber").value=="")
 	{
@@ -1736,6 +2179,15 @@ function validatename11(){
 	
 	return false;
 	}
+	
+	document.getElementById("Illnesserror").innerHTML="";
+    if(document.getElementById("Illness").value.length<4 || document.getElementById("Illness").value.length>=32)
+    {
+    	
+    	document.getElementById("Illnesserror").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
 	document.getElementById("datepicker3error").innerHTML="";
 	if(document.getElementById("datepicker3").value=="")
 	{
@@ -1758,6 +2210,14 @@ function validatename11(){
 	
 	return false;
 	}
+	document.getElementById("Medicationserror").innerHTML="";
+    if(document.getElementById("Medications").value.length<4 || document.getElementById("Medications").value.length>=32)
+    {
+    	
+    	document.getElementById("Medicationserror").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
 	document.getElementById("doyouerror").innerHTML=""; 
 	if( ( document.getElementById("Drink").checked == false ) && ( document.getElementById("Smoke").checked == false ) && ( document.getElementById("Drugs").checked == false )&& ( document.getElementById("Diet").checked == false )&& ( document.getElementById("Exercise").checked == false ))
 
@@ -1808,7 +2268,14 @@ function validatename11(){
 	
 	return false;
 	}
-	
+	document.getElementById("Patienterror").innerHTML="";
+    if(document.getElementById("Patient").value.length<4 || document.getElementById("Patient").value.length>=32)
+    {
+    	
+    	document.getElementById("Patienterror").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
 	
 	document.getElementById("claim_openerror").innerHTML=""; 
 	if( ( document.getElementById("claim_open").checked == false ) && ( document.getElementById("claim_open1").checked == false ) )
@@ -1828,6 +2295,15 @@ function validatename11(){
 	 		return false;
 	 		
 	 }
+	
+	document.getElementById("car11error").innerHTML="";
+    if(document.getElementById("car11").value.length<4 || document.getElementById("car11").value.length>=32)
+    {
+    	
+    	document.getElementById("car11error").innerHTML=" should be min 4 and max 32";
+    	
+        return false;
+    }
 	}
 
 	</script>
@@ -2284,13 +2760,13 @@ function check(id)
                                   <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>City:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="City" name="City" /><br><span id="Cityerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.city"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="City" name="City" onInput="return validatename55(id)";/><br><span id="Cityerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.city"></form:errors></span>
 				                  </td>
 				                </tr>
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>State:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="State" name="State" /><br><span id="Stateerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.state"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="State" name="State" onInput="return validatename55(id)"; /><br><span id="Stateerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.state"></form:errors></span>
 				                  </td>
 				                </tr>
                                <tr class="row2">
@@ -2392,13 +2868,13 @@ function check(id)
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>Occupation:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Occupation" /><br><span class="err"><form:errors path="PatientDetails.Occupation"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="Occupation" name="Occupation" onInput="return validatename55(id)"; /><br><span class="err" id="Occupationerror"><form:errors path="PatientDetails.Occupation"></form:errors></span>
 				                  </td>
 				                </tr>
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>Employer Address:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="EmployerAddress" /><br><span class="err"><form:errors path="PatientDetails.EmployerAddress"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="EmployerAddress" name="EmployerAddress" /><br><span class="err" id="EmployerAddresserror"><form:errors path="PatientDetails.EmployerAddress"></form:errors></span>
 				                  </td>
 				                </tr>
 				                <tr class="row1">
@@ -2425,14 +2901,14 @@ function check(id)
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>EmployerCity:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="EmployerCity" /><br><span class="err"><form:errors path="PatientDetails.EmployerCity"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="EmployerCity" name="EmployerCity"  onInput="return validatename55(id)";/><br><span class="err" id="EmployerCityerror"><form:errors path="PatientDetails.EmployerCity"></form:errors></span>
 
 				                  </td>
 				                </tr>
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>State:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Estate" /><br><span class="err"><form:errors path="PatientDetails.Estate"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="Estate" name="Estate" onInput="return validatename55(id)"; /><br><span class="err" id="Estateerror"><form:errors path="PatientDetails.Estate"></form:errors></span>
 				                  	
 				                  </td>
 				                </tr>
@@ -2464,7 +2940,7 @@ function check(id)
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Spouses Employer:&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="SpousesEmp" name="SpousesEmp" /><br><span id="SpousesEmperror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.spousesEmp"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="SpousesEmp" name="SpousesEmp" onInput="return validatename55(id)"; /><br><span id="SpousesEmperror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.spousesEmp"></form:errors></span>
 				                  	
 				                  </td>
 				                </tr>
@@ -2478,7 +2954,7 @@ function check(id)
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name of Nearest Friend/ Relative Not Living With You:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="Name_friend" name="Name_friend" onInput="return validatename3()"; /><br><span id="Name_frienderror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.name_friend"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="Name_friend" name="Name_friend" onInput="return validatename55(id)"; /><br><span id="Name_frienderror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.name_friend"></form:errors></span>
 				               
 				                  </td>
 				                </tr>
@@ -2559,7 +3035,7 @@ function check(id)
                       </div> 
                       <td valign="middle" align="left" class="input_txt"></td>
 				                  <td valign="top" align="left" class="input_txt">
-				                   <textarea rows="3" cols="25" placeholder="Specify your Symptoms" name="symptom[]" id="symptom1" onBlur="check(this)" ></textarea><span id="symptom1error" style="color: red;font-style:italic;"></span>
+				                   <textarea rows="3" cols="25" onInput="return validatename55(id)"; placeholder="Specify your Symptoms" name="symptom[]" id="symptom1" onBlur="check(this)" ></textarea><span id="symptom1error" style="color: red;font-style:italic;"></span>
 				                <p></p>
 				                 <div id="multichoice"></div>
 				                   <a href="javascript:void(0);" onclick="addMultichoice('multichoice');" style="text-decoration:none;" ><input type="button" value="Add one more Symptom" class="submit_btn2" id="morebutton" name=""/></a>
@@ -2617,7 +3093,7 @@ function check(id)
 											
 											<option value="other" id="other">Other</option>
 				                   		</select>
-				        		                   <input type="text" name="accident" id="accident" style='display:none' />
+				        		                   <input type="text" name="accident" id="accident" onInput="return validatename55(id)"; style='display:none' />
 				                  <span id="type_of_accidenterror" style="color: red;font-style:italic;"></span> 	</td>
 				                   	
 				                </tr>  
@@ -2646,7 +3122,7 @@ function check(id)
 				                  	<tr class="row1">
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Where:</td>
 				                  	<td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="where1" name="where1"/><br><span id="where1error" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="where1" onInput="return validatename55(id)"; name="where1"/><br><span id="where1error" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
 				                    </tr>
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Have You Retained an Attorney for this Accident:</td>
@@ -2660,7 +3136,7 @@ function check(id)
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name Of Attorney:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="NameOfAttorney" name="NameOfAttorney" onInput="return validateusername4()"; /><br><span id="NameOfAttorneyerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.NameOfAttorney"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="NameOfAttorney" name="NameOfAttorney" onInput="return validatename55(id)";/><br><span id="NameOfAttorneyerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.NameOfAttorney"></form:errors></span>
 				                  
 				                </tr>
 				                <tr class="row2">
@@ -2677,7 +3153,7 @@ function check(id)
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name of Person at Fault for the Accident:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="Fault_accident" name="Fault_accident" onInput="return validateusername5()"; /><br><span id="Fault_accidenterror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.fault_accident"></form:errors></span></td>
+				                  	<input type="text" class="input_txtbx1" id="Fault_accident" name="Fault_accident" onInput="return validatename55(id)"; /><br><span id="Fault_accidenterror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.fault_accident"></form:errors></span></td>
 				                  	<td></td>                                                                                        
 				                 
 				                </tr>
@@ -2709,7 +3185,7 @@ function check(id)
 				                <tr class="row1">
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>What is your Physician's Name </td>
 				                  	<td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="phyname" name="phyname"  onInput="return validateusername6()";/><br><span id="phynameerror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="phyname" name="phyname"  onInput="return validatename55(id)";/><br><span id="phynameerror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
 				                    </tr>
 				                
 				                <tr class="row2">
@@ -2721,25 +3197,25 @@ function check(id)
 				                     <tr class="row2">
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Damages to your car </td>
 				                  	<td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="car11" name="car11" /><br><span id="car11error" style="color: red;font-style:italic;"> <form:errors path="patientDetails.car11"></form:errors> </span>
+				                  	<input type="text" class="input_txtbx1" id="car11" name="car11" onInput="return validatename55(id)"; /><br><span id="car11error" style="color: red;font-style:italic;"> <form:errors path="patientDetails.car11"></form:errors> </span>
 				                   <span class="err" ></span>
 				                    </tr>
 				                     <tr class="row1">
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>	What body parts were x-rayed </td>
 				                  	<td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="xray" name="xray"/><br><span id="xrayerror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="xray" name="xray" onInput="return validatename55(id)";/><br><span id="xrayerror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
 				                    </tr>
 				                    
 				                     <tr class="row2">
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>what treatment was given </td>
 				                  	<td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="treat" name="treat"/><br><span id="treaterror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="treat" name="treat" onInput="return validatename55(id)";/><br><span id="treaterror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
 				                    </tr>
 				                    
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Insurance Company of the at Fault Person:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="Insurance" name="Insurance" onInput="return validateusername7()"; /><br><span id="Insuranceerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.insurance"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="Insurance" name="Insurance" onInput="return validatename55(id)"; /><br><span id="Insuranceerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.insurance"></form:errors></span>
 				                  <td></td>
 				                </tr>
 				                <tr class="row1">
@@ -2754,7 +3230,7 @@ function check(id)
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name of your auto insurance:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="Name_auto" name="Name_auto" onInput="return validateusername8()"; /><br><span id="Name_autoerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.name_auto"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="Name_auto" name="Name_auto" onInput="return validatename55(id)"; /><br><span id="Name_autoerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.name_auto"></form:errors></span>
 				                  	<td> </td>
 				                </tr>
 				               <tr class="row1">
@@ -2777,7 +3253,7 @@ function check(id)
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name of Your Health Insurance:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="Name_health" name="Name_health" onInput="return validateusername9()"; /><br><span id="Name_healtherror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.name_health"></form:errors></span></td>
+				                  	<input type="text" class="input_txtbx1" id="Name_health" name="Name_health" onInput="return validatename55(id)"; /><br><span id="Name_healtherror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.name_health"></form:errors></span></td>
 				                  	
 				                  <td></td>
 				                </tr>
@@ -2919,7 +3395,7 @@ function check(id)
 				                  <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Surgeries or Major Illnesses You Have Had: </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="Illness" name="Illness" /><br><span id="Illnesserror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.illness"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="Illness" name="Illness" onInput="return validatename55(id)"; /><br><span id="Illnesserror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.illness"></form:errors></span>
 				                  	</tr>   
 				                 
 				                 <tr class="row1">
@@ -2931,7 +3407,7 @@ function check(id)
 				                  	<tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Medications You are Currently Taking and Why:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<textarea rows="3" cols="25" placeholder="Medications" name="Medications" id="Medications"></textarea>&nbsp;&nbsp;&nbsp;<br><span id="Medicationserror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.medications"></form:errors></span>
+				                  	<textarea rows="3" cols="25" placeholder="Medications" onInput="return validatename55(id)"; name="Medications" id="Medications"></textarea>&nbsp;&nbsp;&nbsp;<br><span id="Medicationserror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.medications"></form:errors></span>
 				                  	</tr> 
 				                  	
 				                  	<tr class="row1">
@@ -2952,7 +3428,7 @@ function check(id)
 				  <input type="radio" name="Hazardous" value="yes" id="Hazardous" class="input_txt"  onclick="toggle2('show2')">Yes&nbsp;&nbsp;&nbsp;
 				 
     <!-- <span id="listerror" style="color: red;font-style:italic;"></span> --><input type="radio" name="Hazardous" id="Hazardous1" value="No" class="input_txt"onclick="toggle2('hide2')">No
-			       <label>If yes,Please List: </label><input type="text" id="list" name="Hazardousyes"  /><span class="err" id="Hazardouserror"></span>
+			       <label>If yes,Please List: </label><input type="text" id="list" name="Hazardousyes" onInput="return validatename55(id)"; /><span class="err" id="Hazardouserror"></span>
 			      </div>
 			      </td>
 				  </tr>
@@ -2967,12 +3443,12 @@ function check(id)
 				                  	<tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Dr:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="Dr" name="Dr" onInput="return validateusername10()"; /><br><span id="Drerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.dr"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="Dr" name="Dr" onInput="return validatename55(id)"; /><br><span id="Drerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.dr"></form:errors></span>
 				                  	</tr>  
 				                  	<tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Signature:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="Patient" name="Patient" onInput="return validateusername11()"; /><br><span id="Patienterror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.patient"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="Patient" name="Patient" onInput="return validatename56(id)"; /><br><span id="Patienterror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.patient"></form:errors></span>
 				                  	</tr>   </div>
 				                  	<table align="right">
 				  <tr>
