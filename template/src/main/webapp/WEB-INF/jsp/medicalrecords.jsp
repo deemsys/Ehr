@@ -81,7 +81,7 @@ document.getElementById("patientsignatureerror").innerHTML=" ";
 
 	</script>
 	
-	<script>
+<!-- 	<script>
   $(function() {
 	$("#iname").on("keypress", function(e) {
 		if (e.which === 32 && !this.value.length)
@@ -89,8 +89,6 @@ document.getElementById("patientsignatureerror").innerHTML=" ";
 	});
 	});	
 
-</script>
-<script>
   $(function() {
 	$("#medicalinformation").on("keypress", function(e) {
 		if (e.which === 32 && !this.value.length)
@@ -98,23 +96,30 @@ document.getElementById("patientsignatureerror").innerHTML=" ";
 	});
 	});	
 
-</script>
-
-<script>
   $(function() {
-	$("#patientsignature").on("keypress", function(e) {
+	alert("hi");
+	  $("#patientsignature").on("keypress", function(e) {
 		if (e.which === 32 && !this.value.length)
 	        e.preventDefault();
 	});
 	});	
+  
 
-</script>
+</script> -->
+
 <script>
 function validatename(id){
     var textInput = document.getElementById(id).value;
     textInput = textInput.replace(/[^A-Za-z ]/g, "");
     document.getElementById(id).value = textInput;
 }
+
+</script>
+<script>
+$("#patientsignature").on("keypress", function(e) {
+    if (e.which === 32 && !this.value.length)
+        e.preventDefault();
+});
 </script>
 
 <script>

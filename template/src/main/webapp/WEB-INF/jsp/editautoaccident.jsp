@@ -80,6 +80,231 @@ $(function() {
            }
        }       
     </script>
+    
+    <script>
+  $(function() {
+	$("#adjustersname").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#companion").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#conditions").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#body_position1").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#head_position1").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#injury").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#patient_body1").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#head_hit").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#rlshoulder_hit").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#rlhip_hit").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#rlknee_hit").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#chest_hit").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#rlarm_hit").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+
+<script>
+  $(function() {
+	$("#rlarm_hit").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#rlleg_hit").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+  
+</script>
+
+<script>
+  $(function() {
+	$("#otherpart_hit").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+
+<script>
+  $(function() {
+	$("#xray").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#hospital1").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#city").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#hosname").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#accident").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#symptom").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#wrong").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
     <script>
 function validatename(id){
     var textInput = document.getElementById(id).value;
@@ -87,117 +312,278 @@ function validatename(id){
     document.getElementById(id).value = textInput;
 }
 </script>
+
+<script>
+function validatename(){
+    var textInput = document.getElementById("adjustersname").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("adjustersname").value = textInput;
+}
+</script>
+
+<script>
+function validatename1(){
+    var textInput = document.getElementById("companion").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("companion").value = textInput;
+}
+</script>
+
+<script>
+function validatename3(){
+    var textInput = document.getElementById("vehicle_model").value;
+    textInput = textInput.replace(/[^A-Za-z0-9]/g, "");
+    
+    document.getElementById("vehicle_model").value = textInput;
+}
+</script>
+
+
+<script>
+function validatename2(){
+    var textInput = document.getElementById("vehicle_make").value;
+    textInput = textInput.replace(/[^A-Za-z]/g, "");
+    document.getElementById("vehicle_make").value = textInput;
+}
+</script>
+
+
+
+<script>
+function validatename4(){
+    var textInput = document.getElementById("other_vehicle_make").value;
+    textInput = textInput.replace(/[^A-Za-z]/g, "");
+    document.getElementById("other_vehicle_make").value = textInput;
+}
+</script>
+
+<script>
+function validatename5(){
+    var textInput = document.getElementById("other_vehicle_model").value;
+    textInput = textInput.replace(/[^A-Za-z0-9]/g, "");
+    document.getElementById("other_vehicle_model").value = textInput;
+}
+</script>
+
    <script>
   function checksub()
   {
- document.getElementById("claimnoerror").innerHTML=""; 
- if(document.getElementById("claimno").value=="")
- {
-  document.getElementById("claimnoerror").innerHTML="Required field should not be empty";
-  return false;
- }
-  document.getElementById("adjustersnameerror").innerHTML=""; 
- if(document.getElementById("adjustersname").value=="")
- {
-  document.getElementById("adjustersnameerror").innerHTML="Required field should not be empty";
-  return false;
- }
-  document.getElementById("companionerror").innerHTML="";
-  if(document.getElementById("companion").value=="")
- {
-  document.getElementById("companionerror").innerHTML="Required field should not be empty";
-  return false;
- }
- document.getElementById("vehicle_makeerror").innerHTML="";
-  if(document.getElementById("vehicle_make").value=="")
- {
-  document.getElementById("vehicle_makeerror").innerHTML="Required field should not be empty";
-  return false;
- }
- document.getElementById("vehicle_modelerror").innerHTML="";
-  if(document.getElementById("vehicle_model").value=="")
- {
-  document.getElementById("vehicle_modelerror").innerHTML="Required field should not be empty";
-  return false;
- }
- document.getElementById("vehicle_yearerror").innerHTML="";
-  if(document.getElementById("vehicle_year").value=="")
- {
-  document.getElementById("vehicle_yearerror").innerHTML="Required field should not be empty";
-  return false;
- }
-  
-  document.getElementById("vehicle_yearerror").innerHTML="";
-	if(document.getElementById("vehicle_year").value.length<4)
-	{
-	document.getElementById("vehicle_yearerror").innerHTML="Invalid year format";
-	return false;
-	
-	}
-	
-	
-  document.getElementById("other_vehicle_makeerror").innerHTML="";
-  if(document.getElementById("other_vehicle_make").value=="")
- {
-  document.getElementById("other_vehicle_makeerror").innerHTML="Required field should not be empty";
-  return false;
- }
-  document.getElementById("other_vehicle_modelerror").innerHTML="";
-  if(document.getElementById("other_vehicle_model").value=="")
- {
-  document.getElementById("other_vehicle_modelerror").innerHTML="Required field should not be empty";
-  return false;
- }
-  document.getElementById("other_vehicle_yearerror").innerHTML="";
-  if(document.getElementById("other_vehicle_year").value=="")
- {
-  document.getElementById("other_vehicle_yearerror").innerHTML="Required field should not be empty";
-  return false;
- }
-  document.getElementById("other_vehicle_yearerror").innerHTML="";
-	if(document.getElementById("other_vehicle_year").value.length<4)
-	{
-	document.getElementById("other_vehicle_yearerror").innerHTML="Invalid year format";
-	return false;
-	
-	}
- /* document.getElementById("yeserror").innerHTML="";
-  if( ( document.getElementById("yes").checked == false ) && ( document.getElementById("no").checked == false ) )
+	  document.getElementById("claimnoerror").innerHTML=""; 
+	  if(document.getElementById("claimno").value=="")
+	  {
+	   document.getElementById("claimnoerror").innerHTML="Required field should not be empty";
+	   return false;
+	  }
+	  document.getElementById("claimnoerror").innerHTML="";
+	  if(document.getElementById("claimno").value.length<9 || document.getElementById("claimno").value.length>=32)
+	  {
+	  	
+	  	document.getElementById("claimnoerror").innerHTML="Claim Number should be min 9 and max 32";
+	  	
+	      return false;
+	  }
+	  
+	   document.getElementById("adjustersnameerror").innerHTML=""; 
+	  if(document.getElementById("adjustersname").value=="")
+	  {
+	   document.getElementById("adjustersnameerror").innerHTML="Required field should not be empty";
+	   return false;
+	  }
+	  document.getElementById("adjustersnameerror").innerHTML=" ";
+	 	
+	 	if(document.getElementById("adjustersname").value.substring(0,1)==" ")
+	 	{
+	 	document.getElementById("adjustersnameerror").innerHTML="Initial space not allowed";
+	 	
+	 	return false;
+	 	}
+	 	document.getElementById("adjustersnameerror").innerHTML="";
+	     if(document.getElementById("adjustersname").value.length<4 || document.getElementById("adjustersname").value.length>=32)
+	     {
+	     	
+	     	document.getElementById("adjustersnameerror").innerHTML="Name should be min 4 and max 32";
+	     	
+	         return false;
+	     }
+	   document.getElementById("companionerror").innerHTML="";
+	   if(document.getElementById("companion").value=="")
+	  {
+	   document.getElementById("companionerror").innerHTML="Required field should not be empty";
+	   return false;
+	  }
+	   
 
-{
-document.getElementById("yeserror").innerHTML="Required Field Should not be Empty";
-		
-		return false;
-		
-} */
-document.getElementById("speederror").innerHTML="";
-	if(document.getElementById("speed").value=="")
-	{
-	document.getElementById("speederror").innerHTML="Required Field Should not be Empty";
-	
-	return false;
-	}
-	document.getElementById("estimateddamageerror").innerHTML="";
-	if(document.getElementById("estimateddamage").value=="")
-	{
-	document.getElementById("estimateddamageerror").innerHTML="Required Field Should not be Empty";
-	
-	return false;
-	}
-document.getElementById("afteraccidenterror").innerHTML=""; 
-	if( ( document.getElementById("headache").checked == false ) && ( document.getElementById("dizziness").checked == false ) && ( document.getElementById("nausea").checked == false )&& ( document.getElementById("confusion").checked == false )
-
-&& ( document.getElementById("disorientation").checked == false ) && ( document.getElementById("neckpain").checked == false ) && ( document.getElementById("otherpain").checked == false ) )
-
-
+	   document.getElementById("companionerror").innerHTML=" ";
+	  	
+	  	if(document.getElementById("companion").value.substring(0,1)==" ")
+	  	{
+	  	document.getElementById("companionerror").innerHTML="Initial space not allowed";
+	  	
+	  	return false;
+	  	}
+	  	document.getElementById("companionerror").innerHTML="";
+	     if(document.getElementById("companion").value.length<4 || document.getElementById("companion").value.length>=32)
+	     {
+	     	
+	     	document.getElementById("companionerror").innerHTML="Name should be min 4 and max 32";
+	     	
+	         return false;
+	     }
+	  document.getElementById("vehicle_makeerror").innerHTML="";
+	   if(document.getElementById("vehicle_make").value=="")
+	  {
+	   document.getElementById("vehicle_makeerror").innerHTML="Required field should not be empty";
+	   return false;
+	  }
+	   document.getElementById("vehicle_makeerror").innerHTML=" ";
+	 	
+	 	if(document.getElementById("vehicle_make").value.substring(0,1)==" ")
+	 	{
+	 	document.getElementById("vehicle_makeerror").innerHTML="Initial space not allowed";
+	 	
+	 	return false;
+	 	}
+	 	document.getElementById("vehicle_makeerror").innerHTML="";
+	   if(document.getElementById("vehicle_make").value.length<4 || document.getElementById("vehicle_make").value.length>=32)
+	   {
+	   	
+	   	document.getElementById("vehicle_makeerror").innerHTML="Name should be min 4 and max 32";
+	   	
+	       return false;
+	   }
+	  document.getElementById("vehicle_modelerror").innerHTML="";
+	   if(document.getElementById("vehicle_model").value=="")
+	  {
+	   document.getElementById("vehicle_modelerror").innerHTML="Required field should not be empty";
+	   return false;
+	  }
+	  
+	   document.getElementById("vehicle_modelerror").innerHTML=" ";
+	 	
+	 	if(document.getElementById("vehicle_model").value.substring(0,1)==" ")
+	 	{
+	 	document.getElementById("vehicle_modelerror").innerHTML="Initial space not allowed";
+	 	
+	 	return false;
+	 	}
+	 	document.getElementById("vehicle_modelerror").innerHTML="";
+	 if(document.getElementById("vehicle_model").value.length<4 || document.getElementById("vehicle_model").value.length>=32)
+	 {
+	 	
+	 	document.getElementById("vehicle_modelerror").innerHTML=" should be min 4 and max 32";
+	 	
+	     return false;
+	 }
+	  document.getElementById("vehicle_yearerror").innerHTML="";
+	   if(document.getElementById("vehicle_year").value=="")
+	  {
+	   document.getElementById("vehicle_yearerror").innerHTML="Required field should not be empty";
+	   return false;
+	  }
+	   document.getElementById("vehicle_yearerror").innerHTML=" ";
+	 	
+	 	if(document.getElementById("vehicle_year").value.substring(0,1)==" ")
+	 	{
+	 	document.getElementById("vehicle_yearerror").innerHTML="Initial space not allowed";
+	 	
+	 	return false;
+	 	}
+	  document.getElementById("vehicle_yearerror").innerHTML="";
+	 	if(document.getElementById("vehicle_year").value.length<4)
+	 	{
+	 	document.getElementById("vehicle_yearerror").innerHTML="Invalid year format";
+	 	return false;
+	 	
+	 	}
+	   document.getElementById("other_vehicle_makeerror").innerHTML="";
+	   if(document.getElementById("other_vehicle_make").value=="")
+	  {
+	   document.getElementById("other_vehicle_makeerror").innerHTML="Required field should not be empty";
+	   return false;
+	  }
+	   document.getElementById("other_vehicle_makeerror").innerHTML="";
+	   if(document.getElementById("other_vehicle_make").value.length<4 || document.getElementById("other_vehicle_make").value.length>=32)
+	   {
+	   	
+	   	document.getElementById("other_vehicle_makeerror").innerHTML="should be min 4 and max 32";
+	   	
+	       return false;
+	   }
+	   document.getElementById("other_vehicle_modelerror").innerHTML="";
+	   if(document.getElementById("other_vehicle_model").value=="")
+	  {
+	   document.getElementById("other_vehicle_modelerror").innerHTML="Required field should not be empty";
+	   return false;
+	  }
+	   document.getElementById("other_vehicle_modelerror").innerHTML="";
+	   if(document.getElementById("other_vehicle_model").value.length<4 || document.getElementById("other_vehicle_model").value.length>=32)
+	   {
+	   	
+	   	document.getElementById("other_vehicle_modelerror").innerHTML="should be min 4 and max 32";
+	   	
+	       return false;
+	   }
+	   document.getElementById("other_vehicle_yearerror").innerHTML="";
+	   if(document.getElementById("other_vehicle_year").value=="")
+	  {
+	   document.getElementById("other_vehicle_yearerror").innerHTML="Required field should not be empty";
+	   return false;
+	  }
+	  document.getElementById("other_vehicle_yearerror").innerHTML="";
+	 	if(document.getElementById("other_vehicle_year").value.length<4)
+	 	{
+	 	document.getElementById("other_vehicle_yearerror").innerHTML="Invalid year format";
+	 	return false;
+	 	
+	 	}
+	  /* document.getElementById("yeserror").innerHTML="";
+	   if( ( document.getElementById("yes").checked == false ) && ( document.getElementById("no").checked == false ) )
 
 	 {
-	 document.getElementById("afteraccidenterror").innerHTML="Required Field Should not be Empty";
+	 document.getElementById("yeserror").innerHTML="Required Field Should not be Empty";
 	 		
 	 		return false;
 	 		
-	 }
-  
+	 } */
+	 document.getElementById("speederror").innerHTML="";
+	 	if(document.getElementById("speed").value=="")
+	 	{
+	 	document.getElementById("speederror").innerHTML="Required Field Should not be Empty";
+	 	
+	 	return false;
+	 	}
+	 	document.getElementById("estimateddamageerror").innerHTML="";
+	 	if(document.getElementById("estimateddamage").value=="")
+	 	{
+	 	document.getElementById("estimateddamageerror").innerHTML="Required Field Should not be Empty";
+	 	
+	 	return false;
+	 	}
+	 document.getElementById("afteraccidenterror").innerHTML=""; 
+	 	if( ( document.getElementById("headache").checked == false ) && ( document.getElementById("dizziness").checked == false ) && ( document.getElementById("nausea").checked == false )&& ( document.getElementById("confusion").checked == false )
+
+	 && ( document.getElementById("disorientation").checked == false ) && ( document.getElementById("neckpain").checked == false ) && ( document.getElementById("otherpain").checked == false ) )
+
+
+
+	 	 {
+	 	 document.getElementById("afteraccidenterror").innerHTML="Required Field Should not be Empty";
+	 	 		
+	 	 		return false;
+	 	 		
+	 	 }
+	   
+	 	document.getElementById("injuryerror").innerHTML="";
+	 	if(document.getElementById("injury").value!="")
+	 	{
+	     if(document.getElementById("injury").value.length<4 || document.getElementById("injury").value.length>=32)
+	     {
+	     	
+	     	document.getElementById("injuryerror").innerHTML="Name should be min 4 and max 32";
+	     	
+	         return false;
+	     }
+	     }  
   
   }
   
@@ -308,13 +694,13 @@ document.getElementById("injury").style.visibility = 'hidden';
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>What is the claim number of your accident</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="hidden" class="input_txtbx1" id="inp_id" value="${autoaccident.patient_number}" name="patient_number" />
-				  <input type="text" class="input_txtbx1" id="claimno" name="claimnumber" value="${autoaccident.claimnumber }" onkeypress="return validate2(event)"; /><span id="claimnoerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.claimnumber"></form:errors></span></td>
+				  <input type="text" class="input_txtbx1" id="claimno" name="claimnumber" value="${autoaccident.claimnumber }" onInput="return validateusername()"; /><span id="claimnoerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.claimnumber"></form:errors></span></td>
 
 				  </tr>
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Adjuster's name</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="adjustersname" name="adjustersname" value="${autoaccident.adjustersname }" onInput="return validatename(id)";/><span id="adjustersnameerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.adjustersname"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="adjustersname" name="adjustersname" value="${autoaccident.adjustersname }" min="4" maxlength="32" onInput="return validatename(id)";/><span id="adjustersnameerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.adjustersname"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
@@ -341,14 +727,14 @@ document.getElementById("injury").style.visibility = 'hidden';
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Was anyone else in the car with you during the accident?who?</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="companion" name="companion" value="${autoaccident.companion }"/><span id="companionerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.companion"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="companion" min="4" maxlength="32" onInput="return validatename1()"; name="companion" value="${autoaccident.companion }"/><span id="companionerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.companion"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Description of vehicle you were in</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="smlinput_txtbx1" id="vehicle_make" name="vehicle_make" style="width:70px" value="${autoaccident.vehicle_make }"/><span id="vehicle_makeerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.vehicle_make"></form:errors></span>
-				  <input type="text" class="smlinput_txtbx1" id="vehicle_model" name="vehicle_model" style="width:70px" value="${autoaccident.vehicle_model }" /><span id="vehicle_modelerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.vehicle_model"></form:errors></span>
+				  <input type="text" class="smlinput_txtbx1" id="vehicle_make" name="vehicle_make" style="width:70px" onInput="return validatename2()"; value="${autoaccident.vehicle_make }"/><span id="vehicle_makeerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.vehicle_make"></form:errors></span>
+				  <input type="text" class="smlinput_txtbx1" id="vehicle_model" name="vehicle_model" style="width:70px" onInput="return validatename3()"; value="${autoaccident.vehicle_model }" /><span id="vehicle_modelerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.vehicle_model"></form:errors></span>
 				  <input type="text" class="smlinput_txtbx1" id="vehicle_year" maxlength="4" name="vehicle_year" style="width:70px" onkeypress="return validate(event)"; value="${autoaccident.vehicle_year }"/><span id="vehicle_yearerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.vehicle_year"></form:errors></span>
 				  </td>
 				  </tr>
@@ -368,8 +754,8 @@ document.getElementById("injury").style.visibility = 'hidden';
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Description of other vehicle </td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="smlinput_txtbx1" id="other_vehicle_make" name="other_vehicle_make" style="width:70px" value="${autoaccident.other_vehicle_make }" /><span id="other_vehicle_makeerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.other_vehicle_make"></form:errors></span>
-				  <input type="text" class="smlinput_txtbx1" id="other_vehicle_model" name="other_vehicle_model" style="width:70px" value="${autoaccident.other_vehicle_model }" /><span id="other_vehicle_modelerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.other_vehicle_model"></form:errors></span>
+				  <input type="text" class="smlinput_txtbx1" id="other_vehicle_make" name="other_vehicle_make" onInput="return validatename4()"; style="width:70px" value="${autoaccident.other_vehicle_make }" /><span id="other_vehicle_makeerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.other_vehicle_make"></form:errors></span>
+				  <input type="text" class="smlinput_txtbx1" id="other_vehicle_model" name="other_vehicle_model" onInput="return validatename5()";style="width:70px" value="${autoaccident.other_vehicle_model }" /><span id="other_vehicle_modelerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.other_vehicle_model"></form:errors></span>
 				  <input type="text" class="smlinput_txtbx1" id="other_vehicle_year" maxlength="4" name="other_vehicle_year" style="width:70px" onkeypress="return validate(event)"; value="${autoaccident.other_vehicle_year }"/><span id="other_vehicle_yearerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.other_vehicle_year"></form:errors></span>
 				  </td>
 				  </tr>
@@ -750,49 +1136,49 @@ document.getElementById('mytext').style.display="block";
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt">My head hit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="head_hit" value="${autoaccident.head_hit }" />
+				  <input type="text" class="input_txtbx1" id="inp_id" name="head_hit" value="${autoaccident.head_hit }" onInput="return validatename(id);"/>
 				  </td>
 				  </tr>
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt">My Right Left Shoulder hit</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="rlshoulder_hit" value="${autoaccident.rlshoulder_hit }" />
+				  <input type="text" class="input_txtbx1" id="inp_id" name="rlshoulder_hit" value="${autoaccident.rlshoulder_hit }" onInput="return validatename(id);"/>
 				  </td>
 				  </tr>
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt">My Right Left Hip hit</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="rlhip_hit" value="${autoaccident.rlhip_hit }" />
+				  <input type="text" class="input_txtbx1" id="inp_id" name="rlhip_hit" value="${autoaccident.rlhip_hit }" onInput="return validatename(id);"/>
 				  </td>
 				  </tr>
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt">My Right Left Knee hit</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="rlknee_hit" value="${autoaccident.rlknee_hit }" />
+				  <input type="text" class="input_txtbx1" id="inp_id" name="rlknee_hit" value="${autoaccident.rlknee_hit }" onInput="return validatename(id);"/>
 				  </td>
 				  </tr>
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt">My Chest hit</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="chest_hit" value="${autoaccident.chest_hit }"/>
+				  <input type="text" class="input_txtbx1" id="inp_id" name="chest_hit" value="${autoaccident.chest_hit }" onInput="return validatename(id);"/>
 				  </td>
 				  </tr>
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt">My Right Left Arm hit</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="rlarm_hit" value="${autoaccident.rlarm_hit }"/>
+				  <input type="text" class="input_txtbx1" id="inp_id" name="rlarm_hit" value="${autoaccident.rlarm_hit }" onInput="return validatename(id);"/>
 				  </td>
 				  </tr>
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt">My Right Left Leg hit</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="rlleg_hit" value="${autoaccident.rlleg_hit }"/>
+				  <input type="text" class="input_txtbx1" id="inp_id" name="rlleg_hit" value="${autoaccident.rlleg_hit }" onInput="return validatename(id);"/>
 				  </td>
 				  </tr>
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt">My Other body part hit</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="otherpart_hit" value="${autoaccident.otherpart_hit }" />
+				  <input type="text" class="input_txtbx1" id="inp_id" name="otherpart_hit" value="${autoaccident.otherpart_hit }" onInput="return validatename(id);" />
 				  </td>
 				  </tr>
 				  <script>
@@ -963,14 +1349,14 @@ document.getElementById('mytext').style.display="block";
                   <td valign="middle" align="left" class="input_txt"  width = "17.5%" >Name of the hospital</td><td width="8%"></td><!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
 				  
 				 
-				  <td><input type="text" align="left" class="input_txtbx1" id="inp_id" name="hosname" value="${autoaccident.hosname }" /></td>
+				  <td><input type="text" align="left" class="input_txtbx1" id="hosname" onInput="return validatename(id);" name="hosname" value="${autoaccident.hosname }" /></td>
 				  <td width="680" ></td>
 				
 				  </tr>
 				   <tr class="row1">
                   <td valign="middle" align="left" class="input_txt">City</td><td></td><td><!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
 				  
-				  <input type="text" class="input_txtbx1" id="inp_id" name="city" value="${autoaccident.city }" />
+				  <input type="text" class="input_txtbx1" id="city" name="city" value="${autoaccident.city }"  onInput="return validatename(id);"/>
 				  </td>
 				  </tr>
 				   <tr class="row2">
@@ -996,7 +1382,7 @@ document.getElementById('mytext').style.display="block";
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt">What body parts were x-rayed,what treatment was given
 				  </td><td></td><td>
-				  <input type="text" class="input_txtbx1" id="inp_id" name="xray" value="${autoaccident.xray }" />
+				  <input type="text" class="input_txtbx1" id="xray" name="xray" value="${autoaccident.xray }" onInput="return validatename(id)";min="4" maxlength="32"/>
 				  </td>
 				  <td ></td>
 				 
@@ -1004,7 +1390,7 @@ document.getElementById('mytext').style.display="block";
 				   <tr class="row1">
                   <td valign="middle"  align="left" class="input_txt">What did they tell you was wrong<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
 				  </td><td></td><td>
-				  <input type="text" class="input_txtbx1" id="inp_id" name="wrong" value="${autoaccident.wrong }" />
+				  <input type="text" onInput="return validatename(id);" class="input_txtbx1" id="wrong" name="wrong" value="${autoaccident.wrong }" />
 				  </td>
 				  
 				  </tr>
