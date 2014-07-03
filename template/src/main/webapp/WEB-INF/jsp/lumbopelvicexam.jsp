@@ -213,7 +213,7 @@ document.getElementById("pnameerror").innerHTML=" ";
 	        return false;
 	    }	
 		
-		if(document.getElementById("othernoteserror").value!="")
+		/* if(document.getElementById("othernoteserror").value!="")
 			{
 			
 			if(document.getElementById("othernotes").value.length<4 || document.getElementById("othernotes").value.length>=32)
@@ -225,7 +225,7 @@ document.getElementById("pnameerror").innerHTML=" ";
 		    }
 			
 			
-			}
+			} */
 	document.getElementById("signerror").innerHTML="";
 	if(document.getElementById("sign").value=="")
 	{
