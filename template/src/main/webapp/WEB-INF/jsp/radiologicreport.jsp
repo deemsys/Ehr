@@ -35,55 +35,894 @@ $(function() {
   {
   
 	  document.getElementById("pnameerror").innerHTML="";
+	  document.getElementById("datepickererror").innerHTML="";
+	  document.getElementById("numerror").innerHTML="";
+	  var error="";
 		if(document.getElementById("pname").value=="")
 		{
 		document.getElementById("pnameerror").innerHTML="Required Field Should not be Empty";
-		
-		return false;
+		error="true";
+		//return false;
 		}
-  document.getElementById("datepickererror").innerHTML="";
+		else if((document.getElementById("pname").value.length < 4 ) || (document.getElementById("pname").value.length > 45 ))
+			{
+			document.getElementById("pnameerror").innerHTML="Required Field Should be 4 to 45";
+			error="true";
+			//return false;
+			}
+ 
 	if(document.getElementById("datepicker").value=="")
 	{
 	document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
-	
-	return false;
+	error="true";
+	//return false;
 	}
 	 document.getElementById("datepickererror").innerHTML="";
 	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 	if(document.getElementById("datepicker").value.match(datechk)==null)
     {
     	document.getElementById("datepickererror").innerHTML="Invalid Date Format";
-    	
-        return false;
+    	error="true";
+      //  return false;
     }
-	document.getElementById("numerror").innerHTML="";
+	
 	if(document.getElementById("num").value=="")
 	{
 	document.getElementById("numerror").innerHTML="Required Field Should not be Empty";
-	
-	return false;
+	error="true";
+	//return false;
 	}
-	document.getElementById("numerror").innerHTML="";
+	else if((document.getElementById("num").value.length < 4 ) || (document.getElementById("num").value.length > 32 ))
+	{
+	document.getElementById("numerror").innerHTML="Required Field Should be 4 to 32";
+	error="true";
+	//return false;
+	}
+	
 	if(isNaN(document.getElementById("num").value))
 	{
 	document.getElementById("numerror").innerHTML="Enter Only Numbers";
-	return false;
+	error="true";
+	//return false;
 	}
 		document.getElementById("datepicker1error").innerHTML="";
 		if(document.getElementById("datepicker1").value=="")
 		{
 		document.getElementById("datepicker1error").innerHTML="Required Field Should not be Empty";
-		
-		return false;
+		error="true";
+		//return false;
 		}
 		document.getElementById("datepicker1error").innerHTML="";
 		var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		if(document.getElementById("datepicker1").value.match(datechk)==null)
 	    {
 	    	document.getElementById("datepicker1error").innerHTML="Invalid Date Format";
-	    	
-	        return false;
+	    	error="true";
+	        //return false;
 	    }
+		
+   	   var regex = /^[A-Za-z0-9 ]*$/;
+   	   var alpha = /^[A-Za-z ]*$/; 
+   	   if(document.getElementById("break_georges").checked)
+   		   {
+   	   if(document.getElementById("break1").value == "")
+     	   {
+     	  
+     	   document.getElementById("break1eror").innerHTML="Required Field should not be blank";
+     	    error="true";
+     	   }
+   	   else if(document.getElementById("break1").value.charAt(0) == " ")
+     	   {
+     	  
+     	   document.getElementById("break1eror").innerHTML="Initial space not allowed";
+     	    error="true";
+     	   }
+   	   else if(document.getElementById("break1").value.match(regex))
+   		   {
+   		if((document.getElementById("break1").value.length < 4 ) || (document.getElementById("break1").value.length > 45 ))
+			{
+			  document.getElementById("break1eror").innerHTML="Required Field should be 4 to 45";
+   	    error="true";
+			}
+			else{
+				 document.getElementById("break1eror").innerHTML="";
+			}
+   		   
+   		  
+   		   }
+   	   else
+   		   {
+   		   document.getElementById("break1eror").innerHTML="Required Field should be Alpha-Numeric";
+         	    error="true";
+   		   }
+   	   
+   		   }
+   	   else{
+   		   document.getElementById("break1eror").innerHTML="";
+   	   }
+   	   
+    
+   	   if(document.getElementById("narrowed_1").checked)
+   		   {
+   	   if(document.getElementById("narrowed1").value == "")
+     	   {
+     	  
+     	   document.getElementById("narrowed1eror").innerHTML="Required Field should not be blank";
+     	    error="true";
+     	   }
+   	   else if(document.getElementById("narrowed1").value.charAt(0) == " ")
+     	   {
+     	  
+     	   document.getElementById("narrowed1eror").innerHTML="Initial space not allowed";
+     	    error="true";
+     	   }
+   	   else if(document.getElementById("narrowed1").value.match(alpha))
+   		   {
+   		if((document.getElementById("narrowed1").value.length < 4 ) || (document.getElementById("narrowed1").value.length > 45 ))
+		{
+		  document.getElementById("narrowed1eror").innerHTML="Required Field should be 4 to 45";
+	    error="true";
+		}
+		else{
+			 document.getElementById("narrowed1eror").innerHTML="";
+		}
+   		  
+   		   }
+   	   else
+   		   {
+   		   document.getElementById("narrowed1eror").innerHTML="Required Field should be Alphabates";
+         	    error="true";
+   		   }
+   	   
+   		   }
+   	   else{
+   		   document.getElementById("narrowed1eror").innerHTML="";
+   	   }
+   	   
+   
+   	   if(document.getElementById("anterior_12").checked)
+		   {
+   		  
+		   if(document.getElementById("anterior1").value == "")
+ 	   		{
+ 	  
+ 	 		  document.getElementById("anterior2err").innerHTML="Required Field should not be blank";
+ 	  		  error="true";
+ 	   		}
+	   		else if(document.getElementById("anterior1").value.charAt(0) == " ")
+ 	   		{
+ 	  
+ 	   			document.getElementById("anterior2err").innerHTML="Initial space not allowed";
+ 	   			 error="true";
+ 	   		}
+	   		else if(document.getElementById("anterior1").value.match(alpha))
+		   {
+	   			if((document.getElementById("anterior1").value.length < 4 ) || (document.getElementById("anterior1").value.length > 45 ))
+				{
+				  document.getElementById("anterior2err").innerHTML="Required Field should be 4 to 45";
+	   	    error="true";
+				}
+				else{
+					 document.getElementById("anterior2err").innerHTML="";
+				}
+		  
+		   }
+	   		else
+		   {
+		   document.getElementById("anterior2err").innerHTML="Required Field should be Alphabates";
+     	    error="true";
+		   }
+	   
+		   }
+	   else{
+		   document.getElementById("anterior2err").innerHTML="";
+	   }
+	   
+     
+	  
+   	   
+   	   if(document.getElementById("schmorls_1").checked)
+		   {
+   		  
+		   if(document.getElementById("schmorls1").value == "")
+ 	   		{
+ 	  
+ 	 		  document.getElementById("schmorls11").innerHTML="Required Field should not be blank";
+ 	  		  error="true";
+ 	   		}
+	   		else if(document.getElementById("schmorls1").value.charAt(0) == " ")
+ 	   		{
+ 	  
+ 	   			document.getElementById("schmorls11").innerHTML="Initial space not allowed";
+ 	   			 error="true";
+ 	   		}
+	   		else if(document.getElementById("schmorls1").value.match(alpha))
+		   {
+	   			if((document.getElementById("schmorls1").value.length < 4 ) || (document.getElementById("schmorls1").value.length > 45 ))
+				{
+				  document.getElementById("schmorls11").innerHTML="Required Field should be 4 to 45";
+	   	    error="true";
+				}
+				else{
+					document.getElementById("schmorls11").innerHTML="";
+				}
+		   
+		   }
+	   		else
+		   {
+		   document.getElementById("schmorls11").innerHTML="Required Field should be Alphabates";
+     	    error="true";
+		   }
+	   
+		   }
+	   else{
+		   document.getElementById("schmorls11").innerHTML="";
+	   }
+	   
+    
+		
+	  
+	  
+   	   
+   	   if(document.getElementById("subchondral_1").checked)
+		   {
+   		  
+		   if(document.getElementById("subchondral1").value == "")
+ 	   		{
+ 	  
+ 	 		  document.getElementById("subchondral11").innerHTML="Required Field should not be blank";
+ 	  		  error="true";
+ 	   		}
+	   		else if(document.getElementById("subchondral1").value.charAt(0) == " ")
+ 	   		{
+ 	  
+ 	   			document.getElementById("subchondral11").innerHTML="Initial space not allowed";
+ 	   			 error="true";
+ 	   		}
+	   		else if(document.getElementById("subchondral1").value.match(alpha))
+		   {
+	   			if((document.getElementById("subchondral1").value.length < 4 ) || (document.getElementById("subchondral1").value.length > 45 ))
+				{
+				  document.getElementById("subchondral11").innerHTML="Required Field should be 4 to 45";
+	   	    error="true";
+				}
+				else{
+					 document.getElementById("subchondral11").innerHTML="";
+				}
+		  
+		   }
+	   		else
+		   {
+		   document.getElementById("subchondral11").innerHTML="Required Field should be Alphabates";
+     	    error="true";
+		   }
+	   
+		   }
+	   else{
+		   document.getElementById("subchondral11").innerHTML="";
+	   }
+	   
+    
+		
+	  
+	  
+   	   
+   	   if(document.getElementById("apexat_1").checked)
+		   {
+   		  
+		   if(document.getElementById("apexat1").value == "")
+ 	   		{
+ 	  
+ 	 		  document.getElementById("apexat1error").innerHTML="Required Field should not be blank";
+ 	  		  error="true";
+ 	   		}
+	   		else if(document.getElementById("apexat1").value.charAt(0) == " ")
+ 	   		{
+ 	  
+ 	   			document.getElementById("apexat1error").innerHTML="Initial space not allowed";
+ 	   			 error="true";
+ 	   		}
+	   		else if(document.getElementById("apexat1").value.match(alpha))
+		   {
+	   			if((document.getElementById("apexat1").value.length < 4 ) || (document.getElementById("apexat1").value.length > 45 ))
+				{
+				  document.getElementById("apexat1error").innerHTML="Required Field should be 4 to 45";
+	   	    error="true";
+				}
+				else{
+					document.getElementById("apexat1error").innerHTML="";
+				}
+		   
+		   }
+	   		else
+		   {
+		   document.getElementById("apexat1error").innerHTML="Required Field should be Alphabates";
+     	    error="true";
+		   }
+	   
+		   }
+	   else{
+		   document.getElementById("apexat1error").innerHTML="";
+	   }
+	   
+     
+		
+	  
+	   
+   	   
+   	   if(document.getElementById("softtissueedemaof_1").checked)
+		   {
+   		  
+		   if(document.getElementById("softtissueedemaof1").value == "")
+ 	   		{
+ 	  
+ 	 		  document.getElementById("softtissueedemaof1error").innerHTML="Required Field should not be blank";
+ 	  		  error="true";
+ 	   		}
+	   		else if(document.getElementById("softtissueedemaof1").value.charAt(0) == " ")
+ 	   		{
+ 	  
+ 	   			document.getElementById("softtissueedemaof1error").innerHTML="Initial space not allowed";
+ 	   			 error="true";
+ 	   		}
+	   		else if(document.getElementById("softtissueedemaof1").value.match(alpha))
+		   {
+	   			if((document.getElementById("softtissueedemaof1").value.length < 4 ) || (document.getElementById("softtissueedemaof1").value.length > 45 ))
+				{
+				  document.getElementById("softtissueedemaof1error").innerHTML="Required Field should be 4 to 45";
+	   	 		   error="true";
+				}
+				else{
+					document.getElementById("softtissueedemaof1error").innerHTML="";
+				}
+		   
+		   }
+	   		else
+		   {
+		   document.getElementById("softtissueedemaof1error").innerHTML="Required Field should be Alphabates";
+     	    error="true";
+		   }
+	   
+		   }
+	   else{
+		   document.getElementById("softtissueedemaof1error").innerHTML="";
+	   }
+	   
+      
+	
+	
+		
+	  
+	 
+   	   
+   	   if(document.getElementById("other_1").checked)
+		   {
+   		  
+		   if(document.getElementById("other1").value == "")
+ 	   		{
+ 	  
+ 	 		  document.getElementById("other1error").innerHTML="Required Field should not be blank";
+ 	  		  error="true";
+ 	   		}
+	   		else if(document.getElementById("other1").value.charAt(0) == " ")
+ 	   		{
+ 	  
+ 	   			document.getElementById("other1error").innerHTML="Initial space not allowed";
+ 	   			 error="true";
+ 	   		}
+	   		else if(document.getElementById("other1").value.match(alpha))
+		   {
+	   			if((document.getElementById("other1").value.length < 4 ) || (document.getElementById("other1").value.length > 45 ))
+				{
+				  document.getElementById("other1error").innerHTML="Required Field should be 4 to 45";
+	   	  			  error="true";
+				}
+				else{
+					document.getElementById("other1error").innerHTML="";
+				}
+		   
+		   }
+	   		else
+		   {
+		   document.getElementById("other1error").innerHTML="Required Field should be Alphabates";
+     	    error="true";
+		   }
+	   
+		   }
+	   else{
+		   document.getElementById("other1error").innerHTML="";
+	   }
+	   
+      
+   	 if(document.getElementById("degenerative_2").checked)
+	   {
+		  
+	   if(document.getElementById("degenerative2").value == "")
+   		{
+  
+ 		  document.getElementById("degenerative2error").innerHTML="Required Field should not be blank";
+  		  error="true";
+   		}
+ 		else if(document.getElementById("degenerative2").value.charAt(0) == " ")
+   		{
+  
+   			document.getElementById("degenerative2error").innerHTML="Initial space not allowed";
+   			 error="true";
+   		}
+ 		else if(document.getElementById("degenerative2").value.match(alpha))
+	   {
+ 			if((document.getElementById("degenerative2").value.length < 4 ) || (document.getElementById("degenerative2").value.length > 45 ))
+ 			{
+ 			  document.getElementById("degenerative2error").innerHTML="Required Field should be 4 to 45";
+       	    error="true";
+ 			}
+ 			else{
+	 			  document.getElementById("degenerative2error").innerHTML="";
+ 			}
+	   }
+ 		else
+	   {
+	   document.getElementById("degenerative2error").innerHTML="Required Field should be Alphabates";
+	    error="true";
+	   }
+ 
+	   }
+ else{
+	   document.getElementById("degenerative2error").innerHTML="";
+ 	}
+   	 
+   	 
+	  
+     if(document.getElementById("narrowed_2").checked)
+	   {
+		  
+	   if(document.getElementById("narrowed2").value == "")
+   		{
+  
+ 		  document.getElementById("narrowed2error").innerHTML="Required Field should not be blank";
+  		  error="true";
+   		}
+ 		else if(document.getElementById("narrowed2").value.charAt(0) == " ")
+   		{
+  
+   			document.getElementById("narrowed2error").innerHTML="Initial space not allowed";
+   			 error="true";
+   		}
+ 		else if(document.getElementById("narrowed2").value.match(alpha))
+	   {
+ 			if((document.getElementById("narrowed2").value.length < 4 ) || (document.getElementById("narrowed2").value.length > 45 ))
+ 			{
+ 			  document.getElementById("narrowed2error").innerHTML="Required Field should be 4 to 45";
+       	    error="true";
+ 			}
+ 			else{
+	 			  document.getElementById("narrowed2error").innerHTML="";
+ 			}
+	   }
+ 		else
+	   {
+	   document.getElementById("narrowed2error").innerHTML="Required Field should be Alphabates";
+	    error="true";
+	   }
+ 
+	   }
+ 		else{
+			   document.getElementById("narrowed2error").innerHTML="";
+ 		}
+ 
+     if(document.getElementById("schmorlsnodesat_2").checked)
+	   {
+		  
+	   if(document.getElementById("schmorlsnodesat2").value == "")
+   		{
+  
+ 		  document.getElementById("schmorlsnodesat2error").innerHTML="Required Field should not be blank";
+  		  error="true";
+   		}
+ 		else if(document.getElementById("schmorlsnodesat2").value.charAt(0) == " ")
+   		{
+  
+   			document.getElementById("schmorlsnodesat2error").innerHTML="Initial space not allowed";
+   			 error="true";
+   		}
+ 		else if(document.getElementById("schmorlsnodesat2").value.match(alpha))
+	   {
+ 			if((document.getElementById("schmorlsnodesat2").value.length < 4 ) || (document.getElementById("schmorlsnodesat2").value.length > 45 ))
+ 			{
+ 			  document.getElementById("schmorlsnodesat2error").innerHTML="Required Field should be 4 to 45";
+       	    error="true";
+ 			}
+ 			else{
+	 			  document.getElementById("schmorlsnodesat2error").innerHTML="";
+ 			}
+	   }
+ 		else
+	   {
+	   document.getElementById("schmorlsnodesat2error").innerHTML="Required Field should be Alphabates";
+	    error="true";
+	   }
+ 
+	   }
+	 else{
+	 	  document.getElementById("schmorlsnodesat2error").innerHTML="";
+ 	}
+     
+     if(document.getElementById("anterior_2").checked)
+	   {
+		  
+	   if(document.getElementById("anterior2").value == "")
+   		{
+  
+ 		  document.getElementById("anterior2error").innerHTML="Required Field should not be blank";
+  		  error="true";
+   		}
+ 		else if(document.getElementById("anterior2").value.charAt(0) == " ")
+   		{
+  
+   			document.getElementById("anterior2error").innerHTML="Initial space not allowed";
+   			 error="true";
+   		}
+ 		else if(document.getElementById("anterior2").value.match(alpha))
+	   {
+ 			if((document.getElementById("anterior2").value.length < 4 ) || (document.getElementById("anterior2").value.length > 45 ))
+ 			{
+ 			  document.getElementById("anterior2error").innerHTML="Required Field should be 4 to 45";
+       	    error="true";
+ 			}
+ 			else{
+	 			  document.getElementById("anterior2error").innerHTML="";
+ 			}
+	   }
+ 		else
+	   {
+	   document.getElementById("anterior2error").innerHTML="Required Field should be Alphabates";
+	    error="true";
+	   }
+ 
+	   }
+ else{
+	   document.getElementById("anterior2error").innerHTML="";
+ }
+     if(document.getElementById("subchondral_2").checked)
+	   {
+		  
+	   if(document.getElementById("subchondral2").value == "")
+   		{
+  
+ 		  document.getElementById("subchondral2error").innerHTML="Required Field should not be blank";
+  		  error="true";
+   		}
+ 		else if(document.getElementById("subchondral2").value.charAt(0) == " ")
+   		{
+  
+   			document.getElementById("subchondral2error").innerHTML="Initial space not allowed";
+   			 error="true";
+   		}
+ 		else if(document.getElementById("subchondral2").value.match(alpha))
+	   {
+ 			if((document.getElementById("subchondral2").value.length < 4 ) || (document.getElementById("subchondral2").value.length > 45 ))
+ 			{
+ 			  document.getElementById("subchondral2error").innerHTML="Required Field should be 4 to 45";
+       	    error="true";
+ 			}
+ 			else{
+	 			  document.getElementById("subchondral2error").innerHTML="";
+ 			}
+	   }
+ 		else
+	   {
+	   document.getElementById("subchondral2error").innerHTML="Required Field should be Alphabates";
+	    error="true";
+	   }
+ 
+	   }
+ else{
+	   document.getElementById("subchondral2error").innerHTML="";
+ }
+     if(document.getElementById("foraminal_2").checked)
+	   {
+		  
+	   if(document.getElementById("foraminal2").value == "")
+   		{
+  
+ 		  document.getElementById("foraminal2error").innerHTML="Required Field should not be blank";
+  		  error="true";
+   		}
+ 		else if(document.getElementById("foraminal2").value.charAt(0) == " ")
+   		{
+  
+   			document.getElementById("foraminal2error").innerHTML="Initial space not allowed";
+   			 error="true";
+   		}
+ 		else if(document.getElementById("foraminal2").value.match(alpha))
+	   {
+ 			if((document.getElementById("foraminal2").value.length < 4 ) || (document.getElementById("foraminal2").value.length > 45 ))
+ 			{
+ 			  document.getElementById("foraminal2error").innerHTML="Required Field should be 4 to 45";
+       	    error="true";
+ 			}
+ 			else{
+	 			  document.getElementById("foraminal2error").innerHTML="";
+ 			}
+	   }
+ 		else
+	   {
+	   document.getElementById("foraminal2error").innerHTML="Required Field should be Alphabates";
+	    error="true";
+	   }
+ 
+	   }
+ else{
+	   document.getElementById("foraminal2error").innerHTML="";
+ }
+     if(document.getElementById("apexat_2").checked)
+	   {
+		  
+	   if(document.getElementById("apexat2").value == "")
+   		{
+  
+ 		  document.getElementById("apexat2error").innerHTML="Required Field should not be blank";
+  		  error="true";
+   		}
+ 		else if(document.getElementById("apexat2").value.charAt(0) == " ")
+   		{
+  
+   			document.getElementById("apexat2error").innerHTML="Initial space not allowed";
+   			 error="true";
+   		}
+ 		else if(document.getElementById("apexat2").value.match(alpha))
+	   {
+ 			if((document.getElementById("apexat2").value.length < 4 ) || (document.getElementById("apexat2").value.length > 45 ))
+ 			{
+ 			  document.getElementById("apexat2error").innerHTML="Required Field should be 4 to 45";
+       	    error="true";
+ 			}
+ 			else{
+	 			  document.getElementById("apexat2error").innerHTML="";
+ 			}
+	   }
+ 		else
+	   {
+	   document.getElementById("apexat2error").innerHTML="Required Field should be Alphabates";
+	    error="true";
+	   }
+ 
+	   }
+ else{
+	   document.getElementById("apexat2error").innerHTML="";
+ }
+     
+	   if(document.getElementById("softtissueedemaof_2").checked)
+	   {
+		  
+	   if(document.getElementById("softtissueedemaof2").value == "")
+   		{
+  
+ 		  document.getElementById("softtissueedemaof2error").innerHTML="Required Field should not be blank";
+  		  error="true";
+   		}
+ 		else if(document.getElementById("softtissueedemaof2").value.charAt(0) == " ")
+   		{
+  
+   			document.getElementById("softtissueedemaof2error").innerHTML="Initial space not allowed";
+   			 error="true";
+   		}
+ 		else if(document.getElementById("softtissueedemaof2").value.match(alpha))
+	   {
+ 			if((document.getElementById("softtissueedemaof2").value.length < 4 ) || (document.getElementById("softtissueedemaof2").value.length > 45 ))
+ 			{
+ 			  document.getElementById("softtissueedemaof2error").innerHTML="Required Field should be 4 to 45";
+       	    error="true";
+ 			}
+ 			else{
+	 			  document.getElementById("softtissueedemaof2error").innerHTML="";
+ 			}
+	   }
+ 		else
+	   {
+	   document.getElementById("softtissueedemaof2error").innerHTML="Required Field should be Alphabates";
+	   error="true";
+	  // return false;
+	   }
+ 
+	   }
+ else{
+	   document.getElementById("softtissueedemaof2error").innerHTML="";
+ }
+	   if(document.getElementById("other_2").checked)
+	   {
+		  
+	   if(document.getElementById("other2").value == "")
+	   		{
+	  
+	 		  document.getElementById("other2error").innerHTML="Required Field should not be blank";
+	 		 error="true";
+	  	//	 return false;
+	   		}
+   		else if(document.getElementById("other2").value.charAt(0) == " ")
+	   		{
+	  
+	   			document.getElementById("other2error").innerHTML="Initial space not allowed";
+	   		 error="true";
+	   		//	return false;
+	   		}
+   		else if(document.getElementById("other2").value.match(alpha))
+	   {
+   			if((document.getElementById("other2").value.length < 4 ) || (document.getElementById("other2").value.length > 45 ))
+   			{
+   			  document.getElementById("other2error").innerHTML="Required Field should be 4 to 45";
+   			 error="true";
+         //	   return false;
+   			}
+   			else{
+	 			  document.getElementById("other2error").innerHTML="";
+   			}
+	   }
+   		else
+	   {
+	   document.getElementById("other2error").innerHTML="Required Field should be Alphabates";
+	   error="true";
+  	 //  return false;
+	   }
+   
+	   }
+   else{
+	   document.getElementById("other2error").innerHTML="";
+   }
+	   if(document.getElementById("break_3").checked)
+	   {
+		  
+	   if(document.getElementById("break3").value == "")
+	   		{
+	  
+	 		  document.getElementById("break3error").innerHTML="Required Field should not be blank";
+	 		 error="true";
+	  		// return false;
+	   		}
+   		else if(document.getElementById("break3").value.charAt(0) == " ")
+	   		{
+	  
+	   			document.getElementById("break3error").innerHTML="Initial space not allowed";
+	   		 error="true";
+	   		//	return false;
+	   		}
+   		else if(document.getElementById("break3").value.match(alpha))
+	   {
+   			if((document.getElementById("break3").value.length < 4 ) || (document.getElementById("break3").value.length > 45 ))
+   			{
+   			  document.getElementById("break3error").innerHTML="Required Field should be 4 to 45";
+   			 error="true";
+         	   //return false;
+   			}
+   			else{
+	 			  document.getElementById("break3error").innerHTML="";
+   			}
+	   }
+   		else
+	   {
+	   document.getElementById("break3error").innerHTML="Required Field should be Alphabates";
+	   error="true";
+  	//   return false;
+	   }
+   
+	   }
+   else{
+	   document.getElementById("break3error").innerHTML="";
+   }
+	   
+	   if(document.getElementById("narrowed_3").checked)
+	   {
+		  
+	   if(document.getElementById("narrowed3").value == "")
+	   		{
+	  
+	 		  document.getElementById("narrowed3error").innerHTML="Required Field should not be blank";
+	 		 error="true";
+	  		//return false;
+	   		}
+   		else if(document.getElementById("narrowed3").value.charAt(0) == " ")
+	   		{
+	  
+	   			document.getElementById("narrowed3error").innerHTML="Initial space not allowed";
+	   		 error="true";
+	   		//	return false;
+	   		}
+   		else if(document.getElementById("narrowed3").value.match(alpha))
+	   {
+   			if((document.getElementById("narrowed3").value.length < 4 ) || (document.getElementById("narrowed3").value.length > 45 ))
+   			{
+   			  document.getElementById("narrowed3error").innerHTML="Required Field should be 4 to 45";
+   			 error="true";
+         	  // return false;
+   			}
+   			else{
+	 			  document.getElementById("narrowed3error").innerHTML="";
+   			}
+	   }
+   		else
+	   {
+	   document.getElementById("narrowed3error").innerHTML="Required Field should be Alphabates";
+	   error="true";
+  	  // return false;
+	   }
+   
+	   }
+   else{
+	   document.getElementById("narrowed3error").innerHTML="";
+   }
+	   
+	   if(document.getElementById("subchondral_3").checked)
+	   {
+		  
+	   if(document.getElementById("subchondral3").value.charAt(0) == " ")
+	   		{
+	  
+	   			document.getElementById("subchondral3error").innerHTML="Initial space not allowed";
+	   			 error="true";
+	   		}
+   		else if(document.getElementById("subchondral3").value.match(alpha))
+	   {
+   			if((document.getElementById("subchondral3").value.length < 4 ) || (document.getElementById("subchondral3").value.length > 45 ))
+   			{
+   			  document.getElementById("subchondral3error").innerHTML="Required Field should be 4 to 45";
+         	    error="true";
+   			}
+   			else{
+	 			  document.getElementById("subchondral3error").innerHTML="";
+   			}
+	   }
+   		else
+	   {
+	   document.getElementById("subchondral3error").innerHTML="Required Field should be Alphabates";
+  	    error="true";
+	   }
+   
+	   }
+   else{
+	   document.getElementById("subchondral3error").innerHTML="";
+   }
+	   
+	   if(document.getElementById("anterior_3").checked)
+	   {
+		   if(document.getElementById("anterior3").value == "")
+ 	   		{
+ 	  
+ 	 		 document.getElementById("anterior3error").innerHTML="Required Field should not be blank";
+ 	 		error="true";
+ 	   		}
+		   else  if(document.getElementById("anterior3").value.charAt(0) == " ")
+	   		{
+	  
+	   			document.getElementById("anterior3error").innerHTML="Initial space not allowed";
+	   		 error="true";
+	   		}
+   		else if(document.getElementById("anterior3").value.match(alpha))
+	   {
+   			if((document.getElementById("anterior3").value.length < 4 ) || (document.getElementById("anterior3").value.length > 45 ))
+   			{
+   			  document.getElementById("anterior3error").innerHTML="Required Field should be 4 to 45";
+   			 error="true";
+   			}
+   			else{
+	 			  document.getElementById("anterior3error").innerHTML="";
+   			}
+	   }
+   		else
+	   {
+	   document.getElementById("anterior3error").innerHTML="Required Field should be Alphabates";
+	   error="true";
+	   }
+   
+	   }
+   else{
+	   document.getElementById("anterior3error").innerHTML="";
+   }
+   
+   
+	   if(error == "true")
+		{
+		return false;
+		}
   }
   
   </script>
@@ -218,7 +1057,7 @@ $(function() {
     				<table cellpadding="0" cellspacing="0" border="0" width="100%">
 	                            <tr class="row1">
 				                  <td><span class="err">*</span>Patient Name:</td>
-				                  <td><input type="text" class="input_txtbx1" id="pname" name="pname" value="${name}"/><br/><span id="pnameerror" style="color: red;font-style:italic;"><form:errors path="RadiologicReport.pname"></form:errors></td>
+				                  <td><input type="text" class="input_txtbx1" id="pname" name="pname" onkeypress="return validate1(event,id)";  value="${name}"/><br/><span id="pnameerror" style="color: red;font-style:italic;"><form:errors path="RadiologicReport.pname"></form:errors></td>
 				                  <td><span class="err">*</span>Date:</td>
 				                  <td><input type="text" class="input_txtbx1" id="datepicker"  name="date" /><br/><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="RadiologicReport.date"></form:errors></td>
 				                  <td><span class="err">*</span>I.D.#:</td>
@@ -237,7 +1076,68 @@ $(function() {
 				    </td>
 				    </tr>
 				    </table>
-				    
+				    <script type="text/javascript">
+       function validate1(event,id) {
+        
+    
+        
+           var regex = new RegExp("^[A-Za-z ]+$");
+           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+           if (!regex.test(key)) {
+             
+               event.preventDefault();
+               return false;
+           }
+         
+           if(document.getElementById(id).value.substring(0,1)==" ")
+        	{
+        	
+        	   if(id == "pname"){
+        		document.getElementById("pnameerror").innerHTML="Initial space not allowed";
+        	   }
+        	   if(id == "posi")
+        		   {
+        		   document.getElementById("positive1error").innerHTML="Initial space not allowed";
+        		   
+        		   }
+        	  /*  if(id=="diagonosis")
+        		   {
+        		   document.getElementById("diagnosiserr").innerHTML="Initial space not allowed";
+        		   
+        		   }
+        	   if(id=="sign")
+        		   {
+        		   document.getElementById("signerror").innerHTML="Initial space not allowed";
+        		   }
+        	 */
+        	   
+        		document.getElementById(id).value == "";
+        		return false;
+        	}
+           else{
+        	   if(id == "pname"){
+        		   document.getElementById("pnameerr").innerHTML="";
+           	   }
+        	   if(id == "posi")
+    		   {
+    		   document.getElementById("positive1error").innerHTML="";
+    		   
+    		   }
+           	  /*  if(id="diagonosis")
+           		   {
+           		document.getElementById("diagnosiserr").innerHTML="";
+           		   
+           		   }
+           	 if(id="sign")
+  		   {
+  		   document.getElementById("signerror").innerHTML="";
+  		   }
+           	 */
+        	   
+           }
+           
+       } 
+       </script>
 <div id="tabs">
        <ul>
           <li><a href="#tabs-1" id="tab1">Cervical Spine</a></li>
@@ -285,11 +1185,964 @@ $(function() {
 				                  </tr> 
 				                   	 <tr class="row2">
 				             
-				                 <td class="input_txt" align="left"> Positive for recent fracture, dislocation or gross Osteopathology<input type="text"  class="input_txtbx1"  name="positive_for"  /> 
-				                 		<input type="text" class="input_txtbx1" style="visibility:hidden" id="positive1" name="positive_text1" />
+				                 <td class="input_txt" align="left"> Positive for recent fracture, dislocation or gross Osteopathology<input type="text"  class="input_txtbx1"  id="posi"onkeypress="return validate1(event,id)"; value=""name="positive_for"  /> 
+				                 		<input type="text" class="input_txtbx1" style="visibility:hidden" id="positive1"  name="positive_text1" /><br>
+				                 		<span id="positive1error" style="color:red"></span>
 				                 </td>
-				                 <td class="input_txt"><input type="checkbox" name="break_1" value="Break in Georges" onclick="this.form.break1.style.visibility = this.checked? 'visible' : 'hidden'"/> Break in Georges line at 
-				           		        <input type="text" class="input_txtbx1" id="break1" name="break_text1" style="visibility:hidden" />
+	 <script type="text/javascript">
+	function validate2(id)
+       {
+		
+    	   var regex = /^[A-Za-z0-9 ]*$/;
+    	   var alpha = /^[A-Za-z ]*$/;
+    	   if(document.getElementById("break_georges").checked)
+   		   {
+   	   if(document.getElementById("break1").value == "")
+     	   {
+     	  
+     	  // document.getElementById("break1eror").innerHTML="Required Field should not be blank";
+     	 //  return false;
+     	   }
+   	   else if(document.getElementById("break1").value.charAt(0) == " ")
+     	   {
+     	  
+     	   document.getElementById("break1eror").innerHTML="Initial space not allowed";
+     	   return false;
+     	   }
+   	   else if(document.getElementById("break1").value.match(regex))
+   		   {
+   		if((document.getElementById("break1").value.length < 4 ) || (document.getElementById("break1").value.length > 45 ))
+			{
+			  document.getElementById("break1eror").innerHTML="Required Field should be 4 to 45";
+   	   return false;
+			}
+			else{
+				 document.getElementById("break1eror").innerHTML="";
+			}
+   		   
+   		  
+   		   }
+   	   else
+   		   {
+   		   document.getElementById("break1eror").innerHTML="Required Field should be Alpha-Numeric";
+         	   return false;
+   		   }
+   	   
+   		   }
+   	   else{
+   		   document.getElementById("break1eror").innerHTML="";
+   	   }
+       }
+	function validate3(id)
+    {
+		
+ 	   
+ 	   var alpha = /^[A-Za-z ]*$/;
+    	   
+    	   
+ 	  if(document.getElementById("narrowed_1").checked)
+		   {
+	   if(document.getElementById("narrowed1").value == "")
+	   {
+	  
+	   //document.getElementById("narrowed1eror").innerHTML="Required Field should not be blank";
+	  // return false;
+	   }
+	   else if(document.getElementById("narrowed1").value.charAt(0) == " ")
+	   {
+	  
+	   document.getElementById("narrowed1eror").innerHTML="Initial space not allowed";
+	   return false;
+	   }
+	   else if(document.getElementById("narrowed1").value.match(alpha))
+		   {
+		if((document.getElementById("narrowed1").value.length < 4 ) || (document.getElementById("narrowed1").value.length > 45 ))
+	{
+	  document.getElementById("narrowed1eror").innerHTML="Required Field should be 4 to 45";
+  return false;
+	}
+	else{
+		 document.getElementById("narrowed1eror").innerHTML="";
+	}
+		  
+		   }
+	   else
+		   {
+		   document.getElementById("narrowed1eror").innerHTML="Required Field should be Alphabates";
+    	   return false;
+		   }
+	   
+		   }
+	   else{
+		   document.getElementById("narrowed1eror").innerHTML="";
+	   }
+    	   
+    }  
+	function validate4(id)
+    {
+		
+ 	  
+ 	   var alpha = /^[A-Za-z ]*$/; 
+    	   
+ 	  if(document.getElementById("anterior_12").checked)
+	   {
+		  
+	   if(document.getElementById("anterior1").value == "")
+   		{
+  
+ 		//  document.getElementById("anterior2err").innerHTML="Required Field should not be blank";
+  		// return false;
+   		}
+  		else if(document.getElementById("anterior1").value.charAt(0) == " ")
+   		{
+  
+   			document.getElementById("anterior2err").innerHTML="Initial space not allowed";
+   			return false;
+   		}
+  		else if(document.getElementById("anterior1").value.match(alpha))
+	   {
+  			if((document.getElementById("anterior1").value.length < 4 ) || (document.getElementById("anterior1").value.length > 45 ))
+			{
+			  document.getElementById("anterior2err").innerHTML="Required Field should be 4 to 45";
+  	   return false;
+			}
+			else{
+				 document.getElementById("anterior2err").innerHTML="";
+			}
+	  
+	   }
+  		else
+	   {
+	   document.getElementById("anterior2err").innerHTML="Required Field should be Alphabates";
+	   return false;
+	   }
+  
+	   }
+  		else{
+		   document.getElementById("anterior2err").innerHTML="";
+	  }
+	   
+     }
+	
+	function validate5(id)
+    {
+		
+ 	  
+ 	   var alpha = /^[A-Za-z ]*$/; 
+    	   
+ 	  if(document.getElementById("schmorls_1").checked)
+	   {
+		 
+	   if(document.getElementById("schmorls1").value == "")
+   		{
+  
+ 		 // document.getElementById("schmorls11").innerHTML="Required Field should not be blank";
+  		 //return false;
+   		}
+  		else if(document.getElementById("schmorls1").value.charAt(0) == " ")
+   		{
+  			
+   			document.getElementById("schmorls11").innerHTML="Initial space not allowed";
+   			return false;
+   		}
+  		else if(document.getElementById("schmorls1").value.match(alpha))
+	   {
+  			if((document.getElementById("schmorls1").value.length < 4 ) || (document.getElementById("schmorls1").value.length > 45 ))
+			{
+			  document.getElementById("schmorls11").innerHTML="Required Field should be 4 to 45";
+  	   return false;
+			}
+			else{
+				document.getElementById("schmorls11").innerHTML="";
+			}
+	   
+	   }
+  		else
+	   {
+	   document.getElementById("schmorls11").innerHTML="Required Field should be Alphabates";
+	   return false;
+	   }
+  
+	   }
+  else{
+	   document.getElementById("schmorls11").innerHTML="";
+  }
+	   
+       }
+	
+	function validate6(id)
+    {
+		
+ 	  
+ 	   var alpha = /^[A-Za-z ]*$/; 
+    	   
+
+   	   if(document.getElementById("subchondral_1").checked)
+		   {
+   		  
+		   if(document.getElementById("subchondral1").value == "")
+ 	   		{
+ 	  
+ 	 		//  document.getElementById("subchondral11").innerHTML="Required Field should not be blank";
+ 	  		// return false;
+ 	   		}
+	   		else if(document.getElementById("subchondral1").value.charAt(0) == " ")
+ 	   		{
+ 	  
+ 	   			document.getElementById("subchondral11").innerHTML="Initial space not allowed";
+ 	   			return false;
+ 	   		}
+	   		else if(document.getElementById("subchondral1").value.match(alpha))
+		   {
+	   			if((document.getElementById("subchondral1").value.length < 4 ) || (document.getElementById("subchondral1").value.length > 45 ))
+				{
+				  document.getElementById("subchondral11").innerHTML="Required Field should be 4 to 45";
+	   	   return false;
+				}
+				else{
+					 document.getElementById("subchondral11").innerHTML="";
+				}
+		  
+		   }
+	   		else
+		   {
+		   document.getElementById("subchondral11").innerHTML="Required Field should be Alphabates";
+     	   return false;
+		   }
+	   
+		   }
+	   else{
+		   document.getElementById("subchondral11").innerHTML="";
+	   }
+	   
+       }
+	
+	
+	function validate7(id)
+    {
+		
+ 	  
+ 	   var alpha = /^[A-Za-z ]*$/; 
+    	   
+ 	  if(document.getElementById("apexat_1").checked)
+	   {
+		  
+	   if(document.getElementById("apexat1").value == "")
+   		{
+  
+ 		 // document.getElementById("apexat1error").innerHTML="Required Field should not be blank";
+  		// return false;
+   		}
+  		else if(document.getElementById("apexat1").value.charAt(0) == " ")
+   		{
+  
+   			document.getElementById("apexat1error").innerHTML="Initial space not allowed";
+   			return false;
+   		}
+  		else if(document.getElementById("apexat1").value.match(alpha))
+	   {
+  			if((document.getElementById("apexat1").value.length < 4 ) || (document.getElementById("apexat1").value.length > 45 ))
+			{
+			  document.getElementById("apexat1error").innerHTML="Required Field should be 4 to 45";
+  	   return false;
+			}
+			else{
+				document.getElementById("apexat1error").innerHTML="";
+			}
+	   
+	   }
+  		else
+	   {
+	   document.getElementById("apexat1error").innerHTML="Required Field should be Alphabates";
+	   return false;
+	   }
+  
+	   }
+  else{
+	   document.getElementById("apexat1error").innerHTML="";
+  }
+	   
+       }
+	function validate8(id)
+    {
+		
+ 	  
+ 	   var alpha = /^[A-Za-z ]*$/; 
+    	   
+ 	  if(document.getElementById("softtissueedemaof_1").checked)
+	   {
+		  
+	   if(document.getElementById("softtissueedemaof1").value == "")
+   		{
+  
+ 		 // document.getElementById("softtissueedemaof1error").innerHTML="Required Field should not be blank";
+  		// return false;
+   		}
+  		else if(document.getElementById("softtissueedemaof1").value.charAt(0) == " ")
+   		{
+  
+   			document.getElementById("softtissueedemaof1error").innerHTML="Initial space not allowed";
+   			return false;
+   		}
+  		else if(document.getElementById("softtissueedemaof1").value.match(alpha))
+	   {
+  			if((document.getElementById("softtissueedemaof1").value.length < 4 ) || (document.getElementById("softtissueedemaof1").value.length > 45 ))
+			{
+			  document.getElementById("softtissueedemaof1error").innerHTML="Required Field should be 4 to 45";
+  	 		  return false;
+			}
+			else{
+				document.getElementById("softtissueedemaof1error").innerHTML="";
+			}
+	   
+	   }
+  		else
+	   {
+	   document.getElementById("softtissueedemaof1error").innerHTML="Required Field should be Alphabates";
+	   return false;
+	   }
+  
+	   }
+  else{
+	   document.getElementById("softtissueedemaof1error").innerHTML="";
+  }
+  
+	   
+       }
+	
+	function validate9(id)
+    {
+		
+ 	  
+ 	   var alpha = /^[A-Za-z ]*$/; 
+    	   
+ 	  if(document.getElementById("other_1").checked)
+	   {
+		  
+	   if(document.getElementById("other1").value == "")
+   		{
+  
+ 		//  document.getElementById("other1error").innerHTML="Required Field should not be blank";
+  		// return false;
+   		}
+  		else if(document.getElementById("other1").value.charAt(0) == " ")
+   		{
+  
+   			document.getElementById("other1error").innerHTML="Initial space not allowed";
+   			return false;
+   		}
+  		else if(document.getElementById("other1").value.match(alpha))
+	   {
+  			if((document.getElementById("other1").value.length < 4 ) || (document.getElementById("other1").value.length > 45 ))
+			{
+			  document.getElementById("other1error").innerHTML="Required Field should be 4 to 45";
+  	  			 return false;
+			}
+			else{
+				document.getElementById("other1error").innerHTML="";
+			}
+	   
+	   }
+  		else
+	   {
+	   document.getElementById("other1error").innerHTML="Required Field should be Alphabates";
+	   return false;
+	   }
+  
+	   }
+  else{
+	   document.getElementById("other1error").innerHTML="";
+  }
+  
+	   
+       }
+	
+	function validate10(id)
+    {
+		
+ 	  
+ 	   var alpha = /^[A-Za-z ]*$/; 
+    	   
+    	   if(document.getElementById("degenerative_2").checked)
+		   {
+    		  
+		   if(document.getElementById("degenerative2").value == "")
+  	   		{
+  	  
+  	 		//  document.getElementById("degenerative2error").innerHTML="Required Field should not be blank";
+  	  		// return false;
+  	   		}
+	   		else if(document.getElementById("degenerative2").value.charAt(0) == " ")
+  	   		{
+  	  
+  	   			document.getElementById("degenerative2error").innerHTML="Initial space not allowed";
+  	   			return false;
+  	   		}
+	   		else if(document.getElementById("degenerative2").value.match(alpha))
+		   {
+	   			if((document.getElementById("degenerative2").value.length < 4 ) || (document.getElementById("degenerative2").value.length > 45 ))
+	   			{
+	   			  document.getElementById("degenerative2error").innerHTML="Required Field should be 4 to 45";
+	         	   return false;
+	   			}
+	   			else{
+		 			  document.getElementById("degenerative2error").innerHTML="";
+	   			}
+		   }
+	   		else
+		   {
+		   document.getElementById("degenerative2error").innerHTML="Required Field should be Alphabates";
+      	   return false;
+		   }
+	   
+		   }
+	   else{
+		   document.getElementById("degenerative2error").innerHTML="";
+	   }
+	   
+       }
+	
+	
+	function validate11(id)
+    {
+		
+ 	  
+ 	   var alpha = /^[A-Za-z ]*$/; 
+    	   
+    	   if(document.getElementById("narrowed_2").checked)
+		   {
+    		  
+		   if(document.getElementById("narrowed2").value == "")
+  	   		{
+  	  
+  	 		//  document.getElementById("narrowed2error").innerHTML="Required Field should not be blank";
+  	  		 //return false;
+  	   		}
+	   		else if(document.getElementById("narrowed2").value.charAt(0) == " ")
+  	   		{
+  	  
+  	   			document.getElementById("narrowed2error").innerHTML="Initial space not allowed";
+  	   			return false;
+  	   		}
+	   		else if(document.getElementById("narrowed2").value.match(alpha))
+		   {
+	   			if((document.getElementById("narrowed2").value.length < 4 ) || (document.getElementById("narrowed2").value.length > 45 ))
+	   			{
+	   			  document.getElementById("narrowed2error").innerHTML="Required Field should be 4 to 45";
+	         	   return false;
+	   			}
+	   			else{
+		 			  document.getElementById("narrowed2error").innerHTML="";
+	   			}
+		   }
+	   		else
+		   {
+		   document.getElementById("narrowed2error").innerHTML="Required Field should be Alphabates";
+      	   return false;
+		   }
+	   
+		   }
+	   else{
+		   document.getElementById("narrowed2error").innerHTML="";
+	   }
+	   
+       }
+
+	function validate12(id)
+    {
+		
+ 	  
+ 	   var alpha = /^[A-Za-z ]*$/; 
+    	   
+    	   if(document.getElementById("schmorlsnodesat_2").checked)
+		   {
+    		  
+		   if(document.getElementById("schmorlsnodesat2").value == "")
+  	   		{
+  	  
+  	 		//  document.getElementById("schmorlsnodesat2error").innerHTML="Required Field should not be blank";
+  	  		// return false;
+  	   		}
+	   		else if(document.getElementById("schmorlsnodesat2").value.charAt(0) == " ")
+  	   		{
+  	  
+  	   			document.getElementById("schmorlsnodesat2error").innerHTML="Initial space not allowed";
+  	   			return false;
+  	   		}
+	   		else if(document.getElementById("schmorlsnodesat2").value.match(alpha))
+		   {
+	   			if((document.getElementById("schmorlsnodesat2").value.length < 4 ) || (document.getElementById("schmorlsnodesat2").value.length > 45 ))
+	   			{
+	   			  document.getElementById("schmorlsnodesat2error").innerHTML="Required Field should be 4 to 45";
+	         	   return false;
+	   			}
+	   			else{
+		 			  document.getElementById("schmorlsnodesat2error").innerHTML="";
+	   			}
+		   }
+	   		else
+		   {
+		   document.getElementById("schmorlsnodesat2error").innerHTML="Required Field should be Alphabates";
+      	   return false;
+		   }
+	   
+		   }
+	   else{
+		   document.getElementById("schmorlsnodesat2error").innerHTML="";
+	   }
+	   
+       }
+	function validate13(id)
+    {
+		
+ 	  
+ 	   var alpha = /^[A-Za-z ]*$/; 
+    	   
+    	   if(document.getElementById("anterior_2").checked)
+		   {
+    		  
+		   if(document.getElementById("anterior2").value == "")
+  	   		{
+  	  
+  	 		 // document.getElementById("anterior2error").innerHTML="Required Field should not be blank";
+  	  		// return false;
+  	   		}
+	   		else if(document.getElementById("anterior2").value.charAt(0) == " ")
+  	   		{
+  	  
+  	   			document.getElementById("anterior2error").innerHTML="Initial space not allowed";
+  	   			return false;
+  	   		}
+	   		else if(document.getElementById("anterior2").value.match(alpha))
+		   {
+	   			if((document.getElementById("anterior2").value.length < 4 ) || (document.getElementById("anterior2").value.length > 45 ))
+	   			{
+	   			  document.getElementById("anterior2error").innerHTML="Required Field should be 4 to 45";
+	         	   return false;
+	   			}
+	   			else{
+		 			  document.getElementById("anterior2error").innerHTML="";
+	   			}
+		   }
+	   		else
+		   {
+		   document.getElementById("anterior2error").innerHTML="Required Field should be Alphabates";
+      	   return false;
+		   }
+	   
+		   }
+	   else{
+		   document.getElementById("anterior2error").innerHTML="";
+	   }
+	   
+       }
+	
+	function validate14(id)
+    {
+		
+ 	  
+ 	   var alpha = /^[A-Za-z ]*$/; 
+    	   
+    	   if(document.getElementById("subchondral_2").checked)
+		   {
+    		  
+		   if(document.getElementById("subchondral2").value == "")
+  	   		{
+  	  
+  	 		//  document.getElementById("subchondral2error").innerHTML="Required Field should not be blank";
+  	  	//	 return false;
+  	   		}
+	   		else if(document.getElementById("subchondral2").value.charAt(0) == " ")
+  	   		{
+  	  
+  	   			document.getElementById("subchondral2error").innerHTML="Initial space not allowed";
+  	   			return false;
+  	   		}
+	   		else if(document.getElementById("subchondral2").value.match(alpha))
+		   {
+	   			if((document.getElementById("subchondral2").value.length < 4 ) || (document.getElementById("subchondral2").value.length > 45 ))
+	   			{
+	   			  document.getElementById("subchondral2error").innerHTML="Required Field should be 4 to 45";
+	         	   return false;
+	   			}
+	   			else{
+		 			  document.getElementById("subchondral2error").innerHTML="";
+	   			}
+		   }
+	   		else
+		   {
+		   document.getElementById("subchondral2error").innerHTML="Required Field should be Alphabates";
+      	   return false;
+		   }
+	   
+		   }
+	   else{
+		   document.getElementById("subchondral2error").innerHTML="";
+	   }
+	   
+       }
+	
+	function validate15(id)
+    {
+		
+ 	  
+ 	   var alpha = /^[A-Za-z ]*$/; 
+    	   
+    	   if(document.getElementById("foraminal_2").checked)
+		   {
+    		  
+		   if(document.getElementById("foraminal2").value == "")
+  	   		{
+  	  
+  	 		//  document.getElementById("foraminal2error").innerHTML="Required Field should not be blank";
+  	  		// return false;
+  	   		}
+	   		else if(document.getElementById("foraminal2").value.charAt(0) == " ")
+  	   		{
+  	  
+  	   			document.getElementById("foraminal2error").innerHTML="Initial space not allowed";
+  	   			return false;
+  	   		}
+	   		else if(document.getElementById("foraminal2").value.match(alpha))
+		   {
+	   			if((document.getElementById("foraminal2").value.length < 4 ) || (document.getElementById("foraminal2").value.length > 45 ))
+	   			{
+	   			  document.getElementById("foraminal2error").innerHTML="Required Field should be 4 to 45";
+	         	   return false;
+	   			}
+	   			else{
+		 			  document.getElementById("foraminal2error").innerHTML="";
+	   			}
+		   }
+	   		else
+		   {
+		   document.getElementById("foraminal2error").innerHTML="Required Field should be Alphabates";
+      	   return false;
+		   }
+	   
+		   }
+	   else{
+		   document.getElementById("foraminal2error").innerHTML="";
+	   }
+	   
+       }
+	
+	function validate16(id)
+    {
+		
+ 	  
+ 	   var alpha = /^[A-Za-z ]*$/; 
+    	   
+    	   if(document.getElementById("apexat_2").checked)
+		   {
+    		  
+		   if(document.getElementById("apexat2").value == "")
+  	   		{
+  	  
+  	 		//  document.getElementById("apexat2error").innerHTML="Required Field should not be blank";
+  	  		// return false;
+  	   		}
+	   		else if(document.getElementById("apexat2").value.charAt(0) == " ")
+  	   		{
+  	  
+  	   			document.getElementById("apexat2error").innerHTML="Initial space not allowed";
+  	   			return false;
+  	   		}
+	   		else if(document.getElementById("apexat2").value.match(alpha))
+		   {
+	   			if((document.getElementById("apexat2").value.length < 4 ) || (document.getElementById("apexat2").value.length > 45 ))
+	   			{
+	   			  document.getElementById("apexat2error").innerHTML="Required Field should be 4 to 45";
+	         	   return false;
+	   			}
+	   			else{
+		 			  document.getElementById("apexat2error").innerHTML="";
+	   			}
+		   }
+	   		else
+		   {
+		   document.getElementById("apexat2error").innerHTML="Required Field should be Alphabates";
+      	   return false;
+		   }
+	   
+		   }
+	   else{
+		   document.getElementById("apexat2error").innerHTML="";
+	   }
+	   
+       }
+	
+	
+	function validate17(id)
+    {
+		
+ 	  
+ 	   var alpha = /^[A-Za-z ]*$/; 
+    	   
+    	   if(document.getElementById("softtissueedemaof_2").checked)
+		   {
+    		  
+		   if(document.getElementById("softtissueedemaof2").value == "")
+  	   		{
+  	  
+  	 		// document.getElementById("softtissueedemaof2error").innerHTML="Required Field should not be blank";
+  	  		// return false;
+  	   		}
+	   		else if(document.getElementById("softtissueedemaof2").value.charAt(0) == " ")
+  	   		{
+  	  
+  	   			document.getElementById("softtissueedemaof2error").innerHTML="Initial space not allowed";
+  	   			return false;
+  	   		}
+	   		else if(document.getElementById("softtissueedemaof2").value.match(alpha))
+		   {
+	   			if((document.getElementById("softtissueedemaof2").value.length < 4 ) || (document.getElementById("softtissueedemaof2").value.length > 45 ))
+	   			{
+	   			  document.getElementById("softtissueedemaof2error").innerHTML="Required Field should be 4 to 45";
+	         	   return false;
+	   			}
+	   			else{
+		 			  document.getElementById("softtissueedemaof2error").innerHTML="";
+	   			}
+		   }
+	   		else
+		   {
+		   document.getElementById("softtissueedemaof2error").innerHTML="Required Field should be Alphabates";
+      	   return false;
+		   }
+	   
+		   }
+	   else{
+		   document.getElementById("softtissueedemaof2error").innerHTML="";
+	   }
+	   
+       }
+	function validate18(id)
+    {
+		
+ 	  
+ 	   var alpha = /^[A-Za-z ]*$/; 
+    	   
+    	   if(document.getElementById("other_2").checked)
+		   {
+    		  
+		   if(document.getElementById("other2").value == "")
+  	   		{
+  	  
+  	 		//  document.getElementById("other2error").innerHTML="Required Field should not be blank";
+  	  		// return false;
+  	   		}
+	   		else if(document.getElementById("other2").value.charAt(0) == " ")
+  	   		{
+  	  
+  	   			document.getElementById("other2error").innerHTML="Initial space not allowed";
+  	   			return false;
+  	   		}
+	   		else if(document.getElementById("other2").value.match(alpha))
+		   {
+	   			if((document.getElementById("other2").value.length < 4 ) || (document.getElementById("other2").value.length > 45 ))
+	   			{
+	   			  document.getElementById("other2error").innerHTML="Required Field should be 4 to 45";
+	         	   return false;
+	   			}
+	   			else{
+		 			  document.getElementById("other2error").innerHTML="";
+	   			}
+		   }
+	   		else
+		   {
+		   document.getElementById("other2error").innerHTML="Required Field should be Alphabates";
+      	   return false;
+		   }
+	   
+		   }
+	   else{
+		   document.getElementById("other2error").innerHTML="";
+	   }
+	   
+       }
+	
+	function validate19(id)
+    {
+		
+ 	  
+ 	   var alpha = /^[A-Za-z ]*$/; 
+    	   
+    	   if(document.getElementById("break_3").checked)
+		   {
+    		  
+		   if(document.getElementById("break3").value == "")
+  	   		{
+  	  
+  	 		 // document.getElementById("break3error").innerHTML="Required Field should not be blank";
+  	  		// return false;
+  	   		}
+	   		else if(document.getElementById("break3").value.charAt(0) == " ")
+  	   		{
+  	  
+  	   			document.getElementById("break3error").innerHTML="Initial space not allowed";
+  	   			return false;
+  	   		}
+	   		else if(document.getElementById("break3").value.match(alpha))
+		   {
+	   			if((document.getElementById("break3").value.length < 4 ) || (document.getElementById("break3").value.length > 45 ))
+	   			{
+	   			  document.getElementById("break3error").innerHTML="Required Field should be 4 to 45";
+	         	   return false;
+	   			}
+	   			else{
+		 			  document.getElementById("break3error").innerHTML="";
+	   			}
+		   }
+	   		else
+		   {
+		   document.getElementById("break3error").innerHTML="Required Field should be Alphabates";
+      	   return false;
+		   }
+	   
+		   }
+	   else{
+		   document.getElementById("break3error").innerHTML="";
+	   }
+	   
+       }
+	
+	function validate20(id)
+    {
+		
+ 	  
+ 	   var alpha = /^[A-Za-z ]*$/; 
+    	   
+    	   if(document.getElementById("narrowed_3").checked)
+		   {
+    		  
+		   if(document.getElementById("narrowed3").value == "")
+  	   		{
+  	  
+  	 		 // document.getElementById("narrowed3error").innerHTML="Required Field should not be blank";
+  	  		//return false;
+  	   		}
+	   		else if(document.getElementById("narrowed3").value.charAt(0) == " ")
+  	   		{
+  	  
+  	   			document.getElementById("narrowed3error").innerHTML="Initial space not allowed";
+  	   			return false;
+  	   		}
+	   		else if(document.getElementById("narrowed3").value.match(alpha))
+		   {
+	   			if((document.getElementById("narrowed3").value.length < 4 ) || (document.getElementById("narrowed3").value.length > 45 ))
+	   			{
+	   			  document.getElementById("narrowed3error").innerHTML="Required Field should be 4 to 45";
+	         	   return false;
+	   			}
+	   			else{
+		 			  document.getElementById("narrowed3error").innerHTML="";
+	   			}
+		   }
+	   		else
+		   {
+		   document.getElementById("narrowed3error").innerHTML="Required Field should be Alphabates";
+      	   return false;
+		   }
+	   
+		   }
+	   else{
+		   document.getElementById("narrowed3error").innerHTML="";
+	   }
+	   
+       }
+	
+	function validate21(id)
+    {
+		
+ 	  
+ 	   var alpha = /^[A-Za-z ]*$/; 
+    	   
+    	   if(document.getElementById("subchondral_3").checked)
+		   {
+    		   if(document.getElementById("subchondral3").value == "")
+     	   		{
+     	  
+     	 		 // document.getElementById("narrowed3error").innerHTML="Required Field should not be blank";
+     	  		//return false;
+     	   		}
+    		   else  if(document.getElementById("subchondral3").value.charAt(0) == " ")
+  	   		{
+  	  
+  	   			document.getElementById("subchondral3error").innerHTML="Initial space not allowed";
+  	   			return false;
+  	   		}
+	   		else if(document.getElementById("subchondral3").value.match(alpha))
+		   {
+	   			if((document.getElementById("subchondral3").value.length < 4 ) || (document.getElementById("subchondral3").value.length > 45 ))
+	   			{
+	   			  document.getElementById("subchondral3error").innerHTML="Required Field should be 4 to 45";
+	         	   return false;
+	   			}
+	   			else{
+		 			  document.getElementById("subchondral3error").innerHTML="";
+	   			}
+		   }
+	   		else
+		   {
+		   document.getElementById("subchondral3error").innerHTML="Required Field should be Alphabates";
+      	   return false;
+		   }
+	   
+		   }
+	   else{
+		   document.getElementById("subchondral3error").innerHTML="";
+	   }
+	   
+       }
+	
+	function validate22(id)
+    {
+		
+ 	  
+ 	   var alpha = /^[A-Za-z ]*$/; 
+    	   
+    	   if(document.getElementById("anterior_3").checked)
+		   {
+    		   if(document.getElementById("anterior3").value == "")
+     	   		{
+     	  
+     	 		 // document.getElementById("narrowed3error").innerHTML="Required Field should not be blank";
+     	  		//return false;
+     	   		}
+    		   else  if(document.getElementById("anterior3").value.charAt(0) == " ")
+  	   		{
+  	  
+  	   			document.getElementById("anterior3error").innerHTML="Initial space not allowed";
+  	   			return false;
+  	   		}
+	   		else if(document.getElementById("anterior3").value.match(alpha))
+		   {
+	   			if((document.getElementById("anterior3").value.length < 4 ) || (document.getElementById("anterior3").value.length > 45 ))
+	   			{
+	   			  document.getElementById("anterior3error").innerHTML="Required Field should be 4 to 45";
+	         	   return false;
+	   			}
+	   			else{
+		 			  document.getElementById("anterior3error").innerHTML="";
+	   			}
+		   }
+	   		else
+		   {
+		   document.getElementById("anterior3error").innerHTML="Required Field should be Alphabates";
+      	   return false;
+		   }
+	   
+		   }
+	   else{
+		   document.getElementById("anterior3error").innerHTML="";
+	   }
+	   
+       }
+    </script>
+				                 <td class="input_txt"><input type="checkbox" name="break_1" id="break_georges" value="Break in Georges" onclick="validate2(id);this.form.break1.style.visibility = this.checked? 'visible' : 'hidden'"/> Break in Georges line at 
+				           		        <input type="text" class="input_txtbx1" id="break1" onblur= "validate2(id);"name="break_text1" style="visibility:hidden" />
+				           		        <br><span id="break1eror" style="color:red"></span>
 				           		 </td>
 				           		 <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="adi_1" value="ADI more than 3mm"> ADI more than 3mm</td>
 				           		
@@ -345,19 +2198,23 @@ $(function() {
 				                 	 												  <input type="checkbox" name="moderate_1" value="Moderate"> Moderate
 				                 	 												  <input type="checkbox" name="severe_1" value="Severe"> Severe
 				                 	 </td> 
-				                 	  <td class="input_txt" align="left"> <input type="checkbox" name="narrowed_1" value="Narrowed disc space at" onclick="this.form.narrowed1.style.visibility = this.checked? 'visible' : 'hidden'"/> Narrowed disc space at
-				                 		<input type="text" class="input_txtbx1" id="narrowed1" name="narrowed_text1" style="visibility:hidden"/>
+				                 	  <td class="input_txt" align="left"> <input type="checkbox" name="narrowed_1" id="narrowed_1"value="Narrowed disc space at" onclick="validate3(id);this.form.narrowed1.style.visibility = this.checked? 'visible' : 'hidden'"/> Narrowed disc space at
+				                 		<input type="text" class="input_txtbx1" id="narrowed1" name="narrowed_text1" onblur="return validate3(id);" style="visibility:hidden"/>
+				                 		<span id="narrowed1eror" style="color:red"></span>
 				                	 </td>
-				               	     <td class="input_txt" align="left"> <input type="checkbox" name="anterior_1" value="Anterior osteophytes at" onclick="this.form.anterior1.style.visibility = this.checked? 'visible' : 'hidden'"/> Anterior vertebral body osteophytes at
-				                 		<input type="text" class="input_txtbx1" id="anterior1" name="anterior_text1" style="visibility:hidden"/>
+				               	     <td class="input_txt" align="left"> <input type="checkbox" name="anterior_1"id="anterior_12"  value="Anterior osteophytes at" onclick="validate4(id);this.form.anterior1.style.visibility = this.checked? 'visible' : 'hidden'"/> Anterior vertebral body osteophytes at
+				                 		<input type="text" class="input_txtbx1" id="anterior1"  onblur="validate4(id);"name="anterior_text1" style="visibility:hidden"/>
+				                 			<span id="anterior2err" style="color:red"></span>
 				                 	 </td> 		
 				                 </tr>
 				                 <tr class="row2">
-				             			 <td class="input_txt" align="left"> <input type="checkbox" name="subchondral_1" value="Subchondral sclerosis of" onclick="this.form.subchondral1.style.visibility = this.checked? 'visible' : 'hidden'"/> Subchondral sclerosis of
-				                 		<input type="text" class="input_txtbx1" id="subchondral1" name="subchondral_text1" style="visibility:hidden"/>
+				             			 <td class="input_txt" align="left"> <input type="checkbox" name="subchondral_1" id="subchondral_1"value="Subchondral sclerosis of" onclick="validate6(id);this.form.subchondral1.style.visibility = this.checked? 'visible' : 'hidden'"/> Subchondral sclerosis of
+				                 		<input type="text" class="input_txtbx1" id="subchondral1" onblur="return validate6(id);"name="subchondral_text1" style="visibility:hidden"/>
+				                 		<span id="subchondral11"style="color:red"></span>
 				                	 </td>
-				                	 <td class="input_txt" align="left"> <input type="checkbox" name="schmorls_1" value="Schmorls nodes at:" onclick="this.form.schmorls1.style.visibility = this.checked? 'visible' : 'hidden'"/> Schmorl's nodes at:
-				                 		<input type="text" class="input_txtbx1" id="schmorls1" name="schmorls_text1" style="visibility:hidden"/>
+				                	 <td class="input_txt" align="left"> <input type="checkbox" name="schmorls_1"id="schmorls_1" value="Schmorls nodes at:" onclick="validate5(id);this.form.schmorls1.style.visibility = this.checked? 'visible' : 'hidden'"/> Schmorl's nodes at:
+				                 		<input type="text" class="input_txtbx1" id="schmorls1" onblur="return validate5(id); "name="schmorls_text1" style="visibility:hidden"/>
+				                	<span id="schmorls11" style="color:red"></span>
 				                	 </td>
 				                	 <td></td>
 				                 </tr>
@@ -428,14 +2285,17 @@ $(function() {
 				                 </tr>
 				                 <tr class="row1">
 				             
-				                	 <td class="input_txt" align="left"> <input type="checkbox" name="apexat_1" value="Apex at:" onclick="this.form.apexat1.style.visibility = this.checked? 'visible' : 'hidden'"/> Apex at:
-				                 		<input type="text" class="input_txtbx1" id="apexat1" name="apexat_text1" style="visibility:hidden"/>
+				                	 <td class="input_txt" align="left"> <input type="checkbox" name="apexat_1" id="apexat_1" value="Apex at:" onclick="validate7(id);this.form.apexat1.style.visibility = this.checked? 'visible' : 'hidden'"/> Apex at:
+				                 		<input type="text" class="input_txtbx1" id="apexat1" onblur="return validate7(id);" name="apexat_text1" style="visibility:hidden"/>
+				                 		<span id= "apexat1error" style="color:red"></span>
 				                	 </td>
-				               	     <td class="input_txt" align="left"> <input type="checkbox" name="softtissueedemaof_1" value="Soft tissue edema of" onclick="this.form.softtissueedemaof1.style.visibility = this.checked? 'visible' : 'hidden'"/> Soft tissue edema of
-				                 		<input type="text" class="input_txtbx1" id="softtissueedemaof1" name="softtissueedemaof_text1" style="visibility:hidden"/>
+				               	     <td class="input_txt" align="left"> <input type="checkbox" name="softtissueedemaof_1"id="softtissueedemaof_1" value="Soft tissue edema of" onclick="validate8(id);this.form.softtissueedemaof1.style.visibility = this.checked? 'visible' : 'hidden'"/> Soft tissue edema of
+				                 		<input type="text" class="input_txtbx1" id="softtissueedemaof1" onblur="return validate8(id);"name="softtissueedemaof_text1" style="visibility:hidden"/>
+				                 		<span id="softtissueedemaof1error" style="color:red"></span>
 				                 	 </td>
-				                  	 <td class="input_txt" align="left"> <input type="checkbox" name="other_1" value="Other" onclick="this.form.other1.style.visibility = this.checked? 'visible' : 'hidden'"/> Other
-				                 		<input type="text" class="input_txtbx1" id="other1" name="other_text1" style="visibility:hidden"/>
+				                  	 <td class="input_txt" align="left"> <input type="checkbox" id="other_1"name="other_1" value="Other" onclick="validate9(id);this.form.other1.style.visibility = this.checked? 'visible' : 'hidden'"/> Other
+				                 		<input type="text" class="input_txtbx1" id="other1"onblur="return validate9(id);" name="other_text1" style="visibility:hidden"/>
+				                 		<span id="other1error" style="color:red"></span>
 				                	 </td>
 				                 </tr>
 				                 
@@ -516,8 +2376,9 @@ $(function() {
 				                   </td> 
 				                   </tr>
 				                   <tr class="row1"> 	
-				                  <td class="input_txt" align="left"> <input type="checkbox" name="degenerative_2" value="Degenerative joint disease at:" onclick="this.form.degenerative2.style.visibility = this.checked? 'visible' : 'hidden'"/> Degenerative joint disease at:
-				                 		<input type="text" class="input_txtbx1" id="degenerative2" name="degenerative_text2" style="visibility:hidden"/>
+				                  <td class="input_txt" align="left"> <input type="checkbox" name="degenerative_2" id="degenerative_2" value="Degenerative joint disease at:" onclick="validate10(id);this.form.degenerative2.style.visibility = this.checked? 'visible' : 'hidden'"/> Degenerative joint disease at:
+				                 		<input type="text" class="input_txtbx1" id="degenerative2" onblur="return validate10(id);"name="degenerative_text2" style="visibility:hidden"/>
+				                 		<span id="degenerative2error" style="color:red"></span>
 				                	 </td>
 				                	 <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="mild_2" value="Mild"> Mild
 				                    													 <input type="checkbox" name="moderate_2" value="Moderate"> Moderate   
@@ -526,23 +2387,30 @@ $(function() {
 				                   </tr>
 				                    <tr class="row2">
 				             
-				                	 <td class="input_txt" align="left"> <input type="checkbox" name="narrowed_2" value="Narrowed disc space at:" onclick="this.form.narrowed2.style.visibility = this.checked? 'visible' : 'hidden'"/> Narrowed disc space at:
-				                 		<input type="text" class="input_txtbx1" id="narrowed2" name="narrowed_text2" style="visibility:hidden" />
+				                	 <td class="input_txt" align="left"> <input type="checkbox" name="narrowed_2"id="narrowed_2" value="Narrowed disc space at:" onclick="validate11(id);this.form.narrowed2.style.visibility = this.checked? 'visible' : 'hidden'"/> Narrowed disc space at:
+				                 		<input type="text" class="input_txtbx1" id="narrowed2" onblur="return validate11(id);" name="narrowed_text2" style="visibility:hidden" />
+				                 		<span id="narrowed2error"style="color:red"> </span>
 				                	 </td>
-				               	     <td class="input_txt" align="left"> <input type="checkbox" name="schmorlsnodesat_2" value="Schmorls nodes at:" onclick="this.form.schmorlsnodesat2.style.visibility = this.checked? 'visible' : 'hidden'"/> Schmorl's nodes at:
-				                 		<input type="text" class="input_txtbx1" id="schmorlsnodesat2" name="schmorlsnodesat_text2" style="visibility:hidden" />
+				               	     <td class="input_txt" align="left"> <input type="checkbox" id="schmorlsnodesat_2" name="schmorlsnodesat_2" value="Schmorls nodes at:" onclick="validate12(id);this.form.schmorlsnodesat2.style.visibility = this.checked? 'visible' : 'hidden'"/> Schmorl's nodes at:
+				                 		<input type="text" class="input_txtbx1" onblur="return validate12(id);"id="schmorlsnodesat2" name="schmorlsnodesat_text2" style="visibility:hidden" />
+				                 		<span id="schmorlsnodesat2error" style="color:red"></span>
 				                 	 </td>
 				                 	 <td></td>
 				                    </tr>	 
 				                 	 <tr class="row1">
-				             			<td class="input_txt" align="left"> <input type="checkbox" name="anterior_2" value="Anterior body osteophytes at:" onclick="this.form.anterior2.style.visibility = this.checked? 'visible' : 'hidden'"/> Anterior vertebral body osteophytes at:
-				                 			<input type="text" class="input_txtbx1" id="anterior2" name="anterior_text2" style="visibility:hidden" />
+				             			<td class="input_txt" align="left"> <input type="checkbox" id="anterior_2" name="anterior_2"value="Anterior body osteophytes at:" onclick="validate13(id);this.form.anterior2.style.visibility = this.checked? 'visible' : 'hidden'"/> Anterior vertebral body osteophytes at:
+				                 																																			
+				                 			<input type="text" class="input_txtbx1" id="anterior2" onblur="return validate13(id);" name="anterior_text2" style="visibility:hidden" />
+				                 			<span id="anterior2error" style="color:red"></span>
+				                 		
 				                		 </td>
-				               	    	 <td class="input_txt" align="left"> <input type="checkbox" name="subchondral_2" value="Subchondral sclerosis of" onclick="this.form.subchondral2.style.visibility = this.checked? 'visible' : 'hidden'"/> Subchondral sclerosis of
-				                 			<input type="text" class="input_txtbx1" id="subchondral2" name="subchondral_text2" style="visibility:hidden"/>
+				               	    	 <td class="input_txt" align="left"> <input type="checkbox" name="subchondral_2"id="subchondral_2" value="Subchondral sclerosis of" onclick="validate14(id);this.form.subchondral2.style.visibility = this.checked? 'visible' : 'hidden'"/> Subchondral sclerosis of
+				                 			<input type="text" class="input_txtbx1" id="subchondral2"onblur="return validate14(id);" name="subchondral_text2" style="visibility:hidden"/>
+				                 			<span id="subchondral2error" style="color:red"></span>
 				                 	 	</td>
-				                 	 	<td class="input_txt" align="left"> <input type="checkbox" name="foraminal_2" value="Foraminal enchroachment b/w:" onclick="this.form.foraminal2.style.visibility = this.checked? 'visible' : 'hidden'"/> Foraminal enchroachment between:
-				                 		<input type="text" class="input_txtbx1" id="foraminal2" name="foraminal_text2" style="visibility:hidden"/>
+				                 	 	<td class="input_txt" align="left"> <input type="checkbox" id="foraminal_2"name="foraminal_2" value="Foraminal enchroachment b/w:" onclick="validate15(id);this.form.foraminal2.style.visibility = this.checked? 'visible' : 'hidden'"/> Foraminal enchroachment between:
+				                 		<input type="text" class="input_txtbx1" id="foraminal2" onblur="return validate15(id);" name="foraminal_text2" style="visibility:hidden"/>
+				                 		<span id="foraminal2error" style="color:red"></span>
 				                	 </td>
 				                 	</tr>
 				                 	<tr class="row1">
@@ -569,14 +2437,17 @@ $(function() {
 				                </tr>
 				                <tr class="row2">
 				             
-				                	 <td class="input_txt" align="left"> <input type="checkbox" name="apexat_2" value="Apex at:" onclick="this.form.apexat2.style.visibility = this.checked? 'visible' : 'hidden'"/> Apex at:
-				                 		<input type="text" class="input_txtbx1" id="apexat2" name="apexat_text2" style="visibility:hidden"/>
+				                	 <td class="input_txt" align="left"> <input type="checkbox" id="apexat_2"name="apexat_2" value="Apex at:" onclick="validate16(id);this.form.apexat2.style.visibility = this.checked? 'visible' : 'hidden'"/> Apex at:
+				                 		<input type="text" class="input_txtbx1" id="apexat2" onblur="return validate16(id);"name="apexat_text2" style="visibility:hidden"/>
+				                 		<span id="apexat2error" style="color:red"></span>
 				                	 </td>
-				               	     <td class="input_txt" align="left"> <input type="checkbox" name="softtissueedemaof_2" value="Soft tissue edema of" onclick="this.form.softtissueedemaof2.style.visibility = this.checked? 'visible' : 'hidden'"/> Soft tissue edema of
-				                 		<input type="text" class="input_txtbx1" id="softtissueedemaof2" name="softtissueedemaof_text2" style="visibility:hidden"/>
+				               	     <td class="input_txt" align="left"> <input type="checkbox" name="softtissueedemaof_2" id="softtissueedemaof_2"value="Soft tissue edema of" onclick="validate17(id);this.form.softtissueedemaof2.style.visibility = this.checked? 'visible' : 'hidden'"/> Soft tissue edema of
+				                 		<input type="text" class="input_txtbx1" id="softtissueedemaof2"onblur="return validate17(id);" name="softtissueedemaof_text2" style="visibility:hidden"/>
+				                 		<span id="softtissueedemaof2error" style="color:red"></span>
 				                 	 </td>
-				                  	 <td class="input_txt" align="left"> <input type="checkbox" name="other_2" value="Other" onclick="this.form.other2.style.visibility = this.checked? 'visible' : 'hidden'"/> Other
-				                 		<input type="text" class="input_txtbx1" id="other2" name="other_text2" style="visibility:hidden" />
+				                  	 <td class="input_txt" align="left"> <input type="checkbox" name="other_2" id="other_2"value="Other" onclick="validate18(id);this.form.other2.style.visibility = this.checked? 'visible' : 'hidden'"/> Other
+				                 		<input type="text" class="input_txtbx1" id="other2"onblur="return validate18(id);" name="other_text2" style="visibility:hidden" />
+				                 			<span id="other2error" style="color:red"></span>
 				                	 </td>
 				                 </tr>
 				                 </table>	
@@ -620,8 +2491,9 @@ $(function() {
 				                   		 </select>
 				                   	</td>
 				                   	<td valign="top" align="left" class="input_txt"> <input type="checkbox" name="negative_3" value="Negative for recent fracture">  Negative for recent fracture, dislocation or gross Osteopathology</td>
-				                  	 <td class="input_txt"><input type="checkbox" name="break_3" value="Break Georges at" onclick="this.form.break3.style.visibility = this.checked? 'visible' : 'hidden'"/> Break in Georges line at 
-				           		        <input type="text" class="input_txtbx1" id="break3" name="break_text3" style="visibility:hidden" />
+				                  	 <td class="input_txt"><input type="checkbox" name="break_3" id="break_3"value="Break Georges at" onclick="validate19(id);this.form.break3.style.visibility = this.checked? 'visible' : 'hidden'"/> Break in Georges line at 
+				           		        <input type="text" class="input_txtbx1" id="break3" onblur="return validate19(id);"name="break_text3" style="visibility:hidden" />
+				           		        <span id="break3error" style="color:red"></span>
 				           		 	 </td>
 				                  <td></td>
 				                  </tr>
@@ -672,16 +2544,19 @@ $(function() {
 				                 	 												  <input type="checkbox" name="moderate_3" value="Moderate"> Moderate
 				                 	 												  <input type="checkbox" name="severe_3" value="Severe"> Severe
 				                 	 </td> 
-				                 	  <td class="input_txt" align="left"> <input type="checkbox" name="narrowed_3" value="Narrowed disc space at" onclick="this.form.narrowed3.style.visibility = this.checked? 'visible' : 'hidden'"/> Narrowed disc space at:
-				                 		<input type="text" class="input_txtbx1" id="narrowed3" name="narrowed_text3" style="visibility:hidden" />
+				                 	  <td class="input_txt" align="left"> <input type="checkbox" name="narrowed_3"id="narrowed_3" value="Narrowed disc space at" onclick="validate20(id);this.form.narrowed3.style.visibility = this.checked? 'visible' : 'hidden'"/> Narrowed disc space at:
+				                 		<input type="text" class="input_txtbx1" id="narrowed3" onblur="return validate20(id);"name="narrowed_text3" style="visibility:hidden" />
+				                 		<span id="narrowed3error" style="color:red"></span>
 				                	 </td>
 				                	 </tr>
 				                	 <tr class="row2">
-				               	     <td class="input_txt" align="left"> <input type="checkbox" name="anterior_3" value="Anterior osteophytes at" onclick="this.form.anterior3.style.visibility = this.checked? 'visible' : 'hidden'"/> Anterior vertebral body osteophytes at:
-				                 		<input type="text" class="input_txtbx1" id="anterior3" name="anterior_text3" style="visibility:hidden"/>
+				               	     <td class="input_txt" align="left"> <input type="checkbox" name="anterior_3" id="anterior_3"value="Anterior osteophytes at" onclick="validate22(id);this.form.anterior3.style.visibility = this.checked? 'visible' : 'hidden'"/> Anterior vertebral body osteophytes at:
+				                 		<input type="text" class="input_txtbx1" id="anterior3" onblur="return validate22(id);"name="anterior_text3" style="visibility:hidden"/>
+				                 		<span id="anterior3error" style="color:red"></span>
 				                 	 </td> 	
-				                 	  <td class="input_txt" align="left"> <input type="checkbox" name="subchondral_3" value="Subchondral sclerosis of" onclick="this.form.subchondral3.style.visibility = this.checked? 'visible' : 'hidden'"/> Subchondral sclerosis of
-				                 		<input type="text" class="input_txtbx1" id="subchondral3" name="subchondral_text3" style="visibility:hidden"/>
+				                 	  <td class="input_txt" align="left"> <input type="checkbox" name="subchondral_3"id="subchondral_3" value="Subchondral sclerosis of" onclick="validate21(id);this.form.subchondral3.style.visibility = this.checked? 'visible' : 'hidden'"/> Subchondral sclerosis of
+				                 		<input type="text" class="input_txtbx1" id="subchondral3" onblur="return validate21(id);"name="subchondral_text3" style="visibility:hidden"/>
+				                 		<span id="subchondral3error" style="color:red"></span>
 				                	 </td>
 				                 	  <td class="input_txt" align="left"> <input type="checkbox" name="schmorls_3" value="Schmorls nodes at:" onclick="this.form.schmorls3.style.visibility = this.checked? 'visible' : 'hidden'"/> Schmorl's nodes at:
 				                 		<input type="text" class="input_txtbx1" id="schmorls3" name="schmorls_text3" style="visibility:hidden"/>

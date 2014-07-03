@@ -156,7 +156,40 @@ $(function() {
 <script>
 	function checkSubmit()
 	{	
-	document.getElementById("pnameerr").innerHTML="";
+		 var regex = /^[A-Za-z0-9 ]*$/;
+   	  alert("submit00");
+   	document.getElementById("pnameerr").innerHTML="";
+   	document.getElementById("signerror").innerHTML="";
+  	   if(document.getElementById("e1e2").value == "ExtremitiesX-Rays")
+  		   {
+  		 
+  	   if(document.getElementById("xray").value == "")
+    	   {
+    	  
+    	   document.getElementById("xrayerror").innerHTML="Required Field should not be blank";
+    	   return false;
+    	   }
+  	   else if(document.getElementById("xray").value.charAt(0) == " ")
+    	   {
+    	  
+    	   document.getElementById("xrayerror").innerHTML="Initial space not allowed";
+    	   return false;
+    	   }
+  	   else if(document.getElementById("xray").value.match(regex))
+  		   {
+  		   document.getElementById("xrayerror").innerHTML="";
+  		   }
+  	   else
+  		   {
+  		   document.getElementById("xrayerror").innerHTML="Required Field should be Alpha-Numeric";
+        	   return false;
+  		   }
+  	   
+  		   }
+  	   else{
+  		   document.getElementById("xrayerror").innerHTML="";
+  	   }
+	
 	if(document.getElementById("pname").value=="")
 		{	
 		document.getElementById("pnameerr").innerHTML="Required Field Should Not Empty";	
@@ -167,7 +200,7 @@ $(function() {
 	document.getElementById("pnameerr").innerHTML="Required Field Should between 4 to 45";	
 	return false;
 	}
-		document.getElementById("signerror").innerHTML="";
+		
 		if(document.getElementById("sign").value=="")
 		{	
 		document.getElementById("signerror").innerHTML="Required Field Should Not Empty";	
@@ -449,7 +482,7 @@ if(document.getElementById("rightarmpain").checked)
            }
            
        } 
-       function validate2(id)
+       function validate2()
        {
     	   var regex = /^[A-Za-z0-9 ]*$/;
     	  
@@ -682,7 +715,7 @@ else
 <span id="diagnosiserr" style="color:red"></span>
  </td>
  <td>&nbsp;&nbsp;
- <select name="e1e2" width="2%" id="e1e2" class="input_cmbbx1" onchange="if (this.value=='ExtremitiesX-Rays'){this.form['xray'].style.visibility='visible'}else {this.form['xray'].style.visibility='hidden'};validate2(id);">
+ <select name="e1e2" width="2%" id="e1e2" class="input_cmbbx1" onchange="if (this.value=='ExtremitiesX-Rays'){this.form['xray'].style.visibility='visible'}else {this.form['xray'].style.visibility='hidden'};validate2();">
 					<option selected="selected" value="2" <c:if test="${soapnotes.e1e2=='2'}"><c:out value="selected"/></c:if>>2</option>
 					<option value="3" <c:if test="${soapnotes.e1e2=='3'}"><c:out value="selected"/></c:if>>3</option>
 					<option value="4" <c:if test="${soapnotes.e1e2=='4'}"><c:out value="selected"/></c:if>>4</option>
@@ -726,7 +759,7 @@ else
 					<option value="strengthexcer" <c:if test="${soapnotes.e1e2=='strengthexcer'}"><c:out value="selected"/></c:if>>Strength excer</option>
 					<option value="lifestyle" <c:if test="${soapnotes.e1e2=='lifestyle'}"><c:out value="selected"/></c:if>>Lifestyle modifications</option>
 					<option value="reeval" <c:if test="${soapnotes.e1e2=='reeval'}"><c:out value="selected"/></c:if>>Re Eval.in </option>
-				  </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" width="5%"name="xray" class="input_txtbx1" id="xray"  onblur="return validate2(id);" value="${soapnotes.xray}" style="visibility:hidden;" >
+				  </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" width="5%"name="xray" class="input_txtbx1" id="xray"  onblur="return validate2();" value="${soapnotes.xray}" style="visibility:hidden;" >
 				    <span id="xrayerror"style="color:red"></span>
 				  <input type="text" name="offwork1" class="input_txtbx1" id="inp_id"  value="${soapnotes.offwork1}" style='display:none' >
 				  <input type="text" name="reeval1" class="input_txtbx1" id="inp_id"  value="${soapnotes.reeval1}" style='display:none'>

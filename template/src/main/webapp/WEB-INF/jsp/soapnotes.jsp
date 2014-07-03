@@ -305,15 +305,16 @@ $(function() {
            }
            
        } 
-       function validate2(id)
+       function validate2()
        {
     	   var regex = /^[A-Za-z0-9 ]*$/;
     	   
     	   if(document.getElementById("e1e2").value == "ExtremitiesX-Rays")
     		   {
+    		  
     	   if(document.getElementById("xray").value == "")
       	   {
-      	  
+    		  
       	   document.getElementById("xrayerror").innerHTML="Required Field should not be blank";
       	   return false;
       	   }
@@ -532,7 +533,7 @@ document.getElementById("leftproxi").style.display="none";
  <span id="diagnosiserr" style="color:red"></span>
  </td>
  <td>
- &nbsp &nbsp <select name="e1e2" id="e1e2" class="input_cmbbx1" onchange="if (this.value=='ExtremitiesX-Rays'){this.form['xray'].style.visibility='visible'}else {this.form['xray'].style.visibility='hidden'};validate2(id);">
+ &nbsp &nbsp <select name="e1e2" id="e1e2" class="input_cmbbx1" onchange="if (this.value=='ExtremitiesX-Rays'){this.form['xray'].style.visibility='visible'}else {this.form['xray'].style.visibility='hidden'};validate2();">
 					<option  value="2" >2</option>
 					<option value="3">3</option>
 					<option value="4">4</option>
@@ -576,7 +577,7 @@ document.getElementById("leftproxi").style.display="none";
 					<option value="strengthexcer">Strength excer</option>
 					<option value="lifestyle">Lifestyle modifications</option>
 					<option value="reeval">Re Eval.in </option>
-				  </select>&nbsp;&nbsp;<input type="text" name="xray" id="xray" onblur="return validate2(id);"style="visibility:hidden;"/><br>
+				  </select>&nbsp;&nbsp;<input type="text" name="xray" id="xray" onblur="return validate2();"style="visibility:hidden;"/><br>
 				  <span id="xrayerror"style="color:red"></span>
 				  <input type="text" name="offwork1" id="offwork1" style='display:none' class="input_txtbx1">
 				  <input type="text" name="reeval1" id="reeval1" style='display:none' class="input_txtbx1">
@@ -1179,7 +1180,42 @@ document.getElementById("leftproxi").style.display="none";
 	<script>
 	function check()
 	{	
-		document.getElementById("pnameerr").innerHTML="";	
+		
+		
+		 var regex = /^[A-Za-z0-9 ]*$/;
+  	   
+  	 document.getElementById("pnameerr").innerHTML="";	
+  	document.getElementById("signerror").innerHTML="";	
+  	   if(document.getElementById("e1e2").value == "ExtremitiesX-Rays")
+  		   {
+  	   if(document.getElementById("xray").value == "")
+    	   {
+  		  
+    	   document.getElementById("xrayerror").innerHTML="Required Field should not be blank";
+    	   return false;
+    	   }
+  	   else if(document.getElementById("xray").value.charAt(0) == " ")
+    	   {
+    	  
+    	   document.getElementById("xrayerror").innerHTML="Initial space not allowed";
+    	   return false;
+    	   }
+  	   else if(document.getElementById("xray").value.match(regex))
+  		   {
+  		   document.getElementById("xrayerror").innerHTML="";
+  		   }
+  	   else
+  		   {
+  		   document.getElementById("xrayerror").innerHTML="Required Field should be Alpha-Numeric";
+        	   return false;
+  		   }
+  	   
+  		   }
+  	   else{
+  		   document.getElementById("xrayerror").innerHTML="";
+  	   }
+		 
+		
 		
 	if(document.getElementById("pname").value=="")
 		{	
@@ -1191,7 +1227,7 @@ document.getElementById("leftproxi").style.display="none";
 	document.getElementById("pnameerr").innerHTML="Required Field Should between 4 to 45";	
 	return false;
 	}
-		document.getElementById("signerror").innerHTML="";	
+		
 	
 	if(document.getElementById("sign").value=="")
 	{
@@ -1311,7 +1347,7 @@ document.getElementById("leftproxi").style.display="none";
     				<td align="left" valign="top" width="50%" style="padding-right:25px;">
     					<br>
 <table align="right">
-<%-- <input type="text" value="${soap.patient_id }" name="patient_id" /> --%>
+<%-- <input type="text" value="${soap.patient_id }" name="patient_id" />  --%>
               <input type="hidden" class="input_txtbx1" id="inp_id" value="${soap.soapid}" name="soapid" />
 
     <tr class="row1">
