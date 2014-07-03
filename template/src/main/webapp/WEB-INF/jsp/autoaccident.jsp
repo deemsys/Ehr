@@ -117,6 +117,297 @@ $(function() {
 </script> -->
 
 <script>
+  $(function() {
+	$("#adjustersname").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#companion").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#conditions").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#body_position1").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#head_position1").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#injury").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#patient_body1").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#head_hit").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#rlshoulder_hit").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#rlhip_hit").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#rlknee_hit").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#chest_hit").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#rlarm_hit").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+
+<script>
+  $(function() {
+	$("#rlarm_hit").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#rlleg_hit").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+  
+</script>
+
+<script>
+  $(function() {
+	$("#otherpart_hit").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+
+<script>
+  $(function() {
+	$("#xray").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#hospital1").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#city").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#hosname").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#accident").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#symptom").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#wrong").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+function validateusername(){
+    var textInput = document.getElementById("claimno").value;
+    textInput = textInput.replace(/[^A-Z0-9]/g, "");
+    document.getElementById("claimno").value = textInput;
+}
+
+</script>
+
+<script>
+function validatenamehos(){
+    var textInput = document.getElementById("hosname").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("hosname").value = textInput;
+}
+</script>
+<script>
+function validatename(){
+    var textInput = document.getElementById("adjustersname").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("adjustersname").value = textInput;
+}
+</script>
+
+<script>
+function validatename1(){
+    var textInput = document.getElementById("companion").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("companion").value = textInput;
+}
+</script>
+
+<script>
+function validatename3(){
+    var textInput = document.getElementById("vehicle_model").value;
+    textInput = textInput.replace(/[^A-Za-z0-9]/g, "");
+    
+    document.getElementById("vehicle_model").value = textInput;
+}
+</script>
+
+
+<script>
+function validatename2(){
+    var textInput = document.getElementById("vehicle_make").value;
+    textInput = textInput.replace(/[^A-Za-z]/g, "");
+    document.getElementById("vehicle_make").value = textInput;
+}
+</script>
+
+
+
+<script>
+function validatename4(){
+    var textInput = document.getElementById("other_vehicle_make").value;
+    textInput = textInput.replace(/[^A-Za-z]/g, "");
+    document.getElementById("other_vehicle_make").value = textInput;
+}
+</script>
+
+<script>
+function validatename5(){
+    var textInput = document.getElementById("other_vehicle_model").value;
+    textInput = textInput.replace(/[^A-Za-z0-9]/g, "");
+    document.getElementById("other_vehicle_model").value = textInput;
+}
+</script>
+<script>
   function checksub()
   {
  document.getElementById("claimnoerror").innerHTML=""; 
@@ -125,37 +416,120 @@ $(function() {
   document.getElementById("claimnoerror").innerHTML="Required field should not be empty";
   return false;
  }
+ document.getElementById("claimnoerror").innerHTML="";
+ if(document.getElementById("claimno").value.length<9 || document.getElementById("claimno").value.length>=32)
+ {
+ 	
+ 	document.getElementById("claimnoerror").innerHTML="Claim Number should be min 9 and max 32";
+ 	
+     return false;
+ }
+ 
   document.getElementById("adjustersnameerror").innerHTML=""; 
  if(document.getElementById("adjustersname").value=="")
  {
   document.getElementById("adjustersnameerror").innerHTML="Required field should not be empty";
   return false;
  }
+ document.getElementById("adjustersnameerror").innerHTML=" ";
+	
+	if(document.getElementById("adjustersname").value.substring(0,1)==" ")
+	{
+	document.getElementById("adjustersnameerror").innerHTML="Initial space not allowed";
+	
+	return false;
+	}
+	document.getElementById("adjustersnameerror").innerHTML="";
+    if(document.getElementById("adjustersname").value.length<4 || document.getElementById("adjustersname").value.length>=32)
+    {
+    	
+    	document.getElementById("adjustersnameerror").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
   document.getElementById("companionerror").innerHTML="";
   if(document.getElementById("companion").value=="")
  {
   document.getElementById("companionerror").innerHTML="Required field should not be empty";
   return false;
  }
+  
+
+  document.getElementById("companionerror").innerHTML=" ";
+ 	
+ 	if(document.getElementById("companion").value.substring(0,1)==" ")
+ 	{
+ 	document.getElementById("companionerror").innerHTML="Initial space not allowed";
+ 	
+ 	return false;
+ 	}
+ 	document.getElementById("companionerror").innerHTML="";
+    if(document.getElementById("companion").value.length<4 || document.getElementById("companion").value.length>=32)
+    {
+    	
+    	document.getElementById("companionerror").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
  document.getElementById("vehicle_makeerror").innerHTML="";
   if(document.getElementById("vehicle_make").value=="")
  {
   document.getElementById("vehicle_makeerror").innerHTML="Required field should not be empty";
   return false;
  }
+  document.getElementById("vehicle_makeerror").innerHTML=" ";
+	
+	if(document.getElementById("vehicle_make").value.substring(0,1)==" ")
+	{
+	document.getElementById("vehicle_makeerror").innerHTML="Initial space not allowed";
+	
+	return false;
+	}
+	document.getElementById("vehicle_makeerror").innerHTML="";
+  if(document.getElementById("vehicle_make").value.length<4 || document.getElementById("vehicle_make").value.length>=32)
+  {
+  	
+  	document.getElementById("vehicle_makeerror").innerHTML="Name should be min 4 and max 32";
+  	
+      return false;
+  }
  document.getElementById("vehicle_modelerror").innerHTML="";
   if(document.getElementById("vehicle_model").value=="")
  {
   document.getElementById("vehicle_modelerror").innerHTML="Required field should not be empty";
   return false;
  }
+ 
+  document.getElementById("vehicle_modelerror").innerHTML=" ";
+	
+	if(document.getElementById("vehicle_model").value.substring(0,1)==" ")
+	{
+	document.getElementById("vehicle_modelerror").innerHTML="Initial space not allowed";
+	
+	return false;
+	}
+	document.getElementById("vehicle_modelerror").innerHTML="";
+if(document.getElementById("vehicle_model").value.length<4 || document.getElementById("vehicle_model").value.length>=32)
+{
+	
+	document.getElementById("vehicle_modelerror").innerHTML=" should be min 4 and max 32";
+	
+    return false;
+}
  document.getElementById("vehicle_yearerror").innerHTML="";
   if(document.getElementById("vehicle_year").value=="")
  {
   document.getElementById("vehicle_yearerror").innerHTML="Required field should not be empty";
   return false;
  }
- 
+  document.getElementById("vehicle_yearerror").innerHTML=" ";
+	
+	if(document.getElementById("vehicle_year").value.substring(0,1)==" ")
+	{
+	document.getElementById("vehicle_yearerror").innerHTML="Initial space not allowed";
+	
+	return false;
+	}
  document.getElementById("vehicle_yearerror").innerHTML="";
 	if(document.getElementById("vehicle_year").value.length<4)
 	{
@@ -169,12 +543,28 @@ $(function() {
   document.getElementById("other_vehicle_makeerror").innerHTML="Required field should not be empty";
   return false;
  }
+  document.getElementById("other_vehicle_makeerror").innerHTML="";
+  if(document.getElementById("other_vehicle_make").value.length<4 || document.getElementById("other_vehicle_make").value.length>=32)
+  {
+  	
+  	document.getElementById("other_vehicle_makeerror").innerHTML="should be min 4 and max 32";
+  	
+      return false;
+  }
   document.getElementById("other_vehicle_modelerror").innerHTML="";
   if(document.getElementById("other_vehicle_model").value=="")
  {
   document.getElementById("other_vehicle_modelerror").innerHTML="Required field should not be empty";
   return false;
  }
+  document.getElementById("other_vehicle_modelerror").innerHTML="";
+  if(document.getElementById("other_vehicle_model").value.length<4 || document.getElementById("other_vehicle_model").value.length>=32)
+  {
+  	
+  	document.getElementById("other_vehicle_modelerror").innerHTML="should be min 4 and max 32";
+  	
+      return false;
+  }
   document.getElementById("other_vehicle_yearerror").innerHTML="";
   if(document.getElementById("other_vehicle_year").value=="")
  {
@@ -308,14 +698,7 @@ document.getElementById("afteraccidenterror").innerHTML="";
     </script>
     
     
-<script>
-function validateusername(){
-    var textInput = document.getElementById("uname").value;
-    textInput = textInput.replace(/[^A-Za-z0-9]/g, "");
-    document.getElementById("uname").value = textInput;
-}
 
-</script>
 <style>
   /* force a height so the tabs don't jump as content height changes */
   #tabs .tabs-spacer { float: left; height: 200px; }
@@ -365,7 +748,7 @@ function validateusername(){
                  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>What is the claim number of your accident</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="claimno" name="claimnumber" onInput="return validateusername()"; /><span id="claimnoerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.claimnumber"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="claimno" placeholder="35W899112" name="claimnumber" onInput="return validateusername()";/><span id="claimnoerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.claimnumber"></form:errors></span>
 				  <br><span class="err"></span>
 				  </td>
 
@@ -373,7 +756,7 @@ function validateusername(){
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Adjuster's name</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="adjustersname" name="adjustersname" /><span id="adjustersnameerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.adjustersname"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="adjustersname" name="adjustersname" min="4" maxlength="32" onInput="return validatename()";/><span id="adjustersnameerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.adjustersname"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
@@ -400,14 +783,14 @@ function validateusername(){
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Was anyone else in the car with you during the accident?who?</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="companion" name="companion" /><span id="companionerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.companion"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="companion" name="companion" min="4" maxlength="32" onInput="return validatename1()"; /><span id="companionerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.companion"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Description of vehicle you were in</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="smlinput_txtbx1" id="vehicle_make" name="vehicle_make" style="width:70px" placeholder="make"/><span id="vehicle_makeerror" style="color: red;font-style:italic;"></span>
-				  <input type="text" class="smlinput_txtbx1" id="vehicle_model" name="vehicle_model" style="width:70px" placeholder="model" /><span id="vehicle_modelerror" style="color: red;font-style:italic;"></span>
+				  <input type="text" class="smlinput_txtbx1" id="vehicle_make" onInput="return validatename2()"; name="vehicle_make" style="width:70px" placeholder="make"/><span id="vehicle_makeerror" style="color: red;font-style:italic;"></span>
+				  <input type="text" class="smlinput_txtbx1" id="vehicle_model" name="vehicle_model" onInput="return validatename3()"; style="width:70px" placeholder="model" /><span id="vehicle_modelerror" style="color: red;font-style:italic;"></span>
 				  <input type="text" class="smlinput_txtbx1" id="vehicle_year" name="vehicle_year" style="width:70px" maxlength="4" onkeypress="return validate(event)"; placeholder="year"/><span  id="vehicle_yearerror" style="color: red;font-style:italic;"></span>
 				  </td>
 				  </tr>
@@ -427,8 +810,8 @@ function validateusername(){
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Description of other vehicle </td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="smlinput_txtbx1" id="other_vehicle_make" name="other_vehicle_make" style="width:70px" placeholder="    make" /><span id="other_vehicle_makeerror" style="color: red;font-style:italic;"></span>
-				  <input type="text" class="smlinput_txtbx1" id="other_vehicle_model" name="other_vehicle_model" style="width:70px" placeholder="     model" /><span id="other_vehicle_modelerror" style="color: red;font-style:italic;"></span>
+				  <input type="text" class="smlinput_txtbx1" id="other_vehicle_make" onInput="return validatename4()";name="other_vehicle_make" style="width:70px" placeholder="    make" /><span id="other_vehicle_makeerror" style="color: red;font-style:italic;"></span>
+				  <input type="text" class="smlinput_txtbx1" id="other_vehicle_model" name="other_vehicle_model" onInput="return validatename5()"; style="width:70px" placeholder="     model" /><span id="other_vehicle_modelerror" style="color: red;font-style:italic;"></span>
 				  <input type="text" class="smlinput_txtbx1" id="other_vehicle_year" maxlength="4" name="other_vehicle_year" style="width:70px" onkeypress="return validate(event)"; placeholder="year"/><span class="err" id="other_vehicle_yearerror" style="color: red;font-style:italic;"></span>
 				  </td>
 				  </tr>
@@ -457,7 +840,7 @@ function validateusername(){
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Estimated rate of speed</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="speed" name="estimated_rate" onkeypress="return validate(event)"; /><span id="speederror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.estimated_rate"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="speed" name="estimated_rate" maxlength="18" onkeypress="return validate(event)"; /><span id="speederror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.estimated_rate"></form:errors></span>
 			<br>
 			<span class="err" id="speederror"></span>
   </td>
@@ -487,7 +870,7 @@ function validateusername(){
 					<option value="other">Other</option>
 					<option value="unknown">Unknown</option>
 				  </select>
-				  <input type="text" name="conditions" id="conditions" style='display:none'/>
+				  <input type="text" name="conditions" id="conditions" min="4" maxlength="32" style='display:none'/>
 				  </td>
 				  </tr> 
 				  <tr class="row2">
@@ -610,7 +993,7 @@ function validateusername(){
 					<option value="others">Other</option>
 					<option value="un_known">Unknown</option>
 				  </select>
-				   <input type="text" name="body_position1" id="body_position1" style='display:none'/>
+				   <input type="text" name="body_position1" id="body_position1" min="4" maxlength="32" style='display:none'/>
 				  </td>
 				  </tr>
 				 <tr class="row2">
@@ -625,7 +1008,7 @@ function validateusername(){
 					<option value="others">Other</option>
 					<option value="unknown_pos">Unknown</option>
 				  </select>
-				   <input type="text" name="head_position1" id="head_position1" style='display:none'/>
+				   <input type="text" name="head_position1" id="head_position1" min="4" maxlength="32" style='display:none'/>
 				  </td>
 				  </tr>
 				  <tr class="row1">
@@ -664,7 +1047,7 @@ function validateusername(){
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Did this cause further injury</td>
 				  <td valign="middle" align="left" class="input_txt"><input type="radio" name="further_injury" value="yes" class="input_txt" checked="true" onclick="toggle2('show2')">Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="further_injury" value="no" class="input_txt" onclick="toggle2('hide2')">No&nbsp;&nbsp;&nbsp;
-				  <textarea rows='3' cols='35' id="injury" name="injurytext" placeholder="Please explain"></textarea>
+				  <textarea rows='3' cols='35' id="injury" name="injurytext" min="4" maxlength="32" placeholder="Please explain"></textarea>
 				  </td>
 				  </tr>
 				  
@@ -725,7 +1108,7 @@ function validateusername(){
 					<option value="slammed">Slammed</option>
 					<option value="otherbody">Other</option>
 				  </select>
-				  <input type="text" name="patient_body1" id="patient_body1" style='display:none'/>
+				  <input type="text" name="patient_body1" id="patient_body1" min="4" maxlength="32" style='display:none'/>
 				  </td><td width="55">.</td>
 				  </tr> 
 				   <tr class="row1">
@@ -741,49 +1124,49 @@ function validateusername(){
 				  <tr class="row2">
                   <td valign="middle" align="left" width="590" class="input_txt">My head hit</td>
 				  <td valign="top" align="left" class="input_txt" width="50%">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="head_hit" />
+				  <input type="text" class="input_txtbx1" id="head_hit" name="head_hit" min="4" maxlength="32" />
 				  </td><td width="55">.</td>
 				  </tr>
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt">My Right Left Shoulder hit</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="rlshoulder_hit" />
+				  <input type="text" class="input_txtbx1" id="rlshoulder_hit"  min="4" maxlength="32" name="rlshoulder_hit" />
 				  </td>
 				  </tr>
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt">My Right Left Hip hit</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="rlhip_hit" />
+				  <input type="text" class="input_txtbx1" id="rlhip_hit"  min="4" maxlength="32" name="rlhip_hit" />
 				  </td>
 				  </tr>
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt">My Right Left Knee hit</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="rlknee_hit" />
+				  <input type="text" class="input_txtbx1" id="rlknee_hit" min="4" maxlength="32" name="rlknee_hit" />
 				  </td>
 				  </tr>
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt">My Chest hit</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="chest_hit" />
+				  <input type="text" class="input_txtbx1" id="chest_hit" name="chest_hit" min="4" maxlength="32" />
 				  </td>
 				  </tr>
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt">My Right Left Arm hit</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="rlarm_hit" />
+				  <input type="text" class="input_txtbx1" id="rlarm_hit" name="rlarm_hit"  min="4" maxlength="32"/>
 				  </td>
 				  </tr>
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt">My Right Left Leg hit</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="rlleg_hit" />
+				  <input type="text" class="input_txtbx1" id="rlleg_hit" name="rlleg_hit" min="4" maxlength="32" />
 				  </td>
 				  </tr>
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt">My Other body part hit</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="otherpart_hit" />
+				  <input type="text" class="input_txtbx1" id="otherpart_hit" name="otherpart_hit" min="4" maxlength="32" />
 				  </td>
 				  </tr>
 				  </table>
@@ -809,13 +1192,13 @@ function validateusername(){
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Unconscious</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="unconscious" value="yes" class="input_txt" checked="true" onclick="toggle4('show4')" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="unconscious" value="no" class="input_txt" onclick="toggle4('hide4')" >No&nbsp;&nbsp;&nbsp;
-			      <input type="text" class="input_txtbx1" id="uncon" name="uncon" onkeypress="return validate(event)";/> (minutes)
+			      <input type="text" class="input_txtbx1" id="uncon" name="uncon" onkeypress="return validate(event)";  maxlength="18"/> (minutes)
 			      </td>
 				  </tr>
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Estimated amount of property damage</td>
 				  <td valign="top" align="left" class="input_txt">$
-				  <input type="text" class="input_txtbx1" id="estimateddamage" name="estimated_amount" onkeypress="return validate1(event)";/><span id="estimateddamageerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.estimated_amount"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="estimateddamage" name="estimated_amount" maxlength="18" onkeypress="return validate1(event)";/><span id="estimateddamageerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.estimated_amount"></form:errors></span>
 				 <br><span class="err" id="estimateddamageerror"></span>
 				  </td>
 				  </tr>
@@ -910,7 +1293,7 @@ function validateusername(){
 					<option value="next_day">The next day</option>
 					<option value="days">days</option>
 				  </select>
-				 <input type="text" name="symptom" id="symptom" style='display:none'/>
+				 <input type="text" name="symptom" id="symptom"  min="4" maxlength="32"style='display:none'/>
 				  </td>
 				  </tr> 
 				   <tr class="row1">
@@ -924,7 +1307,7 @@ function validateusername(){
 					<option value="physician">Physician</option>
 					<option value="otheracc">Other</option>
 				  </select>
-				 <input type="text" name="accident" id="accident" style='display:none'/>
+				 <input type="text" name="accident" id="accident" style='display:none' min="4" maxlength="32"/>
 				  </td>
 				  </tr> 
 				  </table>
@@ -934,14 +1317,14 @@ function validateusername(){
                   <td valign="middle" align="left" class="input_txt"  width = "19.5%" >Name of the hospital</td><td width="21%"></td><!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
 				  
 				 
-				  <td><input type="text" align="left" class="input_txtbx1" id="inp_id" name="hosname" /></td>
+				  <td><input type="text" align="left" class="input_txtbx1" onInput="return validatenamehos()";id="hosname" name="hosname" min="4" maxlength="32"/></td>
 				  <td width="680" ></td>
 				
 				  </tr>
 				   <tr class="row1">
                   <td valign="middle" align="left" class="input_txt">City</td><td></td><td><!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
 				  
-				  <input type="text" class="input_txtbx1" id="inp_id" name="city" />
+				  <input type="text" class="input_txtbx1" id="city" name="city" min="4" maxlength="32"/>
 				  </td>
 				  </tr>
 				   <tr class="row2">
@@ -961,13 +1344,13 @@ function validateusername(){
 					<option selected="selected" value="ambulance" >Ambulance</option>
 					<option value="other hos">Other</option>
 				  </select>
-				 <input type="text" name="hospital1" id="hospital1" style='display:none'/>
+				 <input type="text" name="hospital1" id="hospital1" min="4" maxlength="32" style='display:none'/>
 				  </td>
 				  </tr> 
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt">What body parts were x-rayed,what treatment was given
 				  </td><td></td><td>
-				  <input type="text" class="input_txtbx1" id="inp_id" name="xray" />
+				  <input type="text" class="input_txtbx1" id="xray" min="4" maxlength="32" name="xray" />
 				  </td>
 				  <td ></td>
 				 
@@ -975,7 +1358,7 @@ function validateusername(){
 				   <tr class="row1">
                   <td valign="middle"  align="left" class="input_txt">What did they tell you was wrong<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
 				  </td><td></td><td>
-				  <input type="text" class="input_txtbx1" id="inp_id" name="wrong" />
+				  <input type="text" class="input_txtbx1" id="wrong" min="4" maxlength="32" name="wrong" />
 				  </td>
 				  
 				  </tr>

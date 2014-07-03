@@ -88,11 +88,174 @@ window.onload(){
 	}
 }
   </script>
+  
+  <script>
+  $(function() {
+	$("#job_classification").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+
+<script>
+  $(function() {
+	$("#doyou").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#injury_occur").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#saw_accident").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#title").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#present_job").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#absenteeism").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#lighting").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#how_much").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#how_often").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#where_to_where").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#jobpp").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#warea").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#emp").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#changes_in_job").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+function validatename(id){
+    var textInput = document.getElementById(id).value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById(id).value = textInput;
+}
+</script>
+<script type="text/javascript">
+       function validate(event) {
+          
+           var regex = new RegExp("^[0-9]+$");
+           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+           if (!regex.test(key)) {
+             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
+               event.preventDefault();
+               return false;
+           }
+       }       
+    </script>
    <script>
 
 function checkSubmit()
 {
-	document.getElementById("job_classificationerror").innerHTML=" ";
+document.getElementById("job_classificationerror").innerHTML=" ";
 	
 	if(document.getElementById("job_classification").value=="")
 	{
@@ -100,7 +263,14 @@ function checkSubmit()
 	
 	return false;
 	}
-		
+	document.getElementById("job_classificationerror").innerHTML="";
+    if(document.getElementById("job_classification").value.length<4 || document.getElementById("job_classification").value.length>=32)
+    {
+    	
+    	document.getElementById("job_classificationerror").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
 	/*  document.getElementById("doyou_poserror").innerHTML="";
 		if(document.getElementById("doyou_pos").value==0)
 		{
@@ -110,7 +280,7 @@ function checkSubmit()
 		return false;
 
 		} */
-		/* document.getElementById("carryerror").innerHTML=""; 
+		document.getElementById("carryerror").innerHTML=""; 
 		if( ( document.getElementById("yes1").checked == false ) && ( document.getElementById("No1").checked == false ) )
 
 		 {
@@ -119,7 +289,7 @@ function checkSubmit()
 		 		return false;
 		 		
 		 }
-		 */
+		
 		document.getElementById("injury_occurerror").innerHTML=" ";
 		
 		if(document.getElementById("injury_occur").value=="")
@@ -128,7 +298,14 @@ function checkSubmit()
 		
 		return false;
 		}
-		
+		document.getElementById("injury_occurerror").innerHTML="";
+	    if(document.getElementById("injury_occur").value.length<4 || document.getElementById("injury_occur").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("injury_occurerror").innerHTML="Should be min 4 and max 32";
+	    	
+	        return false;
+	    }
 document.getElementById("saw_accidenterror").innerHTML=" ";
 		
 		if(document.getElementById("saw_accident").value=="")
@@ -137,7 +314,14 @@ document.getElementById("saw_accidenterror").innerHTML=" ";
 		
 		return false;
 		}
-		
+		document.getElementById("saw_accidenterror").innerHTML="";
+	    if(document.getElementById("saw_accident").value.length<4 || document.getElementById("saw_accident").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("saw_accidenterror").innerHTML="Should be min 4 and max 32";
+	    	
+	        return false;
+	    }
 document.getElementById("titleerror").innerHTML=" ";
 		
 		if(document.getElementById("title").value=="")
@@ -146,7 +330,14 @@ document.getElementById("titleerror").innerHTML=" ";
 		
 		return false;
 		}
-		
+		document.getElementById("titleerror").innerHTML="";
+	    if(document.getElementById("title").value.length<4 || document.getElementById("title").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("titleerror").innerHTML="Should be min 4 and max 32";
+	    	
+	        return false;
+	    }
 document.getElementById("present_joberror").innerHTML=" ";
 		
 		if(document.getElementById("present_job").value=="")
@@ -156,7 +347,7 @@ document.getElementById("present_joberror").innerHTML=" ";
 		return false;
 		}
 		
-		/* document.getElementById("time_losserror").innerHTML=""; 
+		document.getElementById("time_losserror").innerHTML=""; 
 		if( ( document.getElementById("yes2").checked == false ) && ( document.getElementById("No2").checked == false ) )
 
 		 {
@@ -164,7 +355,7 @@ document.getElementById("present_joberror").innerHTML=" ";
 		 		
 		 		return false;
 		 		
-		 } */
+		 }
 		
 		/* document.getElementById("type_of_lighterror").innerHTML="";
 		if(document.getElementById("type_of_light").value==0)
@@ -175,7 +366,7 @@ document.getElementById("present_joberror").innerHTML=" ";
 		return false;
 
 		} */
-	/* 	document.getElementById("pick_lifterror").innerHTML=""; 
+		document.getElementById("pick_lifterror").innerHTML=""; 
 		if( ( document.getElementById("yes3").checked == false ) && ( document.getElementById("No3").checked == false ) )
 
 		 {
@@ -183,8 +374,8 @@ document.getElementById("present_joberror").innerHTML=" ";
 		 		
 		 		return false;
 		 		
-		 } */
-/* document.getElementById("how_mucherror").innerHTML=" ";
+		 }
+document.getElementById("how_mucherror").innerHTML=" ";
 		
 		if(document.getElementById("how_much").value=="")
 		{
@@ -201,6 +392,15 @@ document.getElementById("how_oftenerror").innerHTML=" ";
 		
 		return false;
 		}
+		
+		document.getElementById("how_oftenerror").innerHTML="";
+	    if(document.getElementById("how_often").value.length<4 || document.getElementById("how_often").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("how_oftenerror").innerHTML="Should be min 4 and max 32";
+	    	
+	        return false;
+	    }
 document.getElementById("where_to_whereerror").innerHTML=" ";
 		
 		if(document.getElementById("where_to_where").value=="")
@@ -208,23 +408,15 @@ document.getElementById("where_to_whereerror").innerHTML=" ";
 		document.getElementById("where_to_whereerror").innerHTML="Required Field Should not be Empty";
 		
 		return false;
-		} */
-		document.getElementById("emperror").innerHTML=" ";
-		
-		if(document.getElementById("emp").value=="")
-		{
-		document.getElementById("emperror").innerHTML="Required Field Should not be Empty";
-		
-		return false;
 		}
-document.getElementById("changes_in_joberror").innerHTML=" ";
-		
-		if(document.getElementById("changes_in_job").value=="")
-		{
-		document.getElementById("changes_in_joberror").innerHTML="Required Field Should not be Empty";
-		
-		return false;
-		}
+		document.getElementById("where_to_whereerror").innerHTML="";
+	    if(document.getElementById("where_to_where").value.length<4 || document.getElementById("where_to_where").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("where_to_whereerror").innerHTML="Should be min 4 and max 32";
+	    	
+	        return false;
+	    }
 		 /* document.getElementById("lift_fromerror").innerHTML="";
 			if(document.getElementById("lift_from").value==0)
 			{
@@ -234,8 +426,8 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 			return false;
 
 			} */
-			/* document.getElementById("liftin_orouterror").innerHTML=""; 
-		 if( ( document.getElementById("yes4").checked == false ) && ( document.getElementById("No4").checked == false ) )
+			document.getElementById("liftin_orouterror").innerHTML=""; 
+			if( ( document.getElementById("yes4").checked == false ) && ( document.getElementById("No4").checked == false ) )
 
 			 {
 			 document.getElementById("liftin_orouterror").innerHTML="Required Field Should not be Empty";
@@ -243,7 +435,7 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 			 		return false;
 			 		
 			 }
-			  */
+			
 
 			/*  document.getElementById("workposerror").innerHTML="";
 				if(document.getElementById("workpos").value==0)
@@ -254,7 +446,7 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 				return false;
 
 				} */
-				/* document.getElementById("push_pullerror").innerHTML=""; 
+				document.getElementById("push_pullerror").innerHTML=""; 
 				if( ( document.getElementById("yes5").checked == false ) && ( document.getElementById("No5").checked == false ) )
 
 				 {
@@ -262,8 +454,32 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 				 		
 				 		return false;
 				 		
-				 } */
+				 }
+				document.getElementById("emperror").innerHTML=" ";
 				
+				if(document.getElementById("emp").value=="")
+				{
+				document.getElementById("emperror").innerHTML="Required Field Should not be Empty";
+				
+				return false;
+				}
+document.getElementById("changes_in_joberror").innerHTML=" ";
+				
+				if(document.getElementById("changes_in_job").value=="")
+				{
+				document.getElementById("changes_in_joberror").innerHTML="Required Field Should not be Empty";
+				
+				return false;
+				}
+				
+				document.getElementById("changes_in_joberror").innerHTML="";
+			    if(document.getElementById("changes_in_job").value.length<4 || document.getElementById("changes_in_job").value.length>=32)
+			    {
+			    	
+			    	document.getElementById("changes_in_joberror").innerHTML="Should be min 4 and max 32";
+			    	
+			        return false;
+			    }
 		}
 </script>
 </head>
@@ -305,7 +521,7 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 					
     				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>What is the job classification of your normal job</td>
     				   <input type="hidden" class="input_txtbx1" id="inp_id" value="${workaccident.patient_no}" name="patient_no" />
-				  			 <td class="input_txt"><input type="text" class="input_txtbx1" id="job_classification" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.job_classification}" name="job_classification" /></br><span id="job_classificationerror" style="color: red;font-style:italic;"><form:errors path="workAcc.job_classification"></form:errors></span></td>
+				  			 <td class="input_txt"><input type="text" class="input_txtbx1" id="job_classification" value="${workaccident.job_classification}" maxlength="32" onInput="return validatename(id)"; onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');"  name="job_classification" /></br><span id="job_classificationerror" style="color: red;font-style:italic;"><form:errors path="workAcc.job_classification"></form:errors></span></td>
 					 <td></td>   <td></td><td></td><td></td><td></td> <td></td><td></td>
 				 </tr>
 				 <tr class="row2">
@@ -329,7 +545,7 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 						                 		 </select>
 						                 		 <span id="doyou_poserror" style="color: red;font-style:italic;"></span>
 						                 		 </td>
-						                      <td><input type="text" name="doyou" id="doyou" style='display:none' onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.doyou}" name="doyou" /></br><span class="err"><form:errors path="workAcc.doyou"></form:errors></span></td>
+						                      <td><input type="text" name="doyou" maxlength="32" onInput="return validatename(id)"; id="doyou" style='display:none' onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.doyou}" name="doyou" /></br><span class="err"><form:errors path="workAcc.doyou"></form:errors></span></td>
 						              <td></td>
 						              <td></td>
 						              <td></td>
@@ -344,12 +560,12 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 				 				 <td valign="top" align="left" class="input_txt">
 				 				 <input type="radio" name="pick" value="yes" class="input_txt" id="pickcheck" onclick="any();" <c:if test="${workaccident.pick=='yes'}"><c:out value="checked=checked"/></c:if>>yes&nbsp;&nbsp;&nbsp;
 				 				 <input type="radio" name="pick" value="No" class="input_txt" id="pickun" onclick="any();"<c:if test="${workaccident.pick=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;
-				   <input type="text" class="input_txtbx1" id="carry" name="carry" placeholder="If yes, What"  style='display:none' value="${workaccident.carry}" name="carry" /></br><span class="err"><form:errors path="workAcc.carry"></form:errors></span></td>
+				   <input type="text" class="input_txtbx1" id="carry" maxlength="32" onInput="return validatename(id)";name="carry" placeholder="If yes, What"  style='display:none' value="${workaccident.carry}" name="carry" /></br><span class="err"><form:errors path="workAcc.carry"></form:errors></span></td>
 				  <span id="carryerror" style="color: red;font-style:italic;"></span>
 			  	 </tr>
 			  	  <tr class="row2">
 			  	 				 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>How did the injury occur?</td>
-				 				<td valign="top" align="left" class="input_txt"><input type="text" class="input_txtbx1" id="injury_occur" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.injury_occur}" name="injury_occur" /></br><span id="injury_occurerror" style="color: red;font-style:italic;"><form:errors path="workAcc.injury_occur"></form:errors></span></td>
+				 				<td valign="top" align="left" class="input_txt"><input type="text" class="input_txtbx1"  maxlength="32" onInput="return validatename(id)"; id="injury_occur" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.injury_occur}" name="injury_occur" /></br><span id="injury_occurerror" style="color: red;font-style:italic;"><form:errors path="workAcc.injury_occur"></form:errors></span></td>
 				 				 <td></td>
 						              <td></td>
 						              <td></td>
@@ -361,12 +577,12 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Who saw the accident?</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="saw_accident"onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.saw_accident}" name="saw_accident" /></br><span id="saw_accidenterror" style="color: red;font-style:italic;"><form:errors path="workAcc.saw_accident"></form:errors></span></td>
+				  <input type="text" class="input_txtbx1" maxlength="32" onInput="return validatename(id)"; id="saw_accident"onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.saw_accident}" name="saw_accident" /></br><span id="saw_accidenterror" style="color: red;font-style:italic;"><form:errors path="workAcc.saw_accident"></form:errors></span></td>
 				  </tr>
 				    <tr class="row2">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Job Title</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="title" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.title}" name="title" /></br><span id="titleerror" style="color: red;font-style:italic;"><form:errors path="workAcc.title"></form:errors></span></td>
+				  <input type="text" class="input_txtbx1" id="title" maxlength="32" onInput="return validatename(id)"; onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.title}" name="title" /></br><span id="titleerror" style="color: red;font-style:italic;"><form:errors path="workAcc.title"></form:errors></span></td>
 				   <td></td>
 						              <td></td>
 						              <td></td>
@@ -378,12 +594,12 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 				 <tr class="row1">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>How long have you been at your present job</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="present_job" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.present_job}" name="present_job" /></br><span id="present_joberror" style="color: red;font-style:italic;"><form:errors path="workAcc.present_job"></form:errors></span></td>
+				  <input type="text" class="input_txtbx1" id="present_job" onkeypress="return validate(event)"; maxlength="32"  onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.present_job}" name="present_job" /></br><span id="present_joberror" style="color: red;font-style:italic;"><form:errors path="workAcc.present_job"></form:errors></span></td>
 				 </tr>	
 				 <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Has there been a time loss or absentee caused from job injury</td>
 				  <td valign="top" align="left" class="input_txt" width = "5%"><input type="radio" name="time_loss" value="yes" class="input_txt" id="yes2" onchange="if (this.value=='yes'){this.form['absenteeism'].style.visibility='visible'}else {this.form['absenteeism'].style.visibility='hidden'};" onclick="time();"<c:if test="${workaccident.time_loss=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="time_loss" value="No" id="No2" class="input_txt" onchange="if (this.value=='No'){this.form['absenteeism'].style.visibility='hidden'}else {this.form['absenteeism'].style.visibility='visible'};" onclick="time();"<c:if test="${workaccident.time_loss=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;
-				  <td><textarea rows='3' cols='35' id="absenteeism" name="absenteeism" placeholder="If yes, explain(include dates)">${workaccident.absenteeism}</textarea></td>
+				  <td><textarea rows='3' cols='35' id="absenteeism"  onInput="return validatename(id)"; maxlength="32" name="absenteeism" placeholder="If yes, explain(include dates)">${workaccident.absenteeism}</textarea></td>
 				   <span id="time_losserror" style="color: red;font-style:italic;"></span>
 				  </td>
 				  </tr>
@@ -431,7 +647,7 @@ document.getElementById("lighting").style.visibility = 'hidden';
 						                      <%-- <c:if test="${workaccident.type_of_light=='others'}">
 						                     <td> <input type="text" name="lighting" id="lighting" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.lighting}" name="lighting" /></br><span class="err"><form:errors path="workAcc.lighting"></form:errors></span></td>
 						                 		</c:if>  --%>
-						                   <td> <input type="text" name="lighting" id="lighting_div"  value="${workaccident.lighting}"  /></br><span class="err"><form:errors path="workAcc.lighting"></form:errors></span></td>  
+						                   <td> <input type="text" name="lighting" id="lighting_div" maxlength="32" style='display:none' onInput="return validatename(id)"; value="${workaccident.lighting}"  /></br><span class="err"><form:errors path="workAcc.lighting"></form:errors></span></td>  
 											<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 						             			 </tr>
 				  <tr class="row2">
@@ -446,20 +662,20 @@ document.getElementById("lighting").style.visibility = 'hidden';
 				   <tr class="row1">
                   <td valign="middle" align="left" class="input_txt" width = "37%"><span class="err">*</span>If yes, how much</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="how_much"  onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.how_much}" name="how_much" /></br><span id="how_mucherror" style="color: red;font-style:italic;"><form:errors path="workAcc.how_much"></form:errors></span></td>
+				  <input type="text" class="input_txtbx1" id="how_much" maxlength="32" onkeypress="return validate(event)";  onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.how_much}" name="how_much" /></br><span id="how_mucherror" style="color: red;font-style:italic;"><form:errors path="workAcc.how_much"></form:errors></span></td>
 				  </td>
 				  </tr>
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>How often</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id=""how_often""   onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.how_often}" name="how_often" /></br><span id="how_oftenerror" style="color: red;font-style:italic;"><form:errors path="workAcc.how_often"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="how_often" maxlength="32" onInput="return validatename(id)"; onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.how_often}" name="how_often" /></br><span id="how_oftenerror" style="color: red;font-style:italic;"><form:errors path="workAcc.how_often"></form:errors></span>
 				  </td>
 				  <td></td>   <td></td> 
 				  </tr>
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>From where to where</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="where_to_where"   onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.where_to_where}" name="where_to_where" /></br><span id="where_to_whereerror" style="color: red;font-style:italic;"><form:errors path="workAcc.where_to_where"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="where_to_where" onInput="return validatename(id)"; maxlength="32" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.where_to_where}" name="where_to_where" /></br><span id="where_to_whereerror" style="color: red;font-style:italic;"><form:errors path="workAcc.where_to_where"></form:errors></span>
 				  </td>
 				  </tr>
 				  </table>
@@ -507,7 +723,7 @@ document.getElementById("lighting").style.visibility = 'hidden';
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="push_pull" value="yes" id="pushcheck"  class="input_txt"  onclick="pull();"<c:if test="${workaccident.push_pull=='yes'}"><c:out value="checked=checked"/></c:if> >Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="push_pull" value="No" id="No5"class="input_txt" onclick="pull();"<c:if test="${workaccident.push_pull=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;
-				   <input type="text" class="input_txtbx1" id="jobpp" name="jobpp" placeholder="If yes, give specifics"  value="${workaccident.jobpp}" name="jobpp" /></br><span class="err"><form:errors path="workAcc.jobpp"></form:errors></span>
+				   <input type="text" class="input_txtbx1" id="jobpp" maxlength="32"  onInput="return validatename(id)"; name="jobpp" placeholder="If yes, give specifics"  value="${workaccident.jobpp}" name="jobpp" /></br><span class="err"><form:errors path="workAcc.jobpp"></form:errors></span>
 				   <span id="push_pullerror" style="color: red;font-style:italic;"></span>
 				  </td>
 				  </tr>						                   
@@ -576,7 +792,7 @@ document.getElementById("jobpp").style.visibility = 'hidden';
 					<option value="slippery" <c:if test="${workaccident.work_area=='slippery'}"><c:out value="selected"/></c:if>>Slippery</option>
 					 <option value="Other" <c:if test="${workaccident.work_area=='Other'}"><c:out value="selected"/></c:if>>Other</option> 
 					 </select>
-					   <td> <input type="text" name="warea" id="warea"   value="${workaccident.warea}" name="warea" /></br><span class="err"><form:errors path="workAcc.warea"></form:errors></span></td>
+					   <td> <input type="text" name="warea" id="warea" maxlength="32" style='display:none' onInput="return validatename(id)";  value="${workaccident.warea}" name="warea" /></br><span class="err"><form:errors path="workAcc.warea"></form:errors></span></td>
 				      <script>
 		 window.onload = function()
 {
@@ -611,7 +827,7 @@ document.getElementById("warea").style.visibility = 'hidden';
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>How many employees have been injured doing your job</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="emp"  onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.no_of_employees}" name="no_of_employees" /><span id="emperror" style="color: red;font-style:italic;"><form:errors path="workAcc.no_of_employees"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="emp" maxlength="32" onkeypress="return validate(event)";onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.no_of_employees}" name="no_of_employees" /><span id="emperror" style="color: red;font-style:italic;"><form:errors path="workAcc.no_of_employees"></form:errors></span>
 				<span class="err" id="emperr"></span>
 				  </td>
 				  <td></td>    
@@ -641,7 +857,7 @@ document.getElementById("warea").style.visibility = 'hidden';
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>What changes would you make in your job</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="changes_in_job"  onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.changes_in_job}" name="changes_in_job" /></br><span id="changes_in_joberror" style="color: red;font-style:italic;"><form:errors path="workAcc.changes_in_job"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="changes_in_job" maxlength="32" onInput="return validatename(id)";  onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.changes_in_job}" name="changes_in_job" /></br><span id="changes_in_joberror" style="color: red;font-style:italic;"><form:errors path="workAcc.changes_in_job"></form:errors></span>
 				  </td>
 				   <td></td>    
 				  </tr>
