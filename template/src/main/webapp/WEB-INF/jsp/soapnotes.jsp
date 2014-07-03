@@ -529,11 +529,12 @@ document.getElementById("leftproxi").style.display="none";
 			</script>
  &nbsp &nbspDiagonosis:<br/>
 &nbsp;&nbsp;&nbsp;<input type="text" name="diagnosis[]" id="diagonosis"onkeypress="return validate1(event,id)";class="input_txtbx1"><br/><br/>
+<span id="diagnosiserr" style="color:red"></span>
 <!-- &nbsp &nbsp 2&nbsp &nbsp &nbsp<input type="text" name="diagnosis2"><br/><br/>
 &nbsp &nbsp 3&nbsp &nbsp &nbsp<input type="text" name="diagnosis3"><br/><br/>
 &nbsp &nbsp 4&nbsp &nbsp &nbsp<input type="text" name="diagnosis4"><br/><br/> -->
 <div id="multichoice"></div><a href="javascript:void(0);" onclick="addMultichoice('multichoice');" style="text-decoration:none;" ><input type="button" value="Add one more diagnosis" class="submit_btn2" name=""/></a>
- <span id="diagnosiserr" style="color:red"></span>
+ 
  </td>
  <td>
  &nbsp &nbsp <select name="e1e2" id="e1e2" class="input_cmbbx1" onchange="if (this.value=='ExtremitiesX-Rays'){this.form['xray'].style.visibility='visible'}else {this.form['xray'].style.visibility='hidden'};validate2();">
@@ -1242,6 +1243,14 @@ document.getElementById("leftproxi").style.display="none";
 		{
 		document.getElementById("signerror").innerHTML="Required Field Should between 4 to 45";	
 		error="true";
+		}
+	document.getElementById("diagnosiserr").innerHtml="";
+	if(document.getElementById("diagonosis").value.charAt(0) == " ")
+		{
+		alert("dsfds");
+		document.getElementById("diagnosiserr").innerHtml="Required Field no should not be Spaces";
+		error="true";
+		
 		}
 	
 	document.getElementById("datepicker1error").innerHTML="";

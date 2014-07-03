@@ -173,7 +173,7 @@ $(function() {
 				               <tr class="row1">
                 						<td  width="150" valign="middle" align="left" class="input_txt"><span class="err">*</span>Views:
                 							<select name="views1" class="input_cmbbx1">
-						                    <option value="A-P lower" <c:if test="${radiologicReport.views1=='A-P lower'}"><c:out value="selected"/></c:if>>A-P lower</option>
+						                    <option value="A-P lower" >A-P lower</option>
 						                     <option value="APOM" <c:if test="${radiologicReport.views1=='APOM'}"><c:out value="selected"/></c:if>>APOM</option>
 						                     <option value="L lateral"  <c:if test="${radiologicReport.views1=='L lateral'}"><c:out value="selected"/></c:if>>L lateral</option>
 						                     <option value="RLF" <c:if test="${radiologicReport.views1=='RLF'}"><c:out value="selected"/></c:if>>RLF</option>

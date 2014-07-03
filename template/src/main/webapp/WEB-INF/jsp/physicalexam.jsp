@@ -152,55 +152,100 @@ var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 
 	function checkSubmit()
 	{
-document.getElementById("signerror").innerHTML=" ";
-		
+		var error = "";
+
+		var alpha = /^[A-Za-z ]+$/;
+		var mail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+		var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		if(document.getElementById("sign").value=="")
 		{
 		document.getElementById("signerror").innerHTML="Required Field Should not be Empty";
-		
-		return false;
+		error="true";
 		}
+		else if(document.getElementById("sign").value.charAt(0) == " ")
+			{
+			document.getElementById("signerror").innerHTML="Initial space not allowed";
+			error="true";
+			
+			}
+		else if((document.getElementById("sign").value.length < 4) ||(document.getElementById("sign").value.length > 32))
+ 	   {
+ 	   document.getElementById('error1').innerHTML="Required field should be length 4 to 32";
+ 	  error="true";
+ 	   }
+    else if(document.getElementById("sign").value.match(alpha))
+ 	   {
+    	document.getElementById("signerror").innerHTML="";
+ 	   }
+    else
+ 	   {
+ 	   document.getElementById('error1').innerHTML="Required field should be Alphabates";
+ 	  error="true";
+ 	   }
+		
+		
+		
 document.getElementById("nameerror").innerHTML=" ";
 		
 		if(document.getElementById("name").value=="")
 		{
 		document.getElementById("nameerror").innerHTML="Required Field Should not be Empty";
 		
-		return false;
+		error="true";
 		}
-document.getElementById("emailerror").innerHTML=" ";
+		else if(document.getElementById("name").value.charAt(0) == " ")
+		{
+		document.getElementById("nameerror").innerHTML="Initial space not allowed";
+		error="true";
+		
+		}
+		else if((document.getElementById("name").value.length < 4) ||(document.getElementById("name").value.length > 32))
+	   {
+	   document.getElementById('nameerror').innerHTML="Required field should be length 4 to 32";
+	  error="true";
+	   }
+		else if(document.getElementById("name").value.match(alpha))
+	   {
+		document.getElementById("nameerror").innerHTML="";
+	   }
+		else
+	   {
+		   document.getElementById('nameerror').innerHTML="Required field should be Alphabates";
+		  error="true";
+	   }
+		
+		
+		
+		
+		
+document.getElementById("emailerror").innerHTML="";
 		
 		if(document.getElementById("email").value=="")
 		{
 		document.getElementById("emailerror").innerHTML="Required Field Should not be Empty";
 		
-		return false;
+		error="true";
 		}
-		document.getElementById("emailerror").innerHTML=" ";
-		var mail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    
-    if(document.getElementById("email").value.match(mail)==null)
-    {
+		
+		else if(document.getElementById("email").value.match(mail)==null)
+  	  {
     	document.getElementById("emailerror").innerHTML="Invalid Email Format";
     	
-        return false;
-    }
+    	error="true";
+   	 }
 document.getElementById("datepickererror").innerHTML=" ";
 		
 		if(document.getElementById("datepicker").value=="")
 		{
 		document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
 		
-		return false;
+		error="true";
 		}
-
-		  document.getElementById("datepickererror").innerHTML="";
-var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
-	if(document.getElementById("datepicker").value.match(datechk)==null)
+		else if(document.getElementById("datepicker").value.match(datechk)==null)
     {
     	document.getElementById("datepickererror").innerHTML="Invalid Date Format";
     	
-        return false;
+    	error="true";
     }
 	
 document.getElementById("bperror").innerHTML=" ";
@@ -209,8 +254,19 @@ document.getElementById("bperror").innerHTML=" ";
 		{
 		document.getElementById("bperror").innerHTML="Required Field Should not be Empty";
 		
-		return false;
+		error="true";
 		}
+		else if(document.getElementById("bp").value.charAt(0) == " ")
+		{
+		document.getElementById("bperror").innerHTML="Initial space not allowed";
+		error="true";
+		
+		}
+		else if((document.getElementById("bp").value.length < 4) ||(document.getElementById("bp").value.length > 32))
+	   {
+	   document.getElementById('bperror').innerHTML="Required field should be length 4 to 32";
+	  error="true";
+	   }
 		
 document.getElementById("patherror").innerHTML=" ";
 		
@@ -218,9 +274,28 @@ document.getElementById("patherror").innerHTML=" ";
 		{
 		document.getElementById("patherror").innerHTML="Required Field Should not be Empty";
 		
-		return false;
+		error="true";
 		}
-
+		else if(document.getElementById("path").value.charAt(0) == " ")
+		{
+		document.getElementById("patherror").innerHTML="Initial space not allowed";
+		error="true";
+		
+		}
+		else if((document.getElementById("path").value.length < 4) ||(document.getElementById("path").value.length > 32))
+	   {
+	   document.getElementById('patherror').innerHTML="Required field should be length 4 to 32";
+	  error="true";
+	   }
+		else if(document.getElementById("path").value.match(alpha))
+		   {
+			document.getElementById("patherror").innerHTML="";
+		   }
+			else
+		   {
+			   document.getElementById('patherror').innerHTML="Required field should be Alphabates";
+			  error="true";
+		   }
 
 	
 document.getElementById("abnormalerror").innerHTML=" ";
@@ -229,11 +304,140 @@ document.getElementById("abnormalerror").innerHTML=" ";
 		{
 		document.getElementById("abnormalerror").innerHTML="Required Field Should not be Empty";
 		
+		error="true";
+		}
+		else if(document.getElementById("abnormal").value.charAt(0) == " ")
+		{
+		document.getElementById("abnormalerror").innerHTML="Initial space not allowed";
+		error="true";
+		
+		}
+		else if((document.getElementById("abnormal").value.length < 4) ||(document.getElementById("abnormal").value.length > 32))
+	   {
+	   document.getElementById('abnormalerror').innerHTML="Required field should be length 4 to 32";
+	  error="true";
+	   }
+		else if(document.getElementById("abnormal").value.match(alpha))
+		   {
+			document.getElementById("abnormalerror").innerHTML="";
+		   }
+			else
+		   {
+			   document.getElementById('abnormalerror').innerHTML="Required field should be Alphabates";
+			  error="true";
+		   }
+		
+		document.getElementById("edema1error").innerHTML=" ";
+		if(document.getElementById("edema1").value=="")
+			{
+			
+			}
+		else if(document.getElementById("edema1").value.charAt(0) == " ")
+		{
+		document.getElementById("edema1error").innerHTML="Initial space not allowed";
+		error="true";
+		
+		}
+		else if((document.getElementById("edema1").value.length < 4) ||(document.getElementById("edema1").value.length > 32))
+	    {
+	   	document.getElementById('edema1error').innerHTML="Required field should be length 4 to 32";
+	  	error="true";
+	   	}
+		else if(document.getElementById("edema1").value.match(alpha))
+		{
+			document.getElementById("edema1error").innerHTML="";
+		}
+		else
+		{
+			   document.getElementById('edema1error').innerHTML="Required field should be Alphabates";
+			  error="true";
+		}
+		
+		
+		
+		document.getElementById("triggerpoint1error").innerHTML=" ";
+		if(document.getElementById("triggerpoint1").value=="")
+			{
+			
+			}
+		else if(document.getElementById("triggerpoint1").value.charAt(0) == " ")
+		{
+		document.getElementById("triggerpoint1error").innerHTML="Initial space not allowed";
+		error="true";
+		
+		}
+		else if((document.getElementById("triggerpoint1").value.length < 4) ||(document.getElementById("triggerpoint1").value.length > 32))
+	    {
+	   	document.getElementById('triggerpoint1error').innerHTML="Required field should be length 4 to 32";
+	  	error="true";
+	   	}
+		else if(document.getElementById("triggerpoint1").value.match(alpha))
+		{
+			document.getElementById("triggerpoint1error").innerHTML="";
+		}
+		else
+		{
+			   document.getElementById('triggerpoint1error').innerHTML="Required field should be Alphabates";
+			  error="true";
+		}
+		
+		document.getElementById("presentrlerror").innerHTML=" ";
+		if(document.getElementById("presentrl").value=="")
+			{
+			
+			}
+		else if(document.getElementById("presentrl").value.charAt(0) == " ")
+		{
+		document.getElementById("presentrlerror").innerHTML="Initial space not allowed";
+		error="true";
+		
+		}
+		else if((document.getElementById("presentrl").value.length < 4) ||(document.getElementById("presentrl").value.length > 32))
+	    {
+	   	document.getElementById('presentrlerror').innerHTML="Required field should be length 4 to 32";
+	  	error="true";
+	   	}
+		else if(document.getElementById("presentrl").value.match(alpha))
+		{
+			document.getElementById("presentrlerror").innerHTML="";
+		}
+		else
+		{
+			   document.getElementById('presentrlerror').innerHTML="Required field should be Alphabates";
+			  error="true";
+		}
+		document.getElementById("patientsmokererror").innerHTML=" ";
+		if(document.getElementById("patientsmoker").value=="")
+			{
+			
+			}
+		else if(document.getElementById("patientsmoker").value.charAt(0) == " ")
+		{
+		document.getElementById("patientsmokererror").innerHTML="Initial space not allowed";
+		error="true";
+		
+		}
+		else if((document.getElementById("patientsmoker").value.length < 2) ||(document.getElementById("patientsmoker").value.length > 32))
+	    {
+	   	document.getElementById('patientsmokererror').innerHTML="Required field should be length 2 to 32";
+	  	error="true";
+	   	}
+		else if(document.getElementById("patientsmoker").value.match(alpha))
+		{
+			document.getElementById("patientsmokererror").innerHTML="";
+		}
+		else
+		{
+			   document.getElementById('patientsmokererror').innerHTML="Required field should be Alphabates";
+			  error="true";
+		}
+		
+		
+	if(error == "true")
+
+		{
 		return false;
 		}
-
-
-	
 /* document.getElementById("presentrlerror").innerHTML=" ";
 		
 		if(document.getElementById("presentrl").value=="")
@@ -295,38 +499,41 @@ document.getElementById("abnormalerror").innerHTML=" ";
     					<!-- <h2 class="quck-txt">Patient Details</h2> -->
                         <table cellpadding="0" cellspacing="0" border="0" width="100%">
 	                            <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt" style="width: 207px; "><span class="err">*</span>Physician Signature :</td>
+				                  <td valign="middle" align="left" class="input_txt" style="width: 207px; "><span class="err">*</span> Physician Signature :</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  <input type="text" class="input_txtbx1" id="sign" name="sign" /><span class="err" id="signerror"><form:errors path="Physicalexam.sign"></form:errors>
+				                  <input type="text" class="input_txtbx1"onInput="validate1(id);"id="sign" name="sign" />
+				                  <br>
+				                  <span class="err" id="error1" style="color:red"></span>
+				                  <span class="err" id="signerror"><form:errors path="Physicalexam.sign"></form:errors></span>
 				                  </td>
 				                </tr>
 				                <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Name :</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Patient Name :</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="name" name="name" value="${name}" /><span class="err" id="nameerror"><form:errors path="Physicalexam.name"></form:errors>
+				                  	<input type="text" class="input_txtbx1" id="name" onInput="validate1(id);"name="name" value="${name}" /><span class="err" id="nameerror"><form:errors path="Physicalexam.name"></form:errors>
 				                  </td>
 				                </tr>
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Email :</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Email :</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="email" name="id" /><span class="err" id="emailerror"><form:errors path="Physicalexam.id"></form:errors>
+				                  	<input type="text" class="input_txtbx1" onInput="validate1(id);"id="email" name="id" /><span class="err" id="emailerror"><form:errors path="Physicalexam.id"></form:errors>
 				                  </td>
 				                </tr>
 				                <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date :</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Date :</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="datepicker" name="date" /><span class="err" id="datepickererror"><form:errors path="Physicalexam.date"></form:errors>
 				                  </td>
 				                </tr>
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Age:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Age:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  <select name="age" class="1-100" id="inp_id"></select>
 				                  <span class="err"></span><form:errors path="Physicalexam.age"></form:errors>
 				                  </td>
 				                </tr>
 				                <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Sex:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Sex:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	
 				                   <select name="sex" class="input_cmbbx1" id="inp_id">
@@ -337,8 +544,101 @@ document.getElementById("abnormalerror").innerHTML=" ";
 				                   		</select><span class="err"><form:errors path="Physicalexam.sex"></form:errors>
 				                  </td>
 				                </tr>
+ <script type="text/javascript">
+       function validate1(id) {
+    	   var alpha = /^[A-Za-z ]*$/; 
+        
+       
+       
+       
+      
+        
+      
+           if(document.getElementById(id).value.substring(0,1)==" ")
+           {
+        	   if(id == "sign"){
+        	   document.getElementById('error1').innerHTML="Initial space not allowed";
+        	   }
+        	   else
+    		   {
+        		   document.getElementById("error1").innerHTML="";
+    		   }
+        	   if(id == "name")
+        		   {
+        		   document.getElementById('nameerror').innerHTML="Initial space not allowed";
+        		   }
+        	   else
+    		   {
+        		   document.getElementById('nameerror').innerHTML="";
+    		   }
+        	   if(id=="email")
+        		   {
+        		   document.getElementById('emailerror').innerHTML="Initial space not allowed";
+        		   }
+        	   else
+    		   {
+        		   document.getElementById('emailerror').innerHTML="";
+    		   }
+        	   if(id=="path")
+        		   {
+        		   
+        		   document.getElementById('patherror').innerHTML="Initial space not allowed";
+        		   }
+        	   else
+    		   {
+        		   document.getElementById('patherror').innerHTML="";
+    		   }
+        	   if(id == "abnormal")
+        		   {
+        		   document.getElementById('abnormalerror').innerHTML="Initial space not allowed";
+        		   }
+        	   else
+    		   {
+        		   document.getElementById('abnormalerror').innerHTML="";
+    		   }
+        	   if(id == "edema1")
+        		   {
+        		   document.getElementById('edema1error').innerHTML="Initial space not allowed";
+        		   }
+        	   else
+        		   {
+        		   document.getElementById('edema1error').innerHTML="";
+        		   }
+        	   if(id == "triggerpoint1")
+        		   {
+        		   document.getElementById('triggerpoint1error').innerHTML="Initial space not allowed";
+        		   }
+        	   else
+        		   {
+        		   document.getElementById('triggerpoint1error').innerHTML="";
+        		   }
+        	   if(id == "presentrl")
+        		   {
+        		   document.getElementById('presentrlerror').innerHTML="Initial space not allowed";
+        		   }
+        	   else{
+        		   document.getElementById('presentrlerror').innerHTML="";
+        	   }
+        	   if(id == "patientsmoker")
+        		   {
+        		   document.getElementById('patientsmokererror').innerHTML="Initial space not allowed";
+        		   }
+        	   else
+        		   {
+        		   document.getElementById('patientsmokererror').innerHTML="";
+        		   }
+        	   
+        	   return false;
+           }
+          /*   */
+        	 
+        	 
+         
+       }
+    </script>
+   
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Height:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Height:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	
 				                  <select name="height" class="input_cmbbx1" id="inp_id">
@@ -427,14 +727,14 @@ document.getElementById("abnormalerror").innerHTML=" ";
 				                  </td>
 				                </tr>
 				                <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Weight:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Weight:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<select name="weight" class="1-500" id="inp_id"></select>
 				                 <span class="err"><form:errors path="Physicalexam.weight"></form:errors>
 				                  </td>
 				                </tr>
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Temp:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Temp:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  <select name="temp" class="input_cmbbx1" id="tempid">
 				                  <option selected="selected" value="95.0" >95.0</option>
@@ -532,7 +832,7 @@ document.getElementById("abnormalerror").innerHTML=" ";
 				                  </td>
 				                </tr>
 				                <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>BP:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span> BP:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="bp" name="bp" onkeypress="return validate(event)"; /><span class="err" id="bperror" ><form:errors path="Physicalexam.bp"></form:errors>
 				                  </td>
@@ -541,7 +841,7 @@ document.getElementById("abnormalerror").innerHTML=" ";
 				                <td align="left" valign="top"> 
 							<table cellpadding="0" cellspacing="0" border="0" width="100%">
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Pulse:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Pulse:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<select name="pulse" class="40-250" id="inp_id"></select>
 				                 <span class="err"><form:errors path="Physicalexam.pulse"></form:errors>
@@ -549,7 +849,7 @@ document.getElementById("abnormalerror").innerHTML=" ";
 				                  </td>
 				                </tr>
 				                <tr class="row1">
-				                 	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Appearance:</td>
+				                 	<td valign="middle" align="left" class="input_txt"><span class="err">*</span> Appearance:</td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  		<select name="appearance" class="input_cmbbx1">
 						                    <option selected="selected" value="excellent" >Excellent</option>
@@ -559,7 +859,7 @@ document.getElementById("abnormalerror").innerHTML=" ";
 				                   		</select>
 				                   	</td> </tr>  
 				                   	 <tr class="row2">
-				                 	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Nourishment</td>
+				                 	<td valign="middle" align="left" class="input_txt"><span class="err">*</span> Nourishment</td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  		<select name="weight1" class="input_cmbbx1">
 						                    <option selected="selected" value="un" >UN</option>
@@ -568,7 +868,7 @@ document.getElementById("abnormalerror").innerHTML=" ";
 				                   		</select>
 				                   	</td> </tr>  
 				                   	 <tr class="row1">
-				                 	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>GAIT:</td>
+				                 	<td valign="middle" align="left" class="input_txt"><span class="err">*</span> GAIT:</td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  		<select name="gait" class="input_cmbbx1">
 						                    <option selected="selected" value="antalgic" >Antalgic</option>
@@ -580,35 +880,35 @@ document.getElementById("abnormalerror").innerHTML=" ";
 				                   		
 				                   	</td> </tr>
 				                   	 <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>HEAD,EENT:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span> HEAD,EENT:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="radio" name="head" value="Normal" class="input_txt" checked="true">Normal&nbsp;&nbsp;&nbsp;<input type="radio" name="head" value="Abnormal" class="input_txt">Abnormal&nbsp;&nbsp;&nbsp;</td>
 				                </tr>
 				                 <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Visceral Pathologies:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Visceral Pathologies:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" name="path" class="input_txtbx1" id="path"><span class="err" id="patherror"></span></td>
+				                  	<input type="text" name="path" class="input_txtbx1"onInput="validate1(id);" id="path"><span class="err" id="patherror"></span></td>
 				               
 				                </tr>
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Posture:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Posture:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="radio" name="posture" value="Good" class="input_txt" checked="true">Good&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="posture" value="Poor" class="input_txt">Poor&nbsp;&nbsp;&nbsp;</td>
 				                </tr>
 				                   	<tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Romberg's Sign:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Romberg's Sign:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="radio" name="romber" value="Present" class="input_txt" checked="true">Present&nbsp;&nbsp;&nbsp;<input type="radio" name="romber" value="NotPresent" class="input_txt">NotPresent&nbsp;&nbsp;&nbsp;</td>
 				                </tr>
 				                 <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>CN Exam:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span> CN Exam:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="radio" name="exam" value="Normal" class="input_txt" checked="true">Normal&nbsp;&nbsp;&nbsp;<input type="radio" name="exam" value="DNP" class="input_txt">DNP&nbsp;&nbsp;&nbsp;</td>
 				                </tr>  	
 				               <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Abnormal Findings:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Abnormal Findings:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="abnormal" name="abnormal" /><span class="err" id="abnormalerror"><form:errors path="Physicalexam.abnormal"></form:errors>
+				                  	<input type="text" class="input_txtbx1"onInput="validate1(id);" id="abnormal" name="abnormal" /><span class="err" id="abnormalerror"><form:errors path="Physicalexam.abnormal"></form:errors>
 				                  </td>
 				                </tr>
 				                </table>
@@ -702,8 +1002,11 @@ document.getElementById("abnormalerror").innerHTML=" ";
 				                  <td>Paraspinal:</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="paraspain" value="Pain">Pain</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="parasspasm" value="Spasm">Spasm</td>
-				                  <td class="input_txt" align="left"> <span id="edema">Edema </span><input type="text" name="parasedema" class="input_txtbx1">
-				                   <td class="input_txt" align="left"><span id="TriggerPoint">TriggerPoint </span> <input type="text" name="parastriggerpoint" class="input_txtbx1"></td>
+				                  <td class="input_txt" align="left"> <span id="edema">Edema </span><input type="text" name="parasedema" onInput="validate1(id);"id="edema1"class="input_txtbx1">
+				                  <span id="edema1error" style="color:red"></span></td>
+				                   <td class="input_txt" align="left"><span id="TriggerPoint">TriggerPoint </span> <input type="text" id="triggerpoint1" onInput="validate1(id);"name="parastriggerpoint" class="input_txtbx1">
+				                   <span id="triggerpoint1error" style="color:red"></span>
+				                   </td>
 				                  </tr>
 				                  <tr class="row1">
 				                  <td>Trapezius</td>
@@ -1078,7 +1381,7 @@ document.getElementById("abnormalerror").innerHTML=" ";
 											
 				                   		</select></td>
 				                   		<td>If present, perform eye exam & auscultate carotid arteries</td>
-				                   		<td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="presentrl" name="presentrl" />
+				                   		<td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="presentrl"onInput="validate1(id);" name="presentrl" />
 				                   		<span class="err" id="presentrlerror"></span></td>
 
 				                   		
@@ -1151,7 +1454,7 @@ document.getElementById("abnormalerror").innerHTML=" ";
 				                  </tr>
 				                   <tr class="row1">
 				                   <td>Chest Measure:</td>
-				                  <td valign="top" align="left" > <input type="text" name="chestmeasurein" class="input_txtbx1"></td>
+				                  <td valign="top" align="left" > <input type="text" name="chestmeasurein" onkeypress="return validate(event)";class="input_txtbx1"></td>
 				                 
 				                  
 				                  </tr>
@@ -1314,7 +1617,7 @@ document.getElementById("abnormalerror").innerHTML=" ";
 				                     <tr class="row1">
 				               
 				                   		<td>If present is a smoker and has difficulty breathing, perform cardio-respiratory exam</td>
-				                   		<td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="patientsmoker" name="patientsmoker" />
+				                   		<td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" onInput="validate1(id);"id="patientsmoker" name="patientsmoker" />
 				                   		<span class="err" id="patientsmokererror"></span>
 				                   		</td>
 
