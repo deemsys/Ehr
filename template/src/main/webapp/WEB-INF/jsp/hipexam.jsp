@@ -114,6 +114,90 @@ $(function() {
     $( ".tabs-bottom .ui-tabs-nav" ).appendTo( ".tabs-bottom" );
   });
 </script>
+<script>
+$(function() {
+	$("#pname").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#datepicker").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#note").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#comments").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#diagnosis1").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#diagnosis2").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+$(function() {
+	$("#diagnosis3").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+$(function() {
+	$("#diagnosis4").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#diagnosis5").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#times").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#weeks").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+$(function() {
+	$("#sign").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});		
+</script>
+<script>
+function validatename(id){
+    var textInput = document.getElementById(id).value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById(id).value = textInput;
+}
+
+
+
+</script>
 <script type="text/javascript">
     var currentTab = 0;
     $(function () {
@@ -200,6 +284,14 @@ document.getElementById("pnameerror").innerHTML=" ";
 		
 		return false;
 		}
+		document.getElementById("pnameerror").innerHTML="";
+	    if(document.getElementById("pname").value.length<4 || document.getElementById("pname").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("pnameerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
 		document.getElementById("datepickererror").innerHTML="";
 	if(document.getElementById("datepicker").value=="")
 		{
@@ -223,6 +315,14 @@ document.getElementById("pnameerror").innerHTML=" ";
 	
 	return false;
 	}
+	document.getElementById("signerror").innerHTML="";
+    if(document.getElementById("sign").value.length<4 || document.getElementById("sign").value.length>=32)
+    {
+    	
+    	document.getElementById("signerror").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
 	}
 	</script>
 <script type="text/javascript">
@@ -613,7 +713,7 @@ document.getElementById("pnameerror").innerHTML=" ";
 	     <c:when test="${empty hipdetails}">
           <table cellpadding="0" cellspacing="0" border="0" >
            <tr><td width="130"><span class="err">*</span>Patient Name:</td>
-           <td><input type="text" name="pname" id="pname"><br><span class="err" id="pnameerror"><form:errors path="hipexamdetails.pname"></form:errors></td><td width="480"></td>
+           <td><input type="text" name="pname" id="pname" onInput="return validatename(id)";><br><span class="err" id="pnameerror"><form:errors path="hipexamdetails.pname"></form:errors></td><td width="480"></td>
            <td ><span class="err">*</span>Date:&nbsp;</td> <td><input type="text" name="date" id="datepicker"><br><span class="err" id="datepickererror"><form:errors path="hipexamdetails.date"></form:errors></td>
            </tr>
             </table>
@@ -694,7 +794,7 @@ document.getElementById("pnameerror").innerHTML=" ";
 	
 	</tr>
 	<tr height="10"></tr></table>
-	<table ><tr><td valign="top">Other / Note:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<textarea rows="5" cols="50" name="note"></textarea></td></tr>
+	<table ><tr><td valign="top">Other / Note:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<textarea rows="5" cols="50" name="note" id="note" onInput="return validatename(id)";></textarea></td></tr>
 	
 	</table>	
 	</br>
@@ -786,7 +886,7 @@ document.getElementById("pnameerror").innerHTML=" ";
            </table>
            <table>
            <tr><td width="350"><b style="font-size:14px">ASSESSMENT / ADDITIONAL COMMENTS:  </b></td>
-           <td><textarea rows="5" cols="50" name="comments"></textarea>   </td></tr>
+           <td><textarea rows="5" cols="50" name="comments" id="comments" onInput="return validatename(id)";></textarea>   </td></tr>
            <tr height="10"></tr>
            <tr><td>Patient's Status for being a candidate for conservative care:</td>
                <td><select name="patientstatus">
@@ -795,12 +895,12 @@ document.getElementById("pnameerror").innerHTML=" ";
                 </table>
                 </br>
                 <table width="100%">
-           <tr><td width="400"><b style="font-size:14px">DIAGNOSIS:	</b></td><td width="250">1)&nbsp;&nbsp;&nbsp;<input type="text" name="diagnosis1"></td><td width="250">2)&nbsp;&nbsp;&nbsp;<input type="text" name="diagnosis2"></td><td width="250">3)&nbsp;&nbsp;&nbsp;<input type="text" name="diagnosis3"></td><td width="250">4)&nbsp;&nbsp;&nbsp;<input type="text" name="diagnosis4"></td></tr>
+           <tr><td width="400"><b style="font-size:14px">DIAGNOSIS:	</b></td><td width="250">1)&nbsp;&nbsp;&nbsp;<input type="text" name="diagnosis1" id="diagnosis1" onInput="return validatename(id)";></td><td width="250">2)&nbsp;&nbsp;&nbsp;<input type="text" name="diagnosis2" id="diagnosis2" onInput="return validatename(id)";></td><td width="250">3)&nbsp;&nbsp;&nbsp;<input type="text" name="diagnosis3" id="diagnosis3" onInput="return validatename(id)";></td><td width="250">4)&nbsp;&nbsp;&nbsp;<input type="text" name="diagnosis4" id="diagnosis4" onInput="return validatename(id)";></td></tr>
            <tr height="10"></tr>
-           <tr><td></td><td width="250">5)&nbsp;&nbsp;&nbsp;<input type="text" name="diagnosis5"></td></tr>
+           <tr><td></td><td width="250">5)&nbsp;&nbsp;&nbsp;<input type="text" name="diagnosis5" id="diagnosis5" onInput="return validatename(id)";></td></tr>
            </table>
            </br>
-           <div><b style="font-size:14px">PLAN:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><input type="text" name="times">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Times/week for&nbsp;&nbsp;&nbsp;&nbsp; </b><input type="text" name="weeks">&nbsp;&nbsp;&nbsp;&nbsp; weeks to address the above functional & structural deficits.  Treatment will consist of the following:</div>
+           <div><b style="font-size:14px">PLAN:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><input type="text" name="times" id="times" onInput="return validatename(id)";>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Times/week for&nbsp;&nbsp;&nbsp;&nbsp; </b><input type="text" name="weeks" id="weeks" onInput="return validatename(id)";>&nbsp;&nbsp;&nbsp;&nbsp; weeks to address the above functional & structural deficits.  Treatment will consist of the following:</div>
            </br>
            <table><tr><td width="95"></td><td width="160"><input type="checkbox" name="spinaldecompression" value="Spinal Decompression">Spinal Decompression</td><td width="100"><input type="checkbox" name="chiropractic" value="Chiropractic">Chiropractic</td>
            <td width="150"><input type="checkbox" name="physicaltherapy" value="Physical Therapy">Physical Therapy</td><td width="150"><input type="checkbox" name="bracing" value="Orthotics/Bracing">Orthotics/Bracing</td>
@@ -814,7 +914,7 @@ document.getElementById("pnameerror").innerHTML=" ";
                       
            </table>
            </br>
-           <div><span class="err">*</span><B style="font-size:14px">PHYSICIAN SIGNATURE:</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="signature" id="sign"><span class="err" id="signerror"><form:errors path="hipexamdetails.signature"></form:errors></div>
+           <div><span class="err">*</span><B style="font-size:14px">PHYSICIAN SIGNATURE:</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="signature" id="sign" onInput="return validatename(id)";><span class="err" id="signerror"><form:errors path="hipexamdetails.signature"></form:errors></div>
           </c:when>
           <c:otherwise>
                     <table cellpadding="0" cellspacing="0" border="0" >
