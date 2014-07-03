@@ -4,7 +4,9 @@
 <html>
 <head>
 <link rel="stylesheet" href="/resources/css/style.css" />
-
+ <script src="resources/js/jquery.min.js"></script>
+  <script src="resources/js/jquery-ui.js"></script>
+<script src="resources/js/jquey-1.9.1.js"></script>
 <STYLE type="text/css">
    P#mypar {font-style:calibri;
    line-height:18px;}
@@ -22,6 +24,36 @@
 	}
 }
   </script>
+  
+  <script>
+  $(function() {
+	$("#iname").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#medicalinformation").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#patientsignature").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
   <script>
 
 	function checkSubmit()
