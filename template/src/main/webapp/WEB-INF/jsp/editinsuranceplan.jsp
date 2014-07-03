@@ -228,6 +228,14 @@ document.getElementById("insure_comperror").innerHTML=" ";
 		
 		return false;
 		}
+	document.getElementById("addrerror").innerHTML="";
+    if(document.getElementById("addr").value.length<4 || document.getElementById("addr").value.length>=32)
+    {
+    	
+    	document.getElementById("addrerror").innerHTML="Address should be min 4 and max 32";
+    	
+        return false;
+    }
 	document.getElementById("pat_nameerror").innerHTML="";
 	if(document.getElementById("pat_name").value=="")
 		{

@@ -185,18 +185,18 @@ function checkSubmit()
         return false;
     }
 
-	document.getElementById("datepickererr").innerHTML="";
+	document.getElementById("datepickererror").innerHTML="";
 	if(document.getElementById("datepicker").value=="")
 	{
-	document.getElementById("datepickererr").innerHTML="Required Field Should not be Empty";
+	document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
 	
 	return false;
 	}
-	document.getElementById("datepickererr").innerHTML="";
+	document.getElementById("datepickererror").innerHTML="";
 	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 	if(document.getElementById("datepicker").value.match(datechk)==null)
     {
-    	document.getElementById("datepickererr").innerHTML="Invalid Date Format";
+    	document.getElementById("datepickererror").innerHTML="Invalid Date Format";
     	
         return false;
     }
@@ -467,7 +467,7 @@ document.getElementById("phone").value=phone;
               <tr class="row1">
               <td><span class="err">*</span>Patient's Name</td>
               <input type="hidden" class="input_txtbx1" id="inp_id" value="${Insuranceinformation.number}" name="number" />
-              <td> <input type="text" class="input_txtbx1" name="patient_name" id="person" onInput="return validatename()"; value="${Insuranceinformation.patient_name}"/><br><span id="personerr" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.patient_name"></form:errors></td>
+              <td> <input type="text" class="input_txtbx1" name="patient_name" id="person" onInput="return validatename55(id)"; value="${Insuranceinformation.patient_name}"/><br><span id="personerr" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.patient_name"></form:errors></td>
               </tr>
               <tr class="row1">
               <td><span class="err">*</span>Date of Accident/injury</td>
@@ -479,11 +479,11 @@ document.getElementById("phone").value=phone;
               </tr>
               <tr class="row1">
               <td><span class="err">*</span>Employer's Name</td>
-              <td> <input type="text" class="input_txtbx1" name="employers_name" id="emp" onInput="return validatename1()"; value="${Insuranceinformation.employers_name}"/><span id="emperr"  style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.employers_name"></form:errors></td>
+              <td> <input type="text" class="input_txtbx1" name="employers_name" id="emp" onInput="return validatename55(id)"; value="${Insuranceinformation.employers_name}"/><span id="emperr"  style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.employers_name"></form:errors></td>
               </tr>
               <tr class="row1">
               <td><span class="err">*</span>Insurance Company</td>
-              <td> <input type="text" class="input_txtbx1" name="insurance_company" id="company" onInput="return validatename55(id)"; value="${Insuranceinformation.insurance_company}" /><br><span id="companyerr" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.insurance_company"></form:errors></td>
+              <td> <input type="text" class="input_txtbx1" name="insurance_company" id="company" onInput="return validatename55(id)";value="${Insuranceinformation.insurance_company}" /><br><span id="companyerr" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.insurance_company"></form:errors></td>
               <td><span class="err">*</span>Phone#</td>
               <td><input type="text" class="input_txtbx1" name="phone" id="phone"  maxlength="13" value="${Insuranceinformation.phone}" onkeypress="return validate1(event)"; /><br><span class="err" id="phoneerr"><form:errors path="Insuranceinformation.phone"></form:errors></span>
               <br><span class="err" id="phoneerror"></span>
@@ -525,13 +525,13 @@ document.getElementById("phone").value=phone;
  		<table cellpadding="0" cellspacing="0" border="0" width="100%">
  		<tr class="row1">
  		<td><span class="err">*</span>Patient Signature</td>
-        <td> <input type="text" class="input_txtbx1" name="patient_sign" id="patient_sign"  onInput="return validatename56(id)";value=" ${Insuranceinformation.patient_sign}" /><br><span id="patient_signerr"  style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.patient_sign"></form:errors></td>
+        <td> <input type="text" class="input_txtbx1" name="patient_sign" id="patient_sign" value=" ${Insuranceinformation.patient_sign}" onInput="return validatename56(id)"; /><br><span id="patient_signerr"  style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.patient_sign"></form:errors></td>
         <td><span class="err">*</span>Date</td>
         <td> <input type="text" class="input_txtbx1" name="date" id="datepicker1" value="${Insuranceinformation.date}" /><br><span id="datepicker1err" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.date"></form:errors></td>
         </tr>
         <tr class="row1">
  		<td><span class="err">*</span>Spouse or Guardian Signature</td>
-        <td> <input type="text" class="input_txtbx1" name="spouse_sign" id="spouse_sign" onInput="return validatename56(id)";value="${Insuranceinformation.spouse_sign}"/><br><span id="spouse_signerr" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.spouse_sign"></form:errors></td>
+        <td> <input type="text" class="input_txtbx1" name="spouse_sign" id="spouse_sign" value="${Insuranceinformation.spouse_sign}" onInput="return validatename56(id)";/><br><span id="spouse_signerr" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.spouse_sign"></form:errors></td>
         <td><span class="err">*</span>Date</td>
         <td> <input type="text" class="input_txtbx1" name="date1" id="datepicker2" value="${Insuranceinformation.date1}" /><br><span id="datepicker2err" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.date1"></form:errors></td>
         </tr>
