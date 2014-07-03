@@ -918,7 +918,208 @@ $(function() {
 	   document.getElementById("anterior3error").innerHTML="";
    }
    
+	   if(document.getElementById("schmorls_3").checked)
+	   {
+		   if(document.getElementById("schmorls3").value == "")
+ 	   		{
+ 	  
+ 	 		 document.getElementById("schmorls3error").innerHTML="Required Field should not be blank";
+ 	 		 error="true";
+ 	   		}
+		   else  if(document.getElementById("schmorls3").value.charAt(0) == " ")
+	   		{
+	  
+	   			document.getElementById("schmorls3error").innerHTML="Initial space not allowed";
+	   		 error="true";
+	   		}
+   		else if(document.getElementById("schmorls3").value.match(alpha))
+	   {
+   			if((document.getElementById("schmorls3").value.length < 4 ) || (document.getElementById("schmorls3").value.length > 45 ))
+   			{
+   			  document.getElementById("schmorls3error").innerHTML="Required Field should be 4 to 45";
+   			 error="true";
+   			}
+   			else{
+	 			  document.getElementById("schmorls3error").innerHTML="";
+   			}
+	   }
+   		else
+	   {
+	   document.getElementById("schmorls3error").innerHTML="Required Field should be Alphabates";
+	   error="true";
+	   }
    
+	   }
+   else{
+	   document.getElementById("schmorls3error").innerHTML="";
+   }
+	   
+	   if(document.getElementById("inp_id").value == "")
+   		{
+  
+ 		 
+   		}
+	   else  if(document.getElementById("inp_id").value.charAt(0) == " ")
+		{
+
+			document.getElementById("inp_iderror").innerHTML="Initial space not allowed";
+			 error="true";
+		}
+		else if(document.getElementById("inp_id").value.match(alpha))
+  	{
+			if((document.getElementById("inp_id").value.length < 4 ) || (document.getElementById("inp_id").value.length > 45 ))
+			{
+			  document.getElementById("inp_iderror").innerHTML="Required Field should be 4 to 45";
+			  error="true";
+			}
+			else{
+			  document.getElementById("inp_iderror").innerHTML="";
+			}
+  	}
+		else
+ 	 {
+ 		 document.getElementById("inp_iderror").innerHTML="Required Field should be Alphabates";
+ 		 error="true";
+ 	 }
+	   
+	   if(document.getElementById("apexat_3").checked)
+	   {
+		   if(document.getElementById("apexat3").value == "")
+	   		{
+	  
+	 		  document.getElementById("apexat3error").innerHTML="Required Field should not be blank";
+	 		 error="true";
+	   		}
+		   else  if(document.getElementById("apexat3").value.charAt(0) == " ")
+   		{
+  
+   			document.getElementById("apexat3error").innerHTML="Initial space not allowed";
+   		 error="true";
+   		}
+   		else if(document.getElementById("apexat3").value.match(alpha))
+	   {
+   			if((document.getElementById("apexat3").value.length < 4 ) || (document.getElementById("apexat3").value.length > 45 ))
+   			{
+   			  document.getElementById("apexat3error").innerHTML="Required Field should be 4 to 45";
+   			 error="true";
+   			}
+   			else{
+	 			  document.getElementById("apexat3error").innerHTML="";
+   			}
+	   }
+   		else
+	   {
+	   document.getElementById("apexat3error").innerHTML="Required Field should be Alphabates";
+	   error="true";
+	   }
+   
+	   }
+   else{
+	   document.getElementById("apexat3error").innerHTML="";
+   }
+	   
+	   if(document.getElementById("softtissueedemaof_3").checked)
+	   {
+		   if(document.getElementById("softtissueedemaof3").value == "")
+	   		{
+	  
+	 		 document.getElementById("softtissueedemaof3error").innerHTML="Required Field should not be blank";
+	  		  return false;
+	   		}
+		   else  if(document.getElementById("softtissueedemaof3").value.charAt(0) == " ")
+   		{
+  
+   			document.getElementById("softtissueedemaof3error").innerHTML="Initial space not allowed";
+   			error="true";
+   		}
+   		else if(document.getElementById("softtissueedemaof3").value.match(alpha))
+	   {
+   			if((document.getElementById("softtissueedemaof3").value.length < 4 ) || (document.getElementById("softtissueedemaof3").value.length > 45 ))
+   			{
+   			  document.getElementById("softtissueedemaof3error").innerHTML="Required Field should be 4 to 45";
+   			error="true";
+   			}
+   			else{
+	 			  document.getElementById("softtissueedemaof3error").innerHTML="";
+   			}
+	   }
+   		else
+	   {
+	   document.getElementById("softtissueedemaof3error").innerHTML="Required Field should be Alphabates";
+	   error="true";
+	   }
+   
+	   }
+   else{
+	   document.getElementById("softtissueedemaof3error").innerHTML="";
+   }
+	 
+   
+
+	   if(document.getElementById("other_3").checked)
+	   {
+		   if(document.getElementById("other3").value == "")
+	   		{
+	  
+	 		 document.getElementById("other3error").innerHTML="Required Field should not be blank";
+	 		error="true";
+	   		}
+		   else  if(document.getElementById("other3").value.charAt(0) == " ")
+   		{
+  
+   			document.getElementById("other3error").innerHTML="Initial space not allowed";
+   			error="true";
+   		}
+   		else if(document.getElementById("other3").value.match(alpha))
+	   {
+   			if((document.getElementById("other3").value.length < 4 ) || (document.getElementById("other3").value.length > 45 ))
+   			{
+   			  document.getElementById("other3error").innerHTML="Required Field should be 4 to 45";
+   			error="true";
+   			}
+   			else{
+	 			  document.getElementById("other3error").innerHTML="";
+   			}
+	   }
+   		else
+	   {
+	   document.getElementById("other3error").innerHTML="Required Field should be Alphabates";
+	   error="true";
+	   }
+   
+	   }
+   else{
+	   document.getElementById("other3error").innerHTML="";
+   }
+	 
+	   
+	   
+	   if(document.getElementById("views4").value==" ")
+		{
+		document.getElementById("viewserror").innerHTML="Required Field Should not be Spaces";
+		error="true";
+		
+		}
+		else if((document.getElementById("views4").value.length < 4 ) || (document.getElementById("views4").value.length > 32 ))
+			{
+			document.getElementById("viewserror").innerHTML="Required Field Should be 4 to 32";
+			error="true";
+			//return false;
+			}
+	 
+	   if(document.getElementById("positivefor4").value==" ")
+		{
+		document.getElementById("positivefor4error").innerHTML="Required Field Should not be Spaces";
+		error="true";
+		
+		}
+		else if((document.getElementById("positivefor4").value.length < 4 ) || (document.getElementById("positivefor4").value.length > 32 ))
+			{
+			document.getElementById("positivefor4error").innerHTML="Required Field Should be 4 to 32";
+			error="true";
+			//return false;
+			}
+	 
 	   if(error == "true")
 		{
 		return false;
@@ -1100,16 +1301,16 @@ $(function() {
         		   document.getElementById("positive1error").innerHTML="Initial space not allowed";
         		   
         		   }
-        	  /*  if(id=="diagonosis")
+        	    if(id=="views4")
         		   {
-        		   document.getElementById("diagnosiserr").innerHTML="Initial space not allowed";
+        		   document.getElementById("viewserror").innerHTML="Initial space not allowed";
         		   
         		   }
-        	   if(id=="sign")
+        	   if(id=="positivefor4")
         		   {
-        		   document.getElementById("signerror").innerHTML="Initial space not allowed";
+        		   document.getElementById("positivefor4error").innerHTML="Initial space not allowed";
         		   }
-        	 */
+        	 
         	   
         		document.getElementById(id).value == "";
         		return false;
@@ -1123,16 +1324,15 @@ $(function() {
     		   document.getElementById("positive1error").innerHTML="";
     		   
     		   }
-           	  /*  if(id="diagonosis")
-           		   {
-           		document.getElementById("diagnosiserr").innerHTML="";
-           		   
-           		   }
-           	 if(id="sign")
-  		   {
-  		   document.getElementById("signerror").innerHTML="";
-  		   }
-           	 */
+        	   if(id=="views4")
+    		   {
+    		   document.getElementById("viewserror").innerHTML="";
+    		   
+    		   }
+    	   if(id=="positivefor4")
+    		   {
+    		   document.getElementById("positivefor4error").innerHTML="";
+    		   }
         	   
            }
            
@@ -2139,6 +2339,214 @@ $(function() {
 	   }
 	   
        }
+	
+	function validate23(id)
+    {
+		
+ 	  
+ 	   var alpha = /^[A-Za-z ]*$/; 
+    	   
+    	   if(document.getElementById("schmorls_3").checked)
+		   {
+    		   if(document.getElementById("schmorls3").value == "")
+     	   		{
+     	  
+     	 		 // document.getElementById("narrowed3error").innerHTML="Required Field should not be blank";
+     	  		//return false;
+     	   		}
+    		   else  if(document.getElementById("schmorls3").value.charAt(0) == " ")
+  	   		{
+  	  
+  	   			document.getElementById("schmorls3error").innerHTML="Initial space not allowed";
+  	   			return false;
+  	   		}
+	   		else if(document.getElementById("schmorls3").value.match(alpha))
+		   {
+	   			if((document.getElementById("schmorls3").value.length < 4 ) || (document.getElementById("schmorls3").value.length > 45 ))
+	   			{
+	   			  document.getElementById("schmorls3error").innerHTML="Required Field should be 4 to 45";
+	         	   return false;
+	   			}
+	   			else{
+		 			  document.getElementById("schmorls3error").innerHTML="";
+	   			}
+		   }
+	   		else
+		   {
+		   document.getElementById("schmorls3error").innerHTML="Required Field should be Alphabates";
+      	   return false;
+		   }
+	   
+		   }
+	   else{
+		   document.getElementById("schmorls3error").innerHTML="";
+	   }
+	   
+       }
+	
+	function validate24(id)
+    {
+		
+ 	  
+ 	   var alpha = /^[A-Za-z ]*$/; 
+    	   
+    	   if(document.getElementById("inp_id").value == "")
+     	   		{
+     	  
+     	 		 // document.getElementById("narrowed3error").innerHTML="Required Field should not be blank";
+     	  		//return false;
+     	   		}
+    		   else  if(document.getElementById("inp_id").value.charAt(0) == " ")
+  	   		{
+  	  
+  	   			document.getElementById("inp_iderror").innerHTML="Initial space not allowed";
+  	   			return false;
+  	   		}
+	   		else if(document.getElementById("inp_id").value.match(alpha))
+		   {
+	   			if((document.getElementById("inp_id").value.length < 4 ) || (document.getElementById("inp_id").value.length > 45 ))
+	   			{
+	   			  document.getElementById("inp_iderror").innerHTML="Required Field should be 4 to 45";
+	         	   return false;
+	   			}
+	   			else{
+		 			  document.getElementById("inp_iderror").innerHTML="";
+	   			}
+		   }
+	   		else
+		   {
+		   document.getElementById("inp_iderror").innerHTML="Required Field should be Alphabates";
+      	   return false;
+		   }
+	    }
+	
+	function validate25(id)
+    {
+		
+		 var alpha = /^[A-Za-z ]*$/; 
+  	   
+  	   if(document.getElementById("apexat_3").checked)
+		   {
+  		   if(document.getElementById("apexat3").value == "")
+   	   		{
+   	  
+   	 		 // document.getElementById("apexat3error").innerHTML="Required Field should not be blank";
+   	  		//return false;
+   	   		}
+  		   else  if(document.getElementById("apexat3").value.charAt(0) == " ")
+	   		{
+	  
+	   			document.getElementById("apexat3error").innerHTML="Initial space not allowed";
+	   			return false;
+	   		}
+	   		else if(document.getElementById("apexat3").value.match(alpha))
+		   {
+	   			if((document.getElementById("apexat3").value.length < 4 ) || (document.getElementById("apexat3").value.length > 45 ))
+	   			{
+	   			  document.getElementById("apexat3error").innerHTML="Required Field should be 4 to 45";
+	         	   return false;
+	   			}
+	   			else{
+		 			  document.getElementById("apexat3error").innerHTML="";
+	   			}
+		   }
+	   		else
+		   {
+		   document.getElementById("apexat3error").innerHTML="Required Field should be Alphabates";
+    	   return false;
+		   }
+	   
+		   }
+	   else{
+		   document.getElementById("apexat3error").innerHTML="";
+	   }
+ 	 
+	    }
+	
+	function validate26(id)
+    {
+		
+		 var alpha = /^[A-Za-z ]*$/; 
+  	   
+  	   if(document.getElementById("softtissueedemaof_3").checked)
+		   {
+  		   if(document.getElementById("softtissueedemaof3").value == "")
+   	   		{
+   	  
+   	 		 // document.getElementById("softtissueedemaof3error").innerHTML="Required Field should not be blank";
+   	  		//return false;
+   	   		}
+  		   else  if(document.getElementById("softtissueedemaof3").value.charAt(0) == " ")
+	   		{
+	  
+	   			document.getElementById("softtissueedemaof3error").innerHTML="Initial space not allowed";
+	   			return false;
+	   		}
+	   		else if(document.getElementById("softtissueedemaof3").value.match(alpha))
+		   {
+	   			if((document.getElementById("softtissueedemaof3").value.length < 4 ) || (document.getElementById("softtissueedemaof3").value.length > 45 ))
+	   			{
+	   			  document.getElementById("softtissueedemaof3error").innerHTML="Required Field should be 4 to 45";
+	         	   return false;
+	   			}
+	   			else{
+		 			  document.getElementById("softtissueedemaof3error").innerHTML="";
+	   			}
+		   }
+	   		else
+		   {
+		   document.getElementById("softtissueedemaof3error").innerHTML="Required Field should be Alphabates";
+    	   return false;
+		   }
+	   
+		   }
+	   else{
+		   document.getElementById("softtissueedemaof3error").innerHTML="";
+	   }
+ 	 
+	    }
+	function validate27(id)
+    {
+		
+		 var alpha = /^[A-Za-z ]*$/; 
+  	   
+  	   if(document.getElementById("other_3").checked)
+		   {
+  		   if(document.getElementById("other3").value == "")
+   	   		{
+   	  
+   	 		 // document.getElementById("other3error").innerHTML="Required Field should not be blank";
+   	  		//return false;
+   	   		}
+  		   else  if(document.getElementById("other3").value.charAt(0) == " ")
+	   		{
+	  
+	   			document.getElementById("other3error").innerHTML="Initial space not allowed";
+	   			return false;
+	   		}
+	   		else if(document.getElementById("other3").value.match(alpha))
+		   {
+	   			if((document.getElementById("other3").value.length < 4 ) || (document.getElementById("other3").value.length > 45 ))
+	   			{
+	   			  document.getElementById("other3error").innerHTML="Required Field should be 4 to 45";
+	         	   return false;
+	   			}
+	   			else{
+		 			  document.getElementById("other3error").innerHTML="";
+	   			}
+		   }
+	   		else
+		   {
+		   document.getElementById("other3error").innerHTML="Required Field should be Alphabates";
+    	   return false;
+		   }
+	   
+		   }
+	   else{
+		   document.getElementById("other3error").innerHTML="";
+	   }
+ 	 
+	    }
     </script>
 				                 <td class="input_txt"><input type="checkbox" name="break_1" id="break_georges" value="Break in Georges" onclick="validate2(id);this.form.break1.style.visibility = this.checked? 'visible' : 'hidden'"/> Break in Georges line at 
 				           		        <input type="text" class="input_txtbx1" id="break1" onblur= "validate2(id);"name="break_text1" style="visibility:hidden" />
@@ -2558,8 +2966,9 @@ $(function() {
 				                 		<input type="text" class="input_txtbx1" id="subchondral3" onblur="return validate21(id);"name="subchondral_text3" style="visibility:hidden"/>
 				                 		<span id="subchondral3error" style="color:red"></span>
 				                	 </td>
-				                 	  <td class="input_txt" align="left"> <input type="checkbox" name="schmorls_3" value="Schmorls nodes at:" onclick="this.form.schmorls3.style.visibility = this.checked? 'visible' : 'hidden'"/> Schmorl's nodes at:
-				                 		<input type="text" class="input_txtbx1" id="schmorls3" name="schmorls_text3" style="visibility:hidden"/>
+				                 	  <td class="input_txt" align="left"> <input type="checkbox" name="schmorls_3" id="schmorls_3"value="Schmorls nodes at:" onclick="validate23(id);this.form.schmorls3.style.visibility = this.checked? 'visible' : 'hidden'"/> Schmorl's nodes at:
+				                 		<input type="text" class="input_txtbx1" id="schmorls3" onblur="return validate23(id);"name="schmorls_text3" style="visibility:hidden"/>
+				                 		<span id="schmorls3error" style="color:red"></span>
 				                	 </td>
 				                	 <td></td>
 				                 	 </tr>
@@ -2572,7 +2981,8 @@ $(function() {
 										</select>
 									</td>
 									 <td valign="middle" align="left" class="input_txt">Other:
-				           		        <input type="text" class="input_txtbx1" id="inp_id" name="other_text3"/>
+				           		        <input type="text" class="input_txtbx1" id="inp_id" name="other_text3" onblur="return validate24(id);"/>
+				           		        <span id="inp_iderror" style="color:red"></span>
 				           		 	 </td>
 				           		 	 <td valign="middle" align="left" class="input_txt">Grade:
 				           		 	 	<select name="grade_3" class="input_cmbbx1">
@@ -2609,14 +3019,17 @@ $(function() {
 									</tr>
 									 <tr class="row2">
 				             
-				                	 <td class="input_txt" align="left"> <input type="checkbox" name="apexat_3" value="Apex at:" onclick="this.form.apexat3.style.visibility = this.checked? 'visible' : 'hidden'"/> Apex at:
-				                 		<input type="text" class="input_txtbx1" id="apexat3" name="apexat_text3" style="visibility:hidden"/>
+				                	 <td class="input_txt" align="left"> <input type="checkbox" name="apexat_3" id="apexat_3" value="Apex at:" onclick="validate25(id);this.form.apexat3.style.visibility = this.checked? 'visible' : 'hidden'"/> Apex at:
+				                 		<input type="text" class="input_txtbx1" id="apexat3" onblur="return validate25(id);"name="apexat_text3" style="visibility:hidden"/>
+				                 		 <span id="apexat3error" style="color:red"></span>
 				                	 </td>
-				               	     <td class="input_txt" align="left"> <input type="checkbox" name="softtissueedemaof_3" value="Soft tissue edema of" onclick="this.form.softtissueedemaof3.style.visibility = this.checked? 'visible' : 'hidden'"/> Soft tissue edema of
-				                 		<input type="text" class="input_txtbx1" name="softtissueedemaof_text3" id="softtissueedemaof3"style="visibility:hidden"/>
+				               	     <td class="input_txt" align="left"> <input type="checkbox" name="softtissueedemaof_3" id="softtissueedemaof_3"value="Soft tissue edema of" onclick="validate26(id);this.form.softtissueedemaof3.style.visibility = this.checked? 'visible' : 'hidden'"/> Soft tissue edema of
+				                 		<input type="text" class="input_txtbx1" name="softtissueedemaof_text3" onblur="return validate26(id);"id="softtissueedemaof3"style="visibility:hidden"/>
+				                 		<span id="softtissueedemaof3error" style="color:red"></span>
 				                 	 </td>
-				                  	 <td class="input_txt" align="left"> <input type="checkbox" name="other_3" value="Other" onclick="this.form.other3.style.visibility = this.checked? 'visible' : 'hidden'"/> Other
-				                 		<input type="text" class="input_txtbx1" id="other3" name="other_text33" style="visibility:hidden"/>
+				                  	 <td class="input_txt" align="left"> <input type="checkbox" id="other_3" name="other_3" value="Other" onclick="validate27(id);this.form.other3.style.visibility = this.checked? 'visible' : 'hidden'"/> Other
+				                 		<input type="text" class="input_txtbx1" id="other3" onblur="return validate27(id);"name="other_text33" style="visibility:hidden"/>
+				                 		<span id="other3error" style="color:red"></span>
 				                	 </td>
 				                	 <td></td>
 				                 </tr>		
@@ -2649,11 +3062,15 @@ $(function() {
                         <table cellpadding="0" cellspacing="0" border="0">
 				               <tr class="row1">
 				               		 <td>Views:
-				               		 <input type="text" class="input_txtbx1" id="inp_id" name="views4" />
+				               		 <input type="text" class="input_txtbx1"onkeypress="return validate1(event,id)"; id="views4" name="views4" />
+				               		  <span id="viewserror" style="color:red"></span>
 				               		 </td>
 				               		 <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="normal_4" value="Normal"> Normal</td>
 				               		
-				                     <td valign="top" align="left" class="input_txt">  Positive for recent fracture, dislocation or gross Osteopathology <input type="text" name="positivefor_4" class="input_txtbx1"></td>   
+				                     <td valign="top" align="left" class="input_txt">  Positive for recent fracture, dislocation or gross Osteopathology 
+				                     <input type="text" name="positivefor_4"id="positivefor4" onkeypress="return validate1(event,id)"; class="input_txtbx1">
+				                      <span id="positivefor4error" style="color:red"></span>
+				                     </td>   
 				                 </tr>
 				          </table>
 				           <table cellpadding="0" cellspacing="0" border="0">
@@ -3259,9 +3676,15 @@ $(function() {
                         
                         <table cellpadding="0" cellspacing="0" border="0">
 				               <tr class="row1">
-				               		 <td>Views:<input type="text" class="input_txtbx1" id="inp_id" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${radio.views4 }" name="views4" /></br><span class="err"><form:errors path="report.views4"></form:errors></span></td>
+				               		 <td>Views:<input type="text" class="input_txtbx1" id="views" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${radio.views4 }" name="views4" /></br>
+				               		
+				               		 <span class="err"><form:errors path="report.views4"></form:errors></span></td>
 				              		 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Normal" name="normal_4" <c:if test="${radio.normal_4=='Normal'}"><c:out value="Checked"/></c:if>   />Normal</td>
-				              		 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Positive for" name="positivefor_4" <c:if test="${radio.positivefor_4=='Positive for'}"><c:out value="Checked"/></c:if>   />Positive for</td>
+				              		 <td valign="top" align="left" class="input_txt"><input type="checkbox" value="Positive for" name="positivefor_4" <c:if test="${radio.positivefor_4=='Positive for'}"><c:out value="Checked"/></c:if>   />Positive forrecent fracture, dislocation or gross Osteopathology
+				              		 <br>
+				              		
+				              		 
+				              		  </td>
 				               	</tr>
 				               	<tr class="row1">
                   								 <td>&nbsp;&nbsp;</td>

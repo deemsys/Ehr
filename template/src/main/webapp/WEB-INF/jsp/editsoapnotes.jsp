@@ -157,7 +157,7 @@ $(function() {
 	function checkSubmit()
 	{	
 		 var regex = /^[A-Za-z0-9 ]*$/;
-   	  alert("submit00");
+   	 var error="";
    	document.getElementById("pnameerr").innerHTML="";
    	document.getElementById("signerror").innerHTML="";
   	   if(document.getElementById("e1e2").value == "ExtremitiesX-Rays")
@@ -167,13 +167,13 @@ $(function() {
     	   {
     	  
     	   document.getElementById("xrayerror").innerHTML="Required Field should not be blank";
-    	   return false;
+    	    error="true";
     	   }
   	   else if(document.getElementById("xray").value.charAt(0) == " ")
     	   {
     	  
     	   document.getElementById("xrayerror").innerHTML="Initial space not allowed";
-    	   return false;
+    	    error="true";
     	   }
   	   else if(document.getElementById("xray").value.match(regex))
   		   {
@@ -182,7 +182,7 @@ $(function() {
   	   else
   		   {
   		   document.getElementById("xrayerror").innerHTML="Required Field should be Alpha-Numeric";
-        	   return false;
+        	    error="true";
   		   }
   	   
   		   }
@@ -193,23 +193,23 @@ $(function() {
 	if(document.getElementById("pname").value=="")
 		{	
 		document.getElementById("pnameerr").innerHTML="Required Field Should Not Empty";	
-		return false;
+		 error="true";
 		}
 	else if((document.getElementById("pname").value.length < 4) || (document.getElementById("pname").value.length > 45))
 	{
 	document.getElementById("pnameerr").innerHTML="Required Field Should between 4 to 45";	
-	return false;
+	 error="true";
 	}
 		
 		if(document.getElementById("sign").value=="")
 		{	
 		document.getElementById("signerror").innerHTML="Required Field Should Not Empty";	
-		return false;
+		 error="true";
 		}
 		else if((document.getElementById("sign").value.length < 4) || (document.getElementById("sign").value.length > 45))
 		{
 		document.getElementById("signerror").innerHTML="Required Field Should between 4 to 45";	
-		return false;
+		 error="true";
 		}
 		document.getElementById("datepicker1error").innerHTML="";
 var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
@@ -218,7 +218,7 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		if (document.getElementById("datepicker1").value !="") {
 		  if (re.test(document.getElementById("datepicker1").value) == false) {
 			  document.getElementById("datepicker1error").innerHTML="Invalid Date Format";
-			  return false;
+			   error="true";
 		  }
 		}
 		document.getElementById("datepicker2error").innerHTML="";
@@ -228,7 +228,7 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		if (document.getElementById("datepicker2").value !="") {
 		  if (re.test(document.getElementById("datepicker2").value) == false) {
 			  document.getElementById("datepicker2error").innerHTML="Invalid Date Format";
-			  return false;
+			   error="true";
 		  }
 		}
 		document.getElementById("datepickererror").innerHTML="";
@@ -238,7 +238,7 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		if (document.getElementById("datepicker").value !="") {
 		  if (re.test(document.getElementById("datepicker").value) == false) {
 			  document.getElementById("datepickererror").innerHTML="Invalid Date Format";
-			  return false;
+			   error="true";
 		  }
 		}
 		document.getElementById("datepicker3error").innerHTML="";
@@ -248,7 +248,7 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		if (document.getElementById("datepicker3").value !="") {
 		  if (re.test(document.getElementById("datepicker3").value) == false) {
 			  document.getElementById("datepicker3error").innerHTML="Invalid Date Format";
-			  return false;
+			   error="true";
 		  }
 		}
 		document.getElementById("datepicker4error").innerHTML="";
@@ -258,7 +258,7 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		if (document.getElementById("datepicker4").value !="") {
 		  if (re.test(document.getElementById("datepicker4").value) == false) {
 			  document.getElementById("datepicker4error").innerHTML="Invalid Date Format";
-			  return false;
+			   error="true";
 		  }
 		}
 		document.getElementById("datepicker5error").innerHTML="";
@@ -268,7 +268,7 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		if (document.getElementById("datepicker5").value !="") {
 		  if (re.test(document.getElementById("datepicker5").value) == false) {
 			  document.getElementById("datepicker5error").innerHTML="Invalid Date Format";
-			  return false;
+			   error="true";
 		  }
 		}
 		document.getElementById("datepicker6error").innerHTML="";
@@ -278,7 +278,7 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		if (document.getElementById("datepicker6").value !="") {
 		  if (re.test(document.getElementById("datepicker6").value) == false) {
 			  document.getElementById("datepicker6error").innerHTML="Invalid Date Format";
-			  return false;
+			   error="true";
 		  }
 		}
 		document.getElementById("datepicker7error").innerHTML="";
@@ -288,7 +288,7 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		if (document.getElementById("datepicker7").value !="") {
 		  if (re.test(document.getElementById("datepicker7").value) == false) {
 			  document.getElementById("datepicker7error").innerHTML="Invalid Date Format";
-			  return false;
+			   error="true";
 		  }
 		}
 		document.getElementById("datepicker8error").innerHTML="";
@@ -298,9 +298,14 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		if (document.getElementById("datepicker8").value !="") {
 		  if (re.test(document.getElementById("datepicker8").value) == false) {
 			  document.getElementById("datepicker8error").innerHTML="Invalid Date Format";
-			  return false;
+			   error="true";
 		  }
 		}
+		
+		 if(error == "true")
+			{
+			return false;
+			}
 		}
 		
 		</script>
