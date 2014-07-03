@@ -67,6 +67,75 @@ width: 34px;
 cursor: pointer;
 }
 </style>
+<script>
+ $(function() {
+	$("#re").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+$(function() {
+	$("#ssn").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+$(function() {
+	$("#claim").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+$(function() {
+	$("#datepicker").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#adjuster").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+$(function() {
+	$("#datepicker3").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+$(function() {
+	$("#dear").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+$(function() {
+	$("#datepicker1").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+$(function() {
+	$("#datepicker2").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#letter").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});					
+</script>
+<script>
+function validatename(id){
+    var textInput = document.getElementById(id).value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById(id).value = textInput;
+}
+</script>
 <script type='text/javascript'>
 $(function(){
 var overlay = $('<div id="overlay"></div>');
@@ -269,6 +338,14 @@ function checkSubmit()
 	
 	return false;
 	}
+	document.getElementById("reerror").innerHTML="";
+	    if(document.getElementById("re").value.length<4 || document.getElementById("re").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("reerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
 	document.getElementById("ssnerror").innerHTML="";
 	if(document.getElementById("ssn").value=="")
 	{
@@ -314,7 +391,33 @@ function checkSubmit()
     	document.getElementById("datepickererror").innerHTML="Invalid Date Format";
     	
         return false;
-    }	
+    }
+    document.getElementById("adjustererror").innerHTML="";	
+    if(document.getElementById("adjuster").value!="")
+    {
+    if(document.getElementById("adjuster").value.length<4 || document.getElementById("adjuster").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("adjustererror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
+    
+    
+    }
+   document.getElementById("dearerror").innerHTML="";	
+    if(document.getElementById("dear").value!="")
+    {
+    if(document.getElementById("dear").value.length<4 || document.getElementById("dear").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("dearerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
+    
+    
+    }  
     
     var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		
@@ -345,7 +448,7 @@ function checkSubmit()
 			  return false;
 		  }
 		}
-	document.getElementById("signerror").innerHTML="";
+	/* document.getElementById("signerror").innerHTML="";
 	if(document.getElementById("sign").value=="")
 	{
 	document.getElementById("signerror").innerHTML="Required Field Should not be Empty";
@@ -353,8 +456,21 @@ function checkSubmit()
 	return false;
 	
 	
-	}
-	
+	} */
+	 document.getElementById("lettererror").innerHTML="";	
+    if(document.getElementById("letter").value!="")
+    {
+    if(document.getElementById("letter").value.length<4 || document.getElementById("letter").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("lettererror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
+    
+    
+    }  
+    
 		
 		
 		
@@ -455,7 +571,7 @@ function checkSubmit()
                 <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err">*</span>RE:</td>
-              <td ><input type="text" class="input_txtbx1" name="re" id="re" placeholder="Medical bill" /><span class="reerr" id="reerror"  style="color: red;font-style:italic;"><form:errors path="Lettertopatients.re"></form:errors></span></td>
+              <td ><input type="text" class="input_txtbx1" name="re" id="re" placeholder="Medical bill" onInput="return validatename(id)";/><span class="reerr" id="reerror"  style="color: red;font-style:italic;"><form:errors path="Lettertopatients.re"></form:errors></span></td>
               </tr>
               </table>
                           <script>
@@ -491,7 +607,7 @@ document.getElementById("ssn").value=phone;
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err"></span>Adjuster:</td>
-              <td ><input type="text" class="input_txtbx1" name="adjuster" id="adjuster" placeholder="Kathy Porcella" /></td>
+              <td ><input type="text" class="input_txtbx1" name="adjuster" id="adjuster" placeholder="Kathy Porcella" onInput="return validatename(id)";/><span class="err" id="adjustererror"></span></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -503,7 +619,7 @@ document.getElementById("ssn").value=phone;
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err"></span>Dear</td>
-              <td ><input type="text" class="input_txtbx1" name="dear" id="dear"/></td>
+              <td ><input type="text" class="input_txtbx1" name="dear" id="dear" onInput="return validatename(id)";/><span class="err" id="dearerror"></span></td>
               </tr>
               </table>
              	<input type="text" name="user" id="user"  style="visibility:hidden">
@@ -524,7 +640,7 @@ document.getElementById("ssn").value=phone;
        		 </td>
        		 </tr>
        		 <tr><td>
-       		 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;         Attached you will find itemized charges for your care. To avoid legal action, please submit payment. To avoid legal action, please submit payment in full to Chiropractic Therapy Center. Your total bill to be paid to Chiropractic Therapy Center is <input type="text" class="input_txtbx1" name="letter" id="letter" />.
+       		 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;         Attached you will find itemized charges for your care. To avoid legal action, please submit payment. To avoid legal action, please submit payment in full to Chiropractic Therapy Center. Your total bill to be paid to Chiropractic Therapy Center is <input type="text" class="input_txtbx1" name="letter" id="letter" onInput="return validatename(id)";/><span class="err" id="lettererror"></span>.
        		 </p>
        		 </td>
        		 </tr>

@@ -13,7 +13,85 @@
   P#mypar {font-style:calibri;
   line-height:18px;}
    </STYLE>
+   <script>
+   $(function() {
+		$("#pname").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});	
+   $(function() {
+		$("#othernotes").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});  
+   $(function() {
+		$("#assessment").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		}); 
+   $(function() {
+		$("#diagnosis1").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+   $(function() {
+		$("#diagnosis2").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+   $(function() {
+		$("#diagnosis3").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+   $(function() {
+		$("#diagnosis4").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+   $(function() {
+		$("#diagnosis5").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+   $(function() {
+		$("#times").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+   $(function() {
+		$("#week").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+   $(function() {
+		$("#sign").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+   </script>
+   <script>
+   function validatename(id){
+	    var textInput = document.getElementById(id).value;
+	    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+	    document.getElementById(id).value = textInput;
+	}
    
+   
+   
+   
+   </script>
    <script type="text/javascript">
 function Checksymptom(val){
  var element=document.getElementById('other1');
@@ -111,6 +189,14 @@ document.getElementById("pnameerror").innerHTML=" ";
 		
 		return false;
 		}
+		document.getElementById("pnameerror").innerHTML="";
+	    if(document.getElementById("pname").value.length<4 || document.getElementById("pname").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("pnameerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
 		document.getElementById("datepickererror").innerHTML="";
 	if(document.getElementById("datepicker").value=="")
 		{
@@ -126,7 +212,20 @@ document.getElementById("pnameerror").innerHTML=" ";
 	    	
 	        return false;
 	    }	
+		
+		if(document.getElementById("othernoteserror").value!="")
+			{
 			
+			if(document.getElementById("othernotes").value.length<4 || document.getElementById("othernotes").value.length>=32)
+		    {
+		    	
+		    	document.getElementById("othernoteserror").innerHTML="Name should be min 4 and max 32";
+		    	
+		        return false;
+		    }
+			
+			
+			}
 	document.getElementById("signerror").innerHTML="";
 	if(document.getElementById("sign").value=="")
 	{
@@ -134,6 +233,14 @@ document.getElementById("pnameerror").innerHTML=" ";
 	
 	return false;
 	}
+	document.getElementById("signerror").innerHTML="";
+	    if(document.getElementById("sign").value.length<4 || document.getElementById("sign").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("signerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
 	}
 	</script>
 	
@@ -201,7 +308,7 @@ document.getElementById("pnameerror").innerHTML=" ";
           <table cellpadding="0" cellspacing="0" border="0" width="98%">
            
  <tr class="row1">
-<td width="150" style="width: 198px; "><h4><span class="err">*</span>Patient Name:</h4></td><td><input type="text" name="pname" id="pname"><span class="err" id="pnameerror"><form:errors path="Lumbopelvicexam.pname"></form:errors></span></td>
+<td width="150" style="width: 198px; "><h4><span class="err">*</span>Patient Name:</h4></td><td><input type="text" name="pname" id="pname" onInput="return validatename(id)";><span class="err" id="pnameerror"><form:errors path="Lumbopelvicexam.pname"></form:errors></span></td>
 <td width="600" style="width: 444px; ">
 </td><td><h4><span class="err">*</span>Date:</h4></td><td><input type="text" id="datepicker" name="date"><span class="err" id="datepickererror"><form:errors path="Lumbopelvicexam.date"></form:errors></span></td>
 </tr>
@@ -308,7 +415,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  </table>
  <table cellpadding="0" cellspacing="0" border="0">
  <tr class="row1">
- <td>Other/Notes:<input type="text" name="othernotes"></td> 
+ <td>Other/Notes:<input type="text" name="othernotes" id="othernotes" onInput="return validatename(id)";><span class="err" id="othernoteserror"></span></td> 
  <td width="150">
  </td><td></td><td></td>
  <td width="150">
@@ -474,7 +581,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  &nbsp;<input type="checkbox" name="otherfunctional" value="Other" onclick="this.form.break3.style.visibility = this.checked? 'visible' : 'hidden'">Other&nbsp;</td><td> <input type="text" class="input_txtbx1" id="break3" name="break_text3" style="visibility:hidden"></td>
  </tr>         
  <tr class="row1">
- <td width="450"><b style="font-size:14px">ASSESSMENT / ADDITIONAL COMMENTS:</b></td><td style="height: 111px; "><textarea name="assessment" rows="5" cols="40" style="height: 66px; "></textarea></td><td></td>
+ <td width="450"><b style="font-size:14px">ASSESSMENT / ADDITIONAL COMMENTS:</b></td><td style="height: 111px; "><textarea name="assessment" id="assessment" rows="5" cols="40" style="height: 66px; " onInput="return validatename(id)";></textarea></td><td></td>
  <td></td><td></td>
  <td></td>
  </tr>         
@@ -492,14 +599,14 @@ document.getElementById("pnameerror").innerHTML=" ";
  <table cellpadding="0" cellspacing="0" border="0">
  <tr class="row1">
  <td width="360"><b style="font-size:14px">DIAGNOSIS:</b></td>
- <td width="250">1)<input type="text" name="diagnosis1"></td>
- <td width="250">2)<input type="text" name="diagnosis2"></td>
- <td width="250">3)<input type="text" name="diagnosis3"></td>
- <td width="250">4)<input type="text" name="diagnosis4"></td>
+ <td width="250">1)<input type="text" name="diagnosis1" id="diagnosis1" onInput="return validatename(id)";></td>
+ <td width="250">2)<input type="text" name="diagnosis2" id="diagnosis2" onInput="return validatename(id)";></td>
+ <td width="250">3)<input type="text" name="diagnosis3" id="diagnosis3" onInput="return validatename(id)";></td>
+ <td width="250">4)<input type="text" name="diagnosis4" id="diagnosis4" onInput="return validatename(id)";></td>
  </tr>
  <tr class="row1">
  <td></td>
- <td width="250">5)<input type="text" name="diagnosis5"></td>
+ <td width="250">5)<input type="text" name="diagnosis5" id="diagnosis5" onInput="return validatename(id)";></td>
  <td></td>
  <td></td>
  <td></td>
@@ -508,8 +615,8 @@ document.getElementById("pnameerror").innerHTML=" ";
  <table cellpadding="0" cellspacing="0" border="0">
  <tr class="row1">
  <td width="120"><b style="font-size:14px">PLAN:</b></td>
- <td><input type="text" name="times">Times/week for </td>
- <td><input type="text" name="week">weeks to address the </td>
+ <td><input type="text" name="times" id="times" onInput="return validatename(id)";>Times/week for </td>
+ <td><input type="text" name="week" id="week" onInput="return validatename(id)";>weeks to address the </td>
  <td>above functional & structural deficits.  </td>
  <td>Treatment will consist of the following:</td>
  </tr>
@@ -541,7 +648,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  </tr>
  <tr></tr>
  <br><div></div>
- <table cellpadding="0" cellspacing="0" border="0"><tr><td><b style="font-size:14px"><span class="err">*</span>PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sign" id="sign"><span class="err" id="signerror"><form:errors path="Lumbopelvicexam.sign"></form:errors></span></b></td></tr></table>
+ <table cellpadding="0" cellspacing="0" border="0"><tr><td><b style="font-size:14px"><span class="err">*</span>PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sign" id="sign" onInput="return validatename(id)";><span class="err" id="signerror"><form:errors path="Lumbopelvicexam.sign"></form:errors></span></b></td></tr></table>
  </table>
  <table align="right">
 <tr>

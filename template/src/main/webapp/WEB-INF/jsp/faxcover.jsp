@@ -68,7 +68,69 @@ width: 34px;
 cursor: pointer;
 }
 </style>
-
+<script>
+$(function() {
+	$("#datepicker").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#tos").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#faxno").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#froms").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#re").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#nos").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+$(function() {
+	$("#msg").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#claimno").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#datepicker1").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+</script>
+<script>
+function validatename(id){
+    var textInput = document.getElementById(id).value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById(id).value = textInput;
+}
+</script>
 <script type='text/javascript'>
 $(function(){
 var overlay = $('<div id="overlay"></div>');
@@ -455,7 +517,7 @@ document.getElementById("faxno").value=phone;
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err">*</span>To:</td>
-              <td ><input type="text" class="input_txtbx1" name="tos" id="tos" style="width: 164px; "/><span class="err" id="toserror"><form:errors path="Faxcover.tos"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="tos" id="tos" style="width: 164px; " onInput="return validatename(id)";/><span class="err" id="toserror"><form:errors path="Faxcover.tos"></form:errors></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -469,7 +531,7 @@ document.getElementById("faxno").value=phone;
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err">*</span>From:</td>
-              <td ><input type="text" class="input_txtbx1" name="froms" id="froms" style="width: 164px; "/><span class="err" id="fromerror"><form:errors path="Faxcover.froms"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="froms" id="froms" style="width: 164px; " onInput="return validatename(id)";/><span class="err" id="fromerror"><form:errors path="Faxcover.froms"></form:errors></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -488,14 +550,14 @@ document.getElementById("faxno").value=phone;
      	<table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td  width="20%"><span class="err"></span>RE:</td>
-              <td ><input type="text" class="input_txtbx1" name="regarding" id="re" style="width: 164px; "/><span class="err" id="reerror"><form:errors path="Faxcover.regarding"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="regarding" id="re" style="width: 164px; " onInput="return validatename(id)";/><span class="err" id="reerror"><form:errors path="Faxcover.regarding"></form:errors></td>
               <td align="left" style="width: 159px; "><span class="err"></span>Number Of Pages Sent:</td>
               <td ><input type="text" class="input_txtbx1" name="pages" id="nos" onkeypress="return validate(event)"; /><span class="err" id="noserror"><form:errors path="Faxcover.pages"></form:errors></td>
               </tr>
              
               <tr>
               <td height="25" width="20%"><span class="err">*</span>Message:</td>
-              <td style="width: 215px; "><input type="text" class="input_txtbx1" name="msg" id="msg" style="width: 164px; "/><span class="err" id="msgerror"><form:errors path="Faxcover.msg"></form:errors></td>
+              <td style="width: 215px; "><input type="text" class="input_txtbx1" name="msg" id="msg" style="width: 164px; " onInput="return validatename(id)";/><span class="err" id="msgerror"><form:errors path="Faxcover.msg"></form:errors></td>
             <td align="left" style="width: 132px; "><span class="err">*</span>Claim Number:</td>
               <td ><input type="text" class="input_txtbx1" name="claimno" id="claimno" onInput="return validateusername1()"; style="width: 163px; "/><span class="err" id="claimnoerror"><form:errors path="Faxcover.claimno"></form:errors>
               </span><span class="err" id="number"></span></td>
