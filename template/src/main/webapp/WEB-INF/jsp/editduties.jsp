@@ -42,6 +42,105 @@ $(function() {
   });
   </script>
    <script>
+  $(function() {
+	$("#pname").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+ <script>
+  $(function() {
+	$("#jobdescription").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#other1").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#other2").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#other3").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#other4").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#other5").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#other6").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#other7").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#other8").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+function validatename(id){
+    var textInput = document.getElementById(id).value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById(id).value = textInput;
+}
+</script>
+  <script>
   function checksub()
   {
   
@@ -52,6 +151,17 @@ $(function() {
   document.getElementById("pnameerr").innerHTML="Required field should not be empty";
   return false;
   }
+  
+
+  document.getElementById("pnameerr").innerHTML="";
+  	    if(document.getElementById("pname").value.length<4 || document.getElementById("pname").value.length>=32)
+  	    {
+  	    	
+  	    	document.getElementById("pnameerr").innerHTML="Name should be min 4 and max 32";
+  	    	
+  	        return false;
+  	    }
+
   document.getElementById("dateerr").innerHTML="";
   if(document.getElementById("datepicker").value=="")
   {
@@ -67,9 +177,110 @@ $(function() {
     	
         return false;
     }	
+	document.getElementById("jobdescriptionerror").innerHTML="";
+	if(document.getElementById("jobdescription").value!="")
+	{
+    if(document.getElementById("jobdescription").value.length<4 || document.getElementById("jobdescription").value.length>=32)
+    {
+    	
+    	document.getElementById("jobdescriptionerror").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
+    }
+	document.getElementById("other1error").innerHTML="";
+	if(document.getElementById("other1").value!="")
+	{
+    if(document.getElementById("other1").value.length<4 || document.getElementById("other1").value.length>=32)
+    {
+    	
+    	document.getElementById("other1error").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
+    }
+	document.getElementById("other2error").innerHTML="";
+	if(document.getElementById("other2").value!="")
+	{
+    if(document.getElementById("other2").value.length<4 || document.getElementById("other2").value.length>=32)
+    {
+    	
+    	document.getElementById("other2error").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
+    }
+	document.getElementById("other3error").innerHTML="";
+	if(document.getElementById("other3").value!="")
+	{
+    if(document.getElementById("other3").value.length<4 || document.getElementById("other3").value.length>=32)
+    {
+    	
+    	document.getElementById("other3error").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
+    }
+	document.getElementById("other4error").innerHTML="";
+	if(document.getElementById("other4").value!="")
+	{
+    if(document.getElementById("other4").value.length<4 || document.getElementById("other4").value.length>=32)
+    {
+    	
+    	document.getElementById("other4error").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
+    }
+	document.getElementById("other5error").innerHTML="";
+	if(document.getElementById("other5").value!="")
+	{
+    if(document.getElementById("other5").value.length<4 || document.getElementById("other5").value.length>=32)
+    {
+    	
+    	document.getElementById("other5error").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
+    }
+	document.getElementById("other6error").innerHTML="";
+	if(document.getElementById("other6").value!="")
+	{
+    if(document.getElementById("other6").value.length<4 || document.getElementById("other6").value.length>=32)
+    {
+    	
+    	document.getElementById("other6error").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
+    }
+	document.getElementById("other7error").innerHTML="";
+	if(document.getElementById("other7").value!="")
+	{
+    if(document.getElementById("other7").value.length<4 || document.getElementById("other7").value.length>=32)
+    {
+    	
+    	document.getElementById("other7error").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
+    }
+	document.getElementById("other8error").innerHTML="";
+	if(document.getElementById("other8").value!="")
+	{
+    if(document.getElementById("other8").value.length<4 || document.getElementById("other8").value.length>=32)
+    {
+    	
+    	document.getElementById("other8error").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
+    }
+	
   }
   
   </script>
+  
     <script >
 function yesnoCheck() {
     if (document.getElementById('yesCheck').checked) {
@@ -1319,7 +1530,7 @@ window.onload = function()
           <c:set value="${dutiesduressForm.dutiesunderduressdetails[0]}" var="dutiesunderduressdetails"/> 
  <tr class="row1">
  <input type="hidden" name="dutiesno" id="inp_id" value="${dutiesunderduressdetails.dutiesno}">
-<td><h2><span class="err">*</span>Patient Name:</h2></td><td><input type="text"  name="pname" id="pname" value="${dutiesunderduressdetails.pname }"/><span class="err" id="pnameerr"><form:errors path="Dutiesunderduress.pname"></form:errors></span></td>
+<td><h2><span class="err">*</span>Patient Name:</h2></td><td><input type="text"  name="pname" id="pname" onInput="return validatename(id)";value="${dutiesunderduressdetails.pname }"/><span class="err" id="pnameerr"><form:errors path="Dutiesunderduress.pname"></form:errors></span></td>
 <td width="600">
 <td><h2><span class="err">*</span>Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${dutiesunderduressdetails.date }"/><span class="err" id="dateerr"><form:errors path="Dutiesunderduress.date"></form:errors></span></td>
 </tr>
@@ -1334,7 +1545,7 @@ window.onload = function()
 <table>
 <tr>
 <td width="50%"><h2>Job Description :</h2></td>
- <td> <textarea rows="6" cols="70" name="jobdescription">${dutiesunderduressdetails.jobdescription}</textarea></td></tr>
+ <td> <textarea rows="6" cols="70" name="jobdescription" id="jobdescription" onInput="return validatename(id)";>${dutiesunderduressdetails.jobdescription}</textarea><span id="jobdescriptionerror" style="color: red;font-style:italic;"></span></td></tr>
 </table>
 <br/>
  <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -1376,13 +1587,13 @@ window.onload = function()
  </tr>
  <tr class="row1">  
  <td>Other</td>
- <td><input type="text" name="other1" value="${dutiesunderduressdetails.other1 }"></td> 
+ <td><input type="text" name="other1" id="other1" onInput="return validatename(id)"; value="${dutiesunderduressdetails.other1 }"><span id="other1error" style="color: red;font-style:italic;"></span></td> 
  <td><input type="checkbox" name="incresedpain6" value="Increased pain" <c:if test="${dutiesunderduressdetails.incresedpain6=='Incresed Pain'}"><c:out value="Checked"/></c:if>>&nbsp;Increased Pain &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement6" value="Restricted Movement" <c:if test="${dutiesunderduressdetails.restrictedmovement5=='Restricted Movement'}"><c:out value="Checked"/></c:if>>&nbsp;Restricted Movement &nbsp;&nbsp; <input type="checkbox" name="weekness6" value="Weekness" <c:if test="${dutiesunderduressdetails.weekness6=='Weekness'}"><c:out value="Checked"/></c:if>>&nbsp;Weekness</td>
  <td><input type="checkbox" name="sincemva6" value="Since MVA" <c:if test="${dutiesunderduressdetails.sincemva6=='Since MVA'}"><c:out value="Checked"/></c:if>>&nbsp;Since MVA &nbsp;&nbsp;<input type="checkbox" name="ongoing6" value="Ongoing" <c:if test="${dutiesunderduressdetails.ongoing6=='Ongoing'}"><c:out value="Checked"/></c:if>>&nbsp;Ongoing</td>
  </tr>
  <tr class="row1">  
  <td>Other</td>
- <td><input type="text" name="other2" value="${dutiesunderduressdetails.other2 }"></td> 
+ <td><input type="text" name="other2" id="other2" onInput="return validatename(id)"; value="${dutiesunderduressdetails.other2 }"><span id="other2error" style="color: red;font-style:italic;"></span></td> 
  <td><input type="checkbox" name="incresedpain7" value="Increased pain" <c:if test="${dutiesunderduressdetails.incresedpain7=='Incresed Pain'}"><c:out value="Checked"/></c:if>>&nbsp;Increased Pain &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement7" value="Restricted Movement" <c:if test="${dutiesunderduressdetails.restrictedmovement6=='Restricted Movement'}"><c:out value="Checked"/></c:if>>&nbsp;Restricted Movement &nbsp;&nbsp; <input type="checkbox" name="weekness7" value="Weekness" <c:if test="${dutiesunderduressdetails.weekness6=='Weekness'}"><c:out value="Checked"/></c:if>>&nbsp;Weekness</td>
  <td><input type="checkbox" name="sincemva7" value="Since MVA" <c:if test="${dutiesunderduressdetails.sincemva6=='Since MVA'}"><c:out value="Checked"/></c:if>>&nbsp;Since MVA &nbsp;&nbsp;<input type="checkbox" name="ongoing7" value="Ongoing" <c:if test="${dutiesunderduressdetails.ongoing7=='Ongoing'}"><c:out value="Checked"/></c:if>>&nbsp;Ongoing</td>
  </tr>
@@ -1437,13 +1648,13 @@ window.onload = function()
  
  <tr class="row1">  
  <td>Other</td>
- <td><input type="text" name="other3" value="${dutiesunderduressdetails.other3 }"></td> 
+ <td><input type="text" name="other3" id="other3" onInput="return validatename(id)"; value="${dutiesunderduressdetails.other3 }"><span id="other3error" style="color: red;font-style:italic;"></span></td> 
  <td><input type="checkbox" name="incresedpain13" value="Increased pain" <c:if test="${dutiesunderduressdetails.incresedpain13=='Incresed Pain'}"><c:out value="Checked"/></c:if>>&nbsp;Increased Pain &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement13" value="Restricted Movement" <c:if test="${dutiesunderduressdetails.restrictedmovement13=='Restricted Movement'}"><c:out value="Checked"/></c:if>>&nbsp;Restricted Movement &nbsp;&nbsp; <input type="checkbox" name="weekness13" value="Weekness" <c:if test="${dutiesunderduressdetails.weekness13=='Weekness'}"><c:out value="Checked"/></c:if>>&nbsp;Weekness</td>
  <td><input type="checkbox" name="sincemva13" value="Since MVA" <c:if test="${dutiesunderduressdetails.sincemva13=='Since MVA'}"><c:out value="Checked"/></c:if>>&nbsp;Since MVA &nbsp;&nbsp;<input type="checkbox" name="ongoing13" value="Ongoing" <c:if test="${dutiesunderduressdetails.ongoing13=='Ongoing'}"><c:out value="Checked"/></c:if>>&nbsp;Ongoing</td>
  </tr>
  <tr class="row1">  
  <td>Other</td>
- <td><input type="text" name="other4" value="${dutiesunderduressdetails.other4 }"></td> 
+ <td><input type="text" name="other4" id="other4" onInput="return validatename(id)"; value="${dutiesunderduressdetails.other4 }"><span id="other4error" style="color: red;font-style:italic;"></span></td> 
  <td><input type="checkbox" name="incresedpain14" value="Increased pain" <c:if test="${dutiesunderduressdetails.incresedpain14=='Incresed Pain'}"><c:out value="Checked"/></c:if>>&nbsp;Increased Pain &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement14" value="Restricted Movement" <c:if test="${dutiesunderduressdetails.restrictedmovement14=='Restricted Movement'}"><c:out value="Checked"/></c:if>>&nbsp;Restricted Movement &nbsp;&nbsp; <input type="checkbox" name="weekness14" value="Weekness" <c:if test="${dutiesunderduressdetails.weekness14=='Weekness'}"><c:out value="Checked"/></c:if>>&nbsp;Weekness</td>
  <td><input type="checkbox" name="sincemva14" value="Since MVA" <c:if test="${dutiesunderduressdetails.sincemva14=='Since MVA'}"><c:out value="Checked"/></c:if>>&nbsp;Since MVA &nbsp;&nbsp;<input type="checkbox" name="ongoing14" value="Ongoing" <c:if test="${dutiesunderduressdetails.ongoing14=='Ongoing'}"><c:out value="Checked"/></c:if>>&nbsp;Ongoing</td>
  </tr>
@@ -1480,13 +1691,13 @@ window.onload = function()
  </tr>
  <tr class="row1">  
  <td>Other</td>
- <td><input type="text" name="other5" value="${dutiesunderduressdetails.other5 }"></td> 
+ <td><input type="text" name="other5" id="other5" onInput="return validatename(id)"; value="${dutiesunderduressdetails.other5 }"><span id="other5error" style="color: red;font-style:italic;"></span></td> 
  <td><input type="checkbox" name="incresedpain20" value="Increased Pain/Anxiety" <c:if test="${dutiesunderduressdetails.incresedpain20=='Incresed Pain/Anxiety'}"><c:out value="Checked"/></c:if>>&nbsp;Increased Pain/Anxiety &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement20" value="Restricted Movement" <c:if test="${dutiesunderduressdetails.restrictedmovement20=='Restricted Movement'}"><c:out value="Checked"/></c:if>>&nbsp;Restricted Movement &nbsp;&nbsp; <input type="checkbox" name="weekness20" value="Fatigue" <c:if test="${dutiesunderduressdetails.weekness20=='Fatigue'}"><c:out value="Checked"/></c:if>>&nbsp;Fatigue</td>
  <td><input type="checkbox" name="sincemva20" value="Since MVA" <c:if test="${dutiesunderduressdetails.sincemva20=='Since MVA'}"><c:out value="Checked"/></c:if>>&nbsp;Since MVA &nbsp;&nbsp;<input type="checkbox" name="ongoing20" value="Ongoing" <c:if test="${dutiesunderduressdetails.ongoing20=='Ongoing'}"><c:out value="Checked"/></c:if>>&nbsp;Ongoing</td>
  </tr>
  <tr class="row1">  
  <td>Other</td>
- <td><input type="text" name="other6" value="${dutiesunderduressdetails.other6 }"></td> 
+ <td><input type="text" name="other6" id="other6"onInput="return validatename(id)"; value="${dutiesunderduressdetails.other6 }"><span id="other6error" style="color: red;font-style:italic;"></span></td> 
  <td><input type="checkbox" name="incresedpain21" value="Increased Pain/Anxiety" <c:if test="${dutiesunderduressdetails.incresedpain21=='Incresed Pain/Anxiety'}"><c:out value="Checked"/></c:if>>&nbsp;Increased Pain/Anxiety &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement21" value="Restricted Movement" <c:if test="${dutiesunderduressdetails.restrictedmovement21=='Restricted Movement'}"><c:out value="Checked"/></c:if>>&nbsp;Restricted Movement &nbsp;&nbsp; <input type="checkbox" name="weekness21" value="Fatigue" <c:if test="${dutiesunderduressdetails.weekness21=='Fatigue'}"><c:out value="Checked"/></c:if>>&nbsp;Fatigue</td>
  <td><input type="checkbox" name="sincemva21" value="Since MVA" <c:if test="${dutiesunderduressdetails.sincemva21=='Since MVA'}"><c:out value="Checked"/></c:if>>&nbsp;Since MVA &nbsp;&nbsp;<input type="checkbox" name="ongoing21" value="Ongoing" <c:if test="${dutiesunderduressdetails.ongoing21=='Ongoing'}"><c:out value="Checked"/></c:if>>&nbsp;Ongoing</td>
  </tr>
@@ -1522,13 +1733,13 @@ window.onload = function()
  </tr>
  <tr class="row1">  
  <td>Other</td>
- <td><input type="text" name="other7" value="${dutiesunderduress.other7 }"></td> 
+ <td><input type="text" name="other7" id="other7" onInput="return validatename(id)"; value="${dutiesunderduress.other7 }"><span id="other7error" style="color: red;font-style:italic;"></span></td> 
  <td><input type="checkbox" name="incresedpain27" value="Increased pain/Anxiety" <c:if test="${dutiesunderduressdetails.incresedpain27=='Incresed Pain/Anxiety'}"><c:out value="Checked"/></c:if>>&nbsp;Increased Pain/Anxiety &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement27" value="Restricted Movement" <c:if test="${dutiesunderduressdetails.restrictedmovement27=='Restricted Movement'}"><c:out value="Checked"/></c:if>>&nbsp;Restricted Movement &nbsp;&nbsp; <input type="checkbox" name="weekness27" value="Fatigue" <c:if test="${dutiesunderduressdetails.weekness27=='Fatigue'}"><c:out value="Checked"/></c:if>>&nbsp;Fatigue</td>
  <td><input type="checkbox" name="sincemva27" value="Since MVA" <c:if test="${dutiesunderduressdetails.sincemva27=='Since MVA'}"><c:out value="Checked"/></c:if>>&nbsp;Since MVA &nbsp;&nbsp;<input type="checkbox" name="ongoing27" value="Ongoing" <c:if test="${dutiesunderduressdetails.ongoing27=='Ongoing'}"><c:out value="Checked"/></c:if>>&nbsp;Ongoing</td>
  </tr>
  <tr class="row1">  
  <td>Other</td>
- <td><input type="text" name="other8" value="${dutiesunderduress.other8 }"></td> 
+ <td><input type="text" name="other8" id="other8" onInput="return validatename(id)"; value="${dutiesunderduress.other8 }"><span id="other8error" style="color: red;font-style:italic;"></span></td> 
  <td><input type="checkbox" name="incresedpain28" value="Increased pain/Anxiety" <c:if test="${dutiesunderduressdetails.incresedpain28=='Incresed Pain/Anxiety'}"><c:out value="Checked"/></c:if>>&nbsp;Increased Pain &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement28" value="Restricted Movement" <c:if test="${dutiesunderduressdetails.restrictedmovement28=='Restricted Movement'}"><c:out value="Checked"/></c:if>>&nbsp;Restricted Movement &nbsp;&nbsp; <input type="checkbox" name="weekness28" value="Fatigue" <c:if test="${dutiesunderduressdetails.weekness28=='Fatigue'}"><c:out value="Checked"/></c:if>>&nbsp;Fatigue</td>
  <td><input type="checkbox" name="sincemva28" value="Since MVA" <c:if test="${dutiesunderduressdetails.sincemva28=='Since MVA'}"><c:out value="Checked"/></c:if>>&nbsp;Since MVA &nbsp;&nbsp;<input type="checkbox" name="ongoing28" value="Ongoing" <c:if test="${dutiesunderduressdetails.ongoing28=='Ongoing'}"><c:out value="Checked"/></c:if>>&nbsp;Ongoing</td>
  </tr>
