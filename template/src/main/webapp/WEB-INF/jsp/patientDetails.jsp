@@ -1493,7 +1493,7 @@ function validatename56(id){
 	 		
 	 }
 	
-	document.getElementById("EmployerNameerror").innerHTML="";
+	/* document.getElementById("EmployerNameerror").innerHTML="";
 	if(document.getElementById("EmployerName").value!="")
 	{
     if(document.getElementById("EmployerName").value.length<4 || document.getElementById("EmployerName").value.length>=32)
@@ -1515,14 +1515,14 @@ function validatename56(id){
     	
         return false;
     }
-    }
-	document.getElementById("EmployerAddresserror").innerHTML="";
+    } */
+	/* document.getElementById("EmployerAddresserror").innerHTML="";
 	if(document.getElementById("EmployerAddress").value!="")
 	{
     if(document.getElementById("EmployerAddress").value.length<4 || document.getElementById("EmployerAddress").value.length>=32)
     {
     	
-    	document.getElementById("EmployerAddresserror").innerHTML="Name should be min 4 and max 32";
+    	document.getElementById("EmployerAddresserror").innerHTML="Address should be min 4 and max 32";
     	
         return false;
     }
@@ -1548,7 +1548,7 @@ function validatename56(id){
     	
         return false;
     }
-    }
+    } */
 	/* document.getElementById("workphoneerror").innerHTML="";
 	if(document.getElementById("workphone").value=="")
 	{
