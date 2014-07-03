@@ -408,6 +408,13 @@ function validatename5(){
 }
 </script>
 <script>
+function validatename(id){
+    var textInput = document.getElementById(id).value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById(id).value = textInput;
+}
+</script>
+<script>
   function checksub()
   {
  document.getElementById("claimnoerror").innerHTML=""; 
@@ -615,7 +622,17 @@ document.getElementById("afteraccidenterror").innerHTML="";
 	 		
 	 }
   
-  
+	document.getElementById("injuryerror").innerHTML="";
+	if(document.getElementById("injury").value!="")
+	{
+    if(document.getElementById("injury").value.length<4 || document.getElementById("injury").value.length>=32)
+    {
+    	
+    	document.getElementById("injuryerror").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
+    }
   }
   
   
@@ -756,7 +773,7 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Adjuster's name</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="adjustersname" name="adjustersname" min="4" maxlength="32" onInput="return validatename()";/><span id="adjustersnameerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.adjustersname"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="adjustersname" name="adjustersname" min="4" maxlength="32" onInput="return validatename(id)";/><span id="adjustersnameerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.adjustersname"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
@@ -1047,7 +1064,7 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Did this cause further injury</td>
 				  <td valign="middle" align="left" class="input_txt"><input type="radio" name="further_injury" value="yes" class="input_txt" checked="true" onclick="toggle2('show2')">Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="further_injury" value="no" class="input_txt" onclick="toggle2('hide2')">No&nbsp;&nbsp;&nbsp;
-				  <textarea rows='3' cols='35' id="injury" name="injurytext" min="4" maxlength="32" placeholder="Please explain"></textarea>
+				  <textarea rows='3' cols='35' id="injury" name="injurytext" onInput="return validatename(id)"; min="4" maxlength="32" placeholder="Please explain"></textarea>
 				  </td>
 				  </tr>
 				  
@@ -1108,7 +1125,7 @@ document.getElementById("afteraccidenterror").innerHTML="";
 					<option value="slammed">Slammed</option>
 					<option value="otherbody">Other</option>
 				  </select>
-				  <input type="text" name="patient_body1" id="patient_body1" min="4" maxlength="32" style='display:none'/>
+				  <input type="text" name="patient_body1" id="patient_body1" onInput="return validatename(id)"; min="4" maxlength="32" style='display:none'/>
 				  </td><td width="55">.</td>
 				  </tr> 
 				   <tr class="row1">
@@ -1124,49 +1141,49 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				  <tr class="row2">
                   <td valign="middle" align="left" width="590" class="input_txt">My head hit</td>
 				  <td valign="top" align="left" class="input_txt" width="50%">
-				  <input type="text" class="input_txtbx1" id="head_hit" name="head_hit" min="4" maxlength="32" />
+				  <input type="text" class="input_txtbx1" id="head_hit" name="head_hit" min="4" maxlength="32" onInput="return validatename(id)";/>
 				  </td><td width="55">.</td>
 				  </tr>
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt">My Right Left Shoulder hit</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="rlshoulder_hit"  min="4" maxlength="32" name="rlshoulder_hit" />
+				  <input type="text" class="input_txtbx1" id="rlshoulder_hit"  min="4" maxlength="32" name="rlshoulder_hit" onInput="return validatename(id)"; />
 				  </td>
 				  </tr>
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt">My Right Left Hip hit</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="rlhip_hit"  min="4" maxlength="32" name="rlhip_hit" />
+				  <input type="text" class="input_txtbx1" id="rlhip_hit"  min="4" maxlength="32" name="rlhip_hit" onInput="return validatename(id)"; />
 				  </td>
 				  </tr>
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt">My Right Left Knee hit</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="rlknee_hit" min="4" maxlength="32" name="rlknee_hit" />
+				  <input type="text" class="input_txtbx1" id="rlknee_hit" min="4" maxlength="32" name="rlknee_hit" onInput="return validatename(id)"; />
 				  </td>
 				  </tr>
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt">My Chest hit</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="chest_hit" name="chest_hit" min="4" maxlength="32" />
+				  <input type="text" class="input_txtbx1" id="chest_hit" name="chest_hit" min="4" maxlength="32" onInput="return validatename(id)"; />
 				  </td>
 				  </tr>
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt">My Right Left Arm hit</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="rlarm_hit" name="rlarm_hit"  min="4" maxlength="32"/>
+				  <input type="text" class="input_txtbx1" id="rlarm_hit" name="rlarm_hit"  min="4" maxlength="32" onInput="return validatename(id)";/>
 				  </td>
 				  </tr>
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt">My Right Left Leg hit</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="rlleg_hit" name="rlleg_hit" min="4" maxlength="32" />
+				  <input type="text" class="input_txtbx1" id="rlleg_hit" name="rlleg_hit" min="4" maxlength="32" onInput="return validatename(id)";/>
 				  </td>
 				  </tr>
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt">My Other body part hit</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="otherpart_hit" name="otherpart_hit" min="4" maxlength="32" />
+				  <input type="text" class="input_txtbx1" id="otherpart_hit" name="otherpart_hit" min="4" maxlength="32" onInput="return validatename(id)"; />
 				  </td>
 				  </tr>
 				  </table>
@@ -1317,21 +1334,21 @@ document.getElementById("afteraccidenterror").innerHTML="";
                   <td valign="middle" align="left" class="input_txt"  width = "19.5%" >Name of the hospital</td><td width="21%"></td><!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
 				  
 				 
-				  <td><input type="text" align="left" class="input_txtbx1" onInput="return validatenamehos()";id="hosname" name="hosname" min="4" maxlength="32"/></td>
+				  <td><input type="text" align="left" class="input_txtbx1" onInput="return validatename(id)"; id="hosname" name="hosname" min="4" maxlength="32"/></td>
 				  <td width="680" ></td>
 				
 				  </tr>
 				   <tr class="row1">
                   <td valign="middle" align="left" class="input_txt">City</td><td></td><td><!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
 				  
-				  <input type="text" class="input_txtbx1" id="city" name="city" min="4" maxlength="32"/>
+				  <input type="text" class="input_txtbx1" id="city" name="city"  onInput="return validatename(id)"; min="4" maxlength="32"/>
 				  </td>
 				  </tr>
 				   <tr class="row2">
                   <td valign="middle" align="left" class="input_txt">Length of stay</td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				  <td></td>
 				  <td>
-				  <input type="text" class="input_txtbx1" id="staylength" name="staylength" onkeypress="return validate(event)";/>
+				  <input type="text" class="input_txtbx1" id="staylength"  name="staylength" onkeypress="return validate(event)";/>
 				  <br><span class="err" id="staylengtherror"></span>
 				  </td>
 				  <td></td>
@@ -1344,13 +1361,13 @@ document.getElementById("afteraccidenterror").innerHTML="";
 					<option selected="selected" value="ambulance" >Ambulance</option>
 					<option value="other hos">Other</option>
 				  </select>
-				 <input type="text" name="hospital1" id="hospital1" min="4" maxlength="32" style='display:none'/>
+				 <input type="text" name="hospital1" id="hospital1" style='display:none' min="4" maxlength="32" onInput="return validatename(id)";/>
 				  </td>
 				  </tr> 
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt">What body parts were x-rayed,what treatment was given
 				  </td><td></td><td>
-				  <input type="text" class="input_txtbx1" id="xray" min="4" maxlength="32" name="xray" />
+				  <input type="text" class="input_txtbx1" id="xray" onInput="return validatename(id)";min="4" maxlength="32" name="xray" />
 				  </td>
 				  <td ></td>
 				 
@@ -1358,7 +1375,7 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				   <tr class="row1">
                   <td valign="middle"  align="left" class="input_txt">What did they tell you was wrong<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
 				  </td><td></td><td>
-				  <input type="text" class="input_txtbx1" id="wrong" min="4" maxlength="32" name="wrong" />
+				  <input type="text" class="input_txtbx1" id="wrong" onInput="return validatename(id)"; min="4" maxlength="32" name="wrong" />
 				  </td>
 				  
 				  </tr>

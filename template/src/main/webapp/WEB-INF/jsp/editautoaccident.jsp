@@ -80,6 +80,13 @@ $(function() {
            }
        }       
     </script>
+    <script>
+function validatename(id){
+    var textInput = document.getElementById(id).value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById(id).value = textInput;
+}
+</script>
    <script>
   function checksub()
   {
@@ -307,7 +314,7 @@ document.getElementById("injury").style.visibility = 'hidden';
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Adjuster's name</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="adjustersname" name="adjustersname" value="${autoaccident.adjustersname }" /><span id="adjustersnameerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.adjustersname"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="adjustersname" name="adjustersname" value="${autoaccident.adjustersname }" onInput="return validatename(id)";/><span id="adjustersnameerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.adjustersname"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
