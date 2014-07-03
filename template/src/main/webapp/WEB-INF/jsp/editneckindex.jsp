@@ -178,7 +178,22 @@ $(function() {
          });
  
 </script>
-   
+    <script>
+  $(function() {
+	$("#pname").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+function validatename(id){
+    var textInput = document.getElementById(id).value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById(id).value = textInput;
+}
+</script>
    <script>
 
 	function checkSubmit()
@@ -191,6 +206,16 @@ document.getElementById("pnameerror").innerHTML=" ";
 		
 		return false;
 		}
+		
+
+		document.getElementById("pnameerror").innerHTML="";
+	    if(document.getElementById("pname").value.length<4 || document.getElementById("pname").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("pnameerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
 		document.getElementById("datepickererror").innerHTML="";
 		
 		if(document.getElementById("datepicker").value=="")
@@ -229,7 +254,7 @@ document.getElementById("pnameerror").innerHTML=" ";
 	    
 	     <div class="contentbox">
          <table> <tr><td width="140"><span class="err">*</span>Name</td>
-           <td><input type="hidden" name="neckindexno" value="${neckindexdetails.neckindexno}"><input type="text" id="pname" name="name" value="${neckindexdetails.name}"><Br><span class="err" id="pnameerror"><form:errors path="neckindex.name"></form:errors></td><td width="480"></td><td></td><td width="100"></td>
+           <td><input type="hidden" name="neckindexno" value="${neckindexdetails.neckindexno}"><input type="text" id="pname" name="name" onInput="return validatename(id)"; value="${neckindexdetails.name}"><Br><span class="err" id="pnameerror"><form:errors path="neckindex.name"></form:errors></td><td width="480"></td><td></td><td width="100"></td>
            <td >&nbsp;&nbsp;&nbsp;&nbsp;<span class="err">*</span>Date:&nbsp;</td> <td><input type="text" name="date" id="datepicker" value="${neckindexdetails.date}"><Br><span class="err" id="datepickererror"><form:errors path="neckindex.date"></form:errors></td>
            </tr></table>
             <p><b>Please read:</b>This questionairre has been designed to give the Physical Therapist information as to how your wrist/hand pain has affected your ability to manage everyday life.</p>
