@@ -274,6 +274,25 @@ function checkSubmit()
 		return false;
 
 		} */
+		/* document.getElementById("doyou_poserror").innerHTML=""; 
+		if(document.getElementByid("doyou_pos").value=="other")
+		{
+			 document.getElementById("doyouerror").innerHTML="";
+			if(document.getElementById("doyou").value == "")
+		  	   {
+		  	  
+		  	   document.getElementById("doyouerror").innerHTML="Required Field should not be Empty";
+		  	   return false;
+		  	   }
+			 if(document.getElementById("doyou").value.length<4 || document.getElementById("doyou").value.length>=32)
+			    {
+			    	
+			    	document.getElementById("doyouerror").innerHTML="Should be min 4 and max 32";
+			    	
+			        return false;
+			    }
+		} */
+		
 		document.getElementById("carryerror").innerHTML=""; 
 		if( ( document.getElementById("yes1").checked == false ) && ( document.getElementById("No1").checked == false ) )
 
@@ -340,6 +359,14 @@ document.getElementById("present_joberror").innerHTML=" ";
 		
 		return false;
 		}
+		document.getElementById("present_joberror").innerHTML="";
+	    if(document.getElementById("present_job").value.length<4 || document.getElementById("present_job").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("present_joberror").innerHTML="Should be min 4 and max 32";
+	    	
+	        return false;
+	    }
 		
 		document.getElementById("time_losserror").innerHTML=""; 
 		if( ( document.getElementById("yes2").checked == false ) && ( document.getElementById("No2").checked == false ) )
@@ -474,6 +501,50 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 			    	
 			        return false;
 			    }
+			    document.getElementById("jobpperror").innerHTML="";
+				if(document.getElementById("jobpp").value!="")
+				{
+					if(document.getElementById("jobpp").value=="")
+				{
+					document.getElementById("jobpperror").innerHTML="Required Field Should not be Empty";
+					
+					return false;
+					}
+			   
+			    }
+			    document.getElementById("jobpperror").innerHTML="";
+				if(document.getElementById("jobpp").value!="")
+				{
+			    if(document.getElementById("jobpp").value.length<4 || document.getElementById("jobpp").value.length>=32)
+			    {
+			    	
+			    	document.getElementById("jobpperror").innerHTML="Name should be min 4 and max 32";
+			    	
+			        return false;
+			    }
+			    }
+				 document.getElementById("absenteeismerror").innerHTML="";
+					if(document.getElementById("absenteeism").value!="")
+					{
+						if(document.getElementById("absenteeism").value=="")
+					{
+						document.getElementById("absenteeismerror").innerHTML="Required Field Should not be Empty";
+						
+						return false;
+						}
+				   
+				    }
+				 document.getElementById("absenteeismerror").innerHTML="";
+					if(document.getElementById("absenteeism").value!="")
+					{
+				    if(document.getElementById("absenteeism").value.length<4 || document.getElementById("absenteeism").value.length>=32)
+				    {
+				    	
+				    	document.getElementById("absenteeismerror").innerHTML="Absenteeism should be min 4 and max 32";
+				    	
+				        return false;
+				    }
+				    }
 		}
 </script>
 <script>
@@ -552,7 +623,7 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 				 <tr class="row2">
                 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Job Position</td>
 				 <td valign="top" align="left" class="input_txt">
-				  <select name="doyou_pos" class="input_cmbbx1" onchange='Checkpos(this.value);'>
+				  <select name="doyou_pos" id="doyou_pos" class="input_cmbbx1" onchange='Checkpos(this.value);'>
 					<option selected="selected" value="sit_at_desk" >Sit at desk</option>
 					<option value="walk">Walk</option>
 					<option value="stand">Stand</option>
@@ -561,10 +632,10 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 					<option value="carry">Carry</option>
 					<option value="drive_comp_vehi">Drive a company vehicle</option>
 					<option value="load">Load</option>
-					<option value="other">Other</option>
+					<option id="other" value="other">Other</option>
 					</select>
 					<span id="doyou_poserror" style="color: red;font-style:italic;"></span>
-				   <input type="text" name="doyou" id="doyou" maxlength="32" style='display:none'/>
+				   <input type="text" name="doyou" id="doyou" maxlength="32" style='display:none' onInput="return validatename(id)";/><span id="doyouerror" style="color: red;font-style:italic;"></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
@@ -595,14 +666,14 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>How long have you been at your present job</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="present_job"  maxlength="32" name="present_job" onInput="return validateusername()";/><span id="present_joberror" style="color: red;font-style:italic;"><form:errors path="Workaccident.present_job"></form:errors>
+				  <input type="text" class="input_txtbx1" id="present_job"  maxlength="32" name="present_job" onInput="return validatename(id)";/><span id="present_joberror" style="color: red;font-style:italic;"><form:errors path="Workaccident.present_job"></form:errors>
 				  </td>
 				  </tr>
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Has there been a time loss or absentee caused from job injury</td>
 				  <td valign="top" align="left" class="input_txt" width="20%"><input type="radio" name="time_loss" value="yes" class="input_txt" id="yes2" onclick="time('show1')">Yes
 				  <input type="radio" name="time_loss" value="No"  id="No2" class="input_txt" onclick="time('hide1')">No 
-				  <table><tr><td><textarea  rows='3' cols='35' id="absenteeism" name="absenteeism" maxlength="32" onInput="return validatename1(id)"; placeholder="If yes, explain(include dates)" style="visibility:hidden;"  ></textarea></td></tr></table><span id="time_losserror" style="color: red;font-style:italic;"></span></td>
+				  <table><tr><td><textarea  rows='3' cols='35' id="absenteeism" name="absenteeism" maxlength="32" onInput="return validatename(id)"; placeholder="If yes, explain(include dates)" style="visibility:hidden;"  ></textarea><span id="absenteeismerror" style="color: red;font-style:italic;"></span></td></tr></table><span id="time_losserror" style="color: red;font-style:italic;"></span></td>
 				  
 				   </tr>
 				   <tr class="row1">
@@ -680,7 +751,7 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 					<tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>In your job, do you push or pull</td>
 				  <td valign="top" align="left" class="input_txt"><input type="radio" name="push_pull" id="yes5"value="yes" class="input_txt" checked="true" onclick="pull('show4')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="push_pull" id="No5"value="No" class="input_txt" onclick="pull('hide4')">No&nbsp;&nbsp;&nbsp;
-				   <input type="text" class="input_txtbx1" id="jobpp" name="jobpp" maxlength="32" onInput="return validatename(id)";placeholder="If yes, give specifics"/>
+				   <input type="text" class="input_txtbx1" id="jobpp" name="jobpp" maxlength="32" onInput="return validatename(id)";placeholder="If yes, give specifics"/> <span id="jobpperror" style="color: red;font-style:italic;"></span>
 				 <span id="push_pullerror" style="color: red;font-style:italic;"></span>
 				  </td>
 				  </tr>
