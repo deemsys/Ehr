@@ -130,6 +130,24 @@ $(function() {
     $( "#tabs" ).tabs();
   });
   </script>
+  
+   
+  <script>
+  $(function() {
+	$("#pname").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+function validatename(id){
+    var textInput = document.getElementById(id).value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById(id).value = textInput;
+}
+</script>
   <script>
 
 	function checkSubmit()
@@ -142,6 +160,15 @@ document.getElementById("pnameerror").innerHTML=" ";
 		
 		return false;
 		}
+		
+		document.getElementById("pnameerror").innerHTML="";
+	    if(document.getElementById("pname").value.length<4 || document.getElementById("pname").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("pnameerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
 		document.getElementById("datepickererror").innerHTML="";
 		
 		if(document.getElementById("datepicker").value=="")
@@ -177,7 +204,7 @@ document.getElementById("pnameerror").innerHTML=" ";
           <c:set value="${lowbackForm.lowback[0]}" var="lowback"/> 
  <tr class="row1">
  <input type="hidden" name="lowbackno" id="inp_id" value="${lowback.lowbackno}">
-<td><h2><span class="err">*</span>Patient Name:</h2></td><td><input type="text" id="pname" name="pname" value="${lowback.pname}"/><span class="err" id="pnameerror"><form:errors path="Lowback.pname"></form:errors></span></td>
+<td><h2><span class="err">*</span>Patient Name:</h2></td><td><input type="text" id="pname" name="pname"onInput="return validatename(id)"; value="${lowback.pname}"/><span class="err" id="pnameerror"><form:errors path="Lowback.pname"></form:errors></span></td>
 <td width="600">
 <td><h2><span class="err">*</span>Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${lowback.date}" /><span class="err" id="datepickererror"><form:errors path="Lowback.date"></form:errors></span></td>
 </tr>
