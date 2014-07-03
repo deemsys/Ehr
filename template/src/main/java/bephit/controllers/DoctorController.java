@@ -2060,6 +2060,12 @@ if(result.hasErrors())
 	@RequestMapping(value="/editusernamefootquestionnarie", method=RequestMethod.GET)
 	public String editusernamefootquestionnarie(HttpServletRequest request,@RequestParam("username") String username,ModelMap model,Footquestionnarie footquestionnarie) 
 	{
+		if(footDAO.getusernameFoot(username).size()==0)
+		{
+			model.addAttribute("menu","checklist"); 
+			return "errorpage";
+		}
+
 		/*String lumbopelvicexam=request.getParameter("lumbopelvicexam");*/
 		FootquestionnarieForm footquestionnarieForm = new FootquestionnarieForm();       
         footquestionnarieForm.setFootquestionnariedetails(footDAO.getusernameFoot(username));

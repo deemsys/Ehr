@@ -4,7 +4,7 @@
 <script type="text/javascript" src="js/ajaxpaging.js"></script>
 <script src="resources/js/jquery_checkbox.js" type="text/javascript"></script>
 <div id="right_content">
-	<c:if test="${choice=='close'}">
+<c:if test="${choice=='close'}">
  <script>
  window.close();
  </script>

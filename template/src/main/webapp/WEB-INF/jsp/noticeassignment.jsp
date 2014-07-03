@@ -345,36 +345,36 @@ document.getElementById("nameofattorneyerror").innerHTML="";
              <c:when test="${empty notice}">
              <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
-              <td width="25%" ><span class="err">*</span>Name Of Insurance Company:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+              <td width="25%" ><span class="err">*</span>&nbsp;Name Of Insurance Company:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
               <td ><input type="text" class="input_txtbx1" name="nameofins" id="nameofins" /><span class="err" id="nameofinserror"><form:errors path="noticeerror.nameofins"></form:errors></td>
-              <td ><span class="err">*</span>Name Of Attorney:</td>
+              <td ><span class="err">*</span>&nbsp;Name Of Attorney:</td>
               <td ><input type="text" class="input_txtbx1" name="nameofattorney" id="nameofattorney" /><span class="err" id="nameofattorneyerror"><form:errors path="noticeerror.nameofattorney"></form:errors></span></td>
               </tr>
               </table><br>
                 <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td width="25%" ><span class="err"></span>Address</td>
+              <td width="25%" ><span class="err"></span>&nbsp;&nbsp;Address</td>
               <td  ><textarea rows="" cols="" name="address1" style="width: 174px; height: 64px" class="input_txtarea" id="addr"></textarea>
-            </td>  <td  ><span class="err"></span>Address&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </td>  <td  ><span class="err"></span>&nbsp;Address&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <td >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<textarea rows="" cols="" name="address2"  class="input_txtarea"style="width: 176px; height: 64px"></textarea></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
-              <tr>
+              <tr height="30">
               
-              <td ><span class="err"></span>Regarding:</td>
+              <td><span class="err"></span>&nbsp;&nbsp;Regarding:</td>
               <td ><input type="text" class="input_txtbx1" name="regarding" id="regarding" /><span class="err"><form:errors path="noticeofassignment.regarding"></form:errors></span><br></td>                   
           </tr> 
-          <tr>
-            <td width="25%"><span class="err">*</span>PatientName:</td>
+          <tr  height="30">
+            <td width="25%"><span class="err">*</span>&nbsp;PatientName:</td>
               <td ><input type="text" class="input_txtbx1" name="patientname" id="patientname" onInput="return validatename()";/><span class="err" id="patientnameerror"></span><br></td>                      
           </tr> 
-          <tr>
-            <td width="25%">Date Of Accident:</td>
+          <tr height="30">
+            <td width="25%">&nbsp;&nbsp;Date Of Accident:</td>
               <td ><input type="text" class="input_txtbx1" name="dateofaccident" id="datepicker1" /><span class="err" id="datepicker1error"><form:errors path="noticeerror.dateofaccident"></form:errors></span><br></td>                      
           </tr> 
-          <tr>
-            <td width="25%">Today'sDate:</td>
+          <tr height="30">
+            <td width="25%">&nbsp;&nbsp;Today'sDate:</td>
               <td ><input type="text" class="input_txtbx1" name="todaysdate" id="datepicker2" /><span class="err" id="datepicker2error"><form:errors path="noticeerror.todaysdate"></form:errors></span><br></td>                      
           </tr> <br>  
             </table>
@@ -385,7 +385,7 @@ document.getElementById("nameofattorneyerror").innerHTML="";
        		
        		<table>
        		 <tr>
-       		 <td><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="err">*</span><input type="text" class="input_txtbx1" name="letter" id="letter" /><span class="err" id="lettererror"><form:errors path="noticeerror.letter"></form:errors></span>has sought medical treatment from this clinic.  This patient has been injured to an
+       		 <td><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="err">*</span>&nbsp;<input type="text" class="input_txtbx1" name="letter" id="letter" /><span class="err" id="lettererror"><form:errors path="noticeerror.letter"></form:errors></span>has sought medical treatment from this clinic.  This patient has been injured to an
 extent where the patient has determined that they cannot afford to pay for treatment on a fee for service basis.
 We would definitely prefer to simply render the required treatment on a fee for service basis. However, because
  fees for service presents a hardship to this patient, we have agreed to postpone payment for treatment pursuant to the attached agreement assignment.

@@ -206,7 +206,7 @@ public class OswestryDAO
 			
 		}
 		
-		public List<Oswestry> getsymptomoswestryindexDetails(String symptom,Principal principal){
+		public List<Oswestry> getsymptomoswestryindexDetails(String symptom,String username){
 			Connection con = null;
 			Statement statement = null;
 			ResultSet resultSet = null;
@@ -218,7 +218,7 @@ public class OswestryDAO
 			}
 			List<Oswestry> oswestryindex = new ArrayList<Oswestry>();
 		    try{
-				resultSet = statement.executeQuery("select * from oswestryindex where symptom='"+symptom+"' and username='"+principal.getName()+"'");
+				resultSet = statement.executeQuery("select * from oswestryindex where symptom='"+symptom+"' and username='"+username+"'");
 				while(resultSet.next()){
 					oswestryindex.add(new Oswestry(
 							resultSet.getString("oswestryno"),

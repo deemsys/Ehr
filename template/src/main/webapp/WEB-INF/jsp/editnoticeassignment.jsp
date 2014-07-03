@@ -156,10 +156,10 @@ document.getElementById("nameofattorneyerror").innerHTML="";
               </td></tr></table>
              <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
-              <td height="20" width="180"><span class="err">*</span>Name Of Insurance Company:</td>.
+              <td height="20" width="180"><span class="err">*</span>&nbsp;Name Of Insurance Company:</td>.
               
               <td ><input type="hidden" name="noticeid" value="${noticeassignmentdetails.noticeid }"><input type="text" class="input_txtbx1" name="nameofins" value="${noticeassignmentdetails.nameofins }" id="nameofins" /><span class="err" id="nameofinserror"><form:errors path="Noticeassignment.nameofins"></form:errors></td>
-              <td height="40" width="118" ><span class="err">&nbsp;&nbsp;*</span>Name Of Attorney:</td>
+              <td height="40" width="118" ><span class="err">&nbsp;&nbsp;*</span>&nbsp;Name Of Attorney:</td>
               <td >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="nameofattorney" value="${noticeassignmentdetails.nameofattorney }" id="nameofattorney" /><span class="err" id="nameofattorneyerror"><form:errors path="Noticeassignment.nameofattorney"></form:errors></span></td>
               </tr>
               </table>
@@ -177,7 +177,7 @@ document.getElementById("nameofattorneyerror").innerHTML="";
               <td ><input type="text" class="input_txtbx1" name="regarding" value="${noticeassignmentdetails.regarding }" id="regarding" /><span class="err"><form:errors path="noticeofassignment.regarding"></form:errors></span></td>                   
           </tr> 
           <tr>
-            <td height="40" width="180"><span class="err">*</span>PatientName:</td>
+            <td height="40" width="180"><span class="err">*</span>&nbsp;PatientName:</td>
               <td ><input type="text" class="input_txtbx1" name="patientname" value= "${noticeassignmentdetails.patientname }" id="patientname" onInput="return validatename()";/><span class="err" id="patientnameerror"><form:errors path="Noticeassignment.patientname"></form:errors></span></td>                      
           </tr> 
           <tr>
@@ -196,7 +196,7 @@ document.getElementById("nameofattorneyerror").innerHTML="";
        		
        		<table>
        		 <tr>
-       		 <td><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="err">*</span><input type="text" class="input_txtbx1" name="letter" value="${noticeassignmentdetails.letter }" id="letter" /><span class="err" id="lettererror"></span><form:errors path="noticeofassignment.letter"></form:errors>has sought medical treatment from this clinic.  This patient has been injured to an
+       		 <td><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="err">*</span>&nbsp;<input type="text" class="input_txtbx1" name="letter" value="${noticeassignmentdetails.letter }" id="letter" /><span class="err" id="lettererror"></span><form:errors path="noticeofassignment.letter"></form:errors>has sought medical treatment from this clinic.  This patient has been injured to an
 extent where the patient has determined that they cannot afford to pay for treatment on a fee for service basis.
 We would definitely prefer to simply render the required treatment on a fee for service basis. However, because
  fees for service presents a hardship to this patient, we have agreed to postpone payment for treatment pursuant to the attached agreement assignment.

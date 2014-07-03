@@ -165,7 +165,7 @@ public class NeckindexDAO
 		    return neckindex;
 			
 		}
-		public List<Neckindex> getsymptomneckindexDetails(String symptom,Principal principal){
+		public List<Neckindex> getsymptomneckindexDetails(String symptom,String username){
 			Connection con = null;
 			Statement statement = null;
 			ResultSet resultSet = null;
@@ -177,7 +177,7 @@ public class NeckindexDAO
 			}
 			List<Neckindex> neckindex = new ArrayList<Neckindex>();
 		    try{
-				resultSet = statement.executeQuery("select * from neckindex where symptom='"+symptom+"' and username='"+principal.getName()+"'");
+				resultSet = statement.executeQuery("select * from neckindex where symptom='"+symptom+"' and username='"+username+"'");
 				while(resultSet.next()){
 					neckindex.add(new Neckindex(
 							resultSet.getString("neckindexno"),	

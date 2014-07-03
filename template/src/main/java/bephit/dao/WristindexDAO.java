@@ -122,7 +122,7 @@ public class WristindexDAO
 		    return wristindex;
 			
 		}
-		public List<Wristindex> getwristusernameindexDetails(String symptom,Principal principal){
+		public List<Wristindex> getwristusernameindexDetails(String symptom,String username){
 			Connection con = null;
 			Statement statement = null;
 			ResultSet resultSet = null;
@@ -134,8 +134,8 @@ public class WristindexDAO
 			}
 			List<Wristindex> wristindex = new ArrayList<Wristindex>();
 		    try{
-				System.out.println("select * from wristindex where symptom='"+symptom+"' and username='"+principal.getName()+"'");
-		    	resultSet = statement.executeQuery("select * from wristindex where symptom='"+symptom+"' and username='"+principal.getName()+"'");
+				System.out.println("select * from wristindex where symptom='"+symptom+"' and username='"+username+"'");
+		    	resultSet = statement.executeQuery("select * from wristindex where symptom='"+symptom+"' and username='"+username+"'");
 				while(resultSet.next()){
 					wristindex.add(new Wristindex(
 							resultSet.getString("wristindexno"),

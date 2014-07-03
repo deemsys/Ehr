@@ -106,7 +106,7 @@ public List<Shoulderpainscore> getShoulderpainscore(){
     return shoulderpainscore;
 	
 }
-public List<Shoulderpainscore> getusernameShoulder(String symptom,Principal principal){
+public List<Shoulderpainscore> getusernameShoulder(String symptom,String username){
 	Connection con = null;
 	Statement statement = null;
 	ResultSet resultSet = null;
@@ -118,7 +118,7 @@ public List<Shoulderpainscore> getusernameShoulder(String symptom,Principal prin
 	}
 	List<Shoulderpainscore> shoulderpainscore = new ArrayList<Shoulderpainscore>();
     try{
-		resultSet = statement.executeQuery("select * from tbl_shoulderpainscore where symptom='"+symptom+"' and username='"+principal.getName()+"'");
+		resultSet = statement.executeQuery("select * from tbl_shoulderpainscore where symptom='"+symptom+"' and username='"+username+"'");
 		while(resultSet.next()){
 			
 			shoulderpainscore.add( new Shoulderpainscore(resultSet.getString("shoulderpainno"), resultSet.getString("pname"), resultSet.getString("number"), resultSet.getString("date"), resultSet.getString("painatrest"), resultSet.getString("paininmotion"), resultSet.getString("nightlypain"),resultSet.getString("sleepingproblem"),resultSet.getString("incapability"), resultSet.getString("degreeofradiation"), resultSet.getString("painscale"), resultSet.getString("date1"), resultSet.getString("total"),resultSet.getString("f"), resultSet.getString("name123"), resultSet.getString("age"), resultSet.getString("headache"), resultSet.getString("myheadache"), resultSet.getString("handihapped"), resultSet.getString("restricted"), resultSet.getString("understand"), resultSet.getString("recreational"), resultSet.getString("angry"), resultSet.getString("control"), resultSet.getString("socialize"), resultSet.getString("family"), resultSet.getString("insane"), resultSet.getString("outlook"), resultSet.getString("afraid"), resultSet.getString("desperate"), resultSet.getString("penalties"), resultSet.getString("relationship"), resultSet.getString("avoid"), resultSet.getString("goals"), resultSet.getString("clear"), resultSet.getString("tension"), resultSet.getString("gatherings"), resultSet.getString("irritable"), resultSet.getString("travelling"),resultSet.getString("confused"), resultSet.getString("frustrated"), resultSet.getString("difficult"), resultSet.getString("attention")));		    	

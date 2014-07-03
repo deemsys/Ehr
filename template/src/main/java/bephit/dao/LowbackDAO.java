@@ -98,7 +98,7 @@ public List<Lowback> getLowback(){
     return lowback;
 }
 
-public List<Lowback> getLowbackdetails(String symptom,Principal principal){
+public List<Lowback> getLowbackdetails(String symptom,String username){
 	Connection con = null;
 	Statement statement = null;
 	ResultSet resultSet = null;
@@ -111,7 +111,7 @@ public List<Lowback> getLowbackdetails(String symptom,Principal principal){
 	
 	List<Lowback> lowback = new ArrayList<Lowback>();
     try{
-		resultSet = statement.executeQuery("select * from tbl_lowback WHERE symptom='"+symptom+"' and username='"+principal.getName()+"'");
+		resultSet = statement.executeQuery("select * from tbl_lowback WHERE symptom='"+symptom+"' and username='"+username+"'");
 		/*System.out.println(resultSet.toString());*/
 		while(resultSet.next()){
 			lowback.add( new Lowback(resultSet.getString("lowbackno"),resultSet.getString("pname"),resultSet.getString("date"),resultSet.getString("tolerate"),resultSet.getString("withoutpain"), resultSet.getString("withoutcausingpain"), resultSet.getString("sleepingwell"), resultSet.getString("canlift"),resultSet.getString("normal"),resultSet.getString("walkingdistance"), resultSet.getString("withoutextrapain"),resultSet.getString("cansit"), resultSet.getString("rapidlybetter"),resultSet.getString("score"),resultSet.getString("section"), resultSet.getString("adl"),resultSet.getString("adl2"), resultSet.getString("comment")));

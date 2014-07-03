@@ -1170,7 +1170,12 @@ public class MainController {
 	@RequestMapping(value="/editusernameautoaccident", method=RequestMethod.GET)
 	public String editusernameauto(Principal principal,HttpServletRequest request,@RequestParam("username") String username,ModelMap model,Autoaccident autoaccident)
 	{
+		if(autoDAO.getusernameAutoaccident(username).size()==0)
+		{
+			model.addAttribute("menu", "checklist");				
+			return "errorpage";
 
+		}
 		if(patientDAO.getUsername(principal).size()>0)
 			{			
 		   model.addAttribute("patientno","0");
@@ -1672,6 +1677,12 @@ public class MainController {
 	@RequestMapping(value="/editusernameworkaccident", method=RequestMethod.GET)
 	public String editusernameWorkAccident(HttpSession session,Principal principal,HttpServletRequest request,@RequestParam("username") String username,ModelMap model,Workaccident workAcc)
 	{
+		if(workDAO.getUsernameWorkaccident(username).size()==0)
+		{
+		model.addAttribute("menu", "checklist");				
+		return "errorpage";
+		}
+
 		
 		session.removeAttribute("accident");
 		if(patientDAO.getUsername(principal).size()>0)
@@ -2044,10 +2055,10 @@ return "viewworkaccident";
 	@RequestMapping(value="/checklistsearch", method = RequestMethod.POST)
 	public String getchecklistsearchdetails(HttpServletRequest request,PatientDetails patientDetails,HttpSession session,@ModelAttribute("Narrativereport")  @Valid Narrativereport narrativereport,BindingResult result,ModelMap model) {
 		String username=request.getParameter("username");
-	session.setAttribute("staffusername",username);
+	    session.setAttribute("staffusername",username);
 		session.removeAttribute("staff");	
 		model.addAttribute("menu", "admin");
-		if(patientDAO.getUsername(username).size()==0)
+		if(signupDAO.getPatientusername(username).size()==0)
 		{
 			
 			model.addAttribute("nsearch","error");
@@ -2152,7 +2163,106 @@ return "viewworkaccident";
 	public String staffchecklist(HttpSession session,ModelMap model) {
 		model.addAttribute("menu", "admin");
 		session.removeAttribute("staff");
-		return "staffchecklist";
+		model.addAttribute("menu", "admin");
+		String username=(String)session.getAttribute("staffusername");
+		if(signupDAO.getPatientusername(username).size()==0)
+		{
+			
+			model.addAttribute("nsearch","error");
+			return "checklistsearch";
+		}
+		if(patientDAO.getUsername(username).size()>0)
+		{
+			
+			model.addAttribute("username",patientDAO.getUsername(username).get(0).getUsername());
+			System.out.println("patientname"+patientDAO.getUsername(username).get(0).getName());
+			model.addAttribute("patientname",patientDAO.getUsername(username).get(0).getName());
+			model.addAttribute("patient",true);
+		
+		}
+		if(screenDAO.getusernameScreening(username).size()>0)
+		{
+			System.out.println("screensize"+screenDAO.getusernameScreening(username).size());
+		model.addAttribute("username",patientDAO.getUsername(username).get(0).getUsername());
+		model.addAttribute("screen",true);	
+		}
+		if(autoDAO.getusernameAutoaccident(username).size()>0)
+		{
+			model.addAttribute("username",patientDAO.getUsername(username).get(0).getUsername());
+			model.addAttribute("autoaccident",true);		
+		}
+		if(workDAO.getUsernameWorkaccident(username).size()>0)
+		{
+			model.addAttribute("username",patientDAO.getUsername(username).get(0).getUsername());
+			model.addAttribute("workaccident",true);		
+		}
+		
+		if(planDAO.getInsuranceplanUsername(username).size()>0)
+		{
+			System.out.println("true");
+			model.addAttribute("username",patientDAO.getUsername(username).get(0).getUsername());
+			model.addAttribute("waiver1",true);		
+		}
+		if(infoDAO.getusernameInsuranceinformation(username).size()>0)
+		{
+			model.addAttribute("username",patientDAO.getUsername(username).get(0).getUsername());
+			model.addAttribute("health",true);		
+		}
+		if(treatDAO.getUsernameTreatDetails(username).size()>0)
+		{
+			model.addAttribute("username",patientDAO.getUsername(username).get(0).getUsername());
+			model.addAttribute("treat",true);		
+		}
+		if(minorDAO.getusernameMinorDetails(username).size()>0)
+		{
+			model.addAttribute("username",patientDAO.getUsername(username).get(0).getUsername());
+			model.addAttribute("minor",true);		
+		}
+		if(hardDAO.getUsernameHardshipagreement(username).size()>0)
+		{
+			model.addAttribute("username",patientDAO.getUsername(username).get(0).getUsername());
+			model.addAttribute("hardship",true);		
+		}
+		if(medicalDAO.getUsernameMedicalDetails(username).size()>0)
+		{
+			model.addAttribute("username",patientDAO.getUsername(username).get(0).getUsername());
+			model.addAttribute("medical",true);		
+		}
+		if(assignmentDAO.getUsernameAssignment(username).size()>0)
+		{
+			model.addAttribute("username",patientDAO.getUsername(username).get(0).getUsername());
+			model.addAttribute("assignment",true);		
+		}
+		if(hippaDAO.getusernameHippa(username).size()>0)
+		{
+			model.addAttribute("username",patientDAO.getUsername(username).get(0).getUsername());
+			model.addAttribute("hippa",true);		
+		}
+		if(hipquestionnaireDAO.getusernamehipquestionnairedetails(username).size()>0)
+		{
+			model.addAttribute("username",patientDAO.getUsername(username).get(0).getUsername());
+			model.addAttribute("hipquestion",true);		
+		}
+		if(footquestionnarieDAO.getusernameFoot(username).size()>0)
+		{
+			model.addAttribute("username",patientDAO.getUsername(username).get(0).getUsername());
+			model.addAttribute("footquestion",true);		
+		}
+		if(symptomDAO.getusernamesymptomDetails(username).size()>0)
+		{
+			model.addAttribute("username",patientDAO.getUsername(username).get(0).getUsername());
+			model.addAttribute("symptom",true);		
+		}
+		if(staffDAO.getStaffusername(username).size()>0)
+		{
+		StaffchecklistForm staffchecklistForm= new StaffchecklistForm();
+    	staffchecklistForm.setStaffchecklist(staffDAO.getStaffusername(username));
+		model.addAttribute("StaffchecklistForm",staffchecklistForm);
+		model.addAttribute("menu", "admin");
+		return "editstaffchecklist";
+		}
+	    return "staffchecklist";
+
  
 	}
 	
@@ -2705,7 +2815,12 @@ MedicalRecordsForm medicalrecordForm = new MedicalRecordsForm();
 	@RequestMapping(value="/editusernamemedical", method = RequestMethod.GET)
 	public String editusernamemedical(@RequestParam("username") String username,HttpServletRequest request,ModelMap model,Principal principal) {
 		
+		if(medicalDAO.getUsernameMedicalDetails(username).size()==0)
+		{
+			model.addAttribute("menu", "checklist");	
+			return "errorpage";
 
+		}
 		if(patientDAO.getUsername(principal).size()>0)
 			{			
 		   model.addAttribute("patientno","0");
@@ -2964,6 +3079,11 @@ String username=principal.getName();
 	@RequestMapping(value="/editscreeningauthz", method = RequestMethod.GET)
 	public String editscreeningauthz(@RequestParam("username") String username,HttpServletRequest request,ModelMap model,Principal principal) {
 
+		if(screenDAO.getusernameScreening(username).size()==0)
+		{
+			model.addAttribute("menu", "checklist");
+			return "errorpage";
+		}
 		if(patientDAO.getUsername(username).size()>0)
 			{			
 		   model.addAttribute("patientno","0");
@@ -3283,6 +3403,12 @@ ScreeningAuthzForm screeningauthzForm = new ScreeningAuthzForm();
 	
 	@RequestMapping(value="/editusernameassignment", method = RequestMethod.GET)
 	public String editusernameassignment(@RequestParam("username") String username,HttpServletRequest request,ModelMap model,Principal principal) {
+		if(assignmentDAO.getUsernameAssignment(username).size()==0)
+		{
+			model.addAttribute("menu", "checklist");
+			return "errorpage";
+		}
+		
 		if(patientDAO.getUsername(principal).size()>0)
 		{			
 	   model.addAttribute("patientno","0");
@@ -3485,7 +3611,12 @@ ScreeningAuthzForm screeningauthzForm = new ScreeningAuthzForm();
 	
 	@RequestMapping(value="/editusernamehippa", method = RequestMethod.GET)
 	public String editusernamehippa(@RequestParam("username") String username,HttpServletRequest request,ModelMap model,Principal principal) {
-
+		if(hippaDAO.getusernameHippa(username).size()==0)
+		{
+			model.addAttribute("menu", "checklist");
+			return "errorpage";
+		}
+	
 		if(patientDAO.getUsername(username).size()>0)
 		{			
 	   model.addAttribute("patientno","0");
@@ -3493,7 +3624,7 @@ ScreeningAuthzForm screeningauthzForm = new ScreeningAuthzForm();
 	HippaPrivacyForm hippaprivacyform= new HippaPrivacyForm();
 	hippaprivacyform.setPrivacyDetails(hippaDAO.getusernameHippa(username));
 	model.addAttribute("HippaPrivacyForm",hippaprivacyform);
-	model.addAttribute("menu", "authorization");
+	model.addAttribute("menu", "checklist");
 	return "edithippaprivacy"; 
 	}
 	
@@ -3629,6 +3760,15 @@ String name="";
 			model.addAttribute("name",name);
 		   model.addAttribute("patientno","0");
 	}
+		if(principal.getName().equals("admin"))
+		{
+			
+			String username=(String)session.getAttribute("staffusername");
+			hippaDAO.deletehippa(username);	
+			model.addAttribute("choice","close");
+			return "screeninglist";
+	
+		}	
 
 		hippaDAO.deletehippaprivacy(hippa_no);
 		
@@ -4197,10 +4337,22 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
         model.addAttribute("cancel","0");
 		return "editpatientdetails";
 	}
-
+	@RequestMapping(value="/error", method=RequestMethod.GET)
+	public String error(HttpServletRequest request,ModelMap model,PatientDetails patient,Principal principal)
+	{
+		
+		return "errorpage";
+	}
+	
 	@RequestMapping(value="/editusernamepatientdetails", method=RequestMethod.GET)
 	public String editusernamePatientDetails(HttpServletRequest request,@RequestParam("username") String username,ModelMap model,PatientDetails patient,Principal principal)
 	{
+		if(patientDAO.getUsername(username).size()==0)
+		{			
+			return "errorpage";
+	   
+	}
+		
 	if(patientDAO.getUsername(username).size()>0)
 			{			
 		   model.addAttribute("patientno","0");
@@ -4652,6 +4804,12 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 	}
 	@RequestMapping(value="/editusernameinsuranceplan", method = RequestMethod.GET)
 	public String editusernameinsuranceplan(Principal principal,HttpServletRequest request,@RequestParam("username") String username,ModelMap model,Insuranceplan insuranceplan) {
+		if(planDAO.getInsuranceplanUsername(username).size()==0)
+		{
+			model.addAttribute("menu", "checklist");
+			return "errorpage";
+		}
+		
 		if(patientDAO.getUsername(principal).size()>0)
 		{			
 	   model.addAttribute("patientno","0");
@@ -4907,6 +5065,13 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 	}	
 	@RequestMapping(value="/editusernametreatform", method = RequestMethod.GET)
 	public String editusernametreatform(@RequestParam("username") String username, Principal principal,HttpServletRequest request,ModelMap model) {
+				
+		if(treatDAO.getUsernameTreatDetails(username).size()==0)
+		{
+			model.addAttribute("menu", "checklist");				
+			return "errorpage";
+		}
+
 		if(patientDAO.getUsername(principal).size()>0)
 		{			
 	   model.addAttribute("patientno","0");
@@ -5099,6 +5264,11 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 	@RequestMapping(value="/editusernametreatminor", method = RequestMethod.GET)
 	public String editusernametreatminor(@RequestParam("username") String username,HttpServletRequest request,ModelMap model,Principal principal) {
 
+		if(minorDAO.getusernameMinorDetails(username).size()==0)
+		{
+			 model.addAttribute("menu", "checklist");
+			 return "errorpage";
+		}
 		if(patientDAO.getUsername(username).size()>0)
 		{			
 	   model.addAttribute("patientno","0");
@@ -5152,6 +5322,16 @@ model.addAttribute("noofpages",(int) Math.ceil(planDAO.getnoofinsuranceplan() * 
 		{			
 	   model.addAttribute("patientno","0");
 	}
+		if(principal.getName().equals("admin"))
+		{
+			
+			String username=(String)session.getAttribute("staffusername");
+			minorDAO.deletetreatminor(minor_no);
+			model.addAttribute("choice","close");
+			return "screeninglist";
+	
+		}	
+		
 		int status=minorDAO.deletetreatminor(minor_no);
 		
 		if(status==1)
@@ -5217,6 +5397,14 @@ String name="";
 	}
 	@RequestMapping(value="/editusernamehardship", method = RequestMethod.GET)
 	public String editusernamehardship(@RequestParam("username") String username,HttpServletRequest request,ModelMap model,Principal principal) {
+		
+		if(hardDAO.getUsernameHardshipagreement(username).size()==0)
+		{
+			 model.addAttribute("menu", "checklist");
+			 return "errorpage";
+
+		}
+		
 		if(patientDAO.getUsername(principal).size()>0)
 		{			
 	   model.addAttribute("patientno","0");
@@ -5348,6 +5536,12 @@ String name="";
 	@RequestMapping(value="/editusernameinsuranceinformation", method = RequestMethod.GET)
 	public String editusernameinsuranceinformation(Principal principal,HttpServletRequest request,@RequestParam("username") String username,ModelMap model,Insuranceinformation insuranceinformation) {
 			
+		if(infoDAO.getusernameInsuranceinformation(username).size()==0)
+		{
+			model.addAttribute("menu", "checklist");
+			return "errorpage";
+		}
+		
 		if(patientDAO.getUsername(principal).size()>0)
 		{			
 	   model.addAttribute("patientno","0");

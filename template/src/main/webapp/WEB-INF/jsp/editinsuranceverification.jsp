@@ -162,36 +162,67 @@
  
 </script>
 <script>	
+ function validatealpha(){
+    var textInput = document.getElementById("spoke_with").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("spoke_with").value = textInput;
+}
+function validatename(){
+    var textInput = document.getElementById("verify_name").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("verify_name").value = textInput;
+}
 		function checkSubmit()
 		{
+			var error="";
 			document.getElementById("verify_nameerror").innerHTML=" ";
 			
 			if(document.getElementById("verify_name").value=="")
 			{
 			document.getElementById("verify_nameerror").innerHTML="Required Field Should not be Empty";
-			
-			return false;
+			error="true";
 			}
-			document.getElementById("verify_nameerror").innerHTML="";
-	    if(document.getElementById("verify_name").value.length<4 || document.getElementById("name").value.length>=32)
+			if(document.getElementById("verify_name").value.substring(0,1)==" ")
+			{
+			document.getElementById("verify_nameerror").innerHTML="Invalid Name";
+			
+		error="true";
+			}
+			
+			
+			 if(document.getElementById("verify_name").value!='')
+			 {
+	    if(document.getElementById("verify_name").value.length<4)
 	    {
 	    	
 	    	document.getElementById("verify_nameerror").innerHTML="Name should be min 4 and max 32";
 	    	
-	        return false;
-	    }
+	       error="true";
+	    }}
 			document.getElementById("spoke_witherror").innerHTML="";
 		if(document.getElementById("spoke_with").value=="")
 			{
 			document.getElementById("spoke_witherror").innerHTML="Required Field Should not be Empty";
 			
-			return false;
+		error="true";
+			}
+			if(document.getElementById("spoke_with").value.substring(0,1)==" ")
+			{
+			document.getElementById("spoke_witherror").innerHTML="Invalid Name";
+			
+			error="true";
+			}
+				if(document.getElementById("spoke_with").value.length<4)
+			{
+			document.getElementById("spoke_witherror").innerHTML="Name should be min 4 and max 32";
+			
+		error="true";
 			}
 				document.getElementById("datepickererror").innerHTML="";
 		if((document.getElementById("datepicker").value==""))
 	{
 	  document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
-	return false;
+	error="true";
 	}
 		document.getElementById("datepickererror").innerHTML="";
 		 var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
@@ -199,7 +230,7 @@
     {
     	document.getElementById("datepickererror").innerHTML="Invalid Date Format";
     	
-        return false;
+       error="true";
     }		
 		
 		document.getElementById("faxerror").innerHTML="";
@@ -207,7 +238,7 @@
 		{
 		document.getElementById("faxerror").innerHTML="Required Field Should not be Empty";
 		
-		return false;
+		error="true";
 		} 
 		document.getElementById("faxerror").innerHTML="";
     var txt1=document.getElementById("fax").value;
@@ -217,14 +248,14 @@
    // alert(txt3);
    if(txt2==000 && txt3==000){
    document.getElementById("faxerror").innerHTML="Invalid phone number format";
-   return false;
+  error="true";
    }
 		document.getElementById("amountdeducterror").innerHTML="";
 		if(document.getElementById("amountdeduct").value=="")
 		{
 		document.getElementById("amountdeducterror").innerHTML="Required Field Should not be Empty";
 		
-		return false;
+		error="true";
 		}
 
        
@@ -234,7 +265,7 @@
 		{
 		document.getElementById("amountdeductmeterror").innerHTML="Required Field Should not be Empty";
 		
-		return false;
+		error="true";
 		}
 		
 		
@@ -245,7 +276,7 @@
 		{
 		document.getElementById("max_visiterror").innerHTML="Required Field Should not be Empty";
 		
-		return false;
+		error="true";
 		}
 		
 		
@@ -254,7 +285,7 @@
 		{
 		document.getElementById("atwhaterror").innerHTML="Required Field Should not be Empty";
 		
-		return false;
+		error="true";
 		}
 		
 		
@@ -262,8 +293,7 @@
 		if(document.getElementById("atwhat1").value=="")
 		{
 		document.getElementById("atwhat1error").innerHTML="Required Field Should not be Empty";
-		
-		return false;
+		error="true";
 		}
 		
 		
@@ -272,23 +302,23 @@
 
 {
 document.getElementById("yeserror").innerHTML="Required Field Should not be Empty";
+		error="true";
 		
-		return false;
 		}
 			         document.getElementById("deductibleerr").innerHTML="";
 		if(document.getElementById("deductible").value=="")
 		{
 		document.getElementById("deductibleerr").innerHTML="Required Field Should not be Empty";
+		error="true";
 		
-		return false;
 		}
 		
 		document.getElementById("coverederr").innerHTML="";
 		if(document.getElementById("covered").value=="")
 		{
 		document.getElementById("coverederr").innerHTML="Required Field Should not be Empty";
+		error="true";
 		
-		return false;
 		}
 		
 		
@@ -301,15 +331,24 @@ document.getElementById("yeserror").innerHTML="Required Field Should not be Empt
 		{
 		document.getElementById("mail_claimserror").innerHTML="Required Field Should not be Empty";
 		
-		return false;
+		error="true";
 		}
+	 if(document.getElementById("mail_claims").value.substring(0,1)==' ')
+	 {
+	 document.getElementById("mail_claimserror").innerHTML="Invalid Address";
+	 error="true";
+	 }
 		var mail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     
     if(document.getElementById("mail_claims").value.match(mail)==null)
     {
     	document.getElementById("mail_claimserror").innerHTML="Invalid E-Mail Format";
     	
-        return false;
+       error="true";
+    }
+    if(error=="true")
+    {
+     return false;
     }
 
 		
@@ -441,14 +480,32 @@ function validatename(){
               </tr>
               <br>
               <input type="hidden" class="input_txtbx1" id="inp_id" value="${Insuranceverification.form_no}" name="form_no" />
-              <tr><p>Hi, I'm calling to verify chiropractic benefits for<span class="err">*</span> Mr./ Mrs.<input type="text" class="input_txtbx1" name="verify_name" id="verify_name" value="${Insuranceverification.verify_name}" onInput="return validatename()";/><span id="verify_nameerror"  style="color: red;font-style:italic;"></span><form:errors path="Insuranceverification.verify_name"></form:errors></p></tr>
+              <tr><p>Hi, I'm calling to verify chiropractic benefits for<span class="err">*</span> Mr./ Mrs.<input type="text" class="input_txtbx1" onInput="validatename();" maxlength="32" name="verify_name" id="verify_name" value="${Insuranceverification.verify_name}" onInput="return validatename()";/><span id="verify_nameerror"  style="color: red;font-style:italic;"></span><form:errors path="Insuranceverification.verify_name"></form:errors></p></tr>
               <tr class="row1">
               <td><span class="err">*</span>Spoke with</td>
-              <td><input type="text" class="input_txtbx1" name="spoke_with" id="spoke_with" value="${Insuranceverification.spoke_with}" /><span id="spoke_witherror"   style="color: red;font-style:italic;"></span><form:errors path="Insuranceverification.spoke_with"></form:errors></td>
+              <td><input type="text" class="input_txtbx1" name="spoke_with" id="spoke_with" value="${Insuranceverification.spoke_with}" onInput="validatealpha();" maxlength="32" /><span id="spoke_witherror"   style="color: red;font-style:italic;"></span><form:errors path="Insuranceverification.spoke_with"></form:errors></td>
               <td><span class="err">*</span>Date</td>
               <td><input type="text" class="input_txtbx1" name="date" id="datepicker" value="${Insuranceverification.date}"/><span id="datepickererror"  style="color: red;font-style:italic;" > </span><form:errors path="Insuranceverification.date"></form:errors></td>
               <td><span class="err">*</span>Fax#</td>
                <script>
+               $(function() {
+		$("#spoke_with").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+		$(function() {
+		$("#mail_claims").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+		$(function() {
+		$("#verify_name").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
               $(document).ready(function(){
   $("#fax").keypress(function(){
 var phone=document.getElementById("fax").value;
@@ -470,11 +527,11 @@ document.getElementById("fax").value=phone;
               <br>
               <tr class="row1">
               <td><span class="err">*</span>Amount of deductible</td>
-              <td><input type="text" class="input_txtbx1" name="amount_deduct" id="amountdeduct" onkeypress="return validate(event)"; value="${Insuranceverification.amount_deduct}" /><span id="amountdeducterror"  style="color: red;font-style:italic;"><form:errors path="Insuranceverification.amount_deduct"></form:errors>
+              <td><input type="text" class="input_txtbx1" name="amount_deduct" maxlength="10" id="amountdeduct" onkeypress="return validate(event)"; value="${Insuranceverification.amount_deduct}" /><span id="amountdeducterror"  style="color: red;font-style:italic;"><form:errors path="Insuranceverification.amount_deduct"></form:errors>
               <span class="err" id="amountdeducterror"></span>
               </td>
               <td><span class="err">*</span>Amount of deductible met</td>
-              <td><input type="text" class="input_txtbx1" name="amount_deduct_met" id="amountdeductmet" onkeypress="return validate(event)"; value="${Insuranceverification.amount_deduct_met}"/><span id="amountdeductmeterror"  style="color: red;font-style:italic;"></span><form:errors path="Insuranceverification.amount_deduct_met"></form:errors>
+              <td><input type="text" class="input_txtbx1" name="amount_deduct_met" maxlength="10" id="amountdeductmet" onkeypress="return validate(event)"; value="${Insuranceverification.amount_deduct_met}"/><span id="amountdeductmeterror"  style="color: red;font-style:italic;"></span><form:errors path="Insuranceverification.amount_deduct_met"></form:errors>
               <span class="err" id="amountdeductmeterror"></span>
               </td>
               <td></td>
@@ -484,7 +541,7 @@ document.getElementById("fax").value=phone;
               <table cellpadding="0" cellspacing="0" border="0" width="100%"> -->
               <tr class="row1"> 
               <td><span class="err">*</span>Maximum visits/year?</td>
-              <td><input type="text" class="input_txtbx1" name="max_visit" id="max_visit" onkeypress="return validate1(event)"; value="${Insuranceverification.max_visit}"/><span id="max_visiterror"  style="color: red;font-style:italic;"></span><form:errors path="Insuranceverification.max_visit"></form:errors></td>
+              <td><input type="text" class="input_txtbx1" name="max_visit"  maxlength="3" id="max_visit" onkeypress="return validate1(event)"; value="${Insuranceverification.max_visit}"/><span id="max_visiterror"  style="color: red;font-style:italic;"></span><form:errors path="Insuranceverification.max_visit"></form:errors></td>
               <td></td>
               <td></td>
               <td></td>
@@ -543,7 +600,7 @@ document.getElementById("fax").value=phone;
               <table cellpadding="0" cellspacing="0" border="0" width="100%"> -->
               <tr class="row1">
               <td><span class="err">*</span>Deductible</td>
-              <td><input type="text" class="input_txtbx1" name="deductible" id="deductible" value="${Insuranceverification.deductible}"/><span id="deductibleerr"  style="color: red;font-style:italic;"> </span><form:errors path="Insuranceverification.deductible"></form:errors>
+              <td><input type="text" class="input_txtbx1" name="deductible" maxlength="10" id="deductible" value="${Insuranceverification.deductible}"/><span id="deductibleerr"  style="color: red;font-style:italic;"> </span><form:errors path="Insuranceverification.deductible"></form:errors>
               <br><span class="err" id="deductibleerror"></span>
               </td>
               <td><span class="err">*</span>%covered</td>
@@ -576,7 +633,7 @@ document.getElementById("fax").value=phone;
               </tr>
               <tr class="row1">
               <td><span class="err">*</span>What address do we mail claims to?</td>
-              <td><textarea rows="3" cols="35" name="mail_claims"  class="input_txtarea" id="mail_claims">${Insuranceverification.mail_claims}</textarea><span id="mail_claimserror"  style="color: red;font-style:italic;"> </span><form:errors path="Insuranceverification.mail_claims"></form:errors></td>
+              <td><input type="text"  name="mail_claims" class="input_txtbx1" maxlength="32" value="${Insuranceverification.mail_claims}" id="mail_claims"><span id="mail_claimserror"  style="color: red;font-style:italic;"> </span><form:errors path="Insuranceverification.mail_claims"></form:errors></td>
               <td></td>
 			  <td></td>              
               </tr>

@@ -143,23 +143,35 @@ public class QuadrapleController
 	}
 	
 	@RequestMapping(value = "/editwristindexdetails", method = RequestMethod.GET)
-	public String editwristindex(@RequestParam(value="symptom") String symptom,ModelMap model,Principal principal) {
-		
+	public String editwristindex(@RequestParam(value="symptom") String symptom,ModelMap model,Principal principal,HttpSession session) {
+		String username="";
+		username=principal.getName();
 		WristindexForm wristindexform = new WristindexForm();
-		wristindexform.setWristindexdetails(wristindexDAO.getwristusernameindexDetails(symptom, principal));
+		if(principal.getName().equals("admin"))
+		{
+			username=(String)session.getAttribute("staffusername");
+		}
+		
+		wristindexform.setWristindexdetails(wristindexDAO.getwristusernameindexDetails(symptom,username));
 		model.addAttribute("wristindexform", wristindexform);
 		model.addAttribute("menu","sign");	
 		return "editwristindex";
 	}
 	
 	@RequestMapping(value="/quad_ajax",method=RequestMethod.POST)
-	public @ResponseBody String quad_ajax(@ModelAttribute("symptom")Quadraplevisual quadraplevisual,@ModelAttribute("painname")String painname,PatientDetails patientDetails,Principal principal)
+	public @ResponseBody String quad_ajax(HttpSession session,@ModelAttribute("symptom")Quadraplevisual quadraplevisual,@ModelAttribute("painname")String painname,PatientDetails patientDetails,Principal principal)
 	{
 		System.out.println("username..."+quadraplevisual.getSymptom()+"sdas"+painname);
 		System.out.println(quadraplevisual.getPainname());
+		String username=principal.getName();
+		if(principal.getName().equals("admin"))
+		{
+			username=(String)session.getAttribute("staffusername");
+		}
+		System.out.println("username------"+username);
 		if(quadraplevisual.getPainname().equals("Wrist/Hand"))
 		{
-			if(wristindexDAO.getwristusernameindexDetails(quadraplevisual.getSymptom(), principal).size()>0)
+			if(wristindexDAO.getwristusernameindexDetails(quadraplevisual.getSymptom(),username).size()>0)
 			{
 				return "edit";
 			}
@@ -170,7 +182,7 @@ public class QuadrapleController
 		}
 		if(quadraplevisual.getPainname().equals("Low Back"))
 		{
-			if(lowDAO.getLowbackdetails(quadraplevisual.getSymptom(), principal).size()>0)
+			if(lowDAO.getLowbackdetails(quadraplevisual.getSymptom(),username).size()>0)
 			{
 				return "edit";
 			}
@@ -181,7 +193,7 @@ public class QuadrapleController
 		}
 		if(quadraplevisual.getPainname().equals("Neck/Mid Back"))
 		{
-			if(neckindexDAO.getsymptomneckindexDetails(quadraplevisual.getSymptom(), principal).size()>0)
+			if(neckindexDAO.getsymptomneckindexDetails(quadraplevisual.getSymptom(),username).size()>0)
 			{
 				return "edit";
 			}
@@ -192,7 +204,7 @@ public class QuadrapleController
 		}
 		if(quadraplevisual.getPainname().equals("Oswestry"))
 		{
-			if(oswestryDAO.getsymptomoswestryindexDetails(quadraplevisual.getSymptom(), principal).size()>0)
+			if(oswestryDAO.getsymptomoswestryindexDetails(quadraplevisual.getSymptom(),username).size()>0)
 			{
 				return "edit";
 			}
@@ -203,7 +215,7 @@ public class QuadrapleController
 		}
 		if(quadraplevisual.getPainname().equals("Shoulder"))
 		{
-			if(shoulderpainscoreDAO.getusernameShoulder(quadraplevisual.getSymptom(), principal).size()>0)
+			if(shoulderpainscoreDAO.getusernameShoulder(quadraplevisual.getSymptom(),username).size()>0)
 			{
 				return "edit";
 			}
@@ -265,11 +277,17 @@ public class QuadrapleController
 	}
 	
 	@RequestMapping(value="/editlowbackdetails", method=RequestMethod.GET)
-	public String editlowback(HttpServletRequest request,@RequestParam("symptom") String symptom,ModelMap model,Lowback lowback,Principal principal) 
+	public String editlowback(HttpSession session,HttpServletRequest request,@RequestParam("symptom") String symptom,ModelMap model,Lowback lowback,Principal principal) 
 	{model.addAttribute("menu","sign");	
 		/*String lumbopelvicexam=request.getParameter("lumbopelvicexam");*/
-		LowbackForm lowbackForm = new LowbackForm();       
-        lowbackForm.setLowback(lowDAO.getLowbackdetails(symptom,principal));
+	String username=principal.getName();
+	if(principal.getName().equals("admin"))
+	{
+		username=(String)session.getAttribute("staffusername");	
+	}
+	
+	LowbackForm lowbackForm = new LowbackForm();       
+        lowbackForm.setLowback(lowDAO.getLowbackdetails(symptom,username));
         model.addAttribute("lowbackForm",lowbackForm);
         model.addAttribute("menu","wristindex");
 		return "editlowback";
@@ -283,30 +301,44 @@ model.addAttribute("symptom",symptom);
 		return "neckindex";
 	}
 	@RequestMapping(value = "/editneckindexdetails", method = RequestMethod.GET)
-	public String editneckindex(@RequestParam(value = "symptom") String symptom,ModelMap model,Principal principal) {
+	public String editneckindex(@RequestParam(value = "symptom") String symptom,HttpSession session,ModelMap model,Principal principal) {
 		
+		String username=principal.getName();
+		if(principal.getName().equals("admin"))
+		{
+			username=(String)session.getAttribute("staffusername");	
+		}
 		NeckindexForm neckindexform = new NeckindexForm();
-		neckindexform.setneckindexdetails(neckindexDAO.getsymptomneckindexDetails(symptom, principal));
+		neckindexform.setneckindexdetails(neckindexDAO.getsymptomneckindexDetails(symptom,username));
 		model.addAttribute("neckindexform", neckindexform);
 		model.addAttribute("menu","sign");	
 		return "editneckindex";
 	}
 	@RequestMapping (value="/editoswestrydetails", method = RequestMethod.GET)
-	public String editoswestryindex(@RequestParam("symptom") String symptom,HttpServletRequest request,ModelMap model,Oswestry oswestryindexdetails,Principal principal) throws IOException
+	public String editoswestryindex(@RequestParam("symptom") String symptom,HttpSession session, HttpServletRequest request,ModelMap model,Oswestry oswestryindexdetails,Principal principal) throws IOException
 	{
-		
+		String username=principal.getName();
+		if(principal.getName().equals("admin"))
+		{
+			username=(String)session.getAttribute("staffusername");	
+		}
 		OswestryForm oswestryindexform=new OswestryForm();
-		oswestryindexform.setOswestrydetails(oswestryDAO.getsymptomoswestryindexDetails(symptom, principal));
+		oswestryindexform.setOswestrydetails(oswestryDAO.getsymptomoswestryindexDetails(symptom,username));
 		model.addAttribute("oswestryform", oswestryindexform);
 		model.addAttribute("menu","sign");	
 		return "editoswestryindex";
 	}
 	@RequestMapping(value="/editshoulderdetails", method=RequestMethod.GET)
-	public String editshoulderpainscore(HttpServletRequest request,@RequestParam("symptom") String symptom,ModelMap model,Shoulderpainscore shoulderpainscore,Principal principal) 
+	public String editshoulderpainscore(HttpSession session,HttpServletRequest request,@RequestParam("symptom") String symptom,ModelMap model,Shoulderpainscore shoulderpainscore,Principal principal) 
 	{
+		String username=principal.getName();
+		if(principal.getName().equals("admin"))
+		{
+			username=(String)session.getAttribute("staffusername");	
+		}
 		/*String lumbopelvicexam=request.getParameter("lumbopelvicexam");*/
 		ShoulderpainscoreForm shoulderpainscoreForm = new ShoulderpainscoreForm();       
-        shoulderpainscoreForm.setShoulderpainscore(shoulderpainscoreDAO.getusernameShoulder(symptom, principal));
+        shoulderpainscoreForm.setShoulderpainscore(shoulderpainscoreDAO.getusernameShoulder(symptom,username));
         model.addAttribute("shoulderpainscoreForm",shoulderpainscoreForm);
         model.addAttribute("menu","sign");	
 		return "editshoulderpainscore";
