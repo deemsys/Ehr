@@ -3,12 +3,12 @@ package bephit.model;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotEmpty;
+import org.hibernate.validator.constraints.Length;
 
 
 public class PatientDetails
 {
 private String Patient_id;
-
 
 private String Name;
 

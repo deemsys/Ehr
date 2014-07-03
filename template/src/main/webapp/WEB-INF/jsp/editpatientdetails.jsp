@@ -519,658 +519,1432 @@ function validatezipcode2(){
 }
 
 </script>
-	 <script>
+	<script>
+  $(function() {
+	$("#name").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+
+<script>
+  $(function() {
+	$("#streetaddress").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#City").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#State").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#Emailid").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+	  <script>
+i=0;
+$(document).ready(function(){
+  $("#homephone").keypress(function(){
+var phone=document.getElementById("homephone").value;
+phone = phone.replace(/(\d{3})(\d{3})(\d+)/, '($1)$2-$3');
+document.getElementById("homephone").value=phone;
+ });  
+
+});
+</script>
+
+<script>
+  $(function() {
+	$("#EmployerName").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#Occupation").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#EmployerAddress").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#EmployerCity").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#Estate").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#SpousesName").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#SpousesEmp").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#Name_friend").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+
+
+
+<script>
+  $(function() {
+	$("#symptom1").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+
+<script>
+  $(function() {
+	$("#accident").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+
+<script>
+  $(function() {
+	$("#where1").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+
+<script>
+  $(function() {
+	$("#NameOfAttorney").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#Fault_accident").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#phyname").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#car11").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#xray").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#treat").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#Insurance").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#Name_auto").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
+  $(function() {
+	$("#Illness").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#Dr").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#Patient").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+	<script>
+function validatename55(id){
+    var textInput = document.getElementById(id).value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById(id).value = textInput;
+}
+</script>
+<script>
+function validatename56(id){
+    var textInput = document.getElementById(id).value;
+    textInput = textInput.replace(/[^A-Za-z. ]/g, "");
+    document.getElementById(id).value = textInput;
+}
+</script>
+<script>
+function validatename(id){
+    var textInput = document.getElementById(id).value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById(id).value = textInput;
+}
+</script>
+<script>
+function validateusernamepolicy(){
+    var textInput = document.getElementById("policy").value;
+    textInput = textInput.replace(/[^A-Z0-9]/g, "");
+    document.getElementById("policy").value = textInput;
+}
+
+</script>
+ <script>
+
 
 	function checkSubmit()
 	{
-		document.getElementById("nameerror").innerHTML=" ";
-		
-		if(document.getElementById("name").value=="")
-		{
-		document.getElementById("nameerror").innerHTML="Required Field Should not be Empty";
-		
-		return false;
-		}
-		
-		var name=/^[a-zA-Z]*$/;
-        
-        if(document.getElementById("name").value.match(name)==null)
-        {
-           document.getElementById("nameerror").innerHTML="Enter your username only in letters";    
-            return false;
-        }
-		
-		document.getElementById("datepickererror").innerHTML="";
-	if(document.getElementById("datepicker").value=="")
-		{
-		document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
-		
-		return false;
-		}
+	
+	document.getElementById("nameerror").innerHTML=" ";
+	
+	if(document.getElementById("name").value.substring(0,1)==" ")
+	{
+	document.getElementById("nameerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	document.getElementById("nameerror").innerHTML="";
+    if(document.getElementById("name").value.length<4 || document.getElementById("name").value.length>=32)
+    {
+    	
+    	document.getElementById("nameerror").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
+	
 	document.getElementById("datepickererror").innerHTML="";
-	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
-	if(document.getElementById("datepicker").value.match(datechk)==null)
-    {
-    	document.getElementById("datepickererror").innerHTML="Invalid Date Format";
-    	
-        return false;
-    }
-	document.getElementById("streetaddresserror").innerHTML="";
-	if(document.getElementById("streetaddress").value=="")
+if(document.getElementById("datepicker").value=="")
 	{
-	document.getElementById("streetaddresserror").innerHTML="Required Field Should not be Empty";
+	document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
 	
 	return false;
 	}
+	document.getElementById("datepickererror").innerHTML="";
+var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+if(document.getElementById("datepicker").value.match(datechk)==null)
+{
+	document.getElementById("datepickererror").innerHTML="Invalid Date Format";
 	
-	document.getElementById("Cityerror").innerHTML="";
-	if(document.getElementById("City").value=="")
-	{
-	document.getElementById("Cityerror").innerHTML="Required Field Should not be Empty";
-	
-	return false;
-	}
-	document.getElementById("Stateerror").innerHTML="";
-	if(document.getElementById("State").value=="")
-	{
-	document.getElementById("Stateerror").innerHTML="Required Field Should not be Empty";
-	
-	return false;
-	}
-	document.getElementById("zipcode1error").innerHTML="";
-	if(document.getElementById("zipcode1").value=="")
-	{
-	document.getElementById("zipcode1error").innerHTML="Required Field Should not be Empty";
-	
-	return false;
-	}
-	document.getElementById("zipcode1error").innerHTML="";
-	if(document.getElementById("zipcode1").value.length<5)
-	{
-	document.getElementById("zipcode1error").innerHTML="Invalid zipcode format";
-	return false;
-	
-	}
-	
-	document.getElementById("zipcode1error").innerHTML="";
-	if(isNaN(document.getElementById("zipcode1").value))
-	{
-	document.getElementById("zipcode1error").innerHTML="Enter Only Numbers";
-	return false;
-	}
-	
-	var txt1=document.getElementById("zipcode1").value;
-   if( txt1==00000){
-   document.getElementById("zipcode1error").innerHTML="Invalid Zipcode format format";
-   return false;
-   }
-  var txt2=txt1.substring(1,3);
-   
-   if(txt2==000){
-   document.getElementById("zipcode1error").innerHTML="Invalid Zipcode format format";
-   return false;
-   }
-   
-	document.getElementById("homephoneerror").innerHTML="";
-	if(document.getElementById("homephone").value=="")
-	{
-	document.getElementById("homephoneerror").innerHTML="Required Field Should not be Empty";
-	
-	return false;
-	}
-	document.getElementById("homephoneerror").innerHTML="";
-    var txt1=document.getElementById("homephone").value;
-   var txt2=txt1.substring(1,4);
-   var txt3=txt1.substring(5,8);
-   // alert(txt2);
-   // alert(txt3);
-   if(txt2==000 && txt3==000){
-   document.getElementById("homephoneerror").innerHTML="Invalid phone number format";
-	return false;
-    }
-	
-	document.getElementById("Emailiderror").innerHTML="";
-	if(document.getElementById("Emailid").value=="")
-	{
-	document.getElementById("Emailiderror").innerHTML="Required Field Should not be Empty";
-	
-	return false;
-	}
-	var mail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    
-    if(document.getElementById("Emailid").value.match(mail)==null)
-    {
-    	document.getElementById("Emailiderror").innerHTML="Invalid E-Mail Format";
-    	
-        return false;
-    }
+    return false;
+}
+document.getElementById("streetaddresserror").innerHTML="";
+if(document.getElementById("streetaddress").value=="")
+{
+document.getElementById("streetaddresserror").innerHTML="Required Field Should not be Empty";
 
-	document.getElementById("mobilenumbererror").innerHTML="";
-	if(document.getElementById("mobilenumber").value=="")
-	{
-	document.getElementById("mobilenumbererror").innerHTML="Required Field Should not be Empty";
+return false;
+}
+document.getElementById("streetaddresserror").innerHTML="";
+if(document.getElementById("streetaddress").value.length<4 || document.getElementById("streetaddress").value.length>=32)
+{
 	
-	return false;
-	}
-	document.getElementById("mobilenumbererror").innerHTML="";
-    var txt1=document.getElementById("mobilenumber").value;
-   var txt2=txt1.substring(1,4);
-   var txt3=txt1.substring(5,8);
-   // alert(txt2);
-   // alert(txt3);
-   if(txt2==000 && txt3==000){
-   document.getElementById("mobilenumbererror").innerHTML="Invalid phone number format";
-	return false;
-    }
-	document.getElementById("datepicker1error").innerHTML="";
-	if(document.getElementById("datepicker1").value=="")
-	{
-	document.getElementById("datepicker1error").innerHTML="Required Field Should not be Empty";
+	document.getElementById("streetaddresserror").innerHTML="should be min 4 and max 32";
 	
-	return false;
-	}
-	
-	document.getElementById("socialsecuritynumbererror").innerHTML="";
-	if(document.getElementById("socialsecuritynumber").value=="")
-	{
-	document.getElementById("socialsecuritynumbererror").innerHTML="Required Field Should not be Empty";
-	
-	return false;
-	}
-	
-	document.getElementById("socialsecuritynumbererror").innerHTML="";
-	var txt1=document.getElementById("socialsecuritynumber").value;
-	var txt2=txt1.substring(0,3);
-	if(txt2==000)
-	{
-	document.getElementById("socialsecuritynumbererror").innerHTML="Invalid social security number";
-	return false;
-	}
-	
-	document.getElementById("socialsecuritynumbererror").innerHTML="";
-    if(document.getElementById("socialsecuritynumber").value.length<11)
-    {
-    	document.getElementById("socialsecuritynumbererror").innerHTML="Invalid social  security number";
-    	
-        return false;
-    }
-	//var phone = /^[0-9-]{11}$/;
-	 //if(document.getElementById("socialsecuritynumber").value.match(phone)==null)
-   // {
-    	//document.getElementById("socialsecuritynumbererror").innerHTML="Enter correct socialsecuritynumber";
-    	
-        //return false;
-   // }
-	 document.getElementById("Gendererror").innerHTML=""; 
-	if( ( document.getElementById("Male").checked == false ) && ( document.getElementById("Female").checked == false ) && ( document.getElementById("Transgender").checked == false ))
+    return false;
+}
 
-	 {
-	 document.getElementById("Gendererror").innerHTML="Required Field Should not be Empty";
-	 		
-	 		return false;
-	 		
-	 }
-	document.getElementById("MaritalStatuserror").innerHTML=""; 
-	if( ( document.getElementById("Single").checked == false ) && ( document.getElementById("Married").checked == false ) && ( document.getElementById("Divorced").checked == false ))
 
-	 {
-	 document.getElementById("MaritalStatuserror").innerHTML="Required Field Should not be Empty";
-	 		
-	 		return false;
-	 		
-	 }
-	document.getElementById("workphoneerror").innerHTML="";
-	if(document.getElementById("workphone").value!="")
+document.getElementById("Cityerror").innerHTML="";
+if(document.getElementById("City").value=="")
+{
+document.getElementById("Cityerror").innerHTML="Required Field Should not be Empty";
+
+return false;
+}
+
+document.getElementById("Cityerror").innerHTML="";
+if(document.getElementById("City").value.length<4 || document.getElementById("City").value.length>=32)
+{
+	
+	document.getElementById("Cityerror").innerHTML="should be min 4 and max 32";
+	
+    return false;
+}
+
+document.getElementById("Stateerror").innerHTML="";
+if(document.getElementById("State").value=="")
+{
+document.getElementById("Stateerror").innerHTML="Required Field Should not be Empty";
+
+return false;
+}
+document.getElementById("Stateerror").innerHTML="";
+if(document.getElementById("State").value.length<4 || document.getElementById("State").value.length>=32)
+{
+	
+	document.getElementById("Stateerror").innerHTML="should be min 4 and max 32";
+	
+    return false;
+}
+document.getElementById("zipcode1error").innerHTML="";
+if(document.getElementById("zipcode1").value=="")
+{
+document.getElementById("zipcode1error").innerHTML="Required Field Should not be Empty";
+
+return false;
+}
+document.getElementById("zipcode1error").innerHTML="";
+if(document.getElementById("zipcode1").value.length<5)
+{
+document.getElementById("zipcode1error").innerHTML="Zipcode format should be 5numbers";
+return false;
+
+}
+
+document.getElementById("zipcode1error").innerHTML="";
+if(isNaN(document.getElementById("zipcode1").value))
+{
+document.getElementById("zipcode1error").innerHTML="Enter Only Numbers";
+return false;
+}
+
+var txt1=document.getElementById("zipcode1").value;
+if( txt1==00000){
+document.getElementById("zipcode1error").innerHTML="Invalid Zipcode format ";
+return false;
+}
+var txt2=txt1.substring(1,3);
+
+if(txt2==000){
+document.getElementById("zipcode1error").innerHTML="Invalid Zipcode format ";
+return false;
+}
+
+
+document.getElementById("homephoneerror").innerHTML="";
+if(document.getElementById("homephone").value=="")
+{
+document.getElementById("homephoneerror").innerHTML="Required Field Should not be Empty";
+
+return false;
+}
+document.getElementById("homephoneerror").innerHTML="";
+if(document.getElementById("homephone").value.length<13)
+{
+document.getElementById("homephoneerror").innerHTML="Invalid phone number format";
+return false;
+
+}
+
+document.getElementById("homephoneerror").innerHTML="";
+var txt1=document.getElementById("homephone").value;
+var txt2=txt1.substring(1,4);
+var txt3=txt1.substring(5,8);
+
+if(txt2==000 && txt3==000){
+document.getElementById("homephoneerror").innerHTML="Invalid phone number format";
+return false;
+}
+
+document.getElementById("Emailiderror").innerHTML="";
+if(document.getElementById("Emailid").value=="")
+{
+document.getElementById("Emailiderror").innerHTML="Required Field Should not be Empty";
+
+return false;
+}
+var mail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+if(document.getElementById("Emailid").value.match(mail)==null)
+{
+	document.getElementById("Emailiderror").innerHTML="Invalid E-Mail Format";
+	
+    return false;
+}
+
+document.getElementById("mobilenumbererror").innerHTML="";
+if(document.getElementById("mobilenumber").value=="")
+{
+document.getElementById("mobilenumbererror").innerHTML="Required Field Should not be Empty";
+
+return false;
+}
+
+document.getElementById("mobilenumbererror").innerHTML="";
+if(document.getElementById("mobilenumber").value.length<13)
+{
+document.getElementById("mobilenumbererror").innerHTML="Invalid phone number format";
+return false;
+
+}
+
+
+document.getElementById("mobilenumbererror").innerHTML="";
+var txt1=document.getElementById("mobilenumber").value;
+var txt2=txt1.substring(1,4);
+var txt3=txt1.substring(5,8);
+
+if(txt2==000 && txt3==000)
+   {
+document.getElementById("mobilenumbererror").innerHTML="Invalid phone number format";
+ return false;
+}
+
+document.getElementById("workphoneerror").innerHTML="";
+if(document.getElementById("workphone").value!="")
+{
+if(document.getElementById("workphone").value.length<13)
+{
+document.getElementById("workphoneerror").innerHTML="Invalid phone number format";
+return false;
+
+}
+}
+document.getElementById("workphoneerror").innerHTML="";
+if(document.getElementById("workphone").value!="")
+{
+var txt1=document.getElementById("workphone").value;
+var txt2=txt1.substring(1,4);
+var txt3=txt1.substring(5,8);
+// alert(txt2);
+// alert(txt3);
+if(txt2==000 && txt3==000)
+document.getElementById("workphoneerror").innerHTML="Invalid phone number format";
+return false;
+}
+document.getElementById("datepicker1error").innerHTML="";
+if(document.getElementById("datepicker1").value=="")
+{
+document.getElementById("datepicker1error").innerHTML="Required Field Should not be Empty";
+
+return false;
+}
+document.getElementById("datepicker1error").innerHTML="";
+var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+if(document.getElementById("datepicker1").value.match(datechk)==null)
+{
+	document.getElementById("datepicker1error").innerHTML="Invalid Date Format";
+	
+    return false;
+}
+document.getElementById("socialsecuritynumbererror").innerHTML="";
+if(document.getElementById("socialsecuritynumber").value=="")
+{
+document.getElementById("socialsecuritynumbererror").innerHTML="Required Field Should not be Empty";
+
+return false;
+}
+
+
+
+document.getElementById("socialsecuritynumbererror").innerHTML="";
+var txt1=document.getElementById("socialsecuritynumber").value;
+var txt2=txt1.substring(0,3);
+if(txt2==000)
+{
+document.getElementById("socialsecuritynumbererror").innerHTML="Invalid social security number";
+return false;
+}
+//alert(txt2);
+//var phone = /^[0-9-]{11}$/;
+ //if(document.getElementById("socialsecuritynumber").value.match(phone)==null)
+//{
+	//document.getElementById("socialsecuritynumbererror").innerHTML="Invalid socialsecuritynumber";
+	
+    //return false;
+// }
+document.getElementById("socialsecuritynumbererror").innerHTML="";
+if(document.getElementById("socialsecuritynumber").value.length<11)
+{
+	document.getElementById("socialsecuritynumbererror").innerHTML="Invalid social  security number";
+	
+    return false;
+}
+
+
+//document.getElementById("socialsecuritynumbererror").innerHTML="";
+//if(isNaN(document.getElementById("socialsecuritynumber").value))
+//{
+//document.getElementById("socialsecuritynumbererror").innerHTML="Invalid social  security number";
+//return false;
+//}
+ document.getElementById("Gendererror").innerHTML=""; 
+if( ( document.getElementById("Male").checked == false ) && ( document.getElementById("Female").checked == false ) && ( document.getElementById("Transgender").checked == false ))
+
+ {
+ document.getElementById("Gendererror").innerHTML="Required Field Should not be Empty";
+ 		
+ 		return false;
+ 		
+ }
+document.getElementById("MaritalStatuserror").innerHTML=""; 
+if( ( document.getElementById("Single").checked == false ) && ( document.getElementById("Married").checked == false ) && ( document.getElementById("Divorced").checked == false ))
+
+ {
+ document.getElementById("MaritalStatuserror").innerHTML="Required Field Should not be Empty";
+ 		
+ 		return false;
+ 		
+ }
+document.getElementById("Areyouerror").innerHTML=""; 
+if( ( document.getElementById("Student").checked == false ) && ( document.getElementById("Employee").checked == false ) )
+
+ {
+ document.getElementById("Areyouerror").innerHTML="Required Field Should not be Empty";
+ 		
+ 		return false;
+ 		
+ }
+
+document.getElementById("EmployerNameerror").innerHTML="";
+if(document.getElementById("EmployerName").value!="")
+{
+if(document.getElementById("EmployerName").value.length<4 || document.getElementById("EmployerName").value.length>=32)
+{
+	
+	document.getElementById("EmployerNameerror").innerHTML="Name should be min 4 and max 32";
+	
+    return false;
+}
+}
+
+document.getElementById("Occupationerror").innerHTML="";
+if(document.getElementById("Occupation").value!="")
+{
+if(document.getElementById("Occupation").value.length<4 || document.getElementById("Occupation").value.length>=32)
+{
+	
+	document.getElementById("Occupationerror").innerHTML="Name should be min 4 and max 32";
+	
+    return false;
+}
+}
+document.getElementById("EmployerAddresserror").innerHTML="";
+if(document.getElementById("EmployerAddress").value!="")
+{
+if(document.getElementById("EmployerAddress").value.length<4 || document.getElementById("EmployerAddress").value.length>=32)
+{
+	
+	document.getElementById("EmployerAddresserror").innerHTML="Name should be min 4 and max 32";
+	
+    return false;
+}
+}
+document.getElementById("EmployerCityerror").innerHTML="";
+if(document.getElementById("EmployerCity").value!="")
+{
+if(document.getElementById("EmployerCity").value.length<4 || document.getElementById("EmployerCity").value.length>=32)
+{
+	
+	document.getElementById("EmployerCityerror").innerHTML="Name should be min 4 and max 32";
+	
+    return false;
+}
+}
+document.getElementById("Estateerror").innerHTML="";
+if(document.getElementById("Estate").value!="")
+{
+if(document.getElementById("Estate").value.length<4 || document.getElementById("Estate").value.length>=32)
+{
+	
+	document.getElementById("Estateerror").innerHTML="Name should be min 4 and max 32";
+	
+    return false;
+}
+}
+/* document.getElementById("workphoneerror").innerHTML="";
+if(document.getElementById("workphone").value=="")
+{
+document.getElementById("workphoneerror").innerHTML="Required Field Should not be Empty";
+
+return false;
+} */
+
+/*  document.getElementById("zipcode2error").innerHTML="";
+if(document.getElementById("zipcode2").value=="")
+{
+document.getElementById("zipcode2error").innerHTML="Required Field Should not be Empty";
+
+return false;
+} */
+
+document.getElementById("zipcode2error").innerHTML="";
+if(isNaN(document.getElementById("zipcode2").value))
+{
+document.getElementById("zipcode2error").innerHTML="Enter Only Numbers";
+return false;
+}
+document.getElementById("zipcode2error").innerHTML="";
+if(document.getElementById("zipcode2").value!="")
+{
+if(document.getElementById("zipcode2").value.length<5)
+{
+document.getElementById("zipcode2error").innerHTML="Invalid zipcode format";
+return false;
+}
+}
+document.getElementById("zipcode2error").innerHTML="";
+if(document.getElementById("zipcode2").value!="")
+{
+var txt1=document.getElementById("zipcode2").value;
+if( txt1==00000){
+document.getElementById("zipcode2error").innerHTML="Invalid Zipcode format ";
+return false;
+}
+var txt2=txt1.substring(1,3);
+
+if(txt2==000){
+document.getElementById("zipcode2error").innerHTML="Invalid Zipcode format ";
+return false;
+}
+}
+
+
+document.getElementById("zipcode3error").innerHTML="";
+if(isNaN(document.getElementById("zipcode3").value))
+{
+document.getElementById("zipcode3error").innerHTML="Enter Only Numbers";
+return false;
+}
+document.getElementById("zipcode3error").innerHTML="";
+	if(document.getElementById("zipcode3").value!="")
 	{
-	
-	//document.getElementById("homephoneerror").innerHTML="";
-    var txt1=document.getElementById("workphone").value;
-   var txt2=txt1.substring(1,4);
-   var txt3=txt1.substring(5,8);
-   // alert(txt2);
-   // alert(txt3);
-   if(txt2==000 && txt3==000){
-   document.getElementById("workphoneerror").innerHTML="Invalid phone number format";
-   return false;
-   }
-	}
-	document.getElementById("zipcode2error").innerHTML="";
-	if(document.getElementById("zipcode2").value!=""){
-	if(document.getElementById("zipcode2").value.length<5)
-	{
-	
-	document.getElementById("zipcode2error").innerHTML="Invalid zipcode format";
-	return false;
-	}
-	
-	}
-	document.getElementById("zipcode2error").innerHTML="";
-	
-	if(document.getElementById("zipcode2").value!=""){
-	var txt1=document.getElementById("zipcode2").value;
-   if( txt1==00000){
-   document.getElementById("zipcode2error").innerHTML="Invalid Zipcode format ";
-   return false;
-   }
-  var txt2=txt1.substring(1,3);
-   
-   if(txt2==000){
-   document.getElementById("zipcode2error").innerHTML="Invalid Zipcode format ";
-   return false;
-   }
-   }
+if(document.getElementById("zipcode3").value.length<5)
+{
+document.getElementById("zipcode3error").innerHTML="Invalid zipcode format";
+return false;
+}
+}
 	document.getElementById("zipcode3error").innerHTML="";
-	if(document.getElementById("zipcode3").value!=""){
-	if(document.getElementById("zipcode3").value.length<5)
+	if(document.getElementById("zipcode3").value!="")
 	{
-	
-	document.getElementById("zipcode3error").innerHTML="Invalid zipcode format";
-	return false;
-	}
-	
-	}
-	document.getElementById("zipcode2error").innerHTML="";
-	
-	if(document.getElementById("zipcode3").value!=""){
-	var txt1=document.getElementById("zipcode3").value;
-   if( txt1==00000){
-   document.getElementById("zipcode3error").innerHTML="Invalid Zipcode format ";
-   return false;
-   }
-  var txt2=txt1.substring(1,3);
-   
-   if(txt2==000){
-   document.getElementById("zipcode3error").innerHTML="Invalid Zipcode format ";
-   return false;
-   }
-   }
-	
-	document.getElementById("spouseworkphoneerror").innerHTML="";
-	if(document.getElementById("spouseworkphone").value=="")
-	{
-	document.getElementById("spouseworkphoneerror").innerHTML="Required Field Should not be Empty";
-	
-	return false;
-	}
-	document.getElementById("spouseworkphoneerror").innerHTML="";
-    var txt1=document.getElementById("spouseworkphone").value;
-   var txt2=txt1.substring(1,4);
-   var txt3=txt1.substring(5,8);
-   // alert(txt2);
-   // alert(txt3);
-   if(txt2==000 && txt3==000){
-   document.getElementById("spouseworkphoneerror").innerHTML="Invalid phone number format";
-   return false;
-   }
-   document.getElementById("Name_frienderror").innerHTML="";
-	if(document.getElementById("Name_friend").value="")
-	{
-	document.getElementById("Name_frienderror").innerHTML="Required field should not be empty";
-	return false;
-	}
-	document.getElementById("Phone_frienderror").innerHTML="";
-	if(document.getElementById("Phone_friend").value=="")
-	{
-	document.getElementById("Phone_frienderror").innerHTML="Required Field Should not be Empty";
-	
-	return false;
-	}
-	document.getElementById("Phone_frienderror").innerHTML="";
-    var txt1=document.getElementById("Phone_friend").value;
-   var txt2=txt1.substring(1,4);
-   var txt3=txt1.substring(5,8);
-   // alert(txt2);
-   // alert(txt3);
-   if(txt2==000 && txt3==000){
-   document.getElementById("Phone_frienderror").innerHTML="Invalid phone number format";
-   return false;
-   }
-   document.getElementById("Phone_frienderror").innerHTML="";
-	if(document.getElementById("Phone_friend").value=="")
-	{
-	document.getElementById("Phone_frienderror").innerHTML="Required Field Should not be Empty";
-	
-	return false;
-	}
-	
-	document.getElementById("symptom1error").innerHTML="";
-	if(document.getElementById("symptom1").value=="")
-	{
-	document.getElementById("symptom1error").innerHTML="Required Field Should not be Empty";
-	
-	return false;
-	}
-	document.getElementById("Symptom_Accidenterror").innerHTML=""; 
-	if( ( document.getElementById("yes").checked == false ) && ( document.getElementById("No").checked == false ) )
+var txt1=document.getElementById("zipcode3").value;
+if( txt1==00000){
+document.getElementById("zipcode3error").innerHTML="Invalid Zipcode format ";
+return false;
+}
+var txt2=txt1.substring(1,3);
 
-	 {
-	 document.getElementById("Symptom_Accidenterror").innerHTML="Required Field Should not be Empty";
-	 		
-	 		return false;
-	 		
-	 }
- document.getElementById("type_of_accidenterror").innerHTML="";
-	if(document.getElementById("type_of_accident").value==0)
-	{
-
-		document.getElementById("type_of_accidenterror").innerHTML="Required Field Should not be Empty";
-
-	return false;
-
+if(txt2==000){
+document.getElementById("zipcode3error").innerHTML="Invalid Zipcode format ";
+return false;
+}
 	}
 
-	document.getElementById("datepicker2error").innerHTML="";
-	if(document.getElementById("datepicker2").value=="")
-	{
-	document.getElementById("datepicker2error").innerHTML="Required Field Should not be Empty";
-	
-	return false;
-	}
-	document.getElementById("datepicker2error").innerHTML="";
-	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
-	if(document.getElementById("datepicker2").value.match(datechk)==null)
-    {
-    	document.getElementById("datepicker2error").innerHTML="Invalid Date Format";
-    	
-        return false;
-    }
-	document.getElementById("Accident_Reportederror").innerHTML=""; 
-	if( ( document.getElementById("yes2").checked == false ) && ( document.getElementById("No2").checked == false ) )
+document.getElementById("SpousesNameerror").innerHTML="";
+if(document.getElementById("SpousesName").value=="")
+{
+document.getElementById("SpousesNameerror").innerHTML="Required Field Should not be Empty";
 
-	 {
-	 document.getElementById("Accident_Reportederror").innerHTML="Required Field Should not be Empty";
-	 		
-	 		return false;
-	 		
-	 }
-	document.getElementById("datepicker5error").innerHTML="";
-	if(document.getElementById("datepicker5").value=="")
-	{
-	document.getElementById("datepicker5error").innerHTML="Required Field Should not be Empty";
-	
-	return false;
-	}
-	document.getElementById("datepicker5error").innerHTML="";
-	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
-	if(document.getElementById("datepicker5").value.match(datechk)==null)
-    {
-    	document.getElementById("datepicker5error").innerHTML="Invalid Date Format";
-    	
-        return false;
-    }
-	document.getElementById("where1error").innerHTML="";
-	if(document.getElementById("where1").value=="")
-	{
-	document.getElementById("where1error").innerHTML="Required Field Should not be Empty";
-	
-	return false;
-	}
-	document.getElementById("Attorney_accidenterror").innerHTML=""; 
-	if( ( document.getElementById("yes5").checked == false ) && ( document.getElementById("No5").checked == false ) )
+return false;
+}
 
-	 {
-	 document.getElementById("Attorney_accidenterror").innerHTML="Required Field Should not be Empty";
-	 		
-	 		return false;
-	 		
-	 }
-	document.getElementById("retainerror").innerHTML=""; 
-	if( ( document.getElementById("R").checked == false ) && ( document.getElementById("L").checked == false ) )
+document.getElementById("SpousesNameerror").innerHTML="";
+if(document.getElementById("SpousesName").value.length<4 || document.getElementById("SpousesName").value.length>=32)
+{
+	
+	document.getElementById("SpousesNameerror").innerHTML="Name should be min 4 and max 32";
+	
+    return false;
+}
 
-	 {
-	 document.getElementById("retainerror").innerHTML="Required Field Should not be Empty";
-	 		
-	 		return false;
-	 		
-	 }
-	document.getElementById("recorderror").innerHTML=""; 
-	if( ( document.getElementById("yes6").checked == false ) && ( document.getElementById("No6").checked == false ) )
 
-	 {
-	 document.getElementById("recorderror").innerHTML="Required Field Should not be Empty";
-	 		
-	 		return false;
-	 		
-	 }
-	document.getElementById("phynameerror").innerHTML="";
-	if(document.getElementById("phyname").value=="")
-	{
-	document.getElementById("phynameerror").innerHTML="Required Field Should not be Empty";
-	
-	return false;
-	}
-	document.getElementById("phyphoneerror").innerHTML="";
-	if(document.getElementById("phyphone").value=="")
-	{
-	document.getElementById("phyphoneerror").innerHTML="Required Field Should not be Empty";
-	
-	return false;
-	}
-	 document.getElementById("phyphoneerror").innerHTML="";
-    var txt1=document.getElementById("phyphone").value;
-   var txt2=txt1.substring(1,4);
-   var txt3=txt1.substring(5,8);
-   // alert(txt2);
-   // alert(txt3);
-   if(txt2==000 && txt3==000){
-   document.getElementById("phyphoneerror").innerHTML="Invalid phone number format";
-  
-	return false;
-    }
-	document.getElementById("xrayerror").innerHTML="";
-	if(document.getElementById("xray").value=="")
-	{
-	document.getElementById("xrayerror").innerHTML="Required Field Should not be Empty";
-	
-	return false;
-	}
-	document.getElementById("treaterror").innerHTML="";
-	if(document.getElementById("treat").value=="")
-	{
-	document.getElementById("treaterror").innerHTML="Required Field Should not be Empty";
-	
-	return false;
-	}
-	document.getElementById("NameOfAttorneyerror").innerHTML="";
-	if(document.getElementById("NameOfAttorney").value=="")
-	{
-	document.getElementById("NameOfAttorneyerror").innerHTML="Required Field Should not be Empty";
-	
-	return false;
-	}
-	document.getElementById("phonenumbererror").innerHTML="";
-	if(document.getElementById("phonenumber").value=="")
-	{
-	document.getElementById("phonenumbererror").innerHTML="Required Field Should not be Empty";
-	
-	return false;
-	}
-	 document.getElementById("phonenumbererror").innerHTML="";
-    var txt1=document.getElementById("phonenumber").value;
-   var txt2=txt1.substring(1,4);
-   var txt3=txt1.substring(5,8);
-   // alert(txt2);
-   // alert(txt3);
-   if(txt2==000 && txt3==000){
-   document.getElementById("phonenumbererror").innerHTML="Invalid phone number format";
-	return false;
-    }
-	document.getElementById("Fault_accidenterror").innerHTML="";
-	if(document.getElementById("Fault_accident").value=="")
-	{
-	document.getElementById("Fault_accidenterror").innerHTML="Required Field Should not be Empty";
-	
-	return false;
-	}
-	document.getElementById("Insuranceerror").innerHTML="";
-	if(document.getElementById("Insurance").value=="")
-	{
-	document.getElementById("Insuranceerror").innerHTML="Required Field Should not be Empty";
-	
-	return false;
-	}
-	document.getElementById("Insurance_phoneerror").innerHTML="";
-	if(document.getElementById("Insurance_phone").value=="")
-	{
-	document.getElementById("Insurance_phoneerror").innerHTML="Required Field Should not be Empty";
-	
-	return false;
-	}
-	var phone = /^[0-9-()]{13}$/;
-	 if(document.getElementById("Insurance_phone").value.match(phone)==null)
-    {
-    	document.getElementById("Insurance_phoneerror").innerHTML="Enter correct Phone number";
-    	
-        return false;
-    }
-	document.getElementById("Name_autoerror").innerHTML="";
-	if(document.getElementById("Name_auto").value=="")
-	{
-	document.getElementById("Name_autoerror").innerHTML="Required Field Should not be Empty";
-	
-	return false;
-	}
-	document.getElementById("Phone_autoerror").innerHTML="";
-	if(document.getElementById("Phone_auto").value=="")
-	{
-	document.getElementById("Phone_autoerror").innerHTML="Required Field Should not be Empty";
-	
-	return false;
-	}
-	document.getElementById("Phone_autoerror").innerHTML="";
-    var txt1=document.getElementById("Phone_auto").value;
-   var txt2=txt1.substring(1,4);
-   var txt3=txt1.substring(5,8);
-   // alert(txt2);
-   // alert(txt3);
-   if(txt2==000 && txt3==000){
-   document.getElementById("Phone_autoerror").innerHTML="Invalid phone number format";
-	return false;
-   }
-	document.getElementById("policyerror").innerHTML="";
-	if(document.getElementById("policy").value=="")
-	{
-	document.getElementById("policyerror").innerHTML="Required Field Should not be Empty";
-	
-	return false;
-	}
-	document.getElementById("Name_healtherror").innerHTML="";
-	if(document.getElementById("Name_health").value=="")
-	{
-	document.getElementById("Name_healtherror").innerHTML="Required Field Should not be Empty";
-	
-	return false;
-	}
-	document.getElementById("phhealtherror").innerHTML="";
-	if(document.getElementById("phhealth").value=="")
-	{
-	document.getElementById("phhealtherror").innerHTML="Required Field Should not be Empty";
-	
-	return false;
-	}
-	document.getElementById("phhealtherror").innerHTML="";
-    var txt1=document.getElementById("phhealth").value;
-   var txt2=txt1.substring(1,4);
-   var txt3=txt1.substring(5,8);
-   // alert(txt2);
-   // alert(txt3);
-   if(txt2==000 && txt3==000){
-   document.getElementById("phhealtherror").innerHTML="Invalid phone number format";
-   return false;
-   }
-	document.getElementById("Prev_accidenterror").innerHTML=""; 
-	if( ( document.getElementById("yes7").checked == false ) && ( document.getElementById("No7").checked == false ) )
+document.getElementById("SpousesEmperror").innerHTML="";
+if(document.getElementById("SpousesEmp").value=="")
+{
+document.getElementById("SpousesEmperror").innerHTML="Required Field Should not be Empty";
 
-	 {
-	 document.getElementById("Prev_accidenterror").innerHTML="Required Field Should not be Empty";
-	 		
-	 		return false;
-	 		
-	 }
+return false;
+}
+
+document.getElementById("SpousesEmperror").innerHTML="";
+if(document.getElementById("SpousesEmp").value.length<4 || document.getElementById("SpousesName").value.length>=32)
+{
+	
+	document.getElementById("SpousesEmperror").innerHTML=" should be min 4 and max 32";
+	
+    return false;
+}
+document.getElementById("spouseworkphoneerror").innerHTML="";
+if(document.getElementById("spouseworkphone").value=="")
+{
+document.getElementById("spouseworkphoneerror").innerHTML="Required Field Should not be Empty";
+
+return false;
+}
+document.getElementById("spouseworkphoneerror").innerHTML="";
+var txt1=document.getElementById("spouseworkphone").value;
+var txt2=txt1.substring(1,4);
+var txt3=txt1.substring(5,8);
+// alert(txt2);
+// alert(txt3);
+if(txt2==000 && txt3==000){
+document.getElementById("spouseworkphoneerror").innerHTML="Invalid phone number format";
+return false;
+}
+
+document.getElementById("spouseworkphoneerror").innerHTML="";
+if(document.getElementById("spouseworkphone").value.length<13)
+{
+document.getElementById("spouseworkphoneerror").innerHTML="Invalid phone number format";
+return false;
+
+}
+document.getElementById("Name_frienderror").innerHTML="";
+if(document.getElementById("Name_friend").value=="")
+{
+document.getElementById("Name_frienderror").innerHTML="Required Field Should not be Empty";
+
+return false;
+}
+
+document.getElementById("Name_frienderror").innerHTML="";
+if(document.getElementById("Name_friend").value.length<4 || document.getElementById("Name_friend").value.length>=32)
+{
+	
+	document.getElementById("Name_frienderror").innerHTML="Name should be min 4 and max 32";
+	
+    return false;
+}
+
+document.getElementById("Phone_frienderror").innerHTML="";
+if(document.getElementById("Phone_friend").value=="")
+{
+document.getElementById("Phone_frienderror").innerHTML="Required Field Should not be Empty";
+
+return false;
+}
+document.getElementById("Phone_frienderror").innerHTML="";
+if(document.getElementById("Phone_friend").value.length<13)
+{
+document.getElementById("Phone_frienderror").innerHTML="Invalid phone number format";
+return false;
+
+}
+document.getElementById("Phone_frienderror").innerHTML="";
+var txt1=document.getElementById("Phone_friend").value;
+var txt2=txt1.substring(1,4);
+var txt3=txt1.substring(5,8);
+// alert(txt2);
+// alert(txt3);
+if(txt2==000 && txt3==000){
+document.getElementById("Phone_frienderror").innerHTML="Invalid phone number format";
+
+
+return false;
+}
+
+document.getElementById("Chiropratic_careerror").innerHTML=""; 
+if( ( document.getElementById("yes1").checked == false ) && ( document.getElementById("No1").checked == false ) )
+
+ {
+ document.getElementById("Chiropratic_careerror").innerHTML="Required Field Should not be Empty";
+ 		
+ 		return false;
+ 		
+ }
+ document.getElementById("Hazardouserror").innerHTML=""; 
+if( ( document.getElementById("Hazardous").checked == false ) && ( document.getElementById("Hazardous1").checked == false ) )
+
+ {
+ document.getElementById("Hazardouserror").innerHTML="Required Field Should not be Empty";
+ 		
+ 		return false;
+ 		
+ }
+
+
+
+
+
+
+document.getElementById("symptom1error").innerHTML="";
+if(document.getElementById("symptom1").value=="")
+{
+document.getElementById("symptom1error").innerHTML="Required Field Should not be Empty";
+
+return false;
+}
+
+document.getElementById("symptom1error").innerHTML="";
+if(document.getElementById("symptom1").value.length<4 || document.getElementById("symptom1").value.length>=32)
+{
+	
+	document.getElementById("symptom1error").innerHTML=" should be min 4 and max 32";
+	
+    return false;
+}
+document.getElementById("Symptom_Accidenterror").innerHTML=""; 
+if( ( document.getElementById("yes").checked == false ) && ( document.getElementById("No").checked == false ) )
+
+ {
+ document.getElementById("Symptom_Accidenterror").innerHTML="Required Field Should not be Empty";
+ 		
+ 		return false;
+ 		
+ }
+document.getElementById("type_of_accidenterror").innerHTML="";
+if(document.getElementById("type_of_accident").value==0)
+{
+
+	document.getElementById("type_of_accidenterror").innerHTML="Required Field Should not be Empty";
+
+return false;
+
+}
+
+document.getElementById("datepicker2error").innerHTML="";
+if(document.getElementById("datepicker2").value=="")
+{
+document.getElementById("datepicker2error").innerHTML="Required Field Should not be Empty";
+
+return false;
+}
+document.getElementById("datepicker2error").innerHTML="";
+var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+if(document.getElementById("datepicker2").value.match(datechk)==null)
+{
+	document.getElementById("datepicker2error").innerHTML="Invalid Date Format";
+	
+    return false;
+}
+document.getElementById("Accident_Reportederror").innerHTML=""; 
+if( ( document.getElementById("yes2").checked == false ) && ( document.getElementById("No2").checked == false ) )
+
+ {
+ document.getElementById("Accident_Reportederror").innerHTML="Required Field Should not be Empty";
+ 		
+ 		return false;
+ 		
+ }
+document.getElementById("datepicker5error").innerHTML="";
+if(document.getElementById("datepicker5").value=="")
+{
+document.getElementById("datepicker5error").innerHTML="Required Field Should not be Empty";
+
+return false;
+}
+document.getElementById("datepicker5error").innerHTML="";
+var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+if(document.getElementById("datepicker5").value.match(datechk)==null)
+{
+	document.getElementById("datepicker5error").innerHTML="Invalid Date Format";
+	
+    return false;
+}
+document.getElementById("where1error").innerHTML="";
+if(document.getElementById("where1").value=="")
+{
+document.getElementById("where1error").innerHTML="Required Field Should not be Empty";
+
+return false;
+}
+
+document.getElementById("where1error").innerHTML="";
+if(document.getElementById("where1").value.length<4 || document.getElementById("where1").value.length>=32)
+{
+	
+	document.getElementById("where1error").innerHTML=" should be min 4 and max 32";
+	
+    return false;
+}
+document.getElementById("Attorney_accidenterror").innerHTML=""; 
+if( ( document.getElementById("yes5").checked == false ) && ( document.getElementById("No5").checked == false ) )
+
+ {
+ document.getElementById("Attorney_accidenterror").innerHTML="Required Field Should not be Empty";
+ 		
+ 		return false;
+ 		
+ }
+
+document.getElementById("NameOfAttorneyerror").innerHTML="";
+if(document.getElementById("NameOfAttorney").value=="")
+{
+document.getElementById("NameOfAttorneyerror").innerHTML="Required Field Should not be Empty";
+
+return false;
+}
+
+document.getElementById("NameOfAttorneyerror").innerHTML="";
+if(document.getElementById("NameOfAttorney").value.length<4 || document.getElementById("NameOfAttorney").value.length>=32)
+{
+	
+	document.getElementById("NameOfAttorneyerror").innerHTML="Name should be min 4 and max 32";
+	
+    return false;
+}
+
+
+
+ 	document.getElementById("retainerror").innerHTML=""; 
+if( ( document.getElementById("R").checked == false ) && ( document.getElementById("L").checked == false ) )
+
+ {
+ document.getElementById("retainerror").innerHTML="Required Field Should not be Empty";
+ 		
+ 		return false;
+ 		
+ }
+
+
+document.getElementById("recorderror").innerHTML=""; 
+if( ( document.getElementById("yes6").checked == false ) && ( document.getElementById("No6").checked == false ) )
+
+ {
+ document.getElementById("recorderror").innerHTML="Required Field Should not be Empty";
+ 		
+ 		return false;
+ 		
+ }
+document.getElementById("phynameerror").innerHTML="";
+if(document.getElementById("phyname").value=="")
+{
+document.getElementById("phynameerror").innerHTML="Required Field Should not be Empty";
+
+return false;
+}
+
+document.getElementById("phynameerror").innerHTML="";
+if(document.getElementById("phyname").value.length<4 || document.getElementById("phyname").value.length>=32)
+{
+	
+	document.getElementById("phynameerror").innerHTML="Name should be min 4 and max 32";
+	
+    return false;
+}
+
+document.getElementById("phyphoneerror").innerHTML="";
+if(document.getElementById("phyphone").value=="")
+{
+document.getElementById("phyphoneerror").innerHTML="Required Field Should not be Empty";
+
+return false;
+}
+document.getElementById("phyphoneerror").innerHTML="";
+if(document.getElementById("phyphone").value.length<13)
+{
+document.getElementById("phyphoneerror").innerHTML="Invalid phone number format";
+return false;
+
+}
+ document.getElementById("phyphoneerror").innerHTML="";
+var txt1=document.getElementById("phyphone").value;
+var txt2=txt1.substring(1,4);
+var txt3=txt1.substring(5,8);
+// alert(txt2);
+// alert(txt3);
+if(txt2==000 && txt3==000){
+document.getElementById("phyphoneerror").innerHTML="Invalid phone number format";
+
+return false;
+}
+document.getElementById("xrayerror").innerHTML="";
+if(document.getElementById("xray").value=="")
+{
+document.getElementById("xrayerror").innerHTML="Required Field Should not be Empty";
+
+return false;
+}
+
+document.getElementById("xrayerror").innerHTML="";
+if(document.getElementById("xray").value.length<4 || document.getElementById("xray").value.length>=32)
+{
+	
+	document.getElementById("xrayerror").innerHTML=" should be min 4 and max 32";
+	
+    return false;
+}
+document.getElementById("treaterror").innerHTML="";
+if(document.getElementById("treat").value=="")
+{
+document.getElementById("treaterror").innerHTML="Required Field Should not be Empty";
+
+return false;
+}
+document.getElementById("treaterror").innerHTML="";
+if(document.getElementById("treat").value.length<4 || document.getElementById("treat").value.length>=32)
+{
+	
+	document.getElementById("treaterror").innerHTML=" should be min 4 and max 32";
+	
+    return false;
+}
+document.getElementById("phonenumbererror").innerHTML="";
+if(document.getElementById("phonenumber").value=="")
+{
+document.getElementById("phonenumbererror").innerHTML="Required Field Should not be Empty";
+
+return false;
+}
+document.getElementById("phonenumbererror").innerHTML="";
+if(document.getElementById("phonenumber").value.length<13)
+{
+document.getElementById("phonenumbererror").innerHTML="Invalid phone number format";
+return false;
+
+}
+ document.getElementById("phonenumbererror").innerHTML="";
+var txt1=document.getElementById("phonenumber").value;
+var txt2=txt1.substring(1,4);
+var txt3=txt1.substring(5,8);
+// alert(txt2);
+// alert(txt3);
+if(txt2==000 && txt3==000){
+document.getElementById("phonenumbererror").innerHTML="Invalid phone number format";
+return false;
+}
+document.getElementById("Fault_accidenterror").innerHTML="";
+if(document.getElementById("Fault_accident").value=="")
+{
+document.getElementById("Fault_accidenterror").innerHTML="Required Field Should not be Empty";
+
+return false;
+}
+document.getElementById("Fault_accidenterror").innerHTML="";
+if(document.getElementById("Fault_accident").value.length<4 || document.getElementById("Fault_accident").value.length>=32)
+{
+	
+	document.getElementById("Fault_accidenterror").innerHTML="Name should be min 4 and max 32";
+	
+    return false;
+}
+
+
+document.getElementById("Insuranceerror").innerHTML="";
+if(document.getElementById("Insurance").value=="")
+{
+document.getElementById("Insuranceerror").innerHTML="Required Field Should not be Empty";
+
+return false;
+}
+
+document.getElementById("Insuranceerror").innerHTML="";
+if(document.getElementById("Insurance").value.length<4 || document.getElementById("Insurance").value.length>=32)
+{
+	
+	document.getElementById("Insuranceerror").innerHTML="Name should be min 4 and max 32";
+	
+    return false;
+}
+
+
+document.getElementById("Insurance_phoneerror").innerHTML="";
+if(document.getElementById("Insurance_phone").value=="")
+{
+document.getElementById("Insurance_phoneerror").innerHTML="Required Field Should not be Empty";
+
+return false;
+}
+
+document.getElementById("Insurance_phoneerror").innerHTML="";
+if(document.getElementById("Insurance_phone").value.length<13)
+{
+document.getElementById("Insurance_phoneerror").innerHTML="Invalid phone number format";
+return false;
+
+}
+
+
+ document.getElementById("Insurance_phoneerror").innerHTML="";
+var txt1=document.getElementById("Insurance_phone").value;
+var txt2=txt1.substring(1,4);
+var txt3=txt1.substring(5,8);
+// alert(txt2);
+// alert(txt3);
+if(txt2==000 && txt3==000){
+document.getElementById("Insurance_phoneerror").innerHTML="Invalid phone number format";
+ return false;
+}
+document.getElementById("Name_autoerror").innerHTML="";
+if(document.getElementById("Name_auto").value=="")
+{
+document.getElementById("Name_autoerror").innerHTML="Required Field Should not be Empty";
+
+return false;
+}
+
+document.getElementById("Name_autoerror").innerHTML="";
+if(document.getElementById("Name_auto").value.length<4 || document.getElementById("Name_auto").value.length>=32)
+{
+	
+	document.getElementById("Name_autoerror").innerHTML="Name should be min 4 and max 32";
+	
+    return false;
+}
+
+
+document.getElementById("Phone_autoerror").innerHTML="";
+if(document.getElementById("Phone_auto").value=="")
+{
+document.getElementById("Phone_autoerror").innerHTML="Required Field Should not be Empty";
+
+return false;
+}
+document.getElementById("Phone_autoerror").innerHTML="";
+if(document.getElementById("Phone_auto").value.length<13)
+{
+document.getElementById("Phone_autoerror").innerHTML="Invalid phone number format";
+return false;
+
+}
+document.getElementById("Phone_autoerror").innerHTML="";
+var txt1=document.getElementById("Phone_auto").value;
+var txt2=txt1.substring(1,4);
+var txt3=txt1.substring(5,8);
+// alert(txt2);
+// alert(txt3);
+if(txt2==000 && txt3==000){
+document.getElementById("Phone_autoerror").innerHTML="Invalid phone number format";
+return false;
+}
+      
+ 
+
+document.getElementById("policyerror").innerHTML="";
+if(document.getElementById("policy").value=="")
+{
+document.getElementById("policyerror").innerHTML="Required Field Should not be Empty";
+
+return false;
+}
+document.getElementById("Name_healtherror").innerHTML="";
+if(document.getElementById("Name_health").value=="")
+{
+document.getElementById("Name_healtherror").innerHTML="Required Field Should not be Empty";
+
+return false;
+}
+
+document.getElementById("Name_healtherror").innerHTML="";
+if(document.getElementById("Name_health").value.length<4 || document.getElementById("Name_health").value.length>=32)
+{
+	
+	document.getElementById("Name_healtherror").innerHTML="Name should be min 4 and max 32";
+	
+    return false;
+}
+
+
+document.getElementById("phhealtherror").innerHTML="";
+if(document.getElementById("phhealth").value=="")
+{
+document.getElementById("phhealtherror").innerHTML="Required Field Should not be Empty";
+
+return false;
+}
+document.getElementById("phhealtherror").innerHTML="";
+if(document.getElementById("phhealth").value.length<13)
+{
+document.getElementById("phhealtherror").innerHTML="Invalid phone number format";
+return false;
+
+}
+ document.getElementById("phhealtherror").innerHTML="";
+var txt1=document.getElementById("phhealth").value;
+var txt2=txt1.substring(1,4);
+var txt3=txt1.substring(5,8);
+// alert(txt2);
+// alert(txt3);
+if(txt2==000 && txt3==000){
+document.getElementById("phhealtherror").innerHTML="Invalid phone number format";
+return false;
+}
+     
+document.getElementById("Prev_accidenterror").innerHTML=""; 
+if( ( document.getElementById("yes7").checked == false ) && ( document.getElementById("No7").checked == false ) )
+
+ {
+ document.getElementById("Prev_accidenterror").innerHTML="Required Field Should not be Empty";
+ 		
+ 		return false;
+ 		
+ }
+document.getElementById("datepicker6error").innerHTML="";
+if(document.getElementById("datepicker6").value=="")
+{
+document.getElementById("datepicker6error").innerHTML="Required Field Should not be Empty";
+
+return false;
+}
 	document.getElementById("datepicker6error").innerHTML="";
-	if(document.getElementById("datepicker6").value=="")
-	{
-	document.getElementById("datepicker6error").innerHTML="Required Field Should not be Empty";
+var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+if(document.getElementById("datepicker6").value.match(datechk)==null)
+{
+	document.getElementById("datepicker6error").innerHTML="Invalid Date Format";
 	
-	return false;
-	}
-	document.getElementById("datepicker6error").innerHTML="";
-	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
-	if(document.getElementById("datepicker6").value.match(datechk)==null)
-    {
-    	document.getElementById("datepicker6error").innerHTML="Invalid Date Format";
-    	
-        return false;
-    }
-	document.getElementById("Illnesserror").innerHTML="";
-	if(document.getElementById("Illness").value=="")
-	{
-	document.getElementById("Illnesserror").innerHTML="Required Field Should not be Empty";
-	
-	return false;
-	}
-	document.getElementById("datepicker3error").innerHTML="";
-	if(document.getElementById("datepicker3").value=="")
-	{
-	document.getElementById("datepicker3error").innerHTML="Required Field Should not be Empty";
-	
-	return false;
-	}
-	document.getElementById("datepicker3error").innerHTML="";
-	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
-	if(document.getElementById("datepicker3").value.match(datechk)==null)
-    {
-    	document.getElementById("datepicker3error").innerHTML="Invalid Date Format";
-    	
-        return false;
-    }
-	document.getElementById("Medicationserror").innerHTML="";
-	if(document.getElementById("Medications").value=="")
-	{
-	document.getElementById("Medicationserror").innerHTML="Required Field Should not be Empty";
-	
-	return false;
-	}
-	document.getElementById("doyouerror").innerHTML=""; 
-	if( ( document.getElementById("Drink").checked == false ) && ( document.getElementById("Smoke").checked == false ) && ( document.getElementById("Drugs").checked == false )&& ( document.getElementById("Diet").checked == false )&& ( document.getElementById("Exercise").checked == false ))
+    return false;
+}
+document.getElementById("Illnesserror").innerHTML="";
+if(document.getElementById("Illness").value=="")
+{
+document.getElementById("Illnesserror").innerHTML="Required Field Should not be Empty";
 
-	 {
-	 document.getElementById("doyouerror").innerHTML="Required Field Should not be Empty";
-	 		
-	 		return false;
-	 		
-	 }
-	/* document.getElementById("listerror").innerHTML="";
-	if(document.getElementById("list").value=="")
-	{
-	document.getElementById("listerror").innerHTML="Required Field Should not be Empty";
-	
-	return false;
-	} */
-	document.getElementById("Femaleerror").innerHTML=""; 
-	if( ( document.getElementById("yes9").checked == false ) && ( document.getElementById("No9").checked == false ) )
+return false;
+}
 
-	 {
-	 document.getElementById("Femaleerror").innerHTML="Required Field Should not be Empty";
-	 		
-	 		return false;
-	 		
-	 }
-	document.getElementById("Drerror").innerHTML="";
-	if(document.getElementById("Dr").value=="")
-	{
-	document.getElementById("Drerror").innerHTML="Required Field Should not be Empty";
+document.getElementById("Illnesserror").innerHTML="";
+if(document.getElementById("Illness").value.length<4 || document.getElementById("Illness").value.length>=32)
+{
 	
-	return false;
-	}
-	document.getElementById("Patienterror").innerHTML="";
-	if(document.getElementById("Patient").value=="")
-	{
-	document.getElementById("Patienterror").innerHTML="Required Field Should not be Empty";
+	document.getElementById("Illnesserror").innerHTML="Name should be min 4 and max 32";
 	
-	return false;
-	}
-	}
+    return false;
+}
+document.getElementById("datepicker3error").innerHTML="";
+if(document.getElementById("datepicker3").value=="")
+{
+document.getElementById("datepicker3error").innerHTML="Required Field Should not be Empty";
+
+return false;
+}
+document.getElementById("datepicker3error").innerHTML="";
+var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+if(document.getElementById("datepicker3").value.match(datechk)==null)
+{
+	document.getElementById("datepicker3error").innerHTML="Invalid Date Format";
+	
+    return false;
+}
+document.getElementById("Medicationserror").innerHTML="";
+if(document.getElementById("Medications").value=="")
+{
+document.getElementById("Medicationserror").innerHTML="Required Field Should not be Empty";
+
+return false;
+}
+document.getElementById("Medicationserror").innerHTML="";
+if(document.getElementById("Medications").value.length<4 || document.getElementById("Medications").value.length>=32)
+{
+	
+	document.getElementById("Medicationserror").innerHTML="Name should be min 4 and max 32";
+	
+    return false;
+}
+document.getElementById("doyouerror").innerHTML=""; 
+if( ( document.getElementById("Drink").checked == false ) && ( document.getElementById("Smoke").checked == false ) && ( document.getElementById("Drugs").checked == false )&& ( document.getElementById("Diet").checked == false )&& ( document.getElementById("Exercise").checked == false ))
+
+ {
+ document.getElementById("doyouerror").innerHTML="Required Field Should not be Empty";
+ 		
+ 		return false;
+ 		
+ }
+/* document.getElementById("listerror").innerHTML="";
+if(document.getElementById("list").value=="")
+{
+document.getElementById("listerror").innerHTML="Required Field Should not be Empty";
+
+return false;
+} */
+document.getElementById("Femaleerror").innerHTML=""; 
+if( ( document.getElementById("yes9").checked == false ) && ( document.getElementById("No9").checked == false ) )
+
+ {
+ document.getElementById("Femaleerror").innerHTML="Required Field Should not be Empty";
+ 		
+ 		return false;
+ 		
+ }
+document.getElementById("Drerror").innerHTML="";
+if(document.getElementById("Dr").value=="")
+{
+document.getElementById("Drerror").innerHTML="Required Field Should not be Empty";
+
+return false;
+}
+
+document.getElementById("Drerror").innerHTML="";
+if(document.getElementById("Dr").value.length<4 || document.getElementById("Dr").value.length>=32)
+{
+	
+	document.getElementById("Drerror").innerHTML="Name should be min 4 and max 32";
+	
+    return false;
+}
+
+
+document.getElementById("Patienterror").innerHTML="";
+if(document.getElementById("Patient").value=="")
+{
+document.getElementById("Patienterror").innerHTML="Required Field Should not be Empty";
+
+return false;
+}
+document.getElementById("Patienterror").innerHTML="";
+if(document.getElementById("Patient").value.length<4 || document.getElementById("Patient").value.length>=32)
+{
+	
+	document.getElementById("Patienterror").innerHTML="Name should be min 4 and max 32";
+	
+    return false;
+}
+
+document.getElementById("claim_openerror").innerHTML=""; 
+if( ( document.getElementById("claim_open").checked == false ) && ( document.getElementById("claim_open1").checked == false ) )
+
+ {
+ document.getElementById("claim_openerror").innerHTML="Required Field Should not be Empty";
+ 		
+ 		return false;
+ 		
+ }
+
+document.getElementById("car11error").innerHTML=""; 
+if(document.getElementById("car11").value=="")
+{
+ document.getElementById("car11error").innerHTML="Required Field Should not be Empty";
+ 		
+ 		return false;
+ 		
+ }
+
+document.getElementById("car11error").innerHTML="";
+if(document.getElementById("car11").value.length<4 || document.getElementById("car11").value.length>=32)
+{
+	
+	document.getElementById("car11error").innerHTML=" should be min 4 and max 32";
+	
+    return false;
+}
+}
+
 
 	</script>
 
@@ -1276,6 +2050,15 @@ document.getElementById("mobilenumber").value=phone;
  });  
 
 });
+</script>
+<script>
+  $(function() {
+	$("#Medications").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
 </script>
 <script>
 i=0;
@@ -1416,8 +2199,8 @@ document.getElementById("inp_id").value=phone;
                        								 <tr class="row1">
                         	 							<td><span class="err">*</span>Name :</td>
                         	 							 <input type="hidden" class="input_txtbx1" id="patientid" value="${patientDetails.patient_id}" name="patient_id" /> 
-                                 					 <input type="hidden" class="input_txtbx1" id="patientid" value="${patientDetails.username}" name="username" />
-                                 						<td class="input_txt"><input type="text" class="input_txtbx1" id="name"   value="${patientDetails.name }" name="name" /></br><span id="nameerror" style="color: red;font-style:italic;" ><form:errors path="PatientDetails.Name"></form:errors></span></td>
+                                 					 <input type="hidden" class="input_txtbx1" id="patientid" value="${patientDetails.username}" onInput="return validatename(id)"; name="username" />
+                                 						<td class="input_txt"><input type="text" class="input_txtbx1" id="name"   value="${patientDetails.name }" onInput="return validatename(id)"; name="name" /></br><span id="nameerror" style="color: red;font-style:italic;" ><form:errors path="PatientDetails.Name"></form:errors></span></td>
                       								  </tr>
                         <tr class="row2">
                         	<td><span class="err">*</span>Date:</td>
@@ -1425,15 +2208,15 @@ document.getElementById("inp_id").value=phone;
                         </tr> 
                         <tr class="row1">
                         	<td><span class="err">*</span>Street Address:</td>
-							<td class="input_txt"><input type="text" class="input_txtbx1" id="streetaddress"   value="${patientDetails.streetAddress }" name="streetAddress" /></br><span id="streetaddresserror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.StreetAddress"></form:errors></span></td>
+							<td class="input_txt"><input type="text" class="input_txtbx1" id="streetaddress"   value="${patientDetails.streetAddress }" name="streetAddress" onInput="return validatename(id)";/></br><span id="streetaddresserror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.StreetAddress"></form:errors></span></td>
                         </tr> 
                         <tr class="row2">
                         	<td><span class="err">*</span>City:</td>
-                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="City"   value="${patientDetails.city}" name="city" /></br><span id="Cityerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.City"></form:errors></span></td>
+                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="City"   value="${patientDetails.city}" name="city" onInput="return validatename(id)";/></br><span id="Cityerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.City"></form:errors></span></td>
 						</tr>                        
 						<tr class="row1">
                         	<td><span class="err">*</span>State:</td>
-                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="State"   value="${patientDetails.state }" name="state" /></br><span id="Stateerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.State"></form:errors></span></td>
+                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="State"   value="${patientDetails.state }" name="state" onInput="return validatename(id)";/></br><span id="Stateerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.State"></form:errors></span></td>
 						</tr>                        
 						<tr class="row2">
                         	<td><span class="err">*</span>ZipCode:</td>
@@ -1442,7 +2225,7 @@ document.getElementById("inp_id").value=phone;
 						
 						<tr class="row1">
                         	<td><span class="err">*</span>Home phone:</td>
-                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="homephone" maxlength="13"  value="${patientDetails.homephone}" name="homephone" /></br><span id="homephoneerror" style="color: red;font-style:italic;" maxlength="13"><form:errors path="PatientDetails.Homephone"></form:errors></span></td>
+                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="homephone" maxlength="13" onkeypress="return validate(event)"; value="${patientDetails.homephone}" name="homephone" /></br><span id="homephoneerror" style="color: red;font-style:italic;" maxlength="13"><form:errors path="PatientDetails.Homephone"></form:errors></span></td>
 						</tr>                        
 						
 						<tr class="row2">
@@ -1452,7 +2235,7 @@ document.getElementById("inp_id").value=phone;
 						
 						<tr class="row1">
                         	<td><span class="err">*</span>MobileNumber:</td>
-                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="mobilenumber"  maxlength="13" value="${patientDetails.mobileNumber}" name="mobileNumber" /></br><span id="mobilenumbererror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.MobileNumber"></form:errors></span></td>
+                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="mobilenumber" onkeypress="return validate(event)";  maxlength="13" value="${patientDetails.mobileNumber}" name="mobileNumber" /></br><span id="mobilenumbererror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.MobileNumber"></form:errors></span></td>
 						</tr>                        
 						
 						<tr class="row2">
@@ -1462,7 +2245,7 @@ document.getElementById("inp_id").value=phone;
 						
 						<tr class="row1">
                         	<td><span class="err">*</span>Social Security Number:</td>
-                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="socialsecuritynumber" maxlength="11"  value="${patientDetails.socialSecurityNumber}" name="socialSecurityNumber" /></br><span id="socialsecuritynumbererror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.SocialSecurityNumber"></form:errors></span></td>
+                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="socialsecuritynumber" onkeypress="return validate(event)"; maxlength="11"  value="${patientDetails.socialSecurityNumber}" name="socialSecurityNumber" /></br><span id="socialsecuritynumbererror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.SocialSecurityNumber"></form:errors></span></td>
 						</tr>                        
 						<tr class="row2">
                         	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Gender:</td>
@@ -1530,19 +2313,19 @@ document.getElementById('employee').style.display="block";
 								
 					            <tr class="row1">
 					                  <td valign="middle" style=" padding-right: 160px;" align="left" class="input_txt"><span class="err"></span>Employer Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp</td>
-					                  <td class="input_txt"><input type="text" class="input_txtbx1" id="employerName"   value="${patientDetails.employerName}" name="employerName" /></br><span class="err"><form:errors path="PatientDetails.EmployerName"></form:errors></span></td>
+					                  <td class="input_txt"><input type="text" class="input_txtbx1" id="employerName"   value="${patientDetails.employerName}" name="employerName" onInput="return validatename(id)"; /></br><span class="err"><form:errors path="PatientDetails.EmployerName"></form:errors></span></td>
 								</tr> 
 				   			    <tr class="row2">
                         			<td><span class="err"></span>Occupation:</td>
-                        			<td class="input_txt"><input type="text" class="input_txtbx1" id="occupation"   value="${patientDetails.occupation}" name="occupation" /></br><span class="err"><form:errors path="PatientDetails.Occupation"></form:errors></span></td>
+                        			<td class="input_txt"><input type="text" class="input_txtbx1" id="occupation"   value="${patientDetails.occupation}" name="occupation" onInput="return validatename(id)"; /></br><span class="err"><form:errors path="PatientDetails.Occupation"></form:errors></span></td>
 								</tr>                        
 						 		<tr class="row1">
                         			<td><span class="err"></span>Employer Address:</td>
-                        			<td class="input_txt"><input type="text" class="input_txtbx1" id="employerAddress"   value="${patientDetails.employerAddress }" name="employerAddress" /></br><span class="err"><form:errors path="PatientDetails.EmployerAddress"></form:errors></span></td>
+                        			<td class="input_txt"><input type="text" class="input_txtbx1" id="employerAddress"   value="${patientDetails.employerAddress }" name="employerAddress" onInput="return validatename(id)"; /></br><span class="err"><form:errors path="PatientDetails.EmployerAddress"></form:errors></span></td>
 								</tr>                        
 						 		<tr class="row2">
                         			<td><span class="err"></span>WorkPhone:</td>
-                        			<td class="input_txt"><input type="text" class="input_txtbx1" id="workphone"  maxlength="13" value="${patientDetails.workphone}" name="workphone" onkeypress="return validate(event)";/></br><span id="workphoneerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Workphone"></form:errors></span></td>
+                        			<td class="input_txt"><input type="text" class="input_txtbx1" id="workphone"  maxlength="13" value="${patientDetails.workphone}" onkeypress="return validate(event)"; name="workphone" onkeypress="return validate(event)";/></br><span id="workphoneerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Workphone"></form:errors></span></td>
 								</tr>  
 								
 								 <tr class="row2">
@@ -1558,11 +2341,11 @@ document.getElementById('employee').style.display="block";
 								                      
 			    				<tr class="row1">
                         			<td><span class="err"></span>EmployerCity:</td>
-                        			<td class="input_txt"><input type="text" class="input_txtbx1" id="employerCity"   value="${patientDetails.employerCity}" name="employerCity" /></br><span class="err"><form:errors path="PatientDetails.EmployerCity"></form:errors></span></td>
+                        			<td class="input_txt"><input type="text" class="input_txtbx1" id="employerCity"   value="${patientDetails.employerCity}" name="employerCity" onInput="return validatename(id)"; /></br><span class="err"><form:errors path="PatientDetails.EmployerCity"></form:errors></span></td>
 								</tr>                        
 						 		<tr class="row2">
                         			<td><span class="err"></span>State:</td>
-                        			<td class="input_txt"><input type="text" class="input_txtbx1" id="estate"   value="${patientDetails.estate}" name="estate" /></br><span class="err"><form:errors path="PatientDetails.Estate"></form:errors></span></td>
+                        			<td class="input_txt"><input type="text" class="input_txtbx1" id="estate"   value="${patientDetails.estate}" name="estate" onInput="return validatename(id)";/></br><span class="err"><form:errors path="PatientDetails.Estate"></form:errors></span></td>
 								</tr>
 							    <tr class="row1">
                         			<td><span class="err"></span>ZipCode:</td>
@@ -1576,24 +2359,24 @@ document.getElementById('employee').style.display="block";
 				 			 <tr class="row2">
 				               
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Spouse's or significant others name:</td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="SpousesName"   value="${patientDetails.spousesName}" name="spousesName" /></br><span id="SpousesNameerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.SpousesName"></form:errors></span></td>
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="SpousesName"   value="${patientDetails.spousesName}" name="spousesName" onInput="return validatename56(id)"; /></br><span id="SpousesNameerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.SpousesName"></form:errors></span></td>
 							</tr>
 							 <tr class="row1">
                         		<td><span class="err">*</span>Spouses Employer:&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                        		<td class="input_txt"><input type="text" class="input_txtbx1" id="SpousesEmp"   value="${patientDetails.spousesEmp}" name="spousesEmp" /></br><span id="SpousesEmperror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.SpousesEmp"></form:errors></span></td>
+                        		<td class="input_txt"><input type="text" class="input_txtbx1" id="SpousesEmp"  onInput="return validatename(id)"; value="${patientDetails.spousesEmp}" name="spousesEmp" /></br><span id="SpousesEmperror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.SpousesEmp"></form:errors></span></td>
 							</tr>   	                     
 						
 						    <tr class="row2">
                         		<td><span class="err">*</span>Spouse's Workphone:</td>
-                        		<td class="input_txt"><input type="text" class="input_txtbx1" id="spouseworkphone"  maxlength="13" value="${patientDetails.spousesph}" name="spousesph" /></br><span id="spouseworkphoneerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Spousesph"></form:errors></span></td>
+                        		<td class="input_txt"><input type="text" class="input_txtbx1" id="spouseworkphone"  maxlength="13"  onkeypress="return validate(event)"; value="${patientDetails.spousesph}" name="spousesph" /></br><span id="spouseworkphoneerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Spousesph"></form:errors></span></td>
 							</tr>                        
 						    <tr class="row1">
                         		<td><span class="err">*</span>Name of Nearest Friend/ Relative Not Living With You:</td>
-                        		<td class="input_txt"><input type="text" class="input_txtbx1" id="Name_friend"   value="${patientDetails.name_friend}" name="name_friend" /></br><span id="Name_frienderror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Name_friend"></form:errors></span></td>
+                        		<td class="input_txt"><input type="text" class="input_txtbx1" id="Name_friend" onInput="return validatename(id)";  value="${patientDetails.name_friend}" name="name_friend" /></br><span id="Name_frienderror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Name_friend"></form:errors></span></td>
 							</tr>                        
 						 	<tr class="row2">
                         		<td><span class="err">*</span>Phone of Nearest Friend/ Relative Not Living With You:</td>
-                        		<td class="input_txt"><input type="text" class="input_txtbx1" id="Phone_friend"  maxlength="13" value="${patientDetails.phone_friend}" name="phone_friend" /></br><span id="Phone_frienderror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Phone_friend"></form:errors></span></td>
+                        		<td class="input_txt"><input type="text" class="input_txtbx1" id="Phone_friend"  maxlength="13" value="${patientDetails.phone_friend}" onkeypress="return validate(event)"; name="phone_friend" /></br><span id="Phone_frienderror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Phone_friend"></form:errors></span></td>
 							</tr>                        
 						    <tr class="row1">
                         		<td><span class="err">*</span>Have you ever had chiropractic care: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
@@ -1663,7 +2446,7 @@ document.getElementById('employee').style.display="block";
                  
                   <td valign="top" align="left" class="input_txt" width="70%">
                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                 <textarea  rows="3" cols="25" name="symptom[]" id="symptom<%=i%><%i++;%>" onBlur="check(this)">${symptom}</textarea><span id="symptom1error" style="color: red;font-style:italic;"></span>
+                 <textarea  rows="3" cols="25" name="symptom[]" onInput="return validatename(id)"; id="symptom<%=i%><%i++;%>" onBlur="check(this)" >${symptom}</textarea><span id="symptom1error" style="color: red;font-style:italic;"></span>
                
                 </td> <td width="700"></td></tr><tr height="10"></tr>  </c:forEach>
                         </td><td>
@@ -1816,7 +2599,7 @@ function checkAjaxPost() {
 						</tr>   
 						<tr class="row1">
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Where:</td>
-                        <td class="input_txt"><input type="text" class="input_txtbx1" id="where1"   value="${patientDetails.where1}" name="where1" /></br><span id="where1error" style="color: red;font-style:italic;"><form:errors path="PatientDetails.where1"></form:errors></span></td>
+                        <td class="input_txt"><input type="text" class="input_txtbx1" id="where1" onInput="return validatename(id)";  value="${patientDetails.where1}" name="where1" /></br><span id="where1error" style="color: red;font-style:italic;"><form:errors path="PatientDetails.where1"></form:errors></span></td>
 				         </tr>
 				          <tr class="row2">
                         <td><span class="err">*</span>Have You Retained an Attorney for this Accident:</td>
@@ -1835,17 +2618,17 @@ function checkAjaxPost() {
 						
 						 <tr class="row2">
                         <td><span class="err">*</span>Name Of Attorney:</td>
-                        <td class="input_txt"><input type="text" class="input_txtbx1" id="NameOfAttorney"   value="${patientDetails.nameOfAttorney}" name="nameOfAttorney" /></br><span id="NameOfAttorneyerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.NameOfAttorney"></form:errors></span></td>
+                        <td class="input_txt"><input type="text" class="input_txtbx1" id="NameOfAttorney"  onInput="return validatename(id)"; value="${patientDetails.nameOfAttorney}" name="nameOfAttorney" /></br><span id="NameOfAttorneyerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.NameOfAttorney"></form:errors></span></td>
 						</tr>          	
 				          
 						 <tr class="row1">
                         <td><span class="err">*</span>Attorney Phone:</td>
-                        <td class="input_txt"><input type="text" class="input_txtbx1" id="phonenumber" maxlength="13"  value="${patientDetails.phone_Number}" name="phone_Number" /></br><span id="phonenumbererror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Phone_Number"></form:errors></span></td>
+                        <td class="input_txt"><input type="text" class="input_txtbx1" id="phonenumber" maxlength="13"  value="${patientDetails.phone_Number}" name="phone_Number" onkeypress="return validate(event)";/></br><span id="phonenumbererror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Phone_Number"></form:errors></span></td>
 						<td></td>
 						</tr> 
 						    <tr class="row2">
                         <td><span class="err">*</span>Name of Person at Fault for the Accident:</td>
-                        <td class="input_txt"><input type="text" class="input_txtbx1" id="Fault_accident"   value="${patientDetails.fault_accident}" name="fault_accident" /></br><span id="Fault_accidenterror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Fault_accident"></form:errors></span></td>
+                        <td class="input_txt"><input type="text" class="input_txtbx1" id="Fault_accident"  onInput="return validatename(id)"; value="${patientDetails.fault_accident}" name="fault_accident" /></br><span id="Fault_accidenterror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Fault_accident"></form:errors></span></td>
 						</tr>  
 						<tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>mls there a claim open </td>
@@ -1875,68 +2658,68 @@ function checkAjaxPost() {
 				                <tr class="row1">
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err"></span>What is your Physician's Name </td>
 				                  	<td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="phyname" name="phyname" value="${patientDetails.phyname}"/><br><span id="phynameerror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="phyname" name="phyname" onInput="return validatename(id)"; value="${patientDetails.phyname}"/><br><span id="phynameerror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
 				                    </tr>
 				                
 				                <tr class="row2">
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err"></span>What is your Physician's Phone </td>
 				                  	<td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="phyphone" name="phyphone" maxlength="13" value="${patientDetails.phyphone}"/><br><span id="phyphoneerror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="phyphone" name="phyphone" maxlength="13" value="${patientDetails.phyphone}" onkeypress="return validate(event)";/><br><span id="phyphoneerror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
 				                   </td><td width="700"></td>
 				                   
 				                    </tr>
 				                 <tr class="row1">
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Damages to your car </td>
 				                  	<td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="car11" name="car11" value="${patientDetails.car11}"/><br><span id="car11error" style="color: red;font-style:italic;"><form:errors path="patientDetails.car11"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="car11" name="car11" onInput="return validatename(id)"; value="${patientDetails.car11}"/><br><span id="car11error" style="color: red;font-style:italic;"><form:errors path="patientDetails.car11"></form:errors></span>
 				                     </td><td width="700"></td>
 				                    </tr> 
 				                   
 				                     <tr class="row2">
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err"></span>	What body parts were x-rayed </td>
 				                  	<td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="xray" name="xray"  value="${patientDetails.xray}"/><br><span id="xrayerror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="xray" name="xray"  value="${patientDetails.xray}" onInput="return validatename(id)";/><br><span id="xrayerror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
 				                    </tr>
 				                    
 				                     <tr class="row1">
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err"></span>what treatment was given </td>
 				                  	<td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="treat" name="treat" value="${patientDetails.treat}"/><br><span id="treaterror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="treat" name="treat" value="${patientDetails.treat}" onInput="return validatename(id)";/><br><span id="treaterror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
 				                  </td><td width="700"></td>
 				                    </tr>
 						<tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Insurance Company of the at Fault Person:</td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="Insurance"   value="${patientDetails.insurance}" name="insurance" /></br><span id="Insuranceerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Insurance"></form:errors></span></td>     	         
+				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="Insurance"   value="${patientDetails.insurance}" name="insurance" onInput="return validatename(id)"; /></br><span id="Insuranceerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Insurance"></form:errors></span></td>     	         
 				       			<td></td>
 				        </tr>
 				         <tr class="row1">
                         <td><span class="err">*</span>Insurance Company Phone:</td>
-                        <td class="input_txt"><input type="text" class="input_txtbx1" id="Insurance_phone"  maxlength="13"  value="${patientDetails.insurance_phone}" name="insurance_phone" /></br><span id="Insurance_phoneerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Insurance_phone"></form:errors></span></td>
+                        <td class="input_txt"><input type="text" class="input_txtbx1" id="Insurance_phone"  maxlength="13"  value="${patientDetails.insurance_phone}" name="insurance_phone" onkeypress="return validate(event)";/></br><span id="Insurance_phoneerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Insurance_phone"></form:errors></span></td>
 						</tr>   
 						  <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name of your auto insurance:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="Name_auto" name="name_auto" value="${patientDetails.name_auto}"/><span id="Name_autoerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Name_auto"></form:errors></span></td>
+				                  	<input type="text" class="input_txtbx1" id="Name_auto" name="name_auto" value="${patientDetails.name_auto}" onInput="return validatename(id)";/><span id="Name_autoerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Name_auto"></form:errors></span></td>
 				                  	<td> </td>
 				                </tr>
 				               <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>phone of your auto insurance:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="Phone_auto" name="phone_auto" maxlength="13" value="${patientDetails.phone_auto}"/><span id="Phone_autoerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Phone_auto"></form:errors></span></td>
+				                  	<input type="text" class="input_txtbx1" id="Phone_auto" name="phone_auto" maxlength="13" value="${patientDetails.phone_auto}" onkeypress="return validate(event)";/><span id="Phone_autoerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Phone_auto"></form:errors></span></td>
 				                  	<td> </td>
 				                </tr>                     
 						 <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Policy#:</td>
-				                 <td class="input_txt"><input type="text" class="input_txtbx1" id="policy"   value="${patientDetails.policy}" name="policy" /></br><span id="policyerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Policy"></form:errors></span></td>	 
+				                 <td class="input_txt"><input type="text" class="input_txtbx1" id="policy" onInput="return validateusernamepolicy()"; value="${patientDetails.policy}" name="policy" /></br><span id="policyerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Policy"></form:errors></span></td>	 
 				        			<td></td>
 				        </tr>
 				         <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name of Your Health Insurance:</td>
-				                   <td class="input_txt"><input type="text" class="input_txtbx1" id="Name_health"   value="${patientDetails.name_health}" name="name_health" /></br><span id="Name_healtherror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Name_health"></form:errors></span></td>
+				                   <td class="input_txt"><input type="text" class="input_txtbx1" id="Name_health"   value="${patientDetails.name_health}" name="name_health" onInput="return validatename(id)";/></br><span id="Name_healtherror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Name_health"></form:errors></span></td>
 				         </tr>
 				         <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Phone of your Health Insurance:</td>
-				                   <td class="input_txt"><input type="text" class="input_txtbx1" id="phhealth"  maxlength="13" value="${patientDetails.health_phone }" name="health_phone" /></br><span id="phhealtherror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Health_phone"></form:errors></span></td>
+				                   <td class="input_txt"><input type="text" class="input_txtbx1" id="phhealth"  maxlength="13" value="${patientDetails.health_phone }" onkeypress="return validate(event)"; name="health_phone" /></br><span id="phhealtherror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Health_phone"></form:errors></span></td>
 				        			<td></td>
 				         </tr>                  
 				         <tr class="row1">
@@ -1951,7 +2734,7 @@ function checkAjaxPost() {
 				                </tr>
 				          <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>When:</td>
-				                   <td class="input_txt"><input type="text" class="input_txtbx1" id="datepicker6"   value="${patientDetails.prev_When }" name="prev_When" /></br><span id="datepicker6error" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Prev_When"></form:errors></span></td>       
+				                   <td class="input_txt"><input type="text" class="input_txtbx1" id="datepicker6" onInput="return validatename(id)";   value="${patientDetails.prev_When }" name="prev_When" /></br><span id="datepicker6error" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Prev_When"></form:errors></span></td>       
 									<td></td>
 						</tr>
 						</table>
@@ -2051,7 +2834,7 @@ function checkAjaxPost() {
 					</table>
 					 <tr class="row2">
                         <td><span class="err">*</span>Surgeries or Major Illnesses You Have Had: </td>
-                        <td class="input_txt"><input type="text" class="input_txtbx1" id="Illness"   value="${patientDetails.illness }" name="illness" /></br><span id="Illnesserror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Illness"></form:errors></span></td>
+                        <td class="input_txt"><input type="text" class="input_txtbx1" id="Illness"   value="${patientDetails.illness }" onInput="return validatename(id)"; name="illness" /></br><span id="Illnesserror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Illness"></form:errors></span></td>
 					</tr>   
 					  <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Dates:</td>
@@ -2061,7 +2844,7 @@ function checkAjaxPost() {
 				                  	<tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Medications You are Currently Taking and Why:</td>
 				                  <td>
-				                  	<textarea rows="3" cols="25" id="Medications" name="medications">${patientDetails.medications} </textarea>  <span id="Medicationserror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.medications"></form:errors></span></td>  
+				                  	<textarea rows="3" cols="25" id="Medications" name="medications" onInput="return validatename(id)";>${patientDetails.medications} </textarea>  <span id="Medicationserror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.medications"></form:errors></span></td>  
 				                  </tr>
 				      	
 				                  	
@@ -2102,11 +2885,11 @@ function checkAjaxPost() {
 				      </tr>
 				      	<tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Dr:</td>
-				                  <td> <input type="text" class="input_txtbx1" id="Dr"   value="${patientDetails.dr}" name="dr" /></br><span id="Drerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Dr"></form:errors></span></td>
+				                  <td> <input type="text" class="input_txtbx1" id="Dr"   value="${patientDetails.dr}" name="dr" onInput="return validatename(id)"; /></br><span id="Drerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Dr"></form:errors></span></td>
 				       </tr>
 				       <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Signature:</td>
-				                  <td> <input type="text" class="input_txtbx1" id="Patient"   value="${patientDetails.patient}" name="patient" /></br><span id="Patienterror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Patient"></form:errors></span></td>
+				                  <td> <input type="text" class="input_txtbx1" id="Patient"   value="${patientDetails.patient}" name="patient" onInput="return validatename56(id)";/></br><span id="Patienterror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Patient"></form:errors></span></td>
 				      </tr>
 				        <table align="right">        
 				         
