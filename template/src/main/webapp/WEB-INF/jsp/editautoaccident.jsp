@@ -735,7 +735,7 @@ document.getElementById("injury").style.visibility = 'hidden';
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="smlinput_txtbx1" id="vehicle_make" name="vehicle_make" style="width:70px" onInput="return validatename2()"; value="${autoaccident.vehicle_make }"/><span id="vehicle_makeerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.vehicle_make"></form:errors></span>
 				  <input type="text" class="smlinput_txtbx1" id="vehicle_model" name="vehicle_model" style="width:70px" onInput="return validatename3()"; value="${autoaccident.vehicle_model }" /><span id="vehicle_modelerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.vehicle_model"></form:errors></span>
-				  <input type="text" class="smlinput_txtbx1" id="vehicle_year" maxlength="4" name="vehicle_year" style="width:70px" onkeypress="return validate(event)"; value="${autoaccident.vehicle_year }"/><span id="vehicle_yearerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.vehicle_year"></form:errors></span>
+				  <input type="text" class="smlinput_txtbx1" id="vehicle_year" maxlength="4" name="vehicle_year" style="width:70px" maxlength="4"  onkeypress="return validate(event)"; value="${autoaccident.vehicle_year }"/><span id="vehicle_yearerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.vehicle_year"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
@@ -790,7 +790,7 @@ document.getElementById("injury").style.visibility = 'hidden';
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Estimated rate of speed</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="speed" name="estimated_rate" onkeypress="return validate(event)"; value="${autoaccident.estimated_rate }"/><span id="speederror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.estimated_rate"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="speed" name="estimated_rate" maxlength="18"  onkeypress="return validate(event)"; value="${autoaccident.estimated_rate }"/><span id="speederror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.estimated_rate"></form:errors></span>
 				  </td>
 				  </tr>
 				 <tr class="row2">
@@ -1013,7 +1013,7 @@ document.getElementById('mytext').style.display="block";
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="further_injury" value="yes" class="input_txt" id="furthercheck" onclick="toggle2();" <c:if test="${autoaccident.further_injury=='yes'}"><c:out value="Checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="further_injury" value="no" class="input_txt" onclick="toggle2();" <c:if test="${autoaccident.further_injury=='no'}"><c:out value="Checked"/></c:if>>No&nbsp;&nbsp;&nbsp;<span class="err"><form:errors path="Autoaccident.further_injury"></form:errors></span>
-				  <textarea rows='3' cols='35' id="injury"  style='display:none' placeholder="Please explain" name="injurytext">${autoaccident.injurytext}</textarea><span class="err"><form:errors path="Autoaccident.injurytext"></form:errors></span>
+				  <textarea rows='3' cols='35' id="injury"  style='display:none' onInput="return validatename(id)"; min="4" maxlength="32" placeholder="Please explain" name="injurytext">${autoaccident.injurytext}</textarea><span class="err"><form:errors path="Autoaccident.injurytext"></form:errors></span>
 				  </td>
 				  </tr>
 				  
@@ -1117,7 +1117,7 @@ document.getElementById('mytext').style.display="block";
 					<option value="slammed" <c:if test="${autoaccident.patient_body=='slammed'}"><c:out value="selected"/></c:if>>Slammed</option>
 					<option value="otherbody" <c:if test="${autoaccident.patient_body=='otherbody'}"><c:out value="selected"/></c:if>>Other</option>
 				  </select><span class="err"><form:errors path="Autoaccident.patient_body"></form:errors></span>
-				  <input type="text" name="patient_body1" id="patient_body1" value="${autoaccident.patient_body1}"style='display:none'/><span class="err"><form:errors path="Autoaccident.patient_body1"></form:errors></span>
+				  <input type="text" name="patient_body1" id="patient_body1" onInput="return validatename(id)"; min="4" maxlength="32" value="${autoaccident.patient_body1}"style='display:none'/><span class="err"><form:errors path="Autoaccident.patient_body1"></form:errors></span>
 				  </td>
 				  </tr> 
 				   <tr class="row1">
@@ -1142,43 +1142,43 @@ document.getElementById('mytext').style.display="block";
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt">My Right Left Shoulder hit</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="rlshoulder_hit" value="${autoaccident.rlshoulder_hit }" onInput="return validatename(id);"/>
+				  <input type="text" class="input_txtbx1" id="inp_id" name="rlshoulder_hit" value="${autoaccident.rlshoulder_hit }" onInput="return validatename(id)"; min="4" maxlength="32"/>
 				  </td>
 				  </tr>
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt">My Right Left Hip hit</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="rlhip_hit" value="${autoaccident.rlhip_hit }" onInput="return validatename(id);"/>
+				  <input type="text" class="input_txtbx1" id="inp_id" name="rlhip_hit" value="${autoaccident.rlhip_hit }" onInput="return validatename(id)"; min="4" maxlength="32"/>
 				  </td>
 				  </tr>
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt">My Right Left Knee hit</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="rlknee_hit" value="${autoaccident.rlknee_hit }" onInput="return validatename(id);"/>
+				  <input type="text" class="input_txtbx1" id="inp_id" name="rlknee_hit" value="${autoaccident.rlknee_hit }" onInput="return validatename(id)"; min="4" maxlength="32"/>
 				  </td>
 				  </tr>
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt">My Chest hit</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="chest_hit" value="${autoaccident.chest_hit }" onInput="return validatename(id);"/>
+				  <input type="text" class="input_txtbx1" id="inp_id" name="chest_hit" value="${autoaccident.chest_hit }" onInput="return validatename(id)"; min="4" maxlength="32"/>
 				  </td>
 				  </tr>
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt">My Right Left Arm hit</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="rlarm_hit" value="${autoaccident.rlarm_hit }" onInput="return validatename(id);"/>
+				  <input type="text" class="input_txtbx1" id="inp_id" name="rlarm_hit" value="${autoaccident.rlarm_hit }" onInput="return validatename(id)"; min="4" maxlength="32"/>
 				  </td>
 				  </tr>
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt">My Right Left Leg hit</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="rlleg_hit" value="${autoaccident.rlleg_hit }" onInput="return validatename(id);"/>
+				  <input type="text" class="input_txtbx1" id="inp_id" name="rlleg_hit" value="${autoaccident.rlleg_hit }" onInput="return validatename(id)"; min="4" maxlength="32"/>
 				  </td>
 				  </tr>
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt">My Other body part hit</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="otherpart_hit" value="${autoaccident.otherpart_hit }" onInput="return validatename(id);" />
+				  <input type="text" class="input_txtbx1" id="inp_id" name="otherpart_hit" value="${autoaccident.otherpart_hit }" onInput="return validatename(id)"; min="4" maxlength="32" />
 				  </td>
 				  </tr>
 				  <script>
@@ -1216,7 +1216,7 @@ document.getElementById('mytext').style.display="block";
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="unconscious" value="yes" class="input_txt" id="unconcheck"onclick="toggle4();" <c:if test="${autoaccident.unconscious=='yes'}"><c:out value="Checked"/></c:if> >Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="unconscious" value="no" class="input_txt" onclick="toggle4();" <c:if test="${autoaccident.unconscious=='no'}"><c:out value="Checked"/></c:if> >No&nbsp;&nbsp;&nbsp;<span class="err"><form:errors path="Autoaccident.unconscious"></form:errors></span>
-			      <input type="text" class="input_txtbx1" id="uncon" name="uncon" onkeypress="return validate(event)"; value="${autoaccident.uncon }"  style='display:none'> (minutes)<span class="err"><form:errors path="Autoaccident.uncon"></form:errors></span></input>
+			      <input type="text" class="input_txtbx1" id="uncon" name="uncon" onkeypress="return validate(event)";  maxlength="18"; value="${autoaccident.uncon }"  style='display:none'> (minutes)<span class="err"><form:errors path="Autoaccident.uncon"></form:errors></span></input>
 			      </td>
 				  </tr>
 				  <script>
