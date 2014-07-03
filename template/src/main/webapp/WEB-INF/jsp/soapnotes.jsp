@@ -389,10 +389,13 @@ document.getElementById("leftproxi").style.display="none";
 }
 }
 </script>
-<select name="rightproxi"  class="input_cmbbx1" id="rightproxi" style="display:none"><option>proximal</option><option>distal portion</option></select>
+<select name="rightproxi"  class="input_cmbbx1" id="rightproxi" style="display:none"><option value="proximal">proximal</option>
+<option value="distal">distal portion</option></select>
 </td>
 <td><input type="checkbox" name="leftarmpain" id="leftarmpain" value="Left Arm Pain" onclick="rightcheck()">Left Arm Pain<br>
-<select name="leftproxi" id="leftproxi" class="input_cmbbx1" style="display:none"><option>proximal</option><option>distal portion</option></select>
+<select name="leftproxi" id="leftproxi" class="input_cmbbx1" style="display:none">
+<option value="proximal">proximal</option>
+<option value="distal">distal portion</option></select>
 
 </td>
 </tr>

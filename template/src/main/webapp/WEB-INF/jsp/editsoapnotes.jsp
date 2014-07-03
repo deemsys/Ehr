@@ -309,9 +309,11 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		}
 		
 		</script>
+		
 		<script>
 		 window.onload = function()
 /* function enableTextbox() */ {
+			 rightcheck();
 if (document.getElementById("e1e2").value == "ExtremitiesX-Rays") {
 document.getElementById("xray").style.visibility = 'visible';
 
@@ -323,43 +325,7 @@ document.getElementById("xray").style.visibility = 'hidden';
 
 
 }
-}
-</script>
 
-		<script>
-		 window.onload = function()
-/* function enableTextbox() */ {
-if (document.getElementById("e1e2").value == "ExtremitiesX-Rays") {
-document.getElementById("xray").style.visibility = 'visible';
-
-//document.getElementById("xray").disabled = false;
-}
-else  {
-document.getElementById("xray").style.visibility = 'hidden';
-//document.getElementById("xray").disabled = true;
-
-
-}
-if(document.getElementById("rightarmpain").checked)
-		{
-		document.getElementById("rightproxi").style.display='block';
-		
-		}
-		else
-		{
-		document.getElementById("rightproxi").style.display='none';
-		}
-		
-		
-		if(document.getElementById("leftarmpain").checked)
-		{
-		document.getElementById("leftproxi").style.display='block';
-		
-		}
-		else
-		{
-		document.getElementById("leftproxi").style.display='none';
-		}
 }
 </script>
 
@@ -425,17 +391,22 @@ if(document.getElementById("rightarmpain").checked)
 <td><input type="checkbox" name="leftshoulderpain" value="Left Shoulder Pain" <c:if test="${soapnotes.leftshoulderpain=='Left Shoulder Pain'}"><c:out value="checked=checked"/></c:if>>Left Shoulder Pain</td>
 <td><input type="checkbox" name="chestpain" value="Chest Pain" <c:if test="${soapnotes.chestpain=='Chest Pain'}"><c:out value="checked=checked"/></c:if>>Chest Pain</td>
 <td><input type="checkbox" name="rightarmpain" id="rightarmpain" onclick="rightcheck()" value="Right Arm Pain" <c:if test="${soapnotes.rightarmpain=='Right Arm Pain'}"><c:out value="checked=checked"/></c:if>>Right Arm Pain
-<script>
-if(document.getElementById("rightarmpain").checked)
-		{
-		document.getElementById("rightproxi").style.display='block';
-		
-		}
-		else
-		{
-		document.getElementById("rightproxi").style.display='none';
-		}
-</script>
+
+<br>
+<select name="rightproxi" id="rightproxi" style="display:none">
+<option <c:if test="${soapnotes.rightproxi=='proximal'}"><c:out value="selected"/></c:if> value="proximal">proximal</option>
+<option <c:if test="${soapnotes.rightproxi=='distal'}"><c:out value="selected"/></c:if> value="distal">distal portion</option></select>
+
+
+</td>
+<td><input type="checkbox" id="leftarmpain" name="leftarmpain" value="Left Arm Pain"  onclick="rightcheck()" <c:if test="${soapnotes.leftarmpain=='Left Arm Pain'}"><c:out value="checked=checked"/></c:if>>Left Arm Pain
+<br>
+<select name="leftproxi" id="leftproxi" style="display:none">
+<option <c:if test="${soapnotes.leftproxi=='proximal'}"><c:out value="selected"/></c:if> value="proximal">proximal</option>
+<option <c:if test="${soapnotes.leftproxi=='distal'}"><c:out value="selected"/></c:if> value="distal">distal portion</option></select>
+
+</td>
+
 <script type="text/javascript">
        function validate1(event,id) {
         
@@ -487,10 +458,18 @@ if(document.getElementById("rightarmpain").checked)
            }
            
        } 
+       function onloading()
+       {
+    	   if(document.getElementById("e1e2").value == "ExtremitiesX-Rays")
+		   {
+		 alert("true");
+		   document.getElementById("xray").style.display='block';
+		   }
+       }
        function validate2()
        {
     	   var regex = /^[A-Za-z0-9 ]*$/;
-    	  
+    	  alert("dsdg");
     	   if(document.getElementById("e1e2").value == "ExtremitiesX-Rays")
     		   {
     		 
@@ -572,16 +551,7 @@ else
 }
 
 }
-</script><br>
-<select name="rightproxi" id="rightproxi" style="display:none"><option>proximal</option><option>distal portion</option></select>
-
-
-</td>
-<td><input type="checkbox" id="leftarmpain" name="leftarmpain" value="Left Arm Pain"  onclick="rightcheck()" <c:if test="${soapnotes.leftarmpain=='Left Arm Pain'}"><c:out value="checked=checked"/></c:if>>Left Arm Pain
-<br>
-<select name="leftproxi" id="leftproxi" style="display:none"><option>proximal</option><option>distal portion</option></select>
-
-</td>
+</script>
 </tr>
 <tr class="row1">
 <td></td>
@@ -1290,6 +1260,7 @@ else
 </tr>
 </table>
 </form>
+
 </body>
 </html>
 
