@@ -23,6 +23,95 @@
 }
   </script>
   <script>
+
+	function checkSubmit()
+	{
+		
+		document.getElementById("inameerror").innerHTML="";
+		if(document.getElementById("iname").value!="")
+		{
+	    if(document.getElementById("iname").value.length<4 || document.getElementById("iname").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("inameerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
+	    }
+		document.getElementById("inameerror").innerHTML="";
+		if(document.getElementById("iname").value!="")
+		{
+			if(document.getElementById("iname").value.substring(0,1)==" ")
+			{
+		document.getElementById("inameerror").innerHTML="Initial space not allowed";
+		
+		return false;
+		}
+		}
+		
+		document.getElementById("medicalinformationerror").innerHTML="";
+		if(document.getElementById("medicalinformation").value!="")
+		{
+	    if(document.getElementById("medicalinformation").value.length<4 || document.getElementById("medicalinformation").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("medicalinformationerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
+	    }
+		document.getElementById("medicalinformationerror").innerHTML="";
+		if(document.getElementById("medicalinformation").value!="")
+		{
+			if(document.getElementById("medicalinformation").value.substring(0,1)==" ")
+			{
+		document.getElementById("medicalinformationerror").innerHTML="Initial space not allowed";
+		
+		return false;
+		}
+		}
+		
+		
+document.getElementById("patientsignatureerror").innerHTML=" ";
+		
+		if(document.getElementById("patientsignature").value=="")
+		{
+		document.getElementById("patientsignatureerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		} 
+		document.getElementById("patientsignatureerror").innerHTML=" ";
+		
+		if(document.getElementById("patientsignature").value.substring(0,1)==" ")
+		{
+		document.getElementById("patientsignatureerror").innerHTML="Initial space not allowed";
+		
+		return false;
+		}
+	}
+
+	</script>
+	
+	<script>
+  $(function() {
+	$("#iname").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#medicalinformation").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+<script>
   $(function() {
 	$("#patientsignature").on("keypress", function(e) {
 		if (e.which === 32 && !this.value.length)
@@ -32,108 +121,20 @@
 
 </script>
 <script>
-  $(function() {
-	$("#inp_id1").on("keypress", function(e) {
-		if (e.which === 32 && !this.value.length)
-	        e.preventDefault();
-	});
-	});	
-
-</script>
-<script>
-  $(function() {
-	$("#inp_id2").on("keypress", function(e) {
-		if (e.which === 32 && !this.value.length)
-	        e.preventDefault();
-	});
-	});	
-
-</script>
-
-<script>
-function validatename(id)
-{
-	var textInput = document.getElementById(id).value;
-	textInput = textInput.replace(/[^A-Za-z ]/g, "");
-	document.getElementById(id).value = textInput;
+function validatename(id){
+    var textInput = document.getElementById(id).value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById(id).value = textInput;
 }
 </script>
+
 <script>
-function validatesign()
-{
-	var textInput = document.getElementById("patientsignature").value;
-	textInput = textInput.replace(/[^A-Za-z. ]/g, "");
-	document.getElementById("patientsignature").value = textInput;
+function validatename1(id){
+    var textInput = document.getElementById(id).value;
+    textInput = textInput.replace(/[^A-Za-z. ]/g, "");
+    document.getElementById(id).value = textInput;
 }
 </script>
-  <script>
-
-	function checkSubmit()
-	{
-document.getElementById("patientsignatureerror").innerHTML=" ";
-		
-		if(document.getElementById("patientsignature").value=="")
-		{
-		document.getElementById("patientsignatureerror").innerHTML="Required Field Should not be Empty";
-		
-		return false;
-		} 
-		
-		document.getElementById("patientsignatureerror").innerHTML="";
-	    if(document.getElementById("patientsignature").value.length<4 || document.getElementById("patientsignature").value.length>=32)
-	    {
-	    	
-	    	document.getElementById("patientsignatureerror").innerHTML="Name should be min 4 and max 32";
-	    	
-	        return false;
-	    } 
-	
-	
-	 	if(document.getElementById("patientsignature").value.substring(0,1)==" ")
-		{
-		document.getElementById("patientsignatureerror").innerHTML="Initial space not allowed";
-		
-		return false;
-		}
-	
-
-	 	document.getElementById("inp_id1error").innerHTML="";
-	    if(document.getElementById("inp_id1").value.length<4 || document.getElementById("inp_id1").value.length>=32)
-	    {
-	    	
-	    	document.getElementById("inp_id1error").innerHTML="Name should be min 4 and max 32";
-	    	
-	        return false;
-	    } 
-	
-	
-	 	if(document.getElementById("inp_id1").value.substring(0,1)==" ")
-		{
-		document.getElementById("inp_id1error").innerHTML="Initial space not allowed";
-		
-		return false;
-		}
-	 	 document.getElementById("inp_id2error").innerHTML="";
-		    if(document.getElementById("inp_id2").value.length<4 || document.getElementById("inp_id2").value.length>=32)
-		    {
-		    	
-		    	document.getElementById("inp_id2error").innerHTML="Name should be min 4 and max 32";
-		    	
-		        return false;
-		    } 
-		
-		
-		 	if(document.getElementById("inp_id2").value.substring(0,1)==" ")
-			{
-			document.getElementById("inp_id2error").innerHTML="Initial space not allowed";
-			
-			return false;
-			}
-
-	
-	}
-
-	</script>
 </head>
 <body>
 <div id="right_content">
@@ -166,15 +167,15 @@ document.getElementById("patientsignatureerror").innerHTML=" ";
                         <tr>
                         <div align="justify">
                         <input type="hidden" class="input_txtbx1" id="inp_id" value="${Medicaldetails.medical_no}" name="medical_no" />
-				                <p id="mypar">&nbsp;I, <input type="text" class="input_txtbx1" id="inp_id1" name="name" value="${Medicaldetails.name}" onInput="return validatename(id);"/><span id="inp_id1error" style="color: red;font-style:italic;"><form:errors path="MedicalRecords.name"></form:errors></span>
-				                &nbsp;&nbsp;give my permission to release Medical Information, Records, X-ray Reports, or the following &nbsp;&nbsp;<input type="text" class="input_txtbx1" id="inp_id2" name="medicalinformation" value="${Medicaldetails.medicalinformation}" onInput="return validatename(id);"/><span id="inp_id2error" style="color: red;font-style:italic;"><form:errors path="MedicalRecords.medicalinformation"></form:errors></span> &nbsp;&nbsp;to Lorain Injury Center, <br>Dr. Darrin Pordash D.C.<br>
+				                <p id="mypar">&nbsp;I, <input type="text" class="input_txtbx1" id="iname" name="name" value="${Medicaldetails.name}" onInput="return validatename(id);"/><span id="inameerror" style="color: red;font-style:italic;"><form:errors path="MedicalRecords.name"></form:errors></span>
+				                &nbsp;&nbsp;give my permission to release Medical Information, Records, X-ray Reports, or the following &nbsp;&nbsp;<input type="text" class="input_txtbx1" id="medicalinformation" name="medicalinformation" value="${Medicaldetails.medicalinformation}" onInput="return validatename(id);"/><span id="medicalinformationerror" style="color: red;font-style:italic;"><form:errors path="MedicalRecords.medicalinformation"></form:errors></span> &nbsp;&nbsp;to Lorain Injury Center, <br>Dr. Darrin Pordash D.C.<br>
 				                5190 Deroit Rd.<br>
                                 Sheffield Village, Ohio 44035<br>
                                 Fax 440-934-3107  </p>
                          <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Signature:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="patientsignature" name="patientsignature" onInput="return validatesign(); " value="${Medicaldetails.patientsignature}"/><span id="patientsignatureerror" style="color: red;font-style:italic;"><form:errors path="MedicalRecords.patientsignature"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="patientsignature" name="patientsignature" onInput="return validatename1(id)"; " value="${Medicaldetails.patientsignature}"/><span id="patientsignatureerror" style="color: red;font-style:italic;"><form:errors path="MedicalRecords.patientsignature"></form:errors></span>
 				                  	</td>
 				                  	</tr>
 				                  	</table>
