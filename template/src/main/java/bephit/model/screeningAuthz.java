@@ -1,6 +1,7 @@
 package bephit.model;
 
 import org.hibernate.validator.constraints.NotEmpty;
+import org.hibernate.validator.constraints.Length;
 
 public class screeningAuthz
 {
@@ -8,7 +9,8 @@ public class screeningAuthz
 	
 	private String date;
 	
-	
+	@NotEmpty
+	@Length(min=4,max=32,message="Required Field should between 4 to 32 characters!!!")
 	private String name;
 	
 

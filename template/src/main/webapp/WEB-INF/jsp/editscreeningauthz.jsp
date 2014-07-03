@@ -29,6 +29,24 @@
 }
   </script>
    <script>
+  $(function() {
+	$("#name").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+function validatename()
+{
+	var textInput = document.getElementById("name").value;
+	textInput = textInput.replace(/[^A-Za-z ]/g, "");
+	document.getElementById("name").value = textInput;
+}
+</script>
+  
+   <script>
 
 	function checkSubmit()
 	{
@@ -48,14 +66,24 @@
 		    	
 		        return false;
 		    }
-		document.getElementById("nameerror").innerHTML="";
-	if(document.getElementById("name").value=="")
-		{
-		document.getElementById("nameerror").innerHTML="Required Field Should not be Empty";
 		
-		return false;
-		}
+			document.getElementById("nameerror").innerHTML="";
+		    if(document.getElementById("name").value.length<4 || document.getElementById("name").value.length>=32)
+		    {
+		    	
+		    	document.getElementById("nameerror").innerHTML="Name should be min 4 and max 32";
+		    	
+		        return false;
+		    } 
+		
+		
+		 	if(document.getElementById("name").value.substring(0,1)==" ")
+			{
+			document.getElementById("nameerror").innerHTML="Initial space not allowed";
 			
+			return false;
+			}
+			    			
 	}
 	</script>
 </head>
@@ -98,7 +126,8 @@
 				                  	<tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="name" name="name" value="${ScreeningDetails.name}"/><br><span id="nameerror" style="color: red;font-style:italic;"><form:errors path="screeningAuthz.name"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="name" name="name" onInput="return validatename();" value="${ScreeningDetails.name}"/><br>
+				                  	<span id="nameerror" style="color: red;font-style:italic;"><form:errors path="screeningAuthz.name"></form:errors></span>
 				                  	</tr>
 				                  	</table>
 				                  	<table>

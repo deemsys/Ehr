@@ -1,5 +1,6 @@
 package bephit.model;
 
+import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
 public class MedicalRecords
@@ -9,7 +10,8 @@ public class MedicalRecords
 	private String name;
 	
 	private String medicalinformation;
-
+	@NotEmpty
+	@Length(min=4,max=32,message="Required Field should between 4 to 32 characters!!!")
 	private String patientsignature;
 
 

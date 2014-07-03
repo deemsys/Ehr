@@ -32,6 +32,52 @@
 	}
 }
   </script>
+   <script>
+
+	  
+	  $(function() {
+			$("#printpname").on("keypress", function(e) {
+				if (e.which === 32 && !this.value.length)
+			        e.preventDefault();
+			});
+			});	
+
+		</script>
+<script>
+  $(function() {
+	$("#staffwitness").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#legalguardian").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+function validatename(id)
+{
+	var textInput = document.getElementById(id).value;
+	textInput = textInput.replace(/[^A-Za-z ]/g, "");
+	document.getElementById(id).value = textInput;
+}
+</script>
+<script>
+function validatesign()
+{
+	var textInput = document.getElementById("legalguardian").value;
+	textInput = textInput.replace(/[^A-Za-z. ]/g, "");
+	document.getElementById("legalguardian").value = textInput;
+}
+</script>
+  
   <script>
 
 	function checkSubmit()
@@ -41,6 +87,22 @@
 		if(document.getElementById("printpname").value=="")
 		{
 		document.getElementById("printpnameerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		document.getElementById("printpnameerror").innerHTML="";
+	    if(document.getElementById("printpname").value.length<4 || document.getElementById("printpname").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("printpnameerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    } 
+	
+	
+	 	if(document.getElementById("printpname").value.substring(0,1)==" ")
+		{
+		document.getElementById("printpnameerror").innerHTML="Initial space not allowed";
 		
 		return false;
 		}
@@ -67,6 +129,22 @@
 	
 	return false;
 	}
+	document.getElementById("legalguardianerror").innerHTML="";
+    if(document.getElementById("legalguardian").value.length<4 || document.getElementById("printpname").value.length>=32)
+    {
+    	
+    	document.getElementById("legalguardianerror").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    } 
+
+
+ 	if(document.getElementById("legalguardian").value.substring(0,1)==" ")
+	{
+	document.getElementById("legalguardianerror").innerHTML="Initial space not allowed";
+	
+	return false;
+	}
 	
 	
 	document.getElementById("staffwitnesserror").innerHTML="";
@@ -76,6 +154,25 @@
 	
 	return false;
 	}
+
+	document.getElementById("staffwitnesserror").innerHTML="";
+    if(document.getElementById("staffwitness").value.length<4 || document.getElementById("printpname").value.length>=32)
+    {
+    	
+    	document.getElementById("staffwitnesserror").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    } 
+
+
+ 	if(document.getElementById("staffwitness").value.substring(0,1)==" ")
+	{
+	document.getElementById("staffwitnesserror").innerHTML="Initial space not allowed";
+	
+	return false;
+	}
+	
+	
 	document.getElementById("datepickererror").innerHTML="";
 	var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 	
@@ -150,7 +247,7 @@
                         <td valign="middle" align="left" class="input_txt"><span class="err">*</span>PrintPatientname: </td>
 				                  <input type="hidden" class="input_txtbx1" id="inp_id" value="${privacydetails.hippa_no}" name="hippa_no" />
 				                   <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="printpname" name="printpname" value="${privacydetails.printpname}"/>
+				                  	<input type="text" class="input_txtbx1" id="printpname" name="printpname" onInput="return validatename(id);" value="${privacydetails.printpname}"/>
 				                  	  <br><span id="printpnameerror" style="color: red;font-style:italic;"><form:errors path="HippaPrivacy.printpname"></form:errors>
 				                  	</td>
 				                  	</tr>
@@ -164,14 +261,14 @@
 				         <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Signature Of parent or Legal Guardian: </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="legalguardian" name="legalguardian" value="${privacydetails.legalguardian }"/>
+				                  	<input type="text" class="input_txtbx1" id="legalguardian" name="legalguardian" onInput="return validatesign();" value="${privacydetails.legalguardian }"/>
 				                    <br><span id="legalguardianerror" style="color: red;font-style:italic;"><form:errors path="HippaPrivacy.legalguardian"></form:errors>
 				                  </td>
 				                  	</tr>
 				                  	 <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Staff Witness: </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="staffwitness" name="staffwitness" value="${privacydetails.staffwitness}"/>
+				                  	<input type="text" class="input_txtbx1" id="staffwitness" name="staffwitness" onInput="return validatename(id);" value="${privacydetails.staffwitness}"/>
 				                  <br><span id="staffwitnesserror" style="color: red;font-style:italic;" ><form:errors path="HippaPrivacy.staffwitness"></form:errors>
 				                  </td>	</tr>
 				                  	</table>

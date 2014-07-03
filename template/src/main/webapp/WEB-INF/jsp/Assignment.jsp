@@ -30,6 +30,12 @@
 		    $(function() {
 		    $( "#datepicker4" ).datepicker();
 		  });
+		    $(function() {
+			    $( "#datepicker5" ).datepicker();
+			  });
+		    $(function() {
+			    $( "#datepicker6" ).datepicker();
+			  });
   
   </script>
   <script>
@@ -59,9 +65,107 @@
   </script>
   <script>
 
+  
+  $(function() {
+		$("#printpname").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});	
+
+	</script>
+<script>
+$(function() {
+$("#patientname").on("keypress", function(e) {
+	if (e.which === 32 && !this.value.length)
+        e.preventDefault();
+});
+});	
+
+</script>
+<script>
+$(function() {
+$("#patientsign").on("keypress", function(e) {
+	if (e.which === 32 && !this.value.length)
+        e.preventDefault();
+});
+});	
+
+</script>
+<script>
+$(function() {
+$("#parentname").on("keypress", function(e) {
+	if (e.which === 32 && !this.value.length)
+        e.preventDefault();
+});
+});	
+
+</script>
+<script>
+$(function() {
+$("#parentsign").on("keypress", function(e) {
+	if (e.which === 32 && !this.value.length)
+        e.preventDefault();
+});
+});	
+
+</script>
+<script>
+$(function() {
+$("#representative").on("keypress", function(e) {
+	if (e.which === 32 && !this.value.length)
+        e.preventDefault();
+});
+});	
+
+</script>
+<script>
+$(function() {
+$("#day").on("keypress", function(e) {
+	if (e.which === 32 && !this.value.length)
+        e.preventDefault();
+});
+});	
+
+</script>
+<script>
+$(function() {
+$("#month").on("keypress", function(e) {
+	if (e.which === 32 && !this.value.length)
+        e.preventDefault();
+});
+});	
+
+</script>
+<script>
+$(function() {
+$("#year").on("keypress", function(e) {
+	if (e.which === 32 && !this.value.length)
+        e.preventDefault();
+});
+});	
+
+</script>
+<script>
+function validatename(id)
+{
+	var textInput = document.getElementById(id).value;
+	textInput = textInput.replace(/[^A-Za-z ]/g, "");
+	document.getElementById(id).value = textInput;
+}
+
+function validatesign(id)
+{
+	var textInput = document.getElementById(id).value;
+	textInput = textInput.replace(/[^A-Za-z. ]/g, "");
+	document.getElementById(id).value = textInput;
+}
+</script>
+
+  <script>
 function checkSubmit()
 
-{                       
+{   
 
 	document.getElementById("patientnameerror").innerHTML="";
 	if(document.getElementById("patientname").value=="")
@@ -70,17 +174,51 @@ function checkSubmit()
 	
 	return false;
 	}
-	/* document.getElementById("datepickererror").innerHTML="";
+	
+	document.getElementById("patientnameerror").innerHTML="";
+    if(document.getElementById("patientname").value.length<4 || document.getElementById("patientname").value.length>=32)
+    {
+    	
+    	document.getElementById("patientnameerror").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
+
+
+ 	if(document.getElementById("patientname").value.substring(0,1)==" ")
+	{
+	document.getElementById("patientnameerror").innerHTML="Initial space not allowed";
+	
+	return false;
+	}
+ 	
+	 document.getElementById("datepickererror").innerHTML="";
 	if(document.getElementById("datepicker").value=="")
 	{
 	document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
 	
 	return false;
-	} */
+	} 
 	document.getElementById("patientsignerror").innerHTML="";
 	if(document.getElementById("patientsign").value=="")
 	{
 	document.getElementById("patientsignerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("patientsignerror").innerHTML="";
+    if(document.getElementById("patientsign").value.length<4 || document.getElementById("patientsign").value.length>=32)
+    {
+    	
+    	document.getElementById("patientsignerror").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    } 
+
+
+ 	if(document.getElementById("printpname").value.substring(0,1)==" ")
+	{
+	document.getElementById("patientsignerror").innerHTML="Initial space not allowed";
 	
 	return false;
 	}
@@ -106,6 +244,23 @@ document.getElementById("datepicker2error").innerHTML="";
 	
 	return false;
 	}
+	document.getElementById("parentnameerror").innerHTML="";
+    if(document.getElementById("parentname").value.length<4 || document.getElementById("parentname").value.length>=32)
+    {
+    	
+    	document.getElementById("parentnameerror").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    } 
+
+
+ 	if(document.getElementById("parentname").value.substring(0,1)==" ")
+	{
+	document.getElementById("parentnameerror").innerHTML="Initial space not allowed";
+	
+	return false;
+	}
+
 	
 	document.getElementById("parentsignerror").innerHTML="";
 	if(document.getElementById("parentsign").value=="")
@@ -114,6 +269,23 @@ document.getElementById("datepicker2error").innerHTML="";
 	
 	return false;
 	}
+	document.getElementById("parentsignerror").innerHTML="";
+    if(document.getElementById("parentsign").value.length<4 || document.getElementById("parentsign").value.length>=32)
+    {
+    	
+    	document.getElementById("parentsignerror").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    } 
+
+
+ 	if(document.getElementById("parentsign").value.substring(0,1)==" ")
+	{
+	document.getElementById("parentsignerror").innerHTML="Initial space not allowed";
+	
+	return false;
+	}
+
 	document.getElementById("datepicker3error").innerHTML="";
 	if(document.getElementById("datepicker3").value=="")
 	{
@@ -135,13 +307,29 @@ document.getElementById("datepicker3error").innerHTML="";
 	
 	return false;
 	}
+	document.getElementById("representativeerror").innerHTML="";
+    if(document.getElementById("representative").value.length<4 || document.getElementById("representative").value.length>=32)
+    {
+    	
+    	document.getElementById("representativeerror").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    } 
+
+
+ 	if(document.getElementById("representative").value.substring(0,1)==" ")
+	{
+	document.getElementById("representativeerror").innerHTML="Initial space not allowed";
+	
+	return false;
+	}
 	document.getElementById("datepicker4error").innerHTML="";
 	if(document.getElementById("datepicker4").value=="")
 	{
 	document.getElementById("datepicker4error").innerHTML="Required Field Should not be Empty";
 	return false;
 	} 
-document.getElementById("datepicker4error").innerHTML="";
+	document.getElementById("datepicker4error").innerHTML="";
 	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		if(document.getElementById("datepicker4").value.match(datechk)==null)
 	    {
@@ -149,6 +337,48 @@ document.getElementById("datepicker4error").innerHTML="";
 	    	
 	        return false;
 	    }
+		
+		if(document.getElementById("representative").value.substring(0,1)==" ")
+		{
+		document.getElementById("representativeerror").innerHTML="Initial space not allowed";
+		
+		return false;
+		}
+		document.getElementById("datepicker5error").innerHTML="";
+		if(document.getElementById("datepicker4").value=="")
+		{
+		document.getElementById("datepicker5error").innerHTML="Required Field Should not be Empty";
+		return false;
+		} 
+		document.getElementById("datepicker5error").innerHTML="";
+		var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+			if(document.getElementById("datepicker5").value.match(datechk)==null)
+		    {
+		    	document.getElementById("datepicker5error").innerHTML="Invalid Date Format";
+		    	
+		        return false;
+		    }
+			
+			if(document.getElementById("representative").value.substring(0,1)==" ")
+			{
+			document.getElementById("representativeerror").innerHTML="Initial space not allowed";
+			
+			return false;
+			}
+			document.getElementById("datepicker6error").innerHTML="";
+			if(document.getElementById("datepicker6").value=="")
+			{
+			document.getElementById("datepicker6error").innerHTML="Required Field Should not be Empty";
+			return false;
+			} 
+			document.getElementById("datepicker6error").innerHTML="";
+			var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+				if(document.getElementById("datepicker6").value.match(datechk)==null)
+			    {
+			    	document.getElementById("datepicker6error").innerHTML="Invalid Date Format";
+			    	
+			        return false;
+			    }
 	}
   </script>
 </head>
@@ -183,11 +413,11 @@ document.getElementById("datepicker4error").innerHTML="";
                         <table cellpadding="0" cellspacing="0" border="0" width="70%">
                         <tr>
                         <div align="justify">
-				                <p id="mypar">&nbsp;This agreement made this the:<input type="text" class="input_txtbx1" id="inp_id" name="day" /><span class="err"><form:errors path="Assignment.day"></form:errors></span> day of <input type="text" class="input_txtbx1" id="inp_id" name="month" /><span class="err"><form:errors path="Assignment.month"></form:errors></span>
-				                  	2013 between <input type="text" class="input_txtbx1" id="inp_id" name="year" /><span class="err"><form:errors path="Assignment.year"></form:errors></span>
+				                <p id="mypar">&nbsp;This agreement made this the:<input type="text" class="input_txtbx1" id="day" name="day" /><span class="err"><form:errors path="Assignment.day"></form:errors></span> day of <input type="text" class="input_txtbx1" id="inp_id" name="month" /><span class="err"><form:errors path="Assignment.month"></form:errors></span>
+				                  	2013 between <input type="text" class="input_txtbx1" id="year" name="year" /><span class="err"><form:errors path="Assignment.year"></form:errors></span>
 				                  	(claimant) and Perry Chiropractic and Therapy Center constitutes an irrevocable and binding agreement between the parties as follows:
-Claimant was involved in an accident on or about the <input type="text" class="input_txtbx1" id="inp_id" name="day1" /><span class="err"><form:errors path="Assignment.day1"></form:errors></span>
-day of <input type="text" class="input_txtbx1" id="inp_id" name="month1" /> <span class="err"><form:errors path="Assignment.month1"></form:errors></span>and I therein incurred injuries for which I have sought medical treatment from PCTC.</p>
+Claimant was involved in an accident on or about the <input type="text" class="input_txtbx1" id="day" name="day" /><span class="err"><form:errors path="Assignment.day1"></form:errors></span>
+day of <input type="text" class="input_txtbx1" id="month" name="month1" /> <span class="err"><form:errors path="Assignment.month1"></form:errors></span>and I therein incurred injuries for which I have sought medical treatment from PCTC.</p>
 
 <P id="mypar"> Claimant herby directs any and all insurance carriers, attorneys, 
 agencies, companies, individuals, and/or other legal entities (payers), 
@@ -215,14 +445,14 @@ and exclusively in the name of Perry Chiropractic and Therapy Center, such sums 
                        <tr width="500"class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Name: </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="patientname" name="patientname" value="${name}"/><br><span id="patientnameerror" style="color: red;font-style:italic;"><form:errors path="Assignment.patientname"></form:errors></td>
+				                  	<input type="text" class="input_txtbx1" id="patientname" name="patientname" value="${name}" onInput="return validatename(id);"/><br><span id="patientnameerror" style="color: red;font-style:italic;"><form:errors path="Assignment.patientname"></form:errors></td>
 				                  	<%-- <td valign="middle" width="50%"><span class="err">*</span>Date</td>
 				                  	<td valign="top"><input type="text" class="input_txtbx1" id="datepicker" name="patientdate" /><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="Assignment.patientdate"></form:errors></span></td> --%>
 				                  	</tr>
 				                  	<tr width="500" class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Signature:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="patientsign" name="patientsign" /><span id="patientsignerror" style="color: red;font-style:italic;"><form:errors path="Assignment.patientsign"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="patientsign" name="patientsign" onInput="return validatesign(id);"/><span id="patientsignerror" style="color: red;font-style:italic;"><form:errors path="Assignment.patientsign"></form:errors></span>
 				                  	<td valign="middle" align="left" class="input_txt" style="width: 65px; "><span class="err">*</span>Date</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="datepicker2" name="patientdate" /><br><span id="datepicker2error" style="color: red;font-style:italic;"><form:errors path="Assignment.parentdate"></form:errors></span>
@@ -230,13 +460,13 @@ and exclusively in the name of Perry Chiropractic and Therapy Center, such sums 
 				                  	
 				                  	<tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name of Custodial Parent or Legal Guardian :  </td>
-				                  <td valign="top" align="left" class="input_txt"><input type="text" class="input_txtbx1" id="parentname" name="parentname" /><br><span id="parentnameerror" style="color: red;font-style:italic;"></span><form:errors path="Assignment.parentname"></form:errors>
+				                  <td valign="top" align="left" class="input_txt"><input type="text" class="input_txtbx1" id="parentname" onInput="return validatename(id);" name="parentname" /><br><span id="parentnameerror" style="color: red;font-style:italic;"></span><form:errors path="Assignment.parentname"></form:errors>
 				                  </td>
 				                  	</tr> 
 				                  	<tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Parent/Guardian Signature:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="parentsign" name="parentsign" /><span id="parentsignerror" style="color: red;font-style:italic;"></span><form:errors path="Assignment.parentsign"></form:errors>
+				                  	<input type="text" class="input_txtbx1" id="parentsign" name="parentsign" onInput="return validatesign(id);"/><span id="parentsignerror" style="color: red;font-style:italic;"></span><form:errors path="Assignment.parentsign"></form:errors>
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date:  </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="datepicker3" name="parentdate" /><br><span id="datepicker3error" style="color: red;font-style:italic;"></span><form:errors path="Assignment.parentdate"></form:errors>
@@ -245,7 +475,7 @@ and exclusively in the name of Perry Chiropractic and Therapy Center, such sums 
 				                  	<tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Perry Chiropractic and Therapy Center Representative:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="representative" name="representative" /><span id="representativeerror" style="color: red;font-style:italic;"> </span><form:errors path="Assignment.representative"></form:errors>
+				                  	<input type="text" class="input_txtbx1" id="representative" name="representative" onInput="return validatename(id);"/><span id="representativeerror" style="color: red;font-style:italic;"> </span><form:errors path="Assignment.representative"></form:errors>
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date:  </td>
 				                  <td valign="middle" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="datepicker4" name="representativedate" /><br><span id="datepicker4error" style="color: red;font-style:italic;"></span>
@@ -264,10 +494,10 @@ and exclusively in the name of Perry Chiropractic and Therapy Center, such sums 
 				                <p id="mypar">&nbsp;This agreement made this the: <input type="text" class="input_txtbx1" id="datepicker6" name="day" value="${assignment.day }"/><span class="err"><form:errors path="Assignment.day"></form:errors></span>
 				                  	  
 				                  	day of <input type="text" class="input_txtbx1" id="datepicker5" name="month" value="${assignment.month}"/><span class="err"><form:errors path="Assignment.month"></form:errors></span>
-				                  	2013 between <input type="text" class="input_txtbx1" id="inp_id" name="year" value="${assignment.year}"/><span class="err"><form:errors path="Assignment.year"></form:errors></span>
+				                  	2013 between <input type="text" class="input_txtbx1" id="year" name="year" value="${assignment.year}"/><span class="err"><form:errors path="Assignment.year"></form:errors></span>
 				                  	(claimant) and Perry Chiropractic and Therapy Center constitutes an irrevocable and binding agreement between the parties as follows:
-Claimant was involved in an accident on or about the <input type="text" class="input_txtbx1" id="inp_id" name="day1" value="${assignment.day1}"/><span class="err"><form:errors path="Assignment.day1"></form:errors></span>
-day of <input type="text" class="input_txtbx1" id="inp_id" name="month1" value="${assignment.month1}"/> <span class="err"><form:errors path="Assignment.month1"></form:errors></span>and I therein incurred injuries for which I have sought medical treatment from PCTC.</p>
+Claimant was involved in an accident on or about the <input type="text" class="input_txtbx1" id="day1" name="day1" value="${assignment.day1}"/><span class="err"><form:errors path="Assignment.day1"></form:errors></span>
+day of <input type="text" class="input_txtbx1" id="month1" name="month1" value="${assignment.month1}"/> <span class="err"><form:errors path="Assignment.month1"></form:errors></span>and I therein incurred injuries for which I have sought medical treatment from PCTC.</p>
 
 <P id="mypar"> Claimant herby directs any and all insurance carriers, attorneys, 
 agencies, companies, individuals, and/or other legal entities (payers), 

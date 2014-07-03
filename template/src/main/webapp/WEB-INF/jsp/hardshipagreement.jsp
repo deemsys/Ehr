@@ -18,10 +18,131 @@
          });
  
 </script>
+
+	  <script>
+
+	  
+	  $(function() {
+			$("#print_pat_name").on("keypress", function(e) {
+				if (e.which === 32 && !this.value.length)
+			        e.preventDefault();
+			});
+			});	
+
+		</script>
+<script>
+  $(function() {
+	$("#witness_sign").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#pat_sign").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+function validatename(id)
+{
+	var textInput = document.getElementById(id).value;
+	textInput = textInput.replace(/[^A-Za-z ]/g, "");
+	document.getElementById(id).value = textInput;
+}
+</script>
+<script>
+function validatesign(id)
+{
+	var textInput = document.getElementById(id).value;
+	textInput = textInput.replace(/[^A-Za-z. ]/g, "");
+	document.getElementById(id).value = textInput;
+}
+</script>
+
 <script>
 
 	function checkSubmit()
 	{
+		var name = document.getElementById("print_pat_name").value;
+		var sign = document.getElementById("pat_sign").value;
+		var witness = document.getElementById("witness_sign").value;
+		var spl =  /^[A-Za-z0-9]*$/;
+		
+	
+		 if(name =="")
+		 {
+		
+			 document.getElementById("print_pat_nameerror").innerHTML="Required Field Should not be Blank";
+			 return false;
+		 } 
+			document.getElementById("print_pat_nameerror").innerHTML="";
+		    if(document.getElementById("print_pat_name").value.length<4 || document.getElementById("print_pat_name").value.length>=32)
+		    {
+		    	
+		    	document.getElementById("print_pat_nameerror").innerHTML="Name should be min 4 and max 32";
+		    	
+		        return false;
+		    } 
+		
+		
+		 	if(document.getElementById("print_pat_name").value.substring(0,1)==" ")
+			{
+			document.getElementById("print_pat_nameerror").innerHTML="Initial space not allowed";
+			
+			return false;
+			}
+		 	
+	     
+		 if(sign =="")
+		 {
+			 document.getElementById("pat_signerror").innerHTML="Required Field Should not be Blank";
+			 return false;
+		 } 
+		 document.getElementById("pat_signerror").innerHTML="";
+		    if(document.getElementById("pat_sign").value.length<4 || document.getElementById("pat_sign").value.length>=32)
+		    {
+		    	
+		    	document.getElementById("pat_signerror").innerHTML="Name should be min 4 and max 32";
+		    	
+		        return false;
+		    } 
+		
+		
+		 	if(document.getElementById("pat_sign").value.substring(0,1)==" ")
+			{
+			document.getElementById("pat_signerror").innerHTML="Initial space not allowed";
+			
+			return false;
+			}
+		 
+		 if(witness =="")
+		 {
+			 document.getElementById("witness_signerror").innerHTML="Required Field Should not be Blank";
+			 return false;
+		 } 
+		 document.getElementById("witness_signerror").innerHTML="";
+		    if(document.getElementById("witness_sign").value.length<4 || document.getElementById("witness_sign").value.length>=32)
+		    {
+		    	
+		    	document.getElementById("witness_signerror").innerHTML="Name should be min 4 and max 32";
+		    	
+		        return false;
+		    } 
+		
+		
+		 	if(document.getElementById("witness_sign").value.substring(0,1)==" ")
+			{
+			document.getElementById("witness_signerror").innerHTML="Initial space not allowed";
+			
+			return false;
+			}
+		 
 				
 	document.getElementById("datepickererror").innerHTML="";
 	if(document.getElementById("datepicker").value=="")
@@ -38,7 +159,7 @@
 	    	
 	        return false;
 	    }
-	document.getElementById("print_pat_nameerror").innerHTML="";
+	 document.getElementById("print_pat_nameerror").innerHTML="";
 	if(document.getElementById("print_pat_name").value=="")
 	{
 	document.getElementById("print_pat_nameerror").innerHTML="Required Field Should not be Empty";
@@ -59,7 +180,7 @@
 	
 	return false;
 	}
-	
+ 
 	
 	
 	
@@ -135,21 +256,21 @@
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
        		  <tr >
        		  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Print Patients Name
-              <input type="text" class="input_txtbx1" name="print_pat_name" id="print_pat_name" value="${name}"/><span id="print_pat_nameerror" style="color: red;font-style:italic;" ><form:errors path="Hardshipagreement.print_pat_name"></form:errors></span></td>
+              <input type="text" class="input_txtbx1" name="print_pat_name" id="print_pat_name" onInput="return validatename(id);" value="${name}"/><span id="print_pat_nameerror" style="color: red;font-style:italic;" ><form:errors path="Hardshipagreement.print_pat_name"></form:errors></span></td>
               </tr>
               </table>
               <br>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
        		  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patients Signature&nbsp;&nbsp;&nbsp;
-              <input type="text" class="input_txtbx1" name="pat_sign" id="pat_sign" /><span id="pat_signerror" style="color: red;font-style:italic;"><form:errors path="Hardshipagreement.pat_sign"></form:errors></td>
+              <input type="text" class="input_txtbx1" name="pat_sign" id="pat_sign" onInput="return validatesign(id);"/><span id="pat_signerror" style="color: red;font-style:italic;"><form:errors path="Hardshipagreement.pat_sign"></form:errors></td>
               </tr>
               </table>
               <br>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
        		  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Witness Signature&nbsp;&nbsp;&nbsp;  
-              <input type="text" class="input_txtbx1" name="witness_sign" id="witness_sign" /><span id="witness_signerror" style="color: red;font-style:italic;"><form:errors path="Hardshipagreement.witness_sign"></form:errors></td>
+              <input type="text" class="input_txtbx1" name="witness_sign" id="witness_sign" onInput="return validatesign(id);"/><span id="witness_signerror" style="color: red;font-style:italic;"><form:errors path="Hardshipagreement.witness_sign"></form:errors></td>
               </tr>
               </table>
               </c:when>

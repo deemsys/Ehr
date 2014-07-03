@@ -3,7 +3,7 @@ package bephit.model;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotEmpty;
-
+import org.hibernate.validator.constraints.Length;
 public class Hardshipagreement{
 	
 	private String agreement_no;
@@ -11,13 +11,16 @@ public class Hardshipagreement{
 	
 	private String date;
 	
-	
+	@NotEmpty
+	@Length(min=4,max=32,message="Required Field should between 4 to 32 characters!!!")
 	private String print_pat_name;
 	
-	
+	@NotEmpty
+	@Length(min=4,max=32,message="Required Field should between 4 to 32 characters!!!")
 	private String pat_sign;
 	
-	
+	@NotEmpty
+	@Length(min=4,max=32,message="Required Field should between 4 to 32 characters!!!")
 	private String witness_sign;
 	
 public Hardshipagreement(){

@@ -23,18 +23,85 @@
 		    $( "#datepicker1" ).datepicker();
 		  });
 	  </script>
+	  
 	  <script>
 
+	  
+	  $(function() {
+			$("#printpname").on("keypress", function(e) {
+				if (e.which === 32 && !this.value.length)
+			        e.preventDefault();
+			});
+			});	
+
+		</script>
+<script>
+  $(function() {
+	$("#staffwitness").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#legalguardian").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+function validatename(id)
+{
+	var textInput = document.getElementById(id).value;
+	textInput = textInput.replace(/[^A-Za-z ]/g, "");
+	document.getElementById(id).value = textInput;
+}
+</script>
+<script>
+function validatesign()
+{
+	var textInput = document.getElementById("legalguardian").value;
+	textInput = textInput.replace(/[^A-Za-z. ]/g, "");
+	document.getElementById("legalguardian").value = textInput;
+}
+</script>
+
+
+	
+	<script>  
 	function checkSubmit()
 	{
-		document.getElementById("printpnameerror").innerHTML=" ";
+		 document.getElementById("printpnameerror").innerHTML=" ";
 		
 		if(document.getElementById("printpname").value=="")
 		{
 		document.getElementById("printpnameerror").innerHTML="Required Field Should not be Empty";
 		
 		return false;
+		} 
+		
+		document.getElementById("printpnameerror").innerHTML="";
+	    if(document.getElementById("printpname").value.length<4 || document.getElementById("printpname").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("printpnameerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    } 
+	
+	
+	 	if(document.getElementById("printpname").value.substring(0,1)==" ")
+		{
+		document.getElementById("printpnameerror").innerHTML="Initial space not allowed";
+		
+		return false;
 		}
+	 	
+		
 		document.getElementById("datepicker1error").innerHTML="";
 	if(document.getElementById("datepicker1").value=="")
 		{
@@ -165,7 +232,7 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
                         <tr class="row1">
                         <td valign="middle" align="left" class="input_txt"><span class="err">*</span>PrintPatientname: </td>
 				                   <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="printpname" name="printpname" value="${name}"/>
+				                  	<input type="text" class="input_txtbx1" id="printpname" onInput="return validatename(id);" name="printpname" value="${name}"/>
 				                  	<br><span id="printpnameerror" style="color: red;font-style:italic;"><form:errors path="HippaPrivacy.printpname"></form:errors>
 				                  	</td>
 				                  	</tr>
@@ -178,12 +245,12 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 				         <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Signature Of parent or Legal Guardian: </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="legalguardian" name="legalguardian" /><span id="legalguardianerror" style="color: red;font-style:italic;" ></span>
+				                  	<input type="text" class="input_txtbx1" id="legalguardian" name="legalguardian" onInput="return validatesign();"/><span id="legalguardianerror" style="color: red;font-style:italic;" ></span>
 				                  	</tr>
 				                  	 <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Staff Witness: </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="staffwitness" name="staffwitness" /><span id="staffwitnesserror" style="color: red;font-style:italic;"></span>
+				                  	<input type="text" class="input_txtbx1" id="staffwitness" name="staffwitness" onInput="return validatename(id);"/><span id="staffwitnesserror" style="color: red;font-style:italic;"></span>
 				                  	</tr>
 				                  	</table>
 				                  	</c:when>
