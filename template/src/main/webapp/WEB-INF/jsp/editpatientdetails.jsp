@@ -2460,7 +2460,7 @@ document.getElementById('employee').style.display="block";
                  
                   <td valign="top" align="left" class="input_txt" width="70%">
                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                 <textarea  rows="3" cols="25" name="symptom[]" onInput="return validatename(id)"; id="symptom<%=i%><%i++;%>" onBlur="check(this)" >${symptom}</textarea><span id="symptom1error" style="color: red;font-style:italic;"></span>
+                 &nbsp;&nbsp;&nbsp;<textarea  rows="3" cols="25" name="symptom[]" onInput="return validatename(id)"; id="symptom<%=i%><%i++;%>" onBlur="check(this)" >${symptom}</textarea><span id="symptom1error" style="color: red;font-style:italic;"></span>
                
                 </td> <td width="700"></td></tr><tr height="10"></tr>  </c:forEach>
                         </td><td>
@@ -2650,7 +2650,7 @@ function checkAjaxPost() {
 				                 
 				                </tr>
 				                <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>What Is Your Dominant Hand: </td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*&nbsp;</span>What Is Your Dominant Hand: </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="radio" id="R" name="retain" value="R" class="input_txt" <c:if test="${patientDetails.retain=='R'}"><c:out value="checked=checked"/></c:if>>R&nbsp;&nbsp;&nbsp;<input type="radio" id="L" name="retain" value="L" class="input_txt" <c:if test="${patientDetails.retain=='L'}"><c:out value="checked=checked"/></c:if>>L
 				                <span id="retainerror" style="color: red;font-style:italic;"></span></td>
@@ -2658,7 +2658,7 @@ function checkAjaxPost() {
 				                </tr>
 				                
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>Would You Like Us To Send Your Records To Your Family Physician:  </td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*&nbsp;</span>Would You Like Us To Send Your Records To Your Family Physician:  </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="radio" id="yes6" name="record" value="yes" class="input_txt" <c:if test="${patientDetails.record=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;<input type="radio" id="No6" name="record" value="No" class="input_txt" <c:if test="${patientDetails.record=='No'}"><c:out value="checked=checked"/></c:if>>No
 				                  	 <span id="recorderror" style="color: red;font-style:italic;"></span>
@@ -2666,13 +2666,13 @@ function checkAjaxPost() {
 				                <td></td>
 				                </tr>
 				                <tr class="row1">
-				                  	<td valign="middle" align="left" class="input_txt"><span class="err"></span>What Is Your Physician's Name: </td>
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*&nbsp;</span>What Is Your Physician's Name: </td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="phyname" name="phyname" onInput="return validatename(id)"; value="${patientDetails.phyname}"/><br><span id="phynameerror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
 				                    </tr>
 				                
 				                <tr class="row2">
-				                  	<td valign="middle" align="left" class="input_txt"><span class="err"></span>What Is Your Physician's Phone: </td>
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*&nbsp;</span>What Is Your Physician's Phone: </td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="phyphone" name="phyphone" maxlength="13" value="${patientDetails.phyphone}" onkeypress="return validate(event)";/><br><span id="phyphoneerror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
 				                   </td><td width="700"></td>
@@ -2686,7 +2686,7 @@ function checkAjaxPost() {
 				                    </tr> 
 				                   
 				                     <tr class="row2">
-				                  	<td valign="middle" align="left" class="input_txt"><span class="err"></span>	What Body Parts Were X-Rayed: </td>
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*&nbsp;</span>	What Body Parts Were X-Rayed: </td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="xray" name="xray"  value="${patientDetails.xray}" onInput="return validatename(id)";/><br><span id="xrayerror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
 				                    </td>
@@ -2694,7 +2694,7 @@ function checkAjaxPost() {
 				                    </tr>
 				                    
 				                     <tr class="row1">
-				                  	<td valign="middle" align="left" class="input_txt"><span class="err"></span>What Treatment Was Given: </td>
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*&nbsp;</span>What Treatment Was Given: </td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="treat" name="treat" value="${patientDetails.treat}" onInput="return validatename(id)";/><br><span id="treaterror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
 				                  </td><td width="700"></td>
@@ -2917,8 +2917,7 @@ function checkAjaxPost() {
  				  <!-- <td>&nbsp;&nbsp;</td> -->
              		 <td><input type="submit" class="submit_btn1" value="Update" onclick="return checkSubmit('this');"></td>
 			 <td><a href=" deletepatientdetails?patient_id= ${patientDetails.patient_id}" class="submit_btn" style="text-decoration: none;color:white" onclick="return confirmation() ">Delete</a></td>
-                  <!-- <td>&nbsp;&nbsp;</td> -->
-                  <td><a href=" deletepatientdetails?patient_id= ${patientDetails.patient_id}" class="submit_btn" style="text-decoration: none;color:white" onclick="return confirmation() ">Delete</a></td>
+                  
                   <td>
                 <c:if test="${cancel=='1'}">
                      <input type="button" class="submit_btn" value="Cancel" onclick="close12()">       </c:if>
