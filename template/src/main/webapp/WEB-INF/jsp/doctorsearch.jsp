@@ -55,7 +55,7 @@
 	            <div class="contentbox">
 	           <table cellpadding="0" cellspacing="0" border="0" width="100%">
 	            <tr class="row1">
-	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">*</span>Please enter a Patient UserName:</td>
+	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">*</span>&nbsp;Please Enter Patient UserName:</td>
 				  <td valign="top" align="left" class="input_txt" width="200">
 				   <input type="text" class="input_txtbx1" id="inp_id" name="username" /><br/><span class="err"><form:errors path="Doctorsearch.emailid"></form:errors></span>
 				  </td>
