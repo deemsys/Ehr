@@ -92,7 +92,7 @@ document.getElementById(id).value = textInput;
 		    if(document.getElementById("print_pat_name").value.length<4 || document.getElementById("print_pat_name").value.length>=32)
 		    {
 		    	
-		    	document.getElementById("print_pat_nameerror").innerHTML="Name should be min 4 and max 32";
+		    	document.getElementById("print_pat_nameerror").innerHTML="Should be of length 4 to 32";
 		    	
 		        return false;
 		    } 
@@ -115,7 +115,7 @@ document.getElementById(id).value = textInput;
 		    if(document.getElementById("pat_sign").value.length<4 || document.getElementById("pat_sign").value.length>=32)
 		    {
 		    	
-		    	document.getElementById("pat_signerror").innerHTML="Name should be min 4 and max 32";
+		    	document.getElementById("pat_signerror").innerHTML="Should be of length 4 to 32";
 		    	
 		        return false;
 		    } 
@@ -137,7 +137,7 @@ document.getElementById(id).value = textInput;
 		    if(document.getElementById("witness_sign").value.length<4 || document.getElementById("witness_sign").value.length>=32)
 		    {
 		    	
-		    	document.getElementById("witness_signerror").innerHTML="Name should be min 4 and max 32";
+		    	document.getElementById("witness_signerror").innerHTML="Should be of length 4 to 32";
 		    	
 		        return false;
 		    } 
