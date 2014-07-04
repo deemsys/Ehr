@@ -587,7 +587,15 @@ function validatename(id){
 	 	 		return false;
 	 	 		
 	 	 }
-	   
+
+	 	document.getElementById("injuryerror").innerHTML="";
+	 		if(document.getElementById("injury").value=="")
+	 		{
+	 		document.getElementById("injuryerror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		}
+	 	
 	 	document.getElementById("injuryerror").innerHTML="";
 	 	if(document.getElementById("injury").value!="")
 	 	{
@@ -598,8 +606,183 @@ function validatename(id){
 	     	
 	         return false;
 	     }
-	     }  
+	     }
+	 	
+	 	if(document.getElementById("head_hit").value=="")
+	 	 {
+	 		
+	 	  document.getElementById("head_hiterror").innerHTML="Required field should not be empty";
+	 	  return false;
+	 	 }
+	 	 document.getElementById("head_hiterror").innerHTML=" ";
+	 		
+	 		if(document.getElementById("head_hit").value.substring(0,1)==" ")
+	 		{
+	 		document.getElementById("head_hiterror").innerHTML="Initial space not allowed";
+	 		
+	 		return false;
+	 		}
+	 		document.getElementById("head_hiterror").innerHTML="";
+	 	    if(document.getElementById("head_hit").value.length<4 || document.getElementById("head_hit").value.length>=32)
+	 	    {
+	 	    	document.getElementById("head_hiterror").innerHTML="Name should be min 4 and max 32";
+	 	    	
+	 	        return false;
+	 	    }
+	 	    
+	 	   if(document.getElementById("rlshoulder_hit").value=="")
+		 	 {
+		 		
+		 	  document.getElementById("rlshoulder_hiterror").innerHTML="Required field should not be empty";
+		 	  return false;
+		 	 }
+		 	 document.getElementById("rlshoulder_hiterror").innerHTML=" ";
+		 		
+		 		if(document.getElementById("rlshoulder_hit").value.substring(0,1)==" ")
+		 		{
+		 		document.getElementById("rlshoulder_hit").innerHTML="Initial space not allowed";
+		 		
+		 		return false;
+		 		}
+		 		document.getElementById("rlshoulder_hiterror").innerHTML="";
+		 	    if(document.getElementById("rlshoulder_hit").value.length<4 || document.getElementById("rlshoulder_hit").value.length>=32)
+		 	    {
+		 	    	document.getElementById("rlshoulder_hiterror").innerHTML="Name should be min 4 and max 32";
+		 	    	
+		 	        return false;
+		 	    }
   
+			    
+			 	   if(document.getElementById("rlhip_hit").value=="")
+				 	 {
+				 		
+				 	  document.getElementById("rlhip_hiterror").innerHTML="Required field should not be empty";
+				 	  return false;
+				 	 }
+				 	 document.getElementById("rlhip_hiterror").innerHTML=" ";
+				 		
+				 		if(document.getElementById("rlhip_hit").value.substring(0,1)==" ")
+				 		{
+				 		document.getElementById("rlhip_hit").innerHTML="Initial space not allowed";
+				 		
+				 		return false;
+				 		}
+				 		document.getElementById("rlhip_hiterror").innerHTML="";
+				 	    if(document.getElementById("rlhip_hit").value.length<4 || document.getElementById("rlhip_hit").value.length>=32)
+				 	    {
+				 	    	document.getElementById("rlhip_hiterror").innerHTML="Name should be min 4 and max 32";
+				 	    	
+				 	        return false;
+				 	    }
+				 	    
+					 	   if(document.getElementById("rlknee_hit").value=="")
+						 	 {
+						 		
+						 	  document.getElementById("rlknee_hiterror").innerHTML="Required field should not be empty";
+						 	  return false;
+						 	 }
+						 	 document.getElementById("rlknee_hiterror").innerHTML=" ";
+						 		
+						 		if(document.getElementById("rlknee_hit").value.substring(0,1)==" ")
+						 		{
+						 		document.getElementById("rlknee_hit").innerHTML="Initial space not allowed";
+						 		
+						 		return false;
+						 		}
+						 		document.getElementById("rlknee_hiterror").innerHTML="";
+						 	    if(document.getElementById("rlknee_hit").value.length<4 || document.getElementById("rlknee_hit").value.length>=32)
+						 	    {
+						 	    	document.getElementById("rlknee_hiterror").innerHTML="Name should be min 4 and max 32";
+						 	    	
+						 	        return false;
+						 	    }
+
+							 	   if(document.getElementById("chest_hit").value=="")
+								 	 {
+								 		
+								 	  document.getElementById("chest_hiterror").innerHTML="Required field should not be empty";
+								 	  return false;
+								 	 }
+								 	 document.getElementById("chest_hiterror").innerHTML=" ";
+								 		
+								 		if(document.getElementById("chest_hit").value.substring(0,1)==" ")
+								 		{
+								 		document.getElementById("chest_hit").innerHTML="Initial space not allowed";
+								 		
+								 		return false;
+								 		}
+								 		document.getElementById("chest_hiterror").innerHTML="";
+								 	    if(document.getElementById("chest_hit").value.length<4 || document.getElementById("chest_hit").value.length>=32)
+								 	    {
+								 	    	document.getElementById("chest_hiterror").innerHTML="Name should be min 4 and max 32";
+								 	    	
+								 	        return false;
+								 	    }
+
+									 	   if(document.getElementById("rlarm_hit").value=="")
+										 	 {
+										 		
+										 	  document.getElementById("rlarm_hiterror").innerHTML="Required field should not be empty";
+										 	  return false;
+										 	 }
+										 	 document.getElementById("rlarm_hiterror").innerHTML=" ";
+										 		
+										 		if(document.getElementById("rlarm_hit").value.substring(0,1)==" ")
+										 		{
+										 		document.getElementById("rlarm_hit").innerHTML="Initial space not allowed";
+										 		
+										 		return false;
+										 		}
+										 		document.getElementById("rlarm_hiterror").innerHTML="";
+										 	    if(document.getElementById("rlarm_hit").value.length<4 || document.getElementById("rlarm_hit").value.length>=32)
+										 	    {
+										 	    	document.getElementById("rlarm_hiterror").innerHTML="Name should be min 4 and max 32";
+										 	    	
+										 	        return false;
+										 	    }
+
+										 	   if(document.getElementById("rlleg_hit").value=="")
+											 	 {
+											 		
+											 	  document.getElementById("rlleg_hiterror").innerHTML="Required field should not be empty";
+											 	  return false;
+											 	 }
+											 	 document.getElementById("rlleg_hiterror").innerHTML=" ";
+											 		
+											 		if(document.getElementById("rlleg_hit").value.substring(0,1)==" ")
+											 		{
+											 		document.getElementById("rlleg_hit").innerHTML="Initial space not allowed";
+											 		
+											 		return false;
+											 		}
+											 		document.getElementById("rlleg_hiterror").innerHTML="";
+											 	    if(document.getElementById("rlleg_hit").value.length<4 || document.getElementById("rlleg_hit").value.length>=32)
+											 	    {
+											 	    	document.getElementById("rlleg_hiterror").innerHTML="Name should be min 4 and max 32";
+											 	    	
+											 	        return false;
+											 	    }    
+											  	   if(document.getElementById("otherpart_hit").value=="")
+												 	 {
+												 		
+												 	  document.getElementById("otherpart_hiterror").innerHTML="Required field should not be empty";
+												 	  return false;
+												 	 }
+												 	 document.getElementById("otherpart_hiterror").innerHTML=" ";
+												 		
+												 		if(document.getElementById("otherpart_hit").value.substring(0,1)==" ")
+												 		{
+												 		document.getElementById("otherpart_hit").innerHTML="Initial space not allowed";
+												 		
+												 		return false;
+												 		}
+												 		document.getElementById("otherpart_hiterror").innerHTML="";
+												 	    if(document.getElementById("otherpart_hit").value.length<4 || document.getElementById("otherpart_hit").value.length>=32)
+												 	    {
+												 	    	document.getElementById("otherpart_hiterror").innerHTML="Name should be min 4 and max 32";
+												 	    	
+												 	        return false;
+												 	    } 
   }
   
   
@@ -1028,7 +1211,7 @@ document.getElementById('mytext').style.display="block";
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="further_injury" value="yes" class="input_txt" id="furthercheck" onclick="toggle2();" <c:if test="${autoaccident.further_injury=='yes'}"><c:out value="Checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="further_injury" value="no" class="input_txt" onclick="toggle2();" <c:if test="${autoaccident.further_injury=='no'}"><c:out value="Checked"/></c:if>>No&nbsp;&nbsp;&nbsp;<span class="err"><form:errors path="Autoaccident.further_injury"></form:errors></span>
-				  <textarea rows='3' cols='35' id="injury"  style='display:none' min="4" maxlength="32" onInput="return validatename(id)"; placeholder="Please explain" name="injurytext">${autoaccident.injurytext}</textarea><span class="err"><form:errors path="Autoaccident.injurytext"></form:errors></span>
+				  <textarea rows='3' cols='35' id="injury"  style='display:none' min="4" maxlength="32" onInput="return validatename(id)"; placeholder="Please explain" name="injurytext">${autoaccident.injurytext}</textarea><span class="err" id="injuryerror"><form:errors path="Autoaccident.injurytext"></form:errors></span>
 				  </td>
 				  </tr>
 				  
@@ -1152,48 +1335,49 @@ document.getElementById('mytext').style.display="block";
                   <td valign="middle" align="left" class="input_txt">My head hit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="input_txtbx1" id="head_hit" name="head_hit" min="4" maxlength="32" onInput="return validatename(id);" value="${autoaccident.head_hit}"/>
-				  </td>
+				  <br/><span id="head_hiterror" class="err"></span></td>
 				  </tr>
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt">My Right Left Shoulder hit</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="input_txtbx1" id="rlshoulder_hit" name="rlshoulder_hit" min="4" maxlength="32" onInput="return validatename(id)" value="${autoaccident.rlshoulder_hit }" />
-				  </td>
+				  <br/><span id="rlshoulder_hiterror" class="err"></span></td>
 				  </tr>
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt">My Right Left Hip hit</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="input_txtbx1" id="rlhip_hit" name="rlhip_hit" value="${autoaccident.rlhip_hit }" min="4" maxlength="32" onInput="return validatename(id);"/>
-				  </td>
+				  <br/><span id="rlhip_hiterror" class="err"></span></td>
 				  </tr>
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt">My Right Left Knee hit</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="input_txtbx1" id="rlknee_hit" name="rlknee_hit" value="${autoaccident.rlknee_hit }" min="4" maxlength="32" onInput="return validatename(id);"/>
-				  </td>
+				  <br/><span id="rlknee_hiterror" class="err"></span></td>
 				  </tr>
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt">My Chest hit</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="input_txtbx1" id="chest_hit" name="chest_hit" value="${autoaccident.chest_hit }" onInput="return validatename(id);" min="4" maxlength="32"/>
-				  </td>
+				  <br/><span id="chest_hiterror" class="err"></span></td>
 				  </tr>
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt">My Right Left Arm hit</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="input_txtbx1" id="rlarm_hit" name="rlarm_hit" value="${autoaccident.rlarm_hit }" onInput="return validatename(id);" min="4" maxlength="32"/>
-				  </td>
+				  <br/><span id="rlarm_hiterror" class="err"></span></td>
 				  </tr>
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt">My Right Left Leg hit</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="input_txtbx1" id="rlleg_hit" name="rlleg_hit" value="${autoaccident.rlleg_hit }" onInput="return validatename(id);" min="4" maxlength="32"/>
-				  </td>
+				  <br/><span class="err" id="rlleg_hiterror"></span></td>
 				  </tr>
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt">My Other body part hit</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="input_txtbx1" id="otherpart_hit" name="otherpart_hit" value="${autoaccident.otherpart_hit }" onInput="return validatename(id);" min="4" maxlength="32" />
+				  <br/><span class="err" id="otherpart_hiterror"></span>
 				  </td>
 				  </tr>
 				  <script>

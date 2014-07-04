@@ -65,7 +65,7 @@
 	    if(document.getElementById("iname").value.length<4 || document.getElementById("iname").value.length>=32)
 	    {
 	    	
-	    	document.getElementById("inameerror").innerHTML="Name should be min 4 and max 32";
+	    	document.getElementById("inameerror").innerHTML="Should be of length 4 to 32";
 	    	
 	        return false;
 	    }
@@ -87,7 +87,7 @@
 	    if(document.getElementById("medicalinformation").value.length<4 || document.getElementById("medicalinformation").value.length>=32)
 	    {
 	    	
-	    	document.getElementById("medicalinformationerror").innerHTML="Name should be min 4 and max 32";
+	    	document.getElementById("medicalinformationerror").innerHTML="Should be of length 4 to 32";
 	    	
 	        return false;
 	    }

@@ -71,7 +71,7 @@ function validatename()
 		    if(document.getElementById("name").value.length<4 || document.getElementById("name").value.length>=32)
 		    {
 		    	
-		    	document.getElementById("nameerror").innerHTML="Name should be min 4 and max 32";
+		    	document.getElementById("nameerror").innerHTML="Should be of length 4 to 32";
 		    	
 		        return false;
 		    } 

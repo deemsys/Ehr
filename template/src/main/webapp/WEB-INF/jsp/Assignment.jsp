@@ -180,7 +180,7 @@ function checkSubmit()
     if(document.getElementById("patientname").value.length<4 || document.getElementById("patientname").value.length>=32)
     {
     	
-    	document.getElementById("patientnameerror").innerHTML="Name should be min 4 and max 32";
+    	document.getElementById("patientnameerror").innerHTML="Should be of length 4 to 32";
     	
         return false;
     }
@@ -206,7 +206,7 @@ function checkSubmit()
     if(document.getElementById("patientsign").value.length<4 || document.getElementById("patientsign").value.length>=32)
     {
     	
-    	document.getElementById("patientsignerror").innerHTML="Name should be min 4 and max 32";
+    	document.getElementById("patientsignerror").innerHTML="Should be of length 4 to 32";
     	
         return false;
     }
@@ -244,7 +244,7 @@ document.getElementById("datepicker2error").innerHTML="";
     if(document.getElementById("parentname").value.length<4 || document.getElementById("parentname").value.length>=32)
     {
     	
-    	document.getElementById("parentnameerror").innerHTML="Name should be min 4 and max 32";
+    	document.getElementById("parentnameerror").innerHTML="Should be of length 4 to 32";
     	
         return false;
     } 
@@ -269,7 +269,7 @@ document.getElementById("datepicker2error").innerHTML="";
     if(document.getElementById("parentsign").value.length<4 || document.getElementById("parentsign").value.length>=32)
     {
     	
-    	document.getElementById("parentsignerror").innerHTML="Name should be min 4 and max 32";
+    	document.getElementById("parentsignerror").innerHTML="Should be of length 4 to 32";
     	
         return false;
     } 
@@ -307,7 +307,7 @@ document.getElementById("datepicker3error").innerHTML="";
     if(document.getElementById("representative").value.length<4 || document.getElementById("representative").value.length>=32)
     {
     	
-    	document.getElementById("representativeerror").innerHTML="Name should be min 4 and max 32";
+    	document.getElementById("representativeerror").innerHTML="Should be of length 4 to 32";
     	
         return false;
     } 

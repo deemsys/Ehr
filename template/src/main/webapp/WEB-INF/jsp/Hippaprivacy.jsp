@@ -88,7 +88,7 @@ function validatesign()
 	    if(document.getElementById("printpname").value.length<4 || document.getElementById("printpname").value.length>=32)
 	    {
 	    	
-	    	document.getElementById("printpnameerror").innerHTML="Name should be min 4 and max 32";
+	    	document.getElementById("printpnameerror").innerHTML="Should be of length 4 to 32";
 	    	
 	        return false;
 	    } 
@@ -139,7 +139,7 @@ document.getElementById("datepicker1error").innerHTML="";
     if(document.getElementById("staffwitness").value.length<4 || document.getElementById("printpname").value.length>=32)
     {
     	
-    	document.getElementById("staffwitnesserror").innerHTML="Name should be min 4 and max 32";
+    	document.getElementById("staffwitnesserror").innerHTML="Should be of length 4 to 32";
     	
         return false;
     } 
