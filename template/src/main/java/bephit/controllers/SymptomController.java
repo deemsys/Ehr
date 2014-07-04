@@ -801,7 +801,7 @@ String name="";
 
 	@RequestMapping(value = "/deleteneckindex", method = RequestMethod.GET)
 	public String deleteneckindex(
-			@RequestParam(value = "neckindexno") String neckindexno,
+			@RequestParam(value = "neckindexno") String neckindexno,HttpSession session,
 			ModelMap model) {
 		neckdao.deleteneckindex(neckindexno);
 		NeckindexForm neckindexform = new NeckindexForm();
@@ -809,12 +809,13 @@ String name="";
 		model.addAttribute("neckindexform", neckindexform);
 		model.addAttribute("menu", "neckindex");
 		model.addAttribute("success", true);
-		return "viewneckindex";
+		session.removeAttribute("neckdisability");
+		return "neckindex";
 	}
 
 	@RequestMapping(value = "/deletewristindex", method = RequestMethod.GET)
 	public String deletewristindex(
-			@RequestParam(value = "wristindexno") String wristindexno,
+			@RequestParam(value = "wristindexno") String wristindexno,HttpSession session,
 			ModelMap model) {
 		wristdao.deletewristindex(wristindexno);
 		WristindexForm wristindexform = new WristindexForm();
@@ -822,7 +823,8 @@ String name="";
 		model.addAttribute("wristindexform", wristindexform);
 		model.addAttribute("menu", "wristindex");
 		model.addAttribute("success", true);
-		return "viewwristindex";
+		session.removeAttribute("wristdisability");
+		return "wristindex";
 	}
 
 	@RequestMapping (value="/updatewristindex", method = RequestMethod.POST)

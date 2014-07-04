@@ -284,7 +284,7 @@ document.getElementById("pnameerror").innerHTML=" ";
 	     	     <c:when test="${empty wristdisability}">
           <table cellpadding="0" cellspacing="0" border="0" >
            <tr><td width="140"><span class="err">* </span>Name</td>
-           <td><input type="text" name="name" id="pname" onInput="return validatename(id)";><br><span class="err" id="pnameerror"><form:errors path="wristindexdetails.name"></form:errors></td><td width="480"></td><td></td><td width="100"></td>
+           <td><input type="text" name="name" id="pname" onInput="return validatename(id)";><br><span class="err" id="pnameerror"><form:errors path="wristindexdetails.name"></form:errors></td><td width="480"></td><td></td>
            <td >&nbsp;&nbsp;&nbsp;&nbsp;<span class="err">* </span>Date:&nbsp;</td> <td><input type="text" name="date" id="datepicker">
            <br><span class="err" id="datepickererror"><form:errors path="wristindexdetails.date"></form:errors></td>
            </tr>

@@ -102,6 +102,19 @@
  
  
  </script> -->
+ 
+  <script type="text/javascript">
+  function confirmation() 
+	{
+	var answer = confirm("Are you Sure You Want to Delete Participant ?")
+	if (answer){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+  </script>
  <script>
 $(function() {
     $( "#slider" ).slider({

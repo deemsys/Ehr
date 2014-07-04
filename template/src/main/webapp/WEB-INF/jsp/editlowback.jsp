@@ -27,6 +27,19 @@
  
  
  </script>
+ 
+ <script type="text/javascript">
+  function confirmation() 
+	{
+	var answer = confirm("Are you Sure You Want to Delete Participant ?")
+	if (answer){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+  </script>
  <script type="text/javascript">
  function doAjaxPost() {
 	 
@@ -239,7 +252,7 @@ document.getElementById("pnameerror").innerHTML=" ";
           <table cellpadding="0" cellspacing="0" border="0" width="98%">
           <c:set value="${lowbackForm.lowback[0]}" var="lowback"/> 
  <tr class="row1">
- <input type="hidden" name="lowbackno" id="inp_id" value="${lowback.lowbackno}">
+ <input type="hidden" name="lowbackno" id="lowbackno" value="${lowback.lowbackno}">
 <td><h2><span class="err">*</span>Patient Name:</h2></td><td><input type="text" id="pname" name="pname"onInput="return validatename(id)"; value="${lowback.pname}"/><span class="err" id="pnameerror"><form:errors path="Lowback.pname"></form:errors></span></td>
 <td width="600">
 <td><h2><span class="err">*</span>Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${lowback.date}" /><span class="err" id="datepickererror"><form:errors path="Lowback.date"></form:errors></span></td>
@@ -456,6 +469,8 @@ document.getElementById("pnameerror").innerHTML=" ";
 <table align="right">
 <tr>
 <td><input type="submit" class="submit_btn" value="Update" onclick="return checkSubmit('this');"></td>
+<td><a href=" deletelowbackdetails?lowbackno=${lowback.lowbackno}"  class="submit_btn" style="text-decoration: none;color:white" onclick="return confirmation() ">Delete</a></td>
+
 <td><a href="viewlowback" style="color: white" id="cancelid" class="submit_btn" onclick="window.close()">Cancel</a></td>
 </tr>
 </table>

@@ -1682,7 +1682,7 @@ if(result.hasErrors())
 	}
 	
 	@RequestMapping(value="/deletelowback", method=RequestMethod.GET)
-	public String removelowback(@RequestParam("lowbackno") String lowbackno,ModelMap model, Principal principal) {
+	public String removelowback(@RequestParam("lowbackno") String lowbackno,HttpSession session,ModelMap model, Principal principal) {
 	
 		int status=lowDAO.deletelowback(lowbackno);
 		
@@ -1694,9 +1694,16 @@ if(result.hasErrors())
         lowbackForm.setLowback(lowDAO.getLowback());
 		model.addAttribute("lowbackForm",lowbackForm);  
 		}
-		return "viewlowback";
+		session.removeAttribute("low");
+		return "lowback";
 	}
+
+	@RequestMapping(value="/deletelowbackdetails", method=RequestMethod.GET)
+	public String deletelowback(@RequestParam("lowbackno") String lowbackno,HttpSession session,ModelMap model, Principal principal) {
 	
+		lowDAO.deletelowback(lowbackno);
+		return "lowback";
+	}
 	@RequestMapping(value="/dutiesunderduress", method = RequestMethod.GET)
 	public String viewingdutiesunderduress(HttpSession session, ModelMap model) {
 		session.removeAttribute("duties");
@@ -2281,7 +2288,7 @@ String name="";
 	}
 	
 	@RequestMapping(value="/deleteshoulderpainscore", method=RequestMethod.GET)
-	public String removeshoulderpainscore(@RequestParam("shoulderpainno") String shoulderpainno,ModelMap model, Principal principal) {
+	public String removeshoulderpainscore(@RequestParam("shoulderpainno") String shoulderpainno,HttpSession session,ModelMap model, Principal principal) {
 	
 		int status=shoulderDAO.deleteshoulderpainscore(shoulderpainno);
 		
@@ -2293,7 +2300,8 @@ String name="";
         shoulderpainscoreForm.setShoulderpainscore(shoulderDAO.getShoulderpainscore());
 		model.addAttribute("shoulderpainscoreForm",shoulderpainscoreForm);  
 		}
-		return "viewshoulderpainscore";
+		session.removeAttribute("shoulderpain");
+		return "shoulderpainscore";
 	}
 	
 }

@@ -209,7 +209,10 @@ public int deletelowback(String lowbackno){
 	} catch (SQLException e1) {
 		e1.printStackTrace();
 	}
-	try{
+	try{		
+		statement.execute("delete from tbl_lowback where lowbackno='"+lowbackno+"'");			
+	      }
+	/*try{
 		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
     	 Date date = new Date();
     	 String cmd_getpatient_pname="select pname from tbl_lowback where lowbackno='"+lowbackno+"'";
@@ -222,7 +225,7 @@ public int deletelowback(String lowbackno){
 			
 			flag=1;
 			
-	    }catch(Exception e){
+	    }*/catch(Exception e){
 	    	System.out.println(e.toString());
 	    	flag=0;
 	    	releaseResultSet(resultSet);

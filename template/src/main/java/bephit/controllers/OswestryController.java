@@ -149,7 +149,7 @@ public class OswestryController
 	}
 	
 	@RequestMapping (value="/deleteoswestryindex", method = RequestMethod.GET)
-	public String deleteoswestryindex(@RequestParam("oswestryno") String oswestryno,HttpServletRequest request,ModelMap model,Oswestry oswestryindexdetails) throws IOException
+	public String deleteoswestryindex(@RequestParam("oswestryno") String oswestryno,HttpSession session,HttpServletRequest request,ModelMap model,Oswestry oswestryindexdetails) throws IOException
 	{
 		
 		oswestrydao.deleteoswestryindex(oswestryno);
@@ -158,7 +158,8 @@ public class OswestryController
 		model.addAttribute("oswestryform", oswestryindexform);
 		model.addAttribute("success",true);
 		model.addAttribute("menu","wristindex");
-		return "viewoswestryindex";
+		session.removeAttribute("oswestrydisability");
+		return "oswestryindex";
 	}
 	@RequestMapping (value="/oswestryindexlist", method = RequestMethod.GET)
 	public String oswestryindexlist(@RequestParam("oswestryno") String oswestryno,HttpServletRequest request,ModelMap model,Oswestry oswestryindexdetails) throws IOException

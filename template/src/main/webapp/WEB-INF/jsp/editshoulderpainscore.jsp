@@ -75,7 +75,18 @@ $(function() {
     $( "#tabs" ).tabs();
   });
   </script>
-  
+   <script type="text/javascript">
+  function confirmation() 
+	{
+	var answer = confirm("Are you Sure You Want to Delete Participant ?")
+	if (answer){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+  </script>
   <script>
   function checkLength(id){
    
@@ -228,7 +239,7 @@ function validatename(id){
           <table cellpadding="0" cellspacing="0" border="0" width="98%">
      <c:set value="${shoulderpainscoreForm.shoulderpainscore[0]}" var="shoulderpainscore"/>      
  <tr class="row1">
- <input type="hidden" value="${shoulderpainscore.shoulderpainno }" name="shoulderpainno" />
+ <input type="hidden" name="shoulderpainno" value="${shoulderpainscore.shoulderpainno }"  />
 <td><h2><span class="err">* </span>Patient Name:</h2></td><td width="400"><input type="text"  name="pname" id="pname"  onInput="return validatename(id)";value="${shoulderpainscore.pname }"/><span class="err" id="pnameerror"><form:errors path="Shoulderpainscore.pname"></form:errors></span></td>
 <td><h2><span class="err">* </span>Number:</h2></td><td width="400"><input type="text"  name="number" id="number1" onkeypress="return validate(event)"; value="${shoulderpainscore.number}"/><span class="err" id="number1error"><form:errors path="Shoulderpainscore.number"></form:errors></span></td>
 <td><h2><span class="err">* </span>Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${shoulderpainscore.date}"/><span class="err" id="datepickererror"><form:errors path="Shoulderpainscore.date"></form:errors></span></td>
@@ -462,7 +473,9 @@ function validatename(id){
 <table align="right">
 <tr>
 <td><input type="submit" class="submit_btn" value="Update" onclick="return checkSubmit('this');"></td>
+ <td><a href="deleteshoulderpainscore?shoulderpainno= ${shoulderpainscore.shoulderpainno }" class="submit_btn" style="text-decoration: none;color:white" onclick="return confirmation() ">Delete</a></td>
 <td><a href="viewshoulderpainscore"  style="color: white" id="cancelid" class="submit_btn" onclick="window.close()">Cancel</a></td>
+
 </tr>
 </table>
  </table>
