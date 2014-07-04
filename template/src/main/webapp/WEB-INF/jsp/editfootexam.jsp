@@ -631,13 +631,13 @@ var swelling = document.getElementById('diagnosis1').value;
            <td><input type="text" name="muscle"id="muscle" onInput="return validatename(id);"value="${footexamdetails.muscle}" >
            <br><span id="musclerror" style="color:red"></span>
            </td><td width="10"></td>
-             <td width="130">Swelling  / Discoloration</td>
+             <td width="130">Swelling  / Discoloration:</td>
              <td width="40"><input type="text" name="swelling" id="swelling"value="${footexamdetails.swelling}" onInput="return validatename(id);">
              <br><span id="swellingerror" style="color:red"></span>
              </td>
            
            <td width="59"></td>
-           <td width="120">A & O</td><td><select name="ao" ><option <c:if test="${footexamdetails.ao=='excellent'}"></c:if> <c:out value="selected"></c:out>>excellent</option>
+           <td width="120">A & O:</td><td><select name="ao" ><option <c:if test="${footexamdetails.ao=='excellent'}"></c:if> <c:out value="selected"></c:out>>excellent</option>
            <option <c:if test="${footexamdetails.ao=='good'}"></c:if> <c:out value="selected"></c:out>> good</option>
            <option <c:if test="${footexamdetails.ao=='fair'}"></c:if> <c:out value="selected"></c:out>> fair</option>
            <option <c:if test="${footexamdetails.ao=='severe'}"></c:if> <c:out value="selected"></c:out>> severe</option></select></td>
@@ -671,7 +671,7 @@ var swelling = document.getElementById('diagnosis1').value;
           </tr>  </table>       
 <br>
 <table>	
-	<tr><td  width="130">Note  </td>
+	<tr><td  width="130">Note:  </td>
 <td><textarea rows="5" cols="50" name="note" id="note" onInput="return validatename1(id)";><c:out value="${footexamdetails.note}"></c:out></textarea>
 <br><span id="noteerror" style="color:red"></span>
 </td>	
@@ -796,7 +796,7 @@ var swelling = document.getElementById('diagnosis1').value;
            </br>
            <table width="100%">
            <tr><td width="350"><b style="font-size:14px">FUNCTIONAL DEFICIT:	</b></td><td width="100"><input type="checkbox"  <c:if test="${footexamdetails.walking=='walking'}"> <c:out value="checked=checked"></c:out></c:if> name="walking" value="walking">Walking</td><td width="110"><input type="checkbox" name="standing"  <c:if test="${footexamdetails.standing=='standing'}"> <c:out value="checked=checked"></c:out></c:if> value="standing"> Standing</td><td width="70"><input type="checkbox" name="stairs"  <c:if test="${footexamdetails.stairs=='stairs'}"> <c:out value="checked=checked"></c:out></c:if> value="stairs">Stairs</td><td><input type="checkbox" id="other" name="other" value="other"  onclick="visible('this.value')" <c:if test="${footexamdetails.other=='other'}"> <c:out value="checked=checked"></c:out></c:if>>Other</td><td><input type="text" name="otherdefict" id="otherdefict" value="${footexamdetails.otherdefict}" onInput="return validatename(id);"style="display:none ">
-           <br><span id="otherdeficterror" style="color:red"> </span>
+           <span id="otherdeficterror" style="color:red"> </span>
            
            </td><td width="300"></td></tr>
            
