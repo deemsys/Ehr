@@ -1323,16 +1323,16 @@ document.getElementById("signerror").innerHTML=" ";
 					<option selected="selected" value="Mr" >Mr</option>
 					<option value="Mrs">Ms</option>
 					<option value="Ms">Miss</option>
-					</select>.<input type="text" name="name2" class="input_txtbx1" id="id2" onInput="validatealpha7();" value="${patientDetails.name}"><span id="error6" style="color: red;font-style:italic;"></span>body was <input type="text" onInput="validatealpha2();" id="bid" class="input_txtbx1" name="body"><span id="error1" style="color: red;font-style:italic;"></span> . <select  name="gender10" id="gender10">
+					</select>.<input type="text" name="name2" class="input_txtbx1" id="id2" onInput="validatealpha7();" value="${patientDetails.name}"><span id="error6" style="color: red;font-style:italic;"></span> body was <input type="text" onInput="validatealpha2();" id="bid" class="input_txtbx1" name="body"><span id="error1" style="color: red;font-style:italic;"></span> . <select  name="gender10" id="gender10">
 					<option selected="selected" value="His" >His</option>
 					<option value="Her">Her</option>
-					</select> <input type="text"  class="input_txtbx1" onInput="validatealpha3();" id="sid" name="slammed"><span id="error2" style="color: red;font-style:italic;"></span>slammed into the <input type="text" onInput="validatealpha4();" class="input_txtbx1" id="sid1" name="slammed1"><span id="error3" style="color: red;font-style:italic;"></span>. Symptoms of <input type="text" id="syid" onInput="validatealpha5();"  class="input_txtbx1" name="symptom"><span id="error4" style="color: red;font-style:italic;"></span>, directly related to the accident, appeared <input type="text" id="aid" onInput="validatealpha6();"  class="input_txtbx1" name="appeared"><span id="error5" style="color: red;font-style:italic;"></span> after the incident.  The victim did (not )drive to the emergency room after the wreck. </p>
+					</select> <input type="text"  class="input_txtbx1" onInput="validatealpha3();" id="sid" name="slammed"><span id="error2" style="color: red;font-style:italic;"></span> slammed into the <input type="text" onInput="validatealpha4();" class="input_txtbx1" id="sid1" name="slammed1"><span id="error3" style="color: red;font-style:italic;"></span>. Symptoms of <input type="text" id="syid" onInput="validatealpha5();"  class="input_txtbx1" name="symptom"><span id="error4" style="color: red;font-style:italic;"></span>, directly related to the accident, appeared <input type="text" id="aid" onInput="validatealpha6();"  class="input_txtbx1" name="appeared"><span id="error5" style="color: red;font-style:italic;"></span> after the incident.  The victim did (not )drive to the emergency room after the wreck. </p>
                <p><B style="font-size:14px">Past History</B></p>
                <p style="line-height:26px">Past history revealed (no prior auto accidents, a prior automobile accident which occurred in <input type="text"  class="input_txtbx1" onInput="validatealpha8();" name="priordate" id="did"><span id="error7" style="color: red;font-style:italic;"></span>. <select  name="gender11" id="gender11">
 					<option selected="selected" value="Mr" >Mr</option>
 					<option value="Mrs">Ms</option>
 					<option value="Ms">Miss</option>
-					</select><input type="text"  class="input_txtbx1" id="id3" onInput="validatealpha9();" name="name3" value="${patientDetails.name}"><span id="error8" style="color: red;font-style:italic;"></span>stated that there were no residual effects from that accident and <select  name="gender12" id="gender12">
+					</select><input type="text"  class="input_txtbx1" id="id3" onInput="validatealpha9();" name="name3" value="${patientDetails.name}"><span id="error8" style="color: red;font-style:italic;"></span> stated that there were no residual effects from that accident and <select  name="gender12" id="gender12">
 					<option selected="selected" value="He" >He</option>
 					<option value="She">She</option>
 					</select> was in good health prior to the current accident.  Past medical history revealed <input type="text" id="id4" onInput="validatealpha10();" class="input_txtbx1" name="pastmedicalhistory"><span id="error9" style="color: red;font-style:italic;"></span>.  There <select  name="gender13" id="gender13">
@@ -1357,7 +1357,7 @@ document.getElementById("signerror").innerHTML=" ";
 					<option selected="selected" value="Mr" >Mr</option>
 					<option value="Mrs">Ms</option>
 					<option value="Ms">Miss</option>
-					</select> <input type="text" name="name4" class="input_txtbx1" id="id5" onInput="validatepre();" value="${patientDetails.name}"><span id="errorpre" style="color: red;font-style:italic;"></span> presented to this clinic on <input type="text"  class="input_txtbx1" name="clinicdate" id="datepicker7"><span class="err" id="datepicker7error"></span>with complaints of <select  name="gender19" id="gender19">
+					</select> <input type="text" name="name4" class="input_txtbx1" id="id5" onInput="validatepre();" value="${patientDetails.name}"><span id="errorpre" style="color: red;font-style:italic;"></span> presented to this clinic on <input type="text"  class="input_txtbx1" name="clinicdate" id="datepicker7"><span class="err" id="datepicker7error"></span> with complaints of <select  name="gender19" id="gender19">
 					<option selected="selected" value="Headache" >Headache</option>
 					<option value="Neck pain">Neck pain</option>
 					<option value="Mid Back Pain">Mid Back Pain</option>
@@ -1368,17 +1368,17 @@ document.getElementById("signerror").innerHTML=" ";
 					<option value="L-R leg Pain">L-R Leg Pain</option>
 					<option value="L-R foot Pain">L-R foot Pain</option>
 					<option value="L-R gluteal pain">L-R gluteal pain</option>
-					</select>due to a motor vehicle accident on <input type="text" class="input_txtbx1" name="vehicleaccident" id="datepicker12"><span class="err" id="datepicker12error"></span>.  <select  name="gender20" id="gender20">
+					</select> due to a motor vehicle accident on <input type="text" class="input_txtbx1" name="vehicleaccident" id="datepicker12"><span class="err" id="datepicker12error"></span>.  <select  name="gender20" id="gender20">
 					<option selected="selected" value="Activity" >Activity</option>
 					<option value="Bending">Bending</option>
 					<option value="Twisting">Twisting</option>
 					<option value="Walking">Walking</option>
 					<option value="Lifting">Lifting</option>
 					<option value="Other">Other</option>
-					</select>aggravated  condition while <select  name="gender21" id="gender21">
+					</select> aggravated  condition while <select  name="gender21" id="gender21">
 					<option selected="selected" value="His" >His</option>
 					<option value="Her">Her</option>
-					</select> <input type="text"  class="input_txtbx1" id="id6" onInput="validatepre1();" name="allieviated"><span id="errorpre1" style="color: red;font-style:italic;"></span>allieviated it.  <select  name="gender22" id="gender22">
+					</select> <input type="text"  class="input_txtbx1" id="id6" onInput="validatepre1();" name="allieviated"><span id="errorpre1" style="color: red;font-style:italic;"></span> allieviated it.  <select  name="gender22" id="gender22">
 					<option selected="selected" value="He" >He</option>
 					<option value="She">She</option>
 					</select> described <select  name="gender23" id="gender23">
@@ -1480,7 +1480,7 @@ document.getElementById("signerror").innerHTML=" ";
 					<option selected="selected" value="Cervical">Cervical</option>
 					<option value="Thoracic">Thoracic</option>
 					<option value="Lumbar">Lumbar</option>
-					</select>spine revealed paraspinal pain, spasm, edema and trigger points. There was <input type="text" onInput="validatedp();" class="input_txtbx1" id="tid1" name="tenderness"><span id="dperror" style="color: red;font-style:italic;"></span> tenderness on the <select  name="gender40" id="gender40">
+					</select> spine revealed paraspinal pain, spasm, edema and trigger points. There was <input type="text" onInput="validatedp();" class="input_txtbx1" id="tid1" name="tenderness"><span id="dperror" style="color: red;font-style:italic;"></span> tenderness on the <select  name="gender40" id="gender40">
 					<option selected="selected" value="L-R">L-R</option>
 					<option value="Bilaterally">Bilaterally</option>
 					</select> and vertebral fixations. Tonicity of the <select  name="gendernew6" id="gendernew6">
@@ -1488,7 +1488,7 @@ document.getElementById("signerror").innerHTML=" ";
 					<option value="L-R Sternocleidomastoid">L-R Sternocleidomastoid</option>
 					<option value="L-R quadratus lumborum">L-R quadratus lumborum</option>
 					<option value="L-R hamstring">L-R hamstring</option>
-					</select>on the <select  name="gender41" id="gender41">
+					</select> on the <select  name="gender41" id="gender41">
 					<option selected="selected" value="L-R">L-R</option>
 					<option value="Bilaterally">Bilaterally</option>
 					</select> was evident. Also noted was ,<input type="text" id="noteid" onInput="validatedp1();"  class="input_txtbx1" name="noted"><span id="noteerror" style="color: red;font-style:italic;"></span>.   </p>
@@ -1732,7 +1732,7 @@ document.getElementById("signerror").innerHTML=" ";
 					<option value="Lumbar">Lumbar</option>
 					<option value="SI">SI</option>
 					<option value="Other">Other</option>
-					</select>series and a  <select  name="gender49" id="gender49" onchange='Checksymptom(this.value);'>
+					</select> series and a  <select  name="gender49" id="gender49" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Two">Two</option>
 					<option value="Three">Three</option>
 					<option value="Four">Four</option>
@@ -1745,7 +1745,7 @@ document.getElementById("signerror").innerHTML=" ";
 					<option value="Lumbar">Lumbar</option>
 					<option value="SI">SI</option>
 					<option value="Other">Other</option>
-					</select>series was performed and found <select  name="gender51" id="gender51" onchange='Checksymptom(this.value);'>
+					</select> series was performed and found <select  name="gender51" id="gender51" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Negative for recent fracture">Negative for recent fracture</option>
 					<option value="Dislocation or gross osteopathology">Dislocation or gross osteopathology</option>
 					<option value="Positive for fracture of the">Positive for fracture of the</option>
@@ -1756,10 +1756,10 @@ document.getElementById("signerror").innerHTML=" ";
 					</select><select  name="gender53" id="gender53" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Hypolordosis">Hypolordosis</option>
 					<option value="Hyperlordosis">Hyperlordosis</option>
-					</select>present due to spastic musculature.Degenerative joint disease of the spine was <select  name="gender54" id="gender54" onchange='Checksymptom(this.value);'>
+					</select> present due to spastic musculature.Degenerative joint disease of the spine was <select  name="gender54" id="gender54" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Not Present">Not Present</option>
 					<option value="Present at the">Present at the</option>
-					</select><input type="text" class="input_txtbx1"  name="presentlevel" id="presentlevel" style='display:none' placeholder="specify the level">levels. There were <select  name="gender55" id="gender55" onchange='Checksymptom(this.value);'>
+					</select><input type="text" class="input_txtbx1"  name="presentlevel" id="presentlevel" style='display:none' placeholder="specify the level"> levels. There were <select  name="gender55" id="gender55" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Anterior">Anterior</option>
 					<option value="Posterior">Thoracic</option>
 					</select> vertebral body osteophytes of <input type="text" class="input_txtbx1" id="oid7" oninput="validateo();" name="osteophytes"><span id="oerror7" style="color: red;font-style:italic;"></span>.  A <select  name="gender56" id="gender56" onchange='Checksymptom(this.value);'>
@@ -1776,11 +1776,11 @@ document.getElementById("signerror").innerHTML=" ";
 					<option selected="selected" value="Cervical">Cervical</option>
 					<option value="Thoracic">Thoracic</option>
 					<option value="Lumbar">Lumbar</option>
-					</select>spine.  Soft tissue edema was apparent in the paraspinal muscle tissue of the <select  name="gender60" id="gender60" onchange='Checksymptom(this.value);'>
+					</select> spine.  Soft tissue edema was apparent in the paraspinal muscle tissue of the <select  name="gender60" id="gender60" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Cervical">Cervical</option>
 					<option value="Thoracic">Thoracic</option>
 					<option value="Lumbar">Lumbar</option>
-					</select>spine.  Subluxations were present at <input type="text"  class="input_txtbx1" oninput="validatesub();" id="subid" name="subluxations"><span id="suberror" style="color: red;font-style:italic;"></span>.</p>
+					</select> spine.  Subluxations were present at <input type="text"  class="input_txtbx1" oninput="validatesub();" id="subid" name="subluxations"><span id="suberror" style="color: red;font-style:italic;"></span>.</p>
          		</div>
          		</div>
          		</td>
@@ -1849,7 +1849,7 @@ Injuries of this nature and magnitude respond well to a treatment program consis
 					<option selected="selected" value="Mr">Mr</option>
 					<option value="Mrs">Mrs</option>
 					<option value="Ms">Ms</option>
-					</select> <input type="text" name="pname" id="pnid1" onInput="validatepatname1();" class="input_txtbx1" value="${patientDetails.name}"><span id="paterror1" style="color: red;font-style:italic;"></span> on <input type="text"    class="input_txtbx1" name="date9" id="datepicker9"><span class="err" id="datepicker9error" ></span>and during that period of time, records indicate <select  name="gender62" id="gender62" onchange='Checksymptom(this.value);'>
+					</select> <input type="text" name="pname" id="pnid1" onInput="validatepatname1();" class="input_txtbx1" value="${patientDetails.name}"><span id="paterror1" style="color: red;font-style:italic;"></span> on <input type="text"    class="input_txtbx1" name="date9" id="datepicker9"><span class="err" id="datepicker9error" ></span> and during that period of time, records indicate <select  name="gender62" id="gender62" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="He">He</option>
 					<option value="She">She</option>
 					</select> experienced steady improvement.
@@ -1888,7 +1888,7 @@ Injuries of this nature and magnitude respond well to a treatment program consis
 					</select> neck and lower back may create a symptomatic exacerbation of <select  name="gender73" id="gender73" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="His">His</option>
 					<option value="Her">Her</option>
-					</select>condition.  At that time, <select  name="gender74" id="gender74" onchange='Checksymptom(this.value);'>
+					</select> condition.  At that time, <select  name="gender74" id="gender74" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="He">He</option>
 					<option value="She">She</option>
 					</select> may need to resume chiropractic care for palliative purposes.

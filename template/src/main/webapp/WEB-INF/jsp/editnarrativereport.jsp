@@ -903,16 +903,16 @@ document.getElementById("signerror").innerHTML=" ";
 					<option selected="selected" value="Mr" <c:if test="${narrativereport.gender9=='Mr'}"><c:out value="Selected"/></c:if>>Mr</option>
 					<option value="Mrs" <c:if test="${narrativereport.gender9=='Mrs'}"><c:out value="Selected"/></c:if>>Ms</option>
 					<option value="Ms" <c:if test="${narrativereport.gender9=='Ms'}"><c:out value="Selected"/></c:if>>Ms</option>
-					</select>.<input type="text"  class="input_txtbx1" name="name2" id="id2" onInput="validatealpha7();" value="${narrativereport.name2}"><span id="error6" style="color: red;font-style:italic;"></span>body was <input type="text" onInput="validatealpha2();" id="bid" class="input_txtbx1" name="body" value="${narrativereport.body}"><span id="error1" style="color: red;font-style:italic;"></span> . <select  name="gender10" id="gender10">
+					</select>.<input type="text"  class="input_txtbx1" name="name2" id="id2" onInput="validatealpha7();" value="${narrativereport.name2}"><span id="error6" style="color: red;font-style:italic;"></span> body was <input type="text" onInput="validatealpha2();" id="bid" class="input_txtbx1" name="body" value="${narrativereport.body}"><span id="error1" style="color: red;font-style:italic;"></span> . <select  name="gender10" id="gender10">
 					<option selected="selected" value="His" <c:if test="${narrativereport.gender10=='His'}"><c:out value="Selected"/></c:if> >His</option>
 					<option value="Her" <c:if test="${narrativereport.gender10=='Her'}"><c:out value="Selected"/></c:if>>Her</option>
-					</select> <input type="text" onInput="validatealpha3();" id="sid" class="input_txtbx1" name="slammed" value="${narrativereport.slammed}"><span id="error2" style="color: red;font-style:italic;"></span>slammed into the <input type="text" onInput="validatealpha4();" id="sid1"  class="input_txtbx1" name="slammed1" value="${narrativereport.slammed1}"><span id="error3" style="color: red;font-style:italic;"></span>. Symptoms of <input type="text"  class="input_txtbx1" id="syid" onInput="validatealpha5();" name="symptom" value="${narrativereport.symptom }"><span id="error4" style="color: red;font-style:italic;"></span>, directly related to the accident, appeared <input type="text" id="aid" onInput="validatealpha6();"  class="input_txtbx1" name="appeared" value="${narrativereport.appeared }"><span id="error5" style="color: red;font-style:italic;"></span>  after the incident.  The victim did (not )drive to the emergency room after the wreck. </p>
+					</select> <input type="text" onInput="validatealpha3();" id="sid" class="input_txtbx1" name="slammed" value="${narrativereport.slammed}"><span id="error2" style="color: red;font-style:italic;"></span> slammed into the <input type="text" onInput="validatealpha4();" id="sid1"  class="input_txtbx1" name="slammed1" value="${narrativereport.slammed1}"><span id="error3" style="color: red;font-style:italic;"></span>. Symptoms of <input type="text"  class="input_txtbx1" id="syid" onInput="validatealpha5();" name="symptom" value="${narrativereport.symptom }"><span id="error4" style="color: red;font-style:italic;"></span>, directly related to the accident, appeared <input type="text" id="aid" onInput="validatealpha6();"  class="input_txtbx1" name="appeared" value="${narrativereport.appeared }"><span id="error5" style="color: red;font-style:italic;"></span>  after the incident.  The victim did (not )drive to the emergency room after the wreck. </p>
                <p><B style="font-size:14px">Past History</B></p>
                <p style="line-height:26px">Past history revealed (no prior auto accidents, a prior automobile accident which occurred in <input type="text"  class="input_txtbx1" onInput="validatealpha8();" id="did" name="priordate" id="datepicker4" value="${narrativereport.priordate}"><span id="error7" style="color: red;font-style:italic;"></span>. <select  name="gender11" id="gender11">
 					<option selected="selected" value="Mr" <c:if test="${narrativereport.gender11=='Mr'}"><c:out value="Selected"/></c:if> >Mr</option>
 					<option value="Mrs" <c:if test="${narrativereport.gender11=='Mrs'}"><c:out value="Selected"/></c:if>>Mrs</option>
 					<option value="Ms" <c:if test="${narrativereport.gender11=='Ms'}"><c:out value="Selected"/></c:if>>Ms</option>
-					</select><input type="text" class="input_txtbx1" id="id3" onInput="validatealpha9();"  name="name3" value="${narrativereport.name3}"><span id="error8" style="color: red;font-style:italic;"></span>stated that there were no residual effects from that accident and <select  name="gender12" id="gender12">
+					</select><input type="text" class="input_txtbx1" id="id3" onInput="validatealpha9();"  name="name3" value="${narrativereport.name3}"><span id="error8" style="color: red;font-style:italic;"></span> stated that there were no residual effects from that accident and <select  name="gender12" id="gender12">
 					<option selected="selected" value="He" <c:if test="${narrativereport.gender12=='He'}"><c:out value="Selected"/></c:if>>He</option>
 					<option value="She" <c:if test="${narrativereport.gender12=='She'}"><c:out value="Selected"/></c:if>>She</option>
 					</select> was in good health prior to the current accident.  Past medical history revealed <input type="text" id="id4" onInput="validatealpha10();" class="input_txtbx1" name="pastmedicalhistory" value="${narrativereport.pastmedicalhistory}"><span id="error9" style="color: red;font-style:italic;"></span>.  There <select  name="gender13" id="gender13">
@@ -937,7 +937,7 @@ document.getElementById("signerror").innerHTML=" ";
 					<option selected="selected" value="Mr" <c:if test="${narrativereport.gender18=='Mr'}"><c:out value="Selected"/></c:if>>Mr</option>
 					<option value="Mrs" <c:if test="${narrativereport.gender18=='Mrs'}"><c:out value="Selected"/></c:if>>Mrs</option>
 					<option value="Ms" <c:if test="${narrativereport.gender18=='Ms'}"><c:out value="Selected"/></c:if>>Ms</option>
-					</select> <input type="text"  class="input_txtbx1" id="id5" onInput="validatepre();" name="name4" value="${narrativereport.name4}"><span id="errorpre" style="color: red;font-style:italic;"></span> presented to this clinic on <input type="text"  class="input_txtbx1" name="clinicdate" id="datepicker7" value="${narrativereport.clinicdate}"><span class="err" id="datepicker7error"></span>with complaints of <select  name="gender19" id="gender19">
+					</select> <input type="text"  class="input_txtbx1" id="id5" onInput="validatepre();" name="name4" value="${narrativereport.name4}"><span id="errorpre" style="color: red;font-style:italic;"></span> presented to this clinic on <input type="text"  class="input_txtbx1" name="clinicdate" id="datepicker7" value="${narrativereport.clinicdate}"><span class="err" id="datepicker7error"></span> with complaints of <select  name="gender19" id="gender19">
 					<option selected="selected" value="Headache" <c:if test="${narrativereport.gender19=='Headache'}"><c:out value="Selected"/></c:if>>Headache</option>
 					<option value="Neck pain" <c:if test="${narrativereport.gender19=='Neck pain'}"><c:out value="Selected"/></c:if>>Neck pain</option>
 					<option value="Mid Back Pain" <c:if test="${narrativereport.gender19=='Mid Back Pain'}"><c:out value="Selected"/></c:if>>Mid Back Pain</option>
@@ -948,17 +948,17 @@ document.getElementById("signerror").innerHTML=" ";
 					<option value="L-R leg Pain" <c:if test="${narrativereport.gender19=='L-R leg Pain'}"><c:out value="Selected"/></c:if>>L-R Leg Pain</option>
 					<option value="L-R foot Pain" <c:if test="${narrativereport.gender19=='L-R foot Pain'}"><c:out value="Selected"/></c:if>>L-R foot Pain</option>
 					<option value="L-R gluteal pain" <c:if test="${narrativereport.gender19=='L-R gluteal Pain'}"><c:out value="Selected"/></c:if>>L-R gluteal pain</option>
-					</select>due to a motor vehicle accident on <input type="text" name="vehicleaccident" class="input_txtbx1" id="datepicker12" value="${narrativereport.vehicleaccident}"><span class="err" id="datepicker12error"></span>.  <select  name="gender20" id="gender20">
+					</select> due to a motor vehicle accident on <input type="text" name="vehicleaccident" class="input_txtbx1" id="datepicker12" value="${narrativereport.vehicleaccident}"><span class="err" id="datepicker12error"></span>.  <select  name="gender20" id="gender20">
 					<option selected="selected" value="Activity" <c:if test="${narrativereport.gender20=='Activity'}"><c:out value="Selected"/></c:if>>Activity</option>
 					<option value="Bending" <c:if test="${narrativereport.gender20=='Bending'}"><c:out value="Selected"/></c:if>>Bending</option>
 					<option value="Twisting" <c:if test="${narrativereport.gender20=='Twisting'}"><c:out value="Selected"/></c:if>>Twisting</option>
 					<option value="Walking" <c:if test="${narrativereport.gender20=='Walking'}"><c:out value="Selected"/></c:if>>Walking</option>
 					<option value="Lifting" <c:if test="${narrativereport.gender20=='Lifting'}"><c:out value="Selected"/></c:if>>Lifting</option>
 					<option value="Other" <c:if test="${narrativereport.gender20=='Other'}"><c:out value="Selected"/></c:if>>Other</option>
-					</select>aggravated  condition while <select  name="gender21" id="gender21">
+					</select> aggravated  condition while <select  name="gender21" id="gender21">
 					<option selected="selected" value="His" <c:if test="${narrativereport.gender21=='His'}"><c:out value="Selected"/></c:if>>His</option>
 					<option value="Her" <c:if test="${narrativereport.gender21=='Her'}"><c:out value="Selected"/></c:if>>Her</option>
-					</select> <input type="text" id="id6" onInput="validatepre1();" class="input_txtbx1" name="allieviated" value="${narrativereport.allieviated}"><span id="errorpre1" style="color: red;font-style:italic;"></span>allieviated it.  <select  name="gender22" id="gender22">
+					</select> <input type="text" id="id6" onInput="validatepre1();" class="input_txtbx1" name="allieviated" value="${narrativereport.allieviated}"><span id="errorpre1" style="color: red;font-style:italic;"></span> allieviated it.  <select  name="gender22" id="gender22">
 					<option selected="selected" value="He" <c:if test="${narrativereport.gender22=='He'}"><c:out value="Selected"/></c:if>>He</option>
 					<option value="She" <c:if test="${narrativereport.gender22=='She'}"><c:out value="Selected"/></c:if>>She</option>
 					</select> described <select  name="gender23" id="gender23">
@@ -1060,7 +1060,7 @@ document.getElementById("signerror").innerHTML=" ";
 					<option selected="selected" value="Cervical" <c:if test="${narrativereport.gendernew5=='Cervical'}"><c:out value="Selected"/></c:if>>Cervical</option>
 					<option value="Thoracic"<c:if test="${narrativereport.gendernew5=='Thoracic'}"><c:out value="Selected"/></c:if>>Thoracic</option>
 					<option value="Lumbar" <c:if test="${narrativereport.gendernew5=='Lumbar'}"><c:out value="Selected"/></c:if>>Lumbar</option>
-					</select>spine revealed paraspinal pain, spasm, edema and trigger points. There was <input type="text" onInput="validatedp();"  id="tid1" class="input_txtbx1" name="tenderness" value="${narrativereport.tenderness}"><span id="dperror" style="color: red;font-style:italic;"></span> tenderness on the <select  name="gender40" id="gender40">
+					</select> spine revealed paraspinal pain, spasm, edema and trigger points. There was <input type="text" onInput="validatedp();"  id="tid1" class="input_txtbx1" name="tenderness" value="${narrativereport.tenderness}"><span id="dperror" style="color: red;font-style:italic;"></span> tenderness on the <select  name="gender40" id="gender40">
 					<option selected="selected" value="L-R" <c:if test="${narrativereport.gender40=='L-R'}"><c:out value="Selected"/></c:if>>L-R</option>
 					<option value="Bilaterally" <c:if test="${narrativereport.gender40=='Bilaterally'}"><c:out value="Selected"/></c:if>>Bilaterally</option>
 					</select> and vertebral fixations. Tonicity of the <select  name="gendernew6" id="gendernew6">
@@ -1068,7 +1068,7 @@ document.getElementById("signerror").innerHTML=" ";
 					<option value="L-R Sternocleidomastoid" <c:if test="${narrativereport.gendernew6=='L-R Sternocleidomastoid'}"><c:out value="Selected"/></c:if>>L-R Sternocleidomastoid</option>
 					<option value="L-R quadratus lumborum" <c:if test="${narrativereport.gendernew6=='L-R quadratus lumborum'}"><c:out value="Selected"/></c:if>>L-R quadratus lumborum</option>
 					<option value="L-R hamstring" <c:if test="${narrativereport.gendernew6=='L-R hamstring'}"><c:out value="Selected"/></c:if>>L-R hamstring</option>
-					</select>on the <select  name="gender41" id="gender41">
+					</select> on the <select  name="gender41" id="gender41">
 					<option selected="selected" value="L-R" <c:if test="${narrativereport.gender41=='L-R'}"><c:out value="Selected"/></c:if>>L-R</option>
 					<option value="Bilaterally" <c:if test="${narrativereport.gender41=='Bilaterally'}"><c:out value="Selected"/></c:if>>Bilaterally</option>
 					</select> was evident. Also noted was ,<input type="text" id="noteid" onInput="validatedp1();"  class="input_txtbx1" name="noted" value="${narrativereport.noted}"><span id="noteerror" style="color: red;font-style:italic;"></span>.   </p>
@@ -1305,13 +1305,13 @@ document.getElementById("signerror").innerHTML=" ";
 					<option value="Five" <c:if test="${narrativereport.gender47=='Five'}"><c:out value="Selected"/></c:if>>Five</option>
 					<option value="Six" <c:if test="${narrativereport.gender47=='Six'}"><c:out value="Selected"/></c:if>>Six</option>
 					<option value="Seven" <c:if test="${narrativereport.gender47=='Seven'}"><c:out value="Selected"/></c:if>>Seven</option>
-					</select>view <select  name="gender48" id="gender48" onchange='Checksymptom(this.value);'>
+					</select> view <select  name="gender48" id="gender48" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Cervical" <c:if test="${narrativereport.gender48=='Cervical'}"><c:out value="Selected"/></c:if>>Cervical</option>
 					<option value="Thoracic" <c:if test="${narrativereport.gender48=='Thoracic'}"><c:out value="Selected"/></c:if>>Thoracic</option>
 					<option value="Lumbar" <c:if test="${narrativereport.gender48=='Lumbar'}"><c:out value="Selected"/></c:if>>Lumbar</option>
 					<option value="SI" <c:if test="${narrativereport.gender48=='SI'}"><c:out value="Selected"/></c:if>>SI</option>
 					<option value="Other" <c:if test="${narrativereport.gender48=='Other'}"><c:out value="Selected"/></c:if>>Other</option>
-					</select>series and a  <select  name="gender49" id="gender49" onchange='Checksymptom(this.value);'>
+					</select> series and a  <select  name="gender49" id="gender49" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Two" <c:if test="${narrativereport.gender49=='Two'}"><c:out value="Selected"/></c:if>>Two</option>
 					<option value="Three" <c:if test="${narrativereport.gender49=='Three'}"><c:out value="Selected"/></c:if>>Three</option>
 					<option value="Four" <c:if test="${narrativereport.gender49=='Four'}"><c:out value="Selected"/></c:if>>Four</option>
@@ -1324,7 +1324,7 @@ document.getElementById("signerror").innerHTML=" ";
 					<option value="Lumbar" <c:if test="${narrativereport.gender50=='Lumbar'}"><c:out value="Selected"/></c:if>>Lumbar</option>
 					<option value="SI" <c:if test="${narrativereport.gender50=='SI'}"><c:out value="Selected"/></c:if>>SI</option>
 					<option value="Other" <c:if test="${narrativereport.gender50=='Other'}"><c:out value="Selected"/></c:if>>Other</option>
-					</select>series was performed and found <select  name="gender51" id="gender51" onchange='Checksymptom(this.value);'>
+					</select> series was performed and found <select  name="gender51" id="gender51" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Negative for recent fracture" <c:if test="${narrativereport.gender51=='Negative for recent fracture'}"><c:out value="Selected"/></c:if>>Negative for recent fracture</option>
 					<option value="Dislocation or gross osteopathology" <c:if test="${narrativereport.gender51=='Dislocation or gross osteopathology'}"><c:out value="Selected"/></c:if>>Dislocation or gross osteopathology</option>
 					<option value="Positive for fracture of the" <c:if test="${narrativereport.gender51=='Positive for fracture of the'}"><c:out value="Selected"/></c:if>>Positive for fracture of the</option>
@@ -1335,7 +1335,7 @@ document.getElementById("signerror").innerHTML=" ";
 					</select><select  name="gender53" id="gender53" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Hypolordosis" <c:if test="${narrativereport.gender53=='Hypolordosis'}"><c:out value="Selected"/></c:if>>Hypolordosis</option>
 					<option value="Hyperlordosis" <c:if test="${narrativereport.gender53=='Hyperlordosis'}"><c:out value="Selected"/></c:if>>Hyperlordosis</option>
-					</select>present due to spastic musculature.Degenerative joint disease of the spine was <select  name="gender54" id="gender54" onchange='Checksymptom(this.value);'>
+					</select> present due to spastic musculature.Degenerative joint disease of the spine was <select  name="gender54" id="gender54" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Not Present" <c:if test="${narrativereport.gender54=='Not present'}"><c:out value="Selected"/></c:if>>Not Present</option>
 					<option value="Present at the" <c:if test="${narrativereport.gender54=='Present at the'}"><c:out value="Selected"/></c:if>>Present at the</option>
 					</select><input type="text" class="input_txtbx1"  name="presentlevel" id="presentlevel" style='display:none' placeholder="specify the level" value="${narrativereport.presentlevel}">levels. There were <select  name="gender55" id="gender55" onchange='Checksymptom(this.value);'>
@@ -1355,7 +1355,7 @@ document.getElementById("signerror").innerHTML=" ";
 					<option selected="selected" value="Cervical" <c:if test="${narrativereport.gender59=='Cervical'}"><c:out value="Selected"/></c:if>>Cervical</option>
 					<option value="Thoracic" <c:if test="${narrativereport.gender59=='Thoracic'}"><c:out value="Selected"/></c:if>>Thoracic</option>
 					<option value="Lumbar" <c:if test="${narrativereport.gender59=='Lumbar'}"><c:out value="Selected"/></c:if>>Lumbar</option>
-					</select>spine.  Soft tissue edema was apparent in the paraspinal muscle tissue of the <select  name="gender60" id="gender60" onchange='Checksymptom(this.value);'>
+					</select> spine.  Soft tissue edema was apparent in the paraspinal muscle tissue of the <select  name="gender60" id="gender60" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Cervical" <c:if test="${narrativereport.gender60=='Cervical'}"><c:out value="Selected"/></c:if>>Cervical</option>
 					<option value="Thoracic" <c:if test="${narrativereport.gender60=='Thoracic'}"><c:out value="Selected"/></c:if>>Thoracic</option>
 					<option value="Lumbar" <c:if test="${narrativereport.gender60=='Lumbar'}"><c:out value="Selected"/></c:if>>Lumbar</option>
@@ -1427,7 +1427,7 @@ Injuries of this nature and magnitude respond well to a treatment program consis
 					<option selected="selected" value="Mr" <c:if test="${narrativereport.gender61=='Mr'}"><c:out value="Selected"/></c:if> >Mr</option>
 					<option value="Mrs" <c:if test="${narrativereport.gender61=='Mrs'}"><c:out value="Selected"/></c:if>>Mrs</option>
 					<option value="Ms" <c:if test="${narrativereport.gender61=='Ms'}"><c:out value="Selected"/></c:if>>Ms</option>
-					</select> <input type="text"  class="input_txtbx1" id="pnid1" onInput="validatepatname1();" name="pname" value="${narrativereport.pname}"><span id="paterror1" style="color: red;font-style:italic;"></span>  on <input type="text"  class="input_txtbx1" name="date9" id="datepicker9" value="${narrativereport.date9}"><span class="err" id="datepicker9error" ></span>and during that period of time, records indicate <select  name="gender62" id="gender62" onchange='Checksymptom(this.value);'>
+					</select> <input type="text"  class="input_txtbx1" id="pnid1" onInput="validatepatname1();" name="pname" value="${narrativereport.pname}"><span id="paterror1" style="color: red;font-style:italic;"></span>  on <input type="text"  class="input_txtbx1" name="date9" id="datepicker9" value="${narrativereport.date9}"><span class="err" id="datepicker9error" ></span> and during that period of time, records indicate <select  name="gender62" id="gender62" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="He" <c:if test="${narrativereport.gender62=='He'}"><c:out value="Selected"/></c:if>>He</option>
 					<option value="She" <c:if test="${narrativereport.gender62=='She'}"><c:out value="Selected"/></c:if>>She</option>
 					</select> experienced steady improvement.
@@ -1466,7 +1466,7 @@ Injuries of this nature and magnitude respond well to a treatment program consis
 					</select> neck and lower back may create a symptomatic exacerbation of <select  name="gender73" id="gender73" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="His" <c:if test="${narrativereport.gender73=='His'}"><c:out value="Selected"/></c:if>>His</option>
 					<option value="Her" <c:if test="${narrativereport.gender73=='Her'}"><c:out value="Selected"/></c:if>>Her</option>
-					</select>condition.  At that time, <select  name="gender74" id="gender74" onchange='Checksymptom(this.value);'>
+					</select> condition.  At that time, <select  name="gender74" id="gender74" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="He" <c:if test="${narrativereport.gender74=='He'}"><c:out value="Selected"/></c:if>>He</option>
 					<option value="She" <c:if test="${narrativereport.gender74=='She'}"><c:out value="Selected"/></c:if>>She</option>
 					</select> may need to resume chiropractic care for palliative purposes.
@@ -1479,7 +1479,7 @@ I hope you find this narrative report and discussion helpful in resolving the cu
 	            </p>
 	            <div align="right">
           <p><B style="font-size:13px">Sincerely,</B></p>
-          <p> <span class="err">*</span><input type="text" class="input_txtbx1" id="sign" name="sign" size="30" value="${narrativereport.sign}"><span id="signerror" style="color: red;font-style:italic;"><form:errors path="Copyofrequest.sign"></form:errors></span></p>
+          <p> <span class="err">*</span> <input type="text" class="input_txtbx1" id="sign" name="sign" size="30" value="${narrativereport.sign}"><span id="signerror" style="color: red;font-style:italic;"><form:errors path="Copyofrequest.sign"></form:errors></span></p>
           <p>Dr. Darrin A. Pordash</p>
           </div>
  <table align="right">
