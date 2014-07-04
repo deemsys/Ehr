@@ -110,6 +110,18 @@
     	        e.preventDefault();
     	});
     	});
+    $(function() {
+    	$("#break3").on("keypress", function(e) {
+    		if (e.which === 32 && !this.value.length)
+    	        e.preventDefault();
+    	});
+    	});
+    $(function() {
+    	$("#break4").on("keypress", function(e) {
+    		if (e.which === 32 && !this.value.length)
+    	        e.preventDefault();
+    	});
+    	});
    </script>
    <script>
    function validatename(id){
@@ -279,9 +291,9 @@ document.getElementById("pnameerror").innerHTML=" ";
           <table cellpadding="0" cellspacing="0" border="0" width="98%">
            
  <tr class="row1">
-<td style="width: 261px; "><h4><span class="err">*</span>Patient Name:</h4></td><td style="width: 284px; "><input type="text"  name="pname" id="pname" onInput="return validatename(id)";/><span class="err" id="pnameerror"><form:errors path="Thoracicexam.pname"></form:errors></span></td>
+<td style="width: 261px; "><h4><span class="err">*</span>&nbsp;&nbsp;Patient Name:</h4></td><td style="width: 284px; "><input type="text"  name="pname" id="pname" onInput="return validatename(id)";/><span class="err" id="pnameerror"><form:errors path="Thoracicexam.pname"></form:errors></span></td>
 <td width="600" style="width: 257px; ">
-<td><h4><span class="err">*</span>Date:</h4></td><td><input type="text"  id="datepicker" name="date" /><span class="err" id="datepickererror"><form:errors path="Thoracicexam.date"></form:errors></span></td>
+<td><h4><span class="err">*</span>&nbsp;&nbsp;Date:</h4></td><td><input type="text"  id="datepicker" name="date" /><span class="err" id="datepickererror"><form:errors path="Thoracicexam.date"></form:errors></span></td>
 </tr>
 </table>
 <br/>
@@ -448,7 +460,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  <td><B style="font-size:14px">FUNCTIONAL DEFICIT:</B></td><td><input type="checkbox" name="sitting" value="Sitting">Sitting 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="standing" value="Standing">Standing</td>
  <td width="150"><input type="checkbox" name="driving" value="Driving">Driving</td>
  <td width="150"><input type="checkbox" name="otherfunctional" value="Other" onclick="this.form.break3.style.visibility = this.checked? 'visible' : 'hidden'">Other&nbsp; </td>
- <td width="250"><input type="text" class="input_txtbx1" id="break3" name="break_text3" style="visibility:hidden" /></td>
+ <td width="250"><input type="text" class="input_txtbx1" id="break3" name="break_text3" style="visibility:hidden" onInput="return validatename(id)";/></td>
  </tr>         
  <tr class="row1">
  <td><B style="font-size:14px">ASSESSMENT / ADDITIONAL COMMENTS:</B></td><td><textarea name="assessment" id="assessment" rows='5' cols='40' onInput="return validatename(id)";></textarea></td><td></td>
@@ -514,11 +526,11 @@ document.getElementById("pnameerror").innerHTML=" ";
  <td width="250"><input type="checkbox" name="emg" value="EMG">EMG</td>
  <td width="250"><input type="checkbox" name="outside" value="Outside Referral">Outside Referral </td>
  <td width="250"><input type="checkbox" name="dc" value="D/C">D/C</td>
- <td width="250"><input type="checkbox" name="otheraddress" value="Other" onclick="this.form.break4.style.visibility = this.checked? 'visible' : 'hidden'">Other<input type="text" class="input_txtbx1" id="break4" name="break_text4" style="visibility:hidden" /></td>
+ <td width="250"><input type="checkbox" name="otheraddress" value="Other" onclick="this.form.break4.style.visibility = this.checked? 'visible' : 'hidden'">Other<input type="text" class="input_txtbx1" id="break4" name="break_text4" style="visibility:hidden" onInput="return validatename(id)";/></td>
  </tr>
  </tr>
  <br/>
- <table><tr><td><B style="font-size:14px"><span class="err">*</span>PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sign" id="sign" onInput="return validatename(id)";><span class="err" id="signerror"><form:errors path="Thoracicexam.sign"></form:errors></span></B></td></tr></table>
+ <table><tr><td><B style="font-size:14px"><span class="err">*</span>&nbsp;&nbsp;PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sign" id="sign" onInput="return validatename(id)";><span class="err" id="signerror"><form:errors path="Thoracicexam.sign"></form:errors></span></B></td></tr></table>
 <table align="right">
 <tr>
 <td><input type="submit" class="submit_btn" value="Save" id="saveid" onclick="return checkSubmit('this');"></td>
