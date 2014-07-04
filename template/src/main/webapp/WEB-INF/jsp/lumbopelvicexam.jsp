@@ -80,6 +80,12 @@
 		        e.preventDefault();
 		});
 		});
+	$(function() {
+		$("#break4").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});	
    </script>
    <script>
    function validatename(id){
@@ -644,7 +650,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  <td width="250"><input type="checkbox" name="emg" value="EMG">EMG</td>
  <td width="250"><input type="checkbox" name="outside" value="Outside Referral">Outside Referral </td>
  <td width="250"><input type="checkbox" name="dc" value="D/C">D/C</td>
- <td width="250"><input type="checkbox" name="otheraddress" value="Other" onclick="this.form.break4.style.visibility = this.checked? 'visible' : 'hidden'">Other<input type="text" class="input_txtbx1" id="break4" name="break_text4" style="visibility:hidden"></td>
+ <td width="250"><input type="checkbox" name="otheraddress" value="Other" onclick="this.form.break4.style.visibility = this.checked? 'visible' : 'hidden'">Other<input type="text" class="input_txtbx1" id="break4" name="break_text4" style="visibility:hidden" onInput="return validatename(id)";></td>
  </tr>
  <tr></tr>
  <br><div></div>
