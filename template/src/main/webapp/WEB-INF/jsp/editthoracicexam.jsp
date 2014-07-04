@@ -13,7 +13,191 @@
   P#mypar {font-style:calibri;
   line-height:18px;}
    </STYLE>
+  <script>
+    $(function() {
+	$("#pname").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+    $(function() {
+    	$("#datepicker").on("keypress", function(e) {
+    		if (e.which === 32 && !this.value.length)
+    	        e.preventDefault();
+    	});
+    	});	
+    $(function() {
+    	$("#muscle").on("keypress", function(e) {
+    		if (e.which === 32 && !this.value.length)
+    	        e.preventDefault();
+    	});
+    	});
+    $(function() {
+    	$("#swelling").on("keypress", function(e) {
+    		if (e.which === 32 && !this.value.length)
+    	        e.preventDefault();
+    	});
+    	});
+    $(function() {
+    	$("#othernotes").on("keypress", function(e) {
+    		if (e.which === 32 && !this.value.length)
+    	        e.preventDefault();
+    	});
+    	});
+    $(function() {
+    	$("#notes").on("keypress", function(e) {
+    		if (e.which === 32 && !this.value.length)
+    	        e.preventDefault();
+    	});
+    	});
+    $(function() {
+    	$("#assessment").on("keypress", function(e) {
+    		if (e.which === 32 && !this.value.length)
+    	        e.preventDefault();
+    	});
+    	});
+    $(function() {
+    	$("#times").on("keypress", function(e) {
+    		if (e.which === 32 && !this.value.length)
+    	        e.preventDefault();
+    	});
+    	});
+    $(function() {
+    	$("#week").on("keypress", function(e) {
+    		if (e.which === 32 && !this.value.length)
+    	        e.preventDefault();
+    	});
+    	});
+    $(function() {
+    	$("#sign").on("keypress", function(e) {
+    		if (e.which === 32 && !this.value.length)
+    	        e.preventDefault();
+    	});
+    	});
+    $(function() {
+    	$("#diagnosis1").on("keypress", function(e) {
+    		if (e.which === 32 && !this.value.length)
+    	        e.preventDefault();
+    	});
+    	});
+    $(function() {
+    	$("#diagnosis2").on("keypress", function(e) {
+    		if (e.which === 32 && !this.value.length)
+    	        e.preventDefault();
+    	});
+    	});
+    $(function() {
+    	$("#diagnosis3").on("keypress", function(e) {
+    		if (e.which === 32 && !this.value.length)
+    	        e.preventDefault();
+    	});
+    	});
+    $(function() {
+    	$("#diagnosis4").on("keypress", function(e) {
+    		if (e.which === 32 && !this.value.length)
+    	        e.preventDefault();
+    	});
+    	});
+    $(function() {
+    	$("#diagnosis5").on("keypress", function(e) {
+    		if (e.which === 32 && !this.value.length)
+    	        e.preventDefault();
+    	});
+    	});
+    $(function() {
+    	$("#diagnosis6").on("keypress", function(e) {
+    		if (e.which === 32 && !this.value.length)
+    	        e.preventDefault();
+    	});
+    	});
+    $(function() {
+    	$("#break3").on("keypress", function(e) {
+    		if (e.which === 32 && !this.value.length)
+    	        e.preventDefault();
+    	});
+    	});
+    $(function() {
+    	$("#break4").on("keypress", function(e) {
+    		if (e.which === 32 && !this.value.length)
+    	        e.preventDefault();
+    	});
+    	});
+    $(function() {
+    	$("#break4").on("keypress", function(e) {
+    		if (e.which === 32 && !this.value.length)
+    	        e.preventDefault();
+    	});
+    	});
+    $(function() {
+    	$("#sign").on("keypress", function(e) {
+    		if (e.which === 32 && !this.value.length)
+    	        e.preventDefault();
+    	});
+    	});
+   </script>
+   <script>
+   function validatename(id){
+	    var textInput = document.getElementById(id).value;
+	    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+	    document.getElementById(id).value = textInput;
+	}
    
+   
+   
+   </script> 
+   <script>
+
+	function checkSubmit()
+	{
+document.getElementById("pnameerror").innerHTML=" ";
+		
+		if(document.getElementById("pname").value=="")
+		{
+		document.getElementById("pnameerror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		document.getElementById("pnameerror").innerHTML="";
+	    if(document.getElementById("pname").value.length<4 || document.getElementById("pname").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("pnameerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
+		document.getElementById("datepickererror").innerHTML="";
+	if(document.getElementById("datepicker").value=="")
+		{
+		document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+	document.getElementById("datepickererror").innerHTML="";
+	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+		if(document.getElementById("datepicker").value.match(datechk)==null)
+	    {
+	    	document.getElementById("datepickererror").innerHTML="Invalid Date Format";
+	    	
+	        return false;
+	    }	
+			
+	document.getElementById("signerror").innerHTML="";
+	if(document.getElementById("sign").value=="")
+	{
+	document.getElementById("signerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("signerror").innerHTML="";
+    if(document.getElementById("sign").value.length<4 || document.getElementById("sign").value.length>=32)
+    {
+    	
+    	document.getElementById("signerror").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
+	}
+	</script>
     <script>
 $(function() {
    //$( "#draggable" ).draggable({ revert: "not valid" });
@@ -156,9 +340,9 @@ $(function() {
          <c:set value="${thoracicexamForm.thoracicexam[0]}" var="thoracicexam"/>    
  <tr class="row1">
  <input type="hidden" name="thoracicexamid" id="inp_id" value="${thoracicexam.thoracicexamid}">
-<td><h2><span class="err">*</span>Patient Name:</h2></td><td><input type="text"  name="pname" value="${thoracicexam.pname}"/><span class="err"><form:errors path="Thoracicexam.pname"></form:errors></span></td>
+<td><h2><span class="err">*</span>&nbsp;&nbsp;Patient Name:</h2></td><td><input type="text"  name="pname" id="pname" value="${thoracicexam.pname}" onInput="return validatename(id)";/><span class="err" id="pnameerror"><form:errors path="Thoracicexam.pname"></form:errors></span></td>
 <td width="600">
-<td><h2><span class="err">*</span>Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${thoracicexam.date}"/><span class="err"><form:errors path="Thoracicexam.date"></form:errors></span></td>
+<td><h2><span class="err">*</span>&nbsp;&nbsp;Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${thoracicexam.date}"/><span class="err" id="datepickererror"><form:errors path="Thoracicexam.date"></form:errors></span></td>
 </tr>
 </table>
 <br/>
@@ -173,9 +357,9 @@ $(function() {
  <td></td>
  </tr>
  <tr class="row1">
- <td width="200">Muscle Symmetry: </td><td><input type="text" name="muscle" value="${thoracicexam.muscle}"></td> 
+ <td width="200">Muscle Symmetry: </td><td><input type="text" name="muscle" id="muscle" value="${thoracicexam.muscle}" onInput="return validatename(id)";></td> 
  <td>Swelling / Discoloration: </td> 
- <td><input type="text" name="swelling" value="${thoracicexam.swelling}"></td>
+ <td><input type="text" name="swelling" id="swelling" value="${thoracicexam.swelling}" onInput="return validatename(id)";></td>
  </tr>
  <tr class="row1">
  <td width="200">Asymmetries (High Side Marked):</td>
@@ -221,7 +405,7 @@ $(function() {
  </table>
  <table>
  <tr class="row1">
- <td>Other/Notes:<input type="text" name="othernotes" value="${thoracicexam.othernotes}"></td> 
+ <td>Other/Notes:<input type="text" name="othernotes" id="othernotes" value="${thoracicexam.othernotes}" onInput="return validatename(id)";></td> 
  <td width="150">
  <td></td><td style="width: 203px; "></td>
  <td width="150">
@@ -259,12 +443,12 @@ $(function() {
  </tr>
   <tr class="row1">
  <td></td><td> </td> 
- <td width="100">T9-10:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t910" size="7" value="${thoracicexam.t910}" onkeypress="return validate(event)"></td><td width="50">T10-11:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t1011" size="7" onkeypress="return validate(event)" value="${thoracicexam.t1011}"> </td> 
+ <td width="100">T9-10:&nbsp;&nbsp;&nbsp;<input type="text" name="t910" size="7" value="${thoracicexam.t910}" onkeypress="return validate(event)"></td><td width="50">T10-11:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t1011" size="7" onkeypress="return validate(event)" value="${thoracicexam.t1011}"> </td> 
  <td><b>Soto Hall:	</b> </td><td><input type="text" name="sotohalll" size="5" value="${thoracicexam.sotohalll}" onkeypress="return validate(event)"> <input type="text" name="sotohallr" size="5" value="${thoracicexam.sotohallr}" onkeypress="return validate(event)"></td>
  </tr>
   <tr class="row1">
  <td> </td><td> </td> 
- <td width="100">T11-12: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t1112" size="7" value="${thoracicexam.t1112}" onkeypress="return validate(event)"></td><td width="50">	T12-L1:&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="t12l1" size="7" onkeypress="return validate(event)" value="${thoracicexam.t12l1}"> </td> 
+ <td width="100">T11-12: &nbsp;<input type="text" name="t1112" size="7" value="${thoracicexam.t1112}" onkeypress="return validate(event)"></td><td width="50">	T12-L1:&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="t12l1" size="7" onkeypress="return validate(event)" value="${thoracicexam.t12l1}"> </td> 
  <td><b>Sternal Compression:</b> </td><td><input type="text" name="sternall" size="5" value="${thoracicexam.sternall}" onkeypress="return validate(event)"> <input type="text" name="sternalr" size="5" value="${thoracicexam.sternalr}" onkeypress="return validate(event)"></td>
  </tr>
   <tr class="row1">
@@ -300,7 +484,7 @@ $(function() {
  </tr>
  <tr class="row1">
  <td> Notes</td>
- <td><textarea name="notes" rows='5' cols='40'> ${thoracicexam.notes}</textarea></td>
+ <td><textarea name="notes" id="notes" rows='5' cols='40' onInput="return validatename(id)";> ${thoracicexam.notes}</textarea></td>
  <td width="110">Intercostal:</td>
  <td><select name="intercostal" id="intercostal"  onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="T1" <c:if test="${thoracicexam.intercostal=='T1'}"><c:out value="Selected"/></c:if>  >T1</option>
@@ -325,10 +509,10 @@ $(function() {
  <td><B style="font-size:14px">FUNCTIONAL DEFICIT:</B></td><td><input type="checkbox" name="sitting" value="Sitting" <c:if test="${thoracicexam.sitting=='Sitting'}"><c:out value="Checked"/></c:if>>Sitting 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="standing" value="Standing" <c:if test="${thoracicexam.standing=='Standing'}"><c:out value="Checked"/></c:if>>Standing</td>
  <td width="150"><input type="checkbox" name="driving" value="Driving" <c:if test="${thoracicexam.driving=='Driving'}"><c:out value="Checked"/></c:if>>Driving</td>
  <td width="150"><input type="checkbox" id="otherfunctional" name="otherfunctional" value="Other" onclick="visible(this.value)" <c:if test="${thoracicexam.otherfunctional=='Other'}"><c:out value="Checked"/></c:if>>Other&nbsp; </td>
- <td width="250"><input type="text" class="input_txtbx1" id="break3" name="break_text3" style="display:none" value="${thoracicexam.break_text3 }"/></td>
+ <td width="250"><input type="text" class="input_txtbx1" id="break3" name="break_text3" style="display:none" value="${thoracicexam.break_text3 }" onInput="return validatename(id)";/></td>
  </tr>         
  <tr class="row1">
- <td><B style="font-size:14px">ASSESSMENT / ADDITIONAL COMMENTS:</B></td><td><textarea name="assessment" rows='5' cols='40'>${thoracicexam.assessment }</textarea></td><td></td>
+ <td><B style="font-size:14px">ASSESSMENT / ADDITIONAL COMMENTS:</B></td><td><textarea name="assessment" id="assessment" rows='5' cols='40' onInput="return validatename(id)";>${thoracicexam.assessment }</textarea></td><td></td>
  <td></td><td></td>
  <td></td>
  </tr>         
@@ -346,15 +530,15 @@ $(function() {
  <table>
  <tr class="row1">
  <td width="360"><B style="font-size:14px">DIAGNOSIS:</B></td>
- <td width="250">1)<input type="text" name="diagnosis1" value="${thoracicexam.diagnosis1}"></td>
- <td width="250">2)<input type="text" name="diagnosis2" value="${thoracicexam.diagnosis2 }"></td>
- <td width="250">3)<input type="text" name="diagnosis3" value="${thoracicexam.diagnosis3 }"></td>
- <td width="250">4)<input type="text" name="diagnosis4" value="${thoracicexam.diagnosis4 }"></td>
+ <td width="250">1)<input type="text" name="diagnosis1" id="diagnosis1" value="${thoracicexam.diagnosis1}" onInput="return validatename(id)";></td>
+ <td width="250">2)<input type="text" name="diagnosis2" id="diagnosis2" value="${thoracicexam.diagnosis2 }" onInput="return validatename(id)";></td>
+ <td width="250">3)<input type="text" name="diagnosis3" id="diagnosis3" value="${thoracicexam.diagnosis3 }" onInput="return validatename(id)";></td>
+ <td width="250">4)<input type="text" name="diagnosis4" id="diagnosis4" value="${thoracicexam.diagnosis4 }" onInput="return validatename(id)";></td>
  </tr>
  <tr class="row1">
  <td></td>
- <td width="250">5)<input type="text" name="diagnosis5" value="${thoracicexam.diagnosis5}"></td>
- <td width="250">6)<input type="text" name="diagnosis6" value="${thoracicexam.diagnosis6 }"></td>
+ <td width="250">5)<input type="text" name="diagnosis5" id="diagnosis5" value="${thoracicexam.diagnosis5}" onInput="return validatename(id)";></td>
+ <td width="250">6)<input type="text" name="diagnosis6" id="diagnosis6" value="${thoracicexam.diagnosis6 }" onInput="return validatename(id)";></td>
  <td></td>
  <td></td>
  </tr>
@@ -362,8 +546,8 @@ $(function() {
  <table>
  <tr class="row1">
  <td width="120"><B style="font-size:14px">PLAN:</B></td>
- <td><input type="text" name="times" value="${thoracicexam.times}">Times/week for </td>
- <td><input type="text" name="week" value="${thoracicexam.week}">weeks to address the </td>
+ <td><input type="text" name="times" id="times" value="${thoracicexam.times}" onInput="return validatename(id)";>Times/week for </td>
+ <td><input type="text" name="week" id="week" value="${thoracicexam.week}" onInput="return validatename(id)";>weeks to address the </td>
  <td>above functional & structural deficits.  </td>
  <td>Treatment will consist of the following:</td>
  </tr>
@@ -391,13 +575,13 @@ $(function() {
  <td width="250"><input type="checkbox" name="emg" value="EMG" <c:if test="${thoracicexam.emg=='EMG'}"><c:out value="Checked"/></c:if>>EMG</td>
  <td width="250"><input type="checkbox" name="outside" value="Outside Referral" <c:if test="${thoracicexam.outside=='Outside Referral'}"><c:out value="Checked"/></c:if>>Outside Referral </td>
  <td width="250"><input type="checkbox" name="dc" value="D/C" <c:if test="${thoracicexam.dc=='D/C'}"><c:out value="Checked"/></c:if>>D/C</td>
- <td width="250"><input type="checkbox" id="otheraddress" name="otheraddress" value="Other" onclick="visible(this.value)" <c:if test="${thoracicexam.otheraddress=='Other'}"><c:out value="Checked"/></c:if>>Other<input type="text" class="input_txtbx1" id="break4" name="break_text4" style="display:none" value="${thoracicexam.break_text4}"/></td>
+ <td width="250"><input type="checkbox" id="otheraddress" name="otheraddress" value="Other" onclick="visible(this.value)" <c:if test="${thoracicexam.otheraddress=='Other'}"><c:out value="Checked"/></c:if>>Other<input type="text" class="input_txtbx1" id="break4" name="break_text4" style="display:none" value="${thoracicexam.break_text4}" onInput="return validatename(id)";/></td>
  </tr>
  <br/>
- <table><tr><td><B style="font-size:14px"><span class="err"></span>PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sign" value="${thoracicexam.sign}"><span class="err"><form:errors path="Thoracicexam.sign"></form:errors></span></B></td></tr></table>
+ <table><tr><td><B style="font-size:14px"><span class="err">*</span>&nbsp;&nbsp;PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sign" id="sign" value="${thoracicexam.sign}" onInput="return validatename(id)";><span class="err" id="signerror"><form:errors path="Thoracicexam.sign"></form:errors></span></B></td></tr></table>
 <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="update"></td>
+<td><input type="submit" class="submit_btn" value="update" onclick="return checkSubmit('this');"></td>
 <td><input type="reset" class="submit_btn" value="Cancel" onclick="myclose()"> </td>
 <script>
  function myclose()
