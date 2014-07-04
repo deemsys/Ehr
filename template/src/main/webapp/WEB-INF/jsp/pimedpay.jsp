@@ -214,7 +214,7 @@ function doAjaxPost() {
 <br>
  <table cellpadding="0" cellspacing="0" border="0" width="100%">
  <tr >
-	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">*</span>Please enter a Patient User Name</td>
+	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">*</span> Please enter Patient UserName</td>
 				 <td width="20"></td> <td valign="top" align="left" class="input_txt" width="200">
 				   <input type="text" class="input_txtbx1" id="username" name="username" /><br/>
 				  </td>
@@ -446,42 +446,42 @@ function openWindow(h, w, url) {
  
         <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="40%"><span class="err">*</span>Name of Insurance Company</td>
+              <td height="25" width="40%"><span class="err">*</span> Name of Insurance Company</td>
               <td ><input type="text" class="input_txtbx1" name="insurance" id="insurance" onInput="return validatename(id)";/><span class="err" id="inserror"><form:errors path="Pimedpay.insurance"></form:errors></td>
               </tr>
               </table>
               
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="40%"><span class="err"></span>Address </td>
+              <td height="25" width="40%"><span class="err">&nbsp;</span>Address </td>
               <td><textarea rows="" cols="" name="address"  class="input_txtbx1" id="address"style="width: 169px; height: 62px"></textarea><span class="err"><form:errors path="Pimedpay.address"></form:errors></span></td>
               </tr>
               </table>
               <br>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="40%"><span class="err"></span>Regarding: </td>
+              <td height="25" width="40%"><span class="err">&nbsp;</span>Regarding: </td>
               <td><input type="text" class="input_txtbx1" name="reg" id="reg" onInput="return validatename(id)";><span class="err" id="regerror"></span></td>
               </tr>
               </table>
           
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="40%"><span class="err">*</span>Patient's Name</td>
+              <td height="25" width="40%"><span class="err">*</span> Patient's Name</td>
               <td><input type="text" class="input_txtbx1" name="nameofperson" id="nameofperson" onInput="return validatename(id)";><span class="err" id="nameerror"><form:errors path="Pimedpay.nameofperson"></form:errors></span></td>
               </tr>
               </table>
               <br>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="40%"><span class="err">*</span>Date of Accident: </td>
+              <td height="25" width="40%"><span class="err">*</span> Date of Accident: </td>
               <td><input type="text" class="input_txtbx1" name="dateofaccident" id="datepicker"><span class="err" id="dateerror"><form:errors path="Pimedpay.dateofaccident"></form:errors></span></td>
               </tr>
               </table><br><br>
               
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td  width="70"><span class="err"></span><b>Dear Madam or Sir:</b></td>
+              <td  width="70"><span class="err">&nbsp;</span><b>Dear Madam or Sir:</b></td>
               
            </td></tr>	
              </table>

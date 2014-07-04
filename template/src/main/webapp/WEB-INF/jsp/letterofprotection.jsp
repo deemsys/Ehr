@@ -226,7 +226,7 @@ function doAjaxPost() {
 <br><br><br>
  <table cellpadding="0" cellspacing="0" border="0" width="100%">
 	            <tr >
-	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">*</span>Please enter a Patient User Name</td>
+	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">*</span>Please Enter  Patient UserName:</td>
 				 <td width="20"></td> <td valign="top" align="left" class="input_txt" width="200">
 				   <input type="text" class="input_txtbx1" id="username" name="username" /><br/>
 				  </td>
@@ -428,7 +428,7 @@ function openWindow(h, w, url) {
 	                    
                 <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr><td width="375"></td>
-              <td><span class="err">*</span>Date</td>
+              <td><span class="err">*</span> Date</td>
               <td ><input type="text" class="input_txtbx1" name="date" id="datepicker" /><span class="err" id="derr"><form:errors path="Letterofprotection.date"></form:errors></td>
               </tr>
               </table>
@@ -436,38 +436,38 @@ function openWindow(h, w, url) {
             
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25"  width="40%"><span class="err">*</span>D.C:</td>
+              <td height="25"  width="40%"><span class="err">*</span> D.C:</td>
                <td ><input type="text" class="input_txtbx1" name="dc" id="dcr" onInput="return validatename(id)";/><span class="err" id="dcerr"><form:errors path="Letterofprotection.dc"></form:errors></td>
              
               </tr>
               <tr>
-              <td height="25" width="40%"><span class="err">*</span>Clinic Name:</td>
+              <td height="25" width="40%"><span class="err">*</span> Clinic Name:</td>
                <td ><input type="text" class="input_txtbx1" name="clinicname" id="clinicname" onInput="return validatename(id)";/><span class="err" id="clerr"><form:errors path="Letterofprotection.clinicname"></form:errors></td>
              
               </tr>
              </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="40%"><span class="err"></span>Address:</td>
+              <td height="25" width="40%"><span class="err">&nbsp;</span> Address:</td>
               <td><textarea rows="4" cols="28"  class="input_txtarea" name="address1" id="address1" style="width: 170px; height: 62px"></textarea><span class="err"><form:errors path="Letterofprotection.address1"></form:errors></span>
             </td></tr>
               </table>
              
             <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25"  width="40%"><span class="err"></span>IN RE: My Client:</td>
+              <td height="25"  width="40%"><span class="err">&nbsp;</span>IN RE: My Client:</td>
                <td ><input type="text" class="input_txtbx1" name="myclient" id="myclient" onInput="return validatename(id)";/><span class="err" id="myclienterror"><form:errors path="Letterofprotection.myclient"></form:errors></td>
              
               </tr>
               <tr>
-              <td height="25"  width="40%"><span class="err">*</span>Date of Accident</td>
+              <td height="25"  width="40%"><span class="err">*</span> Date of Accident</td>
                <td ><input type="text" class="input_txtbx1" name="dateofaccident" id="datepicker1" /><span class="err" id="daerr"><form:errors path="Letterofprotection.dateofaccident"></form:errors></td>
              
               </tr>
              </table><br><br>
              <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="40%"><span class="err">*</span>Dear Dr</td>
+              <td height="25" width="40%"><span class="err">*</span> Dear Dr</td>
               <td   ><input type="text" class="input_txtbx1" name="dearsir" id="dearsir" onInput="return validatename(id)";/><span class="err" id="suberr"><form:errors path="Letterofprotection.dearsir"></form:errors>
            </span></td></tr>	
              </table>

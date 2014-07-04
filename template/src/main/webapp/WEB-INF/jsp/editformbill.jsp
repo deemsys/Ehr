@@ -84,7 +84,7 @@ $(function() {
 <script type="text/javascript">
 	function confirmation() 
 	{
-	var answer = confirm("Are you Sure You Want to Delete Participant ?")
+	var answer = confirm("Are you Sure You Want to Delete Patient ?");
 	if (answer){
 		return true;
 	}
@@ -273,40 +273,40 @@ function validatename(id){
             
                 <table align="center" cellpadding="0" cellspacing="0" border="0"   width="100%"  ">
               <tr >
-             <td height="25" width="120"><span class="err">*</span>Insurance Company:</td>
+             <td height="25" width="120"><span class="err">*</span> Insurance Company:</td>
               <td ><input type="text" class="input_txtbx1" name="insurance" id="insurance" value="${formbilldetails.insurance }" onInput="return validatename(id)";/><span class="err" id="insuranceerror"><form:errors path="Formbill.insurance"></form:errors></span></td>
               </tr>
               </table>
               <br>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="120"><span class="err"></span>Address:</td>
+              <td height="25" width="120"><span class="err">&nbsp;</span>Address:</td>
               <td ><textarea rows="" cols=""  class="input_txtarea" name="address1" id="address1" style="width: 169px; height: 62px">${formbilldetails.address1}</textarea><span class="err"><form:errors path="Formbill.address1"></form:errors></span></td>
              </tr>
               </table>
               
                <table align="center" cellpadding="0" cellspacing="0" border="0"   width="100%"  ">
               <tr ><br>
-             <td height="25" width="120"><span class="err">*</span>Name Of Attorney:</td>
+             <td height="25" width="120"><span class="err">*</span> Name Of Attorney:</td>
               <td ><input type="text" class="input_txtbx1" name="name" id="name" value="${formbilldetails.name}" onInput="return validatename(id)";/><span class="err" id="nameerror"><form:errors path="Formbill.name"></form:errors></span></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="120"><span class="err"></span>Address:</td>
+              <td height="25" width="120"><span class="err">&nbsp;</span>Address:</td>
               <td ><textarea rows="" cols="" class="input_txtarea" name="address3" id="address3" style="width: 169px; height: 62px">${formbilldetails.address3}</textarea><span class="err"><form:errors path="Formbill.address3"></form:errors></span></td>
              </tr>
               </table>
             
                 <table align="center" cellpadding="0" cellspacing="0" border="0"   width="100%"  ">
               <tr >
-             <td height="25" width="120"><span class="err">*</span>Patient Name</td>
+             <td height="25" width="120"><span class="err">*</span> Patient Name</td>
               <td ><input type="text" class="input_txtbx1" name="patientsname" id="patientsname" value="${formbilldetails.patientsname}" onInput="return validatename(id)";/><span class="err" id="pnameerror"><form:errors path="Formbill.patientsname"></form:errors></span></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="120"><span class="err"></span>Address:</td>
+              <td height="25" width="120"><span class="err">&nbsp;</span>Address:</td>
               <td ><textarea rows="" cols=""  class="input_txtarea" name="address5" id="address5" style="width: 169px; height: 62px">${formbilldetails.address5}</textarea><span class="err"><form:errors path="Formbill.address5"></form:errors></span></td>
              </tr>
               </table>

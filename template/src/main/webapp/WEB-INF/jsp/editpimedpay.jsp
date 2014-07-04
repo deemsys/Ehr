@@ -63,7 +63,7 @@ $(function() {
 <script type="text/javascript">
 	function confirmation() 
 	{
-	var answer = confirm("Are you Sure You Want to Delete Participant ?")
+	var answer = confirm("Are you Sure You Want to Delete Patient ?");
 	if (answer){
 		return true;
 	}
@@ -241,42 +241,42 @@ function validatename(id){
  
         <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="180"><span class="err">*</span>Name of Insurance Company</td>
+              <td height="25" width="180"><span class="err">*</span> Name of Insurance Company</td>
               <td ><input type="hidden" name="medpayid" value="${pimedpaydetails.medpayid }"><input type="text" class="input_txtbx1" name="insurance" value="${pimedpaydetails.insurance }"  id="insurance" onInput="return validatename(id)";/><span class="err" id="inserror"><form:errors path="Pimedpay.insurance"></form:errors></td>
               </tr>
               </table>
               
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="180"><span class="err"></span>Address </td>
+              <td height="25" width="180"><span class="err">&nbsp;</span>Address </td>
               <td><textarea rows="" cols="" name="address"  class="input_txtarea" id="address"style="width: 169px; height: 62px">${pimedpaydetails.address }</textarea><span class="err"><form:errors path="Pimedpay.address"></form:errors></span></td>
               </tr>
               </table>
               <br>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="180"><span class="err"></span>Regarding: </td>
+              <td height="25" width="180"><span class="err">&nbsp;</span>Regarding: </td>
               <td><input type="text" class="input_txtbx1" name="reg" id="reg" value="${pimedpaydetails.reg }" onInput="return validatename(id)";><span class="err" id="regerror"></span><form:errors path="Pimedpay.reg"></form:errors></td>
               </tr>
               </table>
           
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="180"><span class="err">*</span>Patient's Name</td>
+              <td height="25" width="180"><span class="err">*</span> Patient's Name</td>
               <td><input type="text" class="input_txtbx1" name="nameofperson" value="${pimedpaydetails.nameofperson }"  id="nameofperson" onInput="return validatename(id)";><span class="err" id="nameerror"><form:errors path="Pimedpay.nameofperson"></form:errors></span></td>
               </tr>
               </table>
               <br>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="180"><span class="err">*</span>Date of Accident: </td>
+              <td height="25" width="180"><span class="err">*</span> Date of Accident: </td>
               <td><input type="text" class="input_txtbx1" name="dateofaccident" value="${pimedpaydetails.dateofaccident }"  id="datepicker"><span class="err" id="dateerror"><form:errors path="Pimedpay.dateofaccident"></form:errors></span></td>
               </tr>
               </table><br><br>
               
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td  width="70"><span class="err"></span><b>Dear Madam or Sir:</b></td>
+              <td  width="70"><span class="err">&nbsp;</span><b>Dear Madam or Sir:</b></td>
               
            </td></tr>	
              </table>

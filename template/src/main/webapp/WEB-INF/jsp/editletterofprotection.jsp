@@ -83,7 +83,7 @@ $(function() {
 <script type="text/javascript">
 	function confirmation() 
 	{
-	var answer = confirm("Are you Sure You Want to Delete Participant ?")
+	var answer = confirm("Are you Sure You Want to Delete Patient ?")
 	if (answer){
 		return true;
 	}
@@ -227,7 +227,7 @@ $(function() {
  
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr><td width="375"></td>
-              <td><span class="err">*</span>Date</td>
+              <td><span class="err">*</span> Date</td>
               <td ><input type="hidden" name="letterid" value="${letterofprotectiondetails.letterid }"><input type="text" class="input_txtbx1" name="date" value="${letterofprotectiondetails.date }" id="datepicker" /><span class="err" id="derr"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>
@@ -235,26 +235,26 @@ $(function() {
             
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25"  width="160"><span class="err">*</span>D.C:</td>
+              <td height="25"  width="160"><span class="err">*</span> D.C:</td>
                <td ><input type="text" class="input_txtbx1" name="dc" value="${letterofprotectiondetails.dc}" id="dcr" onInput="return validatename(id)";/><span class="err" id="dcerr"><form:errors path="Hardshipagreement.date"></form:errors></td>
              
               </tr>
               <tr>
-              <td height="25" width="160"><span class="err">*</span>Clinic Name:</td>
+              <td height="25" width="160"><span class="err">*</span> Clinic Name:</td>
                <td ><input type="text" class="input_txtbx1" name="clinicname" value="${letterofprotectiondetails.clinicname}" id="clinicname" onInput="return validatename(id)";/><span class="err" id="clerr"><form:errors path="Hardshipagreement.date"></form:errors></td>
              
               </tr>
              </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="160"><span class="err"></span>Address:</td>
+              <td height="25" width="160"><span class="err">&nbsp;</span>Address:</td>
               <td><textarea rows="" cols=""   class="input_txtarea"  name="address1" id="address1" style="width: 162px; height: 62px">${letterofprotectiondetails.address1}</textarea>
             </td></tr>
               </table>
              
             <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25"  width="160"><span class="err"></span>IN RE:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My Client:</td>
+              <td height="25"  width="160"><span class="err">&nbsp;</span>IN RE:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My Client:</td>
                <td ><input type="text" class="input_txtbx1" name="myclient" value="${letterofprotectiondetails.myclient}" id="myclient" onInput="return validatename(id)";/><span class="err" id="myclienterror"><form:errors path="Hardshipagreement.date"></form:errors></td>
              
               </tr>
@@ -266,7 +266,7 @@ $(function() {
              </table><br><br>
              <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td  width="62"><span class="err">*</span>Dear Dr</td>
+              <td  width="62"><span class="err">*</span> Dear Dr</td>
               <td  height="25" width="160" ><input type="text" class="input_txtbx1" name="dearsir" value="${letterofprotectiondetails.dearsir}"  id="dearsir" onInput="return validatename(id)";/><span class="err" id="suberr"><form:errors path="noticeofassignment.address"></form:errors>
            </span></td></tr>	
              </table>
