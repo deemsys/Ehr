@@ -87,7 +87,7 @@ document.getElementById("patientsnameerror").innerHTML=" ";
 	    if(document.getElementById("patientsname").value.length<4 || document.getElementById("patientsname").value.length>=32)
 	    {
 	    	
-	    	document.getElementById("patientsnameerror").innerHTML="Name should be min 4 and max 32";
+	    	document.getElementById("patientsnameerror").innerHTML="Name should be of length 4 to 32";
 	    	
 	        return false;
 	    }
@@ -128,7 +128,7 @@ document.getElementById("patientsnameerror").innerHTML=" ";
     if(document.getElementById("witness").value.length<4 || document.getElementById("witness").value.length>=32)
     {
     	
-    	document.getElementById("witnesserror").innerHTML="witnesss should be min 4 and max 32";
+    	document.getElementById("witnesserror").innerHTML="witnesss should be of length 4 to 32";
     	
         return false;
     }
@@ -157,7 +157,7 @@ document.getElementById("patientsnameerror").innerHTML=" ";
      document.getElementById('print').style.visibility = 'visible';
      document.getElementById('saveid').style.visibility = 'visible';
      document.getElementById('cancelid').style.visibility = 'visible';
-	  
+    
   }
   </script>
  </head>
@@ -203,24 +203,24 @@ document.getElementById("patientsnameerror").innerHTML=" ";
                         </tr>
                         
                         <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>PatientsName: </td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>PatientsName: </td>
 				                  <td valign="top" align="left" class="input_txt" width="200">
-				                  	<input type="text" class="input_txtbx1" id="patientsname" onInput="return validatename()";name="patientsname" value="${name}"/><span id="patientsnameerror" style="color: red;font-style:italic;"><form:errors path="Treatform.patientsname"></form:errors></span></td>
+				                  	<input type="text" class="input_txtbx1" id="patientsname" name="patientsname" onInput="return validatename()"; value="${name}"/><br><span id="patientsnameerror" style="color: red;font-style:italic;"><form:errors path="Treatform.patientsname"></form:errors></span></td>
 				                  	</tr>
                         <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patients Signature: </td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Patients Signature: </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="patientssign" name="patientssign" onInput="return validatename1()"; /><span id="patientssignerror" style="color: red;font-style:italic;"><form:errors path="Treatform.patientssign"></form:errors></span></td>
+				                  	<input type="text" class="input_txtbx1" id="patientssign" name="patientssign" onInput="return validatename1()"; /><br><span id="patientssignerror" style="color: red;font-style:italic;"><form:errors path="Treatform.patientssign"></form:errors></span></td>
 				                  	</tr>
 				                  	<tr class="row1">
-				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Todays Date:  </td>
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err">* </span>Date:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="datepicker" name="todaydate" /><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="Treatform.todaydate"></form:errors></span></td>
+				                  	<input type="text" class="input_txtbx1" id="datepicker" name="todaydate" /><br><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="Treatform.todaydate"></form:errors></span></td>
                         </tr>
                         <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Witness: </td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Witness: </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="witness" name="witness" onInput="return validatename2()"; /><span id="witnesserror" style="color: red;font-style:italic;"><form:errors path="Treatform.witness"></form:errors></span></td>
+				                  	<input type="text" class="input_txtbx1" id="witness" name="witness" onInput="return validatename2()"; /><br><span id="witnesserror" style="color: red;font-style:italic;"><form:errors path="Treatform.witness"></form:errors></span></td>
 				                  	</tr>
                         <tr>
                         </table>
