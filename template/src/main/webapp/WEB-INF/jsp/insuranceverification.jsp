@@ -99,7 +99,7 @@ function doAjaxPost() {
 	var username = $('#username').val();
 	if(username=="")
 		{
-		alert("Please Enter Patient Username");
+		alert("Please Enter Patient UserName");
 		return false;
 		}
 	
@@ -201,7 +201,7 @@ function validateusername(){
 <br>
  <table cellpadding="0" cellspacing="0" border="0" width="100%">
  <tr >
-	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">*</span>Please enter Patient User Name</td>
+	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">*</span>Please enter Patient UserName</td>
 				 <td width="20"></td> <td valign="top" align="left" class="input_txt" width="200">
 				   <input type="text" class="input_txtbx1" id="username" name="pusername" /><br/>
 				  </td>

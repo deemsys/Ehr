@@ -20,7 +20,12 @@
 
 	<c:if test="${not empty nsearch}">
 		<div class="errorblock" align="center">
-		 The user was not registered.....Please check the details.
+		 The User was not registered.Please check the details.
+		</div>
+	</c:if>
+		<c:if test="${not empty psearch}">
+		<div class="errorblock" align="center">
+		 The User was not available in Patient Details.Please Check the Patient Details.
 		</div>
 	</c:if>
 <div id="right_content">

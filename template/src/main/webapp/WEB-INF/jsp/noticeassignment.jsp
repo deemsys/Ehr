@@ -94,7 +94,7 @@ function doAjaxPost() {
 	var username = $('#username').val();
 	if(username=="")
 		{
-		alert("Please Enter Patient Username");
+		alert("Please Enter Patient UserName");
 		return false;
 		}
 	
@@ -165,7 +165,7 @@ function doAjaxPost() {
 <br><br><br>
  <table cellpadding="0" cellspacing="0" border="0" width="100%">
 	            <tr >
-	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">*</span>Please enter a Patient User Name</td>
+	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">*</span>Please enter  Patient UserName</td>
 				 <td width="20"></td> <td valign="top" align="left" class="input_txt" width="200">
 				   <input type="text" class="input_txtbx1" id="username" name="username" /><br/>
 				  </td>
@@ -204,9 +204,90 @@ function validatename(){
 }
 </script>
 <script>
+$(function() {
+	$("#nameofins").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+function validatenameofins(){
+    var textInput = document.getElementById("nameofins").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("nameofins").value = textInput;
+}
+$(function() {
+	$("#nameofattorney").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+function validatenameofattorney(){
+    var textInput = document.getElementById("nameofattorney").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("nameofattorney").value = textInput;
+}
+$(function() {
+	$("#addr").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#address2").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#regarding").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+function validateregarding(){
+    var textInput = document.getElementById("regarding").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("regarding").value = textInput;
+}
+$(function() {
+	$("#patientname").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+function validatepatientname(){
+    var textInput = document.getElementById("patientname").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("patientname").value = textInput;
+}
+$(function() {
+	$("#letter").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+function validateletter(){
+    var textInput = document.getElementById("letter").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("letter").value = textInput;
+}
+$(function() {
+	$("#letter1").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+function validateletter1(){
+    var textInput = document.getElementById("letter1").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("letter1").value = textInput;
+}
 function valid()
 {
-document.getElementById("datepicker1error").innerHTML="";
+	var error="";
+	document.getElementById("nameofinserror").innerHTML="";
+	document.getElementById("datepicker1error").innerHTML="";
+	document.getElementById("nameofattorneyerror").innerHTML="";
 var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		
 		
@@ -223,52 +304,151 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		if (document.getElementById("datepicker2").value !="") {
 		  if (re.test(document.getElementById("datepicker2").value) == false) {
 			  document.getElementById("datepicker2error").innerHTML="Invalid Date Format";
-			  return false;
+			 return false;
 		  }
 		}   
-	document.getElementById("nameofinserror").innerHTML="";
+
 if(document.getElementById("nameofins").value=="")
         {
 	document.getElementById("nameofinserror").innerHTML="Required Field Should not be Empty";
             
-            return false;
+            error="true";
         }
-document.getElementById("nameofattorneyerror").innerHTML="";
+        if(document.getElementById("nameofins").value.substring(0,1)==" ")
+        {
+	document.getElementById("nameofinserror").innerHTML="Invalid Name Of Insurance Company";
+            
+       error="true";
+        }
+        if(document.getElementById("nameofins").value!="")
+        {
+        
+        if(document.getElementById("nameofins").value.length<4)
+        {
+	document.getElementById("nameofinserror").innerHTML="Required & must be of length 4 to 32.";
+            
+            error="true";
+        }}
+
       if(document.getElementById("nameofattorney").value=="")
         {
     	  document.getElementById("nameofattorneyerror").innerHTML="Required Field Should not be Empty";
-            return false;
+            error="true";
         }  
+         if(document.getElementById("nameofattorney").value.substring(0,1)==" ")
+        {
+    	  document.getElementById("nameofattorneyerror").innerHTML="Invalid Name Of Attorney";
+            error="true";
+        }  
+         if(document.getElementById("nameofattorney").value!="")
+        {
+        if(document.getElementById("nameofattorney").value.length<4)
+        {
+        
+    	  document.getElementById("nameofattorneyerror").innerHTML="Required & must be of length 4 to 32.";
+            error="true";
+        }  }
+         
+         if(document.getElementById("addr").value!='')
+        	 {
+        	 if(document.getElementById("addr").value.substring(0,1)==' ')
+        		 {
+        		 document.getElementById("addrerror").innerHTML="Invalid Address";
+        		error="true";
+        		 }
+        	 
+        	 }
+         
+         if(document.getElementById("address2").value!='')
+        	 {
+        	 if(document.getElementById("address2").value.substring(0,1)==' ')
+        		 {
+        		 document.getElementById("address2error").innerHTML="Invalid Address";
+        		error="true";
+        		 }
+        	 
+        	 }
+         document.getElementById("regerror").innerHTML="";
+         if(document.getElementById("regarding").value!='')
+        	 {
+        	 
+        	 if(document.getElementById("regarding").value.substring(0,1)==' ')
+        		 {
+        		 document.getElementById("regerror").innerHTML="Invalid Address";
+        		error="true";
+        		 }
+        	 if(document.getElementById("regarding").value.length<4)
+    		 {
+    		 document.getElementById("regerror").innerHTML="Required & must be of length 4 to 32.";
+    		error="true";
+    		 }
+        	 
+        	 }
+        	 
         
       document.getElementById("patientnameerror").innerHTML="";
         if(document.getElementById("patientname").value=="")
         {
         	 document.getElementById("patientnameerror").innerHTML="Required Field Should not be Empty";
-            return false;
+            error="true";
         }  
-        document.getElementById("patientnameerror").innerHTML="";
-	    if(document.getElementById("patientname").value.length<4 || document.getElementById("patientname").value.length>=32)
+         if(document.getElementById("patientname").value.substring(0,1)==" ")
+        {
+        	 document.getElementById("patientnameerror").innerHTML="Invalid PatientName";
+            error="true";
+        }  
+	    if(document.getElementById("patientname").value.length<4)
 	    {
 	    	
-	    	document.getElementById("patientnameerror").innerHTML="Name should be min 4 and max 32";
+	    	document.getElementById("patientnameerror").innerHTML="Required & must be of length 4 to 32.";
 	    	
-	        return false;
+	        error="true";
 	    }
         
         document.getElementById("lettererror").innerHTML="";
         if(document.getElementById("letter").value=="")
         {
         	 document.getElementById("lettererror").innerHTML="Required Field Should not be Empty";
-            return false;
+            error="true";
         }  
-        document.getElementById("treatingphysicianerror").innerHTML="";
-        if(document.getElementById("treatingphysician").value=="")
+         if(document.getElementById("letter").value.substring(0,1)==" ")
         {
-        	 document.getElementById("treatingphysicianerror").innerHTML="Required Field Should not be Empty";
-            return false;
-        } 
-        
-		 
+        	 document.getElementById("lettererror").innerHTML="Invalid Data";
+            error="true";
+        }  
+       
+          if(document.getElementById("letter").value!="")          
+        {
+        if(document.getElementById("letter").value.length<4)
+        {
+         document.getElementById("lettererror").innerHTML="Required & must be of length 4 to 32.";
+            error="true";
+        }        	
+        }  
+          document.getElementById("letter1error").innerHTML="";
+          if(document.getElementById("letter1").value!='')
+     	 {
+     	 
+     	 if(document.getElementById("letter1").value.substring(0,1)==' ')
+     		 {
+     		 document.getElementById("letter1error").innerHTML="Invalid Data";
+     		error="true";
+     		 }
+     	 if(document.getElementById("letter1").value.length<4)
+ 		 {
+ 		 document.getElementById("letter1error").innerHTML="Required & must be of length 4 to 32.";
+ 		error="true";
+ 		 }
+     	 
+     	 }
+      
+          if(error=="true")
+        	  {
+        	 
+        	  return false;
+        	  }
+       
+       
         }
 
 </script>
@@ -337,44 +517,44 @@ document.getElementById("nameofattorneyerror").innerHTML="";
               <td ><b>Phone (440) 934-3099 Fax (440) 934-3107 </b></td>
               </tr>
              </table>
-              <table> <tr>
-              <td width="90"></td><br>
-              <td><p><b>PLEASE READ:THIS IS NOTICE TO YOU OF AN ASSIGNMENT</b></p>
+              <table border="0" width="100%"> <tr>
+              <td width="250"></td><br>
+              <td><p><b>&nbsp;&nbsp;PLEASE READ:THIS IS NOTICE TO YOU OF AN ASSIGNMENT</b></p>
               </td></tr></table>
              <c:choose>
              <c:when test="${empty notice}">
              <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
               <td width="25%" ><span class="err">*</span>&nbsp;Name Of Insurance Company:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-              <td ><input type="text" class="input_txtbx1" name="nameofins" id="nameofins" /><span class="err" id="nameofinserror"><form:errors path="noticeerror.nameofins"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" onInput="validatenameofins()"  name="nameofins" maxlength="32" id="nameofins" /><br><font color="red" size="+1"><span id="nameofinserror"><form:errors path="noticeerror.nameofins"></form:errors></span></font></td>
               <td ><span class="err">*</span>&nbsp;Name Of Attorney:</td>
-              <td ><input type="text" class="input_txtbx1" name="nameofattorney" id="nameofattorney" /><span class="err" id="nameofattorneyerror"><form:errors path="noticeerror.nameofattorney"></form:errors></span></td>
+              <td ><input type="text" class="input_txtbx1" onInput="validatenameofattorney()" name="nameofattorney" id="nameofattorney"  maxlength="32"/><br><font color="red" size="+1"><span id="nameofattorneyerror"><form:errors path="noticeerror.nameofattorney"></form:errors></span></font></td>
               </tr>
               </table><br>
                 <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td width="25%" ><span class="err"></span>&nbsp;&nbsp;Address</td>
-              <td  ><textarea rows="" cols="" name="address1" style="width: 174px; height: 64px" class="input_txtarea" id="addr"></textarea>
-            </td>  <td  ><span class="err"></span>&nbsp;Address&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <td >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<textarea rows="" cols="" name="address2"  class="input_txtarea"style="width: 176px; height: 64px"></textarea></td>
+              <td width="29%"  ><textarea rows="" cols="" name="address1" style="width: 174px; height: 64px" class="input_txtarea" id="addr"></textarea><br><font color="red" size="+1"><span id="addrerror"></span></font>
+            </td>  <td  width="70"><span class="err"></span>&nbsp;&nbsp;Address</td>
+              <td width="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<textarea rows="" cols="" name="address2" id="address2" class="input_txtarea"style="width: 176px; height: 64px"></textarea><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="red" size="+1"><span id="address2error"></span></font></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr height="30">
               
               <td><span class="err"></span>&nbsp;&nbsp;Regarding:</td>
-              <td ><input type="text" class="input_txtbx1" name="regarding" id="regarding" /><span class="err"><form:errors path="noticeofassignment.regarding"></form:errors></span><br></td>                   
+              <td ><input type="text" class="input_txtbx1" name="regarding" onInput="validateregarding()" id="regarding" maxlength="32"/><br><font color="red" size="+1"><span id="regerror"></span><span class="err"><form:errors path="noticeofassignment.regarding"></form:errors></span><br></td>                   
           </tr> 
           <tr  height="30">
             <td width="25%"><span class="err">*</span>&nbsp;PatientName:</td>
-              <td ><input type="text" class="input_txtbx1" name="patientname" id="patientname" onInput="return validatename()";/><span class="err" id="patientnameerror"></span><br></td>                      
+              <td ><input type="text" class="input_txtbx1" name="patientname" onInput="validatepatientname()" id="patientname" maxlength="32" onInput="return validatename()";/><br><font color="red" size="+1"><span  id="patientnameerror"></span></font><br></td>                      
           </tr> 
           <tr height="30">
             <td width="25%">&nbsp;&nbsp;Date Of Accident:</td>
               <td ><input type="text" class="input_txtbx1" name="dateofaccident" id="datepicker1" /><span class="err" id="datepicker1error"><form:errors path="noticeerror.dateofaccident"></form:errors></span><br></td>                      
           </tr> 
           <tr height="30">
-            <td width="25%">&nbsp;&nbsp;Today'sDate:</td>
+            <td width="25%">&nbsp;&nbsp;Date:</td>
               <td ><input type="text" class="input_txtbx1" name="todaysdate" id="datepicker2" /><span class="err" id="datepicker2error"><form:errors path="noticeerror.todaysdate"></form:errors></span><br></td>                      
           </tr> <br>  
             </table>
@@ -385,7 +565,7 @@ document.getElementById("nameofattorneyerror").innerHTML="";
        		
        		<table>
        		 <tr>
-       		 <td><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="err">*</span>&nbsp;<input type="text" class="input_txtbx1" name="letter" id="letter" /><span class="err" id="lettererror"><form:errors path="noticeerror.letter"></form:errors></span>has sought medical treatment from this clinic.  This patient has been injured to an
+       		 <td><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="err">*</span>&nbsp;<input type="text" class="input_txtbx1" maxlength="32" onInput="validateletter()" name="letter" id="letter" /><font color="red" size="+1"><span  id="lettererror"></span></font><form:errors path="noticeerror.letter"></form:errors></span>has sought medical treatment from this clinic.  This patient has been injured to an
 extent where the patient has determined that they cannot afford to pay for treatment on a fee for service basis.
 We would definitely prefer to simply render the required treatment on a fee for service basis. However, because
  fees for service presents a hardship to this patient, we have agreed to postpone payment for treatment pursuant to the attached agreement assignment.
@@ -422,25 +602,26 @@ Upon completion of treatment, all exam sheets, doctor's notes, x-ray reports, an
        		
         	 
                <tr><td>
-       		 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Please advise us in writing by <input type="text" class="input_txtbx1" name="letter1" id="letter1" /><form:errors path="noticeofassignment.letter1"></form:errors> if you will not honor our Assignment. If we 
+       		 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Please advise us in writing by <input type="text" class="input_txtbx1" name="letter1" maxlength="32" id="letter1" onInput="validateletter1()" /><font color="red" size="+1"><span id="letter1error"></span></font><form:errors path="noticeofassignment.letter1"></form:errors> if you will not honor our Assignment. If we 
 do not receive a response, we will act in reliance that you will comply with it's instructions.
        		 </p></td></tr></table>
-             <table>   <tr > <br>  <td width="400"></td> 
-             <td>
-              <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sincerly,</b></td><br>
+             <table border="0" width="100%">   <tr > <br> <td width="50"></td> <td width="400"></td> 
+             <td align="center">
+              <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sincerly,</b></td><br>
               </tr>
             <tr >
-            <td ></td>
-            <td>
+           <td ></td> <td ></td>
+            <td height="10px" align="right">
            <p> <b>
-               Dr. Darrin A. Pordash, D.C., B.A.C. 
+               Dr. Darrin A. Pordash, D.C., B.A.C.<br> 
+               Chiropractic Therapy Center
             </b></p>
             </td></tr>
              <tr >
             <td ></td>
             <td>
            <p> <b>
-               Chiropractic Therapy Center
+              
             </b></p>
             </td></tr>
               </table>

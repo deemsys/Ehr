@@ -67,6 +67,83 @@ cursor: pointer;
 }
 </style>
 <script>
+$(function() {
+	$("#tonum").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+function validatetonum(){
+    var textInput = document.getElementById("tonum").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("tonum").value = textInput;
+}
+$(function() {
+	$("#copymedpay").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+function validatecopymedpay(){
+    var textInput = document.getElementById("copymedpay").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("copymedpay").value = textInput;
+}
+$(function() {
+	$("#copyform").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+function validatecopyform(){
+    var textInput = document.getElementById("copyform").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("copyform").value = textInput;
+}
+$(function() {
+	$("#copyassign").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+function validatecopyassign(){
+    var textInput = document.getElementById("copyassign").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("copyassign").value = textInput;
+}
+$(function() {
+	$("#greencard").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+function validategreencard(){
+    var textInput = document.getElementById("greencard").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("greencard").value = textInput;
+}
+$(function() {
+	$("#defaultattorney").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+function validatedefaultattorney(){
+    var textInput = document.getElementById("defaultattorney").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("defaultattorney").value = textInput;
+}
+$(function() {
+	$("#txtare").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+function validateclinicrep(){
+    var textInput = document.getElementById("clinicrep").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("clinicrep").value = textInput;
+}
 i=0;
 $(document).ready(function(){
   $("#fax").keypress(function(){
@@ -104,7 +181,7 @@ function doAjaxPost() {
 	var username = $('#username').val();
 	if(username=="")
 		{
-		alert("Please Enter Patient Username");
+		alert("Please Enter Patient UserName");
 		return false;
 		}
 	
@@ -188,7 +265,7 @@ function doAjaxPost() {
 <br><br><br>
  <table cellpadding="0" cellspacing="0" border="0" width="100%">
 	            <tr >
-	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">*</span>Please enter a Patient User Name</td>
+	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">*</span>Please enter Patient UserName</td>
 				 <td width="20"></td> <td valign="top" align="left" class="input_txt" width="200">
 				   <input type="text" class="input_txtbx1" id="username" name="username" /><br/>
 				  </td>
@@ -221,13 +298,31 @@ function doAjaxPost() {
 
 	function checkSubmit()
 	{
+		var error="";
+		if(document.getElementById("tonum").value!='')
+			{
+			if(document.getElementById("tonum").value.substring(0,1)==' ')
+					{
+				document.getElementById("tonumerror").innerHTML="Invalid Data";
+				error="true";
+					}
+			if(document.getElementById("tonum").value.length<4)
+				{
+				document.getElementById("tonumerror").innerHTML="Required & must be of length 4 to 32.";
+				error="true";
+				}
+			
+			}
 		document.getElementById("faxerror").innerHTML="";
+		if(document.getElementById("fax").value!='')
+			{	
+			
 		if(document.getElementById("fax").value.length<12)
 		{
 		document.getElementById("faxerror").innerHTML="Invalid phone number format";
-		return false;
+		 error="true";
 		
-		}
+		}}
 		document.getElementById("faxerror").innerHTML="";
 		if(document.getElementById("fax").value!="")
 		{
@@ -241,54 +336,153 @@ function doAjaxPost() {
 	 
 	     if(txt2==000 && txt3==000){
 	   document.getElementById("faxerror").innerHTML="Invalid phone number format";
-		return false;
+	   error="true";
 		}
 		
 		}
+		
+		if(document.getElementById("txtare").value!="")
+		{
+			if(document.getElementById("txtare").value.substring(0,1)==' ')
+				{
+		document.getElementById("txtareerror").innerHTML="Invalid Data";
+				error="true";
+				}			
+		}
+		
 		document.getElementById("copymedpayerror").innerHTML=" ";
 		
 		if(document.getElementById("copymedpay").value=="")
 		{
-		document.getElementById("copymedpayerror").innerHTML="Required Field Should not be Empty";
+		document.getElementById("copymedpayerror").innerHTML="Invalid Data";
 		
-		return false;
+		error="true";
 		}
+		if(document.getElementById("copymedpay").value!="")
+		{
+			if(document.getElementById("copymedpay").value.substring(0,1)==' ')
+				{
+		document.getElementById("copymedpayerror").innerHTML="Invalid Data";
+				error="true";
+				}
+			if(document.getElementById("copymedpay").value.length<4)
+			{
+	   document.getElementById("copymedpayerror").innerHTML="Required & must be of length 4 to 32.";
+			error="true";
+			}	
+	
+		}
+		
 		document.getElementById("copyformerror").innerHTML="";
 	if(document.getElementById("copyform").value=="")
 		{
 		document.getElementById("copyformerror").innerHTML="Required Field Should not be Empty";
 		
-		return false;
+		error="true";
 		}
+	if(document.getElementById("copyform").value!="")
+	{
+		if(document.getElementById("copyform").value.substring(0,1)==' ')
+			{
+	document.getElementById("copyformerror").innerHTML="Invalid Data";
+			error="true";
+			}
+		if(document.getElementById("copyform").value.length<4)
+		{
+   document.getElementById("copyformerror").innerHTML="Required & must be of length 4 to 32.";
+		error="true";
+		}	
+
+	}
 	
 	document.getElementById("copyassignerror").innerHTML="";
 	if(document.getElementById("copyassign").value=="")
 	{
 	document.getElementById("copyassignerror").innerHTML="Required Field Should not be Empty";
 	
-	return false;
+	error="true";
+	}
+	if(document.getElementById("copyassign").value!="")
+	{
+		if(document.getElementById("copyassign").value.substring(0,1)==' ')
+			{
+	document.getElementById("copyassignerror").innerHTML="Invalid Data";
+			error="true";
+			}
+		if(document.getElementById("copyassign").value.length<4)
+		{
+   document.getElementById("copyassignerror").innerHTML="Required & must be of length 4 to 32.";
+		error="true";
+		}	
+
 	}
 	document.getElementById("greencarderror").innerHTML="";
 	if(document.getElementById("greencard").value=="")
 	{
 	document.getElementById("greencarderror").innerHTML="Required Field Should not be Empty";
 	
-	return false;
+	error="true";
+	}
+	if(document.getElementById("greencard").value!="")
+	{
+		if(document.getElementById("greencard").value.substring(0,1)==' ')
+			{
+	document.getElementById("greencarderror").innerHTML="Invalid Data";
+			error="true";
+			}
+		if(document.getElementById("greencard").value.length<4)
+		{
+   document.getElementById("greencarderror").innerHTML="Required & must be of length 4 to 32.";
+		error="true";
+		}	
+
 	}
 	document.getElementById("defaultattorneyerror").innerHTML="";
 	if(document.getElementById("defaultattorney").value=="")
 	{
 	document.getElementById("defaultattorneyerror").innerHTML="Required Field Should not be Empty";
 	
-	return false;
+	error="true";
+	}
+	if(document.getElementById("defaultattorney").value!="")
+	{
+		if(document.getElementById("defaultattorney").value.substring(0,1)==' ')
+			{
+	document.getElementById("defaultattorneyerror").innerHTML="Invalid Data";
+			error="true";
+			}
+		if(document.getElementById("defaultattorney").value.length<4)
+		{
+   document.getElementById("defaultattorneyerror").innerHTML="Required & must be of length 4 to 32.";
+		error="true";
+		}	
+
 	}
 	document.getElementById("clinicreperror").innerHTML="";
 	if(document.getElementById("clinicrep").value=="")
 	{
 	document.getElementById("clinicreperror").innerHTML="Required Field Should not be Empty";
 	
-	return false;
+	error="true";
 	}
+	if(document.getElementById("clinicrep").value!="")
+	{
+		if(document.getElementById("clinicrep").value.substring(0,1)==' ')
+			{
+	document.getElementById("clinicreperror").innerHTML="Invalid Data";
+			error="true";
+			}
+		if(document.getElementById("clinicrep").value.length<4)
+		{
+   document.getElementById("clinicreperror").innerHTML="Required & must be of length 4 to 32.";
+		error="true";
+		}	
+
+	}
+	if(error=="true")
+		{
+		return false;
+		}
 	
 	
 	
@@ -342,7 +536,7 @@ document.getElementById("fax").value=phone;
 <div id="right_content">
 <form action="insertrequestfordemand" method="POST">
 
-<table cellpadding="0" cellspacing="0" border="0" width="85%" class="margin_table">
+<table cellpadding="0" cellspacing="0" border="0" width="65%" class="margin_table">
        <tr>
         <td valign="top" align="left" style="padding:5px 0 10px 0;">&nbsp;
 		<div class="status success" style="display: none;">
@@ -363,7 +557,7 @@ document.getElementById("fax").value=phone;
 	           
 	           <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr height="20">
-             <td width="470"><b>TO:</b>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text"  class="input_txtbx1" placeholder="John P. Lowry, Esq."  name="tonum" id="tonum"> </td>
+             <td width="470"><b>TO:</b>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text"  class="input_txtbx1" placeholder="John P"  onInput="validatetonum()" maxlength="32" name="tonum" id="tonum"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="+1" color="red"><span id="tonumerror"></span></font></td>
              <td><b>FROM:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Perry Chiropractic & Therapy Center	 of Canton, Inc.</td>
             
               </tr>
@@ -376,7 +570,7 @@ document.getElementById("fax").value=phone;
               <br>
               
               <tr height="20">
-              <td><b>Fax:</b>&nbsp;&nbsp;&nbsp;<input type="text" class="input_txtbx1"  placeholder="513-421-2764" name="fax" id="fax" maxlength="12" onkeypress="return validate(event)";><span class="err" id="faxerror"></span></td>
+              <td><b>Fax:</b>&nbsp;&nbsp;&nbsp;<input type="text" class="input_txtbx1"  placeholder="513-421-2764" name="fax" id="fax" maxlength="12" onkeypress="return validate(event)";><br>&nbsp;&nbsp;&nbsp;<span class="err" id="faxerror"></span></td>
               <td>
              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4933 West Tuscarawas Street
               </td>
@@ -406,7 +600,7 @@ document.getElementById("fax").value=phone;
      </table>
       <table cellpadding="0" cellspacing="0" border="0" width="100%">
       <tr height="30"><td style="width: 148px; "><input type="checkbox" class="input_ckbx1"  name="other" value="other">&nbsp;&nbsp;&nbsp;Other:&nbsp;&nbsp;(Describe)&nbsp;&nbsp;&nbsp;
-     <td> <textarea  class ="input_txtarea"  rows="" cols="" name="txtare" style="height: 75px; width: 348px"></textarea><span class="err"><form:errors path="Requestfordemand.txtare"></form:errors></span></td>
+     <td> <textarea  class ="input_txtarea"  rows="" cols="" id="txtare" name="txtare" style="height: 75px; width: 348px"></textarea><br><font color="red"  size="+1"><span id="txtareerror"></span></font><span class="err"><form:errors path="Requestfordemand.txtare"></form:errors></span></td>
      </td>
    </tr>
        </table> 
@@ -425,23 +619,23 @@ document.getElementById("fax").value=phone;
        <p><b>We attach the following:</b></p>
        </td>
        </tr>
-       <tr height="25"><td><input type="text"  class="input_txtbx1" class="input_ckbx1" name="copymedpay" id="copymedpay"><span class="err" id="copymedpayerror"><form:errors path="Requestfordemand.copymedpay"></form:errors></span></td><td><span class="err">*</span>Copy of Med Pay and At Fault Form Cover Letter
+       <tr height="25"><td><input type="text"  class="input_txtbx1" class="input_ckbx1" maxlength="32" name="copymedpay" onInput="validatecopymedpay()" id="copymedpay"><br><font size="+1" color="red" ><span id="copymedpayerror"></font><form:errors path="Requestfordemand.copymedpay"></form:errors></span></td><td>&nbsp;<span class="err">*</span>&nbsp;&nbsp;Copy of Med Pay and At Fault Form Cover Letter
      </td></tr>
-      <tr height="25"><td><input type="text"  class="input_txtbx1" class="input_ckbx1" name="copyform" id="copyform"><span class="err" id="copyformerror"><form:errors path="Requestfordemand.copyform"></form:errors></span></td><td><span class="err">*</span>Copy of Form Cover Letter sent to the Attorney
+      <tr height="25"><td><input type="text"  class="input_txtbx1" class="input_ckbx1" maxlength="32" name="copyform" onInput="validatecopyform()" id="copyform"><br><font size="+1" color="red" ><span id="copyformerror"></font><form:errors path="Requestfordemand.copyform"></form:errors></span></td><td>&nbsp;<span class="err">*</span>&nbsp;&nbsp;Copy of Form Cover Letter sent to the Attorney
      </td></tr>
-     <tr height="25"><td><input type="text"   class="input_txtbx1" class="input_ckbx1" name="copyassign" id="copyassign"><span class="err" id="copyassignerror"><form:errors path="Requestfordemand.copyassign"></form:errors></span></td><td><span class="err">*</span>Copy of Assignment
+     <tr height="25"><td><input type="text"   class="input_txtbx1" class="input_ckbx1" maxlength="32" name="copyassign" onInput="validatecopyassign()"  id="copyassign"><br><font size="+1" color="red" ><span  id="copyassignerror"></font><form:errors path="Requestfordemand.copyassign"></form:errors></span></td><td>&nbsp;<span class="err">*</span>&nbsp;&nbsp;Copy of Assignment
      </td></tr>
-     <tr height="25"><td><input type="text"  class="input_txtbx1" class="input_ckbx1" name="greencard" id="greencard"><span class="err" id="greencarderror"><form:errors path="Requestfordemand.greencard"></form:errors></span></td><td><span class="err">*</span>Front and back of Certified Mail: "Green Card"
+     <tr height="25"><td><input type="text"  class="input_txtbx1" class="input_ckbx1" maxlength="32" name="greencard" onInput="validategreencard()"  id="greencard"><br><font size="+1" color="red" ><span id="greencarderror"></font><form:errors path="Requestfordemand.greencard"></form:errors></span></td><td>&nbsp;<span class="err">*</span>&nbsp;&nbsp;Front and back of Certified Mail: "Green Card"
      </td></tr>
-     <tr height="25"><td><input type="text"  class="input_txtbx1" class="input_ckbx1" name="defaultattorney" id="defaultattorney"><span class="err" id="defaultattorneyerror"><form:errors path="Requestfordemand.defaultattorney"></form:errors></span></td><td><span class="err">*</span>Any correspondence from the defaulting Adjuster or Defaulting Attorney
+     <tr height="25"><td><input type="text"  class="input_txtbx1" class="input_ckbx1" maxlength="32" name="defaultattorney" onInput="validatedefaultattorney()"  id="defaultattorney"><br><font size="+1" color="red" ><span id="defaultattorneyerror"></font><form:errors path="Requestfordemand.defaultattorney"></form:errors></span></td><td>&nbsp;<span class="err">*</span>&nbsp;&nbsp;Any correspondence from the defaulting Adjuster or Defaulting Attorney
      </td></tr>
        </table> <br>     
-       <table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table" ><tr height="35">
+       <table cellpadding="0" cellspacing="0" border="0" width="100%" class="margin_table" ><tr height="35">
        <td width="30" ></td>
        <td  valign="right" align="right" >
        
-       <input type="text"  class="input_txtbx1" class="input_ckbx1" name="clinicrep" id="clinicrep"><span id="clinicreperror" style="color: red;font-style:italic;"><form:errors path="Requestfordemand.clinicrep"></form:errors></span></td></tr>
-       <tr><td></td><td align="right" ><span class="err">*</span>Clinic Representative</td></tr></table>
+       <input type="text"  class="input_txtbx1" class="input_ckbx1" maxlength="32"  name="clinicrep" onInput="validateclinicrep()"  id="clinicrep"><br><span id="clinicreperror" style="color: red;font-style:italic;"><form:errors path="Requestfordemand.clinicrep"></form:errors></span></td></tr>
+       <tr><td></td><td align="right" ><span class="err">*</span>&nbsp;&nbsp;Clinic Representative&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr></table>
        <br> 
        </c:when>
        <c:otherwise>
@@ -495,15 +689,15 @@ document.getElementById("fax").value=phone;
        <p><b>We attach the following:</b></p>
        </td>
        </tr>
-       <tr height="25"><td><input type="text" class="input_ckbx1" value="${requestfor.copymedpay}" name="copymedpay" id="copymedpay"><span class="err" id="copymedpayerror"><form:errors path="Requestfordemand.copymedpay"></form:errors></span></td><td><span class="err">*</span>Copy of Med Pay and At Fault Form Cover Letter
+       <tr height="25"><td><input type="text" class="input_ckbx1" value="${requestfor.copymedpay}" name="copymedpay" id="copymedpay"><span class="err" id="copymedpayerror"><form:errors path="Requestfordemand.copymedpay"></form:errors></span></td><td><span class="err">*</span>&nbsp;Copy of Med Pay and At Fault Form Cover Letter
      </td></tr>
-      <tr height="25"><td><input type="text"    class="input_ckbx1" value="${requestfor.copyform}" name="copyform" id="copyform"><span class="err" id="copyformerror"><form:errors path="Requestfordemand.copyform"></form:errors></span></td><td><span class="err">*</span>Copy of Form Cover Letter sent to the Attorney
+      <tr height="25"><td><input type="text"    class="input_ckbx1" value="${requestfor.copyform}" name="copyform" id="copyform"><span class="err" id="copyformerror"><form:errors path="Requestfordemand.copyform"></form:errors></span></td><td><span class="err">*</span>&nbsp;Copy of Form Cover Letter sent to the Attorney
      </td></tr>
-     <tr height="25"><td><input type="text"      class="input_txtbx1" class="input_ckbx1" value="${requestfor.copyassign}" name="copyassign" id="copyassign"><span class="err" id="copyassignerror"><form:errors path="Requestfordemand.copyassign"></form:errors></span></td><td><span class="err">*</span>Copy of Assignment
+     <tr height="25"><td><input type="text"      class="input_txtbx1" class="input_ckbx1" value="${requestfor.copyassign}" name="copyassign" id="copyassign"><span class="err" id="copyassignerror"><form:errors path="Requestfordemand.copyassign"></form:errors></span></td><td><span class="err">*</span>&nbsp;Copy of Assignment
      </td></tr>
-     <tr height="25"><td><input type="text"  class="input_txtbx1" class="input_ckbx1" value="${requestfor.greencard}" name="greencard" id="greencard"><span class="err" id="greencarderror"><form:errors path="Requestfordemand.greencard"></form:errors></span></td><td><span class="err">*</span>Front and back of Certified Mail: "Green Card"
+     <tr height="25"><td><input type="text"  class="input_txtbx1" class="input_ckbx1" value="${requestfor.greencard}" name="greencard" id="greencard"><span class="err" id="greencarderror"><form:errors path="Requestfordemand.greencard"></form:errors></span></td><td><span class="err">*</span>&nbsp;Front and back of Certified Mail: "Green Card"
      </td></tr>
-     <tr height="25"><td><input type="text"  class="input_txtbx1" class="input_ckbx1" value="${requestfor.defaultattorney}" name="defaultattorney" id="defaultattorney"><span class="err" id="defaultattorneyerror"><form:errors path="Requestfordemand.defaultattorney"></form:errors></span></td><td><span class="err">*</span>Any correspondence from the defaulting Adjuster or Defaulting Attorney
+     <tr height="25"><td><input type="text"  class="input_txtbx1" class="input_ckbx1" value="${requestfor.defaultattorney}" name="defaultattorney" id="defaultattorney"><span class="err" id="defaultattorneyerror"><form:errors path="Requestfordemand.defaultattorney"></form:errors></span></td><td><span class="err">*</span>&nbsp;Any correspondence from the defaulting Adjuster or Defaulting Attorney
      </td></tr>
        </table> <br>     
        <table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table" ><tr height="35">
@@ -511,7 +705,7 @@ document.getElementById("fax").value=phone;
        <td  valign="right" align="right" >
        
        <input type="text"  class="input_txtbx1"  value="${requestfor.clinicrep}" name="clinicrep" id="clinicrep"><span class="err" id="clinicreperror" style="color: red;font-style:italic;"><form:errors path="Requestfordemand.clinicrep"></form:errors></span></td></tr>
-       <tr><td></td><td align="right" ><span class="err" id="clinicreperror">*</span>Clinic Representative</td></tr> 
+       <tr><td></td><td align="right" ><span class="err" id="clinicreperror">*</span>&nbsp;Clinic Representative</td></tr> 
        
        
        

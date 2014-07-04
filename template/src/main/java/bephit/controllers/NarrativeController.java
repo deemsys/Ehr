@@ -25,6 +25,9 @@ import bephit.model.*;
 public class NarrativeController
 {
 	@Autowired  
+	SignupDAO signupDAO;
+	
+	@Autowired  
 	NarrativereportDAO narrativeDAO;
 	
 	@Autowired
@@ -57,9 +60,14 @@ public class NarrativeController
 		
 		PatientDetailsForm patientDetailsForm=new PatientDetailsForm();
 		patientDetailsForm.setPatientDetails(patientDAO.getUsername(username));
-		if(patientDAO.getUsername(username).size()==0)
+		if(signupDAO.getPatientusername(username).size()==0)
 		{
 			model.addAttribute("nsearch","error");
+			return "narrativesearch";
+		}
+		if(patientDAO.getUsername(username).size()==0)
+		{
+			model.addAttribute("psearch","error");
 			return "narrativesearch";
 		}
 		System.out.println("patientid"+patientDetailsForm.getPatientDetails().get(0).getPatient_id());

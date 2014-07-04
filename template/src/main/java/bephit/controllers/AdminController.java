@@ -1181,7 +1181,7 @@ public String editworkschooldetails(@RequestParam("username")String username, Ht
 
 	@RequestMapping(value = "/insertnoticeofassignment", method = RequestMethod.POST)
 	public String insert_noticeofassignment(HttpServletRequest request,HttpSession session,@ModelAttribute("noticeerror") @Valid Noticeassignment noticeassignmentdetails,BindingResult result, ModelMap model) {
-		session.setAttribute("notice",noticeassignmentdetails);
+		//session.setAttribute("notice",noticeassignmentdetails);
 		if (result.hasErrors()) {
 			NoticeassignmentForm noticeassignmentform = new NoticeassignmentForm();
 			noticeassignmentform.setNoticeassignmentdetails(noticeassignmentDAO.getnoticeassignment());
