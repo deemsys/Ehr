@@ -137,7 +137,7 @@ function validatename1(){
 		  if(document.getElementById("guardian").value.length<4 || document.getElementById("guardian").value.length>=32)
 		  {
 		  	
-		  	document.getElementById("guardianerror").innerHTML="should be min 4 and max 32";
+		  	document.getElementById("guardianerror").innerHTML="should be of length 4 to 32";
 		  	
 		      return false;
 		  }
@@ -148,7 +148,7 @@ function validatename1(){
 		  if(document.getElementById("drname").value.length<4 || document.getElementById("drname").value.length>=32)
 		  {
 		  	
-		  	document.getElementById("drnameerror").innerHTML="should be min 4 and max 32";
+		  	document.getElementById("drnameerror").innerHTML="Name should be of length 4 to 32";
 		  	
 		      return false;
 		  }
@@ -194,7 +194,7 @@ function validatename1(){
 	  if(document.getElementById("pwitness").value.length<4 || document.getElementById("pwitness").value.length>=32)
 	  {
 	  	
-	  	document.getElementById("pwitnesserror").innerHTML="should be min 4 and max 32";
+	  	document.getElementById("pwitnesserror").innerHTML="should be of length 4 to 32";
 	  	
 	      return false;
 	  }
@@ -234,8 +234,8 @@ function validatename1(){
                         <table cellpadding="0" cellspacing="0" border="0" width="50%">
                         <tr>
                         <div align="justify">
-                        <p id="mypar">I (We) being the parent or guardian of <input type="text" class="input_txtbx1" id="guardian" name="guardian" onInput="return validatename(id)"; /><span class="err" id="guardianerror" ><form:errors path="TreatMinor.guardian"></form:errors></span>, a minor, being the age of <input type="text" class="input_txtbx1" id="age" name="age" onkeypress="return validate(event)";/><span class="err"><form:errors path="TreatMinor.age"></form:errors></span> do hereby consent, authorize and request</p>
-                        <p id="mypar">Dr.<input type="text" class="input_txtbx1" id="drname" name="drname"  onInput="return validatename(id)"; /><span class="err" id="drnameerror"> <form:errors path="TreatMinor.drname"></form:errors></span>to administer such treatment deemed advisable, necessary or requested on the above minor.</p>
+                        <p id="mypar">I (We) being the parent or guardian of <input type="text" class="input_txtbx1" id="guardian" name="guardian" onInput="return validatename(id)"; /><span style="color: red;font-style:italic;" id="guardianerror"  ><form:errors path="TreatMinor.guardian"></form:errors></span>, a minor, being the age of <input type="text" class="input_txtbx1" id="age" name="age" onkeypress="return validate(event)";/><span style="color: red;font-style:italic;"><form:errors path="TreatMinor.age"></form:errors></span> do hereby consent, authorize and request</p>
+                        <p id="mypar">Dr.<input type="text" class="input_txtbx1" id="drname" name="drname"  onInput="return validatename(id)"; /><span style="color: red;font-style:italic;" id="drnameerror"> <form:errors path="TreatMinor.drname"></form:errors></span>to administer such treatment deemed advisable, necessary or requested on the above minor.</p>
                         <p id="mypar">I (We) agree to hold him free and harmless from any claims, suits for damages or complications which may result from such treatment.
                         
                         </p>
@@ -247,20 +247,20 @@ function validatename1(){
                         <tr class="row1">
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err"></span>Signed:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="signed" onInput="return validatename1()"; name="signed"></td><span class="err" id="signederror"><form:errors path="TreatMinor.signed"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="signed" onInput="return validatename1()"; name="signed"><br><span style="color: red;font-style:italic;" id="signederror"><form:errors path="TreatMinor.signed"></form:errors></span></td>
 				                  <tr> <td></td></tr>
                         
-                        </tr>
+                       
                         <tr class="row1">
-				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date:  </td>
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err">* </span>Date:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="datepicker" name="pdate" /><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="TreatMinor.pdate"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="datepicker" name="pdate" /><br><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="TreatMinor.pdate"></form:errors></span>
                         </td>
                         </tr>
                         <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Witness: </td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Witness: </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="pwitness" name="pwitness"  onInput="return validatename(id)"; /><span id="pwitnesserror" style="color: red;font-style:italic;" ><form:errors path="TreatMinor.pwitness"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="pwitness" name="pwitness"  onInput="return validatename(id)"; /><br><span id="pwitnesserror" style="color: red;font-style:italic;" ><form:errors path="TreatMinor.pwitness"></form:errors></span>
 				                  	</tr>
                         <tr>
                         </table>
