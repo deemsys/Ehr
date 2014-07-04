@@ -4,7 +4,10 @@
 <html>
 <head>
 <link rel="stylesheet" href="/resources/css/style.css" />
-
+<link rel="stylesheet" href="/resources/css/style.css" />
+<link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
+ <script src="resources/js/jquery.min.js"></script>
+  <script src="resources/js/jquery-ui.js"></script>
 <STYLE type="text/css">
    P#mypar {font-style:calibri;
    line-height:18px;}
@@ -81,8 +84,9 @@ document.getElementById("patientsignatureerror").innerHTML=" ";
 
 	</script>
 	
-<!-- 	<script>
+	<script>
   $(function() {
+	  alert("iname");
 	$("#iname").on("keypress", function(e) {
 		if (e.which === 32 && !this.value.length)
 	        e.preventDefault();
@@ -105,7 +109,7 @@ document.getElementById("patientsignatureerror").innerHTML=" ";
 	});	
   
 
-</script> -->
+</script> 
 
 <script>
 function validatename(id){
@@ -114,12 +118,6 @@ function validatename(id){
     document.getElementById(id).value = textInput;
 }
 
-</script>
-<script>
-$("#patientsignature").on("keypress", function(e) {
-    if (e.which === 32 && !this.value.length)
-        e.preventDefault();
-});
 </script>
 
 <script>
