@@ -44,34 +44,34 @@
 	</c:if>
 
 	<form name='f' action="<c:url value='j_spring_security_check' />" method='POST'>
-		<div id="login_div">
+		<div id="login_div" style="border:solid 5px grey;border-radius:3px;">
 		  <div class="login-top"></div>
 		  <div class="login-center">
 		    <ul class="login-list">
 		      <li>
-		        <p>Username</p>
+		        <p>UserName</p>
 		      </li>
 		      <li>
-		        <input type="text" class="inputbx" name="j_username" value=''>
-				<p><font color="Red"></font></p>
+		        <input type="text" class="inputbx" name="j_username" id="uname" value=''>
+				<p><font color="Red"><span id="urequires"></span></font></p>
 		      </li>
 		      <li>
 		        <p>Password</p>
 		      </li>
 		      <li>
-		        <input type="password" class="inputbx" name="j_password">
-				<!-- <p><font color="Red">Required Field Cannot Be Blank</font></p>	 -->
+		        <input type="password" class="inputbx" name="j_password" id="pswd">
+				<p><font color="Red"><span id="prequires"></span></font></p>
 		      </li>
 		      <li><a href="#">
-		        <input type="submit" class="submit-btn" value=" " name="submit">
+		        <input type="submit" class="submit-btn" value=" " name="submit" onclick="return require();">
 		        </a></li>
 		      <!-- <li><a href="#" class="forgot-password"></a></li -->
-		     <table><tr><td>
-		     <li><a style="text-decoration: underline;" href="doctorsignup"><font color="white">Doctor Registration</font></a></li></td>
-		    <td width="100"></td>
-		     <td align="right"> <li><a  style="text-decoration: underline;" href="signup"><font color="white">Patient Registration</font></a></li>
+		     <li style="padding-left: 12px;"><table><tr><td>
+		     <a style="text-decoration: underline;" href="doctorsignup"><font color="white">Doctor Registration</font></a></td>
+		    <td width="110"></td>
+		     <td align="right"><a  style="text-decoration: underline;" href="signup"><font color="white">Patient Registration</font></a>
 		     </td></tr>
-		     </table>
+		     </table></li>
 		      <!-- <li><a href="signup" style="color:ffffff">Register</a></li> --> 
 		    </ul>
 		  </div>
@@ -83,5 +83,24 @@
 		</div>   
 		
 	</form>
+	<script type="text/javascript">
+	function require(){
+	document.getElementById("urequires").innerHTML="";
+	document.getElementById("prequires").innerHTML="";
+	if(document.getElementById("uname").value=="" && document.getElementById("pswd").value==""){
+		document.getElementById("urequires").innerHTML="Field should not be Empty";
+		document.getElementById("prequires").innerHTML="Field should not be Empty";
+		return false;
+	}
+	else if(document.getElementById("uname").value==""){
+		document.getElementById("urequires").innerHTML="Field should not be Empty";
+		return false;
+	}
+	else if(document.getElementById("pswd").value==""){
+		document.getElementById("prequires").innerHTML="Field should not be Empty";
+		return false;
+	}
+}
+	</script>
 </body>
 </html>
