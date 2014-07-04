@@ -4129,12 +4129,12 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 	   model.addAttribute("patientno","0");
 	}
 		model.addAttribute("menu","adminpatient");
-		session.removeAttribute("lastname");
+	/*	session.removeAttribute("lastname");
 		session.removeAttribute("attorney");
 		session.removeAttribute("accident");
 		session.removeAttribute("dateofaccident");
 		session.removeAttribute("insurance");
-		session.setAttribute("lastname",lastname);
+		*/session.setAttribute("lastname",lastname);
 		session.setAttribute("attorney",NameOfAttorney);
 		session.setAttribute("accident",accident);
 		session.setAttribute("dateofaccident",dateofaccident);
