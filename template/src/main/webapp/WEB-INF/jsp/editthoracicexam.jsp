@@ -397,7 +397,7 @@ $(function() {
  <table><tr><td><B style="font-size:14px"><span class="err"></span>PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sign" value="${thoracicexam.sign}"><span class="err"><form:errors path="Thoracicexam.sign"></form:errors></span></B></td></tr></table>
 <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="Save"></td>
+<td><input type="submit" class="submit_btn" value="update"></td>
 <td><input type="reset" class="submit_btn" value="Cancel" onclick="myclose()"> </td>
 <script>
  function myclose()
