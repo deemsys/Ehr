@@ -191,51 +191,51 @@ $(function() {
 	           
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td width="50%"><span class="err">*</span>To Attorney:</td>
-              <td width="50%"><input type="hidden" name="updateid" value="${updateletterdetails.updateid }"><input type="text" class="input_txtbx1" name="toattorney1" id="toattorney1"  value="${updateletterdetails.toattorney1}" onInput="return validatename(id)";/><span class="err" id="toattorney1error" ><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td width="50%"><span class="err">* </span>To Attorney:</td>
+              <td width="50%"><input type="hidden" name="updateid" value="${updateletterdetails.updateid }"><input type="text" class="input_txtbx1" name="toattorney1" id="toattorney1"  value="${updateletterdetails.toattorney1}" onInput="return validatename(id)";/><br/><span class="err" id="toattorney1error" ><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>
               <br>
                
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td width="50%"><span class="err"></span></td>
-              <td  width="50%"><input type="text" class="input_txtbx1" name="toattorney2" id="toattorney2"  value="${updateletterdetails.toattorney2}" onInput="return validatename(id)";/><span class="err" id="toattorney2error"  style="color: red;font-style:italic;"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td width="50%"><span class="err">&nbsp;&nbsp;</span></td>
+              <td  width="50%"><input type="text" class="input_txtbx1" name="toattorney2" id="toattorney2"  value="${updateletterdetails.toattorney2}" onInput="return validatename(id)";/><br/><span class="err" id="toattorney2error"  style="color: red;font-style:italic;"></span><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>
               <br>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td width="50%"><span class="err"></span></td>
-              <td width="50%"><input type="text" class="input_txtbx1" name="toattorney3" id="toattorney3"  value="${updateletterdetails.toattorney2}" onInput="return validatename(id)";/><span class="err" id="toattorney3error"  style="color: red;font-style:italic;"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td width="50%"><span class="err">&nbsp;&nbsp;</span></td>
+              <td width="50%"><input type="text" class="input_txtbx1" name="toattorney3" id="toattorney3"  value="${updateletterdetails.toattorney2}" onInput="return validatename(id)";/><br/><span class="err" id="toattorney3error"  style="color: red;font-style:italic;"></span><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>
               <br>
               
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td width="50%"><span class="err"></span>
+              <td width="50%"><span class="err">&nbsp;&nbsp;</span>
 In Regards to : 
               </td>
-              <td width="50%"><input type="text" class="input_txtbx1" name="reg" id="reg"  value="${updateletterdetails.reg}" onInput="return validatename(id)";/><span class="err" id="regerror"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td width="50%"><input type="text" class="input_txtbx1" name="reg" id="reg"  value="${updateletterdetails.reg}" onInput="return validatename(id)";/><br/><span class="err" id="regerror"></span><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>
               <br>
               
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td width="50%"><span class="err"></span>Date of Injury:
+              <td width="50%"><span class="err">&nbsp;&nbsp;&nbsp;</span>Date of Injury:
 
               </td>
-              <td width="50%"><input type="text" class="input_txtbx1" name="injury" id="datepicker1" value="${updateletterdetails.injury}"><span class="err" id="datepicker1error"></span></td>
+              <td width="50%"><input type="text" class="input_txtbx1" name="injury" id="datepicker1" readonly="readonly"  value="${updateletterdetails.injury}"><br/><span class="err" id="datepicker1error"></span></td>
               </tr>
               </table>
               <br>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td width="50%"><span class="err">*</span>Todays date:    
+              <td width="50%"><span class="err">* </span>Todays date:    
               </td>
-              <td width="50%"><input type="text" class="input_txtbx1" name="todaydate" id="datepicker2" value="${updateletterdetails.todaydate}"/><span class="err" id="datepicker2error"></span></td>
+              <td width="50%"><input type="text" class="input_txtbx1" name="todaydate" id="datepicker2" readonly="readonly"      value="${updateletterdetails.todaydate}"/><br/><span class="err" id="datepicker2error"></span></td>
               </tr>
               </table>
               <br>
@@ -256,7 +256,7 @@ In Regards to :
               <td><input type="submit" class="submit_btn" value="update" onclick="return checkSubmit('this');">
 				</td>
 				<td><a href="deleteupdateletter?updateid=${updateletterdetails.updateid }" style="color:white" class="submit_btn" onclick="return confirmation() ">Delete</a></td>
-				<td>&nbsp;&nbsp;</td>
+				<td></td>
               <td><a href="viewallpatientdetails" style="color:white" class="submit_btn">Cancel</a></td>
               <td>&nbsp;&nbsp;</td>
         	  </tr>

@@ -344,7 +344,7 @@ function doAjaxPost() {
 <br>
  <table cellpadding="0" cellspacing="0" border="0" width="100%">
  <tr >
-	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">*</span>Please enter a Patient User Name</td>
+	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">* </span>Please Enter Patient UserName:</td>
 				 <td width="20"></td> <td valign="top" align="left" class="input_txt" width="200">
 				   <input type="text" class="input_txtbx1" id="username" name="username" /><br/>
 				  </td>
@@ -388,8 +388,8 @@ function doAjaxPost() {
 	           
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td width="50%"><span class="err">*</span>To Attorney:</td>
-              <td width="50%"><input type="text" class="input_txtbx1" name="toattorney1" id="toattorney1" onInput="return validatename(id)";/><span class="err" id="toattorney1error"  style="color: red;font-style:italic;" style="color: red;font-style:italic;"><form:errors path="Updateletter.toattorney1"></form:errors></td>
+              <td width="50%"><span class="err">* </span>To Attorney:</td>
+              <td width="50%"><input type="text" class="input_txtbx1" name="toattorney1" id="toattorney1" onInput="return validatename(id)";/><br/><span class="err" id="toattorney1error"  style="color: red;font-style:italic;" style="color: red;font-style:italic;"><form:errors path="Updateletter.toattorney1"></form:errors></td>
               </tr>
               </table>
               <br>
@@ -397,42 +397,41 @@ function doAjaxPost() {
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td width="50%"><span class="err"></span></td>
-              <td  width="50%"><input type="text" class="input_txtbx1" name="toattorney2" id="toattorney2" onInput="return validatename(id)";/><span class="err" id="toattorney2error"  style="color: red;font-style:italic;"><form:errors path="Updateletter.toattorney2"></form:errors></td>
+              <td  width="50%"><input type="text" class="input_txtbx1" name="toattorney2" id="toattorney2" onInput="return validatename(id)";/><br/><span class="err" id="toattorney2error"  style="color: red;font-style:italic;"><form:errors path="Updateletter.toattorney2"></form:errors></td>
               </tr>
               </table>
               <br>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td width="50%"><span class="err"></span></td>
-              <td width="50%"><input type="text" class="input_txtbx1" name="toattorney3" id="toattorney3" onInput="return validatename(id)";/><span class="err" id="toattorney3error"  style="color: red;font-style:italic;"><form:errors path="Updateletter.toattorney3"></form:errors></td>
+              <td width="50%"><input type="text" class="input_txtbx1" name="toattorney3" id="toattorney3" onInput="return validatename(id)";/><br/><span class="err" id="toattorney3error"  style="color: red;font-style:italic;"><form:errors path="Updateletter.toattorney3"></form:errors></td>
               </tr>
               </table>
               <br>
               
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td width="50%"><span class="err"></span>
-In Regards to : 
+              <td width="50%"><span class="err">&nbsp;&nbsp;</span>In Regards to : 
               </td>
-              <td width="50%"><input type="text" class="input_txtbx1" name="reg" id="reg" onInput="return validatename(id)";/><span class="err" id="regerror"><form:errors path="Updateletter.reg"></form:errors></td>
+              <td width="50%"><input type="text" class="input_txtbx1" name="reg" id="reg" onInput="return validatename(id)";/><br/><span class="err" id="regerror"><form:errors path="Updateletter.reg"></form:errors></td>
               </tr>
               </table>
               <br>
               
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td width="50%"><span class="err"></span>Date of Injury:
+              <td width="50%"><span class="err">&nbsp;&nbsp;&nbsp;</span>Date of Injury:
 
               </td>
-              <td width="50%"><input type="text" class="input_txtbx1" id="datepicker1" name="injury"/><span class="err" id="datepicker1error"><form:errors path="Updateletter.injury"></form:errors></span></td>
+              <td width="50%"><input type="text" class="input_txtbx1" id="datepicker1" name="injury"/><br/><span class="err" id="datepicker1error"><form:errors path="Updateletter.injury"></form:errors></span></td>
               </tr>
               </table>
               <br>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td width="50%"><span class="err">*</span>Todays date:    
+              <td width="50%"><span class="err">* </span>Todays date:    
               </td>
-              <td width="50%"><input type="text" class="input_txtbx1" id="datepicker2" name="todaydate"/><span class="err" id="datepicker2error"  style="color: red;font-style:italic;"><form:errors path="Updateletter.todaydate"></form:errors></span></td>
+              <td width="50%"><input type="text" class="input_txtbx1" id="datepicker2" name="todaydate"/><br/><span class="err" id="datepicker2error"  style="color: red;font-style:italic;"><form:errors path="Updateletter.todaydate"></form:errors></span></td>
               </tr>
               </table>
               <br>
@@ -453,7 +452,7 @@ In Regards to :
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td width="50%"><span class="err">*</span>To Attorney:</td>
-              <td width="50%"><input type="hidden" name="updateid" value="${update.updateid }"><input type="text" class="input_txtbx1" name="toattorney1" id="toattorney1"  value="${update.toattorney1}" /><span class="err" id="toattorney1error" ><form:errors path="Updateletter.toattorney1"></form:errors></td>
+              <td width="50%"><input type="hidden" name="updateid" value="${update.updateid }"><input type="text" class="input_txtbx1" name="toattorney1" id="toattorney1"  value="${update.toattorney1}" /><br/><span class="err" id="toattorney1error" ><form:errors path="Updateletter.toattorney1"></form:errors></td>
               </tr>
               </table>
               <br>
@@ -461,14 +460,14 @@ In Regards to :
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td width="50%"><span class="err">*</span></td>
-              <td  width="50%"><input type="text" class="input_txtbx1" name="toattorney2" id="toattorney2"  value="${update.toattorney2}" /><span class="err" id="toattorney2error"  style="color: red;font-style:italic;"><form:errors path="Updateletter.toattorney2"></form:errors></td>
+              <td  width="50%"><input type="text" class="input_txtbx1" name="toattorney2" id="toattorney2"  value="${update.toattorney2}" /><br/><span class="err" id="toattorney2error"  style="color: red;font-style:italic;"><form:errors path="Updateletter.toattorney2"></form:errors></td>
               </tr>
               </table>
               <br>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td width="50%"><span class="err">*</span></td>
-              <td width="50%"><input type="text" class="input_txtbx1" name="toattorney3" id="toattorney3"  value="${update.toattorney3}" /><span class="err" id="toattorney3error"  style="color: red;font-style:italic;"><form:errors path="Updateletter.toattorney3"></form:errors></td>
+              <td width="50%"><input type="text" class="input_txtbx1" name="toattorney3" id="toattorney3"  value="${update.toattorney3}" /><br/><span class="err" id="toattorney3error"  style="color: red;font-style:italic;"><form:errors path="Updateletter.toattorney3"></form:errors></td>
               </tr>
               </table>
               <br>
@@ -478,7 +477,7 @@ In Regards to :
               <td width="50%"><span class="err"></span>
 In Regards to : 
               </td>
-              <td width="50%"><input type="text" class="input_txtbx1" name=" reg" id=" reg"  value="${update.reg}"/><span class="err"><form:errors path="Updateletter.reg"></form:errors></td>
+              <td width="50%"><input type="text" class="input_txtbx1" name=" reg" id=" reg"  value="${update.reg}"/><br/><span class="err"><form:errors path="Updateletter.reg"></form:errors></td>
               </tr>
               </table>
               <br>
@@ -488,7 +487,7 @@ In Regards to :
               <td width="50%"><span class="err"></span>Date of Injury:
 
               </td>
-              <td width="50%"><input type="text" class="input_txtbx1" name="injury" id="datepicker" value="${update.injury}"></td>
+              <td width="50%"><input type="text" class="input_txtbx1" name="injury" id="datepicker"  readonly="readonly" value="${update.injury}"></td>
               </tr>
               </table>
               <br>
@@ -496,7 +495,7 @@ In Regards to :
               <tr>
               <td width="50%"><span class="err">*</span>Todays date:    
               </td>
-              <td width="50%"><input type="text" class="input_txtbx1" name="todaydate" id="datepicker2" value="${update.todaydate}"/><span class="err" id="datepicker2error"  style="color: red;font-style:italic;"><form:errors path="Updateletter.todaydate"></form:errors></span></td>
+              <td width="50%"><input type="text" class="input_txtbx1" name="todaydate" id="datepicker2" readonly="readonly" value="${update.todaydate}"/><br/><span class="err" id="datepicker2error"  style="color: red;font-style:italic;"><form:errors path="Updateletter.todaydate"></form:errors></span></td>
               </tr>
               </table>
               <br>
