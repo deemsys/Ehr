@@ -14,6 +14,124 @@
   line-height:18px;}
    </STYLE>
    <script>
+  $(function() {
+		$("#pname").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});	
+  $(function() {
+		$("#datepicker").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		}); 
+  $(function() {
+		$("#muscle").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});  
+  $(function() {
+		$("#swelling").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+  $(function() {
+		$("#othernotes").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+  $(function() {
+		$("#othernotes").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+  $(function() {
+		$("#assessment").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+  $(function() {
+		$("#diagnosis1").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+  $(function() {
+		$("#diagnosis2").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+  $(function() {
+		$("#diagnosis3").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+  $(function() {
+		$("#diagnosis4").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+  $(function() {
+		$("#diagnosis5").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+  $(function() {
+		$("#diagnosis6").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+  $(function() {
+		$("#times").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+  $(function() {
+		$("#week").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+  $(function() {
+		$("#sign").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+  $(function() {
+		$("#break3").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+  $(function() {
+		$("#break4").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+  </script>
+  <script>
+  function validatename(id){
+	    var textInput = document.getElementById(id).value;
+	    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+	    document.getElementById(id).value = textInput;
+	}
+  
+  </script>
+   <script>
 $(function() {
    //$( "#draggable" ).draggable({ revert: "not valid" });
    
@@ -116,6 +234,15 @@ document.getElementById("pnameerror").innerHTML=" ";
 		
 		return false;
 		}
+		document.getElementById("pnameerror").innerHTML="";
+	    if(document.getElementById("pname").value.length<4 || document.getElementById("pname").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("pnameerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }	
+		
 		document.getElementById("datepickererror").innerHTML="";
 	if(document.getElementById("datepicker").value=="")
 		{
@@ -139,6 +266,14 @@ document.getElementById("pnameerror").innerHTML=" ";
 	
 	return false;
 	}
+	document.getElementById("signerror").innerHTML="";
+    if(document.getElementById("sign").value.length<4 || document.getElementById("sign").value.length>=32)
+    {
+    	
+    	document.getElementById("signerror").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
 	}
 	</script>
 	
@@ -205,7 +340,7 @@ document.getElementById("pnameerror").innerHTML=" ";
            <c:set value="${elbowexamForm.elbowexam[0]}" var="elbowexam"/>
  <tr class="row1">
  <input type="hidden" name="elbowexamid" id="inp_id" value="${elbowexam.elbowexamid}">
-<td><h2><span class="err">*</span>Patient Name:</h2></td><td><input type="text" id="pname" name="pname" value="${elbowexam.pname}"/><span class="err" id="pnameerror"><form:errors path="Elbowexam.pname"></form:errors></span></td>
+<td><h2><span class="err">*</span>Patient Name:</h2></td><td><input type="text" id="pname" name="pname" value="${elbowexam.pname}" onInput="return validatename(id)";/><span class="err" id="pnameerror"><form:errors path="Elbowexam.pname"></form:errors></span></td>
 <td width="600">
 <td><h2><span class="err">*</span>Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${elbowexam.date}"/><span class="err" id="datepickererror"><form:errors path="Elbowexam.date"></form:errors></span></td>
 </tr>
@@ -222,9 +357,9 @@ document.getElementById("pnameerror").innerHTML=" ";
  <td></td>
  </tr>
  <tr class="row1">
- <td width="200">Muscle Symmetry:</td><td><input type="text" name="muscle" value="${elbowexam.muscle}"></td> 
+ <td width="200">Muscle Symmetry:</td><td><input type="text" name="muscle" id="muscle" value="${elbowexam.muscle}" onInput="return validatename(id)";></td> 
  <td width="150">Swelling / Discoloration:</td> 
- <td><input type="text" name="swelling" value="${elbowexam.swelling}"></td>
+ <td><input type="text" name="swelling" id="swelling" value="${elbowexam.swelling}" onInput="return validatename(id)";></td>
  </tr>
  <tr class="row1">
  <td>Dominant Hand: </td> <td><input type="radio" name="dominanthand" value="Left" <c:if test="${elbowexam.dominanthand=='Left'}"><c:out value="checked=checked"/></c:if>>Left <input type="radio" name="dominanthand" value="Right" <c:if test="${elbowexam.dominanthand=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td> 
@@ -255,7 +390,7 @@ document.getElementById("pnameerror").innerHTML=" ";
   <td>Common Extensors:</td><td width="200"><input type="radio" name="commonextensors" value="Left" <c:if test="${elbowexam.commonextensors=='Left'}"><c:out value="checked=checked"/></c:if>>Left  <input type="radio" name="commonextensors" value="Right" <c:if test="${elbowexam.commonextensors=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
  </tr>
  <tr class="row1">
- <td>Other/Notes:<input type="text" name="othernotes" values="${elbowexam.othernotes }"></td> 
+ <td>Other/Notes:<input type="text" name="othernotes" id="othernotes" values="${elbowexam.othernotes }" onInput="return validatename(id)";></td> 
  <td></td><td></td>
  <td></td><td></td>
  </tr>
@@ -403,7 +538,7 @@ value="${elbowexam.suppinationr}" onkeypress="return validate(event)"></td>
  <td width="150"></td>
  </tr>          
  <tr class="row1">
- <td><B style="font-size:14px">ASSESSMENT / ADDITIONAL COMMENTS:</B></td><td><textarea name="assessment" rows='5' cols='40'>${elbowexam.assessment }</textarea></td><td></td>
+ <td><B style="font-size:14px">ASSESSMENT / ADDITIONAL COMMENTS:</B></td><td><textarea name="assessment" id="assessment" rows='5' cols='40' onInput="return validatename(id)";>${elbowexam.assessment }</textarea></td><td></td>
  <td></td><td></td>
  <td></td>
  </tr>         
@@ -421,15 +556,15 @@ value="${elbowexam.suppinationr}" onkeypress="return validate(event)"></td>
  <table>
  <tr class="row1">
  <td width="360"><B style="font-size:14px">DIAGNOSIS:</B></td>
- <td width="250">1)<input type="text" name="diagnosis1" value="${elbowexam.diagnosis1}"></td>
- <td width="250">2)<input type="text" name="diagnosis2" value="${elbowexam.diagnosis2 }"></td>
- <td width="250">3)<input type="text" name="diagnosis3" value="${elbowexam.diagnosis3 }"></td>
- <td width="250">4)<input type="text" name="diagnosis4" value="${elbowexam.diagnosis4 }"></td>
+ <td width="250">1)<input type="text" name="diagnosis1" id="diagnosis1" value="${elbowexam.diagnosis1}" onInput="return validatename(id)";></td>
+ <td width="250">2)<input type="text" name="diagnosis2" id="diagnosis2" value="${elbowexam.diagnosis2 }" onInput="return validatename(id)";></td>
+ <td width="250">3)<input type="text" name="diagnosis3" id="diagnosis3" value="${elbowexam.diagnosis3 }" onInput="return validatename(id)";></td>
+ <td width="250">4)<input type="text" name="diagnosis4" id="diagnosis4" value="${elbowexam.diagnosis4 }" onInput="return validatename(id)";></td>
  </tr>
  <tr class="row1">
  <td></td>
- <td width="250">5)<input type="text" name="diagnosis5" value="${elbowexam.diagnosis5}"></td>
- <td width="250">6)<input type="text" name="diagnosis6" value="${elbowexam.diagnosis6 }"></td>
+ <td width="250">5)<input type="text" name="diagnosis5" id="diagnosis5" value="${elbowexam.diagnosis5}" onInput="return validatename(id)";></td>
+ <td width="250">6)<input type="text" name="diagnosis6" id="diagnosis6" value="${elbowexam.diagnosis6 }" onInput="return validatename(id)";></td>
  <td></td>
  <td></td>
  </tr>
@@ -437,8 +572,8 @@ value="${elbowexam.suppinationr}" onkeypress="return validate(event)"></td>
  <table>
  <tr class="row1">
  <td width="120"><B style="font-size:14px">PLAN:</B></td>
- <td><input type="text" name="times" value="${elbowexam.times}">Times/week for </td>
- <td><input type="text" name="week" value="${elbowexam.week}">weeks to address the </td>
+ <td><input type="text" name="times" id="times" value="${elbowexam.times}" onInput="return validatename(id)";>Times/week for </td>
+ <td><input type="text" name="week" id="week" value="${elbowexam.week}" onInput="return validatename(id)";>weeks to address the </td>
  <td>above functional & structural deficits.  </td>
  <td>Treatment will consist of the following:</td>
  </tr>
@@ -466,11 +601,11 @@ value="${elbowexam.suppinationr}" onkeypress="return validate(event)"></td>
  <td width="250"><input type="checkbox" name="emg" value="EMG" <c:if test="${elbowexam.emg=='EMG'}"><c:out value="Checked"/></c:if>>EMG</td>
  <td width="250"><input type="checkbox" name="outside" value="Outside Referral" <c:if test="${elbowexam.outside=='Outside Referral'}"><c:out value="Checked"/></c:if>>Outside Referral </td>
  <td width="250"><input type="checkbox" name="dc" value="D/C" <c:if test="${elbowexam.dc=='D/C'}"><c:out value="Checked"/></c:if>>D/C</td>
- <td width="250"><input type="checkbox" name="otheraddress" id="otheraddress" value="Other" onclick="visible(this.value)"<c:if test="${elbowexam.otheraddress=='Other'}"><c:out value="Checked"/></c:if>>Other<input type="text" class="input_txtbx1" id="break4" name="break_text4" style="display:none" value="${elbowexam.break_text4}"/></td>
+ <td width="250"><input type="checkbox" name="otheraddress" id="otheraddress" value="Other" onclick="visible(this.value)"<c:if test="${elbowexam.otheraddress=='Other'}"><c:out value="Checked"/></c:if>>Other<input type="text" class="input_txtbx1" id="break4" name="break_text4" style="display:none" value="${elbowexam.break_text4}" onInput="return validatename(id)";/></td>
  </tr>
  </tr>
  <br/>
- <table><tr><td><B style="font-size:14px"><span class="err">*</span>PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sign" id="sign" value="${elbowexam.sign}"></B><span class="err" id="signerror"><form:errors path="Elbowexam.sign"></form:errors></span></td></tr></table>
+ <table><tr><td><B style="font-size:14px"><span class="err">*</span>PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sign" id="sign" value="${elbowexam.sign}" onInput="return validatename(id)";></B><span class="err" id="signerror"><form:errors path="Elbowexam.sign"></form:errors></span></td></tr></table>
 <table align="right">
 <tr>
 <td><input type="submit" class="submit_btn" value="Update" onclick="return checkSubmit('this');"></td>

@@ -311,9 +311,9 @@ document.getElementById("pnameerror").innerHTML=" ";
 	            </div><table cellpadding="0" cellspacing="0" border="0" width="98%">
            
  <tr class="row1">
-<td style="width: 293px; "><h4><span class="err">*</span>Patient Name:</h4></td><td><input type="text"  name="pname" id="pname" onInput="return validatename(id)";/><span class="err" id="pnameerror"><form:errors path="Elbowexam.pname"></form:errors></span></td>
+<td style="width: 293px; "><h4><span class="err">*</span>&nbsp;&nbsp;Patient Name:</h4></td><td><input type="text"  name="pname" id="pname" onInput="return validatename(id)";/><span class="err" id="pnameerror"><form:errors path="Elbowexam.pname"></form:errors></span></td>
 <td width="600" style="width: 226px; ">
-<td style="width: 164px; "><h4><span class="err">*</span>Date:</h4></td><td><input type="text"  id="datepicker" name="date"/><span class="err" id="datepickererror"><form:errors path="Elbowexam.date"></form:errors></span></td>
+<td style="width: 164px; "><h4><span class="err">*</span>&nbsp;&nbsp;Date:</h4></td><td><input type="text"  id="datepicker" name="date"/><span class="err" id="datepickererror"><form:errors path="Elbowexam.date"></form:errors></span></td>
 </tr>
 </table>
 <br/>
@@ -577,7 +577,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  </tr>
  </tr>
  <br/>
- <table><tr><td><B style="font-size:14px"><span class="err">*</span>PHYSICIAN SIGNATURE:</B> </td><td><input type="text" name="sign" id="sign" onInput="return validatename(id)";><span class="err" id="signerror"><form:errors path="Elbowexam.sign"></form:errors></span></td></tr></table>
+ <table><tr><td><B style="font-size:14px"><span class="err">*</span>&nbsp;&nbsp;PHYSICIAN SIGNATURE:</B> </td><td><input type="text" name="sign" id="sign" onInput="return validatename(id)";><span class="err" id="signerror"><form:errors path="Elbowexam.sign"></form:errors></span></td></tr></table>
 <table align="right">
 <tr>
 <td><input type="submit" class="submit_btn" value="Save" id="saveid" onclick="return checkSubmit('this');"></td>
