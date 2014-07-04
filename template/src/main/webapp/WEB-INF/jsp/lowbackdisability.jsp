@@ -124,6 +124,14 @@ $(function() {
 	 var sectiontotal=parseInt(section1)+parseInt(section2)+parseInt(section3)+parseInt(section4)+parseInt(section5)+parseInt(section6)+parseInt(section7)+parseInt(section8)+parseInt(section9)+parseInt(section10);
 	 document.getElementById("section").value=sectiontotal;	
 	 document.getElementById("section1").innerHTML=sectiontotal;
+	 
+	 var score=document.getElementById("score").value;
+	 var section=document.getElementById("section").value;
+	 var div=(score*2)/(section*10);
+	 var adl=div/100;
+	// alert("div"+div);
+	 document.getElementById("adl").value=adl;
+	 document.getElementById("adldiv").innerHTML=adl;
  }
 		  
  </script>
@@ -257,9 +265,9 @@ document.getElementById("pnameerror").innerHTML=" ";
           <table cellpadding="0" cellspacing="0" border="0" width="98%">
            
  <tr class="row1">
-<td><h4><span class="err">*</span>Patient Name:</h4></td><td><input type="text" id="pname" name="pname" onInput="return validatename(id)";/><span class="err" id="pnameerror"><form:errors path="Lowback.pname"></form:errors></span></td>
+<td><h4><span class="err">* </span>Patient Name:</h4></td><td><input type="text" id="pname" name="pname" onInput="return validatename(id)";/><span class="err" id="pnameerror"><form:errors path="Lowback.pname"></form:errors></span></td>
 <td width="300">
-<td><h4><span class="err">*</span>Date:</h4></td><td><input type="text"  id="datepicker" name="date" id="datepickererror" /><span class="err" id="datepickererror" ><form:errors path="Lowback.date"></form:errors></span></td>
+<td><h4><span class="err">* </span>Date:</h4></td><td><input type="text"  id="datepicker" name="date" id="datepickererror" /><span class="err" id="datepickererror" ><form:errors path="Lowback.date"></form:errors></span></td>
 </tr>
 </table>
 <br/>
@@ -470,7 +478,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  </table>
  <table style="display:none" id="page1">
  <tr>
- <td>(</td><td><input type="hidden" id="score" name="score" size="7"><div id="score1"></div></td><td>*2)&nbsp;/&nbsp;( <input type="hidden" id="section" name="section" size="7"></td><td><div id="section1"></div></td><td> *10)</td><td>&nbsp;&nbsp;=&nbsp;&nbsp;<input type="hidden" id="adl" name="adl" size="9"></td><td><div id="adldiv"></div></td><td>&nbsp;%ADL&nbsp;<input type="hidden" name="adl2" size="9"> </td><td><input type="button" value="Calculate" onclick="return percentage()" class="submit_btn"></td>
+ <td>(</td><td><input type="hidden" id="score" name="score" size="7"><div id="score1"></div></td><td>*2)&nbsp;/&nbsp;( <input type="hidden" id="section" name="section" size="7"></td><td><div id="section1"></div></td><td> *10)</td><td>&nbsp;&nbsp;=&nbsp;&nbsp;<input type="hidden" id="adl" name="adl" size="9"></td><td><div id="adldiv"></div></td><td>&nbsp;%ADL&nbsp;<input type="hidden" name="adl2" size="9"> </td><!-- <td><input type="button" value="Calculate" onclick="return percentage()" class="submit_btn"></td> -->
  </tr>
  </table>
  <table>
