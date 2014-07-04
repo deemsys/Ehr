@@ -1335,7 +1335,7 @@ document.getElementById("signerror").innerHTML=" ";
 					</select><input type="text"  class="input_txtbx1" id="id3" onInput="validatealpha9();" name="name3" value="${patientDetails.name}"><span id="error8" style="color: red;font-style:italic;"></span>stated that there were no residual effects from that accident and <select  name="gender12" id="gender12">
 					<option selected="selected" value="He" >He</option>
 					<option value="She">She</option>
-					</select> was in good health prior to the current accident.  Past medical history revealed <input type="text" id="id4" onInput="validatealpha10();" class="input_txtbx1" name="pastmedicalhistory"><span id="error9" style="color: red;font-style:italic;"></span>s.  There <select  name="gender13" id="gender13">
+					</select> was in good health prior to the current accident.  Past medical history revealed <input type="text" id="id4" onInput="validatealpha10();" class="input_txtbx1" name="pastmedicalhistory"><span id="error9" style="color: red;font-style:italic;"></span>.  There <select  name="gender13" id="gender13">
 					<option selected="selected" value="Were" >Were</option>
 					<option value="Were no">Were no</option>
 					</select> past surgeries and <select  name="gender14" id="gender14">
@@ -1432,7 +1432,7 @@ document.getElementById("signerror").innerHTML=" ";
 					</p>
 					<p><B style="font-size:14px">Physical Exam</B></p>
 					<p>&nbsp;&nbsp;<B style="font-size:13px"><u>Physical Inspection</u></B></p>
-					<p style="line-height:26px">Examination revealed a <input type="text"  class="input_txtbx1" oninput="validatenum();" id="ageid" name="age"> year old, <input type="text" onInput="validatephy();"  class="input_txtbx1" id="ida" name="age1"><span id="errorphy" style="color: red;font-style:italic;"></span>, <input type="text" onInput="validatephy1();" class="input_txtbx1" id="lbid" name="lb"><span id="errorphy1" style="color: red;font-style:italic;"></span>&nbsp;lb. <select  name="gender31" id="gender31">
+					<p style="line-height:26px">Examination revealed a <input type="text"  class="input_txtbx1" oninput="validatenum();" id="ageid" maxlength="3" name="age"> year old, <input type="text" onInput="validatephy();"  class="input_txtbx1" id="ida" name="age1"><span id="errorphy" style="color: red;font-style:italic;"></span>, <input type="text" onInput="validatephy1();" class="input_txtbx1" id="lbid" name="lb"><span id="errorphy1" style="color: red;font-style:italic;"></span>&nbsp;lb. <select  name="gender31" id="gender31">
 					<option selected="selected" value="White" >White</option>
 					<option value="Black">Black</option> </select><select  name="gender32" id="gender32">
 					<option selected="selected" value="Male" >Male</option>
@@ -1980,8 +1980,8 @@ I hope you find this narrative report and discussion helpful in resolving the cu
 					<option selected="selected" value="He" <c:if test="${narrative.gender5=='He'}"><c:out value="Selected"/></c:if>>He</option>
 					<option value="She" <c:if test="${narrative.gender5=='She'}"><c:out value="Selected"/></c:if>>She</option>
 					</select> was at a dead stop. It was daylight and road conditions were dry at the time of impact. <input type="text" name="name1" value="${narrative.name1}"> wearing <select  name="gendernew" id="gendernew">
-					<option selected="selected" value="His" <c:if test="${narrative.gendernew=='He'}"><c:out value="Selected"/></c:if>>He</option>
-					<option value="Her" <c:if test="${narrative.gendernew=='She'}"><c:out value="Selected"/></c:if>>Her</option>
+					<option selected="selected" value="His" <c:if test="${narrative.gendernew=='His'}"><c:out value="Selected"/></c:if>>His</option>
+					<option value="Her" <c:if test="${narrative.gendernew=='Her'}"><c:out value="Selected"/></c:if>>Her</option>
 					</select> seatbelt with both hands on the wheel and <select  name="gender6" id="gender6">
 					<option selected="selected" value="His" <c:if test="${narrative.gender6=='His'}"><c:out value="Selected"/></c:if> >His</option>
 					<option value="Her" <c:if test="${narrative.gender6=='Her'}"><c:out value="Selected"/></c:if>>Her</option>
