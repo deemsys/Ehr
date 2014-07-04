@@ -44,7 +44,7 @@ document.getElementById("usernameerror").innerHTML=" ";
 		
 		if(document.getElementById("username").value=="")
 		{
-		document.getElementById("usernameerror").innerHTML="Required Field Should not be Empty";
+		document.getElementById("usernameerror").innerHTML="Required Field Should not be Empty.";
 		
 		return false;
 		}
@@ -52,7 +52,7 @@ document.getElementById("usernameerror").innerHTML=" ";
 	    if(document.getElementById("username").value.length<4 || document.getElementById("username").value.length>=32)
 	    {
 	    	
-	    	document.getElementById("usernameerror").innerHTML="Username should be min 4 and max 32";
+	    	document.getElementById("usernameerror").innerHTML="Username Should be of length 4 to 32.";
 	    	
 	        return false;
 	    }
@@ -67,16 +67,16 @@ document.getElementById("passworderror").innerHTML=" ";
 		
 		if(document.getElementById("password").value=="")
 		{
-		document.getElementById("passworderror").innerHTML="Required Field Should not be Empty";
+		document.getElementById("passworderror").innerHTML="Required Field Should not be Empty.";
 		
 		return false;
 		}
 		
 		document.getElementById("passworderror").innerHTML="";
-	    if(document.getElementById("password").value.length<3 || document.getElementById("password").value.length>=32)
+	    if(document.getElementById("password").value.length<4 || document.getElementById("password").value.length>=32)
 	    {
 	    	
-	    	document.getElementById("passworderror").innerHTML="Password should be min 3 and max 32";
+	    	document.getElementById("passworderror").innerHTML="Password should be length 4 to 32";
 	    	
 	        return false;
 	    }
@@ -91,13 +91,13 @@ document.getElementById("confirmerror").innerHTML=" ";
 		
 		if(document.getElementById("confirm").value=="")
 		{
-		document.getElementById("confirmerror").innerHTML="Required Field Should not be Empty";
+		document.getElementById("confirmerror").innerHTML="Required Field Should not be Empty.";
 		
 		return false;
 		}
         if(document.getElementById("password").value!=document.getElementById("confirm").value)
         {
-        	document.getElementById("confirmerror").innerHTML="password Must Be Same";
+        	document.getElementById("confirmerror").innerHTML="Password Should be of length.";
             return false;
         }
         
@@ -154,28 +154,28 @@ document.getElementById("emailerror").innerHTML=" ";
                  <c:when test="${empty signup}">
 	            <table cellpadding="0" cellspacing="0" border="0" width="100%">
 	            <tr class="row1">
-	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Username</td>
+	             <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Username:</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="input_txtbx1" id="username" name="username" min="4" maxlength="32" onInput="return validateusername()"; />
 				 </br> <span id="usernameerror" class="err"><form:errors path="Signup.username"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
-	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Password</td>
+	             <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Password:</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="password" class="input_txtbx1" id="password" name="password" onInput="return validateusername1()"; min="3" maxlength="32"/><br><span class="err" id="passworderror"><form:errors path="Signup.password"></form:errors></span>
 				  </td>
 				  </tr>
 				   <tr class="row1">
-	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Confirm Password</td>
+	             <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Confirm Password:</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="password" class="input_txtbx1" id="confirm" name="confirm" /><br><span class="err" id="confirmerror"><form:errors path="Signup.confirm"></form:errors></span>
+				  <input type="password" class="input_txtbx1" id="confirm" name="confirm" /><br/><span class="err" id="confirmerror"><form:errors path="Signup.confirm"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
-	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>E-mail Id</td>
+	             <td valign="middle" align="left" class="input_txt"><span class="err">* </span>E-mail Id:</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="email" name="email" /><br><span class="err" id="emailerror"><form:errors path="Signup.email"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="email" name="email" /><br/><span class="err" id="emailerror"><form:errors path="Signup.email"></form:errors></span>
 				  </td>
 				  </tr>
 				  </table>
@@ -183,27 +183,27 @@ document.getElementById("emailerror").innerHTML=" ";
 				  <c:otherwise>
 				   <table cellpadding="0" cellspacing="0" border="0" width="100%">
 	            <tr class="row1">
-	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Username</td>
+	             <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Username:</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="username" value="${signup.username}"/></br><span class="err"><form:errors path="Signup.username"></form:errors><font color="Red" size="+1"><c:if test="${usernames=='exist'}"><c:out value="Username Already Exists"></c:out></c:if></font></span>
+				  <input type="text" class="input_txtbx1" id="inp_id" name="username" value="${signup.username}"/><br/><span class="err"><form:errors path="Signup.username"></form:errors><font color="Red" size="+1"><c:if test="${usernames=='exist'}"><c:out value="Username Already Exists"></c:out></c:if></font></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
-	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Password</td>
+	             <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Password:</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="password" class="input_txtbx1" id="password" name="password" value="${signup.password}"/></br><span class="err"><form:errors path="Signup.password"></form:errors></span>
+				  <input type="password" class="input_txtbx1" id="password" name="password" value="${signup.password}"/><br/><span class="err"><form:errors path="Signup.password"></form:errors></span>
 				  </td>
 				  </tr>
 				   <tr class="row1">
-	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Confirm Password</td>
+	             <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Confirm Password:</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="password" class="input_txtbx1" id="confirm" name="confirm" value="${signup.confirm}"/></br><span class="err"><form:errors path="Signup.confirm"></form:errors></span>
+				  <input type="password" class="input_txtbx1" id="confirm" name="confirm" value="${signup.confirm}"/><br/><span class="err"><form:errors path="Signup.confirm"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
-	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>E-mail Id</td>
+	             <td valign="middle" align="left" class="input_txt"><span class="err">* </span>E-mail Id:</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="email" value="${signup.email}"/></br><span class="err"><form:errors path="Signup.email"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="inp_id" name="email" value="${signup.email}"/><br/><span class="err"><form:errors path="Signup.email"></form:errors></span>
 				  </td>
 				  </tr>
 				  </table>

@@ -83,7 +83,7 @@ public class Dcfeeslipcontroller
 			int ans=feeslipDAO.setAns(dcfeeslip);
 			System.out.println("ans"+ans);
 			returnText=Integer.toString(ans);
-				returnText="<input type=text class=input_txtbx1 name=charges id=charges value='"+returnText+"'>";
+				returnText="<input type=text class=input_txtbx1 name=charges id=charges value='"+returnText+"' readonly='readonly'>";
 				return returnText;
 				
 	}

@@ -49,7 +49,7 @@ document.getElementById("doctorusernameerror").innerHTML=" ";
 		
 		if(document.getElementById("doctorusername").value=="")
 		{
-		document.getElementById("doctorusernameerror").innerHTML="Required Field Should not be Empty";
+		document.getElementById("doctorusernameerror").innerHTML="Required Field Should not be Empty.";
 		
 		return false;
 		}
@@ -59,7 +59,7 @@ document.getElementById("doctorusernameerror").innerHTML=" ";
 	    if(document.getElementById("doctorusername").value.length<4 || document.getElementById("doctorusername").value.length>=32)
 	    {
 	    	
-	    	document.getElementById("doctorusernameerror").innerHTML="Username should be min 4 and max 32";
+	    	document.getElementById("doctorusernameerror").innerHTML="Username should be be of length 4 to 32.";
 	    	
 	        return false;
 	    } 
@@ -67,17 +67,17 @@ document.getElementById("doctorpassworderror").innerHTML=" ";
 		
 		if(document.getElementById("doctorpassword").value=="")
 		{
-		document.getElementById("doctorpassworderror").innerHTML="Required Field Should not be Empty";
+		document.getElementById("doctorpassworderror").innerHTML="Required Field Should not be Empty.";
 		
 		return false;
 		}
 		
 		
 		document.getElementById("doctorpassworderror").innerHTML="";
-	    if(document.getElementById("doctorpassword").value.length<3 || document.getElementById("doctorpassword").value.length>=32)
+	    if(document.getElementById("doctorpassword").value.length<4 || document.getElementById("doctorpassword").value.length>=32)
 	    {
 	    	
-	    	document.getElementById("doctorpassworderror").innerHTML="Password should be min 3 and max 32";
+	    	document.getElementById("doctorpassworderror").innerHTML="Password Should be of length 4 to 32.";
 	    	
 	        return false;
 	    }
@@ -85,13 +85,13 @@ document.getElementById("doctorconfirmerror").innerHTML=" ";
 		
 		if(document.getElementById("doctorconfirm").value=="")
 		{
-		document.getElementById("doctorconfirmerror").innerHTML="Required Field Should not be Empty";
+		document.getElementById("doctorconfirmerror").innerHTML="Required Field Should not be Empty.";
 		
 		return false;
 		}
         if(document.getElementById("doctorpassword").value!=document.getElementById("doctorconfirm").value)
         {
-        	document.getElementById("doctorconfirmerror").innerHTML="password Must Be Same";
+        	document.getElementById("doctorconfirmerror").innerHTML="Password Mismatch.";
             return false;
         }
 
@@ -100,7 +100,7 @@ document.getElementById("doctoremailerror").innerHTML=" ";
 		
 		if(document.getElementById("doctoremail").value=="")
 		{
-		document.getElementById("doctoremailerror").innerHTML="Required Field Should not be Empty";
+		document.getElementById("doctoremailerror").innerHTML="Required Field Should not be Empty.";
 		
 		return false;
 		}
@@ -109,7 +109,7 @@ document.getElementById("doctoremailerror").innerHTML=" ";
         
         if(document.getElementById("doctoremail").value.match(mail)==null)
         {
-        	document.getElementById("doctoremailerror").innerHTML="Invalid E-Mail Format";
+        	document.getElementById("doctoremailerror").innerHTML="Kindly Provide Valid Email ID.";
         	
             return false;
         }
@@ -140,27 +140,27 @@ document.getElementById("doctoremailerror").innerHTML=" ";
 	            <c:when test="${empty doctorsignup}">
 	            <table cellpadding="0" cellspacing="0" border="0" width="100%">
 	            <tr class="row1">
-	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Username</td>
+	             <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Username:</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="doctorusername" name="doctorusername" min="4" maxlength="32"  onInput="return validateusername()"; /><span class="err" id="doctorusernameerror"><form:errors path="Doctorsignup.doctorusername"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="doctorusername" name="doctorusername" min="4" maxlength="32"  onInput="return validateusername()"; /><br/><span class="err" id="doctorusernameerror"><form:errors path="Doctorsignup.doctorusername"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
-	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Password</td>
+	             <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Password:</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="password" class="input_txtbx1" id="doctorpassword" name="doctorpassword" onInput="return validateusername1()";  min="3" maxlength="32"/><span class="err" id="doctorpassworderror"><form:errors path="Doctorsignup.doctorpassword"></form:errors></span>
+				  <input type="password" class="input_txtbx1" id="doctorpassword" name="doctorpassword" onInput="return validateusername1()";  min="3" maxlength="32"/><br/><span class="err" id="doctorpassworderror"><form:errors path="Doctorsignup.doctorpassword"></form:errors></span>
 				  </td>
 				  </tr>
 				   <tr class="row1">
-	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Confirm Password</td>
+	             <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Confirm Password:</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="password" class="input_txtbx1" id="doctorconfirm" name="doctorconfirm" onInput="return validateusername2()";  /><span class="err" id="doctorconfirmerror"><form:errors path="Doctorsignup.doctorconfirm"></form:errors></span>
+				  <input type="password" class="input_txtbx1" id="doctorconfirm" name="doctorconfirm" onInput="return validateusername2()";  /><br/><span class="err" id="doctorconfirmerror"><form:errors path="Doctorsignup.doctorconfirm"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
-	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>E-mail Id</td>
+	             <td valign="middle" align="left" class="input_txt"><span class="err">* </span>E-mail Id:</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="doctoremail" name="doctoremail" /><span class="err" id="doctoremailerror"><form:errors path="Doctorsignup.doctoremail"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="doctoremail" name="doctoremail" /><br/><span class="err" id="doctoremailerror"><form:errors path="Doctorsignup.doctoremail"></form:errors></span>
 				  </td>
 				  </tr>
 				  </table>

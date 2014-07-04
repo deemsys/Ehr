@@ -194,14 +194,14 @@ function checkAjaxPost() {
 <br>
  <table cellpadding="0" cellspacing="0" border="0" width="100%">
  <tr >
-	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">*</span>Please enter a Patient User Name</td>
+	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">* </span>Please Enter Patient UserName:</td>
 				 <td width="20"></td> <td valign="top" align="left" class="input_txt" width="200">
 				   <input type="text" class="input_txtbx1" id="username" name="username" /><br/>
 				  </td>
 				  </tr>
 				  <tr height="20"></tr>
 				   <tr >
-	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">*</span>Bill Payment Date:</td>
+	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">* </span>Bill Payment Date:</td>
 				 <td width="20"></td> <td valign="top" align="left" class="input_txt" width="200">
 				   <input type="text" class="input_txtbx1" id="date" name="date" /><br/><span id="dateerror" style="color: red;font-style:italic;"></span>
 				  </td>
@@ -706,19 +706,20 @@ else
 	            
 	            </div>
 	    <div class="contentbox">
-          <table cellpadding="0" cellspacing="0" border="0" width="98%">
+          <table cellpadding="0" cellspacing="0" border="0" width="98%" >
            
  <tr class="row1">
-<td width="90"><h4><span class="err">*</span>Patient Id:</h4></td><td><input type="text"  class="input_txtbx1" onInput="return validateusername()"; name="pid" size="25" id="pid" /><span  id="piderror"   style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.pid"></form:errors></span></td>
-<td width="800">
-<td><h4><span class="err">*</span>Date:</h4></td><td><input type="text"  class="input_txtbx1" id="datepicker" name="date" /><span class="err" id="datepickererror"><form:errors path="dcfeeslipdetail.date"></form:errors></span></td>
+<td width="90"><h4><span class="err" style="margin-left:2px;">* </span>Patient Id:</h4></td><td><input type="text"  class="input_txtbx1" onInput="return validateusername()"; name="pid" size="25" id="pid" /><br/><span  id="piderror"   style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.pid"></form:errors></span></td>
+<td></td>
+<td width="500">
+<td align="right"><h4><span class="err">* </span>Date:</h4></td><td><input type="text"  class="input_txtbx1" id="datepicker" name="date" readonly="readonly"/><br/><span class="err" id="datepickererror"><form:errors path="dcfeeslipdetail.date"></form:errors></span></td>
 </tr>
 </table>
 <table>
  <tr class="row1">
-<td><h4> <span class="err">*</span>Patient Name:</h4></td><td><input type="text" class="input_txtbx1" id="pname" name="pname" size="25" onInput="return validatename()";/><span class="err" id="pnameerror"  style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.pname"></form:errors></span></td>
+<td><h4><span class="err">* </span>Patient Name:</h4></td><td><input type="text" class="input_txtbx1" id="pname" name="pname" size="25" onInput="return validatename()";/><br/><span class="err" id="pnameerror"  style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.pname"></form:errors></span></td>
 <td>
-<td><h4><span class="err">*</span>Treating Physician Name:</h4></td><td><input type="text" class="input_txtbx1" name="dr1" size="14" id="dr1"/><span class="err" id="dr1error"  style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.dr1"></form:errors></span></td>
+<td><h4><span class="err">* </span>Treating Physician Name:</h4></td><td><input type="text" class="input_txtbx1" name="dr1" size="14" id="dr1"/><br/><span class="err" id="dr1error"  style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.dr1"></form:errors></span></td>
 <td><h4>RPT:</h4></td><td><input type="text"   class="input_txtbx1" name="rpt" size="14"/></td>
 <td><h4>PTA:</h4></td><td><input type="text" class="input_txtbx1" name="pta" size="14"/></td>
 </tr>
@@ -727,12 +728,18 @@ else
        function validate(event) {
           
            var regex = new RegExp("^[0-9.]+$");
+        
            var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
            if (!regex.test(key)) {
              // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
                event.preventDefault();
                return false;
            }
+           else if(document.getElementById(event.target.id).value.length==10)
+        	{ 
+        	   event.preventDefault();
+            return false;
+        	}
        }       
     </script>
 
@@ -758,7 +765,7 @@ function validateusername(){
  </tr>
  <tr class="row1">
  <td></td>
- <td width="200">99201 </td><td>Initial E/M Limitedsasasas</td> 
+ <td width="200">99201 </td><td>Initial E/M Limited</td> 
  <td><input type="text"  class="input_txtbx1" name="initialemlimited" id="initialemlimited" size="20" placeholder="0" onkeypress="return validate(event)";> </td> 
  
  </tr>
@@ -1278,7 +1285,7 @@ function validateusername(){
 	            
 	            </div>
 	    <div class="contentbox">
-         <table cellpadding="0" cellspacing="0" border="0" width="98%">  
+         <table cellpadding="0" cellspacing="0" border="0" width="100%">  
          <tr height="20">         
  <tr class="row2">
  <td width="200"></td>
@@ -1459,7 +1466,7 @@ function validateusername(){
  <tr class="row1">
   <td></td>
  <td width="200"> </td><td>Charges: $</td> 
- <td><div id="info"><input type="text"  class="input_txtbx1" name="charges" id="charges" size="20" onkeypress="return validate(event)";></div> </td> 
+ <td><div id="info"><input type="text"  class="input_txtbx1" name="charges" id="charges" size="20" readonly="readonly"></div> </td> 
  <td ><input type="button"  class="submit_btn" value="calculate" onclick="return doAjaxPost()"></td>
  </tr>
  <tr class="row1">
@@ -1471,7 +1478,7 @@ function validateusername(){
  <tr class="row1">
   <td></td>
  <td width="200"> </td><td>Balance: $</td> 
- <td><input type="text"  class="input_txtbx1" name="balance" id="balance" size="20" placeholder="0" onkeypress="return validate(event)";> </td> 
+ <td><input type="text"  class="input_txtbx1" name="balance" id="balance" size="20" placeholder="0" readonly="readonly"> </td> 
  </tr>
  <tr class="row1">
   <td></td>
@@ -1499,25 +1506,25 @@ function validateusername(){
  <table>
 
   <tr class="row1">
-  <td></td><td> </td>
- <td width="200" style="width: 284px; "><span class="err">*</span>Date </td><td><input type="text"   class="input_txtbx1" id="datepicker1" name="date1" /><span class="err" id="datepicker1error"  style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.date1"></form:errors></span></td> </td> 
+  <td width="145"></td><td width="200"> </td>
+ <td width="200" ><span class="err">* </span>Date </td><td><input type="text"   class="input_txtbx1" id="datepicker1" name="date1" /><span class="err" id="datepicker1error"  style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.date1"></form:errors></span></td> </td> 
   
  </tr>
  <tr class="row1">
   <td></td><td> </td>
- <td width="200"><b>"I have received the services  </b></td><td width="300"><b>above and agree with the
+ <td width="200" align="right"><b>"I have received the services</b></td><td width="300"><b>above and agree with the
 charges."</b></td> 
   
  </tr>
  <tr class="row1">
  <td> </td><td></td>
-  <td><span class="err">*</span>Patient/Guardian Signature:</td>
+  <td><span class="err">* </span>Patient/Guardian Signature:</td>
  <td width="200"><input type="text" class="input_txtbx1"  name="parentsign" id="parentsign"><span class="err" id="parentsignerror"  style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.parentsign"></form:errors></span></td> 
   
  </tr>
   <tr class="row1">
   <td> </td> <td></td>
-  <td><span class="err">*</span>Dr. / Tech. Signature(s)</td>
+  <td><span class="err">* </span>Dr. / Tech. Signature(s)</td>
  <td width="200"><input type="text" class="input_txtbx1"  name="doctorsign"  id="doctorsign"><span class="err" id="doctorsignerror"  style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.doctorsign"></form:errors></span></td> 
  
  </tr></table>
@@ -1556,17 +1563,17 @@ charges."</b></td>
           <table cellpadding="0" cellspacing="0" border="0" width="98%">
            
  <tr class="row1">
-<td width="150"><h2><span class="err">*</span>Patient Id:</h2></td><td width="430"><input type="text"  name="pid" size="25" value="${dcfee.pid}" id="pid"/><span class="err" id="piderror"  style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.pid"></form:errors></span></td>
+<td width="150"><h2><span class="err">* </span>Patient Id:</h2></td><td width="430"><input type="text"  name="pid" size="25" value="${dcfee.pid}" id="pid"/><span class="err" id="piderror"  style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.pid"></form:errors></span></td>
 <td width="300">
-<td><h2><span class="err">*</span>Date:</h2></td><td width="430"><input type="text"  id="datepicker" name="date" value="${dcfee.date}"/><span id="datepickererror"><form:errors path="dcfeeslipdetail.date"></form:errors></span></td>
+<td><h2><span class="err">* </span>Date:</h2></td><td width="430"><input type="text"  id="datepicker" name="date" value="${dcfee.date}"/><span id="datepickererror"><form:errors path="dcfeeslipdetail.date"></form:errors></span></td>
 </tr>
 
 </table>
 <table>
  <tr class="row1">
-<td><h2> <span class="err">*</span>Patient Name:</h2></td><td width="370"><input type="text"  name="pname" size="25" value="${dcfee.pname}" id="pname"/><span class="err" id="pnameerror"  style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.pname"></form:errors></span></td>
+<td><h2> <span class="err">* </span>Patient Name:</h2></td><td width="370"><input type="text"  name="pname" size="25" value="${dcfee.pname}" id="pname"/><span class="err" id="pnameerror"  style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.pname"></form:errors></span></td>
 <td>
-<td><h2><span class="err">*</span>Treating Physician Name:</h2></td><td width="310"><input type="text" name="dr1" size="14" value="${dcfee.dr1}" id="dr1"/><span class="err" id="dr1error"  style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.dr1"></form:errors></span></td>
+<td><h2><span class="err">* </span>Treating Physician Name:</h2></td><td width="310"><input type="text" name="dr1" size="14" value="${dcfee.dr1}" id="dr1"/><span class="err" id="dr1error"  style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.dr1"></form:errors></span></td>
 <td><h2>RPT:</h2></td><td><input type="text" name="rpt" size="14" value="${dcfee.rpt}"/></td>
 <td><h2>PTA:</h2></td><td><input type="text" name="pta" size="14" value="${dcfee.pta}"/></td>
 </tr>
@@ -2287,7 +2294,7 @@ charges."</b></td>
  <tr class="row1">
   <td></td>
  <td width="200"> </td><td>Charges: $</td> 
- <td><div id="info"><input type="text" name="charges" id="charges" size="20" value="${dcfee.charges}"></div> </td> 
+ <td><div id="info"><input type="text" name="charges" id="charges" size="20" value="${dcfee.charges}" readonly="readonly"></div> </td> 
  <td ><input type="button"  class="submit_btn" value="calculate" onclick="return doAjaxPost()"></td>
  </tr>
  <tr class="row1">
@@ -2299,7 +2306,7 @@ charges."</b></td>
  <tr class="row1">
   <td></td>
  <td width="200"> </td><td>Balance: $</td> 
- <td><input type="text" name="balance" id="balance" size="20" value="${dcfee.balance}"> </td> 
+ <td><input type="text" name="balance" id="balance" size="20" value="${dcfee.balance}" readonly="readonly"> </td> 
  </tr>
  <tr class="row1">
   <td></td>
@@ -2328,7 +2335,7 @@ charges."</b></td>
 
   <tr class="row1">
   <td></td><td> </td>
- <td width="200"><span class="err">*</span>Date </td><td><input type="text"  id="datepicker1" name="date1" value="${dcfee.date1}"/><span class="err" id="datepicker1error"  style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.date1"></form:errors></span></td> </td> 
+ <td width="200"><span class="err">* </span>Date </td><td><input type="text"  id="datepicker1" name="date1" value="${dcfee.date1}"/><span class="err" id="datepicker1error"  style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.date1"></form:errors></span></td> </td> 
   
  </tr>
  <tr class="row1">
@@ -2339,13 +2346,13 @@ charges."</b></td>
  </tr>
  <tr class="row1">
  <td> </td><td></td>
-  <td><span class="err">*</span>Patient/Guardian Signature:</td>
+  <td><span class="err">* </span>Patient/Guardian Signature:</td>
  <td width="200"><input type="text" name="parentsign" value="${dcfee.parentsign}" id="parentsign"><span class="err" id="parentsignerror"  style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.parentsign"></form:errors></span></td> 
   
  </tr>
   <tr class="row1">
   <td> </td> <td></td>
-  <td><span class="err">*</span>Dr. / Tech. Signature(s)</td>
+  <td><span class="err">* </span>Dr. / Tech. Signature(s)</td>
  <td width="200"><input type="text" name="doctorsign" value="${dcfee.doctorsign}" id="doctorsign"><span class="err" id="doctorsignerror"  style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.doctorsign"></form:errors></span></td> 
  
  </tr>
