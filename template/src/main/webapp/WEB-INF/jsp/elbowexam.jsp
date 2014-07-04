@@ -390,7 +390,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  <td><b>Varus Stress (LCL):</b> </td><td><input type="text" name="varusl" size="5" onkeypress="return validate(event)"> <input type="text" name="varusr" size="5" onkeypress="return validate(event)"></td>
  </tr>
   <tr class="row1">
-  <td><b> Supination:</b> </td><td> (90)</td><td>L &nbsp;<input type="text" name="suppinationl" size="7" onkeypress="return validate(event)"><br/><br/>R <input type="text" name="supinationr" size="7" onkeypress="return validate(event)"></td>  
+  <td><b> Supination:</b> </td><td> (90)</td><td>L &nbsp;<input type="text" name="suppinationl" size="7" onkeypress="return validate(event)"><br/><br/>R <input type="text" name="suppinationr" size="7" onkeypress="return validate(event)"></td>  
  <td><b>Valgus Stress (MCL):</b> </td><td><input type="text" name="mcl1l" size="5" onkeypress="return validate(event)"> <input type="text" name="mcl1r" size="5" onkeypress="return validate(event)"></td>
  </tr>
   <tr class="row1">
