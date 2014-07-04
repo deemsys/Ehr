@@ -3100,7 +3100,7 @@ function check(id)
 				                <tr class="row1">
 				                 	<td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Type Of Accident:</td>
 				                  	<td valign="top" align="left" class="input_txt">
-				                  		<select name="Type_Of_Accident" class="input_cmbbx1" id="type_of_accident" style="width:28%;height:15px;"onchange="checkAjaxPost()"  onclick='Checklight(this.value)';>
+				                  		<select name="Type_Of_Accident" class="input_cmbbx1" id="type_of_accident" style="width:27%;height:22px;"onchange="checkAjaxPost()"  onclick='Checklight(this.value)';>
 
 						                        <option selected="selected" value="" >--Select--</option>
 						                    <option value="autoaccident" >Auto</option>				                   
@@ -3161,10 +3161,7 @@ function check(id)
 				                 <%--  	<form>
 															<input type="submit">
 														</form> --%><input type="text" maxlength="13" class="input_txtbx1" onkeypress="return validate(event)"; id="phonenumber" name="Phone_Number" /><br><span id="phonenumbererror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.phone_Number"></form:errors></span>
-				                  	<br>
-				                  	<span class="err" id="phonenumbererror"></span>
-				                  
-				                  <td></td>
+				                  	<td></td>
 				                </tr>
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Name Of Person At Fault For The Accident:</td>
@@ -3173,7 +3170,7 @@ function check(id)
 				                  	<td></td>                                                                                        
 				                 
 				                </tr>
-				                 <tr class="row1">
+				                 <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Mls There A Claim Open </td>
 				                  <td valign="top" align="left" class="input_txt">
 				 <input type="radio" name="claim_open" value="yes" class="input_txt" id="claim_open" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="claim_open" value="No" class="input_txt" id="claim_open1">No
@@ -3211,19 +3208,19 @@ function check(id)
 				                  	<input type="text" class="input_txtbx1" id="phyphone" name="phyphone" onkeypress="return validate(event)"; maxlength="13"/><br><span id="phyphoneerror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
 				                   <span class="err" ></span>
 				                    </tr>
-				                     <tr class="row2">
+				                     <tr class="row1">
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Damages To Your Car: </td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="car11" name="car11" onInput="return validatename55(id)"; /><br><span id="car11error" style="color: red;font-style:italic;"> <form:errors path="patientDetails.car11"></form:errors> </span>
 				                   <span class="err" ></span>
 				                    </tr>
-				                     <tr class="row1">
+				                     <tr class="row2">
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*  </span>	What Body Parts Were X-Rayed: </td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="xray" name="xray" onInput="return validatename55(id)";/><br><span id="xrayerror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
 				                    </tr>
 				                    
-				                     <tr class="row2">
+				                     <tr class="row1">
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*  </span>What Treatment Was Given: </td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="treat" name="treat" onInput="return validatename55(id)";/><br><span id="treaterror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
@@ -3239,7 +3236,7 @@ function check(id)
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Insurance Company Phone:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="Insurance_phone" name="Insurance_phone" onkeypress="return validate(event)"; maxlength="13"/><br><span id="Insurance_phoneerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.insurance_phone"></form:errors></span>
-				                  	<br>
+				                  	
 				                  	<span class="err" id="phnoerror"></span>
 				                  
 				                  </td>
@@ -3254,7 +3251,7 @@ function check(id)
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Phone Of Your Auto Insurance:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="Phone_auto" name="Phone_auto" onkeypress="return validate(event)"; maxlength="13" /><br><span id="Phone_autoerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.phone_auto"></form:errors></span>
-				                  	<br>
+				                  	
 				                  	<span class="err" id="phautoerror"></span>
 				                  	 </td>
 				                </tr>
@@ -3262,7 +3259,6 @@ function check(id)
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Policy#:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="policy" name="Policy" onInput="return validateusernamepolicy()"; /><br><span id="policyerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.policy"></form:errors></span>
-				                  <br>
 				                  
 				                  	</td>
 				                 
@@ -3278,7 +3274,6 @@ function check(id)
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Phone Of Your Health Insurance:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" maxlength="13" id="phhealth" onkeypress="return validate(event)"; name="Health_phone" /><br><span id="phhealtherror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.health_phone"></form:errors></span>
-				                  	<br>
 				                  	<span class="err" ></span>
 				                  	</td>
 				                  
@@ -3338,7 +3333,7 @@ function check(id)
                         
                         <table cellpadding="0" cellspacing="0" border="0" width="100%">
                 <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>CheckBox If It Applies To You,Parents,Siblings,Children</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>&nbsp;&nbsp;CheckBox If It Applies To You,Parents,Siblings,Children:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                 <table>
 				                 
@@ -3450,7 +3445,7 @@ function check(id)
 			      </td>
 				  </tr>
 				  <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Females Only:<br>Are You Pregnant:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Females Only:<br>&nbsp;&nbsp;Are You Pregnant:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="radio" name="Female" value="yes" class="input_txt" id="yes9">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Female" value="No" class="input_txt" id="No9">No
 				                  	<span id="Femaleerror"style="color: red;font-style:italic;"></span>
