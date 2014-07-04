@@ -62,17 +62,19 @@
 	 var total=parseInt(painintensity)+parseInt(work)+parseInt(numbness)+parseInt(driving)+parseInt(personal)+parseInt(sleeping)+parseInt(strength)+parseInt(house)+parseInt(writing)+parseInt(recreation);
 	 document.getElementById("score").value=total;
 	 document.getElementById("score1").innerHTML=total;
+	 
+	 var percentage=document.getElementById("score").value;
+	 var div=percentage/50;
+	 //alert(div);
+	 document.getElementById("total").value=div;
+	 document.getElementById("total1").innerHTML=div;
 		    }
 		  
  </script>
  <script type="text/javascript">
  function percentage()
  {
-	 var percentage=document.getElementById("score").value;
-	 var div=percentage/50;
-	 //alert(div);
-	 document.getElementById("total").value=div;
-	 document.getElementById("total1").innerHTML=div;
+	
  }
  
  
@@ -363,7 +365,7 @@ document.getElementById("pnameerror").innerHTML=" ";
            
            </table>
            <table style="display: none" id="page"><tr><td width="10"><input type="hidden"  size="5" name="score"  value="${wristindexdetails.score}" id="score"><div id="score1"></div></td><td width="10"> &nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;50&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;&nbsp;&nbsp;&nbsp;<input type="hidden"  size="5" name="total"  value="${wristindexdetails.total}" id="total"></td><td><div id="total1">${wristindexdetails.total}</div></td><td  width="50">%</td>
-          <td><input type="button" value="Calculate" onclick="return percentage()" class="submit_btn"> </td>
+         <!--  <td><input type="button" value="Calculate" onclick="return percentage()" class="submit_btn"> </td> -->
            </tr>          
                      
            </table>   
