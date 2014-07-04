@@ -1530,9 +1530,9 @@ window.onload = function()
           <c:set value="${dutiesduressForm.dutiesunderduressdetails[0]}" var="dutiesunderduressdetails"/> 
  <tr class="row1">
  <input type="hidden" name="dutiesno" id="inp_id" value="${dutiesunderduressdetails.dutiesno}">
-<td><h2><span class="err">*</span>Patient Name:</h2></td><td><input type="text"  name="pname" id="pname" onInput="return validatename(id)";value="${dutiesunderduressdetails.pname }"/><span class="err" id="pnameerr"><form:errors path="Dutiesunderduress.pname"></form:errors></span></td>
+<td><h2><span class="err">* </span>Patient Name:</h2></td><td><input type="text"  name="pname" id="pname" value="${dutiesunderduressdetails.pname }" onInput="return validatename(id)";/><span class="err" id="pnameerr"><form:errors path="Dutiesunderduress.pname"></form:errors></span></td>
 <td width="600">
-<td><h2><span class="err">*</span>Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${dutiesunderduressdetails.date }"/><span class="err" id="dateerr"><form:errors path="Dutiesunderduress.date"></form:errors></span></td>
+<td><h2><span class="err">* </span>Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${dutiesunderduressdetails.date }"/><span class="err" id="dateerr"><form:errors path="Dutiesunderduress.date"></form:errors></span></td>
 </tr>
 </table>
 <br/>
@@ -1672,7 +1672,7 @@ window.onload = function()
  <td><input type="checkbox" name="sincemva15" id="sincemva15" value="Since MVA" <c:if test="${dutiesunderduressdetails.sincemva15=='Since MVA'}"><c:out value="Checked"/></c:if>>&nbsp;<span id="mva15">Since MVA </span> &nbsp;&nbsp;<input type="checkbox" name="ongoing15" id="ongoing15" value="Ongoing" <c:if test="${dutiesunderduressdetails.ongoing15=='Ongoing'}"><c:out value="Checked"/></c:if>>&nbsp;<span id="o15">Ongoing </span></td>
  </tr>
  <tr class="row1">  
- <td><input type="checkbox" name="takingcareofkids" onclick="javascript:yesnoCheck13();"id="yesCheck13" value="Taking Care of Kids" <c:if test="${dutiesunderduressdetails.takingcareofkids=='Taking Care of kids'}"><c:out value="Checked"/></c:if>> </td>
+ <td><input type="checkbox" name="takingcareofkids" onclick="javascript:yesnoCheck13();"id="yesCheck13" value="TakingCareofKids" <c:if test="${dutiesunderduressdetails.takingcareofkids=='TakingCareofKids'}"><c:out value="Checked"/></c:if>> </td>
  <td><span id="tc16">Taking Care Of Kids </span></td> 
  <td><input type="checkbox" name="incresedpain16" id="incresedpain16" value="Increased pain/Anxiety" <c:if test="${dutiesunderduressdetails.incresedpain16=='Incresed Pain/Anxiety'}"><c:out value="Checked"/></c:if>>&nbsp;<span id="ip16">Increased Pain/Anxiety  </span> &nbsp;&nbsp;<input type="checkbox" name="restrictedmovement16" id="restrictedmovement16" value="Restricted Movement" <c:if test="${dutiesunderduressdetails.restrictedmovement15=='Restricted Movement'}"><c:out value="Checked"/></c:if>>&nbsp;<span id="rm16">Restricted Movement</span> &nbsp;&nbsp; <input type="checkbox" name="weekness16"  id="weekness16" value="Fatigue" <c:if test="${dutiesunderduressdetails.weekness16=='Weekness'}"><c:out value="Checked"/></c:if>>&nbsp;<span id="w16">Fatigue</span></td>
  <td><input type="checkbox" name="sincemva16" id="sincemva16" value="Since MVA" <c:if test="${dutiesunderduressdetails.sincemva16=='Since MVA'}"><c:out value="Checked"/></c:if>>&nbsp;<span id="mva16">Since MVA </span> &nbsp;&nbsp;<input type="checkbox" name="ongoing16" id="ongoing16" value="Ongoing" <c:if test="${dutiesunderduressdetails.ongoing16=='Ongoing'}"><c:out value="Checked"/></c:if>>&nbsp;<span id="o16">Ongoing </span></td>

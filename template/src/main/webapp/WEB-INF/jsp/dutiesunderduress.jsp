@@ -955,9 +955,9 @@ function validatename(id){
           <table cellpadding="0" cellspacing="0" border="0" width="98%">
            
  <tr class="row1">
-<td style="width: 172px; "><h4><span class="err">*</span> Patient Name:</h4></td><td style="width: 192px; "><input type="text"  name="pname" id="pname" onInput="return validatename(id)";/><span class="err" id="pnameerr"><form:errors path="Dutiesunderduress.pname"></form:errors></span></td>
+<td style="width: 172px; "><h4><span class="err">* </span> Patient Name:</h4></td><td style="width: 192px; "><input type="text"  name="pname" id="pname" onInput="return validatename(id)";/><span class="err" id="pnameerr"><form:errors path="Dutiesunderduress.pname"></form:errors></span></td>
 <td width="600" style="width: 265px; ">
-<td style="width: 73px; "><h4><span class="err">*</span> Date:</h4></td><td><input type="text"  id="datepicker" name="date" /><span class="err" id="dateerr"><form:errors path="Dutiesunderduress.date"></form:errors></span></td>
+<td style="width: 73px; "><h4><span class="err">* </span> Date:</h4></td><td><input type="text"  id="datepicker" name="date" /><span class="err" id="dateerr"><form:errors path="Dutiesunderduress.date"></form:errors></span></td>
 </tr>
 </table>
 <br/>
@@ -1144,7 +1144,7 @@ function validatename(id){
  <td><input type="checkbox" name="sincemva15" value="Since MVA" id="sincemva15">&nbsp;<span id="mva15">Since MVA </span> &nbsp;&nbsp;<input type="checkbox" name="ongoing15" value="Ongoing" id="ongoing15">&nbsp;<span id="o15">Ongoing </span></td>
  </tr>
  <tr class="row1">  
- <td><input type="checkbox" name="takingcareofkids" value="Taking Care of Kids" onclick="javascript:yesnoCheck13();"id="yesCheck13"> </td>
+ <td><input type="checkbox" name="takingcareofkids" value="TakingCareofKids" onclick="javascript:yesnoCheck13();"id="yesCheck13"> </td>
  <td><span id="tc16">Taking Care Of Kids </span></td> 
  <td><input type="checkbox" name="incresedpain16" value="Increased pain/Anxiety" id="incresedpain16">&nbsp;<span id="ip16">Increased Pain/Anxiety  </span>&nbsp;&nbsp;<input type="checkbox" name="restrictedmovement16" value="Restricted Movement" id="restrictedmovement16">&nbsp;<span id="rm16">Restricted Movement</span> &nbsp;&nbsp; <input type="checkbox" name="weekness16" value="Fatigue" id="weekness16">&nbsp;<span id="w16">Fatigue</span></td>
  <td><input type="checkbox" name="sincemva16" value="Since MVA" id="sincemva16">&nbsp;<span id="mva16">Since MVA </span> &nbsp;&nbsp;<input type="checkbox" name="ongoing16" value="Ongoing" id="ongoing16">&nbsp;<span id="o16">Ongoing </span></td>
