@@ -447,7 +447,18 @@ var $sid = xx+1;
 	}
  
  </script> 
-	  
+	   <script type="text/javascript">
+  function confirmation() 
+	{
+	var answer = confirm("Are you Sure You Want to Delete Participant ?")
+	if (answer){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+  </script>
 	  
 	  <script>
     var currentTab = 0;
@@ -2901,7 +2912,7 @@ function checkAjaxPost() {
                  
  				  <td>&nbsp;&nbsp;</td>
              		 <td><input type="submit" class="submit_btn1" value="Update" onclick="return checkSubmit('this');"></td>
-				
+			 <td><a href=" deletepatientdetails?patient_id= ${patientDetails.patient_id}" class="submit_btn" style="text-decoration: none;color:white" onclick="return confirmation() ">Delete</a></td>
                   <td>&nbsp;&nbsp;</td>
                   <td>
                 <c:if test="${cancel=='1'}">
