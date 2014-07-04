@@ -3200,6 +3200,8 @@ function check(id)
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*  </span>What Is Your Physician's Name: </td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="phyname" name="phyname"  onInput="return validatename55(id)";/><br><span id="phynameerror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
+				                   </td>
+				                   
 				                    </tr>
 				                
 				                <tr class="row2">
@@ -3207,6 +3209,8 @@ function check(id)
 				                  	<td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="phyphone" name="phyphone" onkeypress="return validate(event)"; maxlength="13"/><br><span id="phyphoneerror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
 				                   <span class="err" ></span>
+				                   </td>
+				                    <td></td>
 				                    </tr>
 				                     <tr class="row1">
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Damages To Your Car: </td>
@@ -3218,6 +3222,8 @@ function check(id)
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*  </span>	What Body Parts Were X-Rayed: </td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="xray" name="xray" onInput="return validatename55(id)";/><br><span id="xrayerror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
+				                    </td>
+				                     <td></td>
 				                    </tr>
 				                    
 				                     <tr class="row1">
@@ -3259,8 +3265,9 @@ function check(id)
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Policy#:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="policy" name="Policy" onInput="return validateusernamepolicy()"; /><br><span id="policyerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.policy"></form:errors></span>
-				                  
-				                  	</td>
+				                  </td>
+				                   <td></td>
+				                 
 				                 
 				                </tr>
 				                <tr class="row1">
@@ -3276,6 +3283,7 @@ function check(id)
 				                  	<input type="text" class="input_txtbx1" maxlength="13" id="phhealth" onkeypress="return validate(event)"; name="Health_phone" /><br><span id="phhealtherror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.health_phone"></form:errors></span>
 				                  	<span class="err" ></span>
 				                  	</td>
+				                  	 <td></td>
 				                  
 				                </tr>
 				               <tr class="row1">
