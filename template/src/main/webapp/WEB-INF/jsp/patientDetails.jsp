@@ -2754,7 +2754,7 @@ function check(id)
                        <br>
                         <br>
                         <tr class="row1">
-				                 <div id="info"> <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Name :</td>
+				                 <div id="info"> <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Name :</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  <input type="hidden" value="${totalpatient}" id="totalpoint">
 				                  	<input type="text" class="input_txtbx1" name="Name" id="name" min="4" onInput="return validatename()"; maxlength="32" value="${pname}" /><br><span id="nameerror" style="color: red;font-style:italic;" ><form:errors path="PatientDetails.name"></form:errors></span>
@@ -2768,31 +2768,31 @@ function check(id)
 				                
 				                
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span> Date:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span> Date:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" id="datepicker" class="input_txtbx1" name="Date" value="${patientajax.date}"  }"/><br><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.date"></form:errors></span>
 				                  </td>
 				                </tr>
                                   <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Street address:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Street address:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="streetaddress" name="StreetAddress" value="${patientajax.StreetAddress }"/><br><span id="streetaddresserror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.streetAddress"></form:errors></span>
 				                  </td>
 				                </tr>
                                   <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>City:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>City:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="City" name="City" onInput="return validatename55(id)";/><br><span id="Cityerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.city"></form:errors></span>
 				                  </td>
 				                </tr>
 				                <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>State:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>State:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="State" name="State" onInput="return validatename55(id)"; /><br><span id="Stateerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.state"></form:errors></span>
 				                  </td>
 				                </tr>
                                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>ZipCode:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>ZipCode:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="zipcode1" name="ZipCode" onInput="return validatezipcode()"; maxlength="5" /><br><span  id="zipcode1error" style="color: red;font-style:italic;"><form:errors path="PatientDetails.zipCode"></form:errors></span>
 	
@@ -2800,7 +2800,7 @@ function check(id)
 				                  </td>
 				                </tr>
 				                <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Home phone:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Home phone:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="homephone" maxlength="13" name="Homephone"  onInput="return validateusername()"; onkeypress="return validate(event)";/><br><span id="homephoneerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.homephone"></form:errors></span>
 				                  <br>
@@ -2809,13 +2809,13 @@ function check(id)
 				                  
 				                </tr>
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>E-mail Id:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>E-mail Id:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="Emailid" name="Emailid" /><br><span id="Emailiderror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.emailid"></form:errors></span>
 				                  </td>
 				                </tr>
 				                <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>MobileNumber:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>MobileNumber:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" maxlength="13"  id="mobilenumber" name="mobileNumber" onkeypress="return validate(event)";/><br><span id="mobilenumbererror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.mobileNumber"></form:errors></span>
 				                 <br>
@@ -2823,13 +2823,13 @@ function check(id)
 				                  </td>
 				                </tr>
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>DateOfBirth:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>DateOfBirth:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" id="datepicker1" class="input_txtbx1" name="DateOfBirth"/><br><span id="datepicker1error" style="color: red;font-style:italic;"><form:errors path="PatientDetails.dateOfBirth"></form:errors></span>
 				                  </td>
 				                </tr>
 				                <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Social Security Number:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Social Security Number:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="socialsecuritynumber" name="SocialSecurityNumber" maxlength="11" onkeypress="return validate(event)"; /><br><span id="socialsecuritynumbererror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.socialSecurityNumber"></form:errors></span>
 				                <br>
@@ -2837,14 +2837,14 @@ function check(id)
  </td>
 				                </tr>
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Gender:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Gender:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="radio" name="Gender" value="Male" class="input_txt" id="Male" >Male&nbsp;&nbsp;&nbsp;<input type="radio" name="Gender" value="Female" class="input_txt" id="Female">Female&nbsp;&nbsp;&nbsp;<input type="radio" name="Gender" value="Transgender" id="Transgender" class="input_txt">Transgender
 				                  	<span id="Gendererror" style="color: red;font-style:italic;"></span>
 				                  	</td>
 				                </tr>
 				                <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>MaritalStatus:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>MaritalStatus:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="radio" name="MaritalStatus" value="Single" class="input_txt" id="Single">Single&nbsp;&nbsp;&nbsp;<input type="radio" name="MaritalStatus" value="Married" class="input_txt" id="Married">Married&nbsp;&nbsp;&nbsp;<input type="radio" name="MaritalStatus" value="Divorced" class="input_txt" id="Divorced">Divorced
 				                  	<span id="MaritalStatuserror" style="color: red;font-style:italic;"></span>
@@ -2857,7 +2857,7 @@ function check(id)
 							<table cellpadding="0" cellspacing="0" border="0" width="100%">
 							 <tr class="row1">
 							 
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Are you:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Are you:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="radio" name="Areyou" value="Student" class="input_txt" id="Student" onchange="toggle3('show3')">Student&nbsp;&nbsp;&nbsp;
 				                  	<input type="radio" name="Areyou" value="Employee" class="input_txt" id="Employee" onclick="toggle3('hide3')">Employee
@@ -2921,7 +2921,7 @@ function check(id)
 				                
 				                
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>EmployerCity:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>Employer City:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="EmployerCity" name="EmployerCity"  onInput="return validatename55(id)";/><br><span class="err" id="EmployerCityerror"><form:errors path="PatientDetails.EmployerCity"></form:errors></span>
 
@@ -2934,14 +2934,14 @@ function check(id)
 				                  	
 				                  </td>
 				                </tr>
-				                <tr class="row2" style="visibility:hidden">
+				               <%--  <tr class="row2" style="visibility:hidden">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>ZipCode:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="zipcode3"  onInput="return validatezipcode2()";name="Ezip" maxlength="5"/><br><span style="color: red;font-style:italic;" id="zipcode3error"><form:errors path="PatientDetails.Ezip"></form:errors></span>
 				                  	<br><span class="err" id="zipcodeerror"></span>
 				                  </td>
 				                </tr style="visibility:hidden">
-							
+							 --%>
 							
 							</table>
 							</div>
@@ -2974,14 +2974,14 @@ function check(id)
 				                  </td>
 				                </tr>
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Name of Nearest Friend/ Relative Not Living With You:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Name of Nearest Friend/ Relative Not Living With You:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="Name_friend" name="Name_friend" onInput="return validatename55(id)"; /><br><span id="Name_frienderror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.name_friend"></form:errors></span>
 				               
 				                  </td>
 				                </tr>
 				                 <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Phone of Nearest Friend/ Relative Not Living With You:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Phone of Nearest Friend/ Relative Not Living With You:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="Phone_friend" name="Phone_friend"  onkeypress="return validate(event)"; maxlength="13"/><br><span id="Phone_frienderror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.phone_friend"></form:errors></span>
 				                 <br><br>
@@ -2989,7 +2989,7 @@ function check(id)
 				                  </td>
 				                  </tr>
 				                 <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Have you ever had chiropractic care? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Have you ever had chiropractic care? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="radio" name="Chiropratic_care" value="yes" class="input_txt" id="yes1">yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Chiropratic_care" value="No" class="input_txt" id="No1">No
 				                  	<span id="Chiropratic_careerror" style="color: red;font-style:italic;"></span></td>
@@ -3050,7 +3050,7 @@ function check(id)
                        </table> -->
                     
                         <table cellpadding="0" cellspacing="0" border="0" width="100%">
-                       <span class="err">* </span>Please Describes Your Symptoms Briefly:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                       <span class="err">*  </span>Please Describes Your Symptoms Briefly:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       
                       &nbsp;&nbsp;&nbsp; <br><span class="err"></span>
                         <tr>
@@ -3096,7 +3096,7 @@ function check(id)
 				                </tr> -->
 				           
 				           <tr class="row2">
-                        <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Are These Symptoms Due to an Accident?</td>
+                        <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Are These Symptoms Due to an Accident?</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  
 				                  	<input type="radio" name="Symptom_Accident" value="yes" class="input_txt" id="yes">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Symptom_Accident" value="No" class="input_txt" id="No">No
@@ -3104,7 +3104,7 @@ function check(id)
 				                  	<td></td>
 				                </tr>   
 				                <tr class="row1">
-				                 	<td valign="middle" align="left" class="input_txt"><span class="err">* </span>Type Of Accident:</td>
+				                 	<td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Type Of Accident:</td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  		<select name="Type_Of_Accident" class="input_cmbbx1" id="type_of_accident" onchange="checkAjaxPost()"  onclick='Checklight(this.value)';>
 
@@ -3120,14 +3120,14 @@ function check(id)
 				                   	
 				                </tr>  
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Date Of Accident:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Date Of Accident:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" id="datepicker2" class="input_txtbx1" name="Date_Of_Accident"/><span id="datepicker2error" style="color: red;font-style:italic;"><form:errors path="PatientDetails.date_Of_Accident"></form:errors></span>
 				                  </td>
 				                  <td></td>
 				                </tr>
 				               <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Accident Reported:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Accident Reported:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="radio" name="Accident_Reported" value="yes" class="input_txt" id="yes2">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Accident_Reported" value="No" class="input_txt" id="No2">No
 				                  	<span id="Accident_Reportederror" style="color: red;font-style:italic;"></span>
@@ -3136,18 +3136,18 @@ function check(id)
 				                  
 				                </tr>
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Medical Treatment for this Condition: &nbsp;&nbsp;&nbsp;&nbsp;When:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Medical Treatment for this Condition: &nbsp;&nbsp;&nbsp;&nbsp;When:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="datepicker5" name="when1" /> <br><span id="datepicker5error" style="color: red;font-style:italic;"><form:errors path="patientDetails.when1"></form:errors></span></td>
 				                  	<td></td>
 				                  	</tr>
 				                  	<tr class="row1">
-				                  	<td valign="middle" align="left" class="input_txt"><span class="err">* </span>Where:</td>
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Where:</td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="where1" onInput="return validatename55(id)"; name="where1"/><br><span id="where1error" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
 				                    </tr>
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Have You Retained an Attorney for this Accident:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Have You Retained an Attorney for this Accident:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="radio" name="Attorney_accident" value="yes" class="input_txt" id="yes5">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Attorney_accident" value="No" class="input_txt" id="No5">No
 				                  	<span id="Attorney_accidenterror" style="color: red;font-style:italic;"></span>
@@ -3156,13 +3156,13 @@ function check(id)
 				                </tr>
 				                 
 				                <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Name Of Attorney:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Name Of Attorney:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="NameOfAttorney" name="NameOfAttorney" onInput="return validatename55(id)";/><br><span id="NameOfAttorneyerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.NameOfAttorney"></form:errors></span>
 				                  
 				                </tr>
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span> Attorney Phone:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span> Attorney Phone:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                 <%--  	<form>
 															<input type="submit">
@@ -3173,14 +3173,14 @@ function check(id)
 				                  <td></td>
 				                </tr>
 				                <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Name of Person at Fault for the Accident:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Name of Person at Fault for the Accident:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="Fault_accident" name="Fault_accident" onInput="return validatename55(id)"; /><br><span id="Fault_accidenterror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.fault_accident"></form:errors></span></td>
 				                  	<td></td>                                                                                        
 				                 
 				                </tr>
 				                 <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>mls there a claim open </td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>mls there a claim open </td>
 				                  <td valign="top" align="left" class="input_txt">
 				 <input type="radio" name="claim_open" value="yes" class="input_txt" id="claim_open" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="claim_open" value="No" class="input_txt" id="claim_open1">No
 				                  	<span id="claim_openerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.claim_open"></form:errors></span></td>
@@ -3188,7 +3188,7 @@ function check(id)
 				                 
 				                </tr>
 				                <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>What is your Dominant Hand </td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>What is your Dominant Hand </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="radio" name="retain" value="R" class="input_txt" id="R">R&nbsp;&nbsp;&nbsp;<input type="radio" name="retain" value="L" class="input_txt" id="L">L
 				               <span id="retainerror" style="color: red;font-style:italic;"></span>
@@ -3197,7 +3197,7 @@ function check(id)
 				                </tr>
 				                
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Would you like us to send your records to your family Physician  </td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Would you like us to send your records to your family Physician  </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="radio" name="record" value="yes" class="input_txt" id="yes6" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="record" value="No" class="input_txt" id="No6">No
 				                  	 <span id="recorderror" style="color: red;font-style:italic;"></span>
@@ -3205,43 +3205,43 @@ function check(id)
 				                <td></td>
 				                </tr>
 				                <tr class="row1">
-				                  	<td valign="middle" align="left" class="input_txt"><span class="err">* </span>What is your Physician's Name </td>
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*  </span>What is your Physician's Name </td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="phyname" name="phyname"  onInput="return validatename55(id)";/><br><span id="phynameerror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
 				                    </tr>
 				                
 				                <tr class="row2">
-				                  	<td valign="middle" align="left" class="input_txt"><span class="err">* </span>What is your Physician's Phone </td>
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*  </span>What is your Physician's Phone </td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="phyphone" name="phyphone" onkeypress="return validate(event)"; maxlength="13"/><br><span id="phyphoneerror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
 				                   <span class="err" ></span>
 				                    </tr>
 				                     <tr class="row2">
-				                  	<td valign="middle" align="left" class="input_txt"><span class="err">* </span>Damages to your car </td>
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Damages to your car </td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="car11" name="car11" onInput="return validatename55(id)"; /><br><span id="car11error" style="color: red;font-style:italic;"> <form:errors path="patientDetails.car11"></form:errors> </span>
 				                   <span class="err" ></span>
 				                    </tr>
 				                     <tr class="row1">
-				                  	<td valign="middle" align="left" class="input_txt"><span class="err">* </span>	What body parts were x-rayed </td>
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*  </span>	What body parts were x-rayed </td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="xray" name="xray" onInput="return validatename55(id)";/><br><span id="xrayerror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
 				                    </tr>
 				                    
 				                     <tr class="row2">
-				                  	<td valign="middle" align="left" class="input_txt"><span class="err">* </span>what treatment was given </td>
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*  </span>what treatment was given </td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="treat" name="treat" onInput="return validatename55(id)";/><br><span id="treaterror" style="color: red;font-style:italic;"><form:errors path="patientDetails.where1"></form:errors></span>
 				                    </tr>
 				                    
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Insurance Company of the at Fault Person:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Insurance Company of the at Fault Person:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="Insurance" name="Insurance" onInput="return validatename55(id)"; /><br><span id="Insuranceerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.insurance"></form:errors></span>
 				                  <td></td>
 				                </tr>
 				                <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Insurance Company Phone:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Insurance Company Phone:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="Insurance_phone" name="Insurance_phone" onkeypress="return validate(event)"; maxlength="13"/><br><span id="Insurance_phoneerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.insurance_phone"></form:errors></span>
 				                  	<br>
@@ -3250,13 +3250,13 @@ function check(id)
 				                  </td>
 				                  </tr>
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Name of your auto insurance:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Name of your auto insurance:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="Name_auto" name="Name_auto" onInput="return validatename55(id)"; /><br><span id="Name_autoerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.name_auto"></form:errors></span>
 				                  	<td> </td>
 				                </tr>
 				               <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>phone of your auto insurance:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>phone of your auto insurance:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="Phone_auto" name="Phone_auto" onkeypress="return validate(event)"; maxlength="13" /><br><span id="Phone_autoerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.phone_auto"></form:errors></span>
 				                  	<br>
@@ -3264,7 +3264,7 @@ function check(id)
 				                  	 </td>
 				                </tr>
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Policy#:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Policy#:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="policy" name="Policy" onInput="return validateusernamepolicy()"; /><br><span id="policyerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.policy"></form:errors></span>
 				                  <br>
@@ -3273,14 +3273,14 @@ function check(id)
 				                 
 				                </tr>
 				                <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Name of Your Health Insurance:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Name of Your Health Insurance:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="Name_health" name="Name_health" onInput="return validatename55(id)"; /><br><span id="Name_healtherror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.name_health"></form:errors></span></td>
 				                  	
 				                  <td></td>
 				                </tr>
 				            <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Phone of your Health Insurance:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Phone of your Health Insurance:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" maxlength="13" id="phhealth" onkeypress="return validate(event)"; name="Health_phone" /><br><span id="phhealtherror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.health_phone"></form:errors></span>
 				                  	<br>
@@ -3289,7 +3289,7 @@ function check(id)
 				                  
 				                </tr>
 				               <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Have You Ever Been Involved in a Previous Auto or Work Accident:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Have You Ever Been Involved in a Previous Auto or Work Accident:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="radio" name="Prev_accident" value="yes" class="input_txt" id="yes7">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Prev_accident" value="No" class="input_txt" id="No7">No
 				                  	<span id="Prev_accidenterror" style="color: red;font-style:italic;"></span>
@@ -3299,7 +3299,7 @@ function check(id)
 				                  <td></td>
 				                </tr>
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>When:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>When:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="datepicker6" name="Prev_When" /><br><span id="datepicker6error" style="color: red;font-style:italic;"><form:errors path="PatientDetails.prev_When"></form:errors></span>
 				                  	<td></td>
@@ -3415,25 +3415,25 @@ function check(id)
 				                  	
 				                  
 				                  <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Surgeries or Major Illnesses You Have Had: </td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Surgeries or Major Illnesses You Have Had: </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="Illness" name="Illness" onInput="return validatename55(id)"; /><br><span id="Illnesserror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.illness"></form:errors></span>
 				                  	</tr>   
 				                 
 				                 <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Date:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Date:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="datepicker3" name="Dates" /><br><span id="datepicker3error" style="color: red;font-style:italic;"><form:errors path="PatientDetails.dates"></form:errors></span>
 				                  	</tr>    		
 				                  	
 				                  	<tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Medications You are Currently Taking and Why:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Medications You are Currently Taking and Why:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<textarea rows="3" cols="25" placeholder="Medications" onInput="return validatename55(id)"; name="Medications" id="Medications"></textarea>&nbsp;&nbsp;&nbsp;<br><span id="Medicationserror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.medications"></form:errors></span>
 				                  	</tr> 
 				                  	
 				                  	<tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Do You:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Do You:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="checkbox" id="Drink" name="Drink" value="Drink">Drink Regularly&nbsp; 
 				                  	<input type="checkbox" id="Smoke"name="Smoke" value="Smoke">Smoke&nbsp;
@@ -3444,7 +3444,7 @@ function check(id)
 				                  	<span id="doyouerror" style="color: red;font-style:italic;"></span>
 				                  	</tr> 
 				                  	<tr class="row2">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Do You Work Around Hazardous Substances:  </td>
+				  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Do You Work Around Hazardous Substances:  </td>
 				  <td valign="top" align="left" class="input_txt">
 				  <div id="send_to">
 				  <input type="radio" name="Hazardous" value="yes" id="Hazardous" class="input_txt"  onclick="toggle2('show2')">Yes&nbsp;&nbsp;&nbsp;
@@ -3455,7 +3455,7 @@ function check(id)
 			      </td>
 				  </tr>
 				  <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Females Only:<br>Are you pregnant:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Females Only:<br>Are you pregnant:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="radio" name="Female" value="yes" class="input_txt" id="yes9">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Female" value="No" class="input_txt" id="No9">No
 				                  	<span id="Femaleerror"style="color: red;font-style:italic;"></span>
@@ -3463,12 +3463,12 @@ function check(id)
 				                
 				                  	</tr>
 				                  	<tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Dr:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Dr:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="Dr" name="Dr" onInput="return validatename55(id)"; /><br><span id="Drerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.dr"></form:errors></span>
 				                  	</tr>  
 				                  	<tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Patient Signature:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Patient Signature:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="Patient" name="Patient" onInput="return validatename56(id)"; /><br><span id="Patienterror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.patient"></form:errors></span>
 				                  	</tr>   </div>
@@ -3502,44 +3502,44 @@ function check(id)
                        <br>
                         <br>
                         <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name :</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Name :</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Name" value="${first.name}"/><br><span class="err"><form:errors path="PatientDetails.Name"></form:errors></span>
 				                  </td>
 				                </tr>
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Date:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span> Date:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" id="datepicker" class="input_txtbx1" name="Date" value="${first.date}"/><br><span class="err"><form:errors path="PatientDetails.Date"></form:errors></span>
 				                  </td>
 				                </tr>
                                   <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Street Address:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Street Address:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="StreetAddress" value="${first.streetAddress}"/><br><span class="err"><form:errors path="PatientDetails.StreetAddress"></form:errors></span>
 				                  </td>
 				                </tr>
                                   <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>City:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>City:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="City" value="${first.city}"/><br><span class="err"><form:errors path="PatientDetails.City"></form:errors></span>
 				                  </td>
 				                </tr>
 				                <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>State:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>State:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="State" value="${first.state }"/><br><span class="err"><form:errors path="PatientDetails.State"></form:errors></span>
 				                  </td>
 				                </tr>
                                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>ZipCode:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>ZipCode:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="zipcode1" name="ZipCode" value="${first.zipCode}"/><br><span class="err"><form:errors path="PatientDetails.ZipCode"></form:errors></span>
 				                <br><span class="err" id="zipcodeerror1"></span>
                                      </td>
 				                </tr>
 				                <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Home phone:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Home phone:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="homephone" name="Homephone" value="${first.homephone }"/><br><span class="err"><form:errors path="PatientDetails.Homephone"></form:errors></span>
 				                <br>
@@ -3547,26 +3547,26 @@ function check(id)
 				                  </td>
 				                </tr>
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>E-mail Id:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>E-mail Id:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Emailid" value="${first.emailid}"/><br><span class="err"><form:errors path="PatientDetails.Emailid"></form:errors></span>
 				                  </td>
 				                </tr>
 				                <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>MobileNumber:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Mobile Number:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="mobilenumber" name="MobileNumber" value="${first.mobileNumber}"/><br><span class="err"><form:errors path="PatientDetails.MobileNumber"></form:errors></span>
 				                <br><span class="err" id="homephoneerror"></span>
 				                  </td>
 				                </tr>
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>DateOfBirth:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Date Of Birth:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" id="datepicker1" class="input_txtbx1" name="DateOfBirth" value="${first.dateOfBirth}"/><br><span class="err"><form:errors path="PatientDetails.DateOfBirth"></form:errors></span>
 				                  </td>
 				                </tr>
 				                <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Social Security Number:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Social Security Number:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="socialsecuritynumber" name="SocialSecurityNumber" value="${first.socialSecurityNumber}"/><br><span class="err"><form:errors path="PatientDetails.SocialSecurityNumber"></form:errors></span>
 				                 <br>
@@ -3574,12 +3574,12 @@ function check(id)
 				                  </td>
 				                </tr>
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Gender:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Gender:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="radio" name="Gender" value="Male" class="input_txt" >Male&nbsp;&nbsp;&nbsp;<input type="radio" name="Gender" value="Female" class="input_txt">Female&nbsp;&nbsp;&nbsp;<input type="radio" name="Gender" value="2" class="input_txt">Transgender</td>
 				                </tr>
 				                <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>MaritalStatus:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Marital Status:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="radio" name="MaritalStatus" value="Single" class="input_txt" >Single&nbsp;&nbsp;&nbsp;<input type="radio" name="MaritalStatus" value="Married" class="input_txt">Married&nbsp;&nbsp;&nbsp;<input type="radio" name="MaritalStatus" value="Divorced" class="input_txt">Divorced</td>
 				                
@@ -3590,7 +3590,7 @@ function check(id)
 							<table cellpadding="0" cellspacing="0" border="0" width="100%">
 							 <tr class="row1">
 							 
-				                  <td valign="middle" align="left" class="input_txt" width="380"><span class="err">*</span>Are you:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				                  <td valign="middle" align="left" class="input_txt" width="380"><span class="err">* </span>Are you:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="radio" name="Areyou" value="Student" class="input_txt"  onchange="toggle3('show3')">Student&nbsp;&nbsp;&nbsp;<input type="radio" name="Areyou" value="Employee" class="input_txt"  onclick="toggle3('hide3')">Employee</td>
 				                  
@@ -3599,7 +3599,7 @@ function check(id)
 							<div id="student" style="display:none;">
 							<table cellpadding="0" cellspacing="0" border="0" width="100%">
 							<tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt" width="380"><span class="err">*</span>Student:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				                  <td valign="middle" align="left" class="input_txt" width="380"><span class="err">* </span>Student:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="radio" name="Student" value="FullTime" class="input_txt" >Full Time&nbsp;&nbsp;&nbsp;<input type="radio" name="Student" value="PartTime" class="input_txt">Part Time</td>
 				                  
@@ -3630,14 +3630,14 @@ function check(id)
 				                  </td>
 				                </tr>
 				                <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>WorkPhone:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>Work Phone:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Workphone" value="${first.workphone}"/>
 
 				                  </td>
 				                </tr>
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt" ><span class="err"></span>EmployerCity:</td>
+				                  <td valign="middle" align="left" class="input_txt" ><span class="err"></span>Employer City:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="EmployerCity" value="${first.employerCity}"/>
 
@@ -3670,21 +3670,21 @@ function check(id)
 				                
 				                <tr class="row1">
 				               
-				                  <td valign="middle" align="left" class="input_txt" width="300"><span class="err">*</span>Spouse's or significant others name:</td>
+				                  <td valign="middle" align="left" class="input_txt" width="300"><span class="err">* </span>Spouse's Or Significant Others Name:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="SpousesName" value="${first.spousesName}"/><br><span class="err"><form:errors path="PatientDetails.SpousesName"></form:errors></span>
 				                  	
 				                  </td>
 				                </tr>
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Spouses Employer:&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Spouses Employer:&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="SpousesEmp" value="${first.spousesEmp}"/><br><span class="err"><form:errors path="PatientDetails.SpousesEmp"></form:errors></span>
 				                  	
 				                  </td>
 				                </tr>
 				                <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Spouse's Workphone:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Spouse's Workphone:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="spouseworkphone" name="Spousesph" value="${first.spousesph}"/><br><span class="err"><form:errors path="PatientDetails.Spousesph"></form:errors></span>
 				                  	<br>
@@ -3692,21 +3692,21 @@ function check(id)
 				                  </td>
 				                </tr>
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name of Nearest Friend/ Relative Not Living With You:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Name Of Nearest Friend/ Relative Not Living With You:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Name_friend" value="${first.name_friend}"/><br><span class="err"><form:errors path="PatientDetails.Name_friend"></form:errors></span>
 				               
 				                  </td>
 				                </tr>
 				                 <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Phone of Nearest Friend/ Relative Not Living With You:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Phone Of Nearest Friend/ Relative Not Living With You:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="ph2" name="Phone_friend" value="${first.phone_friend}"/><br><span class="err"><form:errors path="PatientDetails.Phone_friend"></form:errors></span>
 				                  	<br><span class="err" id="ph2error"></span>
 				                  </td>
 				                  </tr>
 				                 <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Have you ever had chiropractic care? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Have You Ever Had Chiropractic Care? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="radio" name="Chiropratic_care" value="yes" class="input_txt" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Chiropratic_care" value="No" class="input_txt">No</td>
 				                </tr> 
@@ -3750,7 +3750,7 @@ function check(id)
                         
                         <table cellpadding="0" cellspacing="0" border="0" width="100%">
                         <tr>
-                        <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Please Describe Your Symptoms Briefly:</td>
+                        <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Please Describe Your Symptoms Briefly:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<textarea rows="3" cols="25" placeholder="Specify your Symptoms" name="symptom[]" id="symptom"></textarea>&nbsp;&nbsp;&nbsp; <br><span class="err"><%-- <form:errors path="PatientDetails.Symptoms"></form:errors> --%></span>
 				                  	</td><td><a onclick="newpopup()">Quadruple Visual Analogue Scale</a></td>
@@ -3783,14 +3783,14 @@ function check(id)
 				                  </td>
 				                </tr> --%>
 				           <tr class="row2">
-                        <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Are These Symptoms Due to an Accident?</td>
+                        <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Are These Symptoms Due To An Accident?:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  
 				                  	<input type="radio" name="Symptom_Accident" value="yes" class="input_txt" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Symptom_Accident" value="No" class="input_txt">No</td>
 				                  	<td></td>
 				                </tr>   
 				                <tr class="row1">
-				                 	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Type Of Accident:</td>
+				                 	<td valign="middle" align="left" class="input_txt"><span class="err">* </span>Type Of Accident:</td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  		<select name="Type_Of_Accident" class="input_cmbbx1" onchange='Checklight(this.value)';>
 						                  <option selected="selected" value="" >--Select--</option>
@@ -3803,87 +3803,87 @@ function check(id)
 				                   	
 				                </tr>  
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date Of Accident:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Date Of Accident:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" id="datepicker2" class="input_txtbx1" name="Date_Of_Accident" value="${first.date_Of_Accident}"/><span class="err"><form:errors path="PatientDetails.Date_Of_Accident"></form:errors></span>
 				                  </td>
 				                  <td></td>
 				                </tr>
 				               <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Accident Reported:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Accident Reported:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="radio" name="Accident_Reported" value="yes" class="input_txt" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Accident_Reported" value="No" class="input_txt">No</td>
 				                  
 				                  
 				                </tr>
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Medical Treatment for this Condition: &nbsp;&nbsp;&nbsp;&nbsp;When:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Medical Treatment For This Condition: &nbsp;&nbsp;&nbsp;&nbsp;When:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="datepicker5" name="when1" value="${first.when1}"/> <span class="err"><form:errors path="PatientDetails.when1"></form:errors></span></td>
 				                  	<td></td>
 				                  	</tr>
 				                  	<tr class="row1">
-				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Where:</td>
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err">* </span>Where:</td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="where1" value="${first.where1}"/><span class="err"><form:errors path="PatientDetails.where1"></form:errors></span>
 				                    </tr>
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Have You Retained an Attorney for this Accident:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Have You Retained An Attorney For This Accident:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="radio" name="Attorney_accident" value="yes" class="input_txt" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Attorney_accident" value="No" class="input_txt">No</td>
 				                <td></td>
 				                </tr>
 				                 <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>What is your Dominant Hand </td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>What Is Your Dominant Hand: </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="radio" name="retain" value="R" class="input_txt" >R&nbsp;&nbsp;&nbsp;<input type="radio" name="retain" value="L" class="input_txt">L</td>
 				                <td></td>
 				                </tr>
 				                
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Would you like us to send your records to your family Physician  </td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Would You Like Us To Send Your Records To Your Family Physician:  </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="radio" name="record" value="yes" class="input_txt" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="record" value="No" class="input_txt">No</td>
 				                <td></td>
 				                </tr>
 				                <tr class="row1">
-				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>What is your Physician's Name </td>
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err">* </span>What Is Your Physician's Name: </td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="phyname" value="${first.phyname}"/><br><span class="err"><form:errors path="patientDetails.where1"></form:errors></span>
 				                    </tr>
 				                
 				                <tr class="row1">
-				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>What is your Physician's Phone </td>
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err">* </span>What Is Your Physician's Phone: </td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="phyphone" name="phyphone" value="${first.phyphone}" maxlength="13"/><br><span class="err"><form:errors path="patientDetails.where1"></form:errors></span>
 				                   <span class="err" id="phynumbererror"></span>
 				                    </tr>
 				                    <tr class="row2">
-				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Damages to your car </td>
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err">* </span>Damages To Your Car: </td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="car11" name="car11" value="${first.car11}" /><br><span id="car11error" style="color: red;font-style:italic;"><form:errors path="patientDetails.car11"></form:errors></span>
 				                   <span class="err" ></span>
 				                    </tr>
 				                     <tr class="row1">
-				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>	What body parts were x-rayed </td>
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err">* </span>	What Body Parts Were X-Rayed: </td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="xray" value="${first.xray}"/><br><span class="err"><form:errors path="patientDetails.where1"></form:errors></span>
 				                    </tr>
 				                    
 				                     <tr class="row1">
-				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>what treatment was given </td>
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err">* </span>What Treatment Was Given: </td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="treat" value="${first.treat}"/><br><span class="err"><form:errors path="patientDetails.where1"></form:errors></span>
 				                    </tr>
 				                
 				                <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name Of Attorney:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Name Of Attorney:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="NameOfAttorney" value="${first.nameOfAttorney}"/><span class="err"><form:errors path="PatientDetails.NameOfAttorney"></form:errors></span>
 				                  
 				                </tr>
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Attorney Phone:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Attorney Phone:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="phonenumber" name="Phone_Number" value="${first.phone_Number}"/><span class="err"><form:errors path="PatientDetails.Phone_Number"></form:errors></span>
 				                  	<span class="err" id="phonenumbererror"></span>
@@ -3891,14 +3891,14 @@ function check(id)
 				              
 				                </tr>
 				                <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name of Person at Fault for the Accident:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Name Of Person At Fault For The Accident:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Fault_accident" value="${first.fault_accident}"/><span class="err"><form:errors path="PatientDetails.Fault_accident"></form:errors></span></td>
 				                  	<td></td>                                                                                        
 				                 
 				                </tr>
 				                 <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>mls there a claim open </td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Mls There A Claim Open </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  
 				 <input type="radio" name="claim_open" value="yes" class="input_txt" id="claim_open" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="claim_open" value="No" class="input_txt" id="claim_open">No
@@ -3907,13 +3907,13 @@ function check(id)
 				                 
 				                </tr>
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Insurance Company of the at Fault Person:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Insurance Company Of The At Fault Person:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Insurance" value="${first.insurance}"/><span class="err"><form:errors path="PatientDetails.Insurance"></form:errors></span></td>
 				                  <td></td>
 				                </tr>
 				                <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Insurance Company Phone:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span> Insurance Company Phone:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="phno" name="Insurance_phone" value="${first.insurance_phone}"/><span class="err"><form:errors path="PatientDetails.Insurance_phone"></form:errors></span>
 				                  	<br>
@@ -3921,20 +3921,20 @@ function check(id)
 				                 </td>
 				                  </tr>
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name of your auto insurance:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Name Of Your Auto Insurance:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Name_auto" value="${first.name_auto}"/><span class="err"><form:errors path="PatientDetails.Name_auto"></form:errors></span></td>
 				                  	<td> </td>
 				                </tr>
 				               <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>phone of your auto insurance:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Phone Of Your Auto Insurance:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="phauto" name="Phone_auto" value="${first.phone_auto}"/><span class="err"><form:errors path="PatientDetails.Phone_auto"></form:errors></span></td>
 				                  	<br><span class="err" id="phautoerror"></span>
 				                  	<td> </td>
 				                </tr>
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Policy#:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Policy#:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="policy" name="Policy" value="${first.policy}"/><span class="err"><form:errors path="PatientDetails.Policy"></form:errors></span></td>
 				                  	<br>
@@ -3943,14 +3943,14 @@ function check(id)
 				                 
 				                </tr>
 				                <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name of Your Health Insurance:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Name Of Your Health Insurance:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Name_health" value="${first.name_health}"/><span class="err"><form:errors path="PatientDetails.Name_health"></form:errors></span></td>
 				                  	
 				                  <td></td>
 				                </tr>
 				            <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Phone of your Health Insurance:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Phone Of Your Health Insurance:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="phhealth" name="Health_phone" value="${first.health_phone}"/><span class="err" id="phhealtherror"><form:errors path="PatientDetails.Health_phone"></form:errors></span></td>
 				                  <br>
@@ -3960,7 +3960,7 @@ function check(id)
 				                  
 				                </tr>
 				               <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Have You Ever Been Involved in a Previous Auto or Work Accident:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Have You Ever Been Involved In A Previous Auto or Work Accident:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="radio" name="Prev_accident" value="yes" class="input_txt" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Prev_accident" value="No" class="input_txt">No</td>
 				                  	
@@ -3968,7 +3968,7 @@ function check(id)
 				                  <td></td>
 				                </tr>
 				                <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>When:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>When:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Prev_When" value="${first.prev_When}"/><span class="err"><form:errors path="PatientDetails.Prev_When"></form:errors></span>
 				                  	<td></td>
@@ -4011,7 +4011,7 @@ function check(id)
                         
                         <table cellpadding="0" cellspacing="0" border="0" width="100%">
                 <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>CheckBox if it applies to you,parents,siblings,children</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>CheckBox If It Applies To You,Parents,Siblings,Children:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                 <table>
 				                 
@@ -4066,25 +4066,25 @@ function check(id)
 				                  	
 				                  	</table> 
 				                  <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Surgeries or Major Illnesses You Have Had: </td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Surgeries Or Major Illnesses You Have Had: </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Illness" value="${first.illness}"/><span class="err"><form:errors path="PatientDetails.Illness"></form:errors></span>
 				                  	</tr>   
 				                 
 				                 <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Dates:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Dates:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="datepicker3" name="Dates" value="${first.dates }"/><span class="err"><form:errors path="PatientDetails.Dates"></form:errors></span>
 				                  	</tr>    		
 				                  	
 				                  	<tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Medications You are Currently Taking and Why:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Medications You Are Currently Taking And Why:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<textarea rows="3" cols="25" placeholder="Medications" name="Medications">${first.medications}</textarea>&nbsp;&nbsp;&nbsp;
 				                  	</tr> 
 				                  	
 				                  	<tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Do You:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Do You:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="checkbox" name="Drink" value="Drink">Drink Regularly	&nbsp;&nbsp;&nbsp;&nbsp; 
 				                  	<input type="checkbox" name="Smoke" value="Smoke">Smoke	&nbsp;&nbsp;&nbsp;&nbsp;
@@ -4095,7 +4095,7 @@ function check(id)
 				                  	
 				                  	</tr> 
 				                  	<tr class="row2">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Do You Work Around Hazardous Substances:  </td>
+				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Do You Work Around Hazardous Substances:  </td>
 				  <td valign="top" align="left" class="input_txt">
 				  <div id="send_to">
 				  <input type="radio" name="Hazardous" value="yes" class="input_txt" >Yes&nbsp;&nbsp;&nbsp;<div id="send_to_one">
@@ -4105,18 +4105,18 @@ function check(id)
 			      </td>
 				  </tr>
 				  <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Females Only:<br>Are you pregnant:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Females Only:<br>Are you pregnant:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="radio" name="Female" value="yes" class="input_txt" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Female" value="No" class="input_txt">No</td>
 				                
 				                  	</tr>
 				                  	<tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Dr:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Dr:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Dr" value="${first.dr}"/><span class="err"><form:errors path="PatientDetails.Dr"></form:errors></span>
 				                  	</tr>  
 				                  	<tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Signature:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Patient Signature:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="inp_id" name="Patient" value="${first.patient}"/><span class="err"><form:errors path="PatientDetails.Patient"></form:errors></span>
 				                  	</tr>  
