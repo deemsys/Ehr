@@ -223,6 +223,7 @@ $(function() {
 </script>
 <script>
 function validatename(id){
+	
     var textInput = document.getElementById(id).value;
     textInput = textInput.replace(/[^A-Za-z ]/g, "");
     document.getElementById(id).value = textInput;
