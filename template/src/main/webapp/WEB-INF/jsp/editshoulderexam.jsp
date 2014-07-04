@@ -500,7 +500,7 @@ document.getElementById("pnameerror").innerHTML=" ";
            <div><B style="font-size:14px"><span class="err">*</span>PHYSICIAN SIGNATURE:</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" value="${shoulderexamdetails.signature}" name="signature" id="sign"><span class="err" id="signerror"><form:errors path="shoulderexamdetails.signature"></form:errors></div>
            
          
-         <table align="right"><tr><td><input type="submit" value="Save" class="submit_btn" onclick="return checkSubmit('this');"></td><td> <a href="viewshoulderexamdetails" style="color: white" class="submit_btn" onclick="myclose()">Cancel</a></td></tr></table>
+         <table align="right"><tr><td><input type="submit" value="update" class="submit_btn" onclick="return checkSubmit('this');"></td><td> <a href="viewshoulderexamdetails" style="color: white" class="submit_btn" onclick="myclose()">Cancel</a></td></tr></table>
          <script>
  function myclose()
  {
