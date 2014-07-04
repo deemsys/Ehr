@@ -2265,6 +2265,7 @@ document.getElementById("inp_id").value=phone;
 				         	<span id="MaritalStatuserror" style="color: red;font-style:italic;"></span>
 				         	</td>
 				        </tr>
+				        
 				               
 				          </table></td>
 				          
@@ -2356,21 +2357,7 @@ document.getElementById('employee').style.display="block";
 							</div>
 							 <table cellpadding="0" cellspacing="0" border="0" width="100%">
 				                
-				 			 <tr class="row2">
-				               
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Spouse's or significant others name:</td>
-				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="SpousesName"   value="${patientDetails.spousesName}" name="spousesName" onInput="return validatename56(id)"; /></br><span id="SpousesNameerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.SpousesName"></form:errors></span></td>
-							</tr>
-							 <tr class="row1">
-                        		<td><span class="err">*</span>Spouses Employer:&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                        		<td class="input_txt"><input type="text" class="input_txtbx1" id="SpousesEmp"  onInput="return validatename(id)"; value="${patientDetails.spousesEmp}" name="spousesEmp" /></br><span id="SpousesEmperror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.SpousesEmp"></form:errors></span></td>
-							</tr>   	                     
-						
-						    <tr class="row2">
-                        		<td><span class="err">*</span>Spouse's Workphone:</td>
-                        		<td class="input_txt"><input type="text" class="input_txtbx1" id="spouseworkphone"  maxlength="13"  onkeypress="return validate(event)"; value="${patientDetails.spousesph}" name="spousesph" /></br><span id="spouseworkphoneerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Spousesph"></form:errors></span></td>
-							</tr>                        
-						    <tr class="row1">
+				 			     <tr class="row1">
                         		<td><span class="err">*</span>Name of Nearest Friend/ Relative Not Living With You:</td>
                         		<td class="input_txt"><input type="text" class="input_txtbx1" id="Name_friend" onInput="return validatename(id)";  value="${patientDetails.name_friend}" name="name_friend" /></br><span id="Name_frienderror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Name_friend"></form:errors></span></td>
 							</tr>                        
