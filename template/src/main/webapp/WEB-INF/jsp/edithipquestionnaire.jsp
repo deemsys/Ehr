@@ -422,7 +422,7 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 	             
 	            </div>
           <div class="contentbox">
-	    <span class="err">*</span>Today's Date <input type="text" name="date"  class="input_txtbx1" id="datepicker" value="${hipquestionnairedetails.date}" ><br><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="hipquestionnaire.date"></form:errors></span>
+	    <span class="err">* </span> Date <input type="text" name="date"  class="input_txtbx1" id="datepicker" value="${hipquestionnairedetails.date}" ><br><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="hipquestionnaire.date"></form:errors></span>
 	    <br>
 	    <br>
 	    
@@ -438,7 +438,7 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 	       </p>
 	    Your Birth Date  <input type="text"  class="input_txtbx1" id="datepicker1" value="${hipquestionnairedetails.birthdate}" name="birthdate"><span id="datepicker1error"  style="color: red;font-style:italic;"></span>
 	    <br><br>
-	   <span class="err">*</span> Your Social Security Number <input type="text" name="security" id="security" onkeypress="return validate(event)"; maxlength="11" value="${hipquestionnairedetails.security}" class="input_txtbx1"><span class="err" id="securityerror"></span>
+	   <span class="err">* </span> Your Social Security Number <input type="text" name="security" id="security" onkeypress="return validate(event)"; maxlength="11" value="${hipquestionnairedetails.security}" class="input_txtbx1"><span class="err" id="securityerror"></span>
 	    <div id="number">
 	    <br>
 	    <br>
