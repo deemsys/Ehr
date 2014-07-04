@@ -94,7 +94,7 @@ function doAjaxPost() {
 	var username = $('#username').val();
 	if(username=="")
 		{
-		alert("Please Enter Patient Username");
+		alert("Please Enter Patient UserName");
 		return false;
 		}
 	
@@ -165,7 +165,7 @@ function doAjaxPost() {
 <br><br><br>
  <table cellpadding="0" cellspacing="0" border="0" width="100%">
 	            <tr >
-	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">*</span>Please enter a Patient User Name</td>
+	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">*</span> Please enter Patient UserName</td>
 				 <td width="20"></td> <td valign="top" align="left" class="input_txt" width="200">
 				   <input type="text" class="input_txtbx1" id="username" name="username" /><br/>
 				  </td>
@@ -195,16 +195,49 @@ function doAjaxPost() {
          });
  
 </script>
+
+
 <script>
 function validatename(){
+    var textInput = document.getElementById("name").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("name").value = textInput;
+}
+function validateregarding(){
+    var textInput = document.getElementById("regarding").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("regarding").value = textInput;
+}
+function validatepatname(){
     var textInput = document.getElementById("patientname").value;
     textInput = textInput.replace(/[^A-Za-z ]/g, "");
     document.getElementById("patientname").value = textInput;
 }
+
+function validatedear(){
+    var textInput = document.getElementById("dearname").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("dearname").value = textInput;
+}
+function validateclinic(){
+    var textInput = document.getElementById("nameofclinic").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("nameofclinic").value = textInput;
+}
+function validatephysician(){
+    var textInput = document.getElementById("treatingphysician").value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById("treatingphysician").value = textInput;
+}
+
+
 </script>
+
 <script>
 function valid()
 {   
+
+	
 	document.getElementById("nameerror").innerHTML="";
 if(document.getElementById("name").value=="")
         {
@@ -212,6 +245,41 @@ if(document.getElementById("name").value=="")
             
             return false;
         }
+if(document.getElementById("name").value!=""){       
+if(document.getElementById("name").value.substring(0,1)==' '){
+	document.getElementById("nameerror").innerHTML="Invalid Name!";
+	 return false;
+}
+if(document.getElementById("name").value.length<4)
+{
+	document.getElementById("nameerror").innerHTML="Name should be min 4 and max 32";
+	return false;
+}
+
+}
+
+document.getElementById("addrerror").innerHTML="";
+if(document.getElementById("addr").value!=""){  
+if(document.getElementById("addr").value.substring(0,1)==' '){
+	document.getElementById("addrerror").innerHTML="Invalid Address!";
+	 return false;
+}
+}
+
+document.getElementById("regardingerror").innerHTML="";
+if(document.getElementById("regarding").value!=""){  
+if(document.getElementById("regarding").value.substring(0,1)==' '){
+	document.getElementById("regardingerror").innerHTML="Invalid Data!";
+	 return false;
+}
+
+if(document.getElementById("regarding").value.length<4)
+{
+	document.getElementById("regardingerror").innerHTML="Data should be min 4 and max 32";
+	return false;
+}
+}
+        
 document.getElementById("patientnameerror").innerHTML="";
       if(document.getElementById("patientname").value=="")
         {
@@ -225,6 +293,12 @@ document.getElementById("patientnameerror").innerHTML="";
 	    	document.getElementById("patientnameerror").innerHTML="Name should be min 4 and max 32";
 	    	
 	        return false;
+	    }
+	    if(document.getElementById("patientname").value!=""){  
+	    if(document.getElementById("patientname").value.substring(0,1)==' '){
+	    	document.getElementById("patientnameerror").innerHTML="Invalid Name!";
+	    	 return false;
+	    }
 	    }
         
       document.getElementById("datepickererror").innerHTML="";
@@ -247,12 +321,35 @@ document.getElementById("patientnameerror").innerHTML="";
         	 document.getElementById("dearnameerr").innerHTML="Required Field Should not be Empty";
             return false;
         }
+        if(document.getElementById("dearname").value!=""){  
+        if(document.getElementById("dearname").value.substring(0,1)==' '){
+        	document.getElementById("dearnameerr").innerHTML="Invalid Name!";
+        	 return false;
+        }
+        if(document.getElementById("dearname").value.length<4)
+        {
+        	document.getElementById("dearnameerr").innerHTML="Name should be min 4 and max 32";
+        	return false;
+        }
+        }
+        
         document.getElementById("nameofclinicerror").innerHTML="";
         if(document.getElementById("nameofclinic").value=="")
         {
         	 document.getElementById("nameofclinicerror").innerHTML="Required Field Should not be Empty";
             return false;
-        }  
+        }
+        if(document.getElementById("nameofclinic").value!=""){  
+        if(document.getElementById("nameofclinic").value.substring(0,1)==' '){
+        	document.getElementById("nameofclinicerror").innerHTML="Invalid Name!";
+        	 return false;
+        }
+        if(document.getElementById("nameofclinic").value.length<4)
+        {
+        	document.getElementById("nameofclinicerror").innerHTML="Name should be min 4 and max 32";
+        	return false;
+        }
+        }
        
         document.getElementById("treatingphysicianerror").innerHTML="";
         if(document.getElementById("treatingphysician").value=="")
@@ -260,9 +357,18 @@ document.getElementById("patientnameerror").innerHTML="";
         	 document.getElementById("treatingphysicianerror").innerHTML="Required Field Should not be Empty";
             return false;
         }
-     
-       
-           
+        if(document.getElementById("treatingphysician").value!=""){  
+        if(document.getElementById("treatingphysician").value.substring(0,1)==' '){
+        	document.getElementById("treatingphysicianerror").innerHTML="Invalid Name!";
+        	 return false;
+        }
+        if(document.getElementById("treatingphysician").value.length<4)
+        {
+        	document.getElementById("treatingphysicianerror").innerHTML="Name should be min 4 and max 32";
+        	return false;
+        }
+        }
+          
         }
 
 </script>
@@ -319,32 +425,32 @@ document.getElementById("patientnameerror").innerHTML="";
 	            <p align="right"><b> SENT BY CERTIFIED MAIL</b></p>
 	           <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="50" width="120"><span class="err">*</span>Name Of Attorney:</td>
-              <td ><input type="text" class="input_txtbx1" name="name" id="name"  style="width: 156px; "/><span class="err" id="nameerror"><form:errors path="Responseattorney.name"></form:errors></td>
+              <td height="50" width="120"><span class="err">*</span> Name Of Attorney:</td>
+              <td ><input type="text" class="input_txtbx1" min="4" maxlength="32" name="name" id="name" onInput="validatename();" style="width: 156px; "/><span style="color: red;font-style:italic;" id="nameerror"><form:errors path="Responseattorney.name"></form:errors></td>
               </tr>
               <tr>
-              <td height="20" width="120"><span class="err"></span>Address:</td>
-              <td><textarea rows="" cols="" name="address" class="input_txtarea" style="width: 156px;" ></textarea>
+              <td height="20" width="120"><span class="err">&nbsp;</span> Address:</td>
+              <td><textarea rows="" cols="" name="address" id="addr" class="input_txtarea" style="width: 156px;" ></textarea><span style="color: red;font-style:italic;" id="addrerror">
             </td></tr>
              
              <tr>
-              <td height="30" width="120"><span class="err"></span>Regarding:</td>
-              <td ><input type="text" class="input_txtbx1" name="regarding" id="regarding" style="width: 156px;"/><span class="err"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td height="30" width="120"><span class="err">&nbsp;</span> Regarding:</td>
+              <td ><input type="text" class="input_txtbx1" min="4" maxlength="32" name="regarding" id="regarding" onInput="validateregarding();" style="width: 156px;"/><span id="regardingerror" style="color: red;font-style:italic;"></span></td>
               </tr>
                 <tr>
-              <td height="30" width="120"><span class="err">*</span>Patients's Name:</td>
-              <td ><input type="text" class="input_txtbx1" name="patientname" id="patientname" style="width: 156px; " onInput="return validatename()";/><span class="err" id="patientnameerror"><form:errors path="Responseattorney.patientname"></form:errors></td>
+              <td height="30" width="120"><span class="err">*</span> Patients's Name:</td>
+              <td ><input type="text" class="input_txtbx1" min="4" maxlength="32" name="patientname" id="patientname" style="width: 156px; " onInput="validatepatname();"/><span style="color: red;font-style:italic;" id="patientnameerror"><form:errors path="Responseattorney.patientname"></form:errors></td>
               </tr>
                 <tr>
-              <td height="30" width="120"><span class="err">*</span>Date Of Accident:</td>
-              <td ><input type="text" class="input_txtbx1" name="dateofaccident" id="datepicker" style="width: 156px; "/><span class="err" id="datepickererror"><form:errors path="Responseattorney.dateofaccident"></form:errors></td>
+              <td height="30" width="120"><span class="err">*</span> Date Of Accident:</td>
+              <td ><input type="text" class="input_txtbx1" readonly="readonly" name="dateofaccident" id="datepicker" style="width: 156px; "/><span style="color: red;font-style:italic;" id="datepickererror"><form:errors path="Responseattorney.dateofaccident"></form:errors></td>
               </tr>
               </table>
               
               <input type="text" name="user" id="user"  style="visibility:hidden">
               <br>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
-        	  <tr><td height="30" width="120"><br><p id="mypar"><span class="err">*</span>Dear</td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<td><input type="text" class="input_txtbx1" name="dearname" id="dearname" style="width: 156px; "><span class="err" id="dearnameerr"></span></p></td></tr>
+        	  <tr><td height="30" width="120"><br><p id="mypar"><span class="err">*</span> Dear</td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<td><input type="text" min="4" maxlength="32" class="input_txtbx1" name="dearname" onInput="validatedear();" id="dearname" style="width: 156px; "><span style="color: red;font-style:italic;" id="dearnameerr"></span></p></td></tr>
        		  </table>
        		  <table cellpadding="0" cellspacing="0" border="0" width="100%">
        		  <tr>
@@ -358,21 +464,21 @@ document.getElementById("patientnameerror").innerHTML="";
               <br>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
        		  <tr >
-       		  <td valign="right" align="right" class="input_txt"><span class="err">*</span>Sincerly,</td>
+       		  <td valign="right" align="right" class="input_txt"><span class="err">&nbsp;</span> Sincerly,</td>
               </tr>
               </table>
               <br>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
-       		  <td valign="right" align="right" class="input_txt"><span class="err">*</span>Name of Clinic:
-              <input type="text" class="input_txtbx1" name="nameofclinic" id="nameofclinic" /><span class="err" id="nameofclinicerror"><form:errors path="Responseattorney.nameofclinic"></form:errors></span></td>
+       		  <td valign="right" align="right" class="input_txt"><span class="err">*</span> Name of Clinic:
+              <input type="text" class="input_txtbx1" min="4" maxlength="32" name="nameofclinic" onInput="validateclinic();" id="nameofclinic" /><br/><span style="color: red;font-style:italic;" id="nameofclinicerror"><form:errors path="Responseattorney.nameofclinic"></form:errors></span></td>
               </tr>
               </table>
               <br>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
-       		  <td valign="right" align="right" class="input_txt"><span class="err">*</span>Treating Physician:
-              <input type="text" class="input_txtbx1" name="treatingphysician" id="treatingphysician" /><span class="err" id="treatingphysicianerror"><form:errors path="Responseattorney.treatingphysician"></form:errors></span></td>
+       		  <td valign="right" align="right" class="input_txt"><span class="err">*</span> Treating Physician:
+              <input type="text" class="input_txtbx1" min="4" maxlength="32" name="treatingphysician" onInput="validatephysician();" id="treatingphysician" /><br/><span style="color: red;font-style:italic;" id="treatingphysicianerror"><form:errors path="Responseattorney.treatingphysician"></form:errors></span></td>
               </tr>
               </table>
               </c:when>
@@ -462,3 +568,48 @@ document.getElementById("patientnameerror").innerHTML="";
         	  </body>
         	  </html>
         	  <jsp:include page="footer.jsp"></jsp:include>
+        	  <script>
+        	  $(function() {
+        			$("#name").on("keypress", function(e) {
+        				if (e.which === 32 && !this.value.length)
+        			        e.preventDefault();
+        			});
+        			});	
+        	  $(function() {
+        			$("#addr").on("keypress", function(e) {
+        				if (e.which === 32 && !this.value.length)
+        			        e.preventDefault();
+        			});
+        			});	
+        	  $(function() {
+        			$("#regarding").on("keypress", function(e) {
+        				if (e.which === 32 && !this.value.length)
+        			        e.preventDefault();
+        			});
+        			});	
+        	  $(function() {
+        			$("#patientname").on("keypress", function(e) {
+        				if (e.which === 32 && !this.value.length)
+        			        e.preventDefault();
+        			});
+        			});	
+        	  $(function() {
+        			$("#dearname").on("keypress", function(e) {
+        				if (e.which === 32 && !this.value.length)
+        			        e.preventDefault();
+        			});
+        			});	
+        	  $(function() {
+        			$("#nameofclinic").on("keypress", function(e) {
+        				if (e.which === 32 && !this.value.length)
+        			        e.preventDefault();
+        			});
+        			});	
+        	  $(function() {
+        			$("#treatingphysician").on("keypress", function(e) {
+        				if (e.which === 32 && !this.value.length)
+        			        e.preventDefault();
+        			});
+        	  });
+        	  
+        	  </script>
