@@ -3051,10 +3051,10 @@ function check(id)
                       <!-- </div> --> 
                       <td valign="top" align="left" class="input_txt"></td>
 				                  <td valign="top" align="left" class="input_txt">
-				                   <textarea rows="3" cols="25" onInput="return validatename55(id)"; placeholder="Specify your Symptoms" name="symptom[]" id="symptom1" onBlur="check(this)" ></textarea><br/><span id="symptom1error" style="color: red;font-style:italic;"></span>
+				                   &nbsp;&nbsp;&nbsp;<textarea rows="3" cols="25" onInput="return validatename55(id)"; placeholder="Specify your Symptoms" name="symptom[]" id="symptom1" onBlur="check(this)" ></textarea><br/><span id="symptom1error" style="color: red;font-style:italic;"></span>
 				                <p></p>
 				                 <div id="multichoice"></div>
-				                   <a href="javascript:void(0);" onclick="addMultichoice('multichoice');" style="text-decoration:none;" ><input type="button" value="Add one more Symptom" class="submit_btn2" id="morebutton" name=""/></a>
+				                   <a href="javascript:void(0);" onclick="addMultichoice('multichoice');" style="text-decoration:none;" >&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" value="Add one more Symptom" class="submit_btn2" id="morebutton" name=""/></a>
 
 				                  	</td>
 				                  	<td>
