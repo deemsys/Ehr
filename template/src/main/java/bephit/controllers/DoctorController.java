@@ -1695,14 +1695,16 @@ if(result.hasErrors())
 		model.addAttribute("lowbackForm",lowbackForm);  
 		}
 		session.removeAttribute("low");
-		return "lowback";
+		model.addAttribute("choice","close");
+		return "screeninglist";
 	}
 
 	@RequestMapping(value="/deletelowbackdetails", method=RequestMethod.GET)
 	public String deletelowback(@RequestParam("lowbackno") String lowbackno,HttpSession session,ModelMap model, Principal principal) {
 	
 		lowDAO.deletelowback(lowbackno);
-		return "lowback";
+		model.addAttribute("choice","close");
+		return "screeninglist";
 	}
 	@RequestMapping(value="/dutiesunderduress", method = RequestMethod.GET)
 	public String viewingdutiesunderduress(HttpSession session, ModelMap model) {
@@ -2301,7 +2303,8 @@ String name="";
 		model.addAttribute("shoulderpainscoreForm",shoulderpainscoreForm);  
 		}
 		session.removeAttribute("shoulderpain");
-		return "shoulderpainscore";
+		model.addAttribute("choice","close");
+		return "screeninglist";
 	}
 	
 }

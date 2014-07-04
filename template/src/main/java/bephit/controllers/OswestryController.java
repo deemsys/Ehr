@@ -159,7 +159,8 @@ public class OswestryController
 		model.addAttribute("success",true);
 		model.addAttribute("menu","wristindex");
 		session.removeAttribute("oswestrydisability");
-		return "oswestryindex";
+		model.addAttribute("choice","close");
+		return "screeninglist";
 	}
 	@RequestMapping (value="/oswestryindexlist", method = RequestMethod.GET)
 	public String oswestryindexlist(@RequestParam("oswestryno") String oswestryno,HttpServletRequest request,ModelMap model,Oswestry oswestryindexdetails) throws IOException

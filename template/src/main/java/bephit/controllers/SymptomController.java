@@ -810,7 +810,8 @@ String name="";
 		model.addAttribute("menu", "neckindex");
 		model.addAttribute("success", true);
 		session.removeAttribute("neckdisability");
-		return "neckindex";
+		model.addAttribute("choice","close");
+		return "screeninglist";
 	}
 
 	@RequestMapping(value = "/deletewristindex", method = RequestMethod.GET)
@@ -824,7 +825,8 @@ String name="";
 		model.addAttribute("menu", "wristindex");
 		model.addAttribute("success", true);
 		session.removeAttribute("wristdisability");
-		return "wristindex";
+		model.addAttribute("choice","close");
+		return "screeninglist";
 	}
 
 	@RequestMapping (value="/updatewristindex", method = RequestMethod.POST)
