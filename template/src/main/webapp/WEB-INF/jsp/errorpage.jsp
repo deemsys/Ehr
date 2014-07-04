@@ -18,25 +18,20 @@
 
 </head>
 
-	<c:if test="${not empty psearch}">
+	<c:if test="${not empty nsearch}">
 		<div class="errorblock" align="center">
-		 The User was not registered.Please check the details.
-		</div>
-	</c:if>
-	<c:if test="${not empty Error}">
-		<div class="errorblock" align="center">
-		 The User was not available in Patient Details.Please Check the Patient Details.
+		 The user was not registered.....Please check the details.
 		</div>
 	</c:if>
 <div id="right_content">
-<form action="doctorsearch" method="POST">
+<form action="checklistsearch" method="POST">
 
 <table cellpadding="0" cellspacing="0" border="0" width="50%" class="margin_table">
   <tr>
         <td valign="top" align="left" style="padding:5px 0 10px 0;">&nbsp;
 		<div class="status success" style="display: none;">
             <p class="closestatus"><a title="Close" href="">x</a></p>
-            <p><img alt="Error" src="resources/images/Close.png"><span>User was not registered in a Patient interface.Please register in patient interface!!!</span>.</p>
+            <p><img alt="Error" src="resources/images/Close.png"><span>User was not registered in a patient interface.Please register in patient interface!!!</span>.</p>
           </div>
       </tr> 
        <tr>
@@ -49,29 +44,25 @@
       <tr>
         <td valign="top" align="left">
         	<div id="search_div">
-	            <div class="headings altheading">
-	             <h2>Checking for a Patient<h2> 
-	            </div>
+	           <div class="headings altheading"><h2 align="center">Message</h2>
+	           </div>
 	            <div class="contentbox">
 	           <table cellpadding="0" cellspacing="0" border="0" width="100%">
-	            <tr class="row1">
-	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">*</span>Please enter a Patient UserName:</td>
-				  <td valign="top" align="left" class="input_txt" width="200">
-				   <input type="text" class="input_txtbx1" id="inp_id" name="username" /><br/><span class="err"><form:errors path="Doctorsearch.emailid"></form:errors></span>
-				  </td>
-				  </tr>
-				  <%-- <tr class="row1">
-	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Please enter a Patient name</td>
-				  <td valign="top" align="left" class="input_txt" width="200">
-				   <input type="text" class="input_txtbx1" id="inp_id" name="patientname" /><br/><span class="err"><form:errors path="Doctorsearch.patientname"></form:errors></span>
-				  </td>
-				  </tr> --%>
+	           <br>
+			<span style="color:red;" ><center ><b>The Record was deleted</b></center></span>
 				  </table>
 				   <br>
+				  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<center><input type="button" class="submit_btn" onclick="close123()" value="Close"></center>
+				
+				   <script>
+				   function close123()
+				   {
+					   
+					   window.close();
+				   }
+				   </script>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
-              <tr >
-              <td valign="top" align="center"><input type="submit" class="submit_btn" value="Submit"></td>
-              </tr>
+              
               </table>
               </div>
               </div>

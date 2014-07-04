@@ -72,7 +72,55 @@ public class DoctorsignupDAO {
 	    
 	}
 
-	
+	public int emailvalidation(String email)
+	{
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		int flag=0;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		//List<ParticipantsDetails> participants = new ArrayList<ParticipantsDetails>();
+	    try{
+	    	String username=""; 
+	    resultSet=statement.executeQuery("select count(email) as count from login where email='"+email+"'");
+	    	 while(resultSet.next())
+	    	 {
+	    		 username=resultSet.getString("count");
+	    	 }
+	    	 System.out.println("username"+username);
+	    	 if(Integer.parseInt(username)>0)
+	    	 {    		
+	    		 flag=1;
+	    		 System.out.println(""+Integer.parseInt(username));
+	    	 }
+	    	 else
+	    	 {
+			flag=0;
+	    	 }
+	 }
+	    catch(Exception e){
+	    	System.out.println(e.toString());
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    	flag=0;
+	    	//return 0;
+	    }finally{
+	     	releaseStatement(statement);
+	    	releaseConnection(con);	    
+	    	
+	    }
+	    if(flag==1)
+    		return 1;
+    	else
+    		return 0;
+	    
+	}
+
 	
 	public int setDoctorsignup(Doctorsignup doctorsignup)
 	{

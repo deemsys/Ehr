@@ -140,28 +140,36 @@ document.getElementById("doctoremailerror").innerHTML=" ";
 	            <c:when test="${empty doctorsignup}">
 	            <table cellpadding="0" cellspacing="0" border="0" width="100%">
 	            <tr class="row1">
-	             <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Username:</td>
+
+	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>&nbsp;UserName</td>
+
+
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="doctorusername" name="doctorusername" min="4" maxlength="32"  onInput="return validateusername()"; /><br/><span class="err" id="doctorusernameerror"><form:errors path="Doctorsignup.doctorusername"></form:errors></span>
+
+				  <input type="text" class="input_txtbx1" id="doctorusername" name="doctorusername" min="4" maxlength="32"  onInput="return validateusername()"; /><br><font color="red" size="+1"><span  id="doctorusernameerror"></font><form:errors path="Doctorsignup.doctorusername"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
 	             <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Password:</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="password" class="input_txtbx1" id="doctorpassword" name="doctorpassword" onInput="return validateusername1()";  min="3" maxlength="32"/><br/><span class="err" id="doctorpassworderror"><form:errors path="Doctorsignup.doctorpassword"></form:errors></span>
+				  <input type="password" class="input_txtbx1" id="doctorpassword" name="doctorpassword" onInput="return validateusername1()";  min="3" maxlength="32"/><br><font color="red" size="+1"><span id="doctorpassworderror"></font><form:errors path="Doctorsignup.doctorpassword"></form:errors></span>
+
 				  </td>
 				  </tr>
 				   <tr class="row1">
 	             <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Confirm Password:</td>
 				  <td valign="top" align="left" class="input_txt">
+
 				  <input type="password" class="input_txtbx1" id="doctorconfirm" name="doctorconfirm" onInput="return validateusername2()";  /><br/><span class="err" id="doctorconfirmerror"><form:errors path="Doctorsignup.doctorconfirm"></form:errors></span>
+
 				  </td>
 				  </tr>
 				  <tr class="row1">
 	             <td valign="middle" align="left" class="input_txt"><span class="err">* </span>E-mail Id:</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="doctoremail" name="doctoremail" /><br/><span class="err" id="doctoremailerror"><form:errors path="Doctorsignup.doctoremail"></form:errors></span>
-				  </td>
+
+				  <input type="text" class="input_txtbx1" id="doctoremail" name="doctoremail" /><br><font color="red" size="+1"><span id="doctoremailerror"></font><font color="Red" size="+1"><c:if test="${emailerror=='exists'}"><c:out value="E-mail Id Already Exists"></c:out></c:if></font><form:errors path="Doctorsignup.doctoremail"></form:errors></span>
+		  </td>
 				  </tr>
 				  </table>
 				  </c:when>
@@ -170,25 +178,25 @@ document.getElementById("doctoremailerror").innerHTML=" ";
 	            <tr class="row1">
 	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Username</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="doctorusername" value="${doctorsignup.doctorusername}"/></br><span class="err"><form:errors path="Doctorsignup.doctorusername"></form:errors><font color="Red" size="+1"><c:if test="${usernames=='exists'}"><c:out value="Username Already Exists"></c:out></c:if></font></span>
+				  <input type="text" class="input_txtbx1" id="doctorusername" onInput="return validateusername()"; min="4" maxlength="32" name="doctorusername" value="${doctorsignup.doctorusername}"/><br><font color="red" size="+1"><span  id="doctorusernameerror"></font><span class="err"><form:errors path="Doctorsignup.doctorusername"></form:errors><font color="Red" size="+1"><c:if test="${usernames=='exists'}"><c:out value="Username Already Exists"></c:out></c:if></font></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
 	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Password</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="password" class="input_txtbx1" id="doctorpassword" name="doctorpassword" value="${doctorsignup.doctorpassword}"/></br><span class="err"><form:errors path="Doctorsignup.doctorpassword"></form:errors></span>
+				  <input type="password" class="input_txtbx1" id="doctorpassword" name="doctorpassword" onInput="return validateusername1()";  min="3" maxlength="32" value="${doctorsignup.doctorpassword}"/></br><font color="red" size="+1"><span  id="doctorpassworderror"></font><span class="err"><form:errors path="Doctorsignup.doctorpassword"></form:errors></span>
 				  </td>
 				  </tr>
 				   <tr class="row1">
 	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Confirm Password</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="password" class="input_txtbx1" id="doctorconfirm" name="doctorconfirm" value="${doctorsignup.doctorconfirm }"/></br><span class="err"><form:errors path="Doctorsignup.doctorconfirm"></form:errors></span>
+				  <input type="password" class="input_txtbx1" id="doctorconfirm" name="doctorconfirm" value="${doctorsignup.doctorconfirm }" onInput="return validateusername2()";/></br><font color="red" size="+1"><span  id="doctorconfirmerror"></font><span class="err"><form:errors path="Doctorsignup.doctorconfirm"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
 	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>E-mail Id</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="doctoremail" value="${doctorsignup.doctoremail}"/></br><span class="err"><form:errors path="Doctorsignup.doctoremail"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="doctoremail" name="doctoremail" value="${doctorsignup.doctoremail}"/><br><font color="red" size="+1"><span id="doctoremailerror"></font><font color="Red" size="+1"><c:if test="${emailerror=='exists'}"><c:out value="E-mail Id Already Exists"></c:out></c:if></font><span class="err"><form:errors path="Doctorsignup.doctoremail"></form:errors></span>
 				  </td>
 				  </tr>
 				  </table>

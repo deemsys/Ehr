@@ -321,6 +321,7 @@ public class MainController {
 	@RequestMapping(value="/doctorsearch", method = RequestMethod.POST)
 	public String insert_doctorsearch(HttpSession session,HttpServletRequest request,ModelMap model) {
 		
+		
 /*	if(result.hasErrors())
 	{
 		model.addAttribute("menu","doctorsearch");
@@ -335,13 +336,20 @@ public class MainController {
 			 
 		 }	
 	String username=request.getParameter("username");
+	if(signupDAO.getPatientusername(username).size()==0)
+	{
+		model.addAttribute("menu","doctorsearch");
+		model.addAttribute("psearch","true");
+		return "doctorsearch";
+		
+	}
 	session.setAttribute("username", username);	
 	//String patientname=request.getParameter("patientname");
 	int v=doctorDAO.Checkvalid(username);
 			//id=getpatient_id();
 		if(v==0)
 		{
-			model.addAttribute("menu","search");
+			model.addAttribute("menu","doctorsearch");
 			model.addAttribute("Error","true");
 			return "doctorsearch";
 		}
@@ -2503,7 +2511,13 @@ return "viewworkaccident";
 		session.setAttribute("signup",signup);
 		String pusername=signup.getUsername();
 		int username=docDAO.usernamevalidation(pusername);
-		
+		model.addAttribute("menu","sign");
+		int email=docDAO.emailvalidation(signup.getEmail());
+		if(email>0)
+		{
+			model.addAttribute("emailerror","exists");
+			return "signup";
+		}
 		if(result.hasErrors())
 		{
 			SignupForm signupForm= new SignupForm();
@@ -2530,7 +2544,7 @@ return "viewworkaccident";
     	SignupForm signupForm= new SignupForm();
     	signupForm.setSignup(signDAO.getSignup());
 		model.addAttribute("SignupForm",signupForm);
-
+		model.addAttribute("success",true);
 		
 		return "login";
 	}
@@ -2551,6 +2565,7 @@ return "viewworkaccident";
 		session.setAttribute("doctorsignup",doctorsignup);
 		String dusername=doctorsignup.getDoctorusername();
 		int username=docDAO.usernamevalidation(dusername);
+		int email=docDAO.emailvalidation(doctorsignup.getDoctoremail());
 		System.out.println("count"+username);
 		model.addAttribute("menu","sign");
 		
@@ -2567,6 +2582,11 @@ return "viewworkaccident";
 				System.out.println("username exist");
 				System.out.println(username);				
 			}
+			if(email>0)
+			{
+				model.addAttribute("emailerror","exists");
+					
+			}
 			return "doctorsignup";
 		}
 		if(username>0)
@@ -2576,6 +2596,13 @@ return "viewworkaccident";
 			System.out.println(username);
 			return "doctorsignup";
 			
+		}
+		if(email>0)
+		{
+			model.addAttribute("emailerror","exists");
+			System.out.println("error");
+			return "doctorsignup";
+				
 		}
 		
     	int h =docDAO.setDoctorsignup(doctorsignup);

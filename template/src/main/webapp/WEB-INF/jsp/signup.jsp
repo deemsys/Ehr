@@ -1,5 +1,4 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <jsp:include page="header.jsp"></jsp:include>
 <html>
@@ -154,28 +153,34 @@ document.getElementById("emailerror").innerHTML=" ";
                  <c:when test="${empty signup}">
 	            <table cellpadding="0" cellspacing="0" border="0" width="100%">
 	            <tr class="row1">
-	             <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Username:</td>
+
+	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>UserName</td>
+
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="input_txtbx1" id="username" name="username" min="4" maxlength="32" onInput="return validateusername()"; />
-				 </br> <span id="usernameerror" class="err"><form:errors path="Signup.username"></form:errors></span>
+				 </br><font color="red" size="+1"> <span id="usernameerror" ></font><form:errors path="Signup.username"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
 	             <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Password:</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="password" class="input_txtbx1" id="password" name="password" onInput="return validateusername1()"; min="3" maxlength="32"/><br><span class="err" id="passworderror"><form:errors path="Signup.password"></form:errors></span>
+				  <input type="password" class="input_txtbx1" id="password" name="password" onInput="return validateusername1()"; min="3" maxlength="32"/><br><font color="red" size="+1"><span  id="passworderror"></font><form:errors path="Signup.password"></form:errors></span>
 				  </td>
 				  </tr>
 				   <tr class="row1">
 	             <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Confirm Password:</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="password" class="input_txtbx1" id="confirm" name="confirm" /><br/><span class="err" id="confirmerror"><form:errors path="Signup.confirm"></form:errors></span>
-				  </td>
+
+				  <input type="password" class="input_txtbx1" id="confirm" name="confirm" /><br><font color="red" size="+1"><span id="confirmerror"></font><form:errors path="Signup.confirm"></form:errors></span>
+
+	  </td>
 				  </tr>
 				  <tr class="row1">
 	             <td valign="middle" align="left" class="input_txt"><span class="err">* </span>E-mail Id:</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="email" name="email" /><br/><span class="err" id="emailerror"><form:errors path="Signup.email"></form:errors></span>
+
+				  <input type="text" class="input_txtbx1" id="email" name="email" /><br><font color="red" size="+1"><span  id="emailerror"></font><form:errors path="Signup.email"></form:errors></span>
+
 				  </td>
 				  </tr>
 				  </table>
@@ -185,25 +190,25 @@ document.getElementById("emailerror").innerHTML=" ";
 	            <tr class="row1">
 	             <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Username:</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="username" value="${signup.username}"/><br/><span class="err"><form:errors path="Signup.username"></form:errors><font color="Red" size="+1"><c:if test="${usernames=='exist'}"><c:out value="Username Already Exists"></c:out></c:if></font></span>
+				  <input type="text" class="input_txtbx1" id="username" name="username" value="${signup.username}" onInput="return validateusername()";/><br/><span class="err"><form:errors path="Signup.username"></form:errors><font color="Red" size="+1"><c:if test="${usernames=='exist'}"><c:out value="Username Already Exists"></c:out></c:if></font></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
 	             <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Password:</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="password" class="input_txtbx1" id="password" name="password" value="${signup.password}"/><br/><span class="err"><form:errors path="Signup.password"></form:errors></span>
+				  <input type="password" class="input_txtbx1" id="password"  onInput="return validateusername1()"; min="3" maxlength="32" name="password" value="${signup.password}"/><br><font color="red" size="+1"><span  id="passworderror"></font><span class="err"><form:errors path="Signup.password"></form:errors></span>
 				  </td>
 				  </tr>
 				   <tr class="row1">
 	             <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Confirm Password:</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="password" class="input_txtbx1" id="confirm" name="confirm" value="${signup.confirm}"/><br/><span class="err"><form:errors path="Signup.confirm"></form:errors></span>
+				  <input type="password" class="input_txtbx1" id="confirm" name="confirm" value="${signup.confirm}"/><br><font color="red" size="+1"><span id="confirmerror"></font><span class="err"><form:errors path="Signup.confirm"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
 	             <td valign="middle" align="left" class="input_txt"><span class="err">* </span>E-mail Id:</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="inp_id" name="email" value="${signup.email}"/><br/><span class="err"><form:errors path="Signup.email"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="email" name="email" value="${signup.email}"/><br/><font color="red" size="+1"><span  id="emailerror"></font><font color="Red" size="+1"><c:if test="${emailerror=='exists'}"><c:out value="E-mail Id Already Exists"></c:out></c:if></font><span class="err"><form:errors path="Signup.email"></form:errors></span>
 				  </td>
 				  </tr>
 				  </table>
