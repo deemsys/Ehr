@@ -4524,8 +4524,16 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 	}
 
 	@RequestMapping(value="/deletepatientdetails", method=RequestMethod.GET)
-	public String removePatientDetails(@RequestParam("patient_id") String patient_id,ModelMap model, Principal principal) {
+	public String removePatientDetails(@RequestParam("patient_id") String patient_id,ModelMap model,HttpSession session, Principal principal) {
+		if(principal.getName().equals("admin"))
+		{
+			
+			String username=(String)session.getAttribute("staffusername");
+			patientDAO.deletePatientDetails(patient_id,username);
+			model.addAttribute("choice","close");
+			return "screeninglist";
 	
+		}	
 
 		if(patientDAO.getUsername(principal).size()>0)
 			{			
@@ -4543,7 +4551,7 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
         model.addAttribute("menu", "patientInfo");
 		}
 		
-		return "viewpatient";
+		return "patientDetails";
 		
 	}
 	@RequestMapping(value="/deleteadminpatientdetails", method=RequestMethod.GET)
