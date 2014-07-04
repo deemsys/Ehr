@@ -104,6 +104,18 @@
     	        e.preventDefault();
     	});
     	});
+    $(function() {
+    	$("#break3").on("keypress", function(e) {
+    		if (e.which === 32 && !this.value.length)
+    	        e.preventDefault();
+    	});
+    	});
+    $(function() {
+    	$("#break4").on("keypress", function(e) {
+    		if (e.which === 32 && !this.value.length)
+    	        e.preventDefault();
+    	});
+    	});
    </script>
    
    <script>
@@ -504,7 +516,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  <tr class="row1">
  <td style="height: 64px; "><B style="font-size:14px">FUNCTIONAL DEFICIT:</B></td><td style="height: 39px; "><input type="checkbox" name="sitting" value="Sitting">Sitting &nbsp;<input type="checkbox" name="standing" value="Standing">Standing&nbsp;
 <input type="checkbox" name="driving" value="Driving">Driving&nbsp;<input type="checkbox" name="computeruse" value="Computer Use">Computer Use&nbsp;
- <input type="checkbox" name="otherfunctional" value="Other" onclick="this.form.break3.style.visibility = this.checked? 'visible' : 'hidden'">Other&nbsp; </td><td><input type="text"  id="break3" name="break_text3" style="visibility:hidden" /></td>
+ <input type="checkbox" name="otherfunctional" value="Other" onclick="this.form.break3.style.visibility = this.checked? 'visible' : 'hidden'">Other&nbsp; </td><td><input type="text"  id="break3" name="break_text3" style="visibility:hidden" onInput="return validatename(id)";/></td>
  </tr>         
  <tr class="row1">
  <td style="width: 400px; "><B style="font-size:14px">ASSESSMENT / ADDITIONAL COMMENTS:</B></td><td><textarea name="assessment" id="assessment" rows='5' cols='40' onInput="return validatename(id)";></textarea></td><td></td>
@@ -570,7 +582,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  <td width="250"><input type="checkbox" name="emg" value="EMG">EMG</td>
  <td width="250"><input type="checkbox" name="outside" value="Outside Referral">Outside Referral </td>
  <td width="250"><input type="checkbox" name="dc" value="D/C">D/C</td>
- <td width="250"><input type="checkbox" name="otheraddress" value="Other" onclick="this.form.break4.style.visibility = this.checked? 'visible' : 'hidden'">Other<input type="text" class="input_txtbx1" id="break4" name="break_text4" style="visibility:hidden" /></td>
+ <td width="250"><input type="checkbox" name="otheraddress" value="Other" onclick="this.form.break4.style.visibility = this.checked? 'visible' : 'hidden'">Other<input type="text" class="input_txtbx1" id="break4" name="break_text4" style="visibility:hidden" onInput="return validatename(id)";/></td>
  </tr>
  </tr>
  <br/>
