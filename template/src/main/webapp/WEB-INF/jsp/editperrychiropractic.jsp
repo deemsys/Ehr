@@ -242,32 +242,32 @@ Canton, Ohio 44708
               <br>
               		<table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="50%"><span class="err">*</span>Name of Insurance Company:</td>
+              <td height="25" width="50%"><span class="err">*</span> Name of Insurance Company:</td>
               <td ><input type="hidden" name="perryid" value="${perrychiropracticdetails.perryid }"><input type="text" class="input_txtbx1" name="insurance"  value="${perrychiropracticdetails.insurance}" id="insurance" onInput="return validatename(id)";/><span id="error"  style="color: red;font-style:italic;"></span><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="50%"><span class="err"></span>Address:</td>
+              <td height="25" width="50%"><span class="err">&nbsp;</span>Address:</td>
               <td ><textarea rows="" cols="" name="address"  class="input_txtarea" id="address" style="width: 162px; height: 62px">${perrychiropracticdetails.address}</textarea><span class="err"><form:errors path="perrychiropracticdetails.address"></form:errors></td>
               </tr>
               </table>
               
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="50%"><span class="err">*</span>Regarding:</td>
+              <td height="25" width="50%"><span class="err">*</span> Regarding:</td>
               <td ><input type="text" class="input_txtbx1" name="reg"  value="${perrychiropracticdetails.reg}"  id="reg" onInput="return validatename(id)";/><span class="err" id="regerror" style="color: red;font-style:italic;" ><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="50%"><span class="err">*</span>Patient's Name/ Name of Person Entitled To Coverage: </td>
+              <td height="25" width="50%"><span class="err">*</span> Patient's Name/ Name of Person Entitled To Coverage: </td>
               <td ><input type="text" class="input_txtbx1" name="nameofperson" value="${perrychiropracticdetails.nameofperson}"   id="nameofperson" onInput="return validatename(id)";/><span class="err" id="nameofpersonerror"  style="color: red;font-style:italic;"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="50%"><span class="err"></span>Date of Accident: </td>
+              <td height="25" width="50%"><span class="err">&nbsp;</span>Date of Accident: </td>
               <td ><input type="text" class="input_txtbx1" name="dateofaccident"  value="${perrychiropracticdetails.dateofaccident}" id="datepicker" /><span class="err" id="datepickererror"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>
@@ -281,12 +281,12 @@ Canton, Ohio 44708
        	<table cellpadding="0" cellspacing="0" border="0" width="100%">
        	<tr>
        	<td>
-       	<p align="left">
+       	<p align="left">&nbsp;
        	Dear Madam or Sir:
      </p>
      <br>
      
-  <p><span class="err" id="subjecterror"  style="color: red;font-style:italic;">*</span><input type="text" class="input_txtbx1" name="subject" value="${perrychiropracticdetails.subject}"   id="subject" onInput="return validatename(id)";/>has sought medical treatment from this clinic.  This patient has been injured to an extent where the patient has determined that they cannot afford to pay for treatment on a fee for service basis.  We would definitely prefer to simply render the required treatment on a fee for service basis.  However, because fees for service presents a hardship to this patient, we have agreed to postpone payment for treatment pursuant to the attached medical proceeds assignment. </p>	
+  <p><span class="err" id="subjecterror"  style="color: red;font-style:italic;">*</span>&nbsp;<input type="text" class="input_txtbx1" name="subject" value="${perrychiropracticdetails.subject}"   id="subject" onInput="return validatename(id)";/> has sought medical treatment from this clinic.  This patient has been injured to an extent where the patient has determined that they cannot afford to pay for treatment on a fee for service basis.  We would definitely prefer to simply render the required treatment on a fee for service basis.  However, because fees for service presents a hardship to this patient, we have agreed to postpone payment for treatment pursuant to the attached medical proceeds assignment. </p>	
  <br>
      
 

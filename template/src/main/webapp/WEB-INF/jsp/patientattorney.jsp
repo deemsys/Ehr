@@ -217,7 +217,7 @@ function doAjaxPost() {
 <br>
  <table cellpadding="0" cellspacing="0" border="0" width="100%">
  <tr >
-	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">*</span>Please enter a Patient User Name</td>
+	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">*</span> Please enter Patient UserName</td>
 				 <td width="20"></td> <td valign="top" align="left" class="input_txt" width="200">
 				   <input type="text" class="input_txtbx1" id="username" name="username" /><br/>
 				  </td>
@@ -530,20 +530,20 @@ function openWindow(h, w, url) {
               </table><br><br>
        		<table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="120" style="width: 155px; "><span class="err">*</span>Name of Patient's Attorney</td>
+              <td height="25" width="120" style="width: 155px; "><span class="err">*</span> Name of Patient's Attorney</td>
               <td ><input type="text" class="input_txtbx1" name="name" id="name" onInput="return validatename(id)";><span class="err" id="nameerror"  style="color: red;font-style:italic;"><form:errors path="Patientattorney.name"></form:errors></span></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="120" style="width: 155px; "><span class="err"></span>Address</td>
+              <td height="25" width="120" style="width: 155px; "><span class="err">&nbsp;</span>Address</td>
               <td ><textarea rows="" cols="" name="address" class="input_txtarea" id="address"style="width: 169px; height: 62px"></textarea><span class="err"><form:errors path="Patientattorney.address"></form:errors></span></td>
               </tr>
               </table>
               
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="120" style="width: 155px; ">Regarding</td>
+              <td height="25" width="120" style="width: 155px; ">&nbsp;Regarding</td>
               <td ><input type="text" class="input_txtbx1" name="reg" id="reg" onInput="return validatename(id)";><span class="err" id="regerror"></span></td>
               </tr>
               </table>       
@@ -553,13 +553,13 @@ function openWindow(h, w, url) {
               
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="120" style="width: 155px; "><span class="err">*</span>Patient's name</td>
+              <td height="25" width="120" style="width: 155px; "><span class="err">*</span> Patient's name</td>
               <td ><input type="text" class="input_txtbx1" name="patientname" id="patientname" onInput="return validatename(id)";><span class="err" id="patientnameerror"  style="color: red;font-style:italic;"><form:errors path="Patientattorney.patientname"></form:errors></span></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="120" style="width: 155px; "><span class="err">*</span>Date of Accident</td>
+              <td height="25" width="120" style="width: 155px; "><span class="err">*</span> Date of Accident</td>
               <td ><input type="text" class="input_txtbx1" name="date" id="datepicker"><span class="err" id="datepickererror"  style="color: red;font-style:italic;"><form:errors path="Patientattorney.date"></form:errors></span></td>
               </tr>
               </table>
@@ -571,11 +571,11 @@ function openWindow(h, w, url) {
        	<tr>
        	<td>
        	<p>
-       	<h3>
+       	<h3>&nbsp;
      
 Dear Madam or Sir:
 </h3></p>
-  <p><span class="err">*</span><input type="text" class="input_txtbx1" name="dearsir" id="dearsir" onInput="return validatename(id)";><span class="err" id="dearsirerror"  style="color: red;font-style:italic;"><form:errors path="Patientattorney.dearsir"></form:errors></span>has sought medical treatment from this clinic.  This patient (your client) has been injured to an extent where the patient has determined that they cannot afford to pay for treatment on a fee for service basis.  We would definitely prefer to simply render the required treatment on a fee for service basis.  However, because fees for service presents a hardship to this patient, we have agreed to postpone payment for treatment, but in direct reliance on the continuing commitment the patient has made to us in the attached Treatment Fee Agreement and Instructions to Attorney. </p>	
+  <p><span class="err">*</span>&nbsp;<input type="text" class="input_txtbx1" name="dearsir" id="dearsir" onInput="return validatename(id)";><span class="err" id="dearsirerror"  style="color: red;font-style:italic;"><form:errors path="Patientattorney.dearsir"></form:errors></span> has sought medical treatment from this clinic.  This patient (your client) has been injured to an extent where the patient has determined that they cannot afford to pay for treatment on a fee for service basis.  We would definitely prefer to simply render the required treatment on a fee for service basis.  However, because fees for service presents a hardship to this patient, we have agreed to postpone payment for treatment, but in direct reliance on the continuing commitment the patient has made to us in the attached Treatment Fee Agreement and Instructions to Attorney. </p>	
 
 
        </td>
@@ -903,11 +903,11 @@ Opinion 2007-7 provides the following further ethical directions:
             
              
               <tr ><td width="70%"></td><td><input type="text" class="input_txtbx1" name="nameofclinic"  value="${patient.nameofclinic}"    id="nameofclinic"><span class="err" id="nameofclinicerror"  style="color: red;font-style:italic;"><form:errors path="Patientattorney.nameofclinic"></form:errors></span></td></tr>
-              <tr><td></td><td><span class="err">*</span>Name of Clinic</td>
+              <tr><td></td><td><span class="err">*</span> Name of Clinic</td>
               </tr>
               
                <tr ><td width="70%"></td><td><input type="text" class="input_txtbx1" name="treat"  value="${patient.treat}"  id="treat"><span class="err" id="treaterror"  style="color: red;font-style:italic;"><form:errors path="Patientattorney.treat"></form:errors></span></td></tr>
-              <tr><td ></td><td><span class="err">*</span>Treating Physician</td>
+              <tr><td ></td><td><span class="err">*</span> Treating Physician</td>
               </tr>
               
               

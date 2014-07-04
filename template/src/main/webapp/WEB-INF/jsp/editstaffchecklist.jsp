@@ -557,7 +557,7 @@ function validatename(){
 	            
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr class="row1">
-              <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Name</td>
+              <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Patient Name</td>
 			  <td valign="top" align="left" class="input_txt">
 		      <input type="text" class="input_txtbx1" id="pat_name" name="pat_name" value="${Staffchecklist.pat_name}" onInput="return validatename()";/><span class="err" id="pat_nameerror"><form:errors path="Staffchecklist.pat_name"></form:errors>
 		      </td>
@@ -566,50 +566,50 @@ function validatename(){
 			  <br>
 			  <table cellpadding="0" cellspacing="0" border="0" width="100%"> -->
 			  <tr class="row1">
-              <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Insurance/Attorney</td>
+              <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Insurance/Attorney</td>
 			  <td valign="top" align="left" class="input_txt">
 		      <input type="text" class="input_txtbx1" id="insure" name="insure" value="${Staffchecklist.insure}" onInput="return validatename1()";/><span class="err" id="insureerror"><form:errors path="Staffchecklist.insure"></form:errors>
 		      </td>
 			  </tr>
 			  <tr class="row1">
-              <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Damage Amount</td>
+              <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Damage Amount</td>
 			  <td valign="top" align="left" class="input_txt">
 		      <input type="text" class="input_txtbx1" id="damageamt" name="damage_amount" onkeypress="return validate(event)"; value="${Staffchecklist.damage_amount}"/><span class="err" id="damageamterror"><form:errors path="Staffchecklist.damage_amount"></form:errors></span>
 		      <br><span class="err" id="damageamterror"></span>
 		      </td>
 			  </tr>
 			  <tr class="row1">
-              <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Notice of Assignment to Fault Insurance</td>
+              <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Notice of Assignment to Fault Insurance</td>
 			  <td valign="top" align="left" class="input_txt">
 		      <input type="text" class="input_txtbx1" id="fault_insure" name="fault_insure" value="${Staffchecklist.fault_insure}" onInput="return validatename2()";/><span class="err" id="fault_insureerror"><form:errors path="Staffchecklist.fault_insure"></form:errors>
 		      </td>
 			  </tr>
 			  <tr class="row1">
-              <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Notice of Assignment to Med Pay</td>
+              <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Notice of Assignment to Med Pay</td>
 			  <td valign="top" align="left" class="input_txt">
 		      <input type="text" class="input_txtbx1" id="med_pay" name="med_pay" value="${Staffchecklist.med_pay}" onInput="return validatename3()";/><span class="err" id="med_payerror"><form:errors path="Staffchecklist.med_pay"></form:errors>
 		      </td>
 			  </tr>
 			  <tr class="row1">
-              <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Notice of Assignment to other Attorney</td>
+              <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Notice of Assignment to other Attorney</td>
 			  <td valign="top" align="left" class="input_txt">
 		      <input type="text" class="input_txtbx1" id="other_attorney" name="other_attorney" value="${Staffchecklist.other_attorney}" onInput="return validatename4()";/><span class="err" id="other_attorneyerror"><form:errors path="Staffchecklist.other_attorney"></form:errors>
 		      </td>
 			  </tr>
 			  <tr class="row1">
-              <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Attorney Letter of Protection Received</td>
+              <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Attorney Letter of Protection Received</td>
 			  <td valign="top" align="left" class="input_txt">
 		      <input type="text" class="input_txtbx1" id="protect_received" name="protect_received" value="${Staffchecklist.protect_received}" onInput="return validatename5()";/><span class="err" id="protect_receivederror"><form:errors path="Staffchecklist.protect_received"></form:errors>
 		      </td>
 			  </tr>
 			  <tr class="row1">
-              <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Amount & Dated Billed</td>
+              <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Amount & Dated Billed</td>
 			  <td valign="top" align="left" class="input_txt">
 		      <input type="text" class="input_txtbx1" name="bill" id="datepicker" value="${Staffchecklist.bill}"/><span class="err" id="datepickererror"><form:errors path="Staffchecklist.bill"></form:errors>
 		      </td>
 			  </tr>
 			  <tr class="row1">
-              <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Reimbursement Date</td>
+              <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Reimbursement Date</td>
 			  <td valign="top" align="left" class="input_txt">
 		      <input type="text" class="input_txtbx1" name="re_date" id="datepicker1" value="${Staffchecklist.re_date}" /><span class="err" id="datepicker1error"><form:errors path="Staffchecklist.re_date"></form:errors>
 		      </td>

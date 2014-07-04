@@ -201,7 +201,7 @@ function validateusername(){
 <br>
  <table cellpadding="0" cellspacing="0" border="0" width="100%">
  <tr >
-	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">*</span>Please enter Patient UserName</td>
+	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">*</span> Please enter Patient UserName</td>
 				 <td width="20"></td> <td valign="top" align="left" class="input_txt" width="200">
 				   <input type="text" class="input_txtbx1" id="username" name="pusername" /><br/>
 				  </td>
@@ -789,7 +789,7 @@ function validatename(){
               <u><h6>Benefits and Limitation's (staff completes)</h6></u>
               </tr>
               <br>
-              <tr><p>Hi, I'm calling to verify chiropractic benefits for<span class="err">*</span>  Mr./ Mrs.<input type="text" maxlength="32" class="input_txtbx1" name="verify_name" id="verify_name" onInput="return validatename()";/><span id="verify_nameerror" style="color: red;font-style:italic;"><form:errors path="Insuranceverification.verify_name"></form:errors></p></tr>
+              <tr><p>Hi, I'm calling to verify chiropractic benefits for <span class="err">*</span>  Mr./ Mrs.<input type="text" maxlength="32" class="input_txtbx1" name="verify_name" id="verify_name" onInput="return validatename()";/><span id="verify_nameerror" style="color: red;font-style:italic;"><form:errors path="Insuranceverification.verify_name"></form:errors></p></tr>
               <tr class="row1">
               <td><span class="err">*</span>&nbsp;Spoke with</td>
               <td><input type="text" class="input_txtbx1" maxlength="32" name="spoke_with" id="spoke_with" onInput="validatealpha();" /><br><span  id="spoke_witherror" style="color: red;font-style:italic;"></span><form:errors path="Insuranceverification.spoke_with"></form:errors></td>
