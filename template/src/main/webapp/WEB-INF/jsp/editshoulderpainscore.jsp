@@ -229,9 +229,9 @@ function validatename(id){
      <c:set value="${shoulderpainscoreForm.shoulderpainscore[0]}" var="shoulderpainscore"/>      
  <tr class="row1">
  <input type="hidden" value="${shoulderpainscore.shoulderpainno }" name="shoulderpainno" />
-<td><h2><span class="err">*</span>Patient Name:</h2></td><td width="400"><input type="text"  name="pname" id="pname"  onInput="return validatename(id)";value="${shoulderpainscore.pname }"/><span class="err" id="pnameerror"><form:errors path="Shoulderpainscore.pname"></form:errors></span></td>
-<td><h2><span class="err">*</span>Number:</h2></td><td width="400"><input type="text"  name="number" id="number1" onkeypress="return validate(event)"; value="${shoulderpainscore.number}"/><span class="err" id="number1error"><form:errors path="Shoulderpainscore.number"></form:errors></span></td>
-<td><h2><span class="err">*</span>Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${shoulderpainscore.date}"/><span class="err" id="datepickererror"><form:errors path="Shoulderpainscore.date"></form:errors></span></td>
+<td><h2><span class="err">* </span>Patient Name:</h2></td><td width="400"><input type="text"  name="pname" id="pname"  onInput="return validatename(id)";value="${shoulderpainscore.pname }"/><span class="err" id="pnameerror"><form:errors path="Shoulderpainscore.pname"></form:errors></span></td>
+<td><h2><span class="err">* </span>Number:</h2></td><td width="400"><input type="text"  name="number" id="number1" onkeypress="return validate(event)"; value="${shoulderpainscore.number}"/><span class="err" id="number1error"><form:errors path="Shoulderpainscore.number"></form:errors></span></td>
+<td><h2><span class="err">* </span>Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${shoulderpainscore.date}"/><span class="err" id="datepickererror"><form:errors path="Shoulderpainscore.date"></form:errors></span></td>
 </tr>
 </table>
 <table width="70%" align="center">
@@ -250,11 +250,9 @@ function validatename(id){
 </tr>
 <tr class="row1">
 <td></td><td width="250">Incapablity of lying on the painful side</td><td width="120"><input type="radio" name="incapability" value="None" <c:if test="${shoulderpainscore.incapability=='None'}"> <c:out value="checked"></c:out></c:if>>None</td><td width="120"><input type="radio" name="incapability" value="Light" <c:if test="${shoulderpainscore.incapability=='Light'}"> <c:out value="checked"></c:out></c:if>>Light</td><td width="120"><input type="radio" name="incapability" value="Average" <c:if test="${shoulderpainscore.incapability=='Average'}"> <c:out value="checked"></c:out></c:if>>Average</td><td width="120"><input type="radio" name="incapability" value="Severe" <c:if test="${shoulderpainscore.incapability=='Severe'}"> <c:out value="checked"></c:out></c:if>>Severe</td><td></td>
-</tr>
-</table>
-<table width="100%" align="center">
-<tr class="row1">
-<td width="250">Degree of Radiation</td><td width="180"><input type="radio" name="degreeofradiation" value="None" <c:if test="${shoulderpainscore.degreeofradiation=='None'}"> <c:out value="checked"></c:out></c:if>>None</td><td width="180"><input type="radio" name="degreeofradiation" value="Till halfway the upper Arm" <c:if test="${shoulderpainscore.degreeofradiation=='Till half way the upper Arm'}"> <c:out value="checked"></c:out></c:if>>Till halfway the upper Arm</td><td width="180"><input type="radio" name="degreeofradiation" value="Till the elbow" <c:if test="${shoulderpainscore.degreeofradiation=='Till the elbow'}"> <c:out value="checked"></c:out></c:if>>Till the elbow</td><td width="180"><input type="radio" name="degreeofradiation" value="Past the elbow" <c:if test="${shoulderpainscore.degreeofradiation=='Past the elbow'}"> <c:out value="checked"></c:out></c:if>>Past the elbow</td><td></td>
+
+<tr >
+<td width="250">Degree of Radiation</td><td width="180"><input type="radio" name="degreeofradiation" value="None" <c:if test="${shoulderpainscore.degreeofradiation=='None'}"> <c:out value="checked"></c:out></c:if>>None</td><td width="180" style="width: 208px; "><input type="radio" name="degreeofradiation" value="Till halfway the upper Arm" <c:if test="${shoulderpainscore.degreeofradiation=='Till half way the upper Arm'}"> <c:out value="checked"></c:out></c:if>>Till halfway the upper Arm</td><td width="180"><input type="radio" name="degreeofradiation" value="Till the elbow" <c:if test="${shoulderpainscore.degreeofradiation=='Till the elbow'}"> <c:out value="checked"></c:out></c:if>>Till the elbow</td><td width="180"><input type="radio" name="degreeofradiation" value="Past the elbow" <c:if test="${shoulderpainscore.degreeofradiation=='Past the elbow'}"> <c:out value="checked"></c:out></c:if>>Past the elbow</td><td></td>
 </tr>
 </table>
 <table align="center">
@@ -297,15 +295,15 @@ function validatename(id){
  <table cellpadding="0" cellspacing="0" border="0" width="98%"> 
  <tr class="row1">
 <td>Date:</td><td><input type="text"  id="datepicker1" name="date1" value="${shoulderpainscore.date1 }"/><span id="datepicker1error" class="err"></span></td>
-<td width="200">
-<td>Scores total:</td><td><input type="text"  id="total" name="total" onkeypress="return validate(event)"; value="${shoulderpainscore.total }"/>&nbsp;;&nbsp;[100]&nbsp;&nbsp;</td><td>[48]F:</td><td><input type="text"  id="f" name="f" onkeypress="return validate(event)"; value="${shoulderpainscore.f }"/>&nbsp;&nbsp;</td>
+
+<td>Scores total:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text"  id="total" name="total" onkeypress="return validate(event)"; value="${shoulderpainscore.total }"/>&nbsp;;&nbsp;[100]&nbsp;&nbsp;</td><td>[48]F:&nbsp;&nbsp;&nbsp;<input type="text"  id="f" name="f" onkeypress="return validate(event)"; value="${shoulderpainscore.f }"/>&nbsp;&nbsp;</td>
 </tr>
 </table>
  <table cellpadding="0" cellspacing="0" border="0" width="98%">
 <tr class="row1">
 <td>Name:</td><td><input type="text" id="name123" name="name123" value="${shoulderpainscore.name123 }" onInput="return validatename(id)";/><span id="name123error" style="color: red;font-style:italic;"></span></td>
-<td width="600">
-<td>Age:</td><td><input type="text"  id="age" name="age" onkeypress="return validate(event)"; value="${shoulderpainscore.age}"/></td>
+
+<td>Age:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text"  id="age" name="age" onkeypress="return validate(event)"; value="${shoulderpainscore.age}"/></td>
 </tr>
 </table>
 <br/>

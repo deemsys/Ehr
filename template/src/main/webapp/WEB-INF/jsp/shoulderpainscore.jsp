@@ -260,9 +260,9 @@ function validatename(id){
           <table cellpadding="0" cellspacing="0" border="0" width="98%">
            
  <tr class="row1">
-<td style="width: 127px; "><h4><span class="err">*</span>Patient Name:</h4></td><td width="400" style="width: 170px; "><input type="text"  name="pname" id="pname" onInput="return validatename(id)";/><span class="err" id="pnameerror"><form:errors path="Shoulderpainscore.pname"></form:errors></span></td>
-<td style="width: 117px; "><h4><span class="err">*</span>Number:</h4></td><td width="400" style="width: 167px; "><input type="text"  name="number" maxlength="32" id="number1" onkeypress="return validate(event)";/><span class="err" id="number1error"><form:errors path="Shoulderpainscore.number"></form:errors></span><span class="err"> <div id="number"></span></div></td>
-<td style="width: 115px; "><h4><span class="err">*</span>Date:</h4></td><td><input type="text"  id="datepicker" name="date" /><span class="err" id="datepickererror"><form:errors path="Shoulderpainscore.date"></form:errors></span></td>
+<td style="width: 127px; "><h4><span class="err">* </span>Patient Name:</h4></td><td width="400" style="width: 170px; "><input type="text"  name="pname" id="pname" onInput="return validatename(id)";/><span class="err" id="pnameerror"><form:errors path="Shoulderpainscore.pname"></form:errors></span></td>
+<td style="width: 117px; "><h4><span class="err">* </span>Number:</h4></td><td width="400" style="width: 167px; "><input type="text"  name="number" maxlength="32" id="number1" onkeypress="return validate(event)";/><span class="err" id="number1error"><form:errors path="Shoulderpainscore.number"></form:errors></span><span class="err"> <div id="number"></span></div></td>
+<td style="width: 115px; "><h4><span class="err">* </span>Date:</h4></td><td><input type="text"  id="datepicker" name="date" /><span class="err" id="datepickererror"><form:errors path="Shoulderpainscore.date"></form:errors></span></td>
 </tr>
 </table>
 <table width="70%" align="center">
@@ -282,10 +282,9 @@ function validatename(id){
 <tr class="row1">
 <td></td><td width="250">Incapablity of lying on the painful side</td><td width="120"><input type="radio" name="incapability" value="None">None</td><td width="120"><input type="radio" name="incapability" value="Light">Light</td><td width="120"><input type="radio" name="incapability" value="Average">Average</td><td width="120"><input type="radio" name="incapability" value="Severe">Severe</td><td></td>
 </tr>
-</table>
-<table width="100%" align="center">
-<tr class="row1">
-<td width="350" style="width: 138px; ">Degree of Radiation</td><td width="120"><input type="radio" name="degreeofradiation" value="None">None</td><td width="180" style="width: 256px; "><input type="radio" name="degreeofradiation" value="Till halfway the upper Arm">Till halfway the upper Arm</td><td width="180"><input type="radio" name="degreeofradiation" value="Till the elbow">Till the elbow</td><td width="180"><input type="radio" name="degreeofradiation" value="Past the elbow">Past the elbow</td><td></td>
+
+<tr >
+<td style="width: 148px; ">Degree of Radiation</td><td width="120"><input type="radio" name="degreeofradiation" value="None">None</td><td width="180" style="width: 256px; ">&nbsp;&nbsp;&nbsp;<input type="radio" name="degreeofradiation" value="Till halfway the upper Arm">Till halfway the upper Arm</td><td width="180">&nbsp;&nbsp;&nbsp;<input type="radio" name="degreeofradiation" value="Till the elbow">Till the elbow</td><td width="180">&nbsp;&nbsp;&nbsp;<input type="radio" name="degreeofradiation" value="Past the elbow">Past the elbow</td><td></td>
 </tr>
 </table>
 <table align="center">
@@ -330,14 +329,12 @@ function validatename(id){
  <table cellpadding="0" cellspacing="0" border="0" width="98%"> 
  <tr class="row1">
 <td>Date:</td><td><input type="text"  id="datepicker1" name="date1" /><span class="err" id="datepicker1error"></span></td>
-<td width="200">
-<td>Scores total:</td><td><input type="text"  id="total" name="total" maxlength="32" onkeypress="return validate(event)";/>&nbsp;;&nbsp;[100]&nbsp;&nbsp;</td><td>[48]F:</td><td><input type="text"  id="f" name="f" maxlength="32" onkeypress="return validate(event)";/>&nbsp;&nbsp;</td>
-</tr>
-</table>
- <table cellpadding="0" cellspacing="0" border="0" width="68%">
+
+<td>Scores total:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text"  id="total" name="total" maxlength="32" onkeypress="return validate(event)";/>&nbsp;;&nbsp;[100]&nbsp;&nbsp;</td><td>[48]F:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text"  id="f" name="f" maxlength="32" onkeypress="return validate(event)";/>&nbsp;&nbsp;</td>
+
 <tr class="row1">
 <td>Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td><input type="text" id="name123" name="name123" onInput="return validatename(id)"; /><span id="name123error" style="color: red;font-style:italic;"></span></td>
-<td style="width: 183px; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Age:&nbsp;&nbsp;</td><td><input type="text"  id="age" maxlength="32" name="age" onkeypress="return validate(event)";/></td>
+<td>Age:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text"  id="age" maxlength="32" name="age" onkeypress="return validate(event)";/></td>
 </tr>
 </table>
 <br/>
