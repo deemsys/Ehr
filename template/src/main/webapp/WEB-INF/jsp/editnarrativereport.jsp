@@ -98,6 +98,7 @@ function Checksymptom(val){
 	
 	
 	{
+		var error="";
 		
 		document.getElementById("datepicker11error").innerHTML=" ";
 		
@@ -105,7 +106,7 @@ function Checksymptom(val){
 		{
 		document.getElementById("datepicker11error").innerHTML="Required Field Should not be Empty";
 		
-		return false;
+		error = "true";
 		}
 		document.getElementById("datepicker11error").innerHTML=" ";
 		var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
@@ -113,7 +114,7 @@ function Checksymptom(val){
     {
     	document.getElementById("datepicker11error").innerHTML="Invalid Date Format";
     	
-        return false;
+        error = "true";
     }	
 	
 	document.getElementById("datepicker12error").innerHTML=" ";
@@ -133,7 +134,7 @@ function Checksymptom(val){
 	{
 	document.getElementById("patientnameerror").innerHTML="Required Field Should not be Empty";
 	
-	return false;
+	error = "true";
 	}
 	document.getElementById("patientnameerror").innerHTML="";
 	if(document.getElementById("patientname").value!=""){
@@ -142,427 +143,427 @@ function Checksymptom(val){
     	
     	document.getElementById("patientnameerror").innerHTML="Name should be min 4 and max 32";
     	
-        return false;
+        error = "true";
     }
 	}
     
     document.getElementById("patientnameerror").innerHTML="";
     if(document.getElementById("patientname").value.substring(0,1)==' '){
 		document.getElementById("patientnameerror").innerHTML="Invalid Name";
-		return false;
+		error = "true";
     }
     
     
     document.getElementById("toerror").innerHTML="";
     if(document.getElementById("toname").value.substring(0,1)==' '){
 		document.getElementById("toerror").innerHTML="Invalid Name";
-		return false;
+		error = "true";
     }
     if(document.getElementById("toname").value!=""){
     if(document.getElementById("toname").value.length<4){
     	document.getElementById("toerror").innerHTML="Name should be min 4 and max 32";
-		return false;
+		error = "true";
     }
     } 
     
     document.getElementById("perror").innerHTML="";
     if(document.getElementById("pid").value.substring(0,1)==' '){
 		document.getElementById("perror").innerHTML="Invalid Name";
-		return false;
+		error = "true";
     }
     if(document.getElementById("pid").value!=""){
     if(document.getElementById("pid").value.length<4){
     	document.getElementById("perror").innerHTML="Name should be min 4 and max 32";
-    	return false;
+    	error = "true";
     }
     }
     
     document.getElementById("nerror").innerHTML="";
     if(document.getElementById("nid").value.substring(0,1)==' '){
 		document.getElementById("nerror").innerHTML="Invalid Data!";
-		return false;
+		error = "true";
     }
     if(document.getElementById("nid").value!=""){
     if(document.getElementById("nid").value.length<4){
     	document.getElementById("nerror").innerHTML="Data should be min 4 and max 32";
-		return false;
+		error = "true";
     }
     }
     
     document.getElementById("error").innerHTML="";
     if(document.getElementById("id1").value.substring(0,1)==' '){
 		document.getElementById("error").innerHTML="Invalid Data!";
-		return false;
+		error = "true";
     }
     if(document.getElementById("id1").value!=""){
     if(document.getElementById("id1").value.length<4){
     	document.getElementById("error").innerHTML="Data should be min 4 and max 32";
-		return false;
+		error = "true";
     }
     }
     
     document.getElementById("error1").innerHTML="";
     if(document.getElementById("bid").value.substring(0,1)==' '){
 		document.getElementById("error1").innerHTML="Invalid Data!";
-		return false;
+		error = "true";
     }
     if(document.getElementById("bid").value!=""){
     if(document.getElementById("bid").value.length<4){
     	document.getElementById("error1").innerHTML="Data should be min 4 and max 32";
-		return false;
+		error = "true";
     }
     }
     
     document.getElementById("error2").innerHTML="";
     if(document.getElementById("sid").value.substring(0,1)==' '){
 		document.getElementById("error2").innerHTML="Invalid Data!";
-		return false;
+		error = "true";
     }
     if(document.getElementById("sid").value!=""){
     if(document.getElementById("sid").value.length<4){
     	document.getElementById("error2").innerHTML="Data should be min 4 and max 32";
-		return false;
+		error = "true";
     }
     }
     
     document.getElementById("error3").innerHTML="";
     if(document.getElementById("sid1").value.substring(0,1)==' '){
 		document.getElementById("error3").innerHTML="Invalid Data!";
-		return false;
+		error = "true";
     }
     if(document.getElementById("sid1").value!=""){
     if(document.getElementById("sid1").value.length<4){
     	document.getElementById("error3").innerHTML="Data should be min 4 and max 32";
-		return false;
+		error = "true";
     }
     }
     
     document.getElementById("error4").innerHTML="";
     if(document.getElementById("syid").value.substring(0,1)==' '){
 		document.getElementById("error4").innerHTML="Invalid Data!";
-		return false;
+		error = "true";
     }
     if(document.getElementById("syid").value!=""){
     if(document.getElementById("syid").value.length<4){
     	document.getElementById("error4").innerHTML="Data should be min 4 and max 32";
-		return false;
+		error = "true";
     }
     }
     
     document.getElementById("error5").innerHTML="";
     if(document.getElementById("aid").value.substring(0,1)==' '){
 		document.getElementById("error5").innerHTML="Invalid Data!";
-		return false;
+		error = "true";
     }
     if(document.getElementById("aid").value!=""){
     if(document.getElementById("aid").value.length<4){
     	document.getElementById("error5").innerHTML="Data should be min 4 and max 32";
-		return false;
+		error = "true";
     }
     }
     
     document.getElementById("error6").innerHTML="";
     if(document.getElementById("id2").value.substring(0,1)==' '){
 		document.getElementById("error6").innerHTML="Invalid Data!";
-		return false;
+		error = "true";
     }
     if(document.getElementById("id2").value!=""){
     if(document.getElementById("id2").value.length<4){
     	document.getElementById("error6").innerHTML="Data should be min 4 and max 32";
-		return false;
+		error = "true";
     }
     }
     
     document.getElementById("error7").innerHTML="";
     if(document.getElementById("did").value.substring(0,1)==' '){
 		document.getElementById("error7").innerHTML="Invalid Data!";
-		return false;
+		error = "true";
     }
     if(document.getElementById("did").value!=""){
     if(document.getElementById("did").value.length<4){
     	document.getElementById("error7").innerHTML="Data should be min 4 and max 32";
-		return false;
+		error = "true";
     }
     }
     
     document.getElementById("error8").innerHTML="";
     if(document.getElementById("id3").value.substring(0,1)==' '){
 		document.getElementById("error8").innerHTML="Invalid Data!";
-		return false;
+		error = "true";
     }
     if(document.getElementById("id3").value!=""){
     if(document.getElementById("id3").value.length<4){
     	document.getElementById("error8").innerHTML="Data should be min 4 and max 32";
-		return false;
+		error = "true";
     }
     }
     
     document.getElementById("error9").innerHTML="";
     if(document.getElementById("id4").value.substring(0,1)==' '){
 		document.getElementById("error9").innerHTML="Invalid Data!";
-		return false;
+		error = "true";
     }
     if(document.getElementById("id4").value!=""){
     if(document.getElementById("id4").value.length<4){
     	document.getElementById("error9").innerHTML="Data should be min 4 and max 32";
-		return false;
+		error = "true";
     }
     }
     
     document.getElementById("errorpre").innerHTML="";
     if(document.getElementById("id5").value.substring(0,1)==' '){
 		document.getElementById("errorpre").innerHTML="Invalid Data!";
-		return false;
+		error = "true";
     }
     if(document.getElementById("id5").value!=""){
     if(document.getElementById("id5").value.length<4){
     	document.getElementById("errorpre").innerHTML="Data should be min 4 and max 32";
-		return false;
+		error = "true";
     }
     }
     
     document.getElementById("errorpre1").innerHTML="";
     if(document.getElementById("id6").value.substring(0,1)==' '){
 		document.getElementById("errorpre1").innerHTML="Invalid Data!";
-		return false;
+		error = "true";
     }
     if(document.getElementById("id6").value!=""){
     if(document.getElementById("id6").value.length<4){
     	document.getElementById("errorpre1").innerHTML="Data should be min 4 and max 32";
-		return false;
+		error = "true";
     }
     }
     
     document.getElementById("errorphy").innerHTML="";
     if(document.getElementById("ida").value.substring(0,1)==' '){
 		document.getElementById("errorphy").innerHTML="Invalid Data!";
-		return false;
+		error = "true";
     }
     if(document.getElementById("ida").value!=""){
     if(document.getElementById("ida").value.length<4){
     	document.getElementById("errorphy").innerHTML="Data should be min 4 and max 32";
-		return false;
+		error = "true";
     }
     }
     
     document.getElementById("errorphy1").innerHTML="";
     if(document.getElementById("lbid").value.substring(0,1)==' '){
 		document.getElementById("errorphy1").innerHTML="Invalid Data!";
-		return false;
+		error = "true";
     }
     if(document.getElementById("lbid").value!=""){
     if(document.getElementById("lbid").value.length<4){
     	document.getElementById("errorphy1").innerHTML="Data should be min 4 and max 32";
-		return false;
+		error = "true";
     }
     }
     
     document.getElementById("dperror").innerHTML="";
     if(document.getElementById("tid1").value.substring(0,1)==' '){
 		document.getElementById("dperror").innerHTML="Invalid Data!";
-		return false;
+		error = "true";
     }
     
     if(document.getElementById("tid1").value!=""){
     if(document.getElementById("tid1").value.length<4){
     	document.getElementById("dperror").innerHTML="Data should be min 4 and max 32";
-		return false;
+		error = "true";
     }
     }
     
     document.getElementById("noteerror").innerHTML="";
     if(document.getElementById("noteid").value.substring(0,1)==' '){
 		document.getElementById("noteerror").innerHTML="Invalid Data!";
-		return false;
+		error = "true";
     }
     
     if(document.getElementById("noteid").value!=""){
     if(document.getElementById("noteid").value.length<4){
     	document.getElementById("noteerror").innerHTML="Data should be min 4 and max 32";
-		return false;
+		error = "true";
     }
     }
     
     document.getElementById("rmerror").innerHTML="";
     if(document.getElementById("rmid").value.substring(0,1)==' '){
 		document.getElementById("rmerror").innerHTML="Invalid Data!";
-		return false;
+		error = "true";
     }
     if(document.getElementById("rmid").value!=""){
     if(document.getElementById("rmid").value.length<4){
     	document.getElementById("rmerror").innerHTML="Data should be min 4 and max 32";
-		return false;
+		error = "true";
     }
     }
     
     document.getElementById("derror").innerHTML="";
     if(document.getElementById("ddid").value.substring(0,1)==' '){
 		document.getElementById("derror").innerHTML="Invalid Data!";
-		return false;
+		error = "true";
     }
     if(document.getElementById("ddid").value!=""){
     if(document.getElementById("ddid").value.length<4){
     	document.getElementById("derror").innerHTML="Data should be min 4 and max 32";
-		return false;
+		error = "true";
     }
     }
     
     document.getElementById("levelerror").innerHTML="";
     if(document.getElementById("lid").value.substring(0,1)==' '){
 		document.getElementById("levelerror").innerHTML="Invalid Data!";
-		return false;
+		error = "true";
     }
     if(document.getElementById("lid").value!=""){
     if(document.getElementById("lid").value.length<4){
     	document.getElementById("levelerror").innerHTML="Data should be min 4 and max 32";
-		return false;
+		error = "true";
     }
     }
     
     document.getElementById("oerror1").innerHTML="";
     if(document.getElementById("oid1").value.substring(0,1)==' '){
 		document.getElementById("oerror1").innerHTML="Invalid Data!";
-		return false;
+		error = "true";
     }
     if(document.getElementById("oid1").value!=""){
     if(document.getElementById("oid1").value.length<4){
     	document.getElementById("oerror1").innerHTML="Data should be min 4 and max 32";
-		return false;
+		error = "true";
     }
     }
     
     document.getElementById("oerror2").innerHTML="";
     if(document.getElementById("oid2").value.substring(0,1)==' '){
 		document.getElementById("oerror2").innerHTML="Invalid Data!";
-		return false;
+		error = "true";
     }
     
     if(document.getElementById("oid2").value!=""){
     if(document.getElementById("oid2").value.length<4){
     	document.getElementById("oerror2").innerHTML="Data should be min 4 and max 32";
-		return false;
+		error = "true";
     }
     }
     
     document.getElementById("oerror3").innerHTML="";
     if(document.getElementById("oid3").value.substring(0,1)==' '){
 		document.getElementById("oerror3").innerHTML="Invalid Data!";
-		return false;
+		error = "true";
     }
     if(document.getElementById("oid3").value!=""){
     if(document.getElementById("oid3").value.length<4){
     	document.getElementById("oerror3").innerHTML="Data should be min 4 and max 32";
-		return false;
+		error = "true";
     }
     }
     
     document.getElementById("oerror4").innerHTML="";
     if(document.getElementById("oid4").value.substring(0,1)==' '){
 		document.getElementById("oerror4").innerHTML="Invalid Data!";
-		return false;
+		error = "true";
     }
     if(document.getElementById("oid4").value!=""){
     if(document.getElementById("oid4").value.length<4){
     	document.getElementById("oerror4").innerHTML="Data should be min 4 and max 32";
-		return false;
+		error = "true";
     }
     }
     document.getElementById("oerror5").innerHTML="";
     if(document.getElementById("oid5").value.substring(0,1)==' '){
 		document.getElementById("oerror5").innerHTML="Invalid Data!";
-		return false;
+		error = "true";
     }
     if(document.getElementById("oid5").value!=""){
     if(document.getElementById("oid5").value.length<4){
     	document.getElementById("oerror5").innerHTML="Data should be min 4 and max 32";
-		return false;
+		error = "true";
     }
     }
     
     document.getElementById("oerror6").innerHTML="";
     if(document.getElementById("oid6").value.substring(0,1)==' '){
 		document.getElementById("oerror6").innerHTML="Invalid Data!";
-		return false;
+		error = "true";
     }
     if(document.getElementById("oid6").value!=""){
     if(document.getElementById("oid6").value.length<4){
     	document.getElementById("oerror6").innerHTML="Data should be min 4 and max 32";
-		return false;
+		error = "true";
     }
     }
     document.getElementById("oerror7").innerHTML="";
     if(document.getElementById("oid7").value.substring(0,1)==' '){
 		document.getElementById("oerror7").innerHTML="Invalid Data!";
-		return false;
+		error = "true";
     }
     if(document.getElementById("oid7").value!=""){
     if(document.getElementById("oid7").value.length<4){
     	document.getElementById("oerror7").innerHTML="Data should be min 4 and max 32";
-		return false;
+		error = "true";
     }
     }
     document.getElementById("suberror").innerHTML="";
     if(document.getElementById("subid").value.substring(0,1)==' '){
 		document.getElementById("suberror").innerHTML="Invalid Data!";
-		return false;
+		error = "true";
     }
     
     if(document.getElementById("subid").value!=""){
 	    if(document.getElementById("subid").value.length<4){
 	    	document.getElementById("suberror").innerHTML="Data should be min 4 and max 32";
-			return false;
+			error = "true";
 	    }
 	    }
     
     document.getElementById("icderror1").innerHTML="";
     if(document.getElementById("icd_id1").value.substring(0,1)==' '){
 		document.getElementById("icderror1").innerHTML="Invalid Data!";
-		return false;
+		error = "true";
     }
     
     if(document.getElementById("icd_id1").value!=""){
 	    if(document.getElementById("icd_id1").value.length<4){
 	    	document.getElementById("icderror1").innerHTML="Data should be min 4 and max 32";
-			return false;
+			error = "true";
 	    }
 	    }
     
     document.getElementById("icderror2").innerHTML="";
     if(document.getElementById("icd_id2").value.substring(0,1)==' '){
 		document.getElementById("icderror2").innerHTML="Invalid Data!";
-		return false;
+		error = "true";
     }
     
     if(document.getElementById("icd_id2").value!=""){
 	    if(document.getElementById("icd_id2").value.length<4){
 	    	document.getElementById("icderror2").innerHTML="Data should be min 4 and max 32";
-			return false;
+			error = "true";
 	    }
 	    }
     
     document.getElementById("icderror3").innerHTML="";
     if(document.getElementById("icd_id3").value.substring(0,1)==' '){
 		document.getElementById("icderror3").innerHTML="Invalid Data!";
-		return false;
+		error = "true";
     }
     
     if(document.getElementById("icd_id3").value!=""){
 	    if(document.getElementById("icd_id3").value.length<4){
 	    	document.getElementById("icderror3").innerHTML="Data should be min 4 and max 32";
-			return false;
+			error = "true";
 	    }
 	    }
     
     document.getElementById("icderror4").innerHTML="";
     if(document.getElementById("icd_id4").value.substring(0,1)==' '){
 		document.getElementById("icderror4").innerHTML="Invalid Data!";
-		return false;
+		error = "true";
     }
     
     if(document.getElementById("icd_id4").value!=""){
 	    if(document.getElementById("icd_id4").value.length<4){
 	    	document.getElementById("icderror4").innerHTML="Data should be min 4 and max 32";
-			return false;
+			error = "true";
 	    }
 	    }
     
@@ -570,14 +571,14 @@ function Checksymptom(val){
     document.getElementById("descerror1").innerHTML="";
     if(document.getElementById("desc1").value.substring(0,1)==' '){
 		document.getElementById("descerror1").innerHTML="Invalid Data!";
-		return false;
+		error = "true";
     }
     
     
     if(document.getElementById("desc1").value!=""){
 	    if(document.getElementById("desc1").value.length<4){
 	    	document.getElementById("descerror1").innerHTML="Data should be min 4 and max 32";
-			return false;
+			error = "true";
 	    }
 	    }
     
@@ -585,39 +586,39 @@ function Checksymptom(val){
     document.getElementById("descerror2").innerHTML="";
     if(document.getElementById("desc2").value.substring(0,1)==' '){
 		document.getElementById("descerror2").innerHTML="Invalid Data!";
-		return false;
+		error = "true";
     }
     
     if(document.getElementById("desc2").value!=""){
 	    if(document.getElementById("desc2").value.length<4){
 	    	document.getElementById("descerror2").innerHTML="Data should be min 4 and max 32";
-			return false;
+			error = "true";
 	    }
 	    }
     
     document.getElementById("descerror3").innerHTML="";
     if(document.getElementById("desc3").value.substring(0,1)==' '){
 		document.getElementById("descerror3").innerHTML="Invalid Data!";
-		return false;
+		error = "true";
     }
     
     if(document.getElementById("desc3").value!=""){
 	    if(document.getElementById("desc3").value.length<4){
 	    	document.getElementById("descerror3").innerHTML="Data should be min 4 and max 32";
-			return false;
+			error = "true";
 	    }
 	    }
     
     document.getElementById("descerror4").innerHTML="";
     if(document.getElementById("desc4").value.substring(0,1)==' '){
 		document.getElementById("descerror4").innerHTML="Invalid Data!";
-		return false;
+		error = "true";
     }
     
     if(document.getElementById("desc4").value!=""){
 	    if(document.getElementById("desc4").value.length<4){
 	    	document.getElementById("descerror4").innerHTML="Data should be min 4 and max 32";
-			return false;
+			error = "true";
 	    }
 	    }
     
@@ -625,25 +626,25 @@ function Checksymptom(val){
     document.getElementById("paterror1").innerHTML="";
     if(document.getElementById("pnid1").value.substring(0,1)==' '){
 		document.getElementById("paterror1").innerHTML="Invalid Data!";
-		return false;
+		error = "true";
     }
     
     if(document.getElementById("pnid1").value!=""){
 	    if(document.getElementById("pnid1").value.length<4){
 	    	document.getElementById("paterror1").innerHTML="Data should be min 4 and max 32";
-			return false;
+			error = "true";
 	    }
 	    }
     document.getElementById("paterror2").innerHTML="";
     if(document.getElementById("pnid2").value.substring(0,1)==' '){
 		document.getElementById("paterror2").innerHTML="Invalid Data!";
-		return false;
+		error = "true";
     }
     
     if(document.getElementById("pnid2").value!=""){
 	    if(document.getElementById("pnid2").value.length<4){
 	    	document.getElementById("paterror2").innerHTML="Data should be min 4 and max 32";
-			return false;
+			error = "true";
 	    }
 	    }
     
@@ -651,26 +652,26 @@ function Checksymptom(val){
     document.getElementById("paterror3").innerHTML="";
     if(document.getElementById("pnid3").value.substring(0,1)==' '){
 		document.getElementById("paterror3").innerHTML="Invalid Data!";
-		return false;
+		error = "true";
     }
     
     if(document.getElementById("pnid3").value!=""){
 	    if(document.getElementById("pnid3").value.length<4){
 	    	document.getElementById("paterror3").innerHTML="Data should be min 4 and max 32";
-			return false;
+			error = "true";
 	    }
 	    }
     
     document.getElementById("paterror4").innerHTML="";
     if(document.getElementById("pnid4").value.substring(0,1)==' '){
 		document.getElementById("paterror4").innerHTML="Invalid Data!";
-		return false;
+		error = "true";
     }
     
     if(document.getElementById("pnid4").value!=""){
 	    if(document.getElementById("pnid4").value.length<4){
 	    	document.getElementById("paterror4").innerHTML="Data should be min 4 and max 32";
-			return false;
+			error = "true";
 	    }
 	    }
 		
@@ -680,7 +681,7 @@ document.getElementById("datepicker1error").innerHTML=" ";
 		{
 		document.getElementById("datepicker1error").innerHTML="Required Field Should not be Empty";
 		
-		return false;
+		error = "true";
 		}
 		document.getElementById("datepicker1error").innerHTML=" ";
 		var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
@@ -688,7 +689,7 @@ document.getElementById("datepicker1error").innerHTML=" ";
     {
     	document.getElementById("datepicker1error").innerHTML="Invalid Date Format";
     	
-        return false;
+        error = "true";
     }	
 	document.getElementById("datepicker2error").innerHTML=" ";
     var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
@@ -697,7 +698,7 @@ document.getElementById("datepicker1error").innerHTML=" ";
 		if (document.getElementById("datepicker2").value !="") {
 		  if (re.test(document.getElementById("datepicker2").value) == false) {
 			  document.getElementById("datepicker2error").innerHTML="Invalid Date Format";
-			  return false;
+			  error = "true";
 		  }
 		}	
 document.getElementById("datepickererror").innerHTML=" ";
@@ -706,7 +707,7 @@ document.getElementById("datepickererror").innerHTML=" ";
 		{
 		document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
 		
-		return false;
+		error = "true";
 		}
 		document.getElementById("datepickererror").innerHTML=" ";
 		 var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
@@ -714,7 +715,7 @@ document.getElementById("datepickererror").innerHTML=" ";
     {
     	document.getElementById("datepickererror").innerHTML="Invalid Date Format";
     	
-        return false;
+        error = "true";
     }	
 	document.getElementById("datepicker3error").innerHTML=" ";
 	 var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
@@ -723,7 +724,7 @@ document.getElementById("datepickererror").innerHTML=" ";
 		if (document.getElementById("datepicker3").value !="") {
 		  if (re.test(document.getElementById("datepicker3").value) == false) {
 			  document.getElementById("datepicker3error").innerHTML="Invalid Date Format";
-			  return false;
+			  error = "true";
 		  }
 		}
 		document.getElementById("datepicker4error").innerHTML=" ";
@@ -733,7 +734,7 @@ document.getElementById("datepickererror").innerHTML=" ";
 		if (document.getElementById("datepicker4").value !="") {
 		  if (re.test(document.getElementById("datepicker4").value) == false) {
 			  document.getElementById("datepicker4error").innerHTML="Invalid Date Format";
-			  return false;
+			  error = "true";
 		  }
 		}
 		document.getElementById("datepicker2error").innerHTML=" ";
@@ -743,7 +744,7 @@ document.getElementById("datepickererror").innerHTML=" ";
 		if (document.getElementById("datepicker2").value !="") {
 		  if (re.test(document.getElementById("datepicker2").value) == false) {
 			  document.getElementById("datepicker2error").innerHTML="Invalid Date Format";
-			  return false;
+			  error = "true";
 		  }
 		}
 		document.getElementById("datepicker7error").innerHTML=" ";
@@ -753,7 +754,7 @@ document.getElementById("datepickererror").innerHTML=" ";
 		if (document.getElementById("datepicker7").value !="") {
 		  if (re.test(document.getElementById("datepicker7").value) == false) {
 			  document.getElementById("datepicker7error").innerHTML="Invalid Date Format";
-			  return false;
+			  error = "true";
 		  }
 		}
 		document.getElementById("datepicker9error").innerHTML=" ";
@@ -763,7 +764,7 @@ document.getElementById("datepickererror").innerHTML=" ";
 		if (document.getElementById("datepicker9").value !="") {
 		  if (re.test(document.getElementById("datepicker9").value) == false) {
 			  document.getElementById("datepicker9error").innerHTML="Invalid Date Format";
-			  return false;
+			  error = "true";
 		  }
 		}
 		document.getElementById("datepicker10error").innerHTML=" ";
@@ -773,7 +774,7 @@ document.getElementById("datepickererror").innerHTML=" ";
 		if (document.getElementById("datepicker10").value !="") {
 		  if (re.test(document.getElementById("datepicker10").value) == false) {
 			  document.getElementById("datepicker10error").innerHTML="Invalid Date Format";
-			  return false;
+			  error = "true";
 		  }
 		}	
 document.getElementById("signerror").innerHTML=" ";
@@ -782,11 +783,13 @@ document.getElementById("signerror").innerHTML=" ";
 		{
 		document.getElementById("signerror").innerHTML="Required Field Should not be Empty";
 		
-		return false;
+		error = "true";
 		}
 		
 		
-	    
+	    if(error="true"){
+	    	return false;
+	    }
 		
 		   
 	}

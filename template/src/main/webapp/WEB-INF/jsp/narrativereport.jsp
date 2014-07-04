@@ -1223,6 +1223,13 @@ document.getElementById("signerror").innerHTML=" ";
      document.getElementById('cancelid').style.visibility = 'visible';
   }
   </script>
+   <style>
+  /* force a height so the tabs don't jump as content height changes */
+  #tabs .tabs-spacer { float: left; height: 200px; }
+  .tabs-bottom .ui-tabs-nav { clear: left; padding: 0 .2em .2em .2em; }
+  .tabs-bottom .ui-tabs-nav li { top: auto; bottom: 0; margin: 0 .2em 1px 0; border-bottom: auto; border-top: 0; }
+  .tabs-bottom .ui-tabs-nav li.ui-tabs-active { margin-top: -1px; padding-top: 1px; }
+  </style>
 </head>
  
  <body>
@@ -1232,6 +1239,8 @@ document.getElementById("signerror").innerHTML=" ";
           <li><a href="#tabs-2">2</a></li>  
            <li><a href="#tabs-3">3</a></li>        
        </ul>
+       
+       <div class="tabs-spacer"></div>
        <form action="narrativereport" method="POST">
 
        <input type="hidden" name="username" value="${username}">
@@ -1506,8 +1515,8 @@ document.getElementById("signerror").innerHTML=" ";
 					</td>
 					</tr>
 					</table>
-					</div>
-					</div>
+	</div>
+	</div>
 					
 					<div id="tabs-2"> 
  <div id="right_content">
