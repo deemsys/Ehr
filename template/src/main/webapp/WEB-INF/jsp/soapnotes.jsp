@@ -243,7 +243,7 @@ $(function() {
           <tr class="row1">
 <td></td><td></td>
 <td></td><td></td><td></td><td></td>
-<td><h2><span class="err">*</span>patient</h2></td><td><input type="text" name="pname" id="pname" value="${name}" onkeypress="return validate1(event,id)";  class="input_txtbx1"><span style="color:red" id="pnameerr"><form:errors path="SoapNotes.pname"></form:errors></span></td>
+<td><h2><span class="err">*</span> Patient</h2></td><td><input type="text" name="pname" id="pname" value="${name}" onkeypress="return validate1(event,id)";  class="input_txtbx1"><span style="color:red" id="pnameerr"><form:errors path="SoapNotes.pname"></form:errors></span></td>
 </tr>
 <tr class="row1">
 <td height="20">Chief Complaint:</td>
@@ -469,7 +469,7 @@ document.getElementById("leftproxi").style.display="none";
  <input type="text" name="date1" id="datepicker1" class="input_txtbx1"><span id="datepicker1error" style="color: red;font-style:italic;" ></span></td>
  <td>
  <br/>
-&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved"  onInput="checkLength(id)" id="improved" onkeypress="return validate(event)"; class="input_txtbx1">&nbsp; %  <!--  <select  id="improved" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
+&nbsp;&nbsp;&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;<input type="text" name="improved"  onInput="checkLength(id)" id="improved" onkeypress="return validate(event)"; class="input_txtbx1">&nbsp; %  <!--  <select  id="improved" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
 					<option value="25%">25%</option>
 					<option value="50%">50%</option>
@@ -1367,7 +1367,7 @@ document.getElementById("leftproxi").style.display="none";
               <input type="hidden" class="input_txtbx1" id="inp_id" value="${soap.soapid}" name="soapid" />
 
     <tr class="row1">
-       <td><h2><span class="err">*</span>patient:</h2></td>
+       <td><h2><span class="err">*</span> Patient:</h2></td>
                            <td><input type="text" class="input_txtbx1" name="pname" value="${soap.pname}" /><span class="err" ><form:errors path="SoapNotes.pname"></form:errors></span></td>
              </tr>
         </table>
@@ -2044,7 +2044,7 @@ document.getElementById("leftproxi").style.display="none";
  </td>
  </tr>
   </table>
-  <table align="right"><tr><td> <span class="err">*</span>Physicians Signature:<input type="text" name="sign" class="input_txtbx1" id="inp_id"  value="${soap.sign}"><span class="err"><form:errors path="SoapNotes.sign"></form:errors></span></td></tr></table>
+  <table align="right"><tr><td> <span class="err">*</span> Physicians Signature:<input type="text" name="sign" class="input_txtbx1" id="inp_id"  value="${soap.sign}"><span class="err"><form:errors path="SoapNotes.sign"></form:errors></span></td></tr></table>
 				                   </table>
  <table align="right"> <tr>
 				                   <td><input type="submit" class="submit_btn" value="Save" id="saveid"></td>

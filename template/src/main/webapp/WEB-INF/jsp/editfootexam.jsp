@@ -240,7 +240,7 @@ $(function() {
 		
 		error="true";
 		}
-		else  if(document.getElementById("pname").value.length<4 || document.getElementById("pname").value.length>=32)
+		else  if(document.getElementById("pname").value.length<4 || document.getElementById("pname").value.length>32)
 	    {
 	    	
 	    	document.getElementById("pnameerror").innerHTML="Required Field should be Length of 4 to 32";
@@ -345,6 +345,7 @@ var otherdefict = document.getElementById('otherdefict').value;
 	if(otherdefict =="")
 		{
 		document.getElementById("otherdeficterror").innerHTML="required field should not be Empty";
+		error="true";
 		}
 	else if((otherdefict.length < 4 )|| (otherdefict.length > 32))
 		{
@@ -483,6 +484,7 @@ var swelling = document.getElementById('diagnosis1').value;
 				if(otherdefict =="")
 					{
 					document.getElementById("otherserror").innerHTML="required field should not be Empty";
+					error="true";
 					}
 				else if((otherdefict.length < 4 )|| (otherdefict.length > 32))
 					{
@@ -824,7 +826,9 @@ var swelling = document.getElementById('diagnosis1').value;
            <tr><td></td><td width="250">5)&nbsp;&nbsp;&nbsp;<input type="text" value="${footexamdetails.diagnosis5}" name="diagnosis5" id="diagnosis5" onInput="return validatename(id)";><br><span id="diagnosis5error" style="color:red"></span></td></tr>
            </table>
            </br>
-           <div><b style="font-size:14px">PLAN:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><input type="text" name="times" id="times" value="${footexamdetails.times}"onInput="return validatename3(id)";>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Times/week for&nbsp;&nbsp;&nbsp;&nbsp; </b><input type="text" value="${footexamdetails.weeks}"  name="weeks" id="weeks"onInput="return validatename2(id)";>&nbsp;&nbsp;&nbsp;&nbsp; weeks to address the above functional & structural deficits.  Treatment will consist of the following:</div>
+           <div><b style="font-size:14px">PLAN:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
+           <input type="text" name="times" id="times" value="${footexamdetails.times}"onInput="return validatename3(id)";>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Times/week for&nbsp;&nbsp;&nbsp;&nbsp; </b>
+           <input type="text" value="${footexamdetails.weeks}"  name="weeks" id="weeks"onInput="return validatename2(id)";>&nbsp;&nbsp;&nbsp;&nbsp; weeks to address the above functional & structural deficits.  Treatment will consist of the following:</div>
            </br>
            <table><tr><td width="95"></td><td width="160"><input type="checkbox"  <c:if test="${footexamdetails.spinaldecompression=='Spinal Decompression'}"> <c:out value="checked=checked"></c:out></c:if> name="spinaldecompression" value="Spinal Decompression">Spinal Decompression</td><td width="100"><input type="checkbox" name="chiropractic"  <c:if test="${footexamdetails.chiropractic=='Chiropractic'}"> <c:out value="checked=checked"></c:out></c:if> value="Chiropractic">Chiropractic</td>
            <td width="150"><input type="checkbox" name="physicaltherapy"   <c:if test="${footexamdetails.physicaltherapy=='Physical Therapy'}"> <c:out value="checked=checked"></c:out></c:if> value="Physical Therapy">Physical Therapy</td><td width="150"><input type="checkbox"  <c:if test="${footexamdetails.bracing=='Orthotics/Bracing'}"> <c:out value="checked=checked"></c:out></c:if>  name="bracing" value="Orthotics/Bracing">Orthotics/Bracing</td>

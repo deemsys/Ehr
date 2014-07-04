@@ -13,6 +13,123 @@
   P#mypar {font-style:calibri;
   line-height:18px;}
    </STYLE>
+    <script>
+   $(function() {
+		$("#pname").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});	
+   $(function() {
+		$("#datepicker").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+   $(function() {
+		$("#assessment").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+   $(function() {
+		$("#diagnosis1").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+   $(function() {
+		$("#diagnosis2").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+   $(function() {
+		$("#diagnosis3").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+   $(function() {
+		$("#diagnosis4").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+   $(function() {
+		$("#diagnosis5").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+   $(function() {
+		$("#diagnosis6").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+   $(function() {
+		$("#times").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+   $(function() {
+		$("#week").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+   $(function() {
+		$("#sign").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+   $(function() {
+		$("#break5").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+   $(function() {
+		$("#break6").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+   $(function() {
+		$("#break3").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+   $(function() {
+		$("#break4").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+   $(function() {
+		$("#comments").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+   $(function() {
+		$("#times").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});	
+	$(function() {
+		$("#weeks").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});
+   </script>
+   
   <script>
 $(function() {
    //$( "#draggable" ).draggable({ revert: "not valid" });
@@ -116,6 +233,7 @@ element.style.display='block';
 }
 else
 {
+	document.getElementById('break3error').innerHTML="";
 var element=document.getElementById('break3');
 element.style.display='none';
 }
@@ -127,6 +245,7 @@ element.style.display='block';
 }
 else
 {
+	document.getElementById('break4error').innerHTML="";
 var element=document.getElementById('break4');
 element.style.display='none';
 }
@@ -138,6 +257,7 @@ element.style.display='block';
 }
 else
 {
+	document.getElementById('break5error').innerHTML="";
 var element=document.getElementById('break5');
 element.style.display='none';
 }
@@ -150,6 +270,7 @@ element.style.display='block';
 }
 else
 {
+	document.getElementById('break6error').innerHTML="";
 var element=document.getElementById('break6');
 element.style.display='none';
 }
@@ -170,20 +291,28 @@ element.style.display='none';
 
 	function checkSubmit()
 	{
+		var error = "";
 document.getElementById("pnameerror").innerHTML=" ";
 		
 		if(document.getElementById("pname").value=="")
 		{
 		document.getElementById("pnameerror").innerHTML="Required Field Should not be Empty";
 		
-		return false;
+		error="true";
 		}
+		else  if(document.getElementById("pname").value.length<4 || document.getElementById("pname").value.length>32)
+	    {
+	    	
+	    	document.getElementById("pnameerror").innerHTML="Required Field should be Length of 4 to 32";
+	    	
+	    	error="true";
+	    }
 		document.getElementById("datepickererror").innerHTML="";
 	if(document.getElementById("datepicker").value=="")
 		{
 		document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
 		
-		return false;
+		error="true";
 		}
 	document.getElementById("datepickererror").innerHTML="";
 	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
@@ -191,7 +320,7 @@ document.getElementById("pnameerror").innerHTML=" ";
 	    {
 	    	document.getElementById("datepickererror").innerHTML="Invalid Date format";
 	    	
-	        return false;
+	    	error="true";
 	    }	
 			
 	document.getElementById("signerror").innerHTML="";
@@ -199,11 +328,307 @@ document.getElementById("pnameerror").innerHTML=" ";
 	{
 	document.getElementById("signerror").innerHTML="Required Field Should not be Empty";
 	
-	return false;
+	error="true";
 	}
+	else if(document.getElementById("sign").value.length<4 || document.getElementById("sign").value.length>=32)
+    {
+    	
+    	document.getElementById("signerror").innerHTML="Required Field should be Length of 4 to 32";
+    	
+    	error="true";
+    }
+	else
+	{
+	document.getElementById("signerror").innerHTML="";
+	}
+	
+	var otherdefict = document.getElementById('break5').value;
+	var other = document.getElementById('leglengthl');
+	if(other.checked)
+		{
+	if(otherdefict =="")
+		{
+		document.getElementById("break5error").innerHTML="required field should not be Empty";
+		error="true";
+		}
+	else if((otherdefict.length < 4 )|| (otherdefict.length > 32))
+		{
+		
+			document.getElementById("break5error").innerHTML="Required Field should be Length of 4 to 32";
+    	
+    	error="true";
+		}
+	else{
+		document.getElementById("break5error").innerHTML="";
+	}
+		}
+	else{
+		document.getElementById("break5error").innerHTML="";
+	}
+	
+	var otherdefict = document.getElementById('break6').value;
+	var other = document.getElementById('leglengthr');
+	if(other.checked)
+		{
+	if(otherdefict =="")
+		{
+		document.getElementById("break6error").innerHTML="required field should not be Empty";
+		error="true";
+		}
+	else if((otherdefict.length < 4 )|| (otherdefict.length > 32))
+		{
+		
+			document.getElementById("break6error").innerHTML="Required Field should be Length of 4 to 32";
+    	
+    	error="true";
+		}
+	else{
+		document.getElementById("break6error").innerHTML="";
+	}
+		}
+	else{
+		document.getElementById("break6error").innerHTML="";
+	}
+	
+	var otherdefict = document.getElementById('break3').value;
+	var other = document.getElementById('otherfunctional');
+	if(other.checked)
+		{
+	if(otherdefict =="")
+		{
+		document.getElementById("break3error").innerHTML="required field should not be Empty";
+		error="true";
+		}
+	else if((otherdefict.length < 4 )|| (otherdefict.length > 32))
+		{
+		
+			document.getElementById("break3error").innerHTML="Required Field should be Length of 4 to 32";
+    	
+    	error="true";
+		}
+	else{
+		document.getElementById("break3error").innerHTML="";
+	}
+		}
+	else{
+		document.getElementById("break3error").innerHTML="";
+	}
+	
+var note = document.getElementById('comments').value;
+	
+	if(note =="")
+		{
+		document.getElementById("commentserror").innerHTML="";
+		}
+	else if((note.length < 4 )|| (note.length > 400))
+		{
+		
+			document.getElementById("commentserror").innerHTML="Required Field should be Length of 4 to 400";
+    	
+    	error="true";
+		}
+	else
+	{
+	document.getElementById("commentserror").innerHTML="";
+	}
+	
+	
+var swelling = document.getElementById('diagnosis1').value;
+	
+	if(swelling =="")
+		{
+		document.getElementById("diagnosis1error").innerHTML="";
+		}
+	else if((swelling.length < 4 )|| (swelling.length > 32))
+		{
+		
+			document.getElementById("diagnosis1error").innerHTML="Required Field should be Length of 4 to 32";
+    	
+    	error="true";
+		}
+	else
+	{
+	document.getElementById("diagnosis1error").innerHTML="";
+	}
+
+	
+	var swelling = document.getElementById('diagnosis2').value;
+		
+		if(swelling =="")
+			{
+			document.getElementById("diagnosis2error").innerHTML="";
+			}
+		else if((swelling.length < 4 )|| (swelling.length > 32))
+			{
+			
+				document.getElementById("diagnosis2error").innerHTML="Required Field should be Length of 4 to 32";
+	    	
+	    	error="true";
+			}
+		else
+		{
+		document.getElementById("diagnosis2error").innerHTML="";
+		}
+	
+		
+		var swelling = document.getElementById('diagnosis3').value;
+			
+			if(swelling =="")
+				{
+				document.getElementById("diagnosis3error").innerHTML="";
+				}
+			else if((swelling.length < 4 )|| (swelling.length > 32))
+				{
+				
+					document.getElementById("diagnosis3error").innerHTML="Required Field should be Length of 4 to 32";
+		    	
+		    	error="true";
+				}
+			else
+			{
+			document.getElementById("diagnosis3error").innerHTML="";
+			}
+		
+			
+			var swelling = document.getElementById('diagnosis4').value;
+				
+				if(swelling =="")
+					{
+					document.getElementById("diagnosis4error").innerHTML="";
+					}
+				else if((swelling.length < 4 )|| (swelling.length > 32))
+					{
+					
+						document.getElementById("diagnosis4error").innerHTML="Required Field should be Length of 4 to 32";
+			    	
+			    	error="true";
+					}
+				else
+				{
+				document.getElementById("diagnosis4error").innerHTML="";
+				}
+			
+		var swelling = document.getElementById('diagnosis5').value;
+				
+				if(swelling =="")
+					{
+					document.getElementById("diagnosis5error").innerHTML="";
+					}
+				else if((swelling.length < 4 )|| (swelling.length > 32))
+					{
+					
+						document.getElementById("diagnosis5error").innerHTML="Required Field should be Length of 4 to 32";
+			    	
+			    	error="true";
+					}
+				else
+					{
+					document.getElementById("diagnosis5error").innerHTML="";
+					}
+	var swelling = document.getElementById('diagnosis6').value;
+				
+				if(swelling =="")
+					{
+					document.getElementById("diagnosis6error").innerHTML="";
+					}
+				else if((swelling.length < 4 )|| (swelling.length > 32))
+					{
+					
+						document.getElementById("diagnosis6error").innerHTML="Required Field should be Length of 4 to 32";
+			    	
+			    	error="true";
+					}
+				else
+					{
+					document.getElementById("diagnosis6error").innerHTML="";
+					}
+				
+				var otherdefict = document.getElementById('break4').value;
+				var other = document.getElementById('otheraddress');
+				if(other.checked)
+					{
+				if(otherdefict =="")
+					{
+					document.getElementById("break4error").innerHTML="required field should not be Empty";
+					error="true";
+					}
+				else if((otherdefict.length < 4 )|| (otherdefict.length > 32))
+					{
+					
+						document.getElementById("break4error").innerHTML="Required Field should be Length of 4 to 32";
+			    	
+			    	error="true";
+					}
+				else{
+					document.getElementById("break4error").innerHTML="";
+				}
+					}
+				else{
+					document.getElementById("break4error").innerHTML="";
+				}
+				
+	if(error=="true")
+		{
+		
+		return false;
+		}
 	}
 	</script>
+	  <script type="text/javascript">
+function validatename(id){
 	
+    var textInput = document.getElementById(id).value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById(id).value = textInput;
+}  
+function validatename1(id){
+	
+    var textInput = document.getElementById(id).value;
+    textInput = textInput.replace(/[]/g, "");
+    document.getElementById(id).value = textInput;
+}  
+function validatename2(id){
+	
+    var textInput = document.getElementById(id).value;
+    textInput = textInput.replace(/[^0-9 ]/g, "");
+    document.getElementById(id).value = textInput;
+    var fieldVal = document.getElementById(id).value;
+    //Suppose u want 3 number of character
+    if(fieldVal >=0 && fieldVal <=52){
+        return true;
+    }
+    else
+    {
+        var str = document.getElementById(id).value;
+       
+        str = str.substring(0, str.length - 1);
+    document.getElementById(id).value = str;
+    }
+     
+   
+     
+}  
+function validatename3(id){
+	
+    var textInput = document.getElementById(id).value;
+    textInput = textInput.replace(/[^0-9 ]/g, "");
+    document.getElementById(id).value = textInput;
+    
+    var fieldVal = document.getElementById(id).value;
+    //Suppose u want 3 number of character
+    if(fieldVal >=0 && fieldVal <=100){
+        return true;
+    }
+    else
+    {
+        var str = document.getElementById(id).value;
+       
+        str = str.substring(0, str.length - 1);
+    document.getElementById(id).value = str;
+    }
+     
+}  
+	</script>
 	<script type="text/javascript">
        function validate(event) {
           
@@ -240,7 +665,26 @@ document.getElementById("pnameerror").innerHTML=" ";
     }
      
     }
+    
+    
+    function checkLength1(id){
+ 	   
+        var fieldVal = document.getElementById(id).value;
+        //Suppose u want 3 number of character
+        if(fieldVal >=0 && fieldVal <=99999){
+            return true;
+        }
+        else
+        {
+            var str = document.getElementById(id).value;
+           
+            str = str.substring(0, str.length - 1);
+        document.getElementById(id).value = str;
+        }
+         
+        }
 	</script>
+	
 </head>
  <body>
  <br><br>
@@ -267,9 +711,9 @@ document.getElementById("pnameerror").innerHTML=" ";
         <c:set value="${kneeexamForm.kneeexam[0]}" var="kneeexam"/>   
  <tr class="row1">
  <input type="hidden" name="kneeexamid" id="inp_id" value="${kneeexam.kneeexamid}">
-<td><h2><span class="err">*</span>Patient Name:</h2></td><td><input type="text" id="pname" name="pname" value="${kneeexam.pname}"/><span class="err" id="pnameerror"><form:errors path="Kneeexam.pname"></form:errors></span></td>
+<td><h2><span class="err">*</span> Patient Name:</h2></td><td><input type="text" id="pname" name="pname" value="${kneeexam.pname}"/><span class="err" id="pnameerror"><form:errors path="Kneeexam.pname"></form:errors></span></td>
 <td width="600">
-<td><h2><span class="err">*</span>Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${kneeexam.date}"/><span class="err" id="datepickererror"><form:errors path="Kneeexam.date"></form:errors></span></td>
+<td><h2><span class="err">*</span> Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${kneeexam.date}"/><span class="err" id="datepickererror"><form:errors path="Kneeexam.date"></form:errors></span></td>
 </tr>
 </table>
 <br/>
@@ -288,7 +732,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  <table>
  <tr class="row1">
  <td width="200">Gait:</td><td>  <select style="width:180px" name="gait" id="gait"  onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="normal" <c:if test="${kneeexam.gait=='normal'}"><c:out value="selected"/></c:if> >Normal</option>
+					<option value="normal" <c:if test="${kneeexam.gait=='normal'}"><c:out value="selected"/></c:if> >Normal</option>
 					<option value="antalgic" <c:if test="${kneeexam.gait=='antalgic'}"><c:out value="selected"/></c:if>>Antalgic</option>
 					<option value="shuffling" <c:if test="${kneeexam.gait=='shuffling'}"><c:out value="selected"/></c:if>>Shuffling</option>
 					<option value="limp" <c:if test="${kneeexam.gait=='limp'}"><c:out value="selected"/></c:if>>Limp</option>
@@ -331,9 +775,13 @@ document.getElementById("pnameerror").innerHTML=" ";
   <tr class="row1">
  <td width="200">Leg Length Discrepancy:Short Leg-  </td> 
  <td><input type="checkbox" id="leglengthl" name="leglengthl" value="left" onclick="visible(this.value)" <c:if test="${kneeexam.leglengthl=='left'}"><c:out value="Checked"/></c:if>>Left</td>
- <td><input type="text" name="leglengthtextl" id="break5" style="display:none" value="${kneeexam.leglengthtextl}"></td>
+ <td><input type="text" name="leglengthtextl" id="break5" style="display:none" value="${kneeexam.leglengthtextl}"onInput="return validatename(id);">
+ <span id="break5error" style="color:red"> </span>
+ </td>
  <td><input type="checkbox" id="leglengthr" name="leglengthr" value="right" onclick="visible(this.value)" <c:if test="${kneeexam.leglengthr=='right'}"><c:out value="Checked"/></c:if>>Right</td>
- <td><input type="text" name="leglengthtextr" id="break6" style="display:none" value="${kneeexam.leglengthtextr}"></td>
+ <td><input type="text" name="leglengthtextr" id="break6" style="display:none" value="${kneeexam.leglengthtextr}" onInput="return validatename(id);">
+ <span id="break6error" style="color:red"> </span>
+ </td>
 					<td></td>
 					<td></td>
 					<td></td> 
@@ -365,45 +813,75 @@ document.getElementById("pnameerror").innerHTML=" ";
  <td></td><td><b>Left</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> Right</b></td>
  </tr>
   <tr class="row1">
- <td><b>Flexion:</b> </td><td> (60)</td><td>&nbsp;&nbsp;&nbsp; <input type="text" name="flexion" size="7" value="${kneeexam.flexion}"  onkeypress="return validate(event)"></td>  
- <td><b>Ant. Drawer (ACL):</b> </td><td><input type="text" name="acll" size="5" value="${kneeexam.acll}" onkeypress="return validate(event)"> <input type="text" name="aclr" size="5" onkeypress="return validate(event)" value="${kneeexam.aclr}"></td>
+ <td><b>Flexion:</b> </td><td> (60)</td><td>&nbsp;&nbsp;&nbsp; 
+ <input type="text" name="flexion" id="flexion"size="7" value="${kneeexam.flexion}"  onkeypress="return validate(event)"onInput="checkLength1(id);"></td>  
+ <td><b>Ant. Drawer (ACL):</b> </td><td>
+ <input type="text" name="acll" id="acll" size="5" value="${kneeexam.acll}" onkeypress="return validate(event)"onInput="checkLength1(id);"> 
+ <input type="text" name="aclr" id="aclr" size="5" onkeypress="return validate(event)" value="${kneeexam.aclr}"onInput="checkLength1(id);"></td>
  </tr>
   <tr class="row1">
- <td><b>Extension:	</b> </td><td> (25) </td><td> &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="extension" size="7" value="${kneeexam.extension}"  onkeypress="return validate(event)"></td>  
- <td><b>Post. Drawer (PCL):	</b> </td><td><input type="text" name="pcll" size="5" onkeypress="return validate(event)" value="${kneeexam.pcll}"> <input type="text" name="pclr" size="5" onkeypress="return validate(event)" value="${kneeexam.pclr}"></td>
+ <td><b>Extension:	</b> </td><td> (25) </td><td> &nbsp;&nbsp;&nbsp;&nbsp;
+ <input type="text" name="extension" id="extension"size="7" value="${kneeexam.extension}"  onkeypress="return validate(event)"onInput="checkLength1(id);"></td>  
+ <td><b>Post. Drawer (PCL):	</b> </td><td>
+ <input type="text" name="pcll"id="pcll" size="5" onkeypress="return validate(event)" value="${kneeexam.pcll}"onInput="checkLength1(id);"> 
+ <input type="text" name="pclr"id="pclr" size="5" onkeypress="return validate(event)" value="${kneeexam.pclr}"onInput="checkLength1(id);"></td>
  </tr>
   <tr class="row1">
- <td><b>Internal Rotation:</b> </td><td> (25)</td><td>L &nbsp;<input type="text" name="internalrotationl" size="7" value="${kneeexam.internalrotationl}"  onkeypress="return validate(event)"><br/><br/>R <input type="text" name="internalrotationr" size="7" value="${kneeexam.internalrotationr}"  onkeypress="return validate(event)"></td>  
- <td><b>Lateral (Varus) Stability (LCL):</b> </td><td><input type="text" name="lcll" size="5" onkeypress="return validate(event)" value="${kneeexam.lcll}"> <input type="text" name="lclr" size="5" onkeypress="return validate(event)" value="${kneeexam.lclr}"></td>
+ <td><b>Internal Rotation:</b> </td><td> (25)</td><td>L &nbsp;
+ <input type="text" name="internalrotationl"id="internalrotationl" size="7" value="${kneeexam.internalrotationl}"  onkeypress="return validate(event)"onInput="checkLength1(id);"><br/><br/>R 
+ <input type="text" name="internalrotationr"id="internalrotationr" size="7" value="${kneeexam.internalrotationr}"  onkeypress="return validate(event)"onInput="checkLength1(id);"></td>  
+ <td><b>Lateral (Varus) Stability (LCL):</b> </td><td>
+ <input type="text" name="lcll" id="lcll" size="5" onkeypress="return validate(event)" value="${kneeexam.lcll}"onInput="checkLength1(id);"> 
+ <input type="text" name="lclr"id="lclr" size="5" onkeypress="return validate(event)" value="${kneeexam.lclr}"onInput="checkLength1(id);"></td>
  </tr>
   <tr class="row1">
-  <td><b> External Rotation:</b> </td><td> (45)</td><td>L &nbsp;<input type="text" name="externalrotationl" size="7" value="${kneeexam.externalrotationl}"  onkeypress="return validate(event)"><br/><br/>R <input type="text" name="externalrotationr" size="7" value="${kneeexam.externalrotationr}"  onkeypress="return validate(event)"></td>  
- <td><b>Medial (Valgus) Stability (MCL):</b> </td><td><input type="text" name="mcll" size="5"  onkeypress="return validate(event)" value="${kneeexam.mcll}"> <input type="text" name="mclr" size="5" onkeypress="return validate(event)" value="${kneeexam.mclr}"> </td>
+  <td><b> External Rotation:</b> </td><td> (45)</td><td>L &nbsp;
+  <input type="text" name="externalrotationl"  id="externalrotationl" size="7" value="${kneeexam.externalrotationl}"  onkeypress="return validate(event)"onInput="checkLength1(id);"><br/><br/>R 
+  <input type="text" name="externalrotationr"id="externalrotationr" size="7" value="${kneeexam.externalrotationr}"  onkeypress="return validate(event)"onInput="checkLength1(id);"></td>  
+ <td><b>Medial (Valgus) Stability (MCL):</b> </td><td>
+ <input type="text" name="mcll" id="mcll" size="5"  onkeypress="return validate(event)" value="${kneeexam.mcll}"onInput="checkLength1(id);"> 
+ <input type="text" name="mclr" id="mclr" size="5" onkeypress="return validate(event)" value="${kneeexam.mclr}"onInput="checkLength1(id);"> </td>
  </tr>
   <tr class="row1">
  <td><b>GIRTH</b>&nbsp;&nbsp;&nbsp; <input type="checkbox" name="circumferential" value="Circumferential Measures are Unremarkable" <c:if test="${kneeexam.circumferential=='Circumferential Measures are Unremarkable'}"><c:out value="Checked"/></c:if>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Circumferential Measures are 	</td><td>Unremarkable </td>  
  <td></td>
- <td><b>McMurray's (Med Meniscus):	</b> </td><td><input type="text" name="meniscusl" size="5" onkeypress="return validate(event)" value="${kneeexam.meniscusl}"> <input type="text" name="meniscusr" onkeypress="return validate(event)" size="5" value="${kneeexam.meniscusr}"></td>
+ <td><b>McMurray's (Med Meniscus):	</b> </td><td>
+ <input type="text" name="meniscusl"id="meniscusl" size="5" onkeypress="return validate(event)" value="${kneeexam.meniscusl}"onInput="checkLength1(id);"> 
+ <input type="text" name="meniscusr" id="meniscusr" onkeypress="return validate(event)" size="5" value="${kneeexam.meniscusr}"onInput="checkLength1(id);"></td>
  </tr>
   <tr class="row1">
  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>5 cm Above</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Suprapatellar</b></td><td><b>Infrapatellar</b> </td>  
  <td><b>5 cm Below</b>	</td>
- <td><b>Apley's Compress (Meniscus):	</b> </td><td><input type="text" name="apleysl" size="5" onkeypress="return validate(event)" value="${kneeexam.apleysl}"> <input type="text" name="apleysr" size="5" onkeypress="return validate(event)" value="${kneeexam.apleysr}"></td>
+ <td><b>Apley's Compress (Meniscus):	</b> </td><td>
+ <input type="text" name="apleysl" id="apleysl"size="5" onkeypress="return validate(event)" value="${kneeexam.apleysl}"onInput="checkLength1(id);"> 
+ <input type="text" name="apleysr" id="apleysr"size="5" onkeypress="return validate(event)" value="${kneeexam.apleysr}"onInput="checkLength1(id);"></td>
  </tr>
   <tr class="row1">
- <td>Left &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="cmabovel" size="8" value="${kneeexam.cmabovel}"  onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="suprapatellarl" size="8" value="${kneeexam.suprapatellarl}"  onkeypress="return validate(event)"></td><td><input type="text" name="infrapatellarl" size="8" value="${kneeexam.infrapatellarl }"  onkeypress="return validate(event)"> </td>  
- <td><input type="text" name="belowl" size="8" value="${kneeexam.belowl}"  onkeypress="return validate(event)"></td>
- <td><b>Apley's Distraction (Cor ligs):		</b> </td><td><input type="text" name="distractionl" size="5" onkeypress="return validate(event)" value="${kneeexam.distractionl}"> <input type="text" name="distractionr" size="5" onkeypress="return validate(event)" value="${kneeexam.distractionr}"> </td>
+ <td>Left &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ <input type="text" name="cmabovel"  id="cmabovel"size="8" value="${kneeexam.cmabovel}"  onkeypress="return validate(event)"onInput="checkLength1(id);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ <input type="text" name="suprapatellarl" id="suprapatellarl"size="8" value="${kneeexam.suprapatellarl}"  onkeypress="return validate(event)"onInput="checkLength1(id);"></td><td>
+ <input type="text" name="infrapatellarl"id="infrapatellarl" size="8" value="${kneeexam.infrapatellarl }"  onkeypress="return validate(event)"onInput="checkLength1(id);"> </td>  
+ <td><input type="text" name="belowl" id="belowl"size="8" value="${kneeexam.belowl}"  onkeypress="return validate(event)"onInput="checkLength1(id);"></td>
+ <td><b>Apley's Distraction (Cor ligs):		</b> </td><td>
+ <input type="text" name="distractionl" id="distractionl" size="5" onkeypress="return validate(event)" value="${kneeexam.distractionl}"onInput="checkLength1(id);"> 
+ <input type="text" name="distractionr" id="distractionr"size="5" onkeypress="return validate(event)" value="${kneeexam.distractionr}"onInput="checkLength1(id);"> </td>
  </tr>
  <tr class="row1">
- <td>Right &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="cmabover" size="8" value="${kneeexam.cmabover}"  onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="suprapatellarr" size="8" value="${kneeexam.suprapatellarr}"  onkeypress="return validate(event)"></td><td><input type="text" name="infrapatellarr" size="8" value="${kneeexam.infrapatellarr}"  onkeypress="return validate(event)"> </td>  
- <td><input type="text" name="belowr" size="8" value="${kneeexam.belowr}"  onkeypress="return validate(event)"></td>
- <td><b>Patellar Grind (CMP):		</b> </td><td><input type="text" name="cmpl" size="5" onkeypress="return validate(event)" value="${kneeexam.cmpl}"> <input type="text" name="cmpr" size="5" onkeypress="return validate(event)" value="${kneeexam.cmpr}"> </td>
+ <td>Right &nbsp;&nbsp;&nbsp;&nbsp;
+ <input type="text" name="cmabover"id="cmabover" size="8" value="${kneeexam.cmabover}"  onkeypress="return validate(event)"onInput="checkLength1(id);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ <input type="text" name="suprapatellarr" id="suprapatellarr"size="8" value="${kneeexam.suprapatellarr}"  onkeypress="return validate(event)"onInput="checkLength1(id);"></td><td>
+ <input type="text" name="infrapatellarr"id="infrapatellarr" size="8" value="${kneeexam.infrapatellarr}"  onkeypress="return validate(event)"onInput="checkLength1(id);"> </td>  
+ <td><input type="text" name="belowr"id="belowr" size="8" value="${kneeexam.belowr}"  onkeypress="return validate(event)"onInput="checkLength1(id);"></td>
+ <td><b>Patellar Grind (CMP):		</b> </td><td>
+ <input type="text" name="cmpl"id="cmpl" size="5" onkeypress="return validate(event)" value="${kneeexam.cmpl}"onInput="checkLength1(id);"> 
+ <input type="text" name="cmpr"id="cmpr" size="5" onkeypress="return validate(event)" value="${kneeexam.cmpr}"onInput="checkLength1(id);"> </td>
  </tr>
  <tr class="row1">
  <td></td><td> </td> 
  <td></td> 
- <td><b>Patellar Apprehension (Pat D/L):		</b> </td><td><input type="text" name="patdll" onkeypress="return validate(event)" size="5" value="${kneeexam.patdll}"> <input type="text" name="patdlr" onkeypress="return validate(event)" size="5" value="${kneeexam.patdlr}"> </td>
+ <td><b>Patellar Apprehension (Pat D/L):		</b> </td><td>
+ <input type="text" name="patdll"id="patdll" onkeypress="return validate(event)" size="5" value="${kneeexam.patdll}"onInput="checkLength1(id);"> 
+ <input type="text" name="patdlr" id="patdlr"onkeypress="return validate(event)" size="5" value="${kneeexam.patdlr}"onInput="checkLength1(id);"> </td>
  </tr>
  </table>
  
@@ -450,7 +928,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  <td>L1</td>
  <td><input type="text" name="l1l" size="5" onkeypress="return validate(event)" value="${kneeexam.l1l}">&nbsp; &nbsp; &nbsp;<input type="text" name="l1r" onkeypress="return validate(event)" size="5" value="${kneeexam.l1r}">&nbsp;(Inguinal area)</td>
  <td>L1 </td>
- <td> <input type="text" name="l15l" id="l15l" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" size="5" value="${kneeexam.l15l}"  >&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l15r" id="l15r" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" size="5" value="${lumbopelvic.l15r}">&nbsp;/5&nbsp;(Iliopsoas)</td>
+ <td> <input type="text" name="l15l" id="l15l" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" size="5" value="${kneeexam.l15l}"  >&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l15r" id="l15r"value="${kneeexam.l15r}" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" size="5" >&nbsp;/5&nbsp;(Iliopsoas)</td>
  <td> </td>
  <td>  </td>
  </tr>
@@ -509,10 +987,15 @@ document.getElementById("pnameerror").innerHTML=" ";
  <td width="150"><input type="checkbox" name="walking" value="Walking" <c:if test="${kneeexam.walking=='Walking'}"><c:out value="Checked"/></c:if>>Walking &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="standing" value="Standing" <c:if test="${kneeexam.standing=='Standing'}"><c:out value="Checked"/></c:if>>Standing</td>
  <td width="150"><input type="checkbox" name="stairs" value="Stairs" <c:if test="${kneeexam.stairs=='Stairs'}"><c:out value="Checked"/></c:if>>Stairs</td>
  <td width="150"><input type="checkbox" id="otherfunctional" name="otherfunctional" value="Other"  onclick="visible(this.value)" <c:if test="${kneeexam.otherfunctional=='Other'}"><c:out value="Checked"/></c:if> >Other&nbsp;</td>
- <td> <input type="text" id="break3" name="break_text3" style="display:none" value="${kneeexam.break_text3}"/></td>
+ <td> <input type="text" id="break3" name="break_text3" style="display:none" value="${kneeexam.break_text3}"onInput="return validatename(id);"/>
+ <br><span id="break3error" style="color:red"></span>
+ </td>
  </tr>         
  <tr class="row1">
- <td><B style="font-size:14px">ASSESSMENT / ADDITIONAL COMMENTS:</B></td><td><textarea name="assessment" rows='5' cols='40'> ${kneeexam.assessment }</textarea></td><td></td>
+ <td><B style="font-size:14px">ASSESSMENT / ADDITIONAL COMMENTS:</B></td><td><textarea name="assessment" rows='5' cols='40' id="comments" onInput="return validatename1(id);">${kneeexam.assessment}</textarea>
+ <span id="commentserror" style="color:red"></span>
+ 
+ </td><td></td>
  <td></td><td></td>
  <td></td>
  </tr>         
@@ -530,15 +1013,15 @@ document.getElementById("pnameerror").innerHTML=" ";
  <table>
  <tr class="row1">
  <td width="360"><B style="font-size:14px">DIAGNOSIS:</B></td>
- <td width="250">1)<input type="text" name="diagnosis1" value="${kneeexam.diagnosis1}"></td>
- <td width="250">2)<input type="text" name="diagnosis2" value="${kneeexam.diagnosis2 }"></td>
- <td width="250">3)<input type="text" name="diagnosis3" value="${kneeexam.diagnosis3 }"></td>
- <td width="250">4)<input type="text" name="diagnosis4" value="${kneeexam.diagnosis4 }"></td>
+ <td width="250">1)<input type="text" name="diagnosis1" id="diagnosis1"value="${kneeexam.diagnosis1}" onInput="return validatename(id);"><span id="diagnosis1error" style="color:red"></span></td>
+ <td width="250">2)<input type="text" name="diagnosis2" id="diagnosis2"value="${kneeexam.diagnosis2 }"onInput="return validatename(id);"><span id="diagnosis2error" style="color:red"></span></td>
+ <td width="250">3)<input type="text" name="diagnosis3" id="diagnosis3"value="${kneeexam.diagnosis3 }"onInput="return validatename(id);"><span id="diagnosis3error" style="color:red"></span></td>
+ <td width="250">4)<input type="text" name="diagnosis4" id="diagnosis4"value="${kneeexam.diagnosis4 }"onInput="return validatename(id);"><span id="diagnosis4error" style="color:red"></span></td>
  </tr>
  <tr class="row1">
  <td></td>
- <td width="250">5)<input type="text" name="diagnosis5" value="${kneeexam.diagnosis5}"></td>
- <td width="250">6)<input type="text" name="diagnosis6" value="${kneeexam.diagnosis6}"></td>
+ <td width="250">5)<input type="text" name="diagnosis5" id="diagnosis5"value="${kneeexam.diagnosis5}"onInput="return validatename(id);"><span id="diagnosis5error" style="color:red"></span></td>
+ <td width="250">6)<input type="text" name="diagnosis6" id="diagnosis6"value="${kneeexam.diagnosis6}"onInput="return validatename(id);"><span id="diagnosis6error" style="color:red"></span></td>
  <td></td>
  <td></td>
  </tr>
@@ -546,8 +1029,8 @@ document.getElementById("pnameerror").innerHTML=" ";
  <table>
  <tr class="row1">
  <td width="120"><B style="font-size:14px">PLAN:</B></td>
- <td><input type="text" name="times" value="${kneeexam.times}">Times/week for </td>
- <td><input type="text" name="week" value="${kneeexam.week}">weeks to address the </td>
+ <td><input type="text" name="times" id="times" value="${kneeexam.times}"onInput="return validatename3(id)";>Times/week for </td>
+ <td><input type="text" name="week" id="weeks" value="${kneeexam.week}"onInput="return validatename2(id)";>weeks to address the </td>
  <td>above functional & structural deficits.  </td>
  <td>Treatment will consist of the following:</td>
  </tr>
@@ -575,11 +1058,14 @@ document.getElementById("pnameerror").innerHTML=" ";
  <td width="250"><input type="checkbox" name="emg" value="EMG"  <c:if test="${kneeexam.emg=='EMG'}"><c:out value="Checked"/></c:if>>EMG</td>
  <td width="250"><input type="checkbox" name="outside" value="Outside Referral"  <c:if test="${kneeexam.outside=='Outside Referral'}"><c:out value="Checked"/></c:if>>Outside Referral </td>
  <td width="250"><input type="checkbox" name="dc" value="D/C"  <c:if test="${kneeexam.dc=='D/C'}"><c:out value="Checked"/></c:if>>D/C</td>
- <td width="250"><input type="checkbox" id="otheraddress" name="otheraddress" value="Other" onclick="visible(this.value)" <c:if test="${kneeexam.otheraddress=='Other'}"><c:out value="Checked"/></c:if>>Other<input type="text" class="input_txtbx1" id="break4" name="break_text4"  style="display:none"  value="${kneeexam.break_text4}" /></td>
+ <td width="250"><input type="checkbox" id="otheraddress" name="otheraddress" value="Other" onclick="visible(this.value)" <c:if test="${kneeexam.otheraddress=='Other'}"><c:out value="Checked"/></c:if>>Other
+ <input type="text" class="input_txtbx1" id="break4" name="break_text4"  style="display:none"  value="${kneeexam.break_text4}" onInput="return validatename(id);"/>
+ <span id="break4error" style="color:red"></span>
+ </td>
  </tr>
  </tr>
  <br/>
- <table><tr><td><B style="font-size:14px"><span class="err">*</span>PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sign" id="sign" value="${kneeexam.sign}"><span class="err" id="signerror"><form:errors path="Kneeexam.sign"></form:errors></span></B></td></tr></table>
+ <table><tr><td><B style="font-size:14px"><span class="err">*</span> PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sign" id="sign" value="${kneeexam.sign}"onInput="return validatename(id)";><span class="err" id="signerror"><form:errors path="Kneeexam.sign"></form:errors></span></B></td></tr></table>
 <table align="right">
 <tr>
 <td><input type="submit" class="submit_btn" value="Update"  onclick="return checkSubmit('this');"></td>

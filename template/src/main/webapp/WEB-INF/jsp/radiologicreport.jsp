@@ -1257,13 +1257,13 @@ $(function() {
     				<td>
     				<table cellpadding="0" cellspacing="0" border="0" width="100%">
 	                            <tr class="row1">
-				                  <td><span class="err">*</span>Patient Name:</td>
+				                  <td><span class="err">*</span> Patient Name:</td>
 				                  <td><input type="text" class="input_txtbx1" id="pname" name="pname" onkeypress="return validate1(event,id)";  value="${name}"/><br/><span id="pnameerror" style="color: red;font-style:italic;"><form:errors path="RadiologicReport.pname"></form:errors></td>
-				                  <td><span class="err">*</span>Date:</td>
+				                  <td><span class="err">*</span> Date:</td>
 				                  <td><input type="text" class="input_txtbx1" id="datepicker"  name="date" /><br/><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="RadiologicReport.date"></form:errors></td>
-				                  <td><span class="err">*</span>I.D.#:</td>
+				                  <td><span class="err">*</span> I.D.#:</td>
 				                  <td><input type="text" class="input_txtbx1" id="num" name="id" onkeypress="return validate(event)";/><br/><span  id="numerror" style="color: red;font-style:italic;"><form:errors path="RadiologicReport.id"></form:errors></span></td>
-				                  <td><span class="err">*</span>Date Of Birth</td>
+				                  <td><span class="err">*</span> Date Of Birth</td>
 				                  <td><input type="text" class="input_txtbx1" id="datepicker1" name="dob" /><br/><span id="datepicker1error" style="color: red;font-style:italic;"><form:errors path="RadiologicReport.dob"></form:errors></td>
 				                </tr>
 				    </table>
@@ -1366,7 +1366,7 @@ $(function() {
                                
                         <table cellpadding="0" cellspacing="0" border="0">
 				               <tr class="row1">
-				               <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Views:
+				               <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Views:
 				                  	
 				                  		<select name="views1" class="input_cmbbx1">
 						                    <option selected="selected" value="A-P lower" >A-P lower</option>
@@ -2745,7 +2745,7 @@ $(function() {
                         
                         <table cellpadding="0" cellspacing="0" border="0">
 				               <tr class="row1">
-				                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Views:
+				                   <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Views:
 				                  		<select name="views2" class="input_cmbbx1">
 											<option selected="selected" value="A-P" >A-P</option>
 								
@@ -2821,7 +2821,7 @@ $(function() {
 				                 		<span id="foraminal2error" style="color:red"></span>
 				                	 </td>
 				                 	</tr>
-				                 	<tr class="row1">
+				                 	<tr class="row2">
 				             			<td valign="top" align="left" class="input_txt"> <input type="checkbox" name="osteoporosis_2" value="Osteoporosis" onclick="this.form.osteoporosis2.style.visibility = this.checked? 'visible' : 'hidden'"/> Osteoporosis
 				                 	 		<select name="osteoporosis_select2" class="input_cmbbx1" style="visibility:hidden" id="osteoporosis2">
 				                 	              
@@ -2843,7 +2843,7 @@ $(function() {
 				                 		<input type="checkbox" name="severe_22" value="Severe"> Severe
 				                 	    </td>
 				                </tr>
-				                <tr class="row2">
+				                <tr class="row1">
 				             
 				                	 <td class="input_txt" align="left"> <input type="checkbox" id="apexat_2"name="apexat_2" value="Apex at:" onclick="validate16(id);this.form.apexat2.style.visibility = this.checked? 'visible' : 'hidden'"/> Apex at:
 				                 		<input type="text" class="input_txtbx1" id="apexat2" onblur="return validate16(id);"name="apexat_text2" style="visibility:hidden"/>
@@ -2888,7 +2888,7 @@ $(function() {
                         <table cellpadding="0" cellspacing="0" border="0">
 				               <tr class="row1">
 				              
-				                <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Views:
+				                <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Views:
 				                  		<select name="views3" class="input_cmbbx1">
 											<option selected="selected" value="A-P" >A-P</option>
 											
@@ -3169,7 +3169,7 @@ $(function() {
                                
                         <table cellpadding="0" cellspacing="0" border="0">
 				               <tr class="row1">
-                						<td  width="150" valign="middle" align="left" class="input_txt"><span class="err">*</span>Views:
+                						<td  width="150" valign="middle" align="left" class="input_txt"><span class="err">*</span> Views:
                 							<select name="views1" class="input_cmbbx1">
 						                    <option value="A-P lower" <c:if test="${radio.views1=='A-P lower'}"><c:out value="selected"/></c:if>>A-P lower</option>
 						                     <option value="APOM" <c:if test="${radio.views1=='APOM'}"><c:out value="selected"/></c:if>>APOM</option>
@@ -3357,7 +3357,7 @@ $(function() {
                         
                         <table cellpadding="0" cellspacing="0" border="0">
 				               <tr class="row1">
-						                    <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Views:
+						                    <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Views:
                 							<select name="views2" class="input_cmbbx1">
 						                    <option value="A-P" <c:if test="${radio.views2=='A-P'}"><c:out value="selected"/></c:if>>A-P</option>
 						                    <option value="lateral"  <c:if test="${radio.views2=='lateral'}"><c:out value="selected"/></c:if>>L lateral</option>
@@ -3498,7 +3498,7 @@ $(function() {
                         
                         <table cellpadding="0" cellspacing="0" border="0">
 				               <tr class="row1">
-				              		 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Views:
+				              		 <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Views:
                 							<select name="views3" class="input_cmbbx1">
 						                    <option value="A-P" <c:if test="${radio.views3=='A-P'}"><c:out value="selected"/></c:if>>A-P</option>
 						                    <option value="L lateral"  <c:if test="${radio.views3=='L lateral'}"><c:out value="selected"/></c:if>>L lateral</option>
