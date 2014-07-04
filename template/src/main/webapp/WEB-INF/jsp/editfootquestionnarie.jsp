@@ -418,7 +418,7 @@ document.getElementById("securityerror").innerHTML=" ";
 	             
 	            </div>
           <div class="contentbox">
-	   <span class="err">* </span> Date <input type="text" name="date" class="input_txtbx1" id="datepicker" value="${footquestionnariedetails.date }"><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="Footquestionnarie.date"></form:errors></span>
+	   <span class="err">* </span> Date: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="date" class="input_txtbx1" id="datepicker" value="${footquestionnariedetails.date }"><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="Footquestionnarie.date"></form:errors></span>
 	    <br>
 	    <br>
 	    
@@ -432,9 +432,9 @@ document.getElementById("securityerror").innerHTML=" ";
 	    </br>
 	    </br>
 	       </p>
-	    Your Birth Date  <input type="text" class="input_txtbx1"  name="birthdate" id="datepicker1" value="${footquestionnariedetails.birthdate }"><span id="datepicker1error" style="color: red;font-style:italic;"></span>
+	    Your Birth Date:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" class="input_txtbx1"  name="birthdate" id="datepicker1" value="${footquestionnariedetails.birthdate }"><span id="datepicker1error" style="color: red;font-style:italic;"></span>
 	    <br><br>
-	   <span class="err">* </span>  Your Social Security Number <input type="text" name="security" id="security" class="input_txtbx1" maxlength="11" onkeypress="return validate(event)"; value="${footquestionnariedetails.security }">
+	   <span class="err">* </span>  Your Social Security Number: <input type="text" name="security" id="security" class="input_txtbx1" maxlength="11" onkeypress="return validate(event)"; value="${footquestionnariedetails.security }">
 	    <span id="securityerror" style="color: red;font-style:italic;"></span>
 	    <br>
 	    <br>

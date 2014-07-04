@@ -476,7 +476,7 @@ document.getElementById("securityerror").innerHTML=" ";
 	             
 	            </div>
           <div class="contentbox">
-	    <span class="err">* </span>Date <input type="text" name="date" id="datepicker"><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="Footquestionnarie.date"></form:errors></span>
+	    <span class="err">* </span>Date:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="date" id="datepicker"><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="Footquestionnarie.date"></form:errors></span>
 	    <br>
 	    <br>
 	    
@@ -490,10 +490,10 @@ document.getElementById("securityerror").innerHTML=" ";
 	    </br>
 	    </br>
 	       </p>
-	    Your Birth Date  <input type="text"  name="birthdate" id="datepicker1"><span id="datepicker1error" style="color: red;font-style:italic;"></span>
+	    Your Birth Date:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <input type="text"  name="birthdate" id="datepicker1"><span id="datepicker1error" style="color: red;font-style:italic;"></span>
 	    <br><br>
 	    <table>
-	    <td><span class="err">* </span>Your Social Security Number </td><td><input type="text" name="security" id="security" maxlength="11" onkeypress="return validate(event)";><span id="securityerror" style="color: red;font-style:italic;"> <div id="number"></span></td></div></table>
+	    <td><span class="err">* </span>Your Social Security Number: <input type="text" name="security" id="security" maxlength="11" onkeypress="return validate(event)";><span id="securityerror" style="color: red;font-style:italic;"> <div id="number"></span></td></div></table>
 	    <br>
 	    <br>
 	    <br>
