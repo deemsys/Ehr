@@ -126,7 +126,7 @@ document.getElementById("datepicker1error").innerHTML="";
 	return false;
 	}
 	
-	
+
 	document.getElementById("staffwitnesserror").innerHTML="";
 	if(document.getElementById("staffwitness").value=="")
 	{
@@ -134,6 +134,24 @@ document.getElementById("datepicker1error").innerHTML="";
 	
 	return false;
 	}
+
+	document.getElementById("staffwitnesserror").innerHTML="";
+    if(document.getElementById("staffwitness").value.length<4 || document.getElementById("printpname").value.length>=32)
+    {
+    	
+    	document.getElementById("staffwitnesserror").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    } 
+
+
+ 	if(document.getElementById("staffwitness").value.substring(0,1)==" ")
+	{
+	document.getElementById("staffwitnesserror").innerHTML="Initial space not allowed";
+	
+	return false;
+	}
+	
 	document.getElementById("datepicker11error").innerHTML="";
 var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 	
@@ -230,25 +248,25 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
                         <p id="mypar">Signature below is only acknowledgement that you have received this Notice of our Privacy Practices:</p>
                        
                         <tr class="row1">
-                        <td valign="middle" align="left" class="input_txt"><span class="err">*</span>PrintPatientname: </td>
+                        <td valign="middle" align="left" class="input_txt"><span class="err">* </span>PrintPatientname: </td>
 				                   <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="printpname" onInput="return validatename(id);" name="printpname" value="${name}"/>
 				                  	<br><span id="printpnameerror" style="color: red;font-style:italic;"><form:errors path="HippaPrivacy.printpname"></form:errors>
 				                  	</td>
 				                  	</tr>
 				                  	<tr class="row1">
-				                  	 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date: </td>
+				                  	 <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Date: </td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="datepicker1" name="printpdate" /><span id="datepicker1error" style="color: red;font-style:italic;"></span>
 				         </span></td>
 				         </tr>
 				         <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Signature Of parent or Legal Guardian: </td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Signature Of parent or Legal Guardian: </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="legalguardian" name="legalguardian" onInput="return validatesign();"/><span id="legalguardianerror" style="color: red;font-style:italic;" ></span>
 				                  	</tr>
 				                  	 <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Staff Witness: </td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Staff Witness: </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="staffwitness" name="staffwitness" onInput="return validatename(id);"/><span id="staffwitnesserror" style="color: red;font-style:italic;"></span>
 				                  	</tr>
@@ -291,27 +309,27 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
                         <p id="mypar">Signature below is only acknowledgement that you have received this Notice of our Privacy Practices:</p>
                        
                         <tr class="row1">
-                        <td valign="middle" align="left" width="200" class="input_txt"><span class="err">*</span>PrintPatientname: </td>
+                        <td valign="middle" align="left" width="200" class="input_txt"><span class="err">* </span>PrintPatientname: </td>
 				                   <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="printpname" name="printpname" value="${hippa.printpname}"/>
 				                  <br><span id="printpnameerror" style="color: red;font-style:italic;"><form:errors path="HippaPrivacy.printpname"></form:errors>
 				                  	</td>
 				                  	</tr>
 				                  	<tr class="row1">
-				                  	 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date: </td>
+				                  	 <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Date: </td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="datepicker1" name="printpdate" value="${hippa.printpdate}"/>
 				        <br><span id="datepicker1error" style="color: red;font-style:italic;" ><form:errors path="HippaPrivacy.printpdate"></form:errors></td>
 				         </tr>
 				         <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Signature Of parent or Legal Guardian: </td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Signature Of parent or Legal Guardian: </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="legalguardian" name="legalguardian" value="${hippa.legalguardian}"/>
 				                  	 <br><span id="legalguardianerror" style="color: red;font-style:italic;"><form:errors path="HippaPrivacy.legalguardian"></form:errors></span>
 				                  	
 				                  	</tr>
 				                  	 <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Staff Witness: </td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Staff Witness: </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="staffwitness" name="staffwitness" value="${hippa.staffwitness}"/>	
 				                <br>  <span id="staffwitnesserror" style="color: red;font-style:italic;"><form:errors path="HippaPrivacy.staffwitness"></form:errors></span>

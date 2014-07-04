@@ -86,7 +86,7 @@ document.getElementById("patientsignatureerror").innerHTML=" ";
 	
 	<script>
   $(function() {
-	  alert("iname");
+	 
 	$("#iname").on("keypress", function(e) {
 		if (e.which === 32 && !this.value.length)
 	        e.preventDefault();
@@ -101,7 +101,7 @@ document.getElementById("patientsignatureerror").innerHTML=" ";
 	});	
 
   $(function() {
-	alert("hi");
+	
 	  $("#patientsignature").on("keypress", function(e) {
 		if (e.which === 32 && !this.value.length)
 	        e.preventDefault();
@@ -183,7 +183,7 @@ function validatename1(id){
   				<tr>
     				<td align="left" valign="top" width="100%" style="padding-right:25px;">
                         
-                        <table cellpadding="0" cellspacing="0" border="0" width="50%">
+                        <table cellpadding="0" cellspacing="0" border="0" width="70%">
                         <tr>
                         <div align="justify">
 				                <p id="mypar">&nbsp;I, <input type="text" class="input_txtbx1" name="name" id="iname" onInput="return validatename(id)"; /><span id="inameerror" style="color: red;font-style:italic;"><form:errors path="MedicalRecords.name"></form:errors></span>
@@ -192,10 +192,13 @@ function validatename1(id){
                                 Sheffield Village, Ohio 44035<br>
                                 Fax 440-934-3107  </p>
                          <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Signature:  </td>
-				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="patientsignature" onInput="return validatename1(id)"; name="patientsignature" /><span id="patientsignatureerror" style="color: red;font-style:italic;"><form:errors path="MedicalRecords.patientsignature"></form:errors></span>
+				                  <td valign="top" align="left" class="input_txt"><span class="err"> * </span>Patient Signature:  </td>
+				                  <td valign="middle" align="left" class="input_txt">
+				                  	<input type="text" class="input_txtbx1" id="patientsignature" onInput="return validatename1(id)"; name="patientsignature" />
+				                  	<br/>
+				                  	<span id="patientsignatureerror" style="color: red;font-style:italic;"><form:errors path="MedicalRecords.patientsignature"></form:errors></span>
 				                  	</td>
+				                  	
 				                  	</tr>
 				                  	</table>
 				                  	</c:when>

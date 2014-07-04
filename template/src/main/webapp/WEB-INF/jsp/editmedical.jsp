@@ -194,7 +194,7 @@ function validatename1(id){
   				<tr>
     				<td align="left" valign="top" width="100%" style="padding-right:25px;">
                         
-                        <table cellpadding="0" cellspacing="0" border="0" width="50%">
+                        <table cellpadding="0" cellspacing="0" border="0" width="70%">
                         <c:set value="${MedicalRecordsForm.medicalDetails[0]}" var="Medicaldetails"> </c:set>
                         <tr>
                         <div align="justify">
@@ -205,9 +205,10 @@ function validatename1(id){
                                 Sheffield Village, Ohio 44035<br>
                                 Fax 440-934-3107  </p>
                          <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Signature:  </td>
+				                  <td valign="middle" align="left" class="input_txt" width="30%"><span class="err"> * </span>Patient Signature:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="patientsignature" name="patientsignature" onInput="return validatename1(id)"; " value="${Medicaldetails.patientsignature}"/><span id="patientsignatureerror" style="color: red;font-style:italic;"><form:errors path="MedicalRecords.patientsignature"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="patientsignature" name="patientsignature" onInput="return validatename1(id)"; " value="${Medicaldetails.patientsignature}"/><br/>
+				                  	<span id="patientsignatureerror" style="color: red;font-style:italic;"><form:errors path="MedicalRecords.patientsignature"></form:errors></span>
 				                  	</td>
 				                  	</tr>
 				                  	</table>

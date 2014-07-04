@@ -164,38 +164,25 @@ function validatesign(id)
   <script>
 
 function checkSubmit()
-
-{                       
+{   
 
 	document.getElementById("patientnameerror").innerHTML="";
+	
 	if(document.getElementById("patientname").value=="")
 	{
 	document.getElementById("patientnameerror").innerHTML="Required Field Should not be Empty";
 	
 	return false;
 	}
-	/* document.getElementById("datepickererror").innerHTML="";
-	if(document.getElementById("datepicker").value=="")
-	{
-	document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
 	
-	return false;
-	} */
-	document.getElementById("patientsignerror").innerHTML="";
-	if(document.getElementById("patientsign").value=="")
-	{
-	document.getElementById("patientsignerror").innerHTML="Required Field Should not be Empty";
-	
-	return false;
-	}
-	document.getElementById("patientsignerror").innerHTML="";
-    if(document.getElementById("patientsign").value.length<4 || document.getElementById("patientsign").value.length>=32)
+	document.getElementById("patientnameerror").innerHTML="";
+    if(document.getElementById("patientname").value.length<4 || document.getElementById("patientname").value.length>=32)
     {
     	
-    	document.getElementById("patientsignerror").innerHTML="Name should be min 4 and max 32";
+    	document.getElementById("patientnameerror").innerHTML="Name should be min 4 and max 32";
     	
         return false;
-    } 
+    }
 
 
  	if(document.getElementById("patientsign").value.substring(0,1)==" ")
@@ -204,14 +191,40 @@ function checkSubmit()
 	
 	return false;
 	}
-	document.getElementById("datepicker2error").innerHTML="";
+ 	
+	document.getElementById("patientsignerror").innerHTML="";
+	
+	if(document.getElementById("patientsign").value=="")
+	{
+	document.getElementById("patientsignerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	document.getElementById("patientsignerror").innerHTML="";
+    if(document.getElementById("patientsign").value.length<4 || document.getElementById("patientsign").value.length>=32)
+    {
+    	
+    	document.getElementById("patientsignerror").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
+
+
+ 	if(document.getElementById("patientsign").value.substring(0,1)==" ")
+	{
+	document.getElementById("patientsignerror").innerHTML="Initial space not allowed";
+	
+	return false;
+	}
+	 document.getElementById("datepicker2error").innerHTML="";
 	if(document.getElementById("datepicker2").value=="")
 	{
 	document.getElementById("datepicker2error").innerHTML="Required Field Should not be Empty";
 	
 	return false;
 	} 
-	document.getElementById("datepicker2error").innerHTML="";
+document.getElementById("datepicker2error").innerHTML="";
 	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		if(document.getElementById("datepicker2").value.match(datechk)==null)
 	    {
@@ -219,8 +232,6 @@ function checkSubmit()
 	    	
 	        return false;
 	    }
-	
-	
 	document.getElementById("parentnameerror").innerHTML="";
 	if(document.getElementById("parentname").value=="")
 	{
@@ -269,14 +280,14 @@ function checkSubmit()
 	
 	return false;
 	}
-	
-document.getElementById("datepicker3error").innerHTML="";
+
+	document.getElementById("datepicker3error").innerHTML="";
 	if(document.getElementById("datepicker3").value=="")
 	{
 	document.getElementById("datepicker3error").innerHTML="Required Field Should not be Empty";
 	return false;
-	}
-	document.getElementById("datepicker3error").innerHTML="";
+	} 
+document.getElementById("datepicker3error").innerHTML="";
 	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		if(document.getElementById("datepicker3").value.match(datechk)==null)
 	    {
@@ -307,7 +318,7 @@ document.getElementById("datepicker3error").innerHTML="";
 	
 	return false;
 	}
-	 document.getElementById("datepicker4error").innerHTML="";
+	document.getElementById("datepicker4error").innerHTML="";
 	if(document.getElementById("datepicker4").value=="")
 	{
 	document.getElementById("datepicker4error").innerHTML="Required Field Should not be Empty";
@@ -321,6 +332,13 @@ document.getElementById("datepicker3error").innerHTML="";
 	    	
 	        return false;
 	    }
+		
+		if(document.getElementById("representative").value.substring(0,1)==" ")
+		{
+		document.getElementById("representativeerror").innerHTML="Initial space not allowed";
+		
+		return false;
+		}
 		document.getElementById("datepicker5error").innerHTML="";
 		if(document.getElementById("datepicker4").value=="")
 		{
@@ -336,6 +354,12 @@ document.getElementById("datepicker3error").innerHTML="";
 		        return false;
 		    }
 			
+			if(document.getElementById("representative").value.substring(0,1)==" ")
+			{
+			document.getElementById("representativeerror").innerHTML="Initial space not allowed";
+			
+			return false;
+			}
 			document.getElementById("datepicker6error").innerHTML="";
 			if(document.getElementById("datepicker6").value=="")
 			{
@@ -350,9 +374,7 @@ document.getElementById("datepicker3error").innerHTML="";
 			    	
 			        return false;
 			    }
-		
-	}
-  </script>
+	}  </script>
 </head>
 <body>
 <div id="right_content">
@@ -380,7 +402,7 @@ document.getElementById("datepicker3error").innerHTML="";
   				<tr>
     				<td align="left" valign="top" width="100%" style="padding-right:25px;">
                         
-                        <table cellpadding="0" cellspacing="0" border="0" width="50%">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%">
                         <tr>
                         <div align="justify">
                         <input type="hidden" class="input_txtbx1" id="inp_id" value="${assignmentdetails.assignment_no}" name="assignment_no" />
@@ -412,46 +434,46 @@ and exclusively in the name of Perry Chiropractic and Therapy Center, such sums 
                        <p id="mypar">This Agreement shall not be modified or revoked without the mutual written consent of PCTC and claimant. </p>
                        <p id="mypar">Claimant agrees that each and every provision of this Agreement is reasonable necessary for the protection of the rights and interests of PCTC and claimant. Should any provision of this Agreement be found to be invalid, illegal or unenforceable, or for any reason cease to be binding on any party hereto, all other portions and provisions of this Agreement shall, nevertheless, remain in full force and effect.</p>
                        
-                       <p id="mypar"><b>*NOTE TO ALL PAYERS HEREUNDER, FAILURE TO FOLLOW THE EXPRESS WRITTEN INSTRUCTION OF THE CLAIMANT HEREUNDER MAY RESULT IN A BREACH OF THIS AGREEMENT. A BREACH OF THIS AGREEMENT BY THE CLAIMANT HEREUNDER BY AND THROUGH YOUR ACTIONS IS AN INTENTIONAL INTERFERENCE WITH THIS CONTRACT AND PCTC WILL PURSUE ANY PAYER FOR THAT INTERFERENCE.</b></p>
+                       <p id="mypar"><b>* NOTE TO ALL PAYERS HEREUNDER, FAILURE TO FOLLOW THE EXPRESS WRITTEN INSTRUCTION OF THE CLAIMANT HEREUNDER MAY RESULT IN A BREACH OF THIS AGREEMENT. A BREACH OF THIS AGREEMENT BY THE CLAIMANT HEREUNDER BY AND THROUGH YOUR ACTIONS IS AN INTENTIONAL INTERFERENCE WITH THIS CONTRACT AND PCTC WILL PURSUE ANY PAYER FOR THAT INTERFERENCE.</b></p>
                        
                        </tr>
                        <tr class="row1">
                        
-				                  <td valign="middle" align="left" class="input_txt"><span >*</span>PatientName: </td>
+				                  <td valign="top" align="left" class="input_txt"><span class="err">*  </span>PatientName: </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                
 				                  	<input type="text" class="input_txtbx1" id="patientname" name="patientname" value="${assignmentdetails.patientname}" onInput="return validatename(id);"/><br><span id="patientnameerror" style="color: red;font-style:italic;"><form:errors path="Assignment.patientname"></form:errors>
-				                  		<%-- <td valign="middle" width="50%"><span class="err">*</span>Date</td>
+				                  		<%-- <td valign="top" width="50%"><span class="err">* </span>Date</td>
 				                  			<td valign="top"><input type="text" class="input_txtbx1" id="datepicker" name="patientdate" value="${assignmentdetails.patientdate}" /><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="Assignment.patientdate"></form:errors></span></td> --%>
 				                  	</tr>
 				                  	<tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Patient Signature:  </td>
+				                  <td valign="top" align="left" class="input_txt"><span class="err">*  </span>Patient Signature:  </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="patientsign" name="patientsign" value="${assignmentdetails.patientsign}" onInput="return validatesign(id);"/><span id="patientsignerror" style="color: red;font-style:italic;"><form:errors path="Assignment.patientsign"></form:errors>
-				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date:  </td>
+				                  	<td valign="top" align="left" class="input_txt" width="10%"><span class="err">* </span>Date:  </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="datepicker2" name="patientdate" value="${assignmentdetails.patientdate}"/><br><span id="datepicker2error" style="color: red;font-style:italic;"><form:errors path="Assignment.patientdate"></form:errors>
 				                  	</tr> 
 				                  	
 				                  	<tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name of Custodial Parent or Legal Guardian :  </td>
+				                  <td valign="top" align="left" class="input_txt" ><span class="err">* </span>Name of Custodial Parent or Legal Guardian:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="parentname" name="parentname" value="${assignmentdetails.parentname}" onInput="return validatename(id);"/><br><span id="parentnameerror" style="color: red;font-style:italic;"><form:errors path="Assignment.parentname"></form:errors>
 				                  	</tr> 
 				                  	<tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Parent/Guardian Signature:  </td>
+				                  <td valign="top" align="left" class="input_txt"><span class="err">* </span>Parent/Guardian Signature:  </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="parentsign" name="parentsign" value="${assignmentdetails.parentsign}" onInput="return validatesign(id);"/><span id="parentsignerror" style="color: red;font-style:italic;"><form:errors path="Assignment.parentsign"></form:errors>
-				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date:  </td>
+				                  	<td valign="top" align="left" class="input_txt"><span class="err">* </span>Date:  </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="datepicker3" name="parentdate" value="${assignmentdetails.parentdate}"/><br><span id="datepicker3error" style="color: red;font-style:italic;"><form:errors path="Assignment.parentdate"></form:errors>
 				                  	</tr> 
 				                  	
 				                  	<tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Perry Chiropractic and Therapy Center Representative:  </td>
+				                  <td valign="top" align="left" class="input_txt"><span class="err">* </span>Perry Chiropractic and Therapy Center Representative:  </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="representative" name="representative" value="${assignmentdetails.representative}" onInput="return validatename(id);" /><span id="representativeerror" style="color: red;font-style:italic;"><form:errors path="Assignment.representative"></form:errors>
-				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date:  </td>
+				                  	<td valign="top" align="left" class="input_txt"><span class="err">* </span>Date:  </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="datepicker4" name="representativedate" value="${assignmentdetails.representativedate}"/><br><span id="datepicker4error" style="color: red;font-style:italic;"><form:errors path="Assignment.representativedate"></form:errors>
 				                  	</tr>

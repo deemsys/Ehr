@@ -148,12 +148,12 @@ function validatename(id)
 	<p id="mypar">The consultation and examination were offered without obligation to accept the appointment, without obligation to respond immediately and was accepted by me willingly with regard to seeking treatment for injuries I sustained in an automobile accident or work related accident.</p>
                         </div>
                         <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date: </td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err"> * </span>Date: </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="datepicker" name="date" /><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="screeningAuthz.date"></form:errors></span>
 				                  	</tr>
 				                  	<tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Name:  </td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err"> * </span>Name:  </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="name" name="name" onInput="return validatename(id);" value="${name}"/><span id="nameerror" style="color: red;font-style:italic;"><form:errors path="screeningAuthz.name"></form:errors></span>
 				                  	</tr>
