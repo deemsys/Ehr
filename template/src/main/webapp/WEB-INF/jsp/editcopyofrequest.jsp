@@ -253,35 +253,35 @@ return false;
           <table cellpadding="0" cellspacing="0" border="0" width="70%" align="center">
           <tr height="30">
           <input type="hidden" class="input_txtbx1" id="inp_id" value="${copyofrequest.copyofrequestno}" name="copyofrequestno" />
-          <td><span class="err">*</span>Patients Attorney or Insurance Adjuster: </td>
+          <td><span class="err">*</span> Patients Attorney or Insurance Adjuster: </td>
           <td><input type="text"  class="input_txtbx1" name="patient" size="40" value="${copyofrequest.patient}" id="patient" onInput="return validatename(id)";><span class="err" id="patienterror"  style="color: red;font-style:italic;"><form:errors path="Copyofrequest.patient"></form:errors></span></td>
           </tr>   
           <tr height="30">
-          <td><span class="err"></span>Address: </td>
+          <td><span class="err">&nbsp;</span>Address: </td>
           <td><textarea rows="4" cols="43"  class="input_txtarea" name="address" id="address">${copyofrequest.address}</textarea><span class="err"><form:errors path="Copyofrequest.address"></form:errors></span></td>
           </tr>
           <tr height="30">
-          <td>Regarding: </td>
+          <td>&nbsp;Regarding: </td>
           <td><input type="text" class="input_txtbx1" name="regarding" id="regarding" size="40" value="${copyofrequest.regarding }" onInput="return validatename(id)";><span class="err" id="regardingerror"></span></td>
           </tr>
           <tr height="30">
-          <td><span class="err">*</span>Date of Accident: </td>
+          <td><span class="err">*</span> Date of Accident: </td>
           <td><input type="text"  class="input_txtbx1" name="dateofaccident" id="datepicker" size="40" value="${copyofrequest.dateofaccident}"><span class="err" id="datepickererror"></span></td>
           </tr>
           <br>
           <tr height="30">
-          <td><span class="err">*</span>Claim Number: </td>
+          <td><span class="err">*</span> Claim Number: </td>
           <td><input type="text" class="input_txtbx1" name="claimnumber" onInput="return validateusername()";size="40" value="${copyofrequest.claimnumber }" id="claimnumber"><span class="err" id="claimnumbererror"  style="color: red;font-style:italic;"><form:errors path="Copyofrequest.claimnumber"></form:errors></span></td>
           </tr>
           <tr height="30">
-          <td>Today's Date:  </td>
+          <td>&nbsp;Today's Date:  </td>
           <td><input type="text" class="input_txtbx1" name="todaydate" id="datepicker1" size="40" value="${copyofrequest.todaydate }"><span class="err" id="datepicker1error"></span></td>
           </tr>
           </table>
           <table width="85">
           <tr height="30">
-          <td width="40">Dear  </td>
-          <td><span class="err" id="dearerror"  style="color: red;font-style:italic;">*</span><input type="text"  class="input_txtbx1" name="dear"  size="40" value="${copyofrequest.dear}" id="dear" onInput="return validatename(id)";></td>
+          <td width="40">&nbsp;Dear  </td>
+          <td><span class="err" id="dearerror"  style="color: red;font-style:italic;">*</span>&nbsp;<input type="text"  class="input_txtbx1" name="dear"  size="40" value="${copyofrequest.dear}" id="dear" onInput="return validatename(id)";></td>
           </tr>
           </table>
           <br/>

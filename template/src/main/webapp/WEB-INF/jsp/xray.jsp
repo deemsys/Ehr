@@ -198,7 +198,7 @@ function doAjaxPost() {
 <br><br><br>
  <table cellpadding="0" cellspacing="0" border="0" width="100%">
 	            <tr >
-	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">*</span>Please enter a Patient User Name</td>
+	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">*</span> Please enter Patient UserName</td>
 				 <td width="20"></td> <td valign="top" align="left" class="input_txt" width="200">
 				   <input type="text" class="input_txtbx1" id="username" name="username" /><br/>
 				  </td>
@@ -398,26 +398,26 @@ function openWindow(h, w, url) {
  </table><br>
  <table cellpadding="0" cellspacing="0" border="0" width="100%">
  <tr><td>
- <span class="err">*</span>I <input type="text" class="input_txtbx1" name="name" id="name" onInput="return validatename(id)";><span class="err" id="nameerror"><form:errors path="Xray.name"></form:errors></span> do hereby agree to return X-rays that I have borrowed from the Chiropractic Therapy Center, I understand that I have fourteen (14) days to do so.I fully agree that in the event that I do not return X-rays, I will be billed $50.00.  	  
+ <span class="err">*</span>  I <input type="text" class="input_txtbx1" name="name" id="name" onInput="return validatename(id)";><span class="err" id="nameerror"><form:errors path="Xray.name"></form:errors></span> do hereby agree to return X-rays that I have borrowed from the Chiropractic Therapy Center, I understand that I have fourteen (14) days to do so.I fully agree that in the event that I do not return X-rays, I will be billed $50.00.  	  
        </td></tr></table><br><br>
  
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="100"><span class="err"></span>Date Borrowed</td>
+              <td height="25" width="100"><span class="err">&nbsp;</span> Date Borrowed</td>
               <td ><input type="text" class="input_txtbx1" name="date" id="datepicker" /><span class="err" id="dateerror"><form:errors path="Xray.date"></form:errors></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="100"><span class="err"></span>Date Due</td>
+              <td height="25" width="100"><span class="err">&nbsp;</span> Date Due</td>
               <td ><input type="text" class="input_txtbx1" name="date1" id="datepicker1" /><span class="err" id="date1error"><form:errors path="Xray.date1"></form:errors></td>
               </tr>
               </table><br><br>
              <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="100"><span class="err">*</span>Date </td>
+              <td height="25" width="100"><span class="err">*</span> Date </td>
               <td width="70"><input type="text" class="input_txtbx1" name="date2" id="datepicker2" /><span class="err" id="datepickererror"><form:errors path="Xray.date2"></form:errors></td>
-              <td align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="err">*</span>Signature:</td>
+              <td align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="err">*</span> Signature:</td>
              <td width="50"> <input type="text" class="input_txtbx1" name="sign" id="sign" onInput="return validatename(id)";/><span class="err" id="signerror"><form:errors path="Xray.sign"></form:errors></td>
               
               </tr>

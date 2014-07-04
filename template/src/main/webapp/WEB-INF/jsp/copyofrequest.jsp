@@ -244,7 +244,7 @@ function doAjaxPost() {
 <br>
  <table cellpadding="0" cellspacing="0" border="0" width="100%">
  <tr >
-	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">*</span>Please enter a Patient User Name</td>
+	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">*</span> Please enter Patient UserName</td>
 				 <td width="20"></td> <td valign="top" align="left" class="input_txt" width="200">
 				   <input type="text" class="input_txtbx1" id="username" name="username" /><br/>
 				  </td>
@@ -486,34 +486,34 @@ return false;
 	            <center> <B style="font-size:18px">Requesting Fee Reduction from Attorney/Adjuster</B> </center><br/>
           <table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
           <tr height="30">
-          <td><span class="err">*</span>Patients Attorney or Insurance Adjuster: </td>
+          <td><span class="err">*</span> Patients Attorney or Insurance Adjuster: </td>
           <td><input type="text"  class="input_txtbx1" name="patient" size="40" id="patient" onInput="return validatename(id)";><span class="err" id="patienterror"  style="color: red;font-style:italic;" ><form:errors path="Copyofrequest.patient"></form:errors></span></td>
           </tr>   
           <tr height="30">
-          <td><span class="err"></span>Address: </td>
+          <td><span class="err">&nbsp;</span>Address: </td>
           <td><textarea rows="4" cols="43"  class="input_txtarea" name="address" id="address"></textarea><span class="err"><form:errors path="Copyofrequest.address"></form:errors></span></td>
           </tr>
           <tr height="30">
-          <td>Regarding: </td>
+          <td>&nbsp;Regarding: </td>
           <td><input type="text"  class="input_txtbx1" name="regarding" id="regarding" size="40" onInput="return validatename(id)";><span class="err" id="regardingerror"></span></td>
           </tr>
           <tr height="30">
-          <td><span class="err">*</span>Date of Accident: </td>
+          <td><span class="err">*</span> Date of Accident: </td>
           <td><input type="text" class="input_txtbx1" name="dateofaccident" id="datepicker" size="40"><span class="err" id="datepickererror"  style="color: red;font-style:italic;"><form:errors path="Copyofrequest.dateofaccident"></form:errors></span></td>
           </tr>
           <tr height="30">
-          <td><span class="err">*</span>Claim Number: </td>
+          <td><span class="err">*</span> Claim Number: </td>
           <td><input type="text" class="input_txtbx1" name="claimnumber" id="claimnumber" onInput="return validateusername()";  size="40" id="claimnumber"><span class="err" id="claimnumbererror"  style="color: red;font-style:italic;"><form:errors path="Copyofrequest.claimnumber"></form:errors></span></td>
           </tr>
           <tr height="30">
-          <td>Today's Date:  </td>
+          <td>&nbsp;Today's Date:  </td>
           <td><input type="text"  class="input_txtbx1" name="todaydate" id="datepicker1" size="40"><span class="err" id="datepicker1error"></span></td>
           </tr>
           </table>
           <table width="85">
           <tr height="30">
-          <td width="40">Dear  </td>
-          <td><span class="err">*</span><input type="text"  class="input_txtbx1" name="dear"  size="40" id="dear" onInput="return validatename(id)";><span class="err" id="dearerror"><form:errors path="Copyofrequest.dear"></form:errors></span></td>
+          <td width="40">&nbsp;Dear  </td>
+          <td><span class="err">*</span>&nbsp;<input type="text"  class="input_txtbx1" name="dear"  size="40" id="dear" onInput="return validatename(id)";><span class="err" id="dearerror"><form:errors path="Copyofrequest.dear"></form:errors></span></td>
           </tr>
           </table>
           <br/>

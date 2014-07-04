@@ -237,7 +237,7 @@ function doAjaxPost() {
 <br>
  <table cellpadding="0" cellspacing="0" border="0" width="100%">
  <tr >
-	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">*</span>Please enter a Patient User Name</td>
+	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">*</span> Please enter Patient UserName</td>
 				 <td width="20"></td> <td valign="top" align="left" class="input_txt" width="200">
 				   <input type="text" class="input_txtbx1" id="username" name="username" /><br/>
 				  </td>
@@ -441,47 +441,47 @@ function openWindow(h, w, url) {
               </table><br>
                 <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr ><td width="400"></td>
-              <td height="25" width="50"><span class="err">*</span>Date:</td>
+              <td height="25" width="50"><span class="err">*</span> Date:</td>
               <td ><input type="text" class="input_txtbx1" name="date" id="datepicker"  /><span class="err" id="datepickererror"><form:errors path="Formbill.date"></form:errors></span></td>
               </tr>
               </table><br>
             
                 <table align="center" cellpadding="0" cellspacing="0" border="0"   width="100%"  ">
               <tr >
-             <td height="25" width="40%"><span class="err">*</span>Insurance Company:</td>
+             <td height="25" width="40%"><span class="err">*</span> Insurance Company:</td>
               <td ><input type="text" class="input_txtbx1" name="insurance" id="insurance" onInput="return validatename(id)";/><span class="err" id="insuranceerror"><form:errors path="Formbill.insurance"></form:errors></span></td>
               </tr>
               </table>
               <br>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="40%"><span class="err"></span>Address:</td>
+              <td height="25" width="40%"><span class="err">&nbsp;</span> Address:</td>
               <td ><textarea rows="3" cols="28"  name="address1" class="input_txtarea" id="address1"/></textarea><span class="err"><form:errors path="Formbill.address1"></form:errors></span></td>
              </tr>
               </table>
              
                <table align="center" cellpadding="0" cellspacing="0" border="0"   width="100%"  ">
               <tr ><br>
-             <td height="25" width="40%"><span class="err">*</span>Name Of Attorney:</td>
+             <td height="25" width="40%"><span class="err">*</span> Name Of Attorney:</td>
               <td ><input type="text" class="input_txtbx1" name="name" id="name" onInput="return validatename(id)";/><span class="err" id="nameerror"><form:errors path="Formbill.name"></form:errors></span></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="40%"><span class="err"></span>Address:</td>
+              <td height="25" width="40%"><span class="err">&nbsp;</span> Address:</td>
               <td ><textarea rows="3" cols="28" class= "input_txtarea" name="address3" id="address3"/></textarea><span class="err"><form:errors path="Formbill.address3"></form:errors></span></td>
              </tr>
               </table>
               
                 <table align="center" cellpadding="0" cellspacing="0" border="0"   width="100%"  ">
               <tr >
-             <td height="25" width="40%"><span class="err">*</span>Patient Name</td>
+             <td height="25" width="40%"><span class="err">*</span> Patient Name</td>
               <td ><input type="text" class="input_txtbx1" name="patientsname" id="patientsname" onInput="return validatename(id)";/><span class="err" id="pnameerror"><form:errors path="Formbill.patientsname"></form:errors></span></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="40%"><span class="err"></span>Address:</td>
+              <td height="25" width="40%"><span class="err">&nbsp;</span> Address:</td>
               <td ><textarea rows="3" cols="28"   class="input_txtarea" name="address5" id="address5"/></textarea><span class="err"><form:errors path="Formbill.address5"></form:errors></span></td>
              </tr>
               </table>
@@ -537,46 +537,46 @@ function openWindow(h, w, url) {
               </table><br>
                 <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr ><td width="400"></td>
-              <td height="25" width="50"><span class="err">*</span>Date:</td>
+              <td height="25" width="50"><span class="err">*</span> Date:</td>
               <td ><input type="hidden" name="formid" value="${form.formid }"><input type="text" class="input_txtbx1" name="date" id="datepicker"  value="${form.date }" /><span class="err"><form:errors path="Formbill.date"></form:errors></span></td>
               </tr>
               </table><br>
             
                 <table align="center" cellpadding="0" cellspacing="0" border="0"   width="100%"  ">
               <tr >
-             <td height="25" width="120"><span class="err">*</span>Insurance Company:</td>
+             <td height="25" width="120"><span class="err">*</span> Insurance Company:</td>
               <td ><input type="text" class="input_txtbx1" name="insurance" id="insurance" value="${form.insurance }" /><span class="err"><form:errors path="Formbill.insurance"></form:errors></span></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="120"><span class="err"></span>Address:</td>
+              <td height="25" width="120"><span class="err">&nbsp;</span> Address:</td>
               <td ><textarea rows="" cols="" name="address1" id="address1" style="width: 162px; height: 62px" >${form.address1}</textarea><span class="err"><form:errors path="Formbill.address1"></form:errors></span></td>
              </tr>
               </table>
              
                <table align="center" cellpadding="0" cellspacing="0" border="0"   width="100%"  ">
               <tr ><br>
-             <td height="25" width="120"><span class="err">*</span>Name Of Attorney:</td>
+             <td height="25" width="120"><span class="err">*</span> Name Of Attorney:</td>
               <td ><input type="text" class="input_txtbx1" name="name" id="name" value="${form.name}"/><span class="err"><form:errors path="Formbill.name"></form:errors></span></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="120"><span class="err"></span>Address:</td>
+              <td height="25" width="120"><span class="err">&nbsp;</span> Address:</td>
               <td ><textarea rows="" cols="" name="address3" id="address3" style="width: 162px; height: 62px" >${form.address3}</textarea><span class="err"><form:errors path="Formbill.address3"></form:errors></span></td>
              </tr>
               </table>
              
                 <table align="center" cellpadding="0" cellspacing="0" border="0"   width="100%"  ">
               <tr >
-             <td height="25" width="120"><span class="err">*</span>Patient Name</td>
+             <td height="25" width="120"><span class="err">*</span> Patient Name</td>
               <td ><input type="text" class="input_txtbx1" name="patientsname" id="patientsname" value="${form.patientsname}"/><span class="err"><form:errors path="Formbill.patientsname"></form:errors></span></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="120"><span class="err"></span>Address:</td>
+              <td height="25" width="120"><span class="err">&nbsp;</span> Address:</td>
               <td ><textarea rows="" cols="" name="address5" id="address5" style="width: 162px; height: 62px" >${form.address5}</textarea><span class="err"><form:errors path="Formbill.address5"></form:errors></span></td>
              </tr>
               </table>
