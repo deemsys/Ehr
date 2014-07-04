@@ -217,7 +217,7 @@ document.getElementById("insure_comperror").innerHTML=" ";
 	    if(document.getElementById("insure_comp").value.length<4 || document.getElementById("insure_comp").value.length>=32)
 	    {
 	    	
-	    	document.getElementById("insure_comperror").innerHTML="Name should be min 4 and max 32";
+	    	document.getElementById("insure_comperror").innerHTML="Name should be of length 4 to 32";
 	    	
 	        return false;
 	    }
@@ -232,7 +232,7 @@ document.getElementById("insure_comperror").innerHTML=" ";
     if(document.getElementById("addr").value.length<4 || document.getElementById("addr").value.length>=32)
     {
     	
-    	document.getElementById("addrerror").innerHTML="Address should be min 4 and max 32";
+    	document.getElementById("addrerror").innerHTML="Address should be of length 4 to 32";
     	
         return false;
     }
@@ -247,7 +247,7 @@ document.getElementById("insure_comperror").innerHTML=" ";
     if(document.getElementById("pat_name").value.length<4 || document.getElementById("pat_name").value.length>=32)
     {
     	
-    	document.getElementById("pat_nameerror").innerHTML="Name should be min 4 and max 32";
+    	document.getElementById("pat_nameerror").innerHTML="Name should be of length 4 to 32";
     	
         return false;
     }
@@ -301,7 +301,7 @@ document.getElementById("insure_comperror").innerHTML=" ";
     if(document.getElementById("agentname").value.length<4 || document.getElementById("agentname").value.length>=32)
     {
     	
-    	document.getElementById("agentnameerror").innerHTML="Name should be min 4 and max 32";
+    	document.getElementById("agentnameerror").innerHTML="Name should be of length 4 to 32";
     	
         return false;
     }
@@ -331,7 +331,7 @@ var mail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     if(document.getElementById("name_of_clinic").value.length<4 || document.getElementById("name_of_clinic").value.length>=32)
     {
     	
-    	document.getElementById("name_of_clinicerror").innerHTML="Name should be min 4 and max 32";
+    	document.getElementById("name_of_clinicerror").innerHTML="Name should be of length 4 to 32";
     	
         return false;
     }
@@ -347,7 +347,7 @@ var mail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     if(document.getElementById("pat").value.length<4 || document.getElementById("pat").value.length>=32)
     {
     	
-    	document.getElementById("paterror").innerHTML="Name should be min 4 and max 32";
+    	document.getElementById("paterror").innerHTML="Name should be of length 4 to 32";
     	
         return false;
     }
@@ -362,7 +362,7 @@ var mail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     if(document.getElementById("authorized").value.length<4 || document.getElementById("authorized").value.length>=32)
     {
     	
-    	document.getElementById("authorizederror").innerHTML="Name should be min 4 and max 32";
+    	document.getElementById("authorizederror").innerHTML="Name should be of length 4 to 32";
     	
         return false;
     }
@@ -411,12 +411,12 @@ $(function() {
                
               <tr class="row1">
               <c:set value="${insuranceplanform.insuranceplan[0]}" var="Insuranceplan"> </c:set>
-              <td width="100%"><span class="err">*</span><input type="text" class="input_txtbx1" name="insure_comp" onInput="return validatename()"; id="insure_comp" placeholder="Name of Insurance Company" value="${Insuranceplan.insure_comp}" /> <span id="insure_comperror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.insure_comp"></form:errors> </td>
+              <td width="100%"><span class="err">* </span><input type="text" class="input_txtbx1" name="insure_comp" onInput="return validatename()"; id="insure_comp" placeholder="Name of Insurance Company" value="${Insuranceplan.insure_comp}" /><br> <span id="insure_comperror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.insure_comp"></form:errors> </td>
             	 <input type="hidden" class="input_txtbx1" id="inp_id" value="${Insuranceplan.no}" name="no" />
               </tr>
               <tr class="row1"> 
               <td width="100%">
-              <span class="err">*</span><input type="text" class="input_txtbx1" name="addr" id="addr" placeholder="Address" value="${Insuranceplan.addr}"/><span id="addrerror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.addr"></form:errors> </td>
+              <span class="err">* </span><input type="text" class="input_txtbx1" name="addr" id="addr" placeholder="Address" value="${Insuranceplan.addr}"/><br><span id="addrerror" style="color: red;font-style:italic;"></span><form:errors path="Insuranceplan.addr"></form:errors> </td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -425,13 +425,13 @@ $(function() {
 		BENEFITS FOR ACCIDENT</p></tr></table>
 		<table cellpadding="0" cellspacing="0" border="0" width="100%">
 		<tr class="row1">
-        <td ><span class="err">*</span><input type="text" class="input_txtbx1" onInput="return validateusername2()"; name="pat_name" id="pat_name" placeholder="Patient's Name" value="${Insuranceplan.pat_name}"/><span id="pat_nameerror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.pat_name"></form:errors> </td>
+        <td ><span class="err">* </span><input type="text" class="input_txtbx1" onInput="return validateusername2()"; name="pat_name" id="pat_name" placeholder="Patient's Name" value="${Insuranceplan.pat_name}"/><br><span id="pat_nameerror" style="color: red;font-style:italic;"></span><form:errors path="Insuranceplan.pat_name"></form:errors> </td>
         </tr>
         <tr class="row1">
-        <td ><span class="err">*</span><input type="text" class="input_txtbx1" name="accident_date" id="datepicker" placeholder="Date of Accident" value="${Insuranceplan.accident_date}"/> <span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.accident_date"></form:errors></td>
+        <td ><span class="err">* </span><input type="text" class="input_txtbx1" name="accident_date" id="datepicker" placeholder="Date of Accident" value="${Insuranceplan.accident_date}"/><br> <span id="datepickererror" style="color: red;font-style:italic;"></span><form:errors path="Insuranceplan.accident_date"></form:errors></td>
         </tr>
         <tr class="row1">
-        <td ><span class="err">*</span><input type="text" class="input_txtbx1" name="enrollee" id="enrollee" onInput="return validateusername1()"; placeholder="Subscriber/Enrollee No" value="${Insuranceplan.enrollee}" /><span id="enrolleeerror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.enrollee"></form:errors> 
+        <td ><span class="err">* </span><input type="text" class="input_txtbx1" name="enrollee" id="enrollee" onInput="return validateusername1()"; placeholder="Subscriber/Enrollee No" value="${Insuranceplan.enrollee}" /><br><span id="enrolleeerror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.enrollee"></form:errors> 
         <br></span>
         </td>
         </tr>
@@ -454,13 +454,13 @@ $(function() {
         <td>By</td>
         </tr> 
          <tr class="row1">
-        <td><span class="err">*</span><input type="text" class="input_txtbx1" onInput="return validateusername3()"; name="agentname" id="agentname" placeholder="Authorized Company Representative" value="${Insuranceplan.agentname}"/><span id="agentnameerror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.by"></form:errors></td>
+        <td><span class="err">* </span><input type="text" class="input_txtbx1" onInput="return validateusername3()"; name="agentname" id="agentname" placeholder="Authorized Company Representative" value="${Insuranceplan.agentname}"/><br><span id="agentnameerror" style="color: red;font-style:italic;"></span><form:errors path="Insuranceplan.by"></form:errors></td>
         <td></td>
         <td></td>
         </tr>
         <tr class="row1">
-        <td width="100%"><span class="err">*</span>Please eMail this back  to&nbsp;&nbsp;
-        <span class="err">*</span><input type="text" class="input_txtbx1" name="fax" id="fax" placeholder="Clinic's EMail Id" value="${Insuranceplan.fax}"/><span id="faxerror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.fax"></form:errors> </td>
+        <td width="100%"><span class="err">* </span>Please eMail this back  to&nbsp;&nbsp;
+       <input type="text" class="input_txtbx1" name="fax" id="fax" placeholder="Clinic's EMail Id" value="${Insuranceplan.fax}"/><br><span id="faxerror" style="color: red;font-style:italic;"></span><form:errors path="Insuranceplan.fax"></form:errors> </td>
         <td width="100%"></td>
         <td></td>
         </tr>
@@ -471,12 +471,12 @@ $(function() {
         <tr class="row1">
         <td></td>
         
-        <td align="center"><span class="err">*</span><input type="text" class="input_txtbx1" onInput="return validateusername4()"; name="name_of_clinic" id="name_of_clinic" placeholder="Name of clinic" value="${Insuranceplan.name_of_clinic}"/><br><span id="name_of_clinicerror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.name_of_clinic"></form:errors> </td>
+        <td align="center"><span class="err">*</span><input type="text" class="input_txtbx1" onInput="return validateusername4()"; name="name_of_clinic" id="name_of_clinic" placeholder="Name of clinic" value="${Insuranceplan.name_of_clinic}"/><br><span id="name_of_clinicerror" style="color: red;font-style:italic;"></span><form:errors path="Insuranceplan.name_of_clinic"></form:errors> </td>
         <td></td>
         </tr>
         <tr class="row1">
-        <td><span class="err">*</span><input type="text" class="input_txtbx1" name="pat" id="pat" onInput="return validateusername6()"; placeholder="Patient" value="${Insuranceplan.pat}"/><span  id="paterror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.pat"></form:errors></td>
-        <td align="center"><span class="err">*</span><input type="text" class="input_txtbx1" name="authorized" onInput="return validateusername5()"; id="authorized" placeholder="Authorized Clinic Representative" value="${Insuranceplan.authorized}"/><br> <span  id="authorizederror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.authorized"></form:errors> </td>
+        <td><span class="err">*</span><input type="text" class="input_txtbx1" name="pat" id="pat" onInput="return validateusername6()"; placeholder="Patient" value="${Insuranceplan.pat}"/><br><span  id="paterror" style="color: red;font-style:italic;"></span><form:errors path="Insuranceplan.pat"></form:errors></td>
+        <td align="center"><span class="err">*</span><input type="text" class="input_txtbx1" name="authorized" onInput="return validateusername5()"; id="authorized" placeholder="Authorized Clinic Representative" value="${Insuranceplan.authorized}"/><br> <span  id="authorizederror" style="color: red;font-style:italic;"></span><form:errors path="Insuranceplan.authorized"></form:errors> </td>
         <td></td>
         </tr>
        </table>
