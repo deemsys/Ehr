@@ -126,6 +126,23 @@ $(function() {
   });
   </script>
   <script>
+  var currentTab=0;
+  $("#btnNext").live("click", function () {
+        var tabs = $('#tabs').tabs();
+        var c = $('#tabs').tabs("length");
+        currentTab = currentTab == (c - 1) ? currentTab : (currentTab + 1);
+        tabs.tabs('select', currentTab);
+        $("#btnPrevious").show();
+        if (currentTab == (c - 1)) {
+            $("#btnNext").hide();
+        } else {
+            $("#btnNext").show();
+        }
+    });
+  
+  
+  </script>
+  <script>
   $(window).load(function(){
 $("#flexion").keyup(function() {
 	 $("#number").html(''); 
@@ -183,18 +200,82 @@ $("#flexion").keyup(function() {
 	  
   }
   </script>
-   <script>
+  
+  <script>
+  function checkValid(e)
+  {
+	  document.getElementById("pnameerror").innerHTML=" ";
+		
+		if(document.getElementById("pname").value=="")
+		{
+		document.getElementById("pnameerror").innerHTML="Required Field Should not be Empty";
+		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next2' onmouseover='checkValid(event);'>";
+		}
+		
+		else if(document.getElementById("pname").value.length<=4 && document.getElementById("pname").value.length<=32)
+		{
+		document.getElementById("pnameerror").innerHTML="Name should be length of 4 to 32";
+		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next2' onmouseover='checkValid(event);'>";
+		}
+		 else if(document.getElementById("pname").value!="")
+		 {
+		  document.getElementById("pnameerror").innerHTML="";
+		  document.getElementById("btnvisible1").style.visibility="hidden";
+		 //document.getElementById("btnNext").style.display="block";
+		  document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next1' onmouseover='checkValid(event);'>";		 
+		 //document.getElementById("btnNext").style.visibility="visible";
+		 }
+		
+		document.getElementById("datepickererror").innerHTML="";
+	if(document.getElementById("datepicker").value=="")
+		{
+		document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next2' onmouseover='checkValid(event);'>";
+		}
+  	else if(document.getElementById("datepicker").value!="")
+		 {
+		  document.getElementById("datepickererror").innerHTML="";
+		  document.getElementById("btnvisible1").style.visibility="hidden";
+		 //document.getElementById("btnNext").style.display="block";
+		  document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next1' onmouseover='checkValid(event);'>";		 
+		 //document.getElementById("btnNext").style.visibility="visible";
+		 }
+  	
+  	
+  }
 
-	function checkSubmit()
+  
+  
+  </script> 
+  <!-- <script>
+  function Check()
+  {
+	  document.getElementById("pnameerror").innerHTML="";
+		
+		if(document.getElementById("pname").value=="")
+		{
+		document.getElementById("pnameerror").innerHTML="Required Field Should not be Empty";  
+		return false;
+		}
+	  
+	  
+  }
+  
+  
+  
+  </script> -->
+   <!-- <script>
+
+	function checkValid(e)
 	{
 document.getElementById("pnameerror").innerHTML=" ";
 		
 		if(document.getElementById("pname").value=="")
 		{
 		document.getElementById("pnameerror").innerHTML="Required Field Should not be Empty";
-		
-		return false;
+				
 		}
+		
 		document.getElementById("pnameerror").innerHTML="";
 	    if(document.getElementById("pname").value.length<4 || document.getElementById("pname").value.length>=32)
 	    {
@@ -234,7 +315,7 @@ document.getElementById("pnameerror").innerHTML=" ";
 			} */
 	
 	}
-	</script>
+	</script> -->
 	<script>
 	function checkSubmit1(){
 	
@@ -323,7 +404,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  <div id="tabs">
        <ul>
           <li><a href="#tabs-1">1</a></li>
-          <li><a href="#tabs-2" onclick="return checkSubmit('this');">2</a></li>          
+          <li><a href="#tabs-2">2</a></li>          
        </ul><form action="lumbopelvicexam" method="POST" name="lumbopelvic">
        <input type="hidden" name="username" value="${username}">
         <c:choose>
@@ -511,6 +592,13 @@ document.getElementById("pnameerror").innerHTML=" ";
  <td></td><td> </td> 
  <td></td><td> </td> 
  <td><b>Positive Adam's:	</b> </td><td><input type="text" name="positiveadam" size="15" onkeypress="return validate(event)"> </td>
+ </tr>
+ <tr>
+ 
+<td id="tblbtn"><input type="button" id="btnNext" class="submit_btn" value="Next" onmouseover="checkValid(event);"/>
+<!--  <input type="button"  id="btnvisible1" class="submit_btn" value="Next" onmouseover="checkValid(event);"/> -->
+ 
+</td>
  </tr>
  </table>
  </div></div>
