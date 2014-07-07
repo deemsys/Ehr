@@ -124,8 +124,12 @@ document.getElementById("error").innerHTML="";
 	    	
 	        return false;
 	    }
+	    document.getElementById("datepickererror").innerHTML="";
+	    if (document.getElementById("datepicker").value =="") {
+	    	document.getElementById("datepickererror").innerHTML="Required Field should not be empty";
+	    	 return false;
+	    }
 	
-	document.getElementById("datepickererror").innerHTML="";
 	var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		
 		
@@ -267,7 +271,7 @@ Canton, Ohio 44708
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="50%"><span class="err">&nbsp;</span>Date of Accident: </td>
+              <td height="25" width="50%"><span class="err">*&nbsp;</span>Date of Accident: </td>
               <td ><input type="text" class="input_txtbx1" name="dateofaccident"  value="${perrychiropracticdetails.dateofaccident}" id="datepicker" /><span class="err" id="datepickererror"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>

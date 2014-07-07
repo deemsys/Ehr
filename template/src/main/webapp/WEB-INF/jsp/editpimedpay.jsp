@@ -108,9 +108,9 @@ function validatename(id){
 	        return false;
 	    } */
 	     document.getElementById("regerror").innerHTML="";
-	if(document.getElementById("reg").value!="")
+	if(document.getElementById("reg").value=="")
 	{
-	if(document.getElementById("reg").value.length<4 || document.getElementById("reg").value.length>=32)
+	if(document.getElementById("reg").value.length<4)
 	    {
 	    	
 	    	document.getElementById("regerror").innerHTML="Name should be min 4 and max 32";
@@ -255,7 +255,7 @@ function validatename(id){
               <br>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="180"><span class="err">&nbsp;</span>Regarding: </td>
+              <td height="25" width="180"><span class="err">*&nbsp;</span>Regarding: </td>
               <td><input type="text" class="input_txtbx1" name="reg" id="reg" value="${pimedpaydetails.reg }" onInput="return validatename(id)";><span class="err" id="regerror"></span><form:errors path="Pimedpay.reg"></form:errors></td>
               </tr>
               </table>

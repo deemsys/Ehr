@@ -418,7 +418,7 @@ function validatename(){
         <td valign="top" align="left">
         	<div>
 	            <div class="headings altheading">
-	             <h2>Editing Auto/Personal Injury Patient Checklist<h2> 
+	             <h2>Auto/Personal Injury Patient Checklist<h2> 
 	            </div>
 	            <div class="contentbox">
 	            <table cellpadding="0" cellspacing="0" border="0" width="100%">
