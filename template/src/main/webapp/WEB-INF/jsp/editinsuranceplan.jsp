@@ -471,12 +471,12 @@ $(function() {
         <tr class="row1">
         <td></td>
         
-        <td align="center"><span class="err">*</span><input type="text" class="input_txtbx1" onInput="return validateusername4()"; name="name_of_clinic" id="name_of_clinic" placeholder="Name of clinic" value="${Insuranceplan.name_of_clinic}"/><br><span id="name_of_clinicerror" style="color: red;font-style:italic;"></span><form:errors path="Insuranceplan.name_of_clinic"></form:errors> </td>
+        <td ><span class="err">*</span><input type="text" class="input_txtbx1" onInput="return validateusername4()"; name="name_of_clinic" id="name_of_clinic" placeholder="Name of clinic" value="${Insuranceplan.name_of_clinic}"/><br><span id="name_of_clinicerror" style="color: red;font-style:italic;"></span><form:errors path="Insuranceplan.name_of_clinic"></form:errors> </td>
         <td></td>
         </tr>
         <tr class="row1">
-        <td><span class="err">*</span><input type="text" class="input_txtbx1" name="pat" id="pat" onInput="return validateusername6()"; placeholder="Patient" value="${Insuranceplan.pat}"/><br><span  id="paterror" style="color: red;font-style:italic;"></span><form:errors path="Insuranceplan.pat"></form:errors></td>
-        <td align="center"><span class="err">*</span><input type="text" class="input_txtbx1" name="authorized" onInput="return validateusername5()"; id="authorized" placeholder="Authorized Clinic Representative" value="${Insuranceplan.authorized}"/><br> <span  id="authorizederror" style="color: red;font-style:italic;"></span><form:errors path="Insuranceplan.authorized"></form:errors> </td>
+        <td><span class="err">* </span><input type="text" class="input_txtbx1" name="pat" id="pat" onInput="return validateusername6()"; placeholder="Patient" value="${Insuranceplan.pat}"/><br><span  id="paterror" style="color: red;font-style:italic;"></span><form:errors path="Insuranceplan.pat"></form:errors></td>
+        <td ><span class="err">*</span><input type="text" class="input_txtbx1" name="authorized" onInput="return validateusername5()"; id="authorized" placeholder="Authorized Clinic Representative" value="${Insuranceplan.authorized}"/><br> <span  id="authorizederror" style="color: red;font-style:italic;"></span><form:errors path="Insuranceplan.authorized"></form:errors> </td>
         <td></td>
         </tr>
        </table>
