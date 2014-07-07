@@ -181,6 +181,12 @@ document.getElementById("pnameerror").innerHTML=" ";
 	        return false;
 	    }	
 			
+	
+	}
+	</script>
+	<script>
+	function checkSubmit1()
+	{
 	document.getElementById("signerror").innerHTML="";
 	if(document.getElementById("sign").value=="")
 	{
@@ -321,7 +327,7 @@ $(function() {
  <div id="tabs">
        <ul>
           <li><a href="#tabs-1">1</a></li>
-          <li><a href="#tabs-2">2</a></li>          
+          <li><a href="#tabs-2" onclick="return checkSubmit('this');">2</a></li>          
        </ul>
          
    <div id="tabs-1"> 
@@ -581,7 +587,7 @@ $(function() {
  <table><tr><td><B style="font-size:14px"><span class="err">*</span>&nbsp;&nbsp;PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sign" id="sign" value="${thoracicexam.sign}" onInput="return validatename(id)";><span class="err" id="signerror"><form:errors path="Thoracicexam.sign"></form:errors></span></B></td></tr></table>
 <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="update" onclick="return checkSubmit('this');"></td>
+<td><input type="submit" class="submit_btn" value="update" onclick="return checkSubmit1('this');"></td>
 <td><input type="reset" class="submit_btn" value="Cancel" onclick="myclose()"> </td>
 <script>
  function myclose()

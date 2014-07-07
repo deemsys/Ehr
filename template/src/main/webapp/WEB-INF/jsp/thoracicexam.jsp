@@ -234,6 +234,12 @@ document.getElementById("pnameerror").innerHTML=" ";
 	        return false;
 	    }	
 			
+	
+	}
+	</script>
+	<script>
+	function checkSubmit1()
+	{
 	document.getElementById("signerror").innerHTML="";
 	if(document.getElementById("sign").value=="")
 	{
@@ -249,6 +255,7 @@ document.getElementById("pnameerror").innerHTML=" ";
     	
         return false;
     }
+	
 	}
 	</script>
 	
@@ -270,7 +277,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  <div id="tabs">
        <ul>
           <li><a href="#tabs-1">1</a></li>
-          <li><a href="#tabs-2">2</a></li>          
+          <li><a href="#tabs-2" onclick="return checkSubmit('this');">2</a></li>          
        </ul>
        <form action="thoracicexam" method="POST" name="thoracic">
        <input type="hidden" name="username" value="${username}">
@@ -399,7 +406,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  </tr>
   <tr class="row1">
  <td> </td><td> </td> 
- <td width="100">T11-12: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t1112" size="7" onkeypress="return validate(event)"></td><td width="50">	T12-L1:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="t12l1" size="7" onkeypress="return validate(event)"> </td> 
+ <td width="100">T11-12: &nbsp;&nbsp;<input type="text" name="t1112" size="7" onkeypress="return validate(event)"></td><td width="50">	T12-L1:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="t12l1" size="7" onkeypress="return validate(event)"> </td> 
  <td><b>Sternal Compression:</b> </td><td><input type="text" name="sternall" size="5" onkeypress="return validate(event)"> <input type="text" name="sternalr" size="5" onkeypress="return validate(event)"></td>
  </tr>
   <tr class="row1">
@@ -533,7 +540,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  <table><tr><td><B style="font-size:14px"><span class="err">*</span>&nbsp;&nbsp;PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sign" id="sign" onInput="return validatename(id)";><span class="err" id="signerror"><form:errors path="Thoracicexam.sign"></form:errors></span></B></td></tr></table>
 <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="Save" id="saveid" onclick="return checkSubmit('this');"></td>
+<td><input type="submit" class="submit_btn" value="Save" id="saveid" onclick="return checkSubmit1('this');"></td>
 <td><input type="reset" class="submit_btn" value="Cancel" id="cancelid" onclick="myclose()"></td>
 <script>
  function myclose()
@@ -671,7 +678,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  </tr>
   <tr class="row1">
  <td> </td><td> </td> 
- <td width="100">T11-12: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="t1112" size="7" value="${thoracic.t1112}"></td><td width="50">	T12-L1:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="t12l1" size="7" value="${thoracic.t12l1}"> </td> 
+ <td width="100">T11-12: &nbsp;&nbsp;<input type="text" name="t1112" size="7" value="${thoracic.t1112}"></td><td width="50">	T12-L1:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="t12l1" size="7" value="${thoracic.t12l1}"> </td> 
  <td><b>Sternal Compression:</b> </td><td><input type="text" name="sternall" size="5" value="${thoracic.sternall}"> <input type="text" name="sternalr" size="5" value="${thoracic.sternalr}"></td>
  </tr>
   <tr class="row1">
