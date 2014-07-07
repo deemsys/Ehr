@@ -259,6 +259,12 @@ document.getElementById("pnameerror").innerHTML=" ";
 	        return false;
 	    }	
 			
+	
+	}
+	</script>
+	<script>
+	function checkSubmit1()
+	{
 	document.getElementById("signerror").innerHTML="";
 	if(document.getElementById("sign").value=="")
 	{
@@ -274,9 +280,10 @@ document.getElementById("pnameerror").innerHTML=" ";
     	
         return false;
     }
+	
+	
 	}
 	</script>
-	
 	<script type="text/javascript">
        function validate(event) {
           
@@ -321,7 +328,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  <div id="tabs">
        <ul>
           <li><a href="#tabs-1">1</a></li>
-          <li><a href="#tabs-2">2</a></li>          
+          <li><a href="#tabs-2" onclick="return checkSubmit('this');">2</a></li>          
        </ul>
          
    <div id="tabs-1"> 
@@ -481,33 +488,33 @@ value="${elbowexam.suppinationr}" onkeypress="return validate(event)"></td>
  <td>C5</td>
  <td><input type="text" name="c5l" size="5" value="${elbowexam.c5l}" onkeypress="return validate(event)">&nbsp; &nbsp; &nbsp;<input type="text" name="c5r" size="5"  value="${elbowexam.c5r}" onkeypress="return validate(event)">&nbsp;(Lat deltoid)</td>
  <td>C5 </td>
- <td> <input type="text" name="c51l" id="c51l" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" size="5"  value="${elbowexam.c51l}">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c51r" id="c51r" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" size="5"  value="${elbowexam.c51r}">&nbsp;/5&nbsp;(Shd ABD)</td>
+ <td> <input type="text" name="c51l" id="c51l" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" maxlength="1"  value="${elbowexam.c51l}" style="width: 49px; ">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c51r" id="c51r" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" maxlength="1"  value="${elbowexam.c51r}" style="width: 49px; ">&nbsp;/5&nbsp;(Shd ABD)</td>
  <td> C5</td>
- <td> <input type="text" name="c53l" id="c53l" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" size="5" value="${elbowexam.c53l}">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c53r" id="c53r" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" size="5" value="${elbowexam.c53r}">&nbsp;/5&nbsp;(Biceps)</td>
+ <td> <input type="text" name="c53l" id="c53l" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" maxlength="1" value="${elbowexam.c53l}" style="width: 53px; ">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c53r" id="c53r" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" maxlength="1" value="${elbowexam.c53r}" style="width: 47px; ">&nbsp;/5&nbsp;(Biceps)</td>
  
  </tr>
  <tr class="row1">
  <td>C6</td>
  <td><input type="text" name="c6l" size="5" value="${elbowexam.c6l}" onkeypress="return validate(event)">&nbsp; &nbsp; &nbsp;<input type="text" name="c6r" size="5" value="${elbowexam.c6r}" onkeypress="return validate(event)">&nbsp;(Lat arm/hand)	</td>
  <td>C6 </td>
- <td> <input type="text" name="c61l" id="c61l" onKeyPress="return check(id,event,value)" onInput="checkLength(id)"size="5" value="${elbowexam.c61l}">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c61r" id="c61r" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" size="5" value="${elbowexam.c61r}">&nbsp;/5&nbsp;(Elb flex/wrist ext)	</td>
+ <td> <input type="text" name="c61l" id="c61l" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" maxlength="1" value="${elbowexam.c61l}" style="width: 48px; ">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c61r" id="c61r" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" maxlength="1" value="${elbowexam.c61r}" style="width: 49px; ">&nbsp;/5&nbsp;(Elb flex/wrist ext)	</td>
   <td>C6 </td>
- <td><input type="text" name="c63l" id="c63l" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" size="5" value="${elbowexam.c63l}">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c63r" id="c63r" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" size="5" value="${elbowexam.c63r}">&nbsp;/5&nbsp;(Brachiorad.) </td>
+ <td><input type="text" name="c63l" id="c63l" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" maxlength="1" value="${elbowexam.c63l}" style="width: 52px; ">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c63r" id="c63r" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" maxlength="1" value="${elbowexam.c63r}" style="width: 48px; ">&nbsp;/5&nbsp;(Brachiorad.) </td>
 
  </tr>
  <tr class="row1">
  <td>C7</td>
  <td><input type="text" name="c7l" size="5" value="${elbowexam.c7l}" onkeypress="return validate(event)">&nbsp; &nbsp; &nbsp;<input type="text" name="c7r" size="5" onkeypress="return validate(event)" value="${elbowexam.c7r}">&nbsp;(3rd digit)</td>
  <td>C7 </td>
- <td> <input type="text" name="c71l" id="c71l" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" size="5" value="${elbowexam.c71l}">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c71r" id="c71r" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" size="5" value="${elbowexam.c71r}">&nbsp;/5&nbsp;(Elb ext/wrist flex)</td>
+ <td> <input type="text" name="c71l" id="c71l" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" maxlength="1" value="${elbowexam.c71l}" style="width: 49px; ">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c71r" id="c71r" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" maxlength="1" value="${elbowexam.c71r}" style="width: 49px; ">&nbsp;/5&nbsp;(Elb ext/wrist flex)</td>
  <td> C7</td>
- <td> <input type="text" name="c73l" size="5" id="c73l" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" value="${elbowexam.c73l}">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c73r" id="c73r" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" size="5" value="${elbowexam.c73r}">&nbsp;/5&nbsp;(Triceps)</td>
+ <td> <input type="text" name="c73l" maxlength="1" id="c73l" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" value="${elbowexam.c73l}" style="width: 52px; ">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c73r" id="c73r" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" maxlength="1" value="${elbowexam.c73r}" style="width: 46px; ">&nbsp;/5&nbsp;(Triceps)</td>
  </tr>
  <tr class="row1">
  <td>C8</td>
  <td><input type="text" name="c8l" size="5" onkeypress="return validate(event)" value="${elbowexam.c8l}">&nbsp; &nbsp; &nbsp;<input type="text" name="c8r"  onkeypress="return validate(event)" size="5" value="${elbowexam.c8r}">&nbsp;(Med forearm/hand)	</td>
  <td>C8 </td>
- <td> <input type="text" name="c81l" id="c81l" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" size="5" value="${elbowexam.c81l}">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c81r" id="c81r" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" size="5" value="${elbowexam.c53l}">&nbsp;/5&nbsp;(Digit flexion)</td>
+ <td> <input type="text" name="c81l" id="c81l" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" maxlength="1" value="${elbowexam.c81l}" style="width: 50px; ">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c81r" id="c81r" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" maxlength="1" value="${elbowexam.c53l}" style="width: 48px; ">&nbsp;/5&nbsp;(Digit flexion)</td>
  <td></td>
  <td> </td>
  </tr>
@@ -515,7 +522,7 @@ value="${elbowexam.suppinationr}" onkeypress="return validate(event)"></td>
  <td>T1</td>
  <td><input type="text" name="t1l" size="5" onkeypress="return validate(event)" value="${elbowexam.t1l}">&nbsp; &nbsp; &nbsp;<input type="text" name="t1r" onkeypress="return validate(event)" size="5" value="${elbowexam.t1r}">&nbsp;(Med elbow/arm)	</td>
  <td>T1 </td>
- <td><input type="text" name="t11l"  id="t11l" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" size="5" value="${elbowexam.t11l}">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="t11r" id="t11r" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" size="5" value="${elbowexam.t11r}">&nbsp;/5&nbsp; (Digit abd/add)</td>
+ <td><input type="text" name="t11l"  id="t11l" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" maxlength="1" value="${elbowexam.t11l}" style="width: 48px; ">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="t11r" id="t11r" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" maxlength="1" value="${elbowexam.t11r}" style="width: 49px; ">&nbsp;/5&nbsp; (Digit abd/add)</td>
  <td> </td>
  <td> </td>
  </tr>
@@ -608,7 +615,7 @@ value="${elbowexam.suppinationr}" onkeypress="return validate(event)"></td>
  <table><tr><td><B style="font-size:14px"><span class="err">*</span>&nbsp;&nbsp;PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sign" id="sign" value="${elbowexam.sign}" onInput="return validatename(id)";></B><span class="err" id="signerror"><form:errors path="Elbowexam.sign"></form:errors></span></td></tr></table>
 <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="Update" onclick="return checkSubmit('this');"></td>
+<td><input type="submit" class="submit_btn" value="Update" onclick="return checkSubmit1('this');"></td>
 <td><input type="reset" class="submit_btn" value="Cancel" onclick="myclose()"></td>
 <script>
  function myclose()

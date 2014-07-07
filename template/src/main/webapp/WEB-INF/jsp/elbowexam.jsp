@@ -226,6 +226,13 @@ document.getElementById("pnameerror").innerHTML=" ";
 	        return false;
 	    }	
 			
+	
+	}
+	</script>
+	<script>
+	function checkSubmit1()
+	{
+	
 	document.getElementById("signerror").innerHTML="";
 	if(document.getElementById("sign").value=="")
 	{
@@ -241,9 +248,10 @@ document.getElementById("pnameerror").innerHTML=" ";
     	
         return false;
     }
-	}
-	</script>
 	
+	}
+	
+	</script>
 	<script type="text/javascript">
        function validate(event) {
           
@@ -290,7 +298,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  <div id="tabs">
        <ul>
           <li><a href="#tabs-1">1</a></li>
-          <li><a href="#tabs-2">2</a></li>          
+          <li><a href="#tabs-2" onclick="return checkSubmit('this');">2</a></li>          
        </ul>
 <form action="elbowexam" method="POST" name="elbow">     
 <input type="hidden" name="username" value="${username}">
@@ -450,36 +458,36 @@ document.getElementById("pnameerror").innerHTML=" ";
  <td style="width: 45px; ">C5</td>
  <td><input type="text" name="c5l" size="5" onkeypress="return validate(event)">&nbsp; &nbsp; &nbsp;<input type="text" name="c5r" size="5" onkeypress="return validate(event)">&nbsp;(Lat deltoid)</td>
  <td style="width: 36px; ">C5 </td>
- <td align=""> <input type="text" align="left" name="c51l" id="c51l" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" align="right" name="c51r" id="c51r" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp;(Shd ABD)</td>
+ <td align=""> <input type="text" align="left" name="c51l" id="c51l" maxlength="1" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" style="width: 51px; ">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" align="right" name="c51r" id="c51r" maxlength="1" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" style="width: 49px; ">&nbsp;/5&nbsp;(Shd ABD)</td>
  <td> C5</td>
  <td
  
  
- > <input type="text" name="c53l" id="c53l"size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c53r" id="c53r" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp;(Biceps)</td>
+ > <input type="text" name="c53l" id="c53l"maxlength="1" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" style="width: 52px; ">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c53r" id="c53r" maxlength="1" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" style="width: 52px; ">&nbsp;/5&nbsp;(Biceps)</td>
  
  </tr>
  <tr class="row1">
  <td>C6</td>
  <td><input type="text" name="c6l" size="5" onkeypress="return validate(event)">&nbsp; &nbsp; &nbsp;<input type="text" name="c6r" size="5" onkeypress="return validate(event)">&nbsp;(Lat arm/hand)	</td>
  <td>C6 </td>
- <td> <input type="text" name="c61l" id="c61l" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c61r" id="c61r" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp;(Elb flex/wrist ext)	</td>
+ <td> <input type="text" name="c61l" id="c61l" maxlength="1" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" style="width: 52px; ">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c61r" id="c61r" maxlength="1" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" style="width: 47px; ">&nbsp;/5&nbsp;(Elb flex/wrist ext)	</td>
   <td>C6 </td>
- <td><input type="text" name="c63l" id="c63l" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c63r" id="c63r" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp;(Brachiorad.) </td>
+ <td><input type="text" name="c63l" id="c63l" maxlength="1" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" style="width: 53px; ">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c63r" id="c63r" maxlength="1" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" style="width: 53px; ">&nbsp;/5&nbsp;(Brachiorad.) </td>
 
  </tr>
  <tr class="row1">
  <td>C7</td>
  <td><input type="text" name="c7l" size="5" onkeypress="return validate(event)">&nbsp; &nbsp; &nbsp;<input type="text" name="c7r" size="5" onkeypress="return validate(event)">&nbsp;(3rd digit)</td>
  <td>C7 </td>
- <td> <input type="text" name="c71l" id="c71l" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c71r" id="c71r" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp;(Elb ext/wrist flex)</td>
+ <td> <input type="text" name="c71l" id="c71l" maxlength="1" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" style="width: 51px; ">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c71r" id="c71r" maxlength="1" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" style="width: 48px; ">&nbsp;/5&nbsp;(Elb ext/wrist flex)</td>
  <td> C7</td>
- <td> <input type="text" name="c73l" id="c73l" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c73r" id="c73r" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp;(Triceps)</td>
+ <td> <input type="text" name="c73l" id="c73l" maxlength="1" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" style="width: 53px; ">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c73r" id="c73r" maxlength="1" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" style="width: 53px; ">&nbsp;/5&nbsp;(Triceps)</td>
  </tr>
  <tr class="row1">
  <td>C8</td>
  <td><input type="text" name="c8l" size="5" onkeypress="return validate(event)">&nbsp; &nbsp; &nbsp;<input type="text" name="c8r" size="5" onkeypress="return validate(event)">&nbsp;(Med forearm/hand)	</td>
  <td>C8 </td>
- <td> <input type="text" name="c81l" id="c81l" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c81r" id="c81r" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp;(Digit flexion)</td>
+ <td> <input type="text" name="c81l" id="c81l" maxlength="1" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" style="width: 52px; ">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="c81r" id="c81r" maxlength="1" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" style="width: 50px; ">&nbsp;/5&nbsp;(Digit flexion)</td>
  <td></td>
  <td> </td>
  </tr>
@@ -487,7 +495,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  <td>T1</td>
  <td><input type="text" name="t1l" size="5" onkeypress="return validate(event)">&nbsp; &nbsp; &nbsp;<input type="text" name="t1r" size="5" onkeypress="return validate(event)">&nbsp;(Med elbow/arm)	</td>
  <td>T1 </td>
- <td><input type="text" name="t11l" id="t11l" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="t11r" id="t11r" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp; (Digit abd/add)</td>
+ <td><input type="text" name="t11l" id="t11l" maxlength="1" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" style="width: 53px; ">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="t11r" id="t11r" maxlength="1" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" style="width: 49px; ">&nbsp;/5&nbsp; (Digit abd/add)</td>
  <td> </td>
  <td> </td>
  </tr>
@@ -580,7 +588,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  <table><tr><td><B style="font-size:14px"><span class="err">*</span>&nbsp;&nbsp;PHYSICIAN SIGNATURE:</B> </td><td><input type="text" name="sign" id="sign" onInput="return validatename(id)";><span class="err" id="signerror"><form:errors path="Elbowexam.sign"></form:errors></span></td></tr></table>
 <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="Save" id="saveid" onclick="return checkSubmit('this');"></td>
+<td><input type="submit" class="submit_btn" value="Save" id="saveid" onclick="return checkSubmit1('this');"></td>
 <td><input type="reset" class="submit_btn" value="Cancel" id="cancelid" onclick="myclose()"></td>
 <script>
  function myclose()
