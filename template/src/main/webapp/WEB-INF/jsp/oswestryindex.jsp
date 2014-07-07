@@ -311,7 +311,7 @@ document.getElementById("pnameerror").innerHTML=" ";
 	    if(document.getElementById("pname").value.length<4 || document.getElementById("pname").value.length>=32)
 	    {
 	    	
-	    	document.getElementById("pnameerror").innerHTML="Name should be min 4 and max 32";
+	    	document.getElementById("pnameerror").innerHTML="Name should be of length 4 to 32";
 	    	
 	        return false;
 	    }
@@ -339,7 +339,7 @@ document.getElementById("pnameerror").innerHTML=" ";
 	    if(document.getElementById("comments").value.length<4 || document.getElementById("comments").value.length>=32)
 	    {
 	    	
-	    	document.getElementById("commentserror").innerHTML="Name should be min 4 and max 32";
+	    	document.getElementById("commentserror").innerHTML="Name should be of length 4 to 32";
 	    	
 	        return false;
 	    }
@@ -351,7 +351,7 @@ document.getElementById("pnameerror").innerHTML=" ";
 	    if(document.getElementById("job").value.length<4 || document.getElementById("job").value.length>=32)
 	    {
 	    	
-	    	document.getElementById("joberror").innerHTML="Name should be min 4 and max 32";
+	    	document.getElementById("joberror").innerHTML="Name should be of length 4 to 32";
 	    	
 	        return false;
 	    }
@@ -363,7 +363,7 @@ document.getElementById("pnameerror").innerHTML=" ";
 	    if(document.getElementById("sport").value.length<4 || document.getElementById("sport").value.length>=32)
 	    {
 	    	
-	    	document.getElementById("sporterror").innerHTML="Name should be min 4 and max 32";
+	    	document.getElementById("sporterror").innerHTML="Name should be of length 4 to 32";
 	    	
 	        return false;
 	    }
@@ -535,7 +535,7 @@ $(function() {
 	             
 	            </div>
           <div class="contentbox">
-         <Table><tr><td><span class="err">* </span>Name:</td><td width="250"><input type="text" name="name" id="pname" onInput="return validatename(id)";><br><span class="err" id="pnameerror"><form:errors path="oswestrydetails.name"></form:errors></td><Td width="200"></td><td ><span class="err">* </span>Date:</td><td width="250"><input type="text"  id="datepicker" name="date"><br><span class="err" id="datepickererror"><form:errors path="oswestrydetails.date"></form:errors></td><td>Score:</td><td><input type="hidden" name="scores" id="scores"><div id="score"></div></td></tr></Table>
+         <Table><tr><td><span class="err">* </span>Name:</td><td width="250"><input type="text" name="name" id="pname" onInput="return validatename(id)";><br><span style="color: red;font-style:italic;"id="pnameerror"><form:errors path="oswestrydetails.name"></form:errors></td><Td width="200"></td><td ><span class="err">* </span>Date:</td><td width="250"><input type="text"  id="datepicker" name="date"><br><span style="color: red;font-style:italic;" id="datepickererror"><form:errors path="oswestrydetails.date"></form:errors></td><td>Score:</td><td><input type="hidden" name="scores" id="scores"><div id="score"></div></td></tr></Table>
          <br>
          <br>
 	    <table width="100%"><tr><td width="50%"><b>What is your pain RIGHT NOW?</b></td><td><b><p align="left">What is your pain at its Worse?<p></b></td></tr></table>

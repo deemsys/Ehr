@@ -330,7 +330,7 @@ document.getElementById("pnameerror").innerHTML=" ";
 	    if(document.getElementById("pname").value.length<4 || document.getElementById("pname").value.length>=32)
 	    {
 	    	
-	    	document.getElementById("pnameerror").innerHTML="Name should be min 4 and max 32";
+	    	document.getElementById("pnameerror").innerHTML="Name should be of length 4 to 32";
 	    	
 	        return false;
 	    }
@@ -358,7 +358,7 @@ document.getElementById("pnameerror").innerHTML=" ";
 	    if(document.getElementById("comments").value.length<4 || document.getElementById("comments").value.length>=32)
 	    {
 	    	
-	    	document.getElementById("commentserror").innerHTML="Name should be min 4 and max 32";
+	    	document.getElementById("commentserror").innerHTML="Name should be of length 4 to 32";
 	    	
 	        return false;
 	    }
@@ -370,7 +370,7 @@ document.getElementById("pnameerror").innerHTML=" ";
 	    if(document.getElementById("job").value.length<4 || document.getElementById("job").value.length>=32)
 	    {
 	    	
-	    	document.getElementById("joberror").innerHTML="Name should be min 4 and max 32";
+	    	document.getElementById("joberror").innerHTML="Name should be of length 4 to 32";
 	    	
 	        return false;
 	    }
@@ -382,7 +382,7 @@ document.getElementById("pnameerror").innerHTML=" ";
 	    if(document.getElementById("sport").value.length<4 || document.getElementById("sport").value.length>=32)
 	    {
 	    	
-	    	document.getElementById("sporterror").innerHTML="Name should be min 4 and max 32";
+	    	document.getElementById("sporterror").innerHTML="Name should be of length 4 to 32";
 	    	
 	        return false;
 	    }
@@ -547,7 +547,7 @@ document.getElementById("pnameerror").innerHTML=" ";
 	             
 	            </div>
           <div class="contentbox">
-         <Table><tr><td><span class="err">* </span>Name:</td><td width="250"><input type="text" name="name" id="pname" onInput="return validatename(id)"; value="${oswestrydetails.name}"><br><span class="err" id="pnameerror"><form:errors path="oswestrydetails.name"></form:errors></td><Td width="245"></td><td ><span class="err">* </span>Date:</td><td width="250"><input type="text" name="date" id="datepicker" value="${oswestrydetails.date}"><br><span class="err" id="datepickererror"><form:errors path="oswestrydetails.date"></form:errors></td><td width="200"></td><td>Score:</td><td><input type="hidden" name="scores" value="${oswestrydetails.scores}" id="scores"><div id="score" ><c:out value="${oswestrydetails.scores}"></c:out></div></td></tr></Table>
+         <Table><tr><td><span class="err">* </span>Name:</td><td width="250"><input type="text" name="name" id="pname" onInput="return validatename(id)"; value="${oswestrydetails.name}"><br><span style="color: red;font-style:italic;" id="pnameerror"><form:errors path="oswestrydetails.name"></form:errors></td><Td width="245"></td><td ><span class="err">* </span>Date:</td><td width="250"><input type="text" name="date" id="datepicker" value="${oswestrydetails.date}"><br><span style="color: red;font-style:italic;" id="datepickererror"><form:errors path="oswestrydetails.date"></form:errors></td><td width="200"></td><td>Score:</td><td><input type="hidden" name="scores" value="${oswestrydetails.scores}" id="scores"><div id="score" ><c:out value="${oswestrydetails.scores}"></c:out></div></td></tr></Table>
 	    <table><tr><td valign="bottom"><b>1.What is your pain RIGHT NOW?</b>&nbsp;&nbsp;&nbsp;X</td><td width="10"></td><td valign="bottom">No Pain</td><Td><label for="amount"><b></label>
 	 <input type="text" id="amount" style="border:0; color:#f6931f; font-weight:bold;" name="painscale" value="${oswestrydetails.painscale}" /><span id="amounterr"></span>&nbsp;&nbsp;&nbsp;
  <div id="slider" style="width: 227px; "></div></td><td valign="bottom"><b>Worst Possible Pain</Td><Td width="20"></Td><td valign="bottom"><b>What is your pain at its worse?</b>&nbsp;&nbsp;&nbsp;O</td><td width="10"></td><td valign="bottom">No Pain</td><Td>
