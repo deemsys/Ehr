@@ -257,9 +257,9 @@ document.getElementById("pnameerror").innerHTML=" ";
 
 	     <div class="contentbox">
           <table cellpadding="0" cellspacing="0" border="0" >
-           <tr><td width="140"><span class="err">* </span>Name</td>
-           <td><input type="hidden" name="wristindexno" class="input_txt" value="${wristindexdetails.wristindexno}"><input type="text" name="name" id="pname" onInput="return validatename(id)";class="input_txt" value="${wristindexdetails.name}"><br><span style="color: red;font-style:italic;" id="pnameerror"><form:errors path="wristindexdetails.name"></form:errors></td><td width="480"></td><td></td><td width="100"></td>
-           <td >&nbsp;&nbsp;&nbsp;&nbsp;<span class="err">* </span>Date:&nbsp;</td> <td><input type="text" name="date" id="datepicker" value="${wristindexdetails.date}"><br><span style="color: red;font-style:italic;" id="datepickererror"><form:errors path="wristindexdetails.date"></form:errors></td>
+           <tr><td width="140" style="width: 375px; "><span class="err">* </span>Name&nbsp;&nbsp;
+           <input type="hidden" name="wristindexno" class="input_txt" value="${wristindexdetails.wristindexno}"><input type="text" name="name" id="pname" onInput="return validatename(id)";class="input_txt" value="${wristindexdetails.name}"><br><span style="color: red;font-style:italic;" id="pnameerror"><form:errors path="wristindexdetails.name"></form:errors></td><td width="280"></td><td></td><td width="100"></td>
+           <td >&nbsp;&nbsp;&nbsp;&nbsp;<span class="err">* </span>Date:&nbsp;&nbsp;<input type="text" name="date" id="datepicker" value="${wristindexdetails.date}"><br><span style="color: red;font-style:italic;" id="datepickererror"><form:errors path="wristindexdetails.date"></form:errors></td>
            </tr>
           
             </table>
