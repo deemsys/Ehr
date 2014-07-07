@@ -211,7 +211,7 @@ document.getElementById("pnameerror").innerHTML=" ";
 	    if(document.getElementById("pname").value.length<4 || document.getElementById("pname").value.length>=32)
 	    {
 	    	
-	    	document.getElementById("pnameerror").innerHTML="Name should be min 4 and max 32";
+	    	document.getElementById("pnameerror").innerHTML="Name should be of length 4 to 32";
 	    	
 	        return false;
 	    }
@@ -238,7 +238,7 @@ document.getElementById("pnameerror").innerHTML=" ";
 	    if(document.getElementById("comment").value.length<4 || document.getElementById("comment").value.length>=32)
 	    {
 	    	
-	    	document.getElementById("commenterror").innerHTML="Name should be min 4 and max 32";
+	    	document.getElementById("commenterror").innerHTML="Should be of length 4 to 32";
 	    	
 	        return false;
 	    }
@@ -265,9 +265,9 @@ document.getElementById("pnameerror").innerHTML=" ";
           <table cellpadding="0" cellspacing="0" border="0" width="98%">
            
  <tr class="row1">
-<td><h4><span class="err">* </span>Patient Name:</h4></td><td><input type="text" id="pname" name="pname" onInput="return validatename(id)";/><span class="err" id="pnameerror"><form:errors path="Lowback.pname"></form:errors></span></td>
+<td><h4><span class="err">* </span>Patient Name:</h4></td><td><input type="text" id="pname" name="pname" onInput="return validatename(id)";/><span style="color: red;font-style:italic;" id="pnameerror"><form:errors path="Lowback.pname"></form:errors></span></td>
 <td width="300">
-<td><h4><span class="err">* </span>Date:</h4></td><td><input type="text"  id="datepicker" name="date" id="datepickererror" /><span class="err" id="datepickererror" ><form:errors path="Lowback.date"></form:errors></span></td>
+<td><h4><span class="err">* </span>Date:</h4></td><td><input type="text"  id="datepicker" name="date" id="datepickererror" /><span style="color: red;font-style:italic;" id="datepickererror" ><form:errors path="Lowback.date"></form:errors></span></td>
 </tr>
 </table>
 <br/>
@@ -483,7 +483,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  </table>
  <table>
  <tr>
- <td width="250" valign="middle">Comments:&nbsp;&nbsp;</td><td><textarea rows="8" cols="150" id="comment" name="comment" onInput="return validatename(id)";></textarea> <span class="err" id="commenterror"></span></td></tr>
+ <td width="250" valign="middle">Comments:&nbsp;&nbsp;</td><td><textarea rows="8" cols="150" id="comment" name="comment" onInput="return validatename(id)";></textarea> <span style="color: red;font-style:italic;" id="commenterror"></span></td></tr>
  </table>
 <table align="right">
 <tr>
