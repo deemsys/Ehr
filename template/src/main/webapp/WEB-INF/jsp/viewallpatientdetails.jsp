@@ -80,8 +80,8 @@ function doAjaxPost() {
         					
         					<c:if test="${fn:length(patientDetailsForm.patientDetails) gt 0}">
         				  <c:forEach items="${patientDetailsForm.patientDetails}" var="patientDetails" varStatus="status">
-        				       	<tr class="row1">
-							      	 <td valign="top" align="left"  width="30%"> <a href="patientadminDetailsList?patient_id=${patientDetails.patient_id}">${patientDetails.name}</a></td>
+        				       	<tr class="row1" >
+							      	 <td valign="top"  align="left"  width="20%"> <a href="patientadminDetailsList?patient_id=${patientDetails.patient_id}">${patientDetails.name}</a></td>
 											
 										 	<td valign="top" align="left" width="15%">${patientDetails.mobileNumber}</td>
 											<td valign="top" align="left" width="10%">${patientDetails.city}</td>
