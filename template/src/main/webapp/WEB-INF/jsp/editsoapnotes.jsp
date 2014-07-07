@@ -160,6 +160,17 @@ $(function() {
    	 var error="";
    	document.getElementById("pnameerr").innerHTML="";
    	document.getElementById("signerror").innerHTML="";
+    
+ 	 if((document.getElementById("diagonosis").value.length < 4) || (document.getElementById("diagonosis").value.length > 32))
+		{
+		alert("DFGDF");
+		document.getElementById("diagnosiserr1").innerHtml="Required Field Should between 4 to 32";	
+		error="true";
+		}
+ 	 else
+ 		 {
+ 		document.getElementById("diagnosiserr1").innerHtml="";
+ 		 }
   	   if(document.getElementById("e1e2").value == "ExtremitiesX-Rays")
   		   {
   		 
@@ -189,6 +200,8 @@ $(function() {
   	   else{
   		   document.getElementById("xrayerror").innerHTML="";
   	   }
+  	
+  	 
 	
 	if(document.getElementById("pname").value=="")
 		{	
@@ -304,6 +317,7 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		
 		 if(error == "true")
 			{
+			 alert("false");
 			return false;
 			}
 		}
@@ -378,7 +392,7 @@ document.getElementById("xray").style.visibility = 'hidden';
        <td><h2><span class="err">*</span> Patient:</h2></td>
              <input type="hidden" value="${username}" name="username" />
               <input type="hidden" class="input_txtbx1" id="inp_id" value="${soapnotes.soapid}" name="soapid" />
-              <td><input type="text" class="input_txtbx1" name="pname" id="pname" onkeypress="return validate1(event,id)"; value="${soapnotes.pname}" /><span class="err" id="pnameerr"><form:errors path="SoapNotes.pname"></form:errors></span></td>
+              <td><input type="text" class="input_txtbx1" name="pname" id="pname" onInput="return validatename(id)"; value="${soapnotes.pname}" /><span class="err" id="pnameerr"><form:errors path="SoapNotes.pname"></form:errors></span></td>
              </tr>
         </table>
         
@@ -406,9 +420,52 @@ document.getElementById("xray").style.visibility = 'hidden';
 <option <c:if test="${soapnotes.leftproxi=='distal'}"><c:out value="selected"/></c:if> value="distal">distal portion</option></select>
 
 </td>
+<script>
+$(function() {
+	$("#pname").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+	
 
+$(function() {
+	$("#diagonosis").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#sign").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+	
+
+$(function() {
+	$("#xray").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+	
+	</script>
 <script type="text/javascript">
-       function validate1(event,id) {
+function validatename(id){
+	
+    var textInput = document.getElementById(id).value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById(id).value = textInput;
+}  
+
+function validatename1(id){
+	
+    var textInput = document.getElementById(id).value;
+    textInput = textInput.replace(/[^A-Za-z0-9 ]/g, "");
+    document.getElementById(id).value = textInput;
+}  
+       /* function validate1(event,id) {
         
         
         
@@ -457,19 +514,19 @@ document.getElementById("xray").style.visibility = 'hidden';
         	   
            }
            
-       } 
+       }  */
        function onloading()
        {
     	   if(document.getElementById("e1e2").value == "ExtremitiesX-Rays")
 		   {
-		 alert("true");
+		
 		   document.getElementById("xray").style.display='block';
 		   }
        }
        function validate2()
        {
     	   var regex = /^[A-Za-z0-9 ]*$/;
-    	  alert("dsdg");
+    	 
     	   if(document.getElementById("e1e2").value == "ExtremitiesX-Rays")
     		   {
     		 
@@ -685,9 +742,10 @@ else
 			
  <td>
  
- &nbsp &nbsp Diagonosis:<br/><br>&nbsp;<c:forEach items="${diagnosis}" var="diagnosis">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="diagnosis[]" id="diagonosis"onkeypress="return validate1(event,id)";type="text" value="${diagnosis}"><br><br></c:forEach>
+ &nbsp &nbsp Diagonosis:<br/><br>&nbsp;<c:forEach items="${diagnosis}" var="diagnosis">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ <input name="diagnosis[]" id="diagonosis"onInput="return validatename1(id)";type="text" value="${diagnosis}"><br><br></c:forEach>
  <div id="multichoice"></div><a href="javascript:void(0);" onclick="addMultichoice('multichoice');" style="text-decoration:none;" ><input type="button" value="Add one more diagnosis" class="submit_btn2" name=""/></a>
-<span id="diagnosiserr" style="color:red"></span>
+<span id="diagnosiserr1" style="color:red"></span>
  </td>
  <td>&nbsp;&nbsp;
  <select name="e1e2" width="2%" id="e1e2" class="input_cmbbx1" onchange="if (this.value=='ExtremitiesX-Rays'){this.form['xray'].style.visibility='visible'}else {this.form['xray'].style.visibility='hidden'};validate2();">
@@ -1243,7 +1301,7 @@ else
  </td>
  </tr>
   </table>
-  <table align="right"><tr><td><span class="err">*</span> Physicians Signature:<input type="text" name="sign" class="input_txtbx1" id="sign" onkeypress="return validate1(event,id)"; value="${soapnotes.sign}"><span class="err" id="signerror"><form:errors path="SoapNotes.sign"></form:errors></span></td></tr></table>
+  <table align="right"><tr><td><span class="err">*</span> Physicians Signature:<input type="text" name="sign" class="input_txtbx1" id="sign" onInput="return validatename(id)"; value="${soapnotes.sign}"><span class="err" id="signerror"><form:errors path="SoapNotes.sign"></form:errors></span></td></tr></table>
 				                   </table>
  <table align="right"> <tr>
 				                   <td><input type="submit" class="submit_btn" value="Update" onclick="return checkSubmit('this');"></td>

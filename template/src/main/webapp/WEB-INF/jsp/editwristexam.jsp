@@ -262,8 +262,33 @@ document.getElementById("pnameerror").innerHTML=" ";
            }
        }       
     </script>
-    
     <script>
+$(function() {
+	$("#pname").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#muscle").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+	</script>
+    <script type="text/javascript">
+function validatename(id){
+	
+    var textInput = document.getElementById(id).value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById(id).value = textInput;
+}  
+function validatename1(id){
+	
+    var textInput = document.getElementById(id).value;
+    textInput = textInput.replace(/[^A-Za-z0-9 ]/g, "");
+    document.getElementById(id).value = textInput;
+} 
 	function check(id,e,value){
     //Check Charater
     	
@@ -320,10 +345,10 @@ document.getElementById("pnameerror").innerHTML=" ";
 											var="wristexamdetails" />
 										<table cellpadding="0" cellspacing="0" border="0">
 											<tr>
-												<td width="130"><span class="err">*</span>Patient Name:</td>
+												<td width="130"><span class="err">*</span> Patient Name:</td>
 												<td width="200"><input type="hidden" name="wristexamno"
 													value="${wristexamdetails.wristexamno}" /><input
-													type="text" value="${wristexamdetails.pname}" name="pname" id="pname">
+													type="text" value="${wristexamdetails.pname}" name="pname" id="pname" onInput="return validatename(id);">
 													<br><span class="err" id="pnameerror"><form:errors path="wristexamdetails.pname"></form:errors>
 													</td>
 												<td width="650"></td>
@@ -348,7 +373,8 @@ document.getElementById("pnameerror").innerHTML=" ";
 												<td>Muscle Symmetry:</td>
 												<td width="28"></td>
 												<td ><input type="text"
-													value="${wristexamdetails.muscle}" name="muscle"></td>
+													value="${wristexamdetails.muscle}" name="muscle" id="muscle" onInput="return validatename1(id);">
+													<br><span id="muscleerror" style="color:red"></span></td>
 												<td width="48"></td>
 												<td width="135">Swelling / Discoloration:</td>
 												<td width="40"><input type="text"
