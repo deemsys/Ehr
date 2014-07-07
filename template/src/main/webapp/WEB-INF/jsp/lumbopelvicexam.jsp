@@ -232,6 +232,12 @@ document.getElementById("pnameerror").innerHTML=" ";
 			
 			
 			} */
+	
+	}
+	</script>
+	<script>
+	function checkSubmit1(){
+	
 	document.getElementById("signerror").innerHTML="";
 	if(document.getElementById("sign").value=="")
 	{
@@ -247,7 +253,14 @@ document.getElementById("pnameerror").innerHTML=" ";
 	    	
 	        return false;
 	    }
+	
+	
+	
+	
 	}
+	
+	
+	
 	</script>
 	
 	<script type="text/javascript">
@@ -310,7 +323,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  <div id="tabs">
        <ul>
           <li><a href="#tabs-1">1</a></li>
-          <li><a href="#tabs-2">2</a></li>          
+          <li><a href="#tabs-2" onclick="return checkSubmit('this');">2</a></li>          
        </ul><form action="lumbopelvicexam" method="POST" name="lumbopelvic">
        <input type="hidden" name="username" value="${username}">
         <c:choose>
@@ -675,7 +688,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  </table>
  <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="Save" id="saveid" onclick="return checkSubmit('this');"></td>
+<td><input type="submit" class="submit_btn" value="Save" id="saveid" onclick="return checkSubmit1('this');"></td>
 <td><input type="reset" class="submit_btn" value="Cancel" id="cancelid" onclick="myclose()"></td>
 <script>
  function myclose()
