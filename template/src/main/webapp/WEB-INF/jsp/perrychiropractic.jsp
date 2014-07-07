@@ -484,7 +484,7 @@ Canton, Ohio 44708
               <br>
               		<table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="50%"><span class="err">*</span> Name of Insurance Company1:</td>
+              <td height="25" width="50%"><span class="err">*</span> Name of Insurance Company:</td>
               <td ><input type="text" class="input_txtbx1" name="insurance" id="insurance" onInput="return validatename(id)";/><span id="error"  style="color: red;font-style:italic;"></span><span class="err" id="insuranceerror"><form:errors path="Perrychiropractic.insurance"></form:errors></td>
               </tr>
               </table>

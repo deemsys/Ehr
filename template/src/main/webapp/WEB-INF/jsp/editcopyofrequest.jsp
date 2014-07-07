@@ -278,10 +278,10 @@ return false;
           <td><input type="text" class="input_txtbx1" name="todaydate" id="datepicker1" size="40" value="${copyofrequest.todaydate }"><span class="err" id="datepicker1error"></span></td>
           </tr>
           </table>
-          <table width="85">
+          <table width="100%">
           <tr height="30">
-          <td width="40">&nbsp;Dear  </td>
-          <td><span class="err" id="dearerror"  style="color: red;font-style:italic;">*</span>&nbsp;<input type="text"  class="input_txtbx1" name="dear"  size="40" value="${copyofrequest.dear}" id="dear" onInput="return validatename(id)";></td>
+          <td width="40"><span class="err" id="dearerror"  style="color: red;font-style:italic;">*</span>&nbsp;&nbsp;Dear  </td>
+          <td><input type="text"  class="input_txtbx1" name="dear"  size="40" value="${copyofrequest.dear}" id="dear" onInput="return validatename(id)";></td>
           </tr>
           </table>
           <br/>

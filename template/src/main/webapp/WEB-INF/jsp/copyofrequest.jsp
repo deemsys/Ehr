@@ -470,7 +470,7 @@ return false;
                        
 
 
-<table cellpadding="0" cellspacing="0" border="0" width="60%" class="margin_table">
+<table cellpadding="0" cellspacing="0" border="0" width="70%" class="margin_table">
 <tr>
 <td valign="top" align="left">
 <div id="block1">
@@ -510,10 +510,10 @@ return false;
           <td><input type="text"  class="input_txtbx1" name="todaydate" id="datepicker1" size="40"><span class="err" id="datepicker1error"></span></td>
           </tr>
           </table>
-          <table width="85">
+          <table width="100%" border="0">
           <tr height="30">
-          <td width="40">&nbsp;Dear  </td>
-          <td><span class="err">*</span>&nbsp;<input type="text"  class="input_txtbx1" name="dear"  size="40" id="dear" onInput="return validatename(id)";><span class="err" id="dearerror"><form:errors path="Copyofrequest.dear"></form:errors></span></td>
+          <td width="20"><span class="err">*</span>&nbsp;&nbsp;Dear  </td>
+          <td width="50"><input type="text"  class="input_txtbx1" name="dear"  size="40" id="dear" onInput="return validatename(id)";><span class="err" id="dearerror"><form:errors path="Copyofrequest.dear"></form:errors></span></td>
           </tr>
           </table>
           <br/>
