@@ -275,18 +275,35 @@ document.getElementById("pnameerror").innerHTML=" ";
    
     var fieldVal = document.getElementById(id).value;
     //Suppose u want 3 number of character
-    if(fieldVal >=0 && fieldVal <=5){
+    if(fieldVal<=5){
         return true;
     }
-    else
+     else
     {
         var str = document.getElementById(id).value;
        
         str = str.substring(0, str.length - 1);
     document.getElementById(id).value = str;
-    }
+    } 
      
     }
+    
+  function checkLength(id){
+   
+    var fieldVal = document.getElementById(id).value;
+    //Suppose u want 3 number of character
+    if(fieldVal<=5){
+        return true;
+    }
+     else
+    {
+        var str = document.getElementById(id).value;
+       
+        str = str.substring(0, str.length - 1);
+    document.getElementById(id).value = str;
+    } 
+     
+    }  
 	</script>
 </head>
  <body>
@@ -314,9 +331,9 @@ document.getElementById("pnameerror").innerHTML=" ";
           <table cellpadding="0" cellspacing="0" border="0" width="98%">
            
  <tr class="row1">
-<td width="150" style="width: 198px; "><h4><span class="err">*</span>Patient Name:</h4></td><td><input type="text" name="pname" id="pname" onInput="return validatename(id)";><span class="err" id="pnameerror"><form:errors path="Lumbopelvicexam.pname"></form:errors></span></td>
+<td width="150" style="width: 198px; "><h4><span class="err">*</span>&nbsp;&nbsp;Patient Name:</h4></td><td><input type="text" name="pname" id="pname" onInput="return validatename(id)";><span class="err" id="pnameerror"><form:errors path="Lumbopelvicexam.pname"></form:errors></span></td>
 <td width="600" style="width: 444px; ">
-</td><td><h4><span class="err">*</span>Date:</h4></td><td><input type="text" id="datepicker" name="date"><span class="err" id="datepickererror"><form:errors path="Lumbopelvicexam.date"></form:errors></span></td>
+</td><td><h4><span class="err">*</span>&nbsp;&nbsp;Date:</h4></td><td><input type="text" id="datepicker" name="date"><span class="err" id="datepickererror"><form:errors path="Lumbopelvicexam.date"></form:errors></span></td>
 </tr>
 </table>
 <br>
@@ -527,7 +544,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  <td>L1</td>
  <td><input type="text" name="l1l" size="5" onkeypress="return validate(event)">&nbsp; &nbsp; &nbsp;<input type="text" name="l1r" size="5" onkeypress="return validate(event)">&nbsp;(Inguinal area)</td>
  <td>L1 </td>
- <td> <input type="text" name="l15l" id="l15l" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l15r" id="l15r" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp;(Iliopsoas)</td>
+ <td> <input type="text" name="l15l" id="l15l" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" maxlength="1" style="width: 48px; ">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l15r" id="l15r" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" maxlength="1" style="width: 56px; ">&nbsp;/5&nbsp;(Iliopsoas)</td>
  <td> </td>
  <td>  </td>
  </tr>
@@ -535,7 +552,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  <td>L2</td>
  <td><input type="text" name="l2l" size="5" onkeypress="return validate(event)">&nbsp; &nbsp; &nbsp;<input type="text" name="l2r" size="5" onkeypress="return validate(event)">&nbsp;(Ant/med thigh)</td>
  <td>L2 </td>
- <td> <input type="text" name="l25l" id="l25l" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l25r" id="l25r" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp;(Iliopsoas)</td>
+ <td> <input type="text" name="l25l" id="l25l" maxlength="1" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" style="width: 50px; ">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l25r" id="l25r" maxlength="1" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" style="width: 55px; ">&nbsp;/5&nbsp;(Iliopsoas)</td>
  <td> </td>
  <td> </td>
  </tr>
@@ -543,7 +560,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  <td>L3</td>
  <td><input type="text" name="l3l" size="5" onkeypress="return validate(event)">&nbsp; &nbsp; &nbsp;<input type="text" name="l3r" size="5" onkeypress="return validate(event)">&nbsp;(Medial knee)	</td>
  <td>L3 </td>
- <td> <input type="text" name="l35l" id="l35l" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l35r" id="l35r" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp;(Iliopsoas)</td>
+ <td> <input type="text" name="l35l" id="l35l" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" maxlength="1" style="width: 53px; ">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l35r" id="l35r" maxlength="1" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" style="width: 49px; ">&nbsp;/5&nbsp;(Iliopsoas)</td>
  <td> </td>
  <td> </td>
  </tr>
@@ -551,25 +568,25 @@ document.getElementById("pnameerror").innerHTML=" ";
  <td>L4</td>
  <td><input type="text" name="l4l" size="5" onkeypress="return validate(event)">&nbsp; &nbsp; &nbsp;<input type="text" name="l4r" size="5" onkeypress="return validate(event)">&nbsp;(Medial leg)	</td>
  <td>L4 </td>
- <td> <input type="text" name="l45l" id="l45l" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l45r" id="l45r" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp;(Rectus fem.)</td>
+ <td> <input type="text" name="l45l" id="l45l" maxlength="1" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" style="width: 52px; ">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l45r" id="l45r" maxlength="1" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" style="width: 52px; ">&nbsp;/5&nbsp;(Rectus fem.)</td>
  <td> L4</td>
- <td> <input type="text" name="l4l3" id="l4l3" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l4r3" id="l4r3" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp;(Patellar)</td>
+ <td> <input type="text" name="l4l3" id="l4l3" maxlength="1" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" style="width: 52px; ">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l4r3" id="l4r3" maxlength="1" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" style="width: 51px; ">&nbsp;/5&nbsp;(Patellar)</td>
  </tr>
  <tr class="row1">
  <td>L5</td>
  <td><input type="text" name="l5l" size="5" onkeypress="return validate(event)">&nbsp; &nbsp; &nbsp;<input type="text" name="l5r" size="5" onkeypress="return validate(event)">&nbsp;(Ant/lat leg)	</td>
  <td>L5 </td>
- <td> <input type="text" name="l55l" id="l55l" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l55r" id="l55r" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp;  (Glut Med)</td>
+ <td> <input type="text" name="l55l" id="l55l" maxlength="1" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" style="width: 52px; ">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l55r" id="l55r" maxlength="1" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" style="width: 52px; ">&nbsp;/5&nbsp;  (Glut Med)</td>
  <td>L5 </td>
- <td><input type="text" name="l5l3" id="l5l3" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l5r3" id="l5r3" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp;(Med HS) </td>
+ <td><input type="text" name="l5l3" id="l5l3" maxlength="1" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" style="width: 53px; ">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l5r3" id="l5r3" maxlength="1" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" style="width: 51px; ">&nbsp;/5&nbsp;(Med HS) </td>
  </tr>
  <tr class="row1">
  <td>SI</td>
  <td><input type="text" name="sl" size="5" onkeypress="return validate(event)">&nbsp; &nbsp; &nbsp;<input type="text" name="sr" size="5" onkeypress="return validate(event)">&nbsp;(Big toe/plantar)		</td>
  <td>SI </td>
- <td> <input type="text" name="s5l" id="s5l" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="s5r" id="s5r" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp; (Glut Max)</td>
+ <td> <input type="text" name="s5l" id="s5l" maxlength="1" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" style="width: 52px; ">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="s5r" id="s5r" maxlength="1" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" style="width: 52px; ">&nbsp;/5&nbsp; (Glut Max)</td>
  <td>SI </td>
- <td> <input type="text" name="sil" id="sil" size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="sir" id="sir"  size="5" onKeyPress="return check(id,event,value)" onInput="checkLength(id)">&nbsp;/5&nbsp;(Achilles)</td>
+ <td> <input type="text" name="sil" id="sil" maxlength="1" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" style="width: 54px; ">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="sir" id="sir"  maxlength="1" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" style="width: 48px; ">&nbsp;/5&nbsp;(Achilles)</td>
  </tr>
  <tr class="row1">
  <td></td>
@@ -654,7 +671,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  </tr>
  <tr></tr>
  <br><div></div>
- <table cellpadding="0" cellspacing="0" border="0"><tr><td><b style="font-size:14px"><span class="err">*</span>PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sign" id="sign" onInput="return validatename(id)";><span class="err" id="signerror"><form:errors path="Lumbopelvicexam.sign"></form:errors></span></b></td></tr></table>
+ <table cellpadding="0" cellspacing="0" border="0"><tr><td><b style="font-size:14px"><span class="err">*</span>&nbsp;&nbsp;PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sign" id="sign" onInput="return validatename(id)";><span class="err" id="signerror"><form:errors path="Lumbopelvicexam.sign"></form:errors></span></b></td></tr></table>
  </table>
  <table align="right">
 <tr>

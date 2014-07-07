@@ -289,18 +289,19 @@ element.style.display='none';
    
     var fieldVal = document.getElementById(id).value;
     //Suppose u want 3 number of character
-    if(fieldVal >=0 && fieldVal <=5){
+    if(fieldVal<=5){
         return true;
     }
-    else
+     else
     {
         var str = document.getElementById(id).value;
        
         str = str.substring(0, str.length - 1);
     document.getElementById(id).value = str;
-    }
+    } 
      
     }
+    
 	</script>
 <script>
           function isNumberKey(evt)
@@ -604,7 +605,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  <td>L1</td>
  <td><input type="text" name="l1l" size="5" onkeypress="return validate(event)" value="${lumbopelvicexam.l1l}">&nbsp; &nbsp; &nbsp;<input type="text" name="l1r" onkeypress="return validate(event)" size="5" value="${lumbopelvicexam.l1r}">&nbsp;(Inguinal area)</td>
  <td>L1 </td>
- <td> <input type="text" name="l15l" id="l15l" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" size="5" value="${lumbopelvicexam.l15l}" onkeypress="return validate(event)">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l15r" id="l15r" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" size="5" value="${lumbopelvic.l15r}" onkeypress="return validate(event)">&nbsp;/5&nbsp;(Iliopsoas)</td>
+ <td> <input type="text" name="l15l" id="l15l" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" maxlength="1" value="${lumbopelvicexam.l15l}" onkeypress="return validate(event)" style="width: 50px; ">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l15r" id="l15r" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" maxlength="1" value="${lumbopelvic.l15r}" onkeypress="return validate(event)" style="width: 48px; ">&nbsp;/5&nbsp;(Iliopsoas)</td>
  <td> </td>
  <td>  </td>
  </tr>
@@ -612,7 +613,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  <td>L2</td>
  <td><input type="text" name="l2l" size="5" onkeypress="return validate(event)" value="${lumbopelvicexam.l2l}">&nbsp; &nbsp; &nbsp;<input type="text" name="l2r" onkeypress="return validate(event)" size="5" value="${lumbopelvicexam.l2r }">&nbsp;(Ant/med thigh)</td>
  <td>L2 </td>
- <td> <input type="text" name="l25l" size="5" id="l25l" onKeyPress="return check(id,event,value)" onInput="checkLength(id)"value="${lumbopelvicexam.l25l}" onkeypress="return validate(event)">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l25r" id="l25r" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" size="5" value="${lumbopelvicexam.l25r}" onkeypress="return validate(event)">&nbsp;/5&nbsp;(Iliopsoas)</td>
+ <td> <input type="text" name="l25l" maxlength="1" id="l25l" onKeyPress="return check(id,event,value)" onInput="checkLength(id)"value="${lumbopelvicexam.l25l}" onkeypress="return validate(event)" style="width: 52px; ">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l25r" id="l25r" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" maxlength="1" value="${lumbopelvicexam.l25r}" onkeypress="return validate(event)" style="width: 47px; ">&nbsp;/5&nbsp;(Iliopsoas)</td>
  <td> </td>
  <td> </td>
  </tr>
@@ -620,7 +621,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  <td>L3</td>
  <td><input type="text" name="l3l" onkeypress="return validate(event)" size="5" value="${lumbopelvicexam.l3l}">&nbsp; &nbsp; &nbsp;<input type="text" name="l3r" onkeypress="return validate(event)" size="5" value="${lumbopelvicexam.l3r}">&nbsp;(Medial knee)	</td>
  <td>L3 </td>
- <td> <input type="text" name="l35l" id="l35l" onKeyPress="return check(id,event,value)" onInput="checkLength(id)"size="5" value="${lumbopelvicexam.l35l}" onkeypress="return validate(event)">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l35r" id="l35r" onKeyPress="return check(id,event,value)" onInput="checkLength(id)"size="5" value="${lumbopelvicexam.l35r}" onkeypress="return validate(event)">&nbsp;/5&nbsp;(Iliopsoas)</td>
+ <td> <input type="text" name="l35l" id="l35l" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" maxlength="1" value="${lumbopelvicexam.l35l}" onkeypress="return validate(event)" style="width: 51px; ">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l35r" id="l35r" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" maxlength="1" value="${lumbopelvicexam.l35r}" onkeypress="return validate(event)" style="width: 50px; ">&nbsp;/5&nbsp;(Iliopsoas)</td>
  <td> </td>
  <td> </td>
  </tr>
@@ -628,25 +629,25 @@ document.getElementById("pnameerror").innerHTML=" ";
  <td>L4</td>
  <td><input type="text" name="l4l" size="5" onkeypress="return validate(event)" value="${lumbopelvicexam.l4l}">&nbsp; &nbsp; &nbsp;<input type="text" name="l4r" onkeypress="return validate(event)" size="5" value="${lumbopelvicexam.l4r}">&nbsp;(Medial leg)	</td>
  <td>L4 </td>
- <td> <input type="text" name="l45l" id="l45l" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" size="5" value="${lumbopelvicexam.l45l}" onkeypress="return validate(event)">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l45r" id="l45r" onKeyPress="return check(id,event,value)" onInput="checkLength(id)"size="5" value="${lumbopelvicexam.l45r}" onkeypress="return validate(event)">&nbsp;/5&nbsp;(Rectus fem.)</td>
+ <td> <input type="text" name="l45l" id="l45l" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" maxlength="1" value="${lumbopelvicexam.l45l}" onkeypress="return validate(event)" style="width: 48px; ">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l45r" id="l45r" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" maxlength="1" value="${lumbopelvicexam.l45r}" onkeypress="return validate(event)" style="width: 49px; ">&nbsp;/5&nbsp;(Rectus fem.)</td>
  <td> L4</td>
- <td> <input type="text" name="l4l3" id="l4l3" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" size="5" value="${lumbopelvicexam.l4l3}" onkeypress="return validate(event)">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l4r3" id="l4r3" onKeyPress="return check(id,event,value)" onInput="checkLength(id)"size="5" value="${lumbopelvicexam.l4r3}" onkeypress="return validate(event)">&nbsp;/5&nbsp;(Patellar)</td>
+ <td> <input type="text" name="l4l3" id="l4l3" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" maxlength="1" value="${lumbopelvicexam.l4l3}" onkeypress="return validate(event)" style="width: 47px; ">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l4r3" id="l4r3" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" maxlength="1" value="${lumbopelvicexam.l4r3}" onkeypress="return validate(event)" style="width: 51px; ">&nbsp;/5&nbsp;(Patellar)</td>
  </tr>
  <tr class="row1">
  <td>L5</td>
  <td><input type="text" name="l5l" size="5" onkeypress="return validate(event)" value="${lumbopelvicexam.l5l}">&nbsp; &nbsp; &nbsp;<input type="text" name="l5r" onkeypress="return validate(event)" size="5" value="${lumbopelvicexam.l5r}">&nbsp;(Ant/lat leg)	</td>
  <td>L5 </td>
- <td> <input type="text" name="l55l" id="l55l" onKeyPress="return check(id,event,value)" onInput="checkLength(id)"size="5" value="${lumbopelvicexam.l55l}" onkeypress="return validate(event)">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l55r" id="l55r"onKeyPress="return check(id,event,value)" onInput="checkLength(id)" size="5" value="${lumbopelvicexam.l55r}" onkeypress="return validate(event)">&nbsp;/5&nbsp;  (Glut Med)</td>
+ <td> <input type="text" name="l55l" id="l55l" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" maxlength="1" value="${lumbopelvicexam.l55l}" onkeypress="return validate(event)" style="width: 48px; ">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l55r" id="l55r"onKeyPress="return check(id,event,value)" onInput="checkLength(id)" maxlength="1" value="${lumbopelvicexam.l55r}" onkeypress="return validate(event)" style="width: 48px; ">&nbsp;/5&nbsp;  (Glut Med)</td>
  <td>L5 </td>
- <td><input type="text" name="l5l3" id="l5l3" onKeyPress="return check(id,event,value)" onInput="checkLength(id)"size="5" value="${lumbopelvicexam.l5l3}" onkeypress="return validate(event)">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l5r3" id="l5r3" onKeyPress="return check(id,event,value)" onInput="checkLength(id)"size="5" value="${lumbopelvicexam.l5r3}" onkeypress="return validate(event)">&nbsp;/5&nbsp;(Med HS) </td>
+ <td><input type="text" name="l5l3" id="l5l3" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" maxlength="1" value="${lumbopelvicexam.l5l3}" onkeypress="return validate(event)" style="width: 49px; ">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="l5r3" id="l5r3" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" maxlength="1" value="${lumbopelvicexam.l5r3}" onkeypress="return validate(event)" style="width: 50px; ">&nbsp;/5&nbsp;(Med HS) </td>
  </tr>
  <tr class="row1">
  <td>SI</td>
  <td><input type="text" name="sl" size="5" onkeypress="return validate(event)" value="${lumbopelvicexam.sl}">&nbsp; &nbsp; &nbsp;<input type="text" name="sr" onkeypress="return validate(event)" size="5" value="${lumbopelvicexam.sr}">&nbsp;(Big toe/plantar)		</td>
  <td>SI </td>
- <td> <input type="text" name="s5l" id="s5l" onKeyPress="return check(id,event,value)" onInput="checkLength(id)"size="5" value="${lumbopelvicexam.s5l}" onkeypress="return validate(event)">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="s5r" id="s5r" onKeyPress="return check(id,event,value)" onInput="checkLength(id)"size="5" value="${lumbopelvicexam.s5r}" onkeypress="return validate(event)">&nbsp;/5&nbsp; (Glut Max)</td>
+ <td> <input type="text" name="s5l" id="s5l" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" maxlength="1" value="${lumbopelvicexam.s5l}" onkeypress="return validate(event)" style="width: 50px; ">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="s5r" id="s5r" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" maxlength="1" value="${lumbopelvicexam.s5r}" onkeypress="return validate(event)" style="width: 47px; ">&nbsp;/5&nbsp; (Glut Max)</td>
  <td>SI </td>
- <td> <input type="text" name="sil" id="sil" onKeyPress="return check(id,event,value)" onInput="checkLength(id)"size="5" value="${lumbopelvicexam.sil}" onkeypress="return validate(event)">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="sir" id="sir" onKeyPress="return check(id,event,value)" onInput="checkLength(id)"size="5" value="${lumbopelvicexam.sir}" onkeypress="return validate(event)">&nbsp;/5&nbsp;(Achilles)</td>
+ <td> <input type="text" name="sil" id="sil" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" maxlength="1" value="${lumbopelvicexam.sil}" onkeypress="return validate(event)" style="width: 49px; ">&nbsp;/5&nbsp; &nbsp; &nbsp;<input type="text" name="sir" id="sir" onKeyPress="return check(id,event,value)" onInput="checkLength(id)" maxlength="1" value="${lumbopelvicexam.sir}" onkeypress="return validate(event)" style="width: 51px; ">&nbsp;/5&nbsp;(Achilles)</td>
  </tr>
  <tr class="row1">
  <td></td>
