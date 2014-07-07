@@ -59,10 +59,12 @@ function doAjaxPost() {
 			      <!--   <form action="findPatients" method="GET">  --> 
 			      
 			    <form action="findpatient" method="GET">
-			  <table><tr><td>Last Name:</td><td><input type="text" name="lastname" value="${lastname}"></td>
+			   <table  style="padding:10px;background-color:#F6F6F6;" width=100% border="0"><tr><td style="padding:10px;">Last Name:</td><td><input type="text" name="lastname" value="${lastname}"></td>
 			  <td>Attorney:</td><td><input type="text" name="NameOfAttorney" value="${attorney}"></td>
+			  
 			  <td>Type of Accident:</td><td><input type="text" name="accident" value="${accident}"></td>
-			  <td>Date of Accident</td><td><input type="text" name="dateofaccident" id="datepicker" value="${dateofaccident}"></td>
+			</tr><tr>
+			  <td>&nbsp;&nbsp;&nbsp;Date of Accident</td><td><input type="text" name="dateofaccident" id="datepicker" value="${dateofaccident}"></td>
 			 <td>Name of Your Health Insurance:</td><td><input type="text" name="insurance" value="${insurance}"></td>
 			  <td width="50"></td><td><input type="submit" value="Find" class="submit_btn"></td></tr></table>    
 			      

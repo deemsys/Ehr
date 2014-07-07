@@ -39,13 +39,14 @@ function validateusername1(){
 
 	function checkSubmit()
 	{
-document.getElementById("usernameerror").innerHTML=" ";
+      var error="";
+		document.getElementById("usernameerror").innerHTML=" ";
 		
 		if(document.getElementById("username").value=="")
 		{
 		document.getElementById("usernameerror").innerHTML="Required Field Should not be Empty.";
 		
-		return false;
+		error="true";
 		}
 		document.getElementById("usernameerror").innerHTML="";
 	    if(document.getElementById("username").value.length<4 || document.getElementById("username").value.length>=32)
@@ -53,7 +54,7 @@ document.getElementById("usernameerror").innerHTML=" ";
 	    	
 	    	document.getElementById("usernameerror").innerHTML="Username Should be of length 4 to 32.";
 	    	
-	        return false;
+	    	error="true";
 	    }
 		
 		/* var uname = /^[A-Za-z0-9_]{4,32}$/;
@@ -68,7 +69,7 @@ document.getElementById("passworderror").innerHTML=" ";
 		{
 		document.getElementById("passworderror").innerHTML="Required Field Should not be Empty.";
 		
-		return false;
+		error="true";
 		}
 		
 		document.getElementById("passworderror").innerHTML="";
@@ -77,7 +78,7 @@ document.getElementById("passworderror").innerHTML=" ";
 	    	
 	    	document.getElementById("passworderror").innerHTML="Password should be length 4 to 32";
 	    	
-	        return false;
+	    	error="true";
 	    }
        /*  var pass = /^[a-zA-Z0-9]{3,32}$/;
         
@@ -92,12 +93,12 @@ document.getElementById("confirmerror").innerHTML=" ";
 		{
 		document.getElementById("confirmerror").innerHTML="Required Field Should not be Empty.";
 		
-		return false;
+		error="true";
 		}
         if(document.getElementById("password").value!=document.getElementById("confirm").value)
         {
-        	document.getElementById("confirmerror").innerHTML="Password Should be of length.";
-            return false;
+        	document.getElementById("confirmerror").innerHTML="Password Mismatch.";
+        	error="true";
         }
         
      /*    document.getElementById("confirmerror").innerHTML="";
@@ -114,17 +115,30 @@ document.getElementById("emailerror").innerHTML=" ";
 		{
 		document.getElementById("emailerror").innerHTML="Required Field Should not be Empty";
 		
-		return false;
+		error="true";
 		}
         
         var mail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        if(document.getElementById("email").value=='')
+        	{
+        	document.getElementById("emailerror").innerHTML="Required Field Should not be Empty";
+        	error="true";
+        	}
         
+      if(document.getElementById("email").value!='')
+    	  {
+    	      	  
         if(document.getElementById("email").value.match(mail)==null)
         {
-        	document.getElementById("emailerror").innerHTML="Enter ur proper E-Mail";
+        	document.getElementById("emailerror").innerHTML="Invalid Email-id";
         	
-            return false;
+        	error="true";
         }
+    	  }
+        if(error=='true')
+        	{
+        	return false;
+        	}
 
         
 
@@ -190,7 +204,7 @@ document.getElementById("emailerror").innerHTML=" ";
 	            <tr class="row1">
 	             <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Username:</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="username" name="username" value="${signup.username}" onInput="return validateusername()";/><br/><span class="err"><form:errors path="Signup.username"></form:errors><font color="Red" size="+1"><c:if test="${usernames=='exist'}"><c:out value="Username Already Exists"></c:out></c:if></font></span>
+				  <input type="text" class="input_txtbx1" id="username" name="username" value="${signup.username}" onInput="return validateusername()";/><br/><font color="Red" size="+1"><span id="usernameerror"><form:errors path="Signup.username"></form:errors><c:if test="${usernames=='exist'}"><c:out value="Username Already Exists"></c:out></c:if></font></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">

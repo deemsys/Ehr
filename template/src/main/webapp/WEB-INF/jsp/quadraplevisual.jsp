@@ -502,7 +502,8 @@ function checkLength1(){
         	<div id="block1">
 	            <div class="headings altheading">
 	            <img  src="resources/images/print.png" id="print" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block1');" >
-	             <h2> ${symptoms} Quadruple Visual Analogue Scale</h2> 
+
+	             <h2> Quadruple Visual Analogue Scale</h2> 
 	            </div>
 	            <div class="contentbox">
 	            

@@ -45,13 +45,14 @@ function validateusername2(){
 
 	function checkSubmit()
 	{
+		var error="";
 document.getElementById("doctorusernameerror").innerHTML=" ";
 		
 		if(document.getElementById("doctorusername").value=="")
 		{
 		document.getElementById("doctorusernameerror").innerHTML="Required Field Should not be Empty.";
 		
-		return false;
+		error="true";
 		}
 		
 		
@@ -61,7 +62,7 @@ document.getElementById("doctorusernameerror").innerHTML=" ";
 	    	
 	    	document.getElementById("doctorusernameerror").innerHTML="Username should be be of length 4 to 32.";
 	    	
-	        return false;
+	    	error="true";
 	    } 
 document.getElementById("doctorpassworderror").innerHTML=" ";
 		
@@ -69,7 +70,7 @@ document.getElementById("doctorpassworderror").innerHTML=" ";
 		{
 		document.getElementById("doctorpassworderror").innerHTML="Required Field Should not be Empty.";
 		
-		return false;
+		error="true";
 		}
 		
 		
@@ -79,7 +80,7 @@ document.getElementById("doctorpassworderror").innerHTML=" ";
 	    	
 	    	document.getElementById("doctorpassworderror").innerHTML="Password Should be of length 4 to 32.";
 	    	
-	        return false;
+	    	error="true";
 	    }
 document.getElementById("doctorconfirmerror").innerHTML=" ";
 		
@@ -87,12 +88,12 @@ document.getElementById("doctorconfirmerror").innerHTML=" ";
 		{
 		document.getElementById("doctorconfirmerror").innerHTML="Required Field Should not be Empty.";
 		
-		return false;
+		error="true";
 		}
         if(document.getElementById("doctorpassword").value!=document.getElementById("doctorconfirm").value)
         {
         	document.getElementById("doctorconfirmerror").innerHTML="Password Mismatch.";
-            return false;
+        	error="true";
         }
 
         
@@ -102,17 +103,27 @@ document.getElementById("doctoremailerror").innerHTML=" ";
 		{
 		document.getElementById("doctoremailerror").innerHTML="Required Field Should not be Empty.";
 		
-		return false;
+		error="true";
 		}
         
         var mail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
         
+        if(document.getElementById("doctoremail").value=='')
+        	{
+        	document.getElementById("doctoremailerror").innerHTML="Required Field Should not be Empty.";
+        	}
+        if(document.getElementById("doctoremail").value!='')
+    	{
         if(document.getElementById("doctoremail").value.match(mail)==null)
         {
-        	document.getElementById("doctoremailerror").innerHTML="Kindly Provide Valid Email ID.";
+        	document.getElementById("doctoremailerror").innerHTML="Invalid Email-id.";
         	
-            return false;
-        }
+        	error="true";
+        }}
+        if(error=="true")
+        	{
+        	return false;
+        	}
 
 	}
 	</script>
@@ -160,7 +171,7 @@ document.getElementById("doctoremailerror").innerHTML=" ";
 	             <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Confirm Password:</td>
 				  <td valign="top" align="left" class="input_txt">
 
-				  <input type="password" class="input_txtbx1" id="doctorconfirm" name="doctorconfirm" onInput="return validateusername2()";  /><br/><span class="err" id="doctorconfirmerror"><form:errors path="Doctorsignup.doctorconfirm"></form:errors></span>
+				  <input type="password" class="input_txtbx1" id="doctorconfirm" name="doctorconfirm" onInput="return validateusername2()";  /><br/><font size="+1" color="red" ><span  id="doctorconfirmerror"><form:errors path="Doctorsignup.doctorconfirm"></form:errors></span></font>
 
 				  </td>
 				  </tr>

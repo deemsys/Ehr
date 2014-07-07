@@ -52,14 +52,14 @@
 		        <p>UserName</p>
 		      </li>
 		      <li>
-		        <input type="text" class="inputbx" name="j_username" id="uname" value=''>
+		        <input type="text" maxlength="32" class="inputbx" name="j_username" id="uname" value=''>
 				<p><font color="Red"><span id="urequires"></span></font></p>
 		      </li>
 		      <li>
 		        <p>Password</p>
 		      </li>
 		      <li>
-		        <input type="password" class="inputbx" name="j_password" id="pswd">
+		        <input type="password"  maxlength="32" class="inputbx" name="j_password" id="pswd">
 				<p><font color="Red"><span id="prequires"></span></font></p>
 		      </li>
 		      <li><a href="#">

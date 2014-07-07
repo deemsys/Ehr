@@ -15,7 +15,18 @@
 	margin: 16px;
 }
 </style>
+<script>
+function validate()
+{
+if(document.getElementById("username").value=="")
+	{
+	alert("Required Field Should not be Empty");
+	return false;
+	}
+	
+}
 
+</script>
 </head>
 
 	<c:if test="${not empty psearch}">
@@ -57,7 +68,7 @@
 	            <tr class="row1">
 	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">*</span>&nbsp;Please Enter Patient UserName:</td>
 				  <td valign="top" align="left" class="input_txt" width="200">
-				   <input type="text" class="input_txtbx1" id="inp_id" name="username" /><br/><span class="err"><form:errors path="Doctorsearch.emailid"></form:errors></span>
+				   <input type="text" class="input_txtbx1" id="username" name="username" /><br/><span class="err"><form:errors path="Doctorsearch.emailid"></form:errors></span>
 				  </td>
 				  </tr>
 				  <%-- <tr class="row1">
@@ -70,7 +81,7 @@
 				   <br>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
-              <td valign="top" align="center"><input type="submit" class="submit_btn" value="Submit"></td>
+              <td valign="top" align="center"><input type="submit" class="submit_btn" value="Submit" onclick="return validate('this')"></td>
               </tr>
               </table>
               </div>
