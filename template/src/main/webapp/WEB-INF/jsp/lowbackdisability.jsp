@@ -265,9 +265,9 @@ document.getElementById("pnameerror").innerHTML=" ";
           <table cellpadding="0" cellspacing="0" border="0" width="98%">
            
  <tr class="row1">
-<td><h4><span class="err">* </span>Patient Name:</h4></td><td><input type="text" id="pname" name="pname" onInput="return validatename(id)";/><span style="color: red;font-style:italic;" id="pnameerror"><form:errors path="Lowback.pname"></form:errors></span></td>
+<td style="width: 418px; "><h4><span class="err">* </span>Patient Name: &nbsp;&nbsp;<input type="text" id="pname" name="pname" onInput="return validatename(id)"></h4>&nbsp;<span style="color: red;font-style:italic;" id="pnameerror"><form:errors path="Lowback.pname"></form:errors></span></td>
 <td width="300">
-<td><h4><span class="err">* </span>Date:</h4></td><td><input type="text"  id="datepicker" name="date" id="datepickererror" /><span style="color: red;font-style:italic;" id="datepickererror" ><form:errors path="Lowback.date"></form:errors></span></td>
+<td><h4><span class="err">* </span>Date:&nbsp;&nbsp;<input type="text" id="datepicker" name="date" id="datepickererror"></h4><span style="color: red;font-style:italic;" id="datepickererror" ><form:errors path="Lowback.date"></form:errors></span></td>
 </tr>
 </table>
 <br/>

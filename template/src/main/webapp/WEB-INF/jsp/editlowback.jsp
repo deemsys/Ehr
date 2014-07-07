@@ -253,9 +253,9 @@ document.getElementById("pnameerror").innerHTML=" ";
           <c:set value="${lowbackForm.lowback[0]}" var="lowback"/> 
  <tr class="row1">
  <input type="hidden" name="lowbackno" id="lowbackno" value="${lowback.lowbackno}">
-<td><h2><span class="err">* </span>Patient Name:</h2></td><td><input type="text" id="pname" name="pname"onInput="return validatename(id)"; value="${lowback.pname}"/><span style="color: red;font-style:italic;" id="pnameerror"><form:errors path="Lowback.pname"></form:errors></span></td>
-<td width="600">
-<td><h2><span class="err">* </span>Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${lowback.date}" /><span style="color: red;font-style:italic;" id="datepickererror"><form:errors path="Lowback.date"></form:errors></span></td>
+<td style="width: 381px; "><h2><span class="err">* </span>Patient Name:&nbsp;&nbsp;<input type="text" id="pname" name="pname" onInput="return validatename(id)" value="${lowback.pname}"></h2> &nbsp;&nbsp;<span style="color: red;font-style:italic;" id="pnameerror"><form:errors path="Lowback.pname"></form:errors></span></td>
+<td width="300">
+<td><h2><span class="err">* </span>Date:&nbsp;&nbsp;<input type="text" id="datepicker" name="date" value="${lowback.date}"></h2><span style="color: red;font-style:italic;" id="datepickererror"><form:errors path="Lowback.date"></form:errors></span></td>
 </tr>
 </table>
 <br/>
