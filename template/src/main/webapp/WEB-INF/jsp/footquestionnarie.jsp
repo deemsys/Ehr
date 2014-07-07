@@ -368,7 +368,7 @@ document.getElementById("securityerror").innerHTML=" ";
 	     <tr><td style= "border:1px solid;" ><b>&nbsp;8.Moderate activity,such as moderate physical work,jogging,running?</b></td><td style= "border:1px solid;" align="center"><input type="radio" value="1" name="moderateactivity">&nbsp;1</td><td style= "border:1px solid;" align="center"><input type="radio" value="2" name="moderateactivity">&nbsp;2</td><td style= "border:1px solid;" align="center"><input type="radio" value="3" name="moderateactivity">&nbsp;3</td><td style= "border:1px solid;" align="center"><input type="radio" value="4" name="moderateactivity">&nbsp;4</td><td style= "border:1px solid;" align="center"><input type="radio" value="5" name="moderateactivity">&nbsp;5</td></tr>
 	     
 	     <tr><td style= "border:1px solid;" ><b>&nbsp;9.Light activity ,such as walking ,house work,yard work?</b></td><td style= "border:1px solid;" align="center"><input type="radio" value="1" name="lightactivity">&nbsp;1</td><td style= "border:1px solid;" align="center"><input type="radio" value="2" name="lightactivity">&nbsp;2</td><td style= "border:1px solid;" align="center"><input type="radio" value="3" name="lightactivity">&nbsp;3</td><td style= "border:1px solid;" align="center"><input type="radio" value="4" name="lightactivity">&nbsp;4</td><td style= "border:1px solid;" align="center"><input type="radio" value="5" name="lightactivity">&nbsp;5</td></tr>
-	     </table>
+	     </table><br>
 	     <p><b>&nbsp;10.Which  of the following statements best describes your ability to get around most of the time during the past week?</b></p>
               <table cellpadding="0" cellspacing="0" border="0" width="100%" >
               <tr><td><input type="radio" name="best" value="I did not need support or assitance at all.">I did not need support or assitance at all.</td></tr>
@@ -402,12 +402,12 @@ document.getElementById("securityerror").innerHTML=" ";
           <div class="contentbox">
           
           
-              <br>
+              <br>         
               <p><b>&nbsp;11.How much trouble did you have with balance during the past week?</b></p>
               <table><tr><td ><input type="radio" name="trouble" value="No trouble at all" >No at all difficult&nbsp;&nbsp;&nbsp;</td><td ><input type="radio" name="trouble" value="A little bit of trouble">A little bit of trouble&nbsp;&nbsp;&nbsp;</td><td ><input type="radio" name="trouble" value="A moderate amount of trouble">A moderate amount of trouble&nbsp;&nbsp;&nbsp;</td>
               <td ><input type="radio" name="trouble" value="Quite a bit of trouble">Quite a bit of trouble&nbsp;&nbsp;&nbsp;</td></tr></table>     
 	          <table><tr><td ><input type="radio" name="trouble" value="A great amount of trouble">A great amount of trouble&nbsp;&nbsp;&nbsp;</td><td><input type="radio" name="trouble" value="I cannot balance on my feet all">I cannot balance on my feet all&nbsp;&nbsp;&nbsp;</td></tr></table>
-	          <p><b>&nbsp;12.How difficult was it for you to put on or take off socks/stockings during the past week?</b></p>
+	         <br> <p><b>&nbsp;12.How difficult was it for you to put on or take off socks/stockings during the past week?</b></p>
         <table><tr><td ><input type="radio" name="socks" value="Not at all difficult">Not at all difficult&nbsp;&nbsp;&nbsp;</td><td ><input type="radio" name="socks" value="Slightly difficult">Slightly difficult&nbsp;&nbsp;&nbsp;</td><td ><input type="radio" name="socks" value="Moderately difficult">Moderately difficult&nbsp;&nbsp;&nbsp;</td><td ><input type="radio" name="socks" value="Very difficult">Very difficult&nbsp;&nbsp;&nbsp;</td></tr></table>     
 	   <table>
 	   <tr><td ><input type="radio" name="socks" value="Extremely difficult">Extremely difficult&nbsp;&nbsp;&nbsp;</td><td><input type="radio" name="socks" value="Cannot do it all">Cannot do it all</td></tr>
@@ -435,7 +435,7 @@ document.getElementById("securityerror").innerHTML=" ";
               <tr><td><input type="radio" name="difficulty" value="Extreme difficulty">Extreme difficulty</td></tr>
               <tr><td><input type="radio" name="difficulty" value="Cannot do because of foot/ankle">Cannot do because of foot/ankle</td></tr>
               <tr><td><input type="radio" name="difficulty" value="Cannot do for other reasons">Cannot do for other reasons</td></tr>
-              </table>
+              </table><br>
           <p><b>&nbsp;What types of shoes can you wear comfortably?</b></p>  
           
          <table style="border-collapse: collapse;border:2px solid;">
@@ -446,13 +446,13 @@ document.getElementById("securityerror").innerHTML=" ";
 	     <tr><td style= "border:1px solid;" ><b>&nbsp;21.Sneakers,walking,or casual shoes </b></td><td style= "border:1px solid;" align="center"><input type="radio" value="1" name="shoes">&nbsp;1</td><td style= "border:1px solid;" align="center"><input type="radio" value="2" name="shoes">&nbsp;2</td><td style= "border:1px solid;" align="center"><input type="radio" value="3" name="shoes">&nbsp;3</td></tr>
 	     <tr><td style= "border:1px solid;" ><b>&nbsp;22.Orthopedic or prescription shoes </b></td><td style= "border:1px solid;" align="center"><input type="radio" value="1" name="orthopedic">&nbsp;1</td><td style= "border:1px solid;" align="center"><input type="radio" value="2" name="orthopedic">&nbsp;2</td><td style= "border:1px solid;" align="center"><input type="radio" value="3" name="orthopedic">&nbsp;3</td></tr>
 	     <tr><td style= "border:1px solid;" ><b>&nbsp;23.All shoes </b></td><td style= "border:1px solid;" align="center"><input type="radio" value="1" name="allversion">&nbsp;1</td><td style= "border:1px solid;" align="center"><input type="radio" value="2" name="allversion">&nbsp;2</td><td style= "border:1px solid;" align="center"><input type="radio" value="3" name="allversion">&nbsp;3</td></tr>
-	     </table>
+	     </table><br>
         <p><b>&nbsp;24.How much did your foot or ankle problem interfere with your normal work ,including work both outside the home and house work?</b></p>
               <table><tr><td ><input type="radio" name="foot" value="Not at all">Not at all&nbsp;&nbsp;&nbsp;</td><td ><input type="radio" name="foot" value="A little bit">A little bit&nbsp;&nbsp;&nbsp; </td><td ><input type="radio" name="foot" value="Moderately">Moderately&nbsp;&nbsp;&nbsp; </td><td ><input type="radio" name="foot" value="Quite a bit">Quite a bit&nbsp;&nbsp;&nbsp;</td></tr></table>     
 	          <table>
 	          <tr><td ><input type="radio" name="foot" value="Extremely">Extremely&nbsp;&nbsp;&nbsp;</td><td><input type="radio" name="foot" value="Unable to work due to foot and ankle problems">Unable to work due to foot and ankle problems</td>
 	          </tr>
-	          </table>
+	          </table><br>
 	          <p><b>&nbsp;25.How much did your foot or ankle problem interfere with your life and your ability to do what you want?</b></p>
         <table><tr><td ><input type="radio" name="ankle" value="Not at all">Not at all&nbsp;&nbsp;&nbsp;</td><td ><input type="radio" name="ankle" value="A little bit">A little bit &nbsp;&nbsp;&nbsp;</td><td ><input type="radio" name="ankle" value="Moderately">Moderately &nbsp;&nbsp;&nbsp;</td><td ><input type="radio" name="ankle" value="Quite a bit">Quite a bit&nbsp;&nbsp;&nbsp;</td></tr></table>     
 	<table><tr><td ><input type="radio" name="ankle" value="Extremely">Extremely&nbsp;&nbsp;&nbsp;</td><td><input type="radio" name="ankle" value="Unable to work due to foot and ankle problems">Unable to work due to foot and ankle problems&nbsp;&nbsp;&nbsp;</td></tr></table>
@@ -476,7 +476,7 @@ document.getElementById("securityerror").innerHTML=" ";
 	             
 	            </div>
           <div class="contentbox">
-	    <span class="err">* </span>Date:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="date" id="datepicker"><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="Footquestionnarie.date"></form:errors></span>
+	    <span class="err">* </span>Date:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="date" id="datepicker"><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="Footquestionnarie.date"></form:errors></span>
 	    <br>
 	    <br>
 	    
@@ -490,7 +490,7 @@ document.getElementById("securityerror").innerHTML=" ";
 	    </br>
 	    </br>
 	       </p>
-	    Your Birth Date:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <input type="text"  name="birthdate" id="datepicker1"><span id="datepicker1error" style="color: red;font-style:italic;"></span>
+	   &nbsp;&nbsp; Your Birth Date:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <input type="text"  name="birthdate" id="datepicker1"><span id="datepicker1error" style="color: red;font-style:italic;"></span>
 	    <br><br>
 	    <table>
 	    <td><span class="err">* </span>Your Social Security Number: <input type="text" name="security" id="security" maxlength="11" onkeypress="return validate(event)";><span id="securityerror" style="color: red;font-style:italic;"> <div id="number"></span></td></div></table>
