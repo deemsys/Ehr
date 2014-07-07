@@ -4532,6 +4532,8 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 
 	@RequestMapping(value="/deletepatientdetails", method=RequestMethod.GET)
 	public String removePatientDetails(@RequestParam("patient_id") String patient_id,ModelMap model,HttpSession session, Principal principal) {
+		
+		session.removeAttribute("first");
 		if(principal.getName().equals("admin"))
 		{
 			

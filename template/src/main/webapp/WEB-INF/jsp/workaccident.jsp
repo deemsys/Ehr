@@ -818,7 +818,7 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
   				<tr class="row1" width="30%">
                   <td valign="middle" align="left" class="input_txt" width="18%"><span class="err">* </span>What Is The Job Classification Of Your Normal Job?</td>
 				  <td valign="top" align="left" class="input_txt" >
-				  <input type="text" class="input_txtbx1" id="job_classification" maxlength="32" onInput="return validatename(id)";name="job_classification" /><br><span id="job_classificationerror" style="color: red;font-style:italic;"><form:errors path="Workaccident.job_classification"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="job_classification" name="job_classification"  maxlength="32" onInput="return validatename(id)";/><br><span id="job_classificationerror" style="color: red;font-style:italic;"><form:errors path="Workaccident.job_classification"></form:errors></span>
 				  </td>
 				  </tr>
 				 <tr class="row2">
@@ -914,7 +914,7 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt"><span class="err">* </span>From Where To Where:</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" maxlength="32" id="where_to_where" onInput="return validatename(id)";name="where_to_where" />
+				  <input type="text" class="input_txtbx1" name="where_to_where" maxlength="32" id="where_to_where" onInput="return validatename(id)"; />
 				  <br><span id="where_to_whereerror" style="color: red;font-style:italic;"></span>
 				  </td>
 				  </tr>

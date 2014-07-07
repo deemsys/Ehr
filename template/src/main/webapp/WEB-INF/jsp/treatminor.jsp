@@ -115,13 +115,38 @@ function validatename1(){
      printWin.document.close();
      printWin.focus();
      printWin.print();
+     closepopup();
      printWin.close();
+     setTimeout(function() { printWin.close(); }, 10); 
      document.getElementById('print').style.visibility = 'visible';
      document.getElementById('saveid').style.visibility = 'visible';
      document.getElementById('cancelid').style.visibility = 'visible';
   }
+  
+  function closepopup()
+  {
+     if(false == printWin.closed)
+     {
+    	 printWin.close ();
+     }
+     else
+     {
+        alert('Window already closed!');
+     }
+  }
   </script>
- 
+  <script>
+ function closepopup()
+   {
+      if(false == my_window.closed)
+      {
+         my_window.close ();
+      }
+      else
+      {
+         alert('Window already closed!');
+      }
+   }</script>
   <script>
 
 	function checkSubmit()
