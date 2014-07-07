@@ -330,7 +330,26 @@ function validatename(id){
   
   
   </script>
-  
+   <script>
+  function checkLength11(id){
+	   
+	    var fieldVal = document.getElementById(id).value;
+	    
+	    if(fieldVal >=0 && fieldVal <=10){
+	        return true;
+	    }
+	    else
+	    {
+	        var str = document.getElementById(id).value;
+	       
+	        str = str.substring(0, str.length - 1);
+	    document.getElementById(id).value = str;
+	    }
+	     
+	    }
+		</script>
+
+    
   <script type="text/javascript">
        function validate(event) {
           
@@ -343,7 +362,7 @@ function validatename(id){
            }
        }       
     </script>
-     <script>
+    <script>
 	function check(e,value){
     //Check Charater
         var unicode=e.charCode? e.charCode : e.keyCode;
@@ -365,6 +384,7 @@ function validatename(id){
      
     }
 	</script>
+     
  </head>
  <body onload="validation()">
 <div id="right_content">
@@ -405,9 +425,9 @@ $(function() {
 	            <c:set value="${quadraplevisualform.quadraplevisualdetails[0]}" var="quadraplevisualdetails"></c:set>
 	             <table>
 	             <tr height="30">
-	             <td width="100"><span class="err">*</span>Name</td><td width="400"><input type="hidden" id="symptom" name="symptom" value="${quadraplevisualdetails.symptom}"><input type="hidden" name="quadrapleno" value="${quadraplevisualdetails.quadrapleno}"><input type="text" name="name" id="name" onInput="return validatename(id)"; value="${quadraplevisualdetails.name}" ><span class="err" id="nameerror"></span></td>
+	             <td width="100"><span class="err">* </span>Name</td><td width="400"><input type="hidden" id="symptom" name="symptom" value="${quadraplevisualdetails.symptom}"><input type="hidden" name="quadrapleno" value="${quadraplevisualdetails.quadrapleno}"><input type="text" name="name" id="name" onInput="return validatename(id)"; value="${quadraplevisualdetails.name}" ><span class="err" id="nameerror"></span></td>
 	             <td width="100">Number</td><td width="400"><input type="text" name="number"  onkeypress="return validate(event)"; value="${quadraplevisualdetails.number}"></td>
-	             <td width="100"><span class="err">*</span>Date</td><td width="400"><input type="text"  name="date" id="datepicker" value="${quadraplevisualdetails.date}"  /><span class="err" id="datepickererror"></span></td>
+	             <td width="100"><span class="err">* </span>Date</td><td width="400"><input type="text"  name="date" id="datepicker" value="${quadraplevisualdetails.date}"  /><span class="err" id="datepickererror"></span></td>
 	             </tr>
 	             </table>
 	             <table>
@@ -436,7 +456,7 @@ $(function() {
 	             </tr>
 	             <tr height="50"> 
 &nbsp;&nbsp;&nbsp;<td><label for="amount">Pain Scale:</label>
-				                  	<input type="text" id="amount" value="${quadraplevisualdetails.painscale}" name="painscale" /><span id="amounterr"></span>&nbsp;&nbsp;&nbsp;
+				                  	<input type="text" id="amount" maxlength="2" value="${quadraplevisualdetails.painscale}" name="painscale" onInput="checkLength11(id)" onkeypress="return validate(event)"; /><span id="amounterr"></span>&nbsp;&nbsp;&nbsp;
 				                  	<div id="slider"></div></td>
 				  </tr>
 				  <tr height="30">
@@ -445,7 +465,7 @@ $(function() {
 	             <tr height="50"> 
 	             
 	             <td><label for="amount1">Pain Scale:</label>
-				                  	<input type="text" id="amount1" value="${quadraplevisualdetails.painscale1}" name="painscale1" /><span id="amount1err"></span>&nbsp;&nbsp;&nbsp;
+				                  	<input type="text" id="amount1" maxlength="2" value="${quadraplevisualdetails.painscale1}" name="painscale1" onInput="checkLength11(id)" onkeypress="return validate(event)";/><span id="amount1err"></span>&nbsp;&nbsp;&nbsp;
 				                  	<div id="slider1"></div></td>
 				  </tr>
 				  <tr height="30">
@@ -454,7 +474,7 @@ $(function() {
 	             <tr height="50"> 
 	             
 	             <td><label for="amount2">Pain Scale:</label>
-				                  	<input type="text" id="amount2" name="painscale2" value="${quadraplevisualdetails.painscale2}" /><span id="amount2err"></span>&nbsp;&nbsp;&nbsp;
+				                  	<input type="text" id="amount2" name="painscale2" maxlength="2" value="${quadraplevisualdetails.painscale2}" onInput="checkLength11(id)" onkeypress="return validate(event)"; /><span id="amount2err"></span>&nbsp;&nbsp;&nbsp;
 				                  	<div id="slider2"></div></td>
 				  </tr>
 				  <tr height="30">
@@ -463,12 +483,12 @@ $(function() {
 	             <tr height="50"> 
 	             
 	             <td><label for="amount3">Pain Scale:</label>
-				                  	<input type="text" id="amount3" name="painscale3" value="${quadraplevisualdetails.painscale3}" /><span id="amount3err"></span>&nbsp;&nbsp;&nbsp;
+				                  	<input type="text" id="amount3" name="painscale3"  maxlength="2" value="${quadraplevisualdetails.painscale3}" onInput="checkLength11(id)" onkeypress="return validate(event)"; /><span id="amount3err"></span>&nbsp;&nbsp;&nbsp;
 				                  	<div id="slider3"></div></td>
 				  </tr>
 				  <tr height="30">
 				  <td><b>What percentage of your awake hours is your pain at its worst?</b></td>
-				  <td><input type="text" name="awakehours" onKeyPress="return check(event,value)" onInput="checkLength()" maxlength="5" value="${quadraplevisualdetails.awakehours}"></td>
+				  <td><input type="text" name="awakehours" id="awakehours" onKeyPress="return check(event,value)" onInput="checkLength()" maxlength="5" value="${quadraplevisualdetails.awakehours}"></td>
 				  </tr>
 	             </table>
 	            <table align="right">
