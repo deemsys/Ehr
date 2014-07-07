@@ -334,7 +334,7 @@ function validatename(id){
   if(document.getElementById("name").value.length<4 || document.getElementById("name").value.length>=32)
   {
   	
-  	document.getElementById("nameerror").innerHTML="Name should be min 4 and max 32";
+  	document.getElementById("nameerror").innerHTML="Name should be of length 4 to 32";
   	
       return false;
   }
@@ -358,7 +358,7 @@ function validatename(id){
     if(document.getElementById("otherpainname").value.length<4 || document.getElementById("otherpainname").value.length>=32)
     {
     	
-    	document.getElementById("otherpainnameerror").innerHTML="Name should be min 4 and max 32";
+    	document.getElementById("otherpainnameerror").innerHTML="Name should be of length 4 to 32";
     	
         return false;
     }
@@ -367,6 +367,26 @@ function validatename(id){
   
   
   </script>
+  
+  <script>
+  function checkLength11(id){
+	   
+	    var fieldVal = document.getElementById(id).value;
+	    
+	    if(fieldVal >=0 && fieldVal <=10){
+	        return true;
+	    }
+	    else
+	    {
+	        var str = document.getElementById(id).value;
+	       
+	        str = str.substring(0, str.length - 1);
+	    document.getElementById(id).value = str;
+	    }
+	     
+	    }
+		</script>
+
   <script type="text/javascript">
        function validate(event) {
           
@@ -379,6 +399,64 @@ function validatename(id){
            }
        }       
     </script>
+    
+        
+<script>
+  $(function() {
+	$("#amount").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+    
+<script>
+  $(function() {
+	$("#amount1").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+
+    
+<script>
+  $(function() {
+	$("#amount2").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+  $(function() {
+	$("#amount3").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+function checkLength1(){
+    var fieldVal = document.getElementById('awakehours').value;
+    //Suppose u want 3 number of character
+    if(fieldVal <=10){
+        return true;
+    }
+    else
+    {
+        var str = document.getElementById('awakehours').value;
+        str = str.substring(0, str.length - 1);
+    document.getElementById('awakehours').value = str;
+    }
+     
+    }
+</script>
      <script>
 	function check(e,value){
     //Check Charater
@@ -424,15 +502,15 @@ function validatename(id){
         	<div id="block1">
 	            <div class="headings altheading">
 	            <img  src="resources/images/print.png" id="print" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block1');" >
-	             <h2> ${symptoms} Quadruple Visual Analogue Scale1</h2> 
+	             <h2> ${symptoms} Quadruple Visual Analogue Scale</h2> 
 	            </div>
 	            <div class="contentbox">
 	            
 	             <table>
 	             <tr height="30">
-	             <td width="100"><span class="err">*</span>Name</td><td width="400"><input type="hidden" name="patient_id" value="${patientid}"><input type="hidden" name="symptom" id="symptom" value="${symptom}"><input type="text" name="name" id="name" onInput="return validatename(id)"><span class="err" id="nameerror"></span></td>
+	             <td width="100"><span class="err">* </span>Name:</td><td width="400"><input type="hidden" name="patient_id" value="${patientid}"><input type="hidden" name="symptom" id="symptom" value="${symptom}"><input type="text" name="name" id="name" onInput="return validatename(id)"><span style="color: red;font-style:italic;" id="nameerror"></span></td>
 	             <td width="100">Number</td><td width="400"><input type="text" name="number" id="number" onkeypress="return validate(event)"; ><span id="numbererror"></span></td>
-	             <td width="100"><span class="err">*</span>Date</td><td width="400"><input type="text"  name="date" id="datepicker" /><span class="err" id="datepickererror"></span></td>
+	             <td width="100"><span class="err">* </span>Date:</td><td width="400"><input type="text"  name="date" id="datepicker" /><span id="datepickererror" style="color: red;font-style:italic;" ></span></td>
 	             </tr>
 	             </table>
 	             <table>
@@ -450,14 +528,14 @@ function validatename(id){
 	              <option value="Oswestry">Oswestry</option>
 	              <option value="Shoulder">Shoulder</option>
 	               <option value="Other">Other</option>
-	             </select> <input type="text" name="otherpainname" id="otherpainname" style="display: none" onInput="return validatename(id)";><span class="err" id="otherpainnameerror"></span> </td>
+	             </select> <input type="text" name="otherpainname" id="otherpainname" style="display: none" onInput="return validatename(id)";><span style="color: red;font-style:italic;" id="otherpainnameerror"></span> </td>
 	             </tr>
 	             <tr height="30">
 	             <td><b>1) What is your pain RIGHT NOW?</b></td>
 	             </tr>
 	             <tr height="50"> 
 &nbsp;&nbsp;&nbsp;<td><label for="amount">Pain Scale:</label>
-				                  	<input type="text" id="amount" name="painscale" /><span id="amounterr"></span>&nbsp;&nbsp;&nbsp;
+				                  	<input type="text" id="amount" name="painscale" onkeypress="return validate(event)"; onInput="checkLength11(id)" maxlength="2"/><span id="amounterr"></span>&nbsp;&nbsp;&nbsp;
 				                  	<div id="slider"></div></td>
 				  </tr>
 				  <tr height="30">
@@ -466,7 +544,7 @@ function validatename(id){
 	             <tr height="50"> 
 	             
 	             <td><label for="amount1">Pain Scale:</label>
-				                  	<input type="text" id="amount1" name="painscale1" /><span id="amount1err"></span>&nbsp;&nbsp;&nbsp;
+				                  	<input type="text" id="amount1" name="painscale1" onkeypress="return validate(event)"; maxlength="2"  onInput="checkLength11(id)"/><span id="amount1err"></span>&nbsp;&nbsp;&nbsp;
 				                  	<div id="slider1"></div></td>
 				  </tr>
 				  <tr height="30">
@@ -475,7 +553,7 @@ function validatename(id){
 	             <tr height="50"> 
 	             
 	             <td><label for="amount2">Pain Scale:</label>
-				                  	<input type="text" id="amount2" name="painscale2" /><span id="amount2err"></span>&nbsp;&nbsp;&nbsp;
+				                  	<input type="text" id="amount2" name="painscale2" onkeypress="return validate(event)"; maxlength="2"onInput="checkLength11(id)"/><span id="amount2err"></span>&nbsp;&nbsp;&nbsp;
 				                  	<div id="slider2"></div></td>
 				  </tr>
 				  <tr height="30">
@@ -484,7 +562,7 @@ function validatename(id){
 	             <tr height="50"> 
 	             
 	             <td><label for="amount3">Pain Scale:</label>
-				                  	<input type="text" id="amount3" name="painscale3" /><span id="amount3err"></span>&nbsp;&nbsp;&nbsp;
+				                  	<input type="text" id="amount3" name="painscale3" onkeypress="return validate(event)"; maxlength="2" onInput="checkLength11(id)" /><span id="amount3err"></span>&nbsp;&nbsp;&nbsp;
 				                  	<div id="slider3"></div></td>
 				  </tr>
 				  <tr height="30">
