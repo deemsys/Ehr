@@ -14,9 +14,10 @@
 
 </head>
 <script>
+var proceed="1";
 $(function() {
 	$( "#tabs" ).tabs({
-		event: "mouseover"
+		event: "click"
 	});
 });
 
@@ -31,6 +32,13 @@ $(function() {
   
   </script>
   <script>
+  function tabCheck(e)
+  {
+  alert("ok");
+  e.preventDefault();
+  
+  return false;
+  }
   function checkSubmit()
   {
   
@@ -1341,7 +1349,7 @@ $(function() {
 <div id="tabs">
        <ul>
           <li><a href="#tabs-1" id="tab1">Cervical Spine</a></li>
-          <li><a href="#tabs-2" id="tab2">Thoracic Spine</a></li>
+          <li><a href="#tabs-2"  id="tab2" onclick="return tabCheck(event);">Thoracic Spine</a></li>
           <li><a href="#tabs-3" id="tab3">Lumbar Spine</a></li>
           <li><a href="#tabs-4" id="tab4">Extremities</a></li>
        </ul>

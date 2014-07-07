@@ -337,10 +337,16 @@ function validateusername(){
 	    {
 	    	
 	    	document.getElementById("regardingerror").innerHTML="Name should be min 4 and max 32";
-	    	
-	        return false;
+	       return false;
 	    }
-	}    
+	}
+	else
+	{
+    	
+    	document.getElementById("regardingerror").innerHTML="Required Field Should not be Empty";
+       return false;
+    }
+		
 		document.getElementById("datepickererror").innerHTML="";
 	if(document.getElementById("datepicker").value=="")
 		{
@@ -487,27 +493,27 @@ return false;
           <table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
           <tr height="30">
           <td><span class="err">*</span> Patients Attorney or Insurance Adjuster: </td>
-          <td><input type="text"  class="input_txtbx1" name="patient" size="40" id="patient" onInput="return validatename(id)";><span class="err" id="patienterror"  style="color: red;font-style:italic;" ><form:errors path="Copyofrequest.patient"></form:errors></span></td>
+          <td><input type="text"  class="input_txtbx1" name="patient" size="40" id="patient" onInput="return validatename(id)";><br/><span class="err" id="patienterror"  style="color: red;font-style:italic;" ><form:errors path="Copyofrequest.patient"></form:errors></span></td>
           </tr>   
           <tr height="30">
           <td><span class="err">&nbsp;</span>Address: </td>
-          <td><textarea rows="4" cols="43"  class="input_txtarea" name="address" id="address"></textarea><span class="err"><form:errors path="Copyofrequest.address"></form:errors></span></td>
+          <td><textarea rows="4" cols="43"  class="input_txtarea" name="address" id="address"></textarea><span class="err"><form:errors path="Copyofrequest.address"></form:errors></span><br/></td>
           </tr>
           <tr height="30">
-          <td>&nbsp;Regarding: </td>
-          <td><input type="text"  class="input_txtbx1" name="regarding" id="regarding" size="40" onInput="return validatename(id)";><span class="err" id="regardingerror"></span></td>
+          <td><span class="err">*</span>&nbsp;Regarding: </td>
+          <td><input type="text"  class="input_txtbx1" name="regarding" id="regarding" size="40" onInput="return validatename(id)";><br/><span class="err" id="regardingerror"></span></td>
           </tr>
           <tr height="30">
           <td><span class="err">*</span> Date of Accident: </td>
-          <td><input type="text" class="input_txtbx1" name="dateofaccident" id="datepicker" size="40"><span class="err" id="datepickererror"  style="color: red;font-style:italic;"><form:errors path="Copyofrequest.dateofaccident"></form:errors></span></td>
+          <td><input type="text" class="input_txtbx1" name="dateofaccident" id="datepicker" size="40"><br/><span class="err" id="datepickererror"  style="color: red;font-style:italic;"><form:errors path="Copyofrequest.dateofaccident"></form:errors></span></td>
           </tr>
           <tr height="30">
           <td><span class="err">*</span> Claim Number: </td>
-          <td><input type="text" class="input_txtbx1" name="claimnumber" id="claimnumber" onInput="return validateusername()";  size="40" id="claimnumber"><span class="err" id="claimnumbererror"  style="color: red;font-style:italic;"><form:errors path="Copyofrequest.claimnumber"></form:errors></span></td>
+          <td><input type="text" class="input_txtbx1" name="claimnumber" id="claimnumber" onInput="return validateusername()";  size="40" id="claimnumber"><br/><span class="err" id="claimnumbererror"  style="color: red;font-style:italic;"><form:errors path="Copyofrequest.claimnumber"></form:errors></span></td>
           </tr>
           <tr height="30">
           <td>&nbsp;Today's Date:  </td>
-          <td><input type="text"  class="input_txtbx1" name="todaydate" id="datepicker1" size="40"><span class="err" id="datepicker1error"></span></td>
+          <td><input type="text"  class="input_txtbx1" name="todaydate" id="datepicker1" size="40"><br/><span class="err" id="datepicker1error"></span></td>
           </tr>
           </table>
           <table width="100%" border="0">

@@ -165,15 +165,32 @@ function validatename(id){
 	        return false;
 	    }
 		document.getElementById("amountdeducterror").innerHTML="";
+		if(document.getElementById("medicalfee").value!="")
+			{
 		if(isNaN(document.getElementById("medicalfee").value))
 		{
 		document.getElementById("amountdeducterror").innerHTML="Invalid character. Please enter numbers only.";
 		return false;
 		}
+			}
+		else
+			{
+			document.getElementById("amountdeducterror").innerHTML="Required Field Should not be Empty.";
+			return false;
+			}
+		document.getElementById("amountdeducterror").innerHTML="";
 		document.getElementById("number").innerHTML="";
+		if(document.getElementById("amount").value!="")
+		{
 		if(isNaN(document.getElementById("amount").value))
 		{
 		document.getElementById("number").innerHTML="Invalid character. Please enter numbers only.";
+		return false;
+		}
+		}
+		else
+		{
+		document.getElementById("number").innerHTML="Required Field Should not be Empty.";
 		return false;
 		}
 		

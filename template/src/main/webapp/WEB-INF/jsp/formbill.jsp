@@ -354,17 +354,34 @@ function validatename(id){
 	    }
 		
 		document.getElementById("amountdeducterror").innerHTML="";
+		if(document.getElementById("medicalfee").value!="")
+			{
 		if(isNaN(document.getElementById("medicalfee").value))
 		{
 		document.getElementById("amountdeducterror").innerHTML="Invalid character. Please enter numbers only.";
 		return false;
 		}
+			}
+		else
+			{
+			document.getElementById("med1").innerHTML="Required Field Should Not be Empty";
+			return false;
+			}
+		document.getElementById("med1").value="";
 		document.getElementById("number").innerHTML="";
+		if(document.getElementById("amount").value!="")
+		{
 		if(isNaN(document.getElementById("amount").value))
 		{
 		document.getElementById("number").innerHTML="Invalid character. Please enter numbers only.";
 		return false;
 		}
+		}
+		else
+			{
+			document.getElementById("number").innerHTML="Required Field Should not be Empty";
+			return false;
+			}
 		
 		
 		}
@@ -488,7 +505,7 @@ function openWindow(h, w, url) {
               
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
         	  <tr><td><p align="left" id="mypar"><b><h4>RE:</b>&nbsp;&nbsp;&nbsp;&nbsp; Notice of Final Outstanding Amount Owed;Medical Fees of $ <input type="text" class="input_txtbx1" onkeypress="return validate(event)"; name="medicalfee" id="medicalfee">
-	<span class="err"><form:errors path="Formbill.medicalfee"></form:errors></span>
+	<span class="err" id="med1"><form:errors path="Formbill.medicalfee"></form:errors></span>
 				  <span class="err" id="amountdeducterror"></span></h4></p></td>
         	  <td>
         	  </td>
@@ -496,7 +513,7 @@ function openWindow(h, w, url) {
        		  </table>
        		 <table cellpadding="0" cellspacing="0" border="0" width="100%">
         	  <tr><td><p align="left" id="mypar"> <b>Notice is made of final outstanding amounts owed for medical fees rendered by the above of $ <input type="text" class="input_txtbx1" name="amount" onkeypress="return validate(event)"; id="amount">
-	<span class="err"><form:errors path="Formbill.amount"></form:errors></span>
+	<span class="err" id="med2"><form:errors path="Formbill.amount"></form:errors></span>
 				  <span class="err" id="number"></span></b></p></td>
         	  <td>
         	  </td>
