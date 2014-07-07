@@ -414,193 +414,666 @@ function validatename(id){
     document.getElementById(id).value = textInput;
 }
 </script>
+
 <script>
-  function checksub()
-  {
- document.getElementById("claimnoerror").innerHTML=""; 
- if(document.getElementById("claimno").value=="")
- {
-  document.getElementById("claimnoerror").innerHTML="Required field should not be empty";
-  return false;
- }
- document.getElementById("claimnoerror").innerHTML="";
- if(document.getElementById("claimno").value.length<9 || document.getElementById("claimno").value.length>=32)
- {
- 	
- 	document.getElementById("claimnoerror").innerHTML="Claim Number should be of length 4 to 32";
- 	
-     return false;
- }
- 
-  document.getElementById("adjustersnameerror").innerHTML=""; 
- if(document.getElementById("adjustersname").value=="")
- {
-  document.getElementById("adjustersnameerror").innerHTML="Required field should not be empty";
-  return false;
- }
- document.getElementById("adjustersnameerror").innerHTML=" ";
-	
-	if(document.getElementById("adjustersname").value.substring(0,1)==" ")
-	{
-	document.getElementById("adjustersnameerror").innerHTML="Initial space not allowed";
-	
-	return false;
-	}
-	document.getElementById("adjustersnameerror").innerHTML="";
-    if(document.getElementById("adjustersname").value.length<4 || document.getElementById("adjustersname").value.length>=32)
-    {
-    	
-    	document.getElementById("adjustersnameerror").innerHTML="Name should be of length 4 to 32";
-    	
-        return false;
-    }
-  document.getElementById("companionerror").innerHTML="";
-  if(document.getElementById("companion").value=="")
- {
-  document.getElementById("companionerror").innerHTML="Required field should not be empty";
-  return false;
- }
-  
-
-  document.getElementById("companionerror").innerHTML=" ";
- 	
- 	if(document.getElementById("companion").value.substring(0,1)==" ")
- 	{
- 	document.getElementById("companionerror").innerHTML="Initial space not allowed";
- 	
- 	return false;
- 	}
- 	document.getElementById("companionerror").innerHTML="";
-    if(document.getElementById("companion").value.length<4 || document.getElementById("companion").value.length>=32)
-    {
-    	
-    	document.getElementById("companionerror").innerHTML="Name should be of length 4 to 32";
-    	
-        return false;
-    }
- document.getElementById("vehicle_makeerror").innerHTML="";
-  if(document.getElementById("vehicle_make").value=="")
- {
-  document.getElementById("vehicle_makeerror").innerHTML="Required field should not be empty";
-  return false;
- }
-  document.getElementById("vehicle_makeerror").innerHTML=" ";
-	
-	if(document.getElementById("vehicle_make").value.substring(0,1)==" ")
-	{
-	document.getElementById("vehicle_makeerror").innerHTML="Initial space not allowed";
-	
-	return false;
-	}
-	document.getElementById("vehicle_makeerror").innerHTML="";
-  if(document.getElementById("vehicle_make").value.length<4 || document.getElementById("vehicle_make").value.length>=32)
-  {
-  	
-  	document.getElementById("vehicle_makeerror").innerHTML="Name should be of length 4 to 32";
-  	
-      return false;
-  }
- document.getElementById("vehicle_modelerror").innerHTML="";
-  if(document.getElementById("vehicle_model").value=="")
- {
-  document.getElementById("vehicle_modelerror").innerHTML="Required field should not be empty";
-  return false;
- }
- 
-  document.getElementById("vehicle_modelerror").innerHTML=" ";
-	
-	if(document.getElementById("vehicle_model").value.substring(0,1)==" ")
-	{
-	document.getElementById("vehicle_modelerror").innerHTML="Initial space not allowed";
-	
-	return false;
-	}
-	document.getElementById("vehicle_modelerror").innerHTML="";
-if(document.getElementById("vehicle_model").value.length<4 || document.getElementById("vehicle_model").value.length>=32)
+function checkValid(e)
 {
 	
-	document.getElementById("vehicle_modelerror").innerHTML=" should be of length 4 to 32";
-	
-    return false;
-}
- document.getElementById("vehicle_yearerror").innerHTML="";
-  if(document.getElementById("vehicle_year").value=="")
- {
-  document.getElementById("vehicle_yearerror").innerHTML="Required field should not be empty";
-  return false;
- }
-  document.getElementById("vehicle_yearerror").innerHTML=" ";
-	
-	if(document.getElementById("vehicle_year").value.substring(0,1)==" ")
-	{
-	document.getElementById("vehicle_yearerror").innerHTML="Initial space not allowed";
-	
-	return false;
-	}
- document.getElementById("vehicle_yearerror").innerHTML="";
-	if(document.getElementById("vehicle_year").value.length<4)
-	{
-	document.getElementById("vehicle_yearerror").innerHTML="Invalid year format";
-	return false;
-	
-	}
-  document.getElementById("other_vehicle_makeerror").innerHTML="";
-  if(document.getElementById("other_vehicle_make").value=="")
- {
-  document.getElementById("other_vehicle_makeerror").innerHTML="Required field should not be empty";
-  return false;
- }
-  document.getElementById("other_vehicle_makeerror").innerHTML="";
-  if(document.getElementById("other_vehicle_make").value.length<4 || document.getElementById("other_vehicle_make").value.length>=32)
-  {
-  	
-  	document.getElementById("other_vehicle_makeerror").innerHTML="should be of length 4 to 32";
-  	
+	document.getElementById("claimnoerror").innerHTML=""; 
+	 if(document.getElementById("claimno").value=="")
+	 {
+	  document.getElementById("claimnoerror").innerHTML="Required field should not be empty";
+      document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
       return false;
-  }
-  document.getElementById("other_vehicle_modelerror").innerHTML="";
-  if(document.getElementById("other_vehicle_model").value=="")
- {
-  document.getElementById("other_vehicle_modelerror").innerHTML="Required field should not be empty";
-  return false;
- }
-  document.getElementById("other_vehicle_modelerror").innerHTML="";
-  if(document.getElementById("other_vehicle_model").value.length<4 || document.getElementById("other_vehicle_model").value.length>=32)
-  {
-  	
-  	document.getElementById("other_vehicle_modelerror").innerHTML="should be of length 4 to 32";
-  	
-      return false;
-  }
-  document.getElementById("other_vehicle_yearerror").innerHTML="";
-  if(document.getElementById("other_vehicle_year").value=="")
- {
-  document.getElementById("other_vehicle_yearerror").innerHTML="Required field should not be empty";
-  return false;
- }
- document.getElementById("other_vehicle_yearerror").innerHTML="";
-	if(document.getElementById("other_vehicle_year").value.length<4)
-	{
-	document.getElementById("other_vehicle_yearerror").innerHTML="Invalid year format";
-	return false;
+	 }
+	 else
+		 {
+		  document.getElementById("claimnoerror").innerHTML="";
+		  document.getElementById('btnvisible1').style.visibility='hidden';
+		  document.getElementById('btnNext').style.visibility='visible';
+		  document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";		 
+		 }
+	 document.getElementById("claimnoerror").innerHTML="";
+	 if(document.getElementById("claimno").value.length<9 )
+	 {
+	 	
+	 	document.getElementById("claimnoerror").innerHTML="Claim Number should be of length 9";
+	 	document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	     return false;
+	 }
 	
-	}
- /* document.getElementById("yeserror").innerHTML="";
-  if( ( document.getElementById("yes").checked == false ) && ( document.getElementById("no").checked == false ) )
+	 
+	 
 
-{
-document.getElementById("yeserror").innerHTML="Required Field Should not be Empty";
+	  document.getElementById("adjustersnameerror").innerHTML=""; 
+	 if(document.getElementById("adjustersname").value=="")
+	 {
+	  document.getElementById("adjustersnameerror").innerHTML="Required field should not be empty";
+	  document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	  return false;
+	 }
+
+	 
+		document.getElementById("adjustersnameerror").innerHTML="";
+	    if(document.getElementById("adjustersname").value.length<4 || document.getElementById("adjustersname").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("adjustersnameerror").innerHTML="Name should be of length 4 to 32";
+	    	 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	        return false;
+	    }
+
 		
+	  document.getElementById("companionerror").innerHTML="";
+	  if(document.getElementById("companion").value=="")
+	 {
+	  document.getElementById("companionerror").innerHTML="Required field should not be empty";
+	  document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	  return false;
+	 }
+
+		
+	  
+
+	 	document.getElementById("companionerror").innerHTML="";
+	    if(document.getElementById("companion").value.length<4 || document.getElementById("companion").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("companionerror").innerHTML="Name should be of length 4 to 32";
+	    	 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	        return false;
+	    }
+
+	 document.getElementById("vehicle_makeerror").innerHTML="";
+	  if(document.getElementById("vehicle_make").value=="")
+	 {
+	  document.getElementById("vehicle_makeerror").innerHTML="Required field should not be empty";
+	  document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	  return false;
+	 }
+
+		document.getElementById("vehicle_makeerror").innerHTML="";
+	  if(document.getElementById("vehicle_make").value.length<4 || document.getElementById("vehicle_make").value.length>=32)
+	  {
+	  	
+	  	document.getElementById("vehicle_makeerror").innerHTML="Name should be of length 4 to 32";
+	  	 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	      return false;
+	  }
+
+	 document.getElementById("vehicle_modelerror").innerHTML="";
+	  if(document.getElementById("vehicle_model").value=="")
+	 {
+	  document.getElementById("vehicle_modelerror").innerHTML="Required field should not be empty";
+	  document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	  return false;
+	 }
+
+		
+	
+		document.getElementById("vehicle_modelerror").innerHTML="";
+	if(document.getElementById("vehicle_model").value.length<4 || document.getElementById("vehicle_model").value.length>=32)
+	{
+		
+		document.getElementById("vehicle_modelerror").innerHTML=" should be of length 4 to 32";
+		 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	    return false;
+	}
+
+	
+	 document.getElementById("vehicle_yearerror").innerHTML="";
+	  if(document.getElementById("vehicle_year").value=="")
+	 {
+	  document.getElementById("vehicle_yearerror").innerHTML="Required field should not be empty";
+	  document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	  return false;
+	 }
+
+		
+	 document.getElementById("vehicle_yearerror").innerHTML="";
+		if(document.getElementById("vehicle_year").value.length<4)
+		{
+		document.getElementById("vehicle_yearerror").innerHTML="Invalid year format";
+		 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
 		return false;
 		
-} */
-document.getElementById("speederror").innerHTML="";
-	if(document.getElementById("speed").value=="")
-	{
-	document.getElementById("speederror").innerHTML="Required Field Should not be Empty";
+		}
 	
+	  document.getElementById("other_vehicle_makeerror").innerHTML="";
+	  if(document.getElementById("other_vehicle_make").value=="")
+	 {
+	  document.getElementById("other_vehicle_makeerror").innerHTML="Required field should not be empty";
+	  document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	  return false;
+	 }
+	
+	  document.getElementById("other_vehicle_makeerror").innerHTML="";
+	  if(document.getElementById("other_vehicle_make").value.length<4 || document.getElementById("other_vehicle_make").value.length>=32)
+	  {
+	  	
+	  	document.getElementById("other_vehicle_makeerror").innerHTML="should be of length 4 to 32";
+	  	 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	      return false;
+	  }
+	
+	  document.getElementById("other_vehicle_modelerror").innerHTML="";
+	  if(document.getElementById("other_vehicle_model").value=="")
+	 {
+	  document.getElementById("other_vehicle_modelerror").innerHTML="Required field should not be empty";
+	  document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	  return false;
+	 }
+	
+	  document.getElementById("other_vehicle_modelerror").innerHTML="";
+	  if(document.getElementById("other_vehicle_model").value.length<4 || document.getElementById("other_vehicle_model").value.length>=32)
+	  {
+	  	
+	  	document.getElementById("other_vehicle_modelerror").innerHTML="should be of length 4 to 32";
+	  	 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	      return false;
+	  }
+	 
+	  document.getElementById("other_vehicle_yearerror").innerHTML="";
+	  if(document.getElementById("other_vehicle_year").value=="")
+	 {
+	  document.getElementById("other_vehicle_yearerror").innerHTML="Required field should not be empty";
+	  document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	  return false;
+	 }
+	 
+	 document.getElementById("other_vehicle_yearerror").innerHTML="";
+		if(document.getElementById("other_vehicle_year").value.length<4)
+		{
+		document.getElementById("other_vehicle_yearerror").innerHTML="Invalid year format";
+		 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+		return false;
+		
+		}
+	
+	
+	document.getElementById("speederror").innerHTML="";
+		if(document.getElementById("speed").value=="")
+		{
+		document.getElementById("speederror").innerHTML="Required Field Should not be Empty";
+		 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+		return false;
+		}
+
+		 else
+			 {
+			  document.getElementById("speederror").innerHTML="";
+			  document.getElementById('btnvisible1').style.visibility='hidden';
+			  document.getElementById('btnNext').style.visibility='visible';
+			  document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";		 
+			 }
+	 
+}
+
+
+</script>
+<script>
+function checkValid1(e)
+{
+
+	
+	document.getElementById("injuryerror").innerHTML=""; 
+	if(document.getElementById("injury").value!="")
+	{
+		if(document.getElementById("injury").value.length<4 || document.getElementById("injury").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("injuryerror").innerHTML="Should be of length 4 to 32";
+	    	
+	       
+	   
+      document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
+	    }
+	    
+	    }
+	 else
+		 {
+		  document.getElementById("injuryerror").innerHTML="";
+		  document.getElementById('btnvisible').style.visibility='hidden';
+		  document.getElementById('btnNext').style.visibility='visible';
+		  document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";		 
+		 }
+		
+}
+</script>
+ <script>
+function checkValid2(e){
+	
+	document.getElementById("head_hiterror").innerHTML="";
+	if(document.getElementById("head_hit").value!="")
+	{
+    if(document.getElementById("head_hit").value.length<4 || document.getElementById("head_hit").value.length>=32)
+    {
+    	
+    	document.getElementById("head_hiterror").innerHTML="Should be of length 4 to 32";
+    	document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";		 
+        return false;
+    }
+    }
+	
+	document.getElementById("rlshoulder_hiterror").innerHTML="";
+	if(document.getElementById("rlshoulder_hit").value!="")
+	{
+    if(document.getElementById("rlshoulder_hit").value.length<4 || document.getElementById("rlshoulder_hit").value.length>=32)
+    {
+    	
+    	document.getElementById("rlshoulder_hiterror").innerHTML="Should be of length 4 to 32";
+    	document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+        return false;
+    }
+    }
+	
+	
+	document.getElementById("rlhip_hiterror").innerHTML="";
+	if(document.getElementById("rlhip_hit").value!="")
+	{
+    if(document.getElementById("rlhip_hit").value.length<4 || document.getElementById("rlhip_hit").value.length>=32)
+    {
+    	
+    	document.getElementById("rlhip_hiterror").innerHTML="Should be of length 4 to 32";
+    	document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+        return false;
+    }
+    }
+	
+	document.getElementById("rlknee_hiterror").innerHTML="";
+	if(document.getElementById("rlknee_hit").value!="")
+	{
+    if(document.getElementById("rlknee_hit").value.length<4 || document.getElementById("rlknee_hit").value.length>=32)
+    {
+    	
+    	document.getElementById("rlknee_hiterror").innerHTML="Should be of length 4 to 32";
+    	document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+        return false;
+    }
+    }
+	
+	document.getElementById("chest_hiterror").innerHTML="";
+	if(document.getElementById("chest_hit").value!="")
+	{
+    if(document.getElementById("chest_hit").value.length<4 || document.getElementById("chest_hit").value.length>=32)
+    {
+    	
+    	document.getElementById("chest_hiterror").innerHTML="Should be of length 4 to 32";
+    	document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+        return false;
+    }
+    }
+	else
+	 {
+	  document.getElementById("chest_hiterror").innerHTML="";
+	  document.getElementById('btnvisible1').style.visibility='hidden';
+	  document.getElementById('btnNext').style.visibility='visible';
+	  document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";		 
+	 }
+	
+	document.getElementById("rlarm_hiterror").innerHTML="";
+	if(document.getElementById("rlarm_hit").value!="")
+	{
+    if(document.getElementById("rlarm_hit").value.length<4 || document.getElementById("rlarm_hit").value.length>=32)
+    {
+    	
+    	document.getElementById("rlarm_hiterror").innerHTML="Should be of length 4 to 32";
+    	document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+        return false;
+    }
+    }
+	
+	document.getElementById("rlleg_hiterror").innerHTML="";
+	if(document.getElementById("rlleg_hit").value!="")
+	{
+    if(document.getElementById("rlleg_hit").value.length<4 || document.getElementById("rlleg_hit").value.length>=32)
+    {
+    	
+    	document.getElementById("rlleg_hiterror").innerHTML="Should be of length 4 to 32";
+    	document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+        return false;
+    }
+    }
+	
+	document.getElementById("otherpart_hiterror").innerHTML="";
+	if(document.getElementById("otherpart_hit").value!="")
+	{
+    if(document.getElementById("otherpart_hit").value.length<4 || document.getElementById("otherpart_hit").value.length>=32)
+    {
+    	
+    	document.getElementById("otherpart_hiterror").innerHTML="Should be of length 4 to 32";
+    	document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+        return false;
+    }
+    }
+	
+	document.getElementById("estimateddamageerror").innerHTML="";
+	if(document.getElementById("estimateddamage").value=="")
+	{
+	document.getElementById("estimateddamageerror").innerHTML="Required Field Should not be Empty";
+	document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
 	return false;
 	}
+	else
+	 {
+	  document.getElementById("estimateddamageerror").innerHTML="";
+	  document.getElementById('btnvisible1').style.visibility='hidden';
+	  document.getElementById('btnNext').style.visibility='visible';
+	  document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";		 		 
+	 }
+}
+
+</script>
+<script>
+function checknext(){
+	
+	document.getElementById("claimnoerror").innerHTML=""; 
+	 if(document.getElementById("claimno").value=="")
+	 {
+	  document.getElementById("claimnoerror").innerHTML="Required field should not be empty";
+	  return false;
+	 }
+	 document.getElementById("claimnoerror").innerHTML="";
+	 if(document.getElementById("claimno").value.length<9 )
+	 {
+	 	
+	 	document.getElementById("claimnoerror").innerHTML="Claim Number should be of length 9";
+	 	
+	     return false;
+	 }
+	 
+	  document.getElementById("adjustersnameerror").innerHTML=""; 
+	 if(document.getElementById("adjustersname").value=="")
+	 {
+	  document.getElementById("adjustersnameerror").innerHTML="Required field should not be empty";
+	  return false;
+	 }
+	 document.getElementById("adjustersnameerror").innerHTML=" ";
+		
+		if(document.getElementById("adjustersname").value.substring(0,1)==" ")
+		{
+		document.getElementById("adjustersnameerror").innerHTML="Initial space not allowed";
+		
+		return false;
+		}
+		document.getElementById("adjustersnameerror").innerHTML="";
+	    if(document.getElementById("adjustersname").value.length<4 || document.getElementById("adjustersname").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("adjustersnameerror").innerHTML="Name should be of length 4 to 32";
+	    	
+	        return false;
+	    }
+	  document.getElementById("companionerror").innerHTML="";
+	  if(document.getElementById("companion").value=="")
+	 {
+	  document.getElementById("companionerror").innerHTML="Required field should not be empty";
+	  return false;
+	 }
+	  
+
+	  document.getElementById("companionerror").innerHTML=" ";
+	 	
+	 	if(document.getElementById("companion").value.substring(0,1)==" ")
+	 	{
+	 	document.getElementById("companionerror").innerHTML="Initial space not allowed";
+	 	
+	 	return false;
+	 	}
+	 	document.getElementById("companionerror").innerHTML="";
+	    if(document.getElementById("companion").value.length<4 || document.getElementById("companion").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("companionerror").innerHTML="Name should be of length 4 to 32";
+	    	
+	        return false;
+	    }
+	 document.getElementById("vehicle_makeerror").innerHTML="";
+	  if(document.getElementById("vehicle_make").value=="")
+	 {
+	  document.getElementById("vehicle_makeerror").innerHTML="Required field should not be empty";
+	  return false;
+	 }
+	  document.getElementById("vehicle_makeerror").innerHTML=" ";
+		
+		if(document.getElementById("vehicle_make").value.substring(0,1)==" ")
+		{
+		document.getElementById("vehicle_makeerror").innerHTML="Initial space not allowed";
+		
+		return false;
+		}
+		document.getElementById("vehicle_makeerror").innerHTML="";
+	  if(document.getElementById("vehicle_make").value.length<4 || document.getElementById("vehicle_make").value.length>=32)
+	  {
+	  	
+	  	document.getElementById("vehicle_makeerror").innerHTML="Name should be of length 4 to 32";
+	  	
+	      return false;
+	  }
+	 document.getElementById("vehicle_modelerror").innerHTML="";
+	  if(document.getElementById("vehicle_model").value=="")
+	 {
+	  document.getElementById("vehicle_modelerror").innerHTML="Required field should not be empty";
+	  return false;
+	 }
+	 
+	  document.getElementById("vehicle_modelerror").innerHTML=" ";
+		
+		if(document.getElementById("vehicle_model").value.substring(0,1)==" ")
+		{
+		document.getElementById("vehicle_modelerror").innerHTML="Initial space not allowed";
+		
+		return false;
+		}
+		document.getElementById("vehicle_modelerror").innerHTML="";
+	if(document.getElementById("vehicle_model").value.length<4 || document.getElementById("vehicle_model").value.length>=32)
+	{
+		
+		document.getElementById("vehicle_modelerror").innerHTML=" should be of length 4 to 32";
+		
+	    return false;
+	}
+	 document.getElementById("vehicle_yearerror").innerHTML="";
+	  if(document.getElementById("vehicle_year").value=="")
+	 {
+	  document.getElementById("vehicle_yearerror").innerHTML="Required field should not be empty";
+	  return false;
+	 }
+	  document.getElementById("vehicle_yearerror").innerHTML=" ";
+		
+		if(document.getElementById("vehicle_year").value.substring(0,1)==" ")
+		{
+		document.getElementById("vehicle_yearerror").innerHTML="Initial space not allowed";
+		
+		return false;
+		}
+	 document.getElementById("vehicle_yearerror").innerHTML="";
+		if(document.getElementById("vehicle_year").value.length<4)
+		{
+		document.getElementById("vehicle_yearerror").innerHTML="Invalid year format";
+		return false;
+		
+		}
+	  document.getElementById("other_vehicle_makeerror").innerHTML="";
+	  if(document.getElementById("other_vehicle_make").value=="")
+	 {
+	  document.getElementById("other_vehicle_makeerror").innerHTML="Required field should not be empty";
+	  return false;
+	 }
+	  document.getElementById("other_vehicle_makeerror").innerHTML="";
+	  if(document.getElementById("other_vehicle_make").value.length<4 || document.getElementById("other_vehicle_make").value.length>=32)
+	  {
+	  	
+	  	document.getElementById("other_vehicle_makeerror").innerHTML="should be of length 4 to 32";
+	  	
+	      return false;
+	  }
+	  document.getElementById("other_vehicle_modelerror").innerHTML="";
+	  if(document.getElementById("other_vehicle_model").value=="")
+	 {
+	  document.getElementById("other_vehicle_modelerror").innerHTML="Required field should not be empty";
+	  return false;
+	 }
+	  document.getElementById("other_vehicle_modelerror").innerHTML="";
+	  if(document.getElementById("other_vehicle_model").value.length<4 || document.getElementById("other_vehicle_model").value.length>=32)
+	  {
+	  	
+	  	document.getElementById("other_vehicle_modelerror").innerHTML="should be of length 4 to 32";
+	  	
+	      return false;
+	  }
+	  document.getElementById("other_vehicle_yearerror").innerHTML="";
+	  if(document.getElementById("other_vehicle_year").value=="")
+	 {
+	  document.getElementById("other_vehicle_yearerror").innerHTML="Required field should not be empty";
+	  return false;
+	 }
+	 document.getElementById("other_vehicle_yearerror").innerHTML="";
+		if(document.getElementById("other_vehicle_year").value.length<4)
+		{
+		document.getElementById("other_vehicle_yearerror").innerHTML="Invalid year format";
+		return false;
+		
+		}
+	 /* document.getElementById("yeserror").innerHTML="";
+	  if( ( document.getElementById("yes").checked == false ) && ( document.getElementById("no").checked == false ) )
+
+	{
+	document.getElementById("yeserror").innerHTML="Required Field Should not be Empty";
+			
+			return false;
+			
+	} */
+	document.getElementById("speederror").innerHTML="";
+		if(document.getElementById("speed").value=="")
+		{
+		document.getElementById("speederror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+}
+
+
+</script>
+<script>
+function checknext1(){
+	
+	document.getElementById("injuryerror").innerHTML="";
+	if(document.getElementById("injury").value!="")
+	{
+    if(document.getElementById("injury").value.length<4 || document.getElementById("injury").value.length>=32)
+    {
+    	
+    	document.getElementById("injuryerror").innerHTML="Should be of length 4 to 32";
+    	
+        return false;
+    }
+    }
+}
+
+</script>
+
+<script>
+function checknext2(){
+	
+	document.getElementById("head_hiterror").innerHTML="";
+	if(document.getElementById("head_hit").value!="")
+	{
+    if(document.getElementById("head_hit").value.length<4 || document.getElementById("head_hit").value.length>=32)
+    {
+    	
+    	document.getElementById("head_hiterror").innerHTML="Should be of length 4 to 32";
+    	
+        return false;
+    }
+    }
+	
+	document.getElementById("rlshoulder_hiterror").innerHTML="";
+	if(document.getElementById("rlshoulder_hit").value!="")
+	{
+    if(document.getElementById("rlshoulder_hit").value.length<4 || document.getElementById("rlshoulder_hit").value.length>=32)
+    {
+    	
+    	document.getElementById("rlshoulder_hiterror").innerHTML="Should be of length 4 to 32";
+    	
+        return false;
+    }
+    }
+	
+	
+	document.getElementById("rlhip_hiterror").innerHTML="";
+	if(document.getElementById("rlhip_hit").value!="")
+	{
+    if(document.getElementById("rlhip_hit").value.length<4 || document.getElementById("rlhip_hit").value.length>=32)
+    {
+    	
+    	document.getElementById("rlhip_hiterror").innerHTML="Should be of length 4 to 32";
+    	
+        return false;
+    }
+    }
+	
+	document.getElementById("rlknee_hiterror").innerHTML="";
+	if(document.getElementById("rlknee_hit").value!="")
+	{
+    if(document.getElementById("rlknee_hit").value.length<4 || document.getElementById("rlknee_hit").value.length>=32)
+    {
+    	
+    	document.getElementById("rlknee_hiterror").innerHTML="Should be of length 4 to 32";
+    	
+        return false;
+    }
+    }
+	
+	document.getElementById("chest_hiterror").innerHTML="";
+	if(document.getElementById("chest_hit").value!="")
+	{
+    if(document.getElementById("chest_hit").value.length<4 || document.getElementById("chest_hit").value.length>=32)
+    {
+    	
+    	document.getElementById("chest_hiterror").innerHTML="Should be of length 4 to 32";
+    	
+        return false;
+    }
+    }
+	
+	
+	document.getElementById("rlarm_hiterror").innerHTML="";
+	if(document.getElementById("rlarm_hit").value!="")
+	{
+    if(document.getElementById("rlarm_hit").value.length<4 || document.getElementById("rlarm_hit").value.length>=32)
+    {
+    	
+    	document.getElementById("rlarm_hiterror").innerHTML="Should be of length 4 to 32";
+    	
+        return false;
+    }
+    }
+	
+	document.getElementById("rlleg_hiterror").innerHTML="";
+	if(document.getElementById("rlleg_hit").value!="")
+	{
+    if(document.getElementById("rlleg_hit").value.length<4 || document.getElementById("rlleg_hit").value.length>=32)
+    {
+    	
+    	document.getElementById("rlleg_hiterror").innerHTML="Should be of length 4 to 32";
+    	
+        return false;
+    }
+    }
+	
+	document.getElementById("otherpart_hiterror").innerHTML="";
+	if(document.getElementById("otherpart_hit").value!="")
+	{
+    if(document.getElementById("otherpart_hit").value.length<4 || document.getElementById("otherpart_hit").value.length>=32)
+    {
+    	
+    	document.getElementById("otherpart_hiterror").innerHTML="Should be of length 4 to 32";
+    	
+        return false;
+    }
+    }
+	
 	document.getElementById("estimateddamageerror").innerHTML="";
 	if(document.getElementById("estimateddamage").value=="")
 	{
@@ -608,6 +1081,315 @@ document.getElementById("speederror").innerHTML="";
 	
 	return false;
 	}
+}
+
+</script>
+<script>
+  function checksub()
+  {
+ 
+	  document.getElementById("claimnoerror").innerHTML=""; 
+		 if(document.getElementById("claimno").value=="")
+		 {
+		  document.getElementById("claimnoerror").innerHTML="Required field should not be empty";
+		  return false;
+		 }
+		 document.getElementById("claimnoerror").innerHTML="";
+		 if(document.getElementById("claimno").value.length<9 )
+		 {
+		 	
+		 	document.getElementById("claimnoerror").innerHTML="Claim Number should be of length 9";
+		 	
+		     return false;
+		 }
+		 
+		  document.getElementById("adjustersnameerror").innerHTML=""; 
+		 if(document.getElementById("adjustersname").value=="")
+		 {
+		  document.getElementById("adjustersnameerror").innerHTML="Required field should not be empty";
+		  return false;
+		 }
+		 document.getElementById("adjustersnameerror").innerHTML=" ";
+			
+			if(document.getElementById("adjustersname").value.substring(0,1)==" ")
+			{
+			document.getElementById("adjustersnameerror").innerHTML="Initial space not allowed";
+			
+			return false;
+			}
+			document.getElementById("adjustersnameerror").innerHTML="";
+		    if(document.getElementById("adjustersname").value.length<4 || document.getElementById("adjustersname").value.length>=32)
+		    {
+		    	
+		    	document.getElementById("adjustersnameerror").innerHTML="Name should be of length 4 to 32";
+		    	
+		        return false;
+		    }
+		  document.getElementById("companionerror").innerHTML="";
+		  if(document.getElementById("companion").value=="")
+		 {
+		  document.getElementById("companionerror").innerHTML="Required field should not be empty";
+		  return false;
+		 }
+		  
+
+		  document.getElementById("companionerror").innerHTML=" ";
+		 	
+		 	if(document.getElementById("companion").value.substring(0,1)==" ")
+		 	{
+		 	document.getElementById("companionerror").innerHTML="Initial space not allowed";
+		 	
+		 	return false;
+		 	}
+		 	document.getElementById("companionerror").innerHTML="";
+		    if(document.getElementById("companion").value.length<4 || document.getElementById("companion").value.length>=32)
+		    {
+		    	
+		    	document.getElementById("companionerror").innerHTML="Name should be of length 4 to 32";
+		    	
+		        return false;
+		    }
+		 document.getElementById("vehicle_makeerror").innerHTML="";
+		  if(document.getElementById("vehicle_make").value=="")
+		 {
+		  document.getElementById("vehicle_makeerror").innerHTML="Required field should not be empty";
+		  return false;
+		 }
+		  document.getElementById("vehicle_makeerror").innerHTML=" ";
+			
+			if(document.getElementById("vehicle_make").value.substring(0,1)==" ")
+			{
+			document.getElementById("vehicle_makeerror").innerHTML="Initial space not allowed";
+			
+			return false;
+			}
+			document.getElementById("vehicle_makeerror").innerHTML="";
+		  if(document.getElementById("vehicle_make").value.length<4 || document.getElementById("vehicle_make").value.length>=32)
+		  {
+		  	
+		  	document.getElementById("vehicle_makeerror").innerHTML="Name should be of length 4 to 32";
+		  	
+		      return false;
+		  }
+		 document.getElementById("vehicle_modelerror").innerHTML="";
+		  if(document.getElementById("vehicle_model").value=="")
+		 {
+		  document.getElementById("vehicle_modelerror").innerHTML="Required field should not be empty";
+		  return false;
+		 }
+		 
+		  document.getElementById("vehicle_modelerror").innerHTML=" ";
+			
+			if(document.getElementById("vehicle_model").value.substring(0,1)==" ")
+			{
+			document.getElementById("vehicle_modelerror").innerHTML="Initial space not allowed";
+			
+			return false;
+			}
+			document.getElementById("vehicle_modelerror").innerHTML="";
+		if(document.getElementById("vehicle_model").value.length<4 || document.getElementById("vehicle_model").value.length>=32)
+		{
+			
+			document.getElementById("vehicle_modelerror").innerHTML=" should be of length 4 to 32";
+			
+		    return false;
+		}
+		 document.getElementById("vehicle_yearerror").innerHTML="";
+		  if(document.getElementById("vehicle_year").value=="")
+		 {
+		  document.getElementById("vehicle_yearerror").innerHTML="Required field should not be empty";
+		  return false;
+		 }
+		  document.getElementById("vehicle_yearerror").innerHTML=" ";
+			
+			if(document.getElementById("vehicle_year").value.substring(0,1)==" ")
+			{
+			document.getElementById("vehicle_yearerror").innerHTML="Initial space not allowed";
+			
+			return false;
+			}
+		 document.getElementById("vehicle_yearerror").innerHTML="";
+			if(document.getElementById("vehicle_year").value.length<4)
+			{
+			document.getElementById("vehicle_yearerror").innerHTML="Invalid year format";
+			return false;
+			
+			}
+		  document.getElementById("other_vehicle_makeerror").innerHTML="";
+		  if(document.getElementById("other_vehicle_make").value=="")
+		 {
+		  document.getElementById("other_vehicle_makeerror").innerHTML="Required field should not be empty";
+		  return false;
+		 }
+		  document.getElementById("other_vehicle_makeerror").innerHTML="";
+		  if(document.getElementById("other_vehicle_make").value.length<4 || document.getElementById("other_vehicle_make").value.length>=32)
+		  {
+		  	
+		  	document.getElementById("other_vehicle_makeerror").innerHTML="should be of length 4 to 32";
+		  	
+		      return false;
+		  }
+		  document.getElementById("other_vehicle_modelerror").innerHTML="";
+		  if(document.getElementById("other_vehicle_model").value=="")
+		 {
+		  document.getElementById("other_vehicle_modelerror").innerHTML="Required field should not be empty";
+		  return false;
+		 }
+		  document.getElementById("other_vehicle_modelerror").innerHTML="";
+		  if(document.getElementById("other_vehicle_model").value.length<4 || document.getElementById("other_vehicle_model").value.length>=32)
+		  {
+		  	
+		  	document.getElementById("other_vehicle_modelerror").innerHTML="should be of length 4 to 32";
+		  	
+		      return false;
+		  }
+		  document.getElementById("other_vehicle_yearerror").innerHTML="";
+		  if(document.getElementById("other_vehicle_year").value=="")
+		 {
+		  document.getElementById("other_vehicle_yearerror").innerHTML="Required field should not be empty";
+		  return false;
+		 }
+		 document.getElementById("other_vehicle_yearerror").innerHTML="";
+			if(document.getElementById("other_vehicle_year").value.length<4)
+			{
+			document.getElementById("other_vehicle_yearerror").innerHTML="Invalid year format";
+			return false;
+			
+			}
+		 /* document.getElementById("yeserror").innerHTML="";
+		  if( ( document.getElementById("yes").checked == false ) && ( document.getElementById("no").checked == false ) )
+
+		{
+		document.getElementById("yeserror").innerHTML="Required Field Should not be Empty";
+				
+				return false;
+				
+		} */
+		document.getElementById("speederror").innerHTML="";
+			if(document.getElementById("speed").value=="")
+			{
+			document.getElementById("speederror").innerHTML="Required Field Should not be Empty";
+			
+			return false;
+			}
+			
+			/* document.getElementById("injuryerror").innerHTML="";
+			if(document.getElementById("injury").value!="")
+			{
+		    if(document.getElementById("injury").value.length<4 || document.getElementById("injury").value.length>=32)
+		    {
+		    	
+		    	document.getElementById("injuryerror").innerHTML="Should be of length 4 to 32";
+		    	
+		        return false;
+		    }
+		    }
+			
+			document.getElementById("head_hiterror").innerHTML="";
+			if(document.getElementById("head_hit").value!="")
+			{
+		    if(document.getElementById("head_hit").value.length<4 || document.getElementById("head_hit").value.length>=32)
+		    {
+		    	
+		    	document.getElementById("head_hiterror").innerHTML="Should be of length 4 to 32";
+		    	
+		        return false;
+		    }
+		    }
+			
+			document.getElementById("rlshoulder_hiterror").innerHTML="";
+			if(document.getElementById("rlshoulder_hit").value!="")
+			{
+		    if(document.getElementById("rlshoulder_hit").value.length<4 || document.getElementById("rlshoulder_hit").value.length>=32)
+		    {
+		    	
+		    	document.getElementById("rlshoulder_hiterror").innerHTML="Should be of length 4 to 32";
+		    	
+		        return false;
+		    }
+		    }
+			
+			
+			document.getElementById("rlhip_hiterror").innerHTML="";
+			if(document.getElementById("rlhip_hit").value!="")
+			{
+		    if(document.getElementById("rlhip_hit").value.length<4 || document.getElementById("rlhip_hit").value.length>=32)
+		    {
+		    	
+		    	document.getElementById("rlhip_hiterror").innerHTML="Should be of length 4 to 32";
+		    	
+		        return false;
+		    }
+		    }
+			
+			document.getElementById("rlknee_hiterror").innerHTML="";
+			if(document.getElementById("rlknee_hit").value!="")
+			{
+		    if(document.getElementById("rlknee_hit").value.length<4 || document.getElementById("rlknee_hit").value.length>=32)
+		    {
+		    	
+		    	document.getElementById("rlknee_hiterror").innerHTML="Should be of length 4 to 32";
+		    	
+		        return false;
+		    }
+		    }
+			
+			document.getElementById("chest_hiterror").innerHTML="";
+			if(document.getElementById("chest_hit").value!="")
+			{
+		    if(document.getElementById("chest_hit").value.length<4 || document.getElementById("chest_hit").value.length>=32)
+		    {
+		    	
+		    	document.getElementById("chest_hiterror").innerHTML="Should be of length 4 to 32";
+		    	
+		        return false;
+		    }
+		    }
+			
+			
+			document.getElementById("rlarm_hiterror").innerHTML="";
+			if(document.getElementById("rlarm_hit").value!="")
+			{
+		    if(document.getElementById("rlarm_hit").value.length<4 || document.getElementById("rlarm_hit").value.length>=32)
+		    {
+		    	
+		    	document.getElementById("rlarm_hiterror").innerHTML="Should be of length 4 to 32";
+		    	
+		        return false;
+		    }
+		    }
+			
+			document.getElementById("rlleg_hiterror").innerHTML="";
+			if(document.getElementById("rlleg_hit").value!="")
+			{
+		    if(document.getElementById("rlleg_hit").value.length<4 || document.getElementById("rlleg_hit").value.length>=32)
+		    {
+		    	
+		    	document.getElementById("rlleg_hiterror").innerHTML="Should be of length 4 to 32";
+		    	
+		        return false;
+		    }
+		    }
+			
+			document.getElementById("otherpart_hiterror").innerHTML="";
+			if(document.getElementById("otherpart_hit").value!="")
+			{
+		    if(document.getElementById("otherpart_hit").value.length<4 || document.getElementById("otherpart_hit").value.length>=32)
+		    {
+		    	
+		    	document.getElementById("otherpart_hiterror").innerHTML="Should be of length 4 to 32";
+		    	
+		        return false;
+		    }
+		    }
+			 */
+			document.getElementById("estimateddamageerror").innerHTML="";
+			if(document.getElementById("estimateddamage").value=="")
+			{
+			document.getElementById("estimateddamageerror").innerHTML="Required Field Should not be Empty";
+			
+			return false;
+			}
 document.getElementById("afteraccidenterror").innerHTML=""; 
 	if( ( document.getElementById("headache").checked == false ) && ( document.getElementById("dizziness").checked == false ) && ( document.getElementById("nausea").checked == false )&& ( document.getElementById("confusion").checked == false )
 
@@ -622,13 +1404,52 @@ document.getElementById("afteraccidenterror").innerHTML="";
 	 		
 	 }
   
-	document.getElementById("injuryerror").innerHTML="";
-	if(document.getElementById("injury").value!="")
+	document.getElementById("cityerror").innerHTML="";
+	if(document.getElementById("hosname").value!="")
 	{
-    if(document.getElementById("injury").value.length<4 || document.getElementById("injury").value.length>=32)
+    if(document.getElementById("hosname").value.length<4 || document.getElementById("hosname").value.length>=32)
     {
     	
-    	document.getElementById("injuryerror").innerHTML="Name should be of length 4 to 32";
+    	document.getElementById("cityerror").innerHTML="Should be of length 4 to 32";
+    	
+        return false;
+    }
+    }
+	
+	
+	document.getElementById("xrayerror").innerHTML="";
+	if(document.getElementById("xray").value!="")
+	{
+    if(document.getElementById("xray").value.length<4 || document.getElementById("xray").value.length>=32)
+    {
+    	
+    	document.getElementById("xrayerror").innerHTML="Should be of length 4 to 32";
+    	
+        return false;
+    }
+    }
+	
+	
+	document.getElementById("wrongerror").innerHTML="";
+	if(document.getElementById("wrong").value!="")
+	{
+    if(document.getElementById("wrong").value.length<4 || document.getElementById("wrong").value.length>=32)
+    {
+    	
+    	document.getElementById("wrongerror").innerHTML="Should be of length 4 to 32";
+    	
+        return false;
+    }
+    }
+	
+	
+	document.getElementById("otherpart_hiterror").innerHTML="";
+	if(document.getElementById("otherpart_hit").value!="")
+	{
+    if(document.getElementById("otherpart_hit").value.length<4 || document.getElementById("otherpart_hit").value.length>=32)
+    {
+    	
+    	document.getElementById("otherpart_hiterror").innerHTML="Should be of length 4 to 32";
     	
         return false;
     }
@@ -765,7 +1586,7 @@ document.getElementById("afteraccidenterror").innerHTML="";
                  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt" style="width: 306px; "><span class="err">* </span>What is the Claim Number of Your Accident:</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="claimno" placeholder="35W899112" name="claimnumber" onInput="return validateusername()";/><br><span id="claimnoerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.claimnumber"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="claimno" placeholder="35W899112" name="claimnumber" maxlength="9" onInput="return validateusername()";/><br><span id="claimnoerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.claimnumber"></form:errors></span>
 				  <br><span class="err"></span>
 				  </td>
 
@@ -806,7 +1627,7 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Description Of Vehicle You Were In</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="smlinput_txtbx1" id="vehicle_make" onInput="return validatename2()"; name="vehicle_make" style="width:70px" placeholder="make"/><span id="vehicle_makeerror" style="color: red;font-style:italic;"></span>
+				  <input type="text" class="smlinput_txtbx1" id="vehicle_make" name="vehicle_make"  onInput="return validatename2()"; style="width:70px" placeholder="make"/><span id="vehicle_makeerror" style="color: red;font-style:italic;"></span>
 				  <input type="text" class="smlinput_txtbx1" id="vehicle_model" name="vehicle_model" onInput="return validatename3()"; style="width:70px" placeholder="model" /><span id="vehicle_modelerror" style="color: red;font-style:italic;"></span>
 				  <input type="text" class="smlinput_txtbx1" id="vehicle_year" name="vehicle_year" style="width:70px" maxlength="4" onkeypress="return validate(event)"; placeholder="year"/><span  id="vehicle_yearerror" style="color: red;font-style:italic;"></span>
 				  </td>
@@ -827,7 +1648,7 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Description Of Other Vehicle: </td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="smlinput_txtbx1" id="other_vehicle_make" onInput="return validatename4()";name="other_vehicle_make" style="width:70px" placeholder="    make" /><span id="other_vehicle_makeerror" style="color: red;font-style:italic;"></span>
+				  <input type="text" class="smlinput_txtbx1" id="other_vehicle_make" name="other_vehicle_make"  onInput="return validatename4()";style="width:70px" placeholder="    make" /><span id="other_vehicle_makeerror" style="color: red;font-style:italic;"></span>
 				  <input type="text" class="smlinput_txtbx1" id="other_vehicle_model" name="other_vehicle_model" onInput="return validatename5()"; style="width:70px" placeholder="     model" /><span id="other_vehicle_modelerror" style="color: red;font-style:italic;"></span>
 				  <input type="text" class="smlinput_txtbx1" id="other_vehicle_year" maxlength="4" name="other_vehicle_year" style="width:70px" onkeypress="return validate(event)"; placeholder="year"/><span class="err" id="other_vehicle_yearerror" style="color: red;font-style:italic;"></span>
 				  </td>
@@ -904,8 +1725,8 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				  </table>
 				   <table align="right">
 				               <tr>
-				  
-                     <td><br><input type="button" id="btnNext" class="submit_btn" value="Next" /><br></td>
+				  <td id="tblbtn"><input type="button" id="btnNext" class="submit_btn" value="Next" onmouseover="checkValid(event);"/></td></tr>
+                    <!--  <td><br><input type="button" id="btnNext" class="submit_btn" value="Next" /><br></td> -->
                   </tr>
 				               </table>
 				  </td>
@@ -1010,7 +1831,7 @@ document.getElementById("afteraccidenterror").innerHTML="";
 					<option value="others">Other</option>
 					<option value="un_known">Unknown</option>
 				  </select>
-				   <input type="text" name="body_position1" id="body_position1" min="4" maxlength="32" style='display:none'/>
+				   <input type="text" name="body_position1" id="body_position1" min="4" maxlength="32" onInput="return validatename(id)"; style='display:none'/>
 				  </td>
 				  </tr>
 				 <tr class="row2">
@@ -1025,7 +1846,7 @@ document.getElementById("afteraccidenterror").innerHTML="";
 					<option value="others">Other</option>
 					<option value="unknown_pos">Unknown</option>
 				  </select>
-				   <input type="text" name="head_position1" id="head_position1" min="4" maxlength="32" style='display:none'/>
+				   <input type="text" name="head_position1" id="head_position1" min="4" maxlength="32" onInput="return validatename(id)"; style='display:none'/>
 				  </td>
 				  </tr>
 				  <tr class="row1">
@@ -1074,7 +1895,8 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				                  	 <tr>
 				  <td><br><input type="button" id="btnPrevious" class="submit_btn" value="Previous"  />&nbsp;</td>
                   <td>&nbsp;&nbsp;</td>
-                  <td><br><input type="button" id="btnNext" class="submit_btn" value="Next"/><br></td>
+                  
+                  <td  ><br><input type="button" id="btnNext" class="submit_btn" value="Next" /><br></td>
                   </tr>
 				                  	</table>
 				  </td>
@@ -1141,49 +1963,49 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				  <tr class="row2">
                   <td valign="middle" align="left" width="590" class="input_txt">&nbsp;&nbsp;&nbsp;My Head Hit:</td>
 				  <td valign="top" align="left" class="input_txt" width="50%">
-				  <input type="text" class="input_txtbx1" id="head_hit" name="head_hit" min="4" maxlength="32" onInput="return validatename(id)";/>
+				  <input type="text" class="input_txtbx1" id="head_hit" name="head_hit" min="4" maxlength="32" onInput="return validatename(id)";/><span id="head_hiterror" style="color: red;font-style:italic;"> </span>
 				  </td><td width="55"></td>
 				  </tr>
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt">&nbsp;&nbsp;&nbsp;My Right Left Shoulder Hit:</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="rlshoulder_hit"  min="4" maxlength="32" name="rlshoulder_hit" onInput="return validatename(id)"; />
+				  <input type="text" class="input_txtbx1" id="rlshoulder_hit"  min="4" maxlength="32" name="rlshoulder_hit" onInput="return validatename(id)"; /><span id="rlshoulder_hiterror" style="color: red;font-style:italic;"> </span>
 				  </td><td width="55"></td>
 				  </tr>
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt">&nbsp;&nbsp;&nbsp;My Right Left Hip Hit:</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="rlhip_hit"  min="4" maxlength="32" name="rlhip_hit" onInput="return validatename(id)"; />
+				  <input type="text" class="input_txtbx1" id="rlhip_hit"  min="4" maxlength="32" name="rlhip_hit" onInput="return validatename(id)"; /><span id="rlhip_hiterror" style="color: red;font-style:italic;"> </span>
 				  </td><td width="55"></td>
 				  </tr>
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt">&nbsp;&nbsp;&nbsp;My Right Left Knee Hit:</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="rlknee_hit" min="4" maxlength="32" name="rlknee_hit" onInput="return validatename(id)"; />
+				  <input type="text" class="input_txtbx1" id="rlknee_hit" min="4" maxlength="32" name="rlknee_hit" onInput="return validatename(id)"; /><span id="rlknee_hiterror" style="color: red;font-style:italic;"> </span>
 				  </td><td width="55"></td>
 				  </tr>
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt">&nbsp;&nbsp;&nbsp;My Chest Hit:</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="chest_hit" name="chest_hit" min="4" maxlength="32" onInput="return validatename(id)"; />
+				  <input type="text" class="input_txtbx1" id="chest_hit" name="chest_hit" min="4" maxlength="32" onInput="return validatename(id)"; /><span id="chest_hiterror" style="color: red;font-style:italic;"> </span>
 				  </td><td width="55"></td>
 				  </tr>
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt">&nbsp;&nbsp;&nbsp;My Right Left Arm Hit:</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="rlarm_hit" name="rlarm_hit"  min="4" maxlength="32" onInput="return validatename(id)";/>
+				  <input type="text" class="input_txtbx1" id="rlarm_hit" name="rlarm_hit"  min="4" maxlength="32" onInput="return validatename(id)";/><span id="rlarm_hiterror" style="color: red;font-style:italic;"> </span>
 				  </td><td width="55"></td>
 				  </tr>
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt">&nbsp;&nbsp;&nbsp;My Right Left Leg hit</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="rlleg_hit" name="rlleg_hit" min="4" maxlength="32" onInput="return validatename(id)";/>
+				  <input type="text" class="input_txtbx1" id="rlleg_hit" name="rlleg_hit" min="4" maxlength="32" onInput="return validatename(id)";/><span id="rlleg_hiterror" style="color: red;font-style:italic;"> </span>
 				  </td><td width="55"></td>
 				  </tr>
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt">&nbsp;&nbsp;&nbsp;My Other body part Hit:</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="otherpart_hit" name="otherpart_hit" min="4" maxlength="32" onInput="return validatename(id)"; />
+				  <input type="text" class="input_txtbx1" id="otherpart_hit" name="otherpart_hit" min="4" maxlength="32" onInput="return validatename(id)"; /><span id="otherpart_hiterror" style="color: red;font-style:italic;"> </span>
 				  </td><td width="55"></td>
 				  </tr>
 				 
@@ -1232,7 +2054,9 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				                  	 <tr>
 				  <td><br><input type="button" id="btnPrevious" class="submit_btn" value="Previous"  />&nbsp;</td>
                   <td>&nbsp;&nbsp;</td>
-                  <td><br><input type="button" id="btnNext" class="submit_btn" value="Next"/><br></td>
+                  <td > <br><input type="button" id="btnNext" class="submit_btn" value="Next"  /><br>
+                   
+                  </td>
                   </tr>
 				                  	</table>
 				 </td>
@@ -1331,14 +2155,14 @@ document.getElementById("afteraccidenterror").innerHTML="";
                   <td valign="middle" align="left" class="input_txt"  width = "19.5%" >Name Of The Hospital:</td><td width="21%"></td><!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
 				  
 				 
-				  <td><input type="text" align="left" class="input_txtbx1" onInput="return validatename(id)"; id="hosname" name="hosname" min="4" maxlength="32"/></td>
+				  <td><input type="text" align="left" class="input_txtbx1" onInput="return validatename(id)"; id="hosname" name="hosname" min="4" maxlength="32"/><span id="hosnameerror" style="color: red;font-style:italic;"> </span></td>
 				  <td width="680" ></td>
 				
 				  </tr>
 				   <tr class="row1">
                   <td valign="middle" align="left" class="input_txt">City:</td><td></td><td><!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
 				  
-				  <input type="text" class="input_txtbx1" id="city" name="city"  onInput="return validatename(id)"; min="4" maxlength="32"/>
+				  <input type="text" class="input_txtbx1" id="city" name="city"  onInput="return validatename(id)"; min="4" maxlength="32"/><span id="cityerror" style="color: red;font-style:italic;"> </span>
 				  </td>
 				  </tr>
 				   <tr class="row2">
@@ -1364,7 +2188,7 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt">What Body Parts Were X-rayed,What Treatment Was Given?
 				  </td><td></td><td>
-				  <input type="text" class="input_txtbx1" id="xray" onInput="return validatename(id)";min="4" maxlength="32" name="xray" />
+				  <input type="text" class="input_txtbx1" id="xray" onInput="return validatename(id)";min="4" maxlength="32" name="xray" /><span id="xrayerror" style="color: red;font-style:italic;"> </span>
 				  </td>
 				  <td ></td>
 				 
@@ -1372,7 +2196,7 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				   <tr class="row1">
                   <td valign="middle"  align="left" class="input_txt">What Did They Tell You Was Wrong?<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
 				  </td><td></td><td>
-				  <input type="text" class="input_txtbx1" id="wrong" onInput="return validatename(id)"; min="4" maxlength="32" name="wrong" />
+				  <input type="text" class="input_txtbx1" id="wrong" onInput="return validatename(id)"; min="4" maxlength="32" name="wrong" /><span id="wrongerror" style="color: red;font-style:italic;"> </span>
 				  </td>
 				  
 				  </tr>
