@@ -5623,7 +5623,7 @@ String name="";
 	
 	@RequestMapping(value="/deleteinsuranceinformation", method=RequestMethod.GET)
 	public String removeinsuranceinformation(HttpSession session,ModelMap model, Principal principal) {
-	session.removeAttribute("insurance");
+	session.removeAttribute("info");
 		if(patientDAO.getUsername(principal).size()>0)
 		{			
 			String name="";			

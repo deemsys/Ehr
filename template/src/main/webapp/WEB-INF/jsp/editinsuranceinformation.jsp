@@ -33,7 +33,7 @@
 <script type="text/javascript">
   function confirmation() 
 	{
-	var answer = confirm("Are you Sure You Want to Delete Participant ?")
+	var answer = confirm("Are you Sure You Want to Delete Patient ?");
 	if (answer){
 		return true;
 	}
@@ -180,7 +180,7 @@ function checkSubmit()
     if(document.getElementById("person").value.length<4 || document.getElementById("person").value.length>=32)
     {
     	
-    	document.getElementById("personerr").innerHTML="Name should be min 4 and max 32";
+    	document.getElementById("personerr").innerHTML="Name should be of length 4 to 32";
     	
         return false;
     }
@@ -211,7 +211,7 @@ function checkSubmit()
     if(document.getElementById("emp").value.length<4 || document.getElementById("emp").value.length>=32)
     {
     	
-    	document.getElementById("emperr").innerHTML="Name should be min 4 and max 32";
+    	document.getElementById("emperr").innerHTML="Name should be of length 4 to 32";
     	
         return false;
     }
@@ -236,7 +236,7 @@ function checkSubmit()
     if(document.getElementById("company").value.length<4 || document.getElementById("company").value.length>=32)
     {
     	
-    	document.getElementById("companyerr").innerHTML="Name should be min 4 and max 32";
+    	document.getElementById("companyerr").innerHTML="Name should be of length 4 to 32";
     	
         return false;
     }
@@ -278,7 +278,7 @@ function checkSubmit()
     if(document.getElementById("policy").value.length<4 || document.getElementById("policy").value.length>=32)
     {
     	
-    	document.getElementById("policyerr").innerHTML=" should be min 4 and max 32";
+    	document.getElementById("policyerr").innerHTML=" should be of length 4 to 32";
     	
         return false;
     }
@@ -295,7 +295,7 @@ function checkSubmit()
     if(document.getElementById("groupno1").value.length<4 || document.getElementById("groupno1").value.length>=32)
     {
     	
-    	document.getElementById("groupno1err").innerHTML=" should be min 4 and max 32";
+    	document.getElementById("groupno1err").innerHTML=" should be of length 4 to 32";
     	
         return false;
     }
@@ -310,7 +310,7 @@ function checkSubmit()
     if(document.getElementById("supplemental_company").value.length<4 || document.getElementById("supplemental_company").value.length>=32)
     {
     	
-    	document.getElementById("supplemental_companyerr").innerHTML=" should be min 4 and max 32";
+    	document.getElementById("supplemental_companyerr").innerHTML=" should be of length 4 to 32";
     	
         return false;
     }
@@ -351,7 +351,7 @@ function checkSubmit()
     if(document.getElementById("patient_sign").value.length<4 || document.getElementById("patient_sign").value.length>=32)
     {
     	
-    	document.getElementById("patient_signerr").innerHTML=" should be min 4 and max 32";
+    	document.getElementById("patient_signerr").innerHTML=" should be of length 4 to 32";
     	
         return false;
     } */
@@ -382,7 +382,7 @@ function checkSubmit()
     if(document.getElementById("spouse_sign").value.length<4 || document.getElementById("spouse_sign").value.length>=32)
     {
     	
-    	document.getElementById("spouse_signerr").innerHTML=" should be min 4 and max 32";
+    	document.getElementById("spouse_signerr").innerHTML=" should be of length 4 to 32";
     	
         return false;
     } */
@@ -471,7 +471,7 @@ document.getElementById("phone").value=phone;
               </tr>
               <tr class="row1">
               <td><span class="err">* </span>Date of Accident/injury</td>
-              <td> <input type="text" class="input_txtbx1" name="date_of_accident" id="datepicker" value="${Insuranceinformation.date_of_accident}"/><span id="datepickererror"  style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.date_of_accident"></form:errors></td>
+              <td> <input type="text" class="input_txtbx1" name="date_of_accident" id="datepicker" value="${Insuranceinformation.date_of_accident}"/><br><span id="datepickererror"  style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.date_of_accident"></form:errors></td>
               </tr>
               <tr class="row1">
               <td>Do you have health insurance?</td>
@@ -483,7 +483,7 @@ document.getElementById("phone").value=phone;
               </tr>
               <tr class="row1">
               <td><span class="err">* </span>Insurance Company</td>
-              <td> <input type="text" class="input_txtbx1" name="insurance_company" id="company" onInput="return validatename55(id)";value="${Insuranceinformation.insurance_company}" /><br><span id="companyerr" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.insurance_company"></form:errors></td>
+              <td> <input type="text" class="input_txtbx1" name="insurance_company" id="company" value="${Insuranceinformation.insurance_company}"  onInput="return validatename55(id)";/><br><span id="companyerr" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.insurance_company"></form:errors></td>
               <td><span class="err">* </span>Phone#</td>
               <td><input type="text" class="input_txtbx1" name="phone" id="phone"  maxlength="13" value="${Insuranceinformation.phone}" onkeypress="return validate1(event)"; /><br><span class="err" id="phoneerr"><form:errors path="Insuranceinformation.phone"></form:errors></span>
               <br><span class="err" id="phoneerror"></span>
@@ -541,7 +541,8 @@ document.getElementById("phone").value=phone;
      	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> 
         <td><br><input type="submit" class="submit_btn" value="Update" onclick="return checkSubmit('this');"></td>
         <td>&nbsp;&nbsp;</td>
-        <td><br><a href="deleteinsuranceinformation" class="submit_btn" style="text-decoration: none;color:white" onclick="return confirmation() ">Delete</a></td>
+          <td><br><a href="deleteinsuranceinformation" class="submit_btn" style="text-decoration: none;color:white" onclick="return confirmation() ">Delete</a></td>
+        
         </tr>
         </table>
         </div>

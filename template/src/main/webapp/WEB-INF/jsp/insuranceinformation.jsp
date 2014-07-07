@@ -274,7 +274,7 @@ function checkSubmit()
     if(document.getElementById("person").value.length<4 || document.getElementById("person").value.length>=32)
     {
     	
-    	document.getElementById("personerr").innerHTML="Name should be min 4 and max 32";
+    	document.getElementById("personerr").innerHTML="Name should be of length 4 to 32";
     	
         return false;
     }
@@ -305,7 +305,7 @@ function checkSubmit()
     if(document.getElementById("emp").value.length<4 || document.getElementById("emp").value.length>=32)
     {
     	
-    	document.getElementById("emperr").innerHTML="Name should be min 4 and max 32";
+    	document.getElementById("emperr").innerHTML="Name should be of length 4 to 32";
     	
         return false;
     }
@@ -330,7 +330,7 @@ function checkSubmit()
     if(document.getElementById("company").value.length<4 || document.getElementById("company").value.length>=32)
     {
     	
-    	document.getElementById("companyerr").innerHTML="Name should be min 4 and max 32";
+    	document.getElementById("companyerr").innerHTML="Name should be of length 4 to 32";
     	
         return false;
     }
@@ -372,7 +372,7 @@ function checkSubmit()
     if(document.getElementById("policy").value.length<4 || document.getElementById("policy").value.length>=32)
     {
     	
-    	document.getElementById("policyerr").innerHTML=" should be min 4 and max 32";
+    	document.getElementById("policyerr").innerHTML=" should be of length 4 to 32";
     	
         return false;
     }
@@ -389,7 +389,7 @@ function checkSubmit()
     if(document.getElementById("groupno1").value.length<4 || document.getElementById("groupno1").value.length>=32)
     {
     	
-    	document.getElementById("groupno1err").innerHTML=" should be min 4 and max 32";
+    	document.getElementById("groupno1err").innerHTML=" should be of length 4 to 32";
     	
         return false;
     }
@@ -404,7 +404,7 @@ function checkSubmit()
     if(document.getElementById("supplemental_company").value.length<4 || document.getElementById("supplemental_company").value.length>=32)
     {
     	
-    	document.getElementById("supplemental_companyerr").innerHTML=" should be min 4 and max 32";
+    	document.getElementById("supplemental_companyerr").innerHTML=" should be of length 4 to 32";
     	
         return false;
     }
@@ -445,7 +445,7 @@ function checkSubmit()
     if(document.getElementById("patient_sign").value.length<4 || document.getElementById("patient_sign").value.length>=32)
     {
     	
-    	document.getElementById("patient_signerr").innerHTML=" should be min 4 and max 32";
+    	document.getElementById("patient_signerr").innerHTML=" should be of length 4 to 32";
     	
         return false;
     } */
@@ -476,7 +476,7 @@ function checkSubmit()
     if(document.getElementById("spouse_sign").value.length<4 || document.getElementById("spouse_sign").value.length>=32)
     {
     	
-    	document.getElementById("spouse_signerr").innerHTML=" should be min 4 and max 32";
+    	document.getElementById("spouse_signerr").innerHTML=" should be of length 4 to 32";
     	
         return false;
     } */
@@ -581,7 +581,7 @@ function checkSubmit()
               </tr>
               <tr class="row1">
               <td><span class="err">* </span>Date of Accident/injury</td>
-              <td> <input type="text" class="input_txtbx1" name="date_of_accident" id="datepicker" /><span id="datepickererr" style="color: red;font-style:italic;"></span><form:errors path="Insuranceinformation.date_of_accident"></form:errors></td>
+              <td> <input type="text" class="input_txtbx1" name="date_of_accident" id="datepicker" /><br><span id="datepickererr" style="color: red;font-style:italic;"></span><form:errors path="Insuranceinformation.date_of_accident"></form:errors></td>
               </tr>
               <tr class="row1">
               <td>Do you have health insurance?</td>
@@ -589,7 +589,7 @@ function checkSubmit()
               </tr>
               <tr class="row1">
               <td><span class="err">* </span>Employer's Name</td>
-              <td> <input type="text" class="input_txtbx1" name="employers_name" id="emp"  onInput="return validatename1()";/><span id="emperr" style="color: red;font-style:italic;"></span><form:errors path="Insuranceinformation.employers_name"></form:errors></td>
+              <td> <input type="text" class="input_txtbx1" name="employers_name" id="emp"  onInput="return validatename1()";/><br><span id="emperr" style="color: red;font-style:italic;"></span><form:errors path="Insuranceinformation.employers_name"></form:errors></td>
               </tr>
               <tr class="row1">
               <td><span class="err">* </span>Insurance Company</td>
