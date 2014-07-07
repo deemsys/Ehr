@@ -138,7 +138,7 @@ document.getElementById("pnameerror").innerHTML=" ";
 	    if(document.getElementById("pname").value.length<4 || document.getElementById("pname").value.length>=32)
 	    {
 	    	
-	    	document.getElementById("pnameerror").innerHTML="Name should be min 4 and max 32";
+	    	document.getElementById("pnameerror").innerHTML="Name should be of length 4 to 32";
 	    	
 	        return false;
 	    }
@@ -184,7 +184,7 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 	    if(document.getElementById("name123").value.length<4 || document.getElementById("name123").value.length>=32)
 	    {
 	    	
-	    	document.getElementById("name123error").innerHTML="Name should be min 4 and max 32";
+	    	document.getElementById("name123error").innerHTML="Name should be of length 4 to 32";
 	    	
 	        return false;
 	    }
@@ -260,9 +260,9 @@ function validatename(id){
           <table cellpadding="0" cellspacing="0" border="0" width="98%">
            
  <tr class="row1">
-<td style="width: 127px; "><h4><span class="err">* </span>Patient Name:</h4></td><td width="400" style="width: 170px; "><input type="text"  name="pname" id="pname" onInput="return validatename(id)";/><span class="err" id="pnameerror"><form:errors path="Shoulderpainscore.pname"></form:errors></span></td>
-<td style="width: 117px; "><h4><span class="err">* </span>Number:</h4></td><td width="400" style="width: 167px; "><input type="text"  name="number" maxlength="32" id="number1" onkeypress="return validate(event)";/><span class="err" id="number1error"><form:errors path="Shoulderpainscore.number"></form:errors></span><span class="err"> <div id="number"></span></div></td>
-<td style="width: 115px; "><h4><span class="err">* </span>Date:</h4></td><td><input type="text"  id="datepicker" name="date" /><span class="err" id="datepickererror"><form:errors path="Shoulderpainscore.date"></form:errors></span></td>
+<td style="width: 127px; "><h4><span class="err">* </span>Patient Name:</h4></td><td width="400" style="width: 170px; "><input type="text"  name="pname" id="pname" onInput="return validatename(id)";/><span style="color: red;font-style:italic;" id="pnameerror"><form:errors path="Shoulderpainscore.pname"></form:errors></span></td>
+<td style="width: 117px; "><h4><span class="err">* </span>Number:</h4></td><td width="400" style="width: 167px; "><input type="text"  name="number" maxlength="32" id="number1" onkeypress="return validate(event)";/><span style="color: red;font-style:italic;" id="number1error"><form:errors path="Shoulderpainscore.number"></form:errors></span><span class="err"> <div id="number"></span></div></td>
+<td style="width: 115px; "><h4><span class="err">* </span>Date:</h4></td><td><input type="text"  id="datepicker" name="date" /><span style="color: red;font-style:italic;" id="datepickererror"><form:errors path="Shoulderpainscore.date"></form:errors></span></td>
 </tr>
 </table>
 <table width="70%" align="center">

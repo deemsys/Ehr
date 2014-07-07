@@ -122,7 +122,7 @@ document.getElementById("pnameerror").innerHTML=" ";
 	    if(document.getElementById("pname").value.length<4 || document.getElementById("pname").value.length>=32)
 	    {
 	    	
-	    	document.getElementById("pnameerror").innerHTML="Name should be min 4 and max 32";
+	    	document.getElementById("pnameerror").innerHTML="Name should be of length 4 to 32";
 	    	
 	        return false;
 	    }
@@ -167,7 +167,7 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 	    if(document.getElementById("name123").value.length<4 || document.getElementById("name123").value.length>=32)
 	    {
 	    	
-	    	document.getElementById("name123error").innerHTML="Name should be min 4 and max 32";
+	    	document.getElementById("name123error").innerHTML="Name should be of length 4 to 32";
 	    	
 	        return false;
 	    }
@@ -240,9 +240,9 @@ function validatename(id){
      <c:set value="${shoulderpainscoreForm.shoulderpainscore[0]}" var="shoulderpainscore"/>      
  <tr class="row1">
  <input type="hidden" name="shoulderpainno" value="${shoulderpainscore.shoulderpainno }"  />
-<td><h2><span class="err">* </span>Patient Name:</h2></td><td width="400"><input type="text"  name="pname" id="pname"  onInput="return validatename(id)";value="${shoulderpainscore.pname }"/><span class="err" id="pnameerror"><form:errors path="Shoulderpainscore.pname"></form:errors></span></td>
-<td><h2><span class="err">* </span>Number:</h2></td><td width="400"><input type="text"  name="number" id="number1" onkeypress="return validate(event)"; value="${shoulderpainscore.number}"/><span class="err" id="number1error"><form:errors path="Shoulderpainscore.number"></form:errors></span></td>
-<td><h2><span class="err">* </span>Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${shoulderpainscore.date}"/><span class="err" id="datepickererror"><form:errors path="Shoulderpainscore.date"></form:errors></span></td>
+<td><h2><span class="err">* </span>Patient Name:</h2></td><td width="400"><input type="text"  name="pname" id="pname"  onInput="return validatename(id)";value="${shoulderpainscore.pname }"/><span style="color: red;font-style:italic;" id="pnameerror"><form:errors path="Shoulderpainscore.pname"></form:errors></span></td>
+<td><h2><span class="err">* </span>Number:</h2></td><td width="400"><input type="text"  name="number" id="number1" onkeypress="return validate(event)"; value="${shoulderpainscore.number}"/><span style="color: red;font-style:italic;" id="number1error"><form:errors path="Shoulderpainscore.number"></form:errors></span></td>
+<td><h2><span class="err">* </span>Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${shoulderpainscore.date}"/><span style="color: red;font-style:italic;" id="datepickererror"><form:errors path="Shoulderpainscore.date"></form:errors></span></td>
 </tr>
 </table>
 <table width="70%" align="center">
