@@ -245,6 +245,207 @@ function validateusername(){
 }
 
 </script>
+
+<script>
+
+
+function checkValid(e)
+{
+	
+	
+	
+	 document.getElementById("job_classificationerror").innerHTML=" ";
+		
+		if(document.getElementById("job_classification").value=="")
+		{
+		document.getElementById("job_classificationerror").innerHTML="Required Field Should not be Empty";
+		 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+		return false;
+		}
+		
+		document.getElementById("job_classificationerror").innerHTML="";
+	    if(document.getElementById("job_classification").value.length<4 || document.getElementById("job_classification").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("job_classificationerror").innerHTML="Name should be of length 4 to 32";
+	    	
+	        return false;
+	    }
+	    
+	    
+		document.getElementById("injury_occurerror").innerHTML=" ";
+		
+		if(document.getElementById("injury_occur").value=="")
+		{
+		document.getElementById("injury_occurerror").innerHTML="Required Field Should not be Empty";
+		document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+		return false;
+		}
+		
+		document.getElementById("injury_occurerror").innerHTML="";
+	    if(document.getElementById("injury_occur").value.length<4 || document.getElementById("injury_occur").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("injury_occurerror").innerHTML="Should be of length 4 to 32";
+	    	document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	        return false;
+	    }
+	    
+	    
+	document.getElementById("saw_accidenterror").innerHTML=" ";
+		
+		if(document.getElementById("saw_accident").value=="")
+		{
+		document.getElementById("saw_accidenterror").innerHTML="Required Field Should not be Empty";
+		document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+		return false;
+		}
+		 
+		document.getElementById("saw_accidenterror").innerHTML="";
+	    if(document.getElementById("saw_accident").value.length<4 || document.getElementById("saw_accident").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("saw_accidenterror").innerHTML="Should be of length 4 to 32";
+	    	document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	        return false;
+	    }
+	    
+	document.getElementById("titleerror").innerHTML=" ";
+		
+		if(document.getElementById("title").value=="")
+		{
+		document.getElementById("titleerror").innerHTML="Required Field Should not be Empty";
+		document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+		return false;
+		}
+		
+		
+		document.getElementById("titleerror").innerHTML="";
+	    if(document.getElementById("title").value.length<4 || document.getElementById("title").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("titleerror").innerHTML="Should be of length 4 to 32";
+	    	document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	        return false;
+	    }
+	    
+	    document.getElementById("present_joberror").innerHTML=" ";
+		
+		if(document.getElementById("present_job").value=="")
+		{
+		document.getElementById("present_joberror").innerHTML="Required Field Should not be Empty";
+		document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+		return false;
+		}
+		
+		document.getElementById("present_joberror").innerHTML="";
+	    if(document.getElementById("present_job").value.length<4 || document.getElementById("present_job").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("present_joberror").innerHTML="Should be of length 4 to 32";
+	    	document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	        return false;
+	    }
+	    
+	    document.getElementById("absenteeismerror").innerHTML="";
+		if(document.getElementById("absenteeism").value!="")
+		{
+			if(document.getElementById("absenteeism").value=="")
+		{
+			document.getElementById("absenteeismerror").innerHTML="Required Field Should not be Empty";
+			document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+			return false;
+			}
+	   
+	    }
+		
+		
+	 document.getElementById("absenteeismerror").innerHTML="";
+		if(document.getElementById("absenteeism").value!="")
+		{
+	    if(document.getElementById("absenteeism").value.length<4 || document.getElementById("absenteeism").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("absenteeismerror").innerHTML="Absenteeism should be of length 4 to 32";
+	    	document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	        return false;
+	    }
+	    }
+		
+		document.getElementById("how_mucherror").innerHTML=" ";
+		
+		if(document.getElementById("how_much").value=="")
+		{
+		document.getElementById("how_mucherror").innerHTML="Required Field Should not be Empty";
+		document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+		return false;
+		}
+		
+	document.getElementById("how_oftenerror").innerHTML=" ";
+		
+		if(document.getElementById("how_often").value=="")
+		{
+		document.getElementById("how_oftenerror").innerHTML="Required Field Should not be Empty";
+		document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+		return false;
+		}
+		
+		document.getElementById("how_oftenerror").innerHTML="";
+	    if(document.getElementById("how_often").value.length<4 || document.getElementById("how_often").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("how_oftenerror").innerHTML="Should be of length 4 to 32";
+	    	document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	        return false;
+	    }
+	    
+	document.getElementById("where_to_whereerror").innerHTML=" ";
+		
+		if(document.getElementById("where_to_where").value=="")
+		{
+		document.getElementById("where_to_whereerror").innerHTML="Required Field Should not be Empty";
+		document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+		return false;
+		}
+		
+		document.getElementById("where_to_whereerror").innerHTML="";
+	    if(document.getElementById("where_to_where").value.length<4 || document.getElementById("where_to_where").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("where_to_whereerror").innerHTML="Should be of length 4 to 32";
+	    	document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	        return false;
+	    }
+	    else
+		 {
+		  document.getElementById("where_to_whereerror").innerHTML="";
+		  document.getElementById('btnvisible1').style.visibility='hidden';
+		  document.getElementById('btnNext').style.visibility='visible';
+		  document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";		 
+		 }
+	    
+	    document.getElementById("jobpperror").innerHTML="";
+		if(document.getElementById("jobpp").value!="")
+		{
+	    if(document.getElementById("jobpp").value.length<4 || document.getElementById("jobpp").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("jobpperror").innerHTML="Name should be min 4 and max 32";
+	    	document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	        return false;
+	    }
+	    }
+		
+		 else
+		 {
+		  document.getElementById("jobpperror").innerHTML="";
+		  document.getElementById('btnvisible1').style.visibility='hidden';
+		  document.getElementById('btnNext').style.visibility='visible';
+		  document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";		 
+		 }
+}
+  
+</script>
   <script>
 
 function checkSubmit()
@@ -759,7 +960,7 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 				  <br>
 				  <table align="right">
 				  <tr>
-				  <td><input type="button" id="btnNext" class="submit_btn" value="Next"/>
+				  <td id="tblbtn"> <input type="button" id="btnNext" class="submit_btn" value="Next" onmouseover="checkValid(event);"/>
 				  </td>
 				  </tr>
 				  </table>

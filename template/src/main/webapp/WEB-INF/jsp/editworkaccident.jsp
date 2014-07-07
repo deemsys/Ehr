@@ -251,10 +251,209 @@ function validatename(id){
            }
        }       
     </script>
-   <script>
+    <script>
 
-function checkSubmit()
+
+function checkValid(e)
 {
+	
+	
+	
+	 document.getElementById("job_classificationerror").innerHTML=" ";
+		
+		if(document.getElementById("job_classification").value=="")
+		{
+		document.getElementById("job_classificationerror").innerHTML="Required Field Should not be Empty";
+		 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+		return false;
+		}
+		
+		document.getElementById("job_classificationerror").innerHTML="";
+	    if(document.getElementById("job_classification").value.length<4 || document.getElementById("job_classification").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("job_classificationerror").innerHTML="Name should be of length 4 to 32";
+	    	
+	        return false;
+	    }
+	    
+	    
+		document.getElementById("injury_occurerror").innerHTML=" ";
+		
+		if(document.getElementById("injury_occur").value=="")
+		{
+		document.getElementById("injury_occurerror").innerHTML="Required Field Should not be Empty";
+		document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+		return false;
+		}
+		
+		document.getElementById("injury_occurerror").innerHTML="";
+	    if(document.getElementById("injury_occur").value.length<4 || document.getElementById("injury_occur").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("injury_occurerror").innerHTML="Should be of length 4 to 32";
+	    	document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	        return false;
+	    }
+	    
+	    
+	document.getElementById("saw_accidenterror").innerHTML=" ";
+		
+		if(document.getElementById("saw_accident").value=="")
+		{
+		document.getElementById("saw_accidenterror").innerHTML="Required Field Should not be Empty";
+		document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+		return false;
+		}
+		 
+		document.getElementById("saw_accidenterror").innerHTML="";
+	    if(document.getElementById("saw_accident").value.length<4 || document.getElementById("saw_accident").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("saw_accidenterror").innerHTML="Should be of length 4 to 32";
+	    	document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	        return false;
+	    }
+	    
+	document.getElementById("titleerror").innerHTML=" ";
+		
+		if(document.getElementById("title").value=="")
+		{
+		document.getElementById("titleerror").innerHTML="Required Field Should not be Empty";
+		document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+		return false;
+		}
+		
+		
+		document.getElementById("titleerror").innerHTML="";
+	    if(document.getElementById("title").value.length<4 || document.getElementById("title").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("titleerror").innerHTML="Should be of length 4 to 32";
+	    	document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	        return false;
+	    }
+	    
+	    document.getElementById("present_joberror").innerHTML=" ";
+		
+		if(document.getElementById("present_job").value=="")
+		{
+		document.getElementById("present_joberror").innerHTML="Required Field Should not be Empty";
+		document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+		return false;
+		}
+		
+		/* document.getElementById("present_joberror").innerHTML="";
+	    if(document.getElementById("present_job").value.length<4 || document.getElementById("present_job").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("present_joberror").innerHTML="Should be of length 4 to 32";
+	    	document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	        return false;
+	    } */
+	    
+	    document.getElementById("absenteeismerror").innerHTML="";
+		if(document.getElementById("absenteeism").value!="")
+		{
+			if(document.getElementById("absenteeism").value=="")
+		{
+			document.getElementById("absenteeismerror").innerHTML="Required Field Should not be Empty";
+			document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+			return false;
+			}
+	   
+	    }
+		
+		
+	 document.getElementById("absenteeismerror").innerHTML="";
+		if(document.getElementById("absenteeism").value!="")
+		{
+	    if(document.getElementById("absenteeism").value.length<4 || document.getElementById("absenteeism").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("absenteeismerror").innerHTML="Absenteeism should be of length 4 to 32";
+	    	document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	        return false;
+	    }
+	    }
+		
+		document.getElementById("how_mucherror").innerHTML=" ";
+		
+		if(document.getElementById("how_much").value=="")
+		{
+		document.getElementById("how_mucherror").innerHTML="Required Field Should not be Empty";
+		document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+		return false;
+		}
+		
+	document.getElementById("how_oftenerror").innerHTML=" ";
+		
+		if(document.getElementById("how_often").value=="")
+		{
+		document.getElementById("how_oftenerror").innerHTML="Required Field Should not be Empty";
+		document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+		return false;
+		}
+		
+		document.getElementById("how_oftenerror").innerHTML="";
+	    if(document.getElementById("how_often").value.length<4 || document.getElementById("how_often").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("how_oftenerror").innerHTML="Should be of length 4 to 32";
+	    	document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	        return false;
+	    }
+	    
+	document.getElementById("where_to_whereerror").innerHTML=" ";
+		
+		if(document.getElementById("where_to_where").value=="")
+		{
+		document.getElementById("where_to_whereerror").innerHTML="Required Field Should not be Empty";
+		document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+		return false;
+		}
+		
+		document.getElementById("where_to_whereerror").innerHTML="";
+	    if(document.getElementById("where_to_where").value.length<4 || document.getElementById("where_to_where").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("where_to_whereerror").innerHTML="Should be of length 4 to 32";
+	    	document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	        return false;
+	    }
+	    else
+		 {
+		  document.getElementById("where_to_whereerror").innerHTML="";
+		  document.getElementById('btnvisible1').style.visibility='hidden';
+		  document.getElementById('btnNext').style.visibility='visible';
+		  document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";		 
+		 }
+	    
+	    document.getElementById("jobpperror").innerHTML="";
+		if(document.getElementById("jobpp").value!="")
+		{
+	    if(document.getElementById("jobpp").value.length<4 || document.getElementById("jobpp").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("jobpperror").innerHTML="Name should be min 4 and max 32";
+	    	document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	        return false;
+	    }
+	    }
+		
+		 else
+		 {
+		  document.getElementById("jobpperror").innerHTML="";
+		  document.getElementById('btnvisible1').style.visibility='hidden';
+		  document.getElementById('btnNext').style.visibility='visible';
+		  document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";		 
+		 }
+}
+  
+</script>
+  <script>
+function checknext(){
+	
 document.getElementById("job_classificationerror").innerHTML=" ";
 	
 	if(document.getElementById("job_classification").value=="")
@@ -267,195 +466,149 @@ document.getElementById("job_classificationerror").innerHTML=" ";
     if(document.getElementById("job_classification").value.length<4 || document.getElementById("job_classification").value.length>=32)
     {
     	
-    	document.getElementById("job_classificationerror").innerHTML="Name should be min 4 and max 32";
+    	document.getElementById("job_classificationerror").innerHTML="Name should be of length 4 to 32";
     	
         return false;
     }
-	/*  document.getElementById("doyou_poserror").innerHTML="";
-		if(document.getElementById("doyou_pos").value==0)
-		{
+    
 
-			document.getElementById("doyou_poserror").innerHTML="Required Field Should not be Empty";
-
-		return false;
-
-		} */
-		document.getElementById("carryerror").innerHTML=""; 
-		if( ( document.getElementById("yes1").checked == false ) && ( document.getElementById("No1").checked == false ) )
-
-		 {
-		 document.getElementById("carryerror").innerHTML="Required Field Should not be Empty";
-		 		
-		 		return false;
-		 		
-		 }
-		
-		document.getElementById("injury_occurerror").innerHTML=" ";
-		
-		if(document.getElementById("injury_occur").value=="")
-		{
-		document.getElementById("injury_occurerror").innerHTML="Required Field Should not be Empty";
-		
-		return false;
-		}
-		document.getElementById("injury_occurerror").innerHTML="";
-	    if(document.getElementById("injury_occur").value.length<4 || document.getElementById("injury_occur").value.length>=32)
-	    {
-	    	
-	    	document.getElementById("injury_occurerror").innerHTML="Should be min 4 and max 32";
-	    	
-	        return false;
-	    }
+	document.getElementById("injury_occurerror").innerHTML=" ";
+	
+	if(document.getElementById("injury_occur").value=="")
+	{
+	document.getElementById("injury_occurerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("injury_occurerror").innerHTML="";
+    if(document.getElementById("injury_occur").value.length<4 || document.getElementById("injury_occur").value.length>=32)
+    {
+    	
+    	document.getElementById("injury_occurerror").innerHTML="Should be of length 4 to 32";
+    	
+        return false;
+    }
 document.getElementById("saw_accidenterror").innerHTML=" ";
-		
-		if(document.getElementById("saw_accident").value=="")
-		{
-		document.getElementById("saw_accidenterror").innerHTML="Required Field Should not be Empty";
-		
-		return false;
-		}
-		document.getElementById("saw_accidenterror").innerHTML="";
-	    if(document.getElementById("saw_accident").value.length<4 || document.getElementById("saw_accident").value.length>=32)
-	    {
-	    	
-	    	document.getElementById("saw_accidenterror").innerHTML="Should be min 4 and max 32";
-	    	
-	        return false;
-	    }
+	
+	if(document.getElementById("saw_accident").value=="")
+	{
+	document.getElementById("saw_accidenterror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("saw_accidenterror").innerHTML="";
+    if(document.getElementById("saw_accident").value.length<4 || document.getElementById("saw_accident").value.length>=32)
+    {
+    	
+    	document.getElementById("saw_accidenterror").innerHTML="Should be of length 4 to 32";
+    	
+        return false;
+    }
 document.getElementById("titleerror").innerHTML=" ";
-		
-		if(document.getElementById("title").value=="")
-		{
-		document.getElementById("titleerror").innerHTML="Required Field Should not be Empty";
-		
-		return false;
-		}
-		document.getElementById("titleerror").innerHTML="";
-	    if(document.getElementById("title").value.length<4 || document.getElementById("title").value.length>=32)
-	    {
-	    	
-	    	document.getElementById("titleerror").innerHTML="Should be min 4 and max 32";
-	    	
-	        return false;
-	    }
-document.getElementById("present_joberror").innerHTML=" ";
-		
-		if(document.getElementById("present_job").value=="")
-		{
-		document.getElementById("present_joberror").innerHTML="Required Field Should not be Empty";
-		
-		return false;
-		}
-		
-		document.getElementById("time_losserror").innerHTML=""; 
-		if( ( document.getElementById("yes2").checked == false ) && ( document.getElementById("No2").checked == false ) )
-
-		 {
-		 document.getElementById("time_losserror").innerHTML="Required Field Should not be Empty";
-		 		
-		 		return false;
-		 		
-		 }
-		
-		/* document.getElementById("type_of_lighterror").innerHTML="";
-		if(document.getElementById("type_of_light").value==0)
-		{
-
-			document.getElementById("type_of_lighterror").innerHTML="Required Field Should not be Empty";
-
-		return false;
-
-		} */
-		document.getElementById("pick_lifterror").innerHTML=""; 
-		if( ( document.getElementById("yes3").checked == false ) && ( document.getElementById("No3").checked == false ) )
-
-		 {
-		 document.getElementById("pick_lifterror").innerHTML="Required Field Should not be Empty";
-		 		
-		 		return false;
-		 		
-		 }
-document.getElementById("how_mucherror").innerHTML=" ";
-		
-		if(document.getElementById("how_much").value=="")
-		{
-		document.getElementById("how_mucherror").innerHTML="Required Field Should not be Empty";
+	
+	if(document.getElementById("title").value=="")
+	{
+	document.getElementById("titleerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("titleerror").innerHTML="";
+    if(document.getElementById("title").value.length<4 || document.getElementById("title").value.length>=32)
+    {
+    	
+    	document.getElementById("titleerror").innerHTML="Should be of length 4 to 32";
+    	
+        return false;
+    }
+    
+    document.getElementById("present_joberror").innerHTML=" ";
+	
+	if(document.getElementById("present_job").value=="")
+	{
+	document.getElementById("present_joberror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("present_joberror").innerHTML="";
+    if(document.getElementById("present_job").value.length<4 || document.getElementById("present_job").value.length>=32)
+    {
+    	
+    	document.getElementById("present_joberror").innerHTML="Should be of length 4 to 32";
+    	
+        return false;
+    }
+    document.getElementById("absenteeismerror").innerHTML="";
+	if(document.getElementById("absenteeism").value!="")
+	{
+		if(document.getElementById("absenteeism").value=="")
+	{
+		document.getElementById("absenteeismerror").innerHTML="Required Field Should not be Empty";
 		
 		return false;
 		}
-		
+   
+    }
+ document.getElementById("absenteeismerror").innerHTML="";
+	if(document.getElementById("absenteeism").value!="")
+	{
+    if(document.getElementById("absenteeism").value.length<4 || document.getElementById("absenteeism").value.length>=32)
+    {
+    	
+    	document.getElementById("absenteeismerror").innerHTML="Absenteeism should be of length 4 to 32";
+    	
+        return false;
+    }
+    }
+	
+	document.getElementById("how_mucherror").innerHTML=" ";
+	
+	if(document.getElementById("how_much").value=="")
+	{
+	document.getElementById("how_mucherror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
 document.getElementById("how_oftenerror").innerHTML=" ";
-		
-		if(document.getElementById("how_often").value=="")
-		{
-		document.getElementById("how_oftenerror").innerHTML="Required Field Should not be Empty";
-		
-		return false;
-		}
-		
-		document.getElementById("how_oftenerror").innerHTML="";
-	    if(document.getElementById("how_often").value.length<4 || document.getElementById("how_often").value.length>=32)
-	    {
-	    	
-	    	document.getElementById("how_oftenerror").innerHTML="Should be min 4 and max 32";
-	    	
-	        return false;
-	    }
+	
+	if(document.getElementById("how_often").value=="")
+	{
+	document.getElementById("how_oftenerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	document.getElementById("how_oftenerror").innerHTML="";
+    if(document.getElementById("how_often").value.length<4 || document.getElementById("how_often").value.length>=32)
+    {
+    	
+    	document.getElementById("how_oftenerror").innerHTML="Should be of length 4 to 32";
+    	
+        return false;
+    }
 document.getElementById("where_to_whereerror").innerHTML=" ";
-		
-		if(document.getElementById("where_to_where").value=="")
-		{
-		document.getElementById("where_to_whereerror").innerHTML="Required Field Should not be Empty";
-		
-		return false;
-		}
-		document.getElementById("where_to_whereerror").innerHTML="";
-	    if(document.getElementById("where_to_where").value.length<4 || document.getElementById("where_to_where").value.length>=32)
-	    {
-	    	
-	    	document.getElementById("where_to_whereerror").innerHTML="Should be min 4 and max 32";
-	    	
-	        return false;
-	    }
-		 /* document.getElementById("lift_fromerror").innerHTML="";
-			if(document.getElementById("lift_from").value==0)
-			{
+	
+	if(document.getElementById("where_to_where").value=="")
+	{
+	document.getElementById("where_to_whereerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("where_to_whereerror").innerHTML="";
+    if(document.getElementById("where_to_where").value.length<4 || document.getElementById("where_to_where").value.length>=32)
+    {
+    	
+    	document.getElementById("where_to_whereerror").innerHTML="Should be of length 4 to 32";
+    	
+        return false;
+    }
+}
+</script>
+  <script>
 
-				document.getElementById("lift_fromerror").innerHTML="Required Field Should not be Empty";
-
-			return false;
-
-			} */
-			document.getElementById("liftin_orouterror").innerHTML=""; 
-			if( ( document.getElementById("yes4").checked == false ) && ( document.getElementById("No4").checked == false ) )
-
-			 {
-			 document.getElementById("liftin_orouterror").innerHTML="Required Field Should not be Empty";
-			 		
-			 		return false;
-			 		
-			 }
-			
-
-			/*  document.getElementById("workposerror").innerHTML="";
-				if(document.getElementById("workpos").value==0)
-				{
-
-					document.getElementById("workposerror").innerHTML="Required Field Should not be Empty";
-
-				return false;
-
-				} */
-				document.getElementById("push_pullerror").innerHTML=""; 
-				if( ( document.getElementById("yes5").checked == false ) && ( document.getElementById("No5").checked == false ) )
-
-				 {
-				 document.getElementById("push_pullerror").innerHTML="Required Field Should not be Empty";
-				 		
-				 		return false;
-				 		
-				 }
-				document.getElementById("emperror").innerHTML=" ";
+function checkSubmit()
+{
+					document.getElementById("emperror").innerHTML=" ";
 				
 				if(document.getElementById("emp").value=="")
 				{
@@ -476,10 +629,33 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 			    if(document.getElementById("changes_in_job").value.length<4 || document.getElementById("changes_in_job").value.length>=32)
 			    {
 			    	
-			    	document.getElementById("changes_in_joberror").innerHTML="Should be min 4 and max 32";
+			    	document.getElementById("changes_in_joberror").innerHTML="Should be of length 4 to 32";
 			    	
 			        return false;
 			    }
+			    document.getElementById("jobpperror").innerHTML="";
+				if(document.getElementById("jobpp").value!="")
+				{
+					if(document.getElementById("jobpp").value=="")
+				{
+					document.getElementById("jobpperror").innerHTML="Required Field Should not be Empty";
+					
+					return false;
+					}
+			   
+			    }
+			    document.getElementById("jobpperror").innerHTML="";
+				if(document.getElementById("jobpp").value!="")
+				{
+			    if(document.getElementById("jobpp").value.length<4 || document.getElementById("jobpp").value.length>=32)
+			    {
+			    	
+			    	document.getElementById("jobpperror").innerHTML="Name should be of length 4 to 32";
+			    	
+			        return false;
+			    }
+			    }
+				
 		}
 </script>
 </head>
@@ -519,13 +695,13 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
   				<table cellpadding="0" cellspacing="0" border="0" width="100%">
   				<tr class="row1">
 					
-    				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>What is the job classification of your normal job</td>
+    				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>What Is The Job Classification Of Your Normal Job?</td>
     				   <input type="hidden" class="input_txtbx1" id="inp_id" value="${workaccident.patient_no}" name="patient_no" />
-				  			 <td class="input_txt"><input type="text" class="input_txtbx1" id="job_classification" value="${workaccident.job_classification}" maxlength="32" onInput="return validatename(id)"; onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');"  name="job_classification" /></br><span id="job_classificationerror" style="color: red;font-style:italic;"><form:errors path="workAcc.job_classification"></form:errors></span></td>
+				  			 <td class="input_txt"><input type="text" class="input_txtbx1" id="job_classification"  name="job_classification"  value="${workaccident.job_classification}"  maxlength="32" onInput="return validatename(id)";   /></br><span id="job_classificationerror" style="color: red;font-style:italic;"><form:errors path="workAcc.job_classification"></form:errors></span></td>
 					 <td></td>   <td></td><td></td><td></td><td></td> <td></td><td></td>
 				 </tr>
 				 <tr class="row2">
-                						<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Job Position</td>
+                						<td valign="middle" align="left" class="input_txt"><span class="err">* </span>Job Position:</td>
                 						 <td valign="top" align="left" class="input_txt">
 				  							<select name="doyou_pos" class="input_cmbbx1" id="doyoucheck"  onclick='Checkpos();'>	
 				  							 <option value="sit_at_desk" <c:if test="${workaccident.doyou_pos=='sit_at_desk'}"><c:out value="selected"/></c:if>>Sit at desk</option>
@@ -550,13 +726,13 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 						              <td></td>
 						              <td></td>
 						              <td></td>
-						              <td></td>
+						              <td></td><td></td>
 						             
 						              
 						             
 						              </tr>
 			  	 <tr class="row1">
-			  	 				 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Do you carry anything or pick anything up</td>
+			  	 				 <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Do Uou Carry Anything or Pick Anything Up?</td>
 				 				 <td valign="top" align="left" class="input_txt">
 				 				 <input type="radio" name="pick" value="yes" class="input_txt" id="pickcheck" onclick="any();" <c:if test="${workaccident.pick=='yes'}"><c:out value="checked=checked"/></c:if>>yes&nbsp;&nbsp;&nbsp;
 				 				 <input type="radio" name="pick" value="No" class="input_txt" id="pickun" onclick="any();"<c:if test="${workaccident.pick=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;
@@ -564,7 +740,7 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 				  <span id="carryerror" style="color: red;font-style:italic;"></span>
 			  	 </tr>
 			  	  <tr class="row2">
-			  	 				 <td valign="middle" align="left" class="input_txt"><span class="err">*</span>How did the injury occur?</td>
+			  	 				 <td valign="middle" align="left" class="input_txt"><span class="err">* </span>How Did The Injury Occur?</td>
 				 				<td valign="top" align="left" class="input_txt"><input type="text" class="input_txtbx1"  maxlength="32" onInput="return validatename(id)"; id="injury_occur" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.injury_occur}" name="injury_occur" /></br><span id="injury_occurerror" style="color: red;font-style:italic;"><form:errors path="workAcc.injury_occur"></form:errors></span></td>
 				 				 <td></td>
 						              <td></td>
@@ -575,12 +751,12 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 						              <td></td>
 				 </tr>
 				  <tr class="row1">
-                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Who saw the accident?</td>
+                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Who Saw The Accident?</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="input_txtbx1" maxlength="32" onInput="return validatename(id)"; id="saw_accident"onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.saw_accident}" name="saw_accident" /></br><span id="saw_accidenterror" style="color: red;font-style:italic;"><form:errors path="workAcc.saw_accident"></form:errors></span></td>
 				  </tr>
 				    <tr class="row2">
-                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Job Title</td>
+                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Job Title:</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="input_txtbx1" id="title" maxlength="32" onInput="return validatename(id)"; onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.title}" name="title" /></br><span id="titleerror" style="color: red;font-style:italic;"><form:errors path="workAcc.title"></form:errors></span></td>
 				   <td></td>
@@ -592,16 +768,16 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 						              <td></td>
 				  </tr>	
 				 <tr class="row1">
-                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>How long have you been at your present job</td>
+                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>How Long Have You Been At Your Present Job?</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="input_txtbx1" id="present_job" onkeypress="return validate(event)"; maxlength="32"  onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.present_job}" name="present_job" /></br><span id="present_joberror" style="color: red;font-style:italic;"><form:errors path="workAcc.present_job"></form:errors></span></td>
 				 </tr>	
 				 <tr class="row2">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Has there been a time loss or absentee caused from job injury</td>
+				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Has There Been A Time Loss or Absentee Caused From Job Injury?</td>
 				  <td valign="top" align="left" class="input_txt" width = "5%"><input type="radio" name="time_loss" value="yes" class="input_txt" id="yes2" onchange="if (this.value=='yes'){this.form['absenteeism'].style.visibility='visible'}else {this.form['absenteeism'].style.visibility='hidden'};" onclick="time();"<c:if test="${workaccident.time_loss=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="time_loss" value="No" id="No2" class="input_txt" onchange="if (this.value=='No'){this.form['absenteeism'].style.visibility='hidden'}else {this.form['absenteeism'].style.visibility='visible'};" onclick="time();"<c:if test="${workaccident.time_loss=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;
 				  <td><textarea rows='3' cols='35' id="absenteeism"  onInput="return validatename(id)"; maxlength="32" name="absenteeism" placeholder="If yes, explain(include dates)">${workaccident.absenteeism}</textarea></td>
 				   <span id="time_losserror" style="color: red;font-style:italic;"></span>
-				  </td>
+				  </td><td></td><td></td><td></td><td></td><td></td><td></td>
 				  </tr>
 				 <%--  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Has there been a time loss or absenteeism caused from job injury</td>
@@ -619,7 +795,7 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 						              <td></td> -->
 				 <!--  </tr>	 -->
 				   <tr class="row1">
-                						<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Type of lighting in the building</td>
+                						<td valign="middle" align="left" class="input_txt"><span class="err">* </span>Type of Lighting In The Building?</td>
                 						<td valign="top" align="left" class="input_txt">
 										  <select name="type_of_light" class="input_cmbbx1" id="type_of_light"onclick='Checklight();' onchange="if (this.value=='others'){this.form['lighting'].style.visibility='visible'}else {this.form['lighting'].style.visibility='hidden'};" >
 					 						<option value="fluorescent" <c:if test="${workaccident.type_of_light=='fluorescent'}"><c:out value="selected"/></c:if>>Fluorescent</option>
@@ -651,31 +827,31 @@ document.getElementById("lighting").style.visibility = 'hidden';
 											<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 						             			 </tr>
 				  <tr class="row2">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Do you pick up or lift?</td>
+				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Do You Pick Up or Lift?</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="pick_lift" value="yes" id="yes3" class="input_txt" id="pickcheck1" onclick="toggle3();" <c:if test="${workaccident.pick_lift=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="pick_lift" value="No" id="No3" class="input_txt"  onclick="toggle3();" <c:if test="${workaccident.pick_lift=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;
 				   <span id="pick_lifterror" style="color: red;font-style:italic;"></span>
 				  </td>
-				  <td></td>  
+				  <td></td>  <td></td><td></td><td></td><td></td><td></td><td></td>
 				  </tr>
 				   <tr class="row1">
-                  <td valign="middle" align="left" class="input_txt" width = "37%"><span class="err">*</span>If yes, how much</td>
+                  <td valign="middle" align="left" class="input_txt" width = "37%"><span class="err">* </span>If Yes, How Much:</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="input_txtbx1" id="how_much" maxlength="32" onkeypress="return validate(event)";  onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.how_much}" name="how_much" /></br><span id="how_mucherror" style="color: red;font-style:italic;"><form:errors path="workAcc.how_much"></form:errors></span></td>
 				  </td>
 				  </tr>
 				  <tr class="row2">
-                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>How often</td>
+                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>How Often?</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="input_txtbx1" id="how_often" maxlength="32" onInput="return validatename(id)"; onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.how_often}" name="how_often" /></br><span id="how_oftenerror" style="color: red;font-style:italic;"><form:errors path="workAcc.how_often"></form:errors></span>
 				  </td>
-				  <td></td>   <td></td> 
+				  <td></td>   <td></td> <td></td><td></td><td></td><td></td><td></td>
 				  </tr>
 				  <tr class="row1">
-                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>From where to where</td>
+                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>From Where To Where?</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="where_to_where" onInput="return validatename(id)"; maxlength="32" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.where_to_where}" name="where_to_where" /></br><span id="where_to_whereerror" style="color: red;font-style:italic;"><form:errors path="workAcc.where_to_where"></form:errors></span>
+				  <input type="text" class="input_txtbx1" name="where_to_where" id="where_to_where" value="${workaccident.where_to_where}" onInput="return validatename(id)"; maxlength="32"   /></br><span id="where_to_whereerror" style="color: red;font-style:italic;"><form:errors path="workAcc.where_to_where"></form:errors></span>
 				  </td>
 				  </tr>
 				  </table>
@@ -687,7 +863,7 @@ document.getElementById("lighting").style.visibility = 'hidden';
 				  <table cellpadding="0" cellspacing="0" border="0" width="100%">
 				                
 				  				    <tr class="row2">
-                						<td valign="middle" align="left" class="input_txt" width = "37%"><span class="err">*</span>Do you lift from</td>
+                						<td valign="middle" align="left" class="input_txt" width = "37%"><span class="err">* </span>Do You Lift From?</td>
                 						<td valign="top" align="left" class="input_txt">
 										  <select name="lift_from" class="input_cmbbx1" id="lift_from">
 					 						<option value="ground" <c:if test="${workaccident.lift_from=='ground'}"><c:out value="selected"/></c:if>>Ground</option>
@@ -699,7 +875,7 @@ document.getElementById("lighting").style.visibility = 'hidden';
 										     
 					</tr>
 					<tr class="row1">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Do you lift in or out of a machine?</td>
+				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Do you lift in or out of a machine?</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="liftin_orout" value="yes" id="yes4" class="input_txt" <c:if test="${workaccident.liftin_orout=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="liftin_orout" value="No" id="No4"class="input_txt"<c:if test="${workaccident.liftin_orout=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;
@@ -707,7 +883,7 @@ document.getElementById("lighting").style.visibility = 'hidden';
 				  </td>
 				  </tr>			
 				   <tr class="row2">
-                <td valign="middle" align="left" class="input_txt"><span class="err">*</span>If working at a machine,do you</td>
+                <td valign="middle" align="left" class="input_txt"><span class="err">* </span>If Working At A Machine,Do You?</td>
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="workpos" class="input_cmbbx1" id="workpos" >
 					<option value="sit" <c:if test="${workaccident.workpos=='sit'}"><c:out value="selected"/></c:if>>Sit</option>
@@ -719,7 +895,7 @@ document.getElementById("lighting").style.visibility = 'hidden';
 				      
 				</tr>	
 				<tr class="row1">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>In your job, do you push or pull</td>
+				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>In Your Job, Do You Push or Pull?</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="push_pull" value="yes" id="pushcheck"  class="input_txt"  onclick="pull();"<c:if test="${workaccident.push_pull=='yes'}"><c:out value="checked=checked"/></c:if> >Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="push_pull" value="No" id="No5"class="input_txt" onclick="pull();"<c:if test="${workaccident.push_pull=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;
@@ -746,7 +922,7 @@ document.getElementById("jobpp").style.visibility = 'hidden';
 				  <br>
 				  <table align="right">
 				  <tr>
-				   <td valign="top" align="right"><input type="button" id="btnNext" class="submit_btn" value="Next"/></td>
+				   <td id="tblbtn"> <input type="button" id="btnNext" class="submit_btn" value="Next" onmouseover="checkValid(event);"/></td>
 
                   	<td>&nbsp;&nbsp;</td>							
 				           
@@ -784,7 +960,7 @@ document.getElementById("jobpp").style.visibility = 'hidden';
   				<td align="left" valign="top" width="50%" style="padding-right:25px;">
   				<table cellpadding="0" cellspacing="0" border="0" width="100%">
   				<tr class="row1">
-                <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Is your work area</td>
+                <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Is Your Work Area?</td>
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="work_area" class="input_cmbbx1" id="workcheck" onclick='work();'>
 					<option value="oily" <c:if test="${workaccident.work_area=='oily'}"><c:out value="selected"/></c:if>>Oily</option>
@@ -810,7 +986,7 @@ document.getElementById("warea").style.visibility = 'hidden';
 </script>
 				 </tr>
 				   <tr class="row2">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Do you use foot or hand levers</td>
+				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Do You Use Foot or Hand Levers?</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="levers" value="yes" class="input_txt"<c:if test="${workaccident.levers=='yes'}"><c:out value="checked=checked"/></c:if> >Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="levers" value="No" class="input_txt"<c:if test="${workaccident.levers=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;
@@ -818,14 +994,14 @@ document.getElementById("warea").style.visibility = 'hidden';
 				  <td></td>    
 				  </tr>
 				   <tr class="row1">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Do you work overhead</td>
+				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Do You Work Overhead?</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="overhead" value="yes" class="input_txt"<c:if test="${workaccident.overhead=='yes'}"><c:out value="checked=checked"/></c:if> >Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="overhead" value="No" class="input_txt"<c:if test="${workaccident.overhead=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;
 				  </td>
 				  </tr>
 				  <tr class="row2">
-                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>How many employees have been injured doing your job</td>
+                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>How Many Employees Have Been Injured Doing Your Job?</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="input_txtbx1" id="emp" maxlength="32" onkeypress="return validate(event)";onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.no_of_employees}" name="no_of_employees" /><span id="emperror" style="color: red;font-style:italic;"><form:errors path="workAcc.no_of_employees"></form:errors></span>
 				<span class="err" id="emperr"></span>
@@ -833,14 +1009,14 @@ document.getElementById("warea").style.visibility = 'hidden';
 				  <td></td>    
 				  </tr>
 				  <tr class="row1">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Do you like your job</td>
+				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Do You Like Your Job?</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="like_job" value="yes" class="input_txt" <c:if test="${workaccident.like_job=='yes'}"><c:out value="checked=checked"/></c:if> >Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="like_job" value="No" class="input_txt" <c:if test="${workaccident.like_job=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;
 				  </td>
 				  </tr>
 				  <tr class="row2">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Was a pre-employment exam performed or required</td>
+				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Was A Pre-Employment Exam Performed Or Required?</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="pre_employment" value="yes" class="input_txt"<c:if test="${workaccident.pre_employment=='yes'}"><c:out value="checked=checked"/></c:if> >Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="pre_employment" value="No" class="input_txt" <c:if test="${workaccident.pre_employment=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;
@@ -848,14 +1024,14 @@ document.getElementById("warea").style.visibility = 'hidden';
 				  <td></td>    
 				  </tr>
 				   <tr class="row1">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>If off work, do you want to return to your job</td>
+				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>If Off Work, Do You Want To Return To Your Job?</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="return_job" value="yes" class="input_txt"<c:if test="${workaccident.return_job=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="return_job" value="No" class="input_txt" <c:if test="${workaccident.return_job=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;
 				  </td>
 				  </tr>
 				  <tr class="row2">
-                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>What changes would you make in your job</td>
+                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>What Changes Would You Make In Your Job?</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="input_txtbx1" id="changes_in_job" maxlength="32" onInput="return validatename(id)";  onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.changes_in_job}" name="changes_in_job" /></br><span id="changes_in_joberror" style="color: red;font-style:italic;"><form:errors path="workAcc.changes_in_job"></form:errors></span>
 				  </td>
