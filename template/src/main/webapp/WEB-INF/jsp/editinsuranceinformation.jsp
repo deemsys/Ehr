@@ -465,12 +465,12 @@ document.getElementById("phone").value=phone;
               </tr>
               <br>
               <tr class="row1">
-              <td><span class="err">*</span>Patient's Name</td>
+              <td><span class="err">* </span>Patient's Name</td>
               <input type="hidden" class="input_txtbx1" id="inp_id" value="${Insuranceinformation.number}" name="number" />
               <td> <input type="text" class="input_txtbx1" name="patient_name" id="person" onInput="return validatename55(id)"; value="${Insuranceinformation.patient_name}"/><br><span id="personerr" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.patient_name"></form:errors></td>
               </tr>
               <tr class="row1">
-              <td><span class="err">*</span>Date of Accident/injury</td>
+              <td><span class="err">* </span>Date of Accident/injury</td>
               <td> <input type="text" class="input_txtbx1" name="date_of_accident" id="datepicker" value="${Insuranceinformation.date_of_accident}"/><span id="datepickererror"  style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.date_of_accident"></form:errors></td>
               </tr>
               <tr class="row1">
@@ -478,32 +478,32 @@ document.getElementById("phone").value=phone;
               <td><input type="radio" name="have_insurance" value="Yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="have_insurance" value="No" class="input_txt">No</td>
               </tr>
               <tr class="row1">
-              <td><span class="err">*</span>Employer's Name</td>
+              <td><span class="err">* </span>Employer's Name</td>
               <td> <input type="text" class="input_txtbx1" name="employers_name" id="emp" onInput="return validatename55(id)"; value="${Insuranceinformation.employers_name}"/><span id="emperr"  style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.employers_name"></form:errors></td>
               </tr>
               <tr class="row1">
-              <td><span class="err">*</span>Insurance Company</td>
+              <td><span class="err">* </span>Insurance Company</td>
               <td> <input type="text" class="input_txtbx1" name="insurance_company" id="company" onInput="return validatename55(id)";value="${Insuranceinformation.insurance_company}" /><br><span id="companyerr" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.insurance_company"></form:errors></td>
-              <td><span class="err">*</span>Phone#</td>
+              <td><span class="err">* </span>Phone#</td>
               <td><input type="text" class="input_txtbx1" name="phone" id="phone"  maxlength="13" value="${Insuranceinformation.phone}" onkeypress="return validate1(event)"; /><br><span class="err" id="phoneerr"><form:errors path="Insuranceinformation.phone"></form:errors></span>
               <br><span class="err" id="phoneerror"></span>
               </td>
               </tr>
               <tr class="row1">
-              <td><span class="err">*</span>Policy#</td>
+              <td><span class="err">* </span>Policy#</td>
               <td> <input type="text" class="input_txtbx1" name="policy" id="policy" onInput="return validateusername()"; value="${Insuranceinformation.policy}"/><br><span id="policyerr"  style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.policy"></form:errors></span>
               <br><span class="err" id="policyerror"></span>
               
               </td>
-              <td><span class="err">*</span>Group#</td>
+              <td><span class="err">* </span>Group#</td>
               <td><input type="text" class="input_txtbx1" name="infono" id="groupno1" value="${Insuranceinformation.infono}" onInput="return validateusername1()";/><br><span id="groupno1err"  style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.infono"></form:errors></span>
               <br><span class="err" id="groupnoerror"></span>
               </td>
               </tr>
               <tr class="row1">
-              <td><span class="err">*</span>Supplemental Insurance Company</td>
+              <td><span class="err">* </span>Supplemental Insurance Company</td>
               <td> <input type="text" class="input_txtbx1" onInput="return validatename55(id)"; name="supplemental_company" id="supplemental_company" value="${Insuranceinformation.supplemental_company}"/><br><span id="supplemental_companyerr"  style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.supplemental_company"></form:errors></td>
-               <td><span class="err">*</span>Phone#</td>
+               <td><span class="err">* </span>Phone#</td>
               <td> <input type="text" class="input_txtbx1" name="sup_phone" id="supphone"  onkeypress="return validate1(event)"; maxlength="13"value="${Insuranceinformation.sup_phone}"/><br><span id="supphoneerr"  style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.sup_phone"></form:errors></span>
               <br>
               <span class="err" id="supphoneerror"></span>
@@ -524,15 +524,15 @@ document.getElementById("phone").value=phone;
 	</table>
  		<table cellpadding="0" cellspacing="0" border="0" width="100%">
  		<tr class="row1">
- 		<td><span class="err">*</span>Patient Signature</td>
+ 		<td><span class="err">* </span>Patient Signature</td>
         <td> <input type="text" class="input_txtbx1" name="patient_sign" id="patient_sign" value=" ${Insuranceinformation.patient_sign}" onInput="return validatename56(id)"; /><br><span id="patient_signerr"  style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.patient_sign"></form:errors></td>
-        <td><span class="err">*</span>Date</td>
+        <td><span class="err">* </span>Date</td>
         <td> <input type="text" class="input_txtbx1" name="date" id="datepicker1" value="${Insuranceinformation.date}" /><br><span id="datepicker1err" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.date"></form:errors></td>
         </tr>
         <tr class="row1">
- 		<td><span class="err">*</span>Spouse or Guardian Signature</td>
+ 		<td><span class="err">* </span>Spouse or Guardian Signature</td>
         <td> <input type="text" class="input_txtbx1" name="spouse_sign" id="spouse_sign" value="${Insuranceinformation.spouse_sign}" onInput="return validatename56(id)";/><br><span id="spouse_signerr" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.spouse_sign"></form:errors></td>
-        <td><span class="err">*</span>Date</td>
+        <td><span class="err">* </span>Date</td>
         <td> <input type="text" class="input_txtbx1" name="date1" id="datepicker2" value="${Insuranceinformation.date1}" /><br><span id="datepicker2err" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.date1"></form:errors></td>
         </tr>
         </table>

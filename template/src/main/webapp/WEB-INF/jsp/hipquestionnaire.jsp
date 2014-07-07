@@ -450,7 +450,7 @@ return returnval;
         <table><tr><td ><input type="radio" name="socks" value="Not at all difficult">Not at all difficult&nbsp;&nbsp;&nbsp;</td><td ><input type="radio" name="socks" value="Slightly difficult">Slightly difficult&nbsp;&nbsp;&nbsp;</td><td ><input type="radio" name="socks" value="Moderately difficult">Moderately difficult&nbsp;&nbsp;&nbsp;</td>
         </tr></table>
         <table><tr>
-        <td ><input type="radio" name="socks" value="Very difficult">Very difficult&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td ><input type="radio" name="socks" value="Extremely difficult">Extremely difficult&nbsp;&nbsp;&nbsp;&nbsp;</td><td><input type="radio" name="socks" value="Cannot do it all">Cannot do it all&nbsp;&nbsp;&nbsp;</td></tr></table>     
+        <td ><input type="radio" name="socks" value="Very difficult">Very difficult&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="socks" value="Extremely difficult">Extremely difficult&nbsp;&nbsp;&nbsp;&nbsp;</td><td><input type="radio" name="socks" value="Cannot do it all">Cannot do it all&nbsp;&nbsp;&nbsp;</td></tr></table>     
 	    
         <br>
 	    <br>
@@ -486,7 +486,7 @@ return returnval;
 	             
 	            </div>
           <div class="contentbox">
-	   <span class="err">* </span>Date:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="date" id="datepicker" class="input_txtbx1" style="width: 200px; "><br><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="hipquestionnaire.date"></form:errors></span>
+	   <span class="err">* </span>Date:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="date" id="datepicker" class="input_txtbx1" style="width: 200px; "><br><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="hipquestionnaire.date"></form:errors></span>
 	    <br>
 	    <br>
 	    
@@ -500,7 +500,7 @@ return returnval;
 	    </br>
 	    </br>
 	       </p>
-	    Your Birth Date:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="datepicker1" name="birthdate" class="input_txtbx1" style="width: 200px; "><span id="datepicker1error"  style="color: red;font-style:italic;"></span>
+	    &nbsp;&nbsp;&nbsp;Your Birth Date:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="datepicker1" name="birthdate" class="input_txtbx1" style="width: 200px; "><span id="datepicker1error"  style="color: red;font-style:italic;"></span>
 	    <br><br>
 	    <table>
 	    <td><span class="err">* </span>Your Social Security Number: </td><td><input type="text" class="input_txtbx1" name="security" id="security"  onkeypress="return validate(event)"; maxlength="11" style="width: 200px; "></td><td><br><span style="color: red;font-style:italic;" id="securityerror"> <div id="number"></span></td></div></table>
