@@ -612,7 +612,7 @@ popupWindow = window.open(url,"symptompopUpWindow" ,'width=1500,height=700,resiz
 	            
 	           
 	            </table>
-	            <input type="hidden" id="username" value="${username}" name="patientusername">
+	            <input type="hidden" id="username" value="${staffusername}" name="patientusername">
 	            <c:choose>
 				<c:when test="${empty staff}">
 	            <br>

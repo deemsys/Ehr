@@ -106,7 +106,7 @@ function doAjaxPost() {
 	 $.ajax({  
 		    type: "POST",  
 		    url: "/EhrApp/insuranceverification_ajax",  
-		    data: "pusername=" + username,
+		    data: "patusername=" + username,
 		    success: function(response){  
 		    	
 		      // we have the response
@@ -201,9 +201,9 @@ function validateusername(){
 <br>
  <table cellpadding="0" cellspacing="0" border="0" width="100%">
  <tr >
-	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">*</span> Please enter Patient UserName:</td>
+	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">*</span>&nbsp;&nbsp;Please Enter Patient UserName:</td>
 				 <td width="20"></td> <td valign="top" align="left" class="input_txt" width="200">
-				   <input type="text" class="input_txtbx1" id="username" name="pusername" /><br/>
+				   <input type="text" class="input_txtbx1" id="username" name="patusername" /><br/>
 				  </td>
 				  </tr>
 				  <tr height="50"></tr>
@@ -797,6 +797,12 @@ function validatename(){
               <td><input type="text" class="input_txtbx1" name="date" id="datepicker" /><br><span id="datepickererror" style="color: red;font-style:italic;"></span><form:errors path="Insuranceverification.date"></form:errors></td>
               <td><span class="err">*</span>&nbsp;Fax#</td>
               <script>
+              function faxvalidate()
+              {
+               var phone=document.getElementById("fax").value;
+                     phone = phone.replace(/(\d{3})(\d{3})(\d+)/, '($1)$2-$3');
+                     document.getElementById("fax").value=phone;
+              }
               $(document).ready(function(){
                $("#fax").keypress(function(){
                      var phone=document.getElementById("fax").value;
@@ -806,7 +812,7 @@ function validatename(){
 
                       });
                     </script>          
-    <td><input type="text" class="input_txtbx1" name="fax" id="fax" onInput="return validateusername()"; onkeypress="return validate(event)"; maxlength=13 /><br><span id="faxerror" style="color: red;font-style:italic;"> </span><form:errors path="Insuranceverification.fax"></form:errors>
+    <td><input type="text" class="input_txtbx1" name="fax" id="fax" onblur="" onInput="return validateusername()"; onkeypress="return validate(event)"; maxlength=13 /><br><span id="faxerror" style="color: red;font-style:italic;"> </span><form:errors path="Insuranceverification.fax"></form:errors>
               <span class="err" id="faxerror"></span>
               </td>
               </tr>
@@ -1061,7 +1067,7 @@ function validatename(){
 	        <td valign="top" align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> 
               <td valign="top" align="center"><br><input type="submit" class="submit_btn" value="Save" id="saveid" onclick="return checkvalidation('this');"></td>
               <td>&nbsp;&nbsp;</td>
-              <td valign="top" align="center"><br><a href="insuranceverifylist" class="submit_btn" id="cancelid" style="color:white">Cancel</a></td>
+              <td valign="top" align="center"><br><a href="viewallpatientdetails" class="submit_btn" id="cancelid" style="color:white">Cancel</a></td>
 	     	  <td>&nbsp;&nbsp;</td>
 	     	  <!-- <td valign="top" align="center"><br><input type="button" class="submit_btn" value="View" onclick="window.location.href='insuranceverifylist'"></td> -->
 	    </tr>

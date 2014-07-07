@@ -369,7 +369,7 @@ function doAjaxPost() {
 <br><br><br>
  <table cellpadding="0" cellspacing="0" border="0" width="100%">
 	            <tr >
-	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">*</span>Please enter a Patient User Name</td>
+	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">*</span>&nbsp;&nbsp;Please Enter Patient UserName</td>
 				 <td width="20"></td> <td valign="top" align="left" class="input_txt" width="200">
 				   <input type="text" class="input_txtbx1" id="username" name="username" /><br/>
 				  </td>

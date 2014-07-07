@@ -194,21 +194,21 @@ function checkAjaxPost() {
 <br>
  <table cellpadding="0" cellspacing="0" border="0" width="100%">
  <tr >
-	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">* </span>Please Enter Patient UserName:</td>
+	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">*</span>&nbsp;&nbsp;Please Enter Patient UserName:</td>
 				 <td width="20"></td> <td valign="top" align="left" class="input_txt" width="200">
 				   <input type="text" class="input_txtbx1" id="username" name="username" /><br/>
 				  </td>
 				  </tr>
 				  <tr height="20"></tr>
 				   <tr >
-	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">* </span>Bill Payment Date:</td>
+	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">*</span>&nbsp;&nbsp;Bill Payment Date:</td>
 				 <td width="20"></td> <td valign="top" align="left" class="input_txt" width="200">
 				   <input type="text" class="input_txtbx1" id="date" name="date" /><br/><span id="dateerror" style="color: red;font-style:italic;"></span>
 				  </td>
 				  </tr>
 				  <tr height="50"></tr>
 				<tr><td align="right"><input type="submit" value="Submit" class="submit_btn" onclick="checkAjaxPost()" ></td>
-				<td></td><td align="left"><a href="viewallpatientdetails" class="submit_btn" >Cancel</a></td>
+				<td></td><td align="left"><a href="viewallpatientdetails" class="submit_btn" style="color: white" >Cancel</a></td>
 				</tr>
 				  </table>
 				  <br><br>
@@ -544,18 +544,19 @@ else
 
 	function checkSubmit()
 	{ 
+		var error="";
 		document.getElementById("piderror").innerHTML="";
 		if(document.getElementById("pid").value=="")
 		{
 		document.getElementById("piderror").innerHTML="Required Field Should not be Empty";
-		
-		return false;
+		error="true";
+	
 		}
 		
 		document.getElementById("piderror").innerHTML="";
 		if(isNaN(document.getElementById("pid").value))
 		{		document.getElementById("piderror").innerHTML="Invalid character Please enter numbers only.";
-		return false;
+		error="true";
 		}
 		
 	
@@ -564,7 +565,7 @@ else
 	{
 	document.getElementById("pnameerror").innerHTML="Required Field Should not be Empty";
 	
-	return false;
+	error="true";
 	}
 	document.getElementById("pnameerror").innerHTML="";
 	    if(document.getElementById("pname").value.length<4 || document.getElementById("pname").value.length>=32)
@@ -572,7 +573,7 @@ else
 	    	
 	    	document.getElementById("pnameerror").innerHTML="Name should be min 4 and max 32";
 	    	
-	        return false;
+	    	error="true";
 	    }
 	
 	document.getElementById("dr1error").innerHTML="";
@@ -580,14 +581,7 @@ else
 	{
 	document.getElementById("dr1error").innerHTML="Required Field Should not be Empty";
 	
-	return false;
-	}
-	document.getElementById("datepickererror").innerHTML="";
-	if(document.getElementById("datepicker").value=="")
-	{
-	document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
-	
-	return false;
+	error="true";
 	}
 	document.getElementById("datepickererror").innerHTML="";
 	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
@@ -595,42 +589,52 @@ else
     {
     	document.getElementById("datepickererror").innerHTML="Invalid Date Format";
     	
-        return false;
+    	error="true";
     }
 
-	
-	document.getElementById("datepicker1error").innerHTML="";
-	if(document.getElementById("datepicker1").value=="")
+	if(document.getElementById("datepicker").value=="")
 	{
-	document.getElementById("datepicker1error").innerHTML="Required Field Should not be Empty";
+	document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
 	
-	return false;
+	error="true";
 	}
+	
 	document.getElementById("datepicker1error").innerHTML="";
 	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 	if(document.getElementById("datepicker1").value.match(datechk)==null)
     {
     	document.getElementById("datepicker1error").innerHTML="Invalid Date Format";
-    	
-        return false;
+    	error="true";
     }
+	
+	
+	if(document.getElementById("datepicker1").value=="")
+	{
+	document.getElementById("datepicker1error").innerHTML="Required Field Should not be Empty";
+	
+	error="true";
+	}
+	
 
 	document.getElementById("parentsignerror").innerHTML="";
 	if(document.getElementById("parentsign").value=="")
 	{
 	document.getElementById("parentsignerror").innerHTML="Required Field Should not be Empty";
 	
-	return false;
+	error="true";
 	}
 	document.getElementById("doctorsignerror").innerHTML="";
 	if(document.getElementById("doctorsign").value=="")
 	{
 	document.getElementById("doctorsignerror").innerHTML="Required Field Should not be Empty";
 	
-	return false;
+	error="true";
 	}
 	
-		
+	if(error=="true")
+		{
+		return false;		
+		}
 
 	
 	
@@ -1541,7 +1545,7 @@ charges."</b></td>
 <tr>
 <td><input type="submit" class="submit_btn" value="Save" id="saveid" onclick="return checkSubmit('this');"
 ></td>
-<td><input type="reset" class="submit_btn" value="Cancel" id="cancelid"></td>
+<td><a href="viewallpatientdetails" class="submit_btn"  style="color: white" >Cancel</a></td>
 </tr>
 </table>
 </div>
@@ -2365,7 +2369,7 @@ charges."</b></td>
  <table align="right">
 <tr>
 <td><input type="submit" class="submit_btn" value="Save" id="saveid" onclick="return checkSubmit('this');"></td>
-<td><input type="reset" class="submit_btn" value="Cancel" id="cancelid"></td>
+<td><a href="viewallpatientdetails" class="submit_btn" style="color: white">Cancel</a></td>
 </tr>
 </table>
 </div>

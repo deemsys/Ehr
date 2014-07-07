@@ -1856,27 +1856,27 @@ return "viewworkaccident";
  
 	}
 	@RequestMapping(value="/insuranceverification_ajax",method=RequestMethod.POST)
-	public @ResponseBody String insuranceverification_ajax(@ModelAttribute(value="pusername")Insuranceverification insuranceverification, BindingResult result,ModelMap model ) {
+	public @ResponseBody String insuranceverification_ajax(@ModelAttribute(value="patusername")Insuranceverification insuranceverification, BindingResult result,ModelMap model ) {
 		String returnText="";
 		String patientname="";
-		System.out.println("username"+insuranceverification.getPusername());
-		if(signupDAO.getPatientusername(insuranceverification.getPusername()).size()==0)
+		System.out.println("username"+insuranceverification.getPatusername());
+		if(signupDAO.getPatientusername(insuranceverification.getPatusername()).size()==0)
 		{
 			return "error";
 		}		
-	if(veriDAO.checkusername(insuranceverification.getPusername()).size()>0)
+	if(veriDAO.checkusername(insuranceverification.getPatusername()).size()>0)
 	{
 		//patientname=veriDAO.checkusername(insuranceverification.getPusername()).get(0).get;
 		System.out.println("pname"+patientname);
 		
 		model.addAttribute("edit","1");
-		return "edit"+patientname+"|"+insuranceverification.getPusername();		
+		return "edit"+patientname+"|"+insuranceverification.getPatusername();		
 	}
-	if(patientDAO.getUsername(insuranceverification.getPusername()).size()>0)
+	if(patientDAO.getUsername(insuranceverification.getPatusername()).size()>0)
 	{
-		patientname=patientDAO.getUsername(insuranceverification.getPusername()).get(0).getName();
+		patientname=patientDAO.getUsername(insuranceverification.getPatusername()).get(0).getName();
 	}		
-	returnText=patientname+"|"+insuranceverification.getPusername();
+	returnText=patientname+"|"+insuranceverification.getPatusername();
 	return returnText;				
 	}
 	

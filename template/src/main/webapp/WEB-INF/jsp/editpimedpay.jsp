@@ -63,7 +63,7 @@ $(function() {
 <script type="text/javascript">
 	function confirmation() 
 	{
-	var answer = confirm("Are you Sure You Want to Delete Patient ?");
+	var answer = confirm("Are you Sure You Want to Delete?");
 	if (answer){
 		return true;
 	}

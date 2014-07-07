@@ -8,7 +8,7 @@ public class Insuranceverification{
 	
 	private String form_no;
 	
-	private String pusername;
+	private String patusername;
 	
 	
 	private String verify_name;
@@ -64,41 +64,6 @@ public class Insuranceverification{
 	public Insuranceverification(){
 	}
 
-	public Insuranceverification(String form_no, String pusername,
-			String verify_name, String spoke_with, String date, String fax,
-			String amount_deduct, String amount_deduct_met, String max_visit,
-			String is_chiropractic, String at_what, String xray_cover,
-			String atwhat, String subject_deduct, String benefits_honored,
-			String network_benefits, String deductible, String covered,
-			String cm, String pt, String ov, String xray_deduct,
-			String doctors_assign, String mail_claims) {
-		super();
-		this.form_no = form_no;
-		this.pusername = pusername;
-		this.verify_name = verify_name;
-		this.spoke_with = spoke_with;
-		this.date = date;
-		this.fax = fax;
-		this.amount_deduct = amount_deduct;
-		this.amount_deduct_met = amount_deduct_met;
-		this.max_visit = max_visit;
-		this.is_chiropractic = is_chiropractic;
-		this.at_what = at_what;
-		this.xray_cover = xray_cover;
-		this.atwhat = atwhat;
-		this.subject_deduct = subject_deduct;
-		this.benefits_honored = benefits_honored;
-		this.network_benefits = network_benefits;
-		this.deductible = deductible;
-		this.covered = covered;
-		this.cm = cm;
-		this.pt = pt;
-		this.ov = ov;
-		this.xray_deduct = xray_deduct;
-		this.doctors_assign = doctors_assign;
-		this.mail_claims = mail_claims;
-	}
-
 	public String getForm_no() {
 		return form_no;
 	}
@@ -107,12 +72,12 @@ public class Insuranceverification{
 		this.form_no = form_no;
 	}
 
-	public String getPusername() {
-		return pusername;
+	public String getPatusername() {
+		return patusername;
 	}
 
-	public void setPusername(String pusername) {
-		this.pusername = pusername;
+	public void setPatusername(String patusername) {
+		this.patusername = patusername;
 	}
 
 	public String getVerify_name() {
@@ -290,6 +255,42 @@ public class Insuranceverification{
 	public void setMail_claims(String mail_claims) {
 		this.mail_claims = mail_claims;
 	}
+
+	public Insuranceverification(String form_no, String patusername,
+			String verify_name, String spoke_with, String date, String fax,
+			String amount_deduct, String amount_deduct_met, String max_visit,
+			String is_chiropractic, String at_what, String xray_cover,
+			String atwhat, String subject_deduct, String benefits_honored,
+			String network_benefits, String deductible, String covered,
+			String cm, String pt, String ov, String xray_deduct,
+			String doctors_assign, String mail_claims) {
+		super();
+		this.form_no = form_no;
+		this.patusername = patusername;
+		this.verify_name = verify_name;
+		this.spoke_with = spoke_with;
+		this.date = date;
+		this.fax = fax;
+		this.amount_deduct = amount_deduct;
+		this.amount_deduct_met = amount_deduct_met;
+		this.max_visit = max_visit;
+		this.is_chiropractic = is_chiropractic;
+		this.at_what = at_what;
+		this.xray_cover = xray_cover;
+		this.atwhat = atwhat;
+		this.subject_deduct = subject_deduct;
+		this.benefits_honored = benefits_honored;
+		this.network_benefits = network_benefits;
+		this.deductible = deductible;
+		this.covered = covered;
+		this.cm = cm;
+		this.pt = pt;
+		this.ov = ov;
+		this.xray_deduct = xray_deduct;
+		this.doctors_assign = doctors_assign;
+		this.mail_claims = mail_claims;
+	}
+
 	
 	
 	

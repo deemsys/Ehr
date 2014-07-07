@@ -73,9 +73,13 @@ function doAjaxPost() {
 						<table cellpadding="0" cellspacing="0" border="0" width="100%">
 				     <tr class="title">
          						<td valign="top" align="left" width="10%">Name</td>
+         						<td valign="top" align="left" width="15%">Attorney</td>
+         						<td valign="top" align="left" width="15%">Type Of Accident</td>
+         						<td valign="top" align="left" width="15%">Date Of Accident </td>
+					         <td valign="top" align="left" width="25%">Name of Your Health Insurance</td>
 					         	<td valign="top" align="left" width="15%">MobileNumber</td>
-					         	<td valign="top" align="left" width="10%">City</td>
-								<td valign="top" align="left" width="10%">State</td>
+					         	<td valign="top" align="left" width="15%">City</td>
+								<td valign="top" align="left" width="15%">State</td>
           						<!-- <td valign="top" align="left" width="25%">Action</td> -->
         					</tr>
         					
@@ -83,11 +87,14 @@ function doAjaxPost() {
         				  <c:forEach items="${patientDetailsForm.patientDetails}" var="patientDetails" varStatus="status">
         				       	<tr class="row1">
 							      	 <td valign="top" align="left"  width="10%"> <a href="patientdoctorDetailsList?patient_id=${patientDetails.patient_id}">${patientDetails.name}</a></td>
-											
+										<td valign="top" align="left" width="15%">${patientDetails.nameOfAttorney}</td>
+											<td valign="top" align="left" width="15%">${patientDetails.type_Of_Accident}</td>
+											<td valign="top" align="left" width="15%">${patientDetails.date_Of_Accident}</td>
+											<td valign="top" align="left" width="15%">${patientDetails.name_health}</td>											
 										 	<td valign="top" align="left" width="15%">${patientDetails.mobileNumber}</td>
 											<td valign="top" align="left" width="10%">${patientDetails.city}</td>
 											<td valign="top" align="left" width="10%">${patientDetails.state}</td>
-											<%--  <td>
+										<%--  <td>
 												<a href="#" title="" ><img src="resources/images/icons/icon_edit.png" alt="Edit" /></a><a href="<c:out value="editpatientdetails?patient_id=${patientDetails.patient_id}"/>" style="padding-right:10px;">Edit</a>
 												<a  href="#" title=""><img src="resources/images/icons/icon_delete.png" alt="Delete" /></a><a href="<c:out value="deletepatientdetails?patient_id=${patientDetails.patient_id}" />" onclick="return confirmation()">Remove</a>
 											</td> --%> 
