@@ -267,8 +267,8 @@ document.getElementById("pnameerror").innerHTML=" ";
 	    
 	     <div class="contentbox">
          <table> <tr><td width="140"><span class="err">* </span>Name</td>
-           <td><input type="hidden" name="neckindexno" value="${neckindexdetails.neckindexno}"><input type="text" id="pname" name="name" onInput="return validatename(id)"; value="${neckindexdetails.name}"><Br><span class="err" id="pnameerror"><form:errors path="neckindex.name"></form:errors></td><td width="480"></td><td></td><td width="100"></td>
-           <td >&nbsp;&nbsp;&nbsp;&nbsp;<span class="err">* </span>Date:&nbsp;</td> <td><input type="text" name="date" id="datepicker" value="${neckindexdetails.date}"><Br><span class="err" id="datepickererror"><form:errors path="neckindex.date"></form:errors></td>
+           <td><input type="hidden" name="neckindexno" value="${neckindexdetails.neckindexno}"><input type="text" id="pname" name="name" onInput="return validatename(id)"; value="${neckindexdetails.name}"><Br><span style="color: red;font-style:italic;" id="pnameerror"><form:errors path="neckindex.name"></form:errors></td><td width="480"></td><td></td><td width="100"></td>
+           <td >&nbsp;&nbsp;&nbsp;&nbsp;<span class="err">* </span>Date:&nbsp;</td> <td><input type="text" name="date" id="datepicker" value="${neckindexdetails.date}"><Br><span style="color: red;font-style:italic;" id="datepickererror"><form:errors path="neckindex.date"></form:errors></td>
            </tr></table>
             <p><b>Please read:</b>This questionairre has been designed to give the Physical Therapist information as to how your wrist/hand pain has affected your ability to manage everyday life.</p>
            <table width="100%" class="margin_table" >
