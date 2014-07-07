@@ -208,7 +208,7 @@ document.getElementById("pnameerror").innerHTML=" ";
 	    if(document.getElementById("pname").value.length<4 || document.getElementById("pname").value.length>=32)
 	    {
 	    	
-	    	document.getElementById("pnameerror").innerHTML="Name should be min 4 and max 32";
+	    	document.getElementById("pnameerror").innerHTML="Name should be of length 4 to 32";
 	    	
 	        return false;
 	    }
@@ -284,9 +284,9 @@ document.getElementById("pnameerror").innerHTML=" ";
 	     	     <c:when test="${empty wristdisability}">
           <table cellpadding="0" cellspacing="0" border="0" >
            <tr><td width="140"><span class="err">* </span>Name</td>
-           <td><input type="text" name="name" id="pname" onInput="return validatename(id)";><br><span class="err" id="pnameerror"><form:errors path="wristindexdetails.name"></form:errors></td><td width="480"></td><td></td>
+           <td><input type="text" name="name" id="pname" onInput="return validatename(id)";><br><span style="color: red;font-style:italic;" id="pnameerror"><form:errors path="wristindexdetails.name"></form:errors></td><td width="480"></td><td></td>
            <td >&nbsp;&nbsp;&nbsp;&nbsp;<span class="err">* </span>Date:&nbsp;</td> <td><input type="text" name="date" id="datepicker">
-           <br><span class="err" id="datepickererror"><form:errors path="wristindexdetails.date"></form:errors></td>
+           <br><span style="color: red;font-style:italic;" id="datepickererror"><form:errors path="wristindexdetails.date"></form:errors></td>
            </tr>
           
             </table>
