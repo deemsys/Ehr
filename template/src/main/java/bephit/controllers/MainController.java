@@ -107,7 +107,7 @@ import java.util.*;
  
 @Controller
 
-@SessionAttributes({"physical","authorization","radio","waiver","info","injury","consent","minor","hard","screen","medical","assignment","hippa","staff","veri","first","role","signup","doctorsignup","patientid","soap","auto","visit","work","lastname","attorney","accident","dateofaccident","username","insurance","age","staffusername"})
+@SessionAttributes({"physical","authorization","radio","waiver","info","injury","consent","minor","hard","screen","medical","assignment","hippa","staff","veri","first","role","signup","doctorsignup","patientid","soap","auto","visit","work","lastname","attorney","accident","dateofaccident","username","insurance","age","staffusername","pusername"})
 
 public class MainController {
 	
@@ -3936,6 +3936,12 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 	{
 		System.out.println("symptom..."+patientDetails.getSymptom_ajax());
 		 String username=principal.getName();
+		 if(signDAO.getrole(principal.getName()).equals("1"))
+		 {
+			
+			 username=(String)session.getAttribute("pusername"); 
+			 System.out.println("username"+username);
+		 }
     	 if(username.equals("admin"))
     	 { 
     	 
@@ -4283,10 +4289,11 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 		return "patientDetailsList";
 	}
 	@RequestMapping(value="/patientdoctorDetailsList", method=RequestMethod.GET)
-	public String patientdoctorDetailsList(Principal principal,HttpServletRequest request,@RequestParam("patient_id") String patient_id,ModelMap model,PatientDetails patient)
+	public String patientdoctorDetailsList(HttpSession session,Principal principal,HttpServletRequest request,@RequestParam("patient_id") String patient_id,ModelMap model,PatientDetails patient)
 	{
 		
-
+ String pusername=patientDAO.getpatientusername(patient_id);
+ session.setAttribute("pusername",pusername);
 		if(patientDAO.getUsername(principal).size()>0)
 			{			
 		   model.addAttribute("patientno","0");
@@ -4302,12 +4309,12 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
 		model.addAttribute("menu", "search");
 		List<String> symptom=new ArrayList<String>();
-		symptom=patientDAO.getsymptomdetails(patient_id);
+		symptom=patientDAO.getusernamesymptomdetails(patient_id);
 		System.out.println(symptom);
 		model.addAttribute("symptom",symptom);
 		
 		
-		return "patientDetailsList";
+		return "doctorpatientdetails";
 	}
 	@RequestMapping(value="/patientadminDetailsList", method=RequestMethod.GET)
 	public String patientadminDetailsList(Principal principal,HttpServletRequest request,@RequestParam("patient_id") String patient_id,ModelMap model,PatientDetails patient)

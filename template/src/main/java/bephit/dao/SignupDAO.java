@@ -24,7 +24,34 @@ public class SignupDAO {
 	}
 	
 	
-	
+	public String getrole(String username)
+	{
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		
+		int flag=0;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			
+			
+			e1.printStackTrace();
+		}
+	    try{
+	   resultSet=statement.executeQuery("select role from login where username='"+username+"'");
+	    while(resultSet.next())
+	    {
+	    	username=resultSet.getString("role");
+	    }
+	    }
+	    catch(Exception e)
+	    {
+	    System.out.println("sample"+e.toString());	
+	    }
+	    return username;
+	    }
 	
 	public int setSignup(Signup signup)
 	{
@@ -75,7 +102,7 @@ public class SignupDAO {
     		return 0;
 	    
 	}
-
+	
 	public List<Signup> getPatientusername(String username){
 		Connection con = null;
 		Statement statement = null;

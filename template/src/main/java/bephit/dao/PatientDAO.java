@@ -1056,6 +1056,83 @@ public class PatientDAO {
 	    return age;
 		
 	}
+	public String getpatientusername(String patient_id)
+	{
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		String username="";
+		int flag=0;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			
+			
+			e1.printStackTrace();
+		}
+	    try{
+	   resultSet=statement.executeQuery("select username from patient_details where Patient_id='"+patient_id+"'");
+	    while(resultSet.next())
+	    {
+	    	username=resultSet.getString("username");
+	    }
+	    }
+	    catch(Exception e)
+	    {
+	    System.out.println("sample"+e.toString());	
+	    }
+	    return username;
+	    }
+	public List<String> getusernamesymptomdetails(String patient_id){
+		Connection con = null;
+		String username="";
+		Statement statement = null;
+		ResultSet resultSet = null;
+		ResultSet resultSet1 = null;
+	
+		String cmd;
+		try {
+			con = dataSource.getConnection();
+			statement = con.createStatement();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		List<String> strlist = new ArrayList<String>();
+	    try{
+	        
+	       
+	    resultSet1=statement.executeQuery("select username from  patient_details where Patient_id='"+patient_id+"'");
+	    while(resultSet1.next())
+	    {
+	    	username=resultSet1.getString("username");
+	    }
+	    
+	   	    cmd="select symptom from tbl_symptom where patient_id='"+username+"'";
+	    
+	System.out.println(cmd);      
+			resultSet=statement.executeQuery(cmd);
+			
+			while(resultSet.next())
+			{
+				strlist.add(resultSet.getString("symptom"));
+				
+			}
+		
+			
+	    }catch(Exception e){
+	    	System.out.println("error"+e.toString());
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);
+	    }finally{
+	    	releaseResultSet(resultSet);
+	    	releaseStatement(statement);
+	    	releaseConnection(con);	    	
+	    }
+	    return strlist;
+		
+	}
 	
 	public List<String> getsymptomdetails(String patient_id){
 		Connection con = null;

@@ -121,6 +121,8 @@ public class DoctorController {
 	ElbowexamDAO elbowDAO;
 	@Autowired
 	ThoracicexamDAO thoracicDAO;
+	@Autowired
+	SignupDAO signupDAO;
 	
 	@Autowired
 	DcfeeslipDAO feeslipDAO;
@@ -2183,7 +2185,13 @@ String name="";
 	    model.put("Shoulderpainscore", shoulderpainscore);
 		model.addAttribute("shoulderpainscoreForm",shoulderpainscore);
 		 String username=principal.getName();
-    	 if(username.equals("admin"))
+		 if(signupDAO.getrole(principal.getName()).equals("1"))
+		 {
+			
+			 username=(String)session.getAttribute("pusername"); 
+			 System.out.println("username"+username);
+		 }
+		 if(username.equals("admin"))
     	 { 
     	 
     		 username=(String)session.getAttribute("staffusername");

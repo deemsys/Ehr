@@ -43,6 +43,9 @@ import bephit.model.*;
 public class SymptomController {
 	
 	@Autowired
+	SignupDAO signDAO;
+	
+	@Autowired
 	SymptomDAO symptomdao;
 	
 	@Autowired
@@ -963,6 +966,12 @@ String name="";
     		 username=(String)session.getAttribute("staffusername");
     		 System.out.println("susername"+username);
     	 }
+    	 if(signDAO.getrole(principal.getName()).equals("1"))
+		 {
+			
+			 username=(String)session.getAttribute("pusername"); 
+			 System.out.println("username"+username);
+		 }
 		wristdao.insertwristindex(wristindexdetails,username);
 		WristindexForm wristindexform = new WristindexForm();
 		wristindexform.setWristindexdetails(wristdao.getwristindexDetails());
@@ -983,12 +992,19 @@ String name="";
 		return "neckindex";
 		}
 		 String username=principal.getName();
-    	 if(username.equals("admin"))
+		 if(signDAO.getrole(principal.getName()).equals("1"))
+		 {
+			
+			 username=(String)session.getAttribute("pusername"); 
+			 System.out.println("username"+username);
+		 }
+		 if(username.equals("admin"))
     	 { 
     	 
     		 username=(String)session.getAttribute("staffusername");
     		 System.out.println("susername"+username);
     	 }
+    	 
 		neckdao.insertneckindex(neckindexdetails,username);
 		NeckindexForm neckindexform = new NeckindexForm();
 		neckindexform.setneckindexdetails(neckdao.getneckindexDetails());

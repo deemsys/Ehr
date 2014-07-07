@@ -68,7 +68,13 @@ public class OswestryController
 			return "oswestryindex";
 		}
 		 String username=principal.getName();
-    	 if(username.equals("admin"))
+		 if(signupDAO.getrole(principal.getName()).equals("1"))
+		 {
+			
+			 username=(String)session.getAttribute("pusername"); 
+			 System.out.println("username"+username);
+		 }
+		 if(username.equals("admin"))
     	 { 
     	 
     		 username=(String)session.getAttribute("staffusername");

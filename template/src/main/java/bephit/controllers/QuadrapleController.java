@@ -22,6 +22,7 @@ import bephit.dao.NeckindexDAO;
 import bephit.dao.OswestryDAO;
 import bephit.dao.QuadraplevisualDAO;
 import bephit.dao.ShoulderpainscoreDAO;
+import bephit.dao.SignupDAO;
 import bephit.dao.WristindexDAO;
 import bephit.forms.LowbackForm;
 import bephit.forms.NeckindexForm;
@@ -39,6 +40,9 @@ import bephit.model.Shoulderpainscore;
 public class QuadrapleController
 {
 	@Autowired
+	SignupDAO signupDAO;
+	
+	@Autowired
 	QuadraplevisualDAO quadrapledao;
 	
 	@Autowired
@@ -46,6 +50,9 @@ public class QuadrapleController
 	
 	@Autowired
 	LowbackDAO lowDAO;
+	
+	@Autowired
+	SignupDAO signDAO;
 	
 	@Autowired
 	NeckindexDAO neckindexDAO;
@@ -71,6 +78,12 @@ public class QuadrapleController
     		 username=(String)session.getAttribute("staffusername");
     		 System.out.println("susername"+username);
     	 }
+    	 if(signDAO.getrole(principal.getName()).equals("1"))
+		 {
+			
+			 username=(String)session.getAttribute("pusername"); 
+			 System.out.println("username"+username);
+		 }
     	 
 		model.addAttribute("menu","sign");	
 		quadrapledao.setQuadraplevisual(quadraplevisual,username);
@@ -151,6 +164,12 @@ public class QuadrapleController
 		{
 			username=(String)session.getAttribute("staffusername");
 		}
+		if(signupDAO.getrole(principal.getName()).equals("1"))
+		 {
+			
+			 username=(String)session.getAttribute("pusername"); 
+			 System.out.println("username"+username);
+		 }
 		
 		wristindexform.setWristindexdetails(wristindexDAO.getwristusernameindexDetails(symptom,username));
 		model.addAttribute("wristindexform", wristindexform);
@@ -164,6 +183,12 @@ public class QuadrapleController
 		System.out.println("username..."+quadraplevisual.getSymptom()+"sdas"+painname);
 		System.out.println(quadraplevisual.getPainname());
 		String username=principal.getName();
+		if(signupDAO.getrole(principal.getName()).equals("1"))
+		 {
+			
+			 username=(String)session.getAttribute("pusername"); 
+			 System.out.println("username"+username);
+		 }
 		if(principal.getName().equals("admin"))
 		{
 			username=(String)session.getAttribute("staffusername");
@@ -266,6 +291,12 @@ public class QuadrapleController
     		 username=(String)session.getAttribute("staffusername");
     		 System.out.println("susername"+username);
     	 }
+    	 if(signDAO.getrole(principal.getName()).equals("1"))
+		 {
+			
+			 username=(String)session.getAttribute("pusername"); 
+			 System.out.println("username"+username);
+		 }
 		int a=lowDAO.setLowback(lowback,username);
 		LowbackForm lowbackForm= new LowbackForm();
 		lowbackForm.setLowback(lowDAO.getLowback());
