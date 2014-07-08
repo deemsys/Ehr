@@ -150,12 +150,12 @@ function validatename(id)
                         <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err"> * </span>Date: </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="datepicker" name="date" /><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="screeningAuthz.date"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="datepicker" name="date" /><br><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="screeningAuthz.date"></form:errors></span>
 				                  	</tr>
 				                  	<tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err"> * </span>Name:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="name" name="name" onInput="return validatename(id);" value="${name}"/><span id="nameerror" style="color: red;font-style:italic;"><form:errors path="screeningAuthz.name"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="name" name="name" onInput="return validatename(id);" value="${name}"/><br><span id="nameerror" style="color: red;font-style:italic;"><form:errors path="screeningAuthz.name"></form:errors></span>
 				                  	</tr>
 				                  	</table>
 				                  	</c:when>
