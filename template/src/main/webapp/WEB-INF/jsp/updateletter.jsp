@@ -389,7 +389,7 @@ function doAjaxPost() {
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td width="50%"><span class="err">* </span>To Attorney:</td>
-              <td width="50%"><input type="text" class="input_txtbx1" name="toattorney1" id="toattorney1" onInput="return validatename(id)";/><br/><span class="err" id="toattorney1error"  style="color: red;font-style:italic;" style="color: red;font-style:italic;"><form:errors path="Updateletter.toattorney1"></form:errors></td>
+              <td width="50%"><input type="text" class="input_txtbx1" name="toattorney1" id="toattorney1" onInput="return validatename(id)";/><br/><font size="+1" color="red"><span  id="toattorney1error"  style="color: red;font-style:italic;" style="color: red;font-style:italic;"><form:errors path="Updateletter.toattorney1"></form:errors></span></font></td>
               </tr>
               </table>
               <br>
@@ -397,14 +397,14 @@ function doAjaxPost() {
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td width="50%"><span class="err"></span></td>
-              <td  width="50%"><input type="text" class="input_txtbx1" name="toattorney2" id="toattorney2" onInput="return validatename(id)";/><br/><span class="err" id="toattorney2error"  style="color: red;font-style:italic;"><form:errors path="Updateletter.toattorney2"></form:errors></td>
+              <td  width="50%"><input type="text" class="input_txtbx1" name="toattorney2" id="toattorney2" onInput="return validatename(id)";/><br/><font size="+1" color="red"><span id="toattorney2error"  style="color: red;font-style:italic;"><form:errors path="Updateletter.toattorney2"></form:errors></span></font></td>
               </tr>
               </table>
               <br>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td width="50%"><span class="err"></span></td>
-              <td width="50%"><input type="text" class="input_txtbx1" name="toattorney3" id="toattorney3" onInput="return validatename(id)";/><br/><span class="err" id="toattorney3error"  style="color: red;font-style:italic;"><form:errors path="Updateletter.toattorney3"></form:errors></td>
+              <td width="50%"><input type="text" class="input_txtbx1" name="toattorney3" id="toattorney3" onInput="return validatename(id)";/><br/><font size="+1" color="red"><span  id="toattorney3error"  style="color: red;font-style:italic;"><form:errors path="Updateletter.toattorney3"></form:errors></span></font></td>
               </tr>
               </table>
               <br>
@@ -431,7 +431,7 @@ function doAjaxPost() {
               <tr>
               <td width="50%"><span class="err">* </span>Todays date:    
               </td>
-              <td width="50%"><input type="text" class="input_txtbx1" id="datepicker2" name="todaydate"/><br/><span class="err" id="datepicker2error"  style="color: red;font-style:italic;"><form:errors path="Updateletter.todaydate"></form:errors></span></td>
+              <td width="50%"><input type="text" class="input_txtbx1" id="datepicker2" name="todaydate"/><br/><font size="+1" color="red"><span  id="datepicker2error"  style="color: red;font-style:italic;"><form:errors path="Updateletter.todaydate"></form:errors></span></font></td>
               </tr>
               </table>
               <br>

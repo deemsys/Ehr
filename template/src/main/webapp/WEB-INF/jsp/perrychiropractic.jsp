@@ -57,13 +57,14 @@
 	function checkSubmit()
 
 	{
+	var error="";
 		
 		document.getElementById("error").innerHTML="";
 		
 		if(document.getElementById("insurance").value=="")
 		{		
 		document.getElementById("error").innerHTML="Required Field Should not be Empty";
-		return false;
+		error="true";
 		}
 		document.getElementById("error").innerHTML="";
 	    if(document.getElementById("insurance").value.length<4 || document.getElementById("insurance").value.length>=32)
@@ -71,14 +72,14 @@
 	    	
 	    	document.getElementById("error").innerHTML="Name should be min 4 and max 32";
 	    	
-	        return false;
+	        error="true";
 	    }
 		document.getElementById("regerror").innerHTML="";
 	if(document.getElementById("reg").value=="")
 		{
 		document.getElementById("regerror").innerHTML="Required Field Should not be Empty";
 		
-		return false;
+		error="true";
 		}
 	document.getElementById("regerror").innerHTML="";
 	    if(document.getElementById("reg").value.length<4 || document.getElementById("reg").value.length>=32)
@@ -86,14 +87,14 @@
 	    	
 	    	document.getElementById("regerror").innerHTML="Name should be min 4 and max 32";
 	    	
-	        return false;
+	        error="true";
 	    }
 	document.getElementById("nameofpersonerror").innerHTML="";
 	if(document.getElementById("nameofperson").value=="")
 	{
 	document.getElementById("nameofpersonerror").innerHTML="Required Field Should not be Empty";
 	
-	return false;
+	error="true";
 	}
 	document.getElementById("nameofpersonerror").innerHTML="";
 	    if(document.getElementById("nameofperson").value.length<4 || document.getElementById("nameofperson").value.length>=32)
@@ -101,7 +102,7 @@
 	    	
 	    	document.getElementById("nameofpersonerror").innerHTML="Name should be min 4 and max 32";
 	    	
-	        return false;
+	        error="true";
 	    }
 
 	
@@ -111,7 +112,7 @@
 	{
 	document.getElementById("subjecterror").innerHTML="Required Field Should not be Empty";
 	
-	return false;
+	error="true";
 	}
 	document.getElementById("subjecterror").innerHTML="";
 	    if(document.getElementById("subject").value.length<4 || document.getElementById("subject").value.length>=32)
@@ -119,12 +120,12 @@
 	    	
 	    	document.getElementById("subjecterror").innerHTML="Name should be min 4 and max 32";
 	    	
-	        return false;
+	        error="true";
 	    }
 	    document.getElementById("datepickererror").innerHTML="";
 	    if (document.getElementById("datepicker").value=="") {
 	    	document.getElementById("datepickererror").innerHTML="Required Field Should be not empty";
-	    	return false;
+	    	error="true";
 	    }
 	
 	var re = /^[mdy0-9]{2}\/[mdy0-9]{2}\/[mdy0-9]{4}$/;
@@ -132,8 +133,12 @@
 		if (document.getElementById("datepicker").value !="") {
 		  if (re.test(document.getElementById("datepicker").value) == false) {
 			  document.getElementById("datepickererror").innerHTML="Invalid Date Format";
-			  return false;
+			  error="true";
 		  }
+		}
+		if(error=="true")
+		{
+		return false;
 		}
 	
 	}
@@ -425,22 +430,23 @@ d.value = dt;
 <c:when test="${empty peri}">
 	             <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr ><td width="290"></td>
-              <td ><b>Dr. Charles T. Yang, DC, DABFP</b></td>
+              <td ><b>
+Dr. Darrin A. Pordash, D.C.</b></td>
               </tr>
               <tr ><td width="290"></td>
-              <td ><b>4933 West Tuscarawas Street </b></td>
+              <td ><b>5190 Detroit Road </b></td>
               </tr>
                <tr ><td width="290"></td>
               <td ><b> 
-Canton, Ohio 44708
+The Sheffield Village Plaza
 </b></td>
               </tr>
               <tr ><td width="290"></td>
-              <td ><b>(330) 477-3036 Phone</b></td>
+              <td ><b>Sheffield Village, OH 44035</b></td>
               </tr>
              
               <tr ><td width="290"></td>
-              <td ><b>(330) 477-3037 Fax  </b></td>
+              <td ><b>Phone (440) 934-3099 Fax (440) 934-3107 </b></td>
               </tr>
                </table>
                  <br>
@@ -490,7 +496,7 @@ Canton, Ohio 44708
               		<table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="50%"><span class="err">*</span> Name of Insurance Company:</td>
-              <td ><input type="text" class="input_txtbx1" name="insurance" id="insurance" onInput="return validatename(id)";/><span id="error"  style="color: red;font-style:italic;"></span><span class="err" id="insuranceerror"><form:errors path="Perrychiropractic.insurance"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="insurance" id="insurance" onInput="return validatename(id)";/><br><span id="error"  style="color: red;font-style:italic;"></span><span class="err" id="insuranceerror"><form:errors path="Perrychiropractic.insurance"></form:errors></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -499,23 +505,23 @@ Canton, Ohio 44708
               <td ><textarea rows="" cols="" name="address"  id="address" class ="input_txtarea" style="width: 162px; height: 62px"></textarea><span class="err"><form:errors path="Perrychiropractic.address"></form:errors></td>
               </tr>
               </table>
-              
+             
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="50%"><span class="err">*</span> Regarding:</td>
-              <td ><input type="text" class="input_txtbx1" name="reg" id="reg" onInput="return validatename(id)";/><span class="err" id="regerror"  style="color: red;font-style:italic;" ><form:errors path="Perrychiropractic.reg"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="reg" id="reg" onInput="return validatename(id)";/><br><font size="+1" color="red"><span id="regerror"  style="color: red;font-style:italic;" ><form:errors path="Perrychiropractic.reg"></form:errors></font></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="50%"><span class="err">*</span> Patient's Name/ Name of Person Entitled To Coverage: </td>
-              <td ><input type="text" class="input_txtbx1" name="nameofperson" id="nameofperson" onInput="return validatename(id)";/><span class="err" id="nameofpersonerror" style="color: red;font-style:italic;" ><form:errors path="Perrychiropractic.nameofperson"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="nameofperson" id="nameofperson" onInput="return validatename(id)";/><br><font size="+1" color="red"><span  id="nameofpersonerror" style="color: red;font-style:italic;" ><form:errors path="Perrychiropractic.nameofperson"></form:errors></span></font></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="50%"><span class="err">*&nbsp;</span>Date of Accident: </td>
-              <td ><input type="text" class="input_txtbx1" name="dateofaccident" id="datepicker" maxlength="10" onkeypress="return validate(event)"; /><span class="err" id="datepickererror"><form:errors path="Perrychiropractic.dateofaccident"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="dateofaccident" id="datepicker" maxlength="10" onkeypress="return validate(event)"; /><br><font size="+1" color="red"><span  id="datepickererror"><form:errors path="Perrychiropractic.dateofaccident"></form:errors></span></font></td>
               </tr>
               </table>
               
@@ -533,7 +539,7 @@ Canton, Ohio 44708
      </p>
      <br>
      
-  <p><span class="err">*</span>&nbsp;<input type="text" class="input_txtbx1" name="subject" id="subject" onInput="return validatename(id)";/><span class="err" id="subjecterror" style="color: red;font-style:italic;"><form:errors path="Perrychiropractic.subject"></form:errors></span> has sought medical treatment from this clinic.  This patient has been injured to an extent where the patient has determined that they cannot afford to pay for treatment on a fee for service basis.  We would definitely prefer to simply render the required treatment on a fee for service basis.  However, because fees for service presents a hardship to this patient, we have agreed to postpone payment for treatment pursuant to the attached medical proceeds assignment. </p>	
+  <p><span class="err">*</span>&nbsp;<input type="text" class="input_txtbx1" name="subject" id="subject" onInput="return validatename(id)";/><font size="+1" color="red"><span  id="subjecterror" style="color: red;font-style:italic;"><form:errors path="Perrychiropractic.subject"></form:errors></span></font> has sought medical treatment from this clinic.  This patient has been injured to an extent where the patient has determined that they cannot afford to pay for treatment on a fee for service basis.  We would definitely prefer to simply render the required treatment on a fee for service basis.  However, because fees for service presents a hardship to this patient, we have agreed to postpone payment for treatment pursuant to the attached medical proceeds assignment. </p>	
  <br>
      
 
@@ -625,7 +631,8 @@ However, a different recent Ohio Supreme Court case confirms the validity of the
            <table cellpadding="0" cellspacing="0" border="0" width="100%"><tr> 
        		 <td ><p align="right"> Perry Chiropractic & Therapy Center of Canton, Inc       
        		 <br><br>	  		
-       	  Dr. Charles T. Yang D.C. 
+       	  
+Dr. Darrin A. Pordash, D.C. 
        		   </p>
        		 </td>
        		<tr>

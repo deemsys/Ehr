@@ -429,7 +429,7 @@ function openWindow(h, w, url) {
                 <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr><td width="375"></td>
               <td><span class="err">*</span> Date</td>
-              <td ><input type="text" class="input_txtbx1" name="date" id="datepicker" /><span class="err" id="derr"><form:errors path="Letterofprotection.date"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="date" id="datepicker" /><BR><font size="+1" color="red"><span  id="derr"></font><form:errors path="Letterofprotection.date"></form:errors></td>
               </tr>
               </table>
                <br><br><br>
@@ -437,12 +437,12 @@ function openWindow(h, w, url) {
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25"  width="40%"><span class="err">*</span> D.C:</td>
-               <td ><input type="text" class="input_txtbx1" name="dc" id="dcr" onInput="return validatename(id)";/><span class="err" id="dcerr"><form:errors path="Letterofprotection.dc"></form:errors></td>
+               <td ><input type="text" class="input_txtbx1" name="dc" id="dcr" onInput="return validatename(id)";/><BR><font size="+1" color="red"><span  id="dcerr"></span></font><form:errors path="Letterofprotection.dc"></form:errors></td>
              
               </tr>
               <tr>
               <td height="25" width="40%"><span class="err">*</span> Clinic Name:</td>
-               <td ><input type="text" class="input_txtbx1" name="clinicname" id="clinicname" onInput="return validatename(id)";/><span class="err" id="clerr"><form:errors path="Letterofprotection.clinicname"></form:errors></td>
+               <td ><input type="text" class="input_txtbx1" name="clinicname" id="clinicname" onInput="return validatename(id)";/><BR><font size="+1" color="red"><span  id="clerr"></span></font><form:errors path="Letterofprotection.clinicname"></form:errors></td>
              
               </tr>
              </table>
@@ -461,14 +461,14 @@ function openWindow(h, w, url) {
               </tr>
               <tr>
               <td height="25"  width="40%"><span class="err">*</span> Date of Accident</td>
-               <td ><input type="text" class="input_txtbx1" name="dateofaccident" id="datepicker1" /><span class="err" id="daerr"><form:errors path="Letterofprotection.dateofaccident"></form:errors></td>
+               <td ><input type="text" class="input_txtbx1" name="dateofaccident" id="datepicker1" /><BR><font size="+1" color="red"><span  id="daerr"></span></font><form:errors path="Letterofprotection.dateofaccident"></form:errors></td>
              
               </tr>
              </table><br><br>
              <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="40%"><span class="err">*</span> Dear Dr</td>
-              <td   ><input type="text" class="input_txtbx1" name="dearsir" id="dearsir" onInput="return validatename(id)";/><span class="err" id="suberr"><form:errors path="Letterofprotection.dearsir"></form:errors>
+              <td   ><input type="text" class="input_txtbx1" name="dearsir" id="dearsir" onInput="return validatename(id)";/><font size="+1" color="red"><span  id="suberr"></font><form:errors path="Letterofprotection.dearsir"></form:errors>
            </span></td></tr>	
              </table>
              <table>
@@ -494,7 +494,7 @@ function openWindow(h, w, url) {
              <tr><td width="450"></td>
              <td ><p><h4> <b>Very truly yours,</b></h4><p></td></tr>
              <tr><td width="450"></td>
-            <td ><span class="err">*</span>&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="esq" id="esq" onInput="return validatename(id)";/><span class="err" id="esqerr"><form:errors path="Letterofprotection.esq"></form:errors></td></tr>
+            <td ><span class="err">*</span>&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="esq" id="esq" onInput="return validatename(id)";/><br><font size="+1" color="red"><span  id="esqerr"></span></font><form:errors path="Letterofprotection.esq"></form:errors></td></tr>
             <tr><td width="450"></td><td ><p><h4> <b>	Attorney for above client</b></h4><p></td></tr>
              </table>
              

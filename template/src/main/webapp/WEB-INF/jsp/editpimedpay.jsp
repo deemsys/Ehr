@@ -196,20 +196,20 @@ function validatename(id){
 	                
             <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr ><td width="260"></td>
-              <td ><b>Dr. Charles T. Yang, DC, DABFP</b></td>
+              <td ><b>Dr. Darrin A. Pordash, D.C.</b></td>
               </tr>
               <tr ><td width="260"></td>
-              <td ><b>4933 West Tuscarawas Street </b></td>
+              <td ><b>5190 Detroit Road </b></td>
               </tr>
                <tr ><td width="260"></td>
-              <td ><b>Canton, Ohio 44708</b></td>
+              <td ><b>The Sheffield Village Plaza</b></td>
               </tr>
               <tr ><td width="260"></td>
-              <td ><b>(330) 477-3036 Phone</b></td>
+              <td ><b>Sheffield Village, OH 44035</b></td>
               </tr>
              
               <tr ><td width="260"></td>
-              <td ><b>(330) 477-3037 Fax  </b></td></tr>
+              <td ><b>Phone (440) 934-3099 Fax (440) 934-3107 </b></td></tr>
              </table><br>
              <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr> <td align="center">  <h2><b>MED PAY WARNING LETTER</b></h2> </td>
@@ -242,7 +242,7 @@ function validatename(id){
         <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="180"><span class="err">*</span> Name of Insurance Company</td>
-              <td ><input type="hidden" name="medpayid" value="${pimedpaydetails.medpayid }"><input type="text" class="input_txtbx1" name="insurance" value="${pimedpaydetails.insurance }"  id="insurance" onInput="return validatename(id)";/><span class="err" id="inserror"><form:errors path="Pimedpay.insurance"></form:errors></td>
+              <td ><input type="hidden" name="medpayid" value="${pimedpaydetails.medpayid }"><input type="text" class="input_txtbx1" name="insurance" value="${pimedpaydetails.insurance }"  id="insurance" onInput="return validatename(id)";/><br><font size="+1" color="red"><span id="inserror"><form:errors path="Pimedpay.insurance"></form:errors></font></td>
               </tr>
               </table>
               
@@ -256,21 +256,21 @@ function validatename(id){
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="180"><span class="err">*&nbsp;</span>Regarding: </td>
-              <td><input type="text" class="input_txtbx1" name="reg" id="reg" value="${pimedpaydetails.reg }" onInput="return validatename(id)";><span class="err" id="regerror"></span><form:errors path="Pimedpay.reg"></form:errors></td>
+              <td><input type="text" class="input_txtbx1" name="reg" id="reg" value="${pimedpaydetails.reg }" onInput="return validatename(id)";><br><font size="+1" color="red"><span  id="regerror"></span><form:errors path="Pimedpay.reg"></font></form:errors></td>
               </tr>
               </table>
           
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="180"><span class="err">*</span> Patient's Name</td>
-              <td><input type="text" class="input_txtbx1" name="nameofperson" value="${pimedpaydetails.nameofperson }"  id="nameofperson" onInput="return validatename(id)";><span class="err" id="nameerror"><form:errors path="Pimedpay.nameofperson"></form:errors></span></td>
+              <td><input type="text" class="input_txtbx1" name="nameofperson" value="${pimedpaydetails.nameofperson }"  id="nameofperson" onInput="return validatename(id)";><br><font size="+1" color="red"><span id="nameerror"><form:errors path="Pimedpay.nameofperson"></form:errors></span></font></td>
               </tr>
               </table>
               <br>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="180"><span class="err">*</span> Date of Accident: </td>
-              <td><input type="text" class="input_txtbx1" name="dateofaccident" value="${pimedpaydetails.dateofaccident }"  id="datepicker"><span class="err" id="dateerror"><form:errors path="Pimedpay.dateofaccident"></form:errors></span></td>
+              <td><input type="text" class="input_txtbx1" name="dateofaccident" value="${pimedpaydetails.dateofaccident }"  id="datepicker"><br><font size="+1" color="red"><span id="dateerror"><form:errors path="Pimedpay.dateofaccident"></form:errors></span></font></td>
               </tr>
               </table><br><br>
               
@@ -283,7 +283,7 @@ function validatename(id){
             
              <table>
              <tr><td><br><br><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="err">*</span>
-	        <input type="text" class="input_txtbx1" name="subject" value="${pimedpaydetails.subject }" id="dearsir" onInput="return validatename(id)";><span class="err" id="suberror"></span> has sought and received medical treatment from this clinic.  Our patient made an assignment over to us of med pay proceeds to which we are entitled to receive from your company. You have received notice of this assignment by certified mail.
+	        <input type="text" class="input_txtbx1" name="subject" value="${pimedpaydetails.subject }" id="dearsir" onInput="return validatename(id)";><font size="+1" color="red"><span  id="suberror"></span></font> has sought and received medical treatment from this clinic.  Our patient made an assignment over to us of med pay proceeds to which we are entitled to receive from your company. You have received notice of this assignment by certified mail.
              
              </p>
              </td></tr>

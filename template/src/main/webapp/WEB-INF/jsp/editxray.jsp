@@ -203,13 +203,13 @@ function checkSubmit()
               </tr>
  </table><br>
  <table cellpadding="0" cellspacing="0" border="0" width="100%">
- <tr><td><span class="err">*</span>  I  <input type="hidden" name="xrayid" value="${xraydetails.xrayid }"> <input type="text" class="input_txtbx1" name="name" id="name" value="${xraydetails.name}" onInput="return validatename(id)";> <span class="err" id="nameerror"></span>do hereby agree to return X-rays that I have borrowed from the Chiropractic Therapy Center, I understand that I have fourteen (14) days to do so.I fully agree that in the event that I do not return X-rays, I will be billed $50.00.  	  
+ <tr><td><span class="err">*</span>  I  <input type="hidden" name="xrayid" value="${xraydetails.xrayid }"> <input type="text" class="input_txtbx1" name="name" id="name" value="${xraydetails.name}" onInput="return validatename(id)";> <font size="+1" color="red"><span id="nameerror"></span></font>do hereby agree to return X-rays that I have borrowed from the Chiropractic Therapy Center, I understand that I have fourteen (14) days to do so.I fully agree that in the event that I do not return X-rays, I will be billed $50.00.  	  
        </td></tr></table><br><br>
  
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="100"><span class="err">&nbsp;</span> Date Borrowed</td>
-              <td ><input type="text" class="input_txtbx1" name="date" id="datepicker"  value="${xraydetails.date}"/><span class="err" id="dateerror"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="date" id="datepicker"  value="${xraydetails.date}"/><br><font size="+1" color="red"><span  id="dateerror"><form:errors path="Hardshipagreement.date"></font></form:errors></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -221,9 +221,9 @@ function checkSubmit()
              <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="100"><span class="err">*</span> Date </td>
-              <td width="70"><input type="text" class="input_txtbx1" name="date2" id="datepicker2"  value="${xraydetails.date2}"/><span class="err" id="datepickererror"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td width="70"><input type="text" class="input_txtbx1" name="date2" id="datepicker2"  value="${xraydetails.date2}"/><br><font size="+1" color="red"><span  id="datepickererror"></span></font><form:errors path="Hardshipagreement.date"></form:errors></td>
               <td align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="err">*</span> Signature:</td>
-             <td width="50"> <input type="text" class="input_txtbx1" name="sign" id="sign"  value="${xraydetails.sign}" onInput="return validatename(id)";/><span class="err" id="signerror"><form:errors path="Hardshipagreement.date"></form:errors></td>
+             <td width="50"> <input type="text" class="input_txtbx1" name="sign" id="sign"  value="${xraydetails.sign}" onInput="return validatename(id)";/><br><font size="+1" color="red"><span  id="signerror"></span></font><form:errors path="Hardshipagreement.date"></form:errors></td>
               
               </tr>
               </table><br><br>

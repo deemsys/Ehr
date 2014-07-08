@@ -180,24 +180,25 @@ document.getElementById("error").innerHTML="";
 	             <h2>PERRY CHIROPRACTIC & THERAPY CENTER OF CANTON, INC.</h2> 
 	            </div>
 	            <div class="contentbox">
-	             <table cellpadding="0" cellspacing="0" border="0" width="100%">
+	                 <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr ><td width="290"></td>
-              <td ><b>Dr. Charles T. Yang, DC, DABFP</b></td>
+              <td ><b>
+Dr. Darrin A. Pordash, D.C.</b></td>
               </tr>
               <tr ><td width="290"></td>
-              <td ><b>4933 West Tuscarawas Street </b></td>
+              <td ><b>5190 Detroit Road </b></td>
               </tr>
                <tr ><td width="290"></td>
               <td ><b> 
-Canton, Ohio 44708
+The Sheffield Village Plaza
 </b></td>
               </tr>
               <tr ><td width="290"></td>
-              <td ><b>(330) 477-3036 Phone</b></td>
+              <td ><b>Sheffield Village, OH 44035</b></td>
               </tr>
              
               <tr ><td width="290"></td>
-              <td ><b>(330) 477-3037 Fax  </b></td>
+              <td ><b>Phone (440) 934-3099 Fax (440) 934-3107 </b></td>
               </tr>
                </table>
                  <br>
@@ -378,8 +379,8 @@ However, a different recent Ohio Supreme Court case confirms the validity of the
        		 <td height="25" width="70%"><span class="err"></span></td>
        		  <td height="25" width="50%"><span class="err"></span>Sincerely,</td></tr>
         	  </table>
-           <br>
-           <br>
+         
+           
            <table cellpadding="0" cellspacing="0" border="0" width="100%"><tr> 
        		 <td ><p align="right"> Perry Chiropractic & Therapy Center of Canton, Inc       </p></td>
        		<tr>
@@ -388,7 +389,7 @@ However, a different recent Ohio Supreme Court case confirms the validity of the
        		
        		  
        		  
-       		    Dr. Charles T. Yang D.C. 
+       		  Dr. Darrin A. Pordash, D.C.
        		    </p></td></tr>     		         		  
         	  </table>
            

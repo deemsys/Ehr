@@ -83,6 +83,7 @@ function validateusername1(){
 		return false;
 		}
 		
+				
 		document.getElementById("faxnoerror").innerHTML="";
 	   if(document.getElementById("faxno").value!="")
 	   {
@@ -91,9 +92,18 @@ function validateusername1(){
 		document.getElementById("faxnoerror").innerHTML="Invalid phone number format";
 		return false;
 		
-		}
+		}}
+var phoneno = /^\(?[(]??([0-9]{3})\)?[)]?([0-9]{3})[-]?([0-9]{4})$/;  
+
+	   if(document.getElementById("faxno").value!=""){  
+	  
+	    if(document.getElementById("faxno").value.match(phoneno)==null)
+	    {
+	    	document.getElementById("faxnoerror").innerHTML="Invalid phone Format";
+	    	return false;
+	    }
 	   }
-		document.getElementById("faxnoerror").innerHTML="";
+		
 		if(document.getElementById("faxno").value!="")
 		{
 		
@@ -207,45 +217,45 @@ document.getElementById("faxno").value=phone;
 	            <div class="contentbox">
 	             <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr ><td width="260"></td>
-              <td ><b>Dr. Charles T. Yang, DC, DABFP</b></td>
+              <td ><b>Dr. Darrin A. Pordash, D.C.</b></td>
               </tr>
               <tr ><td width="260"></td>
-              <td ><b>4933 West Tuscarawas Street </b></td>
+              <td ><b>5190 Detroit Road </b></td>
               </tr>
                <tr ><td width="260"></td>
-              <td ><b>Canton, Ohio 44708</b></td>
+              <td ><b>The Sheffield Village Plaza</b></td>
               </tr>
               <tr ><td width="260"></td>
-              <td ><b>(330) 477-3036 Phone</b></td>
+              <td ><b>Sheffield Village, OH 44035</b></td>
               </tr>
              
               <tr ><td width="260"></td>
-              <td ><b>(330) 477-3037 Fax  </b></td>
+              <td ><b>Phone (440) 934-3099 Fax (440) 934-3107 </b></td>
               </tr>
               </table><br><br>
             
        		<table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="120"><span class="err">*</span>Today's Date:</td>
-              <td ><td><input type="hidden" name="faxid" value="${faxcoverdetails.faxid }"><input type="text" class="input_txtbx1" name="date" value="${faxcoverdetails.date }" id="datepicker" /><span class="err" id="datepickererror"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td height="25" width="120"><span class="err">*</span>&nbsp;&nbsp;Today's Date:</td>
+              <td ><td><input type="hidden" name="faxid" value="${faxcoverdetails.faxid }"><input type="text" class="input_txtbx1" name="date" value="${faxcoverdetails.date }" id="datepicker" /><br><font size="+1" color="red"><span id="datepickererror"></font><form:errors path="Hardshipagreement.date"></form:errors></td>
              </td> </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="120"><span class="err">*</span>TO:</td>
-              <td ><input type="text" class="input_txtbx1" name="tos" value="${faxcoverdetails.tos }" id="tos" /><span class="err" id="toserror"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td height="25" width="120"><span class="err">*</span>&nbsp;&nbsp;TO:</td>
+              <td ><input type="text" class="input_txtbx1" name="tos" value="${faxcoverdetails.tos }" id="tos" /><br><font size="+1" color="red"><span  id="toserror"><form:errors path="Hardshipagreement.date"></form:errors></span></font></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120">FAX#:</td>
-              <td ><input type="text" class="input_txtbx1" name="faxno" onInput="return validateusername()"; onkeypress="return validate5(event)";  maxlength=13 value="${faxcoverdetails.faxno }" id="faxno"/><span class="err" id="faxerror"><form:errors path="Faxcover.faxno"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="faxno" placeholder="(000)000-0000" onInput="return validateusername()"; onkeypress="return validate5(event)";  maxlength=13 value="${faxcoverdetails.faxno }" id="faxno"/><br><font size="+1" color="red"><span  id="faxnoerror"><span  id="faxerror"></span><form:errors path="Faxcover.faxno"></form:errors></span></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="120"><span class="err">*</span>FROM:</td>
-              <td ><input type="text" class="input_txtbx1" name="froms" value="${faxcoverdetails.froms }" id="froms" /><span id="fromerror" style="color: red;font-style:italic;"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td height="25" width="120"><span class="err">*</span>&nbsp;&nbsp;FROM:</td>
+              <td ><input type="text" class="input_txtbx1" name="froms" value="${faxcoverdetails.froms }" id="froms" /><br><span id="fromerror" style="color: red;font-style:italic;"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -264,22 +274,22 @@ document.getElementById("faxno").value=phone;
               <tr>
               <td  width="20%"><span class="err"></span>RE:</td>
               <td ><input type="text" class="input_txtbx1" name="regarding" id="re" style="width: 164px; " value="${faxcoverdetails.regarding }"/><span class="err" id="reerror"><form:errors path="Faxcover.regarding"></form:errors></td>
-              <td align="left" style="width: 188px; "><span class="err"></span>Number Of Pages Sent:</td>
+              <td align="left" style="width: 188px; "><span class="err"></span>&nbsp;&nbsp;Number Of Pages Sent:</td>
               <td ><input type="text" class="input_txtbx1" name="pages" id="nos" onkeypress="return validate(event)"; value="${faxcoverdetails.pages }"/><span class="err" id="noserror"><form:errors path="Faxcover.pages"></form:errors></td>
               </tr>
              
               <tr>
-              <td height="25" width="20%" style="width: 98px; "><span class="err">*</span>Message:</td>
-              <td style="width: 178px; "><input type="text" class="input_txtbx1" name="msg" id="msg" style="width: 164px; " value="${faxcoverdetails.msg }"/><span class="err" id="msgerror"><form:errors path="Faxcover.msg"></form:errors></td>
-            <td align="left" style="width: 147px; "><span class="err">*</span>Claim No:</td>
-              <td ><input type="text" class="input_txtbx1" name="claimno" id="claimno" onInput="return validateusername1()"; value="${faxcoverdetails.claimno }"/><span class="err" id="claimnoerror"><form:errors path="Faxcover.claimno"></form:errors>
+              <td height="25" width="20%" style="width: 98px; "><span class="err">*</span>&nbsp;&nbsp;Message:</td>
+              <td style="width: 178px; "><input type="text" class="input_txtbx1" name="msg" id="msg" style="width: 164px; " value="${faxcoverdetails.msg }"/><br><font size="+1" color="red"><span  id="msgerror"></span></font><form:errors path="Faxcover.msg"></form:errors></td>
+            <td align="left" style="width: 147px; "><span class="err">*</span>&nbsp;&nbsp;Claim No:</td>
+              <td ><input type="text" class="input_txtbx1" name="claimno" id="claimno" onInput="return validateusername1()"; value="${faxcoverdetails.claimno }"/><br><font size="+1" color="red"><span id="claimnoerror"></span></font><form:errors path="Faxcover.claimno"></form:errors>
               </span><span class="err" id="number"></span></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="20%"><span class="err">*</span> DOI</td>
-              <td height="25" width="45%"><input type="text" class="input_txtbx1" name="doi" id="datepicker1" style="width: 164px; " value="${faxcoverdetails.doi }"/><span class="err" id="datepicker1error"><form:errors path="Faxcover.msg"></form:errors></td>
+              <td height="25" width="20%"><span class="err">*</span>&nbsp;&nbsp;DOI</td>
+              <td height="25" width="45%"><input type="text" class="input_txtbx1" name="doi" id="datepicker1" style="width: 164px; " value="${faxcoverdetails.doi }"/><br><font size="+1" color="red"> <span  id="datepicker1error"></font><form:errors path="Faxcover.msg"></form:errors></td>
             <td align="left"><span class="err"></span></td>
               <td style="width: 188px; " align="right"></td>
               </tr>

@@ -251,7 +251,7 @@ function validatename(id){
        		<table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err">*</span> Name of Patient's Attorney</td>
-              <td ><input type="hidden" name="patientid" value="${patientattorneydetails.patientid }"><input type="text" class="input_txtbx1" name="name" value="${patientattorneydetails.name }"  id="name" onInput="return validatename(id)";><span class="err" id="nameerror"  style="color: red;font-style:italic;"><form:errors path="Patientattorney.name"></form:errors></span></td>
+              <td ><input type="hidden" name="patientid" value="${patientattorneydetails.patientid }"><input type="text" class="input_txtbx1" name="name" value="${patientattorneydetails.name }"  id="name" onInput="return validatename(id)";><br><font size="+1" color="red"><span  id="nameerror"  style="color: red;font-style:italic;"></font><form:errors path="Patientattorney.name"></form:errors></span></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -264,7 +264,7 @@ function validatename(id){
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err">*</span>&nbsp;&nbsp;Regarding</td>
-              <td ><input type="text" class="input_txtbx1" name="reg" value="${patientattorneydetails.reg}"   id="reg" onInput="return validatename(id)";><span class="err" id="regerror"></span><form:errors path="Patientattorney.address"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="reg" value="${patientattorneydetails.reg}"   id="reg" onInput="return validatename(id)";><br><font size="+1" color="red"><span  id="regerror"></span></font><form:errors path="Patientattorney.address"></form:errors></td>
               </tr>
               </table>
               
@@ -274,13 +274,13 @@ function validatename(id){
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err">*</span> Patient's name</td>
-              <td ><input type="text" class="input_txtbx1" name="patientname" value="${patientattorneydetails.patientname}"    id="patientname" onInput="return validatename(id)";><span class="err"id="patientnameerror"  style="color: red;font-style:italic;"><form:errors path="Patientattorney.patientname"></form:errors></span></td>
+              <td ><input type="text" class="input_txtbx1" name="patientname" value="${patientattorneydetails.patientname}"    id="patientname" onInput="return validatename(id)";><br><font size="+1" color="red"><span id="patientnameerror"  style="color: red;font-style:italic;"></font><form:errors path="Patientattorney.patientname"></form:errors></span></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err">*</span> Date of Accident</td>
-              <td ><input type="text" class="input_txtbx1" name="date" value="${patientattorneydetails.date}"  id="datepicker"><span class="err" id="datepickererror"  style="color: red;font-style:italic;"><form:errors path="Patientattorney.date"></form:errors></span></td>
+              <td ><input type="text" class="input_txtbx1" name="date" value="${patientattorneydetails.date}"  id="datepicker"><br><font size="+1" color="red"><span  id="datepickererror"  style="color: red;font-style:italic;"><form:errors path="Patientattorney.date"></form:errors></span></font></td>
               </tr>
               </table>
               
@@ -295,7 +295,7 @@ function validatename(id){
      
 Dear Madam or Sir:
 </h3></p>
-  <p><span class="err">*</span>&nbsp;<input type="text" class="input_txtbx1" name="dearsir" value="${patientattorneydetails.dearsir}"  id="dearsir" onInput="return validatename(id)";><span class="err" id="dearsirerror"  style="color: red;font-style:italic;"></span> has sought medical treatment from this clinic.  This patient (your client) has been injured to an extent where the patient has determined that they cannot afford to pay for treatment on a fee for service basis.  We would definitely prefer to simply render the required treatment on a fee for service basis.  However, because fees for service presents a hardship to this patient, we have agreed to postpone payment for treatment, but in direct reliance on the continuing commitment the patient has made to us in the attached Treatment Fee Agreement and Instructions to Attorney. </p>	
+  <p><span class="err">*</span>&nbsp;<input type="text" class="input_txtbx1" name="dearsir" value="${patientattorneydetails.dearsir}"  id="dearsir" onInput="return validatename(id)";><font size="+1" color="red"><span  id="dearsirerror"  style="color: red;font-style:italic;"></span> </font>has sought medical treatment from this clinic.  This patient (your client) has been injured to an extent where the patient has determined that they cannot afford to pay for treatment on a fee for service basis.  We would definitely prefer to simply render the required treatment on a fee for service basis.  However, because fees for service presents a hardship to this patient, we have agreed to postpone payment for treatment, but in direct reliance on the continuing commitment the patient has made to us in the attached Treatment Fee Agreement and Instructions to Attorney. </p>	
 
 
        </td>
@@ -422,12 +422,12 @@ Opinion 2007-7 provides the following further ethical directions:
              
              <table cellpadding="0" cellspacing="0" border="0" width="100%">
              
-              <tr ><td width="70%"></td><td><input type="text" class="input_txtbx1" name="nameofclinic"  value="${patientattorneydetails.nameofclinic}"    id="nameofclinic" onInput="return validatename(id)";></td></tr>
-              <tr><td></td><td><span class="err" id="nameofclinicerror"  style="color: red;font-style:italic;">*</span> Name of Clinic</td>
+              <tr ><td width="70%"></td><td><input type="text" class="input_txtbx1" name="nameofclinic"  value="${patientattorneydetails.nameofclinic}"    id="nameofclinic" onInput="return validatename(id)";><br><font size="+1" color="red"><span  id="nameofclinicerror"  style="color: red;font-style:italic;"></font></span></td></tr>
+              <tr><td></td><td><span class="err">*</span> Name of Clinic</td>
               </tr>
               
-               <tr ><td width="70%"></td><td><input type="text" class="input_txtbx1" name="treat"  value="${patientattorneydetails.treat}"  id="treat" onInput="return validatename(id)";></td></tr>
-              <tr><td ></td><td><span class="err" id="treaterror"  style="color: red;font-style:italic;">*</span> Treating Physician</td>
+               <tr ><td width="70%"></td><td><input type="text" class="input_txtbx1" name="treat"  value="${patientattorneydetails.treat}"  id="treat" onInput="return validatename(id)";><br><font size="+1" color="red"><span id="treaterror" ></span></font></td></tr>
+              <tr><td ></td><td><span class="err"  style="color: red;font-style:italic;">*</span> Treating Physician</td>
               </tr>
               
               

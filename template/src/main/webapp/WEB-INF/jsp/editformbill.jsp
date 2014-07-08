@@ -284,14 +284,14 @@ function validatename(id){
                 <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr ><td width="400"></td>
               <td height="25" width="50"><span class="err">*</span>Date:</td>
-              <td ><input type="hidden" name="formid" value="${formbilldetails.formid }"><input type="text" class="input_txtbx1" name="date" id="datepicker"  value="${formbilldetails.date }" /><span class="err" id="datepickererror"><form:errors path="Workschool.date"></form:errors></span></td>
+              <td ><input type="hidden" name="formid" value="${formbilldetails.formid }"><input type="text" class="input_txtbx1" name="date" id="datepicker"  value="${formbilldetails.date }" /><font size="+1" color="red"><span id="datepickererror"><form:errors path="Workschool.date"></form:errors></span></font></td>
               </tr>
               </table><br>
             
                 <table align="center" cellpadding="0" cellspacing="0" border="0"   width="100%"  ">
               <tr >
              <td height="25" width="120"><span class="err">*</span> Insurance Company:</td>
-              <td ><input type="text" class="input_txtbx1" name="insurance" id="insurance" value="${formbilldetails.insurance }" onInput="return validatename(id)";/><span class="err" id="insuranceerror"><form:errors path="Formbill.insurance"></form:errors></span></td>
+              <td ><input type="text" class="input_txtbx1" name="insurance" id="insurance" value="${formbilldetails.insurance }" onInput="return validatename(id)";/><br><font size="+1" color="red"><span  id="insuranceerror"></font><form:errors path="Formbill.insurance"></form:errors></span></td>
               </tr>
               </table>
               <br>
@@ -305,7 +305,7 @@ function validatename(id){
                <table align="center" cellpadding="0" cellspacing="0" border="0"   width="100%"  ">
               <tr ><br>
              <td height="25" width="120"><span class="err">*</span> Name Of Attorney:</td>
-              <td ><input type="text" class="input_txtbx1" name="name" id="name" value="${formbilldetails.name}" onInput="return validatename(id)";/><span class="err" id="nameerror"><form:errors path="Formbill.name"></form:errors></span></td>
+              <td ><input type="text" class="input_txtbx1" name="name" id="name" value="${formbilldetails.name}" onInput="return validatename(id)";/><br><font size="+1" color="red"><span id="nameerror"><form:errors path="Formbill.name"></form:errors></span></font></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -318,7 +318,7 @@ function validatename(id){
                 <table align="center" cellpadding="0" cellspacing="0" border="0"   width="100%"  ">
               <tr >
              <td height="25" width="120"><span class="err">*</span> Patient Name</td>
-              <td ><input type="text" class="input_txtbx1" name="patientsname" id="patientsname" value="${formbilldetails.patientsname}" onInput="return validatename(id)";/><span class="err" id="pnameerror"><form:errors path="Formbill.patientsname"></form:errors></span></td>
+              <td ><input type="text" class="input_txtbx1" name="patientsname" id="patientsname" value="${formbilldetails.patientsname}" onInput="return validatename(id)";/><br><font size="+1" color="red"><span  id="pnameerror"></font><form:errors path="Formbill.patientsname"></form:errors></span></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -331,7 +331,7 @@ function validatename(id){
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
         	  <tr><td><p align="left" id="mypar"><b><h4>RE:</b>&nbsp;&nbsp;&nbsp;&nbsp; Notice of Final Outstanding Amount Owed;Medical Fees of $ <input type="text" class="input_txtbx1" onkeypress="return validate(event)"; name="medicalfee" id="medicalfee" value="${formbilldetails.medicalfee}">
 	<span class="err"><form:errors path="Formbill.medicalfee"></form:errors></span>
-				  <span class="err" id="amountdeducterror"></span></h4></p></td>
+		<br><font size="+1" color="red"> <span  id="amountdeducterror"></span></font></h4></p></td>
         	  <td>
         	  </td>
         	  </tr>
@@ -339,7 +339,7 @@ function validatename(id){
        		 <table cellpadding="0" cellspacing="0" border="0" width="100%">
         	  <tr><td><p align="left" id="mypar"> <b>Notice is made of final outstanding amounts owed for medical fees rendered by the above of $ <input type="text" class="input_txtbx1" name="amount" id="amount" onkeypress="return validate(event)"; value="${formbilldetails.amount}">
 	<span class="err"><form:errors path="Formbill.amount"></form:errors></span>
-				  <span class="err" id="number"></span></b></p></td>
+				<font size="+1" color="red">  <span id="number"></span></font></b></p></td>
         	  <td>
         	  </td>
         	  </tr>        	 
@@ -360,7 +360,7 @@ function validatename(id){
 <p align="right">Perry Chiropractic & Therapy Center of Canton, Inc
 	</p>
 
-<p align="right">&Dr. Charles T. Yang D.C.
+<p align="right">&Dr. Darrin A. Pordash, D.C.
 	</p>
 	
 <br>				</td></tr></table>

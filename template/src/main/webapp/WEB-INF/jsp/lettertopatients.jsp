@@ -372,6 +372,13 @@ function checkSubmit()
 	document.getElementById("ssnerror").innerHTML="Invalid social security number format";
 	return false;
 	}
+var phoneno = /^\(?([0-9]{3})\)?[-]?([0-9]{2})[-]?([0-9]{4})$/;      
+    if(document.getElementById("ssn").value.match(phoneno)==null)
+    {
+    	document.getElementById("ssnerror").innerHTML="Invalid SSN Format";
+    	
+        return false;
+    }
 	document.getElementById("ssnerror").innerHTML="";
 	var txt1=document.getElementById("ssn").value;
 	var txt2=txt1.substring(0,3);

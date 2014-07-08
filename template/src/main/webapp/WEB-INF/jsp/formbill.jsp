@@ -459,14 +459,14 @@ function openWindow(h, w, url) {
                 <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr ><td width="400"></td>
               <td height="25" width="50"><span class="err">*</span> Date:</td>
-              <td ><input type="text" class="input_txtbx1" name="date" id="datepicker"  /><span class="err" id="datepickererror"><form:errors path="Formbill.date"></form:errors></span></td>
+              <td ><input type="text" class="input_txtbx1" name="date" id="datepicker"  /><br><font size="+1" color="red"><span id="datepickererror"><form:errors path="Formbill.date"></form:errors></span></font></td>
               </tr>
               </table><br>
             
                 <table align="center" cellpadding="0" cellspacing="0" border="0"   width="100%"  ">
               <tr >
              <td height="25" width="40%"><span class="err">*</span> Insurance Company:</td>
-              <td ><input type="text" class="input_txtbx1" name="insurance" id="insurance" onInput="return validatename(id)";/><span class="err" id="insuranceerror"><form:errors path="Formbill.insurance"></form:errors></span></td>
+              <td ><input type="text" class="input_txtbx1" name="insurance" id="insurance" onInput="return validatename(id)";/><br><font size="+1" color="red"><span id="insuranceerror"><form:errors path="Formbill.insurance"></form:errors></span></font></td>
               </tr>
               </table>
               <br>
@@ -480,7 +480,7 @@ function openWindow(h, w, url) {
                <table align="center" cellpadding="0" cellspacing="0" border="0"   width="100%"  ">
               <tr ><br>
              <td height="25" width="40%"><span class="err">*</span> Name Of Attorney:</td>
-              <td ><input type="text" class="input_txtbx1" name="name" id="name" onInput="return validatename(id)";/><span class="err" id="nameerror"><form:errors path="Formbill.name"></form:errors></span></td>
+              <td ><input type="text" class="input_txtbx1" name="name" id="name" onInput="return validatename(id)";/><br><font size="+1" color="red"><span  id="nameerror"></font><form:errors path="Formbill.name"></form:errors></span></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -493,7 +493,7 @@ function openWindow(h, w, url) {
                 <table align="center" cellpadding="0" cellspacing="0" border="0"   width="100%"  ">
               <tr >
              <td height="25" width="40%"><span class="err">*</span> Patient Name</td>
-              <td ><input type="text" class="input_txtbx1" name="patientsname" id="patientsname" onInput="return validatename(id)";/><span class="err" id="pnameerror"><form:errors path="Formbill.patientsname"></form:errors></span></td>
+              <td ><input type="text" class="input_txtbx1" name="patientsname" id="patientsname" onInput="return validatename(id)";/><br><font size="+1" color="red"><span  id="pnameerror"><form:errors path="Formbill.patientsname"></form:errors></span></font></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -505,15 +505,15 @@ function openWindow(h, w, url) {
               
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
         	  <tr><td><p align="left" id="mypar"><b><h4>RE:</b>&nbsp;&nbsp;&nbsp;&nbsp; Notice of Final Outstanding Amount Owed;Medical Fees of $ <input type="text" class="input_txtbx1" onkeypress="return validate(event)"; name="medicalfee" id="medicalfee">
-	<span class="err" id="med1"><form:errors path="Formbill.medicalfee"></form:errors></span>
-				  <span class="err" id="amountdeducterror"></span></h4></p></td>
+	<font size="+1" color="red"><span  id="med1"><form:errors path="Formbill.medicalfee"></form:errors></span>
+				  <span  id="amountdeducterror"></span></font></h4></p></td>
         	  <td>
         	  </td>
         	  </tr>
        		  </table>
        		 <table cellpadding="0" cellspacing="0" border="0" width="100%">
         	  <tr><td><p align="left" id="mypar"> <b>Notice is made of final outstanding amounts owed for medical fees rendered by the above of $ <input type="text" class="input_txtbx1" name="amount" onkeypress="return validate(event)"; id="amount">
-	<span class="err" id="med2"><form:errors path="Formbill.amount"></form:errors></span>
+	<font size="+1" color="red"><span id="med2"></font><form:errors path="Formbill.amount"></form:errors></span>
 				  <span class="err" id="number"></span></b></p></td>
         	  <td>
         	  </td>
@@ -535,8 +535,7 @@ function openWindow(h, w, url) {
 <p align="right">Perry Chiropractic & Therapy Center of Canton, Inc
 	</p>
 
-<p align="right">&Dr. Charles T. Yang D.C.
-	</p>
+<p align="right">&Dr. Darrin A. Pordash, D.C.</p>
 	
 <br>				</td></tr></table>
 

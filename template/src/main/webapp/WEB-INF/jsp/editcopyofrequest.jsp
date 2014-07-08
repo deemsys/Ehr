@@ -251,11 +251,11 @@ return false;
 	            <div class="headings altheading">
 	            <center> <h2>PERRY CHIROPRACTIC & THERAPY CENTER OF CANTON, INC.</h2> </center><br/>
 	            </div>
-	            <div class="contentbox"><center> Dr. Charles T. Yang, DC, DABFP </center><br/>
-	            <center> 4933 West Tuscarawas Street </center><br/>
-	            <center> Canton, Ohio 44708 </center><br/>
-	            <center> Phone (330) 477-3036    Fax  (330) 477-3037 </center><br/>
-	            <center> Tax ID#:  26-0101968 </center><br/>
+	            <div class="contentbox"><center>Dr. Darrin A. Pordash, D.C. </center><br/>
+	            <center> 5190 Detroit Road</center><br/>
+	            <center>The Sheffield Village Plaza</center><br/>
+	            <center>Sheffield Village, OH 44035 </center><br/>
+	            <center>Phone (440) 934-3099 Fax (440) 934-3107</center><br/>
 	            <center> <B style="font-size:18px">Requesting Fee Reduction from Attorney/Adjuster</B> </center><br/>
           <table cellpadding="0" cellspacing="0" border="0" width="70%" align="center">
           <tr height="30">
@@ -268,17 +268,17 @@ return false;
           <td><textarea rows="4" cols="43"  class="input_txtarea" name="address" id="address">${copyofrequest.address}</textarea><br/><span class="err"><form:errors path="Copyofrequest.address"></form:errors></span></td>
           </tr>
           <tr height="30">
-          <td>&nbsp;Regarding: </td>
-          <td><input type="text" class="input_txtbx1" name="regarding" id="regarding" size="40" value="${copyofrequest.regarding }" onInput="return validatename(id)";><br/><span class="err" id="regardingerror"></span></td>
+          <td><span class="err">*</span>&nbsp;&nbsp;Regarding: </td>
+          <td><input type="text" class="input_txtbx1" name="regarding" id="regarding" size="40" value="${copyofrequest.regarding }" onInput="return validatename(id)";><br/><font size="+1" color="red"><span  id="regardingerror"></span></font></td>
           </tr>
           <tr height="30">
           <td><span class="err">*</span> Date of Accident: </td>
-          <td><input type="text"  class="input_txtbx1" name="dateofaccident" id="datepicker" size="40" value="${copyofrequest.dateofaccident}"><br/><span class="err" id="datepickererror"></span></td>
+          <td><input type="text"  class="input_txtbx1" name="dateofaccident" id="datepicker" size="40" value="${copyofrequest.dateofaccident}"><br/><font size="+1" color="red"><span  id="datepickererror"></span></font></td>
           </tr>
           <br>
           <tr height="30">
           <td><span class="err">*</span> Claim Number: </td>
-          <td><input type="text" class="input_txtbx1" name="claimnumber" onInput="return validateusername()";size="40" value="${copyofrequest.claimnumber }" id="claimnumber"><br/><span class="err" id="claimnumbererror"  style="color: red;font-style:italic;"><form:errors path="Copyofrequest.claimnumber"></form:errors></span></td>
+          <td><input type="text" class="input_txtbx1" name="claimnumber" onInput="return validateusername()";size="40" value="${copyofrequest.claimnumber }" id="claimnumber"><br/><font size="+1" color="red"><span  id="claimnumbererror"  style="color: red;font-style:italic;"></font><form:errors path="Copyofrequest.claimnumber"></form:errors></span></td>
           </tr>
           <tr height="30">
           <td>&nbsp;Today's Date:  </td>
@@ -287,8 +287,8 @@ return false;
           </table>
           <table width="100%">
           <tr height="30">
-          <td width="40"><span class="err" id="dearerror"  style="color: red;font-style:italic;">*</span>&nbsp;&nbsp;Dear  </td>
-          <td><input type="text"  class="input_txtbx1" name="dear"  size="40" value="${copyofrequest.dear}" id="dear" onInput="return validatename(id)";></td>
+          <td width="40"><span  class="err"  style="color: red;font-style:italic;">*</span>&nbsp;&nbsp;Dear  </td>
+          <td><input type="text"  class="input_txtbx1" name="dear"  size="40" value="${copyofrequest.dear}" id="dear" onInput="return validatename(id)";><br><font size="+1" color="red"><span id="dearerror"></span></font></td>
           </tr>
           </table>
           <br/>
@@ -309,9 +309,9 @@ return false;
           </div>
           <div align="right">
           <p><B style="font-size:13px">Very truly yours,</B></p>
-          <p><span class="err">*</span><input type="text"  class="input_txtbx1" name="sign" size="30" value="${copyofrequest.sign}" id="sign" onInput="return validatename(id)";><span class="err" id="signerror"  style="color: red;font-style:italic;"><form:errors path="Copyofrequest.sign"></form:errors></span></p>
+          <p><span class="err">*</span><input type="text"  class="input_txtbx1" name="sign" size="30" value="${copyofrequest.sign}" id="sign" onInput="return validatename(id)";><br><font size="+1"><span  id="signerror"  style="color: red;font-style:italic;"></font><form:errors path="Copyofrequest.sign"></form:errors></span></p>
           <p>Perry Chiropractic and Therapy Center of Canton, Inc.</p>
-          <p>Dr. Charles T. Yang DC, DABFP</p>
+          <p>Dr. Darrin A. Pordash, D.C.</p>
           </div>
  <table align="right">
 <tr>

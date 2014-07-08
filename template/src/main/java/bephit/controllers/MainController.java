@@ -4281,7 +4281,7 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
 		model.addAttribute("menu", "patientInfo");
 		List<String> symptom=new ArrayList<String>();
-		symptom=patientDAO.getsymptomdetails(patient_id);
+		symptom=patientDAO.getusernamesymptomdetails(patient_id);
 		System.out.println(symptom);
 		model.addAttribute("symptom",symptom);
 		
@@ -4336,7 +4336,7 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 		model.addAttribute("currentuser",request.getSession().getAttribute("currentuser"));
 		//model.addAttribute("menu", "search");
 		List<String> symptom=new ArrayList<String>();
-		symptom=patientDAO.getsymptomdetails(patient_id);
+		symptom=patientDAO.getusernamesymptomdetails(patient_id);
 		System.out.println(symptom);
 		model.addAttribute("symptom",symptom);
 		
@@ -4425,7 +4425,7 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 		//RadiologicReportForm radiologicReportForm = new RadiologicReportForm();
       	PatientDetailsForm patientdetailsform = new PatientDetailsForm();
 		List<String> symptom=new ArrayList<String>();
-		symptom=patientDAO.getsymptomdetails(patient_id);
+		symptom=patientDAO.getusernamesymptomdetails(patient_id);
 		System.out.println(symptom);
 		model.addAttribute("symptom",symptom);
 		

@@ -228,7 +228,7 @@ $(function() {
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr><td width="375"></td>
               <td><span class="err">*</span> Date</td>
-              <td ><input type="hidden" name="letterid" value="${letterofprotectiondetails.letterid }"><input type="text" class="input_txtbx1" name="date" value="${letterofprotectiondetails.date }" id="datepicker" /><span class="err" id="derr"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td ><input type="hidden" name="letterid" value="${letterofprotectiondetails.letterid }"><input type="text" class="input_txtbx1" name="date" value="${letterofprotectiondetails.date }" id="datepicker" /><br><font size="+1" color="red"><span  id="derr"></font><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>
                <br><br><br>
@@ -236,12 +236,12 @@ $(function() {
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25"  width="160"><span class="err">*</span> D.C:</td>
-               <td ><input type="text" class="input_txtbx1" name="dc" value="${letterofprotectiondetails.dc}" id="dcr" onInput="return validatename(id)";/><span class="err" id="dcerr"><form:errors path="Hardshipagreement.date"></form:errors></td>
+               <td ><input type="text" class="input_txtbx1" name="dc" value="${letterofprotectiondetails.dc}" id="dcr" onInput="return validatename(id)";/><br><font size="+1" color="red"><span  id="dcerr"></span></font><form:errors path="Hardshipagreement.date"></form:errors></td>
              
               </tr>
               <tr>
               <td height="25" width="160"><span class="err">*</span> Clinic Name:</td>
-               <td ><input type="text" class="input_txtbx1" name="clinicname" value="${letterofprotectiondetails.clinicname}" id="clinicname" onInput="return validatename(id)";/><span class="err" id="clerr"><form:errors path="Hardshipagreement.date"></form:errors></td>
+               <td ><input type="text" class="input_txtbx1" name="clinicname" value="${letterofprotectiondetails.clinicname}" id="clinicname" onInput="return validatename(id)";/><br><font size="+1" color="red"><span  id="clerr"></span></font><form:errors path="Hardshipagreement.date"></form:errors></td>
              
               </tr>
              </table>
@@ -259,15 +259,15 @@ $(function() {
              
               </tr>
               <tr>
-              <td height="25"  width="160"><span class="err">*</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date Of Accident:</td>
-               <td ><input type="text" class="input_txtbx1" name="dateofaccident" value="${letterofprotectiondetails.dateofaccident}"  id="datepicker1" /><span class="err" id="daerr"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td height="25"  width="160"><span class="err">*</span>&nbsp;&nbsp;Date Of Accident:</td>
+               <td ><input type="text" class="input_txtbx1" name="dateofaccident" value="${letterofprotectiondetails.dateofaccident}"  id="datepicker1" /><br><font size="+1" color="red"><span id="daerr"></span></font><form:errors path="Hardshipagreement.date"></form:errors></td>
              
               </tr>
              </table><br><br>
              <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td  width="62"><span class="err">*</span> Dear Dr</td>
-              <td  height="25" width="160" ><input type="text" class="input_txtbx1" name="dearsir" value="${letterofprotectiondetails.dearsir}"  id="dearsir" onInput="return validatename(id)";/><span class="err" id="suberr"><form:errors path="noticeofassignment.address"></form:errors>
+              <td  height="25" width="160" ><input type="text" class="input_txtbx1" name="dearsir" value="${letterofprotectiondetails.dearsir}"  id="dearsir" onInput="return validatename(id)";/><br><font size="+1" color="red"><span  id="suberr"></font><form:errors path="noticeofassignment.address"></form:errors>
            </span></td></tr>	
              </table>
              <table>
@@ -293,7 +293,7 @@ $(function() {
              <tr><td width="450"></td>
              <td ><p><h1> <b>Very truly yours,</b></h1><p></td></tr>
              <tr><td width="450"></td>
-            <td ><span class="err">*</span><input type="text" class="input_txtbx1" name="esq" value="${letterofprotectiondetails.esq}"    id="esq" onInput="return validatename(id)";/><span class="err" id="esqerr"><form:errors path="Hardshipagreement.date"></form:errors></td></tr>
+            <td ><span class="err">*</span><input type="text" class="input_txtbx1" name="esq" value="${letterofprotectiondetails.esq}"    id="esq" onInput="return validatename(id)";/><br><font size="+1" color="red"><span  id="esqerr"></span></font><form:errors path="Hardshipagreement.date"></form:errors></td></tr>
             <tr><td width="450"></td><td ><p><h1> <b>	Attorney for above client</b></h1><p></td></tr>
              </table>
               <table>

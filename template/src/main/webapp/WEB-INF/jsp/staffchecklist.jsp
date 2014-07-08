@@ -97,13 +97,14 @@
 
 	function checkSubmit()
 	{
+		var error="";
 		document.getElementById("pat_nameerror").innerHTML=" ";
 		
 		if(document.getElementById("pat_name").value=="")
 		{
 		document.getElementById("pat_nameerror").innerHTML="Required Field Should not be Empty";
 		
-		return false;
+		error="true";
 		}
 		document.getElementById("pat_nameerror").innerHTML=" ";
 		
@@ -111,7 +112,7 @@
 		{
 		document.getElementById("pat_nameerror").innerHTML="Invalid space format";
 		
-		return false;
+		error="true";
 		}
 		document.getElementById("pat_nameerror").innerHTML="";
 	    if(document.getElementById("pat_name").value.length<4 || document.getElementById("pat_name").value.length>=32)
@@ -119,7 +120,7 @@
 	    	
 	    	document.getElementById("pat_nameerror").innerHTML="Name should be min 4 and max 32";
 	    	
-	        return false;
+	        error="true";
 	    }
 		
 		document.getElementById("insureerror").innerHTML="";
@@ -127,14 +128,14 @@
 		{
 		document.getElementById("insureerror").innerHTML="Required Field Should not be Empty";
 		
-		return false;
+		error="true";
 		}
 	 document.getElementById("insureerror").innerHTML="";
 	if(document.getElementById("insure").value.substring(0,1)==" ")
 		{
 		document.getElementById("insureerror").innerHTML="Invalid space format";
 		
-		return false;
+		error="true";
 		}
 		document.getElementById("insureerror").innerHTML="";
 	    if(document.getElementById("insure").value.length<4 || document.getElementById("insure").value.length>=32)
@@ -142,21 +143,21 @@
 	    	
 	    	document.getElementById("insureerror").innerHTML="Name should be min 4 and max 32";
 	    	
-	        return false;
+	        error="true";
 	    }
 	document.getElementById("damageamterror").innerHTML="";
 	if(document.getElementById("damageamt").value=="")
 	{
 	document.getElementById("damageamterror").innerHTML="Required Field Should not be Empty";
 	
-	return false;
+	error="true";
 	}
 	 document.getElementById("damageamterror").innerHTML="";
 	if(document.getElementById("damageamt").value.substring(0,1)==" ")
 		{
 		document.getElementById("damageamterror").innerHTML="Invalid space format";
 		
-		return false;
+		error="true";
 		}
 	document.getElementById("damageamterror").innerHTML="";
     if(document.getElementById("damageamt").value.length<4 || document.getElementById("damageamt").value.length>=32)
@@ -164,21 +165,21 @@
     	
     	document.getElementById("damageamterror").innerHTML="Name should be min 4 and max 32";
     	
-        return false;
+        error="true";
     }
 	document.getElementById("fault_insureerror").innerHTML="";
 	if(document.getElementById("fault_insure").value=="")
 	{
 	document.getElementById("fault_insureerror").innerHTML="Required Field Should not be Empty";
 	
-	return false;
+	error="true";
 	}
 	document.getElementById("fault_insureerror").innerHTML="";
 	if(document.getElementById("fault_insure").value.substring(0,1)==" ")
 		{
 		document.getElementById("fault_insureerror").innerHTML="Invalid space format";
 		
-		return false;
+		error="true";
 		}
 	document.getElementById("fault_insureerror").innerHTML="";
     if(document.getElementById("fault_insure").value.length<4 || document.getElementById("fault_insure").value.length>=32)
@@ -186,21 +187,21 @@
     	
     	document.getElementById("fault_insureerror").innerHTML="Name should be min 4 and max 32";
     	
-        return false;
+        error="true";
     }
 	document.getElementById("med_payerror").innerHTML="";
 	if(document.getElementById("med_pay").value=="")
 	{
 	document.getElementById("med_payerror").innerHTML="Required Field Should not be Empty";
 	
-	return false;
+	error="true";
 	}
 	document.getElementById("med_payerror").innerHTML="";
 	if(document.getElementById("med_pay").value.substring(0,1)==" ")
 		{
 		document.getElementById("med_payerror").innerHTML="Invalid space format";
 		
-		return false;
+		error="true";
 		}
 	document.getElementById("med_payerror").innerHTML="";
     if(document.getElementById("med_pay").value.length<4 || document.getElementById("med_pay").value.length>=32)
@@ -208,21 +209,21 @@
     	
     	document.getElementById("med_payerror").innerHTML="Name should be min 4 and max 32";
     	
-        return false;
+        error="true";
     }
 	document.getElementById("other_attorneyerror").innerHTML="";
 	if(document.getElementById("other_attorney").value=="")
 	{
 	document.getElementById("other_attorney").innerHTML="Required Field Should not be Empty";
 	
-	return false;
+	error="true";
 	}
 	document.getElementById("other_attorneyerror").innerHTML="";
 	if(document.getElementById("other_attorney").value.substring(0,1)==" ")
 		{
 		document.getElementById("other_attorneyerror").innerHTML="Invalid space format";
 		
-		return false;
+		error="true";
 		}
 	document.getElementById("other_attorneyerror").innerHTML="";
     if(document.getElementById("other_attorney").value.length<4 || document.getElementById("other_attorney").value.length>=32)
@@ -230,7 +231,7 @@
     	
     	document.getElementById("other_attorneyerror").innerHTML="Name should be min 4 and max 32";
     	
-        return false;
+        error="true";
     }
 	
 	document.getElementById("protect_receivederror").innerHTML="";
@@ -238,14 +239,14 @@
 	{
 	document.getElementById("protect_receivederror").innerHTML="Required Field Should not be Empty";
 	
-	return false;
+	error="true";
 	}
 	document.getElementById("protect_receivederror").innerHTML="";
 	if(document.getElementById("protect_received").value.substring(0,1)==" ")
 		{
 		document.getElementById("protect_receivederror").innerHTML="Invalid space format";
 		
-		return false;
+		error="true";
 		}
 	document.getElementById("protect_receivederror").innerHTML="";
     if(document.getElementById("protect_received").value.length<4 || document.getElementById("protect_received").value.length>=32)
@@ -253,38 +254,43 @@
     	
     	document.getElementById("protect_receivederror").innerHTML="Name should be min 4 and max 32";
     	
-        return false;
+        error="true";
     }
 	document.getElementById("datepickererror").innerHTML="";
-	if(document.getElementById("datepicker").value=="")
-	{
-	document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
 	
-	return false;
-	}
-	document.getElementById("datepickererror").innerHTML="";
+	
 	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 	if(document.getElementById("datepicker").value.match(datechk)==null)
     {
     	document.getElementById("datepickererror").innerHTML="Invalid Date Format";
     	
-        return false;
+        error="true";
     }	
-	document.getElementById("datepicker1error").innerHTML="";
-	if(document.getElementById("datepicker1").value=="")
+	if(document.getElementById("datepicker").value=="")
 	{
-	document.getElementById("datepicker1error").innerHTML="Required Field Should not be Empty";
+	document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
 	
-	return false;
+	error="true";
 	}
 	document.getElementById("datepicker1error").innerHTML="";
+	
 	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 	if(document.getElementById("datepicker1").value.match(datechk)==null)
     {
     	document.getElementById("datepicker1error").innerHTML="Invalid Date Format";
     	
-        return false;
-    }	
+        error="true";
+    }
+	if(document.getElementById("datepicker1").value=="")
+	{
+	document.getElementById("datepicker1error").innerHTML="Required Field Should not be Empty";
+	
+	error="true";
+	}
+	if(error=="true")
+	{
+		return false;
+	}
 	}
 
 	</script>
@@ -621,7 +627,7 @@ popupWindow = window.open(url,"symptompopUpWindow" ,'width=1500,height=700,resiz
               <tr class="row1">
               <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Patient Name</td>
 			  <td valign="top" align="left" class="input_txt">
-		      <input type="text" class="input_txtbx1" id="pat_name" name="pat_name"  value="${patientname}" onInput="return validatename()";/><span class="err" id="pat_nameerror"><form:errors path="Staffchecklist.pat_name"></form:errors>
+		      <input type="text" class="input_txtbx1" id="pat_name" name="pat_name"  value="${patientname}" onInput="return validatename()";/><br><font size="+1" color="red" ><span  id="pat_nameerror"><form:errors path="Staffchecklist.pat_name"></form:errors></font>
 		      </td>
 			  </tr>
 			  <!-- </table>
@@ -630,51 +636,50 @@ popupWindow = window.open(url,"symptompopUpWindow" ,'width=1500,height=700,resiz
 			  <tr class="row1">
               <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Insurance/Attorney</td>
 			  <td valign="top" align="left" class="input_txt">
-		      <input type="text" class="input_txtbx1" id="insure" name="insure" onInput="return validatename1()";/><span class="err" id="insureerror"><form:errors path="Staffchecklist.insure"></form:errors>
+		      <input type="text" class="input_txtbx1" id="insure" name="insure" onInput="return validatename1()";/><br><font size="+1" color="red" ><span  id="insureerror"><form:errors path="Staffchecklist.insure"></form:errors></span></font>
 		      </td>
 			  </tr>
 			  <tr class="row1">
               <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Damage Amount</td>
 			  <td valign="top" align="left" class="input_txt">
-		      <input type="text" class="input_txtbx1" id="damageamt" name="damage_amount" onkeypress="return validate(event)"; /><span class="err" id="damageamterror"><form:errors path="Staffchecklist.damage_amount"></form:errors></span>
-		     <br>
-		      <span class="err" id="damageamterror"> </span>
+		      <input type="text" class="input_txtbx1" id="damageamt" name="damage_amount" onkeypress="return validate(event)"; /><br><font size="+1" color="red" ><span  id="damageamterror"><form:errors path="Staffchecklist.damage_amount"></form:errors></span></font>
+		        <span class="err" id="damageamterror"> </span>
 		      </td>
 			  </tr>
 			  <tr class="row1">
               <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Notice of Assignment to Fault Insurance</td>
 			  <td valign="top" align="left" class="input_txt">
-		      <input type="text" class="input_txtbx1" id="fault_insure" name="fault_insure" onInput="return validatename2()";/><span class="err" id="fault_insureerror"><form:errors path="Staffchecklist.fault_insure"></form:errors>
+		      <input type="text" class="input_txtbx1" id="fault_insure" name="fault_insure" onInput="return validatename2()";/><br><font size="+1" color="red" ><span  id="fault_insureerror"><form:errors path="Staffchecklist.fault_insure"></form:errors></span></font>
 		      </td>
 			  </tr>
 			  <tr class="row1">
               <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Notice of Assignment to Med Pay</td>
 			  <td valign="top" align="left" class="input_txt">
-		      <input type="text" class="input_txtbx1" id="med_pay" name="med_pay" onInput="return validatename3()";/><span class="err" id="med_payerror"><form:errors path="Staffchecklist.med_pay"></form:errors>
+		      <input type="text" class="input_txtbx1" id="med_pay" name="med_pay" onInput="return validatename3()";/><br><font size="+1" color="red" ><span id="med_payerror"><form:errors path="Staffchecklist.med_pay"></form:errors></span></font>
 		      </td>
 			  </tr>
 			  <tr class="row1">
               <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Notice of Assignment to other Attorney</td>
 			  <td valign="top" align="left" class="input_txt">
-		      <input type="text" class="input_txtbx1" id="other_attorney" name="other_attorney" onInput="return validatename4()";/><span class="err" id="other_attorneyerror"><form:errors path="Staffchecklist.other_attorney"></form:errors>
+		      <input type="text" class="input_txtbx1" id="other_attorney" name="other_attorney" onInput="return validatename4()";/><br><font size="+1" color="red" ><span id="other_attorneyerror"><form:errors path="Staffchecklist.other_attorney"></form:errors></span></font>
 		      </td>
 			  </tr>
 			  <tr class="row1">
               <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Attorney Letter of Protection Received</td>
 			  <td valign="top" align="left" class="input_txt">
-		      <input type="text" class="input_txtbx1" id="protect_received" name="protect_received" onInput="return validatename5()";/><span class="err" id="protect_receivederror"><form:errors path="Staffchecklist.protect_received"></form:errors>
+		      <input type="text" class="input_txtbx1" id="protect_received" name="protect_received" onInput="return validatename5()";/><br><font size="+1" color="red" ><span  id="protect_receivederror"><form:errors path="Staffchecklist.protect_received"></form:errors></span></font>
 		      </td>
 			  </tr>
 			  <tr class="row1">
               <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Amount & Dated Billed</td>
 			  <td valign="top" align="left" class="input_txt">
-		      <input type="text" class="input_txtbx1" name="bill" id="datepicker" /><span class="err" id="datepickererror"><form:errors path="Staffchecklist.bill"></form:errors>
+		      <input type="text" class="input_txtbx1" name="bill" id="datepicker" /><br><font size="+1" color="red" ><span id="datepickererror"><form:errors path="Staffchecklist.bill"></form:errors></span></font>
 		      </td>
 			  </tr>
 			  <tr class="row1">
               <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Reimbursement Date</td>
 			  <td valign="top" align="left" class="input_txt">
-		      <input type="text" class="input_txtbx1" name="re_date" id="datepicker1" /><span class="err" id="datepicker1error"><form:errors path="Staffchecklist.re_date"></form:errors>
+		      <input type="text" class="input_txtbx1" name="re_date" id="datepicker1" /><br><font size="+1" color="red" ><span id="datepicker1error"><form:errors path="Staffchecklist.re_date"></form:errors></span></font>
 		      </td>
 			  </tr>
 			  </table>

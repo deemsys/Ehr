@@ -172,13 +172,14 @@ function validateusername1(){
 
 	function checkSubmit()
 	{
+		var error="";
 		document.getElementById("datepickererror").innerHTML=" ";
 		
 		if(document.getElementById("datepicker").value=="")
 		{
 		document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
 		
-		return false;
+		error="true";
 		}
 		document.getElementById("datepickererror").innerHTML="";
 		 var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
@@ -186,7 +187,7 @@ function validateusername1(){
     	{
     	document.getElementById("datepickererror").innerHTML="Invalid Date Format";
     	
-        return false;
+        error="true";
     	}	
 
   
@@ -196,20 +197,28 @@ function validateusername1(){
 		{
 		document.getElementById("toserror").innerHTML="Required Field Should not be Empty";
 		
-		return false;
+		error="true";
 		}
-		
 		document.getElementById("faxnoerror").innerHTML="";
+		var phoneno = /^\(?[(]??([0-9]{3})\)?[)]?([0-9]{3})[-]?([0-9]{4})$/;  
+    if(document.getElementById("faxno").value!=""){
+	    if(document.getElementById("faxno").value.match(phoneno)==null)
+	    {
+	    	document.getElementById("faxnoerror").innerHTML="Invalid phone Format";
+	    	
+	        error="true";
+	    }
+		}
 	   if(document.getElementById("faxno").value!="")
 	   {
 		if(document.getElementById("faxno").value.length<13)
 		{
 		document.getElementById("faxnoerror").innerHTML="Invalid phone number format";
-		return false;
+		error="true";
 		
 		}
 	   }
-		document.getElementById("faxnoerror").innerHTML="";
+		
 		if(document.getElementById("faxno").value!="")
 		{
 		
@@ -218,7 +227,7 @@ function validateusername1(){
 	   var txt3=txt1.substring(5,8);
 	     if(txt2==000 && txt3==000){
 	   document.getElementById("faxnoerror").innerHTML="Invalid phone number format";
-		return false;
+		error="true";
 		}
 		
 		}
@@ -227,7 +236,7 @@ function validateusername1(){
 	{
 	document.getElementById("fromerror").innerHTML="Required Field Should not be Empty";
 	
-	return false;
+	error="true";
 	}
 	
 	document.getElementById("msgerror").innerHTML="";
@@ -235,14 +244,14 @@ function validateusername1(){
 	{
 	document.getElementById("msgerror").innerHTML="Required Field Should not be Empty";
 	
-	return false;
+	error="true";
 	}
 	document.getElementById("claimnoerror").innerHTML="";
 	if(document.getElementById("claimno").value=="")
 	{
 	document.getElementById("claimnoerror").innerHTML="Required Field Should not be Empty";
 	
-	return false;
+	error="true";
 	}
 	
 	document.getElementById("datepicker1error").innerHTML="";
@@ -250,7 +259,7 @@ function validateusername1(){
 	{
 	document.getElementById("datepicker1error").innerHTML="Required Field Should not be Empty";
 	
-	return false;
+	error="true";
 	}
   document.getElementById("datepicker1error").innerHTML="";
 	 var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
@@ -258,11 +267,14 @@ function validateusername1(){
     {
     	document.getElementById("datepicker1error").innerHTML="Invalid Date Format";
     	
-        return false;
+        error="true";
     }	
 
-	
-	
+	if(error=="true")
+
+		{
+		return false;
+		}
 	}
 
 	</script>
@@ -492,46 +504,46 @@ document.getElementById("faxno").value=phone;
 	            <div class="contentbox">
 	             <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr ><td width="260"></td>
-              <td ><b>Dr. Charles T. Yang, DC, DABFP</b></td>
+              <td ><b>Dr. Darrin A. Pordash, D.C.</b></td>
               </tr>
               <tr ><td width="260"></td>
-              <td ><b>4933 West Tuscarawas Street </b></td>
+              <td ><b>5190 Detroit Road </b></td>
               </tr>
                <tr ><td width="260"></td>
-              <td ><b>Canton, Ohio 44708</b></td>
+              <td ><b>The Sheffield Village Plaza</b></td>
               </tr>
               <tr ><td width="260"></td>
-              <td ><b>(330) 477-3036 Phone</b></td>
+              <td ><b>Sheffield Village, OH 44035</b></td>
               </tr>
              
               <tr ><td width="260"></td>
-              <td ><b>(330) 477-3037 Fax  </b></td>
+              <td ><b>Phone (440) 934-3099 Fax (440) 934-3107 </b></td>
               </tr>
               </table><br><br>
        		<table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="120"><span class="err">*</span>Today's Date:</td>
-              <td ><input type="text" class="input_txtbx1" name="date" id="datepicker" style="width: 164px; "/><span class="err" id="datepickererror"><form:errors path="Faxcover.date"></form:errors></td>
+              <td height="25" width="120"><span class="err">*</span>&nbsp;Today's Date:</td>
+              <td ><input type="text" class="input_txtbx1" name="date" id="datepicker" style="width: 164px; "/><br><font size="+1" color="red"><span id="datepickererror"></font><form:errors path="Faxcover.date"></form:errors></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="120"><span class="err">*</span>To:</td>
-              <td ><input type="text" class="input_txtbx1" name="tos" id="tos" style="width: 164px; " onInput="return validatename(id)";/><span class="err" id="toserror"><form:errors path="Faxcover.tos"></form:errors></td>
+              <td height="25" width="120"><span class="err">*</span>&nbsp;To:</td>
+              <td ><input type="text" class="input_txtbx1" name="tos" id="tos" style="width: 164px; " onInput="return validatename(id)";/><br><font size="+1" color="red"><span  id="toserror"><form:errors path="Faxcover.tos"></form:errors></span></font></td>
               </tr>
               </table>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err"></span>Fax#:</td>
-              <td ><input type="text" class="input_txtbx1" name="faxno" id="faxno" maxlength=13 onInput="return validateusername()"; onkeypress="return validate(event)"; style="width: 164px; "/><span class="err" id="faxnoerror"><form:errors path="Faxcover.faxno"></form:errors>
+              <td ><input type="text" class="input_txtbx1" name="faxno" placeholder="(000)000-0000" id="faxno" maxlength=13 onInput="return validateusername()"; onkeypress="return validate(event)"; style="width: 164px; "/><br><font size="+1" color="red"><span  id="faxnoerror"></span></font><form:errors path="Faxcover.faxno"></form:errors>
               </span><span class="err" id="faxerror"></span>
               </td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="120"><span class="err">*</span>From:</td>
-              <td ><input type="text" class="input_txtbx1" name="froms" id="froms" style="width: 164px; " onInput="return validatename(id)";/><span class="err" id="fromerror"><form:errors path="Faxcover.froms"></form:errors></td>
+              <td height="25" width="120"><span class="err">*</span>&nbsp;From:</td>
+              <td ><input type="text" class="input_txtbx1" name="froms" id="froms" style="width: 164px; " onInput="return validatename(id)";/><br><font size="+1" color="red"><span  id="fromerror"></span></font><form:errors path="Faxcover.froms"></form:errors></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -556,17 +568,17 @@ document.getElementById("faxno").value=phone;
               </tr>
              
               <tr>
-              <td height="25" width="20%"><span class="err">*</span>Message:</td>
-              <td style="width: 215px; "><input type="text" class="input_txtbx1" name="msg" id="msg" style="width: 164px; " onInput="return validatename(id)";/><span class="err" id="msgerror"><form:errors path="Faxcover.msg"></form:errors></td>
-            <td align="left" style="width: 132px; "><span class="err">*</span>Claim Number:</td>
-              <td ><input type="text" class="input_txtbx1" name="claimno" id="claimno" onInput="return validateusername1()"; style="width: 163px; "/><span class="err" id="claimnoerror"><form:errors path="Faxcover.claimno"></form:errors>
+              <td height="25" width="20%"><span class="err">*</span>&nbsp;Message:</td>
+              <td style="width: 215px; "><input type="text" class="input_txtbx1" name="msg" id="msg" style="width: 164px; " onInput="return validatename(id)";/><br><font size="+1" color="red"><span  id="msgerror"><form:errors path="Faxcover.msg"></form:errors></span></font></td>
+            <td align="left" style="width: 132px; "><span class="err">*</span>&nbsp;Claim Number:</td>
+              <td ><input type="text" class="input_txtbx1" name="claimno" id="claimno" onInput="return validateusername1()"; style="width: 163px; "/><br><font size="+1" color="red"><span id="claimnoerror"></span></font><form:errors path="Faxcover.claimno"></form:errors>
               </span><span class="err" id="number"></span></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="20%"><span class="err">*</span> DOI</td>
-              <td height="25" width="45%"><input type="text" class="input_txtbx1" name="doi" id="datepicker1" style="width: 164px; "/><span class="err" id="datepicker1error"><form:errors path="Faxcover.msg"></form:errors></td>
+              <td height="25" width="45%"><input type="text" class="input_txtbx1" name="doi" id="datepicker1" style="width: 164px; "/><br><font size="+1" color="red"><span  id="datepicker1error"></font><form:errors path="Faxcover.msg"></form:errors></td>
             <td align="left"><span class="err"></span></td>
               <td style="width: 188px; " align="right"></td>
               </tr>

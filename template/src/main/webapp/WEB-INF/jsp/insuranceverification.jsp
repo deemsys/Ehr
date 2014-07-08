@@ -504,6 +504,16 @@ document.getElementById("fax").value=phone;
 		
 		error="true";
 		} 
+	
+	var phoneno = /^\(?[(]??([0-9]{3})\)?[)]?([0-9]{3})[-]?([0-9]{4})$/;  
+
+    
+    if(document.getElementById("fax").value.match(phoneno)==null)
+    {
+    	document.getElementById("faxerror").innerHTML="Invalid phone Format";
+    	// document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+      error="true";
+    }
 		
     var txt1=document.getElementById("fax").value;
    var txt2=txt1.substring(1,4);
@@ -858,7 +868,7 @@ function validatename(){
 
                       });
                     </script>          
-    <td><input type="text" class="input_txtbx1" name="fax" id="fax" onblur="" onInput="return validateusername()"; onkeypress="return validate(event)"; maxlength=13 /><br><span id="faxerror" style="color: red;font-style:italic;"> </span><form:errors path="Insuranceverification.fax"></form:errors>
+    <td><input type="text" class="input_txtbx1" name="fax" id="fax" onblur=""  placeholder="(000)000-0000" onInput="return validateusername()"; onkeypress="return validate(event)"; maxlength=13 /><br><span id="faxerror" style="color: red;font-style:italic;"> </span><form:errors path="Insuranceverification.fax"></form:errors>
               <span class="err" id="faxerror"></span>
               </td>
               </tr>
