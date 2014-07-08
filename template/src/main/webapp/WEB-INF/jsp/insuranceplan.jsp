@@ -449,7 +449,7 @@ var mail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
         <td ><span class="err">* </span><input type="text" class="input_txtbx1" name="accident_date"  id="datepicker" placeholder="Date of Accident" style="width: 215px; "/> <br><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.accident_date"></form:errors> </span></td>
         </tr>
         <tr class="row1">
-        <td ><span class="err">* </span><input type="text" class="input_txtbx1" name="enrollee" id="enrollee" onInput="return validateusername1()"; placeholder="Subscriber/Enrollee No" style="width: 215px; "/> <br><span id="enrolleeerror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.enrollee"></form:errors> </span>
+        <td ><span class="err">* </span><input type="text" class="input_txtbx1" name="enrollee" id="enrollee" maxlength="18"  onInput="return validateusername1()"; placeholder="Subscriber/Enrollee No" style="width: 215px; "/> <br><span id="enrolleeerror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.enrollee"></form:errors> </span>
         <br><span class="err" id="enrolleeerror"></span>
         </td>
         </tr>

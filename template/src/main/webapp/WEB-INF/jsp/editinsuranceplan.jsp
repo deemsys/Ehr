@@ -431,7 +431,7 @@ $(function() {
         <td ><span class="err">* </span><input type="text" class="input_txtbx1" name="accident_date" id="datepicker" placeholder="Date of Accident" value="${Insuranceplan.accident_date}"/><br> <span id="datepickererror" style="color: red;font-style:italic;"></span><form:errors path="Insuranceplan.accident_date"></form:errors></td>
         </tr>
         <tr class="row1">
-        <td ><span class="err">* </span><input type="text" class="input_txtbx1" name="enrollee" id="enrollee" onInput="return validateusername1()"; placeholder="Subscriber/Enrollee No" value="${Insuranceplan.enrollee}" /><br><span id="enrolleeerror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.enrollee"></form:errors> 
+        <td ><span class="err">* </span><input type="text" class="input_txtbx1" name="enrollee" id="enrollee" maxlength="18"  onInput="return validateusername1()"; placeholder="Subscriber/Enrollee No" value="${Insuranceplan.enrollee}" /><br><span id="enrolleeerror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.enrollee"></form:errors> 
         <br></span>
         </td>
         </tr>
