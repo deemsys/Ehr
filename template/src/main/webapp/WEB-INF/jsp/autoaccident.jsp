@@ -414,7 +414,38 @@ function validatename(id){
     document.getElementById(id).value = textInput;
 }
 </script>
+<script>
+function change44()
+{
 
+if(document.getElementById("body_strike").checked)
+{
+
+		document.getElementById("head_hit").style.visibility = 'hidden';
+		document.getElementById("rlshoulder_hit").style.visibility = 'hidden';
+		document.getElementById("rlhip_hit").style.visibility = 'hidden';
+		document.getElementById("rlknee_hit").style.visibility = 'hidden';
+		document.getElementById("chest_hit").style.visibility = 'hidden';
+		document.getElementById("rlarm_hit").style.visibility = 'hidden';
+		document.getElementById("rlleg_hit").style.visibility = 'hidden';
+		document.getElementById("otherpart_hit").style.visibility = 'hidden';
+
+
+
+		}
+		else  {
+			document.getElementById("head_hit").style.visibility = 'visible';
+		document.getElementById("rlshoulder_hit").style.visibility = 'visible';
+		document.getElementById("rlhip_hit").style.visibility = 'visible';
+		document.getElementById("rlknee_hit").style.visibility = 'visible';
+		document.getElementById("chest_hit").style.visibility = 'visible';
+		document.getElementById("rlarm_hit").style.visibility = 'visible';
+		document.getElementById("rlleg_hit").style.visibility = 'visible';
+		document.getElementById("otherpart_hit").style.visibility = 'visible';
+
+		}
+}
+</script>
 <script>
 function checkValid(e)
 {
@@ -1946,11 +1977,11 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				  </tr> 
 				   <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Did Patient's Body Strike Interior Of Car:</td>
-				  <td valign="top" align="left" class="input_txt"><input type="radio" name="body_strike" value="yes" class="input_txt" checked="true" onclick="toggle3('show3');">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="body_strike" value="no" class="input_txt" onchange="toggle3('hide3');">No&nbsp;&nbsp;&nbsp;
+				  <td valign="top" align="left" class="input_txt"><input type="radio" name="body_strike" value="yes" class="input_txt" checked="true" onchange="change44();">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="body_strike" id="body_strike" value="no" class="input_txt" onchange="change44();">No&nbsp;&nbsp;&nbsp;
 				  </td>
 				  </tr>
 				  </table>
-				<div id="hit" style="display:block;">
+				<span id="nohit" style="display:block;">
 				<!-- <div class="contentbox"> -->
 				<table cellpadding="0" cellspacing="0" border="0" width="100%" >
 				  
@@ -2000,7 +2031,7 @@ document.getElementById("afteraccidenterror").innerHTML="";
                   <td valign="middle" align="left" class="input_txt">&nbsp;&nbsp;&nbsp;My Other body part Hit:</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="input_txtbx1" id="otherpart_hit" name="otherpart_hit" min="4" maxlength="32" onInput="return validatename(id)"; /><span id="otherpart_hiterror" style="color: red;font-style:italic;"> </span>
-				  </td><td width="55"></td>
+				  </td><td width="55"></td></span>
 				  </tr>
 				 
 				  
@@ -3002,6 +3033,14 @@ else
 function toggle3(value){
 	/* alert(value); */
 	var e = document.getElementById('hit');
+if(value=='show3')
+ e.style.display="block";
+else
+ e.style.display="none";
+}
+function toggle3hid(value){
+	/* alert(value); */
+	var e = document.getElementById('nohit');
 if(value=='show3')
  e.style.display="block";
 else
