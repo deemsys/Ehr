@@ -164,6 +164,19 @@ function validatename56(id){
     document.getElementById(id).value = textInput;
 }
 </script>
+
+<script type="text/javascript">
+       function validate99(event) {
+          
+           var regex = new RegExp("^[0-9]+$");
+           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+           if (!regex.test(key)) {
+             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
+               event.preventDefault();
+               return false;
+           }
+       }       
+    </script>
 <script>
 function checkSubmit()
 {                        
@@ -255,7 +268,15 @@ function checkSubmit()
 	
 	}
 	
-	
+var phoneno = /^\(?[(]??([0-9]{3})\)?[)]?([0-9]{3})[-]?([0-9]{4})$/;  
+
+    
+    if(document.getElementById("phone").value.match(phoneno)==null)
+    {
+    	document.getElementById("phoneerr").innerHTML="Invalid phone Format";
+    	 
+        return false;
+    }
     document.getElementById("phoneerr").innerHTML="";
     var txt1=document.getElementById("phone").value;
    var txt2=txt1.substring(1,4);
@@ -328,7 +349,16 @@ function checkSubmit()
 	return false;
 	
 	}
-	
+var phoneno = /^\(?[(]??([0-9]{3})\)?[)]?([0-9]{3})[-]?([0-9]{4})$/;  
+
+    
+    if(document.getElementById("supphone").value.match(phoneno)==null)
+    {
+    	document.getElementById("supphoneerr").innerHTML="Invalid phone Format";
+    	 
+        return false;
+    }
+
     document.getElementById("supphoneerr").innerHTML="";
     var txt1=document.getElementById("supphone").value;
    var txt2=txt1.substring(1,4);
@@ -485,7 +515,7 @@ document.getElementById("phone").value=phone;
               <td><span class="err">* </span>Insurance Company</td>
               <td> <input type="text" class="input_txtbx1" name="insurance_company" id="company" value="${Insuranceinformation.insurance_company}"  onInput="return validatename55(id)";/><br><span id="companyerr" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.insurance_company"></form:errors></td>
               <td><span class="err">* </span>Phone#</td>
-              <td><input type="text" class="input_txtbx1" name="phone" id="phone"  maxlength="13" value="${Insuranceinformation.phone}" onkeypress="return validate1(event)"; /><br><span class="err" id="phoneerr"><form:errors path="Insuranceinformation.phone"></form:errors></span>
+              <td><input type="text" class="input_txtbx1" name="phone" id="phone" placeholder="(541)754-3010" maxlength="13" value="${Insuranceinformation.phone}" onkeypress="return validate99(event)"; /><br><span class="err" id="phoneerr"><form:errors path="Insuranceinformation.phone"></form:errors></span>
               <br><span class="err" id="phoneerror"></span>
               </td>
               </tr>
@@ -504,7 +534,7 @@ document.getElementById("phone").value=phone;
               <td><span class="err">* </span>Supplemental Insurance Company</td>
               <td> <input type="text" class="input_txtbx1" onInput="return validatename55(id)"; name="supplemental_company" id="supplemental_company" value="${Insuranceinformation.supplemental_company}"/><br><span id="supplemental_companyerr"  style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.supplemental_company"></form:errors></td>
                <td><span class="err">* </span>Phone#</td>
-              <td> <input type="text" class="input_txtbx1" name="sup_phone" id="supphone"  onkeypress="return validate1(event)"; maxlength="13"value="${Insuranceinformation.sup_phone}"/><br><span id="supphoneerr"  style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.sup_phone"></form:errors></span>
+              <td> <input type="text" class="input_txtbx1" name="sup_phone" id="supphone"  placeholder="(541)754-3010" maxlength="13"value="${Insuranceinformation.sup_phone}" onkeypress="return validate99(event)";/><br><span id="supphoneerr"  style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.sup_phone"></form:errors></span>
               <br>
               <span class="err" id="supphoneerror"></span>
               </td>

@@ -349,7 +349,16 @@ function checkSubmit()
 	
 	}
 	
-	
+var phoneno = /^\(?[(]??([0-9]{3})\)?[)]?([0-9]{3})[-]?([0-9]{4})$/;  
+
+    
+    if(document.getElementById("phone").value.match(phoneno)==null)
+    {
+    	document.getElementById("phoneerr").innerHTML="Invalid phone Format";
+    	 
+        return false;
+    }
+
     document.getElementById("phoneerr").innerHTML="";
     var txt1=document.getElementById("phone").value;
    var txt2=txt1.substring(1,4);
@@ -422,6 +431,16 @@ function checkSubmit()
 	return false;
 	
 	}
+var phoneno = /^\(?[(]??([0-9]{3})\)?[)]?([0-9]{3})[-]?([0-9]{4})$/;  
+
+    
+    if(document.getElementById("supphone").value.match(phoneno)==null)
+    {
+    	document.getElementById("supphoneerr").innerHTML="Invalid phone Format";
+    	 
+        return false;
+    }
+
 	
     document.getElementById("supphoneerr").innerHTML="";
     var txt1=document.getElementById("supphone").value;
@@ -595,17 +614,17 @@ function checkSubmit()
               <td><span class="err">* </span>Insurance Company</td>
               <td> <input type="text" class="input_txtbx1" name="insurance_company" id="company" onInput="return validatename55(id)";/><br><span id="companyerr" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.insurance_company"></form:errors></td>
               <td><span class="err">* </span>Phone#</td>
-              <td><input type="text" class="input_txtbx1" name="phone" id="phone" maxlength="13" onkeypress="return validate1(event)"; /><br><span id="phoneerr" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.phone"></form:errors>
+              <td><input type="text" class="input_txtbx1" name="phone" id="phone" maxlength="13" placeholder="(541)754-3010" onkeypress="return validate1(event)"; /><br><span id="phoneerr" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.phone"></form:errors>
               <br><span class="err" id="phoneerror"></span>
               </td>
               </tr>
               <tr class="row1">
               <td><span class="err">* </span>Policy #</td>
-              <td> <input type="text" class="input_txtbx1" name="policy" id="policy" onInput="return validateusername()";/><br><span  id="policyerr" style="color: red;font-style:italic;"></span><form:errors path="Insuranceinformation.policy"></form:errors>
+              <td> <input type="text" class="input_txtbx1" name="policy" id="policy" maxlength="10" onInput="return validateusername()";/><br><span  id="policyerr" style="color: red;font-style:italic;"></span><form:errors path="Insuranceinformation.policy"></form:errors>
               <br><span class="err" id="policyerror"></span>
               </td>
               <td><span class="err">* </span>Group#</td>
-              <td><input type="text" class="input_txtbx1" name="infono" id="groupno1" onInput="return validateusername1()";/><br><span id="groupno1err" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.infono"></form:errors>
+              <td><input type="text" class="input_txtbx1" name="infono" id="groupno1" maxlength="10"  onInput="return validateusername1()";/><br><span id="groupno1err" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.infono"></form:errors>
               <br><span class="err" id="groupno1error"></span>
               </td>
               </tr>
@@ -613,7 +632,7 @@ function checkSubmit()
               <td><span class="err">* </span>Supplemental Insurance Company</td>
               <td> <input type="text" class="input_txtbx1" name="supplemental_company" onInput="return validatename55(id)"; id="supplemental_company" /><br><span id="supplemental_companyerr" style="color: red;font-style:italic";><form:errors path="Insuranceinformation.supplemental_company"></form:errors></td>
               <td><span class="err">* </span>Phone#</td>
-              <td> <input type="text" class="input_txtbx1" name="sup_phone" id="supphone" maxlength="13" onkeypress="return validate1(event)";/><br><span id="supphoneerr" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.sup_phone"></form:errors>
+              <td> <input type="text" class="input_txtbx1" name="sup_phone" id="supphone" maxlength="13" placeholder="(541)754-3010" onkeypress="return validate1(event)";/><br><span id="supphoneerr" style="color: red;font-style:italic;"><form:errors path="Insuranceinformation.sup_phone"></form:errors>
               <br>
               <span class="err" id="supphoneerror"></span>
               </td>
