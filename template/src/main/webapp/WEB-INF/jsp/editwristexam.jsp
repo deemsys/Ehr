@@ -1017,8 +1017,7 @@ document.getElementById("pnameerror").innerHTML=" ";
 										<tr>
 											<td width="400"><b style="font-size: 14px">DIAGNOSIS:
 											</b></td>
-											<td width="250">1)&nbsp;&nbsp;&nbsp;<input type="text"
-												value="${wristexamdetails.diagnosis1}" name="diagnosis1" onInput="return validatename(id)";></td>
+											<td width="250">1)&nbsp;&nbsp;&nbsp;<input type="text" 	value="${wristexamdetails.diagnosis1}" name="diagnosis1" onInput="return validatename(id)";></td>
 											<td width="250">2)&nbsp;&nbsp;&nbsp;<input type="text"
 												value="${wristexamdetails.diagnosis2}" name="diagnosis2" onInput="return validatename(id)";></td>
 											<td width="250">3)&nbsp;&nbsp;&nbsp;<input type="text"
