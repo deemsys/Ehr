@@ -240,7 +240,7 @@ $("#flexion").keyup(function() {
 		  document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next1' onmouseover='checkValid(event);'>";		 
 		 //document.getElementById("btnNext").style.visibility="visible";
 		 }
-  	
+	
   	
   }
 
@@ -319,6 +319,16 @@ document.getElementById("pnameerror").innerHTML=" ";
 	<script>
 	function checkSubmit1(){
 	
+	
+		document.getElementById("datepickererror").innerHTML="";
+		var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+			if(document.getElementById("datepicker").value.match(datechk)==null)
+		    {
+		    	document.getElementById("datepickererror").innerHTML="Invalid Date Format";
+		    	
+		        return false;
+		    }	
+		
 	document.getElementById("signerror").innerHTML="";
 	if(document.getElementById("sign").value=="")
 	{

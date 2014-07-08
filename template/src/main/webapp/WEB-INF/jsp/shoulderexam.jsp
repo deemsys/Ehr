@@ -257,6 +257,23 @@ $(function() {
 	});	
 </script>
 <script>
+  var currentTab=0;
+  $("#btnNext").live("click", function () {
+        var tabs = $('#tabs').tabs();
+        var c = $('#tabs').tabs("length");
+        currentTab = currentTab == (c - 1) ? currentTab : (currentTab + 1);
+        tabs.tabs('select', currentTab);
+        $("#btnPrevious").show();
+        if (currentTab == (c - 1)) {
+            $("#btnNext").hide();
+        } else {
+            $("#btnNext").show();
+        }
+    });
+  
+  
+  </script>
+<script>
 function validatename(id){
     var textInput = document.getElementById(id).value;
     textInput = textInput.replace(/[^A-Za-z ]/g, "");
@@ -314,45 +331,51 @@ function validatename(id){
   }
   </script>
  <script>
-
-	function checkSubmit()
-	{
-document.getElementById("pnameerror").innerHTML=" ";
+  function checkValid(e)
+  {
+	  document.getElementById("pnameerror").innerHTML=" ";
 		
 		if(document.getElementById("pname").value=="")
 		{
 		document.getElementById("pnameerror").innerHTML="Required Field Should not be Empty";
-		
-		return false;
+		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next2' onmouseover='checkValid(event);'>";
 		}
-		document.getElementById("pnameerror").innerHTML="";
-	    if(document.getElementById("pname").value.length<4 || document.getElementById("pname").value.length>=32)
-	    {
-	    	
-	    	document.getElementById("pnameerror").innerHTML="Name should be min 4 and max 32";
-	    	
-	        return false;
-	    }
+		
+		else if(document.getElementById("pname").value.length<=4 && document.getElementById("pname").value.length<=32)
+		{
+		document.getElementById("pnameerror").innerHTML="Name should be length of 4 to 32";
+		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next2' onmouseover='checkValid(event);'>";
+		}
+		 else if(document.getElementById("pname").value!="")
+		 {
+		  document.getElementById("pnameerror").innerHTML="";
+		  document.getElementById("btnvisible1").style.visibility="hidden";
+		 //document.getElementById("btnNext").style.display="block";
+		  document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next1' onmouseover='checkValid(event);'>";		 
+		 //document.getElementById("btnNext").style.visibility="visible";
+		 }
 		
 		document.getElementById("datepickererror").innerHTML="";
 	if(document.getElementById("datepicker").value=="")
 		{
 		document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
-		
-		return false;
+		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next2' onmouseover='checkValid(event);'>";
 		}
-	document.getElementById("datepickererror").innerHTML="";
-	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
-		if(document.getElementById("datepicker").value.match(datechk)==null)
-	    {
-	    	document.getElementById("datepickererror").innerHTML="Invalid Date Format";
-	    	
-	        return false;
-	    }	
-			
-	
-	}
-	</script>
+  	else if(document.getElementById("datepicker").value!="")
+		 {
+		  document.getElementById("datepickererror").innerHTML="";
+		  document.getElementById("btnvisible1").style.visibility="hidden";
+		 //document.getElementById("btnNext").style.display="block";
+		  document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next1' onmouseover='checkValid(event);'>";		 
+		 //document.getElementById("btnNext").style.visibility="visible";
+		 }
+  	
+  	
+  }
+
+  
+  
+  </script> 
 	<script>
 	function checkSubmit1()
 	{
@@ -869,6 +892,7 @@ document.getElementById("pnameerror").innerHTML=" ";
          <tr><td>External Rotation:	</td><td>90</td><td><input type="text" size="5" name="externalrotationleft" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="externalrotationright" onkeypress="return validate(event)"></td><td width="90"></td><td>Yergason's:</td><td width="150"></td><td><input type="text" size="5" name="yergasonsleft" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text"  name="yergasonsright" onkeypress="return validate(event)"></td></tr>
           <tr><td></td><td></td><td>&nbsp;&nbsp;</td><td width="90"></td><td>Codman's:</td><td width="150"></td><td><input type="text" size="5"  name="codmansleft" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="5" name="codmansright" onkeypress="return validate(event)"></td></tr>
          <tr><td></td><td></td><td>&nbsp;&nbsp;</td><td width="90"></td><td>Apprehension:</td><td width="150"></td><td><input type="text" size="5"  name="apprehensionleft" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="5" name="apprehensionright" onkeypress="return validate(event)"></td></tr>
+         <tr><td id="tblbtn"><input type="button" id="btnNext" class="submit_btn" value="Next" onmouseover="checkValid(event);"/></td></tr>
          </table>
          </td></tr></table></div></div>
         <div id="tabs-2">     

@@ -13,6 +13,23 @@
   P#mypar {font-style:calibri;
   line-height:18px;}
    </STYLE>
+    <script>
+  var currentTab=0;
+  $("#btnNext").live("click", function () {
+        var tabs = $('#tabs').tabs();
+        var c = $('#tabs').tabs("length");
+        currentTab = currentTab == (c - 1) ? currentTab : (currentTab + 1);
+        tabs.tabs('select', currentTab);
+        $("#btnPrevious").show();
+        if (currentTab == (c - 1)) {
+            $("#btnNext").hide();
+        } else {
+            $("#btnNext").show();
+        }
+    });
+  
+  
+  </script>
    <script>
     $(function() {
 	$("#pname").on("keypress", function(e) {
@@ -199,44 +216,51 @@ $(function() {
   }
   </script>
    <script>
-
-	function checkSubmit()
-	{
-document.getElementById("pnameerror").innerHTML=" ";
+  function checkValid(e)
+  {
+	  document.getElementById("pnameerror").innerHTML=" ";
 		
 		if(document.getElementById("pname").value=="")
 		{
 		document.getElementById("pnameerror").innerHTML="Required Field Should not be Empty";
-		
-		return false;
+		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next2' onmouseover='checkValid(event);'>";
 		}
-		document.getElementById("pnameerror").innerHTML="";
-	    if(document.getElementById("pname").value.length<4 || document.getElementById("pname").value.length>=32)
-	    {
-	    	
-	    	document.getElementById("pnameerror").innerHTML="Name should be min 4 and max 32";
-	    	
-	        return false;
-	    }
+		
+		else if(document.getElementById("pname").value.length<=4 && document.getElementById("pname").value.length<=32)
+		{
+		document.getElementById("pnameerror").innerHTML="Name should be length of 4 to 32";
+		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next2' onmouseover='checkValid(event);'>";
+		}
+		 else if(document.getElementById("pname").value!="")
+		 {
+		  document.getElementById("pnameerror").innerHTML="";
+		  document.getElementById("btnvisible1").style.visibility="hidden";
+		 //document.getElementById("btnNext").style.display="block";
+		  document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next1' onmouseover='checkValid(event);'>";		 
+		 //document.getElementById("btnNext").style.visibility="visible";
+		 }
+		
 		document.getElementById("datepickererror").innerHTML="";
 	if(document.getElementById("datepicker").value=="")
 		{
 		document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
-		
-		return false;
+		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next2' onmouseover='checkValid(event);'>";
 		}
-	document.getElementById("datepickererror").innerHTML="";
-	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
-		if(document.getElementById("datepicker").value.match(datechk)==null)
-	    {
-	    	document.getElementById("datepickererror").innerHTML="Invalid Date Format";
-	    	
-	        return false;
-	    }	
-			
-	
-	}
-	</script>
+  	else if(document.getElementById("datepicker").value!="")
+		 {
+		  document.getElementById("datepickererror").innerHTML="";
+		  document.getElementById("btnvisible1").style.visibility="hidden";
+		 //document.getElementById("btnNext").style.display="block";
+		  document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next1' onmouseover='checkValid(event);'>";		 
+		 //document.getElementById("btnNext").style.visibility="visible";
+		 }
+  	
+  	
+  }
+
+  
+  
+  </script> 
 	<script>
 	function checkSubmit1()
 	{
@@ -277,7 +301,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  <div id="tabs">
        <ul>
           <li><a href="#tabs-1">1</a></li>
-          <li><a href="#tabs-2" onclick="return checkSubmit('this');">2</a></li>          
+          <li><a href="#tabs-2">2</a></li>          
        </ul>
        <form action="thoracicexam" method="POST" name="thoracic">
        <input type="hidden" name="username" value="${username}">
@@ -295,15 +319,15 @@ document.getElementById("pnameerror").innerHTML=" ";
 	            
 	            </div>
 	    <div class="contentbox">
-          <table cellpadding="0" cellspacing="0" border="0" width="98%">
+          
+<table cellpadding="0" cellspacing="0" border="0" width="98%">
            
  <tr class="row1">
-<td style="width: 261px; "><h4><span class="err">*</span>&nbsp;&nbsp;Patient Name:</h4></td><td style="width: 284px; "><input type="text"  name="pname" id="pname" onInput="return validatename(id)";/><span class="err" id="pnameerror"><form:errors path="Thoracicexam.pname"></form:errors></span></td>
+<td style="width: 261px; "><h4><span class="err">*</span>&nbsp;&nbsp;Patient Name:</h4></td><td style="width: 284px; "><input type="text" name="pname" id="pname" onInput="return validatename(id)"><span class="err" id="pnameerror"><form:errors path="Thoracicexam.pname"></form:errors></span></td>
 <td width="600" style="width: 257px; ">
-<td><h4><span class="err">*</span>&nbsp;&nbsp;Date:</h4></td><td><input type="text"  id="datepicker" name="date" /><span class="err" id="datepickererror"><form:errors path="Thoracicexam.date"></form:errors></span></td>
+</td><td><h4><span class="err">*</span>&nbsp;&nbsp;Date:</h4></td><td><input type="text" id="datepicker" name="date"><span class="err" id="datepickererror"><form:errors path="Thoracicexam.date"></form:errors></span></td>
 </tr>
-</table>
-<br/>
+</table><br/>
 <br/>
  <table>
  <tr class="row1">
@@ -413,6 +437,8 @@ document.getElementById("pnameerror").innerHTML=" ";
  <td></td><td> </td> 
  <td></td><td> </td> 
  <td><b>Beevor's Sign:	</b> </td><td><input type="text" name="beevorl" size="5" onkeypress="return validate(event)"> <input type="text" name="beevorr" size="5" onkeypress="return validate(event)"> </td>
+ </tr>
+ <tr><td id="tblbtn"><input type="button" id="btnNext" class="submit_btn" value="Next" onmouseover="checkValid(event);"/></td>
  </tr>
  </table>
  

@@ -222,6 +222,23 @@ $(function() {
 	});	
 </script>
 <script>
+  var currentTab=0;
+  $("#btnNext").live("click", function () {
+        var tabs = $('#tabs').tabs();
+        var c = $('#tabs').tabs("length");
+        currentTab = currentTab == (c - 1) ? currentTab : (currentTab + 1);
+        tabs.tabs('select', currentTab);
+        $("#btnPrevious").show();
+        if (currentTab == (c - 1)) {
+            $("#btnNext").hide();
+        } else {
+            $("#btnNext").show();
+        }
+    });
+  
+  
+  </script>
+<script>
 function validatename(id){
 	
     var textInput = document.getElementById(id).value;
@@ -316,11 +333,57 @@ function validatename(id){
 	  
   }
   </script>
+   <script>
+  function checkValid(e)
+  {
+	  document.getElementById("pnameerror").innerHTML=" ";
+		
+		if(document.getElementById("pname").value=="")
+		{
+		document.getElementById("pnameerror").innerHTML="Required Field Should not be Empty";
+		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next2' onmouseover='checkValid(event);'>";
+		}
+		
+		else if(document.getElementById("pname").value.length<=4 && document.getElementById("pname").value.length<=32)
+		{
+		document.getElementById("pnameerror").innerHTML="Name should be length of 4 to 32";
+		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next2' onmouseover='checkValid(event);'>";
+		}
+		 else if(document.getElementById("pname").value!="")
+		 {
+		  document.getElementById("pnameerror").innerHTML="";
+		  document.getElementById("btnvisible1").style.visibility="hidden";
+		 //document.getElementById("btnNext").style.display="block";
+		  document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next1' onmouseover='checkValid(event);'>";		 
+		 //document.getElementById("btnNext").style.visibility="visible";
+		 }
+		
+		document.getElementById("datepickererror").innerHTML="";
+	if(document.getElementById("datepicker").value=="")
+		{
+		document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next2' onmouseover='checkValid(event);'>";
+		}
+  	else if(document.getElementById("datepicker").value!="")
+		 {
+		  document.getElementById("datepickererror").innerHTML="";
+		  document.getElementById("btnvisible1").style.visibility="hidden";
+		 //document.getElementById("btnNext").style.display="block";
+		  document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next1' onmouseover='checkValid(event);'>";		 
+		 //document.getElementById("btnNext").style.visibility="visible";
+		 }
+  	
+  	
+  }
+
+  
+  
+  </script> 
  <script>
 
 	function checkSubmit()
 	{
-document.getElementById("pnameerror").innerHTML=" ";
+/* document.getElementById("pnameerror").innerHTML=" ";
 		
 		if(document.getElementById("pname").value=="")
 		{
@@ -343,7 +406,7 @@ document.getElementById("pnameerror").innerHTML=" ";
 		document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
 		
 		return false;
-		}
+		} */
 	document.getElementById("datepickererror").innerHTML="";
 	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		if(document.getElementById("datepicker").value.match(datechk)==null)
@@ -940,6 +1003,7 @@ document.getElementById("pnameerror").innerHTML=" ";
          <tr><td>Great Toe Extension:</td><td>70</td><td><input type="text" size="5" name="greattoeextensionleft" onkeypress="return validate(event)";>&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="greattoeextensionright" onkeypress="return validate(event)";><td width="90"></td><td>Drawer:		</td><td width="150"></td><td><input type="text" size="5"  name="drawerleft" onkeypress="return validate(event)";>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="5" name="drawerright" onkeypress="return validate(event)";></td></td></tr>
          <tr><td>Great Toe Flexion:	</td><td>45</td><td><input type="text" size="5" name="greattoeflexionleft" onkeypress="return validate(event)";>&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="greattoeflexionright" onkeypress="return validate(event)";></td><td width="90"></td><td>Lateral (Varus) Stability:</td><td width="150"></td><td><input type="text" size="5" name="lateralleft" onkeypress="return validate(event)";>&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text"  name="lateralright" onkeypress="return validate(event)";></td></tr>
           <tr><td></td><td></td><td>&nbsp;&nbsp;</td><td width="90"></td><td>Medial (Valgus) Stability:</td><td width="150"></td><td><input type="text" size="5"  name="medialstabilityleft" onkeypress="return validate(event)";>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="5" name="medialstabilityright" onkeypress="return validate(event)";></td></tr>
+         <tr><td id="tblbtn"><input type="button" id="btnNext" class="submit_btn" value="Next" onmouseover="checkValid(event);"/></td></tr>
          </table>
          </td></tr></table></div></div>
         <div id="tabs-2">     

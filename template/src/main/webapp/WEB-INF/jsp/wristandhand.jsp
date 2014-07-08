@@ -164,6 +164,23 @@ $(function() {
     });
 </script>
 <script>
+  var currentTab=0;
+  $("#btnNext").live("click", function () {
+        var tabs = $('#tabs').tabs();
+        var c = $('#tabs').tabs("length");
+        currentTab = currentTab == (c - 1) ? currentTab : (currentTab + 1);
+        tabs.tabs('select', currentTab);
+        $("#btnPrevious").show();
+        if (currentTab == (c - 1)) {
+            $("#btnNext").hide();
+        } else {
+            $("#btnNext").show();
+        }
+    });
+  
+  
+  </script>
+<script>
 $(function() {
 	$("#pname").on("keypress", function(e) {
 		if (e.which === 32 && !this.value.length)
@@ -328,41 +345,55 @@ function validatename(id){
   }
   </script>
    <script>
-
-	function checkSubmit()
-	{
-document.getElementById("pnameerror").innerHTML=" ";
+  function checkValid(e)
+  {
+	  document.getElementById("pnameerror").innerHTML=" ";
 		
 		if(document.getElementById("pname").value=="")
 		{
 		document.getElementById("pnameerror").innerHTML="Required Field Should not be Empty";
-		
-		return false;
+		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next2' onmouseover='checkValid(event);'>";
 		}
-		document.getElementById("pnameerror").innerHTML="";
-	    if(document.getElementById("pname").value.length<4 || document.getElementById("pname").value.length>=32)
-	    {
-	    	
-	    	document.getElementById("pnameerror").innerHTML="Name should be min 4 and max 32";
-	    	
-	        return false;
-	    }
+		
+		else if(document.getElementById("pname").value.length<=4 && document.getElementById("pname").value.length<=32)
+		{
+		document.getElementById("pnameerror").innerHTML="Name should be length of 4 to 32";
+		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next2' onmouseover='checkValid(event);'>";
+		}
+		 else if(document.getElementById("pname").value!="")
+		 {
+		  document.getElementById("pnameerror").innerHTML="";
+		  document.getElementById("btnvisible1").style.visibility="hidden";
+		 //document.getElementById("btnNext").style.display="block";
+		  document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next1' onmouseover='checkValid(event);'>";		 
+		 //document.getElementById("btnNext").style.visibility="visible";
+		 }
+		
 		document.getElementById("datepickererror").innerHTML="";
 	if(document.getElementById("datepicker").value=="")
 		{
 		document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
-		
-		return false;
+		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next2' onmouseover='checkValid(event);'>";
 		}
-	document.getElementById("datepickererror").innerHTML="";
-	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
-		if(document.getElementById("datepicker").value.match(datechk)==null)
-	    {
-	    	document.getElementById("datepickererror").innerHTML="Invalid Date Format";
-	    	
-	        return false;
-	    }	
-			
+  	else if(document.getElementById("datepicker").value!="")
+		 {
+		  document.getElementById("datepickererror").innerHTML="";
+		  document.getElementById("btnvisible1").style.visibility="hidden";
+		 //document.getElementById("btnNext").style.display="block";
+		  document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next1' onmouseover='checkValid(event);'>";		 
+		 //document.getElementById("btnNext").style.visibility="visible";
+		 }
+  	
+  	
+  }
+
+  
+  
+  </script> 
+	<script>
+	function checkSubmit1()
+	{
+	
 	document.getElementById("signerror").innerHTML="";
 	if(document.getElementById("sign").value=="")
 	{
@@ -378,7 +409,12 @@ document.getElementById("pnameerror").innerHTML=" ";
     	
         return false;
     }
+	
+	
+	
 	}
+	
+	
 	</script>
 	<script type="text/javascript">
        function validate(event) {
@@ -760,7 +796,7 @@ document.getElementById("pnameerror").innerHTML=" ";
 <div id="tabs" >
   <ul>
     <li><a href="#tabs-1">1</a></li>
-    <li><a href="#tabs-2">2</a></li>    
+    <li><a href="#tabs-2" onclick="return checkSubmit('this');">2</a></li>    
   </ul>  
 	     <div id="tabs-1">
 	     
@@ -875,7 +911,7 @@ document.getElementById("pnameerror").innerHTML=" ";
          <tr><td>Wrist Radial Deviation:</td><td>90</td><td><input size="5" type="text" name="radialleft" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="radialright" onkeypress="return validate(event)"></td><td width="90"></td><td>Finkelstein's (Tenosynovitis):</td><td><input type="text" size="5"  name="tenosynovitisleft" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text"  name="tenosynovitisright" onkeypress="return validate(event)"></td></tr></tr>
          <tr><td>Pronation / Supination	:</td><td>180</td><td><input type="text" size="5" name="pronationleft" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="pronationright" onkeypress="return validate(event)"><td width="90"></td><td>Tinnel's:</td><td><input type="text" size="5"  name="tinnelsleft" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="5" name="tinnelsright" onkeypress="return validate(event)"></td></tr>
          <tr><td></td><td></td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="90"></td><td>ULTT:</td><td><input type="text" size="5" name="ulttleft" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text"  name="ulttright" onkeypress="return validate(event)"></td></tr>
-          
+          <tr><td id="tblbtn"><input type="button" id="btnNext" class="submit_btn" value="Next" onmouseover="checkValid(event);"/></tr>
          
          </table>
          </td></tr></table></div></div>
@@ -907,11 +943,11 @@ document.getElementById("pnameerror").innerHTML=" ";
           <tr> <td width="30"></td><td>Left&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Right</td>  <td width="30"></td><td>Left&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Right</td>  <td width="30"></td><td>Left&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Right</td> </tr>
           <tr height="10"></tr>
            
-           <tr><td>C5</td><td><input size="5" type="text" name="latdeltoidleft" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="latdeltoidright" onkeypress="return validate(event)">&nbsp;&nbsp;(Lat deltoid)</td><td>C5</td><td><input type="text" name="shdleft" id="shdleft" size="5" onKeyPress="return check(event,value)" onInput="checkLength()">/5&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="shdright" id="shdright" onKeyPress="return check1(event,value)" onInput="checkLength1()">/5&nbsp;&nbsp;(Shd ABD)</td><td>C5</td><td><input type="text" name="bicepsleft" id="bicepsleft" size="5" onKeyPress="return check10(event,value)" onInput="checkLength10()">/5&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="bicepsright" id="bicepsright" size="5" onKeyPress="return check11(event,value)" onInput="checkLength11()">/5&nbsp;&nbsp;(Biceps)</td></tr>
-           <tr><td>C6</td><td><input type="text" name="latarmleft" size="5" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="latarmright" onkeypress="return validate(event)">&nbsp;&nbsp;(Lat arm/hand)</td><td>C6</td><td><input type="text" name="elbflexleft" id="elbflexleft" size="5" onKeyPress="return check2(event,value)" onInput="checkLength2()">/5&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="elbflexright" id="elbflexright" onKeyPress="return check3(event,value)" onInput="checkLength3()">/5&nbsp;&nbsp;(Elb flex/wrist ext)</td><td>C6</td><td><input type="text" name="brachioradleft" id="brachioradleft" size="5" onKeyPress="return check12(event,value)" onInput="checkLength12()">/5&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="brachioradright" id="brachioradright" size="5" onKeyPress="return check13(event,value)" onInput="checkLength13()">/5&nbsp;&nbsp;(Brachiorad)</td></tr>
-           <tr><td>C7</td><td><input type="text" size="5" name="thirdleft" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input  size="5"type="text" name="thirdright" onkeypress="return validate(event)">&nbsp;&nbsp;(3rd digit)</td><td>C7</td><td><input type="text" name="elbextleft" id="elbextleft" size="5" onKeyPress="return check4(event,value)" onInput="checkLength4()">/5&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="elbextright" id="elbextright" onKeyPress="return check5(event,value)" onInput="checkLength5()">/5&nbsp;&nbsp;(Elb ext/wrist flex)</td><td>C7</td><td><input type="text" name="tricepsleft" id="tricepsleft" size="5" onKeyPress="return check14(event,value)" onInput="checkLength14()">/5&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="tricepsright" id="tricepsright" onKeyPress="return check15(event,value)" onInput="checkLength15()">/5&nbsp;&nbsp;(Triceps)</td></tr>
-            <tr><td>C8</td><td><input type="text" size="5" name="medforearmleft" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="5" name="medforearmright" onkeypress="return validate(event)">&nbsp;&nbsp;(Med forearm/hand)</td><td>C8</td><td><input type="text" name="digitflexionleft" id="digitflexionleft" size="5" onKeyPress="return check6(event,value)" onInput="checkLength6()">/5&nbsp;&nbsp;&nbsp;&nbsp;<input size="5"  type="text" name="digitflexionright" id="digitflexionright" onKeyPress="return check7(event,value)" onInput="checkLength7()">/5&nbsp;&nbsp;(Digit flexion)</td><td></td></tr>
-            <tr><td>T1</td><td><input size="5" type="text" name="medelbowleft" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="medelbowright" onkeypress="return validate(event)">&nbsp;&nbsp;(Med elbow/arm)</td><td>T1</td><td><input type="text" name="digitabdleft" id="digitabdleft" size="5" onKeyPress="return check8(event,value)" onInput="checkLength8()">/5&nbsp;&nbsp;&nbsp;&nbsp;<input  size="5"type="text" name="digitabdright" id="digitabdright" onKeyPress="return check9(event,value)" onInput="checkLength9()">/5&nbsp;&nbsp;(Digit abd/add)	</td><td><td>&nbsp;(2+/5 is Normal)</td></td></tr>
+           <tr><td>C5</td><td><input size="5" type="text" name="latdeltoidleft" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="latdeltoidright" onkeypress="return validate(event)">&nbsp;&nbsp;(Lat deltoid)</td><td>C5</td><td><input type="text" name="shdleft" id="shdleft" maxlength="1" onKeyPress="return check(event,value)" onInput="checkLength()" style="width: 53px; ">/5&nbsp;&nbsp;&nbsp;&nbsp;<input maxlength="1" type="text" name="shdright" id="shdright" onKeyPress="return check1(event,value)" onInput="checkLength1()" style="width: 50px; ">/5&nbsp;&nbsp;(Shd ABD)</td><td>C5</td><td><input type="text" name="bicepsleft" id="bicepsleft" maxlength="1" onKeyPress="return check10(event,value)" onInput="checkLength10()" style="width: 54px; ">/5&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="bicepsright" id="bicepsright" maxlength="1" onKeyPress="return check11(event,value)" onInput="checkLength11()" style="width: 49px; ">/5&nbsp;&nbsp;(Biceps)</td></tr>
+           <tr><td>C6</td><td><input type="text" name="latarmleft" size="5" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="latarmright" onkeypress="return validate(event)">&nbsp;&nbsp;(Lat arm/hand)</td><td>C6</td><td><input type="text" name="elbflexleft" id="elbflexleft" maxlength="1" onKeyPress="return check2(event,value)" onInput="checkLength2()" style="width: 52px; ">/5&nbsp;&nbsp;&nbsp;&nbsp;<input maxlength="1" type="text" name="elbflexright" id="elbflexright" onKeyPress="return check3(event,value)" onInput="checkLength3()" style="width: 51px; ">/5&nbsp;&nbsp;(Elb flex/wrist ext)</td><td>C6</td><td><input type="text" name="brachioradleft" id="brachioradleft" maxlength="1" onKeyPress="return check12(event,value)" onInput="checkLength12()" style="width: 52px; ">/5&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="brachioradright" id="brachioradright" maxlength="1" onKeyPress="return check13(event,value)" onInput="checkLength13()" style="width: 50px; ">/5&nbsp;&nbsp;(Brachiorad)</td></tr>
+           <tr><td>C7</td><td><input type="text" size="5" name="thirdleft" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input  size="5"type="text" name="thirdright" onkeypress="return validate(event)">&nbsp;&nbsp;(3rd digit)</td><td>C7</td><td><input type="text" name="elbextleft" id="elbextleft" maxlength="1" onKeyPress="return check4(event,value)" onInput="checkLength4()" style="width: 50px; ">/5&nbsp;&nbsp;&nbsp;&nbsp;<input maxlength="1" type="text" name="elbextright" id="elbextright" onKeyPress="return check5(event,value)" onInput="checkLength5()" style="width: 51px; ">/5&nbsp;&nbsp;(Elb ext/wrist flex)</td><td>C7</td><td><input type="text" name="tricepsleft" id="tricepsleft" maxlength="1" onKeyPress="return check14(event,value)" onInput="checkLength14()" style="width: 52px; ">/5&nbsp;&nbsp;&nbsp;&nbsp;<input maxlength="1" type="text" name="tricepsright" id="tricepsright" onKeyPress="return check15(event,value)" onInput="checkLength15()" style="width: 50px; ">/5&nbsp;&nbsp;(Triceps)</td></tr>
+            <tr><td>C8</td><td><input type="text" size="5" name="medforearmleft" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="5" name="medforearmright" onkeypress="return validate(event)">&nbsp;&nbsp;(Med forearm/hand)</td><td>C8</td><td><input type="text" name="digitflexionleft" id="digitflexionleft" maxlength="1" onKeyPress="return check6(event,value)" onInput="checkLength6()" style="width: 54px; ">/5&nbsp;&nbsp;&nbsp;&nbsp;<input maxlength="1"  type="text" name="digitflexionright" id="digitflexionright" onKeyPress="return check7(event,value)" onInput="checkLength7()" style="width: 46px; ">/5&nbsp;&nbsp;(Digit flexion)</td><td></td></tr>
+            <tr><td>T1</td><td><input size="5" type="text" name="medelbowleft" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="medelbowright" onkeypress="return validate(event)">&nbsp;&nbsp;(Med elbow/arm)</td><td>T1</td><td><input type="text" name="digitabdleft" id="digitabdleft" maxlength="1" onKeyPress="return check8(event,value)" onInput="checkLength8()" style="width: 55px; ">/5&nbsp;&nbsp;&nbsp;&nbsp;<input  maxlength="1" type="text" name="digitabdright" id="digitabdright" onKeyPress="return check9(event,value)" onInput="checkLength9()" style="width: 49px; ">/5&nbsp;&nbsp;(Digit abd/add)	</td><td><td>&nbsp;(2+/5 is Normal)</td></td></tr>
            <tr><td></td><td>(""-"" is Normal)			</td><td></td><td>	(5/5 is Normal)</td><td></td><td></td></tr>
            
            
@@ -1548,7 +1584,7 @@ document.getElementById("pnameerror").innerHTML=" ";
            </c:otherwise>
            </c:choose>
          
-         <table align="right"><tr><td><input type="submit" value="Save" id="saveid" class="submit_btn" onclick="return checkSubmit('this');"></td><td> <a href="viewwristexamdetails" onclick="myclose()"  style="color: white" class="submit_btn" id="cancelid">Cancel</a></td></tr></table>
+         <table align="right"><tr><td><input type="submit" value="Save" id="saveid" class="submit_btn" onclick="return checkSubmit1('this');"></td><td> <a href="viewwristexamdetails" onclick="myclose()"  style="color: white" class="submit_btn" id="cancelid">Cancel</a></td></tr></table>
          
      <script>
  function myclose()
