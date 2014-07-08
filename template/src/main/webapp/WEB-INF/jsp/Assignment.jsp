@@ -147,6 +147,24 @@ $("#year").on("keypress", function(e) {
 
 </script>
 <script>
+$(function() {
+$("#day1").on("keypress", function(e) {
+	if (e.which === 32 && !this.value.length)
+        e.preventDefault();
+});
+});	
+
+</script>
+<script>
+$(function() {
+$("#month1").on("keypress", function(e) {
+	if (e.which === 32 && !this.value.length)
+        e.preventDefault();
+});
+});	
+
+</script>
+<script>
 function validatename(id)
 {
 	var textInput = document.getElementById(id).value;
@@ -161,7 +179,18 @@ function validatesign(id)
 	document.getElementById(id).value = textInput;
 }
 </script>
-
+<script type="text/javascript">
+       function validate55(event) {
+          
+           var regex = new RegExp("^[0-9]+$");
+           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+           if (!regex.test(key)) {
+             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
+               event.preventDefault();
+               return false;
+           }
+       }       
+    </script>
   <script>
 function checkSubmit()
 
@@ -409,16 +438,18 @@ document.getElementById("datepicker3error").innerHTML="";
                         <table cellpadding="0" cellspacing="0" border="0" width="70%">
                         <tr>
                         <div align="justify">
-				                <p id="mypar">&nbsp;This agreement made this the:<input type="text" class="input_txtbx1" id="day" name="day" /><span class="err"><form:errors path="Assignment.day"></form:errors></span> day of <input type="text" class="input_txtbx1" id="inp_id" name="month" /><span class="err"><form:errors path="Assignment.month"></form:errors></span>
-				                  	2013 between <input type="text" class="input_txtbx1" id="year" name="year" /><span class="err"><form:errors path="Assignment.year"></form:errors></span>
+				                <p id="mypar">&nbsp;This agreement made this the: <input type="text" class="input_txtbx1" id="day" name="day" value="${assignment.day }" onInput="return validatename(id)";/><span id="dayerror" style="color: red;font-style:italic;"><form:errors path="Assignment.day"></form:errors></span>
+				                  	  
+				                  	day of <input type="text" class="input_txtbx1" id="month" name="month" value="${assignment.month}" onInput="return validatename(id)";/><span id="montherror" style="color: red;font-style:italic;"><form:errors path="Assignment.month"></form:errors></span>
+				                  	2013 between <input type="text" class="input_txtbx1" id="year" name="year" value="${assignment.year}" onkeypress="return validate55(event)";/><span id="yearerror" style="color: red;font-style:italic;"><form:errors path="Assignment.year"></form:errors></span>
 				                  	(claimant) and Perry Chiropractic and Therapy Center constitutes an irrevocable and binding agreement between the parties as follows:
-Claimant was involved in an accident on or about the <input type="text" class="input_txtbx1" id="day" name="day" /><span class="err"><form:errors path="Assignment.day1"></form:errors></span>
-day of <input type="text" class="input_txtbx1" id="month" name="month1" /> <span class="err"><form:errors path="Assignment.month1"></form:errors></span>and I therein incurred injuries for which I have sought medical treatment from PCTC.</p>
+Claimant was involved in an accident on or about the <input type="text" class="input_txtbx1" id="day1" name="day1" value="${assignment.day1}" onInput="return validatename(id)";/><span id="day1error" style="color: red;font-style:italic;"><form:errors path="Assignment.day1"></form:errors></span>
+day of <input type="text" class="input_txtbx1" id="month1" name="month1" value="${assignment.month1}" onInput="return validatename(id)";/> <span id="month1error" style="color: red;font-style:italic;"><form:errors path="Assignment.month1"></form:errors></span>and I therein incurred injuries for which I have sought medical treatment from PCTC.</p>
 
 <P id="mypar"> Claimant herby directs any and all insurance carriers, attorneys, 
 agencies, companies, individuals, and/or other legal entities (payers), 
 which may elect to pay or be obligated o pay benefits to me regardless of the issue of liability, 
-for any medical conditions, accidents, injuries, or illnesses, past or future (conditions), to pay directly to, 
+for any medical conditions, accidents, injuries, or illnesses, past or future (€œcondition), to pay directly to, 
 and exclusively in the name of Perry Chiropractic and Therapy Center, such sums as may be owing to PCTC, for charges
  incurred by me. These charges include but are not limited to the following: charges for treatment, narrative reports, depositions, 
  testimony, and any other charges incurred by me at PCTC.
@@ -441,37 +472,37 @@ and exclusively in the name of Perry Chiropractic and Therapy Center, such sums 
                        <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Patient Name: </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="patientname" name="patientname" value="${name}" onInput="return validatename(id);"/><br/><span id="patientnameerror" style="color: red;font-style:italic;"><form:errors path="Assignment.patientname"></form:errors></td>
+				                  	<input type="text" class="input_txtbx1" id="patientname" name="patientname" value="${name}" onInput="return validatename(id);"/><br><span id="patientnameerror" style="color: red;font-style:italic;"><form:errors path="Assignment.patientname"></form:errors></td>
 				                  	<%-- <td valign="middle" width="50%"><span class="err">*</span>Date</td>
 				                  	<td valign="top"><input type="text" class="input_txtbx1" id="datepicker" name="patientdate" /><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="Assignment.patientdate"></form:errors></span></td> --%>
 				                  	</tr>
 				                  	<tr width="500" class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Patient Signature:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="patientsign" name="patientsign" onInput="return validatesign(id);"/><span id="patientsignerror" style="color: red;font-style:italic;"><form:errors path="Assignment.patientsign"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="patientsign" name="patientsign" onInput="return validatesign(id);"/><br><span id="patientsignerror" style="color: red;font-style:italic;"><form:errors path="Assignment.patientsign"></form:errors></span>
 				                  	<td valign="middle" align="left" class="input_txt" style="width: 65px; "><span class="err">* </span>Date:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="datepicker2" name="patientdate" /><br><span id="datepicker2error" style="color: red;font-style:italic;"><form:errors path="Assignment.parentdate"></form:errors></span>
 				                  	</tr> 
 				                  	
 				                  	<tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Name of Custodial Parent or Legal Guardian:  </td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Name of Custodial Parent or Legal  &nbsp;&nbsp;Guardian:  </td>
 				                  <td valign="top" align="left" class="input_txt"><input type="text" class="input_txtbx1" id="parentname" onInput="return validatename(id);" name="parentname" /><br><span id="parentnameerror" style="color: red;font-style:italic;"></span><form:errors path="Assignment.parentname"></form:errors>
 				                  </td>
 				                  	</tr> 
 				                  	<tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Parent/Guardian Signature:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="parentsign" name="parentsign" onInput="return validatesign(id);"/><span id="parentsignerror" style="color: red;font-style:italic;"></span><form:errors path="Assignment.parentsign"></form:errors>
+				                  	<input type="text" class="input_txtbx1" id="parentsign" name="parentsign" onInput="return validatesign(id);"/><br><span id="parentsignerror" style="color: red;font-style:italic;"></span><form:errors path="Assignment.parentsign"></form:errors>
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err">* </span>Date:  </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="datepicker3" name="parentdate" /><br><span id="datepicker3error" style="color: red;font-style:italic;"></span><form:errors path="Assignment.parentdate"></form:errors>
 				                  	</tr> 
 				                  	
 				                  	<tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Perry Chiropractic and Therapy Center Representative:  </td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Perry Chiropractic and Therapy Center &nbsp;&nbsp;Representative:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="representative" name="representative" onInput="return validatename(id);"/><span id="representativeerror" style="color: red;font-style:italic;"> </span><form:errors path="Assignment.representative"></form:errors>
+				                  	<input type="text" class="input_txtbx1" id="representative" name="representative" onInput="return validatename(id);"/><br><span id="representativeerror" style="color: red;font-style:italic;"> </span><form:errors path="Assignment.representative"></form:errors>
 				                  	<td valign="middle" align="left" class="input_txt"><span class="err">* </span>Date:  </td>
 				                  <td valign="middle" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="datepicker4" name="representativedate" /><br><span id="datepicker4error" style="color: red;font-style:italic;"></span>
@@ -487,13 +518,13 @@ and exclusively in the name of Perry Chiropractic and Therapy Center, such sums 
                         <table cellpadding="0" cellspacing="0" border="0" width="100%">
                         <tr>
                         <div align="justify">
-				                <p id="mypar">&nbsp;This agreement made this the: <input type="text" class="input_txtbx1" id="datepicker6" name="day" value="${assignment.day }"/><span class="err"><form:errors path="Assignment.day"></form:errors></span>
+				                <p id="mypar">&nbsp;This agreement made this the: <input type="text" class="input_txtbx1" id="day" name="day" value="${assignment.day }" onInput="return validatename(id)";/><span id="dayerror" style="color: red;font-style:italic;"><form:errors path="Assignment.day"></form:errors></span>
 				                  	  
-				                  	day of <input type="text" class="input_txtbx1" id="datepicker5" name="month" value="${assignment.month}"/><span class="err"><form:errors path="Assignment.month"></form:errors></span>
-				                  	2013 between <input type="text" class="input_txtbx1" id="year" name="year" value="${assignment.year}"/><span class="err"><form:errors path="Assignment.year"></form:errors></span>
+				                  	day of <input type="text" class="input_txtbx1" id="month" name="month" value="${assignment.month}" onInput="return validatename(id)";/><span id="montherror" style="color: red;font-style:italic;"><form:errors path="Assignment.month"></form:errors></span>
+				                  	2013 between <input type="text" class="input_txtbx1" id="year" name="year" value="${assignment.year}" onkeypress="return validate55(event)";/><span id="yearerror" style="color: red;font-style:italic;"><form:errors path="Assignment.year"></form:errors></span>
 				                  	(claimant) and Perry Chiropractic and Therapy Center constitutes an irrevocable and binding agreement between the parties as follows:
-Claimant was involved in an accident on or about the <input type="text" class="input_txtbx1" id="day1" name="day1" value="${assignment.day1}"/><span class="err"><form:errors path="Assignment.day1"></form:errors></span>
-day of <input type="text" class="input_txtbx1" id="month1" name="month1" value="${assignment.month1}"/> <span class="err"><form:errors path="Assignment.month1"></form:errors></span>and I therein incurred injuries for which I have sought medical treatment from PCTC.</p>
+Claimant was involved in an accident on or about the <input type="text" class="input_txtbx1" id="day1" name="day1" value="${assignment.day1}" onInput="return validatename(id)";/><span id="day1error" style="color: red;font-style:italic;"><form:errors path="Assignment.day1"></form:errors></span>
+day of <input type="text" class="input_txtbx1" id="month1" name="month1" value="${assignment.month1}" onInput="return validatename(id)";/> <span id="month1error" style="color: red;font-style:italic;"><form:errors path="Assignment.month1"></form:errors></span>and I therein incurred injuries for which I have sought medical treatment from PCTC.</p>
 
 <P id="mypar"> Claimant herby directs any and all insurance carriers, attorneys, 
 agencies, companies, individuals, and/or other legal entities (payers), 

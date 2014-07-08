@@ -449,7 +449,7 @@ and exclusively in the name of Perry Chiropractic and Therapy Center, such sums 
 				                  	<tr class="row1">
 				                  <td valign="top" align="left" class="input_txt"><span class="err">*  </span>Patient Signature:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="patientsign" name="patientsign" value="${assignmentdetails.patientsign}" onInput="return validatesign(id);"/><span id="patientsignerror" style="color: red;font-style:italic;"><form:errors path="Assignment.patientsign"></form:errors>
+				                  	<input type="text" class="input_txtbx1" id="patientsign" name="patientsign" value="${assignmentdetails.patientsign}" onInput="return validatesign(id);"/><br><span id="patientsignerror" style="color: red;font-style:italic;"><form:errors path="Assignment.patientsign"></form:errors>
 				                  	<td valign="top" align="left" class="input_txt" width="10%"><span class="err">* </span>Date:  </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="datepicker2" name="patientdate" value="${assignmentdetails.patientdate}"/><br><span id="datepicker2error" style="color: red;font-style:italic;"><form:errors path="Assignment.patientdate"></form:errors>
@@ -463,7 +463,7 @@ and exclusively in the name of Perry Chiropractic and Therapy Center, such sums 
 				                  	<tr class="row1">
 				                  <td valign="top" align="left" class="input_txt"><span class="err">* </span>Parent/Guardian Signature:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="parentsign" name="parentsign" value="${assignmentdetails.parentsign}" onInput="return validatesign(id);"/><span id="parentsignerror" style="color: red;font-style:italic;"><form:errors path="Assignment.parentsign"></form:errors>
+				                  	<input type="text" class="input_txtbx1" id="parentsign" name="parentsign" value="${assignmentdetails.parentsign}" onInput="return validatesign(id);"/><br><span id="parentsignerror" style="color: red;font-style:italic;"><form:errors path="Assignment.parentsign"></form:errors>
 				                  	<td valign="top" align="left" class="input_txt"><span class="err">* </span>Date:  </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="datepicker3" name="parentdate" value="${assignmentdetails.parentdate}"/><br><span id="datepicker3error" style="color: red;font-style:italic;"><form:errors path="Assignment.parentdate"></form:errors>
@@ -472,7 +472,7 @@ and exclusively in the name of Perry Chiropractic and Therapy Center, such sums 
 				                  	<tr class="row1">
 				                  <td valign="top" align="left" class="input_txt"><span class="err">* </span>Perry Chiropractic and Therapy Center Representative:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="representative" name="representative" value="${assignmentdetails.representative}" onInput="return validatename(id);" /><span id="representativeerror" style="color: red;font-style:italic;"><form:errors path="Assignment.representative"></form:errors>
+				                  	<input type="text" class="input_txtbx1" id="representative" name="representative" value="${assignmentdetails.representative}" onInput="return validatename(id);" /><br><span id="representativeerror" style="color: red;font-style:italic;"><form:errors path="Assignment.representative"></form:errors>
 				                  	<td valign="top" align="left" class="input_txt"><span class="err">* </span>Date:  </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="datepicker4" name="representativedate" value="${assignmentdetails.representativedate}"/><br><span id="datepicker4error" style="color: red;font-style:italic;"><form:errors path="Assignment.representativedate"></form:errors>
