@@ -138,6 +138,23 @@ $(function() {
 	});	
 </script>
 <script>
+  var currentTab=0;
+  $("#btnNext").live("click", function () {
+        var tabs = $('#tabs').tabs();
+        var c = $('#tabs').tabs("length");
+        currentTab = currentTab == (c - 1) ? currentTab : (currentTab + 1);
+        tabs.tabs('select', currentTab);
+        $("#btnPrevious").show();
+        if (currentTab == (c - 1)) {
+            $("#btnNext").hide();
+        } else {
+            $("#btnNext").show();
+        }
+    });
+  
+  
+  </script>
+<script>
 function validatename(id){
     var textInput = document.getElementById(id).value;
     textInput = textInput.replace(/[^A-Za-z ]/g, "");
@@ -322,8 +339,54 @@ $(function() {
              return true;
           }  
           
-          </script>  
-   <script>
+          </script> 
+          <script>
+  function checkValid(e)
+  {
+	  document.getElementById("pnameerror").innerHTML=" ";
+		
+		if(document.getElementById("pname").value=="")
+		{
+		document.getElementById("pnameerror").innerHTML="Required Field Should not be Empty";
+		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+		}
+		
+		else if(document.getElementById("pname").value.length<=4 && document.getElementById("pname").value.length<=32)
+		{
+		document.getElementById("pnameerror").innerHTML="Name should be length of 4 to 32";
+		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+		}
+		 else if(document.getElementById("pname").value!="")
+		 {
+		  document.getElementById("pnameerror").innerHTML="";
+		  document.getElementById("btnvisible1").style.visibility="hidden";
+		 //document.getElementById("btnNext").style.display="block";
+		  document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";		 
+		 //document.getElementById("btnNext").style.visibility="visible";
+		 }
+		
+		document.getElementById("datepickererror").innerHTML="";
+	if(document.getElementById("datepicker").value=="")
+		{
+		document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+		}
+  	else if(document.getElementById("datepicker").value!="")
+		 {
+		  document.getElementById("datepickererror").innerHTML="";
+		  document.getElementById("btnvisible1").style.visibility="hidden";
+		 //document.getElementById("btnNext").style.display="block";
+		  document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";		 
+		 //document.getElementById("btnNext").style.visibility="visible";
+		 }
+	
+  	
+  }
+
+  
+  
+  </script>         
+   <!-- <script>
 
 	function checkSubmit()
 	{
@@ -376,7 +439,39 @@ document.getElementById("pnameerror").innerHTML=" ";
 	
 	}
 	</script>
+	 -->
+	 <script>
+	function checkSubmit1(){
+		
+		document.getElementById("datepickererror").innerHTML="";
+		var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+			if(document.getElementById("datepicker").value.match(datechk)==null)
+		    {
+		    	document.getElementById("datepickererror").innerHTML="Invalid Date Format";
+		    	
+		        return false;
+		    }	
+	document.getElementById("signerror").innerHTML="";
+	if(document.getElementById("sign").value=="")
+	{
+	document.getElementById("signerror").innerHTML="Required Field Should not be Empty";
 	
+	return false;
+	}
+	document.getElementById("signerror").innerHTML="";
+	    if(document.getElementById("sign").value.length<4 || document.getElementById("sign").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("signerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
+	
+	
+	
+	}
+	
+	</script>        
 <script type="text/javascript">
        function validate(event) {
           
@@ -536,6 +631,7 @@ document.getElementById("pnameerror").innerHTML=" ";
          <tr><td>External Rotation:	</td><td>90</td><td><input type="text" size="5"  value="${shoulderexamdetails.externalrotationleft}" name="externalrotationleft" onkeypress="return validate(event)">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" name="externalrotationright" value="${shoulderexamdetails.externalrotationright}" onkeypress="return validate(event)"></td><td width="90"></td><td>Yergason's:</td><td width="150"></td><td><input type="text" size="5" onkeypress="return validate(event)" value="${shoulderexamdetails.yergasonsleft}" name="yergasonsleft">&nbsp;&nbsp;&nbsp;&nbsp;<input size="5" type="text" onkeypress="return validate(event)" value="${shoulderexamdetails.yergasonsright}" name="yergasonsright"></td></tr>
           <tr><td></td><td></td><td>&nbsp;&nbsp;</td><td width="90"></td><td>Codman's:</td><td width="150"></td><td><input type="text" size="5" onkeypress="return validate(event)" value="${shoulderexamdetails.codmansleft}" name="codmansleft">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="5" onkeypress="return validate(event)" value="${shoulderexamdetails.codmansright}"  name="codmansright"></td></tr>
          <tr><td></td><td></td><td>&nbsp;&nbsp;</td><td width="90"></td><td>Apprehension:</td><td width="150"></td><td><input type="text" size="5"  name="apprehensionleft" onkeypress="return validate(event)" value="${shoulderexamdetails.apprehensionleft}" >&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="5" onkeypress="return validate(event)" value="${shoulderexamdetails.apprehensionright}" name="apprehensionright"></td></tr>
+         <tr><td id="tblbtn"><input type="button" id="btnNext" class="submit_btn" value="Next" onmouseover="checkValid(event);"/></td></tr>
          </table>
          </td></tr></table></div></div>
         <div id="tabs-2">     
@@ -619,7 +715,7 @@ document.getElementById("pnameerror").innerHTML=" ";
            <div><B style="font-size:14px"><span class="err">*</span>&nbsp;&nbsp;PHYSICIAN SIGNATURE:</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" value="${shoulderexamdetails.signature}" name="signature" id="sign" onInput="return validatename(id)";><span class="err" id="signerror"><form:errors path="shoulderexamdetails.signature"></form:errors></div>
            
          
-         <table align="right"><tr><td><input type="submit" value="update" class="submit_btn" onclick="return checkSubmit('this');"></td><td> <a href="viewshoulderexamdetails" style="color: white" class="submit_btn" onclick="myclose()">Cancel</a></td></tr></table>
+         <table align="right"><tr><td><input type="submit" value="update" class="submit_btn" onclick="return checkSubmit1('this');"></td><td> <a href="viewshoulderexamdetails" style="color: white" class="submit_btn" onclick="myclose()">Cancel</a></td></tr></table>
          <script>
  function myclose()
  {

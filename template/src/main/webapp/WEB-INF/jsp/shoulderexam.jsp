@@ -330,7 +330,7 @@ function validatename(id){
 	  
   }
   </script>
- <script>
+  <script>
   function checkValid(e)
   {
 	  document.getElementById("pnameerror").innerHTML=" ";
@@ -338,20 +338,20 @@ function validatename(id){
 		if(document.getElementById("pname").value=="")
 		{
 		document.getElementById("pnameerror").innerHTML="Required Field Should not be Empty";
-		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next2' onmouseover='checkValid(event);'>";
+		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
 		}
 		
 		else if(document.getElementById("pname").value.length<=4 && document.getElementById("pname").value.length<=32)
 		{
 		document.getElementById("pnameerror").innerHTML="Name should be length of 4 to 32";
-		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next2' onmouseover='checkValid(event);'>";
+		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
 		}
 		 else if(document.getElementById("pname").value!="")
 		 {
 		  document.getElementById("pnameerror").innerHTML="";
 		  document.getElementById("btnvisible1").style.visibility="hidden";
 		 //document.getElementById("btnNext").style.display="block";
-		  document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next1' onmouseover='checkValid(event);'>";		 
+		  document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";		 
 		 //document.getElementById("btnNext").style.visibility="visible";
 		 }
 		
@@ -359,44 +359,55 @@ function validatename(id){
 	if(document.getElementById("datepicker").value=="")
 		{
 		document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
-		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next2' onmouseover='checkValid(event);'>";
+		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
 		}
   	else if(document.getElementById("datepicker").value!="")
 		 {
 		  document.getElementById("datepickererror").innerHTML="";
 		  document.getElementById("btnvisible1").style.visibility="hidden";
 		 //document.getElementById("btnNext").style.display="block";
-		  document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next1' onmouseover='checkValid(event);'>";		 
+		  document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";		 
 		 //document.getElementById("btnNext").style.visibility="visible";
 		 }
-  	
+	
   	
   }
 
   
   
-  </script> 
+  </script>         
 	<script>
-	function checkSubmit1()
+	function checkSubmit1(){
+		
+		document.getElementById("datepickererror").innerHTML="";
+		var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+			if(document.getElementById("datepicker").value.match(datechk)==null)
+		    {
+		    	document.getElementById("datepickererror").innerHTML="Invalid Date Format";
+		    	
+		        return false;
+		    }	
+	document.getElementById("signerror").innerHTML="";
+	if(document.getElementById("sign").value=="")
 	{
-	document.getElementById("signatureerror").innerHTML="";
-	if(document.getElementById("signature").value=="")
-	{
-	document.getElementById("signatureerror").innerHTML="Required Field Should not be Empty";
+	document.getElementById("signerror").innerHTML="Required Field Should not be Empty";
 	
 	return false;
 	}
-	document.getElementById("signatureerror").innerHTML="";
-    if(document.getElementById("signature").value.length<4 || document.getElementById("signature").value.length>=32)
-    {
-    	
-    	document.getElementById("signatureerror").innerHTML="Name should be min 4 and max 32";
-    	
-        return false;
-    }
-	}
-	</script>
+	document.getElementById("signerror").innerHTML="";
+	    if(document.getElementById("sign").value.length<4 || document.getElementById("sign").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("signerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
 	
+	
+	
+	}
+	
+	</script>        
 	<script type="text/javascript">
        function validate(event) {
           
@@ -971,7 +982,7 @@ function validatename(id){
                       
            </table>
            </br>
-           <div><B style="font-size:14px"><span class="err">*</span>PHYSICIAN SIGNATURE:</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="signature" id="signature" onInput="return validatename(id)";><span class="err" id="signatureerror"><form:errors path="shoulderexamdetails.signature"></form:errors></div>
+           <div><B style="font-size:14px"><span class="err">*</span>PHYSICIAN SIGNATURE:</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="signature" id="sign" onInput="return validatename(id)";><span class="err" id="signerror"><form:errors path="shoulderexamdetails.signature"></form:errors></div>
          </c:when>
           <c:otherwise>
          
