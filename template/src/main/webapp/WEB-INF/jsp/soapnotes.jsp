@@ -552,7 +552,7 @@ document.getElementById("leftproxi").style.display="none";
 					newdiv.innerHTML = '<table width="100%" border="0" cellspacing="0" cellpadding="0" id="newtbl'
 							+ $im
 							+ '"><tr>'
-							+ '<td valign="top" align="left" class="input_txt" width="70%">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="diagonosis" onkeypress="return validate1(event,id)";name="diagnosis[]"/></td></tr><tr class="row1"><td align="left" valign="top"><a javascript:void(0);" onclick="removechoice('
+							+ '<td valign="top" align="left" class="input_txt" width="70%">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="diagonosis1" onInput="return validatename1(id)";name="diagnosis[]"/></td></tr><tr class="row1"><td align="left" valign="top"><a javascript:void(0);" onclick="removechoice('
 							+ $im
 							+ ')" style="text-decoration:none;"><input type="submit" class="submit_btn" value="CANCEL"  /></a></td></tr></table>';
 							
@@ -571,13 +571,13 @@ document.getElementById("leftproxi").style.display="none";
 				}
 			</script>
  &nbsp &nbspDiagonosis:<br/>
-&nbsp;&nbsp;&nbsp;<input type="text" name="diagnosis[]" id="diagonosis"onInput="return validatename1(id)";class="input_txtbx1"><br/><br/>
-<span id="diagnosiserr" style="color:red"></span>
+&nbsp;&nbsp;&nbsp;<input type="text" name="diagnosis[]" id="diagonosis"onInput="return validatename1(id)";class="input_txtbx1"><br/>
+
 <!-- &nbsp &nbsp 2&nbsp &nbsp &nbsp<input type="text" name="diagnosis2"><br/><br/>
 &nbsp &nbsp 3&nbsp &nbsp &nbsp<input type="text" name="diagnosis3"><br/><br/>
 &nbsp &nbsp 4&nbsp &nbsp &nbsp<input type="text" name="diagnosis4"><br/><br/> -->
 <div id="multichoice"></div><a href="javascript:void(0);" onclick="addMultichoice('multichoice');" style="text-decoration:none;" ><input type="button" value="Add one more diagnosis" class="submit_btn2" name=""/></a>
- 
+ <br><span id="diagnosiserror" style="color:red"></span>
  </td>
  <td>
  &nbsp &nbsp <select name="e1e2" id="e1e2" class="input_cmbbx1" onchange="if (this.value=='ExtremitiesX-Rays'){this.form['xray'].style.visibility='visible'}else {this.form['xray'].style.visibility='hidden'};">
@@ -1294,14 +1294,19 @@ document.getElementById("leftproxi").style.display="none";
 		document.getElementById("signerror").innerHTML="Required Field Should between 4 to 32";	
 		error="true";
 		}
-	document.getElementById("diagnosiserr").innerHtml="";
-	if((document.getElementById("diagonosis").value.length < 4) || (document.getElementById("diagonosis").value.length > 32))
+	document.getElementById("diagnosiserror").innerHtml="";
+	
+	/* if(document.getElementById("diagonosis").value =="")
 		{
 		
-		document.getElementById("diagnosiserr").innerHtml="Required Field Should between 4 to 32";	
+		}
+	else if((document.getElementById("diagonosis").value.length < 4) || (document.getElementById("diagonosis").value.length > 32))
+		{
+		
+		document.getElementById("diagnosiserror").innerHtml="Required Field Should between 4 to 32";	
 		error="true";
 		
-		}
+		} */
 	
 	document.getElementById("datepicker1error").innerHTML="";
 	var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
@@ -1395,6 +1400,7 @@ document.getElementById("leftproxi").style.display="none";
 			}
 			  if(error == "true")
 				{
+				  alert("sdgsdg");
 				return false;
 				}
 	}	

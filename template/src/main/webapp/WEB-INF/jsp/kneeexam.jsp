@@ -950,7 +950,7 @@ $(function() {
          <tr height="20">         
  <tr class="row1">
  <td><B style="font-size:14px">NEUROLOGICAL</B></td><td style="width: 397px; "><input type="checkbox" name="neurologicaltest" value="Neurological Testing Unremarkable">Neurological Testing Unremarkable</td><td><!-- <input type="checkbox" name="exceptn" value="Except">Except --></td>
- <td></td><td></td><td></td>
+ <td style="width: 367px; "></td><td></td><td></td>
  </tr>
  <tr class="row1">
  <td><b>Level</b> </td>

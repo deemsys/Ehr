@@ -87,6 +87,23 @@
 		});
 		});	
    </script>
+    <script>
+  var currentTab=0;
+  $("#btnNext").live("click", function () {
+        var tabs = $('#tabs').tabs();
+        var c = $('#tabs').tabs("length");
+        currentTab = currentTab == (c - 1) ? currentTab : (currentTab + 1);
+        tabs.tabs('select', currentTab);
+        $("#btnPrevious").show();
+        if (currentTab == (c - 1)) {
+            $("#btnNext").hide();
+        } else {
+            $("#btnNext").show();
+        }
+    });
+  
+  
+  </script>
    <script>
    function validatename(id){
 	    var textInput = document.getElementById(id).value;
@@ -125,7 +142,7 @@ $(function() {
     $( "#tabs" ).tabs();
   });
   </script>
-  <script>
+  <!-- <script>
   var currentTab=0;
   $("#btnNext").live("click", function () {
         var tabs = $('#tabs').tabs();
@@ -141,8 +158,8 @@ $(function() {
     });
   
   
-  </script>
-  <script>
+  </script> -->
+  <!-- <script>
   var currentTab=0;
   $("#btnNext").live("click", function () {
         var tabs = $('#tabs').tabs();
@@ -158,7 +175,7 @@ $(function() {
     });
   
   
-  </script>
+  </script> -->
   <script>
   $(window).load(function(){
 $("#flexion").keyup(function() {
@@ -263,7 +280,7 @@ $("#flexion").keyup(function() {
 
   
   
-  </script> 
+  </script>        
   <!-- <script>
   function Check()
   {
@@ -335,8 +352,7 @@ document.getElementById("pnameerror").innerHTML=" ";
 	</script> -->
 	<script>
 	function checkSubmit1(){
-	
-	
+		
 		document.getElementById("datepickererror").innerHTML="";
 		var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 			if(document.getElementById("datepicker").value.match(datechk)==null)
@@ -345,7 +361,6 @@ document.getElementById("pnameerror").innerHTML=" ";
 		    	
 		        return false;
 		    }	
-		
 	document.getElementById("signerror").innerHTML="";
 	if(document.getElementById("sign").value=="")
 	{
@@ -364,13 +379,10 @@ document.getElementById("pnameerror").innerHTML=" ";
 	
 	
 	
-	
 	}
 	
-	
-	
-	</script>
-	
+	</script>        
+
 	<script type="text/javascript">
        function validate(event) {
           
@@ -622,10 +634,11 @@ document.getElementById("pnameerror").innerHTML=" ";
  </tr>
  <tr>
  
-<td id="tblbtn"><input type="button" id="btnNext" class="submit_btn" value="Next" onmouseover="checkValid(event);"/>
-<!--  <input type="button"  id="btnvisible1" class="submit_btn" value="Next" onmouseover="checkValid(event);"/> -->
+<!-- <td id="tblbtn"><input type="button" id="btnNext" class="submit_btn" value="Next" onmouseover="checkValid(event);"/>
+ <input type="button"  id="btnvisible1" class="submit_btn" value="Next" onmouseover="checkValid(event);"/>
  
-</td>
+</td> -->
+<td id="tblbtn"><input type="button" id="btnNext" class="submit_btn" value="Next" onmouseover="checkValid(event);"/></td>
  </tr>
  </table>
  </div></div>

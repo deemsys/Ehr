@@ -961,7 +961,7 @@ function validatename(id){
            </table>
            </br>
            <table width="100%">
-           <tr><td width="350"><b style="font-size:14px">FUNCTIONAL DEFICIT:	</b></td><td width="100" style="width: 272px; "><input type="checkbox" name="typing" value="Typing / Writing">Typing / Writing&nbsp;<input type="checkbox" name="driving" value="Driving"> Driving&nbsp;<input type="checkbox" id="other" name="other" value="other"  onclick="visible('this.value')">Other</td><td style="width: 239px; "><input type="text" name="otherdefict" id="otherdefict" style="display:none "></td></tr>
+           <tr><td width="350"><b style="font-size:14px">FUNCTIONAL DEFICIT:	</b></td><td width="100" style="width: 272px; "><input type="checkbox" name="typing" value="Typing / Writing">Typing / Writing&nbsp;<input type="checkbox" name="driving" value="Driving"> Driving&nbsp;<input type="checkbox" id="other" name="other" value="other"  onclick="visible('this.value')">Other</td><td style="width: 239px; "><input type="text" name="otherdefict" id="otherdefict" style="display:none " onInput="return validatename(id)";></td></tr>
            
            </table>
            <table>
