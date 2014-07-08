@@ -423,9 +423,9 @@ document.getElementById("pnameerror").innerHTML=" ";
            <c:set value="${cervicalexamForm.cervicalexam[0]}" var="cervicalexam"/>  
  <tr class="row1">
  <input type="hidden" name="cervicalexamid" id="inp_id" value="${cervicalexam.cervicalexamid}">
-<td><h2><span class="err">*</span>&nbsp;&nbsp;Patient Name:</h2></td><td><input type="text"  name="pname" id="pname" value="${cervicalexam.pname}" onInput="return validatename(id)";/><span class="err" id="pnameerror"><form:errors path="Cervicalexam.pname"></form:errors></span></td>
+<td><h2><span class="err">*</span>&nbsp;&nbsp;Patient Name:</h2></td><td><input type="text"  name="pname" id="pname" value="${cervicalexam.pname}" onInput="return validatename(id)";/><br><span class="err" id="pnameerror"><form:errors path="Cervicalexam.pname"></form:errors></span></td>
 <td width="600">
-<td><h2><span class="err">*</span>&nbsp;&nbsp;Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${cervicalexam.date}"/><span class="err" id="datepickererror"><form:errors path="Cervicalexam.date"></form:errors></span></td>
+<td><h2><span class="err">*</span>&nbsp;&nbsp;Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${cervicalexam.date}"/><br><span class="err" id="datepickererror"><form:errors path="Cervicalexam.date"></form:errors></span></td>
 </tr>
 </table>
 <br/>
@@ -692,7 +692,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  </tr>
  </tr>
  <br/>
- <table><tr><td><B style="font-size:14px"><span class="err">*</span>&nbsp;&nbsp;PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sign" id="sign" value="${cervicalexam.sign}" onInput="return validatename(id)";></B><span class="err" id="signerror"><form:errors path="Cervicalexam.sign"></form:errors></span></td></tr></table>
+ <table><tr><td><B style="font-size:14px"><span class="err">*</span>&nbsp;&nbsp;PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sign" id="sign" value="${cervicalexam.sign}" onInput="return validatename(id)";></B><br><span class="err" id="signerror"><form:errors path="Cervicalexam.sign"></form:errors></span></td></tr></table>
 <table align="right">
 <tr>
 <td><input type="submit" class="submit_btn" value="Update" onclick="return checkSubmit1('this');"></td>
