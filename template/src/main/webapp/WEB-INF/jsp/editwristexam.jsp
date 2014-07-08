@@ -354,7 +354,7 @@ P#mypar {
 		document.getElementById("pnameerror").innerHTML="Required Field Should not be Empty";
 		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
 		}
-		
+		//document.getElementById("pnameerror").innerHTML=" ";
 		else if(document.getElementById("pname").value.length<=4 && document.getElementById("pname").value.length<=32)
 		{
 		document.getElementById("pnameerror").innerHTML="Name should be length of 4 to 32";
@@ -570,12 +570,10 @@ document.getElementById("pnameerror").innerHTML=" ";
 											<tr>
 												<td>Muscle Symmetry:</td>
 												<td width="28"></td>
-												<td ><input type="text"
-													value="${wristexamdetails.muscle}" name="muscle" onInput="return validatename(id)";></td>
+												<td ><input type="text" value="${wristexamdetails.muscle}" name="muscle" id="muscle" onInput="return validatename(id)";></td>
 												<td width="48"></td>
 												<td width="135">Swelling / Discoloration:</td>
-												<td width="40"><input type="text"
-													value="${wristexamdetails.swelling}" name="swelling" onInput="return validatename(id)";></td>
+												<td width="40"><input type="text" value="${wristexamdetails.swelling}" name="swelling" id="swelling" onInput="return validatename(id)";></td>
 
 												<td width="49"></td>
 												<td width="139">Dominant Hand</td>
@@ -664,7 +662,7 @@ document.getElementById("pnameerror").innerHTML=" ";
 													<c:if test="${wristexamdetails.extensorpollicisbrevis=='right'}"> <c:out value="checked"></c:out></c:if>
 													name="extensorpollicisbrevis">&nbsp;&nbsp;&nbsp;Right</td>
 												<td width="130">Other / Note:</td>
-												<td><textarea rows="5" cols="50" name="note" onInput="return validatename(id)";>${wristexamdetails.note}</textarea></td>
+												<td><textarea rows="5" cols="50" name="note" id="note" onInput="return validatename(id)";>${wristexamdetails.note}</textarea></td>
 
 											</tr>
 										</table>
@@ -991,7 +989,7 @@ document.getElementById("pnameerror").innerHTML=" ";
 										<tr>
 											<td width="350"><b style="font-size: 14px">ASSESSMENT
 													/ ADDITIONAL COMMENTS: </b></td>
-											<td><textarea rows="5" cols="50" name="comments" onInput="return validatename(id)";>${wristexamdetails.comments}</textarea>
+											<td><textarea rows="5" cols="50" name="comments" id="comments" onInput="return validatename(id)";>${wristexamdetails.comments}</textarea>
 											</td>
 										</tr>
 										<tr height="10"></tr>
@@ -1017,29 +1015,26 @@ document.getElementById("pnameerror").innerHTML=" ";
 										<tr>
 											<td width="400"><b style="font-size: 14px">DIAGNOSIS:
 											</b></td>
-											<td width="250">1)&nbsp;&nbsp;&nbsp;<input type="text" 	value="${wristexamdetails.diagnosis1}" name="diagnosis1" onInput="return validatename(id)";></td>
+											<td width="250">1)&nbsp;&nbsp;&nbsp;<input type="text" 	value="${wristexamdetails.diagnosis1}" name="diagnosis1" id="diagnosis1" onInput="return validatename(id)";></td>
 											<td width="250">2)&nbsp;&nbsp;&nbsp;<input type="text"
-												value="${wristexamdetails.diagnosis2}" name="diagnosis2" onInput="return validatename(id)";></td>
+												value="${wristexamdetails.diagnosis2}" name="diagnosis2" id="diagnosis2" onInput="return validatename(id)";></td>
 											<td width="250">3)&nbsp;&nbsp;&nbsp;<input type="text"
-												value="${wristexamdetails.diagnosis3}" name="diagnosis3" onInput="return validatename(id)";></td>
+												value="${wristexamdetails.diagnosis3}" name="diagnosis3" id="diagnosis3" onInput="return validatename(id)";></td>
 											<td width="250">4)&nbsp;&nbsp;&nbsp;<input type="text"
-												value="${wristexamdetails.diagnosis4}" name="diagnosis4" onInput="return validatename(id)";></td>
+												value="${wristexamdetails.diagnosis4}" name="diagnosis4" id="diagnosis4" onInput="return validatename(id)";></td>
 										</tr>
 										<tr height="10"></tr>
 										<tr>
 											<td></td>
-											<td width="250">5)&nbsp;&nbsp;&nbsp;<input type="text"
-												name="diagnosis5" value="${wristexamdetails.diagnosis5}" onInput="return validatename(id)";></td>
-											<td width="250">6)&nbsp;&nbsp;&nbsp;<input type="text"
-												value="${wristexamdetails.diagnosis6}" name="diagnosis6" onInput="return validatename(id)";></td>
+											<td width="250">5)&nbsp;&nbsp;&nbsp;<input type="text" name="diagnosis5" id="diagnosis5" value="${wristexamdetails.diagnosis5}" onInput="return validatename(id)";></td>
+											<td width="250">6)&nbsp;&nbsp;&nbsp;<input type="text" value="${wristexamdetails.diagnosis6}" name="diagnosis6" id="diagnosis6" onInput="return validatename(id)";></td>
 										</tr>
 									</table>
 									</br>
 									<div>
 										<b style="font-size: 14px">PLAN:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><input
-											type="text" name="times" value="${wristexamdetails.times}" onInput="return validatename(id)";>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-										Times/week for&nbsp;&nbsp;&nbsp;&nbsp; </b><input type="text"
-											value="${wristexamdetails.weeks}" name="weeks" onInput="return validatename(id)";>&nbsp;&nbsp;&nbsp;&nbsp;
+											type="text" name="times" id="times" value="${wristexamdetails.times}" onInput="return validatename(id)";>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										Times/week for&nbsp;&nbsp;&nbsp;&nbsp; </b><input type="text" value="${wristexamdetails.weeks}" name="weeks" id="weeks" onInput="return validatename(id)";>&nbsp;&nbsp;&nbsp;&nbsp;
 										weeks to address the above functional & structural deficits.
 										Treatment will consist of the following:
 									</div>
@@ -1116,8 +1111,7 @@ document.getElementById("pnameerror").innerHTML=" ";
 									</br>
 									<div>
 										<B style="font-size: 14px"><span class="err">*</span>PHYSICIAN SIGNATURE:</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
-											type="text" value="${wristexamdetails.signature}"
-											name="signature" id="sign" onInput="return validatename(id)";><span class="err" id="signerror"><form:errors path="wristexamdetails.signature"></form:errors>
+											type="text" value="${wristexamdetails.signature}" name="signature" id="sign" onInput="return validatename(id)";><span class="err" id="signerror"><form:errors path="wristexamdetails.signature"></form:errors>
 									</div>
 
 
