@@ -120,6 +120,14 @@ document.getElementById("patientsignatureerror").innerHTML=" ";
 		
 		return false;
 		}
+		document.getElementById("patientsignatureerror").innerHTML="";
+	    if(document.getElementById("patientsignature").value.length<4 || document.getElementById("patientsignature").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("patientsignatureerror").innerHTML="Should be of length 4 to 32";
+	    	
+	        return false;
+	    }
 	}
 
 	</script>
@@ -200,15 +208,15 @@ function validatename1(id){
                         <div align="justify">
                         <input type="hidden" class="input_txtbx1" id="inp_id" value="${Medicaldetails.medical_no}" name="medical_no" />
 				                <p id="mypar">&nbsp;I, <input type="text" class="input_txtbx1" id="iname" name="name" value="${Medicaldetails.name}" onInput="return validatename(id);"/><span id="inameerror" style="color: red;font-style:italic;"><form:errors path="MedicalRecords.name"></form:errors></span>
-				                &nbsp;&nbsp;give my permission to release Medical Information, Records, X-ray Reports, or the following &nbsp;&nbsp;<input type="text" class="input_txtbx1" id="medicalinformation" name="medicalinformation" value="${Medicaldetails.medicalinformation}" onInput="return validatename(id);"/><span id="medicalinformationerror" style="color: red;font-style:italic;"><form:errors path="MedicalRecords.medicalinformation"></form:errors></span> &nbsp;&nbsp;to Lorain Injury Center, <br>Dr. Darrin Pordash D.C.<br>
+				                &nbsp;&nbsp;give my permission to release Medical Information, Records, X-ray Reports, or the following &nbsp;&nbsp;<br><br><input type="text" class="input_txtbx1" id="medicalinformation" name="medicalinformation" value="${Medicaldetails.medicalinformation}" onInput="return validatename(id);"/><span id="medicalinformationerror" style="color: red;font-style:italic;"><form:errors path="MedicalRecords.medicalinformation"></form:errors></span> &nbsp;&nbsp;to Lorain Injury Center, <br>Dr. Darrin Pordash D.C.<br>
 				                5190 Deroit Rd.<br>
                                 Sheffield Village, Ohio 44035<br>
                                 Fax 440-934-3107  </p>
                          <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt" width="30%"><span class="err"> * </span>Patient Signature:  </td>
-				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="patientsignature" name="patientsignature" onInput="return validatename1(id)"; " value="${Medicaldetails.patientsignature}"/><br/>
-				                  	<span id="patientsignatureerror" style="color: red;font-style:italic;"><form:errors path="MedicalRecords.patientsignature"></form:errors></span>
+				                  <td valign="middle" align="left" class="input_txt" width="30%"><span class="err"> * </span>Patient Signature:  &nbsp;&nbsp;&nbsp;
+				                  
+				                  	<input type="text" class="input_txtbx1" id="patientsignature" name="patientsignature" onInput="return validatename1(id)"; " value="${Medicaldetails.patientsignature}"/>
+				                  	<br><span id="patientsignatureerror" style="color: red;font-style:italic;"><form:errors path="MedicalRecords.patientsignature"></form:errors></span>
 				                  	</td>
 				                  	</tr>
 				                  	</table>
