@@ -836,7 +836,7 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 					<option id="other" value="other">Other</option>
 					</select>
 					<span id="doyou_poserror" style="color: red;font-style:italic;"></span><br><br>
-				 <input type="text" name="doyou" id="doyou" maxlength="32" style='display:none' onInput="return validatename(id)";/><span id="doyouerror" style="color: red;font-style:italic;"></span>
+				 <input type="text" name="doyou" id="doyou" class="input_txtbx1" maxlength="32" style='display:none; width: 171px' onInput="return validatename(id)";/><span id="doyouerror" style="color: red;font-style:italic;"></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
@@ -887,7 +887,7 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 					<option value="others">Other</option>
 					</select>
 					<span id="type_of_lighterror" style="color: red;font-style:italic;"></span>
-				   <input type="text" name="lighting" id="lighting" style='display:none' maxlength="32" onInput="return validatename(id)";/>
+				   <input type="text" class="input_txtbx1" name="lighting" id="lighting" style='display:none; width: 171px' maxlength="32" onInput="return validatename(id)";/>
 				  </td>
 				  </tr>
 				  <tr class="row2">
@@ -1010,7 +1010,7 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 					<option value="slippery">Slippery</option>
 					<option value="Other">Other</option>
 					</select><br><br>
-				   <input type="text" name="warea" id="warea" maxlength="32" onInput="return validatename(id)"; style='display:none'/>
+				   <input type="text" class="input_txtbx1" name="warea" id="warea" maxlength="32" onInput="return validatename(id)"; style='display:none; width: 171px'/>
 				  </td>
 				  </tr>
 				  <tr class="row2">
