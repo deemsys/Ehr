@@ -701,7 +701,7 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 					 <td></td>   <td></td><td></td><td></td><td></td> <td></td><td></td>
 				 </tr>
 				 <tr class="row2">
-                						<td valign="middle" align="left" class="input_txt"><span class="err">* </span>Job Position:</td>
+                						<td valign="middle" align="left" class="input_txt"><span class="err">* </span>Work Posture:</td>
                 						 <td valign="top" align="left" class="input_txt">
 				  							<select name="doyou_pos" class="input_cmbbx1" id="doyoucheck"  onclick='Checkpos();'>	
 				  							 <option value="sit_at_desk" <c:if test="${workaccident.doyou_pos=='sit_at_desk'}"><c:out value="selected"/></c:if>>Sit at desk</option>

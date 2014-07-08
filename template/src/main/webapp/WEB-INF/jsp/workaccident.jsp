@@ -822,7 +822,7 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 				  </td>
 				  </tr>
 				 <tr class="row2">
-                <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Job Position:</td>
+                <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Work Posture:</td>
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="doyou_pos" id="doyou_pos" class="input_cmbbx1" onchange='Checkpos(this.value);' style="width: 171px; ">
 					<option selected="selected" value="sit_at_desk" >Sit at desk</option>
