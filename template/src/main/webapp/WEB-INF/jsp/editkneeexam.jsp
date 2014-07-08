@@ -129,6 +129,23 @@
 		});
 		});
    </script>
+    <script>
+  var currentTab=0;
+  $("#btnNext").live("click", function () {
+        var tabs = $('#tabs').tabs();
+        var c = $('#tabs').tabs("length");
+        currentTab = currentTab == (c - 1) ? currentTab : (currentTab + 1);
+        tabs.tabs('select', currentTab);
+        $("#btnPrevious").show();
+        if (currentTab == (c - 1)) {
+            $("#btnNext").hide();
+        } else {
+            $("#btnNext").show();
+        }
+    });
+  
+  
+  </script>
    
   <script>
 $(function() {
@@ -287,7 +304,53 @@ element.style.display='none';
           }  
           
           </script>
-           <script>
+       <script>
+  function checkValid(e)
+  {
+	  document.getElementById("pnameerror").innerHTML=" ";
+		
+		if(document.getElementById("pname").value=="")
+		{
+		document.getElementById("pnameerror").innerHTML="Required Field Should not be Empty";
+		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+		}
+		
+		else if(document.getElementById("pname").value.length<=4 && document.getElementById("pname").value.length<=32)
+		{
+		document.getElementById("pnameerror").innerHTML="Name should be length of 4 to 32";
+		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+		}
+		 else if(document.getElementById("pname").value!="")
+		 {
+		  document.getElementById("pnameerror").innerHTML="";
+		  document.getElementById("btnvisible1").style.visibility="hidden";
+		 //document.getElementById("btnNext").style.display="block";
+		  document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";		 
+		 //document.getElementById("btnNext").style.visibility="visible";
+		 }
+		
+		document.getElementById("datepickererror").innerHTML="";
+	if(document.getElementById("datepicker").value=="")
+		{
+		document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+		}
+  	else if(document.getElementById("datepicker").value!="")
+		 {
+		  document.getElementById("datepickererror").innerHTML="";
+		  document.getElementById("btnvisible1").style.visibility="hidden";
+		 //document.getElementById("btnNext").style.display="block";
+		  document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";		 
+		 //document.getElementById("btnNext").style.visibility="visible";
+		 }
+	
+  	
+  }
+
+  
+  
+  </script>            
+          <!--  <script>
 
 	function checkSubmit()
 	{
@@ -573,7 +636,39 @@ var swelling = document.getElementById('diagnosis1').value;
 		return false;
 		}
 	}
-	</script>
+	</script> -->
+	<script>
+	function checkSubmit1(){
+		
+		document.getElementById("datepickererror").innerHTML="";
+		var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+			if(document.getElementById("datepicker").value.match(datechk)==null)
+		    {
+		    	document.getElementById("datepickererror").innerHTML="Invalid Date Format";
+		    	
+		        return false;
+		    }	
+	document.getElementById("signerror").innerHTML="";
+	if(document.getElementById("sign").value=="")
+	{
+	document.getElementById("signerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("signerror").innerHTML="";
+	    if(document.getElementById("sign").value.length<4 || document.getElementById("sign").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("signerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
+	
+	
+	
+	}
+	
+	</script>        
 	  <script type="text/javascript">
 function validatename(id){
 	
@@ -883,6 +978,7 @@ function validatename3(id){
  <input type="text" name="patdll"id="patdll" onkeypress="return validate(event)" size="5" value="${kneeexam.patdll}"onInput="checkLength1(id);"> 
  <input type="text" name="patdlr" id="patdlr"onkeypress="return validate(event)" size="5" value="${kneeexam.patdlr}"onInput="checkLength1(id);"> </td>
  </tr>
+ <tr><td id="tblbtn"><input type="button" id="btnNext" class="submit_btn" value="Next" onmouseover="checkValid(event);"/></td></tr>
  </table>
  
 </div>
@@ -1068,7 +1164,7 @@ function validatename3(id){
  <table><tr><td><B style="font-size:14px"><span class="err">*</span> PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sign" id="sign" value="${kneeexam.sign}"onInput="return validatename(id)";><span class="err" id="signerror"><form:errors path="Kneeexam.sign"></form:errors></span></B></td></tr></table>
 <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="Update"  onclick="return checkSubmit('this');"></td>
+<td><input type="submit" class="submit_btn" value="Update"  onclick="return checkSubmit1('this');"></td>
 <td><input type="reset" class="submit_btn" value="Cancel" onclick="myclose()"></td>
 <script>
  function myclose()
