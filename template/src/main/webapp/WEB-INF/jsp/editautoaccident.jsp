@@ -68,6 +68,8 @@ $(function() {
 	}
 }
   </script>
+  
+  
   <script type="text/javascript">
        function validate(event) {
           
@@ -305,7 +307,42 @@ $(function() {
 	});	
 
 </script>
+
 <script>
+function change44()
+{
+
+if(document.getElementById("body_strike").checked)
+{
+
+		document.getElementById("head_hit").style.visibility = 'hidden';
+		document.getElementById("rlshoulder_hit").style.visibility = 'hidden';
+		document.getElementById("rlhip_hit").style.visibility = 'hidden';
+		document.getElementById("rlknee_hit").style.visibility = 'hidden';
+		document.getElementById("chest_hit").style.visibility = 'hidden';
+		document.getElementById("rlarm_hit").style.visibility = 'hidden';
+		document.getElementById("rlleg_hit").style.visibility = 'hidden';
+		document.getElementById("otherpart_hit").style.visibility = 'hidden';
+
+
+
+		}
+		else  {
+			document.getElementById("head_hit").style.visibility = 'visible';
+		document.getElementById("rlshoulder_hit").style.visibility = 'visible';
+		document.getElementById("rlhip_hit").style.visibility = 'visible';
+		document.getElementById("rlknee_hit").style.visibility = 'visible';
+		document.getElementById("chest_hit").style.visibility = 'visible';
+		document.getElementById("rlarm_hit").style.visibility = 'visible';
+		document.getElementById("rlleg_hit").style.visibility = 'visible';
+		document.getElementById("otherpart_hit").style.visibility = 'visible';
+
+		}
+}
+</script>
+<script>
+
+
 function validateusername(){
     var textInput = document.getElementById("claimno").value;
     textInput = textInput.replace(/[^A-Z0-9]/g, "");
@@ -1272,8 +1309,8 @@ document.getElementById('mytext').style.display="block";
 				   <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Did Patient's Body Strike Interior Of Car:</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="radio" name="body_strike" value="yes" id="yeschecked" class="input_txt"  onclick="strike();" <c:if test="${autoaccident.body_strike=='yes'}"><c:out value="Checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
-				  <input type="radio" name="body_strike" value="no" id="nochecked" class="input_txt"  onclick="strike();"<c:if test="${autoaccident.body_strike=='no'}"><c:out value="Checked"/></c:if>>No&nbsp;&nbsp;&nbsp;<span class="err"><form:errors path="Autoaccident.body_strike"></form:errors></span>
+				  <input type="radio" name="body_strike"  value="yes" id="yeschecked" onchange="change44();" class="input_txt"  onclick="strike();" <c:if test="${autoaccident.body_strike=='yes'}"><c:out value="Checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
+				  <input type="radio" name="body_strike" id="body_strike" value="no" id="nochecked" onchange="change44();" class="input_txt"  onclick="strike();"<c:if test="${autoaccident.body_strike=='no'}"><c:out value="Checked"/></c:if>>No&nbsp;&nbsp;&nbsp;<span class="err"><form:errors path="Autoaccident.body_strike"></form:errors></span>
 				  </td>
 				  </tr>
 				  
