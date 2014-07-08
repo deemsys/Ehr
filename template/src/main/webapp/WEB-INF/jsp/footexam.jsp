@@ -1082,7 +1082,7 @@ function validatename(id){
                       
            </table>
            </br>
-           <div><B style="font-size:14px"><span class="err">*</span>PHYSICIAN SIGNATURE:</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="sign" name="signature" onInput="return validatename(id)";><span class="err" id="signerror"><form:errors path="footexamdetails.signature"></form:errors></div>
+           <div><B style="font-size:14px"><span class="err">*</span>PHYSICIAN SIGNATURE:</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="sign" name="signature" onInput="return validatename(id)";><br><span class="err" id="signerror"><form:errors path="footexamdetails.signature"></form:errors></div>
            
          </c:when>
          <c:otherwise>
