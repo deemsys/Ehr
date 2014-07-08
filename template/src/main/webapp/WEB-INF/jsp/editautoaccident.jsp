@@ -1520,7 +1520,7 @@ document.getElementById('mytext').style.display="block";
 				  
 				  </tr>
 				  <tr class="row1">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>How Did You Get to the  Hospital?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>How Did You Get to the  &nbsp;&nbsp;Hospital?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				</td><td>
 				  <select name="hospitalget" class="input_cmbbx1" id="hospitalget" onchange='Checkhospital(this.value);'>
 					<option  value="ambulance" <c:if test="${autoaccident.hospitalget=='ambulance'}"><c:out value="selected"/></c:if>>Ambulance</option>
@@ -1530,7 +1530,7 @@ document.getElementById('mytext').style.display="block";
 				  </td>
 				  </tr> 
 				  <tr class="row2">
-                  <td valign="middle" align="left" class="input_txt" style="width: 465px; ">&nbsp;&nbsp;&nbsp;What Body Parts Were X-Rayed,What Treatment Was Given?
+                  <td valign="middle" align="left" class="input_txt" style="width: 465px; ">&nbsp;&nbsp;&nbsp;What Body Parts Were X-Rayed,What &nbsp;&nbsp;&nbsp;&nbsp;Treatment   Was Given?
 				  </td><td>
 				  <input type="text" class="input_txtbx1" id="xray" name="xray" value="${autoaccident.xray }" onInput="return validatename(id)";min="4" maxlength="32"/>
 				  </td>
