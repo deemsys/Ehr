@@ -952,7 +952,7 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 					<tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>In Your Job, Do You Push or Pull?</td>
 				  <td valign="top" align="left" class="input_txt"><input type="radio" name="push_pull" id="yes5"value="yes" class="input_txt" checked="true" onclick="pull('show4')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="push_pull" id="No5"value="No" class="input_txt" onclick="pull('hide4')">No&nbsp;&nbsp;&nbsp;
-				   <input type="text" class="input_txtbx1" id="jobpp" name="jobpp" maxlength="32" onInput="return validatename(id)";placeholder="If yes, give specifics"/> <span id="jobpperror" style="color: red;font-style:italic;"></span>
+				   <input type="text" class="input_txtbx1" id="jobpp" name="jobpp" maxlength="32" placeholder="If yes, give specifics" onInput="return validatename(id)";/> <span id="jobpperror" style="color: red;font-style:italic;"></span>
 				 <span id="push_pullerror" style="color: red;font-style:italic;"></span>
 				  </td>
 				  </tr>
