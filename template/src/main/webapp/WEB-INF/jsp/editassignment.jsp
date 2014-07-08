@@ -43,7 +43,7 @@
 	}
 }
   </script>
-    <script>
+   <script>
 
   
   $(function() {
@@ -375,6 +375,19 @@ document.getElementById("datepicker3error").innerHTML="";
 			        return false;
 			    }
 	}  </script>
+	
+	<script type="text/javascript">
+       function validate55(event) {
+          
+           var regex = new RegExp("^[0-9.]+$");
+           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+           if (!regex.test(key)) {
+             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
+               event.preventDefault();
+               return false;
+           }
+       }       
+    </script>
 </head>
 <body>
 <div id="right_content">
@@ -407,18 +420,18 @@ document.getElementById("datepicker3error").innerHTML="";
                         <div align="justify">
                         <input type="hidden" class="input_txtbx1" id="inp_id" value="${assignmentdetails.assignment_no}" name="assignment_no" />
                           
-				                <p id="mypar">&nbsp;This agreement made this the: <input type="text" class="input_txtbx1" id="day" name="day" value="${assignmentdetails.day}" /><span class="err"><form:errors path="Assignment.day"></form:errors></span>
+				                  <p id="mypar">&nbsp;This agreement made this the: <input type="text" class="input_txtbx1" id="day" name="day" value="${assignment.day }" onInput="return validatename(id)";/><span id="dayerror" style="color: red;font-style:italic;"><form:errors path="Assignment.day"></form:errors></span>
 				                  	  
-				                  	day of <input type="text" class="input_txtbx1" id="month" name="month" value="${assignmentdetails.month}"/><span class="err"><form:errors path="Assignment.month"></form:errors></span>
-				                  	2013 between <input type="text" class="input_txtbx1" id="year" name="year" value="${assignmentdetails.year}" /><span class="err"><form:errors path="Assignment.year"></form:errors></span>
+				                  	day of <input type="text" class="input_txtbx1" id="month" name="month" value="${assignment.month}" onInput="return validatename(id)";/><span id="montherror" style="color: red;font-style:italic;"><form:errors path="Assignment.month"></form:errors></span>
+				                  	2013 between <input type="text" class="input_txtbx1" id="year" name="year" value="${assignment.year}" onkeypress="return validate55(event)";/><span id="yearerror" style="color: red;font-style:italic;"><form:errors path="Assignment.year"></form:errors></span>
 				                  	(claimant) and Perry Chiropractic and Therapy Center constitutes an irrevocable and binding agreement between the parties as follows:
-Claimant was involved in an accident on or about the <input type="text" class="input_txtbx1" id="day1" name="day1" value="${assignmentdetails.day1}"/><span class="err"><form:errors path="Assignment.day1"></form:errors></span>
-day of <input type="text" class="input_txtbx1" id="month1" name="month1" value="${assignmentdetails.month1}"/> <span class="err"><form:errors path="Assignment.month1"></form:errors></span>and I therein incurred injuries for which I have sought medical treatment from PCTC.</p>
+Claimant was involved in an accident on or about the <input type="text" class="input_txtbx1" id="day1" name="day1" value="${assignment.day1}" onInput="return validatename(id)";/><span id="day1error" style="color: red;font-style:italic;"><form:errors path="Assignment.day1"></form:errors></span>
+day of <input type="text" class="input_txtbx1" id="month1" name="month1" value="${assignment.month1}" onInput="return validatename(id)";/> <span id="month1error" style="color: red;font-style:italic;"><form:errors path="Assignment.month1"></form:errors></span>and I therein incurred injuries for which I have sought medical treatment from PCTC.</p>
 
 <P id="mypar"> Claimant herby directs any and all insurance carriers, attorneys, 
-agencies, companies, individuals, and/or other legal entities (Äúpayers), 
+agencies, companies, individuals, and/or other legal entities (payers), 
 which may elect to pay or be obligated o pay benefits to me regardless of the issue of liability, 
-for any medical conditions, accidents, injuries, or illnesses, past or future (conditionÄù), to pay directly to, 
+for any medical conditions, accidents, injuries, or illnesses, past or future (Äúcondition), to pay directly to, 
 and exclusively in the name of Perry Chiropractic and Therapy Center, such sums as may be owing to PCTC, for charges
  incurred by me. These charges include but are not limited to the following: charges for treatment, narrative reports, depositions, 
  testimony, and any other charges incurred by me at PCTC.

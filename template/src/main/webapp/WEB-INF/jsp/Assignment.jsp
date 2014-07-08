@@ -438,13 +438,13 @@ document.getElementById("datepicker3error").innerHTML="";
                         <table cellpadding="0" cellspacing="0" border="0" width="70%">
                         <tr>
                         <div align="justify">
-				                <p id="mypar">&nbsp;This agreement made this the: <input type="text" class="input_txtbx1" id="day" name="day" value="${assignment.day }" onInput="return validatename(id)";/><span id="dayerror" style="color: red;font-style:italic;"><form:errors path="Assignment.day"></form:errors></span>
+				                <p id="mypar">&nbsp;This agreement made this the: <input type="text" class="input_txtbx1" id="day" name="day"  onInput="return validatename(id)";/><span id="dayerror" style="color: red;font-style:italic;"><form:errors path="Assignment.day"></form:errors></span>
 				                  	  
-				                  	day of <input type="text" class="input_txtbx1" id="month" name="month" value="${assignment.month}" onInput="return validatename(id)";/><span id="montherror" style="color: red;font-style:italic;"><form:errors path="Assignment.month"></form:errors></span>
-				                  	2013 between <input type="text" class="input_txtbx1" id="year" name="year" value="${assignment.year}" onkeypress="return validate55(event)";/><span id="yearerror" style="color: red;font-style:italic;"><form:errors path="Assignment.year"></form:errors></span>
+				                  	day of <input type="text" class="input_txtbx1" id="month" name="month" onInput="return validatename(id)";/><span id="montherror" style="color: red;font-style:italic;"><form:errors path="Assignment.month"></form:errors></span>
+				                  	2013 between <input type="text" class="input_txtbx1" id="year" name="year" onkeypress="return validate55(event)";/><span id="yearerror" style="color: red;font-style:italic;"><form:errors path="Assignment.year"></form:errors></span>
 				                  	(claimant) and Perry Chiropractic and Therapy Center constitutes an irrevocable and binding agreement between the parties as follows:
-Claimant was involved in an accident on or about the <input type="text" class="input_txtbx1" id="day1" name="day1" value="${assignment.day1}" onInput="return validatename(id)";/><span id="day1error" style="color: red;font-style:italic;"><form:errors path="Assignment.day1"></form:errors></span>
-day of <input type="text" class="input_txtbx1" id="month1" name="month1" value="${assignment.month1}" onInput="return validatename(id)";/> <span id="month1error" style="color: red;font-style:italic;"><form:errors path="Assignment.month1"></form:errors></span>and I therein incurred injuries for which I have sought medical treatment from PCTC.</p>
+Claimant was involved in an accident on or about the <input type="text" class="input_txtbx1" id="day1" name="day1"  onInput="return validatename(id)";/><span id="day1error" style="color: red;font-style:italic;"><form:errors path="Assignment.day1"></form:errors></span>
+day of <input type="text" class="input_txtbx1" id="month1" name="month1"  onInput="return validatename(id)";/> <span id="month1error" style="color: red;font-style:italic;"><form:errors path="Assignment.month1"></form:errors></span>and I therein incurred injuries for which I have sought medical treatment from PCTC.</p>
 
 <P id="mypar"> Claimant herby directs any and all insurance carriers, attorneys, 
 agencies, companies, individuals, and/or other legal entities (payers), 
