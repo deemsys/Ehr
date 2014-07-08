@@ -250,7 +250,7 @@ $(function() {
 	});
 	});
 $(function() {
-	$("#signature").on("keypress", function(e) {
+	$("#sign").on("keypress", function(e) {
 		if (e.which === 32 && !this.value.length)
 	        e.preventDefault();
 	});
