@@ -806,7 +806,7 @@ function validatename3(id){
         <c:set value="${kneeexamForm.kneeexam[0]}" var="kneeexam"/>   
  <tr class="row1">
  <input type="hidden" name="kneeexamid" id="inp_id" value="${kneeexam.kneeexamid}">
-<td><h2><span class="err">*</span> Patient Name:</h2></td><td><input type="text" id="pname" name="pname" value="${kneeexam.pname}"/><span class="err" id="pnameerror"><form:errors path="Kneeexam.pname"></form:errors></span></td>
+<td><h2><span class="err">*</span> Patient Name:</h2></td><td><input type="text" id="pname" name="pname" value="${kneeexam.pname}" onInput="return validatename(id)";/><span class="err" id="pnameerror"><form:errors path="Kneeexam.pname"></form:errors></span></td>
 <td width="600">
 <td><h2><span class="err">*</span> Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${kneeexam.date}"/><span class="err" id="datepickererror"><form:errors path="Kneeexam.date"></form:errors></span></td>
 </tr>
@@ -1088,7 +1088,7 @@ function validatename3(id){
  </td>
  </tr>         
  <tr class="row1">
- <td><B style="font-size:14px">ASSESSMENT / ADDITIONAL COMMENTS:</B></td><td><textarea name="assessment" rows='5' cols='40' id="comments" onInput="return validatename1(id);">${kneeexam.assessment}</textarea>
+ <td><B style="font-size:14px">ASSESSMENT / ADDITIONAL COMMENTS:</B></td><td><textarea name="assessment" rows='5' cols='40' id="comments" onInput="return validatename1(id);" onInput="return validatename(id)";>${kneeexam.assessment}</textarea>
  <span id="commentserror" style="color:red"></span>
  
  </td><td></td>
