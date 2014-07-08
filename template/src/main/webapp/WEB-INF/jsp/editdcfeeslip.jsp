@@ -17,6 +17,62 @@
   line-height:18px;}
    </STYLE>
    <script>
+   $(function() {
+	    $( "#tabs" ).tabs();
+	 
+	    // fix the classes
+	    $( ".tabs-bottom .ui-tabs-nav, .tabs-bottom .ui-tabs-nav > *" )
+	      .removeClass( "ui-corner-all ui-corner-top" )
+	      .addClass( "ui-corner-bottom" );
+	 
+	    // move the nav to the bottom
+	    $( ".tabs-bottom .ui-tabs-nav" ).appendTo( ".tabs-bottom" );
+	  });
+$(function () {
+    $("#tabs").tabs({
+        select: function (e, i) {
+            currentTab = i.index;
+        }
+    });
+});
+$("#btnNext").live("click", function () {
+	 var currentTab=0;
+    var tabs = $('#tabs').tabs();
+    var c = $('#tabs').tabs("length");
+    currentTab = currentTab == (c - 1) ? currentTab : (currentTab + 1);
+    tabs.tabs('select', currentTab);
+    $("#btnPrevious").show();
+    if (currentTab == (c - 1)) {
+        $("#btnNext").hide();
+    } else {
+        $("#btnNext").show();
+    }
+});
+$("#btnNext1").live("click", function () {
+	 var tabs = $('#tabs').tabs();
+    var c = $('#tabs').tabs("length");
+    currentTab = currentTab == (c - 1) ? currentTab : (currentTab + 1);
+    tabs.tabs('select', currentTab);
+    $("#btnPrevious").show();
+    if (currentTab == (c - 1)) {
+        $("#btnNext").hide();
+    } else {
+        $("#btnNext").show();
+    }
+});
+$("#btnPrevious").live("click", function () {
+    var tabs = $('#tabs').tabs();
+    var c = $('#tabs').tabs("length");
+    currentTab = currentTab == 0 ? currentTab : (currentTab - 1);
+    tabs.tabs('select', currentTab);
+    if (currentTab == 0) {
+        $("#btnNext").show();
+        $("#btnPrevious").hide();
+    }
+    if (currentTab < (c - 1)) {
+        $("#btnNext").show();
+    }
+});
 $(window).load(function(){
 var oldValue = "";
 
@@ -34,6 +90,75 @@ $("#less").keyup(function() {
 });
 </script>
 <script type="text/javascript">
+function checkSubmitpage1(e)
+{ 
+	var error="";
+	document.getElementById("piderror").innerHTML="";
+	if(document.getElementById("pid").value=="")
+	{
+	document.getElementById("piderror").innerHTML="Required Field Should not be Empty";
+	
+	error="true";
+	}
+	
+	document.getElementById("piderror").innerHTML="";
+	if(isNaN(document.getElementById("pid").value))
+	{		document.getElementById("piderror").innerHTML="Invalid character Please enter numbers only.";
+	error="true";
+	}
+	
+
+	document.getElementById("pnameerror").innerHTML="";
+if(document.getElementById("pname").value=="")
+{
+document.getElementById("pnameerror").innerHTML="Required Field Should not be Empty";
+
+error="true";
+}
+document.getElementById("pnameerror").innerHTML="";
+    if(document.getElementById("pname").value.length<4 || document.getElementById("pname").value.length>=32)
+    {
+    	
+    	document.getElementById("pnameerror").innerHTML="Name should be min 4 and max 32";
+    	
+        error="true";
+    }
+document.getElementById("dr1error").innerHTML="";
+if(document.getElementById("dr1").value=="")
+{
+document.getElementById("dr1error").innerHTML="Required Field Should not be Empty";
+
+error="true";
+}
+document.getElementById("datepickererror").innerHTML="";
+if(document.getElementById("datepicker").value=="")
+{
+document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+
+error="true";
+}
+document.getElementById("datepickererror").innerHTML="";
+var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+if(document.getElementById("datepicker").value.match(datechk)==null)
+{
+	document.getElementById("datepickererror").innerHTML="Invalid Date Format";
+	
+    error="true";
+}
+
+if(error=="true")
+	{
+	   document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkSubmitpage1(event);'>";
+
+	return false;
+	}
+else
+	{
+	document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next'>";
+	}
+
+}
+
        function validate(event) {
           
            var regex = new RegExp("^[0-9.]+$");
@@ -350,18 +475,19 @@ function validatename(){
 
 	function checkSubmit()
 	{ 
+	var error="";
 		document.getElementById("piderror").innerHTML="";
 		if(document.getElementById("pid").value=="")
 		{
 		document.getElementById("piderror").innerHTML="Required Field Should not be Empty";
 		
-		return false;
+		error="true";
 		}
 		
 		document.getElementById("piderror").innerHTML="";
 		if(isNaN(document.getElementById("pid").value))
 		{		document.getElementById("piderror").innerHTML="Invalid character Please enter numbers only.";
-		return false;
+		error="true";
 		}
 		
 	
@@ -370,7 +496,7 @@ function validatename(){
 	{
 	document.getElementById("pnameerror").innerHTML="Required Field Should not be Empty";
 	
-	return false;
+	error="true";
 	}
 	document.getElementById("pnameerror").innerHTML="";
 	    if(document.getElementById("pname").value.length<4 || document.getElementById("pname").value.length>=32)
@@ -378,21 +504,21 @@ function validatename(){
 	    	
 	    	document.getElementById("pnameerror").innerHTML="Name should be min 4 and max 32";
 	    	
-	        return false;
+	        error="true";
 	    }
 	document.getElementById("dr1error").innerHTML="";
 	if(document.getElementById("dr1").value=="")
 	{
 	document.getElementById("dr1error").innerHTML="Required Field Should not be Empty";
 	
-	return false;
+	error="true";
 	}
 	document.getElementById("datepickererror").innerHTML="";
 	if(document.getElementById("datepicker").value=="")
 	{
 	document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
 	
-	return false;
+	error="true";
 	}
 	document.getElementById("datepickererror").innerHTML="";
 	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
@@ -400,7 +526,7 @@ function validatename(){
     {
     	document.getElementById("datepickererror").innerHTML="Invalid Date Format";
     	
-        return false;
+        error="true";
     }
 
 	
@@ -409,7 +535,7 @@ function validatename(){
 	{
 	document.getElementById("datepicker1error").innerHTML="Required Field Should not be Empty";
 	
-	return false;
+	error="true";
 	}
 	document.getElementById("datepicker1error").innerHTML="";
 	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
@@ -417,26 +543,28 @@ function validatename(){
     {
     	document.getElementById("datepicker1error").innerHTML="Invalid Date Format";
     	
-        return false;
+      error="true";
     }
 
 	document.getElementById("parentsignerror").innerHTML="";
 	if(document.getElementById("parentsign").value=="")
 	{
 	document.getElementById("parentsignerror").innerHTML="Required Field Should not be Empty";
-	
-	return false;
+	error="true";
 	}
 	document.getElementById("doctorsignerror").innerHTML="";
 	if(document.getElementById("doctorsign").value=="")
 	{
 	document.getElementById("doctorsignerror").innerHTML="Required Field Should not be Empty";
 	
-	return false;
+	error="true";
 	}
 	
 		
-
+if(error=="true")
+{
+return false;
+}
 	
 	
 	
@@ -745,6 +873,7 @@ function validateusername(){
  <td><input type="text" class="input_txtbx1"  name="unlisted" id="unlisted" size="20" value="${dcfeeslip.unlisted}" onkeypress="return validate(event)";> </td> 
 
 </tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td align="right"><span id="tblbtn"><input type="button" class="submit_btn" value="Next" onmouseover="checkSubmitpage1(event);"/></span></td></tr>
 </table>
 </div>
 </div>
@@ -1024,6 +1153,7 @@ function validateusername(){
  <td><input type="text" class="input_txtbx1"  name="teamconference" id="teamconference" size="20" value="${dcfeeslip.teamconference}" onkeypress="return validate(event)";> </td> 
  
  </tr>
+  <tr><td></td><td></td><td></td><td></td><td></td><td align="right"><input type="button" id="btnPrevious" class="submit_btn" value="Previous"  /></td><td><input type="button" id="btnNext1" class="submit_btn" value="Next"/></td></tr>
  </table>
   </div>
   </div>
@@ -1309,7 +1439,7 @@ function confirmation() {
 
 </script>
  <table align="right">
-<tr>
+<tr><td><br> <input type="button" id="btnPrevious" class="submit_btn" value="Previous"  />&nbsp;</td>
 <td><input type="submit" class="submit_btn" value="Update" onclick="return checkSubmit('this');"></td>
   <td><a href="deletedcfeeslip?dcfeeid=${dcfeeslip.dcfeeid}" style="color:white" class="submit_btn" onclick="return confirmation() ">Delete</a></td>
  <td><a href="viewallpatientdetails" style="color:white" class="submit_btn">Cancel</a></td>

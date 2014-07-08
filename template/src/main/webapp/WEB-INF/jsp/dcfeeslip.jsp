@@ -9,7 +9,65 @@
  <script src="resources/js/jquery.min.js"></script> 
  <script src="resources/js/jquery-ui.js"></script>
  <script src="resources/js/jquey-1.9.1.js"></script>
+ <script>
+ $(function() {
+	    $( "#tabs" ).tabs();
+	 
+	    // fix the classes
+	    $( ".tabs-bottom .ui-tabs-nav, .tabs-bottom .ui-tabs-nav > *" )
+	      .removeClass( "ui-corner-all ui-corner-top" )
+	      .addClass( "ui-corner-bottom" );
+	 
+	    // move the nav to the bottom
+	    $( ".tabs-bottom .ui-tabs-nav" ).appendTo( ".tabs-bottom" );
+	  });
+ $(function () {
+     $("#tabs").tabs({
+         select: function (e, i) {
+             currentTab = i.index;
+         }
+     });
+ });
+ $("#btnNext").live("click", function () {
+	 var currentTab=0;
+     var tabs = $('#tabs').tabs();
+     var c = $('#tabs').tabs("length");
+     currentTab = currentTab == (c - 1) ? currentTab : (currentTab + 1);
+     tabs.tabs('select', currentTab);
+     $("#btnPrevious").show();
+     if (currentTab == (c - 1)) {
+         $("#btnNext").hide();
+     } else {
+         $("#btnNext").show();
+     }
+ });
+ $("#btnNext1").live("click", function () {
+	 var tabs = $('#tabs').tabs();
+     var c = $('#tabs').tabs("length");
+     currentTab = currentTab == (c - 1) ? currentTab : (currentTab + 1);
+     tabs.tabs('select', currentTab);
+     $("#btnPrevious").show();
+     if (currentTab == (c - 1)) {
+         $("#btnNext").hide();
+     } else {
+         $("#btnNext").show();
+     }
+ });
+ $("#btnPrevious").live("click", function () {
+     var tabs = $('#tabs').tabs();
+     var c = $('#tabs').tabs("length");
+     currentTab = currentTab == 0 ? currentTab : (currentTab - 1);
+     tabs.tabs('select', currentTab);
+     if (currentTab == 0) {
+         $("#btnNext").show();
+         $("#btnPrevious").hide();
+     }
+     if (currentTab < (c - 1)) {
+         $("#btnNext").show();
+     }
+ });
  
+ </script>
  <style type="text/css">
 #overlay {
 position: fixed;
@@ -541,8 +599,76 @@ else
 
 </script>
  <script>
+	function checkSubmitpage1(e)
+	{ 
+		var error="";
+		document.getElementById("piderror").innerHTML="";
+		if(document.getElementById("pid").value=="")
+		{
+		document.getElementById("piderror").innerHTML="Required Field Should not be Empty";
+		error="true";
+	
+		}	
+		
+		if(isNaN(document.getElementById("pid").value))
+		{		document.getElementById("piderror").innerHTML="Invalid character Please enter numbers only.";
+		error="true";
+		}
+		
+	
+		document.getElementById("pnameerror").innerHTML="";
+	if(document.getElementById("pname").value=="")
+	{
+	document.getElementById("pnameerror").innerHTML="Required Field Should not be Empty";
+	
+	error="true";
+	}
+	document.getElementById("pnameerror").innerHTML="";
+	    if(document.getElementById("pname").value.length<4 || document.getElementById("pname").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("pnameerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	    	error="true";
+	    }
+	
+	document.getElementById("dr1error").innerHTML="";
+	if(document.getElementById("dr1").value=="")
+	{
+	document.getElementById("dr1error").innerHTML="Required Field Should not be Empty";
+	
+	error="true";
+	}
+	document.getElementById("datepickererror").innerHTML="";
+	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+	if(document.getElementById("datepicker").value.match(datechk)==null)
+    {
+    	document.getElementById("datepickererror").innerHTML="Invalid Date Format";
+    	
+    	error="true";
+    }
 
-	function checkSubmit()
+	if(document.getElementById("datepicker").value=="")
+	{
+	document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+	
+	error="true";
+	}
+	if(error=="true")
+		{
+		   document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkSubmitpage1(event);'>";
+	
+		return false;
+		}
+	else
+		{
+		document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next'>";
+		}
+	
+	}
+	
+ 
+ function checkSubmit()
 	{ 
 		var error="";
 		document.getElementById("piderror").innerHTML="";
@@ -990,6 +1116,7 @@ function validateusername(){
  <td><input type="text" class="input_txtbx1"  name="unlisted" id="unlisted" size="20" placeholder="0" onkeypress="return validate(event)";> </td> 
 
 </tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td align="right"><span id="tblbtn"><input type="button" class="submit_btn" value="Next" onmouseover="checkSubmitpage1(event);"/></span></td></tr>
 </table>
 </div>
 </div>
@@ -1269,6 +1396,7 @@ function validateusername(){
  <td><input type="text"  class="input_txtbx1" name="teamconference" id="teamconference" size="20" placeholder="0" onkeypress="return validate(event)";> </td> 
  
  </tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td align="right"><input type="button" id="btnPrevious" class="submit_btn" value="Previous"  /></td><td><input type="button" id="btnNext1" class="submit_btn" value="Next"/></td></tr>
  </table>
   </div>
   </div>
@@ -1543,8 +1671,10 @@ charges."</b></td>
  </table>
  <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="Save" id="saveid" onclick="return checkSubmit('this');"
-></td>
+<td><br> <input type="button" id="btnPrevious" class="submit_btn" value="Previous"  />&nbsp;</td>
+                  <td></td>
+                  <td></td>
+                 <td> <input type="submit" class="submit_btn" value="Save" id="saveid" onclick="return checkSubmit('this');"></td>
 <td><a href="viewallpatientdetails" class="submit_btn"  style="color: white" >Cancel</a></td>
 </tr>
 </table>
