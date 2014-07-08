@@ -171,7 +171,7 @@ document.getElementById("doctoremailerror").innerHTML=" ";
 	             <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Confirm Password:</td>
 				  <td valign="top" align="left" class="input_txt">
 
-				  <input type="password" class="input_txtbx1" id="doctorconfirm" name="doctorconfirm" onInput="return validateusername2()";  /><br/><font size="+1" color="red" ><span  id="doctorconfirmerror"><form:errors path="Doctorsignup.doctorconfirm"></form:errors></span></font>
+				  <input type="password" class="input_txtbx1" id="doctorconfirm" name="doctorconfirm" maxlength="32"  onInput="return validateusername2()";  /><br/><font size="+1" color="red" ><span  id="doctorconfirmerror"><form:errors path="Doctorsignup.doctorconfirm"></form:errors></span></font>
 
 				  </td>
 				  </tr>
