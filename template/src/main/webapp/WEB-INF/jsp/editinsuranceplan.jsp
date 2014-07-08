@@ -442,6 +442,7 @@ $(function() {
         <table cellpadding="0" cellspacing="0" border="0" width="100%">
         <tr><br><p id="mypar">To Whom It May Concern:</p></tr>
         </table>
+        
         <table cellpadding="0" cellspacing="0" border="0" width="100%">
         <tr>
         <p id="mypar">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I have been injured in an accident.  I am a subscriber/enrollee in your company's health insurance plan.</p>
@@ -449,41 +450,44 @@ $(function() {
         <p id="mypar">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Please advise if your company has no objection:</p>
         </tr>
         <tr class="row1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <input type="checkbox" name="no_objection" value="no_objection" <c:if test="${Insuranceplan.no_objection=='no_objection'}"><c:out value="Checked"/></c:if>   />No Objection
         </td>
         </tr>
         <tr>
-        <td>By</td>
+        <td >By</td><td><font color="#fff">......................................................0000000000000</font></td>
         </tr> 
          <tr class="row1">
-        <td><span class="err">* </span><input type="text" class="input_txtbx1" onInput="return validateusername3()"; name="agentname" id="agentname" placeholder="Authorized Company Representative" value="${Insuranceplan.agentname}"/><br><span id="agentnameerror" style="color: red;font-style:italic;"></span><form:errors path="Insuranceplan.by"></form:errors></td>
-        <td></td>
-        <td></td>
+        <td colspan="2"><span class="err">* </span><input type="text" class="input_txtbx1" onInput="return validateusername3()"; name="agentname" id="agentname" placeholder="Authorized Company Representative" value="${Insuranceplan.agentname}"/><br><span id="agentnameerror" style="color: red;font-style:italic;"></span><form:errors path="Insuranceplan.by"></form:errors></td>
+        
         </tr>
         <tr class="row1">
         <td width="100%"><span class="err">* </span>Please eMail this back  to&nbsp;&nbsp;
        <input type="text" class="input_txtbx1" name="fax" id="fax" placeholder="Clinic's EMail Id" value="${Insuranceplan.fax}"/><br><span id="faxerror" style="color: red;font-style:italic;"></span><form:errors path="Insuranceplan.fax"></form:errors> </td>
-        <td width="100%"></td>
-        <td></td>
+        <td ></td>
+       
         </tr>
         <tr >
         <td></td>
         <td align="center ">Sincerely,</td>
         </tr>
+        
         <tr class="row1">
         <td></td>
         
-        <td ><span class="err">*</span><input type="text" class="input_txtbx1" onInput="return validateusername4()"; name="name_of_clinic" id="name_of_clinic" placeholder="Name of clinic" value="${Insuranceplan.name_of_clinic}"/><br><span id="name_of_clinicerror" style="color: red;font-style:italic;"></span><form:errors path="Insuranceplan.name_of_clinic"></form:errors> </td>
-        <td></td>
+        <td align="center"><span class="err">* </span><input type="text" class="input_txtbx1" onInput="return validateusername4()"; name="name_of_clinic" id="name_of_clinic" placeholder="Name of clinic" value="${Insuranceplan.name_of_clinic}"/><br><span id="name_of_clinicerror" style="color: red;font-style:italic;"></span><form:errors path="Insuranceplan.name_of_clinic"></form:errors> </td>
+        
         </tr>
         <tr class="row1">
         <td><span class="err">* </span><input type="text" class="input_txtbx1" name="pat" id="pat" onInput="return validateusername6()"; placeholder="Patient" value="${Insuranceplan.pat}"/><br><span  id="paterror" style="color: red;font-style:italic;"></span><form:errors path="Insuranceplan.pat"></form:errors></td>
-        <td ><span class="err">*</span><input type="text" class="input_txtbx1" name="authorized" onInput="return validateusername5()"; id="authorized" placeholder="Authorized Clinic Representative" value="${Insuranceplan.authorized}"/><br> <span  id="authorizederror" style="color: red;font-style:italic;"></span><form:errors path="Insuranceplan.authorized"></form:errors> </td>
-        <td></td>
+        <td align="center"><span class="err">* </span>
+        <input type="text" class="input_txtbx1" name="authorized" onInput="return validateusername5()"; id="authorized" placeholder="Authorized Clinic Representative" value="${Insuranceplan.authorized}"/><br> 
+        <span  id="authorizederror" style="color: red;font-style:italic;"></span><form:errors path="Insuranceplan.authorized"></form:errors> </td>
+       
         </tr>
        </table>
        <br>
+       
         <table>
         <tr>
      	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> 
