@@ -46,6 +46,120 @@ $(function() {
     });
 
 </script>
+<script>
+$(function() {
+	$("#pname").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+$(function() {
+	$("#datepicker").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#muscle").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#swelling").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#note").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#otherdefict").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#comments").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+$(function() {
+	$("#diagnosis1").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#diagnosis2").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+$(function() {
+	$("#diagnosis3").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+$(function() {
+	$("#diagnosis4").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+$(function() {
+	$("#diagnosis5").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#diagnosis6").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#times").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#weeks").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#othervalue").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});
+$(function() {
+	$("#sign").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+</script>
+<script>
+function validatename(id){
+    var textInput = document.getElementById(id).value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById(id).value = textInput;
+}
+
+
+
+</script>
 <script type="text/javascript">
 	function softtissuevalidate() {
 		if (document.getElementById('softtissuess').checked) {
@@ -212,8 +326,103 @@ P#mypar {
              return true;
           }  
           
-          </script> 
+          </script>
+          <script>
+  var currentTab=0;
+  $("#btnNext").live("click", function () {
+        var tabs = $('#tabs').tabs();
+        var c = $('#tabs').tabs("length");
+        currentTab = currentTab == (c - 1) ? currentTab : (currentTab + 1);
+        tabs.tabs('select', currentTab);
+        $("#btnPrevious").show();
+        if (currentTab == (c - 1)) {
+            $("#btnNext").hide();
+        } else {
+            $("#btnNext").show();
+        }
+    });
+  
+  
+  </script>
    <script>
+  function checkValid(e)
+  {
+	  document.getElementById("pnameerror").innerHTML=" ";
+		
+		if(document.getElementById("pname").value=="")
+		{
+		document.getElementById("pnameerror").innerHTML="Required Field Should not be Empty";
+		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+		}
+		
+		else if(document.getElementById("pname").value.length<=4 && document.getElementById("pname").value.length<=32)
+		{
+		document.getElementById("pnameerror").innerHTML="Name should be length of 4 to 32";
+		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+		}
+		 else if(document.getElementById("pname").value!="")
+		 {
+		  document.getElementById("pnameerror").innerHTML="";
+		  document.getElementById("btnvisible1").style.visibility="hidden";
+		 //document.getElementById("btnNext").style.display="block";
+		  document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";		 
+		 //document.getElementById("btnNext").style.visibility="visible";
+		 }
+		
+		document.getElementById("datepickererror").innerHTML="";
+	if(document.getElementById("datepicker").value=="")
+		{
+		document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+		}
+  	else if(document.getElementById("datepicker").value!="")
+		 {
+		  document.getElementById("datepickererror").innerHTML="";
+		  document.getElementById("btnvisible1").style.visibility="hidden";
+		 //document.getElementById("btnNext").style.display="block";
+		  document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";		 
+		 //document.getElementById("btnNext").style.visibility="visible";
+		 }
+	
+  	
+  }
+
+  
+  
+  </script>
+  <script>
+	function checkSubmit1(){
+		
+		document.getElementById("datepickererror").innerHTML="";
+		var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+			if(document.getElementById("datepicker").value.match(datechk)==null)
+		    {
+		    	document.getElementById("datepickererror").innerHTML="Invalid Date Format";
+		    	
+		        return false;
+		    }	
+	document.getElementById("signerror").innerHTML="";
+	if(document.getElementById("sign").value=="")
+	{
+	document.getElementById("signerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("signerror").innerHTML="";
+	    if(document.getElementById("sign").value.length<4 || document.getElementById("sign").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("signerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
+	
+	
+	
+	}
+	
+	</script>                 
+   <!-- <script>
 
 	function checkSubmit()
 	{
@@ -241,6 +450,12 @@ document.getElementById("pnameerror").innerHTML=" ";
 	        return false;
 	    }	
 			
+	
+	}
+	</script> -->
+	<!-- <script>
+	function checkSubmit1()
+	{
 	document.getElementById("signerror").innerHTML="";
 	if(document.getElementById("sign").value=="")
 	{
@@ -248,8 +463,17 @@ document.getElementById("pnameerror").innerHTML=" ";
 	
 	return false;
 	}
+	document.getElementById("signerror").innerHTML="";
+    if(document.getElementById("sign").value.length<4 || document.getElementById("sign").value.length>=32)
+    {
+    	
+    	document.getElementById("signerror").innerHTML="Name should be min 4 and max 32";
+    	
+        return false;
+    }
+	
 	}
-	</script>
+	</script> -->
 <script type="text/javascript">
        function validate(event) {
           
@@ -262,33 +486,8 @@ document.getElementById("pnameerror").innerHTML=" ";
            }
        }       
     </script>
+    
     <script>
-$(function() {
-	$("#pname").on("keypress", function(e) {
-		if (e.which === 32 && !this.value.length)
-	        e.preventDefault();
-	});
-	});
-$(function() {
-	$("#muscle").on("keypress", function(e) {
-		if (e.which === 32 && !this.value.length)
-	        e.preventDefault();
-	});
-	});
-	</script>
-    <script type="text/javascript">
-function validatename(id){
-	
-    var textInput = document.getElementById(id).value;
-    textInput = textInput.replace(/[^A-Za-z ]/g, "");
-    document.getElementById(id).value = textInput;
-}  
-function validatename1(id){
-	
-    var textInput = document.getElementById(id).value;
-    textInput = textInput.replace(/[^A-Za-z0-9 ]/g, "");
-    document.getElementById(id).value = textInput;
-} 
 	function check(id,e,value){
     //Check Charater
     	
@@ -345,10 +544,9 @@ function validatename1(id){
 											var="wristexamdetails" />
 										<table cellpadding="0" cellspacing="0" border="0">
 											<tr>
-												<td width="130"><span class="err">*</span> Patient Name:</td>
+												<td width="130"><span class="err">*</span>Patient Name:</td>
 												<td width="200"><input type="hidden" name="wristexamno"
-													value="${wristexamdetails.wristexamno}" /><input
-													type="text" value="${wristexamdetails.pname}" name="pname" id="pname" onInput="return validatename(id);">
+													value="${wristexamdetails.wristexamno}" /><input type="text" value="${wristexamdetails.pname}" name="pname" id="pname" onInput="return validatename(id)";>
 													<br><span class="err" id="pnameerror"><form:errors path="wristexamdetails.pname"></form:errors>
 													</td>
 												<td width="650"></td>
@@ -373,12 +571,11 @@ function validatename1(id){
 												<td>Muscle Symmetry:</td>
 												<td width="28"></td>
 												<td ><input type="text"
-													value="${wristexamdetails.muscle}" name="muscle" id="muscle" onInput="return validatename1(id);">
-													<br><span id="muscleerror" style="color:red"></span></td>
+													value="${wristexamdetails.muscle}" name="muscle" onInput="return validatename(id)";></td>
 												<td width="48"></td>
 												<td width="135">Swelling / Discoloration:</td>
 												<td width="40"><input type="text"
-													value="${wristexamdetails.swelling}" name="swelling"></td>
+													value="${wristexamdetails.swelling}" name="swelling" onInput="return validatename(id)";></td>
 
 												<td width="49"></td>
 												<td width="139">Dominant Hand</td>
@@ -467,7 +664,7 @@ function validatename1(id){
 													<c:if test="${wristexamdetails.extensorpollicisbrevis=='right'}"> <c:out value="checked"></c:out></c:if>
 													name="extensorpollicisbrevis">&nbsp;&nbsp;&nbsp;Right</td>
 												<td width="130">Other / Note:</td>
-												<td><textarea rows="5" cols="50" name="note">${wristexamdetails.note}</textarea></td>
+												<td><textarea rows="5" cols="50" name="note" onInput="return validatename(id)";>${wristexamdetails.note}</textarea></td>
 
 											</tr>
 										</table>
@@ -606,7 +803,7 @@ function validatename1(id){
 													size="5" type="text" value="${wristexamdetails.ulttright}"
 													name="ulttright" onkeypress="return validate(event)"></td>
 											</tr>
-
+<tr><td id="tblbtn"><input type="button" id="btnNext" class="submit_btn" value="Next" onmouseover="checkValid(event);"/></td></tr>
 
 										</table>
 							</td>
@@ -794,7 +991,7 @@ function validatename1(id){
 										<tr>
 											<td width="350"><b style="font-size: 14px">ASSESSMENT
 													/ ADDITIONAL COMMENTS: </b></td>
-											<td><textarea rows="5" cols="50" name="comments">${wristexamdetails.comments}</textarea>
+											<td><textarea rows="5" cols="50" name="comments" onInput="return validatename(id)";>${wristexamdetails.comments}</textarea>
 											</td>
 										</tr>
 										<tr height="10"></tr>
@@ -821,29 +1018,29 @@ function validatename1(id){
 											<td width="400"><b style="font-size: 14px">DIAGNOSIS:
 											</b></td>
 											<td width="250">1)&nbsp;&nbsp;&nbsp;<input type="text"
-												value="${wristexamdetails.diagnosis1}" name="diagnosis1"></td>
+												value="${wristexamdetails.diagnosis1}" name="diagnosis1" onInput="return validatename(id)";></td>
 											<td width="250">2)&nbsp;&nbsp;&nbsp;<input type="text"
-												value="${wristexamdetails.diagnosis2}" name="diagnosis2"></td>
+												value="${wristexamdetails.diagnosis2}" name="diagnosis2" onInput="return validatename(id)";></td>
 											<td width="250">3)&nbsp;&nbsp;&nbsp;<input type="text"
-												value="${wristexamdetails.diagnosis3}" name="diagnosis3"></td>
+												value="${wristexamdetails.diagnosis3}" name="diagnosis3" onInput="return validatename(id)";></td>
 											<td width="250">4)&nbsp;&nbsp;&nbsp;<input type="text"
-												value="${wristexamdetails.diagnosis4}" name="diagnosis4"></td>
+												value="${wristexamdetails.diagnosis4}" name="diagnosis4" onInput="return validatename(id)";></td>
 										</tr>
 										<tr height="10"></tr>
 										<tr>
 											<td></td>
 											<td width="250">5)&nbsp;&nbsp;&nbsp;<input type="text"
-												name="diagnosis5" value="${wristexamdetails.diagnosis5}"></td>
+												name="diagnosis5" value="${wristexamdetails.diagnosis5}" onInput="return validatename(id)";></td>
 											<td width="250">6)&nbsp;&nbsp;&nbsp;<input type="text"
-												value="${wristexamdetails.diagnosis6}" name="diagnosis6"></td>
+												value="${wristexamdetails.diagnosis6}" name="diagnosis6" onInput="return validatename(id)";></td>
 										</tr>
 									</table>
 									</br>
 									<div>
 										<b style="font-size: 14px">PLAN:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><input
-											type="text" name="times" value="${wristexamdetails.times}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											type="text" name="times" value="${wristexamdetails.times}" onInput="return validatename(id)";>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 										Times/week for&nbsp;&nbsp;&nbsp;&nbsp; </b><input type="text"
-											value="${wristexamdetails.weeks}" name="weeks">&nbsp;&nbsp;&nbsp;&nbsp;
+											value="${wristexamdetails.weeks}" name="weeks" onInput="return validatename(id)";>&nbsp;&nbsp;&nbsp;&nbsp;
 										weeks to address the above functional & structural deficits.
 										Treatment will consist of the following:
 									</div>
@@ -921,11 +1118,11 @@ function validatename1(id){
 									<div>
 										<B style="font-size: 14px"><span class="err">*</span>PHYSICIAN SIGNATURE:</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
 											type="text" value="${wristexamdetails.signature}"
-											name="signature" id="sign"><span class="err" id="signerror"><form:errors path="wristexamdetails.signature"></form:errors>
+											name="signature" id="sign" onInput="return validatename(id)";><span class="err" id="signerror"><form:errors path="wristexamdetails.signature"></form:errors>
 									</div>
 
 
-								<table align="right"><tr><td><input type="submit" value="Update" class="submit_btn" onclick="return checkSubmit('this');"></td><td> <a href="viewwristexamdetails" style="color: white" class="submit_btn" onclick="myclose()">Cancel</a></td></tr></table>
+								<table align="right"><tr><td><input type="submit" value="Update" class="submit_btn" onclick="return checkSubmit1('this');"></td><td> <a href="viewwristexamdetails" style="color: white" class="submit_btn" onclick="myclose()">Cancel</a></td></tr></table>
 <script>
  function myclose()
  {
