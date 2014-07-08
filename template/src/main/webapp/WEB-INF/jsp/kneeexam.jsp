@@ -793,9 +793,9 @@ $(function() {
           <table cellpadding="0" cellspacing="0" border="0" width="98%">
            
  <tr class="row1">
-<td style="width: 275px; "><h4><span class="err">*</span>Patient Name:</h4></td><td><input type="text" id="pname" name="pname" onInput="return validatename(id)";/><span class="err" id="pnameerror"><form:errors path="knee.pname"></form:errors></span></td>
+<td style="width: 275px; "><h4><span class="err">*</span>Patient Name:</h4></td><td><input type="text" id="pname" name="pname" onInput="return validatename(id)";/><br><span class="err" id="pnameerror"><form:errors path="knee.pname"></form:errors></span></td>
 <td width="600" style="width: 454px; ">
-<td style="width: 224px; "><h4><span class="err">*</span>Date:</h4></td><td><input type="text"  id="datepicker" name="date"  /><span class="err" id="datepickererror"><form:errors path="knee.date"></form:errors></span></td>
+<td style="width: 224px; "><h4><span class="err">*</span>Date:</h4></td><td><input type="text"  id="datepicker" name="date"  /><br><span class="err" id="datepickererror"><form:errors path="knee.date"></form:errors></span></td>
 </tr>
 </table>
 <br/>
@@ -1101,7 +1101,7 @@ $(function() {
  </tr>
  </tr>
  <br/>
- <table><tr><td><B style="font-size:14px"><span class="err">*</span>PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="sign" name="sign" onInput="return validatename(id)";><span class="err" id="signerror"><form:errors path="Kneeexam.sign"></form:errors></span></B></td></tr></table>
+ <table><tr><td><B style="font-size:14px"><span class="err">*</span>PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="sign" name="sign" onInput="return validatename(id)";><br><span class="err" id="signerror"><form:errors path="Kneeexam.sign"></form:errors></span></B></td></tr></table>
 </table>
 <table align="right">
 <tr>
