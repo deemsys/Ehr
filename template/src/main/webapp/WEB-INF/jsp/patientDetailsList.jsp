@@ -24,7 +24,7 @@
 	    $( "#tabs" ).tabs();
 	 
 	    // fix the classes
-	    $( ".tabs-bottom .ui-tabs-nav, .tabs-bottom .ui-tabs-nav > * " )
+	    $( ".tabs-bottom .ui-tabs-nav, .tabs-bottom .ui-tabs-nav > *" )
 	      .removeClass( "ui-corner-all ui-corner-top" )
 	      .addClass( "ui-corner-bottom" );
 	 
@@ -72,7 +72,7 @@
  $("#zipcode").keyup(function() {
 			
 			 $("#zipcodeerror").html(''); 
-			/*  var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; * /
+			/* var regex=/(^\d{5}$)|(^\d{5}-\d{4}$)/; */
 			var intRegex = /^\d+$/;
 			if(intRegex.test($(this).val())||$(this).val()=='') 
 			{
@@ -90,7 +90,7 @@
 </script>
 
 	  <style>
-	  /*  force a height so the tabs don't jump as content height changes * /
+	  /* force a height so the tabs don't jump as content height changes */
 	  #tabs .tabs-spacer { float: left; height: 200px; }
 	  .tabs-bottom .ui-tabs-nav { clear: right; padding: 0 .2em .2em .2em; }
 	  .tabs-bottom .ui-tabs-nav li { top: auto; bottom: 0; margin: 0 .2em 1px 0; border-bottom: auto; border-top: 0; }
@@ -138,7 +138,7 @@
                         <c:forEach items="${patientDetailsForm.patientDetails}" var="patientDetails" varStatus="status">
                 		
                         <tr class="row1">
-                        	  <td><span class="err">* </span>Name:</td>
+                        	  <td><span class="err">* </span>Name</td>
                 			 <td>${patientDetails.name}</td>
                 		</tr>	 
                 		<tr class="row2">
@@ -170,11 +170,11 @@
 				        <td>${patientDetails.emailid}</td>
 				        </tr>
 				          <tr class="row1">
-				        <td><span class="err">* </span>Mobile Number:</td>
+				        <td><span class="err">* </span>MobileNumber:</td>
 				        <td>${patientDetails.mobileNumber}</td>
 				        </tr>
 				         <tr class="row2">
-				        <td><span class="err">* </span>Date Of Birth:</td>
+				        <td><span class="err">* </span>DateOfBirth:</td>
 				        <td>${patientDetails.dateOfBirth}</td>
 				        </tr>
 				          <tr class="row1">
@@ -190,18 +190,16 @@
 				        <td>${patientDetails.maritalStatus}</td>
 				        </tr>
 				        </table>
-				       </td>
 				       
-				          <td align="left" valign="top"> <h2 class="quck-txt"></h2>
-							<table cellpadding="0" cellspacing="0" border="0" width="100%">
+				          <td align="left" valign="top"> <table cellpadding="0" cellspacing="0" border="0" width="100%">
 							 <tr class="row1">
-				        		<td valign="top" align="left" class="input_txt"><span class="err">* </span>Are you:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				        <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Are you:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				                  <td valign="top" align="left" class="input_txt">${patientDetails.areyou}</td>
 				                 
 				        		</tr>
 				           <c:if test="${patientDetails.areyou == 'Student' }">
 				           <tr class="row2">
-							<td><span class="err">&nbsp;&nbsp; </span>Student:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+							<td><span class="err">* </span>Student:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				        <td>${patientDetails.student}</td>
 				        </tr>
 				           </c:if>
@@ -209,53 +207,50 @@
 							 
 							<c:if test="${patientDetails.areyou =='Employee'}">
 							
-							<tr class="row1">
+							<tr class="row2">
+							<td>&nbsp;&nbsp;Employer Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 							<td>${patientDetails.employerName}</td>
-							<td>Employer Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 							</tr>
 				          <tr class="row1">
-				         	<td>Occupation:</td>
+				         	<td>&nbsp;&nbsp;Occupation:</td>
 				         	<td>${patientDetails.occupation}</td>
 				        </tr>
 				         <tr class="row2">
-				         	<td>Employer Address:</td>
+				         	<td>&nbsp;&nbsp;Employer Address:</td>
 				         	<td>${patientDetails.employerAddress}</td>
 				        </tr>
 				          <tr class="row1">
-				         	<td>WorkPhone:</td>
+				         	<td>&nbsp;&nbsp;WorkPhone:</td>
 				         	<td>${patientDetails.workphone}</td>
 				        </tr>
 				        
 				        <tr class="row2">
-				         	<td>Zipcode</td>
+				         	<td>&nbsp;&nbsp;Zipcode</td>
 				         	<td>${patientDetails.zip}</td>
 				        </tr>
 				        
 				        
 				         <tr class="row1">
-				         	<td>EmployerCity:</td>
+				         	<td>&nbsp;&nbsp;EmployerCity:</td>
 				         	<td>${patientDetails.employerCity}</td>
 				        </tr>
 				        
 				          <tr class="row2">
-				         	<td>State:</td>
+				         	<td>&nbsp;&nbsp;State:</td>
 				         	<td>${patientDetails.estate}</td>
 				        </tr>
-				         <tr class="row1">
-				         	<td>ZipCode:</td>
-				         	<td>${patientDetails.ezip}</td>
-				        </tr>
+				         
 				          </c:if>      
 				           <tr class="row1">
-				                  	<td><span class="err">* </span>Spouse's or significant others name:</td></td>
+				                  	<td><span class="err"> </span>&nbsp;&nbsp;Spouse's or significant others name:</td></td>
 								    <td>${patientDetails.spousesName}</td>              
 				                   </tr>
 				                  <tr class="row2">
-				                  <td><span class="err">* </span>Spouses Employer:&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				                  <td><span class="err"> </span>&nbsp;&nbsp;Spouses Employer:&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				                  <td>${patientDetails.spousesEmp}</td>
 				                  </tr>
 				                  <tr class="row1">
-				                  <td><span class="err">* </span>Spouse's Workphone:</td>
+				                  <td><span class="err"></span>&nbsp;&nbsp;Spouse's Workphone:</td>
 				                  <td>${patientDetails.spousesph}</td>
 				                  </tr>
 				                  <tr class="row2">
@@ -267,7 +262,7 @@
 				                  <td>${patientDetails.phone_friend}</td>
 				                  </tr>
 				                    <tr class="row2">
-				                  <td><span class="err">* </span>Have you ever had chiropractic care?: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				                  <td><span class="err">* </span>Have you ever had chiropractic care? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				                  <td>${patientDetails.chiropratic_care}</td>
 				                  </tr>
 				                  </table>
@@ -305,9 +300,9 @@
 	            </div>
           <div class="contentbox">
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
-  				<tr>
+  				  <tr class="row1">
     				<td align="left" valign="top" width="50%" style="padding-right:25px;">
-                       <span class="err">&nbsp;&nbsp;&nbsp;* </span>Please Describe Your Symptoms Briefly: 
+                       <span class="err">* </span>&nbsp;&nbsp;Please Describe Your Symptoms Briefly: 
                         <table cellpadding="0" cellspacing="0" border="0" width="100%">                      
                <c:forEach items="${symptom}" var="symptom" varStatus="status">
       		              <tr class="row1">
@@ -319,13 +314,13 @@
 				         	</c:forEach>
 				         	
 				        
-				       <tr class="row1">
-				         	<td><span class="err">* </span>Are These Symptoms Due to an Accident?:</td>
+				       <tr class="row2">
+				         	<td><span class="err">* </span>Are These Symptoms Due to an Accident?</td>
 				         	<td>${patientDetails.symptom_Accident}</td>
 				         	<td></td>
 				         	<td></td>	
 				        </tr>
-				         <tr class="row2">
+				         <tr class="row1">
 				         
 				         	<td><span class="err">* </span>Type Of Accident:</td>
 				         	<%-- <td>${patientDetails.type_Of_Accident}</td>
@@ -343,34 +338,34 @@
 				         </c:if>
 				       
 				        </tr>
-				         <tr class="row1">
+				         <tr class="row2">
 				         	<td><span class="err">* </span>Date Of Accident:</td>
 				         	<td>${patientDetails.date_Of_Accident}</td>
 				         	<td></td>
 				         	<td></td>
 				        </tr>
 				      
-				         <tr class="row2">
+				         <tr class="row1">
 				         	<td><span class="err">* </span>Accident Reported:</td>
 				         	<td>${patientDetails.accident_Reported}</td>
 				         	<td></td>
 				         	<td></td>
 				        </tr>
 				          
-				          <tr class="row1">
+				          <tr class="row2">
 				         	<td><span class="err">* </span>Medical Treatment for this Condition: &nbsp;&nbsp;&nbsp;&nbsp;When:</td>
 				         	<td>${patientDetails.when1}</td>
 				         	<td></td>
 				         	<td></td>
 				        </tr>
-				         <tr class="row2">
+				         <tr class="row1">
 				         	<td><span class="err">* </span>Where:</td>
 				         	<td>${patientDetails.where1}</td>
 				         	<td></td>
 				         	<td></td>
 				        </tr>
 				        
-				          <tr class="row1">
+				          <tr class="row2">
 				         	<td><span class="err">* </span>Have You Retained an Attorney for this Accident:</td>
 				         	<td>${patientDetails.attorney_accident}</td>
 				         	<td></td>
@@ -379,76 +374,76 @@
 				          
 				        
 				        
-				         <tr class="row2">
+				         <tr class="row1">
 				         	<td><span class="err">* </span>Name Of Attorney:</td>
 				         	<td>${patientDetails.nameOfAttorney}</td>
 				         	<td></td>
 				         	<td></td>
 				        </tr>
 				        
-				          <tr class="row1">
+				          <tr class="row2">
 				         	<td><span class="err">* </span>Attorney Phone:</td>
 				         	<td>${patientDetails.phone_Number}</td>
 				         	<td></td>
 				         	<td></td>
 				        </tr>
-				        <tr class="row2">
+				        <tr class="row1">
 				         	<td><span class="err">* </span>Name of Person at Fault for the Accident:</td>
 				         	<td>${patientDetails.fault_accident}</td>
 				         	<td></td>
 				         	<td></td>
 				        </tr>
-				         <tr class="row1">
-				         	<td><span class="err">* </span>MLS There A Claim Open:</td>
+				         <tr class="row2">
+				         	<td><span class="err">* </span>mls there a claim open:</td>
 				         	<td>${patientDetails.claim_open}</td>
 				         	<td></td>
 				         	<td></td>
 				        </tr>
-				         <tr class="row2">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>What Is Your Dominant Hand:</td>
+				         <tr class="row1">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>What is your Dominant Hand </td>
 				                  <td valign="top" align="left" class="input_txt">${patientDetails.retain}
 				                  	</td>
-				                <td></td>
+				                <td></td><td></td>
 				                </tr>
 				                  
-				                <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Would You Like Us To Send Your Records To Your Family Physician: </td>
+				                <tr class="row2">
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Would you like us to send your records to your family Physician  </td>
 				                  <td valign="top" align="left" class="input_txt">${patientDetails.record}
 				                  	</td>
-				                <td></td>
+				                <td></td><td></td>
 				                </tr>
 				                				              
-  <tr class="row2">
-				                  	<td valign="middle" align="left" class="input_txt"><span class="err">* </span>What Is Your Physician's Name:</td>
+  <tr class="row1">
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err">* </span>What is your Physician's Name </td>
 				                  	<td valign="top" align="left" class="input_txt">${patientDetails.phyname}</td>
-				                  	<td></td>
+				                  	<td></td><td></td>
 				                    </tr>
 				                
-				                <tr class="row1">
-				                  	<td valign="middle" align="left" class="input_txt"><span class="err">* </span>What Is Your Physician's Phone: </td>
+				                <tr class="row2">
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err">* </span>What is your Physician's Phone </td>
 				                  	<td valign="top" align="left" class="input_txt">${patientDetails.phyphone}</td>
-				                  	<td></td>
+				                  	<td></td><td></td>
 				                    </tr>
-				                     <tr class="row2">
-				                  	<td valign="middle" align="left" class="input_txt"><span class="err">* </span>Damages To Your car: </td>
-				                  	<td valign="top" align="left" class="input_txt">${patientDetails.car11}</td>
-				                  	<td></td>
-				                    </tr> 
 				                     <tr class="row1">
-				                  	<td valign="middle" align="left" class="input_txt"><span class="err">* </span>What Body Parts Were X-Rayed: </td>
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err">* </span>Damages to your car </td>
+				                  	<td valign="top" align="left" class="input_txt">${patientDetails.car11}</td>
+				                  	<td></td><td></td>
+				                    </tr> 
+				                     <tr class="row2">
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err">* </span>	What body parts were x-rayed </td>
 				                  	<td valign="top" align="left" class="input_txt">${patientDetails.xray}</td>
-				                  	<td></td>
+				                  	<td></td><td></td>
 				                    </tr>
 				                    
-				                     <tr class="row2">
-				                  	<td valign="middle" align="left" class="input_txt"><span class="err">* </span>What Treatment Was Given: </td>
+				                     <tr class="row1">
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err">* </span>what treatment was given </td>
 				                  	<td valign="top" align="left" class="input_txt">${patientDetails.treat}</td>
-				                  	<td></td>
+				                  	<td></td><td></td>
 				                    </tr>
 						
 				         
 				         <tr class="row1">
-				         	<td><span class="err">* </span>Insurance Company Of The At Fault Person:</td>
+				         	<td><span class="err">* </span>Insurance Company of the at Fault Person:</td>
 				         	<td>${patientDetails.insurance}</td>
 				         	<td></td>
 				         	<td></td>
@@ -460,13 +455,13 @@
 				         	<td></td>
 				        </tr>
 				         <tr class="row1">
-				         	<td><span class="err">* </span>Name Of Your Auto Insurance:</td>
+				         	<td><span class="err">* </span>Name of your auto insurance:</td>
 				         	<td>${patientDetails.name_auto}</td>
 				         	<td></td>
 				         	<td></td>
 				        </tr>
 				         <tr class="row2">
-				         	<td><span class="err">* </span>Phone Of Your Auto Insurance:</td>
+				         	<td><span class="err">* </span>phone of your auto insurance:</td>
 				         	<td>${patientDetails.phone_auto}</td>
 				         	<td></td>
 				         	<td></td>
@@ -478,19 +473,19 @@
 				         	<td></td>
 				        </tr>
 				         <tr class="row2">
-				         	<td><span class="err">* </span>Name Of Your Health Insurance</td>
+				         	<td><span class="err">* </span>Name of Your Health Insurance</td>
 				         	<td>${patientDetails.name_health}</td>
 				         	<td></td>
 				         	<td></td>
 				        </tr>
 				         <tr class="row1">
-				         	<td><span class="err">* </span>Phone Of Your Health Insurance:</td>
+				         	<td><span class="err">* </span>Phone of your Health Insurance:</td>
 				         	<td>${patientDetails.health_phone}</td>
 				         	<td></td>
 				         	<td></td>
 				        </tr>
 				         <tr class="row2">
-				         	<td><span class="err">* </span>Have You Ever Been Involved In A Previous Auto Or Work Accident:</td>
+				         	<td><span class="err">* </span>Have You Ever Been Involved in a Previous Auto or Work Accident:</td>
 				         	<td>${patientDetails.prev_accident}</td>
 				         	<td></td>
 				         	<td></td>
@@ -541,7 +536,7 @@
                         
                         <table cellpadding="0" cellspacing="0" border="0" width="100%">
                 <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>&nbsp;&nbsp;CheckBox If It Applies To You,Parents,Siblings,Children:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>CheckBox if it applies to you,parents,siblings,children</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                 <table>
 				                 
@@ -749,7 +744,7 @@
 				        
 				        
 				         <tr class="row2">
-				         <td><span class="err">* </span>Surgeries Or Major Illnesses You Have Had: </td>
+				         <td><span class="err">* </span>Surgeries or Major Illnesses You Have Had: </td>
 				         <td>${patientDetails.illness}</td>
 				         </tr>
 				         <tr class="row1">
@@ -757,7 +752,7 @@
 				         	<td>${patientDetails.dates}</td>
 				         </tr>	
 				         <tr class="row2">
-				         	<td><span class="err">* </span>Medications You Are Currently Taking And Why:</td>
+				         	<td><span class="err">* </span>Medications You are Currently Taking and Why:</td>
 				         	<td>${patientDetails.medications}</td>
 				        </tr>
 				        <tr class="row1">
@@ -779,7 +774,7 @@
 				        	 <td></td>
 				        </tr>
 				        <tr class="row1">
-				        <td><span class="err">* </span>Females Only:<br>&nbsp;&nbsp;Are you Pregnant:</td>
+				        <td><span class="err">* </span>Females Only:<br>&nbsp;&nbsp;Are you pregnant:</td>
 				        <td>${patientDetails.female}</td>
 				        </tr>
 				        <tr class="row2">
@@ -787,8 +782,8 @@
 				        	<td>${patientDetails.dr}</td>
 				        
 				        </tr>
-				        <tr>
-				        <td><span class="err">&nbsp;&nbsp;&nbsp;* </span>Patient Signature:</td>
+				        <tr class="row1">
+				        <td><span class="err">* </span>Patient Signature:</td>
 				        <td>${patientDetails.patient}</td>
 				      </tr>
 				      </table>
@@ -822,7 +817,7 @@
 				             
 <script>          
   
-  $(function() { 
+  $(function() {
 	    $( "#slider" ).slider({
 	      value:1,
 	      min: 0,
@@ -888,7 +883,7 @@ function Checklight(val){
 
  <script type="text/javascript">
 function toggle3(value){
-	/*  alert(value); * /
+	/* alert(value); */
 	var e = document.getElementById('student');
 	var e1=document.getElementById('employee');
 if(value=='show3')
