@@ -426,13 +426,7 @@ function checkValid(e)
       document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
       return false;
 	 }
-	 else
-		 {
-		  document.getElementById("claimnoerror").innerHTML="";
-		  document.getElementById('btnvisible1').style.visibility='hidden';
-		  document.getElementById('btnNext').style.visibility='visible';
-		  document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";		 
-		 }
+	 
 	 document.getElementById("claimnoerror").innerHTML="";
 	 if(document.getElementById("claimno").value.length<9 )
 	 {
@@ -626,7 +620,7 @@ function checkValid1(e)
 	    	
 	       
 	   
-      document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
+	    	  document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
 	    }
 	    
 	    }
@@ -634,8 +628,8 @@ function checkValid1(e)
 		 {
 		  document.getElementById("injuryerror").innerHTML="";
 		  document.getElementById('btnvisible').style.visibility='hidden';
-		  document.getElementById('btnNext').style.visibility='visible';
-		  document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";		 
+		  //document.getElementById('btnNext').style.visibility='visible';
+		  document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";		 
 		 }
 		
 }
@@ -643,14 +637,14 @@ function checkValid1(e)
  <script>
 function checkValid2(e){
 	
-	document.getElementById("head_hiterror").innerHTML="";
+	/* document.getElementById("head_hiterror").innerHTML="";
 	if(document.getElementById("head_hit").value!="")
 	{
     if(document.getElementById("head_hit").value.length<4 || document.getElementById("head_hit").value.length>=32)
     {
     	
     	document.getElementById("head_hiterror").innerHTML="Should be of length 4 to 32";
-    	document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";		 
+    	document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid2(event);'>";		 
         return false;
     }
     }
@@ -662,7 +656,7 @@ function checkValid2(e){
     {
     	
     	document.getElementById("rlshoulder_hiterror").innerHTML="Should be of length 4 to 32";
-    	document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+    	document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid2(event);'>";
         return false;
     }
     }
@@ -675,7 +669,7 @@ function checkValid2(e){
     {
     	
     	document.getElementById("rlhip_hiterror").innerHTML="Should be of length 4 to 32";
-    	document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+    	document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid2(event);'>";
         return false;
     }
     }
@@ -687,7 +681,7 @@ function checkValid2(e){
     {
     	
     	document.getElementById("rlknee_hiterror").innerHTML="Should be of length 4 to 32";
-    	document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+    	document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid2(event);'>";
         return false;
     }
     }
@@ -699,7 +693,7 @@ function checkValid2(e){
     {
     	
     	document.getElementById("chest_hiterror").innerHTML="Should be of length 4 to 32";
-    	document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+    	document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid2(event);'>";
         return false;
     }
     }
@@ -708,7 +702,7 @@ function checkValid2(e){
 	  document.getElementById("chest_hiterror").innerHTML="";
 	  document.getElementById('btnvisible1').style.visibility='hidden';
 	  document.getElementById('btnNext').style.visibility='visible';
-	  document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";		 
+	  document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid2(event);'>";		 
 	 }
 	
 	document.getElementById("rlarm_hiterror").innerHTML="";
@@ -718,7 +712,7 @@ function checkValid2(e){
     {
     	
     	document.getElementById("rlarm_hiterror").innerHTML="Should be of length 4 to 32";
-    	document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+    	document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid2(event);'>";
         return false;
     }
     }
@@ -730,7 +724,7 @@ function checkValid2(e){
     {
     	
     	document.getElementById("rlleg_hiterror").innerHTML="Should be of length 4 to 32";
-    	document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+    	document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid2(event);'>";
         return false;
     }
     }
@@ -742,16 +736,16 @@ function checkValid2(e){
     {
     	
     	document.getElementById("otherpart_hiterror").innerHTML="Should be of length 4 to 32";
-    	document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+    	document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid2(event);'>";
         return false;
     }
-    }
+    } */
 	
 	document.getElementById("estimateddamageerror").innerHTML="";
 	if(document.getElementById("estimateddamage").value=="")
 	{
 	document.getElementById("estimateddamageerror").innerHTML="Required Field Should not be Empty";
-	document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid2(event);'>";
 	return false;
 	}
 	else
@@ -759,7 +753,7 @@ function checkValid2(e){
 	  document.getElementById("estimateddamageerror").innerHTML="";
 	  document.getElementById('btnvisible1').style.visibility='hidden';
 	  document.getElementById('btnNext').style.visibility='visible';
-	  document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";		 		 
+	  document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='NEXT' onmouseover='checkValid2(event);'>";		 		 
 	 }
 }
 
@@ -1821,7 +1815,7 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				  </select>
 				  </td>
 				  </tr> -->
-				  <tr class="row1">
+				  <tr class="row2">
                 <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Body Position At Time Of Accident:</td>
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="body_position" class="input_cmbbx1" id="body_position" onchange='Checkposition(this.value);'>
@@ -1834,7 +1828,7 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				   <input type="text" name="body_position1" id="body_position1" min="4" maxlength="32" onInput="return validatename(id)"; style='display:none'/>
 				  </td>
 				  </tr>
-				 <tr class="row2">
+				 <tr class="row1">
                 <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Head Position:</td>
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="head_position" class="input_cmbbx1" id="head_position" onchange='CheckHeadposition(this.value);'>
@@ -1849,11 +1843,11 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				   <input type="text" name="head_position1" id="head_position1" min="4" maxlength="32" onInput="return validatename(id)"; style='display:none'/>
 				  </td>
 				  </tr>
-				  <tr class="row1">
+				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Hands On Wheel:</td>
 				  <td valign="top" align="left" class="input_txt"><input type="radio" name="hands_on_wheel" value="one" class="input_txt" checked="true">One&nbsp;&nbsp;&nbsp;<input type="radio" name="hands_on_wheel" value="two" class="input_txt">Two</td>
 				  </tr>
-				  <tr class="row2">
+				  <tr class="row1">
                 <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Aware Of Crash:</td>
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="aware_of_crash" class="input_cmbbx1">
@@ -1862,7 +1856,7 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				  </select>
 				  </td>
 				  </tr>
-				   <tr class="row1">
+				   <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Did You Brace Yourself:</td>
 				  <td valign="top" align="left" class="input_txt"><input type="radio" id="yes1" name="brace" value="yes" class="input_txt" checked="true" onclick="toggle1('show1')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="brace" id="no1" value="no" class="input_txt" onclick="toggle1('hide1')">No&nbsp;&nbsp;&nbsp;
 				 <span id="yes1error" style="color: red;font-style:italic;"><form:errors path="Autoaccident.brace"></form:errors></span> <select name="ifyes" class="input_cmbbx1" id="mybrace">
@@ -1881,7 +1875,7 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				  </select>
 				  </td>
 				  </tr>  -->
-				  <tr class="row2">
+				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Did This Cause Further Injury:</td>
 				  <td valign="middle" align="left" class="input_txt"><input type="radio" name="further_injury" value="yes" class="input_txt" checked="true" onclick="toggle2('show2')">Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="further_injury" value="no" class="input_txt" onclick="toggle2('hide2')">No&nbsp;&nbsp;&nbsp;
@@ -1896,7 +1890,7 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				  <td><br><input type="button" id="btnPrevious" class="submit_btn" value="Previous"  />&nbsp;</td>
                   <td>&nbsp;&nbsp;</td>
                   
-                  <td  ><br><input type="button" id="btnNext" class="submit_btn" value="Next" /><br></td>
+                  <td id="tblbtn1" ><br><input type="button" id="btnNext" class="submit_btn" value="Next" onmouseover="checkValid1(event);"/><br></td>
                   </tr>
 				                  	</table>
 				  </td>
@@ -2047,7 +2041,7 @@ document.getElementById("afteraccidenterror").innerHTML="";
 					<option value="major">Major</option>
 					<option value="totaled">Totaled</option>
 				  </select>
-				  </td>
+				  </td><td width="55"></td>
 				  </tr> 
 				 </table>
 				 	<table align="right">
