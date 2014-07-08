@@ -34,7 +34,7 @@ $(function() {
   <script>
   function tabCheck(e)
   {
-  alert("ok");
+  //alert("ok");
   e.preventDefault();
   
   return false;
