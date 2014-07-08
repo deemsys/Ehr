@@ -73,20 +73,14 @@ document.getElementById("passworderror").innerHTML=" ";
 		}
 		
 		document.getElementById("passworderror").innerHTML="";
-	    if(document.getElementById("password").value.length<4 || document.getElementById("password").value.length>=32)
+	    if(document.getElementById("password").value.length<3 || document.getElementById("password").value.length>=32)
 	    {
 	    	
-	    	document.getElementById("passworderror").innerHTML="Password should be length 4 to 32";
+	    	document.getElementById("passworderror").innerHTML="Password should be length 3 to 32";
 	    	
 	    	error="true";
 	    }
-       /*  var pass = /^[a-zA-Z0-9]{3,32}$/;
-        
-        if(document.getElementById("password").value.match(pass)==null)
-        {
-        	document.getElementById("passworderror").innerHTML="Invalid Format";
-            return false;
-        } */
+     
 document.getElementById("confirmerror").innerHTML=" ";
 		
 		if(document.getElementById("confirm").value=="")
@@ -101,14 +95,14 @@ document.getElementById("confirmerror").innerHTML=" ";
         	error="true";
         }
         
-     /*    document.getElementById("confirmerror").innerHTML="";
+      document.getElementById("confirmerror").innerHTML="";
 	    if(document.getElementById("confirm").value.length<3 || document.getElementById("confirm").value.length>=32)
 	    {
 	    	
 	    	document.getElementById("confirmerror").innerHTML="Password should be min 3 and max 32";
 	    	
 	        return false;
-	    } */
+	    } 
 document.getElementById("emailerror").innerHTML=" ";
 		
 		if(document.getElementById("email").value=="")
@@ -168,7 +162,7 @@ document.getElementById("emailerror").innerHTML=" ";
 	            <table cellpadding="0" cellspacing="0" border="0" width="100%">
 	            <tr class="row1">
 
-	             <td valign="middle" align="left" class="input_txt"><span class="err">*</span>UserName</td>
+	             <td valign="middle" align="left" class="input_txt"><span class="err">* </span>UserName</td>
 
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="input_txtbx1" id="username" name="username" min="4" maxlength="32" onInput="return validateusername()"; />
@@ -185,7 +179,7 @@ document.getElementById("emailerror").innerHTML=" ";
 	             <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Confirm Password:</td>
 				  <td valign="top" align="left" class="input_txt">
 
-				  <input type="password" class="input_txtbx1" id="confirm" name="confirm" /><br><font color="red" size="+1"><span id="confirmerror"></font><form:errors path="Signup.confirm"></form:errors></span>
+				  <input type="password" class="input_txtbx1" id="confirm" name="confirm"  maxlength="32"/><br><font color="red" size="+1"><span id="confirmerror"></font><form:errors path="Signup.confirm"></form:errors></span>
 
 	  </td>
 				  </tr>

@@ -207,7 +207,15 @@ document.getElementById("datepickererror").innerHTML="";
 		
 		return false;
 		}
-		
+		var phoneno = /^\(?([0-9]{3})\)?[-]?([0-9]{2})[-]?([0-9]{4})$/;  
+
+	    
+	    if(document.getElementById("security").value.match(phoneno)==null)
+	    {
+	    	document.getElementById("securityerror").innerHTML="Invalid SSN Format";
+	    	
+	        return false;
+	    }
 		document.getElementById("securityerror").innerHTML="";
 		var txt1=document.getElementById("security").value;
 		var txt2=txt1.substring(0,3);
