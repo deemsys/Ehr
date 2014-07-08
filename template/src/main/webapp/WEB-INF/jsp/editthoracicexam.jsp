@@ -135,6 +135,23 @@
     	});
     	});
    </script>
+    <script>
+  var currentTab=0;
+  $("#btnNext").live("click", function () {
+        var tabs = $('#tabs').tabs();
+        var c = $('#tabs').tabs("length");
+        currentTab = currentTab == (c - 1) ? currentTab : (currentTab + 1);
+        tabs.tabs('select', currentTab);
+        $("#btnPrevious").show();
+        if (currentTab == (c - 1)) {
+            $("#btnNext").hide();
+        } else {
+            $("#btnNext").show();
+        }
+    });
+  
+  
+  </script>
    <script>
    function validatename(id){
 	    var textInput = document.getElementById(id).value;
@@ -146,6 +163,52 @@
    
    </script> 
    <script>
+  function checkValid(e)
+  {
+	  document.getElementById("pnameerror").innerHTML=" ";
+		
+		if(document.getElementById("pname").value=="")
+		{
+		document.getElementById("pnameerror").innerHTML="Required Field Should not be Empty";
+		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+		}
+		
+		else if(document.getElementById("pname").value.length<=4 && document.getElementById("pname").value.length<=32)
+		{
+		document.getElementById("pnameerror").innerHTML="Name should be length of 4 to 32";
+		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+		}
+		 else if(document.getElementById("pname").value!="")
+		 {
+		  document.getElementById("pnameerror").innerHTML="";
+		  document.getElementById("btnvisible1").style.visibility="hidden";
+		 //document.getElementById("btnNext").style.display="block";
+		  document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";		 
+		 //document.getElementById("btnNext").style.visibility="visible";
+		 }
+		
+		document.getElementById("datepickererror").innerHTML="";
+	if(document.getElementById("datepicker").value=="")
+		{
+		document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+		}
+  	else if(document.getElementById("datepicker").value!="")
+		 {
+		  document.getElementById("datepickererror").innerHTML="";
+		  document.getElementById("btnvisible1").style.visibility="hidden";
+		 //document.getElementById("btnNext").style.display="block";
+		  document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";		 
+		 //document.getElementById("btnNext").style.visibility="visible";
+		 }
+	
+  	
+  }
+
+  
+  
+  </script>        
+   <!-- <script>
 
 	function checkSubmit()
 	{
@@ -183,10 +246,18 @@ document.getElementById("pnameerror").innerHTML=" ";
 			
 	
 	}
-	</script>
+	</script> -->
 	<script>
-	function checkSubmit1()
-	{
+	function checkSubmit1(){
+		
+		document.getElementById("datepickererror").innerHTML="";
+		var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+			if(document.getElementById("datepicker").value.match(datechk)==null)
+		    {
+		    	document.getElementById("datepickererror").innerHTML="Invalid Date Format";
+		    	
+		        return false;
+		    }	
 	document.getElementById("signerror").innerHTML="";
 	if(document.getElementById("sign").value=="")
 	{
@@ -195,15 +266,19 @@ document.getElementById("pnameerror").innerHTML=" ";
 	return false;
 	}
 	document.getElementById("signerror").innerHTML="";
-    if(document.getElementById("sign").value.length<4 || document.getElementById("sign").value.length>=32)
-    {
-    	
-    	document.getElementById("signerror").innerHTML="Name should be min 4 and max 32";
-    	
-        return false;
-    }
+	    if(document.getElementById("sign").value.length<4 || document.getElementById("sign").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("signerror").innerHTML="Name should be min 4 and max 32";
+	    	
+	        return false;
+	    }
+	
+	
+	
 	}
-	</script>
+	
+	</script>       
     <script>
 $(function() {
    //$( "#draggable" ).draggable({ revert: "not valid" });
@@ -462,6 +537,7 @@ $(function() {
  <td></td><td> </td> 
  <td><b>Beevor's Sign:	</b> </td><td><input type="text" name="beevorl" size="5" value="${thoracicexam.beevorl}" onkeypress="return validate(event)"> <input type="text" name="beevorr" size="5" value="${thoracicexam.beevorr}" onkeypress="return validate(event)"> </td>
  </tr>
+ <tr><td id="tblbtn"><input type="button" id="btnNext" class="submit_btn" value="Next" onmouseover="checkValid(event);"/></td></tr>
  </table>
  
 </div>
