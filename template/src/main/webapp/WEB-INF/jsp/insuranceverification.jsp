@@ -165,6 +165,46 @@ function doAjaxPost() {
 
 
 <script>
+function hidepercentage()
+{
+	
+	if (document.getElementById('is_chiropractic_no').checked)
+			{
+		
+		if(document.getElementById("is_chiropractic_no").value=='No')
+			{
+		document.getElementById("chiroper").style.display="none";
+		document.getElementById("atwhat").style.display="none";
+		}
+		}
+	if(document.getElementById("is_chiropractic").checked)
+	{
+		if(document.getElementById("is_chiropractic").value=='Yes')
+		{
+	document.getElementById("chiroper").style.display="block";
+	document.getElementById("atwhat").style.display="block";
+	}}
+	}
+function hidexraypercentage()
+{
+	
+	if (document.getElementById('xray_cover_no').checked)
+			{
+		
+		if(document.getElementById("xray_cover_no").value=='No')
+			{
+		document.getElementById("xrayatwhat").style.display="none";
+		document.getElementById("atwhat1").style.display="none";
+		}
+		}
+	if(document.getElementById("xray_cover_yes").checked)
+	{
+		if(document.getElementById("xray_cover_yes").value=='Yes')
+		{
+	document.getElementById("xrayatwhat").style.display="block";
+	document.getElementById("atwhat1").style.display="block";
+	}}
+	}
 $(function() {
 		$("#spoke_with").on("keypress", function(e) {
 			if (e.which === 32 && !this.value.length)
@@ -528,12 +568,15 @@ document.getElementById("fax").value=phone;
 		}
 		 */
 		document.getElementById("atwhaterror").innerHTML="";
-		if(document.getElementById("atwhat").value=="")
+		 if(document.getElementById("is_chiropractic").checked)
+			{
+		 if(document.getElementById("atwhat").value=="")
 		{
 		document.getElementById("atwhaterror").innerHTML="Required Field Should not be Empty";
 		
 		error="true";
 		}
+			}
 		
 		/* document.getElementById("atwhaterror").innerHTML="";
 		if(isNaN(document.getElementById("atwhat").value))
@@ -542,11 +585,14 @@ document.getElementById("fax").value=phone;
 		return false;
 		} */
 		document.getElementById("atwhat1error").innerHTML="";
+		if(document.getElementById("xray_cover_yes").checked)
+		{
 		if(document.getElementById("atwhat1").value=="")
 		{
 		document.getElementById("atwhat1error").innerHTML="Required Field Should not be Empty";
 		
 		error="true";
+		}
 		}
 		
 		/* document.getElementById("atwhat1error").innerHTML="";
@@ -846,8 +892,8 @@ function validatename(){
               </tr>
               <tr class="row1">
               <td>Is chiropractic manipulation covered? </td>
-              <td><input type="radio" name="is_chiropractic" value="Yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="is_chiropractic" value="No" class="input_txt">No</td>
-              <td><span class="err">*</span>&nbsp; At what%?</td>
+              <td><input type="radio" name="is_chiropractic" id="is_chiropractic" value="Yes" class="input_txt" checked="true" onclick="hidepercentage()">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="is_chiropractic" onclick="hidepercentage()" id="is_chiropractic_no" value="No" class="input_txt">No</td>
+              <td><span id="chiroper"><span class="err">*</span>&nbsp; At what%?</span></td>
               <td><input type="text" class="input_txtbx1" name="at_what" id="atwhat" onKeyPress="return check(event,value)" onInput="checkLength()" maxlength="5"/><span id="atwhaterror" style="color: red;font-style:italic;"> </span><form:errors path="Insuranceverification.at_what"></form:errors></span>
               <!-- <span class="err" id="atwhaterror"></span> -->
               </td>
@@ -856,8 +902,8 @@ function validatename(){
               </tr>
               <tr class="row1">
               <td>Are x-rays covered?</td>
-              <td><input type="radio" name="xray_cover" value="Yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="xray_cover" value="No" class="input_txt">No</td>
-              <td><span class="err">*</span>&nbsp; At what%?</td>
+              <td><input type="radio" name="xray_cover" id="xray_cover_yes" value="Yes" onclick="hidexraypercentage()" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="xray_cover"  onclick="hidexraypercentage()" id="xray_cover_no" value="No" class="input_txt">No</td>
+              <td><span id="xrayatwhat"><span class="err">*</span>&nbsp; At what%?</span></td>
               <td><input type="text" class="input_txtbx1" name="atwhat" id="atwhat1" onKeyPress="return check(event,value)" onInput="checklen()" maxlength="5"/><br><span id="atwhat1error"  style="color: red;font-style:italic;"><form:errors path="Insuranceverification.atwhat"></form:errors></span>
               <span class="err" id="atwhat1error"></span>
               </td>

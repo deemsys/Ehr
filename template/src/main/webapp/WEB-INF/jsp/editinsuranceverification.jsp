@@ -156,6 +156,42 @@
 </script> -->
 
 <script>
+$(function() {
+	if (document.getElementById('is_chiropractic_no').checked)
+			{
+		
+		if(document.getElementById("is_chiropractic_no").value=='No')
+			{
+		document.getElementById("chiroper").style.display="none";
+		document.getElementById("atwhat").style.display="none";
+		}
+		}
+	if(document.getElementById("is_chiropractic").checked)
+	{
+		if(document.getElementById("is_chiropractic").value=='Yes')
+		{
+	document.getElementById("chiroper").style.display="block";
+	document.getElementById("atwhat").style.display="block";
+	}}
+
+
+	if (document.getElementById('xray_cover_no').checked)
+			{
+	
+		if(document.getElementById("xray_cover_no").value=='No')
+			{
+		document.getElementById("xrayatwhat").style.display="none";
+		document.getElementById("atwhat1").style.display="none";
+		}
+		}
+	if(document.getElementById("xray_cover_yes").checked)
+	{
+		if(document.getElementById("xray_cover_yes").value=='Yes')
+		{
+	document.getElementById("xrayatwhat").style.display="block";
+	document.getElementById("atwhat1").style.display="block";
+	}}
+});
  $(function() {
            $( "#datepicker" ).datepicker();
          });
@@ -281,20 +317,24 @@ function validatename(){
 		
 		
 		document.getElementById("atwhaterror").innerHTML="";
+		 if(document.getElementById("is_chiropractic").checked)
+			{
 		if(document.getElementById("atwhat").value=="")
 		{
 		document.getElementById("atwhaterror").innerHTML="Required Field Should not be Empty";
 		
 		error="true";
-		}
+		}}
 		
 		
 		document.getElementById("atwhat1error").innerHTML="";
+		if(document.getElementById("xray_cover_yes").checked)
+		{
 		if(document.getElementById("atwhat1").value=="")
 		{
 		document.getElementById("atwhat1error").innerHTML="Required Field Should not be Empty";
 		error="true";
-		}
+		}}
 		
 		
 		document.getElementById("yeserror").innerHTML="";
@@ -356,6 +396,46 @@ document.getElementById("yeserror").innerHTML="Required Field Should not be Empt
 
 	</script>
 <script>
+function hidepercentage()
+{
+	
+	if (document.getElementById('is_chiropractic_no').checked)
+			{
+	
+		if(document.getElementById("is_chiropractic_no").value=='No')
+			{
+		document.getElementById("chiroper").style.display="none";
+		document.getElementById("atwhat").style.display="none";
+		}
+		}
+	if(document.getElementById("is_chiropractic").checked)
+	{
+		if(document.getElementById("is_chiropractic").value=='Yes')
+		{
+	document.getElementById("chiroper").style.display="block";
+	document.getElementById("atwhat").style.display="block";
+	}}
+	}
+function hidexraypercentage()
+{
+	
+	if (document.getElementById('xray_cover_no').checked)
+			{
+		
+		if(document.getElementById("xray_cover_no").value=='No')
+			{
+		document.getElementById("xrayatwhat").style.display="none";
+		document.getElementById("atwhat1").style.display="none";
+		}
+		}
+	if(document.getElementById("xray_cover_yes").checked)
+	{
+		if(document.getElementById("xray_cover_yes").value=='Yes')
+		{
+	document.getElementById("xrayatwhat").style.display="block";
+	document.getElementById("atwhat1").style.display="block";
+	}}
+	}
 	function check(e,value){
     //Check Charater
         var unicode=e.charCode? e.charCode : e.keyCode;
@@ -549,9 +629,9 @@ document.getElementById("fax").value=phone;
               </tr>
               <tr class="row1">
               <td>&nbsp;&nbsp;Is chiropractic manipulation covered? </td>
-              <td>	<input type="radio" name="is_chiropractic" value="Yes" class="input_txt"  <c:if test="${Insuranceverification.is_chiropractic=='Yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
-				                  	<input type="radio" name="is_chiropractic" value="No" class="input_txt"  <c:if test="${Insuranceverification.is_chiropractic=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;</td>
-              <td><span class="err">*</span> At what%?</td>
+              <td>	<input type="radio" name="is_chiropractic" value="Yes" onclick="hidepercentage()" id="is_chiropractic" class="input_txt"  <c:if test="${Insuranceverification.is_chiropractic=='Yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
+				                  	<input type="radio" name="is_chiropractic"  onclick="hidepercentage()" id="is_chiropractic_no" value="No" class="input_txt"  <c:if test="${Insuranceverification.is_chiropractic=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;</td>
+              <td><span id="chiroper"><span class="err">*</span> At what%?</span></td>
               <td><input type="text" class="input_txtbx1" name="at_what" id="atwhat" value="${Insuranceverification.at_what}" onKeyPress="return check(event,value)" onInput="checkLength()" maxlength="5"/><span id="atwhaterror"  style="color: red;font-style:italic;"></span><form:errors path="Insuranceverification.at_what"></form:errors>
              
               </td>
@@ -560,9 +640,9 @@ document.getElementById("fax").value=phone;
               </tr>
               <tr class="row1">
               <td> Are x-rays covered?</td>
-              <td>	<input type="radio" name="xray_cover" value="Yes" class="input_txt"  <c:if test="${Insuranceverification.xray_cover=='Yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
-				                  	<input type="radio" name="xray_cover" value="No" class="input_txt"  <c:if test="${Insuranceverification.xray_cover=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;</td>
-              <td><span class="err">*</span> At what%?</td>
+              <td>	<input type="radio" name="xray_cover" onclick="hidexraypercentage()" id="xray_cover_yes" value="Yes" class="input_txt"  <c:if test="${Insuranceverification.xray_cover=='Yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
+				                  	<input type="radio" onclick="hidexraypercentage()" name="xray_cover" id="xray_cover_no" value="No" class="input_txt"  <c:if test="${Insuranceverification.xray_cover=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;</td>
+              <td><span id="xrayatwhat"><span class="err">*</span> At what%?</span></td>
               <td><input type="text" class="input_txtbx1" name="atwhat" id="atwhat1" value="${Insuranceverification.atwhat}" onKeyPress="return check(event,value)" onInput="checklen()" maxlength="5"/><span id="atwhat1error"  style="color: red;font-style:italic;"> </span><form:errors path="Insuranceverification.atwhat"></form:errors>
               <span class="err" id="atwhat1error"></span>
               </td>

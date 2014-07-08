@@ -15,6 +15,168 @@
    </STYLE>
 <script type="text/javascript">
 $(function() {
+    $( "#tabs" ).tabs();
+ 
+    // fix the classes
+    $( ".tabs-bottom .ui-tabs-nav, .tabs-bottom .ui-tabs-nav > *" )
+      .removeClass( "ui-corner-all ui-corner-top" )
+      .addClass( "ui-corner-bottom" );
+ 
+    // move the nav to the bottom
+    $( ".tabs-bottom .ui-tabs-nav" ).appendTo( ".tabs-bottom" );
+  });
+$(function () {
+ $("#tabs").tabs({
+     select: function (e, i) {
+         currentTab = i.index;
+     }
+ });
+});
+$("#btnNext").live("click", function () {
+ var currentTab=0;
+ var tabs = $('#tabs').tabs();
+ var c = $('#tabs').tabs("length");
+ currentTab = currentTab == (c - 1) ? currentTab : (currentTab + 1);
+ tabs.tabs('select', currentTab);
+ $("#btnPrevious").show();
+ if (currentTab == (c - 1)) {
+     $("#btnNext").hide();
+ } else {
+     $("#btnNext").show();
+ }
+});
+$("#btnNext1").live("click", function () {
+ var tabs = $('#tabs').tabs();
+ var c = $('#tabs').tabs("length");
+ currentTab = currentTab == (c - 1) ? currentTab : (currentTab + 1);
+ tabs.tabs('select', currentTab);
+ $("#btnPrevious").show();
+ if (currentTab == (c - 1)) {
+     $("#btnNext").hide();
+ } else {
+     $("#btnNext").show();
+ }
+});
+$("#btnPrevious").live("click", function () {
+ var tabs = $('#tabs').tabs();
+ var c = $('#tabs').tabs("length");
+ currentTab = currentTab == 0 ? currentTab : (currentTab - 1);
+ tabs.tabs('select', currentTab);
+ if (currentTab == 0) {
+     $("#btnNext").show();
+     $("#btnPrevious").hide();
+ }
+ if (currentTab < (c - 1)) {
+     $("#btnNext").show();
+ }
+});
+
+
+function checkSubmitpage1()
+{
+	var error="";
+document.getElementById("datepicker11error").innerHTML=" ";
+
+if(document.getElementById("datepicker11").value=="")
+{
+document.getElementById("datepicker11error").innerHTML="Required Field Should not be Empty";
+
+error="true";
+}
+document.getElementById("datepicker11error").innerHTML=" ";
+
+var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+if(document.getElementById("datepicker11").value.match(datechk)==null)
+{
+document.getElementById("datepicker11error").innerHTML="Invalid Date Format";
+
+error="true";
+}	
+if(document.getElementById("datepicker11").value=='')
+{
+document.getElementById("datepicker11error").innerHTML="Required Field Should not be empty";
+error="true";
+}
+
+document.getElementById("patientnameerror").innerHTML=" ";
+
+if(document.getElementById("patientname").value=="")
+{
+document.getElementById("patientnameerror").innerHTML="Required Field Should not be Empty";
+
+error="true";
+}
+
+if(document.getElementById("patientname").value.length<4 || document.getElementById("patientname").value.length>=32)
+{
+	
+	document.getElementById("patientnameerror").innerHTML="Name should be min 4 and max 32";
+	
+    error="true";
+}
+
+document.getElementById("patientnameerror").innerHTML="";
+if(document.getElementById("patientname").value.substring(0,1)==' '){
+	document.getElementById("patientnameerror").innerHTML="Invalid Name";
+	error="true";
+}
+
+document.getElementById("datepicker1error").innerHTML=" ";
+
+
+document.getElementById("datepicker1error").innerHTML=" ";
+var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+if(document.getElementById("datepicker1").value.match(datechk)==null)
+{
+document.getElementById("datepicker1error").innerHTML="Invalid Date Format";
+
+error="true";
+}	
+if(document.getElementById("datepicker1").value=="")
+{
+document.getElementById("datepicker1error").innerHTML="Required Field Should not be Empty";
+
+error="true";
+}
+
+document.getElementById("datepicker2error").innerHTML=" ";
+var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+
+
+if (document.getElementById("datepicker2").value !="") {
+  if (re.test(document.getElementById("datepicker2").value) == false) {
+	  document.getElementById("datepicker2error").innerHTML="Invalid Date Format";
+	  error="true";
+  }
+}	
+document.getElementById("datepickererror").innerHTML=" ";
+
+if(document.getElementById("datepicker").value=="")
+{
+document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+
+error="true";
+}
+document.getElementById("datepickererror").innerHTML=" ";
+ var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+if(document.getElementById("datepicker").value.match(datechk)==null)
+{
+document.getElementById("datepickererror").innerHTML="Invalid Date Format";
+
+error="true";
+}	
+if(error=="true")
+	{
+ document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkSubmitpage1(event);'>";
+return false;
+		}
+	else
+		{
+		document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next'>";
+		}
+
+	}
+$(function() {
     $( "#datepicker" ).datepicker();
   });
 $(function() {
@@ -787,7 +949,7 @@ document.getElementById("signerror").innerHTML=" ";
 		}
 		
 		
-	    if(error="true"){
+	    if(error=="true"){
 	    	return false;
 	    }
 		
@@ -1082,6 +1244,8 @@ document.getElementById("signerror").innerHTML=" ";
 					<input type="text" id="rmid" onInput="validaterange();" class="input_txtbx1" name="rangeofmotion" value="${narrativereport.rangeofmotion}"><span id="rmerror" style="color: red;font-style:italic;"></span>
 					</td>
 					</tr>
+						<tr><td></td><td></td><td width="600"></td><td align="right"><span id="tblbtn"><input type="button" class="submit_btn" value="Next" onmouseover="checkSubmitpage1(event);"/></span></td></tr>
+					
 					</table>
 					</div>
 					</div>
@@ -1368,6 +1532,8 @@ document.getElementById("signerror").innerHTML=" ";
          		</td>
          		</tr>
          		</table>
+         		<Table><tr><td width="1000" align="right"><input type="button" id="btnPrevious" class="submit_btn" value="Previous"  /></td>
+         <td>	<input type="button" id="btnNext1" class="submit_btn" value="Next"/></td></tr></Table>
          		</div>
          		</div>
          		<div id="tabs-3">                       
@@ -1486,7 +1652,7 @@ I hope you find this narrative report and discussion helpful in resolving the cu
           <p>Dr. Darrin A. Pordash</p>
           </div>
  <table align="right">
-<tr>
+<tr><td><input type="button" id="btnPrevious" class="submit_btn" value="Previous"  /></td>
 <td><input type="submit" class="submit_btn" value="Update" onclick="return checkSubmit('this');"></td>
 <td><a href="deletenarrativereport?narrativeno=${narrativereport.narrativeno}"style="color:white" class="submit_btn">Delete</a></td>
 <td><a href="viewallpatientdetails"style="color:white" class="submit_btn">Cancel</a></td>

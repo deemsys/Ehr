@@ -619,20 +619,18 @@ However, a different recent Ohio Supreme Court case confirms the validity of the
        		 <br>
        		<table cellpadding="0" cellspacing="0" border="0" width="100%"><tr> 
        		 <td height="25" width="70%"><span class="err"></span></td>
-       		  <td height="25" width="50%"><span class="err"></span>Sincerely,</td></tr>
+       		  <td height="10" width="50%" align="center"><span class="err"></span>Sincerely,</td></tr>
         	  </table>
-           <br>
-           <br>
+          
            <table cellpadding="0" cellspacing="0" border="0" width="100%"><tr> 
-       		 <td ><p align="right"> Perry Chiropractic & Therapy Center of Canton, Inc       </p></td>
+       		 <td ><p align="right"> Perry Chiropractic & Therapy Center of Canton, Inc       
+       		 <br><br>	  		
+       	  Dr. Charles T. Yang D.C. 
+       		   </p>
+       		 </td>
        		<tr>
        		<td>
-       		<p align="right">
-       		
-       		  
-       		  
-       		    Dr. Charles T. Yang D.C. 
-       		    </p></td></tr>     		         		  
+       	</td></tr>     		         		  
         	  </table>
            </c:when>
            <c:otherwise>

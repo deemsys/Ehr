@@ -494,7 +494,7 @@ function openWindow(h, w, url) {
              <tr><td width="450"></td>
              <td ><p><h4> <b>Very truly yours,</b></h4><p></td></tr>
              <tr><td width="450"></td>
-            <td ><span class="err">*</span><input type="text" class="input_txtbx1" name="esq" id="esq" onInput="return validatename(id)";/><span class="err" id="esqerr"><form:errors path="Letterofprotection.esq"></form:errors></td></tr>
+            <td ><span class="err">*</span>&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="esq" id="esq" onInput="return validatename(id)";/><span class="err" id="esqerr"><form:errors path="Letterofprotection.esq"></form:errors></td></tr>
             <tr><td width="450"></td><td ><p><h4> <b>	Attorney for above client</b></h4><p></td></tr>
              </table>
              
