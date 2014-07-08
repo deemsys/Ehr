@@ -407,7 +407,10 @@ $(function() {
 	            </div>
 	            <div class="contentbox">
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
-              
+               
+              <tr  >
+              <u align="center"><h6>Notice and Request to Not Bill Private Health Insurer</h6></u>
+              </tr>
                
               <tr class="row1">
               <c:set value="${insuranceplanform.insuranceplan[0]}" var="Insuranceplan"> </c:set>

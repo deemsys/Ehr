@@ -429,6 +429,10 @@ var mail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 	            <c:choose>
 	            <c:when test="${empty waiver}">
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
+              
+              <tr  >
+              <u align="center"><h6>Notice and Request to Not Bill Private Health Insurer</h6></u>
+              </tr>
               <tr class="row1">
               <td width="100%"><span class="err">* </span><input type="text" class="input_txtbx1" onInput="return validatename()"; name="insure_comp" id="insure_comp" placeholder="Name of Insurance Company" style="width: 215px; "/> <br><span id="insure_comperror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.insure_comp"></form:errors></span> </td>
               </tr>

@@ -588,8 +588,8 @@ var phoneno = /^\(?[(]??([0-9]{3})\)?[)]?([0-9]{3})[-]?([0-9]{4})$/;
 	            <c:choose>
 	            <c:when test="${empty info}">
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
-              <tr class="row1">
-              <u><h6>Patient Information</h6></u>
+              <tr class="row1" >
+              <u align="center"><h6>Patient Information</h6></u>
               </tr>
               <br>
               <tr class="row1">

@@ -491,7 +491,7 @@ document.getElementById("phone").value=phone;
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
                 <c:set value="${InsuranceinformationForm.insuranceinformation[0]}" var="Insuranceinformation"> </c:set>
               <tr class="row1">
-              <u><h6>Patient Information</h6></u>
+              <u align="center"><h6>Patient Information</h6></u>
               </tr>
               <br>
               <tr class="row1">
