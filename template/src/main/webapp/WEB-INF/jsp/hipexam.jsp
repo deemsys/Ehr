@@ -203,7 +203,13 @@ $(function() {
 		if (e.which === 32 && !this.value.length)
 	        e.preventDefault();
 	});
-	});		
+	});
+$(function() {
+	$("#otherdefict").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});			
 </script>
 <script>
 function validatename(id){
@@ -925,7 +931,7 @@ function validatename(id){
            </table>
            </br>
            <table width="100%">
-           <tr><td width="350"><b style="font-size:14px">FUNCTIONAL DEFICIT:	</b></td><td width="100"><input type="checkbox" name="walking" value="walking">Walking</td><td width="110"><input type="checkbox" name="standing" value="standing"> Standing</td><td width="70"><input type="checkbox" name="stairs" value="stairs">Stairs</td><td><input type="checkbox" id="other" name="other" value="other"  onclick="visible('this.value')">Other</td><td><input type="text" name="otherdefict" id="otherdefict" style="display:none "></td><td width="300"></td></tr>
+           <tr><td width="350"><b style="font-size:14px">FUNCTIONAL DEFICIT:	</b></td><td width="100"><input type="checkbox" name="walking" value="walking">Walking</td><td width="110"><input type="checkbox" name="standing" value="standing"> Standing</td><td width="70"><input type="checkbox" name="stairs" value="stairs">Stairs</td><td><input type="checkbox" id="other" name="other" value="other"  onclick="visible('this.value')">Other</td><td><input type="text" name="otherdefict" id="otherdefict" style="display:none " onInput="return validatename(id)";></td><td width="300"></td></tr>
            
            </table>
            <table>
