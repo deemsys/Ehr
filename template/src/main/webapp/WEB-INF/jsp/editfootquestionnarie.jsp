@@ -444,7 +444,7 @@ var phoneno = /^\(?([0-9]{3})\)?[-]?([0-9]{2})[-]?([0-9]{4})$/;
 	       </p>
 	   &nbsp; Your Birth Date:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" class="input_txtbx1"  name="birthdate" id="datepicker1" value="${footquestionnariedetails.birthdate }"><span id="datepicker1error" style="color: red;font-style:italic;"></span>
 	    <br><br>
-	   <span class="err">* </span>  Your Social Security Number: <input type="text" name="security" id="security" class="input_txtbx1" maxlength="11" onkeypress="return validate(event)"; value="${footquestionnariedetails.security }">
+	   <span class="err">* </span>  Your Social Security Number: <input type="text" name="security" id="security" class="input_txtbx1" maxlength="11" placeholder="987-65-4320"  onkeypress="return validate(event)"; value="${footquestionnariedetails.security }">
 	    <span id="securityerror" style="color: red;font-style:italic;"></span>
 	    <br>
 	    <br>

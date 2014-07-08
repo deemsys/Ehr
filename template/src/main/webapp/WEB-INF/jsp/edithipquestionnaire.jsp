@@ -446,7 +446,7 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 	       </p>
 	    &nbsp;&nbsp;Your Birth Date:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text"  class="input_txtbx1" id="datepicker1" style="width: 200px; "value="${hipquestionnairedetails.birthdate}" name="birthdate"><br><span id="datepicker1error"  style="color: red;font-style:italic;"></span>
 	    <br><br>
-	   <span class="err">* </span> Your Social Security Number: <input type="text" name="security" id="security" onkeypress="return validate(event)"; maxlength="11" value="${hipquestionnairedetails.security}" class="input_txtbx1" style="width: 200px; "><br><span style="color: red;font-style:italic;" id="securityerror"></span>
+	   <span class="err">* </span> Your Social Security Number: <input type="text" name="security" id="security" placeholder="987-65-4320"  onkeypress="return validate(event)"; maxlength="11" value="${hipquestionnairedetails.security}" class="input_txtbx1" style="width: 200px; "><br><span style="color: red;font-style:italic;" id="securityerror"></span>
 	    <div id="number">
 	    <br>
 	    <br>
