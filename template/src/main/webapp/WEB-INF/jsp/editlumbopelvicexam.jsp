@@ -476,9 +476,9 @@ document.getElementById("pnameerror").innerHTML=" ";
         <c:set value="${lumbopelvicexamForm.lumbopelvicexam[0]}" var="lumbopelvicexam"/>   
  <tr class="row1">
  <input type="hidden" name="lumbopelvicexamid" id="inp_id" value="${lumbopelvicexam.lumbopelvicexamid}">
-<td><h2><span class="err">*</span>&nbsp;&nbsp;Patient Name:</h2></td><td><input type="text"  name="pname" id="pname" value="${lumbopelvicexam.pname}" onInput="return validatename(id)";/><span class="err" id="pnameerror"><form:errors path="Lumbopelvicexam.pname"></form:errors></span></td>
+<td><h2><span class="err">*</span>&nbsp;&nbsp;Patient Name:</h2></td><td><input type="text"  name="pname" id="pname" value="${lumbopelvicexam.pname}" onInput="return validatename(id)";/><br><span class="err" id="pnameerror"><form:errors path="Lumbopelvicexam.pname"></form:errors></span></td>
 <td width="600">
-<td><h2><span class="err">*</span>&nbsp;&nbsp;Date:</h2></td><td><input type="text"  id="datepicker" name="date" id="datepicker" value="${lumbopelvicexam.date}"/><span class="err" id="datepickererror"><form:errors path="Lumbopelvicexam.date"></form:errors></span></td>
+<td><h2><span class="err">*</span>&nbsp;&nbsp;Date:</h2></td><td><input type="text"  id="datepicker" name="date" id="datepicker" value="${lumbopelvicexam.date}"/><br><span class="err" id="datepickererror"><form:errors path="Lumbopelvicexam.date"></form:errors></span></td>
 </tr>
 </table>
 <br/>
@@ -813,7 +813,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  </tr>
  </tr>
  <br/>
- <table><tr><td><B style="font-size:14px"><span class="err">*</span>&nbsp;&nbsp;PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sign" id="sign" value="${lumbopelvicexam.sign}" onInput="return validatename(id)";></B><span class="err" id="signerror"><form:errors path="Lumbopelvicexam.sign"></form:errors></span></td></tr></table>
+ <table><tr><td><B style="font-size:14px"><span class="err">*</span>&nbsp;&nbsp;PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sign" id="sign" value="${lumbopelvicexam.sign}" onInput="return validatename(id)";></B><br><span class="err" id="signerror"><form:errors path="Lumbopelvicexam.sign"></form:errors></span></td></tr></table>
 <table align="right">
 <tr>
 <td><input type="submit" class="submit_btn" value="Update" onclick="return checkSubmit1('this');"></td>

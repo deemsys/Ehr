@@ -464,9 +464,9 @@ document.getElementById("pnameerror").innerHTML=" ";
           <table cellpadding="0" cellspacing="0" border="0" width="98%">
            
  <tr class="row1">
-<td width="150" style="width: 198px; "><h4><span class="err">*</span>&nbsp;&nbsp;Patient Name:</h4></td><td><input type="text" name="pname" id="pname" onInput="return validatename(id)";><span class="err" id="pnameerror"><form:errors path="Lumbopelvicexam.pname"></form:errors></span></td>
+<td width="150" style="width: 198px; "><h4><span class="err">*</span>&nbsp;&nbsp;Patient Name:</h4></td><td><input type="text" name="pname" id="pname" onInput="return validatename(id)";><br><span class="err" id="pnameerror"><form:errors path="Lumbopelvicexam.pname"></form:errors></span></td>
 <td width="600" style="width: 444px; ">
-</td><td><h4><span class="err">*</span>&nbsp;&nbsp;Date:</h4></td><td><input type="text" id="datepicker" name="date"><span class="err" id="datepickererror"><form:errors path="Lumbopelvicexam.date"></form:errors></span></td>
+</td><td><h4><span class="err">*</span>&nbsp;&nbsp;Date:</h4></td><td><input type="text" id="datepicker" name="date"><br><span class="err" id="datepickererror"><form:errors path="Lumbopelvicexam.date"></form:errors></span></td>
 </tr>
 </table>
 <br>
@@ -812,7 +812,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  </tr>
  <tr></tr>
  <br><div></div>
- <table cellpadding="0" cellspacing="0" border="0"><tr><td><b style="font-size:14px"><span class="err">*</span>&nbsp;&nbsp;PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sign" id="sign" onInput="return validatename(id)";><span class="err" id="signerror"><form:errors path="Lumbopelvicexam.sign"></form:errors></span></b></td></tr></table>
+ <table cellpadding="0" cellspacing="0" border="0"><tr><td><b style="font-size:14px"><span class="err">*</span>&nbsp;&nbsp;PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sign" id="sign" onInput="return validatename(id)";><br><span class="err" id="signerror"><form:errors path="Lumbopelvicexam.sign"></form:errors></span></b></td></tr></table>
  </table>
  <table align="right">
 <tr>
