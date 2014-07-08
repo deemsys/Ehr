@@ -510,19 +510,19 @@ document.getElementById("abnormalerror").innerHTML=" ";
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Patient Name :</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="name" onInput="validate1(id);"name="name" value="${name}" /><span class="err" id="nameerror"><form:errors path="Physicalexam.name"></form:errors>
+				                  	<input type="text" class="input_txtbx1" id="name" onInput="validate1(id);"name="name" value="${name}" /><br><span class="err" id="nameerror"><form:errors path="Physicalexam.name"></form:errors>
 				                  </td>
 				                </tr>
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Email :</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" onInput="validate1(id);"id="email" name="id" /><span class="err" id="emailerror"><form:errors path="Physicalexam.id"></form:errors>
+				                  	<input type="text" class="input_txtbx1" onInput="validate1(id);"id="email" name="id" /><br><span class="err" id="emailerror"><form:errors path="Physicalexam.id"></form:errors>
 				                  </td>
 				                </tr>
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Date :</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="datepicker" name="date" /><span class="err" id="datepickererror"><form:errors path="Physicalexam.date"></form:errors>
+				                  	<input type="text" class="input_txtbx1" id="datepicker" name="date" /><br><span class="err" id="datepickererror"><form:errors path="Physicalexam.date"></form:errors>
 				                  </td>
 				                </tr>
 				                <tr class="row2">
@@ -834,7 +834,7 @@ document.getElementById("abnormalerror").innerHTML=" ";
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span> BP:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="bp" name="bp" onkeypress="return validate(event)"; /><span class="err" id="bperror" ><form:errors path="Physicalexam.bp"></form:errors>
+				                  	<input type="text" class="input_txtbx1" id="bp" name="bp" onkeypress="return validate(event)"; /><br><span class="err" id="bperror" ><form:errors path="Physicalexam.bp"></form:errors>
 				                  </td>
 				                </tr>
 				                </table>
@@ -887,7 +887,7 @@ document.getElementById("abnormalerror").innerHTML=" ";
 				                 <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Visceral Pathologies:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" name="path" class="input_txtbx1"onInput="validate1(id);" id="path"><span class="err" id="patherror"></span></td>
+				                  	<input type="text" name="path" class="input_txtbx1"onInput="validate1(id);" id="path"><br><span class="err" id="patherror"></span></td>
 				               
 				                </tr>
 				                <tr class="row2">
@@ -908,7 +908,7 @@ document.getElementById("abnormalerror").innerHTML=" ";
 				               <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Abnormal Findings:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1"onInput="validate1(id);" id="abnormal" name="abnormal" /><span class="err" id="abnormalerror"><form:errors path="Physicalexam.abnormal"></form:errors>
+				                  	<input type="text" class="input_txtbx1"onInput="validate1(id);" id="abnormal" name="abnormal" /><br><span class="err" id="abnormalerror"><form:errors path="Physicalexam.abnormal"></form:errors>
 				                  </td>
 				                </tr>
 				                </table>
